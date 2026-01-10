@@ -1,6 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { submitEnrollment } from "../../Sub Pages/HandleSubmit/HandleSubmit";
+import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
+import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
+import NavigationBar from '../../TechLearningSection/NavigationBar/NavigationBar';
+import BackToTop from '../../../Components/BackToTop/BackToTop';
+import LearningFooter from '../../TechLearningSection/LearningFooter/LearningFooter';
+
 
 import { 
   faPaintBrush,
@@ -82,28 +88,7 @@ const GraphicDesignCourse = () => {
     duration: "6 Months | Live Interactive Training"
   };
 
-  const courseDescription = `Unleash your creative potential with our comprehensive Graphic Design Masterclass! This 6-month intensive program is designed to transform beginners into industry-ready professionals. Our curriculum combines foundational design principles with practical software skills and real-world project experience.
-
-## What You'll Master:
-- **Design Fundamentals**: Color theory, typography, layout principles
-- **Software Expertise**: Adobe Photoshop, Illustrator, Figma
-- **Portfolio Development**: Build a stunning professional portfolio
-- **Career Readiness**: Client communication, freelance setup, job preparation
-
-## Learning Outcomes:
-1. Create professional logos, branding materials, and marketing collateral
-2. Design engaging social media graphics and web interfaces
-3. Master industry-standard design software
-4. Develop a competitive design portfolio
-5. Understand design business fundamentals
-
-## Why Choose Our Program:
-- 🎯 **Industry-Aligned Curriculum**: Updated with current market demands
-- 👨‍🏫 **Expert Mentors**: Learn from professionals with 10+ years experience
-- 💼 **Placement Support**: 100% career assistance with top companies
-- 🎓 **Global Certification**: Recognized by International Design Council
-- 🔄 **Lifetime Access**: Course materials and updates forever
-- 🤝 **Community Access**: Network with fellow designers`;
+  const courseDescription = `Unleash your creative skills with our comprehensive Graphic Design Masterclass, a 6-month intensive program designed to transform beginners into industry-ready professionals. The course covers essential design fundamentals such as color theory and typography, hands-on training in industry-standard tools including Adobe Photoshop, Adobe Illustrator, and Figma, and focuses on building a strong professional portfolio. Learners will gain practical experience in creating logos, marketing materials, social media graphics, and website interfaces, along with career-ready skills such as client communication, freelance business setup, and professional guidance. With an industry-aligned curriculum, expert mentors with over 10 years of experience, global certification recognized by the International Design Council, lifetime access to course content, strong community networking, and 100% placement assistance, this program equips you with the skills and confidence to succeed in the graphic design industry.`;
 
   const courseOutcomes = [
     { icon: <FontAwesomeIcon icon={faPaintBrush} />, title: 'Design Proficiency', desc: 'Master color theory, typography, and composition principles to create visually compelling designs' },
@@ -463,8 +448,10 @@ const handleSubmit = async (e) => {
             {/* <meta property="og:url" content="https://yourapp.com" /> */}
         </Helmet>
     
+    <NavigationBar />
     <div className="gdc-page">
       {/* Hero Section */}
+      <BackToTop />
       <section className="gdc-hero">
         <div className="gdc-hero-bg"></div>
         <div className="gdc-hero-overlay"></div>
@@ -978,6 +965,7 @@ const handleSubmit = async (e) => {
         </div>
       )}
     </div>
+    <LearningFooter />
     </div>
     </>
   );

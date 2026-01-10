@@ -13,6 +13,24 @@
   position: relative;
   z-index: 2;
 }
+.services-cards-scroll {
+  cursor: grab;
+}
+
+.services-cards-scroll:active {
+  cursor: grabbing;
+}
+
+/* Disable text selection while dragging */
+.services-cards-scroll,
+.services-card,
+.service-card * {
+  user-select: none;
+  -webkit-user-select: none; /* Chrome, Safari */
+  -ms-user-select: none;     /* Edge */
+  -moz-user-select: none;    /* Firefox */
+}
+
 
 /* Header Styles */
 .services-header {

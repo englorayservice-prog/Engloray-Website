@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { submitEnrollment } from "../../Sub Pages/HandleSubmit/HandleSubmit";
-
+import NavigationBar from '../../TechLearningSection/NavigationBar/NavigationBar';
+import BackToTop from '../../../Components/BackToTop/BackToTop';
+import LearningFooter from '../../TechLearningSection/LearningFooter/LearningFooter';
 import './UiuxDesignCourse.css';
 
 // Import FontAwesome icons
@@ -46,29 +48,7 @@ const UiuxDesignCourse = () => {
     duration: "6 Months | Live Interactive Training"
   };
 
-  const courseDescription = `Master the art of user-centered design with our comprehensive UI/UX Design Masterclass! This 6-month intensive program is designed to transform beginners into industry-ready design professionals. Our curriculum combines design thinking principles with practical software skills and real-world project experience.
-
-## What You'll Master:
-- **UX Research**: User interviews, surveys, usability testing
-- **UI Design**: Figma, Adobe XD, Sketch, design systems
-- **Prototyping**: Interactive prototypes, user flows, wireframing
-- **Portfolio Development**: Build a stunning professional portfolio
-- **Career Readiness**: Product thinking, stakeholder management, job preparation
-
-## Learning Outcomes:
-1. Conduct comprehensive user research and analysis
-2. Design intuitive and beautiful user interfaces
-3. Create interactive prototypes and design systems
-4. Develop a competitive design portfolio with case studies
-5. Understand product development lifecycle and design thinking
-
-## Why Choose Our Program:
-- 🎯 **Industry-Aligned Curriculum**: Updated with current market demands
-- 👨‍🏫 **Expert Mentors**: Learn from product designers with 10+ years experience
-- 💼 **Placement Support**: 100% career assistance with top tech companies
-- 🎓 **Global Certification**: Recognized by International Design Council
-- 🔄 **Lifetime Access**: Course materials and updates forever
-- 🤝 **Community Access**: Network with fellow designers`;
+  const courseDescription = `Master the art of user-centered design with our comprehensive UI/UX Design Masterclass, a six-month high-intensity program designed to transform beginners into industry-ready design professionals. The curriculum blends design thinking principles with hands-on software training and real-world project experience, covering UX research methods such as user interviews, surveys, and usability testing; UI design using tools like Figma, Adobe XD, and Sketch with strong design systems; interactive prototyping including user flows and wireframing; and complete portfolio development with detailed case studies. Learners gain career-ready skills in product thinking, stakeholder management, and job preparation, along with deep knowledge of the product development lifecycle and design thinking process. The program features an industry-aligned curriculum updated to current market demands, expert mentors with over 10 years of product design experience, 100% career and placement support with top tech companies, globally recognized certification from the International Design Council, lifetime access to course materials and updates, and vibrant community access to network with fellow designers.`;
 
   const courseOutcomes = [
     { icon: faBullseye, title: 'User Research', desc: 'Master user interviews, surveys, and usability testing methodologies to understand user needs' },
@@ -439,7 +419,8 @@ const handleSubmit = async (e) => {
             <meta property="og:description" content="Lorem Ipsum" />
             {/* <meta property="og:url" content="https://yourapp.com" /> */}
       </Helmet>
-
+    <NavigationBar />
+    <BackToTop />
     <div className="uic-page">
       {/* Hero Section */}
       <section className="uic-hero">
@@ -947,6 +928,7 @@ const handleSubmit = async (e) => {
         </div>
       )}
     </div>
+    <LearningFooter />
     </div>
     </>
   );

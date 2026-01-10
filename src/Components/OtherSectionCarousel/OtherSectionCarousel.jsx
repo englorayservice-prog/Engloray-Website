@@ -32,9 +32,9 @@ const OtherSectionCarousel = () => {
     },
     {
       id: 3,
-      title: "Upcoming Course",
+      title: "AI-Powered Branding",
       image: fullStackImage,
-      description: "Java Full Stack Development - Coming Soon",
+      description: "Transform your brand with intelligent design, automation, and data-driven creativity powered by AI.",
       clickable: false,
       overlayText: "COMING SOON"
     }

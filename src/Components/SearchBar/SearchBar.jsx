@@ -637,28 +637,28 @@ const SearchBar = ({ mobile = false }) => {
                                     className="quick-link"
                                     onClick={() => handleResultClick(websiteContent.find(c => c.id === 'graphics-course'))}
                                 >
-                                    <span>🎯</span>
+                                    {/* <span>🎯</span> */}
                                     <span>All Courses</span>
                                 </button>
                                 <button 
                                     className="quick-link"
                                     onClick={() => handleResultClick(websiteContent.find(c => c.id === 'branding-service'))}
                                 >
-                                    <span>🛠️</span>
+                                    {/* <span>🛠️</span> */}
                                     <span>Our Services</span>
                                 </button>
                                 <button 
                                     className="quick-link"
                                     onClick={() => handleResultClick(websiteContent.find(c => c.id === 'contact'))}
                                 >
-                                    <span>📞</span>
+                                    {/* <span>📞</span> */}
                                     <span>Contact Us</span>
                                 </button>
                                 <button 
                                     className="quick-link"
                                     onClick={() => handleResultClick(websiteContent.find(c => c.id === 'portfolio'))}
                                 >
-                                    <span>📁</span>
+                                    {/* <span>📁</span> */}
                                     <span>Portfolio</span>
                                 </button>
                             </div>

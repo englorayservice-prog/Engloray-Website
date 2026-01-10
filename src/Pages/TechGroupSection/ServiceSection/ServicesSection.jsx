@@ -188,6 +188,10 @@ const ServicesSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [hoveredService, setHoveredService] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const isDragging = useRef(false);
+  const startX = useRef(0);
+  const scrollLeft = useRef(0);
+
   const scrollContainerRef = useRef(null);
 
   useEffect(() => {
@@ -285,6 +289,30 @@ const ServicesSection = () => {
     }
   ];
 
+  const handleMouseDown = (e) => {
+  isDragging.current = true;
+  startX.current = e.pageX - scrollContainerRef.current.offsetLeft;
+  scrollLeft.current = scrollContainerRef.current.scrollLeft;
+};
+
+const handleMouseLeave = () => {
+  isDragging.current = false;
+};
+
+const handleMouseUp = () => {
+  isDragging.current = false;
+};
+
+const handleMouseMove = (e) => {
+  if (!isDragging.current) return;
+
+  e.preventDefault();
+  const x = e.pageX - scrollContainerRef.current.offsetLeft;
+  const walk = (x - startX.current) * 1.5; // scroll speed
+  scrollContainerRef.current.scrollLeft = scrollLeft.current - walk;
+};
+
+
   return (
     <section className="services-section" id="serviceSection">
       <div className="services-container">
@@ -297,10 +325,15 @@ const ServicesSection = () => {
         </div>
 
         <div className="services-main-container">
-          <div 
-            className="services-cards-scroll"
-            ref={scrollContainerRef}
-          >
+  <div
+    className="services-cards-scroll"
+    ref={scrollContainerRef}
+    onMouseDown={handleMouseDown}
+    onMouseLeave={handleMouseLeave}
+    onMouseUp={handleMouseUp}
+    onMouseMove={handleMouseMove}
+  >
+
             {services.map((service, index) => (
               <div 
                 key={service.id}

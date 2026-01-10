@@ -2,6 +2,9 @@ import React, { useState, useRef, useEffect } from 'react';
 import './JavaFullStackCourse.css';
 import { submitEnrollment } from "../../Sub Pages/HandleSubmit/HandleSubmit";
 import javaCertificate from '../../../assets/java certifcate.jpeg';
+import NavigationBar from '../../TechLearningSection/NavigationBar/NavigationBar';
+import BackToTop from '../../../Components/BackToTop/BackToTop';
+import LearningFooter from '../../TechLearningSection/LearningFooter/LearningFooter';
 
 
 // FontAwesome imports
@@ -443,7 +446,8 @@ const handleSubmit = async (e) => {
             <meta property="og:description" content="Lorem Ipsum" />
             {/* <meta property="og:url" content="https://yourapp.com" /> */}
         </Helmet>
-
+    <NavigationBar />
+    <BackToTop />
     <div className="jfs-page">
       {/* Hero Section */}
       <section className="jfs-hero">
@@ -953,6 +957,7 @@ const handleSubmit = async (e) => {
         </div>
       )}
     </div>
+    <LearningFooter />
   </div>
   </>
 );

@@ -638,14 +638,14 @@
 
 .otp-team-count-card {
   background: linear-gradient(135deg, 
-    rgba(78, 205, 196, 0.2), 
-    rgba(107, 255, 255, 0.2));
+    rgba(235, 40, 40, 0.2), 
+    rgba(218, 23, 23, 0.2));
   border-radius: 20px;
   padding: 40px 50px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   position: relative;
   overflow: hidden;
-  backdrop-filter: blur(15px);
+  /* backdrop-filter: blur(15px); */
   max-width: 900px;
   margin: 0 auto;
   display: flex;
@@ -663,7 +663,7 @@
   font-size: 5rem;
   flex-shrink: 0;
   animation: otp-icon-bounce 3s ease-in-out infinite;
-  filter: drop-shadow(0 0 15px rgba(78, 205, 196, 0.7));
+  /* filter: drop-shadow(0 0 15px rgba(78, 205, 196, 0.7)); */
   margin-left: 20px;
   display: block !important;
   visibility: visible !important;
@@ -690,21 +690,21 @@
   font-family: 'HEXCO', sans-serif;
   font-size: 6.5rem;
   font-weight: 100;
-  color: #4ecdc4;
+  color:  #d4af37;
   margin-bottom: 0;
   letter-spacing: 4px;
   line-height: 0.9;
-  text-shadow: 
+  /* text-shadow: 
     0 0 30px rgba(78, 205, 196, 0.8),
     0 0 60px rgba(78, 205, 196, 0.5),
     0 0 100px rgba(78, 205, 196, 0.3);
   background: linear-gradient(45deg, #4ecdc4, #ffffff, #4ecdc4);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent; */
   background-clip: text;
   background-size: 200% auto;
-  animation: otp-number-glow 2s ease-in-out infinite alternate, 
-             gradient-shift 3s ease-in-out infinite;
+  /* animation: otp-number-glow 2s ease-in-out infinite alternate, 
+             gradient-shift 3s ease-in-out infinite; */
   display: block;
   position: relative;
   top: -10px;

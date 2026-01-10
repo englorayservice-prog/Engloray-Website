@@ -232,9 +232,9 @@ const VisionMission = () => {
     const elements = [
       { ref: sectionRef, delay: 0 },
       { ref: headerRef, delay: 200 },
-      { ref: visionCardRef, delay: 400 },
-      { ref: missionCardRef, delay: 600 },
-      { ref: valuesRef, delay: 800 },
+      { ref: visionCardRef, delay: 200 },
+      { ref: missionCardRef, delay: 200 },
+      { ref: valuesRef, delay: 200 },
     ];
 
     const observer = new IntersectionObserver(
