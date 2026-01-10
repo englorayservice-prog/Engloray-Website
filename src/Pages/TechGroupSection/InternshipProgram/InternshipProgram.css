@@ -1,0 +1,970 @@
+/* Internship Program Styles */
+.tgi-internship-program {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #bf0413 0%, #f23030 100%);
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.tgi-internship-program::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.05)" points="0,1000 1000,0 1000,1000"/></svg>');
+  background-size: cover;
+}
+
+.tgi-internship-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* ============ FONTAWESOME ICON STYLING ============ */
+
+/* Floating Arrow */
+.tgi-floating-arrow {
+  position: fixed;
+  left: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 25px rgba(191, 4, 19, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  animation: tgi-floatArrow 3s ease-in-out infinite;
+  backdrop-filter: blur(10px);
+}
+
+.tgi-floating-arrow:hover {
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 15px 35px rgba(191, 4, 19, 0.4);
+}
+
+.tgi-arrow-symbol {
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tgi-floating-arrow:hover .tgi-arrow-symbol {
+  transform: translateX(3px);
+}
+
+.tgi-arrow-symbol svg {
+  font-size: 1.5rem;
+  color: #bf0413;
+  transition: all 0.3s ease;
+}
+
+.tgi-floating-arrow:hover .tgi-arrow-symbol svg {
+  transform: translateX(3px);
+}
+
+.tgi-arrow-glow {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.5s ease;
+  border-radius: 50%;
+}
+
+.tgi-floating-arrow:hover .tgi-arrow-glow {
+  left: 100%;
+}
+
+/* Header Styles - Centered */
+.tgi-internship-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  animation: tgi-fadeInUp 0.8s ease-out;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tgi-benefits-main-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 25px;
+  font-size: 0.70rem;
+  font-weight: 100;
+  font-family: 'Pavlet';
+  margin-bottom: 1rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  animation: tgi-pulse 2s infinite;
+}
+
+.tgi-internship-title {
+  font-size: 3rem;
+  font-weight: 100;
+  font-family: 'HEXCO';
+  color: white;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.tgi-internship-subtitle {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: 'Aldrich';
+  font-weight: 100;
+}
+
+/* View Programs Button with FontAwesome Icon */
+.tgi-view-programs-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 100;
+  font-family: 'HEXCO';
+  cursor: pointer;
+  transition: all 0.4s ease;
+  margin-top: 2rem;
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.tgi-view-programs-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(191, 4, 19, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.tgi-view-programs-btn:hover .tgi-btn-arrow {
+  transform: translateX(5px);
+}
+
+.tgi-btn-arrow {
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.tgi-btn-arrow svg {
+  font-size: 1rem;
+  color: #ffffff;
+  transition: transform 0.3s ease;
+}
+
+.tgi-view-programs-btn:hover .tgi-btn-arrow svg {
+  transform: translateX(5px);
+}
+
+/* Add glow effect on hover */
+.tgi-view-programs-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+  z-index: -1;
+}
+
+.tgi-view-programs-btn:hover::before {
+  left: 100%;
+}
+
+/* Section Titles */
+.tgi-section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 100;
+  font-family: 'HEXCO';
+  color: white;
+  margin-bottom: 3rem;
+  position: relative;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.tgi-section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 2px;
+  animation: tgi-widthGrow 2s ease-in-out infinite;
+}
+
+/* Roles Section - 4 Cards in a Row */
+.tgi-roles-section {
+  margin-bottom: 6rem;
+  animation: tgi-fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.tgi-roles-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.tgi-role-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  transition: all 0.4s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: tgi-fadeInUp 0.6s ease-out forwards;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tgi-role-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #bf0413, #f23030);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.tgi-role-card:hover::before {
+  transform: scaleX(1);
+}
+
+.tgi-role-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+  transition: all 0.6s ease;
+  transform: translate(-50%, -50%);
+}
+
+.tgi-role-card:hover .tgi-role-glow {
+  width: 200px;
+  height: 200px;
+}
+
+.tgi-role-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 20px 40px rgba(191, 4, 19, 0.2);
+}
+
+/* Role Icon Container for FontAwesome Icons */
+.tgi-role-icon {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem auto;
+  transition: all 0.4s ease;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.tgi-role-icon svg {
+  transition: all 0.4s ease;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.tgi-role-card:hover .tgi-role-icon {
+  transform: scale(1.1) rotate(5deg);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.tgi-role-card:hover .tgi-role-icon svg {
+  transform: scale(1.1);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+/* Specific Icon Animations on Hover */
+.tgi-role-card:nth-child(1):hover .fa-palette {
+  animation: tgi-paletteSpin 0.8s ease;
+}
+
+.tgi-role-card:nth-child(2):hover .fa-desktop {
+  animation: tgi-desktopPulse 0.8s ease;
+}
+
+.tgi-role-card:nth-child(3):hover .fa-user-check {
+  animation: tgi-userCheckBounce 0.8s ease;
+}
+
+.tgi-role-card:nth-child(4):hover .fa-code {
+  animation: tgi-codeTyping 0.8s ease;
+}
+
+@keyframes tgi-paletteSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes tgi-desktopPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+@keyframes tgi-userCheckBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes tgi-codeTyping {
+  0% { opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { opacity: 0.5; }
+}
+
+.tgi-role-title {
+  font-size: 1rem;
+  font-weight: 100;
+  font-family: 'HEXCO';
+  color: white;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.tgi-role-card:hover .tgi-role-title {
+  color: #ffd700;
+}
+
+.tgi-role-description {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+  flex-grow: 1;
+  font-family: 'Aldrich';
+}
+
+.tgi-click-indicator {
+  color: #ffd700;
+  font-size: 0.85rem;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  font-family: 'Aldrich';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.tgi-role-card:hover .tgi-click-indicator {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tgi-click-indicator svg {
+  font-size: 0.9rem;
+  transition: transform 0.3s ease;
+}
+
+.tgi-role-card:hover .tgi-click-indicator svg {
+  transform: translateX(5px);
+}
+
+.tgi-role-hover-effect {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.tgi-role-card:hover .tgi-role-hover-effect {
+  left: 100%;
+}
+
+/* Form Modal */
+.tgi-form-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: tgi-fadeIn 0.3s ease-out;
+}
+
+.tgi-form-modal {
+  background: white;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: tgi-modalSlideUp 0.4s ease-out;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+.tgi-modal-header {
+  background: linear-gradient(135deg, #bf0413, #f23030);
+  padding: 2rem;
+  border-radius: 20px 20px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.tgi-modal-title {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 100;
+  font-family: 'HEXCO';
+  margin: 0;
+}
+
+.tgi-close-modal {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tgi-close-modal:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.tgi-modal-content {
+  padding: 2rem;
+}
+
+/* Form Styles */
+.tgi-enrollment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.tgi-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.tgi-form-group label {
+  font-weight: 100;
+  font-family: 'HEXCO';
+  color: #4a5568;
+  font-size: 0.85rem;
+}
+
+.tgi-form-group input,
+.tgi-form-group select {
+  padding: 1rem 1.5rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: white;
+  font-family: 'Aldrich';
+}
+
+.tgi-form-group input:focus,
+.tgi-form-group select:focus {
+  outline: none;
+  border-color: #bf0413;
+  box-shadow: 0 0 0 3px rgba(191, 4, 19, 0.1);
+  transform: translateY(-2px);
+}
+
+.tgi-form-group input::placeholder {
+  color: #a0aec0;
+}
+
+.tgi-form-group option {
+  font-family: 'Aldrich';
+}
+
+/* Radio Group */
+.tgi-radio-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.tgi-radio-option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  flex: 1;
+}
+
+.tgi-radio-option:hover {
+  border-color: #bf0413;
+}
+
+.tgi-radio-option input[type="radio"] {
+  display: none;
+}
+
+.tgi-radio-custom {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #cbd5e0;
+  border-radius: 50%;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.tgi-radio-option input[type="radio"]:checked + .tgi-radio-custom {
+  border-color: #bf0413;
+  background: #bf0413;
+}
+
+.tgi-radio-option input[type="radio"]:checked + .tgi-radio-custom::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+}
+
+.tgi-radio-option input[type="radio"]:checked ~ span {
+  color: #bf0413;
+  font-weight: 600;
+}
+
+/* File Upload with FontAwesome Icon */
+.tgi-file-upload {
+  position: relative;
+}
+
+.tgi-file-upload input[type="file"] {
+  position: absolute;
+  left: -9999px;
+}
+
+.tgi-file-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  border: 2px dashed #cbd5e0;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #f7fafc;
+  font-size: 0.9rem;
+}
+
+.tgi-file-label:hover {
+  border-color: #bf0413;
+  background: #fed7d7;
+}
+
+.tgi-file-icon {
+  display: flex;
+  align-items: center;
+}
+
+.tgi-file-icon svg {
+  font-size: 1rem;
+  color: #666;
+  transition: all 0.3s ease;
+}
+
+.tgi-file-upload:hover .tgi-file-icon svg {
+  transform: rotate(-15deg);
+}
+
+/* Submit Button */
+.tgi-submit-btn {
+  background: linear-gradient(135deg, #bf0413, #f23030);
+  color: white;
+  border: none;
+  padding: 1.25rem 2rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 100;
+  font-family: 'HEXCO';
+  cursor: pointer;
+  transition: all 0.4s ease;
+  margin-top: 1rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(191, 4, 19, 0.3);
+  width: 100%;
+}
+
+.tgi-submit-btn span {
+  font-family: 'HEXCO';
+}
+
+.tgi-submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(191, 4, 19, 0.4);
+}
+
+/* Success Message with FontAwesome Icon */
+.tgi-success-message {
+  text-align: center;
+  padding: 3rem 2rem;
+  animation: tgi-scaleIn 0.6s ease-out;
+}
+
+.tgi-success-icon {
+  margin-bottom: 1.5rem;
+  animation: tgi-bounceIn 0.8s ease-out;
+}
+
+.tgi-success-icon svg {
+  font-size: 3rem;
+  color: #06D6A0;
+  filter: drop-shadow(0 2px 4px rgba(6, 214, 160, 0.3));
+}
+
+.tgi-success-message h4 {
+  font-size: 1.5rem;
+  font-weight: 100;
+  color: #2d3748;
+  margin-bottom: 1rem;
+  font-family: 'HEXCO';
+}
+
+.tgi-success-message p {
+  color: #718096;
+  line-height: 1.6;
+  font-family: 'Aldrich';
+}
+
+/* Animations */
+@keyframes tgi-fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes tgi-fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes tgi-modalSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes tgi-scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes tgi-bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes tgi-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+@keyframes tgi-floatArrow {
+  0%, 100% {
+    transform: translateY(-50%) translateX(0);
+  }
+  50% {
+    transform: translateY(-50%) translateX(5px);
+  }
+}
+
+@keyframes tgi-widthGrow {
+  0%, 100% {
+    width: 60px;
+  }
+  50% {
+    width: 80px;
+  }
+}
+
+/* Floating Arrow Icon Animation */
+.tgi-floating-arrow .tgi-arrow-symbol svg {
+  animation: tgi-iconFloat 3s ease-in-out infinite;
+}
+
+@keyframes tgi-iconFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* ============ RESPONSIVE DESIGN ============ */
+
+@media (max-width: 1200px) {
+  .tgi-roles-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .tgi-internship-program {
+    padding: 60px 0;
+  }
+  
+  .tgi-internship-container {
+    padding: 0 1.5rem;
+  }
+  
+  .tgi-floating-arrow {
+    left: 15px;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .tgi-arrow-symbol svg {
+    font-size: 1.3rem;
+  }
+  
+  .tgi-internship-title {
+    font-size: 2.5rem;
+  }
+  
+  .tgi-section-title {
+    font-size: 2rem;
+  }
+  
+  .tgi-roles-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .tgi-role-icon {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .tgi-role-icon svg {
+    font-size: 2rem;
+  }
+  
+  .tgi-form-modal {
+    width: 95%;
+    margin: 1rem;
+  }
+  
+  .tgi-modal-header {
+    padding: 1.5rem;
+  }
+  
+  .tgi-modal-content {
+    padding: 1.5rem;
+  }
+  
+  .tgi-radio-group {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .tgi-role-card {
+    padding: 2rem 1rem;
+  }
+  
+  /* Responsive for View Programs Button */
+  .tgi-view-programs-btn {
+    padding: 10px 24px;
+    font-size: 0.95rem;
+    margin-top: 1.5rem;
+  }
+  
+  .tgi-btn-arrow svg {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tgi-internship-title {
+    font-size: 2rem;
+  }
+  
+  .tgi-section-title {
+    font-size: 1.8rem;
+  }
+  
+  .tgi-modal-header {
+    padding: 1.25rem;
+  }
+  
+  .tgi-modal-content {
+    padding: 1.25rem;
+  }
+  
+  .tgi-form-group input,
+  .tgi-form-group select {
+    padding: 0.875rem 1.25rem;
+  }
+  
+  .tgi-submit-btn {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+  }
+  
+  .tgi-floating-arrow {
+    left: 10px;
+    width: 45px;
+    height: 45px;
+  }
+  
+  .tgi-arrow-symbol svg {
+    font-size: 1.1rem;
+  }
+  
+  .tgi-role-icon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .tgi-role-icon svg {
+    font-size: 1.8rem;
+  }
+  
+  /* Responsive for View Programs Button */
+  .tgi-view-programs-btn {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+  }
+  
+  .tgi-btn-arrow svg {
+    font-size: 0.8rem;
+  }
+  
+  .tgi-success-icon svg {
+    font-size: 2.5rem;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .tgi-internship-program * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

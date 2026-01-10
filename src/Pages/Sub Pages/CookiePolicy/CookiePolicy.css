@@ -1,0 +1,866 @@
+/* CookiesPolicy.css - Red Theme with Blood Wave Design */
+
+/* Base styles */
+.copa-cookies-container {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background: linear-gradient(to bottom, #fef2f2 0%, #fef2f2 100%);
+}
+
+/* Header Section - Deep Red */
+.copa-cookies-header-section {
+  background: linear-gradient(135deg, #f61c1c 0%, #571212 100%);
+  padding: 60px 0;
+  border-bottom: 3px solid #dc2626;
+  position: relative;
+  overflow: hidden;
+}
+
+.copa-cookies-header-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(220, 38, 38, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(153, 27, 27, 0.2) 0%, transparent 50%);
+  animation: pulse 15s infinite alternate;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.3; }
+  100% { opacity: 0.7; }
+}
+
+.copa-cookies-header {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.copa-cookies-header h1 {
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: -0.5px;
+}
+
+.copa-cookies-header h1::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: #ef4444;
+  margin: 20px auto;
+  border-radius: 2px;
+}
+
+.copa-last-updated {
+  font-size: 1.1rem;
+  color: #fca5a5;
+  font-style: italic;
+  letter-spacing: 0.5px;
+}
+
+/* Main Content Section */
+.copa-cookies-content-section {
+  background: linear-gradient(to bottom, #ffffff 0%, #fef2f2 90%, #450a0a 100%);
+  padding: 60px 0 150px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Blood Wave Effect */
+.copa-wave-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Main blood wave */
+.copa-wave-layer-1 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  height: 150px;
+  background: #7f1d1d;
+  animation: wave-animation 25s linear infinite;
+  opacity: 0.9;
+  clip-path: polygon(
+    0% 100%,
+    0% 70%,
+    1% 69%,
+    2% 68%,
+    3% 67%,
+    4% 66%,
+    5% 65%,
+    6% 64%,
+    7% 63%,
+    8% 62%,
+    9% 61%,
+    10% 60%,
+    12% 59%,
+    14% 58%,
+    16% 57%,
+    18% 56%,
+    20% 55%,
+    22% 54%,
+    24% 53%,
+    26% 52%,
+    28% 51%,
+    30% 50%,
+    32% 51%,
+    34% 52%,
+    36% 53%,
+    38% 54%,
+    40% 55%,
+    42% 56%,
+    44% 57%,
+    46% 58%,
+    48% 59%,
+    50% 60%,
+    52% 61%,
+    54% 62%,
+    56% 63%,
+    58% 64%,
+    60% 65%,
+    62% 66%,
+    64% 67%,
+    66% 68%,
+    68% 69%,
+    70% 70%,
+    72% 71%,
+    74% 72%,
+    76% 73%,
+    78% 74%,
+    80% 75%,
+    82% 76%,
+    84% 77%,
+    86% 78%,
+    88% 79%,
+    90% 80%,
+    92% 81%,
+    94% 82%,
+    96% 83%,
+    98% 84%,
+    100% 85%,
+    100% 100%
+  );
+}
+
+/* Secondary blood wave */
+.copa-wave-layer-2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  height: 130px;
+  background: #991b1b;
+  animation: wave-animation 20s linear infinite;
+  animation-delay: -5s;
+  opacity: 0.8;
+  clip-path: polygon(
+    0% 100%,
+    0% 75%,
+    1% 74%,
+    2% 73%,
+    3% 72%,
+    4% 71%,
+    5% 70%,
+    6% 69%,
+    7% 68%,
+    8% 67%,
+    9% 66%,
+    10% 65%,
+    12% 64%,
+    14% 63%,
+    16% 62%,
+    18% 61%,
+    20% 60%,
+    22% 59%,
+    24% 58%,
+    26% 57%,
+    28% 56%,
+    30% 55%,
+    32% 56%,
+    34% 57%,
+    36% 58%,
+    38% 59%,
+    40% 60%,
+    42% 61%,
+    44% 62%,
+    46% 63%,
+    48% 64%,
+    50% 65%,
+    52% 66%,
+    54% 67%,
+    56% 68%,
+    58% 69%,
+    60% 70%,
+    62% 71%,
+    64% 72%,
+    66% 73%,
+    68% 74%,
+    70% 75%,
+    72% 76%,
+    74% 77%,
+    76% 78%,
+    78% 79%,
+    80% 80%,
+    82% 81%,
+    84% 82%,
+    86% 83%,
+    88% 84%,
+    90% 85%,
+    92% 86%,
+    94% 87%,
+    96% 88%,
+    98% 89%,
+    100% 90%,
+    100% 100%
+  );
+}
+
+/* Tertiary blood wave */
+.copa-wave-layer-3 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  height: 110px;
+  background: #b91c1c;
+  animation: wave-animation 30s linear infinite;
+  animation-delay: -10s;
+  opacity: 0.7;
+  clip-path: polygon(
+    0% 100%,
+    0% 80%,
+    2% 79%,
+    4% 78%,
+    6% 77%,
+    8% 76%,
+    10% 75%,
+    12% 74%,
+    14% 73%,
+    16% 72%,
+    18% 71%,
+    20% 70%,
+    22% 69%,
+    24% 68%,
+    26% 67%,
+    28% 66%,
+    30% 65%,
+    32% 64%,
+    34% 63%,
+    36% 62%,
+    38% 61%,
+    40% 60%,
+    42% 61%,
+    44% 62%,
+    46% 63%,
+    48% 64%,
+    50% 65%,
+    52% 66%,
+    54% 67%,
+    56% 68%,
+    58% 69%,
+    60% 70%,
+    62% 71%,
+    64% 72%,
+    66% 73%,
+    68% 74%,
+    70% 75%,
+    72% 76%,
+    74% 77%,
+    76% 78%,
+    78% 79%,
+    80% 80%,
+    82% 81%,
+    84% 82%,
+    86% 83%,
+    88% 84%,
+    90% 85%,
+    92% 86%,
+    94% 87%,
+    96% 88%,
+    98% 89%,
+    100% 90%,
+    100% 100%
+  );
+}
+
+@keyframes wave-animation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Add floating particles for blood cell effect */
+.copa-wave-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(3px 3px at 10% 20%, rgba(239, 68, 68, 0.6) 50%, transparent 100%),
+    radial-gradient(4px 4px at 30% 40%, rgba(220, 38, 38, 0.7) 50%, transparent 100%),
+    radial-gradient(2px 2px at 50% 60%, rgba(239, 68, 68, 0.5) 50%, transparent 100%),
+    radial-gradient(3px 3px at 70% 30%, rgba(220, 38, 38, 0.6) 50%, transparent 100%),
+    radial-gradient(4px 4px at 90% 50%, rgba(239, 68, 68, 0.7) 50%, transparent 100%);
+  animation: float 20s infinite linear;
+  z-index: 2;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.5;
+  }
+  25% {
+    transform: translateY(-10px) rotate(90deg);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+    opacity: 0.5;
+  }
+  75% {
+    transform: translateY(-10px) rotate(270deg);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(0) rotate(360deg);
+    opacity: 0.5;
+  }
+}
+
+.copa-cookies-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.copa-intro-text {
+  margin-bottom: 50px;
+  background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+  padding: 40px;
+  border-radius: 12px;
+  border-left: 6px solid #dc2626;
+  box-shadow: 0 10px 25px rgba(220, 38, 38, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.copa-intro-text::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(239, 68, 68, 0.1) 0%, transparent 70%);
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.copa-intro-text p {
+  font-size: 1.15rem;
+  margin-bottom: 20px;
+  color: #7f1d1d;
+  line-height: 1.8;
+  position: relative;
+  z-index: 2;
+}
+
+/* Sections container */
+.copa-sections-container {
+  margin-bottom: 60px;
+}
+
+.copa-cookies-section {
+  margin-bottom: 30px;
+  padding: 35px;
+  background: linear-gradient(135deg, #ffffff 0%, #fef2f2 100%);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(185, 28, 28, 0.1);
+  border-left: 4px solid #dc2626;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  padding-left: 80px;
+  border-top: 1px solid #fee2e2;
+}
+
+.copa-cookies-section:hover {
+  transform: translateY(-5px) scale(1.005);
+  box-shadow: 0 15px 35px rgba(220, 38, 38, 0.2);
+  border-left-color: #ef4444;
+  background: linear-gradient(135deg, #ffffff 0%, #fde8e8 100%);
+}
+
+.copa-cookies-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, transparent 0%, rgba(239, 68, 68, 0.05) 100%);
+  border-radius: 0 12px 0 0;
+  pointer-events: none;
+}
+
+.copa-section-number {
+  position: absolute;
+  left: 25px;
+  top: 35px;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #dc2626;
+  min-width: 40px;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.copa-section-content h2 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #7f1d1d;
+  margin-bottom: 15px;
+  letter-spacing: -0.3px;
+}
+
+.copa-section-content p {
+  font-size: 1.05rem;
+  color: #991b1b;
+  line-height: 1.8;
+  letter-spacing: 0.2px;
+}
+
+/* Contact Section */
+.copa-contact-section {
+  background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+  padding: 45px;
+  border-radius: 12px;
+  margin-top: 50px;
+  border-top: 4px solid #dc2626;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 10px 25px rgba(220, 38, 38, 0.15);
+  overflow: hidden;
+}
+
+.copa-contact-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #ef4444, transparent);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200px 0; }
+  100% { background-position: calc(200px + 100%) 0; }
+}
+
+.copa-contact-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #7f1d1d;
+  margin-bottom: 25px;
+  position: relative;
+  display: inline-block;
+}
+
+.copa-contact-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: #ef4444;
+  border-radius: 2px;
+}
+
+.copa-contact-section p {
+  font-size: 1.1rem;
+  color: #991b1b;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.copa-contact-details {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 25px;
+  border-radius: 8px;
+  border-left: 3px solid #dc2626;
+}
+
+.copa-contact-details p {
+  margin-bottom: 15px;
+  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.copa-contact-details strong {
+  color: #7f1d1d;
+  min-width: 120px;
+  font-weight: 600;
+}
+
+/* Footer Section - Dark Red */
+.copa-cookies-footer-section {
+  background: linear-gradient(135deg, #450a0a 0%, #7f1d1d 100%);
+  color: #fff;
+  padding: 60px 0 30px;
+  margin-top: -1px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.copa-cookies-footer-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(239, 68, 68, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(220, 38, 38, 0.1) 0%, transparent 50%);
+  animation: pulse 10s infinite alternate;
+}
+
+.copa-cookies-footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.copa-footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.copa-footer-left .copa-copyright {
+  font-size: 1rem;
+  color: #fca5a5;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.copa-footer-nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.copa-footer-link {
+  color: #fca5a5;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 8px 16px;
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+}
+
+.copa-footer-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(239, 68, 68, 0.3), transparent);
+  transition: left 0.6s;
+}
+
+.copa-footer-link:hover::before {
+  left: 100%;
+}
+
+.copa-footer-link:hover {
+  color: #fff;
+  background: rgba(239, 68, 68, 0.2);
+  transform: translateY(-2px);
+}
+
+.copa-footer-link.active {
+  color: #fff;
+  background: rgba(239, 68, 68, 0.3);
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+/* Company Branding at Bottom */
+.copa-footer-bottom {
+  text-align: center;
+  padding-top: 30px;
+  border-top: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.copa-footer-branding {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.copa-company-logo {
+  font-size: 1.5rem;
+  font-weight: 100;
+  color: #fff;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 10px 0;
+  font-family: 'HEXCO';
+}
+
+.copa-company-address {
+  font-size: 0.95rem;
+  color: #fca5a5;
+  line-height: 1.5;
+  text-align: center;
+  margin: 0;
+  font-style: italic;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .copa-cookies-header h1 {
+    font-size: 2.4rem;
+  }
+  
+  .copa-cookies-section {
+    padding: 25px 25px 25px 70px;
+  }
+  
+  .copa-section-number {
+    left: 20px;
+    top: 25px;
+    font-size: 1.8rem;
+  }
+  
+  .copa-footer-content {
+    flex-direction: column;
+    gap: 25px;
+    text-align: center;
+  }
+  
+  .copa-footer-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .copa-contact-section {
+    padding: 30px;
+  }
+  
+  .copa-intro-text {
+    padding: 30px;
+  }
+  
+  .copa-wave-container {
+    height: 100px;
+  }
+  
+  .copa-wave-layer-1 {
+    height: 100px;
+    animation-duration: 20s;
+    clip-path: polygon(
+      0% 100%,
+      0% 80%,
+      5% 79%,
+      10% 78%,
+      15% 77%,
+      20% 76%,
+      25% 75%,
+      30% 74%,
+      35% 73%,
+      40% 72%,
+      45% 71%,
+      50% 70%,
+      55% 71%,
+      60% 72%,
+      65% 73%,
+      70% 74%,
+      75% 75%,
+      80% 76%,
+      85% 77%,
+      90% 78%,
+      95% 79%,
+      100% 80%,
+      100% 100%
+    );
+  }
+  
+  .copa-wave-layer-2 {
+    height: 90px;
+  }
+  
+  .copa-wave-layer-3 {
+    height: 80px;
+  }
+  
+  .copa-cookies-content-section {
+    padding-bottom: 100px;
+  }
+  
+  .copa-contact-details p {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .copa-cookies-header h1 {
+    font-size: 2rem;
+  }
+  
+  .copa-cookies-section {
+    padding: 20px 20px 20px 60px;
+  }
+  
+  .copa-section-number {
+    left: 15px;
+    top: 20px;
+    font-size: 1.6rem;
+  }
+  
+  .copa-section-content h2 {
+    font-size: 1.4rem;
+  }
+  
+  .copa-footer-nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .copa-footer-link {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .copa-wave-container {
+    height: 80px;
+  }
+  
+  .copa-wave-layer-1 {
+    height: 80px;
+    animation: wave-animation 15s linear infinite;
+    clip-path: polygon(
+      0% 100%,
+      0% 85%,
+      10% 83%,
+      20% 81%,
+      30% 79%,
+      40% 77%,
+      50% 75%,
+      60% 77%,
+      70% 79%,
+      80% 81%,
+      90% 83%,
+      100% 85%,
+      100% 100%
+    );
+  }
+  
+  .copa-wave-layer-2,
+  .copa-wave-layer-3 {
+    display: none;
+  }
+  
+  .copa-cookies-content-section {
+    padding-bottom: 80px;
+  }
+  
+  .copa-company-logo {
+    font-size: 1.8rem;
+  }
+}
+
+/* Animation for section entry */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.copa-cookies-section {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.copa-cookies-section:nth-child(1) { animation-delay: 0.1s; }
+.copa-cookies-section:nth-child(2) { animation-delay: 0.2s; }
+.copa-cookies-section:nth-child(3) { animation-delay: 0.3s; }
+.copa-cookies-section:nth-child(4) { animation-delay: 0.4s; }
+.copa-cookies-section:nth-child(5) { animation-delay: 0.5s; }
+.copa-cookies-section:nth-child(6) { animation-delay: 0.6s; }
+.copa-cookies-section:nth-child(7) { animation-delay: 0.7s; }
+.copa-cookies-section:nth-child(8) { animation-delay: 0.8s; }
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+  background-color: rgba(239, 68, 68, 0.3);
+  color: #7f1d1d;
+}
+

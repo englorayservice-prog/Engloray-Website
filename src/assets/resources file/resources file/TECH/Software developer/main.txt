@@ -1,0 +1,7 @@
+Core Programming Languages & Development Tools
+Backend Frameworks & Application Architecture
+Benefits for Software Developers 
+Security, Performance & Code Quality 
+Databases, APIs & Data Handling locked
+Cloud, DevOps & Deployment Support locked
+Learning, Growth & Career Support locked

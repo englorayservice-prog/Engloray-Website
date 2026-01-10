@@ -1,0 +1,268 @@
+.testimonials-section {
+  padding: 80px 0;
+  background: white;
+  color: #1F2937;
+  position: relative;
+}
+
+.testimonials-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #2563eb, transparent);
+}
+
+.testimonials-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.testimonials-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+/* FIX: This is the correct selector for your h2 */
+.testimonials-header h2 {
+  font-size: 3rem;
+  font-weight: 100;
+  margin-bottom: 16px;
+  font-family: 'HEXCO', sans-serif;
+  /* background: linear-gradient(135deg, #3B82F6, #8B5CF6); */
+  /* -webkit-background-clip: text; */
+  /* -webkit-text-fill-color: transparent; */
+  /* background-clip: text; */
+  /* color: #da0d0d !important; */
+  display: block;
+  line-height: 1.2;
+}
+
+.testimonials-header p {
+  font-size: 1.2rem;
+  color: #6B7280;
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: 'Aldrich';
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  align-items: stretch;
+}
+
+.testimonial-card {
+  background: #F9FAFB;
+  border-radius: 20px;
+  padding: 30px;
+  border: 1px solid #E5E7EB;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  border-color: transparent;
+}
+
+.testimonial-card.client:hover {
+  background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+  color: white;
+}
+
+.testimonial-card.client:hover .testimonial-content p,
+.testimonial-card.client:hover .testimonial-author h4,
+.testimonial-card.client:hover .testimonial-author span {
+  color: white;
+}
+
+.testimonial-card.client:hover .testimonial-rating {
+  color: #FFD700;
+}
+
+.testimonial-card.student:hover {
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+  color: white;
+}
+
+.testimonial-card.student:hover .testimonial-content p,
+.testimonial-card.student:hover .testimonial-author h4,
+.testimonial-card.student:hover .testimonial-author span {
+  color: white;
+}
+
+.testimonial-card.student:hover .testimonial-rating {
+  color: #FFD700;
+}
+
+.testimonial-card:hover:not(.client):not(.student) {
+  background: linear-gradient(135deg, #2563eb 0%, #1D4ED8 100%);
+  color: white;
+}
+
+.testimonial-card:hover:not(.client):not(.student) .testimonial-content p,
+.testimonial-card:hover:not(.client):not(.student) .testimonial-author h4,
+.testimonial-card:hover:not(.client):not(.student) .testimonial-author span {
+  color: white;
+}
+
+.testimonial-card:hover:not(.client):not(.student) .testimonial-rating {
+  color: #FFD700;
+}
+
+.testimonial-card.client::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: #10B981;
+  transition: all 0.3s ease;
+}
+
+.testimonial-card.student::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: #F59E0B;
+  transition: all 0.3s ease;
+}
+
+.testimonial-card:hover::before {
+  width: 6px;
+  opacity: 0.9;
+}
+
+.testimonial-content {
+  flex: 1;
+  margin-bottom: 20px;
+}
+
+.testimonial-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-style: italic;
+  color: #4B5563;
+  transition: color 0.3s ease;
+  font-family: 'Aldrich';
+}
+
+.testimonial-rating {
+  color: #F59E0B;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  transition: color 0.3s ease;
+}
+
+.testimonial-author h4 {
+  font-size: 1.2rem;
+  font-weight: 100;
+  margin-bottom: 5px;
+  color: #1F2937;
+  transition: color 0.3s ease;
+  font-family: 'Aldrich';
+}
+
+.testimonial-author span {
+  color: #6B7280;
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+  font-family: 'Aldrich';
+}
+
+.testimonial-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.testimonial-badge.client {
+  background: #10B981;
+  color: white;
+  font-family: 'Aldrich';
+}
+
+.testimonial-badge.student {
+  background: #F59E0B;
+  color: white;
+  font-family: 'Aldrich';
+}
+
+.testimonial-card.client:hover .testimonial-badge.client {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.testimonial-card.student:hover .testimonial-badge.student {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonials-section {
+    padding: 60px 0;
+  }
+  
+  .testimonials-header h2 {
+    font-size: 2.2rem;
+  }
+  
+  .testimonials-header p {
+    font-size: 1.1rem;
+  }
+  
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .testimonial-card {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonials-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .testimonial-content p {
+    font-size: 1rem;
+  }
+  
+  .testimonial-card {
+    padding: 20px;
+  }
+}

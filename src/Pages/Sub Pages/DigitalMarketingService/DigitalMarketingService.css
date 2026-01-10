@@ -1,0 +1,1118 @@
+/* Digital Marketing Page Styles - Purple/Blue Theme - UPDATED WITH IMAGE EXPANSION */
+.dima-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+/* Hero Section - Updated with Digital Marketing theme */
+.dima-hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #1a0b2e 0%, #0d1b3e 100%);
+}
+
+.dima-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.4;
+    animation: dimaBgZoom 20s ease-in-out infinite;
+}
+
+@keyframes dimaBgZoom {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.dima-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    animation: dimaOverlayFade 3s ease-in-out infinite alternate;
+}
+
+@keyframes dimaOverlayFade {
+    0% {
+        background: rgba(0, 0, 0, 0.4);
+    }
+    100% {
+        background: rgba(0, 0, 0, 0.6);
+    }
+}
+
+/* Updated Content Box */
+.dima-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 900px;
+    width: 90%;
+    padding: 60px 50px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: dimaFadeInUp 0.8s ease-out;
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(0, 150, 255, 0.15) inset;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.dima-hero-content-inner {
+    width: 100%;
+    max-width: 800px;
+    padding: 0;
+}
+
+@keyframes dimaFadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Badge with beat animation - Blue/Teal Theme */
+.dima-hero-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #00b4d8, #0077b6);
+    color: white;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-family: 'Aldrich', sans-serif;
+    animation: dimaBadgeBeat 2s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 180, 216, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+@keyframes dimaBadgeBeat {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 8px 25px rgba(0, 180, 216, 0.3);
+    }
+    15% {
+        transform: scale(1.05);
+        box-shadow: 0 12px 35px rgba(0, 180, 216, 0.4);
+    }
+    30% {
+        transform: scale(1);
+        box-shadow: 0 8px 25px rgba(0, 180, 216, 0.3);
+    }
+    45% {
+        transform: scale(1.03);
+        box-shadow: 0 10px 30px rgba(0, 180, 216, 0.35);
+    }
+    60% {
+        transform: scale(1);
+        box-shadow: 0 8px 25px rgba(0, 180, 216, 0.3);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 8px 25px rgba(0, 180, 216, 0.3);
+    }
+}
+
+.dima-hero-badge::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, #00b4d8, #0077b6, #00b4d8);
+    border-radius: 32px;
+    z-index: -1;
+    opacity: 0;
+    animation: dimaBadgeGlow 3s ease-in-out infinite;
+}
+
+@keyframes dimaBadgeGlow {
+    0%, 100% {
+        opacity: 0;
+        filter: blur(5px);
+    }
+    50% {
+        opacity: 0.7;
+        filter: blur(10px);
+    }
+}
+
+.dima-hero-title {
+    font-size: 3.2rem;
+    font-weight: 100;
+    background: linear-gradient(135deg, #00b4d8, #90e0ef);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    font-family: 'HEXCO', sans-serif;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.dima-hero-subtitle {
+    font-size: 1.4rem;
+    color: #caf0f8;
+    margin-bottom: 25px;
+    line-height: 1.6;
+    font-family: 'Aldrich', sans-serif;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+.dima-hero-description {
+    font-size: 1.1rem;
+    color: #ade8f4;
+    line-height: 1.8;
+    margin-bottom: 35px;
+    font-family: 'Aldrich', sans-serif;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.dima-tech-stack {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.dima-tech-item {
+    background: rgba(0, 180, 216, 0.1);
+    color: #90e0ef;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    border: 1px solid rgba(0, 180, 216, 0.2);
+    font-family: 'Aldrich', sans-serif;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.dima-tech-item:hover {
+    transform: translateY(-3px);
+    background: rgba(0, 180, 216, 0.2);
+    box-shadow: 0 5px 15px rgba(0, 180, 216, 0.2);
+}
+
+/* About Section - UPDATED with image expansion */
+.dima-about-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    position: relative;
+}
+
+.dima-about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.dima-about-text {
+    padding-right: 40px;
+}
+
+.dima-about-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a0b2e;
+    margin-bottom: 20px;
+    position: relative;
+    font-family: 'HEXCO', sans-serif;
+}
+
+.dima-about-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(135deg, #00b4d8, #0077b6);
+    border-radius: 2px;
+}
+
+.dima-about-description {
+    font-size: 1.1rem;
+    color: #424242;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    font-family: 'Aldrich', sans-serif;
+}
+
+/* Read More Button - Blue Theme */
+.dima-read-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #00b4d8, #0077b6);
+    color: white;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Aldrich', sans-serif;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 20px rgba(0, 180, 216, 0.2);
+}
+
+.dima-read-more-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(0, 180, 216, 0.3);
+}
+
+.dima-arrow {
+    transition: transform 0.3s ease;
+}
+
+.dima-read-more-btn:hover .dima-arrow {
+    transform: translateX(5px);
+}
+
+.dima-read-more-btn.expanded .dima-arrow {
+    transform: rotate(180deg);
+}
+
+/* Expanded Content */
+.dima-expanded-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dima-expanded-content.expanded {
+    max-height: 2500px;
+    animation: dimaFadeInExpand 0.5s ease-out;
+}
+
+@keyframes dimaFadeInExpand {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.dima-expanded-paragraphs {
+    font-family: 'Aldrich', sans-serif;
+}
+
+.dima-expanded-paragraphs p {
+    font-size: 1.05rem;
+    color: #424242;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    border-left: 3px solid #00b4d8;
+    animation: dimaParagraphSlide 0.5s ease-out;
+    padding: 15px 20px;
+    background: rgba(0, 180, 216, 0.03);
+    border-radius: 0 8px 8px 0;
+}
+
+@keyframes dimaParagraphSlide {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* IMAGE COLUMN LAYOUT - FILLS EMPTY SPACE */
+.dima-about-images-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    height: auto;
+}
+
+/* Main Image - FULL SIZE */
+.dima-about-image-main {
+    position: sticky;
+    top: 120px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 180, 216, 0.1);
+    height: 450px;
+    transition: all 0.3s ease;
+    width: 100%;
+    flex-shrink: 0;
+    animation: dimaSlideLeft 0.8s ease-out 0.3s both;
+}
+
+/* When section is expanded, main image becomes relative */
+.dima-image-scroll .dima-about-image-main {
+    position: relative;
+    top: 0 !important;
+}
+
+.dima-about-image-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.dima-about-image-main:hover img {
+    transform: scale(1.05);
+}
+
+@keyframes dimaSlideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Extra Images Container - FILLS EMPTY SPACE BELOW */
+.dima-extra-images-fill {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+.dima-extra-images-fill.show {
+    opacity: 1;
+    max-height: 2000px;
+}
+
+/* Individual Extra Image - SAME SIZE AS MAIN IMAGE */
+.dima-extra-image-fill {
+    width: 100%;
+    height: 450px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 180, 216, 0.1);
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    flex-shrink: 0;
+}
+
+/* Image appears one by one */
+.dima-extra-image-fill.visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Stagger the animations */
+.dima-extra-image-fill:nth-child(1).visible {
+    transition-delay: 0.2s;
+}
+
+.dima-extra-image-fill:nth-child(2).visible {
+    transition-delay: 0.4s;
+}
+
+.dima-extra-image-fill:nth-child(3).visible {
+    transition-delay: 0.6s;
+}
+
+/* Image Wrapper */
+.dima-fill-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.dima-fill-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.dima-extra-image-fill:hover .dima-fill-image-wrapper img {
+    transform: scale(1.1);
+}
+
+/* Image Overlay */
+.dima-fill-image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 180, 216, 0.9), transparent);
+    color: white;
+    padding: 30px;
+    transform: translateY(20px);
+    opacity: 0.9;
+    transition: all 0.3s ease;
+}
+
+.dima-extra-image-fill:hover .dima-fill-image-overlay {
+    opacity: 1;
+    background: linear-gradient(to top, rgba(0, 119, 182, 0.9), transparent);
+}
+
+.dima-fill-image-overlay h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-family: 'HEXCO', sans-serif;
+    font-weight: 600;
+}
+
+.dima-fill-image-overlay p {
+    font-size: 1rem;
+    opacity: 0.9;
+    font-family: 'Aldrich', sans-serif;
+    line-height: 1.5;
+}
+
+/* Original Image Overlay (for main image) */
+.dima-image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    padding: 25px;
+    color: white;
+    font-family: 'Aldrich', sans-serif;
+}
+
+.dima-image-overlay h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-family: 'HEXCO', sans-serif;
+}
+
+.dima-image-overlay p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Internship Courses Section - Updated Colors */
+.dima-courses-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #1a0b2e 0%, #0d1b3e 100%);
+}
+
+.dima-section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.dima-section-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #90e0ef, #00b4d8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 15px;
+    font-family: 'HEXCO', sans-serif;
+}
+
+.dima-section-subtitle {
+    color: #caf0f8;
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+    font-family: 'Aldrich', sans-serif;
+}
+
+/* Feedback Section Titles */
+.dima-section-title1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #1a0b2e;
+    margin-bottom: 15px;
+    font-family: 'HEXCO', sans-serif;
+}
+
+.dima-section-subtitle1 {
+    color: #424242;
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+    font-family: 'Aldrich', sans-serif;
+}
+
+.dima-courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.dima-course-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    animation: dimaFadeInUp 0.5s ease-out;
+    animation-fill-mode: both;
+}
+
+.dima-course-card:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+.dima-course-card:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.dima-course-card:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+.dima-course-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(0, 180, 216, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 180, 216, 0.1);
+}
+
+.dima-course-header {
+    padding: 25px 25px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dima-course-logo {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    display: inline-block;
+    animation: dimaIconFloat 3s ease-in-out infinite;
+}
+
+@keyframes dimaIconFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.dima-course-title {
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 10px;
+    font-family: 'HEXCO', sans-serif;
+}
+
+.dima-course-desc {
+    color: #caf0f8;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    font-family: 'Aldrich', sans-serif;
+}
+
+.dima-course-features {
+    padding: 20px 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dima-features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dima-feature-item {
+    display: flex;
+    align-items: center;
+    color: #caf0f8;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    font-family: 'Aldrich', sans-serif;
+}
+
+.dima-feature-item::before {
+    content: '✓';
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, #00b4d8, #90e0ef);
+    color: white;
+    border-radius: 50%;
+    margin-right: 10px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.dima-course-details {
+    padding: 20px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dima-detail-item {
+    text-align: center;
+}
+
+.dima-detail-label {
+    font-size: 0.8rem;
+    color: #caf0f8;
+    margin-bottom: 5px;
+    font-family: 'Aldrich', sans-serif;
+}
+
+.dima-detail-value {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #90e0ef;
+    font-family: 'HEXCO', sans-serif;
+}
+
+/* Feedback Section - Updated Colors - FULLY RESPONSIVE */
+.dima-feedback-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+}
+
+.dima-feedback-slider {
+    position: relative;
+    overflow: hidden;
+}
+
+.dima-feedback-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dima-feedback-slide {
+    min-width: 100%;
+    padding: 0 20px;
+}
+
+.dima-feedback-card {
+    background: white;
+    padding: 50px 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 180, 216, 0.1);
+    border: 1px solid rgba(0, 180, 216, 0.2);
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    animation: dimaCardPop 0.5s ease-out;
+    border-left: 4px solid #00b4d8;
+    animation: dimaCardPulse 4s ease-in-out infinite;
+}
+
+@keyframes dimaCardPulse {
+    0%, 100% { border-left-color: #00b4d8; }
+    50% { border-left-color: #90e0ef; }
+}
+
+@keyframes dimaCardPop {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.dima-feedback-quote {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    font-size: 2.5rem;
+    color: #00b4d8;
+    opacity: 0.2;
+}
+
+.dima-feedback-text {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    font-style: italic;
+    font-family: 'Aldrich', sans-serif;
+    text-align: center;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dima-feedback-author {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+}
+
+.dima-author-info {
+    text-align: center;
+}
+
+.dima-author-info h4 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 5px;
+    font-family: 'HEXCO', sans-serif;
+}
+
+.dima-author-info p {
+    font-size: 0.9rem;
+    color: #666;
+    font-family: 'Aldrich', sans-serif;
+}
+
+.dima-slider-nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 35px;
+}
+
+.dima-slider-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #caf0f8;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dima-slider-dot.active {
+    background: linear-gradient(135deg, #00b4d8, #90e0ef);
+    transform: scale(1.3);
+    animation: dimaDotPulse 2s ease-in-out infinite;
+}
+
+@keyframes dimaDotPulse {
+    0%, 100% { transform: scale(1.3); }
+    50% { transform: scale(1.5); }
+}
+
+.dima-slider-arrows {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    padding: 0 10px;
+    z-index: 2;
+}
+
+.dima-slider-arrow {
+    background: white;
+    border: 1px solid rgba(0, 180, 216, 0.2);
+    width: 45px;
+    height: 45px;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 180, 216, 0.1);
+    transition: all 0.3s ease;
+    color: #00b4d8;
+    font-weight: bold;
+    font-family: 'HEXCO', sans-serif;
+    font-size: 1.2rem;
+}
+
+.dima-slider-arrow:hover {
+    background: linear-gradient(135deg, #00b4d8, #90e0ef);
+    color: white;
+    transform: scale(1.1);
+    animation: dimaArrowSpin 0.5s ease;
+}
+
+@keyframes dimaArrowSpin {
+    from { transform: scale(1.1) rotate(0deg); }
+    to { transform: scale(1.1) rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .dima-hero-content {
+        width: calc(100% - 60px);
+        padding: 50px 40px;
+        max-width: 850px;
+    }
+    
+    .dima-hero-title {
+        font-size: 2.8rem;
+    }
+    
+    .dima-about-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .dima-about-text {
+        padding-right: 0;
+    }
+    
+    /* On mobile, image is always relative */
+    .dima-about-image-main {
+        position: relative !important;
+        top: 0 !important;
+        height: 400px;
+    }
+    
+    .dima-image-scroll .dima-about-image-main {
+        position: relative !important;
+    }
+    
+    .dima-section-title,
+    .dima-section-title1 {
+        font-size: 2.4rem;
+    }
+    
+    .dima-courses-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .dima-feedback-card {
+        padding: 40px 30px;
+    }
+    
+    .dima-feedback-text {
+        font-size: 1.1rem;
+    }
+    
+    /* Adjust image sizes on tablet */
+    .dima-extra-image-fill {
+        height: 400px;
+    }
+    
+    .dima-fill-image-overlay {
+        padding: 25px;
+    }
+    
+    .dima-fill-image-overlay h4 {
+        font-size: 1.3rem;
+    }
+    
+    .dima-fill-image-overlay p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .dima-hero-section {
+        min-height: 100vh;
+        padding: 60px 0;
+    }
+    
+    .dima-hero-content {
+        width: calc(100% - 40px);
+        padding: 40px 30px;
+        margin: 0 auto;
+    }
+    
+    .dima-hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .dima-hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .dima-hero-description {
+        font-size: 1rem;
+    }
+    
+    .dima-about-title {
+        font-size: 2rem;
+    }
+    
+    .dima-section-title,
+    .dima-section-title1 {
+        font-size: 2.2rem;
+    }
+    
+    .dima-courses-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .dima-feedback-card {
+        padding: 35px;
+    }
+    
+    .dima-slider-arrows {
+        position: relative;
+        transform: none;
+        margin-top: 25px;
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    .dima-slider-arrow {
+        border-radius: 0;
+    }
+    
+    /* Adjust image sizes on mobile */
+    .dima-about-image-main {
+        height: 350px;
+    }
+    
+    .dima-extra-image-fill {
+        height: 350px;
+    }
+    
+    .dima-fill-image-overlay {
+        padding: 20px;
+    }
+    
+    .dima-fill-image-overlay h4 {
+        font-size: 1.2rem;
+    }
+    
+    .dima-fill-image-overlay p {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .dima-hero-content {
+        width: calc(100% - 30px);
+        padding: 35px 25px;
+    }
+    
+    .dima-hero-title {
+        font-size: 1.9rem;
+    }
+    
+    .dima-hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .dima-hero-description {
+        font-size: 0.95rem;
+    }
+    
+    .dima-feedback-card {
+        padding: 25px;
+    }
+    
+    .dima-feedback-text {
+        font-size: 1.05rem;
+    }
+    
+    .dima-tech-stack {
+        gap: 8px;
+    }
+    
+    .dima-tech-item {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+    
+    /* Adjust image sizes on small screens */
+    .dima-about-image-main {
+        height: 300px;
+    }
+    
+    .dima-extra-image-fill {
+        height: 300px;
+    }
+    
+    .dima-fill-image-overlay {
+        padding: 15px;
+    }
+    
+    .dima-fill-image-overlay h4 {
+        font-size: 1.1rem;
+    }
+    
+    .dima-fill-image-overlay p {
+        font-size: 0.8rem;
+    }
+    
+    .dima-image-overlay {
+        padding: 20px;
+    }
+    
+    .dima-image-overlay h3 {
+        font-size: 1.3rem;
+    }
+    
+    .dima-image-overlay p {
+        font-size: 0.8rem;
+    }
+}
+
+/* Font imports for Aldrich and HEXCO fonts */
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+
+@font-face {
+    font-family: 'HEXCO';
+    src: url('https://fonts.cdnfonts.com/s/24720/HEXCO Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #00b4d8, #90e0ef);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #00a4c8, #80d0df);
+}

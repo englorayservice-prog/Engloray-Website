@@ -1,0 +1,236 @@
+/* Back to Top Arrow Component */
+.back-to-top-arrow {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  width: 55px;
+  height: 55px;
+  background: rgb(0, 0, 0);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #10b981; /* Green icon color */
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.3);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  opacity: 0;
+  transform: translateY(20px) scale(0.8);
+  z-index: 9999;
+  font-family: 'Aldrich', sans-serif;
+  overflow: hidden;
+}
+
+.back-to-top-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Glowing Effect for Icon */
+.back-to-top-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.4) 0%, transparent 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.back-to-top-arrow:hover .back-to-top-glow {
+  width: 80px;
+  height: 80px;
+  animation: back-to-top-glow-pulse 1.5s infinite;
+}
+
+/* Icon Styling */
+.back-to-top-icon {
+  transition: all 0.3s ease;
+  font-size: 1.6rem;
+  z-index: 2;
+  filter: drop-shadow(0 2px 4px rgba(16, 185, 129, 0.4));
+  position: relative;
+}
+
+/* Hover Effects */
+.back-to-top-arrow:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 30px rgba(16, 185, 129, 0.4);
+  background: rgb(6, 0, 0);
+}
+
+.back-to-top-arrow:hover .back-to-top-icon {
+  transform: translateY(-3px);
+  color: #059669; /* Darker green on hover */
+  filter: drop-shadow(0 4px 8px rgba(16, 185, 129, 0.6));
+}
+
+.back-to-top-arrow:active {
+  transform: scale(0.95);
+}
+
+/* Icon Glow Pulse Animation */
+@keyframes back-to-top-glow-pulse {
+  0% {
+    opacity: 0.6;
+    width: 80px;
+    height: 80px;
+  }
+  50% {
+    opacity: 0.9;
+    width: 90px;
+    height: 90px;
+  }
+  100% {
+    opacity: 0.6;
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* Continuous Icon Glow Animation when visible */
+@keyframes back-to-top-icon-glow {
+  0% {
+    filter: drop-shadow(0 2px 4px rgba(16, 185, 129, 0.4));
+  }
+  50% {
+    filter: drop-shadow(0 2px 8px rgba(16, 185, 129, 0.8));
+  }
+  100% {
+    filter: drop-shadow(0 2px 4px rgba(16, 185, 129, 0.4));
+  }
+}
+
+.back-to-top-visible .back-to-top-icon {
+  animation: back-to-top-icon-glow 2s infinite;
+}
+
+.back-to-top-arrow:hover .back-to-top-icon {
+  animation: none; /* Stop glow animation on hover */
+}
+
+/* Button Shadow Glow Animation */
+@keyframes back-to-top-shadow-glow {
+  0% {
+    box-shadow: 0 4px 20px rgba(16, 185, 129, 0.3);
+  }
+  50% {
+    box-shadow: 0 4px 25px rgba(16, 185, 129, 0.5);
+  }
+  100% {
+    box-shadow: 0 4px 20px rgba(16, 185, 129, 0.3);
+  }
+}
+
+.back-to-top-visible {
+  animation: back-to-top-shadow-glow 3s infinite;
+}
+
+.back-to-top-arrow:hover {
+  animation: none; /* Stop shadow glow on hover */
+}
+
+/* Bounce Animation when appearing */
+@keyframes back-to-top-bounce {
+  0% {
+    transform: translateY(20px) scale(0.8);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(-8px) scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.back-to-top-visible {
+  animation: back-to-top-bounce 0.6s ease-out, 
+             back-to-top-shadow-glow 3s infinite 0.6s;
+}
+
+/* Icon floating animation */
+@keyframes back-to-top-icon-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+.back-to-top-visible .back-to-top-icon {
+  animation: back-to-top-icon-float 3s ease-in-out infinite,
+             back-to-top-icon-glow 2s infinite;
+}
+
+.back-to-top-arrow:hover .back-to-top-icon {
+  animation: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .back-to-top-arrow {
+    bottom: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .back-to-top-icon {
+    font-size: 1.4rem;
+  }
+
+  .back-to-top-arrow:hover .back-to-top-glow {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .back-to-top-arrow {
+    bottom: 15px;
+    left: 15px;
+    width: 45px;
+    height: 45px;
+  }
+  
+  .back-to-top-icon {
+    font-size: 1.2rem;
+  }
+
+  .back-to-top-arrow:hover .back-to-top-glow {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .back-to-top-arrow {
+    transition: opacity 0.3s ease;
+  }
+  
+  .back-to-top-visible {
+    animation: none;
+  }
+  
+  .back-to-top-arrow:hover {
+    transform: none;
+  }
+  
+  .back-to-top-icon {
+    transition: none;
+    animation: none;
+  }
+  
+  .back-to-top-glow {
+    animation: none;
+  }
+}

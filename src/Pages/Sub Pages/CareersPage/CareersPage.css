@@ -1,0 +1,2061 @@
+/* CareersPage.css - COMPLETE UPDATED VERSION */
+
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.cp-careers-container {
+  font-family: 'Aldrich', monospace;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  background: #0f172a;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* FontAwesome icon styling */
+.fas, .fab, .far {
+  font-family: "Font Awesome 6 Free" !important;
+  font-weight: 900;
+}
+
+/* Progress Scroll Indicator */
+.cp-scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: 10000;
+}
+
+.cp-scroll-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #000000 0%, #ffffff 100%);
+  width: 0%;
+  transition: width 0.1s ease;
+}
+
+/* Headings Font */
+.cp-hero-title,
+.cp-section-title,
+.cp-culture-title,
+.cp-form-title,
+.cp-path-title,
+.cp-perk-title,
+.cp-learning-title,
+.cp-culture-point h3,
+.cp-new-card-title {
+  font-family: 'HEXCO', sans-serif;
+  font-weight: 100;
+}
+
+/* Body font weight 100 */
+.cp-hero-subtitle,
+.cp-section-description,
+.cp-path-description,
+.cp-perk-description,
+.cp-learning-description,
+.cp-culture-point p,
+.cp-form-subtitle,
+.cp-form-label,
+.cp-form-input,
+.cp-form-select,
+.cp-form-textarea,
+.cp-form-note,
+.cp-stat-label,
+.cp-stat-number,
+.cp-badge-text,
+.cp-hero-cta,
+.cp-submit-btn {
+  font-weight: 100;
+}
+
+/* Background Color Classes */
+.cp-dark-bg {
+  background: #0f172a;
+  color: #f8fafc;
+}
+
+.cp-light-bg {
+  background: #ffffff;
+  color: #1e293b;
+}
+
+/* Section Wrapper */
+.cp-section-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ==================== HERO SECTION ==================== */
+.cp-hero-section {
+  min-height: 100vh;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.cp-hero-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 5s ease-in-out;
+  z-index: 0;
+}
+
+.cp-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.9) 100%);
+  z-index: 1;
+}
+
+.cp-hero-content-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+  position: relative;
+  z-index: 2;
+  height: 100%;
+}
+
+.cp-hero-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.cp-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  background: linear-gradient(135deg, #3b82f6 0%, #284feb 100%);
+  padding: 12px 28px;
+  border-radius: 50px;
+  margin-bottom: 30px;
+  animation: cp-badge-pulse 2s infinite;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+@keyframes cp-badge-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(59, 130, 246, 0);
+  }
+}
+
+.cp-badge-text {
+  color: white;
+  font-weight: 100;
+  font-size: 0.95rem;
+  letter-spacing: 1.5px;
+  font-family: 'HEXCO', sans-serif;
+  text-transform: uppercase;
+}
+
+.cp-hero-badge svg {
+  color: white;
+  font-size: 1rem;
+  margin-right: 10px;
+}
+
+.cp-hero-title {
+  font-size: 3rem;
+  font-weight: 100;
+  line-height: 1.1;
+  margin-bottom: 30px;
+  color: #f8fafc;
+  letter-spacing: -1px;
+}
+
+.cp-gradient-text {
+  background: linear-gradient(135deg, #3b82f6 0%, #284feb 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: block;
+  font-family: 'HEXCO';
+  font-weight: 100;
+}
+
+.cp-hero-subtitle {
+  font-size: 1.2rem;
+  color: #cbd5e1;
+  margin-bottom: 60px;
+  line-height: 1.7;
+  font-family: 'Aldrich', monospace;
+  font-weight: 100;
+  max-width: 600px;
+}
+
+/* Hero Stats - Improved Alignment */
+.cp-hero-stats {
+  display: flex;
+  gap: 60px;
+  margin-bottom: 60px;
+  align-items: center;
+}
+
+.cp-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  padding-left: 20px;
+}
+
+.cp-stat-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 8px;
+  height: 8px;
+  background: linear-gradient(135deg, #3b82f6 0%, #284feb 100%);
+  border-radius: 50%;
+}
+
+.cp-stat-number {
+  font-size: 2.2rem;
+  font-weight: 100;
+  background: linear-gradient(135deg, #3b82f6 0%, #284feb 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+  font-family: 'HEXCO', sans-serif;
+}
+
+.cp-stat-label {
+  font-size: 1.2rem;
+  color: #cbd5e1;
+  font-weight: 100;
+  margin-top: 10px;
+  letter-spacing: 0.5px;
+  font-family: 'Aldrich', monospace;
+}
+
+.cp-hero-cta {
+  background: linear-gradient(135deg, #3b82f6 0%, #284feb 100%);
+  color: white;
+  border: none;
+  padding: 22px 45px;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: 100;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+  position: relative;
+  z-index: 2;
+  font-family: 'HEXCO', sans-serif;
+  overflow: hidden;
+  min-height: 60px;
+}
+
+.cp-hero-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s;
+}
+
+.cp-hero-cta:hover::before {
+  left: 100%;
+}
+
+.cp-hero-cta:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.4);
+}
+
+.cp-arrow-icon {
+  transition: transform 0.3s ease;
+}
+
+.cp-hero-cta:hover .cp-arrow-icon {
+  transform: translateY(5px);
+}
+
+.cp-hero-visual {
+  flex: 1;
+  position: relative;
+  height: 100%;
+  min-height: 500px;
+}
+
+/* HERO SECTION - FLOATING ANIMATION */
+.cp-floating-element {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  color: white;
+  animation: cp-float 6s ease-in-out infinite;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cp-floating-element svg {
+  font-size: 2.5rem;
+  color: #ffffff;
+}
+
+@keyframes cp-float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-25px) rotate(5deg);
+  }
+}
+
+.cp-floating-1 {
+  width: 140px;
+  height: 140px;
+  top: 60px;
+  right: 120px;
+  animation-delay: 0s;
+}
+
+.cp-floating-2 {
+  width: 120px;
+  height: 120px;
+  top: 220px;
+  right: 40px;
+  animation-delay: 0.5s;
+}
+
+.cp-floating-3 {
+  width: 100px;
+  height: 100px;
+  top: 350px;
+  right: 180px;
+  animation-delay: 1s;
+}
+
+/* ==================== PARTICLE ANIMATIONS ==================== */
+.cp-particle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+  animation: cp-particle-float 20s infinite linear;
+}
+
+@keyframes cp-particle-float {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* ==================== COMMON SECTION STYLES ==================== */
+.cp-paths-section,
+.cp-perks-section,
+.cp-learning-section,
+.cp-culture-section {
+  padding: 100px 0;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.cp-section-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.cp-section-title {
+  font-size: 2.5rem;
+  font-weight: 100;
+  margin-bottom: 25px;
+  letter-spacing: -0.5px;
+  position: relative;
+  display: inline-block;
+}
+
+.cp-section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(135deg, #3b82f6 0%, #284feb 100%);
+  border-radius: 2px;
+}
+
+.cp-dark-bg .cp-section-title {
+  color: #f8fafc;
+}
+
+.cp-light-bg .cp-section-title {
+  color: #0f172a;
+}
+
+.cp-section-description {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 40px auto 0;
+  line-height: 1.7;
+  font-family: 'Aldrich', monospace;
+  font-weight: 100;
+}
+
+.cp-dark-bg .cp-section-description {
+  color: #cbd5e1;
+}
+
+.cp-light-bg .cp-section-description {
+  color: #64748b;
+}
+
+/* ==================== CAREER PATHS WITH ANIMATED BORDERS ==================== */
+.cp-paths-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.cp-path-card-new {
+  position: relative;
+  min-height: 550px;
+  border-radius: 24px;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Animated Border Container */
+.cp-card-border-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.cp-card-border-animated {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    from 0deg,
+    transparent,
+    var(--path-color, #3b82f6),
+    transparent 30%
+  );
+  animation: cp-rotate-border 3s linear infinite;
+  opacity: 0.7;
+}
+
+@keyframes cp-rotate-border {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Card Content */
+.cp-new-card-inner {
+  position: relative;
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
+  top: 3px;
+  left: 3px;
+  background: white;
+  border-radius: 21px;
+  padding: 40px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.cp-dark-bg .cp-new-card-inner {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Content */
+.cp-new-card-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.cp-new-card-icon {
+  margin-bottom: 30px;
+}
+
+.cp-icon-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  font-size: 2.5rem;
+  color: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.cp-icon-circle svg {
+  font-size: 2rem;
+  color: #ffffff;
+}
+
+.cp-new-card-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cp-new-card-title {
+  font-size: 2.2rem;
+  font-weight: 100;
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.cp-light-bg .cp-new-card-title {
+  color: #0f172a;
+}
+
+.cp-dark-bg .cp-new-card-title {
+  color: #f8fafc;
+}
+
+.cp-new-card-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  color: #64748b;
+  font-family: 'Aldrich', monospace;
+  font-weight: 100;
+  flex-grow: 0;
+}
+
+.cp-dark-bg .cp-new-card-description {
+  color: #cbd5e1;
+}
+
+/* Roles Slider */
+.cp-roles-slider {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 25px;
+  flex-grow: 0;
+}
+
+.cp-role-chip {
+  display: inline-block;
+  padding: 10px 18px;
+  background: transparent;
+  border: 2px solid var(--path-color, #3b82f6);
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 100;
+  font-family: 'Aldrich', monospace;
+  text-align: center;
+  color: var(--path-color, #3b82f6);
+  transition: all 0.3s ease;
+}
+
+.cp-role-chip:hover {
+  background: var(--path-color, #3b82f6);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(59, 130, 246, 0.2);
+}
+
+.cp-dark-bg .cp-role-chip {
+  color: #cbd5e1;
+  border-color: var(--path-color, #8b5cf6);
+}
+
+.cp-dark-bg .cp-role-chip:hover {
+  background: var(--path-color, #8b5cf6);
+  color: white;
+}
+
+/* Full Content Details - Always Visible (Without Skills) */
+.cp-path-details {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-right: 8px;
+  margin-top: 15px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding-top: 20px;
+}
+
+.cp-dark-bg .cp-path-details {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cp-detail-section {
+  margin-bottom: 18px;
+}
+
+.cp-detail-section h4 {
+  font-size: 1.2rem;
+  font-weight: 100;
+  margin-bottom: 8px;
+  color: var(--path-color, #3b82f6);
+  font-family: 'HEXCO', sans-serif;
+}
+
+.cp-requirements {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #64748b;
+  font-family: 'Aldrich', monospace;
+  font-weight: 100;
+  margin-bottom: 10px;
+}
+
+.cp-dark-bg .cp-requirements {
+  color: #cbd5e1;
+}
+
+/* Scrollbar styling */
+.cp-path-details::-webkit-scrollbar {
+  width: 4px;
+}
+
+.cp-path-details::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+.cp-path-details::-webkit-scrollbar-thumb {
+  background: var(--path-color, #3b82f6);
+  border-radius: 10px;
+}
+
+.cp-dark-bg .cp-path-details::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.cp-dark-bg .cp-path-details::-webkit-scrollbar-thumb {
+  background: var(--path-color, #8b5cf6);
+}
+
+/* ==================== PERKS & BENEFITS SECTION ==================== */
+.cp-perks-section {
+  position: relative;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  padding: 100px 0;
+  background: #0f172a !important;
+  overflow: hidden;
+}
+
+/* UPDATED: Desktop - 3 cards per row */
+.cp-perks-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.cp-perk-card-new {
+  border-radius: 24px;
+  padding: 50px 40px;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  opacity: 0;
+  transform: translateY(30px);
+  position: relative;
+  z-index: 2;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  animation: cp-fadeInUp 0.8s ease-out forwards;
+  animation-delay: calc(var(--i, 0) * 0.1s);
+}
+
+/* PERKS ANIMATION */
+@keyframes cp-fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cp-perk-card-new:hover {
+  transform: translateY(-20px) scale(1.03) !important;
+  box-shadow: 0 40px 80px rgba(59, 130, 246, 0.2);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.cp-perk-icon-wrapper {
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.cp-perk-icon-ring {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid;
+  font-size: 3.5rem;
+  transition: all 0.3s ease;
+}
+
+.cp-perk-icon-ring svg {
+  font-size: 3rem;
+}
+
+.cp-perk-card-new:hover .cp-perk-icon-ring {
+  transform: rotate(15deg) scale(1.1);
+}
+
+.cp-perk-title {
+  font-size: 2.2rem;
+  font-weight: 100;
+  margin-bottom: 25px;
+  font-family: 'HEXCO', sans-serif;
+  line-height: 1.2;
+  color: #f8fafc;
+}
+
+.cp-perk-description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  font-family: 'Aldrich', monospace;
+  font-weight: 100;
+  margin-top: 10px;
+  color: #cbd5e1;
+}
+
+/* ==================== TEAM CULTURE SECTION ==================== */
+.cp-culture-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.cp-culture-content {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+.cp-culture-text {
+  flex: 1;
+}
+
+.cp-culture-title {
+  font-size: 2.5rem;
+  font-weight: 100;
+  margin-bottom: 40px;
+  letter-spacing: -0.5px;
+  font-family: 'HEXCO', sans-serif;
+}
+
+.cp-dark-bg .cp-culture-title {
+  color: #f8fafc;
+}
+
+.cp-culture-points {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.cp-culture-point {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.cp-point-icon {
+  font-size: 1.5rem;
+  padding: 12px;
+  border-radius: 12px;
+  flex-shrink: 0;
+  color: #3b82f6;
+  background: rgba(59, 130, 246, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+}
+
+.cp-point-icon svg {
+  font-size: 1.5rem;
+  color: #3b82f6;
+}
+
+.cp-culture-point h3 {
+  font-size: 2.5rem;
+  font-weight: 100;
+  margin-bottom: 10px;
+  font-family: 'HEXCO', sans-serif;
+}
+
+.cp-dark-bg .cp-culture-point h3 {
+  color: #f8fafc;
+}
+
+.cp-culture-point p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  font-family: 'Aldrich', monospace;
+  font-weight: 100;
+  color: #cbd5e1;
+}
+
+.cp-culture-visual {
+  flex: 1;
+  position: relative;
+  height: 400px;
+}
+
+.cp-culture-visual-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.cp-visual-element {
+  position: absolute;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  animation: cp-float 8s ease-in-out infinite;
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  width: 120px;
+  height: 120px;
+}
+
+.cp-visual-element svg {
+  font-size: 2rem;
+  color: #3b82f6;
+}
+
+.cp-visual-1 {
+  top: 0;
+  right: 0;
+  animation-delay: 0s;
+}
+
+.cp-visual-2 {
+  width: 100px;
+  height: 100px;
+  bottom: 50px;
+  left: 0;
+  animation-delay: 0.4s;
+}
+
+.cp-visual-3 {
+  width: 80px;
+  height: 80px;
+  bottom: 0;
+  right: 100px;
+  animation-delay: 0.8s;
+}
+
+/* ==================== LEARNING & DEVELOPMENT ==================== */
+.cp-learning-grid-new {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.cp-learning-card-new {
+  position: relative;
+  min-height: 550px;
+  border-radius: 24px;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Animated Border for Learning Cards */
+.cp-learning-border-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.cp-learning-border-animated {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    from 0deg,
+    transparent,
+    var(--learning-color, #3b82f6),
+    transparent 30%
+  );
+  animation: cp-rotate-border 3s linear infinite;
+  opacity: 0.7;
+}
+
+.cp-learning-card-inner {
+  position: relative;
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
+  top: 3px;
+  left: 3px;
+  background: white;
+  border-radius: 21px;
+  padding: 40px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.cp-dark-bg .cp-learning-card-inner {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cp-learning-card-new:hover .cp-learning-card-inner {
+  transform: translateY(-15px) scale(1.03);
+  box-shadow: 0 40px 80px rgba(59, 130, 246, 0.15);
+}
+
+/* Icon Container */
+.cp-learning-icon-container {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 30px;
+}
+
+.cp-learning-icon-outer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--learning-color, #3b82f6) 0%, var(--learning-color-secondary, #284feb) 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cp-learning-icon-inner {
+  width: 70px;
+  height: 70px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  color: var(--learning-color, #3b82f6);
+}
+
+.cp-dark-bg .cp-learning-icon-inner {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.cp-learning-icon-inner svg {
+  font-size: 2rem;
+}
+
+/* Content */
+.cp-learning-title {
+  font-size: 2.2rem;
+  font-weight: 100;
+  margin-bottom: 20px;
+  text-align: center;
+  letter-spacing: -0.5px;
+  font-family: 'HEXCO', sans-serif;
+  line-height: 1.2;
+}
+
+.cp-light-bg .cp-learning-title {
+  color: #0f172a;
+}
+
+.cp-dark-bg .cp-learning-title {
+  color: #f8fafc;
+}
+
+.cp-learning-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #64748b;
+  font-family: 'Aldrich', monospace;
+  font-weight: 100;
+  padding: 0 10px;
+}
+
+.cp-dark-bg .cp-learning-description {
+  color: #cbd5e1;
+}
+
+/* Features */
+.cp-features-expandable {
+  margin-top: auto;
+}
+
+.cp-learning-features-new {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cp-learning-feature-new {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.cp-learning-feature-new:hover {
+  background: rgba(59, 130, 246, 0.05);
+}
+
+.cp-feature-check {
+  color: var(--learning-color, #3b82f6);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.cp-feature-check svg {
+  font-size: 0.9rem;
+  color: var(--learning-color, #3b82f6);
+}
+
+.cp-learning-feature-new span {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #64748b;
+  font-family: 'Aldrich', monospace;
+  font-weight: 100;
+}
+
+.cp-dark-bg .cp-learning-feature-new span {
+  color: #cbd5e1;
+}
+
+/* ==================== FORM SECTION - UPDATED FOR NO SCROLL ==================== */
+.cp-form-section {
+  min-height: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 20px;
+  position: relative;
+  z-index: 10;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
+
+.cp-form-container {
+  background: white;
+  border-radius: 25px;
+  padding: 30px 40px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+  max-width: 800px;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  overflow: visible;
+  max-height: none;
+}
+
+/* Remove scrollbar styles since we won't need scrolling */
+.cp-form-container::-webkit-scrollbar {
+  display: none;
+}
+
+.cp-form-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.cp-form-title {
+  font-size: 2.2rem;
+  font-weight: 100;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+  color: #0f172a;
+  font-family: 'HEXCO', sans-serif;
+  line-height: 1.2;
+}
+
+.cp-form-subtitle {
+  font-size: 0.95rem;
+  font-family: 'Aldrich', monospace;
+  font-weight: 100;
+  color: #64748b;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.cp-career-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.cp-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.cp-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cp-form-label {
+  font-weight: 100;
+  font-size: 0.9rem;
+  font-family: 'HEXCO', sans-serif;
+  color: #475569;
+  letter-spacing: 0.3px;
+}
+
+.cp-form-input,
+.cp-form-select,
+.cp-form-textarea {
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  font-family: 'Aldrich', monospace;
+  font-weight: 100;
+  border: 2px solid #e2e8f0;
+  background: white;
+  color: #1e293b;
+  width: 100%;
+}
+
+.cp-form-input:focus,
+.cp-form-select:focus,
+.cp-form-textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.cp-form-input:focus-visible,
+.cp-form-select:focus-visible,
+.cp-form-textarea:focus-visible,
+.cp-submit-btn:focus-visible,
+.cp-hero-cta:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 1px;
+}
+
+.cp-form-textarea {
+  resize: vertical;
+  min-height: 100px;
+  max-height: 120px;
+  font-family: 'Aldrich', monospace;
+  line-height: 1.4;
+}
+
+.cp-form-note {
+  font-size: 0.85rem;
+  font-family: 'Aldrich', monospace;
+  font-weight: 100;
+  color: #64748b;
+  margin-top: 3px;
+  line-height: 1.4;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cp-note-icon {
+  color: #3b82f6;
+  font-size: 0.9rem;
+}
+
+.cp-submit-btn {
+  margin-top: 15px;
+  background: linear-gradient(135deg, #3b82f6 0%, #284feb 100%);
+  color: white;
+  border: none;
+  padding: 16px 30px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 100;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'HEXCO', sans-serif;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  min-height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-transform: uppercase;
+}
+
+.cp-submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
+}
+
+.cp-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.cp-submit-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s;
+}
+
+.cp-submit-btn:hover::before {
+  left: 100%;
+}
+
+.cp-submit-btn svg {
+  font-size: 1rem;
+}
+
+/* Form status messages */
+.cp-form-status {
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 12px;
+  font-family: 'Aldrich', monospace;
+  font-weight: 100;
+  font-size: 0.9rem;
+  text-align: center;
+  animation: cp-fadeInUp 0.5s ease-out;
+}
+
+.cp-form-status.success {
+  background: rgba(34, 197, 94, 0.1);
+  color: #059669;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.cp-form-status.error {
+  background: rgba(239, 68, 68, 0.1);
+  color: #dc2626;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+/* Loading spinner for form submission */
+.cp-spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: cp-spin 1s ease-in-out infinite;
+  margin-right: 8px;
+}
+
+@keyframes cp-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ==================== RESPONSIVE STYLES ==================== */
+
+/* Large screens */
+@media (max-width: 1200px) {
+  .cp-hero-content-wrapper {
+    padding: 0 40px;
+    gap: 60px;
+  }
+  
+  .cp-hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .cp-section-title,
+  .cp-culture-title,
+  .cp-form-title {
+    font-size: 2.2rem;
+  }
+  
+  /* UPDATED: Large screens keep 3 cards per row */
+  .cp-perks-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+  
+  .cp-perk-card-new {
+    padding: 40px 30px;
+    min-height: 450px;
+  }
+  
+  .cp-perk-icon-ring {
+    width: 100px;
+    height: 100px;
+    font-size: 3rem;
+  }
+  
+  .cp-perk-icon-ring svg {
+    font-size: 2.5rem;
+  }
+  
+  .cp-form-title {
+    font-size: 2rem;
+  }
+  
+  .cp-form-subtitle {
+    font-size: 0.9rem;
+  }
+}
+
+/* Medium screens (992px and below) */
+@media (max-width: 992px) {
+  .cp-hero-section {
+    height: auto;
+    min-height: auto;
+    padding: 120px 0 80px;
+  }
+  
+  .cp-hero-content-wrapper {
+    flex-direction: column;
+    gap: 60px;
+    padding: 0 30px;
+  }
+  
+  .cp-hero-content,
+  .cp-hero-visual {
+    max-width: 100%;
+    text-align: center;
+  }
+  
+  .cp-hero-stats {
+    justify-content: center;
+  }
+  
+  .cp-stat-item {
+    align-items: center;
+    padding-left: 0;
+  }
+  
+  .cp-stat-item::before {
+    display: none;
+  }
+  
+  .cp-floating-1,
+  .cp-floating-2,
+  .cp-floating-3 {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin: 20px auto;
+    width: 100px;
+    height: 100px;
+  }
+  
+  /* UPDATED: Medium screens - Show 2 cards per row with better spacing */
+  .cp-perks-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+  
+  .cp-perk-card-new {
+    padding: 35px 25px;
+    min-height: 420px;
+  }
+  
+  .cp-perk-icon-ring {
+    width: 90px;
+    height: 90px;
+    font-size: 2.8rem;
+  }
+  
+  .cp-perk-icon-ring svg {
+    font-size: 2.3rem;
+  }
+  
+  .cp-culture-content {
+    flex-direction: column;
+    gap: 60px;
+  }
+  
+  .cp-culture-visual {
+    height: 300px;
+  }
+  
+  .cp-form-row {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .cp-form-container {
+    padding: 25px 30px;
+    max-width: 700px;
+  }
+  
+  .cp-form-section {
+    padding: 25px 15px;
+  }
+  
+  .cp-form-title {
+    font-size: 1.8rem;
+  }
+  
+  .cp-form-subtitle {
+    font-size: 0.85rem;
+  }
+  
+  .cp-form-input,
+  .cp-form-select,
+  .cp-form-textarea {
+    padding: 11px 15px;
+    font-size: 0.85rem;
+  }
+  
+  .cp-submit-btn {
+    padding: 14px 28px;
+    font-size: 0.95rem;
+    min-height: 50px;
+  }
+}
+
+/* Small screens (768px and below) */
+@media (max-width: 768px) {
+  .cp-hero-content-wrapper {
+    padding: 0 20px;
+  }
+  
+  .cp-hero-title {
+    font-size: 2rem;
+  }
+  
+  .cp-hero-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+  }
+  
+  .cp-hero-stats {
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+  
+  .cp-stat-item {
+    align-items: center;
+  }
+  
+  .cp-hero-cta {
+    padding: 18px 35px;
+    font-size: 1.1rem;
+  }
+  
+  .cp-section-title,
+  .cp-culture-title,
+  .cp-form-title,
+  .cp-perk-title,
+  .cp-learning-title,
+  .cp-new-card-title {
+    font-size: 1.8rem;
+  }
+  
+  /* UPDATED: Small screens - Show 2 cards per row with better spacing */
+  .cp-perks-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .cp-perk-card-new {
+    min-height: 380px;
+    padding: 30px 20px;
+  }
+  
+  .cp-perk-icon-ring {
+    width: 80px;
+    height: 80px;
+    font-size: 2.5rem;
+  }
+  
+  .cp-perk-icon-ring svg {
+    font-size: 2rem;
+  }
+  
+  .cp-perk-title {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+  }
+  
+  .cp-perk-description {
+    font-size: 0.95rem;
+  }
+  
+  .cp-paths-grid,
+  .cp-learning-grid-new {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .cp-path-card-new,
+  .cp-learning-card-new {
+    min-height: auto;
+  }
+  
+  .cp-new-card-inner,
+  .cp-learning-card-inner {
+    padding: 30px;
+  }
+  
+  .cp-section-description,
+  .cp-learning-description,
+  .cp-form-subtitle {
+    font-size: 1rem;
+  }
+  
+  .cp-culture-point h3 {
+    font-size: 1.8rem;
+  }
+  
+  .cp-culture-point p {
+    font-size: 1rem;
+  }
+  
+  .cp-form-container {
+    padding: 20px 25px;
+    border-radius: 20px;
+  }
+  
+  .cp-form-section {
+    padding: 20px 12px;
+  }
+  
+  .cp-form-title {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+  }
+  
+  .cp-form-subtitle {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+  
+  .cp-career-form {
+    gap: 15px;
+  }
+  
+  .cp-form-group {
+    gap: 5px;
+  }
+  
+  .cp-form-label {
+    font-size: 0.85rem;
+  }
+  
+  .cp-form-input,
+  .cp-form-select,
+  .cp-form-textarea {
+    padding: 10px 14px;
+    font-size: 0.8rem;
+    border-radius: 8px;
+  }
+  
+  .cp-form-textarea {
+    min-height: 90px;
+    max-height: 100px;
+  }
+  
+  .cp-form-note {
+    font-size: 0.75rem;
+  }
+  
+  .cp-submit-btn {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+    min-height: 48px;
+    margin-top: 10px;
+  }
+  
+  .cp-form-status {
+    padding: 10px;
+    font-size: 0.8rem;
+    margin-top: 10px;
+  }
+  
+  .cp-visual-1,
+  .cp-visual-2,
+  .cp-visual-3 {
+    width: 80px;
+    height: 80px;
+    font-size: 1.5rem;
+  }
+  
+  .cp-visual-element svg {
+    font-size: 1.5rem;
+  }
+}
+
+/* Extra small screens (480px and below) */
+@media (max-width: 480px) {
+  .cp-hero-title {
+    font-size: 1.8rem;
+  }
+  
+  .cp-hero-badge {
+    padding: 10px 20px;
+    margin-bottom: 20px;
+  }
+  
+  .cp-badge-text {
+    font-size: 0.85rem;
+  }
+  
+  .cp-stat-number {
+    font-size: 2.2rem;
+  }
+  
+  .cp-stat-label {
+    font-size: 1rem;
+  }
+  
+  .cp-section-header {
+    margin-bottom: 50px;
+  }
+  
+  .cp-section-title,
+  .cp-culture-title,
+  .cp-form-title,
+  .cp-perk-title,
+  .cp-learning-title,
+  .cp-new-card-title {
+    font-size: 1.6rem;
+  }
+  
+  /* UPDATED: Extra small screens - 2 cards per row with smaller cards */
+  .cp-perks-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .cp-perk-card-new {
+    padding: 25px 15px;
+    min-height: 350px;
+  }
+  
+  .cp-perk-icon-ring {
+    width: 70px;
+    height: 70px;
+    font-size: 2.2rem;
+    border-width: 2px;
+  }
+  
+  .cp-perk-icon-ring svg {
+    font-size: 1.8rem;
+  }
+  
+  .cp-perk-title {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+  }
+  
+  .cp-perk-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  .cp-new-card-inner,
+  .cp-learning-card-inner {
+    padding: 25px 20px;
+  }
+  
+  .cp-icon-circle {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+  }
+  
+  .cp-icon-circle svg {
+    font-size: 1.5rem;
+  }
+  
+  .cp-learning-icon-container {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 25px;
+  }
+  
+  .cp-learning-icon-inner {
+    width: 55px;
+    height: 55px;
+    font-size: 2rem;
+  }
+  
+  .cp-learning-icon-inner svg {
+    font-size: 1.5rem;
+  }
+  
+  .cp-role-chip {
+    padding: 8px 15px;
+    font-size: 0.95rem;
+  }
+  
+  .cp-culture-point {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .cp-form-container {
+    padding: 18px 20px;
+    border-radius: 18px;
+  }
+  
+  .cp-form-section {
+    padding: 15px 10px;
+  }
+  
+  .cp-form-title {
+    font-size: 1.4rem;
+  }
+  
+  .cp-form-subtitle {
+    font-size: 0.75rem;
+  }
+  
+  .cp-form-label {
+    font-size: 0.8rem;
+  }
+  
+  .cp-form-input,
+  .cp-form-select,
+  .cp-form-textarea {
+    padding: 9px 12px;
+    font-size: 0.75rem;
+  }
+  
+  .cp-form-textarea {
+    min-height: 80px;
+    max-height: 90px;
+  }
+  
+  .cp-submit-btn {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+    min-height: 45px;
+    gap: 8px;
+  }
+  
+  .cp-spinner {
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+  }
+  
+  .cp-visual-1,
+  .cp-visual-2,
+  .cp-visual-3 {
+    width: 60px;
+    height: 60px;
+    font-size: 1.2rem;
+  }
+  
+  .cp-visual-element svg {
+    font-size: 1.2rem;
+  }
+}
+
+/* Very small screens (360px and below) */
+@media (max-width: 360px) {
+  /* UPDATED: Very small screens - 2 cards per row with compact layout */
+  .cp-perks-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  
+  .cp-perk-card-new {
+    padding: 20px 12px;
+    min-height: 320px;
+    border-radius: 20px;
+  }
+  
+  .cp-perk-icon-ring {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+    border-width: 2px;
+    margin-bottom: 20px;
+  }
+  
+  .cp-perk-icon-ring svg {
+    font-size: 1.6rem;
+  }
+  
+  .cp-perk-title {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+  }
+  
+  .cp-perk-description {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+  
+  .cp-new-card-inner,
+  .cp-learning-card-inner {
+    padding: 20px 15px;
+  }
+  
+  .cp-form-container {
+    padding: 15px 18px;
+    border-radius: 16px;
+  }
+  
+  .cp-form-section {
+    padding: 12px 8px;
+  }
+  
+  .cp-form-title {
+    font-size: 1.3rem;
+  }
+  
+  .cp-form-subtitle {
+    font-size: 0.7rem;
+  }
+  
+  .cp-form-label {
+    font-size: 0.75rem;
+  }
+  
+  .cp-form-input,
+  .cp-form-select,
+  .cp-form-textarea {
+    padding: 8px 10px;
+    font-size: 0.7rem;
+  }
+  
+  .cp-submit-btn {
+    padding: 9px 18px;
+    font-size: 0.8rem;
+    min-height: 42px;
+    gap: 6px;
+  }
+}
+
+/* Ultra small screens (320px and below) */
+@media (max-width: 320px) {
+  /* UPDATED: Ultra small screens - Keep 2 cards but adjust spacing */
+  .cp-perks-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  
+  .cp-perk-card-new {
+    padding: 18px 10px;
+    min-height: 300px;
+    border-radius: 18px;
+  }
+  
+  .cp-perk-icon-ring {
+    width: 55px;
+    height: 55px;
+    font-size: 1.8rem;
+    border-width: 1.5px;
+    margin-bottom: 15px;
+  }
+  
+  .cp-perk-icon-ring svg {
+    font-size: 1.4rem;
+  }
+  
+  .cp-perk-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .cp-perk-description {
+    font-size: 0.8rem;
+    line-height: 1.3;
+  }
+}
+
+/* Nest Hub specific adjustments (1024x600) */
+@media (max-height: 600px) and (max-width: 1024px) {
+  .cp-hero-section {
+    min-height: auto;
+    height: auto;
+    padding: 80px 0 60px;
+  }
+  
+  .cp-hero-content-wrapper {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  
+  .cp-hero-badge {
+    margin-top: 20px;
+  }
+  
+  .cp-hero-title {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .cp-hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+  
+  .cp-hero-stats {
+    flex-direction: row;
+    gap: 40px;
+    margin-bottom: 30px;
+    justify-content: center;
+  }
+  
+  .cp-stat-item {
+    padding-left: 20px;
+  }
+  
+  .cp-stat-item::before {
+    display: block;
+  }
+  
+  .cp-hero-cta {
+    padding: 18px 35px;
+    font-size: 1rem;
+    min-height: 55px;
+  }
+  
+  .cp-floating-1,
+  .cp-floating-2,
+  .cp-floating-3 {
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+  }
+  
+  .cp-floating-element svg {
+    font-size: 2rem;
+  }
+}
+
+/* Adjust for taller Nest Hub variations */
+@media (max-height: 700px) and (min-height: 601px) and (max-width: 1024px) {
+  .cp-hero-section {
+    min-height: auto;
+    height: auto;
+    padding: 100px 0 80px;
+  }
+  
+  .cp-hero-badge {
+    margin-top: 10px;
+  }
+}

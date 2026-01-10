@@ -1,0 +1,1359 @@
+/* REMOVE GAPS BETWEEN SECTIONS - ADDED AT TOP */
+.dm-page {
+    margin: 0;
+    padding: 0;
+}
+
+/* Digital Marketing Page Styles - EMERALD GREEN THEME */
+.dm-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+/* WIDER Feedback Container */
+.dm-feedback-container-wide {
+    max-width: 1400px !important;
+}
+
+/* Hero Section - CENTERED AND LARGER */
+.dm-hero-section {
+    position: relative;
+    min-height: 80vh; /* Changed from 100vh to 80vh like reference */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #0a1f1c;
+    padding: 40px 0; /* Added padding like reference */
+    width: 100%;
+}
+
+.dm-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+    filter: grayscale(100%);
+}
+
+.dm-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 900px; /* Reduced from 1000px to match reference */
+    width: 90%; /* Added width */
+    padding: 40px 50px; /* Reduced padding to match reference */
+    background: rgba(10, 31, 28, 0.85); /* Darker background for contrast */
+    backdrop-filter: blur(15px);
+    border-radius: 25px;
+    border: 2px solid rgba(72, 187, 120, 0.3); /* Added border */
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+    margin: 0 auto; /* Centered */
+}
+
+.dm-hero-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #48bb78, #2f855a);
+    color: white;
+    padding: 12px 28px; /* Adjusted to match reference */
+    border-radius: 30px;
+    font-size: 15px; /* Adjusted to match reference */
+    font-weight: 600; /* Adjusted to match reference */
+    margin-bottom: 15px; /* Adjusted to match reference */
+    text-transform: uppercase;
+    letter-spacing: 1.5px; /* Adjusted to match reference */
+    font-family: 'Aldrich', sans-serif;
+    border: none;
+    box-shadow: 0 5px 15px rgba(72, 187, 120, 0.3);
+}
+
+.dm-hero-title {
+    font-size: 3rem; /* Reduced from 3.8rem to match reference 3rem */
+    font-weight: 800; /* Adjusted to match reference */
+    color: #ffffff;
+    margin-bottom: 15px; /* Adjusted to match reference */
+    line-height: 1.2;
+    font-family: 'HEXCO', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+}
+
+.dm-hero-subtitle {
+    font-size: 1.3rem; /* Reduced from 1.8rem to match reference 1.3rem */
+    color: #9ae6b4;
+    margin-bottom: 20px; /* Adjusted to match reference */
+    line-height: 1.6;
+    font-family: 'Aldrich', sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.dm-hero-description {
+    font-size: 1rem; /* Reduced from 1.3rem to match reference 1rem */
+    color: #e2e8f0;
+    line-height: 1.6;
+    margin-bottom: 25px; /* Adjusted to match reference */
+    font-family: 'Aldrich', sans-serif;
+    font-weight: 400;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dm-services-stack {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px; /* Reduced from 15px to match reference */
+    margin-top: 15px; /* Reduced from 40px to match reference */
+    padding: 20px 0; /* Increased padding */
+}
+
+.dm-service-item {
+    background: rgba(72, 187, 120, 0.15);
+    color: #48bb78;
+    padding: 6px 12px; /* Reduced from 12px 24px to match reference */
+    border-radius: 20px; /* Reduced from 25px to match reference */
+    font-size: 0.85rem; /* Reduced from 1.1rem to match reference */
+    border: 1px solid rgba(72, 187, 120, 0.4);
+    font-family: 'Aldrich', sans-serif;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(72, 187, 120, 0.1);
+}
+
+.dm-service-item:hover {
+    transform: translateY(-2px); /* Reduced from -3px to match reference */
+    background: rgba(72, 187, 120, 0.25);
+    box-shadow: 0 8px 20px rgba(72, 187, 120, 0.3);
+    border-color: rgba(72, 187, 120, 0.6);
+}
+
+/* About Section - FIXED PADDING */
+.dm-about-section {
+    padding: 80px 0; /* Reduced from 100px to match reference */
+    background: #ffffff;
+    position: relative;
+}
+
+.dm-about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.dm-about-text {
+    padding-right: 40px;
+}
+
+.dm-about-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 20px; /* Adjusted to match reference */
+    position: relative;
+    font-family: 'HEXCO', sans-serif;
+}
+
+.dm-about-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: #48bb78;
+    border-radius: 2px;
+}
+
+.dm-about-description {
+    font-size: 1.1rem;
+    color: #475569;
+    line-height: 1.8;
+    margin-bottom: 30px; /* Adjusted to match reference */
+    font-family: 'Aldrich', sans-serif;
+}
+
+.dm-about-points {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0; /* Adjusted to match reference */
+}
+
+.dm-about-point {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    color: #475569;
+    font-size: 1rem;
+    font-family: 'Aldrich', sans-serif;
+    padding: 10px 15px; /* Adjusted to match reference */
+    border-radius: 8px;
+    background: #f8fafc;
+    transition: all 0.3s ease;
+}
+
+.dm-about-point:hover {
+    transform: translateX(5px);
+    background: #f1f5f9;
+}
+
+.dm-about-point::before {
+    content: '✓';
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: #48bb78;
+    color: white;
+    border-radius: 50%;
+    margin-right: 15px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Read More Button */
+.dm-read-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #48bb78;
+    color: white;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Aldrich', sans-serif;
+    margin-bottom: 20px; /* Adjusted to match reference */
+}
+
+.dm-read-more-btn:hover {
+    background: #38a169;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(72, 187, 120, 0.3);
+}
+
+.dm-arrow {
+    transition: transform 0.3s ease;
+}
+
+.dm-read-more-btn.expanded .dm-arrow {
+    transform: rotate(180deg);
+}
+
+/* FIXED: Expanded Content - Match reference structure */
+.dm-expanded-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.5s ease;
+}
+
+.dm-expanded-content.expanded {
+    max-height: 1000px; /* Adjusted to match reference */
+    opacity: 1;
+    transform: translateY(0);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* FIXED: Expanded paragraphs container */
+.dm-expanded-paragraphs {
+    font-family: 'Aldrich', sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* FIXED: Individual paragraph styling - Match reference structure */
+.dm-expanded-paragraph {
+    font-size: 1.05rem;
+    color: #444; /* Changed from #475569 to match reference */
+    line-height: 1.8;
+    padding-left: 20px;
+    border-left: 3px solid #48bb78; /* Changed from #64ffda to green */
+    padding: 15px 20px;
+    background: #f8fafc;
+    border-radius: 0 8px 8px 0;
+    margin: 0;
+}
+
+.dm-expanded-paragraph strong {
+    color: #0a192f; /* Changed from #1e293b to match reference */
+    font-weight: 600;
+}
+
+/* IMAGE COLUMN LAYOUT - FILLS EMPTY SPACE */
+.dm-about-images-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Reduced from 25px to match reference */
+    width: 100%;
+    height: auto;
+}
+
+/* Main Image - FULL SIZE */
+.dm-about-image-main {
+    position: sticky;
+    top: 120px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    height: 450px;
+    transition: all 0.3s ease;
+    width: 100%;
+    flex-shrink: 0;
+}
+
+/* When section is expanded, main image becomes relative */
+.dm-image-scroll .dm-about-image-main {
+    position: relative;
+    top: 0 !important;
+}
+
+.dm-about-image-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.dm-about-image-main:hover img {
+    transform: scale(1.05);
+}
+
+/* Extra Images Container - FILLS EMPTY SPACE BELOW - FIXED */
+.dm-extra-images-fill {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Reduced from 25px to match reference */
+    width: 100%;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+.dm-extra-images-fill.show {
+    opacity: 1;
+    max-height: 2000px; /* Adjusted to match reference */
+}
+
+/* Individual Extra Image - SAME SIZE AS MAIN IMAGE */
+.dm-extra-image-fill {
+    width: 100%;
+    height: 450px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    flex-shrink: 0;
+}
+
+/* Image appears one by one */
+.dm-extra-image-fill.visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Stagger the animations */
+.dm-extra-image-fill:nth-child(1).visible {
+    transition-delay: 0.2s;
+}
+
+.dm-extra-image-fill:nth-child(2).visible {
+    transition-delay: 0.4s;
+}
+
+.dm-extra-image-fill:nth-child(3).visible {
+    transition-delay: 0.6s;
+}
+
+.dm-extra-image-fill:nth-child(4).visible {
+    transition-delay: 0.8s;
+}
+
+/* Image Wrapper */
+.dm-fill-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.dm-fill-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.dm-extra-image-fill:hover .dm-fill-image-wrapper img {
+    transform: scale(1.1);
+}
+
+/* Image Overlay */
+.dm-fill-image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(10, 31, 28, 0.9), transparent);
+    color: white;
+    padding: 30px;
+    transform: translateY(0); /* Changed from 20px to match reference */
+    opacity: 0.95; /* Changed from 0.9 to match reference */
+    transition: all 0.3s ease;
+}
+
+.dm-extra-image-fill:hover .dm-fill-image-overlay {
+    opacity: 1;
+    background: linear-gradient(to top, rgba(10, 31, 28, 0.98), transparent); /* Changed from 0.95 to match reference */
+}
+
+.dm-fill-image-overlay h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-family: 'HEXCO', sans-serif;
+    font-weight: 600;
+    color: #48bb78; /* Added color to match reference */
+}
+
+.dm-fill-image-overlay p {
+    font-size: 1rem;
+    opacity: 0.9;
+    font-family: 'Aldrich', sans-serif;
+    line-height: 1.5;
+    color: #ccd6f6; /* Added color to match reference */
+}
+
+/* Original Image Overlay (for main image) */
+.dm-image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(71, 109, 166, 0.8); /* Changed from rgba(0,0,0,0.8) to match reference */
+    padding: 25px; /* Reduced from 30px to match reference */
+    color: white;
+    font-family: 'Aldrich', sans-serif;
+}
+
+.dm-image-overlay h3 {
+    font-size: 1.5rem; /* Reduced from 1.6rem to match reference */
+    margin-bottom: 10px; /* Reduced from 12px to match reference */
+    font-family: 'HEXCO', sans-serif;
+    color: #48bb78; /* Added color to match reference */
+}
+
+.dm-image-overlay p {
+    font-size: 0.9rem; /* Reduced from 1rem to match reference */
+    opacity: 0.9;
+    color: #ccd6f6; /* Added color to match reference */
+}
+
+/* REMOVED Development Process Section */
+
+/* Campaigns Section - FIXED PADDING - RESTORED TO ORIGINAL */
+.dm-campaigns-section {
+    padding: 80px 0; /* Reduced from 100px to match reference */
+    background: linear-gradient(135deg, #0a1f1c 0%, #1a2f2a 100%);
+}
+
+.dm-section-header {
+    text-align: center;
+    margin-bottom: 50px; /* Reduced from 60px to match reference */
+}
+
+.dm-section-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 15px; /* Reduced from 20px to match reference */
+    font-family: 'HEXCO', sans-serif;
+}
+
+.dm-section-subtitle {
+    font-size: 1.2rem;
+    color: #8892b0; /* Changed from #cbd5e1 to match reference */
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+    font-family: 'Aldrich', sans-serif;
+}
+
+/* FIXED: Campaigns Grid - RESTORED TO ORIGINAL */
+.dm-campaigns-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+/* FIXED: Campaign Card - RESTORED TO ORIGINAL */
+.dm-campaign-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.dm-campaign-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(72, 187, 120, 0.3);
+    box-shadow: 0 20px 40px rgba(72, 187, 120, 0.1);
+}
+
+.dm-campaign-image {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+}
+
+.dm-campaign-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.dm-campaign-card:hover .dm-campaign-image img {
+    transform: scale(1.1);
+}
+
+.dm-campaign-category {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #48bb78, #2f855a); /* Changed from solid #48bb78 to gradient like reference */
+    color: white;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'Aldrich', sans-serif;
+}
+
+.dm-campaign-content {
+    padding: 20px; /* Reduced from 25px to match reference */
+}
+
+.dm-campaign-title {
+    font-size: 1.4rem;
+    color: white;
+    margin-bottom: 10px; /* Reduced from 15px to match reference */
+    font-family: 'HEXCO', sans-serif;
+}
+
+.dm-campaign-description {
+    color: #8892b0; /* Changed from #94a3b8 to match reference */
+    font-size: 0.9rem; /* Reduced from 0.95rem to match reference */
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-family: 'Aldrich', sans-serif;
+}
+
+.dm-campaign-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px; /* Reduced from 25px to match reference */
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dm-campaign-stat {
+    text-align: center;
+}
+
+.dm-stat-number {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #48bb78;
+    display: block;
+    font-family: 'HEXCO', sans-serif;
+}
+
+.dm-stat-label {
+    font-size: 0.8rem; /* Reduced from 0.85rem to match reference */
+    color: #8892b0; /* Changed from #94a3b8 to match reference */
+    margin-top: 5px;
+    font-family: 'Aldrich', sans-serif;
+}
+
+/* Feedback Section - WIDER VERSION LIKE BRANDING */
+.dm-feedback-section {
+    padding: 80px 0; /* Reduced from 100px to match reference */
+    background: #f1f5f9;
+}
+
+.dm-feedback-section .dm-section-title {
+    color: #0a192f; /* Changed from #0f172a to match reference */
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px; /* Reduced from 20px to match reference */
+    font-family: 'HEXCO', sans-serif;
+}
+
+.dm-feedback-section .dm-section-subtitle {
+    color: #334155;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+    font-family: 'Aldrich', sans-serif;
+    margin-bottom: 40px; /* Reduced from 50px to match reference */
+}
+
+/* FIXED: Proper Carousel Layout - Left arrow, Card in center, Right arrow */
+.dm-feedback-wrapper-wide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 60px;
+    gap: 30px;
+}
+
+/* Square Navigation Buttons - Left and Right Sides */
+.dm-feedback-nav-btn {
+    background: white;
+    border: 2px solid #48bb78;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #48bb78;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(72, 187, 120, 0.1);
+    position: relative;
+    z-index: 10;
+    flex-shrink: 0;
+}
+
+.dm-feedback-nav-btn:hover {
+    background: #48bb78;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(72, 187, 120, 0.2);
+}
+
+/* Left arrow on LEFT side */
+.dm-feedback-prev {
+    order: 1;
+}
+
+/* Card in CENTER */
+.dm-feedback-slider-wide {
+    order: 2;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1000px;
+    flex: 1;
+}
+
+/* Right arrow on RIGHT side */
+.dm-feedback-next {
+    order: 3;
+}
+
+.dm-feedback-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.dm-feedback-slide {
+    min-width: 100%;
+    padding: 0 10px;
+    display: flex;
+    justify-content: center;
+}
+
+/* WIDER FEEDBACK CARD - FIXED LAYOUT */
+.dm-feedback-card-wide {
+    background: linear-gradient(135deg, #0e322d 0%, #1a2f2a 100%);
+    padding: 40px 50px; /* Reduced from 60px 50px to match reference */
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(72, 187, 120, 0.15);
+    border: 1px solid rgba(72, 187, 120, 0.25);
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    min-height: 320px; /* Reduced from 350px to match reference */
+    display: flex;
+    flex-direction: column; /* Changed from default to column to match reference */
+    align-items: center;
+    justify-content: space-between; /* Added to match reference */
+}
+
+/* Colored top border */
+.dm-feedback-card-wide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #48bb78, #68d391, #48bb78);
+    border-radius: 20px 20px 0 0;
+}
+
+.dm-feedback-quote {
+    font-size: 3.5rem; /* Reduced from 4rem to match reference */
+    color: #48bb78;
+    opacity: 0.15;
+    line-height: 1;
+    position: absolute;
+    top: 15px; /* Reduced from 20px to match reference */
+    left: 40px;
+}
+
+.dm-feedback-text-wide {
+    font-size: 1.1rem; /* Reduced from 1.2rem to match reference */
+    color: white;
+    line-height: 1.7;
+    margin-bottom: 25px; /* Reduced from 40px to match reference */
+    font-style: italic;
+    font-family: 'Aldrich', sans-serif;
+    font-weight: 500;
+    padding-left: 50px; /* Reduced from 60px to match reference */
+    border-left: 3px solid rgba(72, 187, 120, 0.2);
+    margin-left: 10px; /* Reduced from 20px to match reference */
+    max-height: 200px; /* Increased from 180px to match reference */
+    overflow-y: auto;
+    padding-right: 20px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+/* AUTHOR INFO WITHOUT AVATAR - CENTERED */
+.dm-feedback-author-simple {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px; /* Reduced from 30px to match reference */
+    padding-top: 20px; /* Reduced from 25px to match reference */
+    border-top: 1px solid rgba(72, 187, 120, 0.15);
+    width: 100%;
+    text-align: center;
+}
+
+.dm-author-info-simple {
+    padding: 15px 25px;
+    background: rgba(72, 187, 120, 0.05); /* Changed from white to transparent with tint */
+    border-radius: 15px;
+    border: 1px solid rgba(72, 187, 120, 0.1);
+    min-width: 250px;
+    max-width: 400px;
+}
+
+.dm-author-info-simple h4 {
+    font-size: 1.3rem;
+    color: white; /* Changed from white (same) */
+    margin-bottom: 6px; /* Reduced from 8px to match reference */
+    font-family: 'HEXCO', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.dm-author-info-simple p {
+    font-size: 1rem;
+    color: #ccd6f6; /* Changed from white to match reference */
+    font-family: 'Aldrich', sans-serif;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+/* Feedback Content Container */
+.dm-feedback-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+/* Scrollbar for wider text */
+.dm-feedback-text-wide::-webkit-scrollbar {
+    width: 6px;
+}
+
+.dm-feedback-text-wide::-webkit-scrollbar-track {
+    background: rgba(72, 187, 120, 0.08);
+    border-radius: 10px;
+}
+
+.dm-feedback-text-wide::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #48bb78, #68d391);
+    border-radius: 10px;
+}
+
+/* Slider Dots */
+.dm-slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 35px; /* Reduced from 40px to match reference */
+}
+
+.dm-slider-dot {
+    width: 12px;
+    height: 12px;
+    background: rgba(203, 213, 225, 0.6);
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.dm-slider-dot.active {
+    background: #48bb78;
+    transform: scale(1.3);
+    box-shadow: 0 0 10px rgba(72, 187, 120, 0.3);
+}
+
+.dm-slider-dot:hover {
+    background: #48bb78;
+    transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .dm-hero-section {
+        min-height: 70vh; /* Added to match reference */
+    }
+    
+    .dm-hero-title {
+        font-size: 2.5rem; /* Reduced from 2.8rem to match reference */
+    }
+    
+    .dm-about-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .dm-about-text {
+        padding-right: 0;
+    }
+    
+    /* On mobile, image is always relative */
+    .dm-about-image-main {
+        position: relative !important;
+        top: 0 !important;
+        height: 400px;
+    }
+    
+    .dm-image-scroll .dm-about-image-main {
+        position: relative !important;
+    }
+    
+    .dm-section-title {
+        font-size: 2.4rem;
+    }
+    
+    .dm-feedback-wrapper-wide {
+        padding: 0 40px;
+        gap: 20px;
+    }
+    
+    .dm-feedback-card-wide {
+        padding: 35px 40px; /* Adjusted to match reference */
+        min-height: 300px; /* Added to match reference */
+    }
+    
+    .dm-feedback-text-wide {
+        font-size: 1.05rem; /* Adjusted to match reference */
+        padding-left: 45px; /* Adjusted to match reference */
+        max-height: 180px; /* Adjusted to match reference */
+    }
+    
+    .dm-feedback-quote {
+        left: 30px;
+        font-size: 3rem; /* Adjusted to match reference */
+    }
+    
+    .dm-author-info-simple {
+        min-width: 220px; /* Added to match reference */
+        padding: 12px 20px; /* Adjusted to match reference */
+    }
+    
+    .dm-author-info-simple h4 {
+        font-size: 1.2rem; /* Adjusted to match reference */
+    }
+    
+    .dm-hero-content {
+        padding: 35px 40px; /* Adjusted to match reference */
+        max-width: 800px;
+    }
+    
+    /* Adjust image sizes on tablet */
+    .dm-extra-image-fill {
+        height: 400px; /* Reduced from original to match reference */
+    }
+    
+    .dm-fill-image-overlay {
+        padding: 25px;
+    }
+    
+    .dm-fill-image-overlay h4 {
+        font-size: 1.3rem;
+    }
+    
+    .dm-fill-image-overlay p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .dm-hero-section {
+        min-height: 60vh; /* Added to match reference */
+        padding: 30px 0; /* Added to match reference */
+    }
+    
+    .dm-about-section {
+        padding: 80px 0; /* Changed from 60px to match reference */
+    }
+    
+    .dm-campaigns-section {
+        padding: 80px 0; /* Changed from 60px to match reference */
+    }
+    
+    .dm-feedback-section {
+        padding: 80px 0; /* Changed from 60px to match reference */
+    }
+    
+    .dm-hero-title {
+        font-size: 2rem;
+    }
+    
+    .dm-hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .dm-hero-description {
+        font-size: 0.95rem; /* Adjusted to match reference */
+    }
+    
+    .dm-hero-content {
+        padding: 30px 25px; /* Adjusted to match reference */
+        width: 90%; /* Added to match reference */
+    }
+    
+    .dm-about-title {
+        font-size: 2rem;
+    }
+    
+    .dm-section-title {
+        font-size: 2.2rem;
+    }
+    
+    .dm-feedback-section .dm-section-title {
+        font-size: 1.8rem;
+    }
+    
+    .dm-feedback-section .dm-section-subtitle {
+        font-size: 1rem;
+        padding: 0 20px; /* Added to match reference */
+    }
+    
+    /* FIXED: Campaigns Grid for Mobile - RESTORED TO ORIGINAL */
+    .dm-campaigns-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .dm-feedback-wrapper-wide {
+        padding: 0 30px;
+        gap: 15px;
+    }
+    
+    .dm-feedback-card-wide {
+        padding: 30px 35px;
+        min-height: 280px; /* Added to match reference */
+    }
+    
+    .dm-feedback-text-wide {
+        font-size: 1rem;
+        max-height: 160px; /* Adjusted to match reference */
+        padding-left: 35px; /* Adjusted to match reference */
+        margin-bottom: 20px; /* Adjusted to match reference */
+    }
+    
+    .dm-feedback-quote {
+        font-size: 2.5rem;
+        left: 25px;
+        top: 10px; /* Added to match reference */
+    }
+    
+    .dm-feedback-nav-btn {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .dm-author-info-simple {
+        min-width: 200px; /* Added to match reference */
+        padding: 12px 18px; /* Adjusted to match reference */
+    }
+    
+    .dm-author-info-simple h4 {
+        font-size: 1.1rem;
+    }
+    
+    .dm-author-info-simple p {
+        font-size: 0.9rem;
+    }
+    
+    /* Adjust image sizes on mobile */
+    .dm-about-image-main {
+        height: 350px;
+    }
+    
+    .dm-extra-image-fill {
+        height: 350px;
+    }
+    
+    .dm-fill-image-overlay {
+        padding: 20px;
+    }
+    
+    .dm-fill-image-overlay h4 {
+        font-size: 1.2rem;
+    }
+    
+    .dm-fill-image-overlay p {
+        font-size: 0.85rem;
+    }
+    
+    .dm-hero-badge {
+        padding: 10px 22px; /* Added to match reference */
+        font-size: 14px; /* Added to match reference */
+        margin-bottom: 10px; /* Added to match reference */
+    }
+}
+
+/* MEDIA QUERY FOR SMALL SCREENS ONLY (≤640px) */
+@media (max-width: 640px) {
+    /* For small screens, stack buttons above and below the card */
+    .dm-feedback-wrapper-wide {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 0 20px;
+    }
+    
+    .dm-feedback-prev {
+        order: 1;
+        margin-bottom: 10px;
+    }
+    
+    .dm-feedback-slider-wide {
+        order: 2;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .dm-feedback-next {
+        order: 3;
+        margin-top: 10px;
+    }
+    
+    .dm-feedback-card-wide {
+        padding: 25px 20px;
+        min-height: 320px;
+        margin: 0;
+    }
+    
+    .dm-feedback-text-wide {
+        font-size: 0.95rem;
+        max-height: 180px;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-bottom: 20px;
+        line-height: 1.6;
+    }
+    
+    .dm-feedback-quote {
+        font-size: 2rem;
+        left: 15px;
+        top: 10px;
+    }
+    
+    .dm-feedback-author-simple {
+        margin-top: 15px;
+        padding-top: 15px;
+    }
+    
+    .dm-author-info-simple {
+        min-width: 180px;
+        padding: 10px 15px;
+    }
+    
+    .dm-author-info-simple h4 {
+        font-size: 1rem;
+    }
+    
+    .dm-author-info-simple p {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .dm-hero-section {
+        min-height: 55vh; /* Added to match reference */
+        padding: 20px 0; /* Adjusted to match reference */
+    }
+    
+    .dm-about-section {
+        padding: 80px 0; /* Changed from 50px to match reference */
+    }
+    
+    .dm-campaigns-section {
+        padding: 80px 0; /* Changed from 50px to match reference */
+    }
+    
+    .dm-feedback-section {
+        padding: 60px 0; /* Adjusted to match reference */
+    }
+    
+    .dm-hero-content {
+        padding: 25px 20px; /* Adjusted to match reference */
+        width: 95%; /* Added to match reference */
+    }
+    
+    .dm-hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .dm-hero-badge {
+        padding: 8px 18px; /* Adjusted to match reference */
+        font-size: 12px; /* Adjusted to match reference */
+        margin-bottom: 8px; /* Adjusted to match reference */
+    }
+    
+    .dm-hero-subtitle {
+        font-size: 1rem; /* Adjusted to match reference */
+        margin-bottom: 15px; /* Adjusted to match reference */
+    }
+    
+    .dm-hero-description {
+        font-size: 0.9rem; /* Adjusted to match reference */
+        line-height: 1.4; /* Added to match reference */
+        margin-bottom: 15px; /* Adjusted to match reference */
+    }
+    
+    .dm-feedback-section .dm-section-title {
+        font-size: 1.6rem;
+        padding: 0 15px; /* Added to match reference */
+    }
+    
+    .dm-feedback-section .dm-section-subtitle {
+        font-size: 0.9rem;
+        padding: 0 15px; /* Added to match reference */
+        margin-bottom: 30px; /* Adjusted to match reference */
+    }
+    
+    .dm-feedback-wrapper-wide {
+        padding: 0 15px; /* Adjusted to match reference */
+    }
+    
+    .dm-feedback-card-wide {
+        padding: 20px 15px;
+        min-height: 340px; /* Adjusted to match reference */
+        border-radius: 15px; /* Added to match reference */
+    }
+    
+    .dm-feedback-text-wide {
+        font-size: 0.9rem;
+        max-height: 200px; /* Adjusted to match reference */
+        padding-left: 20px; /* Adjusted to match reference */
+        padding-right: 20px; /* Adjusted to match reference */
+        margin-bottom: 15px; /* Adjusted to match reference */
+        line-height: 1.5; /* Adjusted to match reference */
+        border-left-width: 2px; /* Added to match reference */
+    }
+    
+    .dm-feedback-quote {
+        font-size: 1.8rem;
+        left: 10px;
+        top: 8px;
+    }
+    
+    .dm-feedback-nav-btn {
+        width: 35px;
+        height: 35px;
+        border-radius: 6px;
+    }
+    
+    .dm-feedback-nav-btn svg {
+        width: 12px;
+        height: 12px;
+    }
+    
+    /* For 480px and below, adjust the button margins */
+    @media (max-width: 640px) {
+        .dm-feedback-prev {
+            margin-bottom: 8px;
+        }
+        
+        .dm-feedback-next {
+            margin-top: 8px;
+        }
+    }
+    
+    .dm-author-info-simple {
+        min-width: 160px;
+        padding: 8px 12px;
+        border-radius: 10px; /* Added to match reference */
+    }
+    
+    .dm-author-info-simple h4 {
+        font-size: 0.95rem;
+        margin-bottom: 4px; /* Adjusted to match reference */
+    }
+    
+    .dm-author-info-simple p {
+        font-size: 0.8rem;
+    }
+    
+    .dm-slider-dots {
+        margin-top: 25px; /* Added to match reference */
+    }
+    
+    /* Adjust image sizes on small screens */
+    .dm-about-image-main {
+        height: 300px;
+    }
+    
+    .dm-extra-image-fill {
+        height: 300px;
+    }
+    
+    .dm-fill-image-overlay {
+        padding: 15px;
+    }
+    
+    .dm-fill-image-overlay h4 {
+        font-size: 1.1rem;
+    }
+    
+    .dm-fill-image-overlay p {
+        font-size: 0.8rem;
+    }
+    
+    .dm-image-overlay {
+        padding: 20px;
+    }
+    
+    .dm-image-overlay h3 {
+        font-size: 1.3rem;
+    }
+    
+    .dm-image-overlay p {
+        font-size: 0.8rem;
+    }
+    
+    .dm-service-item {
+        padding: 5px 10px; /* Added to match reference */
+        font-size: 0.8rem; /* Added to match reference */
+    }
+}
+
+@media (max-width: 360px) {
+    .dm-feedback-card-wide {
+        padding: 18px 12px;
+        min-height: 360px; /* Adjusted to match reference */
+    }
+    
+    .dm-feedback-text-wide {
+        font-size: 0.85rem; /* Adjusted to match reference */
+        padding-left: 18px; /* Adjusted to match reference */
+        padding-right: 18px; /* Adjusted to match reference */
+        max-height: 220px; /* Adjusted to match reference */
+        line-height: 1.4; /* Added to match reference */
+    }
+    
+    .dm-feedback-quote {
+        font-size: 1.5rem; /* Adjusted to match reference */
+        left: 8px; /* Adjusted to match reference */
+        top: 6px; /* Adjusted to match reference */
+    }
+    
+    .dm-feedback-nav-btn {
+        width: 32px; /* Adjusted to match reference */
+        height: 32px; /* Adjusted to match reference */
+    }
+    
+    .dm-feedback-nav-btn svg {
+        width: 10px; /* Adjusted to match reference */
+        height: 10px; /* Adjusted to match reference */
+    }
+    
+    .dm-author-info-simple {
+        min-width: 140px; /* Adjusted to match reference */
+        padding: 6px 10px; /* Adjusted to match reference */
+    }
+    
+    .dm-author-info-simple h4 {
+        font-size: 0.9rem; /* Adjusted to match reference */
+    }
+    
+    .dm-author-info-simple p {
+        font-size: 0.75rem; /* Adjusted to match reference */
+    }
+    
+    .dm-feedback-section .dm-section-title {
+        font-size: 1.4rem; /* Added to match reference */
+    }
+    
+    /* Adjust image sizes for very small screens */
+    .dm-about-image-main {
+        height: 280px; /* Adjusted to match reference */
+    }
+    
+    .dm-extra-image-fill {
+        height: 280px; /* Adjusted to match reference */
+    }
+    
+    .dm-fill-image-overlay {
+        padding: 12px; /* Adjusted to match reference */
+    }
+    
+    .dm-fill-image-overlay h4 {
+        font-size: 1rem; /* Adjusted to match reference */
+    }
+    
+    .dm-fill-image-overlay p {
+        font-size: 0.75rem; /* Adjusted to match reference */
+    }
+    
+    .dm-hero-title {
+        font-size: 1.6rem; /* Added to match reference */
+    }
+    
+    .dm-hero-subtitle {
+        font-size: 0.9rem; /* Added to match reference */
+    }
+}

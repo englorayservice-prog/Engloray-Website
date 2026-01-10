@@ -1,0 +1,349 @@
+/* Tagline.css - Sequential Word Animation with Shorter Height */
+.tagline-section {
+  color: black;
+  padding: 5px 0; /* Reduced padding */
+  text-align: center;
+  min-height: 0.5vh !important; /* Reduced height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: visible;
+  background: #ffffff;
+}
+
+.tagline-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+/* Main tagline wrapper - SHORTER HEIGHT */
+.tagline-text-wrapper {
+  font-size: 2.2rem !important; /* Slightly smaller font */
+  font-weight: bold;
+  margin-bottom: 0;
+  font-family: 'HEXCO', sans-serif;
+  font-style: italic !important;
+  line-height: 1; /* Reduced line height */
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  letter-spacing: -0.5px;
+  white-space: nowrap;
+  overflow: visible !important;
+  min-height: 40px; /* Reduced min-height */
+  padding: 5px 0; /* Reduced padding */
+}
+
+/* Word container */
+.word-container {
+  display: inline-block;
+  position: relative;
+  margin-right: 0.2em;
+}
+
+/* RED COLOR FOR "BETTER" WORD */
+.word-container.better-word .letter {
+  color: #db1515 !important; /* Red color */
+}
+
+.word-container.better-word .letter.joined {
+  animation: red-pulse 2s ease-in-out infinite !important;
+}
+
+.word-container.better-word .letter.joined:not(:first-child)::before {
+  background: #db1515 !important; /* Red connection lines */
+}
+
+.word-container.better-word .letter.flying::after {
+  background: linear-gradient(90deg, 
+    rgba(219, 21, 21, 0.3) 0%,
+    rgba(219, 21, 21, 0.1) 100%) !important; /* Red trail */
+}
+
+/* Base letter styling */
+.letter {
+  display: inline-block;
+  position: relative;
+  font-family: 'HEXCO', sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #07226b; /* Deep blue for other words */
+  opacity: 0;
+  transform: translateX(0);
+  transition: opacity 0.3s ease;
+}
+
+/* Letter waiting to be animated */
+.letter.waiting {
+  opacity: 0;
+}
+
+/* Letter that's currently flying in */
+.letter.flying {
+  animation: fly-in-from-right 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* Letter that has joined */
+.letter.joined {
+  opacity: 1;
+  animation: gentle-pulse 2s ease-in-out infinite;
+}
+
+/* Space between words */
+.letter-space {
+  display: inline-block;
+  width: 0.3em;
+}
+
+/* Invisible text for layout */
+.invisible-text {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  font-size: 2.2rem; /* Match new font size */
+  font-weight: bold;
+  font-family: 'HEXCO', sans-serif;
+  font-style: italic;
+}
+
+/* Fly-in animation */
+@keyframes fly-in-from-right {
+  0% {
+    opacity: 0;
+    transform: translateX(60px) scale(1.2);
+    filter: blur(4px);
+  }
+  70% {
+    opacity: 1;
+    transform: translateX(-5px) scale(1.05);
+    filter: blur(1px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+/* Gentle pulse animation for joined letters (blue) */
+@keyframes gentle-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 0.9;
+    transform: translateY(-1px);
+  }
+}
+
+/* Red pulse animation for "better" word */
+@keyframes red-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: translateY(0);
+    text-shadow: 0 0 0 rgba(219, 21, 21, 0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-1px);
+    text-shadow: 0 0 8px rgba(219, 21, 21, 0.3);
+  }
+}
+
+/* Connection effect between letters in same word */
+.word-container .letter.joined:not(:first-child)::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -3px;
+  width: 3px;
+  height: 1px;
+  background: #07226b; /* Blue for non-better words */
+  transform: translateY(-50%);
+  opacity: 0.5;
+  animation: connection-pulse 2s ease-in-out infinite;
+}
+
+/* Red connection lines for "better" word */
+.word-container.better-word .letter.joined:not(:first-child)::before {
+  background: #db1515; /* Red for better word */
+  animation: red-connection-pulse 2s ease-in-out infinite;
+}
+
+@keyframes connection-pulse {
+  0%, 100% {
+    opacity: 0.3;
+    width: 3px;
+  }
+  50% {
+    opacity: 0.7;
+    width: 5px;
+  }
+}
+
+@keyframes red-connection-pulse {
+  0%, 100% {
+    opacity: 0.3;
+    width: 3px;
+  }
+  50% {
+    opacity: 0.8;
+    width: 5px;
+    box-shadow: 0 0 3px rgba(219, 21, 21, 0.5);
+  }
+}
+
+/* Subtle particle trail for flying letter */
+.letter.flying::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -8px;
+  width: 40px; /* Shorter trail */
+  height: 1px;
+  background: linear-gradient(90deg, 
+    rgba(7, 34, 107, 0.3) 0%,
+    rgba(7, 34, 107, 0.1) 100%);
+  transform: translateY(-50%);
+  z-index: -1;
+  animation: simple-trail 0.4s ease-out forwards;
+  filter: blur(1px);
+}
+
+@keyframes simple-trail {
+  0% {
+    width: 40px;
+    opacity: 0.4;
+  }
+  100% {
+    width: 0;
+    opacity: 0;
+  }
+}
+
+/* Performance optimizations */
+.letter {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .tagline-section {
+    padding: 4px 0; /* Even less padding on mobile */
+    min-height: 0.3vh !important;
+  }
+  
+  .tagline-text-wrapper {
+    font-size: 1.8rem !important; /* Smaller font on mobile */
+    min-height: 35px; /* Reduced height */
+    line-height: 0.9;
+  }
+  
+  .invisible-text {
+    font-size: 1.8rem;
+  }
+  
+  @keyframes fly-in-from-right {
+    0% {
+      transform: translateX(40px) scale(1.2);
+    }
+  }
+  
+  .letter.flying::after {
+    width: 30px;
+    left: -6px;
+  }
+  
+  .letter.joined {
+    animation: gentle-pulse 1.5s ease-in-out infinite;
+  }
+  
+  .word-container.better-word .letter.joined {
+    animation: red-pulse 1.5s ease-in-out infinite !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .tagline-text-wrapper {
+    font-size: 1.2rem !important;
+    min-height: 30px;
+    line-height: 0.85;
+  }
+  
+  .invisible-text {
+    font-size: 1.5rem;
+  }
+  
+  @keyframes fly-in-from-right {
+    0% {
+      transform: translateX(30px) scale(1.2);
+    }
+  }
+  
+  .letter.flying::after {
+    width: 25px;
+    left: -4px;
+  }
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .tagline-text-wrapper {
+    font-size: 2rem !important;
+    min-height: 38px;
+  }
+  
+  .invisible-text {
+    font-size: 2rem;
+  }
+}
+
+/* Large Desktop Styles */
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+  .tagline-text-wrapper {
+    font-size: 2.2rem !important;
+    min-height: 40px;
+  }
+}
+
+/* Extra Large Screens */
+@media only screen and (min-width: 1441px) {
+  .tagline-text-wrapper {
+    font-size: 2.4rem !important;
+    min-height: 45px;
+  }
+  
+  .invisible-text {
+    font-size: 2.4rem;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .letter,
+  .letter.flying,
+  .letter.joined {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  .letter {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+  
+  .letter::before,
+  .letter::after {
+    display: none;
+  }
+}
