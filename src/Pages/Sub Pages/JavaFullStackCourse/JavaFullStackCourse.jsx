@@ -50,31 +50,8 @@ const JavaFullStackCourse = () => {
     duration: "6 Months | Live Interactive Training"
   };
 
-  const courseDescription = ` The JavaFullStatck Development course is a complete training program that prepares learners to build real-world web applications using both frontend and backend technologies. This course begins with web fundamentals and progresses to advanced backend frameworks and deployment. Students learn HTML, CSS, JavaScript, React.js, Core & Advanced Java, JDBC, Hibernate, Spring Framework, Maven, and MySQL, with deployment using AWS. By the end, students can confidently design, develop, and deploy full-stack applications in professional environments..
-
-## What You'll Master:
-- **Core Java & Advanced Java**: OOPs, Collections, Multithreading, JDBC
-- **Spring Ecosystem**: Spring Boot, Spring MVC, Spring Security, Spring Data JPA
-- **Frontend Development**: HTML5, CSS3, JavaScript, React.js, Bootstrap
-- **Database Management**: MySQL, PostgreSQL, MongoDB
-- **DevOps & Tools**: Git, Docker, Jenkins, Maven, REST APIs
-- **Cloud Deployment**: AWS, Microservices Architecture
-
-## Learning Outcomes:
-1. Build scalable backend applications with Spring Boot
-2. Create responsive frontend applications with React.js
-3. Design and implement RESTful APIs
-4. Work with both SQL and NoSQL databases
-5. Deploy applications on cloud platforms
-6. Understand microservices architecture
-
-## Why Choose Our Program:
-- 🎯 **Industry-Aligned Curriculum**: Updated with current market demands
-- 👨‍🏫 **Expert Mentors**: Learn from senior developers with 10+ years experience
-- 💼 **100% Placement Support**: Career assistance with top tech companies
-- 🎓 **Global Certification**: Recognized by International Tech Council
-- 🔄 **Lifetime Access**: Course materials and updates forever
-- 🤝 **Community Access**: Network with 5000+ developers`;
+  const courseDescription = `The Java Full Stack Development Course teaches participants how to utilize modern web technologies and develop complete full stack web applications covering both front-end and back-end development. This program starts with a strong foundation in web applications and core technologies and gradually advances to back-end programming concepts and real-world deployment techniques. Learners gain hands-on experience with HTML, CSS, JavaScript, React.js, Core Java and Advanced Java, including object-oriented programming, collections, multithreading, and JDBC, along with frameworks such as Hibernate and Spring Boot. The course also covers database technologies like MySQL, PostgreSQL, and MongoDB, development and DevOps tools including Git, Docker, Jenkins, Maven, and REST APIs, and cloud-based deployment using Amazon Web Services. By the end of the course, students will be able to design, develop, and deploy scalable, enterprise-level full stack applications. The program focuses on building robust back-end systems using Spring Boot, creating responsive and user-friendly front-end interfaces with React.js, implementing RESTful APIs, working effectively with SQL and NoSQL databases, and deploying applications in cloud environments. This course is aligned with current industry trends, taught by experienced mentors with over 10 years of industry expertise, and includes 100 percent placement support, professional certification recognized by the International Tech Council, lifetime access to course materials and updates, and access to a strong developer community of more than 5000 professionals.
+`;
 
   const courseOutcomes = [
     { icon: faJava, title: 'Core Java Mastery', desc: 'Master Java fundamentals to advanced concepts including OOPs, Collections, and Multithreading' }, // Changed to faJava
