@@ -52,6 +52,7 @@
   height: 400px; /* Increased height for bigger cards */
   overflow: hidden; /* This automatically hides the third card partially */
   margin: 0 auto;
+  z-index: 1;
 }
 
 .compact-carousel-track {
@@ -711,4 +712,51 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.compact-carousel-controls {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.carousel-btn {
+  pointer-events: all;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10000;
+}
+
+.carousel-btn:hover {
+  pointer-events: all;
+  position: relative;
+  z-index: 10000;
+  background: #ff2d2d;
+  transform: scale(1.1);
+}
+
+.prev-btn {
+  margin-left: 16px;
+
+}
+
+.next-btn {
+  margin-right: 16px;
+
 }

@@ -53,6 +53,12 @@ const OtherSectionCarousel = () => {
     );
   };
 
+  const prevCard = () => {
+  setCurrentIndex((prevIndex) =>
+    prevIndex === 0 ? services.length - 1 : prevIndex - 1
+  );
+};
+
   // Auto-rotate carousel
   useEffect(() => {
     const interval = setInterval(() => {
@@ -92,6 +98,7 @@ const OtherSectionCarousel = () => {
   };
 
   return (
+    
     <div className="compact-carousel-section" ref={sectionRef}>
       <div className="compact-carousel-container">
         {/* <div className="carousel-header">
@@ -146,6 +153,11 @@ const OtherSectionCarousel = () => {
             })}
           </div>
         </div>
+
+        <div className="compact-carousel-controls">
+  <button className="carousel-btn prev-btn" onClick={prevCard}>‹</button>
+  <button className="carousel-btn next-btn" onClick={nextCard}>›</button>
+</div>
 
         <div className="compact-carousel-indicators">
           {services.map((_, index) => (
