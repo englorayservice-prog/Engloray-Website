@@ -1,268 +1,261 @@
+/* ========================================
+   CLEAN WHITE COACHING / CONSULTING STYLE
+   Using existing React structure + GSAP
+   ======================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
+
+/* Section Background */
 .testimonials-section {
-  padding: 80px 0;
-  background: white;
-  color: #1F2937;
   position: relative;
+  background: #ffffff;
+  color: #374151;
+  padding: 120px 0;
+  width: 100%;
 }
 
-.testimonials-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, #2563eb, transparent);
-}
-
-.testimonials-container {
+/* Container */
+.testimonials-sticky-container {
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 0 20px;
 }
 
+/* Header */
 .testimonials-header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 80px;
+  position: relative;
+  z-index: 10;
+  max-width: 800px;
 }
 
-/* FIX: This is the correct selector for your h2 */
 .testimonials-header h2 {
+  font-family: 'Poppins', sans-serif;
   font-size: 3rem;
-  font-weight: 100;
-  margin-bottom: 16px;
-  font-family: 'HEXCO', sans-serif;
-  /* background: linear-gradient(135deg, #3B82F6, #8B5CF6); */
-  /* -webkit-background-clip: text; */
-  /* -webkit-text-fill-color: transparent; */
-  /* background-clip: text; */
-  /* color: #da0d0d !important; */
-  display: block;
+  font-weight: 600;
+  color: #111111;
+  margin-bottom: 20px;
   line-height: 1.2;
 }
 
 .testimonials-header p {
-  font-size: 1.2rem;
-  color: #6B7280;
-  max-width: 600px;
-  margin: 0 auto;
-  font-family: 'Aldrich';
+  font-family: 'Sora', sans-serif;
+  font-size: 1.125rem;
+  color: #6b7280;
+  line-height: 1.6;
+  font-weight: 400;
 }
 
-.testimonials-grid {
+/* 
+   GRID LAYOUT 
+   Replacing stack with 3-column grid
+*/
+.testimonials-stack-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  /* Increased from 600px */
+  height: auto;
+  /* Remove fixed height */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
-  align-items: stretch;
+  align-items: start;
+  perspective: none;
+  /* Remove 3D perspective */
 }
 
+/* Card Design */
 .testimonial-card {
-  background: #F9FAFB;
-  border-radius: 20px;
-  padding: 30px;
-  border: 1px solid #E5E7EB;
-  transition: all 0.3s ease;
   position: relative;
-  overflow: hidden;
-  height: 100%;
+  /* Was absolute */
+  /* GSAP handles y/opacity/scale, base state is set by JS */
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 35px 30px 40px;
+  /* Extra bottom padding for quote */
+  border: 1px solid #eeeeee;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
-  cursor: pointer;
+  top: auto;
+  left: auto;
+  /* Reset absolute pos */
+  min-height: 320px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
+/* Hover Effect - Subtle Lift */
 .testimonial-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-  border-color: transparent;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  transform: translateY(-5px);
+  /* This might fight GSAP if not careful, but usually okay */
+  border-color: #e5e7eb;
 }
 
-.testimonial-card.client:hover {
-  background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
-  color: white;
+/* 
+   REARRANGING CONTENT WITH FLEXBOX ORDER 
+   Desired: Author (Top), Feedback (Middle), Quote (Bottom Right)
+*/
+
+/* 1. Author Section (Keep at Top) */
+.testimonial-author {
+  order: -2;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  /* Reduced margin */
+  position: relative;
+  padding-left: 60px;
+  /* Space for avatar */
 }
 
-.testimonial-card.client:hover .testimonial-content p,
-.testimonial-card.client:hover .testimonial-author h4,
-.testimonial-card.client:hover .testimonial-author span {
-  color: white;
-}
-
-.testimonial-card.client:hover .testimonial-rating {
-  color: #FFD700;
-}
-
-.testimonial-card.student:hover {
-  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
-  color: white;
-}
-
-.testimonial-card.student:hover .testimonial-content p,
-.testimonial-card.student:hover .testimonial-author h4,
-.testimonial-card.student:hover .testimonial-author span {
-  color: white;
-}
-
-.testimonial-card.student:hover .testimonial-rating {
-  color: #FFD700;
-}
-
-.testimonial-card:hover:not(.client):not(.student) {
-  background: linear-gradient(135deg, #2563eb 0%, #1D4ED8 100%);
-  color: white;
-}
-
-.testimonial-card:hover:not(.client):not(.student) .testimonial-content p,
-.testimonial-card:hover:not(.client):not(.student) .testimonial-author h4,
-.testimonial-card:hover:not(.client):not(.student) .testimonial-author span {
-  color: white;
-}
-
-.testimonial-card:hover:not(.client):not(.student) .testimonial-rating {
-  color: #FFD700;
-}
-
-.testimonial-card.client::before {
+/* Avatar Placeholder */
+.testimonial-author::before {
   content: '';
   position: absolute;
-  top: 0;
   left: 0;
-  width: 4px;
-  height: 100%;
-  background: #10B981;
-  transition: all 0.3s ease;
-}
-
-.testimonial-card.student::before {
-  content: '';
-  position: absolute;
   top: 0;
-  left: 0;
-  width: 4px;
-  height: 100%;
-  background: #F59E0B;
-  transition: all 0.3s ease;
+  width: 48px;
+  height: 48px;
+  background-color: #f3f4f6;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%239ca3af' width='24px' height='24px'%3E%3Cpath d='M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  border: 1px solid #e5e7eb;
 }
 
-.testimonial-card:hover::before {
-  width: 6px;
-  opacity: 0.9;
+.testimonial-author h4 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111111;
+  margin: 0 0 4px 0;
 }
 
+.testimonial-author span {
+  font-family: 'Sora', sans-serif;
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin: 0 0 8px 0;
+}
+
+/* Badge Styling */
+.testimonial-badge {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  font-family: 'Sora', sans-serif;
+  background: #f3f4f6;
+  color: #4b5563;
+  margin-top: 2px;
+}
+
+/* Remove colored badges */
+.testimonial-badge.client,
+.testimonial-badge.student {
+  background: #f3f4f6;
+  color: #4b5563;
+}
+
+/* 2. Rating Stars (Move below Author flow) */
+.testimonial-rating {
+  position: relative;
+  order: -1;
+  /* Below author (order -2 is author) */
+  top: auto;
+  right: auto;
+  color: #f97316;
+  /* Orange */
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  margin-left: 60px;
+  /* Align with author text (avatar width) */
+  margin-bottom: 20px;
+  width: fit-content;
+}
+
+/* 3. Feedback Content (Middle) */
 .testimonial-content {
-  flex: 1;
+  order: 2;
   margin-bottom: 20px;
 }
 
 .testimonial-content p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 20px;
-  font-style: italic;
-  color: #4B5563;
-  transition: color 0.3s ease;
-  font-family: 'Aldrich';
+  font-family: 'Sora', sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #374151;
+  font-style: normal;
 }
 
-.testimonial-rating {
-  color: #F59E0B;
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-  transition: color 0.3s ease;
+/* Quote Mark (Bottom Right) */
+.testimonial-card::after {
+  content: '”';
+  position: absolute;
+  bottom: 20px;
+  right: 25px;
+  font-family: 'Playfair Display', serif;
+  font-size: 5rem;
+  line-height: 1;
+  color: #f97316;
+  opacity: 0.2;
+  pointer-events: none;
 }
 
-.testimonial-author h4 {
-  font-size: 1.2rem;
-  font-weight: 100;
-  margin-bottom: 5px;
-  color: #1F2937;
-  transition: color 0.3s ease;
-  font-family: 'Aldrich';
+/* Remove hover backgrounds and heavy effects */
+.testimonial-card.client:hover,
+.testimonial-card.student:hover {
+  background: #ffffff;
+  color: inherit;
 }
 
-.testimonial-author span {
-  color: #6B7280;
-  font-size: 0.9rem;
-  display: block;
-  margin-bottom: 10px;
-  transition: color 0.3s ease;
-  font-family: 'Aldrich';
+.testimonial-card.client:hover .testimonial-author h4,
+.testimonial-card.student:hover .testimonial-author h4 {
+  color: #111111;
 }
 
-.testimonial-badge {
-  display: inline-block;
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  transition: all 0.3s ease;
+.testimonial-card.client:hover .testimonial-content p,
+.testimonial-card.student:hover .testimonial-content p {
+  color: #374151;
 }
 
-.testimonial-badge.client {
-  background: #10B981;
-  color: white;
-  font-family: 'Aldrich';
-}
-
-.testimonial-badge.student {
-  background: #F59E0B;
-  color: white;
-  font-family: 'Aldrich';
-}
-
-.testimonial-card.client:hover .testimonial-badge.client {
-  background: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.testimonial-card.student:hover .testimonial-badge.student {
-  background: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+/* Remove sidebar color bars */
+.testimonial-card.client::before,
+.testimonial-card.student::before,
+.testimonial-card:hover::before {
+  display: none;
 }
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-  .testimonials-grid {
+  .testimonials-stack-container {
     grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
   }
 }
 
 @media (max-width: 768px) {
-  .testimonials-section {
-    padding: 60px 0;
-  }
-  
   .testimonials-header h2 {
     font-size: 2.2rem;
   }
-  
-  .testimonials-header p {
-    font-size: 1.1rem;
-  }
-  
-  .testimonials-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    max-width: 500px;
-    margin: 0 auto;
-  }
-  
-  .testimonial-card {
-    padding: 25px;
-  }
-}
 
-@media (max-width: 480px) {
-  .testimonials-header h2 {
-    font-size: 1.8rem;
+  .testimonials-stack-container {
+    grid-template-columns: 1fr;
+    max-width: 500px;
   }
-  
-  .testimonial-content p {
-    font-size: 1rem;
-  }
-  
+
   .testimonial-card {
-    padding: 20px;
+    min-height: auto;
   }
 }

@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { 
-  faPalette, 
-  faMagicWandSparkles, 
-  faCoffee, 
-  faChartLine, 
-  faLaptopCode, 
-  faRobot, 
+import {
+  faPalette,
+  faMagicWandSparkles,
+  faCoffee,
+  faChartLine,
+  faLaptopCode,
+  faRobot,
   faGlobe,
   faBullseye,
   faRocket,
@@ -255,262 +255,85 @@ const Courses = () => {
   // Form validation
   const validateForm = () => {
     const errors = {};
-    
+
     if (!enrollmentData.name.trim()) {
       errors.name = 'Name is required';
     } else if (enrollmentData.name.length < 2) {
       errors.name = 'Name must be at least 2 characters';
     }
-    
+
     if (!enrollmentData.email.trim()) {
       errors.email = 'Email is required';
     } else if (!/\S+@\S+\.\S+/.test(enrollmentData.email)) {
       errors.email = 'Email is invalid';
     }
-    
+
     if (!enrollmentData.phone.trim()) {
       errors.phone = 'Phone number is required';
     } else if (!/^\d{10}$/.test(enrollmentData.phone.replace(/\D/g, ''))) {
       errors.phone = 'Please enter a valid 10-digit phone number';
     }
-    
+
     if (!enrollmentData.course.trim()) {
       errors.course = 'Please select a course';
     }
-    
+
     return errors;
   };
 
   // Handle form submission
-const handleFormSubmit = async (e) => {
-  e.preventDefault();
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
 
-  const errors = validateForm();
-  if (Object.keys(errors).length > 0) {
-    setFormErrors(errors);
-    return;
-  }
+    const errors = validateForm();
+    if (Object.keys(errors).length > 0) {
+      setFormErrors(errors);
+      return;
+    }
 
-  try {
-    const response = await fetch(
-      "https://localhost:8081/api/ButtonCoursesForm/submit",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          name: enrollmentData.name,
-          email: enrollmentData.email,
-          phone: enrollmentData.phone,
-          course: enrollmentData.course,
-          formType: "Join Course Form"
-        })
+    try {
+      const response = await fetch(
+        "https://localhost:8081/api/ButtonCoursesForm/submit",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            name: enrollmentData.name,
+            email: enrollmentData.email,
+            phone: enrollmentData.phone,
+            course: enrollmentData.course,
+            formType: "Join Course Form"
+          })
+        }
+      );
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || "Submission failed");
       }
-    );
 
-    if (!response.ok) {
-      const errorData = await response.json();
-      throw new Error(errorData.message || "Submission failed");
+      alert("Enrollment form submitted successfully! We will contact you soon.");
+
+      setEnrollmentData({
+        name: '',
+        email: '',
+        phone: '',
+        course: '',
+        message: ''
+      });
+
+      setFormErrors({});
+      handleCloseForm();
+
+    } catch (error) {
+      alert(error.message);
     }
-
-    alert("Enrollment form submitted successfully! We will contact you soon.");
-
-    setEnrollmentData({
-      name: '',
-      email: '',
-      phone: '',
-      course: '',
-      message: ''
-    });
-
-    setFormErrors({});
-    handleCloseForm();
-
-  } catch (error) {
-    alert(error.message);
-  }
-};
-
-
-  // Generate particles
-  const generateParticles = () => {
-    const particles = [];
-    const colors = ['purple', 'cyan', 'emerald', 'amber', 'pink', 'red', 'blue', 'green', 'indigo', 'rose'];
-    const sizes = ['tiny', 'small', 'medium'];
-    const animations = [
-      'particle-float-left', 
-      'particle-float-right', 
-      'particle-float-up', 
-      'particle-float-down',
-      'particle-diagonal',
-      'particle-spiral',
-      'particle-pulse',
-      'particle-rotate'
-    ];
-
-    // Generate 300+ particles
-    for (let i = 0; i < 300; i++) {
-      const color = colors[Math.floor(Math.random() * colors.length)];
-      const size = sizes[Math.floor(Math.random() * sizes.length)];
-      const animation = animations[Math.floor(Math.random() * animations.length)];
-      
-      const top = Math.random() * 100;
-      const left = Math.random() * 100;
-      const delay = Math.random() * 20;
-      const duration = 10 + Math.random() * 20;
-      const yOffset = (Math.random() * 200 - 100);
-      const xOffset = (Math.random() * 200 - 100);
-
-      particles.push(
-        <div 
-          key={`particle-${i}`}
-          className={`particle particle-${size} particle-${color}`}
-          style={{
-            top: `${top}%`,
-            left: `${left}%`,
-            animation: `${animation} ${duration}s linear infinite`,
-            animationDelay: `${delay}s`,
-            '--y-offset': `${yOffset}px`,
-            '--x-offset': `${xOffset}px`
-          }}
-        />
-      );
-    }
-    return particles;
-  };
-
-  // Generate fast particles
-  const generateFastParticles = () => {
-    const fastParticles = [];
-    for (let i = 0; i < 50; i++) {
-      const top = Math.random() * 100;
-      const delay = Math.random() * 3;
-      const duration = 1 + Math.random() * 2;
-      
-      fastParticles.push(
-        <div 
-          key={`fast-${i}`}
-          className="fast-particle"
-          style={{
-            top: `${top}%`,
-            animationDelay: `${delay}s`,
-            animationDuration: `${duration}s`
-          }}
-        />
-      );
-    }
-    return fastParticles;
-  };
-
-  // Generate energy lines
-  const generateEnergyLines = () => {
-    const lines = [];
-    for (let i = 0; i < 8; i++) {
-      const top = 10 + (i * 10);
-      const delay = i * 1;
-      const width = 30 + Math.random() * 40;
-      
-      lines.push(
-        <div 
-          key={`line-${i}`}
-          className="energy-line"
-          style={{
-            top: `${top}%`,
-            animationDelay: `${delay}s`,
-            width: `${width}%`
-          }}
-        />
-      );
-    }
-    return lines;
-  };
-
-  // Generate particle clusters
-  const generateClusters = () => {
-    const clusters = [];
-    for (let i = 0; i < 5; i++) {
-      const top = 20 + (i * 15);
-      const left = 10 + (i * 20);
-      const delay = i * 4;
-      
-      clusters.push(
-        <div 
-          key={`cluster-${i}`}
-          className="particle-cluster"
-          style={{
-            top: `${top}%`,
-            left: `${left}%`,
-            animationDelay: `${delay}s`
-          }}
-        />
-      );
-    }
-    return clusters;
-  };
-
-  // Generate grid particles
-  const generateGridParticles = () => {
-    const gridParticles = [];
-    const colors = ['purple', 'cyan', 'emerald', 'amber', 'pink'];
-    
-    for (let row = 0; row < 20; row++) {
-      for (let col = 0; col < 20; col++) {
-        const color = colors[Math.floor(Math.random() * colors.length)];
-        const delay = Math.random() * 4;
-        
-        gridParticles.push(
-          <div 
-            key={`grid-${row}-${col}`}
-            className={`grid-particle particle-${color}`}
-            style={{
-              gridColumn: col + 1,
-              gridRow: row + 1,
-              animationDelay: `${delay}s`
-            }}
-          />
-        );
-      }
-    }
-    return gridParticles;
   };
 
   return (
-    <section className="learning-courses-geometric" id="courses">
-      {/* ULTRA CONGESTED PARTICLE BACKGROUND */}
-      <div className="congested-particle-bg">
-        {/* 300+ Random Particles */}
-        {generateParticles()}
-        
-        {/* Fast Particles Layer */}
-        <div className="fast-particles">
-          {generateFastParticles()}
-        </div>
-        
-        {/* Energy Streams */}
-        {generateEnergyLines()}
-        
-        {/* Particle Clusters */}
-        {generateClusters()}
-        
-        {/* Particle Grid */}
-        <div className="particle-grid">
-          {generateGridParticles()}
-        </div>
-        
-        {/* Additional static particles for density */}
-        {Array.from({ length: 100 }).map((_, i) => (
-          <div
-            key={`static-${i}`}
-            className={`particle particle-tiny particle-${['purple', 'cyan', 'emerald'][i % 3]}`}
-            style={{
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-              opacity: 0.1 + Math.random() * 0.3
-            }}
-          />
-        ))}
-      </div>
+    <section className="learning-courses-section" id="courses">
 
       {/* Enrollment Form Modal */}
       {showEnrollmentForm && (
@@ -519,7 +342,7 @@ const handleFormSubmit = async (e) => {
             <button className="enrollment-form-close" onClick={handleCloseForm}>
               <FontAwesomeIcon icon={faTimes} />
             </button>
-            
+
             <div className="enrollment-form-header">
               <h2 className="enrollment-form-title">Join Our Course</h2>
               <p className="enrollment-form-subtitle">Fill out the form below and we'll get in touch with you</p>
@@ -623,22 +446,16 @@ const handleFormSubmit = async (e) => {
       )}
 
       {/* Header */}
-      <div className="learning-geometric-header">
-        <div className="learning-header-shapes">
-          <div className="learning-shape learning-shape-1"></div>
-          <div className="learning-shape learning-shape-2"></div>
-          <div className="learning-shape learning-shape-3"></div>
-        </div>
+      <div className="learning-courses-header">
         <div className="learning-header-content">
-          <span className="learning-geometric-badge">
-            <FontAwesomeIcon icon={faShapes} style={{marginRight: '8px'}} />
+          <span className="learning-header-badge">
+            <FontAwesomeIcon icon={faShapes} style={{ marginRight: '8px' }} />
             Learning Paths
           </span>
-          <h1 className="learning-geometric-title">
-            <span className="learning-title-line">Shape Your</span>
-            <span className="learning-title-line">Future</span>
+          <h1 className="learning-header-title">
+            <span className="learning-title-text">Shape Your Future</span>
           </h1>
-          <p className="learning-geometric-subtitle">
+          <p className="learning-header-subtitle">
             Innovative courses designed around geometric learning principles
           </p>
         </div>
@@ -646,7 +463,7 @@ const handleFormSubmit = async (e) => {
 
       {/* View Toggle */}
       <div className="learning-view-toggle">
-        <button 
+        <button
           className={`learning-view-btn ${activeView === 'grid' ? 'learning-active' : ''}`}
           onClick={() => setActiveView('grid')}
         >
@@ -655,7 +472,7 @@ const handleFormSubmit = async (e) => {
           </span>
           Grid View
         </button>
-        <button 
+        <button
           className={`learning-view-btn ${activeView === 'list' ? 'learning-active' : ''}`}
           onClick={() => setActiveView('list')}
         >
@@ -667,7 +484,7 @@ const handleFormSubmit = async (e) => {
       </div>
 
       {/* Available Courses */}
-      <div className="learning-section-geometric">
+      <div className="learning-section-container">
         <div className="learning-section-header">
           <h2 className="learning-section-title">
             <span className="learning-section-icon">
@@ -679,57 +496,53 @@ const handleFormSubmit = async (e) => {
         </div>
 
         {activeView === 'grid' ? (
-          <div className="learning-geometric-grid">
+          <div className="learning-grid-view">
             {availableCourses.map((course, index) => (
-              <div 
+              <div
                 key={course.id}
-                className={`learning-geometric-item learning-${course.shape}`}
-                style={{ 
+                className="learning-course-card"
+                style={{
                   animationDelay: `${index * 0.1}s`,
-                  '--geometric-color': course.color
                 }}
               >
-                <div className="learning-geometric-content">
-                  <div className="learning-geometric-icon" style={{color: course.color}}>
+                <div className="learning-card-content">
+                  <div className="learning-card-icon" style={{ color: course.color, backgroundColor: `${course.color}15` }}>
                     {course.icon}
                   </div>
-                  <h3 className="learning-geometric-title-small">{course.title}</h3>
-                  <p className="learning-geometric-desc">{course.description}</p>
-                  <div className="learning-geometric-meta">
-                    <span className="learning-meta-duration">
-                      <FontAwesomeIcon icon={faCalendarAlt} style={{marginRight: '5px'}} />
+                  <h3 className="learning-card-title">{course.title}</h3>
+                  <p className="learning-card-desc">{course.description}</p>
+
+                  <div className="learning-card-meta-row">
+                    <span className="learning-meta-item">
+                      <FontAwesomeIcon icon={faCalendarAlt} className="meta-icon" />
                       {course.duration}
                     </span>
-                    <span className="learning-meta-level">
-                      <FontAwesomeIcon icon={faUserTie} style={{marginRight: '5px'}} />
+                    <span className="learning-meta-item">
+                      <FontAwesomeIcon icon={faUserTie} className="meta-icon" />
                       {course.level}
                     </span>
                   </div>
-                  <div className="learning-geometric-action">
-                    <button 
-                      className="learning-enroll-geometric"
-                      onClick={() => handleEnrollClick(course)}
-                    >
-                      View Details
-                    </button>
-                  </div>
+
+                  <button
+                    className="learning-card-btn"
+                    onClick={() => handleEnrollClick(course)}
+                  >
+                    View Details
+                  </button>
                 </div>
-                <div className="learning-geometric-glow"></div>
               </div>
             ))}
           </div>
         ) : (
-          <div className="learning-geometric-list">
+          <div className="learning-list-view">
             {availableCourses.map((course, index) => (
-              <div 
+              <div
                 key={course.id}
                 className="learning-list-item"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="learning-list-icon" style={{ backgroundColor: course.color }}>
-                  <div style={{color: 'white'}}>
-                    {course.icon}
-                  </div>
+                <div className="learning-list-icon" style={{ backgroundColor: `${course.color}15`, color: course.color }}>
+                  {course.icon}
                 </div>
                 <div className="learning-list-content">
                   <h3 className="learning-list-title">{course.title}</h3>
@@ -737,17 +550,19 @@ const handleFormSubmit = async (e) => {
                   <div className="learning-list-features">
                     {course.features.slice(0, 3).map((feature, idx) => (
                       <span key={idx} className="learning-list-feature">
-                        <FontAwesomeIcon icon={faCheckCircle} style={{color: course.color, marginRight: '5px'}} />
+                        <FontAwesomeIcon icon={faCheckCircle} style={{ color: '#10B981', marginRight: '5px' }} />
                         {feature}
                       </span>
                     ))}
                   </div>
                 </div>
                 <div className="learning-list-action">
-                  <button 
+                  <div className="learning-list-meta">
+                    <span><FontAwesomeIcon icon={faCalendarAlt} /> {course.duration}</span>
+                  </div>
+                  <button
                     className="learning-list-enroll"
                     onClick={() => handleEnrollClick(course)}
-                    style={{ backgroundColor: course.color }}
                   >
                     Explore
                   </button>
@@ -759,10 +574,10 @@ const handleFormSubmit = async (e) => {
       </div>
 
       {/* Upcoming Courses */}
-      <div className="learning-section-geometric">
+      <div className="learning-section-container">
         <div className="learning-section-header">
           <h2 className="learning-section-title">
-            <span className="learning-section-icon" style={{color: '#F59E0B'}}>
+            <span className="learning-section-icon" style={{ color: '#F59E0B' }}>
               <FontAwesomeIcon icon={faRocket} />
             </span>
             Coming Soon
@@ -770,40 +585,26 @@ const handleFormSubmit = async (e) => {
           <div className="learning-section-count">{upcomingCourses.length} Courses</div>
         </div>
 
-        <div className="learning-timeline-geometric">
+        <div className="learning-upcoming-grid">
           {upcomingCourses.map((course, index) => (
-            <div 
+            <div
               key={course.id}
-              className="learning-timeline-item"
+              className="learning-upcoming-card"
               style={{ animationDelay: `${index * 0.15}s` }}
             >
-              <div className="learning-timeline-marker" style={{ backgroundColor: course.color }}>
-                <span className="learning-timeline-icon" style={{color: 'white'}}>
-                  {course.icon}
-                </span>
+              <div className="learning-upcoming-badge">Coming Soon</div>
+              <div className="learning-upcoming-icon" style={{ color: course.color, backgroundColor: `${course.color}15` }}>
+                {course.icon}
               </div>
-              <div className="learning-timeline-content">
-                <div className="learning-timeline-header">
-                  <h3 className="learning-timeline-title">{course.title}</h3>
-                  <span className="learning-timeline-status">Coming Soon</span>
+              <h3 className="learning-upcoming-title">{course.title}</h3>
+              <p className="learning-upcoming-desc">{course.description}</p>
+
+              <div className="learning-upcoming-footer">
+                <div className="learning-upcoming-meta">
+                  <FontAwesomeIcon icon={faCalendarAlt} /> {course.duration}
                 </div>
-                <p className="learning-timeline-desc">{course.description}</p>
-                <div className="learning-timeline-meta">
-                  <span className="learning-timeline-duration">
-                    <FontAwesomeIcon icon={faCalendarAlt} style={{marginRight: '5px'}} />
-                    {course.duration}
-                  </span>
-                  <span className="learning-timeline-level">
-                    <FontAwesomeIcon icon={faUserTie} style={{marginRight: '5px'}} />
-                    {course.level}
-                  </span>
-                </div>
-                <button 
-                  className="learning-timeline-notify"
-                  onClick={() => handleNotifyClick(course)}
-                >
-                  <FontAwesomeIcon icon={faBell} style={{marginRight: '8px'}} />
-                  Notify Me
+                <button className="learning-notify-btn" onClick={() => handleNotifyClick(course)}>
+                  <FontAwesomeIcon icon={faBell} /> Notify Me
                 </button>
               </div>
             </div>
@@ -811,10 +612,11 @@ const handleFormSubmit = async (e) => {
         </div>
       </div>
 
+
       {/* SIMPLIFIED Join Course Button Section */}
-      <div className="learning-section-geometric">
+      <div className="learning-section-container">
         <div className="learning-join-course-simple">
-          <button 
+          <button
             className="learning-join-course-simple-btn"
             onClick={handleJoinCourseClick}
           >
@@ -827,34 +629,29 @@ const handleFormSubmit = async (e) => {
             </span>
           </button>
           <p className="learning-join-course-simple-note">
-            <FontAwesomeIcon icon={faUsers} style={{marginRight: '8px', color: '#8B5CF6'}} />
+            <FontAwesomeIcon icon={faUsers} style={{ marginRight: '8px', color: '#2563EB' }} />
             * 100% Placement Assistance | Live Projects | Industry Mentors
           </p>
         </div>
       </div>
 
       {/* CTA */}
-      <div className="learning-geometric-cta">
-        <div className="learning-cta-geometric">
-          <div className="learning-cta-shapes">
-            <div className="learning-cta-shape learning-cta-shape-1"></div>
-            <div className="learning-cta-shape learning-cta-shape-2"></div>
-            <div className="learning-cta-shape learning-cta-shape-3"></div>
-          </div>
+      <div className="learning-cta-section">
+        <div className="learning-cta-container">
           <div className="learning-cta-content">
-            <h3 className="learning-cta-title-geometric">
-              <FontAwesomeIcon icon={faGraduationCap} style={{marginRight: '10px'}} />
+            <h3 className="learning-cta-title">
+              <FontAwesomeIcon icon={faGraduationCap} style={{ marginRight: '10px' }} />
               Ready to Transform?
             </h3>
-            <p className="learning-cta-desc-geometric">
-              Join our geometric learning community and build your future piece by piece
+            <p className="learning-cta-desc">
+              Join our learning community and build your future piece by piece
             </p>
-            <button 
-              className="learning-cta-btn-geometric"
+            <button
+              className="learning-cta-btn"
               onClick={handleCTAClick}
             >
               <span>View All Courses</span>
-              <div className="learning-cta-arrow-geometric">
+              <div className="learning-cta-arrow">
                 <FontAwesomeIcon icon={faArrowRight} />
               </div>
             </button>

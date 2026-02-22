@@ -26,14 +26,15 @@
 
 /* Dynamic Spacer */
 .navbar-spacer {
-    height: 140px; /* Height of both navbar lines */
+    height: 140px;
+    /* Height of both navbar lines */
 }
 
 /* First Line */
 .navbar-first-line {
-    border-bottom: 1px solid #e2e8f0;
+    border-bottom: none;
     background: white;
-    height: 80px;
+    height: 70px;
     display: flex;
     align-items: center;
 }
@@ -42,52 +43,118 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 50px;
     position: relative;
     width: 100%;
     height: 100%;
+    gap: 30px;
+}
+
+.logo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    margin-left: 50px;
 }
 
 .logo img {
-    height: 50px;
-    width: 100%;
-    margin-bottom: 5px;
-    margin-top: 8px;
+    height: 45px;
+    width: auto;
+    margin: 0;
     cursor: pointer;
 }
 
-/* Desktop Menu */
-.desktop-menu {
+/* Subscribe Button Container - Right Aligned */
+.nav-subscribe-container {
     display: flex;
-    list-style: none;
-    gap: 40px;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-item {
-    position: relative;
-}
-
-.nav-link {
-    display: flex;
+    justify-content: flex-end;
     align-items: center;
-    gap: 5px;
-    padding: 15px 0;
-    color: #2d3748;
-    font-family: 'Aldrich', sans-serif;
-    font-size: 16px;
+    flex-shrink: 0;
+}
+
+.subscribe-btn {
+    padding: 10px 28px;
+    border-radius: 25px;
+    background: #1a1a1a;
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    font-size: 14px;
     font-weight: 500;
     cursor: pointer;
-    transition: color 0.3s ease;
-    text-decoration: none;
-    user-select: none;
+    transition: all 0.2s ease;
+    border: none;
+    white-space: nowrap;
 }
 
-.nav-link:hover {
-    color: #212cff;
+.subscribe-btn:hover {
+    background: #2d2d2d;
+    transform: translateY(-1px);
+}
+
+/* Action Buttons - Center (in first line, near logo) */
+.action-buttons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    max-width: 600px;
+}
+
+/* Buttons */
+.btn {
+    padding: 10px 24px;
+    border-radius: 25px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    white-space: nowrap;
+}
+
+.start-project {
+    background: transparent;
+    color: #7a7a7a;
+    border: 1px solid #c9c5bc;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.start-project:hover {
+    background: #ddd9d0;
+    color: #2d2d2d;
+    border-color: #c9c5bc;
+}
+
+.get-started {
+    background: transparent;
+    color: #7a7a7a;
+    border: 1px solid #c9c5bc;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.get-started:hover {
+    background: #ddd9d0;
+    color: #2d2d2d;
+    border-color: #c9c5bc;
+}
+
+.join-now {
+    background: #1a1a1a;
+    color: white;
+    border: none;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.join-now:hover {
+    background: #807b7b;
+    color: white;
+    transform: translateY(-1px);
 }
 
 .arrow {
@@ -225,7 +292,7 @@
 
 /* Second Line - Desktop Only */
 .navbar-second-line.desktop-only {
-    background: #f8fafc;
+    background: #ffffff;
     padding: 15px 0;
     height: 60px;
     display: flex;
@@ -236,77 +303,51 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 0 auto;
-    padding: 0 40px;
-    gap: 30px;
+    padding: 0 50px;
+    gap: 40px;
     width: 100%;
     height: 100%;
 }
 
 .search-container-wrapper {
-    flex: 1;
-    max-width: 500px;
+    flex: 0 1 400px;
+    max-width: 400px;
 }
 
-.action-buttons {
+/* Desktop Menu in Second Line */
+.desktop-menu {
     display: flex;
-    gap: 15px;
+    list-style: none;
+    gap: 35px;
+    margin: 0;
+    padding: 0;
+    justify-content: flex-end;
 }
 
-/* Buttons */
-.btn {
-    padding: 12px 24px;
-    border-radius: 8px;
-    font-family: 'Aldrich', sans-serif;
-    font-size: 14px;
-    font-weight: 600;
+/* Navigation Item and Link Styles */
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 0;
+    color: #7a7a7a;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
     cursor: pointer;
-    transition: all 0.3s ease;
-    border: none;
-    white-space: nowrap;
+    transition: color 0.2s ease;
+    text-decoration: none;
+    user-select: none;
 }
 
-.start-project {
-    background: #e2e8f0;
-    color: #f23030;
-    font-family: 'Aldrich';
-}
-
-.start-project:hover {
-    background: #cbd5e0;
-    color: #212cff;
-    transform: translateY(-1px);
-}
-
-.get-started {
-    background: linear-gradient(267deg, #bf0413 0.36%, #f23030 90.06%);
-    color: white;
-    font-family: 'Aldrich';
-}
-
-.get-started:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(255, 33, 33, 0.4);
-    color: white;
-}
-
-.join-now {
-    background: transparent;
-    background: linear-gradient(135deg, #bf0413, #f23030) !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-    background-clip: text !important;    
-    border: 2px solid #212cff;
-    font-family: 'Aldrich';
-}
-
-.join-now:hover {
-    background: #07226b;
-    color: black;
-    border: 2px solid #07226b;
-    transform: translateY(-1px);
-    -webkit-text-fill-color: red !important;
+.nav-link:hover {
+    color: #2d2d2d;
 }
 
 /* Mobile Toggle */
@@ -319,6 +360,8 @@
     cursor: pointer;
     padding: 5px;
     z-index: 1003;
+    grid-column: 3;
+    justify-self: flex-end;
 }
 
 .mobile-toggle span {
@@ -419,8 +462,8 @@
 }
 
 /* Make sure SearchBar component is fully visible */
-.mobile-search-wrapper > div,
-.mobile-search-wrapper > div > div {
+.mobile-search-wrapper>div,
+.mobile-search-wrapper>div>div {
     width: 100% !important;
     display: block !important;
     max-width: none !important;
@@ -556,9 +599,28 @@
 
 .mobile-actions .btn {
     width: 100%;
-    padding: 15px;
+    padding: 12px;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 500;
+    border-radius: 25px;
+}
+
+.mobile-actions .start-project {
+    background: transparent;
+    color: #7a7a7a;
+    border: 1px solid #c9c5bc;
+}
+
+.mobile-actions .get-started {
+    background: transparent;
+    color: #7a7a7a;
+    border: 1px solid #c9c5bc;
+}
+
+.mobile-actions .join-now {
+    background: #1a1a1a;
+    color: white;
+    border: none;
 }
 
 /* RESPONSIVE DESIGN */
@@ -566,74 +628,74 @@
     .navbar-spacer {
         height: 140px;
     }
-    
+
     .navbar-first-line {
         height: 80px;
     }
-    
+
     .navbar-second-line.desktop-only {
         height: 60px;
         padding: 15px 0;
     }
-    
+
     .logo img {
         height: 50px;
         width: 120%;
         margin-top: 0;
         margin-bottom: 0;
     }
-    
+
     .desktop-menu {
         gap: 25px;
     }
-    
+
     .nav-link {
         padding: 10px 0;
         font-size: 14px;
     }
-    
+
     .mega-dropdown {
         min-width: 500px;
         max-width: calc(100vw - 60px);
     }
-    
+
     .dropdown-content {
         padding: 20px;
     }
-    
+
     .dropdown-grid {
         gap: 15px;
     }
-    
+
     .dropdown-item {
         padding: 12px;
     }
-    
+
     .item-icon {
         font-size: 20px;
     }
-    
+
     .item-title {
         font-size: 14px;
     }
-    
+
     .item-desc {
         font-size: 12px;
     }
-    
+
     .btn {
         padding: 10px 20px;
         font-size: 13px;
     }
-    
+
     .action-buttons {
         gap: 12px;
     }
-    
+
     .search-container-wrapper {
         max-width: 400px;
     }
-    
+
     .nav-first-content,
     .nav-second-content {
         padding: 0 30px;
@@ -650,9 +712,18 @@
         display: flex;
     }
 
-    .nav-first-content,
-    .nav-second-content {
+    .nav-subscribe-container {
+        display: none;
+    }
+
+    .nav-first-content {
+        display: flex;
+        justify-content: space-between;
         padding: 0 20px;
+    }
+
+    .logo {
+        grid-column: auto;
     }
 
     .action-buttons {
@@ -660,38 +731,39 @@
     }
 
     .navbar-spacer {
-        height: 80px; /* Only first line height on mobile */
-    }
-    
-    .navbar-first-line {
         height: 80px;
+        /* Only first line height on mobile */
     }
-    
+
+    .navbar-first-line {
+        height: 70px;
+    }
+
     /* Hide second line on tablet/mobile */
     .navbar-second-line.desktop-only {
         display: none;
     }
-    
+
     .search-container-wrapper {
         max-width: 100%;
     }
-    
+
     .mobile-menu {
         max-width: 350px;
     }
-    
+
     /* Mobile search bar adjustments for tablet */
     .mobile-search-wrapper {
         padding: 15px 20px !important;
     }
-    
+
     .mobile-search-wrapper input,
     .mobile-search-wrapper .search-input {
         padding: 12px 45px 12px 16px !important;
         font-size: 16px !important;
         height: 44px !important;
     }
-    
+
     .mobile-nav-items {
         max-height: calc(100vh - 350px);
     }
@@ -714,43 +786,43 @@
     .nav-first-content {
         padding: 0 20px;
     }
-    
+
     .mobile-menu {
         max-width: 320px;
     }
-    
+
     .mobile-menu-header {
         padding: 12px 15px;
     }
-    
+
     .mobile-search-wrapper {
         padding: 12px 15px !important;
     }
-    
+
     .mobile-search-wrapper input,
     .mobile-search-wrapper .search-input {
         padding: 10px 40px 10px 15px !important;
         font-size: 15px !important;
         height: 40px !important;
     }
-    
+
     .mobile-nav-link {
         font-size: 15px;
         padding: 16px 15px;
     }
-    
+
     .mobile-dropdown {
         padding: 0 15px 12px 15px;
     }
-    
+
     .mobile-dropdown-item {
         padding: 10px 0;
     }
-    
+
     .mobile-actions {
         padding: 15px;
     }
-    
+
     .mobile-nav-items {
         max-height: calc(100vh - 300px);
     }
@@ -769,43 +841,43 @@
     .nav-first-content {
         padding: 0 15px;
     }
-    
+
     .logo img {
         height: 35px;
     }
-    
+
     .mobile-menu {
         max-width: 300px;
     }
-    
+
     .mobile-menu-header {
         padding: 10px 12px;
     }
-    
+
     .mobile-search-wrapper {
         padding: 10px 12px !important;
     }
-    
+
     .mobile-search-wrapper input,
     .mobile-search-wrapper .search-input {
         padding: 10px 35px 10px 12px !important;
         font-size: 14px !important;
         height: 38px !important;
     }
-    
+
     .mobile-nav-link {
         font-size: 14px;
         padding: 14px 12px;
     }
-    
+
     .mobile-dropdown-item {
         padding: 8px 0;
     }
-    
+
     .mobile-actions {
         padding: 12px;
     }
-    
+
     .mobile-nav-items {
         max-height: calc(100vh - 280px);
     }
@@ -820,49 +892,49 @@
     .navbar-first-line {
         height: 60px;
     }
-    
+
     .mobile-menu {
         max-width: 280px;
     }
-    
+
     .mobile-menu-header {
         padding: 8px 10px;
     }
-    
+
     .mobile-search-wrapper {
         padding: 8px 10px !important;
     }
-    
+
     .mobile-search-wrapper input,
     .mobile-search-wrapper .search-input {
         padding: 8px 30px 8px 10px !important;
         font-size: 13px !important;
         height: 36px !important;
     }
-    
+
     .mobile-nav-link {
         font-size: 13px;
         padding: 12px 10px;
     }
-    
+
     .mobile-item-title {
         font-size: 13px;
     }
-    
+
     .mobile-item-desc {
         font-size: 11px;
     }
-    
+
     .mobile-actions {
         padding: 10px;
         gap: 8px;
     }
-    
+
     .mobile-actions .btn {
         padding: 8px;
         font-size: 11px;
     }
-    
+
     .mobile-nav-items {
         max-height: calc(100vh - 250px);
     }
@@ -913,4 +985,4 @@ body.menu-open {
     outline: none;
     border-color: #212cff;
     box-shadow: 0 0 0 3px rgba(33, 44, 255, 0.1);
-}           
+}

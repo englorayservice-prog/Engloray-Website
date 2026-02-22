@@ -1,0 +1,80 @@
+/* CustomScrollbar.css */
+
+.custom-scrollbar-track {
+    position: fixed;
+    top: 50%;
+    right: 8px;
+    /* Slightly offset from edge */
+    width: 14px;
+    /* Width of the capsule track */
+    height: 70vh;
+    /* Track doesn't need to be full height for this style */
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    z-index: 9999;
+    padding: 4px;
+    /* Internal padding for thumb */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
+    /* Let events pass when hidden */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* Alignment for thumb */
+}
+
+.custom-scrollbar-track.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.custom-scrollbar-track:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.custom-scrollbar-thumb {
+    width: 100%;
+    /* Fill track width (minus padding) */
+    height: 80px;
+    /* Fixed height for the "mouse" look */
+    min-height: 40px;
+    background: linear-gradient(180deg, #ffffff 0%, #e0e0e0 100%);
+    border-radius: 10px;
+    position: relative;
+    /* Relative to flex container or use absolute in js */
+    cursor: grab;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    /* Remove 'top' from default style if using transforms in JS, but here we used 'top' in inline style */
+    position: absolute;
+    left: 2px;
+    /* Center horizontally in track (padding is 4px total, width 14px) */
+    width: 8px;
+    /* Fixed width */
+    transition: width 0.2s ease, height 0.2s ease;
+}
+
+.custom-scrollbar-thumb:active {
+    cursor: grabbing;
+    background: #ffffff;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+/* Internal aesthetic dot/glow */
+.thumb-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 4px;
+    height: 20px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+}
+
+/* Hide native scrollbar but allow scrolling */
+/* This is usually done in global css, but adding here just in case specific context needs it */

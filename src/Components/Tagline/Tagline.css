@@ -1,349 +1,316 @@
-/* Tagline.css - Sequential Word Animation with Shorter Height */
+/* Tagline.css */
 .tagline-section {
-  color: black;
-  padding: 5px 0; /* Reduced padding */
+  color: white;
+  padding: 20px 0 0 0;
   text-align: center;
-  min-height: 0.5vh !important; /* Reduced height */
+  min-height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   position: relative;
+
+  /* Create a stacking context */
+  z-index: 1;
+  margin-top: -40px;
   overflow: visible;
-  background: #ffffff;
+}
+
+/* Background Image Layer - Cropped to top of tagline */
+.tagline-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 150vh;
+  /* Background covers full tagline section */
+
+  background-image: url('../../assets/(3).png');
+  background-size: 107% 100%;
+  background-position: center 10%;
+  background-repeat: no-repeat;
+
+  border-bottom-left-radius: 80px;
+  /* border-bottom-right-radius: 80px; */
+  z-index: -1;
+}
+
+.tagline-icon {
+  height: 60px;
+  width: auto;
+  margin-left: 12px;
+  /* Changed from margin-right to margin-left */
+  object-fit: contain;
+
 }
 
 .tagline-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  width: 100%;
   position: relative;
+  padding: 80px 60px;
+  width: 100%;
+  min-height: 90vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
   z-index: 2;
 }
 
-/* Main tagline wrapper - SHORTER HEIGHT */
-.tagline-text-wrapper {
-  font-size: 2.2rem !important; /* Slightly smaller font */
-  font-weight: bold;
-  margin-bottom: 0;
-  font-family: 'HEXCO', sans-serif;
-  font-style: italic !important;
-  line-height: 1; /* Reduced line height */
-  display: inline-block;
+.tagline-subtitle {
+  color: #ff0000;
+  /* Red color matching image */
+  font-size: 1.9rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+}
+
+.tagline-title {
+  /* margin-top: 50px; */
+  font-size: 4.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: white;
+  margin: 0;
+  text-transform: uppercase;
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: 1px;
+}
+
+.tagline-description {
+  color: #e0e0e0;
+  /* Lighter grey for better visibility on glass */
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0;
+  line-height: 1.5;
+  font-family: 'Outfit', sans-serif;
+}
+
+.tagline-buttons {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.tagline-btn {
+  padding: 12px 30px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+  min-width: 160px;
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: 1px;
+}
+
+.btn-primary {
+  background-color: #ff0000 !important;
+  color: white !important;
+  border: none !important;
+}
+
+.btn-primary:hover {
+  background-color: #cc0000 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4);
+}
+
+.btn-secondary {
+  background-color: #0066cc !important;
+  color: white !important;
+  border: none !important;
+}
+
+.btn-secondary:hover {
+  background-color: #004d99 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 102, 204, 0.4);
+}
+
+/* Scroll Indicator Container */
+.scroll-indicator-container {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  opacity: 0.9;
+  animation: float-indicator 3s ease-in-out infinite;
+}
+
+/* Mouse Scroll Indicator */
+.mouse-scroll-indicator {
+  width: 40px;
+  height: 70px;
+  border: 4px solid rgba(255, 255, 255, 0.9);
+  border-radius: 35px;
+  /* Capsule shape */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  padding-top: 15px;
+  /* Push content down slightly */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   position: relative;
-  width: 100%;
-  letter-spacing: -0.5px;
-  white-space: nowrap;
-  overflow: visible !important;
-  min-height: 40px; /* Reduced min-height */
-  padding: 5px 0; /* Reduced padding */
 }
 
-/* Word container */
-.word-container {
-  display: inline-block;
-  position: relative;
-  margin-right: 0.2em;
+.mouse-chevron {
+  width: 10px;
+  height: 10px;
+  border-top: 3px solid white;
+  border-right: 3px solid white;
+  display: block;
 }
 
-/* RED COLOR FOR "BETTER" WORD */
-.word-container.better-word .letter {
-  color: #db1515 !important; /* Red color */
+/* Only keeping down chevrons */
+.mouse-chevron-down-1,
+.mouse-chevron-down-2 {
+  transform: rotate(135deg);
+  margin-top: -4px;
+  animation: chevron-fade 1.5s infinite;
 }
 
-.word-container.better-word .letter.joined {
-  animation: red-pulse 2s ease-in-out infinite !important;
+/* Sequential animation delay */
+.mouse-chevron-down-1 {
+  animation-delay: 0s;
 }
 
-.word-container.better-word .letter.joined:not(:first-child)::before {
-  background: #db1515 !important; /* Red connection lines */
+.mouse-chevron-down-2 {
+  animation-delay: 0.2s;
 }
 
-.word-container.better-word .letter.flying::after {
-  background: linear-gradient(90deg, 
-    rgba(219, 21, 21, 0.3) 0%,
-    rgba(219, 21, 21, 0.1) 100%) !important; /* Red trail */
+
+.mouse-dot {
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+  margin: 4px 0;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  animation: mouse-dot-slide 1.5s infinite ease-in-out;
 }
 
-/* Base letter styling */
-.letter {
-  display: inline-block;
-  position: relative;
-  font-family: 'HEXCO', sans-serif;
-  font-style: italic;
-  font-weight: bold;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #07226b; /* Deep blue for other words */
-  opacity: 0;
-  transform: translateX(0);
-  transition: opacity 0.3s ease;
-}
+@keyframes mouse-dot-slide {
 
-/* Letter waiting to be animated */
-.letter.waiting {
-  opacity: 0;
-}
-
-/* Letter that's currently flying in */
-.letter.flying {
-  animation: fly-in-from-right 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-}
-
-/* Letter that has joined */
-.letter.joined {
-  opacity: 1;
-  animation: gentle-pulse 2s ease-in-out infinite;
-}
-
-/* Space between words */
-.letter-space {
-  display: inline-block;
-  width: 0.3em;
-}
-
-/* Invisible text for layout */
-.invisible-text {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
-  font-size: 2.2rem; /* Match new font size */
-  font-weight: bold;
-  font-family: 'HEXCO', sans-serif;
-  font-style: italic;
-}
-
-/* Fly-in animation */
-@keyframes fly-in-from-right {
-  0% {
-    opacity: 0;
-    transform: translateX(60px) scale(1.2);
-    filter: blur(4px);
-  }
-  70% {
-    opacity: 1;
-    transform: translateX(-5px) scale(1.05);
-    filter: blur(1px);
-  }
+  0%,
   100% {
-    opacity: 1;
-    transform: translateX(0) scale(1);
-    filter: blur(0);
-  }
-}
-
-/* Gentle pulse animation for joined letters (blue) */
-@keyframes gentle-pulse {
-  0%, 100% {
-    opacity: 1;
     transform: translateY(0);
   }
+
   50% {
-    opacity: 0.9;
-    transform: translateY(-1px);
+    transform: translateY(6px);
   }
 }
 
-/* Red pulse animation for "better" word */
-@keyframes red-pulse {
-  0%, 100% {
-    opacity: 1;
-    transform: translateY(0);
-    text-shadow: 0 0 0 rgba(219, 21, 21, 0);
-  }
-  50% {
-    opacity: 1;
-    transform: translateY(-1px);
-    text-shadow: 0 0 8px rgba(219, 21, 21, 0.3);
-  }
-}
+@keyframes chevron-fade {
 
-/* Connection effect between letters in same word */
-.word-container .letter.joined:not(:first-child)::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: -3px;
-  width: 3px;
-  height: 1px;
-  background: #07226b; /* Blue for non-better words */
-  transform: translateY(-50%);
-  opacity: 0.5;
-  animation: connection-pulse 2s ease-in-out infinite;
-}
-
-/* Red connection lines for "better" word */
-.word-container.better-word .letter.joined:not(:first-child)::before {
-  background: #db1515; /* Red for better word */
-  animation: red-connection-pulse 2s ease-in-out infinite;
-}
-
-@keyframes connection-pulse {
-  0%, 100% {
-    opacity: 0.3;
-    width: 3px;
-  }
-  50% {
-    opacity: 0.7;
-    width: 5px;
-  }
-}
-
-@keyframes red-connection-pulse {
-  0%, 100% {
-    opacity: 0.3;
-    width: 3px;
-  }
-  50% {
-    opacity: 0.8;
-    width: 5px;
-    box-shadow: 0 0 3px rgba(219, 21, 21, 0.5);
-  }
-}
-
-/* Subtle particle trail for flying letter */
-.letter.flying::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: -8px;
-  width: 40px; /* Shorter trail */
-  height: 1px;
-  background: linear-gradient(90deg, 
-    rgba(7, 34, 107, 0.3) 0%,
-    rgba(7, 34, 107, 0.1) 100%);
-  transform: translateY(-50%);
-  z-index: -1;
-  animation: simple-trail 0.4s ease-out forwards;
-  filter: blur(1px);
-}
-
-@keyframes simple-trail {
-  0% {
-    width: 40px;
-    opacity: 0.4;
-  }
+  0%,
   100% {
-    width: 0;
-    opacity: 0;
+    opacity: 0.3;
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+    border-color: rgba(255, 255, 255, 0.9);
   }
 }
 
-/* Performance optimizations */
-.letter {
-  will-change: transform, opacity;
-  backface-visibility: hidden;
+/* Bottom Left Tagline Text */
+.tagline-bottom-text {
+  width: 39.7rem;
+  height: 7.75rem;
+  position: absolute;
+  bottom: 0;
+  left: 6px;
+  top: 82%;
+
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: rgba(0, 0, 0, 0.9);
+  font-size: 3.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-family: 'Poppins', sans-serif;
+  padding-left: 15px;
+
+  background: rgb(255, 255, 255);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 3px solid white;
+
+  border-radius: 0 40px 0 0;
+  /* Top-right and Bottom-right rounded */
+  overflow: visible;
+  /* Changed to visible for pseudo-element */
+  z-index: 1;
 }
 
-/* Mobile Responsive */
+/* Inverted border radius effect on top-right corner - HIDDEN */
+.tagline-bottom-text::before {
+  display: none;
+  /* Remove the black inverted corner */
+}
+
+.tagline-long-arrow {
+  width: 250px;
+  height: 2px;
+  background-color: #333;
+  position: relative;
+  /* margin: 0 10px; */
+  /* align-self: center; */
+}
+
+.tagline-long-arrow::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 8px solid #333;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-  .tagline-section {
-    padding: 4px 0; /* Even less padding on mobile */
-    min-height: 0.3vh !important;
+  .tagline-container {
+    padding: 40px 30px;
+    clip-path: path("M 80 0 Q 0 0 0 80 L 0 100% L 100% 100% L 100% 0 Z");
   }
-  
-  .tagline-text-wrapper {
-    font-size: 1.8rem !important; /* Smaller font on mobile */
-    min-height: 35px; /* Reduced height */
-    line-height: 0.9;
-  }
-  
-  .invisible-text {
-    font-size: 1.8rem;
-  }
-  
-  @keyframes fly-in-from-right {
-    0% {
-      transform: translateX(40px) scale(1.2);
-    }
-  }
-  
-  .letter.flying::after {
-    width: 30px;
-    left: -6px;
-  }
-  
-  .letter.joined {
-    animation: gentle-pulse 1.5s ease-in-out infinite;
-  }
-  
-  .word-container.better-word .letter.joined {
-    animation: red-pulse 1.5s ease-in-out infinite !important;
-  }
-}
 
-@media (max-width: 480px) {
-  .tagline-text-wrapper {
-    font-size: 1.2rem !important;
-    min-height: 30px;
-    line-height: 0.85;
+  .tagline-title {
+    font-size: 3.2rem;
   }
-  
-  .invisible-text {
-    font-size: 1.5rem;
-  }
-  
-  @keyframes fly-in-from-right {
-    0% {
-      transform: translateX(30px) scale(1.2);
-    }
-  }
-  
-  .letter.flying::after {
-    width: 25px;
-    left: -4px;
-  }
-}
 
-/* Tablet Styles */
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
-  .tagline-text-wrapper {
-    font-size: 2rem !important;
-    min-height: 38px;
+  .tagline-description {
+    font-size: 1rem;
+    padding: 0;
   }
-  
-  .invisible-text {
-    font-size: 2rem;
-  }
-}
 
-/* Large Desktop Styles */
-@media only screen and (min-width: 1025px) and (max-width: 1440px) {
-  .tagline-text-wrapper {
-    font-size: 2.2rem !important;
-    min-height: 40px;
+  .tagline-buttons {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 300px;
   }
-}
 
-/* Extra Large Screens */
-@media only screen and (min-width: 1441px) {
-  .tagline-text-wrapper {
-    font-size: 2.4rem !important;
-    min-height: 45px;
-  }
-  
-  .invisible-text {
-    font-size: 2.4rem;
-  }
-}
-
-/* Reduced motion preference */
-@media (prefers-reduced-motion: reduce) {
-  .letter,
-  .letter.flying,
-  .letter.joined {
-    animation: none !important;
-    transition: none !important;
-  }
-  
-  .letter {
-    opacity: 1 !important;
-    transform: none !important;
-    filter: none !important;
-  }
-  
-  .letter::before,
-  .letter::after {
-    display: none;
+  .tagline-btn {
+    width: 100%;
   }
 }

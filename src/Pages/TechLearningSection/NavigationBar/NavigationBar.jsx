@@ -47,17 +47,17 @@ const NavigationBar = () => {
   // Function to scroll to section with retry logic
   const scrollToSection = (sectionId, retryCount = 0) => {
     const element = document.getElementById(sectionId);
-    
+
     if (element) {
       const navbarHeight = 120; // Adjust based on your navbar height
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
-      
+
       window.scrollTo({
         top: offsetPosition,
         behavior: 'smooth'
       });
-      
+
       // Update active link
       const item = navItems.find(item => item.id === sectionId);
       if (item) {
@@ -79,7 +79,7 @@ const NavigationBar = () => {
     // Close menus
     setIsMobileMenuOpen(false);
     setIsExploreOpen(false);
-    
+
     // Check if we're on a sub-page
     if (!isHomePage && !isLearningHomePage) {
       // If on sub-page, navigate to homepage first with hash
@@ -138,7 +138,7 @@ const NavigationBar = () => {
 
     // Also check when hash changes
     window.addEventListener('hashchange', handleHashChange);
-    
+
     return () => {
       window.removeEventListener('hashchange', handleHashChange);
     };
@@ -148,16 +148,16 @@ const NavigationBar = () => {
     <>
       <div>
         <Helmet>
-            <title>Engloray Learning</title>
-            <meta name="description" content="Displays key links allowing users to navigate through website pages easily" />
-            <meta name="robots" content="max-snippet:-1, max-image-preview: large, max-video-preview:-1" />
-            {/* <link rel="canonical" href="https://yourapp.com" /> */}
-            <meta property="og:locale" content="en_US" />
-            <meta property="og:type" content="website" />
-            <meta property="og:title" content="NavigationBar" />
-            <meta property="og:description" content="Displays key links allowing users to navigate through website pages easily." />
-            {/* <meta property="og:url" content="https://yourapp.com" /> */}
-         </Helmet>
+          <title>Engloray Learning</title>
+          <meta name="description" content="Displays key links allowing users to navigate through website pages easily" />
+          <meta name="robots" content="max-snippet:-1, max-image-preview: large, max-video-preview:-1" />
+          {/* <link rel="canonical" href="https://yourapp.com" /> */}
+          <meta property="og:locale" content="en_US" />
+          <meta property="og:type" content="website" />
+          <meta property="og:title" content="NavigationBar" />
+          <meta property="og:description" content="Displays key links allowing users to navigate through website pages easily." />
+          {/* <meta property="og:url" content="https://yourapp.com" /> */}
+        </Helmet>
       </div>
 
       {/* Initial Position (Below Top Navbar) */}
@@ -185,17 +185,17 @@ const NavigationBar = () => {
                 <span className="learning-link-text">{item.name}</span>
               </a>
             ))}
-            
+
             {/* Explore Dropdown Button - HOVER ONLY */}
             <div className="learning-explore-container" ref={exploreRef}>
-              <button 
+              <button
                 className="learning-explore-btn"
                 aria-label="Explore sections"
               >
                 <span className="learning-explore-text">Explore</span>
                 <span className="learning-explore-icon">▾</span>
               </button>
-              
+
               {/* Explore Dropdown Menu - Shows on hover */}
               <div className="learning-explore-dropdown">
                 <div className="learning-explore-grid">
@@ -249,17 +249,17 @@ const NavigationBar = () => {
                 <div className="learning-link-underline"></div>
               </a>
             ))}
-            
+
             {/* Explore Dropdown Button - HOVER ONLY */}
             <div className="learning-explore-container" ref={exploreRef}>
-              <button 
+              <button
                 className="learning-explore-btn"
                 aria-label="Explore sections"
               >
                 <span className="learning-explore-text">Explore</span>
                 <span className="learning-explore-icon">▾</span>
               </button>
-              
+
               {/* Explore Dropdown Menu - Shows on hover */}
               <div className="learning-explore-dropdown">
                 <div className="learning-explore-grid">
@@ -288,7 +288,7 @@ const NavigationBar = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button 
+          <button
             className={`learning-nav-hamburger ${isMobileMenuOpen ? 'learning-hamburger-active' : ''}`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
@@ -306,19 +306,19 @@ const NavigationBar = () => {
       <div className={`learning-mobile-overlay ${isMobileMenuOpen ? 'learning-overlay-active' : ''}`}>
         <div className="learning-mobile-content">
           <div className="learning-mobile-header">
-            <button 
+            <button
               className="learning-mobile-close"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               ✕
             </button>
           </div>
-          
+
           {/* Mobile Search Bar */}
           <div className="learning-mobile-search">
             <SearchBar />
           </div>
-          
+
           <div className="learning-mobile-links">
             {navItems.map((item) => (
               <a
@@ -333,10 +333,10 @@ const NavigationBar = () => {
                 <span className="learning-mobile-text">{item.name}</span>
               </a>
             ))}
-            
+
             {/* Mobile Explore Button */}
             <div className="learning-mobile-explore">
-              <button 
+              <button
                 className="learning-mobile-explore-btn"
                 onClick={() => {
                   setIsExploreOpen(!isExploreOpen);
@@ -345,7 +345,7 @@ const NavigationBar = () => {
                 <span>Explore Sections</span>
                 <span className="learning-mobile-explore-icon">{isExploreOpen ? '▴' : '▾'}</span>
               </button>
-              
+
               {/* Mobile Explore Dropdown */}
               {isExploreOpen && (
                 <div className="learning-mobile-explore-dropdown">

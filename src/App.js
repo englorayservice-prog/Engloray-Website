@@ -6,10 +6,11 @@ import Services from './Components/NavigateToNext/NavigateToNext';
 import NavigateToNext from './Components/NavigateToNext/NavigateToNext';
 import About from './Components/About/About';
 import CoreServices from './Components/CoreSevices/CoreServices';
-import Testimonials from './Components/Testimonials/Testimaonials';
+import Testimonials from './Components/Testimonials/Testimonials';
 import Footer from './Components/Footer/Footer';
 import MarqueeBrands from './Components/MarqueeBrands/MarqueeBrands';
 import VisionMission from './Components/VisionMission/VisionMission';
+import Ourcore from './Ourcore';
 import SearchBar from './Components/SearchBar/SearchBar';
 import TwoLineNavbar from './Components/TwoLineNavbar/TwoLineNavbar';
 import DoubleMarquees from './Components/DoubleMarquees/DoubleMarquees';
@@ -18,6 +19,7 @@ import TechGroup from './Pages/TechGroupSection/TechGroupPage/TechGroup'
 import TopNavBar from './Components/TopNavbar/TopNavbar';
 import TechLearning from './Pages/TechLearningSection/TechLearningPage/TechLearning';
 import BackToTopArrow from './Components/BackToTop/BackToTop';
+import CustomScrollbar from './Components/CustomScrollbar/CustomScrollbar';
 import BrandingDesigning from './Pages/Sub Pages/TechBrandingAndDesigning/BrandingAndDesigning';
 import AppWebDev from './Pages/Sub Pages/WebAndAppDevelopment/AppWebDev';
 import UiUxPage from './Pages/Sub Pages/UiUxPage/UiUxPage';
@@ -55,12 +57,14 @@ import TSPFFooter from './Pages/Sub Pages/TechGroupSubPagefooter/TSPFFooter';
 import TLSPFFooter from './Pages/Sub Pages/TechLearningSubPageFooter/TLSPFFooter';
 import MainPageSubFooter from './Pages/Sub Pages/MainPageSubFooter/MainPageSubFooter';
 import JavaFullStackCourse from './Pages/Sub Pages/JavaFullStackCourse/JavaFullStackCourse';
+import BusinessBoost from './Components/BusinessBoost/BusinessBoost';
 
 
 function App() {
   return (
     <Router>
     <div className="App">
+      <CustomScrollbar />
       <Routes>
         <Route path='/' element ={
           <>
@@ -69,7 +73,9 @@ function App() {
             <Tagline/>
             <OtherSectionCarousel/>
             <VisionMission/>
+            <Ourcore/>
             <DoubleMarquees/>
+            <BusinessBoost/>
             <About/>
             <CoreServices/>
             <Testimonials/>

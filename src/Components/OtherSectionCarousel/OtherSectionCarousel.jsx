@@ -40,24 +40,25 @@ const OtherSectionCarousel = () => {
     }
   ];
 
-  const handleCardClick = (service) => {
-    if (service.clickable) {
+  const handleCardClick = (service, index) => {
+    // Only allow navigation if the card is the active (center) one
+    if (index === currentIndex && service.clickable) {
       navigate(service.path);
     }
-    // If not clickable, do nothing
+    // If it's a side card, we do nothing (or we could rotate to it, but user asked to only select in middle)
   };
 
   const nextCard = () => {
-    setCurrentIndex((prevIndex) => 
+    setCurrentIndex((prevIndex) =>
       prevIndex === services.length - 1 ? 0 : prevIndex + 1
     );
   };
 
   const prevCard = () => {
-  setCurrentIndex((prevIndex) =>
-    prevIndex === 0 ? services.length - 1 : prevIndex - 1
-  );
-};
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? services.length - 1 : prevIndex - 1
+    );
+  };
 
   // Auto-rotate carousel
   useEffect(() => {
@@ -97,31 +98,33 @@ const OtherSectionCarousel = () => {
     }
   };
 
+  const marqueeText = "Brand Strategy ✦ Identity Systems ✦ Logo Design ✦ UI/UX Excellence ✦ Growth Marketing ✦ Digital Campaigns ✦ Creative Execution ✦ Performance Branding ✦ Experience Design ✦ Market Differentiation ✦ Conversion Optimization ✦ Social Branding ✦ Scalable Growth ✦";
+
   return (
-    
+
     <div className="compact-carousel-section" ref={sectionRef}>
       <div className="compact-carousel-container">
         {/* <div className="carousel-header">
           <h2>Explore Our Services</h2>
           <p>Discover comprehensive solutions tailored for your success</p>
         </div> */}
-        
+
         <div className="compact-carousel">
           <div className="compact-carousel-track">
             {services.map((service, index) => {
               const position = (index - currentIndex + services.length) % services.length;
-              
+
               return (
                 <div
                   key={service.id}
-                  className={`compact-service-card ${
-                    position === 0 ? 'active' : 
+                  className={`compact-service-card ${position === 0 ? 'active' :
                     position === 1 ? 'next' :
-                    'hidden'
-                  } ${!service.clickable ? 'non-clickable' : ''}`}
-                  onClick={() => handleCardClick(service)}
+                      position === services.length - 1 ? 'prev' :
+                        'hidden'
+                    } ${!service.clickable ? 'non-clickable' : ''}`}
+                  onClick={() => handleCardClick(service, index)}
                   ref={addToRefs}
-                  style={{ cursor: service.clickable ? 'pointer' : 'default' }}
+                  style={{ cursor: (service.clickable && index === currentIndex) ? 'pointer' : 'default' }}
                 >
                   <div className="compact-card-image">
                     <img src={service.image} alt={service.title} />
@@ -155,9 +158,9 @@ const OtherSectionCarousel = () => {
         </div>
 
         <div className="compact-carousel-controls">
-  <button className="carousel-btn prev-btn" onClick={prevCard}>‹</button>
-  <button className="carousel-btn next-btn" onClick={nextCard}>›</button>
-</div>
+          <button className="carousel-btn prev-btn" onClick={prevCard}>‹</button>
+          <button className="carousel-btn next-btn" onClick={nextCard}>›</button>
+        </div>
 
         <div className="compact-carousel-indicators">
           {services.map((_, index) => (
@@ -167,6 +170,16 @@ const OtherSectionCarousel = () => {
               onClick={() => setCurrentIndex(index)}
             />
           ))}
+        </div>
+      </div>
+
+      {/* Scrolling Text Marquee */}
+      <div className="scrolling-marquee-container">
+        <div className="scrolling-marquee-track">
+          <span className="marquee-text">{marqueeText}</span>
+          <span className="marquee-text">{marqueeText}</span>
+          <span className="marquee-text">{marqueeText}</span>
+          <span className="marquee-text">{marqueeText}</span>
         </div>
       </div>
     </div>

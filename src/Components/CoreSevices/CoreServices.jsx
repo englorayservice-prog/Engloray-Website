@@ -9,7 +9,7 @@ import brandingIcon from '../../assets/branding.png';
 import developmentIcon from '../../assets/development';
 import marketingIcon from '../../assets/Testing.png';
 import aiIcon from '../../assets/ai.png';
-import educationIcon from '../../assets/ai.png';
+import educationIcon from '../../assets/education.png';
 
 
 // Import background images
@@ -71,7 +71,7 @@ const CoreServices = () => {
     },
     {
       id: 5,
-            title: "Mobile Applications",
+      title: "Mobile Applications",
       description: "Transforming Ideas into Powerful Mobile Experiences.",
       icon: aiIcon,
       background: backgroundImages.ai,
@@ -81,12 +81,12 @@ const CoreServices = () => {
     }
   ];
 
- useEffect(() => {
+  useEffect(() => {
     let interval;
-    
+
     if (isAutoPlaying) {
       interval = setInterval(() => {
-        setCurrentIndex((prevIndex) => 
+        setCurrentIndex((prevIndex) =>
           prevIndex === services.length - 1 ? 0 : prevIndex + 1
         );
       }, 2000);
@@ -114,7 +114,7 @@ const CoreServices = () => {
   };
 
   return (
-    <section 
+    <section
       id="CoreServices"
       className="services-carousel-section"
       onMouseEnter={() => setIsAutoPlaying(false)}
@@ -139,22 +139,24 @@ const CoreServices = () => {
           </div>
 
           <div className="carousel-full-container">
-            <div 
+            <div
               className="carousel-track"
-              style={{ transform: `translateX(-${currentIndex * 100}%)`,
-              '--slide-count': services.length  }}
+              style={{
+                transform: `translateX(-${currentIndex * 100}%)`,
+                '--slide-count': services.length
+              }}
             >
               {services.map((service, index) => (
-                <div 
+                <div
                   key={service.id}
                   className="carousel-slide"
                   onClick={() => handleServiceClick(service.route)}
                 >
-                  <div 
+                  <div
                     className="slide-bg-image"
                     style={{ backgroundImage: `url(${service.background})` }}
                   ></div>
-                  
+
                   <div className="slide-content">
                     <div className="service-icon-box" style={{ backgroundColor: service.color }}>
                       <img src={service.icon} alt={service.title} className="service-icon" />
@@ -173,7 +175,7 @@ const CoreServices = () => {
                         ))}
                       </div>
 
-                      <button 
+                      <button
                         className="service-cta-button"
                         onClick={(e) => {
                           e.stopPropagation();
@@ -191,18 +193,18 @@ const CoreServices = () => {
           </div>
 
           {/* Indicators */}
-<div className="color-dots-indicators">
-  {services.map((service, index) => (
-    <button
-      key={index}
-      className={`color-dot ${index === currentIndex ? 'active' : ''}`}
-      onClick={() => goToSlide(index)}
-      style={{
-        backgroundColor: service.color
-      }}
-    />
-  ))}
-</div>
+          <div className="color-dots-indicators">
+            {services.map((service, index) => (
+              <button
+                key={index}
+                className={`color-dot ${index === currentIndex ? 'active' : ''}`}
+                onClick={() => goToSlide(index)}
+                style={{
+                  backgroundColor: service.color
+                }}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
