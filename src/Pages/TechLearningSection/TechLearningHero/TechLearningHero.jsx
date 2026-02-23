@@ -1,105 +1,169 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './TechLearningHero.css';
+import bgVideo from "../../../assets/video1.mp4";
+
+
+
 
 const TechLearningHero = () => {
-  // WhatsApp booking URL
-  const whatsappNumber = '6381759909'; // Replace with your number
-  const whatsappMessage = "Hi! I'd like to book a demo for your courses. Can you please provide more information?";
-  const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+  const leftCardRef = useRef(null);
+  const rightCardRef = useRef(null);
+  const bottomCardRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('tech-animate-in');
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    if (leftCardRef.current) observer.observe(leftCardRef.current);
+    if (rightCardRef.current) observer.observe(rightCardRef.current);
+    if (bottomCardRef.current) observer.observe(bottomCardRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
+  const whatsappNumber = '6381759909';
+  const whatsappMessage =
+    "Hi! I'd like to book a demo for your courses. Can you please provide more information?";
+  const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+    whatsappMessage
+  )}`;
 
   return (
-    <section className="tech-hero-section" id="home">
-      <div className="tech-hero-container">
+    <div className="tech-hero-wrapper">
 
-        {/* Left Column: Content */}
-        <div className="tech-hero-left">
-          <div className="tech-hero-badge">
-            <i className="fas fa-rocket"></i> Future Ready Education
-          </div>
+      {/* Glowing Brain Image */}
+      {/* <div className="tech-brain-icon">
+        <img src={brainImg} alt="Brain" />
+      </div> */}
 
-          <h1 className="tech-hero-title">
-            upskill for your career
-          </h1>
+      {/* Top Right Image */}
+      {/* <div className="tech-top-right-container">
+        <img
+          src={require("../../../assets/image6.jpeg")}
+          alt="Top Right Visual"
+          className="tech-top-right-image"
+        />
+      </div> */}
 
-          <p className="tech-hero-description">
-            Professional courses built with real-world experience. Learn by doing with hands-on projects
-            that prepare you for today's tech industry.
-          </p>
 
-          <div className="tech-hero-cta-group">
-            {/* Using Link component for React Router */}
-            <Link
-              to="/allCoursesPage"
-              className="tech-btn-primary"
-            >
-              <i className="fas fa-play-circle"></i> Start Learning
-            </Link>
+      {/* BACKGROUND VIDEO */}
+      <video
+        className="tech-background-video"
+        src={bgVideo}
+        autoPlay
+        loop
+        muted
+        playsInline
+      />
 
-            {/* External link to WhatsApp */}
-            <a
-              href={whatsappURL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="tech-btn-secondary"
-            >
-              <i className="fas fa-calendar-alt"></i> Book Demo
-            </a>
-          </div>
+      {/* Gradient Blurs */}
+      {/* <div className="tech-gradient tech-gradient-blue"></div> */}
+      <div className="tech-gradient tech-gradient-purple"></div>
 
-          <div className="tech-hero-stats">
-            <div className="tech-stat">
-              <div className="tech-stat-number">500+</div>
-              <div className="tech-stat-label">Projects</div>
-            </div>
+      {/* Floating small labels */}
+      <div className="tech-floating tech-floating-think">Think</div>
+      <div className="tech-floating tech-floating-inspire">Inspire</div>
+      <div className="tech-floating tech-floating-grow">Grow</div>
 
-            <div className="tech-stat">
-              <div className="tech-stat-number">10K+</div>
-              <div className="tech-stat-label">Students</div>
-            </div>
 
-            <div className="tech-stat">
-              <div className="tech-stat-number">98%</div>
-              <div className="tech-stat-label">Success Rate</div>
-            </div>
-          </div>
-        </div>
+      {/* Top Badge */}
+      <div className="tech-top-badge">
+        ⭐ Top Rated Product
+      </div>
 
-        {/* Right Column: Image & Floating Elements */}
-        <div className="tech-hero-right">
-          <div className="tech-hero-image-wrapper">
-            {/* Placeholder image since generation failed - using a high quality Unsplash student image */}
-            <img
-              src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-              alt="Happy Student Learning"
-              className="tech-student-img"
-            />
-          </div>
+      {/* Avatars */}
+      <div className="tech-avatars">
+        <img src="https://i.pravatar.cc/40?img=1" alt="User" />
+        <img src="https://i.pravatar.cc/40?img=2" alt="User" />
+        <img src="https://i.pravatar.cc/40?img=3" alt="User" />
+        <img src="https://i.pravatar.cc/40?img=4" alt="User" />
+        <img src="https://i.pravatar.cc/40?img=5" alt="User" />
+        <img src="https://i.pravatar.cc/40?img=6" alt="User" />
+      </div>
 
-          {/* Floating Badges */}
-          <div className="tech-floating-badge badge-top-right">
-            <div className="tech-badge-icon">
-              <i className="fas fa-user-graduate"></i>
-            </div>
-            <div className="tech-badge-text">
-              <h4>10K+</h4>
-              <p>Active Students</p>
-            </div>
-          </div>
+      {/* Heading */}
+      <h1 className="tech-hero-title">
+        AI Powered learning and <br />career upskiling platform
+      </h1>
 
-          <div className="tech-floating-badge badge-bottom-left">
-            <div className="tech-badge-icon">
-              <i className="fas fa-star"></i>
-            </div>
-            <div className="tech-badge-text">
-              <h4>4.9</h4>
-              <p>Course Rating</p>
-            </div>
-          </div>
+      {/* Sub Row */}
+      <div className="tech-sub-row">
+        <span>Increase Career Skills</span>
+        <div className="tech-toggle"></div>
+
+        <div className="tech-icons">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/perplexity.svg" alt="Perplexity" />
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/googlebard.svg" alt="Gemini" />
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/meta.svg" alt="Meta AI" />
+
         </div>
 
       </div>
-    </section>
+
+      {/* Buttons */}
+      <div className="tech-cta-wrapper">
+        <Link to="/allCoursesPage" className="tech-cta-btn">
+          GET STARTED
+          <span className="tech-arrow-circle">→</span>
+        </Link>
+
+        <a
+          href={whatsappURL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="tech-cta-btn tech-secondary-btn"
+        >
+          Book a Demo
+          <span className="tech-arrow-circle">→</span>
+        </a>
+      </div>
+
+      {/* Left Card */}
+      <div ref={leftCardRef} className="tech-card tech-left-card">
+        <h4>What You Get</h4>
+        <ul>
+          <li className="tech-active">✔ Industry-Relevant Skills</li>
+          <li>✔ Hands-on Real Projects</li>
+          <li>✔ Expert Mentorship</li>
+          <li>✔ Career Growth Support</li>
+        </ul>
+      </div>
+
+      {/* Right Top Card */}
+      <div ref={rightCardRef} className="tech-card tech-invoice-card">
+        <h4>10K+ & 98%</h4>
+        <p>Students & Success Rate</p>
+      </div>
+
+      {/* Right Bottom Card */}
+      <div ref={bottomCardRef} className="tech-card tech-client-card">
+        <p><strong>500+</strong> • Projects </p>
+        <p>Excited for the next steps.</p>
+      </div>
+
+      {/* Curve */}
+      <svg className="tech-curve-line" viewBox="0 0 410 250">
+        <path
+          d="M130 65 C 120 200, 280 80, 280 220"
+          stroke="#4f46e5"
+          strokeWidth="2.7"
+          fill="transparent"
+          strokeLinecap="round"
+        />
+        <circle cx="130" cy="60" r="5" fill="#4f46e5" />
+        <circle cx="280" cy="220" r="5" fill="#4f46e5" />
+      </svg>
+
+    </div>
   );
 };
 
