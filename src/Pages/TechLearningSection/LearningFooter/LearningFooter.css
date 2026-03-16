@@ -36,6 +36,8 @@
   margin-bottom: 1rem;
   opacity: 0;
   animation: learningSlideInUp 1s ease-out 0.6s forwards;
+  align-items: flex-start;
+  /* Ensure vertical alignment */
 }
 
 /* Brand Section */
@@ -111,10 +113,21 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-.learning-social-link:nth-child(1) { --i: 1; }
-.learning-social-link:nth-child(2) { --i: 2; }
-.learning-social-link:nth-child(3) { --i: 3; }
-.learning-social-link:nth-child(4) { --i: 4; }
+.learning-social-link:nth-child(1) {
+  --i: 1;
+}
+
+.learning-social-link:nth-child(2) {
+  --i: 2;
+}
+
+.learning-social-link:nth-child(3) {
+  --i: 3;
+}
+
+.learning-social-link:nth-child(4) {
+  --i: 4;
+}
 
 .learning-social-icon {
   font-size: 1rem;
@@ -159,6 +172,8 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
+  align-items: flex-start;
+  /* Fix: Align all columns to top */
 }
 
 /* Links Sections */
@@ -169,12 +184,25 @@
   opacity: 0;
   animation: learningSlideInRight 1s ease-out forwards;
   animation-delay: calc(var(--j) * 0.2s);
+  height: 100%;
+  /* Ensure full height for alignment */
 }
 
-.learning-footer-links:nth-child(1) { --j: 1; }
-.learning-footer-links:nth-child(2) { --j: 2; }
-.learning-footer-links:nth-child(3) { --j: 3; }
-.learning-footer-links:nth-child(4) { --j: 4; }
+.learning-footer-links:nth-child(1) {
+  --j: 1;
+}
+
+.learning-footer-links:nth-child(2) {
+  --j: 2;
+}
+
+.learning-footer-links:nth-child(3) {
+  --j: 3;
+}
+
+.learning-footer-links:nth-child(4) {
+  --j: 4;
+}
 
 .learning-links-title {
   font-size: 1rem;
@@ -184,6 +212,11 @@
   font-family: 'Aldrich';
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  height: auto;
+  min-height: 24px;
+  /* Fixed height for consistent alignment */
+  display: flex;
+  align-items: center;
 }
 
 .learning-links-list {
@@ -191,7 +224,8 @@
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
-  font-size: 1.1rem;
+  margin: 0;
+  padding: 0;
 }
 
 .learning-links-item {
@@ -199,13 +233,31 @@
   opacity: 0;
   animation: learningFadeIn 0.8s ease-out forwards;
   animation-delay: calc(var(--k) * 0.1s);
+  min-height: 20px;
+  /* Fixed height for consistent alignment */
+  display: flex;
+  align-items: center;
 }
 
-.learning-links-item:nth-child(1) { --k: 1; }
-.learning-links-item:nth-child(2) { --k: 2; }
-.learning-links-item:nth-child(3) { --k: 3; }
-.learning-links-item:nth-child(4) { --k: 4; }
-.learning-links-item:nth-child(5) { --k: 5; }
+.learning-links-item:nth-child(1) {
+  --k: 1;
+}
+
+.learning-links-item:nth-child(2) {
+  --k: 2;
+}
+
+.learning-links-item:nth-child(3) {
+  --k: 3;
+}
+
+.learning-links-item:nth-child(4) {
+  --k: 4;
+}
+
+.learning-links-item:nth-child(5) {
+  --k: 5;
+}
 
 .learning-links-link {
   color: #cbd5e1;
@@ -214,6 +266,8 @@
   position: relative;
   font-family: 'Aldrich';
   font-size: 0.85rem;
+  display: inline-block;
+  line-height: 1.4;
 }
 
 .learning-links-link::before {
@@ -236,12 +290,16 @@
   width: 0.4rem;
 }
 
-/* Contact Info */
+/* Contact Info - Fixed for proper alignment */
 .learning-contact-info {
   color: #cbd5e1;
   font-family: 'Aldrich';
   font-size: 0.85rem;
   line-height: 1.4;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 /* OTHER LINKS Section - Added like BenefitsFooter */
@@ -269,6 +327,8 @@
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 1.5rem;
+  align-items: flex-start;
+  /* Fix: Align all columns to top */
 }
 
 .learning-other-links-column {
@@ -288,6 +348,10 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  min-height: 20px;
+  /* Fixed height for consistent alignment */
+  display: flex;
+  align-items: center;
 }
 
 .learning-other-links-list {
@@ -302,6 +366,10 @@
   transition: all 0.3s ease;
   font-size: 0.75rem;
   font-family: 'Aldrich';
+  min-height: 18px;
+  /* Fixed height for consistent alignment */
+  display: flex;
+  align-items: center;
 }
 
 .learning-other-links-list a {
@@ -312,6 +380,8 @@
   padding-left: 0;
   font-family: 'Aldrich';
   font-size: 0.75rem;
+  display: inline-block;
+  line-height: 1.4;
 }
 
 .learning-other-links-list a::before {
@@ -539,6 +609,7 @@
     opacity: 1;
     transform: translateY(0);
   }
+
   from {
     opacity: 0;
     transform: translateY(15px);
@@ -550,6 +621,7 @@
     opacity: 1;
     transform: translateX(0);
   }
+
   from {
     opacity: 0;
     transform: translateX(15px);
@@ -560,34 +632,44 @@
   to {
     opacity: 1;
   }
+
   from {
     opacity: 0;
   }
 }
 
 @keyframes learningBgFloat {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0) scale(1);
   }
+
   50% {
     transform: translateY(-8px) scale(1.01);
   }
 }
 
 @keyframes learningTextShine {
-  0%, 100% {
+
+  0%,
+  100% {
     background-position: -200% center;
   }
+
   50% {
     background-position: 200% center;
   }
 }
 
 @keyframes learningButtonPulse {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: scale(1);
     box-shadow: 0 2px 8px rgba(96, 165, 250, 0.3);
   }
+
   50% {
     transform: scale(1.01);
     box-shadow: 0 3px 10px rgba(96, 165, 250, 0.4);
@@ -595,12 +677,16 @@
 }
 
 @keyframes learningLogoFloat {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0) rotate(0deg);
   }
+
   33% {
     transform: translateY(-3px) rotate(2deg);
   }
+
   66% {
     transform: translateY(1px) rotate(-1deg);
   }
@@ -611,6 +697,7 @@
     opacity: 1;
     transform: scale(1);
   }
+
   from {
     opacity: 0;
     transform: scale(0.8);
@@ -621,6 +708,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -631,6 +719,7 @@
     opacity: 0;
     transform: translateY(20px) scale(0.95);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -642,16 +731,16 @@
   .learning-container {
     max-width: 1200px;
   }
-  
+
   .learning-footer-content {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
+
   .learning-links-grid {
     grid-template-columns: repeat(4, 1fr);
   }
-  
+
   .learning-other-links-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 1.2rem;
@@ -663,20 +752,20 @@
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
+
   .learning-footer-brand {
     text-align: center;
     align-items: center;
   }
-  
+
   .learning-footer-logo {
     justify-content: center;
   }
-  
+
   .learning-social-links {
     justify-content: center;
   }
-  
+
   .learning-links-grid {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -693,83 +782,83 @@
   .learning-footer {
     padding: 1.5rem 1rem 0.75rem;
   }
-  
+
   .learning-links-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
-  
+
   .learning-footer-links {
     align-items: center;
     text-align: center;
   }
-  
+
   .learning-links-item {
     margin-right: 12%;
   }
-  
+
   .learning-social-links {
     gap: 0.5rem;
   }
-  
+
   .learning-social-link {
     padding: 0.4rem 0.6rem;
     font-size: 0.7rem;
   }
-  
+
   .learning-social-icon {
     font-size: 0.9rem;
   }
-  
+
   .learning-social-text {
     font-size: 0.65rem;
   }
-  
+
   .learning-other-links-section {
     margin: 1rem 0;
     padding: 1rem 0;
   }
-  
+
   .learning-other-links-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
-  
+
   .learning-other-links-main-title {
     font-size: 0.85rem;
     margin-bottom: 0.75rem;
   }
-  
+
   .learning-other-links-title {
     font-size: 0.7rem;
     margin-bottom: 0.5rem;
   }
-  
+
   .learning-other-links-list li {
     font-size: 0.7rem;
     margin-bottom: 0.3rem;
   }
-  
+
   .learning-other-links-list a {
     font-size: 0.7rem;
   }
-  
+
   .learning-footer-copyright-section {
     flex-direction: column;
     gap: 0.5rem;
     text-align: center;
   }
-  
+
   .learning-footer-legal {
     gap: 0.8rem;
   }
-  
+
   .learning-join-button-full {
     height: 32px;
     min-height: 32px;
     font-size: 0.75rem;
   }
-  
+
   .learning-join-text {
     font-size: 0.75rem;
   }
@@ -780,22 +869,22 @@
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
+
   .learning-footer-links {
     align-items: center;
     text-align: center;
   }
-  
+
   .learning-other-links-grid {
     grid-template-columns: 1fr;
     gap: 0.75rem;
   }
-  
+
   .learning-other-links-column {
     align-items: center;
     text-align: center;
   }
-  
+
   .learning-footer-legal {
     flex-direction: column;
     gap: 0.5rem;
@@ -807,73 +896,73 @@
   .learning-footer {
     padding: 1rem 0.75rem 0.5rem;
   }
-  
+
   .learning-logo-text {
     font-size: 1.5rem;
   }
-  
+
   .learning-logo-icon {
     font-size: 2rem;
   }
-  
+
   .learning-footer-description {
     font-size: 0.9rem;
   }
-  
+
   .learning-links-link {
     font-size: 0.8rem;
   }
-  
+
   .learning-contact-info {
     font-size: 0.8rem;
   }
-  
+
   .learning-social-links {
     gap: 0.4rem;
     justify-content: center;
   }
-  
+
   .learning-social-link {
     padding: 0.35rem 0.5rem;
     font-size: 0.65rem;
   }
-  
+
   .learning-social-icon {
     font-size: 0.8rem;
   }
-  
+
   .learning-social-text {
     font-size: 0.6rem;
   }
-  
+
   .learning-other-links-grid {
     grid-template-columns: 1fr;
     gap: 0.75rem;
   }
-  
+
   .learning-other-links-title {
     font-size: 0.75rem;
     margin-bottom: 0.4rem;
   }
-  
+
   .learning-other-links-list li {
     font-size: 0.75rem;
   }
-  
+
   .learning-other-links-list a {
     font-size: 0.75rem;
   }
-  
+
   .learning-join-button-full {
     height: 30px;
     min-height: 30px;
     font-size: 0.7rem;
   }
-  
+
   .learning-join-text {
     font-size: 0.7rem;
   }
-  
+
   .learning-footer-copyright,
   .learning-legal-link {
     font-size: 0.75rem;

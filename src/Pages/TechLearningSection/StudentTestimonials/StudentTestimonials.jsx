@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './StudentTestimonials.css';
+import clipImg from '../../../assets/image7.png';
 
 const StudentTestimonials = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeCard, setActiveCard] = useState(null);
+  const scrollContainerRef = useRef(null);
 
   const testimonials = [
     {
@@ -69,7 +71,7 @@ const StudentTestimonials = () => {
       company: "UI Designer",
       outcome: "3 Job Offers",
       duration: "10 months",
-      skills: ["Visual Design","Figma"]
+      skills: ["Visual Design", "Figma"]
     },
     {
       id: 6,
@@ -83,8 +85,37 @@ const StudentTestimonials = () => {
       outcome: "Certification + Job Offer",
       duration: "10 months",
       skills: ["Branding", "Ui Design"]
+    },
+    {
+      id: 7,
+      name: "Santhiya R",
+      role: "Designer",
+      course: "Graphic Design + Ui/Ux",
+      rating: 5,
+      text: "The hands-on labs and real-world security scenarios gave me the confidence to handle complex security challenges in my current role.",
+      avatar: "👨‍💻",
+      company: "Creative Designer",
+      outcome: "Certification + Job Offer",
+      duration: "10 months",
+      skills: ["Branding", "Ui Design"]
+    },
+    {
+      id: 8,
+      name: "Kowsalya R",
+      role: "Designer",
+      course: "Graphic Design + Ui/Ux",
+      rating: 5,
+      text: "The hands-on labs and real-world security scenarios gave me the confidence to handle complex security challenges in my current role.",
+      avatar: "👨‍💻",
+      company: "Creative Designer",
+      outcome: "Certification + Job Offer",
+      duration: "10 months",
+      skills: ["Branding", "Ui Design"]
     }
   ];
+
+  // Duplicate testimonials for infinite scroll effect
+  const duplicatedTestimonials = [...testimonials, ...testimonials, ...testimonials];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -93,7 +124,7 @@ const StudentTestimonials = () => {
           setIsVisible(true);
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.1 }
     );
 
     const section = document.querySelector('.student-testimonials-section');
@@ -102,6 +133,63 @@ const StudentTestimonials = () => {
     }
 
     return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const scrollContainer = scrollContainerRef.current;
+    if (!scrollContainer) return;
+
+    let animationFrame;
+    let scrollSpeed = 2; // pixels per frame
+    let lastTimestamp = 0;
+
+    const scroll = (timestamp) => {
+      if (!scrollContainer) return;
+
+      // Smooth scrolling with time delta
+      if (lastTimestamp !== 0) {
+        const delta = timestamp - lastTimestamp;
+        const scrollAmount = (scrollSpeed * delta) / 16; // Normalize to ~60fps
+
+        scrollContainer.scrollLeft += scrollAmount;
+
+        // Reset scroll position when reaching the end of first set
+        if (scrollContainer.scrollLeft >= (scrollContainer.scrollWidth / 3) * 2) {
+          scrollContainer.scrollLeft = scrollContainer.scrollWidth / 3;
+        }
+        // Reset scroll position when reaching the beginning
+        else if (scrollContainer.scrollLeft <= 0) {
+          scrollContainer.scrollLeft = scrollContainer.scrollWidth / 3;
+        }
+      }
+
+      lastTimestamp = timestamp;
+      animationFrame = requestAnimationFrame(scroll);
+    };
+
+    // Start infinite scroll
+    animationFrame = requestAnimationFrame(scroll);
+
+    // Pause scroll on hover
+    const handleMouseEnter = () => {
+      cancelAnimationFrame(animationFrame);
+    };
+
+    const handleMouseLeave = () => {
+      lastTimestamp = 0;
+      animationFrame = requestAnimationFrame(scroll);
+    };
+
+    scrollContainer.addEventListener('mouseenter', handleMouseEnter);
+    scrollContainer.addEventListener('mouseleave', handleMouseLeave);
+
+    return () => {
+      cancelAnimationFrame(animationFrame);
+      if (scrollContainer) {
+        scrollContainer.removeEventListener('mouseenter', handleMouseEnter);
+        scrollContainer.removeEventListener('mouseleave', handleMouseLeave);
+      }
+    };
   }, []);
 
   const handleCardHover = (cardId) => {
@@ -128,92 +216,96 @@ const StudentTestimonials = () => {
           </p>
         </div>
 
-        {/* Testimonials Grid */}
-        <div className="student-testimonials-grid">
-          {testimonials.map((testimonial, index) => (
-            <div
-              key={testimonial.id}
-              className={`student-testimonial-card ${
-                isVisible ? 'student-visible' : ''
-              } ${activeCard === testimonial.id ? 'student-card-active' : ''}`}
-              style={{ animationDelay: `${index * 0.1}s` }}
-              onMouseEnter={() => handleCardHover(testimonial.id)}
-              onMouseLeave={handleCardLeave}
-            >
-              {/* Animated Background Elements */}
-              <div className="student-card-bg-animation"></div>
-              <div className="student-card-floating-elements">
-                <div className="student-floating-circle student-circle-1"></div>
-                <div className="student-floating-circle student-circle-2"></div>
-                <div className="student-floating-circle student-circle-3"></div>
-              </div>
+        {/* Horizontal Scroll Container */}
+        <div className="student-horizontal-scroll" ref={scrollContainerRef}>
+          <div className="student-testimonials-track">
+            {duplicatedTestimonials.map((testimonial, index) => (
+              <div
+                key={`${testimonial.id}-${index}`}
+                className={`student-testimonial-card ${isVisible ? 'student-visible' : ''
+                  } ${activeCard === testimonial.id ? 'student-card-active' : ''}`}
+                style={{ animationDelay: `${index * 0.1}s` }}
+                onMouseEnter={() => handleCardHover(testimonial.id)}
+                onMouseLeave={handleCardLeave}
+              >
+                {/* Clip PNG */}
+                <img src={clipImg} alt="clip" className="student-card-clip" />
 
-              {/* Card Header */}
-              <div className="student-card-header">
-                <div className="student-avatar-badge">
-                  <div className="student-avatar">
-                    {testimonial.avatar}
+                {/* Animated Background Elements */}
+                <div className="student-card-bg-animation"></div>
+                <div className="student-card-floating-elements">
+                  <div className="student-floating-circle student-circle-1"></div>
+                  <div className="student-floating-circle student-circle-2"></div>
+                  <div className="student-floating-circle student-circle-3"></div>
+                </div>
+
+                {/* Card Header */}
+                <div className="student-card-header">
+                  <div className="student-avatar-badge">
+                    <div className="student-avatar">
+                      {testimonial.avatar}
+                    </div>
+                    <div className="student-verified">
+                      <i className="fas fa-check-circle"></i> Verified Graduate
+                    </div>
                   </div>
-                  <div className="student-verified">
-                    <i className="fas fa-check-circle"></i> Verified Graduate
+                  <div className="student-basic-info">
+                    <h3 className="student-name">{testimonial.name}</h3>
+                    <p className="student-role">{testimonial.role}</p>
+                    <p className="student-company">{testimonial.company}</p>
                   </div>
                 </div>
-                <div className="student-basic-info">
-                  <h3 className="student-name">{testimonial.name}</h3>
-                  <p className="student-role">{testimonial.role}</p>
-                  <p className="student-company">{testimonial.company}</p>
-                </div>
-              </div>
 
-              {/* Rating */}
-              <div className="student-rating">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <span key={i} className="student-star">⭐</span>
-                ))}
-                <span className="student-rating-text">Excellent</span>
-              </div>
-
-              {/* Testimonial Text */}
-              <blockquote className="student-testimonial-text">
-                "{testimonial.text}"
-              </blockquote>
-
-              {/* Course Info */}
-              <div className="student-course-info">
-                <div className="student-course-badge">
-                  <i className="fas fa-book"></i>
-                  {testimonial.course}
-                </div>
-                <div className="student-duration">
-                  <i className="fas fa-clock"></i>
-                  {testimonial.duration}
-                </div>
-              </div>
-
-              {/* Skills Learned */}
-              <div className="student-skills">
-                <div className="student-skills-label">Skills Mastered:</div>
-                <div className="student-skills-list">
-                  {testimonial.skills.map((skill, skillIndex) => (
-                    <span key={skillIndex} className="student-skill-tag">
-                      {skill}
-                    </span>
+                {/* Rating */}
+                <div className="student-rating">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <span key={i} className="student-star">⭐</span>
                   ))}
+                  <span className="student-rating-text">Excellent</span>
                 </div>
-              </div>
 
-              {/* Success Outcome */}
-              <div className="student-outcome">
-                <div className="student-outcome-badge">
-                  <i className="fas fa-trophy"></i>
-                  {testimonial.outcome}
+                {/* Testimonial Text */}
+                <blockquote className="student-testimonial-text">
+                  "{testimonial.text}"
+                </blockquote>
+
+                {/* Course Info */}
+                <div className="student-course-info">
+                  <div className="student-course-badge">
+                    <i className="fas fa-book"></i>
+                    {testimonial.course}
+                  </div>
+                  <div className="student-duration">
+                    <i className="fas fa-clock"></i>
+                    {testimonial.duration}
+                  </div>
                 </div>
-              </div>
 
-              {/* Hover Effect Layer */}
-              <div className="student-card-hover"></div>
-            </div>
-          ))}
+                {/* Skills Learned */}
+                <div className="student-skills">
+                  <div className="student-skills-label">Skills Mastered:</div>
+                  <div className="student-skills-list">
+                    {testimonial.skills.map((skill, skillIndex) => (
+                      <span key={skillIndex} className="student-skill-tag">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Success Outcome */}
+                <div className="student-outcome">
+                  <div className="student-outcome-badge">
+                    <i className="fas fa-trophy"></i>
+                    {testimonial.outcome}
+                  </div>
+                </div>
+
+                {/* Hover Effect Layer */}
+                <div className="student-card-hover"></div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
