@@ -1,0 +1,27 @@
+/* In src/Styles/Style.css - Use this exact code */
+@font-face {
+  font-family: 'Pavlet';
+  src: url('../Fonts/Pavelt.woff2') format('woff2'),
+       url('../Fonts/Pavelt.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Aldrich';
+  src: url('../Fonts/Aldrich-Regular.woff2') format('woff2'),
+       url('../Fonts/Aldrich-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HEXCO';
+  src: url('../Fonts/HEXCO-Regular.woff2') format('woff2'),
+       url('../Fonts/HEXCO-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

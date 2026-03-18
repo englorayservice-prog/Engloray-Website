@@ -1,0 +1,190 @@
+/* TopNavBar.css */
+.topnav-main {
+    background: #ffffff;
+    border-bottom: 3px solid #bf0413;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1001;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.topnav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    height: 30px;
+    /* Reduced to 30px */
+    position: relative;
+}
+
+/* Navigation Items */
+.topnav-items {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    flex: 1;
+}
+
+.topnav-link {
+    color: #1f2937;
+    padding: 0.4rem 1.2rem;
+    /* Reduced padding */
+    font-size: 0.8rem;
+    /* Smaller font */
+    font-weight: 200;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    position: relative;
+    font-family: 'Aldrich', 'Segoe UI', sans-serif;
+    display: block;
+    background: none;
+    border: none;
+    text-align: left;
+    height: 100%;
+    /* Take full height of container */
+    display: flex;
+    align-items: center;
+    /* Vertically center text */
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
+}
+
+/* Active state */
+.topnav-link.topnav-active {
+    background: linear-gradient(135deg, #bf0413 0%, #f23030 100%);
+    color: white;
+    font-weight: 600;
+}
+
+.topnav-link.topnav-active:hover {
+    background: linear-gradient(135deg, #a00311 0%, #d12a2a 100%);
+}
+
+/* Hover state for non-active items */
+.topnav-link:not(.topnav-active):hover {
+    background: rgba(191, 4, 19, 0.1);
+    color: #bf0413;
+}
+
+.topnav-active-indicator {
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 3px;
+    background: white;
+    border-radius: 2px 2px 0 0;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+}
+
+/* Current Page Indicator */
+.topnav-current-page {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 12px;
+    background: rgba(191, 4, 19, 0.1);
+    border-radius: 4px;
+    font-family: 'Aldrich', sans-serif;
+    font-size: 0.7rem;
+    color: #1f2937;
+    white-space: nowrap;
+}
+
+.current-page-label {
+    color: #6b7280;
+    font-weight: 300;
+}
+
+.current-page-name {
+    color: #bf0413;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .topnav-container {
+        padding: 0 1rem;
+    }
+
+    .topnav-current-page {
+        display: none;
+        /* Hide on smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .topnav-container {
+        flex-direction: column;
+        height: auto;
+        padding: 0.5rem;
+        /* Reduced padding */
+        gap: 0.5rem;
+        justify-content: center;
+    }
+
+    .topnav-items {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .topnav-link {
+        padding: 0.4rem 0.8rem;
+        /* Reduced padding */
+        font-size: 0.75rem;
+        /* Smaller font */
+    }
+
+    .topnav-active-indicator {
+        bottom: -1px;
+        height: 2px;
+    }
+}
+
+@media (max-width: 480px) {
+    .topnav-link {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.7rem;
+    }
+
+    .topnav-items {
+        gap: 0.2rem;
+    }
+}
+
+/* Route-based visual cues */
+body.route-home .topnav-main {
+    border-bottom-color: #bf0413;
+}
+
+body.route-tech-group .topnav-main {
+    border-bottom-color: #3b82f6;
+}
+
+body.route-tech-learning .topnav-main {
+    border-bottom-color: #10b981;
+}

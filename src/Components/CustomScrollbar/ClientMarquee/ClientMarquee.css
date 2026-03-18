@@ -1,0 +1,143 @@
+/* ===========================
+   Client Marquee Section
+   =========================== */
+
+.client-marquee-section {
+    /* background-color: #000000; */
+    padding: 12px 0 40px;
+    width: 100%;
+    overflow: hidden;
+    margin-top: -20px;
+    margin-bottom: 50px;
+}
+
+
+
+/* ---- Outer wrapper: constrained width + relative for fades ---- */
+.client-marquee-wrapper {
+    overflow: hidden;
+    position: relative;
+    max-width: 504px;
+    margin: 0 auto;
+
+    /* Smooth fade on both sides */
+    -webkit-mask-image: linear-gradient(to right,
+            transparent 0%,
+            black 12%,
+            black 88%,
+            transparent 100%);
+
+    mask-image: linear-gradient(to right,
+            transparent 0%,
+            black 12%,
+            black 88%,
+            transparent 100%);
+}
+
+/* ---- Track container: clips overflow so logos vanish at edges ---- */
+.client-marquee-track-container {
+    overflow: hidden;
+    width: 100%;
+
+}
+
+/* ---- The moving row ---- */
+.client-marquee-track {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    width: max-content;
+    animation: marquee-scroll 22s linear infinite;
+}
+
+/* Pause on hover */
+.client-marquee-wrapper:hover .client-marquee-track {
+    animation-play-state: paused;
+}
+
+/* ---- Individual logo item ---- */
+.client-marquee-item {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.client-marquee-logo {
+    height: 36px;
+    width: auto;
+    max-width: 100px;
+    object-fit: contain;
+    /* White-monochrome effect by default for most logos */
+    filter: brightness(0) invert(1);
+    opacity: 0.55;
+    transition: opacity 0.25s ease, filter 0.25s ease;
+    user-select: none;
+    pointer-events: none;
+}
+
+.client-marquee-logo.keep-original {
+    filter: none;
+    opacity: 0.8;
+}
+
+.client-marquee-item:hover .client-marquee-logo {
+    opacity: 1;
+    filter: brightness(0) invert(1) drop-shadow(0 0 6px rgba(255, 60, 60, 0.6));
+}
+
+.client-marquee-item:hover .client-marquee-logo.keep-original {
+    filter: drop-shadow(0 0 6px rgba(255, 60, 60, 0.6));
+    opacity: 1;
+}
+
+/* ---- Gradient fades on both edges ---- */
+.client-marquee-fade {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 60px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.client-marquee-fade--left {
+    left: -2px;
+    background: linear-gradient(to right, transparent 100%);
+}
+
+.client-marquee-fade--right {
+    right: -2px;
+    background: linear-gradient(to left, transparent 100%);
+}
+
+/* ---- Keyframe: scroll one full copy-width to the left ---- */
+@keyframes marquee-scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+    .client-marquee-wrapper {
+        max-width: 100%;
+    }
+
+    .client-marquee-track {
+        gap: 32px;
+    }
+
+    .client-marquee-logo {
+        height: 28px;
+        max-width: 80px;
+    }
+
+    .client-marquee-fade {
+        width: 40px;
+    }
+}

@@ -1,0 +1,1388 @@
+/* Client Projects Component Styles - PLUM/PURPLE THEME */
+.wcp-container {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Hero Section - Plum/Purple Theme with Technology Background */
+.wcp-hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #804bc1 0%, #8f45bd 100%); 
+}
+
+.wcp-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    animation: wcpHeroZoom 20s infinite alternate ease-in-out;
+    z-index: 1;
+    filter: sepia(0.3) hue-rotate(280deg) contrast(1.2);
+}
+
+@keyframes wcpHeroZoom {
+    0% {
+        transform: scale(1) translateY(0);
+        filter: sepia(0.3) hue-rotate(280deg) contrast(1.2) brightness(0.9);
+    }
+    50% {
+        transform: scale(1.1) translateY(-10px);
+        filter: sepia(0.3) hue-rotate(280deg) contrast(1.3) brightness(1);
+    }
+    100% {
+        transform: scale(1) translateY(0);
+        filter: sepia(0.3) hue-rotate(280deg) contrast(1.2) brightness(0.9);
+    }
+}
+
+.wcp-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(95, 52, 147, 0.85) 0%, rgba(106, 27, 154, 0.95) 100%);
+    z-index: 2;
+}
+
+.wcp-hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+}
+
+.wcp-hero-badge {
+    display: inline-block;
+    background: rgba(156, 39, 176, 0.3);
+    color: #F3E5F5;
+    padding: 12px 28px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-bottom: 30px;
+    font-family: 'Aldrich', sans-serif;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(156, 39, 176, 0.5);
+    animation: wcpBadgePulse 2s infinite;
+}
+
+@keyframes wcpBadgePulse {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(156, 39, 176, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(156, 39, 176, 0.5);
+    }
+}
+
+.wcp-hero-title {
+    font-size: 3.5rem;
+    font-weight: 100;
+    color: #ffffff;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    font-family: 'HEXCO', sans-serif;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.wcp-hero-subtitle {
+    font-size: 1.2rem;
+    color: #E1BEE7;
+    max-width: 800px;
+    margin: 0 auto 50px;
+    line-height: 1.8;
+    font-family: 'Aldrich', sans-serif;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Success Stories Section - Light Purple BG */
+.wcp-stories-section {
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #F3E5F5 0%, #E1BEE7 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.wcp-stories-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* Section Headers */
+.wcp-section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.wcp-section-title-testimonials {
+    font-size: 2.5rem;
+    color: #6A1B9A;
+    margin-bottom: 20px;
+    font-family: 'HEXCO', sans-serif;
+    font-weight: 100;
+    position: relative;
+    display: inline-block;
+}
+
+.wcp-section-title {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-family: 'HEXCO', sans-serif;
+    font-weight: 100;
+    position: relative;
+    display: inline-block;
+}
+
+.wcp-section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #9C27B0, #BA68C8);
+    border-radius: 2px;
+}
+
+.wcp-section-subtitle {
+    font-size: 1.1rem;
+    color: #E1BEE7;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+    font-family: 'Aldrich', sans-serif;
+}
+
+.wcp-section-subtitle-testimonials {
+    font-size: 1.1rem;
+    color: #4A148C;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+    font-family: 'Aldrich', sans-serif;
+}
+
+/* Stats Grid */
+.wcp-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin: 0 auto 60px;
+    max-width: 1000px;
+}
+
+.wcp-stat-item {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 30px 20px;
+    border: 2px solid #E1BEE7;
+    transition: all 0.3s ease;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(156, 39, 176, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+.wcp-stat-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #9C27B0, #BA68C8);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.wcp-stat-item:hover::before {
+    transform: scaleX(1);
+}
+
+.wcp-stat-item:hover {
+    transform: translateY(-5px);
+    border-color: #9C27B0;
+    box-shadow: 0 15px 30px rgba(156, 39, 176, 0.2);
+}
+
+.wcp-stat-item h3 {
+    font-size: 2.5rem;
+    color: #7B1FA2;
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-family: 'HEXCO', sans-serif;
+    background: linear-gradient(135deg, #7B1FA2, #9C27B0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.wcp-stat-item p {
+    color: #374151;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Aldrich', sans-serif;
+}
+
+/* Process Steps - Desktop: 4 columns */
+.wcp-process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.wcp-process-step {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 40px 25px;
+    box-shadow: 0 5px 20px rgba(156, 39, 176, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    border: 1px solid #E1BEE7;
+}
+
+.wcp-process-step::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: #4A148C;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.wcp-process-step:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(156, 39, 176, 0.2);
+}
+
+.wcp-process-step:hover::before {
+    transform: scaleX(1);
+}
+
+.wcp-step-icon-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.wcp-step-icon-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #9C27B0, #BA68C8);
+    border-radius: 50%;
+    opacity: 0.1;
+    z-index: 1;
+}
+
+.wcp-step-icon {
+    position: relative;
+    z-index: 2;
+    font-size: 2.5rem;
+    color: #9C27B0;
+    margin-bottom: 15px;
+}
+
+.wcp-step-icon svg {
+    width: 40px !important;
+    height: 40px !important;
+}
+
+.wcp-process-step h4 {
+    font-size: 1.3rem;
+    color: #4A148C;
+    margin-bottom: 15px;
+    font-family: 'HEXCO', sans-serif;
+    font-weight: 100;
+    letter-spacing: 0.5px;
+}
+
+.wcp-process-step p {
+    color: #4b5563;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    font-family: 'Aldrich', sans-serif;
+}
+
+/* Floating Icons Animation */
+.wcp-floating-icons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.wcp-floating-icon {
+    position: absolute;
+    font-size: 1.8rem;
+    opacity: 0.1;
+    filter: blur(0.5px);
+    animation: wcpFloatAround 25s infinite linear;
+    user-select: none;
+    color: #9C27B0;
+}
+
+.wcp-floating-icon svg {
+    width: 28px !important;
+    height: 28px !important;
+}
+
+/* Different sizes for variety */
+.wcp-floating-icon:nth-child(1) svg { width: 32px !important; height: 32px !important; }
+.wcp-floating-icon:nth-child(2) svg { width: 26px !important; height: 26px !important; }
+.wcp-floating-icon:nth-child(3) svg { width: 35px !important; height: 35px !important; }
+.wcp-floating-icon:nth-child(4) svg { width: 24px !important; height: 24px !important; }
+.wcp-floating-icon:nth-child(5) svg { width: 30px !important; height: 30px !important; }
+
+/* Different colors for variety */
+.wcp-floating-icon:nth-child(1) { color: #7B1FA2; }
+.wcp-floating-icon:nth-child(2) { color: #9C27B0; }
+.wcp-floating-icon:nth-child(3) { color: #AB47BC; }
+.wcp-floating-icon:nth-child(4) { color: #6A1B9A; }
+.wcp-floating-icon:nth-child(5) { color: #8E24AA; }
+
+/* Different positions and animation speeds */
+.wcp-floating-icon:nth-child(1) {
+    top: 15%;
+    left: 5%;
+    animation-delay: 0s;
+    animation-duration: 30s;
+}
+
+.wcp-floating-icon:nth-child(2) {
+    top: 25%;
+    right: 10%;
+    animation-delay: 3s;
+    animation-duration: 28s;
+}
+
+.wcp-floating-icon:nth-child(3) {
+    bottom: 35%;
+    left: 15%;
+    animation-delay: 6s;
+    animation-duration: 32s;
+}
+
+.wcp-floating-icon:nth-child(4) {
+    bottom: 25%;
+    right: 20%;
+    animation-delay: 9s;
+    animation-duration: 35s;
+}
+
+.wcp-floating-icon:nth-child(5) {
+    top: 45%;
+    left: 85%;
+    animation-delay: 12s;
+    animation-duration: 29s;
+}
+
+@keyframes wcpFloatAround {
+    0% {
+        transform: translate(0, 0) rotate(0deg) scale(1);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.15;
+    }
+    50% {
+        opacity: 0.2;
+        transform: scale(1.1);
+    }
+    90% {
+        opacity: 0.15;
+    }
+    100% {
+        transform: 
+            translate(calc(var(--move-x, 100px)), calc(var(--move-y, -100px))) 
+            rotate(calc(var(--rotate, 360deg))) 
+            scale(0.9);
+        opacity: 0;
+    }
+}
+
+/* Set random movement for each icon */
+.wcp-floating-icon:nth-child(1) { --move-x: 120px; --move-y: -80px; --rotate: 360deg; }
+.wcp-floating-icon:nth-child(2) { --move-x: -150px; --move-y: -120px; --rotate: -360deg; }
+.wcp-floating-icon:nth-child(3) { --move-x: 180px; --move-y: 60px; --rotate: 720deg; }
+.wcp-floating-icon:nth-child(4) { --move-x: -100px; --move-y: -180px; --rotate: -540deg; }
+.wcp-floating-icon:nth-child(5) { --move-x: 140px; --move-y: 140px; --rotate: 450deg; }
+
+/* Projects Section - Dark Plum/Purple BG */
+.wcp-studies-section {
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #4A148C 0%, #6A1B9A 100%);
+}
+
+.wcp-studies-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Category Filter */
+.wcp-category-filter {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 50px;
+}
+
+.wcp-category-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #E1BEE7;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Aldrich', sans-serif;
+}
+
+.wcp-category-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    color: #ffffff;
+}
+
+.wcp-category-btn.active {
+    background: var(--category-color, #9C27B0);
+    color: white;
+    border-color: var(--category-color, #9C27B0);
+    box-shadow: 0 5px 15px var(--category-color, rgba(156, 39, 176, 0.4));
+}
+
+.wcp-category-icon {
+    font-size: 1rem;
+}
+
+/* Horizontal Projects List */
+.wcp-studies-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.wcp-study-item {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.wcp-study-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--category-color, rgba(156, 39, 176, 0.5));
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.wcp-study-item.expanded {
+    margin-bottom: 20px;
+}
+
+.wcp-study-main {
+    display: flex;
+    min-height: 200px;
+}
+
+.wcp-study-image {
+    flex: 0 0 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.wcp-study-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.wcp-study-item:hover .wcp-study-image img {
+    transform: scale(1.05);
+}
+
+.wcp-study-category {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: var(--category-color, #9C27B0);
+    color: white;
+    padding: 6px 15px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    font-family: 'Aldrich', sans-serif;
+    z-index: 2;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.wcp-study-content {
+    flex: 1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.wcp-study-header {
+    margin-bottom: 15px;
+}
+
+.wcp-study-title {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 8px;
+    font-family: 'HEXCO', sans-serif;
+    font-weight: 100;
+}
+
+.wcp-study-subtitle {
+    font-size: 1rem;
+    color: #E1BEE7;
+    margin-bottom: 5px;
+    font-family: 'Aldrich', sans-serif;
+}
+
+.wcp-study-client {
+    font-size: 0.9rem;
+    color: #CE93D8;
+    font-family: 'Aldrich', sans-serif;
+}
+
+.wcp-study-metrics {
+    display: flex;
+    gap: 20px;
+    margin: 15px 0;
+}
+
+.wcp-study-metric {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.wcp-metric-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-size: 0.8rem;
+    color: #CE93D8;
+    margin-bottom: 5px;
+    font-family: 'Aldrich', sans-serif;
+}
+
+.wcp-metric-icon {
+    font-size: 0.8rem;
+}
+
+.wcp-metric-value {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ffffff;
+    font-family: 'Aldrich', sans-serif;
+}
+
+.wcp-metric-value-highlighter {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--category-color, #BA68C8);
+    font-family: 'Aldrich', sans-serif;
+    background: rgba(var(--category-rgb, 186, 104, 200), 0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.wcp-study-description {
+    font-size: 0.95rem;
+    color: #E1BEE7;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-family: 'Aldrich', sans-serif;
+}
+
+.wcp-read-more-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--category-color, #9C27B0);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Aldrich', sans-serif;
+    align-self: flex-start;
+}
+
+.wcp-read-more-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px var(--category-color, rgba(156, 39, 176, 0.5));
+}
+
+.wcp-arrow svg {
+    transition: transform 0.3s ease;
+}
+
+.wcp-study-item.expanded .wcp-arrow svg {
+    transform: rotate(180deg);
+}
+
+/* Expanded Details */
+.wcp-study-details {
+    background: rgba(255, 255, 255, 0.08);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    animation: wcpExpandDetails 0.5s ease-out;
+}
+
+@keyframes wcpExpandDetails {
+    from {
+        max-height: 0;
+        opacity: 0;
+    }
+    to {
+        max-height: 500px;
+        opacity: 1;
+    }
+}
+
+.wcp-details-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    padding: 40px 30px;
+}
+
+.wcp-detail-section h4 {
+    font-size: 1.1rem;
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-weight: 600;
+    font-family: 'HEXCO', sans-serif;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.wcp-detail-section h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: var(--category-color, #9C27B0);
+}
+
+.wcp-detail-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.wcp-detail-list li {
+    font-size: 0.9rem;
+    color: #E1BEE7;
+    padding: 6px 0;
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.5;
+    font-family: 'Aldrich', sans-serif;
+}
+
+.wcp-detail-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--category-color, #BA68C8);
+    font-weight: bold;
+}
+
+/* Empty State */
+.wcp-empty-state {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.wcp-empty-state h3 {
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-family: 'HEXCO', sans-serif;
+}
+
+.wcp-empty-state p {
+    color: #CE93D8;
+    font-family: 'Aldrich', sans-serif;
+}
+
+/* Testimonials Section - Light Purple BG */
+.wcp-testimonials-section {
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #F3E5F5 0%, #E1BEE7 100%);
+}
+
+.wcp-testimonials-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.wcp-testimonials {
+    position: relative;
+}
+
+.wcp-testimonial-track {
+    position: relative;
+    height: 320px;
+    overflow: hidden;
+}
+
+.wcp-testimonial-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.5s ease-in-out;
+}
+
+.wcp-testimonial-slide.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.wcp-testimonial-card {
+    background: linear-gradient(135deg, #a13a9d 0%, #b43bca 100%);
+    border-radius: 20px;
+    padding: 50px 60px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #E1BEE7;
+    box-shadow: 0 20px 40px rgba(156, 39, 176, 0.2);
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.wcp-testimonial-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #9C27B0, #BA68C8, #9C27B0);
+}
+
+.wcp-testimonial-content {
+    max-width: 900px;
+    text-align: center;
+}
+
+.wcp-testimonial-quote {
+    font-size: 4rem;
+    color: #ffffff;
+    opacity: 0.7;
+    margin-bottom: 20px;
+    line-height: 1;
+}
+
+.wcp-testimonial-quote svg {
+    width: 64px !important;
+    height: 64px !important;
+}
+
+.wcp-testimonial-text {
+    font-size: 1.3rem;
+    color: #4A148C;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    font-family: 'Aldrich', sans-serif;
+    font-weight: 400;
+}
+
+.wcp-testimonial-author {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 15px;
+    position: relative;
+}
+
+.wcp-author-icon {
+    font-size: 2rem;
+    color: #9C27B0;
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: -2px; /* Adjusted to perfectly align with author name */
+}
+
+.wcp-author-icon svg {
+    width: 32px !important;
+    height: 32px !important;
+}
+
+.wcp-author-info {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.wcp-author-info h4 {
+    font-size: 1.4rem;
+    color: #4A148C;
+    margin-bottom: 5px;
+    font-family: 'HEXCO', sans-serif;
+    font-weight: 100;
+    line-height: 1.2;
+    position: relative;
+    top: -2px; /* Fine-tuned to match icon alignment */
+}
+
+.wcp-author-info p {
+    color: #4b5563;
+    margin-bottom: 3px;
+    font-family: 'Aldrich', sans-serif;
+    line-height: 1.4;
+}
+
+.wcp-author-company {
+    color: #9C27B0;
+    font-weight: 600;
+    font-size: 1rem;
+    font-family: 'Aldrich', sans-serif;
+    line-height: 1.4;
+}
+
+.wcp-testimonial-nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 40px;
+}
+
+.wcp-testimonial-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #E1BEE7;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.wcp-testimonial-dot:hover {
+    background: #9C27B0;
+    transform: scale(1.2);
+}
+
+.wcp-testimonial-dot.active {
+    background: #9C27B0;
+    transform: scale(1.3);
+    box-shadow: 0 0 10px rgba(156, 39, 176, 0.5);
+}
+
+/* View More Button Styles - Updated for Purple Theme */
+.wcp-view-more-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
+.wcp-view-more-btn {
+    background: linear-gradient(135deg, #9C27B0 0%, #7B1FA2 100%);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(156, 39, 176, 0.3);
+    font-family: 'Aldrich', sans-serif;
+}
+
+.wcp-view-more-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(156, 39, 176, 0.4);
+    background: linear-gradient(135deg, #7B1FA2 0%, #9C27B0 100%);
+}
+
+.wcp-view-more-btn:active {
+    transform: translateY(0);
+}
+
+.wcp-view-more-arrow {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.wcp-view-more-btn:hover .wcp-view-more-arrow {
+    transform: translateY(2px);
+}
+
+.wcp-view-more-arrow svg {
+    width: 16px !important;
+    height: 16px !important;
+}
+
+/* Image placeholder for when images are commented out */
+.wcp-study-image-placeholder {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(135deg, var(--category-color, #9C27B0), #7B1FA2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 3rem;
+    border-radius: 8px;
+}
+
+.wcp-study-image-placeholder svg {
+    width: 64px !important;
+    height: 64px !important;
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+
+/* For tablets and medium screens (768px - 1024px) */
+@media (max-width: 1024px) {
+    /* Project Methodology - Process Steps: 2 columns on all smaller screens */
+    .wcp-process-steps {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+    
+    .wcp-process-step {
+        padding: 35px 20px;
+    }
+    
+    /* Stats Grid: 2 columns on all smaller screens */
+    .wcp-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        max-width: 800px;
+    }
+    
+    /* Study main layout adjustment */
+    .wcp-study-main {
+        flex-direction: column;
+        min-height: auto;
+    }
+    
+    .wcp-study-image {
+        flex: 0 0 250px;
+        width: 100%;
+    }
+    
+    /* Study details: 1 column */
+    .wcp-details-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    /* Testimonial adjustments */
+    .wcp-testimonial-card {
+        max-width: 1000px;
+        padding: 40px 50px;
+    }
+    
+    .wcp-testimonial-text {
+        font-size: 1.2rem;
+    }
+}
+
+/* For mobile devices (576px - 768px) */
+@media (max-width: 768px) {
+    /* Project Methodology - Process Steps: 2 columns maintained */
+    .wcp-process-steps {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin-top: 40px;
+    }
+    
+    .wcp-process-step {
+        padding: 30px 15px;
+    }
+    
+    .wcp-process-step h4 {
+        font-size: 1.2rem;
+    }
+    
+    .wcp-process-step p {
+        font-size: 0.9rem;
+    }
+    
+    /* Stats Grid: 2 columns maintained */
+    .wcp-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin-bottom: 40px;
+    }
+    
+    .wcp-stat-item {
+        padding: 25px 15px;
+    }
+    
+    .wcp-stat-item h3 {
+        font-size: 2rem;
+    }
+    
+    .wcp-stat-item p {
+        font-size: 0.85rem;
+    }
+    
+    /* Hero section adjustments */
+    .wcp-hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .wcp-section-title {
+        font-size: 2.2rem;
+    }
+    
+    .wcp-section-title-testimonials {
+        font-size: 2rem;
+    }
+    
+    /* Study metrics: vertical layout */
+    .wcp-study-metrics {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .wcp-study-metric {
+        width: 100%;
+    }
+    
+    /* Testimonial adjustments */
+    .wcp-testimonial-card {
+        padding: 30px 40px;
+    }
+    
+    .wcp-testimonial-text {
+        font-size: 1.1rem;
+    }
+    
+    .wcp-testimonial-track {
+        height: 350px;
+    }
+    
+    /* Author info alignment */
+    .wcp-author-icon {
+        font-size: 1.8rem;
+        top: -1px;
+    }
+    
+    .wcp-author-icon svg {
+        width: 28px !important;
+        height: 28px !important;
+    }
+    
+    .wcp-author-info h4 {
+        font-size: 1.2rem;
+        top: -1px;
+    }
+}
+
+/* For small mobile devices (up to 576px) */
+@media (max-width: 576px) {
+    /* Project Methodology - Process Steps: 2 columns maintained */
+    .wcp-process-steps {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin-top: 30px;
+    }
+    
+    .wcp-process-step {
+        padding: 25px 15px;
+    }
+    
+    .wcp-process-step h4 {
+        font-size: 1.1rem;
+    }
+    
+    .wcp-process-step p {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+    
+    /* Stats Grid: 2 columns maintained */
+    .wcp-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        max-width: 500px;
+    }
+    
+    .wcp-stat-item {
+        padding: 20px 15px;
+    }
+    
+    .wcp-stat-item h3 {
+        font-size: 1.6rem;
+    }
+    
+    .wcp-stat-item p {
+        font-size: 0.75rem;
+    }
+    
+    /* Adjust step icon size for mobile */
+    .wcp-step-icon {
+        font-size: 2rem;
+    }
+    
+    .wcp-step-icon svg {
+        width: 35px !important;
+        height: 35px !important;
+    }
+    
+    /* General padding adjustments */
+    .wcp-hero-section {
+        padding: 60px 15px;
+    }
+    
+    .wcp-hero-title {
+        font-size: 2rem;
+    }
+    
+    .wcp-hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+    
+    .wcp-stories-section,
+    .wcp-studies-section,
+    .wcp-testimonials-section {
+        padding: 60px 15px;
+    }
+    
+    .wcp-section-title,
+    .wcp-section-title-testimonials {
+        font-size: 1.8rem;
+    }
+    
+    /* Category filter: vertical layout */
+    .wcp-category-filter {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .wcp-category-btn {
+        width: 100%;
+        max-width: 250px;
+    }
+    
+    /* Study content padding */
+    .wcp-study-content {
+        padding: 20px;
+    }
+    
+    .wcp-study-title {
+        font-size: 1.3rem;
+    }
+    
+    /* Details content padding */
+    .wcp-details-content {
+        padding: 30px 20px;
+    }
+    
+    /* Testimonial adjustments */
+    .wcp-testimonial-card {
+        padding: 25px 30px;
+    }
+    
+    .wcp-testimonial-text {
+        font-size: 1rem;
+    }
+    
+    .wcp-testimonial-quote {
+        font-size: 3rem;
+    }
+    
+    .wcp-testimonial-track {
+        height: 380px;
+    }
+    
+    /* Author info alignment */
+    .wcp-author-icon {
+        font-size: 1.6rem;
+        top: 0;
+    }
+    
+    .wcp-author-icon svg {
+        width: 24px !important;
+        height: 24px !important;
+    }
+    
+    .wcp-author-info h4 {
+        font-size: 1.2rem;
+        top: 0;
+    }
+    
+    .wcp-testimonial-author {
+        gap: 10px;
+    }
+}
+
+/* For very small devices (up to 320px) */
+@media (max-width: 320px) {
+    /* Project Methodology - Process Steps: 2 columns with smaller gap */
+    .wcp-process-steps {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin-top: 25px;
+    }
+    
+    .wcp-process-step {
+        padding: 18px 12px;
+    }
+    
+    .wcp-process-step h4 {
+        font-size: 0.8rem;
+        margin-bottom: 10px;
+    }
+    
+    .wcp-process-step p {
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+    
+    /* Stats Grid: 2 columns with smaller gap */
+    .wcp-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        max-width: 300px;
+    }
+    
+    .wcp-stat-item {
+        padding: 15px 10px;
+    }
+    
+    .wcp-stat-item h3 {
+        font-size: 1.4rem;
+    }
+    
+    .wcp-stat-item p {
+        font-size: 0.7rem;
+    }
+    
+    /* Adjust step icon for very small screens */
+    .wcp-step-icon {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+    
+    .wcp-step-icon svg {
+        width: 30px !important;
+        height: 30px !important;
+    }
+    
+    /* Hero section adjustments */
+    .wcp-hero-title {
+        font-size: 1.7rem;
+    }
+    
+    /* Study image height */
+    .wcp-study-image {
+        flex: 0 0 180px;
+    }
+    
+    .wcp-study-category {
+        font-size: 0.7rem;
+        padding: 4px 12px;
+    }
+    
+    /* Study metric padding */
+    .wcp-study-metric {
+        padding: 10px;
+    }
+    
+    .wcp-metric-value {
+        font-size: 1rem;
+    }
+    
+    /* Read more button full width */
+    .wcp-read-more-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    /* Testimonial adjustments */
+    .wcp-testimonial-card {
+        padding: 20px;
+    }
+    
+    .wcp-author-icon {
+        font-size: 1.4rem;
+    }
+    
+    .wcp-author-icon svg {
+        width: 20px !important;
+        height: 20px !important;
+    }
+    
+    .wcp-author-info h4 {
+        font-size: 1.1rem;
+    }
+}

@@ -1,0 +1,507 @@
+/* ========================================
+   TESTIMONIALS SECTION - GRAY LEFT BORDER
+   With red only on second card and infinite scroll
+   ======================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Section Background */
+.testimonials-section {
+  position: relative;
+  background: #ffffff;
+  padding: 100px 0;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Main Container */
+.testimonials-container {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 40px;
+  gap: 80px;
+}
+
+/* ===================== */
+/* LEFT SIDE - Content   */
+/* ===================== */
+.testimonials-left {
+  top: 10px;
+  flex: 1;
+  max-width: 500px;
+  padding-right: 40px;
+}
+
+.testimonials-title {
+  margin-top: 80px;
+  font-family: 'Inter', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  text-align: left;
+}
+
+.testimonials-description {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: #666666;
+  line-height: 1.6;
+  font-weight: 500;
+  margin-bottom: 30px;
+  max-width: 500px;
+  text-align: left;
+}
+
+.testimonials-button {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #000000;
+  background: transparent;
+  border: 2px solid #000000;
+  border-radius: 30px;
+  padding: 12px 40px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.3px;
+  display: inline-block;
+  text-align: left;
+  margin-right: 280px;
+}
+
+.testimonials-button:hover {
+  background: #000000;
+  color: #ffffff;
+}
+
+/* ===================== */
+/* RIGHT SIDE - Cards    */
+/* ===================== */
+.testimonials-right {
+  flex: 1;
+  max-width: 550px;
+  display: flex;
+  flex-direction: column;
+  height: 460px;
+  /* EXACT HEIGHT for 4 cards (card height: ~95px + gap: 25px = ~115px per card × 4 = 460px) */
+  position: relative;
+  overflow: visible !important;
+}
+
+/* Scroll Container - Allow overflow */
+.testimonials-scroll-container {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  overflow: visible !important;
+}
+
+/* Scroll Track with Infinite Animation */
+.testimonials-scroll-track {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  animation: scrollVertical 15s linear infinite;
+  padding-right: 15px;
+  will-change: transform;
+  position: relative;
+  overflow: visible !important;
+}
+
+/* Pause on hover */
+.testimonials-scroll-container:hover .testimonials-scroll-track {
+  animation-play-state: paused;
+}
+
+/* Infinite Vertical Scroll Animation */
+@keyframes scrollVertical {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+/* Card Design - Gray left border with subtle box shadow */
+.testimonial-card {
+  background: #ffffff;
+  border: none;
+  border-left: 4px solid #e0e0e0 !important;
+  padding: 25px 25px 25px 30px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+  transition: none;
+  flex-shrink: 0;
+  overflow: visible !important;
+  height: auto;
+  min-height: 115px;
+  /* Approximate height per card */
+}
+
+/* Second card specific styles - red border and icon, moved LEFT outside container */
+.testimonial-card.card-second {
+  border-left: 4px solid #ff0000 !important;
+  margin-left: -80px !important;
+  width: calc(100% + 80px);
+  z-index: 10;
+  position: relative;
+  background: #ffffff;
+  overflow: visible !important;
+  transform: translateX(0);
+  box-shadow: 0 10px 20px rgba(255, 0, 0, 0.1);
+}
+
+/* Ensure content inside second card is fully visible and properly aligned */
+.testimonial-card.card-second .testimonial-card-content {
+  width: 100%;
+  overflow: visible;
+  padding-left: 0;
+}
+
+/* Adjust avatar and text for second card to maintain proportions */
+.testimonial-card.card-second .testimonial-avatar {
+  flex-shrink: 0;
+}
+
+.testimonial-card.card-second .testimonial-text {
+  flex: 1;
+}
+
+/* All other cards keep gray border and icon */
+.testimonial-card:not(.card-second) {
+  border-left: 4px solid #e0e0e0 !important;
+}
+
+.testimonial-card:not(.card-second) .testimonial-icon {
+  color: #dddddd !important;
+  opacity: 0.5;
+}
+
+/* Remove all hover effects */
+.testimonial-card:hover,
+.testimonial-card:hover .testimonial-icon,
+.testimonial-card.card-second:hover,
+.testimonial-card.card-second:hover .testimonial-icon {
+  border-left-color: inherit !important;
+  color: inherit !important;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Quote Icon - Top Right */
+.testimonial-icon {
+  position: absolute;
+  top: -15px;
+  right: 25px;
+  font-family: 'Georgia', serif;
+  font-size: 4rem;
+  font-weight: 400;
+  line-height: 1;
+  pointer-events: none;
+  transform: rotate(180deg);
+  transition: none;
+}
+
+/* Card Content Layout - Avatar Left, Text Right */
+.testimonial-card-content {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  position: relative;
+  z-index: 2;
+}
+
+/* Avatar Styling - Default for cards 2 and 4 */
+.testimonial-avatar {
+  flex-shrink: 0;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #f5f5f5;
+  border: 1px solid #eeeeee;
+}
+
+/* Transparent avatar styling for cards 1 and 3 */
+.testimonial-avatar.avatar-transparent {
+  width: 70px !important;
+  height: 70px !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+.testimonial-avatar.avatar-transparent img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: transparent;
+}
+
+.testimonial-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Text Content - All Left Aligned */
+.testimonial-text {
+  flex: 1;
+  text-align: left;
+}
+
+/* Author Section - Left Aligned */
+.testimonial-author {
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.testimonial-author h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #000000;
+  margin: 0 0 4px 0;
+  text-align: left;
+}
+
+.testimonial-author span {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: #888888;
+  margin: 0;
+  display: block;
+  font-weight: 400;
+  text-align: left;
+}
+
+/* Feedback Content - Left Aligned */
+.testimonial-feedback {
+  text-align: left;
+}
+
+.testimonial-feedback p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  line-height: 1.5;
+  color: #444444;
+  margin: 0;
+  font-style: normal;
+  font-weight: 400;
+  text-align: left;
+}
+
+/* Remove mask gradient to ensure visibility */
+.testimonials-right {
+  mask-image: none !important;
+}
+
+/* Remove all stars, badges, and extra elements */
+.testimonial-rating,
+.testimonial-badge,
+.testimonial-card::after,
+.testimonial-card::before {
+  display: none !important;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .testimonials-container {
+    gap: 50px;
+  }
+
+  .testimonials-title {
+    font-size: 2.5rem;
+  }
+
+  .testimonial-icon {
+    font-size: 3.5rem;
+  }
+
+  .testimonial-card.card-second {
+    margin-left: -60px !important;
+    width: calc(100% + 60px);
+  }
+
+  .testimonials-right {
+    height: 420px;
+    /* 4 cards at tablet size */
+  }
+
+  .testimonials-scroll-track {
+    animation: scrollVertical 12s linear infinite;
+  }
+}
+
+@media (max-width: 900px) {
+  .testimonials-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 30px;
+  }
+
+  .testimonials-left {
+    max-width: 100%;
+    text-align: left;
+    padding-right: 0;
+    margin-bottom: 40px;
+  }
+
+  .testimonials-description {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .testimonials-right {
+    max-width: 100%;
+    width: 100%;
+    height: 420px;
+    /* Keep consistent height for 4 cards */
+  }
+
+  .testimonial-card.card-second {
+    margin-left: -40px !important;
+    width: calc(100% + 40px);
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonials-section {
+    padding: 60px 0;
+  }
+
+  .testimonials-title {
+    font-size: 2rem;
+  }
+
+  .testimonial-card {
+    padding: 20px 20px 20px 25px;
+  }
+
+  .testimonial-card-content {
+    gap: 15px;
+  }
+
+  .testimonial-avatar {
+    width: 70px;
+    height: 70px;
+  }
+
+  .testimonial-icon {
+    font-size: 3rem;
+    top: -10px;
+    right: 20px;
+  }
+
+  .testimonials-right {
+    height: 380px;
+    /* 4 cards adjusted for smaller cards */
+  }
+
+  .testimonials-scroll-track {
+    animation: scrollVertical 10s linear infinite;
+  }
+
+  .testimonial-card.card-second {
+    margin-left: -30px !important;
+    width: calc(100% + 30px);
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonials-container {
+    padding: 0 20px;
+  }
+
+  .testimonials-title {
+    font-size: 1.8rem;
+  }
+
+  .testimonial-card {
+    padding: 18px 18px 18px 22px;
+  }
+
+  .testimonial-card-content {
+    gap: 12px;
+  }
+
+  .testimonial-avatar {
+    width: 60px;
+    height: 60px;
+  }
+
+  .testimonial-icon {
+    font-size: 2.5rem;
+    top: -8px;
+    right: 15px;
+  }
+
+  .testimonial-author h4 {
+    font-size: 1rem;
+  }
+
+  .testimonial-feedback p {
+    font-size: 0.8rem;
+  }
+
+  .testimonials-right {
+    height: 340px;
+    /* 4 cards adjusted for smaller cards */
+  }
+
+  .testimonial-card.card-second {
+    margin-left: -20px !important;
+    width: calc(100% + 20px);
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 380px) {
+  .testimonial-card-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .testimonial-author {
+    text-align: center;
+  }
+
+  .testimonial-author h4,
+  .testimonial-author span,
+  .testimonial-feedback p {
+    text-align: center;
+  }
+
+  .testimonial-avatar {
+    width: 80px;
+    height: 80px;
+  }
+
+  .testimonials-right {
+    height: 380px;
+    /* Adjusted for stacked layout with 4 cards */
+  }
+
+  .testimonials-scroll-track {
+    animation: scrollVertical 8s linear infinite;
+  }
+
+  .testimonial-card.card-second {
+    margin-left: -15px !important;
+    width: calc(100% + 15px);
+  }
+}

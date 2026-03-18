@@ -1,0 +1,834 @@
+/* ========================================
+   CLEAN WHITE MODERN SAAS STYLE
+   Linear / Notion / Vercel Inspired
+   ======================================== */
+
+/* Import Modern Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Sora:wght@300;400;500;600;700&display=swap');
+
+/* ========================================
+   BACKGROUND LAYERS - CLEAN WHITE
+   ======================================== */
+
+/* Remove background image layer */
+.background-image-layer {
+  display: none;
+}
+
+/* Remove glass overlay */
+.glass-overlay {
+  display: none;
+}
+
+/* Remove reflection overlay */
+.reflection-overlay {
+  display: none;
+}
+
+/* Remove floating shapes */
+.floating-shapes {
+  display: none;
+}
+
+.shape {
+  display: none;
+}
+
+/* Remove particles */
+.particles {
+  display: none;
+}
+
+.particle {
+  display: none;
+}
+
+/* ========================================
+   MAIN CONTAINER
+   ======================================== */
+
+.dual-marquee-container {
+  width: 100%;
+  margin: 0;
+  padding: 120px 20px 0 20px;
+  /* Reduced bottom padding to 0 */
+  position: relative;
+  overflow: hidden;
+  min-height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  /* Clean white background */
+  background: #ffffff;
+}
+
+.dual-marquee-container::before {
+  display: none;
+}
+
+/* ========================================
+   MAIN CONTENT WRAPPER
+   ======================================== */
+
+.marquee-wrapper {
+  position: relative;
+  z-index: 10;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ========================================
+   TITLE SECTION - CENTERED & MINIMAL
+   ======================================== */
+
+.main-title-container {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.main-title {
+  display: inline-block;
+  position: relative;
+}
+
+.title-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.75rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+/* Thin minimal red underline */
+.title-underline {
+  width: 80px;
+  height: 3px;
+  background: #ef4444;
+  margin: 0 auto 20px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.underline-animation {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+  animation: underlineMove 2s ease-in-out infinite;
+}
+
+@keyframes underlineMove {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 100%;
+  }
+}
+
+.title-subtitle {
+  font-family: 'Sora', sans-serif;
+  font-size: 1.125rem;
+  color: #6b7280;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+/* ========================================
+   MARQUEE TITLE CARDS - WHITE MINIMAL
+   ======================================== */
+
+.marquee-titles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 0px;
+  /* Reduced to bring content closer */
+  padding: 0 15px;
+}
+
+.marquee-title-item {
+  padding: 35px 30px;
+  border-radius: 20px;
+  text-align: center;
+  background: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+}
+
+.marquee-title-item::before {
+  display: none;
+}
+
+.marquee-title-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border-color: #ef4444;
+}
+
+/* Remove theme-specific classes */
+.tech-title::before,
+.tech-learning-title::before {
+  display: none;
+}
+
+.title-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 18px;
+  background: rgba(239, 68, 68, 0.08);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(239, 68, 68, 0.15);
+}
+
+.tech-title .title-icon,
+.tech-learning-title .title-icon {
+  background: rgba(239, 68, 68, 0.08);
+  border-color: rgba(239, 68, 68, 0.15);
+}
+
+.title-icon svg {
+  width: 26px;
+  height: 26px;
+  transition: all 0.3s ease;
+  color: #ef4444;
+}
+
+.tech-title .title-icon svg,
+.tech-learning-title .title-icon svg {
+  color: #ef4444;
+}
+
+.marquee-title-item h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 15px 0;
+  position: relative;
+  transition: all 0.3s ease;
+  color: #111827;
+}
+
+.marquee-title-item:hover h3 {
+  color: #ef4444;
+}
+
+/* Soft red badge */
+.title-badge {
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-family: 'Sora', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  transition: all 0.3s ease;
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.tech-title .title-badge,
+.tech-learning-title .title-badge {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.marquee-title-item:hover .title-badge {
+  transform: translateY(-3px);
+  background: #ef4444;
+  color: white;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.tech-title:hover .title-badge,
+.tech-learning-title:hover .title-badge {
+  background: #ef4444;
+  color: white;
+}
+
+.marquee-title-item:hover .title-icon {
+  transform: scale(1.1);
+  background: rgba(239, 68, 68, 0.15);
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.tech-title:hover .title-icon,
+.tech-learning-title:hover .title-icon {
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+/* ========================================
+   MARQUEE CONTENT SECTION
+   ======================================== */
+
+.marquee-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.marquee-content {
+  padding: 25px 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  background: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+/* Remove theme-specific backgrounds */
+.tech-content,
+.learning-content {
+  background: white;
+  border-color: #e5e7eb;
+}
+
+/* ========================================
+   GRADIENT EDGES - SUBTLE WHITE FADE
+   ======================================== */
+
+.marquee-gradient-left,
+.marquee-gradient-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.marquee-gradient-left {
+  left: 0;
+  background: linear-gradient(to right, white, transparent);
+}
+
+.marquee-gradient-right {
+  right: 0;
+  background: linear-gradient(to left, white, transparent);
+}
+
+/* Remove theme-specific gradients */
+.tech-content .marquee-gradient-left,
+.learning-content .marquee-gradient-left {
+  background: linear-gradient(to right, white, transparent);
+}
+
+.tech-content .marquee-gradient-right,
+.learning-content .marquee-gradient-right {
+  background: linear-gradient(to left, white, transparent);
+}
+
+/* ========================================
+   MARQUEE TRACK
+   ======================================== */
+
+.marquee-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  padding: 5px 0;
+}
+
+.tech-track,
+.learning-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+
+/* ========================================
+   MARQUEE ITEMS - PILL BUTTONS
+   ======================================== */
+
+.marquee-item {
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-family: 'Sora', sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f9fafb;
+  color: #374151;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+/* Remove theme-specific styling */
+.tech-item,
+.learning-item {
+  color: #374151;
+  background: #f9fafb;
+  border-color: #e5e7eb;
+}
+
+.item-icon {
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  color: #6b7280;
+}
+
+.tech-item .item-icon,
+.learning-item .item-icon {
+  color: #6b7280;
+}
+
+/* Remove glow effect */
+.item-glow {
+  display: none;
+}
+
+.tech-item .item-glow,
+.learning-item .item-glow {
+  display: none;
+}
+
+/* Remove shimmer effect */
+.item-shimmer {
+  display: none;
+}
+
+.marquee-item::before {
+  display: none;
+}
+
+.tech-item::before,
+.learning-item::before {
+  display: none;
+}
+
+/* Hover effect - red background */
+.marquee-item:hover {
+  background: #ef4444;
+  color: white;
+  border-color: #ef4444;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(239, 68, 68, 0.25);
+}
+
+.tech-item:hover,
+.learning-item:hover {
+  background: #ef4444;
+  color: white;
+  border-color: #ef4444;
+}
+
+.marquee-item:hover .item-icon {
+  color: white;
+  transform: scale(1.1);
+}
+
+.marquee-item span {
+  position: relative;
+  z-index: 1;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 1024px) {
+  .dual-marquee-container {
+    padding: 100px 20px;
+  }
+
+  .title-text {
+    font-size: 2.5rem;
+  }
+
+  .marquee-titles {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .marquee-title-item {
+    padding: 30px 25px;
+  }
+
+  .marquee-title-item h3 {
+    font-size: 1.4rem;
+  }
+
+  .marquee-track {
+    gap: 18px;
+  }
+
+  .marquee-item {
+    padding: 11px 22px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .dual-marquee-container {
+    padding: 80px 20px;
+  }
+
+  .title-text {
+    font-size: 2rem;
+  }
+
+  .title-subtitle {
+    font-size: 1rem;
+    max-width: 400px;
+  }
+
+  .marquee-titles {
+    padding: 0 10px;
+    gap: 20px;
+  }
+
+  .marquee-title-item {
+    padding: 28px 22px;
+  }
+
+  .marquee-title-item h3 {
+    font-size: 1.3rem;
+  }
+
+  .title-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .title-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .marquee-content {
+    padding: 22px 0;
+  }
+
+  .marquee-track {
+    gap: 16px;
+  }
+
+  .marquee-item {
+    padding: 10px 20px;
+    font-size: 0.875rem;
+    gap: 8px;
+  }
+
+  .marquee-gradient-left,
+  .marquee-gradient-right {
+    width: 60px;
+  }
+
+  .item-icon {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dual-marquee-container {
+    padding: 60px 15px;
+  }
+
+  .title-text {
+    font-size: 1.75rem;
+    margin-bottom: 12px;
+  }
+
+  .title-underline {
+    width: 60px;
+    height: 2px;
+    margin-bottom: 16px;
+  }
+
+  .title-subtitle {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .marquee-titles {
+    gap: 18px;
+  }
+
+  .marquee-title-item {
+    padding: 25px 20px;
+  }
+
+  .marquee-title-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+  }
+
+  .title-icon {
+    width: 46px;
+    height: 46px;
+    margin-bottom: 14px;
+  }
+
+  .title-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .marquee-track {
+    gap: 14px;
+  }
+
+  .marquee-item {
+    padding: 9px 18px;
+    font-size: 0.85rem;
+    gap: 7px;
+  }
+
+  .item-icon {
+    font-size: 0.95rem;
+  }
+
+  .marquee-gradient-left,
+  .marquee-gradient-right {
+    width: 40px;
+  }
+}
+
+/* ========================================
+   REDUCED MOTION SUPPORT
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .marquee-track,
+  .underline-animation {
+    animation: none !important;
+  }
+
+  .marquee-title-item:hover,
+  .marquee-item:hover {
+    transform: none !important;
+  }
+}
+
+/* ========================================
+   CUSTOM COLORED CARDS
+   ======================================== */
+
+.tech-title {
+  background-color: #ef4444 !important;
+  /* Red */
+  border-color: #ef4444 !important;
+}
+
+.tech-title h3 {
+  color: #ffffff !important;
+}
+
+.tech-title .title-icon {
+  background-color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+
+.tech-title .title-icon svg {
+  color: #ef4444 !important;
+}
+
+.tech-title .title-badge {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.tech-title:hover {
+  background-color: #dc2626 !important;
+  /* Darker red */
+  border-color: #dc2626 !important;
+  color: #ffffff !important;
+}
+
+.tech-title:hover h3 {
+  color: #ffffff !important;
+}
+
+.tech-title:hover .title-badge {
+  background-color: #ffffff !important;
+  color: #4480ef !important;
+}
+
+.tech-learning-title {
+  background-color: #3b82f6 !important;
+  /* Blue */
+  border-color: #3b82f6 !important;
+}
+
+.tech-learning-title h3 {
+  color: #ffffff !important;
+}
+
+.tech-learning-title .title-icon {
+  background-color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+
+.tech-learning-title .title-icon svg {
+  color: #3b82f6 !important;
+}
+
+.tech-learning-title .title-badge {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.tech-learning-title:hover {
+  background-color: #2563eb !important;
+  /* Darker blue */
+  border-color: #2563eb !important;
+  color: #ffffff !important;
+}
+
+.tech-learning-title:hover h3 {
+  color: #ffffff !important;
+}
+
+/* ========================================
+   CHARACTER & ANGLED MARQUEES LAYOUT
+   ======================================== */
+
+.character-marquee-section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  overflow: visible;
+  border-radius: 80px;
+  margin-top: 40px;
+
+  /* Grid Background */
+  /* background-color: #ffffff;
+  /* White base */
+  /* background-image:
+    linear-gradient(rgba(156, 163, 175, 0.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(156, 163, 175, 0.3) 1px, transparent 1px);
+  background-size: 60px 60px; */
+
+  /* Size of grid squares */
+  /* background-position: center; */
+}
+
+/* Character Container - Z-Index 1 */
+/* .character-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  /* Middle Layer */
+/* width: 100%; */
+/* max-width: 500px; */
+/* display: flex; */
+/* justify-content: center; */
+/* } */
+
+/* Wrapper - REMOVED transform/z-index to allow children to stack independently */
+.angled-marquee-wrapper {
+  margin-top: -80px;
+  position: relative;
+  /* z-index: 5;  <-- REMOVED */
+  width: 200%;
+  /* Increased for full screen coverage + angles */
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  /* transform: rotate(-8deg); <-- REMOVED */
+  margin-bottom: -5%;
+  /* Close the gap created by top: -20% */
+}
+
+/* Apply transform individually - removed from common class */
+.character-marquee-section .marquee-content {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  overflow: visible;
+  padding: 0;
+  /* transform: rotate(-8deg); <-- MOVED TO INDIVIDUAL CLASSES */
+}
+
+.character-marquee-section .marquee-track {
+  gap: 0;
+  display: flex !important;
+  white-space: nowrap !important;
+  width: max-content !important;
+}
+
+.character-marquee-section .marquee-item {
+  border-radius: 0;
+  border: none;
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Top Strip - Tech Services (Red) - BEHIND Character */
+.tech-content {
+  position: relative;
+  z-index: 0;
+  /* Behind Character (z-index 1) */
+  /* transform: rotate(-eg); */
+  /* Custom Angle for Tech Services */
+}
+
+.tech-content .marquee-item {
+  background: #fa6060;
+  color: #111;
+}
+
+/* Bottom Strip - E-Learning (Blue) - IN FRONT OF Character */
+.learning-content {
+  position: relative;
+  z-index: 2;
+  /* In Front of Character (z-index 1) */
+  /* transform: rotate(1deg); */
+  /* Custom Angle for E-Learning */
+}
+
+.learning-content .marquee-item {
+  background: #3b82f6;
+  color: #111;
+}
+
+/* Remove hover effects for this specific layout to keep strict design */
+.character-marquee-section .marquee-item:hover {
+  transform: none;
+  box-shadow: none;
+  background: inherit;
+  color: black;
+}
+
+
+.tech-learning-title:hover .title-badge {
+  background-color: #ffffff !important;
+  color: #f63b3b !important;
+}

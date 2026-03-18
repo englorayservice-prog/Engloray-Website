@@ -1,0 +1,356 @@
+/* TSPF-Footer.css - Horizontal Layout */
+.TSPF-footer {
+  background-color: #11131A;
+  color: #fff;
+  padding-top: 40px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  margin-top: auto;
+}
+
+.TSPF-footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Main horizontal row for all sections */
+.TSPF-main-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 30px;
+}
+
+/* Brand section - takes more space */
+.TSPF-brand-section {
+  flex: 1 1 300px;
+  min-width: 250px;
+  max-width: 350px;
+}
+
+.TSPF-logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.TSPF-logo-text {
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+}
+
+.TSPF-logo-icon {
+  color: #ff0000;
+  font-size: 24px;
+}
+
+.TSPF-tagline {
+  color: #aaa;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Links sections - all equal width */
+.TSPF-links-section {
+  flex: 1 1 200px;
+  min-width: 150px;
+  max-width: 220px;
+}
+
+.TSPF-contact-section {
+  flex: 1 1 250px;
+  min-width: 200px;
+  max-width: 280px;
+}
+
+.TSPF-section-title {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.TSPF-section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background-color: #ff0000;
+}
+
+.TSPF-links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.TSPF-links-list li {
+  margin-bottom: 12px;
+}
+
+.TSPF-link {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.TSPF-link:hover {
+  color: #ff0000;
+  transform: translateX(5px);
+}
+
+.TSPF-contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.TSPF-contact-item {
+  color: #aaa;
+  font-size: 15px;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.TSPF-contact-link {
+  color: #aaa;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.TSPF-contact-link:hover {
+  color: #ff0000;
+}
+
+/* Bottom Bar */
+.TSPF-bottom-bar {
+  background-color: #111;
+  padding: 25px 0;
+}
+
+.TSPF-bottom-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+@media (min-width: 768px) {
+  .TSPF-bottom-content {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.TSPF-copyright {
+  color: #aaa;
+  font-size: 14px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.TSPF-heart-icon {
+  color: #ff0000;
+  margin: 0 5px;
+  font-size: 14px;
+}
+
+.TSPF-policy-links {
+  display: flex;
+  gap: 25px;
+}
+
+.TSPF-policy-link {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.TSPF-policy-link:hover {
+  color: #ff0000;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .TSPF-main-row {
+    gap: 30px;
+  }
+  
+  .TSPF-brand-section {
+    flex: 1 1 250px;
+  }
+  
+  .TSPF-links-section {
+    flex: 1 1 180px;
+  }
+  
+  .TSPF-contact-section {
+    flex: 1 1 220px;
+  }
+}
+
+@media (max-width: 992px) {
+  .TSPF-main-row {
+    gap: 25px;
+  }
+  
+  .TSPF-brand-section {
+    flex: 1 1 200px;
+  }
+  
+  .TSPF-links-section {
+    flex: 1 1 160px;
+  }
+  
+  .TSPF-contact-section {
+    flex: 1 1 200px;
+  }
+  
+  .TSPF-logo-text {
+    font-size: 24px;
+  }
+  
+  .TSPF-section-title {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .TSPF-main-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  
+  .TSPF-brand-section {
+    grid-column: 1 / -1;
+    max-width: 100%;
+  }
+  
+  .TSPF-links-section,
+  .TSPF-contact-section {
+    min-width: 0;
+    max-width: 100%;
+  }
+  
+  .TSPF-tagline {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .TSPF-main-row {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  .TSPF-brand-section {
+    text-align: center;
+  }
+  
+  .TSPF-logo {
+    justify-content: center;
+  }
+  
+  .TSPF-bottom-content {
+    text-align: center;
+  }
+  
+  .TSPF-policy-links {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .TSPF-logo-text {
+    font-size: 22px;
+  }
+  
+  .TSPF-tagline {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .TSPF-footer-container {
+    padding: 0 15px;
+  }
+  
+  .TSPF-main-row {
+    gap: 20px;
+  }
+  
+  .TSPF-links-list li,
+  .TSPF-contact-item {
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  
+  .TSPF-link {
+    font-size: 14px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 360px) {
+  .TSPF-logo {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .TSPF-bottom-content {
+    gap: 10px;
+  }
+  
+  .TSPF-copyright {
+    font-size: 13px;
+  }
+  
+  .TSPF-policy-link {
+    font-size: 13px;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1400px) {
+  .TSPF-footer-container {
+    max-width: 1600px;
+  }
+  
+  .TSPF-main-row {
+    gap: 50px;
+  }
+  
+  .TSPF-brand-section {
+    max-width: 400px;
+  }
+  
+  .TSPF-links-section {
+    max-width: 250px;
+  }
+  
+  .TSPF-contact-section {
+    max-width: 300px;
+  }
+}

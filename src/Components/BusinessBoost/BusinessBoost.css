@@ -1,0 +1,431 @@
+/* ========================================
+   BUSINESS BOOST SECTION
+   ======================================== */
+
+.business-boost-section {
+    width: 100%;
+    min-height: 100vh;
+    padding: 0 40px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.business-boost-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+    background: transparent;
+    padding: 60px;
+}
+
+/* ========================================
+   LEFT SECTION
+   ======================================== */
+
+.boost-left-section {
+    padding: 40px 0 40px 60px;
+    /* Added left padding */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 800px;
+    /* Increased to allow single line text */
+}
+
+.boost-intro-text {
+    font-size: 3.3rem;
+    font-weight: 700;
+    color: #1f2937;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 30px;
+    /* Space between this text and "10x..." */
+    line-height: 1.2;
+    text-align: left;
+    position: relative;
+    z-index: 1;
+}
+
+.highlight-faster {
+    position: relative;
+    display: inline-block;
+    color: #1f2937;
+    /* Ensure text matches */
+    padding: 0 10px;
+    /* Add some breathing room */
+}
+
+.faster-bg {
+    position: absolute;
+    top: 69%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(2.8);
+    /* Center and scale slightly */
+    width: 100%;
+    height: auto;
+    z-index: -1;
+    /* Behind the text */
+    pointer-events: none;
+    opacity: 0.8;
+    /* Adjust if needed */
+}
+
+.boost-main-title {
+    margin-top: 20px;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 30px;
+    line-height: 1.1;
+    text-align: left;
+}
+
+.boost-highlight {
+    font-size: 5.5rem;
+    font-weight: 700;
+    color: #6366f1;
+    display: block;
+    margin-bottom: -45px;
+    text-align: left;
+    font-family: 'Merriweather', 'Georgia', serif;
+}
+
+.boost-title-main {
+    font-size: 7.5rem;
+    font-weight: 800;
+    color: #1f2937;
+    display: block;
+    text-align: left;
+    line-height: 1.1;
+    margin-bottom: 0;
+}
+
+.boost-subtitle {
+    font-size: 4rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #1f2937;
+    display: block;
+    text-align: left;
+    line-height: 1.1;
+    margin-top: -60px;
+    white-space: nowrap;
+}
+
+.boost-description {
+    font-size: 1rem;
+    color: #6b7280;
+    line-height: 1.7;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    max-width: 400px;
+    font-family: 'Sora', sans-serif;
+    text-align: left;
+}
+
+.boost-cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: #7c3aed;
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 80px;
+    font-family: 'Sora', sans-serif;
+    border-radius: 50px;
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.2), 0 0 0 6px rgba(124, 58, 237, 0.1);
+}
+
+.boost-cta-button:hover {
+    background: #6d28d9;
+    transform: translateY(-2px);
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.3), 0 0 0 6px rgba(124, 58, 237, 0.15);
+}
+
+.cta-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.boost-cta-button:hover .cta-icon {
+    transform: translateX(3px);
+}
+
+.boost-stats {
+    display: flex;
+    gap: 40px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+    border-radius: 0;
+    border: none;
+    pointer-events: none;
+}
+
+.stat-item:hover {
+    background: transparent !important;
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+
+.stat-icon-wrapper {
+    width: 65px;
+    height: 65px;
+    background: #6366f1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 10px 20px rgba(99, 102, 241, 0.25);
+}
+
+.stat-icon-svg {
+    color: white;
+    width: 32px;
+    height: 32px;
+}
+
+.stat-text h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #4f46e5;
+    margin-left: 10px;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.3;
+    white-space: nowrap;
+}
+
+.stat-textt h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #4f46e5;
+    margin-left: 10px;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.3;
+    white-space: nowrap;
+}
+
+.stat-text p {
+    font-size: 0.95rem;
+    color: #6b7280;
+    font-weight: 500;
+    margin-left: -65px;
+    font-family: 'Sora', sans-serif;
+    line-height: 1.4;
+    white-space: nowrap;
+}
+
+.stat-textt p {
+    font-size: 0.95rem;
+    color: #6b7280;
+    font-weight: 500;
+    margin-left: 0px;
+    font-family: 'Sora', sans-serif;
+    line-height: 1.4;
+    white-space: nowrap;
+}
+
+/* ========================================
+   RIGHT SECTION - SCROLLING CARDS
+   ======================================== */
+
+/* ========================================
+   RIGHT SECTION - SCROLLING CARDS
+   ======================================== */
+
+.boost-right-section {
+    height: 113vh;
+    /* Increased height */
+    overflow: hidden;
+    padding: 20px;
+    position: relative;
+    width: 100%;
+    margin-top: -50px;
+    margin-bottom: -50px;
+    /* Remove top margin */
+    /* Ensure it spans full height */
+    display: flex;
+    flex-direction: column;
+}
+
+.scroll-track {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    /* Increased gap */
+    will-change: transform;
+    width: 100%;
+    align-items: center;
+    /* Center cards in track */
+}
+
+.boost-card {
+    background: white;
+    border-radius: 40px;
+    /* More rounded corners */
+    padding: 50px;
+    /* Significantly increased padding */
+    transition: all 0.3s ease;
+    position: relative;
+    height: 250px;
+    /* Reduced height */
+    width: 100%;
+    max-width: 100%;
+    /* Increased width */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    /* Ensure content doesn't spill */
+}
+
+.card-content-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* Changed to center */
+    gap: 20px;
+    width: 100%;
+    z-index: 2;
+    /* Ensure text is above any potential background elements */
+}
+
+.card-title-left {
+    font-size: 2rem;
+    font-weight: 700;
+    color: inherit;
+    /* Inherit from parent for dynamic contrast */
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    flex: 0 0 35%;
+    /* Takes up roughly 1/3 of the width */
+    text-align: left;
+    line-height: 1.2;
+}
+
+.card-description-right {
+    font-size: 1.1rem;
+    font-size: 1.1rem;
+    color: inherit;
+    /* Inherit from parent */
+    opacity: 0.9;
+    /* Slight transparency for differentiation */
+    line-height: 1.6;
+    margin: 0;
+    font-family: 'Sora', sans-serif;
+    flex: 1;
+    /* Takes up remaining space */
+    text-align: left;
+    padding-left: 20px;
+    border-left: 1px solid currentColor;
+    /* Use current color for border */
+    /* Optional separator for visual structure */
+}
+
+/* Obsolete styles removed */
+
+.boost-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+/* Obsolete specific card styles removed */
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 1024px) {
+    .business-boost-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .boost-right-section {
+        height: 500px;
+    }
+
+    .boost-highlight {
+        font-size: 3rem;
+    }
+
+    .boost-title-main {
+        font-size: 4rem;
+    }
+
+    .boost-subtitle {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .business-boost-section {
+        padding: 60px 20px;
+    }
+
+    .boost-highlight {
+        font-size: 2.5rem;
+    }
+
+    .boost-title-main {
+        font-size: 3rem;
+    }
+
+    .boost-subtitle {
+        font-size: 2rem;
+    }
+
+    .boost-stats {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .revenue-badge {
+        position: static;
+        margin-top: 20px;
+    }
+
+    .card-content-wrapper {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .card-title-left {
+        flex: auto;
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+    .card-description-right {
+        padding-left: 0;
+        border-left: none;
+        padding-top: 15px;
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+    }
+}

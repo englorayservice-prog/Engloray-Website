@@ -1,0 +1,2291 @@
+/* GraphicDesignCourse.css - Clean Professional Design */
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+
+/* HEXCO Font */
+@font-face {
+  font-family: 'HEXCO';
+  src: url('https://fonts.cdnfonts.com/s/96524/HEXCO.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Reset */
+.gdc-page * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.gdc-page {
+  font-family: 'Aldrich', monospace;
+  font-weight: 100;
+  color: #333333;
+  overflow-x: hidden;
+}
+
+/* Container */
+.gdc-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Hero Section */
+.gdc-hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: white;
+  text-align: center;
+}
+
+.gdc-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')
+    center/cover no-repeat;
+  animation: gdc-zoom-in-out 20s ease-in-out infinite alternate;
+  z-index: 1;
+}
+
+.gdc-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8));
+  z-index: 2;
+}
+
+@keyframes gdc-zoom-in-out {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+.gdc-hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.gdc-hero-badge {
+  display: inline-block;
+  background: #ff3333;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 25px;
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  font-weight: 100;
+  animation: gdc-pulse 2s infinite;
+}
+
+@keyframes gdc-pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 51, 51, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(255, 51, 51, 0);
+  }
+}
+
+.gdc-hero-title {
+  font-family: 'HEXCO', sans-serif;
+  font-weight: 100;
+  font-size: 3rem;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  color: white;
+  animation: gdc-fade-in 1s ease;
+}
+
+@keyframes gdc-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gdc-hero-subtitle {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-bottom: 15px;
+  line-height: 1.6;
+  letter-spacing: 1px;
+  animation: gdc-fade-in 1s ease 0.3s both;
+}
+
+.gdc-hero-duration {
+  font-size: 1.1rem;
+  color: #ff6666;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+  animation: gdc-fade-in 1s ease 0.6s both;
+}
+
+.gdc-hero-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  animation: gdc-fade-in 1s ease 0.9s both;
+}
+
+.gdc-enroll-btn {
+  background: #ff3333;
+  color: white;
+  border: none;
+  padding: 18px 50px;
+  font-family: 'Aldrich', monospace;
+  font-weight: 100;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+}
+
+.gdc-enroll-btn:hover {
+  background: #cc0000;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(255, 51, 51, 0.4);
+}
+
+/* Sections */
+.gdc-section {
+  padding: 60px 0;
+}
+
+.gdc-white-bg {
+  background: white;
+}
+
+.gdc-dark-bg {
+  background: #1a1a1a;
+  color: white;
+}
+
+.gdc-dark-enrollment {
+  background: #0a0a0a;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.gdc-section-title {
+  font-family: 'HEXCO', sans-serif;
+  font-weight: 100;
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  color: #333333;
+}
+
+.gdc-dark-bg .gdc-section-title,
+.gdc-dark-enrollment .gdc-section-title {
+  color: white;
+}
+
+.gdc-red-text {
+  color: #ff3333;
+}
+
+.gdc-section-subtitle {
+  font-size: 1.1rem;
+  text-align: center;
+  color: #666666;
+  margin-bottom: 40px;
+  letter-spacing: 0.5px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gdc-dark-bg .gdc-section-subtitle,
+.gdc-dark-enrollment .gdc-section-subtitle {
+  color: #cccccc;
+}
+
+/* Course Overview */
+.gdc-course-description {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #f8f9fa;
+  padding: 40px;
+  border-radius: 15px;
+  border-left: 5px solid #ff3333;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.gdc-description-content {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #222222;
+  letter-spacing: 0.5px;
+  max-height: 200px;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  position: relative;
+}
+
+.gdc-description-content.expanded {
+  max-height: 2000px;
+}
+
+.gdc-description-content:not(.expanded)::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(transparent, #f8f9fa);
+}
+
+.gdc-readmore-btn {
+  background: #ff3333;
+  color: white;
+  border: none;
+  padding: 14px 35px;
+  border-radius: 8px;
+  font-family: 'Aldrich', monospace;
+  font-weight: 100;
+  font-size: 1rem;
+  cursor: pointer;
+  letter-spacing: 1px;
+  margin-top: 25px;
+  transition: all 0.3s ease;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gdc-readmore-btn:hover {
+  background: #cc0000;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 51, 51, 0.3);
+}
+
+/* Course Outcomes */
+.gdc-outcomes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.gdc-outcome-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: gdc-outcome-appear 0.6s ease forwards;
+}
+
+@keyframes gdc-outcome-appear {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gdc-outcome-icon-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.gdc-outcome-icon {
+  font-size: 3rem;
+  position: relative;
+  z-index: 2;
+  animation: gdc-icon-float 3s ease-in-out infinite;
+}
+
+@keyframes gdc-icon-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.gdc-outcome-icon-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 51, 51, 0.2);
+  border-radius: 50%;
+  filter: blur(20px);
+  animation: gdc-glow-pulse 2s ease-in-out infinite;
+}
+
+@keyframes gdc-glow-pulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+}
+
+.gdc-outcome-title {
+  font-family: 'HEXCO', sans-serif;
+  font-weight: 100;
+  font-size: 1.3rem;
+  color: white;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.gdc-outcome-desc {
+  font-size: 0.95rem;
+  color: #cccccc;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+}
+
+.gdc-outcome-hover-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent, rgba(255, 51, 51, 0.1), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.gdc-outcome-card:hover {
+  transform: translateY(-5px);
+  border-color: #ff3333;
+  box-shadow: 0 15px 35px rgba(255, 51, 51, 0.2);
+}
+
+.gdc-outcome-card:hover .gdc-outcome-hover-effect {
+  transform: translateX(100%);
+}
+
+/* 6-Month Curriculum Slider - UPDATED NO SCROLL VERSION */
+.gdc-curriculum-slider-container {
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+.gdc-slider-controls-above {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  padding: 0 15px;
+}
+
+.gdc-slider-controls-above .gdc-slider-prev,
+.gdc-slider-controls-above .gdc-slider-next {
+  background: #ff3333;
+  color: white;
+  border: none;
+  padding: 14px 25px;
+  border-radius: 8px;
+  font-family: 'Aldrich', monospace;
+  font-weight: 100;
+  font-size: 0.95rem;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  min-width: 120px;
+}
+
+.gdc-slider-controls-above .gdc-slider-prev:hover,
+.gdc-slider-controls-above .gdc-slider-next:hover {
+  background: #cc0000;
+  transform: translateY(-2px);
+}
+
+.gdc-slider-controls-above .gdc-slider-dots {
+  display: flex;
+  gap: 12px;
+}
+
+.gdc-slider-controls-above .gdc-slider-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: none;
+  background: #dddddd;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.gdc-slider-controls-above .gdc-slider-dot.active {
+  background: #ff3333;
+  transform: scale(1.2);
+}
+
+.gdc-slider-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  min-height: 600px; /* Changed from fixed height to min-height */
+}
+
+.gdc-slider-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+  height: 100%;
+}
+
+.gdc-module-slide {
+  flex: 0 0 100%;
+  min-width: 100%;
+  background-size: cover;
+  background-position: center;
+  padding: 50px 35px; /* Increased padding */
+  display: flex;
+  align-items: center;
+  position: relative;
+  min-height: 600px; /* Ensure minimum height */
+}
+
+.gdc-module-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1000px; /* Increased max-width */
+  margin: 0 auto;
+  color: white;
+  width: 100%;
+}
+
+.gdc-month-badge {
+  background: #ff3333;
+  color: white;
+  padding: 12px 30px; /* Increased padding */
+  border-radius: 25px;
+  font-size: 1.2rem; /* Increased font size */
+  letter-spacing: 1px;
+  display: inline-block;
+  margin-bottom: 25px; /* Increased margin */
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.gdc-module-icon-slide {
+  font-size: 3rem; /* Increased size */
+  margin-bottom: 25px; /* Increased margin */
+}
+
+.gdc-module-title-slide {
+  font-family: 'HEXCO', sans-serif;
+  font-weight: 100;
+  font-size: 2.2rem; /* Increased font size */
+  margin-bottom: 30px; /* Increased margin */
+  letter-spacing: 1.5px;
+  line-height: 1.3;
+}
+
+.gdc-module-meta-slide {
+  display: flex;
+  gap: 25px; /* Increased gap */
+  margin-bottom: 35px; /* Increased margin */
+  flex-wrap: wrap;
+}
+
+.gdc-module-duration-slide,
+.gdc-module-projects-slide {
+  background: rgba(255, 51, 51, 0.8);
+  padding: 12px 25px; /* Increased padding */
+  border-radius: 20px;
+  font-size: 16px; /* Increased font size */
+  letter-spacing: 1px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.gdc-module-topics-slide {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Increased min width */
+  gap: 15px; /* Increased gap */
+  /* REMOVED: max-height and overflow properties */
+}
+
+.gdc-topic-item-slide {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Increased gap */
+  padding: 15px; /* Increased padding */
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px; /* Increased border radius */
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  min-height: 60px; /* Increased min height */
+}
+
+.gdc-topic-item-slide:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(5px);
+}
+
+.gdc-topic-check-slide {
+  color: #ff3333;
+  font-weight: bold;
+  font-size: 1.5rem; /* Increased font size */
+  flex-shrink: 0;
+}
+
+.gdc-topic-text-slide {
+  font-size: 1.1rem; /* Increased font size */
+  letter-spacing: 0.5px;
+  line-height: 1.5; /* Increased line height */
+}
+
+/* Tools & Resources Section */
+.gdc-tools-container {
+  margin-top: 40px;
+}
+
+.gdc-tools-category {
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: gdc-category-appear 0.6s ease forwards;
+}
+
+@keyframes gdc-category-appear {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gdc-tools-category-title {
+  font-family: 'HEXCO', sans-serif;
+  font-weight: 100;
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  border-bottom: 2px solid #ff3333;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.gdc-tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.gdc-tool-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: gdc-tool-slide 0.5s ease forwards;
+}
+
+@keyframes gdc-tool-slide {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.gdc-tool-card:hover {
+  transform: translateY(-5px);
+  border-color: #ff3333;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 25px rgba(255, 51, 51, 0.2);
+}
+
+.gdc-tool-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+  background: rgba(255, 51, 51, 0.1);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(255, 51, 51, 0.3);
+  transition: all 0.3s ease;
+}
+
+.gdc-tool-card:hover .gdc-tool-icon {
+  background: rgba(255, 51, 51, 0.2);
+  border-color: #ff3333;
+  transform: scale(1.1);
+}
+
+.gdc-tool-content {
+  flex: 1;
+}
+
+.gdc-tool-name {
+  font-family: 'HEXCO', sans-serif;
+  font-weight: 100;
+  font-size: 1.1rem;
+  color: white;
+  margin-bottom: 5px;
+  letter-spacing: 0.5px;
+}
+
+.gdc-tool-desc {
+  font-size: 0.85rem;
+  color: #cccccc;
+  letter-spacing: 0.3px;
+  line-height: 1.4;
+}
+
+.gdc-tool-hover-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent, rgba(255, 51, 51, 0.05), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.gdc-tool-card:hover .gdc-tool-hover-effect {
+  transform: translateX(100%);
+}
+
+/* Benefits Section */
+.gdc-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.gdc-benefit-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: gdc-outcome-appear 0.6s ease forwards;
+}
+
+.gdc-benefit-icon-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.gdc-benefit-icon {
+  font-size: 2.5rem;
+  position: relative;
+  z-index: 2;
+  animation: gdc-icon-float 3s ease-in-out infinite;
+}
+
+.gdc-benefit-icon-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70px;
+  height: 70px;
+  background: rgba(255, 51, 51, 0.2);
+  border-radius: 50%;
+  filter: blur(15px);
+  animation: gdc-glow-pulse 2s ease-in-out infinite;
+}
+
+.gdc-benefit-title {
+  font-family: 'HEXCO', sans-serif;
+  font-weight: 100;
+  font-size: 1.2rem;
+  color: white;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+  line-height: 1.3;
+}
+
+.gdc-benefit-desc {
+  font-size: 0.9rem;
+  color: #cccccc;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+}
+
+.gdc-benefit-hover-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent, rgba(255, 51, 51, 0.1), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.gdc-benefit-card:hover {
+  transform: translateY(-5px);
+  border-color: #ff3333;
+  box-shadow: 0 15px 35px rgba(255, 51, 51, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.gdc-benefit-card:hover .gdc-benefit-hover-effect {
+  transform: translateX(100%);
+}
+
+.gdc-benefit-card:hover .gdc-benefit-icon {
+  transform: scale(1.1);
+}
+
+.gdc-benefit-card:hover .gdc-benefit-icon-glow {
+  background: rgba(255, 51, 51, 0.3);
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+/* Local Video Player Styles */
+.gdc-single-video-container {
+  max-width: 900px;
+  margin: 40px auto 0;
+}
+
+.gdc-video-card-light {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 2px solid #ff3333;
+  box-shadow: 0 15px 40px rgba(255, 51, 51, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.gdc-video-card-light:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(255, 51, 51, 0.2);
+}
+
+.gdc-video-thumbnail-single {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 15px 15px 0 0;
+}
+
+.gdc-video-player {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 15px 15px 0 0;
+  display: block;
+  cursor: pointer;
+  background: #000;
+}
+
+/* Hide default video controls when we're showing custom controls */
+.gdc-video-player::-webkit-media-controls {
+  display: none !important;
+}
+
+.gdc-video-player[controls] {
+  /* Show browser controls only when video is playing */
+  cursor: default;
+}
+
+.gdc-video-overlay-single {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 51, 51, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.gdc-play-button-single {
+  background: rgba(255, 51, 51, 0.9);
+  color: white;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  border: 6px solid white;
+  transition: all 0.3s ease;
+}
+
+.gdc-play-button-single:hover {
+  background: white;
+  color: #ff3333;
+  transform: scale(1.1);
+}
+
+.gdc-video-duration-single {
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.gdc-video-controls-overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 10;
+}
+
+.gdc-video-control-btn {
+  background: rgba(255, 51, 51, 0.9);
+  color: white;
+  border: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 4px solid white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.gdc-video-control-btn:hover {
+  background: white;
+  color: #ff3333;
+  transform: scale(1.1);
+}
+
+.gdc-video-info-single-light {
+  padding: 30px;
+}
+
+.gdc-video-title-single-light {
+  font-family: 'HEXCO', sans-serif;
+  font-weight: 100;
+  font-size: 1.8rem;
+  color: #333333;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.gdc-video-instructor-single-light {
+  color: #666666;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+}
+
+.gdc-video-instructor-single-light span {
+  color: #ff3333;
+  font-weight: bold;
+}
+
+.gdc-video-description-single-light {
+  color: #666666;
+  line-height: 1.7;
+  margin-bottom: 25px;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.gdc-watch-btn-single {
+  background: #ff3333;
+  color: white;
+  border: none;
+  padding: 18px 40px;
+  border-radius: 10px;
+  font-family: 'HEXCO', sans-serif;
+  font-weight: 100;
+  font-size: 1.1rem;
+  cursor: pointer;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.gdc-watch-btn-single:hover {
+  background: #cc0000;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(255, 51, 51, 0.3);
+}
+
+/* Certificate Template Section */
+.gdc-certificate-single {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.gdc-certificate-image-wrapper {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  border: 3px solid #ff3333;
+  background: #fff;
+  padding: 20px;
+  text-align: center;
+  cursor: default;
+}
+
+.gdc-certificate-image {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: contain;
+  transition: transform 0.5s ease;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Certificate Lock Overlay - Simplified (No button, no click action) */
+.gdc-certificate-lock-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(5px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  z-index: 3;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  cursor: default;
+  pointer-events: none;
+}
+
+.gdc-certificate-image-wrapper:hover .gdc-certificate-lock-overlay {
+  opacity: 1;
+}
+
+.gdc-lock-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  color: #ff3333;
+  animation: gdc-lock-pulse 2s infinite;
+}
+
+@keyframes gdc-lock-pulse {
+  0%, 100% {
+    transform: scale(1);
+    text-shadow: 0 0 10px rgba(255, 51, 51, 0.5);
+  }
+  50% {
+    transform: scale(1.1);
+    text-shadow: 0 0 20px rgba(255, 51, 51, 0.8);
+  }
+}
+
+.gdc-lock-text {
+  font-family: 'HEXCO', sans-serif;
+  font-weight: 100;
+  font-size: 1.5rem;
+  text-align: center;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  padding: 0 20px;
+}
+
+.gdc-certificate-image-wrapper:hover .gdc-certificate-image {
+  transform: scale(1.02);
+}
+
+.gdc-certificate-overlay {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+}
+
+.gdc-certificate-badge {
+  background: rgba(255, 51, 51, 0.9);
+  color: white;
+  padding: 10px 25px;
+  border-radius: 20px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  backdrop-filter: blur(10px);
+  border: 2px solid white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.gdc-certificate-download-note {
+  margin-top: 15px;
+  padding: 15px;
+  background: rgba(255, 51, 51, 0.05);
+  border-radius: 8px;
+  border-left: 3px solid #ff3333;
+}
+
+.gdc-certificate-download-note p {
+  font-size: 0.9rem;
+  color: #cccccc;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.gdc-certificate-info-single {
+  padding: 20px;
+}
+
+.gdc-certificate-title-single {
+  font-family: 'HEXCO', sans-serif;
+  font-weight: 100;
+  font-size: 1.8rem;
+  color: white;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.gdc-certificate-desc-single {
+  font-size: 1rem;
+  color: #cccccc;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  letter-spacing: 0.5px;
+}
+
+.gdc-certificate-features-single {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.gdc-certificate-feature-item-single {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #cccccc;
+  letter-spacing: 0.5px;
+  border-left: 3px solid #ff3333;
+  transition: all 0.3s ease;
+}
+
+.gdc-certificate-feature-item-single:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateX(5px);
+}
+
+.gdc-certificate-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.gdc-benefit {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.gdc-benefit-icon {
+  font-size: 1.5rem;
+  background: rgba(255, 51, 51, 0.1);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(255, 51, 51, 0.3);
+}
+
+.gdc-benefit-text {
+  font-size: 0.9rem;
+  color: #cccccc;
+  letter-spacing: 0.5px;
+}
+
+.gdc-certificate-instructions {
+  margin-top: 25px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gdc-certificate-instructions h4 {
+  font-family: 'HEXCO', sans-serif;
+  font-weight: 100;
+  font-size: 1.2rem;
+  color: white;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.gdc-certificate-instructions ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.gdc-certificate-instructions li {
+  font-size: 0.9rem;
+  color: #cccccc;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+  padding-left: 25px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.gdc-certificate-instructions li:before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #ff3333;
+  font-weight: bold;
+}
+
+/* Success Stories - Light Version */
+.gdc-stories-grid-light {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.gdc-story-card-light {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 25px;
+  border: 1px solid #eeeeee;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.gdc-story-card-light:hover {
+  border-color: #ff3333;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(255, 51, 51, 0.1);
+}
+
+.gdc-story-header-light {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.gdc-story-avatar-light {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #ff3333, #ff6666);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'HEXCO', sans-serif;
+  font-weight: 100;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.gdc-avatar-text-light {
+  font-weight: bold;
+}
+
+.gdc-story-info-light {
+  flex: 1;
+}
+
+.gdc-story-name-light {
+  font-family: 'HEXCO', sans-serif;
+  font-weight: 100;
+  font-size: 1.2rem;
+  color: #333333;
+  margin-bottom: 5px;
+  letter-spacing: 1px;
+}
+
+.gdc-story-role-light {
+  font-size: 0.85rem;
+  color: #666666;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.gdc-story-salary-light {
+  font-size: 0.85rem;
+  color: #ff3333;
+  background: rgba(255, 51, 51, 0.1);
+  padding: 4px 10px;
+  border-radius: 10px;
+  display: inline-block;
+  letter-spacing: 0.5px;
+}
+
+.gdc-story-rating-container-light {
+  margin-bottom: 18px;
+  background: rgba(255, 51, 51, 0.05);
+  padding: 10px 15px;
+  border-radius: 8px;
+  display: inline-block;
+  width: fit-content;
+}
+
+.gdc-story-rating-light {
+  color: #ffcc00;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+}
+
+.gdc-story-review-light {
+  font-size: 0.95rem;
+  color: #666666;
+  line-height: 1.7;
+  letter-spacing: 0.5px;
+  font-style: italic;
+  border-left: 3px solid #ff3333;
+  padding-left: 15px;
+  margin-top: auto;
+}
+
+/* Floating Icons */
+.gdc-floating-icons-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.gdc-floating-icon {
+  position: absolute;
+  font-size: 2rem;
+  opacity: 0.1;
+  animation: gdc-float-slow 15s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes gdc-float-slow {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+    opacity: 0.1;
+  }
+  33% {
+    transform: translateY(-20px) rotate(10deg) scale(1.1);
+    opacity: 0.15;
+  }
+  66% {
+    transform: translateY(10px) rotate(-10deg) scale(0.9);
+    opacity: 0.08;
+  }
+}
+
+/* Contact Details Grid */
+.gdc-contact-details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.gdc-contact-item-dark {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  z-index: 2;
+  position: relative;
+}
+
+.gdc-contact-item-dark:hover {
+  border-color: #ff3333;
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 25px rgba(255, 51, 51, 0.1);
+}
+
+.gdc-contact-icon-dark {
+  font-size: 2.2rem;
+  margin-bottom: 18px;
+  color: #ff3333;
+}
+
+.gdc-contact-title-dark {
+  font-family: 'HEXCO', sans-serif;
+  font-weight: 100;
+  font-size: 1.2rem;
+  color: white;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+
+.gdc-contact-info-dark {
+  margin-bottom: 12px;
+}
+
+.gdc-contact-detail-dark {
+  font-size: 0.95rem;
+  color: #cccccc;
+  margin-bottom: 5px;
+  letter-spacing: 0.5px;
+}
+
+.gdc-contact-description-dark {
+  font-size: 0.85rem;
+  color: #888888;
+  letter-spacing: 0.5px;
+}
+
+/* Enrollment Section */
+.gdc-enrollment-section-dark {
+  margin-top: 50px;
+  padding: 35px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  text-align: center;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  position: relative;
+  z-index: 2;
+}
+
+.gdc-enrollment-title-dark {
+  font-family: 'HEXCO', sans-serif;
+  font-weight: 100;
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+  letter-spacing: 2px;
+}
+
+.gdc-enrollment-subtitle-dark {
+  font-size: 1rem;
+  margin-bottom: 25px;
+  opacity: 0.9;
+  letter-spacing: 0.5px;
+}
+
+.gdc-enrollment-cta-dark {
+  text-align: center;
+}
+
+.gdc-enrollment-btn-large-dark {
+  background: #ff3333;
+  color: white;
+  border: none;
+  padding: 22px 50px;
+  font-family: 'HEXCO', sans-serif;
+  font-weight: 100;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+  margin-bottom: 12px;
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+}
+
+.gdc-enrollment-btn-large-dark:hover {
+  background: #cc0000;
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 35px rgba(255, 51, 51, 0.3);
+}
+
+.gdc-cta-note-dark {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  letter-spacing: 0.5px;
+}
+
+/* Expanded Enrollment Form */
+.gdc-enrollment-form-expanded-dark {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+  padding: 35px;
+  max-width: 700px;
+  margin: 0 auto;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  animation: gdc-form-expand 0.5s ease;
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes gdc-form-expand {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gdc-form-header-expanded-dark {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  padding-bottom: 18px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.gdc-form-header-expanded-dark h4 {
+  font-family: 'HEXCO', sans-serif;
+  font-weight: 100;
+  font-size: 1.4rem;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.gdc-form-close-btn-dark {
+  background: transparent;
+  border: none;
+  color: #cccccc;
+  font-size: 1.6rem;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.2s ease;
+}
+
+.gdc-form-close-btn-dark:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.gdc-form-grid-expanded-dark {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  margin-bottom: 25px;
+}
+
+.gdc-form-group-expanded-dark {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.gdc-form-group-expanded-dark label {
+  font-family: 'HEXCO', sans-serif;
+  font-weight: 100;
+  font-size: 13px;
+  color: #cccccc;
+  letter-spacing: 0.5px;
+}
+
+.gdc-form-group-expanded-dark input,
+.gdc-form-group-expanded-dark select {
+  padding: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  font-family: 'Aldrich', monospace;
+  font-weight: 100;
+  font-size: 0.95rem;
+  color: white;
+  letter-spacing: 0.5px;
+  transition: border 0.3s ease;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.gdc-form-group-expanded-dark select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 16px;
+}
+
+.gdc-form-group-expanded-dark input:focus,
+.gdc-form-group-expanded-dark select:focus {
+  outline: none;
+  border-color: #ff3333;
+  box-shadow: 0 0 0 3px rgba(255, 51, 51, 0.2);
+}
+
+.gdc-submit-btn-expanded-dark {
+  width: 100%;
+  background: #ff3333;
+  color: white;
+  border: none;
+  padding: 18px;
+  border-radius: 10px;
+  font-family: 'HEXCO', sans-serif;
+  font-weight: 100;
+  font-size: 1.1rem;
+  cursor: pointer;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.gdc-submit-btn-expanded-dark:hover {
+  background: #cc0000;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(255, 51, 51, 0.3);
+}
+
+/* Success Toast */
+.gdc-toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  animation: gdc-toast-slide 0.5s ease;
+}
+
+@keyframes gdc-toast-slide {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.gdc-toast-content {
+  background: white;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  border-left: 5px solid #4CAF50;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  max-width: 350px;
+  animation: gdc-toast-fade 5s ease forwards;
+}
+
+@keyframes gdc-toast-fade {
+  0%, 90% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+.gdc-toast-icon {
+  font-size: 2.2rem;
+  flex-shrink: 0;
+}
+
+.gdc-toast-message h4 {
+  font-family: 'HEXCO', sans-serif;
+  font-weight: 100;
+  font-size: 1.1rem;
+  color: #333333;
+  margin-bottom: 5px;
+  letter-spacing: 1px;
+}
+
+.gdc-toast-message p {
+  font-size: 0.85rem;
+  color: #666666;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+}
+
+/* Responsive Design - Module Section Fixes */
+@media (max-width: 1200px) {
+  .gdc-container {
+    max-width: 100%;
+    padding: 0 25px;
+  }
+  
+  .gdc-section {
+    padding: 50px 0;
+  }
+  
+  /* Module section adjustments for large tablets */
+  .gdc-module-slide {
+    padding: 40px 30px;
+    min-height: 550px;
+  }
+  
+  .gdc-module-content {
+    max-width: 900px;
+  }
+  
+  .gdc-module-title-slide {
+    font-size: 2rem;
+  }
+  
+  .gdc-module-topics-slide {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .gdc-hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .gdc-section-title {
+    font-size: 1.8rem;
+  }
+  
+  /* Module section for tablets - NO SCROLL */
+  .gdc-slider-wrapper {
+    min-height: 580px;
+  }
+  
+  .gdc-module-slide {
+    padding: 35px 25px;
+    min-height: 580px;
+  }
+  
+  .gdc-module-content {
+    max-width: 800px;
+  }
+  
+  .gdc-module-title-slide {
+    font-size: 1.8rem;
+  }
+  
+  .gdc-module-topics-slide {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  
+  .gdc-topic-item-slide {
+    padding: 12px;
+    min-height: 55px;
+  }
+  
+  .gdc-topic-text-slide {
+    font-size: 1rem;
+  }
+  
+  .gdc-month-badge {
+    font-size: 1.1rem;
+    padding: 10px 25px;
+  }
+  
+  .gdc-module-icon-slide {
+    font-size: 2.5rem;
+  }
+  
+  .gdc-video-player {
+    height: 400px;
+  }
+  
+  .gdc-certificate-single {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .gdc-certificate-image {
+    max-height: 350px;
+  }
+  
+  .gdc-certificate-features-single {
+    grid-template-columns: 1fr;
+  }
+  
+  .gdc-play-button-single {
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+  }
+  
+  .gdc-benefits-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  
+  .gdc-benefit-card {
+    padding: 25px;
+  }
+  
+  .gdc-benefit-icon {
+    font-size: 2rem;
+  }
+  
+  .gdc-benefit-title {
+    font-size: 1.1rem;
+  }
+  
+  .gdc-lock-icon {
+    font-size: 3rem;
+  }
+  
+  .gdc-lock-text {
+    font-size: 1.3rem;
+  }
+  
+  /* Enrollment button fix */
+  .gdc-enrollment-btn-large-dark {
+    width: 100%;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .gdc-enrollment-form-expanded-dark {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .gdc-section {
+    padding: 40px 0;
+  }
+  
+  .gdc-hero {
+    min-height: 500px;
+  }
+  
+  .gdc-hero-title {
+    font-size: 2rem;
+  }
+  
+  .gdc-section-title {
+    font-size: 1.5rem;
+  }
+  
+  .gdc-enroll-btn {
+    width: 100%;
+    max-width: 100%;
+    padding: 16px 30px;
+    font-size: 1rem;
+  }
+  
+  /* Module section for small tablets - NO SCROLL */
+  .gdc-slider-wrapper {
+    min-height: 520px;
+  }
+  
+  .gdc-module-slide {
+    padding: 30px 20px;
+    min-height: 520px;
+  }
+  
+  .gdc-module-content {
+    max-width: 100%;
+  }
+  
+  .gdc-module-title-slide {
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+  }
+  
+  .gdc-module-topics-slide {
+    grid-template-columns: 1fr; /* Single column on smaller screens */
+    gap: 10px;
+  }
+  
+  .gdc-topic-item-slide {
+    padding: 10px;
+    min-height: 50px;
+  }
+  
+  .gdc-topic-text-slide {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+  
+  .gdc-month-badge {
+    font-size: 1rem;
+    padding: 8px 20px;
+  }
+  
+  .gdc-module-icon-slide {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .gdc-module-meta-slide {
+    margin-bottom: 25px;
+  }
+  
+  .gdc-module-duration-slide,
+  .gdc-module-projects-slide {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  
+  .gdc-slider-controls-above {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .gdc-video-player {
+    height: 350px;
+  }
+  
+  .gdc-video-title-single-light {
+    font-size: 1.5rem;
+  }
+  
+  .gdc-play-button-single {
+    width: 70px;
+    height: 70px;
+    font-size: 1.8rem;
+  }
+  
+  .gdc-video-control-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+  
+  .gdc-certificate-image {
+    max-height: 300px;
+  }
+  
+  .gdc-tools-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  
+  .gdc-certificate-title-single {
+    font-size: 1.5rem;
+  }
+  
+  .gdc-benefits-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  
+  /* Enrollment section padding */
+  .gdc-enrollment-section-dark {
+    padding: 25px 20px;
+    margin-top: 40px;
+  }
+  
+  .gdc-enrollment-title-dark {
+    font-size: 1.6rem;
+  }
+  
+  .gdc-form-grid-expanded-dark {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .gdc-hero-title {
+    font-size: 1.6rem;
+  }
+  
+  .gdc-section-title {
+    font-size: 1.3rem;
+  }
+  
+  /* Module section for mobile - NO SCROLL */
+  .gdc-slider-wrapper {
+    min-height: 480px;
+  }
+  
+  .gdc-module-slide {
+    padding: 25px 15px;
+    min-height: 480px;
+  }
+  
+  .gdc-module-title-slide {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+  }
+  
+  .gdc-module-topics-slide {
+    gap: 8px;
+  }
+  
+  .gdc-topic-item-slide {
+    padding: 8px 10px;
+    min-height: 45px;
+  }
+  
+  .gdc-topic-text-slide {
+    font-size: 0.9rem;
+    line-height: 1.3;
+  }
+  
+  .gdc-month-badge {
+    padding: 8px 18px;
+    font-size: 0.95rem;
+  }
+  
+  .gdc-module-icon-slide {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+  
+  .gdc-module-meta-slide {
+    margin-bottom: 20px;
+    gap: 15px;
+  }
+  
+  .gdc-module-duration-slide,
+  .gdc-module-projects-slide {
+    padding: 8px 15px;
+    font-size: 13px;
+  }
+  
+  .gdc-topic-check-slide {
+    font-size: 1.3rem;
+  }
+  
+  .gdc-video-player {
+    height: 300px;
+  }
+  
+  .gdc-video-title-single-light {
+    font-size: 1.3rem;
+  }
+  
+  .gdc-play-button-single {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+  
+  .gdc-video-control-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+  }
+  
+  .gdc-certificate-image {
+    max-height: 250px;
+  }
+  
+  .gdc-outcomes-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .gdc-tools-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .gdc-certificate-badge {
+    font-size: 12px;
+    padding: 8px 15px;
+  }
+  
+  .gdc-benefits-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .gdc-benefit-card {
+    padding: 20px;
+  }
+  
+  .gdc-lock-icon {
+    font-size: 2.5rem;
+  }
+  
+  .gdc-lock-text {
+    font-size: 1.1rem;
+  }
+  
+  /* Enrollment section for mobile */
+  .gdc-enrollment-section-dark {
+    padding: 20px 15px;
+    margin-top: 30px;
+    border-radius: 10px;
+  }
+  
+  .gdc-enrollment-title-dark {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+  
+  .gdc-enrollment-subtitle-dark {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+  }
+  
+  .gdc-enrollment-btn-large-dark {
+    padding: 18px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .gdc-cta-note-dark {
+    font-size: 0.8rem;
+  }
+  
+  .gdc-enrollment-form-expanded-dark {
+    padding: 20px 15px;
+    border-radius: 10px;
+  }
+  
+  .gdc-form-header-expanded-dark h4 {
+    font-size: 1.2rem;
+  }
+  
+  .gdc-submit-btn-expanded-dark {
+    padding: 16px;
+    font-size: 1rem;
+  }
+  
+  /* Contact details grid */
+  .gdc-contact-details-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .gdc-contact-item-dark {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Module section for extra small screens - NO SCROLL */
+  .gdc-slider-wrapper {
+    min-height: 450px;
+  }
+  
+  .gdc-module-slide {
+    padding: 20px 15px;
+    min-height: 450px;
+  }
+  
+  .gdc-module-title-slide {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+  }
+  
+  .gdc-module-topics-slide {
+    gap: 6px;
+  }
+  
+  .gdc-topic-item-slide {
+    padding: 8px;
+    min-height: 40px;
+    gap: 10px;
+  }
+  
+  .gdc-topic-text-slide {
+    font-size: 0.85rem;
+  }
+  
+  .gdc-month-badge {
+    font-size: 0.9rem;
+    padding: 6px 15px;
+  }
+  
+  .gdc-module-icon-slide {
+    font-size: 1.8rem;
+  }
+  
+  .gdc-module-meta-slide {
+    gap: 10px;
+  }
+  
+  .gdc-module-duration-slide,
+  .gdc-module-projects-slide {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+  
+  .gdc-topic-check-slide {
+    font-size: 1.2rem;
+  }
+  
+  .gdc-video-player {
+    height: 250px;
+  }
+  
+  .gdc-play-button-single {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+    border-width: 4px;
+  }
+  
+  .gdc-video-control-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+  
+  .gdc-certificate-image {
+    max-height: 200px;
+  }
+  
+  .gdc-certificate-title-single {
+    font-size: 1.3rem;
+  }
+  
+  .gdc-certificate-instructions li {
+    font-size: 0.85rem;
+  }
+  
+  /* Enrollment section for extra small screens */
+  .gdc-enrollment-section-dark {
+    padding: 15px 10px;
+  }
+  
+  .gdc-enrollment-title-dark {
+    font-size: 1.2rem;
+  }
+  
+  .gdc-enrollment-subtitle-dark {
+    font-size: 0.85rem;
+  }
+  
+  .gdc-enrollment-btn-large-dark {
+    padding: 16px 15px;
+    font-size: 0.95rem;
+  }
+  
+  .gdc-form-group-expanded-dark input,
+  .gdc-form-group-expanded-dark select {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+  
+  /* Floating icons */
+  .gdc-floating-icon {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 360px) {
+  /* Module section for very small screens - NO SCROLL */
+  .gdc-slider-wrapper {
+    min-height: 420px;
+  }
+  
+  .gdc-module-slide {
+    padding: 15px 10px;
+    min-height: 420px;
+  }
+  
+  .gdc-module-title-slide {
+    font-size: 1.2rem;
+  }
+  
+  .gdc-topic-text-slide {
+    font-size: 0.8rem;
+  }
+  
+  .gdc-month-badge {
+    font-size: 0.85rem;
+    padding: 5px 12px;
+  }
+  
+  .gdc-module-icon-slide {
+    font-size: 1.6rem;
+  }
+  
+  .gdc-topic-item-slide {
+    padding: 6px 8px;
+    min-height: 35px;
+  }
+  
+  .gdc-module-duration-slide,
+  .gdc-module-projects-slide {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+  
+  .gdc-enrollment-btn-large-dark {
+    padding: 14px 12px;
+    font-size: 0.9rem;
+  }
+  
+  .gdc-enrollment-title-dark {
+    font-size: 1.1rem;
+  }
+}

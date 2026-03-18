@@ -1,0 +1,1597 @@
+/* UI/UX Page Styles - BLUE/PINK THEME */
+.uiuxp-page {
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+.uiuxp-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+/* WIDER Feedback Container */
+.uiuxp-feedback-container-wide {
+    max-width: 1400px !important;
+}
+
+/* Hero Section - BLUE BACKGROUND (FULL SCREEN) */
+.uiuxp-hero-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #718fbf; /* BLUE */
+    padding: 0;
+    width: 100%;
+}
+
+.uiuxp-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.08;
+    filter: blur(2px);
+}
+
+.uiuxp-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 1000px;
+    width: 90%;
+    padding: 80px 60px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    border: 2px solid rgba(236, 72, 153, 0.3); /* PINK border */
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    margin: 0 auto;
+}
+
+.uiuxp-hero-badge {
+    display: inline-block;
+    background: #ec4899; /* PINK */
+    color: white;
+    padding: 12px 32px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Aldrich', sans-serif;
+    border: 2px solid white;
+    box-shadow: 0 8px 20px rgba(236, 72, 153, 0.3);
+    transition: all 0.3s ease;
+}
+
+.uiuxp-hero-badge:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(236, 72, 153, 0.4);
+}
+
+.uiuxp-hero-title {
+    font-size: 3.8rem;
+    font-weight: 900;
+    color: #3b82f6; /* BLUE */
+    margin-bottom: 30px;
+    line-height: 1.1;
+    font-family: 'HEXCO', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+}
+
+.uiuxp-hero-subtitle {
+    font-size: 1.8rem;
+    color: #475569;
+    margin-bottom: 40px;
+    line-height: 1.4;
+    font-family: 'Aldrich', sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.uiuxp-hero-description {
+    font-size: 1.3rem;
+    color: #64748b;
+    line-height: 1.8;
+    margin-bottom: 50px;
+    font-family: 'Aldrich', sans-serif;
+    font-weight: 400;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.uiuxp-services-stack {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 40px;
+    padding: 20px 0;
+}
+
+.uiuxp-service-item {
+    background: rgba(236, 72, 153, 0.15); /* PINK */
+    color: #ec4899;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    border: 1px solid rgba(236, 72, 153, 0.4);
+    font-family: 'Aldrich', sans-serif;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(236, 72, 153, 0.1);
+}
+
+.uiuxp-service-item:hover {
+    transform: translateY(-3px);
+    background: rgba(236, 72, 153, 0.25);
+    box-shadow: 0 8px 20px rgba(236, 72, 153, 0.3);
+    border-color: rgba(236, 72, 153, 0.6);
+}
+
+/* About Section - WHITE */
+.uiuxp-about-section {
+    padding: 100px 0;
+    background: #ffffff;
+    position: relative;
+}
+
+.uiuxp-about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.uiuxp-about-text {
+    padding-right: 40px;
+}
+
+.uiuxp-about-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 25px;
+    position: relative;
+    font-family: 'HEXCO', sans-serif;
+}
+
+.uiuxp-about-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: #ec4899; /* PINK */
+    border-radius: 2px;
+}
+
+.uiuxp-about-description {
+    font-size: 1.1rem;
+    color: #475569;
+    line-height: 1.8;
+    margin-bottom: 35px;
+    font-family: 'Aldrich', sans-serif;
+}
+
+.uiuxp-about-points {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 35px 0;
+}
+
+.uiuxp-about-point {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    color: #475569;
+    font-size: 1rem;
+    font-family: 'Aldrich', sans-serif;
+    padding: 12px 15px;
+    border-radius: 8px;
+    background: #f8fafc;
+    transition: all 0.3s ease;
+}
+
+.uiuxp-about-point:hover {
+    transform: translateX(5px);
+    background: rgba(236, 72, 153, 0.05); /* PINK background */
+    border: 1px solid rgba(236, 72, 153, 0.1);
+}
+
+.uiuxp-about-point::before {
+    content: '✓';
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: #ec4899; /* PINK */
+    color: white;
+    border-radius: 50%;
+    margin-right: 15px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Read More Button - PINK */
+.uiuxp-read-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #ec4899; /* PINK */
+    color: white;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Aldrich', sans-serif;
+    margin-bottom: 30px;
+}
+
+.uiuxp-read-more-btn:hover {
+    background: #db2777;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(236, 72, 153, 0.3);
+}
+
+.uiuxp-arrow {
+    transition: transform 0.3s ease;
+}
+
+.uiuxp-read-more-btn.expanded .uiuxp-arrow {
+    transform: rotate(180deg);
+}
+
+/* Expanded Content */
+.uiuxp-expanded-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    margin-top: 20px;
+}
+
+.uiuxp-expanded-content.expanded {
+    max-height: 1500px;
+    margin-bottom: 30px;
+}
+
+.uiuxp-expanded-paragraphs p {
+    font-size: 1.05rem;
+    color: #475569;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    padding-left: 20px;
+    border-left: 3px solid #3b82f6; /* BLUE */
+    padding: 15px 20px;
+    background: rgba(59, 130, 246, 0.03); /* Light blue background */
+    border-radius: 0 8px 8px 0;
+    font-family: 'Aldrich', sans-serif;
+}
+
+.uiuxp-expanded-paragraphs strong {
+    color: #1e293b;
+    font-weight: 600;
+}
+
+/* IMAGE COLUMN LAYOUT */
+.uiuxp-about-images-column {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 100%;
+    height: auto;
+}
+
+/* Main Image */
+.uiuxp-about-image-main {
+    position: sticky;
+    top: 120px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    height: 450px;
+    transition: all 0.3s ease;
+    width: 100%;
+    flex-shrink: 0;
+    border: 2px solid #3b82f6; /* BLUE border */
+}
+
+.uiuxp-image-scroll .uiuxp-about-image-main {
+    position: relative;
+    top: 0 !important;
+}
+
+.uiuxp-about-image-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.uiuxp-about-image-main:hover img {
+    transform: scale(1.05);
+}
+
+/* Image Overlay - BLUE */
+.uiuxp-image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #3b82f6; /* BLUE */
+    padding: 30px;
+    color: white;
+    font-family: 'Aldrich', sans-serif;
+}
+
+.uiuxp-image-overlay h3 {
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+    font-family: 'HEXCO', sans-serif;
+}
+
+.uiuxp-image-overlay p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* Extra Images Container */
+.uiuxp-extra-images-fill {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 100%;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+.uiuxp-extra-images-fill.show {
+    opacity: 1;
+    max-height: 2000px;
+    padding: 10px 0;
+}
+
+/* Individual Extra Image */
+.uiuxp-extra-image-fill {
+    width: 100%;
+    height: 450px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    flex-shrink: 0;
+    border: 2px solid #ec4899; /* PINK border */
+}
+
+.uiuxp-extra-image-fill.visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Stagger the animations */
+.uiuxp-extra-image-fill:nth-child(1).visible {
+    transition-delay: 0.2s;
+}
+
+.uiuxp-extra-image-fill:nth-child(2).visible {
+    transition-delay: 0.4s;
+}
+
+.uiuxp-extra-image-fill:nth-child(3).visible {
+    transition-delay: 0.6s;
+}
+
+/* Image Wrapper */
+.uiuxp-fill-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.uiuxp-fill-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.uiuxp-extra-image-fill:hover .uiuxp-fill-image-wrapper img {
+    transform: scale(1.1);
+}
+
+/* Image Overlay - PINK */
+.uiuxp-fill-image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(236, 72, 153, 0.9); /* PINK */
+    color: white;
+    padding: 30px;
+    transform: translateY(20px);
+    opacity: 0.9;
+    transition: all 0.3s ease;
+}
+
+.uiuxp-extra-image-fill:hover .uiuxp-fill-image-overlay {
+    opacity: 1;
+    background: rgba(236, 72, 153, 0.95);
+}
+
+.uiuxp-fill-image-overlay h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-family: 'HEXCO', sans-serif;
+    font-weight: 600;
+}
+
+.uiuxp-fill-image-overlay p {
+    font-size: 1rem;
+    opacity: 0.9;
+    font-family: 'Aldrich', sans-serif;
+    line-height: 1.5;
+}
+
+/* Projects Section - LIGHT BLUE BG */
+.uiuxp-projects-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #6595d4 0%, #6da3c7 100%); /* Light blue gradient */
+}
+
+.uiuxp-section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.uiuxp-section-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 20px;
+    font-family: 'HEXCO', sans-serif;
+}
+
+.uiuxp-section-subtitle {
+    font-size: 1.2rem;
+    color: #475569;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+    font-family: 'Aldrich', sans-serif;
+}
+
+.uiuxp-projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.uiuxp-project-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(236, 72, 153, 0.1); /* PINK border */
+    transition: all 0.3s ease;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.uiuxp-project-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(236, 72, 153, 0.3); /* PINK border on hover */
+    box-shadow: 0 20px 40px rgba(236, 72, 153, 0.1);
+}
+
+.uiuxp-project-image {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+}
+
+.uiuxp-project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.uiuxp-project-card:hover .uiuxp-project-image img {
+    transform: scale(1.1);
+}
+
+/* Project Category Badge - PINK */
+.uiuxp-project-category {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #ec4899; /* PINK */
+    color: white;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'Aldrich', sans-serif;
+}
+
+.uiuxp-project-content {
+    padding: 25px;
+}
+
+.uiuxp-project-title {
+    font-size: 1.4rem;
+    color: #1e293b;
+    margin-bottom: 15px;
+    font-family: 'HEXCO', sans-serif;
+}
+
+.uiuxp-project-description {
+    color: #64748b;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-family: 'Aldrich', sans-serif;
+}
+
+.uiuxp-project-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(236, 72, 153, 0.1);
+}
+
+.uiuxp-project-stat {
+    text-align: center;
+}
+
+.uiuxp-stat-number {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #3b82f6; /* BLUE */
+    display: block;
+    font-family: 'HEXCO', sans-serif;
+}
+
+.uiuxp-stat-label {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    margin-top: 5px;
+    font-family: 'Aldrich', sans-serif;
+}
+
+/* Feedback Section */
+.uiuxp-feedback-section {
+    padding: 100px 0;
+    background: #ffffff;
+    position: relative;
+}
+
+.uiuxp-feedback-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #3b82f6, #ec4899, #3b82f6); /* BLUE to PINK gradient */
+}
+
+.uiuxp-feedback-section .uiuxp-section-title {
+    color: #1e293b;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-family: 'HEXCO', sans-serif;
+}
+
+.uiuxp-feedback-section .uiuxp-section-subtitle {
+    color: #475569;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+    font-family: 'Aldrich', sans-serif;
+    margin-bottom: 50px;
+}
+
+/* FIXED: Proper Carousel Layout - Left arrow, Card in center, Right arrow */
+.uiuxp-feedback-wrapper-wide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 60px;
+    gap: 30px;
+}
+
+/* Square Navigation Buttons - Left and Right Sides */
+.uiuxp-feedback-nav-btn {
+    background: white;
+    border: 2px solid #ec4899; /* PINK */
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #ec4899;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(236, 72, 153, 0.1);
+    position: relative;
+    z-index: 10;
+    flex-shrink: 0;
+}
+
+.uiuxp-feedback-nav-btn:hover {
+    background: #ec4899;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(236, 72, 153, 0.2);
+}
+
+/* Left arrow on LEFT side */
+.uiuxp-feedback-prev {
+    order: 1;
+}
+
+/* Card in CENTER */
+.uiuxp-feedback-slider-wide {
+    order: 2;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1000px;
+    flex: 1;
+}
+
+/* Right arrow on RIGHT side */
+.uiuxp-feedback-next {
+    order: 3;
+}
+
+.uiuxp-feedback-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.uiuxp-feedback-slide {
+    min-width: 100%;
+    padding: 0 10px;
+    display: flex;
+    justify-content: center;
+}
+
+/* WIDER FEEDBACK CARD - BLUE/PINK THEME */
+.uiuxp-feedback-card-wide {
+    background: white;
+    padding: 60px 50px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    border: 2px solid #ec4899; /* PINK border */
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Top border - PINK */
+.uiuxp-feedback-card-wide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: #ec4899; /* PINK */
+    border-radius: 20px 20px 0 0;
+}
+
+.uiuxp-feedback-quote {
+    font-size: 4rem;
+    color: #3b82f6; /* BLUE */
+    opacity: 0.15;
+    line-height: 1;
+    position: absolute;
+    top: 20px;
+    left: 40px;
+}
+
+.uiuxp-feedback-text-wide {
+    font-size: 1.2rem;
+    color: #1e293b;
+    line-height: 1.7;
+    margin-bottom: 40px;
+    font-style: italic;
+    font-family: 'Aldrich', sans-serif;
+    font-weight: 500;
+    padding-left: 60px;
+    border-left: 3px solid rgba(59, 130, 246, 0.2); /* BLUE border */
+    margin-left: 20px;
+    max-height: 180px;
+    overflow-y: auto;
+    padding-right: 20px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+/* Scrollbar */
+.uiuxp-feedback-text-wide::-webkit-scrollbar {
+    width: 6px;
+}
+
+.uiuxp-feedback-text-wide::-webkit-scrollbar-track {
+    background: rgba(236, 72, 153, 0.08); /* PINK */
+    border-radius: 10px;
+}
+
+.uiuxp-feedback-text-wide::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #ec4899, #3b82f6); /* PINK to BLUE */
+    border-radius: 10px;
+}
+
+/* Author Info - NO AVATAR */
+.uiuxp-feedback-author-simple {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 2px solid #3b82f6; /* BLUE */
+    width: 100%;
+    text-align: center;
+}
+
+.uiuxp-author-info-simple {
+    text-align: center;
+    padding: 15px 25px;
+    background: #3b82f6; /* BLUE */
+    border-radius: 12px;
+    border: 2px solid white;
+    min-width: 300px;
+    max-width: 400px;
+}
+
+.uiuxp-author-info-simple h4 {
+    font-size: 1.3rem;
+    color: white;
+    margin-bottom: 5px;
+    font-family: 'HEXCO', sans-serif;
+    font-weight: 700;
+}
+
+.uiuxp-author-info-simple p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.95);
+    font-family: 'Aldrich', sans-serif;
+    font-weight: 500;
+}
+
+/* Slider Dots - PINK */
+.uiuxp-slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 40px;
+}
+
+.uiuxp-slider-dot {
+    width: 12px;
+    height: 12px;
+    background: rgba(203, 213, 225, 0.6);
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.uiuxp-slider-dot.active {
+    background: #ec4899; /* PINK */
+    transform: scale(1.3);
+    box-shadow: 0 0 10px rgba(236, 72, 153, 0.3);
+}
+
+.uiuxp-slider-dot:hover {
+    background: #ec4899;
+    transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .uiuxp-hero-title {
+        font-size: 3.2rem;
+    }
+    
+    .uiuxp-hero-subtitle {
+        font-size: 1.6rem;
+    }
+    
+    .uiuxp-hero-content {
+        max-width: 900px;
+        padding: 70px 50px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .uiuxp-hero-title {
+        font-size: 2.8rem;
+    }
+    
+    .uiuxp-hero-subtitle {
+        font-size: 1.4rem;
+    }
+    
+    .uiuxp-hero-content {
+        padding: 60px 40px;
+        max-width: 800px;
+    }
+    
+    .uiuxp-about-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .uiuxp-about-text {
+        padding-right: 0;
+    }
+    
+    /* On mobile, image is always relative */
+    .uiuxp-about-image-main {
+        position: relative !important;
+        top: 0 !important;
+        height: 400px;
+    }
+    
+    .uiuxp-image-scroll .uiuxp-about-image-main {
+        position: relative !important;
+    }
+    
+    .uiuxp-section-title {
+        font-size: 2.4rem;
+    }
+    
+    .uiuxp-feedback-wrapper-wide {
+        padding: 0 40px;
+        gap: 20px;
+    }
+    
+    .uiuxp-feedback-card-wide {
+        padding: 50px 40px;
+    }
+    
+    .uiuxp-feedback-text-wide {
+        font-size: 1.1rem;
+        padding-left: 50px;
+        max-height: 160px;
+    }
+    
+    .uiuxp-feedback-quote {
+        left: 30px;
+        font-size: 3.5rem;
+    }
+    
+    .uiuxp-author-info-simple {
+        min-width: 250px;
+        padding: 12px 20px;
+    }
+    
+    .uiuxp-author-info-simple h4 {
+        font-size: 1.2rem;
+    }
+    
+    /* Adjust image sizes on tablet */
+    .uiuxp-extra-image-fill {
+        height: 400px;
+    }
+    
+    .uiuxp-fill-image-overlay {
+        padding: 25px;
+    }
+    
+    .uiuxp-fill-image-overlay h4 {
+        font-size: 1.3rem;
+    }
+    
+    .uiuxp-fill-image-overlay p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .uiuxp-hero-section {
+        min-height: 80vh;
+        padding: 30px 0;
+    }
+    
+    .uiuxp-about-section {
+        padding: 80px 0;
+    }
+    
+    .uiuxp-projects-section {
+        padding: 80px 0;
+    }
+    
+    .uiuxp-feedback-section {
+        padding: 80px 0;
+    }
+    
+    .uiuxp-hero-title {
+        font-size: 2.4rem;
+    }
+    
+    .uiuxp-hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .uiuxp-hero-description {
+        font-size: 1.1rem;
+    }
+    
+    .uiuxp-hero-content {
+        padding: 50px 30px;
+        width: 95%;
+    }
+    
+    .uiuxp-about-title {
+        font-size: 2rem;
+    }
+    
+    .uiuxp-section-title {
+        font-size: 2.2rem;
+    }
+    
+    .uiuxp-feedback-section .uiuxp-section-title {
+        font-size: 1.8rem;
+    }
+    
+    .uiuxp-feedback-section .uiuxp-section-subtitle {
+        font-size: 1rem;
+    }
+    
+    .uiuxp-projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .uiuxp-feedback-wrapper-wide {
+        padding: 0 30px;
+        gap: 15px;
+    }
+    
+    .uiuxp-feedback-card-wide {
+        padding: 40px 30px;
+        min-height: 300px;
+    }
+    
+    .uiuxp-feedback-text-wide {
+        font-size: 1.1rem;
+        max-height: 150px;
+        padding-left: 40px;
+    }
+    
+    .uiuxp-feedback-quote {
+        font-size: 3rem;
+        left: 25px;
+        top: 15px;
+    }
+    
+    .uiuxp-feedback-nav-btn {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .uiuxp-author-info-simple {
+        min-width: 220px;
+        padding: 12px 18px;
+    }
+    
+    .uiuxp-author-info-simple h4 {
+        font-size: 1.1rem;
+    }
+    
+    .uiuxp-author-info-simple p {
+        font-size: 0.9rem;
+    }
+    
+    /* Adjust image sizes on mobile */
+    .uiuxp-about-image-main {
+        height: 350px;
+    }
+    
+    .uiuxp-extra-image-fill {
+        height: 350px;
+    }
+    
+    .uiuxp-fill-image-overlay {
+        padding: 20px;
+    }
+    
+    .uiuxp-fill-image-overlay h4 {
+        font-size: 1.2rem;
+    }
+    
+    .uiuxp-fill-image-overlay p {
+        font-size: 0.85rem;
+    }
+    
+    .uiuxp-hero-badge {
+        padding: 10px 22px;
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+}
+
+/* MEDIA QUERY FOR SMALL SCREENS ONLY (≤640px) */
+@media (max-width: 640px) {
+    /* For small screens, stack buttons above and below the card */
+    .uiuxp-feedback-wrapper-wide {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 0 20px;
+    }
+    
+    .uiuxp-feedback-prev {
+        order: 1;
+        margin-bottom: 10px;
+    }
+    
+    .uiuxp-feedback-slider-wide {
+        order: 2;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .uiuxp-feedback-next {
+        order: 3;
+        margin-top: 10px;
+    }
+    
+    .uiuxp-feedback-card-wide {
+        padding: 30px 25px;
+        min-height: 320px;
+        margin: 0;
+    }
+    
+    .uiuxp-feedback-text-wide {
+        font-size: 1rem;
+        max-height: 180px;
+        padding-left: 25px;
+        padding-right: 20px;
+        margin-bottom: 20px;
+        line-height: 1.6;
+    }
+    
+    .uiuxp-feedback-quote {
+        font-size: 2.5rem;
+        left: 15px;
+        top: 10px;
+    }
+    
+    .uiuxp-feedback-author-simple {
+        margin-top: 15px;
+        padding-top: 15px;
+    }
+    
+    .uiuxp-author-info-simple {
+        min-width: 200px;
+        padding: 10px 15px;
+    }
+    
+    .uiuxp-author-info-simple h4 {
+        font-size: 1rem;
+    }
+    
+    .uiuxp-author-info-simple p {
+        font-size: 0.85rem;
+    }
+}
+
+/* ADDED: SMALL SCREEN ADJUSTMENTS FOR HEADER TITLE */
+@media (max-width: 480px) {
+    .uiuxp-hero-section {
+        min-height: 70vh;
+        padding: 20px 0;
+    }
+    
+    .uiuxp-about-section {
+        padding: 80px 0;
+    }
+    
+    .uiuxp-projects-section {
+        padding: 80px 0;
+    }
+    
+    .uiuxp-feedback-section {
+        padding: 60px 0;
+    }
+    
+    .uiuxp-hero-content {
+        padding: 40px 25px;
+        width: 95%;
+    }
+    
+    /* HEADER TITLE ADJUSTMENT - REDUCED SIZE */
+    .uiuxp-hero-title {
+        font-size: 1.8rem !important;
+        line-height: 1.1;
+        margin-bottom: 20px;
+        padding: 0 10px;
+    }
+    
+    .uiuxp-hero-badge {
+        padding: 8px 18px;
+        font-size: 12px;
+        margin-bottom: 15px;
+    }
+    
+    .uiuxp-hero-subtitle {
+        font-size: 1rem !important;
+        margin-bottom: 20px;
+        padding: 0 10px;
+    }
+    
+    .uiuxp-hero-description {
+        font-size: 0.95rem !important;
+        line-height: 1.6;
+        margin-bottom: 25px;
+        padding: 0 10px;
+    }
+    
+    .uiuxp-feedback-section .uiuxp-section-title {
+        font-size: 1.6rem;
+    }
+    
+    .uiuxp-feedback-section .uiuxp-section-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 30px;
+    }
+    
+    .uiuxp-feedback-wrapper-wide {
+        padding: 0 15px;
+    }
+    
+    .uiuxp-feedback-card-wide {
+        padding: 25px 20px;
+        min-height: 340px;
+        border-radius: 15px;
+    }
+    
+    .uiuxp-feedback-text-wide {
+        font-size: 0.95rem;
+        max-height: 200px;
+        padding-left: 20px;
+        padding-right: 15px;
+        margin-bottom: 15px;
+        line-height: 1.5;
+        border-left-width: 2px;
+    }
+    
+    .uiuxp-feedback-quote {
+        font-size: 2rem;
+        left: 10px;
+        top: 8px;
+    }
+    
+    .uiuxp-feedback-nav-btn {
+        width: 35px;
+        height: 35px;
+        border-radius: 6px;
+    }
+    
+    .uiuxp-feedback-nav-btn svg {
+        width: 12px;
+        height: 12px;
+    }
+    
+    /* For 480px and below, adjust the button margins */
+    @media (max-width: 640px) {
+        .uiuxp-feedback-prev {
+            margin-bottom: 8px;
+        }
+        
+        .uiuxp-feedback-next {
+            margin-top: 8px;
+        }
+    }
+    
+    .uiuxp-author-info-simple {
+        min-width: 180px;
+        padding: 8px 12px;
+        border-radius: 10px;
+    }
+    
+    .uiuxp-author-info-simple h4 {
+        font-size: 0.95rem;
+        margin-bottom: 4px;
+    }
+    
+    .uiuxp-author-info-simple p {
+        font-size: 0.8rem;
+    }
+    
+    .uiuxp-slider-dots {
+        margin-top: 25px;
+    }
+    
+    /* Adjust image sizes on small screens */
+    .uiuxp-about-image-main {
+        height: 300px;
+    }
+    
+    .uiuxp-extra-image-fill {
+        height: 300px;
+    }
+    
+    .uiuxp-fill-image-overlay {
+        padding: 15px;
+    }
+    
+    .uiuxp-fill-image-overlay h4 {
+        font-size: 1.1rem;
+    }
+    
+    .uiuxp-fill-image-overlay p {
+        font-size: 0.8rem;
+    }
+    
+    .uiuxp-image-overlay {
+        padding: 20px;
+    }
+    
+    .uiuxp-image-overlay h3 {
+        font-size: 1.3rem;
+    }
+    
+    .uiuxp-image-overlay p {
+        font-size: 0.8rem;
+    }
+    
+    .uiuxp-service-item {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
+
+/* ADDED: EVEN SMALLER HEADER TITLE FOR 360PX SCREENS */
+@media (max-width: 360px) {
+    .uiuxp-feedback-card-wide {
+        padding: 20px 15px;
+        min-height: 360px;
+    }
+    
+    .uiuxp-feedback-text-wide {
+        font-size: 0.9rem;
+        max-height: 220px;
+        padding-left: 18px;
+        padding-right: 12px;
+        line-height: 1.4;
+    }
+    
+    .uiuxp-feedback-quote {
+        font-size: 1.8rem;
+        left: 8px;
+        top: 6px;
+    }
+    
+    .uiuxp-feedback-nav-btn {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .uiuxp-feedback-nav-btn svg {
+        width: 10px;
+        height: 10px;
+    }
+    
+    .uiuxp-author-info-simple {
+        min-width: 160px;
+        padding: 6px 10px;
+    }
+    
+    .uiuxp-author-info-simple h4 {
+        font-size: 0.9rem;
+    }
+    
+    .uiuxp-author-info-simple p {
+        font-size: 0.75rem;
+    }
+    
+    .uiuxp-feedback-section .uiuxp-section-title {
+        font-size: 1.4rem;
+    }
+    
+    /* HEADER TITLE FURTHER REDUCED FOR 360PX */
+    .uiuxp-hero-title {
+        font-size: 1.6rem !important;
+        letter-spacing: -0.3px;
+        margin-bottom: 15px;
+        padding: 0 8px;
+    }
+    
+    .uiuxp-hero-subtitle {
+        font-size: 0.95rem !important;
+        margin-bottom: 15px;
+        line-height: 1.3;
+        padding: 0 8px;
+    }
+    
+    .uiuxp-hero-description {
+        font-size: 0.9rem !important;
+        line-height: 1.5;
+        margin-bottom: 25px;
+        padding: 0 8px;
+    }
+    
+    .uiuxp-hero-content {
+        padding: 30px 15px !important;
+        border-radius: 20px;
+    }
+    
+    .uiuxp-hero-badge {
+        padding: 6px 16px !important;
+        font-size: 11px !important;
+        margin-bottom: 12px !important;
+    }
+    
+    /* Adjust image sizes for very small screens */
+    .uiuxp-about-image-main {
+        height: 280px;
+    }
+    
+    .uiuxp-extra-image-fill {
+        height: 280px;
+    }
+    
+    .uiuxp-fill-image-overlay {
+        padding: 12px;
+    }
+    
+    .uiuxp-fill-image-overlay h4 {
+        font-size: 1rem;
+    }
+    
+    .uiuxp-fill-image-overlay p {
+        font-size: 0.75rem;
+    }
+}
+
+/* ADDED: FOR VERY SMALL SCREENS LIKE IPHONE SE (320PX) */
+@media (max-width: 320px) {
+    .uiuxp-hero-title {
+        font-size: 1.4rem !important;
+        padding: 0 5px;
+        margin-bottom: 12px;
+    }
+    
+    .uiuxp-hero-subtitle {
+        font-size: 0.9rem !important;
+        padding: 0 5px;
+        margin-bottom: 12px;
+    }
+    
+    .uiuxp-hero-description {
+        font-size: 0.85rem !important;
+        padding: 0 5px;
+        margin-bottom: 20px;
+    }
+    
+    .uiuxp-hero-content {
+        padding: 25px 12px !important;
+        width: 98% !important;
+    }
+    
+    .uiuxp-hero-badge {
+        padding: 5px 14px !important;
+        font-size: 10px !important;
+        margin-bottom: 10px !important;
+    }
+    
+    .uiuxp-service-item {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+}
+
+/* ADDED: LANDSCAPE MODE ADJUSTMENTS FOR SMALL SCREENS */
+@media (max-height: 500px) and (max-width: 900px) {
+    .uiuxp-hero-title {
+        font-size: 1.8rem !important;
+        margin-bottom: 10px;
+    }
+    
+    .uiuxp-hero-subtitle {
+        font-size: 1rem !important;
+        margin-bottom: 10px;
+    }
+    
+    .uiuxp-hero-description {
+        font-size: 0.9rem !important;
+        margin-bottom: 20px;
+    }
+    
+    .uiuxp-hero-content {
+        padding: 25px 20px !important;
+        margin-top: 10px;
+    }
+    
+    .uiuxp-hero-badge {
+        margin-bottom: 15px;
+    }
+}
+
+/* Additional responsive adjustments for very small screens */
+@media (max-height: 800px) {
+    .uiuxp-hero-content {
+        padding: 60px 40px;
+    }
+    
+    .uiuxp-hero-title {
+        font-size: 3rem;
+    }
+    
+    .uiuxp-hero-subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .uiuxp-hero-description {
+        font-size: 1.1rem;
+        margin-bottom: 40px;
+    }
+    
+    .uiuxp-services-stack {
+        margin-top: 30px;
+    }
+}
+
+@media (max-height: 700px) {
+    .uiuxp-hero-section {
+        align-items: flex-start;
+        padding-top: 30px;
+    }
+    
+    .uiuxp-hero-content {
+        padding: 50px 30px;
+        margin-top: 20px;
+    }
+    
+    .uiuxp-hero-title {
+        font-size: 2.4rem;
+        margin-bottom: 20px;
+    }
+    
+    .uiuxp-hero-subtitle {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+    }
+    
+    .uiuxp-hero-description {
+        font-size: 1rem;
+        margin-bottom: 30px;
+        line-height: 1.6;
+    }
+    
+    .uiuxp-hero-badge {
+        margin-bottom: 20px;
+        padding: 10px 24px;
+        font-size: 14px;
+    }
+    
+    .uiuxp-services-stack {
+        margin-top: 20px;
+        gap: 10px;
+    }
+    
+    .uiuxp-service-item {
+        padding: 8px 16px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-height: 600px) {
+    .uiuxp-hero-section {
+        align-items: flex-start;
+        padding-top: 20px;
+    }
+    
+    .uiuxp-hero-content {
+        padding: 40px 25px;
+        margin-top: 10px;
+    }
+    
+    .uiuxp-hero-title {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+    
+    .uiuxp-hero-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+    }
+    
+    .uiuxp-hero-description {
+        font-size: 0.9rem;
+        margin-bottom: 25px;
+    }
+    
+    .uiuxp-hero-badge {
+        margin-bottom: 15px;
+        padding: 8px 20px;
+        font-size: 13px;
+    }
+    
+    .uiuxp-services-stack {
+        margin-top: 15px;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding: 10px 5px;
+        margin: 10px -5px 0 -5px;
+        scrollbar-width: none;
+    }
+    
+    .uiuxp-services-stack::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .uiuxp-service-item {
+        flex-shrink: 0;
+        white-space: nowrap;
+        padding: 8px 16px;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-height: 500px) {
+    .uiuxp-hero-section {
+        padding-top: 15px;
+    }
+    
+    .uiuxp-hero-content {
+        padding: 30px 20px;
+    }
+    
+    .uiuxp-hero-title {
+        font-size: 1.6rem;
+    }
+    
+    .uiuxp-hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .uiuxp-hero-description {
+        display: none;
+    }
+    
+    .uiuxp-services-stack {
+        margin-top: 10px;
+    }
+}

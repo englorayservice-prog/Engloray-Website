@@ -1,0 +1,822 @@
+/* High-specificity wrapper to prevent style overrides */
+body .engloray-about-wrapper {
+    background-color: #c2d7fa;
+    padding: 80px 40px;
+    font-family: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #000;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-transform: capitalize;
+}
+
+/* Force border-box for all children of this section */
+.engloray-about-wrapper * {
+    box-sizing: border-box;
+}
+
+.about-outer-container {
+    width: 100%;
+    max-width: 1400px;
+    position: relative;
+}
+
+/* THE MAIN WHITE CARD */
+.about-main-card {
+    background-color: #ffffff;
+    border-radius: 48px;
+    padding: 60px;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.05);
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+}
+
+/* Optional: The "Behind" effect if desired - subtle shadow depth */
+.about-main-card::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 40px;
+    right: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    border-radius: 48px;
+    z-index: -1;
+}
+
+/* 1. HEADER ROW */
+.about-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.brand-logo {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+}
+
+.header-stats {
+    display: flex;
+    gap: 40px;
+}
+
+.h-stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.h-stat-val {
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.1;
+    color: white;
+}
+
+.h-stat-lbl {
+    font-size: 11px;
+    color: #999;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.header-navigation {
+    display: flex;
+    gap: 35px;
+}
+
+.header-navigation a {
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+    font-weight: 600;
+    opacity: 0.7;
+    transition: 0.2s ease;
+}
+
+.header-navigation a:hover {
+    opacity: 1;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-contact {
+    background: transparent;
+    border: 1px solid #000;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-start {
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-start:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 2. MAIN BENTO GRID */
+.about-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 480px;
+    gap: 40px;
+    margin-bottom: 60px;
+    align-items: stretch;
+    /* Modified to allow cards to match heights */
+}
+
+/* LEFT SIDE */
+.grid-left-side {
+    display: flex;
+    flex-direction: column;
+}
+
+.bento-top-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Changed to equal columns for perfect alignment */
+    gap: 24px;
+    margin-bottom: 60px;
+}
+
+/* PRECISE STATS STACK CARD */
+.stats-stack-card {
+    background: #f1f3f6;
+    border-radius: 44px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    /* Allow it to fill grid column */
+    height: 220px;
+    /* Match video card height */
+    justify-content: space-between;
+}
+
+.black-stat-card {
+    background: #000;
+    color: #fff;
+    border-radius: 40px;
+    padding: 20px 28px;
+    height: 105px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.stat-inner {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.stat-icon-wrap {
+    font-size: 28px;
+    color: #fff;
+}
+
+.stat-data {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.stat-val {
+    font-size: 46px;
+    font-weight: 600;
+    /* Increased for better visibility at large size */
+    line-height: 1;
+    letter-spacing: -2.5px;
+}
+
+.stat-desc {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: capitalize;
+    letter-spacing: 0;
+    line-height: 1.1;
+    font-weight: 500;
+    width: 60px;
+}
+
+.bottom-stat-row-new {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2px;
+}
+
+.black-circles-pill {
+    background: #000;
+    width: 96px;
+    height: 60px;
+    border-radius: 35px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.c-solid {
+    width: 26px;
+    height: 26px;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    left: 20px;
+}
+
+.c-border {
+    width: 26px;
+    height: 26px;
+    border: 1.5px solid #fff;
+    border-radius: 50%;
+    position: absolute;
+    left: 38px;
+}
+
+.stat-info-center {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0;
+    flex: 1;
+    padding-left: 15px;
+}
+
+.info-num {
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -1px;
+    color: #000;
+}
+
+.info-lbl {
+    font-size: 9px;
+    color: #999;
+    text-transform: capitalize;
+    letter-spacing: 0;
+    margin-top: 3px;
+    line-height: 1.1;
+}
+
+.stat-action-btn {
+    width: 62px;
+    height: 62px;
+    background: #e2e5e9;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: #000;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.stat-action-btn:hover {
+    background: #d4d8dd;
+    transform: rotate(45deg);
+}
+
+/* PRECISE VIDEO CARD - FULL HEIGHT SIDE BY SIDE */
+.card-video-precise {
+    background: #fff;
+    border: 1px solid #ebedf0;
+    border-radius: 48px;
+    padding: 10px;
+    display: flex;
+    width: 100%;
+    /* Allow it to fill grid column */
+    height: 220px;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.card-video-precise:hover {
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.05);
+    transform: translateY(-2px);
+}
+
+.cv-left-side {
+    padding: 15px 10px 15px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.cv-time-pill {
+    background: #fff;
+    border: 1px solid #000;
+    padding: 8px 18px;
+    border-radius: 30px;
+    width: fit-content;
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cv-text-box h4 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1;
+    color: #000;
+    letter-spacing: -0.5px;
+}
+
+.cv-text-box p {
+    margin: 4px 0 0 0;
+    font-size: 14px;
+    color: #666;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+.cv-right-side {
+    flex: 1.2;
+    height: 100%;
+}
+
+.cv-preview-full {
+    width: 100%;
+    height: 100%;
+    background-image: url('D:\Project-Engloray\Engloray-pro-website-main\src\assets\VideoCover.jfif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Texture overlay for the biotech preview */
+.cv-preview-full::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(1px);
+}
+
+.cv-play-icon {
+    width: 54px;
+    height: 54px;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 16px;
+    z-index: 2;
+    transition: 0.3s;
+}
+
+.card-video-precise:hover .cv-play-icon {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* PRECISE INLINE HERO HEADING */
+.about-hero-precise-section {
+    max-width: 900px;
+    margin-top: -20px;
+}
+
+.hero-heading-inline {
+    text-align: left;
+    font-size: 72px;
+    font-weight: 300;
+    line-height: 0.95;
+    letter-spacing: -2.5px;
+    color: #000;
+    margin: 0 0 20px 0;
+    display: block;
+    text-transform: capitalize;
+    font-family: 'Outfit', sans-serif;
+}
+
+.inline-action-group {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    vertical-align: middle;
+    margin-left: 15px;
+    position: relative;
+    top: -5px;
+    /* Fine-tuned alignment for lowercase text */
+}
+
+.pill-learn-btn {
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 400;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: 0.3s;
+    text-transform: capitalize;
+}
+
+.pill-learn-btn:hover {
+    transform: scale(1.05);
+    background: black;
+}
+
+.arrow-circle-btn {
+    width: 54px;
+    height: 54px;
+    background: #000;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.arrow-circle-btn:hover {
+    transform: rotate(45deg) scale(1.1);
+}
+
+.inline-icon-stack {
+    display: inline-flex;
+    margin-left: 30px;
+    vertical-align: middle;
+}
+
+.stack-icon {
+    width: 64px;
+    height: 64px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 50%;
+    margin-left: -20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    position: relative;
+    z-index: 1;
+}
+
+.stack-icon:first-child {
+    margin-left: 0;
+    z-index: 3;
+}
+
+.icon-bio {
+    background: #fff;
+    color: #000;
+    z-index: 3;
+}
+
+.icon-galaxy {
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    border: none;
+    z-index: 2;
+}
+
+.icon-flask {
+    background: #000;
+    color: #fff;
+    z-index: 1;
+}
+
+.hero-description-p {
+    font-size: 15px;
+    /* Smaller, matches image better */
+    line-height: 1.5;
+    color: #888;
+    font-weight: 400;
+    text-align: left;
+    max-width: 550px;
+    margin-top: 5px;
+}
+
+/* RIGHT COLUMN */
+.visual-hero-card {
+    height: 100%;
+
+    /* Fill the grid height for perfect alignment */
+    background-image: url('D:\Project-Engloray\Engloray-Website-main\src\assets\AboutUS.jfif');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 40px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    min-height: 600px;
+    overflow: hidden;
+}
+
+.visual-pagination-dots {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 5;
+}
+
+.visual-pagination-dots span {
+    width: 8px;
+    height: 8px;
+    border: 1.5px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+}
+
+.visual-pagination-dots span.active {
+    background: #fff;
+    border-color: #fff;
+    box-shadow: 0 0 10px #fff;
+}
+
+.visual-glass-footer {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 40px;
+    padding: 10px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    right: 30px;
+    z-index: 10;
+}
+
+.glass-content-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    flex: 1;
+}
+
+.join-text {
+    margin: 0;
+    text-align: center;
+    color: #fff;
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 1;
+    text-transform: capitalize;
+    letter-spacing: -1.5px;
+    opacity: 0.95;
+}
+
+.glass-divider {
+    width: 1px;
+    height: 70px;
+    /* Slightly taller */
+    background: rgba(255, 255, 255, 0.3);
+    margin: 0 10px;
+}
+
+.learn-text {
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.2;
+    text-transform: capitalize;
+    letter-spacing: -0.5px;
+}
+
+.glass-toggle-group {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 130px;
+    height: 80px;
+    justify-content: flex-end;
+}
+
+.toggle-circle-white {
+    width: 72px;
+    height: 72px;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    right: 48px;
+    opacity: 0.9;
+}
+
+.toggle-circle-black {
+    width: 72px;
+    height: 72px;
+    background: #000;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    font-size: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-circle-black:hover {
+    transform: rotate(45deg);
+    transition: 0.3s;
+}
+
+/* 3. FOOTER PILL TAGS */
+.about-pills-row {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    /* Gap between groups */
+    flex-wrap: wrap;
+    margin-top: 60px;
+}
+
+.pill-group {
+    display: flex;
+    gap: 4px;
+    /* Minimal gap within groups for 'close together' look */
+}
+
+.pill-tag {
+    background: #f1f3f6;
+    /* Light gray from image */
+    border: none;
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    text-transform: capitalize;
+    color: #000;
+    letter-spacing: 0.2px;
+}
+
+.pill-tag i,
+.pill-tag svg {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.pill-tag:hover {
+    background: #000000;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* VIDEO MODAL */
+.about-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(20px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-modal-content {
+    background: #fff;
+    border-radius: 40px;
+    padding: 60px;
+    width: 90%;
+    max-width: 800px;
+    position: relative;
+    text-align: center;
+}
+
+.close-about-modal {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.about-video-placeholder {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+    .about-content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-heading-inline {
+        font-size: 60px;
+        letter-spacing: -2px;
+    }
+}
+
+@media (max-width: 768px) {
+    .engloray-about-wrapper {
+        padding: 40px 20px;
+    }
+
+    .about-main-card {
+        padding: 30px;
+        border-radius: 32px;
+    }
+
+    .about-header-row {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .header-left {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .header-navigation {
+        display: none;
+    }
+
+    .bento-top-row {
+        flex-direction: column;
+    }
+
+    .hero-heading-inline {
+        font-size: 42px;
+        letter-spacing: -1.5px;
+    }
+
+    .grid-right-side {
+        min-height: 500px;
+    }
+
+    .glass-f-left h3 {
+        font-size: 32px;
+    }
+}

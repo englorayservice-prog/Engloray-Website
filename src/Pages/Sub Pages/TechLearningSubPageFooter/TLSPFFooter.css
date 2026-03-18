@@ -1,0 +1,344 @@
+/* TLSPF-Footer.css - Horizontal Layout */
+.TLSPF-footer {
+  background: linear-gradient(135deg,
+    #0F172A 0%,
+    #1A2235 45%,
+    #111827 100%
+  );
+  color: #fff;
+  padding-top: 60px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  margin-top: auto;
+}
+
+.TLSPF-footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Main horizontal row for all sections */
+.TLSPF-main-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 30px;
+}
+
+/* Brand section - takes more space */
+.TLSPF-brand-section {
+  flex: 1 1 300px;
+  min-width: 250px;
+  max-width: 350px;
+}
+
+.TLSPF-logo {
+  margin-bottom: 20px;
+}
+
+.TLSPF-logo-text {
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  background: linear-gradient(90deg, #4a6fff 0%, #00d4ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.TLSPF-tagline {
+  color: #b0b7d1;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Links sections - all equal width */
+.TLSPF-links-section {
+  flex: 1 1 200px;
+  min-width: 150px;
+  max-width: 220px;
+}
+
+.TLSPF-contact-section {
+  flex: 1 1 250px;
+  min-width: 200px;
+  max-width: 280px;
+}
+
+.TLSPF-section-title {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.TLSPF-section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, #4a6fff 0%, #00d4ff 100%);
+}
+
+.TLSPF-links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.TLSPF-links-list li {
+  margin-bottom: 12px;
+}
+
+.TLSPF-link {
+  color: #b0b7d1;
+  text-decoration: none;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.TLSPF-link:hover {
+  color: #4a6fff;
+  transform: translateX(5px);
+}
+
+.TLSPF-contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.TLSPF-contact-item {
+  color: #b0b7d1;
+  font-size: 15px;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.TLSPF-contact-link {
+  color: #b0b7d1;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.TLSPF-contact-link:hover {
+  color: #4a6fff;
+}
+
+/* Bottom Bar */
+.TLSPF-bottom-bar {
+  background: rgba(10, 12, 20, 0.95);
+  padding: 25px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.TLSPF-bottom-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+@media (min-width: 768px) {
+  .TLSPF-bottom-content {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.TLSPF-copyright {
+  color: #b0b7d1;
+  font-size: 14px;
+  margin: 0;
+}
+
+.TLSPF-policy-links {
+  display: flex;
+  gap: 25px;
+}
+
+.TLSPF-policy-link {
+  color: #b0b7d1;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.TLSPF-policy-link:hover {
+  color: #4a6fff;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .TLSPF-main-row {
+    gap: 30px;
+  }
+  
+  .TLSPF-brand-section {
+    flex: 1 1 250px;
+  }
+  
+  .TLSPF-links-section {
+    flex: 1 1 180px;
+  }
+  
+  .TLSPF-contact-section {
+    flex: 1 1 220px;
+  }
+}
+
+@media (max-width: 992px) {
+  .TLSPF-main-row {
+    gap: 25px;
+  }
+  
+  .TLSPF-brand-section {
+    flex: 1 1 200px;
+  }
+  
+  .TLSPF-links-section {
+    flex: 1 1 160px;
+  }
+  
+  .TLSPF-contact-section {
+    flex: 1 1 200px;
+  }
+  
+  .TLSPF-logo-text {
+    font-size: 24px;
+  }
+  
+  .TLSPF-section-title {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .TLSPF-main-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  
+  .TLSPF-brand-section {
+    grid-column: 1 / -1;
+    max-width: 100%;
+  }
+  
+  .TLSPF-links-section,
+  .TLSPF-contact-section {
+    min-width: 0;
+    max-width: 100%;
+  }
+  
+  .TLSPF-tagline {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .TLSPF-main-row {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  .TLSPF-brand-section {
+    text-align: center;
+  }
+  
+  .TLSPF-bottom-content {
+    text-align: center;
+  }
+  
+  .TLSPF-policy-links {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .TLSPF-logo-text {
+    font-size: 22px;
+  }
+  
+  .TLSPF-tagline {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .TLSPF-footer-container {
+    padding: 0 15px;
+  }
+  
+  .TLSPF-main-row {
+    gap: 20px;
+  }
+  
+  .TLSPF-links-list li,
+  .TLSPF-contact-item {
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  
+  .TLSPF-link {
+    font-size: 14px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 360px) {
+  .TLSPF-logo {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .TLSPF-bottom-content {
+    gap: 10px;
+  }
+  
+  .TLSPF-copyright {
+    font-size: 13px;
+  }
+  
+  .TLSPF-policy-link {
+    font-size: 13px;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1400px) {
+  .TLSPF-footer-container {
+    max-width: 1600px;
+  }
+  
+  .TLSPF-main-row {
+    gap: 50px;
+  }
+  
+  .TLSPF-brand-section {
+    max-width: 400px;
+  }
+  
+  .TLSPF-links-section {
+    max-width: 250px;
+  }
+  
+  .TLSPF-contact-section {
+    max-width: 300px;
+  }
+}

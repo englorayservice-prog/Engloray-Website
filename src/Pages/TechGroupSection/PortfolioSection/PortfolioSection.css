@@ -1,0 +1,587 @@
+/* Portfolio Section Styles */
+.ps-portfolio-section {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #000000 0%, #3a3838 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.ps-portfolio-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #333, transparent);
+}
+
+.ps-portfolio-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Header Styles */
+.ps-portfolio-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.ps-portfolio-header.ps-animate-fade-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.8s ease-out;
+}
+
+.ps-portfolio-title {
+  font-size: 3rem;
+  font-weight: 100;
+  background: linear-gradient(135deg, #f23030, #bf0413);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+  font-family: 'HEXCO';
+}
+
+.ps-portfolio-subtitle {
+  font-size: 1.25rem;
+  color: #ccc;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+  font-family: 'Aldrich';
+}
+
+.ps-title-underline {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #bf0413, #f23030);
+  margin: 0 auto;
+  border-radius: 2px;
+  position: relative;
+}
+
+.ps-title-underline::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 8px;
+  background: #f23030;
+  border-radius: 4px;
+  animation: ps-pulse 2s infinite;
+}
+
+/* Filter Buttons */
+.ps-portfolio-filters {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.ps-portfolio-filters.ps-animate-slide-up {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.6s ease-out;
+}
+
+.ps-filter-btn {
+  padding: 0.5rem 1.5rem;
+  border: 1px solid #444;
+  background: rgba(20, 20, 20, 0.8);
+  color: #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 400;
+  backdrop-filter: blur(10px);
+  font-family: 'Aldrich';
+  font-size: 0.9rem;
+}
+
+.ps-filter-btn:hover {
+  border-color: #f23030;
+  color: white;
+  background: rgba(242, 48, 48, 0.1);
+}
+
+.ps-filter-btn.ps-active {
+  background: linear-gradient(135deg, #bf0413, #f23030);
+  border-color: #f23030;
+  color: white;
+}
+
+/* Main Content Wrapper */
+.ps-main-content-wrapper {
+  position: relative;
+  margin-bottom: 4rem;
+}
+
+.ps-main-content-wrapper.ps-with-side-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* Portfolio Grid */
+.ps-portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.ps-portfolio-grid.ps-grid-with-right-content {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Portfolio Card */
+.ps-portfolio-card {
+  background: rgba(26, 26, 26, 0.8);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #333;
+  backdrop-filter: blur(10px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.ps-portfolio-card.ps-animate-scale-in {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ps-portfolio-card:hover {
+  transform: translateY(-5px);
+  border-color: #f23030;
+  box-shadow: 0 10px 30px rgba(191, 4, 19, 0.2);
+}
+
+/* Card Image Container */
+.ps-card-image-container {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+}
+
+.ps-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.ps-portfolio-card:hover .ps-card-image {
+  transform: scale(1.05);
+}
+
+.ps-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(191, 4, 19, 0.9), rgba(242, 48, 48, 0.9));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.ps-portfolio-card:hover .ps-card-overlay {
+  opacity: 1;
+}
+
+.ps-view-case-study {
+  background: white;
+  color: #bf0413;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Aldrich';
+  font-size: 0.9rem;
+}
+
+.ps-view-case-study:hover {
+  transform: scale(1.05);
+  background: #000;
+  color: white;
+}
+
+/* Card Content */
+.ps-card-content {
+  padding: 1.5rem;
+}
+
+.ps-card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: white;
+  line-height: 1.4;
+  font-family: 'Aldrich';
+}
+
+.ps-card-description {
+  color: #ccc;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  font-family: 'Aldrich';
+}
+
+/* Card Footer */
+.ps-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid #333;
+}
+
+.ps-card-category {
+  background: linear-gradient(135deg, #bf0413, #f23030);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: 'Aldrich';
+}
+
+.ps-card-year {
+  color: #999;
+  font-size: 0.9rem;
+  font-family: 'Aldrich';
+}
+
+/* Right Side Content - Moved slightly to the left */
+.ps-right-side-content {
+  position: sticky;
+  top: 2rem;
+  opacity: 0;
+  transform: translateX(20px);
+  animation: ps-slide-in-right 0.6s ease-out forwards;
+  margin-left: -13rem; /* Added to move it slightly left */
+}
+
+/* Special adjustment for UI/UX only - Move it even more left */
+.ps-main-content-wrapper.ps-with-side-content:has(.ps-uiux-layout) .ps-right-side-content {
+  margin-left: -15rem; /* Move it 2rem more left for UI/UX */
+}
+
+.ps-right-side-content.ps-animate-fade-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.ps-right-content-inner {
+  /* Remove container styles */
+  background: transparent;
+  border: none;
+  padding: 0;
+  backdrop-filter: none;
+  position: relative;
+  overflow: visible;
+}
+
+/* Remove the left border line */
+.ps-right-content-inner::before {
+  display: none;
+}
+
+.ps-right-title-wrapper {
+  margin-bottom: 1.5rem;
+}
+
+.ps-right-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 0.75rem;
+  font-family: 'Aldrich';
+  background: linear-gradient(135deg, #f23030, #bf0413);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.3;
+}
+
+.ps-right-title-line {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #bf0413, #f23030);
+  border-radius: 2px;
+}
+
+.ps-right-description {
+  color: #ccc;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  font-family: 'Aldrich';
+  margin-bottom: 2rem;
+}
+
+/* Right Arrow - Changed to Down Arrow */
+.ps-right-arrow {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #333;
+  position: relative;
+}
+
+/* Changed animation to bounce down instead of up */
+@keyframes ps-bounce-arrow-down {
+  0%, 100% {
+    transform: translateY(0) rotate(180deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(180deg);
+  }
+}
+
+.ps-right-arrow svg {
+  animation: ps-bounce-arrow-down 2s infinite;
+  filter: drop-shadow(0 0 8px rgba(242, 48, 48, 0.3));
+  transform: rotate(180deg); /* Rotates arrow to point down */
+}
+
+.ps-arrow-text {
+  display: block;
+  color: #f23030;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  font-family: 'Aldrich';
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Load More Button */
+.ps-portfolio-cta {
+  text-align: center;
+  opacity: 0;
+}
+
+.ps-portfolio-cta.ps-animate-fade-in {
+  opacity: 1;
+  transition: opacity 0.8s ease-out 0.5s;
+}
+
+.ps-load-more-btn {
+  background: linear-gradient(135deg, #bf0413, #f23030);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-family: 'Aldrich';
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ps-load-more-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(242, 48, 48, 0.3);
+}
+
+.ps-btn-arrow {
+  transition: transform 0.3s ease;
+}
+
+.ps-load-more-btn:hover .ps-btn-arrow {
+  transform: translate(3px, -3px);
+}
+
+/* Animations */
+@keyframes ps-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateX(-50%) scale(1.05);
+  }
+}
+
+@keyframes ps-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes ps-slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes ps-bounce-arrow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+/* Background Elements */
+.ps-portfolio-section::after {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(242, 48, 48, 0.1) 0%, transparent 70%);
+  animation: ps-float 8s ease-in-out infinite;
+}
+
+.ps-portfolio-section::before {
+  content: '';
+  position: absolute;
+  bottom: 10%;
+  right: 5%;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(191, 4, 19, 0.1) 0%, transparent 70%);
+  animation: ps-float 6s ease-in-out infinite reverse;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .ps-portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .ps-portfolio-grid.ps-grid-with-right-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .ps-main-content-wrapper.ps-with-side-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .ps-right-side-content {
+    position: static;
+    max-height: none;
+    margin-left: 0; /* Reset margin on responsive */
+  }
+  
+  .ps-right-content-inner {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .ps-portfolio-section {
+    padding: 60px 0;
+  }
+  
+  .ps-portfolio-container {
+    padding: 0 1.5rem;
+  }
+  
+  .ps-portfolio-title {
+    font-size: 2.5rem;
+  }
+  
+  .ps-portfolio-subtitle {
+    font-size: 1.125rem;
+  }
+  
+  .ps-portfolio-filters {
+    gap: 0.5rem;
+  }
+  
+  .ps-filter-btn {
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+  }
+  
+  .ps-portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .ps-portfolio-grid.ps-grid-with-right-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .ps-right-content-inner {
+    padding: 0;
+  }
+  
+  .ps-right-title {
+    font-size: 1.3rem;
+  }
+  
+  .ps-card-image-container {
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ps-portfolio-title {
+    font-size: 2rem;
+  }
+  
+  .ps-right-title {
+    font-size: 1.1rem;
+  }
+  
+  .ps-right-description {
+    font-size: 0.85rem;
+  }
+  
+  .ps-card-content {
+    padding: 1rem;
+  }
+  
+  .ps-card-title {
+    font-size: 1rem;
+  }
+  
+  .ps-card-description {
+    font-size: 0.85rem;
+  }
+}
+/* Special adjustment for UI/UX only - Move it even more left */
+.ps-main-content-wrapper.ps-with-side-content:has(.ps-uiux-layout) .ps-right-side-content {
+  margin-left: -1rem; /* Move it 2rem more left for UI/UX */
+}

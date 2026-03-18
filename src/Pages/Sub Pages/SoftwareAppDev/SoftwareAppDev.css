@@ -1,0 +1,1117 @@
+/* Software & App Development Page Styles - Updated with Image Expansion */
+.sad-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Hero Section - Updated with new background */
+.sad-hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0c0c2e 0%, #1a1a3e 100%);
+}
+
+.sad-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.4;
+    animation: sadBgZoom 20s ease-in-out infinite;
+}
+
+@keyframes sadBgZoom {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.sad-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    animation: sadOverlayFade 3s ease-in-out infinite alternate;
+}
+
+@keyframes sadOverlayFade {
+    0% {
+        background: rgba(0, 0, 0, 0.4);
+    }
+    100% {
+        background: rgba(0, 0, 0, 0.6);
+    }
+}
+
+/* Updated Content Box */
+.sad-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 900px;
+    width: 90%;
+    padding: 60px 50px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: sadFadeInUp 0.8s ease-out;
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(138, 43, 226, 0.15) inset;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sad-hero-content-inner {
+    width: 100%;
+    max-width: 800px;
+    padding: 0;
+}
+
+@keyframes sadFadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Badge with beat animation - Purple Theme */
+.sad-hero-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #8a2be2, #4b0082);
+    color: white;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-family: 'Aldrich', sans-serif;
+    animation: sadBadgeBeat 2s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(138, 43, 226, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+@keyframes sadBadgeBeat {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 8px 25px rgba(138, 43, 226, 0.3);
+    }
+    15% {
+        transform: scale(1.05);
+        box-shadow: 0 12px 35px rgba(138, 43, 226, 0.4);
+    }
+    30% {
+        transform: scale(1);
+        box-shadow: 0 8px 25px rgba(138, 43, 226, 0.3);
+    }
+    45% {
+        transform: scale(1.03);
+        box-shadow: 0 10px 30px rgba(138, 43, 226, 0.35);
+    }
+    60% {
+        transform: scale(1);
+        box-shadow: 0 8px 25px rgba(138, 43, 226, 0.3);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 8px 25px rgba(138, 43, 226, 0.3);
+    }
+}
+
+.sad-hero-badge::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, #8a2be2, #4b0082, #8a2be2);
+    border-radius: 32px;
+    z-index: -1;
+    opacity: 0;
+    animation: sadBadgeGlow 3s ease-in-out infinite;
+}
+
+@keyframes sadBadgeGlow {
+    0%, 100% {
+        opacity: 0;
+        filter: blur(5px);
+    }
+    50% {
+        opacity: 0.7;
+        filter: blur(10px);
+    }
+}
+
+.sad-hero-title {
+    font-size: 3.2rem;
+    font-weight: 100;
+    background: linear-gradient(135deg, #8a2be2, #9370db);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    font-family: 'HEXCO', sans-serif;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.sad-hero-subtitle {
+    font-size: 1.4rem;
+    color: #c5cae9;
+    margin-bottom: 25px;
+    line-height: 1.6;
+    font-family: 'Aldrich', sans-serif;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+.sad-hero-description {
+    font-size: 1.1rem;
+    color: #9fa8da;
+    line-height: 1.8;
+    margin-bottom: 35px;
+    font-family: 'Aldrich', sans-serif;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.sad-tech-stack {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.sad-tech-item {
+    background: rgba(138, 43, 226, 0.1);
+    color: #9370db;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    border: 1px solid rgba(138, 43, 226, 0.2);
+    font-family: 'Aldrich', sans-serif;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.sad-tech-item:hover {
+    transform: translateY(-3px);
+    background: rgba(138, 43, 226, 0.2);
+    box-shadow: 0 5px 15px rgba(138, 43, 226, 0.2);
+}
+
+/* About Section - UPDATED with image expansion */
+.sad-about-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    position: relative;
+}
+
+.sad-about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.sad-about-text {
+    padding-right: 40px;
+}
+
+.sad-about-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a1a3e;
+    margin-bottom: 20px;
+    position: relative;
+    font-family: 'HEXCO', sans-serif;
+}
+
+.sad-about-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(135deg, #8a2be2, #4b0082);
+    border-radius: 2px;
+}
+
+.sad-about-description {
+    font-size: 1.1rem;
+    color: #424242;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    font-family: 'Aldrich', sans-serif;
+}
+
+/* Read More Button - Purple Theme */
+.sad-read-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #8a2be2, #4b0082);
+    color: white;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Aldrich', sans-serif;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 20px rgba(138, 43, 226, 0.2);
+}
+
+.sad-read-more-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(138, 43, 226, 0.3);
+}
+
+.sad-arrow {
+    transition: transform 0.3s ease;
+}
+
+.sad-read-more-btn:hover .sad-arrow {
+    transform: translateX(5px);
+}
+
+.sad-read-more-btn.expanded .sad-arrow {
+    transform: rotate(180deg);
+}
+
+/* Expanded Content */
+.sad-expanded-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sad-expanded-content.expanded {
+    max-height: 2500px;
+    animation: sadFadeInExpand 0.5s ease-out;
+}
+
+@keyframes sadFadeInExpand {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.sad-expanded-paragraphs {
+    font-family: 'Aldrich', sans-serif;
+}
+
+.sad-expanded-paragraphs p {
+    font-size: 1.05rem;
+    color: #424242;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    border-left: 3px solid #8a2be2;
+    animation: sadParagraphSlide 0.5s ease-out;
+    padding: 15px 20px;
+    background: rgba(138, 43, 226, 0.03);
+    border-radius: 0 8px 8px 0;
+}
+
+@keyframes sadParagraphSlide {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* IMAGE COLUMN LAYOUT - FILLS EMPTY SPACE */
+.sad-about-images-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    height: auto;
+}
+
+/* Main Image - FULL SIZE */
+.sad-about-image-main {
+    position: sticky;
+    top: 120px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(138, 43, 226, 0.1);
+    height: 450px;
+    transition: all 0.3s ease;
+    width: 100%;
+    flex-shrink: 0;
+    animation: sadSlideLeft 0.8s ease-out 0.3s both;
+}
+
+/* When section is expanded, main image becomes relative */
+.sad-image-scroll .sad-about-image-main {
+    position: relative;
+    top: 0 !important;
+}
+
+.sad-about-image-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.sad-about-image-main:hover img {
+    transform: scale(1.05);
+}
+
+@keyframes sadSlideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Extra Images Container - FILLS EMPTY SPACE BELOW */
+.sad-extra-images-fill {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+.sad-extra-images-fill.show {
+    opacity: 1;
+    max-height: 2000px;
+}
+
+/* Individual Extra Image - SAME SIZE AS MAIN IMAGE */
+.sad-extra-image-fill {
+    width: 100%;
+    height: 450px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(138, 43, 226, 0.1);
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    flex-shrink: 0;
+}
+
+/* Image appears one by one */
+.sad-extra-image-fill.visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Stagger the animations */
+.sad-extra-image-fill:nth-child(1).visible {
+    transition-delay: 0.2s;
+}
+
+.sad-extra-image-fill:nth-child(2).visible {
+    transition-delay: 0.4s;
+}
+
+.sad-extra-image-fill:nth-child(3).visible {
+    transition-delay: 0.6s;
+}
+
+/* Image Wrapper */
+.sad-fill-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.sad-fill-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.sad-extra-image-fill:hover .sad-fill-image-wrapper img {
+    transform: scale(1.1);
+}
+
+/* Image Overlay */
+.sad-fill-image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(138, 43, 226, 0.9), transparent);
+    color: white;
+    padding: 30px;
+    transform: translateY(20px);
+    opacity: 0.9;
+    transition: all 0.3s ease;
+}
+
+.sad-extra-image-fill:hover .sad-fill-image-overlay {
+    opacity: 1;
+    background: linear-gradient(to top, rgba(75, 0, 130, 0.9), transparent);
+}
+
+.sad-fill-image-overlay h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-family: 'HEXCO', sans-serif;
+    font-weight: 600;
+}
+
+.sad-fill-image-overlay p {
+    font-size: 1rem;
+    opacity: 0.9;
+    font-family: 'Aldrich', sans-serif;
+    line-height: 1.5;
+}
+
+/* Original Image Overlay (for main image) */
+.sad-image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    padding: 25px;
+    color: white;
+    font-family: 'Aldrich', sans-serif;
+}
+
+.sad-image-overlay h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-family: 'HEXCO', sans-serif;
+}
+
+.sad-image-overlay p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Internship Courses Section - Updated Colors */
+.sad-courses-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #1a1a3e 0%, #0c0c2e 100%);
+}
+
+.sad-section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.sad-section-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #9370db, #8a2be2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 15px;
+    font-family: 'HEXCO', sans-serif;
+}
+
+.sad-section-subtitle {
+    font-size: 1.2rem;
+    color: #c5cae9;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+    font-family: 'Aldrich', sans-serif;
+}
+
+/* Feedback Section Titles */
+.sad-section-title1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #1a1a3e;
+    margin-bottom: 15px;
+    font-family: 'HEXCO', sans-serif;
+}
+
+.sad-section-subtitle1 {
+    font-size: 1.2rem;
+    color: #424242;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+    font-family: 'Aldrich', sans-serif;
+}
+
+.sad-courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.sad-course-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    animation: sadFadeInUp 0.5s ease-out;
+    animation-fill-mode: both;
+}
+
+.sad-course-card:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+.sad-course-card:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.sad-course-card:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+.sad-course-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(138, 43, 226, 0.3);
+    box-shadow: 0 20px 40px rgba(138, 43, 226, 0.1);
+}
+
+.sad-course-header {
+    padding: 25px 25px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sad-course-logo {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    display: inline-block;
+    animation: sadIconFloat 3s ease-in-out infinite;
+}
+
+@keyframes sadIconFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.sad-course-title {
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 10px;
+    font-family: 'HEXCO', sans-serif;
+}
+
+.sad-course-desc {
+    color: #c5cae9;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    font-family: 'Aldrich', sans-serif;
+}
+
+.sad-course-features {
+    padding: 20px 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sad-features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sad-feature-item {
+    display: flex;
+    align-items: center;
+    color: #c5cae9;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    font-family: 'Aldrich', sans-serif;
+}
+
+.sad-feature-item::before {
+    content: '✓';
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, #8a2be2, #9370db);
+    color: white;
+    border-radius: 50%;
+    margin-right: 10px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.sad-course-details {
+    padding: 20px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sad-detail-item {
+    text-align: center;
+}
+
+.sad-detail-label {
+    font-size: 0.8rem;
+    color: #c5cae9;
+    margin-bottom: 5px;
+    font-family: 'Aldrich', sans-serif;
+}
+
+.sad-detail-value {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #9370db;
+    font-family: 'HEXCO', sans-serif;
+}
+
+/* Feedback Section - Updated Colors - FULLY RESPONSIVE */
+.sad-feedback-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+}
+
+.sad-feedback-slider {
+    position: relative;
+    overflow: hidden;
+}
+
+.sad-feedback-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sad-feedback-slide {
+    min-width: 100%;
+    padding: 0 20px;
+}
+
+.sad-feedback-card {
+    background: white;
+    padding: 50px 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(138, 43, 226, 0.1);
+    border: 1px solid rgba(138, 43, 226, 0.2);
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    animation: sadCardPop 0.5s ease-out;
+    border-left: 4px solid #8a2be2;
+    animation: sadCardPulse 4s ease-in-out infinite;
+}
+
+@keyframes sadCardPulse {
+    0%, 100% { border-left-color: #8a2be2; }
+    50% { border-left-color: #9370db; }
+}
+
+@keyframes sadCardPop {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.sad-feedback-quote {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    font-size: 2.5rem;
+    color: #8a2be2;
+    opacity: 0.2;
+}
+
+.sad-feedback-text {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    font-style: italic;
+    font-family: 'Aldrich', sans-serif;
+    text-align: center;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sad-feedback-author {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+}
+
+.sad-author-info {
+    text-align: center;
+}
+
+.sad-author-info h4 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 5px;
+    font-family: 'HEXCO', sans-serif;
+}
+
+.sad-author-info p {
+    font-size: 0.9rem;
+    color: #666;
+    font-family: 'Aldrich', sans-serif;
+}
+
+.sad-slider-nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 35px;
+}
+
+.sad-slider-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #c5cae9;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sad-slider-dot.active {
+    background: linear-gradient(135deg, #8a2be2, #9370db);
+    transform: scale(1.3);
+    animation: sadDotPulse 2s ease-in-out infinite;
+}
+
+@keyframes sadDotPulse {
+    0%, 100% { transform: scale(1.3); }
+    50% { transform: scale(1.5); }
+}
+
+.sad-slider-arrows {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    padding: 0 10px;
+    z-index: 2;
+}
+
+.sad-slider-arrow {
+    background: white;
+    border: 1px solid rgba(138, 43, 226, 0.2);
+    width: 45px;
+    height: 45px;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(138, 43, 226, 0.1);
+    transition: all 0.3s ease;
+    color: #8a2be2;
+    font-weight: bold;
+    font-family: 'HEXCO', sans-serif;
+    font-size: 1.2rem;
+}
+
+.sad-slider-arrow:hover {
+    background: linear-gradient(135deg, #8a2be2, #9370db);
+    color: white;
+    transform: scale(1.1);
+    animation: sadArrowSpin 0.5s ease;
+}
+
+@keyframes sadArrowSpin {
+    from { transform: scale(1.1) rotate(0deg); }
+    to { transform: scale(1.1) rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .sad-hero-content {
+        width: calc(100% - 60px);
+        padding: 50px 40px;
+        max-width: 850px;
+    }
+    
+    .sad-hero-title {
+        font-size: 2.8rem;
+    }
+    
+    .sad-about-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .sad-about-text {
+        padding-right: 0;
+    }
+    
+    /* On mobile, image is always relative */
+    .sad-about-image-main {
+        position: relative !important;
+        top: 0 !important;
+        height: 400px;
+    }
+    
+    .sad-image-scroll .sad-about-image-main {
+        position: relative !important;
+    }
+    
+    .sad-section-title,
+    .sad-section-title1 {
+        font-size: 2.4rem;
+    }
+    
+    .sad-courses-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .sad-feedback-card {
+        padding: 40px 30px;
+    }
+    
+    .sad-feedback-text {
+        font-size: 1.1rem;
+    }
+    
+    /* Adjust image sizes on tablet */
+    .sad-extra-image-fill {
+        height: 400px;
+    }
+    
+    .sad-fill-image-overlay {
+        padding: 25px;
+    }
+    
+    .sad-fill-image-overlay h4 {
+        font-size: 1.3rem;
+    }
+    
+    .sad-fill-image-overlay p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .sad-hero-section {
+        min-height: 100vh;
+        padding: 60px 0;
+    }
+    
+    .sad-hero-content {
+        width: calc(100% - 40px);
+        padding: 40px 30px;
+        margin: 0 auto;
+    }
+    
+    .sad-hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .sad-hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .sad-hero-description {
+        font-size: 1rem;
+    }
+    
+    .sad-about-title {
+        font-size: 2rem;
+    }
+    
+    .sad-section-title,
+    .sad-section-title1 {
+        font-size: 2.2rem;
+    }
+    
+    .sad-courses-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .sad-feedback-card {
+        padding: 35px;
+    }
+    
+    .sad-slider-arrows {
+        position: relative;
+        transform: none;
+        margin-top: 25px;
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    .sad-slider-arrow {
+        border-radius: 0;
+    }
+    
+    /* Adjust image sizes on mobile */
+    .sad-about-image-main {
+        height: 350px;
+    }
+    
+    .sad-extra-image-fill {
+        height: 350px;
+    }
+    
+    .sad-fill-image-overlay {
+        padding: 20px;
+    }
+    
+    .sad-fill-image-overlay h4 {
+        font-size: 1.2rem;
+    }
+    
+    .sad-fill-image-overlay p {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .sad-hero-content {
+        width: calc(100% - 30px);
+        padding: 35px 25px;
+    }
+    
+    .sad-hero-title {
+        font-size: 1.9rem;
+    }
+    
+    .sad-hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .sad-hero-description {
+        font-size: 0.95rem;
+    }
+    
+    .sad-feedback-card {
+        padding: 25px;
+    }
+    
+    .sad-feedback-text {
+        font-size: 1.05rem;
+    }
+    
+    .sad-tech-stack {
+        gap: 8px;
+    }
+    
+    .sad-tech-item {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+    
+    /* Adjust image sizes on small screens */
+    .sad-about-image-main {
+        height: 300px;
+    }
+    
+    .sad-extra-image-fill {
+        height: 300px;
+    }
+    
+    .sad-fill-image-overlay {
+        padding: 15px;
+    }
+    
+    .sad-fill-image-overlay h4 {
+        font-size: 1.1rem;
+    }
+    
+    .sad-fill-image-overlay p {
+        font-size: 0.8rem;
+    }
+    
+    .sad-image-overlay {
+        padding: 20px;
+    }
+    
+    .sad-image-overlay h3 {
+        font-size: 1.3rem;
+    }
+    
+    .sad-image-overlay p {
+        font-size: 0.8rem;
+    }
+}
+
+/* Font imports for Aldrich and HEXCO fonts */
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+
+@font-face {
+    font-family: 'HEXCO';
+    src: url('https://fonts.cdnfonts.com/s/24720/HEXCO Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #8a2be2, #9370db);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #7a1bd2, #8360cb);
+}

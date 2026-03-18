@@ -1,0 +1,14 @@
+# .NET
+bin/
+obj/
+
+# Node
+node_modules/
+.cache/
+
+# Build
+dist/
+build/
+
+# Env
+.env

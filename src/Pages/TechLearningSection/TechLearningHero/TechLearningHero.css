@@ -1,0 +1,510 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800;900&family=Inter:wght@400;500;600;700&display=swap');
+/* 
+@font-face {
+    font-family: 'Migae';
+    src: url('../../../assets/Fonts/Migae-Semibold.otf') format('opentype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+} */
+
+/* Main Container and Deep Purple Background */
+.tlh-peoplr-container {
+    width: 100%;
+    height: 950px;
+    /* Very dark background for bottom half */
+    background: #03024b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    color: #ffffff;
+    padding-bottom: 4rem;
+    overflow: hidden;
+}
+
+/* Top Purple Block */
+/* .tlh-peoplr-top-section {
+    width: calc(100% - 40px);
+    max-width: 1400px;
+    height: 600px;
+    background: linear-gradient(180deg, #3e1abf 0%, #1e0969 100%);
+    border-radius: 40px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 1.5rem 0rem;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+
+} */
+
+/* Header/Nav Mimicking */
+.tlh-peoplr-header {
+    width: 100%;
+    max-width: 1400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    margin-bottom: 2rem;
+}
+
+
+/* Reusable Lime Pill Button */
+.tlh-pill-btn-lime {
+    background: #d8ff4a;
+    /* Vibrant Lime Green */
+    color: #0d121d;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 0.5rem 0.6rem 0.5rem 1.4rem;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(216, 255, 74, 0.3);
+}
+
+.tlh-pill-btn-lime:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(216, 255, 74, 0.5);
+    color: #0d121d;
+}
+
+.tlh-pill-icon {
+    background: #111a2f;
+    /* Dark inner circle */
+    color: #d8ff4a;
+    /* Lime icon */
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+}
+
+/* Headline */
+.tlh-peoplr-title {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 4.5rem;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    margin-bottom: 1rem;
+    color: #ffffff;
+    transform: translateY(-30px);
+
+}
+
+/* Image Stage */
+.tlh-peoplr-stage {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+}
+
+.tlh-peoplr-image-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    /* Center group size */
+    z-index: 20;
+    /* Keep higher than marquee z-index 10 */
+}
+
+.tlh-peoplr-students {
+    width: 800px;
+    height: auto;
+    display: block;
+    transform: translateY(-260px) translateX(0px);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin-bottom: 2rem;
+    /* Give space for marquee under the students' bottom inside the purple card */
+}
+
+/* Centered CTA Buttons (Above Marquee) */
+.tlh-center-cta-group {
+    position: absolute;
+    bottom: 0px;
+    /* The student image is translated up by -280px, so we lift the buttons to overlap */
+    left: 50%;
+    transform: translateX(-50%) translateY(-280px);
+    display: flex;
+    gap: 1.5rem;
+    z-index: 50;
+    transform: translateY(-560px)translateX(-200px);
+}
+
+/* Floating Stat Cards (Glassmorphism Purple) */
+.tlh-float-card {
+    position: absolute;
+    /* Deep translucent purple blending into background */
+    background: rgba(56, 17, 196, 0.6);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 1.5rem;
+    width: 200px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    z-index: 5;
+}
+
+.tlh-float-left {
+    top: 20%;
+    left: 0;
+    transform: translateY(-250px) translateX(-200px);
+    height: auto;
+    min-height: 170px;
+}
+
+.tlh-float-right {
+    top: 15%;
+    right: 0;
+    height: auto;
+    min-height: 170px;
+    transform: translateY(-200px) translateX(200px);
+}
+
+.tlh-card-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+}
+
+.tlh-card-top-row.right-align {
+    justify-content: flex-end;
+}
+
+.tlh-huge-num {
+    font-family: 'Outfit', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.tlh-huge-num sup {
+    font-size: 1.2rem;
+    font-weight: 700;
+    top: -1em;
+}
+
+.tlh-card-desc {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.3;
+    margin-top: 6px;
+}
+
+/* Small CTA button inside stat cards — no animation */
+.tlh-stat-cta {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 14px;
+    border-radius: 20px;
+    background: #d8ff4a;
+    color: #111;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    transition: none;
+    cursor: pointer;
+    border: none;
+    white-space: nowrap;
+}
+
+/* Small Stat Icons inside Floating Cards */
+.tlh-card-icon-pill {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+}
+
+.lime-icon {
+    background: #d8ff4a;
+    color: #000;
+}
+
+.dark-icon {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Sliding Marquee Ribbon */
+/* Parent card has overflow:hidden + border-radius — this clips the marquee to the card edges exactly */
+.tlh-marquee-container {
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    overflow: hidden;
+    z-index: 30;
+    display: flex;
+    padding: 0;
+}
+
+.tlh-marquee-track {
+    display: flex;
+    gap: 2rem;
+    padding: 10px 0;
+    width: max-content;
+    animation: tlhScrollMarquee 30s linear infinite;
+}
+
+@keyframes tlhScrollMarquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+
+    /* Scrolls precisely half its duplicated length */
+}
+
+/* Individual Marquee Cards */
+.tlh-marquee-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    padding: 0.55rem 1.4rem;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.8);
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease;
+    margin-left: 12px;
+    /* Gap between cards */
+    flex-shrink: 0;
+}
+
+.tlh-marquee-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+}
+
+/* Education Badge Icons (used in bottom card footers) */
+.tlh-icon-badges {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.tlh-edu-badge {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    color: #ffffff;
+}
+
+/* Bottom 3 Features Grid */
+.tlh-peoplr-bottom-grid {
+    width: calc(100% - 40px);
+    max-width: 1400px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 1rem;
+    transform: translateY(-460px);
+    /* Spacing below the purple card */
+}
+
+.tlh-bottom-card {
+    /* Very dark card matching reference bottom cards */
+    background: #1c113b;
+    border-radius: 20px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.tlh-bottom-card:hover {
+    transform: translateY(-5px);
+    background: #23164a;
+}
+
+.tlh-bcard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.tlh-bcard-header h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0;
+    color: #ffffff;
+}
+
+.tlh-card-arrow {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.tlh-bottom-card:hover .tlh-card-arrow {
+    color: #ffffff;
+}
+
+.tlh-bottom-card p {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+    margin: 0 0 1.5rem 0;
+    flex-grow: 1;
+}
+
+.tlh-card-footer {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+/* Small footer pill indicators */
+.tlh-footer-pill {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.lime-footer {
+    background: rgba(216, 255, 74, 0.15);
+    color: #d8ff4a;
+}
+
+/* Tiny circular icons in footer grid */
+.tlh-circle-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.tlh-circle-icon.alpha {
+    background: #3b2c85;
+    /* darker purple */
+}
+
+.tlh-social-icon {
+    width: 28px;
+    height: 28px;
+    background: #0077b5;
+    /* LinkedIn Blue */
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.75rem;
+}
+
+.tlh-avatar-stack {
+    display: flex;
+    align-items: center;
+}
+
+.tlh-avatar-stack img {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid #190a4d;
+    margin-left: -8px;
+}
+
+.tlh-avatar-stack img:first-child {
+    margin-left: 0;
+}
+
+.tlh-plus-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #3b2c85;
+    border: 2px solid #1c113b;
+    margin-left: -8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .tlh-peoplr-bottom-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .tlh-peoplr-title {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .tlh-peoplr-bottom-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tlh-float-card {
+        position: static;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .tlh-peoplr-stage {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tlh-glass-ribbon {
+        position: static;
+        transform: none;
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        margin-top: 2rem;
+    }
+}
