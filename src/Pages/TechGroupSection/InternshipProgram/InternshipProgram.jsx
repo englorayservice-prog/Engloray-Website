@@ -34,7 +34,7 @@
 //     // Handle form submission logic here
 //     console.log('Form submitted:', formData);
 //     setIsSubmitted(true);
-    
+
 //     // Reset form after 3 seconds
 //     setTimeout(() => {
 //       setIsSubmitted(false);
@@ -150,7 +150,7 @@
 //                   ×
 //                 </button>
 //               </div>
-              
+
 //               <div className="modal-content">
 //                 {isSubmitted ? (
 //                   <div className="success-message">
@@ -267,24 +267,27 @@
 // };
 
 // export default InternshipProgram;
- 
-import React, { useState } from 'react';
+
+import React, { useState, useRef, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { 
-  faPalette, 
-  faDesktop, 
-  faUserCheck, 
-  faCode, 
+import {
+  faPalette,
+  faDesktop,
+  faUserCheck,
+  faCode,
   faArrowRight,
   faCheckCircle,
-  faPaperclip
+  faPaperclip,
+  faChevronLeft,
+  faChevronRight
 } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
+import gsap from 'gsap';
 import './InternshipProgram.css';
 
 // Add icons to the library
-library.add(faPalette, faDesktop, faUserCheck, faCode, faArrowRight, faCheckCircle, faPaperclip);
+library.add(faPalette, faDesktop, faUserCheck, faCode, faArrowRight, faCheckCircle, faPaperclip, faChevronLeft, faChevronRight);
 
 const InternshipProgram = () => {
   const navigate = useNavigate();
@@ -298,7 +301,29 @@ const InternshipProgram = () => {
 
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [showForm, setShowForm] = useState(false);
-  const [selectedRole, setSelectedRole] = useState('');
+  const [activeRoleIndex, setActiveRoleIndex] = useState(0);
+  const cardsRef = useRef([]);
+
+  useEffect(() => {
+    // GSAP animation for smooth width transitioning
+    cardsRef.current.forEach((card, index) => {
+      if (!card) return;
+      if (index === activeRoleIndex) {
+        gsap.to(card, { flex: 4.5, duration: 0.6, ease: "power3.inOut" });
+      } else {
+        gsap.to(card, { flex: 1, duration: 0.6, ease: "power3.inOut" });
+      }
+    });
+  }, [activeRoleIndex]);
+
+  const handleNextRole = () => {
+    setActiveRoleIndex((prev) => (prev + 1) % roles.length);
+  };
+
+  const handlePrevRole = () => {
+    setActiveRoleIndex((prev) => (prev - 1 + roles.length) % roles.length);
+  };
+  // const [selectedRole, setSelectedRole] = useState('');
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -374,6 +399,14 @@ const InternshipProgram = () => {
     navigate('/allProgramsPage');
   };
 
+  // Skills for each role (ordered by role index 0-3)
+  const roleSkills = [
+    ['Photoshop', 'Illustrator', 'Figma', 'Canva', 'Branding', 'Typography', 'Social Media', 'Packaging'],
+    ['HTML', 'CSS', 'JavaScript', 'React', 'Tailwind CSS', 'Node.js', 'Git', 'REST APIs'],
+    ['Figma', 'Adobe XD', 'Wireframing', 'Prototyping', 'User Research', 'Interaction Design', 'Usability Testing', 'Design Systems'],
+    ['Java', 'Spring Boot', 'Python', 'REST APIs', 'MySQL', 'Git', 'Docker', 'System Design'],
+  ];
+
   // Icon colors for each role
   const roleColors = {
     graphicDesigner: '#FFD166',    // Red
@@ -389,7 +422,7 @@ const InternshipProgram = () => {
       title: "Graphic Designer",
       icon: faPalette,
       iconColor: roleColors.graphicDesigner,
-      description: "Create stunning visual designs and branding materials",
+      description: "Create stunning visual designs and branding materials that communicate brand identity effectively, engage audiences, enhance marketing campaigns, and deliver creative solutions.",
       route: "/GraphicDesignerInternPage"
     },
     {
@@ -397,7 +430,7 @@ const InternshipProgram = () => {
       title: "Website Developer",
       icon: faDesktop,
       iconColor: roleColors.websiteDeveloper,
-      description: "Build responsive and interactive web applications",
+      description: "Build responsive and interactive web applications using modern technologies, ensuring fast performance, user-friendly interfaces, secure functionality, and seamless experiences across devices.",
       route: "/websiteDeveloperInternPage"
     },
     {
@@ -405,7 +438,7 @@ const InternshipProgram = () => {
       title: "UI/UX Designer",
       icon: faUserCheck,
       iconColor: roleColors.uiUxDesigner,
-      description: "Design intuitive user interfaces and experiences",
+      description: "Design intuitive user interfaces and user experiences that enhance usability, improve accessibility, engage users effectively, and create seamless digital interactions across platforms.",
       route: "/uiuxDesignerInternPage"
     },
     {
@@ -413,7 +446,7 @@ const InternshipProgram = () => {
       title: "Software Developer",
       icon: faCode,
       iconColor: roleColors.softwareDeveloper,
-      description: "Develop robust software solutions and applications",
+      description: "Develop robust software solutions and scalable applications using modern technologies, ensuring high performance, clean architecture, secure functionality, maintainability, and seamless integration.",
       route: "/SoftwareDeveloperInternPage"
     }
   ];
@@ -423,12 +456,12 @@ const InternshipProgram = () => {
       {/* Floating Arrow with FontAwesome Icon */}
       <div className="tgi-floating-arrow" onClick={handleArrowClick}>
         <div className="tgi-arrow-symbol">
-          <FontAwesomeIcon 
-            icon={faArrowRight} 
-            style={{ 
+          <FontAwesomeIcon
+            icon={faArrowRight}
+            style={{
               color: '#fe0000fe',
               fontSize: '1.5rem'
-            }} 
+            }}
           />
         </div>
         <div className="tgi-arrow-glow"></div>
@@ -439,64 +472,111 @@ const InternshipProgram = () => {
         <div className="tgi-internship-header">
           <span className="tgi-benefits-main-badge">Career Opportunity</span>
           <h2 className="tgi-internship-title">Free Internship Program</h2>
+          <div className="tgi-internship-step">
+            Create your first step with Engloray
+
+          </div>
           <p className="tgi-internship-subtitle">
-            Kickstart your career with hands-on experience and expert mentorship
+            Join our intensive program designed to transform beginners into industry-ready professionals
           </p>
-          
+
           {/* View Programs Button with FontAwesome Icon */}
-          <button 
+          <button
             className="tgi-view-programs-btn"
             onClick={handleViewPrograms}
           >
             View All Programs
             <span className="tgi-btn-arrow">
-              <FontAwesomeIcon 
-                icon={faArrowRight} 
-                style={{ 
+              <FontAwesomeIcon
+                icon={faArrowRight}
+                style={{
                   color: '#ffffff',
                   fontSize: '1rem',
-                  marginLeft: '8px'
-                }} 
+                  marginLeft: '1px'
+                }}
               />
             </span>
           </button>
         </div>
 
-        {/* Available Roles - 4 Cards in a Row */}
+        {/* Available Roles - Accordion Cards */}
         <div className="tgi-roles-section">
-          <h3 className="tgi-section-title">Available Roles</h3>
+          <div className="tgi-roles-header">
+            <h3 className="tgi-section-title">Available Roles</h3>
+            <div className="tgi-roles-nav">
+              <button className="tgi-nav-btn" onClick={handlePrevRole}>
+                <FontAwesomeIcon icon={faChevronLeft} />
+              </button>
+              <button className="tgi-nav-btn" onClick={handleNextRole}>
+                <FontAwesomeIcon icon={faChevronRight} />
+              </button>
+            </div>
+          </div>
           <div className="tgi-roles-grid">
             {roles.map((role, index) => (
-              <div 
+              <div
                 key={role.id}
-                className="tgi-role-card"
+                ref={el => cardsRef.current[index] = el}
+                data-index={index}
+                className={`tgi-role-card ${index === activeRoleIndex ? 'active' : 'collapsed'}`}
                 style={{ animationDelay: `${index * 0.2}s` }}
-                onClick={() => handleRoleClick(role)}
+                onClick={() => {
+                  if (activeRoleIndex !== index) {
+                    setActiveRoleIndex(index);
+                  } else {
+                    handleRoleClick(role);
+                  }
+                }}
               >
                 <div className="tgi-role-icon">
-                  <FontAwesomeIcon 
-                    icon={role.icon} 
-                    style={{ 
-                      color: role.iconColor,
+                  <FontAwesomeIcon
+                    icon={role.icon}
+                    style={{
+                      color: 'white',
                       fontSize: '2.5rem'
-                    }} 
+                    }}
                   />
                 </div>
                 <div className="tgi-role-glow"></div>
                 <h4 className="tgi-role-title">{role.title}</h4>
                 <p className="tgi-role-description">{role.description}</p>
                 <div className="tgi-click-indicator">
-                  View Details 
-                  <FontAwesomeIcon 
-                    icon={faArrowRight} 
-                    style={{ 
+                  View Details
+                  <FontAwesomeIcon
+                    icon={faArrowRight}
+                    style={{
                       color: role.iconColor,
                       fontSize: '0.9rem',
                       marginLeft: '5px'
-                    }} 
+                    }}
                   />
                 </div>
                 <div className="tgi-role-hover-effect"></div>
+                {/* Tools & Skills Widget — shown on active card for all roles */}
+                {index === activeRoleIndex && (
+                  <div className={`tgi-skills-widget${index === 2 ? ' tgi-skills-widget--uiux' : ''}`}>
+                    <p className="tgi-skills-widget-title">Tools & Skills</p>
+                    <div className="tgi-skills-grid">
+                      {roleSkills[index].map(skill => (
+                        <span key={skill} className="tgi-skill-pill">{skill}</span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+                {/* View Internship Details Pill Button — shown on active card */}
+                {index === activeRoleIndex && (
+                  <button
+                    className={`tgi-view-details-btn${(index === 2 || index === 3) ? ' tgi-view-details-btn--light' : ''}`}
+                    onClick={(e) => { e.stopPropagation(); handleRoleClick(role); }}
+                  >
+                    <span className="tgi-view-details-label">View Internship Details</span>
+                    <span className="tgi-view-details-arrow">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                        <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </span>
+                  </button>
+                )}
               </div>
             ))}
           </div>
@@ -508,24 +588,24 @@ const InternshipProgram = () => {
             <div className="tgi-form-modal">
               <div className="tgi-modal-header">
                 <h3 className="tgi-modal-title">Join Our Internship Program</h3>
-                <button 
+                <button
                   className="tgi-close-modal"
                   onClick={() => setShowForm(false)}
                 >
                   ×
                 </button>
               </div>
-              
+
               <div className="tgi-modal-content">
                 {isSubmitted ? (
                   <div className="tgi-success-message">
                     <div className="tgi-success-icon">
-                      <FontAwesomeIcon 
-                        icon={faCheckCircle} 
-                        style={{ 
+                      <FontAwesomeIcon
+                        icon={faCheckCircle}
+                        style={{
                           color: '#06D6A0',
                           fontSize: '3rem'
-                        }} 
+                        }}
                       />
                     </div>
                     <h4>Application Submitted!</h4>
@@ -619,12 +699,12 @@ const InternshipProgram = () => {
                         />
                         <label htmlFor="tgi-resume" className="tgi-file-label">
                           <span className="tgi-file-icon">
-                            <FontAwesomeIcon 
-                              icon={faPaperclip} 
-                              style={{ 
+                            <FontAwesomeIcon
+                              icon={faPaperclip}
+                              style={{
                                 color: '#666',
                                 fontSize: '1rem'
-                              }} 
+                              }}
                             />
                           </span>
                           {formData.resume ? formData.resume.name : 'Choose file (PDF, DOC, Images)'}

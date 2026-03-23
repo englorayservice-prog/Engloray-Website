@@ -14,8 +14,9 @@ const EnrollementForm = () => {
   const [learningErrors, setLearningErrors] = useState({});
   const [learningIsSubmitting, setLearningIsSubmitting] = useState(false);
   const [learningIsSubmitted, setLearningIsSubmitted] = useState(false);
-  const [showQualificationSuggestions, setShowQualificationSuggestions] = useState(false);
+  // const [showQualificationSuggestions, setShowQualificationSuggestions] = useState(false);
 
+  /*
   const qualificationSuggestions = [
     'High School',
     'Diploma',
@@ -26,6 +27,7 @@ const EnrollementForm = () => {
     'Professional Certificate',
     'Other'
   ];
+  */
 
   const courseOptions = [
     'Java Full Stack Development',
@@ -33,10 +35,12 @@ const EnrollementForm = () => {
     'Graphic Design'
   ];
 
+  /*
   const learningModeOptions = [
     { value: 'online', label: 'Online' },
     { value: 'offline', label: 'Offline' }
   ];
+  */
 
   const learningHandleChange = (e) => {
     const { name, value } = e.target;
@@ -53,12 +57,15 @@ const EnrollementForm = () => {
       }));
     }
 
+    /*
     // Show suggestions for qualification
     if (name === 'learningQualification') {
       setShowQualificationSuggestions(value.length > 0);
     }
+    */
   };
 
+  /*
   const learningHandleQualificationSelect = (qualification) => {
     setLearningFormData(prev => ({
       ...prev,
@@ -80,6 +87,7 @@ const EnrollementForm = () => {
       }));
     }
   };
+  */
 
   const learningValidateForm = () => {
     const newLearningErrors = {};
@@ -170,7 +178,7 @@ const learningHandleSubmit = async (e) => {
     });
     setLearningErrors({});
     setLearningIsSubmitted(false);
-    setShowQualificationSuggestions(false);
+    // setShowQualificationSuggestions(false);
   };
 
   if (learningIsSubmitted) {

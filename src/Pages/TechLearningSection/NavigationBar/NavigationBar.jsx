@@ -1,9 +1,28 @@
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import logo from '../../../assets/3.png';
 import SearchBar from '../../../Components/SearchBar/SearchBar';
 import { Helmet } from 'react-helmet';
 import './NavigationBar.css';
+
+// Updated navItems with proper navigation logic
+const navItems = [
+  { name: 'Home', href: '#home', id: 'home' },
+  { name: 'Courses', href: '#courses', id: 'courses' },
+  { name: 'Programs', href: '#programs', id: 'programs' },
+  { name: 'Feedback', href: '#feedback', id: 'feedback' },
+  { name: 'Contact', href: '#contact', id: 'contact' }
+];
+
+// Updated explore sections
+const exploreSections = [
+  { name: 'Graphic Design', href: '/graphicsDesignCoursePage' },
+  { name: 'Ui/Ux Course', href: '/uiuxDesignCoursePage' },
+  { name: 'Mentor Learning', href: '/mentorshipLearningPage' },
+  { name: 'Project Learning', href: '/projectBasedLearningPage' },
+  { name: 'Careers', href: '/CareersPage' },
+  { name: 'Workshops', href: '/workshopsPage' }
+];
 
 const NavigationBar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -25,27 +44,8 @@ const NavigationBar = () => {
   const isHomePage = window.location.pathname === '/';
   const isLearningHomePage = window.location.pathname === '/tech-learning';
 
-  // Updated navItems with proper navigation logic
-  const navItems = [
-    { name: 'Home', href: '#home', id: 'home' },
-    { name: 'Courses', href: '#courses', id: 'courses' },
-    { name: 'Programs', href: '#programs', id: 'programs' },
-    { name: 'Feedback', href: '#feedback', id: 'feedback' },
-    { name: 'Contact', href: '#contact', id: 'contact' }
-  ];
-
-  // Updated explore sections
-  const exploreSections = [
-    { name: 'Graphic Design', href: '/graphicsDesignCoursePage' },
-    { name: 'Ui/Ux Course', href: '/uiuxDesignCoursePage' },
-    { name: 'Mentor Learning', href: '/mentorshipLearningPage' },
-    { name: 'Project Learning', href: '/projectBasedLearningPage' },
-    { name: 'Careers', href: '/CareersPage' },
-    { name: 'Workshops', href: '/workshopsPage' }
-  ];
-
   // Function to scroll to section with retry logic
-  const scrollToSection = (sectionId, retryCount = 0) => {
+  const scrollToSection = useCallback((sectionId, retryCount = 0) => {
     const element = document.getElementById(sectionId);
 
     if (element) {
@@ -72,7 +72,7 @@ const NavigationBar = () => {
       return false;
     }
     return false;
-  };
+  }, []);
 
   // Function to handle navigation
   const handleNavigation = (itemName, itemId) => {
@@ -115,9 +115,7 @@ const NavigationBar = () => {
     }
   };
 
-  const toggleExplore = () => {
-    setIsExploreOpen(!isExploreOpen);
-  };
+
 
   // Handle hash in URL when page loads
   useEffect(() => {
@@ -142,7 +140,7 @@ const NavigationBar = () => {
     return () => {
       window.removeEventListener('hashchange', handleHashChange);
     };
-  }, [isLearningHomePage, isHomePage]);
+  }, [isLearningHomePage, isHomePage, scrollToSection]);
 
   return (
     <>

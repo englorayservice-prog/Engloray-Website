@@ -21,13 +21,10 @@ import {
   faBriefcase,
   faCrown,
   faTrophy,
-  faUsers,
   faCalendarCheck,
-  faStar,
   faQuoteLeft,
   faChevronDown,
-  faChevronUp,
-  faArrowRight
+  faChevronUp
 } from '@fortawesome/free-solid-svg-icons';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';

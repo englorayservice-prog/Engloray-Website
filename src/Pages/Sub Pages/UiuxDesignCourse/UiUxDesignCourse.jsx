@@ -16,10 +16,7 @@ import {
   faSave, faClipboardList, faChalkboardTeacher,
   faTrophy, faHandsHelping, faGlobe, faEnvelope,
   faPhone, faMapMarkerAlt, faComment, faChevronLeft,
-  faChevronRight, faCheckCircle, faLock, faUserTie,
-  faCertificate, faUsers, faProjectDiagram, faLightbulb,
-  faTools, faSearch, faDatabase, faCloud, faMagic,
-  faPaintBrush, faCode, faDesktop, faUserGraduate
+  faChevronRight, faCheckCircle, faLock, faLightbulb
 } from '@fortawesome/free-solid-svg-icons';
 
 // Import your assets
@@ -332,7 +329,7 @@ const UiuxDesignCourse = () => {
         clearInterval(autoSlideRef.current);
       }
     };
-  }, []);
+  }, [sixMonthCurriculum.length]);
 
   const nextModule = () => {
     setCurrentModuleIndex((prev) => (prev + 1) % sixMonthCurriculum.length);

@@ -6,7 +6,7 @@
     backdrop-filter: blur(15px);
     padding: 15px 30px;
     border-radius: 70px;
-    box-shadow: 
+    box-shadow:
         0 10px 25px rgba(0, 0, 0, 0.4),
         0 0 0 1px rgba(255, 255, 255, 0.2);
     border: 1.5px solid rgba(255, 255, 255, 0.25);
@@ -17,7 +17,7 @@
 }
 
 .navbar:hover {
-    box-shadow: 
+    box-shadow:
         0 12px 35px rgba(0, 0, 0, 0.5),
         0 0 0 1px rgba(255, 255, 255, 0.3);
     border-color: rgba(255, 255, 255, 0.4);
@@ -214,7 +214,7 @@
 .navConnect {
     padding: 20px 40px;
     border-radius: 50px;
-    font-family: 'HEXCO';   
+    font-family: 'HEXCO';
     background: linear-gradient(267deg, #f23030 0.36%, #bf0413 90.06%);
     font-size: 16px;
     cursor: pointer;
@@ -252,10 +252,11 @@
 /* UPDATED: Red hover color for all menu items except Home */
 .desktop-menu li:not(:first-child) p:hover {
     transform: scale(1.1);
-    color: #bb0707 !important; /* Red color */
+    color: #bb0707 !important;
+    /* Red color */
     text-shadow: 0 0 10px rgba(168, 192, 255, 0.5);
     transition: 0.5s;
-    
+
 }
 
 /* UPDATED: Home menu item keeps original hover effect */
@@ -315,7 +316,8 @@
 .desktop-menu .anchorLink p.active,
 .mobile-menu .anchorLink p.active {
     /* No color change - removed red color */
-    font-weight: normal; /* Remove bold if it was there */
+    font-weight: normal;
+    /* Remove bold if it was there */
 }
 
 .desktop-menu .anchorLink p,
@@ -329,11 +331,13 @@
 
 /* UPDATED: Mobile menu hover colors */
 .mobile-menu li:not(:first-child) .anchorLink:hover p {
-    color: #EF4444 !important; /* Red hover color for mobile */
+    color: #EF4444 !important;
+    /* Red hover color for mobile */
 }
 
 .mobile-menu li:first-child .anchorLink:hover p {
-    color: #a8c0ff !important; /* Original color for home in mobile */
+    color: #a8c0ff !important;
+    /* Original color for home in mobile */
 }
 
 /* Remove default anchor styles */
@@ -485,31 +489,31 @@
         margin: 20px 50px;
         padding: 15px 25px;
     }
-    
+
     .desktop-menu {
         gap: 35px;
         font-size: 16px;
         margin-left: 30px;
     }
-    
+
     .navbar img {
         height: 65px;
         max-width: 200px;
     }
-    
+
     .navbar h1 {
         font-size: 24px;
     }
-    
+
     .desktop-menu li p {
         font-size: 16px;
     }
-    
+
     .navConnect {
         padding: 15px 25px;
         font-size: 16px;
     }
-    
+
     .nav-actions .search-bar {
         min-width: 180px;
         max-width: 220px;
@@ -523,11 +527,11 @@
         padding: 12px 20px;
         background: rgba(255, 255, 255, 0.15);
     }
-    
+
     .navbar-content {
         justify-content: space-between;
     }
-    
+
     /* Logo adjustments for mobile - FIXED */
     .navbar .logo {
         display: flex !important;
@@ -535,7 +539,7 @@
         visibility: visible !important;
         opacity: 1 !important;
     }
-    
+
     .navbar img {
         height: 60px !important;
         max-width: 180px !important;
@@ -543,22 +547,23 @@
         visibility: visible !important;
         opacity: 1 !important;
     }
-    
+
     /* Hide desktop elements on mobile */
     .desktop-menu {
         display: none;
     }
-    
+
     /* Keep the search bar visible in mobile navbar */
     .nav-actions {
-        display: none; /* Hide the desktop search bar container */
+        display: none;
+        /* Hide the desktop search bar container */
     }
-    
+
     /* Show mobile hamburger */
     .navMobOpen {
         display: flex;
     }
-    
+
     /* Mobile Backdrop */
     .mobile-backdrop {
         display: none;
@@ -571,11 +576,11 @@
         backdrop-filter: blur(5px);
         z-index: 999;
     }
-    
+
     .mobile-backdrop.active {
         display: block;
     }
-    
+
     /* Mobile Menu - Fixed Centered Alignment - FIXED SEARCH VISIBILITY */
     .mobile-menu {
         position: fixed;
@@ -599,11 +604,11 @@
         border-left: 2px solid rgba(255, 255, 255, 0.3);
         overflow-y: auto;
     }
-    
+
     .mobile-menu.active {
         right: 0;
     }
-    
+
     .mobile-menu li {
         font-size: 20px;
         padding: 0;
@@ -614,7 +619,7 @@
         justify-content: center;
         align-items: center;
     }
-    
+
     /* Mobile menu links - FIXED */
     .mobile-menu-link {
         display: flex !important;
@@ -629,7 +634,7 @@
         background: none !important;
         border: none !important;
     }
-    
+
     .mobile-menu-link p {
         color: black !important;
         font-family: 'Aldrich', sans-serif;
@@ -642,18 +647,18 @@
         font-weight: 500;
         cursor: pointer !important;
     }
-    
+
     /* Hover effect for mobile menu items */
     .mobile-menu-link:hover p {
         color: #bb0707 !important;
         transform: scale(1.05);
     }
-    
+
     /* Active/click effect */
     .mobile-menu-link:active {
         background-color: rgba(187, 7, 7, 0.1) !important;
     }
-    
+
     /* Search bar in mobile menu - UPDATED & FIXED */
     .mobile-search-container {
         width: 100% !important;
@@ -667,7 +672,7 @@
         opacity: 1 !important;
         border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
     }
-    
+
     .mobile-search-container .search-bar {
         width: 90% !important;
         max-width: 250px !important;
@@ -675,7 +680,7 @@
         visibility: visible !important;
         opacity: 1 !important;
     }
-    
+
     .mobile-menu li:last-child {
         border-bottom: none;
         margin-top: 10px;
@@ -683,7 +688,7 @@
         display: flex;
         justify-content: center;
     }
-    
+
     .mobile-menu li p {
         color: black;
         font-family: 'Aldrich', sans-serif;
@@ -696,7 +701,7 @@
         justify-content: center;
         align-items: center;
     }
-    
+
     /* Force center alignment for all content */
     .mobile-menu li p,
     .mobile-menu li p .anchorLink {
@@ -706,14 +711,14 @@
         text-align: center !important;
         width: 100% !important;
     }
-    
+
     .mobile-menu li p .anchorLink {
         padding: 20px 0 !important;
         width: 100% !important;
         display: block !important;
         text-align: center !important;
     }
-    
+
     .navMobClose {
         display: block;
         position: absolute;
@@ -732,7 +737,7 @@
         align-items: center;
         justify-content: center;
     }
-    
+
     /* Mobile Get Started Button - Centered */
     .navConnectMobile {
         display: block !important;
@@ -752,41 +757,42 @@
         justify-content: center !important;
         align-items: center !important;
     }
-    
+
     .navConnectMobile:hover {
         transform: scale(1.05);
         box-shadow: 0 6px 20px rgba(33, 44, 255, 0.6);
     }
-    
+
     /* Ensure mobile menu items are centered */
     .mobile-menu li {
         justify-content: center !important;
     }
-    
+
     .mobile-menu li p {
         justify-content: center !important;
         text-align: center !important;
     }
-    
+
     .mobile-menu li p .anchorLink {
         justify-content: center !important;
         text-align: center !important;
         margin: 0 auto !important;
     }
-    
+
     /* Ensure links are clickable */
     .mobile-menu li,
     .mobile-menu-link,
     .mobile-menu-link p {
         pointer-events: auto !important;
-        -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
+        -webkit-tap-highlight-color: transparent;
+        /* Remove tap highlight on mobile */
     }
-    
+
     /* Remove last border */
     .mobile-menu li:last-child {
         border-bottom: none !important;
     }
-    
+
     /* Prevent body scroll when menu is open */
     body.menu-open {
         overflow: hidden;
@@ -798,27 +804,27 @@
     .navbar {
         margin: 20px 100px;
     }
-    
+
     .desktop-menu {
         gap: 50px;
         font-size: 18px;
         margin-left: 40px;
     }
-    
+
     .navbar img {
         height: 80px;
         max-width: 250px;
     }
-    
+
     .navbar h1 {
         font-size: 26px;
     }
-    
+
     .navConnect {
         padding: 18px 35px;
         font-size: 20px;
     }
-    
+
     .nav-actions .search-bar {
         min-width: 220px;
         max-width: 280px;
@@ -831,55 +837,55 @@
         margin: 15px 20px;
         padding: 10px 15px;
     }
-    
+
     .navbar .logo {
         display: flex !important;
         visibility: visible !important;
     }
-    
+
     .navbar img {
         height: 50px !important;
         max-width: 150px !important;
         display: block !important;
         visibility: visible !important;
     }
-    
+
     .navMobOpen {
         width: 25px;
         height: 20px;
     }
-    
+
     .mobile-menu {
         width: 280px;
         padding: 80px 0 30px 0;
     }
-    
+
     .mobile-menu li {
         font-size: 18px;
     }
-    
+
     .mobile-menu-link {
         padding: 18px 0 !important;
     }
-    
+
     .mobile-menu-link p {
         font-size: 16px;
     }
-    
+
     .navMobClose {
         top: 20px;
         right: 20px;
         font-size: 25px;
     }
-    
+
     .mobile-search-container {
         padding: 15px !important;
     }
-    
+
     .navConnect {
         display: none !important;
     }
-    
+
     .mobile-search-container .search-bar {
         width: 85% !important;
         max-width: 220px !important;
@@ -888,28 +894,29 @@
 
 /* Tablets - Show both search bar and menu */
 @media only screen and (min-width: 769px) {
+
     /* Ensure search bar is visible on tablets */
     .nav-actions {
         display: flex !important;
         gap: 20px;
     }
-    
+
     .nav-actions .search-bar {
         display: block !important;
         min-width: 160px;
         max-width: 200px;
     }
-    
+
     /* Hide mobile hamburger on tablets and desktops */
     .navMobOpen {
         display: none !important;
     }
-    
+
     /* Hide mobile menu on tablets and desktops */
     .mobile-menu {
         display: none !important;
     }
-    
+
     .mobile-backdrop {
         display: none !important;
     }

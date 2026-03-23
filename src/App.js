@@ -1,9 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-import Navbar from './Components/Navbar/Navbar';
 import Tagline from './Components/Tagline/Tagline';
-import Services from './Components/NavigateToNext/NavigateToNext';
-import NavigateToNext from './Components/NavigateToNext/NavigateToNext';
 import About from './Components/About/About';
 import CoreServices from './Components/CoreSevices/CoreServices';
 import Testimonials from './Components/Testimonials/Testimonials';
@@ -11,7 +8,6 @@ import Footer from './Components/Footer/Footer';
 import MarqueeBrands from './Components/MarqueeBrands/MarqueeBrands';
 import VisionMission from './Components/VisionMission/VisionMission';
 import Ourcore from './Ourcore';
-import SearchBar from './Components/SearchBar/SearchBar';
 import TwoLineNavbar from './Components/TwoLineNavbar/TwoLineNavbar';
 import DoubleMarquees from './Components/DoubleMarquees/DoubleMarquees';
 import OtherSectionCarousel from './Components/OtherSectionCarousel/OtherSectionCarousel';
@@ -28,13 +24,12 @@ import MobileApplications from './Pages/Sub Pages/MobileApplications/MobileAppli
 import SoftwareAppDev from './Pages/Sub Pages/SoftwareAppDev/SoftwareAppDev';
 import ErpSolutions from './Pages/Sub Pages/ErpSolutions/ErpSolutions';
 import DigitalMarketingService from './Pages/Sub Pages/DigitalMarketingService/DigitalMarketingService';
+import SaaS from './Pages/Sub Pages/SaasPage/SaaS';
 import GraphicDesignCourse from './Pages/Sub Pages/GraphicDesignCourse/GraphicDesignCourse';
 import BrandingAndIdentiity from './Pages/Sub Pages/BrandingAndIdentity/BrandingAndIdentity';
 import UiuxDesignCourse from './Pages/Sub Pages/UiuxDesignCourse/UiUxDesignCourse';
 import WorksCaseStudies from './Pages/Sub Pages/WorksCaseStudies/WorksCaseStudies';
-import Courses from './Pages/TechLearningSection/Courses/Courses';
 import WorksClientProjects from './Pages/Sub Pages/WorksClientProjects/WorksClientProjects';
-import AllCoursesPage from './Pages/Sub Pages/MainCoursesPage/MainCoursesPage';
 import MainCoursesPage from './Pages/Sub Pages/MainCoursesPage/MainCoursesPage';
 import OurStoryPage from './Pages/Sub Pages/OurStoryPage/OurStoryPage';
 import OurTeamPage from './Pages/Sub Pages/OurTeamPage/OurTeamPage';
@@ -89,8 +84,7 @@ function App() {
           <Route path="/marketingPage" element={<DigitalMarketing />} />
           <Route path="/UiUxPage" element={<UiUxPage />} />
           <Route path="/mobileApplicationsPage" element={<MobileApplications />} />
-
-
+          <Route path="/saasPage" element={<SaaS />} />
           <Route path="/corporateTraining" element={<CorporateTraining />} />
           <Route path="/CareersPage" element={<CareersPage />} />
           
@@ -197,6 +191,7 @@ export default App;
 // import SoftwareAppDev from './Pages/Sub Pages/SoftwareAppDev/SoftwareAppDev';
 // import ErpSolutions from './Pages/Sub Pages/ErpSolutions/ErpSolutions';
 // import DigitalMarketingService from './Pages/Sub Pages/DigitalMarketingService/DigitalMarketingService';
+// import SaaS from './Pages/Sub Pages/SaasPage/SaaS';
 // import GraphicDesignCourse from './Pages/Sub Pages/GraphicDesignCourse/GraphicDesignCourse';
 // import BrandingAndIdentiity from './Pages/Sub Pages/BrandingAndIdentity/BrandingAndIdentity';
 // import UiuxDesignCourse from './Pages/Sub Pages/UiuxDesignCourse/UiUxDesignCourse';

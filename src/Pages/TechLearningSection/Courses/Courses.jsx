@@ -3,40 +3,18 @@ import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faPalette,
-  faMagicWandSparkles,
-  faCoffee,
   faChartLine,
   faLaptopCode,
-  faRobot,
-  faGlobe,
-  faBullseye,
-  faRocket,
-  faThLarge,
   faList,
-  faBell,
   faTimes,
   faArrowRight,
-  faPaintBrush,
   faCompassDrafting,
   faCode,
-  faLayerGroup,
-  faCogs,
-  faDesktop,
-  faGraduationCap,
-  faCalendarAlt,
-  faUserTie,
-  faUsers,
-  faCheckCircle,
-  faShapes,
   faStar,
-  faBookOpen,
   faClock,
-  faSignal,
-  faUserGroup,
   faBullhorn,
   faPenNib,
   faFlag,
-  faCertificate,
   faExchangeAlt,
   faBinoculars
 } from '@fortawesome/free-solid-svg-icons';
@@ -325,7 +303,6 @@ const Courses = () => {
   ];
 
   const [showEnrollmentForm, setShowEnrollmentForm] = useState(false);
-  const [selectedCourse, setSelectedCourse] = useState(null);
   const [enrollmentData, setEnrollmentData] = useState({
     name: '',
     email: '',
@@ -335,8 +312,7 @@ const Courses = () => {
   });
   const [formErrors, setFormErrors] = useState({});
 
-  const availableCourses = courses.filter(course => course.status === 'available');
-  const upcomingCourses = courses.filter(course => course.status === 'upcoming');
+
 
   const handleEnrollClick = (course) => {
     if (course.route) {
@@ -347,9 +323,7 @@ const Courses = () => {
     }
   };
 
-  const handleNotifyClick = (course) => {
-    alert(`You'll be notified when ${course.title} becomes available!`);
-  };
+
 
   const handleCTAClick = () => {
     navigate('/allCoursesPage');
@@ -364,7 +338,6 @@ const Courses = () => {
   // Close enrollment form
   const handleCloseForm = () => {
     setShowEnrollmentForm(false);
-    setSelectedCourse(null);
     setEnrollmentData({
       name: '',
       email: '',

@@ -26,15 +26,9 @@ import {
   faCertificate,
   faChevronRight,
   faChevronDown,
-  faChartBar,
   faGlobe,
   faBriefcase,
-  faGraduationCap,
   faNetworkWired,
-  faComments,
-  faCalendarCheck,
-  faCheck,
-  faQuoteRight,
   faLifeRing,  // Corrected this line - was falfeRing
   faUserGraduate
 } from '@fortawesome/free-solid-svg-icons';

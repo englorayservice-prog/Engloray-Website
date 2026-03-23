@@ -1,5 +1,4 @@
-/* Add this to your existing CSS file */
-
+/* ================= BASE STYLES ================= */
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +6,7 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Testimonials Section Styles - Modern Design */
+/* ================= MAIN SECTION ================= */
 .techGroup-testimonials-section {
   padding: 80px 0;
   background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
@@ -21,12 +20,11 @@
   padding: 0 2rem;
 }
 
-/* Header Styles */
+/* ================= HEADER STYLES ================= */
 .techGroup-testimonialSection-header {
-  text-align: center;
-  margin-bottom: 4rem;
-  opacity: 0;
-  transform: translateY(30px);
+  text-align: left;
+  margin-bottom: 2rem;
+  max-width: 700px;
 }
 
 .techGroup-testimonialSection-header.techGroup-animate-fade-in {
@@ -41,9 +39,9 @@
   color: white;
   padding: 0.5rem 1.5rem;
   border-radius: 25px;
-  font-size: 0.875rem;
-  font-weight: 100;
-  font-family: 'HEXCO';
+  font-size: 0.8rem;
+  font-weight: 300;
+  font-family: 'Inter';
   margin-bottom: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -51,67 +49,110 @@
 }
 
 .techGroup-testimonials-title {
-  font-size: 3rem;
-  font-weight: 100;
-  font-family: 'HEXCO';
+  font-size: 2.4rem;
+  font-weight: 700;
+  font-family: "poppins";
   background: linear-gradient(135deg, #f23030 0%, #bf0413 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   margin-bottom: 1rem;
-  line-height: 1.2;
+  line-height: 1.1;
 }
 
 .techGroup-testimonials-subtitle {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   color: #718096;
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.6;
-  font-family: 'Aldrich';
+  font-family: 'Inter';
+  font-weight: 500;
+  white-space: nowrap;
 }
 
-/* Enhanced Testimonials Carousel */
-.techGroup-testimonials-carousel {
+/* ================= STRIPE CAROUSEL ================= */
+.techGroup-stripe-carousel-wrapper {
+  position: relative;
   margin-bottom: 6rem;
-  opacity: 0;
-  transform: translateY(30px);
-  border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-  position: relative;
+  border-radius: 24px;
 }
 
-.techGroup-testimonials-carousel.techGroup-animate-slide-up {
-  opacity: 1;
-  transform: translateY(0);
-  transition: all 0.8s ease-out 0.2s;
+.techGroup-stripe-arrows {
+  position: absolute;
+  top: 170px;
+  right: 60px;
+  z-index: 5;
+  display: flex;
+  gap: 10px;
 }
 
-.techGroup-carousel-background {
+.techGroup-stripe-arrows button {
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #f23030, #bf0413);
+  transition: 0.3s ease;
+}
+
+.techGroup-stripe-arrows button:hover {
+  transform: scale(1.1);
+}
+
+.techGroup-stripe-carousel {
+  display: flex;
+  height: 420px;
+  gap: 10px;
+  transition: all 0.8s ease;
+  padding-right: 75px;
+}
+
+.techGroup-stripe-card {
   position: relative;
+  flex: 0 0 75px;
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-  min-height: 550px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-image 1s ease-in-out;
+  border-radius: 20px;
+  transition: all 0.8s ease;
+  cursor: pointer;
+  overflow: hidden;
 }
 
+.techGroup-active-card {
+  flex: 0 0 50%;
+  border-radius: 20px;
+}
+
+.techGroup-stripe-card .techGroup-dark-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.techGroup-stripe-card:first-child {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.techGroup-stripe-card:last-child {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+/* ================= CAROUSEL CONTENT ================= */
 .techGroup-dark-overlay {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(45, 55, 72, 0.9) 0%,
-    rgba(74, 85, 104, 0.7) 50%,
-    rgba(45, 55, 72, 0.9) 100%
-  );
+  background: linear-gradient(135deg,
+      rgba(45, 55, 72, 0.9) 0%,
+      rgba(74, 85, 104, 0.7) 50%,
+      rgba(45, 55, 72, 0.9) 100%);
   z-index: 1;
 }
 
@@ -119,7 +160,7 @@
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 800px;
+  max-width: 1200px;
   padding: 4rem 2rem;
   text-align: center;
 }
@@ -130,43 +171,48 @@
 }
 
 .techGroup-quote-mark {
-  font-size: 6rem;
+  font-size: 4rem;
   color: #fed7d7;
-  line-height: 1;
-  margin-bottom: 1rem;
-  opacity: 0.8;
+  opacity: 1;
   font-family: serif;
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   animation: techGroup-pulse 2s ease-in-out infinite;
 }
 
 @keyframes techGroup-pulse {
-  0%, 100% { opacity: 0.6; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.05); }
+
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
 }
 
-/* Carousel Subtitle */
 .techGroup-testimonial-subtitle {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: #fed7d7;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 2%;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-family: 'HEXCO';
+  font-family: 'Inter';
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
   opacity: 0;
   animation: techGroup-fadeInUp 0.8s ease-out 0.3s forwards;
 }
 
 .techGroup-testimonial-text {
-  font-size: 1.75rem;
+  font-size: 1rem;
   line-height: 1.6;
   color: white;
-  margin-bottom: 3rem;
-  font-style: italic;
-  font-weight: 300;
-  font-family: 'Aldrich';
+  margin-bottom: 1rem;
+  font-weight: 500;
+  font-family: 'Inter';
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
   max-width: 700px;
   margin-left: auto;
@@ -183,9 +229,9 @@
 }
 
 .techGroup-client-info h4 {
-  font-size: 1.5rem;
-  font-weight: 100;
-  font-family: 'HEXCO';
+  font-size: 1.1rem;
+  font-weight: 400;
+  font-family: 'Inter';
   color: white;
   margin-bottom: 0.5rem;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
@@ -193,8 +239,8 @@
 
 .techGroup-client-position {
   color: #fed7d7;
-  font-weight: 100;
-  font-family: 'Aldrich';
+  font-weight: 300;
+  font-family: 'Inter';
   font-size: 1.1rem;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
@@ -206,168 +252,40 @@
 .techGroup-project-name {
   display: block;
   color: rgba(255, 255, 255, 0.9);
-  font-size: 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 400;
   margin-bottom: 0.75rem;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-  font-family: 'HEXCO';
+  font-family: 'Inter';
 }
 
 .techGroup-project-result {
   display: block;
   background: linear-gradient(135deg, #f56565, #ed8936);
   color: white;
-  padding: 0.75rem 1.5rem;
+  padding: 0.7rem 1.2rem;
   border-radius: 25px;
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   font-weight: 100;
-  font-family: 'Aldrich';
+  font-family: 'Inter';
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   box-shadow: 0 8px 25px rgba(245, 101, 101, 0.4);
   animation: techGroup-bounce 2s ease-in-out infinite;
 }
 
 @keyframes techGroup-bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
-}
 
-.techGroup-rating-stars {
-  display: flex;
-  justify-content: center;
-  gap: 0.75rem;
-  margin-top: 2rem;
-}
-
-.techGroup-star {
-  color: rgba(255, 255, 255, 0.3);
-  font-size: 2rem;
-  transition: all 0.3s ease;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-  animation: techGroup-twinkle 3s ease-in-out infinite;
-  animation-delay: calc(var(--i, 0) * 0.2s);
-}
-
-.techGroup-star.techGroup-filled {
-  color: #f6e05e;
-  text-shadow: 0 0 20px rgba(246, 224, 94, 0.7);
-}
-
-@keyframes techGroup-twinkle {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.7; transform: scale(1.1); }
-}
-
-/* Enhanced Carousel Controls */
-.techGroup-carousel-controls {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 2rem;
-  padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(20px);
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.techGroup-carousel-dot {
-  width: 60px;
-  height: 6px;
-  background: #e2e8f0;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-
-.techGroup-carousel-dot:hover {
-  background: #cbd5e0;
-  transform: scale(1.1);
-}
-
-.techGroup-carousel-dot.techGroup-active {
-  background: #e2e8f0;
-}
-
-.techGroup-carousel-dot.techGroup-active .techGroup-dot-progress {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  background: linear-gradient(135deg, #f23030, #bf0413);
-  animation: techGroup-progress 5s linear infinite;
-}
-
-@keyframes techGroup-progress {
-  0% {
-    width: 0%;
-  }
+  0%,
   100% {
-    width: 100%;
+    transform: translateY(0);
   }
-}
 
-/* Logo Set Indicator - SHOWS ALL 3 DOTS */
-.techGroup-logo-set-indicator {
-  display: flex;
-  justify-content: center;
-  gap: 0.75rem;
-  margin-top: 1.5rem;
-  align-items: center;
-}
-
-.techGroup-logo-set-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: #e2e8f0;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  display: block;
-}
-
-.techGroup-logo-set-dot:hover {
-  background: #cbd5e0;
-  transform: scale(1.1);
-}
-
-.techGroup-logo-set-dot.techGroup-active {
-  background: #f23030;
-  transform: scale(1.1);
-  box-shadow: 0 0 10px rgba(242, 48, 48, 0.3);
-}
-
-.techGroup-logo-set-dot.techGroup-active::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #f23030 0%, #bf0413 100%);
-  border-radius: 50%;
-  animation: techGroup-dotPulse 3s linear infinite;
-}
-
-@keyframes techGroup-dotPulse {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
   50% {
-    transform: scale(1.05);
-    opacity: 0.8;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
+    transform: translateY(-5px);
   }
 }
 
-/* Cohere Style Trusted By Section - 5 LOGOS IN ONE ROW */
+/* ================= TRUSTED BY SECTION ================= */
 .techGroup-trusted-by-section {
   margin-bottom: 6rem;
   opacity: 0;
@@ -388,579 +306,942 @@
 
 .techGroup-trusted-by-header h3 {
   font-size: 1.5rem;
-  font-weight: 400;
-  font-family: 'Aldrich';
+  font-weight: 600;
+  font-family: 'Inter';
   color: #64748b;
   margin-bottom: 1rem;
   text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-/* Updated Cohere Logos Container - Show 5 logos in one row */
-.techGroup-cohere-logos-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  flex-wrap: nowrap;
-  max-width: 900px;
-  margin: 0 auto;
-  min-height: 80px;
-  padding: 1rem;
-  overflow: hidden;
-}
-
-.techGroup-cohere-logo {
-  padding: 1rem 1.5rem;
-  background: transparent;
-  border-radius: 12px;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: all 0.4s ease;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 140px;
-  height: 80px;
-  animation: techGroup-cohere-fade-in 0.6s ease-out forwards;
-  flex-shrink: 0;
-}
-
-.techGroup-cohere-logo::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(242, 48, 48, 0.1), transparent);
-  transition: left 0.6s ease;
-}
-
-.techGroup-cohere-logo:hover::before {
-  left: 100%;
-}
-
-.techGroup-cohere-logo:hover {
-  opacity: 1;
-  transform: translateY(-2px);
-  background: rgba(242, 48, 48, 0.05);
-}
-
-@keyframes techGroup-cohere-fade-in {
-  0% {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  100% {
-    opacity: 0.8;
-    transform: translateY(0);
-  }
-}
-
-/* Updated Logo Image Styling - Fitting 5 in one row */
-.techGroup-logo-image {
-  width: auto;
-  height: 50px;
-  object-fit: contain;
-  filter: grayscale(100%);
-  opacity: 0.7;
-  transition: all 0.4s ease;
-}
-
-.techGroup-cohere-logo:hover .techGroup-logo-image {
-  filter: grayscale(0%);
-  opacity: 1;
-  transform: scale(1.1);
-}
-
-/* Logo placeholder for missing images */
-.techGroup-logo-placeholder {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #718096;
-  font-size: 0.8rem;
-  font-weight: bold;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  font-family: 'Aldrich';
-}
-
-/* Enhanced Stats Section */
-.techGroup-stats-section {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-  margin-bottom: 6rem;
-  perspective: 1000px;
-}
-
-.techGroup-stat-card {
-  text-align: center;
-  padding: 3rem 2rem;
-  background: linear-gradient(135deg, #ffffff 0%, #f7fafc 100%);
-  border-radius: 20px;
-  border: 2px solid #e2e8f0;
-  transition: all 0.6s ease;
-  opacity: 0;
-  transform: translateX(-200px) rotateY(45deg);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  position: relative;
-  overflow: hidden;
-}
-
-.techGroup-stat-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(135deg, #f23030, #bf0413);
-  transform: scaleX(0);
-  transition: transform 0.6s ease;
-}
-
-.techGroup-stat-card:hover::before {
-  transform: scaleX(1);
-}
-
-.techGroup-stat-right {
-  transform: translateX(200px) rotateY(-45deg);
-}
-
-.techGroup-stats-section.techGroup-animate-stats .techGroup-stat-left {
-  animation: techGroup-slideInFromLeftEnhanced 1.2s ease-out forwards;
-}
-
-.techGroup-stats-section.techGroup-animate-stats .techGroup-stat-right {
-  animation: techGroup-slideInFromRightEnhanced 1.2s ease-out forwards;
-}
-
-.techGroup-stats-section:not(.techGroup-animate-stats) .techGroup-stat-card {
-  opacity: 0;
-  transform: translateX(-200px) rotateY(45deg);
-}
-
-.techGroup-stats-section:not(.techGroup-animate-stats) .techGroup-stat-right {
-  transform: translateX(200px) rotateY(-45deg);
-}
-
-.techGroup-stat-card:hover {
-  background: white;
-  border-color: #f23030;
-  transform: translateY(-12px) scale(1.08) rotateY(0deg);
-  box-shadow: 0 25px 60px rgba(242, 48, 48, 0.2);
-}
-
-.techGroup-stat-number {
-  font-size: 3.5rem;
-  font-weight: 900;
-  background: linear-gradient(135deg, #f23030, #bf0413);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 1rem;
-  line-height: 1;
-}
-
-.techGroup-stat-label {
-  color: #718096;
-  font-weight: 100;
-  font-size: 0.85rem;
-  text-transform: uppercase;
   letter-spacing: 1px;
-  font-family: 'Aldrich';
 }
 
-@keyframes techGroup-slideInFromLeftEnhanced {
+/* ================= LOGO GRID ================= */
+.techGroup-grid-logos-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 165px);
+  max-width: 1100px;
+  margin: 0 auto;
+  background: transparent;
+  position: relative;
+}
+
+.techGroup-grid-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Vertical divider lines */
+.techGroup-grid-logo::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 5%;
+  height: 100%;
+  width: 1.5px;
+  background: #d1d5db;
+}
+
+/* Left vertical outer line */
+.techGroup-grid-logos-container::before {
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: 4%;
+  height: 100%;
+  width: 1.5px;
+  background: #d1d5db;
+}
+
+/* Remove vertical line for last column */
+.techGroup-grid-logo:nth-child(4n)::after {
+  display: none;
+}
+
+/* Horizontal divider lines */
+.techGroup-grid-logo:nth-child(-n+4)::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 7%;
+  width: 100%;
+  height: 1.5px;
+  background: #d1d5db;
+}
+
+.techGroup-grid-logo-image {
+  max-height: 100px;
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  opacity: 0.95;
+  transition: all 0.4s ease;
+}
+
+.techGroup-grid-logo-image-large {
+  max-height: 120px;
+  width: 140px;
+  height: 120px;
+  object-fit: contain;
+  opacity: 0.95;
+  transition: all 0.4s ease;
+}
+
+.techGroup-grid-logo:hover .techGroup-grid-logo-image,
+.techGroup-grid-logo:hover .techGroup-grid-logo-image-large {
+  filter: grayscale(0%) brightness(1);
+  opacity: 1;
+}
+
+/* ===== COLUMN ANIMATIONS ===== */
+.logo-fade-out {
+  animation: fadeOutSlow 0.4s ease-in-out forwards;
+}
+
+@keyframes fadeOutSlow {
+  0% {
+    opacity: 0.95;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+
+.logo-fade-in {
+  animation: fadeInSlow 0.4s ease-in-out forwards;
+}
+
+@keyframes fadeInSlow {
   0% {
     opacity: 0;
-    transform: translateX(-200px) rotateY(45deg);
+    transform: scale(0.8);
   }
+
   100% {
-    opacity: 1;
-    transform: translateX(0) rotateY(0deg);
+    opacity: 0.95;
+    transform: scale(1);
   }
 }
 
-@keyframes techGroup-slideInFromRightEnhanced {
-  0% {
-    opacity: 0;
-    transform: translateX(200px) rotateY(-45deg);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0) rotateY(0deg);
-  }
-}
 
-/* Benefits Section - Compact Design */
-.techGroup-benefits-section {
-  opacity: 0;
-  transform: translateY(30px);
+/* ================= STATS SECTION - WHITE BACKGROUND ================= */
+.techGroup-stats-wrapper {
+  bottom: 30px;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  background: transparent;
+  padding: 0rem 0;
   margin-bottom: 6rem;
 }
 
-.techGroup-benefits-section.techGroup-animate-slide-up {
-  opacity: 1;
-  transform: translateY(0);
-  transition: all 0.8s ease-out 0.8s;
-}
-
-.techGroup-benefits-section h3 {
-  text-align: center;
-  font-size: 2.5rem;
-  font-weight: 100;
-  background: linear-gradient(135deg, #f23030 0%, #bf0413 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 4rem;
-  font-family: 'HEXCO';
-}
-
-.techGroup-benefits-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-  margin-bottom: 3rem;
+.techGroup-stats-container {
+  bottom: 100px;
+  max-width: 1400px;
+  /* Increased from 1200px */
+  margin: 0 auto;
+  padding: 0 2rem;
   position: relative;
+  min-height: 450px;
+  /* Increased from 400px */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
 }
 
-.techGroup-benefit-card {
-  position: relative;
-  height: 320px;
-  border-radius: 16px;
-  overflow: hidden;
-  background-size: cover;
+.techGroup-stats-bg-image {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  right: 0;
+  bottom: 50px;
+  width: 1300px;
+  /* Increased from 1200px */
+  height: 700px;
+  /* Increased from 600px */
+
+  /* Overlay + image together - Reduced overlay opacity for better visibility */
+  background-image: linear-gradient(rgba(51, 0, 255, 0.4),
+      /* Reduced from 0.856 */
+      rgba(0, 0, 0, 0.15)),
+    /* Reduced from 0.25 */
+    var(--bg-image);
+
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  transition: all 0.8s ease;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0.6;
-  transform: scale(0.95);
-}
 
-.techGroup-benefit-card.techGroup-active {
   opacity: 1;
-  transform: scale(1);
+  /* Increased from 5 to 1 (full opacity) */
+  z-index: 1;
 }
 
-.techGroup-benefit-card:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 20px 50px rgba(245, 101, 101, 0.3);
+.techGroup-stats-grid {
+  bottom: 30px;
+  right: 10px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1300px;
+  /* Added to match container */
+  margin: 0 auto;
 }
 
-.techGroup-benefit-dark-overlay {
+/* Card One - Red Theme */
+.techGroup-stat-card-one {
+  width: 220px;
+  height: 70px;
+  margin-top: 380px;
+  margin-left: 500px;
+  text-align: center;
+  padding: 1rem 1rem;
+  border-radius: 16px;
+  background: rgb(255, 0, 0);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  border-left: 4px solid #f23030;
+  transition: none;
+}
+
+.techGroup-stat-card-one .techGroup-stat-number {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 0.2rem;
+  line-height: 1.2;
+  text-align: left;
+}
+
+.techGroup-stat-card-one .techGroup-stat-label {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.2;
+  white-space: pre-line;
+  text-align: left;
+}
+
+/* Card Two - Blue Theme */
+.techGroup-stat-card-two {
+  width: 220px;
+  height: 70px;
+  margin-top: 460px;
+  margin-left: -460px;
+  text-align: center;
+  padding: 1rem 1rem;
+  border-radius: 16px;
+  background: #2196F3;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  border-left: 4px solid #2196F3;
+  transition: none;
+  text-align: left;
+}
+
+.techGroup-stat-card-two .techGroup-stat-number {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 0.4rem;
+  line-height: 1.2;
+}
+
+.techGroup-stat-card-two .techGroup-stat-label {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.2;
+  white-space: pre-line;
+}
+
+/* Card Three - Green Theme */
+.techGroup-stat-card-three {
+  width: 170px;
+  height: 80px;
+  margin-top: 280px;
+  margin-left: 10px;
+  text-align: center;
+  padding: 1rem 1rem;
+  border-radius: 16px;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  border: 1px solid #000000;
+  transition: none;
+}
+
+.techGroup-stat-card-three .techGroup-stat-number {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #000000;
+  margin-bottom: 0.3rem;
+  line-height: 1.2;
+}
+
+.techGroup-stat-card-three .techGroup-stat-label {
+  color: #000000;
+  font-weight: 600;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.4;
+  white-space: pre-line;
+}
+
+/* Card Four - Orange Theme */
+.techGroup-stat-card-four {
+  width: 220px;
+  height: 70px;
+  margin-top: 460px;
+  margin-left: -170px;
+  text-align: center;
+  padding: 1rem 1rem;
+  border-radius: 16px;
+  background: rgb(0, 0, 0);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  border-left: 4px solid #000000;
+  transition: none;
+  text-align: left;
+}
+
+.techGroup-stat-card-four .techGroup-stat-number {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 0.3rem;
+  line-height: 1.2;
+}
+
+.techGroup-stat-card-four .techGroup-stat-label {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.2;
+  white-space: pre-line;
+}
+
+/* Card Five - Purple Theme (Bottom Left) */
+.techGroup-stat-card-five {
+  width: 160px;
+  height: 80px;
+  margin-top: 260px;
+  margin-left: -720px;
+  text-align: center;
+  padding: 1.1rem 1.2rem;
+  border-radius: 16px;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  border: 1px solid #000000;
+  transition: none;
+}
+
+.techGroup-stat-card-five .techGroup-stat-number {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #000000;
+  margin-bottom: 0.3rem;
+  line-height: 1.2;
+}
+
+.techGroup-stat-card-five .techGroup-stat-label {
+  color: #000000;
+  font-weight: 600;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.4;
+  white-space: pre-line;
+}
+
+/* Responsive adjustments for larger image */
+@media (max-width: 1400px) {
+  .techGroup-stats-container {
+    max-width: 1300px;
+  }
+
+  .techGroup-stats-bg-image {
+    width: 1200px;
+    height: 650px;
+  }
+
+  .techGroup-stats-grid {
+    max-width: 1200px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .techGroup-stats-container {
+    max-width: 1100px;
+  }
+
+  .techGroup-stats-bg-image {
+    width: 1000px;
+    height: 550px;
+  }
+}
+
+/* ================= BENEFITS SLIDE GRID ================= */
+
+.techGroup-benefits-slide-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 290px);
+  gap: 20px;
+  width: 100%;
+  margin-top: 40px;
+}
+
+.techGroup-slide-card {
+  border-radius: 15px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  font-family: "Inter";
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  transition: 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.techGroup-slide-card:hover {
+  transform: translateY(-6px);
+}
+
+/* Overlay for cards with background images */
+.techGroup-card-one-overlay,
+.techGroup-card-two-overlay {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(45, 55, 72, 0.88) 0%,
-    rgba(74, 85, 104, 0.75) 50%,
-    rgba(45, 55, 72, 0.88) 100%
-  );
-  transition: all 0.6s ease;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(41, 40, 40, 0.5) 50%);
+  z-index: 1;
+  pointer-events: none;
 }
 
-.techGroup-benefit-card.techGroup-active .techGroup-benefit-dark-overlay {
-  background: linear-gradient(
-    135deg,
-    rgba(45, 55, 72, 0.94) 0%,
-    rgba(74, 85, 104, 0.82) 50%,
-    rgba(45, 55, 72, 0.94) 100%
-  );
+/* ===== CARD ONE STYLES (Red Card with Background Image) ===== */
+.techGroup-card-one {
+  position: relative;
+  color: white;
 }
 
-.techGroup-benefit-card:not(.techGroup-active) .techGroup-benefit-dark-overlay {
-  background: linear-gradient(
-    135deg,
-    rgba(45, 55, 72, 0.78) 0%,
-    rgba(74, 85, 104, 0.55) 50%,
-    rgba(45, 55, 72, 0.78) 100%
-  );
-}
-
-.techGroup-benefit-content {
+.techGroup-card-one .techGroup-badge-one,
+.techGroup-card-one .techGroup-card-one-header,
+.techGroup-card-one .techGroup-card-one-footer {
   position: relative;
   z-index: 2;
+}
+
+.techGroup-badge-one {
+  position: absolute;
+  width: 80px;
+  height: 24px;
+  top: -5px;
+  left: 400px;
+  padding: 3px 10px;
+  border-radius: 16px;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.25);
   color: white;
-  padding: 2rem;
-  width: 100%;
-  text-align: center;
-  transform: translateY(0);
-  transition: all 0.8s ease;
+  border: 1px solid rgba(255, 255, 255, 0.5);
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100%;
-  opacity: 1;
 }
 
-.techGroup-benefit-card.techGroup-active .techGroup-benefit-content {
-  opacity: 1;
-  animation: techGroup-contentSlideUp 0.8s ease-out 0.3s forwards;
+.techGroup-card-one-header {
+  margin-top: 30px;
+  font-size: 37px;
+  font-weight: 500;
+  font-family: "poppins";
+  margin-bottom: 8px;
+  text-align: left;
+  width: 100%;
+  padding-right: 80px;
+  line-height: 1.1;
+  letter-spacing: 3px;
+  z-index: 2;
+  position: relative;
 }
 
-.techGroup-benefit-card:not(.techGroup-active) .techGroup-benefit-content {
-  opacity: 1;
-  transform: translateY(0);
+/* Make the card/container relative */
+.techGroup-card-one {
+  position: relative;
 }
 
-@keyframes techGroup-contentSlideUp {
-  0% {
+/* Image positioned top right */
+.techGroup-card-one-image {
+  position: absolute;
+  top: -180px;
+  right: 40px;
+  width: 60%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Image size */
+.techGroup-budge1-image {
+  width: 700px;
+  height: 700px;
+  object-fit: contain;
+}
+
+.techGroup-card-one-footer {
+  font-family: 'poppins';
+  margin-top: 30px;
+  font-size: 12px;
+  opacity: 0.9;
+  max-width: 100%;
+  text-align: left;
+  z-index: 2;
+  position: relative;
+  line-height: 1.3;
+}
+
+/* ===== CARD TWO STYLES (Green Card with Background Image) ===== */
+.techGroup-card-two {
+  position: relative;
+  color: white;
+}
+
+.techGroup-card-two .techGroup-badge-two,
+.techGroup-card-two .techGroup-card-two-header,
+.techGroup-card-two .techGroup-card-two-description,
+.techGroup-card-two .techGroup-card-two-tags {
+  position: relative;
+  z-index: 2;
+}
+
+.techGroup-card-two .techGroup-card-two-tags span {
+  background: rgba(255, 255, 255, 0.9);
+  color: #1f2937;
+}
+
+.techGroup-badge-two {
+  position: absolute;
+  width: 80px;
+  height: 24px;
+  top: -5px;
+  left: 400px;
+  padding: 3px 10px;
+  border-radius: 16px;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.9);
+  color: #1f2937;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.techGroup-card-two-header {
+  margin-top: 20px;
+  font-size: 34px;
+  font-weight: 500;
+  font-family: "Poppins";
+  margin-bottom: 8px;
+  text-align: left;
+  width: 100%;
+  padding-right: 80px;
+  line-height: 1.1;
+  z-index: 2;
+  position: relative;
+}
+
+/* New description style for Card 2 */
+.techGroup-card-two-description {
+  font-family: 'poppins';
+  font-size: 12px;
+  line-height: 1.3;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  max-width: 90%;
+  opacity: 0.9;
+  z-index: 2;
+  position: relative;
+  text-align: left;
+}
+
+.techGroup-card-two-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 20px;
+  z-index: 2;
+  position: relative;
+}
+
+.techGroup-card-two-tags span {
+  font-family: 'poppins';
+  background: white;
+  padding: 8px 14px;
+  border-radius: 16px;
+  font-size: 10px;
+  font-weight: 500;
+  color: #1f2937;
+}
+
+/* ===== CARD THREE STYLES (Light Card with 2x2 Grid on Right Side) ===== */
+.techGroup-card-three {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #1f2937;
+  position: relative;
+}
+
+.techGroup-badge-three {
+  position: absolute;
+  top: 13px;
+  right: 15px;
+  padding: 3px 10px;
+  border-radius: 16px;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  z-index: 2;
+  background: #f23030;
+  color: white;
+  border: none;
+}
+
+.techGroup-card-three-header {
+  margin-top: 45px;
+  font-size: 32px;
+  font-weight: 400;
+  font-family: "Poppins";
+  margin-bottom: 3px;
+  text-align: left;
+  width: 100%;
+  padding-right: 80px;
+  line-height: 1.1;
+}
+
+/* Arrow Section */
+.techGroup-card-three-arrow-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 8px;
+  width: 40%;
+}
+
+.techGroup-arrow-container {
+  background: transparent;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.techGroup-arrow-icon {
+  font-size: 20px;
+  color: #f23030;
+}
+
+/* Three-line description at bottom left corner */
+.techGroup-card-three-bottom-description {
+  font-family: 'poppins';
+  position: absolute;
+  bottom: 40px;
+  left: 25px;
+  width: 30%;
+  font-size: 10px;
+  line-height: 1.2;
+  color: #1f2937;
+  opacity: 0.8;
+  z-index: 2;
+  text-align: left;
+}
+
+.techGroup-bottom-description-line {
+  margin-bottom: 2px;
+}
+
+/* 2x2 Grid on Right Side */
+.techGroup-card-three-grid-container {
+  position: absolute;
+  right: 20px;
+  top: 80px;
+  width: 55%;
+}
+
+.techGroup-card-three-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.techGroup-card-three-grid-item {
+  width: 100%;
+}
+
+.techGroup-card-three-box-with-badge {
+  position: relative;
+  width: 100%;
+}
+
+.techGroup-inner-badge {
+  position: absolute;
+  top: -2px;
+  left: 8px;
+  background: #f23030;
+  color: white;
+  font-size: 7px;
+  font-weight: 600;
+  padding: 1px 6px;
+  border-radius: 8px;
+  z-index: 3;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.techGroup-card-three-grid-box {
+  font-family: 'poppins';
+  background: transparent;
+  border: 0px solid #000000;
+  border-radius: 10px;
+  padding: 16px 8px 6px 8px;
+  font-size: 8px;
+  line-height: 1.3;
+  color: #1f2937;
+  text-align: left;
+  min-height: 52px;
+  width: 100%;
+  word-wrap: break-word;
+  font-weight: 400;
+}
+
+/* ===== CARD FOUR STYLES (Black Card with Image and Badges Inside) ===== */
+.techGroup-card-four {
+  background: #0f172a;
+  color: white;
+}
+
+.techGroup-badge-four {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 3px 10px;
+  border-radius: 16px;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.techGroup-card-four-header {
+  margin-top: 30px;
+  font-size: 32px;
+  font-weight: 200;
+  font-family: "Poppins";
+  margin-bottom: 6px;
+  text-align: left;
+  width: 100%;
+  padding-right: 80px;
+  line-height: 1.1;
+}
+
+/* Image from assets */
+.techGroup-card-four-image {
+  margin-bottom: 7px;
+  width: 50%;
+}
+
+.techGroup-budget-image {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+}
+
+.techGroup-card-four-layout {
+  display: flex;
+  flex: 1;
+  align-items: flex-start;
+  justify-content: flex-end;
+  margin-top: -50px;
+}
+
+.techGroup-card-four-boxes {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  width: 50%;
+  max-width: 280px;
+  margin-left: auto;
+}
+
+.techGroup-card-four-box-item {
+  width: 100%;
+}
+
+.techGroup-card-four-box-with-badge {
+  position: relative;
+  width: 100%;
+}
+
+.techGroup-inner-badge-four {
+  position: absolute;
+  top: 3px;
+  left: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 7px;
+  font-weight: 600;
+  padding: 1px 6px;
+  border-radius: 8px;
+  z-index: 3;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.techGroup-card-four-box {
+  font-family: 'poppins';
+  margin-top: -150px;
+  background: transparent;
+  border: 0px solid rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  padding: 23px 8px 8px 8px;
+  font-size: 8.5px;
+  line-height: 1.3;
+  color: white;
+  text-align: left;
+  justify-content: center;
+  min-height: 52px;
+  width: 100%;
+  word-wrap: break-word;
+  font-weight: 400;
+}
+
+/* ================= UTILITY ANIMATIONS ================= */
+@keyframes techGroup-fadeInUp {
+  from {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(30px);
   }
-  100% {
+
+  to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-.techGroup-benefit-icon-clean {
-  margin-bottom: 1.5rem;
-  opacity: 1;
-  transform: scale(1);
-  transition: all 0.6s ease;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  line-height: 1;
-}
-
-.techGroup-benefit-card.techGroup-active .techGroup-benefit-icon-clean {
-  opacity: 1;
-  transform: scale(1);
-  animation: techGroup-iconPopIn 0.6s ease-out 0.5s forwards;
-}
-
-@keyframes techGroup-iconPopIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  70% {
-    transform: scale(1.03);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-.techGroup-benefit-card:hover .techGroup-benefit-icon-clean {
-  opacity: 1;
-  transform: scale(1.03);
-}
-
-.techGroup-benefit-title {
-  font-size: 1.3rem;
-  font-weight: 100;
-  font-family: 'HEXCO';
-  color: white;
-  margin-bottom: 0.75rem;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-  transition: all 0.6s ease;
-  opacity: 1;
-  transform: translateX(0);
-  line-height: 1.2;
-  padding: 0 0.5rem;
-}
-
-.techGroup-benefit-card.techGroup-active .techGroup-benefit-title {
-  opacity: 1;
-  transform: translateX(0);
-  animation: techGroup-titleSlideIn 0.8s ease-out 0.7s forwards;
-}
-
-@keyframes techGroup-titleSlideIn {
-  0% {
-    opacity: 0;
-    transform: translateX(-12px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.techGroup-benefit-card:hover .techGroup-benefit-title {
-  opacity: 1;
-  transform: translateX(2px);
-}
-
-.techGroup-benefit-description {
-  font-size: 0.9rem;
-  line-height: 1.4;
-  color: rgba(255, 255, 255, 0.95);
-  margin-bottom: 0;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-  font-family: 'Aldrich';
-  transition: all 0.6s ease;
-  opacity: 1;
-  transform: translateX(0);
-  padding: 0 0.5rem;
-  max-height: none;
-  overflow: visible;
-  display: block;
-}
-
-.techGroup-benefit-card.techGroup-active .techGroup-benefit-description {
-  opacity: 1;
-  transform: translateX(0);
-  animation: techGroup-descriptionSlideIn 0.8s ease-out 0.9s forwards;
-}
-
-@keyframes techGroup-descriptionSlideIn {
-  0% {
-    opacity: 0;
-    transform: translateX(12px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.techGroup-benefit-card:hover .techGroup-benefit-description {
-  opacity: 1;
-  transform: translateX(-2px);
-}
-
-/* Benefits Indicator */
-.techGroup-benefits-indicator {
-  display: flex;
-  justify-content: center;
-  margin-top: 2rem;
-}
-
-.techGroup-indicator-dots {
-  display: flex;
-  gap: 1rem;
-}
-
-.techGroup-indicator-dot {
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: #e2e8f0;
-  transition: all 0.4s ease;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-}
-
-.techGroup-indicator-dot.techGroup-active {
-  background: #f23030;
-  transform: scale(1.1);
-  box-shadow: 0 0 15px rgba(242, 48, 48, 0.3);
-}
-
-.techGroup-indicator-dot.techGroup-active::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #f23030, #bf0413);
-  border-radius: 50%;
-  animation: techGroup-dotPulse 4s linear infinite;
-}
-
-/* Responsive Design */
-/* UPDATED: Stat cards 2/2 for medium and small screens */
+/* ================= RESPONSIVE DESIGN ================= */
 @media (max-width: 1024px) {
-  .techGroup-stats-section {
-    grid-template-columns: repeat(2, 1fr);
+  .techGroup-stats-grid {
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
   }
-  
-  .techGroup-cohere-logos-container {
-    gap: 1.5rem;
-  }
-  
-  .techGroup-cohere-logo {
-    padding: 0.9rem 1.2rem;
-    min-width: 120px;
-    height: 70px;
-  }
-  
-  .techGroup-logo-image {
-    height: 45px;
-  }
-  
-  .techGroup-benefits-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.25rem;
-  }
-  
-  .techGroup-benefit-card {
-    height: 300px;
-  }
-}
 
-@media (max-width: 1024px) {
+  .techGroup-stats-container {
+    min-height: 450px;
+  }
+
+  .techGroup-stripe-carousel {
+    height: 400px;
+  }
+
+  .techGroup-stripe-card {
+    flex: 0 0 50px;
+  }
+
+  .techGroup-active-card {
+    flex: 0 0 45%;
+  }
+
+  .techGroup-stripe-arrows {
+    top: 160px;
+  }
+
   .techGroup-testimonial-meta {
     flex-direction: column;
     gap: 1.5rem;
     text-align: center;
   }
-  
+
   .techGroup-project-highlight {
     text-align: center;
   }
-  
-  .techGroup-carousel-background {
-    min-height: 500px;
-  }
-  
+
   .techGroup-trusted-by-header h3 {
     font-size: 1.4rem;
   }
-  
-  .techGroup-cohere-logos-container {
-    gap: 1.2rem;
-  }
-  
-  .techGroup-cohere-logo {
-    padding: 0.8rem 1rem;
-    min-width: 110px;
-    height: 65px;
-  }
-  
-  .techGroup-logo-image {
-    height: 40px;
-  }
-}
 
-@media (max-width: 900px) {
-  .techGroup-cohere-logos-container {
-    gap: 1rem;
+  .techGroup-benefits-slide-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
   }
-  
-  .techGroup-cohere-logo {
-    padding: 0.7rem 0.9rem;
-    min-width: 100px;
-    height: 60px;
+
+  .techGroup-card-one-header,
+  .techGroup-card-two-header,
+  .techGroup-card-three-header,
+  .techGroup-card-four-header {
+    font-size: 28px;
   }
-  
-  .techGroup-logo-image {
-    height: 38px;
+
+  .techGroup-card-three-grid-container {
+    width: 50%;
+    right: 20px;
+  }
+
+  .techGroup-card-three-arrow-section {
+    width: 45%;
+  }
+
+  .techGroup-card-four-layout {
+    margin-top: -30px;
+  }
+
+  .techGroup-card-three-bottom-description {
+    width: 45%;
+    font-size: 8px;
+  }
+
+  .techGroup-card-two-description {
+    font-size: 10px;
   }
 }
 
@@ -968,121 +1249,98 @@
   .techGroup-testimonials-section {
     padding: 60px 0;
   }
-  
+
   .techGroup-testimonialSection-container {
     padding: 0 1.5rem;
   }
-  
+
   .techGroup-testimonials-title {
     font-size: 2.5rem;
   }
-  
-  .techGroup-carousel-background {
-    min-height: 450px;
-  }
-  
-  .techGroup-testimonial-text {
-    font-size: 1.5rem;
-  }
-  
-  /* UPDATED: Stat cards 2/2 for small screens */
-  .techGroup-stats-section {
+
+  .techGroup-stats-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
-  
-  .techGroup-trusted-by-section {
-    min-height: 110px;
-    padding: 1.5rem 0;
-  }
-  
-  .techGroup-trusted-by-header {
-    margin-bottom: 2.5rem;
-  }
-  
-  .techGroup-trusted-by-header h3 {
-    font-size: 1.3rem;
-  }
-  
-  .techGroup-cohere-logos-container {
-    gap: 0.8rem;
-    justify-content: center;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-  }
-  
-  .techGroup-cohere-logo {
-    padding: 0.6rem 0.8rem;
-    min-width: 90px;
-    height: 55px;
-  }
-  
-  .techGroup-logo-image {
-    height: 35px;
-  }
-  
-  .techGroup-benefits-section h3 {
-    font-size: 2rem;
-  }
-  
-  .techGroup-benefits-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    max-width: 450px;
-    margin: 0 auto 3rem;
-  }
-  
-  .techGroup-benefit-card {
-    height: 280px;
-  }
-  
-  .techGroup-benefit-content {
+
+  .techGroup-stat-card {
     padding: 1.5rem;
   }
-  
-  .techGroup-benefit-title {
-    font-size: 1.2rem;
-    margin-bottom: 0.6rem;
-  }
-  
-  .techGroup-benefit-description {
-    font-size: 0.85rem;
-  }
-}
 
-@media (max-width: 600px) {
-  /* UPDATED: Stat cards 2/2 for extra small screens */
-  .techGroup-stats-section {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
+  .techGroup-stats-container {
+    min-height: auto;
+    padding: 2rem 0;
   }
-  
-  .techGroup-stat-card {
-    padding: 2rem 1rem;
+
+  .techGroup-stripe-carousel {
+    height: 350px;
   }
-  
-  .techGroup-stat-number {
-    font-size: 2.5rem;
+
+  .techGroup-stripe-card {
+    flex: 0 0 45px;
   }
-  
-  .techGroup-stat-label {
-    font-size: 0.75rem;
+
+  .techGroup-active-card {
+    flex: 0 0 50%;
   }
-  
-  .techGroup-cohere-logos-container {
-    gap: 0.6rem;
-    flex-wrap: wrap;
-    justify-content: center;
+
+  .techGroup-stripe-arrows {
+    top: 140px;
   }
-  
-  .techGroup-cohere-logo {
-    padding: 0.5rem 0.7rem;
-    min-width: 85px;
-    height: 50px;
+
+  .techGroup-benefits-slide-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
   }
-  
-  .techGroup-logo-image {
-    height: 30px;
+
+  .techGroup-slide-card {
+    padding: 20px;
+    min-height: 320px;
+  }
+
+  .techGroup-card-one-header,
+  .techGroup-card-two-header,
+  .techGroup-card-three-header,
+  .techGroup-card-four-header {
+    font-size: 26px;
+  }
+
+  .techGroup-card-three-grid-container {
+    position: static;
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  .techGroup-card-three-arrow-section {
+    width: 100%;
+  }
+
+  .techGroup-card-four-layout {
+    margin-top: 10px;
+    position: static;
+  }
+
+  .techGroup-card-four-image {
+    margin-bottom: 15px;
+  }
+
+  .techGroup-card-three-grid {
+    gap: 10px;
+  }
+
+  .techGroup-card-three-bottom-description {
+    position: static;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  .techGroup-card-two-description {
+    font-size: 10px;
+    max-width: 100%;
   }
 }
 
@@ -1090,195 +1348,90 @@
   .techGroup-testimonials-title {
     font-size: 2rem;
   }
-  
-  .techGroup-carousel-background {
-    min-height: 400px;
-  }
-  
-  .techGroup-testimonial-text {
-    font-size: 1.25rem;
-  }
-  
-  .techGroup-testimonial-subtitle {
-    font-size: 1rem;
-  }
-  
-  /* UPDATED: Stat cards 2/2 for mobile */
-  .techGroup-stats-section {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem;
-  }
-  
-  .techGroup-stat-card {
-    padding: 1.5rem 0.75rem;
-  }
-  
-  .techGroup-stat-number {
-    font-size: 2rem;
-  }
-  
-  .techGroup-stat-label {
-    font-size: 0.7rem;
-    letter-spacing: 0.5px;
-  }
-  
-  .techGroup-trusted-by-section {
-    min-height: 100px;
-    padding: 1rem 0;
-  }
-  
-  .techGroup-trusted-by-header h3 {
-    font-size: 1.1rem;
-  }
-  
-  .techGroup-cohere-logos-container {
-    gap: 0.5rem;
-  }
-  
-  .techGroup-cohere-logo {
-    padding: 0.4rem 0.6rem;
-    min-width: 80px;
-    height: 45px;
-  }
-  
-  .techGroup-logo-image {
-    height: 28px;
-  }
-  
-  .techGroup-benefits-section h3 {
-    font-size: 1.8rem;
-  }
-  
-  .techGroup-benefit-card {
-    height: 260px;
-  }
-  
-  .techGroup-benefit-content {
-    padding: 1.25rem;
-  }
-  
-  .techGroup-benefit-title {
-    font-size: 1.1rem;
-    padding: 0 0.3rem;
-  }
-  
-  .techGroup-benefit-description {
-    font-size: 0.8rem;
-    padding: 0 0.3rem;
-  }
-}
 
-/* For very small screens */
-@media (max-width: 400px) {
-  /* UPDATED: Stat cards 2/2 for very small screens */
-  .techGroup-stats-section {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.4rem;
+  .techGroup-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
-  
-  .techGroup-stat-card {
-    padding: 1.25rem 0.5rem;
+
+  .techGroup-stat-card .techGroup-stat-number {
+    font-size: 2.2rem;
   }
-  
-  .techGroup-stat-number {
-    font-size: 1.8rem;
+
+  .techGroup-stat-card .techGroup-stat-label {
+    font-size: 0.75rem;
   }
-  
-  .techGroup-stat-label {
-    font-size: 0.65rem;
+
+  .techGroup-stripe-carousel {
+    height: 300px;
+    gap: 8px;
   }
-  
-  .techGroup-cohere-logos-container {
-    gap: 0.4rem;
+
+  .techGroup-stripe-card {
+    flex: 0 0 40px;
   }
-  
-  .techGroup-cohere-logo {
-    padding: 0.3rem 0.5rem;
-    min-width: 75px;
+
+  .techGroup-active-card {
+    flex: 0 0 55%;
+  }
+
+  .techGroup-stripe-arrows {
+    top: 120px;
+  }
+
+  .techGroup-stripe-arrows button {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+
+  .techGroup-slide-card {
+    padding: 18px;
+    min-height: 300px;
+  }
+
+  .techGroup-card-one-header,
+  .techGroup-card-two-header,
+  .techGroup-card-three-header,
+  .techGroup-card-four-header {
+    font-size: 24px;
+  }
+
+  .techGroup-card-three-grid-box,
+  .techGroup-card-four-box {
+    font-size: 7px;
+    padding: 10px 6px 5px 6px;
+    min-height: 48px;
+  }
+
+  .techGroup-card-three-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .techGroup-budget-image {
+    width: 40px;
     height: 40px;
   }
-  
-  .techGroup-logo-image {
-    height: 25px;
+
+  .techGroup-card-three-bottom-description {
+    font-size: 7px;
+  }
+
+  .techGroup-card-two-description {
+    font-size: 9px;
   }
 }
 
-/* Additional utility animations */
-@keyframes techGroup-fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes techGroup-fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes techGroup-fadeInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes techGroup-fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* Smooth scrolling for the entire section */
-.techGroup-testimonials-section * {
-  box-sizing: border-box;
-}
-
-/* Ensure proper z-index stacking */
-.techGroup-testimonials-section {
-  z-index: 1;
-}
-
-.techGroup-testimonialSection-container {
-  position: relative;
-  z-index: 2;
-}
-
-/* Loading states */
-.techGroup-testimonials-section.techGroup-loading {
-  opacity: 0.7;
-  pointer-events: none;
-}
-
-/* Focus states for accessibility */
+/* ================= ACCESSIBILITY ================= */
 .techGroup-carousel-dot:focus,
 .techGroup-cohere-logo:focus,
-.techGroup-benefit-card:focus,
 .techGroup-logo-set-dot:focus {
   outline: 2px solid #f23030;
   outline-offset: 2px;
 }
 
-/* Reduced motion support */
+/* ================= REDUCED MOTION ================= */
 @media (prefers-reduced-motion: reduce) {
   .techGroup-testimonials-section * {
     animation-duration: 0.01ms !important;

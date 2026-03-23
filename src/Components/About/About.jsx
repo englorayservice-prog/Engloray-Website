@@ -1,265 +1,217 @@
-import React, { useLayoutEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+    faArrowTrendUp,
+    faPlay,
+    faArrowUpRightFromSquare,
+    faClock,
+    faChevronRight,
+    faPalette,
+    faDesktop,
+    faMobileScreenButton,
+    faGear,
+    faChartLine,
+    faTimes,
+    faBezierCurve,
+    faFlask,
+    faDna,
+    faCircleNodes,
+    faCapsules,
+    faBacteria,
+    faDatabase
+} from '@fortawesome/free-solid-svg-icons';
 import './About.css';
-// { faChartColumn, faGraduationCap, faHandshake, faLaptopCode, faPeopleGroup, faStar } import removed
+//import aboutVideo from '../../../assets/engloray VIdeo.mp4';
+import aboutVideo from 'D:/Project-Engloray/Engloray-Website-main/src/assets/engloray VIdeo.mp4';
 
-gsap.registerPlugin(ScrollTrigger);
+
+// 1. MODIFIED: Custom Hook for LocalStorage Persistence
+function useLocalStorage(key, initialValue) {
+    const [storedValue, setStoredValue] = useState(() => {
+        try {
+            const item = window.localStorage.getItem(key);
+            return item ? JSON.parse(item) : initialValue;
+        } catch (error) {
+            console.error(error);
+            return initialValue;
+        }
+    });
+
+    const setValue = (value) => {
+        try {
+            const valueToStore = value instanceof Function ? value(storedValue) : value;
+            setStoredValue(valueToStore);
+            window.localStorage.setItem(key, JSON.stringify(valueToStore));
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
+    return [storedValue, setValue];
+}
 
 const About = () => {
-  const sectionRef = useRef(null);
-  const floatingIconsRef = useRef(null);
+    // 2. MODIFIED: Using Persistent State for UI Interactions
+    const [isVideoOpen, setIsVideoOpen] = useLocalStorage('engloray_video_modal', false);
 
-  useLayoutEffect(() => {
-    // 1️⃣ ICONS GENERATION REMOVED - CONFIRMED
-    // The floating background icons logic has been removed as per request.
+    // Stable data for Bento Grid Tags (Grouped as in image)
+    const pillGroups = [
+        [
+            { id: 'tag-xna', icon: faDna, text: 'Business Development' },
+            { id: 'tag-crispr', icon: faCircleNodes, text: 'Marketing' },
+        ],
+        [
+            { id: 'tag-synbio', icon: faCapsules, text: 'Brand Design' },
+            { id: 'tag-microbiome', icon: faBacteria, text: 'Web Devlopment' },
+        ],
+        [
+            { id: 'tag-bioinfo', icon: faDatabase, text: 'Branding' }
+        ]
+    ];
 
-    const ctx = gsap.context(() => {
-      // 2️⃣ PREMIUM PRESETS
-      const revealDefaults = {
-        opacity: 0,
-        y: 40,
-        scale: 0.98,
-        filter: "blur(8px)",
-        ease: "power3.out",
-        duration: 1
-      };
+    // 3. MODIFIED: Handler to prevent accidental refreshes
+    const handleAction = (e, callback) => {
+        if (e) e.preventDefault();
+        if (callback) callback();
+    };
 
-      const revealTo = {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        filter: "blur(0px)"
-      };
+    return (
+        <section id="engloray-about-section-precise" className="engloray-about-wrapper">
+            <div className="about-outer-container">
+                <div className="about-main-card">
+                    {/* 2. MAIN BENTO GRID */}
+                    <div className="about-content-grid">
+                        <div className="grid-left-side">
+                            <div className="bento-top-row">
+                                <div className="stats-stack-card">
+                                    <div className="black-stat-card">
+                                        <div className="stat-inner">
+                                            <div className="stat-icon-wrap">
+                                                <FontAwesomeIcon icon={faArrowTrendUp} />
+                                            </div>
+                                            <div className="stat-data">
+                                                <span className="stat-val">320+</span>
+                                                <span className="stat-desc">bio-assets<br />analyzed</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="bottom-stat-row-new">
+                                        <div className="black-circles-pill">
+                                            <div className="c-solid"></div>
+                                            <div className="c-border"></div>
+                                        </div>
+                                        <div className="stat-info-center">
+                                            <span className="info-num">12+</span>
+                                            <span className="info-lbl">biotech solutions<br />available</span>
+                                        </div>
+                                        <div className="stat-action-btn" onClick={(e) => handleAction(e)}>
+                                            <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                                        </div>
+                                    </div>
+                                </div>
 
-      // 3️⃣ PARALLAX ICONS REMOVED
+                                <div className="card-video-precise" onClick={(e) => handleAction(e, () => setIsVideoOpen(true))}>
+                                    <div className="cv-left-side">
+                                        <div className="cv-time-pill">
+                                            <FontAwesomeIcon icon={faClock} /> <span>4m 36s</span>
+                                        </div>
+                                        <div className="cv-text-box">
+                                            <h4>Watch Video</h4>
+                                            <p>Watch Engloray's Insights</p>
+                                        </div>
+                                    </div>
+                                    <div className="cv-right-side">
+                                        <div className="cv-preview-full">
+                                            <div className="cv-play-icon">
+                                                <FontAwesomeIcon icon={faPlay} />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-      // 4️⃣ SEQUENTIAL CONTENT REVEAL (Reversible)
-      const triggerDefaults = {
-        start: "top 85%",
-        toggleActions: "play reverse play reverse"
-      };
+                            <div className="about-hero-precise-section">
+                                <h1 className="hero-heading-inline">
+                                    About Our<br />
+                                    Succesfull
+                                    <span className="inline-action-group">
+                                        <button className="pill-learn-btn" onClick={(e) => handleAction(e, () => window.location.href = '#services')}>Learn More</button>
+                                        <div className="arrow-circle-btn" onClick={(e) => handleAction(e)}>
+                                            <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                                        </div>
+                                    </span>
+                                    <br />
+                                    Achievements <span className="inline-icon-stack">
+                                        <div className="stack-icon icon-bio" key="bio-icon"><FontAwesomeIcon icon={faBezierCurve} /></div>
+                                        <div className="stack-icon icon-galaxy" key="galaxy-icon"></div>
+                                        <div className="stack-icon icon-flask" key="flask-icon"><FontAwesomeIcon icon={faFlask} /></div>
+                                    </span>
+                                </h1>
+                                <p className="hero-description-p">
+                                    ENGLORAY began in 2023 as a creative studio dedicated to building visual identities through expert branding and packaging design. We soon evolved into a digital experience partner, expanding our expertise into high-impact website design and UI/UX solutions. By 2024, we launched specialized divisions—ENGLORAY Tech Group for business solution
+                                </p>
+                            </div>
+                        </div>
 
-      // -- Header --
-      gsap.fromTo('.about-header', revealDefaults, {
-        ...revealTo,
-        scrollTrigger: { trigger: '.about-header', ...triggerDefaults }
-      });
+                        <div className="grid-right-side">
+                            <div className="visual-hero-card">
+                                <div className="visual-pagination-dots">
+                                    <span></span>
+                                    <span className="active"></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <div className="visual-glass-footer">
+                                    <div className="glass-content-left">
+                                        <h3 className="join-text">Join Our<br />Platform</h3>
+                                        <div className="glass-divider"></div>
+                                        <p className="learn-text">& Learn<br />How To<br />Start</p>
+                                    </div>
+                                    <div className="glass-toggle-group" onClick={(e) => handleAction(e)}>
+                                        <div className="toggle-circle-white"></div>
+                                        <div className="toggle-circle-black">
+                                            <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-      // -- Description --
-      gsap.fromTo('.about-description', revealDefaults, {
-        ...revealTo,
-        scrollTrigger: { trigger: '.about-description', ...triggerDefaults }
-      });
-
-
-
-      // -- Visual Items (Grid Stagger) --
-      gsap.fromTo('.visual-item', revealDefaults, {
-        ...revealTo,
-        stagger: 0.05,
-        scrollTrigger: { trigger: '.visual-grid', ...triggerDefaults }
-      });
-
-      // -- Stats (Stagger + Counter) --
-      const statsTimeline = gsap.timeline({
-        scrollTrigger: { trigger: '.about-stats', ...triggerDefaults }
-      });
-
-      statsTimeline.fromTo('.stat-item', revealDefaults, {
-        ...revealTo,
-        stagger: 0.15
-      });
-
-    }, sectionRef);
-
-    // Safety refresh
-    setTimeout(() => ScrollTrigger.refresh(), 100);
-
-    return () => ctx.revert();
-  }, []);
-
-  return (
-    <div className="about-section" id="about" ref={sectionRef}>
-      {/* Floating Icons Container */}
-      {/* Floating Icons Container Removed */}
-
-      <div className="about-container">
-        <div className="about-header">
-          <span className="title-accent">ABOUT ENGLORAY</span>
-          <h2 className="about-title">
-            Empowering businesses through technology & education
-          </h2>
-          <p className="about-subtitle">
-            Engloray is a dynamic technology and education group that bridges the gap between business innovation and learning excellence through comprehensive digital solutions.
-          </p>
-          <button className="get-started-btn">
-            Get Started
-            <span className="btn-icon">
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 13L13 1M13 1H5M13 1V9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </span>
-          </button>
-        </div>
-
-        <div className="about-content">
-          <div className="about-text">
-            {/* <p className="about-description">
-              Engloray is a <span className="highlight">dynamic technology and education group</span> that
-              bridges the gap between business innovation and learning excellence through
-              comprehensive digital solutions.
-            </p> */}
-            <div className="about-visual">
-              <div className="about-services-list">
-                <span className="service-pill">Discovery & Strategy</span>
-                <span className="service-pill">Branding & Identity</span>
-                <span className="service-pill">Consultancy</span>
-                <span className="service-pill">Ideation & Concepting</span>
-
-                <div className="service-stat">
-                  <h4>230+</h4>
-                  <p>Project Completed</p>
-                  <h4>170+</h4>
-                  <p>Happy Clients</p>
-                  <h4>1.7k</h4>
-                  <p>Learners Trained</p>
-                  <h4>20+</h4>
-                  <p>Industries Served</p>
+                    {/* 3. MODIFIED: Footer Tags Grouped as Groups of Two */}
+                    <div className="about-pills-row">
+                        {pillGroups.map((group, groupIdx) => (
+                            <div key={`group-${groupIdx}`} className="pill-group">
+                                {group.map((tag) => (
+                                    <div key={tag.id} className="pill-tag">
+                                        <FontAwesomeIcon icon={tag.icon} /> {tag.text}
+                                    </div>
+                                ))}
+                            </div>
+                        ))}
+                    </div>
                 </div>
-              </div>
-              <div className="visual-container">
-                <h4 className="visual-title">Our Expertise</h4>
-                <div className="visual-grid">
-                  <div className="visual-item">
-                    <span>Digital Innovation</span>
-                  </div>
-                  <div className="visual-item">
-                    <span>Learning Solutions</span>
-                  </div>
-                  <div className="visual-item">
-                    <span>Business Growth</span>
-                  </div>
-                  <div className="visual-item">
-                    <span>Technology Stack</span>
-                  </div>
-                  <div className="visual-item">
-                    <span>Customer-Centric Approach</span>
-                  </div>
-                  <div className="visual-item">
-                    <span>Quality & Security</span>
-                  </div>
-                  <div className="visual-item">
-                    <span>Automation & Workflow Optimization</span>
-                  </div>
-                  <div className="visual-item">
-                    <span>Support & Continuous Improvement</span>
-                  </div>
-                  <div className="visual-item">
-                    <span>Digital Transformation Strategy</span>
-                  </div>
-                  <div className="visual-item">
-                    <span>IT Consulting & Tech Support</span>
-                  </div>
-                </div>
-              </div>
             </div>
 
-            <div className="about-features">
-              <div className="technology-card">
-                <div className="feature-card-header">
-                  {/* Icon Removed */}
-                  <h3>Enterprise Technology</h3>
+            {isVideoOpen && (
+                <div className="about-modal-overlay" onClick={() => setIsVideoOpen(false)}>
+                    <div className="about-modal-content" onClick={e => e.stopPropagation()}>
+                        <button className="close-about-modal" onClick={(e) => handleAction(e, () => setIsVideoOpen(false))}>
+                            <FontAwesomeIcon icon={faTimes} />
+                        </button>
+                        <div className="about-video-placeholder">
+                            <video
+                                src={aboutVideo}
+                                controls
+                                autoPlay
+                                style={{ width: '100%', borderRadius: '24px' }}
+                            />
+                        </div>
+                    </div>
                 </div>
-                <p>Advanced digital solutions and transformation tools designed for modern business challenges and scalability.</p>
-              </div>
-
-              <div className="about-mission-card">
-                <p className="about-mission">
-                  We combine innovative technology with
-                  educational expertise to drive measurable
-                  growth and transformation for businesses and learners worldwide.
-                </p>
-              </div>
-
-              <div className="education-card">
-                <div className="feature-card-header">
-                  {/* Icon Removed */}
-                  <h3>Learning Platforms</h3>
-                </div>
-                <p>Comprehensive educational solutions that empower organizations and individuals with future-ready skills.</p>
-              </div>
-            </div>
-          </div>
-
-          {/* <div className="about-visual">
-            <div className="visual-container">
-              <h4 className="visual-title">Our Expertise</h4>
-              <div className="visual-grid">
-                <div className="visual-item">
-                  <span>Digital Innovation</span>
-                </div>
-                <div className="visual-item">
-                  <span>Learning Solutions</span>
-                </div>
-                <div className="visual-item">
-                  <span>Business Growth</span>
-                </div>
-                <div className="visual-item">
-                  <span>Technology Stack</span>
-                </div>
-                <div className="visual-item">
-                  <span>Customer-Centric Approach</span>
-                </div>
-                <div className="visual-item">
-                  <span>Quality & Security</span>
-                </div>
-                <div className="visual-item">
-                  <span>Automation & Workflow Optimization</span>
-                </div>
-                <div className="visual-item">
-                  <span>Support & Continuous Improvement</span>
-                </div>
-                <div className="visual-item">
-                  <span>Digital Transformation Strategy</span>
-                </div>
-                <div className="visual-item">
-                  <span>IT Consulting & Tech Support</span>
-                </div>
-              </div>
-            </div>
-          </div> */}
-        </div>
-
-        {/* Stats Section - Now with continuous floating animation */}
-        {/* <div className="about-stats">
-          <div className="stat-item">
-            {/* Icon Removed */}
-        {/* <h4>230+</h4>
-            <p>Projects Completed</p>
-          </div>
-          <div className="stat-item"> */}
-        {/* Icon Removed */}
-        {/* <h4>170+</h4>
-            <p>Happy Clients</p>
-          </div>
-          <div className="stat-item"> */}
-        {/* <div className="stat-icon">🤝</div> */}
-        {/* Icon Removed */}
-        {/* <h4>1.7k</h4>
-            <p>Learners Trained</p>
-          </div>
-          <div className="stat-item"> */}
-        {/* <div className="stat-icon">⭐</div> */}
-        {/* Icon Removed */}
-        {/* <h4>20+</h4>
-            <p>Industries Served</p>
-          </div>
-        </div> */}
-      </div>
-    </div>
-  );
+            )}
+        </section>
+    );
 };
 
 export default About;

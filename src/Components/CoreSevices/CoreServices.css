@@ -1,296 +1,382 @@
 /* Reset and Base Styles */
 .services-carousel-section {
-    padding: 80px 0;
-    background: white;
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Outfit', sans-serif;
+  padding: 40px 0;
+  background: #000000;
+  /* Pure black as in image */
+  position: relative;
+  width: 100%;
+  min-height: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  font-family: 'Outfit', sans-serif;
+  overflow: hidden;
 }
 
-/* Main Container - Full Width */
+/* Main Container */
 .carousel-main-container {
-    width: 100%;
-    position: relative;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
 }
 
 /* Header */
 .carousel-header {
-    text-align: center;
-    margin-bottom: 80px;
-    padding: 0 20px;
+  margin-bottom: 60px;
+}
+
+.header-top-row {
+  display: flex;
+  align-items: flex-end;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 30px;
+  width: 100%;
 }
 
 .carousel-title {
-    font-size: 4rem;
-    font-weight: 700;
-    color: #1F2937;
-    margin-bottom: 20px;
-    line-height: 1.1;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffffff !important;
+  margin: 0;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  font-family: 'Outfit', sans-serif;
+  flex: 1;
+  /* Pushes the subtitle to occupy the exact right section */
+  text-align: left;
+  /* Move title to the right edge */
+  padding-right: 10px;
+  /* Space between title and subtitle */
 }
 
 .title-accent {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .carousel-subtitle {
-    font-size: 1.3rem;
-    color: #6B7280;
-    max-width: 600px;
-    margin: 0 auto;
-    line-height: 1.6;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.7) !important;
+  width: 25%;
+  /* Matches exactly one card slot width (1/4) */
+  margin: 0;
+  line-height: 1.6;
+  text-align: left;
+  /* Starts text at the left edge of the third card */
+  flex-shrink: 0;
 }
 
 /* Carousel Wrapper - Full Width */
 .carousel-full-wrapper {
-    width: 100%;
-    position: relative;
+  width: 100%;
+  position: relative;
 }
 
-/* Controls - Top Right - Transparent Background */
+/* Controls - Sides - White Background */
 .carousel-controls-top {
-    position: absolute;
-    top: 30px;
-    right: 40px;
-    display: flex;
-    gap: 15px;
-    z-index: 100;
+  position: absolute;
+  top: 195px;
+  /* Center of the card (approx 650px * 0.6 / 2) */
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 100;
+  pointer-events: none;
+  padding: 0 10px;
 }
 
 .carousel-btn {
-    width: 50px;
-    height: 50px;
-    border: none;
-    background: transparent;
-    border-radius: 50%;
-    font-size: 1.5rem;
-    color: white;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: none;
-    border: 2px solid rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(10px);
+  width: 60px;
+  height: 60px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border-radius: 50%;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  pointer-events: auto;
+  z-index: 101;
 }
 
 .carousel-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: translateY(-2px);
-    border-color: rgba(255, 255, 255, 0.8);
-    color: white;
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: scale(1.1);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+  color: #fff;
 }
 
 /* Carousel Container - Full Width with Rounded Corners */
 .carousel-full-container {
-    width: 100%;
-    height: 650px;
-    position: relative;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  height: 460px;
+  /* Ensured enough height for scaled cards and shadows */
+  border-radius: 0;
+  overflow: hidden;
+  /* Hide cards outside the 3 visible ones */
+  box-shadow: none;
+  background: transparent;
 }
 
 .carousel-track {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.6s ease;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s ease;
+  transform: translateX(calc((var(--current-index) - 1) * -25%));
 }
 
 .carousel-slide {
-    min-width: 100%;
-    height: 100%;
-    position: relative;
-    flex-shrink: 0;
+  box-sizing: border-box;
+  padding: 0 1px;
+  flex: 0 0 25%;
+  max-width: 25%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.slide-wrapper {
+  position: relative;
+  width: 500px;
+  height: 700px;
+  transform: scale(0.6) translateY(0px) !important;
+  transform-origin: top center;
+  transition: all 0.5s ease;
+  opacity: 1 !important;
+}
+
+.carousel-slide.center-card .slide-wrapper {
+  transform: scale(0.6) translateY(0px) !important;
+  z-index: 10;
+  opacity: 1 !important;
+}
+
+.carousel-slide.side-card .slide-wrapper {
+  transform: scale(0.6) translateY(0px) !important;
+  opacity: 1 !important;
+  z-index: 5;
 }
 
 /* Background Image */
 .slide-bg-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    filter: brightness(0.5);
+  display: none;
+  /* We use the mockup-bg now */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(0.5);
 }
 
-/* Content */
+/* Slide Content UI */
 .slide-content {
-    position: relative;
-    z-index: 10;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0 40px;
-    color: white;
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 500px;
+  height: 500px;
+  /* Reduced from 700px */
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--card-bg, #18181b);
+  border-radius: 40px;
+  z-index: 10;
+  transition: all 0.4s ease;
+  overflow: hidden;
+
+  /* Recalculated path to fit the 500px height */
+  clip-path: path("M 30,0 L 470,0 A 30,30 0,0,1 500,30 L 500,290 A 60,60 0,0,1 440,350 L 390,350 A 60,60 0,0,0 330,410 L 330,440 A 60,60 0,0,1 270,500 L 30,500 A 30,30 0,0,1 0,470 L 0,30 A 30,30 0,0,1 30,0 Z");
+
+  box-shadow:
+    inset 0 0 0 1.5px rgba(255, 255, 255, 0.25),
+    0 25px 50px -12px rgba(0, 0, 0, 0.7);
 }
 
-/* Service Icon */
-.service-icon-box {
-    width: 90px;
-    height: 90px;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 30px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(255, 255, 255, 0.3);
+.card-ui-header {
+  text-align: left;
+  padding: 45px 45px 0;
+  margin-bottom: 50px;
+  position: relative;
+  z-index: 20;
 }
 
-.service-icon {
-    width: 45px;
-    height: 45px;
-    filter: brightness(0) invert(1);
+.card-ui-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 5px;
+  letter-spacing: -1px;
+  font-family: 'Outfit', sans-serif;
 }
 
-/* Service Content */
-.service-content {
-    max-width: 800px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.card-mockup-area {
+  flex: 1;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  /* Remove side padding to make image wider */
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: visible;
+  position: relative;
+  z-index: 1;
 }
 
-/* Service Title - White Color */
-.service-title {
-    font-size: 2.5rem;
-    font-weight: 100;
-    font-family: 'HEXCO';
-    margin-bottom: 20px;
-    line-height: 1.1;
-    text-transform: uppercase;
-    color: white !important;
-    /* Added white color */
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-    /* Added shadow for better readability */
+.mockup-bg {
+  width: 100%;
+  height: 100%;
+  /* Slightly smaller to allow room for background layers */
+  background-size: cover;
+  background-position: center top;
+  /* Ultra-soft, rounded corners on all sides */
+  border-radius: 65px;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  position: relative;
+  z-index: 2;
 }
 
-/* Service Description - White Color */
-.service-description {
-    font-size: 1.1rem;
-    font-family: 'Aldrich';
-    margin-bottom: 30px;
-    line-height: 1.6;
-    opacity: 0.9;
-    color: white !important;
-    /* Added white color */
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-    /* Added shadow for better readability */
+/* 3D Stacked Layers behind the mockup */
+.mockup-bg::before,
+.mockup-bg::after {
+  content: "";
+  position: absolute;
+  top: -1px;
+  right: 0%;
+  width: 100%;
+  height: 100%;
+  /* Using a different project mockup for the first background layer */
+  background-image: inherit;
+  background-size: cover;
+  background-position: center top;
+
+  /* Darkened and blurred ghost image */
+  border-radius: 45px 45px 0 0;
+  z-index: -1;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.5s ease;
 }
 
-/* Features Grid */
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    max-width: 500px;
-    margin: 0 auto 30px;
+.mockup-bg::after {
+  top: -28px;
+  width: 100%;
+  /* Using another different project mockup for the furthest layer */
+  background-image: url('https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60');
+  filter: brightness(0.3) blur(5px);
+  z-index: -2;
 }
 
-.feature-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 12px 16px;
-    background: rgba(255, 255, 255, 0.15);
-    border-radius: 10px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+.card-ui-action {
+  position: absolute;
+  top: 550px;
+  /* Aligned with the shelf in clip-path */
+  left: 340px;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 25;
 }
 
-.feature-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: currentColor;
+.action-circle {
+  width: 110px;
+  height: 110px;
+  background: #333;
+  border-radius: 50%;
+  margin-bottom: 220%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
-.feature-text {
-    font-size: 0.95rem;
-    font-weight: 100;
-    font-family: 'Aldrich';
-    color: white;
-    /* Ensure feature text is white */
+.action-circle:hover {
+  transform: scale(1.1) rotate(5deg);
+  background: #444;
 }
 
-/* CTA Button - Centered */
-.service-cta-button {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 14px 28px;
-    border: none;
-    border-radius: 50px;
-    font-size: 0.8rem;
-    font-weight: 100;
-    font-family: 'HEXCO';
-    cursor: pointer;
-    transition: all 0.3s ease;
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(10px);
-    margin: 0 auto;
+/* Specific styling for the purple card action button */
+.carousel-slide:nth-child(even) .action-circle {
+  background: #C0FF2D;
 }
 
-.service-cta-button:hover {
-    transform: translateY(-2px);
-    background: rgba(255, 255, 255, 0.3);
-    border-color: rgba(255, 255, 255, 0.6);
+.carousel-slide:nth-child(odd) .action-circle svg path {
+  stroke: #cac9c9;
 }
+
+.carousel-slide:nth-child(even) .action-circle svg {
+  width: 45px;
+  height: 45px;
+  transition: transform 0.3s ease;
+}
+
+.action-circle:hover svg {
+  transform: translate(3px, -3px);
+}
+
 
 /* Color Dots Below Carousel */
 .color-dots-indicators {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 40px;
-    padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+  /* Reduced from 40px */
+  padding: 0 20px;
 }
 
 .color-dot {
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
-    opacity: 0.6;
-    transform: scale(1);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  opacity: 0.6;
+  transform: scale(1);
 }
 
 .color-dot.active {
-    opacity: 1;
-    transform: scale(1.3);
-    border-color: #1F2937;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  transform: scale(1.3);
+  border-color: #1F2937;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .color-dot:hover {
-    transform: scale(1.2);
-    opacity: 0.8;
+  transform: scale(1.2);
+  opacity: 0.8;
 }
 
 /* Remove old indicators */
 .carousel-indicators {
-    display: none;
+  display: none;
 }
 
 /* Responsive Design */
@@ -301,314 +387,326 @@
 
 /* Large Tablets (1024px) */
 @media (max-width: 1024px) {
-    .carousel-title {
-        font-size: 3rem;
-    }
+  .carousel-title {
+    font-size: 3rem;
 
-    .carousel-subtitle {
-        font-size: 1.1rem;
-    }
+  }
 
-    .service-title {
-        font-size: 2rem;
-    }
+  .carousel-subtitle {
+    font-size: 1.1rem;
+  }
 
-    .carousel-full-container {
-        height: 550px;
-    }
+  .service-title {
+    font-size: 2rem;
+  }
+
+  .carousel-full-container {
+    height: 460px;
+  }
 }
 
 /* ========== TABLET SPECIFIC FIX ========== */
 @media (max-width: 768px) {
-    .services-carousel-section {
-        padding: 50px 0;
-    }
+  .services-carousel-section {
+    padding: 40px 0;
+  }
 
-    .carousel-main-container {
-        width: 100%;
-        padding: 0 15px;
-        box-sizing: border-box;
-    }
+  .carousel-main-container {
+    width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
 
-    .carousel-full-container {
-        height: 450px;
-        border-radius: 15px;
-    }
+  .carousel-full-container {
+    height: 450px;
+    border-radius: 15px;
+  }
 
-    .carousel-track {
-        width: 100%;
-    }
+  .carousel-track {
+    width: 100%;
+    transform: translateX(calc(var(--current-index) * -100%));
+  }
 
-    .carousel-slide {
-        min-width: 100%;
-        width: 100%;
-    }
+  .carousel-slide {
+    min-width: 100%;
+    width: 100%;
+  }
 
-    .slide-content {
-        padding: 0 20px;
-    }
+  .slide-wrapper,
+  .carousel-slide.center-card .slide-wrapper,
+  .carousel-slide.side-card .slide-wrapper {
+    transform: scale(0.65) translateY(0) !important;
+    margin: 0 auto;
+    opacity: 1;
+  }
 
-    /* Smaller header text */
-    .carousel-title {
-        font-size: 1.8rem;
-        margin-bottom: 15px;
-    }
+  .slide-content {
+    padding: 0 0px;
+  }
 
-    .carousel-subtitle {
-        font-size: 0.95rem;
-        max-width: 500px;
-    }
+  /* Smaller header text */
+  .carousel-title {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    margin-left: 30px;
+  }
 
-    /* Smaller service content */
-    .service-title {
-        font-size: 1.5rem;
-        margin-bottom: 15px;
-    }
+  .carousel-subtitle {
+    font-size: 0.95rem;
+    max-width: 500px;
 
-    .service-description {
-        font-size: 0.9rem;
-        margin-bottom: 20px;
-        line-height: 1.5;
-    }
+  }
 
-    /* Smaller icon */
-    .service-icon-box {
-        width: 65px;
-        height: 65px;
-        margin-bottom: 15px;
-        border-radius: 15px;
-    }
+  /* Smaller service content */
+  .service-title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
 
-    .service-icon {
-        width: 28px;
-        height: 28px;
-    }
+  .service-description {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
 
-    /* Smaller features */
-    .features-grid {
-        grid-template-columns: 1fr;
-        max-width: 320px;
-        gap: 6px;
-        margin-bottom: 15px;
-    }
+  /* Smaller icon */
+  .service-icon-box {
+    width: 65px;
+    height: 65px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+  }
 
-    .feature-item {
-        padding: 8px 10px;
-        gap: 8px;
-        border-radius: 8px;
-    }
+  .service-icon {
+    width: 28px;
+    height: 28px;
+  }
 
-    .feature-text {
-        font-size: 0.8rem;
-    }
+  /* Smaller features */
+  .features-grid {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+    gap: 6px;
+    margin-bottom: 15px;
+  }
 
-    .feature-dot {
-        width: 4px;
-        height: 4px;
-    }
+  .feature-item {
+    padding: 8px 10px;
+    gap: 8px;
+    border-radius: 8px;
+  }
 
-    /* Smaller CTA button */
-    .service-cta-button {
-        padding: 8px 18px;
-        font-size: 0.7rem;
-        gap: 6px;
-        border-radius: 40px;
-        min-height: 40px;
-    }
+  .feature-text {
+    font-size: 0.8rem;
+  }
 
-    /* Smaller arrow buttons */
-    .carousel-controls-top {
-        right: 12px;
-        top: 12px;
-        gap: 10px;
-    }
+  .feature-dot {
+    width: 4px;
+    height: 4px;
+  }
 
-    .carousel-btn {
-        width: 32px;
-        height: 32px;
-        font-size: 0.9rem;
-        border-width: 1.5px;
-    }
+  /* Smaller CTA button */
+  .service-cta-button {
+    padding: 8px 18px;
+    font-size: 0.7rem;
+    gap: 6px;
+    border-radius: 40px;
+    min-height: 40px;
+  }
 
-    /* Smaller dots */
-    .color-dots-indicators {
-        margin-top: 25px;
-        gap: 8px;
-    }
+  /* Smaller arrow buttons */
+  .carousel-controls-top {
+    right: 12px;
+    top: 12px;
+    gap: 10px;
+  }
 
-    .color-dot {
-        width: 10px;
-        height: 10px;
-    }
+  .carousel-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+    border-width: 1.5px;
+  }
+
+  /* Smaller dots */
+  .color-dots-indicators {
+    margin-top: 25px;
+    gap: 8px;
+  }
+
+  .color-dot {
+    width: 10px;
+    height: 10px;
+  }
 }
 
 /* ========== MOBILE SPECIFIC FIX ========== */
 @media (max-width: 480px) {
-    .services-carousel-section {
-        padding: 40px 0;
-    }
+  .services-carousel-section {
+    padding: 40px 0;
+  }
 
-    .carousel-main-container {
-        padding: 0 8px;
-    }
+  .carousel-main-container {
+    padding: 0 8px;
+  }
 
-    .carousel-full-container {
-        height: 380px;
-    }
+  .carousel-full-container {
+    height: 380px;
+  }
 
-    .carousel-slide {
-        min-width: 100%;
-        width: 100%;
-    }
+  .carousel-slide {
+    min-width: 100%;
+    width: 100%;
+  }
 
-    /* Even smaller header text */
-    .carousel-title {
-        font-size: 1.5rem;
-        margin-bottom: 10px;
-    }
+  /* Even smaller header text */
+  .carousel-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
 
-    .carousel-subtitle {
-        font-size: 0.8rem;
-        max-width: 280px;
-    }
+  .carousel-subtitle {
+    font-size: 0.8rem;
+    max-width: 280px;
+  }
 
-    /* Even smaller service content */
-    .service-title {
-        font-size: 1.2rem;
-        margin-bottom: 8px;
-    }
+  /* Even smaller service content */
+  .service-title {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+  }
 
-    .service-description {
-        font-size: 0.75rem;
-        margin-bottom: 12px;
-        line-height: 1.4;
-    }
+  .service-description {
+    font-size: 0.75rem;
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
 
-    /* Even smaller icon */
-    .service-icon-box {
-        width: 55px;
-        height: 55px;
-        margin-bottom: 12px;
-        border-radius: 10px;
-    }
+  /* Even smaller icon */
+  .service-icon-box {
+    width: 55px;
+    height: 55px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+  }
 
-    .service-icon {
-        width: 22px;
-        height: 22px;
-    }
+  .service-icon {
+    width: 22px;
+    height: 22px;
+  }
 
-    /* Even smaller features */
-    .features-grid {
-        max-width: 260px;
-        gap: 4px;
-        margin-bottom: 12px;
-    }
+  /* Even smaller features */
+  .features-grid {
+    max-width: 260px;
+    gap: 4px;
+    margin-bottom: 12px;
+  }
 
-    .feature-item {
-        padding: 6px 8px;
-        gap: 6px;
-        border-radius: 6px;
-    }
+  .feature-item {
+    padding: 6px 8px;
+    gap: 6px;
+    border-radius: 6px;
+  }
 
-    .feature-text {
-        font-size: 0.7rem;
-    }
+  .feature-text {
+    font-size: 0.7rem;
+  }
 
-    .feature-dot {
-        width: 3px;
-        height: 3px;
-    }
+  .feature-dot {
+    width: 3px;
+    height: 3px;
+  }
 
-    /* Even smaller CTA button */
-    .service-cta-button {
-        padding: 6px 14px;
-        font-size: 0.65rem;
-        gap: 4px;
-        border-radius: 35px;
-        min-height: 35px;
-        border-width: 1.5px;
-    }
+  /* Even smaller CTA button */
+  .service-cta-button {
+    padding: 6px 14px;
+    font-size: 0.65rem;
+    gap: 4px;
+    border-radius: 35px;
+    min-height: 35px;
+    border-width: 1.5px;
+  }
 
-    /* Even smaller arrow buttons */
-    .carousel-controls-top {
-        right: 8px;
-        top: 8px;
-        gap: 8px;
-    }
+  /* Even smaller arrow buttons */
+  .carousel-controls-top {
+    right: 8px;
+    top: 8px;
+    gap: 8px;
+  }
 
-    .carousel-btn {
-        width: 28px;
-        height: 28px;
-        font-size: 0.8rem;
-        border-width: 1px;
-    }
+  .carousel-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 0.8rem;
+    border-width: 1px;
+  }
 
-    /* Even smaller dots */
-    .color-dots-indicators {
-        margin-top: 20px;
-        gap: 6px;
-    }
+  /* Even smaller dots */
+  .color-dots-indicators {
+    margin-top: 20px;
+    gap: 6px;
+  }
 
-    .color-dot {
-        width: 8px;
-        height: 8px;
-    }
+  .color-dot {
+    width: 8px;
+    height: 8px;
+  }
 }
 
 /* Extra small mobile */
 @media (max-width: 360px) {
-    .carousel-full-container {
-        height: 350px;
-    }
+  .carousel-full-container {
+    height: 350px;
+  }
 
-    .service-title {
-        font-size: 1rem;
-    }
+  .service-title {
+    font-size: 1rem;
+  }
 
-    .service-description {
-        font-size: 0.7rem;
-    }
+  .service-description {
+    font-size: 0.7rem;
+  }
 
-    .features-grid {
-        max-width: 220px;
-    }
+  .features-grid {
+    max-width: 220px;
+  }
 
-    .slide-content {
-        padding: 0 12px;
-    }
+  .slide-content {
+    padding: 0 0px;
+  }
 
-    .service-icon-box {
-        width: 50px;
-        height: 50px;
-    }
+  .service-icon-box {
+    width: 50px;
+    height: 50px;
+  }
 
-    .service-icon {
-        width: 20px;
-        height: 20px;
-    }
+  .service-icon {
+    width: 20px;
+    height: 20px;
+  }
 
-    .feature-item {
-        padding: 5px 6px;
-    }
+  .feature-item {
+    padding: 5px 6px;
+  }
 
-    .feature-text {
-        font-size: 0.65rem;
-    }
+  .feature-text {
+    font-size: 0.65rem;
+  }
 
-    .service-cta-button {
-        padding: 5px 12px;
-        font-size: 0.6rem;
-        min-height: 32px;
-    }
+  .service-cta-button {
+    padding: 5px 12px;
+    font-size: 0.6rem;
+    min-height: 32px;
+  }
 
-    .carousel-btn {
-        width: 26px;
-        height: 26px;
-        font-size: 0.7rem;
-    }
+  .carousel-btn {
+    width: 26px;
+    height: 26px;
+    font-size: 0.7rem;
+  }
 
-    .color-dot {
-        width: 6px;
-        height: 6px;
-    }
+  .color-dot {
+    width: 6px;
+    height: 6px;
+  }
 }

@@ -1,170 +1,153 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './TechLearningHero.css';
-import bgVideo from "../../../assets/video1.mp4";
-
-
-
+import studentsImg from '../../../assets/images/students.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPhone, faGraduationCap, faHandshake, faArrowUpRightFromSquare, faChartLine, faLaptopCode, faUsers, faTrophy } from '@fortawesome/free-solid-svg-icons';
 
 const TechLearningHero = () => {
-  const leftCardRef = useRef(null);
-  const rightCardRef = useRef(null);
-  const bottomCardRef = useRef(null);
+    const whatsappNumber = '6381759909';
+    const whatsappMessage = "Hi! I'd like to book a demo for your courses. Can you please provide more information?";
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('tech-animate-in');
-          }
-        });
-      },
-      { threshold: 0.3 }
+    return (
+        <section className="tlh-peoplr-container" id="home">
+
+            {/* Top Purple Section containing Header, Text, and Image Stage */}
+            <div className="tlh-peoplr-top-section">
+                {/* Top Header/Nav Area — Book a call removed from here */}
+                <header className="tlh-peoplr-header">
+                    <nav className="tlh-nav-links">
+                        {/* Nav items removed per request */}
+                    </nav>
+                </header>
+
+                {/* Main Hero Header text */}
+                <h1 className="tlh-peoplr-title">
+                    UPSKILL FOR YOUR<br />CAREER
+                </h1>
+
+                {/* Main Stage with Image and Floating Cards */}
+                <div className="tlh-peoplr-stage">
+
+                    {/* Center Image — Start Learning button removed from here */}
+                    <div className="tlh-peoplr-image-wrapper">
+                        <img src={studentsImg} alt="Students" className="tlh-peoplr-students" />
+                    </div>
+
+                    {/* Floating Stat Card Left (90% Placement) */}
+                    <div className="tlh-float-card tlh-float-left">
+                        <div className="tlh-card-top-row">
+                            <span className="tlh-huge-num">90<sup>%</sup></span>
+                            <div className="tlh-card-icon-pill lime-icon">
+                                <FontAwesomeIcon icon={faGraduationCap} />
+                            </div>
+                        </div>
+                        <p className="tlh-card-desc" style={{ marginBottom: '15px' }}>Placement<br />Assistance</p>
+                        <div className="tlh-card-extra" style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.6)', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                            <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}><span style={{ color: '#d8ff4a' }}>✓</span> Resume Building</span>
+                            <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}><span style={{ color: '#d8ff4a' }}>✓</span> Mock Interviews</span>
+                            <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}><span style={{ color: '#d8ff4a' }}>✓</span> Career Support</span>
+                        </div>
+                    </div>
+
+                    {/* Floating Stat Card Right (300+ Partners) */}
+                    <div className="tlh-float-card tlh-float-right">
+                        <div className="tlh-card-top-row">
+                            <span className="tlh-huge-num">300<sup>+</sup></span>
+                            <div className="tlh-card-icon-pill dark-icon">
+                                <FontAwesomeIcon icon={faHandshake} />
+                            </div>
+                        </div>
+                        <p className="tlh-card-desc" style={{ marginBottom: '15px' }}>Hiring<br />Partners</p>
+                        <div className="tlh-card-extra" style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.6)', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                            <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}><span style={{ color: '#d8ff4a' }}>✓</span> Top Tech Firms</span>
+                            <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}><span style={{ color: '#d8ff4a' }}>✓</span> Global Startups</span>
+                            <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}><span style={{ color: '#d8ff4a' }}>✓</span> MNCs Connect</span>
+                        </div>
+                    </div>
+
+                    {/* Centered CTA Buttons (Above Marquee) */}
+                    <div className="tlh-center-cta-group">
+                        <Link to="/allCoursesPage" className="tlh-pill-btn-lime">
+                            Start Learning
+                            <span className="tlh-pill-icon"><FontAwesomeIcon icon={faPhone} /></span>
+                        </Link>
+                        <a href={whatsappURL} target="_blank" rel="noopener noreferrer" className="tlh-pill-btn-lime">
+                            Book a call
+                            <span className="tlh-pill-icon"><FontAwesomeIcon icon={faPhone} /></span>
+                        </a>
+                    </div>
+                </div>
+
+                {/* Overlapping Glass Marquee Track INSIDE the Top Card */}
+                <div className="tlh-marquee-container">
+                    <div className="tlh-marquee-track">
+                        {/* Duplicate array twice for seamless marquee loop */}
+                        {[1, 2].map(iteration => (
+                            <React.Fragment key={iteration}>
+                                <div className="tlh-marquee-card"><FontAwesomeIcon icon={faChartLine} style={{ marginRight: '8px', color: '#d8ff4a' }} /> 50+ Industry Tools</div>
+                                <div className="tlh-marquee-card">React & Node.js</div>
+                                <div className="tlh-marquee-card">Python Analytics</div>
+                                <div className="tlh-marquee-card">Cloud DevOps</div>
+                                <div className="tlh-marquee-card">Data Science</div>
+                            </React.Fragment>
+                        ))}
+                    </div>
+                </div>
+            </div>
+
+            {/* Bottom Features Grid */}
+            <div className="tlh-peoplr-bottom-grid">
+
+                <div className="tlh-bottom-card">
+                    <div className="tlh-bcard-header">
+                        <h3>Real-World <br />Practice</h3>
+                        <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="tlh-card-arrow" />
+                    </div>
+                    <p>Develop your abilities with hands-on projects designed to simulate actual industry scenarios and workplace challenges.</p>
+                    <div className="tlh-card-footer">
+                        <span className="tlh-footer-pill lime-footer"><FontAwesomeIcon icon={faLaptopCode} style={{ marginRight: '6px' }} /> Live Projects</span>
+                        <div className="tlh-icon-badges" style={{ marginLeft: 'auto' }}>
+                            <div className="tlh-edu-badge" style={{ background: '#3b2c85' }}><FontAwesomeIcon icon={faLaptopCode} /></div>
+                            <div className="tlh-edu-badge" style={{ background: '#6a4ae0' }}><FontAwesomeIcon icon={faGraduationCap} /></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="tlh-bottom-card">
+                    <div className="tlh-bcard-header">
+                        <h3>Guided <br />Mentorship</h3>
+                        <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="tlh-card-arrow" />
+                    </div>
+                    <p>Gain insights from experienced industry professionals who provide personalized support and feedback throughout your journey.</p>
+                    <div className="tlh-card-footer">
+                        <span className="tlh-footer-pill lime-footer"><FontAwesomeIcon icon={faUsers} style={{ marginRight: '6px' }} /> Expert Mentors</span>
+                        <div className="tlh-icon-badges" style={{ marginLeft: 'auto' }}>
+                            <div className="tlh-edu-badge" style={{ background: '#3b2c85' }}><FontAwesomeIcon icon={faUsers} /></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="tlh-bottom-card">
+                    <div className="tlh-bcard-header">
+                        <h3>Experience <br />First</h3>
+                        <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="tlh-card-arrow" />
+                    </div>
+                    <p>Equip yourself with the practical skills, strong portfolio, and confidence needed to secure top-tier tech opportunities.</p>
+                    <div className="tlh-card-footer">
+                        <span className="tlh-footer-pill lime-footer"><FontAwesomeIcon icon={faTrophy} style={{ marginRight: '6px' }} /> 90% Placement</span>
+                        <div className="tlh-icon-badges" style={{ marginLeft: 'auto' }}>
+                            <div className="tlh-edu-badge" style={{ background: '#3b2c85' }}><FontAwesomeIcon icon={faTrophy} /></div>
+                            <div className="tlh-edu-badge" style={{ background: '#6a4ae0' }}><FontAwesomeIcon icon={faHandshake} /></div>
+                            <div className="tlh-edu-badge" style={{ background: '#8b6ff0' }}><FontAwesomeIcon icon={faUsers} /></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
     );
-
-    if (leftCardRef.current) observer.observe(leftCardRef.current);
-    if (rightCardRef.current) observer.observe(rightCardRef.current);
-    if (bottomCardRef.current) observer.observe(bottomCardRef.current);
-
-    return () => observer.disconnect();
-  }, []);
-
-  const whatsappNumber = '6381759909';
-  const whatsappMessage =
-    "Hi! I'd like to book a demo for your courses. Can you please provide more information?";
-  const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-    whatsappMessage
-  )}`;
-
-  return (
-    <div className="tech-hero-wrapper">
-
-      {/* Glowing Brain Image */}
-      {/* <div className="tech-brain-icon">
-        <img src={brainImg} alt="Brain" />
-      </div> */}
-
-      {/* Top Right Image */}
-      {/* <div className="tech-top-right-container">
-        <img
-          src={require("../../../assets/image6.jpeg")}
-          alt="Top Right Visual"
-          className="tech-top-right-image"
-        />
-      </div> */}
-
-
-      {/* BACKGROUND VIDEO */}
-      <video
-        className="tech-background-video"
-        src={bgVideo}
-        autoPlay
-        loop
-        muted
-        playsInline
-      />
-
-      {/* Gradient Blurs */}
-      {/* <div className="tech-gradient tech-gradient-blue"></div> */}
-      <div className="tech-gradient tech-gradient-purple"></div>
-
-      {/* Floating small labels */}
-      <div className="tech-floating tech-floating-think">Think</div>
-      <div className="tech-floating tech-floating-inspire">Inspire</div>
-      <div className="tech-floating tech-floating-grow">Grow</div>
-
-
-      {/* Top Badge */}
-      <div className="tech-top-badge">
-        ⭐ Top Rated Product
-      </div>
-
-      {/* Avatars */}
-      <div className="tech-avatars">
-        <img src="https://i.pravatar.cc/40?img=1" alt="User" />
-        <img src="https://i.pravatar.cc/40?img=2" alt="User" />
-        <img src="https://i.pravatar.cc/40?img=3" alt="User" />
-        <img src="https://i.pravatar.cc/40?img=4" alt="User" />
-        <img src="https://i.pravatar.cc/40?img=5" alt="User" />
-        <img src="https://i.pravatar.cc/40?img=6" alt="User" />
-      </div>
-
-      {/* Heading */}
-      <h1 className="tech-hero-title">
-        AI Powered learning and <br />career upskiling platform
-      </h1>
-
-      {/* Sub Row */}
-      <div className="tech-sub-row">
-        <span>Increase Career Skills</span>
-        <div className="tech-toggle"></div>
-
-        <div className="tech-icons">
-          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/perplexity.svg" alt="Perplexity" />
-          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/googlebard.svg" alt="Gemini" />
-          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/meta.svg" alt="Meta AI" />
-
-        </div>
-
-      </div>
-
-      {/* Buttons */}
-      <div className="tech-cta-wrapper">
-        <Link to="/allCoursesPage" className="tech-cta-btn">
-          GET STARTED
-          <span className="tech-arrow-circle">→</span>
-        </Link>
-
-        <a
-          href={whatsappURL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="tech-cta-btn tech-secondary-btn"
-        >
-          Book a Demo
-          <span className="tech-arrow-circle">→</span>
-        </a>
-      </div>
-
-      {/* Left Card */}
-      <div ref={leftCardRef} className="tech-card tech-left-card">
-        <h4>What You Get</h4>
-        <ul>
-          <li className="tech-active">✔ Industry-Relevant Skills</li>
-          <li>✔ Hands-on Real Projects</li>
-          <li>✔ Expert Mentorship</li>
-          <li>✔ Career Growth Support</li>
-        </ul>
-      </div>
-
-      {/* Right Top Card */}
-      <div ref={rightCardRef} className="tech-card tech-invoice-card">
-        <h4>10K+ & 98%</h4>
-        <p>Students & Success Rate</p>
-      </div>
-
-      {/* Right Bottom Card */}
-      <div ref={bottomCardRef} className="tech-card tech-client-card">
-        <p><strong>500+</strong> • Projects </p>
-        <p>Excited for the next steps.</p>
-      </div>
-
-      {/* Curve */}
-      <svg className="tech-curve-line" viewBox="0 0 410 250">
-        <path
-          d="M130 65 C 120 200, 280 80, 280 220"
-          stroke="#4f46e5"
-          strokeWidth="2.7"
-          fill="transparent"
-          strokeLinecap="round"
-        />
-        <circle cx="130" cy="60" r="5" fill="#4f46e5" />
-        <circle cx="280" cy="220" r="5" fill="#4f46e5" />
-      </svg>
-
-    </div>
-  );
 };
 
 export default TechLearningHero;

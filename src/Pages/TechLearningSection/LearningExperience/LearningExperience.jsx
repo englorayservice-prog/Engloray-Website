@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import EnrollementForm from '../EnrollementForm/EnrollementForm';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -20,11 +20,12 @@ import {
   faHandshake,
   faLightbulb,
   faGraduationCap,
-  faNetworkWired,
-  faMagicWandSparkles
+  faNetworkWired
 } from '@fortawesome/free-solid-svg-icons';
 import './LearningExperience.css';
+// import OurImpacts from '../OurImpacts/OurImpacts';
 
+// Add icons to the library
 library.add(
   faUsers,
   faChartLine,
@@ -42,19 +43,26 @@ library.add(
   faHandshake,
   faLightbulb,
   faGraduationCap,
-  faNetworkWired,
-  faMagicWandSparkles
+  faNetworkWired
 );
 
 const LearningExperience = () => {
   const [showEnrollmentForm, setShowEnrollmentForm] = useState(false);
   const navigate = useNavigate();
 
+
+
   const handleApplyNow = () => {
+    // Navigate to courses page instead of opening form
     window.scrollTo(0, 0);
     navigate('/allCoursesPage');
   };
 
+  const handleCloseEnrollment = () => {
+    setShowEnrollmentForm(false);
+  };
+
+  // Navigation handlers
   const navigateToProjects = () => {
     window.scrollTo(0, 0);
     navigate('/projectBasedLearningPage');
@@ -69,155 +77,137 @@ const LearningExperience = () => {
     <section className="learning-section" id='programs'>
       <div className="learning-container">
 
-        {/* ================= NEW STEP LAYOUT SECTION ================= */}
-        <div className="learning-wrapper">
+        {/* Header Section */}
+        <div className="learning-header">
+          <span className="learning-program-badge">
+            <FontAwesomeIcon icon={faGraduationCap} className="badge-icon" />
+            Programs we Offer
+          </span>
+          <h2 className="learning-title">Professional Learning Program</h2>
+          <p className="learning-subtitle">
+            Transform your career through hands-on experience and expert mentorship
+          </p>
+        </div>
 
-          {/* LEFT SIDE */}
-          <div className="learning-left">
-            <div className="learning-badge-wrapper">
-              <span className="red-dot"></span>
-              <span className="badge-text">Programs we Offer</span>
+        {/* Main Content - Two Equal Sections */}
+        <div className="main-content-grid">
+
+          {/* Left Section - Project Based Learning */}
+          <div
+            className="content-section project-section"
+            onClick={navigateToProjects}
+            style={{ cursor: 'pointer' }}
+          >
+            <div className="section-decoration"></div>
+            <div className="section-icon">
+              <FontAwesomeIcon icon={faProjectDiagram} />
             </div>
-
-            <h2 className="learning-main-heading">
-              Discover our simple three step process for professional growth
-            </h2>
-
-            <div className="cta-mini-card">
-              <h3 className="cta-mini-title">Ready to Start Your Journey?</h3>
-              <p className="cta-mini-text">
-                Personalized guidance and expert support every step of the way.
+            <div className="section-body">
+              <h3 className="section-title">Project-Based Learning</h3>
+              <p className="section-description">
+                Work on real Engloray Tech Group projects from day one. Build practical skills
+                through hands-on experience with actual client work.
               </p>
-              <button className="cta-mini-btn" onClick={handleApplyNow}>
-                <span className="btn-text">Join the Program</span>
-                <FontAwesomeIcon icon={faMagicWandSparkles} className="btn-sparkle" />
+              <ul className="feature-list">
+                <li>
+                  <FontAwesomeIcon icon={faBullseye} className="feature-icon" />
+                  Real-world projects from day one
+                </li>
+                <li>
+                  <FontAwesomeIcon icon={faHandshake} className="feature-icon" />
+                  Hands-on technical experience
+                </li>
+                <li>
+                  <FontAwesomeIcon icon={faNetworkWired} className="feature-icon" />
+                  Client collaboration opportunities
+                </li>
+                <li>
+                  <FontAwesomeIcon icon={faLightbulb} className="feature-icon" />
+                  Portfolio building
+                </li>
+              </ul>
+              <button className="section-cta-link">
+                Learn More <FontAwesomeIcon icon={faRocket} style={{ marginLeft: '8px' }} />
               </button>
             </div>
           </div>
 
-          {/* RIGHT SIDE - STEPS */}
-          <div className="learning-right">
-
-            <div className="step-item" onClick={navigateToProjects}>
-              <div className="step-icon-box yellow">
-                <span className="icon-inner-dot"></span>
-              </div>
-              <div className="step-content">
-                <h4 className="step-title">Project-Based Learning</h4>
-                <p className="step-description">
-                  Work on real Englergy Tech Group projects from day one. Build practical skills through hands-on experience with actual client work.
-                </p>
-              </div>
+          {/* Right Section - Mentor Support */}
+          <div
+            className="content-section mentor-section"
+            onClick={navigateToMentorship}
+            style={{ cursor: 'pointer' }}
+          >
+            <div className="section-decoration"></div>
+            <div className="section-icon">
+              <FontAwesomeIcon icon={faUserFriends} />
             </div>
-
-            <div className="step-item" onClick={navigateToMentorship}>
-              <div className="step-icon-box blue">
-                <span className="icon-inner-dot"></span>
-              </div>
-              <div className="step-content">
-                <h4 className="step-title">Expert Mentorship</h4>
-                <p className="step-description">
-                  Get guidance from industry experts throughout your journey. Receive personalized feedback and career advice from professionals.
-                </p>
-              </div>
+            <div className="section-body">
+              <h3 className="section-title">Mentor Support</h3>
+              <p className="section-description">
+                Get guidance from industry experts throughout your journey. Get
+                personalized feedback and career advice from professionals.
+              </p>
+              <ul className="feature-list">
+                <li>
+                  <FontAwesomeIcon icon={faUserTie} className="feature-icon" />
+                  1:1 expert mentorship
+                </li>
+                <li>
+                  <FontAwesomeIcon icon={faChartLine} className="feature-icon" />
+                  Personalized career guidance
+                </li>
+                <li>
+                  <FontAwesomeIcon icon={faLightbulb} className="feature-icon" />
+                  Industry insights
+                </li>
+                <li>
+                  <FontAwesomeIcon icon={faNetworkWired} className="feature-icon" />
+                  Professional network building
+                </li>
+              </ul>
+              <button className="section-cta-link">
+                Learn More <FontAwesomeIcon icon={faRocket} style={{ marginLeft: '8px' }} />
+              </button>
             </div>
-
-            <div className="step-item" onClick={handleApplyNow}>
-              <div className="step-icon-box orange">
-                <span className="icon-inner-dot"></span>
-              </div>
-              <div className="step-content">
-                <h4 className="step-title">Career Acceleration</h4>
-                <p className="step-description">
-                  Accelerate your path to top tech companies with our dedicated placement assistance and industry-recognized certification.
-                </p>
-              </div>
-            </div>
-
           </div>
+
         </div>
 
-        {/* ================= IMPACT SECTION (UNCHANGED) ================= */}
-        <div className="impact-section">
+        {/* VK-Style Impact Section */}
+        {/* <OurImpacts /> */}
 
-          <div className="impact-header">
-            <h3 className="impact-title">Our Impact in Numbers</h3>
-            <p className="impact-subtitle">
-              Join thousands of successful learners who transformed their careers
-            </p>
-          </div>
-
-          <div className="impact-layout-custom">
-
-            <div className="impact-left">
-              <div className="card card-1">
-                <div className="impact-big-number">1.3K+</div>
-                <div className="impact-big-label">Active Learners</div>
-              </div>
-
-              <div className="left-bottom">
-                <div className="left-stack">
-                  <div className="card card-2">
-                    <div className="impact-small-number">100%</div>
-                    <div className="impact-small-label">Success Rate</div>
-                  </div>
-
-                  <div className="card card-3">
-                    <div className="impact-small-number">200+</div>
-                    <div className="impact-small-label">Projects Done</div>
-                  </div>
-                </div>
-
-                <div className="card card-4">
-                  <div className="impact-big-number">20+</div>
-                  <div className="impact-big-label">Expert Mentors</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="impact-right">
-              <div className="card card-5">
-                <div className="impact-big-number">100+</div>
-                <div className="impact-big-label">Companies</div>
-              </div>
-
-              <div className="right-stack">
-                <div className="card card-6">
-                  <div className="impact-small-number">4.9</div>
-                  <div className="impact-small-label">Rating</div>
-                </div>
-
-                <div className="card card-7">
-                  <div className="impact-small-number">24/7</div>
-                  <div className="impact-small-label">Support</div>
-                </div>
-              </div>
-
-              <div className="card card-8">
-                <div className="impact-big-number">10+</div>
-                <div className="impact-big-label">Global Partners</div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        {/* ================= CTA (UNCHANGED) ================= */}
+        {/* CTA Section */}
         <div className="cta-section">
           <div className="cta-content">
             <h3 className="cta-title">Ready to Transform Your Career?</h3>
             <p className="cta-description">
-              Join our professional learning program and gain the skills,
-              experience, and mentorship needed to succeed in today's tech industry.
+              Join our professional learning program and gain the skills, experience,
+              and mentorship needed to succeed in today's competitive tech industry.
             </p>
-            <button className="cta-button-fullwidth" onClick={handleApplyNow}>
-              <FontAwesomeIcon icon={faRocket} />
-              Apply Now
-            </button>
+            <div className="cta-button-container">
+              <button className="cta-button-fullwidth" onClick={handleApplyNow}>
+                <FontAwesomeIcon icon={faRocket} />
+                Apply Now
+              </button>
+            </div>
           </div>
         </div>
 
       </div>
+
+      {/* Enrollment Form Dialog */}
+      {showEnrollmentForm && (
+        <div className="learning-enrollment-dialog">
+          <div className="learning-dialog-overlay" onClick={handleCloseEnrollment}></div>
+          <div className="learning-dialog-content">
+            <button className="learning-dialog-close" onClick={handleCloseEnrollment}>
+              <FontAwesomeIcon icon={faTimes} />
+            </button>
+            <EnrollementForm onClose={handleCloseEnrollment} />
+          </div>
+        </div>
+      )}
     </section>
   );
 };

@@ -70,6 +70,9 @@ const MainPageSubFooter = () => {
                 <li onClick={() => handleServiceNavigation('/mobileApplicationsPage')}>
                   <span>Mobile Applications</span>
                 </li>
+                <li onClick={() => handleServiceNavigation('/saasPage')}>
+                  <span>SAAS Solutions</span>
+                </li>
               </ul>
             </div>
 

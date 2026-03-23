@@ -282,26 +282,30 @@ const TwoLineNavbar = () => {
         });
     };
 
+    // useEffect(() => {
+    //     const controlNavbar = () => {
+    //         if (window.scrollY > lastScrollY && window.scrollY > 100) {
+    //             setShowNavbar(false);
+    //         } else {
+    //             setShowNavbar(true);
+    //         }
+    //         setLastScrollY(window.scrollY);
+    //     };
+
+    //     window.addEventListener('scroll', controlNavbar);
+
+    //     window.addEventListener('resize', adjustDropdownPositions);
+    //     adjustDropdownPositions();
+
+    //     return () => {
+    //         window.removeEventListener('scroll', controlNavbar);
+    //         window.removeEventListener('resize', adjustDropdownPositions);
+    //     };
+    // }, [lastScrollY]);
+
     useEffect(() => {
-        const controlNavbar = () => {
-            if (window.scrollY > lastScrollY && window.scrollY > 100) {
-                setShowNavbar(false);
-            } else {
-                setShowNavbar(true);
-            }
-            setLastScrollY(window.scrollY);
-        };
-
-        window.addEventListener('scroll', controlNavbar);
-
-        window.addEventListener('resize', adjustDropdownPositions);
-        adjustDropdownPositions();
-
-        return () => {
-            window.removeEventListener('scroll', controlNavbar);
-            window.removeEventListener('resize', adjustDropdownPositions);
-        };
-    }, [lastScrollY]);
+        setShowNavbar(true);
+    }, []);
 
     // Handle hash changes
     useEffect(() => {

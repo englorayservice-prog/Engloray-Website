@@ -25,8 +25,6 @@ import {
   faBullseye,
   faFlask,
   faEnvelope,
-  faPhone,
-  faMapMarkerAlt,
   faComments,
   faLock,
   faCheck,
@@ -51,15 +49,14 @@ import {
   faDownload,
   faUsers,
   faMoneyBillWave,
-  faNetworkWired,
-  faTools,
   faPalette,
   faLayerGroup,
   faEye,
-  faShieldAlt,
   faCrown,
   faGem,
-  faInfoCircle  // This was added earlier
+  faInfoCircle,
+  faTools,
+  faNetworkWired
 } from '@fortawesome/free-solid-svg-icons';
 import './GraphicDesignerInternPage.css';
 import { submitInternship } from "../../Sub Pages/HandleSubmit/InternshipSubmit";
@@ -69,16 +66,10 @@ import pathOne from '../../../assets/resources file/resources file/TECH/GRAPHICS
 import pathTwo from '../../../assets/resources file/resources file/TECH/GRAPHICS DESIGNERS/Graphic Designer Benefits.pdf';
 import pathFive from '../../../assets/resources file/resources file/TECH/GRAPHICS DESIGNERS/Learning, Skill Development & Growth.pdf';
 import pathSix from '../../../assets/resources file/resources file/TECH/GRAPHICS DESIGNERS/Productivity, AI & Workflow Support.pdf';
-import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
-import Navbar from '../../../Components/Navbar/Navbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import { Helmet } from 'react-helmet';
 
 const GraphicDesignerInternPage = () => {
-  const [activeSection, setActiveSection] = useState('home');
-  const sectionsRef = useRef({});
-  const containerRef = useRef(null);
-
   const [formData, setFormData] = useState({
     email: '',
     course: '',
@@ -93,7 +84,7 @@ const GraphicDesignerInternPage = () => {
   const autoSlideIntervalRef = useRef(null);
   const [toastMessage, setToastMessage] = useState('');
   const [showToast, setShowToast] = useState(false);
-  const [showSuccess, setShowSuccess] = useState(false);
+  // const [showSuccess, setShowSuccess] = useState(false);
 
 
   // Smooth scroll to section
@@ -105,33 +96,8 @@ const GraphicDesignerInternPage = () => {
         top: offsetTop,
         behavior: 'smooth'
       });
-      setActiveSection(sectionId);
     }
   };
-
-  // Handle scroll to update active section
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = ['home', 'course', 'signin', 'assets', 'gallery', 'templates', 'resources', 'benefits', 'feedback'];
-      const scrollPosition = window.scrollY + 100;
-
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const offsetTop = element.offsetTop;
-          const offsetBottom = offsetTop + element.offsetHeight;
-
-          if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
-            setActiveSection(section);
-            break;
-          }
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   // Show toast message
   useEffect(() => {
@@ -159,17 +125,17 @@ const GraphicDesignerInternPage = () => {
 
     await submitInternship(payload);
 
-    // ✅ success UI
-    setShowSuccess(true);
+    // success UI
+    // setShowSuccess(true);
 
     setFormData({
       email: "",
       course: ""
     });
 
-    setTimeout(() => {
-      setShowSuccess(false);
-    }, 4000);
+    // setTimeout(() => {
+    //   setShowSuccess(false);
+    // }, 4000);
 
   } catch (error) {
     console.error("Internship submission failed:", error.message);
@@ -529,10 +495,10 @@ const GraphicDesignerInternPage = () => {
     }
   };
 
-  const validateEmail = (email) => {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email);
-  };
+  // const validateEmail = (email) => {
+  //   const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  //   return re.test(email);
+  // };
 
   // const validatePassword = (password) => {
   //   return password.length >= 6;
@@ -561,17 +527,17 @@ const handleSignSubmit = async (e) => {
 
     await submitInternship(payload);
 
-    // ✅ SUCCESS UI
-    setShowSuccess(true);
+    // SUCCESS UI
+    // setShowSuccess(true);
 
     setFormData({
       email: "",
       course: ""
     });
 
-    setTimeout(() => {
-      setShowSuccess(false);
-    }, 4000);
+    // setTimeout(() => {
+    //   setShowSuccess(false);
+    // }, 4000);
 
   } catch (error) {
     console.error("Internship submission failed:", error.message);
@@ -646,7 +612,7 @@ const handleSignSubmit = async (e) => {
         </div>
       )}
 
-      <div className="GD-content" ref={containerRef}>
+      <div className="GD-content">
         {/* <TopNavBar/> */}
         {/* <Navbar/> */}
         

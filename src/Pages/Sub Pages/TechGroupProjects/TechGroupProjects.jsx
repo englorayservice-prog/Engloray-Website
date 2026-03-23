@@ -36,7 +36,7 @@ import BackToTop from '../../../Components/BackToTop/BackToTop';
 import TSPFF from '../../../Pages/Sub Pages/TechGroupSubPagefooter/TSPFFooter'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChartSimple, faCheck, faCircleCheck, faPercent, faPercentage, faUser, faUsers } from '@fortawesome/free-solid-svg-icons';
+import { faChartSimple, faCheck, faPercentage, faUsers } from '@fortawesome/free-solid-svg-icons';
 
 const TechGroupProjects = () => {
   // All portfolio items by category

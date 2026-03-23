@@ -1,575 +1,803 @@
-/* Internship Program Styles */
+/* ============================================================
+   INTERNSHIP PROGRAM — Redesigned to match reference image
+   Dark maroon hero, split headline, pill CTA, card panels
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* ── Root tokens ── */
+:root {
+  --ip-bg: #e8001d;
+  --ip-bg-dark: #a8001a;
+  --ip-card-bg: rgba(255, 255, 255, 0.10);
+  --ip-card-border: rgba(255, 255, 255, 0.18);
+  --ip-red: #cc0018;
+  --ip-red-bright: #ff1a33;
+  --ip-white: #ffffff;
+  --ip-white-90: rgba(255, 255, 255, 0.90);
+  --ip-white-60: rgba(255, 255, 255, 0.60);
+  --ip-white-15: rgba(255, 255, 255, 0.15);
+  --ip-white-08: rgba(255, 255, 255, 0.08);
+  --ip-radius-lg: 20px;
+  --ip-radius-pill: 50px;
+  --ip-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+}
+
+/* ── Section wrapper ── */
 .tgi-internship-program {
-  padding: 80px 0;
-  background: linear-gradient(135deg, #bf0413 0%, #f23030 100%);
+  background: #e8001d;
+  background-image:
+    radial-gradient(ellipse 80% 100% at 0% 50%, rgba(240, 30, 30, 0.6) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 70% at 100% 50%, rgba(160, 0, 20, 0.7) 0%, transparent 65%);
+  min-height: 93vh;
+  padding: 60px 0 50px;
   position: relative;
   overflow: hidden;
-  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
 }
 
 .tgi-internship-program::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.05)" points="0,1000 1000,0 1000,1000"/></svg>');
-  background-size: cover;
+  display: none;
 }
 
+/* ── Container ── */
 .tgi-internship-container {
-  max-width: 1200px;
+  max-width: 1500px;
+  /* Increased from 1200px */
+  width: 95%;
+  /* Increased from 90% */
   margin: 0 auto;
-  padding: 0 2rem;
   position: relative;
-  z-index: 2;
+  z-index: 10;
 }
 
-/* ============ FONTAWESOME ICON STYLING ============ */
-
-/* Floating Arrow */
+/* ============================================================
+   FLOATING ARROW
+   ============================================================ */
 .tgi-floating-arrow {
   position: fixed;
-  left: 30px;
+  left: 28px;
   top: 50%;
   transform: translateY(-50%);
-  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-  border: none;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  font-weight: 700;
+  background: var(--ip-white);
+  border: none;
   cursor: pointer;
-  transition: all 0.4s ease;
-  box-shadow: 0 8px 25px rgba(191, 4, 19, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 100;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.22);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
   animation: tgi-floatArrow 3s ease-in-out infinite;
-  backdrop-filter: blur(10px);
 }
 
 .tgi-floating-arrow:hover {
   transform: translateY(-50%) scale(1.1);
-  box-shadow: 0 15px 35px rgba(191, 4, 19, 0.4);
+  box-shadow: 0 14px 36px rgba(191, 4, 19, 0.35);
 }
 
 .tgi-arrow-symbol {
-  transition: all 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.3s ease;
 }
 
 .tgi-floating-arrow:hover .tgi-arrow-symbol {
   transform: translateX(3px);
 }
 
-.tgi-arrow-symbol svg {
-  font-size: 1.5rem;
-  color: #bf0413;
-  transition: all 0.3s ease;
-}
-
-.tgi-floating-arrow:hover .tgi-arrow-symbol svg {
-  transform: translateX(3px);
-}
-
 .tgi-arrow-glow {
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-  transition: left 0.5s ease;
-  border-radius: 50%;
+  display: none;
 }
 
-.tgi-floating-arrow:hover .tgi-arrow-glow {
-  left: 100%;
-}
-
-/* Header Styles - Centered */
+/* ============================================================
+   HEADER — 2-row × 2-col grid
+   Row 1: [badge]    | [subtitle text]
+   Row 2: [title]    | [CTA button]
+   ============================================================ */
 .tgi-internship-header {
-  text-align: center;
-  margin-bottom: 4rem;
-  animation: tgi-fadeInUp 0.8s ease-out;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5rem;
+  padding: 3rem 0;
+  animation: tgi-fadeInUp 0.8s ease-out both;
+}
+
+/* ── LEFT SIDE (Badge + Title) ── */
+.tgi-benefits-main-badge {
+  flex: 0 0 100%;
+  /* forces it to its own row if needed, but we'll absolute position it for perfection */
+  position: absolute;
+  top: -10px;
+  left: 0;
+  display: block;
+  width: fit-content;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: var(--ip-white);
+  margin: 0;
+}
+
+/* We need a wrapper concept, but we can't change JSX. 
+   So we use Grid with specific column/row spans. */
+.tgi-internship-header {
+  display: grid;
+  grid-template-columns: minmax(0, 5.5fr) minmax(0, 4.5fr);
+  grid-template-rows: auto auto 1fr;
+  /* tightly packs first two rows, stretches last */
+  column-gap: 20rem;
+  margin-left: 1rem;
+  align-items: start;
+  /* Align to top instead of center */
+  margin-bottom: 3rem;
+  /* Reduced to bring roles section closer */
+  padding: 4rem 0 3rem;
+  position: relative;
 }
 
 .tgi-benefits-main-badge {
-  display: inline-block;
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-  padding: 0.5rem 1.5rem;
-  border-radius: 25px;
-  font-size: 0.70rem;
-  font-weight: 100;
-  font-family: 'Pavlet';
-  margin-bottom: 1rem;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  animation: tgi-pulse 2s infinite;
+  position: absolute;
+  top: 1rem;
+  left: 0;
+  /* Badge styling */
 }
 
+/* Left side */
 .tgi-internship-title {
-  font-size: 3rem;
-  font-weight: 100;
-  font-family: 'HEXCO';
-  color: white;
-  margin-bottom: 1rem;
-  line-height: 1.2;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  /* Span only first row now so step can take second row */
+  margin-top: 1rem;
+  /* slight nudge down to visually align top edge of text with right side */
+  align-self: start;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(3.4rem, 2vw, 3.8rem);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--ip-white);
+  letter-spacing: -0.02em;
+  margin: 0;
+  width: 100%;
+  white-space: nowrap;
 }
 
-.tgi-internship-subtitle {
-  font-size: 1.25rem;
+.tgi-internship-step {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
   color: rgba(255, 255, 255, 0.9);
-  line-height: 1.6;
-  max-width: 600px;
-  margin: 0 auto;
-  font-family: 'Aldrich';
-  font-weight: 100;
+  margin-top: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-/* View Programs Button with FontAwesome Icon */
+.tgi-step-arrow {
+  margin-bottom: -5px;
+  /* Nudge the drawn arrow down slightly to align with text */
+}
+
+/* Right side text */
+.tgi-internship-subtitle {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  width: 500px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: rgb(255, 255, 255);
+  margin: 0 0 1.25rem 0;
+  text-align: left;
+}
+
 .tgi-view-programs-btn {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  background: #100306;
+  color: var(--ip-white);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  padding: 12px 18px 12px 24px;
+  border-radius: var(--ip-radius-pill);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  width: fit-content;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.01em;
+}
+
+
+
+
+/* Arrow circle inside the button */
+.tgi-btn-arrow {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  padding: 12px 28px;
-  border-radius: 50px;
-  font-size: 1rem;
-  font-weight: 100;
-  font-family: 'HEXCO';
-  cursor: pointer;
-  transition: all 0.4s ease;
-  margin-top: 2rem;
-  backdrop-filter: blur(10px);
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.tgi-view-programs-btn:hover {
-  background: rgba(255, 255, 255, 0.3);
-  transform: translateY(-3px);
-  box-shadow: 0 15px 35px rgba(191, 4, 19, 0.3);
-  border-color: rgba(255, 255, 255, 0.5);
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .tgi-view-programs-btn:hover .tgi-btn-arrow {
-  transform: translateX(5px);
+  background: rgba(255, 255, 255, 0.22);
+  transform: translateX(3px);
 }
 
-.tgi-btn-arrow {
+.tgi-view-programs-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 30%, rgba(255, 255, 255, 0.05) 50%, transparent 70%);
+  transform: translateX(-100%);
+  transition: transform 0.55s ease;
+}
+
+.tgi-view-programs-btn:hover::after {
+  transform: translateX(100%);
+}
+
+.tgi-view-programs-btn:hover {
+  background: #1a040a;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.4);
+}
+
+
+/* ============================================================
+   ROLES SECTION — Accordion style card strip
+   ============================================================ */
+.tgi-roles-section {
+  animation: tgi-fadeInUp 0.8s ease-out 0.25s both;
+  width: 100%;
+}
+
+/* Flex container for the accordion header & nav */
+.tgi-roles-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: -8rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+  z-index: 10;
+  /* Ensures buttons remain clickable over the section above */
+}
+
+.tgi-section-title {
+  display: none;
+}
+
+/* Navigation Buttons */
+.tgi-roles-nav {
+  display: flex;
+  gap: 15px;
+}
+
+.tgi-nav-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
   display: flex;
   align-items: center;
-  transition: transform 0.3s ease;
+  justify-content: center;
+  transition: all 0.3s ease;
 }
 
-.tgi-btn-arrow svg {
-  font-size: 1rem;
-  color: #ffffff;
-  transition: transform 0.3s ease;
+.tgi-nav-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
 }
 
-.tgi-view-programs-btn:hover .tgi-btn-arrow svg {
-  transform: translateX(5px);
-}
-
-/* Add glow effect on hover */
-.tgi-view-programs-btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.5s ease;
-  z-index: -1;
-}
-
-.tgi-view-programs-btn:hover::before {
-  left: 100%;
-}
-
-/* Section Titles */
-.tgi-section-title {
-  text-align: center;
-  font-size: 2.5rem;
-  font-weight: 100;
-  font-family: 'HEXCO';
-  color: white;
-  margin-bottom: 3rem;
-  position: relative;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
-
-.tgi-section-title::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 3px;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 2px;
-  animation: tgi-widthGrow 2s ease-in-out infinite;
-}
-
-/* Roles Section - 4 Cards in a Row */
-.tgi-roles-section {
-  margin-bottom: 6rem;
-  animation: tgi-fadeInUp 0.8s ease-out 0.2s both;
-}
-
+/* Flex container for the accordion */
 .tgi-roles-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
+  display: flex;
+  gap: 1.2rem;
+  width: 100%;
+  height: 480px;
+  /* Fixed height for the hero cards */
 }
 
+/* Individual role card - Base styles */
 .tgi-role-card {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 20px;
-  padding: 2.5rem 1.5rem;
-  text-align: center;
-  transition: all 0.4s ease;
-  opacity: 0;
-  transform: translateY(30px);
-  animation: tgi-fadeInUp 0.6s ease-out forwards;
+  background: var(--ip-card-bg);
+  border-radius: 32px;
+  cursor: pointer;
   position: relative;
   overflow: hidden;
-  cursor: pointer;
-  min-height: 280px;
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  animation: tgi-fadeInUp 0.55s ease-out both;
+  backdrop-filter: blur(18px);
+  /* Default state managed by GSAP, fallback here */
+  min-width: 80px;
+  padding: 2rem 0;
+  align-items: center;
+  justify-content: flex-end;
+  /* Text at bottom */
 }
 
-.tgi-role-card::before {
+/* Remove default borders and backgrounds from earlier */
+.tgi-role-card::before,
+.tgi-role-glow,
+.tgi-role-hover-effect {
+  display: none !important;
+}
+
+/* ── Expanded State ── */
+.tgi-role-card.active {
+  padding: 3rem 2.5rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: #8b1322;
+  border: none;
+  background-size: auto 100%;
+  background-position: right center;
+  background-repeat: no-repeat;
+}
+
+/* Unique Image Backgrounds for Active Expanded State */
+/* Graphic Designer - Creative portrait/workspace */
+.tgi-role-card.active[data-index="0"] {
+  background-image: url('../../../assets/Graphic-Design.jfif');
+  background-size: cover;
+  background-position: 70% center;
+}
+
+/* Website Developer - Coding portrait */
+.tgi-role-card.active[data-index="1"] {
+  background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+  background-size: cover;
+  background-position: center;
+}
+
+/* UI/UX Designer - Wireframing / Design process */
+.tgi-role-card.active[data-index="2"] {
+  background-image: url('https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Software Developer - Complex code screen / Dev setup */
+.tgi-role-card.active[data-index="3"] {
+  background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Gradient overlay to make text readable on active card */
+.tgi-role-card.active::after {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(135deg, #bf0413, #f23030);
-  transform: scaleX(0);
-  transition: transform 0.4s ease;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 60%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
 }
 
-.tgi-role-card:hover::before {
-  transform: scaleX(1);
+/* ── Collapsed State Backgrounds ── */
+.tgi-role-card.collapsed[data-index="0"] {
+  background: linear-gradient(135deg, #2a2a2a 0%, #0a0a0a 100%);
+  border: none;
 }
 
-.tgi-role-glow {
+.tgi-role-card.collapsed[data-index="1"] {
+  background: linear-gradient(135deg, #222222 0%, #050505 100%);
+  border: none;
+}
+
+.tgi-role-card.collapsed[data-index="2"] {
+  background: linear-gradient(135deg, #1f1f1f 0%, #000000 100%);
+  border: none;
+}
+
+.tgi-role-card.collapsed[data-index="3"] {
+  background: linear-gradient(135deg, #262626 0%, #080808 100%);
+  border: none;
+}
+
+/* Abstract wave emulation for collapsed cards */
+.tgi-role-card.collapsed::after {
+  content: '';
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
-  transition: all 0.6s ease;
-  transform: translate(-50%, -50%);
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.1) 0%, transparent 60%),
+    radial-gradient(circle at bottom left, rgba(0, 0, 0, 0.3) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 1;
 }
 
-.tgi-role-card:hover .tgi-role-glow {
-  width: 200px;
-  height: 200px;
+/* ── Content Elements inside Cards ── */
+
+/* Ensure z-index is above overlays */
+.tgi-role-card>* {
+  position: relative;
+  z-index: 2;
 }
 
-.tgi-role-card:hover {
-  transform: translateY(-10px) scale(1.05);
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 20px 40px rgba(191, 4, 19, 0.2);
-}
-
-/* Role Icon Container for FontAwesome Icons */
-.tgi-role-icon {
-  width: 80px;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 1.5rem auto;
-  transition: all 0.4s ease;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, 0.2);
-}
-
-.tgi-role-icon svg {
-  transition: all 0.4s ease;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
-}
-
-.tgi-role-card:hover .tgi-role-icon {
-  transform: scale(1.1) rotate(5deg);
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.3);
-}
-
-.tgi-role-card:hover .tgi-role-icon svg {
-  transform: scale(1.1);
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
-}
-
-/* Specific Icon Animations on Hover */
-.tgi-role-card:nth-child(1):hover .fa-palette {
-  animation: tgi-paletteSpin 0.8s ease;
-}
-
-.tgi-role-card:nth-child(2):hover .fa-desktop {
-  animation: tgi-desktopPulse 0.8s ease;
-}
-
-.tgi-role-card:nth-child(3):hover .fa-user-check {
-  animation: tgi-userCheckBounce 0.8s ease;
-}
-
-.tgi-role-card:nth-child(4):hover .fa-code {
-  animation: tgi-codeTyping 0.8s ease;
-}
-
-@keyframes tgi-paletteSpin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-@keyframes tgi-desktopPulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.2); }
-}
-
-@keyframes tgi-userCheckBounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-@keyframes tgi-codeTyping {
-  0% { opacity: 0.5; }
-  50% { opacity: 1; }
-  100% { opacity: 0.5; }
-}
-
+/* Titles */
 .tgi-role-title {
-  font-size: 1rem;
-  font-weight: 100;
-  font-family: 'HEXCO';
-  color: white;
+  font-family: 'Poppins', sans-serif;
+  color: var(--ip-white);
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* Expanded card title */
+.tgi-role-card.active .tgi-role-title {
+  font-size: 2.2rem;
+  font-weight: 600;
   margin-bottom: 1rem;
-  transition: all 0.3s ease;
 }
 
-.tgi-role-card:hover .tgi-role-title {
-  color: #ffd700;
+/* Collapsed card title (Vertical text) */
+.tgi-role-card.collapsed .tgi-role-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  text-orientation: mixed;
+  margin: auto;
+  /* Centers horizontally and vertically inside flex container! */
+  letter-spacing: 0.05em;
 }
 
+/* Description (Only show on expanded card) */
 .tgi-role-description {
-  color: rgba(255, 255, 255, 0.8);
-  line-height: 1.6;
+  font-family: 'Poppins', sans-serif;
   font-size: 0.95rem;
-  margin-bottom: 1rem;
-  transition: all 0.3s ease;
-  flex-grow: 1;
-  font-family: 'Aldrich';
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.5;
+  margin: 0;
+  max-width: 380px;
+  display: none;
+  /* Hide by default */
+}
+
+.tgi-role-card.active .tgi-role-description {
+  display: block;
+  /* Show only on expanded */
+}
+
+/* Icons and Indicators */
+.tgi-role-icon {
+  display: none;
+  /* The UI image doesn't use these large top icons */
 }
 
 .tgi-click-indicator {
-  color: #ffd700;
-  font-size: 0.85rem;
-  font-weight: 600;
+  display: none;
+  /* Hide default view details indicator */
+}
+
+/* Hover effects */
+.tgi-role-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* ── View Internship Details Pill Button ── */
+.tgi-view-details-btn {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 10;
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  padding: 0.55rem 0.55rem 0.55rem 1.4rem;
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35), 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  animation: tgi-fadeInUp 0.5s ease both;
+  animation-delay: 0.4s;
   opacity: 0;
-  transform: translateY(10px);
-  transition: all 0.3s ease;
-  font-family: 'Aldrich';
-  display: flex;
+  animation-fill-mode: forwards;
+}
+
+.tgi-view-details-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.tgi-view-details-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.92);
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+  padding-right: 1rem;
+}
+
+.tgi-view-details-arrow {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  width: 38px;
+  height: 38px;
+  background: rgba(10, 0, 5, 0.75);
+  border-radius: 50%;
+  color: #fff;
+  flex-shrink: 0;
+  transition: background 0.25s ease, transform 0.25s ease;
 }
 
-.tgi-role-card:hover .tgi-click-indicator {
-  opacity: 1;
-  transform: translateY(0);
+.tgi-view-details-btn:hover .tgi-view-details-arrow {
+  background: rgba(10, 0, 5, 0.92);
+  transform: translateX(2px);
 }
 
-.tgi-click-indicator svg {
-  font-size: 0.9rem;
-  transition: transform 0.3s ease;
-}
-
-.tgi-role-card:hover .tgi-click-indicator svg {
-  transform: translateX(5px);
-}
-
-.tgi-role-hover-effect {
+/* ── Tools & Skills Widget ── */
+.tgi-skills-widget {
   position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-  transition: left 0.6s ease;
+  bottom: 2rem;
+  left: 2rem;
+  z-index: 10;
+  background: linear-gradient(135deg, rgba(80, 8, 18, 0.85) 0%, rgba(40, 4, 10, 0.9) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 1.5rem 2rem;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+  max-width: 460px;
+  width: max-content;
+  animation: tgi-fadeInUp 0.5s ease both;
+  animation-delay: 0.3s;
+  opacity: 0;
+  animation-fill-mode: forwards;
 }
 
-.tgi-role-card:hover .tgi-role-hover-effect {
-  left: 100%;
+.tgi-skills-widget-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
+  color: rgba(255, 180, 180, 0.75);
+  margin: 0 0 0.9rem 0;
 }
 
-/* Form Modal */
+.tgi-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 0.5rem;
+}
+
+.tgi-skill-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  padding: 0.3rem 0.75rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.88);
+  white-space: nowrap;
+  cursor: default;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.tgi-skill-pill:hover {
+  transform: scale(1.08);
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ── UI/UX Designer skills widget — wider horizontal layout for longer skill names ── */
+.tgi-skills-widget--uiux {
+  max-width: 600px;
+  width: max-content;
+}
+
+.tgi-skills-widget--uiux .tgi-skills-grid {
+  grid-template-columns: repeat(4, 1fr);
+  /* Keep horizontal 4-column style */
+  gap: 0.5rem;
+}
+
+.tgi-skills-widget--uiux .tgi-skill-pill {
+  padding: 0.3rem 0.6rem;
+  font-size: 0.7rem;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+/* ── "View Internship Details" button — white text for UI/UX and Software Dev cards ── */
+.tgi-view-details-btn--light .tgi-view-details-label {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* Mobile: stack widget below the card content */
+@media (max-width: 768px) {
+  .tgi-skills-widget {
+    position: static;
+    margin-top: 1.5rem;
+    max-width: 100%;
+  }
+
+  .tgi-skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ============================================================
+   FORM MODAL
+   ============================================================ */
 .tgi-form-modal-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(10px);
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(12px);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1000;
-  animation: tgi-fadeIn 0.3s ease-out;
+  animation: tgi-fadeIn 0.25s ease-out;
 }
 
 .tgi-form-modal {
-  background: white;
-  border-radius: 20px;
+  background: #fff;
+  border-radius: 22px;
   width: 90%;
-  max-width: 500px;
+  max-width: 480px;
   max-height: 90vh;
   overflow-y: auto;
-  animation: tgi-modalSlideUp 0.4s ease-out;
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--ip-shadow);
+  animation: tgi-modalSlideUp 0.38s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .tgi-modal-header {
-  background: linear-gradient(135deg, #bf0413, #f23030);
-  padding: 2rem;
-  border-radius: 20px 20px 0 0;
+  background: linear-gradient(135deg, #8b0000, var(--ip-red-bright));
+  padding: 1.75rem 2rem;
+  border-radius: 22px 22px 0 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
 }
 
 .tgi-modal-title {
-  color: white;
-  font-size: 1.2rem;
-  font-weight: 100;
-  font-family: 'HEXCO';
+  font-family: 'Inter', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
   margin: 0;
+  letter-spacing: -0.01em;
 }
 
 .tgi-close-modal {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.18);
   border: none;
-  color: white;
-  font-size: 1.5rem;
-  width: 40px;
-  height: 40px;
+  color: #fff;
+  font-size: 1.4rem;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   cursor: pointer;
-  transition: all 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background 0.25s ease, transform 0.25s ease;
+  line-height: 1;
 }
 
 .tgi-close-modal:hover {
   background: rgba(255, 255, 255, 0.3);
-  transform: scale(1.1);
+  transform: scale(1.08);
 }
 
 .tgi-modal-content {
   padding: 2rem;
 }
 
-/* Form Styles */
+/* ── Form ── */
 .tgi-enrollment-form {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
 .tgi-form-group {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.45rem;
 }
 
 .tgi-form-group label {
-  font-weight: 100;
-  font-family: 'HEXCO';
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
   color: #4a5568;
-  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
 }
 
 .tgi-form-group input,
 .tgi-form-group select {
-  padding: 1rem 1.5rem;
-  border: 2px solid #e2e8f0;
+  font-family: 'Inter', sans-serif;
+  padding: 0.9rem 1.25rem;
+  border: 1.5px solid #e2e8f0;
   border-radius: 12px;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-  background: white;
-  font-family: 'Aldrich';
+  font-size: 0.95rem;
+  color: #1a202c;
+  background: #fff;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
 }
 
 .tgi-form-group input:focus,
 .tgi-form-group select:focus {
   outline: none;
-  border-color: #bf0413;
-  box-shadow: 0 0 0 3px rgba(191, 4, 19, 0.1);
-  transform: translateY(-2px);
+  border-color: var(--ip-red);
+  box-shadow: 0 0 0 3px rgba(191, 4, 19, 0.12);
+  transform: translateY(-1px);
 }
 
 .tgi-form-group input::placeholder {
   color: #a0aec0;
+  font-weight: 400;
 }
 
-.tgi-form-group option {
-  font-family: 'Aldrich';
-}
-
-/* Radio Group */
+/* Radio */
 .tgi-radio-group {
   display: flex;
   gap: 1rem;
-  margin-top: 0.5rem;
 }
 
 .tgi-radio-option {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  cursor: pointer;
-  padding: 0.75rem 1rem;
-  border: 2px solid #e2e8f0;
+  gap: 0.65rem;
+  padding: 0.7rem 1rem;
+  border: 1.5px solid #e2e8f0;
   border-radius: 10px;
-  transition: all 0.3s ease;
+  cursor: pointer;
   flex: 1;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.92rem;
+  color: #4a5568;
+  transition: border-color 0.25s ease, color 0.25s ease;
 }
 
 .tgi-radio-option:hover {
-  border-color: #bf0413;
+  border-color: var(--ip-red);
+  color: var(--ip-red);
 }
 
 .tgi-radio-option input[type="radio"] {
@@ -577,37 +805,38 @@
 }
 
 .tgi-radio-custom {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   border: 2px solid #cbd5e0;
   border-radius: 50%;
   position: relative;
-  transition: all 0.3s ease;
+  flex-shrink: 0;
+  transition: border-color 0.25s ease, background 0.25s ease;
 }
 
-.tgi-radio-option input[type="radio"]:checked + .tgi-radio-custom {
-  border-color: #bf0413;
-  background: #bf0413;
+.tgi-radio-option input[type="radio"]:checked+.tgi-radio-custom {
+  border-color: var(--ip-red);
+  background: var(--ip-red);
 }
 
-.tgi-radio-option input[type="radio"]:checked + .tgi-radio-custom::after {
+.tgi-radio-option input[type="radio"]:checked+.tgi-radio-custom::after {
   content: '';
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 8px;
-  height: 8px;
-  background: white;
+  width: 7px;
+  height: 7px;
+  background: #fff;
   border-radius: 50%;
 }
 
-.tgi-radio-option input[type="radio"]:checked ~ span {
-  color: #bf0413;
+.tgi-radio-option input[type="radio"]:checked~span {
+  color: var(--ip-red);
   font-weight: 600;
 }
 
-/* File Upload with FontAwesome Icon */
+/* File upload */
 .tgi-file-upload {
   position: relative;
 }
@@ -621,18 +850,20 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  padding: 1rem 1.5rem;
-  border: 2px dashed #cbd5e0;
+  padding: 0.9rem 1.25rem;
+  border: 1.5px dashed #cbd5e0;
   border-radius: 12px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  background: #f7fafc;
+  font-family: 'Inter', sans-serif;
   font-size: 0.9rem;
+  color: #718096;
+  background: #f7fafc;
+  transition: border-color 0.25s ease, background 0.25s ease;
 }
 
 .tgi-file-label:hover {
-  border-color: #bf0413;
-  background: #fed7d7;
+  border-color: var(--ip-red);
+  background: #fff5f5;
 }
 
 .tgi-file-icon {
@@ -640,82 +871,70 @@
   align-items: center;
 }
 
-.tgi-file-icon svg {
-  font-size: 1rem;
-  color: #666;
-  transition: all 0.3s ease;
-}
-
-.tgi-file-upload:hover .tgi-file-icon svg {
-  transform: rotate(-15deg);
-}
-
-/* Submit Button */
+/* Submit */
 .tgi-submit-btn {
-  background: linear-gradient(135deg, #bf0413, #f23030);
-  color: white;
+  width: 100%;
+  padding: 1.1rem 2rem;
   border: none;
-  padding: 1.25rem 2rem;
   border-radius: 12px;
+  background: linear-gradient(135deg, #8b0000, var(--ip-red-bright));
+  color: #fff;
+  font-family: 'Inter', sans-serif;
   font-size: 1rem;
-  font-weight: 100;
-  font-family: 'HEXCO';
+  font-weight: 700;
   cursor: pointer;
-  transition: all 0.4s ease;
-  margin-top: 1rem;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 8px 25px rgba(191, 4, 19, 0.3);
-  width: 100%;
-}
-
-.tgi-submit-btn span {
-  font-family: 'HEXCO';
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 28px rgba(191, 4, 19, 0.3);
+  margin-top: 0.5rem;
+  letter-spacing: 0.01em;
 }
 
 .tgi-submit-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 35px rgba(191, 4, 19, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(191, 4, 19, 0.4);
 }
 
-/* Success Message with FontAwesome Icon */
+.tgi-btn-glow {
+  display: none;
+}
+
+/* Success message */
 .tgi-success-message {
   text-align: center;
-  padding: 3rem 2rem;
-  animation: tgi-scaleIn 0.6s ease-out;
+  padding: 2.5rem 1.5rem;
+  animation: tgi-scaleIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .tgi-success-icon {
-  margin-bottom: 1.5rem;
-  animation: tgi-bounceIn 0.8s ease-out;
-}
-
-.tgi-success-icon svg {
-  font-size: 3rem;
-  color: #06D6A0;
-  filter: drop-shadow(0 2px 4px rgba(6, 214, 160, 0.3));
+  margin-bottom: 1.25rem;
 }
 
 .tgi-success-message h4 {
-  font-size: 1.5rem;
-  font-weight: 100;
-  color: #2d3748;
-  margin-bottom: 1rem;
-  font-family: 'HEXCO';
+  font-family: 'Inter', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin: 0 0 0.75rem;
 }
 
 .tgi-success-message p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
   color: #718096;
   line-height: 1.6;
-  font-family: 'Aldrich';
 }
 
-/* Animations */
+/* ============================================================
+   KEYFRAMES
+   ============================================================ */
 @keyframes tgi-fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(24px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -726,6 +945,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -734,8 +954,9 @@
 @keyframes tgi-modalSlideUp {
   from {
     opacity: 0;
-    transform: translateY(50px) scale(0.9);
+    transform: translateY(40px) scale(0.94);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -745,224 +966,97 @@
 @keyframes tgi-scaleIn {
   from {
     opacity: 0;
-    transform: scale(0.8);
+    transform: scale(0.82);
   }
+
   to {
     opacity: 1;
     transform: scale(1);
   }
 }
 
-@keyframes tgi-bounceIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.3);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.1);
-  }
-  70% {
-    transform: scale(0.9);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes tgi-pulse {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.05);
-    opacity: 0.8;
-  }
-}
-
 @keyframes tgi-floatArrow {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(-50%) translateX(0);
   }
+
   50% {
     transform: translateY(-50%) translateX(5px);
   }
 }
 
-@keyframes tgi-widthGrow {
-  0%, 100% {
-    width: 60px;
-  }
-  50% {
-    width: 80px;
-  }
-}
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
 
-/* Floating Arrow Icon Animation */
-.tgi-floating-arrow .tgi-arrow-symbol svg {
-  animation: tgi-iconFloat 3s ease-in-out infinite;
-}
-
-@keyframes tgi-iconFloat {
-  0%, 100% {
-    transform: translateY(0);
+/* Tablet — Stack header */
+@media (max-width: 1024px) {
+  .tgi-internship-header {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
-  50% {
-    transform: translateY(-5px);
-  }
-}
 
-/* ============ RESPONSIVE DESIGN ============ */
-
-@media (max-width: 1200px) {
   .tgi-roles-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
   }
 }
 
 @media (max-width: 768px) {
   .tgi-internship-program {
-    padding: 60px 0;
+    padding: 56px 0 80px;
   }
-  
+
   .tgi-internship-container {
     padding: 0 1.5rem;
   }
-  
+
   .tgi-floating-arrow {
-    left: 15px;
-    width: 50px;
-    height: 50px;
+    left: 14px;
+    width: 46px;
+    height: 46px;
   }
-  
-  .tgi-arrow-symbol svg {
-    font-size: 1.3rem;
-  }
-  
+
   .tgi-internship-title {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
-  
-  .tgi-section-title {
-    font-size: 2rem;
-  }
-  
+
   .tgi-roles-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
   }
-  
-  .tgi-role-icon {
-    width: 70px;
-    height: 70px;
-  }
-  
-  .tgi-role-icon svg {
-    font-size: 2rem;
-  }
-  
-  .tgi-form-modal {
-    width: 95%;
-    margin: 1rem;
-  }
-  
-  .tgi-modal-header {
-    padding: 1.5rem;
-  }
-  
-  .tgi-modal-content {
-    padding: 1.5rem;
-  }
-  
+
   .tgi-radio-group {
     flex-direction: column;
-    gap: 0.5rem;
   }
-  
-  .tgi-role-card {
-    padding: 2rem 1rem;
-  }
-  
-  /* Responsive for View Programs Button */
+
   .tgi-view-programs-btn {
-    padding: 10px 24px;
-    font-size: 0.95rem;
-    margin-top: 1.5rem;
-  }
-  
-  .tgi-btn-arrow svg {
-    font-size: 0.9rem;
+    width: 100%;
+    justify-content: center;
   }
 }
 
 @media (max-width: 480px) {
   .tgi-internship-title {
-    font-size: 2rem;
+    font-size: 1.9rem;
   }
-  
-  .tgi-section-title {
-    font-size: 1.8rem;
+
+  .tgi-form-modal {
+    width: 96%;
   }
-  
-  .tgi-modal-header {
-    padding: 1.25rem;
-  }
-  
+
+  .tgi-modal-header,
   .tgi-modal-content {
     padding: 1.25rem;
   }
-  
-  .tgi-form-group input,
-  .tgi-form-group select {
-    padding: 0.875rem 1.25rem;
-  }
-  
-  .tgi-submit-btn {
-    padding: 1rem 1.5rem;
-    font-size: 1rem;
-  }
-  
-  .tgi-floating-arrow {
-    left: 10px;
-    width: 45px;
-    height: 45px;
-  }
-  
-  .tgi-arrow-symbol svg {
-    font-size: 1.1rem;
-  }
-  
-  .tgi-role-icon {
-    width: 60px;
-    height: 60px;
-  }
-  
-  .tgi-role-icon svg {
-    font-size: 1.8rem;
-  }
-  
-  /* Responsive for View Programs Button */
-  .tgi-view-programs-btn {
-    padding: 8px 20px;
-    font-size: 0.9rem;
-    margin-top: 1rem;
-  }
-  
-  .tgi-btn-arrow svg {
-    font-size: 0.8rem;
-  }
-  
-  .tgi-success-icon svg {
-    font-size: 2.5rem;
-  }
 }
 
-/* Reduced motion support */
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .tgi-internship-program * {
+
+  .tgi-internship-program *,
+  .tgi-internship-program *::before,
+  .tgi-internship-program *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;

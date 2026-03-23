@@ -19,14 +19,11 @@ import {
   faDumbbell,
   faLeaf,
   faKissWinkHeart, // Replaced faLipstick with faKissWinkHeart
-  faGraduationCap,
   faQuoteLeft,
   faChevronDown,
   faChevronUp,
   faCalendarCheck,
-  faTrophy,
-  faUsers,
-  faSmile // Alternative if needed
+  faTrophy
 } from '@fortawesome/free-solid-svg-icons';
 
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';

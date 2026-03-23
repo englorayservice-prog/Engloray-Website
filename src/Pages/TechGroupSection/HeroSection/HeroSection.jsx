@@ -1,85 +1,79 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './HeroSection.css';
-
+import ClientMarquee from '../../../Components/CustomScrollbar/ClientMarquee/ClientMarquee.jsx';
 const HeroSection = () => {
-  const [scrollY, setScrollY] = useState(0);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
+    // WhatsApp contact URL - update with your phone number and message
+    const whatsappNumber = '916381759909'; // Replace with your actual phone number
+    const whatsappMessage = 'Hello! I would like to start a project with you.';
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    return (
+        <section className="hero-section" id='heroSection'>
+            <div className="hero-background" />
+            <div className="hero-container" >
 
-  // WhatsApp contact URL - update with your phone number and message
-  const whatsappNumber = '916381759909'; // Replace with your actual phone number
-  const whatsappMessage = 'Hello! I would like to start a project with you.';
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
-  // Double scroll animation with container scaling
-  const getTransformValues = () => {
-    if (scrollY < 200) {
-      // First scroll: scale from 1.0 to 0.9
-      const progress = scrollY / 200;
-      const scale = 1.0 - (progress * 0.1);
-      return { scale };
-    } else {
-      // Second scroll: scale from 0.9 to 0.8
-      const progress = (scrollY - 200) / 200;
-      const scale = 0.9 - (progress * 0.1);
-      return { scale };
-    }
-  };
+                <div className="hero-content-wrapper">
+                    <div className="hero-content">
+                        {/* Feature badge - Vetra style */}
+                        <button type="button" className="hero-feature-badge">
+                            <span className="hero-feature-badge__label">New feature</span>
+                            <span className="hero-feature-badge__text">Check out the team dashboard</span>
+                            <span className="hero-feature-badge__arrow">→</span>
+                        </button>
 
-  const { scale } = getTransformValues();
+                        <h1 className="hero-title">Powered by Intelligence. </h1>
+                        <h1 className="hero-title">Driven by Design.</h1>
+                        <div className="hero-search-container">
+                            <div className="hero-search-glow"></div>
+                            <div className="hero-search-box">
+                                <input
+                                    type="text"
+                                    placeholder="What service or product are you looking for?"
+                                    className="hero-search-input"
+                                />
+                                <button className="hero-search-button" aria-label="Search">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <circle cx="11" cy="11" r="8"></circle>
+                                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div className="hero-buttons">
+                            {/* Updated to WhatsApp link */}
+                            <a
+                                href={whatsappUrl}
+                                className="btn btn-primary"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Start Your Project
+                            </a>
 
-  return (
-    <section className="hero-section" id='heroSection'>
-      <div className="hero-container">
-        <div 
-          className="hero-background"
-          style={{
-            transform: `scale(${scale})`
-          }}
-        />
-        
-        <div className="hero-content-wrapper">
-          <div className="hero-content">
-            <h1 className="hero-title">Powered by Intelligence. Driven by Design.</h1>
-            <p className="hero-description">
-              Creative design, marketing, and technology solutions that empower brands.
-            </p>
-            <div className="hero-buttons">
-              {/* Updated to WhatsApp link */}
-              <a 
-                href={whatsappUrl} 
-                className="btn btn-primary"
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                Start Your Project
-              </a>
-              
-              {/* Keep the internship link as internal navigation */}
-              <Link to="#internship" className="btn btn-secondary">
-                Apply for Internship
-              </Link>
+                            {/* Keep the internship link as internal navigation */}
+                            <Link to="#internship" className="btn btn-secondary">
+                                Apply for Internship
+                            </Link>
+
+                        </div>
+                    </div>
+                    <div className="client-container">
+                        <ClientMarquee />
+                    </div>
+                </div>
+
+                {/* Background shapes */}
+                <div className="hero-visual">
+                    <div className="hero-shape hero-shape-1"></div>
+                    <div className="hero-shape hero-shape-2"></div>
+                    <div className="hero-shape hero-shape-3"></div>
+                </div>
             </div>
-          </div>
-        </div>
-        
-        {/* Background shapes */}
-        <div className="hero-visual">
-          <div className="hero-shape hero-shape-1"></div>
-          <div className="hero-shape hero-shape-2"></div>
-          <div className="hero-shape hero-shape-3"></div>
-        </div>
-      </div>
-    </section>
-  );
+        </section >
+    );
 };
 
 export default HeroSection;

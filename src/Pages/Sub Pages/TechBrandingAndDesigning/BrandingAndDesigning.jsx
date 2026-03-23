@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import brandingIamgeOne from '../../../assets/case study images/branding/malar.jpg';
-import brandingIamgeTwo from '../../../assets/case study images/branding/ecec.png';
+// import brandingIamgeTwo from '../../../assets/case study images/branding/ecec.png';
 import brandingIamgeThree from '../../../assets/case study images/branding/Nestoria.jpg';
 import brandingIamgeFour from '../../../assets/case study images/branding/isha bites.png';
 import './BrandingAndDesigning.css';
@@ -9,6 +9,88 @@ import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
 import MainPageSubFooter from '../MainPageSubFooter/MainPageSubFooter';
 import { Helmet } from 'react-helmet';
+
+const feedbacks = [
+    {
+        id: 1,
+        text: "ENGLORAY delivered herbal packaging that feels trustworthy and premium. Customers now clearly understand our product quality.",
+        author: "Malar Herbs",
+        role: "Herbal Products",
+        initial: "M"
+    },
+    {
+        id: 2,
+        text: "Digital ad campaigns helped us generate quality admission inquiries. The creatives and messaging worked very well.",
+        author: "ECEC Skill School",
+        role: "Skill School",
+        initial: "E"
+    },
+    {
+        id: 3,
+        text: "The promotional creatives were attractive and perfectly suited our food brand. Customer engagement improved noticeably.",
+        author: "ISHA Bites",
+        role: "Food And Beverage",
+        initial: "I"
+    }
+];
+
+const projects = [
+    {
+        id: 1,
+        title: "Malar herbal products",
+        description: "Complete brand identity redesign for a tech startup, including logo, color palette, typography, and brand guidelines.",
+        category: "Herbal product",
+        image: brandingIamgeOne,
+        stats: {
+            duration: "5 Weeks",
+            satisfaction: "98%"
+        }
+    },
+    {
+        id: 2,
+        title: "Nestoria",
+        description: "End-to-end branding for a luxury brand, from initial concept to store implementation and digital presence.",
+        category: "Branding",
+        image: brandingIamgeThree,
+        stats: {
+            duration: "6 Weeks",
+            satisfaction: "100%"
+        }
+    },
+    {
+        id: 3,
+        title: "ISHA Bites",
+        description: "Identity development for a beverage provider, establishing trust and professionalism in the food sector.",
+        category: "food and beverage",
+        image: brandingIamgeFour,
+        stats: {
+            duration: "5 Weeks",
+            satisfaction: "97%"
+        }
+    }
+];
+
+// Related branding & designing images - same size as main image
+const extraImages = [
+    {
+        id: 1,
+        url: "https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        title: "Brand Strategy Workshop",
+        description: "Collaborative brainstorming sessions to define brand vision and positioning"
+    },
+    {
+        id: 2,
+        url: "https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        title: "Design Process",
+        description: "Sketching and digital design creation for comprehensive brand identity"
+    },
+    {
+        id: 3,
+        url: "https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        title: "Creative Studio",
+        description: "Our design team working on innovative branding projects"
+    }
+];
 
 const BrandingDesigning = () => {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -32,88 +114,6 @@ const BrandingDesigning = () => {
         }
     }, []);
 
-    const feedbacks = [
-        {
-            id: 1,
-            text: "ENGLORAY delivered herbal packaging that feels trustworthy and premium. Customers now clearly understand our product quality.",
-            author: "Malar Herbs",
-            role: "Herbal Products",
-            initial: "M"
-        },
-        {
-            id: 2,
-            text: "Digital ad campaigns helped us generate quality admission inquiries. The creatives and messaging worked very well.",
-            author: "ECEC Skill School",
-            role: "Skill School",
-            initial: "E"
-        },
-        {
-            id: 3,
-            text: "The promotional creatives were attractive and perfectly suited our food brand. Customer engagement improved noticeably.",
-            author: "ISHA Bites",
-            role: "Food And Beverage",
-            initial: "I"
-        }
-    ];
-
-    const projects = [
-        {
-            id: 1,
-            title: "Malar herbal products",
-            description: "Complete brand identity redesign for a tech startup, including logo, color palette, typography, and brand guidelines.",
-            category: "Herbal product",
-            image: brandingIamgeOne,
-            stats: {
-                duration: "5 Weeks",
-                satisfaction: "98%"
-            }
-        },
-        {
-            id: 2,
-            title: "Nestoria",
-            description: "End-to-end branding for a luxury brand, from initial concept to store implementation and digital presence.",
-            category: "Branding",
-            image: brandingIamgeThree,
-            stats: {
-                duration: "6 Weeks",
-                satisfaction: "100%"
-            }
-        },
-        {
-            id: 3,
-            title: "ISHA Bites",
-            description: "Identity development for a beverage provider, establishing trust and professionalism in the food sector.",
-            category: "food and beverage",
-            image: brandingIamgeFour,
-            stats: {
-                duration: "5 Weeks",
-                satisfaction: "97%"
-            }
-        }
-    ];
-
-    // Related branding & designing images - same size as main image
-    const extraImages = [
-        {
-            id: 1,
-            url: "https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-            title: "Brand Strategy Workshop",
-            description: "Collaborative brainstorming sessions to define brand vision and positioning"
-        },
-        {
-            id: 2,
-            url: "https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-            title: "Design Process",
-            description: "Sketching and digital design creation for comprehensive brand identity"
-        },
-        {
-            id: 3,
-            url: "https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-            title: "Creative Studio",
-            description: "Our design team working on innovative branding projects"
-        }
-    ];
-
     // Handle slide change
     useEffect(() => {
         if (feedbackTrackRef.current) {
@@ -130,7 +130,7 @@ const BrandingDesigning = () => {
             }, 5000);
         }
         return () => clearInterval(interval);
-    }, [autoSlide, feedbacks.length]);
+    }, [autoSlide]);
 
     // Handle image animation when expanded
     useEffect(() => {
