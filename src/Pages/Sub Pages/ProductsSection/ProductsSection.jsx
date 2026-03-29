@@ -43,7 +43,7 @@ const ProductsSection = () => {
         {
             id: 3,
             title: "Business Suite AI",
-            description: "AI-powered business tools that automate operations, improve decisions, and boost productivity. Our intelligent tools give your business a cutting edge by streamlining workflows and reducing manual effort. They enable real-time insights and smarter strategies to help organizations grow faster and operate more efficiently",
+            description: "AI-powered business tools that automate operations, improve decisions, and boost productivity. Our intelligent tools give your business a cutting edge by streamlining workflows and reducing manual effort. They enable real-time insights and smarter strategies to help organizations grow faster and operate more efficiently. With seamless integrations and advanced analytics, businesses can unlock deeper visibility into their operations. This empowers teams to innovate faster, optimize resources, and achieve sustainable growth in a competitive digital landscape.",
 
             bg: "#c62828",
             text: "#FFFFFF",

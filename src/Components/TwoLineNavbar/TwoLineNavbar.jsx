@@ -136,7 +136,12 @@ const TwoLineNavbar = () => {
                     }
                 ]
             }
-        }
+        },
+        // {
+        //     id: 'raymart',
+        //     title: 'Raymart',
+        //     route: '/raymartPage'
+        // }
     ];
 
     // Function to handle Home button click
@@ -158,7 +163,7 @@ const TwoLineNavbar = () => {
         }
     };
 
-    // Function to handle menu item click - Only Home has navigation
+    // Function to handle menu item click
     const handleMenuItemClick = (menu, e) => {
         if (e) {
             e.preventDefault();
@@ -167,9 +172,11 @@ const TwoLineNavbar = () => {
 
         if (menu.id === 'home') {
             handleHomeClick();
+        } else if (menu.route && !menu.dropdown) {
+            navigate(menu.route);
+            closeMobileMenu();
         }
-        // Other menu items don't navigate, they only open dropdowns
-        // The dropdown is handled by mouseenter/mouseleave
+        // Items with dropdowns: handled by mouseenter/mouseleave
     };
 
     // Function to open WhatsApp
@@ -282,30 +289,26 @@ const TwoLineNavbar = () => {
         });
     };
 
-    // useEffect(() => {
-    //     const controlNavbar = () => {
-    //         if (window.scrollY > lastScrollY && window.scrollY > 100) {
-    //             setShowNavbar(false);
-    //         } else {
-    //             setShowNavbar(true);
-    //         }
-    //         setLastScrollY(window.scrollY);
-    //     };
-
-    //     window.addEventListener('scroll', controlNavbar);
-
-    //     window.addEventListener('resize', adjustDropdownPositions);
-    //     adjustDropdownPositions();
-
-    //     return () => {
-    //         window.removeEventListener('scroll', controlNavbar);
-    //         window.removeEventListener('resize', adjustDropdownPositions);
-    //     };
-    // }, [lastScrollY]);
-
     useEffect(() => {
-        setShowNavbar(true);
-    }, []);
+        const controlNavbar = () => {
+            if (window.scrollY > lastScrollY && window.scrollY > 100) {
+                setShowNavbar(false);
+            } else {
+                setShowNavbar(true);
+            }
+            setLastScrollY(window.scrollY);
+        };
+
+        window.addEventListener('scroll', controlNavbar);
+
+        window.addEventListener('resize', adjustDropdownPositions);
+        adjustDropdownPositions();
+
+        return () => {
+            window.removeEventListener('scroll', controlNavbar);
+            window.removeEventListener('resize', adjustDropdownPositions);
+        };
+    }, [lastScrollY]);
 
     // Handle hash changes
     useEffect(() => {
@@ -365,10 +368,13 @@ const TwoLineNavbar = () => {
         setActiveMobileMenu(activeMobileMenu === menuId ? null : menuId);
     };
 
-    // Handle mobile menu item click - Only Home has navigation
+    // Handle mobile menu item click
     const handleMobileMenuItemClick = (menu) => {
         if (menu.id === 'home') {
             handleHomeClick();
+        } else if (menu.route && !menu.dropdown) {
+            navigate(menu.route);
+            closeMobileMenu();
         } else if (menu.dropdown) {
             toggleMobileDropdown(menu.id);
         }

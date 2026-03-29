@@ -154,20 +154,20 @@
   position: relative;
   width: 500px;
   height: 700px;
-  transform: scale(0.6) translateY(0px) !important;
+  transform: scale(0.68) translateY(0px) !important;
   transform-origin: top center;
   transition: all 0.5s ease;
   opacity: 1 !important;
 }
 
 .carousel-slide.center-card .slide-wrapper {
-  transform: scale(0.6) translateY(0px) !important;
+  transform: scale(0.68) translateY(0px) !important;
   z-index: 10;
   opacity: 1 !important;
 }
 
 .carousel-slide.side-card .slide-wrapper {
-  transform: scale(0.6) translateY(0px) !important;
+  transform: scale(0.68) translateY(0px) !important;
   opacity: 1 !important;
   z-index: 5;
 }
@@ -291,8 +291,8 @@
 
 .card-ui-action {
   position: absolute;
-  top: 550px;
-  /* Aligned with the shelf in clip-path */
+  top: 525px;
+  /* Aligned slightly higher to center properly in the clip-path shelf */
   left: 340px;
   width: 150px;
   height: 150px;

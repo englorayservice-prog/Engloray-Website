@@ -1,0 +1,121 @@
+.tl-highlights-section {
+    width: 100%;
+    background: #ffffff; /* Completely distinct white background */
+    display: flex;
+    justify-content: center;
+    padding: 6rem 2rem 8rem 2rem;
+}
+
+/* Bottom 3 Features Grid */
+.tlh-peoplr-bottom-grid {
+    width: 100%;
+    max-width: 1400px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem; /* Increased from 1.5rem */
+}
+
+.tlh-bottom-card {
+    background: #1c113b;
+    border-radius: 20px;
+    padding: 2.5rem; /* Increased from 2rem to make the card bigger */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    min-height: 280px; /* Force larger height naturally */
+}
+
+.tlh-bottom-card:hover {
+    transform: translateY(-8px); /* Deeper hover lift */
+    background: #23164a;
+}
+
+.tlh-bcard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.tlh-bcard-header h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.6rem; /* Increased font size for title */
+    font-weight: 700;
+    margin: 0;
+    color: #ffffff;
+    line-height: 1.3;
+}
+
+.tlh-card-arrow {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1.3rem; /* Slightly larger arrow */
+    transition: color 0.3s ease;
+}
+
+.tlh-bottom-card:hover .tlh-card-arrow {
+    color: #ffffff;
+}
+
+.tlh-bottom-card p {
+    font-size: 0.95rem; /* Increased from 0.85rem */
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.7;
+    margin: 0 0 1.8rem 0;
+    flex-grow: 1;
+}
+
+.tlh-card-footer {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+/* Small footer pill indicators */
+.tlh-footer-pill {
+    font-size: 0.8rem; /* Increased */
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.lime-footer {
+    background: rgba(216, 255, 74, 0.15);
+    color: #d8ff4a;
+}
+
+/* Education Badge Icons (used in bottom card footers) */
+.tlh-icon-badges {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Slightly wider gap */
+}
+
+.tlh-edu-badge {
+    width: 32px; /* Increased from 28px */
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    color: #ffffff;
+}
+
+@media (max-width: 1024px) {
+    .tlh-peoplr-bottom-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .tl-highlights-section {
+        padding: 4rem 1.5rem 6rem 1.5rem;
+    }
+    .tlh-peoplr-bottom-grid {
+        grid-template-columns: 1fr;
+    }
+}

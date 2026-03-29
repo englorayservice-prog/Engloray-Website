@@ -21,8 +21,7 @@ import {
     faDatabase
 } from '@fortawesome/free-solid-svg-icons';
 import './About.css';
-//import aboutVideo from '../../../assets/engloray VIdeo.mp4';
-import aboutVideo from 'D:/Project-Engloray/Engloray-Website-main/src/assets/engloray VIdeo.mp4';
+import aboutVideo from '../../assets/OurCoreValuebg.mp4';
 
 
 // 1. MODIFIED: Custom Hook for LocalStorage Persistence

@@ -19,7 +19,7 @@ import {
   faBinoculars
 } from '@fortawesome/free-solid-svg-icons';
 import './Courses.css';
-
+import teachersImg from '../../../assets/images/teachers_bg.png';
 
 const Courses = () => {
   const navigate = useNavigate();
@@ -539,7 +539,7 @@ const Courses = () => {
 
                 {/* Teachers card — lime-green */}
                 <div className="lh-card lh-card-teachers">
-                  <img src="https://images.unsplash.com/photo-1524178232363-1fb28f74b671?q=80&w=400&auto=format&fit=crop" alt="Teachers Background" className="lh-teachers-bg" />
+                  <img src={teachersImg} alt="Teachers Background" className="lh-teachers-bg" />
                   <div className="lh-teachers-content">
                     <div className="lh-teacher-avatars">
                       <img src="https://i.pravatar.cc/150?u=t1" alt="Teacher 1" />

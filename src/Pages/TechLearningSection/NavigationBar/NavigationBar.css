@@ -5,12 +5,13 @@
   background: transparent;
   transition: all 0.3s ease;
   font-family: 'Aldrich', sans-serif;
+
 }
 
 /* Initial Position (Below Top Navbar) - Visible Angled Shape */
 .learning-nav-initial {
   position: relative;
-  top: 0;
+  top: 23px;
   padding: 0.5rem 0 2.5rem 0;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   z-index: 998;
@@ -52,7 +53,7 @@
 /* Fixed Position (Appears on Scroll) - Visible Wave Shape */
 .learning-nav-fixed {
   position: fixed;
-  top: -80px;
+  top: -50px;
   left: 0;
   right: 0;
   padding: 0.5rem 0 2rem 0;

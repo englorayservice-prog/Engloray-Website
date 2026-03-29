@@ -78,23 +78,24 @@
     flex: 1;
     max-width: none;
     padding-top: 8px;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .ps-subheadline {
-    font-size: 18px;
-    font-weight: 800;
-    color: rgba(255, 255, 255, 0.9);
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
     line-height: 1.6;
     margin: 0;
-    margin-left: 14px;
-    width: 800px;
-    max-width: none;
+    width: 600px;
+    text-align: right;
 }
 
 /* ── Cards Grid ── */
 .ps-cards-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1.5fr;
+    grid-template-columns: 1fr 1fr 1.3fr;
     grid-template-rows: repeat(3, auto);
     gap: 14px;
 }
@@ -139,118 +140,111 @@
 /* ── Base Card ── */
 .ps-card {
     position: relative;
-    border-radius: 20px;
-    padding: 28px 24px;
+    border-radius: 12px;
+    padding: 28px 20px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     cursor: pointer;
     transition: transform 0.28s ease, box-shadow 0.28s ease;
     overflow: hidden;
-    min-height: 160px;
+    min-height: 150px;
 }
 
 .ps-card:hover {
-    transform: translateY(-5px) scale(1.015);
-    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.25);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .ps-card-large {
     padding: 36px 32px;
-    min-height: unset;
-    /* let grid determine height */
+    min-height: 100%;
 }
 
-/* ── Title Row (title + arrow inline) ── */
+/* ── Title Row ── */
 .ps-title-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 8px;
-    margin-bottom: 10px;
     position: relative;
     z-index: 2;
 }
 
-/* ── Arrow Icon ── */
-.ps-arrow-icon {
-    font-size: 1rem;
-    flex-shrink: 0;
-    transform: rotate(-45deg);
-    transition: transform 0.3s ease;
+/* Small Card Layout adjustments manually to match screenshot perfectly */
+.ps-card:not(.ps-card-large) .ps-title-row {
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-.ps-card:hover .ps-arrow-icon {
-    transform: rotate(-45deg) translateX(3px) translateY(-3px);
-}
-
-/* ── Typography ── */
-.ps-card-title {
-    font-size: 1.2rem;
+.ps-card:not(.ps-card-large) .ps-card-title {
+    font-size: 1.15rem;
     font-weight: 800;
     margin: 0;
-    line-height: 1.35;
-    flex: 1;
-    position: relative;
-    z-index: 2;
+    color: #111827;
 }
 
-.ps-card-desc {
-    font-size: 0.88rem;
+.ps-card:not(.ps-card-large) .ps-arrow-icon {
+    position: absolute;
+    top: -5px;
+    right: 5px;
+    font-size: 1.1rem;
+    color: rgba(31,41,55,0.6);
+}
+
+.ps-card:not(.ps-card-large) .ps-card-desc {
+    text-align: center;
+    font-size: 0.85rem;
     font-weight: 500;
-    line-height: 1.58;
+    line-height: 1.6;
+    color: rgba(31,41,55,0.65);
+    margin: 0 auto;
+    max-width: 95%;
+}
+
+/* Large box layout (Business Suite AI) */
+.ps-card-large .ps-title-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 28px;
+}
+
+.ps-card-large .ps-card-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ffffff;
     margin: 0;
-    flex: 1;
-    text-align: left;
-    /* For large card, keep text above shield */
-    position: relative;
-    z-index: 2;
-    max-width: 80%;
+}
+
+.ps-card-large .ps-arrow-icon {
+    font-size: 1.1rem;
+    color: #ffffff;
 }
 
 .ps-card-large .ps-card-desc {
-    max-width: 52%;
-}
-
-.ps-card-title {
-    position: relative;
+    text-align: justify;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.7;
+    margin: 0;
     z-index: 2;
+    position: relative;
 }
 
-/* ── AI Animation Wrapper (Business Suite AI Card) ── */
-.ps-ai-animation-wrapper {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 48%; /* Covers the right half of the card */
-    right: 0;
-    z-index: 0;
-    pointer-events: none;
-    border-radius: 0 20px 20px 0;
-    overflow: hidden;
-    /* Soft fade exactly where text ends */
-    mask-image: linear-gradient(to left, black 70%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to left, black 70%, transparent 100%);
+.ps-card-large {
+    background-image: linear-gradient(to bottom, #c62828 65%, rgba(198, 40, 40, 0.7) 100%), url('../../../assets/AiImage.jpeg');
+    background-size: cover;
+    background-position: center bottom;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
 }
 
-.ps-ai-glow {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
-    transform: translate(-50%, -50%);
-    animation: psPulseGlow 4s ease-in-out infinite alternate;
-}
-
-.ps-ai-particle {
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    background: rgba(255, 255, 255, 0.4);
-    border-radius: 50%;
-    box-shadow: 0 0 10px rgba(255,255,255,0.8);
-    animation: psFloatParticle 6s linear infinite;
+/* Remove old animations that cause interference */
+.ps-ai-animation-wrapper, 
+.ps-ai-glow, 
+.ps-ai-particle, 
+.ps-ai-connection, 
+.ps-ai-node {
+    display: none !important;
 }
 .ps-ai-p1 { bottom: -10%; left: 20%; animation-duration: 5s; }
 .ps-ai-p2 { bottom: -10%; left: 50%; animation-duration: 7s; animation-delay: 1s; }
