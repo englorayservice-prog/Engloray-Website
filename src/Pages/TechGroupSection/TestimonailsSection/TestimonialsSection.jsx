@@ -23,7 +23,7 @@ import techLogoFifteen from '../../../assets/logos/Pavizham-Photoroom.png';
 import statsBgImage from '../../../assets/image21.jfif';
 import './TestimonialsSection.css';
 
-const budgetImage = ""; // missing image14.png
+import budgetImage from '../../../assets/images/red_bar_chart.png';
 
 
 // Add icons to the library

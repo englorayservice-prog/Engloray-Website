@@ -112,7 +112,8 @@
   display: flex;
   flex-direction: column;
   gap: 25px;
-  animation: scrollVertical 15s linear infinite;
+  padding-bottom: 25px; /* Critical for seamless -50% translateY loop */
+  animation: scrollVertical 30s linear infinite; /* Adjusted for 8 items */
   padding-right: 15px;
   will-change: transform;
   position: relative;

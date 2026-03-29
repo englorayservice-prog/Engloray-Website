@@ -376,7 +376,7 @@ body .engloray-about-wrapper {
 .cv-preview-full {
     width: 100%;
     height: 100%;
-    background-image: url('D:\Project-Engloray\Engloray-pro-website-main\src\assets\VideoCover.jfif');
+    background-image: url('../../assets/DemoThumbnail.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -549,7 +549,7 @@ body .engloray-about-wrapper {
     height: 100%;
 
     /* Fill the grid height for perfect alignment */
-    background-image: url('D:\Project-Engloray\Engloray-Website-main\src\assets\AboutUS.jfif');
+    background-image: url('../../assets/AboutUS.jfif');
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;

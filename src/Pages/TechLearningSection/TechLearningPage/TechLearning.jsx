@@ -3,6 +3,7 @@ import './TechLearning.css';
 
 
 import TechLearningHero from '../TechLearningHero/TechLearningHero';
+import TechLearningHighlights from '../TechLearningHighlights/TechLearningHighlights';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import NavigationBar from '../NavigationBar/NavigationBar';
 import Courses from '../Courses/Courses';
@@ -18,6 +19,7 @@ const TechLearning = () => {
             <TopNavBar />
             <NavigationBar />
             <TechLearningHero />
+            <TechLearningHighlights />
             <Courses />
             <LearningExperience />
             <StudentTestimonials />

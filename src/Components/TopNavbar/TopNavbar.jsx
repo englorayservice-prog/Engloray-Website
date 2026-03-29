@@ -70,6 +70,11 @@ const TopNavBar = () => {
       label: 'For Students', 
       path: '/tech-learning', // E-learning page
       exact: false
+    },
+    { 
+      label: 'Raymart', 
+      path: '/raymartPage',
+      exact: false
     }
   ];
 

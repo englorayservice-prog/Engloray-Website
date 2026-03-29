@@ -83,8 +83,8 @@ const TechLearningHero = () => {
                 {/* Overlapping Glass Marquee Track INSIDE the Top Card */}
                 <div className="tlh-marquee-container">
                     <div className="tlh-marquee-track">
-                        {/* Duplicate array twice for seamless marquee loop */}
-                        {[1, 2].map(iteration => (
+                        {/* Duplicate array multiple times for seamless marquee loop on large screens */}
+                        {[1, 2, 3, 4, 5, 6, 7, 8].map(iteration => (
                             <React.Fragment key={iteration}>
                                 <div className="tlh-marquee-card"><FontAwesomeIcon icon={faChartLine} style={{ marginRight: '8px', color: '#d8ff4a' }} /> 50+ Industry Tools</div>
                                 <div className="tlh-marquee-card">React & Node.js</div>
@@ -97,55 +97,7 @@ const TechLearningHero = () => {
                 </div>
             </div>
 
-            {/* Bottom Features Grid */}
-            <div className="tlh-peoplr-bottom-grid">
 
-                <div className="tlh-bottom-card">
-                    <div className="tlh-bcard-header">
-                        <h3>Real-World <br />Practice</h3>
-                        <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="tlh-card-arrow" />
-                    </div>
-                    <p>Develop your abilities with hands-on projects designed to simulate actual industry scenarios and workplace challenges.</p>
-                    <div className="tlh-card-footer">
-                        <span className="tlh-footer-pill lime-footer"><FontAwesomeIcon icon={faLaptopCode} style={{ marginRight: '6px' }} /> Live Projects</span>
-                        <div className="tlh-icon-badges" style={{ marginLeft: 'auto' }}>
-                            <div className="tlh-edu-badge" style={{ background: '#3b2c85' }}><FontAwesomeIcon icon={faLaptopCode} /></div>
-                            <div className="tlh-edu-badge" style={{ background: '#6a4ae0' }}><FontAwesomeIcon icon={faGraduationCap} /></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="tlh-bottom-card">
-                    <div className="tlh-bcard-header">
-                        <h3>Guided <br />Mentorship</h3>
-                        <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="tlh-card-arrow" />
-                    </div>
-                    <p>Gain insights from experienced industry professionals who provide personalized support and feedback throughout your journey.</p>
-                    <div className="tlh-card-footer">
-                        <span className="tlh-footer-pill lime-footer"><FontAwesomeIcon icon={faUsers} style={{ marginRight: '6px' }} /> Expert Mentors</span>
-                        <div className="tlh-icon-badges" style={{ marginLeft: 'auto' }}>
-                            <div className="tlh-edu-badge" style={{ background: '#3b2c85' }}><FontAwesomeIcon icon={faUsers} /></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="tlh-bottom-card">
-                    <div className="tlh-bcard-header">
-                        <h3>Experience <br />First</h3>
-                        <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="tlh-card-arrow" />
-                    </div>
-                    <p>Equip yourself with the practical skills, strong portfolio, and confidence needed to secure top-tier tech opportunities.</p>
-                    <div className="tlh-card-footer">
-                        <span className="tlh-footer-pill lime-footer"><FontAwesomeIcon icon={faTrophy} style={{ marginRight: '6px' }} /> 90% Placement</span>
-                        <div className="tlh-icon-badges" style={{ marginLeft: 'auto' }}>
-                            <div className="tlh-edu-badge" style={{ background: '#3b2c85' }}><FontAwesomeIcon icon={faTrophy} /></div>
-                            <div className="tlh-edu-badge" style={{ background: '#6a4ae0' }}><FontAwesomeIcon icon={faHandshake} /></div>
-                            <div className="tlh-edu-badge" style={{ background: '#8b6ff0' }}><FontAwesomeIcon icon={faUsers} /></div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
         </section>
     );
 };

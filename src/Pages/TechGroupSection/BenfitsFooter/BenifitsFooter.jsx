@@ -47,7 +47,7 @@ import './BenifitsFooter.css';
 
 // Import the image from assets
 //import titleImage from '../../../assets/image12.jfif'; // Adjust the path based on your asset location
-import benefitsBlueEarth from '../../../assets/earth_hero.jfif';
+import benefitsBlueEarth from '../../../assets/download.png';
 
 // Add only the icons that are actually used in the component
 library.add(
@@ -318,7 +318,7 @@ const BenefitsFooter = ({ onOpenInternshipForm }) => {
                 style={{
                   backgroundImage: `url(${benefitsBlueEarth})`,
                   backgroundSize: 'cover',
-                  backgroundPosition: 'center calc(100% + 240px)',
+                  backgroundPosition: 'center calc(100% + 820px)',
                   backgroundRepeat: 'no-repeat'
                 }}
               >

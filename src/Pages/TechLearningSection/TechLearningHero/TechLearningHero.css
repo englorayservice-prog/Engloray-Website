@@ -1,17 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800;900&family=Inter:wght@400;500;600;700&display=swap');
-/* 
-@font-face {
-    font-family: 'Migae';
-    src: url('../../../assets/Fonts/Migae-Semibold.otf') format('opentype');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
-} */
 
 /* Main Container and Deep Purple Background */
 .tlh-peoplr-container {
     width: 100%;
-    height: 950px;
+    min-height: 40vh;
+    /* FIX */
+    height: auto;
+    /* ADD */
     /* Very dark background for bottom half */
     background: #03024b;
     display: flex;
@@ -19,7 +14,8 @@
     align-items: center;
     font-family: 'Inter', sans-serif;
     color: #ffffff;
-    padding-bottom: 4rem;
+    /* padding-bottom: 10rem; */
+    padding-top: clamp(40px, 5vw, 80px);
     overflow: hidden;
 }
 
@@ -49,6 +45,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
+    margin-top: 50px;
     margin-bottom: 2rem;
 }
 
@@ -101,6 +98,7 @@
     margin-bottom: 1rem;
     color: #ffffff;
     transform: translateY(-30px);
+    margin-top: -80px;
 
 }
 
@@ -109,8 +107,11 @@
     position: relative;
     width: 100%;
     max-width: 1200px;
+    min-height: 500px;
     display: flex;
     justify-content: center;
+    align-items: flex-end;
+    margin-bottom: -150px;
 }
 
 .tlh-peoplr-image-wrapper {
@@ -123,27 +124,30 @@
 }
 
 .tlh-peoplr-students {
-    width: 800px;
+    width: 100%;
+    max-width: 800px;
+    margin-top: -250px;
+    margin-left: 10px;
+    /* instead of transform */
     height: auto;
     display: block;
-    transform: translateY(-260px) translateX(0px);
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     margin-bottom: 2rem;
     /* Give space for marquee under the students' bottom inside the purple card */
 }
 
-/* Centered CTA Buttons (Above Marquee) */
+/* Centered CTA Buttons (Just above the marquee at the bottom of the purple card) */
 .tlh-center-cta-group {
     position: absolute;
-    bottom: 0px;
-    /* The student image is translated up by -280px, so we lift the buttons to overlap */
+    bottom: 70px;
     left: 50%;
-    transform: translateX(-50%) translateY(-280px);
+    margin-bottom: 230px;
+    margin-left: -200px;
     display: flex;
     gap: 1.5rem;
     z-index: 50;
-    transform: translateY(-560px)translateX(-200px);
+    white-space: nowrap;
 }
 
 /* Floating Stat Cards (Glassmorphism Purple) */
@@ -162,19 +166,21 @@
 }
 
 .tlh-float-left {
-    top: 20%;
-    left: 0;
-    transform: translateY(-250px) translateX(-200px);
+    top: 50%;
+    left: 4%;
+    margin-top: -300px;
+    margin-left: -200px;
     height: auto;
     min-height: 170px;
 }
 
 .tlh-float-right {
-    top: 15%;
-    right: 0;
+    top: 50%;
+    right: 4%;
+    margin-top: -300px;
+    margin-right: -200px;
     height: auto;
     min-height: 170px;
-    transform: translateY(-200px) translateX(200px);
 }
 
 .tlh-card-top-row {
@@ -252,7 +258,7 @@
 /* Parent card has overflow:hidden + border-radius — this clips the marquee to the card edges exactly */
 .tlh-marquee-container {
     position: absolute;
-    bottom: 25px;
+    margin-top: -130px;
     left: 0;
     right: 0;
     width: 100%;
@@ -265,7 +271,8 @@
 .tlh-marquee-track {
     display: flex;
     gap: 2rem;
-    padding: 10px 0;
+    padding: 10px 2rem 10px 0;
+    /* Add padding-right equal to gap for perfect 50% split */
     width: max-content;
     animation: tlhScrollMarquee 30s linear infinite;
 }
@@ -278,8 +285,6 @@
     100% {
         transform: translateX(-50%);
     }
-
-    /* Scrolls precisely half its duplicated length */
 }
 
 /* Individual Marquee Cards */
@@ -327,149 +332,16 @@
     color: #ffffff;
 }
 
-/* Bottom 3 Features Grid */
-.tlh-peoplr-bottom-grid {
-    width: calc(100% - 40px);
-    max-width: 1400px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    margin-top: 1rem;
-    transform: translateY(-460px);
-    /* Spacing below the purple card */
-}
 
-.tlh-bottom-card {
-    /* Very dark card matching reference bottom cards */
-    background: #1c113b;
-    border-radius: 20px;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: transform 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.02);
-}
 
-.tlh-bottom-card:hover {
-    transform: translateY(-5px);
-    background: #23164a;
-}
+@media (max-width: 1440px) {
+    .tlh-float-left {
+        left: 2%;
+    }
 
-.tlh-bcard-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 1rem;
-}
-
-.tlh-bcard-header h3 {
-    font-family: 'Outfit', sans-serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-    margin: 0;
-    color: #ffffff;
-}
-
-.tlh-card-arrow {
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 1.1rem;
-    transition: color 0.3s ease;
-}
-
-.tlh-bottom-card:hover .tlh-card-arrow {
-    color: #ffffff;
-}
-
-.tlh-bottom-card p {
-    font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.6);
-    line-height: 1.6;
-    margin: 0 0 1.5rem 0;
-    flex-grow: 1;
-}
-
-.tlh-card-footer {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-}
-
-/* Small footer pill indicators */
-.tlh-footer-pill {
-    font-size: 0.75rem;
-    font-weight: 600;
-    padding: 0.4rem 0.8rem;
-    border-radius: 50px;
-    display: flex;
-    align-items: center;
-}
-
-.lime-footer {
-    background: rgba(216, 255, 74, 0.15);
-    color: #d8ff4a;
-}
-
-/* Tiny circular icons in footer grid */
-.tlh-circle-icon {
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.8rem;
-    font-weight: 700;
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.tlh-circle-icon.alpha {
-    background: #3b2c85;
-    /* darker purple */
-}
-
-.tlh-social-icon {
-    width: 28px;
-    height: 28px;
-    background: #0077b5;
-    /* LinkedIn Blue */
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 0.75rem;
-}
-
-.tlh-avatar-stack {
-    display: flex;
-    align-items: center;
-}
-
-.tlh-avatar-stack img {
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    border: 2px solid #190a4d;
-    margin-left: -8px;
-}
-
-.tlh-avatar-stack img:first-child {
-    margin-left: 0;
-}
-
-.tlh-plus-avatar {
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    background: #3b2c85;
-    border: 2px solid #1c113b;
-    margin-left: -8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.7rem;
-    font-weight: 700;
+    .tlh-float-right {
+        right: 2%;
+    }
 }
 
 /* Responsive adjustments */

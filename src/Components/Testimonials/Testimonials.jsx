@@ -4,6 +4,10 @@ import './Testimonials.css';
 // Import local avatars
 import avatar1 from '../../assets/logos/amico-Photoroom.png';
 import avatar3 from '../../assets/logos/studio makeup-Photoroom.png';
+import logoWooden from '../../assets/logos/wooden street-Photoroom.png';
+import logoTamil from '../../assets/logos/tamil natrals-Photoroom.png';
+import logoMaax from '../../assets/logos/maax life-Photoroom.png';
+import logoNestoria from '../../assets/logos/nestoria-Photoroom.png';
 
 const Testimonials = () => {
   const testimonials = [
@@ -34,11 +38,39 @@ const Testimonials = () => {
       role: "",
       feedback: "The team at ENGLORAY exceeded my expectations with their creative direction and attention to detail. My brand has never looked better and the response from customers has been overwhelmingly positive.",
       avatar: "https://randomuser.me/api/portraits/women/22.jpg"
+    },
+    {
+      id: 5,
+      name: "Wooden Street",
+      role: "",
+      feedback: "The custom UI layout improved our sales conversion rate significantly and the branding was top notch! Highly recommend the team.",
+      avatar: logoWooden
+    },
+    {
+      id: 6,
+      name: "Tamil Naturals",
+      role: "",
+      feedback: "Very clean, natural, and organic look provided by the ENGLORAY team. Extremely satisfied with the modern design approach.",
+      avatar: logoTamil
+    },
+    {
+      id: 7,
+      name: "Maax Life Fitness",
+      role: "",
+      feedback: "Our core fitness app has been highly appreciated by our users. Superb mobile app development team delivering reliable performance.",
+      avatar: logoMaax
+    },
+    {
+      id: 8,
+      name: "Nestoria Architecture",
+      role: "",
+      feedback: "The architectural portfolio site built for us stands out from the competition. Exactly what we were looking for to capture our aesthetic.",
+      avatar: logoNestoria
     }
   ];
 
-  // Duplicate testimonials for infinite scroll effect
-  const allTestimonials = [...testimonials, ...testimonials, ...testimonials];
+  // Duplicate testimonials EXACTLY ONCE for perfectly seamless infinite scroll math
+  const allTestimonials = [...testimonials, ...testimonials];
 
   return (
     <section id="Testimonials" className="testimonials-section">
@@ -57,17 +89,18 @@ const Testimonials = () => {
           <div className="testimonials-scroll-container">
             <div className="testimonials-scroll-track">
               {allTestimonials.map((testimonial, index) => {
-                const originalIndex = index % 4;
+                const isEven = index % 2 === 0;
+                const isOdd = index % 2 === 1;
                 return (
                   <div
                     key={`${testimonial.id}-${index}`}
-                    className={`testimonial-card ${originalIndex === 1 || originalIndex === 3 ? 'card-second' : ''
+                    className={`testimonial-card ${isOdd ? 'card-second' : ''
                       }`}
                   >
                     <div className="testimonial-icon">"</div>
                     <div className="testimonial-card-content">
                       <div
-                        className={`testimonial-avatar ${originalIndex === 0 || originalIndex === 2 ? 'avatar-transparent' : ''
+                        className={`testimonial-avatar ${isEven ? 'avatar-transparent' : ''
                           }`}
                       >
                         <img src={testimonial.avatar} alt={testimonial.name} />

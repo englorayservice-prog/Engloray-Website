@@ -478,9 +478,10 @@
   background-position: center;
   background-repeat: no-repeat;
 
-  opacity: 1;
-  /* Increased from 5 to 1 (full opacity) */
-  z-index: 1;
+  /* Make background transparent, dots grey, and preserve icon hues */
+  filter: invert(1) hue-rotate(180deg);
+  mix-blend-mode: multiply;
+  opacity: 0.45;
 }
 
 .techGroup-stats-grid {

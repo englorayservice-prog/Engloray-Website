@@ -53,6 +53,7 @@ import TLSPFFooter from './Pages/Sub Pages/TechLearningSubPageFooter/TLSPFFooter
 import MainPageSubFooter from './Pages/Sub Pages/MainPageSubFooter/MainPageSubFooter';
 import JavaFullStackCourse from './Pages/Sub Pages/JavaFullStackCourse/JavaFullStackCourse';
 import BusinessBoost from './Components/BusinessBoost/BusinessBoost';
+import RaymartPage from './Pages/Sub Pages/RaymartPage/RaymartPage';
 
 
 function App() {
@@ -138,6 +139,7 @@ function App() {
           <Route path="/privacyPolicyPage" element={<PrivacyPolicy  />} />
           <Route path="/cookiesPolicyPage" element={<CookiePolicy  />} />
           <Route path="/termsAndServicesPage" element={<TermsAndServices  />} />
+          <Route path="/raymartPage" element={<RaymartPage />} />
           
 
 
