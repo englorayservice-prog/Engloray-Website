@@ -1,1117 +1,1834 @@
-/* Software & App Development Page Styles - Updated with Image Expansion */
+/* Software & App Development Page Styles - Based on Branding & Identity Design Structure */
+.sad-page {
+    font-family: 'Inter', sans-serif;
+    color: #1a1a1a;
+    background: #f4f5f5;
+}
+
 .sad-container {
-    max-width: 1200px;
+    max-width: 2200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* Hero Section - Updated with new background */
-.sad-hero-section {
+/* ============================================================
+   HERO SECTION NEW 
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+.sad-hero-section-new {
+    width: 100%;
+    min-height: 77vh;
+    background: #f4f5f5;
+    padding: 20px 20px 0px 20px;
+    font-family: 'Inter', sans-serif;
     position: relative;
-    min-height: 100vh;
+    overflow: hidden;
     display: flex;
     align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    background: linear-gradient(135deg, #0c0c2e 0%, #1a1a3e 100%);
 }
 
-.sad-hero-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
+.sad-hero-container-new {
     width: 100%;
-    height: 100%;
-    background-image: url('https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
-    background-size: cover;
-    background-position: center;
-    opacity: 0.4;
-    animation: sadBgZoom 20s ease-in-out infinite;
-}
-
-@keyframes sadBgZoom {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-}
-
-.sad-hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-    animation: sadOverlayFade 3s ease-in-out infinite alternate;
-}
-
-@keyframes sadOverlayFade {
-    0% {
-        background: rgba(0, 0, 0, 0.4);
-    }
-    100% {
-        background: rgba(0, 0, 0, 0.6);
-    }
-}
-
-/* Updated Content Box */
-.sad-hero-content {
+    max-width: 2000px;
+    min-height: 670px;
+    margin: 20px auto;
+    margin-top: -10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 20px;
+    padding: 60px 40px 80px 40px;
+    background: #ffffff;
+    border-radius: 0px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
     position: relative;
-    z-index: 2;
+    box-sizing: border-box;
+    clip-path: polygon(0% 0%,
+            100% 0%,
+            100% 100%,
+            80% 100%,
+            71% 90%,
+            27.5% 90%,
+            20% 100%,
+            0% 100%);
+}
+
+.sad-hero-title-desc-new {
+    font-size: 47px;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #1a1a1a;
+    letter-spacing: -2px;
+    position: absolute;
+    top: 200px;
+    left: 62%;
+    transform: translateX(-50%);
     text-align: center;
-    max-width: 900px;
-    width: 90%;
-    padding: 60px 50px;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(15px);
-    border-radius: 25px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    animation: sadFadeInUp 0.8s ease-out;
-    box-shadow: 
-        0 25px 50px rgba(0, 0, 0, 0.5),
-        0 0 0 1px rgba(138, 43, 226, 0.15) inset;
-    margin: 0 auto;
+    max-width: 1010px;
+    width: 100%;
+    min-height: 2000px;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.sad-hero-iphone14-img {
+    max-width: 55%;
+    height: auto;
+}
+
+/* LEFT PANEL */
+.sad-hero-left-new {
+    flex: 2;
+    max-width: 1200px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    z-index: 2;
+}
+
+.sad-hero-subtitle-new {
+    font-size: 23px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #555;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    margin-left: -100px;
+    font-family: 'HEXCO', sans-serif;
+}
+
+.sad-hero-title-new {
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #1a1a1a;
+    margin-bottom: 35px;
+    letter-spacing: -2px;
+    margin-left: -60px;
+    font-family: 'HEXCO', sans-serif;
+}
+
+.sad-hero-buttons-new {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.sad-btn-get-started-new {
+    background: #6366F1;
+    /* Indigo */
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+    transition: all 0.2s ease;
+}
+
+.sad-btn-get-started-new:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+}
+
+.sad-btn-contact-us-new {
+    background: #EEF2FF;
+    /* Light Indigo */
+    color: #1a1a1a;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.sad-btn-contact-us-new:hover {
+    transform: translateY(-2px);
+    background: #E0E7FF;
+}
+
+.sad-hero-desc-new {
+    font-size: 20px;
+    color: #888;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    max-width: 500px;
+    text-align: left;
+}
+
+.sad-hero-stats-new {
+    display: flex;
+    gap: 40px;
+}
+
+.sad-stat-item-new {
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    gap: 12px;
 }
 
-.sad-hero-content-inner {
+.sad-stat-circle-new {
+    position: relative;
+    width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sad-stat-circle-new svg {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    max-width: 800px;
-    padding: 0;
+    height: 100%;
+    transform: rotate(-90deg);
 }
 
-@keyframes sadFadeInUp {
+.sad-circle-bg {
+    fill: none;
+    stroke: #e0e0e0;
+    stroke-width: 0.8;
+}
+
+.sad-circle-val {
+    fill: none;
+    stroke-width: 0.8;
+    stroke-linecap: round;
+}
+
+.sad-circle-indigo {
+    stroke: #6366F1;
+}
+
+.sad-circle-violet {
+    stroke: #8B5CF6;
+}
+
+.sad-circle-blue {
+    stroke: #3B82F6;
+}
+
+.sad-stat-number-new {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.sad-stat-dash {
+    color: #6366F1;
+    font-weight: bold;
+}
+
+.sad-stat-label-new {
+    font-size: 12px;
+    color: #999;
+}
+
+/* RIGHT PANEL */
+.sad-hero-right-new {
+    flex: 1;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    z-index: 2;
+}
+
+.sad-right-top-new {
+    background: transparent;
+}
+
+.sad-case-title-new {
+    font-size: 24px;
+    font-weight: 500;
+    color: #1a1a1a;
+    line-height: 1.1;
+    margin-bottom: 0px;
+    text-align: left;
+}
+
+.sad-title-play-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+.sad-play-circle-new {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: white;
+    padding: 6px 6px 6px 18px;
+    border-radius: 40px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    transition: transform 0.2s;
+}
+
+.sad-play-circle-new:hover {
+    transform: scale(1.02);
+}
+
+.sad-play-text-new {
+    color: #1a1a1a;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.sad-play-icon-new {
+    width: 32px;
+    height: 32px;
+    background: #1a1a1a;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    padding-left: 2px;
+}
+
+.sad-about-company-desc-new {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.7;
+    text-align: left;
+    margin-bottom: 35px;
+    max-width: 480px;
+    animation: fadeInDescSad 0.8s ease-out forwards;
+}
+
+@keyframes fadeInDescSad {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-/* Badge with beat animation - Purple Theme */
-.sad-hero-badge {
-    display: inline-block;
-    background: linear-gradient(135deg, #8a2be2, #4b0082);
-    color: white;
-    padding: 12px 28px;
-    border-radius: 30px;
-    font-size: 15px;
-    font-weight: 600;
-    margin-bottom: 30px;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    font-family: 'Aldrich', sans-serif;
-    animation: sadBadgeBeat 2s ease-in-out infinite;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 8px 25px rgba(138, 43, 226, 0.3);
-    border: 2px solid rgba(255, 255, 255, 0.2);
-}
-
-@keyframes sadBadgeBeat {
-    0% {
-        transform: scale(1);
-        box-shadow: 0 8px 25px rgba(138, 43, 226, 0.3);
-    }
-    15% {
-        transform: scale(1.05);
-        box-shadow: 0 12px 35px rgba(138, 43, 226, 0.4);
-    }
-    30% {
-        transform: scale(1);
-        box-shadow: 0 8px 25px rgba(138, 43, 226, 0.3);
-    }
-    45% {
-        transform: scale(1.03);
-        box-shadow: 0 10px 30px rgba(138, 43, 226, 0.35);
-    }
-    60% {
-        transform: scale(1);
-        box-shadow: 0 8px 25px rgba(138, 43, 226, 0.3);
-    }
-    100% {
-        transform: scale(1);
-        box-shadow: 0 8px 25px rgba(138, 43, 226, 0.3);
-    }
-}
-
-.sad-hero-badge::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(135deg, #8a2be2, #4b0082, #8a2be2);
-    border-radius: 32px;
-    z-index: -1;
-    opacity: 0;
-    animation: sadBadgeGlow 3s ease-in-out infinite;
-}
-
-@keyframes sadBadgeGlow {
-    0%, 100% {
-        opacity: 0;
-        filter: blur(5px);
-    }
-    50% {
-        opacity: 0.7;
-        filter: blur(10px);
-    }
-}
-
-.sad-hero-title {
-    font-size: 3.2rem;
-    font-weight: 100;
-    background: linear-gradient(135deg, #8a2be2, #9370db);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 20px;
-    line-height: 1.2;
-    font-family: 'HEXCO', sans-serif;
-    letter-spacing: 1px;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-}
-
-.sad-hero-subtitle {
-    font-size: 1.4rem;
-    color: #c5cae9;
+.sad-avatars-row-new {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin-bottom: 25px;
-    line-height: 1.6;
-    font-family: 'Aldrich', sans-serif;
-    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
 }
 
-.sad-hero-description {
-    font-size: 1.1rem;
-    color: #9fa8da;
-    line-height: 1.8;
-    margin-bottom: 35px;
-    font-family: 'Aldrich', sans-serif;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-}
-
-.sad-tech-stack {
+.sad-avatar-group-new {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 25px;
-}
-
-.sad-tech-item {
-    background: rgba(138, 43, 226, 0.1);
-    color: #9370db;
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    border: 1px solid rgba(138, 43, 226, 0.2);
-    font-family: 'Aldrich', sans-serif;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(5px);
-}
-
-.sad-tech-item:hover {
-    transform: translateY(-3px);
-    background: rgba(138, 43, 226, 0.2);
-    box-shadow: 0 5px 15px rgba(138, 43, 226, 0.2);
-}
-
-/* About Section - UPDATED with image expansion */
-.sad-about-section {
-    padding: 100px 0;
-    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-    position: relative;
-}
-
-.sad-about-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: start;
-}
-
-.sad-about-text {
-    padding-right: 40px;
-}
-
-.sad-about-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #1a1a3e;
-    margin-bottom: 20px;
-    position: relative;
-    font-family: 'HEXCO', sans-serif;
-}
-
-.sad-about-title::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    width: 60px;
-    height: 4px;
-    background: linear-gradient(135deg, #8a2be2, #4b0082);
-    border-radius: 2px;
-}
-
-.sad-about-description {
-    font-size: 1.1rem;
-    color: #424242;
-    line-height: 1.8;
-    margin-bottom: 30px;
-    font-family: 'Aldrich', sans-serif;
-}
-
-/* Read More Button - Purple Theme */
-.sad-read-more-btn {
-    display: inline-flex;
     align-items: center;
-    gap: 10px;
-    background: linear-gradient(135deg, #8a2be2, #4b0082);
-    color: white;
-    border: none;
-    padding: 14px 32px;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-family: 'Aldrich', sans-serif;
-    margin-bottom: 20px;
-    box-shadow: 0 6px 20px rgba(138, 43, 226, 0.2);
 }
 
-.sad-read-more-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 25px rgba(138, 43, 226, 0.3);
-}
-
-.sad-arrow {
-    transition: transform 0.3s ease;
-}
-
-.sad-read-more-btn:hover .sad-arrow {
-    transform: translateX(5px);
-}
-
-.sad-read-more-btn.expanded .sad-arrow {
-    transform: rotate(180deg);
-}
-
-/* Expanded Content */
-.sad-expanded-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.sad-expanded-content.expanded {
-    max-height: 2500px;
-    animation: sadFadeInExpand 0.5s ease-out;
-}
-
-@keyframes sadFadeInExpand {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-.sad-expanded-paragraphs {
-    font-family: 'Aldrich', sans-serif;
-}
-
-.sad-expanded-paragraphs p {
-    font-size: 1.05rem;
-    color: #424242;
-    line-height: 1.8;
-    margin-bottom: 20px;
-    padding-left: 20px;
-    border-left: 3px solid #8a2be2;
-    animation: sadParagraphSlide 0.5s ease-out;
-    padding: 15px 20px;
-    background: rgba(138, 43, 226, 0.03);
-    border-radius: 0 8px 8px 0;
-}
-
-@keyframes sadParagraphSlide {
-    from {
-        opacity: 0;
-        transform: translateX(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-/* IMAGE COLUMN LAYOUT - FILLS EMPTY SPACE */
-.sad-about-images-column {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 100%;
-    height: auto;
-}
-
-/* Main Image - FULL SIZE */
-.sad-about-image-main {
-    position: sticky;
-    top: 120px;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 20px 40px rgba(138, 43, 226, 0.1);
-    height: 450px;
-    transition: all 0.3s ease;
-    width: 100%;
-    flex-shrink: 0;
-    animation: sadSlideLeft 0.8s ease-out 0.3s both;
-}
-
-/* When section is expanded, main image becomes relative */
-.sad-image-scroll .sad-about-image-main {
-    position: relative;
-    top: 0 !important;
-}
-
-.sad-about-image-main img {
-    width: 100%;
-    height: 100%;
+.sad-avatar-group-new img {
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    margin-right: -10px;
+    border: 2px solid white;
+    background: white;
     object-fit: cover;
-    transition: transform 0.5s ease;
 }
 
-.sad-about-image-main:hover img {
-    transform: scale(1.05);
-}
-
-@keyframes sadSlideLeft {
-    from {
-        opacity: 0;
-        transform: translateX(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-/* Extra Images Container - FILLS EMPTY SPACE BELOW */
-.sad-extra-images-fill {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 100%;
-    opacity: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: all 0.5s ease;
-}
-
-.sad-extra-images-fill.show {
-    opacity: 1;
-    max-height: 2000px;
-}
-
-/* Individual Extra Image - SAME SIZE AS MAIN IMAGE */
-.sad-extra-image-fill {
-    width: 100%;
-    height: 450px;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 20px 40px rgba(138, 43, 226, 0.1);
-    transform: translateY(30px);
-    opacity: 0;
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    flex-shrink: 0;
-}
-
-/* Image appears one by one */
-.sad-extra-image-fill.visible {
-    transform: translateY(0);
-    opacity: 1;
-}
-
-/* Stagger the animations */
-.sad-extra-image-fill:nth-child(1).visible {
-    transition-delay: 0.2s;
-}
-
-.sad-extra-image-fill:nth-child(2).visible {
-    transition-delay: 0.4s;
-}
-
-.sad-extra-image-fill:nth-child(3).visible {
-    transition-delay: 0.6s;
-}
-
-/* Image Wrapper */
-.sad-fill-image-wrapper {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-.sad-fill-image-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.8s ease;
-}
-
-.sad-extra-image-fill:hover .sad-fill-image-wrapper img {
-    transform: scale(1.1);
-}
-
-/* Image Overlay */
-.sad-fill-image-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(to top, rgba(138, 43, 226, 0.9), transparent);
-    color: white;
-    padding: 30px;
-    transform: translateY(20px);
-    opacity: 0.9;
-    transition: all 0.3s ease;
-}
-
-.sad-extra-image-fill:hover .sad-fill-image-overlay {
-    opacity: 1;
-    background: linear-gradient(to top, rgba(75, 0, 130, 0.9), transparent);
-}
-
-.sad-fill-image-overlay h4 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    font-family: 'HEXCO', sans-serif;
-    font-weight: 600;
-}
-
-.sad-fill-image-overlay p {
-    font-size: 1rem;
-    opacity: 0.9;
-    font-family: 'Aldrich', sans-serif;
-    line-height: 1.5;
-}
-
-/* Original Image Overlay (for main image) */
-.sad-image-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-    padding: 25px;
-    color: white;
-    font-family: 'Aldrich', sans-serif;
-}
-
-.sad-image-overlay h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    font-family: 'HEXCO', sans-serif;
-}
-
-.sad-image-overlay p {
-    font-size: 0.9rem;
-    opacity: 0.9;
-}
-
-/* Internship Courses Section - Updated Colors */
-.sad-courses-section {
-    padding: 100px 0;
-    background: linear-gradient(135deg, #1a1a3e 0%, #0c0c2e 100%);
-}
-
-.sad-section-header {
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-.sad-section-title {
-    font-size: 2.8rem;
-    font-weight: 700;
-    background: linear-gradient(135deg, #9370db, #8a2be2);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 15px;
-    font-family: 'HEXCO', sans-serif;
-}
-
-.sad-section-subtitle {
-    font-size: 1.2rem;
-    color: #c5cae9;
-    max-width: 600px;
-    margin: 0 auto;
-    line-height: 1.6;
-    font-family: 'Aldrich', sans-serif;
-}
-
-/* Feedback Section Titles */
-.sad-section-title1 {
-    font-size: 2.8rem;
-    font-weight: 700;
-    color: #1a1a3e;
-    margin-bottom: 15px;
-    font-family: 'HEXCO', sans-serif;
-}
-
-.sad-section-subtitle1 {
-    font-size: 1.2rem;
-    color: #424242;
-    max-width: 600px;
-    margin: 0 auto;
-    line-height: 1.6;
-    font-family: 'Aldrich', sans-serif;
-}
-
-.sad-courses-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px;
-    margin-bottom: 60px;
-}
-
-.sad-course-card {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
-    animation: sadFadeInUp 0.5s ease-out;
-    animation-fill-mode: both;
-}
-
-.sad-course-card:nth-child(1) {
-    animation-delay: 0.3s;
-}
-
-.sad-course-card:nth-child(2) {
-    animation-delay: 0.4s;
-}
-
-.sad-course-card:nth-child(3) {
-    animation-delay: 0.5s;
-}
-
-.sad-course-card:hover {
-    transform: translateY(-10px);
-    border-color: rgba(138, 43, 226, 0.3);
-    box-shadow: 0 20px 40px rgba(138, 43, 226, 0.1);
-}
-
-.sad-course-header {
-    padding: 25px 25px 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.sad-course-logo {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-    display: inline-block;
-    animation: sadIconFloat 3s ease-in-out infinite;
-}
-
-@keyframes sadIconFloat {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
-
-.sad-course-title {
-    font-size: 1.5rem;
-    color: white;
-    margin-bottom: 10px;
-    font-family: 'HEXCO', sans-serif;
-}
-
-.sad-course-desc {
-    color: #c5cae9;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    font-family: 'Aldrich', sans-serif;
-}
-
-.sad-course-features {
-    padding: 20px 25px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.sad-features-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.sad-feature-item {
-    display: flex;
-    align-items: center;
-    color: #c5cae9;
-    font-size: 0.9rem;
-    margin-bottom: 10px;
-    font-family: 'Aldrich', sans-serif;
-}
-
-.sad-feature-item::before {
-    content: '✓';
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 20px;
-    height: 20px;
-    background: linear-gradient(135deg, #8a2be2, #9370db);
-    color: white;
+.sad-download-btn-new {
+    width: 38px;
+    height: 38px;
+    background: white;
     border-radius: 50%;
-    margin-right: 10px;
-    font-size: 10px;
-    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
 }
 
-.sad-course-details {
-    padding: 20px 25px;
+/* PERFORMANCE CARD */
+.sad-performance-card-new {
+    background: white;
+    border-radius: 20px;
+    border-top-right-radius: 0;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.10);
+    position: relative;
+    -webkit-mask-image: linear-gradient(225deg, transparent 20px, black 21px);
+    mask-image: linear-gradient(225deg, transparent 20px, black 21px);
+}
+
+.sad-perf-header-new {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.sad-perf-item-new {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.sad-perf-label-new {
+    font-size: 10px;
+    color: #999;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.sad-perf-value-new {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.sad-perf-value-bold-new {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.sad-perf-chart-new {
+    display: flex;
+    align-items: flex-end;
+    height: 100px;
+    gap: 4px;
+}
+
+.sad-chart-col-new {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.sad-bar-indigo-new {
+    background: #EEF2FF;
+    width: 100%;
+    border-radius: 2px 2px 0 0;
+}
+
+.sad-bar-gray-new {
+    background: transparent;
+    width: 100%;
+    background-image: repeating-linear-gradient(90deg, #e0e0e0, #e0e0e0 2px, transparent 2px, transparent 6px);
+}
+
+.sad-bar-violet-new {
+    background: transparent;
+    width: 100%;
+    background-image: repeating-linear-gradient(90deg, #6366F1, #6366F1 2px, transparent 2px, transparent 6px);
+}
+
+/* ============================================================
+   ABOUT SECTION (INTERACTIVE SERVICES)
+   ============================================================ */
+.sad-about-section-new {
+    width: 100%;
+    background: #111111;
+    padding: 160px 40px 80px;
+    margin-top: -80px;
+    clip-path: polygon(0% 80px, 20% 70px, 27.5% 0%, 71% 0%, 80% 70px, 100% 80px, 100% 100%, 0% 100%);
+    color: #ffffff;
+    position: relative;
+}
+
+.sad-about-top-notch-content {
+    position: absolute;
+    top: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 10;
+}
+
+.sad-about-left-tag {
+    background: #6366F1;
+    color: white;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 16px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+}
+
+.sad-about-inner-new {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.1fr 1.4fr 1fr;
+    gap: 30px;
+    align-items: stretch;
+}
+
+.sad-about-left-header {
+    margin-bottom: 30px;
+}
+
+.sad-about-left-title {
+    font-size: 38px;
+    line-height: 1.1;
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-family: 'HEXCO', sans-serif;
+}
+
+.sad-about-intro-new {
+    font-size: 14px;
+    color: #888;
+    text-align: left;
+}
+
+.sad-about-services-list-new {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sad-about-service-item-new {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 18px 24px;
+    border: 1px solid #333;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.sad-detail-item {
-    text-align: center;
+.sad-about-service-item-new:hover {
+    border-color: #555;
+    background: rgba(255, 255, 255, 0.02);
 }
 
-.sad-detail-label {
-    font-size: 0.8rem;
-    color: #c5cae9;
-    margin-bottom: 5px;
-    font-family: 'Aldrich', sans-serif;
+.sad-service-active {
+    background: #1a1a1a;
+    border-color: #444;
 }
 
-.sad-detail-value {
-    font-size: 1.2rem;
+.sad-service-item-left-about {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.sad-service-num-new {
+    font-size: 14px;
     font-weight: 700;
-    color: #9370db;
-    font-family: 'HEXCO', sans-serif;
+    color: #555;
 }
 
-/* Feedback Section - Updated Colors - FULLY RESPONSIVE */
-.sad-feedback-section {
-    padding: 100px 0;
-    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+.sad-service-active .sad-service-num-new {
+    color: #6366F1;
 }
 
-.sad-feedback-slider {
+.sad-service-name-about {
+    font-size: 16px;
+    font-weight: 600;
+    color: #888;
+}
+
+.sad-service-active .sad-service-name-about {
+    color: #fff;
+}
+
+.sad-service-short-about {
+    font-size: 12px;
+    color: #555;
+    display: block;
+}
+
+.sad-service-arrow-about {
+    color: #444;
+}
+
+.sad-service-active .sad-service-arrow-about {
+    color: #fff;
+}
+
+.sad-about-center-new {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sad-about-img-wrap-new {
+    width: 100%;
+    height: 100%;
     position: relative;
+    border-radius: 30px;
     overflow: hidden;
 }
 
-.sad-feedback-track {
-    display: flex;
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+.sad-about-img-wrap-new img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.sad-feedback-slide {
-    min-width: 100%;
-    padding: 0 20px;
-}
-
-.sad-feedback-card {
-    background: white;
-    padding: 50px 40px;
+.sad-about-badge-new {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    background: #6366F1;
+    padding: 15px 25px;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(138, 43, 226, 0.1);
-    border: 1px solid rgba(138, 43, 226, 0.2);
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
-    animation: sadCardPop 0.5s ease-out;
-    border-left: 4px solid #8a2be2;
-    animation: sadCardPulse 4s ease-in-out infinite;
+    display: flex;
+    gap: 15px;
+    align-items: center;
 }
 
-@keyframes sadCardPulse {
-    0%, 100% { border-left-color: #8a2be2; }
-    50% { border-left-color: #9370db; }
+.sad-badge-num {
+    font-size: 24px;
+    font-weight: 800;
 }
 
-@keyframes sadCardPop {
+.sad-badge-label {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.sad-about-right-new {
+    display: flex;
+    flex-direction: column;
+}
+
+.sad-about-detail-panel {
+    background: #1a1a1a;
+    border-radius: 30px;
+    padding: 40px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    animation: fadeInPanelSad 0.5s ease-out;
+}
+
+@keyframes fadeInPanelSad {
     from {
         opacity: 0;
-        transform: scale(0.9);
+        transform: translateX(20px);
     }
+
     to {
         opacity: 1;
-        transform: scale(1);
+        transform: translateX(0);
     }
 }
 
-.sad-feedback-quote {
-    position: absolute;
-    top: 25px;
-    right: 25px;
-    font-size: 2.5rem;
-    color: #8a2be2;
-    opacity: 0.2;
+.sad-detail-icon-wrap {
+    width: 60px;
+    height: 60px;
+    background: #2a2a2a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
 }
 
-.sad-feedback-text {
-    font-size: 1.2rem;
-    color: #333;
-    line-height: 1.8;
-    margin-bottom: 25px;
-    font-style: italic;
-    font-family: 'Aldrich', sans-serif;
+.sad-detail-icon {
+    font-size: 24px;
+}
+
+.sad-detail-num {
+    font-size: 13px;
+    color: #555;
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.sad-detail-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-family: 'HEXCO', sans-serif;
+}
+
+.sad-detail-desc {
+    font-size: 15px;
+    color: #999;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    flex-grow: 1;
+    text-align: left;
+}
+
+.sad-detail-divider {
+    height: 1px;
+    background: #333;
+    margin-bottom: 30px;
+}
+
+.sad-detail-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.sad-detail-stat-val {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    display: block;
+}
+
+.sad-detail-stat-label {
+    font-size: 11px;
+    color: #555;
+    text-transform: uppercase;
+}
+
+.sad-detail-cta {
+    background: #BAFF29;
+    color: #111;
+    border: none;
+    padding: 16px;
+    border-radius: 50px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* ============================================================
+   ELEVATE SECTION REDESIGN
+   ============================================================ */
+.sad-elevate-section {
+    padding: 140px 40px;
+    background: #fff;
+    font-family: 'Inter', sans-serif;
+}
+
+.sad-el-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 120px;
+    align-items: center;
+}
+
+.sad-el-left {
+    position: relative;
+    height: 650px;
+}
+
+.sad-el-img-grid {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.sad-el-img-item {
+    border-radius: 20px;
+    overflow: visible;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    transition: transform 0.3s ease;
+}
+
+.sad-el-img-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    display: block;
+}
+
+.sad-el-main {
+    width: 65%;
+    height: 100%;
+    right: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.sad-el-top-left {
+    width: 55%;
+    height: 38%;
+    left: 0;
+    top: 10%;
+    z-index: 3;
+    border: 8px solid #fff;
+}
+
+.sad-el-bottom-left {
+    width: 55%;
+    height: 38%;
+    left: 40px;
+    bottom: 5%;
+    z-index: 2;
+    border: 8px solid #fff;
+}
+
+.sad-el-float-icon {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 50px;
+    height: 50px;
+    background: #6366F1;
+    /* Indigo */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #fff;
+    box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+}
+
+.sad-el-badge-volunteer {
+    position: absolute;
+    bottom: -30px;
+    left: 80%;
+    transform: translateX(-50%);
+    background: #fff;
+    padding: 15px 25px;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    z-index: 4;
+    min-width: 200px;
     text-align: center;
-    max-width: 700px;
+}
+
+.sad-el-vol-title {
+    font-size: 13px;
+    font-weight: 800;
+    color: #6366F1;
+    margin-bottom: 8px;
+    display: block;
+    text-transform: uppercase;
+}
+
+.sad-el-vol-avatars {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sad-el-vol-avatars img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    margin-left: -10px;
+}
+
+.sad-el-vol-avatars img:first-child {
+    margin-left: 0;
+}
+
+.sad-el-vol-count {
+    width: 32px;
+    height: 32px;
+    background: #f0f0f0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 700;
+    color: #555;
+    margin-left: 2px;
+}
+
+.sad-el-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.sad-el-preheading {
+    font-family: 'Inter', sans-serif;
+    color: #6366F1;
+    font-weight: 800;
+    font-size: 18px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sad-el-preheading {
+    margin-left: 230px;
+}
+
+.sad-el-title {
+    font-size: 40px;
+    font-weight: 900;
+    color: #111111;
+    margin-bottom: 30px;
+    line-height: 1.1;
+    font-family: 'HEXCO', sans-serif;
+}
+
+.sad-el-desc {
+    font-size: 16px;
+    text-align: left;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    max-width: 580px;
+}
+
+.sad-el-stats-new {
+    display: flex;
+    gap: 50px;
+    margin-bottom: 40px;
+}
+
+.sad-el-stat-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.sad-el-stat-icon-wrap {
+    width: 45px;
+    height: 45px;
+    border: 2.5px solid #6366F1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6366F1;
+    font-size: 18px;
+}
+
+.sad-el-stat-val {
+    font-size: 24px;
+    font-weight: 900;
+    color: #111;
+    display: block;
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+.sad-el-stat-txt {
+    font-size: 12px;
+    font-weight: 600;
+    color: #777;
+    text-transform: uppercase;
+}
+
+.sad-el-sub-desc {
+    font-size: 15px;
+    color: #888;
+    line-height: 1.7;
+    margin-bottom: 40px;
+    max-width: 550px;
+    font-style: italic;
+    text-align: left;
+}
+
+.sad-el-btn-discover {
+    background: #6366F1;
+    color: #fff;
+    border: none;
+    padding: 18px 45px;
+    border-radius: 8px;
+    font-weight: 800;
+    font-size: 15px;
+    width: fit-content;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+}
+
+.sad-el-btn-discover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(99, 102, 241, 0.4);
+}
+
+@media (max-width: 1024px) {
+    .sad-el-container {
+        grid-template-columns: 1fr;
+        gap: 80px;
+        text-align: left;
+    }
+
+    .sad-el-left {
+        height: 450px;
+    }
+
+    .sad-el-right {
+        align-items: center;
+    }
+
+    .sad-el-title {
+        font-size: 42px;
+    }
+
+    .sad-el-desc,
+    .sad-el-sub-desc {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* ============================================================
+   PRODUCTIVITY SECTION REDESIGN
+   ============================================================ */
+.sad-productivity-section {
+    width: 100%;
+    background: #0a0a0a;
+    padding: 120px 40px;
+    font-family: 'Inter', sans-serif;
+    color: #ffffff;
+}
+
+.sad-prod-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 80px;
+}
+
+.sad-prod-left {
+    flex: 1;
+    max-width: 500px;
+}
+
+.sad-prod-title {
+    font-size: 40px;
+    font-weight: 500;
+    text-align: left;
+    line-height: 1.15;
+    color: #ffffff;
+    margin-bottom: 24px;
+    letter-spacing: -1px;
+    font-family: 'HEXCO', sans-serif;
+    text-transform: uppercase;
+}
+
+.sad-prod-desc {
+    font-size: 16px;
+    color: #a0a0a0;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.sad-prod-buttons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 60px;
+}
+
+.sad-btn-prod-primary {
+    background: #BAFF29;
+    color: #000000;
+    border: none;
+    padding: 16px 32px;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sad-btn-prod-primary:hover {
+    background: #a2e81c;
+    transform: translateY(-2px);
+}
+
+.sad-btn-prod-secondary {
+    background: #1a1a1a;
+    color: #ffffff;
+    border: 1px solid #333333;
+    padding: 16px 32px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sad-btn-prod-secondary:hover {
+    background: #333333;
+}
+
+.sad-prod-avatars-box {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.sad-prod-avatars {
+    display: flex;
+}
+
+.sad-prod-avatars img {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 3px solid #0a0a0a;
+    margin-left: -12px;
+    object-fit: cover;
+}
+
+.sad-prod-avatars img:first-child {
+    margin-left: 0;
+}
+
+.sad-prod-avatar-text {
+    font-size: 13px;
+    color: #a0a0a0;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.sad-prod-right {
+    flex: 1;
+    position: relative;
+    padding-left: 20px;
+}
+
+.sad-prod-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: relative;
+}
+
+.sad-prod-timeline::before {
+    content: '';
+    position: absolute;
+    left: 32px;
+    top: 30px;
+    bottom: 30px;
+    width: 2px;
+    background: rgba(186, 255, 41, 0.4);
+    z-index: 1;
+}
+
+.sad-timeline-item {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    padding-bottom: 20px;
+}
+
+.sad-timeline-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: #111111;
+    border: 1px solid #BAFF29;
+    box-shadow: 0 0 15px rgba(186, 255, 41, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 16px;
+    color: #BAFF29;
+}
+
+.sad-timeline-content {
+    text-align: left;
+}
+
+.sad-timeline-content h3 {
+    font-size: 18px;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-family: 'Space Orb', 'Orbitron', 'Syncopate', sans-serif;
+    letter-spacing: 1px;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.sad-timeline-content p {
+    font-size: 14px;
+    color: #a0a0a0;
+    line-height: 1.6;
+    max-width: 350px;
+}
+
+@media (max-width: 991px) {
+    .sad-prod-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 60px;
+    }
+
+    .sad-prod-buttons,
+    .sad-prod-avatars {
+        justify-content: center;
+    }
+
+    .sad-timeline-item {
+        text-align: left;
+    }
+
+    .sad-prod-timeline::before {
+        left: 32px;
+    }
+}
+
+
+/* ============================================================
+   MISSION SECTION - REDESIGNED PIXEL-PERFECT FAN CARDS
+   ============================================================ */
+.sad-mission-section {
+    padding: 120px 40px;
+    background: #ffffff;
+    /* White background from image */
+    overflow: hidden;
+}
+
+.sad-mission-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.sad-mission-title-new {
+    font-size: 48px;
+    font-weight: 900;
+    color: #1a1a1a;
+    line-height: 1.1;
+    margin-bottom: 151px;
+    font-family: 'HEXCO', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.sad-mission-highlight-box {
+    background: #BAFF29;
+    color: #000;
+    padding: 5px 20px;
+    border-radius: 12px;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.sad-mission-cards-wrapper {
+    position: relative;
+    height: 550px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.sad-mission-cards-fan {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+}
+
+.sad-mission-card-new {
+    position: absolute;
+    width: 270px;
+    height: 400px;
+    bottom: 50px;
+    background: var(--card-color);
+    border-radius: 30px;
+    padding: 30px;
+    color: #fff;
+    text-align: left;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    transform-origin: center bottom;
+    transform: translateX(-50%) rotate(var(--card-rot)) translateY(var(--card-transY));
+    left: var(--card-left);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sad-mission-card-new:hover {
+    transform: translateX(-50%) rotate(0deg) translateY(-100px) scale(1.1);
+    z-index: 100;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.3);
+}
+
+.sad-mission-card-inner {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.sad-mission-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+.sad-mission-card-title {
+    font-family: 'HEXCO', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 6px;
+}
+
+.sad-mission-card-subtitle {
+    font-size: 14px;
+    opacity: 0.8;
+    display: block;
+}
+
+.sad-mission-card-rating {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.sad-mission-card-desc {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+.sad-mission-card-icon-bottom {
+    margin-top: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.sad-card-icon {
+    width: 64px;
+    height: 64px;
+    opacity: 0.5;
+    color: #fff;
+    stroke: #fff;
+    transition: all 0.3s ease;
+}
+
+.sad-mission-card-new:hover .sad-card-icon {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+@media (max-width: 1024px) {
+    .sad-mission-cards-wrapper {
+        height: auto;
+        padding-top: 50px;
+    }
+
+    .sad-mission-cards-fan {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        height: auto;
+        position: static;
+    }
+
+    .sad-mission-card-new {
+        position: static;
+        transform: none !important;
+        width: 100%;
+        margin-bottom: 20px;
+        left: auto;
+    }
+
+    .sad-mission-card-new:hover {
+        transform: translateY(-10px) !important;
+    }
+
+    .sad-mission-title-new {
+        font-size: 32px;
+        margin-bottom: 60px;
+    }
+}
+
+/* ============================================================
+   REVIEWS SECTION REDESIGN
+   ============================================================ */
+.sad-reviews-section {
+    padding: 120px 40px;
+    background: #f4f5f5;
+    /* Off-white background from image */
+    text-align: left;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+    /* Important for marquee */
+}
+
+.sad-testimonial-badge {
+    color: #ff4d4d;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-style: italic;
+    margin-bottom: 40px;
+    position: relative;
+    left: 45%;
+    letter-spacing: 1px;
+}
+
+.sad-reviews-title {
+    font-family: 'HEXCO', sans-serif;
+    font-size: 42px;
+    font-weight: 900;
+    color: #000000;
+    text-transform: uppercase;
+    margin-bottom: 70px;
+    line-height: 1.1;
+    max-width: 800px;
+    text-align: center;
     margin-left: auto;
     margin-right: auto;
 }
 
-.sad-feedback-author {
+.sad-reviews-slider-box {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* Start from left for marquee */
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    position: relative;
+    padding: 20px 0;
+}
+
+.sad-reviews-slider {
+    width: 100%;
+    overflow: hidden;
+}
+
+.sad-review-track {
+    display: flex;
+    gap: 30px;
+    width: max-content;
+    animation: sad-marquee 40s linear infinite;
+}
+
+.sad-reviews-slider:hover .sad-review-track {
+    animation-play-state: paused;
+}
+
+@keyframes sad-marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-50% - 15px));
+    }
+}
+
+.sad-review-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 50px 35px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    /* Soft shadow from image */
+    text-align: center;
+    transition: all 0.3s ease;
+    width: 380px;
+    /* Fixed width for better marquee flow */
+    flex-shrink: 0;
+    border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+.sad-review-avatar-container {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin: 0 auto 25px;
+    overflow: hidden;
+    background: #eef5ff;
+}
+
+.sad-review-avatar-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sad-client-name {
+    font-size: 19px;
+    font-weight: 800;
+    margin-bottom: 6px;
+    color: #111111;
+    text-transform: uppercase;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+.sad-client-role {
+    font-size: 13px;
+    font-weight: 700;
+    color: #ff4d4d;
+    /* Red/Orange from image */
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    display: block;
+    letter-spacing: 1px;
+}
+
+.sad-review-text {
+    font-size: 15px;
+    color: #888888;
+    /* Light gray from image */
+    line-height: 1.6;
+    margin-bottom: 30px;
+    font-weight: 500;
+    min-height: 80px;
+}
+
+.sad-review-stars {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    color: #ffb800;
+    /* Yellow from image */
+    font-size: 18px;
+}
+
+/* ============================================================
+   INTERNSHIP COURSES
+   ============================================================ */
+.sad-intern-courses {
+    padding: 120px 40px;
+    background: #fff;
+}
+
+.sad-courses-grid-wide {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+}
+
+.sad-course-box {
+    background: #f8f9fa;
+    border-radius: 30px;
+    padding: 40px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    text-align: center;
+    transition: transform 0.3s;
+    border: 1px solid #eee;
 }
 
-.sad-author-info {
-    text-align: center;
+.sad-course-box:hover {
+    transform: translateY(-10px);
+    background: #fff;
+    border-color: #6366F1;
+    box-shadow: 0 20px 40px rgba(99, 102, 241, 0.1);
 }
 
-.sad-author-info h4 {
-    font-size: 1.2rem;
-    color: #333;
-    margin-bottom: 5px;
+.sad-course-box-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 20px;
     font-family: 'HEXCO', sans-serif;
 }
 
-.sad-author-info p {
-    font-size: 0.9rem;
+.sad-course-box-desc {
+    font-size: 14px;
     color: #666;
-    font-family: 'Aldrich', sans-serif;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    flex-grow: 1;
 }
 
-.sad-slider-nav {
+.sad-course-item-list {
     display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 35px;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
 }
 
-.sad-slider-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: #c5cae9;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
+.sad-course-li {
+    font-size: 11px;
+    font-weight: 700;
+    color: #6366F1;
+    background: rgba(99, 102, 241, 0.08);
+    padding: 6px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
 }
 
-.sad-slider-dot.active {
-    background: linear-gradient(135deg, #8a2be2, #9370db);
-    transform: scale(1.3);
-    animation: sadDotPulse 2s ease-in-out infinite;
-}
-
-@keyframes sadDotPulse {
-    0%, 100% { transform: scale(1.3); }
-    50% { transform: scale(1.5); }
-}
-
-.sad-slider-arrows {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
+.sad-course-box-footer {
     display: flex;
     justify-content: space-between;
-    transform: translateY(-50%);
-    padding: 0 10px;
-    z-index: 2;
-}
-
-.sad-slider-arrow {
-    background: white;
-    border: 1px solid rgba(138, 43, 226, 0.2);
-    width: 45px;
-    height: 45px;
-    border-radius: 0;
-    display: flex;
     align-items: center;
-    justify-content: center;
+    padding-top: 25px;
+    border-top: 1px solid #eee;
+}
+
+.sad-meta-label {
+    font-size: 10px;
+    color: #999;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.sad-meta-val {
+    font-size: 14px;
+    font-weight: 700;
+    color: #111;
+}
+
+.sad-course-btn {
+    background: #1a1a1a;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 40px;
+    font-weight: 700;
+    font-size: 13px;
     cursor: pointer;
-    box-shadow: 0 5px 15px rgba(138, 43, 226, 0.1);
-    transition: all 0.3s ease;
-    color: #8a2be2;
-    font-weight: bold;
-    font-family: 'HEXCO', sans-serif;
-    font-size: 1.2rem;
 }
 
-.sad-slider-arrow:hover {
-    background: linear-gradient(135deg, #8a2be2, #9370db);
-    color: white;
-    transform: scale(1.1);
-    animation: sadArrowSpin 0.5s ease;
-}
-
-@keyframes sadArrowSpin {
-    from { transform: scale(1.1) rotate(0deg); }
-    to { transform: scale(1.1) rotate(360deg); }
-}
-
-/* Responsive Design */
+/* Responsive adjustments */
 @media (max-width: 1024px) {
-    .sad-hero-content {
-        width: calc(100% - 60px);
-        padding: 50px 40px;
-        max-width: 850px;
+    .sad-hero-container-new {
+        flex-direction: column;
+        padding: 40px;
+        clip-path: none;
+        border-radius: 30px;
     }
-    
-    .sad-hero-title {
-        font-size: 2.8rem;
+
+    .sad-hero-left-new {
+        align-items: center;
+        text-align: center;
     }
-    
-    .sad-about-content {
+
+    .sad-hero-subtitle-new,
+    .sad-hero-title-new {
+        margin-left: 0;
+    }
+
+    .sad-hero-desc-new {
+        max-width: 100%;
+    }
+
+    .sad-hero-title-desc-new {
+        display: none;
+    }
+
+    .sad-about-inner-new {
+        grid-template-columns: 1fr;
+    }
+
+    .sad-el-container,
+    .sad-prod-container,
+    .sad-services-grid,
+    .sad-courses-grid-wide {
         grid-template-columns: 1fr;
         gap: 40px;
     }
-    
-    .sad-about-text {
-        padding-right: 0;
-    }
-    
-    /* On mobile, image is always relative */
-    .sad-about-image-main {
-        position: relative !important;
-        top: 0 !important;
+
+    .sad-el-left {
         height: 400px;
-    }
-    
-    .sad-image-scroll .sad-about-image-main {
-        position: relative !important;
-    }
-    
-    .sad-section-title,
-    .sad-section-title1 {
-        font-size: 2.4rem;
-    }
-    
-    .sad-courses-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .sad-feedback-card {
-        padding: 40px 30px;
-    }
-    
-    .sad-feedback-text {
-        font-size: 1.1rem;
-    }
-    
-    /* Adjust image sizes on tablet */
-    .sad-extra-image-fill {
-        height: 400px;
-    }
-    
-    .sad-fill-image-overlay {
-        padding: 25px;
-    }
-    
-    .sad-fill-image-overlay h4 {
-        font-size: 1.3rem;
-    }
-    
-    .sad-fill-image-overlay p {
-        font-size: 0.9rem;
     }
 }
 
-@media (max-width: 768px) {
-    .sad-hero-section {
-        min-height: 100vh;
-        padding: 60px 0;
-    }
-    
-    .sad-hero-content {
-        width: calc(100% - 40px);
-        padding: 40px 30px;
-        margin: 0 auto;
-    }
-    
-    .sad-hero-title {
-        font-size: 2.2rem;
-    }
-    
-    .sad-hero-subtitle {
-        font-size: 1.2rem;
-    }
-    
-    .sad-hero-description {
-        font-size: 1rem;
-    }
-    
-    .sad-about-title {
-        font-size: 2rem;
-    }
-    
-    .sad-section-title,
-    .sad-section-title1 {
-        font-size: 2.2rem;
-    }
-    
-    .sad-courses-grid {
+/* ============================================================
+   AGENCY SECTION REDESIGN
+   ============================================================ */
+.sad-agency-section {
+    background: #000;
+    padding: 100px 40px;
+    color: #fff;
+    text-align: center;
+}
+
+.sad-agency-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.sad-agency-main-title {
+    font-size: 52px;
+    font-weight: 800;
+    margin-bottom: 80px;
+    line-height: 1.1;
+    font-family: 'HEXCO', sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.sad-agency-highlight {
+    color: #fff;
+    border-bottom: 5px solid #BAFF29;
+}
+
+.sad-agency-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr 0.8fr;
+    gap: 40px;
+    text-align: left;
+    align-items: flex-start;
+}
+
+.sad-agency-left {
+    position: relative;
+}
+
+.sad-agency-who,
+.sad-agency-why {
+    display: flex;
+    flex-direction: column;
+}
+
+.sad-agency-image-wrap {
+    position: relative;
+    border-radius: 40px;
+    overflow: hidden;
+}
+
+.sad-agency-image-wrap img {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 1/1.1;
+    object-fit: cover;
+}
+
+.sad-agency-image-wrap.secondary {
+    border-radius: 40px;
+    margin-top: 50px;
+    overflow: hidden;
+}
+
+.sad-agency-image-wrap.secondary img {
+    aspect-ratio: 4/3;
+    border-radius: 40px;
+}
+
+.sad-agency-experience-badge {
+    position: absolute;
+    bottom: 40px;
+    left: -20px;
+    background: #BAFF29;
+    color: #000;
+    padding: 25px 35px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 10px 40px rgba(186, 255, 41, 0.4);
+}
+
+.sad-exp-num {
+    font-size: 36px;
+    font-weight: 900;
+}
+
+.sad-exp-text {
+    font-size: 11px;
+    font-weight: 800;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.sad-agency-right {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.sad-agency-small-title {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.sad-agency-desc {
+    color: #888;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    max-width: 500px;
+}
+
+.sad-agency-btn {
+    background: #BAFF29;
+    color: #000;
+    border: none;
+    padding: 18px 40px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.sad-agency-btn:hover {
+    transform: translateY(-5px);
+}
+
+.sad-agency-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sad-agency-list li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.sad-check-icon {
+    width: 28px;
+    height: 28px;
+    background: transparent;
+    border: 2px solid #BAFF29;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #BAFF29;
+    font-size: 14px;
+    font-weight: 900;
+}
+
+@media (max-width: 1024px) {
+    .sad-agency-grid {
         grid-template-columns: 1fr;
+        gap: 60px;
     }
-    
-    .sad-feedback-card {
-        padding: 35px;
-    }
-    
-    .sad-slider-arrows {
-        position: relative;
-        transform: none;
-        margin-top: 25px;
-        justify-content: center;
-        gap: 20px;
-    }
-    
-    .sad-slider-arrow {
-        border-radius: 0;
-    }
-    
-    /* Adjust image sizes on mobile */
-    .sad-about-image-main {
-        height: 350px;
-    }
-    
-    .sad-extra-image-fill {
-        height: 350px;
-    }
-    
-    .sad-fill-image-overlay {
-        padding: 20px;
-    }
-    
-    .sad-fill-image-overlay h4 {
-        font-size: 1.2rem;
-    }
-    
-    .sad-fill-image-overlay p {
-        font-size: 0.85rem;
-    }
-}
 
-@media (max-width: 480px) {
-    .sad-hero-content {
-        width: calc(100% - 30px);
-        padding: 35px 25px;
+    .sad-agency-experience-badge {
+        left: 20px;
     }
-    
-    .sad-hero-title {
-        font-size: 1.9rem;
-    }
-    
-    .sad-hero-subtitle {
-        font-size: 1.1rem;
-    }
-    
-    .sad-hero-description {
-        font-size: 0.95rem;
-    }
-    
-    .sad-feedback-card {
-        padding: 25px;
-    }
-    
-    .sad-feedback-text {
-        font-size: 1.05rem;
-    }
-    
-    .sad-tech-stack {
-        gap: 8px;
-    }
-    
-    .sad-tech-item {
-        padding: 6px 12px;
-        font-size: 0.85rem;
-    }
-    
-    /* Adjust image sizes on small screens */
-    .sad-about-image-main {
-        height: 300px;
-    }
-    
-    .sad-extra-image-fill {
-        height: 300px;
-    }
-    
-    .sad-fill-image-overlay {
-        padding: 15px;
-    }
-    
-    .sad-fill-image-overlay h4 {
-        font-size: 1.1rem;
-    }
-    
-    .sad-fill-image-overlay p {
-        font-size: 0.8rem;
-    }
-    
-    .sad-image-overlay {
-        padding: 20px;
-    }
-    
-    .sad-image-overlay h3 {
-        font-size: 1.3rem;
-    }
-    
-    .sad-image-overlay p {
-        font-size: 0.8rem;
-    }
-}
 
-/* Font imports for Aldrich and HEXCO fonts */
-@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
-
-@font-face {
-    font-family: 'HEXCO';
-    src: url('https://fonts.cdnfonts.com/s/24720/HEXCO Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-/* Scrollbar styling */
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-    background: linear-gradient(135deg, #8a2be2, #9370db);
-    border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(135deg, #7a1bd2, #8360cb);
+    .sad-agency-main-title {
+        font-size: 36px;
+        margin-bottom: 50px;
+    }
 }

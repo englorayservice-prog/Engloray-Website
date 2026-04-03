@@ -1048,8 +1048,7 @@
 .course-stats-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 15px;
-  margin-bottom: 10px;
+  gap: 0px;
   padding-top: 10px;
   border-top: 1px solid #f1f1f1;
 }
@@ -1060,7 +1059,7 @@
   border-radius: 12px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 0px;
 }
 
 .stat-label {
@@ -1074,6 +1073,8 @@
   font-size: 13px;
   font-weight: 800;
   color: #1e293b;
+  letter-spacing: 1px;
+  margin-top: -3px;
 }
 
 .course-card-action {

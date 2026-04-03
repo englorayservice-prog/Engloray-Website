@@ -16,8 +16,8 @@ const Tagline = () => {
             Your gateway to exclusive business scaling, tech solutions, and elite career growth.
           </p>
           <div className="tagline-buttons">
-            <button className="tagline-btn btn-primary" onClick={() => navigate('/contact')}>GET STARTED</button>
-            <button className="tagline-btn btn-secondary" onClick={() => navigate('/academy')}>ACADEMY</button>
+            <button className="tagline-btn btn-primary" onClick={() => navigate('#contactFooter')}>GET STARTED</button>
+            <button className="tagline-btn btn-secondary" onClick={() => navigate('/tech-learning')}>ACADEMY</button>
           </div>
           <div className="scroll-indicator-container">
             <div className="mouse-scroll-indicator">

@@ -1,5 +1,11 @@
 /* Project Based Learning - SPBL Prefix */
 @import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.spbl-experts-section,
+.spbl-experts-section * {
+  font-family: 'Poppins', sans-serif;
+}
 
 /* HEXCO Font */
 @font-face {
@@ -11,7 +17,8 @@
 }
 
 /* Base Styles */
-html, body {
+html,
+body {
   overflow-x: hidden;
   overflow-y: auto;
   margin: 0;
@@ -73,8 +80,13 @@ html, body {
 }
 
 @keyframes spbl-toast-fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .spbl-toast {
@@ -88,6 +100,7 @@ html, body {
     transform: scale(0.9);
     opacity: 0;
   }
+
   to {
     transform: scale(1);
     opacity: 1;
@@ -109,9 +122,12 @@ html, body {
 }
 
 @keyframes spbl-toast-pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     box-shadow: 0 20px 40px rgba(212, 160, 23, 0.3);
   }
+
   50% {
     box-shadow: 0 20px 40px rgba(212, 160, 23, 0.5);
   }
@@ -177,308 +193,317 @@ html, body {
   transform: scale(1.1);
 }
 
-/* Hero Section - UPDATED: Only background has animation */
-.spbl-hero {
+/* New Hero Section Matching UI Mockup */
+.pbl-hero-wrapper {
+  background: #FCFCFA;
+  /* Warm off-white from mockup */
   min-height: 100vh;
-  height: auto;
+  padding: 100px 0 60px;
   position: relative;
-  background: #0F172A;
+  font-family: 'Inter', 'Poppins', sans-serif;
   overflow: hidden;
-  padding: 80px 0;
+}
+
+.pbl-hero-container {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: relative;
+}
+
+.pbl-hero-layout {
   display: flex;
   align-items: center;
-}
-
-/* Background image with zoom effect only */
-.spbl-hero-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: 
-    linear-gradient(rgba(212, 160, 23, 0.1), rgba(15, 23, 42, 0.95)),
-    url('https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')
-    center/cover no-repeat;
-  animation: spbl-bg-zoom 20s ease-in-out infinite alternate;
-  z-index: 1;
-  will-change: transform;
-  transform-origin: center;
-}
-
-@keyframes spbl-bg-zoom {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1.1);
-  }
-}
-
-/* Content container - STATIC */
-.spbl-hero-content {
+  justify-content: space-between;
   position: relative;
   z-index: 2;
-  max-width: 1280px;
-  width: 100%;
-  padding: 65px 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
-  margin: 0 auto;
-  box-sizing: border-box;
+  margin-bottom: 30px;
 }
 
-/* Hero text content - static */
-.spbl-hero-text {
-  opacity: 1;
-  transform: translateX(0);
+.pbl-hero-left {
+  flex: 0 0 54%;
+  padding-right: 20px;
 }
 
-.spbl-hero-title {
-  margin-bottom: 20px;
-}
-
-.spbl-hero-main {
-  display: block;
-  font-family: 'HEXCO', sans-serif;
-  font-size: 3.2rem;
-  font-weight: 100;
-  color: #FFD700;
-  margin-bottom: 12px;
-  letter-spacing: 2px;
-  line-height: 1.2;
-}
-
-.spbl-hero-sub {
-  display: block;
-  font-family: 'Aldrich', monospace;
-  font-size: 1.4rem;
-  font-weight: 100;
-  color: #E6BE8A;
+.pbl-hero-tag {
+  display: inline-block;
+  background-color: #FBBF24;
+  /* Warm yellow */
+  color: #111;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
   letter-spacing: 1px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 24px;
 }
 
-.spbl-hero-description {
-  font-family: 'Aldrich', monospace;
-  font-weight: 100;
+.pbl-hero-title {
+  font-size: clamp(2.5rem, 4.5vw, 4.2rem);
+  font-weight: 600;
+  color: #111;
+  line-height: 1.05;
+  margin: 0 0 24px;
+  letter-spacing: -1.5px;
+}
+
+.pbl-hero-highlight {
+  color: #94A3B8;
+  /* Muted slate for "faster" equivalent */
+  font-weight: 500;
+}
+
+.pbl-hero-desc {
   font-size: 1.1rem;
+  color: #64748B;
   line-height: 1.6;
-  color: #CBD5E1;
-  margin-bottom: 28px;
-  max-width: 500px;
+  max-width: 460px;
+  margin-bottom: 40px;
 }
 
-.spbl-hero-stats {
-  display: flex;
-  gap: 24px;
-  margin-bottom: 32px;
-  flex-wrap: wrap;
-}
-
-.spbl-hero-stat {
+.pbl-hero-buttons {
   display: flex;
   align-items: center;
-  gap: 12px;
-  min-width: 200px;
+  gap: 30px;
 }
 
-.spbl-stat-icon {
-  font-size: 2rem;
-  background: rgba(212, 160, 23, 0.1);
-  width: 56px;
-  height: 56px;
-  border-radius: 16px;
+.pbl-btn-primary {
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 40px;
+  padding: 6px 6px 6px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  font-family: inherit;
+}
+
+.pbl-btn-primary:hover {
+  opacity: 0.8;
+}
+
+.pbl-btn-icon-circle {
+  background: transparent;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid #BBF7D0;
+  /* subtle green border on arrow circle */
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
+  color: #BBF7D0;
 }
 
-.spbl-stat-number {
-  font-family: 'HEXCO', sans-serif;
+.pbl-btn-text {
+  background: transparent;
+  border: none;
+  color: #000;
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.pbl-hero-right {
+  flex: 0 0 46%;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.pbl-hero-image {
+  width: 100%;
+  max-width: 420px;
+  object-fit: contain;
+  z-index: 2;
+}
+
+/* Glass Floating Card */
+.pbl-float-card {
+  position: absolute;
+  left: -40px;
+  bottom: 80px;
+  background: rgba(200, 215, 225, 0.4);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 12px;
+  padding: 16px;
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  z-index: 3;
+}
+
+.pbl-float-card-badge {
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  /* Aligned to the left corner of icon */
+  background: #000;
+  color: #fff;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: bold;
+  z-index: 10;
+}
+
+.pbl-float-icon-box {
+  width: 46px;
+  height: 46px;
+  background: #FBBF24;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #000;
+  align-self: flex-end;
+  margin-top: -30px;
+  margin-right: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.pbl-float-subtitle {
+  font-size: 0.75rem;
+  color: #334155;
+  margin: 0 0 4px;
+  font-weight: 500;
+}
+
+.pbl-float-price {
   font-size: 1.8rem;
-  font-weight: 100;
-  color: #FFD700;
-  margin-bottom: 4px;
+  font-weight: 700;
+  color: #000;
+  margin: 0 0 8px;
   line-height: 1;
 }
 
-.spbl-stat-label {
-  font-family: 'Aldrich', monospace;
-  font-weight: 100;
-  font-size: 0.9rem;
-  color: #CBD5E1;
-  line-height: 1.3;
+.pbl-float-time {
+  font-size: 0.65rem;
+  color: #64748B;
+  margin: 0 0 4px;
 }
 
-.spbl-company-stat-label {
-  font-family: 'HEXCO', sans-serif;
-  font-size: 1.1rem;
-  font-weight: 100;
-  color: #e2e3e7;
-  margin-bottom: 8px;
-  letter-spacing: 1px;
+.pbl-float-mini {
+  font-size: 0.65rem;
+  color: #64748B;
+  margin: 0;
 }
 
-.spbl-hero-actions {
-  display: flex;
-  gap: 16px;
-  margin-top: 40px;
-  flex-wrap: wrap;
-}
-
-.spbl-hero-cta-primary {
-  background: linear-gradient(135deg, #D4A017 0%, #FFD700 100%);
-  color: #1E293B;
-  border: none;
-  border-radius: 12px;
-  padding: 18px 32px;
-  font-family: 'HEXCO', sans-serif;
-  font-size: 1.1rem;
-  font-weight: 100;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  transition: all 0.3s ease;
-  letter-spacing: 1px;
-  min-width: 220px;
-}
-
-.spbl-hero-cta-primary:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(212, 160, 23, 0.4);
-  background: linear-gradient(135deg, #B8860B 0%, #D4A017 100%);
-}
-
-.spbl-cta-text {
-  letter-spacing: 1px;
-}
-
-.spbl-cta-icon {
-  font-size: 1.2rem;
-  transition: transform 0.3s ease;
-}
-
-.spbl-hero-cta-primary:hover .spbl-cta-icon {
-  transform: scale(1.2);
-}
-
-/* Hero Visual - static */
-.spbl-hero-visual {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.spbl-visual-container {
-  position: relative;
-  width: 400px;
-  height: 400px;
-  margin: 0 auto;
-}
-
-.spbl-visual-project,
-.spbl-visual-learner {
+.pbl-hero-divider {
   position: absolute;
-  background: rgba(30, 41, 59, 0.8);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  border: 2px solid rgba(212, 160, 23, 0.3);
-  padding: 20px;
-  text-align: center;
-  transition: all 0.3s ease;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-.spbl-visual-project:hover,
-.spbl-visual-learner:hover {
-  transform: scale(1.05);
-  border-color: #FFD700;
-  box-shadow: 0 15px 40px rgba(212, 160, 23, 0.3);
-}
-
-.spbl-visual-1 {
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.spbl-visual-2 {
-  top: 50%;
+  top: 45%;
   left: 0;
-  transform: translateY(-50%);
+  width: 100%;
+  z-index: 1;
 }
 
-.spbl-visual-3 {
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
+.pbl-divider-svg {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
-.spbl-visual-learner {
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  background: linear-gradient(135deg, #D4A017 0%, #FFD700 100%);
+.pbl-stats-wrapper {
+  max-width: 1150px;
+  margin: 20px auto 0;
+  padding: 0 40px;
+  position: relative;
+  z-index: 3;
 }
 
-.spbl-visual-icon {
-  font-size: 3rem;
-  margin-bottom: 12px;
+.pbl-stats-pill {
+  background: linear-gradient(to right, #E2E8F0 0%, #FEF9C3 50%, #D1D5DB 100%);
+  border-radius: 80px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #FFD700;
+  justify-content: space-around;
+  padding: 30px 40px;
 }
 
-.spbl-visual-learner .spbl-visual-icon {
-  color: #1E293B;
+.pbl-stat-item {
+  text-align: center;
 }
 
-.spbl-visual-badge {
-  font-family: 'Aldrich', monospace;
-  font-weight: 100;
-  font-size: 0.9rem;
-  color: #CBD5E1;
-  background: rgba(30, 41, 59, 0.5);
-  padding: 6px 12px;
-  border-radius: 20px;
+.pbl-stat-val {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #000;
+  margin: 0 0 6px;
+  line-height: 1;
 }
 
-.spbl-visual-learner .spbl-visual-badge {
-  background: rgba(30, 41, 59, 0.2);
-  color: #1E293B;
+.pbl-stat-lbl {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #64748B;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.spbl-visual-connection {
-  position: absolute;
-  background: #FFD700;
-  border-radius: 2px;
-  opacity: 0.3;
-}
+@media (max-width: 900px) {
+  .pbl-hero-layout {
+    flex-direction: column;
+    text-align: center;
+  }
 
-.spbl-visual-connection:nth-child(4) {
-  top: 100px;
-  left: 50%;
-  width: 2px;
-  height: 100px;
-  transform: translateX(-50%);
-}
+  .pbl-hero-left {
+    padding-right: 0;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-.spbl-visual-connection:nth-child(5) {
-  top: 200px;
-  left: 50%;
-  width: 2px;
-  height: 100px;
-  transform: translateX(-50%);
+  .pbl-hero-desc {
+    margin: 0 auto 30px;
+  }
+
+  .pbl-hero-buttons {
+    justify-content: center;
+  }
+
+  .pbl-stats-pill {
+    flex-wrap: wrap;
+    gap: 30px;
+    border-radius: 30px;
+    padding: 30px;
+    justify-content: center;
+  }
+
+  .pbl-stat-item {
+    width: 40%;
+  }
 }
 
 /* Section Styles */
 .spbl-section {
   padding: 80px 0;
+}
+
+.spbl-section-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+.spbl-section-subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
 }
 
 .spbl-section-header {
@@ -487,17 +512,17 @@ html, body {
 }
 
 .spbl-section-title {
-  font-family: 'HEXCO', sans-serif;
+
   font-size: 2.2rem;
-  font-weight: 100;
+
   margin-bottom: 16px;
   letter-spacing: 2px;
   line-height: 1.2;
 }
 
 .spbl-section-subtitle {
-  font-family: 'Aldrich', monospace;
-  font-weight: 100;
+
+
   font-size: 1.1rem;
   max-width: 600px;
   margin: 0 auto;
@@ -539,8 +564,15 @@ html, body {
 }
 
 @keyframes spbl-float-card {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .spbl-stat-card:hover {
@@ -559,7 +591,8 @@ html, body {
   align-items: center;
   justify-content: center;
 }
-.sbpl-stat-title{
+
+.sbpl-stat-title {
   color: white;
 }
 
@@ -579,7 +612,7 @@ html, body {
   line-height: 1.4;
 }
 
-/* Experts Section - Gold BG */
+/* Experts Section - Dark Theme */
 .spbl-experts-section {
   background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
 }
@@ -609,6 +642,7 @@ html, body {
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-50%);
   }
@@ -772,17 +806,17 @@ html, body {
   color: #CBD5E1;
 }
 
-/* Categories Section - Dark BG */
+/* Categories Section - Light Theme */
 .spbl-categories-section {
-  background: #0F172A;
+  background: #F8FAFC;
 }
 
 .spbl-categories-section .spbl-section-title {
-  color: #FFD700;
+  color: #1E293B;
 }
 
 .spbl-categories-section .spbl-section-subtitle {
-  color: #E6BE8A;
+  color: #475569;
 }
 
 .spbl-categories-grid {
@@ -792,11 +826,11 @@ html, body {
 }
 
 .spbl-category-card {
-  background: rgba(30, 41, 59, 0.8);
-  backdrop-filter: blur(10px);
+  background: #FFFFFF;
   border-radius: 24px;
   padding: 28px;
-  border: 1px solid rgba(212, 160, 23, 0.2);
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
@@ -804,8 +838,8 @@ html, body {
 
 .spbl-category-card:hover {
   transform: translateY(-8px);
-  border-color: #FFD700;
-  box-shadow: 0 20px 50px rgba(212, 160, 23, 0.1);
+  border-color: #D4A017;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
 }
 
 .spbl-category-header {
@@ -825,8 +859,8 @@ html, body {
 .spbl-category-level {
   font-family: 'Aldrich', monospace;
   font-weight: 100;
-  background: rgba(212, 160, 23, 0.1);
-  color: #E6BE8A;
+  background: rgba(212, 160, 23, 0.15);
+  color: #B45309;
   padding: 6px 12px;
   border-radius: 12px;
   font-size: 0.9rem;
@@ -841,7 +875,7 @@ html, body {
   font-family: 'HEXCO', sans-serif;
   font-size: 1.4rem;
   font-weight: 100;
-  color: #F8FAFC;
+  color: #1E293B;
   margin-bottom: 12px;
   letter-spacing: 1px;
 }
@@ -850,7 +884,7 @@ html, body {
   font-family: 'Aldrich', monospace;
   font-weight: 100;
   font-size: 0.95rem;
-  color: #CBD5E1;
+  color: #475569;
   line-height: 1.5;
   margin-bottom: 20px;
 }
@@ -861,8 +895,8 @@ html, body {
   gap: 8px;
   margin-bottom: 20px;
   padding: 12px 0;
-  border-top: 1px solid rgba(212, 160, 23, 0.2);
-  border-bottom: 1px solid rgba(212, 160, 23, 0.2);
+  border-top: 1px solid #E2E8F0;
+  border-bottom: 1px solid #E2E8F0;
 }
 
 .spbl-duration-icon {
@@ -875,7 +909,7 @@ html, body {
   font-family: 'Aldrich', monospace;
   font-weight: 100;
   font-size: 0.95rem;
-  color: #E6BE8A;
+  color: #1E293B;
 }
 
 .spbl-category-technologies {
@@ -886,7 +920,7 @@ html, body {
   font-family: 'Aldrich', monospace;
   font-weight: 100;
   font-size: 1rem;
-  color: #94A3B8;
+  color: #64748B;
   margin-bottom: 12px;
   letter-spacing: 1px;
 }
@@ -914,7 +948,7 @@ html, body {
   font-family: 'Aldrich', monospace;
   font-weight: 100;
   font-size: 1rem;
-  color: #94A3B8;
+  color: #64748B;
   margin-bottom: 12px;
   letter-spacing: 1px;
 }
@@ -943,7 +977,7 @@ html, body {
   font-family: 'Aldrich', monospace;
   font-weight: 100;
   font-size: 0.9rem;
-  color: #CBD5E1;
+  color: #334155;
   line-height: 1.4;
 }
 
@@ -969,106 +1003,268 @@ html, body {
   font-family: 'Aldrich', monospace;
   font-weight: 100;
   font-size: 0.9rem;
-  color: #E6BE8A;
+  color: #1E293B;
 }
 
 /* Benefits Section - Gradient BG */
-.spbl-benefits-section {
-  background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+/* Benefits Section - Staffing Style 3-Column Unified Grid */
+.spbl-benefits-section-staffing {
+  background: #000;
+  padding: 100px 0;
+  overflow: hidden;
 }
 
-.spbl-benefits-section .spbl-section-title {
-  color: #FFD700;
-}
-
-.spbl-benefits-section .spbl-section-subtitle {
-  color: #E6BE8A;
-}
-
-.spbl-benefits-grid {
+.staffing-grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 28px;
+  align-items: stretch;
 }
 
-.spbl-benefit-card {
-  background: rgba(30, 41, 59, 0.8);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  padding: 28px;
-  border: 1px solid rgba(212, 160, 23, 0.2);
-  text-align: center;
-  transition: all 0.3s ease;
+.staffing-title-wrapper {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
-.spbl-benefit-card:hover {
-  transform: translateY(-8px);
-  border-color: #FFD700;
-  box-shadow: 0 20px 50px rgba(212, 160, 23, 0.2);
+.staffing-title {
+  font-family: 'Inter', 'Poppins', sans-serif;
+  font-size: 2.7rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.1;
+  text-align: left;
+  min-width: 450px;
+  margin: 0;
 }
 
-.spbl-benefit-icon-wrapper {
-  position: relative;
+.staffing-title .title-blue {
+  color: #E6BE8A;
+}
+
+.staffing-benefit-card {
+  background: #1A1A1A;
+  border-radius: 16px;
+  padding: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: left;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  height: 100%;
+}
+
+.staffing-title-desc {
+  font-family: 'Aldrich', monospace;
+  font-size: 1.1rem;
+  color: #94A3B8;
+  line-height: 1.6;
+  margin-top: 20px;
+  font-weight: 100;
+  text-align: left;
+  max-width: 450px;
+  margin-bottom: -10px;
+}
+
+.staffing-benefit-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(230, 190, 138, 0.4);
+}
+
+.staffing-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 20px;
 }
 
-.spbl-benefit-icon {
-  font-size: 3rem;
-  position: relative;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-}
-
-.spbl-benefit-glow {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  filter: blur(20px);
-  opacity: 0.1;
-}
-
-.spbl-benefit-title {
-  font-family: 'HEXCO', sans-serif;
-  font-size: 1.3rem;
-  font-weight: 100;
-  color: #F8FAFC;
-  margin-bottom: 12px;
-  letter-spacing: 1px;
-}
-
-.spbl-benefit-description {
-  font-family: 'Aldrich', monospace;
-  font-weight: 100;
-  font-size: 0.95rem;
-  color: #CBD5E1;
-  line-height: 1.5;
-}
-
-/* Process Section - Gold Theme */
-.spbl-process-section {
-  background: #0F172A;
-}
-
-.spbl-process-section .spbl-section-title {
-  color: #FFD700;
-}
-
-.spbl-process-section .spbl-section-subtitle {
+.staffing-card-num {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
   color: #E6BE8A;
 }
 
-.spbl-process-timeline {
+.staffing-card-icon {
+  font-size: 1.5rem;
+  opacity: 0.8;
+}
+
+.staffing-card-header {
+  margin-bottom: 20px;
+}
+
+.staffing-card-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.staffing-card-underline {
+  height: 2px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.staffing-card-desc {
+  font-family: 'Aldrich', monospace;
+  font-size: 0.95rem;
+  color: #94A3B8;
+  line-height: 1.6;
+  margin: 0;
+  font-weight: 100;
+}
+
+@media (max-width: 1200px) {
+  .staffing-grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .staffing-grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .staffing-title {
+    font-size: 2.2rem;
+  }
+}
+
+/* Process Section - Gold Theme */
+/* Process Section - Quality Services Final Re-design */
+.spbl-process-section-light {
+  background: #FFFFFF;
+  padding: 100px 0;
+  position: relative;
+}
+
+.process-header-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 80px;
+  gap: 40px;
+}
+
+.process-title-area {
+  flex: 1;
+}
+
+.process-main-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #1E293B;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-align: left;
+}
+
+.process-divider-line {
+  width: 2px;
+  height: 80px;
+  background: #E2E8F0;
+}
+
+.process-desc-area {
+  flex: 1;
+}
+
+.process-header-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  color: #475569;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.process-static-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-  position: relative;
+  gap: 32px;
+}
+
+.quality-process-card-final {
+  background: #FFFFFF;
+  border-radius: 12px;
+  padding: 40px 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  border: 1px solid #F1F5F9;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 320px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.quality-process-card-final:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+}
+
+.quality-card-badge-pill {
+  padding: 6px 16px;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #FFFFFF;
+  display: inline-block;
+  align-self: flex-start;
+  margin-bottom: 8px;
+}
+
+.quality-card-title-bold {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 750;
+  color: #1E293B;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.quality-card-divider {
+  width: 40px;
+  height: 2px;
+  background: #E2E8F0;
+  margin: 4px 0;
+}
+
+.quality-card-desc-muted {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: #64748B;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .process-header-grid {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+  }
+
+  .process-divider-line {
+    display: none;
+  }
+
+  .process-static-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .process-static-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-main-title {
+    font-size: 2.2rem;
+  }
 }
 
 .spbl-process-step {
@@ -1081,12 +1277,29 @@ html, body {
   animation: spbl-float-card 6s ease-in-out infinite;
 }
 
-.spbl-process-step:nth-child(1) { animation-delay: 0s; }
-.spbl-process-step:nth-child(2) { animation-delay: 0.2s; }
-.spbl-process-step:nth-child(3) { animation-delay: 0.4s; }
-.spbl-process-step:nth-child(4) { animation-delay: 0.6s; }
-.spbl-process-step:nth-child(5) { animation-delay: 0.8s; }
-.spbl-process-step:nth-child(6) { animation-delay: 1s; }
+.spbl-process-step:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.spbl-process-step:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.spbl-process-step:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.spbl-process-step:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+.spbl-process-step:nth-child(5) {
+  animation-delay: 0.8s;
+}
+
+.spbl-process-step:nth-child(6) {
+  animation-delay: 1s;
+}
 
 .spbl-process-step:hover {
   transform: translateY(-8px);
@@ -1220,41 +1433,80 @@ html, body {
   color: #E6BE8A;
 }
 
-.spbl-stories-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+/* Stories Section - Right to Left Marquee & Poppins Font */
+.spbl-stories-marquee-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding: 40px 0;
+  mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+}
+
+.spbl-stories-marquee-track {
+  display: flex;
   gap: 28px;
+  width: max-content;
+  animation: pblMarqueeRightToLeft 60s linear infinite;
+}
+
+.spbl-stories-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes pblMarqueeRightToLeft {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .spbl-story-card {
   background: rgba(30, 41, 59, 0.8);
   backdrop-filter: blur(10px);
   border-radius: 24px;
-  padding: 28px;
+  padding: 32px;
   border: 1px solid rgba(212, 160, 23, 0.2);
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  width: 500px;
+  /* Fixed width for marquee consistency */
+  flex-shrink: 0;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.spbl-story-card * {
+  font-family: 'Poppins', sans-serif !important;
 }
 
 .spbl-story-card:hover {
-  transform: translateY(-8px);
   border-color: #FFD700;
   box-shadow: 0 20px 50px rgba(212, 160, 23, 0.2);
 }
 
 .spbl-story-avatar {
-  font-size: 3rem;
-  background: rgba(212, 160, 23, 0.1);
-  width: 80px;
-  height: 80px;
+  width: 95px;
+  height: 95px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
   margin: 0 auto;
+  overflow: hidden;
+  background: white; /* Clean white background to make colorful avatars pop */
+  padding: 5px;
+}
+
+.spbl-story-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .spbl-story-content {
@@ -1266,16 +1518,14 @@ html, body {
 
 .spbl-story-header {
   text-align: center;
-  margin-bottom: 0;
 }
 
 .spbl-story-name {
-  font-family: 'HEXCO', sans-serif;
   font-size: 1.5rem;
-  font-weight: 100;
+  font-weight: 600;
   color: #F8FAFC;
   margin-bottom: 8px;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   line-height: 1.2;
 }
 
@@ -1297,10 +1547,8 @@ html, body {
 }
 
 .spbl-project-text {
-  font-family: 'Aldrich', monospace;
-  font-weight: 100;
   font-size: 0.9rem;
-  color: #E6BE8A;
+  color: #F1F5F9;
 }
 
 .spbl-story-timeline {
@@ -1308,49 +1556,32 @@ html, body {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: rgba(212, 160, 23, 0.05);
-  padding: 8px 16px;
-  border-radius: 8px;
-}
-
-.spbl-timeline-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   font-size: 0.9rem;
-}
-
-.spbl-timeline-text {
-  font-family: 'Aldrich', monospace;
-  font-weight: 100;
-  font-size: 0.9rem;
-  color: #CBD5E1;
+  color: #94A3B8;
 }
 
 .spbl-story-quote {
-  position: relative;
-  padding: 16px;
-  background: rgba(212, 160, 23, 0.05);
-  border-radius: 12px;
-  border-left: 3px solid #FFD700;
-  margin-bottom: 0;
+  background: rgba(15, 23, 42, 0.4);
+  padding: 20px;
+  border-radius: 16px;
+  border-left: 4px solid #D4A017;
+  margin: 8px 0;
 }
 
 .spbl-quote-text {
-  font-family: 'Aldrich', monospace;
-  font-weight: 100;
-  font-size: 0.95rem;
-  color: #CBD5E1;
-  line-height: 1.5;
   font-style: italic;
-  margin: 0;
+  font-size: 1rem;
+  color: #CBD5E1;
+  line-height: 1.6;
 }
 
 .spbl-story-footer {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  justify-content: center;
 }
 
 .spbl-story-mentor,
@@ -1358,7 +1589,12 @@ html, body {
 .spbl-story-salary {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: #94A3B8;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 4px 10px;
+  border-radius: 8px;
 }
 
 .spbl-story-salary {
@@ -1386,115 +1622,136 @@ html, body {
   line-height: 1.3;
 }
 
-/* CTA Section - Gold Gradient */
-.spbl-cta-section {
+/* CTA Section - Candidate Search Light Theme Redesign */
+.spbl-cta-section-light {
+  background: #FFFFFF;
+  padding: 120px 0;
+  text-align: center;
   position: relative;
-  padding: 80px 0;
   overflow: hidden;
 }
 
-.spbl-cta-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: 
-    linear-gradient(rgba(212, 160, 23, 0.1), rgba(15, 23, 42, 0.95)),
-    url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')
-    center/cover no-repeat;
-  z-index: 1;
-  animation: spbl-bg-zoom 20s ease-in-out infinite alternate;
-}
-
-.spbl-cta-container {
+.cta-light-header {
+  margin-bottom: 40px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
   position: relative;
   z-index: 2;
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-  background: rgba(30, 41, 59, 0.95);
-  backdrop-filter: blur(10px);
-  border-radius: 32px;
-  padding: 48px;
-  border: 1px solid rgba(212, 160, 23, 0.3);
-  box-shadow: 0 20px 60px rgba(212, 160, 23, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.spbl-cta-content {
+.cta-light-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #1E1B4B;
+  /* Deep Indigo/Violet */
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.cta-title-highlighter {
+  display: inline-block;
+  background: #DFFC01;
+  /* Lime Green */
+  color: #000;
+  padding: 4px 16px;
+  border-radius: 12px;
+  transform: rotate(-2deg);
   position: relative;
-  z-index: 3;
+  box-shadow: 0 4px 12px rgba(223, 252, 1, 0.3);
+  margin-left: 8px;
 }
 
-.spbl-cta-title {
-  font-family: 'HEXCO', sans-serif;
-  font-size: 2.5rem;
-  font-weight: 100;
-  color: #FFD700;
-  margin-bottom: 20px;
-  letter-spacing: 2px;
-  line-height: 1.2;
-}
-
-.spbl-cta-subtitle {
-  font-family: 'Aldrich', monospace;
-  font-weight: 100;
-  font-size: 1.1rem;
-  color: #CBD5E1;
+.cta-light-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.15rem;
+  color: #64748B;
+  line-height: 1.6;
   max-width: 600px;
-  margin: 0 auto 32px;
-  line-height: 1.5;
 }
 
-.spbl-cta-features {
+.cta-light-features-row {
   display: flex;
   justify-content: center;
-  gap: 24px;
+  align-items: center;
+  gap: 40px;
   margin-bottom: 32px;
+  /* Reduced gap as requested */
+  position: relative;
+  z-index: 2;
   flex-wrap: wrap;
 }
 
-.spbl-cta-feature {
+.cta-light-feature {
   display: flex;
   align-items: center;
   gap: 8px;
-  flex: 1;
-  min-width: 200px;
-  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  color: #1E293B;
+  /* Darker color for visibility */
 }
 
-.spbl-feature-icon {
+.cta-feature-dot {
+  color: #1E1B4B;
+  font-weight: 900;
   font-size: 1.2rem;
+}
+
+.cta-feature-text {
+  color: #1E1B4B;
+}
+
+.cta-light-action {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  gap: 24px;
+  position: relative;
+  z-index: 2;
 }
 
-.spbl-feature-text {
-  font-family: 'Aldrich', monospace;
-  font-weight: 100;
-  font-size: 1rem;
-  color: #E6BE8A;
-}
-
-.spbl-cta-button {
+.cta-light-button {
   background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
   color: #FFFFFF;
-  border: none;
-  border-radius: 16px;
   padding: 20px 48px;
-  font-family: 'HEXCO', sans-serif;
+  border-radius: 20px;
+  /* Better match for the green button UI */
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
   font-size: 1.2rem;
-  font-weight: 100;
+  border: none;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 12px;
+  margin-bottom: 10px;
+  gap: 18px;
   transition: all 0.3s ease;
-  margin-bottom: 24px;
-  letter-spacing: 1px;
-  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+  box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
+}
+
+.cta-light-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(37, 211, 102, 0.3);
+  background: linear-gradient(135deg, #34D399 0%, #10B981 100%);
+}
+
+.cta-light-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: #475569;
+  /* Darker color for visibility */
+}
+
+.cta-note-text {
+  color: #475569;
 }
 
 .spbl-cta-button:hover {
@@ -1593,7 +1850,7 @@ html, body {
   .spbl-hero-content {
     gap: 60px;
   }
-  
+
   .spbl-visual-container {
     width: 350px;
     height: 350px;
@@ -1607,19 +1864,19 @@ html, body {
     gap: 50px;
     text-align: center;
   }
-  
+
   .spbl-hero-description {
     margin: 0 auto 28px;
     max-width: 600px;
   }
-  
+
   .spbl-hero-stats {
     justify-content: center;
     gap: 20px;
     max-width: 600px;
     margin: 0 auto 32px;
   }
-  
+
   .spbl-hero-stat {
     flex: 0 0 calc(33.333% - 20px);
     justify-content: center;
@@ -1627,72 +1884,72 @@ html, body {
     text-align: center;
     min-width: auto;
   }
-  
+
   .spbl-hero-actions {
     justify-content: center;
     margin-top: 40px;
   }
-  
+
   .spbl-visual-container {
     width: 300px;
     height: 300px;
   }
-  
+
   /* Stats, Tech - 2x2 grid for tablet */
   .spbl-stats-grid,
   .spbl-tech-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
   }
-  
+
   .spbl-benefits-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
   }
-  
+
   /* Process timeline - 2x3 grid for tablet */
   .spbl-process-timeline {
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
   }
-  
+
   .spbl-step-connector {
     display: none;
   }
-  
+
   /* Categories - 2 columns for tablet */
   .spbl-categories-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
   }
-  
+
   /* Success Stories - 2 columns for tablet */
   .spbl-stories-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
   }
-  
+
   .spbl-story-footer {
     grid-template-columns: 1fr;
   }
-  
+
   .spbl-story-salary {
     grid-column: span 1;
     justify-content: flex-start;
   }
-  
+
   .spbl-cta-container {
     padding: 40px 32px;
   }
-  
+
   .spbl-cta-title {
     font-size: 2.2rem;
   }
-  
+
   .spbl-cta-features {
     gap: 20px;
   }
-  
+
   .spbl-cta-feature {
     min-width: 180px;
     justify-content: flex-start;
@@ -1704,64 +1961,64 @@ html, body {
   .spbl-hero {
     padding: 60px 0;
   }
-  
+
   .spbl-hero-content {
     gap: 40px;
   }
-  
+
   .spbl-hero-main {
     font-size: 2.5rem;
   }
-  
+
   .spbl-hero-sub {
     font-size: 1.2rem;
   }
-  
+
   .spbl-section {
     padding: 60px 0;
   }
-  
+
   .spbl-section-title {
     font-size: 1.8rem;
   }
-  
+
   .spbl-section-subtitle {
     font-size: 1rem;
   }
-  
+
   .spbl-hero-stats {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 16px;
   }
-  
+
   .spbl-hero-stat {
     flex: 0 0 calc(33.333% - 16px);
     min-width: auto;
     gap: 8px;
   }
-  
+
   .spbl-stat-icon {
     width: 48px;
     height: 48px;
     font-size: 1.8rem;
   }
-  
+
   .spbl-stat-number {
     font-size: 1.5rem;
   }
-  
+
   .spbl-stat-label {
     font-size: 0.8rem;
   }
-  
+
   .spbl-hero-actions {
     flex-direction: column;
     align-items: center;
     margin-top: 30px;
     gap: 12px;
   }
-  
+
   /* FIX 1: Hero button - full width with proper padding */
   .spbl-hero-cta-primary {
     width: calc(100% - 32px);
@@ -1773,20 +2030,20 @@ html, body {
     white-space: normal;
     word-wrap: break-word;
   }
-  
+
   .spbl-cta-text {
     font-size: 0.95rem;
   }
-  
+
   /* FIX 2: Remove hero background animation and visual contents on mobile */
   .spbl-hero-visual {
     display: none;
   }
-  
+
   .spbl-hero-background {
     animation: none;
   }
-  
+
   /* Stats, Tech, Process - 2 columns for mobile */
   .spbl-stats-grid,
   .spbl-tech-grid,
@@ -1794,40 +2051,40 @@ html, body {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
-  
+
   .spbl-stat-card,
   .spbl-tech-card,
   .spbl-process-step {
     padding: 20px;
   }
-  
+
   .spbl-stat-number {
     font-size: 1.8rem;
   }
-  
+
   .spbl-stat-description,
   .spbl-step-description {
     font-size: 0.85rem;
   }
-  
+
   /* Benefits - 2 columns for mobile */
   .spbl-benefits-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
-  
+
   .spbl-benefit-card {
     padding: 20px;
   }
-  
+
   .spbl-benefit-title {
     font-size: 1.1rem;
   }
-  
+
   .spbl-benefit-description {
     font-size: 0.85rem;
   }
-  
+
   /* Remove floating animation on mobile/tablet */
   .spbl-float-animation,
   .spbl-stat-card,
@@ -1835,133 +2092,133 @@ html, body {
   .spbl-process-step {
     animation: none !important;
   }
-  
+
   /* Categories - 1 column for mobile */
   .spbl-categories-grid {
     grid-template-columns: 1fr;
     gap: 20px;
   }
-  
+
   .spbl-category-card {
     padding: 20px;
   }
-  
+
   .spbl-category-title {
     font-size: 1.2rem;
   }
-  
+
   .spbl-category-description {
     font-size: 0.85rem;
   }
-  
+
   /* Success Stories - 2 columns for tablet size */
   .spbl-stories-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
-  
+
   .spbl-story-card {
     padding: 20px;
     flex-direction: column;
     gap: 16px;
   }
-  
+
   .spbl-story-avatar {
     width: 70px;
     height: 70px;
     font-size: 2.5rem;
   }
-  
+
   .spbl-story-name {
     font-size: 1.3rem;
   }
-  
+
   .spbl-story-quote {
     padding: 14px;
   }
-  
+
   .spbl-quote-text {
     font-size: 0.9rem;
   }
-  
+
   .spbl-story-footer {
     grid-template-columns: 1fr;
     gap: 10px;
   }
-  
+
   .spbl-story-salary {
     justify-content: flex-start;
     margin-top: 4px;
   }
-  
+
   .spbl-step-connector {
     display: none;
   }
-  
+
   .spbl-cta-section {
     padding: 60px 0;
   }
-  
+
   .spbl-cta-container {
     padding: 32px 24px;
     margin: 0 16px;
   }
-  
+
   .spbl-cta-title {
     font-size: 2rem;
   }
-  
+
   .spbl-cta-features {
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;
   }
-  
+
   .spbl-cta-feature {
     min-width: 100%;
   }
-  
+
   .spbl-cta-button {
     width: calc(100% - 32px);
     padding: 18px 24px;
     font-size: 1.1rem;
     margin: 0 16px 24px;
   }
-  
+
   /* Keep scrolling animation for project experts on all screen sizes */
   .spbl-experts-scroll-container {
     overflow: hidden;
   }
-  
+
   .spbl-experts-scroll {
     animation: spbl-scroll 30s linear infinite;
   }
-  
+
   .spbl-expert-card {
     min-width: 280px;
     padding: 20px;
   }
-  
+
   .spbl-expert-avatar {
     font-size: 2.5rem;
   }
-  
+
   .spbl-expert-name {
     font-size: 1.3rem;
   }
-  
+
   .spbl-expert-role {
     font-size: 1rem;
   }
-  
+
   .spbl-expert-expertise {
     margin-bottom: 16px;
   }
-  
+
   .spbl-expertise-tags {
     gap: 6px;
   }
-  
+
   .spbl-expertise-tag {
     font-size: 0.8rem;
     padding: 4px 8px;
@@ -1973,65 +2230,65 @@ html, body {
   .spbl-hero {
     padding: 50px 0;
   }
-  
+
   .spbl-hero-content {
     gap: 30px;
   }
-  
+
   .spbl-hero-main {
     font-size: 2rem;
     line-height: 1.1;
   }
-  
+
   .spbl-hero-sub {
     font-size: 1.1rem;
   }
-  
+
   .spbl-hero-description {
     font-size: 1rem;
     line-height: 1.5;
   }
-  
+
   .spbl-section-title {
     font-size: 1.6rem;
   }
-  
+
   .spbl-section-subtitle {
     font-size: 1rem;
   }
-  
+
   .spbl-hero-stats {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 12px;
   }
-  
+
   .spbl-hero-stat {
     flex: 0 0 calc(50% - 12px);
     flex-direction: column;
     text-align: center;
     gap: 6px;
   }
-  
+
   .spbl-stat-icon {
     width: 48px;
     height: 48px;
     font-size: 1.8rem;
   }
-  
+
   .spbl-stat-number {
     font-size: 1.5rem;
   }
-  
+
   .spbl-stat-label {
     font-size: 0.8rem;
   }
-  
+
   .spbl-hero-actions {
     margin-top: 25px;
     padding: 0;
   }
-  
+
   /* FIX 1: Hero button fully visible on all mobile sizes */
   .spbl-hero-cta-primary {
     width: 100%;
@@ -2041,198 +2298,198 @@ html, body {
     margin: 0;
     min-width: auto;
   }
-  
+
   .spbl-cta-text {
     font-size: 0.9rem;
   }
-  
+
   /* Remove visual container completely on mobile */
   .spbl-hero-visual {
     display: none;
   }
-  
+
   /* FIX 2: Stats 2x2 grid fitting correctly - no cut off */
   .spbl-stats-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     padding: 0 8px;
   }
-  
+
   .spbl-stat-card {
     padding: 14px 10px;
     width: 100%;
     box-sizing: border-box;
     margin: 0;
   }
-  
+
   .spbl-stat-number {
     font-size: 1.4rem;
   }
-  
+
   .spbl-stat-description {
     font-size: 0.7rem;
     line-height: 1.2;
   }
-  
+
   /* Keep scrolling animation for experts */
   .spbl-experts-scroll-container {
     overflow: hidden;
     padding: 10px 0;
   }
-  
+
   .spbl-experts-scroll {
     animation: spbl-scroll 30s linear infinite;
     gap: 16px;
   }
-  
+
   /* FIX 3: Project expert cards - contents fit inside for small screens */
   .spbl-expert-card {
     min-width: 240px;
     padding: 14px 12px;
     width: 240px;
   }
-  
+
   .spbl-expert-header {
     margin-bottom: 12px;
     flex-wrap: wrap;
     gap: 10px;
   }
-  
+
   .spbl-expert-avatar {
     font-size: 1.8rem;
   }
-  
+
   .spbl-expert-badge {
     font-size: 0.7rem;
     padding: 4px 8px;
     white-space: nowrap;
   }
-  
+
   .spbl-badge-icon {
     font-size: 0.7rem;
   }
-  
+
   .spbl-expert-info {
     margin-bottom: 12px;
   }
-  
+
   .spbl-expert-name {
     font-size: 1.1rem;
     line-height: 1.2;
     word-break: break-word;
   }
-  
+
   .spbl-expert-role {
     font-size: 0.85rem;
     line-height: 1.2;
   }
-  
+
   .spbl-expert-company {
     font-size: 0.75rem;
   }
-  
+
   .spbl-expert-experience {
     padding: 5px 10px;
     font-size: 0.75rem;
   }
-  
+
   .spbl-experience-icon {
     font-size: 0.75rem;
   }
-  
+
   .spbl-experience-text {
     font-size: 0.75rem;
   }
-  
+
   .spbl-expert-expertise {
     margin-bottom: 12px;
   }
-  
+
   .spbl-expertise-title {
     font-size: 0.85rem;
     margin-bottom: 8px;
   }
-  
+
   .spbl-expertise-tags {
     gap: 4px;
   }
-  
+
   .spbl-expertise-tag {
     font-size: 0.65rem;
     padding: 3px 6px;
     word-break: break-word;
   }
-  
+
   .spbl-expert-stats {
     gap: 12px;
     margin-bottom: 12px;
     flex-wrap: wrap;
   }
-  
+
   .spbl-expert-stat {
     gap: 4px;
   }
-  
+
   .spbl-expert-stat .spbl-stat-icon {
     font-size: 0.8rem;
   }
-  
+
   .spbl-expert-stat .spbl-stat-text {
     font-size: 0.75rem;
   }
-  
+
   /* FIX 4: Benefits 2x2 grid fitting correctly - no cut off */
   .spbl-benefits-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     padding: 0 8px;
   }
-  
+
   .spbl-benefit-card {
     padding: 14px 10px;
     width: 100%;
     box-sizing: border-box;
     margin: 0;
   }
-  
+
   .spbl-benefit-icon {
     font-size: 1.8rem;
     margin-bottom: 8px;
   }
-  
+
   .spbl-benefit-title {
     font-size: 0.9rem;
     margin-bottom: 6px;
     line-height: 1.2;
   }
-  
+
   .spbl-benefit-description {
     font-size: 0.7rem;
     line-height: 1.2;
   }
-  
+
   /* Tech cards - 2x2 in mobile */
   .spbl-tech-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     padding: 0 8px;
   }
-  
+
   .spbl-tech-card {
     padding: 16px 10px;
     width: 100%;
     box-sizing: border-box;
   }
-  
+
   .spbl-tech-icon {
     font-size: 1.8rem;
     margin-bottom: 10px;
   }
-  
+
   .spbl-tech-name {
     font-size: 0.85rem;
   }
-  
+
   /* Other sections - 1 column for mobile */
   .spbl-categories-grid,
   .spbl-process-timeline {
@@ -2240,82 +2497,82 @@ html, body {
     gap: 16px;
     padding: 0 8px;
   }
-  
+
   .spbl-category-card,
   .spbl-process-step {
     padding: 16px;
   }
-  
+
   .spbl-category-title,
   .spbl-step-title {
     font-size: 1.1rem;
   }
-  
+
   .spbl-category-description,
   .spbl-step-description {
     font-size: 0.85rem;
   }
-  
+
   /* Success stories - 1x1 in mobile */
   .spbl-stories-grid {
     grid-template-columns: 1fr;
     gap: 16px;
     padding: 0 8px;
   }
-  
+
   .spbl-story-card {
     padding: 16px;
     gap: 12px;
   }
-  
+
   .spbl-story-avatar {
     width: 60px;
     height: 60px;
     font-size: 2rem;
   }
-  
+
   .spbl-story-name {
     font-size: 1.1rem;
   }
-  
+
   .spbl-story-project {
     padding: 4px 10px;
     font-size: 0.8rem;
   }
-  
+
   .spbl-story-quote {
     padding: 12px;
   }
-  
+
   .spbl-quote-text {
     font-size: 0.85rem;
   }
-  
+
   .spbl-story-footer {
     grid-template-columns: 1fr;
     gap: 8px;
   }
-  
+
   .spbl-cta-container {
     padding: 24px 16px;
     margin: 0 12px;
   }
-  
+
   .spbl-cta-title {
     font-size: 1.6rem;
   }
-  
+
   .spbl-cta-subtitle {
     font-size: 0.95rem;
   }
-  
+
   .spbl-cta-button {
     width: 100%;
     padding: 16px 20px;
     font-size: 1rem;
     margin: 0 0 24px 0;
   }
-  
+
   /* View More button adjustments */
   .spbl-view-more-btn {
     padding: 12px 20px;
@@ -2324,7 +2581,7 @@ html, body {
     width: 100%;
     max-width: 100%;
   }
-  
+
   .spbl-view-more-text {
     font-size: 0.9rem;
   }
@@ -2335,59 +2592,59 @@ html, body {
   .spbl-container {
     padding: 0 12px;
   }
-  
+
   .spbl-hero-main {
     font-size: 1.7rem;
   }
-  
+
   .spbl-hero-sub {
     font-size: 0.95rem;
   }
-  
+
   .spbl-hero-description {
     font-size: 0.9rem;
   }
-  
+
   .spbl-section-title {
     font-size: 1.4rem;
   }
-  
+
   .spbl-section-subtitle {
     font-size: 0.9rem;
   }
-  
+
   .spbl-hero-stat {
     flex: 0 0 calc(50% - 6px);
     gap: 4px;
   }
-  
+
   .spbl-stat-icon {
     width: 36px;
     height: 36px;
     font-size: 1.3rem;
   }
-  
+
   .spbl-stat-number {
     font-size: 1.2rem;
   }
-  
+
   .spbl-stat-label {
     font-size: 0.7rem;
   }
-  
+
   /* FIX 1: Button for 320px screens */
   .spbl-hero-cta-primary {
     padding: 12px 14px;
     font-size: 0.85rem;
     border-radius: 8px;
   }
-  
+
   .spbl-cta-text {
     font-size: 0.85rem;
     white-space: normal;
     line-height: 1.2;
   }
-  
+
   /* FIX 2 & 4: Stats and Benefits cards - ensure no cut off */
   .spbl-stats-grid,
   .spbl-benefits-grid,
@@ -2395,121 +2652,121 @@ html, body {
     gap: 8px;
     padding: 0 6px;
   }
-  
+
   .spbl-stat-card,
   .spbl-benefit-card,
   .spbl-tech-card {
     padding: 12px 8px;
     min-width: 0;
   }
-  
+
   .spbl-stat-number {
     font-size: 1.1rem;
   }
-  
+
   .spbl-stat-description,
   .spbl-benefit-description {
     font-size: 0.65rem;
     line-height: 1.1;
   }
-  
+
   .spbl-benefit-title,
   .spbl-tech-name {
     font-size: 0.8rem;
     line-height: 1.1;
   }
-  
+
   .spbl-benefit-icon {
     font-size: 1.5rem;
   }
-  
+
   .spbl-tech-icon {
     font-size: 1.5rem;
   }
-  
+
   /* FIX 3: Project expert cards - further reduce for 425px screens */
   .spbl-expert-card {
     min-width: 210px;
     padding: 12px 10px;
     width: 210px;
   }
-  
+
   .spbl-expert-avatar {
     font-size: 1.5rem;
   }
-  
+
   .spbl-expert-name {
     font-size: 1rem;
   }
-  
+
   .spbl-expert-role {
     font-size: 0.75rem;
   }
-  
+
   .spbl-expert-company {
     font-size: 0.7rem;
   }
-  
+
   .spbl-expert-experience {
     padding: 4px 8px;
     font-size: 0.7rem;
   }
-  
+
   .spbl-expertise-title {
     font-size: 0.75rem;
   }
-  
+
   .spbl-expertise-tag {
     font-size: 0.6rem;
     padding: 2px 4px;
   }
-  
+
   .spbl-expert-stat .spbl-stat-text {
     font-size: 0.7rem;
   }
-  
+
   .spbl-categories-grid,
   .spbl-process-timeline,
   .spbl-stories-grid {
     padding: 0 6px;
   }
-  
+
   .spbl-category-card,
   .spbl-process-step,
   .spbl-story-card {
     padding: 14px;
   }
-  
+
   .spbl-category-title,
   .spbl-step-title,
   .spbl-story-name {
     font-size: 1rem;
   }
-  
+
   .spbl-category-description,
   .spbl-step-description,
   .spbl-quote-text {
     font-size: 0.8rem;
   }
-  
+
   .spbl-cta-container {
     padding: 20px 14px;
     margin: 0 8px;
   }
-  
+
   .spbl-cta-title {
     font-size: 1.4rem;
   }
-  
+
   .spbl-cta-subtitle {
     font-size: 0.9rem;
   }
-  
+
   .spbl-cta-button {
     padding: 14px 16px;
     font-size: 0.9rem;
   }
-  
+
   .spbl-view-more-btn {
     padding: 10px 16px;
     font-size: 0.9rem;
@@ -2522,67 +2779,68 @@ html, body {
   .spbl-container {
     padding: 0 8px;
   }
-  
+
   .spbl-hero-main {
     font-size: 1.5rem;
   }
-  
+
   .spbl-hero-sub {
     font-size: 0.85rem;
   }
-  
+
   .spbl-hero-description {
     font-size: 0.8rem;
   }
-  
+
   .spbl-section-title {
     font-size: 1.2rem;
   }
-  
+
   .spbl-section-subtitle {
     font-size: 0.8rem;
   }
-  
+
   .spbl-hero-stats {
     gap: 6px;
   }
-  .spbl-company-stat-label{
+
+  .spbl-company-stat-label {
     font-size: 0.8rem;
   }
-  
+
   .spbl-hero-stat {
     flex: 0 0 calc(50% - 6px);
   }
-  
+
   .spbl-stat-icon {
     width: 32px;
     height: 32px;
     font-size: 1.1rem;
   }
-  
+
   .spbl-stat-number {
     font-size: 1rem;
   }
-  
+
   .spbl-stat-label {
     font-size: 0.65rem;
   }
-  
+
   /* FIX 1: Button for 320px screens - final adjustments */
   .spbl-hero-cta-primary {
     padding: 10px 12px;
     font-size: 0.8rem;
     gap: 8px;
   }
-  
+
   .spbl-cta-text {
     font-size: 0.8rem;
   }
-  
+
   .spbl-cta-icon {
     font-size: 0.9rem;
   }
-  
+
   /* FIX 2 & 4: Stats and Benefits - final small adjustments */
   .spbl-stats-grid,
   .spbl-benefits-grid,
@@ -2590,103 +2848,103 @@ html, body {
     gap: 6px;
     padding: 0 4px;
   }
-  
+
   .spbl-stat-card,
   .spbl-benefit-card,
   .spbl-tech-card {
     padding: 10px 6px;
   }
-  
+
   .spbl-stat-number {
     font-size: 1rem;
   }
-  
+
   .spbl-stat-description,
   .spbl-benefit-description {
     font-size: 0.6rem;
   }
-  
+
   .spbl-benefit-title,
   .spbl-tech-name {
     font-size: 0.75rem;
   }
-  
+
   .spbl-benefit-icon,
   .spbl-tech-icon {
     font-size: 1.3rem;
   }
-  
+
   /* FIX 3: Project expert cards - smallest size for 320px */
   .spbl-expert-card {
     min-width: 190px;
     padding: 10px 8px;
     width: 190px;
   }
-  
+
   .spbl-expert-avatar {
     font-size: 1.3rem;
   }
-  
+
   .spbl-expert-name {
     font-size: 0.9rem;
   }
-  
+
   .spbl-expert-role {
     font-size: 0.7rem;
   }
-  
+
   .spbl-expert-badge {
     font-size: 0.6rem;
     padding: 3px 6px;
   }
-  
+
   .spbl-expertise-tag {
     font-size: 0.55rem;
     padding: 1px 3px;
   }
-  
+
   .spbl-categories-grid,
   .spbl-process-timeline,
   .spbl-stories-grid {
     padding: 0 4px;
   }
-  
+
   .spbl-category-card,
   .spbl-process-step,
   .spbl-story-card {
     padding: 12px;
   }
-  
+
   .spbl-category-title,
   .spbl-step-title,
   .spbl-story-name {
     font-size: 0.9rem;
   }
-  
+
   .spbl-category-description,
   .spbl-step-description,
   .spbl-quote-text {
     font-size: 0.75rem;
   }
-  
+
   .spbl-cta-container {
     padding: 16px 12px;
     margin: 0 6px;
   }
-  
+
   .spbl-cta-title {
     font-size: 1.2rem;
   }
-  
+
   .spbl-cta-subtitle {
     font-size: 0.8rem;
   }
-  
+
   .spbl-cta-button {
     padding: 12px 14px;
     font-size: 0.85rem;
   }
-  
+
   .spbl-view-more-btn {
     padding: 8px 14px;
     font-size: 0.85rem;

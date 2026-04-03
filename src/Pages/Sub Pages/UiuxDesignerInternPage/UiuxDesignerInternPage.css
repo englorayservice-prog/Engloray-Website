@@ -11,37 +11,24 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 100px;
   font-size: 16px;
   overflow-x: hidden;
 }
 
 body {
   font-family: 'Aldrich', sans-serif;
-  color: #1f2937;
+  color: #2c1810;
   background-color: white;
   font-weight: 100;
   letter-spacing: 0.5px;
   overflow-x: hidden;
-  scroll-behavior: smooth;
-  scroll-padding-top: 100px;
-}
-
-/* ============================================= */
-/* MAIN CONTAINER */
-/* ============================================= */
-
-.UiUx-content {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
 }
 
 /* ============================================= */
 /* SECTIONS */
 /* ============================================= */
 
-.UiUx-section {
+.UX-section {
   min-height: 100vh;
   padding: 6rem 2rem;
   display: flex;
@@ -53,17 +40,31 @@ body {
   width: 100%;
 }
 
-.UiUx-section:nth-child(even) {
-  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+.UX-section.UX-influencer-section {
+  background: linear-gradient(135deg, #000000 0%, #000000 100%);
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  min-height: auto;
 }
 
+.UX-section.UX-new-gallery-section {
+  background-color: #000000;
+}
+
+.UX-section.UX-dream-navigator-section {
+  padding-top: 4rem;
+  padding-bottom: 6rem;
+  min-height: auto;
+}
+
+
 /* Section Titles */
-.UiUx-section-title {
+.UX-section-title {
   font-size: 3rem;
   font-weight: 500;
   margin-bottom: 1rem;
   text-align: center;
-  background:  #1f2937;;
+  background: linear-gradient(135deg, #ec4899 0%, #0ea5e9 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -74,7 +75,7 @@ body {
   z-index: 2;
 }
 
-.UiUx-section-title::after {
+.UX-section-title::after {
   content: '';
   position: absolute;
   bottom: -10px;
@@ -82,13 +83,13 @@ body {
   transform: translateX(-50%);
   width: 80px;
   height: 4px;
-  background: linear-gradient(135deg, #4A90E2 0%, #FF6B8B 100%);
+  background: linear-gradient(135deg, #ff8c42 0%, #ffb347 100%);
   border-radius: 2px;
 }
 
-.UiUx-section-subtitle {
+.UX-section-subtitle {
   font-size: 1.2rem;
-  color: #1f2937;
+  color: #2c1810;
   text-align: center;
   margin-bottom: 4rem;
   max-width: 600px;
@@ -103,7 +104,7 @@ body {
 /* TOAST MESSAGE - FIXED */
 /* ============================================= */
 
-.UiUx-toast-message {
+.UX-toast-message {
   position: fixed;
   top: 20px;
   left: 50%;
@@ -116,14 +117,14 @@ body {
   visibility: hidden;
 }
 
-.UiUx-toast-message.show {
+.UX-toast-message.show {
   transform: translateX(-50%) translateY(0);
   opacity: 1;
   visibility: visible;
 }
 
-.UiUx-toast-content {
-  background: linear-gradient(135deg, #4A90E2 0%, #FF6B8B 100%);
+.UX-toast-content {
+  background: linear-gradient(135deg, #f472b6 0%, #38bdf8 100%);
   color: white;
   padding: 16px 24px;
   border-radius: 12px;
@@ -132,26 +133,27 @@ body {
   align-items: center;
   justify-content: space-between;
   border: 2px solid rgba(255, 255, 255, 0.1);
-  animation: UiUx-toastSlideIn 0.5s ease-out;
+  animation: UX-toastSlideIn 0.5s ease-out;
 }
 
-@keyframes UiUx-toastSlideIn {
+@keyframes UX-toastSlideIn {
   from {
     transform: translateY(-100px);
     opacity: 0;
   }
+
   to {
     transform: translateY(0);
     opacity: 1;
   }
 }
 
-.UiUx-toast-icon {
+.UX-toast-icon {
   font-size: 24px;
   margin-right: 16px;
 }
 
-.UiUx-toast-text {
+.UX-toast-text {
   flex: 1;
   font-size: 16px;
   font-weight: 500;
@@ -159,7 +161,7 @@ body {
   font-family: 'Aldrich', sans-serif;
 }
 
-.UiUx-toast-close {
+.UX-toast-close {
   background: rgba(255, 255, 255, 0.2);
   border: none;
   color: white;
@@ -176,7 +178,7 @@ body {
   font-family: 'Aldrich', sans-serif;
 }
 
-.UiUx-toast-close:hover {
+.UX-toast-close:hover {
   background: rgba(255, 255, 255, 0.3);
   transform: scale(1.1);
 }
@@ -185,126 +187,376 @@ body {
 /* HERO SECTION - RESPONSIVE UPDATED */
 /* ============================================= */
 
-.UiUx-hero-section {
-  background: linear-gradient(135deg, #4A90E2 0%, #FF6B8B 100%);
-  background-image: url('https://wallpapercave.com/wp/wp6412485.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  color: white;
-  text-align: center;
+/* ============================================= */
+/* NEW HERO SECTION - CREATIVE DEVELOPER STUDIO */
+/* ============================================= */
+
+.UX-hero-section-new {
+  background-color: #e8e8e8;
+  color: #1a1a2e;
   position: relative;
-  overflow: hidden;
   width: 100%;
-  min-height: 100vh;
+  min-height: auto !important;
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 8rem 2rem 8rem;
+  /* Compressed padding from 8rem 12rem */
+  overflow: hidden;
+  font-family: 'Poppins', 'Inter', sans-serif;
+  box-sizing: border-box;
+}
+
+.UX-hero-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  z-index: 2;
+}
+
+.UX-hero-badges {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.UX-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.4rem;
+  border: 1px solid #1a1a2e;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #1a1a2e;
+}
+
+.UX-hero-top-line-container {
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 2rem 1rem;
+  flex: 1;
+  margin-left: 2rem;
 }
 
-/* Desktop animation for large screens */
-@keyframes UiUx-zoomBackground {
-  0% {
-    background-size: 100% auto;
-  }
-  100% {
-    background-size: 110% auto;
-  }
-}
-
-/* Enable animation and fixed background only on desktop */
-@media (min-width: 768px) {
-  .UiUx-hero-section {
-    background-attachment: fixed;
-    animation: UiUx-zoomBackground 20s infinite alternate ease-in-out;
-  }
-}
-
-.UiUx-hero-content {
-  max-width: 100%;
-  width: 100%;
-  margin: 0 auto;
-  position: relative;
-  z-index: 2;
-  padding: 0 1rem;
-}
-
-.UiUx-hero-sublitle {
-  font-size: clamp(2rem, 6vw, 3.5rem);
-  color: white;
-  font-weight: 1000;
-  margin-bottom: 1.5rem;
-  line-height: 1.2;
-  background: rgb(213, 93, 115);;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: UiUx-fadeInUp 1s ease;
-  font-family: 'HEXCO', sans-serif;
-  letter-spacing: 1px;
-  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-}
-
-@keyframes UiUx-fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.UiUx-hero-subtitle1 {
-  font-size: clamp(1rem, 3vw, 1.5rem);
-  color: white;
-  margin-bottom: 2.5rem;
-  opacity: 0.9;
-  max-width: 100%;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  font-family: 'Aldrich', sans-serif;
-  font-weight: 20px;
-  letter-spacing: 0.5px;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  line-height: 1.6;
-  padding: 0 1rem;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-}
-
-.UiUx-cta-button {
-  background: rgb(52, 87, 171);
-  color: white;
+.UX-hero-top-line {
+  flex: 1;
+  height: 1px;
+  background-color: #d1d1d1;
   border: none;
-  padding: clamp(0.8rem, 3vw, 1.2rem) clamp(1.5rem, 5vw, 3rem);
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
-  font-weight: 100;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(74, 144, 226, 0.4);
-  font-family: 'Aldrich', sans-serif;
-  letter-spacing: 0.5px;
+  margin-right: 1.5rem;
+}
+
+.UX-sparkle-icon {
+  color: #1a1a2e;
+}
+
+/* Typography section */
+.UX-hero-typography {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0;
+  margin: 0 auto;
   z-index: 2;
-  display: inline-block;
-  max-width: 100%;
+  align-items: center;
+}
+
+.UX-hero-line {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-wrap: nowrap;
+}
+
+.UX-hero-line-1 {
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.UX-sparkle-icon-large {
+  color: #1a1a2e;
+  margin-right: -1rem;
+}
+
+.UX-hero-title-word {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: clamp(2rem, 5.5vw, 7rem);
+  font-weight: 900;
+  line-height: 1.0;
+  color: #1f2232;
+  letter-spacing: -2px;
+  margin: 0;
+  text-transform: uppercase;
   white-space: nowrap;
 }
 
-.UiUx-cta-button:hover {
-  transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 15px 40px rgba(74, 144, 226, 0.5);
+.UX-hero-desc-small {
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #666;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Poppins', sans-serif;
 }
 
-.UiUx-section-content {
+.UX-hero-line-2 {
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.UX-text-purple {
+  color: #ec4899;
+}
+
+.UX-text-pink-blue {
+  background: linear-gradient(135deg, #ec4899 0%, #0ea5e9 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.UX-hero-image-pill {
+  height: clamp(50px, 7vw, 90px);
+  border-radius: 60px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.UX-hero-image-1 {
+  width: clamp(350px, 45vw, 650px);
+  border-radius: 60px;
+  /* margin-left removed to create gap on the left */
+}
+
+.UX-sparkle-icon-small {
+  margin-left: 1rem;
+  color: #1a1a2e;
+}
+
+.UX-hero-line-3 {
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.UX-hero-image-2 {
+  width: clamp(200px, 40vw, 480px);
+  border-radius: 60px;
+}
+
+.UX-hero-image-pill img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.UX-play-btn {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.UX-play-btn:hover {
+  transform: scale(1.1);
+}
+
+.UX-play-icon-triangle {
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 14px solid #ec4899;
+  margin-left: 4px;
+}
+
+/* Bottom Row */
+.UX-hero-bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  z-index: 2;
+  margin-top: 1.5rem;
+}
+
+.UX-hero-bottom-left {
+  flex: 1;
+  padding-right: 2rem;
+}
+
+.UX-hero-desc-large {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 2.5rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.UX-hero-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: left;
+  align-items: center;
+}
+
+.UX-btn-primary {
+  background-color: #ec4899;
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  box-shadow: 0 8px 20px rgba(236, 72, 153, 0.3);
+}
+
+.UX-btn-primary:hover {
+  background-color: #db2777;
+  transform: translateY(-2px);
+}
+
+.UX-btn-icon {
+  background-color: #0ea5e9;
+  color: white;
+  border: none;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+  box-shadow: 0 8px 20px rgba(14, 165, 233, 0.3);
+}
+
+.UX-btn-icon:hover {
+  transform: translateX(3px) translateY(-3px);
+  background-color: #0284c7;
+}
+
+.UX-hero-bottom-right {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.UX-rotating-stamp {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.UX-stamp-text-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: UX-rotate 15s linear infinite;
+  fill: #1f2232;
+  font-size: 13.5px;
+  font-family: 'Inter', monospace;
+  font-weight: 700;
+  letter-spacing: 5px;
+}
+
+@keyframes UX-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.UX-stamp-star {
+  position: absolute;
+  color: #1f2232;
+  z-index: 2;
+}
+
+/* Responsive Overrides */
+@media (max-width: 1024px) {
+  .UX-hero-section-new {
+    padding: 6rem 2rem 2rem 2rem;
+  }
+
+  .UX-hero-line-1,
+  .UX-hero-line-2,
+  .UX-hero-line-3 {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    padding: 0;
+    margin: 1.5rem 0;
+  }
+
+  .UX-hero-image-1 {
+    margin-left: 0;
+    border-radius: 60px;
+    width: 200px;
+  }
+
+  .UX-hero-desc-small {
+    margin-left: 0;
+    margin-top: 1.5rem;
+    text-align: center;
+  }
+
+  .UX-hero-bottom-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    text-align: center;
+  }
+
+  .UX-hero-actions {
+    justify-content: center;
+  }
+
+  .UX-hero-top-row {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .UX-hero-top-line-container {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+.UX-section-content {
   color: white;
   padding-bottom: 10px;
   font-family: 'Aldrich', sans-serif;
@@ -312,216 +564,281 @@ body {
 }
 
 /* ============================================= */
-/* COURSE CAROUSEL SECTION - RESPONSIVE UPDATED */
+/* COURSE CAROUSEL SECTION - RESPONSIVE FIXED */
 /* ============================================= */
 
-.UiUx-course-horizontal-section {
+.UX-course-horizontal-section {
   position: relative;
-  background: linear-gradient(135deg, #4A90E2 0%, #FF6B8B 100%);
-  color: white;
-  padding: clamp(3rem, 5vw, 6rem) 1rem;
+  background: transparent;
+  padding: 0rem 1rem 4rem 1rem;
+  /* Removed top padding */
   min-height: auto;
-  overflow: hidden;
   width: 100%;
+  margin-top: -1px;
+  /* Prevent gap between sections */
 }
 
-.UiUx-course-background-overlay {
+.UX-course-background-top {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
-  background: 
-    linear-gradient(135deg, rgba(74, 144, 226, 0.15) 0%, rgba(255, 107, 139, 0.1) 100%),
-    linear-gradient(135deg, rgba(26, 26, 26, 0.9) 0%, rgba(44, 44, 44, 0.95) 100%);
+  height: 60%;
+  background: #ffffff;
   z-index: 1;
 }
 
-.UiUx-course-horizontal-container {
+.UX-course-background-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: #232230;
+  z-index: 1;
+}
+
+.UX-course-horizontal-container {
   position: relative;
   z-index: 2;
-  max-width: 100%;
+  max-width: 1200px;
   width: 100%;
   margin: 0 auto;
   padding: 0 1rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: auto;
+}
+
+/* Header layout */
+.UX-course-header-row {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+  width: 100%;
+  position: relative;
+}
+
+.UX-course-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.UX-course-header-left .UX-section-title {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0;
+  text-align: left;
+  color: #2d2d2d;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+  /* Override the global gradient-clip text effect */
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  -webkit-text-fill-color: #2d2d2d !important;
+}
+
+/* Remove the orange underline decoration in course header */
+.UX-course-header-left .UX-section-title::after {
+  display: none !important;
+}
+
+.UX-course-header-left .UX-text-purple {
+  color: #ec4899;
+  -webkit-text-fill-color: #ec4899 !important;
+  background: none !important;
+}
+
+.UX-sparkle-icon-header {
+  color: #1a1a2e;
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 24px;
+  height: 24px;
+}
+
+.UX-course-header-right {
+  margin-left: auto;
+  align-self: flex-end;
+}
+
+.UX-view-all-link {
+  color: #0ea5e9;
+  font-weight: 700;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.2rem;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
+  transition: border-color 0.3s ease;
+}
+
+.UX-view-all-link:hover {
+  text-decoration: underline;
 }
 
 /* Carousel Container */
-.UiUx-course-carousel-container {
+.UX-course-carousel-container {
   position: relative;
   width: 100%;
-  max-width: 1000px;
   margin: 0 auto;
   height: auto;
-  min-height: 300px;
 }
 
-.UiUx-carousel-wrapper {
+.UX-carousel-wrapper {
   position: relative;
   width: 100%;
   overflow: hidden;
-  border-radius: 20px;
-  height: auto;
-  min-height: 400px;
+  --cards-per-view: 3;
+  --gap: 2rem;
+  --card-width: calc((100% - ((var(--cards-per-view) - 1) * var(--gap))) / var(--cards-per-view));
 }
 
-.UiUx-course-cards-wrapper {
+.UX-course-cards-wrapper {
+  width: 100%;
+  height: 100%;
   display: flex;
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  width: 100%;
-  height: 100%;
+  gap: var(--gap);
+  transform: translateX(calc(var(--active-index, 0) * -1 * (var(--card-width) + var(--gap))));
 }
 
-.UiUx-course-horizontal-card {
-  flex: 0 0 100%;
-  width: 100%;
-  height: auto;
-  min-height: 400px;
+/* New Card Design */
+.UX-course-new-card {
+  flex: 0 0 var(--card-width);
+  min-width: var(--card-width);
+  background: #f4f4f4;
   border-radius: 20px;
-  overflow: hidden;
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-  display: block !important;
-  visibility: visible !important;
-  margin: 0 auto;
-}
-
-/* Card Overlay */
-.UiUx-card-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(124, 187, 255, 0.85) 0%,
-    rgba(255, 155, 179, 0.8) 50%,
-    rgba(255, 179, 198, 0.75) 100%
-  );
-  z-index: 1;
-}
-
-/* Card Content */
-.UiUx-card-content {
-  position: relative;
-  z-index: 2;
-  height: 100%;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
   display: flex;
   flex-direction: column;
-  padding: clamp(1rem, 3vw, 2.5rem);
-  color: black;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  min-height: 380px;
 }
 
-.UiUx-course-horizontal-card .UiUx-card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 1rem;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+.UX-course-new-card:hover {
+  transform: translateY(-5px);
 }
 
-.UiUx-course-horizontal-card .UiUx-module-number {
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  color: black;
-  font-weight: 600;
-  padding: 0.3rem 1rem;
-  border-radius: 25px;
-  font-size: clamp(0.8rem, 2vw, 1rem);
-  font-family: 'Aldrich', sans-serif;
-}
-
-.UiUx-course-horizontal-card .UiUx-duration {
-  color: black;
-  font-size: clamp(0.8rem, 2vw, 1rem);
-  font-weight: 600;
+.UX-card-check-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #1a1a2e;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  background: rgba(0, 0, 0, 0.3);
-  padding: 0.3rem 0.8rem;
-  border-radius: 20px;
-  backdrop-filter: blur(5px);
-  font-family: 'Aldrich', sans-serif;
-}
-
-.UiUx-course-horizontal-card .UiUx-course-title {
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: white;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  font-family: 'HEXCO', sans-serif;
-  letter-spacing: 1px;
-  line-height: 1.2;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-}
-
-/* Course Features */
-.UiUx-course-features {
-  flex: 1;
+  justify-content: center;
+  font-size: 0.9rem;
+  color: #1a1a2e;
   margin-bottom: 1.5rem;
-  overflow-y: auto;
 }
 
-.UiUx-course-horizontal-card .UiUx-points-list {
-  list-style: none;
-  padding: 0;
+.UX-course-card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  font-family: 'Inter', sans-serif;
+  margin: 0 0 1rem 0;
+}
+
+.UX-course-card-desc {
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.6;
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 1.5rem;
+}
+
+/* 2-Column Checklist grid inside card */
+.UX-course-card-checklist {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.8rem;
-  margin-top: 1rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem 1rem;
+  margin-bottom: 2rem;
+  width: 100%;
 }
 
-.UiUx-feature-item {
+.UX-checklist-item {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 0.8rem;
-  margin-bottom: 0.8rem;
-  padding: 0.8rem;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  backdrop-filter: blur(5px);
-  transition: all 0.3s ease;
+  background: rgba(0, 0, 0, 0.05);
+  /* Transparent black background */
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  font-size: 0.85rem;
+  color: #333;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  line-height: 1;
+  overflow: hidden;
 }
 
-.UiUx-feature-item:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateX(5px);
+.UX-checklist-item span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  width: 100%;
 }
 
-.UiUx-feature-icon {
-  color: white;
-  font-weight: bold;
-  font-size: 1.1rem;
-  margin-top: 0.1rem;
+.UX-checklist-icon {
+  color: #1a1a2e;
+  /* The reference image icon actually looks dark, not orange. Let's make it a very dark gray/black to match */
+  font-size: 0.9rem;
   flex-shrink: 0;
 }
 
-.UiUx-feature-text {
-  color: black;
-  font-size: clamp(0.9rem, 2vw, 1rem);
-  line-height: 1.5;
-  font-family: 'Aldrich', sans-serif;
-  font-weight: 100;
-  letter-spacing: 0.5px;
-  word-wrap: break-word;
+.UX-course-card-image {
+  margin-top: auto;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 140px;
+  width: 100%;
 }
 
-/* Carousel Arrows */
-.UiUx-carousel-arrows {
+.UX-course-card-badges {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
+  width: 100%;
+}
+
+.UX-badge-pill {
+  background: transparent;
+  border: 1px solid #ec4899;
+  /* Changed from brown to purple then to pink */
+  color: #1a1a2e;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+}
+
+.UX-badge-dark {
+  background: #0ea5e9;
+  /* Changed from brown to purple then to blue */
+  color: #ffffff;
+  /* Text inside the solid blue pill looks better white */
+}
+
+.UX-course-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.UX-course-new-card:hover .UX-course-card-image img {
+  transform: scale(1.05);
+}
+
+/* Carousel Arrows (Preserved) */
+.UX-carousel-arrows {
   display: flex;
   position: absolute;
   top: 50%;
@@ -534,12 +851,13 @@ body {
   padding: 0 0.5rem;
 }
 
-.UiUx-carousel-arrow {
-  background: rgba(74, 144, 226, 0.9);
-  color: white;
-  border: 2px solid rgba(255, 255, 255, 0.8);
-  width: clamp(40px, 8vw, 60px);
-  height: clamp(40px, 8vw, 60px);
+.UX-carousel-arrow {
+  background: #ec4899 !important;
+  /* Pink theme */
+  color: white !important;
+  border: 4px solid #f4f4f4;
+  width: clamp(45px, 8vw, 65px);
+  height: clamp(45px, 8vw, 65px);
   border-radius: 50%;
   font-size: clamp(1.2rem, 3vw, 1.8rem);
   cursor: pointer;
@@ -547,65 +865,75 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 12px rgba(236, 72, 153, 0.4);
   z-index: 21;
   position: relative;
   pointer-events: auto;
 }
 
-.UiUx-carousel-arrow:hover:not(:disabled) {
-  background: rgba(74, 144, 226, 1);
+.UX-carousel-arrow:hover:not(:disabled) {
+  background: #db2777 !important;
   border-color: white;
   transform: scale(1.1);
-  box-shadow: 0 0 20px rgba(74, 144, 226, 0.5);
+  box-shadow: 0 0 20px rgba(236, 72, 153, 0.5);
 }
 
-.UiUx-carousel-arrow-left {
+.UX-carousel-arrow-left {
   margin-left: clamp(-60px, -5vw, -80px);
 }
 
-.UiUx-carousel-arrow-right {
+.UX-carousel-arrow-right {
   margin-right: clamp(-60px, -5vw, -80px);
 }
 
-/* Dots Indicator */
-.UiUx-course-dots {
+/* Dots Indicator (Redesigned as lines) */
+.UX-course-dots {
   display: flex;
   justify-content: center;
-  gap: 0.8rem;
-  margin-top: 2.5rem;
+  gap: 0;
+  margin-top: 4rem;
   z-index: 10;
 }
 
-.UiUx-course-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
+.UX-course-dot {
+  width: 100px;
+  height: 4px;
+  border-radius: 0;
   border: none;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
   cursor: pointer;
   transition: all 0.3s ease;
   padding: 0;
 }
 
-.UiUx-course-dot:hover {
-  background: rgba(255, 255, 255, 0.5);
-  transform: scale(1.2);
+.UX-course-dot:first-child {
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
 }
 
-.UiUx-course-dot.UiUx-active-dot {
-  background: #4A90E2;
-  transform: scale(1.3);
-  box-shadow: 0 0 10px rgba(74, 144, 226, 0.5);
+.UX-course-dot:last-child {
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+.UX-course-dot:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.UX-course-dot.UX-active-dot {
+  background: #0ea5e9;
+  /* Blue progress color */
+  box-shadow: 0 0 10px rgba(14, 165, 233, 0.5);
 }
 
 /* ============================================= */
-/* SIGNIN SECTION */
+/* ALL OTHER SECTIONS - UNCHANGED */
 /* ============================================= */
 
-.UiUx-signin-section {
+/* Signin Section */
+.UX-signin-section {
   padding: 60px 20px;
-  background: #e6f2ff;
+  background: #fff5eb;
   border-radius: 60px;
   position: relative;
   z-index: 2;
@@ -614,7 +942,7 @@ body {
   margin: 0 auto;
 }
 
-.UiUx-signin-container {
+.UX-signin-container {
   border-radius: 100px;
   display: flex;
   gap: 50px;
@@ -623,24 +951,23 @@ body {
   width: 100%;
 }
 
-/* Description Section */
-.UiUx-description-section {
+.UX-description-section {
   flex: 1;
   padding: 30px;
   background: white;
   border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(74, 144, 226, 0.1);
+  box-shadow: 0 10px 30px rgba(255, 107, 53, 0.1);
   position: relative;
   z-index: 2;
   min-width: 0;
 }
 
-.UiUx-section-subtitle1 {
+.UX-section-subtitle1 {
   font-size: 28px;
   color: #333;
   margin-bottom: 20px;
   font-weight: 100;
-  background: linear-gradient(135deg, #4A90E2 0%, #FF6B8B 100%);
+  background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -648,20 +975,19 @@ body {
   letter-spacing: 1px;
 }
 
-.UiUx-section-description {
+.UX-section-description {
   font-size: 16px;
   line-height: 1.8;
-  color: #1f2937;
+  color: #2c1810;
   margin-bottom: 30px;
   font-family: 'Aldrich', sans-serif;
   font-weight: 100;
   letter-spacing: 0.5px;
   word-wrap: break-word;
-  overflow-wrap: break-word;
 }
 
-.UiUx-show-form-btn {
-  background: rgb(224, 117, 135);
+.UX-show-form-btn {
+  background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
   color: white;
   border: none;
   padding: 15px 35px;
@@ -670,55 +996,54 @@ body {
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3);
+  box-shadow: 0 5px 15px rgba(255, 140, 66, 0.3);
   display: inline-flex;
   align-items: center;
   gap: 10px;
   font-family: 'Aldrich', sans-serif;
   letter-spacing: 0.5px;
-  width: 100%;
-  max-width: 300px;
+  white-space: nowrap;
 }
 
-.UiUx-show-form-btn:hover {
+.UX-show-form-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(74, 144, 226, 0.4);
+  box-shadow: 0 8px 20px rgba(255, 140, 66, 0.4);
 }
 
-/* Form Section */
-.UiUx-form-section {
+.UX-form-section {
   flex: 0 0 450px;
   position: sticky;
   top: 20px;
   z-index: 2;
 }
 
-.UiUx-form-wrapper {
-  background-color: #e6f2ff;
+.UX-form-wrapper {
+  background-color: #fff5eb;
   padding: 40px;
   border-radius: 15px;
-  box-shadow: 0 15px 35px rgba(74, 144, 226, 0.2);
+  box-shadow: 0 15px 35px rgba(255, 140, 66, 0.2);
   position: relative;
-  animation: UiUx-slideInRight 0.5s ease-out;
+  animation: UX-slideInRight 0.5s ease-out;
 }
 
-@keyframes UiUx-slideInRight {
+@keyframes UX-slideInRight {
   from {
     opacity: 0;
     transform: translateX(30px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
   }
 }
 
-.UiUx-close-form-btn {
+.UX-close-form-btn {
   position: absolute;
   top: 15px;
   right: 15px;
   background: rgba(255, 255, 255, 0.9);
-  color: #4A90E2;
+  color: #ff8c42;
   border: none;
   border-radius: 50%;
   width: 36px;
@@ -732,58 +1057,58 @@ body {
   z-index: 10;
 }
 
-.UiUx-close-form-btn:hover {
+.UX-close-form-btn:hover {
   background: white;
   transform: rotate(90deg);
 }
 
-.UiUx-signin-form {
+.UX-signin-form {
   position: relative;
   z-index: 1;
 }
 
-/* Form Elements */
-.UiUx-form-group {
+.UX-form-group {
   margin-bottom: 25px;
+  width: 100%;
 }
 
-.UiUx-form-group label {
+.UX-form-group label {
   display: block;
   margin-bottom: 8px;
   font-weight: 100;
-  color: #1f2937;
+  color: #2c1810;
   font-size: 15px;
   font-family: 'Aldrich', sans-serif;
   letter-spacing: 0.5px;
 }
 
-.UiUx-form-input {
+.UX-form-input {
   width: 100%;
   padding: 14px 18px;
-  border: 2px solid #b3d9ff;
+  border: 2px solid #ffd9b8;
   border-radius: 10px;
   font-size: 16px;
   background: rgba(255, 255, 255, 0.9);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  color: #1f2937;
+  color: #2c1810;
   font-family: 'Aldrich', sans-serif;
   font-weight: 100;
   letter-spacing: 0.5px;
 }
 
-.UiUx-form-input:focus {
+.UX-form-input:focus {
   outline: none;
-  border-color: #4A90E2;
+  border-color: #ff8c42;
   background: white;
-  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+  box-shadow: 0 0 0 3px rgba(255, 140, 66, 0.2);
 }
 
-.UiUx-form-input.UiUx-error {
+.UX-form-input.UX-error {
   border-color: #ff6b6b;
   background: rgba(255, 255, 255, 0.95);
 }
 
-.UiUx-error-message {
+.UX-error-message {
   display: block;
   margin-top: 6px;
   color: #ff4444;
@@ -793,20 +1118,22 @@ body {
   letter-spacing: 0.5px;
 }
 
-.UiUx-checkbox-group {
+.UX-checkbox-group {
   display: flex;
   align-items: flex-start;
   gap: 10px;
+  width: 100%;
 }
 
-.UiUx-checkbox-group input[type="checkbox"] {
+.UX-checkbox-group input[type="checkbox"] {
   margin-top: 4px;
-  accent-color: #4A90E2;
+  accent-color: #ff8c42;
   transform: scale(1.2);
+  flex-shrink: 0;
 }
 
-.UiUx-checkbox-group label {
-  color: #1f2937;
+.UX-checkbox-group label {
+  color: #2c1810;
   font-size: 14px;
   line-height: 1.5;
   cursor: pointer;
@@ -816,9 +1143,9 @@ body {
   flex: 1;
 }
 
-.UiUx-submit-btn {
+.UX-submit-btn {
   width: 100%;
-  background: linear-gradient(135deg, #4A90E2 0%, #FF6B8B 100%);
+  background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
   color: white;
   border: none;
   padding: 16px;
@@ -830,21 +1157,18 @@ body {
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-top: 10px;
-  box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+  box-shadow: 0 4px 15px rgba(255, 140, 66, 0.3);
   font-family: 'Aldrich', sans-serif;
 }
 
-.UiUx-submit-btn:hover {
-  background: linear-gradient(135deg, #3a80d2 0%, #e65a7a 100%);
+.UX-submit-btn:hover {
+  background: linear-gradient(135deg, #e65a2a 0%, #e67e37 100%);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(74, 144, 226, 0.4);
+  box-shadow: 0 6px 20px rgba(255, 140, 66, 0.4);
 }
 
-/* ============================================= */
-/* LOCKED SECTIONS */
-/* ============================================= */
-
-.UiUx-locked-section {
+/* Locked Sections - FIXED BUTTON TEXT RESPONSIVE ISSUE */
+.UX-locked-section {
   position: relative;
   min-height: 500px;
   display: flex;
@@ -852,18 +1176,22 @@ body {
   justify-content: center;
   padding: 80px 20px;
   overflow: hidden;
-  background: linear-gradient(135deg, #4A90E2 0%, #FF6B8B 100%);
+  background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
   width: 100%;
 }
 
-.UiUx-locked-section-overlay {
+.UX-templates-section {
+  background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%) !important;
+}
+
+.UX-locked-section-overlay {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: 
-    linear-gradient(135deg, rgba(74, 144, 226, 0.8) 0%, rgba(255, 107, 139, 0.8) 100%),
+  background:
+    linear-gradient(135deg, rgba(255, 107, 53, 0.8) 0%, rgba(255, 140, 66, 0.8) 100%),
     url('https://images.unsplash.com/photo-1555099962-4199c345e5dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
   background-size: cover;
   background-position: center;
@@ -872,7 +1200,13 @@ body {
   z-index: 1;
 }
 
-.UiUx-locked-content {
+.UX-templates-section .UX-locked-section-overlay {
+  background:
+    linear-gradient(135deg, rgba(206, 75, 10, 0.8) 0%, rgba(237, 118, 58, 0.8) 100%),
+    url('https://images.unsplash.com/photo-1555099962-4199c345e5dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+}
+
+.UX-locked-content {
   position: relative;
   z-index: 3;
   text-align: center;
@@ -881,16 +1215,23 @@ body {
   background: rgba(255, 255, 255, 0.95);
   border-radius: 25px;
   border: 2px solid rgba(255, 255, 255, 0.5);
-  box-shadow: 
-    0 20px 60px rgba(74, 144, 226, 0.4),
+  box-shadow:
+    0 20px 60px rgba(255, 107, 53, 0.4),
     0 8px 30px rgba(0, 0, 0, 0.2),
     inset 0 1px 0 rgba(255, 255, 255, 0.3),
     inset 0 -1px 0 rgba(0, 0, 0, 0.1);
   width: 100%;
-  margin: 0 20px;
 }
 
-.UiUx-locked-icon {
+.UX-templates-section .UX-locked-content {
+  box-shadow:
+    0 20px 60px rgba(246, 166, 92, 0.4),
+    0 8px 30px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.UX-locked-icon {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -898,8 +1239,8 @@ body {
   margin-bottom: 30px;
 }
 
-.UiUx-premium-badge {
-  background: linear-gradient(135deg, #4A90E2 0%, #FF6B8B 100%);
+.UX-premium-badge {
+  background: linear-gradient(135deg, #ff8c42 0%, #ff6b35 100%);
   color: white;
   padding: 8px 20px;
   border-radius: 30px;
@@ -907,33 +1248,44 @@ body {
   font-weight: bold;
   letter-spacing: 1px;
   text-transform: uppercase;
-  animation: UiUx-badgeGlow 2s infinite;
+  animation: UX-badgeGlow 2s infinite;
   font-family: 'Aldrich', sans-serif;
   border: 2px solid white;
 }
 
-@keyframes UiUx-badgeGlow {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(74, 144, 226, 0.5);
+.UX-templates-section .UX-premium-badge {
+  background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+}
+
+@keyframes UX-badgeGlow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(255, 140, 66, 0.5);
   }
+
   50% {
-    box-shadow: 0 0 30px rgba(74, 144, 226, 0.8);
+    box-shadow: 0 0 30px rgba(255, 140, 66, 0.8);
   }
 }
 
-.UiUx-locked-section .UiUx-section-title {
+.UX-locked-section .UX-section-title {
   color: white;
   font-size: 42px;
   margin-bottom: 20px;
-  background: linear-gradient(135deg, #4A90E2 0%, #FF6B8B 100%);
+  background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0 2px 4px rgba(74, 144, 226, 0.3);
+  text-shadow: 0 2px 4px rgba(255, 107, 53, 0.3);
 }
 
-.UiUx-locked-section .UiUx-section-description {
-  color: #4a5568;
+.UX-templates-section .UX-section-title {
+  color: white;
+}
+
+.UX-locked-section .UX-section-description {
+  color: #5a3921;
   font-size: 18px;
   line-height: 1.6;
   margin-bottom: 40px;
@@ -945,8 +1297,8 @@ body {
   letter-spacing: 0.5px;
 }
 
-.UiUx-locked-btn {
-  background: rgb(224, 117, 135);
+.UX-locked-btn {
+  background: linear-gradient(135deg, #ff8c42 0%, #ff6b35 100%);
   color: white;
   border: 2px solid rgba(255, 255, 255, 0.5);
   padding: 18px 50px;
@@ -959,57 +1311,82 @@ body {
   justify-content: center;
   gap: 15px;
   transition: all 0.4s ease;
-  box-shadow: 
-    0 10px 30px rgba(74, 144, 226, 0.4),
+  box-shadow:
+    0 10px 30px rgba(255, 107, 53, 0.4),
     0 4px 15px rgba(0, 0, 0, 0.2),
     inset 0 2px 0 rgba(255, 255, 255, 0.3);
   position: relative;
   overflow: hidden;
   font-family: 'Aldrich', sans-serif;
   letter-spacing: 0.5px;
-  width: 100%;
-  max-width: 350px;
+  width: auto;
+  max-width: 100%;
 }
 
-.UiUx-locked-btn:hover {
+.UX-pay-now-btn {
+  background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+}
+
+.UX-locked-btn:hover {
   transform: translateY(-5px);
-  box-shadow: 
-    0 15px 40px rgba(74, 144, 226, 0.6),
+  box-shadow:
+    0 15px 40px rgba(255, 107, 53, 0.6),
     0 6px 20px rgba(0, 0, 0, 0.3),
     inset 0 2px 0 rgba(255, 255, 255, 0.4);
-  background: rgb(197, 53, 77);
+  background: linear-gradient(135deg, #ff9d6e 0%, #ff8c42 100%);
 }
 
-.UiUx-locked-btn:active {
+.UX-pay-now-btn:hover {
+  background: linear-gradient(135deg, #9d7af9 0%, #8b5cf6 100%);
+  box-shadow:
+    0 15px 40px rgba(139, 92, 246, 0.6),
+    0 6px 20px rgba(0, 0, 0, 0.3),
+    inset 0 2px 0 rgba(255, 255, 255, 0.4);
+}
+
+.UX-locked-btn:active {
   transform: translateY(-2px);
-  box-shadow: 
-    0 8px 25px rgba(74, 144, 226, 0.5),
+  box-shadow:
+    0 8px 25px rgba(255, 107, 53, 0.5),
     0 3px 10px rgba(0, 0, 0, 0.2),
     inset 0 2px 0 rgba(255, 255, 255, 0.3);
 }
 
-.UiUx-locked-btn-text {
+/* FIXED: Locked button text responsive issue */
+.UX-locked-btn-text {
   position: relative;
   z-index: 1;
   font-weight: bold;
   font-size: 20px;
+  /* Changed from nowrap to normal to allow wrapping */
+  white-space: normal;
+  text-align: center;
+  /* Allow text to break naturally */
+  word-break: break-word;
+  overflow-wrap: break-word;
+  /* Ensure text wraps on small screens */
+  max-width: 100%;
+  display: block;
+  line-height: 1.3;
 }
 
-.UiUx-locked-note {
-  color: #6b7a99;
+.UX-locked-note {
+  color: #8b5e3c;
   font-size: 14px;
   margin-top: 20px;
   font-style: italic;
   font-family: 'Aldrich', sans-serif;
   font-weight: 100;
   letter-spacing: 0.5px;
+  word-wrap: break-word;
 }
 
-/* ============================================= */
-/* GALLERY SECTION */
-/* ============================================= */
+.UX-templates-section .UX-locked-note {
+  color: #5b4b8a;
+}
 
-.UiUx-gallery-section {
+/* Gallery Section - FIXED DESCRIPTION GAP ISSUE */
+.UX-gallery-section {
   max-width: 1400px;
   width: 100%;
   margin: 0 auto;
@@ -1017,66 +1394,73 @@ body {
   z-index: 2;
 }
 
-.UiUx-gallery-container {
+.UX-gallery-container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-.UiUx-gallery-grid {
+.UX-gallery-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
   margin-top: 30px;
-}
-
-.UiUx-gallery-item-wrapper {
-  margin-bottom: 30px;
   width: 100%;
 }
 
-.UiUx-gallery-item {
+.UX-gallery-item-wrapper {
+  margin-bottom: 30px;
+  width: 100%;
+  /* FIXED: Remove extra bottom margin that causes gap */
+  display: flex;
+  flex-direction: column;
+}
+
+.UX-gallery-item {
   background: white;
   border-radius: 8px;
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
-  box-shadow: 0 4px 6px rgba(74, 144, 226, 0.1);
-  border: 1px solid #e6f2ff;
+  box-shadow: 0 4px 6px rgba(255, 107, 53, 0.1);
+  border: 1px solid #ffd9b8;
   width: 100%;
+  height: 100%;
+  /* FIXED: Ensure item takes full height of wrapper */
+  flex: 1;
 }
 
-.UiUx-gallery-item:hover {
+.UX-gallery-item:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 15px rgba(74, 144, 226, 0.2);
+  box-shadow: 0 8px 15px rgba(255, 107, 53, 0.2);
 }
 
-.UiUx-image-container {
+.UX-image-container {
   position: relative;
   overflow: hidden;
   height: 200px;
   width: 100%;
 }
 
-.UiUx-gallery-item img {
+.UX-gallery-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.UiUx-gallery-item:hover img {
+.UX-gallery-item:hover img {
   transform: scale(1.05);
 }
 
-.UiUx-image-overlay {
+.UX-image-overlay {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(74, 144, 226, 0.8);
+  background: rgba(255, 107, 53, 0.8);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1084,16 +1468,16 @@ body {
   transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.UiUx-image-container:hover .UiUx-image-overlay {
+.UX-image-container:hover .UX-image-overlay {
   opacity: 1;
 }
 
-.UiUx-image-overlay span {
+.UX-image-overlay span {
   color: white;
   font-weight: 100;
   font-size: 16px;
   padding: 10px 20px;
-  background: rgba(74, 144, 226, 0.9);
+  background: rgba(255, 107, 53, 0.9);
   border-radius: 4px;
   border: 2px solid white;
   font-family: 'Aldrich', sans-serif;
@@ -1101,57 +1485,66 @@ body {
   text-align: center;
 }
 
-.UiUx-image-title {
+.UX-image-title {
   padding: 15px;
   text-align: center;
-  background: #e6f2ff;
+  background: #fff5eb;
   width: 100%;
+  /* FIXED: Remove extra bottom margin */
+  margin-bottom: 0;
 }
 
-.UiUx-image-title h4 {
+.UX-image-title h4 {
   margin: 0;
   font-size: 18px;
-  color: #1f2937;
+  color: #2c1810;
   font-weight: 100;
   font-family: 'HEXCO', sans-serif;
   letter-spacing: 1px;
   word-wrap: break-word;
 }
 
-.UiUx-gallery-description {
-  margin-top: 15px;
+/* FIXED: Gallery description gap issue */
+.UX-gallery-description {
+  /* FIXED: Reduced margin-top to eliminate extra gap */
+  margin-top: 8px;
   padding: 20px;
-  background: #e6f2ff;
+  background: #fff5eb;
   border-radius: 8px;
-  border-left: 4px solid #4A90E2;
-  animation: UiUx-slideDown 0.3s ease-out;
+  border-left: 4px solid #ff8c42;
+  animation: UX-slideDown 0.3s ease-out;
   width: 100%;
+  /* FIXED: Ensure description sits directly below image title */
+  display: block;
+  position: relative;
+  z-index: 1;
 }
 
-@keyframes UiUx-slideDown {
+@keyframes UX-slideDown {
   from {
     opacity: 0;
     transform: translateY(-10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-.UiUx-description-content h4 {
+.UX-description-content h4 {
   margin: 0 0 10px 0;
-  color: #1f2937;
+  color: #2c1810;
   font-size: 16px;
   font-weight: 100;
   font-family: 'HEXCO', sans-serif;
   letter-spacing: 1px;
 }
 
-.UiUx-description-content p {
+.UX-description-content p {
   margin: 0;
   font-size: 14px;
-  color: #4a5568;
+  color: #5a3921;
   line-height: 1.6;
   font-family: 'Aldrich', sans-serif;
   font-weight: 100;
@@ -1159,10 +1552,10 @@ body {
 }
 
 /* ============================================= */
-/* RESOURCES SECTION */
+/* RESOURCES SECTION - UPDATED RESPONSIVENESS */
 /* ============================================= */
 
-.UiUx-resources-section {
+.UX-resources-section {
   max-width: 1400px;
   width: 100%;
   margin: 0 auto;
@@ -1170,14 +1563,14 @@ body {
   z-index: 2;
 }
 
-.UiUx-resources-container {
+.UX-resources-container {
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-.UiUx-resources-grid {
+.UX-resources-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
@@ -1186,11 +1579,11 @@ body {
   width: 100%;
 }
 
-.UiUx-resource-card {
+.UX-resource-card {
   background: white;
   border-radius: 15px;
   padding: 1.8rem;
-  box-shadow: 0 4px 15px rgba(74, 144, 226, 0.1);
+  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.1);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border: 2px solid transparent;
   position: relative;
@@ -1201,13 +1594,13 @@ body {
   min-width: 0;
 }
 
-.UiUx-resource-card:hover {
+.UX-resource-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 25px rgba(74, 144, 226, 0.15);
-  border-color: #4A90E2;
+  box-shadow: 0 12px 25px rgba(255, 107, 53, 0.15);
+  border-color: #ff8c42;
 }
 
-.UiUx-resource-icon {
+.UX-resource-icon {
   position: relative;
   margin-bottom: 1.2rem;
   display: flex;
@@ -1215,9 +1608,9 @@ body {
   gap: 0.8rem;
 }
 
-.UiUx-resource-icon-main {
+.UX-resource-icon-main {
   font-size: 2.5rem;
-  background: linear-gradient(135deg, #4A90E2 0%, #FF6B8B 100%);
+  background: linear-gradient(135deg, #ff8c42 0%, #ffb347 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1225,26 +1618,26 @@ body {
   flex-shrink: 0;
 }
 
-.UiUx-resource-type-icon {
+.UX-resource-type-icon {
   font-size: 1.2rem;
-  background: #e6f2ff;
+  background: #ffd9b8;
   padding: 0.4rem 0.6rem;
   border-radius: 6px;
-  color: #4A90E2;
+  color: #ff6b35;
   flex-shrink: 0;
 }
 
-.UiUx-resource-content {
+.UX-resource-content {
   flex: 1;
   display: flex;
   flex-direction: column;
   min-width: 0;
 }
 
-.UiUx-resource-title {
+.UX-resource-title {
   font-size: 1.3rem;
   font-weight: 100;
-  color: #1f2937;
+  color: #2c1810;
   margin-bottom: 0.8rem;
   line-height: 1.4;
   font-family: 'HEXCO', sans-serif;
@@ -1252,8 +1645,8 @@ body {
   word-wrap: break-word;
 }
 
-.UiUx-resource-description {
-  color: #4a5568;
+.UX-resource-description {
+  color: #5a3921;
   font-size: 0.95rem;
   line-height: 1.6;
   margin-bottom: 1.5rem;
@@ -1264,66 +1657,74 @@ body {
   word-wrap: break-word;
 }
 
-.UiUx-resource-meta {
+.UX-resource-meta {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1.2rem;
   padding: 0.8rem 0;
-  border-top: 1px solid #e6f2ff;
-  border-bottom: 1px solid #e6f2ff;
+  border-top: 1px solid #ffd9b8;
+  border-bottom: 1px solid #ffd9b8;
   gap: 8px;
   width: 100%;
 }
 
-.UiUx-resource-type {
+.UX-resource-type {
   font-size: 0.85rem;
-  color: #4A90E2;
+  color: #ff6b35;
   font-weight: 100;
   padding: 0.3rem 0.8rem;
-  background: #e6f2ff;
+  background: #fff5eb;
   border-radius: 4px;
   font-family: 'Aldrich', sans-serif;
   letter-spacing: 0.5px;
   white-space: nowrap;
 }
 
-.UiUx-resource-downloads {
+.UX-resource-downloads {
   font-size: 0.85rem;
-  color: #6b7a99;
+  color: #8b5e3c;
   font-weight: 100;
   font-family: 'Aldrich', sans-serif;
   letter-spacing: 0.5px;
   white-space: nowrap;
 }
 
-.UiUx-resource-restricted-tag {
+.UX-resource-restricted-tag {
   position: absolute;
   top: 15px;
   right: 15px;
-  background: rgb(224, 117, 135);
+  background: linear-gradient(135deg, #ff8c42 0%, #ff6b35 100%);
   color: white;
   padding: 4px 12px;
   border-radius: 12px;
   font-size: 12px;
   font-weight: 600;
-  animation: UiUx-pulse 2s infinite;
+  animation: UX-pulse 2s infinite;
   white-space: nowrap;
   z-index: 3;
   border: 2px solid white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-@keyframes UiUx-pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
+@keyframes UX-pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 /* Download Buttons - UPDATED FOR RESPONSIVE */
-.UiUx-download-btn {
-  background: rgb(224, 117, 135);
+.UX-download-btn {
+  background: linear-gradient(135deg, #ff8c42 0%, #ff6b35 100%);
   color: white;
   border: none;
   padding: 0.9rem 1.5rem;
@@ -1345,20 +1746,20 @@ body {
   gap: 4px;
 }
 
-.UiUx-download-btn:hover {
+.UX-download-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(74, 144, 226, 0.3);
+  box-shadow: 0 6px 15px rgba(255, 107, 53, 0.3);
 }
 
-.UiUx-download-btn.UiUx-downloaded {
+.UX-download-btn.UX-downloaded {
   background: linear-gradient(135deg, #34c759 0%, #28a745 100%);
 }
 
-.UiUx-download-btn.UiUx-downloaded:hover {
+.UX-download-btn.UX-downloaded:hover {
   box-shadow: 0 6px 15px rgba(52, 199, 89, 0.3);
 }
 
-.UiUx-download-text {
+.UX-download-text {
   font-size: 1rem;
   font-weight: 600;
   display: flex;
@@ -1366,9 +1767,9 @@ body {
   gap: 5px;
 }
 
-.UiUx-free-badge {
+.UX-free-badge {
   background: white;
-  color: #4A90E2;
+  color: #ff6b35;
   padding: 2px 8px;
   border-radius: 12px;
   font-size: 0.85rem;
@@ -1377,17 +1778,17 @@ body {
   white-space: nowrap;
 }
 
-.UiUx-download-again {
+.UX-download-again {
   font-size: 0.8rem;
   opacity: 0.8;
   margin-top: 2px;
   white-space: nowrap;
 }
 
-.UiUx-join-course-btn {
+.UX-join-course-btn {
   width: 100%;
   padding: 12px 20px;
-  background: rgb(224, 117, 135);
+  background: linear-gradient(135deg, #ff8c42 0%, #ff6b35 100%);
   color: white;
   border: none;
   border-radius: 8px;
@@ -1400,35 +1801,35 @@ body {
   justify-content: center;
   align-items: center;
   margin-top: 15px;
-  box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+  box-shadow: 0 4px 15px rgba(255, 140, 66, 0.3);
   gap: 4px;
   font-family: 'Aldrich', sans-serif;
   letter-spacing: 0.5px;
   min-height: 50px;
 }
 
-.UiUx-join-course-btn:hover {
+.UX-join-course-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(74, 144, 226, 0.4);
-  background: linear-gradient(135deg, #3a80d2 0%, #e65a7a 100%);
+  box-shadow: 0 6px 20px rgba(255, 140, 66, 0.4);
+  background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
 }
 
-.UiUx-join-text {
+.UX-join-text {
   font-size: 1rem;
   font-weight: 600;
 }
 
 /* Resources Info */
-.UiUx-resources-info {
-  background: #e6f2ff;
+.UX-resources-info {
+  background: #fff5eb;
   border-radius: 15px;
   padding: 2.5rem;
   margin-top: 2rem;
-  border: 2px solid #e6f2ff;
+  border: 2px solid #ffd9b8;
   width: 100%;
 }
 
-.UiUx-resources-stats {
+.UX-resources-stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1.5rem;
@@ -1436,78 +1837,78 @@ body {
   width: 100%;
 }
 
-.UiUx-stat-card {
+.UX-stat-card {
   background: white;
   border-radius: 10px;
   padding: 1.5rem;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(74, 144, 226, 0.08);
-  border: 1px solid #e6f2ff;
+  box-shadow: 0 4px 10px rgba(255, 107, 53, 0.08);
+  border: 1px solid #ffd9b8;
   min-width: 0;
 }
 
-.UiUx-stat-card h3 {
+.UX-stat-card h3 {
   font-size: 1rem;
-  color: #4a5568;
+  color: #5a3921;
   margin-bottom: 0.8rem;
   font-weight: 100;
   font-family: 'Aldrich', sans-serif;
   letter-spacing: 0.5px;
 }
 
-.UiUx-stat-number {
+.UX-stat-number {
   font-size: 2.2rem;
   font-weight: bold;
-  color: #4A90E2;
+  color: #ff6b35;
   margin-bottom: 0.5rem;
   font-family: 'HEXCO', sans-serif;
   letter-spacing: 1px;
 }
 
-.UiUx-stat-label {
+.UX-stat-label {
   font-size: 0.85rem;
-  color: #6b7a99;
+  color: #8b5e3c;
   font-weight: 100;
   font-family: 'Aldrich', sans-serif;
   letter-spacing: 0.5px;
 }
 
-.UiUx-progress-bar {
+.UX-progress-bar {
   width: 100%;
   height: 6px;
-  background: #e6f2ff;
+  background: #ffd9b8;
   border-radius: 3px;
   margin-top: 8px;
   overflow: hidden;
 }
 
-.UiUx-progress-fill {
+.UX-progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, #4A90E2, #FF6B8B);
+  background: linear-gradient(90deg, #ff8c42, #ff6b35);
   border-radius: 3px;
   transition: width 0.5s ease;
 }
 
-.UiUx-resources-note {
+.UX-resources-note {
   background: white;
   border-radius: 10px;
   padding: 1.5rem;
-  border-left: 4px solid #4A90E2;
+  border-left: 4px solid #ec4899;
   width: 100%;
 }
 
-.UiUx-resources-note h4 {
+.UX-resources-note h4 {
   font-size: 1.1rem;
-  color: #1f2937;
+  color: #2c1810;
   margin-bottom: 0.8rem;
   font-weight: 100;
   font-family: 'HEXCO', sans-serif;
   letter-spacing: 0.5px;
 }
 
-.UiUx-resources-note p {
+.UX-resources-note p {
   font-size: 0.95rem;
-  color: #4a5568;
+  color: #5a3921;
   line-height: 1.6;
   margin: 0;
   font-family: 'Aldrich', sans-serif;
@@ -1522,13 +1923,13 @@ body {
 
 /* Mobile optimization for resource stat cards */
 @media (max-width: 768px) {
-  .UiUx-resources-stats {
+  .UX-resources-stats {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 1rem !important;
     padding: 0 0.5rem !important;
   }
-  
-  .UiUx-stat-card {
+
+  .UX-stat-card {
     padding: 1rem 0.8rem !important;
     min-height: 100px !important;
     display: flex !important;
@@ -1536,8 +1937,8 @@ body {
     justify-content: center !important;
     align-items: center !important;
   }
-  
-  .UiUx-stat-number {
+
+  .UX-stat-number {
     font-size: 1.5rem !important;
     margin-bottom: 0.3rem !important;
     line-height: 1.2 !important;
@@ -1545,8 +1946,8 @@ body {
     word-wrap: break-word !important;
     overflow-wrap: break-word !important;
   }
-  
-  .UiUx-stat-label {
+
+  .UX-stat-label {
     font-size: 0.7rem !important;
     line-height: 1.3 !important;
     text-align: center !important;
@@ -1557,9 +1958,9 @@ body {
     white-space: normal !important;
     max-width: 100% !important;
   }
-  
+
   /* Progress bar adjustments */
-  .UiUx-progress-bar {
+  .UX-progress-bar {
     margin-top: 0.5rem !important;
     width: 80% !important;
     max-width: 120px !important;
@@ -1567,29 +1968,29 @@ body {
 }
 
 @media (max-width: 480px) {
-  .UiUx-resources-stats {
+  .UX-resources-stats {
     grid-template-columns: 1fr !important;
     gap: 0.8rem !important;
     max-width: 280px !important;
     margin: 0 auto !important;
   }
-  
-  .UiUx-stat-card {
+
+  .UX-stat-card {
     padding: 0.8rem !important;
     min-height: 90px !important;
     width: 100% !important;
   }
-  
-  .UiUx-stat-number {
+
+  .UX-stat-number {
     font-size: 1.3rem !important;
   }
-  
-  .UiUx-stat-label {
+
+  .UX-stat-label {
     font-size: 0.65rem !important;
     padding: 0 0.3rem !important;
   }
-  
-  .UiUx-progress-bar {
+
+  .UX-progress-bar {
     margin-top: 0.4rem !important;
     width: 70% !important;
     max-width: 100px !important;
@@ -1597,33 +1998,33 @@ body {
 }
 
 @media (max-width: 360px) {
-  .UiUx-stat-number {
+  .UX-stat-number {
     font-size: 1.2rem !important;
   }
-  
-  .UiUx-stat-label {
+
+  .UX-stat-label {
     font-size: 0.6rem !important;
   }
-  
-  .UiUx-stat-card {
+
+  .UX-stat-card {
     padding: 0.7rem !important;
     min-height: 85px !important;
   }
 }
 
 /* Image responsiveness for resources section */
-.UiUx-resources-section img {
+.UX-resources-section img {
   max-width: 100% !important;
   height: auto !important;
   display: block !important;
 }
 
 /* Make sure stat cards maintain proper spacing */
-.UiUx-resources-info {
+.UX-resources-info {
   padding: 1.5rem !important;
 }
 
-.UiUx-stat-card h3 {
+.UX-stat-card h3 {
   font-size: 0.9rem !important;
   margin-bottom: 0.5rem !important;
   text-align: center !important;
@@ -1632,18 +2033,18 @@ body {
 }
 
 /* ============================================= */
-/* BENEFITS SECTION */
+/* BENEFITS SECTION - UPDATED RESPONSIVENESS */
 /* ============================================= */
 
-.UiUx-benefits-section {
+.UX-benefits-section {
   position: relative;
   padding: 100px 20px;
-  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  background: linear-gradient(135deg, #fffaf5 0%, #fff0e6 100%);
   overflow: hidden;
   width: 100%;
 }
 
-.UiUx-benefits-container {
+.UX-benefits-container {
   position: relative;
   z-index: 2;
   max-width: 1200px;
@@ -1651,19 +2052,19 @@ body {
   width: 100%;
 }
 
-.UiUx-benefits-section .UiUx-section-title {
-  color: #1f2937;
+.UX-benefits-section .UX-section-title {
+  color: #2c1810;
   font-size: 48px;
   text-align: center;
   margin-bottom: 20px;
-  background: linear-gradient(135deg, #4A90E2 0%, #FF6B8B 100%);
+  background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.UiUx-benefits-section .UiUx-section-subtitle {
-  color: #4a5568;
+.UX-benefits-section .UX-section-subtitle {
+  color: #5a3921;
   font-size: 18px;
   text-align: center;
   max-width: 800px;
@@ -1675,7 +2076,7 @@ body {
 }
 
 /* FIXED: 3 cards per row (2 rows total) */
-.UiUx-benefits-grid {
+.UX-benefits-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
@@ -1683,13 +2084,13 @@ body {
   width: 100%;
 }
 
-.UiUx-benefit-card {
+.UX-benefit-card {
   background: white;
   padding: 30px;
   border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(74, 144, 226, 0.1);
+  box-shadow: 0 10px 30px rgba(255, 107, 53, 0.1);
   transition: all 0.4s ease;
-  border: 2px solid #e6f2ff;
+  border: 2px solid #ffd9b8;
   position: relative;
   overflow: hidden;
   height: 100%;
@@ -1698,57 +2099,60 @@ body {
   min-width: 0;
 }
 
-.UiUx-benefit-card:hover {
+.UX-benefit-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(74, 144, 226, 0.2);
-  border-color: #4A90E2;
+  box-shadow: 0 20px 40px rgba(255, 107, 53, 0.2);
+  border-color: #ff8c42;
 }
 
-.UiUx-benefit-card::before {
+.UX-benefit-card::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 5px;
   height: 100%;
-  background: linear-gradient(to bottom, #4A90E2, #FF6B8B);
+  background: linear-gradient(to bottom, #ff8c42, #ff6b35);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
-.UiUx-benefit-card:hover::before {
+.UX-benefit-card:hover::before {
   opacity: 1;
 }
 
-.UiUx-benefit-icon {
+.UX-benefit-icon {
   width: 70px;
   height: 70px;
-  background: linear-gradient(135deg, #4A90E2 0%, #FF6B8B 100%);
+  background: linear-gradient(135deg, #ff8c42 0%, #ff6b35 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
-  box-shadow: 0 10px 20px rgba(74, 144, 226, 0.3);
+  box-shadow: 0 10px 20px rgba(255, 140, 66, 0.3);
   flex-shrink: 0;
 }
 
-.UiUx-benefit-icon-emoji {
+.UX-benefit-icon-emoji {
   font-size: 32px;
-  animation: UiUx-benefitIconFloat 3s infinite ease-in-out;
+  animation: UX-benefitIconFloat 3s infinite ease-in-out;
 }
 
-@keyframes UiUx-benefitIconFloat {
-  0%, 100% {
+@keyframes UX-benefitIconFloat {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-10px);
   }
 }
 
-.UiUx-benefit-title {
-  color: #1f2937;
+.UX-benefit-title {
+  color: #2c1810;
   font-size: 22px;
   margin-bottom: 15px;
   font-weight: bold;
@@ -1758,8 +2162,8 @@ body {
   word-wrap: break-word;
 }
 
-.UiUx-benefit-description {
-  color: #4a5568;
+.UX-benefit-description {
+  color: #5a3921;
   font-size: 16px;
   line-height: 1.5;
   font-family: 'Aldrich', sans-serif;
@@ -1770,34 +2174,34 @@ body {
 }
 
 /* Benefits summary section */
-.UiUx-benefits-summary {
+.UX-benefits-summary {
   background: white;
   padding: 40px;
   border-radius: 20px;
-  box-shadow: 0 15px 40px rgba(74, 144, 226, 0.15);
-  border: 2px solid #4A90E2;
+  box-shadow: 0 15px 40px rgba(255, 107, 53, 0.15);
+  border: 2px solid #ff8c42;
   margin-top: 30px;
   width: 100%;
 }
 
-.UiUx-benefits-stats {
+.UX-benefits-stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 30px;
   margin-bottom: 40px;
   padding-bottom: 40px;
-  border-bottom: 2px solid #e6f2ff;
+  border-bottom: 2px solid #ffd9b8;
   width: 100%;
 }
 
-.UiUx-benefit-stat {
+.UX-benefit-stat {
   text-align: center;
   min-width: 0;
 }
 
-.UiUx-benefit-stat h4 {
+.UX-benefit-stat h4 {
   font-size: 42px;
-  background: linear-gradient(135deg, #4A90E2 0%, #FF6B8B 100%);
+  background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1807,21 +2211,21 @@ body {
   letter-spacing: 1px;
 }
 
-.UiUx-benefit-stat p {
-  color: #4a5568;
+.UX-benefit-stat p {
+  color: #5a3921;
   font-size: 16px;
   font-weight: 100;
   font-family: 'Aldrich', sans-serif;
   letter-spacing: 0.5px;
 }
 
-.UiUx-benefits-cta {
+.UX-benefits-cta {
   text-align: center;
   width: 100%;
 }
 
-.UiUx-benefits-join-btn {
-  background: rgb(224, 117, 135);
+.UX-benefits-join-btn {
+  background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
   color: white;
   border: none;
   padding: 20px 50px;
@@ -1830,7 +2234,7 @@ body {
   font-weight: bold;
   cursor: pointer;
   transition: all 0.4s ease;
-  box-shadow: 0 15px 30px rgba(74, 144, 226, 0.3);
+  box-shadow: 0 15px 30px rgba(255, 107, 53, 0.3);
   margin-bottom: 20px;
   font-family: 'Aldrich', sans-serif;
   letter-spacing: 0.5px;
@@ -1839,27 +2243,28 @@ body {
   max-width: 400px;
 }
 
-.UiUx-benefits-join-btn:hover {
+.UX-benefits-join-btn:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(197, 54, 108, 0.923);
+  box-shadow: 0 20px 40px rgba(255, 107, 53, 0.4);
   letter-spacing: 1px;
 }
 
-.UiUx-benefits-guarantee {
-  color: #4a5568;
+.UX-benefits-guarantee {
+  color: #5a3921;
   font-size: 16px;
   font-weight: 100;
   font-family: 'Aldrich', sans-serif;
   letter-spacing: 0.5px;
   max-width: 600px;
   margin: 0 auto;
+  word-wrap: break-word;
 }
 
 /* ============================================= */
-/* TESTIMONIALS SECTION - UPDATED TO MATCH SOFTWARE DEVELOPER PAGE */
+/* TESTIMONIALS SECTION - MADE COMPACT & RESPONSIVE */
 /* ============================================= */
 
-.UiUx-feedback-section {
+.UX-feedback-section {
   max-width: 950px;
   width: 100%;
   margin: 0 auto;
@@ -1868,12 +2273,12 @@ body {
   padding: 0 20px;
 }
 
-.UiUx-testimonials {
+.UX-testimonials {
   margin-top: 4rem;
   width: 100%;
 }
 
-.UiUx-testimonial-cards {
+.UX-testimonial-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 25px;
@@ -1881,41 +2286,41 @@ body {
   width: 100%;
 }
 
-.UiUx-testimonial-card {
+.UX-testimonial-card {
   background: white;
   padding: 25px;
   border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(74, 144, 226, 0.07), 0 2px 4px rgba(74, 144, 226, 0.06);
+  box-shadow: 0 4px 6px rgba(255, 107, 53, 0.07), 0 2px 4px rgba(255, 107, 53, 0.06);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
-  border: 2px solid #e6f2ff;
+  border: 2px solid #ffd9b8;
   min-width: 0;
   display: flex;
   flex-direction: column;
   height: 100%;
 }
 
-.UiUx-testimonial-card::before {
+.UX-testimonial-card::before {
   content: '"';
   position: absolute;
   top: -15px;
   left: 15px;
   font-size: 6rem;
-  color: #4A90E2;
+  color: #ff8c42;
   opacity: 0.1;
   font-family: serif;
   line-height: 1;
 }
 
-.UiUx-testimonial-card:hover {
+.UX-testimonial-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 15px 25px rgba(74, 144, 226, 0.15), 0 8px 10px rgba(74, 144, 226, 0.08);
-  border-color: #4A90E2;
+  box-shadow: 0 15px 25px rgba(255, 107, 53, 0.15), 0 8px 10px rgba(255, 107, 53, 0.08);
+  border-color: #ff8c42;
 }
 
-.UiUx-stars {
-  color: #b3d9ff;
+.UX-stars {
+  color: #ffb347;
   font-size: 1.3rem;
   margin-bottom: 1.2rem;
   letter-spacing: 1px;
@@ -1923,15 +2328,15 @@ body {
   gap: 2px;
 }
 
-.UiUx-stars .UiUx-filled {
-  color: #4A90E2;
+.UX-stars .UX-filled {
+  color: #ff8c42;
 }
 
-.UiUx-testimonial-card p {
+.UX-testimonial-card p {
   font-style: italic;
   margin-bottom: 1.5rem;
   line-height: 1.6;
-  color: #1f2937;
+  color: #2c1810;
   font-size: 1rem;
   font-family: 'Aldrich', sans-serif;
   font-weight: 100;
@@ -1940,8 +2345,8 @@ body {
   flex-grow: 1;
 }
 
-.UiUx-author {
-  color: #4A90E2;
+.UX-author {
+  color: #ff6b35;
   font-weight: 100;
   font-size: 0.95rem;
   display: block;
@@ -1952,12 +2357,8 @@ body {
   margin-top: auto;
 }
 
-/* ============================================= */
-/* PARTICLES */
-/* ============================================= */
-
-/* Simple Particles */
-.UiUx-simple-particles {
+/* Particles */
+.UX-simple-particles {
   position: absolute;
   top: 0;
   left: 0;
@@ -1968,84 +2369,88 @@ body {
   overflow: hidden;
 }
 
-.UiUx-simple-circle {
+.UX-simple-circle {
   position: absolute;
   width: 40px;
   height: 40px;
-  background: radial-gradient(circle, #4A90E2 0%, #FF6B8B 100%);
+  background: radial-gradient(circle, #ff8c42 0%, #ff6b35 100%);
   border-radius: 50%;
-  animation: UiUx-simpleFloat 25s infinite linear;
-  box-shadow: 0 0 15px rgba(74, 144, 226, 0.4);
+  animation: UX-simpleFloat 25s infinite linear;
+  box-shadow: 0 0 15px rgba(255, 140, 66, 0.4);
   opacity: 0.8;
 }
 
-.UiUx-simple-triangle {
+.UX-simple-triangle {
   position: absolute;
   width: 0;
   height: 0;
   border-left: 20px solid transparent;
   border-right: 20px solid transparent;
-  border-bottom: 35px solid #4A90E2;
+  border-bottom: 35px solid #ff8c42;
   opacity: 0.8;
-  animation: UiUx-simpleFloat 20s infinite linear alternate;
+  animation: UX-simpleFloat 20s infinite linear alternate;
 }
 
-.UiUx-simple-square {
+.UX-simple-square {
   position: absolute;
   width: 25px;
   height: 25px;
-  background: #FF6B8B;
+  background: #ff6b35;
   opacity: 0.8;
-  animation: UiUx-simpleFloat 18s infinite linear;
+  animation: UX-simpleFloat 18s infinite linear;
   transform: rotate(45deg);
 }
 
-.UiUx-simple-hexagon {
+.UX-simple-hexagon {
   position: absolute;
   width: 60px;
   height: 60px;
-  background: linear-gradient(135deg, #4A90E2 0%, #FF6B8B 100%);
+  background: linear-gradient(135deg, #ff8c42 0%, #ff6b35 100%);
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   opacity: 0.1;
-  animation: UiUx-floatHexagon 15s infinite linear;
+  animation: UX-floatHexagon 15s infinite linear;
   top: 10%;
   right: 10%;
 }
 
-@keyframes UiUx-simpleFloat {
+@keyframes UX-simpleFloat {
   0% {
     transform: translate(0, 0) rotate(0deg);
     opacity: 0.3;
   }
+
   25% {
     transform: translate(50px, -30px) rotate(90deg);
     opacity: 0.4;
   }
+
   50% {
     transform: translate(30px, 40px) rotate(180deg);
     opacity: 0.2;
   }
+
   75% {
     transform: translate(-40px, 20px) rotate(270deg);
     opacity: 0.4;
   }
+
   100% {
     transform: translate(0, 0) rotate(360deg);
     opacity: 0.3;
   }
 }
 
-@keyframes UiUx-floatHexagon {
+@keyframes UX-floatHexagon {
   0% {
     transform: translate(0, 0) rotate(0deg);
   }
+
   100% {
     transform: translate(100px, 100px) rotate(360deg);
   }
 }
 
-/* Full Spread Particles */
-.UiUx-full-spread-particles {
+.UX-full-spread-particles {
   position: absolute;
   top: 0;
   left: 0;
@@ -2056,39 +2461,39 @@ body {
   overflow: hidden;
 }
 
-.UiUx-spread-particle {
+.UX-spread-particle {
   position: absolute;
   opacity: 0.8;
-  animation: UiUx-spreadFloat 20s infinite linear;
+  animation: UX-spreadFloat 20s infinite linear;
 }
 
-.UiUx-spread-particle-0 {
+.UX-spread-particle-0 {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: radial-gradient(circle, #4A90E2, #FF6B8B);
+  background: radial-gradient(circle, #ff8c42, #ff6b35);
   top: 10%;
   left: 5%;
   animation-delay: 0s;
   animation-duration: 25s;
 }
 
-.UiUx-spread-particle-1 {
+.UX-spread-particle-1 {
   width: 0;
   height: 0;
   border-left: 30px solid transparent;
   border-right: 30px solid transparent;
-  border-bottom: 50px solid #4A90E2;
+  border-bottom: 50px solid #ff8c42;
   top: 70%;
   left: 15%;
   animation-delay: 3s;
   animation-duration: 20s;
 }
 
-.UiUx-spread-particle-2 {
+.UX-spread-particle-2 {
   width: 40px;
   height: 40px;
-  background: #FF6B8B;
+  background: #ff6b35;
   top: 30%;
   right: 10%;
   animation-delay: 7s;
@@ -2096,10 +2501,10 @@ body {
   transform: rotate(45deg);
 }
 
-.UiUx-spread-particle-3 {
+.UX-spread-particle-3 {
   width: 45px;
   height: 45px;
-  background: #4A90E2;
+  background: #ff8c42;
   clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
   bottom: 20%;
   right: 15%;
@@ -2107,10 +2512,10 @@ body {
   animation-duration: 18s;
 }
 
-.UiUx-spread-particle-4 {
+.UX-spread-particle-4 {
   width: 50px;
   height: 50px;
-  background: #4A90E2;
+  background: #ff8c42;
   clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
   top: 40%;
   left: 20%;
@@ -2118,23 +2523,27 @@ body {
   animation-duration: 30s;
 }
 
-@keyframes UiUx-spreadFloat {
+@keyframes UX-spreadFloat {
   0% {
     transform: translate(0, 0) rotate(0deg) scale(1);
     opacity: 0.2;
   }
+
   25% {
     transform: translate(80px, -50px) rotate(90deg) scale(1.2);
     opacity: 0.25;
   }
+
   50% {
     transform: translate(40px, 60px) rotate(180deg) scale(0.9);
     opacity: 0.15;
   }
+
   75% {
     transform: translate(-60px, 30px) rotate(270deg) scale(1.1);
     opacity: 0.25;
   }
+
   100% {
     transform: translate(0, 0) rotate(360deg) scale(1);
     opacity: 0.2;
@@ -2142,376 +2551,674 @@ body {
 }
 
 /* ============================================= */
-/* RESPONSIVE DESIGN - UPDATED TO MATCH SOFTWARE DEVELOPER PAGE */
+/* COMPREHENSIVE RESPONSIVE FIXES */
+/* ============================================= */
+
+/* Extra Large Screens (1440px and above) */
+@media (min-width: 1440px) {
+  .UX-hero-content {
+    max-width: 1400px;
+    padding: 4rem;
+  }
+
+  .UX-hero-sublitle {
+    font-size: 5rem;
+  }
+
+  .UX-hero-subtitle1 {
+    font-size: 1.8rem;
+    max-width: 900px;
+  }
+}
+
+/* Large Screens (1200px - 1439px) */
+@media (min-width: 1200px) and (max-width: 1439px) {
+  .UX-hero-content {
+    max-width: 1100px;
+    padding: 3rem;
+  }
+
+  .UX-hero-sublitle {
+    font-size: 4rem;
+  }
+
+  .UX-hero-subtitle1 {
+    font-size: 1.6rem;
+    max-width: 800px;
+  }
+}
+
+/* Desktop Screens (1024px - 1199px) */
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .UX-hero-content {
+    max-width: 900px;
+    padding: 2.5rem;
+  }
+
+  .UX-hero-sublitle {
+    font-size: 3.5rem;
+  }
+
+  .UX-hero-subtitle1 {
+    font-size: 1.4rem;
+    max-width: 700px;
+  }
+}
+
+/* Tablet Landscape (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .UX-hero-section {
+    min-height: 80vh;
+  }
+
+  .UX-hero-content {
+    max-width: 90%;
+    padding: 2rem;
+    margin: 0 1rem;
+  }
+
+  .UX-hero-sublitle {
+    font-size: 3rem;
+    line-height: 1.1;
+    margin-bottom: 1.2rem;
+  }
+
+  .UX-hero-subtitle1 {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    padding: 0;
+  }
+
+  .UX-cta-button {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+  }
+}
+
+/* Tablet Portrait (576px - 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .UX-hero-section {
+    min-height: 70vh;
+    padding: 1.5rem;
+  }
+
+  .UX-hero-content {
+    max-width: 95%;
+    padding: 1.5rem;
+    margin: 0 0.5rem;
+  }
+
+  .UX-hero-sublitle {
+    font-size: 2.5rem;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+  }
+
+  .UX-hero-subtitle1 {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    padding: 0 0.5rem;
+  }
+
+  .UX-cta-button {
+    padding: 0.9rem 2rem;
+    font-size: 1rem;
+    min-width: 180px;
+  }
+}
+
+/* Mobile Landscape (425px - 575px) */
+@media (min-width: 425px) and (max-width: 575px) {
+  .UX-hero-section {
+    min-height: 65vh;
+    padding: 1rem;
+  }
+
+  .UX-hero-content {
+    max-width: 100%;
+    padding: 1.2rem;
+    margin: 0;
+    border-radius: 15px;
+  }
+
+  .UX-hero-sublitle {
+    font-size: 2.2rem;
+    line-height: 1.2;
+    margin-bottom: 0.8rem;
+    letter-spacing: 0.5px;
+  }
+
+  .UX-hero-subtitle1 {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    padding: 0;
+  }
+
+  .UX-cta-button {
+    padding: 0.8rem 1.8rem;
+    font-size: 0.95rem;
+    min-width: 160px;
+  }
+}
+
+/* Mobile Portrait (375px - 424px) */
+@media (min-width: 375px) and (max-width: 424px) {
+  .UX-hero-section {
+    min-height: 60vh;
+    padding: 0.8rem;
+  }
+
+  .UX-hero-content {
+    padding: 1rem;
+    border-radius: 12px;
+    backdrop-filter: blur(5px);
+  }
+
+  .UX-hero-sublitle {
+    font-size: 1.8rem;
+    line-height: 1.2;
+    margin-bottom: 0.6rem;
+  }
+
+  .UX-hero-subtitle1 {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 1.2rem;
+  }
+
+  .UX-cta-button {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+    min-width: 140px;
+  }
+}
+
+/* Small Mobile (320px - 374px) */
+@media (min-width: 320px) and (max-width: 374px) {
+  .UX-hero-section {
+    min-height: 55vh;
+    padding: 0.5rem;
+  }
+
+  .UX-hero-content {
+    padding: 0.8rem;
+    border-radius: 10px;
+  }
+
+  .UX-hero-sublitle {
+    font-size: 1.6rem;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
+  }
+
+  .UX-hero-subtitle1 {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+  }
+
+  .UX-cta-button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+    min-width: 120px;
+    border-radius: 8px;
+  }
+}
+
+/* Extra Small Mobile (below 320px) */
+@media (max-width: 319px) {
+  .UX-hero-section {
+    min-height: 50vh;
+    padding: 0.3rem;
+  }
+
+  .UX-hero-content {
+    padding: 0.6rem;
+    border-radius: 8px;
+  }
+
+  .UX-hero-sublitle {
+    font-size: 1.4rem;
+    line-height: 1.1;
+    margin-bottom: 0.4rem;
+  }
+
+  .UX-hero-subtitle1 {
+    font-size: 0.8rem;
+    line-height: 1.3;
+    margin-bottom: 0.8rem;
+  }
+
+  .UX-cta-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    min-width: 110px;
+    border-radius: 6px;
+  }
+}
+
+/* Landscape Mode Fixes */
+@media (max-height: 600px) and (orientation: landscape) {
+  .UX-hero-section {
+    min-height: 120vh;
+    padding: 1rem;
+  }
+
+  .UX-hero-content {
+    padding: 1.5rem;
+    max-width: 90%;
+  }
+
+  .UX-hero-sublitle {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .UX-hero-subtitle1 {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    max-width: 90%;
+  }
+
+  .UX-cta-button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Very Tall Screens */
+@media (min-height: 900px) {
+  .UX-hero-section {
+    min-height: 80vh;
+  }
+
+  .UX-hero-content {
+    padding: 3rem;
+  }
+
+  .UX-hero-sublitle {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+  }
+
+  .UX-hero-subtitle1 {
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+    max-width: 800px;
+  }
+}
+
+/* ============================================= */
+/* RESPONSIVE DESIGN - UPDATED FOR RESOURCES & BENEFITS */
 /* ============================================= */
 
 @media (max-width: 1400px) {
-  .UiUx-course-horizontal-card {
+  .UX-course-new-card {
     min-height: 380px;
   }
-  
-  .UiUx-carousel-arrow-left {
+
+  .UX-carousel-arrow-left {
     margin-left: -60px;
   }
-  
-  .UiUx-carousel-arrow-right {
+
+  .UX-carousel-arrow-right {
     margin-right: -60px;
   }
-  
-  .UiUx-benefits-grid {
+
+  .UX-benefits-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 1200px) {
-  .UiUx-section {
+  .UX-section {
     padding: 5rem 1.5rem;
   }
-  
-  .UiUx-section-title {
+
+  .UX-section-title {
     font-size: 2.5rem;
   }
-  
-  .UiUx-hero-sublitle {
+
+  .UX-hero-sublitle {
     font-size: 3rem;
   }
-  
-  .UiUx-course-horizontal-card {
+
+  .UX-course-new-card {
     min-height: 350px;
   }
-  
-  .UiUx-carousel-wrapper {
-    min-height: 350px;
+
+  .UX-carousel-wrapper {
+    height: auto;
+    --cards-per-view: 2;
+    --gap: 1.5rem;
   }
-  
-  .UiUx-course-horizontal-card .UiUx-course-title {
-    font-size: 2rem;
+
+  .UX-course-card-title {
+    font-size: 1.1rem;
   }
-  
-  .UiUx-course-horizontal-card .UiUx-points-list {
-    grid-template-columns: 1fr;
-  }
-  
-  .UiUx-carousel-arrow {
+
+  .UX-carousel-arrow {
     width: 50px;
     height: 50px;
     font-size: 1.5rem;
   }
-  
-  .UiUx-carousel-arrow-left {
+
+  .UX-carousel-arrow-left {
     margin-left: -50px;
   }
-  
-  .UiUx-carousel-arrow-right {
+
+  .UX-carousel-arrow-right {
     margin-right: -50px;
   }
-  
-  .UiUx-gallery-grid {
+
+  .UX-gallery-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
-  .UiUx-resources-grid {
+
+  .UX-resources-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
-  .UiUx-signin-container {
+
+  .UX-signin-container {
     flex-direction: column;
     gap: 40px;
   }
-  
-  .UiUx-form-section {
+
+  .UX-form-section {
     flex: 1;
     width: 100%;
     position: static;
   }
-  
-  .UiUx-form-wrapper {
+
+  .UX-form-wrapper {
     max-width: 500px;
     margin: 0 auto;
   }
 }
 
 @media (max-width: 1024px) {
-  .UiUx-hero-section {
+  .UX-hero-section {
     min-height: 80vh;
   }
-  
-  .UiUx-course-horizontal-section {
+
+  .UX-course-horizontal-section {
     min-height: auto;
   }
-  
-  .UiUx-carousel-arrow {
+
+  .UX-carousel-arrow {
     width: 45px;
     height: 45px;
     font-size: 1.5rem;
   }
-  
-  .UiUx-carousel-arrow-left {
+
+  .UX-carousel-arrow-left {
     margin-left: -30px;
   }
-  
-  .UiUx-carousel-arrow-right {
+
+  .UX-carousel-arrow-right {
     margin-right: -30px;
   }
 }
 
 @media (max-width: 768px) {
-  .UiUx-section {
+  .UX-section {
     padding: 4rem 1.5rem;
     min-height: auto;
   }
-  
-  .UiUx-section-title {
+
+  .UX-section-title {
     font-size: 2.2rem;
   }
-  
-  .UiUx-section-subtitle {
+
+  .UX-section-subtitle {
     font-size: 1.1rem;
     margin-bottom: 3rem;
   }
-  
+
   /* HERO SECTION MOBILE FIXES */
-  .UiUx-hero-section {
+  .UX-hero-section {
     min-height: 70vh;
     padding: 1.5rem 1rem;
     background-attachment: scroll;
     animation: none;
   }
-  
-  .UiUx-hero-sublitle {
+
+  .UX-hero-sublitle {
     font-size: 2.2rem;
     margin-bottom: 1rem;
   }
-  
-  .UiUx-hero-subtitle1 {
+
+  .UX-hero-subtitle1 {
     font-size: 1.1rem;
     margin-bottom: 1.5rem;
   }
-  
+
   /* COURSE CAROUSEL MOBILE FIXES */
-  .UiUx-course-horizontal-section {
+  .UX-course-horizontal-section {
     padding: 2.5rem 0.5rem;
     min-height: auto;
   }
-  
-  .UiUx-course-horizontal-card {
-    min-height: 420px;
+
+  .UX-course-new-card {
+    min-height: auto;
   }
-  
-  .UiUx-carousel-wrapper {
-    min-height: 420px;
+
+  .UX-carousel-wrapper {
+    height: auto;
     border-radius: 15px;
+    --cards-per-view: 1;
+    --gap: 1.5rem;
   }
-  
-  .UiUx-carousel-arrow {
+
+  .UX-carousel-arrow {
     width: 40px;
     height: 40px;
     font-size: 1.3rem;
   }
-  
-  .UiUx-carousel-arrow-left {
+
+  .UX-carousel-arrow-left {
     margin-left: -15px;
   }
-  
-  .UiUx-carousel-arrow-right {
+
+  .UX-carousel-arrow-right {
     margin-right: -15px;
   }
-  
-  .UiUx-course-horizontal-container {
+
+  .UX-course-horizontal-container {
     padding: 0 0.5rem;
   }
-  
-  .UiUx-card-content {
+
+  .UX-card-content {
     padding: 1.5rem;
   }
-  
-  .UiUx-course-horizontal-card .UiUx-course-title {
+
+  .UX-course-horizontal-card .UX-course-title {
     font-size: 1.8rem;
   }
-  
-  .UiUx-feature-text {
+
+  .UX-feature-text {
     font-size: 0.9rem;
   }
-  
-  .UiUx-locked-section {
+
+  .UX-locked-section {
     padding: 60px 15px;
     min-height: 400px;
   }
-  
-  .UiUx-locked-content {
+
+  .UX-locked-content {
     padding: 30px 20px;
   }
-  
-  .UiUx-locked-section .UiUx-section-title {
+
+  .UX-locked-section .UX-section-title {
     font-size: 32px;
   }
-  
-  .UiUx-locked-btn {
+
+  .UX-locked-btn {
     padding: 16px 40px;
     font-size: 18px;
   }
-  
-  .UiUx-benefits-section {
+
+  .UX-benefits-section {
     padding: 60px 15px;
   }
-  
-  .UiUx-benefits-section .UiUx-section-title {
+
+  .UX-benefits-section .UX-section-title {
     font-size: 36px;
   }
-  
+
   /* CHANGED: Show 2 cards per row on mobile for benefits */
-  .UiUx-benefits-grid {
+  .UX-benefits-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
   }
-  
-  .UiUx-benefit-card {
+
+  .UX-benefit-card {
     padding: 20px;
   }
-  
-  .UiUx-benefit-title {
+
+  .UX-benefit-title {
     font-size: 18px;
     margin-bottom: 10px;
   }
-  
-  .UiUx-benefit-description {
+
+  .UX-benefit-description {
     font-size: 14px;
     line-height: 1.4;
   }
-  
-  .UiUx-benefit-icon {
+
+  .UX-benefit-icon {
     width: 50px;
     height: 50px;
     margin-bottom: 15px;
   }
-  
-  .UiUx-benefit-icon-emoji {
+
+  .UX-benefit-icon-emoji {
     font-size: 22px;
   }
-  
-  .UiUx-benefits-summary {
+
+  .UX-benefits-summary {
     padding: 25px 15px;
   }
-  
-  .UiUx-benefits-stats {
+
+  .UX-benefits-stats {
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
   }
-  
-  .UiUx-benefit-stat h4 {
+
+  .UX-benefit-stat h4 {
     font-size: 28px;
   }
-  
-  .UiUx-benefits-join-btn {
+
+  .UX-benefits-join-btn {
     padding: 16px 30px;
     font-size: 16px;
     max-width: 350px;
   }
-  
-  /* UPDATED: Testimonials responsive for mobile - 2 columns */
-  .UiUx-testimonial-cards {
+
+  /* TESTIMONIALS - COMPACT VERSION FOR MOBILE */
+  .UX-testimonial-cards {
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
   }
-  
-  .UiUx-testimonial-card {
+
+  .UX-testimonial-card {
     padding: 20px;
   }
-  
-  .UiUx-testimonial-card p {
+
+  .UX-testimonial-card p {
     font-size: 0.95rem;
     line-height: 1.5;
-    font-family: 'Aldrich', sans-serif;
-    font-weight: 100;
-    letter-spacing: 0.5px;
-    word-wrap: break-word;
-    flex-grow: 1;
   }
-  
-  .UiUx-stars {
+
+  .UX-stars {
     font-size: 1.1rem;
     margin-bottom: 1rem;
   }
-  
-  .UiUx-author {
+
+  .UX-author {
     font-size: 0.9rem;
   }
-  
-  .UiUx-image-container {
+
+  .UX-image-container {
     height: 180px;
   }
-  
+
   /* CHANGED: Show 2 cards per row on mobile for resources - COMPACT VERSION */
-  .UiUx-resources-grid {
+  .UX-resources-grid {
     grid-template-columns: repeat(2, 1fr);
     max-width: 100%;
     margin-left: 0;
     margin-right: 0;
     gap: 12px;
   }
-  
-  .UiUx-resource-card {
+
+  .UX-resource-card {
     padding: 15px;
     border-radius: 12px;
     position: relative;
   }
-  
-  .UiUx-resource-icon {
+
+  .UX-resource-icon {
     margin-bottom: 10px;
   }
-  
-  .UiUx-resource-icon-main {
+
+  .UX-resource-icon-main {
     font-size: 1.5rem;
   }
-  
-  .UiUx-resource-type-icon {
+
+  .UX-resource-type-icon {
     font-size: 0.9rem;
     padding: 0.3rem 0.5rem;
   }
-  
-  .UiUx-resource-title {
+
+  .UX-resource-title {
     font-size: 14px;
     margin-bottom: 6px;
     line-height: 1.3;
     font-weight: 600;
   }
-  
-  .UiUx-resource-description {
+
+  .UX-resource-description {
     font-size: 12px;
     margin-bottom: 10px;
     line-height: 1.4;
   }
-  
-  .UiUx-resource-meta {
+
+  .UX-resource-meta {
     padding: 0.6rem 0;
     margin-bottom: 10px;
     gap: 6px;
   }
-  
-  .UiUx-resource-type {
+
+  .UX-resource-type {
     font-size: 10px;
     padding: 0.2rem 0.5rem;
   }
-  
-  .UiUx-resource-downloads {
+
+  .UX-resource-downloads {
     font-size: 10px;
   }
-  
+
   /* UPDATED: Responsive locked badge for mobile */
-  .UiUx-resource-restricted-tag {
+  .UX-resource-restricted-tag {
     position: absolute;
     top: 8px;
     right: 8px;
     font-size: 9px;
     padding: 3px 8px;
     margin: 0;
-    animation: UiUx-pulse 2s infinite;
+    animation: UX-pulse 2s infinite;
     border-width: 1px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
   }
-  
+
   /* UPDATED: Responsive download button for mobile - TWO LINES */
-  .UiUx-download-btn {
+  .UX-download-btn {
     padding: 8px 5px;
     font-size: 12px;
     min-height: 50px;
@@ -2519,33 +3226,33 @@ body {
     flex-direction: column;
     gap: 2px;
   }
-  
-  .UiUx-download-text {
+
+  .UX-download-text {
     font-size: 11px;
     font-weight: 600;
     display: flex;
     align-items: center;
     gap: 3px;
   }
-  
-  .UiUx-free-badge {
+
+  .UX-free-badge {
     background: white;
-    color: #4A90E2;
+    color: #ff6b35;
     padding: 1px 5px;
     border-radius: 10px;
     font-size: 10px;
     font-weight: bold;
     margin-left: 3px;
   }
-  
-  .UiUx-download-again {
+
+  .UX-download-again {
     font-size: 9px;
     opacity: 0.8;
     margin-top: 1px;
   }
-  
+
   /* UPDATED: Responsive join course button for mobile - TWO LINES */
-  .UiUx-join-course-btn {
+  .UX-join-course-btn {
     padding: 8px 5px;
     font-size: 12px;
     min-height: 50px;
@@ -2554,485 +3261,566 @@ body {
     flex-direction: column;
     gap: 2px;
   }
-  
-  .UiUx-join-text {
+
+  .UX-join-text {
     font-size: 11px;
     font-weight: 600;
   }
-  
+
+  /* RESOURCES STAT CARDS MOBILE FIXES */
+  .UX-resources-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 0 0.5rem;
+  }
+
+  .UX-stat-card {
+    padding: 1rem 0.8rem;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .UX-stat-number {
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+    line-height: 1.2;
+    text-align: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .UX-stat-label {
+    font-size: 0.75rem;
+    line-height: 1.3;
+    text-align: center;
+    margin: 0;
+    padding: 0 0.5rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    max-width: 100%;
+  }
+
+  /* Progress bar adjustments */
+  .UX-progress-bar {
+    margin-top: 0.5rem;
+    width: 80%;
+    max-width: 120px;
+  }
+
   /* Resources Info Mobile */
-  .UiUx-resources-info {
+  .UX-resources-info {
     padding: 1.5rem;
     border-radius: 12px;
     margin-top: 1.5rem;
   }
-  
-  .UiUx-resources-stats {
+
+  .UX-resources-stats {
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
   }
-  
-  .UiUx-stat-card {
+
+  .UX-stat-card {
     padding: 1rem;
   }
-  
-  .UiUx-stat-number {
+
+  .UX-stat-number {
     font-size: 1.8rem;
   }
-  
-  .UiUx-stat-label {
+
+  .UX-stat-label {
     font-size: 12px;
   }
-  
-  .UiUx-resources-note {
+
+  .UX-resources-note {
     padding: 1rem;
   }
-  
-  .UiUx-resources-note h4 {
+
+  .UX-resources-note h4 {
     font-size: 14px;
   }
-  
-  .UiUx-resources-note p {
+
+  .UX-resources-note p {
     font-size: 12px;
   }
 }
 
 @media (max-width: 480px) {
-  .UiUx-section {
+  .UX-section {
     padding: 3rem 1rem;
   }
-  
-  .UiUx-section-title {
+
+  .UX-section-title {
     font-size: 1.8rem;
   }
-  
-  .UiUx-section-subtitle {
+
+  .UX-section-subtitle {
     font-size: 1rem;
   }
-  
+
   /* HERO SECTION SMALL MOBILE FIXES */
-  .UiUx-hero-section {
+  .UX-hero-section {
     min-height: 60vh;
     padding: 1rem;
   }
-  
-  .UiUx-hero-sublitle {
+
+  .UX-hero-sublitle {
     font-size: 1.8rem;
     line-height: 1.3;
   }
-  
-  .UiUx-hero-subtitle1 {
+
+  .UX-hero-subtitle1 {
     font-size: 1rem;
     line-height: 1.5;
   }
-  
-  .UiUx-cta-button {
+
+  .UX-cta-button {
     padding: 0.8rem 1.5rem;
     font-size: 0.95rem;
   }
-  
+
   /* COURSE CAROUSEL SMALL MOBILE FIXES */
-  .UiUx-course-horizontal-container {
+  .UX-course-horizontal-container {
     padding: 0 1rem;
   }
-  
-  .UiUx-course-horizontal-section {
+
+  .UX-course-horizontal-section {
     padding: 2rem 0.5rem;
   }
-  
-  .UiUx-course-horizontal-card {
-    min-height: 450px;
+
+  .UX-course-new-card {
+    min-height: auto;
   }
-  
-  .UiUx-carousel-wrapper {
-    min-height: 450px;
+
+  .UX-carousel-wrapper {
+    height: auto;
     border-radius: 10px;
   }
-  
-  .UiUx-card-content {
+
+  .UX-card-content {
     padding: 1.2rem;
   }
-  
-  .UiUx-course-horizontal-card .UiUx-course-title {
-    font-size: 1.6rem;
+
+  .UX-course-card-title {
+    font-size: 1.1rem;
   }
-  
-  .UiUx-course-horizontal-card .UiUx-card-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.8rem;
-  }
-  
-  .UiUx-carousel-arrow {
+
+  .UX-carousel-arrow {
     width: 35px;
     height: 35px;
     font-size: 1.1rem;
   }
-  
-  .UiUx-carousel-arrow-left {
+
+  .UX-carousel-arrow-left {
     margin-left: -10px;
   }
-  
-  .UiUx-carousel-arrow-right {
+
+  .UX-carousel-arrow-right {
     margin-right: -10px;
   }
-  
-  .UiUx-feature-text {
+
+  .UX-feature-text {
     font-size: 0.9rem;
   }
-  
-  .UiUx-description-section {
+
+  .UX-description-section {
     padding: 20px;
   }
-  
-  .UiUx-form-wrapper {
+
+  .UX-form-wrapper {
     padding: 25px;
   }
-  
-  .UiUx-section-subtitle1 {
+
+  .UX-section-subtitle1 {
     font-size: 24px;
   }
-  
-  .UiUx-section-description {
+
+  .UX-section-description {
     font-size: 15px;
   }
-  
-  .UiUx-locked-section {
+
+  .UX-locked-section {
     min-height: 350px;
   }
-  
-  .UiUx-locked-content {
+
+  .UX-locked-content {
     padding: 25px 15px;
   }
-  
-  .UiUx-locked-section .UiUx-section-title {
+
+  .UX-locked-section .UX-section-title {
     font-size: 28px;
   }
-  
-  .UiUx-benefits-section .UiUx-section-title {
+
+  .UX-benefits-section .UX-section-title {
     font-size: 28px;
   }
-  
-  .UiUx-benefits-stats {
+
+  .UX-benefits-stats {
     grid-template-columns: 1fr;
   }
-  
-  .UiUx-gallery-grid {
+
+  .UX-gallery-grid {
     grid-template-columns: 1fr;
   }
-  
+
   /* For very small screens, keep 2 columns but make them more compact */
-  .UiUx-benefits-grid {
+  .UX-benefits-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
   }
-  
-  .UiUx-benefit-card {
+
+  .UX-benefit-card {
     padding: 15px;
   }
-  
-  .UiUx-benefit-title {
+
+  .UX-benefit-title {
     font-size: 15px;
   }
-  
-  .UiUx-benefit-description {
+
+  .UX-benefit-description {
     font-size: 12px;
   }
-  
-  .UiUx-benefit-icon {
+
+  .UX-benefit-icon {
     width: 40px;
     height: 40px;
     margin-bottom: 10px;
   }
-  
-  .UiUx-benefit-icon-emoji {
+
+  .UX-benefit-icon-emoji {
     font-size: 18px;
   }
-  
-  /* UPDATED: Testimonials responsive for small mobile - 1 column */
-  .UiUx-testimonial-cards {
+
+  /* TESTIMONIALS - EXTRA COMPACT FOR MOBILE */
+  .UX-testimonial-cards {
     grid-template-columns: 1fr;
     gap: 15px;
   }
-  
-  .UiUx-testimonial-card {
+
+  .UX-testimonial-card {
     padding: 18px;
   }
-  
-  .UiUx-testimonial-card p {
+
+  .UX-testimonial-card p {
     font-size: 0.9rem;
     line-height: 1.5;
   }
-  
-  .UiUx-stars {
+
+  .UX-stars {
     font-size: 1rem;
     margin-bottom: 0.8rem;
   }
-  
-  .UiUx-author {
+
+  .UX-author {
     font-size: 0.85rem;
   }
-  
+
   /* Resources - Extra Compact for Small Screens */
-  .UiUx-resources-grid {
+  .UX-resources-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
   }
-  
-  .UiUx-resource-card {
+
+  .UX-resource-card {
     padding: 12px;
   }
-  
-  .UiUx-resource-icon-main {
+
+  .UX-resource-icon-main {
     font-size: 1.3rem;
   }
-  
-  .UiUx-resource-title {
+
+  .UX-resource-title {
     font-size: 13px;
   }
-  
-  .UiUx-resource-description {
+
+  .UX-resource-description {
     font-size: 11px;
     margin-bottom: 8px;
   }
-  
-  .UiUx-resource-meta {
+
+  .UX-resource-meta {
     padding: 0.4rem 0;
     margin-bottom: 8px;
   }
-  
+
   /* UPDATED: Extra compact locked badge for small screens */
-  .UiUx-resource-restricted-tag {
+  .UX-resource-restricted-tag {
     top: 6px;
     right: 6px;
     font-size: 8px;
     padding: 2px 6px;
     border-width: 1px;
   }
-  
+
   /* UPDATED: Extra compact download button for small screens */
-  .UiUx-download-btn {
+  .UX-download-btn {
     padding: 6px 4px;
     font-size: 11px;
     min-height: 45px;
     gap: 1px;
   }
-  
-  .UiUx-download-text {
+
+  .UX-download-text {
     font-size: 10px;
   }
-  
-  .UiUx-free-badge {
+
+  .UX-free-badge {
     font-size: 9px;
     padding: 1px 4px;
   }
-  
-  .UiUx-download-again {
+
+  .UX-download-again {
     font-size: 8px;
   }
-  
+
   /* UPDATED: Extra compact join course button for small screens */
-  .UiUx-join-course-btn {
+  .UX-join-course-btn {
     padding: 6px 4px;
     font-size: 11px;
     min-height: 45px;
     margin-top: 8px;
     gap: 1px;
   }
-  
-  .UiUx-join-text {
+
+  .UX-join-text {
     font-size: 10px;
   }
-  
-  .UiUx-resources-info {
+
+  /* RESOURCES STAT CARDS SMALL MOBILE FIXES */
+  .UX-resources-stats {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .UX-stat-card {
+    padding: 0.8rem;
+    min-height: 90px;
+    width: 100%;
+  }
+
+  .UX-stat-number {
+    font-size: 1.3rem;
+  }
+
+  .UX-stat-label {
+    font-size: 0.65rem;
+    padding: 0 0.3rem;
+  }
+
+  .UX-progress-bar {
+    margin-top: 0.4rem;
+    width: 70%;
+    max-width: 100px;
+  }
+
+  .UX-resources-info {
     padding: 1rem;
   }
-  
-  .UiUx-stat-card {
+
+  .UX-stat-card {
     padding: 0.8rem;
   }
-  
-  .UiUx-stat-number {
+
+  .UX-stat-number {
     font-size: 1.5rem;
   }
-  
-  .UiUx-stat-label {
+
+  .UX-stat-label {
     font-size: 11px;
   }
 }
 
 @media (max-width: 360px) {
-  .UiUx-hero-sublitle {
+  .UX-hero-sublitle {
     font-size: 1.6rem;
   }
-  
-  .UiUx-hero-subtitle1 {
+
+  .UX-hero-subtitle1 {
     font-size: 0.9rem;
   }
-  
-  .UiUx-cta-button {
+
+  .UX-cta-button {
     padding: 0.7rem 1.2rem;
     font-size: 0.9rem;
   }
-  
-  .UiUx-section-title {
+
+  .UX-section-title {
     font-size: 1.6rem;
   }
-  
-  .UiUx-section-subtitle {
+
+  .UX-section-subtitle {
     font-size: 0.9rem;
   }
-  
-  .UiUx-course-horizontal-card {
-    min-height: 480px;
+
+  .UX-course-new-card {
+    min-height: auto;
   }
-  
-  .UiUx-carousel-wrapper {
-    min-height: 480px;
+
+  .UX-carousel-wrapper {
+    height: auto;
   }
-  
-  .UiUx-carousel-arrow {
+
+  .UX-carousel-arrow {
     width: 30px;
     height: 30px;
     font-size: 1rem;
   }
-  
-  .UiUx-carousel-arrow-left {
+
+  .UX-carousel-arrow-left {
     margin-left: -5px;
   }
-  
-  .UiUx-carousel-arrow-right {
+
+  .UX-carousel-arrow-right {
     margin-right: -5px;
   }
-  
+
   /* For extra small screens, keep 2 columns but make them even more compact */
-  .UiUx-benefits-grid {
+  .UX-benefits-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 8px;
   }
-  
-  .UiUx-benefit-card {
+
+  .UX-benefit-card {
     padding: 12px;
   }
-  
-  .UiUx-benefit-title {
+
+  .UX-benefit-title {
     font-size: 13px;
   }
-  
-  .UiUx-benefit-description {
+
+  .UX-benefit-description {
     font-size: 11px;
   }
-  
-  .UiUx-benefit-icon {
+
+  .UX-benefit-icon {
     width: 35px;
     height: 35px;
   }
-  
-  /* UPDATED: Testimonials responsive for extra small mobile */
-  .UiUx-testimonial-card {
+
+  /* TESTIMONIALS - SUPER COMPACT FOR EXTRA SMALL SCREENS */
+  .UX-testimonial-card {
     padding: 15px;
   }
-  
-  .UiUx-testimonial-card p {
+
+  .UX-testimonial-card p {
     font-size: 0.85rem;
     line-height: 1.4;
   }
-  
-  .UiUx-stars {
+
+  .UX-stars {
     font-size: 0.9rem;
     margin-bottom: 0.6rem;
   }
-  
-  .UiUx-author {
+
+  .UX-author {
     font-size: 0.8rem;
   }
-  
+
   /* Resources - Super Compact for Extra Small Screens */
-  .UiUx-resources-grid {
+  .UX-resources-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 8px;
   }
-  
-  .UiUx-resource-card {
+
+  .UX-resource-card {
     padding: 10px;
   }
-  
-  .UiUx-resource-icon-main {
+
+  .UX-resource-icon-main {
     font-size: 1.1rem;
   }
-  
-  .UiUx-resource-title {
+
+  .UX-resource-title {
     font-size: 12px;
   }
-  
-  .UiUx-resource-description {
+
+  .UX-resource-description {
     font-size: 10px;
   }
-  
+
   /* UPDATED: Super compact locked badge for extra small screens */
-  .UiUx-resource-restricted-tag {
+  .UX-resource-restricted-tag {
     top: 5px;
     right: 5px;
     font-size: 7px;
     padding: 1px 4px;
     border-width: 1px;
   }
-  
+
   /* UPDATED: Super compact download button for extra small screens */
-  .UiUx-download-btn {
+  .UX-download-btn {
     padding: 5px 3px;
     font-size: 10px;
     min-height: 40px;
     gap: 0;
   }
-  
-  .UiUx-download-text {
+
+  .UX-download-text {
     font-size: 9px;
   }
-  
-  .UiUx-free-badge {
+
+  .UX-free-badge {
     font-size: 8px;
     padding: 0px 3px;
   }
-  
-  .UiUx-download-again {
+
+  .UX-download-again {
     font-size: 7px;
   }
-  
+
   /* UPDATED: Super compact join course button for extra small screens */
-  .UiUx-join-course-btn {
+  .UX-join-course-btn {
     padding: 5px 3px;
     font-size: 10px;
     min-height: 40px;
     margin-top: 6px;
     gap: 0;
   }
-  
-  .UiUx-join-text {
+
+  .UX-join-text {
     font-size: 9px;
+  }
+
+  /* RESOURCES STAT CARDS EXTRA SMALL MOBILE FIXES */
+  .UX-stat-number {
+    font-size: 1.2rem;
+  }
+
+  .UX-stat-label {
+    font-size: 0.6rem;
+  }
+
+  .UX-stat-card {
+    padding: 0.7rem;
+    min-height: 85px;
   }
 }
 
 /* Fix for landscape mode on mobile */
 @media (max-height: 500px) and (orientation: landscape) {
-  .UiUx-section {
+  .UX-section {
     min-height: auto;
     padding: 3rem 1rem;
   }
-  
-  .UiUx-hero-section {
+
+  .UX-hero-section {
     min-height: 100vh;
   }
-  
-  .UiUx-course-horizontal-card {
+
+  .UX-course-new-card {
     min-height: 300px;
   }
-  
-  .UiUx-carousel-wrapper {
-    min-height: 300px;
+
+  .UX-carousel-wrapper {
+    height: auto;
   }
-  
-  .UiUx-carousel-arrow {
+
+  .UX-carousel-arrow {
     width: 30px;
     height: 30px;
     font-size: 1rem;
@@ -3041,25 +3829,25 @@ body {
 
 /* Fix for very tall screens */
 @media (min-height: 900px) {
-  .UiUx-hero-section {
+  .UX-hero-section {
     min-height: 100vh;
   }
-  
-  .UiUx-course-horizontal-section {
+
+  .UX-course-horizontal-section {
     min-height: 100vh;
   }
 }
 
-/* Tablet Landscape and Desktop - Show 2 columns for points */
+/* Tablet Landscape and Desktop - Grid Adjustments */
 @media (min-width: 768px) and (orientation: landscape) {
-  .UiUx-course-horizontal-card .UiUx-points-list {
-    grid-template-columns: repeat(2, 1fr);
+  .UX-carousel-wrapper {
+    --cards-per-view: 3;
   }
 }
 
 /* Medium screens: 2 columns for benefits */
 @media (max-width: 1100px) {
-  .UiUx-benefits-grid {
+  .UX-benefits-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -3069,60 +3857,68 @@ body {
 /* ============================================= */
 
 @media print {
-  .UiUx-simple-particles,
-  .UiUx-full-spread-particles,
-  .UiUx-locked-section-overlay,
-  .UiUx-card-overlay,
-  .UiUx-carousel-arrows,
-  .UiUx-course-dots,
-  .UiUx-toast-message,
-  .UiUx-image-overlay,
-  .UiUx-cta-button,
-  .UiUx-show-form-btn,
-  .UiUx-locked-btn,
-  .UiUx-download-btn,
-  .UiUx-join-course-btn,
-  .UiUx-benefits-join-btn,
-  .UiUx-close-form-btn,
-  .UiUx-submit-btn {
+
+  .UX-carousel-arrow,
+  .UX-course-dots,
+  .UX-cta-button,
+  .UX-show-form-btn,
+  .UX-submit-btn,
+  .UX-locked-btn,
+  .UX-download-btn,
+  .UX-join-course-btn,
+  .UX-benefits-join-btn {
     display: none !important;
   }
-  
-  .UiUx-section {
-    page-break-inside: avoid;
+
+  .UX-section {
     min-height: auto;
-    padding: 2rem 0;
+    page-break-inside: avoid;
   }
-  
-  .UiUx-course-horizontal-section {
+
+  .UX-course-new-card {
+    page-break-inside: avoid;
+    box-shadow: none !important;
+  }
+
+  .UX-resource-card {
+    box-shadow: none !important;
+    border: 1px solid #ddd !important;
+  }
+
+  .UX-benefit-card {
+    box-shadow: none !important;
+    border: 1px solid #ddd !important;
+  }
+
+  .UX-testimonial-card {
+    box-shadow: none !important;
+    border: 1px solid #ddd !important;
+  }
+
+  .UX-simple-particles,
+  .UX-full-spread-particles {
+    display: none !important;
+  }
+
+  .UX-hero-section {
     background: white !important;
+    color: black !important;
+    animation: none !important;
   }
-  
-  .UiUx-course-horizontal-card {
-    break-inside: avoid;
-  }
-  
-  .UiUx-resource-card {
-    break-inside: avoid;
-    box-shadow: none;
-    border: 1px solid #ddd;
-  }
-  
-  .UiUx-benefit-card {
-    break-inside: avoid;
-    box-shadow: none;
-    border: 1px solid #ddd;
-  }
-  
-  .UiUx-testimonial-card {
-    break-inside: avoid;
-    box-shadow: none;
-    border: 1px solid #ddd;
-  }
-  
-  * {
-    color: #000 !important;
+
+  .UX-hero-content {
     background: white !important;
+    color: black !important;
+    border: 1px solid #ddd !important;
+  }
+
+  .UX-hero-sublitle {
+    color: black !important;
+    -webkit-text-fill-color: black !important;
+  }
+
+  .UX-gallery-description {
+    margin-top: 5px !important;
   }
 }
 
@@ -3131,39 +3927,37 @@ body {
 /* ============================================= */
 
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
-  
-  .UiUx-hero-section {
+
+  .UX-hero-section {
     animation: none !important;
   }
-  
-  .UiUx-toast-content {
+
+  .UX-toast-content {
     animation: none !important;
   }
-  
-  .UiUx-benefit-icon-emoji {
+
+  .UX-gallery-item:hover img {
+    transform: none !important;
+  }
+
+  .UX-benefit-icon-emoji {
     animation: none !important;
   }
-  
-  .UiUx-simple-circle,
-  .UiUx-simple-triangle,
-  .UiUx-simple-square,
-  .UiUx-simple-hexagon,
-  .UiUx-spread-particle {
-    animation: none !important;
-  }
-  
-  .UiUx-resource-restricted-tag {
-    animation: none !important;
-  }
-  
-  .UiUx-premium-badge {
+
+  .UX-simple-circle,
+  .UX-simple-triangle,
+  .UX-simple-square,
+  .UX-simple-hexagon,
+  .UX-spread-particle {
     animation: none !important;
   }
 }
@@ -3173,31 +3967,2299 @@ body {
 /* ============================================= */
 
 @media (hover: none) and (pointer: coarse) {
-  .UiUx-feature-item:hover,
-  .UiUx-resource-card:hover,
-  .UiUx-benefit-card:hover,
-  .UiUx-testimonial-card:hover,
-  .UiUx-gallery-item:hover {
+
+  .UX-feature-item:hover,
+  .UX-resource-card:hover,
+  .UX-benefit-card:hover,
+  .UX-testimonial-card:hover,
+  .UX-gallery-item:hover {
     transform: none !important;
   }
-  
-  .UiUx-carousel-arrow:hover,
-  .UiUx-cta-button:hover,
-  .UiUx-show-form-btn:hover,
-  .UiUx-submit-btn:hover,
-  .UiUx-locked-btn:hover,
-  .UiUx-download-btn:hover,
-  .UiUx-join-course-btn:hover,
-  .UiUx-benefits-join-btn:hover {
+
+  .UX-carousel-arrow:hover,
+  .UX-cta-button:hover,
+  .UX-show-form-btn:hover,
+  .UX-submit-btn:hover,
+  .UX-locked-btn:hover,
+  .UX-download-btn:hover,
+  .UX-join-course-btn:hover,
+  .UX-benefits-join-btn:hover {
     transform: none !important;
   }
-  
-  .UiUx-course-dot {
+
+  .UX-course-dot {
     width: 16px;
     height: 16px;
   }
-  
-  .UiUx-form-input {
-    font-size: 16px !important;
+
+  .UX-form-input {
+    font-size: 16px;
+  }
+
+  /* FIXED: Gallery description on touch devices */
+  .UX-gallery-description {
+    margin-top: 5px;
+  }
+
+  /* FIXED: Locked button on touch devices */
+  .UX-locked-btn {
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .UX-locked-btn-text {
+    font-size: 14px;
+    line-height: 1.2;
+  }
+}
+
+/* New Split Sections Custom Styling */
+.UX-split-section {
+  padding: 8rem 4rem;
+  background-color: #ffffff;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.UX-split-container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+.UX-split-reverse .UX-split-container {
+  flex-direction: row-reverse;
+}
+
+.UX-split-left,
+.UX-split-right {
+  flex: 1;
+  position: relative;
+}
+
+/* Typography */
+.UX-smart-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #fff4e6;
+  color: #ff8c42;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.UX-split-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: -1px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.UX-sparkle-icon-split {
+  color: #1a1a2e;
+  display: inline-block;
+  transform-origin: center;
+  animation: UX-sparkle-pulse 3s infinite ease-in-out;
+}
+
+@keyframes UX-sparkle-pulse {
+  0% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.8;
+  }
+
+  50% {
+    transform: scale(1.15) rotate(5deg);
+    opacity: 1;
+    color: #ec4899;
+  }
+
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.8;
+  }
+}
+
+.UX-animated-star {
+  display: inline-block;
+  transform-origin: center;
+  animation: UX-sparkle-pulse 3s infinite ease-in-out;
+  color: #ff8c42;
+}
+
+.UX-floating-bg-star {
+  position: absolute;
+  color: #ff8c42;
+  opacity: 0.2;
+  animation: UX-star-float 6s infinite ease-in-out;
+  z-index: 1;
+}
+
+.UX-star-bg-1 {
+  top: -20px;
+  right: 80px;
+  animation-delay: 0s;
+}
+
+.UX-star-bg-2 {
+  bottom: 40px;
+  left: -20px;
+  animation-delay: 2s;
+  color: #ec4899;
+}
+
+.UX-star-bg-3 {
+  top: -30px;
+  left: -40px;
+  animation-delay: 1s;
+  opacity: 0.3;
+}
+
+@keyframes UX-star-float {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+
+  50% {
+    transform: translateY(-15px) rotate(10deg) scale(1.1);
+    opacity: 0.4;
+  }
+
+  100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+}
+
+/* Also animate the existing sparkles from the first section */
+.UX-sparkle-icon,
+.UX-sparkle-icon-large,
+.UX-sparkle-icon-small,
+.UX-sparkle-icon-header {
+  animation: UX-sparkle-pulse 4s infinite ease-in-out;
+  transform-origin: center;
+}
+
+
+.UX-split-desc {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.UX-split-points {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.UX-split-point {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 0.5rem;
+}
+
+.UX-split-point-icon {
+  display: none;
+  /* Hide icons to match the image */
+}
+
+.UX-split-point-text h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #002147;
+  /* Dark navy blue matching the image */
+  margin-bottom: 0.5rem;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.2;
+}
+
+.UX-split-point-text p {
+  font-size: 1.05rem;
+  color: #7b8a97;
+  /* Lighter grayish blue matching the image */
+  line-height: 1.6;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  max-width: 450px;
+}
+
+/* Floating Visuals (Right Side) */
+.UX-floating-visuals {
+  position: relative;
+  width: 100%;
+  height: 400px;
+}
+
+.UX-float-card {
+  position: absolute;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.UX-float-card-1 {
+  top: 0;
+  left: 0;
+  width: 250px;
+  z-index: 2;
+}
+
+.UX-float-card-2 {
+  top: 40px;
+  right: 0;
+  width: 260px;
+  z-index: 3;
+}
+
+.UX-float-card-3 {
+  bottom: 0;
+  left: 30px;
+  width: 280px;
+  z-index: 4;
+}
+
+/* Card Internals */
+.UX-fc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.UX-fc-tag {
+  background: #ffebf0;
+  color: #ff4d6d;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 8px;
+  text-transform: uppercase;
+}
+
+.UX-fc-flags {
+  font-size: 1.2rem;
+}
+
+.UX-fc-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 1.2rem;
+  line-height: 1.3;
+}
+
+.UX-fc-footer {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.8rem;
+  color: #888;
+  font-weight: 500;
+}
+
+.UX-fc-top-badge {
+  position: absolute;
+  top: -12px;
+  right: -10px;
+  background: #1a1a2e;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.UX-fc-bottom-badge {
+  position: absolute;
+  bottom: -12px;
+  right: -10px;
+  background: #1a1a2e;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.UX-fc-progress-row {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.UX-fc-progress-row:last-of-type {
+  margin-bottom: 0;
+}
+
+.UX-fc-flag-icon {
+  font-size: 1.5rem;
+}
+
+.UX-fc-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.UX-fc-name {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+.UX-fc-level {
+  font-size: 0.75rem;
+  color: #888;
+}
+
+.UX-fc-bars {
+  display: flex;
+  gap: 3px;
+}
+
+.UX-fc-bar {
+  width: 6px;
+  height: 15px;
+  border-radius: 3px;
+}
+
+.UX-fc-bar-fill {
+  background: #00c48c;
+}
+
+.UX-fc-bar-empty {
+  background: #eee;
+}
+
+/* Bottom Section specific (Reverse Split) */
+.UX-video-visual {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.UX-video-frame {
+  width: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  position: relative;
+  aspect-ratio: 4/3;
+}
+
+.UX-video-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.UX-video-overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.2;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.UX-float-tooltip {
+  position: absolute;
+  bottom: -30px;
+  right: -40px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.2rem;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+  width: 260px;
+  z-index: 5;
+  font-family: 'Inter', sans-serif;
+}
+
+.UX-tt-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+.UX-tt-subtitle {
+  font-size: 0.85rem;
+  color: #4361ee;
+  font-weight: 600;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+  background: #edf2fb;
+  padding: 0.4rem;
+  border-radius: 6px;
+}
+
+.UX-tt-footer {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .UX-split-container {
+    flex-direction: column !important;
+    gap: 3rem;
+  }
+
+  .UX-split-left,
+  .UX-split-right {
+    width: 100%;
+  }
+
+  .UX-floating-visuals {
+    height: auto;
+    min-height: 400px;
+    margin-top: 2rem;
+  }
+
+  .UX-float-card-2 {
+    left: 40px;
+    right: auto;
+    top: 180px;
+  }
+
+  .UX-video-visual {
+    margin-top: 2rem;
+  }
+
+  .UX-float-tooltip {
+    right: 0;
+    bottom: -20px;
+  }
+}
+
+/* Adjust button inside split */
+.UX-split-action-btn {
+  background: #1a1a2e !important;
+  color: white !important;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.UX-split-action-btn:hover {
+  background: #333 !important;
+  transform: translateY(-2px);
+}
+
+/* ============================================= */
+/* DREAM NAVIGATOR SECTION */
+/* ============================================= */
+
+.UX-dream-navigator-section {
+  background-color: #ffffff;
+  padding: 4rem 2rem 6rem 2rem;
+  width: 100%;
+}
+
+.UX-dn-container {
+  max-width: 1400px;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Header Area */
+.UX-dn-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  gap: 10rem;
+}
+
+.UX-dn-header-left {
+  flex: 1;
+  text-align: left;
+}
+
+.UX-dn-title {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1.2;
+  color: #1a1a2e;
+  text-transform: uppercase;
+  margin: 0;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  /* Allow wrapping on very small screens if needed */
+  gap: 0.5rem;
+}
+
+.UX-dn-icon-sparkle {
+  color: #1a1a2e;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 10px;
+}
+
+.UX-dn-globe-pill {
+  display: inline-flex;
+  align-items: center;
+  background-color: #0ea5e9;
+  color: white;
+  border-radius: 40px;
+  padding: 0px 15px;
+  height: clamp(35px, 4vw, 55px);
+  vertical-align: middle;
+  margin: 0 10px;
+  padding-bottom: 2px;
+}
+
+.UX-dn-globe-icon {
+  font-size: 1.2rem;
+  margin-right: 5px;
+}
+
+.UX-dn-globe-dots {
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.UX-dn-icon-sparkle-outline {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 10px;
+  color: #1a1a2e;
+}
+
+.UX-dn-header-right {
+  flex: 0 0 250px;
+  position: relative;
+  text-align: left;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #555;
+  padding-top: 1rem;
+}
+
+.UX-dn-small-sparkies {
+  position: absolute;
+  top: -5px;
+  left: -20px;
+  color: #1a1a2e;
+}
+
+/* Main Visual Row - Accordion */
+.UX-dn-visual-row.UX-resources-accordion {
+  display: flex;
+  gap: 1.5rem;
+  height: 450px;
+  width: 100%;
+}
+
+.UX-accordion-panel {
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.UX-accordion-expanded {
+  flex: 1 1 auto;
+  padding: 2rem;
+  cursor: default;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  display: flex !important;
+  flex-direction: column;
+}
+
+.UX-accordion-collapsed {
+  flex: 0 0 100px;
+  /* Width of the collapsed pill */
+}
+
+.UX-accordion-collapsed:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Left Image Area (Legacy - removed from JSX but keep CSS for reference or delete) */
+.UX-dn-image-area {
+  flex: 1;
+  background: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Overlay to match the blue tint */
+.UX-dn-image-area::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(14, 165, 233, 0.4);
+  mix-blend-mode: multiply;
+  z-index: 1;
+}
+
+.UX-dn-tags {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.UX-dn-tag {
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: white;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  backdrop-filter: blur(4px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.UX-dn-image-footer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.UX-dn-image-footer-icon {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.UX-number-badge {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background: white;
+  color: #1a1a2e;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+  z-index: 2;
+}
+
+/* Vertical Pills */
+.UX-dn-vertical-pills {
+  display: flex;
+  gap: 1rem;
+}
+
+.UX-dn-v-pill {
+  width: 100px;
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0 1.5rem 0;
+  position: relative;
+}
+
+.UX-dn-bg-dark {
+  background-color: #0ea5e9;
+  color: white;
+}
+
+.UX-dn-bg-light {
+  background-color: #bae6fd;
+  color: #1a1a2e;
+}
+
+.UX-dn-v-text {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 1.1rem;
+  letter-spacing: 1.5px;
+}
+
+.UX-dn-v-num {
+  background: white;
+  color: #1a1a2e;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Spark Card */
+.UX-dn-spark-card {
+  width: 250px;
+  background: linear-gradient(135deg, #e0ebff 0%, #b3caff 100%);
+  border-radius: 20px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: visible;
+  /* To allow explore float to slightly overlap */
+}
+
+/* Inner decorative shapes on spark card to mimic the design */
+.UX-dn-spark-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://images.unsplash.com/photo-1557682250-33bd709cbe85?ixlib=rb-4.0.3&auto=format&fit=crop&w=250&q=80') center/cover;
+  opacity: 0.3;
+  mix-blend-mode: overlay;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.UX-dn-sc-header,
+.UX-dn-sc-title,
+.UX-dn-sc-desc,
+.UX-dn-sc-btn {
+  position: relative;
+  z-index: 2;
+}
+
+.UX-dn-sc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.UX-dn-sc-num {
+  background: white;
+  color: #1a1a2e;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.UX-dn-sc-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid white;
+}
+
+.UX-dn-sc-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.UX-dn-sc-title {
+  font-size: 1.4rem;
+  line-height: 1.2;
+  color: white;
+  margin-bottom: 2rem;
+  letter-spacing: 0.5px;
+}
+
+.UX-dn-sc-desc {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+}
+
+/* Quick Tips & Shortcuts Panel */
+.UX-quick-tips-btn:hover {
+  background: #2a2a4e !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15) !important;
+}
+
+@media (max-width: 768px) {
+  .UX-dn-resources-title-row {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start !important;
+  }
+
+  .UX-quick-tips-container {
+    align-self: flex-start;
+  }
+
+  .UX-quick-tips-panel {
+    right: auto !important;
+    left: 0;
+    width: calc(100vw - 40px) !important;
+    max-width: 350px;
+  }
+}
+
+.UX-dn-sc-btn {
+  margin-top: auto;
+  align-self: flex-start;
+  background: white;
+  color: #1a1a2e;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* The floating explicit button requested in design */
+.UX-dn-explore-float {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 70px;
+  height: 70px;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1a1a2e;
+  z-index: 10;
+  cursor: pointer;
+}
+
+/* Stats Row */
+.UX-dn-stats-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.UX-dn-stat-items {
+  display: flex;
+  gap: 3rem;
+}
+
+.UX-dn-stat-item {
+  font-size: 0.9rem;
+  color: #1a1a2e;
+}
+
+.UX-dn-stat-item strong {
+  font-size: 1.1rem;
+}
+
+.UX-dn-socials {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.UX-dn-social-icon {
+  width: 35px;
+  height: 35px;
+  background: #0ea5e9;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.UX-dn-social-behance {
+  font-weight: bold;
+}
+
+/* Dashboard Row */
+.UX-dn-divider {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 1rem 0 2rem 0;
+}
+
+.UX-dn-dashboard-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.UX-dn-dash-left {
+  flex: 0 0 300px;
+}
+
+.UX-dn-dash-title {
+  font-size: 1rem;
+  color: #1a1a2e;
+  line-height: 1.2;
+  text-align: left;
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+}
+
+.UX-dn-dash-btn {
+  background: #0ea5e9;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.UX-dn-dash-right {
+  display: flex;
+  gap: 1rem;
+  flex: 1;
+}
+
+.UX-dn-dash-card {
+  flex: 1;
+  background: #f8f9fa;
+  border-radius: 15px;
+  padding: 1.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid #eee;
+}
+
+.UX-dn-dash-icon {
+  width: 45px;
+  height: 45px;
+  background: white;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.UX-dn-dash-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.UX-dn-dash-label {
+  font-size: 0.8rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.UX-dn-dash-value {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #1a1a2e;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .UX-dn-header-row {
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .UX-dn-visual-row {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .UX-dn-image-area {
+    height: 300px;
+  }
+
+  .UX-dn-vertical-pills {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .UX-dn-v-pill {
+    height: 200px;
+  }
+
+  .UX-dn-dashboard-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .UX-dn-dash-right {
+    flex-wrap: wrap;
+  }
+
+  .UX-dn-dash-card {
+    min-width: calc(50% - 0.5rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .UX-dn-stat-items {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .UX-dn-stats-row {
+    align-items: flex-start;
+  }
+
+  .UX-dn-dash-card {
+    min-width: 100%;
+  }
+}
+
+/* --- Dream Team / Testimonials Section --- */
+.UX-dt-section {
+  padding: 6rem 2rem;
+  background-color: #fcfdfe;
+  /* subtle off-white */
+  position: relative;
+  overflow: hidden;
+}
+
+.UX-dt-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.UX-dt-header {
+  margin-bottom: 5rem;
+}
+
+.UX-dt-title {
+  font-size: 3.5rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.UX-dt-highlight {
+  position: relative;
+  display: inline-block;
+  color: #1a202c;
+}
+
+.UX-dt-title-underline {
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  z-index: -1;
+  opacity: 0.8;
+}
+
+.UX-dt-subtitle {
+  font-size: 1.1rem;
+  color: #4a5568;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.UX-dt-cards-wrapper {
+  overflow: hidden;
+  width: 100%;
+  padding: 2rem 0;
+  /* Extra padding to prevent clipping rotated cards */
+  margin-top: 1rem;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+.UX-dt-cards {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  width: max-content;
+  animation: scrollTestimonials 30s linear infinite;
+}
+
+.UX-dt-cards:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scrollTestimonials {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.UX-dt-card {
+  width: 320px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+/* Tilted placements */
+.UX-dt-card-1 {
+  transform: translateY(20px) rotate(-3deg);
+}
+
+.UX-dt-card-2 {
+  transform: translateY(-20px) rotate(1.5deg);
+  z-index: 2;
+}
+
+.UX-dt-card-3 {
+  transform: translateY(15px) rotate(-1.5deg);
+}
+
+.UX-dt-card:hover {
+  transform: translateY(-5px) scale(1.02) rotate(0deg);
+  z-index: 10;
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.14);
+}
+
+/* ---- Avatar Wrapper — unique per card index ---- */
+.UX-dt-card-img-wrapper {
+  height: 280px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.03);
+}
+
+/* Avatar Wrapper backgrounds matching card colors for seamless blend */
+.UX-dt-card-1 .UX-dt-card-img-wrapper {
+  background-color: #bae6fd;
+}
+
+.UX-dt-card-2 .UX-dt-card-img-wrapper {
+  background-color: #fde8d8;
+}
+
+.UX-dt-card-3 .UX-dt-card-img-wrapper {
+  background-color: #d4f5e9;
+}
+
+.UX-dt-card-4 .UX-dt-card-img-wrapper {
+  background-color: #fff9db;
+}
+
+.UX-dt-card-5 .UX-dt-card-img-wrapper {
+  background-color: #ffedeb;
+}
+
+.UX-dt-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center top;
+  padding: 0;
+  transform: scale(1.15);
+  transform-origin: top;
+  mix-blend-mode: multiply;
+  /* Removes white background box */
+}
+
+/* The three different content background gradients */
+.UX-dt-card-content {
+  padding: 1.5rem;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+/* Card 1 — Pastel Purple content */
+.UX-dt-content-bg-1 {
+  background: linear-gradient(135deg, #bae6fd 0%, #7dd3fc 100%);
+  color: #0369a1;
+}
+
+/* Card 2 — Peach content */
+.UX-dt-content-bg-2 {
+  background: linear-gradient(135deg, #fde8d8 0%, #f8c9a8 100%);
+  color: #7a3b1e;
+}
+
+/* Card 3 — Mint Green content */
+.UX-dt-content-bg-3 {
+  background: linear-gradient(135deg, #d4f5e9 0%, #b0e8d2 100%);
+  color: #1a5c3a;
+}
+
+/* Card 4 — Soft Yellow content */
+.UX-dt-content-bg-4 {
+  background: linear-gradient(135deg, #fff9db 0%, #f8f1c8 100%);
+  color: #706210;
+}
+
+/* Card 5 — Light Coral content */
+.UX-dt-content-bg-5 {
+  background: linear-gradient(135deg, #ffedeb 0%, #f8dcd8 100%);
+  color: #8a3a30;
+}
+
+.UX-dt-card-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.UX-dt-card-text {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  opacity: 0.9;
+  font-family: 'Inter', sans-serif;
+}
+
+.UX-dt-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 5rem;
+}
+
+.UX-dt-dot {
+  width: 35px;
+  height: 2px;
+  background-color: #cbd5e0;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.UX-dt-dot-active {
+  background-color: #1a202c;
+  height: 3px;
+}
+
+@media (max-width: 1024px) {
+  .UX-dt-cards {
+    animation-duration: 45s;
+    /* slower on mobile */
+  }
+
+  .UX-dt-card-1,
+  .UX-dt-card-2,
+  .UX-dt-card-3,
+  .UX-dt-card-4,
+  .UX-dt-card-5 {
+    transform: none;
+  }
+}
+
+/* ============================================= */
+/* NEW GALLERY SECTION (IMAGE UI) */
+/* ============================================= */
+
+.UX-new-gallery-section {
+  padding: 5rem 2rem;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.UX-Gallery-container-new {
+  max-width: 1300px;
+  width: 100%;
+  margin: -50px;
+}
+
+.UX-Gallery-header-new {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.UX-Gallery-title-wrapper-new {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.UX-Gallery-title-line-new {
+  width: 4px;
+  height: 36px;
+  background-color: #ec4899;
+  border-radius: 4px;
+}
+
+.UX-Gallery-title-new {
+  font-family: 'Inter', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.UX-Gallery-view-all-new {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0ea5e9;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #0ea5e9;
+  padding-bottom: 2px;
+  transition: opacity 0.3s;
+}
+
+.UX-Gallery-view-all-new:hover {
+  opacity: 0.8;
+}
+
+.UX-Gallery-grid-new {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+/* Card General */
+.UX-Gallery-large-card-new,
+.UX-Gallery-medium-card-new {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.UX-Gallery-large-card-new:hover,
+.UX-Gallery-medium-card-new:hover,
+.UX-Gallery-small-card-new:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.UX-Gallery-card-bg-new {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  transition: transform 0.5s ease;
+}
+
+.UX-Gallery-large-card-new:hover .UX-Gallery-card-bg-new,
+.UX-Gallery-medium-card-new:hover .UX-Gallery-card-bg-new {
+  transform: scale(1.05);
+}
+
+.UX-Gallery-card-overlay-new {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70%;
+  background: linear-gradient(to top, rgba(16, 16, 40, 0.9) 0%, rgba(16, 16, 40, 0.4) 60%, transparent 100%);
+  z-index: 2;
+}
+
+.UX-Gallery-card-content-new {
+  position: relative;
+  z-index: 3;
+  padding: 2rem;
+}
+
+/* Badge */
+.UX-Gallery-badge-new {
+  display: inline-block;
+  background-color: #ec4899;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+}
+
+.UX-Gallery-badge-text-new {
+  color: #ec4899;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+/* Large Card Specifics */
+.UX-Gallery-large-card-new {
+  height: 520px;
+}
+
+.UX-Gallery-large-title-new {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 1rem 0;
+  line-height: 1.3;
+}
+
+.UX-Gallery-meta-new {
+  display: flex;
+  gap: 1.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.UX-Gallery-meta-item-new {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Middle Column (3 Small Cards) */
+.UX-Gallery-middle-col-new {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  height: 520px;
+}
+
+.UX-Gallery-small-card-new {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 1;
+  /* Takes equal height */
+}
+
+.UX-Gallery-small-image-new {
+  width: 140px;
+  height: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.UX-Gallery-small-image-new img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.UX-Gallery-small-card-new:hover .UX-Gallery-small-image-new img {
+  transform: scale(1.05);
+}
+
+.UX-Gallery-small-content-new {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem 1rem 1rem 0;
+}
+
+.UX-Gallery-small-title-new {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1A1A2E;
+  margin: 0 0 0.8rem 0;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ============================================= */
+/* NEW BENEFITS SECTION (IMAGE UI) */
+/* ============================================= */
+
+.UX-new-benefits-section {
+  position: relative;
+  background: linear-gradient(135deg, #f8faff 0%, #edf1ff 100%);
+  padding: 6rem 2rem;
+  overflow: hidden;
+  width: 100%;
+}
+
+.UX-benefits-bg-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.UX-bg-shape {
+  position: absolute;
+  opacity: 0.8;
+}
+
+.UX-bg-shape-1 {
+  top: -50px;
+  left: -50px;
+  width: 300px;
+  height: 300px;
+  transform: rotate(15deg);
+}
+
+.UX-bg-shape-2 {
+  bottom: -50px;
+  right: -50px;
+  width: 400px;
+  height: 400px;
+  transform: rotate(-20deg);
+}
+
+.UX-benefits-container-new {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.UX-benefits-image-grid-new {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 4fr 2fr 4fr;
+  gap: 20px;
+  height: 600px;
+  width: 100%;
+}
+
+.UX-benefit-img-card-new {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.UX-benefit-img-card-new:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.UX-benefit-img-card-0-new {
+  grid-column: 1;
+  grid-row: 1 / 4;
+}
+
+
+.UX-benefit-img-card-1-new {
+  grid-column: 2;
+  grid-row: 1 / 2;
+}
+
+
+.UX-benefit-img-card-2-new {
+  grid-column: 2;
+  grid-row: 2 / 4;
+}
+
+.UX-benefit-img-card-3-new {
+  grid-column: 3;
+  grid-row: 1 / 3;
+}
+
+.UX-benefit-img-card-4-new {
+  grid-column: 3;
+  grid-row: 3 / 4;
+}
+
+.UX-benefit-img-card-5-new {
+  grid-column: 4;
+  grid-row: 1 / 4;
+}
+
+.UX-benefit-card-bg-new {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  transition: transform 0.5s ease;
+}
+
+.UX-benefit-img-card-new:hover .UX-benefit-card-bg-new {
+  transform: scale(1.05);
+}
+
+.UX-benefit-card-overlay-new {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80%;
+  background: linear-gradient(to top, rgba(16, 16, 40, 0.95) 0%, rgba(16, 16, 40, 0.5) 50%, transparent 100%);
+  z-index: 2;
+}
+
+.UX-benefit-card-content-new {
+  position: relative;
+  z-index: 3;
+  padding: 1.5rem;
+}
+
+.UX-benefit-card-header-new {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 0.5rem;
+}
+
+.UX-benefit-card-icon-new {
+  color: #fff;
+  font-size: 1.2rem;
+  background: rgba(255, 255, 255, 0.15);
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+  flex-shrink: 0;
+}
+
+.UX-benefit-card-title-new {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.UX-benefit-card-desc-new {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media (max-width: 1024px) {
+  .UX-benefits-image-grid-new {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    height: auto;
+  }
+
+  .UX-benefit-img-card-0-new,
+  .UX-benefit-img-card-1-new,
+  .UX-benefit-img-card-2-new,
+  .UX-benefit-img-card-3-new,
+  .UX-benefit-img-card-4-new,
+  .UX-benefit-img-card-5-new {
+    grid-column: span 1;
+    grid-row: span 1;
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .UX-benefits-image-grid-new {
+    grid-template-columns: 1fr;
+  }
+}
+
+.UX-Gallery-small-date-new {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  color: #888;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Right Column (2 Medium Cards) */
+.UX-Gallery-right-col-new {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  height: 520px;
+}
+
+.UX-Gallery-medium-card-new {
+  flex: 1;
+}
+
+.UX-Gallery-medium-title-new {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+  line-height: 1.3;
+}
+
+@media (max-width: 1024px) {
+  .UX-Gallery-grid-new {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .UX-Gallery-right-col-new {
+    grid-column: span 2;
+    flex-direction: row;
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .UX-Gallery-grid-new {
+    grid-template-columns: 1fr;
+  }
+
+  .UX-Gallery-right-col-new {
+    grid-column: span 1;
+    flex-direction: column;
+    height: 520px;
+  }
+
+  .UX-Gallery-large-card-new {
+    height: 400px;
+  }
+
+  .UX-Gallery-middle-col-new {
+    height: auto;
+  }
+
+  .UX-Gallery-small-card-new {
+    height: 140px;
+  }
+}
+
+/* ============================================= */
+/* FIND INFLUENCERS & DARK FORM SECTION */
+/* ============================================= */
+
+.UX-influencer-section {
+  background-color: #141414;
+  /* padding: 8rem 0; */
+  /* More vertical padding, no horizontal padding to touch edges */
+  width: 100vw;
+  /* Actually stretch full viewport width */
+  margin-left: calc(-50vw + 50%);
+  /* Negative margin hack to break out of parent container if any */
+  margin-right: calc(-50vw + 50%);
+
+}
+
+.UX-influencer-container {
+  max-width: 1800px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.UX-influencer-content {
+  background-color: transparent;
+  border-radius: 0;
+  padding: 0;
+  position: relative;
+  box-shadow: none;
+}
+
+.UX-influencer-split {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40rem;
+}
+
+.UX-influencer-left {
+  flex: 1;
+}
+
+.UX-influencer-title {
+  color: #fff;
+  font-size: 4rem;
+  /* Reduced from 5rem */
+  font-weight: 700;
+  line-height: 1.1;
+  /* Tighter line height for large text */
+  font-family: 'Inter', sans-serif;
+  letter-spacing: -2px;
+  /* Tighter letter spacing */
+}
+
+.UX-search-badge {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #ec4899;
+  color: #ec4899;
+  border-radius: 40px;
+  padding: 0 1.2rem;
+  /* Reduced padding */
+  height: 50px;
+  /* Reduced height */
+  font-weight: 500;
+  font-size: 1.4rem;
+  /* Reduced font size */
+  vertical-align: middle;
+  margin: 0 0.8rem;
+}
+
+.UX-influencer-avatars {
+  display: inline-flex;
+  margin-right: 1rem;
+  vertical-align: middle;
+}
+
+.UX-influencer-avatars img {
+  width: 60px;
+  /* Reduced from 75px */
+  height: 60px;
+  /* Reduced from 75px */
+  border-radius: 50%;
+  border: 3px solid #141414;
+  /* Thicker border */
+  margin-left: -15px;
+  /* Less overlap since smaller */
+}
+
+.UX-influencer-avatars img:first-child {
+  margin-left: 0;
+}
+
+.UX-influencer-search-bar {
+  display: inline-flex;
+  align-items: center;
+  background-color: #222;
+  border-radius: 40px;
+  /* Larger radius */
+  height: 60px;
+  /* Reduced from 70px */
+  padding: 0 1rem 0 1.5rem;
+  /* Adjusted padding */
+  margin-left: 1rem;
+  vertical-align: middle;
+  width: 320px;
+  /* Reduced from 380px */
+  justify-content: space-between;
+}
+
+.UX-search-placeholder {
+  color: #555;
+  font-size: 1.2rem;
+  /* Reduced from 1.4rem */
+  font-weight: 400;
+}
+
+.UX-search-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.UX-voice-icon {
+  color: #888;
+  font-size: 1.6rem;
+  /* Larger icon */
+}
+
+.UX-search-submit {
+  background-color: #0ea5e9;
+  border: none;
+  width: 50px;
+  /* Larger button */
+  height: 50px;
+  /* Larger button */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.UX-search-submit svg {
+  font-size: 1.2rem !important;
+  /* Larger inner icon */
+}
+
+.UX-influencer-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* See How It's Done Card */
+.UX-see-how-card {
+  background: linear-gradient(135deg, #ec4899 0%, #0ea5e9 100%);
+  border-radius: 30px;
+  /* Larger radius */
+  width: 280px;
+  /* Reduced from 320px */
+  height: 200px;
+  /* Reduced from 240px */
+  padding: 1.5rem;
+  /* Reduced padding */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform: translateX(260px);
+}
+
+
+.UX-card-top-icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.UX-video-circle {
+  width: 50px;
+  /* Larger circle */
+  height: 50px;
+  /* Larger circle */
+  background-color: #141414;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  /* Larger icon */
+}
+
+.UX-arrow-circle {
+  font-size: 2rem;
+  /* Larger arrow */
+  color: #141414;
+}
+
+.UX-see-how-text {
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
+  font-size: 1.8rem;
+  /* Reduced from 2.2rem */
+  /* line-height: ; */
+  font-weight: 700;
+  margin: 17px;
+  margin-left: -20px;
+  /* Adjusted margin */
+}
+
+.UX-card-decorations {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.UX-decor-ring-1 {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 180px;
+  /* Larger ring */
+  height: 180px;
+  /* Larger ring */
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+}
+
+.UX-decor-ring-2 {
+  position: absolute;
+  bottom: -20px;
+  right: -40px;
+  width: 220px;
+  /* Larger ring */
+  height: 220px;
+  /* Larger ring */
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 50%;
+}
+
+/* Join Course Banner */
+.UX-join-course-banner {
+  background-color: #fff9f0;
+  border-radius: 20px;
+  padding: 3rem;
+  text-align: center;
+}
+
+.UX-join-banner-title {
+  color: #ff8c42;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: 'Aldrich', sans-serif;
+}
+
+.UX-join-banner-content {
+  background-color: white;
+  border-radius: 15px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.UX-join-course-subtitle {
+  color: #ff8c42;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.UX-join-course-desc {
+  color: #555;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+  font-family: 'Inter', sans-serif;
+}
+
+.UX-banner-register-btn {
+  background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.UX-banner-register-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 140, 66, 0.4);
+}
+
+/* Dark Theme Form Variant */
+.UX-form-section.UX-in-influencer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.UX-form-wrapper.UX-dark-form {
+  background-color: #222;
+  border: 1px solid #333;
+  width: 100%;
+  max-width: 500px;
+}
+
+.UX-form-dark-title {
+  color: #fff;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-family: 'Aldrich', sans-serif;
+}
+
+.UX-dark-form label {
+  color: #ddd;
+}
+
+.UX-dark-form .UX-form-input {
+  background-color: #1a1a1a;
+  border: 1px solid #444;
+  color: white;
+}
+
+.UX-dark-form .UX-form-input::placeholder {
+  color: #666;
+}
+
+.UX-close-dark {
+  color: #fff;
+  background-color: #333;
+}
+
+.UX-close-dark:hover {
+  background-color: #ff4757;
+  color: white;
+}
+
+@media (max-width: 1400px) {
+  .UX-influencer-split {
+    gap: 4rem;
+  }
+
+  .UX-influencer-title {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .UX-influencer-split {
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+  }
+
+  .UX-influencer-search-bar {
+    margin: 1.5rem auto 0 auto;
+    display: flex;
+  }
+
+  .UX-influencer-right {
+    justify-content: center;
+  }
+
+  .UX-influencer-title {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .UX-influencer-section {
+    padding: 4rem 0;
+  }
+
+  .UX-influencer-container {
+    padding: 0 1.5rem;
+  }
+
+  .UX-influencer-title {
+    font-size: 2.5rem;
+  }
+
+  .UX-search-badge {
+    height: 40px;
+    font-size: 1.2rem;
+    padding: 0 1rem;
+  }
+
+  .UX-influencer-avatars img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .UX-influencer-search-bar {
+    width: 100%;
+    max-width: 320px;
+    height: 60px;
+  }
+
+  .UX-see-how-card {
+    width: 280px;
+    height: 200px;
   }
 }

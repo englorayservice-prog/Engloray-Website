@@ -481,7 +481,7 @@ const InternshipProgram = () => {
           </p>
 
           {/* View Programs Button with FontAwesome Icon */}
-          <button
+          {/* <button
             className="tgi-view-programs-btn"
             onClick={handleViewPrograms}
           >
@@ -496,7 +496,7 @@ const InternshipProgram = () => {
                 }}
               />
             </span>
-          </button>
+          </button> */}
         </div>
 
         {/* Available Roles - Accordion Cards */}

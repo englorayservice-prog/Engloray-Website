@@ -8,6 +8,8 @@ import logoWooden from '../../assets/logos/wooden street-Photoroom.png';
 import logoTamil from '../../assets/logos/tamil natrals-Photoroom.png';
 import logoMaax from '../../assets/logos/maax life-Photoroom.png';
 import logoNestoria from '../../assets/logos/nestoria-Photoroom.png';
+import maleAvatar from '../../assets/testimonials/male_avatar.png';
+import femaleAvatar from '../../assets/testimonials/female_avatar.png';
 
 const Testimonials = () => {
   const testimonials = [
@@ -23,7 +25,7 @@ const Testimonials = () => {
       name: "Arun Kumar",
       role: "",
       feedback: "Learning graphic design from scratch at ENGLORAY helped me start my design career with confidence and practical skills. Their guidance, real-world projects, and supportive environment made learning inspiring and career-focused.",
-      avatar: "https://randomuser.me/api/portraits/men/44.jpg"
+      avatar: maleAvatar
     },
     {
       id: 3,
@@ -37,7 +39,7 @@ const Testimonials = () => {
       name: "Sarah Johnson",
       role: "",
       feedback: "The team at ENGLORAY exceeded my expectations with their creative direction and attention to detail. My brand has never looked better and the response from customers has been overwhelmingly positive.",
-      avatar: "https://randomuser.me/api/portraits/women/22.jpg"
+      avatar: femaleAvatar
     },
     {
       id: 5,
@@ -73,44 +75,44 @@ const Testimonials = () => {
   const allTestimonials = [...testimonials, ...testimonials];
 
   return (
-    <section id="Testimonials" className="testimonials-section">
-      <div className="testimonials-container">
+    <section id="tmls-Testimonials" className="tmls-testimonials-section">
+      <div className="tmls-testimonials-container">
         {/* Left Side - Content */}
-        <div className="testimonials-left">
-          <h2 className="testimonials-title">What Our clients<br /> & students Says</h2>
-          <p className="testimonials-description">
+        <div className="tmls-testimonials-left">
+          <h2 className="tmls-testimonials-title">What Our clients<br /> & students Says</h2>
+          <p className="tmls-testimonials-description">
             Relation so in confined smallest children unpacked delicate. Why sir end believe uncivil respect. Always get adieux nature day course for common.
           </p>
           {/* <button className="testimonials-button">View More</button> */}
         </div>
 
         {/* Right Side - Cards Stack with Infinite Scroll */}
-        <div className="testimonials-right">
-          <div className="testimonials-scroll-container">
-            <div className="testimonials-scroll-track">
+        <div className="tmls-testimonials-right">
+          <div className="tmls-testimonials-scroll-container">
+            <div className="tmls-testimonials-scroll-track">
               {allTestimonials.map((testimonial, index) => {
                 const isEven = index % 2 === 0;
                 const isOdd = index % 2 === 1;
                 return (
                   <div
                     key={`${testimonial.id}-${index}`}
-                    className={`testimonial-card ${isOdd ? 'card-second' : ''
+                    className={`tmls-testimonial-card ${isOdd ? 'tmls-card-second' : ''
                       }`}
                   >
-                    <div className="testimonial-icon">"</div>
-                    <div className="testimonial-card-content">
+                    <div className="tmls-testimonial-icon">"</div>
+                    <div className="tmls-testimonial-card-content">
                       <div
-                        className={`testimonial-avatar ${isEven ? 'avatar-transparent' : ''
+                        className={`tmls-testimonial-avatar ${isEven ? 'tmls-avatar-transparent' : ''
                           }`}
                       >
                         <img src={testimonial.avatar} alt={testimonial.name} />
                       </div>
-                      <div className="testimonial-text">
-                        <div className="testimonial-author">
+                      <div className="tmls-testimonial-text">
+                        <div className="tmls-testimonial-author">
                           <h4>{testimonial.name}</h4>
                           {testimonial.role && <span>{testimonial.role}</span>}
                         </div>
-                        <div className="testimonial-feedback">
+                        <div className="tmls-testimonial-feedback">
                           <p>{testimonial.feedback}</p>
                         </div>
                       </div>

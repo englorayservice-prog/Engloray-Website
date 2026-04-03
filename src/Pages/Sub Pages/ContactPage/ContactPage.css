@@ -1,0 +1,703 @@
+/* ===================================================
+   Student Contact Page  –  StudentContactPage.css
+   =================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* ─── Page Wrapper ─── */
+.sc-page {
+    min-height: 100vh;
+    font-family: 'Inter', 'Aldrich', sans-serif;
+    background: #f5f5f5;
+    overflow-x: hidden;
+}
+
+/* ════════════════════════════════════
+   HERO SECTION
+════════════════════════════════════ */
+.sc-hero {
+    position: relative;
+    height: 420px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 0;
+    overflow: hidden;
+}
+
+/* gradient overlay – more opacity on left so text is readable */
+.sc-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right,
+            rgba(5, 0, 0, 0.72) 0%,
+            rgba(10, 0, 0, 0.45) 50%,
+            rgba(0, 0, 0, 0.2) 100%);
+    z-index: 1;
+}
+
+/* "Contacts" bottom-left text */
+.sc-hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 0 2.2rem 4%;
+}
+
+.sc-hero-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(3rem, 5vw, 5rem);
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0px;
+    line-height: 1;
+    margin-top: -220px;
+    opacity: 0;
+    animation: scFadeUp 0.7s ease-out 0.25s forwards;
+}
+
+/* ── Bottom-right angled clip ── */
+.sc-hero-clip {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 3;
+    width: 180px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(6px);
+    clip-path: polygon(38% 0%, 100% 0%, 100% 100%, 0% 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.2rem 1rem 1.2rem 0;
+}
+
+/* vertical "Contacts" text along the right edge */
+.sc-hero-clip-vertical {
+    font-family: 'Aldrich', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.75);
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    padding-right: 0.1rem;
+}
+
+/* Tab sitting flush with bottom edge */
+.sc-hero-tab {
+    position: absolute;
+    bottom: 0;
+    right: 180px;
+    background: #f5f5f5;
+    padding: 0.65rem 1.6rem;
+    border-radius: 12px 12px 0 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    z-index: 4;
+}
+
+/* Corner fillet curves connecting tab to edge */
+.sc-hero-tab::before,
+.sc-hero-tab::after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    width: 1rem;
+    height: 1rem;
+    background: transparent;
+    border-radius: 50%;
+}
+
+.sc-hero-tab::before {
+    left: -1rem;
+    box-shadow: 0.5rem 0.5rem 0px 0px #f5f5f5;
+}
+
+.sc-hero-tab::after {
+    right: -1rem;
+    box-shadow: -0.5rem 0.5rem 0px 0px #f5f5f5;
+}
+
+.sc-tab-dot {
+    font-size: 0.5rem;
+    color: #a8a8a8;
+    padding-bottom: 2px;
+}
+
+/* ════════════════════════════════════
+   BODY  (Info  +  Form)
+════════════════════════════════════ */
+.sc-body {
+    background: #f5f5f5;
+    padding: 5rem 5% 5.5rem;
+}
+
+.sc-body-inner {
+    max-width: 1160px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: flex-start;
+}
+
+/* ── LEFT ── */
+.sc-info {
+    opacity: 0;
+    animation: scFadeUp 0.8s ease-out 0.2s forwards;
+    text-align: left;
+}
+
+.sc-info-eyebrow {
+    display: block;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    color: #999;
+    font-family: 'Aldrich', sans-serif;
+    margin-bottom: 1rem;
+}
+
+.sc-info-heading {
+    font-size: clamp(1.7rem, 2.6vw, 2.35rem);
+    font-weight: 800;
+    color: #0d0d0d;
+    line-height: 1.22;
+    margin: 0 0 1.1rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.sc-info-desc {
+    font-size: 0.88rem;
+    color: #666;
+    line-height: 1.7;
+    margin: 0 0 2.2rem;
+    font-family: 'Aldrich', sans-serif;
+}
+
+/* 2 × 2 grid — no box borders, just spacing */
+.sc-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    background: transparent;
+    border: none;
+}
+
+.sc-info-card {
+    background: transparent;
+    padding: 1.4rem 1rem 1.4rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+    gap: 0.35rem;
+    min-height: 100px;
+    transition: none;
+}
+
+.sc-info-card:nth-child(odd) {
+    padding-right: 2rem;
+}
+
+.sc-info-card-title {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    font-family: 'Inter', sans-serif;
+    margin: 0 0 0.5rem;
+    text-transform: capitalize;
+}
+
+.sc-info-card-line {
+    margin: 0;
+    font-size: 0.82rem;
+    color: #555;
+    font-family: 'Aldrich', sans-serif;
+    line-height: 1.5;
+}
+
+.sc-info-card-line a {
+    color: #555;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.sc-info-card-line a:hover {
+    color: #b01010;
+}
+
+/* social card – left align to match others */
+.sc-info-card--social {
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    padding-top: 1.4rem;
+}
+
+.sc-card-socials {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 0.4rem;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.sc-card-social-btn {
+    color: #444;
+    font-size: 1.55rem;
+    text-decoration: none;
+    transition: color 0.22s, transform 0.22s;
+    line-height: 1;
+}
+
+.sc-card-social-btn:hover {
+    color: #b01010;
+    transform: translateY(-2px);
+}
+
+/* ── RIGHT – Elevated Form Card ── */
+.sc-form-card {
+    background: #f0f0f0;
+    /* slightly off-white */
+    border-radius: 4px;
+    padding: 2.6rem 2.4rem 2.8rem;
+    box-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.06),
+        0 8px 24px rgba(0, 0, 0, 0.08);
+    opacity: 0;
+    animation: scFadeUp 0.85s ease-out 0.45s forwards;
+    position: relative;
+}
+
+.sc-form-header {
+    margin-bottom: 1.8rem;
+}
+
+.sc-form-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #0d0d0d;
+    margin: 0 0 0.4rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.sc-form-subtitle {
+    font-size: 0.82rem;
+    color: #777;
+    font-family: 'Aldrich', sans-serif;
+    line-height: 1.55;
+    margin: 0;
+}
+
+/* Form */
+.sc-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sc-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.sc-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #888;
+    text-align: start;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    font-family: 'Aldrich', sans-serif;
+}
+
+.sc-input {
+    padding: 0.68rem 0.9rem;
+    border: none;
+    border-bottom: 1.5px solid #c8c8c8;
+    border-radius: 0;
+    font-size: 0.9rem;
+    color: #1a1a1a;
+    font-family: 'Aldrich', sans-serif;
+    background: transparent;
+    transition: border-color 0.22s;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.sc-input::placeholder {
+    color: #b8b8b8;
+}
+
+.sc-input:focus {
+    border-bottom-color: #1a1a1a;
+}
+
+.sc-textarea {
+    resize: none;
+    min-height: 90px;
+    border: 1.5px solid #c8c8c8;
+    border-radius: 2px;
+    padding: 0.7rem 0.9rem;
+    background: #e8e8e8;
+}
+
+.sc-textarea:focus {
+    border-color: #1a1a1a;
+}
+
+/* Submit button – dark pill */
+.sc-submit-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.78rem 2rem;
+    background: #1a1a1a;
+    color: #fff;
+    border: none;
+    border-radius: 40px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    font-family: 'Aldrich', sans-serif;
+    cursor: pointer;
+    letter-spacing: 0.3px;
+    transition: background 0.25s, transform 0.25s;
+    align-self: flex-start;
+    margin-top: 0.4rem;
+}
+
+.sc-submit-btn:hover:not(:disabled) {
+    background: #333;
+    transform: translateY(-2px);
+}
+
+.sc-submit-btn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+/* Success state */
+.sc-success {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    padding: 2rem 0;
+    animation: scFadeUp 0.5s ease-out forwards;
+}
+
+.sc-success-icon {
+    font-size: 3rem;
+    color: #22c55e;
+}
+
+.sc-success-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.sc-success-text {
+    font-size: 0.88rem;
+    color: #666;
+    font-family: 'Aldrich', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.sc-success-btn {
+    padding: 0.6rem 1.8rem;
+    background: #1a1a1a;
+    color: #fff;
+    border: none;
+    border-radius: 40px;
+    font-size: 0.82rem;
+    font-family: 'Aldrich', sans-serif;
+    cursor: pointer;
+    transition: background 0.25s;
+}
+
+.sc-success-btn:hover {
+    background: #b01010;
+}
+
+/* ════════════════════════════════════
+   SUPPORT BANNER
+════════════════════════════════════ */
+.sc-support {
+    background: #f5f5f5;
+    padding: 4rem 5% 3.5rem;
+    border-top: none;
+}
+
+.sc-support-inner {
+    max-width: 720px;
+    opacity: 0;
+    animation: scFadeUp 0.9s ease-out 0.2s both;
+}
+
+.sc-support-label {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-family: 'Aldrich', sans-serif;
+    text-transform: none;
+    text-align: start;
+    letter-spacing: 0.5px;
+    color: #888;
+    margin-bottom: 0.8rem;
+}
+
+.sc-support-heading {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 800;
+    margin-right: -50px;
+    color: #0d0d0d;
+    line-height: 1.15;
+    margin: 0;
+    text-align: left;
+    font-family: 'Inter', sans-serif;
+}
+
+/* ════════════════════════════════════
+   KEYFRAMES
+════════════════════════════════════ */
+@keyframes scFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ════════════════════════════════════
+   CUSTOM DARK FOOTER
+════════════════════════════════════ */
+.sc-dark-footer-wrapper {
+    background: white;
+    padding: 0 5% 2rem;
+}
+
+.sc-dark-footer {
+    background: #1a1a1a;
+    border-radius: 20px;
+    padding: 4rem 4rem 1.5rem;
+    font-family: 'Inter', sans-serif;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: visible;
+}
+
+.sc-df-top {
+    display: flex;
+    justify-content: flex-start;
+    gap: 12rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.sc-df-left {
+    max-width: 500px;
+}
+
+.sc-df-logo-icon img {
+    margin-bottom: 3rem;
+    opacity: 0.9;
+    filter: brightness(0) invert(1);
+}
+
+.sc-df-title {
+    font-size: 3rem;
+    line-height: 1.2;
+
+
+    max-width: 1000px;
+}
+
+.sc-df-title .line {
+    display: block;
+    white-space: nowrap;
+}
+
+.sc-df-text-blue {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+
+    color: #4a88e6;
+}
+
+.sc-df-text-red {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+
+    color: #de4747;
+}
+
+.sc-df-right {
+    display: flex;
+    gap: 5rem;
+    margin-left: 30px;
+
+}
+
+.sc-df-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.sc-df-col h4 {
+    font-family: 'Aldrich', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin: 0 0 2rem;
+    color: #fff;
+}
+
+.sc-df-col a {
+    display: block;
+    text-decoration: none;
+    color: #e0e0e0;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 1.4rem;
+    transition: color 0.2s;
+    letter-spacing: 0.4px;
+    white-space: nowrap;
+}
+
+.sc-df-col a:hover {
+    color: #fff;
+}
+
+.sc-df-active-link {
+    color: #fff !important;
+}
+
+.sc-df-website {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #fff;
+    letter-spacing: 0.5px;
+    margin-top: 1.5rem;
+    z-index: 2;
+    position: relative;
+}
+
+/* cutout arch causing the "feet" */
+.sc-df-cutout {
+    position: absolute;
+    bottom: 0px;
+    left: 3.5rem;
+    right: 3.5rem;
+    height: 2rem;
+    background: white;
+    border-radius: 1.2rem 1.2rem 0 0;
+    z-index: 1;
+}
+
+/* left internal fillet curve */
+.sc-df-cutout::before {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: -1.2rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 0.6rem 0.6rem 0px 0px white;
+}
+
+/* right internal fillet curve */
+.sc-df-cutout::after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    right: -1.2rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: -0.6rem 0.6rem 0px 0px white;
+}
+
+.sc-df-bottom-text {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 3.5rem 1.5rem;
+    font-size: 0.78rem;
+    color: #a0a0a0;
+    font-family: 'Inter', sans-serif;
+    position: relative;
+    z-index: 2;
+}
+
+/* ════════════════════════════════════
+   RESPONSIVE
+════════════════════════════════════ */
+@media (max-width: 1024px) {
+    .sc-body-inner {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .sc-hero {
+        height: 240px;
+    }
+
+    .sc-hero-clip {
+        width: 110px;
+    }
+
+    .sc-body {
+        padding: 3rem 5%;
+    }
+
+    .sc-form-card {
+        padding: 2rem 1.4rem;
+    }
+
+    .sc-support {
+        padding: 3.5rem 5%;
+    }
+}
+
+@media (max-width: 480px) {
+    .sc-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sc-hero-content {
+        padding-left: 5%;
+    }
+
+    .sc-hero-clip {
+        display: none;
+    }
+}

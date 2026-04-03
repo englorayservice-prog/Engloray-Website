@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#102532"/>
+      <stop offset="100%" stop-color="#070E13"/>
+    </linearGradient>
+    <linearGradient id="wandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06B6D4"/>
+      <stop offset="50%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#EC4899"/>
+    </linearGradient>
+    <filter id="glow" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <rect width="400" height="400" fill="url(#bgGrad)"/>
+
+  <!-- subtle grid -->
+  <g stroke="rgba(255,255,255,0.05)" stroke-width="2">
+    <path d="M50 0 V400 M100 0 V400 M150 0 V400 M200 0 V400 M250 0 V400 M300 0 V400 M350 0 V400"/>
+    <path d="M0 50 H400 M0 100 H400 M0 150 H400 M0 200 H400 M0 250 H400 M0 300 H400 M0 350 H400"/>
+  </g>
+
+  <!-- card -->
+  <rect x="95" y="85" width="210" height="210" rx="26" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.10)" stroke-width="2"/>
+
+  <!-- magic wand -->
+  <g filter="url(#glow)" opacity="0.95">
+    <path d="M135 255 L255 135" stroke="url(#wandGrad)" stroke-width="18" stroke-linecap="round"/>
+    <path d="M152 272 L272 152" stroke="rgba(255,255,255,0.35)" stroke-width="4" stroke-linecap="round"/>
+    <rect x="238" y="118" width="36" height="36" rx="10" transform="rotate(45 256 136)" fill="rgba(255,255,255,0.16)"/>
+  </g>
+
+  <!-- sparkles -->
+  <path d="M170 115 L178 140 L205 148 L178 156 L170 181 L162 156 L135 148 L162 140 Z"
+        fill="rgba(255,255,255,0.90)" opacity="0.9"/>
+  <path d="M270 205 L276 222 L294 228 L276 234 L270 251 L264 234 L246 228 L264 222 Z"
+        fill="url(#wandGrad)" opacity="0.9"/>
+  <path d="M120 190 L124 202 L136 206 L124 210 L120 222 L116 210 L104 206 L116 202 Z"
+        fill="rgba(255,255,255,0.65)" opacity="0.85"/>
+
+  <!-- label -->
+  <g font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial" text-anchor="middle">
+    <text x="200" y="350" font-size="26" fill="rgba(255,255,255,0.92)" font-weight="700">Canva Magic</text>
+    <text x="200" y="374" font-size="14" fill="rgba(255,255,255,0.60)">one-click cleanup</text>
+  </g>
+</svg>

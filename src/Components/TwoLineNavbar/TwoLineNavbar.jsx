@@ -247,7 +247,7 @@ const TwoLineNavbar = () => {
     const adjustDropdownPositions = () => {
         if (typeof window === 'undefined') return;
 
-        const dropdowns = document.querySelectorAll('.mega-dropdown');
+        const dropdowns = document.querySelectorAll('.tlnbn-mega-dropdown');
         const viewportWidth = window.innerWidth;
 
         dropdowns.forEach((dropdown) => {
@@ -257,8 +257,8 @@ const TwoLineNavbar = () => {
             const dropdownWidth = dropdown.offsetWidth;
 
             const navItem = dropdown.parentElement;
-            const isFirst = navItem.classList.contains('first-item');
-            const isLast = navItem.classList.contains('last-item');
+            const isFirst = navItem.classList.contains('tlnbn-first-item');
+            const isLast = navItem.classList.contains('tlnbn-last-item');
 
             if (isFirst) {
                 dropdown.style.left = '0';
@@ -342,9 +342,9 @@ const TwoLineNavbar = () => {
         setIsMobileMenuOpen(newState);
 
         if (newState) {
-            document.body.classList.add('menu-open');
+            document.body.classList.add('tlnbn-menu-open');
         } else {
-            document.body.classList.remove('menu-open');
+            document.body.classList.remove('tlnbn-menu-open');
             setActiveMobileMenu(null);
         }
     };
@@ -353,7 +353,7 @@ const TwoLineNavbar = () => {
         setIsMobileMenuOpen(false);
         setActiveMenu(null);
         setActiveMobileMenu(null);
-        document.body.classList.remove('menu-open');
+        document.body.classList.remove('tlnbn-menu-open');
     };
 
     const handleMenuHover = (menuId) => {
@@ -403,33 +403,33 @@ const TwoLineNavbar = () => {
                     {/* <meta property="og:url" content="https://yourapp.com" /> */}
                 </Helmet>
                 <div
-                    className={`navbar-main-container ${showNavbar ? 'navbar-visible' : 'navbar-hidden'}`}
+                    className={`tlnbn-navbar-main-container ${showNavbar ? 'tlnbn-navbar-visible' : 'tlnbn-navbar-hidden'}`}
                     ref={navRef}
                 >
                     {/* First Line */}
-                    <nav className="navbar-first-line">
-                        <div className="nav-first-content">
+                    <nav className="tlnbn-navbar-first-line">
+                        <div className="tlnbn-nav-first-content">
                             {/* Logo - Center */}
-                            <div className="logo" onClick={handleHomeClick}>
+                            <div className="tlnbn-logo" onClick={handleHomeClick}>
                                 <img src={Logo} alt="ENGLORAY" />
                             </div>
 
                             {/* Action Buttons - Center (near logo) */}
-                            <div className="action-buttons">
+                            <div className="tlnbn-action-buttons">
                                 <button
-                                    className="btn start-project"
+                                    className="tlnbn-btn tlnbn-start-project"
                                     onClick={openWhatsApp}
                                 >
                                     Start a Project
                                 </button>
                                 <button
-                                    className="btn get-started"
+                                    className="tlnbn-btn tlnbn-get-started"
                                     onClick={navigateToFooterContact}
                                 >
                                     Get Started
                                 </button>
                                 <button
-                                    className="btn join-now"
+                                    className="tlnbn-btn tlnbn-join-now"
                                     onClick={navigateToTechLearning}
                                 >
                                     Join Now
@@ -441,7 +441,7 @@ const TwoLineNavbar = () => {
 
                             {/* Mobile Toggle */}
                             <button
-                                className="mobile-toggle"
+                                className="tlnbn-mobile-toggle"
                                 onClick={toggleMobileMenu}
                                 aria-label="Toggle menu"
                             >
@@ -453,24 +453,24 @@ const TwoLineNavbar = () => {
                     </nav>
 
                     {/* Second Line - Desktop Only */}
-                    <nav className="navbar-second-line desktop-only">
-                        <div className="nav-second-content">
-                            <div className="search-container-wrapper">
+                    <nav className="tlnbn-navbar-second-line tlnbn-desktop-only">
+                        <div className="tlnbn-nav-second-content">
+                            <div className="tlnbn-search-container-wrapper">
                                 <SearchBar />
                             </div>
 
                             {/* Desktop Navigation Menu */}
-                            <ul className="desktop-menu">
+                            <ul className="tlnbn-desktop-menu">
                                 {menuData.map((menu, index) => (
                                     <li
                                         key={menu.id}
-                                        className={`nav-item ${activeMenu === menu.id ? 'active' : ''} ${index === 0 ? 'first-item' : index === menuData.length - 1 ? 'last-item' : ''
+                                        className={`tlnbn-nav-item ${activeMenu === menu.id ? 'tlnbn-active' : ''} ${index === 0 ? 'tlnbn-first-item' : index === menuData.length - 1 ? 'tlnbn-last-item' : ''
                                             }`}
                                         onMouseEnter={() => handleMenuHover(menu.id)}
                                         onMouseLeave={handleMenuLeave}
                                     >
                                         <div
-                                            className="nav-link"
+                                            className="tlnbn-nav-link"
                                             onClick={(e) => handleMenuItemClick(menu, e)}
                                             role="button"
                                             tabIndex={0}
@@ -482,18 +482,18 @@ const TwoLineNavbar = () => {
                                             }}
                                         >
                                             {menu.title}
-                                            {menu.dropdown && <span className="arrow">⌄</span>}
+                                            {menu.dropdown && <span className="tlnbn-arrow">⌄</span>}
                                         </div>
 
                                         {menu.dropdown && (
-                                            <div className={`mega-dropdown ${activeMenu === menu.id ? 'visible' : ''}`}>
-                                                <div className="dropdown-content">
+                                            <div className={`tlnbn-mega-dropdown ${activeMenu === menu.id ? 'tlnbn-visible' : ''}`}>
+                                                <div className="tlnbn-dropdown-content">
                                                     <h3>{menu.dropdown.title}</h3>
-                                                    <div className="dropdown-grid">
+                                                    <div className="tlnbn-dropdown-grid">
                                                         {menu.dropdown.items.map((item, index) => (
                                                             <div
                                                                 key={item.id || index}
-                                                                className="dropdown-item"
+                                                                className="tlnbn-dropdown-item"
                                                                 onClick={() => handleDropdownItemClick(item)}
                                                                 role="button"
                                                                 tabIndex={0}
@@ -503,10 +503,10 @@ const TwoLineNavbar = () => {
                                                                     }
                                                                 }}
                                                             >
-                                                                <div className="item-icon">{item.icon}</div>
-                                                                <div className="item-text">
-                                                                    <div className="item-title">{item.name}</div>
-                                                                    <div className="item-desc">{item.desc}</div>
+                                                                <div className="tlnbn-item-icon">{item.icon}</div>
+                                                                <div className="tlnbn-item-text">
+                                                                    <div className="tlnbn-item-title">{item.name}</div>
+                                                                    <div className="tlnbn-item-desc">{item.desc}</div>
                                                                 </div>
                                                             </div>
                                                         ))}
@@ -516,9 +516,9 @@ const TwoLineNavbar = () => {
                                         )}
                                     </li>
                                 ))}
-                                <div className="nav-subscribe-container">
+                                <div className="tlnbn-nav-subscribe-container">
                                     <button
-                                        className="subscribe-btn"
+                                        className="tlnbn-subscribe-btn"
                                         onClick={navigateToFooterContact}
                                     >
                                         Contact
@@ -530,19 +530,19 @@ const TwoLineNavbar = () => {
                 </div>
 
                 {/* Mobile Menu WITH SEARCH BAR */}
-                <div className={`mobile-menu-overlay ${isMobileMenuOpen ? 'active' : ''}`} onClick={closeMobileMenu}>
-                    <div className="mobile-menu" onClick={(e) => e.stopPropagation()}>
+                <div className={`tlnbn-mobile-menu-overlay ${isMobileMenuOpen ? 'tlnbn-active' : ''}`} onClick={closeMobileMenu}>
+                    <div className="tlnbn-mobile-menu" onClick={(e) => e.stopPropagation()}>
                         {/* Mobile Menu Header - JUST CLOSE BUTTON */}
-                        <div className="mobile-menu-header">
-                            <button className="close-btn" onClick={closeMobileMenu} aria-label="Close menu">
+                        <div className="tlnbn-mobile-menu-header">
+                            <button className="tlnbn-close-btn" onClick={closeMobileMenu} aria-label="Close menu">
                                 ×
                             </button>
                         </div>
 
                         {/* Mobile Menu Content WITH SEARCH BAR AT THE TOP */}
-                        <div className="mobile-menu-content">
+                        <div className="tlnbn-mobile-menu-content">
                             {/* Search Bar at the top */}
-                            <div className="mobile-search-wrapper" style={{
+                            <div className="tlnbn-mobile-search-wrapper" style={{
                                 padding: '15px 20px',
                                 background: '#f8fafc',
                                 borderBottom: '1px solid #e2e8f0',
@@ -556,11 +556,11 @@ const TwoLineNavbar = () => {
                             </div>
 
                             {/* Mobile Navigation Links */}
-                            <div className="mobile-nav-items">
+                            <div className="tlnbn-mobile-nav-items">
                                 {menuData.map((menu) => (
-                                    <div key={menu.id} className={`mobile-nav-item ${activeMobileMenu === menu.id ? 'active' : ''}`}>
+                                    <div key={menu.id} className={`tlnbn-mobile-nav-item ${activeMobileMenu === menu.id ? 'tlnbn-active' : ''}`}>
                                         <div
-                                            className="mobile-nav-link"
+                                            className="tlnbn-mobile-nav-link"
                                             onClick={() => handleMobileMenuItemClick(menu)}
                                             role="button"
                                             tabIndex={0}
@@ -572,15 +572,15 @@ const TwoLineNavbar = () => {
                                         >
                                             <span>{menu.title}</span>
                                             {menu.dropdown && (
-                                                <span className="arrow">{activeMobileMenu === menu.id ? '⌃' : '⌄'}</span>
+                                                <span className="tlnbn-arrow">{activeMobileMenu === menu.id ? '⌃' : '⌄'}</span>
                                             )}
                                         </div>
                                         {menu.dropdown && (
-                                            <div className={`mobile-dropdown ${activeMobileMenu === menu.id ? 'visible' : ''}`}>
+                                            <div className={`tlnbn-mobile-dropdown ${activeMobileMenu === menu.id ? 'tlnbn-visible' : ''}`}>
                                                 {menu.dropdown.items.map((item, index) => (
                                                     <div
                                                         key={item.id || index}
-                                                        className="mobile-dropdown-item"
+                                                        className="tlnbn-mobile-dropdown-item"
                                                         onClick={() => handleMobileDropdownItemClick(item)}
                                                         role="button"
                                                         tabIndex={0}
@@ -590,10 +590,10 @@ const TwoLineNavbar = () => {
                                                             }
                                                         }}
                                                     >
-                                                        <span className="mobile-icon">{item.icon}</span>
-                                                        <div className="mobile-item-text">
-                                                            <div className="mobile-item-title">{item.name}</div>
-                                                            <div className="mobile-item-desc">{item.desc}</div>
+                                                        <span className="tlnbn-mobile-icon">{item.icon}</span>
+                                                        <div className="tlnbn-mobile-item-text">
+                                                            <div className="tlnbn-mobile-item-title">{item.name}</div>
+                                                            <div className="tlnbn-mobile-item-desc">{item.desc}</div>
                                                         </div>
                                                     </div>
                                                 ))}
@@ -604,21 +604,21 @@ const TwoLineNavbar = () => {
                             </div>
 
                             {/* Mobile Action Buttons */}
-                            <div className="mobile-actions">
+                            <div className="tlnbn-mobile-actions">
                                 <button
-                                    className="btn start-project"
+                                    className="tlnbn-btn tlnbn-start-project"
                                     onClick={openWhatsApp}
                                 >
                                     Start a Project
                                 </button>
                                 <button
-                                    className="btn get-started"
+                                    className="tlnbn-btn tlnbn-get-started"
                                     onClick={navigateToFooterContact}
                                 >
                                     Get Started
                                 </button>
                                 <button
-                                    className="btn join-now"
+                                    className="tlnbn-btn tlnbn-join-now"
                                     onClick={navigateToTechLearning}
                                 >
                                     Join Now

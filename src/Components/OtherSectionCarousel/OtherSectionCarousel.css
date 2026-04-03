@@ -46,6 +46,17 @@
     display: inline-block;
 }
 
+@media (max-width: 768px) {
+    .marquee-text {
+        font-size: 1.2rem;
+        letter-spacing: 1.5px;
+    }
+    .scrolling-marquee-container {
+        height: 40px;
+        bottom: -20px;
+    }
+}
+
 /* Smooth infinite scroll animation */
 @keyframes scroll-left {
     0% {
@@ -247,7 +258,7 @@
 .compact-card-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     transition: all 0.5s ease;
 }
 
@@ -497,24 +508,22 @@
 /* Mobile Responsive Design */
 @media (max-width: 768px) {
     .compact-carousel-section {
-        padding: 30px 0 25px 0;
-        /* Further reduced top padding for mobile */
-        margin-top: -15px;
-        /* Less negative margin for mobile */
+        padding: 60px 0 40px 0;
+        margin-top: 0;
     }
 
     .compact-carousel {
-        height: 280px;
+        height: 320px;
     }
 
     .compact-service-card {
-        height: 240px;
-        width: 85%;
-        /* Keep centered positioning from global rules */
+        height: 280px;
+        width: 90%;
+        max-width: 320px;
     }
 
-    /* Hide all cards except active one */
-    .compact-service-card:not(.active) {
+    /* Hide cards that are far away from active to prevent overflow/clutter */
+    .compact-service-card.hidden {
         display: none;
     }
 
@@ -522,14 +531,19 @@
         transform: translate(-50%, -50%) scale(1) !important;
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
     }
+    
+    .compact-service-card.prev {
+        transform: translate(calc(-50% - 85%), -50%) scale(0.8) !important;
+        opacity: 0.3;
+    }
 
-    .compact-service-card:hover {
-        transform: translate(-50%, -50%) scale(1.02) !important;
+    .compact-service-card.next {
+        transform: translate(calc(-50% + 85%), -50%) scale(0.8) !important;
+        opacity: 0.3;
     }
 
     .carousel-header {
         margin-bottom: 25px;
-        /* Reduced for mobile */
         padding: 0 20px;
     }
 
@@ -538,149 +552,28 @@
     }
 
     .carousel-header p {
-        font-size: 1rem;
-    }
-
-    .compact-card-content {
-        padding: 20px;
-    }
-
-    .compact-card-text h3 {
-        font-size: 1.3rem;
-    }
-
-    .compact-card-text p {
-        font-size: 0.9rem;
-    }
-
-    .compact-card-minimal h3 {
-        font-size: 1.2rem;
-    }
-
-    .cta-button {
-        padding: 10px 24px;
-        font-size: 0.9rem;
-    }
-
-    .compact-carousel-nav {
-        margin-top: 25px;
-        /* Reduced for mobile */
-        padding: 0 20px;
-    }
-
-    .carousel-nav-btn {
-        width: 48px;
-        height: 48px;
-        font-size: 1.1rem;
-    }
-
-    .compact-carousel-indicators {
-        margin-top: 20px;
-        /* Reduced for mobile */
-        padding: 0 20px;
-    }
-}
-
-@media (max-width: 640px) {
-    .compact-carousel-section {
-        padding: 25px 0 20px 0;
-    }
-
-    .compact-carousel {
-        height: 250px;
-    }
-
-    .compact-service-card {
-        height: 220px;
-        width: 90%;
-    }
-
-    .compact-card-content {
-        padding: 18px;
-    }
-
-    .compact-card-text h3 {
-        font-size: 1.2rem;
-    }
-
-    .compact-card-text p {
-        font-size: 0.85rem;
-    }
-
-    .compact-carousel-nav {
-        margin-top: 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    .compact-carousel-section {
-        padding: 20px 0 15px 0;
-        /* Minimal padding */
-        margin-top: -10px;
-        /* Minimal negative margin */
-    }
-
-    .compact-carousel {
-        height: 220px;
-    }
-
-    .compact-service-card {
-        height: 200px;
-        width: 92%;
-    }
-
-    .carousel-header {
-        margin-bottom: 20px;
-    }
-
-    .carousel-header h2 {
-        font-size: 1.6rem;
-    }
-
-    .carousel-header p {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
     }
 
     .compact-card-content {
         padding: 15px;
+        transform: translateY(0); /* Always show on touch */
+        opacity: 1;
+        background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
     }
 
     .compact-card-text h3 {
         font-size: 1.1rem;
-        margin-bottom: 8px;
+        margin-bottom: 5px;
     }
 
     .compact-card-text p {
         font-size: 0.8rem;
-        line-height: 1.4;
-    }
-
-    .compact-card-minimal h3 {
-        font-size: 1rem;
     }
 
     .cta-button {
-        padding: 8px 20px;
-        font-size: 0.85rem;
-    }
-
-    .compact-carousel-nav {
-        margin-top: 20px;
-    }
-
-    .carousel-nav-btn {
-        width: 44px;
-        height: 44px;
-        font-size: 1rem;
-    }
-
-    .compact-carousel-indicators {
-        margin-top: 15px;
-    }
-
-    .compact-indicator {
-        width: 8px;
-        height: 8px;
+        padding: 8px 16px;
+        font-size: 0.8rem;
     }
 }
 

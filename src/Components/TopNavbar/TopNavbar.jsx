@@ -1,78 +1,31 @@
-// import React from 'react';
-// import { useNavigate } from 'react-router-dom';
-// import './TopNavbar.css';
-
-// const TopNavBar = () => {
-//   const navigate = useNavigate();
-
-//   const navigationItems = [
-//     { 
-//       label: 'For Businesses', 
-//       path: '/' // Current page (home)
-//     },
-//     { 
-//       label: 'For Clients', 
-//       path: '/tech-group' // Tech group page
-//     },
-//     { 
-//       label: 'For Students', 
-//       path: '/tech-learning' // E-learning page
-//     }
-//   ];
-
-//   const handleNavigation = (path) => {
-//     navigate(path);
-//   };
-
-//   return (
-//     <nav className="topnav-main">
-//       <div className="topnav-container">
-//         {/* Navigation items - Left aligned */}
-//         <div className="topnav-items">
-//           {navigationItems.map((item) => (
-//             <button
-//               key={item.label}
-//               className="topnav-link"
-//               onClick={() => handleNavigation(item.path)}
-//             >
-//               {item.label}
-//             </button>
-//           ))}
-//         </div>
-//       </div>
-//     </nav>
-//   );
-// };
-
-// export default TopNavBar;
-
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import {Helmet} from "react-helmet"
+import { Helmet } from "react-helmet"
 import './TopNavbar.css';
 
 const TopNavBar = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
   const navigationItems = [
-    { 
-      label: 'For Businesses', 
+    {
+      label: 'For Businesses',
       path: '/', // Home page
       exact: true
     },
-    { 
-      label: 'For Clients', 
+    {
+      label: 'For Clients',
       path: '/tech-group', // Tech group page
       exact: false
     },
-    { 
-      label: 'For Students', 
+    {
+      label: 'For Students',
       path: '/tech-learning', // E-learning page
       exact: false
     },
-    { 
-      label: 'Raymart', 
+    {
+      label: 'Raymart',
       path: '/raymartPage',
       exact: false
     }
@@ -80,6 +33,11 @@ const TopNavBar = () => {
 
   const handleNavigation = (path) => {
     navigate(path);
+    setIsMobileMenuOpen(false);
+  };
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
   // Function to check if a navigation item is active
@@ -87,9 +45,11 @@ const TopNavBar = () => {
     if (item.exact) {
       return location.pathname === item.path;
     } else {
-      return location.pathname.startsWith(item.path) || 
-             (item.path === '/' && location.pathname === '/') ||
-             (item.path !== '/' && location.pathname.includes(item.path));
+      return (
+        location.pathname.startsWith(item.path) ||
+        (item.path === '/' && location.pathname === '/') ||
+        (item.path !== '/' && location.pathname.includes(item.path))
+      );
     }
   };
 
@@ -101,45 +61,59 @@ const TopNavBar = () => {
 
   return (
     <>
-    <div>
-          <Helmet>
+      <div>
+        <Helmet>
           <title>Engloray</title>
-            <meta name="description" content="This top navbar shows pages of the main website header parts" />
-            <meta name="robots" content="max-snippet:-1, max-image-preview: large, max-video-preview:-1" />
-            {/* <link rel="canonical" href="https://yourapp.com" /> */}
-            <meta property="og:locale" content="en_US" />
-            <meta property="og:type" content="website" />
-            <meta property="og:title" content="Your App | Config" />
-            <meta property="og:description" content="Lorem Ipsum" />
-            {/* <meta property="og:url" content="https://yourapp.com" /> */}
-          </Helmet>
-          
-      <nav className="topnav-main">
-      <div className="topnav-container">
-        {/* Navigation items - Left aligned */}
-        <div className="topnav-items">
-          {navigationItems.map((item) => (
-            <button
-              key={item.label}
-              className={`topnav-link ${isActive(item) ? 'topnav-active' : ''}`}
-              onClick={() => handleNavigation(item.path)}
-            >
-              {item.label}
-              {isActive(item) && <span className="topnav-active-indicator"></span>}
-            </button>
-          ))}
-        </div>
+          <meta name="description" content="This top navbar shows pages of the main website header parts" />
+          <meta name="robots" content="max-snippet:-1, max-image-preview: large, max-video-preview:-1" />
+          <meta property="og:locale" content="en_US" />
+          <meta property="og:type" content="website" />
+          <meta property="og:title" content="Your App | Config" />
+          <meta property="og:description" content="Lorem Ipsum" />
+        </Helmet>
 
-        {/* Current Page Indicator */}
-        <div className="topnav-current-page">
-          <span className="current-page-label">Currently viewing:</span>
-          <span className="current-page-name">{getActivePage()}</span>
-        </div>
+        <nav className="topnav-main">
+          <div className="topnav-container">
+            {/* Navigation items - Left aligned */}
+            <div className={`topnav-items ${isMobileMenuOpen ? 'topnav-mobile-active' : ''}`}>
+              {navigationItems.map((item) => (
+                <button
+                  key={item.label}
+                  className={`topnav-link ${isActive(item) ? 'topnav-active' : ''}`}
+                  onClick={() => handleNavigation(item.path)}
+                >
+                  {item.label}
+                  {isActive(item) && <span className="topnav-active-indicator"></span>}
+                </button>
+              ))}
+            </div>
+
+            {/* Current Page Indicator */}
+            <div className="topnav-current-page">
+              <span className="current-page-label">Currently viewing:</span>
+              <span className="current-page-name">{getActivePage()}</span>
+            </div>
+
+            {/* Mobile Hamburger Toggle */}
+            <button
+              className={`topnav-hamburger ${isMobileMenuOpen ? 'hamburger-active' : ''}`}
+              onClick={toggleMobileMenu}
+              aria-label="Toggle navigation"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+
+          {/* Mobile Overlay */}
+          {isMobileMenuOpen && (
+            <div className="topnav-overlay" onClick={() => setIsMobileMenuOpen(false)}></div>
+          )}
+        </nav>
       </div>
-    </nav>
-  </div>
-  </>
+    </>
   );
 };
 
-export default TopNavBar;
+export default TopNavBar;

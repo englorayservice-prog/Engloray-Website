@@ -1,14 +1,18 @@
 import React from 'react';
 import './StatCards.css';
 import educationIcon from '../../assets/education-icon.png';
+import { useNavigate } from 'react-router-dom';
+
+
 
 const StatCards = () => {
+    const navigate = useNavigate();
     return (
-        <div className="stat-cards-container">
-            <div className="stat-left-column">
-                <h2 className="stat-heading">Branding for Bold Businesses</h2>
-                <div className="scrolling-image-overflow">
-                    <div className="scrolling-image-track">
+        <div className="bphs-stat-cards-container">
+            <div className="bphs-stat-left-column">
+                <h2 className="bphs-stat-heading">Branding for Bold Businesses</h2>
+                <div className="bphs-scrolling-image-overflow">
+                    <div className="bphs-scrolling-image-track">
                         {/* 24 sets of images to ensure width > 950px * 2 for seamless loop */}
                         {/* Set 1 */}
                         <img src={require('../../assets/01.png')} alt="Stat 01" />
@@ -113,23 +117,27 @@ const StatCards = () => {
                 </div>
             </div>
 
-            <div className="stat-cards-wrapper">
-                <div className="stat-card stat-card-dark">
-                    <div className="stat-icon-top-right">
+            <div className="bphs-stat-cards-wrapper">
+                <div className="bphs-stat-card bphs-stat-card-dark">
+                    <div
+                        className="bphs-stat-icon-top-right"
+                        onClick={() => navigate('/raymartPage')}
+                        style={{ cursor: 'pointer' }}
+                    >
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M9 18l6-6-6-6" />
                         </svg>
                     </div>
-                    <div className="stat-label-large centered-poppins">Our Service + Product</div>
-                    <div className="stat-card-bottom-row">
-                        <div className="stat-value-col">
-                            <div className="stat-value-small">40+</div>
-                            <div className="stat-value-subtext">
-                                <span className="live-dot"></span>
+                    <div className="bphs-stat-label-large bphs-centered-poppins">Our Service + Product</div>
+                    <div className="bphs-stat-card-bottom-row">
+                        <div className="bphs-stat-value-col">
+                            <div className="bphs-stat-value-small">40+</div>
+                            <div className="bphs-stat-value-subtext">
+                                <span className="bphs-live-dot"></span>
                                 Available
                             </div>
                         </div>
-                        <div className="stat-graph">
+                        <div className="bphs-stat-graph">
                             <svg viewBox="0 0 100 40" preserveAspectRatio="none" width="100%" height="100%">
                                 <path d="M0 30 Q 20 25, 40 10 T 80 20 T 100 5 V 40 H 0 Z" fill="rgba(255,255,255,0.2)" />
                                 <path d="M0 30 Q 20 25, 40 10 T 80 20 T 100 5" fill="none" stroke="white" strokeWidth="2" />
@@ -138,19 +146,21 @@ const StatCards = () => {
                     </div>
                 </div>
 
-                <div className="stat-card stat-card-light">
-                    <div className="stat-icon-top-right">
+                <div className="bphs-stat-card bphs-stat-card-light">
+                    <div className="bphs-stat-icon-top-right"
+                        onClick={() => navigate('/tech-learning')}
+                        style={{ cursor: 'pointer' }}>
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M9 18l6-6-6-6" />
                         </svg>
                     </div>
-                    <div className="stat-label-large left-poppins">Education</div>
-                    <div className="stat-card-bottom-row">
-                        <div className="stat-value-container">
-                            <span className="stat-value-number">7+</span>
-                            <span className="stat-value-text">courses</span>
+                    <div className="bphs-stat-label-large bphs-left-poppins">Education</div>
+                    <div className="bphs-stat-card-bottom-row">
+                        <div className="bphs-stat-value-container">
+                            <span className="bphs-stat-value-number">7+</span>
+                            <span className="bphs-stat-value-text">courses</span>
                         </div>
-                        <div className="stat-visual-right">
+                        <div className="bphs-stat-visual-right">
                             <img src={educationIcon} alt="Education Icon" />
                         </div>
                     </div>

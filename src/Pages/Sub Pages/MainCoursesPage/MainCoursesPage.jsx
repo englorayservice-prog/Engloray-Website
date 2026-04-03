@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { 
+import {
   faPaintBrush,
   faLaptopCode,
   faPencilAlt,
@@ -44,6 +44,9 @@ import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import NavigationBar from '../../TechLearningSection/NavigationBar/NavigationBar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import TLSPFFooter from '../TechLearningSubPageFooter/TLSPFFooter';
+
+import boyImg from '../../../assets/boy.jpg';
+import girlImg from '../../../assets/girl (2).jpg';
 
 const MainCoursesPage = () => {
   const navigate = useNavigate();
@@ -310,69 +313,121 @@ const MainCoursesPage = () => {
 
   return (
     <div className="acp-main-courses-page">
-      <TopNavBar/>
-      <NavigationBar/>
-      {/* Hero Section - White */}
-      <section className="acp-hero-section acp-section-white acp-section">
+      <TopNavBar />
+      <NavigationBar />
+      {/* Hero Section – NFT-style Dark */}
+      <section className="acp-hero-v2-section">
+
+        {/* Sparkle decorations */}
+        <div className="acp-v2-spark acp-v2-s1">✦</div>
+        <div className="acp-v2-spark acp-v2-s2">✦</div>
+
         <div className="acp-container">
-          <div className="acp-hero-content">
-            <div className="acp-hero-badge">
-              <span className="acp-badge-text">Top Rated Courses</span>
-              <div className="acp-badge-glow"></div>
-            </div>
-            
-            <div className="acp-heading-container">
-              <h1 className="acp-hero-title">
-                <span className="acp-title-line">
-                  <span className="acp-slash-word">Transform</span>{' '}
-                  <span className="acp-slash-word">Your</span>
-                </span>
-                <span className="acp-title-line acp-accent">
-                  <span className="acp-slash-word acp-accent-word">Tech</span>{' '}
-                  <span className="acp-slash-word acp-accent-word">Career</span>
-                </span>
+          <div className="acp-hero-v2-grid">
+
+            {/* ── LEFT ── */}
+            <div className="acp-hero-v2-left">
+              <h1 className="acp-hero-v2-title">
+                <div style={{ display: 'flex', gap: '12px', alignItems: 'baseline' }}>
+                  <span className="acp-v2-plain">Let's build</span>
+                  <span className="acp-v2-green">your</span>
+                </div>
+                <div className="acp-v2-plain">Extraordinary</div>
+                <div style={{ display: 'flex', gap: '12px', alignItems: 'baseline' }}>
+                  <span className="acp-v2-green">Tech</span>
+                  <span className="acp-v2-plain">Career</span>
+                </div>
               </h1>
-              <div className="acp-circle-animation">
-                <div className="acp-circle acp-circle-1"></div>
-                <div className="acp-circle acp-circle-2"></div>
-                <div className="acp-circle acp-circle-3"></div>
+              <p className="acp-hero-v2-desc">
+                Gain industry-demanded skills with our intensive software development bootcamps and assure your future with our 100% placement focus.
+              </p>
+              <div className="acp-hero-v2-btns">
+                <button className="acp-v2-btn-primary" onClick={handleWhatsAppNavigation}>Discover</button>
+                <button className="acp-v2-btn-ghost" onClick={handleBookConsultation}>Learn More</button>
+              </div>
+
+              <div className="acp-v2-arrow-wrapper">
+                <svg width="90" height="45" viewBox="0 0 60 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 25 Q 15 15 35 25 T 55 10 M 45 5 L 55 10 L 50 20" stroke="white" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
               </div>
             </div>
-            
-            <p className="acp-hero-subtitle">
-              Join 2500+ students who transformed their careers with our 
-              <span className="acp-highlight"> project-based, industry-focused</span> programs
-            </p>
-            
-            <div className="acp-hero-stats">
-              {[
-                { value: counters.students, label: 'Students Trained', suffix: '+' },
-                { value: counters.placement, label: 'Placement Rate', suffix: '%' },
-                { value: counters.partners, label: 'Hiring Partners', suffix: '+' }
-              ].map((stat, index) => (
-                <div key={index} className="acp-stat-card">
-                  <div className="acp-stat-number">{stat.value}{stat.suffix}</div>
-                  <div className="acp-stat-label">{stat.label}</div>
+
+            {/* ── RIGHT: floating cards ── */}
+            <div className="acp-hero-v2-right">
+
+              <div className="acp-v2-card acp-v2-card-a">
+                <div className="acp-v2-card-img-wrapper" style={{ background: '#f8fafc' }}>
+                  <img className="acp-v2-card-img"
+                    src={girlImg}
+                    alt="Harini Student Image" style={{ objectPosition: 'top' }} />
                 </div>
-              ))}
-            </div>
+                <div className="acp-v2-card-body">
+                  <div className="acp-v2-card-row">
+                    <span className="acp-v2-cname">Java Fullstack</span>
+                    <span className="acp-v2-clikes">24 Weeks</span>
+                  </div>
+                  <div className="acp-v2-card-row acp-v2-bid-row" style={{ marginTop: '10px' }}>
+                    <span className="acp-v2-cbid-lbl">Enroll Now</span>
+                    <span className="acp-v2-cbid-val">Get Placed</span>
+                  </div>
+                  {/* Client Feedback inside card */}
+                  <div className="acp-v2-fb-strip" style={{ marginTop: '15px', borderTop: '1px solid #f1f5f9', paddingTop: '15px' }}>
+                    <div className="acp-v2-fb-text" style={{ fontStyle: 'italic', fontSize: '13px', color: '#475569', lineHeight: '1.6', textAlign: 'center', fontWeight: '500' }}>
+                      "Got exactly the skills I needed for a career in tech! Now placed in a top company!" <br /><br /><strong>— Harini K ⭐</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-            <div className="acp-hero-cta">
-              <button className="acp-primary-btn" onClick={handleBookConsultation}>
-                <FontAwesomeIcon icon={faCalendarCheck} /> <span>Book Free Consultation</span>
-                <svg className="acp-btn-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                </svg>
-              </button>
-            </div>
+              {/* Rotating stamp badge */}
 
-            <div className="acp-scroll-hint">
-              <div className="acp-scroll-line"></div>
-              <span>Scroll to explore</span>
+
+              <div className="acp-v2-card acp-v2-card-b">
+                <div className="acp-v2-card-img-wrapper" style={{ background: '#f8fafc' }}>
+                  <img className="acp-v2-card-img"
+                    src={boyImg}
+                    alt="Arjun Student Image" style={{ objectPosition: 'top' }} />
+                </div>
+                <div className="acp-v2-card-body">
+                  <div className="acp-v2-card-row">
+                    <span className="acp-v2-cname">MERN Stack</span>
+                    <span className="acp-v2-clikes">18 Weeks</span>
+                  </div>
+                  <div className="acp-v2-card-row acp-v2-bid-row" style={{ marginTop: '10px' }}>
+                    <span className="acp-v2-cbid-lbl">Enroll Now</span>
+                    <span className="acp-v2-cbid-val">Get Placed</span>
+                  </div>
+                  {/* Client Feedback inside card */}
+                  <div className="acp-v2-fb-strip" style={{ marginTop: '15px', borderTop: '1px solid #f1f5f9', paddingTop: '15px' }}>
+                    <div className="acp-v2-fb-text" style={{ fontStyle: 'italic', fontSize: '13px', color: '#475569', lineHeight: '1.6', textAlign: 'center', fontWeight: '500' }}>
+                      "The intensive hands-on projects helped me build a great portfolio and landed me a job!" <br /><br /><strong>— Arjun D ⭐</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
+
+        {/* Marquee bar with exact text from image */}
+        <div className="acp-v2-marquee-bar">
+          <div className="acp-v2-marquee-track">
+            {[
+              '❖ Python', 'React', 'JavaScript', 'Java Fullstack', 'Data Science ✽', 'Cloud Computing',
+              '❖ Python', 'React', 'JavaScript', 'Java Fullstack', 'Data Science ✽', 'Cloud Computing',
+              '❖ Python', 'React', 'JavaScript', 'Java Fullstack', 'Data Science ✽', 'Cloud Computing',
+              '❖ Python', 'React', 'JavaScript', 'Java Fullstack', 'Data Science ✽', 'Cloud Computing',
+            ].map((item, i) => (
+              <span key={i} className="acp-v2-marquee-item">{item}</span>
+            ))}
+          </div>
+        </div>
+
       </section>
+
+
 
       {/* Features Section - Dark */}
       <section id="features" className="acp-features-section acp-section-dark acp-section">
@@ -393,11 +448,11 @@ const MainCoursesPage = () => {
               Designed by industry experts for maximum career impact
             </p>
           </div>
-          
+
           <div className="acp-features-grid">
             {features.map((feature, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="acp-feature-card"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
@@ -440,8 +495,8 @@ const MainCoursesPage = () => {
 
           <div className="acp-courses-grid">
             {availableCourses.map((course, index) => (
-              <div 
-                key={course.id} 
+              <div
+                key={course.id}
                 className="acp-course-card"
                 style={{ animationDelay: `${index * 200}ms` }}
               >
@@ -454,16 +509,16 @@ const MainCoursesPage = () => {
                     <span className="acp-meta-item"><FontAwesomeIcon icon={faGraduationCap} /> {course.level}</span>
                   </div>
                 </div>
-                
+
                 <h3>{course.title}</h3>
                 <p className="acp-course-description">{course.description}</p>
-                
+
                 <div className="acp-course-features">
                   {course.features.map((feature, idx) => (
                     <span key={idx} className="acp-feature-tag">{feature}</span>
                   ))}
                 </div>
-                
+
                 <div className="acp-course-stats">
                   <div className="acp-stat">
                     <div className="acp-stat-value">{course.students.split('+')[0]}+</div>
@@ -474,15 +529,15 @@ const MainCoursesPage = () => {
                     <div className="acp-stat-label"><FontAwesomeIcon icon={faBriefcase} /> Projects</div>
                   </div>
                 </div>
-                
-                <button 
+
+                <button
                   className="acp-enroll-btn"
                   style={{ background: course.color }}
                   onClick={() => handleEnrollClick(course)}
                 >
                   <span>Enroll Now</span>
                   <svg className="acp-btn-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none">
-                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2"/>
+                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" />
                   </svg>
                 </button>
               </div>
@@ -513,8 +568,8 @@ const MainCoursesPage = () => {
 
           <div className="acp-upcoming-grid">
             {upcomingCourses.map((course, index) => (
-              <div 
-                key={course.id} 
+              <div
+                key={course.id}
                 className="acp-upcoming-card"
                 style={{ animationDelay: `${index * 150}ms` }}
               >
@@ -564,8 +619,8 @@ const MainCoursesPage = () => {
 
           <div className="acp-success-stories">
             {successStories.map((story, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="acp-story-card"
                 style={{ animationDelay: `${index * 200}ms` }}
               >
@@ -608,7 +663,7 @@ const MainCoursesPage = () => {
               <p className="acp-contact-subtitle">
                 Get personalized guidance from our career experts
               </p>
-              
+
               <div className="acp-contact-benefits">
                 <div className="acp-benefit-item">
                   <div className="acp-benefit-icon"><FontAwesomeIcon icon={faCheck} /></div>
@@ -650,18 +705,18 @@ const MainCoursesPage = () => {
                 </div>
               </div>
             </div>
-            
+
             <div className="acp-contact-right">
               <form className="acp-contact-form" onSubmit={handleFormSubmit}>
                 <h3 className="acp-form-title">Book Your Free Consultation</h3>
                 <p className="acp-form-description">
                   Fill out the form below and our career advisor will contact you within 24 hours
                 </p>
-                
+
                 <div className="acp-form-group">
                   <label htmlFor="name"><FontAwesomeIcon icon={faUser} /> Full Name *</label>
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     id="name"
                     name="name"
                     value={formData.name}
@@ -670,11 +725,11 @@ const MainCoursesPage = () => {
                     required
                   />
                 </div>
-                
+
                 <div className="acp-form-group">
                   <label htmlFor="email"><FontAwesomeIcon icon={faEnvelope} /> Email Address *</label>
-                  <input 
-                    type="email" 
+                  <input
+                    type="email"
                     id="email"
                     name="email"
                     value={formData.email}
@@ -686,8 +741,8 @@ const MainCoursesPage = () => {
 
                 <div className="acp-form-group">
                   <label htmlFor="course"><FontAwesomeIcon icon={faLaptopFile} /> Course Interested *</label>
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     id="course"
                     name="course"
                     value={formData.course}
@@ -696,11 +751,11 @@ const MainCoursesPage = () => {
                     required
                   />
                 </div>
-                
+
                 <div className="acp-form-group">
                   <label htmlFor="phone"><FontAwesomeIcon icon={faPhone} /> Phone Number *</label>
-                  <input 
-                    type="tel" 
+                  <input
+                    type="tel"
                     id="phone"
                     name="phone"
                     value={formData.phone}
@@ -709,14 +764,14 @@ const MainCoursesPage = () => {
                     required
                   />
                 </div>
-                
+
                 <button type="submit" className="acp-submit-btn">
                   <span>Schedule call</span>
                   <svg className="acp-submit-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none">
-                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2"/>
+                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" />
                   </svg>
                 </button>
-                
+
                 <p className="acp-form-note">
                   * Required fields. We respect your privacy and will never share your information.
                 </p>
@@ -725,8 +780,8 @@ const MainCoursesPage = () => {
           </div>
         </div>
       </section>
-      <TLSPFFooter/>
-      <BackToTop/>
+      <TLSPFFooter />
+      <BackToTop />
     </div>
   );
 };

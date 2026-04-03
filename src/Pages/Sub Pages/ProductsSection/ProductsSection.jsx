@@ -30,7 +30,7 @@ const ProductsSection = () => {
             description: "Cloud-based software solutions that are scalable, secure, and accessible anytime, anywhere.",
             bg: "#ffffff",
             text: "#111827",
-            route: "/products/saas"
+            route: "/saasPage"
         },
         {
             id: 2,
@@ -38,7 +38,7 @@ const ProductsSection = () => {
             description: "Unified management platform for enterprises, schools, and colleges, streamlining academics, finance, and operations.",
             bg: "#ffffff",
             text: "#111827",
-            route: "/products/erp"
+            route: "/erpPage"
         },
         {
             id: 3,
@@ -57,7 +57,7 @@ const ProductsSection = () => {
             description: "Smart customer relationship tools to manage leads, sales, and customer engagement seamlessly.",
             bg: "#ffffff",
             text: "#111827",
-            route: "/products/crm"
+            route: "/crmpage"
         },
         {
             id: 5,
@@ -65,7 +65,7 @@ const ProductsSection = () => {
             description: "Intelligent conversational assistants that provide instant support and enhance user experience.",
             bg: "#ffffff",
             text: "#111827",
-            route: "/products/ai-chatbot"
+            route: "/aiChatbotPage"
         },
         {
             id: 6,
@@ -73,7 +73,7 @@ const ProductsSection = () => {
             description: "A smart platform connecting talent with opportunities through AI-driven job matching.",
             bg: "#ffffff",
             text: "#111827",
-            route: "/products/job-seeker"
+            route: "/jobSeekerPage"
         },
         {
             id: 7,
@@ -81,7 +81,7 @@ const ProductsSection = () => {
             description: "Interactive learning systems designed to upskill individuals and accelerate career growth.",
             bg: "#ffffff",
             text: "#111827",
-            route: "/products/learning-career"
+            route: "/learningPage"
         }
     ];
 
@@ -134,7 +134,7 @@ const ProductsSection = () => {
                                     <div className="ps-ai-particle ps-ai-p2"></div>
                                     <div className="ps-ai-particle ps-ai-p3"></div>
                                     <div className="ps-ai-particle ps-ai-p4"></div>
-                                    
+
                                     {/* Data lines */}
                                     <div className="ps-ai-connection ps-ai-c1"></div>
                                     <div className="ps-ai-connection ps-ai-c2"></div>

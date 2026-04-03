@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Ourcore.css';
 import coreVideo from './assets/OurCoreValuebg.mp4';
 import img01 from './assets/01.png';
@@ -36,6 +36,22 @@ const rightNodes = [
   { id: 'r6', label: "Scalable Digital Products", icon: Box, color: "bg-rose-600" },
 ];
 const App = () => {
+  const [scale, setScale] = useState(1);
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (containerRef.current) {
+        const width = containerRef.current.offsetWidth;
+        const scaleFactor = Math.min(1, width / CANVAS_WIDTH);
+        setScale(scaleFactor);
+      }
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <div className="min-h-screen relative flex flex-col items-center justify-center overflow-hidden w-full">
       {/* Background Video */}
@@ -59,23 +75,40 @@ const App = () => {
         {/* Header Section */}
         <div className="section-header core-values-header">
           <h2>OUR CORE VALUES</h2>
-          {/* <p>Driving innovation and education to create meaningful impact</p> */}
         </div>
 
         {/* Visualization Container */}
-        <div className="relative rounded-xl" style={{
-          width: '100%',
-          maxWidth: `${CANVAS_WIDTH}px`,
-          aspectRatio: '16/9',
-        }}>
-          <AnimationContainer />
+        <div 
+          ref={containerRef}
+          className="relative rounded-xl overflow-hidden" 
+          style={{
+            width: '100%',
+            maxWidth: `${CANVAS_WIDTH}px`,
+            aspectRatio: '16/9',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
+          }}
+        >
+          <div style={{
+            width: `${CANVAS_WIDTH}px`,
+            height: `${CANVAS_HEIGHT}px`,
+            transform: `scale(${scale * 1.05}) translate(${-20 / scale}px, 0)`,
+            transformOrigin: 'center center',
+            position: 'relative',
+            flexShrink: 0
+          }}>
+            <AnimationContainer />
+          </div>
         </div>
       </div>
-    </div>);
+    </div>
+  );
 }
 export default App;
+
 function AnimationContainer() {
-  return (<div className="w-full h-full relative font-sans text-slate-800" style={{ transform: 'scale(1.1) translateX(-30px)', transformOrigin: 'center' }}>
+  return (<div className="w-full h-full relative font-sans text-slate-800">
     {/* SVG Layer */}
     <svg className="absolute inset-0 w-full h-full pointer-events-none z-10">
 
