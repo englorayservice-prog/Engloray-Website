@@ -169,6 +169,7 @@
 
 /* Small Card Layout adjustments manually to match screenshot perfectly */
 .ps-card:not(.ps-card-large) .ps-title-row {
+    margin-top: -5px;
     display: block;
     text-align: center;
     margin-bottom: 20px;
@@ -183,10 +184,10 @@
 
 .ps-card:not(.ps-card-large) .ps-arrow-icon {
     position: absolute;
-    top: -5px;
+    top: 1px;
     right: 5px;
     font-size: 1.1rem;
-    color: rgba(31,41,55,0.6);
+    color: rgba(31, 41, 55, 0.6);
 }
 
 .ps-card:not(.ps-card-large) .ps-card-desc {
@@ -194,7 +195,7 @@
     font-size: 0.85rem;
     font-weight: 500;
     line-height: 1.6;
-    color: rgba(31,41,55,0.65);
+    color: rgba(31, 41, 55, 0.65);
     margin: 0 auto;
     max-width: 95%;
 }
@@ -202,6 +203,7 @@
 /* Large box layout (Business Suite AI) */
 .ps-card-large .ps-title-row {
     display: flex;
+    margin-top: -110px;
     justify-content: center;
     align-items: center;
     gap: 12px;
@@ -239,30 +241,77 @@
 }
 
 /* Remove old animations that cause interference */
-.ps-ai-animation-wrapper, 
-.ps-ai-glow, 
-.ps-ai-particle, 
-.ps-ai-connection, 
+.ps-ai-animation-wrapper,
+.ps-ai-glow,
+.ps-ai-particle,
+.ps-ai-connection,
 .ps-ai-node {
     display: none !important;
 }
-.ps-ai-p1 { bottom: -10%; left: 20%; animation-duration: 5s; }
-.ps-ai-p2 { bottom: -10%; left: 50%; animation-duration: 7s; animation-delay: 1s; }
-.ps-ai-p3 { bottom: -10%; left: 80%; animation-duration: 6s; animation-delay: 2s; }
-.ps-ai-p4 { bottom: -10%; left: 35%; animation-duration: 8s; animation-delay: 3s; }
+
+.ps-ai-p1 {
+    bottom: -10%;
+    left: 20%;
+    animation-duration: 5s;
+}
+
+.ps-ai-p2 {
+    bottom: -10%;
+    left: 50%;
+    animation-duration: 7s;
+    animation-delay: 1s;
+}
+
+.ps-ai-p3 {
+    bottom: -10%;
+    left: 80%;
+    animation-duration: 6s;
+    animation-delay: 2s;
+}
+
+.ps-ai-p4 {
+    bottom: -10%;
+    left: 35%;
+    animation-duration: 8s;
+    animation-delay: 3s;
+}
 
 .ps-ai-connection {
     position: absolute;
     /* Connecting lines: originate from the right node (node 3) going left */
-    background: linear-gradient(-90deg, rgba(255,255,255,0.4), transparent);
+    background: linear-gradient(-90deg, rgba(255, 255, 255, 0.4), transparent);
     height: 1px;
     transform-origin: right center;
     animation: psPulseLine 3s ease-in-out infinite alternate;
 }
+
 /* From Anchor (right: 5%, top: 50%) spreading left */
-.ps-ai-c1 { top: 32%; right: 5%; width: 35%; transform: rotate(25deg); } /* To Top Node */
-.ps-ai-c2 { top: 50%; right: 5%; width: 45%; transform: rotate(0deg); animation-delay: 1s; } /* To Mid Node */
-.ps-ai-c3 { top: 75%; right: 5%; width: 30%; transform: rotate(-35deg); animation-delay: 2s; } /* To Bottom Node */
+.ps-ai-c1 {
+    top: 32%;
+    right: 5%;
+    width: 35%;
+    transform: rotate(25deg);
+}
+
+/* To Top Node */
+.ps-ai-c2 {
+    top: 50%;
+    right: 5%;
+    width: 45%;
+    transform: rotate(0deg);
+    animation-delay: 1s;
+}
+
+/* To Mid Node */
+.ps-ai-c3 {
+    top: 75%;
+    right: 5%;
+    width: 30%;
+    transform: rotate(-35deg);
+    animation-delay: 2s;
+}
+
+/* To Bottom Node */
 
 .ps-ai-node {
     position: absolute;
@@ -281,43 +330,115 @@
     color: #ffffff;
     font-size: 1.3rem;
     /* Pronounced glow and shadow so it pops */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2), inset 0 0 10px rgba(255,255,255,0.4), 0 0 15px rgba(255,255,255,0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(255, 255, 255, 0.4), 0 0 15px rgba(255, 255, 255, 0.2);
     animation: psFloatNode 4s ease-in-out infinite alternate;
 }
 
 /* Constellation Layout: Anchored on right, extending left */
-.ps-ai-node-1 { top: 25%; right: 35%; width: 55px; height: 55px; font-size: 1.4rem; animation-delay: 0s; } /* Laptop (Top Left) */
-.ps-ai-node-2 { top: 50%; right: 45%; width: 45px; height: 45px; font-size: 1.2rem; margin-top: -22.5px; animation-delay: -1s; } /* Server (Mid Far Left) */
-.ps-ai-node-3 { top: 50%; right: 5%; width: 70px; height: 70px; font-size: 1.8rem; margin-top: -35px; animation-delay: -2s; box-shadow: 0 0 25px rgba(255,255,255,0.4); } /* Anchor / Database (Right) */
-.ps-ai-node-4 { top: 75%; right: 30%; width: 45px; height: 45px; font-size: 1.1rem; margin-top: -22.5px; animation-delay: -3s; } /* Cloud (Bottom Left) */
+.ps-ai-node-1 {
+    top: 25%;
+    right: 35%;
+    width: 55px;
+    height: 55px;
+    font-size: 1.4rem;
+    animation-delay: 0s;
+}
+
+/* Laptop (Top Left) */
+.ps-ai-node-2 {
+    top: 50%;
+    right: 45%;
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+    margin-top: -22.5px;
+    animation-delay: -1s;
+}
+
+/* Server (Mid Far Left) */
+.ps-ai-node-3 {
+    top: 50%;
+    right: 5%;
+    width: 70px;
+    height: 70px;
+    font-size: 1.8rem;
+    margin-top: -35px;
+    animation-delay: -2s;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
+}
+
+/* Anchor / Database (Right) */
+.ps-ai-node-4 {
+    top: 75%;
+    right: 30%;
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
+    margin-top: -22.5px;
+    animation-delay: -3s;
+}
+
+/* Cloud (Bottom Left) */
 
 @keyframes psPulseGlow {
-    0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.5; }
-    100% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+    0% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 1;
+    }
 }
 
 @keyframes psFloatParticle {
-    0% { transform: translateY(0) scale(1); opacity: 0; }
-    20% { opacity: 1; }
-    80% { opacity: 1; }
-    100% { transform: translateY(-300px) scale(0); opacity: 0; }
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-300px) scale(0);
+        opacity: 0;
+    }
 }
 
 @keyframes psPulseLine {
-    0% { opacity: 0.2; width: 30%; }
-    100% { opacity: 0.8; width: 60%; }
+    0% {
+        opacity: 0.2;
+        width: 30%;
+    }
+
+    100% {
+        opacity: 0.8;
+        width: 60%;
+    }
 }
 
 @keyframes psFloatNode {
-    0% { transform: translateY(0px) rotate(0deg); }
-    100% { transform: translateY(-15px) rotate(5deg); }
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    100% {
+        transform: translateY(-15px) rotate(5deg);
+    }
 }
 
 .ps-card:hover .ps-ai-node {
     background: rgba(255, 255, 255, 0.4);
     border-color: rgba(255, 255, 255, 0.9);
     transform: scale(1.15) translateY(-10px) rotate(5deg);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4), 0 0 25px rgba(255,255,255,0.6);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 25px rgba(255, 255, 255, 0.6);
 }
 
 /* ============================================================
@@ -415,6 +536,7 @@
         left: 0;
         mask-image: linear-gradient(to top, black 30%, transparent 100%);
         -webkit-mask-image: linear-gradient(to top, black 30%, transparent 100%);
-        opacity: 0.3; /* Lower opacity so text resting on top is readable */
+        opacity: 0.3;
+        /* Lower opacity so text resting on top is readable */
     }
 }

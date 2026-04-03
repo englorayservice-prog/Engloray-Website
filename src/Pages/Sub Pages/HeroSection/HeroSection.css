@@ -1,0 +1,738 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+.cs-wrapper {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  background: gray;
+}
+
+/* LEFT */
+.cs-left {
+  flex: 3;
+}
+
+.cs-hero img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* THUMBNAILS */
+.cs-thumbs {
+  display: flex;
+  gap: 30px;
+  margin-top: 10px;
+}
+
+.cs-thumbs img {
+  width: 210px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 1;
+  transition: 0.3s;
+}
+
+.cs-thumbs img:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* RIGHT PANEL */
+.cs-right {
+  flex: 1.2;
+  background: transparent;
+  border-radius: 6px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* SMALL IMAGE */
+.cs-side-image img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* CONTENT */
+.cs-side-content h2 {
+  color: white;
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+.cs-side-content p {
+  font-size: 14px;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+/* INFO */
+.cs-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.cs-info span {
+  font-size: 13px;
+  color: #ffffff;
+}
+
+.cs-info p {
+  color: white;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* BARS */
+.cs-bars {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.bar span {
+  color: white;
+  font-size: 15px;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.bar-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.bar-row span {
+  min-width: 140px;
+}
+
+.track {
+  flex: 1;
+  height: 8px;
+  background: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  background: #1f1f1f;
+  border-radius: 10px;
+}
+
+/* WIDTHS */
+.w90 { width: 90%; }
+.w80 { width: 80%; }
+.w70 { width: 70%; }
+.w60 { width: 60%; }
+
+/* BOTTOM BADGES */
+.cs-bottom-badges {
+  margin-left: 14px;
+  margin-top: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.cs-bottom-badges span {
+  background: black;
+  color: white;
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+
+/* ================= BOTTOM SECTION ================= */
+
+.cs-bottom-section {
+  display: flex;
+  gap: 16px;
+  margin-top: 0px;
+  padding: 0 16px 16px 16px;
+  background: transparent;
+}
+
+/* LEFT SIDE */
+.cs-bottom-left {
+  margin-top: 20px;
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cs-box {
+  background: gray;
+  padding: 16px;
+  border-radius: 6px;
+}
+
+.cs-box-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.cs-box-title h4 {
+  color: white;
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.box-description {
+  font-size: 16px;
+  color: #ffffff;
+  margin-top: 5px;
+}
+
+.cs-box-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.green-tag {
+  background: #b7ff3c;
+  padding: 2px 6px;
+  font-size: 12px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.price {
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.cs-box button {
+  background: #2d6cdf;
+  color: #fff;
+  border: none;
+  padding: 6px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background 0.3s ease;
+}
+
+.cs-box button:hover {
+  background: #1e4faa;
+}
+
+/* Separate container for BOX 2 UL */
+.cs-list-container {
+  background: rgba(68, 63, 63, 0.5);
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.cs-box-row h4 {
+  color: white;
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.cs-feature-list { 
+  margin: 0;
+  padding-left: 20px;
+  font-size: 15px;
+  color: #ffffff;
+}
+
+.cs-feature-list li {
+  margin: 6px 0;
+  list-style: none;
+  position: relative;
+  padding-left: 24px;
+}
+
+.cs-feature-list li:before {
+  content: "✨";
+  position: absolute;
+  left: 0;
+}
+
+/* Separate container for BOX 3 pricing list */
+.cs-pricing-container {
+  background: rgba(68, 63, 63, 0.5);
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.cs-pricing-list {
+  
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pricing-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.pricing-item:last-child {
+  border-bottom: none;
+}
+
+.price-value {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.cs-total {
+  margin-top: 12px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  align-items: center;
+  padding-top: 8px;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+/* RIGHT SIDE */
+.cs-bottom-right {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.cs-dark-box {
+  background: #1b1f26;
+  color: #fff;
+  padding: 15px;
+  border-radius: 6px;
+}
+
+.cs-dark-box h4 {
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* Separate container for Features UL */
+.cs-dark-list-container {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cs-feature-dark-list {
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+}
+
+.cs-feature-dark-list li {
+  color: #ddd;
+  list-style: none;
+  padding: 4px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cs-feature-dark-list li:last-child {
+  border-bottom: none;
+}
+
+/* Separate container for Comparison Table */
+.cs-table-container {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 8px;
+  overflow-x: auto;
+}
+
+.cs-comparison-table {
+  width: 100%;
+  font-size: 11px;
+  border-collapse: collapse;
+}
+
+.cs-comparison-table th {
+  padding: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  text-align: center;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.cs-comparison-table td {
+  padding: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  color: #ddd;
+}
+
+.cs-comparison-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* ================= FINAL SECTION ================= */
+
+.cs-final-section {
+  display: flex;
+  gap: 16px;
+  margin-top: 0px;
+  padding: 0 16px 16px 16px;
+  background: transparent;
+}
+
+/* LEFT */
+.cs-final-left {
+  flex: 3;
+  background: gray;
+  padding: 14px;
+  border-radius: 6px;
+}
+
+.cs-final-image img {
+  width: 99%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.cs-final-desc {
+  font-size: 16px;
+  margin: 12px 0;
+  color: #ffffff;
+  line-height: 1.5;
+}
+
+.cs-final-text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.cs-final-text div {
+  padding: 12px;
+  background: transparent;
+  border-radius: 8px;
+  border: 0px solid rgba(0, 0, 0, 0.1);
+}
+
+.cs-final-text h4 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: skyblue;
+  font-weight: 600;
+}
+
+.cs-final-text p {
+  font-size: 13px;
+  color: #ffffff;
+  line-height: 1.5;
+}
+
+/* RIGHT */
+.cs-final-right {
+  margin-top: -40px;
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.cs-final-box {
+  background: #1b1f26;
+  padding: 14px;
+  border-radius: 6px;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.cs-final-box:hover {
+  transform: translateY(-2px);
+}
+
+.cs-final-box.dark {
+  background: #1b1f26;
+  color: #fff;
+}
+
+.cs-final-box.dark p {
+  color: #ccc;
+}
+
+.cs-final-box h4 {
+  color: white;
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+/* Number Container for Achievements and Visual Assets */
+.number-container {
+  position: absolute;
+  top: 45px;
+  right: 12px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 24px 14px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cs-final-box.dark .number-container {
+  background: rgba(183, 255, 60, 0.2);
+}
+
+.count {
+  font-size: 18px;
+  font-weight: 700;
+  color: #2d6cdf;
+}
+
+.cs-final-box.dark .count {
+  color: #b7ff3c;
+}
+
+/* Separate container for UL lists in Project Overview and Key Outcomes - Like Features Box */
+.cs-final-list-container {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cs-final-ul-list {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.cs-final-ul-list li {
+  font-size: 14px;
+  margin: 8px 0;
+  padding-left: 20px;
+  position: relative;
+  color: #ddd;
+  line-height: 1.4;
+}
+
+.cs-final-ul-list li:before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: #b7ff3c;
+}
+
+.cs-final-box:not(.dark) .cs-final-list-container {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.cs-final-box:not(.dark) .cs-final-ul-list li {
+  color: #555;
+}
+
+.cs-final-box:not(.dark) .cs-final-ul-list li:before {
+  color: #2d6cdf;
+}
+
+/* IMAGE GRID */
+.cs-img-grid {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.cs-img-grid img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.cs-img-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* BADGES */
+.badges {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.badges span {
+  background: rgba(45, 108, 223, 0.2);
+  font-size: 14px;
+  padding: 8px 15px;
+  border-radius: 2px;
+  color: #2d6cdf;
+  font-weight: 500;
+}
+
+.cs-final-box.dark .badges span {
+  background:black;
+  color: #ffffff;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .cs-bottom-section,
+  .cs-final-section {
+    flex-direction: column;
+  }
+  
+  .cs-bottom-left,
+  .cs-bottom-right,
+  .cs-final-left,
+  .cs-final-right {
+    flex: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .cs-box-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .cs-box-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .cs-total {
+    justify-content: space-between;
+  }
+  
+  .cs-list-container,
+  .cs-pricing-container,
+  .cs-dark-list-container,
+  .cs-table-container,
+  .cs-final-list-container {
+    padding: 8px;
+  }
+  
+  .cs-feature-list li,
+  .pricing-item {
+    font-size: 12px;
+  }
+  
+  .cs-final-text div {
+    padding: 10px;
+  }
+  
+  .cs-final-text h4 {
+    font-size: 14px;
+  }
+  
+  .cs-final-text p {
+    font-size: 12px;
+  }
+  
+  .cs-img-grid img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .number-container {
+    top: 8px;
+    right: 8px;
+    padding: 3px 8px;
+  }
+  
+  .count {
+    font-size: 14px;
+  }
+  
+  .cs-final-ul-list li {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cs-box {
+    padding: 12px;
+  }
+  
+  .cs-feature-list li,
+  .pricing-item {
+    font-size: 11px;
+  }
+  
+  .cs-comparison-table {
+    font-size: 10px;
+  }
+  
+  .cs-comparison-table th,
+  .cs-comparison-table td {
+    padding: 6px;
+  }
+  
+  .cs-final-image img {
+    height: 180px;
+  }
+  
+  .cs-final-desc {
+    font-size: 12px;
+  }
+  
+  .cs-final-text h4 {
+    font-size: 13px;
+  }
+  
+  .cs-final-text p {
+    font-size: 11px;
+  }
+  
+  .cs-img-grid img {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .badges span {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+  
+  .cs-final-ul-list li {
+    font-size: 10px;
+    margin: 6px 0;
+  }
+}

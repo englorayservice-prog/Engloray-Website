@@ -140,7 +140,7 @@ const DoubleMarquees = () => {
 
         const tl = gsap.to(target, {
           x: direction === 1 ? 0 : -totalWidth,
-          duration: 500, // Significantly slower base speed
+          duration: 25000, // Extremely slow base speed
           ease: "none",
           repeat: -1
         });
@@ -150,25 +150,8 @@ const DoubleMarquees = () => {
       const techScroll = createMarquee(techTrackRef.current, -1);
       const learningScroll = createMarquee(learningTrackRef.current, 1);
 
-      ScrollTrigger.create({
-        trigger: containerRef.current,
-        onUpdate: (self) => {
-          const velocity = Math.abs(self.getVelocity());
-          const timeScale = 1 + (velocity / 250); // Reduced sensitivity
+      // Scroll speed modifier removed to keep a constant, slow pace
 
-          gsap.to([techScroll, learningScroll], {
-            timeScale: timeScale > 2 ? 2 : timeScale, // Capped max speed
-            duration: 0.2,
-            overwrite: true
-          });
-
-          gsap.to([techScroll, learningScroll], {
-            timeScale: 1,
-            duration: 1.5,
-            delay: 0.2
-          });
-        }
-      });
 
     }, containerRef);
     return () => ctx.revert();

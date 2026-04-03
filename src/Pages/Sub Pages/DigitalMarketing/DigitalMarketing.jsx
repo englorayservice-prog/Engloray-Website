@@ -1,26 +1,42 @@
 import React, { useState, useEffect, useRef } from 'react';
-
-import digitalImageOne from '../../../assets/case study images/products/amico.png';
-import digitalImageTwo from '../../../assets/case study images/products/brandex.png';
-import digitalImageThree from '../../../assets/case study images/products/tamil natrals.png';
+import uiImageOne from '../../../assets/case study images/uiux/pavizham.jpg';
+import uiImageTwo from '../../../assets/case study images/uiux/viaan.jpg';
+import uiImageThree from '../../../assets/case study images/uiux/gym life.png';
 import './DigitalMarketing.css';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
 import MainPageSubFooter from '../MainPageSubFooter/MainPageSubFooter';
 import { Helmet } from 'react-helmet';
+import { FaMobile, FaDesktop, FaUsers, FaPaintBrush, FaChartLine, FaUserCircle, FaGem } from "react-icons/fa";
+import heroBg from "../../../assets/lineimage.jpeg";
 
-const DigitalMarketing = () => {
-    const [isExpanded, setIsExpanded] = useState(false);
+// Import project section background
+import projectsBg from '../../../assets/heroimage.jpeg';
+
+// Import brand logos for projects section
+import logo1 from '../../../assets/icons/logoipsum-339.png';
+import logo2 from '../../../assets/icons/logoipsum-340.png';
+import logo3 from '../../../assets/icons/logoipsum-353.png';
+import logo4 from '../../../assets/icons/logoipsum-355.png';
+import logo5 from '../../../assets/icons/logoipsum-359.png';
+import logo6 from '../../../assets/icons/logoipsum-361.png';
+import logo7 from '../../../assets/icons/logoipsum-363.png';
+import logo8 from '../../../assets/icons/logoipsum-365.png';
+import logo9 from '../../../assets/icons/logoipsum-368.png';
+import logo10 from '../../../assets/icons/logoipsum-370.png';
+import logo11 from '../../../assets/icons/logoipsum-371.png';
+import logo12 from '../../../assets/icons/logoipsum-374.png';
+
+const UiUxPage = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [autoSlide, setAutoSlide] = useState(true);
-    const [visibleImages, setVisibleImages] = useState([]);
     const feedbackTrackRef = useRef(null);
 
     // Scroll to top when component mounts
     useEffect(() => {
         window.scrollTo(0, 0);
-        
+
         if (window.location.hash) {
             const id = window.location.hash.replace('#', '');
             setTimeout(() => {
@@ -35,127 +51,169 @@ const DigitalMarketing = () => {
     const feedbacks = [
         {
             id: 1,
-            text: "ENGLORAY transformed our product packaging into a professional, market-ready design. The labels improved shelf visibility and customer confidence",
-            author: "Amico",
-            role: "Amico Food Products"
+            rating: "★★★★★",
+            text: "Very clean and professional UI/UX. The user flow is smooth and makes our services easy to understand.",
+            author: "Pavizham",
+            role: "Pavizham Jewellery",
+            initial: "P"
         },
         {
             id: 2,
-            text: "The packaging feels authentic and natural. ENGLORAY captured our brand story perfectly through design.",
-            author: "Tamil Naturals",
-            role: "Tamil Naturals food products"
+            rating: "★★★★★",
+            text: "Navigation is smooth and the design feels modern. UI/UX improvements helped our website look more professional",
+            author: "Viaan",
+            role: "viaan enterprises",
+            initial: "V"
         },
         {
             id: 3,
-            text: "Packaging is well-structured and visually strong. ENGLORAY made our products look market-ready",
-            author: "Brandex",
-            role: "Brandex Products"
+            rating: "★★★★★",
+            text: "After the UI/UX redesign, users easily understand our programs and membership details. Engagement has clearly improved",
+            author: "Gym Life",
+            role: "Fitness and wellness",
+            initial: "G"
         }
     ];
 
-    const campaigns = [
+    const projects = [
         {
             id: 1,
-            title: "Amico Foods",
-            description: "Comprehensive SEO strategy targeting B2B tech industry with content marketing and technical optimization.",
-            category: "Consumer Products",
-            image: digitalImageOne,
+            title: "Pavizham",
+            description: "Complete UI/UX overhaul of jewellery application with focus on accessibility, security, and user experience.",
+            category: "Mobile App Design",
+            image: uiImageOne,
             stats: {
-                duration: "1.5 Months",
-                improvement: "400% ROI"
+                duration: "2 months",
+                // engagement: "+145%"
             }
         },
         {
             id: 2,
-            title: "Tamil Naturals",
-            description: "Designed with cultural inspiration with tradtional and modern elements.",
-            category: "Traditional products",
-            image: digitalImageTwo,
+            title: "viaan Enterprises",
+            description: "Modern redesign of fashion e-commerce platform with enhanced user journey and conversion optimization.",
+            category: "Web Design",
+            image: uiImageTwo,
             stats: {
-                duration: "1 Months",
-                improvement: "500% Growth"
+                duration: "1 month",
+                // conversions: "+210%"
             }
         },
         {
             id: 3,
-            title: "Brandex",
-            description: "Clear product communication  with strong shelf layout.",
-            category: "FMCG Advertising",
-            image: digitalImageThree,
+            title: "Gym Life",
+            description: "Intuitive gym portal design with appointment scheduling, records access, and futuristic features.",
+            category: "fitness UI/UX",
+            image: uiImageThree,
             stats: {
-                duration: "1 Months",
-                improvement: "250% ROAS"
+                duration: "1 month",
+                // satisfaction: "95%"
             }
         }
-        
     ];
 
-    // Related digital marketing images - 4 DIFFERENT images
-    const extraImages = [
+    // About section cards data
+    const aboutCards = [
         {
             id: 1,
-            url: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-            title: "Data Analytics Dashboard",
-            description: "Real-time performance tracking and data-driven decision making"
+            title: "Understanding the User",
+            description: "We explore user behavior, needs, and expectations to uncover meaningful insights,This helps us design solutions that are intuitive, relevant, and truly user-focused.",
+            image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
         },
         {
             id: 2,
-            url: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-            title: "Marketing Strategy Session",
-            description: "Collaborative planning and campaign development workshops"
+            title: "Shaping the Experience",
+            description: "We map out flows, structure information, and build interactive prototypes.This ensures the product feels natural, easy to use, and aligned with user goals.",
+            image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
         },
         {
             id: 3,
-            url: "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-            title: "Content Creation Studio",
-            description: "Professional content production for digital marketing campaigns"
+            title: "Crafting the Interface",
+            description: "We design visually refined interfaces that balance aesthetics with usability.Every detail is aligned with your brand to create a cohesive digital experience",
+            image: "https://images.unsplash.com/photo-1555099962-4199c345e5dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            id: 4,
+            title: "Building for Scale",
+            description: "We create flexible design systems that support growth and consistency.This enables faster iteration and ensures a unified experience across platforms.",
+            image: "https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
         }
     ];
 
-    // Handle slide change
-    useEffect(() => {
-        if (feedbackTrackRef.current) {
-            feedbackTrackRef.current.style.transform = `translateX(-${currentSlide * 100}%)`;
+    // How It Works steps data
+    const howItWorksSteps = [
+        {
+            title: "Step 1",
+            heading: "Understanding Users",
+            text: "We explore user needs, behaviors, and challenges to uncover insights that guide every design decision."
+        },
+        {
+            title: "Step 2",
+            heading: "Structuring the Experience",
+            text: "We organize content and define clear user flows to create intuitive and meaningful navigation."
+        },
+        {
+            title: "Step 3",
+            heading: "Designing the Framework",
+            text: "We create wireframes that outline structure and functionality before moving into visual design."
+        },
+        {
+            title: "Step 4",
+            heading: "Crafting the Interface",
+            text: "We design visually engaging interfaces that align with your brand and enhance usability."
+        },
+        {
+            title: "Step 5",
+            heading: "Testing & Refinement",
+            text: "We validate designs through testing, refining interactions to ensure a smooth user experience."
         }
-    }, [currentSlide]);
+    ];
 
-    // Auto slide functionality
-    useEffect(() => {
-        let interval;
-        if (autoSlide) {
-            interval = setInterval(() => {
-                setCurrentSlide((prev) => (prev + 1) % feedbacks.length);
-            }, 5000);
+    // UI/UX DNA data
+    const uiuxDna = [
+        {
+            id: 1,
+            title: "Effortless Experience",
+            description: "Simple, intuitive, and easy to navigate",
+            icon: <FaUsers />,
+            color: "#3b82f6"
+        },
+        {
+            id: 2,
+            title: "Inclusive Design",
+            description: "Accessible for every user, without barriers",
+            icon: <FaUserCircle />,
+            color: "#ec4899"
+        },
+        {
+            id: 3,
+            title: "Smart Interactions",
+            description: "Responsive, meaningful, and user-focused",
+            icon: <FaPaintBrush />,
+            color: "#3b82f6"
+        },
+        {
+            id: 4,
+            title: "Visual Excellence",
+            description: "Clean, engaging, and brand-aligned design",
+            icon: <FaGem />,
+            color: "#ec4899"
+        },
+        {
+            id: 5,
+            title: "Adaptive Systems",
+            description: "Seamless across devices and environments",
+            icon: <FaMobile />,
+            color: "#3b82f6"
         }
-        return () => clearInterval(interval);
-    }, [autoSlide, feedbacks.length]);
+    ];
 
-    // Handle image animation when expanded
-    useEffect(() => {
-        if (isExpanded) {
-            // Show images one by one with delay
-            const timeouts = [];
-            extraImages.forEach((img, index) => {
-                const timeout = setTimeout(() => {
-                    setVisibleImages(prev => [...prev, img.id]);
-                }, index * 300); // 300ms delay between each image
-                timeouts.push(timeout);
-            });
-            
-            return () => {
-                timeouts.forEach(timeout => clearTimeout(timeout));
-                setVisibleImages([]);
-            };
-        } else {
-            // Clear all images when collapsed
-            setVisibleImages([]);
-        }
-    }, [isExpanded]);
+    const getPosition = (index) => {
+        const diff = index - currentSlide;
 
-    const handleDotClick = (index) => {
-        setCurrentSlide(index);
-        setAutoSlide(false);
-        setTimeout(() => setAutoSlide(true), 10000);
+        if (diff === 0) return "center";
+        if (diff === -1 || diff === 2) return "left";
+        if (diff === 1 || diff === -2) return "right";
+        return "";
     };
 
     const handlePrevSlide = () => {
@@ -170,257 +228,439 @@ const DigitalMarketing = () => {
         setTimeout(() => setAutoSlide(true), 10000);
     };
 
-    const handleReadMore = () => {
-        setIsExpanded(!isExpanded);
-    };
+    // Auto slide functionality
+    useEffect(() => {
+        let interval;
+        if (autoSlide) {
+            interval = setInterval(() => {
+                setCurrentSlide((prev) => (prev + 1) % feedbacks.length);
+            }, 5000);
+        }
+        return () => clearInterval(interval);
+    }, [autoSlide, feedbacks.length]);
+
+    const badges = [
+        "User Research",
+        "Wireframins",
+        "Interactive Prototypes",
+        "Visual System",
+        "Usability Testing"
+    ];
 
     return (
         <>
-        <div>
-            <Helmet>
-            <title>Engloray</title>
-            <meta name="description" content="Increase conversions and revenue with data-driven digital marketing strategies that deliver measurable ROI." />
-            <meta name="robots" content="max-snippet:-1, max-image-preview: large, max-video-preview:-1" />
-            {/* <link rel="canonical" href="https://yourapp.com" /> */}
-            <meta property="og:locale" content="en_US" />
-            <meta property="og:type" content="website" />
-            <meta property="og:title" content="Your App | Config" />
-            <meta property="og:description" content="Lorem Ipsum" />
-            {/* <meta property="og:url" content="https://yourapp.com" /> */}
-            </Helmet>
-        
-        <div className="dm-page" id='digitalMarketingPage'>
-            <TopNavBar/>
-            <TwoLineNavbar/>
-            {/* Hero Section */}
-            <section className="dm-hero-section">
-                <div className="dm-hero-bg"></div>
-                <div className="dm-container">
-                    <div className="dm-hero-content">
-                        <span className="dm-hero-badge">DIGITAL MARKETING</span>
-                        <h1 className="dm-hero-title">DRIVING GROWTH THROUGH DIGITAL EXCELLENCE</h1>
-                        <h2 className="dm-hero-subtitle">Where Strategy Meets Performance</h2>
-                        <p className="dm-hero-description">
-                            We create data-driven digital marketing campaigns that deliver exceptional ROI. 
-                            Our integrated approach combines creativity with analytics to drive meaningful 
-                            results and sustainable growth for your business.
-                        </p>
-                        <div className="dm-services-stack">
-                            <span className="dm-service-item">SEO Optimization</span>
-                            <span className="dm-service-item">Social Media Marketing</span>
-                            <span className="dm-service-item">PPC Advertising</span>
-                            <span className="dm-service-item">Content Marketing</span>
-                            <span className="dm-service-item">Email Marketing</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <div>
+                {/* SVG Definitions for Clip Path */}
+                <svg width="0" height="0" style={{ position: 'absolute' }}>
+                    <defs>
+                        <clipPath id="cardCurve" clipPathUnits="objectBoundingBox">
+                            <path d="M 0.15,0 L 0.85,0 A 0.15,0.15 0,0,1 1,0.15 L 1,0.75 A 0.08,0.06 0,0,1 0.92,0.81 L 0.9,0.81 A 0.06,0.06 0,0,0 0.84,0.87 L 0.84,0.92 A 0.08,0.08 0,0,1 0.76,1 L 0.15,1 A 0.15,0.15 0,0,1 0,0.85 L 0,0.15 A 0.15,0.15 0,0,1 0.15,0 Z" />
+                        </clipPath>
+                    </defs>
+                </svg>
 
-            {/* About Section with Image Expand */}
-            <section className={`dm-about-section ${isExpanded ? 'dm-image-scroll' : ''}`}>
-                <div className="dm-container">
-                    <div className="dm-about-content">
-                        <div className="dm-about-text">
-                            <h2 className="dm-about-title">Why ENGLORAY for Digital Marketing?</h2>
-                            <p className="dm-about-description">
-                                We specialize in creating integrated digital marketing campaigns that deliver exceptional ROI. 
-                                Our holistic approach ensures all marketing channels work together to achieve your business objectives.
-                            </p>
-                            <ul className="dm-about-points">
-                                <li className="dm-about-point">Data-driven strategy development and execution</li>
-                                <li className="dm-about-point">Multi-channel marketing integration</li>
-                                <li className="dm-about-point">Real-time analytics and performance tracking</li>
-                                <li className="dm-about-point">Conversion rate optimization expertise</li>
-                                <li className="dm-about-point">Continuous campaign optimization and testing</li>
-                            </ul>
-                            
-                            <button 
-                                className={`dm-read-more-btn ${isExpanded ? 'expanded' : ''}`}
-                                onClick={handleReadMore}
-                            >
-                                {isExpanded ? 'Read Less' : 'Read More'}
-                                <span className="dm-arrow">↓</span>
-                            </button>
+                <Helmet>
+                    <title>Engloray - UI/UX Design</title>
+                    <meta name="description" content="Crafting exceptional digital experiences through user-centered design" />
+                    <meta name="robots" content="max-snippet:-1, max-image-preview: large, max-video-preview:-1" />
+                    <meta property="og:locale" content="en_US" />
+                    <meta property="og:type" content="website" />
+                    <meta property="og:title" content="Engloray | UI/UX Design" />
+                    <meta property="og:description" content="Crafting Exceptional Digital Experiences Through User-Centered Design" />
+                </Helmet>
 
-                            <div className={`dm-expanded-content ${isExpanded ? 'expanded' : ''}`}>
-                                <p className="dm-expanded-paragraph">
-                                    <strong>Strategic Foundation:</strong> Our marketing process begins with comprehensive market research 
-                                    and competitor analysis. We identify key opportunities and develop strategies tailored to your 
-                                    specific business goals, ensuring every campaign is optimized for maximum impact.
-                                </p>
-                                <p className="dm-expanded-paragraph">
-                                    <strong>Data-Driven Execution:</strong> We utilize advanced analytics tools to track performance 
-                                    across all channels in real-time. Our team continuously optimizes campaigns based on data insights, 
-                                    ensuring your marketing budget is always working at peak efficiency.
-                                </p>
-                                <p className="dm-expanded-paragraph">
-                                    <strong>Performance Optimization:</strong> With expertise in AI-powered marketing automation, 
-                                    we implement sophisticated targeting and personalization strategies that significantly increase 
-                                    engagement and conversion rates while reducing customer acquisition costs.
-                                </p>
-                                <p className="dm-expanded-paragraph">
-                                    <strong>Integrated Channel Approach:</strong> We don't view digital channels in isolation. Our 
-                                    integrated marketing approach ensures SEO, social media, PPC, email, and content marketing work 
-                                    together harmoniously, creating a cohesive brand experience that drives sustainable growth and 
-                                    maximizes customer lifetime value.
-                                </p>
-                                <p className="dm-expanded-paragraph">
-                                    <strong>Continuous Innovation:</strong> The digital landscape evolves rapidly, and so do we. 
-                                    We stay ahead of industry trends, algorithm updates, and emerging technologies to ensure your 
-                                    marketing strategy remains competitive and effective in an ever-changing digital ecosystem.
-                                </p>
-                            </div>
-                        </div>
-                        
-                        <div className="dm-about-images-column">
-                            {/* Main Image */}
-                            <div className="dm-about-image-main">
-                                <img 
-                                    src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
-                                    alt="Digital Marketing Team" 
-                                />
-                                <div className="dm-image-overlay">
-                                    <h3>Expert Marketing Team</h3>
-                                    <p>Our team of 40+ marketers, analysts, and strategists driving growth since 2017</p>
+                <div className="uiuxp-page" id='uiuxPage'>
+                    <TopNavBar />
+                    <TwoLineNavbar />
+
+                    {/* Hero Section - Updated to match Branding page structure with UI/UX content */}
+                    <section className="uiuxp-hero">
+                        {/* Background image */}
+                        <img src={heroBg} className="uiuxp-hero-bg-image" alt="background texture" />
+
+                        {/* Gradient background shapes - Blue/Pink theme */}
+                        <div className="uiuxp-gradient-shape uiuxp-blue-shape"></div>
+                        <div className="uiuxp-gradient-shape uiuxp-pink-shape"></div>
+
+                        {/* Floating cards */}
+                        <div className="uiuxp-floating-card uiuxp-left uiuxp-rotate-left">
+                            <img
+                                src="https://i.pravatar.cc/100?img=8"
+                                alt="UX researcher"
+                            />
+                            <div className="uiuxp-card-content">
+                                <h4>User Insights</h4>
+                                <p>Behavior & Analytics</p>
+                                <div className="uiuxp-card-progress">
+                                    <div className="uiuxp-progress-fill"></div>
                                 </div>
                             </div>
-                            
-                            {/* Extra Images Section - All 4 images will appear here */}
-                            <div className={`dm-extra-images-fill ${isExpanded ? 'show' : ''}`}>
-                                {extraImages.map((image) => (
-                                    <div 
-                                        key={image.id} 
-                                        className={`dm-extra-image-fill ${visibleImages.includes(image.id) ? 'visible' : ''}`}
+                        </div>
+
+                        <div className="uiuxp-floating-card uiuxp-right uiuxp-rotate-right">
+                            <img
+                                src="https://i.pravatar.cc/100?img=16"
+                                alt="UI designer"
+                            />
+                            <div className="uiuxp-card-content">
+                                <h4>Product Interface</h4>
+                                <p>UI & Interaction</p>
+                                <div className="uiuxp-card-progress">
+                                    <div className="uiuxp-progress-fill"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Main content */}
+                        <div className="uiuxp-hero-container">
+                            <div className="uiuxp-hero-badge">
+                                Product Design & UX Strategy
+                            </div>
+
+                            <h1 className="uiuxp-hero-title">
+                                Designing Meaningful<br /> <span className="uiuxp-title-highlight">Digital</span> <span className="uiuxp-title-highlight">Experiences</span>
+                            </h1>
+
+                            <p className="uiuxp-hero-desc">
+                                We design intuitive, scalable, and visually refined digital products that align with user needs and business goals.
+                                Our human-centered approach ensures every interaction feels seamless, purposeful, and impactful.
+                            </p>
+
+                            <div className="uiuxp-privacy-badge">
+                                Design Systems Built for Engagement
+                            </div>
+                        </div>
+
+                        {/* Bottom glass badges */}
+                        <div className="uiuxp-badge-glass">
+                            {badges.map((item, index) => (
+                                <span
+                                    key={index}
+                                    className={`uiuxp-service-badge 
+                                    ${item === "User Research" ? "uiuxp-badge-research" : ""} 
+                                    ${item === "Usability Testing" ? "uiuxp-badge-testing" : ""}`}
+                                >
+                                    {item}
+                                </span>
+                            ))}
+                        </div>
+                    </section>
+
+                    {/* About Section - Cards with images on top for 1&3, images at bottom for 2&4 */}
+                    <section className="uiuxp-about-section">
+                        <div className="uiuxp-container">
+                            {/* Title and Description at the top */}
+                            <div className="uiuxp-about-header">
+                                <h2 className="uiuxp-about-title">About Our Design Approach</h2>
+                                <p className="uiuxp-about-description">
+                                    We craft thoughtful digital experiences through a structured, user-first design approach.
+                                    From discovery to delivery, every step is driven by insight, creativity, and measurable impact.
+                                </p>
+                            </div>
+
+                            {/* Cards Grid */}
+                            <div className="uiuxp-cards-grid">
+                                {aboutCards.map((card) => (
+                                    <div
+                                        key={card.id}
+                                        className={`uiuxp-about-card ${card.id === 2 || card.id === 4 ? 'uiuxp-card-image-bottom' : ''}`}
                                     >
-                                        <div className="dm-fill-image-wrapper">
-                                            <img src={image.url} alt={image.title} />
-                                            <div className="dm-fill-image-overlay">
-                                                <h4>{image.title}</h4>
-                                                <p>{image.description}</p>
-                                            </div>
-                                        </div>
+                                        {/* For cards 1 and 3: Image at top, content at bottom */}
+                                        {card.id !== 2 && card.id !== 4 && (
+                                            <>
+                                                <div className="uiuxp-card-image-wrapper">
+                                                    <div className="uiuxp-card-image">
+                                                        <img src={card.image} alt={card.title} />
+                                                    </div>
+                                                </div>
+                                                <div className="uiuxp-card-content-wrapper">
+                                                    <div className="uiuxp-card-content">
+                                                        <strong className="uiuxp-card-title">{card.title}</strong>
+                                                        <p className="uiuxp-card-description">{card.description}</p>
+                                                    </div>
+                                                </div>
+                                            </>
+                                        )}
+
+                                        {/* For cards 2 and 4: Content at top, image at bottom */}
+                                        {(card.id === 2 || card.id === 4) && (
+                                            <>
+                                                <div className="uiuxp-card-content-wrapper">
+                                                    <div className="uiuxp-card-content">
+                                                        <strong className="uiuxp-card-title">{card.title}</strong>
+                                                        <p className="uiuxp-card-description">{card.description}</p>
+                                                    </div>
+                                                </div>
+                                                <div className="uiuxp-card-image-wrapper">
+                                                    <div className="uiuxp-card-image">
+                                                        <img src={card.image} alt={card.title} />
+                                                    </div>
+                                                </div>
+                                            </>
+                                        )}
                                     </div>
                                 ))}
                             </div>
                         </div>
-                    </div>
-                </div>
-            </section>
+                    </section>
 
-            {/* Campaigns Section */}
-            <section className="dm-campaigns-section">
-                <div className="dm-container">
-                    <div className="dm-section-header">
-                        <h2 className="dm-section-title">Success Campaigns</h2>
-                        <p className="dm-section-subtitle">
-                            Real campaigns delivering exceptional results for our clients
-                        </p>
-                    </div>
-                    
-                    <div className="dm-campaigns-grid">
-                        {campaigns.map((campaign) => (
-                            <div className="dm-campaign-card" key={campaign.id}>
-                                <div className="dm-campaign-image">
-                                    <img src={campaign.image} alt={campaign.title} />
-                                    <span className="dm-campaign-category">{campaign.category}</span>
+                    {/* UI/UX DNA Section - Added after About Section */}
+                    <section className="uiuxp-dna-section">
+                        <div className="uiuxp-dna-container">
+                            {/* LEFT CONTENT */}
+                            <div className="uiuxp-dna-left">
+                                <h2> Design DNA</h2>
+                                <h3 className="uiuxp-dna-subtitle">
+                                    The Principles Behind<br /> Great Product Design
+                                </h3>
+                                <p>
+                                    Exceptional digital products are built on clarity, consistency, and user-centered thinking.
+                                    These core principles guide how we design experiences that feel intuitive, engaging, and reliable across every interaction.
+                                </p>
+                            </div>
+
+                            {/* RIGHT GRAPHIC */}
+                            <div className="uiuxp-dna-right">
+                                {/* circles */}
+                                <div className="uiuxp-dna-circle uiuxp-circle-usability" style={{ background: 'linear-gradient(135deg, #3b82f6, #5a9cff)' }}>
+                                    <FaUsers className="uiuxp-icon" />
+                                    <h3>Effortless Experience</h3>
+                                    <p className="uiuxp-circle-desc">
+                                        Simple, intuitive, and easy to navigate
+                                    </p>
                                 </div>
-                                <div className="dm-campaign-content">
-                                    <h3 className="dm-campaign-title">{campaign.title}</h3>
-                                    <p className="dm-campaign-description">{campaign.description}</p>
-                                    <div className="dm-campaign-stats">
-                                        <div className="dm-campaign-stat">
-                                            <span className="dm-stat-number">{campaign.stats.duration}</span>
-                                            <span className="dm-stat-label">Campaign Duration</span>
-                                        </div>
-                                        <div className="dm-campaign-stat">
-                                            <span className="dm-stat-number">{campaign.stats.improvement}</span>
-                                            <span className="dm-stat-label">Results Achieved</span>
-                                        </div>
-                                    </div>
+
+                                <div className="uiuxp-dna-circle uiuxp-circle-accessibility" style={{ background: 'linear-gradient(135deg, #3b82f6, #5a9cff)' }}>
+                                    <FaUserCircle className="uiuxp-icon" />
+                                    <h3>Inclusive Design</h3>
+                                    <p className="uiuxp-circle-desc">
+                                        Accessible for every user, without barriers
+                                    </p>
+                                </div>
+
+                                <div className="uiuxp-dna-circle uiuxp-circle-visual" style={{ background: 'linear-gradient(135deg, #3b82f6, #5a9cff)' }}>
+                                    <FaPaintBrush className="uiuxp-icon" />
+                                    <h3>Smart Interactions</h3>
+                                    <p className="uiuxp-circle-desc">
+                                        Responsive, meaningful, and user-focused
+                                    </p>
+                                </div>
+
+                                <div className="uiuxp-dna-circle uiuxp-circle-interaction" style={{ background: 'linear-gradient(135deg, #ec4899, #ff6b9d)' }}>
+                                    <FaGem className="uiuxp-icon" />
+                                    <h3>Visual Excellence</h3>
+                                    <p className="uiuxp-circle-desc">
+                                        Clean, engaging, and brand-aligned design
+                                    </p>
+                                </div>
+
+                                <div className="uiuxp-dna-circle uiuxp-circle-responsive" style={{ background: 'linear-gradient(135deg, #3b82f6, #5a9cff)' }}>
+                                    <FaMobile className="uiuxp-icon" />
+                                    <h3>Adaptive Systems</h3>
+                                    <p className="uiuxp-circle-desc">
+                                        Seamless across devices and environments
+                                    </p>
                                 </div>
                             </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+                        </div>
+                    </section>
 
-            {/* Feedback Section - WIDER - AVATAR REMOVED */}
-            <section className="dm-feedback-section">
-                <div className="dm-container dm-feedback-container-wide">
-                    <div className="dm-section-header">
-                        <h2 className="dm-section-title">Client Success Stories</h2>
-                        <p className="dm-section-subtitle">
-                            Hear what our clients have to say about working with ENGLORAY
-                        </p>
-                    </div>
-                    
-                    <div className="dm-feedback-wrapper-wide">
-                        {/* Left Button */}
-                        <button 
-                            className="dm-feedback-nav-btn dm-feedback-prev" 
-                            onClick={handlePrevSlide}
-                            aria-label="Previous feedback"
-                        >
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                                <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                            </svg>
-                        </button>
-                        
-                        {/* Feedback Slider - WIDER */}
-                        <div className="dm-feedback-slider-wide">
-                            <div className="dm-feedback-track" ref={feedbackTrackRef}>
-                                {feedbacks.map((feedback) => (
-                                    <div key={feedback.id} className="dm-feedback-slide">
-                                        <div className="dm-feedback-card-wide">
-                                            <div className="dm-feedback-content">
-                                                <div className="dm-feedback-quote">"</div>
-                                                <p className="dm-feedback-text-wide">{feedback.text}</p>
-                                                
-                                                {/* AUTHOR INFO WITHOUT AVATAR */}
-                                                <div className="dm-feedback-author-simple">
-                                                    <div className="dm-author-info-simple">
-                                                        <h4>{feedback.author}</h4>
-                                                        <p>{feedback.role}</p>
-                                                    </div>
+                    {/* How It Works Section */}
+                    <section className="uiuxp-howworks">
+                        <div className="uiuxp-howworks-container">
+                            {/* LEFT SIDE */}
+                            <div className="uiuxp-left-side">
+                                <div className="uiuxp-badge">
+                                    <span className="uiuxp-dot"></span>
+                                    Design Process
+                                </div>
+                                <p className="uiuxp-intro-text">
+                                    We craft seamless digital experiences through research, structure, and thoughtful design.
+                                    Every step is focused on solving real user problems while aligning with business goals.
+                                </p>
+                                <h2 className="uiuxp-main-title">
+                                    How It Works <br /> Step by Step
+                                </h2>
+                                <div className="uiuxp-arrow">→</div>
+                            </div>
+
+                            {/* RIGHT SIDE */}
+                            <div className="uiuxp-right-side">
+                                <h2 className="uiuxp-section-title">What Is Design Process</h2>
+                                <div className="uiuxp-steps-grid">
+                                    {howItWorksSteps.map((step, index) => (
+                                        <div key={index} className="uiuxp-step-card">
+                                            <span className="uiuxp-card-dot"></span>
+                                            <h4>{step.title}</h4>
+                                            <h3>{step.heading}</h3>
+                                            <p>{step.text}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Circular Stats Section - Added after How It Works */}
+                    <section className="uiuxp-circular-stats">
+                        <div className="uiuxp-stats-layout">
+                            {/* LEFT CONTENT */}
+                            <div className="uiuxp-stats-content">
+                                <h2>Our Design Impact in Numbers</h2>
+                                <p>
+                                    We measure success through the value we create for users and businesses.
+                                    Our work delivers meaningful experiences that drive engagement, trust, and long-term growth and trust we have developed with users across
+                                    different industries.
+                                </p>
+                            </div>
+
+                            {/* CIRCLE STATS */}
+                            <div className="uiuxp-stats-wrapper">
+                                <div className="uiuxp-circle uiuxp-circle-top" style={{ background: '#3b82f6' }}>
+                                    <h2>50+</h2>
+                                    <p>Digital Products Designed</p>
+                                </div>
+
+                                <div className="uiuxp-circle uiuxp-circle-left" style={{ background: '#ec4899' }}>
+                                    <h2>100+</h2>
+                                    <p>Successful Launches</p>
+                                </div>
+
+                                <div className="uiuxp-circle uiuxp-circle-right" style={{ background: '#3b82f6' }}>
+                                    <h2>95%</h2>
+                                    <p>Client Satisfaction Rate</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* BOTTOM STATS */}
+                        <div className="uiuxp-bottom-stats">
+                            <div className="uiuxp-stat">
+                                <h3>8+</h3>
+                                <p>YEARS EXPERIENCE</p>
+                            </div>
+
+                            <div className="uiuxp-stat">
+                                <h3>30+</h3>
+                                <p>INDUSTRIES SERVED</p>
+                            </div>
+
+                            <div className="uiuxp-stat">
+                                <h3>45+</h3>
+                                <p>GLOBAL CLIENTS</p>
+                            </div>
+                            <div className="uiuxp-stat">
+                                <h3>200+</h3>
+                                <p>Projects Completed</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Projects Section - UPDATED to match branding page design */}
+                    <section className="uiuxp-projects-section">
+                        {/* FULL BACKGROUND */}
+                        <img src={projectsBg} className="uiuxp-projects-bg-full" alt="" />
+
+                        <div className="uiuxp-projects-logos uiuxp-left-logos">
+                            <div className="uiuxp-project-logo-card l1"><img src={logo1} className="uiuxp-project-logo" alt="brand logo" /></div>
+                            <div className="uiuxp-project-logo-card l2"><img src={logo2} className="uiuxp-project-logo" alt="brand logo" /></div>
+                            <div className="uiuxp-project-logo-card l3"><img src={logo3} className="uiuxp-project-logo" alt="brand logo" /></div>
+                            <div className="uiuxp-project-logo-card l4"><img src={logo4} className="uiuxp-project-logo" alt="brand logo" /></div>
+                            <div className="uiuxp-project-logo-card l5"><img src={logo9} className="uiuxp-project-logo" alt="brand logo" /></div>
+                            <div className="uiuxp-project-logo-card l6"><img src={logo10} className="uiuxp-project-logo" alt="brand logo" /></div>
+                        </div>
+
+                        <div className="uiuxp-projects-logos uiuxp-right-logos">
+                            <div className="uiuxp-project-logo-card r1"><img src={logo5} className="uiuxp-project-logo" alt="brand logo" /></div>
+                            <div className="uiuxp-project-logo-card r2"><img src={logo6} className="uiuxp-project-logo" alt="brand logo" /></div>
+                            <div className="uiuxp-project-logo-card r3"><img src={logo7} className="uiuxp-project-logo" alt="brand logo" /></div>
+                            <div className="uiuxp-project-logo-card r4"><img src={logo8} className="uiuxp-project-logo" alt="brand logo" /></div>
+                            <div className="uiuxp-project-logo-card r5"><img src={logo11} className="uiuxp-project-logo" alt="brand logo" /></div>
+                            <div className="uiuxp-project-logo-card r6"><img src={logo12} className="uiuxp-project-logo" alt="brand logo" /></div>
+                        </div>
+
+                        {/* CENTER CONTENT */}
+                        <div className="uiuxp-projects-content">
+                            <h1>
+                                Trusted by <br />
+                                Great Brands
+                            </h1>
+
+                            <p>
+                                We collaborate with forward-thinking brands to
+                                create meaningful digital experiences. Our clients
+                                trust us to deliver impactful design and scalable
+                                solutions.
+                            </p>
+
+                            <div className="uiuxp-projects-stats">
+                                <div>
+                                    <h2>20+</h2>
+                                    <span>Promoters</span>
+                                </div>
+                                <div>
+                                    <h2>100+</h2>
+                                    <span>contributions</span>
+                                </div>
+                                <div>
+                                    <h2>150+</h2>
+                                    <span>organizations</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Feedback Section - Updated to match carousel style */}
+                    <section className="uiuxp-feedback-section">
+                        <div className="uiuxp-container">
+                            <div className="uiuxp-feedback-header">
+                                <h2 className="uiuxp-feedback-title">
+                                    Client Success <span>Stories</span>
+                                </h2>
+                                <p className="uiuxp-feedback-description">
+                                    Hear what our clients have to say about our UI/UX design services and how we've helped transform their digital presence.
+                                </p>
+                            </div>
+
+                            <div className="uiuxp-feedback-carousel">
+                                {feedbacks.map((feedback, index) => {
+                                    const position = getPosition(index);
+
+                                    return (
+                                        <div
+                                            key={feedback.id}
+                                            className={`uiuxp-feedback-card ${position}`}
+                                        >
+                                            <div className="uiuxp-feedback-rating">{feedback.rating}</div>
+                                            <div className="uiuxp-feedback-quote-icon">❝</div>
+                                            <p className="uiuxp-feedback-text">{feedback.text}</p>
+
+                                            <div className="uiuxp-feedback-author">
+                                                <div className="uiuxp-author-avatar" style={{ background: 'linear-gradient(135deg, #3b82f6, #ec4899)' }}>
+                                                    <div className="uiuxp-avatar-initial">{feedback.initial}</div>
+                                                </div>
+                                                <div>
+                                                    <div className="uiuxp-author-name">{feedback.author}</div>
+                                                    <div className="uiuxp-author-role">{feedback.role}</div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                ))}
+                                    );
+                                })}
+                            </div>
+
+                            <div className="uiuxp-feedback-controls">
+                                <button onClick={handlePrevSlide} aria-label="Previous feedback">‹</button>
+                                <button onClick={handleNextSlide} aria-label="Next feedback">›</button>
                             </div>
                         </div>
-                        
-                        {/* Right Button */}
-                        <button 
-                            className="dm-feedback-nav-btn dm-feedback-next" 
-                            onClick={handleNextSlide}
-                            aria-label="Next feedback"
-                        >
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                                <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                            </svg>
-                        </button>
-                    </div>
-                    
-                    {/* Dots */}
-                    <div className="dm-slider-dots">
-                        {feedbacks.map((_, index) => (
-                            <button
-                                key={index}
-                                className={`dm-slider-dot ${index === currentSlide ? 'active' : ''}`}
-                                onClick={() => handleDotClick(index)}
-                                aria-label={`Go to slide ${index + 1}`}
-                            />
-                        ))}
-                    </div>
+                    </section>
+                    <MainPageSubFooter />
+                    <BackToTop />
                 </div>
-            </section>
-            <MainPageSubFooter/>
-            <BackToTop/>
-        </div>
-        </div>
+            </div>
         </>
     );
 };
 
-export default DigitalMarketing;
+export default UiUxPage;

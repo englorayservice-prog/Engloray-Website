@@ -5,6 +5,7 @@ import About from './Components/About/About';
 import CoreServices from './Components/CoreSevices/CoreServices';
 import Testimonials from './Components/Testimonials/Testimonials';
 import Footer from './Components/Footer/Footer';
+//import Footer from './Pages/Sub Pages/NewFooter/NewFooter';
 import MarqueeBrands from './Components/MarqueeBrands/MarqueeBrands';
 import VisionMission from './Components/VisionMission/VisionMission';
 import Ourcore from './Ourcore';
@@ -48,12 +49,26 @@ import TermsAndServices from './Pages/Sub Pages/TermsAndServices/TermsAndService
 import ProjectBasedLearning from './Pages/Sub Pages/ProjectBasedLearning/ProjectBasedLearning';
 import TechGroupProjects from './Pages/Sub Pages/TechGroupProjects/TechGroupProjects';
 import UiuxDesign from './Pages/Sub Pages/UiuxDesign/UiuxDesign';
-import TSPFFooter from './Pages/Sub Pages/TechGroupSubPagefooter/TSPFFooter';
-import TLSPFFooter from './Pages/Sub Pages/TechLearningSubPageFooter/TLSPFFooter';
-import MainPageSubFooter from './Pages/Sub Pages/MainPageSubFooter/MainPageSubFooter';
+//import TSPFFooter from './Pages/Sub Pages/TechGroupSubPagefooter/TSPFFooter';
+import TSPFFooter from './Pages/Sub Pages/NewFooter/NewFooter';
+//import TLSPFFooter from './Pages/Sub Pages/TechLearningSubPageFooter/TLSPFFooter';
+import TLSPFFooter from './Pages/Sub Pages/NewFooter/NewFooter';
+//import MainPageSubFooter from './Pages/Sub Pages/MainPageSubFooter/MainPageSubFooter';
+import MainPageSubFooter from './Pages/Sub Pages/NewFooter/NewFooter';
 import JavaFullStackCourse from './Pages/Sub Pages/JavaFullStackCourse/JavaFullStackCourse';
 import BusinessBoost from './Components/BusinessBoost/BusinessBoost';
 import RaymartPage from './Pages/Sub Pages/RaymartPage/RaymartPage';
+import AiProductPage from './Pages/Sub Pages/Ai-Products/MobileApplications';
+import CrmPage from './Pages/Sub Pages/CrmPage/CrmPage';
+import ErpPage from './Pages/Sub Pages/ErpPage/ErpPage';
+import AiChatbotPage from './Pages/Sub Pages/AiChatbotPage/AiChatbotPage';
+import JobSeekerPage from './Pages/Sub Pages/JobSeekerPage/JobSeekerPage';
+import LearningPage from './Pages/Sub Pages/LearningPage/LearningPage';
+import RayMartPageTwo from './Pages/Sub Pages/RayMartPageTwo/RayMartPageTwo';
+import RayMartPageThree from './Pages/Sub Pages/RayMartPageThree/RayMartPageThree';
+import RaymartPageFour from './Pages/Sub Pages/FaqRaymart/FaqRaymart';
+import ContactPage from './Pages/Sub Pages/ContactPage/ContactPage';
+
 
 
 function App() {
@@ -96,6 +111,7 @@ function App() {
           <Route path="/softwareDevelopmentPage" element={<SoftwareAppDev />} />
           <Route path="/erpSolutionsPage" element={<ErpSolutions />} />
           <Route path="/digitalMarketingServicePage" element={<DigitalMarketingService />} />
+          <Route path="/aiProductPage" element={<AiProductPage />} />
 
 
           <Route path="/graphicsDesignCoursePage" element={<GraphicDesignCourse />} />
@@ -140,7 +156,16 @@ function App() {
           <Route path="/cookiesPolicyPage" element={<CookiePolicy  />} />
           <Route path="/termsAndServicesPage" element={<TermsAndServices  />} />
           <Route path="/raymartPage" element={<RaymartPage />} />
-          
+          <Route path="/crmPage" element={<CrmPage />} />
+          <Route path="/erpPage" element={<ErpPage />} />
+          <Route path="/aiChatbotPage" element={<AiChatbotPage />} />
+          <Route path="/jobSeekerPage" element={<JobSeekerPage />} />
+          <Route path="/learningPage" element={<LearningPage />} />
+          <Route path="/raymartPageTwo" element={<RayMartPageTwo />} />
+          <Route path="/raymartPageThree" element={<RayMartPageThree />} />
+          <Route path='/raymartPageFour' element={<RaymartPageFour />} />
+          <Route path="/contactPage" element={<ContactPage />} />
+
 
 
         <Route path="/tech-group" element={

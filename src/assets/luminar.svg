@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141327"/>
+      <stop offset="100%" stop-color="#0A0914"/>
+    </linearGradient>
+    <radialGradient id="glowGrad" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="rgba(167,139,250,0.85)"/>
+      <stop offset="45%" stop-color="rgba(59,130,246,0.45)"/>
+      <stop offset="100%" stop-color="rgba(0,0,0,0)"/>
+    </radialGradient>
+    <linearGradient id="starGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A78BFA"/>
+      <stop offset="50%" stop-color="#60A5FA"/>
+      <stop offset="100%" stop-color="#22C55E"/>
+    </linearGradient>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="14" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <rect width="400" height="400" fill="url(#bgGrad)"/>
+
+  <!-- subtle grid -->
+  <g stroke="rgba(255,255,255,0.05)" stroke-width="2">
+    <path d="M50 0 V400 M100 0 V400 M150 0 V400 M200 0 V400 M250 0 V400 M300 0 V400 M350 0 V400"/>
+    <path d="M0 50 H400 M0 100 H400 M0 150 H400 M0 200 H400 M0 250 H400 M0 300 H400 M0 350 H400"/>
+  </g>
+
+  <!-- ambient glow -->
+  <circle cx="200" cy="165" r="150" fill="url(#glowGrad)"/>
+
+  <!-- "sun" + rays -->
+  <g filter="url(#softGlow)" opacity="0.95">
+    <circle cx="200" cy="170" r="70" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.18)" stroke-width="2"/>
+    <circle cx="200" cy="170" r="52" fill="url(#starGrad)" opacity="0.75"/>
+
+    <path d="M200 72 L216 132 L280 148 L216 164 L200 224 L184 164 L120 148 L184 132 Z"
+          fill="url(#starGrad)"/>
+    <path d="M200 95 L210 132 L247 142 L210 152 L200 189 L190 152 L153 142 L190 132 Z"
+          fill="rgba(255,255,255,0.85)" opacity="0.85"/>
+  </g>
+
+  <!-- retouch arcs -->
+  <path d="M120 260 C 155 235, 195 225, 245 230 C 285 234, 305 248, 318 260"
+        fill="none" stroke="rgba(255,255,255,0.20)" stroke-width="10" stroke-linecap="round"/>
+  <path d="M135 260 C 165 244, 200 238, 242 240 C 272 242, 292 250, 305 260"
+        fill="none" stroke="rgba(255,255,255,0.40)" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- label -->
+  <g font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial" text-anchor="middle">
+    <text x="200" y="350" font-size="26" fill="rgba(255,255,255,0.92)" font-weight="700">Luminar AI</text>
+    <text x="200" y="374" font-size="14" fill="rgba(255,255,255,0.60)">auto retouch</text>
+  </g>
+</svg>

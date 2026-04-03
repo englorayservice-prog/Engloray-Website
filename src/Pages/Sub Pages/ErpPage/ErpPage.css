@@ -1,0 +1,202 @@
+/* ─── ERP PAGE THEME OVERRIDES ─── */
+.erp-theme .showcase-h1 {
+    letter-spacing: -1.5px;
+}
+
+/* Glow colours */
+.erp-glow-1 {
+    width: 500px;
+    height: 500px;
+    background: #10b981;
+    top: -150px;
+    left: 10%;
+    animation: float 10s infinite ease-in-out alternate;
+}
+
+.erp-glow-2 {
+    width: 600px;
+    height: 600px;
+    background: #06b6d4;
+    bottom: -200px;
+    right: 5%;
+    animation: float 10s infinite ease-in-out alternate;
+    animation-delay: -5s;
+}
+
+/* Badge */
+.erp-badge-color {
+    background: rgba(16, 185, 129, 0.15);
+    border-color: rgba(16, 185, 129, 0.3);
+    color: #34d399;
+}
+
+/* Accent */
+.erp-accent {
+    background: linear-gradient(to right, #34d399, #22d3ee);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Buttons */
+.erp-btn-primary {
+    background: linear-gradient(135deg, #10b981, #06b6d4);
+    color: white;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.erp-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(16, 185, 129, 0.5);
+}
+
+/* Card bars */
+.erp-bar {
+    background: linear-gradient(to top, #10b981, #06b6d4) !important;
+}
+
+.erp-item svg {
+    color: #10b981 !important;
+}
+
+/* Main circle */
+.erp-main-circle {
+    background: radial-gradient(circle at 30% 30%, #065f46, #064e3b) !important;
+}
+
+/* Impact badge */
+.erp-impact-badge {
+    color: #34d399 !important;
+    border-color: rgba(16, 185, 129, 0.5) !important;
+}
+
+.erp-span {
+    background: linear-gradient(135deg, #34d399, #22d3ee);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Use cases badge + heading */
+.erp-section-badge {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+}
+
+.erp-span-h2 {
+    color: #10b981 !important;
+}
+
+/* Insights section */
+.erp-insights-section {
+    background: linear-gradient(160deg, #022c22 0%, #064e3b 60%, #022c22 100%) !important;
+}
+
+.erp-badge-dark {
+    background: rgba(16, 185, 129, 0.2);
+    color: #6ee7b7;
+    border-color: rgba(110, 231, 183, 0.3);
+}
+
+.erp-gradient-span {
+    background: linear-gradient(135deg, #34d399, #22d3ee);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.erp-insight-card:hover {
+    border-color: rgba(52, 211, 153, 0.3);
+    box-shadow: 0 20px 50px rgba(16, 185, 129, 0.15);
+}
+
+.erp-insight-card:hover .cic-icon {
+    background: #10b981;
+    color: white;
+}
+
+.erp-cic-icon {
+    background: rgba(16, 185, 129, 0.2);
+    color: #6ee7b7;
+}
+
+.erp-cic-tag {
+    background: rgba(110, 231, 183, 0.15);
+    color: #6ee7b7;
+}
+
+.erp-cic-line {
+    background: linear-gradient(90deg, #10b981, transparent);
+}
+
+/* CTA strip */
+.erp-cta-strip {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.25), rgba(6, 182, 212, 0.2));
+    border-color: rgba(52, 211, 153, 0.2);
+}
+
+.erp-btn-cta-primary {
+    background: linear-gradient(135deg, #10b981, #06b6d4);
+    color: white;
+    padding: 13px 26px;
+    border-radius: 12px;
+    font-size: 0.97rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.erp-btn-cta-primary:hover {
+    transform: translateY(-2px);
+}
+
+.erp-btn-outline {
+    color: #6ee7b7;
+    border-color: rgba(110, 231, 183, 0.4);
+}
+
+.erp-btn-outline:hover {
+    background: rgba(110, 231, 183, 0.1);
+    border-color: #6ee7b7;
+}
+
+/* Use Case Table Theme Overrides */
+.erp-theme .ucm-cell {
+    color: #10b981;
+}
+
+.erp-theme .ucm-header .ucm-cell {
+    background: #10b981;
+    color: white;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2);
+}
+
+/* ERP Arc Card Overrides */
+.erp-arc-card.active-card {
+    filter: drop-shadow(0 20px 50px rgba(16, 185, 129, 0.6)) brightness(1) !important;
+}
+
+.erp-arc-card.active-card::before {
+    background: rgba(52, 211, 153, 0.85);
+}
+
+.erp-arc-card:hover .cic-image-wrapper img {
+    transform: scale(1.08);
+    transition: transform 0.5s ease;
+}
+
+.erp-insights-section {
+    background: radial-gradient(ellipse at 50% 10%, rgba(16, 185, 129, 0.06) 0%, transparent 70%), #0b1120;
+}
+
+.erp-insights-section .crm-insights-grid::before {
+    background: radial-gradient(ellipse at center, rgba(16, 185, 129, 0.35), transparent 70%);
+}

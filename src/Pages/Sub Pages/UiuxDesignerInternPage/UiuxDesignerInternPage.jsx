@@ -2,110 +2,150 @@ import React, { useState, useRef, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faPaintBrush,
-  faPalette,
-  faSearch,
-  faFolderOpen,
-  faVideo,
-  faBriefcase,
-  faGraduationCap,
-  faChalkboardTeacher,
+  faLaptopCode,
   faMobileAlt,
+  faRocket,
+  faBriefcase,
+  faStar,
+  faBook,
+  faPencilAlt,
+  faImage,
+  faVideo,
+  faFont,
+  faCamera,
+  faFileAlt,
+  faSave,
+  faClipboard,
+  faChalkboardTeacher,
+  faUserTie,
   faHandshake,
-  faMoneyBillWave,
+  faGraduationCap,
+  faTrophy,
+  faSyncAlt,
+  faBullseye,
+  faFlask,
+  faEnvelope,
+  faPhone,
+  faMapMarkerAlt,
+  faComments,
   faLock,
   faCheck,
+  faCertificate,
+  faBuilding,
+  faGlobe,
+  faQrcode,
+  faUser,
+  faPlayCircle,
+  faPauseCircle,
+  faClock,
+  faCheckCircle,
   faTimes,
-  faDownload,
+  faArrowRight,
+  faRulerCombined,
+  faPenFancy,
+  faLightbulb,
   faFilePdf,
   faFileArchive,
   faFileWord,
-  faPaperclip,
-  faStar,
-  faChevronLeft,
-  faChevronRight,
-  faLightbulb,
+  faFile,
+  faDownload,
+  faUsers,
+  faMoneyBillWave,
+  faNetworkWired,
+  faTools,
+  faPalette,
+  faLayerGroup,
+  faEye,
+  faShieldAlt,
   faCrown,
   faGem,
-  faEye,
   faInfoCircle,
-  // faUsers,
-  faBuilding,
-  faComments,
-  faSyncAlt,
-  faCertificate,
-  // faNetworkWired,
-  // faTools,
-  faRocket,
-  faEnvelope,
-  // faPhone,
-  // faCalendar,
-  faFileAlt,
-  faCheckCircle,
-  faUser,
-  // faChartLine,
-  // faLaptopCode,
-  faPencilAlt,
-  // faCode,
-  // faLayerGroup,
-  // faBrain,
-  // faShieldAlt,
-  faArrowRight
+  faBolt,
+  faDesktop,
+  faObjectGroup,
+  faVial
 } from '@fortawesome/free-solid-svg-icons';
 import './UiuxDesignerInternPage.css';
 import { submitInternship } from "../../Sub Pages/HandleSubmit/InternshipSubmit";
 
-
+// Resources
 import pathOne from '../../../assets/resources file/resources file/TECH/UIUX Designers/UIUX Design Tools & Technology.pdf';
+//import pathOne from '../../../../assets/resources file/resources file/TECH/UIUX Designers/UIUX Design Tools & Technology.pdf';
 import pathTwo from '../../../assets/resources file/resources file/TECH/UIUX Designers/Learning, UX Thinking & Skill Development.pdf';
 import pathThree from '../../../assets/resources file/resources file/TECH/UIUX Designers/Benefits of UIUX Design (for Designers & Businesses).pdf';
 import pathFive from '../../../assets/resources file/resources file/TECH/UIUX Designers/Productivity, AI & UX Workflow Support.pdf';
 import pathSix from '../../../assets/resources file/resources file/TECH/UIUX Designers/UX Research, Testing & Design Systems.pdf';
-// import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
-// import Navbar from '../../../Components/Navbar/Navbar';
+
+import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
+import Navbar from '../../../Components/Navbar/Navbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
-// import TSPFFooter from '../TechGroupSubPagefooter/TSPFFooter';
+import Footer from '../../../Components/Footer/Footer';
+import { Helmet } from 'react-helmet';
+
+// Missing icon assets
+import iconGraduationCap from '../../../assets/iicons/icon_graduation_cap.png';
+import iconEducationBook from '../../../assets/iicons/icon_education_book.png';
+import iconCertificate from '../../../assets/iicons/icon_certificate.png';
+import benefitCareer from '../../../assets/iicons/career_opportunities_vibrant.png';
+import benefitCertification from '../../../assets/iicons/image copy.png';
+import benefitSoftware from '../../../assets/iicons/benefit_software.png';
+import benefitMoneyBack from '../../../assets/iicons/money_back_guarantee.jpg';
+import testimonialAvatar1 from '../../../assets/iicons/testimonial_avatar_1.png';
+import testimonialAvatar2 from '../../../assets/iicons/testimonial_avatar_2.png';
+import testimonialAvatar3 from '../../../assets/iicons/testimonial_avatar_3.png';
+import testimonialAvatar4 from '../../../assets/iicons/testimonial_avatar_4.png';
+import testimonialAvatar5 from '../../../assets/iicons/testimonial_avatar_5.png';
+
+const uxHeroImg = "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1600&q=80";
+const galleryModernLab = "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80";
+const galleryCollab = "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=80";
+const galleryWorkstation = "https://images.unsplash.com/photo-1545235617-9465d2a55698?auto=format&fit=crop&w=1600&q=80";
+const galleryPresentation = "https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=1600&q=80";
+const galleryInteractive = "https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=1600&q=80";
+const galleryArchitecture = "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1600&q=80";
+
+
+const benefitMentorship = "https://images.unsplash.com/photo-1522071901873-411886a10004?auto=format&fit=crop&w=800&q=80";
+const benefitNetworking = "https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=800&q=80";
+
+
+// Local assets for course backgrounds - Replaced with premium UI/UX images
+const bgFundamentals = "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80"; // UX Research workshop / Collab
+const bgArchitecture = "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1600&q=80"; // Premium Wireframing/Prototyping screen
+const bgAdvanced = "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?auto=format&fit=crop&w=1600&q=80"; // Clean desk with premium UI work
+const bgDevOps = "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1600&q=80"; // Professional team review / testing context
 
 const UiuxDesignerInternPage = () => {
-  // eslint-disable-next-line no-unused-vars
   const [activeSection, setActiveSection] = useState('home');
-  const sectionsRef = useRef({
-    home: null,
-    course: null,
-    signin: null,
-    assets: null,
-    gallery: null,
-    templates: null,
-    resources: null,
-    benefits: null,
-    feedback: null
-  });
-
+  const sectionsRef = useRef({});
   const containerRef = useRef(null);
 
   const [formData, setFormData] = useState({
     email: '',
-    course: '',
+    course: 'UI/UX Designer',
     agreeTerms: false
   });
   const [errors, setErrors] = useState({});
   const [showForm, setShowForm] = useState(false);
   const [activeDescription, setActiveDescription] = useState(null);
   const [downloadedResources, setDownloadedResources] = useState([]);
-  const [activeCourseIndex, setActiveCourseIndex] = useState(0);
+  const [activeCourseIndex, setActiveCourseIndex] = useState(40);
   const cardsWrapperRef = useRef(null);
   const autoSlideIntervalRef = useRef(null);
   const [toastMessage, setToastMessage] = useState('');
   const [showToast, setShowToast] = useState(false);
-  // eslint-disable-next-line no-unused-vars
   const [showSuccess, setShowSuccess] = useState(false);
-
+  const [activeAccordionIndex, setActiveAccordionIndex] = useState(0);
+  const [showQuickTips, setShowQuickTips] = useState(false);
+  const quickTipsRef = useRef(null);
 
   // Smooth scroll to section
   const scrollToSection = (sectionId) => {
-    const element = sectionsRef.current[sectionId];
+    const element = document.getElementById(sectionId);
     if (element) {
+      const offsetTop = element.offsetTop - 80; // Adjust for header
       window.scrollTo({
-        top: element.offsetTop - 80,
+        top: offsetTop,
         behavior: 'smooth'
       });
       setActiveSection(sectionId);
@@ -115,11 +155,11 @@ const UiuxDesignerInternPage = () => {
   // Handle scroll to update active section
   useEffect(() => {
     const handleScroll = () => {
+      const sections = ['home', 'course', 'signin', 'assets', 'gallery', 'templates', 'resources', 'benefits', 'feedback'];
       const scrollPosition = window.scrollY + 100;
 
-      const sections = ['home', 'course', 'signin', 'assets', 'gallery', 'templates', 'resources', 'benefits', 'feedback'];
       for (const section of sections) {
-        const element = sectionsRef.current[section];
+        const element = document.getElementById(section);
         if (element) {
           const offsetTop = element.offsetTop;
           const offsetBottom = offsetTop + element.offsetHeight;
@@ -132,7 +172,7 @@ const UiuxDesignerInternPage = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -148,9 +188,21 @@ const UiuxDesignerInternPage = () => {
     }
   }, [toastMessage]);
 
-  const setRef = (sectionId) => (el) => {
-    sectionsRef.current[sectionId] = el;
-  };
+  // Handle outside click for quick tips panel
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (quickTipsRef.current && !quickTipsRef.current.contains(event.target)) {
+        setShowQuickTips(false);
+      }
+    };
+
+    if (showQuickTips) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [showQuickTips]);
 
   const showLockedSectionToast = (sectionName) => {
     setToastMessage(`🔒 ${sectionName} is locked. Please enroll in the course to access premium content.`);
@@ -159,95 +211,114 @@ const UiuxDesignerInternPage = () => {
   const courseContent = [
     {
       id: 1,
-      title: "Visual Design & UI Design",
+      title: "UX Research & Discovery",
       description: [
-        "Figma Mastery & Advanced Prototyping",
-        "Adobe XD Complete Workflow",
-        "Canva Design System & Templates",
-        "Google Fonts & Typography Hierarchy",
-        "Color Theory & Accessibility Standards",
-        "Design Systems & Component Libraries"
+        "User Persona Development",
+        "Competitor Analysis",
+        "Empathy Mapping",
+        "User Interview Techniques",
+        "Information Architecture",
+        "UX Design Thinking"
       ],
-      duration: "6 weeks",
-      bgImage: "https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+      duration: "Research Phase",
+      bgImage: bgFundamentals,
+      icon: <FontAwesomeIcon icon={faUsers} />
     },
     {
       id: 2,
-      title: "UX Research & User Psychology",
+      title: "Wireframing & Prototyping",
       description: [
-        "User Research Methods & Personas",
-        "Google Analytics & Data Interpretation",
-        "Hotjar Heatmaps & Session Recordings",
-        "Usability Testing & Heuristic Evaluation",
-        "Survey Design & User Interviews",
-        "Information Architecture & Card Sorting"
+        "Low-Fidelity Wireframes",
+        "Figma Component Basics",
+        "User Flow Diagrams",
+        "Interactive Prototypes",
+        "Lottie Animations Basics",
+        "Responsive Grid Systems"
       ],
-      duration: "8 weeks",
-      bgImage: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+      duration: "Design Iteration",
+      bgImage: bgArchitecture,
+      icon: <FontAwesomeIcon icon={faLayerGroup} />
     },
     {
       id: 3,
-      title: "Interaction Design & Prototyping",
+      title: "Advanced UI & Design Systems",
       description: [
-        "Figma Interactive Prototypes",
-        "Protopie Advanced Animations",
-        "InVision Design Handoff",
-        "Framer Motion & Code Components",
-        "Principle for Micro-interactions",
-        "Miro for Collaborative Design"
+        "Color Theory & Accessibility",
+        "Advanced Figma Auto-Layout",
+        "Building Design Systems",
+        "Atomic Design Principles",
+        "Variable & Style Management",
+        "Developer Handoff Best Practices"
       ],
-      duration: "8 weeks",
-      bgImage: "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+      duration: "System Scalability",
+      bgImage: bgAdvanced,
+      icon: <FontAwesomeIcon icon={faPalette} />
     },
     {
       id: 4,
-      title: "Advanced Design & Portfolio",
+      title: "Testing & Portfolio Building",
       description: [
-        "Responsive Design Patterns",
-        "Mobile App Design Principles",
-        "Web Design Modern Trends",
-        "Portfolio Case Studies",
-        "Client Presentation Skills",
-        "Design Thinking Workshops"
+        "Usability Testing Methods",
+        "A/B Testing Strategies",
+        "Design Feedback Loops",
+        "UX Case Study Structure",
+        "Portfolio Presentation",
+        "AI-Driven Design Workflows"
       ],
-      duration: "6 weeks",
-      bgImage: "https://images.unsplash.com/photo-1558655146-364adaf1fcc9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+      duration: "Professional Ready",
+      bgImage: bgDevOps,
+      icon: <FontAwesomeIcon icon={faBriefcase} />
     }
   ];
 
   const imagesWithDescriptions = [
     {
-      url: "https://images.unsplash.com/photo-1558655146-364adaf1fcc9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      title: "Modern Design Studio",
-      description: "Our state-of-the-art design studio with high-resolution displays, Wacom tablets, and collaborative design spaces."
+      url: galleryModernLab,
+      title: "Creative Design Studio",
+      description: "Our state-of-the-art design lab equipped with high-resolution displays and ergonomic collaborative zones.",
+      icon: <FontAwesomeIcon icon={faDesktop} />
     },
     {
-      url: "https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      title: "User Testing Lab",
-      description: "Dedicated user testing facility with observation rooms, recording equipment, and usability testing setups."
+      url: galleryCollab,
+      title: "Empathy Workshops",
+      description: "Designers conducting user research and empathy mapping sessions in our dedicated brainstorming areas.",
+      icon: <FontAwesomeIcon icon={faUsers} />
     },
     {
-      url: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      title: "Design Thinking Workshop",
-      description: "Interactive workshop space for design thinking sessions, brainstorming, and collaborative problem-solving."
+      url: galleryWorkstation,
+      title: "Figma Prototyping",
+      description: "Specialized workstations optimized for real-time collaboration and complex interactive prototyping.",
+      icon: <FontAwesomeIcon icon={faObjectGroup} />
     },
     {
-      url: "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      title: "Portfolio Review Room",
-      description: "Professional presentation area for portfolio reviews, client meetings, and design critiques."
+      url: galleryPresentation,
+      title: "UX Review Sessions",
+      description: "Designers presenting user flow diagrams and high-fidelity mockups for comprehensive stakeholder feedback.",
+      icon: <FontAwesomeIcon icon={faEye} />
+    },
+    {
+      url: galleryInteractive,
+      title: "Usability Testing Lab",
+      description: "Dedicated space for observing user interactions and documenting critical UX pain points and successes.",
+      icon: <FontAwesomeIcon icon={faVial} />
+    },
+    {
+      url: galleryArchitecture,
+      title: "Design System Architecture",
+      description: "Coordinating complex component libraries and style guides to ensure brand consistency across all platforms.",
+      icon: <FontAwesomeIcon icon={faLayerGroup} />
     }
   ];
 
-  // UPDATED: Course resources with local file paths for UI/UX
   const courseResources = [
     {
       id: 1,
-      title: "UIUX Design Tools & Technology",
-      description: "Comprehensive guide covering design principles, user psychology, and interface patterns for modern digital products.",
+      title: "UI/UX Design Tools & Technology",
+      description: "Detailed overview of the design tools, platforms, and technologies used during the UI/UX design internship. This phase introduces industry-standard software such as Figma, Adobe XD, and modern prototyping platforms, along with creative workflows and collaboration practices used in professional environments.",
       type: "pdf",
-      size: "3.2 MB",
-      downloads: 2856,
-      icon: <FontAwesomeIcon icon={faPaintBrush} />,
+      size: "1.4 MB",
+      downloads: 1452,
+      icon: <FontAwesomeIcon icon={faTools} />,
       isRestricted: false,
       fileName: "UIUX Design Tools & Technology.pdf",
       localPath: pathOne
@@ -255,117 +326,141 @@ const UiuxDesignerInternPage = () => {
     {
       id: 2,
       title: "Learning, UX Thinking & Skill Development",
-      description: "Complete wireframing kit with templates, components, and responsive layouts for mobile and web interfaces.",
+      description: "Comprehensive guide to user experience (UX) thinking, design principles, and practical applications in UI/UX design. This section explores how user research influences design decisions and helps build empathy for users across various digital platforms.",
       type: "pdf",
-      size: "5.8 MB",
-      downloads: 2341,
-      icon: <FontAwesomeIcon icon={faPencilAlt} />,
+      size: "0.2 MB",
+      downloads: 986,
+      icon: <FontAwesomeIcon icon={faStar} />,
       isRestricted: false,
       fileName: "Learning, UX Thinking & Skill Development.pdf",
       localPath: pathTwo
     },
     {
       id: 3,
-      title: "Benefits of UIUX Design (for Designers & Businesses)",
-      description: "Essential guide to color psychology, accessibility standards, and creating harmonious color palettes.",
+      title: "Benefits of UI/UX Design",
+      description: "Comprehensive guide on why UI/UX design is critical for product success and business growth. This section explains how user-centric design increases retention, improves satisfaction, and drives innovation in modern digital products.",
       type: "pdf",
-      size: "2.9 MB",
-      downloads: 1987,
-      icon: <FontAwesomeIcon icon={faPalette} />,
+      size: "4.0 MB",
+      downloads: 2167,
+      icon: <FontAwesomeIcon icon={faBullseye} />,
       isRestricted: false,
       fileName: "Benefits of UIUX Design (for Designers & Businesses).pdf",
       localPath: pathThree
     },
     {
       id: 4,
-      title: "UX Research Methods",
-      description: "Collection of user research templates, interview scripts, and usability testing frameworks.",
+      title: "UX Research, Testing & Systems",
+      description: "Deep dive into usability testing, user interviews, and building scalable design systems. This resource includes templates for research plans, usability reports, and style guide management used in professional design studios.",
       type: "pdf",
       size: "4.1 MB",
-      downloads: 1765,
-      icon: <FontAwesomeIcon icon={faSearch} />,
+      downloads: 1845,
+      icon: <FontAwesomeIcon icon={faFlask} />,
       isRestricted: false,
-      fileName: "UX Research Methods.pdf",
-      localPath: "uiUxPathFour"
+      fileName: "UX Research, Testing & Design Systems.pdf",
+      localPath: pathSix
     },
     {
       id: 5,
-      title: "Productivity, AI & UX Workflow Support",
-      description: "Professional portfolio templates and case study formats to showcase your design work effectively.",
+      title: "Productivity, AI & UX Workflow",
+      description: "A guide to mastering professional UI/UX workflows using AI-powered tools and Figma automation. This section covers AI prototyping, automated accessibility checks, and efficient handoff processes to development teams.",
       type: "pdf",
-      size: "65 MB",
-      downloads: 1654,
-      icon: <FontAwesomeIcon icon={faFolderOpen} />,
+      size: "2.2 MB",
+      downloads: 745,
+      icon: <FontAwesomeIcon icon={faGraduationCap} />,
       isRestricted: true,
       fileName: "Productivity, AI & UX Workflow Support.pdf",
       localPath: pathFive
     },
     {
       id: 6,
-      title: "UX Research, Testing & Design Systems",
-      description: "Advanced animation principles and micro-interaction patterns for creating engaging prototypes.",
+      title: "UX Case Study & Portfolio Building",
+      description: "Step-by-step guide to creating an impressive design portfolio that gets you hired. Learn how to structure case studies, showcase your creative problem-solving skills, and present your design journey effectively to stakeholders.",
       type: "pdf",
-      size: "3.5 MB",
-      downloads: 1423,
-      icon: <FontAwesomeIcon icon={faVideo} />,
+      size: "1.7 MB",
+      downloads: 532,
+      icon: <FontAwesomeIcon icon={faBriefcase} />,
       isRestricted: true,
-      fileName: "UX Research, Testing & Design Systemse.pdf",
+      fileName: "UX Case Study & Portfolio Building.pdf",
       localPath: pathSix
-    }
+    },
   ];
 
   const testimonials = [
     {
       id: 1,
       rating: 5,
-      text: "The Course prepared me for Indusrty Work. ",
-      author: "Vasanth K"
+      text: "Transformed from a graphic designer to a product designer seamlessly. The UX research module is gold!",
+      author: "Leo Castelli"
     },
     {
       id: 2,
       rating: 4,
-      text: "I Understood real-world UI/UX workflow.",
-      author: "Lokesh M"
+      text: "Figma mastery and design systems are taught with incredible depth. Highly practical.",
+      author: "Isabella Garcia"
     },
     {
       id: 3,
       rating: 5,
-      text: "Very pratical and career-focused training.",
-      author: "Revathi L"
+      text: "Building a full UX case study from scratch gave me the confidence to handle real stakeholder meetings.",
+      author: "Marcus Thorne"
     },
     {
       id: 4,
       rating: 4,
-      text: "Hands-on practice made learning easy.",
-      author: "Kavin S"
+      text: "The mentorship focused on empathy-driven design changed my perspective on product building.",
+      author: "Zara Khan"
+    },
+    {
+      id: 5,
+      rating: 5,
+      text: "Finally understood the 'why' behind design decisions. This isn't just a UI course, it's a UX masterclass.",
+      author: "Chloe Wagner"
+    },
+    {
+      id: 6,
+      rating: 5,
+      text: "The integration with AI design tools helped me work 3x faster. A forward-thinking curriculum.",
+      author: "Ethan Jacobs"
+    },
+    {
+      id: 7,
+      rating: 4,
+      text: "Great emphasis on accessibility and user testing. Every designer should know this.",
+      author: "Penelope Quinn"
+    },
+    {
+      id: 8,
+      rating: 5,
+      text: "Got placed at a top-tier tech firm immediately after the internship. The technical prep is unparalleled.",
+      author: "Arjan Dhillon"
     }
   ];
 
-  const benefits = [
+  const benefitsData = [
     {
       icon: <FontAwesomeIcon icon={faBriefcase} />,
       title: "Career Opportunities",
-      description: "Access to 1500+ job placements with our partner tech companies across industries"
+      description: "Access to 1000+ job placements with our partner companies across industries"
     },
     {
-      icon: <FontAwesomeIcon icon={faGraduationCap} />,
+      icon: <FontAwesomeIcon icon={faCertificate} />,
       title: "Certification",
-      description: "Industry-recognized UI/UX certification that boosts your resume and credibility"
+      description: "Industry-recognized certification that boosts your resume and credibility"
     },
     {
       icon: <FontAwesomeIcon icon={faChalkboardTeacher} />,
       title: "Mentorship",
-      description: "1-on-1 mentorship sessions with experienced UI/UX design professionals"
+      description: "1-on-1 mentorship sessions with experienced product design professionals"
     },
     {
-      icon: <FontAwesomeIcon icon={faMobileAlt} />,
+      icon: <FontAwesomeIcon icon={faTools} />,
       title: "Software Access",
-      description: "Free access to premium design software (Figma Pro, Adobe Suite) during the course"
+      description: "Free access to premium design software and tools during the course"
     },
     {
-      icon: <FontAwesomeIcon icon={faHandshake} />,
+      icon: <FontAwesomeIcon icon={faNetworkWired} />,
       title: "Networking",
-      description: "Join our community of 15,000+ designers and tech industry professionals"
+      description: "Join our community of 10,000+ designers and industry professionals"
     },
     {
       icon: <FontAwesomeIcon icon={faMoneyBillWave} />,
@@ -374,18 +469,17 @@ const UiuxDesignerInternPage = () => {
     }
   ];
 
-  const totalResourcesCount = 20;
-  const yourDownloadsCount = downloadedResources.length;
-  const yourDownloadsPercentage = Math.round((yourDownloadsCount / totalResourcesCount) * 100);
-
-  // UPDATED: Function to download local files
   const handleDownloadResource = (resourceId, resourceTitle, localPath, fileName) => {
     if (!downloadedResources.includes(resourceId)) {
       setDownloadedResources(prev => [...prev, resourceId]);
     }
 
     try {
-      // Create a temporary anchor element
+      if (!localPath) {
+        setToastMessage(`❌ File "${resourceTitle}" is not available for download.`);
+        return;
+      }
+
       const link = document.createElement('a');
       link.href = localPath;
       link.download = fileName;
@@ -393,7 +487,6 @@ const UiuxDesignerInternPage = () => {
       link.click();
       document.body.removeChild(link);
 
-      // Show success message
       setToastMessage(`✅ Downloaded: ${resourceTitle}`);
 
     } catch (error) {
@@ -404,36 +497,42 @@ const UiuxDesignerInternPage = () => {
 
   const handleJoinCourseForResource = (resourceTitle) => {
     setToastMessage(`🔒 "${resourceTitle}" is only available to enrolled students. Please join our course to download this premium resource.`);
-
     setTimeout(() => {
       scrollToSection('signin');
     }, 1000);
   };
 
-  // Auto-slide functionality
+  const [isTransitioning, setIsTransitioning] = useState(true);
+  const infiniteContent = Array(20).fill(courseContent).flat().map((item, i) => ({ ...item, uniqueId: i }));
+
+  const handleTransitionEnd = () => {
+    if (activeCourseIndex <= courseContent.length || activeCourseIndex >= infiniteContent.length - courseContent.length * 2) {
+      setIsTransitioning(false);
+      const base = Math.floor(infiniteContent.length / 2);
+      const relativeIndex = activeCourseIndex % courseContent.length;
+      const newPos = base - (base % courseContent.length) + relativeIndex;
+      setActiveCourseIndex(newPos);
+      setTimeout(() => {
+        setIsTransitioning(true);
+      }, 50);
+    }
+  };
+
   useEffect(() => {
     const startAutoSlide = () => {
       autoSlideIntervalRef.current = setInterval(() => {
-        setActiveCourseIndex((prevIndex) => {
-          const nextIndex = (prevIndex + 1) % courseContent.length;
-          return nextIndex;
-        });
+        setActiveCourseIndex((prevIndex) => prevIndex + 1);
       }, 5000);
     };
 
     startAutoSlide();
-
     const container = cardsWrapperRef.current;
     const pauseAutoSlide = () => {
-      if (autoSlideIntervalRef.current) {
-        clearInterval(autoSlideIntervalRef.current);
-      }
+      if (autoSlideIntervalRef.current) clearInterval(autoSlideIntervalRef.current);
     };
 
     const resumeAutoSlide = () => {
-      if (autoSlideIntervalRef.current) {
-        clearInterval(autoSlideIntervalRef.current);
-      }
+      if (autoSlideIntervalRef.current) clearInterval(autoSlideIntervalRef.current);
       startAutoSlide();
     };
 
@@ -443,9 +542,7 @@ const UiuxDesignerInternPage = () => {
     }
 
     return () => {
-      if (autoSlideIntervalRef.current) {
-        clearInterval(autoSlideIntervalRef.current);
-      }
+      if (autoSlideIntervalRef.current) clearInterval(autoSlideIntervalRef.current);
       if (container) {
         container.removeEventListener('mouseenter', pauseAutoSlide);
         container.removeEventListener('mouseleave', resumeAutoSlide);
@@ -453,56 +550,30 @@ const UiuxDesignerInternPage = () => {
     };
   }, [courseContent.length]);
 
-  useEffect(() => {
-    if (cardsWrapperRef.current) {
-      const translateX = -activeCourseIndex * 100;
-      cardsWrapperRef.current.style.transform = `translateX(${translateX}%)`;
-    }
-  }, [activeCourseIndex]);
-
-  const handleCourseArrowClick = (direction) => {
-    let newIndex;
-    if (direction === 'left') {
-      newIndex = activeCourseIndex === 0 ? courseContent.length - 1 : activeCourseIndex - 1;
-    } else {
-      newIndex = activeCourseIndex === courseContent.length - 1 ? 0 : activeCourseIndex + 1;
-    }
-    setActiveCourseIndex(newIndex);
-
+  const resetAutoSlide = () => {
     if (autoSlideIntervalRef.current) {
       clearInterval(autoSlideIntervalRef.current);
       autoSlideIntervalRef.current = setInterval(() => {
-        setActiveCourseIndex((prevIndex) => {
-          const nextIndex = (prevIndex + 1) % courseContent.length;
-          return nextIndex;
-        });
+        setActiveCourseIndex((prev) => prev + 1);
       }, 5000);
     }
   };
 
-  const handleDotClick = (index) => {
-    setActiveCourseIndex(index);
-
-    if (autoSlideIntervalRef.current) {
-      clearInterval(autoSlideIntervalRef.current);
-      autoSlideIntervalRef.current = setInterval(() => {
-        setActiveCourseIndex((prevIndex) => {
-          const nextIndex = (prevIndex + 1) % courseContent.length;
-          return nextIndex;
-        });
-      }, 5000);
-    }
+  const handlePrevClick = () => {
+    setActiveCourseIndex(prev => prev - 1);
+    resetAutoSlide();
   };
 
-  // eslint-disable-next-line no-unused-vars
-  const validateEmail = (email) => {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email);
+  const handleNextClick = () => {
+    setActiveCourseIndex(prev => prev + 1);
+    resetAutoSlide();
   };
 
-  // const validatePassword = (password) => {
-  //   return password.length >= 6;
-  // };
+  const handleDotNavigation = (idx) => {
+    const base = Math.floor(activeCourseIndex / courseContent.length) * courseContent.length;
+    setActiveCourseIndex(base + idx);
+    resetAutoSlide();
+  };
 
   const handleFormChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -510,48 +581,27 @@ const UiuxDesignerInternPage = () => {
       ...prev,
       [name]: type === 'checkbox' ? checked : value
     }));
-
-    if (errors[name]) {
-      setErrors(prev => ({ ...prev, [name]: '' }));
-    }
+    if (errors[name]) setErrors(prev => ({ ...prev, [name]: '' }));
   };
 
-  const handleSignInSubmit = async (e) => {
+  const handleSignSubmit = async (e) => {
     e.preventDefault();
-
     try {
-      const payload = {
+      await submitInternship({
         email: formData.email,
         course: formData.course
-      };
-
-      await submitInternship(payload);
-
-      // ✅ SUCCESS UI
-      setShowSuccess(true);
-
-      setFormData({
-        email: "",
-        course: ""
       });
-
-      setTimeout(() => {
-        setShowSuccess(false);
-      }, 4000);
-
+      setShowSuccess(true);
+      setFormData({ email: "", course: "UI/UX Designer", agreeTerms: false });
+      setTimeout(() => setShowSuccess(false), 4000);
     } catch (error) {
       console.error("Internship submission failed:", error.message);
-      alert(error.message); // shows backend validation message
+      alert(error.message);
     }
   };
 
-
   const handleImageClick = (imageData) => {
-    if (activeDescription === imageData.title) {
-      setActiveDescription(null);
-    } else {
-      setActiveDescription(imageData.title);
-    }
+    setActiveDescription(activeDescription === imageData.title ? null : imageData.title);
   };
 
   const handleBenefitsClick = () => {
@@ -565,7 +615,7 @@ const UiuxDesignerInternPage = () => {
         <FontAwesomeIcon
           key={i}
           icon={faStar}
-          className={i <= rating ? 'UiUx-filled' : ''}
+          className={i <= rating ? 'UX-filled' : ''}
         />
       );
     }
@@ -575,611 +625,599 @@ const UiuxDesignerInternPage = () => {
   const getFileTypeIcon = (type) => {
     switch (type) {
       case 'pdf': return <FontAwesomeIcon icon={faFilePdf} />;
-      case 'fig': return <FontAwesomeIcon icon={faPaintBrush} />;
       case 'zip': return <FontAwesomeIcon icon={faFileArchive} />;
       case 'doc': return <FontAwesomeIcon icon={faFileWord} />;
-      default: return <FontAwesomeIcon icon={faPaperclip} />;
+      default: return <FontAwesomeIcon icon={faFile} />;
     }
   };
 
   return (
     <>
       <div>
-        <title>Engloray Tech</title>
-        <meta name="description" content="Using ui/ux design you can master designing thorugh hands on project" />
-        <meta name="robots" content="max-snippet:-1, max-image-preview: large, max-video-preview:-1" />
-        {/* <link rel="canonical" href="https://yourapp.com" /> */}
-        <meta property="og:locale" content="en_US" />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="Your App | Config" />
-        <meta property="og:description" content="Lorem Ipsum" />
-        {/* <meta property="og:url" content="https://yourapp.com" /> */}
+        <Helmet>
+          <title>Engloray Tech | UI/UX Designer Internship</title>
+          <meta name="description" content="Master user experience design, product thinking, and intuitive interface creation with our premium UI/UX internship." />
+          <meta name="robots" content="max-snippet:-1, max-image-preview: large, max-video-preview:-1" />
+          <meta property="og:locale" content="en_US" />
+          <meta property="og:type" content="website" />
+          <meta property="og:title" content="Engloray Tech | UI/UX Designer" />
+          <meta property="og:description" content="Design the future of products with Engloray Tech." />
+        </Helmet>
+      </div>
+      {showToast && (
+        <div className="UX-toast-message show">
+          <div className="UX-toast-content">
+            <span className="UX-toast-icon"><FontAwesomeIcon icon={faLock} /></span>
+            <span className="UX-toast-text">{toastMessage}</span>
+            <button className="UX-toast-close" onClick={() => setShowToast(false)}>
+              <FontAwesomeIcon icon={faTimes} />
+            </button>
+          </div>
+        </div>
+      )}
 
-        {/* Toast Message - Fixed Position */}
-        {showToast && (
-          <div className="UiUx-toast-message show">
-            <div className="UiUx-toast-content">
-              <span className="UiUx-toast-icon"><FontAwesomeIcon icon={faLock} /></span>
-              <span className="UiUx-toast-text">{toastMessage}</span>
-              <button
-                className="UiUx-toast-close"
-                onClick={() => setShowToast(false)}
-              >
-                <FontAwesomeIcon icon={faTimes} />
-              </button>
+      <div className="UX-content" ref={containerRef}>
+        {/* <TopNavBar /> */}
+        {/* <Navbar /> */}
+
+        {/* Hero Section */}
+        <section className="UX-section UX-hero-section-new" id="home">
+          <div className="UX-hero-top-row">
+            <div className="UX-hero-badges">
+              <span className="UX-hero-badge"><FontAwesomeIcon icon={faCheckCircle} /> 2023 BEST DESIGN</span>
+              <span className="UX-hero-badge"><FontAwesomeIcon icon={faLaptopCode} /> DIGITAL EXPERIENCE</span>
+            </div>
+            <div className="UX-hero-top-line-container">
+              <hr className="UX-hero-top-line" />
+              <svg className="UX-sparkle-icon" viewBox="0 0 24 24" width="24" height="24">
+                <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
+              </svg>
             </div>
           </div>
-        )}
 
-        <div
-          className="UiUx-content"
-          ref={containerRef}
-        >
-          {/* <TopNavBar/> */}
-          {/* <Navbar/> */}
-          {/* Hero Section */}
-          <section
-            className="UiUx-section UiUx-hero-section"
-            ref={setRef('home')}
-            id="home"
-          >
-            <div className="UiUx-simple-particles">
-              <div className="UiUx-simple-circle"></div>
-              <div className="UiUx-simple-circle"></div>
-              <div className="UiUx-simple-circle"></div>
-              <div className="UiUx-simple-triangle"></div>
-            </div>
-
-            <div className="UiUx-hero-content">
-              <p className="UiUx-hero-sublitle">
-                Master UI/<span style={{
-                  color: 'rgb(52, 87, 171)',
-                  fontWeight: '600',
-                  display: 'inline',
-                  WebkitTextFillColor: '#156fb9ff'
-                }}>UX</span> Design
+          <div className="UX-hero-typography">
+            <div className="UX-hero-line UX-hero-line-1">
+              <svg className="UX-sparkle-icon-large" viewBox="0 0 24 24" width="40" height="40">
+                <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
+              </svg>
+              <h1 className="UX-hero-title-word">Where Teams</h1>
+              <p className="UX-hero-desc-small">
+                Creative developer studio builds modern digital experiences for web apps brands and startups through design code innovation collaboration and scalable technology solutions for global users.
               </p>
-              <p className="UiUx-hero-subtitle1">Learn modern UI/UX Design with our comprehensive course. Scroll down to explore the curriculum and access valuable resources.</p>
-              <button
-                className="UiUx-cta-button"
-                onClick={() => scrollToSection('course')}
-              >
-                <FontAwesomeIcon icon={faRocket} /> Start Learning
-              </button>
             </div>
-          </section>
 
-          {/* Course Content Section */}
-          <section
-            className="UiUx-section UiUx-course-horizontal-section"
-            ref={setRef('course')}
-            id="course"
-          >
-            <div className="UiUx-course-background-overlay"></div>
+            <div className="UX-hero-line UX-hero-line-2">
+              <div className="UX-hero-image-pill UX-hero-image-1">
+                <img src={uxHeroImg} alt="UI/UX Interface Design" style={{ height: '100%', width: '100%', objectFit: 'cover', objectPosition: 'center' }} />
+              </div>
+              <h1 className="UX-hero-title-word UX-text-pink-blue">Design & Experience</h1>
+              <svg className="UX-sparkle-icon-small" viewBox="0 0 24 24" width="20" height="20">
+                <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
+              </svg>
+            </div>
 
-            <div className="UiUx-course-horizontal-container">
-              <h2 className="UiUx-section-title">UI/UX Designer Course</h2>
-              <p className="UiUx-section-content">Design intuitive user interfaces and exceptional experiences</p>
+            <div className="UX-hero-line UX-hero-line-3">
+              <svg className="UX-sparkle-icon-small" viewBox="0 0 24 24" width="25" height="25" style={{ marginRight: '0rem' }}>
+                <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
+              </svg>
+              <h1 className="UX-hero-title-word" style={{ marginLeft: '-1rem' }}>Together</h1>
+              <div className="UX-hero-image-pill UX-hero-image-2">
+                <img src={galleryCollab} alt="Professional Design Studio" style={{ height: '100%', width: '100%', objectFit: 'cover', objectPosition: 'center' }} />
+                <div className="UX-play-btn">
+                  <div className="UX-play-icon-triangle"></div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-              <div className="UiUx-course-carousel-container">
-                <div className="UiUx-carousel-wrapper">
-                  <div
-                    className="UiUx-course-cards-wrapper"
-                    ref={cardsWrapperRef}
-                  >
-                    {courseContent.map((item, index) => (
-                      <div
-                        key={item.id}
-                        className="UiUx-course-horizontal-card"
-                        style={{ backgroundImage: `url(${item.bgImage})` }}
-                      >
-                        <div className="UiUx-card-overlay"></div>
+          <div className="UX-hero-bottom-row">
+            <div className="UX-hero-bottom-left">
+              <p className="UX-hero-desc-large">
+                Creative Developer Studio empowers teams to transform ideas into powerful digital products. We combine creativity, engineering expertise, and strategic thinking to build responsive websites, intelligent platforms, and engaging user experiences that support innovation, improve productivity, and help businesses expand confidently in today’s fast-evolving online ecosystem.
+              </p>
+              <div className="UX-hero-actions">
+                <button className="UX-btn-primary" onClick={() => scrollToSection('course')}>Get Started</button>
+                <button className="UX-btn-icon" onClick={() => scrollToSection('course')}><FontAwesomeIcon icon={faArrowRight} style={{ transform: 'rotate(-45deg)' }} /></button>
+              </div>
+            </div>
 
-                        <div className="UiUx-card-content">
-                          <div className="UiUx-card-header">
-                            <span className="UiUx-module-number">Module {item.id}</span>
-                            <span className="UiUx-duration">{item.duration}</span>
-                          </div>
+            <div className="UX-hero-bottom-right">
+              <div className="UX-rotating-stamp">
+                <svg viewBox="0 0 100 100" className="UX-stamp-text-svg">
+                  <path id="circlePath" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="none" />
+                  <text>
+                    <textPath href="#circlePath" startOffset="0%">
+                      C R E A T I V E • D E V E L O P E R •
+                    </textPath>
+                  </text>
+                </svg>
+                <svg className="UX-stamp-star" viewBox="0 0 24 24" width="30" height="30">
+                  <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </section>
 
-                          <div className="UiUx-card-body">
-                            <h3 className="UiUx-course-title">{item.title}</h3>
+        {/* Course Content Section */}
+        <section className="UX-section UX-course-horizontal-section" id="course">
+          <div className="UX-course-background-top"></div>
+          <div className="UX-course-background-bottom"></div>
 
-                            <div className="UiUx-course-features">
-                              <ul className="UiUx-points-list">
-                                {item.description.map((point, pointIndex) => (
-                                  <li key={pointIndex} className="UiUx-feature-item">
-                                    <span className="UiUx-feature-icon"><FontAwesomeIcon icon={faCheck} /></span>
-                                    <span className="UiUx-feature-text">{point}</span>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
+          <div className="UX-course-horizontal-container" style={{ zIndex: 2, position: 'relative' }}>
+            <div className="UX-course-header-row">
+              <div className="UX-course-header-left">
+                <h2 className="UX-section-title">
+                  <span className="UX-text-pink-blue">TRAINING</span> <span style={{ color: '#2d2d2d' }}>PROGRAM</span>
+                </h2>
+              </div>
+              <svg className="UX-sparkle-icon-header" viewBox="0 0 24 24" width="20" height="20">
+                <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
+              </svg>
+              <div className="UX-course-header-right">
+                <a href="#course" className="UX-view-all-link">View All</a>
+              </div>
+            </div>
+
+            <div className="UX-course-carousel-container">
+              <div className="UX-carousel-wrapper">
+                <div
+                  className="UX-course-cards-wrapper"
+                  ref={cardsWrapperRef}
+                  style={{
+                    '--active-index': activeCourseIndex,
+                    transition: isTransitioning ? 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)' : 'none'
+                  }}
+                  onTransitionEnd={handleTransitionEnd}
+                >
+                  {infiniteContent.map((item) => (
+                    <div key={item.uniqueId} className="UX-course-new-card">
+                      <div className="UX-course-card-badges">
+                        <span className="UX-badge-pill">Phase {item.id}</span>
+                        <span className="UX-badge-pill UX-badge-dark">{item.duration}</span>
                       </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="UiUx-carousel-arrows">
-                  <button
-                    className="UiUx-carousel-arrow UiUx-carousel-arrow-left"
-                    onClick={() => handleCourseArrowClick('left')}
-                    aria-label="Previous module"
-                  >
-                    <FontAwesomeIcon icon={faChevronLeft} />
-                  </button>
-
-                  <button
-                    className="UiUx-carousel-arrow UiUx-carousel-arrow-right"
-                    onClick={() => handleCourseArrowClick('right')}
-                    aria-label="Next module"
-                  >
-                    <FontAwesomeIcon icon={faChevronRight} />
-                  </button>
-                </div>
-              </div>
-
-              <div className="UiUx-course-dots">
-                {courseContent.map((_, index) => (
-                  <button
-                    key={index}
-                    className={`UiUx-course-dot ${index === activeCourseIndex ? 'UiUx-active-dot' : ''}`}
-                    onClick={() => handleDotClick(index)}
-                    aria-label={`Go to slide ${index + 1}`}
-                  />
-                ))}
-              </div>
-            </div>
-          </section>
-
-          {/* Sign In Form Section */}
-          <section
-            className="UiUx-section"
-            ref={setRef('signin')}
-            id="signin"
-          >
-            <div className="UiUx-simple-particles">
-              <div className="UiUx-simple-circle"></div>
-              <div className="UiUx-simple-triangle"></div>
-              <div className="UiUx-simple-square"></div>
-            </div>
-
-            <div className="UiUx-signin-section">
-              <h2 className="UiUx-section-title">Join Our Course</h2>
-
-              <div className="UiUx-signin-container">
-                <div className="UiUx-description-section">
-                  <h3 className="UiUx-section-subtitle1"><FontAwesomeIcon icon={faPencilAlt} /> UI/UX Designer Course</h3>
-                  <p className="UiUx-section-description">
-                    A UI/UX designer creates intuitive, visually appealing interfaces and seamless user experiences by understanding user needs,
-                    conducting research, prototyping designs, and collaborating with developers to ensure products are both functional and enjoyable to use.
-                  </p>
-
-                  {!showForm && (
-                    <button
-                      className="UiUx-show-form-btn"
-                      onClick={() => setShowForm(true)}
-                    >
-                      <FontAwesomeIcon icon={faRocket} /> Register Now
-                    </button>
-                  )}
-                </div>
-
-                {showForm && (
-                  <div className="UiUx-form-section">
-                    <div className="UiUx-form-wrapper">
-                      <button
-                        className="UiUx-close-form-btn"
-                        onClick={() => setShowForm(false)}
-                        aria-label="Close form"
-                      >
-                        <FontAwesomeIcon icon={faTimes} />
-                      </button>
-
-                      <form className="UiUx-signin-form" onSubmit={handleSignInSubmit}>
-                        <div className="UiUx-form-group">
-                          <label htmlFor="email"><FontAwesomeIcon icon={faEnvelope} /> Email Address</label>
-                          <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleFormChange}
-                            className={`UiUx-form-input ${errors.email ? 'UiUx-error' : ''}`}
-                            placeholder="Enter your email"
-                          />
-                          {errors.email && <span className="UiUx-error-message">{errors.email}</span>}
-                        </div>
-
-                        <div className="UiUx-form-group">
-                          <label htmlFor="course"><FontAwesomeIcon icon={faEnvelope} />Enter the course</label>
-                          <input
-                            type="text"
-                            id="course"
-                            name="course"
-                            value={formData.course}
-                            onChange={handleFormChange}
-                            className={`UiUx-form-input ${errors.password ? 'UiUx-error' : ''}`}
-                            placeholder="Enter the Course"
-                          />
-                          {errors.password && <span className="UiUx-error-message">{errors.password}</span>}
-                        </div>
-
-                        <div className="UiUx-form-group UiUx-checkbox-group">
-                          <input
-                            type="checkbox"
-                            id="agreeTerms"
-                            name="agreeTerms"
-                            checked={formData.agreeTerms}
-                            onChange={handleFormChange}
-                            className={errors.agreeTerms ? 'UiUx-error' : ''}
-                          />
-                          <label htmlFor="agreeTerms">
-                            <FontAwesomeIcon icon={faCheckCircle} /> I agree to the Terms of Service and Privacy Policy
-                          </label>
-                          {errors.agreeTerms && <span className="UiUx-error-message">{errors.agreeTerms}</span>}
-                        </div>
-
-                        <button type="submit" className="UiUx-submit-btn">
-                          <FontAwesomeIcon icon={faRocket} /> Register Now
-                        </button>
-                      </form>
-                    </div>
-                  </div>
-                )}
-              </div>
-            </div>
-          </section>
-
-          {/* Assets, Branding & Design Support */}
-          <section
-            className="UiUx-section UiUx-locked-section"
-            ref={setRef('assets')}
-            id="assets"
-          >
-            <div className="UiUx-locked-section-overlay"></div>
-            <div className="UiUx-locked-content">
-              <div className="UiUx-locked-icon">
-                <span className="UiUx-premium-badge"><FontAwesomeIcon icon={faCrown} /> PREMIUM</span>
-              </div>
-              <h2 className="UiUx-section-title">Assets, Branding & Design Support</h2>
-              <p className="UiUx-section-description">
-                Access our exclusive library of premium UI/UX assets, complete design systems,
-                and professional design support. Get 3000+ UI components, 200+ premium fonts,
-                design system templates, and direct support from senior UI/UX designers.
-              </p>
-              <button
-                className="UiUx-locked-btn"
-                onClick={() => showLockedSectionToast("Assets, Branding & Design Support")}
-              >
-                <span className="UiUx-locked-btn-text"><FontAwesomeIcon icon={faLock} /> Join course to Access</span>
-              </button>
-              <p className="UiUx-locked-note">
-                <FontAwesomeIcon icon={faStar} /> Includes lifetime access to premium assets + 6 months of design support
-              </p>
-            </div>
-          </section>
-
-          {/* Image Gallery Section */}
-          <section
-            className="UiUx-section UiUx-full-particle-section"
-            ref={setRef('gallery')}
-            id="gallery"
-          >
-            <div className="UiUx-full-spread-particles">
-              {[...Array(15)].map((_, i) => (
-                <div key={i} className={`UiUx-spread-particle UiUx-spread-particle-${i % 5}`}></div>
-              ))}
-            </div>
-
-            <div className="UiUx-gallery-section">
-              <h2 className="UiUx-section-title"><FontAwesomeIcon icon={faEye} /> Design Environment</h2>
-              <p className="UiUx-section-subtitle">Explore our interactive design spaces and resources</p>
-
-              <div className="UiUx-gallery-container">
-                <div className="UiUx-gallery-grid">
-                  {imagesWithDescriptions.map((imageData, index) => (
-                    <div
-                      key={index}
-                      className="UiUx-gallery-item-wrapper"
-                    >
-                      <div className="UiUx-gallery-item">
-                        <div
-                          className="UiUx-image-container"
-                          onClick={() => handleImageClick(imageData)}
-                        >
-                          <img
-                            src={imageData.url}
-                            alt={imageData.title}
-                            loading="lazy"
-                          />
-                          <div className="UiUx-image-overlay">
-                            <span>
-                              {activeDescription === imageData.title ? (
-                                <><FontAwesomeIcon icon={faEye} /> Hide Details</>
-                              ) : (
-                                <><FontAwesomeIcon icon={faEye} /> View Details</>
-                              )}
-                            </span>
+                      <h3 className="UX-course-card-title">{item.title}</h3>
+                      <div className="UX-course-card-checklist">
+                        {Array.isArray(item.description) ? item.description.map((point, i) => (
+                          <div key={i} className="UX-checklist-item">
+                            <FontAwesomeIcon icon={faCheck} className="UX-checklist-icon" />
+                            <span>{point}</span>
                           </div>
-                        </div>
-
-                        <div className="UiUx-image-title">
-                          <h4>{imageData.title}</h4>
-                        </div>
-                      </div>
-
-                      {activeDescription === imageData.title && (
-                        <div className="UiUx-gallery-description">
-                          <div className="UiUx-description-content">
-                            <h4><FontAwesomeIcon icon={faInfoCircle} /> About this Environment:</h4>
-                            <p>{imageData.description}</p>
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Ready-to-Use Internal Templates */}
-          <section
-            className="UiUx-section UiUx-locked-section UiUx-templates-section"
-            ref={setRef('templates')}
-            id="templates"
-          >
-            <div className="UiUx-locked-section-overlay"></div>
-            <div className="UiUx-locked-content">
-              <div className="UiUx-locked-icon">
-                <span className="UiUx-premium-badge"><FontAwesomeIcon icon={faGem} /> EXCLUSIVE</span>
-              </div>
-              <h2 className="UiUx-section-title">Ready-to-Use Design Templates</h2>
-              <p className="UiUx-section-description">
-                Get instant access to our proprietary library of 800+ professionally designed UI/UX templates.
-                Includes mobile app kits, web design systems, dashboard templates, wireframe libraries,
-                and design components that are fully customizable and commercially licensed.
-              </p>
-              <button
-                className="UiUx-locked-btn UiUx-pay-now-btn"
-                onClick={() => showLockedSectionToast("Ready-to-Use Design Templates")}
-              >
-                <span className="UiUx-locked-btn-text"><FontAwesomeIcon icon={faLock} /> Join course to Access</span>
-              </button>
-              <p className="UiUx-locked-note">
-                <FontAwesomeIcon icon={faStar} /> One-time payment for lifetime access to all template updates
-              </p>
-            </div>
-          </section>
-
-          {/* Course Resources Section */}
-          <section
-            className="UiUx-section UiUx-full-particle-section"
-            ref={setRef('resources')}
-            id="resources"
-          >
-            <div className="UiUx-full-spread-particles">
-              {[...Array(15)].map((_, i) => (
-                <div key={i} className={`UiUx-spread-particle UiUx-spread-particle-${i % 5}`}></div>
-              ))}
-            </div>
-
-            <div className="UiUx-resources-section">
-              <h2 className="UiUx-section-title"><FontAwesomeIcon icon={faFileAlt} /> Design Resources</h2>
-              <p className="UiUx-section-subtitle">
-                Download valuable design templates, guides, and assets to enhance your creative process.
-              </p>
-
-              <div className="UiUx-resources-container">
-                <div className="UiUx-resources-grid">
-                  {courseResources.map((resource) => (
-                    <div
-                      key={resource.id}
-                      className="UiUx-resource-card"
-                    >
-                      <div className="UiUx-resource-icon">
-                        <span className="UiUx-resource-icon-main">{resource.icon}</span>
-                        <span className="UiUx-resource-type-icon">{getFileTypeIcon(resource.type)}</span>
-                      </div>
-
-                      <div className="UiUx-resource-content">
-                        <h3 className="UiUx-resource-title">{resource.title}</h3>
-                        <p className="UiUx-resource-description">{resource.description}</p>
-
-                        <div className="UiUx-resource-meta">
-                          <span className="UiUx-resource-type">
-                            {resource.type.toUpperCase()} • {resource.size}
-                          </span>
-                          <span className="UiUx-resource-downloads">
-                            <FontAwesomeIcon icon={faDownload} /> {resource.downloads.toLocaleString()} downloads
-                          </span>
-                          {resource.isRestricted && (
-                            <span className="UiUx-resource-restricted-tag">
-                              <FontAwesomeIcon icon={faLock} /> Course Exclusive
-                            </span>
-                          )}
-                        </div>
-
-                        {resource.isRestricted ? (
-                          <button
-                            className="UiUx-join-course-btn"
-                            onClick={() => handleJoinCourseForResource(resource.title)}
-                          >
-                            <span><FontAwesomeIcon icon={faLock} /> Join Course to Download</span>
-                          </button>
-                        ) : (
-                          <button
-                            className={`UiUx-download-btn ${downloadedResources.includes(resource.id) ? 'UiUx-downloaded' : ''}`}
-                            onClick={() => handleDownloadResource(resource.id, resource.title, resource.localPath, resource.fileName)}
-                          >
-                            {downloadedResources.includes(resource.id) ? (
-                              <>
-                                <span><FontAwesomeIcon icon={faCheckCircle} /> Downloaded</span>
-                                <span className="UiUx-download-again">Download Again</span>
-                              </>
-                            ) : (
-                              <>
-                                <span><FontAwesomeIcon icon={faDownload} /> Download Now</span>
-                                <span className="UiUx-free-badge">FREE</span>
-                              </>
-                            )}
-                          </button>
+                        )) : (
+                          <p className="UX-course-card-desc">{item.description}</p>
                         )}
                       </div>
+                      <div className="UX-course-card-image">
+                        <img src={item.bgImage} alt={item.title} />
+                      </div>
                     </div>
                   ))}
                 </div>
+              </div>
 
-                <div className="UiUx-resources-info">
-                  <div className="UiUx-resources-stats">
-                    <div className="UiUx-stat-card">
-                      <h3><FontAwesomeIcon icon={faFileAlt} /> Total Resources</h3>
-                      <p className="UiUx-stat-number">20</p>
-                      <p className="UiUx-stat-label">Available Documents</p>
-                    </div>
-                    <div className="UiUx-stat-card">
-                      <h3><FontAwesomeIcon icon={faDownload} /> Total Downloads</h3>
-                      <p className="UiUx-stat-number">32,000</p>
-                      <p className="UiUx-stat-label">By Design Students</p>
-                    </div>
-                    <div className="UiUx-stat-card">
-                      <h3><FontAwesomeIcon icon={faUser} /> Your Downloads</h3>
-                      <p className="UiUx-stat-number">{yourDownloadsCount}</p>
-                      <p className="UiUx-stat-label">
-                        {yourDownloadsPercentage}% Downloaded
-                        <div className="UiUx-progress-bar">
-                          <div
-                            className="UiUx-progress-fill"
-                            style={{ width: `${yourDownloadsPercentage}%` }}
-                          ></div>
+              <div className="UX-carousel-arrows">
+                <button className="UX-carousel-arrow UX-carousel-arrow-left" onClick={handlePrevClick} aria-label="Previous module">
+                  <FontAwesomeIcon icon={faArrowRight} style={{ transform: 'rotate(180deg)' }} />
+                </button>
+
+                <button className="UX-carousel-arrow UX-carousel-arrow-right" onClick={handleNextClick} aria-label="Next module">
+                  <FontAwesomeIcon icon={faArrowRight} />
+                </button>
+              </div>
+            </div>
+
+            <div className="UX-course-dots">
+              {courseContent.map((_, index) => {
+                const isActive = (activeCourseIndex % courseContent.length) === index;
+                return (
+                  <div key={index} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+                    <button className={`UX-course-dot ${isActive ? 'UX-active-dot' : ''}`} onClick={() => handleDotNavigation(index)} aria-label={`Go to slide ${index + 1}`} />
+                    <span style={{ color: isActive ? 'white' : 'rgba(255, 255, 255, 0.4)', fontSize: '0.8rem', fontFamily: 'Inter', fontWeight: '600' }}>0{index + 1}</span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* Dream Navigator Section */}
+        <section className="UX-section UX-dream-navigator-section">
+          <div className="UX-dn-container">
+            <div className="UX-dn-header-row">
+              <div className="UX-dn-header-left">
+                <h2 className="UX-dn-title">
+                  <span>UX Resources, Research, </span>
+                  <br />
+                  <span style={{ display: 'inline-flex', alignItems: 'center', gap: '1rem' }}>
+                    <button className="UX-split-action-btn" style={{ padding: '1.7rem 1.5rem', fontSize: '1rem', margin: 0 }} onClick={() => showLockedSectionToast("UX Resources, Research, Design Support")}>
+                      <FontAwesomeIcon icon={faLock} /> Join course to Access
+                    </button>
+                    <span>Design Support</span>
+                  </span>
+                </h2>
+              </div>
+              <div className="UX-dn-header-right">
+                <svg className="UX-dn-small-sparkies" viewBox="0 0 24 24" width="16" height="16">
+                  <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
+                </svg>
+                <p>
+                  Access our exclusive library of premium UX research templates, design systems, and professional design support. Get 2000+ UI components, 50+ research plans, and direct support from senior designers.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="UX-section UX-influencer-section" id="signin">
+          <div className="UX-influencer-container">
+            <div className="UX-influencer-content">
+              {showForm ? (
+                <div className="UX-form-section UX-in-influencer">
+                  <div className="UX-form-wrapper UX-dark-form">
+                    <button className="UX-close-form-btn UX-close-dark" onClick={() => setShowForm(false)} aria-label="Close form">
+                      <FontAwesomeIcon icon={faTimes} />
+                    </button>
+                    <form className="UX-signin-form" onSubmit={handleSignSubmit}>
+                      <h3 className="UX-form-dark-title">Register Now</h3>
+                      <div className="UX-form-group">
+                        <label htmlFor="email"><FontAwesomeIcon icon={faEnvelope} /> Email Address</label>
+                        <input type="email" id="email" name="email" value={formData.email} onChange={handleFormChange} className={`UX-form-input ${errors.email ? 'UX-error' : ''}`} placeholder="Enter your email" />
+                        {errors.email && <span className="UX-error-message">{errors.email}</span>}
+                      </div>
+                      <div className="UX-form-group">
+                        <label htmlFor="course"><FontAwesomeIcon icon={faBook} /> Course</label>
+                        <input type="text" id="course" name="course" value={formData.course} onChange={handleFormChange} className={`UX-form-input ${errors.course ? 'UX-error' : ''}`} placeholder="Enter Course Name" />
+                        {errors.course && <span className="UX-error-message">{errors.course}</span>}
+                      </div>
+                      <div className="UX-form-group UX-checkbox-group">
+                        <input type="checkbox" id="agreeTerms" name="agreeTerms" checked={formData.agreeTerms} onChange={handleFormChange} />
+                        <label htmlFor="agreeTerms"><FontAwesomeIcon icon={faCheckCircle} /> I agree to the Terms of Service and Privacy Policy</label>
+                        {errors.agreeTerms && <span className="UX-error-message">{errors.agreeTerms}</span>}
+                      </div>
+                      <button type="submit" className="UX-submit-btn">
+                        <FontAwesomeIcon icon={faRocket} /> Register
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              ) : (
+                <div className="UX-influencer-split">
+                  <div className="UX-influencer-left">
+                    <h2 className="UX-influencer-title">
+                      Join <span className="UX-search-badge"><FontAwesomeIcon icon={faComments} style={{ fontSize: '0.6em', marginRight: '4px' }} /> Q</span> Our Course
+                      <br />
+                      <div className="UX-influencer-avatars">
+                        <img src={iconGraduationCap} alt="Education Graduation Cap" />
+                        <img src={iconEducationBook} alt="Education Book" />
+                        <img src={iconCertificate} alt="Education Certificate" />
+                      </div>
+                      to collaborate
+                      <br />
+                      with us
+                    </h2>
+                  </div>
+                  <div className="UX-influencer-right">
+                    <div className="UX-see-how-card" onClick={() => setShowForm(true)}>
+                      <div className="UX-card-top-icons">
+                        <div className="UX-video-circle">
+                          <FontAwesomeIcon icon={faVideo} />
                         </div>
-                      </p>
+                        <div className="UX-arrow-circle">
+                          <FontAwesomeIcon icon={faArrowRight} style={{ transform: 'rotate(-45deg)' }} />
+                        </div>
+                      </div>
+                      <h3 className="UX-see-how-text">See how<br />it's done</h3>
+                      <div className="UX-card-decorations">
+                        <div className="UX-decor-ring-1"></div>
+                        <div className="UX-decor-ring-2"></div>
+                      </div>
                     </div>
                   </div>
-
-                  <div className="UiUx-resources-note">
-                    <h4><FontAwesomeIcon icon={faLightbulb} /> Note:</h4>
-                    <p>
-                      Our course includes <strong>20 comprehensive resources</strong> to support your design journey.
-                      First 4 resources are available for free download. <strong>Design Portfolio Templates</strong> and
-                      <strong> Prototyping Animation Guide</strong> are exclusive to enrolled students.
-                      Join our course to access all 20 premium resources and unlock full learning potential.
-                    </p>
-                  </div>
                 </div>
-              </div>
+              )}
             </div>
-          </section>
+          </div>
+        </section>
 
-          {/* UI/UX Designer Benefits Section */}
-          <section
-            className="UiUx-section UiUx-benefits-section"
-            ref={setRef('benefits')}
-            id="benefits"
-          >
-            <div className="UiUx-simple-particles">
-              <div className="UiUx-simple-circle"></div>
-              <div className="UiUx-simple-triangle"></div>
-              <div className="UiUx-simple-square"></div>
-              <div className="UiUx-simple-hexagon"></div>
-            </div>
-
-            <div className="UiUx-benefits-container">
-              <h2 className="UiUx-section-title"><FontAwesomeIcon icon={faStar} /> UI/UX Designer Benefits</h2>
-              <p className="UiUx-section-subtitle">
-                When you join our comprehensive UI/UX design course, you unlock exclusive benefits
-                that accelerate your career growth and skill development.
-              </p>
-
-              <div className="UiUx-benefits-grid">
-                {benefits.map((benefit, index) => (
-                  <div
-                    key={index}
-                    className="UiUx-benefit-card"
-                  >
-                    <div className="UiUx-benefit-icon">
-                      <span className="UiUx-benefit-icon-emoji">{benefit.icon}</span>
-                    </div>
-                    <h3 className="UiUx-benefit-title">{benefit.title}</h3>
-                    <p className="UiUx-benefit-description">{benefit.description}</p>
-                  </div>
-                ))}
-              </div>
-
-              <div className="UiUx-benefits-summary">
-                <div className="UiUx-benefits-stats">
-                  <div className="UiUx-benefit-stat">
-                    <h4>15,000+</h4>
-                    <p><FontAwesomeIcon icon={faGraduationCap} /> Successful Graduates</p>
-                  </div>
-                  <div className="UiUx-benefit-stat">
-                    <h4>96%</h4>
-                    <p><FontAwesomeIcon icon={faBriefcase} /> Job Placement Rate</p>
-                  </div>
-                  <div className="UiUx-benefit-stat">
-                    <h4>80+</h4>
-                    <p><FontAwesomeIcon icon={faBuilding} /> Tech Company Partners</p>
-                  </div>
-                  <div className="UiUx-benefit-stat">
-                    <h4>24/7</h4>
-                    <p><FontAwesomeIcon icon={faComments} /> Community Support</p>
-                  </div>
-                </div>
-
-                <div className="UiUx-benefits-cta">
-                  <button
-                    className="UiUx-benefits-join-btn"
-                    onClick={handleBenefitsClick}
-                  >
-                    <FontAwesomeIcon icon={faRocket} /> Join Now & Get All Benefits
-                  </button>
-                  <p className="UiUx-benefits-guarantee">
-                    <FontAwesomeIcon icon={faCheckCircle} /> 30-day money-back guarantee • <FontAwesomeIcon icon={faSyncAlt} /> Lifetime access • <FontAwesomeIcon icon={faCertificate} /> Certificate included
+        <section className="UX-section UX-dream-navigator-section" id="dream-navigator">
+          <div className="UX-dn-container">
+            <div className="UX-dn-resources-title-row" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginTop: '0', marginBottom: '2rem', position: 'relative' }}>
+              <div style={{ flex: 1 }}>
+                <h2 className="UX-dn-title">
+                  DESIGN
+                  <svg className="UX-dn-icon-sparkle" viewBox="0 0 24 24" width="30" height="30">
+                    <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
+                  </svg>
+                  RESOURCES
+                  <svg className="UX-dn-icon-sparkle-outline" viewBox="0 0 24 24" width="30" height="30">
+                    <path d="M12 2L14.26 9.74L22 12L14.26 14.26L12 22L9.74 14.26L2 12L9.74 9.74L12 2ZM12 6.86L10.85 10.85L6.86 12L10.85 13.15L12 17.14L13.15 13.15L17.14 12L13.15 10.85L12 6.86Z" fill="currentColor" />
+                  </svg>
+                </h2>
+                <div className="UX-dn-header-right" style={{ flex: 'unset', padding: '1.2rem 0 0 0' }}>
+                  <svg className="UX-dn-small-sparkies" viewBox="0 0 24 24" width="16" height="16">
+                    <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
+                  </svg>
+                  <p>
+                    Download valuable UX templates, research guides, and design sets to enhance your creative process.
                   </p>
                 </div>
               </div>
-            </div>
-          </section>
 
-          {/* Testimonials Section */}
-          <section
-            className="UiUx-section UiUx-full-particle-section"
-            ref={setRef('feedback')}
-            id="feedback"
-          >
-            <div className="UiUx-full-spread-particles">
-              {[...Array(12)].map((_, i) => (
-                <div key={i} className={`UiUx-spread-particle UiUx-spread-particle-${i % 4}`}></div>
-              ))}
-            </div>
+              <div className="UX-quick-tips-container" ref={quickTipsRef} style={{ position: 'relative' }}>
+                <button className="UX-quick-tips-btn" onClick={() => setShowQuickTips(!showQuickTips)} style={{ background: '#1a1a2e', color: '#fff', border: 'none', padding: '0.8rem 1.5rem', borderRadius: '30px', cursor: 'pointer', fontWeight: '600', display: 'flex', alignItems: 'center', gap: '8px', boxShadow: '0 4px 15px rgba(0,0,0,0.1)', transition: 'all 0.3s ease', marginTop: '1rem' }}>
+                  <FontAwesomeIcon icon={faLightbulb} style={{ color: '#ffd700' }} />
+                  Quick Tips & Shortcuts
+                </button>
 
-            <div className="UiUx-feedback-section">
-              <h2 className="UiUx-section-title"><FontAwesomeIcon icon={faStar} /> Student Testimonials</h2>
-              <p className="UiUx-section-subtitle">Hear what our design students have to say about their learning experience</p>
-
-              <div className="UiUx-testimonials">
-                <div className="UiUx-testimonial-cards">
-                  {testimonials.map((testimonial) => (
-                    <div
-                      key={testimonial.id}
-                      className="UiUx-testimonial-card"
-                    >
-                      <div className="UiUx-stars">
-                        {renderStars(testimonial.rating)}
-                      </div>
-                      <p>{testimonial.text}</p>
-                      <span className="UiUx-author">- {testimonial.author}</span>
+                <div className={`UX-quick-tips-panel ${showQuickTips ? 'UX-show' : ''}`} style={{ position: 'absolute', top: 'calc(100% + 15px)', right: 0, width: '350px', background: '#1a1a2e', borderRadius: '16px', padding: '1.5rem', boxShadow: '0 10px 40px rgba(0,0,0,0.2)', zIndex: 100, opacity: showQuickTips ? 1 : 0, visibility: showQuickTips ? 'visible' : 'hidden', transform: showQuickTips ? 'translateY(0)' : 'translateY(-10px)', transition: 'all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '1rem' }}>
+                    <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: 'rgba(255,215,0,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <FontAwesomeIcon icon={faLightbulb} style={{ color: '#ffd700', fontSize: '0.9rem' }} />
                     </div>
-                  ))}
+                    <span style={{ color: '#ffd700', fontWeight: 'bold', fontSize: '0.9rem' }}>Tips</span>
+                  </div>
+                  <h3 style={{ color: 'white', fontSize: '1.2rem', marginBottom: '1.2rem', fontWeight: 'bold' }}>UX Productivity Tips</h3>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                    <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                      <FontAwesomeIcon icon={faCheckCircle} style={{ color: '#4caf50', marginTop: '4px', fontSize: '1rem' }} />
+                      <div>
+                        <h4 style={{ color: 'white', fontSize: '0.95rem', marginBottom: '4px', fontWeight: '600' }}>Master Figma Components</h4>
+                        <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.85rem', lineHeight: '1.4', margin: 0 }}>Use components and variants to build scalable and maintainable design systems faster.</p>
+                      </div>
+                    </div>
+                    <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                      <FontAwesomeIcon icon={faCheckCircle} style={{ color: '#4caf50', marginTop: '4px', fontSize: '1rem' }} />
+                      <div>
+                        <h4 style={{ color: 'white', fontSize: '0.95rem', marginBottom: '4px', fontWeight: '600' }}>Prioritize Accessibility</h4>
+                        <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.85rem', lineHeight: '1.4', margin: 0 }}>Always check color contrast and button sizes to ensure your designs are inclusive for all users.</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </section>
-          {/* <TSPFFooter/> */}
-          <BackToTop />
-        </div>
+
+            {/* Accordion Resources */}
+            <div className="UX-dn-visual-row UX-resources-accordion">
+              {courseResources.slice(0, 6).map((resource, index) => {
+                const isActive = activeAccordionIndex === index;
+                const num = `0${index + 1}`;
+
+                if (isActive) {
+                  return (
+                    <div key={resource.id} className="UX-accordion-panel UX-accordion-expanded UX-dn-spark-card" style={{ background: index % 2 === 0 ? 'linear-gradient(135deg, #e0ebff 0%, #b3caff 100%)' : 'linear-gradient(135deg, #eae0ff 0%, #cbb3ff 100%)' }}>
+                      <div className="UX-dn-sc-header">
+                        <div className="UX-dn-sc-num">{num}</div>
+                        <div className="UX-dn-sc-avatar" style={{ backgroundColor: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#1a1a2e', fontSize: '1.2rem' }}>
+                          {resource.icon}
+                        </div>
+                      </div>
+                      <h3 className="UX-dn-sc-title" style={{ fontSize: '1.5rem', marginBottom: '0.9rem', color: '#1a1a2e', fontWeight: 'bold' }}>{resource.title}</h3>
+                      <p className="UX-dn-sc-desc" style={{ marginBottom: '1rem', color: '#1a1a2e', opacity: 0.8, fontSize: '0.9rem' }}>{resource.description}</p>
+                      <div className="UX-resource-meta" style={{ marginBottom: '1.5rem', color: '#1a1a2e', opacity: 0.9, fontSize: '0.85rem', display: 'flex', gap: '1.5rem', fontWeight: 'bold', marginTop: '2rem' }}>
+                        <span>{resource.type.toUpperCase()} • {resource.size}</span>
+                        <span><FontAwesomeIcon icon={faDownload} /> {resource.downloads.toLocaleString()} downloads</span>
+                        {resource.isRestricted && <span style={{ color: '#d32f2f' }}><FontAwesomeIcon icon={faLock} /> Exclusive</span>}
+                      </div>
+
+                      {resource.isRestricted ? (
+                        <button className="UX-dn-sc-btn" onClick={() => handleJoinCourseForResource(resource.title)} style={{ marginTop: 'auto', background: '#1a1a2e', color: 'white' }}>
+                          <FontAwesomeIcon icon={faLock} /> Join Course to Download <FontAwesomeIcon icon={faArrowRight} style={{ transform: 'rotate(45deg)', marginLeft: '5px' }} />
+                        </button>
+                      ) : (
+                        <button className={`UX-dn-sc-btn ${downloadedResources.includes(resource.id) ? 'UX-downloaded' : ''}`} onClick={() => handleDownloadResource(resource.id, resource.title, resource.localPath, resource.fileName)} style={{ marginTop: 'auto', background: downloadedResources.includes(resource.id) ? '#4caf50' : '#1a1a2e', color: 'white' }}>
+                          {downloadedResources.includes(resource.id) ? <><FontAwesomeIcon icon={faCheckCircle} /> Downloaded</> : <><FontAwesomeIcon icon={faDownload} /> Download Now <FontAwesomeIcon icon={faArrowRight} style={{ transform: 'rotate(45deg)', marginLeft: '5px' }} /></>}
+                        </button>
+                      )}
+                    </div>
+                  );
+                } else {
+                  return (
+                    <div key={resource.id} className={`UX-accordion-panel UX-accordion-collapsed UX-dn-v-pill ${index % 2 === 0 ? 'UX-dn-bg-dark' : 'UX-dn-bg-light'}`} onClick={() => setActiveAccordionIndex(index)}>
+                      <span className="UX-dn-v-text">{resource.title}</span>
+                      <div className="UX-dn-v-num">{num}</div>
+                    </div>
+                  );
+                }
+              })}
+            </div>
+
+            <div className="UX-dn-stats-row">
+              <div className="UX-dn-stat-items">
+                <div className="UX-dn-stat-item"><strong>20</strong> Total Resources</div>
+                <div className="UX-dn-stat-item"><strong>15,000</strong> Total Downloads</div>
+                <div className="UX-dn-stat-item"><strong>{downloadedResources.length}</strong> Your Downloads</div>
+              </div>
+            </div>
+
+            <div className="UX-resources-note">
+              <h4><FontAwesomeIcon icon={faLightbulb} /> Note:</h4>
+              <p>
+                Our course includes <strong>20 comprehensive resources</strong> to support your UX journey. First 4 resources are available for free download. <strong>Advanced Research Templates</strong> and <strong>Case Study Guides</strong> are exclusive to enrolled students.
+              </p>
+            </div>
+            <hr className="UX-dn-divider" />
+
+            <div className="UX-dn-dashboard-row">
+              <div className="UX-dn-dash-left">
+                <h3 className="UX-dn-dash-title"> 30-day money-back guarantee <br />Lifetime access Certificate included </h3>
+                <button className="UX-dn-dash-btn" onClick={handleBenefitsClick}>
+                  Join course to Access <FontAwesomeIcon icon={faArrowRight} style={{ fontSize: '0.8rem', marginLeft: '4px' }} />
+                </button>
+              </div>
+              <div className="UX-dn-dash-right">
+                <div className="UX-dn-dash-card">
+                  <div className="UX-dn-dash-icon">  <FontAwesomeIcon icon={faUsers} style={{ color: '#ec4899' }} /></div>
+                  <div className="UX-dn-dash-info">
+                    <span className="UX-dn-dash-label">Successful Graduates</span>
+                    <span className="UX-dn-dash-value">5,000+</span>
+                  </div>
+                </div>
+                <div className="UX-dn-dash-card">
+                  <div className="UX-dn-dash-icon">  <FontAwesomeIcon icon={faRocket} style={{ color: '#0ea5e9' }} /></div>
+                  <div className="UX-dn-dash-info">
+                    <span className="UX-dn-dash-label">Job Placement Rate</span>
+                    <span className="UX-dn-dash-value">92%</span>
+                  </div>
+                </div>
+                <div className="UX-dn-dash-card">
+                  <div className="UX-dn-dash-icon">  <FontAwesomeIcon icon={faHandshake} style={{ color: '#ec4899' }} /></div>
+                  <div className="UX-dn-dash-info">
+                    <span className="UX-dn-dash-label">Industry Partners</span>
+                    <span className="UX-dn-dash-value">50+</span>
+                  </div>
+                </div>
+                <div className="UX-dn-dash-card">
+                  <div className="UX-dn-dash-icon">  <FontAwesomeIcon icon={faComments} style={{ color: '#0ea5e9' }} /></div>
+                  <div className="UX-dn-dash-info">
+                    <span className="UX-dn-dash-label">Community Support</span>
+                    <span className="UX-dn-dash-value">24/7</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Gallery Section */}
+        <section className="UX-section UX-new-gallery-section" id="gallery">
+          <div className="UX-Gallery-container-new">
+            <div className="UX-Gallery-header-new">
+              <div className="UX-Gallery-title-wrapper-new">
+                <span className="UX-Gallery-title-line-new"></span>
+                <h2 className="UX-Gallery-title-new">Design Environment</h2>
+              </div>
+            </div>
+
+            <div className="UX-Gallery-grid-new">
+              <div className="UX-Gallery-large-card-new" onClick={() => handleImageClick(imagesWithDescriptions[0])}>
+                <img src={imagesWithDescriptions[0].url} alt={imagesWithDescriptions[0].title} className="UX-Gallery-card-bg-new" />
+                <div className="UX-Gallery-card-overlay-new"></div>
+                <div className="UX-Gallery-card-content-new">
+                  <span className="UX-Gallery-badge-new">Environment</span>
+                  <h3 className="UX-Gallery-large-title-new">{imagesWithDescriptions[0].title}</h3>
+                </div>
+              </div>
+
+              <div className="UX-Gallery-middle-col-new">
+                {[1, 2, 3].map((index) => {
+                  const item = imagesWithDescriptions[index % imagesWithDescriptions.length];
+                  return (
+                    <div key={index} className="UX-Gallery-small-card-new" onClick={() => handleImageClick(item)}>
+                      <div className="UX-Gallery-small-image-new">
+                        <img src={item.url} alt={item.title} />
+                      </div>
+                      <div className="UX-Gallery-small-content-new">
+                        <h4 className="UX-Gallery-small-title-new">{item.title}</h4>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              <div className="UX-Gallery-right-col-new">
+                {[4, 5].map((index) => {
+                  const item = imagesWithDescriptions[index % imagesWithDescriptions.length];
+                  return (
+                    <div key={index} className="UX-Gallery-medium-card-new" onClick={() => handleImageClick(item)}>
+                      <img src={item.url} alt={item.title} className="UX-Gallery-card-bg-new" />
+                      <div className="UX-Gallery-card-overlay-new"></div>
+                      <div className="UX-Gallery-card-content-new">
+                        <h3 className="UX-Gallery-medium-title-new">{item.title}</h3>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+            {activeDescription && (
+              <div className="UX-gallery-description" style={{ marginTop: '2rem' }}>
+                <div className="UX-description-content">
+                  <h4><FontAwesomeIcon icon={faInfoCircle} /> About this Environment:</h4>
+                  <p>{imagesWithDescriptions.find(img => img.title === activeDescription)?.description}</p>
+                </div>
+              </div>
+            )}
+          </div>
+        </section>
+
+        {/* Benefits Section */}
+        <section className="UX-section UX-new-benefits-section" id="benefits">
+          <div className="UX-benefits-container-new">
+            <div style={{ textAlign: 'center', marginBottom: '3rem', position: 'relative', zIndex: 2 }}>
+              <h2 className="UX-section-title">
+                UI/UX Designer Benefits
+              </h2>
+              <p className="UX-section-subtitle" style={{ margin: '0 auto', color: '#555' }}>
+                Accelerate your product design career with our industry-led internship benefits.
+              </p>
+            </div>
+
+            <div className="UX-benefits-image-grid-new">
+              {benefitsData.map((benefit, index) => {
+                const benefitImages = [benefitCareer, benefitCertification, benefitMentorship, benefitSoftware, benefitNetworking, benefitMoneyBack];
+                return (
+                  <div key={index} className={`UX-benefit-img-card-new UX-benefit-img-card-${index}-new`}>
+                    <img src={benefitImages[index]} alt={benefit.title} className="UX-benefit-card-bg-new" />
+                    <div className="UX-benefit-card-overlay-new"></div>
+                    <div className="UX-benefit-card-content-new">
+                      <div className="UX-benefit-card-header-new">
+                        <span className="UX-benefit-card-icon-new">{benefit.icon}</span>
+                        <h3 className="UX-benefit-card-title-new">{benefit.title}</h3>
+                      </div>
+                      <p className="UX-benefit-card-desc-new">{benefit.description}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials Section */}
+        <section className="UX-section UX-dt-section" id="feedback">
+          <div className="UX-dt-container">
+            <div className="UX-dt-header">
+              <h2 className="UX-dt-title">
+                Designers Testimonials
+              </h2>
+              <p className="UX-dt-subtitle">
+                Hear what our students have to say about their learning experience
+              </p>
+            </div>
+            <div className="UX-dt-cards-wrapper">
+              <div className="UX-dt-cards">
+                {[...testimonials, ...testimonials].map((testimonial, index) => {
+                  const cardClassIndex = (index % 5) + 1;
+                  const imgMap = {
+                    1: testimonialAvatar1,
+                    2: testimonialAvatar3,
+                    3: testimonialAvatar2,
+                    4: testimonialAvatar4,
+                    5: testimonialAvatar5,
+                    6: testimonialAvatar1,
+                    7: testimonialAvatar3,
+                    8: testimonialAvatar2,
+                  };
+                  const photoUrl = imgMap[testimonial.id] || testimonialAvatar1;
+                  return (
+                    <div key={index} className={`UX-dt-card UX-dt-card-${cardClassIndex}`}>
+                      <div className="UX-dt-card-img-wrapper">
+                        <img src={photoUrl} alt={testimonial.author} className="UX-dt-card-img" />
+                      </div>
+                      <div className={`UX-dt-card-content UX-dt-content-bg-${cardClassIndex}`}>
+                        <h4 className="UX-dt-card-name">{testimonial.author}</h4>
+                        <p className="UX-dt-card-text">{testimonial.text}</p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </section>
+        <Footer />
+        <BackToTop />
       </div>
     </>
   );

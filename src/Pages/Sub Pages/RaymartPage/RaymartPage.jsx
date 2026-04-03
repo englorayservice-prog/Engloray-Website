@@ -3,14 +3,15 @@ import { useNavigate } from 'react-router-dom';
 import './RaymartPage.css';
 import { BarChart, Bar, XAxis, ResponsiveContainer, Tooltip } from 'recharts';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowTrendUp, faFire, faStar, faChartLine, faRobot, faCheck, faWandMagicSparkles, faUsers, faRotateLeft, faShieldHalved, faBriefcase, faHeadset, faNewspaper, faGraduationCap, faChevronRight, faEnvelope, faBuilding, faPlus, faHandshake, faCode, faStore } from '@fortawesome/free-solid-svg-icons';
+import { faArrowTrendUp, faFire, faStar, faChartLine, faRobot, faCheck, faWandMagicSparkles, faUsers, faRotateLeft, faShieldHalved, faBriefcase, faHeadset, faNewspaper, faGraduationCap, faChevronRight, faEnvelope, faBuilding, faPlus, faHandshake, faCode, faStore, faSearch } from '@fortawesome/free-solid-svg-icons';
 import aiProduct01Img from '../../../assets/ai-product-01.png';
 import aiProductImg from '../../../assets/ai-product.png';
 import brandingDesignKitImg from '../../../assets/brandinganddesignkit.png';
 import saasDashboardImg from '../../../assets/allinonesassdashboard.png';
 import globalImage from '../../../assets/global-image.png';
 import aiDeploymentHubImg from './ai-deployment-hub.png';
-
+import paymentImg from '../../../assets/payment.png';
+import socialMediaImg from '../../../assets/social-media.png';
 
 /* ─── Mock Data ─────────────────────────────────────────────── */
 const raymartSidebarCategories = [
@@ -821,7 +822,7 @@ const RaymartPage = () => {
               <div className="rm-showcase-timer-info">
                 {/* Optional info like "Flash Sale" or "Latest" */}
               </div>
-              <button className="rm-showcase-view-all">View All Products</button>
+              <button className="rm-showcase-view-all" onClick={() => navigate('/raymartPageThree')}>View All Products</button>
             </div>
 
             <div className="rm-showcase-grid">
@@ -849,11 +850,11 @@ const RaymartPage = () => {
             <div className="rm-showcase-footer">
               <div className="rm-showcase-footer-left">
                 <strong>Looking for something else?</strong>
-                <p>Search our entire product catalog or contact sales.</p>
+                <p>Explore our full product catalog or view more products available.</p>
               </div>
               <div className="rm-showcase-footer-right">
                 <div className="rm-showcase-search-box">
-                  <FontAwesomeIcon icon={faEnvelope} style={{ color: '#94a3b8' }} />
+                  <FontAwesomeIcon icon={faSearch} style={{ color: '#94a3b8' }} />
                   <input type="text" placeholder="Search products..." className="rm-showcase-search-input" />
                 </div>
                 <button className="rm-showcase-view-more-btn">View more</button>
@@ -895,7 +896,7 @@ const RaymartPage = () => {
               <div className="rm-showcase-timer-info">
                 {/* Section title could go here */}
               </div>
-              <button className="rm-showcase-view-all">Explore All Services</button>
+              <button className="rm-showcase-view-all" onClick={() => navigate('/raymartPageTwo')}>Explore All Services</button>
             </div>
 
             <div className="rm-showcase-grid">
@@ -926,7 +927,7 @@ const RaymartPage = () => {
               </div>
               <div className="rm-showcase-footer-right">
                 <div className="rm-showcase-search-box">
-                  <FontAwesomeIcon icon={faEnvelope} style={{ color: '#94a3b8' }} />
+                  <FontAwesomeIcon icon={faSearch} style={{ color: '#94a3b8' }} />
                   <input type="text" placeholder="Enter your email address" className="rm-showcase-search-input" />
                 </div>
                 <button className="rm-showcase-view-more-btn">View more</button>
@@ -1064,16 +1065,10 @@ const RaymartPage = () => {
             <h4 className="rm-footer-brand">RAYMART — 1ST TECH ONLINE MARKET</h4>
             <p className="rm-footer-hotline-label">HOT LINE 24/7</p>
             <p className="rm-footer-phone">6381769909 <br />6369945920</p>
-            <p className="rm-footer-address">317 Freelancer Hub St, Silicon Valley, Manhattan,<br />NY 10001</p>
+            <p className="rm-footer-address">ECEC Skill School, Opp to Fenner, Madurai<br />Tamil Nadu 625009</p>
             <p className="rm-footer-email">engloray@gmail.com</p>
-            <div className="rm-footer-socials">
-              {['𝕏', 'f', '📸', '▶', 'P'].map((s, i) => (
-                <span key={i} className="rm-social">{s}</span>
-              ))}
-            </div>
-            <div className="rm-footer-lang-row">
-              <button className="rm-footer-lang-btn">USD ▾</button>
-              <button className="rm-footer-lang-btn">🇺🇸 Eng ▾</button>
+            <div className="rm-footer-socials" style={{ margin: '20px 0' }}>
+              <img src={socialMediaImg} alt="Social Media" style={{ height: '30px', width: 'auto', objectFit: 'contain', transform: 'scale(3)', transformOrigin: 'left' }} />
             </div>
           </div>
 
@@ -1097,7 +1092,14 @@ const RaymartPage = () => {
           <div className="rm-footer-col">
             <h5 className="rm-footer-col-title">HELP CENTER</h5>
             {['Customer Service', 'Policy', 'Terms & Conditions', 'Track Order', 'FAQs', 'My Account', 'Product Support'].map(l => (
-              <p key={l} className="rm-footer-link">{l}</p>
+              <p
+                key={l}
+                className="rm-footer-link"
+                onClick={() => { if (l === 'Customer Service') navigate('/contactPage'); }}
+                style={{ cursor: l === 'Customer Service' ? 'pointer' : 'default' }}
+              >
+                {l}
+              </p>
             ))}
           </div>
 
@@ -1111,24 +1113,40 @@ const RaymartPage = () => {
         </div>
 
         {/* Newsletter bar */}
-        <div className="rm-footer-newsletter">
-          <p className="rm-footer-newsletter-label">
-            SUBSCRIBE &amp; GET <span className="rm-footer-newsletter-highlight">10% OFF</span> FOR YOUR FIRST ORDER
-          </p>
-          <div className="rm-footer-newsletter-form">
-            <input type="email" placeholder="Enter your email address" className="rm-footer-email-input" />
-            <button className="rm-footer-subscribe-btn">SUBSCRIBE</button>
+        <div className="rm-footer-newsletter" style={{
+          display: 'grid',
+          gridTemplateColumns: '2fr 4.4fr',
+          gap: '40px',
+          padding: '10px 72px 48px',
+          borderTop: '1px solid #f1f5f9',
+          alignItems: 'flex-start'
+        }}>
+          {/* Aligned with first column */}
+          <div className="rm-footer-lang-row" style={{ display: 'flex', gap: '10px' }}>
+            <button className="rm-footer-lang-btn">USD ▾</button>
+            <button className="rm-footer-lang-btn">🇺🇸 Eng ▾</button>
           </div>
-          <p className="rm-footer-newsletter-note">By subscribing, you're agreed to our <a href="#" className="rm-footer-policy-link">Policy</a></p>
+
+          {/* Aligned with columns 2-5 */}
+          <div className="rm-footer-newsletter-content" style={{ textAlign: 'left' }}>
+            <p className="rm-footer-newsletter-label" style={{ margin: '0 0 20px', fontWeight: '800', textTransform: 'uppercase', textAlign: 'left' }}>
+              SUBSCRIBE &amp; GET <span className="rm-footer-newsletter-highlight">10% OFF</span> FOR YOUR FIRST ORDER
+            </p>
+            <div className="rm-footer-newsletter-form" style={{ maxWidth: '100%', marginBottom: '12px', display: 'flex' }}>
+              <input type="email" placeholder="Enter your email address" className="rm-footer-email-input" style={{ textAlign: 'left' }} />
+              <button className="rm-footer-subscribe-btn">SUBSCRIBE</button>
+            </div>
+            <p className="rm-footer-newsletter-note" style={{ textAlign: 'left', fontSize: '0.75rem' }}>
+              By subscribing, you're agreed to our <a href="#" className="rm-footer-policy-link">Policy</a>
+            </p>
+          </div>
         </div>
 
         {/* Bottom bar */}
-        <div className="rm-footer-bottom">
+        <div className="rm-footer-bottom" style={{ position: 'relative', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <span>© 2026 Raymart. All Rights Reserved.</span>
-          <div className="rm-footer-payments">
-            {['PayPal', 'MC', 'VISA', 'AMEX', 'Klarna'].map((p, i) => (
-              <span key={i} className="rm-payment-icon">{p}</span>
-            ))}
+          <div className="rm-footer-payments" style={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <img src={paymentImg} alt="Payment Methods" className="rm-payment-img" style={{ height: '24px', width: 'auto', transform: 'scale(5)', objectFit: 'contain' }} />
           </div>
           <a href="#" className="rm-footer-mobile-app">Mobile App</a>
         </div>

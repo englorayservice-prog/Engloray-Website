@@ -1,8 +1,8 @@
 /* Portfolio Section Styles */
 .ps-portfolio-section {
   padding: 100px 0;
-  background: linear-gradient(135deg, #000000 0%, #3a3838 100%);
-  color: white;
+  background: #ffffff;
+  color: #111;
   position: relative;
   overflow: hidden;
 }
@@ -282,12 +282,14 @@
   opacity: 0;
   transform: translateX(20px);
   animation: ps-slide-in-right 0.6s ease-out forwards;
-  margin-left: -13rem; /* Added to move it slightly left */
+  margin-left: -13rem;
+  /* Added to move it slightly left */
 }
 
 /* Special adjustment for UI/UX only - Move it even more left */
 .ps-main-content-wrapper.ps-with-side-content:has(.ps-uiux-layout) .ps-right-side-content {
-  margin-left: -15rem; /* Move it 2rem more left for UI/UX */
+  margin-left: -15rem;
+  /* Move it 2rem more left for UI/UX */
 }
 
 .ps-right-side-content.ps-animate-fade-in {
@@ -353,9 +355,12 @@
 
 /* Changed animation to bounce down instead of up */
 @keyframes ps-bounce-arrow-down {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0) rotate(180deg);
   }
+
   50% {
     transform: translateY(-10px) rotate(180deg);
   }
@@ -364,7 +369,8 @@
 .ps-right-arrow svg {
   animation: ps-bounce-arrow-down 2s infinite;
   filter: drop-shadow(0 0 8px rgba(242, 48, 48, 0.3));
-  transform: rotate(180deg); /* Rotates arrow to point down */
+  transform: rotate(180deg);
+  /* Rotates arrow to point down */
 }
 
 .ps-arrow-text {
@@ -420,10 +426,13 @@
 
 /* Animations */
 @keyframes ps-pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 1;
     transform: translateX(-50%) scale(1);
   }
+
   50% {
     opacity: 0.7;
     transform: translateX(-50%) scale(1.05);
@@ -431,9 +440,12 @@
 }
 
 @keyframes ps-float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-10px);
   }
@@ -444,6 +456,7 @@
     opacity: 0;
     transform: translateX(20px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -451,9 +464,12 @@
 }
 
 @keyframes ps-bounce-arrow {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(10px);
   }
@@ -487,22 +503,23 @@
   .ps-portfolio-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .ps-portfolio-grid.ps-grid-with-right-content {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .ps-main-content-wrapper.ps-with-side-content {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
-  
+
   .ps-right-side-content {
     position: static;
     max-height: none;
-    margin-left: 0; /* Reset margin on responsive */
+    margin-left: 0;
+    /* Reset margin on responsive */
   }
-  
+
   .ps-right-content-inner {
     max-width: 500px;
     margin: 0 auto;
@@ -513,44 +530,44 @@
   .ps-portfolio-section {
     padding: 60px 0;
   }
-  
+
   .ps-portfolio-container {
     padding: 0 1.5rem;
   }
-  
+
   .ps-portfolio-title {
     font-size: 2.5rem;
   }
-  
+
   .ps-portfolio-subtitle {
     font-size: 1.125rem;
   }
-  
+
   .ps-portfolio-filters {
     gap: 0.5rem;
   }
-  
+
   .ps-filter-btn {
     padding: 0.4rem 1rem;
     font-size: 0.8rem;
   }
-  
+
   .ps-portfolio-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .ps-portfolio-grid.ps-grid-with-right-content {
     grid-template-columns: 1fr;
   }
-  
+
   .ps-right-content-inner {
     padding: 0;
   }
-  
+
   .ps-right-title {
     font-size: 1.3rem;
   }
-  
+
   .ps-card-image-container {
     height: 180px;
   }
@@ -560,28 +577,362 @@
   .ps-portfolio-title {
     font-size: 2rem;
   }
-  
+
   .ps-right-title {
     font-size: 1.1rem;
   }
-  
+
   .ps-right-description {
     font-size: 0.85rem;
   }
-  
+
   .ps-card-content {
     padding: 1rem;
   }
-  
+
   .ps-card-title {
     font-size: 1rem;
   }
-  
+
   .ps-card-description {
     font-size: 0.85rem;
   }
 }
-/* Special adjustment for UI/UX only - Move it even more left */
+
 .ps-main-content-wrapper.ps-with-side-content:has(.ps-uiux-layout) .ps-right-side-content {
-  margin-left: -1rem; /* Move it 2rem more left for UI/UX */
+  margin-left: -1rem;
+  /* Move it 2rem more left for UI/UX */
+}
+
+/* ======================================== 
+   WORLD MAP SECTION STYLES 
+   ======================================== */
+.ps-world-map-section {
+  margin-top: 100px;
+  padding: 60px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  background-color: #ffffff;
+}
+
+.ps-world-map-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 60px;
+  padding: 0 5%;
+}
+
+.ps-globe-side-content {
+  flex: 1;
+  text-align: left;
+  max-width: 600px;
+  position: relative;
+}
+
+.ps-floating-icons-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ps-float-icon {
+  position: absolute;
+  color: #bf0413;
+  opacity: 0.15;
+  filter: drop-shadow(0 4px 10px rgba(191, 4, 19, 0.3));
+  animation: ps-icon-float 10s ease-in-out infinite alternate;
+}
+
+.ps-float-icon.icon-1 {
+  top: -40px;
+  right: 20%;
+  font-size: 2.5rem;
+  animation-delay: 0s;
+  color: #f23030;
+  opacity: 0.25;
+}
+
+.ps-float-icon.icon-2 {
+  bottom: -50px;
+  right: 0%;
+  font-size: 3.5rem;
+  animation-delay: -2s;
+  opacity: 0.15;
+}
+
+.ps-float-icon.icon-3 {
+  top: -20px;
+  right: -10%;
+  font-size: 2.2rem;
+  animation-delay: -4s;
+  color: #f23030;
+  opacity: 0.2;
+}
+
+.ps-float-icon.icon-4 {
+  bottom: -30px;
+  left: 20%;
+  font-size: 2.8rem;
+  animation-delay: -1s;
+  opacity: 0.15;
+}
+
+.ps-float-icon.icon-5 {
+  top: 50%;
+  right: -25%;
+  font-size: 2rem;
+  animation-delay: -3s;
+  color: #bf0413;
+  opacity: 0.2;
+}
+
+@keyframes ps-icon-float {
+  0% {
+    transform: translateY(0px) rotate(-5deg);
+  }
+
+  100% {
+    transform: translateY(-30px) rotate(15deg);
+  }
+}
+
+.ps-globe-side-title {
+  position: relative;
+  z-index: 10;
+  font-size: 3rem;
+  font-family: 'HEXCO';
+  background: linear-gradient(135deg, #f23030, #bf0413);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 25px;
+  line-height: 1.2;
+}
+
+.ps-globe-side-desc {
+  position: relative;
+  z-index: 10;
+  color: #666;
+  font-family: 'Aldrich';
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.ps-map-container-inner {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: 80px 0 0 0;
+  background: #000;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
+}
+
+/* ======================================== 
+   CENTERED STATIC GLOBE
+   ======================================== */
+.ps-centered-globe-container {
+  flex: 1;
+  position: relative;
+  width: 100%;
+  padding: 0;
+  height: 600px;
+  background: transparent;
+  overflow: visible;
+  /* Allows floating card to potentially break bounds if needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ps-center-revolving-globe {
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  max-height: 700px;
+  object-fit: contain;
+  opacity: 1;
+  filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.1));
+  mix-blend-mode: multiply;
+  /* Blends globe bg seamlessly with section bg */
+}
+
+.ps-map-overlay-hubs-globe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  max-width: 700px;
+  /* Forces a square overlay to accurately match the globe bounds */
+  height: 100%;
+  max-height: 700px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  /* Let pointer events pass through to markers */
+}
+
+.ps-map-marker-pin-globe {
+  position: absolute;
+  width: 40px;
+  /* Increased hover boundary bounds */
+  height: 40px;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  z-index: 100;
+  pointer-events: auto;
+  /* Enable hover on markers */
+  background: rgba(0, 0, 0, 0.01);
+  /* Creates a solid invisible core to trap pointer stability */
+  border-radius: 50%;
+}
+
+.ps-marker-point-globe {
+  width: 12px;
+  height: 12px;
+  background: #f23030;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 20px #f23030;
+  pointer-events: none;
+  /* Let the container handle hovers perfectly */
+}
+
+.ps-marker-pulse-globe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border: 4px solid #f23030;
+  border-radius: 50%;
+  animation: ps-hub-pulse-v-globe 2s ease-out infinite;
+  pointer-events: none;
+  /* Let the container handle hovers perfectly */
+}
+
+@keyframes ps-hub-pulse-v-globe {
+  0% {
+    transform: translate(-50%, -50%) scale(0.6);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(3.5);
+    opacity: 0;
+  }
+}
+
+.ps-map-globe-floating-card {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  width: 340px;
+  animation: ps-card-pop-final-globe 0.4s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+  pointer-events: none;
+  /* Critical: Prevent the card from intercepting mouse hovers when it pops up over central dots */
+}
+
+@keyframes ps-card-pop-final-globe {
+  0% {
+    transform: translateX(-50%) translateY(20px) scale(0.9);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(-50%) translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* FLOATING HOVER CARD INNER STYLES (Reusing structure) */
+.ps-map-hover-card-inner-p {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+}
+
+.ps-map-card-img-box-p {
+  height: 160px;
+  overflow: hidden;
+  border-bottom: 4px solid #f23030;
+}
+
+.ps-map-card-img-box-p img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ps-map-card-body-p {
+  padding: 24px;
+  text-align: left;
+}
+
+.ps-map-card-tag-p {
+  background: #f23030;
+  color: white;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: inline-block;
+  font-family: 'Aldrich';
+}
+
+.ps-map-card-name-p {
+  color: #111;
+  font-size: 1.25rem;
+  margin: 0 0 5px 0;
+  font-family: 'HEXCO';
+  font-weight: 100;
+}
+
+.ps-map-card-year-p {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0;
+  font-family: 'Aldrich';
+}
+
+@media (max-width: 900px) {
+  .ps-world-map-layout {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .ps-globe-side-content {
+    text-align: center;
+    max-width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .ps-centered-globe-container {
+    height: 400px;
+  }
+
+  .ps-map-globe-floating-card {
+    width: 280px;
+    bottom: 40px;
+  }
 }

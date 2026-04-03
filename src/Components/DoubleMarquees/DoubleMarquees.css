@@ -50,7 +50,7 @@
 .dual-marquee-container {
   width: 100%;
   margin: 0;
-  padding: 120px 20px 0 20px;
+  padding: 40px 20px 0 20px;
   /* Reduced bottom padding to 0 */
   position: relative;
   overflow: hidden;
@@ -454,7 +454,7 @@
 
 @media (max-width: 1024px) {
   .dual-marquee-container {
-    padding: 100px 20px;
+    padding: 40px 20px 0 20px;
   }
 
   .title-text {
@@ -486,7 +486,7 @@
 
 @media (max-width: 768px) {
   .dual-marquee-container {
-    padding: 80px 20px;
+    padding: 30px 20px 0 20px;
   }
 
   .title-text {
@@ -547,7 +547,7 @@
 
 @media (max-width: 480px) {
   .dual-marquee-container {
-    padding: 60px 15px;
+    padding: 20px 15px 0 15px;
   }
 
   .title-text {

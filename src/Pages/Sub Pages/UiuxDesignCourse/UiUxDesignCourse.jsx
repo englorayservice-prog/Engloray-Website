@@ -1,554 +1,620 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useEffect, useRef, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { submitEnrollment } from "../../Sub Pages/HandleSubmit/HandleSubmit";
-import NavigationBar from '../../TechLearningSection/NavigationBar/NavigationBar';
-import BackToTop from '../../../Components/BackToTop/BackToTop';
-import LearningFooter from '../../TechLearningSection/LearningFooter/LearningFooter';
-import './UiuxDesignCourse.css';
-
-// Import FontAwesome icons
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faGraduationCap, faRocket, faBullseye, faLaptopCode,
-  faMobileAlt, faBriefcase, faStar, faBook,
-  faMap, faPalette, faBolt, faRobot,
-  faPencilAlt, faRuler, faSyncAlt, faMicrophone,
-  faFlask, faChartBar, faStickyNote, faVideo,
-  faSave, faClipboardList, faChalkboardTeacher,
-  faTrophy, faHandsHelping, faGlobe, faEnvelope,
-  faPhone, faMapMarkerAlt, faComment, faChevronLeft,
-  faChevronRight, faCheckCircle, faLock, faLightbulb
-} from '@fortawesome/free-solid-svg-icons';
+  faArrowRight,
+  faBook,
+  faBriefcase,
+  faBullseye,
+  faCertificate,
+  faCheck,
+  faCheckCircle,
+  faChevronDown,
+  faChevronUp,
+  faClock,
+  faComments,
+  faEnvelope,
+  faFlask,
+  faGlobe,
+  faGraduationCap,
+  faHandshake,
+  faLaptopCode,
+  faLightbulb,
+  faLock,
+  faMagic,
+  faRocket,
+  faMapMarkerAlt,
+  faMobileAlt,
+  faPaintBrush,
+  faPencilAlt,
+  faPenFancy,
+  faRulerCombined,
+  faStar,
+  faSyncAlt,
+  faTimes,
+  faTrophy,
+  faUser
+} from "@fortawesome/free-solid-svg-icons";
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import "../GraphicDesignCourse/GraphicDesignCourse.css";
 
-// Import your assets
-import uiuxCertificate from '../../../assets/UI Certificate.jpeg';
-import { Helmet } from 'react-helmet';
+import demoVideoFile from "../../../assets/Final GD Course video.mp4";
+import videoThumbnail from "../../../assets/DemoThumbnail.png";
+import uiuxCertificate from "../../../assets/UI Certificate.jpeg";
+
+import avatarF1 from "../../../assets/t1.png";
+import avatarM1 from "../../../assets/t2.png";
+import avatarF2 from "../../../assets/t3.png";
+
+// AI Tool Logos (Ideas & UX)
+import chatgptAiLogo from '../../../assets/chatgpt_ai_logo.jpg';
+import geminiAiLogo from '../../../assets/gemini_ai_logo.jpg';
+import notionAiLogo from '../../../assets/notion_ai_logo.jpg';
+import jasperAiLogo from '../../../assets/jasper_logo.png';
+
+// AI Generative Logos
+import adobeFireflyBg from '../../../assets/adobe_firefly_logo.png';
+import midjourneyBg from '../../../assets/midjourney_logo.png';
+import leonardoAiBg from '../../../assets/leonardo_ai_logo.png';
+import dalleBg from '../../../assets/dalle_logo.png';
 
 const UiuxDesignCourse = () => {
   const [showEnrollment, setShowEnrollment] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
-  const [expandedDescription, setExpandedDescription] = useState(false);
   const [currentModuleIndex, setCurrentModuleIndex] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [testiSetIndex, setTestiSetIndex] = useState(0);
+  const [activeToolCategory, setActiveToolCategory] = useState(0);
 
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    course: 'UI/UX Design Masterclass'
-  });
-
+  const videoRef = useRef(null);
   const formSectionRef = useRef(null);
   const autoSlideRef = useRef(null);
 
-  const courseData = {
-    title: "Professional UI/UX Design Masterclass",
-    subtitle: "Transform into Industry-Ready Designer in 6 Months",
-    duration: "6 Months | Live Interactive Training"
+  useEffect(() => {
+    const testiInterval = setInterval(() => {
+      setTestiSetIndex((prev) => (prev + 1) % 3);
+    }, 5000);
+    return () => clearInterval(testiInterval);
+  }, []);
+
+  useEffect(() => {
+    const curriculumTimer = setInterval(() => {
+      setCurrentModuleIndex((prev) => (prev + 1) % sixMonthCurriculum.length);
+    }, 5000);
+    return () => clearInterval(curriculumTimer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    course: "UI/UX Design Mastery"
+  });
+
+  // Hero Images from user upload
+  const uiuxHero1 = require('../../../assets/uiux_hero_1.png');
+  const uiuxHero2 = require('../../../assets/uiux_hero_2.png');
+  const uiuxHero3 = require('../../../assets/u.jpeg');
+  const uiuxHero4 = require('../../../assets/uiux_hero_4.png');
+  const uiuxHero5 = require('../../../assets/u2.jpeg');
+
+  // New UI/UX-themed hero gallery images (do not reuse GD assets)
+  const uiuxHeroAssets = {
+    a1: uiuxHero1,
+    a2: uiuxHero2,
+    a3: uiuxHero3,
+    a4: uiuxHero4,
+    a5: uiuxHero5
   };
 
-  const courseDescription = `Master the art of user-centered design with our comprehensive UI/UX Design Masterclass, a six-month high-intensity program designed to transform beginners into industry-ready design professionals. The curriculum blends design thinking principles with hands-on software training and real-world project experience, covering UX research methods such as user interviews, surveys, and usability testing; UI design using tools like Figma, Adobe XD, and Sketch with strong design systems; interactive prototyping including user flows and wireframing; and complete portfolio development with detailed case studies. Learners gain career-ready skills in product thinking, stakeholder management, and job preparation, along with deep knowledge of the product development lifecycle and design thinking process. The program features an industry-aligned curriculum updated to current market demands, expert mentors with over 10 years of product design experience, 100% career and placement support with top tech companies, globally recognized certification from the International Design Council, lifetime access to course materials and updates, and vibrant community access to network with fellow designers.`;
-
-  const courseOutcomes = [
-    { icon: faBullseye, title: 'User Research', desc: 'Master user interviews, surveys, and usability testing methodologies to understand user needs' },
-    { icon: faLaptopCode, title: 'UI Design Skills', desc: 'Become proficient in Figma, Adobe XD, and industry-standard design tools' },
-    { icon: faMobileAlt, title: 'Prototyping', desc: 'Create interactive prototypes for web and mobile applications' },
-    { icon: faRocket, title: 'Portfolio Development', desc: 'Build a professional portfolio with 30+ real-world projects' },
-    { icon: faBriefcase, title: 'Career Readiness', desc: 'Prepare for job interviews, portfolio reviews, and client presentations' },
-    { icon: faStar, title: 'Product Thinking', desc: 'Develop strategic thinking for product design and development' }
+  const allTestimonials = [
+    {
+      name: "Suresh P",
+      role: "UI/UX Designer",
+      text: "Gained confidence working on real product flows. What felt complex before is now structured and clear—from research to wireframes to high-fidelity prototypes and developer handoff.",
+      avatar: avatarM1
+    },
+    {
+      name: "Priya R",
+      role: "UI Designer",
+      text: "The step-by-step approach made UI design feel simple. I learned spacing, typography, components, and design systems in a way that helped me build clean, professional screens fast.",
+      avatar: avatarF1
+    },
+    {
+      name: "Rahul M",
+      role: "Product Designer",
+      text: "The curriculum is perfectly aligned with modern product teams. I improved my UX thinking, created case studies, and learned stakeholder-ready presentations for real-world projects.",
+      avatar: avatarM1
+    },
+    {
+      name: "Anita K",
+      role: "Freelancer",
+      text: "I started freelancing with confidence after learning discovery, client briefs, wireframes, and prototyping. The mentorship helped me communicate design decisions with clarity and impact.",
+      avatar: avatarF2
+    },
+    {
+      name: "Vikas S",
+      role: "UX Designer",
+      text: "From user research to usability testing, the process finally clicked. I learned how to validate ideas, iterate quickly, and build experiences that actually solve user problems.",
+      avatar: avatarM1
+    },
+    {
+      name: "Sneha T",
+      role: "UI/UX Designer",
+      text: "Learning design systems and components changed everything. I can now build consistent UI, maintain scalability, and deliver pixel-perfect screens with fast iteration cycles.",
+      avatar: avatarF1
+    },
+    {
+      name: "Rohan D",
+      role: "UI/UX Designer",
+      text: "The focus on real product case studies helped me create a strong portfolio. The project reviews made my work polished and ready for interviews with top product companies.",
+      avatar: avatarM1
+    },
+    {
+      name: "Kavya J",
+      role: "UX Researcher",
+      text: "I finally understand how to run interviews, synthesize insights, and turn research into meaningful design decisions. The frameworks and practice sessions were incredibly useful.",
+      avatar: avatarF1
+    },
+    {
+      name: "Manoj V",
+      role: "Interaction Designer",
+      text: "The prototyping and interaction lessons made my work feel alive. I learned micro-interactions, motion intent, and how to present flows in a way developers can implement easily.",
+      avatar: avatarM1
+    }
   ];
 
-  // Updated 6-Month Curriculum with Detailed Modules
+  const activeTestimonials = allTestimonials.slice(testiSetIndex * 3, testiSetIndex * 3 + 3);
+
+  const introCategories = [
+    {
+      title: "UX Research",
+      icon: <FontAwesomeIcon icon={faBullseye} />,
+      points: ["User Interviews", "Personas", "Usability Testing"],
+      bgColor: "rgba(61, 82, 217, 0.12)",
+      iconColor: "#3D52D9"
+    },
+    {
+      title: "Wireframing",
+      icon: <FontAwesomeIcon icon={faRulerCombined} />,
+      points: ["Information Architecture", "User Flows", "Low-Fi Layouts"],
+      bgColor: "rgba(61, 82, 217, 0.12)",
+      iconColor: "#3D52D9"
+    },
+    {
+      title: "UI Design",
+      icon: <FontAwesomeIcon icon={faPaintBrush} />,
+      points: ["Typography", "Spacing Systems", "Visual Hierarchy"],
+      bgColor: "rgba(61, 82, 217, 0.12)",
+      iconColor: "#3D52D9"
+    },
+    {
+      title: "Prototyping",
+      icon: <FontAwesomeIcon icon={faMobileAlt} />,
+      points: ["Clickable Prototypes", "Interactions", "Design Reviews"],
+      bgColor: "rgba(61, 82, 217, 0.12)",
+      iconColor: "#3D52D9"
+    },
+    {
+      title: "Design Systems",
+      icon: <FontAwesomeIcon icon={faLaptopCode} />,
+      points: ["Components", "Variants", "Auto Layout"],
+      bgColor: "rgba(61, 82, 217, 0.12)",
+      iconColor: "#3D52D9"
+    },
+    {
+      title: "Portfolio",
+      icon: <FontAwesomeIcon icon={faRocket} />,
+      points: ["Case Studies", "Storytelling", "Handoff Ready"],
+      bgColor: "rgba(61, 82, 217, 0.12)",
+      iconColor: "#3D52D9"
+    }
+  ];
+
+  const courseOutcomes = [
+    {
+      icon: <FontAwesomeIcon icon={faBullseye} />,
+      title: "UX Research Skills",
+      desc: "Master interviews, surveys, and usability testing to uncover user needs and turn insights into clear design decisions for real product experiences."
+    },
+    {
+      icon: <FontAwesomeIcon icon={faRulerCombined} />,
+      title: "Wireframing Mastery",
+      desc: "Build information architecture, user flows, and wireframes that structure products clearly. Translate complex requirements into simple, usable layouts. Create intuitive blueprints that enhance usability and guide seamless user experiences. Design structured frameworks that improve clarity, consistency, and user navigation."
+    },
+    {
+      icon: <FontAwesomeIcon icon={faPaintBrush} />,
+      title: "UI Design Excellence",
+      desc: "Design pixel-perfect interfaces with modern typography, spacing, and component systems. Create consistent screens that feel premium and production-ready."
+    },
+    {
+      icon: <FontAwesomeIcon icon={faMobileAlt} />,
+      title: "Prototyping & Testing",
+      desc: "Create interactive prototypes, validate flows, and iterate fast. Learn to present and test designs with stakeholders and improve usability through feedback. Refine user experiences through continuous testing and data-driven design improvements. Ensure seamless interactions by identifying pain points and optimizing user journeys."
+    },
+    {
+      icon: <FontAwesomeIcon icon={faBriefcase} />,
+      title: "Career Prep",
+      desc: "Prepare for interviews with portfolio reviews, case study writing, and design presentations. Learn collaboration and handoff with developers and product teams. Build confidence to communicate ideas clearly and succeed in real-world design roles. Position yourself for top design roles with strong personal branding and industry-ready skills."
+    },
+    {
+      icon: <FontAwesomeIcon icon={faStar} />,
+      title: "Product Thinking",
+      desc: "Develop a product mindset to solve complex problems, align with core business goals, and design experiences that drive measurable outcomes."
+    }
+  ];
+
+  // New UI/UX-themed curriculum backgrounds (do not reuse GD assets)
   const sixMonthCurriculum = [
     {
       month: "Month 1",
-      title: "UI/UX Fundamentals & Design Basics",
-      topics: [
-        'What is UI & UX? Difference between UI Designer & UX Designer',
-        'Design thinking process & real-world UI/UX examples',
-        'Role of UI/UX in business & startups',
-        'Understanding users & user behavior',
-        'User personas & journey mapping'
-      ],
-      projects: '8 Projects',
-      icon: faBook,
-      bgImage: 'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'
+      title: "UX Foundations & Research",
+      topics: ["Design Thinking & Process", "User Interviews", "Personas & JTBD", "Journey Mapping", "Problem Framing"],
+      projects: "5 Projects",
+      icon: <FontAwesomeIcon icon={faBook} />,
+      bgImage: "https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=1400&q=80"
     },
     {
-      month: "Month 2",
-      title: "Information Architecture & Wireframing",
-      topics: [
-        'Content hierarchy & sitemap creation',
-        'Navigation structure & UX flow planning',
-        'Low-fidelity to high-fidelity wireframes',
-        'Mobile vs Web wireframes',
-        'UX best practices & card sorting basics'
-      ],
-      projects: '10 Projects',
-      icon: faMap,
-      bgImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'
+      month: "Month 2-3",
+      title: "Wireframes & UI Systems",
+      topics: ["Information Architecture", "User Flows", "Wireframes (Lo-Fi → Hi-Fi)", "Components & Variants", "Auto Layout"],
+      projects: "15 Projects",
+      icon: <FontAwesomeIcon icon={faLaptopCode} />,
+      bgImage: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&w=1400&q=80"
     },
     {
-      month: "Month 3",
-      title: "UI Design Fundamentals & Tools",
-      topics: [
-        'Color theory for UI & typography for digital screens',
-        'Layout systems, spacing & alignment',
-        'Figma mastery: Interface, components & auto layout',
-        'Adobe XD basics & design systems',
-        'Visual hierarchy & responsive design'
-      ],
-      projects: '12 Projects',
-      icon: faPalette,
-      bgImage: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'
-    },
-    {
-      month: "Month 4",
-      title: "Mobile & Web UI Design",
-      topics: [
-        'Android & iOS UI guidelines',
-        'App screen design & icons/UI elements',
-        'Website UI principles & landing page design',
-        'Responsive design: Desktop, tablet & mobile',
-        'App & web UI case studies'
-      ],
-      projects: '15 Projects',
-      icon: faMobileAlt,
-      bgImage: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'
-    },
-    {
-      month: "Month 5",
-      title: "Prototyping & Usability Testing",
-      topics: [
-        'Clickable prototypes & micro-interactions',
-        'Page transitions & user flow testing',
-        'Usability testing methods & feedback collection',
-        'Accessibility basics & UX optimization',
-        'Prototype presentation & UX improvements'
-      ],
-      projects: '10 Projects',
-      icon: faBolt,
-      bgImage: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'
+      month: "Month 4-5",
+      title: "Prototypes & Case Studies",
+      topics: ["Interactive Prototypes", "Accessibility Basics", "Usability Testing", "Iteration & Validation", "Case Study Storytelling"],
+      projects: "20 Projects",
+      icon: <FontAwesomeIcon icon={faRocket} />,
+      bgImage: "https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=1400&q=80"
     },
     {
       month: "Month 6",
-      title: "Portfolio & Career Development",
-      topics: [
-        'UI/UX portfolio structure & case study writing',
-        'Behance & Dribbble profile setup',
-        'Design handoff & working with developers',
-        'Presentation skills & client-ready portfolio',
-        'Interview preparation & freelance setup'
-      ],
-      projects: '8 Projects',
-      icon: faBriefcase,
-      bgImage: 'https://images.unsplash.com/photo-1587440871875-191322ee64b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'
+      title: "Portfolio & Handoff",
+      topics: ["Design Documentation", "Developer Handoff", "Stakeholder Presentations", "Interview Prep", "Freelance Basics"],
+      projects: "7 Projects",
+      icon: <FontAwesomeIcon icon={faBriefcase} />,
+      bgImage: "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=1400&q=80"
     }
   ];
 
-  // Updated Tools & Resources with AI Tools
-  const toolsResources = [
-    {
-      category: "AI Tools for UX Thinking, Research & Content ",
-      items: [
-        { name: "ChatGPT", icon: faRobot, description: "UX research questions, user flows, microcopy" },
-        { name: "Gemini", icon: faPalette, description: "UX problem framing & ideation" },
-        { name: "Notion AI", icon: faBolt, description: "UX documentation, briefs, personas" },
-        { name: "UX Pilot", icon: faRocket, description: "UX insights & recommendations" },
-        { name: "Jasper", icon: faMicrophone, description: "Onboarding text & UX copy" },
-        { name: "Maze", icon: faFlask, description: "AI-powered usability testing tools" }
-      ]
-    },
-    {
-      category: "AI Color, Font & Accessibility Tools ",
-      items: [
-        { name: "Khroma", icon: faBullseye, description: "Smart color systems" },
-        { name: "Coolors", icon: faPencilAlt, description: "Palette creation & testing" },
-        { name: "Fontjoy", icon: faRuler, description: "UI typography pairing" },
-        { name: "Stark", icon: faSyncAlt, description: "Contrast & accessibility checks" }
-      ]
-    },
-    {
-      category: "AI Prototyping, Mockup & Visual Support ",
-      items: [
-        { name: "Adobe Firefly", icon: faMicrophone, description: "UI visuals & assets" },
-        { name: "Mockup AI", icon: faFlask, description: "App & device mockups" },
-        { name: "Spline AI", icon: faChartBar, description: "Interactive 3D UI visuals" },
-        { name: "Loom AI", icon: faStickyNote, description: "UX walkthrough & explanations" }
-      ]
-    },
-    {
-      category: "AI UX Research, Testing & Validation Tools ",
-      items: [
-        { name: "Maze", icon: faVideo, description: "Usability testing & task analysis" },
-        { name: "Hotjar", icon: faBook, description: "Heatmaps, recordings & insights" },
-        { name: "UserTesting", icon: faSave, description: "Real user feedback" },
-        { name: "UXtweak", icon: faClipboardList, description: "Research & validation support" }
-      ]
-    }
+  const toolsV2Data = [
+    [
+      {
+        name: "ChatGPT",
+        icon: <FontAwesomeIcon icon={faComments} />,
+        desc: "Advanced conversational AI.",
+        img: chatgptAiLogo
+      },
+      {
+        name: "Gemini",
+        icon: <FontAwesomeIcon icon={faGlobe} />,
+        desc: "Intelligent multimodal assistance.",
+        img: geminiAiLogo
+      },
+      {
+        name: "Notion AI",
+        icon: <FontAwesomeIcon icon={faPencilAlt} />,
+        desc: "Smart workspace workflows.",
+        img: notionAiLogo
+      },
+      {
+        name: "Jasper AI",
+        icon: <FontAwesomeIcon icon={faRocket} />,
+        desc: "Executive AI copy and concepts.",
+        img: jasperAiLogo
+      }
+    ],
+    [
+      {
+        name: "Khroma",
+        icon: <FontAwesomeIcon icon={faMagic} />,
+        desc: "Visual generation for UI.",
+        bg: "linear-gradient(135deg, #8B5CF6 0%, #D946EF 100%)"
+      },
+      {
+        name: "Colors AI",
+        icon: <FontAwesomeIcon icon={faRocket} />,
+        desc: "Concepts and mood.",
+        bg: "linear-gradient(135deg, #FEF08A 0%, #3BC9F1 100%)"
+      },
+      {
+        name: "Fontjoy",
+        icon: <FontAwesomeIcon icon={faLightbulb} />,
+        desc: "Idea visuals.",
+        bg: "linear-gradient(135deg, #312E81 0%, #9D174D 100%)"
+      },
+      {
+        name: "Stark",
+        icon: <FontAwesomeIcon icon={faBullseye} />,
+        desc: "Accessibility and UI checks.",
+        bg: "linear-gradient(135deg, #2563EB 0%, #0891B2 100%)"
+      }
+    ],
+    [
+      {
+        name: "Maze",
+        icon: <FontAwesomeIcon icon={faFlask} />,
+        desc: "Rapid testing and data.",
+        bg: "linear-gradient(135deg, #FACC15 0%, #F97316 100%)"
+      },
+      {
+        name: "Hotjar",
+        icon: <FontAwesomeIcon icon={faCheckCircle} />,
+        desc: "Heatmaps and user behavior.",
+        bg: "linear-gradient(135deg, #EF4444 0%, #B91C1C 100%)"
+      },
+      {
+        name: "UserTesting",
+        icon: <FontAwesomeIcon icon={faUser} />,
+        desc: "Real-time user feedback.",
+        bg: "linear-gradient(135deg, #10B981 0%, #047857 100%)"
+      },
+      {
+        name: "UX Tweak",
+        icon: <FontAwesomeIcon icon={faSyncAlt} />,
+        desc: "Uncovering user insights.",
+        bg: "linear-gradient(135deg, #8B5CF6 0%, #4C1D95 100%)"
+      }
+    ],
+    [
+      {
+        name: "Adobe Firefly",
+        icon: <FontAwesomeIcon icon={faPaintBrush} />,
+        desc: "Advanced UI and Prototyping.",
+        bg: "linear-gradient(135deg, #F43F5E 0%, #BE123C 100%)"
+      },
+      {
+        name: "Mockup AI",
+        icon: <FontAwesomeIcon icon={faLaptopCode} />,
+        desc: "No-code website development.",
+        bg: "linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%)"
+      },
+      {
+        name: "Spline AI",
+        icon: <FontAwesomeIcon icon={faRocket} />,
+        desc: "Interactive 3D web experiences.",
+        bg: "linear-gradient(135deg, #EC4899 0%, #BE185D 100%)"
+      },
+      {
+        name: "Lume AI",
+        icon: <FontAwesomeIcon icon={faMagic} />,
+        desc: "Lightweight UI animations.",
+        bg: "linear-gradient(135deg, #06B6D4 0%, #0369A1 100%)"
+      }
+    ]
   ];
 
-  // Benefits array for UI/UX Course
   const benefits = [
-    {
-      icon: faGraduationCap,
-      title: 'Live Interactive Classes',
-      description: 'Real-time training with industry experts and instant doubt resolution'
-    },
-    {
-      icon: faChalkboardTeacher,
-      title: '1:1 Mentorship Sessions',
-      description: 'Personal guidance from senior product designers with 10+ years experience'
-    },
-    {
-      icon: faBriefcase,
-      title: '100% Placement Support',
-      description: 'Career guidance with top tech companies and startup opportunities'
-    },
-    {
-      icon: faTrophy,
-      title: 'Global Certification',
-      description: 'Internationally recognized certificate from Design Council'
-    },
-    {
-      icon: faSyncAlt,
-      title: 'Lifetime Access',
-      description: 'All course materials, updates, and recordings available forever'
-    },
-    {
-      icon: faHandsHelping,
-      title: 'Design Community',
-      description: 'Network with 5000+ designers and participate in design challenges'
-    },
-    {
-      icon: faLaptopCode,
-      title: 'Software License',
-      description: 'Free access to Figma Pro and Adobe XD for practice during course'
-    },
-    {
-      icon: faBullseye,
-      title: 'Project Portfolio',
-      description: 'Build 30+ real-world projects for your professional portfolio'
-    },
-    {
-      icon: faMobileAlt,
-      title: 'Mobile App Design',
-      description: 'Master both Android and iOS design guidelines and patterns'
-    },
-    {
-      icon: faGlobe,
-      title: 'Web Design Skills',
-      description: 'Learn responsive design for desktop, tablet, and mobile websites'
-    }
+    { icon: <FontAwesomeIcon icon={faGraduationCap} />, title: "Live Interactive Training", description: "Real-time classes with product designers and immediate doubt resolution for faster learning." },
+    { icon: <FontAwesomeIcon icon={faHandshake} />, title: "1:1 Mentorship", description: "Personal guidance from mentors with 10+ years experience in UI/UX and product design." },
+    { icon: <FontAwesomeIcon icon={faBriefcase} />, title: "100% Placement Assistance", description: "Career support with portfolio reviews, mock interviews, and referrals to hiring partners." },
+    { icon: <FontAwesomeIcon icon={faTrophy} />, title: "Global Certification", description: "Internationally recognized certification to validate your UI/UX skills globally." },
+    { icon: <FontAwesomeIcon icon={faClock} />, title: "Lifetime Course Access", description: "All course materials, updates, and recordings available forever for continuous growth." },
+    { icon: <FontAwesomeIcon icon={faComments} />, title: "Community Access", description: "Network with 5000+ designers and participate in design challenges and peer reviews." },
+    { icon: <FontAwesomeIcon icon={faLaptopCode} />, title: "Tool Mastery", description: "Hands-on practice with modern tools and workflows used by product teams worldwide." },
+    { icon: <FontAwesomeIcon icon={faBullseye} />, title: "Project-Based Learning", description: "Build real case studies and portfolio projects that stand out in UI/UX interviews." },
+    { icon: <FontAwesomeIcon icon={faFlask} />, title: "Usability Testing", description: "Learn to test prototypes, gather insights, and iterate confidently with real feedback." },
+    { icon: <FontAwesomeIcon icon={faRocket} />, title: "Career Coaching", description: "Interview prep and storytelling guidance to land your first UI/UX role faster." }
   ];
 
-  const testimonials = [
-    {
-      name: 'Pavithra S',
-      role: 'UI Designer',
-      review: 'This course completely well structred and easy way to follow through easy guidance and mentorship.',
-      rating: 5,
-      avatar: 'PS',
-      salary: 'UI/UX'
-    },
-    {
-      name: 'Suresh P',
-      role: 'UI/UX Designer',
-      review: 'Gained confidence of working with real client projects which I used to feared to face a client is now easy!....',
-      rating: 5,
-      avatar: 'SP',
-      salary: 'UI/UX'
-    },
-    {
-      name: 'Nithya M',
-      role: 'UI Designer',
-      review: 'Design thinking concepts were very useful to acheive the dream job in dream company.',
-      rating: 5,
-      avatar: 'NM',
-      salary: 'UI/UX'
-    }
-  ];
+  const hexToRgba = (hex, alpha) => {
+    const cleaned = hex.replace("#", "").trim();
+    const isShort = cleaned.length === 3;
+    const full = isShort ? cleaned.split("").map((c) => `${c}${c}`).join("") : cleaned;
+    const r = parseInt(full.slice(0, 2), 16);
+    const g = parseInt(full.slice(2, 4), 16);
+    const b = parseInt(full.slice(4, 6), 16);
+    return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+  };
 
-  const contactDetails = [
-    {
-      icon: faEnvelope,
-      title: 'Email Support',
-      details: ['hello@engloraylearn.com', 'admissions@engloraylearn.com'],
-      description: '24-hour response time'
-    },
-    {
-      icon: faPhone,
-      title: 'Call/WhatsApp',
-      details: ['+91 63681 75990', '+91 63699 45920'],
-      description: 'Available 9 AM - 9 PM'
-    },
-    {
-      icon: faMapMarkerAlt,
-      title: 'Learning Center',
-      details: ['Madurai, Tamil Nadu', 'INDIA 625001'],
-      description: 'Visit for demo class'
-    },
-    {
-      icon: faComment,
-      title: 'Quick Chat',
-      details: ['Live Chat Available', 'Telegram Support'],
-      description: 'Instant design guidance'
-    }
-  ];
+  const benefitIconPalette = ["#BAE6FD", "#C4B5FD", "#FBCFE8", "#BBF7D0", "#FED7AA", "#FEF08A", "#E9D5FF", "#A7F3D0", "#BAE6FD", "#C4B5FD"];
+
+  const demoVideo = {
+    title: "UI/UX Design Mastery - Free Demo Lesson",
+    duration: "15:45",
+    instructor: "Engloray Expert",
+    description: "Watch this sample lesson to experience our teaching methodology and see how we simplify UX processes into actionable steps.",
+    videoFile: demoVideoFile,
+    thumbnail: videoThumbnail || "https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=1200&q=80"
+  };
 
   const certificate = {
-    id: 1,
     title: "Professional UI/UX Certification",
     description: "Globally recognized certificate accredited by International Design Council",
-    features: [
-      "✅ Digital & Physical Copy",
-      "✅ Lifetime Validity",
-      "✅ Online Verification",
-      "✅ International Recognition",
-      "✅ QR Code Authentication",
-      "✅ Accredited by Design Council"
-    ],
-     image: uiuxCertificate
+    features: ["✅ Digital & Physical Copy", "✅ Lifetime Validity", "✅ Online Verification", "✅ International Recognition", "✅ QR Code Authentication", "✅ Accredited by Design Council"],
+    image: uiuxCertificate
   };
 
   const floatingIcons = [
-    faPalette, faMobileAlt, faLaptopCode, faPencilAlt, 
-    faBullseye, faLightbulb, faRocket, faTrophy, 
-    faRobot, faBolt
+    <FontAwesomeIcon icon={faPaintBrush} />,
+    <FontAwesomeIcon icon={faPencilAlt} />,
+    <FontAwesomeIcon icon={faRulerCombined} />,
+    <FontAwesomeIcon icon={faPenFancy} />,
+    <FontAwesomeIcon icon={faBullseye} />,
+    <FontAwesomeIcon icon={faLightbulb} />,
+    <FontAwesomeIcon icon={faRocket} />,
+    <FontAwesomeIcon icon={faTrophy} />
   ];
 
-  useEffect(() => {
-    if (autoSlideRef.current) {
-      clearInterval(autoSlideRef.current);
-    }
-    
-    autoSlideRef.current = setInterval(() => {
-      setCurrentModuleIndex((prev) => (prev + 1) % sixMonthCurriculum.length);
-    }, 5000);
-
-    return () => {
-      if (autoSlideRef.current) {
-        clearInterval(autoSlideRef.current);
-      }
-    };
-  }, [sixMonthCurriculum.length]);
+  const contactDetails = [
+    { icon: <FontAwesomeIcon icon={faEnvelope} />, title: "Email Support", details: ["hello@engloraylearn.com"], description: "24-hour response time", link: "mailto:hello@engloraylearn.com" },
+    { icon: <FontAwesomeIcon icon={faWhatsapp} />, title: "WHATSAPP", details: ["+91 63681 75990", "+91 63699 45920"], description: "Available 9 AM - 9 PM", link: "https://wa.me/916368175990" },
+    { icon: <FontAwesomeIcon icon={faMapMarkerAlt} />, title: "Learning Center", details: ["Madurai, Tamil Nadu", "INDIA 625001"], description: "Visit for demo class", link: "https://maps.google.com/?q=Engloray+Madurai" },
+    { icon: <FontAwesomeIcon icon={faComments} />, title: "Quick Chat", details: ["Live Chat Available", "Telegram Support"], description: "Instant design guidance", link: "https://wa.me/916368175990" }
+  ];
 
   const nextModule = () => {
     setCurrentModuleIndex((prev) => (prev + 1) % sixMonthCurriculum.length);
-    resetAutoSlide();
   };
 
   const prevModule = () => {
     setCurrentModuleIndex((prev) => (prev - 1 + sixMonthCurriculum.length) % sixMonthCurriculum.length);
-    resetAutoSlide();
-  };
-
-  const resetAutoSlide = () => {
-    if (autoSlideRef.current) {
-      clearInterval(autoSlideRef.current);
-      autoSlideRef.current = setInterval(() => {
-        setCurrentModuleIndex((prev) => (prev + 1) % sixMonthCurriculum.length);
-      }, 5000);
-    }
   };
 
   const scrollToForm = () => {
-    formSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
+    formSectionRef.current?.scrollIntoView({ behavior: "smooth" });
     setShowEnrollment(true);
   };
 
   const handleInputChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await submitEnrollment(formData);
+      setShowSuccess(true);
+      setFormData({ name: "", email: "", phone: "", course: "UI/UX Design Mastery" });
+      setTimeout(() => setShowEnrollment(false), 3000);
+      setTimeout(() => setShowSuccess(false), 5000);
+    } catch (error) {
+      alert("Enrollment failed. Please try again.");
+      // eslint-disable-next-line no-console
+      console.error(error);
+    }
+  };
 
-  try {
-    // payload must match backend DTO
-    const payload = {
-      name: formData.name,
-      email: formData.email,
-      phone: formData.phone,
-      course: formData.course
-    };
+  const handlePlayVideo = () => {
+    if (!videoRef.current) return;
+    if (isPlaying) videoRef.current.pause();
+    else videoRef.current.play();
+    setIsPlaying(!isPlaying);
+  };
 
-    await submitEnrollment(payload); // 🔥 API call
-
-    // ✅ SUCCESS
-    setShowSuccess(true);
-
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      course: 'UI/UX Design Masterclass'
-    });
-
-    setTimeout(() => {
-      setShowEnrollment(false);
-    }, 3000);
-
-    setTimeout(() => {
-      setShowSuccess(false);
-    }, 5000);
-
-  } catch (error) {
-    // ❌ FAILURE
-    console.error("Enrollment failed:", error.message);
-    alert("Enrollment failed. Please try again.");
-  }
-};
-
+  const handleVideoEnd = () => setIsPlaying(false);
+  const handleVideoPlay = () => setIsPlaying(true);
+  const handleVideoPause = () => setIsPlaying(false);
 
   return (
-    <>
-    <div>
-      <Helmet>
-            <title>Engloray Learning</title>
-            <meta name="description" content="User experience and User interface can create a futuristic world" />
-            <meta name="robots" content="max-snippet:-1, max-image-preview: large, max-video-preview:-1" />
-            {/* <link rel="canonical" href="https://yourapp.com" /> */}
-            <meta property="og:locale" content="en_US" />
-            <meta property="og:type" content="website" />
-            <meta property="og:title" content="Your App | Config" />
-            <meta property="og:description" content="Lorem Ipsum" />
-            {/* <meta property="og:url" content="https://yourapp.com" /> */}
-      </Helmet>
-    <NavigationBar />
-    <BackToTop />
-    <div className="uic-page">
-      {/* Hero Section */}
-      <section className="uic-hero">
-        <div className="uic-hero-bg"></div>
-        <div className="uic-hero-overlay"></div>
-        
-        <div className="uic-hero-content">
-          <div className="uic-hero-badge">
-            <FontAwesomeIcon icon={faGraduationCap} style={{marginRight: '10px'}} />
-            Professional UI/UX Certification
+    <div className="gdc-page">
+      {/* Hero Section Upgrade - Minimalist Premium Design */}
+      <header className="gdc-hero-v3">
+        <div className="gdc-v3-sparkle-wrapper">
+          <div className="gdc-v3-sparkle sparkle-lg sparkle-pos-1">
+            <FontAwesomeIcon icon={faStar} />
           </div>
-          <h1 className="uic-hero-title">{courseData.title}</h1>
-          <p className="uic-hero-subtitle">{courseData.subtitle}</p>
-          <p className="uic-hero-duration">{courseData.duration}</p>
-          
-          <div className="uic-hero-buttons">
-            <button 
-              className="uic-enroll-btn"
-              onClick={scrollToForm}
-            >
-              <FontAwesomeIcon icon={faRocket} style={{marginRight: '10px'}} />
-              Enroll Now
-            </button>
+          <div className="gdc-v3-sparkle sparkle-sm sparkle-pos-2">
+            <FontAwesomeIcon icon={faStar} />
+          </div>
+          <div className="gdc-v3-sparkle sparkle-md sparkle-pos-3">
+            <FontAwesomeIcon icon={faMagic} />
+          </div>
+          <div className="gdc-v3-sparkle sparkle-lg sparkle-pos-4">
+            <FontAwesomeIcon icon={faStar} />
+          </div>
+          <div className="gdc-v3-sparkle sparkle-sm sparkle-pos-5">
+            <FontAwesomeIcon icon={faMagic} />
+          </div>
+          <div className="gdc-v3-sparkle sparkle-md sparkle-pos-6">
+            <FontAwesomeIcon icon={faStar} />
+          </div>
+          <div className="gdc-v3-sparkle sparkle-lg sparkle-pos-7">
+            <FontAwesomeIcon icon={faStar} />
+          </div>
+          <div className="gdc-v3-sparkle sparkle-sm sparkle-pos-8">
+            <FontAwesomeIcon icon={faMagic} />
           </div>
         </div>
-      </section>
 
-      {/* Course Overview */}
-      <section className="uic-section uic-white-bg">
-        <div className="uic-container">
-          <h2 className="uic-section-title">Master UI/UX Design in 6 Months</h2>
-          <p className="uic-section-subtitle">From beginner to professional designer - Complete career transformation</p>
-          
-          <div className="uic-course-description">
-            <div className={`uic-description-content ${expandedDescription ? 'expanded' : ''}`}>
-              {courseDescription}
-            </div>
-            <button 
-              className="uic-readmore-btn"
-              onClick={() => setExpandedDescription(!expandedDescription)}
-            >
-              {expandedDescription ? 'Read Less' : 'Read Full Course Details'}
-            </button>
-          </div>
-        </div>
-      </section>
+        <div className="gdc-v3-container">
+          <div className="gdc-v3-header-content">
+            <h1 className="gdc-v3-main-title">
+              UI/UX <span className="gdc-v3-arrow-capsule-straight">→</span> Design <br /> Mastery Program
+            </h1>
 
-      {/* Course Outcomes */}
-      <section className="uic-section uic-dark-bg">
-        <div className="uic-container">
-          <h2 className="uic-section-title">Course Outcomes</h2>
-          <p className="uic-section-subtitle">What you'll achieve after completing this program</p>
-          
-          <div className="uic-outcomes-grid">
-            {courseOutcomes.map((outcome, index) => (
-              <div 
-                key={index} 
-                className="uic-outcome-card"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="uic-outcome-icon-wrapper">
-                  <div className="uic-outcome-icon">
-                    <FontAwesomeIcon icon={outcome.icon} />
-                  </div>
-                  <div className="uic-outcome-icon-glow"></div>
-                </div>
-                <h3 className="uic-outcome-title">{outcome.title}</h3>
-                <p className="uic-outcome-desc">{outcome.desc}</p>
-                <div className="uic-outcome-hover-effect"></div>
+            <p className="gdc-v3-subtitle-original">
+              Transform into a Product Designer in 6 Months. <br />
+              Master research, wireframes, prototyping & design systems to build a job-ready portfolio.
+            </p>
+
+            <div className="gdc-v3-sub-row">
+              <div className="gdc-v3-members-info">
+                <p>With more than</p>
+                <h3>2K+ MEMBERS</h3>
+                <h3>500+ TUTORIALS</h3>
               </div>
-            ))}
+
+              <button className="gdc-v3-join-btn" onClick={scrollToForm}>
+                Join us <span className="gdc-v3-join-arrow">↗</span>
+              </button>
+            </div>
+          </div>
+
+          <div className="gdc-v3-asset-gallery">
+            <div className="gdc-v3-card gdc-card-blue">
+              <img src={uiuxHeroAssets.a1} alt="UIUX Asset 1" className="gdc-v3-card-img" />
+            </div>
+            <div className="gdc-v3-card gdc-card-dark">
+              <img src={uiuxHeroAssets.a2} alt="UIUX Asset 2" className="gdc-v3-card-img" />
+            </div>
+            <div className="gdc-v3-card gdc-card-center-featured">
+              <img src={uiuxHeroAssets.a3} alt="UIUX Asset 3" className="gdc-v3-card-img" />
+            </div>
+            <div className="gdc-v3-card gdc-card-dark">
+              <img src={uiuxHeroAssets.a4} alt="UIUX Asset 4" className="gdc-v3-card-img" />
+            </div>
+            <div className="gdc-v3-card gdc-card-blue">
+              <img src={uiuxHeroAssets.a5} alt="UIUX Asset 5" className="gdc-v3-card-img" />
+            </div>
           </div>
         </div>
-      </section>
+      </header>
 
-      {/* 6-Month Detailed Curriculum Slider */}
-      <section className="uic-section uic-white-bg">
-        <div className="uic-container">
-          <h2 className="uic-section-title uic-blue-text">6-Month Detailed Curriculum</h2>
-          <p className="uic-section-subtitle">Comprehensive structured learning path covering all 12 essential modules</p>
-          
-          <div className="uic-slider-controls-above">
-            <button className="uic-slider-prev" onClick={prevModule}>
-              <FontAwesomeIcon icon={faChevronLeft} style={{marginRight: '8px'}} />
-              Previous Month
-            </button>
-            <div className="uic-slider-dots">
-              {sixMonthCurriculum.map((_, index) => (
-                <button
-                  key={index}
-                  className={`uic-slider-dot ${index === currentModuleIndex ? 'active' : ''}`}
-                  onClick={() => setCurrentModuleIndex(index)}
-                />
-              ))}
+      {/* Marquee Section bridging Hero and Intro */}
+      <div className="gdc-v2-marquee-container">
+        <div className="gdc-v2-marquee">
+          <span>
+            USER RESEARCH <FontAwesomeIcon icon={faStar} className="gdc-marquee-star" />
+            WIREFRAMES <FontAwesomeIcon icon={faStar} className="gdc-marquee-star" />
+            PROTOTYPING <FontAwesomeIcon icon={faStar} className="gdc-marquee-star" />
+            DESIGN SYSTEMS <FontAwesomeIcon icon={faStar} className="gdc-marquee-star" />
+            USABILITY TESTING <FontAwesomeIcon icon={faStar} className="gdc-marquee-star" />
+            MICROCOPY <FontAwesomeIcon icon={faStar} className="gdc-marquee-star" />
+            UI COMPONENTS <FontAwesomeIcon icon={faStar} className="gdc-marquee-star" />
+            PRODUCT FLOWS <FontAwesomeIcon icon={faStar} className="gdc-marquee-star" />
+            USER RESEARCH <FontAwesomeIcon icon={faStar} className="gdc-marquee-star" />
+            WIREFRAMES <FontAwesomeIcon icon={faStar} className="gdc-marquee-star" />
+            PROTOTYPING <FontAwesomeIcon icon={faStar} className="gdc-marquee-star" />
+            DESIGN SYSTEMS
+          </span>
+        </div>
+      </div>
+
+      {/* New Intro Section - Re-designed to 2-column layout */}
+      <section className="gdc-intro-section">
+        <div className="gdc-container">
+          <div className="gdc-intro-layout">
+            <div className="gdc-intro-left">
+              <h2 className="gdc-intro-title">
+                Master UI/UX <br /> Design in 6 Months
+              </h2>
+              <p className="gdc-intro-desc">
+                Learn the complete product design process from research to high-fidelity UI. Build case studies, master modern tools, and become job-ready with real-world project experience.
+              </p>
+              <button className="gdc-intro-cta" onClick={scrollToForm}>
+                Contact
+              </button>
             </div>
-            <button className="uic-slider-next" onClick={nextModule}>
-              Next Month
-              <FontAwesomeIcon icon={faChevronRight} style={{marginLeft: '8px'}} />
-            </button>
-          </div>
-          
-          <div className="uic-curriculum-slider-container">
-            <div className="uic-slider-wrapper">
-              <div 
-                className="uic-slider-track"
-                style={{ transform: `translateX(-${currentModuleIndex * 100}%)` }}
-              >
-                {sixMonthCurriculum.map((module, index) => (
-                  <div 
-                    key={index} 
-                    className="uic-module-slide"
-                    style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.9)), url(${module.bgImage})` }}
-                  >
-                    <div className="uic-module-content">
-                      <div className="uic-month-badge">{module.month}</div>
-                      <div className="uic-module-icon-slide">
-                        <FontAwesomeIcon icon={module.icon} />
-                      </div>
-                      <h3 className="uic-module-title-slide">{module.title}</h3>
-                      <div className="uic-module-meta-slide">
-                        <span className="uic-module-duration-slide">{module.month}</span>
-                        <span className="uic-module-projects-slide">{module.projects}</span>
-                      </div>
-                      
-                      <div className="uic-module-topics-slide">
-                        {module.topics.map((topic, idx) => (
-                          <div key={idx} className="uic-topic-item-slide">
-                            <span className="uic-topic-check-slide">
-                              <FontAwesomeIcon icon={faCheckCircle} />
-                            </span>
-                            <span className="uic-topic-text-slide">{topic}</span>
+
+            <div className="gdc-intro-right">
+              <div className="gdc-intro-grid">
+                {introCategories.map((cat, i) => (
+                  <div key={i} className="gdc-intro-category-box">
+                    <div className="gdc-intro-card-icon" style={{ backgroundColor: cat.bgColor, color: cat.iconColor }}>
+                      {cat.icon}
+                    </div>
+                    <div className="gdc-intro-card-content">
+                      <h3 className="gdc-intro-card-title">{cat.title}</h3>
+                      <div className="gdc-intro-card-points">
+                        {cat.points.map((point, idx) => (
+                          <div key={idx} className="gdc-intro-point">
+                            <FontAwesomeIcon icon={faStar} className="gdc-intro-point-star" />
+                            {point}
                           </div>
                         ))}
                       </div>
@@ -558,180 +624,433 @@ const handleSubmit = async (e) => {
               </div>
             </div>
           </div>
-
-          {/* Curriculum Highlights */}
-          <div className="uic-curriculum-highlights">
-            <div className="uic-highlight-card uic-pink-highlight">
-              <div className="uic-highlight-icon">
-                <FontAwesomeIcon icon={faBook} />
-              </div>
-              <h3>12 Comprehensive Modules</h3>
-              <p>From UI/UX basics to advanced portfolio development</p>
-            </div>
-            <div className="uic-highlight-card uic-blue-highlight">
-              <div className="uic-highlight-icon">
-                <FontAwesomeIcon icon={faBullseye} />
-              </div>
-              <h3>50+ Real Projects</h3>
-              <p>Hands-on experience with real-world design challenges</p>
-            </div>
-            <div className="uic-highlight-card uic-pink-highlight">
-              <div className="uic-highlight-icon">
-                <FontAwesomeIcon icon={faRobot} />
-              </div>
-              <h3>AI Tools Integration</h3>
-              <p>Learn modern AI-powered design tools and techniques</p>
-            </div>
-          </div>
         </div>
       </section>
 
-      {/* AI Tools & Resources Section */}
-      <section className="uic-section uic-light-blue-bg">
-        <div className="uic-container">
-          <h2 className="uic-section-title uic-blue-text">AI Tools & Resources</h2>
-          <p className="uic-section-subtitle">Master cutting-edge AI tools used in modern UI/UX design</p>
-          
-          <div className="uic-tools-container">
-            {toolsResources.map((category, categoryIndex) => (
-              <div 
-                key={categoryIndex} 
-                className="uic-tools-category"
-                style={{ animationDelay: `${categoryIndex * 0.2}s` }}
-              >
-                <h3 className="uic-tools-category-title">{category.category}</h3>
-                <div className="uic-tools-grid">
-                  {category.items.map((tool, toolIndex) => (
-                    <div 
-                      key={toolIndex} 
-                      className="uic-tool-card"
-                      style={{ animationDelay: `${toolIndex * 0.1}s` }}
-                    >
-                      <div className="uic-tool-icon">
-                        <FontAwesomeIcon icon={tool.icon} />
-                      </div>
-                      <div className="uic-tool-content">
-                        <h4 className="uic-tool-name">{tool.name}</h4>
-                        <p className="uic-tool-desc">{tool.description}</p>
-                      </div>
-                      <div className="uic-tool-hover-effect"></div>
-                    </div>
-                  ))}
+      {/* Course Outcomes - Bento Style Redesign */}
+      <section className="gdc-section gdc-outcomes-bento">
+        <div className="gdc-container">
+          <div className="gdc-outcomes-header-row">
+            <div className="gdc-outcomes-title-col">
+              <h2 className="gdc-outcomes-main-title">Course Outcomes</h2>
+            </div>
+            <div className="gdc-outcomes-desc-col">
+              <p className="gdc-outcomes-top-desc text-left">
+                What you'll achieve after completing this program. Master workflows, build case studies, and transform into an industry-ready UI/UX designer.
+              </p>
+            </div>
+          </div>
+
+          <div className="gdc-outcomes-grid-bento">
+            <div className="gdc-bento-card gdc-card-tall">
+              <div className="gdc-bento-sub-item gdc-bento-clipped-item gdc-bento-first-item">
+                <div className="gdc-bento-clipped-bg">
+                  <div className="gdc-bento-lobe lobe-left"></div>
+                  <div className="gdc-bento-lobe lobe-right"></div>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits Section */}
-      <section className="uic-section uic-light-blue-bg">
-        <div className="uic-container">
-          <h2 className="uic-section-title uic-blue-text">Program Benefits</h2>
-          <p className="uic-section-subtitle">Everything you need for a successful UI/UX design career</p>
-          
-          <div className="uic-benefits-grid">
-            {benefits.map((benefit, index) => (
-              <div 
-                key={index} 
-                className="uic-benefit-card"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="uic-benefit-icon-wrapper">
-                  <div className="uic-benefit-icon">
-                    <FontAwesomeIcon icon={benefit.icon} />
+                <div className="gdc-bento-clipped-content">
+                  <div className="gdc-bento-header-inline">
+                    <div className="gdc-bento-icon">{courseOutcomes[0].icon}</div>
+                    <h3 className="gdc-bento-title">{courseOutcomes[0].title}</h3>
                   </div>
-                  <div className="uic-benefit-icon-glow"></div>
+                  <p className="gdc-bento-text">{courseOutcomes[0].desc}</p>
                 </div>
-                <h3 className="uic-benefit-title">{benefit.title}</h3>
-                <p className="uic-benefit-desc">{benefit.description}</p>
-                <div className="uic-benefit-hover-effect"></div>
               </div>
-            ))}
+              <div className="gdc-bento-sub-item">
+                <div className="gdc-bento-header-inline">
+                  <div className="gdc-bento-icon">{courseOutcomes[1].icon}</div>
+                  <h3 className="gdc-bento-title">{courseOutcomes[1].title}</h3>
+                </div>
+                <p className="gdc-bento-text">{courseOutcomes[1].desc}</p>
+              </div>
+            </div>
+
+            <div className="gdc-bento-card gdc-card-tall gdc-card-violet">
+              <div className="gdc-curvy-line-overlay">
+                <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
+                  <path d="M-10,30 Q30,70 50,40 T120,50" fill="none" stroke="#fa7c2f" strokeWidth="5" strokeLinecap="round" />
+                  <path d="M40,45 Q70,20 90,80 T150,90" fill="none" stroke="#fa7c2f" strokeWidth="4" strokeLinecap="round" />
+                </svg>
+              </div>
+              <div className="gdc-bento-sub-item gdc-bento-first-item">
+                <div className="gdc-bento-header-inline">
+                  <div className="gdc-bento-icon icon-white">{courseOutcomes[2].icon}</div>
+                  <h3 className="gdc-bento-title text-white">{courseOutcomes[2].title}</h3>
+                </div>
+                <p className="gdc-bento-text text-white-muted">{courseOutcomes[2].desc}</p>
+              </div>
+              <div className="gdc-bento-sub-item">
+                <div className="gdc-bento-header-inline">
+                  <div className="gdc-bento-icon icon-white">{courseOutcomes[3].icon}</div>
+                  <h3 className="gdc-bento-title text-white">{courseOutcomes[3].title}</h3>
+                </div>
+                <p className="gdc-bento-text text-white-muted">{courseOutcomes[3].desc}</p>
+              </div>
+            </div>
+
+            <div className="gdc-bento-col-right">
+              <div className="gdc-bento-card gdc-card-square gdc-square-top">
+                <div className="gdc-bento-header-inline">
+                  <div className="gdc-bento-icon">{courseOutcomes[4].icon}</div>
+                  <h3 className="gdc-bento-title">{courseOutcomes[4].title}</h3>
+                </div>
+                <p className="gdc-bento-text">{courseOutcomes[4].desc}</p>
+              </div>
+              <div className="gdc-bento-card gdc-card-square gdc-square-bottom gdc-creative-glow-bg">
+                <div className="gdc-creative-abstract-shape">
+                  <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
+                    <path d="M0,80 Q50,20 100,80" fill="none" stroke="#94a3b8" strokeWidth="1" opacity="0.15" />
+                  </svg>
+                </div>
+                <div className="gdc-bento-header-inline">
+                  <div className="gdc-bento-icon">{courseOutcomes[5].icon}</div>
+                  <h3 className="gdc-bento-title">{courseOutcomes[5].title}</h3>
+                </div>
+                <p className="gdc-bento-text">{courseOutcomes[5].desc}</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Certificate Section with Lock Overlay */}
-      <section className="uic-section uic-dark-bg">
-        <div className="uic-container">
-          <h2 className="uic-section-title">Professional Certification</h2>
-          <p className="uic-section-subtitle">Earn a globally recognized UI/UX certificate upon completion</p>
-          
-          <div className="uic-certificate-single">
-            <div className="uic-certificate-image-wrapper">
-              <img 
-                src={certificate.image}
-                alt="UI/UX Design Masterclass Certificate"
-                className="uic-certificate-image"
-                onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src = "https://images.unsplash.com/photo-1587440871875-191322ee64b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80";
-                }}
-              />
-              
-              {/* Lock Overlay - Shows when hovering */}
-              <div className="uic-certificate-lock-overlay">
-                <div className="uic-lock-icon">
-                  <FontAwesomeIcon icon={faLock} />
+      {/* 6-Month Course Breakdown - Vertical Slider Redesign */}
+      <section className="gdc-curriculum-v2-section">
+        <div className="gdc-container">
+          <div className="gdc-curriculum-v2-layout">
+            <div className="gdc-curriculum-v2-left">
+              <span className="gdc-curriculum-v2-tag">PRO COURSE</span>
+              <h2 className="gdc-curriculum-v2-title">
+                6-Month Course <br /> Breakdown
+              </h2>
+              <p className="gdc-curriculum-v2-desc">
+                A structured product design path built for industry excellence. Master research, UI systems, prototyping, and portfolio storytelling in 6 intensive months.
+              </p>
+
+              <div className="gdc-curriculum-v2-stats">
+                <div className="gdc-stat-item">
+                  <span className="gdc-stat-num">50+</span>
+                  <span className="gdc-stat-label">Real Projects</span>
                 </div>
-                <div className="uic-lock-text">Certificate Locked</div>
-              </div>
-              
-              <div className="uic-certificate-overlay">
-                <span className="uic-certificate-badge">Your Professional Certificate Template</span>
-              </div>
-              <div className="uic-certificate-download-note">
-                <p>This is a sample template. Your actual certificate will include your name, course details, and issue date.</p>
+                <div className="gdc-stat-item">
+                  <span className="gdc-stat-num">100%</span>
+                  <span className="gdc-stat-label">Practical</span>
+                </div>
               </div>
             </div>
-            
-            <div className="uic-certificate-info-single">
-              <h3 className="uic-certificate-title-single">{certificate.title}</h3>
-              <p className="uic-certificate-desc-single">{certificate.description}</p>
-              
-              <div className="uic-certificate-features-single">
-                {certificate.features.map((feature, index) => (
-                  <div key={index} className="uic-certificate-feature-item-single">
-                    {feature}
+
+            <div className="gdc-curriculum-v2-right">
+              <div className="gdc-curriculum-nav-v2">
+                <button className="gdc-nav-btn-v2" onClick={prevModule}>
+                  <FontAwesomeIcon icon={faChevronUp} />
+                </button>
+                <button className="gdc-nav-btn-v2" onClick={nextModule}>
+                  <FontAwesomeIcon icon={faChevronDown} />
+                </button>
+              </div>
+
+              <div className="gdc-slider-v5-container">
+                {sixMonthCurriculum.map((module, index) => {
+                  const isActive = index === currentModuleIndex;
+                  const isNext = index === (currentModuleIndex + 1) % sixMonthCurriculum.length;
+                  const isPrev = index === (currentModuleIndex - 1 + sixMonthCurriculum.length) % sixMonthCurriculum.length;
+
+                  let cardState = "hidden";
+                  if (isActive) cardState = "active";
+                  else if (isPrev) cardState = "top";
+                  else if (isNext) cardState = "bottom";
+
+                  return (
+                    <div key={index} className={`gdc-curriculum-v5-card ${cardState}`}>
+                      <div className="gdc-curriculum-v5-inner">
+                        <div className="gdc-curriculum-v5-bg">
+                          <img src={module.bgImage} alt={module.title} className="gdc-curriculum-v5-img" />
+                          <div className="gdc-curriculum-v5-overlay"></div>
+                        </div>
+
+                        <div className="gdc-curriculum-v5-content">
+                          <div className="gdc-curriculum-v5-header">
+                            <span className="gdc-curriculum-v5-month">{module.month}</span>
+                            <span className="gdc-curriculum-v5-proj">Projects: {module.projects}</span>
+                          </div>
+                          <h3 className="gdc-curriculum-v5-title">{module.title}</h3>
+                          <div className="gdc-curriculum-v5-topics">
+                            {module.topics.map((topic, tidx) => (
+                              <div key={tidx} className="gdc-curriculum-v5-topic">
+                                <FontAwesomeIcon icon={faCheck} className="gdc-curriculum-v5-check" /> {topic}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Tools & Resources - Interactive V2 Redesign */}
+      <section className="gdc-tools-v2">
+        <div className="gdc-container">
+          <div className="gdc-tools-v2-header">
+            <h2 className="gdc-tools-v2-title"> AI Tools & Resources</h2>
+            <p className="gdc-tools-v2-subtitle">Master the industry's most powerful UI/UX workflow</p>
+          </div>
+
+          <div className="gdc-tools-v2-layout">
+            <div className="gdc-tools-sidebar">
+              {["Ideas & UX", "AI Generative", "Validation", "Pro Workflow"].map((label, idx) => (
+                <button key={idx} className={`gdc-tool-tab ${activeToolCategory === idx ? "active" : ""}`} onClick={() => setActiveToolCategory(idx)}>
+                  <span className="tab-number">0{idx + 1}</span>
+                  <span className="tab-label">{label}</span>
+                </button>
+              ))}
+            </div>
+
+            <div className="gdc-tools-main-display">
+              <div className="gdc-pods-container" key={activeToolCategory}>
+                {toolsV2Data[activeToolCategory].map((tool, index) => (
+                  <div key={index} className={`gdc-tool-pod pod-${index + 1}`}>
+                    <div className="gdc-pod-inner">
+                      <div className="gdc-pod-bg-image" style={{ background: tool.bg ? tool.bg : `url(${tool.img})`, backgroundPosition: 'center', backgroundSize: 'cover' }}></div>
+                      <div className="gdc-pod-content">{activeToolCategory !== 0 ? <h4 className="gdc-pod-name">{tool.name}</h4> : null}</div>
+                    </div>
                   </div>
                 ))}
               </div>
-              
-              <div className="uic-certificate-benefits">
-                <div className="uic-benefit">
-                  <span className="uic-benefit-icon">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Section - Where Features Meet For You Upgrade */}
+      <section className="gdc-section gdc-benefits-reimagined">
+        <div className="gdc-container">
+          <div className="gdc-benefits-header">
+            <h2 className="gdc-benefits-title">Where Features Meet For You</h2>
+          </div>
+
+          <div className="gdc-benefits-staggered">
+            <div className="gdc-benefits-row gdc-row-5">
+              {benefits.slice(0, 5).map((benefit, index) => (
+                <div key={index} className="gdc-new-benefit-card">
+                  {(() => {
+                    const absoluteIndex = 0 + index;
+                    const color = benefitIconPalette[absoluteIndex] || "#BAE6FD";
+                    return (
+                      <div className="gdc-new-icon" style={{ background: hexToRgba(color, 0.18), color }}>
+                        {benefit.icon}
+                      </div>
+                    );
+                  })()}
+                  <div className="gdc-new-content">
+                    <h3>{benefit.title}</h3>
+                    <p>{benefit.description.substring(0, 70)}...</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="gdc-benefits-row gdc-row-3">
+              {benefits.slice(5, 8).map((benefit, index) => (
+                <div key={index} className="gdc-new-benefit-card">
+                  {(() => {
+                    const absoluteIndex = 5 + index;
+                    const color = benefitIconPalette[absoluteIndex] || "#BAE6FD";
+                    return (
+                      <div className="gdc-new-icon" style={{ background: hexToRgba(color, 0.18), color }}>
+                        {benefit.icon}
+                      </div>
+                    );
+                  })()}
+                  <div className="gdc-new-content">
+                    <h3>{benefit.title}</h3>
+                    <p>{benefit.description.substring(0, 70)}...</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="gdc-benefits-row gdc-row-2">
+              {benefits.slice(8, 10).map((benefit, index) => (
+                <div key={index} className="gdc-new-benefit-card">
+                  {(() => {
+                    const absoluteIndex = 8 + index;
+                    const color = benefitIconPalette[absoluteIndex] || "#BAE6FD";
+                    return (
+                      <div className="gdc-new-icon" style={{ background: hexToRgba(color, 0.18), color }}>
+                        {benefit.icon}
+                      </div>
+                    );
+                  })()}
+                  <div className="gdc-new-content">
+                    <h3>{benefit.title}</h3>
+                    <p>{benefit.description.substring(0, 70)}...</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Local Demo Video Section */}
+      <section className="gdc-section gdc-white-bg">
+        <div className="gdc-container">
+          <h2 className="gdc-section-title gdc-red-text">Experience Our Teaching</h2>
+          <p className="gdc-section-subtitle">Watch a sample lesson from our course</p>
+
+          <div className="gdc-single-video-container">
+            <div className="gdc-video-card-light">
+              <div className="gdc-video-thumbnail-single" onClick={handlePlayVideo}>
+                <video
+                  ref={videoRef}
+                  className="gdc-video-player"
+                  poster={demoVideo.thumbnail}
+                  onClick={handlePlayVideo}
+                  onEnded={handleVideoEnd}
+                  onPlay={handleVideoPlay}
+                  onPause={handleVideoPause}
+                  controls={isPlaying}
+                >
+                  <source src={demoVideo.videoFile} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+
+                {!isPlaying && (
+                  <div className="gdc-video-overlay-single">
+                    <div className="gdc-play-button-single">
+                      <FontAwesomeIcon icon={faCheckCircle} />
+                    </div>
+                    <div className="gdc-video-duration-single">
+                      <FontAwesomeIcon icon={faClock} /> {demoVideo.duration}
+                    </div>
+                  </div>
+                )}
+
+                {isPlaying && (
+                  <div className="gdc-video-controls-overlay">
+                    <button className="gdc-video-control-btn" onClick={handlePlayVideo}>
+                      <FontAwesomeIcon icon={faCheckCircle} />
+                    </button>
+                  </div>
+                )}
+              </div>
+
+              <div className="gdc-video-info-single-light">
+                <h3 className="gdc-video-title-single-light">{demoVideo.title}</h3>
+                <p className="gdc-video-instructor-single-light">
+                  Instructor: <span>{demoVideo.instructor}</span>
+                </p>
+                <p className="gdc-video-description-single-light">{demoVideo.description}</p>
+                <button className="gdc-watch-btn-single" onClick={handlePlayVideo}>
+                  {isPlaying ? (
+                    <>
+                      <FontAwesomeIcon icon={faCheckCircle} /> Pause Video
+                    </>
+                  ) : (
+                    <>
+                      <FontAwesomeIcon icon={faCheckCircle} /> Watch Free Demo Lesson
+                    </>
+                  )}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Certificate Section with Simplified Lock Overlay */}
+      <section className="gdc-section gdc-dark-bg">
+        <div className="gdc-container">
+          <h2 className="gdc-section-title">Professional Certification</h2>
+          <p className="gdc-section-subtitle">Earn a globally recognized certificate upon completion</p>
+
+          <div className="gdc-certificate-single">
+            <div className="gdc-certificate-image-wrapper">
+              <img
+                src={certificate.image}
+                alt="UI/UX Design Mastery Certificate"
+                className="gdc-certificate-image"
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = "https://images.unsplash.com/photo-1587440871875-191322ee64b0?auto=format&fit=crop&w=1200&q=80";
+                }}
+              />
+
+              <div className="gdc-certificate-lock-overlay">
+                <div className="gdc-lock-icon">
+                  <FontAwesomeIcon icon={faLock} />
+                </div>
+                <div className="gdc-lock-text">Certificate Locked</div>
+              </div>
+
+              <div className="gdc-certificate-overlay">
+                <span className="gdc-certificate-badge">Your Professional Certificate Template</span>
+              </div>
+              <div className="gdc-certificate-download-note">
+                <p>This is a sample template. Your actual certificate will include your name, course details, and issue date.</p>
+              </div>
+            </div>
+
+            <div className="gdc-certificate-info-single">
+              <h3 className="gdc-certificate-title-single">{certificate.title}</h3>
+              <p className="gdc-certificate-desc-single">{certificate.description}</p>
+
+              <div className="gdc-certificate-features-single">
+                {certificate.features.map((feature, index) => (
+                  <div key={index} className="gdc-certificate-feature-item-single">
+                    <FontAwesomeIcon icon={faCheckCircle} /> {feature.replace("✅ ", "")}
+                  </div>
+                ))}
+              </div>
+
+              <div className="gdc-certificate-benefits">
+                <div className="gdc-benefit">
+                  <span className="gdc-benefit-icon">
                     <FontAwesomeIcon icon={faGraduationCap} />
                   </span>
-                  <span className="uic-benefit-text">Enhances your professional credibility</span>
+                  <span className="gdc-benefit-text">Enhances your professional credibility</span>
                 </div>
-                <div className="uic-benefit">
-                  <span className="uic-benefit-icon">
+                <div className="gdc-benefit">
+                  <span className="gdc-benefit-icon">
                     <FontAwesomeIcon icon={faBriefcase} />
                   </span>
-                  <span className="uic-benefit-text">Increases job opportunities by 85%</span>
+                  <span className="gdc-benefit-text">Increases job opportunities by 75%</span>
                 </div>
-                <div className="uic-benefit">
-                  <span className="uic-benefit-icon">
+                <div className="gdc-benefit">
+                  <span className="gdc-benefit-icon">
                     <FontAwesomeIcon icon={faGlobe} />
                   </span>
-                  <span className="uic-benefit-text">Globally recognized by tech companies</span>
+                  <span className="gdc-benefit-text">Globally recognized by employers</span>
                 </div>
-                <div className="uic-benefit">
-                  <span className="uic-benefit-icon">
-                    <FontAwesomeIcon icon={faMobileAlt} />
+                <div className="gdc-benefit">
+                  <span className="gdc-benefit-icon">
+                    <FontAwesomeIcon icon={faCheckCircle} />
                   </span>
-                  <span className="uic-benefit-text">QR code verification for authenticity</span>
+                  <span className="gdc-benefit-text">QR code verification for authenticity</span>
                 </div>
               </div>
-              
-              <div className="uic-certificate-instructions">
-                <h4>Certificate Details:</h4>
+
+              <div className="gdc-certificate-instructions">
+                <h4>
+                  <FontAwesomeIcon icon={faCertificate} /> Certificate Details:
+                </h4>
                 <ul>
-                  <li>Issued upon successful completion of the course</li>
-                  <li>Includes student name and unique certificate ID</li>
-                  <li>Verified through our online portal</li>
-                  <li>Available in digital (PDF) and physical formats</li>
+                  <li>
+                    <FontAwesomeIcon icon={faCheck} /> Issued upon successful completion of the course
+                  </li>
+                  <li>
+                    <FontAwesomeIcon icon={faCheck} /> Includes student name and unique certificate ID
+                  </li>
+                  <li>
+                    <FontAwesomeIcon icon={faCheck} /> Verified through our online portal
+                  </li>
+                  <li>
+                    <FontAwesomeIcon icon={faCheck} /> Available in digital (PDF) and physical formats
+                  </li>
                 </ul>
               </div>
             </div>
@@ -739,195 +1058,247 @@ const handleSubmit = async (e) => {
         </div>
       </section>
 
-      {/* Success Stories */}
-      <section className="uic-section uic-white-bg">
-        <div className="uic-container">
-          <h2 className="uic-section-title uic-blue-text">Student Success Stories</h2>
-          <p className="uic-section-subtitle">Transformations that inspire us every day</p>
-          
-          <div className="uic-stories-grid-light">
-            {testimonials.map((story, index) => (
-              <div 
-                key={index} 
-                className="uic-story-card-light"
+      {/* Premium Testimonials - V9 Grid Layout */}
+      <section className="gdc-testi-grid-section">
+        <div className="gdc-container">
+          <div className="gdc-testi-grid-wrapper">
+            <div className="gdc-testi-grid-left">
+              <h2 className="gdc-testi-main-title">Experience Learning Like Never Before</h2>
+              <p className="gdc-testi-subtitle">
+                Discover personalized, practical learning that prepares you for real product teams. Read stories from learners who transformed their UI/UX careers with our mentorship.
+              </p>
+            </div>
+
+            <div className="gdc-testi-grid-right">
+              <div
+                className="gdc-testi-card-top"
+                style={{ backgroundImage: "url(https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=800)" }}
               >
-                <div className="uic-story-header-light">
-                  <div className="uic-story-avatar-light">
-                    <span className="uic-avatar-text-light">{story.avatar}</span>
-                  </div>
-                  <div className="uic-story-info-light">
-                    <h4 className="uic-story-name-light">{story.name}</h4>
-                    <p className="uic-story-role-light">{story.role}</p>
-                    <div className="uic-story-salary-light">Course Studied: {story.salary}</div>
-                  </div>
-                </div>
-                
-                <div className="uic-story-rating-container-light">
-                  <div className="uic-story-rating-light">
-                    {[...Array(story.rating)].map((_, i) => (
-                      <FontAwesomeIcon key={i} icon={faStar} />
-                    ))}
+                <div className="gdc-testi-card-overlay">
+                  <div className="gdc-testi-quote-content fade-in-anim" key={testiSetIndex}>
+                    <p>"{activeTestimonials[0]?.text}"</p>
+                    <div className="gdc-testi-author">
+                      <img src={activeTestimonials[0]?.avatar} alt={activeTestimonials[0]?.name} />
+                      <div>
+                        <h4>{activeTestimonials[0]?.name}</h4>
+                        <p>{activeTestimonials[0]?.role}</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                
-                <p className="uic-story-review-light">
-                  "{story.review}"
-                </p>
               </div>
-            ))}
+
+              <div className="gdc-testi-squares-row">
+                <div className="gdc-testi-card-bottom-left">
+                  <div className="gdc-testi-quote-content fade-in-anim" key={testiSetIndex}>
+                    <p>"{activeTestimonials[1]?.text}"</p>
+                    <div className="gdc-testi-author">
+                      <img src={activeTestimonials[1]?.avatar} alt={activeTestimonials[1]?.name} />
+                      <div>
+                        <h4>{activeTestimonials[1]?.name}</h4>
+                        <p>{activeTestimonials[1]?.role}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="gdc-testi-card-bottom-right">
+                  <div className="gdc-testi-quote-content fade-in-anim" key={testiSetIndex}>
+                    <p>"{activeTestimonials[2]?.text}"</p>
+                    <div className="gdc-testi-author">
+                      <img src={activeTestimonials[2]?.avatar} alt={activeTestimonials[2]?.name} />
+                      <div>
+                        <h4>{activeTestimonials[2]?.name}</h4>
+                        <p>{activeTestimonials[2]?.role}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Enrollment Section */}
-      <section className="uic-section uic-dark-enrollment" ref={formSectionRef}>
-        <div className="uic-container">
-          <div className="uic-floating-icons-container">
+      {/* Enroll Now Section (V2 Expansion) */}
+      <section className="gdc-dark-enrollment-FIXED" ref={formSectionRef}>
+        <div className="gdc-container">
+          <div className="gdc-floating-icons-v2">
             {floatingIcons.map((icon, index) => (
-              <div 
-                key={index} 
-                className="uic-floating-icon"
+              <div
+                key={index}
+                className="gdc-v2-float-icon"
                 style={{
                   animationDelay: `${index * 0.5}s`,
                   left: `${(index * 12.5) % 100}%`,
                   top: `${20 + (index * 10) % 60}%`
                 }}
               >
-                <FontAwesomeIcon icon={icon} />
+                {icon}
               </div>
             ))}
           </div>
-          
-          <h2 className="uic-section-title">Start Your UI/UX Design Journey Today</h2>
-          <p className="uic-section-subtitle">Limited seats available for the next batch</p>
-          
-          <div className="uic-contact-details-grid">
-            {contactDetails.map((contact, index) => (
-              <div key={index} className="uic-contact-item-dark">
-                <div className="uic-contact-icon-dark">
-                  <FontAwesomeIcon icon={contact.icon} />
+
+          <section className="gdc-v3-community-banner">
+            <div className="gdc-banner-grid-overlay"></div>
+            <div className="gdc-banner-decor-sparkle sp-1">✦</div>
+            <div className="gdc-banner-decor-sparkle sp-2">✦</div>
+            <div className="gdc-banner-decor-sparkle sp-3">✦</div>
+            <div className="gdc-banner-decor-circle cir-1"></div>
+            <div className="gdc-banner-decor-circle cir-2"></div>
+
+            <div className="gdc-banner-container">
+              <div className="gdc-banner-content">
+                <h2 className="gdc-banner-title">
+                  Start Your UI/UX <br /> Journey Today
+                </h2>
+
+                <div className="gdc-banner-ratings">
+                  <div className="gdc-rating-box">
+                    <div className="gdc-stars">★★★★★</div>
+                    <div className="gdc-rating-text">4.9 / 5 rating</div>
+                    <div className="gdc-rating-source">Coursezilla</div>
+                  </div>
+                  <div className="gdc-rating-box">
+                    <div className="gdc-stars">★★★★★</div>
+                    <div className="gdc-rating-text">4.8 / 5 rating</div>
+                    <div className="gdc-rating-source">Globalskills</div>
+                  </div>
                 </div>
-                <h4 className="uic-contact-title-dark">{contact.title}</h4>
-                <div className="uic-contact-info-dark">
-                  {contact.details.map((detail, idx) => (
-                    <p key={idx} className="uic-contact-detail-dark">{detail}</p>
-                  ))}
-                </div>
-                <p className="uic-contact-description-dark">{contact.description}</p>
               </div>
-            ))}
-          </div>
-          
-          <div className="uic-enrollment-section-dark">
-            <h3 className="uic-enrollment-title-dark">Secure Your Spot Now</h3>
-            <p className="uic-enrollment-subtitle-dark">Batch starting soon - Limited availability</p>
-            
+
+              <div className="gdc-ray gdc-ray-left-top">
+                <div className="gdc-ray-trail"></div>
+                <div className="gdc-ray-box">
+                  <div className="gdc-ray-icon icon-email">
+                    <FontAwesomeIcon icon={faEnvelope} />
+                  </div>
+                  <div className="gdc-ray-content">
+                    <h4>Email Support</h4>
+                    <p>hello@engloraylearn.com</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="gdc-ray gdc-ray-left-bottom">
+                <div className="gdc-ray-trail"></div>
+                <div className="gdc-ray-box">
+                  <div className="gdc-ray-icon icon-whatsapp">
+                    <FontAwesomeIcon icon={faWhatsapp} />
+                  </div>
+                  <div className="gdc-ray-content">
+                    <h4>WHATSAPP</h4>
+                    <p>+91 63681 75990</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="gdc-ray gdc-ray-right-top">
+                <div className="gdc-ray-trail"></div>
+                <div className="gdc-ray-box">
+                  <div className="gdc-ray-icon icon-center">
+                    <FontAwesomeIcon icon={faMapMarkerAlt} />
+                  </div>
+                  <div className="gdc-ray-content">
+                    <h4>Learning Center</h4>
+                    <p>Madurai, Tamil Nadu</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="gdc-ray gdc-ray-right-bottom">
+                <div className="gdc-ray-trail"></div>
+                <div className="gdc-ray-box">
+                  <div className="gdc-ray-icon icon-chat">
+                    <FontAwesomeIcon icon={faComments} />
+                  </div>
+                  <div className="gdc-ray-content">
+                    <h4>Quick Chat</h4>
+                    <p>Live Chat Available</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <div className="gdc-v2-cta-box">
+            <h3 className="gdc-v2-cta-title">Secure Your Seat</h3>
+            <p className="gdc-v2-enroll-sub" style={{ marginBottom: "40px" }}>
+              Only 5 Seats Left for the Upcoming Batch
+            </p>
+
             {showEnrollment ? (
-              <div className="uic-enrollment-form-expanded-dark">
-                <div className="uic-form-header-expanded-dark">
-                  <h4>Enrollment Form</h4>
-                  <button 
-                    className="uic-form-close-btn-dark"
-                    onClick={() => setShowEnrollment(false)}
-                  >
-                    ×
+              <div className="gdc-enrollment-form-expanded-dark">
+                <div className="gdc-form-header-expanded-dark">
+                  <h4>
+                    <FontAwesomeIcon icon={faComments} /> Enrollment Form
+                  </h4>
+                  <button className="gdc-form-close-btn-dark" onClick={() => setShowEnrollment(false)}>
+                    <FontAwesomeIcon icon={faTimes} />
                   </button>
                 </div>
-                
-                <form onSubmit={handleSubmit} className="uic-enrollment-form-content-dark">
-                  <div className="uic-form-grid-expanded-dark">
-                    <div className="uic-form-group-expanded-dark">
+
+                <form onSubmit={handleSubmit} className="gdc-enrollment-form-content-dark">
+                  <div className="gdc-form-grid-expanded-dark">
+                    <div className="gdc-form-group-expanded-dark">
                       <label>Full Name *</label>
-                      <input
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        required
-                        placeholder="Enter your full name"
-                      />
+                      <input type="text" name="name" value={formData.name} onChange={handleInputChange} required placeholder="Your Name" />
                     </div>
-                    
-                    <div className="uic-form-group-expanded-dark">
-                      <label>Email Address *</label>
-                      <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        required
-                        placeholder="you@example.com"
-                      />
+
+                    <div className="gdc-form-group-expanded-dark">
+                      <label>Email ID *</label>
+                      <input type="email" name="email" value={formData.email} onChange={handleInputChange} required placeholder="you@example.com" />
                     </div>
-                    
-                    <div className="uic-form-group-expanded-dark">
+
+                    <div className="gdc-form-group-expanded-dark">
                       <label>Phone Number *</label>
-                      <input
-                        type="tel"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleInputChange}
-                        required
-                        placeholder="+91 98765 43210"
-                      />
+                      <input type="tel" name="phone" value={formData.phone} onChange={handleInputChange} required placeholder="+91 98765 43210" />
                     </div>
-                    
-                    <div className="uic-form-group-expanded-dark">
+
+                    <div className="gdc-form-group-expanded-dark">
                       <label>Course *</label>
-                      <select
-                        name="course"
-                        value={formData.course}
-                        onChange={handleInputChange}
-                        required
-                      >
-                        <option value="UI/UX Design Masterclass">UI/UX Design Masterclass</option>
-                        <option value="Product Design Specialization">Product Design Specialization</option>
+                      <select name="course" value={formData.course} onChange={handleInputChange} required>
+                        <option value="UI/UX Design Mastery">UI/UX Design Mastery</option>
                         <option value="UX Research & Strategy">UX Research & Strategy</option>
-                        <option value="Mobile App Design">Mobile App Design</option>
+                        <option value="Design Systems & UI">Design Systems & UI</option>
+                        <option value="Mobile App UI/UX">Mobile App UI/UX</option>
                       </select>
                     </div>
                   </div>
-                  
-                  <button type="submit" className="uic-submit-btn-expanded-dark">
-                    <FontAwesomeIcon icon={faRocket} style={{marginRight: '10px'}} />
+
+                  <button type="submit" className="gdc-v2-enroll-btn">
                     Complete Enrollment
                   </button>
                 </form>
               </div>
             ) : (
-              <div className="uic-enrollment-cta-dark">
-                <button 
-                  className="uic-enrollment-btn-large-dark"
-                  onClick={() => setShowEnrollment(true)}
-                >
-                  <FontAwesomeIcon icon={faBullseye} style={{marginRight: '10px'}} />
-                  Start Enrollment Now
+              <div className="gdc-v2-cta-actions">
+                <button className="gdc-v2-enroll-btn" onClick={() => setShowEnrollment(true)}>
+                  <FontAwesomeIcon icon={faBullseye} /> Enroll In Masterclass Now
                 </button>
-                <p className="uic-cta-note-dark">Complete the form to secure your seat</p>
+                <p className="gdc-cta-note-dark" style={{ marginTop: "20px", color: "#666" }}>
+                  Secure your future in UI/UX with one click
+                </p>
               </div>
             )}
           </div>
         </div>
       </section>
 
-      {/* Success Toast Message */}
       {showSuccess && (
-        <div className="uic-toast">
-          <div className="uic-toast-content">
-            <div className="uic-toast-icon">
-              <FontAwesomeIcon icon={faRocket} />
+        <div className="gdc-toast">
+          <div className="gdc-toast-content">
+            <div className="gdc-toast-icon">
+              <FontAwesomeIcon icon={faTrophy} />
             </div>
-            <div className="uic-toast-message">
+            <div className="gdc-toast-message">
               <h4>Enrollment Successful!</h4>
-              <p>Welcome to UI/UX Design Masterclass</p>
+              <p>Welcome to UI/UX Design Mastery! Our team will contact you within 24 hours.</p>
             </div>
           </div>
         </div>
       )}
     </div>
-    <LearningFooter />
-    </div>
-    </>
   );
 };
 

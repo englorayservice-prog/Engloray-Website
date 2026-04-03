@@ -1,59 +1,74 @@
 import React, { useState } from 'react';
 import './MentorshipLearning.css';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  // Project & Development Icons
+  faProjectDiagram, faCodeBranch, faTasks, faClipboardCheck,
+  faRocket, faPuzzlePiece, faCube, faCubes, faBoxOpen,
+  faLayerGroup, faSitemap, faStream, faNetworkWired, faPaintBrush,
+
+  // Tech & Tools Icons
+  faLaptopCode, faCode, faDatabase, faServer, faCloud,
+  faMobileAlt, faTabletAlt, faDesktop, faMicrochip,
+  faRobot, faBrain, faMagic,
+
+  // People & Team Icons
+  faUsers, faUserFriends, faUserCheck, faUserTie,
+  faChalkboardTeacher, faUserGraduate, faHandshake,
+  faComments, faCommentDots,
+
+  // Business & Success Icons
+  faChartLine, faTrophy, faAward, faMedal, faCertificate,
+  faRibbon, faStar, faFlagCheckered, faBullseye,
+
+  // Tools & Process Icons
+  faToolbox, faWrench, faCogs, faHammer, faTools,
+  faPaintRoller, faPalette, faBrush, faRulerCombined,
+  faClipboardList, faCalendarCheck, faClock, faGlobe,
+
+  // Navigation & UI Icons
+  faChevronRight, faArrowRight, faArrowAltCircleRight,
+  faExternalLinkAlt, faTimes, faTimesCircle,
+  faCheck, faCheckCircle, faLightbulb,
+
+  // Document Icons
+  faFileCode, faFileAlt, faFileInvoice,
+  faBookOpen, faGraduationCap,
+
+  // Shopping & E-commerce Icons
+  faShoppingCart, faShoppingBag, faStore,
+
+  // Bug/Testing Icons
+  faBug, faExclamationTriangle, faSearch, faUserNinja, faUserAstronaut, faUserSecret, faMap,
+
+  // Briefcase for Hero Section
+  faBriefcase,
+
+  // Chevron Icons for View More
+  faChevronDown, faChevronUp
+} from '@fortawesome/free-solid-svg-icons';
+
+import {
+  faWhatsapp
+} from '@fortawesome/free-brands-svg-icons';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import NavigationBar from '../../TechLearningSection/NavigationBar/NavigationBar';
 import TLSPFFooter from '../TechLearningSubPageFooter/TLSPFFooter';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  // User/People Icons
-  faUserTie, faChalkboardTeacher, faUserGraduate, faUserNinja, faUserAstronaut,
-  faUserSecret, faUser, faUsers, faUserCheck, faUserFriends,
-  
-  // Tech & Development Icons
-  faRobot, faLaptopCode, faCode, faBrain, faMicrochip, faPalette,
-  faPaintBrush, faDesktop, faServer, faNetworkWired, faDatabase,
-  faMagic, // Added faMagic
-  faLightbulb, // Added faLightbulb
-  faGlobe, // Added faGlobe
-  
-  // Business & Career Icons
-  faBriefcase, faSuitcase, faChartLine, faTrophy, faAward, faMedal,
-  faGraduationCap, faCertificate, faRibbon, faStar, faStars,
-  
-  // Tools & Process Icons
-  faCogs, faToolbox, faWrench, faClipboardList, faClipboardCheck,
-  faTasks, faProjectDiagram, faMap, faRoute, faSignsPost,
-  
-  // Communication & Time Icons
-  faComments, faCommentDots, faCommentAlt, faClock, faHourglassHalf,
-  faCalendarAlt, faCalendarCheck, faCalendarDay,
-  
-  // Success & Achievement Icons
-  faRocket, faBullseye, faFlagCheckered, faCheckCircle, faCheck,
-  faThumbsUp, faHandshake, faHandHoldingHeart,
-  
-  // Navigation & UI Icons
-  faChevronRight, faArrowRight, faArrowAltCircleRight, faExternalLinkAlt,
-  faTimes, faTimesCircle,
-  
-  // Solid platform icons (some might need to be from brands)
-  faComments as faWhatsappSolid // Using comments icon as WhatsApp alternative
-} from '@fortawesome/free-solid-svg-icons';
-
-// Import brand icons separately - only keeping what we use
-import { faWhatsapp, faTelegram, faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { Helmet } from 'react-helmet';
+import studentPurpleBG from '../../../assets/images/student_purple_bg.png';
+import studentYellowBG from '../../../assets/images/student_yellow_bg.png';
+import studentRedBG from '../../../assets/images/student_red_bg.png';
 
 const MentorshipLearning = () => {
   const [showToast, setShowToast] = useState(false);
+  const [showAllPaths, setShowAllPaths] = useState(false);
 
-  // Personal WhatsApp number (replace with your actual number)
   const whatsappNumber = "6381759909";
   const whatsappMessage = "Hello! I'm interested in the mentorship program. Can we schedule a consultation?";
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
-  // Mentors Data with professional icons
   const mentors = [
     {
       id: 1,
@@ -67,7 +82,7 @@ const MentorshipLearning = () => {
       icon: faUserTie,
       badge: "Career Expert",
       badgeIcon: faChartLine,
-      color: "#3B82F6" // Blue
+      color: "#3B82F6"
     },
     {
       id: 2,
@@ -81,7 +96,7 @@ const MentorshipLearning = () => {
       icon: faPalette,
       badge: "Graphics Guru",
       badgeIcon: faPaintBrush,
-      color: "#8B5CF6" // Purple
+      color: "#8B5CF6"
     },
     {
       id: 3,
@@ -94,8 +109,8 @@ const MentorshipLearning = () => {
       rating: "4.9",
       icon: faDesktop,
       badge: "Design Wizard",
-      badgeIcon: faMagic, // Fixed: Changed to faMagic
-      color: "#10B981" // Green
+      badgeIcon: faMagic,
+      color: "#10B981"
     },
     {
       id: 4,
@@ -109,7 +124,7 @@ const MentorshipLearning = () => {
       icon: faRobot,
       badge: "AI Master",
       badgeIcon: faBrain,
-      color: "#EF4444" // Red
+      color: "#EF4444"
     },
     {
       id: 5,
@@ -123,11 +138,10 @@ const MentorshipLearning = () => {
       icon: faCertificate,
       badge: "Branding Pro",
       badgeIcon: faRibbon,
-      color: "#F59E0B" // Amber
+      color: "#F59E0B"
     }
   ];
 
-  // Learning Paths with professional icons
   const learningPaths = [
     {
       id: 1,
@@ -165,7 +179,6 @@ const MentorshipLearning = () => {
     }
   ];
 
-  // Success Stories with professional icons
   const successStories = [
     {
       id: 1,
@@ -217,7 +230,6 @@ const MentorshipLearning = () => {
     }
   ];
 
-  // Benefits of Mentorship with professional icons
   const benefits = [
     {
       icon: faUserFriends,
@@ -250,14 +262,13 @@ const MentorshipLearning = () => {
       color: "#EF4444"
     },
     {
-      icon: faGlobe, // Fixed: Changed to faGlobe
+      icon: faGlobe,
       title: "Global Network",
       description: "Connect with peers and professionals worldwide",
       color: "#06B6D4"
     }
   ];
 
-  // Process Steps with professional icons
   const processSteps = [
     {
       step: 1,
@@ -284,7 +295,7 @@ const MentorshipLearning = () => {
       step: 4,
       title: "Weekly Sessions",
       description: "Regular 1:1 meetings with your mentor",
-      icon: faCalendarAlt,
+      icon: faCalendarCheck,
       color: "#F59E0B"
     },
     {
@@ -303,7 +314,6 @@ const MentorshipLearning = () => {
     }
   ];
 
-  // Stats with professional icons
   const stats = [
     {
       value: "95%",
@@ -343,460 +353,531 @@ const MentorshipLearning = () => {
     }, 1500);
   };
 
-  return (
-    <div className="mbl-page">
-      <TopNavBar/>
-      <NavigationBar/>
-      {/* Toast Notification */}
-      {showToast && (
-        <div className="mbl-toast-overlay">
-          <div className="mbl-toast">
-            <div className="mbl-toast-content">
-              <span className="mbl-toast-icon">
-                <FontAwesomeIcon icon={faRocket} />
-              </span>
-              <div className="mbl-toast-text">
-                <h4 className="mbl-toast-title">Redirecting to WhatsApp!</h4>
-                <p className="mbl-toast-message">
-                  You'll be redirected to WhatsApp to start your consultation. Looking forward to connecting with you!
-                </p>
-              </div>
-              <button 
-                className="mbl-toast-close"
-                onClick={() => setShowToast(false)}
-              >
-                <FontAwesomeIcon icon={faTimes} />
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+  const visiblePaths = showAllPaths ? learningPaths : learningPaths.slice(0, 2);
 
-      {/* Hero Section */}
-      <header className="mbl-hero">
-        <div className="mbl-hero-background">
-          <div className="mbl-hero-content">
-            <div className="mbl-hero-text">
-              <h1 className="mbl-hero-title">
-                <span className="mbl-hero-main">Transform Your Career</span>
-                <span className="mbl-hero-sub">Through Expert Mentorship</span>
-              </h1>
-              
-              <p className="mbl-hero-description">
-                1:1 mentorship with industry leaders from Google, Amazon, Microsoft, and more. 
-                Get personalized guidance, work on real projects, and accelerate your career growth.
-              </p>
-              
-              <div className="mbl-hero-stats">
-                <div className="mbl-hero-stat">
-                  <span className="mbl-stat-icon" style={{ color: '#3B82F6' }}>
+  return (
+    <>
+      <div>
+        <Helmet>
+          <title>Engloray Mentorship</title>
+          <meta name="description" content="Personalized mentorship with industry leaders to accelerate your career growth." />
+          <meta name="robots" content="max-snippet:-1, max-image-preview: large, max-video-preview:-1" />
+          <meta property="og:locale" content="en_US" />
+          <meta property="og:type" content="website" />
+          <meta property="og:title" content="Engloray Mentorship" />
+          <meta property="og:description" content="Transform your career through expert mentorship." />
+        </Helmet>
+
+        <div className="spbl-page">
+          <TopNavBar />
+          <NavigationBar />
+          {/* Toast Notification */}
+          {showToast && (
+            <div className="spbl-toast-overlay">
+              <div className="spbl-toast">
+                <div className="spbl-toast-content">
+                  <span className="spbl-toast-icon">
                     <FontAwesomeIcon icon={faRocket} />
                   </span>
-                  <div>
-                    <div className="mbl-stat-number">10x</div>
-                    <div className="mbl-stat-label">Faster Learning</div>
+                  <div className="spbl-toast-text">
+                    <h4 className="spbl-toast-title">Redirecting to WhatsApp!</h4>
+                    <p className="spbl-toast-message">
+                      You'll be redirected to WhatsApp to start your consultation. Looking forward to connecting with you!
+                    </p>
                   </div>
-                </div>
-                <div className="mbl-hero-stat">
-                  <span className="mbl-stat-icon" style={{ color: '#10B981' }}>
-                    <FontAwesomeIcon icon={faBriefcase} />
-                  </span>
-                  <div>
-                    <div className="mbl-stat-number">95%</div>
-                    <div className="mbl-stat-label">Career Growth</div>
-                  </div>
-                </div>
-                <div className="mbl-hero-stat">
-                  <span className="mbl-stat-icon" style={{ color: '#8B5CF6' }}>
-                    <FontAwesomeIcon icon={faHandshake} />
-                  </span>
-                  <div>
-                    <div className="mbl-stat-number">500+</div>
-                    <div className="mbl-stat-label">Experts</div>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="mbl-hero-actions">
-                <button 
-                  className="mbl-hero-cta-primary"
-                  onClick={handleWhatsAppClick}
-                >
-                  <span className="mbl-cta-text">Join Free Consultation</span>
-                  <span className="mbl-cta-icon">
-                    <FontAwesomeIcon icon={faComments} />
-                  </span>
-                </button>
-              </div>
-            </div>
-            
-            <div className="mbl-hero-visual">
-              <div className="mbl-visual-container">
-                <div className="mbl-visual-mentor mbl-visual-1">
-                  <div className="mbl-visual-avatar">
-                    <FontAwesomeIcon icon={faLaptopCode} 
-                    color='#d43535ff'/>
-                  </div>
-                  <div className="mbl-visual-badge">Senior Developer</div>
-                </div>
-                <div className="mbl-visual-mentor mbl-visual-2">
-                  <div className="mbl-visual-avatar">
-                    <FontAwesomeIcon icon={faBrain} 
-                    color='#1ecd14ff'/>
-                  </div>
-                  <div className="mbl-visual-badge">Data Scientist</div>
-                </div>
-                <div className="mbl-visual-mentor mbl-visual-3">
-                  <div className="mbl-visual-avatar">
-                    <FontAwesomeIcon icon={faRocket} 
-                    color='#a40878ff'/>
-                  </div>
-                  <div className="mbl-visual-badge">Tech Lead</div>
-                </div>
-                <div className="mbl-visual-connection"></div>
-                <div className="mbl-visual-connection"></div>
-                <div className="mbl-visual-student">
-                  <div className="mbl-visual-avatar">
-                    <FontAwesomeIcon icon={faUser} 
-                    color='#053a41ff'/>
-                  </div>
-                  <div className="mbl-visual-badge">You</div>
+                  <button
+                    className="spbl-toast-close"
+                    onClick={() => setShowToast(false)}
+                  >
+                    <FontAwesomeIcon icon={faTimes} />
+                  </button>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </header>
+          )}
 
-      <main className="mbl-main">
-        {/* Stats Section */}
-        <section className="mbl-section mbl-stats-section">
-          <div className="mbl-container">
-            <div className="mbl-stats-grid">
-              {stats.map((stat, index) => (
-                <div key={index} className="mbl-stat-card mbl-float-animation">
-                  <div className="mbl-stat-icon-wrapper">
-                    <div className="mbl-stat-icon" style={{ color: stat.color }}>
-                      <FontAwesomeIcon icon={stat.icon} />
+          {/* Hero Section */}
+          <header className="pbl-hero-wrapper" style={{ minHeight: '100vh', paddingTop: '100px', paddingBottom: '80px', background: '#FCFCFA', position: 'relative', overflow: 'hidden', fontFamily: '"Inter", "Helvetica Neue", sans-serif' }}>
+            <div className="pbl-hero-container" style={{ maxWidth: '1500px', margin: '0 auto', padding: '0 40px', position: 'relative' }}>
+              <div className="pbl-hero-layout" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '30px', position: 'relative', zIndex: 2, marginBottom: '60px' }}>
+
+                {/* Left Content */}
+                <div className="pbl-hero-left" style={{ flex: '0 1 auto', textAlign: 'left', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', zIndex: 2, marginLeft: '-120px', minWidth: '900px' }}>
+                  <div className="pbl-hero-tag" style={{ padding: '6px 16px', borderRadius: '20px', backgroundColor: '#FBBF24', color: '#111', fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '24px', display: 'inline-block' }}>
+                    WE CAN HELP YOU
+                  </div>
+                  <h1 className="pbl-hero-title" style={{ textAlign: 'left', fontFamily: '"Inter", "Helvetica Neue", sans-serif', fontSize: 'clamp(3rem, 4.8vw, 5.5rem)', fontWeight: 600, color: '#111', lineHeight: 1.05, margin: '0 0 24px 0', letterSpacing: '-2.5px', width: '100%', maxWidth: '900px' }}>
+                    Transform Your <span className="pbl-hero-highlight" style={{ fontWeight: 400, color: '#97AAAC', fontStyle: 'italic' }}>Career</span> Through Expert Mentorship
+                  </h1>
+                  <p className="pbl-hero-desc" style={{ textAlign: 'left', fontFamily: '"Inter", "Helvetica Neue", sans-serif', fontSize: '1.2rem', color: '#64748B', lineHeight: 1.5, width: '100%', maxWidth: '640px', margin: '0 0 40px 0' }}>
+                    1:1 mentorship with industry leaders from Google, Amazon, Microsoft, and more.
+                    Get personalized guidance, work on real projects, and accelerate your career growth.
+                  </p>
+
+                  <div className="pbl-hero-buttons" style={{ display: 'flex', alignItems: 'center', gap: '30px', justifyContent: 'flex-start', width: '100%' }}>
+                    <button className="pbl-btn-primary" onClick={handleWhatsAppClick} style={{ background: '#000', color: '#fff', border: 'none', borderRadius: '40px', padding: '8px 8px 8px 24px', display: 'flex', alignItems: 'center', gap: '16px', fontSize: '0.85rem', fontWeight: 700, letterSpacing: '1px', cursor: 'pointer', fontFamily: '"Inter", sans-serif' }}>
+                      JOIN FREE CONSULTATION
+                      <span className="pbl-btn-icon-circle" style={{ background: 'transparent', width: '34px', height: '34px', borderRadius: '50%', border: '1px solid #BBF7D0', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#BBF7D0' }}>
+                        <FontAwesomeIcon icon={faArrowRight} />
+                      </span>
+                    </button>
+                  </div>
+                </div>
+
+                {/* Right Content - Custom Masonry Grid */}
+                <div className="pbl-hero-right" style={{ flex: '0 0 45%', display: 'flex', gap: '20px', position: 'relative', zIndex: 2, transform: 'translateX(60px)' }}>
+                  {/* Column 1 */}
+                  <div className="pbl-masonry-col" style={{ display: 'flex', flexDirection: 'column', gap: '20px', flex: 1, paddingTop: '80px' }}>
+                    {/* Tall Purple Image */}
+                    <div className="pbl-masonry-item" style={{ borderRadius: '40px', overflow: 'hidden', height: '340px', width: '100%', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}>
+                      <img src={studentPurpleBG} alt="Student" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    </div>
+                    {/* Green Stats Box */}
+                    <div className="pbl-masonry-item" style={{ borderRadius: '40px', background: '#A3E635', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '200px', padding: '24px', textAlign: 'center', color: '#111', width: '100%', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}>
+                      <h3 style={{ fontSize: '2.5rem', fontWeight: 800, margin: '0 0 8px', letterSpacing: '-1px', fontFamily: '"Inter", sans-serif' }}>500+</h3>
+                      <p style={{ fontSize: '1rem', fontWeight: 600, margin: 0, opacity: 0.8, fontFamily: '"Inter", sans-serif' }}>Industry Mentors</p>
                     </div>
                   </div>
-                  <div className="mbl-stat-number" style={{ color: stat.color }}>{stat.value}</div>
-                  <h3 className="mbl-company-stat-label">{stat.label}</h3>
-                  <p className="mbl-stat-description">{stat.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
-        {/* Mentors Section */}
-        <section id="mbl-mentors" className="mbl-section mbl-mentors-section">
-          <div className="mbl-container">
-            <div className="mbl-section-header">
-              <h2 className="mbl-section-title">Learn from Industry Leaders</h2>
-              <p className="mbl-section-subtitle">Get mentored by experts from top tech companies</p>
+                  {/* Column 2 */}
+                  <div className="pbl-masonry-col" style={{ display: 'flex', flexDirection: 'column', gap: '20px', flex: 1 }}>
+                    {/* Short Red Image */}
+                    <div className="pbl-masonry-item" style={{ borderRadius: '40px', overflow: 'hidden', height: '200px', width: '100%', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}>
+                      <img src={studentRedBG} alt="Student" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    </div>
+                    {/* Tall Yellow Image */}
+                    <div className="pbl-masonry-item" style={{ borderRadius: '40px', overflow: 'hidden', height: '320px', width: '100%', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}>
+                      <img src={studentYellowBG} alt="Student" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    </div>
+                    {/* Blue Stats Box */}
+                    <div className="pbl-masonry-item" style={{ borderRadius: '40px', background: '#38BDF8', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '160px', padding: '24px', textAlign: 'center', color: '#fff', width: '100%', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}>
+                      <h3 style={{ fontSize: '2.5rem', fontWeight: 800, margin: '0 0 8px', letterSpacing: '-1px', fontFamily: '"Inter", sans-serif' }}>95%</h3>
+                      <p style={{ fontSize: '0.9rem', fontWeight: 600, margin: 0, opacity: 0.9, fontFamily: '"Inter", sans-serif' }}>Career Advancement</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Connecting bezier line */}
+              <div className="pbl-hero-divider" style={{ position: 'absolute', top: '55%', left: '-10%', width: '120%', zIndex: 1, pointerEvents: 'none' }}>
+                <svg viewBox="0 0 1200 100" preserveAspectRatio="none" style={{ width: '100%', height: '80px', display: 'block' }}>
+                  <path d="M 0,20 L 600,20 Q 640,20 660,50 L 680,80 Q 700,100 750,100 L 1200,100" fill="none" stroke="#E2E8F0" strokeWidth="2" />
+                  <circle cx="20" cy="20" r="4" fill="#E2E8F0" />
+                </svg>
+              </div>
             </div>
-            
-            <div className="mbl-mentors-scroll-container">
-              <div className="mbl-mentors-scroll">
-                {[...mentors, ...mentors].map((mentor, index) => (
-                  <div key={`${mentor.id}-${index}`} className="mbl-mentor-card">
-                    <div className="mbl-mentor-header">
-                      <div className="mbl-mentor-avatar" style={{ color: mentor.color }}>
-                        <FontAwesomeIcon icon={mentor.icon} />
-                      </div>
-                      <div className="mbl-mentor-badge" style={{ backgroundColor: mentor.color }}>
-                        <FontAwesomeIcon icon={mentor.badgeIcon} className="mbl-badge-icon" />
-                        {mentor.badge}
-                      </div>
-                    </div>
-                    
-                    <div className="mbl-mentor-info">
-                      <h3 className="mbl-mentor-name">{mentor.name}</h3>
-                      <p className="mbl-mentor-role">{mentor.role}</p>
-                      <p className="mbl-mentor-company">{mentor.company}</p>
-                      
-                      <div className="mbl-mentor-experience">
-                        <span className="mbl-experience-icon" style={{ color: mentor.color }}>
-                          <FontAwesomeIcon icon={faClock} />
-                        </span>
-                        <span className="mbl-experience-text">{mentor.experience}</span>
-                      </div>
-                    </div>
-                    
-                    <div className="mbl-mentor-expertise">
-                      <h4 className="mbl-expertise-title">Expertise:</h4>
-                      <div className="mbl-expertise-tags">
-                        {mentor.expertise.map((skill, skillIndex) => (
-                          <span key={skillIndex} className="mbl-expertise-tag" style={{ backgroundColor: `${mentor.color}20`, color: mentor.color }}>
-                            {skill}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                    
-                    <div className="mbl-mentor-stats">
-                      <div className="mbl-mentor-stat">
-                        <span className="mbl-stat-icon" style={{ color: mentor.color }}>
-                          <FontAwesomeIcon icon={faUsers} />
-                        </span>
-                        <span className="mbl-stat-text">{mentor.students} students</span>
-                      </div>
-                      <div className="mbl-mentor-stat">
-                        <span className="mbl-stat-icon" style={{ color: mentor.color }}>
-                          <FontAwesomeIcon icon={faStar} />
-                        </span>
-                        <span className="mbl-stat-text">{mentor.rating} rating</span>
-                      </div>
-                    </div>
+
+            {/* Bottom Stats Pill */}
+            <div className="pbl-stats-wrapper">
+              <div className="pbl-stats-pill">
+                {stats.map((stat, index) => (
+                  <div key={index} className="pbl-stat-item">
+                    <h3 className="pbl-stat-val">{stat.value}</h3>
+                    <p className="pbl-stat-lbl">{stat.label}</p>
                   </div>
                 ))}
               </div>
             </div>
-          </div>
-        </section>
+          </header>
 
-        {/* Learning Paths Section */}
-        <section className="mbl-section mbl-paths-section">
-          <div className="mbl-container">
-            <div className="mbl-section-header">
-              <h2 className="mbl-section-title">Structured Learning Paths</h2>
-              <p className="mbl-section-subtitle">Choose your journey with guided mentorship</p>
-            </div>
-            
-            <div className="mbl-paths-grid">
-              {learningPaths.map((path) => (
-                <div key={path.id} className="mbl-path-card">
-                  <div className="mbl-path-header">
-                    <div className="mbl-path-icon" style={{ color: path.iconColor }}>
-                      <FontAwesomeIcon icon={path.icon} />
-                    </div>
-                    <div className="mbl-path-level">
-                      {path.level}
+          <main className="spbl-main">
+            {/* Mentors Section */}
+            <>
+              <style>{`@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');`}</style>
+              <section id="spbl-experts" className="spbl-section spbl-experts-section" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                <div className="spbl-container">
+                  <div className="spbl-section-header">
+                    <h2 className="spbl-section-title" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700 }}>Learn from Industry Leaders</h2>
+                    <p className="spbl-section-subtitle" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}>Get mentored by experts from top tech companies</p>
+                  </div>
+
+                  <div className="spbl-experts-scroll-container">
+                    <div className="spbl-experts-scroll">
+                      {[...mentors, ...mentors].map((expert, index) => (
+                        <div key={`${expert.id}-${index}`} className="spbl-expert-card" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                          <div className="spbl-expert-header" style={{ justifyContent: 'flex-start' }}>
+                            <div className="spbl-expert-badge" style={{ backgroundColor: expert.color, fontFamily: "'Poppins', sans-serif", fontWeight: 500 }}>
+                              <FontAwesomeIcon icon={expert.badgeIcon} className="spbl-badge-icon" />
+                              {expert.badge}
+                            </div>
+                          </div>
+
+                          <div className="spbl-expert-info">
+                            <h3 className="spbl-expert-name" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600 }}>{expert.name}</h3>
+                            <p className="spbl-expert-role" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 500 }}>{expert.role}</p>
+                            <p className="spbl-expert-company" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}>{expert.company}</p>
+
+                            <div className="spbl-expert-experience">
+                              <span className="spbl-experience-icon" style={{ color: expert.color }}>
+                                <FontAwesomeIcon icon={faClock} />
+                              </span>
+                              <span className="spbl-experience-text" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}>{expert.experience}</span>
+                            </div>
+                          </div>
+
+                          <div className="spbl-expert-expertise">
+                            <h4 className="spbl-expertise-title" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600 }}>Specialized In:</h4>
+                            <div className="spbl-expertise-tags">
+                              {expert.expertise.map((skill, skillIndex) => (
+                                <span key={skillIndex} className="spbl-expertise-tag" style={{ backgroundColor: `${expert.color}20`, color: expert.color, fontFamily: "'Poppins', sans-serif", fontWeight: 500 }}>
+                                  {skill}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+
+                          <div className="spbl-expert-stats">
+                            <div className="spbl-expert-stat">
+                              <span className="spbl-stat-icon" style={{ color: expert.color }}>
+                                <FontAwesomeIcon icon={faUsers} />
+                              </span>
+                              <span className="spbl-stat-text" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}>{expert.students} students</span>
+                            </div>
+                            <div className="spbl-expert-stat">
+                              <span className="spbl-stat-icon" style={{ color: expert.color }}>
+                                <FontAwesomeIcon icon={faStar} />
+                              </span>
+                              <span className="spbl-stat-text" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}>{expert.rating} rating</span>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
                     </div>
                   </div>
-                  
-                  <div className="mbl-path-content">
-                    <h3 className="mbl-path-title">{path.title}</h3>
-                    <p className="mbl-path-description">{path.description}</p>
-                    
-                    <div className="mbl-path-duration">
-                      <span className="mbl-duration-icon" style={{ color: path.iconColor }}>
-                        <FontAwesomeIcon icon={faClock} />
-                      </span>
-                      <span className="mbl-duration-text">{path.duration}</span>
-                    </div>
-                    
-                    <div className="mbl-path-modules">
-                      <h4 className="mbl-modules-title">What You'll Learn:</h4>
-                      <ul className="mbl-modules-list">
-                        {path.modules.map((module, index) => (
-                          <li key={index} className="mbl-module-item">
-                            <span className="mbl-module-icon" style={{ color: path.iconColor }}>
-                              <FontAwesomeIcon icon={faCheck} />
+                </div>
+              </section>
+            </>
+
+            {/* Structured Learning Paths Section */}
+            <>
+              <style>{`@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');`}</style>
+              <section className="spbl-section spbl-categories-section" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                <div className="spbl-container">
+                  <div className="spbl-section-header">
+                    <h2 className="spbl-section-title" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700 }}>Structured Learning Paths</h2>
+                    <p className="spbl-section-subtitle" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}>Choose your journey with guided mentorship</p>
+                  </div>
+
+                  <div className="spbl-categories-grid">
+                    {visiblePaths.map((path) => (
+                      <div key={path.id} className="spbl-category-card" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                        <div className="spbl-category-header">
+                          <div className="spbl-category-icon" style={{ color: path.iconColor }}>
+                            <FontAwesomeIcon icon={path.icon} />
+                          </div>
+                          <div className="spbl-category-level" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 500 }}>
+                            {path.level}
+                          </div>
+                        </div>
+
+                        <div className="spbl-category-content">
+                          <h3 className="spbl-category-title" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600 }}>{path.title}</h3>
+                          <p className="spbl-category-description" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}>{path.description}</p>
+
+                          <div className="spbl-category-duration">
+                            <span className="spbl-duration-icon" style={{ color: path.iconColor }}>
+                              <FontAwesomeIcon icon={faClock} />
                             </span>
-                            <span className="mbl-module-text">{module}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    
-                    <div className="mbl-path-details">
-                      <div className="mbl-path-detail">
-                        <span className="mbl-detail-icon" style={{ color: path.iconColor }}>
-                          <FontAwesomeIcon icon={faChalkboardTeacher} />
-                        </span>
-                        <span className="mbl-detail-text">{path.mentorCount}</span>
-                      </div>
-                      <div className="mbl-path-detail">
-                        <span className="mbl-detail-icon" style={{ color: path.iconColor }}>
-                          <FontAwesomeIcon icon={faProjectDiagram} />
-                        </span>
-                        <span className="mbl-detail-text">{path.projects}</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+                            <span className="spbl-duration-text" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}>{path.duration}</span>
+                          </div>
 
-        {/* Benefits Section */}
-        <section className="mbl-section mbl-benefits-section">
-          <div className="mbl-container">
-            <div className="mbl-section-header">
-              <h2 className="mbl-section-title">Why Mentorship Works</h2>
-              <p className="mbl-section-subtitle">Accelerate your learning with personalized guidance</p>
-            </div>
-            
-            <div className="mbl-benefits-grid">
-              {benefits.map((benefit, index) => (
-                <div key={index} className="mbl-benefit-card mbl-float-animation">
-                  <div className="mbl-benefit-icon-wrapper">
-                    <div className="mbl-benefit-icon" style={{ color: benefit.color }}>
-                      <FontAwesomeIcon icon={benefit.icon} />
-                    </div>
-                    <div className="mbl-benefit-glow" style={{ backgroundColor: benefit.color }}></div>
-                  </div>
-                  <h3 className="mbl-benefit-title">{benefit.title}</h3>
-                  <p className="mbl-benefit-description">{benefit.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+                          <div className="spbl-category-deliverables">
+                            <h4 className="spbl-deliverables-title" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600 }}>What You'll Learn:</h4>
+                            <ul className="spbl-deliverables-list">
+                              {path.modules.map((item, index) => (
+                                <li key={index} className="spbl-deliverable-item">
+                                  <span className="spbl-deliverable-icon" style={{ color: path.iconColor }}>
+                                    <FontAwesomeIcon icon={faCheck} />
+                                  </span>
+                                  <span className="spbl-deliverable-text" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}>{item}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
 
-        {/* Process Section */}
-        <section className="mbl-section mbl-process-section">
-          <div className="mbl-container">
-            <div className="mbl-section-header">
-              <h2 className="mbl-section-title">How It Works</h2>
-              <p className="mbl-section-subtitle">Your journey to career transformation</p>
-            </div>
-            
-            <div className="mbl-process-timeline">
-              {processSteps.map((step) => (
-                <div key={step.step} className="mbl-process-step">
-                  <div className="mbl-step-number" style={{ backgroundColor: step.color }}>
-                    <span className="mbl-step-digit">{step.step}</span>
+                          <div className="spbl-category-details">
+                            <div className="spbl-category-detail">
+                              <span className="spbl-detail-icon" style={{ color: path.iconColor }}>
+                                <FontAwesomeIcon icon={faChalkboardTeacher} />
+                              </span>
+                              <span className="spbl-detail-text" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}>{path.mentorCount}</span>
+                            </div>
+                            <div className="spbl-category-detail">
+                              <span className="spbl-detail-icon" style={{ color: path.iconColor }}>
+                                <FontAwesomeIcon icon={faProjectDiagram} />
+                              </span>
+                              <span className="spbl-detail-text" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}>{path.projects}</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                  <div className="mbl-step-content">
-                    <div className="mbl-step-icon" style={{ color: step.color }}>
-                      <FontAwesomeIcon icon={step.icon} />
+
+                  {learningPaths.length > 2 && (
+                    <div className="spbl-view-more-container">
+                      <button
+                        className="spbl-view-more-btn"
+                        onClick={() => setShowAllPaths(!showAllPaths)}
+                        style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600 }}
+                      >
+                        <span className="spbl-view-more-text">
+                          {showAllPaths ? 'View Less' : `View More Paths (${learningPaths.length - 2} more)`}
+                        </span>
+                        <span className="spbl-view-more-icon">
+                          <FontAwesomeIcon icon={showAllPaths ? faChevronUp : faChevronDown} />
+                        </span>
+                      </button>
                     </div>
-                    <h3 className="mbl-step-title">{step.title}</h3>
-                    <p className="mbl-step-description">{step.description}</p>
-                  </div>
-                  {step.step < processSteps.length && (
-                    <div className="mbl-step-connector" style={{ backgroundColor: step.color }}></div>
                   )}
                 </div>
-              ))}
-            </div>
-          </div>
-        </section>
+              </section>
+            </>
 
-        {/* Success Stories */}
-        <section className="mbl-section mbl-stories-section">
-          <div className="mbl-container">
-            <div className="mbl-section-header">
-              <h2 className="mbl-section-title">Success Stories</h2>
-              <p className="mbl-section-subtitle">Real people, real transformations</p>
-            </div>
-            
-            <div className="mbl-stories-grid">
-              {successStories.map((story) => (
-                <div key={story.id} className="mbl-story-card">
-                  <div className="mbl-story-avatar" style={{ color: story.color }}>
-                    <FontAwesomeIcon icon={story.icon} />
+            {/* Benefits Section */}
+            <section className="spbl-section spbl-benefits-section-staffing">
+              <div className="spbl-container staffing-grid-container">
+                <div className="staffing-title-wrapper">
+                  <h2 className="staffing-title">
+                    Why Mentorship <br />
+                    Works <span className="title-blue">Works</span>
+                  </h2>
+                  <p className="staffing-title-desc">
+                    Accelerate your learning with personalized guidance from experienced professionals in the industry.
+                  </p>
+                </div>
+
+                {benefits.slice(0, 5).map((benefit, index) => (
+                  <div key={index} className="staffing-benefit-card">
+                    <div className="staffing-card-top">
+                      <span className="staffing-card-num">0{index + 1}</span>
+                      <div className="staffing-card-icon" style={{ color: benefit.color }}>
+                        <FontAwesomeIcon icon={benefit.icon} />
+                      </div>
+                    </div>
+                    <div className="staffing-card-header">
+                      <h3 className="staffing-card-title">{benefit.title}</h3>
+                      <div className="staffing-card-underline"></div>
+                    </div>
+                    <p className="staffing-card-desc">{benefit.description}</p>
                   </div>
-                  
-                  <div className="mbl-story-content">
-                    <div className="mbl-story-header">
-                      <h3 className="mbl-story-name">{story.name}</h3>
-                      <div className="mbl-story-timeline">
-                        <span className="mbl-timeline-icon" style={{ color: story.color }}>
-                          <FontAwesomeIcon icon={faClock} />
-                        </span>
-                        <span className="mbl-timeline-text">{story.timeline}</span>
-                      </div>
-                    </div>
-                    
-                    <div className="mbl-story-transformation">
-                      <div className="mbl-transformation-before">
-                        <span className="mbl-before-text">{story.before}</span>
-                      </div>
-                      <div className="mbl-transformation-arrow" style={{ color: story.color }}>
-                        <FontAwesomeIcon icon={faArrowRight} />
-                      </div>
-                      <div className="mbl-transformation-after">
-                        <span className="mbl-after-text">{story.after}</span>
-                      </div>
-                    </div>
-                    
-                    <div className="mbl-story-quote">
-                      <p className="mbl-quote-text">"{story.quote}"</p>
-                    </div>
-                    
-                    <div className="mbl-story-footer">
-                      <div className="mbl-story-mentor">
-                        <span className="mbl-mentor-icon" style={{ color: story.color }}>
-                          <FontAwesomeIcon icon={faChalkboardTeacher} />
-                        </span>
-                        <span className="mbl-mentor-text">Mentor: {story.mentor}</span>
-                      </div>
-                      <div className="mbl-story-achievement">
-                        <span className="mbl-achievement-icon" style={{ color: story.color }}>
-                          <FontAwesomeIcon icon={faTrophy} />
-                        </span>
-                        <span className="mbl-achievement-text">{story.achievement}</span>
-                      </div>
-                    </div>
+                ))}
+              </div>
+            </section>
+
+            {/* Process Section - Final Static Grid UI */}
+            <section className="spbl-section spbl-process-section-light">
+              <div className="spbl-container">
+                <div className="process-header-grid">
+                  <div className="process-title-area">
+                    <h2 className="process-main-title">
+                      HOW IT <br />
+                      WORKS
+                    </h2>
+                  </div>
+
+                  <div className="process-divider-line"></div>
+
+                  <div className="process-desc-area">
+                    <p className="process-header-text">
+                      Your journey to career transformation. Our structured approach ensures you get the matching, learning, and launch opportunities you deserve.
+                    </p>
                   </div>
                 </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
-        {/* CTA Section */}
-        <section className="mbl-section mbl-cta-section">
-          <div className="mbl-cta-background"></div>
-          <div className="mbl-container">
-            <div className="mbl-cta-container">
-              <div className="mbl-cta-content">
-                <h2 className="mbl-cta-title">Ready to Transform Your Career?</h2>
-                <p className="mbl-cta-subtitle">
-                  Join thousands who have accelerated their careers with personalized mentorship.
-                  Start with a free consultation on WhatsApp.
-                </p>
-                
-                <div className="mbl-cta-features">
-                  <div className="mbl-cta-feature">
-                    <span className="mbl-feature-icon" style={{ color: '#25D366' }}>
-                      <FontAwesomeIcon icon={faCheck} />
-                    </span>
-                    <span className="mbl-feature-text">Free 30-minute consultation</span>
-                  </div>
-                  <div className="mbl-cta-feature">
-                    <span className="mbl-feature-icon" style={{ color: '#25D366' }}>
-                      <FontAwesomeIcon icon={faCheck} />
-                    </span>
-                    <span className="mbl-feature-text">Personalized learning roadmap</span>
-                  </div>
-                  <div className="mbl-cta-feature">
-                    <span className="mbl-feature-icon" style={{ color: '#25D366' }}>
-                      <FontAwesomeIcon icon={faCheck} />
-                    </span>
-                    <span className="mbl-feature-text">Meet your potential mentor</span>
-                  </div>
-                </div>
-                
-                <button 
-                  className="mbl-cta-button"
-                  onClick={handleWhatsAppClick}
-                >
-                  <span className="mbl-button-text">Book Free Consultation on WhatsApp</span>
-                  <span className="mbl-button-icon">
-                    <FontAwesomeIcon icon={faWhatsapp} />
-                  </span>
-                </button>
-                
-                <div className="mbl-cta-note">
-                  <span className="mbl-note-icon" style={{ color: '#25D366' }}>
-                    <FontAwesomeIcon icon={faLightbulb} /> {/* Fixed: Changed to faLightbulb */}
-                  </span>
-                  <span className="mbl-note-text">Direct WhatsApp consultation • 100% satisfaction guarantee</span>
+                <div className="process-static-grid">
+                  {processSteps.map((step, index) => {
+                    const badgeNames = [
+                      "Evaluation",
+                      "Matching",
+                      "Planning",
+                      "Engagement",
+                      "Building",
+                      "Success"
+                    ];
+                    return (
+                      <div key={index} className="quality-process-card-final">
+                        <div className="quality-card-badge-pill" style={{ backgroundColor: step.color }}>
+                          {badgeNames[index] || "Full Support"}
+                        </div>
+                        <h3 className="quality-card-title-bold">{step.title}</h3>
+                        <div className="quality-card-divider"></div>
+                        <p className="quality-card-desc-muted">{step.description}</p>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-      </main>
-      <TLSPFFooter/>
-      <BackToTop/>
-    </div>
+            </section>
+
+            {/* Success Stories */}
+            <section className="spbl-section spbl-stories-section">
+              <div className="spbl-container">
+                <div className="spbl-section-header">
+                  <h2 className="spbl-section-title">Success Stories</h2>
+                  <p className="spbl-section-subtitle">Real people, real transformations</p>
+                </div>
+
+                <div className="spbl-stories-marquee-container">
+                  <div className="spbl-stories-marquee-track">
+                    {/* First Loop */}
+                    {successStories.map((story) => (
+                      <div key={story.id} className="spbl-story-card">
+                        <div className="spbl-story-avatar" style={{ border: `2px solid ${story.color}`, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: `${story.color}20` }}>
+                          <FontAwesomeIcon icon={story.icon} style={{ color: story.color, fontSize: '2rem' }} />
+                        </div>
+
+                        <div className="spbl-story-content">
+                          <div className="spbl-story-header">
+                            <h3 className="spbl-story-name">{story.name}</h3>
+                            <div className="spbl-story-project">
+                              <span className="spbl-project-icon" style={{ color: story.color }}>
+                                <FontAwesomeIcon icon={faBriefcase} />
+                              </span>
+                              <span className="spbl-project-text">{story.before}</span>
+                            </div>
+                          </div>
+
+                          <div className="spbl-story-timeline">
+                            <span className="spbl-timeline-icon" style={{ color: story.color }}>
+                              <FontAwesomeIcon icon={faClock} />
+                            </span>
+                            <span className="spbl-timeline-text">Took {story.timeline}</span>
+                          </div>
+
+                          <div className="spbl-story-quote">
+                            <p className="spbl-quote-text">"{story.quote}"</p>
+                          </div>
+
+                          <div className="spbl-story-footer">
+                            <div className="spbl-story-mentor">
+                              <span className="spbl-mentor-icon" style={{ color: story.color }}>
+                                <FontAwesomeIcon icon={faChalkboardTeacher} />
+                              </span>
+                              <span className="spbl-mentor-text">Mentor: {story.mentor}</span>
+                            </div>
+                            <div className="spbl-story-achievement">
+                              <span className="spbl-achievement-icon" style={{ color: story.color }}>
+                                <FontAwesomeIcon icon={faTrophy} />
+                              </span>
+                              <span className="spbl-achievement-text">{story.achievement}</span>
+                            </div>
+                            <div className="spbl-story-salary">
+                              <span className="spbl-salary-icon" style={{ color: story.color }}>
+                                <FontAwesomeIcon icon={faRocket} />
+                              </span>
+                              <span className="spbl-salary-text">{story.after}</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                    {/* Seamless Loop */}
+                    {successStories.map((story) => (
+                      <div key={`${story.id}-loop`} className="spbl-story-card">
+                        <div className="spbl-story-avatar" style={{ border: `2px solid ${story.color}`, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: `${story.color}20` }}>
+                          <FontAwesomeIcon icon={story.icon} style={{ color: story.color, fontSize: '2rem' }} />
+                        </div>
+
+                        <div className="spbl-story-content">
+                          <div className="spbl-story-header">
+                            <h3 className="spbl-story-name">{story.name}</h3>
+                            <div className="spbl-story-project">
+                              <span className="spbl-project-icon" style={{ color: story.color }}>
+                                <FontAwesomeIcon icon={faBriefcase} />
+                              </span>
+                              <span className="spbl-project-text">{story.before}</span>
+                            </div>
+                          </div>
+
+                          <div className="spbl-story-timeline">
+                            <span className="spbl-timeline-icon" style={{ color: story.color }}>
+                              <FontAwesomeIcon icon={faClock} />
+                            </span>
+                            <span className="spbl-timeline-text">Took {story.timeline}</span>
+                          </div>
+
+                          <div className="spbl-story-quote">
+                            <p className="spbl-quote-text">"{story.quote}"</p>
+                          </div>
+
+                          <div className="spbl-story-footer">
+                            <div className="spbl-story-mentor">
+                              <span className="spbl-mentor-icon" style={{ color: story.color }}>
+                                <FontAwesomeIcon icon={faChalkboardTeacher} />
+                              </span>
+                              <span className="spbl-mentor-text">Mentor: {story.mentor}</span>
+                            </div>
+                            <div className="spbl-story-achievement">
+                              <span className="spbl-achievement-icon" style={{ color: story.color }}>
+                                <FontAwesomeIcon icon={faTrophy} />
+                              </span>
+                              <span className="spbl-achievement-text">{story.achievement}</span>
+                            </div>
+                            <div className="spbl-story-salary">
+                              <span className="spbl-salary-icon" style={{ color: story.color }}>
+                                <FontAwesomeIcon icon={faRocket} />
+                              </span>
+                              <span className="spbl-salary-text">{story.after}</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* CTA Section */}
+            <section className="spbl-section spbl-cta-section-light">
+              <div className="spbl-container">
+                <div className="cta-light-header">
+                  <h2 className="cta-light-title">
+                    Ready to Transform Your <span className="cta-title-highlighter">Career?</span>
+                  </h2>
+                  <p className="cta-light-subtitle">
+                    Join thousands who have accelerated their careers with personalized mentorship.
+                    Start with a free consultation on WhatsApp.
+                  </p>
+                </div>
+
+                <div className="cta-light-features-row">
+                  <div className="cta-light-feature">
+                    <span className="cta-feature-dot">•</span>
+                    <span className="cta-feature-text">Free 30-minute consultation</span>
+                  </div>
+                  <div className="cta-light-feature">
+                    <span className="cta-feature-dot">•</span>
+                    <span className="cta-feature-text">Personalized learning roadmap</span>
+                  </div>
+                  <div className="cta-light-feature">
+                    <span className="cta-feature-dot">•</span>
+                    <span className="cta-feature-text">Meet your potential mentor</span>
+                  </div>
+                </div>
+
+                <div className="cta-light-action">
+                  <button className="cta-light-button" onClick={handleWhatsAppClick}>
+                    Book Free Consultation
+                    <span className="spbl-button-icon">
+                      <FontAwesomeIcon icon={faWhatsapp} />
+                    </span>
+                  </button>
+
+                  <div className="cta-light-note">
+                    <span className="cta-note-icon">💡</span>
+                    <span className="cta-note-text">Direct WhatsApp consultation • 100% satisfaction guarantee</span>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </main>
+          <TLSPFFooter />
+          <BackToTop />
+        </div>
+      </div>
+    </>
   );
 };
 

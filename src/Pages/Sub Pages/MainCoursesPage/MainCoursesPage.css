@@ -36,7 +36,7 @@ body {
 
 /* Section Background Classes */
 .acp-section-white {
-  background: #FFFFFF;
+  background: #ffffff;
   color: #1E293B;
   position: relative;
   overflow: hidden;
@@ -115,8 +115,13 @@ body {
 }
 
 @keyframes acp-slideGlow {
-  0% { left: -100%; }
-  100% { left: 100%; }
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 100%;
+  }
 }
 
 .acp-heading-container {
@@ -182,8 +187,13 @@ body {
 }
 
 @keyframes acp-rotate {
-  0% { transform: translate(-50%, -50%) rotate(0deg); }
-  100% { transform: translate(-50%, -50%) rotate(360deg); }
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 
 .acp-hero-subtitle {
@@ -351,6 +361,7 @@ body {
   0% {
     filter: drop-shadow(0 0 5px rgba(124, 58, 237, 0.3));
   }
+
   100% {
     filter: drop-shadow(0 0 20px rgba(124, 58, 237, 0.6));
   }
@@ -401,7 +412,8 @@ body {
 /* ==================== WHY CHOOSE US CARDS - UPDATED LAYOUT ==================== */
 .acp-features-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 cards on desktop */
+  grid-template-columns: repeat(3, 1fr);
+  /* 3 cards on desktop */
   gap: 25px;
   margin-top: 60px;
 }
@@ -420,7 +432,8 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  min-height: 200px; /* Compact height */
+  min-height: 200px;
+  /* Compact height */
 }
 
 .acp-feature-card::before {
@@ -505,8 +518,13 @@ body {
 }
 
 @keyframes acp-spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* Title - MIDDLE (small, bold) */
@@ -519,7 +537,8 @@ body {
   margin: 0 0 10px 0;
   letter-spacing: 0.5px;
   text-align: center;
-  white-space: pre-line; /* Preserve line breaks from \n */
+  white-space: pre-line;
+  /* Preserve line breaks from \n */
 }
 
 /* Description - BOTTOM (smallest) */
@@ -543,28 +562,28 @@ body {
     margin-left: auto;
     margin-right: auto;
   }
-  
+
   .acp-feature-card {
     min-height: 190px;
     padding: 22px 18px;
   }
-  
+
   .acp-feature-card h3 {
     font-size: 19px;
   }
-  
+
   .acp-feature-card .acp-feature-icon-wrapper {
     width: 65px;
     height: 65px;
     margin-bottom: 12px;
   }
-  
+
   .acp-feature-card .acp-feature-icon {
     width: 55px;
     height: 55px;
     font-size: 26px;
   }
-  
+
   .acp-feature-card p {
     font-size: 12.5px;
   }
@@ -575,29 +594,29 @@ body {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
-  
+
   .acp-feature-card {
     min-height: 180px;
     padding: 20px 15px;
   }
-  
+
   .acp-feature-card h3 {
     font-size: 18px;
     margin-bottom: 8px;
   }
-  
+
   .acp-feature-card .acp-feature-icon-wrapper {
     width: 60px;
     height: 60px;
     margin-bottom: 10px;
   }
-  
+
   .acp-feature-card .acp-feature-icon {
     width: 50px;
     height: 50px;
     font-size: 24px;
   }
-  
+
   .acp-feature-card p {
     font-size: 12px;
   }
@@ -608,29 +627,29 @@ body {
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
   }
-  
+
   .acp-feature-card {
     min-height: 170px;
     padding: 18px 12px;
   }
-  
+
   .acp-feature-card h3 {
     font-size: 16px;
     margin-bottom: 6px;
   }
-  
+
   .acp-feature-card .acp-feature-icon-wrapper {
     width: 55px;
     height: 55px;
     margin-bottom: 8px;
   }
-  
+
   .acp-feature-card .acp-feature-icon {
     width: 45px;
     height: 45px;
     font-size: 22px;
   }
-  
+
   .acp-feature-card p {
     font-size: 11px;
   }
@@ -641,27 +660,27 @@ body {
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
   }
-  
+
   .acp-feature-card {
     min-height: 160px;
     padding: 16px 10px;
   }
-  
+
   .acp-feature-card h3 {
     font-size: 15px;
   }
-  
+
   .acp-feature-card .acp-feature-icon-wrapper {
     width: 50px;
     height: 50px;
   }
-  
+
   .acp-feature-card .acp-feature-icon {
     width: 40px;
     height: 40px;
     font-size: 20px;
   }
-  
+
   .acp-feature-card p {
     font-size: 10px;
   }
@@ -672,27 +691,27 @@ body {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
   }
-  
+
   .acp-feature-card {
     min-height: 150px;
     padding: 14px 8px;
   }
-  
+
   .acp-feature-card h3 {
     font-size: 14px;
   }
-  
+
   .acp-feature-card .acp-feature-icon-wrapper {
     width: 45px;
     height: 45px;
   }
-  
+
   .acp-feature-card .acp-feature-icon {
     width: 35px;
     height: 35px;
     font-size: 18px;
   }
-  
+
   .acp-feature-card p {
     font-size: 9px;
   }
@@ -701,6 +720,16 @@ body {
 /* Courses Section */
 .acp-courses-section {
   padding: 120px 0;
+}
+
+/* Left-align: Master In-Demand Skills header */
+.acp-courses-section .acp-section-header {
+  text-align: left;
+}
+
+.acp-courses-section .acp-section-subtitle {
+  margin: 0;
+  text-align: left;
 }
 
 .acp-circle-path {
@@ -744,10 +773,13 @@ body {
 }
 
 @keyframes acp-bounce {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateX(-50%) scale(1);
     opacity: 0.5;
   }
+
   50% {
     transform: translateX(-50%) scale(1.5);
     opacity: 1;
@@ -853,6 +885,7 @@ body {
   font-family: 'Aldrich', sans-serif;
   font-weight: 100;
   flex-grow: 0;
+  text-align: center;
   min-height: 70px;
 }
 
@@ -945,6 +978,16 @@ body {
   padding: 120px 0;
 }
 
+/* Left-align: Coming Soon header */
+.acp-upcoming-section .acp-section-header {
+  text-align: left;
+}
+
+.acp-upcoming-section .acp-section-subtitle {
+  margin: 0;
+  text-align: left;
+}
+
 .acp-spinning-dots {
   position: absolute;
   top: 50%;
@@ -989,6 +1032,7 @@ body {
   0% {
     transform: translateX(-50%) rotate(0deg) translateY(150px) rotate(0deg);
   }
+
   100% {
     transform: translateX(-50%) rotate(360deg) translateY(150px) rotate(-360deg);
   }
@@ -1046,6 +1090,7 @@ body {
   margin-bottom: 10px;
   letter-spacing: 1px;
   line-height: 1.3;
+  white-space: nowrap;
 }
 
 .acp-upcoming-card p {
@@ -1152,10 +1197,13 @@ body {
 }
 
 @keyframes acp-waveMotion {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(-50%) scaleX(0.5);
     opacity: 0.3;
   }
+
   50% {
     transform: translateY(-50%) scaleX(1);
     opacity: 1;
@@ -1165,7 +1213,8 @@ body {
 /* Success Story Cards - ALWAYS 2 PER ROW FOR ALL SCREENS */
 .acp-success-stories {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Always 2 cards per row */
+  grid-template-columns: repeat(2, 1fr);
+  /* Always 2 cards per row */
   gap: 25px;
   margin-top: 60px;
 }
@@ -1297,6 +1346,7 @@ body {
   0% {
     width: 0;
   }
+
   100% {
     width: 85%;
   }
@@ -1642,6 +1692,7 @@ body {
   0% {
     filter: drop-shadow(0 0 5px rgba(37, 99, 235, 0.3));
   }
+
   100% {
     filter: drop-shadow(0 0 15px rgba(37, 99, 235, 0.6));
   }
@@ -1659,6 +1710,7 @@ body {
   0% {
     filter: drop-shadow(0 0 5px rgba(124, 58, 237, 0.3));
   }
+
   100% {
     filter: drop-shadow(0 0 15px rgba(124, 58, 237, 0.6));
   }
@@ -1670,9 +1722,11 @@ body {
     left: -100%;
     opacity: 0;
   }
+
   50% {
     opacity: 1;
   }
+
   100% {
     left: 100%;
     opacity: 0;
@@ -1684,26 +1738,26 @@ body {
   .acp-courses-grid {
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   }
-  
+
   .acp-container {
     max-width: 1200px;
   }
-  
+
   /* Success stories - ALWAYS 2 per row */
   .acp-success-stories {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
-  
+
   /* Contact section responsive */
   .acp-contact-content {
     gap: 70px;
   }
-  
+
   .acp-contact-title {
     font-size: 42px;
   }
-  
+
   .acp-contact-subtitle {
     font-size: 19px;
   }
@@ -1714,153 +1768,155 @@ body {
     grid-template-columns: 1fr;
     gap: 60px;
   }
-  
+
   .acp-hero-stats {
     gap: 20px;
     flex-direction: row;
     flex-wrap: wrap;
   }
-  
+
   .acp-stat-card {
     min-width: calc(50% - 20px);
     padding: 30px 20px;
   }
-  .acp-stat-number{
+
+  .acp-stat-number {
     font-size: 2rem;
   }
-  .acp-stat-label{
+
+  .acp-stat-label {
     font-size: 14px;
   }
-  
+
   /* Master In-Demand Skills - 2 per row on tablet */
   .acp-courses-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 25px;
   }
-  
+
   /* Success stories - ALWAYS 2 per row */
   .acp-success-stories {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
-  
+
   .acp-upcoming-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 25px;
   }
-  
+
   /* Success stories responsive - tablet */
   .acp-story-card {
     padding: 20px;
   }
-  
+
   .acp-story-info h4 {
     font-size: 17px;
     gap: 5px;
   }
-  
+
   .acp-story-role {
     font-size: 12px;
   }
-  
+
   .acp-story-salary {
     font-size: 14px;
     padding: 5px 12px;
   }
-  
+
   .acp-story-text {
     font-size: 13px;
     min-height: 65px;
   }
-  
+
   /* Contact benefits responsive - tablet */
   .acp-contact-title {
     font-size: 36px;
     margin-bottom: 10px;
   }
-  
+
   .acp-contact-subtitle {
     font-size: 18px;
     margin-bottom: 25px;
     line-height: 1.4;
   }
-  
+
   .acp-contact-benefits {
     gap: 18px;
     margin-bottom: 30px;
   }
-  
+
   .acp-benefit-item {
     gap: 14px;
   }
-  
+
   .acp-benefit-icon {
     width: 24px;
     height: 24px;
     font-size: 14px;
     margin-top: 2px;
   }
-  
+
   .acp-benefit-text h4 {
     font-size: 19px;
     margin-bottom: 5px;
   }
-  
+
   .acp-benefit-text p {
     font-size: 15px;
     line-height: 1.4;
   }
-  
+
   .acp-contact-info {
     margin-top: 30px;
     padding-top: 25px;
     gap: 18px;
   }
-  
+
   .acp-info-item {
     gap: 14px;
   }
-  
+
   .acp-info-icon {
     width: 42px;
     height: 42px;
     font-size: 20px;
   }
-  
+
   .acp-info-text h4 {
     font-size: 17px;
     margin-bottom: 4px;
   }
-  
+
   .acp-info-text p {
     font-size: 15px;
     line-height: 1.3;
   }
-  
+
   .acp-contact-right {
     padding: 35px 30px;
   }
-  
+
   .acp-form-title {
     font-size: 26px;
     margin-bottom: 10px;
   }
-  
+
   .acp-form-description {
     font-size: 15px;
     margin-bottom: 25px;
     line-height: 1.4;
   }
-  
+
   .acp-form-group {
     margin-bottom: 18px;
   }
-  
+
   .acp-form-group label {
     font-size: 15px;
     margin-bottom: 7px;
   }
-  
+
   .acp-form-group input {
     padding: 14px 16px;
     font-size: 15px;
@@ -1871,16 +1927,16 @@ body {
   .acp-hero-title {
     font-size: 2.5rem;
   }
-  
+
   .acp-section-title,
   .acp-contact-title {
     font-size: 2rem;
   }
-  
+
   .acp-hero-section {
     padding: 120px 0 80px;
   }
-  
+
   .acp-features-section,
   .acp-courses-section,
   .acp-upcoming-section,
@@ -1888,17 +1944,17 @@ body {
   .acp-contact-section {
     padding: 80px 0;
   }
-  
+
   .acp-stat-card {
     min-width: calc(50% - 20px);
   }
-  
+
   .acp-primary-btn {
     min-width: 250px;
     padding: 20px 40px;
     font-size: 18px;
   }
-  
+
   /* Success stories - STILL 2 PER ROW on mobile */
   .acp-success-stories {
     grid-template-columns: repeat(1fr);
@@ -1907,44 +1963,45 @@ body {
     margin-left: auto;
     margin-right: auto;
   }
-  
+
   .acp-story-card {
     padding: 25px 20px;
   }
-    .acp-story-header {
+
+  .acp-story-header {
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 15px;
   }
-  
+
   .acp-story-info {
     align-items: center;
   }
-  
+
   .acp-story-avatar {
     width: 50px;
     height: 50px;
     font-size: 22px;
   }
-  
+
   .acp-story-info h4 {
     font-size: 16px;
     gap: 5px;
     flex-direction: column;
     align-items: center;
   }
-  
+
   .acp-story-role {
     font-size: 11px;
   }
-  
+
   .acp-story-salary {
     font-size: 13px;
     padding: 4px 10px;
     margin-top: 2px;
   }
-  
+
   .acp-story-text {
     font-size: 12px;
     padding-left: 0px;
@@ -1955,15 +2012,15 @@ body {
     border-left: none;
     align-items: center;
   }
-  
+
   .acp-story-progress {
     gap: 10px;
   }
-  
+
   .acp-story-progress span {
     font-size: 11px;
   }
-  
+
   /* Master In-Demand Skills - 1 per row on mobile */
   .acp-courses-grid {
     grid-template-columns: 1fr;
@@ -1971,30 +2028,30 @@ body {
     margin-left: auto;
     margin-right: auto;
   }
-  
+
   .acp-upcoming-grid {
     grid-template-columns: 1fr;
     max-width: 500px;
     margin-left: auto;
     margin-right: auto;
   }
-  
+
   .acp-course-card {
     padding: 25px 20px;
   }
-  
+
   .acp-upcoming-card {
     padding: 25px 20px;
   }
-  
+
   .acp-contact-right {
     padding: 30px 25px;
   }
-  
+
   .acp-hero-stats {
     gap: 15px;
   }
-  
+
   /* Success stories mobile */
   .acp-story-info h4 {
     font-size: 18px;
@@ -2002,108 +2059,108 @@ body {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .acp-story-role {
     font-size: 14px;
     display: block;
     margin-top: 5px;
   }
-  
+
   .acp-story-salary {
     font-size: 14px;
     margin-top: 10px;
     display: inline-block;
   }
-  
+
   /* Contact benefits mobile */
   .acp-contact-title {
     font-size: 32px;
     margin-bottom: 8px;
   }
-  
+
   .acp-contact-subtitle {
     font-size: 17px;
     margin-bottom: 20px;
     line-height: 1.3;
   }
-  
+
   .acp-contact-benefits {
     gap: 16px;
     margin-bottom: 25px;
   }
-  
+
   .acp-benefit-item {
     gap: 12px;
   }
-  
+
   .acp-benefit-icon {
     width: 22px;
     height: 22px;
     font-size: 13px;
     margin-top: 1px;
   }
-  
+
   .acp-benefit-text h4 {
     font-size: 17px;
     margin-bottom: 4px;
   }
-  
+
   .acp-benefit-text p {
     font-size: 14px;
     line-height: 1.3;
   }
-  
+
   .acp-contact-info {
     margin-top: 25px;
     padding-top: 20px;
     gap: 16px;
   }
-  
+
   .acp-info-item {
     gap: 12px;
   }
-  
+
   .acp-info-icon {
     width: 38px;
     height: 38px;
     font-size: 18px;
   }
-  
+
   .acp-info-text h4 {
     font-size: 16px;
     margin-bottom: 3px;
   }
-  
+
   .acp-info-text p {
     font-size: 14px;
     line-height: 1.3;
   }
-  
+
   .acp-form-title {
     font-size: 24px;
     margin-bottom: 8px;
   }
-  
+
   .acp-form-description {
     font-size: 14px;
     margin-bottom: 20px;
     line-height: 1.4;
   }
-  
+
   .acp-form-group {
     margin-bottom: 16px;
   }
-  
+
   .acp-form-group label {
     font-size: 14px;
     margin-bottom: 6px;
   }
-  
+
   .acp-form-group input {
     padding: 12px 15px;
     font-size: 14px;
   }
-  
+
   .acp-submit-btn {
     padding: 14px;
     font-size: 16px;
@@ -2115,99 +2172,101 @@ body {
   .acp-container {
     padding: 0 16px;
   }
-  
+
   .acp-hero-title {
     font-size: 2rem;
   }
-  
+
   .acp-section-title {
     font-size: 1.75rem;
   }
-  
+
   .acp-stat-card {
     min-width: 100%;
     text-align: center;
     padding: 25px 20px;
   }
-  
+
   .acp-hero-stats {
     flex-direction: column;
     gap: 15px;
   }
-  .acp-stat-number{
+
+  .acp-stat-number {
     font-size: 1.8rem;
   }
-  .acp-stat-label{
+
+  .acp-stat-label {
     font-size: 13px;
   }
-  
+
   .acp-primary-btn {
     min-width: 100%;
     padding: 18px 30px;
     font-size: 16px;
   }
-  
+
   .acp-course-header {
     flex-direction: column;
     gap: 15px;
   }
-  
+
   .acp-course-meta {
     flex-direction: row;
     align-items: center;
     width: 100%;
     justify-content: flex-start;
   }
-  
+
   .acp-upcoming-card {
     flex-direction: column;
   }
-  
+
   .acp-upcoming-icon {
     width: 50px;
     height: 50px;
     font-size: 24px;
   }
-  
+
   /* Success stories - STILL 2 PER ROW on small mobile */
   .acp-success-stories {
     /* grid-template-columns: repeat(2, 1fr); */
     gap: 15px;
   }
-  
+
   .acp-story-card {
     padding: 20px 15px;
   }
-  
+
   .acp-story-header {
     gap: 12px;
     margin-bottom: 12px;
   }
-  
+
   .acp-story-avatar {
     width: 60px;
     height: 60px;
     font-size: 26px;
   }
-  
+
   .acp-story-info h4 {
     font-size: 18px;
     flex-wrap: nowrap;
   }
-  
+
   .acp-story-role {
     font-size: 14px;
     display: block;
     margin-top: 5px;
   }
-  
+
   .acp-story-salary {
     font-size: 14px;
     /* padding: 3px 8px; */
     margin-top: 10px;
     display: inline-block;
   }
-  
+
   .acp-story-text {
     font-size: 14px;
     padding-left: 8px;
@@ -2215,147 +2274,147 @@ body {
     line-height: 1.5;
     margin-bottom: 15px;
   }
-  
+
   .acp-story-progress {
     gap: 8px;
   }
-  
+
   .acp-progress-bar {
     height: 4px;
   }
-  
+
   .acp-story-progress span {
     font-size: 10px;
   }
-  
+
   .acp-story-header {
     flex-wrap: wrap;
   }
-  
+
   .acp-courses-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .acp-upcoming-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .acp-course-card {
     padding: 25px 20px;
   }
-  
+
   .acp-upcoming-card {
     padding: 25px 20px;
   }
-  
+
   .acp-contact-right {
     padding: 25px 20px;
   }
-  
+
   .acp-hero-stats {
     gap: 15px;
   }
-  
+
   /* Contact benefits small mobile */
   .acp-contact-title {
     font-size: 28px;
     margin-bottom: 6px;
   }
-  
+
   .acp-contact-subtitle {
     font-size: 15px;
     margin-bottom: 15px;
     line-height: 1.3;
   }
-  
+
   .acp-contact-benefits {
     gap: 14px;
     margin-bottom: 20px;
   }
-  
+
   .acp-benefit-item {
     gap: 10px;
   }
-  
+
   .acp-benefit-icon {
     width: 20px;
     height: 20px;
     font-size: 12px;
     margin-top: 0;
   }
-  
+
   .acp-benefit-text h4 {
     font-size: 16px;
     margin-bottom: 3px;
   }
-  
+
   .acp-benefit-text p {
     font-size: 13px;
     line-height: 1.3;
   }
-  
+
   .acp-contact-info {
     margin-top: 20px;
     padding-top: 15px;
     gap: 14px;
   }
-  
+
   .acp-info-item {
     gap: 10px;
   }
-  
+
   .acp-info-icon {
     width: 34px;
     height: 34px;
     font-size: 16px;
   }
-  
+
   .acp-info-text h4 {
     font-size: 15px;
     margin-bottom: 2px;
   }
-  
+
   .acp-info-text p {
     font-size: 13px;
     line-height: 1.3;
   }
-  
+
   .acp-contact-right {
     padding: 25px 20px;
   }
-  
+
   .acp-form-title {
     font-size: 22px;
     margin-bottom: 6px;
   }
-  
+
   .acp-form-description {
     font-size: 13px;
     margin-bottom: 15px;
     line-height: 1.4;
   }
-  
+
   .acp-form-group {
     margin-bottom: 14px;
   }
-  
+
   .acp-form-group label {
     font-size: 13px;
     margin-bottom: 5px;
   }
-  
+
   .acp-form-group input {
     padding: 10px 14px;
     font-size: 13px;
   }
-  
+
   .acp-submit-btn {
     padding: 12px;
     font-size: 15px;
     gap: 6px;
     margin-top: 8px;
   }
-  
+
   .acp-form-note {
     font-size: 12px;
     margin-top: 15px;
@@ -2369,55 +2428,57 @@ body {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
   }
-  
+
   .acp-story-card {
     padding: 12px;
   }
-  
+
   .acp-story-header {
     gap: 10px;
     margin-bottom: 10px;
   }
-  
+
   .acp-story-avatar {
     width: 40px;
     height: 40px;
     font-size: 18px;
   }
-  
+
   .acp-story-info h4 {
     font-size: 13px;
     gap: 2px;
     line-height: 1.2;
   }
-  
+
   .acp-story-role {
     font-size: 9px;
   }
-  
+
   .acp-story-salary {
     font-size: 11px;
     padding: 2px 6px;
   }
-  
+
   .acp-story-text {
     font-size: 10px;
     padding-left: 6px;
     min-height: 50px;
     line-height: 1.2;
   }
-  
+
   .acp-story-progress {
     gap: 6px;
   }
-  
+
   .acp-story-progress span {
     font-size: 9px;
   }
-  .acp-meta-item{
+
+  .acp-meta-item {
     font-size: 9px;
   }
-  .acp-stat-value{
+
+  .acp-stat-value {
     font-size: 20px;
   }
 }
@@ -2428,30 +2489,30 @@ body {
     grid-template-columns: repeat(2, 1fr);
     gap: 8px;
   }
-  
+
   .acp-story-card {
     padding: 10px;
   }
-  
+
   .acp-story-avatar {
     width: 35px;
     height: 35px;
     font-size: 16px;
   }
-  
+
   .acp-story-info h4 {
     font-size: 12px;
   }
-  
+
   .acp-story-role {
     font-size: 8px;
   }
-  
+
   .acp-story-salary {
     font-size: 10px;
     padding: 2px 5px;
   }
-  
+
   .acp-story-text {
     font-size: 9px;
   }
@@ -2459,50 +2520,651 @@ body {
 
 /* Tablet landscape */
 @media (max-width: 1024px) and (min-width: 769px) {
+
   /* Success stories tablet - ALWAYS 2 per row */
   .acp-success-stories {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .acp-story-info h4 {
     font-size: 18px;
     gap: 6px;
   }
-  
+
   .acp-story-role {
     font-size: 13px;
   }
-  
+
   /* Contact benefits tablet */
   .acp-contact-content {
     gap: 70px;
   }
-  
+
   .acp-contact-title {
     font-size: 40px;
   }
-  
+
   .acp-contact-benefits {
     gap: 18px;
   }
-  
+
   .acp-benefit-item {
     gap: 14px;
   }
-  
+
   .acp-benefit-icon {
     width: 24px;
     height: 24px;
     font-size: 14px;
   }
-  
+
   .acp-benefit-text h4 {
     font-size: 19px;
     margin-bottom: 5px;
   }
-  
+
   .acp-benefit-text p {
     font-size: 15px;
     line-height: 1.4;
+  }
+}
+
+/* ══════════════════════════════════════════════════
+   HERO V2  –  NFT / Dark style
+══════════════════════════════════════════════════ */
+
+.acp-hero-v2-section {
+  position: relative;
+  background: #000000 !important;
+  overflow: hidden;
+  padding: 60px 0 0 !important;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.acp-hero-v2-section::before {
+  display: none !important;
+}
+
+/* ── Sparkle decorations ── */
+.acp-v2-spark {
+  position: absolute;
+  color: #22c55e;
+  opacity: 0.65;
+  pointer-events: none;
+  z-index: 1;
+  animation: acp-v2-twinkle 2.4s ease-in-out infinite alternate;
+}
+
+.acp-v2-s1 {
+  top: 22%;
+  left: 46%;
+  font-size: 20px;
+}
+
+.acp-v2-s2 {
+  top: 65%;
+  left: 55%;
+  font-size: 14px;
+  animation-delay: 0.6s;
+}
+
+.acp-v2-s3 {
+  top: 35%;
+  left: 52%;
+  font-size: 26px;
+  opacity: 0.3;
+  animation-delay: 1.1s;
+}
+
+.acp-v2-s4 {
+  top: 78%;
+  left: 43%;
+  font-size: 16px;
+  animation-delay: 1.8s;
+}
+
+@keyframes acp-v2-twinkle {
+  0% {
+    opacity: 0.25;
+    transform: scale(0.8) rotate(0deg);
+  }
+
+  100% {
+    opacity: 0.85;
+    transform: scale(1.3) rotate(25deg);
+  }
+}
+
+/* ── Main two-column grid ── */
+.acp-hero-v2-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 20px 0 100px;
+  gap: 60px;
+  position: relative;
+  z-index: 2;
+}
+
+/* ── LEFT side ── */
+.acp-hero-v2-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 30px;
+  position: relative;
+  top: -60px;
+  left: -40px;
+}
+
+.acp-hero-v2-title {
+  color: #ffffff;
+  font-size: 3.8rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -2px;
+}
+
+.acp-v2-plain {
+  color: #ffffff;
+}
+
+.acp-v2-extraordinary {
+  color: #ffffff;
+  position: relative;
+  display: inline;
+}
+
+/* Green underline highlight under "Extraordinary" */
+.acp-v2-extraordinary::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  width: 100%;
+  height: 7px;
+  background: #cbfb45;
+  border-radius: 4px;
+  opacity: 0.55;
+}
+
+.acp-v2-green {
+  color: #cbfb45;
+}
+
+.acp-hero-v2-desc {
+  font-size: 16px;
+  color: #94A3B8;
+  line-height: 1.75;
+  max-width: 460px;
+
+  font-family: 'Aldrich', sans-serif;
+}
+
+/* ── CTA Buttons ── */
+.acp-hero-v2-btns {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-left: 60px;
+}
+
+.acp-v2-btn-primary {
+  background: #cbfb45;
+  color: #111111;
+  border: none;
+  padding: 14px 30px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.3px;
+}
+
+.acp-v2-btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(203, 251, 69, 0.3);
+}
+
+.acp-v2-btn-ghost {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 14px 30px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.acp-v2-btn-ghost:hover {
+  border-color: #cbfb45;
+  color: #cbfb45;
+}
+
+.acp-v2-arrow-wrapper {
+  margin-top: -10px;
+  margin-left: 65%;
+  opacity: 0.8;
+}
+
+/* ── Stats row ── */
+.acp-hero-v2-stats {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 6px;
+}
+
+.acp-v2-sitem {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.acp-v2-snum {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+}
+
+.acp-v2-slbl {
+  font-size: 13px;
+  color: #64748B;
+  font-family: 'Aldrich', sans-serif;
+}
+
+.acp-v2-sdivider {
+  display: none;
+}
+
+/* ── RIGHT side – absolutely positioned cards ── */
+.acp-hero-v2-right {
+  position: relative;
+  height: 560px;
+}
+
+/* Course Card base */
+.acp-v2-card {
+  position: absolute;
+  width: 250px;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.55);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.acp-v2-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.7);
+}
+
+/* Card A – upper-left of the right panel */
+.acp-v2-card-a {
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+
+/* Card B – lower-right of the right panel */
+.acp-v2-card-b {
+  bottom: 80px;
+  right: -80px;
+  z-index: 6;
+}
+
+.acp-v2-card-img-wrapper {
+  width: 100%;
+  height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+.acp-v2-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.acp-v2-card-body {
+  padding: 14px 4px 4px 4px;
+  display: flex;
+  flex-direction: column;
+}
+
+.acp-v2-card-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.acp-v2-cname {
+  font-size: 15px;
+  font-weight: 800;
+  color: #111111;
+  font-family: 'Inter', sans-serif;
+}
+
+.acp-v2-clikes {
+  font-size: 11px;
+  color: #64748B;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+}
+
+.acp-v2-user-row {
+  margin: 10px 0 15px 0;
+}
+
+.acp-v2-user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.acp-v2-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #cbd5e1;
+}
+
+.acp-v2-user span {
+  font-size: 11px;
+  color: #475569;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+}
+
+.acp-v2-bid-row {
+  border-top: 1px solid #f1f5f9;
+  padding-top: 12px;
+}
+
+.acp-v2-cbid-lbl {
+  font-size: 11px;
+  color: #64748B;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+}
+
+.acp-v2-cbid-val {
+  font-size: 14px;
+  font-weight: 800;
+  color: #111111;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ── Client Feedback Strip (Inside Card) ── */
+.acp-v2-fb-strip {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid #f1f5f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.acp-v2-fb-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #cbd5e1;
+}
+
+.acp-v2-client-avs {
+  display: flex;
+  align-items: center;
+}
+
+.acp-v2-av {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 8px;
+  font-weight: bold;
+  border: 1px solid white;
+  margin-left: -5px;
+}
+
+.acp-v2-av:first-child {
+  margin-left: 0;
+}
+
+.acp-v2-client-quotes {
+  position: relative;
+  flex: 1;
+  height: 14px;
+}
+
+.acp-v2-qt {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 10px;
+  font-family: 'Inter', sans-serif;
+  color: #334155;
+  font-weight: 500;
+  opacity: 0;
+  animation: acp-v2-fadeScroll 9s infinite;
+  white-space: nowrap;
+}
+
+.acp-v2-qt-1 {
+  animation-delay: 0s;
+}
+
+.acp-v2-qt-2 {
+  animation-delay: 3s;
+}
+
+.acp-v2-qt-3 {
+  animation-delay: 6s;
+}
+
+@keyframes acp-v2-fadeScroll {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  5% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  30% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  35% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+/* ── Rotating stamp badge ── */
+.acp-v2-stamp {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 88px;
+  height: 88px;
+  z-index: 10;
+}
+
+.acp-v2-stamp-ring {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: acp-v2-spin-slow 9s linear infinite;
+  background: rgba(10, 10, 10, 0.75);
+  backdrop-filter: blur(6px);
+}
+
+.acp-v2-stamp-core {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.acp-v2-stamp-star {
+  font-size: 18px;
+  color: #22c55e;
+  line-height: 1;
+}
+
+.acp-v2-stamp-txt {
+  font-size: 9px;
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  margin: 3px 0 0;
+  line-height: 1.3;
+  font-family: 'Inter', sans-serif;
+}
+
+@keyframes acp-v2-spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ── Marquee bar ── */
+.acp-v2-marquee-bar {
+  background: #1c1c1e;
+  padding: 36px 0;
+  overflow: hidden;
+  position: absolute;
+  bottom: 80px;
+  left: -2%;
+  width: 104%;
+  z-index: 2;
+  display: flex;
+  white-space: nowrap;
+  transform: rotate(3deg);
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.acp-v2-marquee-track {
+  display: inline-flex;
+  animation: acp-v2-scroll 25s linear infinite;
+  gap: 80px;
+}
+
+.acp-v2-marquee-item {
+  font-size: 20px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.95);
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  white-space: nowrap;
+  letter-spacing: 1.5px;
+}
+
+@keyframes acp-v2-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ── Responsive ── */
+@media (max-width: 960px) {
+  .acp-hero-v2-grid {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding: 80px 0 50px;
+    gap: 50px;
+  }
+
+  .acp-hero-v2-right {
+    height: 360px;
+  }
+
+  .acp-v2-card {
+    width: 210px;
+  }
+
+  .acp-hero-v2-title {
+    font-size: 3rem;
+    letter-spacing: -1px;
+  }
+}
+
+@media (max-width: 600px) {
+  .acp-hero-v2-title {
+    font-size: 2.2rem;
+    letter-spacing: -0.5px;
+  }
+
+  .acp-hero-v2-right {
+    height: 300px;
+  }
+
+  .acp-v2-card {
+    width: 170px;
+  }
+
+  .acp-v2-card-img {
+    height: 110px;
+  }
+
+  .acp-v2-stamp {
+    display: none;
+  }
+
+  .acp-v2-trust-bar {
+    padding: 16px 20px;
+    gap: 20px;
+  }
+
+  .acp-v2-trust-logos {
+    gap: 18px;
+  }
+
+  .acp-v2-trust-item {
+    font-size: 11px;
   }
 }

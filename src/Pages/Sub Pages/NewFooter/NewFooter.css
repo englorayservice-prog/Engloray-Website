@@ -1,0 +1,223 @@
+ .newFooterOuter {
+  background-color: #ffffff;
+  /* Reverted to White theme */
+  color: #1a1a1a;
+  padding: 80px 0 30px 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  border-top: 1px solid #f1f1f1;
+}
+
+.newFooterContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.newFooterGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Equal columns for equal spacing */
+  gap: 80px; /* Noticeable separation between content clusters */
+  margin-bottom: 60px;
+  padding-left: 0; /* Brand is anchored to the left corner */
+}
+
+/* Brand Column at the left corner */
+.newFooterBrandCol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  margin-left: -120px; /* Shifted even further left into the corner */
+}
+
+.newFooterLogo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.newFooterLogoImg {
+  width: 55px;
+  /* Slightly bigger logo */
+  height: 55px;
+  object-fit: contain;
+}
+
+.newFooterBrandName {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.newFooterBrandDesc {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #6c757d;
+  margin-bottom: 25px;
+  max-width: 480px; /* Wider to ensure 2-3 lines only */
+  text-align: left;
+}
+
+
+.newFooterSocials {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-start;
+}
+
+.newFooterSocialLink {
+  color: #1a1a1a;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #f8f9fa;
+}
+
+.newFooterSocialLink:hover {
+  transform: translateY(-5px);
+  color: #0d6efd;
+  background: rgba(13, 110, 253, 0.1);
+}
+
+/* Header with Icon */
+.newFooterColHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 25px;
+  justify-content: flex-start;
+}
+
+.newFooterHeaderIcon {
+  color: #1a1a1a;
+  font-size: 1.1rem;
+}
+
+.newFooterColTitle {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.newFooterLinkList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.newFooterLinkList li {
+  margin-bottom: 12px;
+}
+
+.newFooterLinkList a {
+  text-decoration: none;
+  color: #6c757d;
+  font-size: 0.95rem;
+  transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.newFooterLinkList a:hover {
+  color: #1a1a1a;
+  padding-left: 5px;
+}
+
+/* Contact Column - shifted slightly left */
+.newFooterContactCol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  margin-left: -40px; /* Moved slightly left for a tighter visual group */
+}
+
+.newFooterContactItem {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  color: #6c757d;
+  text-align: left;
+}
+
+.newFooterContactIcon {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e7f1ff;
+  color: #0d6efd;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  transform: rotate(-15deg); /* Professional slant for icons */
+}
+
+
+
+.newFooterContactText {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* Bottom Bar */
+.newFooterBottom {
+  border-top: 1px solid #f1f1f1;
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.newFooterLegal {
+  display: flex;
+  gap: 25px;
+}
+
+.newFooterLegal a {
+  text-decoration: none;
+  color: #6c757d;
+  transition: color 0.3s ease;
+}
+
+.newFooterLegal a:hover {
+  color: #1a1a1a;
+}
+
+@media (max-width: 1024px) {
+  .newFooterGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .newFooterOuter {
+    padding: 60px 0 30px 0;
+  }
+
+  .newFooterGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .newFooterBottom {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .newFooterLegal {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

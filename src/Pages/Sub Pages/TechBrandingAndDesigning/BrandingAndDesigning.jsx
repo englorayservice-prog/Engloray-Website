@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import brandingIamgeOne from '../../../assets/case study images/branding/malar.jpg';
-// import brandingIamgeTwo from '../../../assets/case study images/branding/ecec.png';
+import brandingIamgeTwo from '../../../assets/case study images/branding/ecec.png';
 import brandingIamgeThree from '../../../assets/case study images/branding/Nestoria.jpg';
 import brandingIamgeFour from '../../../assets/case study images/branding/isha bites.png';
 import './BrandingAndDesigning.css';
@@ -9,100 +9,36 @@ import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
 import MainPageSubFooter from '../MainPageSubFooter/MainPageSubFooter';
 import { Helmet } from 'react-helmet';
+// import profile from '../../../assets/heroimage.jpeg';
+import { FaLightbulb, FaPalette, FaComments, FaLayerGroup, FaCompass, FaUserCircle, FaGem } from "react-icons/fa";
+import heroBg from "../../../assets/lineimage.jpeg";
 
-const feedbacks = [
-    {
-        id: 1,
-        text: "ENGLORAY delivered herbal packaging that feels trustworthy and premium. Customers now clearly understand our product quality.",
-        author: "Malar Herbs",
-        role: "Herbal Products",
-        initial: "M"
-    },
-    {
-        id: 2,
-        text: "Digital ad campaigns helped us generate quality admission inquiries. The creatives and messaging worked very well.",
-        author: "ECEC Skill School",
-        role: "Skill School",
-        initial: "E"
-    },
-    {
-        id: 3,
-        text: "The promotional creatives were attractive and perfectly suited our food brand. Customer engagement improved noticeably.",
-        author: "ISHA Bites",
-        role: "Food And Beverage",
-        initial: "I"
-    }
-];
+// Import project section background
+import projectsBg from '../../../assets/heroimage.jpeg';
 
-const projects = [
-    {
-        id: 1,
-        title: "Malar herbal products",
-        description: "Complete brand identity redesign for a tech startup, including logo, color palette, typography, and brand guidelines.",
-        category: "Herbal product",
-        image: brandingIamgeOne,
-        stats: {
-            duration: "5 Weeks",
-            satisfaction: "98%"
-        }
-    },
-    {
-        id: 2,
-        title: "Nestoria",
-        description: "End-to-end branding for a luxury brand, from initial concept to store implementation and digital presence.",
-        category: "Branding",
-        image: brandingIamgeThree,
-        stats: {
-            duration: "6 Weeks",
-            satisfaction: "100%"
-        }
-    },
-    {
-        id: 3,
-        title: "ISHA Bites",
-        description: "Identity development for a beverage provider, establishing trust and professionalism in the food sector.",
-        category: "food and beverage",
-        image: brandingIamgeFour,
-        stats: {
-            duration: "5 Weeks",
-            satisfaction: "97%"
-        }
-    }
-];
-
-// Related branding & designing images - same size as main image
-const extraImages = [
-    {
-        id: 1,
-        url: "https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        title: "Brand Strategy Workshop",
-        description: "Collaborative brainstorming sessions to define brand vision and positioning"
-    },
-    {
-        id: 2,
-        url: "https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        title: "Design Process",
-        description: "Sketching and digital design creation for comprehensive brand identity"
-    },
-    {
-        id: 3,
-        url: "https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        title: "Creative Studio",
-        description: "Our design team working on innovative branding projects"
-    }
-];
+// Import brand logos for projects section
+import logo1 from '../../../assets/icons/logoipsum-247.png';
+import logo2 from '../../../assets/icons/logoipsum-248.png';
+import logo3 from '../../../assets/icons/logoipsum-249.png';
+import logo4 from '../../../assets/icons/logoipsum-292.png';
+import logo5 from '../../../assets/icons/logoipsum-293.png';
+import logo6 from '../../../assets/icons/logoipsum-294.png';
+import logo7 from '../../../assets/icons/logoipsum-295.png';
+import logo8 from '../../../assets/icons/logoipsum-296.png';
+import logo9 from '../../../assets/icons/logoipsum-298.png';
+import logo10 from '../../../assets/icons/logoipsum-299.png';
+import logo11 from '../../../assets/icons/logoipsum-327.png';
+import logo12 from '../../../assets/icons/logoipsum-338.png';
 
 const BrandingDesigning = () => {
-    const [isExpanded, setIsExpanded] = useState(false);
     const [currentSlide, setCurrentSlide] = useState(0);
     const [autoSlide, setAutoSlide] = useState(true);
-    const [visibleImages, setVisibleImages] = useState([]);
     const feedbackTrackRef = useRef(null);
 
     // Scroll to top when component mounts
     useEffect(() => {
         window.scrollTo(0, 0);
-        
+
         if (window.location.hash) {
             const id = window.location.hash.replace('#', '');
             setTimeout(() => {
@@ -114,50 +50,133 @@ const BrandingDesigning = () => {
         }
     }, []);
 
-    // Handle slide change
-    useEffect(() => {
-        if (feedbackTrackRef.current) {
-            feedbackTrackRef.current.style.transform = `translateX(-${currentSlide * 100}%)`;
+    const feedbacks = [
+        {
+            id: 1,
+            rating: "★★★★★",
+            text: "ENGLORAY delivered herbal packaging that feels trustworthy and premium. Customers now clearly understand our product quality.",
+            author: "Malar Herbs",
+            role: "Herbal Products",
+            initial: "M"
+        },
+        {
+            id: 2,
+            rating: "★★★★★",
+            text: "Digital ad campaigns helped us generate quality admission inquiries. The creatives and messaging worked very well.",
+            author: "ECEC Skill School",
+            role: "Skill School",
+            initial: "E"
+        },
+        {
+            id: 3,
+            rating: "★★★★★",
+            text: "The promotional creatives were attractive and perfectly suited our food brand. Customer engagement improved noticeably.",
+            author: "ISHA Bites",
+            role: "Food And Beverage",
+            initial: "I"
         }
-    }, [currentSlide]);
+    ];
 
-    // Auto slide functionality
-    useEffect(() => {
-        let interval;
-        if (autoSlide) {
-            interval = setInterval(() => {
-                setCurrentSlide((prev) => (prev + 1) % feedbacks.length);
-            }, 5000);
+    const projects = [
+        {
+            id: 1,
+            title: "Malar herbal products",
+            description: "Complete brand identity redesign for a tech startup, including logo, color palette, typography, and brand guidelines.",
+            category: "Herbal product",
+            image: brandingIamgeOne,
+            stats: {
+                duration: "5 Weeks",
+                satisfaction: "98%"
+            }
+        },
+        {
+            id: 2,
+            title: "Nestoria",
+            description: "End-to-end branding for a luxury brand, from initial concept to store implementation and digital presence.",
+            category: "Branding",
+            image: brandingIamgeThree,
+            stats: {
+                duration: "6 Weeks",
+                satisfaction: "100%"
+            }
+        },
+        {
+            id: 3,
+            title: "ISHA Bites",
+            description: "Identity development for a beverage provider, establishing trust and professionalism in the food sector.",
+            category: "food and beverage",
+            image: brandingIamgeFour,
+            stats: {
+                duration: "5 Weeks",
+                satisfaction: "97%"
+            }
         }
-        return () => clearInterval(interval);
-    }, [autoSlide]);
+    ];
 
-    // Handle image animation when expanded
-    useEffect(() => {
-        if (isExpanded) {
-            // Show images one by one with delay
-            const timeouts = [];
-            extraImages.forEach((img, index) => {
-                const timeout = setTimeout(() => {
-                    setVisibleImages(prev => [...prev, img.id]);
-                }, index * 300); // 300ms delay between each image
-                timeouts.push(timeout);
-            });
-            
-            return () => {
-                timeouts.forEach(timeout => clearTimeout(timeout));
-                setVisibleImages([]);
-            };
-        } else {
-            // Clear all images when collapsed
-            setVisibleImages([]);
+    // About section cards data
+    const aboutCards = [
+        {
+            id: 1,
+            title: "Research & Discovery",
+            description: "We dive deep into your market, competitors, and audience to understand the landscape and identify opportunities for differentiation and growth. Our comprehensive analysis includes market trends, consumer behavior, and competitive positioning to build a solid foundation for your brand strategy.",
+            image: "https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            id: 2,
+            title: "Strategic Foundation",
+            description: "Building a solid brand foundation with clear positioning, messaging, and values that guide all design decisions and communications. We develop a unique brand voice and personality that resonates with your target audience while maintaining consistency across all touchpoints.",
+            image: "https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            id: 3,
+            title: "Creative Development",
+            description: "Translating strategy into compelling visual identities through logo design, color systems, typography, and visual language. Our creative process involves multiple iterations, feedback loops, and refinement to ensure the final design perfectly captures your brand essence.",
+            image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            id: 4,
+            title: "Implementation & Guidelines",
+            description: "Creating comprehensive brand guidelines and implementation systems to ensure consistency across all touchpoints and platforms. We provide detailed documentation and support to help your team maintain brand integrity as your business grows and evolves.",
+            image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
         }
-    }, [isExpanded]);
+    ];
 
-    const handleDotClick = (index) => {
-        setCurrentSlide(index);
-        setAutoSlide(false);
-        setTimeout(() => setAutoSlide(true), 10000);
+    // How It Works steps data
+    const howItWorksSteps = [
+        {
+            title: "Step 1",
+            heading: "Discover Your Brand Vision",
+            text: "Understand your business goals, audience, and brand purpose."
+        },
+        {
+            title: "Step 2",
+            heading: "Define Brand Strategy",
+            text: "Build a clear positioning, messaging, and brand direction."
+        },
+        {
+            title: "Step 3",
+            heading: "Design Visual Identity",
+            text: "Create logos, colors, and typography that represent your brand."
+        },
+        {
+            title: "Step 4",
+            heading: "Build Brand Assets",
+            text: "Develop marketing visuals, social media designs, and brand guidelines."
+        },
+        {
+            title: "Step 5",
+            heading: "Launch & Grow Your Brand",
+            text: "Apply your brand consistently across platforms to build recognition."
+        }
+    ];
+
+    const getPosition = (index) => {
+        const diff = index - currentSlide;
+
+        if (diff === 0) return "center";
+        if (diff === -1 || diff === 2) return "left";
+        if (diff === 1 || diff === -2) return "right";
+        return "";
     };
 
     const handlePrevSlide = () => {
@@ -172,255 +191,457 @@ const BrandingDesigning = () => {
         setTimeout(() => setAutoSlide(true), 10000);
     };
 
-    const handleReadMore = () => {
-        setIsExpanded(!isExpanded);
-    };
+    // Auto slide functionality
+    useEffect(() => {
+        let interval;
+        if (autoSlide) {
+            interval = setInterval(() => {
+                setCurrentSlide((prev) => (prev + 1) % feedbacks.length);
+            }, 5000);
+        }
+        return () => clearInterval(interval);
+    }, [autoSlide, feedbacks.length]);
+
+    const badges = [
+        "Brand Strategy",
+        "Visual Identity",
+        "Brand Voice",
+        "UI Design System",
+        "Brand Guidelines"
+    ];
 
     return (
         <>
-        <div>
-            <Helmet>
-            <title>Engloray</title>
-            <meta name="description" content="Design tech brands for the digital, scalable systems with story telling ui" />
-            <meta name="robots" content="max-snippet:-1, max-image-preview: large, max-video-preview:-1" />
-            {/* <link rel="canonical" href="https://yourapp.com" /> */}
-            <meta property="og:locale" content="en_US" />
-            <meta property="og:type" content="website" />
-            <meta property="og:title" content="Your App | Config" />
-            <meta property="og:description" content="Lorem Ipsum" />
-            {/* <meta property="og:url" content="https://yourapp.com" /> */}
-            </Helmet>
+            <div>
+                {/* SVG Definitions for Clip Path */}
+                <svg width="0" height="0" style={{ position: 'absolute' }}>
+                    <defs>
+                        <clipPath id="cardCurve" clipPathUnits="objectBoundingBox">
+                            <path d="M 0.15,0 L 0.85,0 A 0.15,0.15 0,0,1 1,0.15 L 1,0.75 A 0.08,0.06 0,0,1 0.92,0.81 L 0.9,0.81 A 0.06,0.06 0,0,0 0.84,0.87 L 0.84,0.92 A 0.08,0.08 0,0,1 0.76,1 L 0.15,1 A 0.15,0.15 0,0,1 0,0.85 L 0,0.15 A 0.15,0.15 0,0,1 0.15,0 Z" />
+                        </clipPath>
+                    </defs>
+                </svg>
 
-        <div className="bd-page" id='brandingPage'>
-            <TopNavBar/>
-            <TwoLineNavbar/>
-            {/* Hero Section */}
-            <section className="bd-hero-section">
-                <div className="bd-hero-bg"></div>
-                <div className="bd-container">
-                    <div className="bd-hero-content">
-                        <span className="bd-hero-badge">Branding & Designing</span>
-                        <h1 className="bd-hero-title">Crafting Unforgettable Brand Experiences</h1>
-                        <h2 className="bd-hero-subtitle">Where Strategy Meets Creativity</h2>
-                        <p className="bd-hero-description">
-                            We transform businesses into memorable brands through strategic design thinking, 
-                            compelling visual identities, and cohesive brand ecosystems that resonate with 
-                            your audience and drive meaningful connections.
-                        </p>
-                    </div>
-                </div>
-            </section>
+                <Helmet>
+                    <title>Engloray - Branding & Designing</title>
+                    <meta name="description" content="Design tech brands for the digital, scalable systems with story telling ui" />
+                    <meta name="robots" content="max-snippet:-1, max-image-preview: large, max-video-preview:-1" />
+                    <meta property="og:locale" content="en_US" />
+                    <meta property="og:type" content="website" />
+                    <meta property="og:title" content="Engloray | Branding & Designing" />
+                    <meta property="og:description" content="Crafting Unforgettable Brand Experiences Through Strategic Design" />
+                </Helmet>
 
-            {/* About Section */}
-            <section className={`bd-about-section ${isExpanded ? 'bd-image-scroll' : ''}`}>
-                <div className="bd-container">
-                    <div className="bd-about-content">
-                        <div className="bd-about-text">
-                            <h2 className="bd-about-title">About Our Approach</h2>
-                            <p className="bd-about-description">
-                                At ENGLORAY, we believe that great branding is more than just a logo - 
-                                it's the complete story of your business. Our design philosophy combines 
-                                strategic thinking with creative excellence to build brands that stand 
-                                the test of time.
-                            </p>
-                            <ul className="bd-about-points">
-                                <li className="bd-about-point">Strategic brand positioning and market analysis</li>
-                                <li className="bd-about-point">Comprehensive visual identity systems</li>
-                                <li className="bd-about-point">User-centered design thinking approach</li>
-                                <li className="bd-about-point">Cross-platform brand consistency</li>
-                                <li className="bd-about-point">Data-driven design decisions</li>
-                            </ul>
-                            
-                            <button 
-                                className={`bd-read-more-btn ${isExpanded ? 'expanded' : ''}`}
-                                onClick={handleReadMore}
-                            >
-                                {isExpanded ? 'Read Less' : 'Read More'}
-                                <span className="bd-arrow">↓</span>
-                            </button>
+                <div className="bd-page" id='brandingPage'>
+                    <TopNavBar />
+                    <TwoLineNavbar />
 
-                            <div className={`bd-expanded-content ${isExpanded ? 'expanded' : ''}`}>
-                                <div className="bd-expanded-paragraphs">
-                                    <p>
-                                        <strong>Research & Discovery:</strong> We dive deep into your market, competitors, 
-                                        and audience to understand the landscape and identify opportunities for differentiation 
-                                        and growth. Our comprehensive analysis includes market trends, consumer behavior, 
-                                        and competitive positioning to build a solid foundation for your brand strategy.
-                                    </p>
-                                    <p>
-                                        <strong>Strategic Foundation:</strong> Building a solid brand foundation with clear 
-                                        positioning, messaging, and values that guide all design decisions and communications. 
-                                        We develop a unique brand voice and personality that resonates with your target 
-                                        audience while maintaining consistency across all touchpoints.
-                                    </p>
-                                    <p>
-                                        <strong>Creative Development:</strong> Translating strategy into compelling visual 
-                                        identities through logo design, color systems, typography, and visual language. 
-                                        Our creative process involves multiple iterations, feedback loops, and refinement 
-                                        to ensure the final design perfectly captures your brand essence.
-                                    </p>
-                                    <p>
-                                        <strong>Implementation & Guidelines:</strong> Creating comprehensive brand 
-                                        guidelines and implementation systems to ensure consistency across all touchpoints 
-                                        and platforms. We provide detailed documentation and support to help your team 
-                                        maintain brand integrity as your business grows and evolves.
-                                    </p>
+                    {/* Hero Section - Updated to match the provided HeroSection component */}
+                    <section className="bd-hero">
+                        {/* Background image */}
+                        <img src={heroBg} className="bd-hero-bg-image" alt="background texture" />
+
+                        {/* Gradient background shapes */}
+                        <div className="bd-gradient-shape bd-blue-shape"></div>
+                        <div className="bd-gradient-shape bd-sand-shape"></div>
+
+                        {/* Floating cards */}
+                        <div className="bd-floating-card bd-left bd-rotate-left">
+                            <img
+                                src="https://i.pravatar.cc/100?img=5"
+                                alt="Brand strategist"
+                            />
+                            <div className="bd-card-content">
+                                <h4>Brand Discovery</h4>
+                                <p>Research & Insights</p>
+                                <div className="bd-card-progress">
+                                    <div className="bd-progress-fill"></div>
                                 </div>
                             </div>
                         </div>
-                        
-                        <div className="bd-about-images-column">
-                            {/* Main Image */}
-                            <div className="bd-about-image-main">
-                                <img 
-                                    src="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                                    alt="Brand Design Process" 
-                                />
-                                <div className="bd-image-overlay">
-                                    <h3>Our Design Studio</h3>
-                                    <p>Where creativity meets strategy to build iconic brands</p>
+
+                        <div className="bd-floating-card bd-right bd-rotate-right">
+                            <img
+                                src="https://i.pravatar.cc/100?img=12"
+                                alt="Creative director"
+                            />
+                            <div className="bd-card-content">
+                                <h4>Identity Design</h4>
+                                <p>Logo & Visual System</p>
+                                <div className="bd-card-progress">
+                                    <div className="bd-progress-fill"></div>
                                 </div>
                             </div>
-                            
-                            {/* Extra Images Section - SAME SIZE AS MAIN IMAGE */}
-                            <div className={`bd-extra-images-fill ${isExpanded ? 'show' : ''}`}>
-                                {extraImages.map((image) => (
-                                    <div 
-                                        key={image.id} 
-                                        className={`bd-extra-image-fill ${visibleImages.includes(image.id) ? 'visible' : ''}`}
+                        </div>
+
+                        {/* Main content */}
+                        <div className="bd-hero-container">
+                            <div className="bd-hero-badge">
+                                Branding & Identity
+                            </div>
+
+                            <h1 className="bd-hero-title">
+                                Crafting Unforgettable<br /> <span className="bd-title-highlight">Brand</span> <span className="bd-title-highlight">Experiences</span>
+                            </h1>
+
+                            <p className="bd-hero-desc">
+                                We transform businesses into memorable brands through strategic design
+                                thinking, compelling visual identities, and cohesive brand ecosystems
+                                that resonate with your audience and drive meaningful connections.
+                            </p>
+
+                            <div className="bd-privacy-badge">
+                                Our customer privacy is on top of our mind.
+                            </div>
+                        </div>
+
+                        {/* Bottom glass badges */}
+                        <div className="bd-badge-glass">
+                            {badges.map((item, index) => (
+                                <span
+                                    key={index}
+                                    className={`bd-service-badge 
+                                    ${item === "Brand Strategy" ? "bd-badge-strategy" : ""} 
+                                    ${item === "Brand Guidelines" ? "bd-badge-guidelines" : ""}`}
+                                >
+                                    {item}
+                                </span>
+                            ))}
+                        </div>
+                    </section>
+
+                    {/* About Section - Cards with images on top for 1&3, images at bottom for 2&4 */}
+                    <section className="bd-about-section">
+                        <div className="bd-container">
+                            {/* Title and Description at the top */}
+                            <div className="bd-about-header">
+                                <h2 className="bd-about-title">About Our Approach</h2>
+                                <p className="bd-about-description">
+                                    At ENGLORAY, we believe that great branding is more than just a logo -
+                                    it's the complete story of your business. Our design philosophy combines
+                                    strategic thinking with creative excellence to build brands that stand
+                                    the test of time.
+                                </p>
+                            </div>
+
+                            {/* Cards Grid */}
+                            <div className="bd-cards-grid">
+                                {aboutCards.map((card) => (
+                                    <div
+                                        key={card.id}
+                                        className={`bd-about-card ${card.id === 2 || card.id === 4 ? 'bd-card-image-bottom' : ''}`}
                                     >
-                                        <div className="bd-fill-image-wrapper">
-                                            <img src={image.url} alt={image.title} />
-                                            <div className="bd-fill-image-overlay">
-                                                <h4>{image.title}</h4>
-                                                <p>{image.description}</p>
-                                            </div>
-                                        </div>
+                                        {/* For cards 1 and 3: Image at top, content at bottom */}
+                                        {card.id !== 2 && card.id !== 4 && (
+                                            <>
+                                                <div className="bd-card-image-wrapper">
+                                                    <div className="bd-card-image">
+                                                        <img src={card.image} alt={card.title} />
+                                                    </div>
+                                                </div>
+                                                <div className="bd-card-content-wrapper">
+                                                    <div className="bd-card-content">
+                                                        <strong className="bd-card-title">{card.title}</strong>
+                                                        <p className="bd-card-description">{card.description}</p>
+                                                    </div>
+                                                </div>
+                                            </>
+                                        )}
+
+                                        {/* For cards 2 and 4: Content at top, image at bottom */}
+                                        {(card.id === 2 || card.id === 4) && (
+                                            <>
+                                                <div className="bd-card-content-wrapper">
+                                                    <div className="bd-card-content">
+                                                        <strong className="bd-card-title">{card.title}</strong>
+                                                        <p className="bd-card-description">{card.description}</p>
+                                                    </div>
+                                                </div>
+                                                <div className="bd-card-image-wrapper">
+                                                    <div className="bd-card-image">
+                                                        <img src={card.image} alt={card.title} />
+                                                    </div>
+                                                </div>
+                                            </>
+                                        )}
                                     </div>
                                 ))}
                             </div>
                         </div>
-                    </div>
-                </div>
-            </section>
+                    </section>
 
-            {/* Projects Section */}
-            <section className="bd-projects-section">
-                <div className="bd-container">
-                    <div className="bd-section-header">
-                        <h2 className="bd-section-title">Our Branding Projects</h2>
-                        <p className="bd-section-subtitle">
-                            Discover how we've helped businesses transform through strategic branding and design
-                        </p>
-                    </div>
-                    
-                    <div className="bd-projects-grid">
-                        {projects.map((project) => (
-                            <div key={project.id} className="bd-project-card">
-                                <div className="bd-project-image">
-                                    <img src={project.image} alt={project.title} />
-                                    <span className="bd-project-category">{project.category}</span>
+                    {/* Brand DNA Section - Added after About Section */}
+                    <section className="bd-branddna-section">
+                        <div className="bd-branddna-container">
+                            {/* LEFT CONTENT */}
+                            <div className="bd-branddna-left">
+                                <h2>Brand DNA</h2>
+                                <h3 className="bd-branddna-subtitle">
+                                    The Foundation of Every<br /> Strong Brand
+                                </h3>
+                                <p>
+                                    Great brands are not built by design alone—they are shaped by
+                                    purpose, personality, and clear communication. Our Brand DNA
+                                    framework defines the strategic elements that guide how your
+                                    brand thinks, speaks, and visually connects with your audience.
+                                </p>
+                            </div>
+
+                            {/* RIGHT GRAPHIC */}
+                            <div className="bd-branddna-right">
+                                {/* circles */}
+                                <div className="bd-dna-circle bd-circle-purpose">
+                                    <FaCompass className="bd-icon" />
+                                    <h3>Purpose</h3>
+                                    <p className="bd-circle-desc">
+                                        Defines why the brand exists and the impact it creates.
+                                    </p>
                                 </div>
-                                <div className="bd-project-content">
-                                    <h3 className="bd-project-title">{project.title}</h3>
-                                    <p className="bd-project-description">{project.description}</p>
-                                    <div className="bd-project-stats">
-                                        <div className="bd-project-stat">
-                                            <span className="bd-stat-number">{project.stats.duration}</span>
-                                            <span className="bd-stat-label">Duration</span>
-                                        </div>
-                                        <div className="bd-project-stat">
-                                            <span className="bd-stat-number">{project.stats.satisfaction}</span>
-                                            <span className="bd-stat-label">Client Satisfaction</span>
-                                        </div>
-                                    </div>
+
+                                <div className="bd-dna-circle bd-circle-voice">
+                                    <FaComments className="bd-icon" />
+                                    <h3>Voice</h3>
+                                    <p className="bd-circle-desc">
+                                        The tone and language used in brand communication.
+                                    </p>
+                                </div>
+
+                                <div className="bd-dna-circle bd-circle-values">
+                                    <FaUserCircle className="bd-icon" />
+                                    <h3>Values</h3>
+                                    <p className="bd-circle-desc">
+                                        Principles that guide brand decisions and culture.
+                                    </p>
+                                </div>
+
+                                <div className="bd-dna-circle bd-circle-personality">
+                                    <FaGem className="bd-icon" />
+                                    <h3>Personality</h3>
+                                    <p className="bd-circle-desc">
+                                        The emotional character that shapes brand perception.
+                                    </p>
+                                </div>
+
+                                <div className="bd-dna-circle bd-circle-visual">
+                                    <FaPalette className="bd-icon" />
+                                    <h3>Visual Style</h3>
+                                    <p className="bd-circle-desc">
+                                        Design system including colors, typography and imagery.
+                                    </p>
                                 </div>
                             </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+                        </div>
+                    </section>
 
-            {/* Feedback Section */}
-            <section className="bd-feedback-section">
-                <div className="bd-container bd-feedback-container-wide">
-                    <div className="bd-section-header">
-                        <h2 className="bd-section-title">Client Feedback</h2>
-                        <p className="bd-section-subtitle">
-                            Hear what our clients say about their branding journey with us
-                        </p>
-                    </div>
-                    
-                    <div className="bd-feedback-wrapper-wide">
-                        {/* Left Button */}
-                        <button 
-                            className="bd-feedback-nav-btn bd-feedback-prev" 
-                            onClick={handlePrevSlide}
-                            aria-label="Previous feedback"
-                        >
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                                <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                            </svg>
-                        </button>
-                        
-                        {/* Feedback Slider */}
-                        <div className="bd-feedback-slider-wide">
-                            <div className="bd-feedback-track" ref={feedbackTrackRef}>
-                                {feedbacks.map((feedback) => (
-                                    <div key={feedback.id} className="bd-feedback-slide">
-                                        <div className="bd-feedback-card-wide">
-                                            <div className="bd-feedback-content">
-                                                <div className="bd-feedback-quote">"</div>
-                                                <p className="bd-feedback-text-wide">{feedback.text}</p>
-                                                
-                                                {/* Author Info */}
-                                                <div className="bd-feedback-author-center">
-                                                    <div className="bd-author-avatar-center">
-                                                        <div className="bd-avatar-initial">
-                                                            {feedback.initial}
-                                                        </div>
-                                                    </div>
-                                                    <div className="bd-author-info-center">
-                                                        <h4>{feedback.author}</h4>
-                                                        <p>{feedback.role}</p>
-                                                    </div>
+                    {/* How It Works Section */}
+                    <section className="bd-howworks">
+                        <div className="bd-howworks-container">
+                            {/* LEFT SIDE */}
+                            <div className="bd-left-side">
+                                <div className="bd-badge">
+                                    <span className="bd-dot"></span>
+                                    Brand Strategy Process
+                                </div>
+                                <p className="bd-intro-text">
+                                    We create strong brand identities through strategy, design, and storytelling that connect with your audience and make your business memorable.
+                                </p>
+                                <h2 className="bd-main-title">
+                                    How It Works <br /> Step by Step
+                                </h2>
+                                <div className="bd-arrow">→</div>
+                            </div>
+
+                            {/* RIGHT SIDE */}
+                            <div className="bd-right-side">
+                                <h2 className="bd-section-title">What Is Branding</h2>
+                                <div className="bd-steps-grid">
+                                    {howItWorksSteps.map((step, index) => (
+                                        <div key={index} className="bd-step-card">
+                                            <span className="bd-card-dot"></span>
+                                            <h4>{step.title}</h4>
+                                            <h3>{step.heading}</h3>
+                                            <p>{step.text}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Circular Stats Section - Added after How It Works */}
+                    <section className="bd-circular-stats">
+                        <div className="bd-branding-stats-layout">
+                            {/* LEFT CONTENT */}
+                            <div className="bd-stats-content">
+                                <h2>Our Branding Impact in Numbers</h2>
+                                <p>
+                                    We measure our success through the brands we build and the
+                                    results we deliver. These statistics highlight the growth,
+                                    creativity, and trust we have developed with businesses
+                                    across different industries.
+                                </p>
+                            </div>
+
+                            {/* CIRCLE STATS */}
+                            <div className="bd-stats-wrapper">
+                                <svg className="bd-connector" viewBox="0 0 400 300">
+                                    <path
+                                        d="M200 40 C120 80 120 200 200 230"
+                                        stroke="rgba(255,255,255,0.15)"
+                                        strokeWidth="2"
+                                        fill="none"
+                                    />
+                                    <path
+                                        d="M200 40 C280 80 280 200 200 230"
+                                        stroke="rgba(255,255,255,0.15)"
+                                        strokeWidth="2"
+                                        fill="none"
+                                    />
+                                </svg>
+
+                                <div className="bd-circle bd-circle-top">
+                                    <h2>120+</h2>
+                                    <p>Brands Built</p>
+                                </div>
+
+                                <div className="bd-circle bd-circle-left">
+                                    <h2>300+</h2>
+                                    <p>Projects Delivered</p>
+                                </div>
+
+                                <div className="bd-circle bd-circle-right">
+                                    <h2>95%</h2>
+                                    <p>Client Satisfaction</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* BOTTOM STATS */}
+                        <div className="bd-bottom-stats">
+                            <div className="bd-stat">
+                                <h3>10+</h3>
+                                <p>YEARS EXPERIENCE</p>
+                            </div>
+
+                            <div className="bd-stat">
+                                <h3>40+</h3>
+                                <p>INDUSTRIES SERVED</p>
+                            </div>
+
+                            <div className="bd-stat">
+                                <h3>50+</h3>
+                                <p>GLOBAL CLIENTS</p>
+                            </div>
+                            <div className="bd-stat">
+                                <h3>200+</h3>
+                                <p>Brand Campaigns Created</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Projects Section - UPDATED to match HeroSection design */}
+                    <section className="bd-projects-section">
+                        {/* FULL BACKGROUND */}
+                        <img src={projectsBg} className="bd-projects-bg-full" alt="hi" />
+
+                        <div className="bd-projects-logos bd-left-logos">
+                            <div className="bd-project-logo-card l1"><img src={logo1} className="bd-project-logo" alt="brand logo" /></div>
+                            <div className="bd-project-logo-card l2"><img src={logo2} className="bd-project-logo" alt="brand logo" /></div>
+                            <div className="bd-project-logo-card l3"><img src={logo3} className="bd-project-logo" alt="brand logo" /></div>
+                            <div className="bd-project-logo-card l4"><img src={logo4} className="bd-project-logo" alt="brand logo" /></div>
+                            <div className="bd-project-logo-card l5"><img src={logo9} className="bd-project-logo" alt="brand logo" /></div>
+                            <div className="bd-project-logo-card l6"><img src={logo10} className="bd-project-logo" alt="brand logo" /></div>
+                        </div>
+
+                        <div className="bd-projects-logos bd-right-logos">
+                            <div className="bd-project-logo-card r1"><img src={logo5} className="bd-project-logo" alt="brand logo" /></div>
+                            <div className="bd-project-logo-card r2"><img src={logo6} className="bd-project-logo" alt="brand logo" /></div>
+                            <div className="bd-project-logo-card r3"><img src={logo7} className="bd-project-logo" alt="brand logo" /></div>
+                            <div className="bd-project-logo-card r4"><img src={logo8} className="bd-project-logo" alt="brand logo" /></div>
+                            <div className="bd-project-logo-card r5"><img src={logo11} className="bd-project-logo" alt="brand logo" /></div>
+                            <div className="bd-project-logo-card r6"><img src={logo12} className="bd-project-logo" alt="brand logo" /></div>
+                        </div>
+
+                        {/* CENTER CONTENT */}
+                        <div className="bd-projects-content">
+                            <h1>
+                                Trusted by <br />
+                                Great Brands
+                            </h1>
+
+                            <p>
+                                We collaborate with forward-thinking brands to
+                                create meaningful digital experiences. Our clients
+                                trust us to deliver impactful design and scalable
+                                solutions.
+                            </p>
+
+                            <div className="bd-projects-stats">
+                                <div>
+                                    <h2>20+</h2>
+                                    <span>Promoters</span>
+                                </div>
+                                <div>
+                                    <h2>100+</h2>
+                                    <span>contributions</span>
+                                </div>
+                                <div>
+                                    <h2>150+</h2>
+                                    <span>organizations</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Feedback Section - Updated to match carousel style */}
+                    <section className="bd-feedback-section">
+                        <div className="bd-container">
+                            <div className="bd-feedback-header">
+                                <h2 className="bd-feedback-title">
+                                    Testimonials that <span>Speak to Our Results</span>
+                                </h2>
+                                <p className="bd-feedback-description">
+                                    Here are some of the testimonials from our clients who have benefited from our branding and design services.
+                                </p>
+                            </div>
+
+                            <div className="bd-feedback-carousel">
+                                {feedbacks.map((feedback, index) => {
+                                    const position = getPosition(index);
+
+                                    return (
+                                        <div
+                                            key={feedback.id}
+                                            className={`bd-feedback-card ${position}`}
+                                        >
+                                            <div className="bd-feedback-rating">{feedback.rating}</div>
+                                            <div className="bd-feedback-quote-icon">❝</div>
+                                            <p className="bd-feedback-text">{feedback.text}</p>
+
+                                            <div className="bd-feedback-author">
+                                                <div className="bd-author-avatar">
+                                                    <div className="bd-avatar-initial">{feedback.initial}</div>
+                                                </div>
+                                                <div>
+                                                    <div className="bd-author-name">{feedback.author}</div>
+                                                    <div className="bd-author-role">{feedback.role}</div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                ))}
+                                    );
+                                })}
+                            </div>
+
+                            <div className="bd-feedback-controls">
+                                <button onClick={handlePrevSlide} aria-label="Previous feedback">‹</button>
+                                <button onClick={handleNextSlide} aria-label="Next feedback">›</button>
                             </div>
                         </div>
-                        
-                        {/* Right Button */}
-                        <button 
-                            className="bd-feedback-nav-btn bd-feedback-next" 
-                            onClick={handleNextSlide}
-                            aria-label="Next feedback"
-                        >
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                                <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                            </svg>
-                        </button>
-                    </div>
-                    
-                    {/* Dots */}
-                    <div className="bd-slider-dots">
-                        {feedbacks.map((_, index) => (
-                            <button
-                                key={index}
-                                className={`bd-slider-dot ${index === currentSlide ? 'active' : ''}`}
-                                onClick={() => handleDotClick(index)}
-                                aria-label={`Go to slide ${index + 1}`}
-                            />
-                        ))}
-                    </div>
+                    </section>
+                    <MainPageSubFooter />
+                    <BackToTop />
                 </div>
-            </section>
-            <MainPageSubFooter/>
-            <BackToTop/>
-        </div>
-                </div>
+            </div>
         </>
     );
 };

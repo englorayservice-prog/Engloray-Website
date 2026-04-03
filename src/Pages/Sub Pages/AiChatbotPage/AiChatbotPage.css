@@ -1,0 +1,503 @@
+/* ─── AI CHATBOT PAGE THEME OVERRIDES ─── */
+.ai-glow-1 {
+    width: 500px;
+    height: 500px;
+    background: #a855f7;
+    top: -150px;
+    left: 10%;
+    animation: float 10s infinite ease-in-out alternate;
+}
+
+.ai-glow-2 {
+    width: 600px;
+    height: 600px;
+    background: #7c3aed;
+    bottom: -200px;
+    right: 5%;
+    animation: float 10s infinite ease-in-out alternate;
+    animation-delay: -5s;
+}
+
+.ai-badge-color {
+    background: rgba(168, 85, 247, 0.15);
+    border-color: rgba(168, 85, 247, 0.3);
+    color: #c084fc;
+}
+
+.ai-accent {
+    background: linear-gradient(to right, #c084fc, #818cf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.ai-btn-primary {
+    background: linear-gradient(135deg, #a855f7, #7c3aed);
+    color: white;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(168, 85, 247, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.ai-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(168, 85, 247, 0.5);
+}
+
+.ai-bar {
+    background: linear-gradient(to top, #a855f7, #7c3aed) !important;
+}
+
+.ai-item svg {
+    color: #a855f7 !important;
+}
+
+.ai-main-circle {
+    background: radial-gradient(circle at 30% 30%, #3b0764, #581c87) !important;
+}
+
+.ai-impact-badge {
+    color: #c084fc !important;
+    border-color: rgba(192, 132, 252, 0.5) !important;
+}
+
+.ai-span {
+    background: linear-gradient(135deg, #c084fc, #818cf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.ai-section-badge {
+    background: rgba(168, 85, 247, 0.1);
+    color: #a855f7;
+}
+
+.ai-span-h2 {
+    color: #a855f7 !important;
+}
+
+.ai-insights-section {
+    background: linear-gradient(160deg, #1e0533 0%, #2e1065 60%, #1e0533 100%) !important;
+}
+
+.ai-badge-dark {
+    background: rgba(168, 85, 247, 0.2);
+    color: #d8b4fe;
+    border-color: rgba(216, 180, 254, 0.3);
+}
+
+.ai-gradient-span {
+    background: linear-gradient(135deg, #c084fc, #818cf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.ai-insight-card:hover {
+    border-color: rgba(192, 132, 252, 0.3);
+    box-shadow: 0 20px 50px rgba(168, 85, 247, 0.15);
+}
+
+.ai-insight-card:hover .cic-icon {
+    background: #a855f7;
+    color: white;
+}
+
+.ai-cic-icon {
+    background: rgba(168, 85, 247, 0.2);
+    color: #d8b4fe;
+}
+
+.ai-cic-tag {
+    background: rgba(216, 180, 254, 0.15);
+    color: #d8b4fe;
+}
+
+.ai-cic-line {
+    background: linear-gradient(90deg, #a855f7, transparent);
+}
+
+.ai-cta-strip {
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.25), rgba(124, 58, 237, 0.2));
+    border-color: rgba(192, 132, 252, 0.2);
+}
+
+.ai-btn-cta-primary {
+    background: linear-gradient(135deg, #a855f7, #7c3aed);
+    color: white;
+    padding: 13px 26px;
+    border-radius: 12px;
+    font-size: 0.97rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ai-btn-cta-primary:hover {
+    transform: translateY(-2px);
+}
+
+.ai-btn-outline {
+    color: #d8b4fe;
+    border-color: rgba(216, 180, 254, 0.4);
+}
+
+.ai-btn-outline:hover {
+    background: rgba(216, 180, 254, 0.1);
+    border-color: #d8b4fe;
+}
+
+/* Use Case Table Theme Overrides */
+.ai-theme .ucm-cell {
+    color: #a855f7;
+}
+
+.ai-theme .ucm-header .ucm-cell {
+    background: #a855f7;
+    color: white;
+    box-shadow: 0 4px 15px rgba(168, 85, 247, 0.2);
+}
+
+/* AI Chatbot Arc Card Overrides */
+.ai-arc-card.active-card {
+    filter: drop-shadow(0 20px 50px rgba(168, 85, 247, 0.6)) brightness(1) !important;
+}
+
+.ai-arc-card.active-card::before {
+    background: rgba(192, 132, 252, 0.85);
+}
+
+.ai-arc-card:hover .cic-image-wrapper img {
+    transform: scale(1.08);
+    transition: transform 0.5s ease;
+}
+
+.ai-insights-section .crm-insights-grid::before {
+    background: radial-gradient(ellipse at center, rgba(168, 85, 247, 0.35), transparent 70%);
+}
+
+/* ── AI SVG Card Illustrations ── */
+.ai-svg-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+}
+
+.ai-card-svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+/* Neural network node pulse */
+@keyframes aiNodePulse {
+
+    0%,
+    100% {
+        r: 10;
+        opacity: 1
+    }
+
+    50% {
+        r: 13;
+        opacity: 0.6
+    }
+}
+
+.ai-node {
+    animation: aiNodePulse 2s ease-in-out infinite;
+}
+
+.ai-node-1 {
+    animation-delay: 0.3s;
+}
+
+.ai-node-2 {
+    animation-delay: 0.6s;
+}
+
+.ai-node-3 {
+    animation-delay: 0.9s;
+}
+
+.ai-node-4 {
+    animation-delay: 0.2s;
+}
+
+.ai-node-5 {
+    animation-delay: 0.5s;
+}
+
+.ai-node-6 {
+    animation-delay: 0.8s;
+}
+
+/* Connection line shimmer */
+@keyframes connFlash {
+
+    0%,
+    100% {
+        opacity: 0.2
+    }
+
+    50% {
+        opacity: 0.8
+    }
+}
+
+.ai-conn {
+    animation: connFlash 3s ease-in-out infinite;
+}
+
+/* Pulse rings expand */
+@keyframes aiPulseRing {
+    0% {
+        r: 16;
+        opacity: 0.6
+    }
+
+    100% {
+        r: 30;
+        opacity: 0
+    }
+}
+
+@keyframes aiPulseRing2 {
+    0% {
+        r: 22;
+        opacity: 0.3
+    }
+
+    100% {
+        r: 40;
+        opacity: 0
+    }
+}
+
+.ai-pulse {
+    animation: aiPulseRing 2s ease-out infinite;
+}
+
+.ai-pulse2 {
+    animation: aiPulseRing2 2s ease-out infinite 0.5s;
+}
+
+/* Bot eye blink */
+@keyframes aiBlink {
+
+    0%,
+    90%,
+    100% {
+        ry: 5
+    }
+
+    95% {
+        ry: 1
+    }
+}
+
+.ai-blink {
+    animation: aiBlink 4s ease-in-out infinite;
+}
+
+/* Arrow dash animate */
+@keyframes dashMove {
+    to {
+        stroke-dashoffset: -18;
+    }
+}
+
+.ai-arrow-dash {
+    animation: dashMove 1s linear infinite;
+}
+
+/* Alert pulse */
+@keyframes alertPop {
+
+    0%,
+    100% {
+        r: 8;
+        opacity: 0.8
+    }
+
+    50% {
+        r: 11;
+        opacity: 1
+    }
+}
+
+.ai-alert-pulse {
+    animation: alertPop 1.2s ease-in-out infinite;
+}
+
+/* Bar rise */
+@keyframes barRise {
+    from {
+        height: 0;
+        y: 120
+    }
+}
+
+.ai-bar-rise {
+    animation: barRise 1s ease-out forwards;
+}
+
+.ai-bar-rise-0 {
+    animation-delay: 0.1s;
+}
+
+.ai-bar-rise-1 {
+    animation-delay: 0.2s;
+}
+
+.ai-bar-rise-2 {
+    animation-delay: 0.3s;
+}
+
+.ai-bar-rise-3 {
+    animation-delay: 0.4s;
+}
+
+.ai-bar-rise-4 {
+    animation-delay: 0.5s;
+}
+
+/* Trend line draw */
+@keyframes lineDraw {
+    from {
+        stroke-dashoffset: 200
+    }
+
+    to {
+        stroke-dashoffset: 0
+    }
+}
+
+.ai-trend-line {
+    animation: lineDraw 1.5s ease-out forwards;
+}
+
+/* Dot pop */
+@keyframes dotPop {
+
+    0%,
+    100% {
+        r: 4
+    }
+
+    50% {
+        r: 6
+    }
+}
+
+.ai-dot-pop {
+    animation: dotPop 2s ease-in-out infinite;
+}
+
+/* Shield glow */
+@keyframes shieldGlow {
+
+    0%,
+    100% {
+        filter: drop-shadow(0 0 4px rgba(168, 85, 247, 0.3))
+    }
+
+    50% {
+        filter: drop-shadow(0 0 14px rgba(168, 85, 247, 0.8))
+    }
+}
+
+.ai-shield-glow {
+    animation: shieldGlow 2.5s ease-in-out infinite;
+}
+
+/* Hub pulse */
+@keyframes hubPulse {
+
+    0%,
+    100% {
+        r: 20;
+        opacity: 1
+    }
+
+    50% {
+        r: 24;
+        opacity: 0.7
+    }
+}
+
+.ai-hub-pulse {
+    animation: hubPulse 2s ease-in-out infinite;
+}
+
+/* Spoke dash animate */
+@keyframes spokeDash {
+    to {
+        stroke-dashoffset: -16
+    }
+}
+
+.ai-spoke {
+    animation: spokeDash 1.5s linear infinite;
+}
+
+.ai-spoke-1 {
+    animation-delay: 0.3s;
+}
+
+.ai-spoke-2 {
+    animation-delay: 0.6s;
+}
+
+.ai-spoke-3 {
+    animation-delay: 0.9s;
+}
+
+.ai-spoke-4 {
+    animation-delay: 1.2s;
+}
+
+/* Channel node pop */
+@keyframes chanPop {
+
+    0%,
+    100% {
+        r: 16
+    }
+
+    50% {
+        r: 19
+    }
+}
+
+.ai-chan-pop {
+    animation: chanPop 2.5s ease-in-out infinite;
+}
+
+.ai-chan-pop-0 {
+    animation-delay: 0.2s;
+}
+
+.ai-chan-pop-1 {
+    animation-delay: 0.5s;
+}
+
+.ai-chan-pop-2 {
+    animation-delay: 0.8s;
+}
+
+.ai-chan-pop-3 {
+    animation-delay: 1.1s;
+}
+
+.ai-chan-pop-4 {
+    animation-delay: 1.4s;
+}

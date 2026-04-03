@@ -1,0 +1,851 @@
+/* FaqRaymart.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+.faq-raymart-container {
+    font-family: 'Inter', sans-serif;
+    background-color: #f6f6f6;
+    min-height: 100vh;
+    padding: 120px 5% 60px;
+    color: #1a1a1a;
+}
+
+/* ═════════ OUR SERVICES SECTION (GAME-STYLE CARDS) ═════════ */
+.fr-services-section {
+    max-width: 1400px;
+    margin: 0 auto 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.fr-srv-main-title {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #111;
+    text-transform: lowercase;
+    letter-spacing: -0.5px;
+    margin-bottom: 15px;
+}
+
+.fr-srv-banner {
+    background-color: #d1d1d1;
+    padding: 40px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.fr-srv-arrow {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: 0.3s;
+    opacity: 0.6;
+}
+
+.fr-srv-arrow:hover {
+    opacity: 1;
+}
+
+.fr-srv-grid {
+    display: flex;
+    gap: 15px;
+    flex: 1;
+    justify-content: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.fr-srv-card {
+    background: #0d1117;
+    border-radius: 4px;
+    overflow: hidden;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.fr-srv-card:hover {
+    transform: translateY(-5px);
+}
+
+.fr-srv-img-box {
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+}
+
+.fr-srv-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.fr-srv-card:hover .fr-srv-img-box img {
+    transform: scale(1.05);
+}
+
+.fr-srv-content {
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.fr-srv-title {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.fr-srv-footer {
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+}
+
+.fr-srv-tags {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.65rem;
+    color: #999;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-right: auto;
+}
+
+.fr-srv-price {
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-right: 15px;
+}
+
+.fr-srv-heart-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: none;
+    border-radius: 4px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #aaa;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.fr-srv-heart-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+}
+
+.fr-srv-bottom-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    margin-top: 10px;
+}
+
+.fr-srv-similar,
+.fr-srv-see-more {
+    font-size: 0.85rem;
+    color: #aaa;
+    font-weight: 600;
+}
+
+.fr-srv-similar {
+    opacity: 0.4;
+}
+
+.fr-srv-see-more {
+    color: #222;
+    cursor: pointer;
+}
+
+.fr-srv-dots {
+    display: flex;
+    gap: 8px;
+}
+
+.fr-srv-dot {
+    width: 25px;
+    height: 4px;
+    background: #ccd1d4;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.fr-srv-dot.active {
+    background: #3a3b53;
+}
+
+/* ═════════ TESTIMONIALS SECTION ═════════ */
+.fr-testimonials-section {
+    max-width: 1200px;
+    margin: 60px auto 40px;
+    padding: 0 20px;
+}
+
+.fr-testimonials-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 50px;
+}
+
+.fr-test-heading {
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #1a1a1a;
+    letter-spacing: -1.5px;
+    text-align: left;
+}
+
+.fr-test-desc {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #666;
+    max-width: 400px;
+    text-align: left;
+}
+
+.fr-testimonials-grid {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 80px;
+    align-items: center;
+    /* Center the differing heights */
+}
+
+.fr-test-card {
+    position: relative;
+    /* Ensure overflow is visible so border radii gradients match up */
+    overflow: visible;
+}
+
+/* Outer wrapper */
+.fr-grey-card-wrapper {
+    height: 480px;
+    flex: 0.85;
+    position: relative;
+    min-width: 300px;
+}
+
+/* Inner card: clip-path with exact shape:
+   r=40 large convex outer corners (top-right, bottom-left)
+   r=25 small convex "O" at 4 notch opening corners
+   r=40 concave "I" at 2 inner notch corners */
+.fr-card-grey {
+    position: absolute;
+    inset: 0;
+    border-radius: 0;
+    overflow: visible;
+    clip-path: path('M 145,0 L 340,0 A 40,40 0 0,1 380,40 L 380,383 A 25,25 0 0,1 355,408 L 287,408 A 40,40 0 0,0 247,448 L 247,455 A 25,25 0 0,1 222,480 L 40,480 A 40,40 0 0,1 0,440 L 0,97 A 25,25 0 0,1 25,72 L 80,72 A 40,40 0 0,0 120,32 L 120,25 A 25,25 0 0,1 145,0 Z');
+}
+
+.fr-card-green {
+    height: 400px;
+    flex: 1.4;
+    /* Increase width relatively */
+}
+
+/* --- EXACT SHAPE LOGIC MULTI-BLOCK METHOD --- */
+.fr-shape-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.fr-shape-rect {
+    position: absolute;
+    border-radius: 40px;
+}
+
+.fr-shape-fillet {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+}
+
+.fr-card-content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* ── GREY CARD: single image approach ─────────────────────────── */
+
+/* Full-bleed image – card's overflow:hidden + border-radius clips the 4 outer corners */
+.fr-grey-full-img {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Gradient darkens from centre-bottom so text stays legible */
+.fr-grey-full-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.10) 0%,
+            rgba(0, 0, 0, 0.50) 55%,
+            rgba(0, 0, 0, 0.88) 100%);
+    z-index: 2;
+}
+
+/* Notch divs not needed — clip-path handles shape */
+.fr-grey-notch {
+    display: none;
+}
+
+/* Text overlay on top of everything */
+.fr-grey-text-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 36px 32px;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Hide old unused classes */
+.fr-grey-img-rect,
+.fr-img-rect-a,
+.fr-img-rect-b,
+.fr-grey-overlay-rect,
+.fr-img-fillet,
+.fr-grey-img-clip,
+.fr-grey-bg-img,
+.fr-grey-overlay,
+.fr-card-grey .fr-shape-rect,
+.fr-card-grey .fr-shape-fillet {
+    display: none;
+}
+
+.fr-grey-card-title {
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-left: -20px;
+    margin-top: -50px;
+    line-height: 1.2;
+    text-align: left;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.fr-grey-card-desc {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.8;
+    margin: 0 0 20px;
+    margin-left: -20px;
+    text-align: left;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.fr-grey-card-author {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin-left: -20px;
+    padding-top: 14px;
+    text-align: left;
+}
+
+.fr-grey-author-name {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-top: -110px;
+    text-align: left;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.fr-grey-author-title {
+    font-size: 0.78rem;
+    text-align: left;
+    color: rgba(255, 255, 255, 0.7);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Keep old inner-corner fillets for shape bg (behind image) */
+.fr-grey-rect-a {
+    left: 0;
+    width: 65%;
+    top: 15%;
+    bottom: 0;
+    background: #1a1a2e;
+}
+
+.fr-grey-rect-b {
+    right: 0;
+    width: 65%;
+    top: 0;
+    bottom: 15%;
+    background: #1a1a2e;
+}
+
+.fr-grey-fillet-tl {
+    left: calc(35% - 40px);
+    top: calc(15% - 40px);
+    background: radial-gradient(circle at top left, transparent 40px, #1a1a2e 40.5px);
+}
+
+.fr-grey-fillet-br {
+    left: 65%;
+    top: 85%;
+    background: radial-gradient(circle at bottom right, transparent 40px, #1a1a2e 40.5px);
+}
+
+/* --- GREEN CARD --- */
+/* Top-Right Notch, Bottom-Left Notch */
+.fr-green-rect-a {
+    left: 0;
+    width: 60%;
+    top: 0;
+    bottom: 15%;
+    background: #2ed573;
+}
+
+.fr-green-rect-b {
+    right: 0;
+    width: 60%;
+    top: 15%;
+    bottom: 0;
+    background: #2ed573;
+}
+
+/* Inner corner at top-right notch */
+.fr-green-fillet-tr {
+    left: 60%;
+    top: calc(15% - 40px);
+    background: radial-gradient(circle at top right, transparent 40px, #2ed573 40.5px);
+}
+
+/* Inner corner at bottom-left notch */
+.fr-green-fillet-bl {
+    left: calc(40% - 40px);
+    top: 85%;
+    background: radial-gradient(circle at bottom left, transparent 40px, #2ed573 40.5px);
+}
+
+/* Content Layout (Shared) */
+.fr-card-footer {
+    margin-top: auto;
+    padding: 40px 50px;
+    text-align: left;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.fr-client-name {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    margin-top: -40px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.fr-client-title {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+    text-align: center;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.fr-avatar-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px;
+    flex: 1;
+}
+
+.fr-client-avatar {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.fr-test-badge-wrapper {
+    padding: 40px 0 0 45px;
+    text-align: left;
+}
+
+.fr-test-badge {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    padding: 10px 22px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.fr-test-content {
+    padding: 40px 60px 0 45px;
+    text-align: left;
+}
+
+.fr-test-quote {
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.35;
+    color: #000;
+}
+
+/* Animations for automatic slider */
+.fr-testimonial-fade {
+    transition: opacity 0.5s ease-in-out;
+}
+
+.fr-testimonial-fade.fading-out {
+    opacity: 0;
+}
+
+.fr-testimonial-fade.fading-in {
+    opacity: 1;
+}
+
+/* Test Footer */
+.fr-test-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.fr-test-pagination {
+    background: white;
+    border: 1px solid #1a1a1a;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.fr-see-more-btn {
+    background: #111;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 40px;
+    border: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background 0.3s;
+}
+
+.fr-see-more-btn:hover {
+    background: #333;
+}
+
+/* ═════════ FAQ SECTION ═════════ */
+.fr-faq-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 5rem;
+    max-width: 1200px;
+    margin: 40px auto;
+    align-items: flex-start;
+}
+
+.fr-faq-left {
+    flex: 1;
+    max-width: 400px;
+    text-align: left;
+}
+
+.fr-heading {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+}
+
+.fr-desc {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #555;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.fr-buttons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.fr-btn-outline {
+    padding: 12px 24px;
+    border: 1px solid #1a1a1a;
+    background: transparent;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.fr-btn-outline:hover {
+    background: #1a1a1a;
+    color: #fff;
+}
+
+.fr-btn-link {
+    background: transparent;
+    border: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.fr-faq-right {
+    flex: 1.4;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.fr-accordion-item {
+    border-top: 1px solid #d0d0d0;
+    padding: 20px 0;
+    cursor: pointer;
+}
+
+.fr-accordion-item:last-child {
+    border-bottom: 1px solid #d0d0d0;
+}
+
+.fr-accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fr-accordion-header h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin: 0;
+    max-width: 85%;
+}
+
+.fr-icon {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #555;
+    transition: transform 0.3s;
+}
+
+.fr-accordion-body {
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+}
+
+.fr-accordion-content {
+    padding-top: 15px;
+    padding-bottom: 5px;
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* ═════════ READY BANNER & FOOTER ═════════ */
+.fr-ready-section {
+    max-width: 1200px;
+    margin: 80px auto 0;
+}
+
+.fr-banner-card {
+    background: linear-gradient(110deg, #111 0%, #000 100%);
+    border-radius: 30px;
+    padding: 50px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    margin-bottom: 80px;
+}
+
+.fr-banner-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.fr-banner-btn {
+    background: white;
+    color: black;
+    padding: 14px 28px;
+    border-radius: 40px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.fr-banner-btn:hover {
+    background: #f0f0f0;
+    color: #000;
+}
+
+.fr-footer-area {
+    display: flex;
+    gap: 3rem;
+    padding-bottom: 40px;
+}
+
+.fr-col-brand {
+    flex: 2;
+}
+
+.fr-footer-logo img {
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+.fr-footer-desc {
+    font-size: 0.85rem;
+    color: #777;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    max-width: 200px;
+    text-align: left;
+    white-space: normal !important;
+    word-break: break-word;
+}
+
+.fr-socials {
+    display: flex;
+    gap: 15px;
+}
+
+.fr-social-icon {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    font-size: 0.9rem;
+    color: #333;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.fr-social-icon:hover {
+    transform: translateY(-3px);
+}
+
+.fr-footer-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.fr-footer-col h4 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #222;
+    text-align: left;
+    width: 100%;
+}
+
+.fr-footer-col a {
+    text-decoration: none;
+    color: #666;
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+    transition: color 0.2s;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.fr-footer-col a:hover {
+    color: #111;
+}
+
+.fr-footer-col p {
+    color: #666;
+    font-size: 0.85rem;
+    margin: 0 0 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.fr-contact-icon-fixed {
+    width: 16px !important;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+    .fr-faq-section {
+        flex-direction: column;
+    }
+
+    .fr-faq-left {
+        max-width: 100%;
+    }
+
+    .fr-testimonials-grid {
+        flex-direction: column;
+        gap: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .fr-banner-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+        padding: 40px 20px;
+    }
+
+    .fr-footer-area {
+        flex-direction: column;
+        gap: 2rem;
+    }
+}

@@ -1,30 +1,38 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { 
-  faBullseye, 
-  faChartLine, 
-  faBolt, 
-  faRocket,
-  faLightbulb,
-  faPalette,
-  faCode,
-  faMobileAlt,
-  faLaptop,
-  faGem,
-  faLeaf,
-  faHamburger,
-  faBuilding,
-  faFlask,
-  faStethoscope,
-  faGraduationCap,
-  faRing,
-  faBriefcase,
-  faCrown,
-  faTrophy,
-  faCalendarCheck,
-  faQuoteLeft,
-  faChevronDown,
-  faChevronUp
+import {
+    faBullseye,
+    faChartLine,
+    faBolt,
+    faRocket,
+    faLightbulb,
+    faPalette,
+    faCode,
+    faMobileAlt,
+    faLaptop,
+    faGem,
+    faLeaf,
+    faHamburger,
+    faBuilding,
+    faFlask,
+    faStethoscope,
+    faGraduationCap,
+    faRing,
+    faBriefcase,
+    faCrown,
+    faTrophy,
+    faUsers,
+    faCalendarCheck,
+    faStar,
+    faQuoteLeft,
+    faChevronDown,
+    faChevronUp,
+    faArrowRight,
+    faAward,
+    faMedal,
+    faCertificate,
+    faChevronLeft,
+    faChevronRight
 } from '@fortawesome/free-solid-svg-icons';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
@@ -46,12 +54,38 @@ import caseStudyLogoNine from '../../../assets/case study images/Application/aar
 import caseStudyLogoTen from '../../../assets/case study images/Application/orthopetic clinic.png';
 import './WorksCaseStudies.css';
 import MainPageSubFooter from '../MainPageSubFooter/MainPageSubFooter';
+// Import the hero background image
+import heroBackgroundImage from '../../../assets/download (29).jpeg'; // Update this path to your actual image
+
+// Logo data for marquee - 15 logos
+const logoImages = [
+    caseStudyLogoOne,
+    caseStudyLogoTwo,
+    caseStudyLogoThree,
+    caseStudyLogoFour,
+    caseStudyLogoFive,
+    caseStudyLogoSix,
+    caseStudyLogoSeven,
+    caseStudyLogoEight,
+    caseStudyLogoNine,
+    caseStudyLogoTen,
+    caseStudyLogoOne,
+    caseStudyLogoTwo,
+    caseStudyLogoThree,
+    caseStudyLogoFour,
+    caseStudyLogoFive,
+];
 
 const WorksCaseStudies = () => {
     const [activeCategory, setActiveCategory] = useState('all');
-    const [currentTestimonial, setCurrentTestimonial] = useState(0);
-    const [expandedCard, setExpandedCard] = useState(null);
-    const [showAllStudies, setShowAllStudies] = useState(false);
+    const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
+    const [currentStudyIndex, setCurrentStudyIndex] = useState(0);
+    const [isFading, setIsFading] = useState(false);
+    const [isDragging, setIsDragging] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [scrollLeft, setScrollLeft] = useState(0);
+    const marqueeRef = useRef(null);
+    const studiesContainerRef = useRef(null);
 
     // Case study data
     const caseStudies = [
@@ -65,20 +99,7 @@ const WorksCaseStudies = () => {
             results: "+180% Sales Increase",
             description: "Complete redesign of an e-commerce platform focusing on user experience and conversion optimization.",
             image: caseStudyLogoOne,
-            // icon: faGem,
             color: "#FF6B6B",
-            challenges: [
-                "No mobile-based digital system for customers ",
-                "Manual processes caused delays and confusion",
-                "Poor user experience in accessing services"
-            ],
-            solutions: [
-                "Designed and developed a user-friendly mobile application ",
-                "Structured features for easy service access and communication",
-                "Focused on smooth navigation and usability ",
-                "Clean and intuitive mobile UI",
-                "Smooth user flow for service interaction"
-            ]
         },
         {
             id: 2,
@@ -90,18 +111,7 @@ const WorksCaseStudies = () => {
             results: "+95% User Engagement",
             description: "Development of full branding with real-time features and logo integration.",
             image: caseStudyLogoThree,
-            icon: faHamburger,
             color: "#4ECDC4",
-            challenges: [
-                "Low engagement on promotional content",
-                "Brand visibility was limited"
-            ],
-            solutions: [
-                "Created bold and attractive food promotions",
-                "Focused on visual appeal and clear offers",
-                "Food-friendly creative design",
-                "High-engagement layouts"
-            ]
         },
         {
             id: 3,
@@ -113,20 +123,7 @@ const WorksCaseStudies = () => {
             results: "+300% Productivity",
             description: "Created the Productive designs for the natural food product company.",
             image: caseStudyLogoFive,
-            icon: faBriefcase,
             color: "#45B7D1",
-            challenges: [
-                "Product packaging lacked professional shelf presence",
-                "Labels were unclear and did not communicate quality",
-                "Inconsistent visual identity across product range"
-            ],
-            solutions: [
-                "Designed market-ready product packaging aligned with brand identity",
-                "Created clear and premium label layouts for better readability",
-                "Applied color psychology to improve shelf visibility and trust",
-                "Shelf-optimized label system",
-                "Consistent brand language across all products"
-            ]
         },
         {
             id: 4,
@@ -138,18 +135,7 @@ const WorksCaseStudies = () => {
             results: "+150% Lead Generation",
             description: "Comprehensive enterprise campaign across social media, search, and email channels.",
             image: caseStudyLogoTwo,
-            icon: faBuilding,
             color: "#FF6B6B",
-            challenges: [
-                "Website UX lacked clarity and structure",
-                "Users faced difficulty navigating service pages"
-            ],
-            solutions: [
-                "Redesigned UI with clear sections",
-                "Improved UX flow for service discovery ",
-                "Modern and minimal UI ",
-                "Easy navigation structure"
-            ]
         },
         {
             id: 5,
@@ -161,22 +147,7 @@ const WorksCaseStudies = () => {
             results: "+200% Operational Efficiency",
             description: "Enterprise branding platform for internal operations.",
             image: caseStudyLogoFour,
-            icon: faLeaf,
             color: "#4ECDC4",
-            challenges: [
-                "Product range lacked consistency ",
-                "Labels did not communicate herbal authenticity clearly"
-
-            ],
-            solutions: [
-                "Created a structured packaging system across products", 
-                "Designed herbal-focused labels with clear information flow", 
-                "Applied calming and trustworthy visual elements" ,
-                "Consistent herbal packaging system ",
-                "Clear ingredient and usage hierarchy" ,
-                "Nature-driven color palette "
-
-            ]
         },
         {
             id: 6,
@@ -187,21 +158,10 @@ const WorksCaseStudies = () => {
             duration: "1 Months",
             results: "+250% Insight Generation",
             description: "Creative Logos and Design for the product Company.",
-            image: caseStudyLogoSix,   
-            icon: faCrown,
+            image: caseStudyLogoSix,
             color: "#45B7D1",
-            challenges: [
-                "Packaging lacked clarity and market readiness"
-            ],
-            solutions: [
-                "Designed market-ready label system ",
-                "Improved visual balance and readability ",
-                "Clear product communication ",
-                "Strong shelf layout "
-
-            ]
         },
-         {
+        {
             id: 7,
             title: "Green Park School",
             subtitle: "Modernizing online school experience",
@@ -211,17 +171,7 @@ const WorksCaseStudies = () => {
             results: "+180% Digitalization",
             description: "Complete redesign of an erp platform focusing on user experience and conversion optimization.",
             image: caseStudyLogoSeven,
-            icon: faGraduationCap,
             color: "#3D0C41",
-            challenges: [
-                "Outdated School Websites",
-                "Difficult for parents to find information."
-            ],
-            solutions: [
-                "Designed a student- and parent-friendly website", 
-                "Structured academic and admission information clearly", 
-                "Improved readability and navigation"
-            ]
         },
         {
             id: 8,
@@ -233,17 +183,7 @@ const WorksCaseStudies = () => {
             results: "+95% User Engagement",
             description: "Development of full website with real-time features and logo integration.",
             image: caseStudyLogoEight,
-            icon: faRing,
             color: "#3D0C41",
-            challenges: [
-                "Needed an elegant online presence for bridal services", 
-                "Website had to emotionally connect with customers "
-            ],
-            solutions: [
-                "Designed a graceful and visually rich bridal website",
-                "Focused on aesthetics, portfolio display, and inquiry flow", 
-                "Ensured smooth mobile experience "
-            ]
         },
         {
             id: 9,
@@ -255,17 +195,7 @@ const WorksCaseStudies = () => {
             results: "+300% Productivity",
             description: "Created the Productive application for the medical testing lab .",
             image: caseStudyLogoNine,
-            icon: faFlask,
             color: "#8B0000",
-            challenges: [
-                "No mobile access for lab services and reports ",
-                "Patients needed easy digital access"
-            ],
-            solutions: [
-                "Developed a clean and secure lab mobile application", 
-                "Structured UX for reports, services, and contact",
-                "Simple mobile access."
-            ]
         },
         {
             id: 10,
@@ -277,87 +207,107 @@ const WorksCaseStudies = () => {
             results: "+150% Lead Patients",
             description: "Comprehensive enterprise App across social media, search, and email channels.",
             image: caseStudyLogoTen,
-            icon: faStethoscope,
             color: "#8B0000",
-            challenges: [
-                "Patients struggled with manual appointment booking", 
-                "High administrative workload", 
-                "Poor patient experience"
-            ],
-            solutions: [
-                "Developed a patient-friendly mobile application ",
-                "Integrated appointment booking and notifications", 
-                "Simplified patient interaction with the clinic"
-            ]
         },
     ];
 
-    // Testimonials data
+    // Testimonials data - 5 testimonials with person icons
     const testimonials = [
         {
             id: 1,
             text: "Very clean and professional website design. ENGLORAY gave us a strong digital presence that suits our business.",
-            author: "Pavizham jewellery",
+            name: "Pavizham jewellery",
             role: "Pavithra S",
-            company: "Jewellery shop",
-            icon: faGem
+            icon: "👨‍💼",
         },
         {
             id: 2,
-            text: "ENGLORAY delivered herbal packaging that feels trustworthy and premium. Customers now clearly understand our product quality.",
-            author: "Malar Herbs",
-            role: "Malarvizhi S",
-            company: "Herbal products",
-            icon: faLeaf
+            text: "ENGLORAY transformed our product packaging into a professional, market-ready design. The labels improved shelf visibility and customer confidence",
+            name: "Amico",
+            role: "Elango C",
+            icon: "👨‍💼",
         },
         {
             id: 3,
-            text: "ENGLORAY transformed our product packaging into a professional, market-ready design. The labels improved shelf visibility and customer confidence",
-            author: "Amico",
-            role: "Elango C",
-            company: "food Products",
-            icon: faBriefcase
-        }
+            text: "ENGLORAY delivered herbal packaging that feels trustworthy and premium. Customers now clearly understand our product quality.",
+            name: "Malar Herbs",
+            role: "Malarvizhi S",
+            icon: "👨‍💼",
+        },
+        {
+            id: 4,
+            text: "Exceptional service and creative solutions! ENGLORAY's team understood our vision perfectly and delivered beyond expectations.",
+            name: "Viaan Enterprises",
+            role: "Ramesh K",
+            icon: "👨‍💼",
+        },
+        {
+            id: 5,
+            text: "The branding strategy created by ENGLORAY completely transformed our market presence. Highly recommended for any business looking to grow!",
+            name: "Brandex",
+            role: "Priya M",
+            icon: "👨‍💼",
+        },
     ];
 
     // Filter case studies by category
-    const filteredStudies = activeCategory === 'all' 
-        ? caseStudies 
+    const filteredStudies = activeCategory === 'all'
+        ? caseStudies
         : caseStudies.filter(study => study.category === activeCategory);
 
-    // Determine which studies to display based on showAllStudies state
-    const displayedStudies = showAllStudies 
-        ? filteredStudies 
-        : filteredStudies.slice(0, 3);
-
-    // Reset showAllStudies when category changes
+    // Auto rotate case studies every 3 seconds with fade effect only for right side content
     useEffect(() => {
-        setShowAllStudies(false);
-        setExpandedCard(null);
-    }, [activeCategory]);
+        if (filteredStudies.length === 0) return;
+
+        const interval = setInterval(() => {
+            setIsFading(true);
+            setTimeout(() => {
+                setCurrentStudyIndex((prevIndex) =>
+                    prevIndex === filteredStudies.length - 1 ? 0 : prevIndex + 1
+                );
+                setIsFading(false);
+            }, 300);
+        }, 3000);
+
+        return () => clearInterval(interval);
+    }, [filteredStudies.length]);
 
     // Auto rotate testimonials
     useEffect(() => {
         const interval = setInterval(() => {
-            setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+            nextTestimonial();
         }, 5000);
         return () => clearInterval(interval);
-    }, [testimonials.length]);
+    }, [currentTestimonialIndex]);
 
-    const handleTestimonialClick = (index) => {
-        setCurrentTestimonial(index);
+    const nextTestimonial = () => {
+        setCurrentTestimonialIndex((prev) => (prev + 1) % testimonials.length);
     };
 
-    const toggleCardExpand = (id) => {
-        setExpandedCard(expandedCard === id ? null : id);
+    const prevTestimonial = () => {
+        setCurrentTestimonialIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
     };
 
-    const toggleShowAllStudies = () => {
-        setShowAllStudies(!showAllStudies);
+    const handleTestimonialDotClick = (index) => {
+        setCurrentTestimonialIndex(index);
+    };
+
+    // Get visible testimonials (3 cards at a time based on current index)
+    const getVisibleTestimonials = () => {
+        const visible = [];
+        const total = testimonials.length;
+
+        // Show 3 cards starting from current index
+        for (let i = 0; i < 3; i++) {
+            let index = (currentTestimonialIndex + i) % total;
+            visible.push({ ...testimonials[index], originalIndex: index });
+        }
+
+        return visible;
     };
 
     const getCategoryLabel = (category) => {
-        switch(category) {
+        switch (category) {
             case 'UiUx': return 'UIUX';
             case 'Branding': return 'Branding';
             case 'Products': return 'Products';
@@ -368,7 +318,7 @@ const WorksCaseStudies = () => {
     };
 
     const getCategoryColor = (category) => {
-        switch(category) {
+        switch (category) {
             case 'UiUx': return '#FF6B6B';
             case 'Branding': return '#4ECDC4';
             case 'Products': return '#45B7D1';
@@ -378,126 +328,408 @@ const WorksCaseStudies = () => {
         }
     };
 
+    // Drag to scroll functionality
+    const handleMouseDown = (e) => {
+        setIsDragging(true);
+        setStartX(e.pageX - marqueeRef.current.offsetLeft);
+        setScrollLeft(marqueeRef.current.scrollLeft);
+        marqueeRef.current.style.cursor = 'grabbing';
+    };
+
+    const handleMouseLeave = () => {
+        setIsDragging(false);
+        if (marqueeRef.current) {
+            marqueeRef.current.style.cursor = 'grab';
+        }
+    };
+
+    const handleMouseUp = () => {
+        setIsDragging(false);
+        if (marqueeRef.current) {
+            marqueeRef.current.style.cursor = 'grab';
+        }
+    };
+
+    const handleMouseMove = (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - marqueeRef.current.offsetLeft;
+        const walk = (x - startX) * 1.5;
+        marqueeRef.current.scrollLeft = scrollLeft - walk;
+    };
+
+    // Control functions for navigating case studies
+    const goToPrevious = () => {
+        setIsFading(true);
+        setTimeout(() => {
+            setCurrentStudyIndex((prevIndex) =>
+                prevIndex === 0 ? filteredStudies.length - 1 : prevIndex - 1
+            );
+            setIsFading(false);
+        }, 300);
+    };
+
+    const goToNext = () => {
+        setIsFading(true);
+        setTimeout(() => {
+            setCurrentStudyIndex((prevIndex) =>
+                prevIndex === filteredStudies.length - 1 ? 0 : prevIndex + 1
+            );
+            setIsFading(false);
+        }, 300);
+    };
+
     return (
         <div className="wcs-container">
-            <TopNavBar/>
-            <TwoLineNavbar/>
-            {/* Hero Section - Blue Theme with Background Image */}
-            <section className="wcs-hero-section">
-                <div className="wcs-hero-bg"></div>
-                <div className="wcs-hero-overlay"></div>
-                <div className="wcs-hero-content">
-                    <div className="wcs-hero-text">
-                        <span className="wcs-hero-badge">Case Studies</span>
-                        <h1 className="wcs-hero-title">
-                            Featured Works
+            <TopNavBar />
+            <TwoLineNavbar />
+
+            {/* NEW HERO SECTION - EXACTLY FROM THE PROVIDED FILE */}
+            <section className="hero">
+
+                {/* BACKGROUND IMAGE */}
+                <div className="hero-video-container">
+                    <img
+                        src={heroBackgroundImage}
+                        alt="Background"
+                        className="hero-video"
+                    />
+                    <div className="hero-video-overlay"></div>
+                </div>
+
+                {/* FIRST SECTION - Badge, Title, Project Growth Card, Right Side Cards */}
+                <div className="hero-first-section">
+                    {/* CASE STUDIES BADGE - TOP CENTER */}
+                    <div className="case-studies-badge">
+                        <span className="badge">Case Studies</span>
+                    </div>
+
+                    {/* LEFT CONTENT */}
+                    <div className="hero-left">
+                        <h1>
+                            OUR <br /> Featured Works
                         </h1>
-                        <p className="wcs-hero-subtitle">
-                            Explore our portfolio of successful projects across Digital Marketing, 
-                            Full Stack Development, and AI Creative Intelligence.
-                        </p>
+
+                        {/* Insight Card with Graph */}
+                        <div className="glass card salary-card">
+                            <h4>Project Growth</h4>
+                            <div className="chart-container">
+                                <svg className="growth-chart" viewBox="0 0 300 80">
+                                    <polyline
+                                        points="0,60 40,45 80,30 120,35 160,25 200,40 240,20 280,30 300,25"
+                                        fill="none"
+                                        stroke="#b7ff3c"
+                                        strokeWidth="2"
+                                    />
+                                    {[0, 40, 80, 120, 160, 200, 240, 280, 300].map((x, i) => (
+                                        <circle
+                                            key={i}
+                                            cx={x}
+                                            cy={i === 0 ? 60 : i === 1 ? 45 : i === 2 ? 30 : i === 3 ? 35 : i === 4 ? 25 : i === 5 ? 40 : i === 6 ? 20 : i === 7 ? 30 : 25}
+                                            r="3"
+                                            fill="#b7ff3c"
+                                        />
+                                    ))}
+                                </svg>
+                                <div className="chart-line">
+                                    <div className="dot">+120%</div>
+                                </div>
+                            </div>
+                            <div className="months">
+                                <span>Mar</span><span>Apr</span><span>May</span>
+                                <span>Jun</span><span>Jul</span><span>Aug</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="hero-right">
+                        {/* FIRST CARD - Active Projects with adjusted numbers */}
+                        <div className="glass card small">
+                            <h4>Active Projects</h4>
+                            <div className="stats">
+                                <span className="stat-left">257</span>
+                                <span>413</span>
+                                <span className="active stat-right">98</span>
+                            </div>
+                            <div className="tabs">
+                                <button>Branding</button>
+                                <button>Product</button>
+                                <button className="active">UI/UX</button>
+                            </div>
+                        </div>
+
+                        {/* SECOND + THIRD IN ONE ROW */}
+                        <div className="row-cards">
+                            <div className="glass card small performance-card">
+                                <h4>Performance Score</h4>
+                                <div className="performance-score">
+                                    <div className="score-circle">
+                                        <span className="score-value">92</span>
+                                        <span className="score-label">/100</span>
+                                    </div>
+                                    <p className="score-description">Overall Excellence Rating</p>
+                                </div>
+                                <div className="performance-metrics">
+                                    <div className="metric">
+                                        <span className="metric-label">Efficiency</span>
+                                        <div className="metric-bar">
+                                            <div className="metric-fill" style={{ width: '100%' }}></div>
+                                        </div>
+                                        <span className="metric-value">88%</span>
+                                    </div>
+                                    <div className="metric">
+                                        <span className="metric-label">Quality</span>
+                                        <div className="metric-bar">
+                                            <div className="metric-fill" style={{ width: '100%' }}></div>
+                                        </div>
+                                        <span className="metric-value">94%</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="glass card small case-studies-card">
+                                <h4>Case Studies</h4>
+                                <div className="case-studies-content">
+                                    <p className="big centered-number">128</p>
+                                    <div className="bars centered-bars">
+                                        <span></span><span></span><span></span>
+                                        <span></span><span></span>
+                                    </div>
+                                    <p className="case-studies-footer">Completed Projects</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+                {/* SECOND SECTION - Filter Bar and Bottom Cards */}
+                <div className="hero-second-section">
+                    {/* FILTER BAR */}
+                    <div className="filters">
+                        <span>This month</span>
+                        <span>All Industries</span>
+                        <span>High Impact</span>
+                        <span>Design + Development</span>
+                        <span>Featured</span>
+                    </div>
+
+                    {/* CASE STUDY CARDS */}
+                    <div className="jobs">
+                        {/* Card 1: Brand Identity Design - UNCHANGED */}
+                        <div key={1} className="job-card glass">
+                            <div className="job-top">
+                                <h4>Brand Identity Design</h4>
+                                <span className="close">×</span>
+                            </div>
+
+                            <div className="job-meta">
+                                <span>Client Project</span>
+                                <span>6 Weeks</span>
+                                <span>UI/UX</span>
+                            </div>
+
+                            <div className="location">
+                                Fintech · Global Product
+                            </div>
+
+                            <div className="match">
+                                <div className="circle">
+                                    <span>79%</span>
+                                </div>
+                                <p>Success Rate</p>
+                            </div>
+
+                            {/* bottom badges */}
+                            <div className="job-badges">
+                                <span>Branding</span>
+                                <span>Figma</span>
+                                <span>UX Strategy</span>
+                                <span>Research</span>
+                                <span>Design System</span>
+                            </div>
+                        </div>
+
+                        {/* Card 2: WEB DEVELOPMENT - UPDATED */}
+                        <div key={2} className="job-card glass">
+                            <div className="job-top">
+                                <h4>Web Development</h4>
+                                <span className="close">×</span>
+                            </div>
+
+                            <div className="job-meta">
+                                <span>Enterprise Project</span>
+                                <span>8 Weeks</span>
+                                <span>Full Stack</span>
+                            </div>
+
+                            <div className="location">
+                                E-Commerce · Scalable Platform
+                            </div>
+
+                            <div className="match">
+                                <div className="circle">
+                                    <span>86%</span>
+                                </div>
+                                <p>Performance Boost</p>
+                            </div>
+
+                            {/* bottom badges */}
+                            <div className="job-badges">
+                                <span>React</span>
+                                <span>Node.js</span>
+                                <span>MongoDB</span>
+                                <span>REST API</span>
+                                <span>Cloud</span>
+                            </div>
+                        </div>
+
+                        {/* Card 3: DATA ANALYTICS - UPDATED */}
+                        <div key={3} className="job-card glass">
+                            <div className="job-top">
+                                <h4>Data Analytics</h4>
+                                <span className="close">×</span>
+                            </div>
+
+                            <div className="job-meta">
+                                <span>Analytics Project</span>
+                                <span>10 Weeks</span>
+                                <span>Data Science</span>
+                            </div>
+
+                            <div className="location">
+                                Business Intelligence · Insights
+                            </div>
+
+                            <div className="match">
+                                <div className="circle">
+                                    <span>92%</span>
+                                </div>
+                                <p>Accuracy Rate</p>
+                            </div>
+
+                            {/* bottom badges */}
+                            <div className="job-badges">
+                                <span>Python</span>
+                                <span>SQL</span>
+                                <span>Tableau</span>
+                                <span>Machine Learning</span>
+                                <span>Predictive Models</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </section>
 
-            {/* Success Stories Section - Light BG with Icon Floating Animation */}
-            <section className="wcs-stories-section">
-                <div className="wcs-stories-container">
-                    <div className="wcs-section-header">
-                        <h2 className="wcs-section-title-testimonials">Our Success Stories</h2>
-                        <p className="wcs-section-subtitle-testimonials">
-                            We transform ideas into reality through innovative solutions and cutting-edge 
-                            technology. Each project tells a story of challenges overcome and goals achieved.
-                        </p>
+            {/* Success Stories Section - Updated to match the provided design */}
+            <section className="wcs-recognition-section">
+                {/* LEFT */}
+                <div className="wcs-left">
+                    <h1>Our Success Stories</h1>
+
+                    <p>
+                        We transform ideas into reality through innovative solutions and cutting-edge technology. Each project tells a story of challenges overcome and goals achieved.
+                    </p>
+
+                    {/* CURVE */}
+                    <div className="wcs-curve-container">
+                        <svg viewBox="0 0 900 220" className="wcs-curve">
+                            <path
+                                d="M15,160 C200,-100 350,300 500,150 C650,0 750,250 880,80"
+                                fill="transparent"
+                                stroke="rgba(255, 200, 0, 0.6)"
+                                strokeWidth="3"
+                                strokeDasharray="6 6"
+                                className="wcs-curve-path"
+                            />
+
+                            {/* DOTS */}
+                            {[
+                                { x: 18, y: 155 },
+                                { x: 220, y: 85 },
+                                { x: 420, y: 185 },
+                                { x: 650, y: 105 },
+                                { x: 875, y: 80 }
+                            ].map((dot, i) => (
+                                <g key={i}>
+                                    <circle cx={dot.x} cy={dot.y} r="6" className="wcs-dot" />
+                                    <circle cx={dot.x} cy={dot.y} r="16" className="wcs-ring" />
+                                </g>
+                            ))}
+                        </svg>
+
+                        {/* FLOATING TEXTS - Added 5th floating text */}
+                        <div className="wcs-floating-text wcs-ft-1">
+                            <h4>Discovery</h4>
+                            <p>User Research</p>
+                        </div>
+
+                        <div className="wcs-floating-text wcs-ft-2">
+                            <h4>Strategy</h4>
+                            <p>Brand Direction</p>
+                        </div>
+
+                        <div className="wcs-floating-text wcs-ft-3">
+                            <h4>Execution</h4>
+                            <p>Design System</p>
+                        </div>
+
+                        <div className="wcs-floating-text wcs-ft-4">
+                            <h4>Launch</h4>
+                            <p>Go Live</p>
+                        </div>
+
+                        {/* NEW 5TH FLOATING TEXT */}
+                        <div className="wcs-floating-text wcs-ft-5">
+                            <h4>Growth</h4>
+                            <p>Scale & Optimize</p>
+                        </div>
                     </div>
-                    
-                    {/* Stats Grid */}
-                    <div className="wcs-stats-grid">
-                        <div className="wcs-stat-item">
+
+                    {/* STATS */}
+                    <div className="wcs-stats">
+                        <div className="wcs-card">
                             <h3>150+</h3>
                             <p>Projects Completed</p>
                         </div>
-                        <div className="wcs-stat-item">
+
+                        <div className="wcs-card">
                             <h3>98%</h3>
                             <p>Client Satisfaction</p>
                         </div>
-                        <div className="wcs-stat-item">
+
+                        <div className="wcs-card">
                             <h3>40+</h3>
                             <p>Industry Awards</p>
                         </div>
-                        <div className="wcs-stat-item">
-                            <h3>5 Years</h3>
-                            <p>Excellence</p>
-                        </div>
-                    </div>
-                    
-                    {/* Process Steps with Floating Icons */}
-                    <div className="wcs-process-steps">
-                        <div className="wcs-process-step">
-                            <div className="wcs-step-icon-container">
-                                <div className="wcs-step-icon-bg"></div>
-                                <div className="wcs-step-icon">
-                                    <FontAwesomeIcon icon={faBullseye} />
-                                </div>
-                            </div>
-                            <h4>Discovery</h4>
-                            <p>Understanding client needs and project scope</p>
-                        </div>
-                        <div className="wcs-process-step">
-                            <div className="wcs-step-icon-container">
-                                <div className="wcs-step-icon-bg"></div>
-                                <div className="wcs-step-icon">
-                                    <FontAwesomeIcon icon={faChartLine} />
-                                </div>
-                            </div>
-                            <h4>Strategy</h4>
-                            <p>Planning the approach and technology stack</p>
-                        </div>
-                        <div className="wcs-process-step">
-                            <div className="wcs-step-icon-container">
-                                <div className="wcs-step-icon-bg"></div>
-                                <div className="wcs-step-icon">
-                                    <FontAwesomeIcon icon={faBolt} />
-                                </div>
-                            </div>
-                            <h4>Execution</h4>
-                            <p>Building with precision and attention to detail</p>
-                        </div>
-                        <div className="wcs-process-step">
-                            <div className="wcs-step-icon-container">
-                                <div className="wcs-step-icon-bg"></div>
-                                <div className="wcs-step-icon">
-                                    <FontAwesomeIcon icon={faRocket} />
-                                </div>
-                            </div>
-                            <h4>Delivery</h4>
-                            <p>Launching and providing ongoing support</p>
-                        </div>
                     </div>
                 </div>
-                
-                {/* Floating Icons Background */}
-                <div className="wcs-floating-icons">
-                    <div className="wcs-floating-icon">
-                        <FontAwesomeIcon icon={faLightbulb} />
-                    </div>
-                    <div className="wcs-floating-icon">
-                        <FontAwesomeIcon icon={faPalette} />
-                    </div>
-                    <div className="wcs-floating-icon">
-                        <FontAwesomeIcon icon={faCode} />
-                    </div>
-                    <div className="wcs-floating-icon">
-                        <FontAwesomeIcon icon={faMobileAlt} />
-                    </div>
-                    <div className="wcs-floating-icon">
-                        <FontAwesomeIcon icon={faLaptop} />
+
+                {/* RIGHT */}
+                <div className="wcs-right">
+                    <div className="wcs-trophy">🏆</div>
+
+                    <div className="wcs-right-cards">
+                        <div className="wcs-card wcs-small">
+                            <span>⭐</span>
+                            <p>Excellence</p>
+                        </div>
+
+                        <div className="wcs-card wcs-small">
+                            <span>🏅</span>
+                            <p>Recognition</p>
+                        </div>
+
+                        <div className="wcs-card wcs-small">
+                            <span>💎</span>
+                            <p>Premium</p>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            {/* Case Studies Section - Dark BG */}
-            <section className="wcs-studies-section">
+            {/* Case Studies Section - White BG */}
+            <section className="wcs-studies-section" ref={studiesContainerRef}>
                 <div className="wcs-studies-container">
                     <div className="wcs-section-header">
                         <h2 className="wcs-section-title">Featured Case Studies</h2>
@@ -506,156 +738,99 @@ const WorksCaseStudies = () => {
                         </p>
                     </div>
 
-                    {/* Category Filter */}
-                    <div className="wcs-category-filter">
-                        <button 
-                            className={`wcs-category-btn ${activeCategory === 'all' ? 'active' : ''}`}
-                            onClick={() => setActiveCategory('all')}
-                        >
-                            All Projects
+                    {/* Floating Control Buttons on Left Side */}
+                    <div className="wcs-floating-controls">
+                        <button className="wcs-floating-btn wcs-up-btn" onClick={goToPrevious} aria-label="Previous case study">
+                            <FontAwesomeIcon icon={faChevronUp} />
                         </button>
-                        <button 
-                            className={`wcs-category-btn ${activeCategory === 'UiUx' ? 'active' : ''}`}
-                            onClick={() => setActiveCategory('UiUx')}
-                            style={{ '--category-color': getCategoryColor('UiUx') }}
-                        >
-                            <FontAwesomeIcon icon={faPalette} className="wcs-category-icon" />
-                            UIUX
-                        </button>
-                        <button 
-                            className={`wcs-category-btn ${activeCategory === 'Branding' ? 'active' : ''}`}
-                            onClick={() => setActiveCategory('Branding')}
-                            style={{ '--category-color': getCategoryColor('Branding') }}
-                        >
-                            <FontAwesomeIcon icon={faCrown} className="wcs-category-icon" />
-                            Branding
-                        </button>
-                        <button 
-                            className={`wcs-category-btn ${activeCategory === 'Products' ? 'active' : ''}`}
-                            onClick={() => setActiveCategory('Products')}
-                            style={{ '--category-color': getCategoryColor('Products') }}
-                        >
-                            <FontAwesomeIcon icon={faBriefcase} className="wcs-category-icon" />
-                            Products
-                        </button>
-                         <button 
-                            className={`wcs-category-btn ${activeCategory === 'App' ? 'active' : ''}`}
-                            onClick={() => setActiveCategory('App')}
-                            style={{ '--category-color': getCategoryColor('App') }}
-                        >
-                            <FontAwesomeIcon icon={faMobileAlt} className="wcs-category-icon" />
-                            App
-                        </button> 
-                        <button 
-                            className={`wcs-category-btn ${activeCategory === 'Website' ? 'active' : ''}`}
-                            onClick={() => setActiveCategory('Website')}
-                            style={{ '--category-color': getCategoryColor('Website') }}
-                        >
-                            <FontAwesomeIcon icon={faLaptop} className="wcs-category-icon" />
-                            Website
+                        <button className="wcs-floating-btn wcs-down-btn" onClick={goToNext} aria-label="Next case study">
+                            <FontAwesomeIcon icon={faChevronDown} />
                         </button>
                     </div>
 
-                    {/* Case Studies List - Horizontal Cards */}
-                    <div className="wcs-studies-list">
-                        {displayedStudies.map((study, index) => (
-                            <div 
-                                className={`wcs-study-item ${expandedCard === study.id ? 'expanded' : ''}`}
-                                key={study.id}
-                                style={{ 
-                                    '--delay': index,
-                                    '--category-color': study.color
-                                }}
-                            >
-                                <div className="wcs-study-main">
-                                    <div className="wcs-study-image">
-                                        <img src={study.image} alt={study.title} />
-                                        <div className="wcs-study-image-placeholder">
-                                            <FontAwesomeIcon icon={study.icon} />
-                                        </div>
-                                        <span className="wcs-study-category">
-                                            {getCategoryLabel(study.category)}
-                                        </span>
-                                    </div>
-                                    <div className="wcs-study-content">
-                                        <div className="wcs-study-header">
-                                            <h3 className="wcs-study-title">{study.title}</h3>
-                                            <p className="wcs-study-subtitle">{study.subtitle}</p>
-                                            <p className="wcs-study-client">Client: {study.client}</p>
-                                        </div>
-                                        
-                                        <div className="wcs-study-metrics">
-                                            <div className="wcs-study-metric">
-                                                <span className="wcs-metric-label">
-                                                    <FontAwesomeIcon icon={faCalendarCheck} className="wcs-metric-icon" />
-                                                    Duration
+                    {/* Case Studies Slider - Static Layout with Content Change */}
+                    <div className="wcs-studies-slider">
+                        {filteredStudies.length > 0 && (
+                            <div className="wcs-study-slide">
+                                {/* Left Side - Static Image Container with White Background */}
+                                <div className="wcs-slide-left">
+                                    <div className="wcs-slide-image-container">
+                                        <div className="wcs-image-white-bg">
+                                            <img
+                                                src={filteredStudies[currentStudyIndex].image}
+                                                alt={filteredStudies[currentStudyIndex].title}
+                                                className="wcs-slide-image"
+                                            />
+                                            <div className="wcs-image-footer">
+                                                <div className="wcs-image-text">
+                                                    <span className="wcs-image-title">Engloray</span>
+                                                    <p className="wcs-image-description">{filteredStudies[currentStudyIndex].description}</p>
+                                                </div>
+                                                <span className="wcs-image-badge" style={{ backgroundColor: filteredStudies[currentStudyIndex].color }}>
+                                                    {getCategoryLabel(filteredStudies[currentStudyIndex].category)}
                                                 </span>
-                                                <span className="wcs-metric-value">{study.duration}</span>
-                                            </div>
-                                            <div className="wcs-study-metric">
-                                                <span className="wcs-metric-label">
-                                                    <FontAwesomeIcon icon={faTrophy} className="wcs-metric-icon" />
-                                                    Results
-                                                </span>
-                                                <span className="wcs-metric-value-highlighter">{study.results}</span>
                                             </div>
                                         </div>
-
-                                        <p className="wcs-study-description">{study.description}</p>
-
-                                        <button 
-                                            className="wcs-read-more-btn"
-                                            onClick={() => toggleCardExpand(study.id)}
-                                        >
-                                            {expandedCard === study.id ? 'Show Less' : 'Read More'}
-                                            <span className="wcs-arrow">
-                                                <FontAwesomeIcon icon={expandedCard === study.id ? faChevronUp : faChevronDown} />
-                                            </span>
-                                        </button>
                                     </div>
                                 </div>
 
-                                {/* Expanded Details */}
-                                {expandedCard === study.id && (
-                                    <div className="wcs-study-details">
-                                        <div className="wcs-details-content">
-                                            <div className="wcs-detail-section">
-                                                <h4>Challenges</h4>
-                                                <ul className="wcs-detail-list">
-                                                    {study.challenges.map((challenge, idx) => (
-                                                        <li key={idx}>{challenge}</li>
-                                                    ))}
-                                                </ul>
+                                {/* Right Side - Content with fade-in/fade-out effect */}
+                                <div className="wcs-slide-right">
+                                    <div className={`wcs-content-wrapper ${isFading ? 'fade-out' : 'fade-in'}`}>
+                                        <h3 className="wcs-slide-title">{filteredStudies[currentStudyIndex].title}</h3>
+                                        <p className="wcs-slide-subtitle">{filteredStudies[currentStudyIndex].subtitle}</p>
+                                        <p className="wcs-slide-client">Client: {filteredStudies[currentStudyIndex].client}</p>
+
+                                        <div className="wcs-slide-metrics">
+                                            <div className="wcs-slide-metric">
+                                                <span className="wcs-slide-metric-label">
+                                                    <FontAwesomeIcon icon={faCalendarCheck} className="wcs-slide-metric-icon" />
+                                                    Duration
+                                                </span>
+                                                <span className="wcs-slide-metric-value">{filteredStudies[currentStudyIndex].duration}</span>
                                             </div>
-                                            <div className="wcs-detail-section">
-                                                <h4>Solutions</h4>
-                                                <ul className="wcs-detail-list">
-                                                    {study.solutions.map((solution, idx) => (
-                                                        <li key={idx}>{solution}</li>
-                                                    ))}
-                                                </ul>
+                                            <div className="wcs-slide-metric">
+                                                <span className="wcs-slide-metric-label">
+                                                    <FontAwesomeIcon icon={faTrophy} className="wcs-slide-metric-icon" />
+                                                    Results
+                                                </span>
+                                                <span className="wcs-slide-metric-value-highlighter">{filteredStudies[currentStudyIndex].results}</span>
                                             </div>
                                         </div>
+
+                                        <p className="wcs-slide-description">{filteredStudies[currentStudyIndex].description}</p>
                                     </div>
-                                )}
+                                </div>
                             </div>
-                        ))}
+                        )}
+
+                        {/* No Dot Indicators - Removed */}
                     </div>
 
-                    {/* View More/View Less Button */}
-                    {filteredStudies.length > 3 && (
-                        <div className="wcs-view-more-container">
-                            <button 
-                                className="wcs-view-more-btn"
-                                onClick={toggleShowAllStudies}
-                            >
-                                {showAllStudies ? 'View Less' : `View More (${filteredStudies.length - 3} more)`}
-                                <span className="wcs-view-more-arrow">
-                                    <FontAwesomeIcon icon={showAllStudies ? faChevronUp : faChevronDown} />
-                                </span>
-                            </button>
+                    {/* Marquee Infinity Scroll for Logos - Full Width */}
+                    <div className="wcs-marquee-full-wrapper">
+                        <div className="wcs-marquee-full-container"
+                            ref={marqueeRef}
+                            onMouseDown={handleMouseDown}
+                            onMouseLeave={handleMouseLeave}
+                            onMouseUp={handleMouseUp}
+                            onMouseMove={handleMouseMove}
+                            style={{ cursor: 'grab' }}>
+                            <div className="wcs-marquee-full-track">
+                                {logoImages.map((logo, index) => (
+                                    <div key={index} className="wcs-marquee-full-item">
+                                        <img src={logo} alt={`Logo ${index + 1}`} className="wcs-marquee-full-logo" />
+                                    </div>
+                                ))}
+                                {/* Duplicate for seamless loop */}
+                                {logoImages.map((logo, index) => (
+                                    <div key={`duplicate-${index}`} className="wcs-marquee-full-item">
+                                        <img src={logo} alt={`Logo ${index + 1}`} className="wcs-marquee-full-logo" />
+                                    </div>
+                                ))}
+                            </div>
                         </div>
-                    )}
+                    </div>
 
                     {/* Empty State */}
                     {filteredStudies.length === 0 && (
@@ -667,60 +842,79 @@ const WorksCaseStudies = () => {
                 </div>
             </section>
 
-            {/* Testimonials Section - Light BG */}
+            {/* Testimonials Section */}
             <section className="wcs-testimonials-section">
-                <div className="wcs-testimonials-container">
-                    <div className="wcs-section-header">
-                        <h2 className="wcs-section-title-testimonials">Client Testimonials</h2>
-                        <p className="wcs-section-subtitle-testimonials">
-                            Hear directly from our clients about their experience working with us
-                        </p>
-                    </div>
+                {/* TOP BADGE */}
+                <div className="wcs-badge-wrapper">
+                    <span className="wcs-line"></span>
+                    <span className="wcs-badge">Testimonials</span>
+                    <span className="wcs-line"></span>
+                </div>
 
-                    <div className="wcs-testimonials">
-                        <div className="wcs-testimonial-track">
-                            {testimonials.map((testimonial, index) => (
-                                <div 
-                                    className={`wcs-testimonial-slide ${index === currentTestimonial ? 'active' : ''}`}
-                                    key={testimonial.id}
-                                >
-                                    <div className="wcs-testimonial-card">
-                                        <div className="wcs-testimonial-content">
-                                            <div className="wcs-testimonial-quote">
-                                                <FontAwesomeIcon icon={faQuoteLeft} />
-                                            </div>
-                                            <p className="wcs-testimonial-text">{testimonial.text}</p>
-                                            <div className="wcs-testimonial-author">
-                                                <div className="wcs-author-icon">
-                                                    <FontAwesomeIcon icon={testimonial.icon} />
-                                                </div>
-                                                <div className="wcs-author-info">
-                                                    <h4>{testimonial.author}</h4>
-                                                    <p>{testimonial.role}</p>
-                                                    <span className="wcs-author-company">{testimonial.company}</span>
-                                                </div>
-                                            </div>
-                                        </div>
+                {/* TITLE */}
+                <h1 className="wcs-title">What our clients are saying</h1>
+                <p className="wcs-subtitle">
+                    Hear directly from our clients about their experience working with us
+                </p>
+
+                {/* CARDS CAROUSEL - 3 cards visible at a time */}
+                <div className="wcs-testimonials-carousel">
+                    <div className="wcs-cards-container">
+                        {getVisibleTestimonials().map((testimonial, idx) => (
+                            <div
+                                key={`${testimonial.originalIndex}-${currentTestimonialIndex}`}
+                                className="wcs-card testimonial-card"
+                            >
+                                {/* QUOTE ICON */}
+                                <div className="wcs-quote">“</div>
+
+                                <p className="wcs-card-text">{testimonial.text}</p>
+
+                                <div className="wcs-user">
+                                    <div className="wcs-user-icon">{testimonial.icon}</div>
+                                    <div>
+                                        <h4>{testimonial.name}</h4>
+                                        <span>{testimonial.role}</span>
                                     </div>
                                 </div>
-                            ))}
-                        </div>
 
-                        <div className="wcs-testimonial-nav">
+                                {/* PURPLE GRADIENT INSIDE CARD */}
+                                <div className="wcs-card-gradient"></div>
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Navigation Buttons */}
+                    <div className="wcs-testimonial-controls">
+                        <button
+                            className="wcs-nav-btn wcs-prev-btn"
+                            onClick={prevTestimonial}
+                            aria-label="Previous testimonial"
+                        >
+                            <FontAwesomeIcon icon={faChevronLeft} />
+                        </button>
+                        <div className="wcs-testimonial-dots">
                             {testimonials.map((_, index) => (
                                 <button
                                     key={index}
-                                    className={`wcs-testimonial-dot ${index === currentTestimonial ? 'active' : ''}`}
-                                    onClick={() => handleTestimonialClick(index)}
-                                    aria-label={`View testimonial ${index + 1}`}
+                                    className={`wcs-testimonial-dot ${index === currentTestimonialIndex ? 'active' : ''}`}
+                                    onClick={() => handleTestimonialDotClick(index)}
+                                    aria-label={`Go to testimonial set starting at ${index + 1}`}
                                 />
                             ))}
                         </div>
+                        <button
+                            className="wcs-nav-btn wcs-next-btn"
+                            onClick={nextTestimonial}
+                            aria-label="Next testimonial"
+                        >
+                            <FontAwesomeIcon icon={faChevronRight} />
+                        </button>
                     </div>
                 </div>
             </section>
-            <MainPageSubFooter/>
-            <BackToTop/> 
+            <MainPageSubFooter />
+            <BackToTop />
         </div>
     );
 };

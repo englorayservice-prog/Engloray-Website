@@ -19,7 +19,7 @@ const UiUxPage = () => {
     // Scroll to top when component mounts
     useEffect(() => {
         window.scrollTo(0, 0);
-        
+
         if (window.location.hash) {
             const id = window.location.hash.replace('#', '');
             setTimeout(() => {
@@ -139,7 +139,7 @@ const UiUxPage = () => {
                 }, index * 300);
                 timeouts.push(timeout);
             });
-            
+
             return () => {
                 timeouts.forEach(timeout => clearTimeout(timeout));
                 setVisibleImages([]);
@@ -173,8 +173,8 @@ const UiUxPage = () => {
 
     return (
         <div className="uiuxp-page" id='uiuxPage'>
-            <TopNavBar/>
-            <TwoLineNavbar/>
+            <TopNavBar />
+            <TwoLineNavbar />
             {/* Hero Section - BLUE BACKGROUND */}
             <section className="uiuxp-hero-section">
                 <div className="uiuxp-hero-bg" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80)' }}></div>
@@ -184,8 +184,8 @@ const UiUxPage = () => {
                         <h1 className="uiuxp-hero-title">Crafting Exceptional Digital Experiences</h1>
                         <h2 className="uiuxp-hero-subtitle">User-Centered Design for Maximum Engagement</h2>
                         <p className="uiuxp-hero-description">
-                            We create intuitive, beautiful, and functional interfaces that connect users 
-                            with your product. Our human-centered design approach ensures every interaction 
+                            We create intuitive, beautiful, and functional interfaces that connect users
+                            with your product. Our human-centered design approach ensures every interaction
                             is meaningful and every journey is seamless.
                         </p>
                         <div className="uiuxp-services-stack">
@@ -206,8 +206,8 @@ const UiUxPage = () => {
                         <div className="uiuxp-about-text">
                             <h2 className="uiuxp-about-title">About Our UI/UX Design Process</h2>
                             <p className="uiuxp-about-description">
-                                We follow a comprehensive design process that puts users at the center 
-                                of every decision. From research to final implementation, we ensure 
+                                We follow a comprehensive design process that puts users at the center
+                                of every decision. From research to final implementation, we ensure
                                 your digital product is both beautiful and functional.
                             </p>
                             <ul className="uiuxp-about-points">
@@ -217,8 +217,8 @@ const UiUxPage = () => {
                                 <li className="uiuxp-about-point">Usability Testing & User Feedback</li>
                                 <li className="uiuxp-about-point">Responsive Design & Implementation</li>
                             </ul>
-                            
-                            <button 
+
+                            <button
                                 className={`uiuxp-read-more-btn ${isExpanded ? 'expanded' : ''}`}
                                 onClick={handleReadMore}
                             >
@@ -229,57 +229,57 @@ const UiUxPage = () => {
                             <div className={`uiuxp-expanded-content ${isExpanded ? 'expanded' : ''}`}>
                                 <div className="uiuxp-expanded-paragraphs">
                                     <p>
-                                        <strong>User Research & Discovery:</strong> We start by understanding 
-                                        your users through interviews, surveys, and market analysis. This 
-                                        foundation helps us create detailed user personas and journey maps 
+                                        <strong>User Research & Discovery:</strong> We start by understanding
+                                        your users through interviews, surveys, and market analysis. This
+                                        foundation helps us create detailed user personas and journey maps
                                         that guide our design decisions.
                                     </p>
                                     <p>
-                                        <strong>Wireframing & Prototyping:</strong> We create low-fidelity 
-                                        wireframes to establish information architecture, then develop 
-                                        high-fidelity interactive prototypes for user testing and stakeholder 
+                                        <strong>Wireframing & Prototyping:</strong> We create low-fidelity
+                                        wireframes to establish information architecture, then develop
+                                        high-fidelity interactive prototypes for user testing and stakeholder
                                         feedback before final design implementation.
                                     </p>
                                     <p>
-                                        <strong>Visual Design & Brand Integration:</strong> Our designers 
-                                        create visually stunning interfaces that align with your brand 
-                                        identity while ensuring optimal usability and accessibility 
+                                        <strong>Visual Design & Brand Integration:</strong> Our designers
+                                        create visually stunning interfaces that align with your brand
+                                        identity while ensuring optimal usability and accessibility
                                         standards across all platforms and devices.
                                     </p>
                                     <p>
-                                        <strong>Design Systems & Component Libraries:</strong> We build 
-                                        comprehensive design systems that ensure consistency, scalability, 
-                                        and efficiency in design implementation across your entire product 
+                                        <strong>Design Systems & Component Libraries:</strong> We build
+                                        comprehensive design systems that ensure consistency, scalability,
+                                        and efficiency in design implementation across your entire product
                                         ecosystem.
                                     </p>
                                     <p>
-                                        <strong>Usability Testing & Iteration:</strong> We conduct 
-                                        rigorous usability testing with real users to validate design 
-                                        decisions and continuously improve the user experience based 
+                                        <strong>Usability Testing & Iteration:</strong> We conduct
+                                        rigorous usability testing with real users to validate design
+                                        decisions and continuously improve the user experience based
                                         on data-driven insights and feedback.
                                     </p>
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div className="uiuxp-about-images-column">
                             {/* Main Image */}
                             <div className="uiuxp-about-image-main">
-                                <img 
-                                    src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                                    alt="UI/UX Design Process" 
+                                <img
+                                    src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                    alt="UI/UX Design Process"
                                 />
                                 <div className="uiuxp-image-overlay">
                                     <h3>Human-Centered Design Approach</h3>
                                     <p>Our team of 25+ UI/UX specialists delivering exceptional digital experiences</p>
                                 </div>
                             </div>
-                            
+
                             {/* Extra Images Section */}
                             <div className={`uiuxp-extra-images-fill ${isExpanded ? 'show' : ''}`}>
                                 {extraImages.map((image) => (
-                                    <div 
-                                        key={image.id} 
+                                    <div
+                                        key={image.id}
                                         className={`uiuxp-extra-image-fill ${visibleImages.includes(image.id) ? 'visible' : ''}`}
                                     >
                                         <div className="uiuxp-fill-image-wrapper">
@@ -306,7 +306,7 @@ const UiUxPage = () => {
                             Explore our successful design implementations across various industries
                         </p>
                     </div>
-                    
+
                     <div className="uiuxp-projects-grid">
                         {projects.map((project) => (
                             <div key={project.id} className="uiuxp-project-card">
@@ -325,10 +325,10 @@ const UiUxPage = () => {
                                         <div className="uiuxp-project-stat">
                                             <span className="uiuxp-stat-number">{project.stats.engagement || project.stats.conversions || project.stats.satisfaction || project.stats.efficiency}</span>
                                             <span className="uiuxp-stat-label">
-                                                {project.stats.engagement ? 'Engagement Increase' : 
-                                                 project.stats.conversions ? 'Conversion Increase' : 
-                                                 project.stats.satisfaction ? 'User Satisfaction' : 
-                                                 'Efficiency Gain'}
+                                                {project.stats.engagement ? 'Engagement Increase' :
+                                                    project.stats.conversions ? 'Conversion Increase' :
+                                                        project.stats.satisfaction ? 'User Satisfaction' :
+                                                            'Efficiency Gain'}
                                             </span>
                                         </div>
                                     </div>
@@ -348,19 +348,19 @@ const UiUxPage = () => {
                             Hear what our clients have to say about our UI/UX design services
                         </p>
                     </div>
-                    
+
                     <div className="uiuxp-feedback-wrapper-wide">
                         {/* Left Button */}
-                        <button 
-                            className="uiuxp-feedback-nav-btn uiuxp-feedback-prev" 
+                        <button
+                            className="uiuxp-feedback-nav-btn uiuxp-feedback-prev"
                             onClick={handlePrevSlide}
                             aria-label="Previous feedback"
                         >
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                                <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
                         </button>
-                        
+
                         {/* Feedback Slider */}
                         <div className="uiuxp-feedback-slider-wide">
                             <div className="uiuxp-feedback-track" ref={feedbackTrackRef}>
@@ -370,7 +370,7 @@ const UiUxPage = () => {
                                             <div className="uiuxp-feedback-content">
                                                 <div className="uiuxp-feedback-quote">"</div>
                                                 <p className="uiuxp-feedback-text-wide">{feedback.text}</p>
-                                                
+
                                                 {/* AUTHOR INFO */}
                                                 <div className="uiuxp-feedback-author-simple">
                                                     <div className="uiuxp-author-info-simple">
@@ -384,19 +384,19 @@ const UiUxPage = () => {
                                 ))}
                             </div>
                         </div>
-                        
+
                         {/* Right Button */}
-                        <button 
-                            className="uiuxp-feedback-nav-btn uiuxp-feedback-next" 
+                        <button
+                            className="uiuxp-feedback-nav-btn uiuxp-feedback-next"
                             onClick={handleNextSlide}
                             aria-label="Next feedback"
                         >
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                                <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
                         </button>
                     </div>
-                    
+
                     {/* Dots */}
                     <div className="uiuxp-slider-dots">
                         {feedbacks.map((_, index) => (
@@ -410,8 +410,8 @@ const UiUxPage = () => {
                     </div>
                 </div>
             </section>
-            <MainPageSubFooter/>
-            <BackToTop/>
+            <MainPageSubFooter />
+            <BackToTop />
         </div>
     );
 };

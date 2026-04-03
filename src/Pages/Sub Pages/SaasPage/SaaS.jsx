@@ -13,23 +13,32 @@ import {
   faMagnifyingGlass,
   faListCheck,
   faCalendarCheck,
-  faDisplay
+  faDisplay,
+  faCloud,
+  faShieldHalved,
+  faChartPie,
+  faRocket,
+  faHeadset,
+  faPuzzlePiece,
+  faLock,
+  faStar,
+  faThumbsUp
 } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'motion/react';
 import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
 import './SaaS.css';
-import crm3d from '../../../assets/crm_3d.jpg';
-import erp3d from '../../../assets/erp_3d.jpg';
-import ai3d from '../../../assets/ai_3d.jpg';
-import jobs3d from '../../../assets/jobs_3d.jpg';
-import learning3d from '../../../assets/learning_3d.jpg';
+import crm3d from '../../../assets/crm_3d_new.png';
+import erp3d from '../../../assets/erp_3d_new.png';
+import ai3d from '../../../assets/ai_3d_new.png';
+import jobs3d from '../../../assets/jobs_3d_new.png';
+import learning3d from '../../../assets/learning_3d.png';
+// import saas3dShape from '../../../assets/saas_3d_shape.png';
+import saasFeaturedBuilding from '../../../assets/saas_featured_building.png';
+import microsoftLogo from '../../../assets/microsoft.png';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar'
 import TopNavbar from '../../../Components/TopNavbar/TopNavbar'
 import Footer from '../../../Components/Footer/Footer'
-
-
-
 
 const StatItem = ({ value, label, suffix = "", itemClass = "crm-stat-item" }) => {
   const [ref, inView] = useInView({ threshold: 0.5, triggerOnce: true });
@@ -74,9 +83,9 @@ const StatItem = ({ value, label, suffix = "", itemClass = "crm-stat-item" }) =>
 
 const TypingText = ({ text, className = "typing-description", tag: Tag = "p" }) => {
   const [displayedText, setDisplayedText] = useState('');
-  const [index, setIndex] = useState(0);
   const elementRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+  const indexRef = useRef(0);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -84,31 +93,56 @@ const TypingText = ({ text, className = "typing-description", tag: Tag = "p" }) 
         setIsVisible(entry.isIntersecting);
         if (!entry.isIntersecting) {
           setDisplayedText('');
-          setIndex(0);
+          indexRef.current = 0;
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0.1 }
     );
 
-    if (elementRef.current) {
-      observer.observe(elementRef.current);
-    }
-
+    if (elementRef.current) observer.observe(elementRef.current);
     return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
-    if (isVisible && index < text.length) {
-      const timeout = setTimeout(() => {
-        setDisplayedText((prev) => prev + text[index]);
-        setIndex((prev) => prev + 1);
-      }, 60); // Slower, more readable typing speed
-      return () => clearTimeout(timeout);
-    }
-  }, [isVisible, index, text]);
+    let animationFrame;
+    let lastTime = 0;
+    const speed = 40; // ms per character
 
-  return <Tag ref={elementRef} className={className}>{displayedText}</Tag>;
+    const animate = (time) => {
+      if (!lastTime) lastTime = time;
+      const delta = time - lastTime;
+
+      if (isVisible && delta > speed && indexRef.current < text.length) {
+        setDisplayedText(text.slice(0, indexRef.current + 1));
+        indexRef.current++;
+        lastTime = time;
+      }
+
+      if (indexRef.current < text.length && isVisible) {
+        animationFrame = requestAnimationFrame(animate);
+      }
+    };
+
+    if (isVisible) {
+      animationFrame = requestAnimationFrame(animate);
+    }
+
+    return () => cancelAnimationFrame(animationFrame);
+  }, [isVisible, text]);
+
+  return <Tag ref={elementRef} className={className} style={{ willChange: 'contents' }}>{displayedText}</Tag>;
 };
+
+// Memoized background graphics to prevent re-renders on scroll
+const BackgroundGraphics = React.memo(() => (
+  <div className="saas-hero-bg-graphics" style={{ pointerEvents: 'none' }}>
+    <div className="saas-bg-icon path-icon-1">🚀</div>
+    <div className="saas-bg-icon path-icon-2">💡</div>
+    <div className="saas-bg-icon path-icon-3">🛠️</div>
+    <div className="saas-bg-icon path-icon-4">🎯</div>
+    <div className="saas-bg-icon path-icon-5">📱</div>
+  </div>
+));
 
 const SaaS = () => {
   useEffect(() => {
@@ -125,7 +159,7 @@ const SaaS = () => {
       { threshold: 0.1, rootMargin: '0px' }
     );
 
-    const items = document.querySelectorAll('.connected-product-item, .our-products-nav-section');
+    const items = document.querySelectorAll('.connected-product-item, .our-products-nav-section, .anim-on-scroll');
     items.forEach(item => observer.observe(item));
 
     return () => observer.disconnect();
@@ -136,486 +170,440 @@ const SaaS = () => {
       <TopNavbar />
       <TwoLineNavbar />
       <div className="saas-container">
-        <header className="saas-header-section">
-          <div className="floating-card fc-1">
-            <h4>DESIGN SYSTEM</h4>
-            <p>Pro components ready to use.</p>
-          </div>
-          <div className="floating-card fc-2">
-            <h4>PROJECT TIMELINE</h4>
-            <p>98% tasks completed this week.</p>
-          </div>
-          <div className="floating-card fc-3">
-            <div className="analytics-dots">
-              <span className="dot dot-1"></span>
-              <span className="dot dot-2"></span>
-            </div>
-            <h4>TEAM ANALYTICS</h4>
-            <p>12+ active members tonight.</p>
-          </div>
-          <div className="floating-card fc-4">
-            <h4>CLOUD SECURITY</h4>
-            <p>End-to-end encryption enabled.</p>
-          </div>
+        <header className="saas-v2-hero-wrapper" id="saas-hero">
+          <div className="saas-v2-master-card">
+            {/* Main Dark Content Area */}
+            <div className="saas-v2-dark-block">
+              <div className="saas-v2-hero-main">
+                {/* Left Side: Text and Search */}
+                <div className="saas-v2-hero-body">
+                  <h1 className="saas-v2-hero-title anim-on-scroll">
+                    Optimize Your <span>Future Enterprise</span>
+                  </h1>
+                  <p className="saas-v2-hero-subtitle anim-on-scroll delay-1">
+                    Next-gen business automation & cloud orchestration <br />
+                    Across 25+ Global Server Zones
+                  </p>
 
-          <main className="saas-hero">
-            <div className="saas-badge">
-              <img src="https://ui-avatars.com/api/?name=JS&background=random" alt="User" style={{ width: '24px', borderRadius: '50%' }} />
-              <span>Join 3k+ Members</span>
-              <a href="#!" className="join-btn">Join Waitlist</a>
-            </div>
+                  {/* Search Bar (Matches Reference Image Layout) */}
+                  <div className="saas-v2-search-panel anim-on-scroll delay-2">
+                    <div className="saas-v2-search-group">
+                      <div className="saas-v2-field">
+                        <label>Service Type</label>
+                        <div className="saas-v2-select-wrap">
+                          <span>Managed Cloud</span>
+                          <FontAwesomeIcon icon={faArrowRight} className="fa-rotate-90" />
+                        </div>
+                      </div>
+                    </div>
+                    <div className="saas-v2-divider"></div>
+                    <div className="saas-v2-search-group">
+                      <div className="saas-v2-field">
+                        <label>Resource Tier</label>
+                        <div className="saas-v2-select-wrap">
+                          <span>Enterprise Pro</span>
+                          <FontAwesomeIcon icon={faArrowRight} className="fa-rotate-90" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
-            <h1 className="saas-title">
-              <TypingText
-                text="Discover SaaS, Your Project Management Companion"
-                tag="span"
-                className="typing-title"
-              />
-            </h1>
+                  <div className="saas-v2-quick-links anim-on-scroll delay-3">
+                    <button className="saas-v2-contact-btn-shiny">
+                      Contact Us
+                      <div className="saas-v2-shiny-sweep"></div>
+                    </button>
+                  </div>
+                </div>
 
-            <p className="saas-subtitle">
-              Explore our powerful SaaS mobile app for convenient project management,
-              collaboration, and productivity anytime, anywhere.
-            </p>
+                {/* Right Side: Dual Auto-Scrolling Card Columns over Background */}
+                <div className="saas-v2-dynamic-visual">
+                  <div className="saas-v2-scroll-col col-left">
+                    <div className="saas-v2-scroll-track">
+                      {[1, 2, 3].map((_, i) => (
+                        <React.Fragment key={i}>
+                          <div className="saas-v2-glass-strip-card">
+                            <div className="saas-v2-strip-icon" style={{ background: '#dcfce7' }}><FontAwesomeIcon icon={faChartPie} /></div>
+                            <div className="saas-v2-strip-text">
+                              <h4>Scalable Infra</h4>
+                              <p>Global edge nodes</p>
+                            </div>
+                          </div>
+                          <div className="saas-v2-glass-strip-card">
+                            <div className="saas-v2-strip-icon" style={{ background: '#fef9c3' }}><FontAwesomeIcon icon={faShieldHalved} /></div>
+                            <div className="saas-v2-strip-text">
+                              <h4>Secure SOC2</h4>
+                              <p>Military grade</p>
+                            </div>
+                          </div>
+                        </React.Fragment>
+                      ))}
+                    </div>
+                  </div>
 
-            <div className="saas-actions">
-              <a href="#!" className="btn-primary">Download Now</a>
-              <a href="#!" className="btn-secondary">Contact Us</a>
-            </div>
+                  <div className="saas-v2-scroll-col col-right">
+                    <div className="saas-v2-scroll-track reverse">
+                      {[1, 2, 3].map((_, i) => (
+                        <React.Fragment key={i}>
+                          <div className="saas-v2-glass-strip-card">
+                            <div className="saas-v2-strip-icon" style={{ background: '#dbeafe' }}><FontAwesomeIcon icon={faRobot} /></div>
+                            <div className="saas-v2-strip-text">
+                              <h4>AI Engine</h4>
+                              <p>Neural workflows</p>
+                            </div>
+                          </div>
+                          <div className="saas-v2-glass-strip-card">
+                            <div className="saas-v2-strip-icon" style={{ background: '#ffedd5' }}><FontAwesomeIcon icon={faRocket} /></div>
+                            <div className="saas-v2-strip-text">
+                              <h4>Fast Deploy</h4>
+                              <p>CI/CD pipeline</p>
+                            </div>
+                          </div>
+                        </React.Fragment>
+                      ))}
+                    </div>
+                  </div>
 
-            {/* Mockups */}
-            <div className="saas-mockups-container">
-              <div className="mockup-item mockup-side">
-                <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=500&auto=format&fit=crop" alt="App Screen 1" />
+
+                </div>
               </div>
-              <div className="mockup-item mockup-center">
-                <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=500&auto=format&fit=crop" alt="App Screen 2" />
+
+              {/* Background Image with Blur/Overlay */}
+              <div className="saas-v2-hero-bg-image">
+                <img src={saasFeaturedBuilding} alt="Building Background" />
+                <div className="saas-v2-bg-gradient"></div>
               </div>
-              <div className="mockup-item mockup-side">
-                <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?w=500&auto=format&fit=crop" alt="App Screen 3" />
+
+              {/* Floating text like in reference */}
+              <div className="saas-v2-contact-float anim-on-scroll delay-4">
+                Give us a call <strong>1-888-498-9240</strong> and <br />
+                we can set you up, or <span>check our pricing plans</span>
               </div>
             </div>
-          </main>
+
+            {/* White Footer */}
+            <div className="saas-v2-white-footer">
+              <div className="saas-v2-footer-content">
+                {/* SaaS Metrics Badge (Bottom Left) */}
+                <div className="saas-v2-bottom-badge anim-on-scroll delay-5">
+                  <div className="saas-v2-spot-details">
+                    <span className="saas-v2-spot-loc"><FontAwesomeIcon icon={faChartLine} style={{ marginRight: '8px' }} /> Real-time Analytics Hub</span>
+                    <div className="saas-v2-spot-price">
+                      <strong>99.9% Uptime</strong>
+                      <button className="saas-v2-spot-btn">Explore Metrics</button>
+                    </div>
+                  </div>
+                </div>
+
+                {/* SaaS Product Names (Bottom Right) */}
+                <div className="saas-v2-partner-logos anim-on-scroll delay-5">
+                  <div className="saas-v2-logo-box">
+                    <div className="saas-v2-logo-icon" style={{ color: '#6366f1' }}><FontAwesomeIcon icon={faCloud} /></div>
+                    <span>Crm Solutions</span>
+                  </div>
+                  <div className="saas-v2-logo-box">
+                    <div className="saas-v2-logo-icon" style={{ color: '#10b981' }}><FontAwesomeIcon icon={faShieldHalved} /></div>
+                    <span>ERP Software</span>
+                  </div>
+                  <div className="saas-v2-logo-box">
+                    <div className="saas-v2-logo-icon" style={{ color: '#f59e0b' }}><FontAwesomeIcon icon={faChartPie} /></div>
+                    <span>Chatbot AI</span>
+                  </div>
+                  <div className="saas-v2-logo-box">
+                    <div className="saas-v2-logo-icon" style={{ color: '#ec4899' }}><FontAwesomeIcon icon={faRocket} /></div>
+                    <span>Job seeker hub</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </header>
+
+        {/* SaaS AI Workforce / Stats Section */}
+        <section className="saas-stats-modern-section" id="results">
+          <div className="saas-container stats-modern-grid">
+
+            <div className="stats-modern-left">
+              <span className="tiny-badge-new anim-on-scroll">FROM INBOX TO INVOICE • STATISTICS</span>
+              <h2 className="stats-modern-title anim-on-scroll delay-1">
+                AI Workforce.<br />
+                Built for <span>Freight Teams.</span>
+              </h2>
+              <p className="stats-modern-desc anim-on-scroll delay-2">
+                Our intelligent SaaS solutions read, write and act across TMS, email
+                and chat so your ops staff don't have to.
+              </p>
+
+              <a href="#!" className="stats-modern-btn anim-on-scroll delay-3">CONTACT US</a>
+            </div>
+
+            <div className="stats-modern-right">
+              <div className="stats-visual-container">
+                {/* Circular Path Animation */}
+                <div className="stats-circular-path-wrap">
+                  <div className="stats-main-arc"></div>
+                  <div className="stats-rotating-orbit">
+                    <div className="orbit-item icon-1">
+                      <div className="orbit-icon-inner" style={{ background: '#ffffff', color: '#EA4335' }}><FontAwesomeIcon icon={faCloud} /></div>
+                    </div>
+                    <div className="orbit-item icon-2">
+                      <div className="orbit-icon-inner" style={{ background: '#ffffff', color: '#4A154B' }}><FontAwesomeIcon icon={faComments} /></div>
+                    </div>
+                    <div className="orbit-item icon-3">
+                      <div className="orbit-icon-inner" style={{ background: '#2b3a55', color: '#ffffff' }}><FontAwesomeIcon icon={faRobot} /></div>
+                    </div>
+                    <div className="orbit-item icon-4">
+                      <div className="orbit-icon-inner" style={{ background: '#ffffff', color: '#000000' }}><FontAwesomeIcon icon={faRocket} /></div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Stats List */}
+                <div className="stats-modern-values">
+                  <div className="sm-stat-item anim-on-scroll">
+                    <h4>100%</h4>
+                    <p>Response rate</p>
+                  </div>
+                  <div className="sm-stat-item anim-on-scroll delay-1">
+                    <h4>120x</h4>
+                    <p>ROI</p>
+                  </div>
+                  <div className="sm-stat-item anim-on-scroll delay-2">
+                    <h4>10x</h4>
+                    <p>Cost reduction</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+
+        {/* SaaS Benefits Section */}
 
 
         {/*new our products single cards */}
 
-        {/* NEW CRM SOLUTIONS SECTION ADDED HERE */}
-        <section className="crm-solutions-section">
-          <div className="crm-hero-container">
-            {/* Main Hero Section with Background */}
-            <div className="crm-hero-main">
-              {/* Background Image as absolute element */}
-              <img
-                src={crm3d}
-                alt="CRM Dashboard"
-                className="crm-hero-bg-img"
-                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-                loading="eager"
-              />
-              <div className="crm-hero-overlay"></div>
-
-              <div className="crm-hero-content">
-                <div className="crm-content-center">
-                  <motion.span
-                    className="crm-badge"
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                  >
-                    #1 CRM
-                  </motion.span>
-
-                  <motion.h1
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.1 }}
-                  >
-                    UNIFIED<br />CRM SOLUTIONS
-                  </motion.h1>
-
-                  <motion.p
-                    className="crm-description"
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                    style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1.2rem', marginTop: '20px', maxWidth: '850px', marginInline: 'auto' }}
-                  >
-                    Manage your entire sales pipeline and customer lifecycle in one unified platform. <br />
-                    Scale your business with our data-driven relationship management tools.
-                  </motion.p>
-                </div>
-
-                <div className="crm-hero-actions crm-hero-links">
-                  <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.4 }}
-                  >
-                    <Link
-                      to="/crmPage"
-                      className="visit-btn"
-                    >
-                      Visit <FontAwesomeIcon icon={faArrowRight} className="btn-arrow" />
-                    </Link>
-                  </motion.div>
-                </div>
-              </div>
-
-              {/* Removed the floating preview card per user request */}
-
-              {/* Soft border curve connector */}
-              <span className="cutout-curve-horizontal"></span>
-            </div>
-
-            {/* Stats Section in the gap */}
-            <div className="crm-stats-container">
-              <StatItem value="6" suffix=" k" label="The company's users acorss" />
-              <StatItem value="3" suffix="+" label="Projects completed till now" />
-              <StatItem value="99" suffix="%" label="totally satisfied customers" />
+        {/* ─── NEW OUR PRODUCTS SHOWCASE ─── */}
+        <section className="saas-products-showcase" id="our-products">
+          <div className="saas-container">
+            <div className="section-header anim-on-scroll">
+              <h2 className="section-title">Our Unified <span>Products</span></h2>
+              <p className="section-subtitle">Discover our specialized platforms designed to scale every aspect of your enterprise.</p>
             </div>
           </div>
-        </section>
 
-        {/* NEW ERP SOLUTIONS SECTION */}
-        <section className="erp-solutions-section">
-          <div className="erp-hero-container">
-            {/* Main Hero Section with Background */}
-            <div className="erp-hero-main">
-              {/* Background Image as absolute element */}
-              <img
-                src={erp3d}
-                alt="ERP Management"
-                className="erp-hero-bg-img"
-                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-                loading="eager"
-              />
-              <div className="erp-hero-overlay"></div>
-
-              <div className="erp-hero-content">
-                <div className="erp-content-center">
-                  <motion.span
-                    className="erp-badge"
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                  >
-                    #2 Smart Campus Management
-                  </motion.span>
-
-                  <motion.h1
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.1 }}
-                  >
-                    EMPOWERING <br />ERP's
-                  </motion.h1>
-
-                  <motion.p
-                    className="erp-description"
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                    style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1.2rem', marginTop: '20px', maxWidth: '850px', marginInline: 'auto' }}
-                  >
-                    The ultimate digital infrastructure for modern schools and universities. <br />
-                    Streamline administration, academics, and communication in a single portal.
-                  </motion.p>
-                </div>
-
-                <div className="erp-hero-actions erp-hero-links">
-                  <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.4 }}
-                  >
-                    <Link
-                      to="/erpSolutionsPage"
-                      className="visit-btn"
-                    >
-                      Visit <FontAwesomeIcon icon={faArrowRight} className="btn-arrow" />
-                    </Link>
-                  </motion.div>
-                </div>
-              </div>
-
-              {/* Soft border curve connector - top left */}
-              <span className="erp-cutout-curve-horizontal"></span>
-            </div>
-
-            {/* Stats Section in the gap (Top Left) */}
-            <div className="erp-stats-container">
-              <StatItem value="5" suffix="K+" label="Students active across all network campuses" itemClass="erp-stat-item" />
-              <StatItem value="12" suffix="+" label="Institutes using our platform globally" itemClass="erp-stat-item" />
-              <StatItem value="99" suffix="%" label="Uptime guarantee & seamless data integration" itemClass="erp-stat-item" />
-            </div>
-          </div>
-        </section>
-
-        {/* NEW AI CHATBOT SOLUTIONS SECTION (Mirrors CRM Layout: Links Left, Stats Bottom-Right) */}
-        <section className="ai-solutions-section">
-          <div className="ai-hero-container">
-            <div className="ai-hero-main">
-              <img
-                src={ai3d}
-                alt="AI Support"
-                className="ai-hero-bg-img"
-                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-                loading="lazy"
-              />
-              <div className="ai-hero-overlay"></div>
-
-              <div className="ai-hero-content">
-                <div className="ai-content-center">
-                  <motion.span
-                    className="ai-badge"
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                  >
-                    #3 Intelligent Bot
-                  </motion.span>
-
-                  <motion.h1
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.1 }}
-                  >
-                    AI Chatbot <br /> SUPPORT
-                  </motion.h1>
-
-                  <motion.p
-                    className="ai-description"
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                    style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1.2rem', marginTop: '20px', maxWidth: '850px', marginInline: 'auto' }}
-                  >
-                    Revolutionize support with our autonomous AI chatbot using intent-based deep learning. <br />
-                    Deliver instant, accurate answers across all languages to your global customer base.
-                  </motion.p>
-                </div>
-
-                <div className="ai-hero-actions ai-hero-links">
-                  <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.4 }}
-                  >
-                    <Link
-                      to="/developmentPage"
-                      className="visit-btn"
-                    >
-                      Visit <FontAwesomeIcon icon={faArrowRight} className="btn-arrow" />
-                    </Link>
-                  </motion.div>
-                </div>
-              </div>
-
-              <span className="ai-cutout-curve-horizontal"></span>
-            </div>
-
-            <div className="ai-stats-container">
-              <StatItem value="100" suffix="k+" label="User interactions handled this year" itemClass="ai-stat-item" />
-              <StatItem value="95" suffix="%" label="Average accuracy in intent detection" itemClass="ai-stat-item" />
-              <StatItem value="24" suffix="/7" label="Instant support available worldwide" itemClass="ai-stat-item" />
-            </div>
-          </div>
-        </section>
-
-        {/* NEW JOB SEEKER SOLUTIONS SECTION (Mirrors ERP Layout: Links Right, Stats Top-Left) */}
-        <section className="job-solutions-section">
-          <div className="job-hero-container">
-            <div className="job-hero-main">
-              <img
-                src={jobs3d}
-                alt="Talent Acquisition"
-                className="job-hero-bg-img"
-                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-                loading="lazy"
-              />
-              <div className="job-hero-overlay"></div>
-
-              <div className="job-hero-content">
-                <div className="job-content-center">
-                  <motion.span
-                    className="job-badge"
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                  >
-                    #4 Career Partner
-                  </motion.span>
-
-                  <motion.h1
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.1 }}
-                  >
-                    Job <br /> Seeker HUB
-                  </motion.h1>
-
-                  <motion.p
-                    className="job-description"
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                    style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1.2rem', marginTop: '20px', maxWidth: '850px', marginInline: 'auto' }}
-                  >
-                    Smart matching algorithms that bridge the gap between top talent and global opportunities. <br />
-                    Transform your recruitment process with our immersive end-to-end career suite.
-                  </motion.p>
-                </div>
-
-                <div className="job-hero-actions job-hero-links">
-                  <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.4 }}
-                  >
-                    <Link
-                      to="/CareersPage"
-                      className="visit-btn"
-                    >
-                      Visit <FontAwesomeIcon icon={faArrowRight} className="btn-arrow" />
-                    </Link>
-                  </motion.div>
-                </div>
-              </div>
-
-              <span className="job-cutout-curve-horizontal"></span>
-            </div>
-
-            <div className="job-stats-container">
-              <StatItem value="5" suffix="K+" label="Active candidates looking for roles" itemClass="job-stat-item" />
-              <StatItem value="50" suffix="+" label="Global enterprises hiring through us" itemClass="job-stat-item" />
-              <StatItem value="150" suffix="+" label="Industry sectors covered and supported" itemClass="job-stat-item" />
-            </div>
-          </div>
-        </section>
-
-        {/* NEW LEARNING & CAREER GROWTH SECTION (Mirrors CRM Layout: Links Left, Stats Bottom-Right) */}
-        <section className="learn-solutions-section">
-          <div className="learn-hero-container">
-            <div className="learn-hero-main">
-              <img
-                src={learning3d}
-                alt="Learning & Career"
-                className="learn-hero-bg-img"
-                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-                loading="lazy"
-              />
-              <div className="learn-hero-overlay"></div>
-
-              <div className="learn-hero-content">
-                <div className="learn-content-center">
-                  <motion.span
-                    className="learn-badge"
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                  >
-                    #5 Learning & Carrer
-                  </motion.span>
-
-                  <motion.h1
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.1 }}
-                  >
-                    LEARNING & <br /> CAREER GROWTH
-                  </motion.h1>
-
-                  <motion.p
-                    className="learn-description"
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                    style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1.2rem', marginTop: '20px', maxWidth: '850px', marginInline: 'auto' }}
-                  >
-                    Master new skills with our personalized learning paths and career guidance. <br />
-                    Unlock your potential with industry-standard certifications and expert mentorship.
-                  </motion.p>
-                </div>
-
-                <div className="learn-hero-actions learn-hero-links">
-                  <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.4 }}
-                  >
-                    <Link
-                      to="/allCoursesPage"
-                      className="visit-btn"
-                    >
-                      Visit <FontAwesomeIcon icon={faArrowRight} className="btn-arrow" />
-                    </Link>
-                  </motion.div>
-                </div>
-              </div>
-
-              <span className="learn-cutout-curve-horizontal"></span>
-            </div>
-
-            <div className="learn-stats-container">
-              <StatItem value="13" suffix="+" label="Expert-led courses for skills development" itemClass="learn-stat-item" />
-              <StatItem value="5" suffix="K+" label="Students empowered through our platform" itemClass="learn-stat-item" />
-              <StatItem value="90" suffix="%" label="Success rate in career placement support" itemClass="learn-stat-item" />
-            </div>
-          </div>
-        </section>
-
-        {/* SaaS Roadmap Section */}
-        <section className="saas-roadmap-section">
-          <div className="saas-roadmap-inner">
-            <span className="tiny-badge" style={{ marginBottom: '16px', display: 'inline-block' }}>Our Journey</span>
-            <h2 className="section-title" style={{ marginBottom: '64px' }}>SaaS <span>Roadmap</span></h2>
-
-            <div className="srm-timeline">
-              {/* Central Vertical Connecting Line */}
-              <div className="srm-timeline-line"></div>
-
-              {[
-                { num: 1, color: '#4a90e2', title: 'Product Vision', desc: 'Define the long-term vision and strategy for your product.', icon: faBullseye, bg: '#dbeafe' },
-                { num: 2, color: '#22c55e', title: 'Business Goals', desc: "Set clear, measurable goals for the roadmap's duration.", icon: faChartLine, bg: '#dcfce7' },
-                { num: 3, color: '#84cc16', title: 'Collect Feedback', desc: 'Gather insights and feature requests from users and stakeholders.', icon: faComments, bg: '#ecfccb' },
-                { num: 4, color: '#06b6d4', title: 'Identify Features', desc: 'Determine the features needed to achieve your desired outcomes.', icon: faMagnifyingGlass, bg: '#cffafe' },
-                { num: 5, color: '#eab308', title: 'Prioritize Features', desc: 'Rank features based on their impact and feasibility.', icon: faListCheck, bg: '#fef9c3' },
-                { num: 6, color: '#f97316', title: 'Allocate Resources', desc: 'Assign resources and set timelines for feature development.', icon: faCalendarCheck, bg: '#ffedd5' },
-                { num: 7, color: '#ef4444', title: 'Display Information', desc: 'Choose the best way to present the roadmap to stakeholders.', icon: faDisplay, bg: '#fee2e2' },
-              ].map((step, i) => {
-                // Alternate sides: even index = left side, odd index = right side
-                const isEven = i % 2 === 0;
-
-                return (
-                  <div
-                    className={`srm-timeline-row ${isEven ? 'srm-row-left' : 'srm-row-right'}`}
-                    key={i}
-                    style={{ '--step-color': step.color, '--step-delay': `${i * 0.15}s` }}
-                  >
-
-                    {/* The content card */}
-                    <div className="srm-tcard">
-                      <span className="srm-tcard-num" style={{ color: step.color }}>Step 0{step.num}</span>
-                      <h4 className="srm-tcard-title">{step.title}</h4>
-                      <p className="srm-tcard-desc">{step.desc}</p>
-                      {/* Glowing arrow pointing to center node */}
-                      <div className="srm-tcard-arrow"></div>
+          <div className="showcase-grid">
+            {[
+              { num: '01', cat: 'Management', title: 'Unified CRM Solutions', img: crm3d, link: '/crmPage' },
+              { num: '02', cat: 'Infrastructure', title: 'Empowering ERP Systems', img: erp3d, link: '/erpPage' },
+              { num: '03', cat: 'Support', title: 'AI Chatbot Intelligence', img: ai3d, link: '/aiChatbotPage' },
+              { num: '04', cat: 'Recruitment', title: 'Job Seeker Hub', img: jobs3d, link: '/jobSeekerPage' },
+              { num: '05', cat: 'Education', title: 'Career & Learning', img: learning3d, link: '/learningPage' }
+            ].map((product, idx) => (
+              <Link key={idx} to={product.link} className="showcase-item anim-on-scroll" style={{ transitionDelay: `${idx * 0.15}s` }}>
+                <img src={product.img} alt={product.title} className="showcase-bg-img" />
+                <div className="showcase-num">{product.num}</div>
+                <div className="showcase-content">
+                  <span className="product-cat-tag">{product.cat}</span>
+                  <div className="showcase-footer">
+                    <div className="product-title-wrap">
+                      <h3 className="product-main-title">{product.title}</h3>
                     </div>
-
-                    {/* Central Node with Icon */}
-                    <div className="srm-tnode">
-                      <div className="srm-tnode-inner" style={{ background: step.color }}>
-                        <FontAwesomeIcon icon={step.icon} style={{ color: '#fff', fontSize: '1.2rem' }} />
-                      </div>
+                    <div className="nav-arrow-btn">
+                      <FontAwesomeIcon icon={faArrowRight} />
                     </div>
-
-                    {/* Empty spacer for flex alignment */}
-                    <div className="srm-tspacer"></div>
                   </div>
-                );
-              })}
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        <section className="saasb-hero">
+          <div className="saas-container">
+            <div className="section-header anim-on-scroll">
+              <h2 className="section-title">Our Core <span>Benefits</span></h2>
+              <p className="section-subtitle">Empowering your business with high-performance tools, automated workflows, and intelligent insights.</p>
+            </div>
+          </div>
+
+          <div className="saasb-hero-container">
+
+            {/* LEFT CONTENT */}
+            <div className="saasb-hero-left">
+              <h1>
+                Build smarter workflows <br />
+                and scale faster <br />
+                with confidence
+              </h1>
+
+              <p>
+                Streamline your operations, automate repetitive tasks, and gain real-time
+                insights—all from a single powerful SaaS platform designed for growth.
+              </p>
+              <div className="saasb-features">
+                <span>Core capabilities</span>
+                <div className="saasb-feature-icons">
+                  <div className="saasb-f-icon saasb-green">Speed</div>
+                  <div className="saasb-f-icon saasb-yellow">Scale</div>
+                  <div className="saasb-f-icon saasb-purple">Insights</div>
+                  <div className="saasb-f-icon saasb-blue">Security</div>
+                  <div className="saasb-f-icon saasb-orange">Automation</div>
+                </div>
+              </div>
+            </div>
+
+            {/* RIGHT VISUAL (No Lines, using Icons) */}
+            <div className="saasb-hero-right">
+
+              <div className="saasb-card saasb-c1">
+                <div className="saasb-card-icon"><FontAwesomeIcon icon={faChartPie} /></div>
+                <h4>Analytics</h4>
+                <p>Track user behavior in real-time</p>
+              </div>
+
+              <div className="saasb-card saasb-c2">
+                <div className="saasb-card-icon"><FontAwesomeIcon icon={faRobot} /></div>
+                <h4>Automation</h4>
+                <p>Automate workflows effortlessly</p>
+              </div>
+
+              <div className="saasb-card saasb-c3">
+                <div className="saasb-card-icon"><FontAwesomeIcon icon={faCloud} /></div>
+                <h4>Cloud Sync</h4>
+                <p>Access data anywhere instantly</p>
+              </div>
+
+              <div className="saasb-card saasb-center">
+                <div className="saasb-hub-ring">
+                  <div className="saasb-hub-icon"><FontAwesomeIcon icon={faBullseye} /></div>
+                </div>
+                <h4>All-in-One</h4>
+                <p>Manage everything in one place</p>
+              </div>
+
+              <div className="saasb-card saasb-c4">
+                <div className="saasb-card-icon"><FontAwesomeIcon icon={faShieldHalved} /></div>
+                <h4>Security</h4>
+                <p>Enterprise-grade protection</p>
+              </div>
+
+              <div className="saasb-card saasb-c5">
+                <div className="saasb-card-icon"><FontAwesomeIcon icon={faChartLine} /></div>
+                <h4>Insights</h4>
+                <p>Make smarter business decisions</p>
+              </div>
+
+              <div className="saasb-card saasb-c6">
+                <div className="saasb-card-icon"><FontAwesomeIcon icon={faPuzzlePiece} /></div>
+                <h4>Integrations</h4>
+                <p>Connect with your favorite tools</p>
+              </div>
+
+              <div className="saasb-card saasb-bottom">
+                <div className="saasb-card-icon"><FontAwesomeIcon icon={faRocket} /></div>
+                <h4>Scalability</h4>
+                <p>Grow without limits</p>
+              </div>
+
+              {/* FLOATING ICONS */}
+              {/* <div className="saasb-float-icon saasb-icon-top"><FontAwesomeIcon icon={faLock} /></div>
+      <div className="saasb-float-icon saasb-icon-left"><FontAwesomeIcon icon={faStar} /></div>
+      <div className="saasb-float-icon saasb-icon-right"><FontAwesomeIcon icon={faThumbsUp} /></div> */}
+
+            </div>
+          </div>
+        </section>
+
+        {/* ─── MODERN SaaS ROADMAP (V3) ─── */}
+        <section className="saas-roadmap-v3" id="roadmap">
+          <div className="roadmap-v3-container">
+
+            <div className="roadmap-v3-side-title anim-on-scroll">
+              <h2>ROADMAP<br /><span>2025</span></h2>
+            </div>
+
+            <div className="roadmap-v3-main-visual">
+              <div className="roadmap-v3-path-svg-wrap">
+                <svg viewBox="0 0 1200 400" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                  <path d="M0 320C200 320 400 320 600 200C800 80 1000 80 1200 80" stroke="url(#roadmap_glow)" strokeWidth="20" strokeLinecap="round" style={{ filter: 'blur(20px)', opacity: 0.6 }} />
+                  <path d="M0 320C200 320 400 320 600 200C800 80 1000 80 1200 80" stroke="url(#roadmap_gradient)" strokeWidth="8" strokeLinecap="round" />
+                  {/* The Running Glow Light Effect */}
+                  <path className="roadmap-path-runner" d="M0 320C200 320 400 320 600 200C800 80 1000 80 1200 80" stroke="#fff" strokeWidth="4" strokeLinecap="round" />
+                  <defs>
+                    <linearGradient id="roadmap_gradient" x1="0" y1="320" x2="1200" y2="80" gradientUnits="userSpaceOnUse"><stop stopColor="#f472b6" /><stop offset="0.5" stopColor="#a855f7" /><stop offset="1" stopColor="#3b82f6" /></linearGradient>
+                    <linearGradient id="roadmap_glow" x1="0" y1="320" x2="1200" y2="80" gradientUnits="userSpaceOnUse"><stop stopColor="#f472b6" /><stop offset="0.5" stopColor="#a855f7" /><stop offset="1" stopColor="#3b82f6" /></linearGradient>
+                  </defs>
+                </svg>
+              </div>
+
+              <div className="roadmap-v3-interaction-layer">
+                <div className="roadmap-v3-year-pill start anim-on-scroll">2025</div>
+
+                {/* Q1: Top Card */}
+                <div className="roadmap-v3-node-item q1-pos anim-on-scroll delay-1">
+                  <div className="roadmap-v3-dot"></div>
+                  <div className="roadmap-v3-node-content top-card-wrap">
+                    <div className="roadmap-v3-card glass-card">
+                      <div className="card-q">Q1</div>
+                      <ul className="card-list">
+                        <li><strong>Product Vision:</strong> Define long-term strategy.</li>
+                        <li><strong>Business Goals:</strong> Set clear, measurable goals.</li>
+                      </ul>
+                    </div>
+                    <div className="v-connector"></div>
+                  </div>
+                </div>
+
+                {/* Q2: Bottom Card */}
+                <div className="roadmap-v3-node-item q2-pos anim-on-scroll delay-2">
+                  <div className="roadmap-v3-dot"></div>
+                  <div className="roadmap-v3-node-content bottom-card-wrap">
+                    <div className="v-connector"></div>
+                    <div className="roadmap-v3-card glass-card">
+                      <div className="card-q">Q2</div>
+                      <ul className="card-list">
+                        <li><strong>Feedback:</strong> Gather stakeholders insights.</li>
+                        <li><strong>Identify Features:</strong> Determine needed outcomes.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Q3: Top Card */}
+                <div className="roadmap-v3-node-item q3-pos anim-on-scroll delay-3">
+                  <div className="roadmap-v3-dot"></div>
+                  <div className="roadmap-v3-node-content top-card-wrap">
+                    <div className="roadmap-v3-card glass-card">
+                      <div className="card-q">Q3</div>
+                      <ul className="card-list">
+                        <li><strong>Prioritize:</strong> Impact and feasibility ranking.</li>
+                        <li><strong>Allocate:</strong> timelines and resources setup.</li>
+                      </ul>
+                    </div>
+                    <div className="v-connector"></div>
+                  </div>
+                </div>
+
+                {/* Q4: Bottom Card */}
+                <div className="roadmap-v3-node-item q4-pos anim-on-scroll delay-4">
+                  <div className="roadmap-v3-dot"></div>
+                  <div className="roadmap-v3-node-content bottom-card-wrap">
+                    <div className="v-connector"></div>
+                    <div className="roadmap-v3-card glass-card">
+                      <div className="card-q">Q4</div>
+                      <ul className="card-list">
+                        <li><strong>Information:</strong> Best way to present roadmap.</li>
+                        <li>Launch & Stakeholders Showcase.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="roadmap-v3-year-pill end anim-on-scroll delay-5">2026</div>
+              </div>
             </div>
           </div>
         </section>

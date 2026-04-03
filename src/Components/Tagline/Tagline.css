@@ -40,9 +40,17 @@
   height: 60px;
   width: auto;
   margin-left: 12px;
-  /* Changed from margin-right to margin-left */
   object-fit: contain;
+}
 
+/* Proportional scaling for Branding Icon on laptops */
+@media screen and (min-width: 1025px) {
+  .tagline-icon {
+    height: 3.125vw;
+    /* 60px at 1920px */
+    margin-left: 0.625vw;
+    /* 12px */
+  }
 }
 
 .tagline-container {
@@ -59,9 +67,10 @@
   z-index: 2;
 }
 
+
+
 .tagline-subtitle {
   color: #ff0000;
-  /* Red color matching image */
   font-size: 1.9rem;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -71,7 +80,6 @@
 }
 
 .tagline-title {
-  /* margin-top: 50px; */
   font-size: 4.5rem;
   font-weight: 700;
   line-height: 1.2;
@@ -84,12 +92,46 @@
 
 .tagline-description {
   color: #e0e0e0;
-  /* Lighter grey for better visibility on glass */
   font-size: 1.1rem;
   max-width: 600px;
   margin: 0;
   line-height: 1.5;
   font-family: 'Outfit', sans-serif;
+}
+
+/* Fluid Laptop Scaling (1025px - 1920px) */
+@media screen and (min-width: 1025px) {
+  .tagline-subtitle {
+    font-size: 1.583vw;
+    /* 30.4px at 1920px */
+  }
+
+  .tagline-title {
+    font-size: 3.75vw;
+    /* 72px at 1920px */
+  }
+
+  .tagline-description {
+    font-size: 0.917vw;
+    /* 17.6px at 1920px */
+    max-width: 31.25vw;
+    /* 600px at 1920px */
+  }
+
+  .tagline-btn {
+    padding: 0.625vw 1.5625vw;
+    /* 12px 30px */
+    font-size: 0.73vw;
+    /* 14px */
+    min-width: 8.33vw;
+    /* 160px */
+  }
+
+  .tagline-container {
+    padding: 4.16vw 3.125vw;
+    /* 80px 60px */
+    gap: 1.25vw;
+  }
 }
 
 .tagline-buttons {
@@ -228,12 +270,11 @@
 /* Bottom Left Tagline Text */
 .tagline-bottom-text {
   width: 39.7rem;
-  height: 7.75rem;
+  height: 7.85rem;
   position: absolute;
   bottom: 0;
   left: 6px;
   top: 82%;
-
 
   display: flex;
   justify-content: center;
@@ -253,10 +294,45 @@
   border-top: 3px solid white;
 
   border-radius: 0 40px 0 0;
-  /* Top-right and Bottom-right rounded */
   overflow: visible;
-  /* Changed to visible for pseudo-element */
   z-index: 1;
+}
+
+.tagline-bottom-text span {
+  font-size: 3.7rem;
+  font-weight: 400;
+  margin-left: -10px;
+  margin-top: -10px;
+}
+
+/* Fluid Laptop Scaling for Bottom Text */
+@media screen and (min-width: 1025px) {
+  .tagline-bottom-text {
+    width: 33.08vw;
+    /* 635.2px */
+    height: 6.46vw;
+    /* 124px */
+    font-size: 2.67vw;
+    /* 51.2px */
+    border-radius: 0 2.08vw 0 0;
+    /* 40px */
+    padding-left: 0.78vw;
+    /* 15px */
+    border-top-width: 0.156vw;
+    /* 3px */
+  }
+
+  .tagline-bottom-text span {
+    margin-left: -0.52vw;
+    /* -10px */
+    margin-top: -0.52vw;
+    /* -10px */
+  }
+
+  .tagline-long-arrow {
+    width: 13vw;
+    /* Scaled from fixed 250px */
+  }
 }
 
 /* Inverted border radius effect on top-right corner - HIDDEN */
@@ -266,7 +342,7 @@
 }
 
 .tagline-long-arrow {
-  width: 250px;
+  width: 240px;
   height: 2px;
   background-color: #333;
   position: relative;
@@ -288,29 +364,85 @@
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-  .tagline-container {
-    padding: 40px 30px;
-    clip-path: path("M 80 0 Q 0 0 0 80 L 0 100% L 100% 100% L 100% 0 Z");
+@media (max-width: 1200px) {
+  .tagline-title {
+    font-size: 3.8rem;
+  }
+
+  .tagline-bottom-text {
+    width: 30rem;
+    font-size: 2.5rem;
+    top: 85%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .tagline-section::before {
+    background-size: cover;
+    background-position: center;
   }
 
   .tagline-title {
     font-size: 3.2rem;
   }
 
+  .tagline-bottom-text {
+    width: 25rem;
+    font-size: 2rem;
+    height: 6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .tagline-container {
+    padding: 60px 20px;
+    min-height: 80vh;
+  }
+
+  .tagline-subtitle {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+  }
+
+  .tagline-title {
+    font-size: 2.5rem;
+  }
+
   .tagline-description {
-    font-size: 1rem;
-    padding: 0;
+    font-size: 0.95rem;
+    padding: 0 10px;
   }
 
   .tagline-buttons {
     flex-direction: column;
-    gap: 15px;
+    gap: 12px;
     width: 100%;
-    max-width: 300px;
+    max-width: 280px;
   }
 
   .tagline-btn {
     width: 100%;
+    min-width: unset;
+    padding: 10px 20px;
+  }
+
+  .tagline-bottom-text {
+    display: none;
+    /* Hide specific large decorative element on mobile */
+  }
+
+  .scroll-indicator-container {
+    margin-top: 30px;
+  }
+
+  .mouse-scroll-indicator {
+    width: 30px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tagline-title {
+    font-size: 2rem;
   }
 }

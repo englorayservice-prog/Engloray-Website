@@ -1,5 +1,8 @@
 /* Our Team Page - Complete Design with OTP Prefix */
 @import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
 
 /* HEXCO Font */
 @font-face {
@@ -27,154 +30,579 @@
   text-transform: uppercase;
 }
 
-/* Header Styles */
-.otp-header {
+/* Header Styles - NFT Hero Redesign */
+/* Premium Redesigned Header */
+.otp-new-header {
   position: relative;
-  height: 100vh;
-  min-height: 700px;
-  overflow: hidden;
+  min-height: 100vh;
+  background-color: #ffffff;
+  /* Light soft gradient like reference image */
+  background-image:
+    radial-gradient(circle at 10% 10%, rgba(99, 102, 241, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 90% 10%, rgba(249, 168, 212, 0.12) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 1) 0%, rgba(243, 244, 246, 0.2) 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 140px 0 80px;
+  text-align: center;
+  overflow: visible;
 }
 
-.otp-header-background {
+.otp-header-container {
+  max-width: 1000px;
+  width: 100%;
+  padding: 0 20px;
+  z-index: 5;
+  position: relative;
+}
+
+/* Side Floating Cards */
+.otp-side-card {
   position: absolute;
-  top: 0;
-  left: 0;
+  width: 300px;
+  min-height: 450px;
+  /* Increased height */
+  background: #ffffff;
+  padding: 16px;
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+  text-align: left;
+  z-index: 10;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  animation: otp-side-float 4s ease-in-out infinite alternate;
+}
+
+.otp-side-section-top {
+  flex: 1;
+}
+
+.otp-side-section-bottom {
+  margin-top: 20px;
+}
+
+.otp-side-desc {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.82rem;
+  color: #475569;
+  line-height: 1.5;
+  margin-top: 12px;
+  font-weight: 500;
+}
+
+.otp-side-desc-mini {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.68rem;
+  color: #94a3b8;
+  margin-top: 4px;
+}
+
+.otp-side-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.otp-mini-tag {
+  font-size: 0.65rem;
+  padding: 4px 10px;
+  background: rgba(99, 102, 241, 0.05);
+  color: #6366f1;
+  border-radius: 100px;
+  font-weight: 600;
+  border: 1px solid rgba(99, 102, 241, 0.1);
+  transition: all 0.3s ease;
+}
+
+.otp-mini-tag:hover {
+  background: rgba(99, 102, 241, 0.1);
+  transform: translateY(-2px);
+}
+
+.otp-side-left {
+  left: -240px;
+  top: 40px;
+}
+
+.otp-side-right {
+  right: -240px;
+  top: 80px;
+  animation-delay: 1.5s;
+}
+
+.otp-card-head {
+  width: 100%;
+  height: 160px;
+  /* Increased from 120px */
+  border-radius: 16px;
+  overflow: visible;
+  margin-bottom: 20px;
+}
+
+.otp-side-img {
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+  object-fit: cover;
+}
+
+/* Left Card Bar - Purple like podcast wave */
+.otp-card-wave-bar {
   display: flex;
   align-items: center;
-  justify-content: center;
+  background: #7e22ce;
+  /* Deep Podcast Purple */
+  border-radius: 12px;
+  padding: 10px 14px;
+  gap: 10px;
+  margin: -35px auto 15px;
+  /* Centered overlap */
+  position: relative;
+  z-index: 2;
+  width: fit-content;
+  box-shadow: 0 8px 16px rgba(126, 34, 206, 0.2);
 }
 
-.otp-particle-container {
-  position: absolute;
-  top: 0;
-  left: 0;
+.otp-wave-icon {
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.otp-wave-bars {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+}
+
+.otp-wave-bars span {
+  width: 2px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 1px;
+}
+
+.otp-wave-bars span:nth-child(even) {
+  height: 16px;
+}
+
+.otp-card-footer-info p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.75rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.otp-listeners-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.otp-listeners-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.otp-side-divider {
+  border: none;
+  border-top: 1px dashed #e2e8f0;
+  margin: 12px 0;
   width: 100%;
-  height: 100%;
-  pointer-events: none;
 }
 
-.otp-particle {
-  position: absolute;
-  width: 3px;
-  height: 3px;
-  background: rgba(78, 205, 196, 0.6);
+.otp-side-platforms {
+  display: flex;
+  gap: 15px;
+  color: #6366f1;
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.otp-mini-avatars {
+  display: flex;
+}
+
+.ma-1,
+.ma-2,
+.ma-3 {
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
-  animation: otp-float-particle 15s infinite linear;
-  opacity: 0;
+  border: 2px solid #fff;
+  margin-left: -8px;
 }
 
-@keyframes otp-float-particle {
-  0% {
-    transform: translateY(100vh) rotate(0deg);
-    opacity: 0;
+.ma-1 {
+  background: #6366f1;
+  margin-left: 0;
+}
+
+.ma-2 {
+  background: #4ecdc4;
+}
+
+.ma-3 {
+  background: #ff727f;
+}
+
+.otp-l-count {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+/* Right Card Elements */
+
+
+@keyframes otp-side-float {
+  from {
+    transform: translateY(0);
   }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-100px) rotate(360deg);
-    opacity: 0;
+
+  to {
+    transform: translateY(-15px);
   }
 }
 
-.otp-header-content {
+@media (max-width: 1400px) {
+  .otp-side-left {
+    left: 40px;
+    top: -50px;
+    z-index: -1;
+    opacity: 0.3;
+  }
+
+  .otp-side-right {
+    right: 40px;
+    top: -50px;
+    z-index: -1;
+    opacity: 0.3;
+  }
+}
+
+@media (max-width: 1100px) {
+  .otp-side-card {
+    display: none;
+  }
+}
+
+/* New Badge Pill */
+.otp-badge-wrapper {
+  margin-bottom: 40px;
+}
+
+.otp-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  background: #1a1a1c;
+  padding: 6px 16px 6px 6px;
+  border-radius: 100px;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  gap: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.otp-badge-tag {
+  background: linear-gradient(90deg, #6366f1, #d946ef);
+  padding: 3px 12px;
+  border-radius: 100px;
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.otp-badge-arrow {
+  font-size: 0.7rem;
+  opacity: 0.5;
+}
+
+/* Heading Styling */
+.otp-main-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 5rem;
+  font-weight: 800;
+  line-height: 1;
+  color: #1a1a1c;
+  margin-bottom: 25px;
+  letter-spacing: -2px;
+}
+
+.otp-gradient-text {
+  background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 30%, #d946ef 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.otp-main-subtitle-new {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.15rem;
+  color: #64748b;
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto 50px;
+}
+
+/* CTA Form */
+.otp-cta-form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 80px;
+}
+
+.otp-input-group {
+  display: inline-flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  padding: 5px 6px 5px 22px;
+  border-radius: 100px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+  gap: 12px;
+}
+
+.otp-input-icon {
+  color: #94a3b8;
+  font-size: 1.1rem;
+}
+
+.otp-input-group input {
+  flex: 1;
+  border: none;
+  background: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: #1e293b;
+  outline: none;
+}
+
+.otp-input-group input::placeholder {
+  color: #94a3b8;
+}
+
+.otp-btn-access {
+  background: linear-gradient(90deg, #6366f1, #d946ef);
+  color: #f1f5fa;
+  border: 1px solid #e2e8f0;
+  padding: 12px 30px;
+  border-radius: 100px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.otp-btn-access:hover {
+  background: linear-gradient(90deg, #3639f7, #0f77ff);
+  border-color: #cbd5e1;
+  transform: translateY(-1px);
+}
+
+/* Brand Footer */
+.otp-brand-footer {
+  width: 100%;
+}
+
+.otp-slogan-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  z-index: 10;
+  margin-top: 60px;
   padding: 0 20px;
-  max-width: 1200px;
+  width: 100%;
 }
 
-.otp-title {
+.otp-slogan-main {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1a1a1c;
+  max-width: 950px;
+  margin-bottom: 25px;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+.otp-slogan-separator {
+  width: 70px;
+  height: 4px;
+  background: linear-gradient(90deg, #6366f1, #d946ef);
+  border-radius: 100px;
   margin-bottom: 30px;
-  animation: otp-title-entrance 1.2s ease-out;
 }
 
-@keyframes otp-title-entrance {
+.otp-slogan-sub {
+  font-family: 'Aldrich', monospace;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #94a3b8;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  max-width: 900px;
+  line-height: 1.6;
+}
+
+.otp-trusted-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  color: #94a3b8;
+  font-weight: 500;
+  text-transform: lowercase;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+  .otp-main-title {
+    font-size: 3rem;
+    letter-spacing: -1px;
+  }
+
+  .otp-main-subtitle-new br {
+    display: none;
+  }
+
+  .otp-brand-grid {
+    gap: 20px;
+  }
+}
+
+
+
+/* Scroll Indicator - Adjusted for light theme */
+.otp-scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: #94a3b8;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  opacity: 0.6;
+}
+
+/* Base Animations */
+@keyframes otp-fade-up {
   from {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-.otp-title-text {
-  display: block;
-  font-family: 'HEXCO', sans-serif;
-  font-size: 5rem;
-  font-weight: 100;
-  background: linear-gradient(45deg, #4ecdc4, #44a08d);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 10px;
-  letter-spacing: 4px;
+
+@keyframes otp-fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
-.otp-title-sub {
-  display: block;
-  font-family: 'Aldrich', monospace;
-  font-size: 1.5rem;
-  color: rgba(255, 255, 255, 0.7);
-  letter-spacing: 3px;
-  text-transform: uppercase;
+@keyframes otp-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-.otp-header-description {
-  font-family: 'Aldrich', monospace;
-  font-size: 1.2rem;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.8);
-  max-width: 800px;
-  margin: 0 auto 40px;
-}
+@keyframes otp-float {
 
-.otp-scroll-indicator {
-  margin-top: 40px;
-  animation: otp-bounce 2s infinite;
-}
-
-@keyframes otp-bounce {
-  0%, 20%, 50%, 80%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
-  40% {
-    transform: translateY(-10px);
-  }
-  60% {
-    transform: translateY(-5px);
-  }
-}
 
-.otp-scroll-text {
-  display: block;
-  font-family: 'Aldrich', monospace;
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.5);
-  margin-bottom: 10px;
-  letter-spacing: 2px;
-}
-
-.otp-scroll-arrow {
-  font-size: 2rem;
-  color: #4ecdc4;
-  animation: otp-arrow-pulse 1.5s infinite;
-}
-
-@keyframes otp-arrow-pulse {
-  0%, 100% {
-    opacity: 0.5;
-  }
   50% {
-    opacity: 1;
+    transform: translateY(-20px);
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 1100px) {
+  .otp-hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 80px;
+  }
+
+  .otp-hero-main-title {
+    font-size: 3.5rem;
+  }
+
+  .otp-hero-main-desc {
+    margin: 0 auto 40px;
+  }
+
+  .otp-hero-actions,
+  .otp-hero-stats-row {
+    justify-content: center;
+  }
+
+  .otp-visual-container {
+    width: 100%;
+    height: auto;
+  }
+
+  .otp-timer-card {
+    right: 50%;
+    transform: translateX(50%);
+    bottom: -40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .otp-hero-main-title {
+    font-size: 2.8rem;
+  }
+
+  .otp-hero-actions {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .otp-hero-stats-row {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .otp-hero-mask-wrap {
+    width: 300px;
+    height: 300px;
+  }
+
+  .ring-static,
+  .ring-animated-1,
+  .ring-animated-2 {
+    display: none;
   }
 }
 
@@ -205,265 +633,538 @@
   opacity: 1 !important;
 }
 
+/* Base Heading Style (for dark background) */
 .otp-section-title {
-  font-family: 'HEXCO', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 3rem;
   font-weight: 100;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   background: linear-gradient(45deg, #4ecdc4, #44a08d);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  color: transparent;
   letter-spacing: 3px;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+  text-transform: uppercase;
+}
+
+/* Light Background Header Styling - keep Zen Dots for these only */
+.otp-projects-section .otp-section-title,
+.otp-reviews-section .otp-section-title,
+.otp-light-theme .otp-section-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3.5rem;
+  background: linear-gradient(to bottom, #000000 40%, #4ecdc4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: 2px;
 }
 
 .otp-section-subtitle {
   font-family: 'Aldrich', monospace;
-  font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.6);
-  letter-spacing: 2px;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.5);
+  /* Default white for dark bg */
+  letter-spacing: 5px;
   text-transform: uppercase;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+  font-weight: 500;
 }
 
-/* Stats Section */
-.otp-stats-section {
-  background: transparent;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+.otp-projects-section .otp-section-subtitle,
+.otp-reviews-section .otp-section-subtitle,
+.otp-light-theme .otp-section-subtitle {
+  color: rgba(0, 0, 0, 0.4);
+  /* Dark for light bg */
 }
 
-.otp-stats-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
-  background: rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(10px);
-  padding: 40px;
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  display: grid !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-.otp-stat-item {
+/* Reviews Section Specific Title (Stacked Impact Style) */
+.otp-section-title-reviews {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: clamp(4rem, 10vw, 3rem) !important;
+  line-height: 1.2 !important;
+  letter-spacing: 4px !important;
+  color: #1a1a1c !important;
   text-align: center;
-  padding: 20px;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+  margin-bottom: 50px;
+  background: none !important;
+  -webkit-text-fill-color: initial !important;
+  text-shadow:
+    4px 4px 0px rgba(255, 107, 107, 0.2),
+    /* Soft coral hint */
+    -2px -2px 10px rgba(0, 0, 0, 0.05);
 }
 
-.otp-stat-number {
-  font-family: 'HEXCO', sans-serif;
-  font-size: 3rem;
-  font-weight: 100;
-  color: #4ecdc4;
-  margin-bottom: 10px;
-  letter-spacing: 2px;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+.otp-section-title-reviews span {
+  display: block;
+  width: 100%;
 }
 
-.otp-stat-label {
-  font-family: 'Aldrich', monospace;
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.7);
-  line-height: 1.4;
+.otp-section-title-reviews span:nth-child(2) {
+  font-size: 1em;
+  margin-left: 20px;
+  color: #ff727f;
+  /* Coral highlighted part */
+}
+
+.otp-section-title-reviews span:nth-child(3) {
+  margin-left: -20px;
+}
+
+
+
+/* Projects Section Redesign */
+.otp-projects-section-redesign {
+  display: flex;
+  width: 100%;
+  min-height: 850px;
+  background: white;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow: visible !important;
+  /* Ensure content can overlap freely */
+}
+
+.otp-projects-left {
+  flex: 1.1;
+  background: #ffffff;
+  display: flex;
+  align-items: flex-start;
+  /* Better for multiple quotes */
+  padding: 50px 50px 80px 100px;
+  /* Reduced top padding to move content up */
+  position: relative;
+  z-index: 1 !important;
+}
+
+.otp-projects-left-content {
+  margin-top: 10px;
+  /* Slight fine-tuning upwards */
+  max-width: 650px;
+}
+
+.otp-projects-pill {
+  background: #6c5ce7;
+  color: white;
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(108, 92, 231, 0.4);
   text-transform: uppercase;
   letter-spacing: 1px;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
 }
 
-/* Projects Section */
-.otp-projects-section {
-  background: transparent;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+.otp-projects-main-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  font-weight: 800;
+  color: #1a1b1e;
+  line-height: 1.1;
+  margin-bottom: 30px;
+  text-align: left;
 }
 
-.otp-projects-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-  display: grid !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+.otp-projects-title-accent {
+  background: linear-gradient(90deg, #6c5ce7, #a29bfe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: left;
+  font-size: 35px;
 }
 
-.otp-project-card {
-  background: rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(10px);
-  border-radius: 15px;
-  padding: 30px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-.otp-project-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(255, 255, 255, 0.1);
-}
-
-.otp-project-header {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-bottom: 20px;
-  display: flex !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-.otp-project-icon {
-  font-size: 2.5rem;
-  flex-shrink: 0;
-  animation: otp-icon-float 4s ease-in-out infinite;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-@keyframes otp-icon-float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-.otp-project-title {
-  font-family: 'HEXCO', sans-serif;
-  font-size: 1.5rem;
-  font-weight: 100;
-  color: #ffffff;
-  letter-spacing: 1px;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-.otp-project-description {
-  font-family: 'Aldrich', monospace;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 20px;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-.otp-project-tech {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+.otp-projects-description {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.05rem;
+  color: #4b5563;
+  line-height: 1.5;
   margin-bottom: 25px;
-  display: flex !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+  text-align: left;
 }
 
-.otp-tech-tag {
-  font-family: 'Aldrich', monospace;
-  font-size: 0.8rem;
-  padding: 6px 12px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 15px;
-  color: rgba(255, 255, 255, 0.7);
-  display: inline-block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-.otp-project-progress {
-  margin-top: 25px;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-.otp-progress-info {
+.otp-projects-quote-container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-  display: flex !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+  flex-direction: column;
+  gap: 15px;
 }
 
-.otp-progress-label {
-  font-family: 'Aldrich', monospace;
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.6);
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+.otp-projects-quote {
+  border-left: 4px solid #ff9f43;
+  padding: 8px 0 8px 25px;
+  font-style: italic;
+  color: #64748b;
+  font-size: 1rem;
+  background: rgba(255, 159, 67, 0.03);
+  border-radius: 0 10px 10px 0;
+  transition: all 0.3s ease;
 }
 
-.otp-progress-percent {
-  font-family: 'Aldrich', monospace;
-  font-size: 0.9rem;
-  color: #4ecdc4;
-  font-weight: bold;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+.otp-projects-quote:hover {
+  background: rgba(255, 159, 67, 0.06);
+  transform: translateX(5px);
 }
 
-.otp-progress-bar {
-  width: 100%;
-  height: 6px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 3px;
-  overflow: hidden;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+.otp-projects-right {
+  width: 38%;
+  background: #6044ff;
+  position: relative;
+  min-height: 850px;
+  z-index: 10 !important;
+  overflow: visible !important;
 }
 
-.otp-progress-fill {
-  height: 100%;
-  border-radius: 3px;
-  transition: width 1.5s ease;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-.otp-project-glow {
+.otp-projects-right-bg {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.05;
+  object-fit: cover;
+  opacity: 1.8;
+  mix-blend-mode: soft-light;
+  z-index: -1;
   pointer-events: none;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 0.05 !important;
 }
 
-/* Members Section */
-.otp-members-section {
+.otp-projects-right::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 60%);
+  z-index: -1;
+}
+
+/* Position the scroll wrapper so it spans both sides */
+.otp-projects-scroll-wrapper {
+  position: absolute;
+  top: 0px;
+  left: -250px;
+  /* Pull the entire scroll list onto the white background */
+  width: 700px;
+  /* Width that spans both areas */
+  height: 850px;
+  overflow-y: auto;
+  overflow-x: visible !important;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 30px;
+  scroll-behavior: smooth;
+  z-index: 20;
+}
+
+/* Custom Scrollbar - Move it to the Right side of the purple section */
+.otp-projects-scroll-wrapper::-webkit-scrollbar {
+  width: 4px;
+}
+
+.otp-projects-scroll-wrapper::-webkit-scrollbar-track {
   background: transparent;
+}
+
+.otp-projects-scroll-wrapper::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+}
+
+/* Project Card New - Centered Bridge Style */
+.otp-project-card-new {
+  background: white;
+  border-radius: 20px;
+  padding: 22px 30px;
+  width: 100%;
+  /* Occupies the wide scroll wrapper */
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 30 !important;
+}
+
+.otp-project-card-new:hover {
+  transform: translateY(-5px);
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+}
+
+.otp-project-card-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  /* Reduced internal gap */
+}
+
+.otp-project-card-top-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  /* Reduced gap */
+}
+
+.otp-project-icon {
+  width: 40px;
+  /* Smaller icon wrapper */
+  height: 40px;
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  /* Smaller font */
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.otp-project-card-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  /* Smaller title */
+  font-weight: 700;
+  color: #000000 !important;
+  letter-spacing: -0.2px;
+}
+
+.otp-project-card-desc {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  /* Smaller text */
+  color: #000000 !important;
+  line-height: 1.4;
+  opacity: 0.85;
+  /* Slight softening but strictly black base */
+}
+
+.otp-project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.otp-project-tag {
+  background: rgba(0, 0, 0, 0.05);
+  /* Slightly darker for contrast */
+  color: #000000 !important;
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.otp-project-completion {
+  margin-top: 5px;
+}
+
+.otp-completion-info {
+  display: flex;
+  justify-content: space-between;
+  color: #000000 !important;
+  font-size: 0.75rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.otp-completion-bar-bg {
+  width: 100%;
+  height: 5px;
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.otp-project-card-top-row {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.otp-project-icon {
+  width: 65px;
+  height: 65px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.otp-project-card-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  letter-spacing: -0.5px;
+}
+
+.otp-project-card-desc {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: #94a3b8;
+  line-height: 1.6;
+}
+
+.otp-project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.otp-project-tag {
+  background: rgba(255, 255, 255, 0.05);
+  color: #cbd5e1;
+  padding: 5px 15px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+.otp-project-tag:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+.otp-project-completion {
+  margin-top: 15px;
+}
+
+.otp-completion-info {
+  display: flex;
+  justify-content: space-between;
+  color: #f1f5f9;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.otp-completion-bar-bg {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 1px;
+}
+
+.otp-completion-bar-fill {
+  height: 100%;
+  border-radius: 20px;
+  transition: width 1.5s cubic-bezier(0.65, 0, 0.35, 1);
+  position: relative;
+}
+
+.otp-completion-bar-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: shine 2s infinite linear;
+}
+
+@keyframes shine {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 1250px) {
+  .otp-project-card-new {
+    width: 110%;
+    margin-left: -15%;
+  }
+}
+
+@media (max-width: 1100px) {
+  .otp-projects-section-redesign {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .otp-projects-left {
+    padding: 80px 5%;
+    text-align: center;
+  }
+
+  .otp-projects-left-content {
+    margin: 0 auto;
+  }
+
+  .otp-projects-quote {
+    text-align: left;
+  }
+
+  .otp-projects-right {
+    width: 100%;
+    padding: 80px 5%;
+  }
+
+  .otp-project-card-new {
+    width: 100%;
+    margin-left: 0;
+    padding: 30px;
+  }
+
+  .otp-projects-scroll-wrapper {
+    height: auto;
+    padding-right: 0;
+  }
+}
+
+
+/* Members Section - High Fidelity Update */
+.otp-members-section {
+  background: #cdc5c2 !important;
+  /* Exact color from the first image */
+  padding: 100px 0;
   display: block !important;
   visibility: visible !important;
   opacity: 1 !important;
+  position: relative;
+}
+
+.otp-members-section .otp-section-title {
+  font-family: 'Poppins', sans-serif !important;
+  /* Style from 'APRUCOS' image */
+  color: #1a1a1c !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: none !important;
+  -webkit-text-fill-color: initial !important;
+  margin-bottom: 15px;
+}
+
+.otp-members-section .otp-section-subtitle {
+  color: #4b5563 !important;
+  font-family: 'Aldrich', monospace;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .otp-members-grid {
@@ -476,365 +1177,211 @@
 }
 
 .otp-member-card {
-  background: rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(10px);
-  border-radius: 15px;
-  padding: 25px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: #0d1117;
+  border-radius: 25px;
+  padding: 30px;
+  /* Increased padding for full content spread */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+  display: flex !important;
+  flex-direction: column;
+  min-height: 400px;
+  /* Ensure uniform card size */
 }
 
 .otp-member-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-10px);
+  border-color: rgba(108, 92, 231, 0.4);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
 }
 
-.otp-member-header {
+.otp-member-content-news {
+  flex-grow: 1;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   gap: 15px;
-  margin-bottom: 20px;
-  display: flex !important;
-  visibility: visible !important;
-  opacity: 1 !important;
 }
 
-.otp-member-avatar {
-  width: 60px;
-  height: 60px;
+.otp-member-tag-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.otp-member-avatar-pill {
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid;
-  flex-shrink: 0;
-  display: flex !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-.otp-avatar-text {
-  font-family: 'HEXCO', sans-serif;
+  font-family: 'Zen Dots', sans-serif;
   font-size: 1.2rem;
-  font-weight: 100;
-  color: #ffffff;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-.otp-member-info {
-  flex: 1;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-.otp-member-name {
-  font-family: 'HEXCO', sans-serif;
-  font-size: 1.3rem;
-  font-weight: 100;
-  color: #ffffff;
-  margin-bottom: 5px;
-  letter-spacing: 1px;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-.otp-member-role {
+.otp-member-date-news {
   font-family: 'Aldrich', monospace;
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.6);
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+  font-size: 0.8rem;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.otp-member-stats {
-  display: flex;
-  gap: 20px;
+.otp-member-title-news {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.3;
+}
+
+.otp-member-excerpt-news {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: #94a3b8;
+  line-height: 1.6;
+  font-style: italic;
   margin-bottom: 20px;
-  padding: 15px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  display: flex !important;
-  visibility: visible !important;
-  opacity: 1 !important;
 }
 
-.otp-member-stat {
+.otp-member-skills-flow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.otp-member-skill-item {
+  background: rgba(255, 255, 255, 0.03);
+  color: #f1f5f9;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.05);
   display: flex;
   align-items: center;
   gap: 8px;
-  display: flex !important;
-  visibility: visible !important;
-  opacity: 1 !important;
 }
 
-.otp-stat-icon {
-  font-size: 1rem;
-  opacity: 0.7;
-  display: inline-block !important;
-  visibility: visible !important;
-  opacity: 0.7 !important;
+.otp-skill-icon {
+  color: #6c5ce7;
+  font-size: 0.7rem;
 }
 
-.otp-stat-value {
-  font-family: 'Aldrich', monospace;
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.8);
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-.otp-member-quote {
-  font-family: 'Aldrich', monospace;
-  font-style: italic;
-  font-size: 0.9rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 20px;
-  padding-left: 10px;
-  border-left: 2px solid rgba(78, 205, 196, 0.5);
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-.otp-member-skills {
+.otp-member-footer-full {
+  margin-top: auto;
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  display: flex !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+  gap: 30px;
+  padding-top: 25px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.otp-skill-tag {
+.otp-member-stat-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.otp-stat-val {
+  font-family: 'Zen Dots', sans-serif;
+  font-size: 1.3rem;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.otp-stat-lbl {
   font-family: 'Aldrich', monospace;
-  font-size: 0.75rem;
-  padding: 4px 10px;
-  border-radius: 12px;
-  display: inline-block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+  font-size: 0.65rem;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
 }
 
-/* Team Count Section */
+/* Team Count Section - Redesigned as Custom Design Card */
 .otp-team-count-container {
-  margin-top: 60px;
+  margin-top: 80px;
   text-align: center;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+  width: 100%;
 }
 
 .otp-team-count-card {
-  background: linear-gradient(135deg, 
-    rgba(235, 40, 40, 0.2), 
-    rgba(218, 23, 23, 0.2));
-  border-radius: 20px;
-  padding: 40px 50px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
   position: relative;
-  overflow: hidden;
-  /* backdrop-filter: blur(15px); */
-  max-width: 900px;
+  background: url('../../../assets/Tech-block.png') no-repeat center center;
+  background-size: cover;
+  border-radius: 40px;
+  padding: 80px 40px;
   margin: 0 auto;
-  display: flex;
+  min-height: 400px;
+  max-width: 1100px;
+  display: flex !important;
   align-items: center;
-  justify-content: flex-start;
-  gap: 50px;
-  min-height: 220px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-  display: flex !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.otp-team-count-icon {
-  font-size: 5rem;
-  flex-shrink: 0;
-  animation: otp-icon-bounce 3s ease-in-out infinite;
-  /* filter: drop-shadow(0 0 15px rgba(78, 205, 196, 0.7)); */
-  margin-left: 20px;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-@keyframes otp-icon-bounce {
-  0%, 100% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(-15px) scale(1.1); }
-}
-
-.otp-team-count-content {
-  position: relative;
-  z-index: 2;
-  text-align: left;
-  flex: 1;
-  padding-top: 15px;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-.otp-team-count-number {
-  font-family: 'HEXCO', sans-serif;
-  font-size: 6.5rem;
-  font-weight: 100;
-  color:  #d4af37;
-  margin-bottom: 0;
-  letter-spacing: 4px;
-  line-height: 0.9;
-  /* text-shadow: 
-    0 0 30px rgba(78, 205, 196, 0.8),
-    0 0 60px rgba(78, 205, 196, 0.5),
-    0 0 100px rgba(78, 205, 196, 0.3);
-  background: linear-gradient(45deg, #4ecdc4, #ffffff, #4ecdc4);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; */
-  background-clip: text;
-  background-size: 200% auto;
-  /* animation: otp-number-glow 2s ease-in-out infinite alternate, 
-             gradient-shift 3s ease-in-out infinite; */
-  display: block;
-  position: relative;
-  top: -10px;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-@keyframes otp-number-glow {
-  from {
-    text-shadow: 
-      0 0 30px rgba(78, 205, 196, 0.8),
-      0 0 60px rgba(78, 205, 196, 0.5);
-  }
-  to {
-    text-shadow: 
-      0 0 40px rgba(78, 205, 196, 1),
-      0 0 80px rgba(78, 205, 196, 0.7),
-      0 0 120px rgba(78, 205, 196, 0.4);
-  }
-}
-
-@keyframes gradient-shift {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
-.otp-team-count-label {
-  font-family: 'HEXCO', sans-serif;
-  font-size: 2.5rem;
-  color: #ffffff;
-  margin-bottom: 5px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  text-shadow: 0 3px 15px rgba(0, 0, 0, 0.7);
-  margin-top: -15px;
-  position: relative;
-  left: 5px;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-.otp-team-count-description {
-  font-family: 'Aldrich', monospace;
-  font-size: 1.2rem;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.95);
-  max-width: 600px;
-  margin-bottom: 20px;
-  margin-left: 5px;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-.otp-team-count-breakdown {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 20px;
-  margin-left: 5px;
-  display: flex !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-.otp-breakdown-item {
-  font-family: 'Aldrich', monospace;
-  font-size: 0.9rem;
-  padding: 8px 16px;
-  background: rgba(255, 255, 255, 0.12);
-  border-radius: 20px;
-  color: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(5px);
-  display: inline-block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-/* Add a subtle background pattern */
-.otp-team-count-card::before {
+.otp-team-count-card::after {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: 
-    radial-gradient(circle at 10% 70%, rgba(205, 78, 78, 0.2) 0%, transparent 60%),
-    radial-gradient(circle at 90% 30%, rgba(55, 3, 3, 0.2) 0%, transparent 60%);
-  pointer-events: none;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 60%, rgba(0, 0, 0, 0.9) 100%);
+  z-index: 1;
 }
 
-/* Add a glowing border effect */
-.otp-team-count-card::after {
-  content: '';
+.otp-team-count-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  width: 100%;
+  max-width: 850px;
+  display: flex !important;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.otp-card-watermark {
   position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(45deg, 
-    rgba(250, 59, 59, 0.4), 
-    rgba(255, 0, 0, 0.4),
-    rgba(177, 7, 7, 0.4));
-  border-radius: 22px;
-  z-index: -1;
-  animation: border-glow 3s ease-in-out infinite;
-  filter: blur(5px);
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Zen Dots', sans-serif;
+  font-size: 6rem;
+  color: rgba(255, 255, 255, 0.05);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 2;
+  letter-spacing: 12px;
 }
 
-@keyframes border-glow {
-  0%, 100% {
-    opacity: 0.5;
-  }
-  50% {
-    opacity: 0.8;
-  }
+.otp-card-main-title-new {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.8rem;
+  color: #ffffff;
+  margin-bottom: 20px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  z-index: 5;
+}
+
+.otp-card-desc-new {
+  font-family: 'Aldrich', monospace;
+  font-size: 1.15rem;
+  line-height: 1.9;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 90%;
+  margin: 0 auto;
+  z-index: 5;
+  letter-spacing: 0.5px;
 }
 
 /* Timeline Section */
@@ -911,13 +1458,11 @@
 .otp-timeline-line {
   width: 2px;
   height: 100%;
-  background: linear-gradient(
-    to bottom,
-    transparent,
-    rgba(78, 205, 196, 0.3),
-    rgba(255, 107, 107, 0.3),
-    transparent
-  );
+  background: linear-gradient(to bottom,
+      transparent,
+      rgba(78, 205, 196, 0.3),
+      rgba(255, 107, 107, 0.3),
+      transparent);
   display: block !important;
   visibility: visible !important;
   opacity: 1 !important;
@@ -936,7 +1481,9 @@
 }
 
 @keyframes otp-timeline-progress {
-  to { height: 100%; }
+  to {
+    height: 100%;
+  }
 }
 
 /* Timeline Items Container */
@@ -990,9 +1537,11 @@
   left: calc(50% + 30px);
   text-align: left;
 }
-.otp-timeline-mobile-year{
+
+.otp-timeline-mobile-year {
   margin-left: 7%;
 }
+
 /* Quarter Container (Desktop) */
 .otp-quarter-container {
   position: absolute;
@@ -1098,10 +1647,13 @@
 }
 
 @keyframes otp-dot-pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: scale(1);
     opacity: 0.8;
   }
+
   50% {
     transform: scale(1.2);
     opacity: 1;
@@ -1266,392 +1818,380 @@
   opacity: 1 !important;
 }
 
-@keyframes otp-navigation-pulse {
-  0%, 100% {
-    opacity: 0.3;
-    transform: scale(0.8);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
 
-/* Reviews Section */
+
+/* Premium Review Slider Redesign */
 .otp-reviews-section {
-  background: transparent;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-.otp-reviews-container {
-  max-width: 800px;
-  margin: 0 auto;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-.otp-reviews-content {
-  position: relative;
-  height: 300px;
+  background: #f4f5f8;
+  padding: 120px 0;
   overflow: hidden;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
 }
 
-.otp-review-card {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 40px;
-  background: rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  opacity: 0;
-  transform: translateX(100px);
-  transition: all 0.5s ease;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 0 !important;
-}
-
-.otp-review-card.otp-active {
-  opacity: 1;
-  transform: translateX(0);
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-.otp-review-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 25px;
-  display: flex !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-.otp-review-rating {
-  color: #FFD700;
-  font-size: 1.5rem;
-  letter-spacing: 2px;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-.otp-review-project {
-  font-family: 'Aldrich', monospace;
-  font-size: 0.9rem;
-  padding: 8px 16px;
-  background: rgba(78, 205, 196, 0.1);
-  border-radius: 20px;
-  color: #4ecdc4;
-  display: inline-block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-.otp-review-text {
-  font-family: 'Aldrich', monospace;
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 30px;
-  font-style: italic;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-.otp-review-client {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  display: flex !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-.otp-client-info {
-  flex: 1;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-.otp-client-name {
-  font-family: 'HEXCO', sans-serif;
-  font-size: 1.3rem;
-  color: #ffffff;
-  margin-bottom: 5px;
-  letter-spacing: 1px;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-.otp-client-role {
-  font-family: 'Aldrich', monospace;
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.6);
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-.otp-reviews-controls {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
-  margin-top: 40px;
-  display: flex !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-.otp-review-btn {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.7);
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: flex !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-.otp-review-btn:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: #4ecdc4;
-  border-color: #4ecdc4;
-}
-
-.otp-review-dots {
-  display: flex;
-  gap: 10px;
-  display: flex !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-.otp-review-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-.otp-review-dot.otp-active {
-  background: #4ecdc4;
-  transform: scale(1.2);
-}
-
-/* WhatsApp Contact Section - REPLACED FORM SECTION */
-.otp-contact-section {
-  background: transparent;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-.otp-whatsapp-container {
-  background: rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 40px;
-  max-width: 800px;
-  margin: 0 auto;
+.otp-section-title-reviews-new {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3.9rem;
+  font-weight: 700;
+  color: #1a1a1c;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-bottom: 60px;
   text-align: center;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+  opacity: 0.8;
 }
 
-.otp-whatsapp-info {
+.otp-reviews-slider-wrapper {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 25px;
-  margin-bottom: 40px;
-  flex-wrap: wrap;
-  display: flex !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+  min-height: 450px;
 }
 
-.otp-whatsapp-icon {
-  flex-shrink: 0;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+.otp-slide-tracker {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.otp-whatsapp-logo {
-  font-size: 3.5rem;
-  animation: otp-whatsapp-pulse 2s infinite;
-  display: block;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+.otp-review-slide {
+  position: absolute;
+  width: 600px;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
 }
 
-@keyframes otp-whatsapp-pulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
+.otp-review-slide.active-slide {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1.1);
+  z-index: 10;
+  pointer-events: auto;
 }
 
-.otp-whatsapp-content {
-  flex: 1;
-  min-width: 300px;
-  text-align: left;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+.otp-review-slide.prev-slide {
+  opacity: 0.5;
+  transform: translate3d(-350px, 0, -100px) scale(0.85);
+  z-index: 5;
 }
 
-.otp-whatsapp-title {
-  font-family: 'HEXCO', sans-serif;
-  font-size: 1.8rem;
-  color: #ffffff;
-  margin-bottom: 15px;
-  letter-spacing: 1px;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+.otp-review-slide.next-slide {
+  opacity: 0;
+  transform: translate3d(350px, 0, -100px) scale(0.85);
 }
 
-.otp-whatsapp-description {
-  font-family: 'Aldrich', monospace;
-  font-size: 1rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 25px;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+/* Logic for next slide visibility - we only show 3 if possible */
+.otp-review-slide.next-slide {
+  opacity: 0.5;
+  transform: translate3d(350px, 0, -100px) scale(0.85);
+  z-index: 5;
 }
 
-.otp-whatsapp-details {
+.otp-review-card-premium {
+  background: #ffffff;
+  padding: 50px 60px;
+  border-radius: 4px;
+  /* Slightly rounded as in image */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+  text-align: center;
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  display: flex !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+  align-items: center;
+  gap: 25px;
 }
 
-.otp-whatsapp-item {
+.otp-card-stars {
   display: flex;
+  gap: 5px;
+}
+
+.star-active {
+  color: #e91e63;
+  /* Pink color from image */
+  font-size: 1.2rem;
+}
+
+.star-inactive {
+  color: #d1d5db;
+  /* Grey star */
+  font-size: 1.2rem;
+}
+
+.otp-premium-review-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #1f2937;
+  font-weight: 500;
+  max-width: 90%;
+}
+
+.otp-premium-user-footer {
+  margin-top: 10px;
+}
+
+.otp-premium-user-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111827;
+  text-transform: uppercase;
+}
+
+.otp-premium-location {
+  font-weight: 400;
+  color: #4b5563;
+}
+
+.otp-premium-quote-icon {
+  position: absolute;
+  bottom: -40px;
+  right: 50px;
+  width: 80px;
+  height: 80px;
+  color: #e91e63;
+  /* Pink quote */
+  z-index: 20;
+}
+
+.quote-svg {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 1024px) {
+  .otp-review-slide {
+    width: 80%;
+  }
+
+  .otp-review-slide.prev-slide,
+  .otp-review-slide.next-slide {
+    display: none;
+    /* Hide side cards on tablet/mobile for focus */
+  }
+
+  .otp-review-slide.active-slide {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .otp-review-card-premium {
+    padding: 40px 30px;
+  }
+
+  .otp-premium-review-text {
+    font-size: 1rem;
+  }
+
+  .otp-premium-quote-icon {
+    width: 60px;
+    height: 60px;
+    bottom: -30px;
+    right: 30px;
+  }
+}
+
+
+/* Contact Section Redesign Matching Image */
+.otp-contact-section {
+  padding: 80px 0;
+  background: #0b0f19;
+  /* Dark deep blue background from the image */
+}
+
+.otp-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
   align-items: flex-start;
-  gap: 10px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Left Side Info */
+.otp-contact-info {
+  margin-top: 20px;
   display: flex !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+  flex-direction: column;
 }
 
-.otp-whatsapp-label {
-  font-family: 'Aldrich', monospace;
-  font-size: 0.9rem;
-  color: #4ecdc4;
-  font-weight: bold;
-  min-width: 140px;
-  display: inline-block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+.otp-contact-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 20px;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  text-align: left;
 }
 
-.otp-whatsapp-value {
-  font-family: 'Aldrich', monospace;
-  font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.7);
-  flex: 1;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+.otp-contact-subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #94a3b8;
+  /* Light gray text */
+  max-width: 450px;
+  text-align: left;
 }
 
-.otp-whatsapp-btn {
-  display: flex;
+/* Right Side Cards */
+.otp-contact-cards {
+  display: flex !important;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Main Card */
+.otp-contact-card-main {
+  background: #1e2433;
+  /* Dark slate */
+  border-radius: 20px;
+  padding: 35px;
+  display: flex !important;
+  flex-direction: column;
+  gap: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  /* Slight border for separation */
+}
+
+.otp-card-header {
+  display: flex !important;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.otp-card-header-text {
+  display: flex !important;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.otp-card-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #34d399;
+  /* Mint green */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.otp-card-value {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* Icon Box used in all cards */
+.otp-card-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #25423f;
+  /* Deep teal/emerald background */
+  color: #4ade80;
+  /* Light emerald green icon */
+  display: flex !important;
   align-items: center;
   justify-content: center;
-  gap: 15px;
+  font-size: 1.2rem;
+}
+
+.otp-contact-btn-main {
   width: 100%;
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  background: linear-gradient(45deg, #25D366, #128C7E);
-  color: white;
+  padding: 18px;
+  background: #2dd4bf;
+  /* Teal background for button */
+  color: #042f2e;
+  /* Very dark green/black text */
   border: none;
   border-radius: 12px;
-  font-family: 'HEXCO', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 1.1rem;
-  font-weight: 100;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  letter-spacing: 1px;
+  font-weight: 600;
   display: flex !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
 }
 
-.otp-whatsapp-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
-  background: linear-gradient(45deg, #128C7E, #25D366);
+.otp-contact-btn-main:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
 }
 
-.otp-whatsapp-btn-icon {
+.otp-btn-icon {
   font-size: 1.3rem;
-  display: inline-block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
 }
 
-.otp-whatsapp-btn-text {
-  flex: 1;
-  text-align: center;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+/* Small Cards Row */
+.otp-contact-cards-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  /* Reduced from 25px */
 }
 
-.otp-whatsapp-btn-arrow {
-  font-size: 1.2rem;
-  transition: transform 0.3s ease;
-  display: inline-block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+.otp-contact-card-small {
+  background: #1e2433;
+  border-radius: 20px;
+  padding: 12px 18px;
+  /* Reduced from 20px 15px */
+  display: flex !important;
+  flex-direction: row;
+  /* Changed to row */
+  align-items: center;
+  /* Center-align icon and text */
+  gap: 15px;
+  /* Space between icon and text */
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
 }
 
-.otp-whatsapp-btn:hover .otp-whatsapp-btn-arrow {
-  transform: translateX(5px);
+.otp-contact-card-small-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.otp-contact-card-small .otp-card-icon-box {
+  /* margin-bottom: 20px;
+  margin-left: 42%; */
+  width: 40px;
+  height: 40px;
+  font-size: 1.1rem;
+}
+
+.otp-card-small-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  /* Reduced from 1.1rem */
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.otp-card-small-subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.8rem;
+  /* Reduced from 0.9rem */
+  color: #94a3b8;
+  margin: 0;
+  line-height: 1.2;
 }
 
 /* Responsive Design - FIXED MOBILE TIMELINE */
@@ -1659,13 +2199,13 @@
   .otp-stats-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .otp-members-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     max-width: 700px;
     margin: 0 auto;
   }
-  
+
   .otp-team-count-card {
     max-width: 850px;
   }
@@ -1675,26 +2215,28 @@
   .otp-title-text {
     font-size: 4rem;
   }
-  
+
   .otp-section-title {
     font-size: 2.5rem;
   }
-  
+
   .otp-year-headers {
     padding: 0 20px;
   }
-  .otp-timeline-mobile-year{
+
+  .otp-timeline-mobile-year {
     margin-left: 0%;
   }
+
   /* Mobile timeline adjustments - FIXED */
   .otp-quarter-container {
     display: none !important;
   }
-  
+
   .otp-timeline-year {
     display: none !important;
   }
-  
+
   /* Show mobile badge before content */
   .otp-mobile-quarter-badge {
     display: block;
@@ -1706,63 +2248,63 @@
     visibility: visible !important;
     opacity: 1 !important;
   }
-  
+
   .otp-timeline-content {
     max-width: calc(100% - 50px);
     margin-left: 50px !important;
     margin-right: 0 !important;
     margin-top: 25px !important;
   }
-  
+
   .otp-timeline-dot {
     left: 25px;
     top: -5px;
   }
-  
+
   .otp-timeline-center-line {
     left: 30px;
   }
-  
+
   .otp-whatsapp-info {
     flex-direction: column;
     text-align: center;
   }
-  
+
   .otp-whatsapp-content {
     text-align: center;
     min-width: auto;
   }
-  
+
   .otp-whatsapp-item {
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 5px;
   }
-  
+
   .otp-whatsapp-label {
     min-width: auto;
   }
-  
+
   .otp-team-count-card {
     max-width: 800px;
     min-height: 200px;
     padding: 35px 45px;
     gap: 40px;
   }
-  
+
   .otp-team-count-number {
     font-size: 5.5rem;
   }
-  
+
   .otp-team-count-label {
     font-size: 2rem;
   }
-  
+
   .otp-team-count-icon {
     font-size: 4rem;
   }
-  
+
   .otp-team-count-description {
     font-size: 1.1rem;
   }
@@ -1772,44 +2314,44 @@
   .otp-title-text {
     font-size: 3rem;
   }
-  
+
   .otp-title-sub {
     font-size: 1.2rem;
   }
-  
+
   .otp-header-description {
     font-size: 1rem;
   }
-  
+
   .otp-section {
     padding: 80px 0;
   }
-  
+
   .otp-section-title {
     font-size: 2rem;
   }
-  
+
   .otp-stats-grid {
     grid-template-columns: 1fr;
     padding: 30px 20px;
   }
-  
+
   .otp-projects-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .otp-members-grid {
     grid-template-columns: 1fr;
     max-width: 400px;
   }
-  
+
   .otp-year-headers {
     flex-direction: column;
     gap: 30px;
     align-items: center;
     text-align: center;
   }
-  
+
   /* Further mobile timeline fixes */
   .otp-timeline-content {
     max-width: calc(100% - 40px);
@@ -1817,63 +2359,48 @@
     padding: 20px;
     margin-top: 30px !important;
   }
-  
+
   .otp-timeline-dot {
     left: 20px;
     width: 16px;
     height: 16px;
     top: -3px;
   }
-  
+
   .otp-mobile-quarter-badge {
     top: -30px;
     left: 0;
     font-size: 0.7rem;
     padding: 4px 10px;
   }
-  
+
   .otp-timeline-title {
     font-size: 1.2rem;
     margin-top: 5px;
   }
-  
+
   .otp-timeline-description {
     font-size: 0.9rem;
   }
-  
+
   .otp-team-heading {
     font-size: 0.85rem;
   }
-  
+
   .otp-team-name {
     font-size: 0.85rem;
   }
-  
+
   .otp-review-card {
     padding: 30px 20px;
   }
-  
+
   .otp-review-text {
     font-size: 1rem;
   }
-  
-  .otp-whatsapp-container {
-    padding: 30px 20px;
-  }
-  
-  .otp-whatsapp-title {
-    font-size: 1.5rem;
-  }
-  
-  .otp-whatsapp-description {
-    font-size: 0.95rem;
-  }
-  
-  .otp-whatsapp-btn {
-    padding: 18px 15px;
-    font-size: 1rem;
-  }
-  
+
+
+
   .otp-team-count-card {
     flex-direction: column;
     min-height: auto;
@@ -1882,35 +2409,35 @@
     max-width: 600px;
     text-align: center;
   }
-  
+
   .otp-team-count-content {
     text-align: center;
     padding-top: 0;
   }
-  
+
   .otp-team-count-number {
     font-size: 5rem;
     margin-top: 0;
     top: 0;
   }
-  
+
   .otp-team-count-label {
     font-size: 1.8rem;
     margin-top: -10px;
     left: 0;
   }
-  
+
   .otp-team-count-description {
     max-width: 100%;
     font-size: 1.1rem;
     margin-left: 0;
   }
-  
+
   .otp-team-count-breakdown {
     justify-content: center;
     margin-left: 0;
   }
-  
+
   .otp-team-count-icon {
     font-size: 4rem;
     margin-left: 0;
@@ -1921,117 +2448,30 @@
   .otp-title-text {
     font-size: 2.5rem;
   }
-  
+
   .otp-title-sub {
     font-size: 1rem;
   }
-  
+
   .otp-stat-number {
     font-size: 2.5rem;
   }
-  
-  /* Final mobile timeline fixes */
-  .otp-timeline-content {
-    max-width: calc(100% - 35px);
-    margin-left: 35px !important;
-    padding: 15px;
-    margin-top: 25px !important;
-  }
-  
-  .otp-timeline-dot {
-    left: 17px;
-    width: 14px;
-    height: 14px;
-    top: -2px;
-  }
-  
-  .otp-mobile-quarter-badge {
-    top: -25px;
-    left: 0;
-    font-size: 0.65rem;
-    padding: 3px 8px;
-  }
-  
-  .otp-timeline-title {
-    font-size: 1.1rem;
-    margin-top: 0;
-  }
-  
-  .otp-timeline-description {
-    font-size: 0.85rem;
-  }
-  
-  .otp-team-member {
-    gap: 8px;
-  }
-  
-  .otp-team-dot {
-    width: 5px;
-    height: 5px;
-  }
-  
-  .otp-team-name {
-    font-size: 0.8rem;
-  }
-  
-  .otp-reviews-content {
-    height: 350px;
-  }
-  
-  .otp-review-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-  }
-  
-  .otp-header {
-    min-height: 600px;
-  }
-  
-  .otp-whatsapp-title {
-    font-size: 1.4rem;
-  }
-  
-  .otp-whatsapp-description {
-    font-size: 0.9rem;
-  }
-  
-  .otp-whatsapp-label {
-    font-size: 0.85rem;
-  }
-  
-  .otp-whatsapp-value {
-    font-size: 0.9rem;
-  }
-  
-  .otp-whatsapp-btn-text {
-    font-size: 0.9rem;
-  }
-  
+
   .otp-team-count-card {
     padding: 35px 25px;
     max-width: 100%;
     gap: 20px;
   }
-  
+
   .otp-team-count-number {
     font-size: 4.5rem;
   }
-  
+
   .otp-team-count-label {
     font-size: 1.6rem;
   }
-  
+
   .otp-team-count-description {
     font-size: 1rem;
-  }
-  
-  .otp-team-count-icon {
-    font-size: 3.5rem;
-  }
-  
-  .otp-breakdown-item {
-    font-size: 0.85rem;
-    padding: 7px 14px;
   }
 }

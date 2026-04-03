@@ -13,13 +13,15 @@
 /* Hero Section - FIXED HEIGHT */
 .awd-hero-section {
     position: relative;
-    min-height: 80vh; /* Reduced from 100vh to 80vh */
+    min-height: 80vh;
+    /* Reduced from 100vh to 80vh */
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     background: #0a192f;
-    padding: 40px 0; /* Added padding */
+    padding: 40px 0;
+    /* Added padding */
 }
 
 .awd-hero-bg {
@@ -41,7 +43,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    
+
 }
 
 /* Hero Content Box - FIXED HEIGHT */
@@ -54,19 +56,23 @@
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    padding: 40px 50px; /* Reduced padding */
+    padding: 40px 50px;
+    /* Reduced padding */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 15px;
     width: 100%;
-    max-width: 900px; /* Reduced from 1000px */
-    margin: 0 auto; /* Changed from 20px auto to 0 auto */
+    max-width: 900px;
+    /* Reduced from 1000px */
+    margin: 0 auto;
+    /* Changed from 20px auto to 0 auto */
     overflow: hidden;
     opacity: 1;
     transform: translateY(0);
-    min-height: auto; /* Remove fixed min-height */
+    min-height: auto;
+    /* Remove fixed min-height */
 }
 
 .awd-hero-badge {
@@ -77,7 +83,8 @@
     border-radius: 30px;
     font-size: 15px;
     font-weight: 600;
-    margin-bottom: 15px; /* Reduced from 25px */
+    margin-bottom: 15px;
+    /* Reduced from 25px */
     text-transform: uppercase;
     letter-spacing: 1.5px;
     font-family: 'Aldrich', sans-serif;
@@ -85,27 +92,34 @@
 }
 
 .awd-hero-title {
-    font-size: 3rem; /* Reduced from 3.5rem */
+    font-size: 3rem;
+    /* Reduced from 3.5rem */
     font-weight: 800;
     color: #ffffff;
-    margin-bottom: 15px; /* Reduced from 20px */
+    margin-bottom: 15px;
+    /* Reduced from 20px */
     line-height: 1.2;
     font-family: 'HEXCO', sans-serif;
 }
 
 .awd-hero-subtitle {
-    font-size: 1.3rem; /* Reduced from 1.5rem */
+    font-size: 1.3rem;
+    /* Reduced from 1.5rem */
     color: #64ffda;
-    margin-bottom: 20px; /* Reduced from 30px */
+    margin-bottom: 20px;
+    /* Reduced from 30px */
     line-height: 1.6;
     font-family: 'Aldrich', sans-serif;
 }
 
 .awd-hero-description {
-    font-size: 1rem; /* Reduced from 1.1rem */
+    font-size: 1rem;
+    /* Reduced from 1.1rem */
     color: #8892b0;
-    line-height: 1.6; /* Reduced from 1.8 */
-    margin-bottom: 25px; /* Reduced from 40px */
+    line-height: 1.6;
+    /* Reduced from 1.8 */
+    margin-bottom: 25px;
+    /* Reduced from 40px */
     font-family: 'Aldrich', sans-serif;
 }
 
@@ -113,16 +127,20 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 8px; /* Reduced from 10px */
-    margin-top: 15px; /* Reduced from 20px */
+    gap: 8px;
+    /* Reduced from 10px */
+    margin-top: 15px;
+    /* Reduced from 20px */
 }
 
 .awd-tech-item {
     background: rgba(255, 255, 255, 0.1);
     color: #64ffda;
-    padding: 6px 12px; /* Reduced from 8px 16px */
+    padding: 6px 12px;
+    /* Reduced from 8px 16px */
     border-radius: 20px;
-    font-size: 0.85rem; /* Reduced from 0.9rem */
+    font-size: 0.85rem;
+    /* Reduced from 0.9rem */
     border: 1px solid rgba(100, 255, 218, 0.3);
     font-family: 'Aldrich', sans-serif;
     transition: all 0.3s ease;
@@ -836,85 +854,88 @@
 /* Responsive Design */
 @media (max-width: 1024px) {
     .awd-hero-section {
-        min-height: 70vh; /* Adjusted for tablet */
+        min-height: 70vh;
+        /* Adjusted for tablet */
     }
-    
+
     .awd-hero-title {
-        font-size: 2.5rem; /* Further reduced for tablet */
+        font-size: 2.5rem;
+        /* Further reduced for tablet */
     }
-    
+
     .awd-about-content {
         grid-template-columns: 1fr;
         gap: 40px;
     }
-    
+
     .awd-about-text {
         padding-right: 0;
     }
-    
+
     /* On mobile, image is always relative */
     .awd-about-image-main {
         position: relative !important;
         top: 0 !important;
         height: 400px;
     }
-    
+
     .awd-image-scroll .awd-about-image-main {
         position: relative !important;
     }
-    
+
     .awd-section-title {
         font-size: 2.4rem;
     }
-    
+
     .awd-feedback-wrapper-wide {
         padding: 0 20px;
     }
-    
+
     .awd-feedback-card-wide {
         max-width: 800px;
         padding: 35px 40px;
         min-height: 300px;
     }
-    
+
     .awd-feedback-text-wide {
         font-size: 1.05rem;
         padding-left: 45px;
         max-height: 180px;
     }
-    
+
     .awd-feedback-quote {
         left: 30px;
         font-size: 3rem;
     }
-    
+
     .awd-author-info-simple {
         min-width: 220px;
         padding: 12px 20px;
     }
-    
+
     .awd-author-info-simple h4 {
         font-size: 1.2rem;
     }
-    
+
     .awd-hero-content {
-        padding: 35px 40px; /* Adjusted for tablet */
+        padding: 35px 40px;
+        /* Adjusted for tablet */
         max-width: 800px;
     }
-    
+
     /* Adjust image sizes on tablet */
     .awd-extra-image-fill {
         height: 400px;
     }
-    
+
     .awd-fill-image-overlay {
         padding: 25px;
     }
-    
+
     .awd-fill-image-overlay h4 {
         font-size: 1.3rem;
     }
-    
+
     .awd-fill-image-overlay p {
         font-size: 0.9rem;
     }
@@ -922,139 +943,141 @@
 
 @media (max-width: 768px) {
     .awd-hero-section {
-        min-height: 60vh; /* Adjusted for mobile */
+        min-height: 60vh;
+        /* Adjusted for mobile */
         padding: 30px 0;
     }
-    
+
     .awd-hero-content {
         padding: 30px 25px;
         max-width: 90%;
     }
-    
+
     .awd-hero-title {
         font-size: 2rem;
     }
-    
+
     .awd-hero-subtitle {
         font-size: 1.1rem;
     }
-    
+
     .awd-hero-description {
         font-size: 0.95rem;
         line-height: 1.5;
         margin-bottom: 20px;
     }
-    
+
     .awd-hero-badge {
         padding: 10px 22px;
         font-size: 14px;
         margin-bottom: 10px;
     }
-    
+
     .awd-about-title {
         font-size: 2rem;
     }
-    
+
     .awd-section-title {
         font-size: 2.2rem;
     }
-    
+
     .awd-feedback-section .awd-section-title {
         font-size: 1.8rem;
     }
-    
+
     .awd-feedback-section .awd-section-subtitle {
         font-size: 1rem;
         padding: 0 20px;
     }
-    
+
     .awd-projects-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .awd-feedback-card-wide {
         padding: 30px 35px;
         max-width: 650px;
         min-height: 280px;
     }
-    
+
     .awd-feedback-text-wide {
         font-size: 1rem;
         max-height: 160px;
         padding-left: 35px;
         margin-bottom: 20px;
     }
-    
+
     .awd-feedback-quote {
         font-size: 2.5rem;
         left: 25px;
         top: 10px;
     }
-    
+
     .awd-feedback-wrapper-wide {
         padding: 0 15px;
     }
-    
+
     .awd-feedback-nav-btn {
         width: 45px;
         height: 45px;
     }
-    
+
     .awd-author-info-simple {
         min-width: 200px;
         padding: 12px 18px;
     }
-    
+
     .awd-author-info-simple h4 {
         font-size: 1.1rem;
     }
-    
+
     .awd-author-info-simple p {
         font-size: 0.9rem;
     }
-    
+
     /* Adjust image sizes on mobile */
     .awd-about-image-main {
         height: 350px;
     }
-    
+
     .awd-extra-image-fill {
         height: 350px;
     }
-    
+
     .awd-fill-image-overlay {
         padding: 20px;
     }
-    
+
     .awd-fill-image-overlay h4 {
         font-size: 1.2rem;
     }
-    
+
     .awd-fill-image-overlay p {
         font-size: 0.85rem;
     }
 }
 
 @media (max-width: 640px) {
+
     /* TOP ALIGNED BUTTONS FOR MOBILE */
     .awd-feedback-nav-row {
         gap: 15px;
         margin-bottom: 15px;
     }
-    
+
     .awd-feedback-nav-btn {
         width: 40px;
         height: 40px;
         border-radius: 8px;
     }
-    
+
     .awd-feedback-card-wide {
         padding: 25px 20px;
         min-height: 320px;
         max-width: 100%;
         margin: 0;
     }
-    
+
     .awd-feedback-text-wide {
         font-size: 0.95rem;
         max-height: 180px;
@@ -1063,27 +1086,27 @@
         margin-bottom: 20px;
         line-height: 1.6;
     }
-    
+
     .awd-feedback-quote {
         font-size: 2rem;
         left: 15px;
         top: 10px;
     }
-    
+
     .awd-feedback-author-simple {
         margin-top: 15px;
         padding-top: 15px;
     }
-    
+
     .awd-author-info-simple {
         min-width: 180px;
         padding: 10px 15px;
     }
-    
+
     .awd-author-info-simple h4 {
         font-size: 1rem;
     }
-    
+
     .awd-author-info-simple p {
         font-size: 0.85rem;
     }
@@ -1094,72 +1117,72 @@
         min-height: 55vh;
         padding: 20px 0;
     }
-    
+
     .awd-hero-content {
         padding: 25px 20px;
         max-width: 95%;
     }
-    
+
     .awd-hero-title {
         font-size: 1.8rem;
     }
-    
+
     .awd-hero-badge {
         padding: 8px 18px;
         font-size: 12px;
         margin-bottom: 8px;
     }
-    
+
     .awd-hero-subtitle {
         font-size: 1rem;
         margin-bottom: 15px;
     }
-    
+
     .awd-hero-description {
         font-size: 0.9rem;
         line-height: 1.4;
         margin-bottom: 15px;
     }
-    
+
     .awd-tech-stack {
         gap: 5px;
     }
-    
+
     .awd-tech-item {
         padding: 5px 10px;
         font-size: 0.8rem;
     }
-    
+
     .awd-feedback-section {
         padding: 60px 0;
     }
-    
+
     .awd-feedback-section .awd-section-title {
         font-size: 1.6rem;
         padding: 0 15px;
     }
-    
+
     .awd-feedback-section .awd-section-subtitle {
         font-size: 0.9rem;
         padding: 0 15px;
         margin-bottom: 30px;
     }
-    
+
     .awd-feedback-wrapper-wide {
         padding: 0 10px;
     }
-    
+
     .awd-feedback-nav-row {
         gap: 10px;
         margin-bottom: 15px;
     }
-    
+
     .awd-feedback-card-wide {
         padding: 20px 15px;
         min-height: 340px;
         border-radius: 15px;
     }
-    
+
     .awd-feedback-text-wide {
         font-size: 0.9rem;
         max-height: 200px;
@@ -1169,72 +1192,72 @@
         line-height: 1.5;
         border-left-width: 2px;
     }
-    
+
     .awd-feedback-quote {
         font-size: 1.8rem;
         left: 10px;
         top: 8px;
     }
-    
+
     .awd-feedback-nav-btn {
         width: 35px;
         height: 35px;
         border-radius: 6px;
     }
-    
+
     .awd-feedback-nav-btn svg {
         width: 12px;
         height: 12px;
     }
-    
+
     .awd-author-info-simple {
         min-width: 160px;
         padding: 8px 12px;
         border-radius: 10px;
     }
-    
+
     .awd-author-info-simple h4 {
         font-size: 0.95rem;
         margin-bottom: 4px;
     }
-    
+
     .awd-author-info-simple p {
         font-size: 0.8rem;
     }
-    
+
     .awd-slider-dots {
         margin-top: 25px;
     }
-    
+
     /* Adjust image sizes on small screens */
     .awd-about-image-main {
         height: 300px;
     }
-    
+
     .awd-extra-image-fill {
         height: 300px;
     }
-    
+
     .awd-fill-image-overlay {
         padding: 15px;
     }
-    
+
     .awd-fill-image-overlay h4 {
         font-size: 1.1rem;
     }
-    
+
     .awd-fill-image-overlay p {
         font-size: 0.8rem;
     }
-    
+
     .awd-image-overlay {
         padding: 20px;
     }
-    
+
     .awd-image-overlay h3 {
         font-size: 1.3rem;
     }
-    
+
     .awd-image-overlay p {
         font-size: 0.8rem;
     }
@@ -1245,77 +1268,77 @@
         padding: 18px 12px;
         min-height: 360px;
     }
-    
+
     .awd-feedback-text-wide {
         font-size: 0.85rem;
         padding-left: 20px;
         max-height: 220px;
         line-height: 1.4;
     }
-    
+
     .awd-feedback-quote {
         font-size: 1.5rem;
         left: 8px;
         top: 6px;
     }
-    
+
     .awd-feedback-nav-row {
         gap: 8px;
         margin-bottom: 12px;
     }
-    
+
     .awd-feedback-nav-btn {
         width: 32px;
         height: 32px;
     }
-    
+
     .awd-feedback-nav-btn svg {
         width: 10px;
         height: 10px;
     }
-    
+
     .awd-author-info-simple {
         min-width: 140px;
         padding: 6px 10px;
     }
-    
+
     .awd-author-info-simple h4 {
         font-size: 0.9rem;
     }
-    
+
     .awd-author-info-simple p {
         font-size: 0.75rem;
     }
-    
+
     .awd-feedback-section .awd-section-title {
         font-size: 1.4rem;
     }
-    
+
     /* Adjust image sizes for very small screens */
     .awd-about-image-main {
         height: 280px;
     }
-    
+
     .awd-extra-image-fill {
         height: 280px;
     }
-    
+
     .awd-fill-image-overlay {
         padding: 12px;
     }
-    
+
     .awd-fill-image-overlay h4 {
         font-size: 1rem;
     }
-    
+
     .awd-fill-image-overlay p {
         font-size: 0.75rem;
     }
-    
+
     .awd-hero-title {
         font-size: 1.6rem;
     }
-    
+
     .awd-hero-subtitle {
         font-size: 0.9rem;
     }

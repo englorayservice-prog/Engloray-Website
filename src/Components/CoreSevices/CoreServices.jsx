@@ -106,7 +106,7 @@ const CoreServices = () => {
       background: aiProductWork,
       features: ["Machine Learning", "NLP", "Predictive Analytics", "Process Automation"],
       color: "#6D28D9",
-      route: '/aiPage'
+      route: '/aiProductPage'
     }
   ];
 

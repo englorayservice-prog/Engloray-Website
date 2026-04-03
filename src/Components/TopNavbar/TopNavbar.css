@@ -124,6 +124,60 @@
     letter-spacing: 0.5px;
 }
 
+/* Top Hamburger Menu */
+.topnav-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 24px;
+    height: 18px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1002;
+    transition: all 0.3s ease;
+}
+
+.topnav-hamburger span {
+    width: 24px;
+    height: 2px;
+    background: #bf0413;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    position: relative;
+    transform-origin: 1px;
+}
+
+.topnav-hamburger.hamburger-active span:nth-child(1) {
+    transform: rotate(45deg);
+}
+
+.topnav-hamburger.hamburger-active span:nth-child(2) {
+    opacity: 0;
+}
+
+.topnav-hamburger.hamburger-active span:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+.topnav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(2px);
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
     .topnav-container {
@@ -132,47 +186,57 @@
 
     .topnav-current-page {
         display: none;
-        /* Hide on smaller screens */
     }
 }
 
 @media (max-width: 768px) {
     .topnav-container {
-        flex-direction: column;
-        height: auto;
-        padding: 0.5rem;
-        /* Reduced padding */
-        gap: 0.5rem;
-        justify-content: center;
+        height: 60px; /* Taller for mobile */
+        justify-content: flex-end; /* Align hamburger to right */
+    }
+
+    .topnav-hamburger {
+        display: flex;
     }
 
     .topnav-items {
-        width: 100%;
-        justify-content: center;
-        flex-wrap: wrap;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 1rem 0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transform: translateY(-150%);
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1001;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .topnav-items.topnav-mobile-active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
     }
 
     .topnav-link {
-        padding: 0.4rem 0.8rem;
-        /* Reduced padding */
-        font-size: 0.75rem;
-        /* Smaller font */
+        width: 100%;
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        justify-content: flex-start;
+        border-bottom: 1px solid #f3f4f6;
+    }
+
+    .topnav-link.topnav-active {
+        background: #bf0413;
+        color: white;
     }
 
     .topnav-active-indicator {
-        bottom: -1px;
-        height: 2px;
-    }
-}
-
-@media (max-width: 480px) {
-    .topnav-link {
-        padding: 0.3rem 0.6rem;
-        font-size: 0.7rem;
-    }
-
-    .topnav-items {
-        gap: 0.2rem;
+        display: none; /* Hide indicator on mobile dropdown */
     }
 }
 
@@ -187,4 +251,4 @@ body.route-tech-group .topnav-main {
 
 body.route-tech-learning .topnav-main {
     border-bottom-color: #10b981;
-}
+}

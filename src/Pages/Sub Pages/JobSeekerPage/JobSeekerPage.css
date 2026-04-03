@@ -1,0 +1,505 @@
+/* ─── JOB SEEKER PAGE THEME OVERRIDES ─── */
+.job-glow-1 {
+    width: 500px;
+    height: 500px;
+    background: #f59e0b;
+    top: -150px;
+    left: 10%;
+    animation: float 10s infinite ease-in-out alternate;
+}
+
+.job-glow-2 {
+    width: 600px;
+    height: 600px;
+    background: #ea580c;
+    bottom: -200px;
+    right: 5%;
+    animation: float 10s infinite ease-in-out alternate;
+    animation-delay: -5s;
+}
+
+.job-badge-color {
+    background: rgba(245, 158, 11, 0.15);
+    border-color: rgba(245, 158, 11, 0.3);
+    color: #fbbf24;
+}
+
+.job-accent {
+    background: linear-gradient(to right, #fbbf24, #fb923c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.job-btn-primary {
+    background: linear-gradient(135deg, #f59e0b, #ea580c);
+    color: white;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(245, 158, 11, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.job-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(245, 158, 11, 0.5);
+}
+
+.job-bar {
+    background: linear-gradient(to top, #f59e0b, #ea580c) !important;
+}
+
+.job-item svg {
+    color: #f59e0b !important;
+}
+
+.job-main-circle {
+    background: radial-gradient(circle at 30% 30%, #78350f, #92400e) !important;
+}
+
+.job-impact-badge {
+    color: #fbbf24 !important;
+    border-color: rgba(251, 191, 36, 0.5) !important;
+}
+
+.job-span {
+    background: linear-gradient(135deg, #fbbf24, #fb923c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.job-section-badge {
+    background: rgba(245, 158, 11, 0.1);
+    color: #f59e0b;
+}
+
+.job-span-h2 {
+    color: #f59e0b !important;
+}
+
+.job-insights-section {
+    background: linear-gradient(160deg, #1c0a00 0%, #431407 60%, #1c0a00 100%) !important;
+}
+
+.job-badge-dark {
+    background: rgba(245, 158, 11, 0.2);
+    color: #fde68a;
+    border-color: rgba(253, 230, 138, 0.3);
+}
+
+.job-gradient-span {
+    background: linear-gradient(135deg, #fbbf24, #fb923c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.job-insight-card:hover {
+    border-color: rgba(251, 191, 36, 0.3);
+    box-shadow: 0 20px 50px rgba(245, 158, 11, 0.15);
+}
+
+.job-insight-card:hover .cic-icon {
+    background: #f59e0b;
+    color: white;
+}
+
+.job-cic-icon {
+    background: rgba(245, 158, 11, 0.2);
+    color: #fde68a;
+}
+
+.job-cic-tag {
+    background: rgba(253, 230, 138, 0.15);
+    color: #fde68a;
+}
+
+.job-cic-line {
+    background: linear-gradient(90deg, #f59e0b, transparent);
+}
+
+.job-cta-strip {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.25), rgba(234, 88, 12, 0.2));
+    border-color: rgba(251, 191, 36, 0.2);
+}
+
+.job-btn-cta-primary {
+    background: linear-gradient(135deg, #f59e0b, #ea580c);
+    color: white;
+    padding: 13px 26px;
+    border-radius: 12px;
+    font-size: 0.97rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.job-btn-cta-primary:hover {
+    transform: translateY(-2px);
+}
+
+.job-btn-outline {
+    color: #fde68a;
+    border-color: rgba(253, 230, 138, 0.4);
+}
+
+.job-btn-outline:hover {
+    background: rgba(253, 230, 138, 0.1);
+    border-color: #fde68a;
+}
+
+/* Use Case Table Theme Overrides */
+.job-theme .ucm-cell {
+    color: #f59e0b;
+}
+
+.job-theme .ucm-header .ucm-cell {
+    background: #f59e0b;
+    color: white;
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.2);
+}
+
+/* Job Seeker Arc Card Overrides */
+.job-arc-card.active-card {
+    filter: drop-shadow(0 20px 50px rgba(245, 158, 11, 0.6)) brightness(1) !important;
+}
+
+.job-arc-card.active-card::before {
+    background: rgba(251, 191, 36, 0.85);
+}
+
+.job-arc-card:hover .cic-image-wrapper img {
+    transform: scale(1.08);
+    transition: transform 0.5s ease;
+}
+
+.job-insights-section .crm-insights-grid::before {
+    background: radial-gradient(ellipse at center, rgba(245, 158, 11, 0.35), transparent 70%);
+}
+
+/* ── Job Seeker SVG Card Illustrations ── */
+.job-svg-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+}
+
+.job-card-svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+/* Resume text line fade-in stagger */
+@keyframes jobLineFade {
+    from {
+        opacity: 0;
+        transform: scaleX(0);
+        transform-origin: left;
+    }
+
+    to {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+}
+
+.job-line-fade {
+    animation: jobLineFade 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+.job-line-fade-0 {
+    animation-delay: 0.1s;
+}
+
+.job-line-fade-1 {
+    animation-delay: 0.2s;
+}
+
+.job-line-fade-2 {
+    animation-delay: 0.3s;
+}
+
+.job-line-fade-3 {
+    animation-delay: 0.4s;
+}
+
+.job-line-fade-4 {
+    animation-delay: 0.5s;
+}
+
+.job-line-fade-5 {
+    animation-delay: 0.6s;
+}
+
+/* AI scan beam */
+@keyframes jobScanBeam {
+    0% {
+        stroke-dashoffset: 200
+    }
+
+    100% {
+        stroke-dashoffset: 0
+    }
+}
+
+.job-scan-beam {
+    animation: jobScanBeam 1.5s ease-in-out infinite alternate;
+}
+
+/* Score ring pulse */
+@keyframes jobScoreRing {
+
+    0%,
+    100% {
+        r: 22;
+        opacity: 1
+    }
+
+    50% {
+        r: 26;
+        opacity: 0.6
+    }
+}
+
+.job-score-ring {
+    animation: jobScoreRing 2s ease-in-out infinite;
+}
+
+/* Sparks pop */
+@keyframes jobSpark {
+
+    0%,
+    100% {
+        r: 3;
+        opacity: 0.5
+    }
+
+    50% {
+        r: 5;
+        opacity: 1
+    }
+}
+
+.job-spark {
+    animation: jobSpark 1.5s ease-in-out infinite;
+}
+
+.job-spark-0 {
+    animation-delay: 0s;
+}
+
+.job-spark-1 {
+    animation-delay: 0.4s;
+}
+
+.job-spark-2 {
+    animation-delay: 0.8s;
+}
+
+.job-spark-3 {
+    animation-delay: 1.2s;
+}
+
+/* Speech bubbles scale */
+@keyframes jobBubble {
+
+    0%,
+    100% {
+        transform: scale(1)
+    }
+
+    50% {
+        transform: scale(1.04)
+    }
+}
+
+.job-bubble-1 {
+    animation: jobBubble 2s ease-in-out infinite;
+    transform-origin: center;
+}
+
+.job-bubble-2 {
+    animation: jobBubble 2s ease-in-out infinite 0.6s;
+    transform-origin: center;
+}
+
+/* Waveform */
+@keyframes jobWave {
+
+    0%,
+    100% {
+        transform: scaleY(1)
+    }
+
+    50% {
+        transform: scaleY(1.8)
+    }
+}
+
+.job-wave {
+    animation: jobWave 0.6s ease-in-out infinite;
+    transform-origin: center;
+}
+
+.job-wave-0 {
+    animation-delay: 0s;
+}
+
+.job-wave-1 {
+    animation-delay: 0.15s;
+}
+
+.job-wave-2 {
+    animation-delay: 0.3s;
+}
+
+.job-wave-3 {
+    animation-delay: 0.45s;
+}
+
+/* Eye blink */
+@keyframes jobEyeBlink {
+
+    0%,
+    85%,
+    100% {
+        ry: 5
+    }
+
+    90% {
+        ry: 1
+    }
+}
+
+.job-eye-blink {
+    animation: jobEyeBlink 3s ease-in-out infinite;
+}
+
+/* Horizontal bar grow */
+@keyframes jobHbar {
+    from {
+        width: 0;
+    }
+}
+
+.job-hbar {
+    animation: jobHbar 1s ease-out forwards;
+}
+
+.job-hbar-0 {
+    animation-delay: 0.1s;
+}
+
+.job-hbar-1 {
+    animation-delay: 0.3s;
+}
+
+.job-hbar-2 {
+    animation-delay: 0.5s;
+}
+
+.job-hbar-3 {
+    animation-delay: 0.7s;
+}
+
+/* Incognito glow */
+@keyframes jobIncognito {
+
+    0%,
+    100% {
+        filter: drop-shadow(0 0 5px rgba(245, 158, 11, 0.2))
+    }
+
+    50% {
+        filter: drop-shadow(0 0 15px rgba(245, 158, 11, 0.6))
+    }
+}
+
+.job-incognito {
+    animation: jobIncognito 3s ease-in-out infinite;
+}
+
+/* Eye glow pulse */
+@keyframes jobEyeGlow {
+
+    0%,
+    100% {
+        opacity: 0.9
+    }
+
+    50% {
+        opacity: 0.4
+    }
+}
+
+.job-eye-glow {
+    animation: jobEyeGlow 2s ease-in-out infinite;
+}
+
+/* Shield pulse */
+@keyframes jobShieldPulse {
+
+    0%,
+    100% {
+        filter: drop-shadow(0 0 4px rgba(245, 158, 11, 0.4))
+    }
+
+    50% {
+        filter: drop-shadow(0 0 12px rgba(245, 158, 11, 0.9))
+    }
+}
+
+.job-shield-pulse {
+    animation: jobShieldPulse 2s ease-in-out infinite;
+}
+
+/* Kanban card pop-in stagger */
+@keyframes jobKcard {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.job-kcard {
+    animation: jobKcard 0.5s ease-out forwards;
+    opacity: 0;
+}
+
+.job-kcard-0 {
+    animation-delay: 0.1s;
+}
+
+.job-kcard-1 {
+    animation-delay: 0.25s;
+}
+
+.job-kcard-2 {
+    animation-delay: 0.4s;
+}
+
+.job-kcard-3 {
+    animation-delay: 0.55s;
+}
+
+.job-kcard-4 {
+    animation-delay: 0.7s;
+}
+
+.job-kcard-5 {
+    animation-delay: 0.85s;
+}
