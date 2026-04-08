@@ -70,7 +70,7 @@
     object-fit: contain;
     /* White-monochrome effect by default for most logos */
     filter: brightness(0) invert(1);
-    opacity: 0.55;
+    opacity: 0.82;
     transition: opacity 0.25s ease, filter 0.25s ease;
     user-select: none;
     pointer-events: none;
@@ -78,7 +78,7 @@
 
 .client-marquee-logo.keep-original {
     filter: none;
-    opacity: 0.8;
+    opacity: 1;
 }
 
 .client-marquee-item:hover .client-marquee-logo {

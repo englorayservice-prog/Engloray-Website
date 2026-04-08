@@ -677,7 +677,7 @@
 .categories-filter-bar {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 12px;
   margin-bottom: 25px;
   flex-wrap: nowrap;
   overflow-x: auto;
@@ -704,8 +704,8 @@
 .category-item {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 15px 25px;
+  gap: 10px;
+  padding: 13px 13px;
   background: white;
   border-radius: 12px;
   cursor: pointer;
@@ -728,8 +728,8 @@
 }
 
 .category-icon-box {
-  width: 45px;
-  height: 45px;
+  width: 40px;
+  height: 40px;
   background: #f0f7ff;
   border-radius: 8px;
   display: flex;
@@ -746,13 +746,13 @@
 
 .category-info .category-name {
   margin: 0;
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 700;
 }
 
 .category-info .category-count {
   margin: 0;
-  font-size: 13px;
+  font-size: 11px;
   opacity: 0.7;
 }
 

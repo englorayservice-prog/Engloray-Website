@@ -44,6 +44,12 @@ import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import MainPageSubFooter from '../MainPageSubFooter/MainPageSubFooter';
 
+import avatar1 from '../../../assets/testimonials/cartoon_male_1.png';
+import avatar2 from '../../../assets/testimonials/cartoon_female_1.png';
+import avatar3 from '../../../assets/testimonials/cartoon_male_2.png';
+import avatar4 from '../../../assets/testimonials/cartoon_female_2.png';
+import avatar5 from '../../../assets/testimonials/cartoon_male_3.png';
+
 const CareersPage = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -304,7 +310,7 @@ const CareersPage = () => {
           {/* Top Section - Title, Subtitle, Button and Badge */}
           <div className="cp-hero-top">
             <h1 className="cp-hero-main-title">
-              Your <span className="cp-highlight-word">guided</span> path to<br /> career success
+              Your guided path to<br /> career success
             </h1>
             <p className="cp-hero-main-subtitle">
               Learn, develop, and gain the skills needed to move forward with confidence.
@@ -332,11 +338,12 @@ const CareersPage = () => {
             {/* Left Column - Avatar */}
             <div className="cp-hero-avatar-section">
               <div className="cp-avatar-stack">
-                <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Avatar" className="cp-avatar" />
-                <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="Avatar" className="cp-avatar" />
-                <img src="https://randomuser.me/api/portraits/women/3.jpg" alt="Avatar" className="cp-avatar" />
-                <img src="https://randomuser.me/api/portraits/men/4.jpg" alt="Avatar" className="cp-avatar" />
-                <div className="cp-avatar-more">+12</div>
+                <img src={avatar1} alt="Avatar" className="cp-avatar" />
+                <img src={avatar2} alt="Avatar" className="cp-avatar" />
+                <img src={avatar3} alt="Avatar" className="cp-avatar" />
+                <img src={avatar4} alt="Avatar" className="cp-avatar" />
+                <img src={avatar5} alt="Avatar" className="cp-avatar" />
+                {/* <div className="cp-avatar-more">+12</div> */}
               </div>
             </div>
 
@@ -345,15 +352,15 @@ const CareersPage = () => {
               <div className="cp-stats-grid">
                 <div className="cp-stat-card">
                   <span className="cp-stat-number-large">50+</span>
-                  <span className="cp-stat-label-small">open positions</span>
+                  <span className="cp-stat-label-small">OPEN POSITIONS</span>
                 </div>
                 <div className="cp-stat-card">
                   <span className="cp-stat-number-large">30+</span>
-                  <span className="cp-stat-label-small">countries</span>
+                  <span className="cp-stat-label-small">COUNTRIES</span>
                 </div>
                 <div className="cp-stat-card">
                   <span className="cp-stat-level">100+</span>
-                  <span className="cp-stat-label-small">Remote First</span>
+                  <span className="cp-stat-label-small">REMOTE FIRST</span>
                 </div>
                 <div className="cp-stat-card">
                   <span className="cp-stat-level">10K+</span>
@@ -514,42 +521,26 @@ const CareersPage = () => {
           {/* Marquee Container for Perks Cards */}
           <div className="cp-perks-marquee">
             <div className="cp-perks-marquee-track">
-              {/* First set of cards */}
-              {startupPerks.map((perk, index) => (
-                <div
-                  key={`perk-${index}`}
-                  className="cp-perk-card-new"
-                  style={{
-                    '--i': index,
-                    borderColor: perk.iconColor
-                  }}
-                >
-                  <div className="cp-perk-icon-wrapper">
-                    <div className="cp-perk-icon-ring" style={{ color: perk.iconColor, borderColor: perk.iconColor }}>
-                      <FontAwesomeIcon icon={perk.icon} />
+              {[...Array(4)].map((_, arrayIndex) => (
+                <div key={`perk-group-${arrayIndex}`} className="cp-marquee-group" style={{ display: 'flex', gap: '30px', paddingRight: '30px' }}>
+                  {startupPerks.map((perk, index) => (
+                    <div
+                      key={`perk-${index}`}
+                      className="cp-perk-card-new"
+                      style={{
+                        '--i': index,
+                        borderColor: perk.iconColor
+                      }}
+                    >
+                      <div className="cp-perk-icon-wrapper">
+                        <div className="cp-perk-icon-ring" style={{ color: perk.iconColor, borderColor: perk.iconColor }}>
+                          <FontAwesomeIcon icon={perk.icon} />
+                        </div>
+                      </div>
+                      <h3 className="cp-perk-title">{perk.title}</h3>
+                      <p className="cp-perk-description">{perk.desc}</p>
                     </div>
-                  </div>
-                  <h3 className="cp-perk-title">{perk.title}</h3>
-                  <p className="cp-perk-description">{perk.desc}</p>
-                </div>
-              ))}
-              {/* Duplicate set for seamless loop */}
-              {startupPerks.map((perk, index) => (
-                <div
-                  key={`perk-duplicate-${index}`}
-                  className="cp-perk-card-new"
-                  style={{
-                    '--i': index,
-                    borderColor: perk.iconColor
-                  }}
-                >
-                  <div className="cp-perk-icon-wrapper">
-                    <div className="cp-perk-icon-ring" style={{ color: perk.iconColor, borderColor: perk.iconColor }}>
-                      <FontAwesomeIcon icon={perk.icon} />
-                    </div>
-                  </div>
-                  <h3 className="cp-perk-title">{perk.title}</h3>
-                  <p className="cp-perk-description">{perk.desc}</p>
+                  ))}
                 </div>
               ))}
             </div>
@@ -575,23 +566,17 @@ const CareersPage = () => {
         {/* Full Width Marquee */}
         <div className="cp-culture-marquee-wrapper">
           <div className="cp-culture-marquee-track">
-            {culturePoints.map((point, index) => (
-              <div key={index} className="cp-culture-small-card">
-                <div className="cp-culture-small-icon">
-                  <FontAwesomeIcon icon={point.icon} />
-                </div>
-                <h3 className="cp-culture-small-title">{point.title}</h3>
-                <p className="cp-culture-small-description">{point.description}</p>
-              </div>
-            ))}
-            {/* Duplicate for seamless loop */}
-            {culturePoints.map((point, index) => (
-              <div key={`duplicate-${index}`} className="cp-culture-small-card">
-                <div className="cp-culture-small-icon">
-                  <FontAwesomeIcon icon={point.icon} />
-                </div>
-                <h3 className="cp-culture-small-title">{point.title}</h3>
-                <p className="cp-culture-small-description">{point.description}</p>
+            {[...Array(4)].map((_, arrayIndex) => (
+              <div key={`culture-group-${arrayIndex}`} className="cp-marquee-group" style={{ display: 'flex', gap: '30px', paddingRight: '30px' }}>
+                {culturePoints.map((point, index) => (
+                  <div key={`point-${index}`} className="cp-culture-small-card">
+                    <div className="cp-culture-small-icon">
+                      <FontAwesomeIcon icon={point.icon} />
+                    </div>
+                    <h3 className="cp-culture-small-title">{point.title}</h3>
+                    <p className="cp-culture-small-description">{point.description}</p>
+                  </div>
+                ))}
               </div>
             ))}
           </div>
@@ -704,8 +689,37 @@ const CareersPage = () => {
 
       {/* Application Form Section - Updated */}
       <section className="cp-form-section">
-        {/* Big "Contact Us" Text Behind Form */}
-        <div className="cp-form-bg-text">CONTACT<br /> US</div>
+        {/* Left Side Content */}
+        <div className="cp-form-left-content">
+          <h2 className="cp-form-contact-title">Contact Us</h2>
+          <p className="cp-form-contact-subtitle">
+            Get in touch with our hiring team directly to explore opportunities.
+            We are always looking for passionate individuals ready to make an impact.
+            Join an environment that encourages innovation and rapid growth.
+          </p>
+
+          <div className="cp-form-rating-container">
+            <div className="cp-form-avatar-stack">
+              <img src={avatar1} alt="Team member" className="cp-form-avatar" />
+              <img src={avatar2} alt="Team member" className="cp-form-avatar" />
+              <img src={avatar3} alt="Team member" className="cp-form-avatar" />
+              <img src={avatar4} alt="Team member" className="cp-form-avatar" />
+              <img src={avatar5} alt="Team member" className="cp-form-avatar" />
+              {/* <div className="cp-form-avatar-more">+500</div> */}
+            </div>
+            <div className="cp-form-rating-details">
+              <div className="cp-form-stars">
+                <FontAwesomeIcon icon={faStar} />
+                <FontAwesomeIcon icon={faStar} />
+                <FontAwesomeIcon icon={faStar} />
+                <FontAwesomeIcon icon={faStar} />
+                <FontAwesomeIcon icon={faStar} />
+                <span>4.9/5</span>
+              </div>
+              <p>Top Rated Workplace</p>
+            </div>
+          </div>
+        </div>
 
         <div className="cp-form-container">
           <div className="cp-form-header">

@@ -105,14 +105,15 @@ html {
 
 /* Hero Section Layout */
 .cp-hero-section {
-  min-height: 100vh;
-  height: 100vh;
+  min-height: 80vh;
+  height: auto;
   position: relative;
   overflow: hidden;
-  padding: 0;
+  padding: 100px 0 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 100%;
 }
 
 .cp-hero-bg-image {
@@ -915,7 +916,7 @@ html {
 /* ==================== CAREER PATHS SECTION ==================== */
 
 .cp-paths-section {
-  padding: 60px 0;
+  padding: 40px 0;
   position: relative;
   overflow: visible;
   background: #f8fafc;
@@ -926,12 +927,13 @@ html {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 35px;
-  margin-top: 60px;
+  margin-top: 30px;
 }
 
 /* Main Card */
 .cp-path-card-new {
-  width: 350px;
+  width: 100%;
+  max-width: 380px;
   background: #0f172a;
   border-radius: 24px;
   overflow: hidden;
@@ -1261,10 +1263,10 @@ html {
 /* ==================== PERKS & BENEFITS SECTION WITH MARQUEE ==================== */
 .cp-perks-section {
   position: relative;
-  min-height: 700px;
+  min-height: auto;
   display: flex;
   align-items: center;
-  padding: 100px 0;
+  padding: 60px 0 40px 0;
   background: white !important;
   overflow: hidden;
   width: 100%;
@@ -1277,7 +1279,7 @@ html {
   top: 0;
   left: 0;
   width: 100%;
-  height: 50%;
+  height: 58%;
   background: #0f172a;
   z-index: 0;
 }
@@ -1292,13 +1294,11 @@ html {
 }
 
 .cp-perks-section .cp-section-header {
-  margin-top: -120px;
   position: relative;
   z-index: 3;
 }
 
 .cp-perks-section .cp-section-title {
-  margin-top: -30px;
   background: linear-gradient(135deg, #ffffff 0%, #3b82f6 100%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -1319,13 +1319,13 @@ html {
   margin-left: -50vw;
   margin-right: -50vw;
   overflow: hidden;
-  margin-top: 30px;
+  margin-top: 0;
   padding: 20px 0;
 }
 
 .cp-perks-marquee-track {
   display: flex;
-  gap: 30px;
+  gap: 0;
   animation: cp-perks-marquee-scroll 30s linear infinite;
   width: fit-content;
 }
@@ -1340,10 +1340,6 @@ html {
   }
 }
 
-/* Pause animation on hover */
-.cp-perks-marquee:hover .cp-perks-marquee-track {
-  animation-play-state: paused;
-}
 
 /* Perk Card Styles - Reduced Size */
 .cp-perk-card-new {
@@ -1397,7 +1393,7 @@ html {
 
 .cp-perk-title {
   font-size: 1.3rem;
-  font-weight: 400;
+  font-weight: 700;
   margin-bottom: 12px;
   font-family: 'inter', sans-serif;
   line-height: 1.2;
@@ -1408,9 +1404,9 @@ html {
   font-size: 0.85rem;
   line-height: 1.5;
   font-family: 'inter', monospace;
-  font-weight: 100;
+  font-weight: 500;
   margin-top: 5px;
-  color: #000000;
+  color: #334155;
 }
 
 /* Remove particles from perks section */
@@ -1422,10 +1418,10 @@ html {
 
 .cp-culture-section {
   position: relative;
-  min-height: 650px;
+  min-height: auto;
   background: #0f172a;
   overflow: hidden;
-  padding: 100px 0 80px 0;
+  padding: 40px 0;
 }
 
 /* Half white background at top */
@@ -1435,7 +1431,7 @@ html {
   top: 0;
   left: 0;
   width: 100%;
-  height: 45%;
+  height: 65%;
   background: white;
   z-index: 0;
 }
@@ -1454,12 +1450,10 @@ html {
 }
 
 .cp-culture-header-left {
-  margin-top: -100px;
   flex: 0 0 35%;
 }
 
 .cp-culture-header-right {
-  margin-top: -90px;
   flex: 0 0 55%;
 }
 
@@ -1474,6 +1468,8 @@ html {
   font-family: 'inter', sans-serif;
   letter-spacing: -1px;
   line-height: 1.2;
+  text-align: left;
+
 }
 
 .cp-culture-section-subtitle {
@@ -1483,6 +1479,8 @@ html {
   font-family: 'inter', monospace;
   font-weight: 400;
   margin: 0;
+  text-align: left;
+
 }
 
 /* Full Width Marquee */
@@ -1500,7 +1498,7 @@ html {
 
 .cp-culture-marquee-track {
   display: flex;
-  gap: 30px;
+  gap: 0;
   animation: cp-culture-marquee-scroll 30s linear infinite;
   width: fit-content;
 }
@@ -1515,10 +1513,6 @@ html {
   }
 }
 
-/* Pause animation on hover */
-.cp-culture-marquee-wrapper:hover .cp-culture-marquee-track {
-  animation-play-state: paused;
-}
 
 /* Small Cards */
 .cp-culture-small-card {
@@ -1761,7 +1755,6 @@ html {
 .cp-learning-section-title {
   font-size: 3rem;
   font-weight: 700;
-  margin-top: -35px;
   margin-bottom: 10px;
   background: linear-gradient(135deg, #0f172a 0%, #3b82f6 100%);
   -webkit-background-clip: text;
@@ -1799,7 +1792,7 @@ html {
 .cp-learning-big-container {
   position: relative;
   margin-top: 50px;
-  margin-left: -80px;
+  margin-left: 0;
   width: 100%;
   height: 500px;
   border-radius: 2px;
@@ -1824,7 +1817,7 @@ html {
 .cp-learning-small-container {
   position: absolute;
   bottom: -30px;
-  left: -140px;
+  left: -70px;
   right: auto;
   width: 200px;
   background: rgba(255, 255, 255, 0.95);
@@ -1839,6 +1832,7 @@ html {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.3);
   transition: transform 0.3s ease;
+  z-index: 5;
 }
 
 .cp-learning-small-container:hover {
@@ -1888,7 +1882,7 @@ html {
 .cp-learning-small-container-right {
   position: absolute;
   bottom: 130px;
-  right: -30px;
+  right: -90px;
   width: 200px;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
@@ -1941,7 +1935,7 @@ html {
   font-family: 'inter', monospace;
   font-weight: 400;
   margin: 0;
-  text-align: center;
+  text-align: left;
 }
 
 /* Responsive adjustments for the new container */
@@ -2236,7 +2230,7 @@ html {
     width: 180px;
     padding: 15px;
     bottom: -25px;
-    left: -120px;
+    left: -40px;
   }
 
   .cp-learning-small-image-wrapper {
@@ -2508,48 +2502,144 @@ html {
   height: auto;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  padding: 80px 60px;
+  justify-content: space-between;
+  padding: 100px 100px;
   position: relative;
   z-index: 10;
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
   overflow: hidden;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-/* Big "Contact Us" Text Behind Form */
-.cp-form-bg-text {
-  width: 60%;
-  position: absolute;
-  left: 100px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 12rem;
-  font-weight: 800;
+.cp-form-left-content {
+  flex: 1;
+  max-width: 500px;
+  padding-right: 40px;
+  margin-top: -60px;
+}
+
+.cp-form-contact-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #ffffff;
   font-family: 'inter', sans-serif;
-  color: rgba(255, 255, 255, 0.05);
-  letter-spacing: 10px;
-  white-space: nowrap;
-  pointer-events: none;
-  z-index: 0;
-  text-transform: uppercase;
+  margin-bottom: 20px;
+  line-height: 1.1;
+  background: linear-gradient(135deg, #ffffff 0%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: left;
+
+}
+
+.cp-form-contact-subtitle {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: 'inter', monospace;
+  margin-bottom: 50px;
+  line-height: 1.5;
+  text-align: left;
+
+}
+
+/* Rating Stack */
+.cp-form-rating-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 25px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  max-width: 380px;
+}
+
+.cp-form-avatar-stack {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cp-form-avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 3px solid #1e293b;
+  margin-right: -15px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.cp-form-avatar:hover {
+  transform: translateY(-5px) scale(1.05);
+  z-index: 10;
+}
+
+.cp-form-avatar-more {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3b82f6, #284feb);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 3px solid #1e293b;
+  margin-left: -15px;
+  z-index: 5;
+  font-family: 'inter', monospace;
+}
+
+.cp-form-rating-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.cp-form-stars {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  color: #f59e0b;
+  font-size: 1rem;
+}
+
+.cp-form-stars span {
+  color: #ffffff;
+  font-weight: 600;
+  margin-left: 8px;
+  font-size: 1.1rem;
+  font-family: 'inter', sans-serif;
+}
+
+.cp-form-rating-details p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.85rem;
+  font-family: 'inter', monospace;
+  margin: 0;
 }
 
 .cp-form-container {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.03);
   border-radius: 25px;
   padding: 40px 50px;
-  box-shadow: none;
-  max-width: 700px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  max-width: 600px;
   width: 100%;
-  border: none;
   margin: 0;
-  margin-right: 140px;
-  margin-left: auto;
   position: relative;
   z-index: 2;
-  overflow: visible;
-  max-height: none;
-  backdrop-filter: blur(0px);
+  backdrop-filter: blur(10px);
 }
 
 .cp-form-container::-webkit-scrollbar {
@@ -2903,7 +2993,7 @@ html {
 
 @media (max-width: 992px) {
   .cp-perks-section {
-    padding: 60px 0;
+    padding: 80px 0;
     min-height: 450px;
   }
 
@@ -2940,8 +3030,8 @@ html {
 
 @media (max-width: 768px) {
   .cp-perks-section {
-    padding: 50px 0;
-    min-height: 400px;
+    padding: 60px 20px 40px;
+    min-height: auto;
   }
 
   .cp-perk-card-new {
@@ -3064,6 +3154,11 @@ html {
     align-items: center;
     order: 3;
     margin-right: 0;
+    display: none;
+  }
+
+  .cp-floating-stat {
+    display: none;
   }
 
   .cp-left-description {
@@ -3113,6 +3208,7 @@ html {
   .cp-paths-grid {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
+    margin-left: 0;
   }
 
   .cp-path-card-new {
@@ -3136,6 +3232,18 @@ html {
     font-size: 1.3rem;
   }
 
+  .cp-culture-header-wrapper {
+    flex-direction: column;
+    gap: 30px;
+    padding: 0 30px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .cp-culture-section-subtitle {
+    text-align: center;
+  }
+
   .cp-culture-content {
     flex-direction: column;
     gap: 60px;
@@ -3144,6 +3252,53 @@ html {
   .cp-form-row {
     grid-template-columns: 1fr;
     gap: 15px;
+  }
+
+  .cp-learning-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+  }
+
+  .cp-learning-left {
+    flex: 1;
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .cp-learning-right {
+    width: 100%;
+  }
+
+  .cp-form-section {
+    flex-direction: column;
+    padding: 60px 20px;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .cp-form-left-content {
+    max-width: 100%;
+    padding-right: 0;
+    margin-top: 0;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cp-form-contact-title {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .cp-form-contact-subtitle {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .cp-form-container {
+    width: 100%;
   }
 }
 
@@ -3185,6 +3340,7 @@ html {
   .cp-paths-grid {
     grid-template-columns: 1fr;
     gap: 25px;
+    margin-left: 0;
   }
 
   .cp-path-card-new {
@@ -3230,6 +3386,10 @@ html {
     font-size: 1rem;
     padding: 0 15px;
   }
+
+  .cp-content-top {
+    flex-direction: column !important;
+  }
 }
 
 @media (max-width: 480px) {
@@ -3254,13 +3414,30 @@ html {
     padding: 0 15px;
   }
 
-  .cp-hero-title {
-    font-size: 2.5rem;
+  .cp-hero-main-title {
+    font-size: 2rem;
+  }
+
+  .cp-form-contact-title {
+    font-size: 2rem;
+  }
+
+  .cp-form-contact-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .cp-form-avatar-stack {
+    transform: scale(0.85);
   }
 
   .cp-paths-section {
-    padding: 50px 0;
-    min-height: 600px;
+    padding: 50px 15px;
+    min-height: auto;
+  }
+
+  .cp-paths-grid {
+    margin-left: 0;
+    width: 100%;
   }
 
   .cp-path-card-new {

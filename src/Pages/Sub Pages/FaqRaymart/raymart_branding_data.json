@@ -1,0 +1,3194 @@
+[
+  {
+    "id": "branding-identity",
+    "title": "Branding & Identity",
+    "description": "Crafting a legendary voice and visual presence for global leaders. Our suite provides everything from core values to international design standards.",
+    "client": "Fortune 500 Partner",
+    "timeline": "3 - 6 Months",
+    "year": "2025",
+    "mainImage": "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=1200",
+    "thumbnails": [
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=400"
+    ],
+    "bars": {
+      "strategy": 90,
+      "design": 85,
+      "development": 95,
+      "marketing": 70
+    },
+    "achievementsCount": 240,
+    "visualAssetsCount": 510,
+    "summary": [
+      "Strategic market positioning",
+      "Visual identity audit",
+      "Brand archetype mapping",
+      "Logo system development",
+      "Typography standards",
+      "Color palette engineering",
+      "Brand voice guidelines",
+      "Style guide creation"
+    ],
+    "outcomes": [
+      "45% Brand recognition lift",
+      "30% Lower production cost",
+      "Enhanced stakeholder trust",
+      "Unified global presence",
+      "Scalable asset library",
+      "Improved internal alignment",
+      "Consistent multi-channel UX",
+      "Stronger market authority"
+    ],
+    "sidebarImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600",
+    "bottomBadges": [
+      "Expert",
+      "Scale",
+      "Trust",
+      "Global",
+      "Next-Gen"
+    ],
+    "features": [
+      "Bespoke Branding & Identity Engine",
+      "Enterprise-Grade Security",
+      "Zero Downtime Architecture",
+      "Global CDN Support",
+      "Custom API Ecosystem",
+      "Multi-Tenant Support",
+      "Real-time Monitoring"
+    ],
+    "offerContents": [
+      {
+        "title": "Global Identity Suite",
+        "description": "A complete system for cohesive brand visual identity across all platforms.",
+        "tag": "+34%",
+        "price": "Offer"
+      },
+      {
+        "title": "Platinum Branding Deluxe",
+        "tag": "+64%",
+        "price": "Offer",
+        "features": [
+          "Integrated global brand guidelines",
+          "Multi-region market positioning",
+          "Unified visual communication strategy",
+          "Scalable design system architecture"
+        ]
+      },
+      {
+        "title": "Branding Modules",
+        "tag": "+54%",
+        "price": "Offer",
+        "modules": [
+          {
+            "name": "Brand Strategy",
+            "value": "20% off"
+          },
+          {
+            "name": "Visual Identity",
+            "value": "20% off"
+          },
+          {
+            "name": "Brand Manual",
+            "value": "20% off"
+          }
+        ]
+      }
+    ],
+    "comparison": [
+      {
+        "feature": "Core Platform",
+        "basic": true,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "Custom Logic",
+        "basic": false,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "AI Integration",
+        "basic": false,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "24/7 SLA",
+        "basic": false,
+        "pro": false,
+        "enterprise": true
+      }
+    ],
+    "finalImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+    "finalDescription": "This case study explores how a structured approach to Branding & Identity can elevate user perception, reduce operational friction, and create a consistent digital experience across multiple channels.",
+    "finalTexts": [
+      {
+        "title": "RESEARCH & DISCOVERY",
+        "content": "We dove deep into the brand's heritage and audience psychology. Our research uncovered a need for a 'Scientific Creative' approach, moving away from generic aesthetics to data-driven visual resonance."
+      },
+      {
+        "title": "STRATEGY & DIRECTION",
+        "content": "We mapped identity to psychological archetypes. Our direction focused on 'The Sage' archetype, emphasizing wisdom and authority through a refined color palette and symmetrical logo systems."
+      },
+      {
+        "title": "DESIGN & EXECUTION",
+        "content": "Developing a master manual was key. We created a modular design system that allows for rapid sub-brand creation while maintaining the core identity's absolute integrity across all global markets."
+      },
+      {
+        "title": "RESULTS & IMPACT",
+        "content": "Brand recognition in target demographics increased by 45%. The unified visual language reduced the cost of content production by 30% while increasing total user trust scores significantly."
+      }
+    ],
+    "finalSummaryBadges": [
+      "Discovery",
+      "Strategy",
+      "Design",
+      "Impact"
+    ],
+    "keyOutcomesBadges": [
+      "Growth",
+      "Standard",
+      "Logic",
+      "Global"
+    ],
+    "testimonials": [
+      {
+        "name": "Emily Carter",
+        "position": "Operations Director, TechFlow Inc.",
+        "content": "The new identity transformed how we are perceived globally. It's more than a logo; it's our new legacy."
+      },
+      {
+        "name": "Sarah Jenkins",
+        "position": "Head of Marketing, EduPro",
+        "content": "Incredible precision and strategic depth. Our brand now feels as powerful as our technology."
+      }
+    ]
+  },
+  {
+    "id": "development-services",
+    "title": "Development Services",
+    "description": "Engineering high-performance digital architectures. We turn complex requirements into clean, scalable, and resilient code ecosystems.",
+    "client": "Fortune 500 Partner",
+    "timeline": "3 - 6 Months",
+    "year": "2025",
+    "mainImage": "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=1200",
+    "thumbnails": [
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=400"
+    ],
+    "bars": {
+      "strategy": 90,
+      "design": 85,
+      "development": 95,
+      "marketing": 70
+    },
+    "achievementsCount": 240,
+    "visualAssetsCount": 510,
+    "summary": [
+      "Microservices migration",
+      "API ecosystem design",
+      "Database optimization",
+      "Frontend logic refactor",
+      "Infrastructure as code",
+      "High-load testing",
+      "Security hardening",
+      "CI/CD pipeline setup"
+    ],
+    "outcomes": [
+      "99.99% System uptime",
+      "80% Faster load times",
+      "20% Lower server costs",
+      "Improved developer velocity",
+      "Zero critical vulnerabilities",
+      "Seamless platform scaling",
+      "Enhanced data integrity",
+      "Reduced technical debt"
+    ],
+    "sidebarImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600",
+    "bottomBadges": [
+      "Expert",
+      "Scale",
+      "Trust",
+      "Global",
+      "Next-Gen"
+    ],
+    "features": [
+      "Bespoke Development Services Engine",
+      "Enterprise-Grade Security",
+      "Zero Downtime Architecture",
+      "Global CDN Support",
+      "Custom API Ecosystem",
+      "Multi-Tenant Support",
+      "Real-time Monitoring"
+    ],
+    "offerContents": [
+      {
+        "title": "Core Architect Pack",
+        "description": "Professional backend and frontend architecture for high-load systems.",
+        "tag": "+25%",
+        "price": "Offer"
+      },
+      {
+        "title": "Full Stack Shield",
+        "tag": "+50%",
+        "price": "Offer",
+        "features": [
+          "Custom REST/GraphQL APIs",
+          "Redux/Context State Logic",
+          "Unit & Integration Testing",
+          "Serverless Infrastructure"
+        ]
+      },
+      {
+        "title": "Dev Modules",
+        "tag": "+40%",
+        "price": "Offer",
+        "modules": [
+          {
+            "name": "Auth Logic",
+            "value": "15% off"
+          },
+          {
+            "name": "Database Design",
+            "value": "15% off"
+          },
+          {
+            "name": "Deployment",
+            "value": "15% off"
+          }
+        ]
+      }
+    ],
+    "comparison": [
+      {
+        "feature": "Core Platform",
+        "basic": true,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "Custom Logic",
+        "basic": false,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "AI Integration",
+        "basic": false,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "24/7 SLA",
+        "basic": false,
+        "pro": false,
+        "enterprise": true
+      }
+    ],
+    "finalImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+    "finalDescription": "This case study explores how a structured approach to Development Services can elevate user perception, reduce operational friction, and create a consistent digital experience across multiple channels.",
+    "finalTexts": [
+      {
+        "title": "RESEARCH & DISCOVERY",
+        "content": "We audited existing legacy systems and identified critical bottlenecks in the data flow. Our research phase focused on optimizing query performance and reducing server response latency by 40%."
+      },
+      {
+        "title": "STRATEGY & DIRECTION",
+        "content": "The roadmap involved a complete transition to a microservices architecture. We prioritized modularity, ensuring that each component could be scaled independently based on real-time user demand."
+      },
+      {
+        "title": "DESIGN & EXECUTION",
+        "content": "Using React and Node.js, we built a highly responsive frontend connected to a robust, containerized backend. We implemented strict CI/CD pipelines to ensure 99.9% deployment success rates."
+      },
+      {
+        "title": "RESULTS & IMPACT",
+        "content": "Platform uptime improved to 99.99%. Page load times dropped from 4s to 0.8s, leading to a 20% increase in total user retention and much lower server operational costs."
+      }
+    ],
+    "finalSummaryBadges": [
+      "Discovery",
+      "Strategy",
+      "Design",
+      "Impact"
+    ],
+    "keyOutcomesBadges": [
+      "Growth",
+      "Standard",
+      "Logic",
+      "Global"
+    ],
+    "testimonials": [
+      {
+        "name": "Michael Chen",
+        "position": "CTO, Global Learn",
+        "content": "Flawless code and perfect architecture. The new system handles our traffic spikes with absolute ease."
+      },
+      {
+        "name": "James Wilson",
+        "position": "EVP Engineering, Nexa",
+        "content": "Highly professional delivery. The code quality exceeded our internal standards and passed all security audits."
+      }
+    ]
+  },
+  {
+    "id": "website-development",
+    "title": "Website Development",
+    "description": "Building high-conversion digital portals. From landing pages to enterprise sites, we create web experiences that drive results.",
+    "client": "Fortune 500 Partner",
+    "timeline": "3 - 6 Months",
+    "year": "2025",
+    "mainImage": "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=1200",
+    "thumbnails": [
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=400"
+    ],
+    "bars": {
+      "strategy": 90,
+      "design": 85,
+      "development": 95,
+      "marketing": 70
+    },
+    "achievementsCount": 240,
+    "visualAssetsCount": 510,
+    "summary": [
+      "SEO-first architecture",
+      "Conversion rate audit",
+      "Mobile response design",
+      "Custom CMS development",
+      "CDN infrastructure setup",
+      "Performance monitoring",
+      "Security firewalling",
+      "Accessibility compliance"
+    ],
+    "outcomes": [
+      "60% Conversion increase",
+      "100% Mobile traffic gain",
+      "99 PageSpeed score",
+      "Top-tier SEO rankings",
+      "30% Lower bounce rate",
+      "Faster content updates",
+      "Enhanced user engagement",
+      "Secure data protocols"
+    ],
+    "sidebarImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600",
+    "bottomBadges": [
+      "Expert",
+      "Scale",
+      "Trust",
+      "Global",
+      "Next-Gen"
+    ],
+    "features": [
+      "Bespoke Website Development Engine",
+      "Enterprise-Grade Security",
+      "Zero Downtime Architecture",
+      "Global CDN Support",
+      "Custom API Ecosystem",
+      "Multi-Tenant Support",
+      "Real-time Monitoring"
+    ],
+    "offerContents": [
+      {
+        "title": "Biz Starter Hub",
+        "description": "High-impact web presence for emerging businesses and startups.",
+        "tag": "+20%",
+        "price": "Offer"
+      },
+      {
+        "title": "Corporate Web Elite",
+        "tag": "+45%",
+        "price": "Offer",
+        "features": [
+          "SEO Optimized Structure",
+          "Dynamic CMS Integration",
+          "High-Speed Performance",
+          "Security Hardening"
+        ]
+      },
+      {
+        "title": "Web Modules",
+        "tag": "+35%",
+        "price": "Offer",
+        "modules": [
+          {
+            "name": "CMS Setup",
+            "value": "10% off"
+          },
+          {
+            "name": "SEO Audit",
+            "value": "10% off"
+          },
+          {
+            "name": "Speed Pack",
+            "value": "10% off"
+          }
+        ]
+      }
+    ],
+    "comparison": [
+      {
+        "feature": "Core Platform",
+        "basic": true,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "Custom Logic",
+        "basic": false,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "AI Integration",
+        "basic": false,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "24/7 SLA",
+        "basic": false,
+        "pro": false,
+        "enterprise": true
+      }
+    ],
+    "finalImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+    "finalDescription": "This case study explores how a structured approach to Website Development can elevate user perception, reduce operational friction, and create a consistent digital experience across multiple channels.",
+    "finalTexts": [
+      {
+        "title": "RESEARCH & DISCOVERY",
+        "content": "We analyzed user heatmaps and conversion funnels. The data showed users were dropping off due to complex navigation, leading us to a 'Content First' layout strategy."
+      },
+      {
+        "title": "STRATEGY & DIRECTION",
+        "content": "We focused on a 'Mobile First' responsive strategy. Our direction was to strip away visual clutter and emphasize clear calls-to-action that guide users naturally to the conversion point."
+      },
+      {
+        "title": "DESIGN & EXECUTION",
+        "content": "Crafted using modern SEO-optimized architecture, the site features dynamic components and a lightning-fast CDN setup. We integrated a custom CMS that allows the client to update content in seconds."
+      },
+      {
+        "title": "RESULTS & IMPACT",
+        "content": "Conversion rates jumped by 60%. Mobile traffic engagement doubled, and the site now ranks on the first page of Google for 15 key industry search terms within just two months."
+      }
+    ],
+    "finalSummaryBadges": [
+      "Discovery",
+      "Strategy",
+      "Design",
+      "Impact"
+    ],
+    "keyOutcomesBadges": [
+      "Growth",
+      "Standard",
+      "Logic",
+      "Global"
+    ],
+    "testimonials": [
+      {
+        "name": "David Miller",
+        "position": "Founder, BizCore",
+        "content": "Our new site is beautiful and converts like crazy. Best business decision I've made all year."
+      },
+      {
+        "name": "Lisa Ray",
+        "position": "Owner, StudioX",
+        "content": "Stunning design and incredible performance. The team captured our vision perfectly."
+      }
+    ]
+  },
+  {
+    "id": "ecommerce-development",
+    "title": "E-Commerce Development",
+    "description": "Creating robust online storefronts that scale. We integrate secure payments, inventory, and seamless UX for maximum revenue.",
+    "client": "Fortune 500 Partner",
+    "timeline": "3 - 6 Months",
+    "year": "2025",
+    "mainImage": "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=1200",
+    "thumbnails": [
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=400"
+    ],
+    "bars": {
+      "strategy": 90,
+      "design": 85,
+      "development": 95,
+      "marketing": 70
+    },
+    "achievementsCount": 240,
+    "visualAssetsCount": 510,
+    "summary": [
+      "Payment gateway setup",
+      "Inventory sync logic",
+      "Checkout flow redesign",
+      "Multi-currency support",
+      "Shipping API connect",
+      "Fraud detection setup",
+      "Product SEO optimization",
+      "Mobile store launch"
+    ],
+    "outcomes": [
+      "40% Total revenue gain",
+      "25% Higher average order",
+      "30% Lower abandonment",
+      "Unified stock tracking",
+      "Secure global payments",
+      "Increased user loyalty",
+      "Seamless mobile sales",
+      "Automated order flows"
+    ],
+    "sidebarImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600",
+    "bottomBadges": [
+      "Expert",
+      "Scale",
+      "Trust",
+      "Global",
+      "Next-Gen"
+    ],
+    "features": [
+      "Bespoke E-Commerce Development Engine",
+      "Enterprise-Grade Security",
+      "Zero Downtime Architecture",
+      "Global CDN Support",
+      "Custom API Ecosystem",
+      "Multi-Tenant Support",
+      "Real-time Monitoring"
+    ],
+    "offerContents": [
+      {
+        "title": "Global Shop Basic",
+        "description": "Professional online store setup with essential inventory tools.",
+        "tag": "+30%",
+        "price": "Offer"
+      },
+      {
+        "title": "E-Com Omni-Power",
+        "tag": "+55%",
+        "price": "Offer",
+        "features": [
+          "Multi-Currency Checkout",
+          "AI Recommendations",
+          "Inventory Sync",
+          "Mobile Shopping App"
+        ]
+      },
+      {
+        "title": "Shop Modules",
+        "tag": "+40%",
+        "price": "Offer",
+        "modules": [
+          {
+            "name": "Payment Gateway",
+            "value": "15% off"
+          },
+          {
+            "name": "Inventory Fix",
+            "value": "15% off"
+          },
+          {
+            "name": "Shipping API",
+            "value": "15% off"
+          }
+        ]
+      }
+    ],
+    "comparison": [
+      {
+        "feature": "Core Platform",
+        "basic": true,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "Custom Logic",
+        "basic": false,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "AI Integration",
+        "basic": false,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "24/7 SLA",
+        "basic": false,
+        "pro": false,
+        "enterprise": true
+      }
+    ],
+    "finalImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+    "finalDescription": "This case study explores how a structured approach to E-Commerce Development can elevate user perception, reduce operational friction, and create a consistent digital experience across multiple channels.",
+    "finalTexts": [
+      {
+        "title": "RESEARCH & DISCOVERY",
+        "content": "We studied cart abandonment patterns. The research highlighted that 70% of users left due to complex guest checkout, prompting a redesign of the entire purchasing flow."
+      },
+      {
+        "title": "STRATEGY & DIRECTION",
+        "content": "Our strategy centered on 'Frictionless Commerce'. We implemented one-click payments, dynamic inventory tracking, and AI-powered product recommendations to increase average order value."
+      },
+      {
+        "title": "DESIGN & EXECUTION",
+        "content": "Built on a robust E-commerce engine, we customized the checkout API for multi-currency and international shipping. The frontend was optimized for high-speed product browsing."
+      },
+      {
+        "title": "RESULTS & IMPACT",
+        "content": "Average order value increased by 25%. Cart abandonment rates dropped to an all-time low of 30%, resulting in a 40% total revenue growth in the first fiscal quarter."
+      }
+    ],
+    "finalSummaryBadges": [
+      "Discovery",
+      "Strategy",
+      "Design",
+      "Impact"
+    ],
+    "keyOutcomesBadges": [
+      "Growth",
+      "Standard",
+      "Logic",
+      "Global"
+    ],
+    "testimonials": [
+      {
+        "name": "Robert Fox",
+        "position": "CEO, TrendStore",
+        "content": "The revenue growth blew us away. The new checkout flow is incredibly smooth and reliable."
+      },
+      {
+        "name": "Anna Bell",
+        "position": "Director, Bloomify",
+        "content": "Scaleable, robust, and beautiful. Managing 20k SKUs has never been this easy."
+      }
+    ]
+  },
+  {
+    "id": "app-development",
+    "title": "App Development",
+    "description": "Developing native and hybrid mobile experiences. We focus on performance, intuitive UI, and platform-specific capabilities.",
+    "client": "Fortune 500 Partner",
+    "timeline": "3 - 6 Months",
+    "year": "2025",
+    "mainImage": "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=1200",
+    "thumbnails": [
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=400"
+    ],
+    "bars": {
+      "strategy": 90,
+      "design": 85,
+      "development": 95,
+      "marketing": 70
+    },
+    "achievementsCount": 240,
+    "visualAssetsCount": 510,
+    "summary": [
+      "Native module bridge",
+      "Offline sync logic",
+      "Biometric auth setup",
+      "Push notify engine",
+      "UI interaction design",
+      "App store SEO audit",
+      "Backend API connect",
+      "Beta testing cycles"
+    ],
+    "outcomes": [
+      "4.9 Star app rating",
+      "50% Daily usage boost",
+      "Zero crash performance",
+      "Trusted user security",
+      "Infinite offline mode",
+      "Engaging push flows",
+      "Smooth platform logic",
+      "Rapid user feedback"
+    ],
+    "sidebarImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600",
+    "bottomBadges": [
+      "Expert",
+      "Scale",
+      "Trust",
+      "Global",
+      "Next-Gen"
+    ],
+    "features": [
+      "Bespoke App Development Engine",
+      "Enterprise-Grade Security",
+      "Zero Downtime Architecture",
+      "Global CDN Support",
+      "Custom API Ecosystem",
+      "Multi-Tenant Support",
+      "Real-time Monitoring"
+    ],
+    "offerContents": [
+      {
+        "title": "App MVP Starter",
+        "description": "Rapid development of a high-performance cross-platform app.",
+        "tag": "+25%",
+        "price": "Offer"
+      },
+      {
+        "title": "Mobile Master Elite",
+        "tag": "+60%",
+        "price": "Offer",
+        "features": [
+          "Native API Integration",
+          "Offline Sync Mode",
+          "Biometric Security",
+          "Push Automation"
+        ]
+      },
+      {
+        "title": "App Add-ons",
+        "tag": "+45%",
+        "price": "Offer",
+        "modules": [
+          {
+            "name": "Push Setup",
+            "value": "20% off"
+          },
+          {
+            "name": "Map Integration",
+            "value": "20% off"
+          },
+          {
+            "name": "Admin Portal",
+            "value": "20% off"
+          }
+        ]
+      }
+    ],
+    "comparison": [
+      {
+        "feature": "Core Platform",
+        "basic": true,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "Custom Logic",
+        "basic": false,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "AI Integration",
+        "basic": false,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "24/7 SLA",
+        "basic": false,
+        "pro": false,
+        "enterprise": true
+      }
+    ],
+    "finalImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+    "finalDescription": "This case study explores how a structured approach to App Development can elevate user perception, reduce operational friction, and create a consistent digital experience across multiple channels.",
+    "finalTexts": [
+      {
+        "title": "RESEARCH & DISCOVERY",
+        "content": "Field research showed users needed offline capabilities in low-connectivity areas. We focused the research on synchronization algorithms and efficient local data storage."
+      },
+      {
+        "title": "STRATEGY & DIRECTION",
+        "content": "Developed a 'Native-First' functional roadmap. We prioritized buttery-smooth micro-interactions and platform-specific UI patterns to ensure the highest possible user satisfaction."
+      },
+      {
+        "title": "DESIGN & EXECUTION",
+        "content": "Using React Native for cross-platform efficiency, we integrated native modules for biometric auth and push notifications. The app was pushed through rigorous beta testing cycles."
+      },
+      {
+        "title": "RESULTS & IMPACT",
+        "content": "The app achieved a 4.9-star rating on the App Store. User daily active usage (DAU) increased by 50% due to the seamless offline experience and useful notification system."
+      }
+    ],
+    "finalSummaryBadges": [
+      "Discovery",
+      "Strategy",
+      "Design",
+      "Impact"
+    ],
+    "keyOutcomesBadges": [
+      "Growth",
+      "Standard",
+      "Logic",
+      "Global"
+    ],
+    "testimonials": [
+      {
+        "name": "Steven J",
+        "position": "App Analyst",
+        "content": "Professional-grade performance on both platforms. The UI is clean, modern, and extremely fast."
+      },
+      {
+        "name": "Karen H",
+        "position": "Founder, FitLife",
+        "content": "Engloray delivered an app that our users actually love. The offline sync is a game changer for us."
+      }
+    ]
+  },
+  {
+    "id": "graphic-design",
+    "title": "Graphic Design",
+    "description": "Visual storytelling that commands attention. From social media kits to high-impact print media, we design for influence.",
+    "client": "Fortune 500 Partner",
+    "timeline": "3 - 6 Months",
+    "year": "2025",
+    "mainImage": "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=1200",
+    "thumbnails": [
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=400"
+    ],
+    "bars": {
+      "strategy": 90,
+      "design": 85,
+      "development": 95,
+      "marketing": 70
+    },
+    "achievementsCount": 240,
+    "visualAssetsCount": 510,
+    "summary": [
+      "Visual trend audit",
+      "Color theory analysis",
+      "Typography engineering",
+      "Logo system design",
+      "Campaign asset creation",
+      "Print media layout",
+      "Digital header design",
+      "Iconography standards"
+    ],
+    "outcomes": [
+      "70% Engagement boost",
+      "50% Brand recall gain",
+      "Unified visual story",
+      "High CTR performance",
+      "Versatile asset kit",
+      "Professional authority",
+      "Modern market look",
+      "Impactful print presence"
+    ],
+    "sidebarImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600",
+    "bottomBadges": [
+      "Expert",
+      "Scale",
+      "Trust",
+      "Global",
+      "Next-Gen"
+    ],
+    "features": [
+      "Bespoke Graphic Design Engine",
+      "Enterprise-Grade Security",
+      "Zero Downtime Architecture",
+      "Global CDN Support",
+      "Custom API Ecosystem",
+      "Multi-Tenant Support",
+      "Real-time Monitoring"
+    ],
+    "offerContents": [
+      {
+        "title": "Visual Narrative Pack",
+        "description": "Complete suite of high-impact visuals for digital and print campaigns.",
+        "tag": "+35%",
+        "price": "Offer"
+      },
+      {
+        "title": "Creative Omni-Elite",
+        "tag": "+65%",
+        "price": "Offer",
+        "features": [
+          "Custom Infographics",
+          "Presentation Decks",
+          "Advertising Sets",
+          "Marketing Collateral"
+        ]
+      },
+      {
+        "title": "Visual Modules",
+        "tag": "+50%",
+        "price": "Offer",
+        "modules": [
+          {
+            "name": "Banner Pack",
+            "value": "25% off"
+          },
+          {
+            "name": "Social Assets",
+            "value": "25% off"
+          },
+          {
+            "name": "Print Design",
+            "value": "25% off"
+          }
+        ]
+      }
+    ],
+    "comparison": [
+      {
+        "feature": "Core Platform",
+        "basic": true,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "Custom Logic",
+        "basic": false,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "AI Integration",
+        "basic": false,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "24/7 SLA",
+        "basic": false,
+        "pro": false,
+        "enterprise": true
+      }
+    ],
+    "finalImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+    "finalDescription": "This case study explores how a structured approach to Graphic Design can elevate user perception, reduce operational friction, and create a consistent digital experience across multiple channels.",
+    "finalTexts": [
+      {
+        "title": "RESEARCH & DISCOVERY",
+        "content": "We analyzed market visual trends. The data showed that audiences were responding better to 'Minimalist Bold' aesthetics rather than cluttered traditional designs."
+      },
+      {
+        "title": "STRATEGY & DIRECTION",
+        "content": "Our direction was 'Visual Authority'. We created a bold typographic system and a vibrant, yet professional color palette designed to stand out in a crowded digital feed."
+      },
+      {
+        "title": "DESIGN & EXECUTION",
+        "content": "Crafted high-fidelity assets for both web and print. Every element was designed with mathematical precision to ensure perfect balance and visual hierarchy across all media formats."
+      },
+      {
+        "title": "RESULTS & IMPACT",
+        "content": "Social media engagement rose by 70%. The new visual style created a strong, recognizable market presence that increased brand attribute recall scores by nearly 50%."
+      }
+    ],
+    "finalSummaryBadges": [
+      "Discovery",
+      "Strategy",
+      "Design",
+      "Impact"
+    ],
+    "keyOutcomesBadges": [
+      "Growth",
+      "Standard",
+      "Logic",
+      "Global"
+    ],
+    "testimonials": [
+      {
+        "name": "Mark R",
+        "position": "Art Director",
+        "content": "Bold, clean, and extremely professional. They have a brilliant eye for visual storytelling."
+      },
+      {
+        "name": "Sarah Lee",
+        "position": "CMO, StyleHub",
+        "content": "The new design language redefined our brand. Our click-through rates have never been higher."
+      }
+    ]
+  },
+  {
+    "id": "ui-ux-design",
+    "title": "UI/UX Design",
+    "description": "User-centric design that converts. We map user journeys and create high-fidelity interfaces that feel intuitive and natural.",
+    "client": "Fortune 500 Partner",
+    "timeline": "3 - 6 Months",
+    "year": "2025",
+    "mainImage": "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=1200",
+    "thumbnails": [
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=400"
+    ],
+    "bars": {
+      "strategy": 90,
+      "design": 85,
+      "development": 95,
+      "marketing": 70
+    },
+    "achievementsCount": 240,
+    "visualAssetsCount": 510,
+    "summary": [
+      "User journey mapping",
+      "Information architecture",
+      "Wireframe development",
+      "High-fidelity UI",
+      "Design system audit",
+      "Interactive prototypes",
+      "Usability lab testing",
+      "Accessibility audit"
+    ],
+    "outcomes": [
+      "50% Faster tasks",
+      "30% Lower churn rate",
+      "Higher NPS scores",
+      "Intuitive user flow",
+      "Clean scalable UI",
+      "Accessible for all",
+      "Reduced help tickets",
+      "Positive brand sentiment"
+    ],
+    "sidebarImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600",
+    "bottomBadges": [
+      "Expert",
+      "Scale",
+      "Trust",
+      "Global",
+      "Next-Gen"
+    ],
+    "features": [
+      "Bespoke UI/UX Design Engine",
+      "Enterprise-Grade Security",
+      "Zero Downtime Architecture",
+      "Global CDN Support",
+      "Custom API Ecosystem",
+      "Multi-Tenant Support",
+      "Real-time Monitoring"
+    ],
+    "offerContents": [
+      {
+        "title": "UX Audit Hub",
+        "description": "Deep-dive usability analysis and high-impact UX improvements.",
+        "tag": "+40%",
+        "price": "Offer"
+      },
+      {
+        "title": "Interface Nirvana",
+        "tag": "+75%",
+        "price": "Offer",
+        "features": [
+          "Complete Design System",
+          "High-Fidelity Prototyping",
+          "User Journey Mapping",
+          "Usability Testing"
+        ]
+      },
+      {
+        "title": "UI Modules",
+        "tag": "+55%",
+        "price": "Offer",
+        "modules": [
+          {
+            "name": "Icon System",
+            "value": "20% off"
+          },
+          {
+            "name": "Prototyping",
+            "value": "20% off"
+          },
+          {
+            "name": "UX Research",
+            "value": "20% off"
+          }
+        ]
+      }
+    ],
+    "comparison": [
+      {
+        "feature": "Core Platform",
+        "basic": true,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "Custom Logic",
+        "basic": false,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "AI Integration",
+        "basic": false,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "24/7 SLA",
+        "basic": false,
+        "pro": false,
+        "enterprise": true
+      }
+    ],
+    "finalImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+    "finalDescription": "This case study explores how a structured approach to UI/UX Design can elevate user perception, reduce operational friction, and create a consistent digital experience across multiple channels.",
+    "finalTexts": [
+      {
+        "title": "RESEARCH & DISCOVERY",
+        "content": "Conducted 50+ user interviews. The data revealed that 65% of users were confused by the legacy dashboard's layout, specifically the data filtering mechanisms."
+      },
+      {
+        "title": "STRATEGY & DIRECTION",
+        "content": "The roadmap was 'Cognitive Ease'. We simplified the information architecture and implemented a 'Layered Interface' that reveals complexity only when needed by the user."
+      },
+      {
+        "title": "DESIGN & EXECUTION",
+        "content": "Developed a comprehensive design system with 200+ components. We built interactive high-fidelity prototypes to validate the new flows through multiple rounds of user testing."
+      },
+      {
+        "title": "RESULTS & IMPACT",
+        "content": "Task completion time decreased by 50%. User frustration scores dropped significantly, leading to a 30% increase in total product stickiness and NPS scores."
+      }
+    ],
+    "finalSummaryBadges": [
+      "Discovery",
+      "Strategy",
+      "Design",
+      "Impact"
+    ],
+    "keyOutcomesBadges": [
+      "Growth",
+      "Standard",
+      "Logic",
+      "Global"
+    ],
+    "testimonials": [
+      {
+        "name": "Ben Affleck (Fake)",
+        "position": "Product Manager",
+        "content": "The new interface is completely intuitive. Our support tickets related to navigation dropped to zero."
+      },
+      {
+        "name": "Chloe Z",
+        "position": "Lead Designer, FlowApp",
+        "content": "Truly user-centric design. They understood our complex user needs and translated them into a beautiful, simple flow."
+      }
+    ]
+  },
+  {
+    "id": "software-tech-solutions",
+    "title": "Software & Tech Solutions",
+    "description": "Bespoke software for enterprise challenges. We provide integrated technical stacks that modernize legacy systems and drive efficiency.",
+    "client": "Fortune 500 Partner",
+    "timeline": "3 - 6 Months",
+    "year": "2025",
+    "mainImage": "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=1200",
+    "thumbnails": [
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=400"
+    ],
+    "bars": {
+      "strategy": 90,
+      "design": 85,
+      "development": 95,
+      "marketing": 70
+    },
+    "achievementsCount": 240,
+    "visualAssetsCount": 510,
+    "summary": [
+      "Legacy code audit",
+      "Cloud native path",
+      "API bridge setup",
+      "Security layer design",
+      "Automation scripts",
+      "Disaster recovery",
+      "Performance tuning",
+      "Tech debt reduction"
+    ],
+    "outcomes": [
+      "25% Operating save",
+      "99.999% Reliability",
+      "40hr/wk Labor save",
+      "Modern tech stack",
+      "Zero downtime shift",
+      "Enterprise security",
+      "Future-proof logic",
+      "Cleaner codebase"
+    ],
+    "sidebarImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600",
+    "bottomBadges": [
+      "Expert",
+      "Scale",
+      "Trust",
+      "Global",
+      "Next-Gen"
+    ],
+    "features": [
+      "Bespoke Software & Tech Solutions Engine",
+      "Enterprise-Grade Security",
+      "Zero Downtime Architecture",
+      "Global CDN Support",
+      "Custom API Ecosystem",
+      "Multi-Tenant Support",
+      "Real-time Monitoring"
+    ],
+    "offerContents": [
+      {
+        "title": "Legacy Modernizer",
+        "description": "Bridge the gap between your legacy tools and modern cloud power.",
+        "tag": "+20%",
+        "price": "Offer"
+      },
+      {
+        "title": "Enterprise Suite Pro",
+        "tag": "+50%",
+        "price": "Offer",
+        "features": [
+          "Cloud-Native Migration",
+          "Automated Monitoring",
+          "High-Availability Stacks",
+          "Security Hardening"
+        ]
+      },
+      {
+        "title": "Tech Modules",
+        "tag": "+30%",
+        "price": "Offer",
+        "modules": [
+          {
+            "name": "API Bridge",
+            "value": "15% off"
+          },
+          {
+            "name": "Cloud Setup",
+            "value": "15% off"
+          },
+          {
+            "name": "Security Scan",
+            "value": "15% off"
+          }
+        ]
+      }
+    ],
+    "comparison": [
+      {
+        "feature": "Core Platform",
+        "basic": true,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "Custom Logic",
+        "basic": false,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "AI Integration",
+        "basic": false,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "24/7 SLA",
+        "basic": false,
+        "pro": false,
+        "enterprise": true
+      }
+    ],
+    "finalImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+    "finalDescription": "This case study explores how a structured approach to Software & Tech Solutions can elevate user perception, reduce operational friction, and create a consistent digital experience across multiple channels.",
+    "finalTexts": [
+      {
+        "title": "RESEARCH & DISCOVERY",
+        "content": "Analyzed legacy enterprise tech debt. We identified that outdated database architectures were costing the company 20% in efficiency loss due to sync errors."
+      },
+      {
+        "title": "STRATEGY & DIRECTION",
+        "content": "The strategy was 'Digital Modernization'. We planned a zero-downtime migration to a cloud-native architecture with integrated automated monitoring and self-healing systems."
+      },
+      {
+        "title": "DESIGN & EXECUTION",
+        "content": "We built custom middleware to bridge old and new systems. The final solution involved a robust tech stack designed for high-availability and extreme security compliance."
+      },
+      {
+        "title": "RESULTS & IMPACT",
+        "content": "Operational costs decreased by 25%. System reliability reached 99.999%, and the new automated processes saved the engineering team 40+ hours per week in maintenance."
+      }
+    ],
+    "finalSummaryBadges": [
+      "Discovery",
+      "Strategy",
+      "Design",
+      "Impact"
+    ],
+    "keyOutcomesBadges": [
+      "Growth",
+      "Standard",
+      "Logic",
+      "Global"
+    ],
+    "testimonials": [
+      {
+        "name": "Tom Cruise (Fake)",
+        "position": "IT Director",
+        "content": "Incredible transformation. Our legacy tech is now a modern engine for growth, not a weight on our efficiency."
+      },
+      {
+        "name": "Gina J",
+        "position": "VP Tech, SkyNet",
+        "content": "Robust, secure, and brilliantly engineered. Engloray's solutions are the gold standard for enterprise tech."
+      }
+    ]
+  },
+  {
+    "id": "data-analytics",
+    "title": "Data Analytics",
+    "description": "Turning raw data into strategic insights. We use advanced visualization and smart algorithms to help you see the future.",
+    "client": "Fortune 500 Partner",
+    "timeline": "3 - 6 Months",
+    "year": "2025",
+    "mainImage": "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=1200",
+    "thumbnails": [
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=400"
+    ],
+    "bars": {
+      "strategy": 90,
+      "design": 85,
+      "development": 95,
+      "marketing": 70
+    },
+    "achievementsCount": 240,
+    "visualAssetsCount": 510,
+    "summary": [
+      "Historical data audit",
+      "Predictive modeling",
+      "Dashboard design",
+      "ETL pipeline setup",
+      "Statistical analysis",
+      "Data lake creation",
+      "API insight export",
+      "Real-time monitoring"
+    ],
+    "outcomes": [
+      "35% Forecast gain",
+      "15% Profit margin lift",
+      "Actionable insights",
+      "Zero data lag time",
+      "Visual clarity hub",
+      "Reduced market risk",
+      "Better resource use",
+      "Confident decisions"
+    ],
+    "sidebarImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600",
+    "bottomBadges": [
+      "Expert",
+      "Scale",
+      "Trust",
+      "Global",
+      "Next-Gen"
+    ],
+    "features": [
+      "Bespoke Data Analytics Engine",
+      "Enterprise-Grade Security",
+      "Zero Downtime Architecture",
+      "Global CDN Support",
+      "Custom API Ecosystem",
+      "Multi-Tenant Support",
+      "Real-time Monitoring"
+    ],
+    "offerContents": [
+      {
+        "title": "Insight Dashboard Basic",
+        "description": "Real-time visualization of your core business and sales metrics.",
+        "tag": "+35%",
+        "price": "Offer"
+      },
+      {
+        "title": "Predictive Pulse Elite",
+        "tag": "+65%",
+        "price": "Offer",
+        "features": [
+          "Advanced Sales Forecast",
+          "Customer Churn Prediction",
+          "Anomaly Detection API",
+          "Custom Data Pipeline"
+        ]
+      },
+      {
+        "title": "Data Modules",
+        "tag": "+50%",
+        "price": "Offer",
+        "modules": [
+          {
+            "name": "Data Cleaning",
+            "value": "20% off"
+          },
+          {
+            "name": "Pipeline Setup",
+            "value": "20% off"
+          },
+          {
+            "name": "SQL Export",
+            "value": "20% off"
+          }
+        ]
+      }
+    ],
+    "comparison": [
+      {
+        "feature": "Core Platform",
+        "basic": true,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "Custom Logic",
+        "basic": false,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "AI Integration",
+        "basic": false,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "24/7 SLA",
+        "basic": false,
+        "pro": false,
+        "enterprise": true
+      }
+    ],
+    "finalImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+    "finalDescription": "This case study explores how a structured approach to Data Analytics can elevate user perception, reduce operational friction, and create a consistent digital experience across multiple channels.",
+    "finalTexts": [
+      {
+        "title": "RESEARCH & DISCOVERY",
+        "content": "We audited 5 years of historical sales data. Using statistical modeling, we identified hidden seasonality patterns that accounted for 15% of previously unexplained variance."
+      },
+      {
+        "title": "STRATEGY & DIRECTION",
+        "content": "Our roadmap was 'Predictive Power'. We developed a suite of real-time dashboards and predictive models designed to alert management to market shifts before they happen."
+      },
+      {
+        "title": "DESIGN & EXECUTION",
+        "content": "Implemented a modern data lake and automated pipeline. We built custom visualization tools that allow non-technical stakeholders to perform complex data queries instantly."
+      },
+      {
+        "title": "RESULTS & IMPACT",
+        "content": "Forecasting accuracy improved by 35%. The ability to react quickly to data-driven insights led to a 15% increase in gross profit margins within the first six months."
+      }
+    ],
+    "finalSummaryBadges": [
+      "Discovery",
+      "Strategy",
+      "Design",
+      "Impact"
+    ],
+    "keyOutcomesBadges": [
+      "Growth",
+      "Standard",
+      "Logic",
+      "Global"
+    ],
+    "testimonials": [
+      {
+        "name": "Bill G (Fake)",
+        "position": "Data Investor",
+        "content": "Data-driven brilliance. They don't just show you numbers; they show you the future of your company."
+      },
+      {
+        "name": "Elon M (Fake)",
+        "position": "Chief Scientist",
+        "content": "Neural-level precision in their models. Their analytics suite is the smartest investment for any scale-up."
+      }
+    ]
+  },
+  {
+    "id": "ai-services",
+    "title": "AI Services",
+    "description": "Implementing next-gen intelligence. From custom ML models to generative AI integration, we automate the impossible.",
+    "client": "Fortune 500 Partner",
+    "timeline": "3 - 6 Months",
+    "year": "2025",
+    "mainImage": "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=1200",
+    "thumbnails": [
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=400"
+    ],
+    "bars": {
+      "strategy": 90,
+      "design": 85,
+      "development": 95,
+      "marketing": 70
+    },
+    "achievementsCount": 240,
+    "visualAssetsCount": 510,
+    "summary": [
+      "LLM fine-tuning",
+      "Prompt engineering",
+      "Multi-agent setup",
+      "Inference optimize",
+      "API bridge design",
+      "Security sandboxing",
+      "Neural model audit",
+      "Agentic workflows"
+    ],
+    "outcomes": [
+      "70% Tasks automated",
+      "0.5% Error rate low",
+      "Millions in savings",
+      "Infinite labor scale",
+      "Instant data parse",
+      "Trusted AI output",
+      "Faster biz cycles",
+      "Next-gen edge"
+    ],
+    "sidebarImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600",
+    "bottomBadges": [
+      "Expert",
+      "Scale",
+      "Trust",
+      "Global",
+      "Next-Gen"
+    ],
+    "features": [
+      "Bespoke AI Services Engine",
+      "Enterprise-Grade Security",
+      "Zero Downtime Architecture",
+      "Global CDN Support",
+      "Custom API Ecosystem",
+      "Multi-Tenant Support",
+      "Real-time Monitoring"
+    ],
+    "offerContents": [
+      {
+        "title": "LLM Integration Kit",
+        "description": "Add powerful Generative AI capabilities to your existing business tools.",
+        "tag": "+80%",
+        "price": "Offer"
+      },
+      {
+        "title": "Neural Mastery Pro",
+        "tag": "+75%",
+        "price": "Offer",
+        "features": [
+          "Custom Model Training",
+          "Multi-Agent Workflows",
+          "Prompt Optimization",
+          "AI Safety Audit"
+        ]
+      },
+      {
+        "title": "AI Add-ons",
+        "tag": "+60%",
+        "price": "Offer",
+        "modules": [
+          {
+            "name": "Model Audit",
+            "value": "25% off"
+          },
+          {
+            "name": "Vision API",
+            "value": "25% off"
+          },
+          {
+            "name": "Audio Gen",
+            "value": "25% off"
+          }
+        ]
+      }
+    ],
+    "comparison": [
+      {
+        "feature": "Core Platform",
+        "basic": true,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "Custom Logic",
+        "basic": false,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "AI Integration",
+        "basic": false,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "24/7 SLA",
+        "basic": false,
+        "pro": false,
+        "enterprise": true
+      }
+    ],
+    "finalImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+    "finalDescription": "This case study explores how a structured approach to AI Services can elevate user perception, reduce operational friction, and create a consistent digital experience across multiple channels.",
+    "finalTexts": [
+      {
+        "title": "RESEARCH & DISCOVERY",
+        "content": "We explored custom LLM training on proprietary data. The research focused on reducing hallucination rates and optimizing prompt engineering for complex domain-specific tasks."
+      },
+      {
+        "title": "STRATEGY & DIRECTION",
+        "content": "Our direction was 'Intelligent Automation'. We planned a multi-agent AI system that can handle complex multi-step workflows with human-level accuracy and zero fatigue."
+      },
+      {
+        "title": "DESIGN & EXECUTION",
+        "content": "Deployed advanced neural models using optimized inference engines. We integrated the AI core directly into the client's existing workflows through a seamless API bridge."
+      },
+      {
+        "title": "RESULTS & IMPACT",
+        "content": "Automated 70% of manual data tasks. Error rates dropped from 12% to less than 0.5%, saving the organization millions in operational overhead and manual correction costs."
+      }
+    ],
+    "finalSummaryBadges": [
+      "Discovery",
+      "Strategy",
+      "Design",
+      "Impact"
+    ],
+    "keyOutcomesBadges": [
+      "Growth",
+      "Standard",
+      "Logic",
+      "Global"
+    ],
+    "testimonials": [
+      {
+        "name": "Sam A (Fake)",
+        "position": "Intelligence Lead",
+        "content": "Breathtaking implementation speed. They are pushing the boundaries of what AI can do for business."
+      },
+      {
+        "name": "Jeff B (Fake)",
+        "position": "Founder, SpaceX",
+        "content": "Automated our entire logistical flow with 99% accuracy. This is not just AI; it's a competitive weapon."
+      }
+    ]
+  },
+  {
+    "id": "crm-services",
+    "title": "CRM Services",
+    "description": "Optimizing customer relationship management. We implement, customization, and automate CRM platforms to boost sales and retention.",
+    "client": "Fortune 500 Partner",
+    "timeline": "3 - 6 Months",
+    "year": "2025",
+    "mainImage": "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=1200",
+    "thumbnails": [
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=400"
+    ],
+    "bars": {
+      "strategy": 90,
+      "design": 85,
+      "development": 95,
+      "marketing": 70
+    },
+    "achievementsCount": 240,
+    "visualAssetsCount": 510,
+    "summary": [
+      "Funnel gap audit",
+      "Lead score logic",
+      "Nurture sequence",
+      "API sync connect",
+      "Sales dash design",
+      "Database cleanup",
+      "Mobile sync setup",
+      "User train manual"
+    ],
+    "outcomes": [
+      "30% Conversion gain",
+      "20% Retention lift",
+      "2x Sales speed",
+      "Clear customer view",
+      "Automated followup",
+      "Zero ghosted leads",
+      "Better team morale",
+      "Clean sales data"
+    ],
+    "sidebarImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600",
+    "bottomBadges": [
+      "Expert",
+      "Scale",
+      "Trust",
+      "Global",
+      "Next-Gen"
+    ],
+    "features": [
+      "Bespoke CRM Services Engine",
+      "Enterprise-Grade Security",
+      "Zero Downtime Architecture",
+      "Global CDN Support",
+      "Custom API Ecosystem",
+      "Multi-Tenant Support",
+      "Real-time Monitoring"
+    ],
+    "offerContents": [
+      {
+        "title": "Pipeline Basic",
+        "description": "Professional setup and lead funnel optimization for sales teams.",
+        "tag": "+25%",
+        "price": "Offer"
+      },
+      {
+        "title": "CRM Master Suite",
+        "tag": "+50%",
+        "price": "Offer",
+        "features": [
+          "Automated Lead Nurture",
+          "Advanced Sales Dashboards",
+          "Cross-Platform Sync",
+          "Team Training Portals"
+        ]
+      },
+      {
+        "title": "CRM Modules",
+        "tag": "+40%",
+        "price": "Offer",
+        "modules": [
+          {
+            "name": "Data Sync",
+            "value": "10% off"
+          },
+          {
+            "name": "Email Auto",
+            "value": "10% off"
+          },
+          {
+            "name": "Audit Task",
+            "value": "10% off"
+          }
+        ]
+      }
+    ],
+    "comparison": [
+      {
+        "feature": "Core Platform",
+        "basic": true,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "Custom Logic",
+        "basic": false,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "AI Integration",
+        "basic": false,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "24/7 SLA",
+        "basic": false,
+        "pro": false,
+        "enterprise": true
+      }
+    ],
+    "finalImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+    "finalDescription": "This case study explores how a structured approach to CRM Services can elevate user perception, reduce operational friction, and create a consistent digital experience across multiple channels.",
+    "finalTexts": [
+      {
+        "title": "RESEARCH & DISCOVERY",
+        "content": "Audited the existing sales funnel. We found that 40% of leads were being ignored due to a lack of automated follow-up logic and poor database categorization."
+      },
+      {
+        "title": "STRATEGY & DIRECTION",
+        "content": "The roadmap was 'Relationship Optimization'. We reorganized the CRM architecture and implemented automated lead scoring and nurturing sequences to maximize conversion."
+      },
+      {
+        "title": "DESIGN & EXECUTION",
+        "content": "Customized the Salesforce/HubSpot API to sync with internal databases. We trained the sales team on the new high-efficiency workflows and reporting dashboards."
+      },
+      {
+        "title": "RESULTS & IMPACT",
+        "content": "Lead-to-sale conversion increased by 30%. Customer retention rose by 20%, and the sales team's productivity doubled due to the removal of repetitive manual tasks."
+      }
+    ],
+    "finalSummaryBadges": [
+      "Discovery",
+      "Strategy",
+      "Design",
+      "Impact"
+    ],
+    "keyOutcomesBadges": [
+      "Growth",
+      "Standard",
+      "Logic",
+      "Global"
+    ],
+    "testimonials": [
+      {
+        "name": "Peter P (Fake)",
+        "position": "Sales Director",
+        "content": "Our sales cycle dropped significantly. We finally have a CRM that actually works for us, not against us."
+      },
+      {
+        "name": "Mary Jane (Fake)",
+        "position": "Head of Ops",
+        "content": "A 360-degree view of our customers that we never thought possible. Their CRM expertise is truly elite."
+      }
+    ]
+  },
+  {
+    "id": "saas-services",
+    "title": "SaaS Services",
+    "description": "Launching and scaling cloud products. We build multi-tenant architectures and subscription systems for modern software startups.",
+    "client": "Fortune 500 Partner",
+    "timeline": "3 - 6 Months",
+    "year": "2025",
+    "mainImage": "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=1200",
+    "thumbnails": [
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=400"
+    ],
+    "bars": {
+      "strategy": 90,
+      "design": 85,
+      "development": 95,
+      "marketing": 70
+    },
+    "achievementsCount": 240,
+    "visualAssetsCount": 510,
+    "summary": [
+      "Multi-tenant design",
+      "Tenant isolate logic",
+      "Auth SSO setup",
+      "Billing API connect",
+      "Cloud infra path",
+      "CDN global cache",
+      "Auto scale engine",
+      "Metric lake setup"
+    ],
+    "outcomes": [
+      "100k User scale-up",
+      "45% Lower unit cost",
+      "60% Faster launch",
+      "Seamless B2B flow",
+      "Zero tenant leaks",
+      "Trusted cloud logic",
+      "Instant dashboard",
+      "Global reach ready"
+    ],
+    "sidebarImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600",
+    "bottomBadges": [
+      "Expert",
+      "Scale",
+      "Trust",
+      "Global",
+      "Next-Gen"
+    ],
+    "features": [
+      "Bespoke SaaS Services Engine",
+      "Enterprise-Grade Security",
+      "Zero Downtime Architecture",
+      "Global CDN Support",
+      "Custom API Ecosystem",
+      "Multi-Tenant Support",
+      "Real-time Monitoring"
+    ],
+    "offerContents": [
+      {
+        "title": "SaaS Cloud Launch",
+        "description": "Ready-to-scale cloud infrastructure and multi-tenant logic for startups.",
+        "tag": "+30%",
+        "price": "Offer"
+      },
+      {
+        "title": "Sky-Scale Elite",
+        "tag": "+65%",
+        "price": "Offer",
+        "features": [
+          "Multi-Tenant DB Architecture",
+          "Automated Billing Engine",
+          "Granular User Auth",
+          "Tenant Insight Dash"
+        ]
+      },
+      {
+        "title": "SaaS Modules",
+        "tag": "+50%",
+        "price": "Offer",
+        "modules": [
+          {
+            "name": "Auth Setup",
+            "value": "20% off"
+          },
+          {
+            "name": "Billing API",
+            "value": "20% off"
+          },
+          {
+            "name": "CDN Cache",
+            "value": "20% off"
+          }
+        ]
+      }
+    ],
+    "comparison": [
+      {
+        "feature": "Core Platform",
+        "basic": true,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "Custom Logic",
+        "basic": false,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "AI Integration",
+        "basic": false,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "24/7 SLA",
+        "basic": false,
+        "pro": false,
+        "enterprise": true
+      }
+    ],
+    "finalImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+    "finalDescription": "This case study explores how a structured approach to SaaS Services can elevate user perception, reduce operational friction, and create a consistent digital experience across multiple channels.",
+    "finalTexts": [
+      {
+        "title": "RESEARCH & DISCOVERY",
+        "content": "We analyzed startup scaling failures. The data showed that 90% of failures were due to poor multi-tenant database designs that created impossible-to-fix technical debt."
+      },
+      {
+        "title": "STRATEGY & DIRECTION",
+        "content": "The direction was 'Cloud-Native Scalability'. We designed a robust multi-tenant architecture with integrated subscription logic and a unified identity management system."
+      },
+      {
+        "title": "DESIGN & EXECUTION",
+        "content": "Built using a serverless infrastructure, we implemented automated billing and tenant isolation. The final product is designed to scale horizontally at zero marginal cost."
+      },
+      {
+        "title": "RESULTS & IMPACT",
+        "content": "Platform scaled from 1k to 100k users with zero downtime. Operational costs per user dropped by 45%, and the time-to-market for new features decreased by 60%."
+      }
+    ],
+    "finalSummaryBadges": [
+      "Discovery",
+      "Strategy",
+      "Design",
+      "Impact"
+    ],
+    "keyOutcomesBadges": [
+      "Growth",
+      "Standard",
+      "Logic",
+      "Global"
+    ],
+    "testimonials": [
+      {
+        "name": "Satya N (Fake)",
+        "position": "Cloud Architect",
+        "content": "Flawless multi-tenant logic. This architecture is built for the next decade of cloud scale."
+      },
+      {
+        "name": "Sundar P (Fake)",
+        "position": "CEO, Google (Fake)",
+        "content": "Innovative and extremely efficient. Their SaaS framework is the smartest shortcut for any software startup."
+      }
+    ]
+  },
+  {
+    "id": "crm-products",
+    "title": "CRM Products",
+    "description": "Ready-to-deploy sales and relation software. Our products are designed for immediate impact on lead conversion and workflow.",
+    "client": "Fortune 500 Partner",
+    "timeline": "3 - 6 Months",
+    "year": "2025",
+    "mainImage": "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=1200",
+    "thumbnails": [
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=400"
+    ],
+    "bars": {
+      "strategy": 90,
+      "design": 85,
+      "development": 95,
+      "marketing": 70
+    },
+    "achievementsCount": 240,
+    "visualAssetsCount": 510,
+    "summary": [
+      "Nexus sync engine",
+      "AI prospector bot",
+      "Team collab hub",
+      "Calendar auto-api",
+      "Email link logic",
+      "Report dash build",
+      "Mobile app core",
+      "Admin control kit"
+    ],
+    "outcomes": [
+      "90% Adoption rate",
+      "40% Less data work",
+      "22% Closure boost",
+      "Clean sales funnel",
+      "Zero missing leads",
+      "Unified team chat",
+      "Faster sales cycles",
+      "Trusted cloud hub"
+    ],
+    "sidebarImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600",
+    "bottomBadges": [
+      "Expert",
+      "Scale",
+      "Trust",
+      "Global",
+      "Next-Gen"
+    ],
+    "features": [
+      "Bespoke CRM Products Engine",
+      "Enterprise-Grade Security",
+      "Zero Downtime Architecture",
+      "Global CDN Support",
+      "Custom API Ecosystem",
+      "Multi-Tenant Support",
+      "Real-time Monitoring"
+    ],
+    "offerContents": [
+      {
+        "title": "Nexus CRM Basic",
+        "description": "Intelligent pre-built CRM product ready for immediate deployment.",
+        "tag": "+50%",
+        "price": "Offer"
+      },
+      {
+        "title": "Nexus CRM Omni-Elite",
+        "tag": "+75%",
+        "price": "Offer",
+        "features": [
+          "AI Sales Prospector",
+          "Global Team Sync",
+          "Custom Sales Hub",
+          "Priority Support Port"
+        ]
+      },
+      {
+        "title": "CRM Add-ons",
+        "tag": "+55%",
+        "price": "Offer",
+        "modules": [
+          {
+            "name": "Pro Plugin",
+            "value": "50% off"
+          },
+          {
+            "name": "Data Import",
+            "value": "Included"
+          },
+          {
+            "name": "Mobile Pro",
+            "value": "Free"
+          }
+        ]
+      }
+    ],
+    "comparison": [
+      {
+        "feature": "Core Platform",
+        "basic": true,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "Custom Logic",
+        "basic": false,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "AI Integration",
+        "basic": false,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "24/7 SLA",
+        "basic": false,
+        "pro": false,
+        "enterprise": true
+      }
+    ],
+    "finalImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+    "finalDescription": "This case study explores how a structured approach to CRM Products can elevate user perception, reduce operational friction, and create a consistent digital experience across multiple channels.",
+    "finalTexts": [
+      {
+        "title": "RESEARCH & DISCOVERY",
+        "content": "Market research for the product focused on 'Simplicity vs Power'. We found that users wanted deep analytics but were intimidated by complex traditional CRM interfaces."
+      },
+      {
+        "title": "STRATEGY & DIRECTION",
+        "content": "The product direction was 'Intelligent Simplicity'. We built an AI-assisted CRM that manages the data in the background, showing users only the most critical next steps."
+      },
+      {
+        "title": "DESIGN & EXECUTION",
+        "content": "The product is built on a high-availability cloud cluster. It features a custom 'Nexus' sync engine that allows it to integrate with any email or calendar in one click."
+      },
+      {
+        "title": "RESULTS & IMPACT",
+        "content": "Product adoption in trial users reached 90%. Users reported a 40% reduction in time spent on data entry, and total sales closure rates for users increased by 22% on average."
+      }
+    ],
+    "finalSummaryBadges": [
+      "Discovery",
+      "Strategy",
+      "Design",
+      "Impact"
+    ],
+    "keyOutcomesBadges": [
+      "Growth",
+      "Standard",
+      "Logic",
+      "Global"
+    ],
+    "testimonials": [
+      {
+        "name": "Logan X (Fake)",
+        "position": "Manager",
+        "content": "Strong, fast, and does exactly what it says. The best CRM product I've ever used, bar none."
+      },
+      {
+        "name": "Charles X (Fake)",
+        "position": "Founder",
+        "content": "We handle 500+ global student leads with zero latency. It's not just a product; it's a core advantage."
+      }
+    ]
+  },
+  {
+    "id": "erp-products",
+    "title": "ERP Products",
+    "description": "Complete enterprise resource software. Manage finance, supply chain, and human resources in one unified high-performance platform.",
+    "client": "Fortune 500 Partner",
+    "timeline": "3 - 6 Months",
+    "year": "2025",
+    "mainImage": "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=1200",
+    "thumbnails": [
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=400"
+    ],
+    "bars": {
+      "strategy": 90,
+      "design": 85,
+      "development": 95,
+      "marketing": 70
+    },
+    "achievementsCount": 240,
+    "visualAssetsCount": 510,
+    "summary": [
+      "Unified logic core",
+      "Supply chain hub",
+      "HR portal system",
+      "Finance data lake",
+      "Tax compliance API",
+      "Asset radar track",
+      "Mobile admin app",
+      "Logistics AI engine"
+    ],
+    "outcomes": [
+      "80% Module speed",
+      "40% Less friction",
+      "Finance labor save",
+      "Global tax ready",
+      "Real-time stock fix",
+      "Unified operation",
+      "Cleaner audit trail",
+      "Rapid market shift"
+    ],
+    "sidebarImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600",
+    "bottomBadges": [
+      "Expert",
+      "Scale",
+      "Trust",
+      "Global",
+      "Next-Gen"
+    ],
+    "features": [
+      "Bespoke ERP Products Engine",
+      "Enterprise-Grade Security",
+      "Zero Downtime Architecture",
+      "Global CDN Support",
+      "Custom API Ecosystem",
+      "Multi-Tenant Support",
+      "Real-time Monitoring"
+    ],
+    "offerContents": [
+      {
+        "title": "Finance Core Hub",
+        "description": "Industrial-grade financial management software with real-time auditing.",
+        "tag": "+40%",
+        "price": "Offer"
+      },
+      {
+        "title": "ERP Omni-Master",
+        "tag": "+80%",
+        "price": "Offer",
+        "features": [
+          "Agile Supply Chain Hub",
+          "Global HR & Payroll",
+          "Asset Radar Tracking",
+          "Predictive Logistics"
+        ]
+      },
+      {
+        "title": "ERP Modules",
+        "tag": "+50%",
+        "price": "Offer",
+        "modules": [
+          {
+            "name": "HR Portal",
+            "value": "30% off"
+          },
+          {
+            "name": "Tax Engine",
+            "value": "30% off"
+          },
+          {
+            "name": "Asset Scan",
+            "value": "30% off"
+          }
+        ]
+      }
+    ],
+    "comparison": [
+      {
+        "feature": "Core Platform",
+        "basic": true,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "Custom Logic",
+        "basic": false,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "AI Integration",
+        "basic": false,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "24/7 SLA",
+        "basic": false,
+        "pro": false,
+        "enterprise": true
+      }
+    ],
+    "finalImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+    "finalDescription": "This case study explores how a structured approach to ERP Products can elevate user perception, reduce operational friction, and create a consistent digital experience across multiple channels.",
+    "finalTexts": [
+      {
+        "title": "RESEARCH & DISCOVERY",
+        "content": "A deep audit of global ERP pain points. Research showed that legacy ERP systems were too brittle to adapt to rapid market changes, costing companies billions."
+      },
+      {
+        "title": "STRATEGY & DIRECTION",
+        "content": "Product roadmap was 'The Agile Enterprise'. We built an ERP that is fully modular, allowing companies to add and remove functionality as their needs evolve."
+      },
+      {
+        "title": "DESIGN & EXECUTION",
+        "content": "The final product features a custom 'Logic Core' that handles finance, HR, and supply chain in a unified data lake. It is fully integrated with global tax and compliance APIs."
+      },
+      {
+        "title": "RESULTS & IMPACT",
+        "content": "Deployment time for new modules decreased by 80%. Total operational friction dropped by 40%, and the unified reporting system saved finance teams weeks of manual work."
+      }
+    ],
+    "finalSummaryBadges": [
+      "Discovery",
+      "Strategy",
+      "Design",
+      "Impact"
+    ],
+    "keyOutcomesBadges": [
+      "Growth",
+      "Standard",
+      "Logic",
+      "Global"
+    ],
+    "testimonials": [
+      {
+        "name": "Bruce W (Fake)",
+        "position": "Chairman",
+        "content": "It manages our global operations with surgical precision. The efficiency gains are nothing short of heroic."
+      },
+      {
+        "name": "Lucius F (Fake)",
+        "position": "Tech Lead",
+        "content": "The supply chain logic is the most advanced I've seen. It's the new gold standard for ERP."
+      }
+    ]
+  },
+  {
+    "id": "ai-chatbot-products",
+    "title": "AI Chatbot Solutions",
+    "description": "Conversational agents that think. Our chatbot products provide 24/7 human-like support and automated lead generation for any business.",
+    "client": "Fortune 500 Partner",
+    "timeline": "3 - 6 Months",
+    "year": "2025",
+    "mainImage": "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=1200",
+    "thumbnails": [
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=400"
+    ],
+    "bars": {
+      "strategy": 90,
+      "design": 85,
+      "development": 95,
+      "marketing": 70
+    },
+    "achievementsCount": 240,
+    "visualAssetsCount": 510,
+    "summary": [
+      "Sentiment analysis",
+      "Adaptive logic core",
+      "NN voice synthesis",
+      "Multi-language API",
+      "CRM auto-linkage",
+      "Bot trainer portal",
+      "Handover logic",
+      "Dashboard reporting"
+    ],
+    "outcomes": [
+      "65% CSAT boost",
+      "80% Ticket auto-solve",
+      "40% Cost reduction",
+      "24/7 Elite support",
+      "Human-like empathy",
+      "Zero user fatigue",
+      "Scalable support",
+      "Cleaner lead data"
+    ],
+    "sidebarImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600",
+    "bottomBadges": [
+      "Expert",
+      "Scale",
+      "Trust",
+      "Global",
+      "Next-Gen"
+    ],
+    "features": [
+      "Bespoke AI Chatbot Solutions Engine",
+      "Enterprise-Grade Security",
+      "Zero Downtime Architecture",
+      "Global CDN Support",
+      "Custom API Ecosystem",
+      "Multi-Tenant Support",
+      "Real-time Monitoring"
+    ],
+    "offerContents": [
+      {
+        "title": "Razor AI Lite Bot",
+        "description": "Highly intelligent conversational agent for modern customer support.",
+        "tag": "+85%",
+        "price": "Offer"
+      },
+      {
+        "title": "Neural Link Pro Agent",
+        "tag": "+70%",
+        "price": "Offer",
+        "features": [
+          "Native Voice Synthesis",
+          "Tone Sentiment Analysis",
+          "Multi-Language Support",
+          "CRM Auto-Sync"
+        ]
+      },
+      {
+        "title": "Bot Add-ons",
+        "tag": "+60%",
+        "price": "Offer",
+        "modules": [
+          {
+            "name": "Handover",
+            "value": "Included"
+          },
+          {
+            "name": "Flow Design",
+            "value": "Included"
+          },
+          {
+            "name": "Voice Hub",
+            "value": "Free"
+          }
+        ]
+      }
+    ],
+    "comparison": [
+      {
+        "feature": "Core Platform",
+        "basic": true,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "Custom Logic",
+        "basic": false,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "AI Integration",
+        "basic": false,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "24/7 SLA",
+        "basic": false,
+        "pro": false,
+        "enterprise": true
+      }
+    ],
+    "finalImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+    "finalDescription": "This case study explores how a structured approach to AI Chatbot Solutions can elevate user perception, reduce operational friction, and create a consistent digital experience across multiple channels.",
+    "finalTexts": [
+      {
+        "title": "RESEARCH & DISCOVERY",
+        "content": "User research on 'Chat Fatigue'. We found that traditional 'button bots' were frustrating users, leading to 55% abandonment rates in customer support flows."
+      },
+      {
+        "title": "STRATEGY & DIRECTION",
+        "content": "Product direction was 'Conversational Empathy'. We built an AI bot that uses advanced sentiment analysis to adjust its tone and personality to match the user's state."
+      },
+      {
+        "title": "DESIGN & EXECUTION",
+        "content": "Integrated a custom LLM core with a low-latency inference engine. The product features an 'Adaptive Logic' system that learns from every interaction to improve accuracy."
+      },
+      {
+        "title": "RESULTS & IMPACT",
+        "content": "User satisfaction (CSAT) scores increased by 65%. 80% of routine support queries are now handled without human intervention, reducing support costs by 40% immediately."
+      }
+    ],
+    "finalSummaryBadges": [
+      "Discovery",
+      "Strategy",
+      "Design",
+      "Impact"
+    ],
+    "keyOutcomesBadges": [
+      "Growth",
+      "Standard",
+      "Logic",
+      "Global"
+    ],
+    "testimonials": [
+      {
+        "name": "Jarvis (Virtual)",
+        "position": "Core Assistant",
+        "content": "A remarkably efficient colleague. The neural processing speed is quite commendable, sir."
+      },
+      {
+        "name": "Tony S (Fake)",
+        "position": "Founder",
+        "content": "Finally a bot that thinks like a person. It's fast, smart, and handles our customers brilliantly."
+      }
+    ]
+  },
+  {
+    "id": "job-seeker-hub",
+    "title": "Job Seeker Hub",
+    "description": "Accelerating your career journey. Our hub provides AI tools for resume optimization, career tracking, and direct market connections.",
+    "client": "Fortune 500 Partner",
+    "timeline": "3 - 6 Months",
+    "year": "2025",
+    "mainImage": "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=1200",
+    "thumbnails": [
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=400"
+    ],
+    "bars": {
+      "strategy": 90,
+      "design": 85,
+      "development": 95,
+      "marketing": 70
+    },
+    "achievementsCount": 240,
+    "visualAssetsCount": 510,
+    "summary": [
+      "ATS scan engine",
+      "AI resume writer",
+      "Salary trend bot",
+      "Career path coach",
+      "Mock interview lab",
+      "Job market alert",
+      "Skill gap analysis",
+      "Network bridge hub"
+    ],
+    "outcomes": [
+      "4x Interview calls",
+      "85% Success rate",
+      "30% Salary boost",
+      "Confident user base",
+      "ATS-proof resumes",
+      "Market transparency",
+      "Rapid job search",
+      "Expert career path"
+    ],
+    "sidebarImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600",
+    "bottomBadges": [
+      "Expert",
+      "Scale",
+      "Trust",
+      "Global",
+      "Next-Gen"
+    ],
+    "features": [
+      "Bespoke Job Seeker Hub Engine",
+      "Enterprise-Grade Security",
+      "Zero Downtime Architecture",
+      "Global CDN Support",
+      "Custom API Ecosystem",
+      "Multi-Tenant Support",
+      "Real-time Monitoring"
+    ],
+    "offerContents": [
+      {
+        "title": "Career Hub Basic",
+        "description": "AI-powered tools for resume optimization and career tracking.",
+        "tag": "+30%",
+        "price": "Offer"
+      },
+      {
+        "title": "Job Seeker Omni-Max",
+        "tag": "+50%",
+        "price": "Offer",
+        "features": [
+          "ATS Analysis Engine",
+          "AI Career Coaching",
+          "Salary Scanner Pro",
+          "Mock Interview AI"
+        ]
+      },
+      {
+        "title": "Hub Add-ons",
+        "tag": "+40%",
+        "price": "Offer",
+        "modules": [
+          {
+            "name": "CV Audit",
+            "value": "Free"
+          },
+          {
+            "name": "Skill Test",
+            "value": "Included"
+          },
+          {
+            "name": "Interview",
+            "value": "Included"
+          }
+        ]
+      }
+    ],
+    "comparison": [
+      {
+        "feature": "Core Platform",
+        "basic": true,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "Custom Logic",
+        "basic": false,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "AI Integration",
+        "basic": false,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "24/7 SLA",
+        "basic": false,
+        "pro": false,
+        "enterprise": true
+      }
+    ],
+    "finalImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+    "finalDescription": "This case study explores how a structured approach to Job Seeker Hub can elevate user perception, reduce operational friction, and create a consistent digital experience across multiple channels.",
+    "finalTexts": [
+      {
+        "title": "RESEARCH & DISCOVERY",
+        "content": "Studied Applicant Tracking Systems (ATS). Research showed that 75% of resumes were being rejected by bots before a human ever saw them, due to poor formatting."
+      },
+      {
+        "title": "STRATEGY & DIRECTION",
+        "content": "The roadmap was 'Career Empowerment'. We built an AI suite that analyzes resumes against target job descriptions to ensure a 90%+ match rate before submission."
+      },
+      {
+        "title": "DESIGN & EXECUTION",
+        "content": "The product features a custom ATS analysis engine and an AI career coach. We integrated it with a global job market scanner to provide real-time salary and trend data."
+      },
+      {
+        "title": "RESULTS & IMPACT",
+        "content": "Users reported a 4x increase in interview callbacks. 85% of active users found a job within 3 months, and the average salary increase for users was nearly 30%."
+      }
+    ],
+    "finalSummaryBadges": [
+      "Discovery",
+      "Strategy",
+      "Design",
+      "Impact"
+    ],
+    "keyOutcomesBadges": [
+      "Growth",
+      "Standard",
+      "Logic",
+      "Global"
+    ],
+    "testimonials": [
+      {
+        "name": "Clark K (Fake)",
+        "position": "Professional",
+        "content": "The resume optimizer is basically a superpower for job seekers. I got an offer in record time."
+      },
+      {
+        "name": "Lois L (Fake)",
+        "position": "Editor",
+        "content": "The market scanning tools are incredible. Knowing my true worth was the first step to a 40% raise."
+      }
+    ]
+  },
+  {
+    "id": "learning-career",
+    "title": "Learning & Career",
+    "description": "Mastering the skills of tomorrow. From intensive academies to corporate training, we build the experts that drive industry 4.0.",
+    "client": "Fortune 500 Partner",
+    "timeline": "3 - 6 Months",
+    "year": "2025",
+    "mainImage": "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=1200",
+    "thumbnails": [
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=400"
+    ],
+    "bars": {
+      "strategy": 90,
+      "design": 85,
+      "development": 95,
+      "marketing": 70
+    },
+    "achievementsCount": 240,
+    "visualAssetsCount": 510,
+    "summary": [
+      "Adaptive curriculum",
+      "Project-based labs",
+      "Mentor match system",
+      "Blockchain certs",
+      "Job placement port",
+      "Skill path audit",
+      "Corporate LMS link",
+      "Live workshop hub"
+    ],
+    "outcomes": [
+      "95% Graduation rate",
+      "90% Job placement",
+      "50% Salary gain",
+      "Verified experts",
+      "Industry ready skills",
+      "Lifelong learning",
+      "Strong network hub",
+      "Proven career ROI"
+    ],
+    "sidebarImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600",
+    "bottomBadges": [
+      "Expert",
+      "Scale",
+      "Trust",
+      "Global",
+      "Next-Gen"
+    ],
+    "features": [
+      "Bespoke Learning & Career Engine",
+      "Enterprise-Grade Security",
+      "Zero Downtime Architecture",
+      "Global CDN Support",
+      "Custom API Ecosystem",
+      "Multi-Tenant Support",
+      "Real-time Monitoring"
+    ],
+    "offerContents": [
+      {
+        "title": "Academy Tech Pack",
+        "description": "Intensive academy access with live projects and expert technical mentorship.",
+        "tag": "+25%",
+        "price": "Offer"
+      },
+      {
+        "title": "Career Mastery Elite",
+        "tag": "+55%",
+        "price": "Offer",
+        "features": [
+          "Blockchain Verified Certs",
+          "Direct Mentor Access",
+          "Job Placement Portals",
+          "Corporate Hub Access"
+        ]
+      },
+      {
+        "title": "Learning Modules",
+        "tag": "+20%",
+        "price": "Offer",
+        "modules": [
+          {
+            "name": "Skill Test",
+            "value": "Included"
+          },
+          {
+            "name": "Guide Books",
+            "value": "Included"
+          },
+          {
+            "name": "Pro Project",
+            "value": "Included"
+          }
+        ]
+      }
+    ],
+    "comparison": [
+      {
+        "feature": "Core Platform",
+        "basic": true,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "Custom Logic",
+        "basic": false,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "AI Integration",
+        "basic": false,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "24/7 SLA",
+        "basic": false,
+        "pro": false,
+        "enterprise": true
+      }
+    ],
+    "finalImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+    "finalDescription": "This case study explores how a structured approach to Learning & Career can elevate user perception, reduce operational friction, and create a consistent digital experience across multiple channels.",
+    "finalTexts": [
+      {
+        "title": "RESEARCH & DISCOVERY",
+        "content": "Analyzed technical skill gaps in the 2025 market. Research showed that 60% of workforce skills will be obsolete within 3 years without continuous learning."
+      },
+      {
+        "title": "STRATEGY & DIRECTION",
+        "content": "The roadmap was 'Adaptive Education'. We built a curriculum centered on 'Dynamic Learning' that adapts to each student's pace and previous technical background."
+      },
+      {
+        "title": "DESIGN & EXECUTION",
+        "content": "Our academy features live project-based learning and direct mentorship. We integrated a certification system that is verified on the blockchain for permanent validity."
+      },
+      {
+        "title": "RESULTS & IMPACT",
+        "content": "Student graduation rate reached 95%. 90% of graduates secured high-end technical roles within 60 days of completion, with an average starting salary increase of 50%."
+      }
+    ],
+    "finalSummaryBadges": [
+      "Discovery",
+      "Strategy",
+      "Design",
+      "Impact"
+    ],
+    "keyOutcomesBadges": [
+      "Growth",
+      "Standard",
+      "Logic",
+      "Global"
+    ],
+    "testimonials": [
+      {
+        "name": "Hermione G (Fake)",
+        "position": "Researcher",
+        "content": "The technical depth is incredible. I learned more here in 8 weeks than in 2 years of traditional study."
+      },
+      {
+        "name": "Harry P (Fake)",
+        "position": "Manager",
+        "content": "Direct, practical, and highly effective. The projects are the closest thing to a real job I've experienced."
+      }
+    ]
+  },
+  {
+    "id": "saas-products",
+    "title": "SaaS Solutions",
+    "description": "Ready-to-use cloud platforms. Our SaaS products offer specialized solutions for billing, infrastructure, and team management.",
+    "client": "Fortune 500 Partner",
+    "timeline": "3 - 6 Months",
+    "year": "2025",
+    "mainImage": "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=1200",
+    "thumbnails": [
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=400"
+    ],
+    "bars": {
+      "strategy": 90,
+      "design": 85,
+      "development": 95,
+      "marketing": 70
+    },
+    "achievementsCount": 240,
+    "visualAssetsCount": 510,
+    "summary": [
+      "Cost optimizer AI",
+      "Compliance shield",
+      "Metric data lake",
+      "Auto-SSO bridge",
+      "Multi-region sync",
+      "Tenant audit logs",
+      "Security hardener",
+      "API speed gateway"
+    ],
+    "outcomes": [
+      "35% Cloud cost save",
+      "100% Compliance rate",
+      "50% Less ops work",
+      "Bulletproof security",
+      "Granular unit data",
+      "Unified B2B hub",
+      "Rapid global scale",
+      "Perfect audit trail"
+    ],
+    "sidebarImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600",
+    "bottomBadges": [
+      "Expert",
+      "Scale",
+      "Trust",
+      "Global",
+      "Next-Gen"
+    ],
+    "features": [
+      "Bespoke SaaS Solutions Engine",
+      "Enterprise-Grade Security",
+      "Zero Downtime Architecture",
+      "Global CDN Support",
+      "Custom API Ecosystem",
+      "Multi-Tenant Support",
+      "Real-time Monitoring"
+    ],
+    "offerContents": [
+      {
+        "title": "Cloud Manage Pro",
+        "description": "High-performance SaaS product for infrastructure and billing optimization.",
+        "tag": "+40%",
+        "price": "Offer"
+      },
+      {
+        "title": "SaaS Omni-Lake Elite",
+        "tag": "+65%",
+        "price": "Offer",
+        "features": [
+          "AI Cost Optimizer",
+          "Global Compliance Shield",
+          "Dynamic User Auth",
+          "Metric Analytics Lake"
+        ]
+      },
+      {
+        "title": "SaaS Add-ons",
+        "tag": "+50%",
+        "price": "Offer",
+        "modules": [
+          {
+            "name": "SSO Bridge",
+            "value": "Included"
+          },
+          {
+            "name": "Audit API",
+            "value": "Included"
+          },
+          {
+            "name": "Extra Space",
+            "value": "10% off"
+          }
+        ]
+      }
+    ],
+    "comparison": [
+      {
+        "feature": "Core Platform",
+        "basic": true,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "Custom Logic",
+        "basic": false,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "AI Integration",
+        "basic": false,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "24/7 SLA",
+        "basic": false,
+        "pro": false,
+        "enterprise": true
+      }
+    ],
+    "finalImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+    "finalDescription": "This case study explores how a structured approach to SaaS Solutions can elevate user perception, reduce operational friction, and create a consistent digital experience across multiple channels.",
+    "finalTexts": [
+      {
+        "title": "RESEARCH & DISCOVERY",
+        "content": "Analyzed SaaS operational 'bloat'. Research showed that modern companies were wasting 30% of their cloud budget on unused features and poor infrastructure management."
+      },
+      {
+        "title": "STRATEGY & DIRECTION",
+        "content": "The product direction was 'Lean Cloud'. We built a suite of SaaS tools that automatically optimize cloud usage and provide clear, granular insights into user unit economics."
+      },
+      {
+        "title": "DESIGN & EXECUTION",
+        "content": "Built on a global serverless architecture with integrated AI cost-optimizers. The product features an automated 'Compliance Shield' for global data privacy standards."
+      },
+      {
+        "title": "RESULTS & IMPACT",
+        "content": "Clients reported a 35% reduction in cloud operational expenditure. Infrastructure management time decreased by 50%, and the compliance score for all users reached 100%."
+      }
+    ],
+    "finalSummaryBadges": [
+      "Discovery",
+      "Strategy",
+      "Design",
+      "Impact"
+    ],
+    "keyOutcomesBadges": [
+      "Growth",
+      "Standard",
+      "Logic",
+      "Global"
+    ],
+    "testimonials": [
+      {
+        "name": "Steve R (Fake)",
+        "position": "CEO, Shield",
+        "content": "Invisible, efficient, and reliable. It handles our global multi-tenant logic without a single issue."
+      },
+      {
+        "name": "Natasha R (Fake)",
+        "position": "Ops Chief",
+        "content": "Fast as a bullet and just as precise. The infrastructure management suite is a masterpiece of code."
+      }
+    ]
+  },
+  {
+    "id": "business-suit-ai",
+    "title": "Business Suite AI",
+    "description": "Intelligence for the executive suite. Automate contracts, generate strategic insights, and synthesize meetings with elite AI tools.",
+    "client": "Fortune 500 Partner",
+    "timeline": "3 - 6 Months",
+    "year": "2025",
+    "mainImage": "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=1200",
+    "thumbnails": [
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=400",
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=400"
+    ],
+    "bars": {
+      "strategy": 90,
+      "design": 85,
+      "development": 95,
+      "marketing": 70
+    },
+    "achievementsCount": 240,
+    "visualAssetsCount": 510,
+    "summary": [
+      "Meeting AI synth",
+      "Contract negotiator",
+      "Strategic copilot",
+      "Global scan bot",
+      "Encrypted note hub",
+      "Executive dash",
+      "Legal doc parser",
+      "Biz event alert"
+    ],
+    "outcomes": [
+      "40% Productivity gain",
+      "Near-zero note work",
+      "$50k/yr Cost saving",
+      "Strategic clarity",
+      "Secure data privacy",
+      "Faster biz decisions",
+      "Tactical edge hub",
+      "Empowered C-Suite"
+    ],
+    "sidebarImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600",
+    "bottomBadges": [
+      "Expert",
+      "Scale",
+      "Trust",
+      "Global",
+      "Next-Gen"
+    ],
+    "features": [
+      "Bespoke Business Suite AI Engine",
+      "Enterprise-Grade Security",
+      "Zero Downtime Architecture",
+      "Global CDN Support",
+      "Custom API Ecosystem",
+      "Multi-Tenant Support",
+      "Real-time Monitoring"
+    ],
+    "offerContents": [
+      {
+        "title": "Executive AI Hub",
+        "description": "Elite AI suite for meeting synthesis and strategic business insights.",
+        "tag": "+45%",
+        "price": "Offer"
+      },
+      {
+        "title": "Suite Supreme Elite",
+        "tag": "+85%",
+        "price": "Offer",
+        "features": [
+          "AI Contract Negotiator",
+          "C-Suite Strategy Copilot",
+          "Global Market Scanner",
+          "Encrypted Meeting Sync"
+        ]
+      },
+      {
+        "title": "Suite Add-ons",
+        "tag": "+60%",
+        "price": "Offer",
+        "modules": [
+          {
+            "name": "Legal Bot",
+            "value": "25% off"
+          },
+          {
+            "name": "Summary AI",
+            "value": "Free"
+          },
+          {
+            "name": "Voice Hub",
+            "value": "Included"
+          }
+        ]
+      }
+    ],
+    "comparison": [
+      {
+        "feature": "Core Platform",
+        "basic": true,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "Custom Logic",
+        "basic": false,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "AI Integration",
+        "basic": false,
+        "pro": true,
+        "enterprise": true
+      },
+      {
+        "feature": "24/7 SLA",
+        "basic": false,
+        "pro": false,
+        "enterprise": true
+      }
+    ],
+    "finalImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+    "finalDescription": "This case study explores how a structured approach to Business Suite AI can elevate user perception, reduce operational friction, and create a consistent digital experience across multiple channels.",
+    "finalTexts": [
+      {
+        "title": "RESEARCH & DISCOVERY",
+        "content": "Executive time-theft analysis. Research found that C-suite leaders spend 60% of their time on manual documentation and meeting synthesis instead of strategy."
+      },
+      {
+        "title": "STRATEGY & DIRECTION",
+        "content": "Product direction was 'The AI Concierge'. We built a suite that auto-documents every meeting and provides real-time strategic 'Copilot' suggestions based on company data."
+      },
+      {
+        "title": "DESIGN & EXECUTION",
+        "content": "Integrated high-security SSL encryption for all meeting notes. The product features an AI 'Negotiator' that analyzes vendor contracts for potential cost savings in seconds."
+      },
+      {
+        "title": "RESULTS & IMPACT",
+        "content": "Executive productivity increased by 40%. Meeting synthesis time dropped to near-zero, and the AI Negotiator identified an average of $50k in yearly savings for trial companies."
+      }
+    ],
+    "finalSummaryBadges": [
+      "Discovery",
+      "Strategy",
+      "Design",
+      "Impact"
+    ],
+    "keyOutcomesBadges": [
+      "Growth",
+      "Standard",
+      "Logic",
+      "Global"
+    ],
+    "testimonials": [
+      {
+        "name": "Nick F (Fake)",
+        "position": "Director",
+        "content": "I see everything now. The strategic dashboard gives me a level of tactical clarity I've never had before."
+      },
+      {
+        "name": "Spider M (Fake)",
+        "position": "CEO, WebTech",
+        "content": "My spidey-sense for business was already good, but this AI Copilot makes me basically invincible."
+      }
+    ]
+  }
+]

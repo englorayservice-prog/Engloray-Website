@@ -33,7 +33,7 @@ import erp3d from '../../../assets/erp_3d_new.png';
 import ai3d from '../../../assets/ai_3d_new.png';
 import jobs3d from '../../../assets/jobs_3d_new.png';
 import learning3d from '../../../assets/learning_3d.png';
-// import saas3dShape from '../../../assets/saas_3d_shape.png';
+//import saas3dShape from '../../../assets/saas_3d_shape.png';
 import saasFeaturedBuilding from '../../../assets/saas_featured_building.png';
 import microsoftLogo from '../../../assets/microsoft.png';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar'
@@ -218,9 +218,10 @@ const SaaS = () => {
 
                 {/* Right Side: Dual Auto-Scrolling Card Columns over Background */}
                 <div className="saas-v2-dynamic-visual">
-                  <div className="saas-v2-scroll-col col-left">
+                  {/* ON MOBILE/TABLET: This column contains all 4 cards in sequence */}
+                  <div className="saas-v2-scroll-col col-main">
                     <div className="saas-v2-scroll-track">
-                      {[1, 2, 3].map((_, i) => (
+                      {[1, 2].map((_, i) => (
                         <React.Fragment key={i}>
                           <div className="saas-v2-glass-strip-card">
                             <div className="saas-v2-strip-icon" style={{ background: '#dcfce7' }}><FontAwesomeIcon icon={faChartPie} /></div>
@@ -236,35 +237,48 @@ const SaaS = () => {
                               <p>Military grade</p>
                             </div>
                           </div>
-                        </React.Fragment>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="saas-v2-scroll-col col-right">
-                    <div className="saas-v2-scroll-track reverse">
-                      {[1, 2, 3].map((_, i) => (
-                        <React.Fragment key={i}>
                           <div className="saas-v2-glass-strip-card">
-                            <div className="saas-v2-strip-icon" style={{ background: '#dbeafe' }}><FontAwesomeIcon icon={faRobot} /></div>
-                            <div className="saas-v2-strip-text">
-                              <h4>AI Engine</h4>
-                              <p>Neural workflows</p>
-                            </div>
-                          </div>
-                          <div className="saas-v2-glass-strip-card">
-                            <div className="saas-v2-strip-icon" style={{ background: '#ffedd5' }}><FontAwesomeIcon icon={faRocket} /></div>
+                            <div className="saas-v2-strip-icon" style={{ background: '#fef08a' }}><FontAwesomeIcon icon={faRocket} /></div>
                             <div className="saas-v2-strip-text">
                               <h4>Fast Deploy</h4>
                               <p>CI/CD pipeline</p>
                             </div>
                           </div>
+                          <div className="saas-v2-glass-strip-card">
+                            <div className="saas-v2-strip-icon" style={{ background: '#ddd6fe' }}><FontAwesomeIcon icon={faRobot} /></div>
+                            <div className="saas-v2-strip-text">
+                              <h4>AI Engine</h4>
+                              <p>Neural workflows</p>
+                            </div>
+                          </div>
                         </React.Fragment>
                       ))}
                     </div>
                   </div>
 
-
+                  {/* ON DESKTOP: This column provides the second axis for the dual-motion effect */}
+                  <div className="saas-v2-scroll-col col-right-desktop-only">
+                    <div className="saas-v2-scroll-track reverse">
+                      {[1, 2].map((_, i) => (
+                        <React.Fragment key={i}>
+                          <div className="saas-v2-glass-strip-card">
+                            <div className="saas-v2-strip-icon" style={{ background: '#fef08a' }}><FontAwesomeIcon icon={faRocket} /></div>
+                            <div className="saas-v2-strip-text">
+                              <h4>Fast Deploy</h4>
+                              <p>CI/CD pipeline</p>
+                            </div>
+                          </div>
+                          <div className="saas-v2-glass-strip-card">
+                            <div className="saas-v2-strip-icon" style={{ background: '#ddd6fe' }}><FontAwesomeIcon icon={faRobot} /></div>
+                            <div className="saas-v2-strip-text">
+                              <h4>AI Engine</h4>
+                              <p>Neural workflows</p>
+                            </div>
+                          </div>
+                        </React.Fragment>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -273,18 +287,25 @@ const SaaS = () => {
                 <img src={saasFeaturedBuilding} alt="Building Background" />
                 <div className="saas-v2-bg-gradient"></div>
               </div>
-
-              {/* Floating text like in reference */}
-              <div className="saas-v2-contact-float anim-on-scroll delay-4">
-                Give us a call <strong>1-888-498-9240</strong> and <br />
-                we can set you up, or <span>check our pricing plans</span>
-              </div>
             </div>
 
             {/* White Footer */}
             <div className="saas-v2-white-footer">
+              <div className="saas-v2-hero-white-space-content anim-on-scroll delay-5">
+                <div className="saas-v2-live-status-pill">
+                  <span className="saas-v2-pulse-dot"></span>
+                  <strong>Live:</strong> 500+ Global Edge Nodes
+                </div>
+                <div className="saas-v2-productivity-card">
+                  <div className="saas-v2-prod-icon"><FontAwesomeIcon icon={faChartLine} /></div>
+                  <div className="saas-v2-prod-info">
+                    <span className="saas-v2-prod-val">85%</span>
+                    <span className="saas-v2-prod-label">Efficiency Boost</span>
+                  </div>
+                </div>
+              </div>
+
               <div className="saas-v2-footer-content">
-                {/* SaaS Metrics Badge (Bottom Left) */}
                 <div className="saas-v2-bottom-badge anim-on-scroll delay-5">
                   <div className="saas-v2-spot-details">
                     <span className="saas-v2-spot-loc"><FontAwesomeIcon icon={faChartLine} style={{ marginRight: '8px' }} /> Real-time Analytics Hub</span>
@@ -295,7 +316,6 @@ const SaaS = () => {
                   </div>
                 </div>
 
-                {/* SaaS Product Names (Bottom Right) */}
                 <div className="saas-v2-partner-logos anim-on-scroll delay-5">
                   <div className="saas-v2-logo-box">
                     <div className="saas-v2-logo-icon" style={{ color: '#6366f1' }}><FontAwesomeIcon icon={faCloud} /></div>
@@ -331,7 +351,10 @@ const SaaS = () => {
               </h2>
               <p className="stats-modern-desc anim-on-scroll delay-2">
                 Our intelligent SaaS solutions read, write and act across TMS, email
-                and chat so your ops staff don't have to.
+                and chat so your ops staff don't have to. Experience a unified interface
+                where AI automates complex logistics workflows, ensures 100% data
+                accuracy, and empowers your team to focus on high-level strategy
+                instead of repetitive administrative tasks.
               </p>
 
               <a href="#!" className="stats-modern-btn anim-on-scroll delay-3">CONTACT US</a>
@@ -344,16 +367,16 @@ const SaaS = () => {
                   <div className="stats-main-arc"></div>
                   <div className="stats-rotating-orbit">
                     <div className="orbit-item icon-1">
-                      <div className="orbit-icon-inner" style={{ background: '#ffffff', color: '#EA4335' }}><FontAwesomeIcon icon={faCloud} /></div>
+                      <div className="orbit-icon-inner" style={{ background: 'rgba(255,255,255,0.1)', color: '#ff4d4d' }}><FontAwesomeIcon icon={faCloud} /></div>
                     </div>
                     <div className="orbit-item icon-2">
-                      <div className="orbit-icon-inner" style={{ background: '#ffffff', color: '#4A154B' }}><FontAwesomeIcon icon={faComments} /></div>
+                      <div className="orbit-icon-inner" style={{ background: 'rgba(255,255,255,0.1)', color: '#a855f7' }}><FontAwesomeIcon icon={faComments} /></div>
                     </div>
                     <div className="orbit-item icon-3">
-                      <div className="orbit-icon-inner" style={{ background: '#2b3a55', color: '#ffffff' }}><FontAwesomeIcon icon={faRobot} /></div>
+                      <div className="orbit-icon-inner" style={{ background: 'rgba(255,255,255,0.2)', color: '#ffffff' }}><FontAwesomeIcon icon={faRobot} /></div>
                     </div>
                     <div className="orbit-item icon-4">
-                      <div className="orbit-icon-inner" style={{ background: '#ffffff', color: '#000000' }}><FontAwesomeIcon icon={faRocket} /></div>
+                      <div className="orbit-icon-inner" style={{ background: 'rgba(255,255,255,0.1)', color: '#ffffff' }}><FontAwesomeIcon icon={faRocket} /></div>
                     </div>
                   </div>
                 </div>
@@ -396,11 +419,11 @@ const SaaS = () => {
 
           <div className="showcase-grid">
             {[
-              { num: '01', cat: 'Management', title: 'Unified CRM Solutions', img: crm3d, link: '/crmPage' },
-              { num: '02', cat: 'Infrastructure', title: 'Empowering ERP Systems', img: erp3d, link: '/erpPage' },
-              { num: '03', cat: 'Support', title: 'AI Chatbot Intelligence', img: ai3d, link: '/aiChatbotPage' },
-              { num: '04', cat: 'Recruitment', title: 'Job Seeker Hub', img: jobs3d, link: '/jobSeekerPage' },
-              { num: '05', cat: 'Education', title: 'Career & Learning', img: learning3d, link: '/learningPage' }
+              { num: '01', cat: 'Management', title: 'Unified CRM Solutions', img: crm3d, link: '/CrmPage' },
+              { num: '02', cat: 'Infrastructure', title: 'Empowering ERP Systems', img: erp3d, link: '/ErpPage ' },
+              { num: '03', cat: 'Support', title: 'AI Chatbot Intelligence', img: ai3d, link: '/AiChatbotPage' },
+              { num: '04', cat: 'Recruitment', title: 'Job Seeker Hub', img: jobs3d, link: '/JobSeekerPage' },
+              { num: '05', cat: 'Education', title: 'Career & Learning', img: learning3d, link: '/LearningPage' }
             ].map((product, idx) => (
               <Link key={idx} to={product.link} className="showcase-item anim-on-scroll" style={{ transitionDelay: `${idx * 0.15}s` }}>
                 <img src={product.img} alt={product.title} className="showcase-bg-img" />
@@ -421,13 +444,12 @@ const SaaS = () => {
           </div>
         </section>
 
-        <section className="saasb-hero">
-          <div className="saas-container">
-            <div className="section-header anim-on-scroll">
-              <h2 className="section-title">Our Core <span>Benefits</span></h2>
-              <p className="section-subtitle">Empowering your business with high-performance tools, automated workflows, and intelligent insights.</p>
-            </div>
+        <section className="saas-core-benefits-section">
+          <div className="section-header anim-on-scroll">
+            <h2 className="saasb-section-title">Our Core <span>Benefits</span></h2>
+            <p className="saasb-section-sub-subtitle">Empowering your business with high-performance tools, automated workflows, and intelligent insights.</p>
           </div>
+
 
           <div className="saasb-hero-container">
 
@@ -440,8 +462,9 @@ const SaaS = () => {
               </h1>
 
               <p>
-                Streamline your operations, automate repetitive tasks, and gain real-time
-                insights—all from a single powerful SaaS platform designed for growth.
+                Streamline your operations from top to bottom, automate repetitive manual tasks, and gain powerful real-time digital
+                insights—all from a single, unified SaaS platform designed specifically for long-term global growth.
+                Focus on what matters while our AI-driven software handles the complexity behind the scenes.
               </p>
               <div className="saasb-features">
                 <span>Core capabilities</span>
@@ -522,7 +545,7 @@ const SaaS = () => {
           <div className="roadmap-v3-container">
 
             <div className="roadmap-v3-side-title anim-on-scroll">
-              <h2>ROADMAP<br /><span>2025</span></h2>
+              <h2>ROADMAP<br /><span>2023</span></h2>
             </div>
 
             <div className="roadmap-v3-main-visual">
@@ -540,7 +563,7 @@ const SaaS = () => {
               </div>
 
               <div className="roadmap-v3-interaction-layer">
-                <div className="roadmap-v3-year-pill start anim-on-scroll">2025</div>
+                <div className="roadmap-v3-year-pill start anim-on-scroll">2023</div>
 
                 {/* Q1: Top Card */}
                 <div className="roadmap-v3-node-item q1-pos anim-on-scroll delay-1">

@@ -1,61 +1,74 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import NavigationBar from '../../../Pages/TechLearningSection/NavigationBar/NavigationBar';
+import brandingData from './raymart_branding_data.json';
 import Logo from '../../../../src/assets/18.png'; // Using the logo from assets
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faTwitter, faLinkedinIn, faInstagram } from '@fortawesome/free-brands-svg-icons';
-import { faPhone, faEnvelope, faLocationDot, faArrowRight, faComments, faChevronLeft, faChevronRight, faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faPhone, faEnvelope, faLocationDot, faArrowRight, faComments, faChevronLeft, faChevronRight, faHeart, faBorderAll } from '@fortawesome/free-solid-svg-icons';
 import './FaqRaymart.css';
-import '../HeroSection/HeroSection.css';
 import emilycarter from '../../../assets/images/emilybg.jpg.jpeg';
 import michaelchen from '../../../assets/images/michaelchen.jpg.jpeg';
-import sarahjenkins from '../../../assets/images/sarahjenkins.jpeg';
-import brandImg1 from '../../../assets/images/branding1.png';
-import brandImg2 from '../../../assets/images/branding2.png';
-import brandImg3 from '../../../assets/images/branding3.png';
-import brandImg4 from '../../../assets/images/branding4.png';
-import brandImg5 from '../../../assets/images/branding5.png';
+import sarahjenkins from '../../../assets/images/sarahjenkins.jpg.jpeg';
 
 const FaqRaymart = () => {
+    const location = useLocation();
     const [openIndex, setOpenIndex] = useState(0);
     const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
     const [isFading, setIsFading] = useState(false);
 
-    const testimonialsData = [
-        {
-            name: "Emily Carter",
-            title: "Operations Director, TechFlow Inc.",
-            badge: "AI Chatbot Integration",
-            quote: `"Engloray's intelligent chatbot solutions have drastically improved our student engagement, providing our learners with instant and reliable technical guidance 24/7."`,
-            avatar: emilycarter,
-            scale: 1.25,
-            bgImage: emilycarter,
-            // cardTitle: "AI Chatbot Solutions",
-            // cardDesc: "Intelligent automation\nInstant 24/7 guidance\nDeployed in days"
-        },
-        {
-            name: "Michael Chen",
-            title: "CTO, Global Learn",
-            badge: "Enterprise Support",
-            quote: `"The deployment of the conversational AI agent streamlined our entire support pipeline. Response times plummeted, and user satisfaction is at an all-time high."`,
-            avatar: michaelchen,
-            bgImage: michaelchen,
-            // cardTitle: "Enterprise Support",
-            // cardDesc: "Streamlined pipelines\nFaster response times\nScalable infrastructure"
-        },
-        {
-            name: "Sarah Jenkins",
-            title: "Head of Marketing, EduPro",
-            badge: "Digital Transformation",
-            quote: `"Working with Engloray transformed our digital presence. The custom ERP and seamless AI integration helped us scale our services globally with absolute ease."`,
-            avatar: sarahjenkins,
-            bgImage: sarahjenkins,
-            // cardTitle: "Digital Transformation",
-            // cardDesc: "Custom ERP systems\nGlobal scale solutions\nSeamless AI integration"
+    // Get ID from navigation state, default to the first one
+    const activeId = location.state?.id || "global-identity-suite";
+    const pageData = brandingData.find(item => item.id === activeId) || brandingData[0];
+
+    // Avatar mapping for local imports
+    const avatarMap = {
+        "Emily Carter": emilycarter,
+        "Michael Chen": michaelchen,
+        "Sarah Jenkins": sarahjenkins
+    };
+
+    // Use testimonials from JSON data
+    const testimonialsData = pageData.testimonials || [];
+
+    const scrollRef = useRef(null);
+
+    const scroll = (direction) => {
+        if (!scrollRef.current) return;
+        const { scrollLeft, scrollWidth } = scrollRef.current;
+
+        // Exact measure of one card and its gap based on actual DOM elements
+        const cards = scrollRef.current.children;
+        if (cards.length === 0) return;
+        const cardWithGap = cards[0].offsetWidth + 15;
+        const singleSetWidth = (scrollWidth + 15) / 3;
+
+        let targetScroll = direction === 'left' ? scrollLeft - cardWithGap : scrollLeft + cardWithGap;
+
+        // "Teleport" immediately if we reach the end of the middle set in either direction
+        if (direction === 'right' && targetScroll >= (singleSetWidth * 2)) {
+            scrollRef.current.scrollLeft = scrollLeft - singleSetWidth;
+            targetScroll = scrollRef.current.scrollLeft + cardWithGap;
+        } else if (direction === 'left' && targetScroll <= (singleSetWidth - cardWithGap)) {
+            scrollRef.current.scrollLeft = scrollLeft + singleSetWidth;
+            targetScroll = scrollRef.current.scrollLeft - cardWithGap;
         }
-    ];
+
+        scrollRef.current.scrollTo({ left: targetScroll, behavior: 'smooth' });
+    };
 
     useEffect(() => {
+        // Initial position: start at the middle set
+        if (scrollRef.current) {
+            const { scrollWidth } = scrollRef.current;
+            const singleSetWidth = (scrollWidth + 15) / 3;
+            scrollRef.current.scrollLeft = singleSetWidth;
+        }
+    }, []);
+
+    useEffect(() => {
+        if (testimonialsData.length === 0) return;
         const timer = setInterval(() => {
             setIsFading(true); // Trigger fade out
             setTimeout(() => {
@@ -64,7 +77,7 @@ const FaqRaymart = () => {
             }, 500); // match transition duration in CSS
         }, 5000);
         return () => clearInterval(timer);
-    }, []);
+    }, [testimonialsData]);
 
     const faqs = [
         {
@@ -95,7 +108,7 @@ const FaqRaymart = () => {
                 <title>FAQ & Feedback | Engloray</title>
             </Helmet>
 
-            <NavigationBar />
+            {/* <NavigationBar /> */}
 
             <div className="faq-raymart-container">
 
@@ -107,12 +120,12 @@ const FaqRaymart = () => {
 
                         {/* MAIN HERO */}
                         <div className="cs-hero">
-                            <img src="https://res.cloudinary.com/mtm-agency/image/fetch/f_auto,q_auto/https://themtmagency.com/upload/media/_1920x1080_crop_center-center_61_line/24-11_29379_Brand_building_for_professional_services_blog_image-11.png" alt="Hero" />
+                            <img src={pageData.mainImage} alt={pageData.title} />
                         </div>
 
                         {/* THUMBNAILS */}
                         <div className="cs-thumbs">
-                            {[brandImg1, brandImg2, brandImg3, brandImg4, brandImg5].map((img, i) => (
+                            {pageData.thumbnails.map((img, i) => (
                                 <img key={i} src={img} alt={`branding-${i}`} />
                             ))}
                         </div>
@@ -124,30 +137,29 @@ const FaqRaymart = () => {
 
                         {/* TOP SMALL IMAGE */}
                         <div className="cs-side-image">
-                            <img src="https://freedesignfile.com/upload/2012/11/business_people_05.jpg" alt="Side" />
+                            <img src={pageData.sidebarImage} alt="Side" />
                         </div>
 
                         {/* CONTENT */}
                         <div className="cs-side-content">
-                            <h2>Brand Transformation</h2>
+                            <h2>{pageData.title}</h2>
                             <p>
-                                A complete redesign focused on elevating brand perception,
-                                improving user experience, and scaling digital presence.
+                                {pageData.description}
                             </p>
 
                             {/* INFO ROWS */}
                             <div className="cs-info">
                                 <div>
                                     <span>Client</span>
-                                    <p>Fintech Startup</p>
+                                    <p>{pageData.client}</p>
                                 </div>
                                 <div>
                                     <span>Timeline</span>
-                                    <p>10 Weeks</p>
+                                    <p>{pageData.timeline}</p>
                                 </div>
                                 <div>
                                     <span>Year</span>
-                                    <p>2025</p>
+                                    <p>{pageData.year}</p>
                                 </div>
                             </div>
 
@@ -156,36 +168,34 @@ const FaqRaymart = () => {
                                 <div className="bar">
                                     <div className="bar-row">
                                         <span>Brand Strategy</span>
-                                        <div className="track"><div className="fill w90"></div></div>
+                                        <div className="track"><div className="fill" style={{ width: `${pageData.bars.strategy}%` }}></div></div>
                                     </div>
                                 </div>
                                 <div className="bar">
                                     <div className="bar-row">
                                         <span>UI/UX Design</span>
-                                        <div className="track"><div className="fill w80"></div></div>
+                                        <div className="track"><div className="fill" style={{ width: `${pageData.bars.design}%` }}></div></div>
                                     </div>
                                 </div>
                                 <div className="bar">
                                     <div className="bar-row">
                                         <span>Development</span>
-                                        <div className="track"><div className="fill w70"></div></div>
+                                        <div className="track"><div className="fill" style={{ width: `${pageData.bars.development}%` }}></div></div>
                                     </div>
                                 </div>
                                 <div className="bar">
                                     <div className="bar-row">
                                         <span>Marketing</span>
-                                        <div className="track"><div className="fill w60"></div></div>
+                                        <div className="track"><div className="fill" style={{ width: `${pageData.bars.marketing}%` }}></div></div>
                                     </div>
                                 </div>
                             </div>
 
                             {/* BOTTOM BADGES */}
                             <div className="cs-bottom-badges">
-                                <span>Branding</span>
-                                <span>UI/UX</span>
-                                <span>Strategy</span>
-                                <span>Development</span>
-                                <span>Marketing</span>
+                                {pageData.bottomBadges && pageData.bottomBadges.map((badge, i) => (
+                                    <span key={i}>{badge}</span>
+                                ))}
                             </div>
 
                         </div>
@@ -200,58 +210,61 @@ const FaqRaymart = () => {
                     {/* LEFT SIDE (3 BOXES) */}
                     <div className="cs-bottom-left">
 
-                        <div className="cs-box">
-                            <div className="cs-box-row">
-                                <div className="cs-box-title">
-                                    <h4>Brand Identity Package</h4>
-                                    <p className="box-description">A complete system for cohesive brand visual identity</p>
+                        {pageData.offerContents && pageData.offerContents[0] && (
+                            <div className="cs-box">
+                                <div className="cs-box-row">
+                                    <div className="cs-box-title">
+                                        <h4>{pageData.offerContents[0].title}</h4>
+                                        <p className="box-description">{pageData.offerContents[0].description}</p>
+                                    </div>
+                                    <div className="cs-box-right">
+                                        <span className="green-tag">{pageData.offerContents[0].tag}</span>
+                                        <span className="price">{pageData.offerContents[0].price}</span>
+                                        <button>Contact soon</button>
+                                    </div>
                                 </div>
-                                <div className="cs-box-right">
-                                    <span className="green-tag">+34%</span>
-                                    <span className="price">Offer</span>
+                            </div>
+                        )}
+
+                        {pageData.offerContents && pageData.offerContents[1] && (
+                            <div className="cs-box">
+                                <div className="cs-box-row">
+                                    <h4>{pageData.offerContents[1].title}</h4>
+                                    <div className="cs-box-right">
+                                        <span className="green-tag">{pageData.offerContents[1].tag}</span>
+                                        <span className="price">{pageData.offerContents[1].price}</span>
+                                        <button>Contact soon</button>
+                                    </div>
+                                </div>
+                                <div className="cs-list-container">
+                                    <ul className="cs-feature-list">
+                                        {pageData.offerContents[1].features.map((item, i) => (
+                                            <li key={i}>{item}</li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </div>
+                        )}
+
+                        {pageData.offerContents && pageData.offerContents[2] && (
+                            <div className="cs-box">
+                                <div className="cs-box-row">
+                                    <h4>{pageData.offerContents[2].title}</h4>
+                                </div>
+                                <div className="cs-pricing-container">
+                                    <div className="cs-pricing-list">
+                                        {pageData.offerContents[2].modules.map((mod, i) => (
+                                            <div className="pricing-item" key={i}><span>{mod.name}</span><span className="price-value">{mod.value}</span></div>
+                                        ))}
+                                    </div>
+                                </div>
+                                <div className="cs-total">
+                                    <span className="green-tag">{pageData.offerContents[2].tag}</span>
+                                    <span className="price">{pageData.offerContents[2].price}</span>
                                     <button>Contact soon</button>
                                 </div>
                             </div>
-                        </div>
-
-                        <div className="cs-box">
-                            <div className="cs-box-row">
-                                <h4>Brand Identity Deluxe</h4>
-                                <div className="cs-box-right">
-                                    <span className="green-tag">+64%</span>
-                                    <span className="price">Offer</span>
-                                    <button>Contact soon</button>
-                                </div>
-                            </div>
-                            <div className="cs-list-container">
-                                <ul className="cs-feature-list">
-                                    <li>Logo &amp; Visual Identity</li>
-                                    <li>Full Design System &amp; Guidelines</li>
-                                    <li>Brand Collateral Design</li>
-                                    <li>Market Positioning Strategy</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div className="cs-box">
-                            <div className="cs-box-row">
-                                <h4>Project Modules</h4>
-                            </div>
-                            <div className="cs-pricing-container">
-                                <div className="cs-pricing-list">
-                                    <div className="pricing-item"><span>UX Audit</span><span className="price-value">$20%off</span></div>
-                                    <div className="pricing-item"><span>UI Design</span><span className="price-value">$20%off</span></div>
-                                    <div className="pricing-item"><span>Development</span><span className="price-value">$20%off</span></div>
-                                    <div className="pricing-item"><span>Testing &amp; QA</span><span className="price-value">$20%off</span></div>
-                                    <div className="pricing-item"><span>Deployment</span><span className="price-value">$20%off</span></div>
-                                </div>
-                            </div>
-                            <div className="cs-total">
-                                <span className="green-tag">+54%</span>
-                                <span className="price">Offer</span>
-                                <button>Contact soon</button>
-                            </div>
-                        </div>
+                        )}
 
                     </div>
 
@@ -262,13 +275,9 @@ const FaqRaymart = () => {
                             <h4>Features</h4>
                             <div className="cs-dark-list-container">
                                 <ul className="cs-feature-dark-list">
-                                    <li>✔ Brand Strategy</li>
-                                    <li>✔ UI/UX Design</li>
-                                    <li>✔ Design System</li>
-                                    <li>✔ Performance Optimization</li>
-                                    <li>✔ SEO Ready</li>
-                                    <li>✔ Analytics Integration</li>
-                                    <li>✔ 24/7 Support</li>
+                                    {pageData.features && pageData.features.map((feature, i) => (
+                                        <li key={i}>✔ {feature}</li>
+                                    ))}
                                 </ul>
                             </div>
                         </div>
@@ -283,11 +292,14 @@ const FaqRaymart = () => {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr><td>Strategy</td><td>✔</td><td>✔</td><td>✔</td></tr>
-                                        <tr><td>Design</td><td>✔</td><td>✔</td><td>✔</td></tr>
-                                        <tr><td>Development</td><td>✖</td><td>✔</td><td>✔</td></tr>
-                                        <tr><td>Support</td><td>✖</td><td>✔</td><td>✔</td></tr>
-                                        <tr><td>Custom Solutions</td><td>✖</td><td>✖</td><td>✔</td></tr>
+                                        {pageData.comparison && pageData.comparison.map((row, i) => (
+                                            <tr key={i}>
+                                                <td>{row.feature}</td>
+                                                <td>{row.basic ? '✔' : '✖'}</td>
+                                                <td>{row.pro ? '✔' : '✖'}</td>
+                                                <td>{row.enterprise ? '✔' : '✖'}</td>
+                                            </tr>
+                                        ))}
                                     </tbody>
                                 </table>
                             </div>
@@ -303,29 +315,18 @@ const FaqRaymart = () => {
                     {/* LEFT SIDE */}
                     <div className="cs-final-left">
                         <div className="cs-final-image">
-                            <img src="https://digitalmarketing.f12technologies.com/public/storage/uploads/page/1754902650_brand-development-services.png" alt="Final Case Study" />
+                            <img src={pageData.finalImage} alt="Final Case Study" />
                         </div>
                         <p className="cs-final-desc">
-                            This case study explores how a structured branding system can elevate
-                            user perception and create a consistent digital experience across platforms.
+                            {pageData.finalDescription}
                         </p>
                         <div className="cs-final-text">
-                            <div>
-                                <h4>Research &amp; Discovery</h4>
-                                <p>We conducted an in-depth analysis of user behavior, business goals, and competitive landscapes to uncover meaningful insights. Through stakeholder interviews, user journey mapping, and market research, we identified key opportunities and challenges. This phase established a strong strategic foundation, ensuring that every design decision moving forward was rooted in real data and aligned with both user needs and business objectives.</p>
-                            </div>
-                            <div>
-                                <h4>Strategy &amp; Direction</h4>
-                                <p>Based on the insights gathered, we defined a clear brand strategy and creative direction. This included crafting a cohesive visual language, tone of voice, and messaging framework that reflects the brand's core values. We focused on creating consistency across all touchpoints, ensuring that the brand communicates effectively and builds a strong, recognizable identity in the market.</p>
-                            </div>
-                            <div>
-                                <h4>Design Execution</h4>
-                                <p>We translated strategy into execution by developing high-fidelity interfaces, scalable components, and a comprehensive design system. Every element was carefully crafted to maintain visual consistency and usability across platforms. The design system enables future scalability, allowing the product to evolve efficiently while preserving a unified user experience.</p>
-                            </div>
-                            <div>
-                                <h4>Results &amp; Impact</h4>
-                                <p>The final outcome delivered measurable improvements across key performance metrics. The refined brand identity enhanced user engagement, strengthened brand recognition, and improved conversion rates. By aligning design with strategy, the project not only elevated the user experience but also contributed to tangible business growth and long-term value.</p>
-                            </div>
+                            {pageData.finalTexts && pageData.finalTexts.map((text, i) => (
+                                <div key={i}>
+                                    <h4>{text.title}</h4>
+                                    <p>{text.content}</p>
+                                </div>
+                            ))}
                         </div>
                     </div>
 
@@ -335,41 +336,36 @@ const FaqRaymart = () => {
                         <div className="cs-final-box">
                             <h4>Achievements</h4>
                             <div className="cs-img-grid">
-                                <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7" alt="Achievement 1" />
-                                <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d" alt="Achievement 2" />
-                                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978" alt="Achievement 3" />
-                                <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0" alt="Achievement 4" />
+                                <img src={pageData.thumbnails[0]} alt="Achievement 1" />
+                                <img src={pageData.thumbnails[1]} alt="Achievement 2" />
+                                <img src={pageData.thumbnails[2]} alt="Achievement 3" />
+                                <div className="number-container"><span className="count">+{pageData.achievementsCount}</span></div>
                             </div>
-                            <div className="number-container"><span className="count">+120</span></div>
                         </div>
 
                         <div className="cs-final-box">
                             <h4>Visual Assets</h4>
                             <div className="cs-img-grid">
-                                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c" alt="Asset 1" />
-                                <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429" alt="Asset 2" />
-                                <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7" alt="Asset 3" />
-                                <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d" alt="Asset 4" />
+                                <img src={pageData.thumbnails[3]} alt="Asset 1" />
+                                <img src={pageData.thumbnails[2]} alt="Asset 2" />
+                                <img src={pageData.thumbnails[1]} alt="Asset 3" />
+                                <div className="number-container"><span className="count">+{pageData.visualAssetsCount}</span></div>
                             </div>
-                            <div className="number-container"><span className="count">+160</span></div>
                         </div>
 
                         <div className="cs-final-box dark">
-                            <h4>Brand Transformation Summary</h4>
+                            <h4>{pageData.title} Summary</h4>
                             <div className="cs-final-list-container">
                                 <ul className="cs-final-ul-list">
-                                    <li>Refined brand positioning aligned with business vision</li>
-                                    <li>Developed a cohesive and scalable visual identity system</li>
-                                    <li>Established consistent brand experience across all touchpoints</li>
-                                    <li>Defined tone of voice and communication guidelines</li>
-                                    <li>Strengthened brand recognition and audience trust</li>
+                                    {pageData.summary && pageData.summary.map((item, i) => (
+                                        <li key={i}>{item}</li>
+                                    ))}
                                 </ul>
                             </div>
                             <div className="badges">
-                                <span>Brand Identity</span>
-                                <span>Visual System</span>
-                                <span>Brand Strategy</span>
-                                <span>Storytelling</span>
+                                {pageData.finalSummaryBadges && pageData.finalSummaryBadges.map((badge, i) => (
+                                    <span key={i}>{badge}</span>
+                                ))}
                             </div>
                         </div>
 
@@ -377,18 +373,15 @@ const FaqRaymart = () => {
                             <h4>Key Outcomes</h4>
                             <div className="cs-final-list-container">
                                 <ul className="cs-final-ul-list">
-                                    <li>Improved usability metrics</li>
-                                    <li>Stronger brand recall</li>
-                                    <li>Measurable growth in engagement</li>
-                                    <li>Increased conversion rates</li>
-                                    <li>Enhanced user satisfaction</li>
+                                    {pageData.outcomes && pageData.outcomes.map((item, i) => (
+                                        <li key={i}>{item}</li>
+                                    ))}
                                 </ul>
                             </div>
                             <div className="badges">
-                                <span>Growth</span>
-                                <span>Performance</span>
-                                <span>Design</span>
-                                <span>Impact</span>
+                                {pageData.keyOutcomesBadges && pageData.keyOutcomesBadges.map((badge, i) => (
+                                    <span key={i}>{badge}</span>
+                                ))}
                             </div>
                         </div>
 
@@ -401,13 +394,42 @@ const FaqRaymart = () => {
                     <h2 className="fr-srv-main-title">more related services</h2>
 
                     <div className="fr-srv-banner">
+                        <button className="fr-srv-arrow left" onClick={() => scroll('left')}>
+                            <FontAwesomeIcon icon={faChevronLeft} />
+                        </button>
 
-                        <div className="fr-srv-grid">
+                        <div className="fr-srv-grid" ref={scrollRef} style={{ overflowX: 'hidden' }}>
                             {[
-                                { title: "Web Development", tag1: "B2B", tag2: "PRO", price: "Custom", img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=600&h=400" },
-                                { title: "UI/UX Design", tag1: "B2B", tag2: "PRO", price: "Custom", img: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80&w=600&h=400" },
-
-                                { title: "AI Integration", tag1: "B2B", tag2: "PRO", price: "Custom", img: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=600&h=400" }
+                                ...[
+                                    { title: "Premium Logo Forge", tag1: "Branding", tag2: "Identity", offer: "15% off", img: "https://images.unsplash.com/photo-1572044162444-ad60f128bde2?auto=format&fit=crop&q=80&w=600&h=400" },
+                                    { title: "Visual Narrative", tag1: "Branding", tag2: "Strategy", offer: "20% off", img: "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80&w=600&h=400" },
+                                    { title: "Brand Voice & Style", tag1: "Copy", tag2: "Voice", offer: "25% off", img: "https://images.unsplash.com/photo-1434626881859-194d67b2b86f?auto=format&fit=crop&q=80&w=600&h=400" },
+                                    { title: "Identity Suite", tag1: "Design", tag2: "Full", offer: "30% off", img: "https://images.unsplash.com/photo-1586717791821-3f44a563eb4c?auto=format&fit=crop&q=80&w=600&h=400" },
+                                    { title: "Motion Branding", tag1: "Video", tag2: "Modern", offer: "35% off", img: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=600&h=400" },
+                                    { title: "Typography System", tag1: "Type", tag2: "System", offer: "20% off", img: "https://images.unsplash.com/photo-1517433367423-c7e5b0f35086?auto=format&fit=crop&q=80&w=600&h=400" },
+                                    { title: "Color Psychology", tag1: "Theory", tag2: "Brand", offer: "15% off", img: "https://images.unsplash.com/photo-1502691876148-a8437c02905a?auto=format&fit=crop&q=80&w=600&h=400" },
+                                    { title: "Corporate Asset Kit", tag1: "Assets", tag2: "Kit", offer: "25% off", img: "https://images.unsplash.com/photo-1454165205732-d031f131f372?auto=format&fit=crop&q=80&w=600&h=400" }
+                                ],
+                                ...[
+                                    { title: "Premium Logo Forge", tag1: "Branding", tag2: "Identity", offer: "15% off", img: "https://images.unsplash.com/photo-1572044162444-ad60f128bde2?auto=format&fit=crop&q=80&w=600&h=400" },
+                                    { title: "Visual Narrative", tag1: "Branding", tag2: "Strategy", offer: "20% off", img: "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80&w=600&h=400" },
+                                    { title: "Brand Voice & Style", tag1: "Copy", tag2: "Voice", offer: "25% off", img: "https://images.unsplash.com/photo-1434626881859-194d67b2b86f?auto=format&fit=crop&q=80&w=600&h=400" },
+                                    { title: "Identity Suite", tag1: "Design", tag2: "Full", offer: "30% off", img: "https://images.unsplash.com/photo-1586717791821-3f44a563eb4c?auto=format&fit=crop&q=80&w=600&h=400" },
+                                    { title: "Motion Branding", tag1: "Video", tag2: "Modern", offer: "35% off", img: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=600&h=400" },
+                                    { title: "Typography System", tag1: "Type", tag2: "System", offer: "20% off", img: "https://images.unsplash.com/photo-1517433367423-c7e5b0f35086?auto=format&fit=crop&q=80&w=600&h=400" },
+                                    { title: "Color Psychology", tag1: "Theory", tag2: "Brand", offer: "15% off", img: "https://images.unsplash.com/photo-1502691876148-a8437c02905a?auto=format&fit=crop&q=80&w=600&h=400" },
+                                    { title: "Corporate Asset Kit", tag1: "Assets", tag2: "Kit", offer: "25% off", img: "https://images.unsplash.com/photo-1454165205732-d031f131f372?auto=format&fit=crop&q=80&w=600&h=400" }
+                                ],
+                                ...[
+                                    { title: "Premium Logo Forge", tag1: "Branding", tag2: "Identity", offer: "15% off", img: "https://images.unsplash.com/photo-1572044162444-ad60f128bde2?auto=format&fit=crop&q=80&w=600&h=400" },
+                                    { title: "Visual Narrative", tag1: "Branding", tag2: "Strategy", offer: "20% off", img: "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80&w=600&h=400" },
+                                    { title: "Brand Voice & Style", tag1: "Copy", tag2: "Voice", offer: "25% off", img: "https://images.unsplash.com/photo-1434626881859-194d67b2b86f?auto=format&fit=crop&q=80&w=600&h=400" },
+                                    { title: "Identity Suite", tag1: "Design", tag2: "Full", offer: "30% off", img: "https://images.unsplash.com/photo-1586717791821-3f44a563eb4c?auto=format&fit=crop&q=80&w=600&h=400" },
+                                    { title: "Motion Branding", tag1: "Video", tag2: "Modern", offer: "35% off", img: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=600&h=400" },
+                                    { title: "Typography System", tag1: "Type", tag2: "System", offer: "20% off", img: "https://images.unsplash.com/photo-1517433367423-c7e5b0f35086?auto=format&fit=crop&q=80&w=600&h=400" },
+                                    { title: "Color Psychology", tag1: "Theory", tag2: "Brand", offer: "15% off", img: "https://images.unsplash.com/photo-1502691876148-a8437c02905a?auto=format&fit=crop&q=80&w=600&h=400" },
+                                    { title: "Corporate Asset Kit", tag1: "Assets", tag2: "Kit", offer: "25% off", img: "https://images.unsplash.com/photo-1454165205732-d031f131f372?auto=format&fit=crop&q=80&w=600&h=400" }
+                                ]
                             ].map((srv, idx) => (
                                 <div className="fr-srv-card" key={idx}>
                                     <div className="fr-srv-img-box">
@@ -416,23 +438,33 @@ const FaqRaymart = () => {
                                     <div className="fr-srv-content">
                                         <h4 className="fr-srv-title">{srv.title}</h4>
                                         <div className="fr-srv-footer">
-                                            <div className="fr-srv-tags">
-                                                <span>{srv.tag1}</span>
-                                                <span>{srv.tag2}</span>
-                                            </div>
-                                            <div className="fr-srv-price">{srv.price}</div>
-                                            <button className="fr-srv-heart-btn">
-                                                <FontAwesomeIcon icon={faHeart} />
+                                            <button className="fr-srv-footer-icon">
+                                                <FontAwesomeIcon icon={faBorderAll} />
                                             </button>
+                                            <div className="fr-srv-price">{srv.offer}</div>
+                                            <span className="fr-srv-brand-tag">ENGLORAY</span>
                                         </div>
                                     </div>
                                 </div>
                             ))}
                         </div>
 
+                        <button className="fr-srv-arrow right" onClick={() => scroll('right')}>
+                            <FontAwesomeIcon icon={faChevronRight} />
+                        </button>
                     </div>
 
+                    {/* <div className="fr-srv-bottom-bar">
+                        <span className="fr-srv-similar">Similar Titles</span>
+                        <span className="fr-srv-see-more">See more</span>
+                    </div> */}
 
+                    <div className="fr-srv-dots">
+                        <div className="fr-srv-dot active"></div>
+                        <div className="fr-srv-dot"></div>
+                        <div className="fr-srv-dot"></div>
+                        <div className="fr-srv-dot"></div>
+                    </div>
 
                 </section>
 
@@ -440,11 +472,13 @@ const FaqRaymart = () => {
                 <section className="fr-testimonials-section">
                     <div className="fr-testimonials-header">
                         <div className="fr-test-header-left">
-                            <h2 className="fr-test-heading">What top-tier<br />companies say<br />about our product</h2>
+                            <h2 className="fr-test-heading">What top-tier<br />companies say<br />about Branding & Identity</h2>
                         </div>
                         <div className="fr-test-header-right">
                             <p className="fr-test-desc">
-                                Join the growing number of businesses and companies that have experienced the transformative impact of our chatbot services.
+                                Join the growing number of businesses and companies that have experienced the transformative impact of our digital services.
+                                Our commitment to technical excellence and strategic innovation has empowered
+                                countless global education leaders to stay ahead in an ever-evolving market.
                             </p>
                         </div>
                     </div>
@@ -457,25 +491,15 @@ const FaqRaymart = () => {
                             <div className={`fr-card-grey`}>
                                 <div
                                     className={`fr-grey-full-img fr-testimonial-fade ${isFading ? 'fading-out' : 'fading-in'}`}
-                                    style={{ backgroundImage: `url(${testimonialsData[currentTestimonialIndex].bgImage})` }}
+                                    style={{ backgroundImage: `url(${avatarMap[testimonialsData[currentTestimonialIndex]?.name] || pageData.mainImage})` }}
                                 ></div>
                                 <div className="fr-grey-full-overlay"></div>
 
-                                {/* Text content overlaid on image */}
+                                {/* Text content overlaid on image - Showing name and position here as requested */}
                                 <div className={`fr-grey-text-overlay fr-testimonial-fade ${isFading ? 'fading-out' : 'fading-in'}`}>
-                                    {testimonialsData[currentTestimonialIndex].cardTitle && (
-                                        <h3 className="fr-grey-card-title">{testimonialsData[currentTestimonialIndex].cardTitle}</h3>
-                                    )}
-                                    {testimonialsData[currentTestimonialIndex].cardDesc && (
-                                        <p className="fr-grey-card-desc">
-                                            {testimonialsData[currentTestimonialIndex].cardDesc.split('\n').map((line, i) => (
-                                                <span key={i}>{line}<br /></span>
-                                            ))}
-                                        </p>
-                                    )}
                                     <div className="fr-grey-card-author">
-                                        <span className="fr-grey-author-name">{testimonialsData[currentTestimonialIndex].name}</span>
-                                        <span className="fr-grey-author-title">{testimonialsData[currentTestimonialIndex].title}</span>
+                                        <span className="fr-grey-author-name">{testimonialsData[currentTestimonialIndex]?.name}</span>
+                                        <span className="fr-grey-author-title">{testimonialsData[currentTestimonialIndex]?.position}</span>
                                     </div>
                                 </div>
                             </div>
@@ -486,7 +510,7 @@ const FaqRaymart = () => {
 
                         </div>
 
-                        {/* Green Card */}
+                        {/* Green Card - Showing content here */}
                         <div className="fr-test-card fr-card-green">
                             <div className="fr-shape-bg">
                                 <div className="fr-shape-rect fr-green-rect-a"></div>
@@ -498,12 +522,12 @@ const FaqRaymart = () => {
                                 <div className={`fr-testimonial-fade ${isFading ? 'fading-out' : 'fading-in'}`}>
                                     <div className="fr-test-badge-wrapper">
                                         <span className="fr-test-badge">
-                                            <FontAwesomeIcon icon={faComments} className="fr-badge-icon" /> {testimonialsData[currentTestimonialIndex].badge}
+                                            <FontAwesomeIcon icon={faComments} className="fr-badge-icon" /> Client Testimonial
                                         </span>
                                     </div>
                                     <div className="fr-test-content">
                                         <p className="fr-test-quote">
-                                            {testimonialsData[currentTestimonialIndex].quote}
+                                            {testimonialsData[currentTestimonialIndex]?.content}
                                         </p>
                                     </div>
                                 </div>
@@ -519,7 +543,7 @@ const FaqRaymart = () => {
                 {/* FAQ Section */}
                 <section className="fr-faq-section">
                     <div className="fr-faq-left">
-                        <h2 className="fr-heading">Engloray Learning FAQs</h2>
+                        <h2 className="fr-heading">Branding & Identity FAQs</h2>
                         <p className="fr-desc">
                             As a leading educational platform and agency, we are dedicated to providing
                             comprehensive educational resources and answering frequently asked questions to help our students.

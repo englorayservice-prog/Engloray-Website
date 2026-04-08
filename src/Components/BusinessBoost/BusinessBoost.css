@@ -82,13 +82,13 @@
 }
 
 .boost-highlight {
-    font-size: 5.5rem;
+    font-size: 7.5rem;
     font-weight: 700;
     color: #6366f1;
     display: block;
     margin-bottom: -45px;
     text-align: left;
-    font-family: 'Merriweather', 'Georgia', serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .boost-title-main {
@@ -254,14 +254,14 @@
    ======================================== */
 
 .boost-right-section {
-    height: 113vh;
+    height: 120vh;
     /* Increased height */
     overflow: hidden;
     padding: 20px;
     position: relative;
     width: 100%;
-    margin-top: -50px;
-    margin-bottom: -50px;
+    margin-top: -60px;
+    margin-bottom: -60px;
     /* Remove top margin */
     /* Ensure it spans full height */
     display: flex;
@@ -459,7 +459,8 @@
         text-align: center;
     }
 
-    .stat-text h4, .stat-textt h4 {
+    .stat-text h4,
+    .stat-textt h4 {
         margin-left: 0;
     }
 
@@ -510,4 +511,4 @@
     .boost-subtitle {
         font-size: 1.6rem;
     }
-}
+}

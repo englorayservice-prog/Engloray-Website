@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import EnrollementForm from '../EnrollementForm/EnrollementForm';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -12,7 +12,6 @@ import {
   faStar,
   faHeadset,
   faClock,
-  faRocket,
   faTimes,
   faProjectDiagram,
   faUserFriends,
@@ -20,7 +19,9 @@ import {
   faHandshake,
   faLightbulb,
   faGraduationCap,
-  faNetworkWired
+  faNetworkWired,
+  faRocket,
+  faArrowRight
 } from '@fortawesome/free-solid-svg-icons';
 import './LearningExperience.css';
 // import OurImpacts from '../OurImpacts/OurImpacts';
@@ -43,7 +44,8 @@ library.add(
   faHandshake,
   faLightbulb,
   faGraduationCap,
-  faNetworkWired
+  faNetworkWired,
+  faArrowRight
 );
 
 const LearningExperience = () => {
@@ -52,11 +54,7 @@ const LearningExperience = () => {
 
 
 
-  const handleApplyNow = () => {
-    // Navigate to courses page instead of opening form
-    window.scrollTo(0, 0);
-    navigate('/allCoursesPage');
-  };
+
 
   const handleCloseEnrollment = () => {
     setShowEnrollmentForm(false);
@@ -79,12 +77,12 @@ const LearningExperience = () => {
 
         {/* Header Section */}
         <div className="learning-header">
-          <span className="learning-program-badge">
-            <FontAwesomeIcon icon={faGraduationCap} className="badge-icon" />
+          <span className="learning-program-badge" style={{ backgroundColor: '#EFF6FF', color: '#10639a', border: 'none', borderRadius: '100px', padding: '6px 16px', fontWeight: '800', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '1px' }}>
+            <FontAwesomeIcon icon={faGraduationCap} className="badge-icon" style={{ marginRight: '8px' }} />
             Programs we Offer
           </span>
-          <h2 className="learning-title">Professional Learning Program</h2>
-          <p className="learning-subtitle">
+          <h2 className="learning-title" style={{ fontFamily: "'Outfit', sans-serif", fontSize: '45px', fontWeight: '800', color: '#1A1A1A', marginTop: '15px' }}>Professional Learning Program</h2>
+          <p className="learning-subtitle" style={{ color: '#64748B', fontSize: '23px', fontWeight: '400', maxWidth: '600px', margin: '0 auto' }}>
             Transform your career through hands-on experience and expert mentorship
           </p>
         </div>
@@ -96,38 +94,37 @@ const LearningExperience = () => {
           <div
             className="content-section project-section"
             onClick={navigateToProjects}
-            style={{ cursor: 'pointer' }}
+            style={{ cursor: 'pointer', position: 'relative', overflow: 'hidden' }}
           >
-            <div className="section-decoration"></div>
-            <div className="section-icon">
-              <FontAwesomeIcon icon={faProjectDiagram} />
+            {/* Top Bar Decoration - Red Fade */}
+            <div style={{ height: '220px', background: 'linear-gradient(180deg, #FFF1F1 0%, rgba(255, 241, 241, 0) 100%)', width: '100%', position: 'absolute', top: 0, left: 0 }}>
             </div>
-            <div className="section-body">
-              <h3 className="section-title">Project-Based Learning</h3>
-              <p className="section-description">
+
+            <div style={{ display: 'flex', alignItems: 'center', gap: '25px', marginBottom: '30px', marginTop: '10px', position: 'relative', zIndex: 3 }}>
+              <div className="section-icon" style={{ width: '84px', height: '84px', borderRadius: '50%', backgroundColor: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 8px 20px rgba(0,0,0,0.15)', border: '4px solid white', color: '#EF4444', fontSize: '32px' }}>
+                <FontAwesomeIcon icon={faProjectDiagram} />
+              </div>
+              <h3 className="section-title" style={{ fontFamily: "'Outfit', sans-serif", fontSize: '32px', fontWeight: '800', color: '#1A1A1A', margin: 0 }}>Project-Based Learning</h3>
+            </div>
+
+            <div className="section-body" style={{ padding: '0 5px' }}>
+              <p className="section-description" style={{ color: '#64748B', fontSize: '18px', lineHeight: '1.6', marginBottom: '32px' }}>
                 Work on real Engloray Tech Group projects from day one. Build practical skills
-                through hands-on experience with actual client work.
+                through hands-on experience by collaborating with professional developers on
+                production-grade software solutions in a fast-paced environment.
               </p>
-              <ul className="feature-list">
-                <li>
-                  <FontAwesomeIcon icon={faBullseye} className="feature-icon" />
-                  Real-world projects from day one
-                </li>
-                <li>
-                  <FontAwesomeIcon icon={faHandshake} className="feature-icon" />
-                  Hands-on technical experience
-                </li>
-                <li>
-                  <FontAwesomeIcon icon={faNetworkWired} className="feature-icon" />
-                  Client collaboration opportunities
-                </li>
-                <li>
-                  <FontAwesomeIcon icon={faLightbulb} className="feature-icon" />
-                  Portfolio building
-                </li>
-              </ul>
-              <button className="section-cta-link">
-                Learn More <FontAwesomeIcon icon={faRocket} style={{ marginLeft: '8px' }} />
+
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', marginBottom: '40px' }}>
+                <span style={{ backgroundColor: '#F3F4F6', color: '#374151', padding: '12px 24px', borderRadius: '12px', fontSize: '16px', fontWeight: '600' }}>Real-world projects</span>
+                <span style={{ backgroundColor: '#F3F4F6', color: '#374151', padding: '12px 24px', borderRadius: '12px', fontSize: '16px', fontWeight: '600' }}>Hands-on experience</span>
+                <span style={{ backgroundColor: '#F3F4F6', color: '#374151', padding: '12px 24px', borderRadius: '12px', fontSize: '16px', fontWeight: '600' }}>Client collaboration</span>
+                <span style={{ backgroundColor: '#F3F4F6', color: '#374151', padding: '12px 24px', borderRadius: '12px', fontSize: '16px', fontWeight: '600' }}>Portfolio building</span>
+                <span style={{ backgroundColor: '#F3F4F6', color: '#374151', padding: '12px 24px', borderRadius: '12px', fontSize: '16px', fontWeight: '600' }}>Tech Stack Mastery</span>
+                <span style={{ backgroundColor: '#F3F4F6', color: '#374151', padding: '12px 24px', borderRadius: '12px', fontSize: '16px', fontWeight: '600' }}>Agile Workflow</span>
+              </div>
+
+              <button className="section-cta-link" style={{ backgroundColor: '#1A1A1A', color: 'white', padding: '18px 36px', borderRadius: '14px', fontWeight: '700', fontSize: '18px', border: 'none', width: '100%', cursor: 'pointer', transition: 'all 0.3s ease' }}>
+                Explore Now <FontAwesomeIcon icon={faArrowRight} style={{ marginLeft: '12px' }} />
               </button>
             </div>
           </div>
@@ -136,38 +133,37 @@ const LearningExperience = () => {
           <div
             className="content-section mentor-section"
             onClick={navigateToMentorship}
-            style={{ cursor: 'pointer' }}
+            style={{ cursor: 'pointer', position: 'relative', overflow: 'hidden' }}
           >
-            <div className="section-decoration"></div>
-            <div className="section-icon">
-              <FontAwesomeIcon icon={faUserFriends} />
+            {/* Top Bar Decoration - Blue Fade */}
+            <div style={{ height: '220px', background: 'linear-gradient(180deg, #E0F2FF 0%, rgba(224, 242, 255, 0) 100%)', width: '100%', position: 'absolute', top: 0, left: 0 }}>
             </div>
-            <div className="section-body">
-              <h3 className="section-title">Mentor Support</h3>
-              <p className="section-description">
+
+            <div style={{ display: 'flex', alignItems: 'center', gap: '25px', marginBottom: '30px', marginTop: '10px', position: 'relative', zIndex: 3 }}>
+              <div className="section-icon" style={{ width: '84px', height: '84px', borderRadius: '50%', backgroundColor: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 8px 20px rgba(0,0,0,0.15)', border: '4px solid white', color: '#3B82F6', fontSize: '32px' }}>
+                <FontAwesomeIcon icon={faUserFriends} />
+              </div>
+              <h3 className="section-title" style={{ fontFamily: "'Outfit', sans-serif", fontSize: '32px', fontWeight: '800', color: '#1A1A1A', margin: 0 }}>Mentor Support</h3>
+            </div>
+
+            <div className="section-body" style={{ padding: '0 5px' }}>
+              <p className="section-description" style={{ color: '#64748B', fontSize: '18px', lineHeight: '1.6', marginBottom: '32px' }}>
                 Get guidance from industry experts throughout your journey. Get
-                personalized feedback and career advice from professionals.
+                personalized feedback, career roadmap planning, and technical deep-dives to
+                accelerate your professional growth and career confidence.
               </p>
-              <ul className="feature-list">
-                <li>
-                  <FontAwesomeIcon icon={faUserTie} className="feature-icon" />
-                  1:1 expert mentorship
-                </li>
-                <li>
-                  <FontAwesomeIcon icon={faChartLine} className="feature-icon" />
-                  Personalized career guidance
-                </li>
-                <li>
-                  <FontAwesomeIcon icon={faLightbulb} className="feature-icon" />
-                  Industry insights
-                </li>
-                <li>
-                  <FontAwesomeIcon icon={faNetworkWired} className="feature-icon" />
-                  Professional network building
-                </li>
-              </ul>
-              <button className="section-cta-link">
-                Learn More <FontAwesomeIcon icon={faRocket} style={{ marginLeft: '8px' }} />
+
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', marginBottom: '40px' }}>
+                <span style={{ backgroundColor: '#F3F4F6', color: '#374151', padding: '12px 24px', borderRadius: '12px', fontSize: '16px', fontWeight: '600' }}>1:1 Expert Mentorship</span>
+                <span style={{ backgroundColor: '#F3F4F6', color: '#374151', padding: '12px 24px', borderRadius: '12px', fontSize: '16px', fontWeight: '600' }}>Career Guidance</span>
+                <span style={{ backgroundColor: '#F3F4F6', color: '#374151', padding: '12px 24px', borderRadius: '12px', fontSize: '16px', fontWeight: '600' }}>Industry Insights</span>
+                <span style={{ backgroundColor: '#F3F4F6', color: '#374151', padding: '12px 24px', borderRadius: '12px', fontSize: '16px', fontWeight: '600' }}>Network Building</span>
+                <span style={{ backgroundColor: '#F3F4F6', color: '#374151', padding: '12px 24px', borderRadius: '12px', fontSize: '16px', fontWeight: '600' }}>Mock Interviews</span>
+                <span style={{ backgroundColor: '#F3F4F6', color: '#374151', padding: '12px 24px', borderRadius: '12px', fontSize: '16px', fontWeight: '600' }}>Soft Skills</span>
+              </div>
+
+              <button className="section-cta-link" style={{ backgroundColor: '#1A1A1A', color: 'white', padding: '18px 36px', borderRadius: '14px', fontWeight: '700', fontSize: '18px', border: 'none', width: '100%', cursor: 'pointer', transition: 'all 0.3s ease' }}>
+                Explore Now <FontAwesomeIcon icon={faArrowRight} style={{ marginLeft: '12px' }} />
               </button>
             </div>
           </div>
@@ -177,22 +173,6 @@ const LearningExperience = () => {
         {/* VK-Style Impact Section */}
         {/* <OurImpacts /> */}
 
-        {/* CTA Section */}
-        <div className="cta-section">
-          <div className="cta-content">
-            <h3 className="cta-title">Ready to Transform Your Career?</h3>
-            <p className="cta-description">
-              Join our professional learning program and gain the skills, experience,
-              and mentorship needed to succeed in today's competitive tech industry.
-            </p>
-            <div className="cta-button-container">
-              <button className="cta-button-fullwidth" onClick={handleApplyNow}>
-                <FontAwesomeIcon icon={faRocket} />
-                Apply Now
-              </button>
-            </div>
-          </div>
-        </div>
 
       </div>
 

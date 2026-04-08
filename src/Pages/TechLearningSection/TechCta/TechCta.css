@@ -1,0 +1,170 @@
+/* TechCta.css - Full-Bleed Modern Redesign */
+.tech-cta-fullbleed {
+  padding: clamp(3.5rem, 7vw, 5rem) 2rem; /* Reduced padding from 5.5rem-8rem */
+  text-align: center;
+  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin: 0;
+  border-radius: 0;
+}
+
+/* Abstract Background Patterns */
+.cta-bg-circle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.22;
+}
+
+.circle-1 {
+  width: clamp(300px, 50vw, 500px);
+  height: clamp(300px, 50vw, 500px);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  top: -150px;
+  left: -150px;
+}
+
+.circle-1::after {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+}
+
+.circle-2 {
+  width: clamp(220px, 40vw, 400px);
+  height: clamp(220px, 40vw, 400px);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.18) 0%, transparent 75%);
+  bottom: -100px;
+  right: -80px;
+}
+
+.circle-3 {
+  width: clamp(100px, 20vw, 250px);
+  height: clamp(100px, 20vw, 250px);
+  border: 1px dashed rgba(255, 255, 255, 0.3);
+  bottom: 15%;
+  left: 10%;
+  animation: rotateCircleCta 30s linear infinite;
+}
+
+@keyframes rotateCircleCta {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Content Area */
+.cta-content {
+  position: relative;
+  z-index: 10;
+  max-width: 1200px; /* Increased from 1000px to allow more room for single line title */
+  margin: 0 auto;
+}
+
+.cta-title {
+  color: #ffffff !important;
+  font-size: clamp(2.2rem, 5vw, 3.8rem); /* Reduced from 2.8rem-4.8rem */
+  font-weight: 500;
+  line-height: 1;
+  margin-bottom: 2rem;
+  letter-spacing: -0.03em;
+  white-space: nowrap; /* Forces content into single line on larger screens */
+}
+
+.cta-title-bold {
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.cta-description {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: clamp(1rem, 1.3vw, 1.35rem); /* Reduced from 1.2rem-1.6rem */
+  margin: 0 auto 3.5rem auto;
+  line-height: 1.6;
+  max-width: 750px;
+}
+
+/* Button Layout */
+.cta-button-container {
+  display: flex;
+  justify-content: center;
+  gap: 1.8rem;
+  flex-wrap: wrap;
+}
+
+.le-cta-btn-primary {
+  background: #111827;
+  color: white;
+  padding: 1.1rem 3.5rem;
+  border-radius: 14px;
+  font-weight: 800;
+  font-size: 1.15rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
+  display: inline-flex;
+  align-items: center;
+}
+
+.le-cta-btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 1.1rem 3.5rem;
+  border-radius: 14px;
+  font-weight: 800;
+  font-size: 1.15rem;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.45s ease;
+  backdrop-filter: blur(15px);
+  display: inline-flex;
+  align-items: center;
+}
+
+.le-cta-btn-primary:hover {
+  transform: translateY(-8px) scale(1.04);
+  background: #000;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.le-cta-btn-secondary:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.3);
+  border-color: #ffffff;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+  .cta-title {
+    white-space: normal; /* Allow wrap on tablets if necessary */
+  }
+}
+
+@media (max-width: 768px) {
+  .tech-cta-fullbleed {
+    padding: 4.5rem 1.5rem;
+  }
+  
+  .cta-title {
+    font-size: clamp(2rem, 8vw, 2.8rem);
+  }
+  
+  .cta-button-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+  }
+  
+  .le-cta-btn-primary, .le-cta-btn-secondary {
+    width: 100%;
+    justify-content: center;
+    padding: 1rem;
+  }
+}

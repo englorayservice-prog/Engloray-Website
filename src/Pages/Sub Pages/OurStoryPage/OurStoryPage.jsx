@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -52,6 +52,222 @@ import valueExcellence from '../../../assets/value_excellence.png';
 import valueIntegrity from '../../../assets/value_integrity.png';
 import valueCollaboration from '../../../assets/value_collaboration.png';
 import valueGrowth from '../../../assets/ai_3d_new.png';
+
+// ============================================================
+//  CTA SPOTLIGHT SECTION — pivoting spotlight (tip fixed, base swings)
+// ============================================================
+const CtaSpotlightSection = ({ handleWhatsAppClick, handlePortfolioClick }) => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" }
+    }
+  };
+
+  return (
+    <section className="osp-cta-modern">
+      <div className="osp-cta-bg-noise"></div>
+      <div className="osp-cta-glow-orb"></div>
+
+      <div className="osp-container">
+        <div className="osp-cta-grid">
+          {/* Left Side: Content */}
+          <motion.div
+            className="osp-cta-content-modern"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            <motion.span className="osp-cta-tag" variants={itemVariants}>READY FOR IMPACT?</motion.span>
+
+            <motion.h2 className="osp-cta-title-modern" variants={itemVariants}>
+              Ready to Create<br />
+              <span className="osp-cta-title-glow">Your Legacy?</span>
+            </motion.h2>
+
+            <motion.p className="osp-cta-desc-modern" variants={itemVariants}>
+              Join 100+ satisfied clients who've transformed their brand and digital presence with our creative solutions.
+              From innovative strategy to world-class execution, we are your strategic partners in building the future.
+            </motion.p>
+
+            <motion.div className="osp-cta-badges" variants={itemVariants}>
+              <div className="osp-cta-badge">
+                <span className="osp-badge-dot pulse"></span>
+                <span>200+ Projects Done</span>
+              </div>
+              <div className="osp-cta-badge">
+                <span className="osp-badge-dot"></span>
+                <span>15+ Industries</span>
+              </div>
+              <div className="osp-cta-badge">
+                <span className="osp-badge-dot"></span>
+                <span>95% Client Retention</span>
+              </div>
+            </motion.div>
+
+            <motion.div className="osp-cta-actions-modern" variants={itemVariants}>
+              <button
+                className="osp-cta-btn-pill osp-cta-btn-primary"
+                onClick={handleWhatsAppClick}
+                style={{ '--hover-bg': '#28a745' }}
+              >
+                Contact Us <span className="osp-cta-btn-icon">→</span>
+              </button>
+              <button
+                className="osp-cta-btn-pill osp-cta-btn-secondary"
+                onClick={handlePortfolioClick}
+              >
+                View Our Works
+              </button>
+            </motion.div>
+          </motion.div>
+
+          {/* Right Side: Programmatic Animatable Constellation */}
+          <motion.div
+            className="osp-cta-visual-right"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+          >
+            <div className="osp-cta-constellation-wrap">
+              <svg viewBox="0 0 400 400" className="osp-cta-constellation-svg">
+                {/* Constellation Lines - Green */}
+                <motion.path
+                  d="M100,50 L200,100 L300,50 L350,200 L250,350 L100,380 L50,250 L100,50"
+                  stroke="rgba(45, 212, 191, 0.4)"
+                  strokeWidth="1.2"
+                  fill="none"
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  transition={{ duration: 4, ease: "easeInOut" }}
+                />
+                <motion.path
+                  d="M200,100 L250,250 L350,200"
+                  stroke="rgba(45, 212, 191, 0.3)"
+                  strokeWidth="0.8"
+                  fill="none"
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  transition={{ duration: 3, delay: 0.5 }}
+                />
+                <motion.path
+                  d="M50,250 L200,200 L250,350"
+                  stroke="rgba(45, 212, 191, 0.2)"
+                  strokeWidth="0.8"
+                  fill="none"
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  transition={{ duration: 4, delay: 1 }}
+                />
+                <motion.path
+                  d="M100,380 L200,200 L300,50"
+                  stroke="rgba(45, 212, 191, 0.2)"
+                  strokeWidth="0.8"
+                  fill="none"
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  transition={{ duration: 5, delay: 1.5 }}
+                />
+                <motion.path
+                  d="M50,250 L150,150 L200,100"
+                  stroke="rgba(45, 212, 191, 0.15)"
+                  strokeWidth="0.6"
+                  fill="none"
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  transition={{ duration: 3, delay: 2 }}
+                />
+
+                {/* Stars/Nodes - Green */}
+                {[
+                  { x: 100, y: 50 },
+                  { x: 200, y: 100 },
+                  { x: 300, y: 50 },
+                  { x: 350, y: 200 },
+                  { x: 250, y: 350 },
+                  { x: 100, y: 380 },
+                  { x: 50, y: 250 },
+                  { x: 200, y: 200 },
+                  { x: 150, y: 150 },
+                  { x: 250, y: 250 },
+                  { x: 50, y: 50 },
+                  { x: 350, y: 350 }
+                ].map((star, idx) => (
+                  <g key={idx}>
+                    <motion.circle
+                      cx={star.x}
+                      cy={star.y}
+                      r={idx % 2 === 0 ? "2.5" : "1.8"}
+                      fill="#2dd4bf"
+                      animate={{
+                        opacity: [0.3, 1, 0.3],
+                        scale: [1, 1.4, 1],
+                      }}
+                      transition={{
+                        duration: 4 + idx,
+                        repeat: Infinity,
+                        delay: idx * 0.3
+                      }}
+                    />
+                    <motion.circle
+                      cx={star.x}
+                      cy={star.y}
+                      r={idx % 2 === 0 ? "10" : "6"}
+                      fill="rgba(45, 212, 191, 0.15)"
+                      animate={{
+                        scale: [1, 1.8, 1],
+                        opacity: [0.15, 0, 0.15],
+                      }}
+                      transition={{
+                        duration: 4 + idx,
+                        repeat: Infinity,
+                        delay: idx * 0.3
+                      }}
+                    />
+                  </g>
+                ))}
+              </svg>
+
+              {/* Floating Star Particles */}
+              {[...Array(10)].map((_, i) => (
+                <motion.div
+                  key={i}
+                  className={`osp-cta-spark osp-spark-${i % 6}`}
+                  animate={{
+                    opacity: [0, 0.6, 0],
+                    scale: [0, 1, 0],
+                    x: [0, (i % 2 === 0 ? 50 : -50), 0],
+                    y: [0, -100, 0]
+                  }}
+                  transition={{
+                    duration: 5 + i,
+                    repeat: Infinity,
+                    delay: i * 0.8
+                  }}
+                />
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 const OurStoryPage = () => {
   const navigate = useNavigate();
@@ -550,69 +766,79 @@ const OurStoryPage = () => {
           </div>
         </section>
 
-        {/* HIGH-FIDELITY ECLIPSE SWAP SECTION (Vision & Mission) */}
-        <section className="osp-vm-swapper-section" id="vision-mission-unified">
-          <div className="osp-container osp-vm-swapper-container">
-            <div className="osp-vm-swapper-wrapper"
-              onClick={() => setVmSwapped(!vmSwapped)}>
-
-              <div className={`osp-vm-swapper-grid ${vmSwapped ? 'is-swapped' : ''}`}>
-
-                {/* Text Block - Displays Vision or Mission with non-wait animation */}
-                <div className="osp-vm-text-block">
-                  <div className="osp-vm-text-layers">
-                    {/* Vision layer (Always mounted, opacity driven) */}
-                    <motion.div
-                      className="osp-vm-layer"
-                      animate={{
-                        opacity: !vmSwapped ? 1 : 0,
-                        x: !vmSwapped ? 0 : -20,
-                        pointerEvents: !vmSwapped ? 'auto' : 'none'
-                      }}
-                      transition={{ duration: 0.4 }}
-                    >
-                      <span className="osp-vm-label">2020 — PREVIEW</span>
-                      <h2 className="osp-vm-title">VISION</h2>
-                      <p className="osp-vm-description">
-                        {visionMissionContent.vision.text}
-                      </p>
-                    </motion.div>
-
-                    {/* Mission layer (Always mounted, opacity driven) */}
-                    <motion.div
-                      className="osp-vm-layer"
-                      animate={{
-                        opacity: vmSwapped ? 1 : 0,
-                        x: vmSwapped ? 0 : 20,
-                        pointerEvents: vmSwapped ? 'auto' : 'none'
-                      }}
-                      transition={{ duration: 0.4 }}
-                    >
-                      <span className="osp-vm-label">2026 — FUTURE</span>
-                      <h2 className="osp-vm-title">MISSION</h2>
-                      <p className="osp-vm-description">
-                        {visionMissionContent.mission.text}
-                      </p>
-                    </motion.div>
-                  </div>
+        {/* HIGH-FIDELITY VISION MISSION SCANNER (3-Column Center Hub) */}
+        <section className="osp-vm-scanner-section" id="vision-mission-unified">
+          <div className="osp-container osp-vm-scanner-container">
+            <div className="osp-vm-scanner-grid">
+              
+              {/* Left Column: Vision - Synced binary visibility (Shown when Radar is Right) */}
+              <motion.div 
+                className="osp-vm-column osp-vm-left"
+                animate={{
+                  opacity: [1, 1, 0, 0, 1],
+                }}
+                transition={{
+                  duration: 8,
+                  repeat: Infinity,
+                  times: [0, 0.499, 0.5, 0.999, 1],
+                  ease: "linear"
+                }}
+              >
+                <div className="osp-vm-content-box">
+                  <span className="osp-vm-label" style={{ color: '#30b0e4' }}>2020 — ESTABLISHED</span>
+                  <h2 className="osp-vm-title">VISION</h2>
+                  <p className="osp-vm-description">
+                    {visionMissionContent.vision.text}
+                  </p>
                 </div>
+              </motion.div>
 
-                {/* Graphic Block - The "Eclipse" that rolls */}
-                <div className="osp-vm-graphic-block">
-                  <motion.div
-                    className="osp-eclipse-container"
-                    layout
-                    transition={{ type: "spring", stiffness: 150, damping: 20 }}
+              {/* Center Column: Controlled Rotating Hub */}
+              <div className="osp-vm-hub-column">
+                <div className="osp-eclipse-container">
+                  <motion.div 
+                    className="osp-eclipse-graphic blue-theme"
+                    animate={{ rotate: [0, 360] }}
+                    transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
                   >
-                    <div className="osp-eclipse-graphic">
-                      <div className="osp-eclipse-beam"></div>
-                      <div className="osp-eclipse-core"></div>
-                      <div className="osp-eclipse-glow"></div>
-                    </div>
+                    {/* The Integrated Shadow (Joined to the circle) */}
+                    <div className="osp-eclipse-beam blue"></div>
+                    
+                    <div className="osp-eclipse-core blue"></div>
+                    <div className="osp-eclipse-glow blue"></div>
+                    
+                    {/* Pulsing Radar Rings */}
+                    <motion.div 
+                      className="osp-radar-ring"
+                      animate={{ scale: [1, 2.5], opacity: [0.8, 0] }}
+                      transition={{ duration: 3, repeat: Infinity, ease: "easeOut" }}
+                    ></motion.div>
                   </motion.div>
                 </div>
-
               </div>
+
+              {/* Right Column: Mission - Synced binary visibility (Shown when Radar is Left) */}
+              <motion.div 
+                className="osp-vm-column osp-vm-right"
+                animate={{
+                  opacity: [0, 0, 1, 1, 0],
+                }}
+                transition={{
+                  duration: 8,
+                  repeat: Infinity,
+                  times: [0, 0.499, 0.5, 0.999, 1],
+                  ease: "linear"
+                }}
+              >
+                <div className="osp-vm-content-box"  style={{ color: '#fff' }}>
+                  <span className="osp-vm-label" style={{ color: '#30b0e4' }}>2026 — FUTURE</span>
+                  <h2 className="osp-vm-title">MISSION</h2>
+                  <p className="osp-vm-description">
+                    {visionMissionContent.mission.text}
+                  </p>
+                </div>
+              </motion.div>
+
             </div>
           </div>
         </section>
@@ -632,10 +858,7 @@ const OurStoryPage = () => {
                   <h2 className="osp-roadmap-main-title">ROADMAP</h2>
                   <h3 className="osp-roadmap-year">ENGLORAY</h3>
                 </div>
-                <div className="osp-roadmap-rocket-box">
-                  <div className="osp-rocket-trail"></div>
-                  <FontAwesomeIcon icon={faRocket} className="osp-roadmap-rocket-icon" />
-                </div>
+
               </div>
 
               <div className="osp-roadmap-timeline">
@@ -675,102 +898,96 @@ const OurStoryPage = () => {
               </div>
             </div>
           </div>
-        </section>        {/* Our Expertise - INTERACTIVE CARD DECK REDESIGN */}
-        <section className="osp-expertise-deck-section">
+        </section>        {/* How We Grow Section */}
+        <section className="osp-how-we-grow-section">
           <div className="osp-container">
             <motion.div
-              className="osp-expertise-header centered"
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: false }}
+              className="osp-how-header centered"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
             >
-              <h2 className="osp-hexco-text">OUR EXPERTISE</h2>
-              <p>Click the cards to explore our core focus areas</p>
+              <h2 className="osp-how-main-title">HOW WE GROW</h2>
+              <div className="osp-how-underline"></div>
             </motion.div>
 
-            <div className="osp-deck-split-grid">
-              {/* Left Side: The Card Deck */}
-              <div className="osp-deck-left">
-                <div className="osp-cards-stack-wrapper">
-                  {deckOrder.map((fieldIdx, arrayIdx) => {
-                    const field = projectFields[fieldIdx];
-                    // Only render the first 4-5 cards for performance and visual clarity
-                    if (arrayIdx > 4) return null;
+            <div className="osp-how-visual-container">
+              {/* Central Hub */}
+              <div className="osp-how-hub-wrapper">
+                <motion.div
+                  className="osp-how-hub"
+                  animate={{
+                    boxShadow: ["0 0 20px rgba(255, 60, 60, 0.4)", "0 0 40px rgba(255, 60, 60, 0.7)", "0 0 20px rgba(255, 60, 60, 0.4)"]
+                  }}
+                  transition={{ duration: 4, repeat: Infinity }}
+                >
+                  <div className="osp-how-hub-inner">
+                    <FontAwesomeIcon icon={faBrain} />
+                  </div>
+                </motion.div>
 
-                    return (
-                      <motion.div
-                        key={field.title}
-                        className="osp-deck-card-item"
-                        style={{
-                          borderColor: field.color,
-                          zIndex: projectFields.length - arrayIdx,
-                          cursor: arrayIdx === 0 ? 'pointer' : 'default'
-                        }}
-                        initial={false}
-                        animate={{
-                          x: arrayIdx * 25, /* Increased offset */
-                          y: arrayIdx * -18, /* Increased offset */
-                          rotate: arrayIdx * 4, /* Increased rotation */
-                          scale: 1,
-                          opacity: 1 - (arrayIdx * 0.12),
-                          boxShadow: `0 0 15px ${field.color}33` /* Glow border */
-                        }}
-                        transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                        onClick={arrayIdx === 0 ? handleCardSwap : undefined}
-                        whileHover={arrayIdx === 0 ? { y: -30, rotate: 0, boxShadow: `0 0 30px ${field.color}66` } : {}}
-                      >
-                        <div className="osp-card-texture"></div>
-                        <div className="osp-card-label" style={{ color: field.color }}>
-                          <FontAwesomeIcon icon={field.suitIcon} />
-                        </div>
-                        <div className="osp-card-bottom-title" style={{ color: field.color }}>
-                          <span>{field.title}</span>
-                          <span className="osp-card-click-arrow" style={{ backgroundColor: field.color, color: '#fff' }}>
-                            <FontAwesomeIcon icon={faChevronRight} />
-                          </span>
-                        </div>
-                        <div className="osp-card-center-icon">
-                          <FontAwesomeIcon icon={field.icon} style={{ color: field.color }} />
-                        </div>
-                      </motion.div>
-                    );
-                  })}
-                </div>
+                {/* Connecting Lines SVG */}
+                <svg className="osp-how-lines-svg" viewBox="0 0 800 500">
+                  {/* Top Left */}
+                  <motion.path
+                    d="M400,250 C300,250 200,200 150,100"
+                    className="osp-how-path"
+                    initial={{ pathLength: 0 }}
+                    whileInView={{ pathLength: 1 }}
+                    transition={{ duration: 1.5, delay: 0.2 }}
+                  />
+                  {/* Top Right */}
+                  <motion.path
+                    d="M400,250 C500,250 600,200 650,100"
+                    className="osp-how-path"
+                    initial={{ pathLength: 0 }}
+                    whileInView={{ pathLength: 1 }}
+                    transition={{ duration: 1.5, delay: 0.4 }}
+                  />
+                  {/* Bottom Left */}
+                  <motion.path
+                    d="M400,250 C300,250 200,300 150,400"
+                    className="osp-how-path"
+                    initial={{ pathLength: 0 }}
+                    whileInView={{ pathLength: 1 }}
+                    transition={{ duration: 1.5, delay: 0.6 }}
+                  />
+                  {/* Bottom Right */}
+                  <motion.path
+                    d="M400,250 C500,250 600,300 650,400"
+                    className="osp-how-path"
+                    initial={{ pathLength: 0 }}
+                    whileInView={{ pathLength: 1 }}
+                    transition={{ duration: 1.5, delay: 0.8 }}
+                  />
+                </svg>
               </div>
 
-              {/* Right Side: Content Details */}
-              <div className="osp-deck-right">
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={activeExpertise.title}
-                    initial={{ opacity: 0, x: 50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -50 }}
-                    transition={{ duration: 0.5 }}
-                    className="osp-expertise-detail-box">
-                    <div className="osp-detail-icon-wrap" style={{ backgroundColor: `${activeExpertise.color}22`, color: activeExpertise.color }}>
-                      <FontAwesomeIcon icon={activeExpertise.icon} />
-                    </div>
-                    <h2 className="osp-detail-title">{activeExpertise.title}</h2>
-                    <div className="osp-detail-line" style={{ backgroundColor: activeExpertise.color }}></div>
-                    <p className="osp-detail-desc">{activeExpertise.description}</p>
+              {/* Corner Content Nodes */}
+              <div className="osp-how-nodes">
+                <motion.div className="osp-how-node top-left" initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ delay: 0.3 }}>
+                  <div className="osp-node-icon"><FontAwesomeIcon icon={faBriefcase} /></div>
+                  <h3>Strategic Vision</h3>
+                  <p>Mapping out the high-level roadmap for exponential growth and long-term brand success.</p>
+                </motion.div>
 
-                    <div className="osp-detail-features">
-                      <div className="osp-feature-item">
-                        <span className="osp-dot" style={{ backgroundColor: activeExpertise.color }}></span>
-                        <span>Dynamic User Interface</span>
-                      </div>
-                      <div className="osp-feature-item">
-                        <span className="osp-dot" style={{ backgroundColor: activeExpertise.color }}></span>
-                        <span>Scalable Architecture</span>
-                      </div>
-                      <div className="osp-feature-item">
-                        <span className="osp-dot" style={{ backgroundColor: activeExpertise.color }}></span>
-                        <span>Strategic Implementation</span>
-                      </div>
-                    </div>
-                  </motion.div>
-                </AnimatePresence>
+                <motion.div className="osp-how-node top-right" initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ delay: 0.5 }}>
+                  <div className="osp-node-icon"><FontAwesomeIcon icon={faChartBar} /></div>
+                  <h3>Data Analytics</h3>
+                  <p>Utilizing advanced market insights and performance data to drive scaling decisions.</p>
+                </motion.div>
+
+                <motion.div className="osp-how-node bottom-left" initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ delay: 0.7 }}>
+                  <div className="osp-node-icon"><FontAwesomeIcon icon={faPalette} /></div>
+                  <h3>Creative Design</h3>
+                  <p>Breaking boundaries with world-class user experiences and modern brand identity.</p>
+                </motion.div>
+
+                <motion.div className="osp-how-node bottom-right" initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ delay: 0.9 }}>
+                  <div className="osp-node-icon"><FontAwesomeIcon icon={faRocket} /></div>
+                  <h3>Tech Innovation</h3>
+                  <p>Building robust, scalable architectures that grow seamlessly with your digital needs.</p>
+                </motion.div>
               </div>
             </div>
           </div>
@@ -835,47 +1052,11 @@ const OurStoryPage = () => {
           </div>
         </section>
 
-        {/* Call to Action */}
-        <section className="osp-section osp-cta-section">
-          <div className="osp-container">
-            <motion.div
-              className="osp-cta-content"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false }}
-              transition={{ duration: 1 }}
-            >
-              <h2 className="osp-section-title osp-cta-title">Ready to Create<br />Your Legacy?</h2>
-              <p className="osp-cta-text">
-                Join 100+ satisfied clients who've transformed their brand and digital presence with our creative solutions.
-                Let's build something amazing together that stands the test of time and drives measurable results for your business.
-                We are more than just a service provider—we are your strategic partners in every step of the journey.
-              </p>
-              <div className="osp-cta-buttons">
-                <button
-                  className="osp-cta-btn osp-primary-btn"
-                  onClick={handleWhatsAppClick}
-                >
-                  <span className="osp-btn-icon">
-                    <FontAwesomeIcon icon={faComments} />
-                  </span>
-                  <span className="osp-btn-text">Start on WhatsApp</span>
-                  <span className="osp-btn-arrow">→</span>
-                </button>
-                <button
-                  className="osp-cta-btn osp-secondary-btn"
-                  onClick={handlePortfolioClick}
-                >
-                  <span className="osp-btn-text">View Portfolio</span>
-                  <span className="osp-btn-icon">
-                    <FontAwesomeIcon icon={faFolderOpen} />
-                  </span>
-                </button>
-              </div>
-              <div className="osp-cta-glow"></div>
-            </motion.div>
-          </div>
-        </section>
+        {/* Call to Action — Spotlight Stage */}
+        <CtaSpotlightSection
+          handleWhatsAppClick={handleWhatsAppClick}
+          handlePortfolioClick={handlePortfolioClick}
+        />
       </main>
       <NewFooter />
       <BackToTop />

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faArrowTrendUp,
@@ -18,7 +19,10 @@ import {
     faCircleNodes,
     faCapsules,
     faBacteria,
-    faDatabase
+    faDatabase,
+    faFaceSmile,
+    faGraduationCap,
+    faCode
 } from '@fortawesome/free-solid-svg-icons';
 import './About.css';
 import aboutVideo from '../../assets/OurCoreValuebg.mp4';
@@ -50,6 +54,7 @@ function useLocalStorage(key, initialValue) {
 }
 
 const About = () => {
+    const navigate = useNavigate();
     // 2. MODIFIED: Using Persistent State for UI Interactions
     const [isVideoOpen, setIsVideoOpen] = useLocalStorage('engloray_video_modal', false);
 
@@ -90,21 +95,34 @@ const About = () => {
                                             </div>
                                             <div className="stat-data">
                                                 <span className="stat-val">320+</span>
-                                                <span className="stat-desc">bio-assets<br />analyzed</span>
+                                                <span className="stat-desc">global<br />clients</span>
                                             </div>
                                         </div>
+                                        <div className="stat-success-badge">
+                                            <span className="success-num">99%</span>
+                                            <span className="success-lbl">success<br />rate</span>
+                                        </div>
+                                        {/* <div className="stat-projects-badge">
+                                            <span className="projects-num">150+</span>
+                                            <span className="projects-lbl">projects<br />completed</span>
+                                        </div> */}
                                     </div>
                                     <div className="bottom-stat-row-new">
                                         <div className="black-circles-pill">
-                                            <div className="c-solid"></div>
-                                            <div className="c-border"></div>
+                                            <div className="icon-circle icon-solid">
+                                                <FontAwesomeIcon icon={faDesktop} />
+                                            </div>
+                                            <div className="icon-circle icon-border">
+                                                <FontAwesomeIcon icon={faGear} />
+                                            </div>
                                         </div>
                                         <div className="stat-info-center">
-                                            <span className="info-num">12+</span>
-                                            <span className="info-lbl">biotech solutions<br />available</span>
+                                            <p className="company-quote-small">
+                                                Building the future of digital ecosystems through innovation and excellence.
+                                            </p>
                                         </div>
-                                        <div className="stat-action-btn" onClick={(e) => handleAction(e)}>
-                                            <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                                        <div className="stat-action-btn">
+                                            <FontAwesomeIcon icon={faChartLine} />
                                         </div>
                                     </div>
                                 </div>
@@ -131,24 +149,23 @@ const About = () => {
 
                             <div className="about-hero-precise-section">
                                 <h1 className="hero-heading-inline">
-                                    About Our<br />
-                                    Succesfull
-                                    <span className="inline-action-group">
-                                        <button className="pill-learn-btn" onClick={(e) => handleAction(e, () => window.location.href = '#services')}>Learn More</button>
-                                        <div className="arrow-circle-btn" onClick={(e) => handleAction(e)}>
+                                    About Our Successful Achievements
+                                    <div className="inline-action-group">
+                                        <button className="pill-learn-btn" onClick={(e) => handleAction(e, () => navigate('/ourStoryPage'))}>Learn More</button>
+                                        <div className="arrow-circle-btn" onClick={(e) => handleAction(e, () => navigate('/ourStoryPage'))}>
                                             <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
                                         </div>
-                                    </span>
-                                    <br />
-                                    Achievements <span className="inline-icon-stack">
-                                        <div className="stack-icon icon-bio" key="bio-icon"><FontAwesomeIcon icon={faBezierCurve} /></div>
-                                        <div className="stack-icon icon-galaxy" key="galaxy-icon"></div>
-                                        <div className="stack-icon icon-flask" key="flask-icon"><FontAwesomeIcon icon={faFlask} /></div>
+                                    </div>
+                                    <span className="inline-icon-stack">
+                                        <div className="stack-icon icon-bio" key="tech-icon-1"><FontAwesomeIcon icon={faDesktop} /></div>
+                                        <div className="stack-icon icon-galaxy" key="edu-icon"><FontAwesomeIcon icon={faGraduationCap} /></div>
+                                        <div className="stack-icon icon-flask" key="tech-icon-2"><FontAwesomeIcon icon={faCode} /></div>
                                     </span>
                                 </h1>
                                 <p className="hero-description-p">
-                                    ENGLORAY began in 2023 as a creative studio dedicated to building visual identities through expert branding and packaging design. We soon evolved into a digital experience partner, expanding our expertise into high-impact website design and UI/UX solutions. By 2024, we launched specialized divisions—ENGLORAY Tech Group for business solution
+                                    ENGLORAY is a leading digital transformation partner, dedicated to empowering businesses through cutting-edge technology and creative excellence. Since our inception in 2023, we have evolved from a specialized branding studio into a comprehensive ecosystem of innovation, offering bespoke solutions in ERP systems, AI-driven marketing, and high-performance web development. Our mission is to bridge the gap between complex technical requirements and seamless user experiences, ensuring our clients achieve sustainable growth in an ever-evolving digital landscape.
                                 </p>
+
                             </div>
                         </div>
 
@@ -178,16 +195,35 @@ const About = () => {
                     </div>
 
                     {/* 3. MODIFIED: Footer Tags Grouped as Groups of Two */}
-                    <div className="about-pills-row">
-                        {pillGroups.map((group, groupIdx) => (
-                            <div key={`group-${groupIdx}`} className="pill-group">
-                                {group.map((tag) => (
-                                    <div key={tag.id} className="pill-tag">
-                                        <FontAwesomeIcon icon={tag.icon} /> {tag.text}
-                                    </div>
-                                ))}
+                    <div className="about-stats-grid-footer">
+                        <div className="stat-card-new">
+                            <div className="stat-card-icon"><FontAwesomeIcon icon={faChartLine} /></div>
+                            <div className="stat-card-info">
+                                <span className="stat-card-num">500+</span>
+                                <span className="stat-card-lbl">Projects Completed</span>
                             </div>
-                        ))}
+                        </div>
+                        <div className="stat-card-new highlight-card">
+                            <div className="stat-card-icon"><FontAwesomeIcon icon={faFaceSmile} /></div>
+                            <div className="stat-card-info">
+                                <span className="stat-card-num">150+</span>
+                                <span className="stat-card-lbl">Happy Brands</span>
+                            </div>
+                        </div>
+                        <div className="stat-card-new">
+                            <div className="stat-card-icon"><FontAwesomeIcon icon={faFlask} /></div>
+                            <div className="stat-card-info">
+                                <span className="stat-card-num">12+</span>
+                                <span className="stat-card-lbl">Tech Solutions</span>
+                            </div>
+                        </div>
+                        <div className="stat-card-new">
+                            <div className="stat-card-icon"><FontAwesomeIcon icon={faArrowTrendUp} /></div>
+                            <div className="stat-card-info">
+                                <span className="stat-card-num">99%</span>
+                                <span className="stat-card-lbl">Client Satisfaction</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

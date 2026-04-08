@@ -83,11 +83,57 @@ const LearningPage = () => {
                         <div className="showcase-glow learn-glow-1" /><div className="showcase-glow learn-glow-2" /><div className="showcase-particles" />
                     </div>
                     <div className="showcase-container">
+                        {/* Left side widgets */}
+                        <motion.div 
+                            className="hero-side-widget sw-left-top"
+                            initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.5 }}
+                        >
+                            <div className="sw-icon-box" style={{ background: 'rgba(239, 68, 68, 0.2)', color: '#ef4444' }}><FontAwesomeIcon icon={faCertificate} /></div>
+                            <div className="sw-content">
+                                <span className="sw-title">Course Progress</span>
+                                <p className="sw-detail">1.2M+ Certs Issued</p>
+                            </div>
+                        </motion.div>
+
+                        <motion.div 
+                            className="hero-side-widget sw-left-bottom"
+                            initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.7 }}
+                        >
+                            <div className="sw-icon-box" style={{ background: 'rgba(248, 113, 113, 0.2)', color: '#f87171' }}><FontAwesomeIcon icon={faVideo} /></div>
+                            <div className="sw-content">
+                                <span className="sw-title">Student Hub</span>
+                                <p className="sw-detail">Data live update</p>
+                            </div>
+                        </motion.div>
+
+                        {/* Right side widgets */}
+                        <motion.div 
+                            className="hero-side-widget sw-right-top"
+                            initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.6 }}
+                        >
+                            <div className="sw-icon-box" style={{ background: 'rgba(220, 38, 38, 0.2)', color: '#dc2626' }}><FontAwesomeIcon icon={faChartLine} /></div>
+                            <div className="sw-content">
+                                <span className="sw-title">Skill Gain</span>
+                                <p className="sw-detail">+35% Growth</p>
+                            </div>
+                        </motion.div>
+
+                        <motion.div 
+                            className="hero-side-widget sw-right-bottom"
+                            initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.8 }}
+                        >
+                            <div className="sw-icon-box" style={{ background: 'rgba(252, 165, 165, 0.2)', color: '#fca5a5' }}><FontAwesomeIcon icon={faShieldAlt} /></div>
+                            <div className="sw-content">
+                                <span className="sw-title">Safe Learning</span>
+                                <p className="sw-detail">Safe & Encrypted</p>
+                            </div>
+                        </motion.div>
+
                         <div className="showcase-center-text">
                             <motion.div className="showcase-badge learn-badge-color" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5, type: "spring" }}>
                                 <FontAwesomeIcon icon={faGraduationCap} /> Learning & Career Growth Platform
                             </motion.div>
-                            <motion.h1 className="showcase-h1" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.1 }}>
+                            <motion.h1 className="showcase-h1" initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }} animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }} transition={{ duration: 0.8, delay: 0.1 }}>
                                 YOUR CAREER<br />Growth Starts <span className="learn-accent">Here Today</span>
                             </motion.h1>
                             <motion.p className="showcase-p" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}>
@@ -136,11 +182,17 @@ const LearningPage = () => {
                 {/* WHY CHOOSE OUR LEARNING PLATFORM */}
                 <section className="crm-why-interactive">
                     <div className="cwi-container">
-                        <div className="cwi-header-row">
+                        <motion.div
+                            className="cwi-header-row"
+                            initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }}
+                            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                            transition={{ duration: 0.8 }}
+                            viewport={{ once: true }}
+                        >
                             <span className="crm-section-badge learn-section-badge">Growth Advantage</span>
                             <h2 className="cwi-title">WHY CHOOSE OUR <span className="learn-accent" style={{ color: '#ef4444' }}>LEARNING PLATFORM?</span></h2>
                             <p className="cwi-desc">From skill building to career placement — your complete growth journey under one roof.</p>
-                        </div>
+                        </motion.div>
 
                         <div className="cwi-content">
                             <div className="cwi-list">
@@ -255,7 +307,13 @@ const LearningPage = () => {
 
                 <section className="crm-use-cases-section">
                     <div className="use-cases-container">
-                        <motion.div className="use-cases-header" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
+                        <motion.div
+                            className="use-cases-header"
+                            initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }}
+                            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                            transition={{ duration: 0.8 }}
+                            viewport={{ once: true }}
+                        >
                             <span className="crm-section-badge learn-section-badge">Tailored Programs</span>
                             <h2>Who Learns With <span className="learn-span-h2">Us?</span></h2>
                             <p>Our learning ecosystem empowers students, professionals and enterprises to grow every day.</p>
@@ -334,7 +392,13 @@ const LearningPage = () => {
 
                 <section className="crm-insights-section learn-insights-section">
                     <div className="crm-insights-inner">
-                        <motion.div className="crm-insights-header" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
+                        <motion.div
+                            className="crm-insights-header"
+                            initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }}
+                            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                            transition={{ duration: 0.8 }}
+                            viewport={{ once: true }}
+                        >
                             <span className="crm-section-badge-dark learn-badge-dark"><FontAwesomeIcon icon={faLightbulb} /> Learning Intelligence</span>
                             <h2>Learn Smarter,<br /><span className="learn-gradient-span">Grow Faster</span></h2>
                             <p>Personalised learning paths, AI-driven insights and placement support that keep you ahead of the curve.</p>

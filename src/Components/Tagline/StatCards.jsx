@@ -155,11 +155,11 @@ const StatCards = () => {
                         </svg>
                     </div>
                     <div className="bphs-stat-label-large bphs-left-poppins">Education</div>
+                    <div className="bphs-stat-value-container">
+                        <span className="bphs-stat-value-number">7+</span>
+                        <span className="bphs-stat-value-text">courses</span>
+                    </div>
                     <div className="bphs-stat-card-bottom-row">
-                        <div className="bphs-stat-value-container">
-                            <span className="bphs-stat-value-number">7+</span>
-                            <span className="bphs-stat-value-text">courses</span>
-                        </div>
                         <div className="bphs-stat-visual-right">
                             <img src={educationIcon} alt="Education Icon" />
                         </div>

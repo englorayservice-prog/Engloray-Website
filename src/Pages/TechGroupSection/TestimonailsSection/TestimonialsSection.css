@@ -8,7 +8,7 @@
 
 /* ================= MAIN SECTION ================= */
 .techGroup-testimonials-section {
-  padding: 80px 0;
+  padding: clamp(60px, 5.55vw, 120px) 0;
   background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
   position: relative;
   overflow: hidden;
@@ -18,13 +18,14 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+  position: relative;
 }
 
 /* ================= HEADER STYLES ================= */
 .techGroup-testimonialSection-header {
   text-align: left;
-  margin-bottom: 2rem;
-  max-width: 700px;
+  margin-bottom: clamp(1.5rem, 2.22vw, 3rem);
+  max-width: clamp(500px, 48.6vw, 850px);
 }
 
 .techGroup-testimonialSection-header.techGroup-animate-fade-in {
@@ -49,19 +50,19 @@
 }
 
 .techGroup-testimonials-title {
-  font-size: 2.4rem;
+  font-size: clamp(2rem, 2.66vw, 3.2rem);
   font-weight: 700;
   font-family: "poppins";
   background: linear-gradient(135deg, #f23030 0%, #bf0413 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  margin-bottom: 1rem;
+  margin-bottom: clamp(0.75rem, 1.11vw, 1.5rem);
   line-height: 1.1;
 }
 
 .techGroup-testimonials-subtitle {
-  font-size: 1.2rem;
+  font-size: clamp(0.9rem, 0.83vw, 1.3rem);
   color: #718096;
   font-family: 'Inter';
   font-weight: 500;
@@ -78,11 +79,11 @@
 
 .techGroup-stripe-arrows {
   position: absolute;
-  top: 170px;
-  right: 60px;
+  top: clamp(100px, 9.375vw, 160px);
+  right: 2rem;
   z-index: 5;
   display: flex;
-  gap: 10px;
+  gap: clamp(8px, 0.7vw, 15px);
 }
 
 .techGroup-stripe-arrows button {
@@ -104,15 +105,15 @@
 
 .techGroup-stripe-carousel {
   display: flex;
-  height: 420px;
-  gap: 10px;
+  height: clamp(380px, 29.16vw, 550px);
+  gap: clamp(8px, 0.7vw, 15px);
   transition: all 0.8s ease;
-  padding-right: 75px;
+  padding-right: clamp(50px, 5.2vw, 100px);
 }
 
 .techGroup-stripe-card {
   position: relative;
-  flex: 0 0 75px;
+  flex: 0 0 clamp(60px, 5.2vw, 90px);
   background-size: cover;
   background-position: center;
   border-radius: 20px;
@@ -318,8 +319,8 @@
 .techGroup-grid-logos-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 165px);
-  max-width: 1100px;
+  grid-template-rows: repeat(2, clamp(130px, 11.45vw, 200px));
+  max-width: clamp(900px, 76.3vw, 1400px);
   margin: 0 auto;
   background: transparent;
   position: relative;
@@ -500,12 +501,12 @@
 
 /* Card One - Red Theme */
 .techGroup-stat-card-one {
-  width: 220px;
-  height: 70px;
-  margin-top: 380px;
-  margin-left: 500px;
+  width: clamp(180px, 15.27vw, 260px);
+  height: clamp(60px, 4.86vw, 90px);
+  margin-top: clamp(300px, 26.38vw, 450px);
+  margin-left: clamp(400px, 34.72vw, 600px);
   text-align: center;
-  padding: 1rem 1rem;
+  padding: clamp(0.75rem, 1vw, 1.5rem);
   border-radius: 16px;
   background: rgb(255, 0, 0);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -538,12 +539,12 @@
 
 /* Card Two - Blue Theme */
 .techGroup-stat-card-two {
-  width: 220px;
-  height: 70px;
-  margin-top: 460px;
-  margin-left: -460px;
+  width: clamp(180px, 15.27vw, 260px);
+  height: clamp(60px, 4.86vw, 90px);
+  margin-top: clamp(350px, 31.94vw, 550px);
+  margin-left: clamp(-500px, -31.94vw, -350px);
   text-align: center;
-  padding: 1rem 1rem;
+  padding: clamp(0.75rem, 1vw, 1.5rem);
   border-radius: 16px;
   background: #2196F3;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -611,12 +612,12 @@
 
 /* Card Four - Orange Theme */
 .techGroup-stat-card-four {
-  width: 220px;
-  height: 70px;
-  margin-top: 460px;
-  margin-left: -170px;
+  width: clamp(180px, 15.27vw, 260px);
+  height: clamp(60px, 4.86vw, 90px);
+  margin-top: clamp(350px, 31.94vw, 550px);
+  margin-left: clamp(-200px, -11.8vw, -120px);
   text-align: center;
-  padding: 1rem 1rem;
+  padding: clamp(0.75rem, 1vw, 1.5rem);
   border-radius: 16px;
   background: rgb(0, 0, 0);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -714,10 +715,10 @@
 .techGroup-benefits-slide-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 290px);
-  gap: 20px;
+  grid-template-rows: repeat(2, clamp(250px, 20.13vw, 400px));
+  gap: clamp(15px, 1.4vw, 30px);
   width: 100%;
-  margin-top: 40px;
+  margin-top: clamp(30px, 2.77vw, 60px);
 }
 
 .techGroup-slide-card {

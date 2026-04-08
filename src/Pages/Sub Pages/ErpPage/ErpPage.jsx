@@ -123,11 +123,57 @@ const ErpPage = () => {
                     </div>
 
                     <div className="showcase-container">
+                        {/* Left side widgets */}
+                        <motion.div 
+                            className="hero-side-widget sw-left-top"
+                            initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.5 }}
+                        >
+                            <div className="sw-icon-box" style={{ background: 'rgba(16, 185, 129, 0.2)', color: '#10b981' }}><FontAwesomeIcon icon={faBuilding} /></div>
+                            <div className="sw-content">
+                                <span className="sw-title">Campus Live</span>
+                                <p className="sw-detail">12 Active Schools</p>
+                            </div>
+                        </motion.div>
+
+                        <motion.div 
+                            className="hero-side-widget sw-left-bottom"
+                            initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.7 }}
+                        >
+                            <div className="sw-icon-box" style={{ background: 'rgba(59, 130, 246, 0.2)', color: '#3b82f6' }}><FontAwesomeIcon icon={faDatabase} /></div>
+                            <div className="sw-content">
+                                <span className="sw-title">Fee Collection</span>
+                                <p className="sw-detail">Real-time sync</p>
+                            </div>
+                        </motion.div>
+
+                        {/* Right side widgets */}
+                        <motion.div 
+                            className="hero-side-widget sw-right-top"
+                            initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.6 }}
+                        >
+                            <div className="sw-icon-box" style={{ background: 'rgba(139, 92, 246, 0.2)', color: '#a78bfa' }}><FontAwesomeIcon icon={faChartLine} /></div>
+                            <div className="sw-content">
+                                <span className="sw-title">Exam Progress</span>
+                                <p className="sw-detail">+22% Avg Score</p>
+                            </div>
+                        </motion.div>
+
+                        <motion.div 
+                            className="hero-side-widget sw-right-bottom"
+                            initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.8 }}
+                        >
+                            <div className="sw-icon-box" style={{ background: 'rgba(245, 158, 11, 0.2)', color: '#f59e0b' }}><FontAwesomeIcon icon={faShieldAlt} /></div>
+                            <div className="sw-content">
+                                <span className="sw-title">System Security</span>
+                                <p className="sw-detail">Encrypted Data</p>
+                            </div>
+                        </motion.div>
+
                         <div className="showcase-center-text">
                             <motion.div className="showcase-badge erp-badge-color" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5, type: "spring" }}>
                                 <FontAwesomeIcon icon={faBuilding} /> Smart Campus ERP Platform
                             </motion.div>
-                            <motion.h1 className="showcase-h1" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.1 }}>
+                            <motion.h1 className="showcase-h1" initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }} animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }} transition={{ duration: 0.8, delay: 0.1 }}>
                                 MANAGE YOUR<br /> School <span className="erp-accent">Smarter Today</span>
                             </motion.h1>
                             <motion.p className="showcase-p" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}>
@@ -184,11 +230,17 @@ const ErpPage = () => {
                 {/* WHY CHOOSE OUR ERP */}
                 <section className="crm-why-interactive">
                     <div className="cwi-container">
-                        <div className="cwi-header-row">
+                        <motion.div
+                            className="cwi-header-row"
+                            initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }}
+                            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                            transition={{ duration: 0.8 }}
+                            viewport={{ once: true }}
+                        >
                             <span className="crm-section-badge erp-section-badge">Institution Advantage</span>
                             <h2 className="cwi-title">WHY CHOOSE OUR <span className="erp-accent" style={{ color: '#10b981' }}>ERP?</span></h2>
                             <p className="cwi-desc">A complete institution management suite — built for modern schools, colleges and universities.</p>
-                        </div>
+                        </motion.div>
 
                         <div className="cwi-content">
                             <div className="cwi-list">
@@ -311,7 +363,13 @@ const ErpPage = () => {
                 {/* WHO USES OUR ERP */}
                 <section className="crm-use-cases-section">
                     <div className="use-cases-container">
-                        <motion.div className="use-cases-header" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
+                        <motion.div
+                            className="use-cases-header"
+                            initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }}
+                            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                            transition={{ duration: 0.8 }}
+                            viewport={{ once: true }}
+                        >
                             <span className="crm-section-badge erp-section-badge">Tailored Solutions</span>
                             <h2>Who Uses Our <span className="erp-span-h2">ERP?</span></h2>
                             <p>Our platform adapts to every kind of educational institution with workflows built for your needs.</p>
@@ -391,7 +449,13 @@ const ErpPage = () => {
                 {/* WORK SMARTER SECTION */}
                 <section className="crm-insights-section erp-insights-section">
                     <div className="crm-insights-inner">
-                        <motion.div className="crm-insights-header" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
+                        <motion.div
+                            className="crm-insights-header"
+                            initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }}
+                            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                            transition={{ duration: 0.8 }}
+                            viewport={{ once: true }}
+                        >
                             <span className="crm-section-badge-dark erp-badge-dark"><FontAwesomeIcon icon={faLightbulb} /> ERP Intelligence</span>
                             <h2>Automate Everything,<br /><span className="erp-gradient-span">Focus on Learning</span></h2>
                             <p>From smart fee reminders to AI-driven academic analytics — let the platform handle the operations while you focus on education.</p>

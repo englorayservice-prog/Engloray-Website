@@ -1204,11 +1204,11 @@
   position: relative;
   width: 100%;
   height: 600px;
-  /* Increased for taller cards */
   perspective: 2500px;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden; /* Mask background card swapping jump */
 }
 
 .ct-arc-track {
@@ -1275,10 +1275,12 @@
 
 .ct-arc-card.is-right-3,
 .ct-arc-card.is-left-3 {
-  z-index: 10;
-  transform: translate3d(0, 0, -400px) scale(0.6);
+  z-index: 0;
+  transform: translate3d(0, 0, -500px) scale(0.5); /* Positioned deep and center */
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
+  transition: none !important; /* Instant reset to hide the swap */
 }
 
 .ct-card-content {
@@ -1436,17 +1438,7 @@
 }
 
 
-.ct-arc-card.is-right-3 {
-  transform: translate3d(1020px, 0, -600px) scale(0.85);
-  z-index: 10;
-  opacity: 0.8;
-}
-
-.ct-arc-card.is-left-3 {
-  transform: translate3d(-1020px, 0, -600px) scale(0.85);
-  z-index: 10;
-  opacity: 0.8;
-}
+/* Legacy definitions cleaned for synchronized hidden-state behavior */
 
 .ct-card-content {
   position: relative;
@@ -1723,12 +1715,12 @@
   background: #2563eb;
 }
 
-/* Hover Effect - ONLY SCALE UPSTAIRS */
+/* Removed conflicting hover scale to prevent shakiness */
 .ct-arc-card:hover {
-  transform: scale(1.02) !important;
   z-index: 100 !important;
   filter: blur(0) !important;
   opacity: 1 !important;
+  box-shadow: 0 40px 100px rgba(15, 23, 42, 0.2);
 }
 
 /* 🎨 Card Internal Structure */
@@ -1878,9 +1870,9 @@
 
 /* 7. WHY ENTERPRISE LEADERS CHOOSE US - PREMIUM WHITE REDESIGN */
 .ct-benefits-section-white {
-  background: #FFFFFF;
+  background: #f8fafc;
   color: #000000;
-  padding: 30px 0;
+  padding: 80px 0;
   /* Significant padding reduction to match flow */
   position: relative;
   overflow: hidden;
@@ -1947,18 +1939,31 @@
 }
 
 .ct-bento-card-content {
-  padding: 40px 30px;
-  /* Balanced padding */
+  padding: 35px 30px;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  /* Center vertically for professional dashboard look */
-  align-items: center;
-  /* Ensure horizontal center as well */
-  text-align: center;
   position: relative;
   z-index: 5;
+}
+
+.ct-bento-card-align-top {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.ct-bento-card-align-center {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.ct-bento-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 15px;
 }
 
 .ct-bento-img-wrapper {
@@ -2034,21 +2039,17 @@
 
 /* TYPOGRAPHY */
 .ct-bento-title {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   font-weight: 800;
-  margin-bottom: 8px;
-  color: #ffffff;
-  /* White text for better contrast over images */
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  margin: 0;
+  line-height: 1.2;
 }
 
 .ct-bento-desc {
-  font-size: 0.85rem;
-  line-height: 1.4;
-  color: rgba(255, 255, 255, 0.95);
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
-  text-align: justify;
-  /* Justify text as requested */
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #64748b;
+  font-weight: 450;
 }
 
 .ct-bento-desc-white {
@@ -2060,12 +2061,20 @@
 
 /* ICONS */
 .ct-bento-icon-flat {
-  font-size: 2.2rem;
-  /* Slightly larger for better impact */
-  margin: 0 auto 15px auto;
-  /* Centered with margin auto */
-  display: block;
-  width: fit-content;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ct-bento-icon-circle-styled {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
 }
 
 .slate-icon {
@@ -2396,8 +2405,8 @@
 .ct-s-nav-controls {
   position: absolute;
   top: 50%;
-  left: 0;
-  right: 0;
+  left: -25px;
+  right: -25px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -2409,7 +2418,16 @@
 
 .ct-s-nav-controls .ct-m-nav-btn {
   pointer-events: auto;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  background: #ffffff;
+  color: #111827;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.ct-s-nav-controls .ct-m-nav-btn.faded {
+  opacity: 0.35;
+  cursor: default;
+  pointer-events: none;
 }
 
 @media (max-width: 1024px) {
@@ -2631,21 +2649,22 @@
   height: 100%;
   display: flex;
   align-items: flex-end;
-  /* Flush bottom */
   justify-content: center;
-  padding: 0 20px;
+  padding: 40px 20px 0 20px; /* Maintains elite top gap */
 }
 
 .ct-m-dashboard-card {
   background: #ffffff;
   width: 440px;
   max-width: 90%;
+  height: 95%; /* Dominant 95% presence for an immersive experience */
   border-radius: 24px 24px 0 0;
   padding: 35px;
   box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  justify-content: space-between;
+  gap: 12px;
   text-align: left;
 }
 
@@ -3502,9 +3521,37 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .ct-w-title-big {
+    font-size: 2.8rem;
+  }
+
+  .ct-w-bento-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+
+  .ct-w-bento-item {
+    height: auto;
+    min-height: 280px;
+  }
+
+  .ct-stories-split-layout {
+    gap: 30px;
+  }
+
+  .ct-stories-left {
+    flex: 0 0 220px;
+  }
+}
+
 @media (max-width: 768px) {
   .ct-w-title-big {
     font-size: 2.2rem;
+  }
+
+  .ct-w-bento-grid {
+    grid-template-columns: 1fr;
   }
 
   .ct-w-minimal-card {
@@ -3521,6 +3568,29 @@
 
   .ct-stories-left .ct-m-nav-controls {
     justify-content: center !important;
+  }
+}
+
+/* Small Mobile (480px and below) */
+@media (max-width: 480px) {
+  .ct-w-title-big {
+    font-size: 1.8rem;
+  }
+
+  .ct-sd-title {
+    font-size: 1.8rem;
+  }
+
+  .ct-sd-desc {
+    max-width: 100%;
+  }
+
+  .ct-sd-content-split {
+    padding: 24px 16px;
+  }
+
+  .ct-sd-glass-panel {
+    padding: 16px;
   }
 }
 
@@ -3800,27 +3870,40 @@
 
 .ct-m-nav-btn {
   pointer-events: auto;
-  width: 44px;
-  height: 44px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  border: 1.5px solid #d1d5db;
-  background: #ffffff;
-  color: #374151;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  color: #111827;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1rem;
-  transition: all 0.25s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  font-size: 1.1rem;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .ct-m-nav-btn:hover {
-  background: #2563eb;
-  border-color: #2563eb;
+  background: #111827;
+  border-color: #111827;
   color: #ffffff;
-  transform: scale(1.08);
-  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.25);
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.ct-m-nav-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.ct-m-nav-btn:hover svg {
+  transform: translateX(2px);
+}
+
+.ct-m-nav-btn.prev-btn:hover svg {
+  transform: translateX(-2px);
 }
 
 /* ── Responsive ── */

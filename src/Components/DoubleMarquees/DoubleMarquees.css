@@ -349,11 +349,28 @@
   padding: 5px 0;
 }
 
-.tech-track,
+.tech-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: scroll-left-track 40s linear infinite;
+}
+
 .learning-track {
   display: flex;
   width: max-content;
   will-change: transform;
+  animation: scroll-right-track 40s linear infinite;
+}
+
+@keyframes scroll-left-track {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-10%); }
+}
+
+@keyframes scroll-right-track {
+  0% { transform: translateX(-10%); }
+  100% { transform: translateX(0); }
 }
 
 /* ========================================

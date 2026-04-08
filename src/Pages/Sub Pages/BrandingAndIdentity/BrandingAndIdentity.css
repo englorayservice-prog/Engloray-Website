@@ -61,7 +61,7 @@
     top: 200px;
     left: 62%;
     transform: translateX(-50%);
-    text-align: center;
+    text-align: left;
     max-width: 1010px;
     width: 100%;
     min-height: 2000px;
@@ -144,6 +144,7 @@
     line-height: 1.6;
     margin-bottom: 40px;
     max-width: 500px;
+    text-align: Left;
 }
 
 .bi-hero-stats-new {
@@ -356,6 +357,7 @@
     line-height: 1.7;
     margin-bottom: 35px;
     max-width: 480px;
+    text-align: left;
     animation: fadeInDesc 0.8s ease-out forwards;
 }
 
@@ -767,7 +769,7 @@
     top: 35px;
     left: 50%;
     transform: translateX(-50%);
-    text-align: center;
+    text-align: left;
     z-index: 10;
 }
 
@@ -1139,6 +1141,7 @@
     line-height: 1.8;
     margin: 0;
     flex: 1;
+    text-align: Left;
 }
 
 .bi-detail-divider {
@@ -1196,7 +1199,7 @@
     font-weight: 700;
     cursor: pointer;
     transition: all 0.2s ease;
-    text-align: center;
+    text-align: left;
 }
 
 .bi-detail-cta:hover {
@@ -1247,7 +1250,7 @@
 }
 
 .bi-section-header {
-    text-align: center;
+    text-align: left;
     margin-bottom: 60px;
 }
 
@@ -1417,7 +1420,7 @@
 }
 
 .bi-detail-item {
-    text-align: center;
+    text-align: left;
 }
 
 .bi-detail-label {
@@ -1509,7 +1512,7 @@
     margin-bottom: 25px;
     font-style: italic;
     font-family: 'Aldrich', sans-serif;
-    text-align: center;
+    text-align: left;
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
@@ -1520,7 +1523,7 @@
     flex-direction: column;
     align-items: center;
     gap: 15px;
-    text-align: center;
+    text-align: left;
 }
 
 .bi-author-avatar {
@@ -1551,7 +1554,7 @@
 }
 
 .bi-author-info {
-    text-align: center;
+    text-align: left;
 }
 
 .bi-author-info h4 {
@@ -1900,6 +1903,7 @@
     color: #a0a0a0;
     line-height: 1.6;
     margin-bottom: 40px;
+    text-align: Left;
 }
 
 .bi-prod-buttons {
@@ -2032,7 +2036,7 @@
 
 .bi-timeline-content {
     padding-top: 8px;
-    text-align: center;
+    text-align: left;
 }
 
 .bi-timeline-content h3 {
@@ -2054,7 +2058,7 @@
 @media (max-width: 991px) {
     .bi-prod-container {
         flex-direction: column;
-        text-align: center;
+        text-align: left;
         gap: 60px;
     }
 
@@ -2223,6 +2227,7 @@
     font-size: 34px;
     font-weight: 600;
     color: #5b58ee;
+    margin-left: 20%;
     margin-bottom: 16px;
     text-transform: capitalize;
 }
@@ -2250,6 +2255,7 @@
     color: #666666;
     line-height: 1.7;
     margin-bottom: 30px;
+    text-align: Left;
 }
 
 .bi-el-stats {
@@ -2330,7 +2336,7 @@
 
     .bi-el-right {
         padding-left: 0;
-        text-align: center;
+        text-align: left;
     }
 
     .bi-el-preheading {
@@ -2356,7 +2362,7 @@
 }
 
 .bi-mission-header {
-    text-align: center;
+    text-align: left;
     margin-bottom: 80px;
 }
 
@@ -2375,6 +2381,8 @@
     line-height: 1.15;
     color: #111111;
     letter-spacing: -1px;
+    text-align: center;
+    margin-left: 4%;
 }
 
 .bi-mission-highlight {
@@ -2652,7 +2660,7 @@
 }
 
 .bi-agency-header {
-    text-align: center;
+    text-align: left;
     margin-bottom: 80px;
 }
 
@@ -2672,6 +2680,7 @@
     color: #ffffff;
     text-transform: uppercase;
     font-family: 'Poppins', sans-serif;
+    margin-left: 40%;
 }
 
 .bi-lime-highlight {
@@ -2892,7 +2901,7 @@
 
 .bi-testimonial-container {
     max-width: 100%;
-    text-align: center;
+    text-align: left;
 }
 
 .bi-testimonial-label {
@@ -2902,6 +2911,7 @@
     letter-spacing: 0.5px;
     margin-bottom: 16px;
     font-style: italic;
+    margin-left: 40%;
 }
 
 .bi-testimonial-heading {
@@ -2911,7 +2921,8 @@
     line-height: 1.25;
     margin-bottom: 60px;
     letter-spacing: -1px;
-    padding: 0 40px;
+    margin-left: 20%;
+
 }
 
 /* Scroll Wrapper with CSS Mask for Edge Fading */
@@ -3004,7 +3015,7 @@
     font-size: 14px;
     color: #666666;
     line-height: 1.8;
-    text-align: center;
+    text-align: left;
     margin-bottom: 24px;
     height: 100px;
     display: -webkit-box;
@@ -3040,4 +3051,10 @@
     .bi-marquee-spin {
         animation-duration: 30s;
     }
+}
+
+/* Left Alignment Overrides */
+.br-hero-title-new, .br-hero-desc-new, .br-hero-subtitle-new, .bi-info-subtitle, .bi-el-title, .bi-prod-title, .bi-detail-title, .bi-about-left-title, .bi-service-card-title, .bi-service-card-desc, .bi-agency-main-title, .bi-info-col, .bi-info-features {
+    text-align: left !important;
+    margin-left: 0 !important;
 }

@@ -38,7 +38,13 @@ import {
   faMobileAlt,
   faComments,
   faPhoneAlt,
-  faPlus
+  faPlus,
+  faTerminal,
+  faHeadset,
+  faChartPie,
+  faDraftingCompass,
+  faChartArea,
+  faArrowLeft
 } from '@fortawesome/free-solid-svg-icons';
 import { faWhatsapp as faWhatsappBrand } from '@fortawesome/free-brands-svg-icons';
 import './CorporateTraining.css';
@@ -639,91 +645,117 @@ const CorporateTraining = () => {
             <section className="ct-section ct-benefits-section-white">
               <div className="ct-container">
                 <div className="ct-section-header-centered">
-                  <h2 className="ct-section-title-alt">Why Enterprise Leaders Choose Us</h2>
-                  <p className="ct-section-subtitle-alt">ELITE TRAINING BENEFITS FOR GLOBAL ORGANIZATIONS</p>
+                  <h2 className="ct-section-title-alt" style={{ fontSize: '2.5rem' }}>Why Enterprise Leaders Choose Us</h2>
+                  <p className="ct-section-subtitle-alt" style={{ fontSize: '0.9rem' }}>ELITE TRAINING BENEFITS FOR GLOBAL ORGANIZATIONS</p>
                   <div className="ct-section-underline-blue"></div>
                 </div>
 
                 <div className="ct-benefits-bento-grid">
-                  {/* 1. Expert Faculty - Soft Slate */}
+                  {/* 1. Expert Faculty */}
                   <div className="ct-bento-item bento-theme-slate">
                     <div className="ct-bento-img-wrapper">
-                      <img src={bentoFaculty} alt="Expert Faculty" className="ct-bento-img-bg" />
-                      <div className="ct-bento-overlay"></div>
+                      <img src={bentoFaculty} alt="Expert Faculty" className="ct-bento-img-bg" style={{ objectPosition: 'center' }} />
+                      <div className="ct-bento-overlay" style={{ background: 'linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 100%)' }}></div>
                     </div>
-                    <div className="ct-bento-card-content">
-                      <div className="ct-bento-icon-flat slate-icon">{benefits[1].icon}</div>
-                      <h3 className="ct-bento-title">{benefits[1].title}</h3>
-                      <p className="ct-bento-desc">{benefits[1].description}</p>
+                    <div className="ct-bento-card-content ct-bento-card-align-top">
+                      <div className="ct-bento-header-row" style={{ gap: '15px', justifyContent: 'flex-start' }}>
+                        <h3 className="ct-bento-title" style={{ color: '#ffffff', textTransform: 'uppercase', letterSpacing: '0.5px', whiteSpace: 'nowrap' }}>Expert Faculty</h3>
+                        <div className="ct-bento-icon-flat" style={{ color: '#ff0055' }}><FontAwesomeIcon icon={faUsers} /></div>
+                      </div>
+                      <p className="ct-bento-desc" style={{ color: 'rgba(255, 255, 255, 0.95)', fontSize: '0.88rem' }}>
+                        Industry giants with real-world experience, bringing collective knowledge to your team's transformation journey.
+                      </p>
                     </div>
                   </div>
 
-                  {/* 2. Hands-on Labs - Light Blue */}
+                  {/* 2. Hands-on Labs */}
                   <div className="ct-bento-item bento-theme-blue">
                     <div className="ct-bento-img-wrapper">
-                      <img src={bentoLabs} alt="Hands-on Labs" className="ct-bento-img-bg" />
-                      <div className="ct-bento-overlay"></div>
+                      <img src={bentoLabs} alt="Hands-on Labs" className="ct-bento-img-bg" style={{ objectPosition: 'center' }} />
+                      <div className="ct-bento-overlay" style={{ background: 'linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 100%)' }}></div>
                     </div>
-                    <div className="ct-bento-card-content">
-                      <div className="ct-bento-icon-flat blue-icon">{benefits[2].icon}</div>
-                      <h3 className="ct-bento-title">{benefits[2].title}</h3>
-                      <p className="ct-bento-desc">{benefits[2].description}</p>
+                    <div className="ct-bento-card-content ct-bento-card-align-top">
+                      <div className="ct-bento-header-row" style={{ gap: '15px', justifyContent: 'flex-start' }}>
+                        <h3 className="ct-bento-title" style={{ color: '#ffffff', textTransform: 'uppercase', letterSpacing: '0.5px', whiteSpace: 'nowrap' }}>Hands-on Labs</h3>
+                        <div className="ct-bento-icon-flat" style={{ color: '#00d4ff' }}><FontAwesomeIcon icon={faLaptopCode} /></div>
+                      </div>
+                      <p className="ct-bento-desc" style={{ color: 'rgba(255, 255, 255, 0.95)', fontSize: '0.88rem' }}>
+                        Practical exercises using industrial-grade tools within scenarios to master complex enterprise protocols.
+                      </p>
                     </div>
                   </div>
 
-                  {/* 3. Continuous Support - Professional Indigo (TALL) */}
+                  {/* 3. Continuous Support (TALL) */}
                   <div className="ct-bento-item bento-theme-indigo tall-span">
                     <div className="ct-bento-img-wrapper">
-                      <img src={bentoSupport} alt="Continuous Support" className="ct-bento-img-bg" />
-                      <div className="ct-bento-overlay"></div>
+                      <img src={bentoSupport} alt="Continuous Support" className="ct-bento-img-bg" style={{ objectPosition: 'center' }} />
+                      <div className="ct-bento-overlay" style={{ background: 'linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 100%)' }}></div>
                     </div>
-                    <div className="ct-bento-card-content" style={{ justifyContent: 'center' }}>
-                      <div className="ct-bento-icon-main indigo-icon">{benefits[4].icon}</div>
-                      <h3 className="ct-bento-title">{benefits[4].title}</h3>
-                      <p className="ct-bento-desc">{benefits[4].description}</p>
+                    <div className="ct-bento-card-content ct-bento-card-align-top">
+                      <div className="ct-bento-header-row" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                        <h3 className="ct-bento-title" style={{ color: '#ffffff', textTransform: 'uppercase', letterSpacing: '0.5px', whiteSpace: 'normal', lineHeight: '1.2' }}>
+                          CONTINUOUS <br /> SUPPORT
+                        </h3>
+                        <div className="ct-bento-icon-flat" style={{ color: '#a855f7' }}><FontAwesomeIcon icon={faHeadset} /></div>
+                      </div>
+                      <p className="ct-bento-desc" style={{ color: 'rgba(255, 255, 255, 0.95)', fontSize: '0.88rem' }}>
+                        Post-training mentorship and personalized feedback to sustain long-term growth and technical excellence across your entire organization, ensuring your team remains at the cutting edge of industry standards with dedicated experts available 24/7 for tailored guidance, project reviews, and strategic roadmaps to success.
+                      </p>
                     </div>
                   </div>
 
-                  {/* 4. ROI Tracking - Lavender Purple */}
+                  {/* 4. ROI Tracking */}
                   <div className="ct-bento-item bento-theme-purple">
                     <div className="ct-bento-img-wrapper">
-                      <img src={bentoRoi} alt="ROI Tracking" className="ct-bento-img-bg" />
-                      <div className="ct-bento-overlay"></div>
+                      <img src={bentoRoi} alt="ROI Tracking" className="ct-bento-img-bg" style={{ objectPosition: 'center' }} />
+                      <div className="ct-bento-overlay" style={{ background: 'linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 100%)' }}></div>
                     </div>
-                    <div className="ct-bento-card-content">
-                      <div className="ct-bento-icon-flat purple-icon">{benefits[3].icon}</div>
-                      <h3 className="ct-bento-title">{benefits[3].title}</h3>
-                      <p className="ct-bento-desc">{benefits[3].description}</p>
+                    <div className="ct-bento-card-content ct-bento-card-align-top">
+                      <div className="ct-bento-header-row" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <h3 className="ct-bento-title" style={{ color: '#ffffff', textTransform: 'uppercase', letterSpacing: '0.5px', whiteSpace: 'nowrap' }}>ROI Tracking</h3>
+                        <div className="ct-bento-icon-flat" style={{ color: '#00ff88' }}><FontAwesomeIcon icon={faChartLine} /></div>
+                      </div>
+                      <p className="ct-bento-desc" style={{ color: 'rgba(255, 255, 255, 0.95)', fontSize: '0.88rem' }}>
+                        Detailed reporting on employee progress and performance improvements.
+                      </p>
                     </div>
                   </div>
 
-                  {/* 5. Custom Design - Professional Sage (WIDE) */}
+                  {/* 5. Custom Design (WIDE) */}
                   <div className="ct-bento-item bento-theme-sage wide-span">
                     <div className="ct-bento-img-wrapper">
-                      <img src={bentoCustom} alt="Custom Design" className="ct-bento-img-bg" />
-                      <div className="ct-bento-overlay"></div>
+                      <img src={bentoCustom} alt="Custom Design" className="ct-bento-img-bg" style={{ objectPosition: 'center' }} />
+                      <div className="ct-bento-overlay" style={{ background: 'linear-gradient(to right, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.45) 60%, transparent 100%)' }}></div>
                     </div>
-                    <div className="ct-bento-card-content row-content">
-                      <div className="text-col" style={{ position: 'relative', zIndex: 6 }}>
-                        <h3 className="ct-bento-title">{benefits[0].title}</h3>
-                        <p className="ct-bento-desc">{benefits[0].description}</p>
+                    <div className="ct-bento-card-content row-content" style={{ justifyContent: 'space-between' }}>
+                      <div className="text-col" style={{ flex: 1, textAlign: 'left' }}>
+                        <h3 className="ct-bento-title" style={{ color: '#ffffff', textTransform: 'uppercase', letterSpacing: '0.5px', whiteSpace: 'nowrap' }}>Custom Design</h3>
+                        <p className="ct-bento-desc" style={{ color: 'rgba(255, 255, 255, 0.95)', maxWidth: '85%', fontSize: '0.88rem' }}>
+                          Tailored programs designed to bridge workforce gaps, precisely aligning curriculum with your organization's unique strategic objectives and goals.
+                        </p>
                       </div>
-                      <div className="icon-col" style={{ position: 'relative', zIndex: 6 }}>
-                        <div className="ct-bento-large-icon-themed sage-icon">{benefits[0].icon}</div>
+                      <div className="icon-col">
+                        <div className="ct-bento-icon-flat" style={{ color: '#00ffff', fontSize: '4.2rem' }}>
+                          <FontAwesomeIcon icon={faDraftingCompass} />
+                        </div>
                       </div>
                     </div>
                   </div>
 
-                  {/* 6. Global Certs - Professional Teal */}
+                  {/* 6. Global Certs */}
                   <div className="ct-bento-item bento-theme-teal">
                     <div className="ct-bento-img-wrapper">
-                      <img src={bentoCerts} alt="Global Certs" className="ct-bento-img-bg" />
-                      <div className="ct-bento-overlay"></div>
+                      <img src={bentoCerts} alt="Global Certs" className="ct-bento-img-bg" style={{ objectPosition: 'center' }} />
+                      <div className="ct-bento-overlay" style={{ background: 'linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 100%)' }}></div>
                     </div>
-                    <div className="ct-bento-card-content">
-                      <div className="ct-bento-icon-circle-styled teal-bg-icon">{benefits[5].icon}</div>
-                      <h3 className="ct-bento-title">{benefits[5].title}</h3>
-                      <p className="ct-bento-desc">{benefits[5].description}</p>
+                    <div className="ct-bento-card-content ct-bento-card-align-top">
+                      <div className="ct-bento-header-row" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <h3 className="ct-bento-title" style={{ color: '#ffffff', textTransform: 'uppercase', letterSpacing: '0.5px', whiteSpace: 'nowrap' }}>Global Certs</h3>
+                        <div className="ct-bento-icon-flat" style={{ color: '#ffd700' }}><FontAwesomeIcon icon={faAward} /></div>
+                      </div>
+                      <p className="ct-bento-desc" style={{ color: 'rgba(255, 255, 255, 0.95)', fontSize: '0.88rem' }}>
+                        Industry-recognized qualifications that validate expertise and boost workforce morale globally.
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -802,17 +834,19 @@ const CorporateTraining = () => {
 
                     {/* Gallery Navigation Controls for Stories - Split to sides */}
                     <div className="ct-s-nav-controls">
-                      {currentSuccessIndex > 0 && (
-                        <button className="ct-m-nav-btn prev-btn" onClick={() => scrollStories('prev')}>
-                          <FontAwesomeIcon icon={faChevronLeft} />
-                        </button>
-                      )}
+                      <button
+                        className={`ct-m-nav-btn prev-btn ${currentSuccessIndex === 0 ? 'faded' : ''}`}
+                        onClick={() => scrollStories('prev')}
+                      >
+                        <FontAwesomeIcon icon={faArrowLeft} />
+                      </button>
                       <div style={{ flex: 1 }}></div>
-                      {currentSuccessIndex < successStories.length - 1 && (
-                        <button className="ct-m-nav-btn next-btn" onClick={() => scrollStories('next')}>
-                          <FontAwesomeIcon icon={faChevronRight} />
-                        </button>
-                      )}
+                      <button
+                        className={`ct-m-nav-btn next-btn ${currentSuccessIndex === successStories.length - 1 ? 'faded' : ''}`}
+                        onClick={() => scrollStories('next')}
+                      >
+                        <FontAwesomeIcon icon={faArrowRight} />
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -868,7 +902,14 @@ const CorporateTraining = () => {
                                       {step.icon} <span>-</span>
                                     </div>
                                     <p className="ct-m-box-label">Primary Focus</p>
-                                    <h4 className="ct-m-box-text">Step Analysis</h4>
+                                    <h4 className="ct-m-box-text">
+                                      {index === 0 && "Aligning enterprise learning goals with technical workforce potential."}
+                                      {index === 1 && "Designing custom, modular learning paths for specific workforce gaps."}
+                                      {index === 2 && "Executing live, scenario-based modules with expert mentorship."}
+                                      {index === 3 && "Validating technical skills through hands-on industrial-grade labs."}
+                                      {index === 4 && "Measuring workforce impact through deep-dive KPI tracking."}
+                                      {index === 5 && "Maintaining long-term growth through professional strategic support."}
+                                    </h4>
                                   </div>
 
                                   <div className="ct-m-dash-box theme-orange">
@@ -892,13 +933,13 @@ const CorporateTraining = () => {
                   <div className="ct-m-nav-controls">
                     {currentStoryIndex > 0 && (
                       <button className="ct-m-nav-btn prev-btn" onClick={() => scrollMethodology('prev')}>
-                        <FontAwesomeIcon icon={faChevronLeft} />
+                        <FontAwesomeIcon icon={faArrowLeft} />
                       </button>
                     )}
                     <div style={{ flex: 1 }}></div>
                     {currentStoryIndex < processSteps.length - 1 && (
                       <button className="ct-m-nav-btn next-btn" onClick={() => scrollMethodology('next')}>
-                        <FontAwesomeIcon icon={faChevronRight} />
+                        <FontAwesomeIcon icon={faArrowRight} />
                       </button>
                     )}
                   </div>

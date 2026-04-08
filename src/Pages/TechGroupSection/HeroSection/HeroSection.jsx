@@ -18,11 +18,11 @@ const HeroSection = () => {
                 <div className="hero-content-wrapper">
                     <div className="hero-content">
                         {/* Feature badge - Vetra style */}
-                        <button type="button" className="hero-feature-badge">
+                        <Link to="/ourTeamPage" className="hero-feature-badge" style={{ textDecoration: 'none' }}>
                             <span className="hero-feature-badge__label">New feature</span>
                             <span className="hero-feature-badge__text">Check out the team dashboard</span>
                             <span className="hero-feature-badge__arrow">→</span>
-                        </button>
+                        </Link>
 
                         <h1 className="hero-title">Powered by Intelligence. </h1>
                         <h1 className="hero-title">Driven by Design.</h1>
@@ -55,7 +55,7 @@ const HeroSection = () => {
 
                             {/* Keep the internship link as internal navigation */}
                             <Link to="#internship" className="btn btn-secondary">
-                                Apply for Internship
+                                Join Academic Program
                             </Link>
 
                         </div>

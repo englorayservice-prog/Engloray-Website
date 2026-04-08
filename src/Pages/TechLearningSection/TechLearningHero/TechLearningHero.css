@@ -53,15 +53,14 @@
 /* Reusable Lime Pill Button */
 .tlh-pill-btn-lime {
     background: #d8ff4a;
-    /* Vibrant Lime Green */
     color: #0d121d;
     font-weight: 700;
-    font-size: 0.95rem;
-    padding: 0.5rem 0.6rem 0.5rem 1.4rem;
+    font-size: clamp(0.85rem, 0.9vw, 1.2rem);
+    padding: clamp(0.4rem, 0.5vw, 0.8rem) clamp(0.5rem, 0.6vw, 1rem) clamp(0.4rem, 0.5vw, 0.8rem) clamp(1rem, 1.2vw, 2rem);
     border-radius: 50px;
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: clamp(0.6rem, 0.8vw, 1.2rem);
     text-decoration: none;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(216, 255, 74, 0.3);
@@ -75,77 +74,70 @@
 
 .tlh-pill-icon {
     background: #111a2f;
-    /* Dark inner circle */
     color: #d8ff4a;
-    /* Lime icon */
-    width: 30px;
-    height: 30px;
+    width: clamp(26px, 2.5vw, 45px);
+    height: clamp(26px, 2.5vw, 45px);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.8rem;
+    font-size: clamp(0.7rem, 0.75vw, 1.1rem);
 }
 
 /* Headline */
 .tlh-peoplr-title {
     text-align: center;
     font-family: 'Poppins', sans-serif;
-    font-size: 4.5rem;
+    font-size: clamp(3rem, 5vw, 6.5rem);
     font-weight: 600;
     line-height: 1.1;
     letter-spacing: -1px;
     margin-bottom: 1rem;
     color: #ffffff;
     transform: translateY(-30px);
-    margin-top: -80px;
-
+    margin-top: clamp(-100px, -6vw, -60px);
 }
 
 /* Image Stage */
 .tlh-peoplr-stage {
     position: relative;
     width: 100%;
-    max-width: 1200px;
-    min-height: 500px;
+    max-width: clamp(900px, 80vw, 1500px);
+    min-height: clamp(420px, 38vw, 700px);
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    margin-bottom: -150px;
+    margin-bottom: clamp(-200px, -12vw, -110px);
 }
 
 .tlh-peoplr-image-wrapper {
     position: relative;
     width: 100%;
-    max-width: 1400px;
-    /* Center group size */
+    max-width: clamp(1000px, 90vw, 1500px);
     z-index: 20;
-    /* Keep higher than marquee z-index 10 */
 }
 
 .tlh-peoplr-students {
     width: 100%;
-    max-width: 800px;
-    margin-top: -250px;
+    max-width: clamp(580px, 56vw, 1050px);
+    margin-top: clamp(-320px, -20vw, -200px);
     margin-left: 10px;
-    /* instead of transform */
     height: auto;
     display: block;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     margin-bottom: 2rem;
-    /* Give space for marquee under the students' bottom inside the purple card */
 }
 
-/* Centered CTA Buttons (Just above the marquee at the bottom of the purple card) */
+/* Centered CTA Buttons */
 .tlh-center-cta-group {
     position: absolute;
-    bottom: 70px;
+    bottom: clamp(50px, 5vw, 120px);
     left: 50%;
-    margin-bottom: 230px;
-    margin-left: -200px;
+    margin-bottom: clamp(180px, 16vw, 260px);
+    margin-left: clamp(-250px, -16vw, -160px);
     display: flex;
-    gap: 1.5rem;
+    gap: clamp(1rem, 1.5vw, 2.5rem);
     z-index: 50;
     white-space: nowrap;
 }
@@ -153,14 +145,13 @@
 /* Floating Stat Cards (Glassmorphism Purple) */
 .tlh-float-card {
     position: absolute;
-    /* Deep translucent purple blending into background */
     background: rgba(56, 17, 196, 0.6);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    padding: 1.5rem;
-    width: 200px;
+    border-radius: clamp(16px, 1.5vw, 26px);
+    padding: clamp(1rem, 1.5vw, 2.5rem);
+    width: clamp(170px, 14vw, 300px);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
     z-index: 5;
 }
@@ -168,19 +159,19 @@
 .tlh-float-left {
     top: 50%;
     left: 4%;
-    margin-top: -300px;
-    margin-left: -200px;
+    margin-top: clamp(-440px, -28vw, -250px);
+    margin-left: clamp(-340px, -14vw, -130px);
     height: auto;
-    min-height: 170px;
+    min-height: clamp(160px, 16vw, 320px);
 }
 
 .tlh-float-right {
     top: 50%;
     right: 4%;
-    margin-top: -300px;
-    margin-right: -200px;
+    margin-top: clamp(-440px, -28vw, -250px);
+    margin-right: clamp(-340px, -14vw, -130px);
     height: auto;
-    min-height: 170px;
+    min-height: clamp(160px, 16vw, 320px);
 }
 
 .tlh-card-top-row {
@@ -196,20 +187,21 @@
 
 .tlh-huge-num {
     font-family: 'Outfit', sans-serif;
-    font-size: 2.8rem;
+    font-size: clamp(2rem, 3vw, 4.5rem);
     font-weight: 800;
     line-height: 1;
 }
 
 .tlh-huge-num sup {
-    font-size: 1.2rem;
+    font-size: clamp(0.9rem, 1vw, 1.6rem);
     font-weight: 700;
     top: -1em;
 }
 
 .tlh-card-desc {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.7);
+    font-size: clamp(0.82rem, 0.85vw, 1.4rem);
+    color: #ffffff;
+    font-weight: 600;
     line-height: 1.3;
     margin-top: 6px;
 }
@@ -234,13 +226,13 @@
 
 /* Small Stat Icons inside Floating Cards */
 .tlh-card-icon-pill {
-    width: 32px;
-    height: 32px;
+    width: clamp(28px, 2.8vw, 54px);
+    height: clamp(28px, 2.8vw, 54px);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.9rem;
+    font-size: clamp(0.8rem, 0.9vw, 1.4rem);
 }
 
 .lime-icon {
@@ -380,3 +372,178 @@
         margin-top: 2rem;
     }
 }
+
+/* Hero elements now use clamp() fluid scaling — no hard 1920px overrides needed.
+   Only the highlights card-extra inline style overrides remain below. */
+@media (min-width: 1920px) {
+    .tlh-card-extra {
+        color: rgba(255, 255, 255, 0.9) !important;
+        font-size: clamp(0.9rem, 0.9vw, 1.2rem) !important;
+        gap: clamp(8px, 0.8vw, 16px) !important;
+    }
+
+    /* Scaled Highlights for 1920px */
+    .tlh-peoplr-bottom-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2.5rem;
+        padding: 0 3rem 8rem 3rem;
+    }
+
+    .tlh-bottom-card {
+        padding: 4rem;
+        min-height: 500px;
+        border-radius: 30px;
+    }
+
+    .tlh-bcard-header {
+        margin-bottom: 2rem;
+    }
+
+    .tlh-bcard-header h3 {
+        font-size: 2.6rem;
+        line-height: 1.2;
+    }
+
+    .tlh-card-arrow {
+        font-size: 1.8rem;
+    }
+
+    .tlh-bottom-card p {
+        font-size: 1.35rem;
+        line-height: 1.8;
+        margin: 0 0 2.5rem 0;
+    }
+
+    .tlh-card-footer {
+        gap: 1.2rem;
+    }
+
+    .tlh-footer-pill {
+        font-size: 1.15rem;
+        padding: 0.8rem 1.6rem;
+    }
+
+    .tlh-edu-badge {
+        width: 48px;
+        height: 48px;
+        font-size: 1.25rem;
+    }
+
+    .tlh-icon-badges {
+        gap: 10px;
+    }
+    /* NOTE: highlights now use clamp() fluid scaling — 1920px overrides no longer needed */
+}
+
+/* Merged Highlights Styles — fluid scaling from 1024px → 1920px */
+.tlh-peoplr-bottom-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(1rem, 1.5vw, 2.5rem);
+    padding: 0 clamp(1.5rem, 3vw, 4rem) clamp(4rem, 6vw, 8rem) clamp(1.5rem, 3vw, 4rem);
+    margin-top: 0;
+    z-index: 10;
+    box-sizing: border-box;
+}
+
+.tlh-bottom-card {
+    background: #1c113b;
+    border-radius: clamp(14px, 1.5vw, 28px);
+    padding: clamp(1.2rem, 1.6vw, 2.8rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    min-height: clamp(180px, 18vw, 360px);
+}
+
+.tlh-bottom-card:hover {
+    transform: translateY(-8px);
+    background: #23164a;
+}
+
+.tlh-bcard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: clamp(1rem, 1.5vw, 2rem);
+}
+
+.tlh-bcard-header h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(1.2rem, 1.5vw, 2.6rem);
+    font-weight: 700;
+    margin: 0;
+    color: #ffffff;
+    line-height: 1.25;
+}
+
+.tlh-card-arrow {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: clamp(1rem, 1.2vw, 1.8rem);
+    transition: color 0.3s ease;
+}
+
+.tlh-bottom-card:hover .tlh-card-arrow {
+    color: #ffffff;
+}
+
+.tlh-bottom-card p {
+    font-size: clamp(0.8rem, 0.95vw, 1.35rem);
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.75;
+    margin: 0 0 clamp(0.5rem, 0.8vw, 1rem) 0;
+    flex-grow: 1;
+}
+
+.tlh-card-footer {
+    display: flex;
+    align-items: center;
+    gap: clamp(0.5rem, 0.8vw, 1.2rem);
+}
+
+.tlh-footer-pill {
+    font-size: clamp(0.72rem, 0.8vw, 1.15rem);
+    font-weight: 600;
+    padding: clamp(0.4rem, 0.6vw, 0.8rem) clamp(0.8rem, 1vw, 1.6rem);
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.lime-footer {
+    background: rgba(216, 255, 74, 0.15);
+    color: #d8ff4a;
+}
+
+.tlh-icon-badges {
+    display: flex;
+    align-items: center;
+    gap: clamp(5px, 0.5vw, 10px);
+}
+
+.tlh-edu-badge {
+    width: clamp(26px, 2.5vw, 48px);
+    height: clamp(26px, 2.5vw, 48px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(0.7rem, 0.8vw, 1.25rem);
+    color: #ffffff;
+}
+
+@media (max-width: 1024px) {
+    .tlh-peoplr-bottom-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .tlh-peoplr-bottom-grid {
+        grid-template-columns: 1fr;
+    }
+}
+

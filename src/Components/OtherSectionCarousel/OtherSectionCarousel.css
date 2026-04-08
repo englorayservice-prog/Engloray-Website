@@ -30,7 +30,7 @@
     display: flex;
     white-space: nowrap;
     will-change: transform;
-    animation: scroll-left 70s linear infinite;
+    animation: scroll-left 40s linear infinite;
 }
 
 /* Marquee Text Styling */
@@ -51,6 +51,7 @@
         font-size: 1.2rem;
         letter-spacing: 1.5px;
     }
+
     .scrolling-marquee-container {
         height: 40px;
         bottom: -20px;
@@ -121,7 +122,7 @@
 
 .compact-service-card {
     position: absolute;
-    height: 380px;
+    height: var(--card-height, 380px);
     width: 650px;
     max-width: 85%;
     border-radius: 20px;
@@ -255,15 +256,25 @@
     overflow: hidden;
 }
 
-.compact-card-image img {
+.zoom-image {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    transition: all 0.5s ease;
+    transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform: scale(0.95);
+    /* Slight inset for side cards to allow zoom-in room */
+    opacity: 0.8;
 }
 
-.compact-service-card.active:hover .compact-card-image img {
-    transform: scale(1.1);
+.compact-service-card.active .zoom-image {
+    transform: scale(var(--img-scale, 1.05));
+    /* Increased scale when it becomes active */
+    opacity: 1;
+}
+
+.compact-service-card.active:hover .zoom-image {
+    transform: scale(var(--img-hover-scale, 1.12));
+    /* More pronounced zoom on hover */
 }
 
 /* Default overlay (minimal info) */
@@ -298,20 +309,6 @@
 .compact-service-card.active:hover {
     transform: translate(-50%, -50%) scale(1.02);
     z-index: 12;
-}
-
-.compact-service-card.next:hover {
-    transform: translate(calc(-50% + 75%), -50%) scale(0.9);
-    opacity: 0.9;
-    filter: blur(0px);
-    z-index: 11;
-}
-
-.compact-service-card.prev:hover {
-    transform: translate(calc(-50% - 75%), -50%) scale(0.9);
-    opacity: 0.9;
-    filter: blur(0px);
-    z-index: 11;
 }
 
 .compact-service-card.hidden:hover {
@@ -412,13 +409,7 @@
         transform: translate(calc(-50% - 65%), -50%) scale(0.85);
     }
 
-    .compact-service-card.next:hover {
-        transform: translate(calc(-50% + 65%), -50%) scale(0.9);
-    }
 
-    .compact-service-card.prev:hover {
-        transform: translate(calc(-50% - 65%), -50%) scale(0.9);
-    }
 }
 
 @media (max-width: 1200px) {
@@ -439,13 +430,7 @@
         transform: translate(calc(-50% - 60%), -50%) scale(0.85);
     }
 
-    .compact-service-card.next:hover {
-        transform: translate(calc(-50% + 60%), -50%) scale(0.9);
-    }
 
-    .compact-service-card.prev:hover {
-        transform: translate(calc(-50% - 60%), -50%) scale(0.9);
-    }
 }
 
 @media (max-width: 1024px) {
@@ -471,13 +456,7 @@
         transform: translate(calc(-50% - 55%), -50%) scale(0.85);
     }
 
-    .compact-service-card.next:hover {
-        transform: translate(calc(-50% + 55%), -50%) scale(0.9);
-    }
 
-    .compact-service-card.prev:hover {
-        transform: translate(calc(-50% - 55%), -50%) scale(0.9);
-    }
 
     .carousel-header {
         margin-bottom: 35px;
@@ -531,7 +510,7 @@
         transform: translate(-50%, -50%) scale(1) !important;
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
     }
-    
+
     .compact-service-card.prev {
         transform: translate(calc(-50% - 85%), -50%) scale(0.8) !important;
         opacity: 0.3;
@@ -557,9 +536,10 @@
 
     .compact-card-content {
         padding: 15px;
-        transform: translateY(0); /* Always show on touch */
+        transform: translateY(0);
+        /* Always show on touch */
         opacity: 1;
-        background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
     }
 
     .compact-card-text h3 {
@@ -664,7 +644,7 @@
 @media (prefers-reduced-motion: reduce) and (max-width: 768px) {
 
     .compact-service-card,
-    .compact-card-image img,
+    .zoom-image,
     .compact-card-content,
     .compact-card-cta {
         transition: none;

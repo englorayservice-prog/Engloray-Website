@@ -14,14 +14,10 @@
 .clients-title {
   text-align: center;
   font-size: 2.5rem;
-  font-weight: 100;
+  font-weight: 700;
   margin-bottom: 50px;
-  background-color: #ff0000;
-  font-family: 'HEXCO', sans-serif;
-  /* background:(#ff0000) !important; */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #ff0000;
+  font-family: 'Poppins', sans-serif;
 }
 
 .marquee-container {

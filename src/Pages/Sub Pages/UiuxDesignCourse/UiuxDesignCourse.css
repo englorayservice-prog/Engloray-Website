@@ -320,129 +320,325 @@
   box-shadow: 0 8px 25px rgba(26, 115, 232, 0.3);
 }
 
-/* Course Outcomes */
-.uic-outcomes-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
-  margin-top: 40px;
+
+/* Course Outcomes - Numbered Grid Section */
+.dgm-outcomes-numbered {
+  background-color: #ffffff;
+  padding: 60px 0;
+  overflow: hidden;
 }
 
-.uic-outcome-card {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 15px;
-  padding: 30px;
-  text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+.dgm-outcomes-header-row {
+  max-width: 100%;
+  /* remove center constraint */
+  margin-left: 0;
+  /* remove auto centering */
+  margin-right: 0;
+  padding-left: 0;
+  /* remove left padding */
+}
+
+.dgm-outcomes-title-col {
+  flex: 1;
+  text-align: left;
+  margin-left: -50px;
+  /* break container padding */
+}
+
+.dgm-outcomes-main-title {
+  position: relative;
+  top: 40px;
+  left: 80px;
+  /* cancel container padding */
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #111111;
+  line-height: 1.1;
+  margin: 0;
+  text-align: left;
+  letter-spacing: -1px;
+}
+
+.dgm-outcomes-desc-col {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  /* move whole block to right */
+  align-items: flex-start;
+}
+
+.dgm-outcomes-top-desc {
+  margin: 0;
+  max-width: 500px;
+  width: 100%;
+
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #555555;
+  line-height: 1.6;
+
+  text-align: left !important;
+  /* keep text left aligned */
+}
+
+.dgm-outcomes-numbered-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: 1400px;
+  margin: 40px auto 0;
+  padding: 0 20px;
+}
+
+.dgm-outcome-numbered-card {
+  top: 30px;
+  background: transparent;
+  border-radius: 28px;
   transition: all 0.3s ease;
   position: relative;
-  overflow: hidden;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: uic-outcome-appear 0.6s ease forwards;
-}
-
-@keyframes uic-outcome-appear {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.uic-outcome-icon-wrapper {
-  position: relative;
-  display: inline-block;
-  margin-bottom: 20px;
-}
-
-.uic-outcome-icon {
-  font-size: 3rem;
-  position: relative;
-  z-index: 2;
-  animation: uic-icon-float 3s ease-in-out infinite;
-  color: var(--uic-blue);
-}
-
-.uic-outcome-icon svg {
-  font-size: 2.5rem;
-  color: var(--uic-blue);
-}
-
-@keyframes uic-icon-float {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-.uic-outcome-icon-glow {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80px;
-  height: 80px;
-  background: rgba(26, 115, 232, 0.2);
-  border-radius: 50%;
-  filter: blur(20px);
-  animation: uic-glow-pulse 2s ease-in-out infinite;
-}
-
-@keyframes uic-glow-pulse {
-
-  0%,
-  100% {
-    opacity: 0.5;
-    transform: translate(-50%, -50%) scale(1);
-  }
-
-  50% {
-    opacity: 0.8;
-    transform: translate(-50%, -50%) scale(1.2);
-  }
-}
-
-.uic-outcome-title {
-  font-family: 'HEXCO', sans-serif;
-  font-weight: 100;
-  font-size: 1.3rem;
-  color: white;
-  margin-bottom: 15px;
-  letter-spacing: 1px;
-}
-
-.uic-outcome-desc {
-  font-size: 0.95rem;
-  color: #cccccc;
-  line-height: 1.6;
-  letter-spacing: 0.5px;
-}
-
-.uic-outcome-hover-effect {
-  position: absolute;
-  top: 0;
-  left: 0;
+  min-height: 180px;
+  /* was 230px */
+  padding: 18px;
+  /* was 25px */
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  height: 100%;
-  background: linear-gradient(45deg, transparent, rgba(26, 115, 232, 0.1), transparent);
-  transform: translateX(-100%);
-  transition: transform 0.6s ease;
+  transform: scale(1.03);
 }
 
-.uic-outcome-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--uic-blue);
-  box-shadow: 0 15px 35px rgba(26, 115, 232, 0.2);
+.dgm-outcome-numbered-card.white-bg {
+  background: transparent;
+  border: 1px solid #000000;
 }
 
-.uic-outcome-card:hover .uic-outcome-hover-effect {
-  transform: translateX(100%);
+.dgm-outcome-numbered-card.black-bg {
+  background: #1a1a2e;
+  border: none;
+}
+
+.dgm-outcome-numbered-card.black-bg .dgm-outcome-numbered-title,
+.dgm-outcome-numbered-card.black-bg .dgm-outcome-numbered-desc {
+  color: #ffffff;
+}
+
+.dgm-outcome-numbered-card.black-bg .dgm-outcome-numbered-icon {
+  color: #ffffff;
+}
+
+/* Left side - Number and Icon */
+.dgm-outcome-card-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 25px;
+  flex-shrink: 0;
+  min-width: 70px;
+  margin-top: 0;
+  transform: translate(8px, -55px);
+}
+
+.dgm-outcome-card-number {
+  margin-top: 50px;
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #cbd5e1;
+  letter-spacing: 1.5px;
+  font-family: monospace;
+  line-height: 1;
+}
+
+.dgm-outcome-numbered-card.black-bg .dgm-outcome-card-number {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.dgm-outcome-numbered-icon {
+  font-size: 3rem;
+  color: #3D52D9;
+  transition: transform 0.3s ease;
+  transform: translateX(10px);
+}
+
+.dgm-outcome-numbered-card:hover .dgm-outcome-numbered-icon {
+  transform: scale(1.05);
+}
+
+/* Right side - Title and Description */
+.dgm-outcome-card-right {
+  flex: 1;
+  text-align: left;
+  margin-top: 0;
+  transform: translateY(-25px);
+}
+
+.dgm-outcome-numbered-title {
+  font-family: "inter", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #111827;
+  line-height: 1.3;
+  margin-top: 15px;
+  /* was 30px */
+  margin-bottom: 6px;
+  /* was 10px */
+}
+
+.dgm-outcome-numbered-desc {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: #4b5563;
+  transform: translateY(10px);
+}
+
+.dgm-outcome-numbered-card.black-bg .dgm-outcome-numbered-desc {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* Content wrapper - Left/Right row layout */
+.dgm-outcome-card-content-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex: 1;
+  width: 100%;
+  margin-top: 30px;
+  /* was 50px */
+  gap: 15px;
+  /* was 20px */
+}
+
+/* Container */
+.dgm-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  overflow: visible;
+}
+
+/* Section */
+.dgm-section {
+  padding: 60px 0;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .dgm-outcomes-header-row {
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+
+  .dgm-outcomes-title-col {
+    width: 100%;
+    text-align: left;
+    margin-left: 0;
+  }
+
+  .dgm-outcomes-desc-col {
+    width: 100%;
+    text-align: left;
+    justify-content: flex-start;
+  }
+
+  .dgm-outcomes-top-desc {
+    text-align: left;
+    max-width: 100%;
+    right: 0;
+  }
+
+  .dgm-outcomes-main-title {
+    font-size: 2.8rem;
+    left: 0;
+  }
+
+  .dgm-outcomes-numbered-grid {
+    gap: 28px;
+  }
+
+  .dgm-outcome-numbered-card {
+    min-height: 280px;
+    padding: 24px;
+  }
+
+  .dgm-outcome-numbered-title {
+    font-size: 1.1rem;
+  }
+
+  .dgm-outcome-numbered-desc {
+    font-size: 0.75rem;
+  }
+
+  .dgm-outcome-card-number {
+    font-size: 1.75rem;
+  }
+
+  .dgm-outcome-numbered-icon {
+    font-size: 1.75rem;
+  }
+
+  .dgm-outcome-card-left {
+    margin-left: 25px;
+  }
+
+  .dgm-outcome-card-right {
+    margin-top: 35px;
+  }
+}
+
+@media (max-width: 992px) {
+  .dgm-outcomes-numbered-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .dgm-outcomes-main-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .dgm-outcomes-numbered-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .dgm-outcome-numbered-card {
+    min-height: auto;
+  }
+
+  .dgm-outcome-card-number {
+    font-size: 1.5rem;
+  }
+
+  .dgm-outcome-numbered-icon {
+    font-size: 1.5rem;
+  }
+
+  .dgm-outcome-numbered-title {
+    font-size: 1rem;
+  }
+
+  .dgm-outcome-numbered-desc {
+    font-size: 0.7rem;
+  }
+
+  .dgm-outcome-card-content-wrapper {
+    gap: 16px;
+  }
+
+  .dgm-outcome-card-left {
+    margin-left: 20px;
+  }
+
+  .dgm-outcome-card-right {
+    margin-top: 30px;
+  }
+
+  .dgm-outcomes-main-title {
+    font-size: 2rem;
+  }
 }
 
 /* 6-Month Curriculum Slider - UPDATED NO SCROLL VERSION */
@@ -767,108 +963,235 @@
   transform: translateX(100%);
 }
 
-/* Benefits Section */
-.uic-benefits-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-  margin-top: 40px;
-}
-
-.uic-benefit-card {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 15px;
-  padding: 30px;
-  text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+/* New Benefit Card Styling */
+.dgm-new-benefit-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  padding: 18px;
+  width: 190px;
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
   transition: all 0.3s ease;
   position: relative;
-  overflow: hidden;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: uic-outcome-appear 0.6s ease forwards;
 }
 
-.uic-benefit-icon-wrapper {
-  position: relative;
-  display: inline-block;
-  margin-bottom: 20px;
+.dgm-new-benefit-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+  border-color: rgba(61, 82, 217, 0.2);
+  z-index: 10;
 }
 
-.uic-benefit-icon {
-  font-size: 2.5rem;
-  position: relative;
-  z-index: 2;
-  animation: uic-icon-float 3s ease-in-out infinite;
-  color: var(--uic-blue);
-}
-
-.uic-benefit-icon svg {
-  font-size: 2.2rem;
-  color: var(--uic-blue);
-}
-
-.uic-benefit-icon-glow {
+/* Floating Cards - Independent Positioning - SLIGHTLY INCREASED HEIGHT */
+.dgm-floating-benefit-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  padding: 20px;
+  width: 300px;
+  min-height: 210px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s ease;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 70px;
-  height: 70px;
-  background: rgba(26, 115, 232, 0.2);
-  border-radius: 50%;
-  filter: blur(15px);
-  animation: uic-glow-pulse 2s ease-in-out infinite;
+  z-index: 10;
 }
 
-.uic-benefit-title {
-  font-family: 'HEXCO', sans-serif;
-  font-weight: 100;
-  font-size: 1.2rem;
-  color: white;
-  margin-bottom: 15px;
-  letter-spacing: 1px;
-  line-height: 1.3;
+.dgm-floating-benefit-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 25px 55px rgba(0, 0, 0, 0.18);
+  border-color: rgba(61, 82, 217, 0.3);
+  z-index: 20;
 }
 
-.uic-benefit-desc {
-  font-size: 0.9rem;
-  color: #cccccc;
+/* Left Floating Card - Positioned at bottom left */
+.dgm-floating-card-left {
+  left: 3%;
+  bottom: 50px;
+}
+
+/* Right Floating Card - Positioned at bottom right */
+.dgm-floating-card-right {
+  right: 3%;
+  bottom: 50px;
+}
+
+/* Enlarged Icon for Floating Cards */
+.dgm-floating-benefit-card .dgm-new-icon {
+  width: 50px;
+  height: 35px;
+  border-radius: 16px;
+  margin-bottom: 14px;
+  font-size: 1.3rem;
+}
+
+/* Enlarged Title for Floating Cards */
+.dgm-floating-benefit-card .dgm-new-content h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+/* Enlarged Description for Floating Cards */
+.dgm-floating-benefit-card .dgm-new-content p {
+  font-size: 0.85rem;
   line-height: 1.5;
-  letter-spacing: 0.5px;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
 }
 
-.uic-benefit-hover-effect {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(45deg, transparent, rgba(26, 115, 232, 0.1), transparent);
-  transform: translateX(-100%);
-  transition: transform 0.6s ease;
+/* Regular Card Icon */
+.dgm-new-icon {
+  width: 45px;
+  height: 30px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+  color: #222;
 }
 
-.uic-benefit-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--uic-blue);
-  box-shadow: 0 15px 35px rgba(26, 115, 232, 0.2);
-  background: rgba(255, 255, 255, 0.08);
+.dgm-new-content h3 {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #111111;
+  margin-bottom: 8px;
+  line-height: 1.25;
+  text-align: left;
 }
 
-.uic-benefit-card:hover .uic-benefit-hover-effect {
-  transform: translateX(100%);
+.dgm-new-content p {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 0.78rem;
+  color: #666666;
+  line-height: 1.5;
+  margin: 0;
+  text-align: left;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-.uic-benefit-card:hover .uic-benefit-icon {
-  transform: scale(1.1);
+/* Container */
+.dgm-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  overflow: visible;
+  position: relative;
 }
 
-.uic-benefit-card:hover .uic-benefit-icon-glow {
-  background: rgba(26, 115, 232, 0.3);
-  transform: translate(-50%, -50%) scale(1.2);
+/* Section */
+.dgm-section {
+  padding: 60px 0;
 }
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .dgm-benefits-title {
+    font-size: 3rem;
+  }
+
+  .dgm-floating-card-left {
+    left: 2%;
+    bottom: -40px;
+  }
+
+  .dgm-floating-card-right {
+    right: 2%;
+    bottom: -40px;
+  }
+
+  .dgm-floating-benefit-card {
+    width: 260px;
+    min-height: 190px;
+    padding: 16px;
+  }
+
+  .dgm-floating-benefit-card .dgm-new-icon {
+    width: 45px;
+    height: 32px;
+    font-size: 1.2rem;
+  }
+
+  .dgm-floating-benefit-card .dgm-new-content h3 {
+    font-size: 1rem;
+  }
+
+  .dgm-floating-benefit-card .dgm-new-content p {
+    font-size: 0.8rem;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+  }
+}
+
+@media (max-width: 992px) {
+  .dgm-benefits-title {
+    font-size: 2.5rem;
+    white-space: normal;
+  }
+
+  .dgm-benefits-row,
+  .dgm-row-5,
+  .dgm-row-3,
+  .dgm-row-2 {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .dgm-new-benefit-card {
+    width: calc(33.33% - 10px);
+    max-width: 200px;
+  }
+
+  /* Hide floating cards on tablet */
+  .dgm-floating-benefit-card {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .dgm-benefits-title {
+    font-size: 2rem;
+  }
+
+  .dgm-benefits-staggered {
+    gap: 15px;
+  }
+
+  .dgm-new-benefit-card {
+    width: calc(50% - 10px);
+    min-height: 150px;
+  }
+}
+
+@media (max-width: 576px) {
+  .dgm-new-benefit-card {
+    width: calc(50% - 10px);
+  }
+}
+
+@media (max-width: 480px) {
+  .dgm-benefits-title {
+    font-size: 1.5rem;
+  }
+
+  .dgm-new-benefit-card {
+    width: 100%;
+    min-height: auto;
+  }
+}
+
 
 /* Certificate Template Section */
 .uic-certificate-single {
@@ -1351,221 +1674,379 @@
   letter-spacing: 0.5px;
 }
 
-/* Enrollment Section */
-.uic-enrollment-section-dark {
-  margin-top: 50px;
-  padding: 35px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 15px;
-  text-align: center;
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  position: relative;
-  z-index: 2;
-}
-
-.uic-enrollment-title-dark {
-  font-family: 'HEXCO', sans-serif;
-  font-weight: 100;
-  font-size: 1.8rem;
-  margin-bottom: 12px;
-  letter-spacing: 2px;
-}
-
-.uic-enrollment-subtitle-dark {
-  font-size: 1rem;
-  margin-bottom: 25px;
-  opacity: 0.9;
-  letter-spacing: 0.5px;
-}
-
-.uic-enrollment-cta-dark {
-  text-align: center;
-}
-
-.uic-enrollment-btn-large-dark {
-  background: var(--uic-blue);
-  color: white;
-  border: none;
-  padding: 22px 50px;
-  font-family: 'HEXCO', sans-serif;
-  font-weight: 100;
-  font-size: 1.2rem;
-  border-radius: 10px;
-  cursor: pointer;
-  letter-spacing: 2px;
-  transition: all 0.3s ease;
-  margin-bottom: 12px;
-  display: inline-block;
-  position: relative;
-  z-index: 2;
+/* Single Black Container for Enroll Section */
+.uic-single-enroll-container {
+  background: linear-gradient(135deg, #0a0a0a, #000);
+  border: 1px solid rgba(61, 82, 217, 0.3);
+  border-radius: 40px;
   display: flex;
+  gap: 60px;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
+  justify-content: space-between;
+  margin-top: 60px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+  max-width: 1600px;
+  width: 95%;
+  height: 480px;
   margin-left: auto;
   margin-right: auto;
+  overflow: visible;
+  padding: 0 60px;
 }
 
-.uic-enrollment-btn-large-dark svg {
-  font-size: 1.1rem;
-  color: white;
-}
-
-.uic-enrollment-btn-large-dark:hover {
-  background: var(--uic-blue-dark);
-  transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 15px 35px rgba(26, 115, 232, 0.3);
-}
-
-.uic-cta-note-dark {
-  font-size: 0.85rem;
-  opacity: 0.8;
-  letter-spacing: 0.5px;
-}
-
-/* Expanded Enrollment Form */
-.uic-enrollment-form-expanded-dark {
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 15px;
-  padding: 35px;
-  max-width: 700px;
-  margin: 0 auto;
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  animation: uic-form-expand 0.5s ease;
-  position: relative;
-  z-index: 2;
-}
-
-@keyframes uic-form-expand {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.uic-form-header-expanded-dark {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 25px;
-  padding-bottom: 18px;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-}
-
-.uic-form-header-expanded-dark h4 {
-  font-family: 'HEXCO', sans-serif;
-  font-weight: 100;
-  font-size: 1.4rem;
-  color: white;
-  letter-spacing: 1px;
-}
-
-.uic-form-close-btn-dark {
-  background: transparent;
-  border: none;
-  color: #cccccc;
-  font-size: 1.6rem;
-  cursor: pointer;
-  width: 35px;
-  height: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  transition: background 0.2s ease;
-}
-
-.uic-form-close-btn-dark:hover {
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.uic-form-grid-expanded-dark {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 18px;
-  margin-bottom: 25px;
-}
-
-.uic-form-group-expanded-dark {
+/* Left Side Content - Vertically Centered with slight right shift */
+.uic-enroll-left-content {
+  flex: 1;
+  text-align: left;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  justify-content: center;
+  height: 100%;
+  padding-left: 40px;
+  transform: translateX(17%);
 }
 
-.uic-form-group-expanded-dark label {
-  font-family: 'HEXCO', sans-serif;
-  font-weight: 100;
-  font-size: 13px;
-  color: #cccccc;
-  letter-spacing: 0.5px;
+.uic-enroll-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 20px;
+  margin-top: 0;
+  line-height: 1.2;
 }
 
-.uic-form-group-expanded-dark input,
-.uic-form-group-expanded-dark select {
-  padding: 14px;
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
-  font-family: 'Aldrich', monospace;
-  font-weight: 100;
+.uic-enroll-subtitle {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.3rem;
+  margin-top: 30px;
+  line-height: 1.5;
+}
+
+.uic-enroll-note {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 10px;
+}
+
+/* Right Side Form - Vertically Centered with wrapper */
+.uic-enroll-right-form {
+  flex: 2;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  transform: translateX(17%);
+}
+
+.uic-enroll-form-wrapper {
+  width: 70%;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.uic-enroll-form-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  transform: translateY(-16px);
+  text-align: left;
+  letter-spacing: -0.5px;
+}
+
+.uic-enroll-form {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  width: 100%;
+}
+
+.uic-enroll-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  width: 100%;
+}
+
+.uic-enroll-form-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.uic-enroll-form-group label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: left;
+}
+
+.uic-enroll-form-group input,
+.uic-enroll-form-group select {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 14px;
+  padding: 14px 16px;
   font-size: 0.95rem;
   color: white;
-  letter-spacing: 0.5px;
-  transition: border 0.3s ease;
-  background: rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  text-align: left;
 }
 
-.uic-form-group-expanded-dark select {
-  appearance: none;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-  background-repeat: no-repeat;
-  background-position: right 15px center;
-  background-size: 16px;
-}
-
-.uic-form-group-expanded-dark input:focus,
-.uic-form-group-expanded-dark select:focus {
+.uic-enroll-form-group input:focus,
+.uic-enroll-form-group select:focus {
   outline: none;
-  border-color: var(--uic-blue);
-  box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.2);
+  border-color: #3D52D9;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 0 3px rgba(61, 82, 217, 0.3);
 }
 
-.uic-submit-btn-expanded-dark {
-  width: 100%;
-  background: var(--uic-blue);
+.uic-enroll-form-group input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.uic-enroll-form-group select {
+  cursor: pointer;
+  text-align: left;
+}
+
+.uic-enroll-form-group select option {
+  background: #1a1a2e;
+  color: white;
+  padding: 10px;
+  text-align: left;
+}
+
+/* Submit Button */
+.uic-enroll-submit-btn {
+  background: linear-gradient(135deg, #3D52D9, #2E3FA3);
   color: white;
   border: none;
-  padding: 18px;
-  border-radius: 10px;
-  font-family: 'HEXCO', sans-serif;
-  font-weight: 100;
-  font-size: 1.1rem;
+  border-radius: 50px;
+  padding: 16px 28px;
+  font-size: 0.95rem;
+  font-weight: 700;
   cursor: pointer;
-  letter-spacing: 2px;
   transition: all 0.3s ease;
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
+  width: 100%;
+  height: 50px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 20px;
 }
 
-.uic-submit-btn-expanded-dark svg {
-  font-size: 1.1rem;
-  color: white;
+.uic-enroll-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(61, 82, 217, 0.4);
+  background: linear-gradient(135deg, #4A61FF, #3D52D9);
 }
 
-.uic-submit-btn-expanded-dark:hover {
-  background: var(--uic-blue-dark);
-  transform: translateY(-3px);
-  box-shadow: 0 12px 25px rgba(26, 115, 232, 0.3);
+/* Container width increase */
+.uic-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  overflow: visible;
+}
+
+/* Ensure body and html allow full visibility */
+.uic-page {
+  overflow-x: visible;
+}
+
+/* Make sure the section doesn't cut off content */
+.uic-dark-enrollment-FIXED {
+  background: #ffffff !important;
+  padding: 80px 0;
+  position: relative;
+  overflow: visible;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .uic-single-enroll-container {
+    padding: 0 40px;
+    gap: 50px;
+  }
+
+  .uic-enroll-title {
+    font-size: 1.8rem;
+  }
+
+  .uic-enroll-form-wrapper {
+    width: 90%;
+  }
+
+  .uic-enroll-left-content {
+    padding-left: 20px;
+    transform: translateX(10px);
+  }
+
+  .uic-enroll-form {
+    gap: 30px;
+  }
+
+  .uic-enroll-form-grid {
+    gap: 25px;
+  }
+
+  .uic-enroll-form-group {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 992px) {
+  .uic-single-enroll-container {
+    flex-direction: column;
+    gap: 35px;
+    padding: 40px;
+    height: auto;
+    min-height: 500px;
+  }
+
+  .uic-enroll-left-content {
+    flex: 1;
+    width: 100%;
+    text-align: center;
+    height: auto;
+    justify-content: flex-start;
+    padding-left: 0;
+    transform: translateX(0);
+  }
+
+  .uic-enroll-right-form {
+    flex: 1;
+    width: 100%;
+    height: auto;
+    justify-content: flex-start;
+    transform: translateX(0);
+  }
+
+  .uic-enroll-form-wrapper {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .uic-enroll-title {
+    font-size: 1.6rem;
+    margin-top: 0;
+  }
+
+  .uic-container {
+    padding: 0 15px;
+  }
+
+  .uic-enroll-form {
+    gap: 28px;
+  }
+
+  .uic-enroll-form-grid {
+    gap: 20px;
+  }
+
+  .uic-enroll-form-group {
+    gap: 10px;
+  }
+
+  .uic-enroll-form-title {
+    text-align: left;
+  }
+}
+
+@media (max-width: 768px) {
+  .uic-single-enroll-container {
+    padding: 30px 25px;
+    gap: 30px;
+  }
+
+  .uic-enroll-form-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .uic-enroll-title {
+    font-size: 1.4rem;
+  }
+
+  .uic-enroll-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .uic-enroll-form-title {
+    font-size: 1.3rem;
+    text-align: left;
+  }
+
+  .uic-enroll-form {
+    gap: 25px;
+  }
+
+  .uic-enroll-form-group input,
+  .uic-enroll-form-group select {
+    padding: 12px 14px;
+    font-size: 0.9rem;
+  }
+
+  .uic-enroll-submit-btn {
+    padding: 12px 24px;
+    font-size: 0.85rem;
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .uic-single-enroll-container {
+    padding: 25px 20px;
+  }
+
+  .uic-enroll-title {
+    font-size: 1.2rem;
+  }
+
+  .uic-enroll-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .uic-enroll-note {
+    font-size: 0.75rem;
+  }
+
+  .uic-enroll-form-title {
+    font-size: 1.2rem;
+  }
+
+  .uic-enroll-form-grid {
+    gap: 15px;
+  }
+
+  .uic-enroll-form {
+    gap: 20px;
+  }
+
+  .uic-enroll-form-group {
+    gap: 8px;
+  }
+
+  .uic-enroll-form-group input,
+  .uic-enroll-form-group select {
+    padding: 10px 12px;
+    font-size: 0.85rem;
+  }
+
+  .uic-enroll-submit-btn {
+    padding: 10px 20px;
+    font-size: 0.8rem;
+    margin-top: 12px;
+  }
 }
 
 /* Success Toast */

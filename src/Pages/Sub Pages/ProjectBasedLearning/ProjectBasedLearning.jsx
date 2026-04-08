@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './ProjectBasedLearning.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -40,7 +40,8 @@ import {
   faShoppingCart, faShoppingBag, faStore,
 
   // Bug/Testing Icons
-  faBug, faExclamationTriangle, faSearch,
+  faBug, faExclamationTriangle, faSearch, faUserNinja, faUserAstronaut, faUserSecret,
+  faChevronLeft,
 
   // Briefcase for Hero Section
   faBriefcase,
@@ -70,17 +71,136 @@ import { Helmet } from 'react-helmet';
 import studentPurpleBG from '../../../assets/images/student_purple_bg.png';
 import studentYellowBG from '../../../assets/images/student_yellow_bg.png';
 import studentRedBG from '../../../assets/images/student_red_bg.png';
+import taskImage from '../../../assets/task.jpeg';
+import ecomImage from '../../../assets/ecom.jpeg';
+import socialImage from '../../../assets/social.jpeg';
+import aiAssistantImage from '../../../assets/aiassistant.jpeg';
+import healthcareImage from '../../../assets/erp_dashboard_analytics.png';
+import fintechImage from '../../../assets/crmbg.png';
 
 const ProjectBasedLearning = () => {
   const [showToast, setShowToast] = useState(false);
-  const [showAllProjects, setShowAllProjects] = useState(false);
 
-  // WhatsApp configuration
-  const whatsappNumber = "6381759909";
-  const whatsappMessage = "Hello! I'm interested in the project-based learning program. Can we discuss project options?";
-  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+  // Project Categories
+  const projectCategories = [
+    {
+      id: 1,
+      title: "E-Commerce Platform",
+      bgImage: ecomImage,
+      imageClass: "spbl-custom-zoom",
+      duration: "8 Weeks",
+      level: "Intermediate",
+      icon: faShoppingCart,
+      iconColor: "#3B82F6",
+      description: "Build a complete e-commerce solution with payment gateway, admin panel, and inventory management",
+      technologies: ["React", "Node.js", "MongoDB", "Stripe API"],
+      deliverables: [
+        "Fully functional e-commerce site",
+        "Admin dashboard",
+        "Payment integration",
+        "Product catalog system"
+      ],
+      mentorCount: "3 Project Experts",
+      complexity: "Advanced"
+    },
+    {
+      id: 2,
+      title: "Social Media App",
+      bgImage: socialImage,
+      imageClass: "spbl-custom-zoom",
+      duration: "6 Weeks",
+      level: "Beginner to Intermediate",
+      icon: faUsers,
+      iconColor: "#60A5FA",
+      description: "Create a social networking application with real-time messaging and user profiles",
+      technologies: ["React Native", "Firebase", "WebSockets"],
+      deliverables: [
+        "Mobile app with user auth",
+        "Real-time chat",
+        "Photo sharing",
+        "User profile system"
+      ],
+      mentorCount: "2 Mobile Experts",
+      complexity: "Intermediate"
+    },
+    {
+      id: 3,
+      title: "AI Chatbot Assistant",
+      bgImage: aiAssistantImage,
+      duration: "10 Weeks",
+      level: "Advanced",
+      icon: faRobot,
+      iconColor: "#93C5FD",
+      description: "Develop an intelligent chatbot using NLP and machine learning algorithms",
+      technologies: ["Python", "TensorFlow", "NLTK", "FastAPI"],
+      deliverables: [
+        "Trained ML model",
+        "REST API for chatbot",
+        "Web interface",
+        "Integration examples"
+      ],
+      mentorCount: "4 AI Specialists",
+      complexity: "Expert"
+    },
+    {
+      id: 4,
+      title: "Task Management System",
+      bgImage: taskImage,
+      duration: "5 Weeks",
+      level: "Beginner",
+      icon: faTasks,
+      iconColor: "#1D4ED8",
+      description: "Build a comprehensive task management application with team collaboration features",
+      technologies: ["Vue.js", "Express", "PostgreSQL"],
+      deliverables: [
+        "Task CRUD operations",
+        "User authentication",
+        "Team management",
+        "Real-time updates"
+      ],
+      mentorCount: "2 Full-Stack Mentors",
+      complexity: "Beginner"
+    },
+    {
+      id: 5,
+      title: "Healthcare Management",
+      bgImage: healthcareImage,
+      duration: "12 Weeks",
+      level: "Advanced",
+      icon: faNetworkWired,
+      iconColor: "#ef4444",
+      description: "Develop a full-scale healthcare platform for patient tracking, digital billing, and clinic management.",
+      technologies: ["React", "Node.js", "PostgreSQL", "OAuth"],
+      deliverables: [
+        "Patient tracking system",
+        "Billing & Invoice generator",
+        "Medical records security",
+        "Doctor scheduling portal"
+      ],
+      mentorCount: "3 Healthcare Experts",
+      complexity: "Advanced"
+    },
+    {
+      id: 6,
+      title: "FinTech Dashboard",
+      bgImage: fintechImage,
+      duration: "10 Weeks",
+      level: "Expert",
+      icon: faChartLine,
+      iconColor: "#fbbf24",
+      description: "Create a professional financial technology dashboard with real-time data visualization and projections.",
+      technologies: ["React", "Express", "D3.js", "Chart.js"],
+      deliverables: [
+        "Interactive financial charts",
+        "Real-time currency rates",
+        "Transaction analytics",
+        "Smart Budget tracker"
+      ],
+      mentorCount: "4 FinTech Mentors",
+      complexity: "Expert"
+    }
+  ];
 
-  // Project Experts Data
   const projectExperts = [
     {
       id: 1,
@@ -136,7 +256,7 @@ const ProjectBasedLearning = () => {
       icon: faRobot,
       badge: "AI Master",
       badgeIcon: faBrain,
-      color: "#EF4444" // Red
+      color: "#3B82F6" // Blue
     },
     {
       id: 5,
@@ -150,85 +270,50 @@ const ProjectBasedLearning = () => {
       icon: faCertificate,
       badge: "Branding Pro",
       badgeIcon: faRibbon,
-      color: "#F59E0B" // Amber
+      color: "#3B82F6" // Amber
     }
   ];
 
-  // Project Categories
-  const projectCategories = [
-    {
-      id: 1,
-      title: "E-Commerce Platform",
-      duration: "8 Weeks",
-      level: "Intermediate",
-      icon: faShoppingCart,
-      iconColor: "#D4A017",
-      description: "Build a complete e-commerce solution with payment gateway, admin panel, and inventory management",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe API"],
-      deliverables: [
-        "Fully functional e-commerce site",
-        "Admin dashboard",
-        "Payment integration",
-        "Product catalog system"
-      ],
-      mentorCount: "3 Project Experts",
-      complexity: "Advanced"
-    },
-    {
-      id: 2,
-      title: "Social Media App",
-      duration: "6 Weeks",
-      level: "Beginner to Intermediate",
-      icon: faUsers,
-      iconColor: "#FFD700",
-      description: "Create a social networking application with real-time messaging and user profiles",
-      technologies: ["React Native", "Firebase", "WebSockets"],
-      deliverables: [
-        "Mobile app with user auth",
-        "Real-time chat",
-        "Photo sharing",
-        "User profile system"
-      ],
-      mentorCount: "2 Mobile Experts",
-      complexity: "Intermediate"
-    },
-    {
-      id: 3,
-      title: "AI Chatbot Assistant",
-      duration: "10 Weeks",
-      level: "Advanced",
-      icon: faRobot,
-      iconColor: "#E6BE8A",
-      description: "Develop an intelligent chatbot using NLP and machine learning algorithms",
-      technologies: ["Python", "TensorFlow", "NLTK", "FastAPI"],
-      deliverables: [
-        "Trained ML model",
-        "REST API for chatbot",
-        "Web interface",
-        "Integration examples"
-      ],
-      mentorCount: "4 AI Specialists",
-      complexity: "Expert"
-    },
-    {
-      id: 4,
-      title: "Task Management System",
-      duration: "5 Weeks",
-      level: "Beginner",
-      icon: faTasks,
-      iconColor: "#B8860B",
-      description: "Build a comprehensive task management application with team collaboration features",
-      technologies: ["Vue.js", "Express", "PostgreSQL"],
-      deliverables: [
-        "Task CRUD operations",
-        "User authentication",
-        "Team management",
-        "Real-time updates"
-      ],
-      mentorCount: "2 Full-Stack Mentors",
-      complexity: "Beginner"
+  // Carousel State
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [cardsPerPage, setCardsPerPage] = useState(2);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 768) {
+        setCardsPerPage(1);
+      } else {
+        setCardsPerPage(2);
+      }
+    };
+    handleResize(); // Initial check
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const totalCards = projectCategories.length;
+  const maxSlides = totalCards - cardsPerPage;
+
+  const nextSlide = () => {
+    if (currentSlide < maxSlides) {
+      setCurrentSlide(prev => prev + 1);
     }
-  ];
+  };
+
+
+  const prevSlide = () => {
+    if (currentSlide > 0) {
+      setCurrentSlide(prev => prev - 1);
+    }
+  };
+
+  // WhatsApp configuration
+  const whatsappNumber = "6381759909";
+  const whatsappMessage = "Hello! I'm interested in the project-based learning program. Can we discuss project options?";
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+
+
 
   // Project Success Stories
   const successStories = [
@@ -241,8 +326,8 @@ const ProjectBasedLearning = () => {
       quote: "Building a real healthcare system with mentor guidance gave me confidence to apply for senior roles.",
       achievement: "Landed Senior Developer role",
       salary: "80% salary increase",
-      avatar: "https://api.dicebear.com/9.x/lorelei/svg?seed=Aravind",
-      color: "#D4A017"
+      icon: faUserNinja,
+      color: "#3B82F6"
     },
     {
       id: 2,
@@ -253,8 +338,8 @@ const ProjectBasedLearning = () => {
       quote: "The project portfolio helped me switch from graphic design to product design successfully.",
       achievement: "Product Designer position",
       salary: "Promoted to Lead Designer",
-      avatar: "https://api.dicebear.com/9.x/lorelei/svg?seed=Meena",
-      color: "#FFD700"
+      icon: faUserAstronaut,
+      color: "#10B981"
     },
     {
       id: 3,
@@ -265,8 +350,8 @@ const ProjectBasedLearning = () => {
       quote: "Completing a complex FinTech project with real data visualization made my resume stand out.",
       achievement: "Frontend Engineer at FinTech startup",
       salary: "First tech job secured",
-      avatar: "https://api.dicebear.com/9.x/lorelei/svg?seed=Karthik",
-      color: "#E6BE8A"
+      icon: faUserSecret,
+      color: "#8B5CF6"
     },
     {
       id: 4,
@@ -277,8 +362,8 @@ const ProjectBasedLearning = () => {
       quote: "The AI project was challenging but the step-by-step guidance made it achievable.",
       achievement: "Data Scientist role",
       salary: "3x salary increase",
-      avatar: "https://api.dicebear.com/9.x/lorelei/svg?seed=Anjali",
-      color: "#B8860B"
+      icon: faUserGraduate,
+      color: "#3B82F6"
     }
   ];
 
@@ -288,37 +373,37 @@ const ProjectBasedLearning = () => {
       icon: faProjectDiagram,
       title: "Real-World Projects",
       description: "Work on industry-relevant projects with real business requirements",
-      color: "#D4A017"
+      color: "#2563EB"
     },
     {
       icon: faCodeBranch,
       title: "Git Portfolio",
       description: "Build an impressive GitHub portfolio with production-ready code",
-      color: "#FFD700"
+      color: "#3B82F6"
     },
     {
       icon: faUsers,
       title: "Team Collaboration",
       description: "Learn agile methodologies and team collaboration tools",
-      color: "#E6BE8A"
+      color: "#93C5FD"
     },
     {
       icon: faClipboardCheck,
       title: "Project Management",
       description: "Master project planning, tracking, and delivery processes",
-      color: "#B8860B"
+      color: "#1D4ED8"
     },
     {
       icon: faRocket,
       title: "Deployment Experience",
       description: "Deploy projects to cloud platforms with CI/CD pipelines",
-      color: "#D4A017"
+      color: "#2563EB"
     },
     {
       icon: faHandshake,
       title: "Industry Connections",
       description: "Network with professionals and potential employers",
-      color: "#FFD700"
+      color: "#3B82F6"
     }
   ];
 
@@ -329,42 +414,42 @@ const ProjectBasedLearning = () => {
       title: "Project Selection",
       description: "Choose from 50+ real-world project templates",
       icon: faClipboardList,
-      color: "#D4A017"
+      color: "#2563EB"
     },
     {
       step: 2,
       title: "Requirements Analysis",
       description: "Understand project scope and business requirements",
       icon: faFileAlt,
-      color: "#FFD700"
+      color: "#3B82F6"
     },
     {
       step: 3,
       title: "Technical Planning",
       description: "Design architecture and select technologies",
       icon: faSitemap,
-      color: "#E6BE8A"
+      color: "#3B82F6"
     },
     {
       step: 4,
       title: "Development Phase",
       description: "Code implementation with expert guidance",
       icon: faLaptopCode,
-      color: "#B8860B"
+      color: "#1D4ED8"
     },
     {
       step: 5,
       title: "Testing & Debugging",
       description: "Learn testing methodologies and debugging techniques",
       icon: faBug,
-      color: "#D4A017"
+      color: "#2563EB"
     },
     {
       step: 6,
       title: "Deployment & Showcase",
       description: "Deploy project and create portfolio presentation",
       icon: faRocket,
-      color: "#FFD700"
+      color: "#3B82F6"
     }
   ];
 
@@ -375,28 +460,28 @@ const ProjectBasedLearning = () => {
       label: "Projects Completed",
       description: "Real-world projects built by learners",
       icon: faProjectDiagram,
-      color: "#D4A017"
+      color: "#2563EB"
     },
     {
       value: "95%",
       label: "Portfolio Success",
       description: "Of learners build impressive portfolios",
       icon: faChartLine,
-      color: "#FFD700"
+      color: "#3B82F6"
     },
     {
       value: "100+",
       label: "Industry Projects",
       description: "Project templates from real companies",
       icon: faCube,
-      color: "#E6BE8A"
+      color: "#93C5FD"
     },
     {
       value: "4.8/5",
       label: "Satisfaction Rate",
       description: "Average project mentorship rating",
       icon: faStar,
-      color: "#B8860B"
+      color: "#1D4ED8"
     }
   ];
 
@@ -420,8 +505,8 @@ const ProjectBasedLearning = () => {
     }, 1500);
   };
 
-  // Get visible projects based on state
-  const visibleProjects = showAllProjects ? projectCategories : projectCategories.slice(0, 2);
+  const handleEnrollClick = handleWhatsAppClick;
+
 
   return (
     <>
@@ -467,21 +552,23 @@ const ProjectBasedLearning = () => {
           )}
 
           {/* Hero Section */}
-          <header className="pbl-hero-wrapper" style={{ minHeight: '100vh', paddingTop: '100px', paddingBottom: '80px', background: '#FCFCFA', position: 'relative', overflow: 'hidden', fontFamily: '"Inter", "Helvetica Neue", sans-serif' }}>
+          <header className="pbl-hero-wrapper" style={{ minHeight: '100vh', paddingTop: '60px', paddingBottom: '80px', background: '#FCFCFA', position: 'relative', overflow: 'hidden', fontFamily: '"Inter", "Helvetica Neue", sans-serif' }}>
             <div className="pbl-hero-container" style={{ maxWidth: '1500px', margin: '0 auto', padding: '0 40px', position: 'relative' }}>
-              <div className="pbl-hero-layout" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '30px', position: 'relative', zIndex: 2, marginBottom: '60px' }}>
+              <div className="pbl-hero-layout" style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '30px', position: 'relative', zIndex: 2, marginBottom: '60px', paddingTop: '40px' }}>
 
                 {/* Left Content */}
-                <div className="pbl-hero-left" style={{ flex: '0 1 auto', textAlign: 'left', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', zIndex: 2, marginLeft: '-120px', minWidth: '900px' }}>
-                  <div className="pbl-hero-tag" style={{ padding: '6px 16px', borderRadius: '20px', backgroundColor: '#FBBF24', color: '#111', fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '24px', display: 'inline-block' }}>
+                <div className="pbl-hero-left" style={{ flex: '0 1 auto', textAlign: 'left', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', zIndex: 2, marginTop: '20px' }}>
+                  <div className="pbl-hero-tag" style={{ padding: '6px 16px', borderRadius: '20px', backgroundColor: '#60A5FA', color: '#111', fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '24px', display: 'inline-block' }}>
                     WE CAN HELP YOU
                   </div>
-                  <h1 className="pbl-hero-title" style={{ textAlign: 'left', fontFamily: '"Inter", "Helvetica Neue", sans-serif', fontSize: 'clamp(3rem, 4.8vw, 5.5rem)', fontWeight: 600, color: '#111', lineHeight: 1.05, margin: '0 0 24px 0', letterSpacing: '-2.5px', width: '100%', maxWidth: '900px' }}>
+                  <h1 className="pbl-hero-title" style={{ textAlign: 'left', fontFamily: '"Inter", "Helvetica Neue", sans-serif', fontSize: 'clamp(4.5rem, 7.5vw, 8.5rem)', fontWeight: 800, color: '#111', lineHeight: 1.05, margin: '0 0 24px 0', letterSpacing: '-2.5px', width: '100%' }}>
                     Build <span className="pbl-hero-highlight" style={{ fontWeight: 400, color: '#97AAAC', fontStyle: 'italic' }}>real projects</span> master skills through hands-on experience
                   </h1>
                   <p className="pbl-hero-desc" style={{ textAlign: 'left', fontFamily: '"Inter", "Helvetica Neue", sans-serif', fontSize: '1.2rem', color: '#64748B', lineHeight: 1.5, width: '100%', maxWidth: '640px', margin: '0 0 40px 0' }}>
                     Learn by building real-world projects with industry experts. From concept to deployment,
                     gain practical experience that employers value. Build your portfolio while mastering in-demand skills.
+                    Develop industrial-grade applications using the latest tech stacks and agile methodologies.
+                    Receive personalized feedback and reviews from seniors at every phase of your project lifecycle.
                   </p>
 
                   <div className="pbl-hero-buttons" style={{ display: 'flex', alignItems: 'center', gap: '30px', justifyContent: 'flex-start', width: '100%' }}>
@@ -499,7 +586,7 @@ const ProjectBasedLearning = () => {
 
                 {/* Right Content */}
                 {/* Right Content - Custom Masonry Grid */}
-                <div className="pbl-hero-right" style={{ flex: '0 0 45%', display: 'flex', gap: '20px', position: 'relative', zIndex: 2, transform: 'translateX(60px)' }}>
+                <div className="pbl-hero-right" style={{ flex: '0 0 45%', display: 'flex', gap: '20px', position: 'relative', zIndex: 2 }}>
                   {/* Column 1 */}
                   <div className="pbl-masonry-col" style={{ display: 'flex', flexDirection: 'column', gap: '20px', flex: 1, paddingTop: '80px' }}>
                     {/* Tall Purple Image */}
@@ -585,59 +672,59 @@ const ProjectBasedLearning = () => {
                     <h2 className="spbl-section-title" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700 }}>Learn from Project Experts</h2>
                     <p className="spbl-section-subtitle" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}>Get guidance from professionals who've built real-world applications</p>
                   </div>
+                </div>
 
-                  <div className="spbl-experts-scroll-container">
-                    <div className="spbl-experts-scroll">
-                      {[...projectExperts, ...projectExperts].map((expert, index) => (
-                        <div key={`${expert.id}-${index}`} className="spbl-expert-card" style={{ fontFamily: "'Poppins', sans-serif" }}>
-                          <div className="spbl-expert-header" style={{ justifyContent: 'flex-start' }}>
-                            <div className="spbl-expert-badge" style={{ backgroundColor: expert.color, fontFamily: "'Poppins', sans-serif", fontWeight: 500 }}>
-                              <FontAwesomeIcon icon={expert.badgeIcon} className="spbl-badge-icon" />
-                              {expert.badge}
-                            </div>
-                          </div>
-
-                          <div className="spbl-expert-info">
-                            <h3 className="spbl-expert-name" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600 }}>{expert.name}</h3>
-                            <p className="spbl-expert-role" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 500 }}>{expert.role}</p>
-                            <p className="spbl-expert-company" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}>{expert.company}</p>
-
-                            <div className="spbl-expert-experience">
-                              <span className="spbl-experience-icon" style={{ color: expert.color }}>
-                                <FontAwesomeIcon icon={faClock} />
-                              </span>
-                              <span className="spbl-experience-text" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}>{expert.experience}</span>
-                            </div>
-                          </div>
-
-                          <div className="spbl-expert-expertise">
-                            <h4 className="spbl-expertise-title" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600 }}>Specialized In:</h4>
-                            <div className="spbl-expertise-tags">
-                              {expert.expertise.map((skill, skillIndex) => (
-                                <span key={skillIndex} className="spbl-expertise-tag" style={{ backgroundColor: `${expert.color}20`, color: expert.color, fontFamily: "'Poppins', sans-serif", fontWeight: 500 }}>
-                                  {skill}
-                                </span>
-                              ))}
-                            </div>
-                          </div>
-
-                          <div className="spbl-expert-stats">
-                            <div className="spbl-expert-stat">
-                              <span className="spbl-stat-icon" style={{ color: expert.color }}>
-                                <FontAwesomeIcon icon={faProjectDiagram} />
-                              </span>
-                              <span className="spbl-stat-text" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}>{expert.projects} projects</span>
-                            </div>
-                            <div className="spbl-expert-stat">
-                              <span className="spbl-stat-icon" style={{ color: expert.color }}>
-                                <FontAwesomeIcon icon={faStar} />
-                              </span>
-                              <span className="spbl-stat-text" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}>{expert.rating} rating</span>
-                            </div>
+                <div className="spbl-experts-scroll-container">
+                  <div className="spbl-experts-scroll">
+                    {[...projectExperts, ...projectExperts].map((expert, index) => (
+                      <div key={`${expert.id}-${index}`} className="spbl-expert-card" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                        <div className="spbl-expert-header" style={{ justifyContent: 'flex-start' }}>
+                          <div className="spbl-expert-badge" style={{ backgroundColor: expert.color, fontFamily: "'Poppins', sans-serif", fontWeight: 500 }}>
+                            <FontAwesomeIcon icon={expert.badgeIcon} className="spbl-badge-icon" />
+                            {expert.badge}
                           </div>
                         </div>
-                      ))}
-                    </div>
+
+                        <div className="spbl-expert-info">
+                          <h3 className="spbl-expert-name" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600 }}>{expert.name}</h3>
+                          <p className="spbl-expert-role" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 500 }}>{expert.role}</p>
+                          <p className="spbl-expert-company" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}>{expert.company}</p>
+
+                          <div className="spbl-expert-experience">
+                            <span className="spbl-experience-icon" style={{ color: expert.color }}>
+                              <FontAwesomeIcon icon={faClock} />
+                            </span>
+                            <span className="spbl-experience-text" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}>{expert.experience}</span>
+                          </div>
+                        </div>
+
+                        <div className="spbl-expert-expertise">
+                          <h4 className="spbl-expertise-title" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600 }}>Specialized In:</h4>
+                          <div className="spbl-expertise-tags">
+                            {expert.expertise.map((skill, skillIndex) => (
+                              <span key={skillIndex} className="spbl-expertise-tag" style={{ backgroundColor: `${expert.color}20`, color: expert.color, fontFamily: "'Poppins', sans-serif", fontWeight: 500 }}>
+                                {skill}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+
+                        <div className="spbl-expert-stats">
+                          <div className="spbl-expert-stat">
+                            <span className="spbl-stat-icon" style={{ color: expert.color }}>
+                              <FontAwesomeIcon icon={faProjectDiagram} />
+                            </span>
+                            <span className="spbl-stat-text" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}>{expert.projects} projects</span>
+                          </div>
+                          <div className="spbl-expert-stat">
+                            <span className="spbl-stat-icon" style={{ color: expert.color }}>
+                              <FontAwesomeIcon icon={faStar} />
+                            </span>
+                            <span className="spbl-stat-text" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}>{expert.rating} rating</span>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </section>
@@ -653,88 +740,124 @@ const ProjectBasedLearning = () => {
                     <h2 className="spbl-section-title" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700 }}>Choose Your Project</h2>
                     <p className="spbl-section-subtitle" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}>Select from diverse real-world project categories</p>
                   </div>
+                  <div className="spbl-categories-carousel-container">
+                    {currentSlide > 0 && cardsPerPage > 1 && (
+                      <button className="spbl-carousel-arrow left" onClick={prevSlide} aria-label="Previous Path">
+                        <FontAwesomeIcon icon={faChevronLeft} />
+                      </button>
+                    )}
 
-                  <div className="spbl-categories-grid">
-                    {visibleProjects.map((category) => (
-                      <div key={category.id} className="spbl-category-card" style={{ fontFamily: "'Poppins', sans-serif" }}>
-                        <div className="spbl-category-header">
-                          <div className="spbl-category-icon" style={{ color: category.iconColor }}>
-                            <FontAwesomeIcon icon={category.icon} />
-                          </div>
-                          <div className="spbl-category-level" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 500 }}>
-                            {category.level}
-                          </div>
-                        </div>
+                    <div className="spbl-categories-carousel-viewport">
+                      <div className="spbl-categories-carousel-track" style={{
+                        transform: `translateX(calc(-${currentSlide} * (100% / ${cardsPerPage} + ${cardsPerPage === 1 ? '0rem' : '1rem'})))`,
+                      }}>
+                        {projectCategories.map((category, index) => {
+                          return (
+                            <div key={category.id} className="spbl-category-card" style={{
+                              fontFamily: "'Poppins', sans-serif",
+                              flexDirection: 'column'
+                            }}>
+                              <div className="spbl-category-image-wrapper" style={{ position: 'relative' }}>
+                                <div className="spbl-image-mask" style={{ width: '100%', height: '100%', overflow: 'hidden', borderRadius: '48px' }}>
+                                  <img
+                                    src={category.bgImage}
+                                    alt={category.title}
+                                    className={category.imageClass ? category.imageClass : ""}
+                                  />
+                                </div>
+                                <div className="spbl-category-level" style={{
+                                  position: 'absolute',
+                                  top: '36px',
+                                  right: '36px',
+                                  fontFamily: "'Poppins', sans-serif",
+                                  fontWeight: 600,
+                                  color: '#1E293B',
+                                  backgroundColor: 'rgba(255, 255, 255, 0.95)',
+                                  padding: '6px 14px',
+                                  borderRadius: '12px',
+                                  zIndex: 2,
+                                  fontSize: '0.85rem',
+                                  boxShadow: '0 4px 6px rgba(0,0,0,0.1)'
+                                }}>
+                                  {category.level}
+                                </div>
+                              </div>
 
-                        <div className="spbl-category-content">
-                          <h3 className="spbl-category-title" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600 }}>{category.title}</h3>
-                          <p className="spbl-category-description" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}>{category.description}</p>
+                              <div className="spbl-category-body" style={{ paddingTop: '20px' }}>
+                                <div className="spbl-category-content">
+                                  <h3 className="spbl-category-title" style={{
+                                    fontFamily: "'Poppins', sans-serif",
+                                    fontWeight: 700,
+                                    color: '#0F172A'
+                                  }}>{category.title}</h3>
+                                  <p className="spbl-category-description" style={{
+                                    fontFamily: "'Poppins', sans-serif",
+                                    fontWeight: 400,
+                                    color: '#475569'
+                                  }}>{category.description}</p>
 
-                          <div className="spbl-category-duration">
-                            <span className="spbl-duration-icon" style={{ color: category.iconColor }}>
-                              <FontAwesomeIcon icon={faClock} />
-                            </span>
-                            <span className="spbl-duration-text" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}>{category.duration}</span>
-                          </div>
+                                  <div className="spbl-category-duration">
+                                    <span className="spbl-duration-icon" style={{ color: '#2563EB' }}>
+                                      <FontAwesomeIcon icon={faClock} />
+                                    </span>
+                                    <span className="spbl-duration-text" style={{
+                                      fontFamily: "'Poppins', sans-serif",
+                                      fontWeight: 500,
+                                      color: '#0F172A'
+                                    }}>{category.duration}</span>
+                                  </div>
 
-                          <div className="spbl-category-technologies">
-                            <h4 className="spbl-technologies-title" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600 }}>Technologies:</h4>
-                            <div className="spbl-technologies-tags">
-                              {category.technologies.map((tech, index) => (
-                                <span key={index} className="spbl-technology-tag" style={{ backgroundColor: `${category.iconColor}20`, color: category.iconColor, fontFamily: "'Poppins', sans-serif", fontWeight: 500 }}>
-                                  {tech}
-                                </span>
-                              ))}
+                                  <div className="spbl-category-deliverables">
+                                    <h4 className="spbl-deliverables-title" style={{
+                                      fontFamily: "'Poppins', sans-serif",
+                                      fontWeight: 600,
+                                      color: '#0F172A'
+                                    }}>Project Deliverables:</h4>
+                                    <div className="spbl-deliverable-list">
+                                      {category.deliverables.map((del, i) => (
+                                        <div key={i} className="spbl-deliverable-item">
+                                          <span className="spbl-deliverable-icon" style={{ color: '#2563EB' }}>
+                                            <FontAwesomeIcon icon={faCheck} />
+                                          </span>
+                                          <span className="spbl-deliverable-text" style={{
+                                            fontFamily: "'Poppins', sans-serif",
+                                            fontWeight: 400,
+                                            color: '#475569'
+                                          }}>{del}</span>
+                                        </div>
+                                      ))}
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div className="spbl-category-footer">
+                                  <div className="spbl-category-stats">
+                                    <div className="spbl-stat-item">
+                                      <FontAwesomeIcon icon={faUserTie} className="spbl-stat-icon" style={{ color: '#2563EB' }} />
+                                      <span className="spbl-stat-text" style={{ color: '#475569' }}>{category.mentorCount}</span>
+                                    </div>
+                                    <div className="spbl-stat-item">
+                                      <FontAwesomeIcon icon={faProjectDiagram} className="spbl-stat-icon" style={{ color: '#2563EB' }} />
+                                      <span className="spbl-stat-text" style={{ color: '#475569' }}>{category.complexity}</span>
+                                    </div>
+                                  </div>
+                                  <button className="spbl-enroll-btn" onClick={handleEnrollClick} style={{
+                                    backgroundColor: '#2563EB',
+                                    color: '#FFFFFF'
+                                  }}>Select Project</button>
+                                </div>
+                              </div>
                             </div>
-                          </div>
-
-                          <div className="spbl-category-deliverables">
-                            <h4 className="spbl-deliverables-title" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600 }}>You'll Build:</h4>
-                            <ul className="spbl-deliverables-list">
-                              {category.deliverables.map((item, index) => (
-                                <li key={index} className="spbl-deliverable-item">
-                                  <span className="spbl-deliverable-icon" style={{ color: category.iconColor }}>
-                                    <FontAwesomeIcon icon={faCheck} />
-                                  </span>
-                                  <span className="spbl-deliverable-text" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}>{item}</span>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-
-                          <div className="spbl-category-details">
-                            <div className="spbl-category-detail">
-                              <span className="spbl-detail-icon" style={{ color: category.iconColor }}>
-                                <FontAwesomeIcon icon={faChalkboardTeacher} />
-                              </span>
-                              <span className="spbl-detail-text" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}>{category.mentorCount}</span>
-                            </div>
-                            <div className="spbl-category-detail">
-                              <span className="spbl-detail-icon" style={{ color: category.iconColor }}>
-                                <FontAwesomeIcon icon={faCogs} />
-                              </span>
-                              <span className="spbl-detail-text" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}>{category.complexity}</span>
-                            </div>
-                          </div>
-                        </div>
+                          );
+                        })}
                       </div>
-                    ))}
-                  </div>
+                    </div>
 
-                  {/* View More Button */}
-                  <div className="spbl-view-more-container">
-                    <button
-                      className="spbl-view-more-btn"
-                      onClick={() => setShowAllProjects(!showAllProjects)}
-                      style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600 }}
-                    >
-                      <span className="spbl-view-more-text">
-                        {showAllProjects ? 'View Less' : `View More Projects (${projectCategories.length - 2} more)`}
-                      </span>
-                      <span className="spbl-view-more-icon">
-                        <FontAwesomeIcon icon={showAllProjects ? faChevronUp : faChevronDown} />
-                      </span>
-                    </button>
+                    {currentSlide < maxSlides && (
+                      <button className="spbl-carousel-arrow right" onClick={nextSlide} aria-label="Next Project">
+                        <FontAwesomeIcon icon={faChevronRight} />
+                      </button>
+                    )}
                   </div>
                 </div>
               </section>
@@ -778,8 +901,7 @@ const ProjectBasedLearning = () => {
                 <div className="process-header-grid">
                   <div className="process-title-area">
                     <h2 className="process-main-title">
-                      TOP NOTCH QUALITY <br />
-                      PROCESS WE PROVIDE
+                      TOP NOTCH QUALITY PROCESS WE PROVIDE
                     </h2>
                   </div>
 
@@ -876,122 +998,114 @@ const ProjectBasedLearning = () => {
                   <h2 className="spbl-section-title">Project Success Stories</h2>
                   <p className="spbl-section-subtitle">See how project experience transformed careers</p>
                 </div>
+              </div>
 
-                <div className="spbl-stories-marquee-container">
-                  <div className="spbl-stories-marquee-track">
-                    {/* First Loop */}
-                    {successStories.map((story) => (
-                      <div key={story.id} className="spbl-story-card">
-                        <div className="spbl-story-avatar" style={{ border: `2px solid ${story.color}` }}>
-                          <img 
-                            src={story.avatar} 
-                            alt={story.name} 
-                            className="spbl-story-avatar-img"
-                          />
+              <div className="spbl-stories-marquee-container">
+                <div className="spbl-stories-marquee-track">
+                  {/* First Loop */}
+                  {successStories.map((story) => (
+                    <div key={story.id} className="spbl-story-card">
+                      <div className="spbl-story-avatar" style={{ border: `2px solid ${story.color}`, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: `${story.color}20` }}>
+                        <FontAwesomeIcon icon={story.icon} style={{ color: story.color, fontSize: '2rem' }} />
+                      </div>
+
+                      <div className="spbl-story-content">
+                        <div className="spbl-story-header">
+                          <h3 className="spbl-story-name">{story.name}</h3>
+                          <div className="spbl-story-project">
+                            <span className="spbl-project-icon" style={{ color: story.color }}>
+                              <FontAwesomeIcon icon={faProjectDiagram} />
+                            </span>
+                            <span className="spbl-project-text">{story.project}</span>
+                          </div>
                         </div>
 
-                        <div className="spbl-story-content">
-                          <div className="spbl-story-header">
-                            <h3 className="spbl-story-name">{story.name}</h3>
-                            <div className="spbl-story-project">
-                              <span className="spbl-project-icon" style={{ color: story.color }}>
-                                <FontAwesomeIcon icon={faProjectDiagram} />
-                              </span>
-                              <span className="spbl-project-text">{story.project}</span>
-                            </div>
-                          </div>
+                        <div className="spbl-story-timeline">
+                          <span className="spbl-timeline-icon" style={{ color: story.color }}>
+                            <FontAwesomeIcon icon={faClock} />
+                          </span>
+                          <span className="spbl-timeline-text">Completed in {story.timeline}</span>
+                        </div>
 
-                          <div className="spbl-story-timeline">
-                            <span className="spbl-timeline-icon" style={{ color: story.color }}>
-                              <FontAwesomeIcon icon={faClock} />
+                        <div className="spbl-story-quote">
+                          <p className="spbl-quote-text">"{story.quote}"</p>
+                        </div>
+
+                        <div className="spbl-story-footer">
+                          <div className="spbl-story-mentor">
+                            <span className="spbl-mentor-icon" style={{ color: story.color }}>
+                              <FontAwesomeIcon icon={faChalkboardTeacher} />
                             </span>
-                            <span className="spbl-timeline-text">Completed in {story.timeline}</span>
+                            <span className="spbl-mentor-text">Mentor: {story.mentor}</span>
                           </div>
-
-                          <div className="spbl-story-quote">
-                            <p className="spbl-quote-text">"{story.quote}"</p>
+                          <div className="spbl-story-achievement">
+                            <span className="spbl-achievement-icon" style={{ color: story.color }}>
+                              <FontAwesomeIcon icon={faTrophy} />
+                            </span>
+                            <span className="spbl-achievement-text">{story.achievement}</span>
                           </div>
-
-                          <div className="spbl-story-footer">
-                            <div className="spbl-story-mentor">
-                              <span className="spbl-mentor-icon" style={{ color: story.color }}>
-                                <FontAwesomeIcon icon={faChalkboardTeacher} />
-                              </span>
-                              <span className="spbl-mentor-text">Mentor: {story.mentor}</span>
-                            </div>
-                            <div className="spbl-story-achievement">
-                              <span className="spbl-achievement-icon" style={{ color: story.color }}>
-                                <FontAwesomeIcon icon={faTrophy} />
-                              </span>
-                              <span className="spbl-achievement-text">{story.achievement}</span>
-                            </div>
-                            <div className="spbl-story-salary">
-                              <span className="spbl-salary-icon" style={{ color: story.color }}>
-                                <FontAwesomeIcon icon={faChartLine} />
-                              </span>
-                              <span className="spbl-salary-text">{story.salary}</span>
-                            </div>
+                          <div className="spbl-story-salary">
+                            <span className="spbl-salary-icon" style={{ color: story.color }}>
+                              <FontAwesomeIcon icon={faChartLine} />
+                            </span>
+                            <span className="spbl-salary-text">{story.salary}</span>
                           </div>
                         </div>
                       </div>
-                    ))}
-                    {/* Seamless Loop (ID duplication handled) */}
-                    {successStories.map((story) => (
-                      <div key={`${story.id}-loop`} className="spbl-story-card">
-                        <div className="spbl-story-avatar" style={{ border: `2px solid ${story.color}` }}>
-                          <img 
-                            src={story.avatar} 
-                            alt={story.name} 
-                            className="spbl-story-avatar-img"
-                          />
+                    </div>
+                  ))}
+                  {/* Seamless Loop (ID duplication handled) */}
+                  {successStories.map((story) => (
+                    <div key={`${story.id}-loop`} className="spbl-story-card">
+                      <div className="spbl-story-avatar" style={{ border: `2px solid ${story.color}`, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: `${story.color}20` }}>
+                        <FontAwesomeIcon icon={story.icon} style={{ color: story.color, fontSize: '2rem' }} />
+                      </div>
+
+                      <div className="spbl-story-content">
+                        <div className="spbl-story-header">
+                          <h3 className="spbl-story-name">{story.name}</h3>
+                          <div className="spbl-story-project">
+                            <span className="spbl-project-icon" style={{ color: story.color }}>
+                              <FontAwesomeIcon icon={faProjectDiagram} />
+                            </span>
+                            <span className="spbl-project-text">{story.project}</span>
+                          </div>
                         </div>
 
-                        <div className="spbl-story-content">
-                          <div className="spbl-story-header">
-                            <h3 className="spbl-story-name">{story.name}</h3>
-                            <div className="spbl-story-project">
-                              <span className="spbl-project-icon" style={{ color: story.color }}>
-                                <FontAwesomeIcon icon={faProjectDiagram} />
-                              </span>
-                              <span className="spbl-project-text">{story.project}</span>
-                            </div>
-                          </div>
+                        <div className="spbl-story-timeline">
+                          <span className="spbl-timeline-icon" style={{ color: story.color }}>
+                            <FontAwesomeIcon icon={faClock} />
+                          </span>
+                          <span className="spbl-timeline-text">Completed in {story.timeline}</span>
+                        </div>
 
-                          <div className="spbl-story-timeline">
-                            <span className="spbl-timeline-icon" style={{ color: story.color }}>
-                              <FontAwesomeIcon icon={faClock} />
+                        <div className="spbl-story-quote">
+                          <p className="spbl-quote-text">"{story.quote}"</p>
+                        </div>
+
+                        <div className="spbl-story-footer">
+                          <div className="spbl-story-mentor">
+                            <span className="spbl-mentor-icon" style={{ color: story.color }}>
+                              <FontAwesomeIcon icon={faChalkboardTeacher} />
                             </span>
-                            <span className="spbl-timeline-text">Completed in {story.timeline}</span>
+                            <span className="spbl-mentor-text">Mentor: {story.mentor}</span>
                           </div>
-
-                          <div className="spbl-story-quote">
-                            <p className="spbl-quote-text">"{story.quote}"</p>
+                          <div className="spbl-story-achievement">
+                            <span className="spbl-achievement-icon" style={{ color: story.color }}>
+                              <FontAwesomeIcon icon={faTrophy} />
+                            </span>
+                            <span className="spbl-achievement-text">{story.achievement}</span>
                           </div>
-
-                          <div className="spbl-story-footer">
-                            <div className="spbl-story-mentor">
-                              <span className="spbl-mentor-icon" style={{ color: story.color }}>
-                                <FontAwesomeIcon icon={faChalkboardTeacher} />
-                              </span>
-                              <span className="spbl-mentor-text">Mentor: {story.mentor}</span>
-                            </div>
-                            <div className="spbl-story-achievement">
-                              <span className="spbl-achievement-icon" style={{ color: story.color }}>
-                                <FontAwesomeIcon icon={faTrophy} />
-                              </span>
-                              <span className="spbl-achievement-text">{story.achievement}</span>
-                            </div>
-                            <div className="spbl-story-salary">
-                              <span className="spbl-salary-icon" style={{ color: story.color }}>
-                                <FontAwesomeIcon icon={faChartLine} />
-                              </span>
-                              <span className="spbl-salary-text">{story.salary}</span>
-                            </div>
+                          <div className="spbl-story-salary">
+                            <span className="spbl-salary-icon" style={{ color: story.color }}>
+                              <FontAwesomeIcon icon={faChartLine} />
+                            </span>
+                            <span className="spbl-salary-text">{story.salary}</span>
                           </div>
                         </div>
                       </div>
-                    ))}
-                  </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </section>
