@@ -443,7 +443,7 @@ const RayMartPageTwo = () => {
                 { title: "Social Media Branding", img: "https://images.unsplash.com/photo-1611162617263-4ec3060a058e?auto=format&fit=crop&q=80&w=1200", desc: "Complete visual kit for social media platforms.", disc: "28%", offer: "SOCIAL BUNDLE" },
                 { title: "Rebranding Services", img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200", desc: "Refresh and modernize your existing brand identity.", disc: "45%", offer: "REFRESH PACK" }
               ].map((item, idx) => (
-                <div className="rm-app-card" key={idx} onClick={() => navigate('/raymartPageFour')} style={{ cursor: 'pointer' }}>
+                <div className="rm-app-card" key={idx} onClick={() => navigate('/raymartPageFour', { state: { id: "branding-identity" } })} style={{ cursor: 'pointer' }}>
                   <div className="rm-app-card-img" style={{ backgroundImage: `url('${item.img}')` }}></div>
                   <div className="rm-app-card-body">
                     <h3 className="rm-app-card-title">{item.title}</h3>
@@ -480,7 +480,7 @@ const RayMartPageTwo = () => {
                 { title: "API & Integrations", img: "https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?auto=format&fit=crop&q=80&w=1200", desc: "Seamless third-party and custom API connections.", disc: "30%", offer: "SYNC HUB" },
                 { title: "Optimization & Deployment", img: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1200", desc: "Ensuring high performance and perfect deployment.", disc: "50%", offer: "PRO LAUNCH" }
               ].map((item, idx) => (
-                <div className="rm-app-card" key={idx} onClick={() => navigate('/raymartPageFour')} style={{ cursor: 'pointer' }}>
+                <div className="rm-app-card" key={idx} onClick={() => navigate('/raymartPageFour', { state: { id: "development-services" } })} style={{ cursor: 'pointer' }}>
                   <div className="rm-app-card-img" style={{ backgroundImage: `url('${item.img}')` }}></div>
                   <div className="rm-app-card-body">
                     <h3 className="rm-app-card-title">{item.title}</h3>
@@ -515,7 +515,7 @@ const RayMartPageTwo = () => {
                 { title: "SEO Structure", img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200", desc: "Search-optimized architecture for growth.", disc: "33%", offer: "SEO BOOSTER" },
                 { title: "Website Redesign", img: "https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&q=80&w=1200", desc: "Modernize your outdated site with current tech.", disc: "40%", offer: "REVAMP KIT" }
               ].map((item, idx) => (
-                <div className="rm-app-card" key={idx} onClick={() => navigate('/raymartPageFour')} style={{ cursor: 'pointer' }}>
+                <div className="rm-app-card" key={idx} onClick={() => navigate('/raymartPageFour', { state: { id: "website-development" } })} style={{ cursor: 'pointer' }}>
                   <div className="rm-app-card-img" style={{ backgroundImage: `url('${item.img}')` }}></div>
                   <div className="rm-app-card-body">
                     <h3 className="rm-app-card-title">{item.title}</h3>
@@ -549,7 +549,7 @@ const RayMartPageTwo = () => {
                 { title: "Order Management", img: "https://images.unsplash.com/photo-1512418490979-92798ccc13fb?auto=format&fit=crop&q=80&w=1200", desc: "Streamlined order tracking and fulfillment.", disc: "35%", offer: "ORDER SHIELD" },
                 { title: "Mobile E-Commerce", img: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&q=80&w=1200", desc: "Optimizing the journey for mobile users.", disc: "45%", offer: "M-COMMERCE" }
               ].map((item, idx) => (
-                <div className="rm-app-card" key={idx} onClick={() => navigate('/raymartPageFour')} style={{ cursor: 'pointer' }}>
+                <div className="rm-app-card" key={idx} onClick={() => navigate('/raymartPageFour', { state: { id: "ecommerce-development" } })} style={{ cursor: 'pointer' }}>
                   <div className="rm-app-card-img" style={{ backgroundImage: `url('${item.img}')` }}></div>
                   <div className="rm-app-card-body">
                     <h3 className="rm-app-card-title">{item.title}</h3>
@@ -582,7 +582,7 @@ const RayMartPageTwo = () => {
                 { title: "Android App Dev", img: "https://images.unsplash.com/photo-1607252682822-d1be8e932abb?auto=format&fit=crop&q=80&w=1200", desc: "High-performance apps for Android.", disc: "33%", offer: "DROID MASTER" },
                 { title: "iOS App Dev", img: "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&q=80&w=1200", desc: "Premium iPhone and iPad app experiences.", disc: "33%", offer: "APPLE CORE" }
               ].map((item, idx) => (
-                <div className="rm-app-card" key={idx} onClick={() => navigate('/raymartPageFour')} style={{ cursor: 'pointer' }}>
+                <div className="rm-app-card" key={idx} onClick={() => navigate('/raymartPageFour', { state: { id: "app-development" } })} style={{ cursor: 'pointer' }}>
                   <div className="rm-app-card-img" style={{ backgroundImage: `url('${item.img}')` }}></div>
                   <div className="rm-app-card-body">
                     <h3 className="rm-app-card-title">{item.title}</h3>
@@ -616,7 +616,7 @@ const RayMartPageTwo = () => {
                 { title: "Corporate Design", img: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200", desc: "Clean designs for corporate use.", disc: "30%", offer: "CORP KIT" },
                 { title: "Print Design Solution", img: "https://images.unsplash.com/photo-1509010144287-db2c14032d84?auto=format&fit=crop&q=80&w=1200", desc: "High-quality designs for offline marketing.", disc: "15%", offer: "PRINT PRO" }
               ].map((item, idx) => (
-                <div className="rm-app-card" key={idx} onClick={() => navigate('/raymartPageFour')} style={{ cursor: 'pointer' }}>
+                <div className="rm-app-card" key={idx} onClick={() => navigate('/raymartPageFour', { state: { id: "graphic-design" } })} style={{ cursor: 'pointer' }}>
                   <div className="rm-app-card-img" style={{ backgroundImage: `url('${item.img}')` }}></div>
                   <div className="rm-app-card-body">
                     <h3 className="rm-app-card-title">{item.title}</h3>
@@ -647,7 +647,7 @@ const RayMartPageTwo = () => {
                 { title: "Dashboard Design", img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200", desc: "Intuitive dashboards for complex data visualization.", disc: "20%", offer: "DASHBOARD PRO" },
                 { title: "Product UI/UX", img: "https://images.unsplash.com/photo-1522542550221-31fd19705268?auto=format&fit=crop&q=80&w=1200", desc: "End-to-end user journeys for digital products.", disc: "50%", offer: "UX MASTER" }
               ].map((item, idx) => (
-                <div className="rm-app-card" key={idx} onClick={() => navigate('/raymartPageFour')} style={{ cursor: 'pointer' }}>
+                <div className="rm-app-card" key={idx} onClick={() => navigate('/raymartPageFour', { state: { id: "ui-ux-design" } })} style={{ cursor: 'pointer' }}>
                   <div className="rm-app-card-img" style={{ backgroundImage: `url('${item.img}')` }}></div>
                   <div className="rm-app-card-body">
                     <h3 className="rm-app-card-title">{item.title}</h3>
@@ -680,7 +680,7 @@ const RayMartPageTwo = () => {
                 { title: "IT Consulting", img: "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=1200", desc: "Expert advice on technology strategy.", disc: "15%", offer: "TECH GUIDE" },
                 { title: "Tech Maintenance", img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200", desc: "Ongoing support and updates for your tech.", disc: "50%", offer: "CARE PACK" }
               ].map((item, idx) => (
-                <div className="rm-app-card" key={idx} onClick={() => navigate('/raymartPageFour')} style={{ cursor: 'pointer' }}>
+                <div className="rm-app-card" key={idx} onClick={() => navigate('/raymartPageFour', { state: { id: "software-tech-solutions" } })} style={{ cursor: 'pointer' }}>
                   <div className="rm-app-card-img" style={{ backgroundImage: `url('${item.img}')` }}></div>
                   <div className="rm-app-card-body">
                     <h3 className="rm-app-card-title">{item.title}</h3>
@@ -715,7 +715,7 @@ const RayMartPageTwo = () => {
                 { title: "Reporting Automation", img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200", desc: "Automated reports on core business metrics.", disc: "40%", offer: "FLOW REPORT" },
                 { title: "Optimization Strategy", img: "https://images.unsplash.com/photo-1504868584819-f8e905b637e6?auto=format&fit=crop&q=80&w=1200", desc: "Strategic plans for data maturity.", disc: "15%", offer: "GROWTH MAP" }
               ].map((item, idx) => (
-                <div className="rm-app-card" key={idx} onClick={() => navigate('/raymartPageFour')} style={{ cursor: 'pointer' }}>
+                <div className="rm-app-card" key={idx} onClick={() => navigate('/raymartPageFour', { state: { id: "data-analytics" } })} style={{ cursor: 'pointer' }}>
                   <div className="rm-app-card-img" style={{ backgroundImage: `url('${item.img}')` }}></div>
                   <div className="rm-app-card-body">
                     <h3 className="rm-app-card-title">{item.title}</h3>
@@ -749,7 +749,7 @@ const RayMartPageTwo = () => {
                 { title: "AI Content Generation", img: "https://images.unsplash.com/photo-1589254065878-42c9da997008?auto=format&fit=crop&q=80&w=1200", desc: "Scale your creative output with generative AI.", disc: "55%", offer: "CONTENT AI" },
                 { title: "AI Intelligence Platform", img: "https://images.unsplash.com/photo-1527430253228-e90371c6a1f9?auto=format&fit=crop&q=80&w=1200", desc: "Unified AI platforms for strategy.", disc: "40%", offer: "CORE AI" }
               ].map((item, idx) => (
-                <div className="rm-app-card" key={idx} onClick={() => navigate('/raymartPageFour')} style={{ cursor: 'pointer' }}>
+                <div className="rm-app-card" key={idx} onClick={() => navigate('/raymartPageFour', { state: { id: "ai-services" } })} style={{ cursor: 'pointer' }}>
                   <div className="rm-app-card-img" style={{ backgroundImage: `url('${item.img}')` }}></div>
                   <div className="rm-app-card-body">
                     <h3 className="rm-app-card-title">{item.title}</h3>
@@ -782,7 +782,7 @@ const RayMartPageTwo = () => {
                 { title: "Workflow Automation", img: "https://images.unsplash.com/photo-1518186239717-2e90987c3913?auto=format&fit=crop&q=80&w=1200", desc: "Streamline repetitive tasks within your CRM.", disc: "25%", offer: "FLOW BUILD" },
                 { title: "Custom Integration", img: "https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?auto=format&fit=crop&q=80&w=1200", desc: "Sync your CRM with other business tools.", disc: "15%", offer: "SYNC PRO" }
               ].map((item, idx) => (
-                <div className="rm-app-card" key={idx} onClick={() => navigate('/raymartPageFour')} style={{ cursor: 'pointer' }}>
+                <div className="rm-app-card" key={idx} onClick={() => navigate('/raymartPageFour', { state: { id: "crm-services" } })} style={{ cursor: 'pointer' }}>
                   <div className="rm-app-card-img" style={{ backgroundImage: `url('${item.img}')` }}></div>
                   <div className="rm-app-card-body">
                     <h3 className="rm-app-card-title">{item.title}</h3>
@@ -815,7 +815,7 @@ const RayMartPageTwo = () => {
                 { title: "Infrastructure", img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200", desc: "Reliable foundations for user growth.", disc: "25%", offer: "SKY CORE" },
                 { title: "Product Metrics", img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200", desc: "Deep analytics for your SaaS product success.", disc: "50%", offer: "VALUE MAP" }
               ].map((item, idx) => (
-                <div className="rm-app-card" key={idx} onClick={() => navigate('/raymartPageFour')} style={{ cursor: 'pointer' }}>
+                <div className="rm-app-card" key={idx} onClick={() => navigate('/raymartPageFour', { state: { id: "saas-services" } })} style={{ cursor: 'pointer' }}>
                   <div className="rm-app-card-img" style={{ backgroundImage: `url('${item.img}')` }}></div>
                   <div className="rm-app-card-body">
                     <h3 className="rm-app-card-title">{item.title}</h3>

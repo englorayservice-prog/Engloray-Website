@@ -20,7 +20,11 @@ const OtherSectionCarousel = () => {
       image: techGroupImage,
       path: '/tech-group',
       description: "Advanced Technology Solutions for Modern Businesses",
-      clickable: true
+      clickable: true,
+      imgScale: 1.05,
+      imgHoverScale: 1.15,
+      imgFit: 'contain',
+      cardHeight: '360px' // Slightly decreased height for this image
     },
     {
       id: 2,
@@ -28,7 +32,10 @@ const OtherSectionCarousel = () => {
       image: eLearningImage,
       path: '/tech-learning',
       description: "Transformative Online Education Experiences",
-      clickable: true
+      clickable: true,
+      imgScale: 1.05,
+      imgHoverScale: 1.15,
+      imgFit: 'contain'
     },
     {
       id: 3,
@@ -36,7 +43,10 @@ const OtherSectionCarousel = () => {
       image: fullStackImage,
       description: "Transform your brand with intelligent design, automation, and data-driven creativity powered by AI.",
       clickable: false,
-      overlayText: "COMING SOON"
+      overlayText: "COMING SOON",
+      imgScale: 1.03,
+      imgHoverScale: 1.1,
+      imgFit: 'contain'
     }
   ];
 
@@ -124,10 +134,20 @@ const OtherSectionCarousel = () => {
                     } ${!service.clickable ? 'non-clickable' : ''}`}
                   onClick={() => handleCardClick(service, index)}
                   ref={addToRefs}
-                  style={{ cursor: (service.clickable && index === currentIndex) ? 'pointer' : 'default' }}
+                  style={{ 
+                    cursor: (service.clickable && index === currentIndex) ? 'pointer' : 'default',
+                    '--img-scale': service.imgScale || 1,
+                    '--img-hover-scale': service.imgHoverScale || 1.1,
+                    '--card-height': service.cardHeight || '380px'
+                  }}
                 >
                   <div className="compact-card-image">
-                    <img src={service.image} alt={service.title} />
+                    <img 
+                      src={service.image} 
+                      alt={service.title}
+                      className="zoom-image"
+                      style={{ objectFit: service.imgFit || 'contain' }}
+                    />
                     {!service.clickable && (
                       <div className="coming-soon-overlay">
                         <div className="coming-soon-badge">COMING SOON</div>

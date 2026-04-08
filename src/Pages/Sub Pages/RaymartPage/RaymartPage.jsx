@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './RaymartPage.css';
 import { BarChart, Bar, XAxis, ResponsiveContainer, Tooltip } from 'recharts';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowTrendUp, faFire, faStar, faChartLine, faRobot, faCheck, faWandMagicSparkles, faUsers, faRotateLeft, faShieldHalved, faBriefcase, faHeadset, faNewspaper, faGraduationCap, faChevronRight, faEnvelope, faBuilding, faPlus, faHandshake, faCode, faStore, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faArrowTrendUp, faFire, faStar, faChartLine, faRobot, faCheck, faWandMagicSparkles, faUsers, faRotateLeft, faShieldHalved, faBriefcase, faHeadset, faNewspaper, faGraduationCap, faChevronRight, faChevronLeft, faEnvelope, faBuilding, faPlus, faHandshake, faCode, faStore, faSearch } from '@fortawesome/free-solid-svg-icons';
 import aiProduct01Img from '../../../assets/ai-product-01.png';
 import aiProductImg from '../../../assets/ai-product.png';
 import brandingDesignKitImg from '../../../assets/brandinganddesignkit.png';
@@ -12,6 +12,8 @@ import globalImage from '../../../assets/global-image.png';
 import aiDeploymentHubImg from './ai-deployment-hub.png';
 import paymentImg from '../../../assets/payment.png';
 import socialMediaImg from '../../../assets/social-media.png';
+import uiuxDesignKitImg from '../../../assets/uiux_hero_1.png';
+import digitalMarketingPackImg from '../../../assets/social-media.png';
 
 /* ─── Mock Data ─────────────────────────────────────────────── */
 const raymartSidebarCategories = [
@@ -381,8 +383,10 @@ const bentoData = {
 
 const popularCards = [
   { id: 1, title: 'Brand Identity\nDesign Kit', subtitle: 'BRANDING', bg: '#e2e8f0', color: '#111', img: brandingDesignKitImg, btnText: 'Shop Now' },
-  { id: 2, title: 'AI Neural\nProcessor', subtitle: 'AI PRODUCT', bg: '#23252a', color: '#fff', img: aiProduct01Img, btnText: 'Pre-Order' },
-  { id: 3, title: 'All-in-One\nSaaS Dashboard', subtitle: 'SAAS', bg: '#e76f51', color: '#111', img: saasDashboardImg, btnText: 'Shop Now' }
+  { id: 2, title: 'AI Neural\nProcessor', subtitle: 'AI PRODUCT', bg: '#b7bbc9ff', color: '#111', img: aiProduct01Img, btnText: 'Pre-Order' },
+  { id: 3, title: 'All-in-One\nSaaS Dashboard', subtitle: 'SAAS', bg: '#e76f51', color: '#fff', img: saasDashboardImg, btnText: 'Shop Now' },
+  { id: 4, title: 'UI/UX Design\nSystem Pro', subtitle: 'INTERFACE', bg: '#2a9d8f', color: '#fff', img: uiuxDesignKitImg, btnText: 'View Kit' },
+  { id: 5, title: 'Digital\nMarketing Pack', subtitle: 'MARKETING', bg: '#7faef4ff', color: '#111', img: digitalMarketingPackImg, btnText: 'Get Quote' }
 ];
 
 /* ─── Main Component ─────────────────────────────────────────── */
@@ -390,6 +394,30 @@ const RaymartPage = () => {
   const [search, setSearch] = useState('');
   const [activeCategory, setActiveCategory] = useState('Branding');
   const navigate = useNavigate();
+  const popularTrackRef = React.useRef(null);
+
+  const scrollPopular = (dir) => {
+    if (!popularTrackRef.current) return;
+    const track = popularTrackRef.current;
+    const scrollAmount = 450;
+    const maxScroll = track.scrollWidth - track.clientWidth;
+
+    if (dir === 'right') {
+      // If we're near the end, wrap back to the start
+      if (track.scrollLeft >= maxScroll - 50) {
+        track.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      }
+    } else {
+      // If we're near the start, wrap to the end
+      if (track.scrollLeft <= 50) {
+        track.scrollTo({ left: maxScroll, behavior: 'smooth' });
+      } else {
+        track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      }
+    }
+  };
 
   const data = bentoData[activeCategory] || bentoData['Branding'];
   const [activeService, setActiveService] = useState('Branding');
@@ -674,18 +702,31 @@ const RaymartPage = () => {
       <div className="rm-popular-wrapper">
         <div className="rm-popular-header">
           <h3>Popular Brands and Services</h3>
+          <div className="rm-popular-nav">
+            <button className="rm-pop-nav-btn" onClick={() => scrollPopular('left')}>
+              <FontAwesomeIcon icon={faChevronLeft} />
+            </button>
+            <button className="rm-pop-nav-btn" onClick={() => scrollPopular('right')}>
+              <FontAwesomeIcon icon={faChevronRight} />
+            </button>
+          </div>
         </div>
 
         <div className="rm-popular-carousel-container">
-          <div className="rm-popular-track">
+          <div className="rm-popular-track" ref={popularTrackRef}>
             {popularCards.map(c => (
               <div key={c.id} className="rm-pop-card" style={{ backgroundColor: c.bg, color: c.color }}>
                 <div className="rm-pop-card-content">
                   <span className="rm-pop-card-sub">{c.subtitle}</span>
                   <h4 className="rm-pop-card-title">{c.title}</h4>
-                  <button className="rm-pop-card-btn" style={{ color: c.bg === '#23252a' || c.bg === '#2b2d42' ? '#000' : '#fff', backgroundColor: c.bg === '#23252a' || c.bg === '#2b2d42' ? '#fff' : '#111' }}>{c.btnText}</button>
+                  <button className="rm-pop-card-btn" style={{
+                    color: c.color === '#111' ? '#fff' : '#111',
+                    backgroundColor: c.color === '#111' ? '#111' : '#fff'
+                  }}>{c.btnText}</button>
                 </div>
-                <img src={c.img} alt={c.title} className="rm-pop-card-img" style={{ objectFit: c.bg === '#23252a' ? 'contain' : 'cover' }} />
+                <div className="rm-pop-card-img-wrap">
+                  <img src={c.img} alt={c.title} className="rm-pop-card-img" />
+                </div>
               </div>
             ))}
           </div>
@@ -707,7 +748,7 @@ const RaymartPage = () => {
             </h2>
             <div className="rm-global-stats-grid">
               <div className="rm-global-stat-item">
-                <div className="rm-global-stat-value">Millions</div>
+                <div className="rm-global-stat-value">1M+</div>
                 <div className="rm-global-stat-label">of merchants worldwide</div>
               </div>
               <div className="rm-global-stat-item">
@@ -719,8 +760,8 @@ const RaymartPage = () => {
                 <div className="rm-global-stat-label">of total US ecommerce</div>
               </div>
               <div className="rm-global-stat-item">
-                <div className="rm-global-stat-value">$444B</div>
-                <div className="rm-global-stat-label">global economic activity</div>
+                <div className="rm-global-stat-value">10M</div>
+                <div className="rm-global-stat-label">Transactions Worldwide</div>
               </div>
             </div>
           </div>
@@ -797,13 +838,7 @@ const RaymartPage = () => {
               <h3>Our Products</h3>
             </div>
             <div className="rm-showcase-cat-list">
-              {[
-                'BRANDING & IDENTITY',
-                'UI/UX DESIGN',
-                'WEBSITE DEVELOPMENT',
-                'AI PRODUCTS',
-                'APP DEVELOPMENT',
-              ].map(cat => (
+              {['BRANDING & IDENTITY', 'UI/UX DESIGN', 'WEBSITE DEVELOPMENT', 'AI PRODUCTS', 'APP DEVELOPMENT'].map(cat => (
                 <div
                   key={cat}
                   className={`rm-showcase-cat-item ${activeProduct === cat ? 'active' : ''}`}
@@ -813,6 +848,9 @@ const RaymartPage = () => {
                   <FontAwesomeIcon icon={faChevronRight} className="rm-showcase-cat-arrow" />
                 </div>
               ))}
+            </div>
+            <div className="rm-sidebar-watermark">
+              <FontAwesomeIcon icon={faFire} />
             </div>
           </div>
 
@@ -887,6 +925,9 @@ const RaymartPage = () => {
                   <FontAwesomeIcon icon={faChevronRight} className="rm-showcase-cat-arrow" />
                 </div>
               ))}
+            </div>
+            <div className="rm-sidebar-watermark">
+              <FontAwesomeIcon icon={faBriefcase} />
             </div>
           </div>
 

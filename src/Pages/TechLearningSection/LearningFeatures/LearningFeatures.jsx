@@ -88,7 +88,17 @@ const LearningFeatures = () => {
                                     className={`tab-btn ${activeTab === tab ? 'active' : ''}`}
                                     onClick={() => setActiveTab(tab)}
                                     style={{
-                                        backgroundColor: activeTab === tab ? '#ffffff' : tabs[tab].color
+                                        backgroundColor: activeTab === tab ? '#ffffff' : tabs[tab].color,
+                                        /* Align text and fill gap for first tab when unselected */
+                                        ...(tab === 'clubs' && activeTab !== 'clubs' ? {
+                                            height: 'calc(100% + 30px)',
+                                            marginBottom: '-30px',
+                                            zIndex: 0,
+                                            borderBottomLeftRadius: '0',
+                                            display: 'flex',
+                                            alignItems: 'flex-start',
+                                            paddingTop: '1.2rem'
+                                        } : {})
                                     }}
                                 >
                                     {tabs[tab].title}
@@ -96,7 +106,7 @@ const LearningFeatures = () => {
                             ))}
                         </div>
 
-                        <div className="active-tab-content-card" style={{ borderTopLeftRadius: activeTab === 'clubs' ? '0' : '30px' }}>
+                        <div className="active-tab-content-card" style={{ borderTopLeftRadius: activeTab === 'clubs' ? '0' : '30px', zIndex: 1 }}>
                             <div className="tab-text-side blue-style-list">
                                 <ul className="tab-details-list">
                                     {tabs[activeTab].details.map((detail, i) => (
@@ -155,7 +165,6 @@ const LearningFeatures = () => {
                         <span className="faq-tag">FAQ</span>
                         <div className="faq-decoration">
                             <i className="fas fa-question"></i>
-                            <i className="fas fa-question small"></i>
                         </div>
                     </div>
 
@@ -182,13 +191,10 @@ const LearningFeatures = () => {
                     {/* Personal Advice Box */}
                     <div className="personal-advice-box">
                         <h4>Any question left or need personal advice?</h4>
-                        <p>Leave your contacts, and we will contact you within 24 hours.</p>
-                        <div className="mini-form">
-                            <input type="text" placeholder="Your name" />
-                            <div className="form-submit-arrow">
-                                <i className="fas fa-arrow-right"></i>
-                            </div>
-                        </div>
+                        <p>Sign up for a free consultation and we will guide you to the right choice.</p>
+                        <button className="advice-cta-btn">
+                            Book a Free Consultation
+                        </button>
                         <div className="heart-float">💚</div>
                     </div>
                 </div>

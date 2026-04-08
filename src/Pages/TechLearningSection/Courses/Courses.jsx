@@ -3,8 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import MernImg from '../../../assets/Mern Developer.jfif'
 import MernStack from '../../../assets/MernStack.jfif'
 import JavaFull from '../../../assets/JavaFull.jfif'
-import graphicDesignImg from '../../../assets/Graphic-Design.jfif'
-import teachersBG from '../../../assets/images/teachers_bg.png'
+import graphicDesignImg from '../../../assets/graphic_design.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faPalette,
@@ -33,7 +32,9 @@ const Courses = () => {
   const categories = [
     { id: 1, name: 'Graphic Design', icon: faPenNib, count: 25, route: "/graphicsDesignCoursePage" },
     { id: 2, name: 'Full Stack', icon: faLaptopCode, count: 20, route: "/javaFullStackCourseCoursePage" },
-    { id: 3, name: 'UI/UX Design', icon: faCompassDrafting, count: 15, route: "/uiuxDesignCoursePage" }
+    { id: 3, name: 'UI/UX Design', icon: faCompassDrafting, count: 15, route: "/uiuxDesignCoursePage" },
+    { id: 4, name: 'Drawing', icon: faPalette, count: 12, route: "/drawingCoursePage" },
+    { id: 5, name: 'Digital Marketing', icon: faBullhorn, count: 18, route: "/digitalMarketingCoursePage" },
   ];
 
   const courses = [
@@ -290,6 +291,68 @@ const Courses = () => {
       topTags: ["Mentorship"],
       badges: ["High Demand"],
       skills: ["Advanced", "#analytics", "#DataMining"]
+    },
+    // ADD THIS inside courses array (after UI/UX or anywhere, structure unchanged)
+
+    // Drawing Courses
+    {
+      id: 51,
+      category: "Drawing",
+      title: "Pencil Drawing Basics: From Lines to Life",
+      description: "Learn shading, proportions, and sketching techniques from scratch",
+      icon: <FontAwesomeIcon icon={faPalette} />,
+      status: "available",
+      duration: "06 WEEKS",
+      level: "Beginner",
+      lessons: 10,
+      students: "45+",
+      rating: 4.7,
+      buyers: 320,
+      authorImage: "https://i.pravatar.cc/150?u=drawing1",
+      image: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=800&auto=format&fit=crop",
+      topTags: ["Sketching"],
+      badges: ["Popular"],
+      skills: ["Beginner", "#Sketch", "#Shading"]
+    },
+    {
+      id: 52,
+      category: "Drawing",
+      title: "Portrait Drawing Mastery",
+      description: "Master facial proportions, expressions, and realistic portraits",
+      icon: <FontAwesomeIcon icon={faPalette} />,
+      status: "available",
+      duration: "08 WEEKS",
+      level: "Intermediate",
+      lessons: 14,
+      students: "30+",
+      rating: 4.9,
+      buyers: 210,
+      authorImage: "https://i.pravatar.cc/150?u=drawing2",
+      image: "https://images.unsplash.com/photo-1549887534-4b6c2d8c3a55?q=80&w=800&auto=format&fit=crop",
+      topTags: ["Portrait"],
+      badges: [],
+      skills: ["Intermediate", "#Portrait", "#Realism"]
+    },
+    {
+      id: 53,
+      category: "Drawing",
+      title: "Advanced Illustration & Concept Art",
+      description: "Create professional illustrations and concept art for games and media",
+      icon: <FontAwesomeIcon icon={faPalette} />,
+      status: "available",
+      duration: "10 WEEKS",
+      level: "Advanced",
+      lessons: 18,
+      students: "20+",
+      rating: 5.0,
+      buyers: 150,
+      theoryHours: "12+",
+      practiceHours: "12+",
+      authorImage: "https://i.pravatar.cc/150?u=drawing3",
+      image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=800&auto=format&fit=crop",
+      topTags: ["Illustration"],
+      badges: ["Mastery"],
+      skills: ["Advanced", "#ConceptArt", "#Creative"]
     }
   ];
 
@@ -536,7 +599,7 @@ const Courses = () => {
 
                 {/* Teachers card — lime-green */}
                 <div className="lh-card lh-card-teachers">
-                  <img src={teachersBG} alt="Teachers Background" className="lh-teachers-bg" />
+                  <img src="https://images.unsplash.com/photo-1524178232363-1fb28f74b671?q=80&w=400&auto=format&fit=crop" alt="Teachers Background" className="lh-teachers-bg" />
                   <div className="lh-teachers-content">
                     <div className="lh-teacher-avatars">
                       <img src="https://i.pravatar.cc/150?u=t1" alt="Teacher 1" />

@@ -1,0 +1,2857 @@
+/* UiuxDesignCourse.css - UI/UX Design Course Styling with Blue Theme */
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+
+/* HEXCO Font */
+@font-face {
+    font-family: 'HEXCO';
+    src: url('https://fonts.cdnfonts.com/s/96524/HEXCO.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Reset */
+.uic-page * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.uic-page {
+    font-family: 'Aldrich', monospace;
+    font-weight: 100;
+    color: #333333;
+    overflow-x: hidden;
+}
+
+/* Container */
+.uic-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Blue Color Theme */
+:root {
+    --uic-blue: #1a73e8;
+    --uic-blue-dark: #0d5ec1;
+    --uic-blue-light: #e8f0fe;
+    --uic-blue-bg: #f8fbff;
+    --uic-blue-border: #d2e3fc;
+}
+
+/* Hero Section */
+.uic-hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: white;
+    text-align: center;
+}
+
+.uic-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        url('https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    animation: uic-zoom-in-out 20s ease-in-out infinite alternate;
+    z-index: 1;
+}
+
+.uic-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 2;
+}
+
+@keyframes uic-zoom-in-out {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+.uic-hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.uic-hero-badge {
+    display: inline-block;
+    background: var(--uic-blue);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    font-weight: 100;
+    animation: uic-pulse 2s infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.uic-hero-badge svg {
+    font-size: 1rem;
+    color: white;
+}
+
+@keyframes uic-pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(26, 115, 232, 0.4);
+    }
+
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(26, 115, 232, 0);
+    }
+}
+
+.uic-hero-title {
+    font-family: 'HEXCO', sans-serif;
+    font-weight: 100;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    color: white;
+    animation: uic-fade-in 1s ease;
+}
+
+@keyframes uic-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.uic-hero-subtitle {
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    letter-spacing: 1px;
+    animation: uic-fade-in 1s ease 0.3s both;
+}
+
+.uic-hero-duration {
+    font-size: 1.1rem;
+    color: #b3d4fc;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+    animation: uic-fade-in 1s ease 0.6s both;
+}
+
+.uic-hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    animation: uic-fade-in 1s ease 0.9s both;
+}
+
+.uic-enroll-btn {
+    background: var(--uic-blue);
+    color: white;
+    border: none;
+    padding: 18px 50px;
+    font-family: 'Aldrich', monospace;
+    font-weight: 100;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.uic-enroll-btn svg {
+    font-size: 1.1rem;
+    color: white;
+}
+
+.uic-enroll-btn:hover {
+    background: var(--uic-blue-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(26, 115, 232, 0.4);
+}
+
+/* Sections */
+.uic-section {
+    padding: 60px 0;
+}
+
+.uic-white-bg {
+    background: white;
+}
+
+.uic-dark-bg {
+    background: #1a1a1a;
+    color: white;
+}
+
+.uic-dark-enrollment {
+    background: #0a0a0a;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.uic-section-title {
+    font-family: 'HEXCO', sans-serif;
+    font-weight: 100;
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    color: #333333;
+}
+
+.uic-dark-bg .uic-section-title,
+.uic-dark-enrollment .uic-section-title {
+    color: white;
+}
+
+.uic-blue-text {
+    color: var(--uic-blue);
+}
+
+.uic-section-subtitle {
+    font-size: 1.1rem;
+    text-align: center;
+    color: #666666;
+    margin-bottom: 40px;
+    letter-spacing: 0.5px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.uic-dark-bg .uic-section-subtitle,
+.uic-dark-enrollment .uic-section-subtitle {
+    color: #cccccc;
+}
+
+/* Course Overview */
+.uic-course-description {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #f8f9fa;
+    padding: 40px;
+    border-radius: 15px;
+    border-left: 5px solid var(--uic-blue);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.uic-description-content {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #222222;
+    letter-spacing: 0.5px;
+    max-height: 200px;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    position: relative;
+}
+
+.uic-description-content.expanded {
+    max-height: 2000px;
+}
+
+.uic-description-content:not(.expanded)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(transparent, #f8f9fa);
+}
+
+.uic-readmore-btn {
+    background: var(--uic-blue);
+    color: white;
+    border: none;
+    padding: 14px 35px;
+    border-radius: 8px;
+    font-family: 'Aldrich', monospace;
+    font-weight: 100;
+    font-size: 1rem;
+    cursor: pointer;
+    letter-spacing: 1px;
+    margin-top: 25px;
+    transition: all 0.3s ease;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.uic-readmore-btn:hover {
+    background: var(--uic-blue-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(26, 115, 232, 0.3);
+}
+
+/* Course Outcomes - Numbered Grid Section */
+.dgm-outcomes-numbered {
+    background-color: #ffffff;
+    padding: 60px 0;
+    overflow: hidden;
+}
+
+.dgm-outcomes-header-row {
+    max-width: 100%;
+    /* remove center constraint */
+    margin-left: 0;
+    /* remove auto centering */
+    margin-right: 0;
+    padding-left: 0;
+    /* remove left padding */
+}
+
+.dgm-outcomes-title-col {
+    flex: 1;
+    text-align: left;
+    margin-left: -50px;
+    /* break container padding */
+}
+
+.dgm-outcomes-main-title {
+    position: relative;
+    top: 40px;
+    left: 80px;
+    /* cancel container padding */
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #111111;
+    line-height: 1.1;
+    margin: 0;
+    text-align: left;
+    letter-spacing: -1px;
+}
+
+.dgm-outcomes-desc-col {
+    flex: 1;
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.dgm-outcomes-top-desc {
+    position: relative;
+    right: 60px;
+    /* move to right */
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #555555;
+    line-height: 1.6;
+    margin: 0;
+    text-align: left !important;
+    max-width: 500px;
+}
+
+.dgm-outcomes-numbered-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    max-width: 1400px;
+    margin: 40px auto 0;
+    padding: 0 20px;
+}
+
+.dgm-outcome-numbered-card {
+    top: 30px;
+    background: transparent;
+    border-radius: 28px;
+    transition: all 0.3s ease;
+    position: relative;
+    min-height: 180px;
+    /* was 230px */
+    padding: 18px;
+    /* was 25px */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    transform: scale(1.03);
+}
+
+.dgm-outcome-numbered-card.white-bg {
+    background: transparent;
+    border: 1px solid #000000;
+}
+
+.dgm-outcome-numbered-card.black-bg {
+    background: #1a1a2e;
+    border: none;
+}
+
+.dgm-outcome-numbered-card.black-bg .dgm-outcome-numbered-title,
+.dgm-outcome-numbered-card.black-bg .dgm-outcome-numbered-desc {
+    color: #ffffff;
+}
+
+.dgm-outcome-numbered-card.black-bg .dgm-outcome-numbered-icon {
+    color: #ffffff;
+}
+
+/* Left side - Number and Icon */
+.dgm-outcome-card-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+    flex-shrink: 0;
+    min-width: 70px;
+    margin-top: 0;
+    transform: translate(8px, -55px);
+}
+
+.dgm-outcome-card-number {
+    margin-top: 50px;
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #cbd5e1;
+    letter-spacing: 1.5px;
+    font-family: monospace;
+    line-height: 1;
+}
+
+.dgm-outcome-numbered-card.black-bg .dgm-outcome-card-number {
+    color: rgba(255, 255, 255, 0.25);
+}
+
+.dgm-outcome-numbered-icon {
+    font-size: 3rem;
+    color: #3D52D9;
+    transition: transform 0.3s ease;
+    transform: translateX(5px);
+}
+
+.dgm-outcome-numbered-card:hover .dgm-outcome-numbered-icon {
+    transform: scale(1.05);
+}
+
+/* Right side - Title and Description */
+.dgm-outcome-card-right {
+    flex: 1;
+    text-align: left;
+    margin-top: 0;
+    transform: translateY(-10px);
+}
+
+.dgm-outcome-numbered-title {
+    font-family: "inter", sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #111827;
+    line-height: 1.3;
+    margin-top: 15px;
+    /* was 30px */
+    margin-bottom: 6px;
+    /* was 10px */
+}
+
+.dgm-outcome-numbered-desc {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: #4b5563;
+    transform: translateY(10px);
+}
+
+.dgm-outcome-numbered-card.black-bg .dgm-outcome-numbered-desc {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+/* Content wrapper - Left/Right row layout */
+.dgm-outcome-card-content-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex: 1;
+    width: 100%;
+    margin-top: 30px;
+    /* was 50px */
+    gap: 15px;
+    /* was 20px */
+}
+
+/* Container */
+.dgm-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    overflow: visible;
+}
+
+/* Section */
+.dgm-section {
+    padding: 60px 0;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .dgm-outcomes-header-row {
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 40px;
+    }
+
+    .dgm-outcomes-title-col {
+        width: 100%;
+        text-align: left;
+        margin-left: 0;
+    }
+
+    .dgm-outcomes-desc-col {
+        width: 100%;
+        text-align: left;
+        justify-content: flex-start;
+    }
+
+    .dgm-outcomes-top-desc {
+        text-align: left;
+        max-width: 100%;
+        right: 0;
+    }
+
+    .dgm-outcomes-main-title {
+        font-size: 2.8rem;
+        left: 0;
+    }
+
+    .dgm-outcomes-numbered-grid {
+        gap: 28px;
+    }
+
+    .dgm-outcome-numbered-card {
+        min-height: 280px;
+        padding: 24px;
+    }
+
+    .dgm-outcome-numbered-title {
+        font-size: 1.1rem;
+    }
+
+    .dgm-outcome-numbered-desc {
+        font-size: 0.75rem;
+    }
+
+    .dgm-outcome-card-number {
+        font-size: 1.75rem;
+    }
+
+    .dgm-outcome-numbered-icon {
+        font-size: 1.75rem;
+    }
+
+    .dgm-outcome-card-left {
+        margin-left: 25px;
+    }
+
+    .dgm-outcome-card-right {
+        margin-top: 35px;
+    }
+}
+
+@media (max-width: 992px) {
+    .dgm-outcomes-numbered-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+
+    .dgm-outcomes-main-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .dgm-outcomes-numbered-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .dgm-outcome-numbered-card {
+        min-height: auto;
+    }
+
+    .dgm-outcome-card-number {
+        font-size: 1.5rem;
+    }
+
+    .dgm-outcome-numbered-icon {
+        font-size: 1.5rem;
+    }
+
+    .dgm-outcome-numbered-title {
+        font-size: 1rem;
+    }
+
+    .dgm-outcome-numbered-desc {
+        font-size: 0.7rem;
+    }
+
+    .dgm-outcome-card-content-wrapper {
+        gap: 16px;
+    }
+
+    .dgm-outcome-card-left {
+        margin-left: 20px;
+    }
+
+    .dgm-outcome-card-right {
+        margin-top: 30px;
+    }
+
+    .dgm-outcomes-main-title {
+        font-size: 2rem;
+    }
+}
+
+/* 6-Month Curriculum Slider - UPDATED NO SCROLL VERSION */
+.uic-curriculum-slider-container {
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.uic-slider-controls-above {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding: 0 15px;
+}
+
+.uic-slider-controls-above .uic-slider-prev,
+.uic-slider-controls-above .uic-slider-next {
+    background: var(--uic-blue);
+    color: white;
+    border: none;
+    padding: 14px 25px;
+    border-radius: 8px;
+    font-family: 'Aldrich', monospace;
+    font-weight: 100;
+    font-size: 0.95rem;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    min-width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.uic-slider-controls-above .uic-slider-prev svg,
+.uic-slider-controls-above .uic-slider-next svg {
+    font-size: 0.9rem;
+    color: white;
+}
+
+.uic-slider-controls-above .uic-slider-prev:hover,
+.uic-slider-controls-above .uic-slider-next:hover {
+    background: var(--uic-blue-dark);
+    transform: translateY(-2px);
+}
+
+.uic-slider-controls-above .uic-slider-dots {
+    display: flex;
+    gap: 12px;
+}
+
+.uic-slider-controls-above .uic-slider-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: none;
+    background: #dddddd;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.uic-slider-controls-above .uic-slider-dot.active {
+    background: var(--uic-blue);
+    transform: scale(1.2);
+}
+
+.uic-slider-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    min-height: 600px;
+}
+
+.uic-slider-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+    height: 100%;
+}
+
+.uic-module-slide {
+    flex: 0 0 100%;
+    min-width: 100%;
+    background-size: cover;
+    background-position: center;
+    padding: 50px 35px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    min-height: 600px;
+}
+
+.uic-module-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1000px;
+    margin: 0 auto;
+    color: white;
+    width: 100%;
+}
+
+.uic-month-badge {
+    background: var(--uic-blue);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-bottom: 25px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.uic-module-icon-slide {
+    font-size: 3rem;
+    margin-bottom: 25px;
+    color: var(--uic-blue);
+}
+
+.uic-module-icon-slide svg {
+    font-size: 2.5rem;
+    color: var(--uic-blue);
+}
+
+.uic-module-title-slide {
+    font-family: 'HEXCO', sans-serif;
+    font-weight: 100;
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    letter-spacing: 1.5px;
+    line-height: 1.3;
+}
+
+.uic-module-meta-slide {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 35px;
+    flex-wrap: wrap;
+}
+
+.uic-module-duration-slide,
+.uic-module-projects-slide {
+    background: rgba(26, 115, 232, 0.8);
+    padding: 12px 25px;
+    border-radius: 20px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.uic-module-topics-slide {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+}
+
+.uic-topic-item-slide {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    min-height: 60px;
+}
+
+.uic-topic-item-slide:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(5px);
+}
+
+.uic-topic-check-slide {
+    color: var(--uic-blue);
+    font-weight: bold;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.uic-topic-check-slide svg {
+    font-size: 1.2rem;
+    color: var(--uic-blue);
+}
+
+.uic-topic-text-slide {
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+}
+
+/* Tools & Resources Section */
+.uic-tools-container {
+    margin-top: 40px;
+}
+
+.uic-tools-category {
+    margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: uic-category-appear 0.6s ease forwards;
+}
+
+@keyframes uic-category-appear {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.uic-tools-category-title {
+    font-family: 'HEXCO', sans-serif;
+    font-weight: 100;
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    border-bottom: 2px solid var(--uic-blue);
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.uic-tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.uic-tool-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: uic-tool-slide 0.5s ease forwards;
+}
+
+@keyframes uic-tool-slide {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.uic-tool-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--uic-blue);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 25px rgba(26, 115, 232, 0.2);
+}
+
+.uic-tool-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+    background: rgba(26, 115, 232, 0.1);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(26, 115, 232, 0.3);
+    transition: all 0.3s ease;
+    color: var(--uic-blue);
+}
+
+.uic-tool-icon svg {
+    font-size: 1.5rem;
+    color: var(--uic-blue);
+}
+
+.uic-tool-card:hover .uic-tool-icon {
+    background: rgba(26, 115, 232, 0.2);
+    border-color: var(--uic-blue);
+    transform: scale(1.1);
+}
+
+.uic-tool-content {
+    flex: 1;
+}
+
+.uic-tool-name {
+    font-family: 'HEXCO', sans-serif;
+    font-weight: 100;
+    font-size: 1.1rem;
+    color: white;
+    margin-bottom: 5px;
+    letter-spacing: 0.5px;
+}
+
+.uic-tool-desc {
+    font-size: 0.85rem;
+    color: #cccccc;
+    letter-spacing: 0.3px;
+    line-height: 1.4;
+}
+
+.uic-tool-hover-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(26, 115, 232, 0.05), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.uic-tool-card:hover .uic-tool-hover-effect {
+    transform: translateX(100%);
+}
+
+/* New Benefit Card Styling */
+.dgm-new-benefit-card {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    padding: 18px;
+    width: 190px;
+    min-height: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.dgm-new-benefit-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    border-color: rgba(61, 82, 217, 0.2);
+    z-index: 10;
+}
+
+/* Floating Cards - Independent Positioning - SLIGHTLY INCREASED HEIGHT */
+.dgm-floating-benefit-card {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 16px;
+    padding: 20px;
+    width: 300px;
+    min-height: 210px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+    transition: all 0.3s ease;
+    position: absolute;
+    z-index: 10;
+}
+
+.dgm-floating-benefit-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 25px 55px rgba(0, 0, 0, 0.18);
+    border-color: rgba(61, 82, 217, 0.3);
+    z-index: 20;
+}
+
+/* Left Floating Card - Positioned at bottom left */
+.dgm-floating-card-left {
+    left: 3%;
+    bottom: 50px;
+}
+
+/* Right Floating Card - Positioned at bottom right */
+.dgm-floating-card-right {
+    right: 3%;
+    bottom: 50px;
+}
+
+/* Enlarged Icon for Floating Cards */
+.dgm-floating-benefit-card .dgm-new-icon {
+    width: 50px;
+    height: 35px;
+    border-radius: 16px;
+    margin-bottom: 14px;
+    font-size: 1.3rem;
+}
+
+/* Enlarged Title for Floating Cards */
+.dgm-floating-benefit-card .dgm-new-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+/* Enlarged Description for Floating Cards */
+.dgm-floating-benefit-card .dgm-new-content p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+}
+
+/* Regular Card Icon */
+.dgm-new-icon {
+    width: 45px;
+    height: 30px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+    color: #222;
+}
+
+.dgm-new-content h3 {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: #111111;
+    margin-bottom: 8px;
+    line-height: 1.25;
+    text-align: left;
+}
+
+.dgm-new-content p {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 0.78rem;
+    color: #666666;
+    line-height: 1.5;
+    margin: 0;
+    text-align: left;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Container */
+.dgm-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    overflow: visible;
+    position: relative;
+}
+
+/* Section */
+.dgm-section {
+    padding: 60px 0;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .dgm-benefits-title {
+        font-size: 3rem;
+    }
+
+    .dgm-floating-card-left {
+        left: 2%;
+        bottom: -40px;
+    }
+
+    .dgm-floating-card-right {
+        right: 2%;
+        bottom: -40px;
+    }
+
+    .dgm-floating-benefit-card {
+        width: 260px;
+        min-height: 190px;
+        padding: 16px;
+    }
+
+    .dgm-floating-benefit-card .dgm-new-icon {
+        width: 45px;
+        height: 32px;
+        font-size: 1.2rem;
+    }
+
+    .dgm-floating-benefit-card .dgm-new-content h3 {
+        font-size: 1rem;
+    }
+
+    .dgm-floating-benefit-card .dgm-new-content p {
+        font-size: 0.8rem;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+    }
+}
+
+@media (max-width: 992px) {
+    .dgm-benefits-title {
+        font-size: 2.5rem;
+        white-space: normal;
+    }
+
+    .dgm-benefits-row,
+    .dgm-row-5,
+    .dgm-row-3,
+    .dgm-row-2 {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .dgm-new-benefit-card {
+        width: calc(33.33% - 10px);
+        max-width: 200px;
+    }
+
+    /* Hide floating cards on tablet */
+    .dgm-floating-benefit-card {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .dgm-benefits-title {
+        font-size: 2rem;
+    }
+
+    .dgm-benefits-staggered {
+        gap: 15px;
+    }
+
+    .dgm-new-benefit-card {
+        width: calc(50% - 10px);
+        min-height: 150px;
+    }
+}
+
+@media (max-width: 576px) {
+    .dgm-new-benefit-card {
+        width: calc(50% - 10px);
+    }
+}
+
+@media (max-width: 480px) {
+    .dgm-benefits-title {
+        font-size: 1.5rem;
+    }
+
+    .dgm-new-benefit-card {
+        width: 100%;
+        min-height: auto;
+    }
+}
+
+
+/* Certificate Template Section */
+.uic-certificate-single {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.uic-certificate-image-wrapper {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    border: 3px solid var(--uic-blue);
+    background: #fff;
+    padding: 20px;
+    text-align: center;
+    cursor: default;
+}
+
+.uic-certificate-image {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+    transition: transform 0.5s ease;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Certificate Lock Overlay - Simplified */
+.uic-certificate-lock-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    z-index: 3;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    cursor: default;
+    pointer-events: none;
+}
+
+.uic-certificate-image-wrapper:hover .uic-certificate-lock-overlay {
+    opacity: 1;
+}
+
+.uic-lock-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    color: var(--uic-blue);
+    animation: uic-lock-pulse 2s infinite;
+}
+
+.uic-lock-icon svg {
+    font-size: 3.5rem;
+    color: var(--uic-blue);
+}
+
+@keyframes uic-lock-pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        text-shadow: 0 0 10px rgba(26, 115, 232, 0.5);
+    }
+
+    50% {
+        transform: scale(1.1);
+        text-shadow: 0 0 20px rgba(26, 115, 232, 0.8);
+    }
+}
+
+.uic-lock-text {
+    font-family: 'HEXCO', sans-serif;
+    font-weight: 100;
+    font-size: 1.5rem;
+    text-align: center;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    padding: 0 20px;
+}
+
+.uic-certificate-image-wrapper:hover .uic-certificate-image {
+    transform: scale(1.02);
+}
+
+.uic-certificate-overlay {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+}
+
+.uic-certificate-badge {
+    background: rgba(26, 115, 232, 0.9);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 20px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    backdrop-filter: blur(10px);
+    border: 2px solid white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.uic-certificate-download-note {
+    margin-top: 15px;
+    padding: 15px;
+    background: rgba(26, 115, 232, 0.05);
+    border-radius: 8px;
+    border-left: 3px solid var(--uic-blue);
+}
+
+.uic-certificate-download-note p {
+    font-size: 0.9rem;
+    color: #cccccc;
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.uic-certificate-info-single {
+    padding: 20px;
+}
+
+.uic-certificate-title-single {
+    font-family: 'HEXCO', sans-serif;
+    font-weight: 100;
+    font-size: 1.8rem;
+    color: white;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.uic-certificate-desc-single {
+    font-size: 1rem;
+    color: #cccccc;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+}
+
+.uic-certificate-features-single {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.uic-certificate-feature-item-single {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #cccccc;
+    letter-spacing: 0.5px;
+    border-left: 3px solid var(--uic-blue);
+    transition: all 0.3s ease;
+}
+
+.uic-certificate-feature-item-single:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateX(5px);
+}
+
+.uic-certificate-benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.uic-benefit {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.uic-benefit-icon {
+    font-size: 1.5rem;
+    background: rgba(26, 115, 232, 0.1);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(26, 115, 232, 0.3);
+    color: var(--uic-blue);
+}
+
+.uic-benefit-icon svg {
+    font-size: 1.3rem;
+    color: var(--uic-blue);
+}
+
+.uic-benefit-text {
+    font-size: 0.9rem;
+    color: #cccccc;
+    letter-spacing: 0.5px;
+}
+
+.uic-certificate-instructions {
+    margin-top: 25px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.uic-certificate-instructions h4 {
+    font-family: 'HEXCO', sans-serif;
+    font-weight: 100;
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.uic-certificate-instructions ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.uic-certificate-instructions li {
+    font-size: 0.9rem;
+    color: #cccccc;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+    line-height: 1.5;
+}
+
+.uic-certificate-instructions li:before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--uic-blue);
+    font-weight: bold;
+}
+
+/* Success Stories - Light Version */
+.uic-stories-grid-light {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.uic-story-card-light {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 25px;
+    border: 1px solid #eeeeee;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.uic-story-card-light:hover {
+    border-color: var(--uic-blue);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(26, 115, 232, 0.1);
+}
+
+.uic-story-header-light {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 20px;
+}
+
+.uic-story-avatar-light {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--uic-blue), #4285f4);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'HEXCO', sans-serif;
+    font-weight: 100;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+}
+
+.uic-avatar-text-light {
+    font-weight: bold;
+}
+
+.uic-story-info-light {
+    flex: 1;
+}
+
+.uic-story-name-light {
+    font-family: 'HEXCO', sans-serif;
+    font-weight: 100;
+    font-size: 1.2rem;
+    color: #333333;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.uic-story-role-light {
+    font-size: 0.85rem;
+    color: #666666;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.uic-story-salary-light {
+    font-size: 0.85rem;
+    color: var(--uic-blue);
+    background: rgba(26, 115, 232, 0.1);
+    padding: 4px 10px;
+    border-radius: 10px;
+    display: inline-block;
+    letter-spacing: 0.5px;
+}
+
+.uic-story-rating-container-light {
+    margin-bottom: 18px;
+    background: rgba(26, 115, 232, 0.05);
+    padding: 10px 15px;
+    border-radius: 8px;
+    display: inline-block;
+    width: fit-content;
+}
+
+.uic-story-rating-light {
+    color: #ffcc00;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+}
+
+.uic-story-rating-light svg {
+    font-size: 1rem;
+    color: #ffcc00;
+}
+
+.uic-story-review-light {
+    font-size: 0.95rem;
+    color: #666666;
+    line-height: 1.7;
+    letter-spacing: 0.5px;
+    font-style: italic;
+    border-left: 3px solid var(--uic-blue);
+    padding-left: 15px;
+    margin-top: auto;
+}
+
+/* Floating Icons */
+.uic-floating-icons-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.uic-floating-icon {
+    position: absolute;
+    font-size: 2rem;
+    opacity: 0.1;
+    animation: uic-float-slow 15s ease-in-out infinite;
+    pointer-events: none;
+    color: var(--uic-blue);
+}
+
+.uic-floating-icon svg {
+    font-size: 1.8rem;
+    opacity: 0.1;
+    color: var(--uic-blue);
+}
+
+@keyframes uic-float-slow {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg) scale(1);
+        opacity: 0.1;
+    }
+
+    33% {
+        transform: translateY(-20px) rotate(10deg) scale(1.1);
+        opacity: 0.15;
+    }
+
+    66% {
+        transform: translateY(10px) rotate(-10deg) scale(0.9);
+        opacity: 0.08;
+    }
+}
+
+/* Contact Details Grid */
+.uic-contact-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.uic-contact-item-dark {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    z-index: 2;
+    position: relative;
+}
+
+.uic-contact-item-dark:hover {
+    border-color: var(--uic-blue);
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 25px rgba(26, 115, 232, 0.1);
+}
+
+.uic-contact-icon-dark {
+    font-size: 2.2rem;
+    margin-bottom: 18px;
+    color: var(--uic-blue);
+}
+
+.uic-contact-icon-dark svg {
+    font-size: 2rem;
+    color: var(--uic-blue);
+}
+
+.uic-contact-title-dark {
+    font-family: 'HEXCO', sans-serif;
+    font-weight: 100;
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+}
+
+.uic-contact-info-dark {
+    margin-bottom: 12px;
+}
+
+.uic-contact-detail-dark {
+    font-size: 0.95rem;
+    color: #cccccc;
+    margin-bottom: 5px;
+    letter-spacing: 0.5px;
+}
+
+.uic-contact-description-dark {
+    font-size: 0.85rem;
+    color: #888888;
+    letter-spacing: 0.5px;
+}
+
+/* Single Black Container for Enroll Section */
+.dgm-single-enroll-container {
+    background: linear-gradient(135deg, #0a0a0a, #000);
+    border: 1px solid rgba(61, 82, 217, 0.3);
+    border-radius: 40px;
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 60px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+    max-width: 1600px;
+    width: 95%;
+    height: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: visible;
+    padding: 0 60px;
+}
+
+/* Left Side Content - Vertically Centered with slight right shift */
+.dgm-enroll-left-content {
+    flex: 1;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding-left: 40px;
+    transform: translateX(17%);
+}
+
+.dgm-enroll-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 0px;
+    margin-top: 0;
+    line-height: 1.2;
+}
+
+.dgm-enroll-subtitle {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.3rem;
+    margin-top: 30px;
+    line-height: 1.5;
+}
+
+.dgm-enroll-note {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 10px;
+}
+
+/* Right Side Form - Vertically Centered with wrapper */
+.dgm-enroll-right-form {
+    flex: 2;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    transform: translateX(-10%);
+}
+
+.dgm-enroll-form-wrapper {
+    width: 70%;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.dgm-enroll-form-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    transform: translateY(-16px);
+    text-align: left;
+    letter-spacing: -0.5px;
+}
+
+.dgm-enroll-form {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    width: 100%;
+}
+
+.dgm-enroll-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    width: 100%;
+}
+
+.dgm-enroll-form-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.dgm-enroll-form-group label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: left;
+}
+
+.dgm-enroll-form-group input,
+.dgm-enroll-form-group select {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 14px;
+    padding: 14px 16px;
+    font-size: 0.95rem;
+    color: white;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.dgm-enroll-form-group input:focus,
+.dgm-enroll-form-group select:focus {
+    outline: none;
+    border-color: #3D52D9;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 0 3px rgba(61, 82, 217, 0.3);
+}
+
+.dgm-enroll-form-group input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.9rem;
+    text-align: left;
+}
+
+.dgm-enroll-form-group select {
+    cursor: pointer;
+    text-align: left;
+}
+
+.dgm-enroll-form-group select option {
+    background: #1a1a2e;
+    color: white;
+    padding: 10px;
+    text-align: left;
+}
+
+/* Submit Button */
+.dgm-enroll-submit-btn {
+    background: linear-gradient(135deg, #3D52D9, #2E3FA3);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 16px 28px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    height: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 20px;
+}
+
+.dgm-enroll-submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(61, 82, 217, 0.4);
+    background: linear-gradient(135deg, #4A61FF, #3D52D9);
+}
+
+/* Container width increase */
+.dgm-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    overflow: visible;
+}
+
+/* Ensure body and html allow full visibility */
+.dgm-page {
+    overflow-x: visible;
+}
+
+/* Make sure the section doesn't cut off content */
+.dgm-dark-enrollment-FIXED {
+    background: #ffffff !important;
+    padding: 80px 0;
+    position: relative;
+    overflow: visible;
+}
+
+/* Success Toast */
+.dgm-toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    animation: dgm-toast-slide 0.5s ease;
+}
+
+@keyframes dgm-toast-slide {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .dgm-single-enroll-container {
+        padding: 0 40px;
+        gap: 50px;
+    }
+
+    .dgm-enroll-title {
+        font-size: 1.8rem;
+    }
+
+    .dgm-enroll-form-wrapper {
+        width: 90%;
+    }
+
+    .dgm-enroll-left-content {
+        padding-left: 20px;
+        transform: translateX(10px);
+    }
+
+    .dgm-enroll-form {
+        gap: 30px;
+    }
+
+    .dgm-enroll-form-grid {
+        gap: 25px;
+    }
+
+    .dgm-enroll-form-group {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 992px) {
+    .dgm-single-enroll-container {
+        flex-direction: column;
+        gap: 35px;
+        padding: 40px;
+        height: auto;
+        min-height: 500px;
+    }
+
+    .dgm-enroll-left-content {
+        flex: 1;
+        width: 100%;
+        text-align: center;
+        height: auto;
+        justify-content: flex-start;
+        padding-left: 0;
+        transform: translateX(0);
+    }
+
+    .dgm-enroll-right-form {
+        flex: 1;
+        width: 100%;
+        height: auto;
+        justify-content: flex-start;
+        transform: translateX(0);
+    }
+
+    .dgm-enroll-form-wrapper {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .dgm-enroll-title {
+        font-size: 1.6rem;
+        margin-top: 0;
+    }
+
+    .dgm-container {
+        padding: 0 15px;
+    }
+
+    .dgm-enroll-form {
+        gap: 28px;
+    }
+
+    .dgm-enroll-form-grid {
+        gap: 20px;
+    }
+
+    .dgm-enroll-form-group {
+        gap: 10px;
+    }
+
+    .dgm-enroll-form-title {
+        text-align: left;
+    }
+}
+
+@media (max-width: 768px) {
+    .dgm-single-enroll-container {
+        padding: 30px 25px;
+        gap: 30px;
+    }
+
+    .dgm-enroll-form-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .dgm-enroll-title {
+        font-size: 1.4rem;
+    }
+
+    .dgm-enroll-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .dgm-enroll-form-title {
+        font-size: 1.3rem;
+        text-align: left;
+    }
+
+    .dgm-enroll-form {
+        gap: 25px;
+    }
+
+    .dgm-enroll-form-group input,
+    .dgm-enroll-form-group select {
+        padding: 12px 14px;
+        font-size: 0.9rem;
+    }
+
+    .dgm-enroll-submit-btn {
+        padding: 12px 24px;
+        font-size: 0.85rem;
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .dgm-single-enroll-container {
+        padding: 25px 20px;
+    }
+
+    .dgm-enroll-title {
+        font-size: 1.2rem;
+    }
+
+    .dgm-enroll-subtitle {
+        font-size: 0.85rem;
+    }
+
+    .dgm-enroll-note {
+        font-size: 0.75rem;
+    }
+
+    .dgm-enroll-form-title {
+        font-size: 1.2rem;
+    }
+
+    .dgm-enroll-form-grid {
+        gap: 15px;
+    }
+
+    .dgm-enroll-form {
+        gap: 20px;
+    }
+
+    .dgm-enroll-form-group {
+        gap: 8px;
+    }
+
+    .dgm-enroll-form-group input,
+    .dgm-enroll-form-group select {
+        padding: 10px 12px;
+        font-size: 0.85rem;
+    }
+
+    .dgm-enroll-submit-btn {
+        padding: 10px 20px;
+        font-size: 0.8rem;
+        margin-top: 12px;
+    }
+}
+
+.uic-toast-content {
+    background: white;
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    border-left: 5px solid #4CAF50;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    max-width: 350px;
+    animation: uic-toast-fade 5s ease forwards;
+}
+
+@keyframes uic-toast-fade {
+
+    0%,
+    90% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+
+.uic-toast-icon {
+    font-size: 2.2rem;
+    flex-shrink: 0;
+    color: #4CAF50;
+}
+
+.uic-toast-icon svg {
+    font-size: 2rem;
+    color: #4CAF50;
+}
+
+.uic-toast-message h4 {
+    font-family: 'HEXCO', sans-serif;
+    font-weight: 100;
+    font-size: 1.1rem;
+    color: #333333;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.uic-toast-message p {
+    font-size: 0.85rem;
+    color: #666666;
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+}
+
+/* Curriculum Highlights */
+.uic-curriculum-highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.uic-highlight-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.uic-pink-highlight {
+    border-color: #ff6b8b;
+}
+
+.uic-blue-highlight {
+    border-color: var(--uic-blue);
+}
+
+.uic-highlight-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.uic-highlight-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: var(--uic-blue);
+}
+
+.uic-highlight-icon svg {
+    font-size: 2.5rem;
+    color: var(--uic-blue);
+}
+
+.uic-pink-highlight .uic-highlight-icon svg {
+    color: #ff6b8b;
+}
+
+.uic-highlight-card h3 {
+    font-family: 'HEXCO', sans-serif;
+    font-weight: 100;
+    font-size: 1.3rem;
+    color: #333333;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.uic-highlight-card p {
+    font-size: 0.95rem;
+    color: #666666;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+}
+
+/* ========== RESPONSIVE DESIGN - FIXED ========== */
+@media (max-width: 1200px) {
+    .uic-container {
+        max-width: 100%;
+        padding: 0 25px;
+    }
+
+    .uic-section {
+        padding: 50px 0;
+    }
+
+    /* Module section adjustments for large tablets */
+    .uic-module-slide {
+        padding: 40px 30px;
+        min-height: 550px;
+    }
+
+    .uic-module-content {
+        max-width: 900px;
+    }
+
+    .uic-module-title-slide {
+        font-size: 2rem;
+    }
+
+    .uic-module-topics-slide {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .uic-hero-title {
+        font-size: 2.5rem;
+    }
+
+    .uic-section-title {
+        font-size: 1.8rem;
+    }
+
+    /* Module section for tablets - NO SCROLL */
+    .uic-slider-wrapper {
+        min-height: 580px;
+    }
+
+    .uic-module-slide {
+        padding: 35px 25px;
+        min-height: 580px;
+    }
+
+    .uic-module-content {
+        max-width: 800px;
+    }
+
+    .uic-module-title-slide {
+        font-size: 1.8rem;
+    }
+
+    .uic-module-topics-slide {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .uic-topic-item-slide {
+        padding: 12px;
+        min-height: 55px;
+    }
+
+    .uic-topic-text-slide {
+        font-size: 1rem;
+    }
+
+    .uic-month-badge {
+        font-size: 1.1rem;
+        padding: 10px 25px;
+    }
+
+    .uic-module-icon-slide {
+        font-size: 2.5rem;
+    }
+
+    .uic-module-icon-slide svg {
+        font-size: 2.2rem;
+    }
+
+    .uic-certificate-single {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .uic-certificate-image {
+        max-height: 350px;
+    }
+
+    .uic-certificate-features-single {
+        grid-template-columns: 1fr;
+    }
+
+    .uic-benefits-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+    }
+
+    .uic-benefit-card {
+        padding: 25px;
+    }
+
+    .uic-benefit-icon {
+        font-size: 2rem;
+    }
+
+    .uic-benefit-icon svg {
+        font-size: 1.8rem;
+    }
+
+    .uic-benefit-title {
+        font-size: 1.1rem;
+    }
+
+    .uic-lock-icon {
+        font-size: 3rem;
+    }
+
+    .uic-lock-icon svg {
+        font-size: 2.8rem;
+    }
+
+    .uic-lock-text {
+        font-size: 1.3rem;
+    }
+
+    /* Enrollment button fix */
+    .uic-enrollment-btn-large-dark {
+        width: 100%;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .uic-enrollment-form-expanded-dark {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .uic-section {
+        padding: 40px 0;
+    }
+
+    .uic-hero {
+        min-height: 500px;
+    }
+
+    .uic-hero-title {
+        font-size: 2rem;
+    }
+
+    .uic-section-title {
+        font-size: 1.5rem;
+    }
+
+    .uic-enroll-btn {
+        width: 100%;
+        max-width: 100%;
+        padding: 16px 30px;
+        font-size: 1rem;
+    }
+
+    /* Module section for small tablets - NO SCROLL */
+    .uic-slider-wrapper {
+        min-height: 520px;
+    }
+
+    .uic-module-slide {
+        padding: 30px 20px;
+        min-height: 520px;
+    }
+
+    .uic-module-content {
+        max-width: 100%;
+    }
+
+    .uic-module-title-slide {
+        font-size: 1.6rem;
+        margin-bottom: 25px;
+    }
+
+    .uic-module-topics-slide {
+        grid-template-columns: 1fr;
+        /* Single column on smaller screens */
+        gap: 10px;
+    }
+
+    .uic-topic-item-slide {
+        padding: 10px;
+        min-height: 50px;
+    }
+
+    .uic-topic-text-slide {
+        font-size: 0.95rem;
+        line-height: 1.4;
+    }
+
+    .uic-month-badge {
+        font-size: 1rem;
+        padding: 8px 20px;
+    }
+
+    .uic-module-icon-slide {
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+    }
+
+    .uic-module-icon-slide svg {
+        font-size: 2rem;
+    }
+
+    .uic-module-meta-slide {
+        margin-bottom: 25px;
+    }
+
+    .uic-module-duration-slide,
+    .uic-module-projects-slide {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .uic-slider-controls-above {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .uic-certificate-image {
+        max-height: 300px;
+    }
+
+    .uic-tools-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .uic-certificate-title-single {
+        font-size: 1.5rem;
+    }
+
+    .uic-benefits-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .uic-lock-icon {
+        font-size: 2.5rem;
+    }
+
+    .uic-lock-icon svg {
+        font-size: 2.3rem;
+    }
+
+    .uic-lock-text {
+        font-size: 1.1rem;
+    }
+
+    /* Enrollment section padding */
+    .uic-enrollment-section-dark {
+        padding: 25px 20px;
+        margin-top: 40px;
+    }
+
+    .uic-enrollment-title-dark {
+        font-size: 1.6rem;
+    }
+
+    .uic-enrollment-btn-large-dark {
+        width: 100%;
+        max-width: 100%;
+        padding: 18px 30px;
+    }
+
+    .uic-enrollment-form-expanded-dark {
+        padding: 30px 25px;
+    }
+
+    .uic-enrollment-form-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .uic-form-header-expanded-dark {
+        margin-bottom: 25px;
+        padding-bottom: 18px;
+    }
+
+    .uic-form-header-expanded-dark h4 {
+        font-size: 1.2rem;
+    }
+
+    .uic-form-group-expanded-dark input,
+    .uic-form-group-expanded-dark select {
+        padding: 15px;
+        height: 52px;
+        font-size: 0.95rem;
+    }
+
+    .uic-submit-btn-expanded-dark {
+        padding: 18px;
+        height: 56px;
+        font-size: 1.1rem;
+    }
+
+    .uic-form-close-btn-dark {
+        top: 15px;
+        right: 15px;
+        width: 35px;
+        height: 35px;
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .uic-hero-title {
+        font-size: 1.6rem;
+    }
+
+    .uic-section-title {
+        font-size: 1.3rem;
+    }
+
+    .uic-slider-wrapper {
+        min-height: 480px;
+    }
+
+    .uic-module-slide {
+        padding: 25px 15px;
+        min-height: 480px;
+    }
+
+    .uic-module-title-slide {
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+    }
+
+    .uic-module-topics-slide {
+        gap: 8px;
+    }
+
+    .uic-topic-item-slide {
+        padding: 8px 10px;
+        min-height: 45px;
+    }
+
+    .uic-topic-text-slide {
+        font-size: 0.9rem;
+        line-height: 1.3;
+    }
+
+    .uic-month-badge {
+        padding: 8px 18px;
+        font-size: 0.95rem;
+    }
+
+    .uic-module-icon-slide {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    .uic-module-icon-slide svg {
+        font-size: 1.8rem;
+    }
+
+    .uic-module-meta-slide {
+        margin-bottom: 20px;
+        gap: 15px;
+    }
+
+    .uic-module-duration-slide,
+    .uic-module-projects-slide {
+        padding: 8px 15px;
+        font-size: 13px;
+    }
+
+    .uic-topic-check-slide {
+        font-size: 1.3rem;
+    }
+
+    .uic-topic-check-slide svg {
+        font-size: 1.1rem;
+    }
+
+    .uic-certificate-image {
+        max-height: 250px;
+    }
+
+    .uic-outcomes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .uic-tools-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .uic-certificate-badge {
+        font-size: 12px;
+        padding: 8px 15px;
+    }
+
+    .uic-benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .uic-benefit-card {
+        padding: 20px;
+    }
+
+    .uic-lock-icon {
+        font-size: 2.5rem;
+    }
+
+    .uic-lock-icon svg {
+        font-size: 2.3rem;
+    }
+
+    .uic-lock-text {
+        font-size: 1.1rem;
+    }
+
+    /* FORM RESPONSIVE - small screens */
+    .uic-enrollment-section-dark {
+        padding: 20px 15px;
+        margin-top: 30px;
+        border-radius: 10px;
+    }
+
+    .uic-enrollment-title-dark {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+    }
+
+    .uic-enrollment-subtitle-dark {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+
+    .uic-enrollment-btn-large-dark {
+        padding: 18px 20px;
+        font-size: 1rem;
+        border-radius: 8px;
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .uic-cta-note-dark {
+        font-size: 0.8rem;
+    }
+
+    .uic-enrollment-form-expanded-dark {
+        padding: 25px 20px;
+        border-radius: 10px;
+    }
+
+    .uic-enrollment-form-header h2 {
+        font-size: 1.3rem;
+    }
+
+    .uic-form-header-expanded-dark h4 {
+        font-size: 1.1rem;
+    }
+
+    .uic-submit-btn-expanded-dark {
+        padding: 16px;
+        font-size: 1rem;
+    }
+
+    .uic-contact-details-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .uic-contact-item-dark {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .uic-slider-wrapper {
+        min-height: 450px;
+    }
+
+    .uic-module-slide {
+        padding: 20px 15px;
+        min-height: 450px;
+    }
+
+    .uic-module-title-slide {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+
+    .uic-module-topics-slide {
+        gap: 6px;
+    }
+
+    .uic-topic-item-slide {
+        padding: 8px;
+        min-height: 40px;
+        gap: 10px;
+    }
+
+    .uic-topic-text-slide {
+        font-size: 0.85rem;
+    }
+
+    .uic-month-badge {
+        font-size: 0.9rem;
+        padding: 6px 15px;
+    }
+
+    .uic-module-icon-slide {
+        font-size: 1.8rem;
+    }
+
+    .uic-module-icon-slide svg {
+        font-size: 1.6rem;
+    }
+
+    .uic-module-meta-slide {
+        gap: 10px;
+    }
+
+    .uic-module-duration-slide,
+    .uic-module-projects-slide {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .uic-topic-check-slide {
+        font-size: 1.3rem;
+    }
+
+    .uic-topic-check-slide svg {
+        font-size: 1rem;
+    }
+
+    .uic-certificate-image {
+        max-height: 200px;
+    }
+
+    .uic-certificate-title-single {
+        font-size: 1.3rem;
+    }
+
+    .uic-certificate-instructions li {
+        font-size: 0.85rem;
+    }
+
+    /* FORM RESPONSIVE - extra small */
+    .uic-enrollment-section-dark {
+        padding: 15px 10px;
+    }
+
+    .uic-enrollment-title-dark {
+        font-size: 1.2rem;
+    }
+
+    .uic-enrollment-subtitle-dark {
+        font-size: 0.85rem;
+    }
+
+    .uic-enrollment-btn-large-dark {
+        padding: 16px 15px;
+        font-size: 0.95rem;
+    }
+
+    .uic-form-group-expanded-dark input,
+    .uic-form-group-expanded-dark select {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+
+    .uic-submit-btn-expanded-dark {
+        padding: 14px;
+        font-size: 0.9rem;
+    }
+
+    .uic-floating-icon {
+        font-size: 1.5rem;
+    }
+
+    .uic-floating-icon svg {
+        font-size: 1.3rem;
+    }
+
+    .uic-enrollment-form-expanded-dark {
+        padding: 20px 15px;
+    }
+
+    .uic-form-group-expanded-dark label {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 360px) {
+    .uic-slider-wrapper {
+        min-height: 420px;
+    }
+
+    .uic-module-slide {
+        padding: 15px 10px;
+        min-height: 420px;
+    }
+
+    .uic-module-title-slide {
+        font-size: 1.2rem;
+    }
+
+    .uic-topic-text-slide {
+        font-size: 0.8rem;
+    }
+
+    .uic-month-badge {
+        font-size: 0.85rem;
+        padding: 5px 12px;
+    }
+
+    .uic-module-icon-slide {
+        font-size: 1.6rem;
+    }
+
+    .uic-module-icon-slide svg {
+        font-size: 1.4rem;
+    }
+
+    .uic-topic-item-slide {
+        padding: 6px 8px;
+        min-height: 35px;
+    }
+
+    .uic-module-duration-slide,
+    .uic-module-projects-slide {
+        font-size: 11px;
+        padding: 5px 10px;
+    }
+
+    .uic-topic-check-slide {
+        font-size: 1.3rem;
+    }
+
+    .uic-topic-check-slide svg {
+        font-size: 0.9rem;
+    }
+
+    /* FORM RESPONSIVE - very small */
+    .uic-enrollment-btn-large-dark {
+        padding: 14px 12px;
+        font-size: 0.9rem;
+    }
+
+    .uic-enrollment-title-dark {
+        font-size: 1.1rem;
+    }
+
+    .uic-enrollment-form-expanded-dark {
+        padding: 15px 12px;
+    }
+
+    .uic-form-group-expanded-dark input,
+    .uic-form-group-expanded-dark select {
+        padding: 10px;
+        font-size: 0.85rem;
+    }
+
+    .uic-submit-btn-expanded-dark {
+        padding: 14px;
+        font-size: 0.9rem;
+    }
+}

@@ -7,8 +7,9 @@
 }
 
 .student-container {
-  max-width: 1400px;
-  /* BACK TO ORIGINAL */
+  width: 100%;
+  max-width: none !important; /* Global edge-to-edge layout for all ratios */
+  padding: 0 !important;
   margin: 0 auto;
   position: relative;
 }
@@ -62,11 +63,9 @@
   overflow-x: hidden;
   cursor: grab;
   padding: 2rem 0 4rem 0;
-  /* Increased top and bottom padding */
-  margin: 0 -1rem;
+  margin: 0; /* Align perfectly with browser edges */
   position: relative;
   min-height: 480px;
-  /* Further reduced container height */
 }
 
 .student-horizontal-scroll:active {
@@ -88,21 +87,16 @@
 .student-testimonial-card {
   background: white;
   border-radius: 12px;
-  /* Further reduced border radius */
-  padding: 1rem;
-  /* Further reduced padding from 1.2rem to 1rem */
+  padding: clamp(0.8rem, 1vw, 1.2rem);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  /* Slightly reduced shadow */
   border: 1px solid #e2e8f0;
   display: flex;
   flex-direction: column;
   height: auto;
   position: relative;
   overflow: visible;
-  width: 280px;
-  /* Further reduced from 320px to 280px */
+  width: clamp(220px, 17.5vw, 320px); /* Proportional scaling; drastically narrows for mobile while expanding up to 320px */
   flex-shrink: 0;
-  /* Prevent cards from shrinking */
 }
 
 /* Alternating card positions - even cards (2nd, 4th, 6th, 8th) move down using transform */
@@ -998,4 +992,27 @@
   z-index: 10;
   pointer-events: none;
   transform: rotate(0deg);
+}
+
+/* ==================== ULTRA-WIDE OPTIMIZATION (1920px+) ==================== */
+@media (min-width: 1920px) {
+  /* Only essential layout refinements for 1920px since edge-to-edge is now global */
+  .student-horizontal-scroll {
+    padding: 3rem 0 6rem 0;
+    min-height: 540px;
+  }
+
+  .student-testimonials-track {
+    gap: 2rem; 
+  }
+
+  .student-testimonial-card {
+    width: 320px; 
+    padding: 1.4rem;
+    border-radius: 18px;
+  }
+
+  .student-testimonials-track .student-testimonial-card:nth-child(even) {
+    transform: translateY(50px);
+  }
 }

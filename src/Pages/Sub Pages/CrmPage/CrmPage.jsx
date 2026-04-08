@@ -44,7 +44,7 @@ import imgSmartFunnel from '../../../assets/images/smart_deal_funnel.png';
 const CrmPage = () => {
     const [activeFeature, setActiveFeature] = useState(0);
     const [activeInsight, setActiveInsight] = useState(2);
-    const [activeWhy, setActiveWhy] = useState(2); // Starting on 3rd item as active like the screenshot
+    const [activeWhy, setActiveWhy] = useState(0); // Starting on 1st item as per user request
     const [activeUseCase, setActiveUseCase] = useState(0);
 
     const useCasesList = [
@@ -158,6 +158,52 @@ const CrmPage = () => {
                     </div>
 
                     <div className="showcase-container">
+                        {/* Left side widgets */}
+                        <motion.div 
+                            className="hero-side-widget sw-left-top"
+                            initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.5 }}
+                        >
+                            <div className="sw-icon-box"><FontAwesomeIcon icon={faHeadset} /></div>
+                            <div className="sw-content">
+                                <span className="sw-title">Incoming Support</span>
+                                <p className="sw-detail">24 Active Tickets</p>
+                            </div>
+                        </motion.div>
+
+                        <motion.div 
+                            className="hero-side-widget sw-left-bottom"
+                            initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.7 }}
+                        >
+                            <div className="sw-icon-box" style={{ background: 'rgba(34, 197, 94, 0.2)', color: '#22c55e' }}><FontAwesomeIcon icon={faCheckCircle} /></div>
+                            <div className="sw-content">
+                                <span className="sw-title">Campaign Sync</span>
+                                <p className="sw-detail">Data live update</p>
+                            </div>
+                        </motion.div>
+
+                        {/* Right side widgets */}
+                        <motion.div 
+                            className="hero-side-widget sw-right-top"
+                            initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.6 }}
+                        >
+                            <div className="sw-icon-box" style={{ background: 'rgba(139, 92, 246, 0.2)', color: '#a78bfa' }}><FontAwesomeIcon icon={faChartLine} /></div>
+                            <div className="sw-content">
+                                <span className="sw-title">Monthly Revenue</span>
+                                <p className="sw-detail">+14.2% Growth</p>
+                            </div>
+                        </motion.div>
+
+                        <motion.div 
+                            className="hero-side-widget sw-right-bottom"
+                            initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.8 }}
+                        >
+                            <div className="sw-icon-box" style={{ background: 'rgba(245, 158, 11, 0.2)', color: '#f59e0b' }}><FontAwesomeIcon icon={faShieldAlt} /></div>
+                            <div className="sw-content">
+                                <span className="sw-title">Security Status</span>
+                                <p className="sw-detail">Safe & Encrypted</p>
+                            </div>
+                        </motion.div>
+
                         {/* Center Content */}
                         <div className="showcase-center-text">
                             <motion.div
@@ -169,14 +215,20 @@ const CrmPage = () => {
 
                             <motion.h1
                                 className="showcase-h1"
-                                initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.1 }}
+                                initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }}
+                                whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                                transition={{ duration: 1, delay: 0.1, ease: 'easeOut' }}
+                                viewport={{ once: true }}
                             >
-                                YOUR ULTIMATE<br /> CRM Starts <span className="sc-accent">Here Today</span>
+                                YOUR ULTIMATE<br /> CRM STARTS <span className="sc-accent">Here Today</span>
                             </motion.h1>
 
                             <motion.p
                                 className="showcase-p"
-                                initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}
+                                initial={{ opacity: 0, y: 20, filter: 'blur(4px)' }}
+                                whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                                transition={{ duration: 1, delay: 0.3, ease: 'easeOut' }}
+                                viewport={{ once: true }}
                             >
                                 Manage your business with an intelligent platform. Experience smarter lead tracking and a beautifully clean interface.
                             </motion.p>
@@ -276,8 +328,24 @@ const CrmPage = () => {
                 <section className="crm-why-interactive">
                     <div className="cwi-container">
                         <div className="cwi-header-row">
-                            <h2 className="cwi-title">WHY CHOOSE <span>OUR CRM</span></h2>
-                            <p className="cwi-desc">Simplify your business life by securely connecting your accounts and automatically categorizing customer interactions.</p>
+                            <motion.h2 
+                                className="cwi-title"
+                                initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }}
+                                whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                                transition={{ duration: 0.8, ease: 'easeOut' }}
+                                viewport={{ once: true }}
+                            >
+                                WHY CHOOSE <span>OUR CRM</span>
+                            </motion.h2>
+                            <motion.p 
+                                className="cwi-desc"
+                                initial={{ opacity: 0, y: 20, filter: 'blur(4px)' }}
+                                whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                                transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
+                                viewport={{ once: true }}
+                            >
+                                Simplify your business life by securely connecting your accounts and automatically categorizing customer interactions.
+                            </motion.p>
                         </div>
 
                         <div className="cwi-content">
@@ -370,9 +438,9 @@ const CrmPage = () => {
 
                         <motion.div
                             className="impact-header"
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6 }}
+                            initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }}
+                            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                            transition={{ duration: 0.8 }}
                             viewport={{ once: true }}
                         >
                             <div className="impact-badge-wrapper">
@@ -381,7 +449,13 @@ const CrmPage = () => {
                                 <div className="impact-badge-line-right" />
                             </div>
                             <h2>PROVEN <span>Impact</span></h2>
-                            <p>Join thousands of businesses that have transformed their sales processes and customer relations with our platform.</p>
+                            <motion.p
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: 0.2 }}
+                            >
+                                Join thousands of businesses that have transformed their sales processes and customer relations with our platform.
+                            </motion.p>
                         </motion.div>
 
                         <div className="stats-grid">
@@ -427,14 +501,20 @@ const CrmPage = () => {
                     <div className="use-cases-container">
                         <motion.div
                             className="use-cases-header"
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6 }}
+                            initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }}
+                            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                            transition={{ duration: 0.8 }}
                             viewport={{ once: true }}
                         >
                             <span className="crm-section-badge">Tailored Solutions</span>
                             <h2>Who Uses Our <span>CRM?</span></h2>
-                            <p>Our platform adapts to various industries, providing tailored workflows that match your unique business requirements.</p>
+                            <motion.p
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: 0.2 }}
+                            >
+                                Our platform adapts to various industries, providing tailored workflows that match your unique business requirements.
+                            </motion.p>
                         </motion.div>
 
                         <div className="crm-uc-modern">
@@ -514,19 +594,23 @@ const CrmPage = () => {
                     <div className="crm-insights-inner">
                         <motion.div
                             className="crm-insights-header"
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6 }}
+                            initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }}
+                            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                            transition={{ duration: 0.8 }}
                             viewport={{ once: true }}
                         >
                             <span className="crm-section-badge-dark">
                                 <FontAwesomeIcon icon={faLightbulb} /> CRM Intelligence
                             </span>
                             <h2>Work Smarter,<br /><span>Not Harder</span></h2>
-                            <p>
+                            <motion.p
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: 0.2 }}
+                            >
                                 Leverage AI-driven insights and automation to supercharge every touchpoint of your
                                 customer journey — from first contact to loyal advocate.
-                            </p>
+                            </motion.p>
                         </motion.div>
 
                         <div className="crm-insights-carousel-wrapper">

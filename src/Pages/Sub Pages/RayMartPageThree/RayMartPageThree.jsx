@@ -321,7 +321,7 @@ const RayMartPageThree = () => {
                 { title: "Omnichannel Sync", desc: "Manage chat, email, and social from one unified dashboard.", img: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop", offer: "Omni-Pack Sync", discount: "30%" },
                 { title: "Lead Scoring V2", desc: "Prioritize your top-tier prospects with AI predictive analysis.", img: "https://images.unsplash.com/photo-1454165833767-027ffea9e77b?q=80&w=800&auto=format&fit=crop", offer: "Pro Scoring Tier", discount: "25%" }
               ].map((item, idx) => (
-                <div key={`crm-${idx}`} className="rm3-app-card" onClick={() => navigate('/raymartPageFour')} style={{ cursor: 'pointer' }}>
+                <div key={`crm-${idx}`} className="rm3-app-card" onClick={() => navigate('/raymartPageFour', { state: { id: "crm-products" } })} style={{ cursor: 'pointer' }}>
                   <div className="rm3-app-card-img" style={{ backgroundImage: `url('${item.img}')` }}></div>
                   <div className="rm3-app-card-body">
                     <h3 className="rm3-app-card-title">{item.title}</h3>
@@ -363,7 +363,7 @@ const RayMartPageThree = () => {
                 { title: "Fleet Sync Pro", desc: "Real-time delivery tracking and fuel optimization algorithms.", img: "https://images.unsplash.com/photo-1580674285054-bed31e145f59?q=80&w=800&auto=format&fit=crop", offer: "Logistics Bundle", discount: "15%" },
                 { title: "HR Connect Core", desc: "Manage payroll and employee lifecycle in a single platform.", img: "https://images.unsplash.com/photo-1521791055366-0772eea2339d?q=80&w=800&auto=format&fit=crop", offer: "HR Starter Pack", discount: "35%" }
               ].map((item, idx) => (
-                <div key={`erp-${idx}`} className="rm3-app-card" onClick={() => navigate('/raymartPageFour')} style={{ cursor: 'pointer' }}>
+                <div key={`erp-${idx}`} className="rm3-app-card" onClick={() => navigate('/raymartPageFour', { state: { id: "erp-products" } })} style={{ cursor: 'pointer' }}>
                   <div className="rm3-app-card-img" style={{ backgroundImage: `url('${item.img}')` }}></div>
                   <div className="rm3-app-card-body">
                     <h3 className="rm3-app-card-title">{item.title}</h3>
@@ -405,7 +405,7 @@ const RayMartPageThree = () => {
                 { title: "Sentiment Sentinel", desc: "Real-time tone detection to escalate angry users to humans.", img: "https://images.unsplash.com/photo-1531746790731-6c087fecd05a?q=80&w=800&auto=format&fit=crop", offer: "Escalation Pro", discount: "40%" },
                 { title: "Global Translator X", desc: "Instant bi-directional translation for 100+ native languages.", img: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop", offer: "Global Comm Pack", discount: "30%" }
               ].map((item, idx) => (
-                <div key={`bot-${idx}`} className="rm3-app-card" onClick={() => navigate('/raymartPageFour')} style={{ cursor: 'pointer' }}>
+                <div key={`bot-${idx}`} className="rm3-app-card" onClick={() => navigate('/raymartPageFour', { state: { id: "ai-chatbot-products" } })} style={{ cursor: 'pointer' }}>
                   <div className="rm3-app-card-img" style={{ backgroundImage: `url('${item.img}')` }}></div>
                   <div className="rm3-app-card-body">
                     <h3 className="rm3-app-card-title">{item.title}</h3>
@@ -446,7 +446,7 @@ const RayMartPageThree = () => {
                 { title: "Salary Negotiation AI", desc: "Get real-time data on your worth and scripts for the call.", img: "https://images.unsplash.com/photo-1454165833767-027ffea9e77b?q=80&w=800&auto=format&fit=crop", offer: "Negotiator Kit", discount: "40%" },
                 { title: "Freelance Catalyst", desc: "Optimize your Upwork and Fiverr profiles for top-tier gigs.", img: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=800&auto=format&fit=crop", offer: "Gigs Builder", discount: "30%" }
               ].map((item, idx) => (
-                <div key={`jobs-${idx}`} className="rm3-app-card" onClick={() => navigate('/raymartPageFour')} style={{ cursor: 'pointer' }}>
+                <div key={`jobs-${idx}`} className="rm3-app-card" onClick={() => navigate('/raymartPageFour', { state: { id: "job-seeker-hub" } })} style={{ cursor: 'pointer' }}>
                   <div className="rm3-app-card-img" style={{ backgroundImage: `url('${item.img}')` }}></div>
                   <div className="rm3-app-card-body">
                     <h3 className="rm3-app-card-title">{item.title}</h3>
@@ -486,7 +486,7 @@ const RayMartPageThree = () => {
                 { title: "Executive Leadership", desc: "Develop the strategy and soft skills to lead high-performing teams.", img: "https://images.unsplash.com/photo-1542744094-24638eff58bb?q=80&w=800&auto=format&fit=crop", offer: "Mentor Session", discount: "10%" },
                 { title: "Growth Marketing Pro", desc: "Scale startups using data-driven hacking and viral engineering.", img: "https://images.unsplash.com/photo-1533750349088-cd871a92f312?q=80&w=800&auto=format&fit=crop", offer: "Marketer Pack", discount: "50%" }
               ].map((item, idx) => (
-                <div key={`learn-${idx}`} className="rm3-app-card" onClick={() => navigate('/raymartPageFour')} style={{ cursor: 'pointer' }}>
+                <div key={`learn-${idx}`} className="rm3-app-card" onClick={() => navigate('/raymartPageFour', { state: { id: "learning-career" } })} style={{ cursor: 'pointer' }}>
                   <div className="rm3-app-card-img" style={{ backgroundImage: `url('${item.img}')` }}></div>
                   <div className="rm3-app-card-body">
                     <h3 className="rm3-app-card-title">{item.title}</h3>
@@ -527,7 +527,7 @@ const RayMartPageThree = () => {
                 { title: "Metric Data Lake", desc: "Store and query massive amounts of product analytics instantly.", img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop", offer: "Data Starter", discount: "25%" },
                 { title: "Tenant Sync DB", desc: "Multi-tenant database orchestration for scaling B2B SaaS.", img: "https://images.unsplash.com/photo-1631624215749-b10b3dd7bca5?q=80&w=800&auto=format&fit=crop", offer: "Scale Plan Deal", discount: "50%" }
               ].map((item, idx) => (
-                <div key={`saas-${idx}`} className="rm3-app-card" onClick={() => navigate('/raymartPageFour')} style={{ cursor: 'pointer' }}>
+                <div key={`saas-${idx}`} className="rm3-app-card" onClick={() => navigate('/raymartPageFour', { state: { id: "saas-products" } })} style={{ cursor: 'pointer' }}>
                   <div className="rm3-app-card-img" style={{ backgroundImage: `url('${item.img}')` }}></div>
                   <div className="rm3-app-card-body">
                     <h3 className="rm3-app-card-title">{item.title}</h3>
@@ -567,7 +567,7 @@ const RayMartPageThree = () => {
                 { title: "Meeting Synthesizer", desc: "Auto-record, transcribe, and assign action items for all meetings.", img: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=800&auto=format&fit=crop", offer: "Team Pack Sync", discount: "50%" },
                 { title: "Vendor NegotiaBot", desc: "Automate preliminary vendor price negotiations using smart AI.", img: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=800&auto=format&fit=crop", offer: "Procurement Pro", discount: "40%" }
               ].map((item, idx) => (
-                <div key={`bsai-${idx}`} className="rm3-app-card" onClick={() => navigate('/raymartPageFour')} style={{ cursor: 'pointer' }}>
+                <div key={`bsai-${idx}`} className="rm3-app-card" onClick={() => navigate('/raymartPageFour', { state: { id: "business-suit-ai" } })} style={{ cursor: 'pointer' }}>
                   <div className="rm3-app-card-img" style={{ backgroundImage: `url('${item.img}')` }}></div>
                   <div className="rm3-app-card-body">
                     <h3 className="rm3-app-card-title">{item.title}</h3>

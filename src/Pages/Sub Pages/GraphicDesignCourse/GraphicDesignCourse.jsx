@@ -44,6 +44,7 @@ import {
   faTimes,
   faArrowRight,
   faChevronUp,
+  faFolderOpen,
   faChevronDown,
   // Added missing icons
   faRulerCombined,
@@ -57,7 +58,8 @@ import './GraphicDesignCourse.css';
 // Import your assets - KEEPING COMMENTED SECTIONS UNCHANGED
 import demoVideoFile from '../../../assets/Final GD Course video.mp4';
 import videoThumbnail from '../../../assets/DemoThumbnail.png'; // Optional
-import certificateImage from '../../../assets/GD Certificate.jpeg'; // Your certificate image
+//import certificateImage from '../../../assets/GD Certificate.jpeg'; // Your certificate image
+import certificateImage from '../../../assets/Graphic-Designer.png'; // Your certificate image
 import heroBg from '../../../assets/gd-hero-bg.png'; // Exact user reference background
 import centerDesignImage from '../../../assets/center-design.png';
 import heroAlternative from '../../../assets/(3).png';
@@ -94,7 +96,7 @@ import canvaMagicLogo from '../../../assets/canva-magic-hd.png';
 // Brand Logos for Tools Section
 import notionAiLogoV2 from '../../../assets/notion_ai_logo_v2.png';
 import copyAiLogoV2 from '../../../assets/copy_ai_logo_v2.png';
-import figmaLogoV2 from '../../../assets/figma_logo_v2.png';
+//import figmaLogoV2 from '../../../assets/xdlogo.png';
 import illustratorLogoV2 from '../../../assets/illustrator_logo_v2.png';
 import luminarLogoV3 from '../../../assets/luminar_logo_v3.png';
 import chatgptLogoV2 from '../../../assets/chatgpt_logo_v2.png';
@@ -220,19 +222,19 @@ const GraphicDesignCourse = () => {
       desc: "Learn to create pixel-perfect, responsive designs specifically tailored for modern web interfaces, mobile applications, and high-engagement social media platforms for leading global brands. Build user-centric digital products that stand out in the global marketplace."
     },
     {
-      icon: <FontAwesomeIcon icon={faRocket} />,
+      icon: <FontAwesomeIcon icon={faFolderOpen} />,
       title: "Portfolio Projects",
       desc: "Build a diverse, professional portfolio featuring high-quality real-world case studies that showcase your versatility and problem-solving skills to top global design employers and agencies. Present your work with clarity and confidence to stand out in competitive creative industries."
     },
     {
-      icon: <FontAwesomeIcon icon={faBriefcase} />,
-      title: "Career Prep",
-      desc: "Get ready for your first job with dedicated interview preparation, freelance business strategies, and professional client management training for career success in the creative industry."
-    },
-    {
       icon: <FontAwesomeIcon icon={faStar} />,
       title: "Creative Mindset",
-      desc: "Master a creative mindset to analyze and solve visual design challenges with professional logic."
+      desc: "Master a creative mindset to analyze and solve visual design challenges with professional logic, combining strategic thinking, user understanding, and aesthetic judgment. Learn how to approach problems from multiple perspectives, generate innovative ideas and translate concepts into impactful visual solutions."
+    },
+    {
+      icon: <FontAwesomeIcon icon={faBriefcase} />,
+      title: "Career Prep",
+      desc: "Get ready for your first job with dedicated interview preparation, including mock interviews, portfolio reviews, and real-world hiring insights. Learn how to build and position your personal brand, communicate effectively with clients, and manage projects professionally. Gain practical knowledge in freelance business."
     }
   ];
 
@@ -316,7 +318,8 @@ const GraphicDesignCourse = () => {
     ],
     [
       { name: "InDesign", icon: <FontAwesomeIcon icon={faFileAlt} />, desc: "Layout design for print and digital.", img: indesignLogo },
-      { name: "Figma", icon: <FontAwesomeIcon icon={faLaptopCode} />, desc: "Interface design and prototyping.", img: figmaLogoV2 },
+      { name: "Figma", icon: <FontAwesomeIcon icon={faLaptopCode} />, desc: "Interface design and prototyping." },
+      // img: figmaLogoV2 },
       { name: "Illustrator", icon: <FontAwesomeIcon icon={faPenFancy} />, desc: "Vector graphics and illustration.", img: illustratorLogoV2 },
       { name: "Photoshop", icon: <FontAwesomeIcon icon={faImage} />, desc: "Image editing and manipulation.", img: photoshopLogo }
     ]
@@ -717,97 +720,51 @@ const GraphicDesignCourse = () => {
         </div>
       </section>
 
-
-
-      {/* Course Outcomes - Bento Style Redesign */}
-      <section className="gdc-section gdc-outcomes-bento">
-        <div className="gdc-container">
-          <div className="gdc-outcomes-header-row">
-            <div className="gdc-outcomes-title-col">
-              <h2 className="gdc-outcomes-main-title">Course Outcomes</h2>
+      {/* Course Outcomes - Redesigned Numbered Grid */}
+      <section className="dgm-section dgm-outcomes-numbered">
+        <div className="dgm-container">
+          <div className="dgm-outcomes-header-row">
+            <div className="dgm-outcomes-title-col">
+              <h2 className="dgm-outcomes-main-title">Course Outcomes</h2>
             </div>
-            <div className="gdc-outcomes-desc-col">
-              <p className="gdc-outcomes-top-desc text-left">
-                What you'll achieve after completing this program. Master industry tools, build a professional portfolio, and transform your career.
+            <div className="dgm-outcomes-desc-col">
+              <p className="dgm-outcomes-top-desc text-left">
+                What you'll achieve after completing this program. Master workflows, build case studies, and transform into an industry-ready UI/UX designer.
               </p>
             </div>
           </div>
 
-          <div className="gdc-outcomes-grid-bento">
-            {/* Column 1: Tall Card (Outcomes 1 & 2) */}
-            <div className="gdc-bento-card gdc-card-tall">
-              <div className="gdc-bento-sub-item gdc-bento-clipped-item gdc-bento-first-item">
-                <div className="gdc-bento-clipped-bg">
-                  <div className="gdc-bento-lobe lobe-left"></div>
-                  <div className="gdc-bento-lobe lobe-right"></div>
-                </div>
-                <div className="gdc-bento-clipped-content">
-                  <div className="gdc-bento-header-inline">
-                    <div className="gdc-bento-icon">{courseOutcomes[0].icon}</div>
-                    <h3 className="gdc-bento-title">{courseOutcomes[0].title}</h3>
+          <div className="dgm-outcomes-numbered-grid">
+            {courseOutcomes.map((outcome, index) => {
+              const isBlack = index === 1 || index === 3 || index === 5;
+              const cardNumber = (index + 1).toString().padStart(2, '0');
+
+              return (
+                <div
+                  key={index}
+                  className={`dgm-outcome-numbered-card ${isBlack ? 'black-bg' : 'white-bg'}`}
+                >
+                  <div className="dgm-outcome-card-content-wrapper">
+                    {/* Left side - Number and Icon */}
+                    <div className="dgm-outcome-card-left">
+                      <div className="dgm-outcome-card-number">{cardNumber}</div>
+                      <div className="dgm-outcome-numbered-icon">{outcome.icon}</div>
+                    </div>
+
+                    {/* Right side - Title and Description */}
+                    <div className="dgm-outcome-card-right">
+                      <h3 className="dgm-outcome-numbered-title">{outcome.title}</h3>
+                      <p className="dgm-outcome-numbered-desc">{outcome.desc}</p>
+                    </div>
                   </div>
-                  <p className="gdc-bento-text">Master color theory, typography, and advanced composition to create stunning, high-impact designs for any medium.</p>
                 </div>
-              </div>
-              <div className="gdc-bento-sub-item">
-                <div className="gdc-bento-header-inline">
-                  <div className="gdc-bento-icon">{courseOutcomes[1].icon}</div>
-                  <h3 className="gdc-bento-title">{courseOutcomes[1].title}</h3>
-                </div>
-                <p className="gdc-bento-text">{courseOutcomes[1].desc}</p>
-              </div>
-            </div>
-
-            {/* Column 2: Tall Violet Card (Outcomes 3 & 4) */}
-            <div className="gdc-bento-card gdc-card-tall gdc-card-violet">
-              <div className="gdc-curvy-line-overlay">
-                {/* 2. Added thick intricate orange curly line SVG matching reference */}
-                <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
-                  <path d="M-10,30 Q30,70 50,40 T120,50" fill="none" stroke="#fa7c2f" strokeWidth="5" strokeLinecap="round" />
-                  <path d="M40,45 Q70,20 90,80 T150,90" fill="none" stroke="#fa7c2f" strokeWidth="4" strokeLinecap="round" />
-                </svg>
-              </div>
-              <div className="gdc-bento-sub-item gdc-bento-first-item">
-                <div className="gdc-bento-header-inline">
-                  <div className="gdc-bento-icon icon-white">{courseOutcomes[2].icon}</div>
-                  <h3 className="gdc-bento-title text-white">{courseOutcomes[2].title}</h3>
-                </div>
-                <p className="gdc-bento-text text-white-muted">{courseOutcomes[2].desc}</p>
-              </div>
-              <div className="gdc-bento-sub-item">
-                <div className="gdc-bento-header-inline">
-                  <div className="gdc-bento-icon icon-white">{courseOutcomes[3].icon}</div>
-                  <h3 className="gdc-bento-title text-white">{courseOutcomes[3].title}</h3>
-                </div>
-                <p className="gdc-bento-text text-white-muted">{courseOutcomes[3].desc}</p>
-              </div>
-            </div>
-
-            {/* Column 3: Two Square Cards (Outcomes 5 & 6) */}
-            <div className="gdc-bento-col-right">
-              <div className="gdc-bento-card gdc-card-square gdc-square-top">
-                <div className="gdc-bento-header-inline">
-                  <div className="gdc-bento-icon">{courseOutcomes[4].icon}</div>
-                  <h3 className="gdc-bento-title">{courseOutcomes[4].title}</h3>
-                </div>
-                <p className="gdc-bento-text">Prepare for your first professional design role with dedicated interview coaching, intensive freelance pricing strategies, and comprehensive client management training to ensure your long-term success. Master industry-standard communication and presentation skills to truly stand out to global employers and agencies.</p>
-              </div>
-              <div className="gdc-bento-card gdc-card-square gdc-square-bottom gdc-creative-glow-bg">
-                <div className="gdc-creative-abstract-shape">
-                  <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
-                    <path d="M0,80 Q50,20 100,80" fill="none" stroke="#94a3b8" strokeWidth="1" opacity="0.15" />
-                  </svg>
-                </div>
-                <div className="gdc-bento-header-inline">
-                  <div className="gdc-bento-icon">{courseOutcomes[5].icon}</div>
-                  <h3 className="gdc-bento-title">{courseOutcomes[5].title}</h3>
-                </div>
-                <p className="gdc-bento-text">Master a creative mindset to analyze and solve visual design challenges with professional logic.</p>
-              </div>
-            </div>
+              );
+            })}
           </div>
         </div>
       </section>
+
+
       {/* 6-Month Course Breakdown - Vertical Slider Redesign */}
       <section className="gdc-curriculum-v2-section">
         <div className="gdc-container">
@@ -928,33 +885,27 @@ const GraphicDesignCourse = () => {
       </section>
 
       {/* Benefits Section - Where Features Meet For You Upgrade */}
-      <section className="gdc-section gdc-benefits-reimagined">
-        <div className="gdc-container">
-          <div className="gdc-benefits-header">
-            <h2 className="gdc-benefits-title">Where Features Meet For You</h2>
+      <section className="dgm-section dgm-benefits-reimagined">
+        <div className="dgm-container">
+          <div className="dgm-benefits-header">
+            <h2 className="dgm-benefits-title">Where Features Meet For You</h2>
           </div>
 
-          <div className="gdc-benefits-staggered">
+          <div className="dgm-benefits-staggered">
             {/* Row 1: 5 Cards */}
-            <div className="gdc-benefits-row gdc-row-5">
+            <div className="dgm-benefits-row dgm-row-5">
               {benefits.slice(0, 5).map((benefit, index) => (
-                <div key={index} className="gdc-new-benefit-card">
+                <div key={index} className="dgm-new-benefit-card">
                   {(() => {
                     const absoluteIndex = 0 + index;
-                    const color = benefitIconPalette[absoluteIndex] || '#BAE6FD';
+                    const color = benefitIconPalette[absoluteIndex] || "#BAE6FD";
                     return (
-                      <div
-                        className="gdc-new-icon"
-                        style={{
-                          background: hexToRgba(color, 0.18),
-                          color
-                        }}
-                      >
+                      <div className="dgm-new-icon" style={{ background: hexToRgba(color, 0.18), color }}>
                         {benefit.icon}
                       </div>
                     );
                   })()}
-                  <div className="gdc-new-content">
+                  <div className="dgm-new-content">
                     <h3>{benefit.title}</h3>
                     <p>{benefit.description.substring(0, 70)}...</p>
                   </div>
@@ -963,25 +914,19 @@ const GraphicDesignCourse = () => {
             </div>
 
             {/* Row 2: 3 Cards */}
-            <div className="gdc-benefits-row gdc-row-3">
+            <div className="dgm-benefits-row dgm-row-3">
               {benefits.slice(5, 8).map((benefit, index) => (
-                <div key={index} className="gdc-new-benefit-card">
+                <div key={index} className="dgm-new-benefit-card">
                   {(() => {
                     const absoluteIndex = 5 + index;
-                    const color = benefitIconPalette[absoluteIndex] || '#BAE6FD';
+                    const color = benefitIconPalette[absoluteIndex] || "#BAE6FD";
                     return (
-                      <div
-                        className="gdc-new-icon"
-                        style={{
-                          background: hexToRgba(color, 0.18),
-                          color
-                        }}
-                      >
+                      <div className="dgm-new-icon" style={{ background: hexToRgba(color, 0.18), color }}>
                         {benefit.icon}
                       </div>
                     );
                   })()}
-                  <div className="gdc-new-content">
+                  <div className="dgm-new-content">
                     <h3>{benefit.title}</h3>
                     <p>{benefit.description.substring(0, 70)}...</p>
                   </div>
@@ -989,26 +934,20 @@ const GraphicDesignCourse = () => {
               ))}
             </div>
 
-            {/* Row 3: 2 Cards */}
-            <div className="gdc-benefits-row gdc-row-2">
+            {/* Row 3: 2 Original Cards */}
+            <div className="dgm-benefits-row dgm-row-2">
               {benefits.slice(8, 10).map((benefit, index) => (
-                <div key={index} className="gdc-new-benefit-card">
+                <div key={index} className="dgm-new-benefit-card">
                   {(() => {
                     const absoluteIndex = 8 + index;
-                    const color = benefitIconPalette[absoluteIndex] || '#BAE6FD';
+                    const color = benefitIconPalette[absoluteIndex] || "#BAE6FD";
                     return (
-                      <div
-                        className="gdc-new-icon"
-                        style={{
-                          background: hexToRgba(color, 0.18),
-                          color
-                        }}
-                      >
+                      <div className="dgm-new-icon" style={{ background: hexToRgba(color, 0.18), color }}>
                         {benefit.icon}
                       </div>
                     );
                   })()}
-                  <div className="gdc-new-content">
+                  <div className="dgm-new-content">
                     <h3>{benefit.title}</h3>
                     <p>{benefit.description.substring(0, 70)}...</p>
                   </div>
@@ -1016,68 +955,121 @@ const GraphicDesignCourse = () => {
               ))}
             </div>
           </div>
+
+          {/* Floating Cards - Positioned Independently */}
+          {/* Left Bottom Floating Card */}
+          <div className="dgm-floating-benefit-card dgm-floating-card-left">
+            <div className="dgm-new-icon" style={{ background: hexToRgba("#BAE6FD", 0.18), color: "#BAE6FD" }}>
+              <FontAwesomeIcon icon={faStar} />
+            </div>
+            <div className="dgm-new-content">
+              <h3>Industry Recognition</h3>
+              <p>Get certified with globally recognized credentials that validate your expertise and boost your career prospects worldwide...</p>
+            </div>
+          </div>
+
+          {/* Right Bottom Floating Card */}
+          <div className="dgm-floating-benefit-card dgm-floating-card-right">
+            <div className="dgm-new-icon" style={{ background: hexToRgba("#C4B5FD", 0.18), color: "#C4B5FD" }}>
+              <FontAwesomeIcon icon={faTrophy} />
+            </div>
+            <div className="dgm-new-content">
+              <h3>Lifetime Updates</h3>
+              <p>Stay ahead with free lifetime access to all future course updates, new modules, and industry-relevant content additions...</p>
+            </div>
+          </div>
         </div>
       </section>
 
+
       {/* Local Demo Video Section */}
-      <section className="gdc-section gdc-white-bg">
-        <div className="gdc-container">
-          <h2 className="gdc-section-title gdc-red-text">Experience Our Teaching</h2>
-          <p className="gdc-section-subtitle">Watch a sample lesson from our course</p>
+      <section className="dgm-section dgm-white-bg">
+        <div className="dgm-container">
+          <h2 className="dgm-section-title dgm-red-text">Experience Our Teaching</h2>
+          <p className="dgm-section-subtitle">Watch a sample lesson from our course</p>
 
-          <div className="gdc-single-video-container">
-            <div className="gdc-video-card-light">
-              <div className="gdc-video-thumbnail-single" onClick={handlePlayVideo}>
-                {/* Video Player */}
-                <video
-                  ref={videoRef}
-                  className="gdc-video-player"
-                  poster={demoVideo.thumbnail}
-                  onClick={handlePlayVideo}
-                  onEnded={handleVideoEnd}
-                  onPlay={handleVideoPlay}
-                  onPause={handleVideoPause}
-                  controls={isPlaying}
-                >
-                  <source src={demoVideo.videoFile} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
+          {/* NEW WRAPPER */}
+          <div className="dgm-video-layout">
 
-                {/* Custom Play Button Overlay (shows when video is not playing) */}
-                {!isPlaying && (
-                  <div className="gdc-video-overlay-single">
-                    <div className="gdc-play-button-single">
-                      <FontAwesomeIcon icon={faPlayCircle} />
-                    </div>
-                    <div className="gdc-video-duration-single"><FontAwesomeIcon icon={faClock} /> {demoVideo.duration}</div>
+            {/* LEFT SIDE - VIDEO */}
+            <div className="dgm-video-left">
+              <div className="dgm-single-video-container">
+                <div className="dgm-video-card-light">
+                  <div className="dgm-video-thumbnail-single" onClick={handlePlayVideo}>
+
+                    <video
+                      ref={videoRef}
+                      className="dgm-video-player"
+                      poster={demoVideo.thumbnail}
+                      onClick={handlePlayVideo}
+                      onEnded={handleVideoEnd}
+                      onPlay={handleVideoPlay}
+                      onPause={handleVideoPause}
+                      controls={isPlaying}
+                    >
+                      <source src={demoVideo.videoFile} type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+
+                    {!isPlaying && (
+                      <div className="dgm-video-overlay-single">
+                        <div className="dgm-play-button-single">
+                          <FontAwesomeIcon icon={faPlayCircle} />
+                        </div>
+                        <div className="dgm-video-duration-single">
+                          <FontAwesomeIcon icon={faClock} /> {demoVideo.duration}
+                        </div>
+                      </div>
+                    )}
+
+                    {isPlaying && (
+                      <div className="dgm-video-controls-overlay">
+                        <button
+                          className="dgm-video-control-btn"
+                          onClick={handlePlayVideo}
+                        >
+                          {isPlaying
+                            ? <FontAwesomeIcon icon={faPauseCircle} />
+                            : <FontAwesomeIcon icon={faPlayCircle} />}
+                        </button>
+                      </div>
+                    )}
                   </div>
-                )}
 
-                {/* Video Controls Overlay (shows when video is playing) */}
-                {isPlaying && (
-                  <div className="gdc-video-controls-overlay">
+                  <div className="dgm-video-info-single-light">
+                    <h3 className="dgm-video-title-single-light">{demoVideo.title}</h3>
+                    <p className="dgm-video-instructor-single-light">
+                      Instructor: <span>{demoVideo.instructor}</span>
+                    </p>
+                    <p className="dgm-video-description-single-light">
+                      {demoVideo.description}
+                    </p>
                     <button
-                      className="gdc-video-control-btn"
+                      className="dgm-watch-btn-single"
                       onClick={handlePlayVideo}
                     >
-                      {isPlaying ? <FontAwesomeIcon icon={faPauseCircle} /> : <FontAwesomeIcon icon={faPlayCircle} />}
+                      {isPlaying
+                        ? <><FontAwesomeIcon icon={faPauseCircle} /> Pause Video</>
+                        : <><FontAwesomeIcon icon={faPlayCircle} /> Watch Free Demo Lesson</>}
                     </button>
                   </div>
-                )}
-              </div>
-
-              <div className="gdc-video-info-single-light">
-                <h3 className="gdc-video-title-single-light">{demoVideo.title}</h3>
-                <p className="gdc-video-instructor-single-light">Instructor: <span>{demoVideo.instructor}</span></p>
-                <p className="gdc-video-description-single-light">{demoVideo.description}</p>
-                <button
-                  className="gdc-watch-btn-single"
-                  onClick={handlePlayVideo}
-                >
-                  {isPlaying ? <><FontAwesomeIcon icon={faPauseCircle} /> Pause Video</> : <><FontAwesomeIcon icon={faPlayCircle} /> Watch Free Demo Lesson</>}
-                </button>
+                </div>
               </div>
             </div>
+
+            {/* RIGHT SIDE - NEW CONTENT */}
+            <div className="dgm-video-right">
+              <h3 className="dgm-video-side-title">
+                Learn by Watching Real Sessions
+              </h3>
+              <p className="dgm-video-side-desc">
+                Experience our teaching approach through real-time lessons designed to give you practical insights.
+                Understand how concepts are explained, how projects are built, and how students are guided step-by-step
+                to achieve industry-level skills. This preview gives you a clear idea of the learning experience,
+                mentorship quality, and hands-on approach we follow in our programs.
+              </p>
+            </div>
+
           </div>
         </div>
       </section>
@@ -1260,7 +1252,6 @@ const GraphicDesignCourse = () => {
               <div className="gdc-banner-content">
                 <h2 className="gdc-banner-title">Start Your Design <br /> Journey Today</h2>
 
-
                 <div className="gdc-banner-ratings">
                   <div className="gdc-rating-box">
                     <div className="gdc-stars">★★★★★</div>
@@ -1273,8 +1264,6 @@ const GraphicDesignCourse = () => {
                     <div className="gdc-rating-source">Globalskills</div>
                   </div>
                 </div>
-
-
               </div>
 
               {/* Contact Rays */}
@@ -1324,25 +1313,22 @@ const GraphicDesignCourse = () => {
             </div>
           </section>
 
-          <div className="gdc-v2-cta-box">
-            <h3 className="gdc-v2-cta-title">Secure Your Seat</h3>
-            <p className="gdc-v2-enroll-sub" style={{ marginBottom: '40px' }}>Only 5 Seats Left for the Upcoming Batch</p>
+          {/* Single Black Container with Left Content and Right Form */}
+          <div className="gdc-single-enroll-container">
+            {/* Left Side - Content */}
+            <div className="gdc-enroll-left-content">
+              <h3 className="gdc-enroll-title">Start Your Journey</h3>
+              <p className="gdc-enroll-subtitle">join a focused learning experience designed to help you master practical skills, build a standout portfolio, and launch your journey as a professional designer</p>
+              {/* <p className="gdc-enroll-note">Secure your future in design with one click</p> */}
+            </div>
 
-            {showEnrollment ? (
-              <div className="gdc-enrollment-form-expanded-dark">
-                <div className="gdc-form-header-expanded-dark">
-                  <h4><FontAwesomeIcon icon={faClipboard} /> Enrollment Form</h4>
-                  <button
-                    className="gdc-form-close-btn-dark"
-                    onClick={() => setShowEnrollment(false)}
-                  >
-                    <FontAwesomeIcon icon={faTimes} />
-                  </button>
-                </div>
-
-                <form onSubmit={handleSubmit} className="gdc-enrollment-form-content-dark">
-                  <div className="gdc-form-grid-expanded-dark">
-                    <div className="gdc-form-group-expanded-dark">
+            {/* Right Side - Form */}
+            <div className="gdc-enroll-right-form">
+              <div className="gdc-enroll-form-wrapper">
+                <h4 className="gdc-enroll-form-title">Enrollment Form</h4>
+                <form onSubmit={handleSubmit} className="gdc-enroll-form">
+                  <div className="gdc-enroll-form-grid">
+                    <div className="gdc-enroll-form-group">
                       <label>Full Name *</label>
                       <input
                         type="text"
@@ -1350,11 +1336,11 @@ const GraphicDesignCourse = () => {
                         value={formData.name}
                         onChange={handleInputChange}
                         required
-                        placeholder="Your Name"
+                        placeholder="Enter your full name"
                       />
                     </div>
 
-                    <div className="gdc-form-group-expanded-dark">
+                    <div className="gdc-enroll-form-group">
                       <label>Email ID *</label>
                       <input
                         type="email"
@@ -1362,11 +1348,11 @@ const GraphicDesignCourse = () => {
                         value={formData.email}
                         onChange={handleInputChange}
                         required
-                        placeholder="you@example.com"
+                        placeholder="Enter your email"
                       />
                     </div>
 
-                    <div className="gdc-form-group-expanded-dark">
+                    <div className="gdc-enroll-form-group">
                       <label>Phone Number *</label>
                       <input
                         type="tel"
@@ -1374,12 +1360,12 @@ const GraphicDesignCourse = () => {
                         value={formData.phone}
                         onChange={handleInputChange}
                         required
-                        placeholder="+91 98765 43210"
+                        placeholder="Enter your phone number"
                       />
                     </div>
 
-                    <div className="gdc-form-group-expanded-dark">
-                      <label>Course *</label>
+                    <div className="gdc-enroll-form-group">
+                      <label>Select Course *</label>
                       <select
                         name="course"
                         value={formData.course}
@@ -1394,22 +1380,12 @@ const GraphicDesignCourse = () => {
                     </div>
                   </div>
 
-                  <button type="submit" className="gdc-v2-enroll-btn">
+                  <button type="submit" className="gdc-enroll-submit-btn">
                     Complete Enrollment
                   </button>
                 </form>
               </div>
-            ) : (
-              <div className="gdc-v2-cta-actions">
-                <button
-                  className="gdc-v2-enroll-btn"
-                  onClick={() => setShowEnrollment(true)}
-                >
-                  <FontAwesomeIcon icon={faBullseye} /> Enroll In Masterclass Now
-                </button>
-                <p className="gdc-cta-note-dark" style={{ marginTop: '20px', color: '#666' }}>Secure your future in design with one click</p>
-              </div>
-            )}
+            </div>
           </div>
         </div>
       </section>

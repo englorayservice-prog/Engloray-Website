@@ -148,7 +148,7 @@ const BusinessBoost = () => {
                                     <h3 className="card-title-left">{card.title}</h3>
                                     <p className="card-description-right">{card.description}</p>
                                 </div>
-                                <span className="card-arrow">→</span>
+                                {/* <span className="card-arrow">→</span> */}
                             </div>
                         ))}
 
@@ -163,7 +163,7 @@ const BusinessBoost = () => {
                                     <h3 className="card-title-left">{card.title}</h3>
                                     <p className="card-description-right">{card.description}</p>
                                 </div>
-                                <span className="card-arrow">→</span>
+                                {/* <span className="card-arrow">→</span> */}
                             </div>
                         ))}
                     </div>

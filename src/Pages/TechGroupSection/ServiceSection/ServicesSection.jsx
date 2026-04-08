@@ -4,6 +4,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faPalette, faDesktop, faMobileAlt, faCogs, faChartLine, faArrowUp, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 import './ServicesSection.css';
+import serviceimage from "../../../assets/services_header.png";
 
 library.add(faPalette, faDesktop, faMobileAlt, faCogs, faChartLine, faArrowUp, faArrowRight);
 
@@ -22,57 +23,74 @@ const ServicesSection = () => {
     {
       id: 1,
       title: "BRANDING & IDENTITY DESIGN",
-      shortDescription: "Create memorable brand that resonate with your audience",
-      fullDescription: "We craft logos and color palettes that tell your unique story and resonate with your target audience.",
-      features: ["Logo Design", "Brand Guidelines", "Visual Identity", "Brand Strategy"],
-      duration: "2-4 weeks",
-      projects: "50+",
-      icon: faPalette,
+      shortDescription: "Create a memorable brand that resonates with your audience and leaves a lasting impression.",
       route: "/brandingIdentityPage"
     },
     {
       id: 2,
-      title: "WEBSITE & UI/UX DESIGN",
-      shortDescription: "User-centered designs that provide seamless experiences",
-      fullDescription: "Create intuitive interfaces that convert visitors into customers with seamless user experiences.",
-      features: ["UI/UX Layout", "Responsive", "Wireframes", "Prototyping"],
-      duration: "3-6 weeks",
-      projects: "80+",
-      icon: faDesktop,
-      route: "/uiuxDesignPage"
-    },
-    {
-      id: 3,
-      title: "SOFTWARE & APP DEVELOPMENT",
-      shortDescription: "Custom software solutions and mobile applications",
-      fullDescription: "Build scalable and efficient software solutions tailored to your specific business requirements to propel your success in the digital era. Our custom-built applications are designed to enhance performance, streamline operations, and support long-term business growth.",
-      features: ["Web Apps", "Mobile Apps", "Custom Tools", "API Integ."],
-      duration: "4-12 weeks",
-      projects: "120+",
-      icon: faMobileAlt,
+      title: "DEVELOPMENT SERVICES",
+      shortDescription: "Custom software solutions and mobile applications tailored to your specific business needs.",
       route: "/softwareDevelopmentPage"
     },
     {
+      id: 3,
+      title: "WEBSITE DEVELOPMENT",
+      shortDescription: "Create intuitive, responsive, and high-performance websites optimized for all modern devices.",
+      route: "/websiteDevelopmentPage"
+    },
+    {
       id: 4,
-      title: "ERP & CRM SOLUTIONS",
-      shortDescription: "Streamline your business operations with integrated systems",
-      fullDescription: "Implement integrated enterprise systems to optimize your business processes and customer relationships.",
-      features: ["ERP Setup", "CRM Config", "Automation", "Analytics"],
-      duration: "6-8 weeks",
-      projects: "35+",
-      icon: faCogs,
-      route: "/erpSolutionsPage"
+      title: "E-COMMERCE DEVELOPMENT",
+      shortDescription: "Build powerful online stores with seamless payment integration and expert inventory management.",
+      route: "/ecommerceDevelopmentPage"
     },
     {
       id: 5,
-      title: "DIGITAL MARKETING",
-      shortDescription: "Data-driven marketing strategies to boost your online presence",
-      fullDescription: "Drive growth with targeted marketing strategies that reach the right audience at the right time.",
-      features: ["SEO Opt.", "Social Media", "Content", "PPC Ads"],
-      duration: "Ongoing",
-      projects: "45+",
-      icon: faChartLine,
-      route: "/digitalMarketingServicePage"
+      title: "APP DEVELOPMENT",
+      shortDescription: "Develop cutting-edge mobile applications for iOS and Android platforms.",
+      route: "/appDevelopmentPage"
+    },
+    {
+      id: 6,
+      title: "GRAPHIC DESIGN",
+      shortDescription: "Visually stunning designs that communicate your brand's unique message.",
+      route: "/graphicDesignPage"
+    },
+    {
+      id: 7,
+      title: "UI/UX DESIGN",
+      shortDescription: "User-centered designs that provide seamless and intuitive digital experiences.",
+      route: "/uiuxDesignPage"
+    },
+    {
+      id: 8,
+      title: "SOFTWARE & TECH SOLUTION",
+      shortDescription: "Comprehensive technology solutions to drive your business forward in the digital age.",
+      route: "/softwareSolutionPage"
+    },
+    {
+      id: 9,
+      title: "DATA ANALYTICS",
+      shortDescription: "Leverage data insights to make informed business decisions and drive growth.",
+      route: "/dataAnalyticsPage"
+    },
+    {
+      id: 10,
+      title: "AI SERVICES",
+      shortDescription: "Integrate artificial intelligence to automate and optimize your business processes.",
+      route: "/aiServicesPage"
+    },
+    {
+      id: 11,
+      title: "CRM SERVICES",
+      shortDescription: "Manage customer relationships with advanced and customized CRM systems.",
+      route: "/crmServicesPage"
+    },
+    {
+      id: 12,
+      title: "SAAS SERVICES",
+      shortDescription: "Scalable cloud-based software solutions for modern and agile businesses.",
+      route: "/saasPage"
     }
   ];
 
@@ -83,94 +101,46 @@ const ServicesSection = () => {
         {/* ── MASTER GRID ── */}
         <div className="ss-master-grid">
 
-          {/* ── COLUMN A: Headline ── */}
+          {/* ── LEFT HEADING ── */}
           <div className="ss-col-headline">
-            <span className="ss-eyebrow">Our Services</span>
+            <span className="ss-eyebrow">Expert Solutions</span>
             <h2 className="ss-headline">Our Services</h2>
             <p className="ss-subheadline">
-              Comprehensive solutions to transform your business and drive growth
+              Comprehensive digital solutions to transform your business and drive
+              sustainable growth in a competitive landscape.
             </p>
           </div>
 
-          {/* ── COLUMN B: Feature Image Card ── */}
+          {/* ── RIGHT IMAGE ── */}
           <div className="ss-col-feature">
             <div className="ss-feature-card">
               <img
-                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop"
-                alt="Services Feature"
+                src={serviceimage}
+                alt="Our Services"
                 className="ss-feature-img"
               />
               <div className="ss-feature-overlay">
-                <span className="ss-feature-label">For Business</span>
+                <span className="ss-feature-label">Innovative tech</span>
               </div>
             </div>
           </div>
 
-          {/* ── STATS ROW: Small stat cards + Tall Content Card + Accent pair ── */}
-
-          {/* Stat 1 — row 2, col 1 */}
-          <div className="ss-stat-card ss-card-s1" onClick={() => handleCardClick(services[0])}>
-            <div className="ss-title-row">
-              <h4 className="ss-stat-title">{services[0].title}</h4>
-              <FontAwesomeIcon icon="arrow-right" className="ss-arrow-icon" />
+          {/* ── SERVICE CARDS ── */}
+          {services.map((service, index) => (
+            <div
+              key={service.id}
+              className={`ss-stat-card ss-card-${index + 1}`}
+              onClick={() => handleCardClick(service)}
+            >
+              <div className="ss-title-row">
+                <h4 className="ss-stat-title">{service.title}</h4>
+                <FontAwesomeIcon icon="arrow-right" className="ss-arrow-icon" />
+              </div>
+              <p className="ss-stat-desc">
+                {service.shortDescription}
+              </p>
             </div>
-            <p className="ss-stat-desc">{services[0].shortDescription}</p>
-          </div>
-
-          {/* Stat 2 — row 2, col 2 */}
-          <div className="ss-stat-card ss-card-s2" onClick={() => handleCardClick(services[1])}>
-            <div className="ss-title-row">
-              <h4 className="ss-stat-title">{services[1].title}</h4>
-              <FontAwesomeIcon icon="arrow-right" className="ss-arrow-icon" />
-            </div>
-            <p className="ss-stat-desc">{services[1].shortDescription}</p>
-          </div>
-
-          {/* Tall Content Card — rows 2-3, col 3 (spans 2 rows) */}
-          <div className="ss-stat-card ss-card-tall ss-card-tall-s3" onClick={() => handleCardClick(services[2])}>
-            <div className="ss-title-row">
-              <h4 className="ss-stat-title">{services[2].title}</h4>
-              <FontAwesomeIcon icon="arrow-right" className="ss-arrow-icon" />
-            </div>
-            <p className="ss-stat-desc ss-stat-desc--tall">{services[2].fullDescription}</p>
-          </div>
-
-          {/* Accent card 1 — row 2, col 4 (decorative stat) */}
-          <div className="ss-stat-card ss-card-accent ss-card-a1">
-            <div className="ss-title-row">
-              <h4 className="ss-stat-title ss-stat-title--white">Completion rate</h4>
-              <FontAwesomeIcon icon="arrow-right" className="ss-arrow-icon ss-arrow-icon--white" />
-            </div>
-            <p className="ss-stat-desc ss-stat-desc--white">For online services with AI guidance</p>
-          </div>
-
-          {/* Stat 3 — row 3, col 1 */}
-          <div className="ss-stat-card ss-card-s4" onClick={() => handleCardClick(services[3])}>
-            <div className="ss-title-row">
-              <h4 className="ss-stat-title">{services[3].title}</h4>
-              <FontAwesomeIcon icon="arrow-right" className="ss-arrow-icon" />
-            </div>
-            <p className="ss-stat-desc">{services[3].shortDescription}</p>
-          </div>
-
-          {/* Stat 4 — row 3, col 2 */}
-          <div className="ss-stat-card ss-card-s5" onClick={() => handleCardClick(services[4])}>
-            <div className="ss-title-row">
-              <h4 className="ss-stat-title">{services[4].title}</h4>
-              <FontAwesomeIcon icon="arrow-right" className="ss-arrow-icon" />
-            </div>
-            <p className="ss-stat-desc">{services[4].shortDescription}</p>
-          </div>
-
-          {/* Accent card 2 — row 3, col 4 (decorative stat) */}
-          <div className="ss-stat-card ss-card-accent ss-card-a2">
-            <div className="ss-title-row">
-              <h4 className="ss-stat-title ss-stat-title--white">Faster completion</h4>
-              <FontAwesomeIcon icon="arrow-right" className="ss-arrow-icon ss-arrow-icon--white" />
-            </div>
-            <p className="ss-stat-desc ss-stat-desc--white">Of government transactions with AI assisted navigation</p>
-          </div>
-
+          ))}
         </div>
       </div>
     </section>

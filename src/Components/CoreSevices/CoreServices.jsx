@@ -2,42 +2,20 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUp, faTicketSimple } from '@fortawesome/free-solid-svg-icons';
-import aiProductWork from '../../assets/AiImage.jpeg';
 import './CoreServices.css';
 
-// Import icons
-// import brandingIcon from '../../assets/branding.png';
+import designingImg from '../../assets/core_services/designing.png';
+import developmentImg from '../../assets/core_services/development.png';
+import saasImg from '../../assets/core_services/saas.png';
+import brandingImg from '../../assets/brandinganddesignkit.png';
+import analyticsImg from '../../assets/Data-Analytics.png';
+import aiProductImg from '../../assets/Ai-Products.png';
+
 const brandingIcon = "";
-// import developmentIcon from '../../assets/development';
 const developmentIcon = "";
-// import marketingIcon from '../../assets/Testing.png';
 const marketingIcon = "";
-// import aiIcon from '../../assets/ai.png';
 const aiIcon = "";
-// import educationIcon from '../../assets/ai.png';
 const educationIcon = "";
-
-// Import work showcase images
-// import uiuxWork from '../../assets/uiux_work.png';
-const uiuxWork = "";
-// import webDevWork from '../../assets/web_dev_work.png';
-const webDevWork = "";
-// import marketingWork from '../../assets/marketing_work.png';
-const marketingWork = "";
-// import brandingWork from '../../assets/branding_work.png';
-const brandingWork = "";
-// import appsDevWork from '../../assets/apps_dev_work.png';
-const appsDevWork = "";
-
-
-// Import background images
-const backgroundImages = {
-  branding: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
-  development: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
-  marketing: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
-  ai: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
-  education: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80'
-};
 
 const CoreServices = () => {
   const navigate = useNavigate();
@@ -53,7 +31,7 @@ const CoreServices = () => {
       title: "Designing",
       description: "Crafting memorable brand identities that resonate with your audience and drive business growth through strategic design thinking.",
       icon: brandingIcon,
-      background: backgroundImages.branding,
+      background: designingImg,
       features: ["Logo & Identity", "Brand Strategy", "UI/UX Design", "Visual Systems"],
       color: "#18181A",
       route: '/marketingPage'
@@ -63,7 +41,7 @@ const CoreServices = () => {
       title: "Development",
       description: "Building cutting-edge digital experiences with robust, scalable solutions that perform across all platforms and devices.",
       icon: developmentIcon,
-      background: backgroundImages.development,
+      background: developmentImg,
       features: ["Web Development", "Mobile Apps", "E-commerce", "Progressive Web Apps"],
       color: "#6D28D9",
       route: '/developmentPage'
@@ -73,7 +51,7 @@ const CoreServices = () => {
       title: "SAAS",
       description: "Building scalable, multi-tenant software solutions that empower businesses to deliver high-quality digital services at scale.",
       icon: marketingIcon,
-      background: backgroundImages.marketing,
+      background: saasImg,
       features: ["Multi-tenancy", "Scalable Cloud", "API Management", "Enterprise Security"],
       color: "#18181A",
       route: '/saasPage'
@@ -83,7 +61,7 @@ const CoreServices = () => {
       title: "Branding",
       description: "Empowering teams and individuals with cutting-edge skills and knowledge through comprehensive training programs.",
       icon: educationIcon,
-      background: backgroundImages.education,
+      background: brandingImg,
       features: ["Corporate Training", "Branding", "UI Designs", "Label design"],
       color: "#6D28D9",
       route: '/brandingPage'
@@ -93,7 +71,7 @@ const CoreServices = () => {
       title: "Data Analytics",
       description: "Transforming Ideas into Powerful Mobile Experiences.",
       icon: aiIcon,
-      background: backgroundImages.ai,
+      background: analyticsImg,
       features: ["Api Integration", "cross paltform support", "personalization", "Data Encryption"],
       color: "#18181A",
       route: '/mobileApplicationsPage'
@@ -103,7 +81,7 @@ const CoreServices = () => {
       title: "AI Product",
       description: "Developing intelligent solutions that automate processes, improve decision-making, and drive innovation.",
       icon: aiIcon,
-      background: aiProductWork,
+      background: aiProductImg,
       features: ["Machine Learning", "NLP", "Predictive Analytics", "Process Automation"],
       color: "#6D28D9",
       route: '/aiProductPage'
@@ -218,12 +196,12 @@ const CoreServices = () => {
 
                       <div className="card-ui-action">
                         <div className="action-circle" style={{
-                          backgroundColor: (service.id === 2 || service.id === 4 || service.id === 6) ? '#C0FF2D' : '#333',
+                          backgroundColor: (service.id === 2 || service.id === 4 || service.id === 6) ? '#C0FF2D' : 'white',
                         }}>
                           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                               d="M7 17L17 7M17 7H7M17 7V17"
-                              stroke={(service.id === 2 || service.id === 4 || service.id === 6) ? 'black' : 'white'}
+                              stroke="black"
                               strokeWidth="2"
                               strokeLinecap="round"
                               strokeLinejoin="round"

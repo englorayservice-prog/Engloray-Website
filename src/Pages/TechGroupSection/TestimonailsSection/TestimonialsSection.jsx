@@ -342,6 +342,8 @@ const TestimonialsSection = () => {
           <button onClick={handleNextTestimonial}>›</button>
         </div>
 
+
+
         {/* STRIPE STYLE CAROUSEL */}
         <div className="techGroup-stripe-carousel-wrapper">
           <div className="techGroup-stripe-carousel">

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './MentorshipLearning.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -40,7 +40,7 @@ import {
   faShoppingCart, faShoppingBag, faStore,
 
   // Bug/Testing Icons
-  faBug, faExclamationTriangle, faSearch, faUserNinja, faUserAstronaut, faUserSecret, faMap,
+  faBug, faExclamationTriangle, faSearch, faUserNinja, faUserAstronaut, faUserSecret, faMap, faChevronLeft,
 
   // Briefcase for Hero Section
   faBriefcase,
@@ -60,14 +60,51 @@ import { Helmet } from 'react-helmet';
 import studentPurpleBG from '../../../assets/images/student_purple_bg.png';
 import studentYellowBG from '../../../assets/images/student_yellow_bg.png';
 import studentRedBG from '../../../assets/images/student_red_bg.png';
+import aiMachineImage from '../../../assets/aimachine.jpeg';
+import fullstackImage from '../../../assets/fullstack.jpeg';
 
 const MentorshipLearning = () => {
   const [showToast, setShowToast] = useState(false);
-  const [showAllPaths, setShowAllPaths] = useState(false);
 
-  const whatsappNumber = "6381759909";
-  const whatsappMessage = "Hello! I'm interested in the mentorship program. Can we schedule a consultation?";
-  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+  const learningPaths = [
+    {
+      id: 1,
+      title: "AI & Machine Learning Mastery",
+      bgImage: aiMachineImage,
+      imageClass: "spbl-custom-zoom",
+      duration: "6 Months",
+      level: "Advanced",
+      icon: faRobot,
+      iconColor: "#3B82F6",
+      description: "Master AI concepts with hands-on projects and real-world applications under expert guidance",
+      modules: [
+        "Fundamentals of ML",
+        "Deep Learning Architecture",
+        "Real-world AI Projects",
+        "Model Deployment"
+      ],
+      mentorCount: "8 Industry Experts",
+      projects: "15+ Capstone Projects"
+    },
+    {
+      id: 2,
+      title: "Full-Stack Development",
+      bgImage: fullstackImage,
+      duration: "4 Months",
+      level: "Intermediate",
+      icon: faLaptopCode,
+      iconColor: "#3B82F6",
+      description: "Build complete web applications from frontend to backend with personalized mentorship",
+      modules: [
+        "React & Node.js",
+        "Database Design",
+        "API Development",
+        "DevOps & Deployment"
+      ],
+      mentorCount: "6 Senior Developers",
+      projects: "12+ Real Applications"
+    }
+  ];
 
   const mentors = [
     {
@@ -138,46 +175,47 @@ const MentorshipLearning = () => {
       icon: faCertificate,
       badge: "Branding Pro",
       badgeIcon: faRibbon,
-      color: "#F59E0B"
+      color: "#3B82F6"
     }
   ];
 
-  const learningPaths = [
-    {
-      id: 1,
-      title: "AI & Machine Learning Mastery",
-      duration: "6 Months",
-      level: "Advanced",
-      icon: faRobot,
-      iconColor: "#EF4444",
-      description: "Master AI concepts with hands-on projects and real-world applications under expert guidance",
-      modules: [
-        "Fundamentals of ML",
-        "Deep Learning Architecture",
-        "Real-world AI Projects",
-        "Model Deployment"
-      ],
-      mentorCount: "8 Industry Experts",
-      projects: "15+ Capstone Projects"
-    },
-    {
-      id: 2,
-      title: "Full-Stack Development",
-      duration: "4 Months",
-      level: "Intermediate",
-      icon: faLaptopCode,
-      iconColor: "#3B82F6",
-      description: "Build complete web applications from frontend to backend with personalized mentorship",
-      modules: [
-        "React & Node.js",
-        "Database Design",
-        "API Development",
-        "DevOps & Deployment"
-      ],
-      mentorCount: "6 Senior Developers",
-      projects: "12+ Real Applications"
+  // Carousel State
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [cardsPerPage, setCardsPerPage] = useState(2);
+  
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 768) {
+        setCardsPerPage(1);
+      } else {
+        setCardsPerPage(2);
+      }
+    };
+    handleResize(); // Initial check
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const totalCards = learningPaths.length;
+  const maxSlides = totalCards - cardsPerPage; // steps depend on number of cards
+
+
+  const nextSlide = () => {
+    if (currentSlide < maxSlides) {
+      setCurrentSlide(prev => prev + 1);
     }
-  ];
+  };
+
+  const prevSlide = () => {
+    if (currentSlide > 0) {
+      setCurrentSlide(prev => prev - 1);
+    }
+  };
+
+  const whatsappNumber = "6381759909";
+  const whatsappMessage = "Hello! I'm interested in the mentorship program. Can we schedule a consultation?";
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
 
   const successStories = [
     {
@@ -226,7 +264,7 @@ const MentorshipLearning = () => {
       quote: "Career transition was scary, but my mentor guided me through every step. Now I'm building products I love.",
       achievement: "Successful career switch",
       icon: faUserGraduate,
-      color: "#F59E0B"
+      color: "#3B82F6"
     }
   ];
 
@@ -253,7 +291,7 @@ const MentorshipLearning = () => {
       icon: faGraduationCap,
       title: "Career Guidance",
       description: "Resume reviews, interview prep, and networking opportunities",
-      color: "#F59E0B"
+      color: "#3B82F6"
     },
     {
       icon: faClipboardCheck,
@@ -296,7 +334,7 @@ const MentorshipLearning = () => {
       title: "Weekly Sessions",
       description: "Regular 1:1 meetings with your mentor",
       icon: faCalendarCheck,
-      color: "#F59E0B"
+      color: "#3B82F6"
     },
     {
       step: 5,
@@ -341,7 +379,7 @@ const MentorshipLearning = () => {
       label: "Satisfaction Rate",
       description: "Average mentor and program rating",
       icon: faStar,
-      color: "#F59E0B"
+      color: "#3B82F6"
     }
   ];
 
@@ -353,7 +391,6 @@ const MentorshipLearning = () => {
     }, 1500);
   };
 
-  const visiblePaths = showAllPaths ? learningPaths : learningPaths.slice(0, 2);
 
   return (
     <>
@@ -397,21 +434,23 @@ const MentorshipLearning = () => {
           )}
 
           {/* Hero Section */}
-          <header className="pbl-hero-wrapper" style={{ minHeight: '100vh', paddingTop: '100px', paddingBottom: '80px', background: '#FCFCFA', position: 'relative', overflow: 'hidden', fontFamily: '"Inter", "Helvetica Neue", sans-serif' }}>
+          <header className="pbl-hero-wrapper" style={{ minHeight: '100vh', paddingTop: '60px', paddingBottom: '80px', background: '#FCFCFA', position: 'relative', overflow: 'hidden', fontFamily: '"Inter", "Helvetica Neue", sans-serif' }}>
             <div className="pbl-hero-container" style={{ maxWidth: '1500px', margin: '0 auto', padding: '0 40px', position: 'relative' }}>
-              <div className="pbl-hero-layout" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '30px', position: 'relative', zIndex: 2, marginBottom: '60px' }}>
+              <div className="pbl-hero-layout" style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '30px', position: 'relative', zIndex: 2, marginBottom: '60px', paddingTop: '40px' }}>
 
                 {/* Left Content */}
-                <div className="pbl-hero-left" style={{ flex: '0 1 auto', textAlign: 'left', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', zIndex: 2, marginLeft: '-120px', minWidth: '900px' }}>
-                  <div className="pbl-hero-tag" style={{ padding: '6px 16px', borderRadius: '20px', backgroundColor: '#FBBF24', color: '#111', fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '24px', display: 'inline-block' }}>
+                <div className="pbl-hero-left" style={{ flex: '0 1 auto', textAlign: 'left', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', zIndex: 2, marginTop: '20px' }}>
+                  <div className="pbl-hero-tag" style={{ padding: '6px 16px', borderRadius: '20px', backgroundColor: '#60A5FA', color: '#111', fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '24px', display: 'inline-block' }}>
                     WE CAN HELP YOU
                   </div>
-                  <h1 className="pbl-hero-title" style={{ textAlign: 'left', fontFamily: '"Inter", "Helvetica Neue", sans-serif', fontSize: 'clamp(3rem, 4.8vw, 5.5rem)', fontWeight: 600, color: '#111', lineHeight: 1.05, margin: '0 0 24px 0', letterSpacing: '-2.5px', width: '100%', maxWidth: '900px' }}>
+                  <h1 className="pbl-hero-title" style={{ textAlign: 'left', fontFamily: '"Inter", "Helvetica Neue", sans-serif', fontSize: 'clamp(4.5rem, 7.5vw, 8.5rem)', fontWeight: 800, color: '#111', lineHeight: 1.05, margin: '0 0 24px 0', letterSpacing: '-2.5px', width: '100%' }}>
                     Transform Your <span className="pbl-hero-highlight" style={{ fontWeight: 400, color: '#97AAAC', fontStyle: 'italic' }}>Career</span> Through Expert Mentorship
                   </h1>
                   <p className="pbl-hero-desc" style={{ textAlign: 'left', fontFamily: '"Inter", "Helvetica Neue", sans-serif', fontSize: '1.2rem', color: '#64748B', lineHeight: 1.5, width: '100%', maxWidth: '640px', margin: '0 0 40px 0' }}>
                     1:1 mentorship with industry leaders from Google, Amazon, Microsoft, and more.
                     Get personalized guidance, work on real projects, and accelerate your career growth.
+                    Master high-demand technical skills with a curriculum tailored to your professional aspirations.
+                    Gain exclusive access to industry-standard toolsets and best practices in every mentorship session.
                   </p>
 
                   <div className="pbl-hero-buttons" style={{ display: 'flex', alignItems: 'center', gap: '30px', justifyContent: 'flex-start', width: '100%' }}>
@@ -425,7 +464,7 @@ const MentorshipLearning = () => {
                 </div>
 
                 {/* Right Content - Custom Masonry Grid */}
-                <div className="pbl-hero-right" style={{ flex: '0 0 45%', display: 'flex', gap: '20px', position: 'relative', zIndex: 2, transform: 'translateX(60px)' }}>
+                <div className="pbl-hero-right" style={{ flex: '0 0 45%', display: 'flex', gap: '20px', position: 'relative', zIndex: 2 }}>
                   {/* Column 1 */}
                   <div className="pbl-masonry-col" style={{ display: 'flex', flexDirection: 'column', gap: '20px', flex: 1, paddingTop: '80px' }}>
                     {/* Tall Purple Image */}
@@ -490,8 +529,9 @@ const MentorshipLearning = () => {
                     <h2 className="spbl-section-title" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700 }}>Learn from Industry Leaders</h2>
                     <p className="spbl-section-subtitle" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}>Get mentored by experts from top tech companies</p>
                   </div>
+                </div>
 
-                  <div className="spbl-experts-scroll-container">
+                <div className="spbl-experts-scroll-container">
                     <div className="spbl-experts-scroll">
                       {[...mentors, ...mentors].map((expert, index) => (
                         <div key={`${expert.id}-${index}`} className="spbl-expert-card" style={{ fontFamily: "'Poppins', sans-serif" }}>
@@ -544,13 +584,11 @@ const MentorshipLearning = () => {
                       ))}
                     </div>
                   </div>
-                </div>
               </section>
             </>
 
             {/* Structured Learning Paths Section */}
             <>
-              <style>{`@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');`}</style>
               <section className="spbl-section spbl-categories-section" style={{ fontFamily: "'Poppins', sans-serif" }}>
                 <div className="spbl-container">
                   <div className="spbl-section-header">
@@ -558,78 +596,123 @@ const MentorshipLearning = () => {
                     <p className="spbl-section-subtitle" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}>Choose your journey with guided mentorship</p>
                   </div>
 
-                  <div className="spbl-categories-grid">
-                    {visiblePaths.map((path) => (
-                      <div key={path.id} className="spbl-category-card" style={{ fontFamily: "'Poppins', sans-serif" }}>
-                        <div className="spbl-category-header">
-                          <div className="spbl-category-icon" style={{ color: path.iconColor }}>
-                            <FontAwesomeIcon icon={path.icon} />
-                          </div>
-                          <div className="spbl-category-level" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 500 }}>
-                            {path.level}
-                          </div>
-                        </div>
-
-                        <div className="spbl-category-content">
-                          <h3 className="spbl-category-title" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600 }}>{path.title}</h3>
-                          <p className="spbl-category-description" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}>{path.description}</p>
-
-                          <div className="spbl-category-duration">
-                            <span className="spbl-duration-icon" style={{ color: path.iconColor }}>
-                              <FontAwesomeIcon icon={faClock} />
-                            </span>
-                            <span className="spbl-duration-text" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}>{path.duration}</span>
-                          </div>
-
-                          <div className="spbl-category-deliverables">
-                            <h4 className="spbl-deliverables-title" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600 }}>What You'll Learn:</h4>
-                            <ul className="spbl-deliverables-list">
-                              {path.modules.map((item, index) => (
-                                <li key={index} className="spbl-deliverable-item">
-                                  <span className="spbl-deliverable-icon" style={{ color: path.iconColor }}>
-                                    <FontAwesomeIcon icon={faCheck} />
-                                  </span>
-                                  <span className="spbl-deliverable-text" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}>{item}</span>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-
-                          <div className="spbl-category-details">
-                            <div className="spbl-category-detail">
-                              <span className="spbl-detail-icon" style={{ color: path.iconColor }}>
-                                <FontAwesomeIcon icon={faChalkboardTeacher} />
-                              </span>
-                              <span className="spbl-detail-text" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}>{path.mentorCount}</span>
-                            </div>
-                            <div className="spbl-category-detail">
-                              <span className="spbl-detail-icon" style={{ color: path.iconColor }}>
-                                <FontAwesomeIcon icon={faProjectDiagram} />
-                              </span>
-                              <span className="spbl-detail-text" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}>{path.projects}</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  {learningPaths.length > 2 && (
-                    <div className="spbl-view-more-container">
-                      <button
-                        className="spbl-view-more-btn"
-                        onClick={() => setShowAllPaths(!showAllPaths)}
-                        style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600 }}
-                      >
-                        <span className="spbl-view-more-text">
-                          {showAllPaths ? 'View Less' : `View More Paths (${learningPaths.length - 2} more)`}
-                        </span>
-                        <span className="spbl-view-more-icon">
-                          <FontAwesomeIcon icon={showAllPaths ? faChevronUp : faChevronDown} />
-                        </span>
+                  <div className="spbl-categories-carousel-container">
+                    {currentSlide > 0 && cardsPerPage > 1 && (
+                      <button className="spbl-carousel-arrow left" onClick={prevSlide} aria-label="Previous Path">
+                        <FontAwesomeIcon icon={faChevronLeft} />
                       </button>
+                    )}
+                    
+                    <div className="spbl-categories-carousel-viewport">
+                      <div className="spbl-categories-carousel-track" style={{ 
+                        transform: `translateX(calc(-${currentSlide} * (100% / ${cardsPerPage} + ${cardsPerPage === 1 ? '0rem' : '1rem'})))`,
+                      }}>
+                        {learningPaths.map((path, index) => {
+                          return (
+                            <div key={path.id} className="spbl-category-card" style={{ 
+                              fontFamily: "'Poppins', sans-serif",
+                              flexDirection: 'column'
+                            }}>
+                              <div className="spbl-category-image-wrapper" style={{ position: 'relative' }}>
+                                <div className="spbl-image-mask" style={{ width: '100%', height: '100%', overflow: 'hidden', borderRadius: '48px' }}>
+                                  <img 
+                                    src={path.bgImage} 
+                                    alt={path.title} 
+                                    className={path.imageClass ? path.imageClass : ""} 
+                                  />
+                                </div>
+                                <div className="spbl-category-level" style={{ 
+                                  position: 'absolute',
+                                  top: '36px',
+                                  right: '36px',
+                                  fontFamily: "'Poppins', sans-serif", 
+                                  fontWeight: 600,
+                                  color: '#1E293B',
+                                  backgroundColor: 'rgba(255, 255, 255, 0.95)',
+                                  padding: '6px 14px',
+                                  borderRadius: '12px',
+                                  zIndex: 2,
+                                  fontSize: '0.85rem',
+                                  boxShadow: '0 4px 6px rgba(0,0,0,0.1)'
+                                }}>
+                                  {path.level}
+                                </div>
+                              </div>
+                              
+                              <div className="spbl-category-body" style={{ paddingTop: '20px' }}>
+                                <div className="spbl-category-content">
+                                  <h3 className="spbl-category-title" style={{ 
+                                    fontFamily: "'Poppins', sans-serif", 
+                                    fontWeight: 700,
+                                    color: '#0F172A'
+                                  }}>{path.title}</h3>
+                                  <p className="spbl-category-description" style={{ 
+                                    fontFamily: "'Poppins', sans-serif", 
+                                    fontWeight: 400,
+                                    color: '#475569'
+                                  }}>{path.description}</p>
+                                  
+                                  <div className="spbl-category-duration">
+                                    <span className="spbl-duration-icon" style={{ color: '#2563EB' }}>
+                                      <FontAwesomeIcon icon={faClock} />
+                                    </span>
+                                    <span className="spbl-duration-text" style={{ 
+                                      fontFamily: "'Poppins', sans-serif", 
+                                      fontWeight: 500,
+                                      color: '#0F172A'
+                                    }}>{path.duration}</span>
+                                  </div>
+
+                                  <div className="spbl-category-deliverables">
+                                    <h4 className="spbl-deliverables-title" style={{ 
+                                      fontFamily: "'Poppins', sans-serif", 
+                                      fontWeight: 600,
+                                      color: '#0F172A'
+                                    }}>What You'll Learn:</h4>
+                                    <div className="spbl-deliverable-list">
+                                      {path.modules.map((del, i) => (
+                                        <div key={i} className="spbl-deliverable-item">
+                                          <span className="spbl-deliverable-icon" style={{ color: '#2563EB' }}><FontAwesomeIcon icon={faCheck} /></span>
+                                          <span className="spbl-deliverable-text" style={{ 
+                                            fontFamily: "'Poppins', sans-serif", 
+                                            fontWeight: 400,
+                                            color: '#475569'
+                                          }}>{del}</span>
+                                        </div>
+                                      ))}
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div className="spbl-category-footer">
+                                  <div className="spbl-category-stats">
+                                    <div className="spbl-stat-item">
+                                      <FontAwesomeIcon icon={faUserTie} className="spbl-stat-icon" style={{ color: '#2563EB' }} />
+                                      <span className="spbl-stat-text" style={{ color: '#475569' }}>{path.mentorCount}</span>
+                                    </div>
+                                    <div className="spbl-stat-item">
+                                      <FontAwesomeIcon icon={faProjectDiagram} className="spbl-stat-icon" style={{ color: '#2563EB' }} />
+                                      <span className="spbl-stat-text" style={{ color: '#475569' }}>{path.projects}</span>
+                                    </div>
+                                  </div>
+                                  <button className="spbl-enroll-btn" onClick={handleWhatsAppClick} style={{ 
+                                    backgroundColor: '#2563EB',
+                                    color: '#FFFFFF'
+                                  }}>Schedule Consultation</button>
+                                </div>
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
                     </div>
-                  )}
+
+                    {currentSlide < maxSlides && (
+                      <button className="spbl-carousel-arrow right" onClick={nextSlide} aria-label="Next Path">
+                        <FontAwesomeIcon icon={faChevronRight} />
+                      </button>
+                    )}
+                  </div>
                 </div>
               </section>
             </>
@@ -640,7 +723,7 @@ const MentorshipLearning = () => {
                 <div className="staffing-title-wrapper">
                   <h2 className="staffing-title">
                     Why Mentorship <br />
-                    Works <span className="title-blue">Works</span>
+                    <span className="title-blue">Works</span>
                   </h2>
                   <p className="staffing-title-desc">
                     Accelerate your learning with personalized guidance from experienced professionals in the industry.
@@ -671,8 +754,7 @@ const MentorshipLearning = () => {
                 <div className="process-header-grid">
                   <div className="process-title-area">
                     <h2 className="process-main-title">
-                      HOW IT <br />
-                      WORKS
+                      HOW IT WORKS
                     </h2>
                   </div>
 
@@ -717,8 +799,9 @@ const MentorshipLearning = () => {
                   <h2 className="spbl-section-title">Success Stories</h2>
                   <p className="spbl-section-subtitle">Real people, real transformations</p>
                 </div>
+              </div>
 
-                <div className="spbl-stories-marquee-container">
+              <div className="spbl-stories-marquee-container">
                   <div className="spbl-stories-marquee-track">
                     {/* First Loop */}
                     {successStories.map((story) => (
@@ -826,7 +909,6 @@ const MentorshipLearning = () => {
                     ))}
                   </div>
                 </div>
-              </div>
             </section>
 
             {/* CTA Section */}

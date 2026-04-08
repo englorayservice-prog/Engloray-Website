@@ -115,11 +115,57 @@ const AiChatbotPage = () => {
                         <div className="showcase-particles" />
                     </div>
                     <div className="showcase-container">
+                        {/* Left side widgets */}
+                        <motion.div 
+                            className="hero-side-widget sw-left-top"
+                            initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.5 }}
+                        >
+                            <div className="sw-icon-box" style={{ background: 'rgba(168, 85, 247, 0.2)', color: '#a855f7' }}><FontAwesomeIcon icon={faRobot} /></div>
+                            <div className="sw-content">
+                                <span className="sw-title">Model Training</span>
+                                <p className="sw-detail">98.5% Accuracy</p>
+                            </div>
+                        </motion.div>
+
+                        <motion.div 
+                            className="hero-side-widget sw-left-bottom"
+                            initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.7 }}
+                        >
+                            <div className="sw-icon-box" style={{ background: 'rgba(139, 92, 246, 0.2)', color: '#8b5cf6' }}><FontAwesomeIcon icon={faComments} /></div>
+                            <div className="sw-content">
+                                <span className="sw-title">Live Dialogs</span>
+                                <p className="sw-detail">150 Chats Ongoing</p>
+                            </div>
+                        </motion.div>
+
+                        {/* Right side widgets */}
+                        <motion.div 
+                            className="hero-side-widget sw-right-top"
+                            initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.6 }}
+                        >
+                            <div className="sw-icon-box" style={{ background: 'rgba(192, 132, 252, 0.2)', color: '#c084fc' }}><FontAwesomeIcon icon={faBolt} /></div>
+                            <div className="sw-content">
+                                <span className="sw-title">Response Speed</span>
+                                <p className="sw-detail">300ms Latency</p>
+                            </div>
+                        </motion.div>
+
+                        <motion.div 
+                            className="hero-side-widget sw-right-bottom"
+                            initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.8 }}
+                        >
+                            <div className="sw-icon-box" style={{ background: 'rgba(168, 85, 247, 0.2)', color: '#a855f7' }}><FontAwesomeIcon icon={faShieldAlt} /></div>
+                            <div className="sw-content">
+                                <span className="sw-title">Data Security</span>
+                                <p className="sw-detail">SOC2 Compliant</p>
+                            </div>
+                        </motion.div>
+
                         <div className="showcase-center-text">
                             <motion.div className="showcase-badge ai-badge-color" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5, type: "spring" }}>
                                 <FontAwesomeIcon icon={faRobot} /> Intelligent AI Chatbot Platform
                             </motion.div>
-                            <motion.h1 className="showcase-h1" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.1 }}>
+                            <motion.h1 className="showcase-h1" initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }} animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }} transition={{ duration: 0.8, delay: 0.1 }}>
                                 YOUR AI SUPPORT<br /> Starts <span className="ai-accent">Right Here</span>
                             </motion.h1>
                             <motion.p className="showcase-p" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}>
@@ -176,11 +222,17 @@ const AiChatbotPage = () => {
                 {/* WHY CHOOSE OUR AI CHATBOT */}
                 <section className="crm-why-interactive">
                     <div className="cwi-container">
-                        <div className="cwi-header-row">
+                        <motion.div
+                            className="cwi-header-row"
+                            initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }}
+                            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                            transition={{ duration: 0.8 }}
+                            viewport={{ once: true }}
+                        >
                             <span className="crm-section-badge ai-section-badge">Intelligent Advantage</span>
                             <h2 className="cwi-title">WHY CHOOSE OUR <span className="ai-accent" style={{ color: '#a855f7' }}>AI CHATBOT?</span></h2>
                             <p className="cwi-desc">Deploy an ultra-smart virtual agent that continuously learns, providing flawless multi-lingual conversational experiences securely.</p>
-                        </div>
+                        </motion.div>
 
                         <div className="cwi-content">
                             <div className="cwi-list">
@@ -303,7 +355,13 @@ const AiChatbotPage = () => {
                 {/* WHO USES OUR AI CHATBOT */}
                 <section className="crm-use-cases-section">
                     <div className="use-cases-container">
-                        <motion.div className="use-cases-header" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
+                        <motion.div
+                            className="use-cases-header"
+                            initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }}
+                            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                            transition={{ duration: 0.8 }}
+                            viewport={{ once: true }}
+                        >
                             <span className="crm-section-badge ai-section-badge">Tailored Solutions</span>
                             <h2>Who Uses Our <span className="ai-span-h2">AI Chatbot?</span></h2>
                             <p>Our intelligent conversational platform fits every industry that values fast, accurate and scalable support.</p>
@@ -383,7 +441,13 @@ const AiChatbotPage = () => {
                 {/* WORK SMARTER SECTION */}
                 <section className="crm-insights-section ai-insights-section">
                     <div className="crm-insights-inner">
-                        <motion.div className="crm-insights-header" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
+                        <motion.div
+                            className="crm-insights-header"
+                            initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }}
+                            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                            transition={{ duration: 0.8 }}
+                            viewport={{ once: true }}
+                        >
                             <span className="crm-section-badge-dark ai-badge-dark"><FontAwesomeIcon icon={faLightbulb} /> AI Intelligence</span>
                             <h2>Smarter Conversations,<br /><span className="ai-gradient-span">Happier Customers</span></h2>
                             <p>Move beyond scripted replies — our AI understands context, learns from every interaction, and keeps improving over time.</p>

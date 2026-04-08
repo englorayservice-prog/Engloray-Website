@@ -1,77 +1,182 @@
 import React from 'react';
 import './Testimonials.css';
 
-// Import local avatars
-import avatar1 from '../../assets/logos/amico-Photoroom.png';
-import avatar3 from '../../assets/logos/studio makeup-Photoroom.png';
+// Import unique business logos and student avatars
+import logoAmico from '../../assets/logos/amico-Photoroom.png';
+import logoThulasi from '../../assets/logos/thulasi-Photoroom.png';
 import logoWooden from '../../assets/logos/wooden street-Photoroom.png';
 import logoTamil from '../../assets/logos/tamil natrals-Photoroom.png';
 import logoMaax from '../../assets/logos/maax life-Photoroom.png';
 import logoNestoria from '../../assets/logos/nestoria-Photoroom.png';
-import maleAvatar from '../../assets/testimonials/male_avatar.png';
-import femaleAvatar from '../../assets/testimonials/female_avatar.png';
+import logoPavizham from '../../assets/logos/Pavizham-Photoroom.png';
+import logoBrandex from '../../assets/logos/brandex-Photoroom.png';
+import logoMalar from '../../assets/logos/malar-Photoroom.png';
+import logoAara from '../../assets/logos/aara-Photoroom.png';
+import logoManjari from '../../assets/logos/manjari-Photoroom.png';
+import logoEcec from '../../assets/logos/ecec logo.png';
+
+// Import unique student/client avatars
+// Import unique student/client avatars with correct gender alignment
+import avatarFemale1 from '../../assets/rev_avatar_1.jfif';
+import avatarFemale2 from '../../assets/rev_avatar_2.jfif';
+import avatarMale1 from '../../assets/rev_avatar_3.jfif';
+import avatarMale2 from '../../assets/rev_avatar_4.jfif';
+import avatarMale3 from '../../assets/testimonials/male_avatar.png';
+import cartoonMale1 from '../../assets/testimonials/cartoon_male_1.png';
+import cartoonFemale1 from '../../assets/testimonials/cartoon_female_1.png';
+import cartoonMale2 from '../../assets/testimonials/cartoon_male_2.png';
+import cartoonFemale2 from '../../assets/testimonials/cartoon_female_2.png';
+import cartoonMale3 from '../../assets/testimonials/cartoon_male_3.png';
+import cartoonFemale3 from '../../assets/testimonials/cartoon_female_3.png';
 
 const Testimonials = () => {
   const testimonials = [
     {
       id: 1,
       name: "Amico Food Products",
-      role: "",
-      feedback: "ENGLORAY transformed our product packaging into a professional, market-ready design. The labels improved shelf visibility and customer confidence. It improves our product Quality",
-      avatar: avatar1
+      role: "Client",
+      feedback: "ENGLORAY transformed our product packaging into a professional, market-ready design. Their work improved our shelf visibility and customer confidence significantly.",
+      avatar: logoAmico
     },
     {
       id: 2,
       name: "Arun Kumar",
-      role: "",
-      feedback: "Learning graphic design from scratch at ENGLORAY helped me start my design career with confidence and practical skills. Their guidance, real-world projects, and supportive environment made learning inspiring and career-focused.",
-      avatar: maleAvatar
+      role: "UI/UX Student",
+      feedback: "The practical approach at ENGLORAY helped me bridge the gap between theory and industry standards. I landed my first design role weeks after completing the course.",
+      avatar: cartoonMale1
     },
     {
       id: 3,
-      name: "Divya Makeovers",
-      role: "",
-      feedback: "Our website looks elegant and professional. ENGLORAY understood our brand clearly and helped us get more customer inquiries. Through the elegance change we are attaining more customers,ENGLORAY a truly visionary place to build.",
-      avatar: avatar3
+      name: "Thulasi Healthcare",
+      role: "Client",
+      feedback: "We needed a brand identity that conveyed trust and care. The team delivered a compassionate yet modern visual system that perfectly represents our values.",
+      avatar: logoThulasi,
+      imgScale: 1.8 // Zoomed in as requested
     },
     {
       id: 4,
       name: "Sarah Johnson",
-      role: "",
-      feedback: "The team at ENGLORAY exceeded my expectations with their creative direction and attention to detail. My brand has never looked better and the response from customers has been overwhelmingly positive.",
-      avatar: femaleAvatar
+      role: "Digital Marketing Client",
+      feedback: "The creative direction provided by ENGLORAY breathed new life into our campaigns. Our ROI has seen a consistent upward trend since we started collaborating.",
+      avatar: cartoonFemale1
     },
     {
       id: 5,
       name: "Wooden Street",
-      role: "",
-      feedback: "The custom UI layout improved our sales conversion rate significantly and the branding was top notch! Highly recommend the team.",
+      role: "Client",
+      feedback: "The custom UI layout improved our sales conversion rate significantly. Their attention to user flow and aesthetic detail is truly world-class.",
       avatar: logoWooden
     },
     {
       id: 6,
       name: "Tamil Naturals",
-      role: "",
-      feedback: "Very clean, natural, and organic look provided by the ENGLORAY team. Extremely satisfied with the modern design approach.",
-      avatar: logoTamil
+      role: "Client",
+      feedback: "Very clean, natural, and organic look provided by the ENGLORAY team. They captured our commitment to sustainability in every pixel.",
+      avatar: logoTamil,
+      imgScale: 3
     },
     {
       id: 7,
       name: "Maax Life Fitness",
-      role: "",
-      feedback: "Our core fitness app has been highly appreciated by our users. Superb mobile app development team delivering reliable performance.",
+      role: "Client",
+      feedback: "Our fitness community has grown thanks to the engaging app interface developed by ENGLORAY. The performance and reliability are top-notch.",
       avatar: logoMaax
     },
     {
       id: 8,
       name: "Nestoria Architecture",
-      role: "",
-      feedback: "The architectural portfolio site built for us stands out from the competition. Exactly what we were looking for to capture our aesthetic.",
+      role: "Client",
+      feedback: "The architectural portfolio site built for us stands out from the competition. It captures our design aesthetic with precision and elegance.",
       avatar: logoNestoria
+    },
+    {
+      id: 9,
+      name: "Pavizham Jewelry",
+      role: "Client",
+      feedback: "Capturing the heritage of traditional jewelry in a modern digital format was a challenge, but ENGLORAY delivered a masterpiece of branding.",
+      avatar: logoPavizham,
+      imgScale: 2.5 // Zoomed in as requested
+    },
+    {
+      id: 10,
+      name: "Ramesh Kumar",
+      role: "Graphic Design Student",
+      feedback: "The focus on real-world portfolio building is what makes ENGLORAY unique. I didn't just learn tools; I learned how to think like a professional designer.",
+      avatar: cartoonMale2
+    },
+    {
+      id: 11,
+      name: "Brandex Agency",
+      role: "Client",
+      feedback: "Exceptional digital marketing assets. Their ability to translate complex data into engaging visual stories has given us a massive competitive edge.",
+      avatar: logoBrandex
+    },
+    {
+      id: 12,
+      name: "Ananya Sharma",
+      role: "Full Stack Student",
+      feedback: "I learned more in 3 months here than I did in a year of self-study. The mentorship and hands-on projects are invaluable for any aspiring developer.",
+      avatar: cartoonFemale2
+    },
+    // {
+    //   id: 13,
+    //   name: "Malar Florals",
+    //   role: "Client",
+    //   feedback: "Our floral boutique's online presence is now as beautiful as our arrangements. The new branding captures the elegance and fragrance of our brand.",
+    //   avatar: logoMalar
+    // },
+    {
+      id: 14,
+      name: "Sanjay Gupta",
+      role: "Business Solutions Client",
+      feedback: "The ERP integration and dashboard design provided by the technical team have completely streamlined our operations. A truly transformative partnership.",
+      avatar: avatarMale3
+    },
+    {
+      id: 15,
+      name: "Aara Fashion",
+      role: "Client",
+      feedback: "Minimalist, chic, and modern—the new fashion identity ENGLORAY created for us has successfully redefined our brand in the premium market space.",
+      avatar: logoAara
+    },
+    {
+      id: 16,
+      name: "Manjari Florists",
+      role: "Client",
+      feedback: "Specialized, elegant, and timeless. The design work for our new catalog has exceeded all our expectations.",
+      avatar: logoManjari
+    },
+    {
+      id: 17,
+      name: "ECEC Institution",
+      role: "Client",
+      feedback: "A premium educational portal that reflects our academic excellence. The UX for our students is seamless and engaging.",
+      avatar: logoEcec
+    },
+    {
+      id: 18,
+      name: "Karthik Raja",
+      role: "Motion Design Student",
+      feedback: "From absolute beginner to creating high-end animations—this course changed my entire career trajectory. Best mentorship out there.",
+      avatar: cartoonMale1
+    },
+    {
+      id: 19,
+      name: "Priya Das",
+      role: "Content Creator",
+      feedback: "They helped me build a personal brand that really resonates. My engagement rates have seen a 200% increase since the rebrand.",
+      avatar: cartoonFemale3
+    },
+    {
+      id: 20,
+      name: "Gowtham Raja",
+      role: "Motion Design Student",
+      feedback: "The level of detail taught here is extraordinary. I've been able to work with international brands within months of finishing.",
+      avatar: cartoonMale3
     }
   ];
 
-  // Duplicate testimonials EXACTLY ONCE for perfectly seamless infinite scroll math
+  // Use 2 sets for perfect seamless looping
   const allTestimonials = [...testimonials, ...testimonials];
 
   return (
@@ -102,10 +207,14 @@ const Testimonials = () => {
                     <div className="tmls-testimonial-icon">"</div>
                     <div className="tmls-testimonial-card-content">
                       <div
-                        className={`tmls-testimonial-avatar ${isEven ? 'tmls-avatar-transparent' : ''
+                        className={`tmls-testimonial-avatar ${testimonial.role === 'Client' ? 'tmls-avatar-client' : 'tmls-avatar-student'
                           }`}
                       >
-                        <img src={testimonial.avatar} alt={testimonial.name} />
+                        <img
+                          src={testimonial.avatar}
+                          alt={testimonial.name}
+                          style={testimonial.imgScale ? { transform: `scale(${testimonial.imgScale})` } : {}}
+                        />
                       </div>
                       <div className="tmls-testimonial-text">
                         <div className="tmls-testimonial-author">

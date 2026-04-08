@@ -78,9 +78,9 @@ const App = () => {
         </div>
 
         {/* Visualization Container */}
-        <div 
+        <div
           ref={containerRef}
-          className="relative rounded-xl overflow-hidden" 
+          className="relative rounded-xl overflow-hidden"
           style={{
             width: '100%',
             maxWidth: `${CANVAS_WIDTH}px`,
@@ -152,7 +152,7 @@ function AnimationContainer() {
           </div>
         </motion.div>
         <motion.span className="text-xs font-bold uppercase tracking-wider text-white" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.4 }}>
-          AI Source
+          Engloray
         </motion.span>
       </div>
 
@@ -199,17 +199,19 @@ function AnimationContainer() {
             <img src={img01} alt="Efficiency Graph" className="w-full h-full object-cover" style={{ transform: 'scale(0.7) translateY(-20px)' }} />
           </div>
 
-          <div className="space-y-3 flex flex-col justify-end">
-            <div className="h-1.5 w-full bg-gray-100 rounded-full overflow-hidden">
-              <motion.div className="h-full bg-slate-800 rounded-full" initial={{ width: 0 }} whileInView={{ width: "85%" }} viewport={{ once: true }} transition={{ delay: 0.5, duration: 1 }} />
-            </div>
-            <div className="h-1.5 w-2/3 bg-gray-100 rounded-full overflow-hidden">
-              <motion.div className="h-full bg-slate-400 rounded-full" initial={{ width: 0 }} whileInView={{ width: "60%" }} viewport={{ once: true }} transition={{ delay: 0.7, duration: 1 }} />
-            </div>
-          </div>
-
-          <div className="flex items-end justify-between h-12">
-            {[40, 70, 50, 90, 65].map((h, i) => (<motion.div key={i} className="w-1.5 bg-green-500/80 rounded-t-sm" initial={{ height: 0 }} whileInView={{ height: `${h}%` }} viewport={{ once: true }} transition={{ delay: 0.8 + (i * 0.1), duration: 0.5 }} />))}
+          <div className="col-span-2 flex flex-col items-center justify-center pt-2">
+            <motion.p
+              className="text-slate-600 font-medium leading-relaxed text-center px-2"
+              style={{ fontSize: '12px', marginTop: '-30px', minWidth: '350px' }}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.6, duration: 0.8 }}
+            >
+              At <span className="text-slate-900 font-bold">Engloray</span>, we transform complexity into
+              <span className="text-green-600 font-bold"> scalable innovation</span>. Our AI-powered ecosystem
+              bridges the gap between creative vision and technical excellence.
+            </motion.p>
           </div>
         </div>
       </motion.div>

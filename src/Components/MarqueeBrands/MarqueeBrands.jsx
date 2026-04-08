@@ -15,16 +15,14 @@ import logoTen from '../../assets/logos/vels.png';
 const MarqueeBrands = () => {
   // Array of online placeholder logos (replace with your actual client logos later)
   const clientLogos = [
-    logoOne,
-    logoTwo,
-    logoThree, 
-    logoFour, 
-    logoFive,
-    logoSix,
-    logoSeven,
-    logoEight,
-    logoNine,
-    logoTen
+    { src: logoTwo, name: "Maax Life" },
+    { src: logoFour, name: "Pavizham", scale: 1.3 }, // Increased size
+    { src: logoFive, name: "ECEC" },
+    { src: logoSix, name: "Aara" },
+    { src: logoSeven, name: "Amico", scale: 0.85 }, // Decreased size
+    { src: logoEight, name: "Brandex" },
+    { src: logoNine, name: "Nestoria" },
+    { src: logoTen, name: "Vels" }
   ];
 
   // Duplicate for seamless loop
@@ -40,9 +38,10 @@ const MarqueeBrands = () => {
             {duplicatedLogos.map((logo, index) => (
               <div key={`logo-${index}`} className="logo-item">
                 <img 
-                  src={logo} 
-                  alt={`Client ${index % clientLogos.length + 1}`}
+                  src={logo.src} 
+                  alt={logo.name}
                   className="client-logo"
+                  style={{ transform: `scale(${logo.scale || 1})` }}
                   loading="lazy"
                 />
               </div>

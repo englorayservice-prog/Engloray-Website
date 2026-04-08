@@ -83,11 +83,57 @@ const JobSeekerPage = () => {
                         <div className="showcase-glow job-glow-1" /><div className="showcase-glow job-glow-2" /><div className="showcase-particles" />
                     </div>
                     <div className="showcase-container">
+                        {/* Left side widgets */}
+                        <motion.div 
+                            className="hero-side-widget sw-left-top"
+                            initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.5 }}
+                        >
+                            <div className="sw-icon-box" style={{ background: 'rgba(245, 158, 11, 0.2)', color: '#f59e0b' }}><FontAwesomeIcon icon={faSearch} /></div>
+                            <div className="sw-content">
+                                <span className="sw-title">Resume Match</span>
+                                <p className="sw-detail">85+ Daily Hits</p>
+                            </div>
+                        </motion.div>
+
+                        <motion.div 
+                            className="hero-side-widget sw-left-bottom"
+                            initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.7 }}
+                        >
+                            <div className="sw-icon-box" style={{ background: 'rgba(251, 191, 36, 0.2)', color: '#fbbf24' }}><FontAwesomeIcon icon={faUserTie} /></div>
+                            <div className="sw-content">
+                                <span className="sw-title">Live Applicants</span>
+                                <p className="sw-detail">Data live update</p>
+                            </div>
+                        </motion.div>
+
+                        {/* Right side widgets */}
+                        <motion.div 
+                            className="hero-side-widget sw-right-top"
+                            initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.6 }}
+                        >
+                            <div className="sw-icon-box" style={{ background: 'rgba(249, 115, 22, 0.2)', color: '#f97316' }}><FontAwesomeIcon icon={faChartLine} /></div>
+                            <div className="sw-content">
+                                <span className="sw-title">Hire Growth</span>
+                                <p className="sw-detail">+18% Success Rate</p>
+                            </div>
+                        </motion.div>
+
+                        <motion.div 
+                            className="hero-side-widget sw-right-bottom"
+                            initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.8 }}
+                        >
+                            <div className="sw-icon-box" style={{ background: 'rgba(251, 146, 60, 0.2)', color: '#fb923c' }}><FontAwesomeIcon icon={faShieldAlt} /></div>
+                            <div className="sw-content">
+                                <span className="sw-title">Verified Stats</span>
+                                <p className="sw-detail">Safe & Encrypted</p>
+                            </div>
+                        </motion.div>
+
                         <div className="showcase-center-text">
                             <motion.div className="showcase-badge job-badge-color" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5, type: "spring" }}>
                                 <FontAwesomeIcon icon={faBriefcase} /> #1 Career Platform for Job Seekers
                             </motion.div>
-                            <motion.h1 className="showcase-h1" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.1 }}>
+                            <motion.h1 className="showcase-h1" initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }} animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }} transition={{ duration: 0.8, delay: 0.1 }}>
                                 YOUR DREAM JOB<br /> Awaits <span className="job-accent">You Today</span>
                             </motion.h1>
                             <motion.p className="showcase-p" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}>
@@ -136,11 +182,17 @@ const JobSeekerPage = () => {
                 {/* WHY CHOOSE OUR JOB HUB */}
                 <section className="crm-why-interactive">
                     <div className="cwi-container">
-                        <div className="cwi-header-row">
+                        <motion.div
+                            className="cwi-header-row"
+                            initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }}
+                            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                            transition={{ duration: 0.8 }}
+                            viewport={{ once: true }}
+                        >
                             <span className="crm-section-badge job-section-badge">Career Advantage</span>
                             <h2 className="cwi-title">WHY CHOOSE OUR <span className="job-accent" style={{ color: '#f59e0b' }}>JOB HUB?</span></h2>
                             <p className="cwi-desc">The smartest way to discover opportunities, connect with employers and grow your career.</p>
-                        </div>
+                        </motion.div>
 
                         <div className="cwi-content">
                             <div className="cwi-list">
@@ -255,7 +307,13 @@ const JobSeekerPage = () => {
 
                 <section className="crm-use-cases-section">
                     <div className="use-cases-container">
-                        <motion.div className="use-cases-header" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
+                        <motion.div
+                            className="use-cases-header"
+                            initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }}
+                            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                            transition={{ duration: 0.8 }}
+                            viewport={{ once: true }}
+                        >
                             <span className="crm-section-badge job-section-badge">Tailored Solutions</span>
                             <h2>Who Uses Our <span className="job-span-h2">Job Hub?</span></h2>
                             <p>From fresh graduates to seasoned professionals, our platform serves every career stage.</p>
@@ -334,7 +392,13 @@ const JobSeekerPage = () => {
 
                 <section className="crm-insights-section job-insights-section">
                     <div className="crm-insights-inner">
-                        <motion.div className="crm-insights-header" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
+                        <motion.div
+                            className="crm-insights-header"
+                            initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }}
+                            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                            transition={{ duration: 0.8 }}
+                            viewport={{ once: true }}
+                        >
                             <span className="crm-section-badge-dark job-badge-dark"><FontAwesomeIcon icon={faLightbulb} /> Career Intelligence</span>
                             <h2>Work Smarter,<br /><span className="job-gradient-span">Land Faster</span></h2>
                             <p>Our AI surfaces the right opportunities and gives you tools to stand out — from application to offer letter.</p>

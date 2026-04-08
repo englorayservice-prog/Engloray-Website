@@ -205,13 +205,13 @@ const StudentTestimonials = () => {
       <div className="student-container">
         {/* Section Header */}
         <div className="student-section-header">
-          <div className="student-badge">
-            <i className="fas fa-graduation-cap"></i> Student Success Stories
+          <div className="student-badge" style={{ fontFamily: "'Poppins', sans-serif" }}>
+            Student Success Stories
           </div>
-          <h2 className="student-section-title">
-            Transformative <span className="student-highlight">Learning</span> Experiences
+          <h2 className="student-section-title" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: '600' }}>
+            Transformative <span className="student-highlight" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: '600' }}>Learning</span> Experiences
           </h2>
-          <p className="student-section-description">
+          <p className="student-section-description" style={{ fontFamily: "'Poppins', sans-serif" }}>
             ENGLORAY is trusted by clients, valued by customers, empowering students, and supported by a strong team
           </p>
         </div>

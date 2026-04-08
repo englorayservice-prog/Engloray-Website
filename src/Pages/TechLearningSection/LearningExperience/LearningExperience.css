@@ -19,7 +19,7 @@
 }
 
 .learning-section {
-  padding: 6rem 1rem;
+  padding: 2rem 1rem 6rem;
   background: #ffffff;
   /* Pure White Background */
   font-family: 'Inter', sans-serif;
@@ -75,99 +75,34 @@
 .main-content-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  gap: 5rem;
   margin-bottom: 6rem;
 }
 
 .content-section {
   border-radius: var(--le-radius);
-  padding: 40px;
-  position: relative;
-  overflow: hidden;
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
-  min-height: 500px;
-  box-shadow: var(--le-shadow-card);
+  min-height: auto;
+  max-width: 580px;
+  margin: 0 auto;
+  background: #ffffff;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
+  border: 1px solid #eeeeee;
+  padding: 50px;
 }
 
 /* Project Section - Peach Tint */
-.project-section {
-  background: var(--le-accent-peach);
-  border: 1px solid var(--le-accent-peach-border);
-}
-
-.project-section:hover {
+.project-section:hover, .mentor-section:hover {
   transform: translateY(-8px);
-  box-shadow: var(--le-shadow-hover);
-  border-color: #FCA5A5;
-}
-
-/* Mentor Section - Blue Tint */
-.mentor-section {
-  background: var(--le-accent-blue);
-  border: 1px solid var(--le-accent-blue-border);
-}
-
-.mentor-section:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--le-shadow-hover);
-  border-color: #7DD3FC;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
 /* DECORATIVE ELEMENTS */
 /* Large dashed circle decoration */
-.section-decoration {
-  position: absolute;
-  bottom: -50px;
-  right: -50px;
-  width: 300px;
-  height: 300px;
-  border: 2px dashed rgba(0, 0, 0, 0.05);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.project-section .section-decoration {
-  border-color: rgba(248, 113, 113, 0.1);
-}
-
-.mentor-section .section-decoration {
-  border-color: rgba(59, 130, 246, 0.1);
-}
-
-/* Floating Icon - Top Right Corner Placeholder */
-.section-icon {
-  position: absolute;
-  top: 40px;
-  right: 40px;
-  width: 60px;
-  height: 60px;
-  background: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  /* Soft shadow */
-  z-index: 2;
-  transition: transform 0.3s ease;
-}
-
-.project-section .section-icon {
-  color: #EF4444;
-  /* Red icon for project */
-}
-
-.mentor-section .section-icon {
-  color: #3B82F6;
-  /* Blue icon for mentor */
-}
-
-.content-section:hover .section-icon {
-  transform: scale(1.1) rotate(10deg);
+.section-decoration, .project-section::before, .mentor-section::before {
+  display: none;
 }
 
 /* Body Content */
@@ -177,7 +112,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding-right: 60px;
+  padding-right: 0;
   /* Space for the icon */
 }
 
@@ -367,58 +302,6 @@
   letter-spacing: 0.05em;
 }
 
-/* ================= CTA SECTION ================= */
-.cta-section {
-  padding: 5rem 1rem;
-  text-align: center;
-  background: #F8FAFC;
-  /* Very light gray/blue foundation */
-  border-radius: 40px;
-  margin-bottom: 4rem;
-}
-
-.cta-content {
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.cta-title {
-  font-size: 3rem;
-  font-weight: 800;
-  color: var(--le-primary);
-  margin-bottom: 1.5rem;
-}
-
-.cta-description {
-  font-size: 1.25rem;
-  color: var(--le-text-slate);
-  margin-bottom: 3rem;
-  line-height: 1.6;
-}
-
-.cta-button-fullwidth {
-  background: var(--le-primary);
-  color: white;
-  font-size: 1.25rem;
-  font-weight: 600;
-  padding: 1.25rem 3rem;
-  border-radius: 100px;
-  /* Rounded button */
-  border: none;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 1rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 10px 20px -5px rgba(30, 41, 59, 0.3);
-}
-
-.cta-button-fullwidth:hover {
-  background: #334155;
-  transform: translateY(-3px);
-  box-shadow: 0 20px 25px -5px rgba(30, 41, 59, 0.4);
-}
-
 /* ================= RESPONSIVE ================= */
 @media (max-width: 1024px) {
   .impact-grid {
@@ -456,20 +339,10 @@
     margin-bottom: 1.5rem;
     align-self: flex-start;
   }
-
-  .cta-title {
-    font-size: 2.25rem;
-  }
 }
 
 @media (max-width: 480px) {
   .impact-grid {
     grid-template-columns: 1fr;
-  }
-
-  .cta-button-fullwidth {
-    width: 100%;
-    justify-content: center;
-    padding: 1rem;
   }
 }

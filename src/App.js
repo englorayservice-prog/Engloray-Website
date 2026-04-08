@@ -43,6 +43,17 @@ import CorporateTraining from './Pages/Sub Pages/CorporateTraining/CorporateTrai
 import CareersPage from './Pages/Sub Pages/CareersPage/CareersPage';
 import MentorshipLearning from './Pages/Sub Pages/MentorshipLearning/MentorshipLearning';
 import PrivacyPolicy from './Pages/Sub Pages/PrivacyPolicy/PrivacyPolicy';
+import WebsiteDevelopmentPage from './Pages/Sub Pages/WebsiteDevelopment/WebsiteDevelopment';
+import EcommerceDevelopmentPage from './Pages/Sub Pages/ECommerceDevelopment/ECommerceDevelopment';
+import GraphicDesignPage from './Pages/Sub Pages/GraphicDesignPage/GraphicDesignPage';
+import SoftwareTechSolution from './Pages/Sub Pages/SoftwareTechSolution/SoftwareTechSolution';
+import AiServicesPage from './Pages/Sub Pages/AIServicesPage/AIServicesPage';
+import CrmServices from './Pages/Sub Pages/CrmServices/CrmServices';
+import DataAnalyticsPage from './Pages/Sub Pages/DataAnalytics/DataAnalytics';
+import AppDevelopmentPage from './Pages/Sub Pages/AppDevelopment/AppDevelopment';
+import SalesExecutiveInternPage from './Pages/Sub Pages/SalesExecutiveInternPage/SalesExecutiveInternPage';
+import BusinessDevelopmentInternPage from './Pages/Sub Pages/BusinessDevelopmentInternPage/BusinessDevelopmentInternPage';
+import TrainingMentorInternPage from './Pages/Sub Pages/TrainingMentorInternPage/TrainingMentorInternPage';
 import AllProgramsPage from './Pages/Sub Pages/AllProgramsPage/AllProgramsPage';
 import CookiePolicy from './Pages/Sub Pages/CookiePolicy/CookiePolicy';
 import TermsAndServices from './Pages/Sub Pages/TermsAndServices/TermsAndServices';
@@ -56,6 +67,8 @@ import TLSPFFooter from './Pages/Sub Pages/NewFooter/NewFooter';
 //import MainPageSubFooter from './Pages/Sub Pages/MainPageSubFooter/MainPageSubFooter';
 import MainPageSubFooter from './Pages/Sub Pages/NewFooter/NewFooter';
 import JavaFullStackCourse from './Pages/Sub Pages/JavaFullStackCourse/JavaFullStackCourse';
+import DrawingCourse from './Pages/Sub Pages/DrawingCourse/DrawingCourse';
+import DigitalMarketingCourse from './Pages/Sub Pages/DigitalMarketingCourse/DigitalMarketingCourse';
 import BusinessBoost from './Components/BusinessBoost/BusinessBoost';
 import RaymartPage from './Pages/Sub Pages/RaymartPage/RaymartPage';
 import AiProductPage from './Pages/Sub Pages/Ai-Products/MobileApplications';
@@ -112,6 +125,19 @@ function App() {
           <Route path="/erpSolutionsPage" element={<ErpSolutions />} />
           <Route path="/digitalMarketingServicePage" element={<DigitalMarketingService />} />
           <Route path="/aiProductPage" element={<AiProductPage />} />
+          <Route path="/drawingCoursePage" element={<DrawingCourse />} />
+          <Route path="/digitalMarketingCoursePage" element={<DigitalMarketingCourse />} />
+          <Route path="/websiteDevelopmentPage" element={<WebsiteDevelopmentPage />} />
+          <Route path="/ecommerceDevelopmentPage" element={<EcommerceDevelopmentPage />} />
+          <Route path="/appDevelopmentPage" element={<AppDevelopmentPage />} />
+          <Route path="/graphicDesignPage" element={<GraphicDesignPage />} />
+          <Route path="/softwareSolutionPage" element={<SoftwareTechSolution />} />
+          <Route path="/dataAnalyticsPage" element={<DataAnalyticsPage />} />
+          <Route path="/aiServicesPage" element={<AiServicesPage />} />
+          <Route path="/crmServicesPage" element={<CrmServices />} />
+          <Route path="/salesExecutiveInternPage" element={<SalesExecutiveInternPage />} />
+          <Route path="/businessDevelopmentInternPage" element={<BusinessDevelopmentInternPage />} />
+          <Route path="/trainingMentorInternPage" element={<TrainingMentorInternPage />} />
 
 
           <Route path="/graphicsDesignCoursePage" element={<GraphicDesignCourse />} />

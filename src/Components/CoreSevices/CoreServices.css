@@ -326,11 +326,7 @@
   background: #C0FF2D;
 }
 
-.carousel-slide:nth-child(odd) .action-circle svg path {
-  stroke: #cac9c9;
-}
-
-.carousel-slide:nth-child(even) .action-circle svg {
+.action-circle svg {
   width: 45px;
   height: 45px;
   transition: transform 0.3s ease;
@@ -708,5 +704,101 @@
   .color-dot {
     width: 6px;
     height: 6px;
+  }
+}
+
+/* 1920px (Desktop) Scaling */
+@media (min-width: 1600px) {
+  .carousel-main-container {
+    max-width: 1820px;
+    margin: 0 auto;
+  }
+
+  .carousel-header {
+    margin-bottom: 80px;
+  }
+
+  .carousel-title {
+    font-size: 3.5rem;
+    padding-right: 40px;
+  }
+
+  .carousel-subtitle {
+    font-size: 1.2rem;
+    max-width: 600px;
+  }
+
+  .carousel-full-container {
+    height: 520px;
+    /* Minimized gap below cards */
+  }
+
+  /* Zoomed out and balanced height wrapper */
+  .carousel-slide .slide-wrapper {
+    width: 450px;
+    height: 850px;
+    transform: scale(0.75) translateY(0px) !important;
+  }
+
+  .carousel-slide.center-card .slide-wrapper {
+    transform: scale(0.75) translateY(0px) !important;
+  }
+
+  .carousel-slide.side-card .slide-wrapper {
+    transform: scale(0.75) translateY(0px) !important;
+  }
+
+  .slide-content {
+    width: 450px;
+    height: 630px;
+    clip-path: path("M 30,0 L 420,0 A 30,30 0,0,1 450,30 L 450,420 A 60,60 0,0,1 390,480 L 340,480 A 60,60 0,0,0 280,540 L 280,570 A 60,60 0,0,1 220,630 L 30,630 A 30,30 0,0,1 0,600 L 0,30 A 30,30 0,0,1 30,0 Z");
+  }
+
+  /* Scale internal content */
+  .card-ui-title {
+    font-size: 3.0rem;
+  }
+
+  .card-ui-header {
+    padding: 50px 50px 0;
+  }
+
+
+  /* Reposition arrows for scaled card center */
+  .carousel-controls-top {
+    top: 280px;
+    padding: 0 40px;
+  }
+
+  .carousel-btn {
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+  }
+
+  /* Scale internal action button */
+  .card-ui-action {
+    top: 655px;
+    left: 290px;
+  }
+
+  .action-circle {
+    width: 130px;
+    height: 130px;
+  }
+
+  .carousel-slide:nth-child(even) .action-circle svg {
+    width: 55px;
+    height: 55px;
+  }
+
+  .color-dots-indicators {
+    margin-top: 5px;
+    gap: 20px;
+  }
+
+  .color-dot {
+    width: 20px;
+    height: 20px;
   }
 }

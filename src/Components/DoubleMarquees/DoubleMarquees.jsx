@@ -133,22 +133,9 @@ const DoubleMarquees = () => {
         });
       }
 
-      // 6️⃣ MARQUEE LOOP + DYNAMIC SPEED
-      const createMarquee = (target, direction = -1) => {
-        const totalWidth = target.scrollWidth / 10;
-        gsap.set(target, { x: direction === 1 ? -totalWidth : 0 });
-
-        const tl = gsap.to(target, {
-          x: direction === 1 ? 0 : -totalWidth,
-          duration: 25000, // Extremely slow base speed
-          ease: "none",
-          repeat: -1
-        });
-        return tl;
-      };
-
-      const techScroll = createMarquee(techTrackRef.current, -1);
-      const learningScroll = createMarquee(learningTrackRef.current, 1);
+      // 6️⃣ MARQUEE LOOP
+      // Replaced the GSAP logic completely!
+      // The tracks are now animated entirely via pure CSS exactly like 'marquee-text'.
 
       // Scroll speed modifier removed to keep a constant, slow pace
 
