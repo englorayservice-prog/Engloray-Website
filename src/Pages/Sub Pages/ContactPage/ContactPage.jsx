@@ -16,6 +16,7 @@ import {
     faPaperPlane,
     faCircleCheck,
 } from '@fortawesome/free-solid-svg-icons';
+import RayMartNavbar from '../../../Components/RayMartNavbar/RayMartNavbar';
 import LearningFooter from '../../TechLearningSection/LearningFooter/LearningFooter';
 //import heroBg from '../../../assets/contact_hero_bg.png';
 import './ContactPage.css';
@@ -57,6 +58,7 @@ const ContactPage = () => {
 
     return (
         <>
+            <RayMartNavbar />
             <Helmet>
                 <title>Contact Us | Engloray Learning</title>
                 <meta

@@ -1,273 +1,3 @@
-// import React, { useState } from 'react';
-// import './InternshipProgram.css';
-
-// const InternshipProgram = () => {
-//   const [formData, setFormData] = useState({
-//     name: '',
-//     email: '',
-//     position: '',
-//     preference: '',
-//     resume: null
-//   });
-
-//   const [isSubmitted, setIsSubmitted] = useState(false);
-//   const [showForm, setShowForm] = useState(false);
-//   const [selectedRole, setSelectedRole] = useState('');
-
-//   const handleInputChange = (e) => {
-//     const { name, value } = e.target;
-//     setFormData(prev => ({
-//       ...prev,
-//       [name]: value
-//     }));
-//   };
-
-//   const handleFileChange = (e) => {
-//     setFormData(prev => ({
-//       ...prev,
-//       resume: e.target.files[0]
-//     }));
-//   };
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     // Handle form submission logic here
-//     console.log('Form submitted:', formData);
-//     setIsSubmitted(true);
-
-//     // Reset form after 3 seconds
-//     setTimeout(() => {
-//       setIsSubmitted(false);
-//       setFormData({
-//         name: '',
-//         email: '',
-//         position: '',
-//         preference: '',
-//         resume: null
-//       });
-//       setShowForm(false);
-//       setSelectedRole('');
-//     }, 3000);
-//   };
-
-//   const handleRoleClick = (role) => {
-//     setSelectedRole(role);
-//     setFormData(prev => ({
-//       ...prev,
-//       position: role
-//     }));
-//     setShowForm(true);
-//   };
-
-//   const handleArrowClick = () => {
-//     setSelectedRole('');
-//     setShowForm(true);
-//   };
-
-//   const roles = [
-//     {
-//       title: "Graphic Designer",
-//       icon: "🎨",
-//       description: "Create stunning visual designs and branding materials",
-//       route: "/GraphicDesignerInternPage"
-//     },
-//     {
-//       title: "Website Developer",
-//       icon: "💻",
-//       description: "Build responsive and interactive web applications",
-//       route: "/GraphicDesignerInternPage"
-
-//     },
-//     {
-//       title: "UI/UX Designer",
-//       icon: "✨",
-//       description: "Design intuitive user interfaces and experiences",
-//       route: "/GraphicDesignerInternPage"
-//     },
-//     {
-//       title: "Software Developer",
-//       icon: "🚀",
-//       description: "Develop robust software solutions and applications",
-//       route: "/GraphicDesignerInternPage"
-//     }
-//   ];
-
-//   return (
-//     <section className="internship-program  " id="internship">
-//       {/* Floating Arrow */}
-//       <div className="floating-arrow" onClick={handleArrowClick}>
-//         <div className="arrow-symbol">➜</div>
-//         <div className="arrow-glow"></div>
-//       </div>
-
-//       <div className="internship-container">
-//         {/* Header - Centered */}
-//         <div className="internship-header">
-//             <span className="benefits-main-badge">Carrer Opportunity</span>
-//           <h2 className="internship-title">Free Internship Program</h2>
-//           <p className="internship-subtitle">
-//             Kickstart your career with hands-on experience and expert mentorship
-//           </p>
-//         </div>
-
-//         {/* Available Roles - 4 Cards in a Row */}
-//         <div className="roles-section">
-//           <h3 className="section-title">Available Roles</h3>
-//           <div className="roles-grid">
-//             {roles.map((role, index) => (
-//               <div 
-//                 key={role.title}
-//                 className="role-card"
-//                 style={{ animationDelay: `${index * 0.2}s` }}
-//                 onClick={() => handleRoleClick(role.title)}
-//               >
-//                 <div className="role-icon">{role.icon}</div>
-//                 <div className="role-glow"></div>
-//                 <h4 className="role-title">{role.title}</h4>
-//                 <p className="role-description">{role.description}</p>
-//                 <div className="click-indicator">Click to Apply</div>
-//                 <div className="role-hover-effect"></div>
-//               </div>
-//             ))}
-//           </div>
-//         </div>
-
-//         {/* Form Modal */}
-//         {showForm && (
-//           <div className="form-modal-overlay">
-//             <div className="form-modal">
-//               <div className="modal-header">
-//                 <h3 className="modal-title">
-//                   {selectedRole ? `Apply for ${selectedRole}` : 'Join Our Internship Program'}
-//                 </h3>
-//                 <button 
-//                   className="close-modal"
-//                   onClick={() => {
-//                     setShowForm(false);
-//                     setSelectedRole('');
-//                   }}
-//                 >
-//                   ×
-//                 </button>
-//               </div>
-
-//               <div className="modal-content">
-//                 {isSubmitted ? (
-//                   <div className="success-message">
-//                     <div className="success-icon">✓</div>
-//                     <h4>Application Submitted!</h4>
-//                     <p>We'll review your application and get back to you soon.</p>
-//                   </div>
-//                 ) : (
-//                   <form className="enrollment-form" onSubmit={handleSubmit}>
-//                     <div className="form-group">
-//                       <label htmlFor="name">Full Name *</label>
-//                       <input
-//                         type="text"
-//                         id="name"
-//                         name="name"
-//                         value={formData.name}
-//                         onChange={handleInputChange}
-//                         required
-//                         placeholder="Enter your full name"
-//                       />
-//                     </div>
-
-//                     <div className="form-group">
-//                       <label htmlFor="email">Email Address *</label>
-//                       <input
-//                         type="email"
-//                         id="email"
-//                         name="email"
-//                         value={formData.email}
-//                         onChange={handleInputChange}
-//                         required
-//                         placeholder="Enter your email"
-//                       />
-//                     </div>
-
-//                     <div className="form-group">
-//                       <label htmlFor="position">Preferred Role *</label>
-//                       <select
-//                         id="position"
-//                         name="position"
-//                         placeholder = "Your choice"
-//                         value={selectedRole || formData.position}
-//                         onChange={handleInputChange}
-//                         required
-//                       >
-//                         <option value="">Select your preferred role</option>
-//                         <option value="Graphic Designer">Graphic Designer</option>
-//                         <option value="Website Developer">Website Developer</option>
-//                         <option value="UI/UX Designer">UI/UX Designer</option>
-//                         <option value="Software Developer">Software Developer</option>
-//                       </select>
-//                     </div>
-
-//                     <div className="form-group">
-//                       <label>Internship Preference *</label>
-//                       <div className="radio-group">
-//                         <label className="radio-option">
-//                           <input
-//                             type="radio"
-//                             name="preference"
-//                             value="online"
-//                             checked={formData.preference === 'online'}
-//                             onChange={handleInputChange}
-//                             required
-//                           />
-//                           <span className="radio-custom"></span>
-//                           Online
-//                         </label>
-//                         <label className="radio-option">
-//                           <input
-//                             type="radio"
-//                             name="preference"
-//                             value="offline"
-//                             checked={formData.preference === 'offline'}
-//                             onChange={handleInputChange}
-//                           />
-//                           <span className="radio-custom"></span>
-//                           Offline
-//                         </label>
-//                       </div>
-//                     </div>
-
-//                     <div className="form-group">
-//                       <label htmlFor="resume">Upload Resume / Portfolio *</label>
-//                       <div className="file-upload">
-//                         <input
-//                           type="file"
-//                           id="resume"
-//                           name="resume"
-//                           onChange={handleFileChange}
-//                           accept=".pdf,.doc,.docx,.jpg,.png,.zip"
-//                           required
-//                         />
-//                         <label htmlFor="resume" className="file-label">
-//                           <span className="file-icon">📎</span>
-//                           {formData.resume ? formData.resume.name : 'Choose file (PDF, DOC, Images)'}
-//                         </label>
-//                       </div>
-//                     </div>
-
-//                     <button type="submit" className="submit-btn">
-//                       <span>Submit Application</span>
-//                       <div className="btn-glow"></div>
-//                     </button>
-//                   </form>
-//                 )}
-//               </div>
-//             </div>
-//           </div>
-//         )}
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default InternshipProgram;
-
 import React, { useState, useRef, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -287,18 +17,13 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './InternshipProgram.css';
-
-// Register GSAP plugins
-gsap.registerPlugin(ScrollTrigger);
 
 // Add icons to the library
 library.add(faPalette, faDesktop, faUserCheck, faCode, faArrowRight, faCheckCircle, faPaperclip, faChevronLeft, faChevronRight, faChartLine, faBriefcase, faChalkboardTeacher);
 
 const InternshipProgram = () => {
     const navigate = useNavigate();
-    const sectionRef = useRef(null);
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -311,9 +36,92 @@ const InternshipProgram = () => {
     const [showForm, setShowForm] = useState(false);
     const [activeRoleIndex, setActiveRoleIndex] = useState(0);
     const cardsRef = useRef([]);
+    const headerRef = useRef(null);
 
+    // Skills for each role (ordered by role index 0-6)
+    const roleSkills = [
+        ['Photoshop', 'Illustrator', 'Figma', 'Branding', 'Typography', 'Web Design'],
+        ['HTML', 'CSS', 'JavaScript', 'React', 'Tailwind CSS', 'Node.js'],
+        ['Figma', 'Adobe XD', 'Wireframing', 'User Research', 'Usability Testing', 'Design Systems'],
+        ['Java', 'Spring Boot', 'Python', 'REST APIs', 'MySQL', 'Docker'],
+        ['Communication', 'Lead Generation', 'CRM', 'Negotiation', 'Market Research', 'Pitching'],
+        ['Strategy', 'Partnerships', 'Market Analysis', 'Sales Planning', 'Client Relations', 'Growth Hacking'],
+        ['Public Speaking', 'Curriculum Design', 'Coaching', 'Evaluation', 'Leadership', 'Feedback']
+    ];
+
+    // Icon colors for each role
+    const roleColors = {
+        graphicDesigner: '#FFD166',
+        websiteDeveloper: '#4ECDC4',
+        uiUxDesigner: '#FFD166',
+        softwareDeveloper: '#06D6A0',
+        salesExecutive: '#FF4D4D',
+        businessDevelopment: '#118AB2',
+        trainingMentor: '#06D6A0',
+        default: '#118AB2'
+    };
+
+    const roles = [
+        {
+            id: 1,
+            title: "Graphic Designer",
+            icon: faPalette,
+            iconColor: roleColors.graphicDesigner,
+            description: "Create stunning visual designs and branding materials that communicate brand identity effectively, engage audiences, enhance marketing campaigns, and deliver creative solutions.",
+            route: "/GraphicDesignerInternPage"
+        },
+        {
+            id: 2,
+            title: "Website Developer",
+            icon: faDesktop,
+            iconColor: roleColors.websiteDeveloper,
+            description: "Build responsive and interactive web applications using modern technologies, ensuring fast performance, user-friendly interfaces, secure functionality, and seamless experiences across devices.",
+            route: "/websiteDeveloperInternPage"
+        },
+        {
+            id: 3,
+            title: "UI/UX Designer",
+            icon: faUserCheck,
+            iconColor: roleColors.uiUxDesigner,
+            description: "Design intuitive user interfaces and user experiences that enhance usability, improve accessibility, engage users effectively, and create seamless digital interactions across platforms.",
+            route: "/uiuxDesignerInternPage"
+        },
+        {
+            id: 4,
+            title: "Software Developer",
+            icon: faCode,
+            iconColor: roleColors.softwareDeveloper,
+            description: "Develop robust software solutions and scalable applications using modern technologies, ensuring high performance, clean architecture, secure functionality, maintainability, and seamless integration.",
+            route: "/SoftwareDeveloperInternPage"
+        },
+        {
+            id: 5,
+            title: "Sales Executive",
+            icon: faChartLine,
+            iconColor: roleColors.salesExecutive,
+            description: "Drive revenue growth by developing sales strategies, identifying business opportunities, and managing client relationships effectively.",
+            route: "/SalesExecutiveInternPage"
+        },
+        {
+            id: 6,
+            title: "Business Development Management",
+            icon: faBriefcase,
+            iconColor: roleColors.businessDevelopment,
+            description: "Focus on strategic growth, partnerships, and expanding market presence to achieve long-term organizational objectives.",
+            route: "/BusinessDevelopmentInternPage"
+        },
+        {
+            id: 7,
+            title: "Training Mentor",
+            icon: faChalkboardTeacher,
+            iconColor: roleColors.trainingMentor,
+            description: "Lead comprehensive training sessions, mentor team members, and develop robust curriculums to empower professional development.",
+            route: "/TrainingMentorInternPage"
+        }
+    ];
+
+    // GSAP animation for smooth width transitioning
     useEffect(() => {
-        // GSAP animation for smooth width transitioning
         cardsRef.current.forEach((card, index) => {
             if (!card) return;
             if (index === activeRoleIndex) {
@@ -324,79 +132,75 @@ const InternshipProgram = () => {
         });
     }, [activeRoleIndex]);
 
+    // Scroll animation for text content - works every time you scroll
     useEffect(() => {
-        let ctx = gsap.context(() => {
-            // ── Header Animation ──
-            const headerTexts = '.tgi-benefits-main-badge, .tgi-internship-title, .tgi-internship-step, .tgi-internship-subtitle';
-            gsap.set(headerTexts, { opacity: 0, y: 40 });
-            gsap.to(headerTexts, {
-                opacity: 1,
-                y: 0,
-                duration: 1,
-                stagger: 0.1,
-                ease: "power2.out",
-                scrollTrigger: {
-                    trigger: ".tgi-internship-header",
-                    start: "top 90%",
-                    toggleActions: "play reverse play reverse"
+        const animatedElements = [
+            '.tgi-benefits-main-badge',
+            '.tgi-internship-title',
+            '.tgi-internship-step',
+            '.tgi-internship-subtitle',
+            '.tgi-view-programs-btn'
+        ];
+
+        const elements = document.querySelectorAll(animatedElements.join(','));
+
+        // Initially hide all elements
+        elements.forEach(el => {
+            el.classList.remove('tgi-animated');
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Add animated class when element comes into view
+                    entry.target.classList.add('tgi-animated');
+                } else {
+                    // Remove animated class when element leaves viewport
+                    entry.target.classList.remove('tgi-animated');
                 }
             });
+        }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
 
-            // ── Roles Header Animation ──
-            const rolesHeader = '.tgi-section-title, .tgi-roles-nav';
-            gsap.set(rolesHeader, { opacity: 0, y: 30 });
-            gsap.to(rolesHeader, {
-                opacity: 1,
-                y: 0,
-                duration: 1,
-                stagger: 0.1,
-                ease: "power2.out",
-                scrollTrigger: {
-                    trigger: ".tgi-roles-header",
-                    start: "top 90%",
-                    toggleActions: "play reverse play reverse"
-                }
-            });
+        elements.forEach(el => observer.observe(el));
 
-            // ── Role Cards Reveal ──
-            const roleCards = gsap.utils.toArray('.tgi-role-card');
-            roleCards.forEach((card) => {
-                const innerElements = card.querySelectorAll('.tgi-role-title, .tgi-role-description, .tgi-click-indicator, .tgi-skills-widget, .tgi-view-details-btn');
-                
-                gsap.set(card, { opacity: 0, y: 50 });
-                gsap.set(innerElements, { opacity: 0, y: 20 });
-
-                gsap.to(card, {
-                    opacity: 1,
-                    y: 0,
-                    duration: 1.2,
-                    ease: "power3.out",
-                    scrollTrigger: {
-                        trigger: card,
-                        start: "top 92%",
-                        toggleActions: "play reverse play reverse",
-                    }
-                });
-
-                gsap.to(innerElements, {
-                    opacity: 1,
-                    y: 0,
-                    duration: 0.8,
-                    stagger: 0.1,
-                    ease: "power2.out",
-                    delay: 0.3,
-                    scrollTrigger: {
-                        trigger: card,
-                        start: "top 92%",
-                        toggleActions: "play reverse play reverse",
-                    }
-                });
-            });
-
-        }, sectionRef);
-
-        return () => ctx.revert();
+        return () => {
+            elements.forEach(el => observer.unobserve(el));
+            observer.disconnect();
+        };
     }, []);
+
+    // Card content animation when active role changes
+    useEffect(() => {
+        const activeCard = document.querySelector('.tgi-role-card.active');
+        if (activeCard) {
+            const title = activeCard.querySelector('.tgi-role-title');
+            const desc = activeCard.querySelector('.tgi-role-description');
+            const skills = activeCard.querySelector('.tgi-skills-widget');
+            const btn = activeCard.querySelector('.tgi-view-details-btn');
+
+            // Reset animations by removing and re-adding classes
+            if (title) {
+                title.style.animation = 'none';
+                void title.offsetHeight;
+                title.style.animation = '';
+            }
+            if (desc) {
+                desc.style.animation = 'none';
+                void desc.offsetHeight;
+                desc.style.animation = '';
+            }
+            if (skills) {
+                skills.style.animation = 'none';
+                void skills.offsetHeight;
+                skills.style.animation = '';
+            }
+            if (btn) {
+                btn.style.animation = 'none';
+                void btn.offsetHeight;
+                btn.style.animation = '';
+            }
+        }
+    }, [activeRoleIndex]);
 
     const handleNextRole = () => {
         setActiveRoleIndex((prev) => (prev + 1) % roles.length);
@@ -405,7 +209,6 @@ const InternshipProgram = () => {
     const handlePrevRole = () => {
         setActiveRoleIndex((prev) => (prev - 1 + roles.length) % roles.length);
     };
-    // const [selectedRole, setSelectedRole] = useState('');
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -481,135 +284,33 @@ const InternshipProgram = () => {
         navigate('/allProgramsPage');
     };
 
-    // Skills for each role (ordered by role index 0-6)
-    const roleSkills = [
-        ['Photoshop', 'Illustrator', 'Figma', 'Branding', 'Typography', 'Web Design'],
-        ['HTML', 'CSS', 'JavaScript', 'React', 'Tailwind CSS', 'Node.js'],
-        ['Figma', 'Adobe XD', 'Wireframing', 'User Research', 'Usability Testing', 'Design Systems'],
-        ['Java', 'Spring Boot', 'Python', 'REST APIs', 'MySQL', 'Docker'],
-        ['Communication', 'Lead Generation', 'CRM', 'Negotiation', 'Market Research', 'Pitching'],
-        ['Strategy', 'Partnerships', 'Market Analysis', 'Sales Planning', 'Client Relations', 'Growth Hacking'],
-        ['Public Speaking', 'Curriculum Design', 'Coaching', 'Evaluation', 'Leadership', 'Feedback']
-    ];
-
-    // Icon colors for each role
-    const roleColors = {
-        graphicDesigner: '#FFD166',    // Red
-        websiteDeveloper: '#4ECDC4',   // Teal
-        uiUxDesigner: '#FFD166',       // Yellow
-        softwareDeveloper: '#06D6A0',  // Green
-        salesExecutive: '#FF4D4D',
-        businessDevelopment: '#118AB2',
-        trainingMentor: '#06D6A0',
-        default: '#118AB2'             // Blue
-    };
-
-    const roles = [
-        {
-            id: 1,
-            title: "Graphic Designer",
-            icon: faPalette,
-            iconColor: roleColors.graphicDesigner,
-            description: "Create stunning visual designs and branding materials that communicate brand identity effectively, engage audiences, enhance marketing campaigns, and deliver creative solutions.",
-            route: "/GraphicDesignerInternPage"
-        },
-        {
-            id: 2,
-            title: "Website Developer",
-            icon: faDesktop,
-            iconColor: roleColors.websiteDeveloper,
-            description: "Build responsive and interactive web applications using modern technologies, ensuring fast performance, user-friendly interfaces, secure functionality, and seamless experiences across devices.",
-            route: "/websiteDeveloperInternPage"
-        },
-        {
-            id: 3,
-            title: "UI/UX Designer",
-            icon: faUserCheck,
-            iconColor: roleColors.uiUxDesigner,
-            description: "Design intuitive user interfaces and user experiences that enhance usability, improve accessibility, engage users effectively, and create seamless digital interactions across platforms.",
-            route: "/uiuxDesignerInternPage"
-        },
-        {
-            id: 4,
-            title: "Software Developer",
-            icon: faCode,
-            iconColor: roleColors.softwareDeveloper,
-            description: "Develop robust software solutions and scalable applications using modern technologies, ensuring high performance, clean architecture, secure functionality, maintainability, and seamless integration.",
-            route: "/SoftwareDeveloperInternPage"
-        },
-        {
-            id: 5,
-            title: "Sales Executive",
-            icon: faChartLine,
-            iconColor: roleColors.salesExecutive,
-            description: "Drive revenue growth by developing sales strategies, identifying business opportunities, and managing client relationships effectively.",
-            route: "/SalesExecutiveInternPage"
-        },
-        {
-            id: 6,
-            title: "Business Development Management",
-            icon: faBriefcase,
-            iconColor: roleColors.businessDevelopment,
-            description: "Focus on strategic growth, partnerships, and expanding market presence to achieve long-term organizational objectives.",
-            route: "/BusinessDevelopmentInternPage"
-        },
-        {
-            id: 7,
-            title: "Training Mentor",
-            icon: faChalkboardTeacher,
-            iconColor: roleColors.trainingMentor,
-            description: "Lead comprehensive training sessions, mentor team members, and develop robust curriculums to empower professional development.",
-            route: "/TrainingMentorInternPage"
-        }
-    ];
-
     return (
         <section className="tgi-internship-program" id="internship">
-            {/* Modern Expandable Floating Action Button */}
-            <button className="tgi-modern-fab" onClick={handleArrowClick} aria-label="Apply for Internship">
-                <span className="tgi-fab-icon">
+            {/* Floating Arrow with FontAwesome Icon */}
+            <div className="tgi-floating-arrow" onClick={handleArrowClick}>
+                <div className="tgi-arrow-symbol">
                     <FontAwesomeIcon
                         icon={faArrowRight}
                         style={{
-                            color: '#ff1a33',
-                            fontSize: '1.6rem'
+                            color: '#fe0000fe',
+                            fontSize: '1.5rem'
                         }}
                     />
-                </span>
-                <span className="tgi-fab-text">Apply Now</span>
-                <div className="tgi-fab-glow"></div>
-            </button>
+                </div>
+                <div className="tgi-arrow-glow"></div>
+            </div>
 
             <div className="tgi-internship-container" id='internship'>
-                {/* Header - Centered */}
-                <div className="tgi-internship-header">
+                {/* Header - Centered with scroll animations */}
+                <div className="tgi-internship-header" ref={headerRef}>
                     <span className="tgi-benefits-main-badge">Career Opportunity</span>
                     <h2 className="tgi-internship-title">Free Internship Program</h2>
                     <div className="tgi-internship-step">
                         Create your first step with Engloray
-
                     </div>
                     <p className="tgi-internship-subtitle">
                         Join our intensive program designed to transform beginners into industry-ready professionals
                     </p>
-
-                    {/* View Programs Button with FontAwesome Icon */}
-                    {/* <button
-            className="tgi-view-programs-btn"
-            onClick={handleViewPrograms}
-          >
-            View All Programs
-            <span className="tgi-btn-arrow">
-              <FontAwesomeIcon
-                icon={faArrowRight}
-                style={{
-                  color: '#ffffff',
-                  fontSize: '1rem',
-                  marginLeft: '1px'
-                }}
-              />
-            </span>
-          </button> */}
                 </div>
 
                 {/* Available Roles - Accordion Cards */}
@@ -632,6 +333,7 @@ const InternshipProgram = () => {
                                 ref={el => cardsRef.current[index] = el}
                                 data-index={index}
                                 className={`tgi-role-card ${index === activeRoleIndex ? 'active' : 'collapsed'}`}
+                                style={{ animationDelay: `${index * 0.2}s` }}
                                 onClick={() => {
                                     if (activeRoleIndex !== index) {
                                         setActiveRoleIndex(index);

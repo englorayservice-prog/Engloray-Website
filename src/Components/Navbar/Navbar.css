@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: space-between;
     margin-top: 25px;
-    padding: 15px 4%;
+    padding: 12px 4%;
     transition: all 0.3s ease;
     position: sticky;
     top: 0;
@@ -56,51 +56,71 @@
     display: block;
 }
 
-/* Desktop Menu */
+/* Desktop Menu - Removed container background, border, shadow */
 .desktop-menu {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* Center items */
     list-style: none;
-    gap: 5px;
-    /* Fluid gap */
+    gap: 20px;
+    /* Increased gap between list items */
     margin: 0;
-    padding: 0 10px;
-    background: white;
-    border-radius: 80px;
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
     flex: 1 1 auto;
     max-width: 750px;
-    height: 65px;
+    height: auto;
 }
 
 .desktop-menu li {
     cursor: pointer;
     transition: all 0.3s ease;
-    border-radius: 30px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     white-space: nowrap;
+    position: relative;
 }
 
 .desktop-menu li p {
-    color: black;
+    color: #bb0707;
     margin: 0;
     padding: 8px 16px;
     font-family: 'Inter', sans-serif;
     font-size: 15px;
     font-weight: 500;
-    border-radius: 30px;
     transition: all 0.3s ease;
+    background: transparent;
+    border-radius: 0;
 }
 
-.desktop-menu li:hover p {
+/* Red line under hover effect */
+.desktop-menu li::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
     background: #bb0707;
-    color: white;
-    transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(187, 7, 7, 0.3);
+    transition: width 0.3s ease;
+}
+
+.desktop-menu li:hover::after {
+    width: 70%;
+}
+
+/* Hover effect - Text color changes to glow red and font slightly bigger */
+.desktop-menu li:hover p {
+    color: #bb0707;
+    background: transparent;
+    font-size: 16px;
+    /* Slightly bigger font on hover */
+    /* text-shadow: 0 0 8px rgba(187, 7, 7, 0.5), 0 0 12px rgba(187, 7, 7, 0.3); */
 }
 
 .anchorLink {
@@ -142,7 +162,7 @@
     font-size: 14px;
     font-family: 'Inter', sans-serif;
     box-sizing: border-box;
-    color: black;
+    color: #bb0707;
     transition: all 0.3s ease;
     outline: none;
 }
@@ -161,7 +181,7 @@
     transform: translateY(-50%);
     background: none;
     border: none;
-    color: rgba(0, 0, 0, 0.5);
+    color: #bb0707;
     cursor: pointer;
     width: 24px;
     height: 24px;
@@ -302,7 +322,7 @@
     width: 100%;
     cursor: pointer;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    /* similar to original */
+    position: relative;
 }
 
 /* Last mobile menu item border fix */
@@ -317,16 +337,36 @@
     margin: 0 auto;
     font-family: 'Inter', sans-serif;
     padding: 12px 25px;
-    border-radius: 30px;
     transition: all 0.3s ease;
     display: inline-block;
+    background: transparent;
+    border-radius: 0;
 }
 
-.mobile-menu-link:hover p {
+/* Red line under hover effect for mobile */
+.mobile-menu-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
     background: #bb0707;
-    color: white;
-    transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(187, 7, 7, 0.3);
+    transition: width 0.3s ease;
+}
+
+.mobile-menu-link:hover::after {
+    width: 50%;
+}
+
+/* Hover effect for mobile - Text color changes to glow red and font slightly bigger */
+.mobile-menu-link:hover p {
+    color: #bb0707;
+    background: transparent;
+    font-size: 17px;
+    /* Slightly bigger font on hover for mobile */
+    text-shadow: 0 0 8px rgba(187, 7, 7, 0.5), 0 0 12px rgba(187, 7, 7, 0.3);
 }
 
 .mobile-search-container {
@@ -352,14 +392,17 @@
 
     .desktop-menu {
         max-width: 600px;
-        gap: 2px;
-        height: 60px;
-        padding: 0 8px;
+        gap: 12px;
     }
 
     .desktop-menu li p {
         padding: 6px 12px;
         font-size: 14px;
+    }
+
+    /* Hover font size adjustment for laptops */
+    .desktop-menu li:hover p {
+        font-size: 15px;
     }
 
     .nav-actions .search-bar {
@@ -384,12 +427,17 @@
 
     .desktop-menu {
         max-width: 500px;
-        height: 55px;
+        gap: 10px;
     }
 
     .desktop-menu li p {
         padding: 5px 8px;
         font-size: 13px;
+    }
+
+    /* Hover font size adjustment for tablets */
+    .desktop-menu li:hover p {
+        font-size: 14px;
     }
 
     .nav-actions .search-bar {

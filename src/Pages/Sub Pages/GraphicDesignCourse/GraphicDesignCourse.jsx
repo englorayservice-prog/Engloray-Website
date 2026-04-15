@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { submitEnrollment } from "../../Sub Pages/HandleSubmit/HandleSubmit";
+import NavigationBar from '../../TechLearningSection/NavigationBar/NavigationBar';
 
 import {
   faPaintBrush,
@@ -585,6 +586,7 @@ const GraphicDesignCourse = () => {
 
   return (
     <div className="gdc-page">
+      <NavigationBar />
       {/* Hero Section */}
       <header className="gdc-hero-v3">
         <div className="gdc-v3-sparkle-wrapper">
@@ -922,7 +924,7 @@ const GraphicDesignCourse = () => {
                     </div>
                   ))}
                 </div>
-                
+
                 <div className="gdc-benefits-row gdc-row-2">
                   {benefits.slice(8, 10).map((benefit, index) => (
                     <div key={index} className="gdc-new-benefit-card">

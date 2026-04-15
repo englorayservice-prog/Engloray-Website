@@ -1,8 +1,17 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import logo from '../../../assets/3.png';
 import SearchBar from '../../../Components/SearchBar/SearchBar';
 import { Helmet } from 'react-helmet';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faHome,
+  faBook,
+  faGraduationCap,
+  faCommentDots,
+  faPhone,
+  faChevronDown,
+  faChevronUp
+} from '@fortawesome/free-solid-svg-icons';
 import './NavigationBar.css';
 
 const NavigationBar = () => {
@@ -25,13 +34,13 @@ const NavigationBar = () => {
   const isHomePage = window.location.pathname === '/';
   const isLearningHomePage = window.location.pathname === '/tech-learning';
 
-  // Updated navItems with proper navigation logic
+  // Updated navItems with proper navigation logic and icons
   const navItems = [
-    { name: 'Home', href: '#home', id: 'home' },
-    { name: 'Courses', href: '#courses', id: 'courses' },
-    { name: 'Programs', href: '#programs', id: 'programs' },
-    { name: 'Feedback', href: '#feedback', id: 'feedback' },
-    { name: 'Contact', href: '#contact', id: 'contact' }
+    { name: 'Home', href: '#home', id: 'home', icon: faHome },
+    { name: 'Courses', href: '#courses', id: 'courses', icon: faBook },
+    { name: 'Programs', href: '#programs', id: 'programs', icon: faGraduationCap },
+    { name: 'Feedback', href: '#feedback', id: 'feedback', icon: faCommentDots },
+    { name: 'Contact', href: '#contact', id: 'contact', icon: faPhone }
   ];
 
   // Updated explore sections
@@ -42,7 +51,7 @@ const NavigationBar = () => {
     { name: 'Project Learning', href: '/projectBasedLearningPage' },
     { name: 'Careers', href: '/CareersPage' },
     { name: 'Workshops', href: '/workshopsPage' },
-    { name: 'Corporatetraining', href: '/corporateTraining' }
+    { name: 'Corporatetraining', href: '/corporatetrainingpage' }
   ];
 
   // Function to scroll to section with retry logic
@@ -50,7 +59,7 @@ const NavigationBar = () => {
     const element = document.getElementById(sectionId);
 
     if (element) {
-      const navbarHeight = 120; // Adjust based on your navbar height
+      const navbarHeight = 120;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
 
@@ -59,14 +68,12 @@ const NavigationBar = () => {
         behavior: 'smooth'
       });
 
-      // Update active link
       const item = navItems.find(item => item.id === sectionId);
       if (item) {
         setActiveLink(item.name);
       }
       return true;
     } else if (retryCount < 3) {
-      // Retry after a delay if element not found
       setTimeout(() => {
         scrollToSection(sectionId, retryCount + 1);
       }, 300);
@@ -77,17 +84,12 @@ const NavigationBar = () => {
 
   // Function to handle navigation
   const handleNavigation = (itemName, itemId) => {
-    // Close menus
     setIsMobileMenuOpen(false);
     setIsExploreOpen(false);
 
-    // Check if we're on a sub-page
     if (!isHomePage && !isLearningHomePage) {
-      // If on sub-page, navigate to homepage first with hash
       window.location.href = `/tech-learning#${itemId}`;
     } else {
-      // If already on homepage, scroll to section
-      // preventDefault();
       scrollToSection(itemId);
     }
   };
@@ -97,17 +99,14 @@ const NavigationBar = () => {
     setActiveLink(name);
     setIsMobileMenuOpen(false);
     setIsExploreOpen(false);
-    // Navigate to the explore page
     window.location.href = href;
   };
 
   // Function to handle logo click
   const handleLogoClick = () => {
     if (!isHomePage && !isLearningHomePage) {
-      // If on sub-page, navigate to learning homepage
       window.location.href = '/tech-learning';
     } else {
-      // If already on homepage, scroll to top
       window.scrollTo({
         top: 0,
         behavior: 'smooth'
@@ -116,17 +115,12 @@ const NavigationBar = () => {
     }
   };
 
-  const toggleExplore = () => {
-    setIsExploreOpen(!isExploreOpen);
-  };
-
   // Handle hash in URL when page loads
   useEffect(() => {
     const handleHashChange = () => {
       if (isLearningHomePage || isHomePage) {
         const hash = window.location.hash.replace('#', '');
         if (hash) {
-          // Small delay to ensure page is fully loaded
           setTimeout(() => {
             scrollToSection(hash);
           }, 500);
@@ -134,10 +128,7 @@ const NavigationBar = () => {
       }
     };
 
-    // Check on initial load
     handleHashChange();
-
-    // Also check when hash changes
     window.addEventListener('hashchange', handleHashChange);
 
     return () => {
@@ -152,26 +143,22 @@ const NavigationBar = () => {
           <title>Engloray Learning</title>
           <meta name="description" content="Displays key links allowing users to navigate through website pages easily" />
           <meta name="robots" content="max-snippet:-1, max-image-preview: large, max-video-preview:-1" />
-          {/* <link rel="canonical" href="https://yourapp.com" /> */}
           <meta property="og:locale" content="en_US" />
           <meta property="og:type" content="website" />
           <meta property="og:title" content="NavigationBar" />
           <meta property="og:description" content="Displays key links allowing users to navigate through website pages easily." />
-          {/* <meta property="og:url" content="https://yourapp.com" /> */}
         </Helmet>
       </div>
 
       {/* Initial Position (Below Top Navbar) */}
       <nav className={`learning-main-nav learning-nav-initial ${isScrolled ? 'learning-nav-hidden' : ''}`}>
         <div className="learning-nav-container">
-          {/* Logo - More left padding */}
           <div className="learning-nav-logo" onClick={handleLogoClick} style={{ cursor: 'pointer' }}>
             <div className="learning-logo-wrapper">
               <img src={logo} alt="ENGLORAY" className="learning-logo-initial" />
             </div>
           </div>
 
-          {/* Desktop Navigation - Centered */}
           <div className="learning-nav-menu">
             {navItems.map((item) => (
               <a
@@ -183,21 +170,17 @@ const NavigationBar = () => {
                   handleNavigation(item.name, item.id);
                 }}
               >
+                <FontAwesomeIcon icon={item.icon} className="learning-nav-icon" />
                 <span className="learning-link-text">{item.name}</span>
               </a>
             ))}
 
-            {/* Explore Dropdown Button - HOVER ONLY */}
             <div className="learning-explore-container" ref={exploreRef}>
-              <button
-                className="learning-explore-btn"
-                aria-label="Explore sections"
-              >
+              <button className="learning-explore-btn" aria-label="Explore sections">
                 <span className="learning-explore-text">Explore</span>
-                <span className="learning-explore-icon">▾</span>
+                <FontAwesomeIcon icon={faChevronDown} className="learning-explore-icon" />
               </button>
 
-              {/* Explore Dropdown Menu - Shows on hover */}
               <div className="learning-explore-dropdown">
                 <div className="learning-explore-grid">
                   {exploreSections.map((section) => (
@@ -219,7 +202,6 @@ const NavigationBar = () => {
             </div>
           </div>
 
-          {/* Search Bar - Moved further Right with more margin */}
           <div className="learning-nav-search">
             <SearchBar />
           </div>
@@ -229,12 +211,10 @@ const NavigationBar = () => {
       {/* Fixed Position (Appears on Scroll) */}
       <nav className={`learning-main-nav learning-nav-fixed ${isScrolled ? 'learning-nav-visible' : ''}`}>
         <div className="learning-nav-container">
-          {/* Logo - More left padding */}
           <div className="learning-nav-logo" onClick={handleLogoClick} style={{ cursor: 'pointer' }}>
             <img src={logo} alt="ENGLORAY" className="learning-logo-fixed" />
           </div>
 
-          {/* Desktop Navigation - Centered */}
           <div className="learning-nav-menu">
             {navItems.map((item) => (
               <a
@@ -246,22 +226,18 @@ const NavigationBar = () => {
                   handleNavigation(item.name, item.id);
                 }}
               >
+                <FontAwesomeIcon icon={item.icon} className="learning-nav-icon" />
                 <span className="learning-link-text">{item.name}</span>
                 <div className="learning-link-underline"></div>
               </a>
             ))}
 
-            {/* Explore Dropdown Button - HOVER ONLY */}
             <div className="learning-explore-container" ref={exploreRef}>
-              <button
-                className="learning-explore-btn"
-                aria-label="Explore sections"
-              >
+              <button className="learning-explore-btn" aria-label="Explore sections">
                 <span className="learning-explore-text">Explore</span>
-                <span className="learning-explore-icon">▾</span>
+                <FontAwesomeIcon icon={faChevronDown} className="learning-explore-icon" />
               </button>
 
-              {/* Explore Dropdown Menu - Shows on hover */}
               <div className="learning-explore-dropdown">
                 <div className="learning-explore-grid">
                   {exploreSections.map((section) => (
@@ -283,12 +259,10 @@ const NavigationBar = () => {
             </div>
           </div>
 
-          {/* Search Bar - Moved further Right with more margin */}
           <div className="learning-nav-search">
             <SearchBar />
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             className={`learning-nav-hamburger ${isMobileMenuOpen ? 'learning-hamburger-active' : ''}`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -307,15 +281,11 @@ const NavigationBar = () => {
       <div className={`learning-mobile-overlay ${isMobileMenuOpen ? 'learning-overlay-active' : ''}`}>
         <div className="learning-mobile-content">
           <div className="learning-mobile-header">
-            <button
-              className="learning-mobile-close"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
+            <button className="learning-mobile-close" onClick={() => setIsMobileMenuOpen(false)}>
               ✕
             </button>
           </div>
 
-          {/* Mobile Search Bar */}
           <div className="learning-mobile-search">
             <SearchBar />
           </div>
@@ -331,23 +301,17 @@ const NavigationBar = () => {
                   handleNavigation(item.name, item.id);
                 }}
               >
+                <FontAwesomeIcon icon={item.icon} className="learning-mobile-icon" />
                 <span className="learning-mobile-text">{item.name}</span>
               </a>
             ))}
 
-            {/* Mobile Explore Button */}
             <div className="learning-mobile-explore">
-              <button
-                className="learning-mobile-explore-btn"
-                onClick={() => {
-                  setIsExploreOpen(!isExploreOpen);
-                }}
-              >
+              <button className="learning-mobile-explore-btn" onClick={() => setIsExploreOpen(!isExploreOpen)}>
                 <span>Explore Sections</span>
-                <span className="learning-mobile-explore-icon">{isExploreOpen ? '▴' : '▾'}</span>
+                <FontAwesomeIcon icon={isExploreOpen ? faChevronUp : faChevronDown} className="learning-mobile-explore-icon" />
               </button>
 
-              {/* Mobile Explore Dropdown */}
               {isExploreOpen && (
                 <div className="learning-mobile-explore-dropdown">
                   {exploreSections.map((section) => (

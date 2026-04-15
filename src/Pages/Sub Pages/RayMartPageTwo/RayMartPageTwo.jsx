@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './RayMartPageTwo.css';
+import RayMartNavbar from '../../../Components/RayMartNavbar/RayMartNavbar';
 import finstat from '../../../assets/hello admin.jpeg';
 
 const howWeWorkSlides = [
@@ -134,6 +135,7 @@ const RayMartPageTwo = () => {
 
   return (
     <>
+      <RayMartNavbar />
       <section className="rm-hero-section" id="raymart-hero-root">
         <div className="rm-hero-container">
 

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './RaymartPage.css';
+import RayMartNavbar from '../../../Components/RayMartNavbar/RayMartNavbar';
 import { BarChart, Bar, XAxis, ResponsiveContainer, Tooltip } from 'recharts';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowTrendUp, faFire, faStar, faChartLine, faRobot, faCheck, faWandMagicSparkles, faUsers, faRotateLeft, faShieldHalved, faBriefcase, faHeadset, faNewspaper, faGraduationCap, faChevronRight, faChevronLeft, faEnvelope, faBuilding, faPlus, faHandshake, faCode, faStore, faSearch } from '@fortawesome/free-solid-svg-icons';
@@ -497,7 +498,7 @@ const RaymartPage = () => {
 
   return (
     <div className="rm-page">
-
+      <RayMartNavbar />
       {/* ── HERO ──────────────────────────────────────────────── */}
       <section className="rm-hero">
         {/* Dark overlay */}
