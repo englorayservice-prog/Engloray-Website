@@ -105,7 +105,8 @@
   margin-bottom: 80px;
   position: relative;
   z-index: 1;
-  padding-right: 220px; /* Space for the button */
+  padding-right: 220px;
+  /* Space for the button */
 }
 
 .about-title {
@@ -117,7 +118,8 @@
   color: #1f2937;
   line-height: 1.1;
   text-align: left;
-  max-width: 850px; /* Reduced to ensure button doesn't overlap text */
+  max-width: 850px;
+  /* Reduced to ensure button doesn't overlap text */
 }
 
 .title-accent {
@@ -832,7 +834,8 @@
 }
 
 .get-started-btn:hover {
-  transform: scale(1.08); /* Simplified from translateY(-55%) to avoid conflict */
+  transform: scale(1.08);
+  /* Simplified from translateY(-55%) to avoid conflict */
   background: #6d28d9;
   box-shadow: 0 10px 25px rgba(124, 58, 237, 0.5);
 }
@@ -1085,41 +1088,42 @@
     text-align: center;
   }
 
-/* Get Started Button */
-.get-started-btn {
-  position: absolute;
-  right: -60px;
-  /* Moved further to the right */
-  top: 37%;
-  transform: translateY(-50%);
-  background: #7c3aed;
-  color: white;
-  border: none;
-  padding: 16px 36px;
-  /* Increased padding */
-  border-radius: 50px;
-  font-size: 1.15rem;
-  /* Increased font size */
-  font-family: 'Sora', sans-serif;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4);
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  z-index: 10;
-  white-space: nowrap;
-}
+  /* Get Started Button */
+  .get-started-btn {
+    position: absolute;
+    right: -60px;
+    /* Moved further to the right */
+    top: 37%;
+    transform: translateY(-50%);
+    background: #7c3aed;
+    color: white;
+    border: none;
+    padding: 16px 36px;
+    /* Increased padding */
+    border-radius: 50px;
+    font-size: 1.15rem;
+    /* Increased font size */
+    font-family: 'Sora', sans-serif;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 10;
+    white-space: nowrap;
+  }
 
-.get-started-btn:hover {
-  transform: translateY(-55%) scale(1.08);
-  background: #6d28d9;
-  box-shadow: 0 10px 25px rgba(124, 58, 237, 0.5);
-}
+  .get-started-btn:hover {
+    transform: translateY(-55%) scale(1.08);
+    background: #6d28d9;
+    box-shadow: 0 10px 25px rgba(124, 58, 237, 0.5);
+  }
 
 
-.btn-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  .btn-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }

@@ -20,13 +20,12 @@ const StatsAndBenefits = () => {
 
             // ── Hide title and bg image initially ──
             gsap.set('.sab-pin-title', { opacity: 0, y: 30 });
-            gsap.set('.sab-pin-bg',    { opacity: 0 });
+            gsap.set('.sab-pin-bg', { opacity: 0 });
 
             // ── Build the scroll-pinned timeline ──
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: '.techGroup-stats-wrapper',
-                    trigger: wrapper,
                     start: 'top top',
                     end: '+=2800',          // freeze for 2800px of scroll
                     pin: true,
@@ -38,42 +37,42 @@ const StatsAndBenefits = () => {
 
             // 1. Title + world map fade in
             tl.to('.sab-pin-title', { opacity: 1, y: 0, duration: 0.3 }, 0)
-              .to('.sab-pin-bg',    { opacity: 0.35, duration: 0.4 },    0);
+                .to('.sab-pin-bg', { opacity: 0.35, duration: 0.4 }, 0);
 
             // 2. Cards fly FROM centre TO final positions, one by one.
             //    Each "from" offset is the vector from the card's natural CSS
             //    position toward the visual centre of the map container.
             //    (Container ≈ 1200px wide × 850px tall; centre ≈ 600, 425)
             tl
-              // Top-centre card (24/7 Support) – starts just above centre
-              .from('.techGroup-stat-card-four',
-                    { x: 0,    y: 340,  opacity: 0, scale: 0.35, duration: 1 }, 0.25)
-              // Top-left card (250+ Projects) – from centre-right area
-              .from('.techGroup-stat-card-one',
-                    { x: 320,  y: 310,  opacity: 0, scale: 0.35, duration: 1 }, 0.50)
-              // Top-right card (98% Satisfaction) – from centre-left area
-              .from('.techGroup-stat-card-two',
-                    { x: -320, y: 310,  opacity: 0, scale: 0.35, duration: 1 }, 0.75)
-              // Mid-left card (5+ Regions) – from centre
-              .from('.techGroup-stat-card-seven',
-                    { x: 320,  y: 50,   opacity: 0, scale: 0.35, duration: 1 }, 1.00)
-              // Centre card (95% Retention) – tiny drift from middle
-              .from('.techGroup-stat-card-nine',
-                    { x: -80,  y: 30,   opacity: 0, scale: 0.35, duration: 1 }, 1.25)
-              // Bottom-left card (25+ Partners) – from centre, moves down-left
-              .from('.techGroup-stat-card-three',
-                    { x: 320,  y: -230, opacity: 0, scale: 0.35, duration: 1 }, 1.50)
-              // Bottom-right card (10+ Years) – from centre, moves down-right
-              .from('.techGroup-stat-card-six',
+                // Top-centre card (24/7 Support) – starts just above centre
+                .from('.techGroup-stat-card-four',
+                    { x: 0, y: 340, opacity: 0, scale: 0.35, duration: 1 }, 0.25)
+                // Top-left card (250+ Projects) – from centre-right area
+                .from('.techGroup-stat-card-one',
+                    { x: 320, y: 310, opacity: 0, scale: 0.35, duration: 1 }, 0.50)
+                // Top-right card (98% Satisfaction) – from centre-left area
+                .from('.techGroup-stat-card-two',
+                    { x: -320, y: 310, opacity: 0, scale: 0.35, duration: 1 }, 0.75)
+                // Mid-left card (5+ Regions) – from centre
+                .from('.techGroup-stat-card-seven',
+                    { x: 320, y: 50, opacity: 0, scale: 0.35, duration: 1 }, 1.00)
+                // Centre card (95% Retention) – tiny drift from middle
+                .from('.techGroup-stat-card-nine',
+                    { x: -80, y: 30, opacity: 0, scale: 0.35, duration: 1 }, 1.25)
+                // Bottom-left card (25+ Partners) – from centre, moves down-left
+                .from('.techGroup-stat-card-three',
+                    { x: 320, y: -230, opacity: 0, scale: 0.35, duration: 1 }, 1.50)
+                // Bottom-right card (10+ Years) – from centre, moves down-right
+                .from('.techGroup-stat-card-six',
                     { x: -360, y: -220, opacity: 0, scale: 0.35, duration: 1 }, 1.75);
 
             // ── Benefits Section Animation ──
             const benefitCards = gsap.utils.toArray('.techGroup-slide-card');
-            
+
             benefitCards.forEach((card) => {
                 // Get all text/content elements inside this specific card
                 const contentElements = card.querySelectorAll('.techGroup-badge, [class*="-header"], [class*="-footer"], [class*="-description"], .techGroup-card-two-tags span, .techGroup-inner-badge, .techGroup-card-three-grid-box, .techGroup-inner-badge-four, .techGroup-card-four-box');
-                
+
                 // Set initial state for card and its contents
                 gsap.set(card, { opacity: 0, y: 50 });
                 gsap.set(contentElements, { opacity: 0, y: 30 });
@@ -131,10 +130,6 @@ const StatsAndBenefits = () => {
 
                 {/* ── PINNED STATS SECTION ── */}
                 <div className="techGroup-stats-wrapper">
-            <div className="techGroup-testimonialSection-container" style={{ padding: '0' }}>
-
-                {/* ── PINNED STATS SECTION ── */}
-                <div className="techGroup-stats-wrapper" ref={wrapperRef}>
                     <h2 className="techGroup-stats-main-title sab-pin-title">
                         Empowering Growth: Our Global Impact
                     </h2>
