@@ -46,9 +46,13 @@ import demoVideoFile from "../../../assets/Final GD Course video.mp4";
 import videoThumbnail from "../../../assets/DemoThumbnail.png";
 import uiuxCertificate from "../../../assets/Digital-Marketing.png";
 
-import avatarF1 from "../../../assets/t1.png";
-import avatarM1 from "../../../assets/t2.png";
-import avatarF2 from "../../../assets/t3.png";
+import avatarF1 from "../../../assets/testimonials/cartoon_female_1.png";
+import avatarF3 from "../../../assets/testimonials/cartoon_female_3.png";
+import avatarM1 from "../../../assets/testimonials/cartoon_male_1.png";
+import avatarM2 from "../../../assets/testimonials/cartoon_male_2.png";
+import avatarM3 from "../../../assets/testimonials/cartoon_male_3.png";
+import avatarF2 from "../../../assets/testimonials/cartoon_female_2.png";
+
 
 // AI Tool Logos (Ideas & UX)
 import chatgptAiLogo from '../../../assets/chatgpt_ai_logo.jpg';
@@ -93,30 +97,30 @@ const DigitaMarketingCourse = () => {
         name: "",
         email: "",
         phone: "",
-        course: "UI/UX Design Mastery"
+        course: "Digital Marketing"
     });
 
     // Hero Images from user upload
-    // const uiuxHero1 = require('../../../assets/gdc1.jpeg');
-    // const uiuxHero2 = require('../../../assets/dgm2.jpeg');
-    // const uiuxHero3 = require('../../../assets/dgm1.jpeg');
-    // const uiuxHero4 = require('../../../assets/dgm3.jpeg');
-    // const uiuxHero5 = require('../../../assets/u2.jpeg');
+    const uiuxHero3 = require('../../../assets/Digital Marketing.jfif');
+    const uiuxHero2 = require('../../../assets/HOME.jfif');
+    const uiuxHero1 = require('../../../assets/Pin by Angélica del Carmen KALBERMATT on programación _ Scrapbook design.jfif');
+    const uiuxHero4 = require('../../../assets/Social Media Templates.jfif');
+    const uiuxHero5 = require('../../../assets/Seo.jfif');
 
     // New UI/UX-themed hero gallery images (do not reuse GD assets)
     const uiuxHeroAssets = {
-        // a1: uiuxHero1,
-        // a2: uiuxHero2,
-        // a3: uiuxHero3,
-        // a4: uiuxHero4,
-        // a5: uiuxHero5
+        a1: uiuxHero1,
+        a2: uiuxHero2,
+        a3: uiuxHero3,
+        a4: uiuxHero4,
+        a5: uiuxHero5
     };
 
     const allTestimonials = [
         {
             name: "Suresh P",
             role: "Digital Marketing Executive",
-            text: "Gained confidence working on real product flows. What felt complex before is now structured and clear—from research to wireframes to high-fidelity prototypes and developer handoff.",
+            text: "Gained confidence working on real product flows. What felt complex before is now structured and clear?from research to wireframes to high-fidelity prototypes and developer handoff.",
             avatar: avatarM1
         },
         {
@@ -129,7 +133,7 @@ const DigitaMarketingCourse = () => {
             name: "Rahul M",
             role: "Performance Marketer",
             text: "The curriculum is perfectly aligned with modern product teams. I improved my UX thinking, created case studies, and learned stakeholder-ready presentations for real-world projects.",
-            avatar: avatarM1
+            avatar: avatarM3
         },
         {
             name: "Anita K",
@@ -141,25 +145,25 @@ const DigitaMarketingCourse = () => {
             name: "Vikas S",
             role: "Freelancer",
             text: "From user research to usability testing, the process finally clicked. I learned how to validate ideas, iterate quickly, and build experiences that actually solve user problems.",
-            avatar: avatarM1
+            avatar: avatarM2
         },
         {
             name: "Sneha T",
             role: "Performance Marketer",
             text: "Learning design systems and components changed everything. I can now build consistent UI, maintain scalability, and deliver pixel-perfect screens with fast iteration cycles.",
-            avatar: avatarF1
+            avatar: avatarF3
         },
         {
             name: "Rohan D",
             role: "Digital Marketing Executive",
             text: "The focus on real product case studies helped me create a strong portfolio. The project reviews made my work polished and ready for interviews with top product companies.",
-            avatar: avatarM1
+            avatar: avatarM3
         },
         {
             name: "Kavya J",
             role: "Performance Marketer",
             text: "I finally understand how to run interviews, synthesize insights, and turn research into meaningful design decisions. The frameworks and practice sessions were incredibly useful.",
-            avatar: avatarF1
+            avatar: avatarF3
         },
         {
             name: "Manoj V",
@@ -220,32 +224,32 @@ const DigitaMarketingCourse = () => {
         {
             icon: <FontAwesomeIcon icon={faBullseye} />,
             title: "Marketing Fundamentals",
-            desc: "Understand core digital marketing concepts, audience targeting, and channel strategies. Learn how to position brands, craft messaging, and build strong foundations for effective campaigns."
+            desc: "Understand core digital marketing concepts, audience targeting, and channel strategies. Learn how to position brands effectively, craft compelling messaging, and build strong foundations for long-term marketing success using consumer behavior insights."
         },
         {
             icon: <FontAwesomeIcon icon={faRulerCombined} />,
             title: "Performance Marketing Mastery",
-            desc: "Run high-converting ad campaigns using Google Ads and Meta platforms. Learn campaign structuring, audience segmentation, A/B testing, and optimization techniques to maximize ROI."
+            desc: "Run high-converting ad campaigns using Google Ads and Meta platforms. Learn campaign structuring, audience segmentation, and optimization techniques to maximize ROI. Gain practical experience in budget management and scaling performance."
         },
         {
             icon: <FontAwesomeIcon icon={faPaintBrush} />,
             title: "Content & Social Media Strategy",
-            desc: "Create engaging content for social platforms that drives reach and engagement. Build content calendars, manage communities, and develop strategies that grow brand presence organically."
+            desc: "Create engaging content for social platforms that drives reach and engagement. Build content calendars, manage communities, and develop strategies that grow brand presence organically using visual storytelling and platform-specific techniques."
         },
         {
             icon: <FontAwesomeIcon icon={faMobileAlt} />,
             title: "SEO & Organic Growth",
-            desc: "Master keyword research, on-page SEO, and technical optimization. Learn how to improve search rankings, drive organic traffic, and create content that attracts and converts users."
+            desc: "Master keyword research, on-page SEO, and technical optimization to dominate search results. Learn how to improve rankings, drive organic traffic, and create content that converts while maintaining long-term search authority."
         },
         {
             icon: <FontAwesomeIcon icon={faBriefcase} />,
             title: "Analytics & Career Growth",
-            desc: "Analyze campaign performance using tools like Google Analytics and tracking systems. Build reports, extract insights, and develop data-driven strategies for continuous improvement and career growth."
+            desc: "Analyze campaign performance using tools like GA4 and professional tracking systems. Build comprehensive reports, extract actionable insights, and use data-driven metrics to drive business success and career growth."
         },
         {
             icon: <FontAwesomeIcon icon={faStar} />,
             title: "Marketing Strategy & Scaling",
-            desc: "Develop full-funnel marketing strategies from awareness to conversion. Learn customer journey mapping, funnel optimization, and scaling techniques to grow brands sustainably."
+            desc: "Develop full-funnel marketing strategies from initial awareness to final conversion. Learn customer journey mapping and advanced scaling techniques to lead large-scale marketing initiatives and grow brands sustainably."
         }
     ];
 
@@ -312,121 +316,121 @@ const DigitaMarketingCourse = () => {
     const toolsV2Data = [
         [
             {
-                name: "ChatGPT",
-                icon: <FontAwesomeIcon icon={faComments} />,
-                desc: "Advanced conversational AI.",
-                img: chatgptAiLogo
+                name: "Ahrefs",
+                icon: <FontAwesomeIcon icon={faSearch} />,
+                desc: "Keywords & backlinks.",
+                bg: "linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%)"
             },
             {
-                name: "Gemini",
+                name: "Semrush",
                 icon: <FontAwesomeIcon icon={faGlobe} />,
-                desc: "Intelligent multimodal assistance.",
-                img: geminiAiLogo
+                desc: "Comprehensive SEO suite.",
+                bg: "linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%)"
             },
             {
-                name: "Notion AI",
-                icon: <FontAwesomeIcon icon={faPencilAlt} />,
-                desc: "Smart workspace workflows.",
-                img: notionAiLogo
-            },
-            {
-                name: "Jasper AI",
+                name: "Screaming Frog",
                 icon: <FontAwesomeIcon icon={faRocket} />,
-                desc: "Executive AI copy and concepts.",
-                img: jasperAiLogo
+                desc: "Technical website crawler.",
+                bg: "linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%)"
+            },
+            {
+                name: "Yoast SEO",
+                icon: <FontAwesomeIcon icon={faTrophy} />,
+                desc: "On-page optimization.",
+                bg: "linear-gradient(135deg, #cfd9df 0%, #e2ebf0 100%)"
             }
         ],
         [
             {
-                name: "Khroma",
-                icon: <FontAwesomeIcon icon={faMagic} />,
-                desc: "Visual generation for UI.",
-                bg: "linear-gradient(135deg, #8B5CF6 0%, #D946EF 100%)"
-            },
-            {
-                name: "Colors AI",
-                icon: <FontAwesomeIcon icon={faRocket} />,
-                desc: "Concepts and mood.",
-                bg: "linear-gradient(135deg, #FEF08A 0%, #3BC9F1 100%)"
-            },
-            {
-                name: "Fontjoy",
+                name: "Google Ads",
                 icon: <FontAwesomeIcon icon={faLightbulb} />,
-                desc: "Idea visuals.",
-                bg: "linear-gradient(135deg, #312E81 0%, #9D174D 100%)"
+                desc: "Search intent marketing.",
+                bg: "linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)"
             },
             {
-                name: "Stark",
-                icon: <FontAwesomeIcon icon={faBullseye} />,
-                desc: "Accessibility and UI checks.",
-                bg: "linear-gradient(135deg, #2563EB 0%, #0891B2 100%)"
+                name: "Meta Ads",
+                icon: <FontAwesomeIcon icon={faUser} />,
+                desc: "Social reach and conversion.",
+                bg: "linear-gradient(135deg, #ffd1ff 0%, #fad0c4 100%)"
+            },
+            {
+                name: "LinkedIn Ads",
+                icon: <FontAwesomeIcon icon={faBriefcase} />,
+                desc: "B2B professional targeting.",
+                bg: "linear-gradient(135deg, #f6d365 0%, #fda085 100%)"
+            },
+            {
+                name: "TikTok Ads",
+                icon: <FontAwesomeIcon icon={faMobileAlt} />,
+                desc: "Viral video campaigns.",
+                bg: "linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)"
             }
         ],
         [
             {
-                name: "Maze",
-                icon: <FontAwesomeIcon icon={faFlask} />,
-                desc: "Rapid testing and data.",
-                bg: "linear-gradient(135deg, #FACC15 0%, #F97316 100%)"
+                name: "Hootsuite",
+                icon: <FontAwesomeIcon icon={faClock} />,
+                desc: "Social scheduling.",
+                bg: "linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%)"
+            },
+            {
+                name: "Buffer",
+                icon: <FontAwesomeIcon icon={faBullseye} />,
+                desc: "Brand organic growth.",
+                bg: "linear-gradient(135deg, #ffc3a0 0%, #ffafbd 100%)"
+            },
+            {
+                name: "Canva",
+                icon: <FontAwesomeIcon icon={faPaintBrush} />,
+                desc: "Quick content creation.",
+                bg: "linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%)"
+            },
+            {
+                name: "Sprout Social",
+                icon: <FontAwesomeIcon icon={faComments} />,
+                desc: "Audience engagement.",
+                bg: "linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%)"
+            }
+        ],
+        [
+            {
+                name: "Google Analytics 4",
+                icon: <FontAwesomeIcon icon={faChartLine} />,
+                desc: "Deep user behavior tracking.",
+                bg: "linear-gradient(135deg, #96e6a1 0%, #d4fc79 100%)"
             },
             {
                 name: "Hotjar",
                 icon: <FontAwesomeIcon icon={faCheckCircle} />,
-                desc: "Heatmaps and user behavior.",
-                bg: "linear-gradient(135deg, #EF4444 0%, #B91C1C 100%)"
+                desc: "User heatmaps.",
+                bg: "linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%)"
             },
             {
-                name: "UserTesting",
-                icon: <FontAwesomeIcon icon={faUser} />,
-                desc: "Real-time user feedback.",
-                bg: "linear-gradient(135deg, #10B981 0%, #047857 100%)"
+                name: "Looker Studio",
+                icon: <FontAwesomeIcon icon={faBook} />,
+                desc: "Custom KPI dashboards.",
+                bg: "linear-gradient(135deg, #a8ede5 0%, #fed6e3 100%)"
             },
             {
-                name: "UX Tweak",
-                icon: <FontAwesomeIcon icon={faSyncAlt} />,
-                desc: "Uncovering user insights.",
-                bg: "linear-gradient(135deg, #8B5CF6 0%, #4C1D95 100%)"
-            }
-        ],
-        [
-            {
-                name: "Adobe Firefly",
-                icon: <FontAwesomeIcon icon={faPaintBrush} />,
-                desc: "Advanced UI and Prototyping.",
-                bg: "linear-gradient(135deg, #F43F5E 0%, #BE123C 100%)"
-            },
-            {
-                name: "Mockup AI",
-                icon: <FontAwesomeIcon icon={faLaptopCode} />,
-                desc: "No-code website development.",
-                bg: "linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%)"
-            },
-            {
-                name: "Spline AI",
-                icon: <FontAwesomeIcon icon={faRocket} />,
-                desc: "Interactive 3D web experiences.",
-                bg: "linear-gradient(135deg, #EC4899 0%, #BE185D 100%)"
-            },
-            {
-                name: "Lume AI",
+                name: "HubSpot",
                 icon: <FontAwesomeIcon icon={faMagic} />,
-                desc: "Lightweight UI animations.",
-                bg: "linear-gradient(135deg, #06B6D4 0%, #0369A1 100%)"
+                desc: "CRM and tracking.",
+                bg: "linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%)"
             }
         ]
     ];
 
     const benefits = [
-        { icon: <FontAwesomeIcon icon={faGraduationCap} />, title: "Live Interactive Training", description: "Real-time classes with product designers and immediate doubt resolution for faster learning." },
-        { icon: <FontAwesomeIcon icon={faHandshake} />, title: "1:1 Mentorship", description: "Personal guidance from mentors with 10+ years experience in UI/UX and product design." },
-        { icon: <FontAwesomeIcon icon={faBriefcase} />, title: "100% Placement Assistance", description: "Career support with portfolio reviews, mock interviews, and referrals to hiring partners." },
-        { icon: <FontAwesomeIcon icon={faTrophy} />, title: "Global Certification", description: "Internationally recognized certification to validate your UI/UX skills globally." },
-        { icon: <FontAwesomeIcon icon={faClock} />, title: "Lifetime Course Access", description: "All course materials, updates, and recordings available forever for continuous growth." },
-        { icon: <FontAwesomeIcon icon={faComments} />, title: "Community Access", description: "Network with 5000+ designers and participate in design challenges and peer reviews." },
-        { icon: <FontAwesomeIcon icon={faLaptopCode} />, title: "Tool Mastery", description: "Hands-on practice with modern tools and workflows used by product teams worldwide." },
-        { icon: <FontAwesomeIcon icon={faBullseye} />, title: "Project-Based Learning", description: "Build real case studies and portfolio projects that stand out in UI/UX interviews." },
-        { icon: <FontAwesomeIcon icon={faFlask} />, title: "Usability Testing", description: "Learn to test prototypes, gather insights, and iterate confidently with real feedback." },
-        { icon: <FontAwesomeIcon icon={faRocket} />, title: "Career Coaching", description: "Interview prep and storytelling guidance to land your first UI/UX role faster." }
+        { icon: <FontAwesomeIcon icon={faGraduationCap} />, title: "Live Interactive Training", description: "Real-time classes with senior digital marketers and immediate doubt resolution for faster learning." },
+        { icon: <FontAwesomeIcon icon={faHandshake} />, title: "1:1 Mentorship", description: "Personal guidance from performance marketers and SEO experts with 10+ years of experience." },
+        { icon: <FontAwesomeIcon icon={faBriefcase} />, title: "100% Placement Assistance", description: "Career support with campaign portfolio reviews, mock interviews, and hiring partner referrals." },
+        { icon: <FontAwesomeIcon icon={faTrophy} />, title: "Global Certification", description: "Internationally recognized certification to validate your digital marketing skills globally." },
+        { icon: <FontAwesomeIcon icon={faClock} />, title: "Lifetime Course Access", description: "All course materials, platform updates, and recordings available forever for continuous growth." },
+        { icon: <FontAwesomeIcon icon={faComments} />, title: "Community Access", description: "Network with 5000+ marketers and participate in live campaign challenges and peer reviews." },
+        { icon: <FontAwesomeIcon icon={faLaptopCode} />, title: "Tool Mastery", description: "Hands-on practice with modern ad platforms, SEO tools, and analytics workflows used globally." },
+        { icon: <FontAwesomeIcon icon={faBullseye} />, title: "Project-Based Learning", description: "Build real marketing campaigns and data-driven case studies that stand out in interviews." },
+        { icon: <FontAwesomeIcon icon={faChartLine} />, title: "Data-Driven Approach", description: "Learn to track metrics, gather insights, and optimize campaigns confidently with real data." },
+        { icon: <FontAwesomeIcon icon={faRocket} />, title: "Career Coaching", description: "Interview prep and strategizing guidance to land your first Digital Marketing role faster." }
     ];
 
     const hexToRgba = (hex, alpha) => {
@@ -451,9 +455,9 @@ const DigitaMarketingCourse = () => {
     };
 
     const certificate = {
-        title: "Professional UI/UX Certification",
+        title: "Professional Digital Marketing Certification",
         description: "Globally recognized certificate accredited by International Design Council",
-        features: ["✅ Digital & Physical Copy", "✅ Lifetime Validity", "✅ Online Verification", "✅ International Recognition", "✅ QR Code Authentication", "✅ Accredited by Design Council"],
+        features: ["? Digital & Physical Copy", "? Lifetime Validity", "? Online Verification", "? International Recognition", "? QR Code Authentication", "? Accredited by Leading Marketing Experts"],
         image: uiuxCertificate
     };
 
@@ -519,129 +523,143 @@ const DigitaMarketingCourse = () => {
     const handleVideoPause = () => setIsPlaying(false);
 
     return (
-        <div className="gdc-page">
+        <div className="dgm-gdc-page">
             {/* Hero Section Upgrade - Minimalist Premium Design */}
-            <header className="gdc-hero-v3">
-                <div className="gdc-v3-sparkle-wrapper">
-                    <div className="gdc-v3-sparkle sparkle-lg sparkle-pos-1">
+            <header className="dgm-gdc-hero-v3">
+                <div className="dgm-gdc-v3-sparkle-wrapper">
+                    <div className="dgm-gdc-v3-sparkle sparkle-lg sparkle-pos-1">
                         <FontAwesomeIcon icon={faStar} />
                     </div>
-                    <div className="gdc-v3-sparkle sparkle-sm sparkle-pos-2">
+                    <div className="dgm-gdc-v3-sparkle sparkle-sm sparkle-pos-2">
                         <FontAwesomeIcon icon={faStar} />
                     </div>
-                    <div className="gdc-v3-sparkle sparkle-md sparkle-pos-3">
+                    <div className="dgm-gdc-v3-sparkle sparkle-md sparkle-pos-3">
                         <FontAwesomeIcon icon={faMagic} />
                     </div>
-                    <div className="gdc-v3-sparkle sparkle-lg sparkle-pos-4">
+                    <div className="dgm-gdc-v3-sparkle sparkle-lg sparkle-pos-4">
                         <FontAwesomeIcon icon={faStar} />
                     </div>
-                    <div className="gdc-v3-sparkle sparkle-sm sparkle-pos-5">
+                    <div className="dgm-gdc-v3-sparkle sparkle-sm sparkle-pos-5">
                         <FontAwesomeIcon icon={faMagic} />
                     </div>
-                    <div className="gdc-v3-sparkle sparkle-md sparkle-pos-6">
+                    <div className="dgm-gdc-v3-sparkle sparkle-md sparkle-pos-6">
                         <FontAwesomeIcon icon={faStar} />
                     </div>
-                    <div className="gdc-v3-sparkle sparkle-lg sparkle-pos-7">
+                    <div className="dgm-gdc-v3-sparkle sparkle-lg sparkle-pos-7">
                         <FontAwesomeIcon icon={faStar} />
                     </div>
-                    <div className="gdc-v3-sparkle sparkle-sm sparkle-pos-8">
+                    <div className="dgm-gdc-v3-sparkle sparkle-sm sparkle-pos-8">
                         <FontAwesomeIcon icon={faMagic} />
                     </div>
                 </div>
 
-                <div className="gdc-v3-container">
-                    <div className="gdc-v3-header-content">
-                        <h1 className="gdc-v3-main-title">
-                            Digital <span className="gdc-v3-arrow-capsule-straight">→</span> Marketing <br /> Mastery Program
+                <div className="dgm-gdc-v3-container">
+                    <div className="dgm-gdc-v3-header-content">
+                        <h1 className="dgm-gdc-v3-main-title">
+                            Digital <span className="dgm-gdc-v3-arrow-capsule-straight">→</span> Marketing <br /> Mastery Program
                         </h1>
 
-                        <p className="gdc-v3-subtitle-original">
+                        <p className="dgm-gdc-v3-subtitle-original">
                             Master SEO, social media, paid ads & content strategies <br />
                             to build high-impact campaigns and grow real-world brands.
                         </p>
 
-                        <div className="gdc-v3-sub-row">
-                            <div className="gdc-v3-members-info">
+                        <div className="dgm-gdc-v3-sub-row">
+                            <div className="dgm-gdc-v3-members-info">
                                 <p>With more than</p>
                                 <h3>2K+ LEARNERS</h3>
                                 <h3>500+ MARKETING LESSONS</h3>
                             </div>
 
-                            <button className="gdc-v3-join-btn" onClick={scrollToForm}>
-                                Join us <span className="gdc-v3-join-arrow">↗</span>
+                            <button className="dgm-gdc-v3-join-btn" onClick={scrollToForm}>
+                                Join us <span className="dgm-gdc-v3-join-arrow">↗</span>
                             </button>
                         </div>
                     </div>
 
-                    <div className="gdc-v3-asset-gallery">
-                        <div className="gdc-v3-card gdc-card-blue">
-                            <img src={uiuxHeroAssets.a1} alt="UIUX Asset 1" className="gdc-v3-card-img" />
+                    <div className="dgm-gdc-v3-asset-gallery">
+                        <div className="dgm-gdc-v3-card dgm-gdc-card-blue">
+                            <img src={uiuxHeroAssets.a1} alt="UIUX Asset 1" className="dgm-gdc-v3-card-img" />
                         </div>
-                        <div className="gdc-v3-card gdc-card-dark">
-                            <img src={uiuxHeroAssets.a2} alt="UIUX Asset 2" className="gdc-v3-card-img" />
+                        <div className="dgm-gdc-v3-card dgm-gdc-card-dark">
+                            <img src={uiuxHeroAssets.a2} alt="UIUX Asset 2" className="dgm-gdc-v3-card-img" />
                         </div>
-                        <div className="gdc-v3-card gdc-card-center-featured">
-                            <img src={uiuxHeroAssets.a3} alt="UIUX Asset 3" className="gdc-v3-card-img" />
+                        <div className="dgm-gdc-v3-card dgm-gdc-card-center-featured">
+                            <img src={uiuxHeroAssets.a3} alt="UIUX Asset 3" className="dgm-gdc-v3-card-img" />
                         </div>
-                        <div className="gdc-v3-card gdc-card-dark">
-                            <img src={uiuxHeroAssets.a4} alt="UIUX Asset 4" className="gdc-v3-card-img" />
+                        <div className="dgm-gdc-v3-card dgm-gdc-card-dark">
+                            <img src={uiuxHeroAssets.a4} alt="UIUX Asset 4" className="dgm-gdc-v3-card-img" />
                         </div>
-                        <div className="gdc-v3-card gdc-card-blue">
-                            <img src={uiuxHeroAssets.a5} alt="UIUX Asset 5" className="gdc-v3-card-img" />
+                        <div className="dgm-gdc-v3-card dgm-gdc-card-blue">
+                            <img src={uiuxHeroAssets.a5} alt="UIUX Asset 5" className="dgm-gdc-v3-card-img" />
                         </div>
                     </div>
                 </div>
             </header>
 
             {/* Marquee Section bridging Hero and Intro */}
-            <div className="gdc-v2-marquee-container">
-                <div className="gdc-v2-marquee">
+            <div className="dgm-gdc-v2-marquee-container">
+                <div className="dgm-gdc-v2-marquee">
                     <span>
-                        SEO STRATEGY <FontAwesomeIcon icon={faStar} className="gdc-marquee-star" />
-                        SOCIAL MEDIA MARKETING <FontAwesomeIcon icon={faStar} className="gdc-marquee-star" />
-                        PERFORMANCE ADS  <FontAwesomeIcon icon={faStar} className="gdc-marquee-star" />
-                        CONTENT MARKETING <FontAwesomeIcon icon={faStar} className="gdc-marquee-star" />
-                        EMAIL MARKETING <FontAwesomeIcon icon={faStar} className="gdc-marquee-star" />
-                        GOOGLE ADS <FontAwesomeIcon icon={faStar} className="gdc-marquee-star" />
-                        FACEBOOK & INSTAGRAM ADS <FontAwesomeIcon icon={faStar} className="gdc-marquee-star" />
-                        ANALYTICS & TRACKING <FontAwesomeIcon icon={faStar} className="gdc-marquee-star" />
-                        FUNNEL BUILDING <FontAwesomeIcon icon={faStar} className="gdc-marquee-star" />
-                        BRAND GROWTH STRATEGY <FontAwesomeIcon icon={faStar} className="gdc-marquee-star" />
-                        SOCIAL MEDIA MARKETING <FontAwesomeIcon icon={faStar} className="gdc-marquee-star" />
+                        SEO STRATEGY <FontAwesomeIcon icon={faStar} className="dgm-gdc-marquee-star" />
+                        SOCIAL MEDIA MARKETING <FontAwesomeIcon icon={faStar} className="dgm-gdc-marquee-star" />
+                        PERFORMANCE ADS  <FontAwesomeIcon icon={faStar} className="dgm-gdc-marquee-star" />
+                        CONTENT MARKETING <FontAwesomeIcon icon={faStar} className="dgm-gdc-marquee-star" />
+                        EMAIL MARKETING <FontAwesomeIcon icon={faStar} className="dgm-gdc-marquee-star" />
+                        GOOGLE ADS <FontAwesomeIcon icon={faStar} className="dgm-gdc-marquee-star" />
+                        FACEBOOK & INSTAGRAM ADS <FontAwesomeIcon icon={faStar} className="dgm-gdc-marquee-star" />
+                        ANALYTICS & TRACKING <FontAwesomeIcon icon={faStar} className="dgm-gdc-marquee-star" />
+                        FUNNEL BUILDING <FontAwesomeIcon icon={faStar} className="dgm-gdc-marquee-star" />
+                        BRAND GROWTH STRATEGY <FontAwesomeIcon icon={faStar} className="dgm-gdc-marquee-star" />
+                        SOCIAL MEDIA MARKETING <FontAwesomeIcon icon={faStar} className="dgm-gdc-marquee-star" />
+                        PERFORMANCE ADS
+                    </span>
+                    <span aria-hidden="true">
+                        SEO STRATEGY <FontAwesomeIcon icon={faStar} className="dgm-gdc-marquee-star" />
+                        SOCIAL MEDIA MARKETING <FontAwesomeIcon icon={faStar} className="dgm-gdc-marquee-star" />
+                        PERFORMANCE ADS  <FontAwesomeIcon icon={faStar} className="dgm-gdc-marquee-star" />
+                        CONTENT MARKETING <FontAwesomeIcon icon={faStar} className="dgm-gdc-marquee-star" />
+                        EMAIL MARKETING <FontAwesomeIcon icon={faStar} className="dgm-gdc-marquee-star" />
+                        GOOGLE ADS <FontAwesomeIcon icon={faStar} className="dgm-gdc-marquee-star" />
+                        FACEBOOK & INSTAGRAM ADS <FontAwesomeIcon icon={faStar} className="dgm-gdc-marquee-star" />
+                        ANALYTICS & TRACKING <FontAwesomeIcon icon={faStar} className="dgm-gdc-marquee-star" />
+                        FUNNEL BUILDING <FontAwesomeIcon icon={faStar} className="dgm-gdc-marquee-star" />
+                        BRAND GROWTH STRATEGY <FontAwesomeIcon icon={faStar} className="dgm-gdc-marquee-star" />
+                        SOCIAL MEDIA MARKETING <FontAwesomeIcon icon={faStar} className="dgm-gdc-marquee-star" />
                         PERFORMANCE ADS
                     </span>
                 </div>
             </div>
 
             {/* New Intro Section - Re-designed to 2-column layout */}
-            <section className="gdc-intro-section">
-                <div className="gdc-container">
-                    <div className="gdc-intro-layout">
-                        <div className="gdc-intro-left">
-                            <h2 className="gdc-intro-title">
+            <section className="dgm-gdc-intro-section">
+                <div className="dgm-gdc-container">
+                    <div className="dgm-gdc-intro-layout">
+                        <div className="dgm-gdc-intro-left">
+                            <h2 className="dgm-gdc-intro-title">
                                 Master Digital <br /> Marketing in 6 Months
                             </h2>
-                            <p className="gdc-intro-desc">
+                            <p className="dgm-gdc-intro-desc">
                                 Learn the complete digital marketing process from strategy to execution. Build real campaigns, master industry tools, and become job-ready with hands-on experience and measurable results.
                             </p>
-                            <button className="gdc-intro-cta" onClick={scrollToForm}>
+                            <button className="dgm-gdc-intro-cta" onClick={scrollToForm}>
                                 Contact
                             </button>
                         </div>
 
-                        <div className="gdc-intro-right">
-                            <div className="gdc-intro-grid">
+                        <div className="dgm-gdc-intro-right">
+                            <div className="dgm-gdc-intro-grid">
                                 {introCategories.map((cat, i) => (
-                                    <div key={i} className="gdc-intro-category-box">
-                                        <div className="gdc-intro-card-icon" style={{ backgroundColor: cat.bgColor, color: cat.iconColor }}>
+                                    <div key={i} className="dgm-gdc-intro-category-box">
+                                        <div className="dgm-gdc-intro-card-icon" style={{ backgroundColor: cat.bgColor, color: cat.iconColor }}>
                                             {cat.icon}
                                         </div>
-                                        <div className="gdc-intro-card-content">
-                                            <h3 className="gdc-intro-card-title">{cat.title}</h3>
-                                            <div className="gdc-intro-card-points">
+                                        <div className="dgm-gdc-intro-card-content">
+                                            <h3 className="dgm-gdc-intro-card-title">{cat.title}</h3>
+                                            <div className="dgm-gdc-intro-card-points">
                                                 {cat.points.map((point, idx) => (
-                                                    <div key={idx} className="gdc-intro-point">
-                                                        <FontAwesomeIcon icon={faStar} className="gdc-intro-point-star" />
+                                                    <div key={idx} className="dgm-gdc-intro-point">
+                                                        <FontAwesomeIcon icon={faStar} className="dgm-gdc-intro-point-star" />
                                                         {point}
                                                     </div>
                                                 ))}
@@ -676,9 +694,12 @@ const DigitaMarketingCourse = () => {
                             return (
                                 <div
                                     key={index}
-                                    className={`dgm-outcome-numbered-card ${isBlack ? 'black-bg' : 'white-bg'}`}
+                                    className={`digi-mkt-outcome-card ${isBlack ? 'black-bg' : 'white-bg'}`}
                                 >
-                                    <div className="dgm-outcome-card-content-wrapper">
+                                    <div
+                                        className="dgm-outcome-card-content-wrapper"
+                                        style={index === 3 ? { marginTop: "40px", marginLeft: "8px" } : {}}
+                                    >
                                         {/* Left side - Number and Icon */}
                                         <div className="dgm-outcome-card-left">
                                             <div className="dgm-outcome-card-number">{cardNumber}</div>
@@ -699,42 +720,42 @@ const DigitaMarketingCourse = () => {
             </section>
 
             {/* 6-Month Course Breakdown - Vertical Slider Redesign */}
-            <section className="gdc-curriculum-v2-section">
-                <div className="gdc-container">
-                    <div className="gdc-curriculum-v2-layout">
-                        <div className="gdc-curriculum-v2-left">
-                            <span className="gdc-curriculum-v2-tag">PRO COURSE</span>
-                            <h2 className="gdc-curriculum-v2-title">
+            <section className="dgm-gdc-curriculum-v2-section">
+                <div className="dgm-gdc-container">
+                    <div className="dgm-gdc-curriculum-v2-layout">
+                        <div className="dgm-gdc-curriculum-v2-left">
+                            <span className="dgm-gdc-curriculum-v2-tag">PRO COURSE</span>
+                            <h2 className="dgm-gdc-curriculum-v2-title">
                                 6-Month Course <br /> Breakdown
                             </h2>
-                            <p className="gdc-curriculum-v2-desc">
+                            <p className="dgm-gdc-curriculum-v2-desc">
                                 A structured digital marketing journey built for real-world success.
                                 Master performance marketing, SEO, content strategy, and analytics to create high-impact campaigns in 6 intensive months.
                             </p>
 
-                            <div className="gdc-curriculum-v2-stats">
-                                <div className="gdc-stat-item">
-                                    <span className="gdc-stat-num">50+</span>
-                                    <span className="gdc-stat-label">Real Campaigns</span>
+                            <div className="dgm-gdc-curriculum-v2-stats">
+                                <div className="dgm-gdc-stat-item">
+                                    <span className="dgm-gdc-stat-num">50+</span>
+                                    <span className="dgm-gdc-stat-label">Real Campaigns</span>
                                 </div>
-                                <div className="gdc-stat-item">
-                                    <span className="gdc-stat-num">100%</span>
-                                    <span className="gdc-stat-label">Practical</span>
+                                <div className="dgm-gdc-stat-item">
+                                    <span className="dgm-gdc-stat-num">100%</span>
+                                    <span className="dgm-gdc-stat-label">Practical</span>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="gdc-curriculum-v2-right">
-                            <div className="gdc-curriculum-nav-v2">
-                                <button className="gdc-nav-btn-v2" onClick={prevModule}>
+                        <div className="dgm-gdc-curriculum-v2-right">
+                            <div className="dgm-gdc-curriculum-nav-v2">
+                                <button className="dgm-gdc-nav-btn-v2" onClick={prevModule}>
                                     <FontAwesomeIcon icon={faChevronUp} />
                                 </button>
-                                <button className="gdc-nav-btn-v2" onClick={nextModule}>
+                                <button className="dgm-gdc-nav-btn-v2" onClick={nextModule}>
                                     <FontAwesomeIcon icon={faChevronDown} />
                                 </button>
                             </div>
 
-                            <div className="gdc-slider-v5-container">
+                            <div className="dgm-gdc-slider-v5-container">
                                 {sixMonthCurriculum.map((module, index) => {
                                     const isActive = index === currentModuleIndex;
                                     const isNext = index === (currentModuleIndex + 1) % sixMonthCurriculum.length;
@@ -746,23 +767,23 @@ const DigitaMarketingCourse = () => {
                                     else if (isNext) cardState = "bottom";
 
                                     return (
-                                        <div key={index} className={`gdc-curriculum-v5-card ${cardState}`}>
-                                            <div className="gdc-curriculum-v5-inner">
-                                                <div className="gdc-curriculum-v5-bg">
-                                                    <img src={module.bgImage} alt={module.title} className="gdc-curriculum-v5-img" />
-                                                    <div className="gdc-curriculum-v5-overlay"></div>
+                                        <div key={index} className={`dgm-gdc-curriculum-v5-card ${cardState}`}>
+                                            <div className="dgm-gdc-curriculum-v5-inner">
+                                                <div className="dgm-gdc-curriculum-v5-bg">
+                                                    <img src={module.bgImage} alt={module.title} className="dgm-gdc-curriculum-v5-img" />
+                                                    <div className="dgm-gdc-curriculum-v5-overlay"></div>
                                                 </div>
 
-                                                <div className="gdc-curriculum-v5-content">
-                                                    <div className="gdc-curriculum-v5-header">
-                                                        <span className="gdc-curriculum-v5-month">{module.month}</span>
-                                                        <span className="gdc-curriculum-v5-proj">Projects: {module.projects}</span>
+                                                <div className="dgm-gdc-curriculum-v5-content">
+                                                    <div className="dgm-gdc-curriculum-v5-header">
+                                                        <span className="dgm-gdc-curriculum-v5-month">{module.month}</span>
+                                                        <span className="dgm-gdc-curriculum-v5-proj">Projects: {module.projects}</span>
                                                     </div>
-                                                    <h3 className="gdc-curriculum-v5-title">{module.title}</h3>
-                                                    <div className="gdc-curriculum-v5-topics">
+                                                    <h3 className="dgm-gdc-curriculum-v5-title">{module.title}</h3>
+                                                    <div className="dgm-gdc-curriculum-v5-topics">
                                                         {module.topics.map((topic, tidx) => (
-                                                            <div key={tidx} className="gdc-curriculum-v5-topic">
-                                                                <FontAwesomeIcon icon={faCheck} className="gdc-curriculum-v5-check" /> {topic}
+                                                            <div key={tidx} className="dgm-gdc-curriculum-v5-topic">
+                                                                <FontAwesomeIcon icon={faCheck} className="dgm-gdc-curriculum-v5-check" /> {topic}
                                                             </div>
                                                         ))}
                                                     </div>
@@ -778,30 +799,34 @@ const DigitaMarketingCourse = () => {
             </section>
 
             {/* Tools & Resources - Interactive V2 Redesign */}
-            <section className="gdc-tools-v2">
-                <div className="gdc-container">
-                    <div className="gdc-tools-v2-header">
-                        <h2 className="gdc-tools-v2-title"> AI Tools & Resources</h2>
-                        <p className="gdc-tools-v2-subtitle">Master the industry's most powerful Digital Marketing workflow</p>
+            <section className="dgm-gdc-tools-v2">
+                <div className="dgm-gdc-container">
+                    <div className="dgm-gdc-tools-v2-header">
+                        <h2 className="dgm-gdc-tools-v2-title">Marketing Tools & Platforms</h2>
+                        <p className="dgm-gdc-tools-v2-subtitle">Master the industry's most powerful Digital Marketing workflow</p>
                     </div>
 
-                    <div className="gdc-tools-v2-layout">
-                        <div className="gdc-tools-sidebar">
-                            {["Ideas & UX", "AI Generative", "Validation", "Pro Workflow"].map((label, idx) => (
-                                <button key={idx} className={`gdc-tool-tab ${activeToolCategory === idx ? "active" : ""}`} onClick={() => setActiveToolCategory(idx)}>
+                    <div className="dgm-gdc-tools-v2-layout">
+                        <div className="dgm-gdc-tools-sidebar">
+                            {["SEO Tools", "Ad Platforms", "Social Media", "Analytics"].map((label, idx) => (
+                                <button key={idx} className={`dgm-gdc-tool-tab ${activeToolCategory === idx ? "active" : ""}`} onClick={() => setActiveToolCategory(idx)}>
                                     <span className="tab-number">0{idx + 1}</span>
                                     <span className="tab-label">{label}</span>
                                 </button>
                             ))}
                         </div>
 
-                        <div className="gdc-tools-main-display">
-                            <div className="gdc-pods-container" key={activeToolCategory}>
+                        <div className="dgm-gdc-tools-main-display">
+                            <div className="dgm-gdc-pods-container" key={activeToolCategory}>
                                 {toolsV2Data[activeToolCategory].map((tool, index) => (
-                                    <div key={index} className={`gdc-tool-pod pod-${index + 1}`}>
-                                        <div className="gdc-pod-inner">
-                                            <div className="gdc-pod-bg-image" style={{ background: tool.bg ? tool.bg : `url(${tool.img})`, backgroundPosition: 'center', backgroundSize: 'cover' }}></div>
-                                            <div className="gdc-pod-content">{activeToolCategory !== 0 ? <h4 className="gdc-pod-name">{tool.name}</h4> : null}</div>
+                                    <div key={index} className={`dgm-gdc-tool-pod pod-${index + 1}`}>
+                                        <div className="dgm-gdc-pod-inner">
+                                            <div className="dgm-gdc-pod-bg-image" style={{ background: tool.bg ? tool.bg : `url(${tool.img})`, backgroundPosition: 'center', backgroundSize: 'cover' }}></div>
+                                            <div className="dgm-gdc-pod-content">
+                                                <div className="dgm-gdc-pod-icon">{tool.icon}</div>
+                                                <h4 className="dgm-gdc-pod-name">{tool.name}</h4>
+                                                <p className="dgm-gdc-pod-desc">{tool.desc}</p>
+                                            </div>
                                         </div>
                                     </div>
                                 ))}
@@ -834,7 +859,7 @@ const DigitaMarketingCourse = () => {
                                     })()}
                                     <div className="dgm-new-content">
                                         <h3>{benefit.title}</h3>
-                                        <p>{benefit.description.substring(0, 70)}...</p>
+                                        <p>{benefit.description}</p>
                                     </div>
                                 </div>
                             ))}
@@ -855,14 +880,14 @@ const DigitaMarketingCourse = () => {
                                     })()}
                                     <div className="dgm-new-content">
                                         <h3>{benefit.title}</h3>
-                                        <p>{benefit.description.substring(0, 70)}...</p>
+                                        <p>{benefit.description}</p>
                                     </div>
                                 </div>
                             ))}
                         </div>
 
                         {/* Row 3: 2 Original Cards */}
-                        <div className="dgm-benefits-row dgm-row-2">
+                        <div className="dgm-benefits-row dgm-row-2" style={{ gap: "50px" }}>
                             {benefits.slice(8, 10).map((benefit, index) => (
                                 <div key={index} className="dgm-new-benefit-card">
                                     {(() => {
@@ -876,7 +901,7 @@ const DigitaMarketingCourse = () => {
                                     })()}
                                     <div className="dgm-new-content">
                                         <h3>{benefit.title}</h3>
-                                        <p>{benefit.description.substring(0, 70)}...</p>
+                                        <p>{benefit.description}</p>
                                     </div>
                                 </div>
                             ))}
@@ -885,102 +910,121 @@ const DigitaMarketingCourse = () => {
 
                     {/* Floating Cards - Positioned Independently */}
                     {/* Left Bottom Floating Card */}
-                    <div className="dgm-floating-benefit-card dgm-floating-card-left">
+                    <div
+                        className="dgm-floating-benefit-card dgm-floating-card-left"
+                        style={{
+                            left: "calc(50% - 505px)", // Move left or right (e.g. "100px", "5%", "calc(50% - 505px)")
+                            top: "320px",              // Moves the card up and down
+                            bottom: "0px",             // Stretches the card to the bottom 
+                            width: "190px",            // Width of the card
+                            height: "auto",
+                            justifyContent: "center",
+                            padding: "18px"
+                        }}
+                    >
                         <div className="dgm-new-icon" style={{ background: hexToRgba("#BAE6FD", 0.18), color: "#BAE6FD" }}>
                             <FontAwesomeIcon icon={faStar} />
                         </div>
                         <div className="dgm-new-content">
                             <h3>Industry Recognition</h3>
-                            <p>Get certified with globally recognized credentials that validate your expertise and boost your career prospects worldwide...</p>
+                            <p>Get certified with globally recognized credentials. Our prestigious certification proves to top-tier employers that you have mastered modern marketing strategies and hands-on campaign execution.</p>
                         </div>
                     </div>
 
                     {/* Right Bottom Floating Card */}
-                    <div className="dgm-floating-benefit-card dgm-floating-card-right">
+                    <div className="dgm-floating-benefit-card dgm-floating-card-right" style={{
+                        right: "calc(50% - 505px)", // Move left or right (e.g. "100px", "5%", "calc(50% - 505px)")
+                        top: "320px",              // Moves the card up and down
+                        bottom: "0px",             // Stretches the card to the bottom 
+                        width: "190px",            // Width of the card
+                        height: "auto",
+                        justifyContent: "center",
+                        padding: "18px"
+                    }}>
                         <div className="dgm-new-icon" style={{ background: hexToRgba("#C4B5FD", 0.18), color: "#C4B5FD" }}>
                             <FontAwesomeIcon icon={faTrophy} />
                         </div>
                         <div className="dgm-new-content">
                             <h3>Lifetime Updates</h3>
-                            <p>Stay ahead with free lifetime access to all future course updates, new modules, and industry-relevant content additions...</p>
+                            <p>Stay ahead with free lifetime access to all future course updates and industry-relevant content additions. You will always have direct access to the latest platform changes and cutting-edge tools to remain a competitive expert.</p>
                         </div>
                     </div>
                 </div>
             </section>
 
             {/* Certificate Section with Simplified Lock Overlay */}
-            <section className="gdc-section gdc-dark-bg">
-                <div className="gdc-container">
-                    <h2 className="gdc-section-title">Professional Certification</h2>
-                    <p className="gdc-section-subtitle">Earn a globally recognized certificate upon completion</p>
+            <section className="dgm-gdc-section dgm-gdc-dark-bg">
+                <div className="dgm-gdc-container">
+                    <h2 className="dgm-gdc-section-title">Professional Certification</h2>
+                    <p className="dgm-gdc-section-subtitle">Earn a globally recognized certificate upon completion</p>
 
-                    <div className="gdc-certificate-single">
-                        <div className="gdc-certificate-image-wrapper">
+                    <div className="dgm-gdc-certificate-single">
+                        <div className="dgm-gdc-certificate-image-wrapper">
                             <img
                                 src={certificate.image}
                                 alt="UI/UX Design Mastery Certificate"
-                                className="gdc-certificate-image"
+                                className="dgm-gdc-certificate-image"
                                 onError={(e) => {
                                     e.target.onerror = null;
                                     e.target.src = "https://images.unsplash.com/photo-1587440871875-191322ee64b0?auto=format&fit=crop&w=1200&q=80";
                                 }}
                             />
 
-                            <div className="gdc-certificate-lock-overlay">
-                                <div className="gdc-lock-icon">
+                            <div className="dgm-gdc-certificate-lock-overlay">
+                                <div className="dgm-gdc-lock-icon">
                                     <FontAwesomeIcon icon={faLock} />
                                 </div>
-                                <div className="gdc-lock-text">Certificate Locked</div>
+                                <div className="dgm-gdc-lock-text">Certificate Locked</div>
                             </div>
 
-                            <div className="gdc-certificate-overlay">
-                                <span className="gdc-certificate-badge">Your Professional Certificate Template</span>
+                            <div className="dgm-gdc-certificate-overlay">
+                                <span className="dgm-gdc-certificate-badge">Your Professional Certificate Template</span>
                             </div>
-                            <div className="gdc-certificate-download-note">
+                            <div className="dgm-gdc-certificate-download-note">
                                 <p>This is a sample template. Your actual certificate will include your name, course details, and issue date.</p>
                             </div>
                         </div>
 
-                        <div className="gdc-certificate-info-single">
-                            <h3 className="gdc-certificate-title-single">{certificate.title}</h3>
-                            <p className="gdc-certificate-desc-single">{certificate.description}</p>
+                        <div className="dgm-gdc-certificate-info-single">
+                            <h3 className="dgm-gdc-certificate-title-single">{certificate.title}</h3>
+                            <p className="dgm-gdc-certificate-desc-single">{certificate.description}</p>
 
-                            <div className="gdc-certificate-features-single">
+                            <div className="dgm-gdc-certificate-features-single">
                                 {certificate.features.map((feature, index) => (
-                                    <div key={index} className="gdc-certificate-feature-item-single">
-                                        <FontAwesomeIcon icon={faCheckCircle} /> {feature.replace("✅ ", "")}
+                                    <div key={index} className="dgm-gdc-certificate-feature-item-single">
+                                        <FontAwesomeIcon icon={faCheckCircle} /> {feature.replace("? ", "")}
                                     </div>
                                 ))}
                             </div>
 
-                            <div className="gdc-certificate-benefits">
-                                <div className="gdc-benefit">
-                                    <span className="gdc-benefit-icon">
+                            <div className="dgm-gdc-certificate-benefits">
+                                <div className="dgm-gdc-benefit">
+                                    <span className="dgm-gdc-benefit-icon">
                                         <FontAwesomeIcon icon={faGraduationCap} />
                                     </span>
-                                    <span className="gdc-benefit-text">Enhances your professional credibility</span>
+                                    <span className="dgm-gdc-benefit-text">Enhances your professional credibility</span>
                                 </div>
-                                <div className="gdc-benefit">
-                                    <span className="gdc-benefit-icon">
+                                <div className="dgm-gdc-benefit">
+                                    <span className="dgm-gdc-benefit-icon">
                                         <FontAwesomeIcon icon={faBriefcase} />
                                     </span>
-                                    <span className="gdc-benefit-text">Increases job opportunities by 75%</span>
+                                    <span className="dgm-gdc-benefit-text">Increases job opportunities by 75%</span>
                                 </div>
-                                <div className="gdc-benefit">
-                                    <span className="gdc-benefit-icon">
+                                <div className="dgm-gdc-benefit">
+                                    <span className="dgm-gdc-benefit-icon">
                                         <FontAwesomeIcon icon={faGlobe} />
                                     </span>
-                                    <span className="gdc-benefit-text">Globally recognized by employers</span>
+                                    <span className="dgm-gdc-benefit-text">Globally recognized by employers</span>
                                 </div>
-                                <div className="gdc-benefit">
-                                    <span className="gdc-benefit-icon">
+                                <div className="dgm-gdc-benefit">
+                                    <span className="dgm-gdc-benefit-icon">
                                         <FontAwesomeIcon icon={faCheckCircle} />
                                     </span>
-                                    <span className="gdc-benefit-text">QR code verification for authenticity</span>
+                                    <span className="dgm-gdc-benefit-text">QR code verification for authenticity</span>
                                 </div>
                             </div>
 
-                            <div className="gdc-certificate-instructions">
+                            <div className="dgm-gdc-certificate-instructions">
                                 <h4>
                                     <FontAwesomeIcon icon={faCertificate} /> Certificate Details:
                                 </h4>
@@ -1005,25 +1049,25 @@ const DigitaMarketingCourse = () => {
             </section>
 
             {/* Premium Testimonials - V9 Grid Layout */}
-            <section className="gdc-testi-grid-section">
-                <div className="gdc-container">
-                    <div className="gdc-testi-grid-wrapper">
-                        <div className="gdc-testi-grid-left">
-                            <h2 className="gdc-testi-main-title">Experience Learning Like Never Before</h2>
-                            <p className="gdc-testi-subtitle">
+            <section className="dgm-gdc-testi-grid-section">
+                <div className="dgm-gdc-container">
+                    <div className="dgm-gdc-testi-grid-wrapper">
+                        <div className="dgm-gdc-testi-grid-left">
+                            <h2 className="dgm-gdc-testi-main-title">Experience Learning Like Never Before</h2>
+                            <p className="dgm-gdc-testi-subtitle">
                                 Discover personalized, practical learning that prepares you for real product teams. Read stories from learners who transformed their Marketing careers with our mentorship.
                             </p>
                         </div>
 
-                        <div className="gdc-testi-grid-right">
+                        <div className="dgm-gdc-testi-grid-right">
                             <div
-                                className="gdc-testi-card-top"
+                                className="dgm-gdc-testi-card-top"
                                 style={{ backgroundImage: "url(https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=800)" }}
                             >
-                                <div className="gdc-testi-card-overlay">
-                                    <div className="gdc-testi-quote-content fade-in-anim" key={testiSetIndex}>
+                                <div className="dgm-gdc-testi-card-overlay">
+                                    <div className="dgm-gdc-testi-quote-content fade-in-anim" key={testiSetIndex}>
                                         <p>"{activeTestimonials[0]?.text}"</p>
-                                        <div className="gdc-testi-author">
+                                        <div className="dgm-gdc-testi-author">
                                             <img src={activeTestimonials[0]?.avatar} alt={activeTestimonials[0]?.name} />
                                             <div>
                                                 <h4>{activeTestimonials[0]?.name}</h4>
@@ -1034,11 +1078,11 @@ const DigitaMarketingCourse = () => {
                                 </div>
                             </div>
 
-                            <div className="gdc-testi-squares-row">
-                                <div className="gdc-testi-card-bottom-left">
-                                    <div className="gdc-testi-quote-content fade-in-anim" key={testiSetIndex}>
+                            <div className="dgm-gdc-testi-squares-row">
+                                <div className="dgm-gdc-testi-card-bottom-left">
+                                    <div className="dgm-gdc-testi-quote-content fade-in-anim" key={testiSetIndex}>
                                         <p>"{activeTestimonials[1]?.text}"</p>
-                                        <div className="gdc-testi-author">
+                                        <div className="dgm-gdc-testi-author">
                                             <img src={activeTestimonials[1]?.avatar} alt={activeTestimonials[1]?.name} />
                                             <div>
                                                 <h4>{activeTestimonials[1]?.name}</h4>
@@ -1048,10 +1092,10 @@ const DigitaMarketingCourse = () => {
                                     </div>
                                 </div>
 
-                                <div className="gdc-testi-card-bottom-right">
-                                    <div className="gdc-testi-quote-content fade-in-anim" key={testiSetIndex}>
+                                <div className="dgm-gdc-testi-card-bottom-right">
+                                    <div className="dgm-gdc-testi-quote-content fade-in-anim" key={testiSetIndex}>
                                         <p>"{activeTestimonials[2]?.text}"</p>
-                                        <div className="gdc-testi-author">
+                                        <div className="dgm-gdc-testi-author">
                                             <img src={activeTestimonials[2]?.avatar} alt={activeTestimonials[2]?.name} />
                                             <div>
                                                 <h4>{activeTestimonials[2]?.name}</h4>
@@ -1067,13 +1111,13 @@ const DigitaMarketingCourse = () => {
             </section>
 
             {/* Enroll Now Section (V2 Expansion) */}
-            <section className="gdc-dark-enrollment-FIXED" ref={formSectionRef}>
-                <div className="gdc-container">
-                    <div className="gdc-floating-icons-v2">
+            <section className="dgm-gdc-dark-enrollment-FIXED" ref={formSectionRef}>
+                <div className="dgm-gdc-container">
+                    <div className="dgm-gdc-floating-icons-v2">
                         {floatingIcons.map((icon, index) => (
                             <div
                                 key={index}
-                                className="gdc-v2-float-icon"
+                                className="dgm-gdc-v2-float-icon"
                                 style={{
                                     animationDelay: `${index * 0.5}s`,
                                     left: `${(index * 12.5) % 100}%`,
@@ -1085,80 +1129,80 @@ const DigitaMarketingCourse = () => {
                         ))}
                     </div>
 
-                    <section className="gdc-v3-community-banner">
-                        <div className="gdc-banner-grid-overlay"></div>
-                        <div className="gdc-banner-decor-sparkle sp-1">✦</div>
-                        <div className="gdc-banner-decor-sparkle sp-2">✦</div>
-                        <div className="gdc-banner-decor-sparkle sp-3">✦</div>
-                        <div className="gdc-banner-decor-circle cir-1"></div>
-                        <div className="gdc-banner-decor-circle cir-2"></div>
+                    <section className="dgm-gdc-v3-community-banner">
+                        <div className="dgm-gdc-banner-grid-overlay"></div>
+                        <div className="dgm-gdc-banner-decor-sparkle sp-1">✦</div>
+                        <div className="dgm-gdc-banner-decor-sparkle sp-2">✦</div>
+                        <div className="dgm-gdc-banner-decor-sparkle sp-3">✦</div>
+                        <div className="dgm-gdc-banner-decor-circle cir-1"></div>
+                        <div className="dgm-gdc-banner-decor-circle cir-2"></div>
 
-                        <div className="gdc-banner-container">
-                            <div className="gdc-banner-content">
-                                <h2 className="gdc-banner-title">
+                        <div className="dgm-gdc-banner-container">
+                            <div className="dgm-gdc-banner-content">
+                                <h2 className="dgm-gdc-banner-title">
                                     Start Your Marketing <br /> Journey Today
                                 </h2>
 
-                                <div className="gdc-banner-ratings">
-                                    <div className="gdc-rating-box">
-                                        <div className="gdc-stars">★★★★★</div>
-                                        <div className="gdc-rating-text">4.9 / 5 rating</div>
-                                        <div className="gdc-rating-source">Coursezilla</div>
+                                <div className="dgm-gdc-banner-ratings">
+                                    <div className="dgm-gdc-rating-box">
+                                        <div className="dgm-gdc-stars">★★★★★</div>
+                                        <div className="dgm-gdc-rating-text">4.9 / 5 rating</div>
+                                        <div className="dgm-gdc-rating-source">Coursezilla</div>
                                     </div>
-                                    <div className="gdc-rating-box">
-                                        <div className="gdc-stars">★★★★★</div>
-                                        <div className="gdc-rating-text">4.8 / 5 rating</div>
-                                        <div className="gdc-rating-source">Globalskills</div>
+                                    <div className="dgm-gdc-rating-box">
+                                        <div className="dgm-gdc-stars">★★★★★</div>
+                                        <div className="dgm-gdc-rating-text">4.8 / 5 rating</div>
+                                        <div className="dgm-gdc-rating-source">Globalskills</div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div className="gdc-ray gdc-ray-left-top">
-                                <div className="gdc-ray-trail"></div>
-                                <div className="gdc-ray-box">
-                                    <div className="gdc-ray-icon icon-email">
+                            <div className="dgm-gdc-ray dgm-gdc-ray-left-top">
+                                <div className="dgm-gdc-ray-trail"></div>
+                                <div className="dgm-gdc-ray-box">
+                                    <div className="dgm-gdc-ray-icon icon-email">
                                         <FontAwesomeIcon icon={faEnvelope} />
                                     </div>
-                                    <div className="gdc-ray-content">
+                                    <div className="dgm-gdc-ray-content">
                                         <h4>Email Support</h4>
                                         <p>hello@engloraylearn.com</p>
                                     </div>
                                 </div>
                             </div>
 
-                            <div className="gdc-ray gdc-ray-left-bottom">
-                                <div className="gdc-ray-trail"></div>
-                                <div className="gdc-ray-box">
-                                    <div className="gdc-ray-icon icon-whatsapp">
+                            <div className="dgm-gdc-ray dgm-gdc-ray-left-bottom">
+                                <div className="dgm-gdc-ray-trail"></div>
+                                <div className="dgm-gdc-ray-box">
+                                    <div className="dgm-gdc-ray-icon icon-whatsapp">
                                         <FontAwesomeIcon icon={faWhatsapp} />
                                     </div>
-                                    <div className="gdc-ray-content">
+                                    <div className="dgm-gdc-ray-content">
                                         <h4>WHATSAPP</h4>
                                         <p>+91 63681 75990</p>
                                     </div>
                                 </div>
                             </div>
 
-                            <div className="gdc-ray gdc-ray-right-top">
-                                <div className="gdc-ray-trail"></div>
-                                <div className="gdc-ray-box">
-                                    <div className="gdc-ray-icon icon-center">
+                            <div className="dgm-gdc-ray dgm-gdc-ray-right-top">
+                                <div className="dgm-gdc-ray-trail"></div>
+                                <div className="dgm-gdc-ray-box">
+                                    <div className="dgm-gdc-ray-icon icon-center">
                                         <FontAwesomeIcon icon={faMapMarkerAlt} />
                                     </div>
-                                    <div className="gdc-ray-content">
+                                    <div className="dgm-gdc-ray-content">
                                         <h4>Learning Center</h4>
                                         <p>Madurai, Tamil Nadu</p>
                                     </div>
                                 </div>
                             </div>
 
-                            <div className="gdc-ray gdc-ray-right-bottom">
-                                <div className="gdc-ray-trail"></div>
-                                <div className="gdc-ray-box">
-                                    <div className="gdc-ray-icon icon-chat">
+                            <div className="dgm-gdc-ray dgm-gdc-ray-right-bottom">
+                                <div className="dgm-gdc-ray-trail"></div>
+                                <div className="dgm-gdc-ray-box">
+                                    <div className="dgm-gdc-ray-icon icon-chat">
                                         <FontAwesomeIcon icon={faComments} />
                                     </div>
-                                    <div className="gdc-ray-content">
+                                    <div className="dgm-gdc-ray-content">
                                         <h4>Quick Chat</h4>
                                         <p>Live Chat Available</p>
                                     </div>
@@ -1225,10 +1269,11 @@ const DigitaMarketingCourse = () => {
                                                 onChange={handleInputChange}
                                                 required
                                             >
-                                                <option value="UI/UX Design Mastery">UI/UX Design Mastery</option>
-                                                <option value="UX Research & Strategy">UX Research & Strategy</option>
-                                                <option value="Design Systems & UI">Design Systems & UI</option>
-                                                <option value="Mobile App UI/UX">Mobile App UI/UX</option>
+                                                <option value="Digital Marketing">Digital Marketing</option>
+                                                <option value="Graphic Design">Graphic Design</option>
+                                                <option value="Ui/Ux Design">Ui/Ux Design</option>
+                                                <option value="Java Full Stack">Java Full Stack</option>
+                                                <option value="Drawing">Drawing</option>
                                             </select>
                                         </div>
                                     </div>
@@ -1244,12 +1289,12 @@ const DigitaMarketingCourse = () => {
             </section>
 
             {showSuccess && (
-                <div className="gdc-toast">
-                    <div className="gdc-toast-content">
-                        <div className="gdc-toast-icon">
+                <div className="dgm-gdc-toast">
+                    <div className="dgm-gdc-toast-content">
+                        <div className="dgm-gdc-toast-icon">
                             <FontAwesomeIcon icon={faTrophy} />
                         </div>
-                        <div className="gdc-toast-message">
+                        <div className="dgm-gdc-toast-message">
                             <h4>Enrollment Successful!</h4>
                             <p>Welcome to UI/UX Design Mastery! Our team will contact you within 24 hours.</p>
                         </div>
