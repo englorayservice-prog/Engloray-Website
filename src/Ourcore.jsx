@@ -53,7 +53,7 @@ const App = () => {
   }, []);
 
   return (
-    <div className="min-h-screen relative flex flex-col items-center justify-center overflow-hidden w-full">
+    <div className="our-core-main-wrapper min-h-screen relative flex flex-col items-center justify-center overflow-hidden w-full">
       {/* Background Video */}
       <video
         autoPlay

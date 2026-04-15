@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Sigmar+One&display=swap');
+
+.homepage-master {
+    position: relative;
+}
+
+/* STANDALONE OVERLAY SECTION */
+.homepage-intro-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mask-svg {
+    width: 100%;
+    height: 100%;
+}
+
+.mask-svg text {
+    font-family: 'Bungee', cursive;
+    letter-spacing: -2px;
+}

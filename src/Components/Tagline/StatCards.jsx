@@ -1,14 +1,19 @@
 import React from 'react';
-import './StatCards.css';
-import educationIcon from '../../assets/education-icon.png';
 import { useNavigate } from 'react-router-dom';
-
-
+import { motion } from 'framer-motion';
+import educationIcon from '../../assets/education-icon.png';
+import './StatCards.css';
 
 const StatCards = () => {
     const navigate = useNavigate();
     return (
-        <div className="bphs-stat-cards-container">
+        <motion.div 
+            className="bphs-stat-cards-container"
+            initial={{ opacity: 0, y: 80, scale: 0.98 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.05 }}
+            transition={{ duration: 2.2, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+        >
             <div className="bphs-stat-left-column">
                 <h2 className="bphs-stat-heading">Branding for Bold Businesses</h2>
                 <div className="bphs-scrolling-image-overflow">
@@ -166,7 +171,7 @@ const StatCards = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 

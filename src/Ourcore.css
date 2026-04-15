@@ -1281,3 +1281,121 @@ html {
   margin: 0 auto;
   line-height: 1.6;
 }
+
+/* laptop Resolution Fix: Clearing overlap with Vision/Mission cards above */
+@media screen and (min-width: 1025px) and (max-width: 1600px) {
+  .our-core-main-wrapper {
+    margin-top: 15px !important; /* Moved significantly up */
+  }
+  .core-values-header {
+    margin-top: 60px !important;
+    margin-bottom: -170px !important; /* Pulled content up into the header space */
+  }
+}
+/* Mobile Responsiveness: Vertical Stack & No Green Lines (<435px) */
+@media screen and (max-width: 435px) {
+  .our-core-main-wrapper svg { display: none !important; }
+  
+  .our-core-main-wrapper {
+    height: auto !important;
+    min-height: 100vh !important;
+    overflow: visible !important;
+    display: block !important;
+  }
+
+  .our-core-main-wrapper video {
+    height: 100% !important;
+    min-height: 100vh !important;
+    object-fit: cover !important;
+  }
+
+  .our-core-main-wrapper .rounded-xl.overflow-hidden { aspect-ratio: auto !important; height: auto !important; overflow: visible !important; display: block !important; }
+  .our-core-main-wrapper div[style*="scale"] { transform: none !important; width: 100% !important; height: auto !important; position: static !important; display: block !important; }
+  .our-core-main-wrapper .w-full.h-full.relative.font-sans { height: auto !important; display: block !important; position: static !important; }
+  .our-core-main-wrapper .absolute.inset-0.z-20 { 
+    position: relative !important; 
+    display: flex !important; 
+    flex-direction: column !important; 
+    align-items: center !important; 
+    gap: 5px !important; 
+    padding: 0px 10px 40px 10px !important; 
+    height: auto !important; 
+  }
+  .our-core-main-wrapper .absolute.flex.items-center, .our-core-main-wrapper .absolute.bg-white.rounded-2xl { 
+    position: relative !important; 
+    top: auto !important; 
+    left: auto !important; 
+    right: auto !important; 
+    bottom: auto !important; 
+    transform: none !important; 
+    margin: 5px auto !important; 
+    width: 95% !important; 
+    max-width: 320px !important; 
+    opacity: 1 !important; 
+    z-index: 20 !important; 
+  }
+  
+  /* Enhance Icon visibility in nodes */
+  .our-core-main-wrapper .absolute.flex.items-center .w-8.h-8,
+  .our-core-main-wrapper .absolute.flex.items-center .w-10.h-10 {
+    width: 42px !important;
+    height: 42px !important;
+    flex-shrink: 0 !important;
+  }
+  .our-core-main-wrapper .absolute.flex.items-center svg {
+    width: 20px !important;
+    height: 20px !important;
+    display: block !important;
+  }
+
+  .our-core-main-wrapper .absolute.top-1\/2.-translate-y-1\/2 { 
+    position: relative !important; 
+    top: auto !important; 
+    left: auto !important; 
+    transform: none !important; 
+    margin-bottom: 0px !important; 
+    margin-top: -30px !important; /* Pull up towards title */
+    order: -2 !important; 
+  }
+  .our-core-main-wrapper .absolute.bg-white.rounded-2xl { 
+    height: auto !important; 
+    min-height: 250px !important; 
+    order: -1 !important; 
+    margin: 5px auto !important; 
+    max-width: 360px !important; 
+  }
+  
+  /* Dashboard Header AI-Driven title adjustment */
+  .our-core-main-wrapper .h-14.flex.items-center h2 {
+    font-size: 13px !important;
+    margin-bottom: 0 !important;
+  }
+
+  .our-core-main-wrapper .p-5.grid.grid-cols-2 { 
+    display: flex !important; 
+    flex-direction: column !important; 
+    padding: 10px !important; 
+    gap: 5px !important; 
+  }
+  .our-core-main-wrapper .col-span-2 p { 
+    min-width: unset !important; 
+    width: 100% !important; 
+    font-size: 13px !important; 
+    line-height: 1.3 !important; 
+    margin-top: -10px !important;
+  }
+  .our-core-main-wrapper .core-values-header { 
+    margin-bottom: -10px !important; 
+    margin-top: 30px !important; 
+    position: relative !important;
+    z-index: 30 !important;
+  }
+  .our-core-main-wrapper .core-values-header h2 { 
+    font-size: 1.8rem !important; 
+    margin-bottom: 5px !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .our-core-main-wrapper .absolute.inset-0.z-20 { padding-top: 140px !important; }
+}

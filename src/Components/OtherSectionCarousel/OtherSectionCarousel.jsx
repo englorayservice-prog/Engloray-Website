@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import './OtherSectionCarousel.css';
 
 // Import your existing images
@@ -112,7 +113,14 @@ const OtherSectionCarousel = () => {
 
   return (
 
-    <div className="compact-carousel-section" ref={sectionRef}>
+    <motion.div 
+      className="compact-carousel-section" 
+      ref={sectionRef}
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.1 }}
+      transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+    >
       <div className="compact-carousel-container">
         {/* <div className="carousel-header">
           <h2>Explore Our Services</h2>
@@ -202,7 +210,7 @@ const OtherSectionCarousel = () => {
           <span className="marquee-text">{marqueeText}</span>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

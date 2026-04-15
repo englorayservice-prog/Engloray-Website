@@ -102,7 +102,7 @@
 /* Mobile Responsive */
 @media (max-width: 768px) {
   .clients-section {
-    padding: 40px 0;
+    padding: 0 0 40px 0 !important;
   }
   
   .clients-title {
@@ -145,7 +145,7 @@
 
 @media (max-width: 480px) {
   .clients-section {
-    padding: 30px 0;
+    padding: 0 0 30px 0 !important;
   }
   
   .clients-title {

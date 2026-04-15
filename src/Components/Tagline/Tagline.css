@@ -11,7 +11,8 @@
 
   /* Create a stacking context */
   z-index: 1;
-  margin-top: -40px;
+  margin-top: 0;
+  /* Removed global negative margin that caused cut-off */
   overflow: visible;
 }
 
@@ -128,9 +129,15 @@
   }
 
   .tagline-container {
-    padding: 4.16vw 3.125vw;
-    /* 80px 60px */
+    padding: 80px 60px;
     gap: 1.25vw;
+  }
+}
+
+/* Apply negative margin ONLY for Desktop */
+@media screen and (min-width: 1201px) {
+  .tagline-section {
+    margin-top: -40px;
   }
 }
 
@@ -395,7 +402,8 @@
 
 @media (max-width: 768px) {
   .tagline-container {
-    padding: 60px 20px;
+    padding: 80px 20px 60px 20px !important;
+    /* Increased top padding to avoid nav cut-off */
     min-height: 80vh;
   }
 
@@ -427,8 +435,26 @@
   }
 
   .tagline-bottom-text {
-    display: none;
-    /* Hide specific large decorative element on mobile */
+    display: flex !important;
+    /* Restore VERIFIED box at tablet size */
+    width: 20rem !important;
+    font-size: 1.6rem !important;
+    height: 5.5rem !important;
+    top: 68% !important;
+    left: 0 !important;
+    padding-left: 10px !important;
+  }
+
+  .tagline-bottom-text span {
+    font-size: 2rem !important;
+  }
+
+  .tagline-long-arrow {
+    width: 80px !important;
+  }
+
+  .tagline-icon {
+    height: 40px !important;
   }
 
   .scroll-indicator-container {
@@ -444,5 +470,42 @@
 @media (max-width: 480px) {
   .tagline-title {
     font-size: 2rem;
+  }
+}
+
+/* Laptop Resolution Fix: Move Verified content slightly up */
+@media screen and (min-width: 1025px) and (max-width: 1600px) {
+  .tagline-bottom-text {
+    top: 78% !important;
+    /* Moves the box up slightly */
+  }
+}
+
+/* Small Device Resolution Fix: Move buttons up and adjust Verified box */
+@media (max-width: 380px) {
+  .tagline-container {
+    padding-top: 40px !important;
+    gap: 0.8rem !important;
+  }
+
+  .tagline-buttons {
+    margin-top: 5px !important;
+    gap: 10px !important;
+  }
+
+  .tagline-bottom-text {
+    top: 75% !important;
+    /* Move box down slightly to give buttons more room above */
+    width: 18rem !important;
+    font-size: 1.4rem !important;
+    height: 5rem !important;
+  }
+
+  .tagline-bottom-text span {
+    font-size: 1.8rem !important;
+  }
+
+  .tagline-long-arrow {
+    width: 60px !important;
   }
 }

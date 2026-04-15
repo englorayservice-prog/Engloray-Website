@@ -42,7 +42,7 @@ const NavigationBar = () => {
     { name: 'Project Learning', href: '/projectBasedLearningPage' },
     { name: 'Careers', href: '/CareersPage' },
     { name: 'Workshops', href: '/workshopsPage' },
-    { name: 'Corporatetraining', href: '/corporatetrainingpage' }
+    { name: 'Corporatetraining', href: '/corporateTraining' }
   ];
 
   // Function to scroll to section with retry logic

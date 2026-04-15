@@ -81,8 +81,13 @@ import RayMartPageTwo from './Pages/Sub Pages/RayMartPageTwo/RayMartPageTwo';
 import RayMartPageThree from './Pages/Sub Pages/RayMartPageThree/RayMartPageThree';
 import RaymartPageFour from './Pages/Sub Pages/FaqRaymart/FaqRaymart';
 import ContactPage from './Pages/Sub Pages/ContactPage/ContactPage';
+import StatsAndBenefits from './Pages/Sub Pages/StatsAndBenefits/StatsAndBenefits';
+import BusinessSuiteAI from './Pages/Sub Pages/BusinessSuiteAI/BusinessSuiteAI';
+import EnglorayShowcase from './Pages/Sub Pages/EnglorayShowcase/EnglorayShowcase';
 
 
+
+import HomePage from './Pages/HomePage/HomePage';
 
 function App() {
   return (
@@ -90,24 +95,7 @@ function App() {
     <div className="App">
       <CustomScrollbar />
       <Routes>
-        <Route path='/' element ={
-          <>
-            <TopNavBar/>
-            <TwoLineNavbar/>
-            <Tagline/>
-            <OtherSectionCarousel/>
-            <VisionMission/>
-            <Ourcore/>
-            <DoubleMarquees/>
-            <BusinessBoost/>
-            <About/>
-            <CoreServices/>
-            <Testimonials/>
-            <MarqueeBrands/>
-            <Footer/>
-            <BackToTopArrow/>
-          </>
-        } />
+        <Route path='/' element={<HomePage />} />
           <Route path="/brandingPage" element={<BrandingDesigning />} />
           <Route path="/developmentPage" element={<AppWebDev />} />
           <Route path="/marketingPage" element={<DigitalMarketing />} />
@@ -191,6 +179,8 @@ function App() {
           <Route path="/raymartPageThree" element={<RayMartPageThree />} />
           <Route path='/raymartPageFour' element={<RaymartPageFour />} />
           <Route path="/contactPage" element={<ContactPage />} />
+          <Route path="/businessSuiteAiPage" element={<BusinessSuiteAI />} />
+        <Route path="/showcase" element={<EnglorayShowcase />} />
 
 
 

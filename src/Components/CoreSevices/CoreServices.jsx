@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useLayoutEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUp, faTicketSimple } from '@fortawesome/free-solid-svg-icons';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './CoreServices.css';
 
 import designingImg from '../../assets/core_services/designing.png';
@@ -10,6 +12,8 @@ import saasImg from '../../assets/core_services/saas.png';
 import brandingImg from '../../assets/brandinganddesignkit.png';
 import analyticsImg from '../../assets/Data-Analytics.png';
 import aiProductImg from '../../assets/Ai-Products.png';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const brandingIcon = "";
 const developmentIcon = "";
@@ -21,6 +25,7 @@ const CoreServices = () => {
   const navigate = useNavigate();
   const [currentIndex, setCurrentIndex] = useState(1);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const sectionRef = useRef(null);
 
   const minIndex = 1;
   const maxIndex = 3; // services.length - 3 (6 - 3 = 3) for 4 visible cards
@@ -88,6 +93,32 @@ const CoreServices = () => {
     }
   ];
 
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      // Animate title and subtitle
+      gsap.fromTo(".carousel-title, .carousel-subtitle",
+        {
+          y: 80,
+          opacity: 0
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1.2,
+          ease: "power4.out",
+          stagger: 0.15,
+          scrollTrigger: {
+            trigger: ".carousel-header",
+            start: "top 85%",
+            toggleActions: "restart none none restart"
+          }
+        }
+      );
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   useEffect(() => {
     let interval;
 
@@ -124,6 +155,7 @@ const CoreServices = () => {
   return (
     <section
       id="CoreServices"
+      ref={sectionRef}
       className="services-carousel-section"
       onMouseEnter={() => setIsAutoPlaying(false)}
       onMouseLeave={() => setIsAutoPlaying(true)}

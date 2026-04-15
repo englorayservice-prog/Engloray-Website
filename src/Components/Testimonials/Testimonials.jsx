@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useLayoutEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './Testimonials.css';
 
+// ... (rest of imports unchanged) ...
 // Import unique business logos and student avatars
 import logoAmico from '../../assets/logos/amico-Photoroom.png';
 import logoThulasi from '../../assets/logos/thulasi-Photoroom.png';
@@ -29,8 +32,39 @@ import cartoonFemale2 from '../../assets/testimonials/cartoon_female_2.png';
 import cartoonMale3 from '../../assets/testimonials/cartoon_male_3.png';
 import cartoonFemale3 from '../../assets/testimonials/cartoon_female_3.png';
 
+gsap.registerPlugin(ScrollTrigger);
+
 const Testimonials = () => {
+  const sectionRef = useRef(null);
+  
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      // Animate title and description from bottom
+      gsap.fromTo(".tmls-testimonials-title, .tmls-testimonials-description",
+        {
+          y: 80,
+          opacity: 0
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1.2,
+          ease: "power4.out",
+          stagger: 0.15,
+          scrollTrigger: {
+            trigger: ".tmls-testimonials-left",
+            start: "top 85%",
+            toggleActions: "restart none none restart"
+          }
+        }
+      );
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   const testimonials = [
+// ... (rest of the array stays as is)
     {
       id: 1,
       name: "Amico Food Products",
@@ -180,7 +214,7 @@ const Testimonials = () => {
   const allTestimonials = [...testimonials, ...testimonials];
 
   return (
-    <section id="tmls-Testimonials" className="tmls-testimonials-section">
+    <section id="tmls-Testimonials" ref={sectionRef} className="tmls-testimonials-section">
       <div className="tmls-testimonials-container">
         {/* Left Side - Content */}
         <div className="tmls-testimonials-left">

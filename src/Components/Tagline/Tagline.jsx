@@ -1,7 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Tagline.css';
+import { motion } from 'framer-motion';
 import StatCards from './StatCards';
+import './Tagline.css';
 
 const Tagline = () => {
   const navigate = useNavigate();
@@ -9,7 +10,13 @@ const Tagline = () => {
   return (
     <>
       <section className="tagline-section" id='tagline'>
-        <div className="tagline-container">
+        <motion.div 
+          className="tagline-container"
+          initial={{ opacity: 0, y: 60, scale: 0.98 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, amount: 0.05 }}
+          transition={{ duration: 2.2, ease: [0.16, 1, 0.3, 1] }} // smooth cinematic ease
+        >
           <h3 className="tagline-subtitle">BUILD BETTER BUSINESS</h3>
           <h1 className="tagline-title">STEP INTO THE WORLD OF <br /> ENGLORAY</h1>
           <p className="tagline-description">
@@ -32,7 +39,7 @@ const Tagline = () => {
             <div className="tagline-long-arrow"></div>
             <img src={require('../../assets/branding.png')} alt="Branding" className="tagline-icon" />
           </div>
-        </div>
+        </motion.div>
       </section >
       <StatCards />
     </>

@@ -1,0 +1,243 @@
+/* ─── BUSINESS SUITE AI PAGE THEME OVERRIDES ─── */
+.business-suite-theme .showcase-h1 {
+    letter-spacing: -1.5px;
+}
+
+/* Global Background Unification */
+.business-suite-theme {
+    background: #120202 !important; /* Base Deep Ruby */
+}
+
+.business-suite-theme .crm-subpage-hero,
+.business-suite-theme .crm-impact-section,
+.business-suite-theme .bs-insights-section {
+    background: #120202 !important;
+}
+
+.business-suite-theme .crm-why-interactive,
+.business-suite-theme .crm-use-cases-section {
+    background: #ffffff !important;
+}
+
+.business-suite-theme .crm-why-interactive h2,
+.business-suite-theme .crm-use-cases-section h2,
+.business-suite-theme .crm-why-interactive p,
+.business-suite-theme .crm-use-cases-section p {
+    color: #0f172a !important;
+}
+
+/* Glow colours */
+.bs-glow-1 {
+    width: 500px;
+    height: 500px;
+    background: #c62828; /* Deep Crimson */
+    top: -150px;
+    left: 10%;
+    animation: float 10s infinite ease-in-out alternate;
+}
+
+.bs-glow-2 {
+    width: 600px;
+    height: 600px;
+    background: #8e0000; /* Darker Red */
+    bottom: -200px;
+    right: 5%;
+    animation: float 10s infinite ease-in-out alternate;
+    animation-delay: -5s;
+}
+
+/* Badge */
+.bs-badge-color {
+    background: rgba(198, 40, 40, 0.15);
+    border-color: rgba(198, 40, 40, 0.3);
+    color: #ef5350;
+}
+
+/* Accent */
+.bs-accent {
+    background: linear-gradient(to right, #ff5252, #ff8a80);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Buttons */
+.bs-btn-primary {
+    background: linear-gradient(135deg, #c62828, #b71c1c);
+    color: white;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(198, 40, 40, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.bs-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(198, 40, 40, 0.5);
+}
+
+/* Card bars */
+.bs-bar {
+    background: linear-gradient(to top, #c62828, #ff5252) !important;
+}
+
+.bs-item svg {
+    color: #c62828 !important;
+}
+
+/* Impact badge */
+.bs-impact-badge {
+    color: #ff5252 !important;
+    border-color: rgba(198, 40, 40, 0.5) !important;
+}
+
+.bs-span {
+    background: linear-gradient(135deg, #ff5252, #ff8a80);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Use cases badge + heading */
+.bs-section-badge {
+    background: rgba(198, 40, 40, 0.1);
+    color: #c62828;
+}
+
+.bs-span-h2 {
+    color: #c62828 !important;
+}
+
+/* Insights section */
+.bs-insights-section {
+    background: radial-gradient(ellipse at 50% 10%, rgba(198, 40, 40, 0.12) 0%, transparent 80%), 
+                radial-gradient(ellipse at 50% 100%, rgba(183, 28, 28, 0.05) 0%, transparent 80%),
+                #120202 !important; /* Deep Ruby Black */
+}
+
+.bs-badge-dark {
+    background: rgba(198, 40, 40, 0.2);
+    color: #ff8a80;
+    border-color: rgba(255, 138, 128, 0.3);
+}
+
+.bs-gradient-span {
+    background: linear-gradient(135deg, #ff5252, #ff8a80) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+}
+
+.bs-cic-line {
+    background: linear-gradient(90deg, #c62828, transparent);
+}
+
+/* CTA strip */
+.bs-cta-strip {
+    background: linear-gradient(135deg, rgba(198, 40, 40, 0.25), rgba(211, 47, 47, 0.2));
+    border-color: rgba(239, 83, 80, 0.2);
+}
+
+.bs-btn-cta-primary {
+    background: linear-gradient(135deg, #c62828, #b71c1c);
+    color: white;
+    padding: 13px 26px;
+    border-radius: 12px;
+    font-size: 0.97rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.bs-btn-cta-primary:hover {
+    transform: translateY(-2px);
+}
+
+.bs-btn-outline {
+    color: #ff8a80;
+    border-color: rgba(255, 138, 128, 0.4);
+}
+
+/* Use Case Table Theme Overrides */
+.business-suite-theme .ucm-cell {
+    color: #c62828;
+}
+
+.business-suite-theme .ucm-header .ucm-cell {
+    background: #c62828;
+    color: white;
+    box-shadow: 0 4px 15px rgba(198, 40, 40, 0.2);
+}
+
+/* Arc Card Overrides & Crimson Glowing Shadows */
+.bs-arc-card.active-card {
+    filter: drop-shadow(0 0 70px rgba(239, 83, 80, 0.8)) brightness(1.05) !important;
+    z-index: 10;
+}
+
+.bs-arc-card.active-card::before {
+    background: rgba(211, 47, 47, 0.85); /* Stronger Red Overlay */
+}
+
+/* Base grid red aura to match ERP style */
+.business-suite-theme .crm-insights-grid::before {
+    background: radial-gradient(ellipse at center, rgba(198, 40, 40, 0.45), transparent 70%) !important;
+}
+
+/* Ensure inactive cards are also red-themed and not green */
+.business-suite-theme .crm-insight-card {
+    border-color: rgba(198, 40, 40, 0.15) !important;
+    background: rgba(198, 40, 40, 0.02) !important;
+}
+
+.business-suite-theme .crm-insight-card:hover {
+    border-color: rgba(198, 40, 40, 0.5) !important;
+    box-shadow: 0 20px 60px rgba(198, 40, 40, 0.25) !important;
+}
+
+/* Force override for the Drive Results heading span */
+.business-suite-theme .bs-gradient-span {
+    background: linear-gradient(135deg, #ff5252, #ff8a80) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+}
+
+/* Fixing background glow for card widgets and icons */
+.business-suite-theme .cic-image-wrapper {
+    background: linear-gradient(135deg, rgba(198, 40, 40, 0.1), rgba(198, 40, 40, 0.05)) !important;
+}
+
+.business-suite-theme .scc-item svg {
+    color: #ff5252 !important;
+}
+
+.business-suite-theme .scc-header svg {
+    color: #ff5252 !important;
+}
+
+/* Force red tints for the small dashboard bars in hero */
+.business-suite-theme .scc-bar {
+    background: linear-gradient(to top, #c62828, #ff5252) !important;
+}
+
+/* Force red tint for activity feed icons if any */
+.business-suite-theme .scc-feed-item::before {
+    background: #c62828 !important;
+}
+
+/* Correct the glow for the side widgets in hero */
+.business-suite-theme .sw-icon-box {
+    box-shadow: 0 0 15px rgba(198, 40, 40, 0.3) !important;
+}
+
+/* Vertical Solutions Card Text Override */
+.business-suite-theme .ucm-bc-text p {
+    color: rgba(255, 255, 255, 0.95) !important;
+    line-height: 1.6;
+}

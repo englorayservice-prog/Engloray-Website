@@ -711,5 +711,37 @@
 .next-btn {
     margin-right: 16px;
     margin-top: 20px;
-
 }
+
+/* Small Mobile Screens Fix (320px range) */
+@media screen and (max-width: 480px) {
+    .cta-button, .coming-soon-button {
+        padding: 5px 12px !important;
+        font-size: 0.75rem !important;
+    }
+
+    .carousel-btn {
+        width: 32px !important;
+        height: 32px !important;
+        font-size: 18px !important;
+        margin-top: 10px !important;
+    }
+
+    .compact-indicator {
+        width: 6px !important;
+        height: 6px !important;
+    }
+
+    .compact-card-text h3 {
+        font-size: 1rem !important;
+        margin-bottom: 4px !important;
+    }
+
+    .compact-card-text p {
+        font-size: 0.75rem !important;
+    }
+    
+    .compact-card-content {
+        padding: 10px !important;
+    }
+}
