@@ -19,26 +19,7 @@
     box-sizing: border-box;
 }
 
-/* Fade-in trigger */
-.ps-section .ps-header-row,
-.ps-section .ps-cards-grid {
-    opacity: 0;
-    transform: translateY(18px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-}
-
-.ps-visible .ps-header-row,
-.ps-visible .ps-cards-grid {
-    opacity: 1;
-    transform: translateY(0);
-    margin-top: -20px;
-
-
-}
-
-.ps-visible .ps-cards-grid {
-    transition-delay: 0.1s;
-}
+/* Animations handled by Framer Motion whileInView */
 
 /* Container */
 .ps-container {

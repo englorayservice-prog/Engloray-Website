@@ -2,7 +2,9 @@ import React, { useLayoutEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { motion } from 'framer-motion';
 import './About.css';
+import { FaCode, FaLightbulb, FaUserGraduate } from "react-icons/fa";
 // { faChartColumn, faGraduationCap, faHandshake, faLaptopCode, faPeopleGroup, faStar } import removed
 
 gsap.registerPlugin(ScrollTrigger);
@@ -117,6 +119,8 @@ const About = () => {
                 <span className="service-pill">Branding & Identity</span>
                 <span className="service-pill">Consultancy</span>
                 <span className="service-pill">Ideation & Concepting</span>
+                <span className="service-pill">Digital Transformation</span>
+                <span className="service-pill">Customer Experience</span>
 
                 <div className="service-stat">
                   <h4>230+</h4>
@@ -167,29 +171,62 @@ const About = () => {
             </div>
 
             <div className="about-features">
-              <div className="technology-card">
+              <motion.div
+                className="technology-card"
+                initial={{ opacity: 0, y: 44, scale: 0.97 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: false, amount: 0.5 }}
+                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+              >
                 <div className="feature-card-header">
-                  {/* Icon Removed */}
+                  <div className="feature-icon-container">
+                    <FaCode />
+                  </div>
                   <h3>Enterprise Technology</h3>
                 </div>
-                <p>Advanced digital solutions and transformation tools designed for modern business challenges and scalability.</p>
-              </div>
+                <p>
+                  Drive innovation with bespoke software engineering and AI-driven transformation.
+                  Our enterprise solutions focus on architectural excellence, cloud scalability,
+                  and seamless integration of emerging tech into your core operations for
+                  unmatched competitive advantage.Empowering your business with future-ready digital ecosystems that evolve with market demands.
+                </p>
+              </motion.div>
 
-              <div className="about-mission-card">
+              <motion.div
+                className="about-mission-card"
+                initial={{ opacity: 0, y: 44, scale: 0.97 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: false, amount: 0.5 }}
+                transition={{ duration: 0.7, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <div className="feature-card-header">
+                  <div className="feature-icon-container">
+                    <FaLightbulb />
+                  </div>
+                  <h3>Empowering Growth</h3>
+                </div>
                 <p className="about-mission">
                   We combine innovative technology with
                   educational expertise to drive measurable
-                  growth and transformation for businesses and learners worldwide.
+                  growth and transformation
                 </p>
-              </div>
+              </motion.div>
 
-              <div className="education-card">
+              <motion.div
+                className="education-card"
+                initial={{ opacity: 0, y: 44, scale: 0.97 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: false, amount: 0.5 }}
+                transition={{ duration: 0.7, delay: 0.24, ease: [0.22, 1, 0.36, 1] }}
+              >
                 <div className="feature-card-header">
-                  {/* Icon Removed */}
+                  <div className="feature-icon-container">
+                    <FaUserGraduate />
+                  </div>
                   <h3>Learning Platforms</h3>
                 </div>
                 <p>Comprehensive educational solutions that empower organizations and individuals with future-ready skills.</p>
-              </div>
+              </motion.div>
             </div>
           </div>
 

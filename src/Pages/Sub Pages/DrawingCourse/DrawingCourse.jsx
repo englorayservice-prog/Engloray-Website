@@ -46,9 +46,12 @@ import demoVideoFile from "../../../assets/Final GD Course video.mp4";
 import videoThumbnail from "../../../assets/DemoThumbnail.png";
 import uiuxCertificate from "../../../assets/drawing.png";
 
-import avatarF1 from "../../../assets/t1.png";
-import avatarM1 from "../../../assets/t2.png";
-import avatarF2 from "../../../assets/t3.png";
+import avatarF1 from "../../../assets/testimonials/cartoon_female_1.png";
+import avatarF3 from "../../../assets/testimonials/cartoon_female_3.png";
+import avatarM1 from "../../../assets/testimonials/cartoon_male_1.png";
+import avatarM2 from "../../../assets/testimonials/cartoon_male_2.png";
+import avatarM3 from "../../../assets/testimonials/cartoon_male_3.png";
+import avatarF2 from "../../../assets/testimonials/cartoon_female_2.png";
 
 // AI Tool Logos (Ideas & UX)
 import chatgptAiLogo from '../../../assets/chatgpt_ai_logo.jpg';
@@ -93,23 +96,23 @@ const DrawingCourse = () => {
         name: "",
         email: "",
         phone: "",
-        course: "UI/UX Design Mastery"
+        course: "Drawing"
     });
 
     // Hero Images from user upload
-    //const uiuxHero1 = require('../../../assets/dwc1.jpeg');
-    //const uiuxHero2 = require('../../../assets/dwc2.jpeg');
-    //const uiuxHero3 = require('../../../assets/dwc3.jpeg');
-    //const uiuxHero4 = require('../../../assets/dwc4.jpeg');
-    //const uiuxHero5 = require('../../../assets/dwc5.jpeg');
+    const uiuxHero1 = require('../../../assets/10 Easy Paper Crafts for Kids - ALESTER LOJIC.jfif');
+    const uiuxHero2 = require('../../../assets/Cartoon boy with paintbrush and palette.jfif');
+    const uiuxHero3 = require('../../../assets/Creative Art Activities for Grade 1 and 2 - Educators Technology.jfif');
+    const uiuxHero4 = require('../../../assets/download.jfif');
+    const uiuxHero5 = require('../../../assets/Personal Touch_ DIY Cards for Grandparents Day.jfif');
 
     // New UI/UX-themed hero gallery images (do not reuse GD assets)
     const uiuxHeroAssets = {
-        //a1: uiuxHero1,
-        //a2: uiuxHero2,
-        //a3: uiuxHero3,
-        //a4: uiuxHero4,
-        //a5: uiuxHero5
+        a1: uiuxHero1,
+        a2: uiuxHero2,
+        a3: uiuxHero3,
+        a4: uiuxHero4,
+        a5: uiuxHero5
     };
 
     const allTestimonials = [
@@ -129,7 +132,7 @@ const DrawingCourse = () => {
             name: "Rahul M",
             role: "Performance Marketer",
             text: "The curriculum is perfectly aligned with modern product teams. I improved my UX thinking, created case studies, and learned stakeholder-ready presentations for real-world projects.",
-            avatar: avatarM1
+            avatar: avatarM3
         },
         {
             name: "Anita K",
@@ -141,25 +144,25 @@ const DrawingCourse = () => {
             name: "Vikas S",
             role: "Freelancer",
             text: "From user research to usability testing, the process finally clicked. I learned how to validate ideas, iterate quickly, and build experiences that actually solve user problems.",
-            avatar: avatarM1
+            avatar: avatarM2
         },
         {
             name: "Sneha T",
             role: "Performance Marketer",
             text: "Learning design systems and components changed everything. I can now build consistent UI, maintain scalability, and deliver pixel-perfect screens with fast iteration cycles.",
-            avatar: avatarF1
+            avatar: avatarF3
         },
         {
             name: "Rohan D",
             role: "Digital Marketing Executive",
             text: "The focus on real product case studies helped me create a strong portfolio. The project reviews made my work polished and ready for interviews with top product companies.",
-            avatar: avatarM1
+            avatar: avatarM3
         },
         {
             name: "Kavya J",
             role: "Performance Marketer",
             text: "I finally understand how to run interviews, synthesize insights, and turn research into meaningful design decisions. The frameworks and practice sessions were incredibly useful.",
-            avatar: avatarF1
+            avatar: avatarF3
         },
         {
             name: "Manoj V",
@@ -311,122 +314,42 @@ const DrawingCourse = () => {
 
     const toolsV2Data = [
         [
-            {
-                name: "ChatGPT",
-                icon: <FontAwesomeIcon icon={faComments} />,
-                desc: "Advanced conversational AI.",
-                img: chatgptAiLogo
-            },
-            {
-                name: "Gemini",
-                icon: <FontAwesomeIcon icon={faGlobe} />,
-                desc: "Intelligent multimodal assistance.",
-                img: geminiAiLogo
-            },
-            {
-                name: "Notion AI",
-                icon: <FontAwesomeIcon icon={faPencilAlt} />,
-                desc: "Smart workspace workflows.",
-                img: notionAiLogo
-            },
-            {
-                name: "Jasper AI",
-                icon: <FontAwesomeIcon icon={faRocket} />,
-                desc: "Executive AI copy and concepts.",
-                img: jasperAiLogo
-            }
+            { name: "Wax Crayons", icon: <FontAwesomeIcon icon={faPencilAlt} />, desc: "Bright colors for fun drawing.", bg: "linear-gradient(135deg, #FF9A9E 0%, #FECFEF 100%)" },
+            { name: "Oil Pastels", icon: <FontAwesomeIcon icon={faPaintBrush} />, desc: "Smooth blending and rich colors.", bg: "linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%)" },
+            { name: "Color Pencils", icon: <FontAwesomeIcon icon={faPenFancy} />, desc: "Great for detailed sketches.", bg: "linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%)" },
+            { name: "Blending Stumps", icon: <FontAwesomeIcon icon={faMagic} />, desc: "Perfect shading and blending.", bg: "linear-gradient(135deg, #fccb90 0%, #d57eeb 100%)" }
         ],
         [
-            {
-                name: "Khroma",
-                icon: <FontAwesomeIcon icon={faMagic} />,
-                desc: "Visual generation for UI.",
-                bg: "linear-gradient(135deg, #8B5CF6 0%, #D946EF 100%)"
-            },
-            {
-                name: "Colors AI",
-                icon: <FontAwesomeIcon icon={faRocket} />,
-                desc: "Concepts and mood.",
-                bg: "linear-gradient(135deg, #FEF08A 0%, #3BC9F1 100%)"
-            },
-            {
-                name: "Fontjoy",
-                icon: <FontAwesomeIcon icon={faLightbulb} />,
-                desc: "Idea visuals.",
-                bg: "linear-gradient(135deg, #312E81 0%, #9D174D 100%)"
-            },
-            {
-                name: "Stark",
-                icon: <FontAwesomeIcon icon={faBullseye} />,
-                desc: "Accessibility and UI checks.",
-                bg: "linear-gradient(135deg, #2563EB 0%, #0891B2 100%)"
-            }
+            { name: "Watercolor Cakes", icon: <FontAwesomeIcon icon={faPaintBrush} />, desc: "Easy to mix watercolor paints.", bg: "linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%)" },
+            { name: "Paint Brushes", icon: <FontAwesomeIcon icon={faPaintBrush} />, desc: "Various sizes for painting.", bg: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)" },
+            { name: "Color Palette", icon: <FontAwesomeIcon icon={faPaintBrush} />, desc: "Mix new exciting colors.", bg: "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)" },
+            { name: "Canvas Boards", icon: <FontAwesomeIcon icon={faBook} />, desc: "Sturdy boards for painting.", bg: "linear-gradient(135deg, #fa709a 0%, #fee140 100%)" }
         ],
         [
-            {
-                name: "Maze",
-                icon: <FontAwesomeIcon icon={faFlask} />,
-                desc: "Rapid testing and data.",
-                bg: "linear-gradient(135deg, #FACC15 0%, #F97316 100%)"
-            },
-            {
-                name: "Hotjar",
-                icon: <FontAwesomeIcon icon={faCheckCircle} />,
-                desc: "Heatmaps and user behavior.",
-                bg: "linear-gradient(135deg, #EF4444 0%, #B91C1C 100%)"
-            },
-            {
-                name: "UserTesting",
-                icon: <FontAwesomeIcon icon={faUser} />,
-                desc: "Real-time user feedback.",
-                bg: "linear-gradient(135deg, #10B981 0%, #047857 100%)"
-            },
-            {
-                name: "UX Tweak",
-                icon: <FontAwesomeIcon icon={faSyncAlt} />,
-                desc: "Uncovering user insights.",
-                bg: "linear-gradient(135deg, #8B5CF6 0%, #4C1D95 100%)"
-            }
+            { name: "HB & 2B Pencils", icon: <FontAwesomeIcon icon={faPencilAlt} />, desc: "Basic pencils for sketching.", bg: "linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%)" },
+            { name: "Drawing Book", icon: <FontAwesomeIcon icon={faBook} />, desc: "Blank pages for imagination.", bg: "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)" },
+            { name: "Erasers & Sharpeners", icon: <FontAwesomeIcon icon={faMagic} />, desc: "Correct mistakes easily.", bg: "linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)" },
+            { name: "Stencils", icon: <FontAwesomeIcon icon={faRulerCombined} />, desc: "Draw perfect shapes.", bg: "linear-gradient(135deg, #cfd9df 0%, #e2ebf0 100%)" }
         ],
         [
-            {
-                name: "Adobe Firefly",
-                icon: <FontAwesomeIcon icon={faPaintBrush} />,
-                desc: "Advanced UI and Prototyping.",
-                bg: "linear-gradient(135deg, #F43F5E 0%, #BE123C 100%)"
-            },
-            {
-                name: "Mockup AI",
-                icon: <FontAwesomeIcon icon={faLaptopCode} />,
-                desc: "No-code website development.",
-                bg: "linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%)"
-            },
-            {
-                name: "Spline AI",
-                icon: <FontAwesomeIcon icon={faRocket} />,
-                desc: "Interactive 3D web experiences.",
-                bg: "linear-gradient(135deg, #EC4899 0%, #BE185D 100%)"
-            },
-            {
-                name: "Lume AI",
-                icon: <FontAwesomeIcon icon={faMagic} />,
-                desc: "Lightweight UI animations.",
-                bg: "linear-gradient(135deg, #06B6D4 0%, #0369A1 100%)"
-            }
+            { name: "Craft Paper", icon: <FontAwesomeIcon icon={faBook} />, desc: "Colorful papers for crafts.", bg: "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)" },
+            { name: "Child-safe Scissors", icon: <FontAwesomeIcon icon={faRulerCombined} />, desc: "Safe tools for paper cutting.", bg: "linear-gradient(135deg, #d299c2 0%, #fef9d7 100%)" },
+            { name: "Glue Sticks", icon: <FontAwesomeIcon icon={faPenFancy} />, desc: "Mess-free paper gluing.", bg: "linear-gradient(135deg, #f6d365 0%, #fda085 100%)" },
+            { name: "Glitter Pens", icon: <FontAwesomeIcon icon={faMagic} />, desc: "Add sparkle to artworks.", bg: "linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%)" }
         ]
     ];
 
     const benefits = [
-        { icon: <FontAwesomeIcon icon={faGraduationCap} />, title: "Live Interactive Training", description: "Real-time classes with product designers and immediate doubt resolution for faster learning." },
-        { icon: <FontAwesomeIcon icon={faHandshake} />, title: "1:1 Mentorship", description: "Personal guidance from mentors with 10+ years experience in UI/UX and product design." },
-        { icon: <FontAwesomeIcon icon={faBriefcase} />, title: "100% Placement Assistance", description: "Career support with portfolio reviews, mock interviews, and referrals to hiring partners." },
-        { icon: <FontAwesomeIcon icon={faTrophy} />, title: "Global Certification", description: "Internationally recognized certification to validate your UI/UX skills globally." },
-        { icon: <FontAwesomeIcon icon={faClock} />, title: "Lifetime Course Access", description: "All course materials, updates, and recordings available forever for continuous growth." },
-        { icon: <FontAwesomeIcon icon={faComments} />, title: "Community Access", description: "Network with 5000+ designers and participate in design challenges and peer reviews." },
-        { icon: <FontAwesomeIcon icon={faLaptopCode} />, title: "Tool Mastery", description: "Hands-on practice with modern tools and workflows used by product teams worldwide." },
-        { icon: <FontAwesomeIcon icon={faBullseye} />, title: "Project-Based Learning", description: "Build real case studies and portfolio projects that stand out in UI/UX interviews." },
-        { icon: <FontAwesomeIcon icon={faFlask} />, title: "Usability Testing", description: "Learn to test prototypes, gather insights, and iterate confidently with real feedback." },
-        { icon: <FontAwesomeIcon icon={faRocket} />, title: "Career Coaching", description: "Interview prep and storytelling guidance to land your first UI/UX role faster." }
+        { icon: <FontAwesomeIcon icon={faPaintBrush} />, title: "Live Fun Drawing Classes", description: "Real-time, interactive drawing sessions where kids follow along with expert artists step-by-step." },
+        { icon: <FontAwesomeIcon icon={faUser} />, title: "Personalized Attention", description: "Individual feedback in small class sizes to help your child improve their drawing skills naturally." },
+        { icon: <FontAwesomeIcon icon={faStar} />, title: "Creative Development", description: "Encourages creative thinking and imagination, helping kids build their own beautiful art collection." },
+        { icon: <FontAwesomeIcon icon={faTrophy} />, title: "Achievement Certificates", description: "Fun rewards and globally recognized certificates to celebrate your child's artistic milestones." },
+        { icon: <FontAwesomeIcon icon={faClock} />, title: "Lifetime Video Access", description: "Rewatch our fun drawing videos anytime, anywhere so your kids can practice at their own pace." },
+        { icon: <FontAwesomeIcon icon={faComments} />, title: "Kids Art Community", description: "A safe and encouraging space for kids to share their artworks and participate in drawing challenges." },
+        { icon: <FontAwesomeIcon icon={faPencilAlt} />, title: "Master Colors & Shapes", description: "Hands-on practice with crayons, pastels, and basic shapes to understand color theory easily." },
+        { icon: <FontAwesomeIcon icon={faBook} />, title: "Fun Art Projects", description: "Engaging weekly themes and drawing adventures to keep kids excited and actively learning." },
+        { icon: <FontAwesomeIcon icon={faMagic} />, title: "Showcase & Feedback", description: "Kids learn to proudly present their artworks and receive positive, encouraging feedback." },
+        { icon: <FontAwesomeIcon icon={faRocket} />, title: "Confidence Building", description: "Careful guidance to help kids express their imagination freely, boosting their creative confidence." }
     ];
 
     const hexToRgba = (hex, alpha) => {
@@ -451,9 +374,9 @@ const DrawingCourse = () => {
     };
 
     const certificate = {
-        title: "Professional UI/UX Certification",
+        title: "Professional Drawing Certification",
         description: "Globally recognized certificate accredited by International Design Council",
-        features: ["✅ Digital & Physical Copy", "✅ Lifetime Validity", "✅ Online Verification", "✅ International Recognition", "✅ QR Code Authentication", "✅ Accredited by Design Council"],
+        features: ["✅ Fun & Interactive Drawing Sessions", "✅ Beginner Friendly Classes", "✅ Step-by-Step Easy Learning", "✅ Creative Skill Development", "✅ Color & Imagination Enhancement", "✅ Certificate of Completion"],
         image: uiuxCertificate
     };
 
@@ -497,7 +420,7 @@ const DrawingCourse = () => {
         try {
             await submitEnrollment(formData);
             setShowSuccess(true);
-            setFormData({ name: "", email: "", phone: "", course: "UI/UX Design Mastery" });
+            setFormData({ name: "", email: "", phone: "", course: "Drawing" });
             setTimeout(() => setShowEnrollment(false), 3000);
             setTimeout(() => setShowSuccess(false), 5000);
         } catch (error) {
@@ -519,129 +442,143 @@ const DrawingCourse = () => {
     const handleVideoPause = () => setIsPlaying(false);
 
     return (
-        <div className="gdc-page">
+        <div className="dcp-page">
             {/* Hero Section Upgrade - Minimalist Premium Design */}
-            <header className="gdc-hero-v3">
-                <div className="gdc-v3-sparkle-wrapper">
-                    <div className="gdc-v3-sparkle sparkle-lg sparkle-pos-1">
+            <header className="dcp-hero-v3">
+                <div className="dcp-v3-sparkle-wrapper">
+                    <div className="dcp-v3-sparkle sparkle-lg sparkle-pos-1">
                         <FontAwesomeIcon icon={faStar} />
                     </div>
-                    <div className="gdc-v3-sparkle sparkle-sm sparkle-pos-2">
+                    <div className="dcp-v3-sparkle sparkle-sm sparkle-pos-2">
                         <FontAwesomeIcon icon={faStar} />
                     </div>
-                    <div className="gdc-v3-sparkle sparkle-md sparkle-pos-3">
+                    <div className="dcp-v3-sparkle sparkle-md sparkle-pos-3">
                         <FontAwesomeIcon icon={faMagic} />
                     </div>
-                    <div className="gdc-v3-sparkle sparkle-lg sparkle-pos-4">
+                    <div className="dcp-v3-sparkle sparkle-lg sparkle-pos-4">
                         <FontAwesomeIcon icon={faStar} />
                     </div>
-                    <div className="gdc-v3-sparkle sparkle-sm sparkle-pos-5">
+                    <div className="dcp-v3-sparkle sparkle-sm sparkle-pos-5">
                         <FontAwesomeIcon icon={faMagic} />
                     </div>
-                    <div className="gdc-v3-sparkle sparkle-md sparkle-pos-6">
+                    <div className="dcp-v3-sparkle sparkle-md sparkle-pos-6">
                         <FontAwesomeIcon icon={faStar} />
                     </div>
-                    <div className="gdc-v3-sparkle sparkle-lg sparkle-pos-7">
+                    <div className="dcp-v3-sparkle sparkle-lg sparkle-pos-7">
                         <FontAwesomeIcon icon={faStar} />
                     </div>
-                    <div className="gdc-v3-sparkle sparkle-sm sparkle-pos-8">
+                    <div className="dcp-v3-sparkle sparkle-sm sparkle-pos-8">
                         <FontAwesomeIcon icon={faMagic} />
                     </div>
                 </div>
 
-                <div className="gdc-v3-container">
-                    <div className="gdc-v3-header-content">
-                        <h1 className="gdc-v3-main-title">
-                            Advanced <span className="gdc-v3-arrow-capsule-straight">→</span> Drawing <br /> Mastery Program
+                <div className="dcp-v3-container">
+                    <div className="dcp-v3-header-content">
+                        <h1 className="dcp-v3-main-title">
+                            Advanced <span className="dcp-v3-arrow-capsule-straight">→</span> Drawing <br /> Mastery Program
                         </h1>
 
-                        <p className="gdc-v3-subtitle-original">
+                        <p className="dcp-v3-subtitle-original">
                             Master sketching, shading, perspective & composition <br />
                             to create expressive artworks and build a strong creative foundation.
                         </p>
 
-                        <div className="gdc-v3-sub-row">
-                            <div className="gdc-v3-members-info">
+                        <div className="dcp-v3-sub-row">
+                            <div className="dcp-v3-members-info">
                                 <p>With more than</p>
                                 <h3>2K+ ARTISTS</h3>
                                 <h3>500+ DRAWING LESSONS</h3>
                             </div>
 
-                            <button className="gdc-v3-join-btn" onClick={scrollToForm}>
-                                Join us <span className="gdc-v3-join-arrow">↗</span>
+                            <button className="dcp-v3-join-btn" onClick={scrollToForm}>
+                                Join us <span className="dcp-v3-join-arrow">↗</span>
                             </button>
                         </div>
                     </div>
 
-                    <div className="gdc-v3-asset-gallery">
-                        <div className="gdc-v3-card gdc-card-blue">
-                            <img src={uiuxHeroAssets.a1} alt="UIUX Asset 1" className="gdc-v3-card-img" />
+                    <div className="dcp-v3-asset-gallery">
+                        <div className="dcp-v3-card dcp-card-blue">
+                            <img src={uiuxHeroAssets.a1} alt="UIUX Asset 1" className="dcp-v3-card-img" />
                         </div>
-                        <div className="gdc-v3-card gdc-card-dark">
-                            <img src={uiuxHeroAssets.a2} alt="UIUX Asset 2" className="gdc-v3-card-img" />
+                        <div className="dcp-v3-card dcp-card-dark">
+                            <img src={uiuxHeroAssets.a2} alt="UIUX Asset 2" className="dcp-v3-card-img" />
                         </div>
-                        <div className="gdc-v3-card gdc-card-center-featured">
-                            <img src={uiuxHeroAssets.a3} alt="UIUX Asset 3" className="gdc-v3-card-img" />
+                        <div className="dcp-v3-card dcp-card-center-featured">
+                            <img src={uiuxHeroAssets.a3} alt="UIUX Asset 3" className="dcp-v3-card-img" />
                         </div>
-                        <div className="gdc-v3-card gdc-card-dark">
-                            <img src={uiuxHeroAssets.a4} alt="UIUX Asset 4" className="gdc-v3-card-img" />
+                        <div className="dcp-v3-card dcp-card-dark">
+                            <img src={uiuxHeroAssets.a4} alt="UIUX Asset 4" className="dcp-v3-card-img" />
                         </div>
-                        <div className="gdc-v3-card gdc-card-blue">
-                            <img src={uiuxHeroAssets.a5} alt="UIUX Asset 5" className="gdc-v3-card-img" />
+                        <div className="dcp-v3-card dcp-card-blue">
+                            <img src={uiuxHeroAssets.a5} alt="UIUX Asset 5" className="dcp-v3-card-img" />
                         </div>
                     </div>
                 </div>
             </header>
 
             {/* Marquee Section bridging Hero and Intro */}
-            <div className="gdc-v2-marquee-container">
-                <div className="gdc-v2-marquee">
+            <div className="dcp-v2-marquee-container">
+                <div className="dcp-v2-marquee">
                     <span>
-                        SKETCHING BASICS <FontAwesomeIcon icon={faStar} className="gdc-marquee-star" />
-                        LINE ART <FontAwesomeIcon icon={faStar} className="gdc-marquee-star" />
-                        SHADING TECHNIQUES <FontAwesomeIcon icon={faStar} className="gdc-marquee-star" />
-                        PERSPECTIVE DRAWING <FontAwesomeIcon icon={faStar} className="gdc-marquee-star" />
-                        HUMAN ANATOMY <FontAwesomeIcon icon={faStar} className="gdc-marquee-star" />
-                        PORTRAIT DRAWING <FontAwesomeIcon icon={faStar} className="gdc-marquee-star" />
-                        LIGHT & SHADOW <FontAwesomeIcon icon={faStar} className="gdc-marquee-star" />
-                        COMPOSITION <FontAwesomeIcon icon={faStar} className="gdc-marquee-star" />
-                        CHARACTER DESIGN <FontAwesomeIcon icon={faStar} className="gdc-marquee-star" />
-                        CREATIVE SKETCHING <FontAwesomeIcon icon={faStar} className="gdc-marquee-star" />
-                        SKETCHING BASICS <FontAwesomeIcon icon={faStar} className="gdc-marquee-star" />
+                        SKETCHING BASICS <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
+                        LINE ART <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
+                        SHADING TECHNIQUES <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
+                        PERSPECTIVE DRAWING <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
+                        HUMAN ANATOMY <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
+                        PORTRAIT DRAWING <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
+                        LIGHT & SHADOW <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
+                        COMPOSITION <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
+                        CHARACTER DESIGN <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
+                        CREATIVE SKETCHING <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
+                        SKETCHING BASICS <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
+                        SHADING TECHNIQUES
+                    </span>
+                    <span aria-hidden="true">
+                        SKETCHING BASICS <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
+                        LINE ART <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
+                        SHADING TECHNIQUES <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
+                        PERSPECTIVE DRAWING <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
+                        HUMAN ANATOMY <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
+                        PORTRAIT DRAWING <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
+                        LIGHT & SHADOW <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
+                        COMPOSITION <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
+                        CHARACTER DESIGN <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
+                        CREATIVE SKETCHING <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
+                        SKETCHING BASICS <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
                         SHADING TECHNIQUES
                     </span>
                 </div>
             </div>
 
             {/* New Intro Section - Re-designed to 2-column layout */}
-            <section className="gdc-intro-section">
-                <div className="gdc-container">
-                    <div className="gdc-intro-layout">
-                        <div className="gdc-intro-left">
-                            <h2 className="gdc-intro-title">
+            <section className="dcp-intro-section">
+                <div className="dcp-container">
+                    <div className="dcp-intro-layout">
+                        <div className="dcp-intro-left">
+                            <h2 className="dcp-intro-title">
                                 Master Advanced <br /> Drawing in 6 Months
                             </h2>
-                            <p className="gdc-intro-desc">
+                            <p className="dcp-intro-desc">
                                 The Advanced Drawing Classes are designed for students who have Mastered the basics and are ready to develop professional-Skill level
                             </p>
-                            <button className="gdc-intro-cta" onClick={scrollToForm}>
+                            <button className="dcp-intro-cta" onClick={scrollToForm}>
                                 Contact
                             </button>
                         </div>
 
-                        <div className="gdc-intro-right">
-                            <div className="gdc-intro-grid">
+                        <div className="dcp-intro-right">
+                            <div className="dcp-intro-grid">
                                 {introCategories.map((cat, i) => (
-                                    <div key={i} className="gdc-intro-category-box">
-                                        <div className="gdc-intro-card-icon" style={{ backgroundColor: cat.bgColor, color: cat.iconColor }}>
+                                    <div key={i} className="dcp-intro-category-box">
+                                        <div className="dcp-intro-card-icon" style={{ backgroundColor: cat.bgColor, color: cat.iconColor }}>
                                             {cat.icon}
                                         </div>
-                                        <div className="gdc-intro-card-content">
-                                            <h3 className="gdc-intro-card-title">{cat.title}</h3>
-                                            <div className="gdc-intro-card-points">
+                                        <div className="dcp-intro-card-content">
+                                            <h3 className="dcp-intro-card-title">{cat.title}</h3>
+                                            <div className="dcp-intro-card-points">
                                                 {cat.points.map((point, idx) => (
-                                                    <div key={idx} className="gdc-intro-point">
-                                                        <FontAwesomeIcon icon={faStar} className="gdc-intro-point-star" />
+                                                    <div key={idx} className="dcp-intro-point">
+                                                        <FontAwesomeIcon icon={faStar} className="dcp-intro-point-star" />
                                                         {point}
                                                     </div>
                                                 ))}
@@ -655,20 +592,20 @@ const DrawingCourse = () => {
                 </div>
             </section>
             {/* Course Outcomes - Redesigned Numbered Grid */}
-            <section className="dgm-section dgm-outcomes-numbered">
-                <div className="dgm-container">
-                    <div className="dgm-outcomes-header-row">
-                        <div className="dgm-outcomes-title-col">
-                            <h2 className="dgm-outcomes-main-title">Course Outcomes</h2>
+            <section className="dcp-section dcp-outcomes-numbered">
+                <div className="dcp-container">
+                    <div className="dcp-outcomes-header-row">
+                        <div className="dcp-outcomes-title-col">
+                            <h2 className="dcp-outcomes-main-title">Course Outcomes</h2>
                         </div>
-                        <div className="dgm-outcomes-desc-col">
-                            <p className="dgm-outcomes-top-desc text-left">
+                        <div className="dcp-outcomes-desc-col">
+                            <p className="dcp-outcomes-top-desc text-left">
                                 What you'll achieve after completing this program. Master workflows, build case studies, and transform into an industry-ready Drawing Skills.
                             </p>
                         </div>
                     </div>
 
-                    <div className="dgm-outcomes-numbered-grid">
+                    <div className="dcp-outcomes-numbered-grid">
                         {courseOutcomes.map((outcome, index) => {
                             const isBlack = index === 1 || index === 3 || index === 5;
                             const cardNumber = (index + 1).toString().padStart(2, '0');
@@ -676,19 +613,19 @@ const DrawingCourse = () => {
                             return (
                                 <div
                                     key={index}
-                                    className={`dgm-outcome-numbered-card ${isBlack ? 'black-bg' : 'white-bg'}`}
+                                    className={`dcp-outcome-numbered-card ${isBlack ? 'black-bg' : 'white-bg'}`}
                                 >
-                                    <div className="dgm-outcome-card-content-wrapper">
+                                    <div className="dcp-outcome-card-content-wrapper">
                                         {/* Left side - Number and Icon */}
-                                        <div className="dgm-outcome-card-left">
-                                            <div className="dgm-outcome-card-number">{cardNumber}</div>
-                                            <div className="dgm-outcome-numbered-icon">{outcome.icon}</div>
+                                        <div className="dcp-outcome-card-left">
+                                            <div className="dcp-outcome-card-number">{cardNumber}</div>
+                                            <div className="dcp-outcome-numbered-icon">{outcome.icon}</div>
                                         </div>
 
                                         {/* Right side - Title and Description */}
-                                        <div className="dgm-outcome-card-right">
-                                            <h3 className="dgm-outcome-numbered-title">{outcome.title}</h3>
-                                            <p className="dgm-outcome-numbered-desc">{outcome.desc}</p>
+                                        <div className="dcp-outcome-card-right">
+                                            <h3 className="dcp-outcome-numbered-title">{outcome.title}</h3>
+                                            <p className="dcp-outcome-numbered-desc">{outcome.desc}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -699,42 +636,42 @@ const DrawingCourse = () => {
             </section>
 
             {/* 6-Month Course Breakdown - Vertical Slider Redesign */}
-            <section className="gdc-curriculum-v2-section">
-                <div className="gdc-container">
-                    <div className="gdc-curriculum-v2-layout">
-                        <div className="gdc-curriculum-v2-left">
-                            <span className="gdc-curriculum-v2-tag">PRO COURSE</span>
-                            <h2 className="gdc-curriculum-v2-title">
+            <section className="dcp-curriculum-v2-section">
+                <div className="dcp-container">
+                    <div className="dcp-curriculum-v2-layout">
+                        <div className="dcp-curriculum-v2-left">
+                            <span className="dcp-curriculum-v2-tag">PRO COURSE</span>
+                            <h2 className="dcp-curriculum-v2-title">
                                 4-Month Course <br /> Breakdown
                             </h2>
-                            <p className="gdc-curriculum-v2-desc">
+                            <p className="dcp-curriculum-v2-desc">
                                 A structured digital marketing journey built for real-world success.
                                 Master performance marketing, SEO, content strategy, and analytics to create high-impact campaigns in 6 intensive months.
                             </p>
 
-                            <div className="gdc-curriculum-v2-stats">
-                                <div className="gdc-stat-item">
-                                    <span className="gdc-stat-num">50+</span>
-                                    <span className="gdc-stat-label">Real Campaigns</span>
+                            <div className="dcp-curriculum-v2-stats">
+                                <div className="dcp-stat-item">
+                                    <span className="dcp-stat-num">50+</span>
+                                    <span className="dcp-stat-label">Real Campaigns</span>
                                 </div>
-                                <div className="gdc-stat-item">
-                                    <span className="gdc-stat-num">100%</span>
-                                    <span className="gdc-stat-label">Practical</span>
+                                <div className="dcp-stat-item">
+                                    <span className="dcp-stat-num">100%</span>
+                                    <span className="dcp-stat-label">Practical</span>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="gdc-curriculum-v2-right">
-                            <div className="gdc-curriculum-nav-v2">
-                                <button className="gdc-nav-btn-v2" onClick={prevModule}>
+                        <div className="dcp-curriculum-v2-right">
+                            <div className="dcp-curriculum-nav-v2">
+                                <button className="dcp-nav-btn-v2" onClick={prevModule}>
                                     <FontAwesomeIcon icon={faChevronUp} />
                                 </button>
-                                <button className="gdc-nav-btn-v2" onClick={nextModule}>
+                                <button className="dcp-nav-btn-v2" onClick={nextModule}>
                                     <FontAwesomeIcon icon={faChevronDown} />
                                 </button>
                             </div>
 
-                            <div className="gdc-slider-v5-container">
+                            <div className="dcp-slider-v5-container">
                                 {sixMonthCurriculum.map((module, index) => {
                                     const isActive = index === currentModuleIndex;
                                     const isNext = index === (currentModuleIndex + 1) % sixMonthCurriculum.length;
@@ -746,23 +683,23 @@ const DrawingCourse = () => {
                                     else if (isNext) cardState = "bottom";
 
                                     return (
-                                        <div key={index} className={`gdc-curriculum-v5-card ${cardState}`}>
-                                            <div className="gdc-curriculum-v5-inner">
-                                                <div className="gdc-curriculum-v5-bg">
-                                                    <img src={module.bgImage} alt={module.title} className="gdc-curriculum-v5-img" />
-                                                    <div className="gdc-curriculum-v5-overlay"></div>
+                                        <div key={index} className={`dcp-curriculum-v5-card ${cardState}`}>
+                                            <div className="dcp-curriculum-v5-inner">
+                                                <div className="dcp-curriculum-v5-bg">
+                                                    <img src={module.bgImage} alt={module.title} className="dcp-curriculum-v5-img" />
+                                                    <div className="dcp-curriculum-v5-overlay"></div>
                                                 </div>
 
-                                                <div className="gdc-curriculum-v5-content">
-                                                    <div className="gdc-curriculum-v5-header">
-                                                        <span className="gdc-curriculum-v5-month">{module.month}</span>
-                                                        <span className="gdc-curriculum-v5-proj">Projects: {module.projects}</span>
+                                                <div className="dcp-curriculum-v5-content">
+                                                    <div className="dcp-curriculum-v5-header">
+                                                        <span className="dcp-curriculum-v5-month">{module.month}</span>
+                                                        <span className="dcp-curriculum-v5-proj">Projects: {module.projects}</span>
                                                     </div>
-                                                    <h3 className="gdc-curriculum-v5-title">{module.title}</h3>
-                                                    <div className="gdc-curriculum-v5-topics">
+                                                    <h3 className="dcp-curriculum-v5-title">{module.title}</h3>
+                                                    <div className="dcp-curriculum-v5-topics">
                                                         {module.topics.map((topic, tidx) => (
-                                                            <div key={tidx} className="gdc-curriculum-v5-topic">
-                                                                <FontAwesomeIcon icon={faCheck} className="gdc-curriculum-v5-check" /> {topic}
+                                                            <div key={tidx} className="dcp-curriculum-v5-topic">
+                                                                <FontAwesomeIcon icon={faCheck} className="dcp-curriculum-v5-check" /> {topic}
                                                             </div>
                                                         ))}
                                                     </div>
@@ -778,30 +715,34 @@ const DrawingCourse = () => {
             </section>
 
             {/* Tools & Resources - Interactive V2 Redesign */}
-            <section className="gdc-tools-v2">
-                <div className="gdc-container">
-                    <div className="gdc-tools-v2-header">
-                        <h2 className="gdc-tools-v2-title"> AI Tools & Resources</h2>
-                        <p className="gdc-tools-v2-subtitle">Master the industry's most powerful Digital Marketing workflow</p>
+            <section className="dcp-tools-v2">
+                <div className="dcp-container">
+                    <div className="dcp-tools-v2-header">
+                        <h2 className="dcp-tools-v2-title"> Fun Drawing Tools & Materials</h2>
+                        <p className="dcp-tools-v2-subtitle">Everything kids need to bring their vibrant imagination to life!</p>
                     </div>
 
-                    <div className="gdc-tools-v2-layout">
-                        <div className="gdc-tools-sidebar">
-                            {["Ideas & UX", "AI Generative", "Validation", "Pro Workflow"].map((label, idx) => (
-                                <button key={idx} className={`gdc-tool-tab ${activeToolCategory === idx ? "active" : ""}`} onClick={() => setActiveToolCategory(idx)}>
+                    <div className="dcp-tools-v2-layout">
+                        <div className="dcp-tools-sidebar">
+                            {["Crayons & Shading", "Watercolors", "Sketch Tools", "Crafting Items"].map((label, idx) => (
+                                <button key={idx} className={`dcp-tool-tab ${activeToolCategory === idx ? "active" : ""}`} onClick={() => setActiveToolCategory(idx)}>
                                     <span className="tab-number">0{idx + 1}</span>
                                     <span className="tab-label">{label}</span>
                                 </button>
                             ))}
                         </div>
 
-                        <div className="gdc-tools-main-display">
-                            <div className="gdc-pods-container" key={activeToolCategory}>
+                        <div className="dcp-tools-main-display">
+                            <div className="dcp-pods-container" key={activeToolCategory}>
                                 {toolsV2Data[activeToolCategory].map((tool, index) => (
-                                    <div key={index} className={`gdc-tool-pod pod-${index + 1}`}>
-                                        <div className="gdc-pod-inner">
-                                            <div className="gdc-pod-bg-image" style={{ background: tool.bg ? tool.bg : `url(${tool.img})`, backgroundPosition: 'center', backgroundSize: 'cover' }}></div>
-                                            <div className="gdc-pod-content">{activeToolCategory !== 0 ? <h4 className="gdc-pod-name">{tool.name}</h4> : null}</div>
+                                    <div key={index} className={`dcp-tool-pod pod-${index + 1}`}>
+                                        <div className="dcp-pod-inner">
+                                            <div className="dcp-pod-bg-image" style={{ background: tool.bg ? tool.bg : `url(${tool.img})`, backgroundPosition: 'center', backgroundSize: 'cover' }}></div>
+                                            <div className="dcp-pod-content">
+                                                <div className="dcp-pod-icon">{tool.icon}</div>
+                                                <h4 className="dcp-pod-name">{tool.name}</h4>
+                                                <p className="dcp-pod-desc">{tool.desc}</p>
+                                            </div>
                                         </div>
                                     </div>
                                 ))}
@@ -812,27 +753,27 @@ const DrawingCourse = () => {
             </section>
 
             {/* Benefits Section - Where Features Meet For You Upgrade */}
-            <section className="dgm-section dgm-benefits-reimagined">
-                <div className="dgm-container">
-                    <div className="dgm-benefits-header">
-                        <h2 className="dgm-benefits-title">Where Features Meet For You</h2>
+            <section className="dcp-section dcp-benefits-reimagined">
+                <div className="dcp-container">
+                    <div className="dcp-benefits-header">
+                        <h2 className="dcp-benefits-title">Where Features Meet For You</h2>
                     </div>
 
-                    <div className="dgm-benefits-staggered">
+                    <div className="dcp-benefits-staggered">
                         {/* Row 1: 5 Cards */}
-                        <div className="dgm-benefits-row dgm-row-5">
+                        <div className="dcp-benefits-row dcp-row-5">
                             {benefits.slice(0, 5).map((benefit, index) => (
-                                <div key={index} className="dgm-new-benefit-card">
+                                <div key={index} className="dcp-new-benefit-card">
                                     {(() => {
                                         const absoluteIndex = 0 + index;
                                         const color = benefitIconPalette[absoluteIndex] || "#BAE6FD";
                                         return (
-                                            <div className="dgm-new-icon" style={{ background: hexToRgba(color, 0.18), color }}>
+                                            <div className="dcp-new-icon" style={{ background: hexToRgba(color, 0.18), color }}>
                                                 {benefit.icon}
                                             </div>
                                         );
                                     })()}
-                                    <div className="dgm-new-content">
+                                    <div className="dcp-new-content">
                                         <h3>{benefit.title}</h3>
                                         <p>{benefit.description.substring(0, 70)}...</p>
                                     </div>
@@ -841,19 +782,19 @@ const DrawingCourse = () => {
                         </div>
 
                         {/* Row 2: 3 Cards */}
-                        <div className="dgm-benefits-row dgm-row-3">
+                        <div className="dcp-benefits-row dcp-row-3">
                             {benefits.slice(5, 8).map((benefit, index) => (
-                                <div key={index} className="dgm-new-benefit-card">
+                                <div key={index} className="dcp-new-benefit-card">
                                     {(() => {
                                         const absoluteIndex = 5 + index;
                                         const color = benefitIconPalette[absoluteIndex] || "#BAE6FD";
                                         return (
-                                            <div className="dgm-new-icon" style={{ background: hexToRgba(color, 0.18), color }}>
+                                            <div className="dcp-new-icon" style={{ background: hexToRgba(color, 0.18), color }}>
                                                 {benefit.icon}
                                             </div>
                                         );
                                     })()}
-                                    <div className="dgm-new-content">
+                                    <div className="dcp-new-content">
                                         <h3>{benefit.title}</h3>
                                         <p>{benefit.description.substring(0, 70)}...</p>
                                     </div>
@@ -862,19 +803,19 @@ const DrawingCourse = () => {
                         </div>
 
                         {/* Row 3: 2 Original Cards */}
-                        <div className="dgm-benefits-row dgm-row-2">
+                        <div className="dcp-benefits-row dcp-row-2" style={{ gap: "50px" }}>
                             {benefits.slice(8, 10).map((benefit, index) => (
-                                <div key={index} className="dgm-new-benefit-card">
+                                <div key={index} className="dcp-new-benefit-card">
                                     {(() => {
                                         const absoluteIndex = 8 + index;
                                         const color = benefitIconPalette[absoluteIndex] || "#BAE6FD";
                                         return (
-                                            <div className="dgm-new-icon" style={{ background: hexToRgba(color, 0.18), color }}>
+                                            <div className="dcp-new-icon" style={{ background: hexToRgba(color, 0.18), color }}>
                                                 {benefit.icon}
                                             </div>
                                         );
                                     })()}
-                                    <div className="dgm-new-content">
+                                    <div className="dcp-new-content">
                                         <h3>{benefit.title}</h3>
                                         <p>{benefit.description.substring(0, 70)}...</p>
                                     </div>
@@ -885,102 +826,125 @@ const DrawingCourse = () => {
 
                     {/* Floating Cards - Positioned Independently */}
                     {/* Left Bottom Floating Card */}
-                    <div className="dgm-floating-benefit-card dgm-floating-card-left">
-                        <div className="dgm-new-icon" style={{ background: hexToRgba("#BAE6FD", 0.18), color: "#BAE6FD" }}>
+                    {/* You can manually change the left, top, bottom, and width values here to reposition or resize the card */}
+                    <div
+                        className="dcp-floating-benefit-card dcp-floating-card-left"
+                        style={{
+                            left: "calc(50% - 505px)",
+                            top: "320px",
+                            bottom: "0px",
+                            width: "190px",
+                            height: "auto",
+                            justifyContent: "center",
+                            padding: "18px"
+                        }}
+                    >
+                        <div className="dcp-new-icon" style={{ background: hexToRgba("#BAE6FD", 0.18), color: "#BAE6FD" }}>
                             <FontAwesomeIcon icon={faStar} />
                         </div>
-                        <div className="dgm-new-content">
-                            <h3>Industry Recognition</h3>
-                            <p>Get certified with globally recognized credentials that validate your expertise and boost your career prospects worldwide...</p>
+                        <div className="dcp-new-content" >
+                            <h3>Creative Milestones</h3>
+                            <p>Celebrate your child's artistic journey with certificates of completion that highlight their new creative skills. Each beautiful certificate rewards their hard work and boosts their unique imagination.</p>
                         </div>
                     </div>
 
                     {/* Right Bottom Floating Card */}
-                    <div className="dgm-floating-benefit-card dgm-floating-card-right">
-                        <div className="dgm-new-icon" style={{ background: hexToRgba("#C4B5FD", 0.18), color: "#C4B5FD" }}>
+                    <div className="dcp-floating-benefit-card dcp-floating-card-right" style={{
+                        right: "calc(50% - 505px)",
+                        top: "320px",
+                        bottom: "0px",
+                        width: "190px",
+                        height: "auto",
+                        justifyContent: "center",
+                        padding: "18px"
+                    }}>
+                        <div className="dcp-new-icon" style={{ background: hexToRgba("#C4B5FD", 0.18), color: "#C4B5FD" }}>
                             <FontAwesomeIcon icon={faTrophy} />
                         </div>
-                        <div className="dgm-new-content">
-                            <h3>Lifetime Updates</h3>
-                            <p>Stay ahead with free lifetime access to all future course updates, new modules, and industry-relevant content additions...</p>
+                        <div className="dcp-new-content">
+                            <h3>Endless Creativity</h3>
+                            <p>Enjoy unlimited free access to our growing library of fun drawing lessons, keeping your little artist constantly inspired. We regularly add new exciting modules and engaging projects so they always have fresh creative challenges.</p>
                         </div>
                     </div>
                 </div>
             </section>
 
             {/* Certificate Section with Simplified Lock Overlay */}
-            <section className="gdc-section gdc-dark-bg">
-                <div className="gdc-container">
-                    <h2 className="gdc-section-title">Professional Certification</h2>
-                    <p className="gdc-section-subtitle">Earn a globally recognized certificate upon completion</p>
+            <section className="dcp-section dcp-dark-bg">
+                <div className="dcp-container">
+                    <h2 className="dcp-section-title">Professional Certification</h2>
+                    <p className="dcp-section-subtitle">Earn a globally recognized certificate upon completion</p>
 
-                    <div className="gdc-certificate-single">
-                        <div className="gdc-certificate-image-wrapper">
+                    <div className="dcp-certificate-single">
+                        <div className="dcp-certificate-image-wrapper">
                             <img
                                 src={certificate.image}
                                 alt="UI/UX Design Mastery Certificate"
-                                className="gdc-certificate-image"
+                                className="dcp-certificate-image"
                                 onError={(e) => {
                                     e.target.onerror = null;
                                     e.target.src = "https://images.unsplash.com/photo-1587440871875-191322ee64b0?auto=format&fit=crop&w=1200&q=80";
                                 }}
                             />
 
-                            <div className="gdc-certificate-lock-overlay">
-                                <div className="gdc-lock-icon">
+                            <div className="dcp-certificate-lock-overlay">
+                                <div className="dcp-lock-icon">
                                     <FontAwesomeIcon icon={faLock} />
                                 </div>
-                                <div className="gdc-lock-text">Certificate Locked</div>
+                                <div className="dcp-lock-text">Certificate Locked</div>
                             </div>
 
-                            <div className="gdc-certificate-overlay">
-                                <span className="gdc-certificate-badge">Your Professional Certificate Template</span>
+                            <div className="dcp-certificate-overlay">
+                                <span className="dcp-certificate-badge">Your Professional Certificate Template</span>
                             </div>
-                            <div className="gdc-certificate-download-note">
+                            <div className="dcp-certificate-download-note">
                                 <p>This is a sample template. Your actual certificate will include your name, course details, and issue date.</p>
                             </div>
                         </div>
 
-                        <div className="gdc-certificate-info-single">
-                            <h3 className="gdc-certificate-title-single">{certificate.title}</h3>
-                            <p className="gdc-certificate-desc-single">{certificate.description}</p>
+                        <div className="dcp-certificate-info-single">
+                            <h3 className="dcp-certificate-title-single">{certificate.title}</h3>
+                            <p className="dcp-certificate-desc-single">{certificate.description}</p>
 
-                            <div className="gdc-certificate-features-single">
+                            <div className="dcp-certificate-features-single">
                                 {certificate.features.map((feature, index) => (
-                                    <div key={index} className="gdc-certificate-feature-item-single">
+                                    <div key={index} className="dcp-certificate-feature-item-single">
                                         <FontAwesomeIcon icon={faCheckCircle} /> {feature.replace("✅ ", "")}
                                     </div>
                                 ))}
                             </div>
 
-                            <div className="gdc-certificate-benefits">
-                                <div className="gdc-benefit">
-                                    <span className="gdc-benefit-icon">
+                            <div className="dcp-certificate-benefits">
+                                <div className="dcp-benefit">
+                                    <span className="dcp-benefit-icon">
                                         <FontAwesomeIcon icon={faGraduationCap} />
                                     </span>
-                                    <span className="gdc-benefit-text">Enhances your professional credibility</span>
+                                    <span className="dcp-benefit-text">Builds creativity and imagination skills</span>
                                 </div>
-                                <div className="gdc-benefit">
-                                    <span className="gdc-benefit-icon">
+
+                                <div className="dcp-benefit">
+                                    <span className="dcp-benefit-icon">
                                         <FontAwesomeIcon icon={faBriefcase} />
                                     </span>
-                                    <span className="gdc-benefit-text">Increases job opportunities by 75%</span>
+                                    <span className="dcp-benefit-text">Improves focus and fine motor skills</span>
                                 </div>
-                                <div className="gdc-benefit">
-                                    <span className="gdc-benefit-icon">
+
+                                <div className="dcp-benefit">
+                                    <span className="dcp-benefit-icon">
                                         <FontAwesomeIcon icon={faGlobe} />
                                     </span>
-                                    <span className="gdc-benefit-text">Globally recognized by employers</span>
+                                    <span className="dcp-benefit-text">Encourages self-expression through art</span>
                                 </div>
-                                <div className="gdc-benefit">
-                                    <span className="gdc-benefit-icon">
+
+                                <div className="dcp-benefit">
+                                    <span className="dcp-benefit-icon">
                                         <FontAwesomeIcon icon={faCheckCircle} />
                                     </span>
-                                    <span className="gdc-benefit-text">QR code verification for authenticity</span>
+                                    <span className="dcp-benefit-text">Certificate of completion provided</span>
                                 </div>
                             </div>
 
-                            <div className="gdc-certificate-instructions">
+                            <div className="dcp-certificate-instructions dcp-cert-left">
                                 <h4>
                                     <FontAwesomeIcon icon={faCertificate} /> Certificate Details:
                                 </h4>
@@ -1005,25 +969,25 @@ const DrawingCourse = () => {
             </section>
 
             {/* Premium Testimonials - V9 Grid Layout */}
-            <section className="gdc-testi-grid-section">
-                <div className="gdc-container">
-                    <div className="gdc-testi-grid-wrapper">
-                        <div className="gdc-testi-grid-left">
-                            <h2 className="gdc-testi-main-title">Experience Learning Like Never Before</h2>
-                            <p className="gdc-testi-subtitle">
+            <section className="dcp-testi-grid-section">
+                <div className="dcp-container">
+                    <div className="dcp-testi-grid-wrapper">
+                        <div className="dcp-testi-grid-left">
+                            <h2 className="dcp-testi-main-title">Experience Learning Like Never Before</h2>
+                            <p className="dcp-testi-subtitle">
                                 Discover personalized, practical learning that prepares you for real product teams. Read stories from learners who transformed their Marketing careers with our mentorship.
                             </p>
                         </div>
 
-                        <div className="gdc-testi-grid-right">
+                        <div className="dcp-testi-grid-right">
                             <div
-                                className="gdc-testi-card-top"
+                                className="dcp-testi-card-top"
                                 style={{ backgroundImage: "url(https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=800)" }}
                             >
-                                <div className="gdc-testi-card-overlay">
-                                    <div className="gdc-testi-quote-content fade-in-anim" key={testiSetIndex}>
+                                <div className="dcp-testi-card-overlay">
+                                    <div className="dcp-testi-quote-content fade-in-anim" key={testiSetIndex}>
                                         <p>"{activeTestimonials[0]?.text}"</p>
-                                        <div className="gdc-testi-author">
+                                        <div className="dcp-testi-author">
                                             <img src={activeTestimonials[0]?.avatar} alt={activeTestimonials[0]?.name} />
                                             <div>
                                                 <h4>{activeTestimonials[0]?.name}</h4>
@@ -1034,11 +998,11 @@ const DrawingCourse = () => {
                                 </div>
                             </div>
 
-                            <div className="gdc-testi-squares-row">
-                                <div className="gdc-testi-card-bottom-left">
-                                    <div className="gdc-testi-quote-content fade-in-anim" key={testiSetIndex}>
+                            <div className="dcp-testi-squares-row">
+                                <div className="dcp-testi-card-bottom-left">
+                                    <div className="dcp-testi-quote-content fade-in-anim" key={testiSetIndex}>
                                         <p>"{activeTestimonials[1]?.text}"</p>
-                                        <div className="gdc-testi-author">
+                                        <div className="dcp-testi-author">
                                             <img src={activeTestimonials[1]?.avatar} alt={activeTestimonials[1]?.name} />
                                             <div>
                                                 <h4>{activeTestimonials[1]?.name}</h4>
@@ -1048,10 +1012,10 @@ const DrawingCourse = () => {
                                     </div>
                                 </div>
 
-                                <div className="gdc-testi-card-bottom-right">
-                                    <div className="gdc-testi-quote-content fade-in-anim" key={testiSetIndex}>
+                                <div className="dcp-testi-card-bottom-right">
+                                    <div className="dcp-testi-quote-content fade-in-anim" key={testiSetIndex}>
                                         <p>"{activeTestimonials[2]?.text}"</p>
-                                        <div className="gdc-testi-author">
+                                        <div className="dcp-testi-author">
                                             <img src={activeTestimonials[2]?.avatar} alt={activeTestimonials[2]?.name} />
                                             <div>
                                                 <h4>{activeTestimonials[2]?.name}</h4>
@@ -1067,13 +1031,13 @@ const DrawingCourse = () => {
             </section>
 
             {/* Enroll Now Section (V2 Expansion) */}
-            <section className="gdc-dark-enrollment-FIXED" ref={formSectionRef}>
-                <div className="gdc-container">
-                    <div className="gdc-floating-icons-v2">
+            <section className="dcp-dark-enrollment-FIXED" ref={formSectionRef}>
+                <div className="dcp-container">
+                    <div className="dcp-floating-icons-v2">
                         {floatingIcons.map((icon, index) => (
                             <div
                                 key={index}
-                                className="gdc-v2-float-icon"
+                                className="dcp-v2-float-icon"
                                 style={{
                                     animationDelay: `${index * 0.5}s`,
                                     left: `${(index * 12.5) % 100}%`,
@@ -1085,80 +1049,80 @@ const DrawingCourse = () => {
                         ))}
                     </div>
 
-                    <section className="gdc-v3-community-banner">
-                        <div className="gdc-banner-grid-overlay"></div>
-                        <div className="gdc-banner-decor-sparkle sp-1">✦</div>
-                        <div className="gdc-banner-decor-sparkle sp-2">✦</div>
-                        <div className="gdc-banner-decor-sparkle sp-3">✦</div>
-                        <div className="gdc-banner-decor-circle cir-1"></div>
-                        <div className="gdc-banner-decor-circle cir-2"></div>
+                    <section className="dcp-v3-community-banner">
+                        <div className="dcp-banner-grid-overlay"></div>
+                        <div className="dcp-banner-decor-sparkle sp-1">✦</div>
+                        <div className="dcp-banner-decor-sparkle sp-2">✦</div>
+                        <div className="dcp-banner-decor-sparkle sp-3">✦</div>
+                        <div className="dcp-banner-decor-circle cir-1"></div>
+                        <div className="dcp-banner-decor-circle cir-2"></div>
 
-                        <div className="gdc-banner-container">
-                            <div className="gdc-banner-content">
-                                <h2 className="gdc-banner-title">
-                                    Start Your Marketing <br /> Journey Today
+                        <div className="dcp-banner-container">
+                            <div className="dcp-banner-content">
+                                <h2 className="dcp-banner-title">
+                                    Start Your Drawing <br /> Journey Today
                                 </h2>
 
-                                <div className="gdc-banner-ratings">
-                                    <div className="gdc-rating-box">
-                                        <div className="gdc-stars">★★★★★</div>
-                                        <div className="gdc-rating-text">4.9 / 5 rating</div>
-                                        <div className="gdc-rating-source">Coursezilla</div>
+                                <div className="dcp-banner-ratings">
+                                    <div className="dcp-rating-box">
+                                        <div className="dcp-stars">★★★★★</div>
+                                        <div className="dcp-rating-text">4.9 / 5 rating</div>
+                                        <div className="dcp-rating-source">Happy Kids</div>
                                     </div>
-                                    <div className="gdc-rating-box">
-                                        <div className="gdc-stars">★★★★★</div>
-                                        <div className="gdc-rating-text">4.8 / 5 rating</div>
-                                        <div className="gdc-rating-source">Globalskills</div>
+                                    <div className="dcp-rating-box">
+                                        <div className="dcp-stars">★★★★★</div>
+                                        <div className="dcp-rating-text">4.8 / 5 rating</div>
+                                        <div className="dcp-rating-source">Parents Choice</div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div className="gdc-ray gdc-ray-left-top">
-                                <div className="gdc-ray-trail"></div>
-                                <div className="gdc-ray-box">
-                                    <div className="gdc-ray-icon icon-email">
+                            <div className="dcp-ray dcp-ray-left-top">
+                                <div className="dcp-ray-trail"></div>
+                                <div className="dcp-ray-box">
+                                    <div className="dcp-ray-icon icon-email">
                                         <FontAwesomeIcon icon={faEnvelope} />
                                     </div>
-                                    <div className="gdc-ray-content">
+                                    <div className="dcp-ray-content">
                                         <h4>Email Support</h4>
                                         <p>hello@engloraylearn.com</p>
                                     </div>
                                 </div>
                             </div>
 
-                            <div className="gdc-ray gdc-ray-left-bottom">
-                                <div className="gdc-ray-trail"></div>
-                                <div className="gdc-ray-box">
-                                    <div className="gdc-ray-icon icon-whatsapp">
+                            <div className="dcp-ray dcp-ray-left-bottom">
+                                <div className="dcp-ray-trail"></div>
+                                <div className="dcp-ray-box">
+                                    <div className="dcp-ray-icon icon-whatsapp">
                                         <FontAwesomeIcon icon={faWhatsapp} />
                                     </div>
-                                    <div className="gdc-ray-content">
+                                    <div className="dcp-ray-content">
                                         <h4>WHATSAPP</h4>
                                         <p>+91 63681 75990</p>
                                     </div>
                                 </div>
                             </div>
 
-                            <div className="gdc-ray gdc-ray-right-top">
-                                <div className="gdc-ray-trail"></div>
-                                <div className="gdc-ray-box">
-                                    <div className="gdc-ray-icon icon-center">
+                            <div className="dcp-ray dcp-ray-right-top">
+                                <div className="dcp-ray-trail"></div>
+                                <div className="dcp-ray-box">
+                                    <div className="dcp-ray-icon icon-center">
                                         <FontAwesomeIcon icon={faMapMarkerAlt} />
                                     </div>
-                                    <div className="gdc-ray-content">
+                                    <div className="dcp-ray-content">
                                         <h4>Learning Center</h4>
                                         <p>Madurai, Tamil Nadu</p>
                                     </div>
                                 </div>
                             </div>
 
-                            <div className="gdc-ray gdc-ray-right-bottom">
-                                <div className="gdc-ray-trail"></div>
-                                <div className="gdc-ray-box">
-                                    <div className="gdc-ray-icon icon-chat">
+                            <div className="dcp-ray dcp-ray-right-bottom">
+                                <div className="dcp-ray-trail"></div>
+                                <div className="dcp-ray-box">
+                                    <div className="dcp-ray-icon icon-chat">
                                         <FontAwesomeIcon icon={faComments} />
                                     </div>
-                                    <div className="gdc-ray-content">
+                                    <div className="dcp-ray-content">
                                         <h4>Quick Chat</h4>
                                         <p>Live Chat Available</p>
                                     </div>
@@ -1168,20 +1132,20 @@ const DrawingCourse = () => {
                     </section>
 
                     {/* Single Black Container with Left Content and Right Form */}
-                    <div className="dgm-single-enroll-container">
+                    <div className="dcp-single-enroll-container">
                         {/* Left Side - Content */}
-                        <div className="dgm-enroll-left-content">
-                            <h3 className="dgm-enroll-title">Start Your Journey</h3>
-                            <p className="dgm-enroll-subtitle">join a focused learning experience designed to help you master practical skills, build a standout portfolio, and launch your journey as a professional Artist</p>
+                        <div className="dcp-enroll-left-content">
+                            <h3 className="dcp-enroll-title">Start Your Creative Adventure</h3>
+                            <p className="dcp-enroll-subtitle">Join our fun drawing classes tailored for kids! Help your child explore their imagination, master exciting new art techniques, and build a beautiful collection of artworks they'll be proud to share.</p>
                         </div>
 
                         {/* Right Side - Form */}
-                        <div className="dgm-enroll-right-form">
-                            <div className="dgm-enroll-form-wrapper">
-                                <h4 className="dgm-enroll-form-title">Enrollment Form</h4>
-                                <form onSubmit={handleSubmit} className="dgm-enroll-form">
-                                    <div className="dgm-enroll-form-grid">
-                                        <div className="dgm-enroll-form-group">
+                        <div className="dcp-enroll-right-form">
+                            <div className="dcp-enroll-form-wrapper">
+                                <h4 className="dcp-enroll-form-title">Enrollment Form</h4>
+                                <form onSubmit={handleSubmit} className="dcp-enroll-form">
+                                    <div className="dcp-enroll-form-grid">
+                                        <div className="dcp-enroll-form-group">
                                             <label>Full Name *</label>
                                             <input
                                                 type="text"
@@ -1193,7 +1157,7 @@ const DrawingCourse = () => {
                                             />
                                         </div>
 
-                                        <div className="dgm-enroll-form-group">
+                                        <div className="dcp-enroll-form-group">
                                             <label>Email ID *</label>
                                             <input
                                                 type="email"
@@ -1205,7 +1169,7 @@ const DrawingCourse = () => {
                                             />
                                         </div>
 
-                                        <div className="dgm-enroll-form-group">
+                                        <div className="dcp-enroll-form-group">
                                             <label>Phone Number *</label>
                                             <input
                                                 type="tel"
@@ -1217,7 +1181,7 @@ const DrawingCourse = () => {
                                             />
                                         </div>
 
-                                        <div className="dgm-enroll-form-group">
+                                        <div className="dcp-enroll-form-group">
                                             <label>Select Course *</label>
                                             <select
                                                 name="course"
@@ -1225,15 +1189,16 @@ const DrawingCourse = () => {
                                                 onChange={handleInputChange}
                                                 required
                                             >
-                                                <option value="UI/UX Design Mastery">UI/UX Design Mastery</option>
-                                                <option value="UX Research & Strategy">UX Research & Strategy</option>
-                                                <option value="Design Systems & UI">Design Systems & UI</option>
-                                                <option value="Mobile App UI/UX">Mobile App UI/UX</option>
+                                                <option value="Drawing">Drawing</option>
+                                                <option value="Graphic Design">Graphic Design</option>
+                                                <option value="Ui/Ux Design">Ui/Ux Design</option>
+                                                <option value="Java Full Stack">Java Full Stack</option>
+                                                <option value="Digital Marketing">Digital Marketing</option>
                                             </select>
                                         </div>
                                     </div>
 
-                                    <button type="submit" className="dgm-enroll-submit-btn">
+                                    <button type="submit" className="dcp-enroll-submit-btn">
                                         Complete Enrollment
                                     </button>
                                 </form>
@@ -1244,12 +1209,12 @@ const DrawingCourse = () => {
             </section>
 
             {showSuccess && (
-                <div className="gdc-toast">
-                    <div className="gdc-toast-content">
-                        <div className="gdc-toast-icon">
+                <div className="dcp-toast">
+                    <div className="dcp-toast-content">
+                        <div className="dcp-toast-icon">
                             <FontAwesomeIcon icon={faTrophy} />
                         </div>
-                        <div className="gdc-toast-message">
+                        <div className="dcp-toast-message">
                             <h4>Enrollment Successful!</h4>
                             <p>Welcome to UI/UX Design Mastery! Our team will contact you within 24 hours.</p>
                         </div>

@@ -57,6 +57,7 @@ const productCategories = [
 
 const RayMartPageTwo = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [internalImgIndex, setInternalImgIndex] = useState(0);
   const [howWeWorkSlide, setHowWeWorkSlide] = useState(0);
   const [testiIndex, setTestiIndex] = useState(0);
   const navigate = useNavigate();
@@ -106,6 +107,19 @@ const RayMartPageTwo = () => {
     }, 5000);
     return () => clearInterval(interval);
   }, []);
+
+  // Internal image cycle for popular services
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setInternalImgIndex((prev) => (prev + 1) % 4);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
+  // Reset internal image when main service changes
+  useEffect(() => {
+    setInternalImgIndex(0);
+  }, [activeIndex]);
 
   const nextSlide = () => {
     setHowWeWorkSlide((prev) => (prev + 1) % howWeWorkSlides.length);
@@ -278,12 +292,16 @@ const RayMartPageTwo = () => {
             {/* SINGLE CARD STRUCTURE THAT SWAPS CONTENT */}
             <div className="rm-service-main-card">
               <div className="rm-service-image-side">
-                <img
-                  src={services[activeIndex].heroImage}
-                  alt={services[activeIndex].title}
-                  className="rm-service-hero-img active"
-                  key={activeIndex} /* Key triggers re-run of CSS animation on image */
-                />
+                <div className="rm-service-hero-img-container">
+                  {services[activeIndex].gallery.map((img, i) => (
+                    <img
+                      key={i}
+                      src={img}
+                      alt={`${services[activeIndex].title} ${i}`}
+                      className={`rm-service-hero-img ${internalImgIndex === i ? 'active' : ''}`}
+                    />
+                  ))}
+                </div>
               </div>
 
               <div className="rm-service-content-side">
@@ -293,23 +311,16 @@ const RayMartPageTwo = () => {
                 </div>
 
                 <div className="rm-service-previews-grid">
-                  {/* GALLERY: SHOWS THE OTHER 4 SERVICES */}
-                  {services
-                    .filter((_, idx) => idx !== activeIndex)
-                    .map((s, sIdx) => {
-                      // Find real index in original services array
-                      const realIndex = services.findIndex(item => item.title === s.title);
-                      return (
-                        <div
-                          key={sIdx}
-                          className="rm-preview-box"
-                          onClick={() => setActiveIndex(realIndex)}
-                        >
-                          <img src={s.heroImage} alt={s.title} />
-                        </div>
-                      );
-                    })
-                  }
+                  {services[activeIndex].gallery.map((img, i) => (
+                    <div
+                      key={i}
+                      className={`rm-preview-box ${internalImgIndex === i ? 'active' : ''}`}
+                      onClick={() => setInternalImgIndex(i)}
+                    >
+                      <img src={img} alt={`Gallery ${i}`} />
+                      <div className="rm-preview-indicator"></div>
+                    </div>
+                  ))}
                 </div>
 
                 <div className="rm-service-footer">
@@ -1117,7 +1128,12 @@ const services = [
   {
     title: "branding",
     description: "Craft a unique and powerful identity for your business. We specialize in logo creation, brand guidelines, and high-impact visual strategy.",
-    heroImage: "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=800&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1634942537034-2531766767d1?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1434626881859-194d67b2b86f?auto=format&fit=crop&w=800&q=80"
+    ],
     tags: ["IDENTITY", "STRATEGY", "LOGOS"],
     stats: ["500+ Brands", "98% Success"],
     offer: "20% OFF TODAY"
@@ -1125,7 +1141,12 @@ const services = [
   {
     title: "development",
     description: "Turn your complex ideas into high-performance digital products. We develop scalable, clean, and reliable codebases for web and mobile.",
-    heroImage: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=800&q=80"
+    ],
     tags: ["REACT", "BACKEND", "APPS"],
     stats: ["10M+ Users", "99.9% Uptime"],
     offer: "FREE MAINTENANCE"
@@ -1133,7 +1154,12 @@ const services = [
   {
     title: "website dev",
     description: "Build a stunning online presence with our custom website development. From corporate portals to creative portfolios.",
-    heroImage: "https://images.unsplash.com/photo-1542744173-05336fcc7ad4?auto=format&fit=crop&w=800&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1542744173-05336fcc7ad4?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1522542550221-31fd19705268?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80"
+    ],
     tags: ["BUSINESS", "CORPORATE", "SEO"],
     stats: ["1K+ Sites", "SEO Optimized"],
     offer: "SEO AUDIT FREE"
@@ -1141,7 +1167,12 @@ const services = [
   {
     title: "e-commerce",
     description: "Launch your online store with confidence. We provide end-to-end e-commerce solutions with secure payment integrations.",
-    heroImage: "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&w=800&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1534452203294-45c83d936f86?auto=format&fit=crop&w=800&q=80"
+    ],
     tags: ["SHOPIFY", "CHECKOUT", "STORE"],
     stats: ["$100M+ GMV", "Secure Pay"],
     offer: "FREE SETUP"
@@ -1149,7 +1180,12 @@ const services = [
   {
     title: "app dev",
     description: "Innovate on mobile with powerful apps. We create seamless mobile experiences that engage users and drive business value.",
-    heroImage: "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=800&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1526498460520-4c246339dccb?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=800&q=80"
+    ],
     tags: ["IOS", "ANDROID", "FLUTTER"],
     stats: ["50+ Apps", "High Retention"],
     offer: "PROTOTYPE DEAL"
@@ -1157,7 +1193,12 @@ const services = [
   {
     title: "graphic design",
     description: "Visually captivating designs that speak your brand's language. From social media kits to high-end corporate identity.",
-    heroImage: "https://images.unsplash.com/photo-1611162617263-4ec3060a058e?auto=format&fit=crop&q=80&w=800",
+    gallery: [
+      "https://images.unsplash.com/photo-1611162617263-4ec3060a058e?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1626785774625-ddcddc3445e9?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=80"
+    ],
     tags: ["SOCIAL", "BRAND", "ADS"],
     stats: ["2K+ Projects", "Expert Team"],
     offer: "BRAND KIT BUNDLE"
@@ -1165,7 +1206,12 @@ const services = [
   {
     title: "ui/ux design",
     description: "User-centric design solutions that prioritize intuitive navigation and aesthetic excellence across all digital touchpoints.",
-    heroImage: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=800",
+    gallery: [
+      "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1522542550221-31fd19705268?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
+    ],
     tags: ["UI", "UX", "RESEARCH"],
     stats: ["300+ Products", "Top Rated"],
     offer: "UI AUDIT PACK"
@@ -1173,7 +1219,12 @@ const services = [
   {
     title: "software & tech",
     description: "Custom enterprise software and tech solutions built to scale. From ERP systems to legacy platform modernization.",
-    heroImage: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800",
+    gallery: [
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
+    ],
     tags: ["ERP", "LEGACY", "SOFT"],
     stats: ["100+ Systems", "Scalable"],
     offer: "CONSULTING KIT"
@@ -1181,7 +1232,12 @@ const services = [
   {
     title: "data analytics",
     description: "Transform raw data into actionable insights. We provide deep data visualization and predictive modeling for strategy.",
-    heroImage: "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?auto=format&fit=crop&q=80&w=800",
+    gallery: [
+      "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1518186239717-2e90987c3913?auto=format&fit=crop&w=800&q=80"
+    ],
     tags: ["DATA", "BI", "NLP"],
     stats: ["500+ Reports", "Accuracy"],
     offer: "FREE HYPOTHESIS"
@@ -1189,7 +1245,12 @@ const services = [
   {
     title: "ai products",
     description: "Leverage the power of AI to automate and innovate. Smart chatbots, machine learning, and neural network solutions.",
-    heroImage: "https://images.unsplash.com/photo-1507146426996-ef05306b995a?auto=format&fit=crop&q=80&w=800",
+    gallery: [
+      "https://images.unsplash.com/photo-1507146426996-ef05306b995a?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1531746790731-6c087fecd05a?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1527430253228-e90371c6a1f9?auto=format&fit=crop&w=800&q=80"
+    ],
     tags: ["LLM", "CHATBOTS", "ML"],
     stats: ["1M+ Tokens", "Smart Bot"],
     offer: "BETA ACCESS"
@@ -1197,7 +1258,12 @@ const services = [
   {
     title: "crm service",
     description: "Optimize your customer relationship management with our tailored CRM solutions and automated sales funnels.",
-    heroImage: "https://images.unsplash.com/photo-1552581234-26160f608093?auto=format&fit=crop&q=80&w=800",
+    gallery: [
+      "https://images.unsplash.com/photo-1552581234-26160f608093?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1454165833767-027ffea9e77b?auto=format&fit=crop&w=800&q=80"
+    ],
     tags: ["CRM", "SALES", "AUTOMATE"],
     stats: ["50+ CRM Setups", "Loyalty"],
     offer: "FUNNEL SETUP"
@@ -1205,7 +1271,12 @@ const services = [
   {
     title: "saas service",
     description: "Launch and scale your SaaS products with our expert cloud architecture and multi-tenant billing solutions.",
-    heroImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800",
+    gallery: [
+      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1614064641936-e41fa8208453?auto=format&fit=crop&w=800&q=80"
+    ],
     tags: ["SAAS", "CLOUD", "BILLING"],
     stats: ["20+ SaaS Launch", "Growth"],
     offer: "SKY LAUNCH KIT"

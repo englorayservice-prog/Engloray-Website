@@ -13,6 +13,7 @@ import careerIcon from '../../../assets/character-illustration.png';
 const RayMartPageThree = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [internalImgIndex, setInternalImgIndex] = useState(0);
   const [testiIndex, setTestiIndex] = useState(0);
   const navigate = useNavigate();
 
@@ -39,6 +40,19 @@ const RayMartPageThree = () => {
     setIsVisible(true);
   }, []);
 
+  // Internal image cycle for popular products
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setInternalImgIndex((prev) => (prev + 1) % 4);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
+  // Reset internal image when main product changes
+  useEffect(() => {
+    setInternalImgIndex(0);
+  }, [activeIndex]);
+
   const nextProduct = () => {
     setActiveIndex((prev) => (prev + 1) % popularProducts.length);
   };
@@ -55,11 +69,9 @@ const RayMartPageThree = () => {
     setTestiIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
-  // Helper to get the 4 products NOT currently active
-  const getThumbnailProducts = () => {
-    return popularProducts
-      .map((p, originalIndex) => ({ ...p, originalIndex }))
-      .filter((_, idx) => idx !== activeIndex);
+  // Helper to get the 4 gallery images of the active product
+  const getActiveGallery = () => {
+    return popularProducts[activeIndex].gallery || [];
   };
 
     const scrollToOffers = () => {
@@ -232,15 +244,19 @@ const RayMartPageThree = () => {
           <button className="rm3-nav-outer prev" onClick={prevProduct}>‹</button>
 
           <div className="rm3-exact-red-card">
-            {/* Left Column: Big Hero Image (Active Product Only) */}
+            {/* Left Column: Big Hero Image Gallery */}
             <div className="rm3-exact-image-col">
-              <img
-                src={popularProducts[activeIndex].img}
-                alt={popularProducts[activeIndex].title}
-                className="rm3-exact-hero-img"
-                key={`hero-${activeIndex}`}
-                loading="eager"
-              />
+              <div className="rm3-exact-hero-img-container">
+                {popularProducts[activeIndex].gallery.map((img, i) => (
+                  <img
+                    key={i}
+                    src={img}
+                    alt={`${popularProducts[activeIndex].title} ${i}`}
+                    className={`rm3-exact-hero-img ${internalImgIndex === i ? 'active' : ''}`}
+                    loading="eager"
+                  />
+                ))}
+              </div>
             </div>
 
             {/* Right Column: Content + Grid of the OTHER 4 products + Footer */}
@@ -250,22 +266,20 @@ const RayMartPageThree = () => {
                 <p className="rm3-exact-description">{popularProducts[activeIndex].description}</p>
               </div>
 
-              {/* 2x2 Navigator Grid: Showing the 4 non-active products */}
+              {/* 2x2 Navigator Grid: Showing the gallery images of current active product */}
               <div className="rm3-exact-grid">
-                {getThumbnailProducts().map((p) => (
+                {popularProducts[activeIndex].gallery.map((img, i) => (
                   <div
-                    className="rm3-exact-grid-item"
-                    key={p.originalIndex}
-                    onClick={() => setActiveIndex(p.originalIndex)}
+                    className={`rm3-exact-grid-item ${internalImgIndex === i ? 'active' : ''}`}
+                    key={i}
+                    onClick={() => setInternalImgIndex(i)}
                   >
                     <img
-                      src={p.img}
-                      alt={p.title}
+                      src={img}
+                      alt={`Gallery ${i}`}
                       loading="eager"
                     />
-                    <div className="rm3-exact-grid-overlay">
-                      <span>{p.title}</span>
-                    </div>
+                    <div className="rm3-exact-grid-indicator"></div>
                   </div>
                 ))}
               </div>
@@ -760,7 +774,12 @@ const popularProducts = [
   {
     title: "CRM",
     description: "Centrally manage all customer interactions and sales pipelines. Our CRM helps you track every lead, opportunity, and deal throughout its lifecycle.",
-    img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
+    gallery: [
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1534452203294-45c83d936f86?q=80&w=1200&auto=format&fit=crop"
+    ],
     tags: ["CLIENTS", "PIPELINE", "SALES"],
     statBig: "10K+ Leads",
     statSmall: "92% DEAL SPEED",
@@ -769,7 +788,12 @@ const popularProducts = [
   {
     title: "ERP",
     description: "Complete Enterprise Resource Planning for every department. Integrated logistics, stock management, and finance control in a single unified dashboard.",
-    img: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1200&auto=format&fit=crop",
+    gallery: [
+      "https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200&auto=format&fit=crop"
+    ],
     tags: ["OPERATION", "LOGISTICS", "STOCKS"],
     statBig: "Global Reach",
     statSmall: "99.9% ACCURACY",
@@ -778,7 +802,12 @@ const popularProducts = [
   {
     title: "AI CHATBOT",
     description: "Transform your customer support with intelligent conversational agents. We build AI bots that understand context and resolve 80% of support queries automatically.",
-    img: "https://images.unsplash.com/photo-1675271591211-126ad94e495d?q=80&w=1200&auto=format&fit=crop",
+    gallery: [
+      "https://images.unsplash.com/photo-1675271591211-126ad94e495d?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1531746790731-6c087fecd05a?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1589254065878-42c9da997008?q=80&w=1200&auto=format&fit=crop"
+    ],
     tags: ["GPT-4", "NLP", "24/7 HELPDESK"],
     statBig: "80% Auto-res",
     statSmall: "SMART AI BOT",
@@ -787,7 +816,12 @@ const popularProducts = [
   {
     title: "JOB SEEKER HUB",
     description: "The ultimate matching platform for professionals and recruiters. Build your career with AI-driven job suggestions and a streamlined recruitment workflow.",
-    img: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=1200&auto=format&fit=crop",
+    gallery: [
+      "https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1521791136064-7986c2923ea4?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop"
+    ],
     tags: ["CAREER", "HIRING", "CV-SYNC"],
     statBig: "50K+ Hired",
     statSmall: "DIRECT MATCH",
@@ -796,7 +830,12 @@ const popularProducts = [
   {
     title: "LEARNING & CAREER",
     description: "Advance your expertise with our comprehensive learning portal. Courses, certifications, and mentorship programs designed to help you climb the professional ladder.",
-    img: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1200&auto=format&fit=crop",
+    gallery: [
+      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1581291518066-8e75ff13e7ec?q=80&w=1200&auto=format&fit=crop"
+    ],
     tags: ["SKILLS", "PORTAL", "CERTIFY"],
     statBig: "Master Skills",
     statSmall: "LIFETIME REPLAY",
@@ -805,7 +844,12 @@ const popularProducts = [
   {
     title: "SAAS",
     description: "Build, deploy, and scale cloud-based applications flawlessly. From billing orchestration to API gateways, streamline your software as a service.",
-    img: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200&auto=format&fit=crop",
+    gallery: [
+      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1614064641936-e41fa8208453?q=80&w=1200&auto=format&fit=crop"
+    ],
     tags: ["CLOUD", "BILLING", "APIS"],
     statBig: "99.9% Uptime",
     statSmall: "CLOUD NATIVE",
@@ -814,13 +858,19 @@ const popularProducts = [
   {
     title: "BUSINESS SUIT AI",
     description: "Empower your C-Suite with real-time AI analytics, legal document parsing, and automated meeting synthesizers for total corporate efficiency.",
-    img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
+    gallery: [
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1505664159858-86a8d8e5837a?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1200&auto=format&fit=crop"
+    ],
     tags: ["ENTERPRISE", "LEGAL", "ANALYTICS"],
     statBig: "3X ROI",
     statSmall: "AUTO-MANAGED",
     promo: "ENTERPRISE TRIAL",
   }
 ];
+
 
 const testimonials = [
   {

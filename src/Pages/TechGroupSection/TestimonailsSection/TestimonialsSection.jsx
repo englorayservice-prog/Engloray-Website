@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faMoneyBill, faClock, faShieldAlt, faChartLine, faArrowRight } from '@fortawesome/free-solid-svg-icons';
@@ -21,6 +22,7 @@ import techLogoFifteen from '../../../assets/logos/Pavizham-Photoroom.png';
 // import budgetImage from '../../../assets/image14.png';
 // import budgetImage1 from '../../../assets/image16.png';
 import statsBgImage from '../../../assets/image21.jfif';
+import StatsAndBenefits from '../../Sub Pages/StatsAndBenefits/StatsAndBenefits';
 import './TestimonialsSection.css';
 
 import budgetImage from '../../../assets/images/red_bar_chart.png';
@@ -303,10 +305,9 @@ const TestimonialsSection = () => {
   };
   */
 
-  // Function to get logo class based on id
+  // Function to get logo class
   const getLogoClass = (id) => {
-    // 3 is Pavizham, 10 is Wooden Street
-    return [3, 10].includes(id) ? 'techGroup-grid-logo-image-large' : 'techGroup-grid-logo-image';
+    return 'techGroup-grid-logo-image';
   };
 
   // Get logo source based on position layout, and the column's current set
@@ -324,28 +325,42 @@ const TestimonialsSection = () => {
   };
 
   return (
-    <section className="techGroup-testimonials-section" id="techGroup-testimonialsSection">
-      <div className="techGroup-testimonialSection-container">
+    <section className="techGroup-testimonials-only-section" id="techGroup-testimonialsSection">
+      <div className="techGroup-testimonials-only-container">
         {/* Header */}
-        <div className={`techGroup-testimonialSection-header ${isVisible ? 'techGroup-animate-fade-in' : ''}`}>
+        <motion.div
+          className={`techGroup-testimonialSection-header ${isVisible ? 'techGroup-animate-fade-in' : ''}`}
+          initial={{ opacity: 0, y: 36 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.4 }}
+          transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+        >
           <span className="techGroup-benefits-main-badge">Clients Love</span>
-          <h2 className="techGroup-testimonials-title">WHAT CLIENTS SAY</h2>
+
+          <div className="techGroup-title-nav-row">
+            <h2 className="techGroup-testimonials-title">WHAT CLIENTS SAY</h2>
+
+            {/* Arrow Controls Moved Here */}
+            <div className="techGroup-stripe-arrows">
+              <button onClick={handlePrevTestimonial}>‹</button>
+              <button onClick={handleNextTestimonial}>›</button>
+            </div>
+          </div>
+
           <p className="techGroup-testimonials-subtitle">
             ENGLORAY is trusted by clients and customers, empowers students, and is strengthened by a dedicated team.
           </p>
           <h4 className='techGroup-testimonials-title' style={{ fontSize: '1.8rem' }}>More Success Stories</h4>
-        </div>
-
-        {/* Arrow Controls */}
-        <div className="techGroup-stripe-arrows">
-          <button onClick={handlePrevTestimonial}>‹</button>
-          <button onClick={handleNextTestimonial}>›</button>
-        </div>
-
-
+        </motion.div>
 
         {/* STRIPE STYLE CAROUSEL */}
-        <div className="techGroup-stripe-carousel-wrapper">
+        <motion.div
+          className="techGroup-stripe-carousel-wrapper"
+          initial={{ opacity: 0, y: 44 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.2 }}
+          transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+        >
           <div className="techGroup-stripe-carousel">
             {testimonials.map((item, index) => {
               const isActive = index === activeTestimonial;
@@ -395,41 +410,47 @@ const TestimonialsSection = () => {
               );
             })}
           </div>
+        </motion.div>
+      </div>
+      {/* Trusted By Section - Sequential Logo Animation */}
+      <motion.div
+        className="techGroup-trusted-by-section"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.3 }}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <div className="techGroup-trusted-by-header">
+          <h3>Trusted by industry leaders and developers worldwide</h3>
         </div>
 
-        {/* Trusted By Section - Sequential Logo Animation */}
-        <div className={`techGroup-trusted-by-section ${isVisible ? 'techGroup-animate-fade-in' : ''}`}>
-          <div className="techGroup-trusted-by-header">
-            <h3>Trusted by industry leaders and developers worldwide</h3>
-          </div>
+        <div className="techGroup-grid-logos-container">
+          {[0, 1, 2, 3, 4, 5, 6, 7].map((position) => {
+            // Get the logo based on logo's current set
+            const logo = getLogoForPosition(position);
 
-          <div className="techGroup-grid-logos-container">
-            {[0, 1, 2, 3, 4, 5, 6, 7].map((position) => {
-              // Get the logo based on logo's current set
-              const logo = getLogoForPosition(position);
+            // Get animation class for this logo
+            const animationClass = getAnimationClass(position);
 
-              // Get animation class for this logo
-              const animationClass = getAnimationClass(position);
-
-              return (
-                <div key={position} className="techGroup-grid-logo">
-                  {logo && (
-                    <img
-                      src={logo.src}
-                      alt={logo.alt}
-                      className={`${getLogoClass(logo.id)} ${animationClass}`}
-                    />
-                  )}
-                </div>
-              );
-            })}
-          </div>
+            return (
+              <div key={position} className="techGroup-grid-logo">
+                {logo && (
+                  <img
+                    src={logo.src}
+                    alt={logo.alt}
+                    className={`${getLogoClass(logo.id)} ${animationClass}`}
+                  />
+                )}
+              </div>
+            );
+          })}
         </div>
+      </motion.div>
 
-        {/* Stats Section - White Background with Transparent Container */}
-        <div className="techGroup-stats-wrapper">
+      {/* Stats Section - White Background with Transparent Container */}
+      {/* <div className="techGroup-stats-wrapper">
           <div className="techGroup-stats-container">
-            {/* Background Image inside transparent container */}
+           
             <div
               className="techGroup-stats-bg-image"
               style={{
@@ -440,7 +461,7 @@ const TestimonialsSection = () => {
               }}
             ></div>
 
-            {/* Stats Cards */}
+           
             <div className="techGroup-stats-grid">
               <div className="techGroup-stat-card techGroup-stat-card-one">
                 <div className="techGroup-stat-number">250+</div>
@@ -450,29 +471,23 @@ const TestimonialsSection = () => {
                 <div className="techGroup-stat-number">98%</div>
                 <div className="techGroup-stat-label">CLIENT SATISFACTION</div>
               </div>
-              {/* <div className="techGroup-stat-card techGroup-stat-card-three">
-                <div className="techGroup-stat-number">25+</div>
-                <div className="techGroup-stat-label">GLOBAL<br /> PARTNERS</div>
-              </div> */}
+            
               <div className="techGroup-stat-card techGroup-stat-card-four">
                 <div className="techGroup-stat-number">24/7</div>
                 <div className="techGroup-stat-label">SUPPORT AVAILABLE</div>
               </div>
-              {/* New fifth stat card at bottom left */}
-              {/* <div className="techGroup-stat-card techGroup-stat-card-five">
-                <div className="techGroup-stat-number">15+</div>
-                <div className="techGroup-stat-label">INDUSTRY<br /> AWARDS</div>
-              </div> */}
+          
             </div>
           </div>
-        </div>
+        </div> */}
+      <StatsAndBenefits />
 
-        {/* Benefits for Clients Section - UPDATED WITH BADGES INSIDE DESCRIPTION BOXES */}
-        <div className={`techGroup-benefits-section ${isVisible ? 'techGroup-animate-slide-up' : ''}`}>
+      {/* Benefits for Clients Section - UPDATED WITH BADGES INSIDE DESCRIPTION BOXES */}
+      {/* <div className={`techGroup-benefits-section ${isVisible ? 'techGroup-animate-slide-up' : ''}`}>
           <div className="techGroup-benefits-slide-grid">
 
             {/* Card 1 - Branding Plan - With Background Image */}
-            <div className="techGroup-slide-card techGroup-card-one"
+      {/* <div className="techGroup-slide-card techGroup-card-one"
               style={{
                 backgroundImage: 'url(https://i.pinimg.com/1200x/0e/b0/b9/0eb0b9062b54d063c330b66e1b9890e2.jpg)',
                 backgroundSize: 'cover',
@@ -480,21 +495,21 @@ const TestimonialsSection = () => {
               }}>
               <div className="techGroup-card-one-overlay"></div>
               <div className="techGroup-badge techGroup-badge-one">BENEFITS</div>
-              <div className="techGroup-card-one-header">Branding <br /> Plan</div>
+              <div className="techGroup-card-one-header">Branding <br /> Plan</div> */}
 
 
-              {/* Image from assets */}
-              {/* <div className="techGroup-card-one-image">
+      {/* Image from assets */}
+      {/* <div className="techGroup-card-one-image">
                 <img src={budgetImage1} alt="Budget1" className="techGroup-budge1-image" />
               </div> */}
 
-              <div className="techGroup-card-one-footer">
+      {/* <div className="techGroup-card-one-footer">
                 Engloray builds strong corporate identity through strategic design, consistent messaging, digital presence, and creative storytelling to establish trust and recognition.
               </div>
-            </div>
+            </div> */}
 
-            {/* Card 2 - Agenda - With Background Image and Description */}
-            <div className="techGroup-slide-card techGroup-card-two"
+      {/* Card 2 - Agenda - With Background Image and Description */}
+      {/* <div className="techGroup-slide-card techGroup-card-two"
               style={{
                 backgroundImage: 'url(https://i.pinimg.com/1200x/9b/a7/a6/9ba7a6f8ff3d337564ee1fe7d97c74b1.jpg)',
                 backgroundSize: 'cover',
@@ -505,10 +520,10 @@ const TestimonialsSection = () => {
 
               <div className="techGroup-badge techGroup-badge-two">BENEFITS</div>
 
-              <div className="techGroup-card-two-header">Agenda</div>
+              <div className="techGroup-card-two-header">Agenda</div> */}
 
-              {/* New description added below header */}
-              <div className="techGroup-card-two-description">
+      {/* New description added below header */}
+      {/* <div className="techGroup-card-two-description">
                 Engloray agenda outlines strategic planning, branding initiatives, digital development goals, innovation priorities, and collaborative steps guiding sustainable corporate growth.
               </div>
 
@@ -532,21 +547,21 @@ const TestimonialsSection = () => {
 
               </div>
 
-            </div>
-            {/* Card 3 - Schedule & Deadlines - With 2x2 Grid on Right Side and Bottom Left Description */}
-            <div className="techGroup-slide-card techGroup-card-three">
+            </div> */}
+      {/* Card 3 - Schedule & Deadlines - With 2x2 Grid on Right Side and Bottom Left Description */}
+      {/* <div className="techGroup-slide-card techGroup-card-three">
               <div className="techGroup-badge techGroup-badge-three">BENEFITS</div>
               <div className="techGroup-card-three-header">Quality &<br />Assurance</div>
 
               {/* Arrow with transparent background */}
-              <div className="techGroup-card-three-arrow-section">
+      {/* <div className="techGroup-card-three-arrow-section">
                 <div className="techGroup-arrow-container">
                   <FontAwesomeIcon icon={faArrowRight} className="techGroup-arrow-icon" />
                 </div>
-              </div>
+              </div> */}
 
-              {/* Three-line description at bottom left corner */}
-              <div className="techGroup-card-three-bottom-description">
+      {/* Three-line description at bottom left corner */}
+      {/* <div className="techGroup-card-three-bottom-description">
                 <div className="techGroup-bottom-description-line">
                   Ensuring reliable, consistent product performance always,
                 </div>
@@ -559,7 +574,7 @@ const TestimonialsSection = () => {
               </div>
 
               {/* 2x2 Grid on Right Side with Badges Inside Description Boxes */}
-              <div className="techGroup-card-three-grid-container">
+      {/* <div className="techGroup-card-three-grid-container">
                 <div className="techGroup-card-three-grid">
                   <div className="techGroup-card-three-grid-item">
                     <div className="techGroup-card-three-box-with-badge">
@@ -598,17 +613,17 @@ const TestimonialsSection = () => {
             </div>
 
             {/* Card 4 - Budget - With Image and Badges Inside Description Boxes */}
-            <div className="techGroup-slide-card techGroup-card-four">
+      {/* <div className="techGroup-slide-card techGroup-card-four">
               <div className="techGroup-badge techGroup-badge-four">BENEFITS</div>
               <div className="techGroup-card-four-header">Time Savings</div>
 
               {/* Image from assets */}
-              <div className="techGroup-card-four-image">
+      {/* <div className="techGroup-card-four-image">
                 <img src={budgetImage} alt="Budget" className="techGroup-budget-image" />
-              </div>
+              </div> */}
 
-              {/* Three description boxes with badges inside */}
-              <div className="techGroup-card-four-layout">
+      {/* Three description boxes with badges inside */}
+      {/* <div className="techGroup-card-four-layout">
                 <div className="techGroup-card-four-boxes">
                   <div className="techGroup-card-four-box-item">
                     <div className="techGroup-card-four-box-with-badge">
@@ -638,12 +653,12 @@ const TestimonialsSection = () => {
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
+              </div> */}
 
-          </div>
-        </div>
-      </div>
+
+
+
+
     </section>
   );
 };

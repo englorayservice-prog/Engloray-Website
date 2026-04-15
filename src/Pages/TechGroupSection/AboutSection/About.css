@@ -53,7 +53,7 @@
    ======================================== */
 
 .about-section {
-  padding: 120px 20px;
+  padding: 80px 20px 10px 20px;
   position: relative;
   overflow: hidden;
 
@@ -62,8 +62,8 @@
     radial-gradient(circle at top left, #eef2ff, transparent 40%),
     radial-gradient(circle at bottom right, #fee2e2, transparent 40%),
     #ffffff;
-
-  min-height: 100vh;
+  margin-bottom: -60px;
+  min-height: 90vh;
 }
 
 /* Subtle top border accent */
@@ -90,9 +90,10 @@
 .about-container {
   max-width: 1200px;
   margin: 0 auto;
-  height: 130vh;
   position: relative;
   z-index: 1;
+  transform: translateX(-50px);
+  /* Shifted a little to the left */
 }
 
 /* ========================================
@@ -137,7 +138,7 @@
   color: #6b7280;
   font-family: 'Sora', sans-serif;
   font-weight: 400;
-  max-width: 600px;
+  max-width: 1100px;
   margin-left: 10px;
   text-align: left;
   line-height: 1.7;
@@ -192,10 +193,15 @@
 
 
 .about-features {
-  position: relative;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  /* Match the content balance of the visual grid if needed, or keep 1fr 1fr */
+  grid-template-rows: auto auto;
+  gap: 20px;
   width: 950px;
-  height: 350px;
-  margin: 0 0 50px 100px;
+  margin: 40px 0 40px 100px;
+  /* Aligned with visual-container's 100px margin */
+  position: relative;
 }
 
 
@@ -206,228 +212,216 @@
 
 /* Independent Mission Card */
 .about-mission-card {
-  background: #4CA8DD;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(229, 231, 235, 0.6);
+  grid-column: 2;
+  grid-row: 1;
+  background: #ffffff;
   border-radius: 20px;
-  padding: 40px 30px 110px 30px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 495px;
-  height: 370px;
-  margin: 0;
-  z-index: 3;
-  transform: scale(0.9);
-  transform-origin: bottom right;
-
-  clip-path: path("M 475,0 L 20,0 A 20,20 0,0,0 0,20 L 0,220 A 20,20 0,0,0 20,240 L 145,240 A 20,20 0,0,1 165,260 L 165,350 A 20,20 0,0,0 185,370 L 475,370 A 20,20 0,0,0 495,350 L 495,20 A 20,20 0,0,0 475,0 Z");
-
+  padding: 25px 30px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
   display: flex;
-  align-items: center;
-  color: white;
-  justify-content: center;
-  pointer-events: none;
-}
-
-.about-mission-card .about-mission {
-  color: white;
-}
-
-.about-mission-card .mission-highlight {
-  color: white;
-  font-weight: 700;
-}
-
-.feature-card {
-  background: white;
-  padding: 35px 30px;
-  border: 1px solid rgba(229, 231, 235, 0.6);
-  transition: all 0.3s ease;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #1f2937;
+  gap: 12px;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: left;
+  border: 1px solid rgba(0, 0, 0, 0.03);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-  display: flex;
-  flex-direction: column;
-  will-change: transform;
-  flex: 1;
-  max-width: 420px;
-  pointer-events: none;
 }
 
-/* Left card - Technology */
+.about-mission-card .feature-card-header {
+  margin-bottom: 0;
+}
+
+.about-mission-card h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 0;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.1;
+  color: #111827;
+  letter-spacing: -0.5px;
+}
+
+.about-mission-card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  font-family: 'Sora', sans-serif;
+  color: #4b5563;
+  margin: 0;
+}
+
+.about-mission-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(124, 58, 237, 0.12);
+  border-color: rgba(124, 58, 237, 0.2);
+}
+
+.about-mission-card .feature-icon-container {
+  background: linear-gradient(135deg, #7c3aed, #4f46e5);
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  box-shadow: 0 10px 20px rgba(124, 58, 237, 0.2);
+}
+
+.about-mission-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, #7c3aed, #4f46e5);
+}
+
 /* Independent Technology Card */
 .technology-card {
-  /* Base styles from feature-card */
-  background: white;
-  padding: 20px;
-  border: 1px solid rgba(229, 231, 235, 0.6);
-  transition: all 0.3s ease;
-  overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-  display: flex;
-
-  flex-direction: column;
-  will-change: transform;
-  pointer-events: none;
-
-  /* Overrides for Technology Card */
-  background-color: #ef4444;
-  /* Purple */
-  color: white;
-  border: none;
-  justify-content: flex-start;
-  padding-top: 65px;
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  /* Vertical card */
+  background: #ffffff;
+  padding: 35px 30px;
   border-radius: 20px;
-
-  position: absolute;
-  left: 0;
-  top: auto;
-  bottom: 0;
-  width: 550px;
-  height: 370px;
-  margin: 0;
-  z-index: 2;
-  transform: scale(0.9);
-  transform-origin: bottom left;
-
-  /* Extended clip path with large top overhang */
-  clip-path: path("M 20,0 L 630,0 A 20,20 0,0,1 550,20 L 550,220 A 20,20 0,0,1 545,240 L 350,240 A 20,20 0,0,0 330,260 L 330,350 A 20,20 0,0,1 310,370 L 20,370 A 20,20 0,0,1 0,350 L 0,20 A 20,20 0,0,1 20,0 Z");
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: left;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  position: relative;
+  overflow: hidden;
 }
 
-
-
 .technology-card:hover {
-  transform: translateY(-8px) rotate(0deg) scale(1.02);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+  transform: translateY(-15px);
+  box-shadow: 0 30px 60px rgba(239, 68, 68, 0.12);
+  border-color: rgba(239, 68, 68, 0.2);
+}
+
+.technology-card h3 {
+  font-size: 1.8rem;
+  margin: 0 0 15px 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #111827;
+  letter-spacing: -1px;
 }
 
 .technology-card .feature-icon-container {
   background: linear-gradient(135deg, #3b82f6, #60a5fa);
-  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+  color: white;
   width: 60px;
   height: 60px;
-  min-width: 60px;
-  border-radius: 14px;
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.75rem;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
+  margin-bottom: 25px;
+  box-shadow: 0 10px 20px rgba(59, 130, 246, 0.2);
+}
+
+.technology-card p {
+  line-height: 1.6;
+  font-family: 'Sora', sans-serif;
+  font-size: 1.05rem;
+  margin: 0;
+  font-weight: 400;
+  color: #4b5563;
+}
+
+.technology-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, #3b82f6, #60a5fa);
 }
 
 .technology-card:hover .feature-icon-container {
   transform: scale(1.1) rotate(5deg);
 }
 
-.technology-card h3 {
-  font-size: 1.7rem;
-  margin: 10px;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  line-height: 1.3;
-  flex-grow: 1;
-}
-
-.technology-card p {
-  line-height: 1.7;
-  font-family: 'Sora', sans-serif;
-  font-size: 1.1rem;
-  margin: 0;
-  transition: all 0.3s ease;
-  font-weight: 400;
-}
-
-
-
-
 /* Right card - Education */
 /* Independent Education Card */
 .education-card {
-  /* Base styles from feature-card */
-  background: white;
-  padding: 35px 50px;
-  justify-content: center;
-  transition: all 0.3s ease;
-  overflow: hidden;
-  box-shadow: 0 100px 100px rgba(0, 0, 0, 0.08);
+  grid-column: 2;
+  grid-row: 2;
+  background: #ffffff;
+  padding: 25px 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
   display: flex;
   flex-direction: column;
-  will-change: transform;
-  pointer-events: none;
+  justify-content: flex-start;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: left;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  position: relative;
+  overflow: hidden;
+  gap: 12px;
+}
 
-  position: absolute;
-  left: 50%;
-  top: 84%;
-  width: 540px;
-  height: 180px;
-  margin: 0;
-  z-index: 4;
-
-  transform: translate(-50%, -50%) scale(0.65);
-  border-radius: 40px;
-  border: 4px solid #ef4444;
+.education-card .feature-card-header {
+  margin-bottom: 0;
 }
 
 .education-card:hover {
-  transform: translateY(-8px) rotate(0deg) scale(1.02);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
-  border-color: rgba(59, 130, 246, 0.3);
-}
-
-.education-card .feature-icon-container {
-  background: linear-gradient(135deg, #ef4444, #f87171);
-  box-shadow: 0 8px 20px rgba(239, 68, 68, 0.3);
-  width: 60px;
-  height: 60px;
-  min-width: 60px;
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.75rem;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.education-card:hover .feature-icon-container {
-  transform: scale(1.1) rotate(5deg);
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(3, 105, 161, 0.12);
+  border-color: rgba(3, 105, 161, 0.2);
 }
 
 .education-card h3 {
-  font-size: 2.2rem;
-  color: #1f2937;
-  margin: -10px;
-  margin-top: 5px;
+  font-size: 1.5rem;
+  color: #111827;
+  margin: 0;
   font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  line-height: 1.3;
-  flex-grow: 1;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
 }
 
-.education-card:hover h3 {
-  color: #3b82f6;
+.education-card .feature-icon-container {
+  background: linear-gradient(135deg, #0284c7, #06b6d4);
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  box-shadow: 0 10px 20px rgba(3, 105, 161, 0.2);
 }
 
 .education-card p {
-  color: #6b7280;
-  line-height: 1.7;
+  color: #4b5563;
+  line-height: 1.5;
   font-family: 'Sora', sans-serif;
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   margin: 0;
-  transition: all 0.3s ease;
   font-weight: 400;
 }
 
-.education-card:hover p {
-  color: #4b5563;
+.education-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, #0284c7, #06b6d4);
 }
 
 .feature-card:hover {
@@ -519,7 +513,7 @@
   z-index: 2;
   margin: 0;
   font-weight: 400;
-  text-align: center;
+  text-align: left;
 }
 
 .mission-highlight {
@@ -734,28 +728,21 @@
   }
 }
 
-@keyframes slideInFromLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-100px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+/* Speed up reveal animations */
+.animate-fade-in {
+  animation: fadeInUp 0.4s ease-out forwards;
 }
 
-@keyframes slideInFromRight {
-  from {
-    opacity: 0;
-    transform: translateX(100px);
-  }
+.animate-slide-up {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
 
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+.animate-slide-left {
+  animation: slideInLeft 0.5s ease-out forwards;
+}
+
+.animate-slide-right {
+  animation: slideInRight 0.5s ease-out forwards;
 }
 
 /* ========================================
@@ -803,19 +790,19 @@
 }
 
 .service-stat h4 {
-  font-size: 3rem;
+  font-size: 2.25rem;
   font-weight: 700;
   color: #1f2937;
   margin-bottom: 0;
   font-family: 'Poppins', sans-serif;
-  line-height: 2;
+  line-height: 1.4;
 }
 
 .service-stat p {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: #6b7280;
-  margin-top: -20px;
-  /* margin: 5px 0 0 0; */
+  margin-top: -5px;
+  margin-bottom: 15px;
   font-family: 'Sora', sans-serif;
   font-weight: 500;
 }
@@ -853,6 +840,21 @@
   .about-features {
     grid-template-columns: 1fr;
     gap: 25px;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .about-mission-card,
+  .technology-card,
+  .education-card {
+    grid-column: auto !important;
+    grid-row: auto !important;
+    min-height: auto !important;
+    padding: 30px 25px;
+  }
+
+  .technology-card h3 {
+    font-size: 2rem;
   }
 
   .feature-card:nth-child(1),
@@ -958,31 +960,33 @@
 /* Get Started Button */
 .get-started-btn {
   position: absolute;
-  right: 0;
-  top: 50%;
+  right: -60px;
+  /* Moved further to the right */
+  top: 37%;
   transform: translateY(-50%);
   background: #7c3aed;
-  /* Purple base */
   color: white;
   border: none;
-  padding: 12px 28px;
+  padding: 16px 36px;
+  /* Increased padding */
   border-radius: 50px;
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 1.15rem;
+  /* Increased font size */
   font-family: 'Sora', sans-serif;
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4);
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   z-index: 10;
+  white-space: nowrap;
 }
 
 .get-started-btn:hover {
-  transform: translateY(-55%) scale(1.05);
+  transform: translateY(-55%) scale(1.08);
   background: #6d28d9;
-  box-shadow: 0 6px 20px rgba(124, 58, 237, 0.5);
+  box-shadow: 0 10px 25px rgba(124, 58, 237, 0.5);
 }
 
 .btn-icon {

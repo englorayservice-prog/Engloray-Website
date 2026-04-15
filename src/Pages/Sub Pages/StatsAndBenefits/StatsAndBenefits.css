@@ -1,0 +1,1010 @@
+/* ================= STATS SECTION - WHITE BACKGROUND ================= */
+.techGroup-stats-wrapper {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    background: transparent;
+    padding: 0; /* Reduced to pull section up closer to icons section */
+    margin-bottom: -5rem;
+    /* Reduced margin to bring title closer to map */
+}
+
+.techGroup-stats-main-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 38px;
+    font-weight: 700;
+    color: #1f2937;
+    margin-top: 10px;
+    /* Reduced from 50px to move title upwards */
+    margin-bottom: 40px;
+    text-align: center;
+    letter-spacing: -1px;
+    position: relative;
+    z-index: 5;
+}
+
+.techGroup-stats-main-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 5px;
+    background: #f23030;
+    border-radius: 2.5px;
+}
+
+.techGroup-stats-container {
+    max-width: 1800px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 4rem;
+    position: relative;
+    min-height: 850px;
+    /* Reduced height for a tighter layout */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+}
+
+.techGroup-stats-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), var(--bg-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: invert(1) hue-rotate(180deg);
+    mix-blend-mode: multiply;
+    opacity: 0.35;
+}
+
+.techGroup-stats-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.techGroup-stat-card {
+    position: absolute;
+    pointer-events: auto;
+    /* Re-enable clicks if any */
+}
+
+/* Card One - Red Theme (Top Left) */
+.techGroup-stat-card-one {
+    width: 240px;
+    height: 85px;
+    top: 10%;
+    left: 15%;
+    text-align: left;
+    padding: 1.2rem;
+    border-radius: 16px;
+    background: #FF0000;
+    box-shadow: 0 10px 25px rgba(255, 0, 0, 0.2);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.techGroup-stat-card-one .techGroup-stat-number {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 0.2rem;
+    line-height: 1.2;
+    text-align: left;
+
+}
+
+.techGroup-stat-card-one .techGroup-stat-label {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.2;
+    white-space: pre-line;
+    text-align: left;
+
+}
+
+/* Card Two - Blue Theme (Top Right) */
+.techGroup-stat-card-two {
+    width: 250px;
+    height: 100px;
+    top: 10%;
+    right: 15%;
+    display: flex;
+    flex-direction: column;
+    padding: 1.2rem;
+    border-radius: 16px;
+    background: #2196F3;
+    box-shadow: 0 10px 25px rgba(33, 150, 243, 0.2);
+    border: none;
+    text-align: left;
+}
+
+.techGroup-stat-sub-badge {
+    background: white;
+    color: #2196F3;
+    font-size: 9px;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 4px;
+    width: fit-content;
+    margin-top: 5px;
+    letter-spacing: 0.5px;
+}
+
+.techGroup-stat-card-two .techGroup-stat-number {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 0.4rem;
+    line-height: 1.2;
+}
+
+.techGroup-stat-card-two .techGroup-stat-label {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.3;
+}
+
+/* Card Ten - New Scattered Card */
+.techGroup-stat-card-ten {
+    width: 210px;
+    height: 70px;
+    top: 20%;
+    left: 78%;
+    text-align: left;
+    padding: 1rem 1rem;
+    border-radius: 16px;
+    background: #611f69;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    border-left: 4px solid #4a154b;
+    color: white;
+}
+
+.techGroup-stat-card-ten .techGroup-stat-number {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.techGroup-stat-card-ten .techGroup-stat-label {
+    font-weight: 600;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.2;
+}
+
+/* Card Three - Green/White Theme (Bottom Left) */
+.techGroup-stat-card-three {
+    width: 240px;
+    height: 100px;
+    top: 70%;
+    left: 15%;
+    padding: 1.2rem;
+    border-radius: 16px;
+    background: white;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border: 1px solid #333;
+    text-align: left;
+}
+
+.techGroup-stat-card-three .techGroup-stat-number {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #000000;
+    margin-bottom: 0.3rem;
+    line-height: 1.2;
+}
+
+.techGroup-stat-card-three .techGroup-stat-label {
+    color: #000000;
+    font-weight: 600;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.2;
+
+    white-space: pre-line;
+}
+
+/* Card Four - Dark Theme (Top Center) */
+.techGroup-stat-card-four {
+    width: 250px;
+    height: 90px;
+    top: 5%;
+    left: calc(50% - 125px);
+    right: auto;
+    transform: none;
+    padding: 1.2rem;
+    border-radius: 16px;
+    background: #000;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    border: none;
+    text-align: left;
+    color: white;
+}
+
+.techGroup-stat-card-four .techGroup-stat-number {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 0.3rem;
+    line-height: 1.2;
+}
+
+.techGroup-stat-card-four .techGroup-stat-label {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.2;
+    white-space: pre-line;
+}
+
+/* Card Five - Purple Theme (Bottom Center) */
+.techGroup-stat-card-five {
+    width: 220px;
+    height: 110px;
+    top: 78%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1.2rem;
+    border-radius: 16px;
+    background: white;
+    box-shadow: 0 10px 25px rgba(156, 39, 176, 0.1);
+    border: 2px solid #9C27B0;
+    text-align: left;
+}
+
+.techGroup-stat-card-five .techGroup-stat-number {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #000000;
+    margin-bottom: 0.3rem;
+    line-height: 1.2;
+}
+
+.techGroup-stat-card-five .techGroup-stat-label {
+    color: #000000;
+    font-weight: 600;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.2;
+    white-space: pre-line;
+}
+
+/* Card Six - Orange Theme (Bottom Right) */
+.techGroup-stat-card-six {
+    width: 240px;
+    height: 90px;
+    top: 70%;
+    left: 70%;
+    padding: 1.2rem;
+    border-radius: 16px;
+    background: #FF5722;
+    box-shadow: 0 10px 25px rgba(255, 87, 34, 0.2);
+    border: none;
+    text-align: left;
+}
+
+.techGroup-stat-card-six .techGroup-stat-number {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 0.3rem;
+    line-height: 1.2;
+}
+
+.techGroup-stat-card-six .techGroup-stat-label {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.2;
+    white-space: pre-line;
+}
+
+/* Card Seven - Teal Theme (Mid Left) */
+.techGroup-stat-card-seven {
+    width: 240px;
+    height: 90px;
+    top: 40%;
+    left: 15%;
+    padding: 1.2rem;
+    border-radius: 16px;
+    background: #14b8a6;
+    box-shadow: 0 10px 25px rgba(20, 184, 166, 0.2);
+    border: none;
+    text-align: left;
+}
+
+.techGroup-stat-card-seven .techGroup-stat-number {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 0.3rem;
+    line-height: 1.2;
+}
+
+.techGroup-stat-card-seven .techGroup-stat-label {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.2;
+    white-space: pre-line;
+}
+
+/* Card Eight - Yellow Theme (Mid Right) */
+.techGroup-stat-card-eight {
+    width: 220px;
+    height: 90px;
+    top: 40%;
+    left: 75%;
+    padding: 1.2rem;
+    border-radius: 16px;
+    background: #F59E0B;
+    box-shadow: 0 10px 25px rgba(245, 158, 11, 0.2);
+    border: none;
+    text-align: left;
+    color: white;
+}
+
+.techGroup-stat-card-eight .techGroup-stat-number {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 0.3rem;
+    line-height: 1.2;
+}
+
+.techGroup-stat-card-eight .techGroup-stat-label {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.2;
+    white-space: pre-line;
+}
+
+/* Card Nine - Light Gray Theme (Mid Center) */
+.techGroup-stat-card-nine {
+    width: 250px;
+    height: 90px;
+    top: 42%;
+    left: 45%;
+    padding: 1.2rem;
+    border-radius: 16px;
+    background: #f8fafc;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border: 1px solid #cbd5e1;
+    border-left: 8px solid #64748b;
+    text-align: left;
+}
+
+.techGroup-stat-card-nine .techGroup-stat-number {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #334155;
+    margin-bottom: 0.3rem;
+    line-height: 1.2;
+}
+
+.techGroup-stat-card-nine .techGroup-stat-label {
+    color: #475569;
+    font-weight: 600;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.2;
+    white-space: pre-line;
+}
+
+@media (max-width: 1400px) {
+    .techGroup-stats-bg-image {
+        height: 650px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .techGroup-stats-bg-image {
+        height: 550px;
+    }
+}
+
+@media (max-width: 768px) {
+    .techGroup-stats-grid {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .techGroup-stat-card {
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        width: 100%;
+    }
+}
+
+.techGroup-benefits-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.techGroup-benefits-main-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 30px;
+    text-align: center;
+    letter-spacing: -0.5px;
+    position: relative;
+}
+
+.techGroup-benefits-main-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: #f23030;
+    border-radius: 2px;
+}
+
+/* ================= BENEFITS SLIDE GRID ================= */
+.techGroup-benefits-slide-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 210px;
+    /* Reduced even more for extreme compactness */
+    gap: 30px;
+    width: 100%;
+    margin-top: 50px;
+    /* Reduced bottom gap as requested */
+    padding-bottom: 50px;
+}
+
+.techGroup-slide-card {
+    border-radius: 20px;
+    padding: 30px;
+    /* Increased internal padding */
+    display: flex;
+    flex-direction: column;
+    font-family: "Inter", sans-serif;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+
+.techGroup-slide-card:hover {
+    transform: translateY(-6px);
+}
+
+.techGroup-card-top-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(33, 150, 243, 0.85) 0%, rgba(9, 44, 134, 0.9) 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.techGroup-card-bottom-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(242, 48, 48, 0.85) 0%, rgba(156, 39, 176, 0.9) 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.techGroup-card-one-overlay,
+.techGroup-card-two-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(41, 40, 40, 0.6) 50%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Base Styles for Cards with Background Images (Top, One, Bottom) */
+.techGroup-card-top,
+.techGroup-card-one,
+.techGroup-card-bottom {
+    position: relative;
+    color: white;
+}
+
+.techGroup-badge-top,
+.techGroup-badge-one,
+.techGroup-badge-bottom {
+    position: absolute;
+    width: 80px;
+    height: 24px;
+    top: 15px;
+    right: 15px;
+    padding: 3px 10px;
+    border-radius: 16px;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.25);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.techGroup-card-top-header,
+.techGroup-card-bottom-header {
+    margin-top: 10px;
+    font-size: 20px;
+    /* Reduced from 30px to match Roadmap zoom-out */
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 8px;
+    text-align: left;
+    width: 100%;
+    padding-right: 20px;
+    line-height: 1.15;
+    letter-spacing: 1px;
+    z-index: 2;
+    position: relative;
+}
+
+/* Unique separate styling for Branding Plan Title */
+.techGroup-card-one-header {
+    margin-top: 5px !important;
+    font-size: 20px;
+    /* Reduced to match Roadmap zoom-out */
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 8px;
+    text-align: left;
+    width: 100%;
+    padding-right: 20px;
+    line-height: 1.15;
+    letter-spacing: 1px;
+    z-index: 2;
+    position: relative;
+}
+
+
+
+.techGroup-card-top-footer,
+.techGroup-card-one-footer,
+.techGroup-card-bottom-footer {
+    font-family: 'Poppins', sans-serif;
+    margin-top: 5px;
+    font-size: 10.5px;
+    /* Reduced from 13.5px */
+    opacity: 0.95;
+    max-width: 100%;
+    text-align: left;
+    z-index: 2;
+    position: relative;
+    line-height: 1.4;
+}
+
+.techGroup-card-two {
+    position: relative;
+    color: white;
+}
+
+.techGroup-card-two .techGroup-card-two-tags {
+    position: relative;
+    z-index: 2;
+}
+
+.techGroup-card-two .techGroup-card-two-tags span {
+    background: rgba(255, 255, 255, 0.9);
+    color: #1f2937;
+}
+
+.techGroup-badge-two {
+    position: absolute;
+    width: 80px;
+    height: 24px;
+    top: 15px;
+    right: 15px;
+    padding: 3px 10px;
+    border-radius: 16px;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.9);
+    color: #1f2937;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.techGroup-card-two-header {
+    margin-top: 10px;
+    font-size: 20px;
+    /* Fixed spacing and set to matches zoom-out */
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 8px;
+    text-align: left;
+    width: 100%;
+    padding-right: 0px;
+    line-height: 1.1;
+    z-index: 2;
+    position: relative;
+}
+
+.techGroup-card-two-description {
+    font-family: 'Poppins', sans-serif;
+    font-size: 10.5px;
+    /* Zoomed out font size */
+    line-height: 1.4;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    max-width: 100%;
+    opacity: 0.95;
+    z-index: 2;
+    position: relative;
+    text-align: left;
+}
+
+.techGroup-card-two-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    /* Tighter gap */
+    margin-top: auto;
+    z-index: 2;
+    position: relative;
+    width: 100%;
+}
+
+.techGroup-card-two-tags span {
+    font-family: 'poppins', sans-serif;
+    background: white;
+    padding: 3px 8px;
+    /* Tighter padding */
+    border-radius: 10px;
+    font-size: 7.5px;
+    /* Zoomed out tag font size */
+    font-weight: 500;
+    color: #1f2937;
+}
+
+.techGroup-card-three {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    color: #1f2937;
+    position: relative;
+}
+
+.techGroup-badge-three {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 3px 10px;
+    border-radius: 16px;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    z-index: 2;
+    background: #f23030;
+    color: white;
+    border: none;
+}
+
+.techGroup-card-three-header {
+    margin-top: 0px;
+    /* Reduced from 10px to shift content up */
+    font-size: 20px;
+    /* Reduced from 26px */
+    font-weight: 500;
+    font-family: "Poppins";
+    margin-bottom: 5px;
+    text-align: left;
+    width: 100%;
+    padding-right: 0px;
+    line-height: 1.1;
+}
+
+/* Arrow Section */
+.techGroup-card-three-arrow-section {
+    display: none;
+}
+
+/* Three-line description at bottom left corner */
+.techGroup-card-three-bottom-description {
+    font-family: 'poppins';
+    position: relative;
+    bottom: auto;
+    left: auto;
+    width: 100%;
+    font-size: 9px;
+    line-height: 1.3;
+    color: #1f2937;
+    opacity: 0.8;
+    z-index: 2;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.techGroup-bottom-description-line {
+    margin-bottom: 2px;
+}
+
+/* 2x2 Grid on Right Side */
+.techGroup-card-three-grid-container {
+    position: relative;
+    width: 100%;
+    margin-top: 0px;
+    /* Reduced from 8px to further lift content */
+    padding-top: 4px;
+}
+
+.techGroup-card-three-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.techGroup-card-three-grid-item {
+    width: 100%;
+    text-align: center;
+}
+
+.techGroup-card-three-box-with-badge {
+    position: relative;
+    width: 100%;
+}
+
+.techGroup-inner-badge {
+    position: relative;
+    display: inline-block;
+    background: #f23030;
+    color: white;
+    font-size: 8px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 8px;
+    z-index: 3;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin-bottom: 6px;
+}
+
+.techGroup-card-three-grid-box {
+    font-family: 'Poppins', sans-serif;
+    background: transparent;
+    padding: 0;
+    font-size: 9px;
+    /* Slightly reduced */
+    line-height: 1.4;
+    color: #1f2937;
+    text-align: center;
+    min-height: auto;
+    width: 100%;
+    word-wrap: break-word;
+    font-weight: 400;
+}
+
+/* ===== CARD FOUR STYLES (Black Card with Image and Badges Inside) ===== */
+.techGroup-card-four {
+    background: #0f172a;
+    color: white;
+}
+
+.techGroup-badge-four {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 3px 10px;
+    border-radius: 16px;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.techGroup-card-four-header {
+    margin-top: 10px;
+    font-size: 20px;
+    /* Reduced from 26px */
+    font-weight: 400;
+    font-family: "Poppins";
+    margin-bottom: 6px;
+    text-align: left;
+    width: 100%;
+    padding-right: 0px;
+    line-height: 1.1;
+}
+
+/* Image from assets */
+.techGroup-card-four-image {
+    margin-bottom: 7px;
+    width: 100%;
+    display: none;
+}
+
+.techGroup-budget-image {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.techGroup-card-four-layout {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0px;
+}
+
+.techGroup-card-four-boxes {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    width: 100%;
+    margin-top: 5px;
+    /* Reduced to move boxes up */
+}
+
+.techGroup-card-four-box-item {
+    width: 100%;
+}
+
+.techGroup-card-four-box-with-badge {
+    position: relative;
+    width: 100%;
+}
+
+.techGroup-inner-badge-four {
+    position: absolute;
+    top: -8px;
+    left: 12px;
+    background: rgba(41, 40, 40, 1);
+    color: white;
+    font-size: 8px;
+    font-weight: 600;
+    padding: 2px 10px;
+    border-radius: 8px;
+    z-index: 3;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.techGroup-card-four-box {
+    font-family: 'poppins';
+    margin-top: 0px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 12px 10px 8px 10px;
+    font-size: 9px;
+    /* Reduced for zoom-out effect */
+    line-height: 1.3;
+    color: white;
+    text-align: left;
+    justify-content: center;
+    min-height: auto;
+    width: 100%;
+    word-wrap: break-word;
+    font-weight: 400;
+}
+
+@media (max-width: 768px) {
+    .techGroup-benefits-slide-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+        min-height: 300px;
+    }
+}
+
+/* Card Inner Icons */
+.techGroup-card-inner-icon-one {
+
+    position: absolute;
+    top: 20%;
+    right: 50px;
+    font-size: 85px;
+    opacity: 0.22;
+    z-index: 2;
+    transition: transform 0.3s ease;
+}
+
+.techGroup-card-inner-icon-three {
+    position: absolute;
+    top: 15%;
+    right: 50px;
+    font-size: 85px;
+    opacity: 0.22;
+    z-index: 2;
+    transition: transform 0.3s ease;
+}
+
+.techGroup-slide-card:hover .techGroup-card-inner-icon-one,
+.techGroup-slide-card:hover .techGroup-card-inner-icon-three {
+    transform: translateY(-5px) scale(1.1);
+    opacity: 0.4;
+}
+
+.techGroup-card-inner-icon-one {
+    color: #ffffff;
+}
+
+.techGroup-card-inner-icon-three {
+    color: #f23030;
+}

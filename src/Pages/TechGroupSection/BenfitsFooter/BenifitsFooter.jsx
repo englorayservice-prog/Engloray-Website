@@ -41,7 +41,8 @@ import {
   faFacebookF,
   faTwitter,
   faInstagram,
-  faLinkedinIn
+  faLinkedinIn,
+  faDev
 } from '@fortawesome/free-brands-svg-icons';
 import './BenifitsFooter.css';
 
@@ -61,6 +62,7 @@ library.add(
 );
 
 const BenefitsFooter = ({ onOpenInternshipForm }) => {
+  const [isSwitched, setIsSwitched] = useState(false);
   const [hoveredButton, setHoveredButton] = useState(null);
   const [showInternshipForm, setShowInternshipForm] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -138,6 +140,45 @@ const BenefitsFooter = ({ onOpenInternshipForm }) => {
       iconColor: benefitColors.headset,
       title: "24/7 Support",
       description: "Get assistance anytime you need help with your projects"
+    }
+  ];
+
+  const benefitsAlternative = [
+    {
+      icon: faDev,
+      iconColor: benefitColors.rocket,
+      title: "Agile Development",
+      description: "Fast-paced, transparent development cycles ensuring rapid delivery."
+    },
+    {
+      icon: faCogs,
+      iconColor: benefitColors.cogs,
+      title: "Scalable Architecture",
+      description: "Future-proof infrastructure designed to grow with your business needs."
+    },
+    {
+      icon: faBuilding,
+      iconColor: benefitColors.building,
+      title: "Global Industry Expertise",
+      description: "Specialized insights from a diverse team of international experts."
+    },
+    {
+      icon: faCheckCircle,
+      iconColor: benefitColors.chartLine,
+      title: "Enterprise Standards",
+      description: "Adherence to top-tier security and quality protocols for your projects."
+    },
+    {
+      icon: faClock,
+      iconColor: benefitColors.clock,
+      title: "24/7 Systems Monitoring",
+      description: "Proactive maintenance ensuring maximum uptime and stability."
+    },
+    {
+      icon: faProjectDiagram,
+      iconColor: benefitColors.projectDiagram,
+      title: "Strategic Consulting",
+      description: "Data-driven roadmaps designed to achieve long-term corporate growth."
     }
   ];
 
@@ -268,11 +309,16 @@ const BenefitsFooter = ({ onOpenInternshipForm }) => {
                         When people <br />
                         <span className="do-with-circle">
                           <span className="red-text">do</span>
-                          <span className="switch-circle-container">
+                          <div
+                            className={`switch-circle-container ${isSwitched ? 'switch-active' : ''}`}
+                            onClick={() => setIsSwitched(!isSwitched)}
+                            role="button"
+                            aria-label="Toggle benefits view"
+                          >
                             <span className="switch-outer"></span>
                             <span className="switch-inner"></span>
                             <span className="switch-dot"></span>
-                          </span>
+                          </div>
                           <span className="rest-text"> work with us.</span>
                         </span>
                       </h2>
@@ -285,7 +331,7 @@ const BenefitsFooter = ({ onOpenInternshipForm }) => {
               </div>
 
               <div className="benefits-main-grid grid-3x3">
-                {benefits.map((benefit, index) => (
+                {(isSwitched ? benefitsAlternative : benefits).map((benefit, index) => (
                   <div
                     key={benefit.title}
                     className="benefits-main-item white-card"

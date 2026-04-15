@@ -20,16 +20,10 @@
   box-sizing: border-box;
 }
 
-/* Fade-in trigger from JS */
-.ss-section .ss-master-grid {
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-
-.ss-visible .ss-master-grid {
-  opacity: 1;
-  transform: translateY(0);
+/* Fade-in trigger for Headline and Feature Image handled by Framer Motion */
+.ss-section .ss-col-headline,
+.ss-section .ss-col-feature {
+  /* Initial state is managed by motion.div */
 }
 
 /* Container */
@@ -123,13 +117,19 @@
   flex-direction: column;
   cursor: pointer;
   min-height: 160px;
-  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  /* Transitions only for hover states now */
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+              box-shadow 0.4s ease,
+              border-color 0.4s ease;
 }
 
+/* Removed Intersection Observer visible state - Handled by Framer Motion */
+
 .ss-stat-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(229, 57, 53, 0.12);
   border-color: #E53935;
+  z-index: 10;
 }
 
 /* ── Title Row ── */

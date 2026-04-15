@@ -486,19 +486,20 @@ const InternshipProgram = () => {
 
     return (
         <section className="tgi-internship-program" id="internship">
-            {/* Floating Arrow with FontAwesome Icon */}
-            <div className="tgi-floating-arrow" onClick={handleArrowClick}>
-                <div className="tgi-arrow-symbol">
+            {/* Modern Expandable Floating Action Button */}
+            <button className="tgi-modern-fab" onClick={handleArrowClick} aria-label="Apply for Internship">
+                <span className="tgi-fab-icon">
                     <FontAwesomeIcon
                         icon={faArrowRight}
                         style={{
-                            color: '#fe0000fe',
-                            fontSize: '1.5rem'
+                            color: '#ff1a33',
+                            fontSize: '1.6rem'
                         }}
                     />
-                </div>
-                <div className="tgi-arrow-glow"></div>
-            </div>
+                </span>
+                <span className="tgi-fab-text">Apply Now</span>
+                <div className="tgi-fab-glow"></div>
+            </button>
 
             <div className="tgi-internship-container" id='internship'>
                 {/* Header - Centered */}
