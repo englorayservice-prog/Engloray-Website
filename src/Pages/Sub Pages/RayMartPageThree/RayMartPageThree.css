@@ -351,50 +351,61 @@
 .rm3-exact-red-card {
   flex: 1;
   background-color: #a8211a;
-  border-radius: 20px;
+  border-radius: 8px; /* Matched to page two */
   display: flex;
-  padding: 30px;
-  gap: 30px;
-  box-shadow: 0 30px 60px rgba(168, 33, 26, 0.2);
-  height: 650px; /* Increased to fix overflow issue */
-  min-height: 650px;
-  position: relative;
+  width: 100%;
+  min-height: 500px;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.15);
   overflow: hidden;
+  border: 4px solid #a8211a;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
 }
 
 .rm3-exact-image-col {
-  width: 50%;
-  display: flex;
-  align-items: center;
+  flex: 1.4; /* Matched to page two */
+  height: auto;
+  min-height: 100%;
+  padding: 15px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.rm3-exact-hero-img-container {
+  width: 100%;
+  height: 590px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
 .rm3-exact-hero-img {
   width: 100%;
-  height: 590px; /* Proportional to 650px container */
+  height: 100%;
   object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  animation: rm3-exactFade 0.6s ease-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+  transform: scale(1.05); /* Subtle scale for premium feel */
 }
 
-@keyframes rm3-exactFade {
-  from {
-    opacity: 0;
-    transform: translateX(-10px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+.rm3-exact-hero-img.active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 2;
 }
+
 
 .rm3-exact-content-col {
-  width: 50%;
+  flex: 1;
+  padding: 20px 35px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Ensure items don't stretch too much */
-  padding-right: 15px;
+  color: white;
+  background-color: #a8211a;
 }
 
 .rm3-exact-header {
@@ -423,27 +434,48 @@
 /* 2x2 Navigator Grid (4 non-active products) */
 .rm3-exact-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  /* 3x2 layout (6 items) */
-  gap: 15px;
-  margin-bottom: 30px;
+  grid-template-columns: repeat(2, 1fr);
+  /* 2x2 grid to match page two services */
+  gap: 10px;
+  margin-bottom: 25px;
 }
 
 .rm3-exact-grid-item {
-  height: 110px; /* Tighter height to prevent container escape */
-  /* Uniform height for all 4 thumbnails */
+  aspect-ratio: 16/9;
   width: 100%;
-  border-radius: 10px;
+  border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border: 2px solid transparent;
   cursor: pointer;
   position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .rm3-exact-grid-item:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.rm3-exact-grid-item.active {
+  border-color: #c0ff4d; /* Matching neon accent */
+  box-shadow: 0 0 15px rgba(192, 255, 77, 0.4);
+  transform: scale(1.05);
+}
+
+.rm3-exact-grid-indicator {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  width: 10px;
+  height: 10px;
+  background: #c0ff4d;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 5;
+}
+
+.rm3-exact-grid-item.active .rm3-exact-grid-indicator {
+  opacity: 1;
 }
 
 .rm3-exact-grid-item img {

@@ -46,7 +46,6 @@ import {
   faChevronUp,
   faFolderOpen,
   faChevronDown,
-  // Added missing icons
   faRulerCombined,
   faPenFancy,
   faLightbulb,
@@ -57,10 +56,9 @@ import './GraphicDesignCourse.css';
 
 // Import your assets - KEEPING COMMENTED SECTIONS UNCHANGED
 import demoVideoFile from '../../../assets/Final GD Course video.mp4';
-import videoThumbnail from '../../../assets/DemoThumbnail.png'; // Optional
-//import certificateImage from '../../../assets/GD Certificate.jpeg'; // Your certificate image
-import certificateImage from '../../../assets/Graphic-Designer.png'; // Your certificate image
-import heroBg from '../../../assets/gd-hero-bg.png'; // Exact user reference background
+import videoThumbnail from '../../../assets/DemoThumbnail.png';
+import certificateImage from '../../../assets/Graphic-Designer.png';
+import heroBg from '../../../assets/gd-hero-bg.png';
 import centerDesignImage from '../../../assets/center-design.png';
 import heroAlternative from '../../../assets/(3).png';
 import expertiseImage from '../../../assets/OurExperise&Learning.png';
@@ -96,7 +94,6 @@ import canvaMagicLogo from '../../../assets/canva-magic-hd.png';
 // Brand Logos for Tools Section
 import notionAiLogoV2 from '../../../assets/notion_ai_logo_v2.png';
 import copyAiLogoV2 from '../../../assets/copy_ai_logo_v2.png';
-//import figmaLogoV2 from '../../../assets/xdlogo.png';
 import illustratorLogoV2 from '../../../assets/illustrator_logo_v2.png';
 import luminarLogoV3 from '../../../assets/luminar_logo_v3.png';
 import chatgptLogoV2 from '../../../assets/chatgpt_logo_v2.png';
@@ -105,8 +102,6 @@ import chatgptLogoV2 from '../../../assets/chatgpt_logo_v2.png';
 import avatarF1 from '../../../assets/t1.png';
 import avatarM1 from '../../../assets/t2.png';
 import avatarF2 from '../../../assets/t3.png';
-
-
 
 const GraphicDesignCourse = () => {
   const [showEnrollment, setShowEnrollment] = useState(false);
@@ -121,7 +116,7 @@ const GraphicDesignCourse = () => {
   useEffect(() => {
     const testiInterval = setInterval(() => {
       setTestiSetIndex(prev => (prev + 1) % 3);
-    }, 5000); // Swap every 5 seconds
+    }, 5000);
     return () => clearInterval(testiInterval);
   }, []);
 
@@ -165,42 +160,42 @@ const GraphicDesignCourse = () => {
       title: "Design Fundamentals",
       icon: <FontAwesomeIcon icon={faRulerCombined} />,
       points: ["Color Theory", "Typography & Fonts", "Layout Design"],
-      bgColor: "rgba(61, 82, 217, 0.12)", // Blue
+      bgColor: "rgba(61, 82, 217, 0.12)",
       iconColor: "#3D52D9"
     },
     {
       title: "Software Tools",
       icon: <FontAwesomeIcon icon={faLaptopCode} />,
       points: ["Adobe Photoshop", "Illustrator & Figma", "Adobe InDesign"],
-      bgColor: "rgba(61, 82, 217, 0.12)", // Blue
+      bgColor: "rgba(61, 82, 217, 0.12)",
       iconColor: "#3D52D9"
     },
     {
       title: "Visual Branding",
       icon: <FontAwesomeIcon icon={faBullseye} />,
       points: ["Logo Design", "Brand Identity", "Identity Systems"],
-      bgColor: "rgba(61, 82, 217, 0.12)", // Blue
+      bgColor: "rgba(61, 82, 217, 0.12)",
       iconColor: "#3D52D9"
     },
     {
       title: "Digital Design",
       icon: <FontAwesomeIcon icon={faMobileAlt} />,
       points: ["Social Media Graphics", "UI/UX Layouts", "Web Typography"],
-      bgColor: "rgba(61, 82, 217, 0.12)", // Blue
+      bgColor: "rgba(61, 82, 217, 0.12)",
       iconColor: "#3D52D9"
     },
     {
       title: "Portfolio Building",
       icon: <FontAwesomeIcon icon={faRocket} />,
       points: ["50+ Real Projects", "Professional Showcase", "Case Study Prep"],
-      bgColor: "rgba(61, 82, 217, 0.12)", // Blue
+      bgColor: "rgba(61, 82, 217, 0.12)",
       iconColor: "#3D52D9"
     },
     {
       title: "Freelancing Skills",
       icon: <FontAwesomeIcon icon={faHandshake} />,
       points: ["Client Management", "Business Setup", "Proposal Drafting"],
-      bgColor: "rgba(61, 82, 217, 0.12)", // Blue
+      bgColor: "rgba(61, 82, 217, 0.12)",
       iconColor: "#3D52D9"
     }
   ];
@@ -299,29 +294,28 @@ const GraphicDesignCourse = () => {
 
   const toolsV2Data = [
     [
-      { name: "ChatGPT", icon: <FontAwesomeIcon icon={faComments} />, desc: "AI concepts and brand storytelling.", img: chatgptLogoV2 },
-      { name: "Gemini", icon: <FontAwesomeIcon icon={faGlobe} />, desc: "Creative prompts and content strategy.", img: geminiLogo },
-      { name: "Notion AI", icon: <FontAwesomeIcon icon={faPencilAlt} />, desc: "Professional briefs and planning.", img: notionAiLogoV2 },
-      { name: "Copy.ai", icon: <FontAwesomeIcon icon={faImage} />, desc: "Marketing copy and brand taglines.", img: copyAiLogoV2 }
+      { name: "ChatGPT", icon: <FontAwesomeIcon icon={faComments} />, desc: "AI concepts and brand storytelling.", bg: "#3498db" },
+      { name: "Gemini", icon: <FontAwesomeIcon icon={faGlobe} />, desc: "Creative prompts and content strategy.", bg: "#9b59b6" },
+      { name: "Notion AI", icon: <FontAwesomeIcon icon={faPencilAlt} />, desc: "Professional briefs and planning.", bg: "#e91e63" },
+      { name: "Copy.ai", icon: <FontAwesomeIcon icon={faImage} />, desc: "Marketing copy and brand taglines.", bg: "#2ecc71" }
     ],
     [
-      { name: "Adobe Firefly", icon: <FontAwesomeIcon icon={faMagic} />, desc: "Generative fill and text effects.", img: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=400" },
-      { name: "Midjourney", icon: <FontAwesomeIcon icon={faRocket} />, desc: "Ultra-realistic creative concepts.", img: "https://images.unsplash.com/photo-1614850523296-d8c1af93d400?auto=format&fit=crop&q=80&w=400" },
-      { name: "Leonardo AI", icon: <FontAwesomeIcon icon={faImage} />, desc: "Studio-quality artistic images.", img: "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?auto=format&fit=crop&q=80&w=400" },
-      { name: "DALL·E", icon: <FontAwesomeIcon icon={faLightbulb} />, desc: "Visual idea generation.", img: "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&q=80&w=400" }
+      { name: "Adobe Firefly", icon: <FontAwesomeIcon icon={faMagic} />, desc: "Generative fill and text effects.", bg: "#1abc9c" },
+      { name: "Midjourney", icon: <FontAwesomeIcon icon={faPaintBrush} />, desc: "Ultra-realistic creative concepts.", bg: "#3f51b5" },
+      { name: "Leonardo AI", icon: <FontAwesomeIcon icon={faImage} />, desc: "Studio-quality artistic images.", bg: "#ff4081" },
+      { name: "DALL·E", icon: <FontAwesomeIcon icon={faLightbulb} />, desc: "Visual idea generation.", bg: "#8bc34a" }
     ],
     [
-      { name: "ClipDrop", icon: <FontAwesomeIcon icon={faImage} />, desc: "Instant background removal.", img: clipdropLogo },
-      { name: "Remove.bg", icon: <FontAwesomeIcon icon={faSyncAlt} />, desc: "High-quality background removal.", img: removeBgLogo },
-      { name: "Luminar AI", icon: <FontAwesomeIcon icon={faFlask} />, desc: "Automated face retouching.", img: luminarLogoV3 },
-      { name: "Canva Magic", icon: <FontAwesomeIcon icon={faImage} />, desc: "One-click design cleanup.", img: canvaMagicLogo }
+      { name: "ClipDrop", icon: <FontAwesomeIcon icon={faImage} />, desc: "Instant background removal.", bg: "#ff9800" },
+      { name: "Remove.bg", icon: <FontAwesomeIcon icon={faSyncAlt} />, desc: "High-quality background removal.", bg: "#00bcd4" },
+      { name: "Luminar AI", icon: <FontAwesomeIcon icon={faFlask} />, desc: "Automated face retouching.", bg: "#ff5722" },
+      { name: "Canva Magic", icon: <FontAwesomeIcon icon={faImage} />, desc: "One-click design cleanup.", bg: "#673ab7" }
     ],
     [
-      { name: "InDesign", icon: <FontAwesomeIcon icon={faFileAlt} />, desc: "Layout design for print and digital.", img: indesignLogo },
-      { name: "Figma", icon: <FontAwesomeIcon icon={faLaptopCode} />, desc: "Interface design and prototyping." },
-      // img: figmaLogoV2 },
-      { name: "Illustrator", icon: <FontAwesomeIcon icon={faPenFancy} />, desc: "Vector graphics and illustration.", img: illustratorLogoV2 },
-      { name: "Photoshop", icon: <FontAwesomeIcon icon={faImage} />, desc: "Image editing and manipulation.", img: photoshopLogo }
+      { name: "InDesign", icon: <FontAwesomeIcon icon={faFileAlt} />, desc: "Layout design for print and digital.", bg: "#f44336" },
+      { name: "Figma", icon: <FontAwesomeIcon icon={faLaptopCode} />, desc: "Interface design and prototyping.", bg: "#009688" },
+      { name: "Illustrator", icon: <FontAwesomeIcon icon={faPenFancy} />, desc: "Vector graphics and illustration.", bg: "#03a9f4" },
+      { name: "Photoshop", icon: <FontAwesomeIcon icon={faImage} />, desc: "Image editing and manipulation.", bg: "#607d8b" }
     ]
   ];
 
@@ -391,16 +385,7 @@ const GraphicDesignCourse = () => {
   };
 
   const benefitIconPalette = [
-    '#BAE6FD', // sky blue
-    '#C4B5FD', // light purple
-    '#FBCFE8', // soft pink
-    '#BBF7D0', // mint green
-    '#FED7AA', // light orange
-    '#FEF08A', // soft yellow
-    '#E9D5FF', // lavender
-    '#A7F3D0', // aqua
-    '#BAE6FD', // sky blue
-    '#C4B5FD'  // light purple
+    '#BAE6FD', '#C4B5FD', '#FBCFE8', '#BBF7D0', '#FED7AA', '#FEF08A', '#E9D5FF', '#A7F3D0', '#BAE6FD', '#C4B5FD'
   ];
 
   const demoVideo = {
@@ -469,14 +454,14 @@ const GraphicDesignCourse = () => {
     title: "Professional Certification",
     description: "Globally recognized certificate accredited by International Design Council",
     features: [
-      "✅ Digital & Physical Copy",
-      "✅ Lifetime Validity",
-      "✅ Online Verification",
-      "✅ International Recognition",
-      "✅ QR Code Authentication",
-      "✅ Accredited by Design Council"
+      "âœ… Digital & Physical Copy",
+      "âœ… Lifetime Validity",
+      "âœ… Online Verification",
+      "âœ… International Recognition",
+      "âœ… QR Code Authentication",
+      "âœ… Accredited by Design Council"
     ],
-    image: certificateImage // Your local certificate image
+    image: certificateImage
   };
 
   const floatingIcons = [
@@ -491,12 +476,10 @@ const GraphicDesignCourse = () => {
   ];
 
   useEffect(() => {
-    // Curriculum auto-slide
     const curriculumTimer = setInterval(() => {
       setCurrentModuleIndex((prev) => (prev + 1) % sixMonthCurriculum.length);
     }, 5000);
 
-    // Testimonial auto-slide
     const testimonialTimer = setInterval(() => {
       setCurrentTestimonialIndex((prev) => (prev + 1) % testimonials.length);
     }, 4000);
@@ -554,7 +537,6 @@ const GraphicDesignCourse = () => {
     });
   };
 
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -577,7 +559,6 @@ const GraphicDesignCourse = () => {
       console.error(error);
     }
   };
-
 
   const handlePlayVideo = () => {
     if (videoRef.current) {
@@ -604,9 +585,8 @@ const GraphicDesignCourse = () => {
 
   return (
     <div className="gdc-page">
-      {/* Hero Section Upgrade - Minimalist Premium Design */}
+      {/* Hero Section */}
       <header className="gdc-hero-v3">
-        {/* Animated Sparkles - Randomly placed, bigger and bolder */}
         <div className="gdc-v3-sparkle-wrapper">
           <div className="gdc-v3-sparkle sparkle-lg sparkle-pos-1"><FontAwesomeIcon icon={faStar} /></div>
           <div className="gdc-v3-sparkle sparkle-sm sparkle-pos-2"><FontAwesomeIcon icon={faStar} /></div>
@@ -662,7 +642,7 @@ const GraphicDesignCourse = () => {
         </div>
       </header>
 
-      {/* Marquee Section bridging Hero and Intro */}
+      {/* Marquee Section */}
       <div className="gdc-v2-marquee-container">
         <div className="gdc-v2-marquee">
           <span>
@@ -682,7 +662,7 @@ const GraphicDesignCourse = () => {
         </div>
       </div>
 
-      {/* New Intro Section - Re-designed to 2-column layout */}
+      {/* Intro Section */}
       <section className="gdc-intro-section">
         <div className="gdc-container">
           <div className="gdc-intro-layout">
@@ -720,21 +700,21 @@ const GraphicDesignCourse = () => {
         </div>
       </section>
 
-      {/* Course Outcomes - Redesigned Numbered Grid */}
-      <section className="dgm-section dgm-outcomes-numbered">
-        <div className="dgm-container">
-          <div className="dgm-outcomes-header-row">
-            <div className="dgm-outcomes-title-col">
-              <h2 className="dgm-outcomes-main-title">Course Outcomes</h2>
+      {/* Course Outcomes Section */}
+      <section className="gdc-outcomes-numbered">
+        <div className="gdc-container">
+          <div className="gdc-outcomes-header-row">
+            <div className="gdc-outcomes-title-col">
+              <h2 className="gdc-outcomes-main-title">Course Outcomes</h2>
             </div>
-            <div className="dgm-outcomes-desc-col">
-              <p className="dgm-outcomes-top-desc text-left">
+            <div className="gdc-outcomes-desc-col">
+              <p className="gdc-outcomes-top-desc text-left">
                 What you'll achieve after completing this program. Master workflows, build case studies, and transform into an industry-ready UI/UX designer.
               </p>
             </div>
           </div>
 
-          <div className="dgm-outcomes-numbered-grid">
+          <div className="gdc-outcomes-numbered-grid">
             {courseOutcomes.map((outcome, index) => {
               const isBlack = index === 1 || index === 3 || index === 5;
               const cardNumber = (index + 1).toString().padStart(2, '0');
@@ -742,19 +722,17 @@ const GraphicDesignCourse = () => {
               return (
                 <div
                   key={index}
-                  className={`dgm-outcome-numbered-card ${isBlack ? 'black-bg' : 'white-bg'}`}
+                  className={`gdc-outcome-numbered-card ${isBlack ? 'black-bg' : 'white-bg'}`}
                 >
-                  <div className="dgm-outcome-card-content-wrapper">
-                    {/* Left side - Number and Icon */}
-                    <div className="dgm-outcome-card-left">
-                      <div className="dgm-outcome-card-number">{cardNumber}</div>
-                      <div className="dgm-outcome-numbered-icon">{outcome.icon}</div>
+                  <div className="gdc-outcome-card-content-wrapper">
+                    <div className="gdc-outcome-card-left">
+                      <div className="gdc-outcome-card-number">{cardNumber}</div>
+                      <div className="gdc-outcome-numbered-icon">{outcome.icon}</div>
                     </div>
 
-                    {/* Right side - Title and Description */}
-                    <div className="dgm-outcome-card-right">
-                      <h3 className="dgm-outcome-numbered-title">{outcome.title}</h3>
-                      <p className="dgm-outcome-numbered-desc">{outcome.desc}</p>
+                    <div className="gdc-outcome-card-right">
+                      <h3 className="gdc-outcome-numbered-title">{outcome.title}</h3>
+                      <p className="gdc-outcome-numbered-desc">{outcome.desc}</p>
                     </div>
                   </div>
                 </div>
@@ -764,8 +742,7 @@ const GraphicDesignCourse = () => {
         </div>
       </section>
 
-
-      {/* 6-Month Course Breakdown - Vertical Slider Redesign */}
+      {/* 6-Month Course Breakdown Section */}
       <section className="gdc-curriculum-v2-section">
         <div className="gdc-container">
           <div className="gdc-curriculum-v2-layout">
@@ -789,7 +766,6 @@ const GraphicDesignCourse = () => {
             </div>
 
             <div className="gdc-curriculum-v2-right">
-              {/* Vertical Navigation Controls - Top Right precisely as per design */}
               <div className="gdc-curriculum-nav-v2">
                 <button className="gdc-nav-btn-v2" onClick={prevModule}><FontAwesomeIcon icon={faChevronUp} /></button>
                 <button className="gdc-nav-btn-v2" onClick={nextModule}><FontAwesomeIcon icon={faChevronDown} /></button>
@@ -840,18 +816,18 @@ const GraphicDesignCourse = () => {
           </div>
         </div>
       </section>
-      {/* Tools & Resources - Interactive V2 Redesign */}
-      <section className="gdc-tools-v2">
+
+      {/* Tools & Resources Section */}
+      <section className="gdc-tools-v2 gdc-tools-container">
         <div className="gdc-container">
           <div className="gdc-tools-v2-header">
-            <h2 className="gdc-tools-v2-title"> AI Tools & Resources</h2>
+            <h2 className="gdc-tools-v2-title">AI Tools & Resources</h2>
             <p className="gdc-tools-v2-subtitle">Master the industry's most powerful creative workflow</p>
           </div>
 
           <div className="gdc-tools-v2-layout">
-            {/* Sidebar Tabs */}
             <div className="gdc-tools-sidebar">
-              {["Ideas & Concepts", "AI Generative", "Enhancement", "Professional Suite"].map((label, idx) => (
+              {["AI Dev Assistants", "Backend & AI", "Cloud & Data", "Engineering Suite"].map((label, idx) => (
                 <button
                   key={idx}
                   className={`gdc-tool-tab ${activeToolCategory === idx ? 'active' : ''}`}
@@ -863,17 +839,15 @@ const GraphicDesignCourse = () => {
               ))}
             </div>
 
-            {/* Main Overlapping Pods Display */}
             <div className="gdc-tools-main-display">
               <div className="gdc-pods-container" key={activeToolCategory}>
                 {toolsV2Data[activeToolCategory].map((tool, index) => (
                   <div key={index} className={`gdc-tool-pod pod-${index + 1}`}>
-                    <div className="gdc-pod-inner">
-                      <div className="gdc-pod-bg-image" style={{ backgroundImage: `url(${tool.img})` }}></div>
+                    <div className="gdc-pod-inner" style={{ backgroundColor: tool.bg }}>
                       <div className="gdc-pod-content">
-                        {activeToolCategory === 1 ? (
-                          <h4 className="gdc-pod-name">{tool.name}</h4>
-                        ) : null}
+                        <div className="gdc-pod-icon">{tool.icon}</div>
+                        <h4 className="gdc-pod-name">{tool.name}</h4>
+                        <p className="gdc-pod-desc">{tool.desc}</p>
                       </div>
                     </div>
                   </div>
@@ -884,122 +858,124 @@ const GraphicDesignCourse = () => {
         </div>
       </section>
 
-      {/* Benefits Section - Where Features Meet For You Upgrade */}
-      <section className="dgm-section dgm-benefits-reimagined">
-        <div className="dgm-container">
-          <div className="dgm-benefits-header">
-            <h2 className="dgm-benefits-title">Where Features Meet For You</h2>
+
+      {/* Benefits Section */}
+      <section className="gdc-benefits-reimagined">
+        <div className="gdc-container">
+          <div className="gdc-benefits-header">
+            <h2 className="gdc-benefits-title">Where Features Meet For You</h2>
           </div>
 
-          <div className="dgm-benefits-staggered">
-            {/* Row 1: 5 Cards */}
-            <div className="dgm-benefits-row dgm-row-5">
+          <div className="gdc-benefits-staggered">
+            {/* Row 1 - 5 cards */}
+            <div className="gdc-benefits-row gdc-row-5">
               {benefits.slice(0, 5).map((benefit, index) => (
-                <div key={index} className="dgm-new-benefit-card">
+                <div key={index} className="gdc-new-benefit-card">
                   {(() => {
-                    const absoluteIndex = 0 + index;
-                    const color = benefitIconPalette[absoluteIndex] || "#BAE6FD";
+                    const color = benefitIconPalette[index] || "#BAE6FD";
                     return (
-                      <div className="dgm-new-icon" style={{ background: hexToRgba(color, 0.18), color }}>
+                      <div className="gdc-new-icon" style={{ background: hexToRgba(color, 0.18), color }}>
                         {benefit.icon}
                       </div>
                     );
                   })()}
-                  <div className="dgm-new-content">
+                  <div className="gdc-new-content">
                     <h3>{benefit.title}</h3>
-                    <p>{benefit.description.substring(0, 70)}...</p>
+                    <p>{benefit.description}</p>
                   </div>
                 </div>
               ))}
             </div>
 
-            {/* Row 2: 3 Cards */}
-            <div className="dgm-benefits-row dgm-row-3">
-              {benefits.slice(5, 8).map((benefit, index) => (
-                <div key={index} className="dgm-new-benefit-card">
-                  {(() => {
-                    const absoluteIndex = 5 + index;
-                    const color = benefitIconPalette[absoluteIndex] || "#BAE6FD";
-                    return (
-                      <div className="dgm-new-icon" style={{ background: hexToRgba(color, 0.18), color }}>
-                        {benefit.icon}
-                      </div>
-                    );
-                  })()}
-                  <div className="dgm-new-content">
-                    <h3>{benefit.title}</h3>
-                    <p>{benefit.description.substring(0, 70)}...</p>
-                  </div>
+            {/* Bottom Layout - Left Tall + Middle Col (Row 2 & 3) + Right Tall */}
+            <div className="gdc-benefits-bottom-layout">
+
+              {/* Left Tall Card */}
+              <div className="gdc-new-benefit-card gdc-benefit-card-tall">
+                <div className="gdc-new-icon" style={{ background: hexToRgba("#BAE6FD", 0.18), color: "#BAE6FD" }}>
+                  <FontAwesomeIcon icon={faStar} />
                 </div>
-              ))}
-            </div>
-
-            {/* Row 3: 2 Original Cards */}
-            <div className="dgm-benefits-row dgm-row-2">
-              {benefits.slice(8, 10).map((benefit, index) => (
-                <div key={index} className="dgm-new-benefit-card">
-                  {(() => {
-                    const absoluteIndex = 8 + index;
-                    const color = benefitIconPalette[absoluteIndex] || "#BAE6FD";
-                    return (
-                      <div className="dgm-new-icon" style={{ background: hexToRgba(color, 0.18), color }}>
-                        {benefit.icon}
-                      </div>
-                    );
-                  })()}
-                  <div className="dgm-new-content">
-                    <h3>{benefit.title}</h3>
-                    <p>{benefit.description.substring(0, 70)}...</p>
-                  </div>
+                <div className="gdc-new-content">
+                  <h3>Industry Recognition</h3>
+                  <p>Get certified with globally recognized credentials that validate your expertise and boost your career prospects. Enhance your profile and unlock better global opportunities for future growth.</p>
                 </div>
-              ))}
+              </div>
+
+              {/* Middle Grid Column */}
+              <div className="gdc-benefits-middle-col">
+                <div className="gdc-benefits-row gdc-row-3">
+                  {benefits.slice(5, 8).map((benefit, index) => (
+                    <div key={index} className="gdc-new-benefit-card">
+                      {(() => {
+                        const absoluteIndex = 5 + index;
+                        const color = benefitIconPalette[absoluteIndex] || "#BAE6FD";
+                        return (
+                          <div className="gdc-new-icon" style={{ background: hexToRgba(color, 0.18), color }}>
+                            {benefit.icon}
+                          </div>
+                        );
+                      })()}
+                      <div className="gdc-new-content">
+                        <h3>{benefit.title}</h3>
+                        <p>{benefit.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                
+                <div className="gdc-benefits-row gdc-row-2">
+                  {benefits.slice(8, 10).map((benefit, index) => (
+                    <div key={index} className="gdc-new-benefit-card">
+                      {(() => {
+                        const absoluteIndex = 8 + index;
+                        const color = benefitIconPalette[absoluteIndex] || "#BAE6FD";
+                        return (
+                          <div className="gdc-new-icon" style={{ background: hexToRgba(color, 0.18), color }}>
+                            {benefit.icon}
+                          </div>
+                        );
+                      })()}
+                      <div className="gdc-new-content">
+                        <h3>{benefit.title}</h3>
+                        <p>{benefit.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Right Tall Card */}
+              <div className="gdc-new-benefit-card gdc-benefit-card-tall">
+                <div className="gdc-new-icon" style={{ background: hexToRgba("#C4B5FD", 0.18), color: "#C4B5FD" }}>
+                  <FontAwesomeIcon icon={faTrophy} />
+                </div>
+                <div className="gdc-new-content">
+                  <h3>Lifetime Updates</h3>
+                  <p>Stay ahead with free lifetime access to all future course updates and industry-relevant content additions. You will always have direct access to the latest platform changes and tools to remain a competitive expert.</p>
+                </div>
+              </div>
+
             </div>
           </div>
 
-          {/* Floating Cards - Positioned Independently */}
-          {/* Left Bottom Floating Card */}
-          <div className="dgm-floating-benefit-card dgm-floating-card-left">
-            <div className="dgm-new-icon" style={{ background: hexToRgba("#BAE6FD", 0.18), color: "#BAE6FD" }}>
-              <FontAwesomeIcon icon={faStar} />
-            </div>
-            <div className="dgm-new-content">
-              <h3>Industry Recognition</h3>
-              <p>Get certified with globally recognized credentials that validate your expertise and boost your career prospects worldwide...</p>
-            </div>
-          </div>
-
-          {/* Right Bottom Floating Card */}
-          <div className="dgm-floating-benefit-card dgm-floating-card-right">
-            <div className="dgm-new-icon" style={{ background: hexToRgba("#C4B5FD", 0.18), color: "#C4B5FD" }}>
-              <FontAwesomeIcon icon={faTrophy} />
-            </div>
-            <div className="dgm-new-content">
-              <h3>Lifetime Updates</h3>
-              <p>Stay ahead with free lifetime access to all future course updates, new modules, and industry-relevant content additions...</p>
-            </div>
-          </div>
+          {/* REMOVE the two floating card divs entirely */}
         </div>
       </section>
 
+      {/* Demo Video Section */}
+      <section className="gdc-demo-video-section gdc-white-bg">
+        <div className="gdc-container">
+          <h2 className="gdc-section-title gdc-red-text">Experience Our Teaching</h2>
+          <p className="gdc-section-subtitle">Watch a sample lesson from our course</p>
 
-      {/* Local Demo Video Section */}
-      <section className="dgm-section dgm-white-bg">
-        <div className="dgm-container">
-          <h2 className="dgm-section-title dgm-red-text">Experience Our Teaching</h2>
-          <p className="dgm-section-subtitle">Watch a sample lesson from our course</p>
-
-          {/* NEW WRAPPER */}
-          <div className="dgm-video-layout">
-
-            {/* LEFT SIDE - VIDEO */}
-            <div className="dgm-video-left">
-              <div className="dgm-single-video-container">
-                <div className="dgm-video-card-light">
-                  <div className="dgm-video-thumbnail-single" onClick={handlePlayVideo}>
-
+          <div className="gdc-video-layout">
+            <div className="gdc-video-left">
+              <div className="gdc-single-video-container">
+                <div className="gdc-video-card-light">
+                  <div className="gdc-video-thumbnail-single" onClick={handlePlayVideo}>
                     <video
                       ref={videoRef}
-                      className="dgm-video-player"
+                      className="gdc-video-player"
                       poster={demoVideo.thumbnail}
                       onClick={handlePlayVideo}
                       onEnded={handleVideoEnd}
@@ -1012,22 +988,19 @@ const GraphicDesignCourse = () => {
                     </video>
 
                     {!isPlaying && (
-                      <div className="dgm-video-overlay-single">
-                        <div className="dgm-play-button-single">
+                      <div className="gdc-video-overlay-single">
+                        <div className="gdc-play-button-single">
                           <FontAwesomeIcon icon={faPlayCircle} />
                         </div>
-                        <div className="dgm-video-duration-single">
+                        <div className="gdc-video-duration-single">
                           <FontAwesomeIcon icon={faClock} /> {demoVideo.duration}
                         </div>
                       </div>
                     )}
 
                     {isPlaying && (
-                      <div className="dgm-video-controls-overlay">
-                        <button
-                          className="dgm-video-control-btn"
-                          onClick={handlePlayVideo}
-                        >
+                      <div className="gdc-video-controls-overlay">
+                        <button className="gdc-video-control-btn" onClick={handlePlayVideo}>
                           {isPlaying
                             ? <FontAwesomeIcon icon={faPauseCircle} />
                             : <FontAwesomeIcon icon={faPlayCircle} />}
@@ -1036,18 +1009,15 @@ const GraphicDesignCourse = () => {
                     )}
                   </div>
 
-                  <div className="dgm-video-info-single-light">
-                    <h3 className="dgm-video-title-single-light">{demoVideo.title}</h3>
-                    <p className="dgm-video-instructor-single-light">
+                  <div className="gdc-video-info-single-light">
+                    <h3 className="gdc-video-title-single-light">{demoVideo.title}</h3>
+                    <p className="gdc-video-instructor-single-light">
                       Instructor: <span>{demoVideo.instructor}</span>
                     </p>
-                    <p className="dgm-video-description-single-light">
+                    <p className="gdc-video-description-single-light">
                       {demoVideo.description}
                     </p>
-                    <button
-                      className="dgm-watch-btn-single"
-                      onClick={handlePlayVideo}
-                    >
+                    <button className="gdc-watch-btn-single" onClick={handlePlayVideo}>
                       {isPlaying
                         ? <><FontAwesomeIcon icon={faPauseCircle} /> Pause Video</>
                         : <><FontAwesomeIcon icon={faPlayCircle} /> Watch Free Demo Lesson</>}
@@ -1057,25 +1027,21 @@ const GraphicDesignCourse = () => {
               </div>
             </div>
 
-            {/* RIGHT SIDE - NEW CONTENT */}
-            <div className="dgm-video-right">
-              <h3 className="dgm-video-side-title">
-                Learn by Watching Real Sessions
-              </h3>
-              <p className="dgm-video-side-desc">
+            <div className="gdc-video-right">
+              <h3 className="gdc-video-side-title">Learn by Watching Real Sessions</h3>
+              <p className="gdc-video-side-desc">
                 Experience our teaching approach through real-time lessons designed to give you practical insights.
                 Understand how concepts are explained, how projects are built, and how students are guided step-by-step
                 to achieve industry-level skills. This preview gives you a clear idea of the learning experience,
                 mentorship quality, and hands-on approach we follow in our programs.
               </p>
             </div>
-
           </div>
         </div>
       </section>
 
-      {/* Certificate Section with Simplified Lock Overlay */}
-      <section className="gdc-section gdc-dark-bg">
+      {/* Certificate Section */}
+      <section className="gdc-certificate-section gdc-dark-bg">
         <div className="gdc-container">
           <h2 className="gdc-section-title">Professional Certification</h2>
           <p className="gdc-section-subtitle">Earn a globally recognized certificate upon completion</p>
@@ -1092,7 +1058,6 @@ const GraphicDesignCourse = () => {
                 }}
               />
 
-              {/* Simplified Lock Overlay - No button, just lock icon and text */}
               <div className="gdc-certificate-lock-overlay">
                 <div className="gdc-lock-icon"><FontAwesomeIcon icon={faLock} /></div>
                 <div className="gdc-lock-text">Certificate Locked</div>
@@ -1113,7 +1078,7 @@ const GraphicDesignCourse = () => {
               <div className="gdc-certificate-features-single">
                 {certificate.features.map((feature, index) => (
                   <div key={index} className="gdc-certificate-feature-item-single">
-                    <FontAwesomeIcon icon={faCheckCircle} /> {feature.replace('✅ ', '')}
+                    <FontAwesomeIcon icon={faCheckCircle} /> {feature.replace('âœ… ', '')}
                   </div>
                 ))}
               </div>
@@ -1151,14 +1116,10 @@ const GraphicDesignCourse = () => {
         </div>
       </section>
 
-
-
-      {/* Premium Testimonials - V9 Grid Layout */}
+      {/* Testimonials Section */}
       <section className="gdc-testi-grid-section">
         <div className="gdc-container">
           <div className="gdc-testi-grid-wrapper">
-
-            {/* Left side: Headers and Intro */}
             <div className="gdc-testi-grid-left">
               <h2 className="gdc-testi-main-title">Experience Learning Like Never Before</h2>
               <p className="gdc-testi-subtitle">
@@ -1166,9 +1127,7 @@ const GraphicDesignCourse = () => {
               </p>
             </div>
 
-            {/* Right side: 3-Card Grid */}
             <div className="gdc-testi-grid-right">
-              {/* Top Large Card */}
               <div className="gdc-testi-card-top" style={{ backgroundImage: `url(https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=800)` }}>
                 <div className="gdc-testi-card-overlay">
                   <div className="gdc-testi-quote-content fade-in-anim" key={testiSetIndex}>
@@ -1184,9 +1143,7 @@ const GraphicDesignCourse = () => {
                 </div>
               </div>
 
-              {/* Bottom Row */}
               <div className="gdc-testi-squares-row">
-                {/* Bottom Left: Lime Green Theme */}
                 <div className="gdc-testi-card-bottom-left">
                   <div className="gdc-testi-quote-content fade-in-anim" key={testiSetIndex}>
                     <p>"{activeTestimonials[1].text}"</p>
@@ -1200,7 +1157,6 @@ const GraphicDesignCourse = () => {
                   </div>
                 </div>
 
-                {/* Bottom Right: Light Purple Theme */}
                 <div className="gdc-testi-card-bottom-right">
                   <div className="gdc-testi-quote-content fade-in-anim" key={testiSetIndex}>
                     <p>"{activeTestimonials[2].text}"</p>
@@ -1214,13 +1170,12 @@ const GraphicDesignCourse = () => {
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
       </section>
 
-      {/* Enroll Now Section (V2 Expansion) */}
+      {/* Enroll Now Section */}
       <section className="gdc-dark-enrollment-FIXED" ref={formSectionRef}>
         <div className="gdc-container">
           <div className="gdc-floating-icons-v2">
@@ -1239,7 +1194,6 @@ const GraphicDesignCourse = () => {
             ))}
           </div>
 
-          {/* Redesigned Contact Section - Start Your Design Journey Today */}
           <section className="gdc-v3-community-banner">
             <div className="gdc-banner-grid-overlay"></div>
             <div className="gdc-banner-decor-sparkle sp-1">✦</div>
@@ -1266,7 +1220,6 @@ const GraphicDesignCourse = () => {
                 </div>
               </div>
 
-              {/* Contact Rays */}
               <div className="gdc-ray gdc-ray-left-top">
                 <div className="gdc-ray-trail"></div>
                 <div className="gdc-ray-box">
@@ -1313,16 +1266,12 @@ const GraphicDesignCourse = () => {
             </div>
           </section>
 
-          {/* Single Black Container with Left Content and Right Form */}
           <div className="gdc-single-enroll-container">
-            {/* Left Side - Content */}
             <div className="gdc-enroll-left-content">
               <h3 className="gdc-enroll-title">Start Your Journey</h3>
               <p className="gdc-enroll-subtitle">join a focused learning experience designed to help you master practical skills, build a standout portfolio, and launch your journey as a professional designer</p>
-              {/* <p className="gdc-enroll-note">Secure your future in design with one click</p> */}
             </div>
 
-            {/* Right Side - Form */}
             <div className="gdc-enroll-right-form">
               <div className="gdc-enroll-form-wrapper">
                 <h4 className="gdc-enroll-form-title">Enrollment Form</h4>

@@ -26,6 +26,7 @@ const StatsAndBenefits = () => {
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: '.techGroup-stats-wrapper',
+                    trigger: wrapper,
                     start: 'top top',
                     end: '+=2800',          // freeze for 2800px of scroll
                     pin: true,
@@ -130,6 +131,10 @@ const StatsAndBenefits = () => {
 
                 {/* ── PINNED STATS SECTION ── */}
                 <div className="techGroup-stats-wrapper">
+            <div className="techGroup-testimonialSection-container" style={{ padding: '0' }}>
+
+                {/* ── PINNED STATS SECTION ── */}
+                <div className="techGroup-stats-wrapper" ref={wrapperRef}>
                     <h2 className="techGroup-stats-main-title sab-pin-title">
                         Empowering Growth: Our Global Impact
                     </h2>

@@ -139,8 +139,8 @@
   color: #6b7280;
   font-family: 'Sora', sans-serif;
   font-weight: 400;
-  max-width: 850px; /* Reduced to ensure button doesn't overlap text */
-  margin-left: 0;
+  max-width: 1100px;
+  margin-left: 10px;
   text-align: left;
   line-height: 1.7;
 }
@@ -890,8 +890,23 @@
   }
 
   .about-features {
+    grid-template-columns: 1fr;
+    gap: 25px;
     width: 100%;
-    margin: 40px 0;
+    margin-left: 0;
+  }
+
+  .about-mission-card,
+  .technology-card,
+  .education-card {
+    grid-column: auto !important;
+    grid-row: auto !important;
+    min-height: auto !important;
+    padding: 30px 25px;
+  }
+
+  .technology-card h3 {
+    font-size: 2rem;
   }
 
   .get-started-btn {
@@ -1070,14 +1085,36 @@
     text-align: center;
   }
 
-  .about-subtitle {
-    font-size: 0.9rem;
-    text-align: center;
-  }
+/* Get Started Button */
+.get-started-btn {
+  position: absolute;
+  right: -60px;
+  /* Moved further to the right */
+  top: 37%;
+  transform: translateY(-50%);
+  background: #7c3aed;
+  color: white;
+  border: none;
+  padding: 16px 36px;
+  /* Increased padding */
+  border-radius: 50px;
+  font-size: 1.15rem;
+  /* Increased font size */
+  font-family: 'Sora', sans-serif;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 10;
+  white-space: nowrap;
+}
 
-  .get-started-btn {
-    margin: 0 auto;
-  }
+.get-started-btn:hover {
+  transform: translateY(-55%) scale(1.08);
+  background: #6d28d9;
+  box-shadow: 0 10px 25px rgba(124, 58, 237, 0.5);
 }
 
 

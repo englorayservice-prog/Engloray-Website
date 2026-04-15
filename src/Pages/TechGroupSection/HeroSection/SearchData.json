@@ -1,0 +1,866 @@
+[
+  {
+    "title": "Brand Strategy",
+    "category": "branding & identity",
+    "type": "service",
+    "link": "/brandingIdentityPage"
+  },
+  {
+    "title": "Brand Naming",
+    "category": "branding & identity",
+    "type": "service",
+    "link": "/brandingIdentityPage"
+  },
+  {
+    "title": "Logo Design",
+    "category": "branding & identity",
+    "type": "service",
+    "link": "/brandingIdentityPage"
+  },
+  {
+    "title": "Brand Identity Design",
+    "category": "branding & identity",
+    "type": "service",
+    "link": "/brandingIdentityPage"
+  },
+  {
+    "title": "Brand Guidelines",
+    "category": "branding & identity",
+    "type": "service",
+    "link": "/brandingIdentityPage"
+  },
+  {
+    "title": "Business Assets",
+    "category": "branding & identity",
+    "type": "service",
+    "link": "/brandingIdentityPage"
+  },
+  {
+    "title": "Social Media Branding",
+    "category": "branding & identity",
+    "type": "service",
+    "link": "/brandingIdentityPage"
+  },
+  {
+    "title": "Rebranding Services",
+    "category": "branding & identity",
+    "type": "service",
+    "link": "/brandingIdentityPage"
+  },
+  {
+    "title": "Website Development",
+    "category": "development services",
+    "type": "service",
+    "link": "/raymartPageFour"
+  },
+  {
+    "title": "E-Commerce Development",
+    "category": "development services",
+    "type": "service",
+    "link": "/raymartPageFour"
+  },
+  {
+    "title": "Mobile App Development",
+    "category": "development services",
+    "type": "service",
+    "link": "/raymartPageFour"
+  },
+  {
+    "title": "Custom Web Application",
+    "category": "development services",
+    "type": "service",
+    "link": "/raymartPageFour"
+  },
+  {
+    "title": "Backend Development",
+    "category": "development services",
+    "type": "service",
+    "link": "/raymartPageFour"
+  },
+  {
+    "title": "Database Management",
+    "category": "development services",
+    "type": "service",
+    "link": "/raymartPageFour"
+  },
+  {
+    "title": "API & Integrations",
+    "category": "development services",
+    "type": "service",
+    "link": "/raymartPageFour"
+  },
+  {
+    "title": "Optimization & Deployment",
+    "category": "development services",
+    "type": "service",
+    "link": "/raymartPageFour"
+  },
+  {
+    "title": "Business Website",
+    "category": "website development",
+    "type": "service",
+    "link": "/websiteDevelopmentPage"
+  },
+  {
+    "title": "Corporate Website",
+    "category": "website development",
+    "type": "service",
+    "link": "/websiteDevelopmentPage"
+  },
+  {
+    "title": "Portfolio Website",
+    "category": "website development",
+    "type": "service",
+    "link": "/websiteDevelopmentPage"
+  },
+  {
+    "title": "Landing Page Design",
+    "category": "website development",
+    "type": "service",
+    "link": "/websiteDevelopmentPage"
+  },
+  {
+    "title": "Custom Development",
+    "category": "website development",
+    "type": "service",
+    "link": "/websiteDevelopmentPage"
+  },
+  {
+    "title": "Responsive Design",
+    "category": "website development",
+    "type": "service",
+    "link": "/websiteDevelopmentPage"
+  },
+  {
+    "title": "SEO Structure",
+    "category": "website development",
+    "type": "service",
+    "link": "/websiteDevelopmentPage"
+  },
+  {
+    "title": "Website Redesign",
+    "category": "website development",
+    "type": "service",
+    "link": "/websiteDevelopmentPage"
+  },
+  {
+    "title": "Online Store Dev",
+    "category": "e-commerce development",
+    "type": "service",
+    "link": "/ecommerceDevelopmentPage"
+  },
+  {
+    "title": "Shopify / WooCommerce",
+    "category": "e-commerce development",
+    "type": "service",
+    "link": "/ecommerceDevelopmentPage"
+  },
+  {
+    "title": "Custom E-Commerce",
+    "category": "e-commerce development",
+    "type": "service",
+    "link": "/ecommerceDevelopmentPage"
+  },
+  {
+    "title": "Product Management",
+    "category": "e-commerce development",
+    "type": "service",
+    "link": "/ecommerceDevelopmentPage"
+  },
+  {
+    "title": "Cart & Checkout",
+    "category": "e-commerce development",
+    "type": "service",
+    "link": "/ecommerceDevelopmentPage"
+  },
+  {
+    "title": "Order Management",
+    "category": "e-commerce development",
+    "type": "service",
+    "link": "/ecommerceDevelopmentPage"
+  },
+  {
+    "title": "Mobile E-Commerce",
+    "category": "e-commerce development",
+    "type": "service",
+    "link": "/ecommerceDevelopmentPage"
+  },
+  {
+    "title": "Business App Solution",
+    "category": "app development",
+    "type": "service",
+    "link": "/raymartPageFour"
+  },
+  {
+    "title": "E-Commerce App",
+    "category": "app development",
+    "type": "service",
+    "link": "/raymartPageFour"
+  },
+  {
+    "title": "Startup Launch Kit",
+    "category": "app development",
+    "type": "service",
+    "link": "/raymartPageFour"
+  },
+  {
+    "title": "Custom App Dev",
+    "category": "app development",
+    "type": "service",
+    "link": "/raymartPageFour"
+  },
+  {
+    "title": "Android App Dev",
+    "category": "app development",
+    "type": "service",
+    "link": "/raymartPageFour"
+  },
+  {
+    "title": "iOS App Dev",
+    "category": "app development",
+    "type": "service",
+    "link": "/raymartPageFour"
+  },
+  {
+    "title": "Social Media Pack",
+    "category": "graphic design",
+    "type": "service",
+    "link": "/raymartPageFour"
+  },
+  {
+    "title": "Business Branding Kit",
+    "category": "graphic design",
+    "type": "service",
+    "link": "/raymartPageFour"
+  },
+  {
+    "title": "Marketing Design",
+    "category": "graphic design",
+    "type": "service",
+    "link": "/raymartPageFour"
+  },
+  {
+    "title": "Advertisement Creative",
+    "category": "graphic design",
+    "type": "service",
+    "link": "/raymartPageFour"
+  },
+  {
+    "title": "Logo & Identity",
+    "category": "graphic design",
+    "type": "service",
+    "link": "/raymartPageFour"
+  },
+  {
+    "title": "Corporate Design",
+    "category": "graphic design",
+    "type": "service",
+    "link": "/raymartPageFour"
+  },
+  {
+    "title": "Print Design Solution",
+    "category": "graphic design",
+    "type": "service",
+    "link": "/raymartPageFour"
+  },
+  {
+    "title": "Website UI/UX",
+    "category": "ui/ux design",
+    "type": "service",
+    "link": "/uiuxDesignPage"
+  },
+  {
+    "title": "Mobile UI/UX",
+    "category": "ui/ux design",
+    "type": "service",
+    "link": "/uiuxDesignPage"
+  },
+  {
+    "title": "Dashboard Design",
+    "category": "ui/ux design",
+    "type": "service",
+    "link": "/uiuxDesignPage"
+  },
+  {
+    "title": "Product UI/UX",
+    "category": "ui/ux design",
+    "type": "service",
+    "link": "/uiuxDesignPage"
+  },
+  {
+    "title": "Custom Software",
+    "category": "software & tech solutions",
+    "type": "service",
+    "link": "/raymartPageFour"
+  },
+  {
+    "title": "Enterprise Solutions",
+    "category": "software & tech solutions",
+    "type": "service",
+    "link": "/raymartPageFour"
+  },
+  {
+    "title": "ERP & Management",
+    "category": "software & tech solutions",
+    "type": "service",
+    "link": "/raymartPageFour"
+  },
+  {
+    "title": "Legacy Migration",
+    "category": "software & tech solutions",
+    "type": "service",
+    "link": "/raymartPageFour"
+  },
+  {
+    "title": "IT Consulting",
+    "category": "software & tech solutions",
+    "type": "service",
+    "link": "/raymartPageFour"
+  },
+  {
+    "title": "Tech Maintenance",
+    "category": "software & tech solutions",
+    "type": "service",
+    "link": "/raymartPageFour"
+  },
+  {
+    "title": "Business Analytics",
+    "category": "data analytics",
+    "type": "service",
+    "link": "/dataAnalyticsPage"
+  },
+  {
+    "title": "Visualization",
+    "category": "data analytics",
+    "type": "service",
+    "link": "/dataAnalyticsPage"
+  },
+  {
+    "title": "Sales Performance",
+    "category": "data analytics",
+    "type": "service",
+    "link": "/dataAnalyticsPage"
+  },
+  {
+    "title": "Customer Insights",
+    "category": "data analytics",
+    "type": "service",
+    "link": "/dataAnalyticsPage"
+  },
+  {
+    "title": "Marketing Analytics",
+    "category": "data analytics",
+    "type": "service",
+    "link": "/dataAnalyticsPage"
+  },
+  {
+    "title": "Predictive AI",
+    "category": "data analytics",
+    "type": "service",
+    "link": "/dataAnalyticsPage"
+  },
+  {
+    "title": "Reporting Automation",
+    "category": "data analytics",
+    "type": "service",
+    "link": "/dataAnalyticsPage"
+  },
+  {
+    "title": "Optimization Strategy",
+    "category": "data analytics",
+    "type": "service",
+    "link": "/dataAnalyticsPage"
+  },
+  {
+    "title": "AI Chatbot Solution",
+    "category": "ai services",
+    "type": "service",
+    "link": "/aiServicesPage"
+  },
+  {
+    "title": "AI Automation System",
+    "category": "ai services",
+    "type": "service",
+    "link": "/aiServicesPage"
+  },
+  {
+    "title": "Custom AI Development",
+    "category": "ai services",
+    "type": "service",
+    "link": "/aiServicesPage"
+  },
+  {
+    "title": "AI-Powered Tools",
+    "category": "ai services",
+    "type": "service",
+    "link": "/aiServicesPage"
+  },
+  {
+    "title": "Machine Learning",
+    "category": "ai services",
+    "type": "service",
+    "link": "/aiServicesPage"
+  },
+  {
+    "title": "AI Content Generation",
+    "category": "ai services",
+    "type": "service",
+    "link": "/aiServicesPage"
+  },
+  {
+    "title": "AI Intelligence Platform",
+    "category": "ai services",
+    "type": "service",
+    "link": "/aiServicesPage"
+  },
+  {
+    "title": "CRM Implementation",
+    "category": "crm services",
+    "type": "service",
+    "link": "/raymartPageFour"
+  },
+  {
+    "title": "Customer Data Platform",
+    "category": "crm services",
+    "type": "service",
+    "link": "/raymartPageFour"
+  },
+  {
+    "title": "Sales Automation",
+    "category": "crm services",
+    "type": "service",
+    "link": "/raymartPageFour"
+  },
+  {
+    "title": "CRM Strategy",
+    "category": "crm services",
+    "type": "service",
+    "link": "/raymartPageFour"
+  },
+  {
+    "title": "Workflow Automation",
+    "category": "crm services",
+    "type": "service",
+    "link": "/raymartPageFour"
+  },
+  {
+    "title": "Custom Integration",
+    "category": "crm services",
+    "type": "service",
+    "link": "/raymartPageFour"
+  },
+  {
+    "title": "Cloud Launch",
+    "category": "saas service",
+    "type": "service",
+    "link": "/saasPage"
+  },
+  {
+    "title": "Multi-Tenant",
+    "category": "saas service",
+    "type": "service",
+    "link": "/saasPage"
+  },
+  {
+    "title": "Subscription Billing",
+    "category": "saas service",
+    "type": "service",
+    "link": "/saasPage"
+  },
+  {
+    "title": "SaaS Framework",
+    "category": "saas service",
+    "type": "service",
+    "link": "/saasPage"
+  },
+  {
+    "title": "Infrastructure",
+    "category": "saas service",
+    "type": "service",
+    "link": "/saasPage"
+  },
+  {
+    "title": "Product Metrics",
+    "category": "saas service",
+    "type": "service",
+    "link": "/saasPage"
+  },
+  {
+    "title": "branding",
+    "category": "saas service",
+    "type": "service",
+    "link": "/saasPage"
+  },
+  {
+    "title": "development",
+    "category": "saas service",
+    "type": "service",
+    "link": "/saasPage"
+  },
+  {
+    "title": "website dev",
+    "category": "saas service",
+    "type": "service",
+    "link": "/saasPage"
+  },
+  {
+    "title": "e-commerce",
+    "category": "saas service",
+    "type": "service",
+    "link": "/saasPage"
+  },
+  {
+    "title": "app dev",
+    "category": "saas service",
+    "type": "service",
+    "link": "/saasPage"
+  },
+  {
+    "title": "graphic design",
+    "category": "saas service",
+    "type": "service",
+    "link": "/saasPage"
+  },
+  {
+    "title": "ui/ux design",
+    "category": "saas service",
+    "type": "service",
+    "link": "/saasPage"
+  },
+  {
+    "title": "software & tech",
+    "category": "saas service",
+    "type": "service",
+    "link": "/saasPage"
+  },
+  {
+    "title": "data analytics",
+    "category": "saas service",
+    "type": "service",
+    "link": "/saasPage"
+  },
+  {
+    "title": "ai products",
+    "category": "saas service",
+    "type": "service",
+    "link": "/saasPage"
+  },
+  {
+    "title": "crm service",
+    "category": "saas service",
+    "type": "service",
+    "link": "/saasPage"
+  },
+  {
+    "title": "saas service",
+    "category": "saas service",
+    "type": "service",
+    "link": "/saasPage"
+  },
+  {
+    "title": "Ultimate Sales Hub",
+    "category": "CRM",
+    "type": "product",
+    "link": "/crmPage"
+  },
+  {
+    "title": "Customer Link Pro",
+    "category": "CRM",
+    "type": "product",
+    "link": "/crmPage"
+  },
+  {
+    "title": "Unified CRM Connect",
+    "category": "CRM",
+    "type": "product",
+    "link": "/crmPage"
+  },
+  {
+    "title": "Sales Growth Engine",
+    "category": "CRM",
+    "type": "product",
+    "link": "/crmPage"
+  },
+  {
+    "title": "Omnichannel Sync",
+    "category": "CRM",
+    "type": "product",
+    "link": "/crmPage"
+  },
+  {
+    "title": "Lead Scoring V2",
+    "category": "CRM",
+    "type": "product",
+    "link": "/crmPage"
+  },
+  {
+    "title": "Financial Intelligence",
+    "category": "ERP",
+    "type": "product",
+    "link": "/erpPage"
+  },
+  {
+    "title": "Supply Chain Master",
+    "category": "ERP",
+    "type": "product",
+    "link": "/erpPage"
+  },
+  {
+    "title": "Operations Core 3.0",
+    "category": "ERP",
+    "type": "product",
+    "link": "/erpPage"
+  },
+  {
+    "title": "Enterprise Logic Hub",
+    "category": "ERP",
+    "type": "product",
+    "link": "/erpPage"
+  },
+  {
+    "title": "Inventory Radar",
+    "category": "ERP",
+    "type": "product",
+    "link": "/erpPage"
+  },
+  {
+    "title": "Fleet Sync Pro",
+    "category": "ERP",
+    "type": "product",
+    "link": "/erpPage"
+  },
+  {
+    "title": "HR Connect Core",
+    "category": "ERP",
+    "type": "product",
+    "link": "/erpPage"
+  },
+  {
+    "title": "Razor AI Assistant",
+    "category": "AI CHATBOT",
+    "type": "product",
+    "link": "/aiChatbotPage"
+  },
+  {
+    "title": "Nexus GPT Node",
+    "category": "AI CHATBOT",
+    "type": "product",
+    "link": "/aiChatbotPage"
+  },
+  {
+    "title": "Infinite Voice Flow",
+    "category": "AI CHATBOT",
+    "type": "product",
+    "link": "/aiChatbotPage"
+  },
+  {
+    "title": "Neural Link Desk",
+    "category": "AI CHATBOT",
+    "type": "product",
+    "link": "/aiChatbotPage"
+  },
+  {
+    "title": "Vision Interaction Hub",
+    "category": "AI CHATBOT",
+    "type": "product",
+    "link": "/aiChatbotPage"
+  },
+  {
+    "title": "Sentiment Sentinel",
+    "category": "AI CHATBOT",
+    "type": "product",
+    "link": "/aiChatbotPage"
+  },
+  {
+    "title": "Global Translator X",
+    "category": "AI CHATBOT",
+    "type": "product",
+    "link": "/aiChatbotPage"
+  },
+  {
+    "title": "AI Resume Optimizer",
+    "category": "JOB SEEKER HUB",
+    "type": "product",
+    "link": "/jobSeekerPage"
+  },
+  {
+    "title": "Job Market Scanner",
+    "category": "JOB SEEKER HUB",
+    "type": "product",
+    "link": "/jobSeekerPage"
+  },
+  {
+    "title": "Mock Interview Coach",
+    "category": "JOB SEEKER HUB",
+    "type": "product",
+    "link": "/jobSeekerPage"
+  },
+  {
+    "title": "Industry Bridge Port",
+    "category": "JOB SEEKER HUB",
+    "type": "product",
+    "link": "/jobSeekerPage"
+  },
+  {
+    "title": "Salary Negotiation AI",
+    "category": "JOB SEEKER HUB",
+    "type": "product",
+    "link": "/jobSeekerPage"
+  },
+  {
+    "title": "Freelance Catalyst",
+    "category": "JOB SEEKER HUB",
+    "type": "product",
+    "link": "/jobSeekerPage"
+  },
+  {
+    "title": "Fullstack Web Academy",
+    "category": "CAREER & LEARNING",
+    "type": "product",
+    "link": "/raymartPageFour"
+  },
+  {
+    "title": "Data Science Masters",
+    "category": "CAREER & LEARNING",
+    "type": "product",
+    "link": "/raymartPageFour"
+  },
+  {
+    "title": "UX/UI Design Lab",
+    "category": "CAREER & LEARNING",
+    "type": "product",
+    "link": "/raymartPageFour"
+  },
+  {
+    "title": "Executive Leadership",
+    "category": "CAREER & LEARNING",
+    "type": "product",
+    "link": "/raymartPageFour"
+  },
+  {
+    "title": "Growth Marketing Pro",
+    "category": "CAREER & LEARNING",
+    "type": "product",
+    "link": "/raymartPageFour"
+  },
+  {
+    "title": "Cloud Ops Manager",
+    "category": "SAAS",
+    "type": "product",
+    "link": "/saasPage"
+  },
+  {
+    "title": "SaaS Billing Pro",
+    "category": "SAAS",
+    "type": "product",
+    "link": "/saasPage"
+  },
+  {
+    "title": "API Nexus Hub",
+    "category": "SAAS",
+    "type": "product",
+    "link": "/saasPage"
+  },
+  {
+    "title": "User Auth Guard",
+    "category": "SAAS",
+    "type": "product",
+    "link": "/saasPage"
+  },
+  {
+    "title": "Metric Data Lake",
+    "category": "SAAS",
+    "type": "product",
+    "link": "/saasPage"
+  },
+  {
+    "title": "Tenant Sync DB",
+    "category": "SAAS",
+    "type": "product",
+    "link": "/saasPage"
+  },
+  {
+    "title": "Executive AI Dashboard",
+    "category": "BUSINESS SUIT AI",
+    "type": "product",
+    "link": "/raymartPageFour"
+  },
+  {
+    "title": "Legal Doc Parser",
+    "category": "BUSINESS SUIT AI",
+    "type": "product",
+    "link": "/raymartPageFour"
+  },
+  {
+    "title": "Biz Strategy Copilot",
+    "category": "BUSINESS SUIT AI",
+    "type": "product",
+    "link": "/raymartPageFour"
+  },
+  {
+    "title": "Meeting Synthesizer",
+    "category": "BUSINESS SUIT AI",
+    "type": "product",
+    "link": "/raymartPageFour"
+  },
+  {
+    "title": "Vendor NegotiaBot",
+    "category": "BUSINESS SUIT AI",
+    "type": "product",
+    "link": "/raymartPageFour"
+  },
+  {
+    "title": "CRM",
+    "category": "BUSINESS SUIT AI",
+    "type": "product",
+    "link": "/crmPage"
+  },
+  {
+    "title": "ERP",
+    "category": "BUSINESS SUIT AI",
+    "type": "product",
+    "link": "/erpPage"
+  },
+  {
+    "title": "AI CHATBOT",
+    "category": "BUSINESS SUIT AI",
+    "type": "product",
+    "link": "/aiChatbotPage"
+  },
+  {
+    "title": "JOB SEEKER HUB",
+    "category": "BUSINESS SUIT AI",
+    "type": "product",
+    "link": "/jobSeekerPage"
+  },
+  {
+    "title": "LEARNING & CAREER",
+    "category": "BUSINESS SUIT AI",
+    "type": "product",
+    "link": "/learningPage"
+  },
+  {
+    "title": "SAAS",
+    "category": "BUSINESS SUIT AI",
+    "type": "product",
+    "link": "/saasPage"
+  },
+  {
+    "title": "BUSINESS SUIT AI",
+    "category": "BUSINESS SUIT AI",
+    "type": "product",
+    "link": "/raymartPageFour"
+  },
+  {
+    "title": "JOB SEEKER",
+    "category": "BUSINESS SUIT AI",
+    "type": "product",
+    "link": "/raymartPageFour"
+  },
+  {
+    "title": "CAREER & LEARNING",
+    "category": "BUSINESS SUIT AI",
+    "type": "product",
+    "link": "/raymartPageFour"
+  }
+]

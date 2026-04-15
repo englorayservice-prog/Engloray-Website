@@ -52,46 +52,92 @@
 }
 
 /* ============================================================
-   FLOATING ARROW
+   MODERN FLOATING ACTION BUTTON
    ============================================================ */
-.tgi-floating-arrow {
+.tgi-modern-fab {
     position: fixed;
     left: 28px;
     top: 50%;
     transform: translateY(-50%);
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: var(--ip-white);
-    border: none;
+    width: 64px;
+    height: 64px;
+    border-radius: 32px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
     cursor: pointer;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    outline: none;
     z-index: 100;
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.22);
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
-    animation: tgi-floatArrow 3s ease-in-out infinite;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+    padding: 0;
+    color: #fff;
+    animation: tgi-floatFab 3s ease-in-out infinite;
 }
 
-.tgi-floating-arrow:hover {
-    transform: translateY(-50%) scale(1.1);
-    box-shadow: 0 14px 36px rgba(191, 4, 19, 0.35);
+@keyframes tgi-floatFab {
+    0%, 100% { transform: translateY(-50%); }
+    50% { transform: translateY(calc(-50% - 8px)); }
 }
 
-.tgi-arrow-symbol {
+.tgi-modern-fab:hover {
+    width: 175px;
+    background: #000;
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 14px 45px rgba(0, 0, 0, 0.4);
+}
+
+.tgi-fab-icon {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+    color: #fff;
     transition: transform 0.3s ease;
 }
 
-.tgi-floating-arrow:hover .tgi-arrow-symbol {
-    transform: translateX(3px);
+.tgi-modern-fab:hover .tgi-fab-icon {
+    transform: translateX(4px);
 }
 
-.tgi-arrow-glow {
-    display: none;
+.tgi-fab-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateX(-15px);
+    transition: all 0.3s ease 0.1s;
+    letter-spacing: 0.03em;
+    padding-right: 15px;      /* Ensure it doesn't hit the right edge */
+    display: inline-flex;     /* Better alignment */
+    align-items: center;
+    height: 100%;             /* Use full height for precise centering */
+    margin-top: 2px;          /* Nudge slightly if FontAwesome baseline shifts it */
+}
+
+.tgi-modern-fab:hover .tgi-fab-text {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.tgi-fab-glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tgi-modern-fab:hover .tgi-fab-glow {
+    opacity: 1;
 }
 
 /* ============================================================

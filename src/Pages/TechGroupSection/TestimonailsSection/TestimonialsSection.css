@@ -32,9 +32,26 @@
 .techGroup-testimonials-only-container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 4rem;
+}
+
+/* Isolated Styles for Testimonials Only */
+.techGroup-testimonials-only-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
   position: relative;
   z-index: 2;
+  overflow: hidden;
+}
+
+.techGroup-testimonials-only-container {
+  max-width: 1800px;
+  /* Slightly wider to accommodate shift */
+  margin-left: 200px;
+  padding: 0 4rem;
+  transform: translateX(75px);
+  /* Shifted more to the right as requested */
+  transition: transform 0.5s ease;
 }
 
 /* ================= HEADER STYLES ================= */
@@ -101,7 +118,10 @@
   margin: 0 auto 6rem;
   overflow: hidden;
   border-radius: 24px;
-  max-width: 100%;
+  max-width: 1300px;
+  /* Reduced width to make it more compact */
+  margin-left: 0;
+  margin-right: auto;
 }
 
 .techGroup-stripe-arrows {

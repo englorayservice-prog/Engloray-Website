@@ -556,6 +556,143 @@ const Courses = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: false }}
               transition={{ duration: 0.6, delay: idx * 0.1 }}
+      <div className="courses-container">
+        {/* Header Section */}
+        <div className="courses-header">
+
+          {/* User Goal Selection Section */}
+          <div className="user-goals-container">
+            <h2 className="goals-title">What brings you to Engloray today?</h2>
+            <div className="goals-grid">
+              <div className="goal-card">
+                <div className="goal-icon-box">
+                  <FontAwesomeIcon icon={faFlag} className="goal-custom-logo" />
+                </div>
+                <span className="goal-text">Start my career</span>
+              </div>
+              <div className="goal-card">
+                <div className="goal-icon-box">
+                  <FontAwesomeIcon icon={faExchangeAlt} className="goal-custom-logo" />
+                </div>
+                <span className="goal-text">Change my career</span>
+              </div>
+              <div className="goal-card">
+                <div className="goal-icon-box">
+                  <FontAwesomeIcon icon={faChartLine} className="goal-custom-logo" />
+                </div>
+                <span className="goal-text">Grow in my current role</span>
+              </div>
+              <div className="goal-card">
+                <div className="goal-icon-box">
+                  <FontAwesomeIcon icon={faBinoculars} className="goal-custom-logo" />
+                </div>
+                <span className="goal-text">Explore topics outside of work</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="learning-head">
+
+            {/* ── Hero Text ── */}
+            <div className="lh-hero-text">
+              <h1 className="lh-hero-title">
+                <span>AI-Powered Learning<br />for Tomorrow's Leaders</span>
+              </h1>
+              <p className="lh-hero-subtitle">
+                Empowering Students with Personalized, Interactive Learning<br />
+                Designed to Build Essential Skills for Future Success
+              </p>
+              <button className="lh-cta-btn">Get Started</button>
+            </div>
+
+            {/* ── 3-Column Card Grid ── */}
+            <div className="lh-cards-grid">
+
+              {/* LEFT — person studying */}
+              <div className="lh-card lh-card-large lh-card-person">
+                <img
+                  src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=900&auto=format&fit=crop"
+                  alt="Student learning online"
+                  className="lh-card-img"
+                />
+                {/* floating emoji */}
+                {/* <div className="lh-float-char lh-char-yellow">😊</div> */}
+                {/* speech bubble */}
+                <div className="lh-speech-bubble">
+                  <p>Learn anytime, anywhere with our online courses.</p>
+                  <div className="lh-bubble-brand">
+                    <span className="lh-brand-dot"></span>
+                    Engloray
+                  </div>
+                </div>
+              </div>
+
+              {/* MIDDLE — stacked cards */}
+              <div className="lh-card-column">
+
+                {/* Teachers card — lime-green */}
+                <div className="lh-card lh-card-teachers">
+                  <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=400&auto=format&fit=crop" alt="Teachers Background" className="lh-teachers-bg" />
+                  <div className="lh-teachers-content">
+                    <div className="lh-teacher-avatars">
+                      <img src="https://i.pravatar.cc/150?u=t1" alt="Teacher 1" />
+                      <img src="https://i.pravatar.cc/150?u=t2" alt="Teacher 2" />
+                      <img src="https://i.pravatar.cc/150?u=t3" alt="Teacher 3" />
+                      <div className="lh-more-teachers">+8</div>
+                    </div>
+                    <h3 className="lh-teachers-title">
+                      Professional&nbsp;
+                      {/* <span className="lh-teachers-badge"></span> */}
+                      &nbsp;Teachers
+                    </h3>
+                    <svg className="lh-curvy-line" viewBox="0 0 90 14" fill="none">
+                      <path d="M0,10 Q22,2 45,10 T90,10" stroke="#000" strokeWidth="2.5" strokeLinecap="round" />
+                    </svg>
+                  </div>
+                </div>
+
+                {/* Chance card — lavender */}
+
+
+              </div>
+
+              {/* RIGHT — child image + math badge */}
+              <div className="lh-card lh-card-large lh-card-math">
+                <img
+                  src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?q=80&w=900&auto=format&fit=crop"
+                  alt="VR learning"
+                  className="lh-card-img"
+                />
+                <div className="lh-math-badge">
+                  <span className="lh-badge-dot"></span>
+                  <div className="lh-badge-info">
+                    <h4>FUTURE OF LEARNING AND DEVELOPMENT</h4>
+                    <span>For Beginner</span>
+                  </div>
+                  <div className="lh-badge-time">
+                    <span className="lh-time-num">12</span>
+                    <span className="lh-time-unit">Weeks</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <span className="popular-badge" style={{ marginTop: '30px' }}>
+            <FontAwesomeIcon icon={faList} className="badge-icon" />
+            POPULAR COURSES
+          </span>
+          <h2 className="courses-main-title">Our Career Courses</h2>
+        </div>
+
+        {/* Category Filter Bar */}
+        <div className="categories-filter-bar">
+          {categories.map((cat) => (
+            <div
+              key={cat.id}
+              className={`category-item ${activeCategory === cat.name ? 'active' : ''}`}
+              onClick={() => setActiveCategory(cat.name)}
             >
               <div className="goal-icon-box">
                 <FontAwesomeIcon icon={goal.icon} className="goal-custom-logo" />
@@ -630,6 +767,61 @@ const Courses = () => {
                 <div className="lh-teacher-avatars">
                   <img src="https://i.pravatar.cc/150?u=t1" alt="T1" /><img src="https://i.pravatar.cc/150?u=t2" alt="T2" /><img src="https://i.pravatar.cc/150?u=t3" alt="T3" />
                   <div className="lh-more-teachers">+8</div>
+
+            <div className="cs-steps-grid">
+              {/* Card 1 - Digital Marketing (Top Left) */}
+              <div className="cs-step-card cs-card-pink ani-pulse">
+                <div className="cs-step-number">01</div>
+                <div className="cs-card-content">
+                  <h3 className="cs-step-title">Cyber Security</h3>
+                  <p className="cs-step-desc">
+                    Protect digital assets and infrastructures by mastering advanced security protocols and threat detection.
+                  </p>
+                  <div className="cs-card-footer">
+                    <span className="cs-weeks-badge"><FontAwesomeIcon icon={faClock} /> 8 WEEKS</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 2 - Full Stack (Top Right) */}
+              <div className="cs-step-card cs-card-purple ani-typing">
+                <div className="cs-step-number">02</div>
+                <div className="cs-card-content">
+                  <h3 className="cs-step-title">Business Intelligence</h3>
+                  <p className="cs-step-desc">
+                    A Technology-driven framework of strategies, tools, and processes used by organizations to analyze raw data and convert it into actionable insights
+                  </p>
+                  <div className="cs-card-footer">
+                    <span className="cs-weeks-badge"><FontAwesomeIcon icon={faClock} /> 12 WEEKS</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 3 - AI Creative (Mid Left) */}
+              <div className="cs-step-card cs-card-yellow ani-float">
+                <div className="cs-step-number">03</div>
+                <div className="cs-card-content">
+                  <h3 className="cs-step-title">AI Creative Intelligence</h3>
+                  <p className="cs-step-desc">
+                    Harness the power of Generative AI and automation to revolutionize your creative workflow and output.
+                  </p>
+                  <div className="cs-card-footer">
+                    <span className="cs-weeks-badge"><FontAwesomeIcon icon={faClock} /> 10 WEEKS</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 4 - Website Development (Mid Right) */}
+              <div className="cs-step-card cs-card-blue ani-growth">
+                <div className="cs-step-number">04</div>
+                <div className="cs-card-content">
+                  <h3 className="cs-step-title">Cloud Computing</h3>
+                  <p className="cs-step-desc">
+                    Master AWS, Azure, and Google Cloud to build scalable, resilient, and secure enterprise infrastructures.
+                  </p>
+                  <div className="cs-card-footer">
+                    <span className="cs-weeks-badge"><FontAwesomeIcon icon={faClock} /> 8 WEEKS</span>
+                  </div>
                 </div>
                 <h3 className="lh-teachers-title">Professional Teachers</h3>
               </div>
@@ -654,6 +846,9 @@ const Courses = () => {
               <div className="lh-badge-time"><span className="lh-time-num">12</span><span className="lh-time-unit">Weeks</span></div>
             </div>
           </motion.div>
+            </button>
+            <p className="cs-subtext-info"> 100% Placement Assistance | Live Projects | Industry Mentors</p>
+          </div>
         </div>
       </div>
 

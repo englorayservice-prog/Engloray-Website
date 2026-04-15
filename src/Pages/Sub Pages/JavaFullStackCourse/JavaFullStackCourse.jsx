@@ -55,7 +55,10 @@ import {
   faTerminal,
   faMicrochip,
   faCodeBranch,
-  faDatabase
+  faDatabase,
+  faCloud,
+  faLayerGroup,
+  faMagnet
 } from '@fortawesome/free-solid-svg-icons';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import './JavaFullStackCourse.css';
@@ -78,9 +81,12 @@ import t1 from '../../../assets/t1.png';
 import t2 from '../../../assets/t2.png';
 import t3 from '../../../assets/t3.png';
 // Custom Testimonial Avatars
-import avatarF1 from '../../../assets/t1.png';
-import avatarM1 from '../../../assets/t2.png';
-import avatarF2 from '../../../assets/t3.png';
+import avatarF1 from "../../../assets/testimonials/cartoon_female_1.png";
+import avatarF3 from "../../../assets/testimonials/cartoon_female_3.png";
+import avatarM1 from "../../../assets/testimonials/cartoon_male_1.png";
+import avatarM2 from "../../../assets/testimonials/cartoon_male_2.png";
+import avatarM3 from "../../../assets/testimonials/cartoon_male_3.png";
+import avatarF2 from "../../../assets/testimonials/cartoon_female_2.png";
 
 // Java Full Stack Hero Assets
 import jfsHero1 from '../../../assets/jfs_hero_1.jpeg';
@@ -108,6 +114,32 @@ const JavaFullStackCourse = () => {
   const [currentBenefitIndex, setCurrentBenefitIndex] = useState(0);
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
   const [testiSetIndex, setTestiSetIndex] = useState(0);
+  const [fluidScale, setFluidScale] = useState(1);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const width = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+      let newScale = 1;
+
+      if (width >= 1440) {
+        newScale = width / 1440;
+      } else if (width <= 768) {
+        // Hybrid mobile scaling matching original clamp bounds
+        newScale = Math.max(0.8, Math.min(width / 480, 1.2));
+      } else {
+        // Between 768 and 1440: Optimized scaling for tablets to ensure proper expansion
+        // This prevents the "stuck at 0.7" issue and targets ~0.9 scale near 1024px.
+        newScale = Math.max(0.7, width / 1150);
+      }
+
+      setFluidScale(newScale);
+    };
+
+    // Calculate on mount and attach
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     const testiInterval = setInterval(() => {
@@ -119,12 +151,12 @@ const JavaFullStackCourse = () => {
   const allTestimonials = [
     { name: "Suresh P", role: "Java Developer", text: "Gained confidence of working with real enterprise projects which I used to fear. Technical interviews are now easy! The course provided me with the exactly industry-standard skills and professional coding techniques needed for global success.", avatar: avatarM1 },
     { name: "Priya R", role: "Full Stack Engineer", text: "The practical approach and project-based learning completely transformed how I build software. Highly recommended!", avatar: avatarF1 },
-    { name: "Rahul M", role: "Backend Architect", text: "The curriculum is perfectly aligned with industry standards. Easily the best investment for my career. The projects really challenged my limits.", avatar: avatarM1 },
+    { name: "Rahul M", role: "Backend Architect", text: "The curriculum is perfectly aligned with industry standards. Easily the best investment for my career. The projects really challenged my limits.", avatar: avatarM3 },
     { name: "Anita K", role: "Freelancer", text: "I landed my first freelance gig within weeks of starting the program. The support here is unmatched and the mentors really help you bridge the gap between creative logic and professional execution for international clients.", avatar: avatarF2 },
-    { name: "Vikas S", role: "Tech Lead", text: "From zero to building full-fledged microservices. The mentors really push you to bring out your best.", avatar: avatarM1 },
-    { name: "Sneha T", role: "Cloud Engineer", text: "Learning system architecture here helped me create high-scalable cloud environments. Truly a game-changer.", avatar: avatarF1 },
-    { name: "Rohan D", role: "Software Engineer", text: "The focus on modern tools like Spring Boot and React sets this course apart from all other programs. It provided me with the exactly industry-standard skills needed to land a high-paying role as a software engineer at a top global firm.", avatar: avatarM1 },
-    { name: "Kavya J", role: "Database Admin", text: "I finally understand the database sharding and optimization. The deep dives are perfect for crafting premium data solutions for my global tech clients.", avatar: avatarF1 },
+    { name: "Vikas S", role: "Tech Lead", text: "From zero to building full-fledged microservices. The mentors really push you to bring out your best.", avatar: avatarM2 },
+    { name: "Sneha T", role: "Cloud Engineer", text: "Learning system architecture here helped me create high-scalable cloud environments. Truly a game-changer.", avatar: avatarF3 },
+    { name: "Rohan D", role: "Software Engineer", text: "The focus on modern tools like Spring Boot and React sets this course apart from all other programs. It provided me with the exactly industry-standard skills needed to land a high-paying role as a software engineer at a top global firm.", avatar: avatarM3 },
+    { name: "Kavya J", role: "Database Admin", text: "I finally understand the database sharding and optimization. The deep dives are perfect for crafting premium data solutions for my global tech clients.", avatar: avatarF3 },
     { name: "Manoj V", role: "Integration Specialist", text: "The community and constant feedback loops made learning complex APIs feel like a breeze. It's the perfect environment for anyone entering the world of digital software.", avatar: avatarM1 }
   ];
 
@@ -136,7 +168,7 @@ const JavaFullStackCourse = () => {
     name: '',
     email: '',
     phone: '',
-    course: 'Java Full Stack Mastery'
+    course: 'Java Full Stack'
   });
 
   const [activeToolCategory, setActiveToolCategory] = useState(0);
@@ -182,7 +214,7 @@ const JavaFullStackCourse = () => {
     },
     {
       title: "Cloud & DevOps",
-      icon: <FontAwesomeIcon icon={faRocket} />,
+      icon: <FontAwesomeIcon icon={faCloud} />,
       points: ["AWS Deployment", "Docker Containers", "CI/CD Pipelines"],
       bgColor: "rgba(61, 82, 217, 0.12)", // Blue
       iconColor: "#3D52D9"
@@ -213,19 +245,19 @@ const JavaFullStackCourse = () => {
       desc: "Learn to create pixel-perfect, responsive web interfaces specifically tailored for modern enterprise dashboards, SaaS platforms, and high-engagement digital experiences for leading global tech firms. Build user-centric software products that stand out in the global marketplace."
     },
     {
-      icon: <FontAwesomeIcon icon={faRocket} />,
+      icon: <FontAwesomeIcon icon={faLayerGroup} />,
       title: "Full Stack Integration",
       desc: "Build a diverse, professional portfolio featuring high-quality real-world case studies that showcase your versatility and problem-solving skills to top global tech employers and agencies. Present your work with clarity and confidence to stand out in competitive software industries."
     },
     {
       icon: <FontAwesomeIcon icon={faBriefcase} />,
       title: "Engineering Prep",
-      desc: "Get ready for your first engineering role with dedicated technical interview preparation, system design strategies, and comprehensive agile project management training for career success in the software industry."
+      desc: "Get ready for your first engineering role with dedicated technical interview preparation, system design strategies, and comprehensive agile project management training for career success in the software industry. Master the art of problem-solving under pressure, learn to optimize your LinkedIn and resume, and gain the confidence to lead technical discussions with senior engineers at top global tech firms."
     },
     {
       icon: <FontAwesomeIcon icon={faMicrochip} />,
       title: "Architectural Mindset",
-      desc: "Master an architectural mindset to analyze and solve complex software challenges with professional engineering logic."
+      desc: "Master an architectural mindset to analyze and solve complex software challenges with professional engineering logic. Learn to design distributed systems, handle scale, and implement robust security layers. Gain deep insights into microservices, message queues, and database sharding to build future-proof, enterprise-grade applications for the global market."
     }
   ];
 
@@ -290,30 +322,31 @@ const JavaFullStackCourse = () => {
 
   const toolsV2Data = [
     [
-      { name: "ChatGPT", icon: <FontAwesomeIcon icon={faComments} />, desc: "AI code assistant and logic optimization.", bg: "linear-gradient(135deg, #10B981 0%, #047857 100%)" },
-      { name: "Gemini", icon: <FontAwesomeIcon icon={faGlobe} />, desc: "Technical documentation and research aid.", bg: "linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%)" },
-      { name: "GitHub Copilot", icon: <FontAwesomeIcon icon={faCodeBranch} />, desc: "Real-time AI pair programming support.", bg: "linear-gradient(135deg, #8B5CF6 0%, #4C1D95 100%)" },
-      { name: "Notion", icon: <FontAwesomeIcon icon={faFileAlt} />, desc: "Engineering specs and project planning.", bg: "linear-gradient(135deg, #EC4899 0%, #BE185D 100%)" }
+      { name: "ChatGPT", icon: <FontAwesomeIcon icon={faComments} />, desc: "AI pair programming and logic optimization.", bg: "linear-gradient(135deg, #FF6B00 0%, #FF8533 100%)" },
+      { name: "Gemini", icon: <FontAwesomeIcon icon={faGlobe} />, desc: "Technical documentation and research aid.", bg: "linear-gradient(135deg, #FF4500 0%, #FF6347 100%)" },
+      { name: "GitHub Copilot", icon: <FontAwesomeIcon icon={faCodeBranch} />, desc: "Real-time AI code completion support.", bg: "linear-gradient(135deg, #D35400 0%, #E67E22 100%)" },
+      { name: "Blackbox AI", icon: <FontAwesomeIcon icon={faLaptopCode} />, desc: "Intelligent code search and generation.", bg: "linear-gradient(135deg, #C0392B 0%, #E74C3C 100%)" }
     ],
     [
-      { name: "PostgreSQL", icon: <FontAwesomeIcon icon={faDatabase} />, desc: "Relational data modeling and storage.", bg: "linear-gradient(135deg, #F43F5E 0%, #BE123C 100%)" },
-      { name: "MongoDB", icon: <FontAwesomeIcon icon={faDatabase} />, desc: "NoSQL document-based data management.", bg: "linear-gradient(135deg, #FACC15 0%, #B45309 100%)" },
-      { name: "Redis", icon: <FontAwesomeIcon icon={faSyncAlt} />, desc: "High-speed caching and sessions.", bg: "linear-gradient(135deg, #06B6D4 0%, #0369A1 100%)" },
-      { name: "Docker", icon: <FontAwesomeIcon icon={faBriefcase} />, desc: "Containerized application delivery.", bg: "linear-gradient(135deg, #14B8A6 0%, #0F766E 100%)" }
+      { name: "Spring AI", icon: <FontAwesomeIcon icon={faServer} />, desc: "Integrating AI models into Spring apps.", bg: "linear-gradient(135deg, #27AE60 0%, #2ECC71 100%)" },
+      { name: "LangChain4j", icon: <FontAwesomeIcon icon={faNetworkWired} />, desc: "Java power for LLM applications.", bg: "linear-gradient(135deg, #2980B9 0%, #3498DB 100%)" },
+      { name: "Postman", icon: <FontAwesomeIcon icon={faGlobe} />, desc: "Testing and documenting REST APIs.", bg: "linear-gradient(135deg, #E67E22 0%, #F39C12 100%)" },
+      { name: "Swagger", icon: <FontAwesomeIcon icon={faFileAlt} />, desc: "API specification and visualization.", bg: "linear-gradient(135deg, #8E44AD 0%, #9B59B6 100%)" }
     ],
     [
-      { name: "AWS", icon: <FontAwesomeIcon icon={faGlobe} />, desc: "Global cloud infrastructure services.", bg: "linear-gradient(135deg, #6366F1 0%, #4338CA 100%)" },
-      { name: "Kubernetes", icon: <FontAwesomeIcon icon={faNetworkWired} />, desc: "Orchestrating container workloads.", bg: "linear-gradient(135deg, #D946EF 0%, #A21CAF 100%)" },
-      { name: "Jenkins", icon: <FontAwesomeIcon icon={faSyncAlt} />, desc: "Automated build and CI pipelines.", bg: "linear-gradient(135deg, #F97316 0%, #C2410C 100%)" },
-      { name: "Git", icon: <FontAwesomeIcon icon={faCodeBranch} />, desc: "Distributed version control system.", bg: "linear-gradient(135deg, #84CC16 0%, #4D7C0F 100%)" }
+      { name: "MongoDB", icon: <FontAwesomeIcon icon={faDatabase} />, desc: "NoSQL document-based data storage.", bg: "linear-gradient(135deg, #16A085 0%, #1ABC9C 100%)" },
+      { name: "Redis", icon: <FontAwesomeIcon icon={faSyncAlt} />, desc: "High-speed caching and sessions.", bg: "linear-gradient(135deg, #C0392B 0%, #E74C3C 100%)" },
+      { name: "AWS Bedrock", icon: <FontAwesomeIcon icon={faCloud} />, desc: "Cloud foundations for AI workload.", bg: "linear-gradient(135deg, #F39C12 0%, #F1C40F 100%)" },
+      { name: "Docker", icon: <FontAwesomeIcon icon={faBriefcase} />, desc: "App containerization and delivery.", bg: "linear-gradient(135deg, #2980B9 0%, #3498DB 100%)" }
     ],
     [
-      { name: "IntelliJ IDEA", icon: <FontAwesomeIcon icon={faLaptopCode} />, desc: "Leading JVM integrated development.", bg: "linear-gradient(135deg, #64748B 0%, #334155 100%)" },
-      { name: "VS Code", icon: <FontAwesomeIcon icon={faLaptopCode} />, desc: "Lightweight polyglot code editing.", bg: "linear-gradient(135deg, #EF4444 0%, #B91C1C 100%)" },
-      { name: "Postman", icon: <FontAwesomeIcon icon={faGlobe} />, desc: "Testing and documenting REST APIs.", bg: "linear-gradient(135deg, #38BDF8 0%, #0284C7 100%)" },
-      { name: "Spring Boot", icon: <FontAwesomeIcon icon={faServer} />, desc: "Enterprise application framework.", bg: "linear-gradient(135deg, #A855F7 0%, #7E22CE 100%)" }
+      { name: "SonarQube", icon: <FontAwesomeIcon icon={faCheckCircle} />, desc: "AI-driven static code analysis.", bg: "linear-gradient(135deg, #34495E 0%, #5D6D7E 100%)" },
+      { name: "Snyk", icon: <FontAwesomeIcon icon={faLock} />, desc: "Automated vulnerability detection.", bg: "linear-gradient(135deg, #4B1D95 0%, #7C3AED 100%)" },
+      { name: "Jenkins", icon: <FontAwesomeIcon icon={faSyncAlt} />, desc: "Automated CI/CD pipelines.", bg: "linear-gradient(135deg, #D35400 0%, #E67E22 100%)" },
+      { name: "IntelliJ IDEA", icon: <FontAwesomeIcon icon={faLaptopCode} />, desc: "Elite IDE for Java engineering.", bg: "linear-gradient(135deg, #2C3E50 0%, #465769 100%)" }
     ]
   ];
+
 
   const benefits = [
     {
@@ -362,7 +395,7 @@ const JavaFullStackCourse = () => {
       description: 'Conduct real system testing and gather insights to refine code through data-driven decisions.'
     },
     {
-      icon: <FontAwesomeIcon icon={faRocket} />,
+      icon: <FontAwesomeIcon icon={faUserTie} />,
       title: 'Career Coaching',
       description: 'Interview preparation and portfolio reviews with our strategic experts to land your dream job.'
     }
@@ -459,12 +492,12 @@ const JavaFullStackCourse = () => {
     title: "Technical Certification",
     description: "Globally recognized certificate accredited by International Tech Council",
     features: [
-      "✅ Digital & Physical Copy",
-      "✅ Lifetime Validity",
-      "✅ Online Verification",
-      "✅ International Recognition",
-      "✅ QR Code Authentication",
-      "✅ Accredited by Tech Council"
+      "Digital & Physical Copy",
+      "Lifetime Validity",
+      "Online Verification",
+      "International Recognition",
+      "QR Code Authentication",
+      "Accredited by Tech Council"
     ],
     image: certificateImage // Your local certificate image
   };
@@ -476,7 +509,7 @@ const JavaFullStackCourse = () => {
     <FontAwesomeIcon icon={faTerminal} />,
     <FontAwesomeIcon icon={faCodeBranch} />,
     <FontAwesomeIcon icon={faMicrochip} />,
-    <FontAwesomeIcon icon={faRocket} />,
+    <FontAwesomeIcon icon={faMagnet} />,
     <FontAwesomeIcon icon={faTrophy} />
   ];
 
@@ -557,7 +590,7 @@ const JavaFullStackCourse = () => {
         name: '',
         email: '',
         phone: '',
-        course: 'Graphic Design Masterclass'
+        course: 'Java Full Stack'
       });
 
       setTimeout(() => setShowEnrollment(false), 3000);
@@ -593,109 +626,123 @@ const JavaFullStackCourse = () => {
   };
 
   return (
-    <div className="gdc-page">
+    <div className="jfs-page" style={{ '--jfs-fluid-scale': `${fluidScale}px` }}>
       {/* Hero Section Upgrade - Minimalist Premium Design */}
-      <header className="gdc-hero-v3">
+      <header className="jfs-hero-v3">
         {/* Animated Sparkles - Randomly placed, bigger and bolder */}
-        <div className="gdc-v3-sparkle-wrapper">
-          <div className="gdc-v3-sparkle sparkle-lg sparkle-pos-1"><FontAwesomeIcon icon={faStar} /></div>
-          <div className="gdc-v3-sparkle sparkle-sm sparkle-pos-2"><FontAwesomeIcon icon={faStar} /></div>
-          <div className="gdc-v3-sparkle sparkle-md sparkle-pos-3"><FontAwesomeIcon icon={faMagic} /></div>
-          <div className="gdc-v3-sparkle sparkle-lg sparkle-pos-4"><FontAwesomeIcon icon={faStar} /></div>
-          <div className="gdc-v3-sparkle sparkle-sm sparkle-pos-5"><FontAwesomeIcon icon={faMagic} /></div>
-          <div className="gdc-v3-sparkle sparkle-md sparkle-pos-6"><FontAwesomeIcon icon={faStar} /></div>
-          <div className="gdc-v3-sparkle sparkle-lg sparkle-pos-7"><FontAwesomeIcon icon={faStar} /></div>
-          <div className="gdc-v3-sparkle sparkle-sm sparkle-pos-8"><FontAwesomeIcon icon={faMagic} /></div>
+        <div className="jfs-v3-sparkle-wrapper">
+          <div className="jfs-v3-sparkle sparkle-lg sparkle-pos-1"><FontAwesomeIcon icon={faStar} /></div>
+          <div className="jfs-v3-sparkle sparkle-sm sparkle-pos-2"><FontAwesomeIcon icon={faStar} /></div>
+          <div className="jfs-v3-sparkle sparkle-md sparkle-pos-3"><FontAwesomeIcon icon={faMagic} /></div>
+          <div className="jfs-v3-sparkle sparkle-lg sparkle-pos-4"><FontAwesomeIcon icon={faStar} /></div>
+          <div className="jfs-v3-sparkle sparkle-sm sparkle-pos-5"><FontAwesomeIcon icon={faMagic} /></div>
+          <div className="jfs-v3-sparkle sparkle-md sparkle-pos-6"><FontAwesomeIcon icon={faStar} /></div>
+          <div className="jfs-v3-sparkle sparkle-lg sparkle-pos-7"><FontAwesomeIcon icon={faStar} /></div>
+          <div className="jfs-v3-sparkle sparkle-sm sparkle-pos-8"><FontAwesomeIcon icon={faMagic} /></div>
         </div>
 
-        <div className="gdc-v3-container">
-          <div className="gdc-v3-header-content">
-            <h1 className="gdc-v3-main-title">
-              Professional <span className="gdc-v3-arrow-capsule-straight">→</span> Java <br /> Full Stack Mastery
+        <div className="jfs-v3-container">
+          <div className="jfs-v3-header-content">
+            <h1 className="jfs-v3-main-title">
+              Professional <span className="jfs-v3-arrow-capsule-straight">→</span> Java <br /> Full Stack Mastery
             </h1>
 
-            <p className="gdc-v3-subtitle-original">
+            <p className="jfs-v3-subtitle-original">
               Transform Your Tech Career in 6 Months. Master industry frameworks like Spring Boot, Microservices & React.js to build scalable enterprise apps.
             </p>
 
-            <div className="gdc-v3-sub-row">
-              <div className="gdc-v3-members-info">
+            <div className="jfs-v3-sub-row">
+              <div className="jfs-v3-members-info">
                 <p>With more than</p>
                 <h3>3K+ DEVELOPERS</h3>
                 <h3>800+ LAB SESSIONS</h3>
               </div>
 
-              <button className="gdc-v3-join-btn" onClick={scrollToForm}>
-                Join us <span className="gdc-v3-join-arrow">↗</span>
+              <button className="jfs-v3-join-btn" onClick={scrollToForm}>
+                Join us <span className="jfs-v3-join-arrow">↗</span>
               </button>
             </div>
           </div>
 
-          <div className="gdc-v3-asset-gallery">
-            <div className="gdc-v3-card gdc-card-blue">
-              <img src={jfsHeroAssets.a1} alt="JFS Asset 1" className="gdc-v3-card-img" />
+          <div className="jfs-v3-asset-gallery">
+            <div className="jfs-v3-card jfs-card-blue">
+              <img src={jfsHeroAssets.a1} alt="JFS Asset 1" className="jfs-v3-card-img" />
             </div>
-            <div className="gdc-v3-card gdc-card-dark">
-              <img src={jfsHeroAssets.a2} alt="JFS Asset 2" className="gdc-v3-card-img" />
+            <div className="jfs-v3-card jfs-card-dark">
+              <img src={jfsHeroAssets.a2} alt="JFS Asset 2" className="jfs-v3-card-img" />
             </div>
-            <div className="gdc-v3-card gdc-card-center-featured">
-              <img src={jfsHeroAssets.a3} alt="JFS Asset 3" className="gdc-v3-card-img" />
+            <div className="jfs-v3-card jfs-card-center-featured">
+              <img src={jfsHeroAssets.a3} alt="JFS Asset 3" className="jfs-v3-card-img" />
             </div>
-            <div className="gdc-v3-card gdc-card-dark">
-              <img src={jfsHeroAssets.a4} alt="JFS Asset 4" className="gdc-v3-card-img" />
+            <div className="jfs-v3-card jfs-card-dark">
+              <img src={jfsHeroAssets.a4} alt="JFS Asset 4" className="jfs-v3-card-img" />
             </div>
-            <div className="gdc-v3-card gdc-card-blue">
-              <img src={jfsHeroAssets.a5} alt="JFS Asset 5" className="gdc-v3-card-img" />
+            <div className="jfs-v3-card jfs-card-blue">
+              <img src={jfsHeroAssets.a5} alt="JFS Asset 5" className="jfs-v3-card-img" />
             </div>
           </div>
         </div>
       </header>
 
       {/* Marquee Section bridging Hero and Intro */}
-      <div className="gdc-v2-marquee-container">
-        <div className="gdc-v2-marquee">
+      <div className="jfs-v2-marquee-container">
+        <div className="jfs-v2-marquee">
           <span>
-            JAVA <FontAwesomeIcon icon={faStar} className="gdc-marquee-star" />
-            SPRING BOOT <FontAwesomeIcon icon={faStar} className="gdc-marquee-star" />
-            MICROSERVICES <FontAwesomeIcon icon={faStar} className="gdc-marquee-star" />
-            REACT.JS <FontAwesomeIcon icon={faStar} className="gdc-marquee-star" />
-            AWS CLOUD <FontAwesomeIcon icon={faStar} className="gdc-marquee-star" />
-            DOCKER <FontAwesomeIcon icon={faStar} className="gdc-marquee-star" />
-            SQL & NO-SQL <FontAwesomeIcon icon={faStar} className="gdc-marquee-star" />
-            KUBERNETES <FontAwesomeIcon icon={faStar} className="gdc-marquee-star" />
-            JAVA <FontAwesomeIcon icon={faStar} className="gdc-marquee-star" />
-            SPRING BOOT <FontAwesomeIcon icon={faStar} className="gdc-marquee-star" />
-            MICROSERVICES <FontAwesomeIcon icon={faStar} className="gdc-marquee-star" />
+            JAVA <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
+            SPRING BOOT <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
+            MICROSERVICES <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
+            REACT.JS <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
+            AWS CLOUD <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
+            DOCKER <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
+            SQL & NO-SQL <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
+            KUBERNETES <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
+            JAVA <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
+            SPRING BOOT <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
+            MICROSERVICES <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
+            REACT.JS
+          </span>
+          <span aria-hidden="true">
+            JAVA <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
+            SPRING BOOT <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
+            MICROSERVICES <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
+            REACT.JS <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
+            AWS CLOUD <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
+            DOCKER <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
+            SQL & NO-SQL <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
+            KUBERNETES <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
+            JAVA <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
+            SPRING BOOT <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
+            MICROSERVICES <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
             REACT.JS
           </span>
         </div>
       </div>
 
       {/* New Intro Section - Re-designed to 2-column layout */}
-      <section className="gdc-intro-section">
-        <div className="gdc-container">
-          <div className="gdc-intro-layout">
-            <div className="gdc-intro-left">
-              <h2 className="gdc-intro-title">Master Java Full <br /> Stack in 6 Months</h2>
-              <p className="gdc-intro-desc">
+      <section className="jfs-intro-section">
+        <div className="jfs-container">
+          <div className="jfs-intro-layout">
+            <div className="jfs-intro-left">
+              <h2 className="jfs-intro-title">Master Java Full <br /> Stack in 6 Months</h2>
+              <p className="jfs-intro-desc">
                 Unleash your developer potential with our intensive program designed to transform beginners into industry-ready engineers. Master every tool and concept needed for a global software career.
               </p>
-              <button className="gdc-intro-cta" onClick={scrollToForm}>Contact</button>
+              <button className="jfs-intro-cta" onClick={scrollToForm}>Contact</button>
             </div>
 
-            <div className="gdc-intro-right">
-              <div className="gdc-intro-grid">
+            <div className="jfs-intro-right">
+              <div className="jfs-intro-grid">
                 {introCategories.map((cat, i) => (
-                  <div key={i} className="gdc-intro-category-box">
-                    <div className="gdc-intro-card-icon" style={{ backgroundColor: cat.bgColor, color: cat.iconColor }}>
+                  <div key={i} className="jfs-intro-category-box">
+                    <div className="jfs-intro-card-icon" style={{ backgroundColor: cat.bgColor, color: cat.iconColor }}>
                       {cat.icon}
                     </div>
-                    <div className="gdc-intro-card-content">
-                      <h3 className="gdc-intro-card-title">{cat.title}</h3>
-                      <div className="gdc-intro-card-points">
+                    <div className="jfs-intro-card-content">
+                      <h3 className="jfs-intro-card-title">{cat.title}</h3>
+                      <div className="jfs-intro-card-points">
                         {cat.points.map((point, idx) => (
-                          <div key={idx} className="gdc-intro-point">
-                            <FontAwesomeIcon icon={faStar} className="gdc-intro-point-star" />
+                          <div key={idx} className="jfs-intro-point">
+                            <FontAwesomeIcon icon={faStar} className="jfs-intro-point-star" />
                             {point}
                           </div>
                         ))}
@@ -710,20 +757,20 @@ const JavaFullStackCourse = () => {
       </section>
 
       {/* Course Outcomes - Redesigned Numbered Grid */}
-      <section className="dgm-section dgm-outcomes-numbered">
-        <div className="dgm-container">
-          <div className="dgm-outcomes-header-row">
-            <div className="dgm-outcomes-title-col">
-              <h2 className="dgm-outcomes-main-title">Course Outcomes</h2>
+      <section className="jfs-dgm-section jfs-dgm-outcomes-numbered">
+        <div className="jfs-dgm-container">
+          <div className="jfs-dgm-outcomes-header-row">
+            <div className="jfs-dgm-outcomes-title-col">
+              <h2 className="jfs-dgm-outcomes-main-title">Course Outcomes</h2>
             </div>
-            <div className="dgm-outcomes-desc-col">
-              <p className="dgm-outcomes-top-desc text-left">
-                What you'll achieve after completing this program. Master workflows, build case studies, and transform into an industry-ready UI/UX designer.
+            <div className="jfs-dgm-outcomes-desc-col">
+              <p className="jfs-dgm-outcomes-top-desc text-left">
+                What you'll achieve after completing this program. Master full-stack architectures, build scalable applications, and transform into an industry-ready Java Full Stack Developer.
               </p>
             </div>
           </div>
 
-          <div className="dgm-outcomes-numbered-grid">
+          <div className="jfs-dgm-outcomes-numbered-grid">
             {courseOutcomes.map((outcome, index) => {
               const isBlack = index === 1 || index === 3 || index === 5;
               const cardNumber = (index + 1).toString().padStart(2, '0');
@@ -731,19 +778,19 @@ const JavaFullStackCourse = () => {
               return (
                 <div
                   key={index}
-                  className={`dgm-outcome-numbered-card ${isBlack ? 'black-bg' : 'white-bg'}`}
+                  className={`jfs-dgm-outcome-numbered-card ${isBlack ? 'black-bg' : 'white-bg'}`}
                 >
-                  <div className="dgm-outcome-card-content-wrapper">
+                  <div className="jfs-dgm-outcome-card-content-wrapper">
                     {/* Left side - Number and Icon */}
-                    <div className="dgm-outcome-card-left">
-                      <div className="dgm-outcome-card-number">{cardNumber}</div>
-                      <div className="dgm-outcome-numbered-icon">{outcome.icon}</div>
+                    <div className="jfs-dgm-outcome-card-left">
+                      <div className="jfs-dgm-outcome-card-number">{cardNumber}</div>
+                      <div className="jfs-dgm-outcome-numbered-icon">{outcome.icon}</div>
                     </div>
 
                     {/* Right side - Title and Description */}
-                    <div className="dgm-outcome-card-right">
-                      <h3 className="dgm-outcome-numbered-title">{outcome.title}</h3>
-                      <p className="dgm-outcome-numbered-desc">{outcome.desc}</p>
+                    <div className="jfs-dgm-outcome-card-right">
+                      <h3 className="jfs-dgm-outcome-numbered-title">{outcome.title}</h3>
+                      <p className="jfs-dgm-outcome-numbered-desc">{outcome.desc}</p>
                     </div>
                   </div>
                 </div>
@@ -755,36 +802,36 @@ const JavaFullStackCourse = () => {
 
 
       {/* 6-Month Course Breakdown - Vertical Slider Redesign */}
-      <section className="gdc-curriculum-v2-section">
-        <div className="gdc-container">
-          <div className="gdc-curriculum-v2-layout">
-            <div className="gdc-curriculum-v2-left">
-              <span className="gdc-curriculum-v2-tag">PRO COURSE</span>
-              <h2 className="gdc-curriculum-v2-title">6-Month Course <br /> Breakdown</h2>
-              <p className="gdc-curriculum-v2-desc">
+      <section className="jfs-curriculum-v2-section">
+        <div className="jfs-container">
+          <div className="jfs-curriculum-v2-layout">
+            <div className="jfs-curriculum-v2-left">
+              <span className="jfs-curriculum-v2-tag">PRO COURSE</span>
+              <h2 className="jfs-curriculum-v2-title">6-Month Course <br /> Breakdown</h2>
+              <p className="jfs-curriculum-v2-desc">
                 A comprehensive structured learning path designed for industry excellence. Master software architecture, professional frameworks, and portfolio building in 6 intensive months.
               </p>
 
-              <div className="gdc-curriculum-v2-stats">
-                <div className="gdc-stat-item">
-                  <span className="gdc-stat-num">50+</span>
-                  <span className="gdc-stat-label">Real Projects</span>
+              <div className="jfs-curriculum-v2-stats">
+                <div className="jfs-stat-item">
+                  <span className="jfs-stat-num">50+</span>
+                  <span className="jfs-stat-label">Real Projects</span>
                 </div>
-                <div className="gdc-stat-item">
-                  <span className="gdc-stat-num">100%</span>
-                  <span className="gdc-stat-label">Practical</span>
+                <div className="jfs-stat-item">
+                  <span className="jfs-stat-num">100%</span>
+                  <span className="jfs-stat-label">Practical</span>
                 </div>
               </div>
             </div>
 
-            <div className="gdc-curriculum-v2-right">
+            <div className="jfs-curriculum-v2-right">
               {/* Vertical Navigation Controls - Top Right precisely as per design */}
-              <div className="gdc-curriculum-nav-v2">
-                <button className="gdc-nav-btn-v2" onClick={prevModule}><FontAwesomeIcon icon={faChevronUp} /></button>
-                <button className="gdc-nav-btn-v2" onClick={nextModule}><FontAwesomeIcon icon={faChevronDown} /></button>
+              <div className="jfs-curriculum-nav-v2">
+                <button className="jfs-nav-btn-v2" onClick={prevModule}><FontAwesomeIcon icon={faChevronUp} /></button>
+                <button className="jfs-nav-btn-v2" onClick={nextModule}><FontAwesomeIcon icon={faChevronDown} /></button>
               </div>
 
-              <div className="gdc-slider-v5-container">
+              <div className="jfs-slider-v5-container">
                 {sixMonthCurriculum.map((module, index) => {
                   const isActive = index === currentModuleIndex;
                   const isNext = index === (currentModuleIndex + 1) % sixMonthCurriculum.length;
@@ -798,24 +845,24 @@ const JavaFullStackCourse = () => {
                   return (
                     <div
                       key={index}
-                      className={`gdc-curriculum-v5-card ${cardState}`}
+                      className={`jfs-curriculum-v5-card ${cardState}`}
                     >
-                      <div className="gdc-curriculum-v5-inner">
-                        <div className="gdc-curriculum-v5-bg">
-                          <img src={module.bgImage} alt={module.title} className="gdc-curriculum-v5-img" />
-                          <div className="gdc-curriculum-v5-overlay"></div>
+                      <div className="jfs-curriculum-v5-inner">
+                        <div className="jfs-curriculum-v5-bg">
+                          <img src={module.bgImage} alt={module.title} className="jfs-curriculum-v5-img" />
+                          <div className="jfs-curriculum-v5-overlay"></div>
                         </div>
 
-                        <div className="gdc-curriculum-v5-content">
-                          <div className="gdc-curriculum-v5-header">
-                            <span className="gdc-curriculum-v5-month">{module.month}</span>
-                            <span className="gdc-curriculum-v5-proj">Projects: {module.projects}</span>
+                        <div className="jfs-curriculum-v5-content">
+                          <div className="jfs-curriculum-v5-header">
+                            <span className="jfs-curriculum-v5-month">{module.month}</span>
+                            <span className="jfs-curriculum-v5-proj">Projects: {module.projects}</span>
                           </div>
-                          <h3 className="gdc-curriculum-v5-title">{module.title}</h3>
-                          <div className="gdc-curriculum-v5-topics">
+                          <h3 className="jfs-curriculum-v5-title">{module.title}</h3>
+                          <div className="jfs-curriculum-v5-topics">
                             {module.topics.map((topic, tidx) => (
-                              <div key={tidx} className="gdc-curriculum-v5-topic">
-                                <FontAwesomeIcon icon={faCheck} className="gdc-curriculum-v5-check" /> {topic}
+                              <div key={tidx} className="jfs-curriculum-v5-topic">
+                                <FontAwesomeIcon icon={faCheck} className="jfs-curriculum-v5-check" /> {topic}
                               </div>
                             ))}
                           </div>
@@ -830,20 +877,20 @@ const JavaFullStackCourse = () => {
         </div>
       </section>
       {/* Tools & Resources - Interactive V2 Redesign */}
-      <section className="gdc-tools-v2">
-        <div className="gdc-container">
-          <div className="gdc-tools-v2-header">
-            <h2 className="gdc-tools-v2-title"> AI Tools & Resources</h2>
-            <p className="gdc-tools-v2-subtitle">Master the industry's most powerful creative workflow</p>
+      <section className="jfs-tools-v2 jfs-tools-container">
+        <div className="jfs-container">
+          <div className="jfs-tools-v2-header">
+            <h2 className="jfs-tools-v2-title"> AI Tools & Resources</h2>
+            <p className="jfs-tools-v2-subtitle">Master the industry's most powerful creative workflow</p>
           </div>
 
-          <div className="gdc-tools-v2-layout">
+          <div className="jfs-tools-v2-layout">
             {/* Sidebar Tabs */}
-            <div className="gdc-tools-sidebar">
-              {["Ideas & Concepts", "AI Generative", "Enhancement", "Professional Suite"].map((label, idx) => (
+            <div className="jfs-tools-sidebar">
+              {["AI Dev Assistants", "Backend & AI", "Cloud & Data", "Engineering Suite"].map((label, idx) => (
                 <button
                   key={idx}
-                  className={`gdc-tool-tab ${activeToolCategory === idx ? 'active' : ''}`}
+                  className={`jfs-tool-tab ${activeToolCategory === idx ? 'active' : ''}`}
                   onClick={() => setActiveToolCategory(idx)}
                 >
                   <span className="tab-number">0{idx + 1}</span>
@@ -853,14 +900,16 @@ const JavaFullStackCourse = () => {
             </div>
 
             {/* Main Overlapping Pods Display */}
-            <div className="gdc-tools-main-display">
-              <div className="gdc-pods-container" key={activeToolCategory}>
+            <div className="jfs-tools-main-display">
+              <div className="jfs-pods-container" key={activeToolCategory}>
                 {toolsV2Data[activeToolCategory].map((tool, index) => (
-                  <div key={index} className={`gdc-tool-pod pod-${index + 1}`}>
-                    <div className="gdc-pod-inner">
-                      <div className="gdc-pod-bg-image" style={{ background: tool.bg || `url(${tool.img})`, backgroundPosition: 'center', backgroundSize: 'cover' }}></div>
-                      <div className="gdc-pod-content">
-                        <h4 className="gdc-pod-name">{tool.name}</h4>
+                  <div key={index} className={`jfs-tool-pod pod-${index + 1}`}>
+                    <div className="jfs-pod-inner">
+                      <div className="jfs-pod-bg-image" style={{ background: tool.bg || `url(${tool.img})`, backgroundPosition: 'center', backgroundSize: 'cover' }}></div>
+                      <div className="jfs-pod-content">
+                        <div className="jfs-pod-icon">{tool.icon}</div>
+                        <h4 className="jfs-pod-name">{tool.name}</h4>
+                        <p className="jfs-pod-desc">{tool.desc}</p>
                       </div>
                     </div>
                   </div>
@@ -872,27 +921,27 @@ const JavaFullStackCourse = () => {
       </section>
 
       {/* Benefits Section - Where Features Meet For You Upgrade */}
-      <section className="dgm-section dgm-benefits-reimagined">
-        <div className="dgm-container">
-          <div className="dgm-benefits-header">
-            <h2 className="dgm-benefits-title">Where Features Meet For You</h2>
+      <section className="jfs-dgm-section jfs-dgm-benefits-reimagined">
+        <div className="jfs-dgm-container">
+          <div className="jfs-dgm-benefits-header">
+            <h2 className="jfs-dgm-benefits-title">Where Features Meet For You</h2>
           </div>
 
-          <div className="dgm-benefits-staggered">
+          <div className="jfs-dgm-benefits-staggered">
             {/* Row 1: 5 Cards */}
-            <div className="dgm-benefits-row dgm-row-5">
+            <div className="jfs-dgm-benefits-row jfs-dgm-row-5">
               {benefits.slice(0, 5).map((benefit, index) => (
-                <div key={index} className="dgm-new-benefit-card">
+                <div key={index} className="jfs-dgm-new-benefit-card">
                   {(() => {
                     const absoluteIndex = 0 + index;
                     const color = benefitIconPalette[absoluteIndex] || "#BAE6FD";
                     return (
-                      <div className="dgm-new-icon" style={{ background: hexToRgba(color, 0.18), color }}>
+                      <div className="jfs-dgm-new-icon" style={{ background: hexToRgba(color, 0.18), color }}>
                         {benefit.icon}
                       </div>
                     );
                   })()}
-                  <div className="dgm-new-content">
+                  <div className="jfs-dgm-new-content">
                     <h3>{benefit.title}</h3>
                     <p>{benefit.description.substring(0, 70)}...</p>
                   </div>
@@ -900,69 +949,78 @@ const JavaFullStackCourse = () => {
               ))}
             </div>
 
-            {/* Row 2: 3 Cards */}
-            <div className="dgm-benefits-row dgm-row-3">
-              {benefits.slice(5, 8).map((benefit, index) => (
-                <div key={index} className="dgm-new-benefit-card">
-                  {(() => {
-                    const absoluteIndex = 5 + index;
-                    const color = benefitIconPalette[absoluteIndex] || "#BAE6FD";
-                    return (
-                      <div className="dgm-new-icon" style={{ background: hexToRgba(color, 0.18), color }}>
-                        {benefit.icon}
-                      </div>
-                    );
-                  })()}
-                  <div className="dgm-new-content">
-                    <h3>{benefit.title}</h3>
-                    <p>{benefit.description.substring(0, 70)}...</p>
-                  </div>
+            {/* Bottom Layout - Left Tall + Middle Col (Row 2 & 3) + Right Tall */}
+            <div className="jfs-dgm-benefits-bottom-layout">
+
+              {/* Left Tall Card */}
+              <div className="jfs-dgm-new-benefit-card jfs-dgm-benefit-card-tall">
+                <div className="jfs-dgm-new-icon" style={{ background: hexToRgba("#BAE6FD", 0.18), color: "#BAE6FD" }}>
+                  <FontAwesomeIcon icon={faStar} />
                 </div>
-              ))}
-            </div>
-
-            {/* Row 3: 2 Original Cards */}
-            <div className="dgm-benefits-row dgm-row-2">
-              {benefits.slice(8, 10).map((benefit, index) => (
-                <div key={index} className="dgm-new-benefit-card">
-                  {(() => {
-                    const absoluteIndex = 8 + index;
-                    const color = benefitIconPalette[absoluteIndex] || "#BAE6FD";
-                    return (
-                      <div className="dgm-new-icon" style={{ background: hexToRgba(color, 0.18), color }}>
-                        {benefit.icon}
-                      </div>
-                    );
-                  })()}
-                  <div className="dgm-new-content">
-                    <h3>{benefit.title}</h3>
-                    <p>{benefit.description.substring(0, 70)}...</p>
-                  </div>
+                <div className="jfs-dgm-new-content">
+                  <h3>Industry Recognition</h3>
+                  <p>
+                    Get certified with globally recognized credentials that validate your expertise and strengthen your professional credibility across industries. Showcase your skills with confidence and stand out in competitive job markets. Unlock better global career opportunities with certifications.
+                  </p>
                 </div>
-              ))}
-            </div>
-          </div>
+              </div>
 
-          {/* Floating Cards - Positioned Independently */}
-          {/* Left Bottom Floating Card */}
-          <div className="dgm-floating-benefit-card dgm-floating-card-left">
-            <div className="dgm-new-icon" style={{ background: hexToRgba("#BAE6FD", 0.18), color: "#BAE6FD" }}>
-              <FontAwesomeIcon icon={faStar} />
-            </div>
-            <div className="dgm-new-content">
-              <h3>Industry Recognition</h3>
-              <p>Get certified with globally recognized credentials that validate your expertise and boost your career prospects worldwide...</p>
-            </div>
-          </div>
+              {/* Middle Grid Column */}
+              <div className="jfs-dgm-benefits-middle-col">
+                <div className="jfs-dgm-benefits-row jfs-dgm-row-3">
+                  {benefits.slice(5, 8).map((benefit, index) => (
+                    <div key={index} className="jfs-dgm-new-benefit-card">
+                      {(() => {
+                        const absoluteIndex = 5 + index;
+                        const color = benefitIconPalette[absoluteIndex] || "#BAE6FD";
+                        return (
+                          <div className="jfs-dgm-new-icon" style={{ background: hexToRgba(color, 0.18), color }}>
+                            {benefit.icon}
+                          </div>
+                        );
+                      })()}
+                      <div className="jfs-dgm-new-content">
+                        <h3>{benefit.title}</h3>
+                        <p>{benefit.description.substring(0, 70)}...</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
 
-          {/* Right Bottom Floating Card */}
-          <div className="dgm-floating-benefit-card dgm-floating-card-right">
-            <div className="dgm-new-icon" style={{ background: hexToRgba("#C4B5FD", 0.18), color: "#C4B5FD" }}>
-              <FontAwesomeIcon icon={faTrophy} />
-            </div>
-            <div className="dgm-new-content">
-              <h3>Lifetime Updates</h3>
-              <p>Stay ahead with free lifetime access to all future course updates, new modules, and industry-relevant content additions...</p>
+                <div className="jfs-dgm-benefits-row jfs-dgm-row-2">
+                  {benefits.slice(8, 10).map((benefit, index) => (
+                    <div key={index} className="jfs-dgm-new-benefit-card">
+                      {(() => {
+                        const absoluteIndex = 8 + index;
+                        const color = benefitIconPalette[absoluteIndex] || "#BAE6FD";
+                        return (
+                          <div className="jfs-dgm-new-icon" style={{ background: hexToRgba(color, 0.18), color }}>
+                            {benefit.icon}
+                          </div>
+                        );
+                      })()}
+                      <div className="jfs-dgm-new-content">
+                        <h3>{benefit.title}</h3>
+                        <p>{benefit.description.substring(0, 70)}...</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Right Tall Card */}
+              <div className="jfs-dgm-new-benefit-card jfs-dgm-benefit-card-tall">
+                <div className="jfs-dgm-new-icon" style={{ background: hexToRgba("#C4B5FD", 0.18), color: "#C4B5FD" }}>
+                  <FontAwesomeIcon icon={faTrophy} />
+                </div>
+                <div className="jfs-dgm-new-content">
+                  <h3>Lifetime Updates</h3>
+                  <p>
+                    Stay ahead with free lifetime access to all future course updates and continuously evolving learning materials. Keep your skills sharp by exploring practical resources, real-world examples, and new concepts. Adapt confidently to the changing digital landscape and achieve long-term career growth.
+                  </p>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
@@ -970,17 +1028,17 @@ const JavaFullStackCourse = () => {
 
 
       {/* Certificate Section with Simplified Lock Overlay */}
-      <section className="gdc-section gdc-dark-bg">
-        <div className="gdc-container">
-          <h2 className="gdc-section-title">Professional Certification</h2>
-          <p className="gdc-section-subtitle">Earn a globally recognized certificate upon completion</p>
+      <section className="jfs-section jfs-dark-bg">
+        <div className="jfs-container">
+          <h2 className="jfs-section-title">Professional Certification</h2>
+          <p className="jfs-section-subtitle">Earn a globally recognized certificate upon completion</p>
 
-          <div className="gdc-certificate-single">
-            <div className="gdc-certificate-image-wrapper">
+          <div className="jfs-certificate-single">
+            <div className="jfs-certificate-image-wrapper">
               <img
                 src={certificate.image}
                 alt="Graphic Design Masterclass Certificate"
-                className="gdc-certificate-image"
+                className="jfs-certificate-image"
                 onError={(e) => {
                   e.target.onerror = null;
                   e.target.src = "https://images.unsplash.com/photo-1589330273594-fade1ee91647?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80";
@@ -988,51 +1046,51 @@ const JavaFullStackCourse = () => {
               />
 
               {/* Simplified Lock Overlay - No button, just lock icon and text */}
-              <div className="gdc-certificate-lock-overlay">
-                <div className="gdc-lock-icon"><FontAwesomeIcon icon={faLock} /></div>
-                <div className="gdc-lock-text">Certificate Locked</div>
+              <div className="jfs-certificate-lock-overlay">
+                <div className="jfs-lock-icon"><FontAwesomeIcon icon={faLock} /></div>
+                <div className="jfs-lock-text">Certificate Locked</div>
               </div>
 
-              <div className="gdc-certificate-overlay">
-                <span className="gdc-certificate-badge">Your Professional Certificate Template</span>
+              <div className="jfs-certificate-overlay">
+                <span className="jfs-certificate-badge">Your Professional Certificate Template</span>
               </div>
-              <div className="gdc-certificate-download-note">
+              <div className="jfs-certificate-download-note">
                 <p>This is a sample template. Your actual certificate will include your name, course details, and issue date.</p>
               </div>
             </div>
 
-            <div className="gdc-certificate-info-single">
-              <h3 className="gdc-certificate-title-single">{certificate.title}</h3>
-              <p className="gdc-certificate-desc-single">{certificate.description}</p>
+            <div className="jfs-certificate-info-single">
+              <h3 className="jfs-certificate-title-single">{certificate.title}</h3>
+              <p className="jfs-certificate-desc-single">{certificate.description}</p>
 
-              <div className="gdc-certificate-features-single">
+              <div className="jfs-certificate-features-single">
                 {certificate.features.map((feature, index) => (
-                  <div key={index} className="gdc-certificate-feature-item-single">
-                    <FontAwesomeIcon icon={faCheckCircle} /> {feature.replace('✅ ', '')}
+                  <div key={index} className="jfs-certificate-feature-item-single">
+                    <FontAwesomeIcon icon={faCheckCircle} /> {feature.replace('âœ… ', '')}
                   </div>
                 ))}
               </div>
 
-              <div className="gdc-certificate-benefits">
-                <div className="gdc-benefit">
-                  <span className="gdc-benefit-icon"><FontAwesomeIcon icon={faGraduationCap} /></span>
-                  <span className="gdc-benefit-text">Enhances your professional credibility</span>
+              <div className="jfs-certificate-benefits">
+                <div className="jfs-benefit">
+                  <span className="jfs-benefit-icon"><FontAwesomeIcon icon={faGraduationCap} /></span>
+                  <span className="jfs-benefit-text">Enhances your professional credibility</span>
                 </div>
-                <div className="gdc-benefit">
-                  <span className="gdc-benefit-icon"><FontAwesomeIcon icon={faBriefcase} /></span>
-                  <span className="gdc-benefit-text">Increases job opportunities by 75%</span>
+                <div className="jfs-benefit">
+                  <span className="jfs-benefit-icon"><FontAwesomeIcon icon={faBriefcase} /></span>
+                  <span className="jfs-benefit-text">Increases job opportunities by 75%</span>
                 </div>
-                <div className="gdc-benefit">
-                  <span className="gdc-benefit-icon"><FontAwesomeIcon icon={faGlobe} /></span>
-                  <span className="gdc-benefit-text">Globally recognized by employers</span>
+                <div className="jfs-benefit">
+                  <span className="jfs-benefit-icon"><FontAwesomeIcon icon={faGlobe} /></span>
+                  <span className="jfs-benefit-text">Globally recognized by employers</span>
                 </div>
-                <div className="gdc-benefit">
-                  <span className="gdc-benefit-icon"><FontAwesomeIcon icon={faQrcode} /></span>
-                  <span className="gdc-benefit-text">QR code verification for authenticity</span>
+                <div className="jfs-benefit">
+                  <span className="jfs-benefit-icon"><FontAwesomeIcon icon={faQrcode} /></span>
+                  <span className="jfs-benefit-text">QR code verification for authenticity</span>
                 </div>
               </div>
 
-              <div className="gdc-certificate-instructions">
+              <div className="jfs-certificate-instructions">
                 <h4><FontAwesomeIcon icon={faCertificate} /> Certificate Details:</h4>
                 <ul>
                   <li><FontAwesomeIcon icon={faCheck} /> Issued upon successful completion of the course</li>
@@ -1049,26 +1107,26 @@ const JavaFullStackCourse = () => {
 
 
       {/* Premium Testimonials - V9 Grid Layout */}
-      <section className="gdc-testi-grid-section">
-        <div className="gdc-container">
-          <div className="gdc-testi-grid-wrapper">
+      <section className="jfs-testi-grid-section">
+        <div className="jfs-container">
+          <div className="jfs-testi-grid-wrapper">
 
             {/* Left side: Headers and Intro */}
-            <div className="gdc-testi-grid-left">
-              <h2 className="gdc-testi-main-title">Experience Learning Like Never Before</h2>
-              <p className="gdc-testi-subtitle">
+            <div className="jfs-testi-grid-left">
+              <h2 className="jfs-testi-main-title">Experience Learning Like Never Before</h2>
+              <p className="jfs-testi-subtitle">
                 Discover Personalized, AI-Powered Learning that prepares students for success in the real world. Read transformational stories from our top alumni.
               </p>
             </div>
 
             {/* Right side: 3-Card Grid */}
-            <div className="gdc-testi-grid-right">
+            <div className="jfs-testi-grid-right">
               {/* Top Large Card */}
-              <div className="gdc-testi-card-top" style={{ backgroundImage: `url(https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=800)` }}>
-                <div className="gdc-testi-card-overlay">
-                  <div className="gdc-testi-quote-content fade-in-anim" key={testiSetIndex}>
+              <div className="jfs-testi-card-top" style={{ backgroundImage: `url(https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=800)` }}>
+                <div className="jfs-testi-card-overlay">
+                  <div className="jfs-testi-quote-content fade-in-anim" key={testiSetIndex}>
                     <p>"{activeTestimonials[0].text}"</p>
-                    <div className="gdc-testi-author">
+                    <div className="jfs-testi-author">
                       <img src={activeTestimonials[0].avatar} alt={activeTestimonials[0].name} />
                       <div>
                         <h4>{activeTestimonials[0].name}</h4>
@@ -1080,12 +1138,12 @@ const JavaFullStackCourse = () => {
               </div>
 
               {/* Bottom Row */}
-              <div className="gdc-testi-squares-row">
+              <div className="jfs-testi-squares-row">
                 {/* Bottom Left: Lime Green Theme */}
-                <div className="gdc-testi-card-bottom-left">
-                  <div className="gdc-testi-quote-content fade-in-anim" key={testiSetIndex}>
+                <div className="jfs-testi-card-bottom-left">
+                  <div className="jfs-testi-quote-content fade-in-anim" key={testiSetIndex}>
                     <p>"{activeTestimonials[1].text}"</p>
-                    <div className="gdc-testi-author">
+                    <div className="jfs-testi-author">
                       <img src={activeTestimonials[1].avatar} alt={activeTestimonials[1].name} />
                       <div>
                         <h4>{activeTestimonials[1].name}</h4>
@@ -1096,10 +1154,10 @@ const JavaFullStackCourse = () => {
                 </div>
 
                 {/* Bottom Right: Light Purple Theme */}
-                <div className="gdc-testi-card-bottom-right">
-                  <div className="gdc-testi-quote-content fade-in-anim" key={testiSetIndex}>
+                <div className="jfs-testi-card-bottom-right">
+                  <div className="jfs-testi-quote-content fade-in-anim" key={testiSetIndex}>
                     <p>"{activeTestimonials[2].text}"</p>
-                    <div className="gdc-testi-author">
+                    <div className="jfs-testi-author">
                       <img src={activeTestimonials[2].avatar} alt={activeTestimonials[2].name} />
                       <div>
                         <h4>{activeTestimonials[2].name}</h4>
@@ -1116,13 +1174,13 @@ const JavaFullStackCourse = () => {
       </section>
 
       {/* Enroll Now Section (V2 Expansion) */}
-      <section className="gdc-dark-enrollment-FIXED" ref={formSectionRef}>
-        <div className="gdc-container">
-          <div className="gdc-floating-icons-v2">
+      <section className="jfs-dark-enrollment-FIXED" ref={formSectionRef}>
+        <div className="jfs-container">
+          <div className="jfs-floating-icons-v2">
             {floatingIcons.map((icon, index) => (
               <div
                 key={index}
-                className="gdc-v2-float-icon"
+                className="jfs-v2-float-icon"
                 style={{
                   animationDelay: `${index * 0.5}s`,
                   left: `${(index * 12.5) % 100}%`,
@@ -1135,29 +1193,29 @@ const JavaFullStackCourse = () => {
           </div>
 
           {/* Redesigned Contact Section - Start Your Design Journey Today */}
-          <section className="gdc-v3-community-banner">
-            <div className="gdc-banner-grid-overlay"></div>
-            <div className="gdc-banner-decor-sparkle sp-1">✦</div>
-            <div className="gdc-banner-decor-sparkle sp-2">✦</div>
-            <div className="gdc-banner-decor-sparkle sp-3">✦</div>
-            <div className="gdc-banner-decor-circle cir-1"></div>
-            <div className="gdc-banner-decor-circle cir-2"></div>
+          <section className="jfs-v3-community-banner">
+            <div className="jfs-banner-grid-overlay"></div>
+            <div className="jfs-banner-decor-sparkle sp-1">✦</div>
+            <div className="jfs-banner-decor-sparkle sp-2">✦</div>
+            <div className="jfs-banner-decor-sparkle sp-3">✦</div>
+            <div className="jfs-banner-decor-circle cir-1"></div>
+            <div className="jfs-banner-decor-circle cir-2"></div>
 
-            <div className="gdc-banner-container">
-              <div className="gdc-banner-content">
-                <h2 className="gdc-banner-title">Start Your Design <br /> Journey Today</h2>
+            <div className="jfs-banner-container">
+              <div className="jfs-banner-content">
+                <h2 className="jfs-banner-title">Start Your Tech <br /> Journey Today</h2>
 
 
-                <div className="gdc-banner-ratings">
-                  <div className="gdc-rating-box">
-                    <div className="gdc-stars">★★★★★</div>
-                    <div className="gdc-rating-text">4.9 / 5 rating</div>
-                    <div className="gdc-rating-source">Coursezilla</div>
+                <div className="jfs-banner-ratings">
+                  <div className="jfs-rating-box">
+                    <div className="jfs-stars">★★★★★</div>
+                    <div className="jfs-rating-text">4.9 / 5 rating</div>
+                    <div className="jfs-rating-source">Coursezilla</div>
                   </div>
-                  <div className="gdc-rating-box">
-                    <div className="gdc-stars">★★★★★</div>
-                    <div className="gdc-rating-text">4.8 / 5 rating</div>
-                    <div className="gdc-rating-source">Globalskills</div>
+                  <div className="jfs-rating-box">
+                    <div className="jfs-stars">★★★★★</div>
+                    <div className="jfs-rating-text">4.8 / 5 rating</div>
+                    <div className="jfs-rating-source">Globalskills</div>
                   </div>
                 </div>
 
@@ -1165,44 +1223,44 @@ const JavaFullStackCourse = () => {
               </div>
 
               {/* Contact Rays */}
-              <div className="gdc-ray gdc-ray-left-top">
-                <div className="gdc-ray-trail"></div>
-                <div className="gdc-ray-box">
-                  <div className="gdc-ray-icon icon-email"><FontAwesomeIcon icon={faEnvelope} /></div>
-                  <div className="gdc-ray-content">
+              <div className="jfs-ray jfs-ray-left-top">
+                <div className="jfs-ray-trail"></div>
+                <div className="jfs-ray-box">
+                  <div className="jfs-ray-icon icon-email"><FontAwesomeIcon icon={faEnvelope} /></div>
+                  <div className="jfs-ray-content">
                     <h4>Email Support</h4>
                     <p>hello@engloraylearn.com</p>
                   </div>
                 </div>
               </div>
 
-              <div className="gdc-ray gdc-ray-left-bottom">
-                <div className="gdc-ray-trail"></div>
-                <div className="gdc-ray-box">
-                  <div className="gdc-ray-icon icon-whatsapp"><FontAwesomeIcon icon={faWhatsapp} /></div>
-                  <div className="gdc-ray-content">
+              <div className="jfs-ray jfs-ray-left-bottom">
+                <div className="jfs-ray-trail"></div>
+                <div className="jfs-ray-box">
+                  <div className="jfs-ray-icon icon-whatsapp"><FontAwesomeIcon icon={faWhatsapp} /></div>
+                  <div className="jfs-ray-content">
                     <h4>WHATSAPP</h4>
                     <p>+91 63681 75990</p>
                   </div>
                 </div>
               </div>
 
-              <div className="gdc-ray gdc-ray-right-top">
-                <div className="gdc-ray-trail"></div>
-                <div className="gdc-ray-box">
-                  <div className="gdc-ray-icon icon-center"><FontAwesomeIcon icon={faMapMarkerAlt} /></div>
-                  <div className="gdc-ray-content">
+              <div className="jfs-ray jfs-ray-right-top">
+                <div className="jfs-ray-trail"></div>
+                <div className="jfs-ray-box">
+                  <div className="jfs-ray-icon icon-center"><FontAwesomeIcon icon={faMapMarkerAlt} /></div>
+                  <div className="jfs-ray-content">
                     <h4>Learning Center</h4>
                     <p>Madurai, Tamil Nadu</p>
                   </div>
                 </div>
               </div>
 
-              <div className="gdc-ray gdc-ray-right-bottom">
-                <div className="gdc-ray-trail"></div>
-                <div className="gdc-ray-box">
-                  <div className="gdc-ray-icon icon-chat"><FontAwesomeIcon icon={faComments} /></div>
-                  <div className="gdc-ray-content">
+              <div className="jfs-ray jfs-ray-right-bottom">
+                <div className="jfs-ray-trail"></div>
+                <div className="jfs-ray-box">
+                  <div className="jfs-ray-icon icon-chat"><FontAwesomeIcon icon={faComments} /></div>
+                  <div className="jfs-ray-content">
                     <h4>Quick Chat</h4>
                     <p>Live Chat Available</p>
                   </div>
@@ -1269,10 +1327,11 @@ const JavaFullStackCourse = () => {
                         onChange={handleInputChange}
                         required
                       >
-                        <option value="Graphic Design Masterclass">Graphic Design Masterclass</option>
-                        <option value="UI/UX Design Specialization">UI/UX Design Specialization</option>
-                        <option value="Motion Graphics Course">Motion Graphics Course</option>
-                        <option value="Brand Identity Design">Brand Identity Design</option>
+                        <option value="Java Full Stack">Java Full Stack</option>
+                        <option value="Graphic Design">Graphic Design</option>
+                        <option value="Ui/Ux Design">Ui/Ux Design</option>
+                        <option value="Drawing">Drawing</option>
+                        <option value="Digital Marketing">Digital Marketing</option>
                       </select>
                     </div>
                   </div>
@@ -1289,12 +1348,12 @@ const JavaFullStackCourse = () => {
 
       {/* Success Toast Message */}
       {showSuccess && (
-        <div className="gdc-toast">
-          <div className="gdc-toast-content">
-            <div className="gdc-toast-icon"><FontAwesomeIcon icon={faTrophy} /></div>
-            <div className="gdc-toast-message">
+        <div className="jfs-toast">
+          <div className="jfs-toast-content">
+            <div className="jfs-toast-icon"><FontAwesomeIcon icon={faTrophy} /></div>
+            <div className="jfs-toast-message">
               <h4>Enrollment Successful!</h4>
-              <p>Welcome to Java Full Stack Mastery! Our team will contact you within 24 hours.</p>
+              <p>Welcome to Java Full Stack Course! Our team will contact you within 24 hours.</p>
             </div>
           </div>
         </div>

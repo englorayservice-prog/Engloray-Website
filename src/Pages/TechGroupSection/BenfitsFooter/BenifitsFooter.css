@@ -22,8 +22,8 @@
 /* Top Right Corner Badge */
 .top-right-badge {
   position: absolute;
-  top: 100px;
-  right: 250px;
+  top: 150px;
+  right: calc((100% - 1200px) / 2 + 10px); /* Align with right edge of 1200px centered grid */
   background: black;
   color: white;
   padding: 10px 18px;
@@ -134,8 +134,13 @@
   display: inline-flex;
   align-items: center;
   margin: 0 5px;
-  cursor: pointer;
+  cursor: pointer; /* Make it clickable */
   transition: all 0.3s ease;
+}
+
+.switch-circle-container:hover {
+  transform: scale(1.05); /* Subtle scale effect on hover */
+  filter: brightness(1.1);
 }
 
 .switch-outer {
@@ -159,11 +164,11 @@
   border-radius: 20px;
   top: 4px;
   left: 4px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 0.3s ease;
 }
 
-.switch-circle-container.toggled .switch-inner {
-  background-color: #ff3333;
+.switch-active .switch-inner {
+  background-color: #2563eb; /* Change to blue when active */
 }
 
 .switch-dot {
@@ -175,12 +180,11 @@
   top: 3px;
   right: 3px;
   z-index: 2;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.switch-circle-container.toggled .switch-dot {
-  right: 27px;
-  /* 48 - 18 - 3 = 27 */
+.switch-active .switch-dot {
+  transform: translateX(-24px); /* Slide to the left */
 }
 
 .rest-text {
