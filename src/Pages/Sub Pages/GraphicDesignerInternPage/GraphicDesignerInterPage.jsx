@@ -477,6 +477,8 @@ const GraphicDesignerInternPage = () => {
         }
     ];
 
+
+
     const benefits = [
         {
             icon: <FontAwesomeIcon icon={faBriefcase} />,
@@ -1072,13 +1074,13 @@ const GraphicDesignerInternPage = () => {
                                                         className={errors.agreeTerms ? 'GD-error' : ''}
                                                     />
                                                     <label htmlFor="agreeTerms">
-                                                        <FontAwesomeIcon icon={faCheckCircle} /> I agree to the Terms of Service and Privacy Policy
+                                                        I agree to the Terms of Service and Privacy Policy
                                                     </label>
                                                     {errors.agreeTerms && <span className="GD-error-message">{errors.agreeTerms}</span>}
                                                 </div>
 
                                                 <button type="submit" className="GD-submit-btn">
-                                                    <FontAwesomeIcon icon={faRocket} /> Register
+                                                    Register
                                                 </button>
                                             </form>
                                         </div>
@@ -1789,6 +1791,8 @@ const GraphicDesignerInternPage = () => {
                             </div>
                         </div>
                     </section>
+
+
 
                     {/* Testimonials Section - Restyled to Dream Team UI */}
                     <section

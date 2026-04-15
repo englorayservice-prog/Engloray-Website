@@ -287,13 +287,18 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './InternshipProgram.css';
+
+// Register GSAP plugins
+gsap.registerPlugin(ScrollTrigger);
 
 // Add icons to the library
 library.add(faPalette, faDesktop, faUserCheck, faCode, faArrowRight, faCheckCircle, faPaperclip, faChevronLeft, faChevronRight, faChartLine, faBriefcase, faChalkboardTeacher);
 
 const InternshipProgram = () => {
     const navigate = useNavigate();
+    const sectionRef = useRef(null);
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -318,6 +323,80 @@ const InternshipProgram = () => {
             }
         });
     }, [activeRoleIndex]);
+
+    useEffect(() => {
+        let ctx = gsap.context(() => {
+            // ── Header Animation ──
+            const headerTexts = '.tgi-benefits-main-badge, .tgi-internship-title, .tgi-internship-step, .tgi-internship-subtitle';
+            gsap.set(headerTexts, { opacity: 0, y: 40 });
+            gsap.to(headerTexts, {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                stagger: 0.1,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: ".tgi-internship-header",
+                    start: "top 90%",
+                    toggleActions: "play reverse play reverse"
+                }
+            });
+
+            // ── Roles Header Animation ──
+            const rolesHeader = '.tgi-section-title, .tgi-roles-nav';
+            gsap.set(rolesHeader, { opacity: 0, y: 30 });
+            gsap.to(rolesHeader, {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                stagger: 0.1,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: ".tgi-roles-header",
+                    start: "top 90%",
+                    toggleActions: "play reverse play reverse"
+                }
+            });
+
+            // ── Role Cards Reveal ──
+            const roleCards = gsap.utils.toArray('.tgi-role-card');
+            roleCards.forEach((card) => {
+                const innerElements = card.querySelectorAll('.tgi-role-title, .tgi-role-description, .tgi-click-indicator, .tgi-skills-widget, .tgi-view-details-btn');
+                
+                gsap.set(card, { opacity: 0, y: 50 });
+                gsap.set(innerElements, { opacity: 0, y: 20 });
+
+                gsap.to(card, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1.2,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: card,
+                        start: "top 92%",
+                        toggleActions: "play reverse play reverse",
+                    }
+                });
+
+                gsap.to(innerElements, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    stagger: 0.1,
+                    ease: "power2.out",
+                    delay: 0.3,
+                    scrollTrigger: {
+                        trigger: card,
+                        start: "top 92%",
+                        toggleActions: "play reverse play reverse",
+                    }
+                });
+            });
+
+        }, sectionRef);
+
+        return () => ctx.revert();
+    }, []);
 
     const handleNextRole = () => {
         setActiveRoleIndex((prev) => (prev + 1) % roles.length);
@@ -485,7 +564,7 @@ const InternshipProgram = () => {
     ];
 
     return (
-        <section className="tgi-internship-program" id="internship">
+        <section className="tgi-internship-program" id="internship" ref={sectionRef}>
             {/* Floating Arrow with FontAwesome Icon */}
             <div className="tgi-floating-arrow" onClick={handleArrowClick}>
                 <div className="tgi-arrow-symbol">
@@ -552,7 +631,6 @@ const InternshipProgram = () => {
                                 ref={el => cardsRef.current[index] = el}
                                 data-index={index}
                                 className={`tgi-role-card ${index === activeRoleIndex ? 'active' : 'collapsed'}`}
-                                style={{ animationDelay: `${index * 0.2}s` }}
                                 onClick={() => {
                                     if (activeRoleIndex !== index) {
                                         setActiveRoleIndex(index);

@@ -34,7 +34,8 @@
 
 #raymart-hero-root .rm-hero-title {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
-  font-size: 3.72rem !important; /* Reduced 2px proportionally */
+  font-size: 3.72rem !important;
+  /* Reduced 2px proportionally */
   line-height: 1.3 !important;
   font-weight: 800 !important;
   color: #1a1a1a !important;
@@ -73,8 +74,10 @@
 /* Top highlight shifts right to meet bottom-left */
 #raymart-hero-root .rm-dl-hl-top {
   border-radius: 20px 20px 20px 0 !important;
-  margin-left: 4px !important; /* Moved further left to sit closer to & symbol */
-  margin-top: -12px !important; /* Keep line 2 pull-up constant */
+  margin-left: 4px !important;
+  /* Moved further left to sit closer to & symbol */
+  margin-top: -12px !important;
+  /* Keep line 2 pull-up constant */
   margin-bottom: 0 !important;
   padding-bottom: 4px !important;
   z-index: 2 !important;
@@ -84,7 +87,8 @@
 #raymart-hero-root .rm-dl-hl-bottom {
   border-radius: 0 20px 20px 20px !important;
   margin-left: 10px !important;
-  margin-top: 7px !important; /* Moved further down as requested */
+  margin-top: 7px !important;
+  /* Moved further down as requested */
   padding-top: 2px !important;
   display: inline-block !important;
   z-index: 1 !important;
@@ -103,7 +107,8 @@
   overflow: hidden !important;
   vertical-align: middle !important;
   margin-left: 15px !important;
-  transform: translateY(10px) !important; /* Moved little low as requested */
+  transform: translateY(10px) !important;
+  /* Moved little low as requested */
 }
 
 /* ======================================== 
@@ -112,17 +117,20 @@
 
 .rm-card-offer-footer {
   display: flex !important;
-  background: #111827 !important; /* Darker baseline background */
+  background: #111827 !important;
+  /* Darker baseline background */
   width: 100% !important;
-  height: 32px !important; /* Shorter as requested */
+  height: 32px !important;
+  /* Shorter as requested */
   border-radius: 4px !important;
   overflow: hidden !important;
   margin-top: 15px !important;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .rm-card-badge-box {
-  background-color: #a3e635 !important; /* Bright neon green */
+  background-color: #a3e635 !important;
+  /* Bright neon green */
   color: #111 !important;
   padding: 0 10px !important;
   font-weight: 900 !important;
@@ -136,7 +144,8 @@
 
 .rm-card-label-box {
   flex: 1 !important;
-  background-color: #1f2937 !important; /* Dark slate from reference */
+  background-color: #1f2937 !important;
+  /* Dark slate from reference */
   color: #f1f5f9 !important;
   font-size: 0.68rem !important;
   font-weight: 850 !important;
@@ -184,7 +193,8 @@
   font-size: 0.8rem !important;
   color: #94a3b8 !important;
   line-height: 1.5 !important;
-  flex-grow: 1 !important; /* Pushes footer to bottom */
+  flex-grow: 1 !important;
+  /* Pushes footer to bottom */
   margin-bottom: 0 !important;
 }
 
@@ -420,11 +430,83 @@
   border: none !important;
 }
 
+@media (max-width: 767px) {
+  #raymart-hero-root .rm-counter-card {
+    /* Change 550% to 95% to fill the screen properly */
+    width: 95% !important;
+
+    /* Add these to make the card look better */
+    margin: 10px auto !important;
+    /* Centers the card */
+    min-height: auto !important;
+    /* Let the height adjust to content */
+    padding: 20px !important;
+    /* Give text some breathing room */
+    display: block !important;
+  }
+
+  /* Optional: Ensure the container allows them to stack */
+  .rm-card-container-class {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  /* Target both counter cards and feature cards to be identical */
+  #raymart-hero-root .rm-counter-card,
+  #raymart-hero-root .rm-feature-card,
+  .div.rm-card.rm-feature-card {
+    width: 98% !important;
+    /* Matches your green card exactly */
+    max-width: 100% !important;
+    margin: 10px auto !important;
+    padding: 24px !important;
+    /* Standardized internal spacing */
+
+    /* Ensures the content inside (like '24/7 Support') stays centered */
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+
+    min-height: 150px !important;
+    /* Keeps height consistent between cards */
+    box-sizing: border-box !important;
+  }
+
+  /* Force the parent container to stop squishing them side-by-side */
+  .rm-card-container-class,
+  #raymart-hero-root>div {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+  .rm-rv-chat-body {
+    width: 600% !important;
+    height: 100% !important;
+  }
+
+  #raymart-hero-root .rm-hero-title {
+    font-size: 2rem !important;
+    margin-bottom: 20px !important;
+  }
+
+  #raymart-hero-root .rm-line {
+    margin-bottom: 10px !important;
+  }
+
+  .rm-dl-highlight {
+    margin-top: 30px !important;
+  }
+}
+
 /* RE-DESIGNED DYNAMIC FEATURE CARD: CYCLING COLORS & VERTICAL SWAP */
 /* RE-DESIGNED DYNAMIC FEATURE CARD: VIBRANT COLOR CYCLE & SYNC SWAP */
 #raymart-hero-root .rm-feature-card {
   width: 24% !important;
-  padding: 24px !important;
   min-height: 155px !important;
   color: white !important;
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
@@ -625,7 +707,8 @@
 .rm-services-section {
   width: 100%;
   padding: 100px 20px;
-  background: linear-gradient(to bottom, #ffffff 190px, #e3e1e1 140px); /* Shifted 10px higher */
+  background: linear-gradient(to bottom, #ffffff 190px, #e3e1e1 140px);
+  /* Shifted 10px higher */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -732,7 +815,8 @@
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: 20px;
   font-weight: 400;
-  text-align: left; /* Explicitly left aligned */
+  text-align: left;
+  /* Explicitly left aligned */
   display: -webkit-box;
   -webkit-line-clamp: 3;
   /* Limit to 3 lines */
@@ -1133,6 +1217,10 @@
     gap: 30px;
     text-align: center;
   }
+
+  .rm-counter-card {
+    max-width: 190%;
+  }
 }
 
 /* ======================================== 
@@ -1176,7 +1264,8 @@
   line-height: 1.8;
   max-width: 500px;
   padding-top: 10px;
-  text-align: left; /* Explicitly left aligned */
+  text-align: left;
+  /* Explicitly left aligned */
 }
 
 /* CARDS GRID */
@@ -1393,6 +1482,168 @@
   height: 100%;
   width: 100%;
   text-align: left;
+}
+
+@media (max-width: 1024px) {
+  #raymart-hero-root {
+    height: auto;
+    padding: 60px 20px !important;
+  }
+
+  #raymart-hero-root .rm-hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: auto;
+  }
+
+  #raymart-hero-root .rm-hero-content {
+    text-align: center !important;
+    max-width: 100%;
+    margin-bottom: 40px;
+  }
+
+  #raymart-hero-root .rm-hero-description {
+    margin: 10px auto 30px auto !important;
+  }
+
+  /* Center the floating cards */
+  #raymart-hero-root .rm-rating-card,
+  #raymart-hero-root .rm-stat-card-left {
+    position: relative !important;
+    inset: auto !important;
+    margin: 20px auto !important;
+    width: 100% !important;
+    max-width: 320px !important;
+    transform: none !important;
+    animation: rmFadeIn 1s ease forwards !important;
+    /* Simplified animation */
+  }
+
+  #raymart-hero-root .rm-bottom-cards-container {
+    position: relative !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+    gap: 15px !important;
+    margin-top: 30px;
+  }
+
+  #raymart-hero-root .rm-chart-card,
+  #raymart-hero-root .rm-counter-card,
+  #raymart-hero-root .rm-feature-card {
+    width: 100% !important;
+    max-width: 400px !important;
+  }
+}
+
+@keyframes rmFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .rm-hww-header {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .rm-hww-desc {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .rm-hww-grid {
+    grid-template-columns: 1fr;
+    /* Stack cards vertically */
+  }
+
+  .rm-hww-stat-card {
+    min-height: auto;
+    padding: 30px;
+    align-items: center;
+  }
+
+  .rm-hww-stat-number {
+    font-size: 3.5rem;
+  }
+
+  .rm-hww-work-card {
+    /* Remove the mask on mobile to avoid weird shapes on small screens */
+    mask-image: none !important;
+    -webkit-mask-image: none !important;
+    min-height: 250px;
+  }
+
+  .rm-hww-work-title {
+    font-size: 1.5rem;
+    letter-spacing: 4px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .rm-service-main-card {
+    flex-direction: column;
+  }
+
+  .rm-service-image-side {
+    height: 220px;
+    /* Smaller image height for phones */
+    padding: 10px;
+  }
+
+  .rm-service-content-side {
+    padding: 20px;
+  }
+
+  .rm-service-title-text {
+    font-size: 1.5rem;
+  }
+
+  .rm-service-previews-grid {
+    grid-template-columns: repeat(4, 1fr);
+    /* 4 tiny boxes in a row on mobile */
+    gap: 5px;
+  }
+
+  .rm-action-row {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .rm-reach-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .rm-hero-title {
+    font-size: 2.2rem !important;
+  }
+
+  .rm-benefits-title {
+    font-size: 2rem;
+  }
+
+  /* Make sure the split-box footer is readable */
+  .rm-card-badge-box {
+    font-size: 0.7rem !important;
+    min-width: 45px !important;
+  }
+
+  .rm-card-label-box {
+    font-size: 0.6rem !important;
+  }
 }
 
 /* BACKGROUND SLIDE IMAGES */
@@ -1613,6 +1864,7 @@
   cursor: pointer;
   margin-left: 5px;
 }
+
 .rm-offers-title-main {
   font-family: 'Orbitron', sans-serif;
   font-size: 2.22rem;
@@ -1639,7 +1891,8 @@
 .rm-designs-cards-wrapper-four {
   display: flex !important;
   flex-direction: row !important;
-  overflow-x: auto !important; /* Allow touch scroll but we'll hide the bar with ::-webkit-scrollbar later */
+  overflow-x: auto !important;
+  /* Allow touch scroll but we'll hide the bar with ::-webkit-scrollbar later */
   scroll-behavior: smooth !important;
   gap: 15px !important;
   background: #e8ebf0;
@@ -1653,13 +1906,16 @@
 }
 
 .rm-designs-cards-wrapper-four {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 /* Ensure cards do NOT wrap and have fixed dimensions */
 .rm-app-card {
-  flex: 0 0 310px !important; /* Fixed width to allow horizontal flow */
+  flex: 0 0 310px !important;
+  /* Fixed width to allow horizontal flow */
   background: #0b0e14;
   border-radius: 4px;
   overflow: hidden;
@@ -2074,21 +2330,26 @@
 }
 
 .rm-deliver-title {
-  font-size: clamp(1.8rem, 5.8vw, 3.4rem); /* Increased font size as requested */
+  font-size: clamp(1.8rem, 5.8vw, 3.4rem);
+  /* Increased font size as requested */
   font-weight: 800;
   color: #111;
-  line-height: 1.1; /* Adjusted for slightly tighter line packing */
-  letter-spacing: -2.5px; /* More dramatic spacing for larger text */
+  line-height: 1.1;
+  /* Adjusted for slightly tighter line packing */
+  letter-spacing: -2.5px;
+  /* More dramatic spacing for larger text */
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Ensure straight to the description */
+  align-items: flex-start;
+  /* Ensure straight to the description */
   gap: 0;
 }
 
 .rm-dl-line {
   display: block;
   line-height: 1.2;
-  white-space: nowrap; /* Keep them in same three lines */
+  white-space: nowrap;
+  /* Keep them in same three lines */
 }
 
 /* Hero-matched mint green highlight for 'customer' — top of the bridge */
@@ -2147,7 +2408,8 @@
   color: #666;
   line-height: 1.8;
   max-width: 380px;
-  text-align: left; /* Explicitly left aligned as requested */
+  text-align: left;
+  /* Explicitly left aligned as requested */
 }
 
 /* ---- Integrations Floating Card ---- */
@@ -2155,13 +2417,15 @@
   margin-top: 2px;
   background: #f9fafb;
   border-radius: 20px;
-  padding: 24px 20px 30px 20px; /* Reduced padding to make it shorter */
+  padding: 24px 20px 30px 20px;
+  /* Reduced padding to make it shorter */
   display: flex;
   flex-direction: column;
   position: relative;
   overflow: hidden;
   border: 1px solid #f0f0f0;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1); /* Slightly softer shadow */
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+  /* Slightly softer shadow */
 }
 
 /* Base floating box texture */
@@ -2303,7 +2567,8 @@
 
 .rm-int-scatter {
   position: relative;
-  height: 140px; /* Shorter height for the scatter area */
+  height: 140px;
+  /* Shorter height for the scatter area */
   width: 100%;
   z-index: 2;
 }
@@ -2355,7 +2620,8 @@
 }
 
 .rm-int-text-block {
-  text-align: left; /* Changed from center to left */
+  text-align: left;
+  /* Changed from center to left */
   position: relative;
   z-index: 3;
 }
@@ -2372,7 +2638,8 @@
   color: #888;
   line-height: 1.6;
   max-width: 90%;
-  margin: 0; /* Align left */
+  margin: 0;
+  /* Align left */
 }
 
 /* ---- RIGHT COLUMN: TWO FLEX COLUMNS (MASONRY) ---- */
@@ -2395,8 +2662,10 @@
   padding: 24px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Forced left for internal content */
-  text-align: left; /* Forced left for internal text */
+  align-items: flex-start;
+  /* Forced left for internal content */
+  text-align: left;
+  /* Forced left for internal text */
   gap: 8px;
   position: relative;
   overflow: hidden;
@@ -2441,9 +2710,12 @@
   min-height: 250px;
   background-color: #ffffff;
   border: 1px solid #f0f0f0;
-  justify-content: flex-start; /* Changed from center to start */
-  align-items: flex-start; /* Changed from center to start */
-  text-align: left; /* Changed from center to left */
+  justify-content: flex-start;
+  /* Changed from center to start */
+  align-items: flex-start;
+  /* Changed from center to start */
+  text-align: left;
+  /* Changed from center to left */
   gap: 16px;
 }
 
@@ -2594,7 +2866,8 @@
 .rm-dcard-footer-text {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Ensure left aligned */
+  align-items: flex-start;
+  /* Ensure left aligned */
   gap: 6px;
 }
 
@@ -2642,7 +2915,8 @@
 /* ---- Centralize icons ---- */
 .rm-centralize-icons {
   display: flex;
-  justify-content: flex-start; /* Left aligned icons */
+  justify-content: flex-start;
+  /* Left aligned icons */
   gap: 16px;
   margin-top: auto;
   padding-bottom: 10px;
@@ -2688,7 +2962,8 @@
   /* Adjusted to sit right beneath the stat */
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Ensure left aligned */
+  align-items: flex-start;
+  /* Ensure left aligned */
   gap: 6px;
 }
 
@@ -2735,6 +3010,174 @@
   font-weight: 700;
 }
 
+/* ======================================== 
+   GLOBAL RESPONSIVE UTILITIES 
+   ======================================== */
+
+/* Container Auto-Scaling for very large screens */
+.rm-designs-container-ref,
+.rm-deliver-container {
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* ======================================== 
+   DELIVER SECTION RESPONSIVENESS
+   ======================================== */
+
+.rm-deliver-section {
+  padding: 60px 5%;
+  overflow: hidden;
+}
+
+.rm-deliver-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  /* Mobile Default */
+  gap: 40px;
+}
+
+/* LEFT COLUMN ALIGNMENT */
+.rm-deliver-desc {
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+/* RIGHT COLUMN MASONRY - Centering for Mobile */
+.rm-deliver-right {
+  display: flex;
+  flex-direction: column;
+  /* Stacked on mobile */
+  gap: 18px;
+  width: 100%;
+  align-items: center;
+  /* Center cards on small screens */
+}
+
+.rm-dr-col {
+  width: 100%;
+  max-width: 450px;
+  /* Prevents cards from becoming too wide */
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Tablet & Up (768px +) */
+@media (min-width: 768px) {
+  .rm-deliver-container {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .rm-deliver-right {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .rm-dr-col {
+    flex: 1;
+  }
+}
+
+/* Desktop/Laptop (1024px +) */
+@media (min-width: 1024px) {
+  .rm-deliver-container {
+    grid-template-columns: 1fr 1.2fr;
+    gap: 50px;
+  }
+
+  .rm-deliver-section {
+    padding: 100px 5%;
+  }
+}
+
+/* Extra Large Desktop Scaling (1440px +) */
+@media (min-width: 1440px) {
+  .rm-deliver-container {
+    transform: scale(1.05);
+    /* Slight upscale for large displays */
+    transform-origin: center;
+  }
+}
+
+/* ======================================== 
+   MARKETPLACE & CAROUSEL RESPONSIVENESS
+   ======================================== */
+
+/* Ensure the grid adapts */
+.rm-designs-cards-wrapper {
+  grid-template-columns: 1fr;
+  /* 1 col on mobile */
+}
+
+@media (min-width: 640px) {
+  .rm-designs-cards-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .rm-designs-cards-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Fix for the horizontal carousel on mobile */
+.rm-designs-cards-wrapper-four {
+  padding: 15px !important;
+  gap: 12px !important;
+}
+
+.rm-app-card {
+  flex: 0 0 260px !important;
+  /* Slightly smaller cards for mobile reach */
+}
+
+@media (min-width: 768px) {
+  .rm-app-card {
+    flex: 0 0 310px !important;
+  }
+}
+
+/* ======================================== 
+   SMALL SCREEN OVERFLOW FIX (The "Minimize" Rule)
+   ======================================== */
+@media (max-width: 480px) {
+
+  /* Scale down section headers that are too large */
+  .rm-deliver-title {
+    font-size: 2.2rem !important;
+    letter-spacing: -1px;
+  }
+
+  .rm-dl-highlight {
+    padding: 2px 10px;
+    font-size: 0.9em;
+  }
+
+  /* Shrink the floating integration card slightly */
+  .rm-int-card {
+    transform: scale(0.9);
+    margin-left: -5%;
+    width: 110%;
+  }
+
+  /* Ensure cards don't feel too cramped */
+  .rm-dcard {
+    padding: 18px;
+    min-height: auto !important;
+    /* Allow height to adjust to content */
+  }
+
+  .rm-marquee-text {
+    font-size: 2.5rem;
+  }
+}
+
+
 /* ---- REDEFINING EXPEIRENCE SECTION ---- */
 .rm-redefine-section {
   padding: 80px 20px;
@@ -2744,15 +3187,19 @@
 .rm-redefine-header {
   display: flex;
   align-items: flex-start;
-  justify-content: flex-start; /* Brought items closer together */
-  gap: 80px; /* Controlled gap to fill center space */
+  justify-content: flex-start;
+  /* Brought items closer together */
+  gap: 80px;
+  /* Controlled gap to fill center space */
   margin-bottom: 60px;
 }
 
 .rm-rh-left {
   flex: 0 0 35%;
-  margin-left: 120px; /* Moved left content further right */
-  margin-top: -30px; /* Lifted slightly */
+  margin-left: 120px;
+  /* Moved left content further right */
+  margin-top: -30px;
+  /* Lifted slightly */
 }
 
 .rm-rh-left p {
@@ -2791,7 +3238,8 @@
 
 .rm-rh-right {
   flex: 0 0 45%;
-  margin-top: -38px; /* Moved title up straight to description */
+  margin-top: -38px;
+  /* Moved title up straight to description */
 }
 
 .rm-rh-right h2 {
@@ -2837,7 +3285,8 @@
   flex: 0 0 38%;
   display: flex;
   flex-direction: column;
-  gap: 30px; /* Responsive gap between tab cards */
+  gap: 30px;
+  /* Responsive gap between tab cards */
   margin-left: 50px;
 }
 
@@ -2847,7 +3296,8 @@
   transition: background 0.4s ease, transform 0.3s ease;
   position: relative;
   overflow: hidden;
-  text-align: left; /* Aligned engage nuture qualify cards left */
+  text-align: left;
+  /* Aligned engage nuture qualify cards left */
 }
 
 .rm-rtab:hover {
@@ -2904,7 +3354,8 @@
 
 .rm-rc-visual {
   flex: 0 0 48%;
-  height: 580px; /* Shorter height for green card */
+  height: 580px;
+  /* Shorter height for green card */
   background: #a7f3d0;
   /* Mint green base styling from the new ref */
   border-radius: 30px;
@@ -2981,7 +3432,8 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  height: 410px; /* Shorter height for white card content */
+  height: 410px;
+  /* Shorter height for white card content */
 }
 
 .rm-rv-cb-title {
@@ -3010,7 +3462,8 @@
   font-size: 0.95rem;
   color: #444;
   line-height: 1.6;
-  text-align: left; /* Left align content inside white box */
+  text-align: left;
+  /* Left align content inside white box */
 }
 
 .rm-rv-chat-options {
@@ -3099,7 +3552,8 @@
 .rm-testi-controls {
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* Left aligned content */
+  justify-content: flex-start;
+  /* Left aligned content */
   margin-top: auto;
   padding-top: 20px;
 }
@@ -3283,5 +3737,265 @@
 
   .rm-rc-visual {
     padding: 30px 20px;
+  }
+}
+
+/* ======================================== 
+   REDEFINE SECTION RESPONSIVENESS
+   ======================================== */
+
+.rm-redefine-header {
+  display: flex;
+  flex-wrap: wrap;
+  /* Allows wrapping on smaller screens */
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 60px;
+  padding: 0 5%;
+}
+
+/* Adjusting the left and right containers for flex growth */
+.rm-rh-left {
+  flex: 1 1 320px;
+  /* Base width of 320px, grows to fill space */
+  margin-left: 0;
+  /* Resetting the large desktop margin */
+  margin-top: 0;
+  max-width: 500px;
+}
+
+.rm-rh-right {
+  flex: 1 1 400px;
+  margin-top: 0;
+  text-align: left;
+}
+
+/* Main Content Area (Tabs + Visual) */
+.rm-redefine-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 0 5%;
+  justify-content: center;
+}
+
+.rm-rc-tabs {
+  flex: 1 1 350px;
+  margin-left: 0;
+  /* Centered for mobile */
+  max-width: 550px;
+}
+
+.rm-rc-visual {
+  flex: 1 1 450px;
+  height: auto;
+  /* Allow height to be determined by content on mobile */
+  min-height: 450px;
+  max-width: 650px;
+  padding: 20px;
+}
+
+/* Tab internal adjustments for smaller screens */
+@media (max-width: 480px) {
+  .rm-rtab {
+    padding: 15px 20px;
+  }
+
+  .rm-rtab h3 {
+    font-size: 1.1rem;
+  }
+
+  .rm-rv-chat-body {
+    height: 350px;
+    width: 30px;
+    /* Slightly shorter for small phones */
+  }
+}
+
+/* ======================================== 
+   PRODUCT GALLERY (5-IN-A-ROW) RESPONSIVENESS
+   ======================================== */
+
+.rm-prod-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  /* Critical for wrapping tiles */
+  gap: 15px;
+  justify-content: center;
+}
+
+.rm-prod-tile {
+  /* Desktop: 5 in a row | Tablet: 2 or 3 | Mobile: 1 */
+  flex: 1 1 calc(20% - 15px);
+  min-width: 240px;
+  /* Prevents them from getting too skinny */
+  height: 220px;
+  /* Reduced height for better visibility */
+}
+
+/* Tablet view adjustments (3 per row) */
+@media (max-width: 1200px) {
+  .rm-prod-tile {
+    flex: 1 1 calc(33.33% - 15px);
+  }
+}
+
+/* Small Tablet / Large Mobile (2 per row) */
+@media (max-width: 768px) {
+  .rm-prod-tile {
+    flex: 1 1 calc(50% - 15px);
+    height: 200px;
+  }
+
+  .rm-redefine-header {
+    text-align: center;
+    flex-direction: column-reverse;
+    /* Put title above description on mobile */
+  }
+
+  .rm-rh-left p {
+    text-align: center;
+  }
+}
+
+/* Mobile Portrait (1 per row) */
+@media (max-width: 480px) {
+  .rm-prod-tile {
+    flex: 1 1 100%;
+    height: 180px;
+  }
+
+  .rm-rh-right h2 {
+    font-size: 1.8rem;
+  }
+
+  .rm-rh-icon-pill {
+    height: 40px;
+    font-size: 1rem;
+    padding: 4px 12px;
+  }
+}
+
+/* ======================================== 
+   IMAGE MINIMIZATION / CONTAINMENT 
+   ======================================== */
+.rm-prod-tile-img {
+  background-size: cover;
+  /* Ensures image covers area without stretching */
+  background-repeat: no-repeat;
+  /* Adding a subtle scale transition for the "Minimize" look on load */
+  transform: scale(1.02);
+}
+
+/* Logic for "Full view images as minimize" */
+.rm-rv-chat-widget {
+  transform: scale(1);
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 1024px) {
+  .rm-rv-chat-widget {
+    transform: scale(0.95);
+    /* Slightly shrinks the widget to fit mobile width */
+  }
+}
+
+@media (max-width: 600px) {
+  .rm-rv-chat-widget {
+    transform: scale(0.9);
+    width: 110%;
+    /* Compensate for scale shrink */
+  }
+}
+
+/* ======================================== 
+   TESTIMONIAL / REVIEW CARD FULL VIEW
+   ======================================== */
+
+.rm-testi-outer-wrapper {
+  width: 100%;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  /* Stack arrows/dots on mobile */
+  align-items: center;
+}
+
+/* This targets the actual card seen in your image */
+.rm-rv-chat-widget,
+.rm-testi-card {
+  width: 95% !important;
+  /* Forces the card to take up almost full width */
+  max-width: 100% !important;
+  margin: 10px auto;
+  transform: scale(1) !important;
+  /* Reset any previous "minimize" scaling */
+  border-radius: 16px;
+  /* Slightly softer corners for mobile */
+}
+
+/* Adjusting the body of the review for better spacing */
+.rm-rv-chat-body {
+  padding: 20px 15px !important;
+  /* Reduce side padding so text has more room */
+  height: auto !important;
+  /* Let the card grow with the text length */
+  min-height: 300px;
+}
+
+/* Fix for the "Top Client Reviews" Title */
+.rm-redefine-header h2,
+.rm-redefine-header .rm-rh-right h2 {
+  font-size: 1.5rem !important;
+  /* Smaller size for mobile screens */
+  text-align: center;
+  width: 100%;
+}
+
+/* Fix for the Reviewer Info (Drake N., etc.) */
+.rm-rv-ch-info h4 {
+  font-size: 0.95rem;
+}
+
+.rm-rv-ch-info span {
+  font-size: 0.75rem;
+}
+
+/* ======================================== 
+   MOBILE-SPECIFIC OVERRIDE (below 768px)
+   ======================================== */
+@media (max-width: 768px) {
+  .rm-redefine-section {
+    padding: 40px 10px;
+    /* Reduce outer section padding */
+  }
+
+  /* Make the stars and title row wrap if needed */
+  .rm-rv-cb-title {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  /* Ensure images inside cards don't overflow */
+  .rm-rv-chat-bubble {
+    font-size: 0.35rem !important;
+    /* Slightly smaller text to fit more content */
+    line-height: 1.5;
+    padding: 10px;
+    width: 15%;
+    height: 50%;
+  }
+
+  /* Arrow visibility - place them below the card for more space */
+  .rm-testi-outer-wrapper {
+    gap: 15px;
+  }
+
+  .rm-testi-outer-arrow {
+    display: none;
+    /* Often better to use dots only on mobile to save width */
   }
 }

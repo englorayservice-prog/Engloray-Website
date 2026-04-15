@@ -1547,8 +1547,9 @@
 
 /* Coming Soon Section Styles - Updated to Stimulating Space Design */
 .coming-soon-section {
-  margin-top: 100px;
-  padding: 100px 40px;
+  margin-top: 30px;
+  margin-bottom: -30px;
+  padding: 60px;
   background-color: #fdfbff;
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px);

@@ -6,7 +6,7 @@
 }
 
 /* ============================================================
-   HERO SECTION NEW â€” Exact match to image
+   HERO SECTION NEW — Exact match to image
    ============================================================ */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
@@ -74,6 +74,7 @@
     max-width: 1200px;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     z-index: 2;
 }
 
@@ -84,7 +85,9 @@
     color: #555;
     margin-bottom: 10px;
     text-transform: uppercase;
-    margin-left: -100px;
+    text-align: center;
+    margin-top: -20px;
+    align-self: center;
 }
 
 .soft-page-hero-title-new {
@@ -94,7 +97,8 @@
     color: #1a1a1a;
     margin-bottom: 35px;
     letter-spacing: -2px;
-    margin-left: -60px;
+    text-align: center;
+    align-self: center;
 }
 
 .soft-page-hero-buttons-new {
@@ -501,7 +505,7 @@
 }
 
 /* ============================================================
-   SERVICES SECTION NEW â€” Exact match to image
+   SERVICES SECTION NEW — Exact match to image
    ============================================================ */
 .soft-page-services-section-new {
     padding: 100px 0;
@@ -751,7 +755,7 @@
 }
 
 /* ============================================================
-   ABOUT SECTION NEW â€” Matching reference image (dark 3-col layout)
+   ABOUT SECTION NEW — Matching reference image (dark 3-col layout)
    ============================================================ */
 .soft-page-about-section-new {
     width: 100%;
@@ -938,7 +942,7 @@
 }
 
 .soft-page-service-sub-list li::before {
-    content: 'â€¢';
+    content: '•';
     position: absolute;
     left: 0;
     color: #BAFF29;
@@ -954,8 +958,8 @@
 .soft-page-about-img-wrap-new {
     position: relative;
     width: 100%;
-    height: 100%;
-    min-height: 480px;
+    height: 650px;
+    min-height: 650px;
     border-radius: 24px;
     overflow: hidden;
     background: #1a1a1a;
@@ -964,7 +968,7 @@
 
 .soft-page-about-img-wrap-new img {
     width: 100%;
-    height: 100%;
+    height: 650px;
     object-fit: cover;
     object-position: center center;
 }
@@ -1079,14 +1083,16 @@
 .soft-page-about-detail-panel {
     background: #1a1a1a;
     border-radius: 24px;
-    padding: 32px 28px;
+    padding: 24px 24px;
     display: flex;
     flex-direction: column;
-    gap: 18px;
-    height: 100%;
+    gap: 10px;
+    height: 650px;
     box-sizing: border-box;
+    overflow: hidden;
     animation: bi-detail-pop 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
+
 
 @keyframes bi-detail-pop {
     from {
@@ -1140,8 +1146,37 @@
     color: #888888;
     line-height: 1.8;
     margin: 0;
-    flex: 1;
     text-align: left;
+}
+
+/* Feature bullets inside detail panel */
+.soft-page-detail-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+}
+
+.soft-page-detail-feature-item {
+    font-size: 12px;
+    color: #666666;
+    line-height: 1.5;
+    padding-left: 16px;
+    position: relative;
+    text-align: left;
+}
+
+.soft-page-detail-feature-item::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #BAFF29;
+    font-weight: 700;
+    font-size: 11px;
+    top: 1px;
 }
 
 .soft-page-detail-divider {
@@ -1199,7 +1234,10 @@
     font-weight: 700;
     cursor: pointer;
     transition: all 0.2s ease;
-    text-align: left;
+    text-align: center;
+    width: 100%;
+    display: block;
+    margin-top: auto;
 }
 
 .soft-page-detail-cta:hover {
@@ -1398,7 +1436,7 @@
 }
 
 .soft-page-feature-item::before {
-    content: 'âœ“';
+    content: '✓';
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -1908,6 +1946,7 @@
 
 .soft-page-prod-buttons {
     display: flex;
+    justify-content: left;
     gap: 15px;
     margin-bottom: 60px;
 }
@@ -2115,7 +2154,7 @@
 
 .soft-page-el-img-small-top {
     position: absolute;
-    left: 0;
+    left: 30px;
     top: 80px;
     width: 240px;
     height: 180px;
@@ -2248,6 +2287,7 @@
     margin-bottom: 24px;
     font-family: 'Poppins', 'Inter', sans-serif;
     letter-spacing: -1px;
+    text-align: left;
 }
 
 .soft-page-el-desc {
@@ -2459,7 +2499,9 @@
     letter-spacing: -0.5px;
     text-align: left !important;
     line-height: 1.2;
-    word-break: break-word;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .soft-page-service-card-subtitle {
@@ -2480,7 +2522,7 @@
     -webkit-line-clamp: 3;
     line-clamp: 3;
     -webkit-box-orient: vertical;
-    overflow: hidden;
+    overflow: visible;
 }
 
 /* Badge Style */
@@ -2513,6 +2555,7 @@
 /* Main Icon / Graphic area */
 .soft-page-service-icon-wrap {
     margin: 0 auto;
+    margin-top: 40px;
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -2680,6 +2723,7 @@
     color: #ffffff;
     text-transform: uppercase;
     font-family: 'Poppins', sans-serif;
+    text-align: center;
 }
 
 .soft-page-lime-highlight {
@@ -2717,6 +2761,7 @@
     width: 100%;
     height: 640px;
     object-fit: cover;
+    object-position: center top;
     border-radius: 40px;
     box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
 }
@@ -2839,7 +2884,7 @@
 
 .soft-page-landscape-img {
     width: 100%;
-    height: 310px;
+    height: 280px;
     object-fit: cover;
     border-radius: 35px;
     box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
@@ -2899,8 +2944,11 @@
 }
 
 .soft-page-testimonial-container {
-    max-width: 100%;
-    text-align: left;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .soft-page-testimonial-label {
@@ -2910,7 +2958,7 @@
     letter-spacing: 0.5px;
     margin-bottom: 16px;
     font-style: italic;
-    margin-left: 45%;
+    text-align: center;
 }
 
 .soft-page-testimonial-heading {
@@ -2921,7 +2969,7 @@
     margin-bottom: 60px;
     letter-spacing: -1px;
     padding: 0 40px;
-    margin-left: 25%;  
+    margin-left: 25%;
 }
 
 /* Scroll Wrapper with CSS Mask for Edge Fading */
@@ -3052,8 +3100,1441 @@
     }
 }
 
+.soft-page-testimonial-heading {
+    text-align: center;
+}
+
 /* Left Alignment Overrides */
-.so-hero-title-new, .so-hero-desc-new, .so-hero-subtitle-new, .bi-info-subtitle, .bi-el-title, .bi-prod-title, .bi-detail-title, .bi-about-left-title, .bi-service-card-title, .bi-service-card-desc, .bi-agency-main-title, .bi-info-col, .bi-info-features {
+.soft-page-prod-title,
+.soft-page-prod-desc,
+.bi-info-subtitle,
+.bi-el-title,
+.bi-prod-title,
+.bi-detail-title,
+.bi-about-left-title,
+.bi-service-card-title,
+.bi-service-card-desc,
+.bi-agency-main-title,
+.bi-info-col,
+.bi-info-features {
     text-align: left !important;
     margin-left: 0 !important;
+}
+
+/* ============================================================
+   COMPREHENSIVE RESPONSIVE FIXES FOR ALL SCREEN SIZES
+   ============================================================ */
+
+/* 1400px and above - Large Desktop */
+@media (max-width: 1400px) {
+    .soft-page-hero-container-new {
+        max-width: 100%;
+    }
+
+    .soft-page-hero-title-new {
+        font-size: 58px;
+    }
+
+    .soft-page-services-container-new {
+        max-width: 1200px;
+    }
+
+    .soft-page-about-inner-new {
+        max-width: 1200px;
+    }
+}
+
+/* 1200px - Desktop */
+@media (max-width: 1200px) {
+    .soft-page-hero-container-new {
+        flex-direction: column;
+        padding: 40px 30px 60px 30px;
+        clip-path: none;
+    }
+
+    .soft-page-hero-left-new {
+        max-width: 100%;
+    }
+
+    .soft-page-hero-title-new {
+        font-size: 48px;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .soft-page-hero-subtitle-new {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .soft-page-hero-title-desc-new {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        min-height: auto;
+        margin: 20px 0;
+    }
+
+    .soft-page-hero-right-new {
+        max-width: 100%;
+    }
+
+    .soft-page-hero-stats-new {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .soft-page-services-grid {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .soft-page-service-card {
+        margin-right: 0;
+        transform: rotate(0deg) translateY(0) !important;
+        width: calc(33.33% - 20px);
+        min-width: 280px;
+    }
+}
+
+/* 1100px - Tablet Landscape */
+@media (max-width: 1100px) {
+    .soft-page-about-inner-new {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .soft-page-about-left-tag {
+        font-size: 32px;
+    }
+
+    .soft-page-about-left-title {
+        font-size: 28px;
+    }
+
+    .soft-page-agency-grid {
+        gap: 50px;
+    }
+
+    .soft-page-agency-main-title {
+        font-size: 42px;
+    }
+}
+
+/* 1024px - Tablet Landscape */
+@media (max-width: 1024px) {
+    .soft-page-services-content-new {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .soft-page-services-list-new {
+        order: 1;
+    }
+
+    .soft-page-services-info-col-new {
+        order: 2;
+    }
+
+    .soft-page-services-image-col-new {
+        order: 3;
+    }
+
+    .soft-page-services-info-col-new {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .soft-page-services-card-dark-new,
+    .soft-page-services-card-green-new {
+        min-height: auto;
+        padding: 30px 25px;
+    }
+
+    .soft-page-services-card-sub-new,
+    .soft-page-services-card-sub-green-new {
+        order: 2;
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
+
+    .soft-page-services-card-action-new {
+        order: 3;
+        margin-top: 10px;
+    }
+
+    .soft-page-services-card-action-text-new,
+    .soft-page-services-card-action-text-green-new {
+        font-size: 20px;
+    }
+
+    .soft-page-services-image-wrapper-new {
+        height: 400px;
+    }
+
+    .soft-page-service-card {
+        width: calc(50% - 20px);
+    }
+
+    .soft-page-service-card-desc {
+        font-size: 12px;
+    }
+
+    .soft-page-service-card-title {
+        font-size: 17px;
+        white-space: normal;
+        word-break: break-word;
+    }
+}
+
+/* 991px - Tablet */
+@media (max-width: 991px) {
+    .soft-page-prod-container {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .soft-page-prod-left {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .soft-page-prod-title {
+        font-size: 36px;
+        text-align: center;
+    }
+
+    .soft-page-prod-desc {
+        text-align: center;
+    }
+
+    .soft-page-prod-buttons {
+        justify-content: center;
+    }
+
+    .soft-page-prod-avatars-box {
+        justify-content: center;
+    }
+
+    .soft-page-prod-avatar-text {
+        text-align: center;
+    }
+
+    .soft-page-el-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .soft-page-el-left {
+        height: 480px;
+    }
+
+    .soft-page-el-img-large {
+        width: 220px;
+        height: 380px;
+    }
+
+    .soft-page-el-img-small-top,
+    .soft-page-el-img-small-bottom {
+        width: 180px;
+    }
+
+    .soft-page-el-title {
+        font-size: 32px;
+    }
+
+    .soft-page-el-preheading {
+        margin-left: 0;
+        font-size: 28px;
+    }
+}
+
+/* 900px - Small Desktop */
+@media (max-width: 900px) {
+    .soft-page-agency-grid {
+        grid-template-columns: 1fr;
+        gap: 100px;
+    }
+
+    .soft-page-agency-info-row {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .soft-page-portrait-img {
+        height: 500px;
+    }
+
+    .soft-page-exp-badge {
+        left: 20px;
+        bottom: -30px;
+    }
+}
+
+/* 768px - Mobile Landscape */
+@media (max-width: 768px) {
+    .soft-page-hero-section-new {
+        min-height: auto;
+        padding: 20px;
+    }
+
+    .soft-page-hero-container-new {
+        padding: 30px 20px 40px 20px;
+    }
+
+    .soft-page-hero-title-new {
+        font-size: 36px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .soft-page-hero-buttons-new {
+        flex-direction: column;
+        gap: 12px;
+        justify-content: center;
+    }
+
+    .soft-page-btn-get-started-new,
+    .soft-page-btn-contact-us-new {
+        width: 100%;
+        text-align: center;
+    }
+
+    .soft-page-hero-desc-new {
+        font-size: 16px;
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .soft-page-stat-item-new {
+        flex: 1;
+        min-width: 80px;
+    }
+
+    .soft-page-title-play-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .soft-page-case-title-new {
+        font-size: 28px;
+    }
+
+    .soft-page-about-company-desc-new {
+        font-size: 14px;
+    }
+
+    .soft-page-performance-card-new {
+        padding: 20px;
+    }
+
+    .soft-page-about-section-new {
+        padding: 80px 20px 60px;
+        clip-path: none;
+        margin-top: 0;
+    }
+
+    .soft-page-about-left-tag {
+        font-size: 28px !important;
+        text-align: center !important;
+    }
+
+    .soft-page-about-left-title {
+        font-size: 24px !important;
+        text-align: center !important;
+    }
+
+    .soft-page-about-intro-new {
+        text-align: center !important;
+    }
+
+    .soft-page-about-left-header {
+        text-align: center !important;
+    }
+
+    .soft-page-about-img-wrap-new {
+        min-height: 320px;
+        height: auto;
+    }
+
+    .soft-page-about-badge-new {
+        padding: 10px 14px;
+    }
+
+    .soft-page-badge-num {
+        font-size: 20px;
+    }
+
+    .soft-page-detail-title {
+        font-size: 22px;
+    }
+
+    .soft-page-detail-stats {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .soft-page-detail-stat {
+        flex: 1;
+        min-width: 80px;
+        border-right: none;
+    }
+
+    .soft-page-about-service-item-new {
+        padding: 15px 18px !important;
+    }
+
+    .soft-page-service-item-left-about {
+        gap: 12px !important;
+    }
+
+    .soft-page-service-num-new {
+        font-size: 11px !important;
+    }
+
+    .soft-page-service-name-about {
+        font-size: 13px !important;
+    }
+
+    .soft-page-service-short-about {
+        font-size: 10px !important;
+    }
+
+    .soft-page-service-arrow-about {
+        font-size: 14px !important;
+    }
+
+    .soft-page-about-detail-panel {
+        padding: 20px 18px !important;
+        height: auto !important;
+    }
+
+    .soft-page-detail-icon-wrap {
+        width: 44px;
+        height: 44px;
+    }
+
+    .soft-page-detail-icon {
+        font-size: 18px;
+    }
+
+    .soft-page-detail-num {
+        font-size: 9px;
+    }
+
+    .soft-page-detail-desc {
+        font-size: 13px !important;
+    }
+
+    .soft-page-detail-feature-item {
+        font-size: 11px !important;
+    }
+
+    .soft-page-detail-stat-val {
+        font-size: 14px !important;
+    }
+
+    .soft-page-detail-stat-label {
+        font-size: 9px !important;
+    }
+
+    .soft-page-detail-cta {
+        padding: 12px 20px !important;
+        font-size: 13px !important;
+    }
+
+    .soft-page-productivity-section {
+        padding: 80px 20px;
+    }
+
+    .soft-page-prod-title {
+        font-size: 32px;
+    }
+
+    .soft-page-prod-desc {
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+
+    .soft-page-prod-buttons {
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 40px;
+    }
+
+    .soft-page-btn-prod-primary,
+    .soft-page-btn-prod-secondary {
+        width: 100%;
+        text-align: center;
+        padding: 14px 24px;
+    }
+
+    .soft-page-prod-avatars-box {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .soft-page-prod-avatars {
+        justify-content: center;
+    }
+
+    .soft-page-prod-avatar-text {
+        text-align: center;
+        font-size: 12px;
+    }
+
+    .soft-page-prod-timeline {
+        margin-left: 0;
+        padding-left: 0;
+    }
+
+    .soft-page-prod-timeline::before {
+        left: 16px !important;
+        width: 2px;
+    }
+
+    .soft-page-timeline-item {
+        gap: 12px;
+        padding-bottom: 20px;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .soft-page-timeline-icon {
+        width: 40px !important;
+        height: 40px !important;
+        padding: 8px !important;
+    }
+
+    .soft-page-timeline-content h3 {
+        font-size: 16px;
+    }
+
+    .soft-page-timeline-content p {
+        font-size: 12px;
+    }
+
+    .soft-page-service-card {
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    .soft-page-mission-title {
+        margin-top: 5px;
+        font-size: 32px;
+    }
+
+    .soft-page-mission-section {
+        padding: 60px 20px;
+    }
+
+    .soft-page-services-section-new {
+        padding: 60px 20px;
+    }
+
+    .soft-page-services-container-new {
+        padding: 0 20px;
+    }
+
+    .soft-page-services-title-new {
+        font-size: 36px;
+    }
+
+    .soft-page-services-info-col-new {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .soft-page-services-card-dark-new,
+    .soft-page-services-card-green-new {
+        padding: 25px 20px;
+    }
+
+    .soft-page-agency-section {
+        padding: 60px 20px 100px;
+    }
+
+    .soft-page-agency-main-title {
+        font-size: 32px;
+    }
+
+    .soft-page-exp-badge {
+        padding: 20px 30px;
+    }
+
+    .soft-page-exp-number {
+        font-size: 36px;
+    }
+
+    .soft-page-landscape-img {
+        height: 220px;
+    }
+
+    .soft-page-testimonial-section {
+        padding: 60px 0 80px;
+    }
+
+    .soft-page-testimonial-heading {
+        font-size: 28px;
+        padding: 0 20px;
+        margin-left: 0;
+    }
+
+    .soft-page-testimonial-card-horizontal {
+        flex: 0 0 280px;
+        padding: 30px 20px;
+    }
+
+    .soft-page-testimonial-text {
+        height: auto;
+        min-height: 80px;
+    }
+
+    .soft-page-courses-section {
+        padding: 60px 20px;
+    }
+
+    .soft-page-section-title {
+        font-size: 2rem;
+    }
+
+    .soft-page-courses-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .soft-page-feedback-section {
+        padding: 60px 20px;
+    }
+
+    .soft-page-feedback-card {
+        padding: 30px 25px;
+    }
+
+    .soft-page-feedback-text {
+        font-size: 1rem;
+    }
+
+    /* Mission section 7th card alignment fix */
+    .soft-page-service-card:last-child {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        left: auto !important;
+        right: auto !important;
+        position: relative !important;
+        transform: none !important;
+    }
+}
+
+/* 576px - Small Tablet / Large Phone */
+@media (max-width: 576px) {
+    .soft-page-el-left {
+        height: 400px;
+    }
+
+    .soft-page-el-img-large {
+        width: 160px;
+        height: 300px;
+        top: 60px;
+    }
+
+    .soft-page-el-img-small-top {
+        width: 140px;
+        height: 120px;
+        top: 20px;
+        left: 10px;
+    }
+
+    .soft-page-el-img-small-bottom {
+        width: 150px;
+        height: 130px;
+        left: 5px;
+        bottom: 20px;
+    }
+
+    .soft-page-el-title {
+        font-size: 28px;
+    }
+
+    .soft-page-el-stats {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .soft-page-el-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .soft-page-prod-timeline::before {
+        left: 14px !important;
+    }
+
+    .soft-page-timeline-icon {
+        width: 32px !important;
+        height: 32px !important;
+        padding: 6px !important;
+    }
+
+    .soft-page-timeline-item {
+        gap: 10px;
+    }
+
+    .soft-page-timeline-content h3 {
+        font-size: 14px;
+    }
+
+    .soft-page-timeline-content p {
+        font-size: 11px;
+    }
+}
+
+/* 480px - Mobile Portrait */
+@media (max-width: 480px) {
+    .soft-page-hero-title-new {
+        font-size: 28px;
+    }
+
+    .soft-page-hero-subtitle-new {
+        font-size: 16px;
+    }
+
+    .soft-page-hero-desc-new {
+        font-size: 14px;
+    }
+
+    .soft-page-stat-circle-new {
+        width: 50px;
+        height: 50px;
+    }
+
+    .soft-page-stat-number-new {
+        font-size: 11px;
+    }
+
+    .soft-page-stat-label-new {
+        font-size: 10px;
+    }
+
+    .soft-page-hero-stats-new {
+        gap: 20px;
+    }
+
+    .soft-page-avatar-group-new img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .soft-page-avatar-icon-new,
+    .soft-page-download-btn-new {
+        width: 32px;
+        height: 32px;
+    }
+
+    .soft-page-perf-value-new,
+    .soft-page-perf-value-bold-new {
+        font-size: 14px;
+    }
+
+    .soft-page-perf-label-new {
+        font-size: 8px;
+    }
+
+    .soft-page-about-left-tag {
+        font-size: 15px !important;
+    }
+
+    .soft-page-about-left-title {
+        font-size: 20px !important;
+    }
+
+    .soft-page-about-service-item-new {
+        padding: 12px 14px !important;
+    }
+
+    .soft-page-service-text-group {
+        max-width: 180px;
+    }
+
+    .soft-page-service-name-about {
+        font-size: 12px !important;
+        white-space: normal;
+        word-break: break-word;
+    }
+
+    .soft-page-service-short-about {
+        font-size: 9px !important;
+    }
+
+    .soft-page-about-detail-panel {
+        padding: 16px 14px !important;
+    }
+
+    .soft-page-detail-title {
+        font-size: 18px !important;
+    }
+
+    .soft-page-detail-desc {
+        font-size: 12px !important;
+    }
+
+    .soft-page-productivity-section {
+        padding: 60px 16px;
+    }
+
+    .soft-page-prod-title {
+        font-size: 28px;
+    }
+
+    .soft-page-btn-prod-primary,
+    .soft-page-btn-prod-secondary {
+        padding: 12px 20px;
+        font-size: 13px;
+    }
+
+    .soft-page-mission-title {
+        margin-top: 5px;
+        font-size: 28px;
+    }
+
+    .soft-page-service-card {
+        height: auto;
+        min-height: 380px;
+        padding: 25px;
+    }
+
+    .soft-page-service-card-title {
+        font-size: 16px;
+    }
+
+    .soft-page-service-card-subtitle {
+        font-size: 11px;
+    }
+
+    .soft-page-service-icon-wrap {
+        height: 70px;
+        margin-top: 10px;
+    }
+
+    .soft-page-services-title-new {
+        font-size: 28px;
+    }
+
+    .soft-page-service-item-new {
+        padding: 14px 16px;
+    }
+
+    .soft-page-service-name-new {
+        font-size: 14px;
+    }
+
+    .soft-page-service-id-new {
+        font-size: 14px;
+    }
+
+    .soft-page-services-card-action-text-new,
+    .soft-page-services-card-action-text-green-new {
+        font-size: 18px;
+    }
+
+    .soft-page-section-title {
+        font-size: 1.8rem;
+    }
+
+    .soft-page-course-title {
+        font-size: 1.3rem;
+    }
+
+    .soft-page-course-desc {
+        font-size: 0.85rem;
+    }
+
+    .soft-page-feature-item {
+        font-size: 0.8rem;
+    }
+
+    .soft-page-feedback-card {
+        padding: 25px 20px;
+    }
+
+    .soft-page-feedback-text {
+        font-size: 0.9rem;
+    }
+
+    .soft-page-slider-arrow {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+
+    .soft-page-testimonial-card-horizontal {
+        flex: 0 0 260px;
+    }
+
+    .soft-page-testimonial-name {
+        font-size: 16px;
+    }
+
+    .soft-page-testimonial-text {
+        font-size: 13px;
+    }
+}
+
+/* 360px - Small Mobile */
+@media (max-width: 360px) {
+    .soft-page-hero-title-new {
+        font-size: 24px;
+    }
+
+    .soft-page-hero-desc-new {
+        font-size: 13px;
+    }
+
+    .soft-page-stat-circle-new {
+        width: 45px;
+        height: 45px;
+    }
+
+    .soft-page-stat-number-new {
+        font-size: 10px;
+    }
+
+    .soft-page-stat-label-new {
+        font-size: 9px;
+    }
+
+    .soft-page-case-title-new {
+        font-size: 22px;
+    }
+
+    .soft-page-about-company-desc-new {
+        font-size: 12px;
+    }
+
+    .soft-page-service-text-group {
+        max-width: 150px;
+    }
+
+    .soft-page-service-name-about {
+        font-size: 11px !important;
+    }
+
+    .soft-page-service-short-about {
+        font-size: 8px !important;
+    }
+
+    .soft-page-detail-title {
+        font-size: 16px !important;
+    }
+
+    .soft-page-detail-desc {
+        font-size: 11px !important;
+    }
+
+    .soft-page-detail-stat-val {
+        font-size: 12px !important;
+    }
+
+    .soft-page-detail-stat-label {
+        font-size: 8px !important;
+    }
+
+    .soft-page-prod-title {
+        font-size: 24px;
+    }
+
+    .soft-page-prod-desc {
+        font-size: 12px;
+    }
+
+    .soft-page-btn-prod-primary,
+    .soft-page-btn-prod-secondary {
+        padding: 10px 16px;
+        font-size: 12px;
+    }
+
+    .soft-page-timeline-content h3 {
+        font-size: 12px;
+    }
+
+    .soft-page-timeline-content p {
+        font-size: 10px;
+    }
+
+    .soft-page-mission-title {
+        font-size: 24px;
+    }
+
+    .soft-page-service-card-title {
+        font-size: 14px;
+    }
+
+    .soft-page-service-card-desc {
+        font-size: 11px;
+    }
+
+    .soft-page-services-title-new {
+        font-size: 24px;
+    }
+
+    .soft-page-service-name-new {
+        font-size: 12px;
+    }
+
+    .soft-page-service-id-new {
+        font-size: 12px;
+    }
+
+    .soft-page-section-title {
+        font-size: 1.5rem;
+    }
+
+    .soft-page-course-title {
+        font-size: 1.1rem;
+    }
+
+    .soft-page-feedback-text {
+        font-size: 0.85rem;
+    }
+
+    .soft-page-testimonial-heading {
+        font-size: 24px;
+    }
+
+    .soft-page-testimonial-card-horizontal {
+        flex: 0 0 240px;
+        padding: 20px 15px;
+    }
+
+    .soft-page-testimonial-name {
+        font-size: 14px;
+    }
+
+    .soft-page-testimonial-text {
+        font-size: 11px;
+    }
+}
+
+/* Ensure all images are responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Fix for overlapping elements on very small screens */
+@media (max-width: 380px) {
+    .soft-page-service-text-group {
+        max-width: 140px;
+    }
+
+    .soft-page-service-name-about {
+        font-size: 10px !important;
+    }
+
+    .soft-page-service-short-about {
+        font-size: 8px !important;
+    }
+
+    .soft-page-detail-title {
+        font-size: 15px !important;
+    }
+
+    .soft-page-detail-desc {
+        font-size: 10px !important;
+    }
+}
+
+/* ============================================================
+   MOBILE VIEW SPECIFIC FIXES FOR HERO SECTION, MISSION SECTION & AGENCY SECTION
+   ============================================================ */
+
+/* Hero Section - Mobile view fixes for image alignment and button sizes */
+@media (max-width: 768px) {
+
+    /* Move cube image slightly to the right */
+    .soft-page-hero-center-new {
+        display: flex;
+        justify-content: flex-end !important;
+        align-items: center;
+        padding-right: 20px;
+        margin-right: -20px;
+    }
+
+    .soft-page-cube-img-new {
+        transform: scale(0.95) translateX(15px);
+        max-width: 85%;
+    }
+
+    /* Reduce button sizes */
+    .soft-page-btn-get-started-new,
+    .soft-page-btn-contact-us-new {
+        padding: 10px 20px;
+        font-size: 11px;
+        width: auto;
+        min-width: 140px;
+    }
+
+    /* Reduce description font size */
+    .soft-page-hero-desc-new {
+        font-size: 14px;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Adjust stats circles size */
+    .soft-page-stat-circle-new {
+        width: 55px;
+        height: 55px;
+    }
+
+    .soft-page-stat-number-new {
+        font-size: 11px;
+    }
+
+    .soft-page-stat-label-new {
+        font-size: 10px;
+    }
+
+    .soft-page-hero-stats-new {
+        gap: 25px;
+    }
+}
+
+@media (max-width: 576px) {
+    .soft-page-hero-center-new {
+        padding-right: 25px;
+        margin-right: -20px;
+    }
+
+    .soft-page-cube-img-new {
+        transform: scale(0.9) translateX(20px);
+        max-width: 70%;
+    }
+}
+
+@media (max-width: 480px) {
+    .soft-page-hero-center-new {
+        padding-right: 30px;
+        margin-right: -25px;
+    }
+
+    .soft-page-cube-img-new {
+        transform: scale(0.85) translateX(25px);
+        max-width: 70%;
+    }
+
+    .soft-page-btn-get-started-new,
+    .soft-page-btn-contact-us-new {
+        padding: 8px 16px;
+        font-size: 10px;
+        min-width: 120px;
+    }
+
+    .soft-page-hero-desc-new {
+        font-size: 13px;
+    }
+
+    .soft-page-stat-circle-new {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 360px) {
+    .soft-page-hero-center-new {
+        padding-right: 35px;
+        margin-right: -40px;
+    }
+
+    .soft-page-cube-img-new {
+        transform: scale(0.8) translateX(35px);
+        max-width: 65%;
+    }
+
+    .soft-page-btn-get-started-new,
+    .soft-page-btn-contact-us-new {
+        padding: 6px 12px;
+        font-size: 9px;
+        min-width: 100px;
+    }
+}
+
+/* ============================================================
+   MISSION SECTION CARDS - INCREASE PADDING & REDUCE GAP IN MOBILE VIEW
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+    /* Increase card padding */
+    .soft-page-service-card {
+        padding: 30px 25px !important;
+        height: auto;
+        min-height: auto;
+    }
+
+    /* Reduce gap between content inside cards */
+    .soft-page-card-header {
+        margin-bottom: 12px !important;
+    }
+
+    .soft-page-service-card-desc {
+        margin: 10px 0 !important;
+        line-height: 1.4;
+        font-size: 12px;
+    }
+
+    /* Adjust title and subtitle spacing */
+    .soft-page-card-title-group {
+        gap: 4px !important;
+    }
+
+    .soft-page-service-card-title {
+        font-size: 16px !important;
+        white-space: normal;
+        word-break: break-word;
+        line-height: 1.3;
+    }
+
+    .soft-page-service-card-subtitle {
+        font-size: 11px !important;
+        margin-top: 2px;
+    }
+
+    /* Adjust badge size */
+    .soft-page-card-badge {
+        padding: 3px 8px;
+    }
+
+    .soft-page-badge-rating {
+        font-size: 11px;
+    }
+
+    /* Adjust icon area */
+    .soft-page-service-icon-wrap {
+        height: 70px;
+        margin-top: 15px;
+    }
+
+    .soft-page-service-icon-wrap svg {
+        width: 60px;
+        height: 60px;
+    }
+
+    /* Card grid spacing */
+    .soft-page-services-grid {
+        gap: 25px;
+    }
+}
+
+@media (max-width: 576px) {
+    .soft-page-service-card {
+        padding: 28px 22px !important;
+    }
+
+    .soft-page-card-header {
+        margin-bottom: 10px !important;
+    }
+
+    .soft-page-service-card-desc {
+        margin: 8px 0 !important;
+        font-size: 11.5px;
+    }
+
+    .soft-page-service-icon-wrap {
+        height: 65px;
+        margin-top: 12px;
+    }
+
+    .soft-page-service-icon-wrap svg {
+        width: 55px;
+        height: 55px;
+    }
+}
+
+@media (max-width: 480px) {
+    .soft-page-service-card {
+        padding: 25px 20px !important;
+    }
+
+    .soft-page-service-card-title {
+        font-size: 15px !important;
+    }
+
+    .soft-page-service-card-subtitle {
+        font-size: 10px !important;
+    }
+
+    .soft-page-service-card-desc {
+        font-size: 11px !important;
+        margin: 6px 0 !important;
+    }
+
+    .soft-page-card-badge {
+        padding: 2px 6px;
+    }
+
+    .soft-page-badge-rating {
+        font-size: 10px;
+    }
+
+    .soft-page-service-icon-wrap {
+        height: 60px;
+        margin-top: 10px;
+    }
+
+    .soft-page-service-icon-wrap svg {
+        width: 50px;
+        height: 50px;
+    }
+
+    .soft-page-services-grid {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 360px) {
+    .soft-page-service-card {
+        padding: 22px 18px !important;
+    }
+
+    .soft-page-service-card-title {
+        font-size: 14px !important;
+    }
+
+    .soft-page-service-card-subtitle {
+        font-size: 9px !important;
+    }
+
+    .soft-page-service-card-desc {
+        font-size: 10px !important;
+        margin: 5px 0 !important;
+        line-height: 1.3;
+    }
+
+    .soft-page-card-header {
+        margin-bottom: 8px !important;
+    }
+
+    .soft-page-service-icon-wrap {
+        height: 55px;
+        margin-top: 8px;
+    }
+
+    .soft-page-service-icon-wrap svg {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+/* ============================================================
+   AGENCY SECTION - REDUCE IMAGE HEIGHT & STAT SIZE IN MOBILE VIEW
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+    /* Reduce the height of the left side portrait image */
+    .soft-page-portrait-img {
+        height: 380px !important;
+        object-fit: cover;
+        object-position: center top;
+    }
+
+    /* Reduce the size of the experience badge */
+    .soft-page-exp-badge {
+        padding: 15px 25px !important;
+        left: 15px !important;
+        bottom: 20px !important;
+    }
+
+    /* Reduce the numbers and text inside the badge */
+    .soft-page-exp-number {
+        font-size: 28px !important;
+    }
+
+    .soft-page-exp-text {
+        font-size: 10px !important;
+    }
+
+    /* Adjust the bottom landscape image height */
+    .soft-page-landscape-img {
+        height: 180px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .soft-page-portrait-img {
+        height: 320px !important;
+    }
+
+    .soft-page-exp-badge {
+        padding: 12px 20px !important;
+        left: 12px !important;
+        bottom: 15px !important;
+    }
+
+    .soft-page-exp-number {
+        font-size: 24px !important;
+    }
+
+    .soft-page-exp-text {
+        font-size: 9px !important;
+    }
+
+    .soft-page-landscape-img {
+        height: 160px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .soft-page-portrait-img {
+        height: 280px !important;
+    }
+
+    .soft-page-exp-badge {
+        padding: 10px 16px !important;
+        left: 10px !important;
+        bottom: 12px !important;
+    }
+
+    .soft-page-exp-number {
+        font-size: 22px !important;
+    }
+
+    .soft-page-exp-text {
+        font-size: 8px !important;
+    }
+
+    .soft-page-landscape-img {
+        height: 140px !important;
+    }
+}
+
+@media (max-width: 360px) {
+    .soft-page-portrait-img {
+        height: 250px !important;
+    }
+
+    .soft-page-exp-badge {
+        padding: 8px 12px !important;
+        left: 8px !important;
+        bottom: 10px !important;
+    }
+
+    .soft-page-exp-number {
+        font-size: 20px !important;
+    }
+
+    .soft-page-exp-text {
+        font-size: 7px !important;
+    }
+
+    .soft-page-landscape-img {
+        height: 120px !important;
+    }
 }

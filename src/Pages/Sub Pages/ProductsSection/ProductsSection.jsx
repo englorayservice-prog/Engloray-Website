@@ -47,7 +47,7 @@ const ProductsSection = () => {
 
             bg: "#c62828",
             text: "#FFFFFF",
-            route: "/products/business-suite-ai",
+            route: "/businessSuiteAiPage",
             isLarge: true,
             hasShield: true
         },

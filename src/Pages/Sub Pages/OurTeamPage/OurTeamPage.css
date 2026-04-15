@@ -2,2476 +2,4384 @@
 @import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');
 
 /* HEXCO Font */
 @font-face {
-  font-family: 'HEXCO';
-  src: url('https://fonts.cdnfonts.com/s/96524/HEXCO.woff') format('woff');
-  font-weight: 100;
-  font-style: normal;
-  font-display: swap;
+    font-family: 'HEXCO';
+    src: url('https://fonts.cdnfonts.com/s/96524/HEXCO.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
 }
 
 /* Base Styles */
 .otp-page {
-  font-family: 'Aldrich', monospace;
-  background: #0a0a0a;
-  color: #ffffff;
-  min-height: 100vh;
-  overflow-x: hidden;
+    font-family: 'Aldrich', monospace;
+    background: #0a0a0a;
+    color: #ffffff;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
 /* HEXCO Text Style */
 .otp-hexco-text {
-  font-family: 'HEXCO', sans-serif;
-  font-weight: 100;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+    font-family: 'HEXCO', sans-serif;
+    font-weight: 100;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 /* Header Styles - NFT Hero Redesign */
-/* Premium Redesigned Header */
+/* Premium Redesigned Header - Futuristic Dark SaaS Hero */
 .otp-new-header {
-  position: relative;
-  min-height: 100vh;
-  background-color: #ffffff;
-  /* Light soft gradient like reference image */
-  background-image:
-    radial-gradient(circle at 10% 10%, rgba(99, 102, 241, 0.08) 0%, transparent 40%),
-    radial-gradient(circle at 90% 10%, rgba(249, 168, 212, 0.12) 0%, transparent 40%),
-    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 1) 0%, rgba(243, 244, 246, 0.2) 100%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 140px 0 80px;
-  text-align: center;
-  overflow: visible;
+    position: relative;
+    min-height: 100vh;
+    background-color: #050505;
+    /* BLACK base */
+    background-image:
+        radial-gradient(ellipse at top left, rgba(220, 20, 60, 0.4) 0%, transparent 50%),
+        /* RED glow top left */
+        radial-gradient(ellipse at bottom right, rgba(0, 80, 255, 0.4) 0%, transparent 50%),
+        /* BLUE glow bottom right */
+        radial-gradient(circle at 50% 50%, rgba(220, 20, 60, 0.15) 0%, rgba(0, 0, 0, 1) 70%);
+    /* subtle overall gradient blend */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 140px 0 10px;
+    text-align: center;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Floating light particles / streaks using pseudo-elements */
+.otp-new-header::before {
+    content: '';
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(0, 80, 255, 0.3) 0%, transparent 60%);
+    filter: blur(50px);
+    animation: otp-float-glow 8s ease-in-out infinite alternate;
+    z-index: -1;
+}
+
+.otp-new-header::after {
+    content: '';
+    position: absolute;
+    bottom: 20%;
+    right: 20%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(220, 20, 60, 0.25) 0%, transparent 60%);
+    filter: blur(60px);
+    animation: otp-float-glow 10s ease-in-out infinite alternate-reverse;
+    z-index: -1;
+}
+
+@keyframes otp-float-glow {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(50px, -50px);
+    }
 }
 
 .otp-header-container {
-  max-width: 1000px;
-  width: 100%;
-  padding: 0 20px;
-  z-index: 5;
-  position: relative;
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 20px;
+    z-index: 5;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Side Floating Cards */
-.otp-side-card {
-  position: absolute;
-  width: 300px;
-  min-height: 450px;
-  /* Increased height */
-  background: #ffffff;
-  padding: 16px;
-  border-radius: 24px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
-  text-align: left;
-  z-index: 10;
-  border: 1px solid rgba(0, 0, 0, 0.03);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  animation: otp-side-float 4s ease-in-out infinite alternate;
+/* Typography Headings */
+.otp-header-top-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
 }
 
+/* New Badge Pill */
+.otp-badge-wrapper {
+    margin-bottom: 30px;
+}
+
+.otp-badge-pill {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 6px 16px 6px 6px;
+    border-radius: 100px;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    gap: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.otp-badge-tag {
+    background: linear-gradient(90deg, #ff3b3b, #3b82f6);
+    padding: 3px 12px;
+    border-radius: 100px;
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.otp-badge-arrow {
+    font-size: 0.7rem;
+    opacity: 0.7;
+}
+
+.otp-main-title {
+    font-family: 'Poppins', serif !important;
+    font-size: 5.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    color: #ffffff;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.otp-gradient-text {
+    font-family: 'Aclonica', sans-serif !important;
+    background: linear-gradient(90deg, #9ae5f5 0%, #031e4a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    text-shadow: none;
+    font-size: 4rem;
+}
+
+.otp-main-subtitle-new {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.15rem;
+    color: #cbd5e1;
+    line-height: 1.7;
+    max-width: 700px;
+    margin: 0 auto 10px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* ==============================================
+   3D CARDS SECTION — EXACT REFERENCE RECREATION
+   ============================================== */
+.otp-3d-cards-container {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    height: 560px;
+    margin: -10px auto 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    perspective: 1400px;
+    perspective-origin: 50% 30%;
+    z-index: 5;
+    overflow: visible;
+}
+
+/* ============================================================
+   CURVED RECTANGLE STAGE BORDER — wraps behind all 3 cards
+   The top edge has the bright smoky glowing white line
+   ============================================================ */
+.otp-glass-curve-backdrop {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 96%;
+    height: 90%;
+    /* Wide rounded-top rectangle — open at bottom like in image */
+    border-radius: 40% 40% 0 0 / 8% 8% 0 0;
+    background: linear-gradient(180deg,
+            rgba(255, 255, 255, 0.03) 0%,
+            rgba(255, 255, 255, 0.005) 60%,
+            transparent 100%);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-bottom: none;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* THE KEY SMOKY LINE — bright radial glow along top arc */
+.otp-glass-curve-backdrop::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Simulate the bright glowing arc rim */
+    border-radius: 40% 40% 0 0 / 8% 8% 0 0;
+    border-top: 2.5px solid rgba(255, 255, 255, 0.0);
+    background: transparent;
+    /* The actual bright streak via box-shadow on the top edge */
+    box-shadow:
+        0 -1px 0 rgba(255, 255, 255, 0.95),
+        0 -3px 12px rgba(255, 255, 255, 0.7),
+        0 -8px 30px rgba(255, 255, 255, 0.35),
+        0 -20px 60px rgba(255, 255, 255, 0.15);
+}
+
+/* Wide soft glow halo above the smoky line arc */
+.otp-glass-curve-backdrop::after {
+    content: '';
+    position: absolute;
+    top: -40px;
+    left: 8%;
+    right: 8%;
+    height: 60px;
+    background: radial-gradient(ellipse 80% 100% at 50% 0%,
+            rgba(255, 255, 255, 0.2) 0%,
+            rgba(255, 255, 255, 0.06) 50%,
+            transparent 100%);
+    filter: blur(14px);
+    border-radius: 50%;
+}
+
+/* ---- Glowing purple ellipse FLOOR spotlight ---- */
+.otp-glowing-floor-base {
+    position: absolute;
+    bottom: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    height: 32px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse,
+            rgba(210, 140, 255, 0.95) 0%,
+            rgba(150, 90, 255, 0.65) 28%,
+            rgba(90, 50, 200, 0.3) 55%,
+            transparent 80%);
+    box-shadow:
+        0 0 45px 18px rgba(180, 100, 255, 0.55),
+        0 0 90px 35px rgba(120, 60, 255, 0.28),
+        0 0 130px 55px rgba(80, 40, 200, 0.14);
+    z-index: 1;
+    pointer-events: none;
+    animation: otp-floor-pulse 3s ease-in-out infinite alternate;
+}
+
+@keyframes otp-floor-pulse {
+    from {
+        opacity: 0.7;
+        transform: translateX(-50%) scaleX(0.88) scaleY(0.82);
+    }
+
+    to {
+        opacity: 1.0;
+        transform: translateX(-50%) scaleX(1.1) scaleY(1.1);
+    }
+}
+
+/* ---- Motion / speed lines flanking the cards ---- */
+.otp-speed-lines-left,
+.otp-speed-lines-right {
+    position: absolute;
+    top: 42%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 2;
+    opacity: 0.45;
+}
+
+.otp-speed-lines-left {
+    left: 2%;
+}
+
+.otp-speed-lines-right {
+    right: 2%;
+}
+
+.otp-speed-line {
+    height: 2px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.95) 50%, transparent 100%);
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.55);
+}
+
+.otp-speed-lines-left .otp-speed-line:nth-child(1) {
+    width: 38px;
+}
+
+.otp-speed-lines-left .otp-speed-line:nth-child(2) {
+    width: 58px;
+    margin-left: 8px;
+}
+
+.otp-speed-lines-left .otp-speed-line:nth-child(3) {
+    width: 28px;
+    margin-left: 4px;
+}
+
+.otp-speed-lines-right .otp-speed-line:nth-child(1) {
+    width: 38px;
+    align-self: flex-end;
+}
+
+.otp-speed-lines-right .otp-speed-line:nth-child(2) {
+    width: 58px;
+    align-self: flex-end;
+    margin-right: 8px;
+}
+
+.otp-speed-lines-right .otp-speed-line:nth-child(3) {
+    width: 28px;
+    align-self: flex-end;
+    margin-right: 4px;
+}
+
+/* ---- Browser title bar dots ---- */
+.otp-card-browser-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.07);
+    padding: 10px 14px;
+    border-radius: 16px 16px 0 0;
+    margin: -16px -16px 12px -16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.otp-browser-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.cb-red {
+    background: #ff5f56;
+    box-shadow: 0 0 5px rgba(255, 95, 86, 0.8);
+}
+
+.cb-yellow {
+    background: #ffbd2e;
+    box-shadow: 0 0 5px rgba(255, 189, 46, 0.8);
+}
+
+.cb-green {
+    background: #27c93f;
+    box-shadow: 0 0 5px rgba(39, 201, 63, 0.8);
+}
+
+/* ==========================================
+   3D CARD BASE
+   ========================================== */
+.otp-3d-card {
+    position: absolute;
+    width: 275px;
+    min-height: 430px;
+    background: rgba(255, 255, 255, 0.09);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 16px;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow:
+        0 2px 0 rgba(255, 255, 255, 0.3) inset,
+        0 20px 50px rgba(0, 0, 0, 0.55),
+        0 0 1px rgba(255, 255, 255, 0.08) inset;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    transform-style: preserve-3d;
+    will-change: transform;
+    animation: otp-card-float 5s ease-in-out infinite alternate;
+}
+
+.otp-3d-card:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow:
+        0 2px 0 rgba(255, 255, 255, 0.5) inset,
+        0 30px 70px rgba(0, 0, 0, 0.6),
+        0 0 22px rgba(255, 255, 255, 0.1);
+    z-index: 30 !important;
+}
+
+/* ==========================================
+   LEFT CARD
+   In the image, the left card shows its
+   RIGHT face → it's rotated so left edge
+   goes BACK = rotateY negative value
+   ========================================== */
+.otp-card-left {
+    left: 4%;
+    bottom: 20px;
+    transform: perspective(1200px) rotateY(-24deg) scale(0.82);
+    transform-origin: center center;
+    z-index: 2;
+    animation-delay: 0s;
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.14);
+}
+
+.otp-card-left:hover {
+    transform: perspective(1200px) rotateY(-10deg) scale(0.88) translateY(-10px);
+}
+
+/* ==========================================
+   RIGHT CARD
+   In the image, the right card shows its
+   LEFT face → rotated so right edge goes
+   BACK = rotateY positive value
+   ========================================== */
+.otp-card-right {
+    right: 4%;
+    bottom: 20px;
+    transform: perspective(1200px) rotateY(24deg) scale(0.82);
+    transform-origin: center center;
+    z-index: 2;
+    animation-delay: 1.5s;
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.14);
+}
+
+.otp-card-right:hover {
+    transform: perspective(1200px) rotateY(10deg) scale(0.88) translateY(-10px);
+}
+
+/* ==========================================
+   CENTER CARD — largest, fully front-facing
+   ========================================== */
+.otp-card-center {
+    left: 50%;
+    bottom: 45px;
+    transform: translateX(-50%) scale(1.08);
+    z-index: 10;
+    animation-delay: 0.8s;
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.32);
+    box-shadow:
+        0 2px 0 rgba(255, 255, 255, 0.45) inset,
+        0 30px 80px rgba(0, 0, 0, 0.58),
+        0 0 30px rgba(255, 255, 255, 0.06);
+}
+
+.otp-card-center:hover {
+    transform: translateX(-50%) scale(1.13) translateY(-14px);
+    box-shadow:
+        0 2px 0 rgba(255, 255, 255, 0.6) inset,
+        0 40px 100px rgba(0, 0, 0, 0.65),
+        0 0 55px rgba(255, 255, 255, 0.14);
+}
+
+/* ---- Float keyframe ---- */
+@keyframes otp-card-float {
+    0% {
+        margin-bottom: 0px;
+    }
+
+    100% {
+        margin-bottom: 18px;
+    }
+}
+
+/* ---- Mobile stack ---- */
+@media (max-width: 1100px) {
+    .otp-3d-cards-container {
+        flex-direction: column;
+        height: auto;
+        gap: 20px;
+        perspective: none;
+        align-items: center;
+    }
+
+    .otp-glass-curve-backdrop,
+    .otp-glowing-floor-base,
+    .otp-speed-lines-left,
+    .otp-speed-lines-right {
+        display: none;
+    }
+
+    .otp-3d-card {
+        position: relative !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        transform: none !important;
+        margin: 0 !important;
+        width: 300px;
+        animation: none;
+    }
+}
+
+/* Card Internal Content */
 .otp-side-section-top {
-  flex: 1;
+    flex: 1;
 }
 
 .otp-side-section-bottom {
-  margin-top: 20px;
-}
-
-.otp-side-desc {
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.82rem;
-  color: #475569;
-  line-height: 1.5;
-  margin-top: 12px;
-  font-weight: 500;
-}
-
-.otp-side-desc-mini {
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.68rem;
-  color: #94a3b8;
-  margin-top: 4px;
-}
-
-.otp-side-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 15px;
-}
-
-.otp-mini-tag {
-  font-size: 0.65rem;
-  padding: 4px 10px;
-  background: rgba(99, 102, 241, 0.05);
-  color: #6366f1;
-  border-radius: 100px;
-  font-weight: 600;
-  border: 1px solid rgba(99, 102, 241, 0.1);
-  transition: all 0.3s ease;
-}
-
-.otp-mini-tag:hover {
-  background: rgba(99, 102, 241, 0.1);
-  transform: translateY(-2px);
-}
-
-.otp-side-left {
-  left: -240px;
-  top: 40px;
-}
-
-.otp-side-right {
-  right: -240px;
-  top: 80px;
-  animation-delay: 1.5s;
+    margin-top: 20px;
 }
 
 .otp-card-head {
-  width: 100%;
-  height: 160px;
-  /* Increased from 120px */
-  border-radius: 16px;
-  overflow: visible;
-  margin-bottom: 20px;
+    width: 100%;
+    height: 160px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 .otp-side-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-/* Left Card Bar - Purple like podcast wave */
+.otp-card-center .otp-side-img {
+    object-position: center 15%;
+}
+
+.otp-card-left .otp-side-img {
+    object-position: center 55%;
+}
+
+.otp-side-desc {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.82rem;
+    color: #e2e8f0;
+    line-height: 1.5;
+    margin-top: 12px;
+    font-weight: 500;
+}
+
+.otp-side-desc-mini {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.68rem;
+    color: #94a3b8;
+    margin-top: 4px;
+}
+
+.otp-side-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.otp-mini-tag {
+    font-size: 0.65rem;
+    padding: 4px 10px;
+    background: rgba(255, 255, 255, 0.05);
+    /* Glass tag */
+    color: #fff;
+    border-radius: 100px;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.otp-mini-tag:hover {
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
 .otp-card-wave-bar {
-  display: flex;
-  align-items: center;
-  background: #7e22ce;
-  /* Deep Podcast Purple */
-  border-radius: 12px;
-  padding: 10px 14px;
-  gap: 10px;
-  margin: -35px auto 15px;
-  /* Centered overlap */
-  position: relative;
-  z-index: 2;
-  width: fit-content;
-  box-shadow: 0 8px 16px rgba(126, 34, 206, 0.2);
+    display: flex;
+    align-items: center;
+    background: linear-gradient(90deg, #ff3b3b, #3b82f6);
+    border-radius: 12px;
+    padding: 10px 14px;
+    gap: 10px;
+    margin: -35px auto 15px;
+    position: relative;
+    z-index: 2;
+    width: fit-content;
+    box-shadow: 0 8px 16px rgba(59, 130, 246, 0.3);
 }
 
 .otp-wave-icon {
-  color: #fff;
-  font-size: 0.9rem;
+    color: #fff;
+    font-size: 0.9rem;
 }
 
 .otp-wave-bars {
-  display: flex;
-  gap: 3px;
-  align-items: center;
+    display: flex;
+    gap: 3px;
+    align-items: center;
 }
 
 .otp-wave-bars span {
-  width: 2px;
-  height: 12px;
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: 1px;
+    width: 2px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 1px;
 }
 
 .otp-wave-bars span:nth-child(even) {
-  height: 16px;
-}
-
-.otp-card-footer-info p {
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.75rem;
-  color: #64748b;
-  line-height: 1.5;
-  margin-bottom: 12px;
+    height: 16px;
 }
 
 .otp-listeners-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.otp-listeners-info {
-  display: flex;
-  flex-direction: column;
-}
-
-.otp-side-divider {
-  border: none;
-  border-top: 1px dashed #e2e8f0;
-  margin: 12px 0;
-  width: 100%;
-}
-
-.otp-side-platforms {
-  display: flex;
-  gap: 15px;
-  color: #6366f1;
-  font-size: 1rem;
-  margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
 .otp-mini-avatars {
-  display: flex;
+    display: flex;
 }
 
 .ma-1,
 .ma-2,
 .ma-3 {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 2px solid #fff;
-  margin-left: -8px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #333;
+    margin-left: -8px;
 }
 
 .ma-1 {
-  background: #6366f1;
-  margin-left: 0;
+    background: #ff3b3b;
+    margin-left: 0;
 }
 
 .ma-2 {
-  background: #4ecdc4;
+    background: #3b82f6;
 }
 
 .ma-3 {
-  background: #ff727f;
+    background: #8b5cf6;
 }
 
 .otp-l-count {
-  font-size: 0.65rem;
-  font-weight: 700;
-  color: #1e293b;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #fff;
 }
 
-/* Right Card Elements */
-
-
-@keyframes otp-side-float {
-  from {
-    transform: translateY(0);
-  }
-
-  to {
-    transform: translateY(-15px);
-  }
+.otp-side-divider {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 12px 0;
+    width: 100%;
 }
 
-@media (max-width: 1400px) {
-  .otp-side-left {
-    left: 40px;
-    top: -50px;
-    z-index: -1;
-    opacity: 0.3;
-  }
-
-  .otp-side-right {
-    right: 40px;
-    top: -50px;
-    z-index: -1;
-    opacity: 0.3;
-  }
+.otp-side-platforms {
+    display: flex;
+    gap: 15px;
+    color: #3b82f6;
+    font-size: 1rem;
+    margin-bottom: 8px;
 }
 
-@media (max-width: 1100px) {
-  .otp-side-card {
-    display: none;
-  }
+/* CTA Button Redesign */
+.otp-cta-row {
+    margin-top: 15px;
+    margin-bottom: 60px;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
 }
 
-/* New Badge Pill */
-.otp-badge-wrapper {
-  margin-bottom: 40px;
+.otp-btn-access-new {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: linear-gradient(90deg, #ff3b3b, #3b82f6);
+    color: #ffffff;
+    border: none;
+    padding: 16px 40px;
+    border-radius: 100px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
 }
 
-.otp-badge-pill {
-  display: inline-flex;
-  align-items: center;
-  background: #1a1a1c;
-  padding: 6px 16px 6px 6px;
-  border-radius: 100px;
-  color: #ffffff;
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.85rem;
-  font-weight: 500;
-  gap: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.otp-badge-tag {
-  background: linear-gradient(90deg, #6366f1, #d946ef);
-  padding: 3px 12px;
-  border-radius: 100px;
-  font-weight: 700;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-}
-
-.otp-badge-arrow {
-  font-size: 0.7rem;
-  opacity: 0.5;
-}
-
-/* Heading Styling */
-.otp-main-title {
-  font-family: 'Poppins', sans-serif;
-  font-size: 5rem;
-  font-weight: 800;
-  line-height: 1;
-  color: #1a1a1c;
-  margin-bottom: 25px;
-  letter-spacing: -2px;
-}
-
-.otp-gradient-text {
-  background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 30%, #d946ef 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-}
-
-.otp-main-subtitle-new {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.15rem;
-  color: #64748b;
-  line-height: 1.7;
-  max-width: 700px;
-  margin: 0 auto 50px;
-}
-
-/* CTA Form */
-.otp-cta-form {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 80px;
-}
-
-.otp-input-group {
-  display: inline-flex;
-  align-items: center;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  padding: 5px 6px 5px 22px;
-  border-radius: 100px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
-  gap: 12px;
-}
-
-.otp-input-icon {
-  color: #94a3b8;
-  font-size: 1.1rem;
-}
-
-.otp-input-group input {
-  flex: 1;
-  border: none;
-  background: none;
-  font-family: 'Poppins', sans-serif;
-  font-size: 1rem;
-  color: #1e293b;
-  outline: none;
-}
-
-.otp-input-group input::placeholder {
-  color: #94a3b8;
-}
-
-.otp-btn-access {
-  background: linear-gradient(90deg, #6366f1, #d946ef);
-  color: #f1f5fa;
-  border: 1px solid #e2e8f0;
-  padding: 12px 30px;
-  border-radius: 100px;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-}
-
-.otp-btn-access:hover {
-  background: linear-gradient(90deg, #3639f7, #0f77ff);
-  border-color: #cbd5e1;
-  transform: translateY(-1px);
+.otp-btn-access-new:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(255, 59, 59, 0.5), 0 0 20px rgba(59, 130, 246, 0.6);
 }
 
 /* Brand Footer */
 .otp-brand-footer {
-  width: 100%;
+    width: 100%;
+    z-index: 10;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .otp-slogan-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin-top: 60px;
-  padding: 0 20px;
-  width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    margin-top: 50px;
 }
 
 .otp-slogan-main {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #1a1a1c;
-  max-width: 950px;
-  margin-bottom: 25px;
-  line-height: 1.2;
-  letter-spacing: -0.5px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    max-width: 950px;
+    margin-bottom: 25px;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .otp-slogan-separator {
-  width: 70px;
-  height: 4px;
-  background: linear-gradient(90deg, #6366f1, #d946ef);
-  border-radius: 100px;
-  margin-bottom: 30px;
+    width: 70px;
+    height: 4px;
+    background: linear-gradient(90deg, #ff3b3b, #3b82f6);
+    border-radius: 100px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 10px rgba(255, 59, 59, 0.5);
 }
 
 .otp-slogan-sub {
-  font-family: 'Aldrich', monospace;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #94a3b8;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  max-width: 900px;
-  line-height: 1.6;
+    font-family: 'Aldrich', monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #94a3b8;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    max-width: 900px;
+    line-height: 1.6;
 }
 
 .otp-trusted-text {
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.85rem;
-  color: #94a3b8;
-  font-weight: 500;
-  text-transform: lowercase;
-  letter-spacing: 0.5px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    color: #94a3b8;
+    font-weight: 500;
+    text-transform: lowercase;
+    letter-spacing: 0.5px;
+}
+
+@media (max-width: 1100px) {
+    .otp-3d-cards-container {
+        flex-direction: column;
+        height: auto;
+        gap: 30px;
+    }
+
+    .otp-3d-card {
+        position: relative;
+        left: 0 !important;
+        right: 0 !important;
+        transform: none !important;
+        margin: 0 !important;
+        max-width: 100%;
+        width: 320px;
+        animation: none;
+        filter: blur(0);
+    }
 }
 
 @media (max-width: 768px) {
-  .otp-main-title {
-    font-size: 3rem;
-    letter-spacing: -1px;
-  }
+    .otp-main-title {
+        font-size: 3rem;
+        letter-spacing: -1px;
+    }
 
-  .otp-main-subtitle-new br {
-    display: none;
-  }
+    .otp-main-subtitle-new br {
+        display: none;
+    }
 
-  .otp-brand-grid {
-    gap: 20px;
-  }
+    .otp-brand-grid {
+        gap: 20px;
+    }
 }
 
 
 
 /* Scroll Indicator - Adjusted for light theme */
 .otp-scroll-indicator {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  color: #94a3b8;
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  opacity: 0.6;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: #94a3b8;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.6;
 }
 
 /* Base Animations */
 @keyframes otp-fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 
 @keyframes otp-fade-in {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
 
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 @keyframes otp-rotate {
-  from {
-    transform: rotate(0deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
 
-  to {
-    transform: rotate(360deg);
-  }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 @keyframes otp-float {
 
-  0%,
-  100% {
-    transform: translateY(0);
-  }
+    0%,
+    100% {
+        transform: translateY(0);
+    }
 
-  50% {
-    transform: translateY(-20px);
-  }
+    50% {
+        transform: translateY(-20px);
+    }
 }
 
 /* Mobile Responsiveness */
 @media (max-width: 1100px) {
-  .otp-hero-grid {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 80px;
-  }
+    .otp-hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 80px;
+    }
 
-  .otp-hero-main-title {
-    font-size: 3.5rem;
-  }
+    .otp-hero-main-title {
+        font-size: 3.5rem;
+    }
 
-  .otp-hero-main-desc {
-    margin: 0 auto 40px;
-  }
+    .otp-hero-main-desc {
+        margin: 0 auto 40px;
+    }
 
-  .otp-hero-actions,
-  .otp-hero-stats-row {
-    justify-content: center;
-  }
+    .otp-hero-actions,
+    .otp-hero-stats-row {
+        justify-content: center;
+    }
 
-  .otp-visual-container {
-    width: 100%;
-    height: auto;
-  }
+    .otp-visual-container {
+        width: 100%;
+        height: auto;
+    }
 
-  .otp-timer-card {
-    right: 50%;
-    transform: translateX(50%);
-    bottom: -40px;
-  }
+    .otp-timer-card {
+        right: 50%;
+        transform: translateX(50%);
+        bottom: -40px;
+    }
 }
 
 @media (max-width: 768px) {
-  .otp-hero-main-title {
-    font-size: 2.8rem;
-  }
+    .otp-hero-main-title {
+        font-size: 2.8rem;
+    }
 
-  .otp-hero-actions {
-    flex-direction: column;
-    gap: 20px;
-  }
+    .otp-hero-actions {
+        flex-direction: column;
+        gap: 20px;
+    }
 
-  .otp-hero-stats-row {
-    gap: 20px;
-    flex-wrap: wrap;
-  }
+    .otp-hero-stats-row {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
 
-  .otp-hero-mask-wrap {
-    width: 300px;
-    height: 300px;
-  }
+    .otp-hero-mask-wrap {
+        width: 300px;
+        height: 300px;
+    }
 
-  .ring-static,
-  .ring-animated-1,
-  .ring-animated-2 {
-    display: none;
-  }
+    .ring-static,
+    .ring-animated-1,
+    .ring-animated-2 {
+        display: none;
+    }
 }
 
 /* Container */
 .otp-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 /* Section Styles */
 .otp-section {
-  padding: 100px 0;
-  position: relative;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+    padding: 100px 0;
+    position: relative;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 .otp-section-header {
-  text-align: center;
-  margin-bottom: 60px;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+    text-align: center;
+    margin-bottom: 60px;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 /* Base Heading Style (for dark background) */
 .otp-section-title {
-  font-family: 'Poppins', sans-serif;
-  font-size: 3rem;
-  font-weight: 100;
-  margin-bottom: 15px;
-  background: linear-gradient(45deg, #4ecdc4, #44a08d);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-  letter-spacing: 3px;
-  text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    font-weight: 100;
+    margin-bottom: 15px;
+    background: linear-gradient(45deg, #4ecdc4, #44a08d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: 3px;
+    text-transform: uppercase;
 }
 
 /* Light Background Header Styling - keep Zen Dots for these only */
 .otp-projects-section .otp-section-title,
 .otp-reviews-section .otp-section-title,
 .otp-light-theme .otp-section-title {
-  font-family: 'Poppins', sans-serif;
-  font-size: 3.5rem;
-  background: linear-gradient(to bottom, #000000 40%, #4ecdc4 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-  letter-spacing: 2px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 3.5rem;
+    background: linear-gradient(to bottom, #000000 40%, #4ecdc4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: 2px;
 }
 
 .otp-section-subtitle {
-  font-family: 'Aldrich', monospace;
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.5);
-  /* Default white for dark bg */
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  font-weight: 500;
+    font-family: 'Aldrich', monospace;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.5);
+    /* Default white for dark bg */
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-weight: 500;
 }
 
 .otp-projects-section .otp-section-subtitle,
 .otp-reviews-section .otp-section-subtitle,
 .otp-light-theme .otp-section-subtitle {
-  color: rgba(0, 0, 0, 0.4);
-  /* Dark for light bg */
+    color: rgba(0, 0, 0, 0.4);
+    /* Dark for light bg */
 }
 
 /* Reviews Section Specific Title (Stacked Impact Style) */
 .otp-section-title-reviews {
-  display: flex !important;
-  flex-direction: column;
-  align-items: center;
-  font-family: 'Montserrat', sans-serif !important;
-  font-weight: 700 !important;
-  font-size: clamp(4rem, 10vw, 3rem) !important;
-  line-height: 1.2 !important;
-  letter-spacing: 4px !important;
-  color: #1a1a1c !important;
-  text-align: center;
-  margin-bottom: 50px;
-  background: none !important;
-  -webkit-text-fill-color: initial !important;
-  text-shadow:
-    4px 4px 0px rgba(255, 107, 107, 0.2),
-    /* Soft coral hint */
-    -2px -2px 10px rgba(0, 0, 0, 0.05);
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: clamp(4rem, 10vw, 3rem) !important;
+    line-height: 1.2 !important;
+    letter-spacing: 4px !important;
+    color: #1a1a1c !important;
+    text-align: center;
+    margin-bottom: 50px;
+    background: none !important;
+    -webkit-text-fill-color: initial !important;
+    text-shadow:
+        4px 4px 0px rgba(255, 107, 107, 0.2),
+        /* Soft coral hint */
+        -2px -2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .otp-section-title-reviews span {
-  display: block;
-  width: 100%;
+    display: block;
+    width: 100%;
 }
 
 .otp-section-title-reviews span:nth-child(2) {
-  font-size: 1em;
-  margin-left: 20px;
-  color: #ff727f;
-  /* Coral highlighted part */
+    font-size: 1em;
+    margin-left: 20px;
+    color: #ff727f;
+    /* Coral highlighted part */
 }
 
 .otp-section-title-reviews span:nth-child(3) {
-  margin-left: -20px;
+    margin-left: -20px;
 }
 
 
 
 /* Projects Section Redesign */
 .otp-projects-section-redesign {
-  display: flex;
-  width: 100%;
-  min-height: 850px;
-  background: white;
-  margin: 0;
-  padding: 0;
-  position: relative;
-  overflow: visible !important;
-  /* Ensure content can overlap freely */
+    display: flex;
+    width: 100%;
+    min-height: 850px;
+    background: white;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow: visible !important;
+    /* Ensure content can overlap freely */
 }
 
 .otp-projects-left {
-  flex: 1.1;
-  background: #ffffff;
-  display: flex;
-  align-items: flex-start;
-  /* Better for multiple quotes */
-  padding: 50px 50px 80px 100px;
-  /* Reduced top padding to move content up */
-  position: relative;
-  z-index: 1 !important;
+    flex: 1.1;
+    background: #ffffff;
+    display: flex;
+    align-items: flex-start;
+    /* Better for multiple quotes */
+    padding: 50px 50px 80px 100px;
+    /* Reduced top padding to move content up */
+    position: relative;
+    z-index: 1 !important;
 }
 
 .otp-projects-left-content {
-  margin-top: 10px;
-  /* Slight fine-tuning upwards */
-  max-width: 650px;
+    margin-top: 10px;
+    /* Slight fine-tuning upwards */
+    max-width: 650px;
 }
 
 .otp-projects-pill {
-  background: #6c5ce7;
-  color: white;
-  padding: 6px 18px;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  margin-bottom: 25px;
-  display: inline-block;
-  box-shadow: 0 4px 15px rgba(108, 92, 231, 0.4);
-  text-transform: uppercase;
-  letter-spacing: 1px;
+    background: #6c5ce7;
+    color: white;
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(108, 92, 231, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .otp-projects-main-title {
-  font-family: 'Poppins', sans-serif;
-  font-size: clamp(2rem, 4.5vw, 3.5rem);
-  font-weight: 800;
-  color: #1a1b1e;
-  line-height: 1.1;
-  margin-bottom: 30px;
-  text-align: left;
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(2rem, 4.5vw, 3.5rem);
+    font-weight: 800;
+    color: #1a1b1e;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    text-align: left;
 }
 
 .otp-projects-title-accent {
-  background: linear-gradient(90deg, #6c5ce7, #a29bfe);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-align: left;
-  font-size: 35px;
+    background: linear-gradient(90deg, #6c5ce7, #a29bfe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: left;
+    font-size: 35px;
 }
 
 .otp-projects-description {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.05rem;
-  color: #4b5563;
-  line-height: 1.5;
-  margin-bottom: 25px;
-  text-align: left;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.05rem;
+    color: #4b5563;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    text-align: left;
 }
 
 .otp-projects-quote-container {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .otp-projects-quote {
-  border-left: 4px solid #ff9f43;
-  padding: 8px 0 8px 25px;
-  font-style: italic;
-  color: #64748b;
-  font-size: 1rem;
-  background: rgba(255, 159, 67, 0.03);
-  border-radius: 0 10px 10px 0;
-  transition: all 0.3s ease;
+    border-left: 4px solid #ff9f43;
+    padding: 8px 0 8px 25px;
+    font-style: italic;
+    color: #64748b;
+    font-size: 1rem;
+    background: rgba(255, 159, 67, 0.03);
+    border-radius: 0 10px 10px 0;
+    transition: all 0.3s ease;
 }
 
 .otp-projects-quote:hover {
-  background: rgba(255, 159, 67, 0.06);
-  transform: translateX(5px);
+    background: rgba(255, 159, 67, 0.06);
+    transform: translateX(5px);
 }
 
 .otp-projects-right {
-  width: 38%;
-  background: #6044ff;
-  position: relative;
-  min-height: 850px;
-  z-index: 10 !important;
-  overflow: visible !important;
+    width: 38%;
+    background: #6044ff;
+    position: relative;
+    min-height: 850px;
+    z-index: 10 !important;
+    overflow: visible !important;
 }
 
 .otp-projects-right-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 1.8;
-  mix-blend-mode: soft-light;
-  z-index: -1;
-  pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 1.8;
+    mix-blend-mode: soft-light;
+    z-index: -1;
+    pointer-events: none;
 }
 
 .otp-projects-right::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 60%);
-  z-index: -1;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 60%);
+    z-index: -1;
 }
 
 /* Position the scroll wrapper so it spans both sides */
 .otp-projects-scroll-wrapper {
-  position: absolute;
-  top: 0px;
-  left: -250px;
-  /* Pull the entire scroll list onto the white background */
-  width: 700px;
-  /* Width that spans both areas */
-  height: 850px;
-  overflow-y: auto;
-  overflow-x: visible !important;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 30px;
-  scroll-behavior: smooth;
-  z-index: 20;
+    position: absolute;
+    top: 0px;
+    left: -250px;
+    /* Pull the entire scroll list onto the white background */
+    width: 700px;
+    /* Width that spans both areas */
+    height: 850px;
+    overflow-y: auto;
+    overflow-x: visible !important;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+    scroll-behavior: smooth;
+    z-index: 20;
 }
 
 /* Custom Scrollbar - Move it to the Right side of the purple section */
 .otp-projects-scroll-wrapper::-webkit-scrollbar {
-  width: 4px;
+    width: 4px;
 }
 
 .otp-projects-scroll-wrapper::-webkit-scrollbar-track {
-  background: transparent;
+    background: transparent;
 }
 
 .otp-projects-scroll-wrapper::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 10px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
 }
 
 /* Project Card New - Centered Bridge Style */
 .otp-project-card-new {
-  background: white;
-  border-radius: 20px;
-  padding: 22px 30px;
-  width: 100%;
-  /* Occupies the wide scroll wrapper */
-  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4);
-  transition: all 0.3s ease;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  position: relative;
-  z-index: 30 !important;
+    background: white;
+    border-radius: 20px;
+    padding: 22px 30px;
+    width: 100%;
+    /* Occupies the wide scroll wrapper */
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+    z-index: 30 !important;
 }
 
 .otp-project-card-new:hover {
-  transform: translateY(-5px);
-  border-color: rgba(0, 0, 0, 0.1);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+    transform: translateY(-5px);
+    border-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
 }
 
 .otp-project-card-inner {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  /* Reduced internal gap */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    /* Reduced internal gap */
 }
 
 .otp-project-card-top-row {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  /* Reduced gap */
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    /* Reduced gap */
 }
 
 .otp-project-icon {
-  width: 40px;
-  /* Smaller icon wrapper */
-  height: 40px;
-  background: rgba(0, 0, 0, 0.03);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-  /* Smaller font */
-  border: 1px solid rgba(0, 0, 0, 0.05);
+    width: 40px;
+    /* Smaller icon wrapper */
+    height: 40px;
+    background: rgba(0, 0, 0, 0.03);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    /* Smaller font */
+    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .otp-project-card-title {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.1rem;
-  /* Smaller title */
-  font-weight: 700;
-  color: #000000 !important;
-  letter-spacing: -0.2px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    /* Smaller title */
+    font-weight: 700;
+    color: #000000 !important;
+    letter-spacing: -0.2px;
 }
 
 .otp-project-card-desc {
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.85rem;
-  /* Smaller text */
-  color: #000000 !important;
-  line-height: 1.4;
-  opacity: 0.85;
-  /* Slight softening but strictly black base */
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    /* Smaller text */
+    color: #000000 !important;
+    line-height: 1.4;
+    opacity: 0.85;
+    /* Slight softening but strictly black base */
 }
 
 .otp-project-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
 .otp-project-tag {
-  background: rgba(0, 0, 0, 0.05);
-  /* Slightly darker for contrast */
-  color: #000000 !important;
-  padding: 3px 10px;
-  border-radius: 6px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.05);
+    /* Slightly darker for contrast */
+    color: #000000 !important;
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .otp-project-completion {
-  margin-top: 5px;
+    margin-top: 5px;
 }
 
 .otp-completion-info {
-  display: flex;
-  justify-content: space-between;
-  color: #000000 !important;
-  font-size: 0.75rem;
-  font-weight: 800;
-  margin-bottom: 8px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+    display: flex;
+    justify-content: space-between;
+    color: #000000 !important;
+    font-size: 0.75rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .otp-completion-bar-bg {
-  width: 100%;
-  height: 5px;
-  background: rgba(0, 0, 0, 0.08);
-  border-radius: 10px;
-  overflow: hidden;
+    width: 100%;
+    height: 5px;
+    background: rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .otp-project-card-top-row {
-  display: flex;
-  align-items: center;
-  gap: 25px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
 }
 
 .otp-project-icon {
-  width: 65px;
-  height: 65px;
-  background: rgba(255, 255, 255, 0.03);
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.8rem;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+    width: 65px;
+    height: 65px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .otp-project-card-title {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: white;
-  letter-spacing: -0.5px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    letter-spacing: -0.5px;
 }
 
 .otp-project-card-desc {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1rem;
-  color: #94a3b8;
-  line-height: 1.6;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: #94a3b8;
+    line-height: 1.6;
 }
 
 .otp-project-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
 .otp-project-tag {
-  background: rgba(255, 255, 255, 0.05);
-  color: #cbd5e1;
-  padding: 5px 15px;
-  border-radius: 10px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.05);
+    color: #cbd5e1;
+    padding: 5px 15px;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s ease;
 }
 
 .otp-project-tag:hover {
-  background: rgba(255, 255, 255, 0.15);
-  color: white;
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
 }
 
 .otp-project-completion {
-  margin-top: 15px;
+    margin-top: 15px;
 }
 
 .otp-completion-info {
-  display: flex;
-  justify-content: space-between;
-  color: #f1f5f9;
-  font-size: 0.9rem;
-  font-weight: 700;
-  margin-bottom: 12px;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
+    display: flex;
+    justify-content: space-between;
+    color: #f1f5f9;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
 }
 
 .otp-completion-bar-bg {
-  width: 100%;
-  height: 8px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 20px;
-  overflow: hidden;
-  padding: 1px;
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 1px;
 }
 
 .otp-completion-bar-fill {
-  height: 100%;
-  border-radius: 20px;
-  transition: width 1.5s cubic-bezier(0.65, 0, 0.35, 1);
-  position: relative;
+    height: 100%;
+    border-radius: 20px;
+    transition: width 1.5s cubic-bezier(0.65, 0, 0.35, 1);
+    position: relative;
 }
 
 .otp-completion-bar-fill::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  animation: shine 2s infinite linear;
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    animation: shine 2s infinite linear;
 }
 
 @keyframes shine {
-  from {
-    transform: translateX(-100%);
-  }
+    from {
+        transform: translateX(-100%);
+    }
 
-  to {
-    transform: translateX(100%);
-  }
+    to {
+        transform: translateX(100%);
+    }
 }
 
 /* Mobile Responsiveness */
 @media (max-width: 1250px) {
-  .otp-project-card-new {
-    width: 110%;
-    margin-left: -15%;
-  }
+    .otp-project-card-new {
+        width: 110%;
+        margin-left: -15%;
+    }
 }
 
 @media (max-width: 1100px) {
-  .otp-projects-section-redesign {
-    flex-direction: column;
-    min-height: auto;
-  }
+    .otp-projects-section-redesign {
+        flex-direction: column;
+        min-height: auto;
+    }
 
-  .otp-projects-left {
-    padding: 80px 5%;
-    text-align: center;
-  }
+    .otp-projects-left {
+        padding: 80px 5%;
+        text-align: center;
+    }
 
-  .otp-projects-left-content {
-    margin: 0 auto;
-  }
+    .otp-projects-left-content {
+        margin: 0 auto;
+    }
 
-  .otp-projects-quote {
-    text-align: left;
-  }
+    .otp-projects-quote {
+        text-align: left;
+    }
 
-  .otp-projects-right {
-    width: 100%;
-    padding: 80px 5%;
-  }
+    .otp-projects-right {
+        width: 100%;
+        padding: 80px 5%;
+    }
 
-  .otp-project-card-new {
-    width: 100%;
-    margin-left: 0;
-    padding: 30px;
-  }
+    .otp-project-card-new {
+        width: 100%;
+        margin-left: 0;
+        padding: 30px;
+    }
 
-  .otp-projects-scroll-wrapper {
-    height: auto;
-    padding-right: 0;
-  }
+    .otp-projects-scroll-wrapper {
+        height: auto;
+        padding-right: 0;
+    }
 }
 
 
 /* Members Section - High Fidelity Update */
 .otp-members-section {
-  background: #cdc5c2 !important;
-  /* Exact color from the first image */
-  padding: 100px 0;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  position: relative;
+    background: #cdc5c2 !important;
+    /* Exact color from the first image */
+    padding: 100px 0;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative;
 }
 
 .otp-members-section .otp-section-title {
-  font-family: 'Poppins', sans-serif !important;
-  /* Style from 'APRUCOS' image */
-  color: #1a1a1c !important;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  background: none !important;
-  -webkit-text-fill-color: initial !important;
-  margin-bottom: 15px;
+    font-family: 'Poppins', sans-serif !important;
+    /* Style from 'APRUCOS' image */
+    color: #1a1a1c !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: none !important;
+    -webkit-text-fill-color: initial !important;
+    margin-bottom: 15px;
 }
 
 .otp-members-section .otp-section-subtitle {
-  color: #4b5563 !important;
-  font-family: 'Aldrich', monospace;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+    color: #4b5563 !important;
+    font-family: 'Aldrich', monospace;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .otp-members-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  display: grid !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    display: grid !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 .otp-member-card {
-  background: #0d1117;
-  border-radius: 25px;
-  padding: 30px;
-  /* Increased padding for full content spread */
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  position: relative;
-  display: flex !important;
-  flex-direction: column;
-  min-height: 400px;
-  /* Ensure uniform card size */
+    background: #0d1117;
+    border-radius: 25px;
+    padding: 30px;
+    /* Increased padding for full content spread */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    display: flex !important;
+    flex-direction: column;
+    min-height: 400px;
+    /* Ensure uniform card size */
 }
 
 .otp-member-card:hover {
-  transform: translateY(-10px);
-  border-color: rgba(108, 92, 231, 0.4);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+    transform: translateY(-10px);
+    border-color: rgba(108, 92, 231, 0.4);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
 }
 
 .otp-member-content-news {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .otp-member-tag-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 .otp-member-avatar-pill {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Zen Dots', sans-serif;
-  font-size: 1.2rem;
-  color: white;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Zen Dots', sans-serif;
+    font-size: 1.2rem;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .otp-member-date-news {
-  font-family: 'Aldrich', monospace;
-  font-size: 0.8rem;
-  color: #64748b;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+    font-family: 'Aldrich', monospace;
+    font-size: 0.8rem;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .otp-member-title-news {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #fff;
-  line-height: 1.3;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.3;
 }
 
 .otp-member-excerpt-news {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1rem;
-  color: #94a3b8;
-  line-height: 1.6;
-  font-style: italic;
-  margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: #94a3b8;
+    line-height: 1.6;
+    font-style: italic;
+    margin-bottom: 20px;
 }
 
 .otp-member-skills-flow {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
 }
 
 .otp-member-skill-item {
-  background: rgba(255, 255, 255, 0.03);
-  color: #f1f5f9;
-  padding: 6px 12px;
-  border-radius: 8px;
-  font-size: 0.8rem;
-  font-weight: 500;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  display: flex;
-  align-items: center;
-  gap: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    color: #f1f5f9;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .otp-skill-icon {
-  color: #6c5ce7;
-  font-size: 0.7rem;
+    color: #6c5ce7;
+    font-size: 0.7rem;
 }
 
 .otp-member-footer-full {
-  margin-top: auto;
-  display: flex;
-  gap: 30px;
-  padding-top: 25px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+    margin-top: auto;
+    display: flex;
+    gap: 30px;
+    padding-top: 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .otp-member-stat-box {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .otp-stat-val {
-  font-family: 'Zen Dots', sans-serif;
-  font-size: 1.3rem;
-  color: #fff;
-  margin-bottom: 4px;
+    font-family: 'Zen Dots', sans-serif;
+    font-size: 1.3rem;
+    color: #fff;
+    margin-bottom: 4px;
 }
 
 .otp-stat-lbl {
-  font-family: 'Aldrich', monospace;
-  font-size: 0.65rem;
-  color: #64748b;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 700;
+    font-family: 'Aldrich', monospace;
+    font-size: 0.65rem;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
 }
 
 /* Team Count Section - Redesigned as Custom Design Card */
 .otp-team-count-container {
-  margin-top: 80px;
-  text-align: center;
-  width: 100%;
+    margin-top: 80px;
+    text-align: center;
+    width: 100%;
 }
 
 .otp-team-count-card {
-  position: relative;
-  background: url('../../../assets/Tech-block.png') no-repeat center center;
-  background-size: cover;
-  border-radius: 40px;
-  padding: 80px 40px;
-  margin: 0 auto;
-  min-height: 400px;
-  max-width: 1100px;
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.45);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    background: url('../../../assets/Tech-block.png') no-repeat center center;
+    background-size: cover;
+    border-radius: 40px;
+    padding: 80px 40px;
+    margin: 0 auto;
+    min-height: 400px;
+    max-width: 1100px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .otp-team-count-card::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 60%, rgba(0, 0, 0, 0.9) 100%);
-  z-index: 1;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 60%, rgba(0, 0, 0, 0.9) 100%);
+    z-index: 1;
 }
 
 .otp-team-count-content {
-  position: relative;
-  z-index: 10;
-  text-align: center;
-  width: 100%;
-  max-width: 850px;
-  display: flex !important;
-  flex-direction: column;
-  gap: 20px;
-  align-items: center;
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    width: 100%;
+    max-width: 850px;
+    display: flex !important;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
 }
 
 .otp-card-watermark {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: 'Zen Dots', sans-serif;
-  font-size: 6rem;
-  color: rgba(255, 255, 255, 0.05);
-  white-space: nowrap;
-  pointer-events: none;
-  z-index: 2;
-  letter-spacing: 12px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Zen Dots', sans-serif;
+    font-size: 6rem;
+    color: rgba(255, 255, 255, 0.05);
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 2;
+    letter-spacing: 12px;
 }
 
 .otp-card-main-title-new {
-  font-family: 'Poppins', sans-serif;
-  font-size: 2.8rem;
-  color: #ffffff;
-  margin-bottom: 20px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  z-index: 5;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.8rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    z-index: 5;
 }
 
 .otp-card-desc-new {
-  font-family: 'Aldrich', monospace;
-  font-size: 1.15rem;
-  line-height: 1.9;
-  color: rgba(255, 255, 255, 0.9);
-  max-width: 90%;
-  margin: 0 auto;
-  z-index: 5;
-  letter-spacing: 0.5px;
+    font-family: 'Aldrich', monospace;
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 90%;
+    margin: 0 auto;
+    z-index: 5;
+    letter-spacing: 0.5px;
 }
 
 /* Timeline Section */
 .otp-timeline-section {
-  background: transparent;
-  position: relative;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+    background: transparent;
+    position: relative;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 .otp-timeline-container {
-  position: relative;
-  padding: 40px 0 80px;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+    position: relative;
+    padding: 40px 0 80px;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 /* Year Headers */
 .otp-year-headers {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 60px;
-  padding: 0 100px;
-  display: flex !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+    padding: 0 100px;
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 .otp-year-header {
-  text-align: center;
-  position: relative;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+    text-align: center;
+    position: relative;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 .otp-year-header h3 {
-  font-size: 2.5rem;
-  margin-bottom: 5px;
-  color: var(--year-color);
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+    color: var(--year-color);
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 .otp-year-label {
-  font-family: 'Aldrich', monospace;
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.6);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+    font-family: 'Aldrich', monospace;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 /* Timeline Center Line */
 .otp-timeline-center-line {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  bottom: 0;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  display: flex !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 .otp-timeline-line {
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(to bottom,
-      transparent,
-      rgba(78, 205, 196, 0.3),
-      rgba(255, 107, 107, 0.3),
-      transparent);
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom,
+            transparent,
+            rgba(78, 205, 196, 0.3),
+            rgba(255, 107, 107, 0.3),
+            transparent);
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 .otp-timeline-progress {
-  position: absolute;
-  top: 0;
-  width: 2px;
-  height: 0;
-  background: linear-gradient(to bottom, #4ecdc4, #ff6b6b);
-  animation: otp-timeline-progress 3s ease-out forwards;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+    position: absolute;
+    top: 0;
+    width: 2px;
+    height: 0;
+    background: linear-gradient(to bottom, #4ecdc4, #ff6b6b);
+    animation: otp-timeline-progress 3s ease-out forwards;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 @keyframes otp-timeline-progress {
-  to {
-    height: 100%;
-  }
+    to {
+        height: 100%;
+    }
 }
 
 /* Timeline Items Container */
 .otp-timeline-items {
-  position: relative;
-  z-index: 2;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+    position: relative;
+    z-index: 2;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 /* Timeline Card */
 .otp-timeline-card {
-  position: relative;
-  margin-bottom: 60px;
-  opacity: 0;
-  animation: otp-card-fade-in 0.8s forwards;
-  animation-delay: calc(var(--index) * 0.1s);
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+    position: relative;
+    margin-bottom: 60px;
+    animation: otp-card-fade-in 0.8s forwards;
+    animation-delay: calc(var(--index) * 0.1s);
+    display: flex !important;
+    align-items: center;
+    visibility: visible !important;
+    opacity: 1 !important;
+    min-height: 140px;
 }
 
 @keyframes otp-card-fade-in {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Year Indicator (Desktop) */
 .otp-timeline-year {
-  position: absolute;
-  top: -25px;
-  font-family: 'HEXCO', sans-serif;
-  font-size: 1rem;
-  font-weight: 100;
-  letter-spacing: 2px;
-  z-index: 3;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'HEXCO', sans-serif;
+    font-size: 1rem;
+    font-weight: 100;
+    letter-spacing: 2px;
+    z-index: 3;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 .otp-timeline-left .otp-timeline-year {
-  right: calc(50% + 30px);
-  text-align: right;
+    right: calc(50% + 30px);
+    text-align: right;
 }
 
 .otp-timeline-right .otp-timeline-year {
-  left: calc(50% + 30px);
-  text-align: left;
+    left: calc(50% + 30px);
+    text-align: left;
 }
 
 .otp-timeline-mobile-year {
-  margin-left: 7%;
+    margin-left: 7%;
 }
 
 /* Quarter Container (Desktop) */
 .otp-quarter-container {
-  position: absolute;
-  top: 0;
-  display: flex;
-  align-items: center;
-  z-index: 3;
-  display: flex !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    z-index: 3;
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 .otp-timeline-left .otp-quarter-container {
-  right: calc(50% + 15px);
-  flex-direction: row-reverse;
+    right: calc(50% + 15px);
+    flex-direction: row-reverse;
 }
 
 .otp-timeline-right .otp-quarter-container {
-  left: calc(50% + 15px);
-  flex-direction: row;
+    left: calc(50% + 15px);
+    flex-direction: row;
 }
 
 /* Quarter Badge */
 .otp-quarter-badge {
-  font-family: 'Aldrich', monospace;
-  font-size: 0.8rem;
-  padding: 6px 12px;
-  color: white;
-  border-radius: 4px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  white-space: nowrap;
-  z-index: 4;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  display: inline-block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+    font-family: 'Aldrich', monospace;
+    font-size: 0.8rem;
+    padding: 6px 12px;
+    color: white;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    z-index: 4;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 /* Mobile Quarter Badge */
 .otp-mobile-quarter-badge {
-  display: none;
-  font-family: 'Aldrich', monospace;
-  font-size: 0.75rem;
-  padding: 5px 10px;
-  color: white;
-  border-radius: 4px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  white-space: nowrap;
-  margin-bottom: 10px;
-  width: fit-content;
-  display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
+    display: none;
+    font-family: 'Aldrich', monospace;
+    font-size: 0.75rem;
+    padding: 5px 10px;
+    color: white;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin-bottom: 10px;
+    width: fit-content;
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
 }
 
 /* Connector Line */
 .otp-connector-line {
-  width: 30px;
-  height: 2px;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+    width: 30px;
+    height: 2px;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 .otp-timeline-left .otp-connector-line {
-  margin-right: 10px;
+    margin-right: 10px;
 }
 
 .otp-timeline-right .otp-connector-line {
-  margin-left: 10px;
+    margin-left: 10px;
 }
 
-/* Timeline Dot */
-.otp-timeline-dot {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  transform: translateX(-50%);
-  border: 3px solid #0a0a0a;
-  z-index: 3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  display: flex !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+/* Center Anchor — wraps dot + label, positioned at centerline */
+.otp-timeline-center-anchor {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 0;
+    z-index: 4;
+    pointer-events: none;
 }
+
+/* Timeline Dot — exactly on the center line */
+.otp-timeline-dot {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 3px solid #0a0a0a;
+    z-index: 5;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: all;
+}
+
+/* Dot label: year + phase badge — beside the dot */
+.otp-timeline-dot-label {
+    position: absolute;
+    top: 0;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    white-space: nowrap;
+}
+
+/* Left cards: label appears to the RIGHT of center line */
+.otp-timeline-left .otp-timeline-dot-label {
+    left: calc(50% + 20px);
+}
+
+/* Right cards: label appears to the LEFT of center line */
+.otp-timeline-right .otp-timeline-dot-label {
+    right: calc(50% + 20px);
+    align-items: flex-end;
+}
+
 
 .otp-dot-inner {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: white;
-  animation: otp-dot-pulse 2s infinite;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+    animation: otp-dot-pulse 2s infinite;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 @keyframes otp-dot-pulse {
 
-  0%,
-  100% {
-    transform: scale(1);
-    opacity: 0.8;
-  }
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
 
-  50% {
-    transform: scale(1.2);
-    opacity: 1;
-  }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
 }
 
 /* Timeline Content */
 .otp-timeline-content {
-  max-width: 45%;
-  padding: 25px;
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(10px);
-  border-radius: 12px;
-  position: relative;
-  transition: all 0.3s ease;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+    max-width: 45%;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    position: relative;
+    transition: all 0.3s ease;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 .otp-timeline-left .otp-timeline-content {
-  margin-left: auto;
-  margin-right: calc(50% + 40px);
+    margin-left: auto;
+    margin-right: calc(50% + 40px);
 }
 
 .otp-timeline-right .otp-timeline-content {
-  margin-left: calc(50% + 40px);
+    margin-left: calc(50% + 40px);
 }
 
 .otp-timeline-content:hover {
-  background: rgba(255, 255, 255, 0.05);
-  transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-5px);
 }
 
 /* Content Header */
 .otp-content-header {
-  margin-bottom: 20px;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+    margin-bottom: 20px;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 .otp-timeline-title {
-  font-size: 1.4rem;
-  margin-bottom: 10px;
-  color: #ffffff;
-  line-height: 1.3;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+    line-height: 1.3;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 .otp-timeline-description {
-  font-family: 'Aldrich', monospace;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.8);
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+    font-family: 'Aldrich', monospace;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 /* Team Members Involved */
 .otp-timeline-team {
-  padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 .otp-team-heading {
-  font-family: 'Aldrich', monospace;
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.6);
-  margin-bottom: 12px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+    font-family: 'Aldrich', monospace;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 .otp-team-list {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  display: flex !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 .otp-team-member {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  display: flex !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 .otp-team-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  flex-shrink: 0;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 .otp-team-name {
-  font-family: 'Aldrich', monospace;
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.7);
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+    font-family: 'Aldrich', monospace;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 /* Glow Effect */
 .otp-content-glow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.05;
-  pointer-events: none;
-  border-radius: 12px;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 0.05 !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.05;
+    pointer-events: none;
+    border-radius: 12px;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 0.05 !important;
 }
 
 /* Timeline Navigation */
 .otp-timeline-navigation {
-  display: flex;
-  justify-content: center;
-  margin-top: 40px;
-  display: flex !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 .otp-navigation-dots {
-  display: flex;
-  gap: 10px;
-  display: flex !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+    display: flex;
+    gap: 10px;
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 .otp-navigation-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
-  animation: otp-navigation-pulse 1.5s infinite;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    animation: otp-navigation-pulse 1.5s infinite;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 
 
-/* Premium Review Slider Redesign */
+/* =============================================
+   REVIEWS — CENTERED DOWNWARD SCROLL (Red + White)
+   ============================================= */
 .otp-reviews-section {
-  background: #f4f5f8;
-  padding: 120px 0;
-  overflow: hidden;
+    background: #000000;
+    padding: 80px 0 0;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Decorative black elements on the left & right sides */
+.otp-reviews-deco {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.otp-deco-left {
+    left: 10%;
+}
+
+.otp-deco-right {
+    right: 10%;
+}
+
+.otp-deco-icon {
+    font-size: 8rem;
+    color: #ffffff;
+}
+
+.otp-deco-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #ffffff;
+    letter-spacing: 4px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+}
+
+/* Centered header */
+.otp-reviews-centered-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 2;
+}
+
+.otp-reviews-badge {
+    display: inline-block;
+    background: rgba(220, 20, 60, 0.15);
+    border: 1.5px solid rgba(220, 20, 60, 0.5);
+    color: #ff4d6d;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 7px 20px;
+    border-radius: 100px;
+    margin-bottom: 20px;
 }
 
 .otp-section-title-reviews-new {
-  font-family: 'Poppins', sans-serif;
-  font-size: 3.9rem;
-  font-weight: 700;
-  color: #1a1a1c;
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  margin-bottom: 60px;
-  text-align: center;
-  opacity: 0.8;
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -1px;
+    margin: 0;
+    line-height: 1.15;
 }
 
+/* Marquee outer — fixed height window */
+.otp-reviews-marquee-outer {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+/* Fade masks at left & right */
+.otp-marquee-fade-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 120px;
+    background: linear-gradient(to right, #000000, transparent);
+    z-index: 10;
+    pointer-events: none;
+}
+
+.otp-marquee-fade-bottom {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 120px;
+    background: linear-gradient(to left, #000000, transparent);
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* Track that scrolls continuously left to right */
+.otp-reviews-marquee-track {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    animation: otp-marquee-left-to-right 30s linear infinite;
+    padding: 10px 0;
+    width: max-content;
+}
+
+/* Pause on hover */
+.otp-reviews-marquee-outer:hover .otp-reviews-marquee-track {
+    animation-play-state: paused;
+}
+
+/* Left to right scroll */
+@keyframes otp-marquee-left-to-right {
+    0% {
+        transform: translateX(-33.33%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* === CARD STYLES — RED CARDS === */
+.otp-stack-card {
+    background: linear-gradient(135deg, #dc143c 0%, #a30f2d 100%) !important;
+    background-color: #dc143c !important;
+    border-radius: 18px;
+    padding: 24px 26px 20px 30px;
+    min-height: 200px;
+    min-width: 380px;
+    max-width: 420px;
+    position: relative;
+    box-shadow: 0 8px 28px rgba(220, 20, 60, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.otp-stack-card:hover {
+    box-shadow: 0 16px 44px rgba(220, 20, 60, 0.55);
+    transform: translateY(-4px);
+    z-index: 5;
+}
+
+/* White left border accent on red card */
+.otp-stack-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 14px;
+    bottom: 14px;
+    width: 4px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 0 4px 4px 0;
+}
+
+/* Card header: avatar | name+role | stars */
+.otp-stack-card-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 10px;
+}
+
+/* Avatar circle */
+.otp-stack-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+}
+
+.otp-stack-meta {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.otp-stack-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: #ffffff !important;
+    margin: 0;
+}
+
+.otp-stack-role {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.73rem;
+    color: #ffffff !important;
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+/* White pill star badge on red card */
+.otp-stack-stars-badge {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 5px 13px;
+    border-radius: 100px;
+    flex-shrink: 0;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.otp-stack-stars-badge svg {
+    color: #fff;
+    font-size: 0.7rem;
+}
+
+/* Review text — white on red card */
+.otp-stack-review-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    color: #ffffff !important;
+    line-height: 1.6;
+    margin: 0;
+    padding-left: 4px;
+}
+
+/* Sparkles — kept for decoration */
+.otp-sparkle {
+    position: absolute;
+    color: #dc143c;
+    font-size: 1.4rem;
+    animation: otp-sparkle-spin 4s linear infinite;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+@keyframes otp-sparkle-spin {
+    0% {
+        transform: rotate(0deg) scale(1);
+        opacity: 0.4;
+    }
+
+    50% {
+        transform: rotate(180deg) scale(1.4);
+        opacity: 0.9;
+    }
+
+    100% {
+        transform: rotate(360deg) scale(1);
+        opacity: 0.4;
+    }
+}
+
+
+
+/* Sparkle decorations */
+.otp-sparkle {
+    position: absolute;
+    color: #dc143c;
+    font-size: 1.4rem;
+    animation: otp-sparkle-spin 4s linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes otp-sparkle-spin {
+    0% {
+        transform: rotate(0deg) scale(1);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: rotate(180deg) scale(1.3);
+        opacity: 1;
+    }
+
+    100% {
+        transform: rotate(360deg) scale(1);
+        opacity: 0.5;
+    }
+}
+
+.otp-sparkle-1 {
+    top: 20px;
+    right: -20px;
+    animation-delay: 0s;
+}
+
+.otp-sparkle-2 {
+    bottom: 40px;
+    right: 10px;
+    animation-delay: 1.5s;
+    font-size: 1rem;
+}
+
+.otp-sparkle-3 {
+    top: -10px;
+    left: -15px;
+    animation-delay: 0.8s;
+}
+
+.otp-sparkle-4 {
+    bottom: 30px;
+    right: -10px;
+    animation-delay: 2s;
+    font-size: 1rem;
+}
+
+/* === RIGHT COLUMN — stacked cards === */
+.otp-reviews-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+}
+
+/* Each stacked card */
+.otp-stack-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 22px 24px 18px;
+    position: relative;
+    margin-bottom: -30px;
+    /* overlap peek effect like reference */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    animation: otp-stack-card-in 0.6s ease forwards;
+    animation-delay: calc(var(--card-index) * 0.12s);
+    opacity: 0;
+}
+
+@keyframes otp-stack-card-in {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slight rotation like reference image */
+.otp-stack-card-0 {
+    transform: rotate(-1deg);
+    background: #fff0f2;
+}
+
+.otp-stack-card-1 {
+    transform: rotate(0.5deg);
+    background: #ffffff;
+}
+
+.otp-stack-card-2 {
+    transform: rotate(-0.8deg);
+    background: #fff5f6;
+}
+
+.otp-stack-card-3 {
+    transform: rotate(0.6deg);
+    background: #ffffff;
+    margin-bottom: 0;
+}
+
+.otp-stack-card:hover {
+    transform: rotate(0deg) translateY(-8px) !important;
+    box-shadow: 0 20px 48px rgba(220, 20, 60, 0.2);
+    z-index: 10;
+}
+
+/* Red left-border accent per card */
+.otp-stack-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 16px;
+    bottom: 16px;
+    width: 4px;
+    background: linear-gradient(to bottom, #dc143c, #ff4d6d);
+    border-radius: 4px;
+}
+
+/* Card header row: avatar | name+role | stars badge */
+.otp-stack-card-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 12px;
+}
+
+/* Circular avatar */
+.otp-stack-avatar {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(220, 20, 60, 0.4);
+}
+
+/* Name / role text */
+.otp-stack-meta {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.otp-stack-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #111;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.otp-stack-role {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.75rem;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+/* Star badge pill — dark pill like reference */
+.otp-stack-stars-badge {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: #111;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 100px;
+    flex-shrink: 0;
+}
+
+.otp-stack-stars-badge svg,
+.otp-stack-stars-badge .fa-star {
+    color: #dc143c;
+    font-size: 0.75rem;
+}
+
+/* Review body text */
+.otp-stack-review-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.88rem;
+    color: #374151;
+    line-height: 1.6;
+    margin: 0;
+    padding-left: 16px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .otp-reviews-inner {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .otp-reviews-left {
+        flex: none;
+        width: 100%;
+        position: static;
+        align-items: center;
+        text-align: center;
+    }
+
+    .otp-section-title-reviews-new {
+        font-size: 2.2rem;
+    }
+
+    .otp-stack-card {
+        margin-bottom: -20px;
+    }
+}
+
+
+
 .otp-reviews-slider-wrapper {
-  position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 450px;
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 450px;
 }
 
 .otp-slide-tracker {
-  position: relative;
-  width: 100%;
-  height: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .otp-review-slide {
-  position: absolute;
-  width: 600px;
-  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  opacity: 0;
-  pointer-events: none;
-  z-index: 1;
+    position: absolute;
+    width: 600px;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1;
 }
 
 .otp-review-slide.active-slide {
-  opacity: 1;
-  transform: translate3d(0, 0, 0) scale(1.1);
-  z-index: 10;
-  pointer-events: auto;
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1.1);
+    z-index: 10;
+    pointer-events: auto;
 }
 
 .otp-review-slide.prev-slide {
-  opacity: 0.5;
-  transform: translate3d(-350px, 0, -100px) scale(0.85);
-  z-index: 5;
+    opacity: 0.5;
+    transform: translate3d(-350px, 0, -100px) scale(0.85);
+    z-index: 5;
 }
 
 .otp-review-slide.next-slide {
-  opacity: 0;
-  transform: translate3d(350px, 0, -100px) scale(0.85);
+    opacity: 0;
+    transform: translate3d(350px, 0, -100px) scale(0.85);
 }
 
 /* Logic for next slide visibility - we only show 3 if possible */
 .otp-review-slide.next-slide {
-  opacity: 0.5;
-  transform: translate3d(350px, 0, -100px) scale(0.85);
-  z-index: 5;
+    opacity: 0.5;
+    transform: translate3d(350px, 0, -100px) scale(0.85);
+    z-index: 5;
 }
 
 .otp-review-card-premium {
-  background: #ffffff;
-  padding: 50px 60px;
-  border-radius: 4px;
-  /* Slightly rounded as in image */
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
-  text-align: center;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 25px;
+    background: #ffffff;
+    padding: 50px 60px;
+    border-radius: 4px;
+    /* Slightly rounded as in image */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+/* Responsive Contact Cards */
+@media (max-width: 768px) {
+  /* 1. Change the row into a column to stack the cards */
+  .otp-contact-cards-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Space between the Email and Phone cards */
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  /* 2. Adjust each card to fit the mobile width */
+  .otp-contact-card-small {
+    display: flex;
+    flex-direction: row; /* Keep icon and text side-by-side inside the card */
+    align-items: center;
+    width: 100% !important; /* Full width of the phone */
+    max-width: 350px; /* Prevents it from getting too huge on tablets */
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05); /* Assuming your dark theme */
+    border-radius: 12px;
+  }
+
+  /* 3. Scale the icon box for touch screens */
+  .otp-card-icon-box {
+    min-width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+  }
+
+  /* 4. Ensure the text wraps correctly */
+  .otp-contact-card-small-text {
+    margin-left: 15px;
+    text-align: left;
+    overflow: hidden;
+  }
+
+  .otp-card-small-title {
+    font-size: 16px !important;
+    margin: 0 0 5px 0;
+    color: #fff;
+  }
+
+  .otp-card-small-subtitle {
+    font-size: 13px !important;
+    color: #ccc;
+    word-break: break-all; /* Critical for long emails */
+    margin: 0;
+  }
 }
 
 .otp-card-stars {
-  display: flex;
-  gap: 5px;
+    display: flex;
+    gap: 5px;
 }
 
 .star-active {
-  color: #e91e63;
-  /* Pink color from image */
-  font-size: 1.2rem;
+    color: #e91e63;
+    /* Pink color from image */
+    font-size: 1.2rem;
 }
 
 .star-inactive {
-  color: #d1d5db;
-  /* Grey star */
-  font-size: 1.2rem;
+    color: #d1d5db;
+    /* Grey star */
+    font-size: 1.2rem;
 }
 
 .otp-premium-review-text {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.2rem;
-  line-height: 1.8;
-  color: #1f2937;
-  font-weight: 500;
-  max-width: 90%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #1f2937;
+    font-weight: 500;
+    max-width: 90%;
 }
 
 .otp-premium-user-footer {
-  margin-top: 10px;
+    margin-top: 10px;
 }
 
 .otp-premium-user-name {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #111827;
-  text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #111827;
+    text-transform: uppercase;
 }
 
 .otp-premium-location {
-  font-weight: 400;
-  color: #4b5563;
+    font-weight: 400;
+    color: #4b5563;
 }
 
 .otp-premium-quote-icon {
-  position: absolute;
-  bottom: -40px;
-  right: 50px;
-  width: 80px;
-  height: 80px;
-  color: #e91e63;
-  /* Pink quote */
-  z-index: 20;
+    position: absolute;
+    bottom: -40px;
+    right: 50px;
+    width: 80px;
+    height: 80px;
+    color: #e91e63;
+    /* Pink quote */
+    z-index: 20;
 }
 
 .quote-svg {
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 @media (max-width: 1024px) {
-  .otp-review-slide {
-    width: 80%;
-  }
+    .otp-review-slide {
+        width: 80%;
+    }
 
-  .otp-review-slide.prev-slide,
-  .otp-review-slide.next-slide {
-    display: none;
-    /* Hide side cards on tablet/mobile for focus */
-  }
+    .otp-review-slide.prev-slide,
+    .otp-review-slide.next-slide {
+        display: none;
+        /* Hide side cards on tablet/mobile for focus */
+    }
 
-  .otp-review-slide.active-slide {
-    transform: scale(1);
-  }
+    .otp-review-slide.active-slide {
+        transform: scale(1);
+    }
 }
 
 @media (max-width: 768px) {
-  .otp-review-card-premium {
-    padding: 40px 30px;
-  }
+    .otp-review-card-premium {
+        padding: 40px 30px;
+    }
 
-  .otp-premium-review-text {
-    font-size: 1rem;
-  }
+    .otp-premium-review-text {
+        font-size: 1rem;
+    }
 
-  .otp-premium-quote-icon {
-    width: 60px;
-    height: 60px;
-    bottom: -30px;
-    right: 30px;
-  }
+    .otp-premium-quote-icon {
+        width: 60px;
+        height: 60px;
+        bottom: -30px;
+        right: 30px;
+    }
 }
 
 
-/* Contact Section Redesign Matching Image */
+/* =============================================
+   CONTACT SECTION — BLACK & RED REDESIGN
+   ============================================= */
 .otp-contact-section {
-  padding: 80px 0;
-  background: #0b0f19;
-  /* Dark deep blue background from the image */
+    padding: 100px 0 120px;
+    background: #050505;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animated red glow orbs in background */
+.otp-contact-section::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(220, 20, 60, 0.18) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: otp-contact-orb-drift 8s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+.otp-contact-section::after {
+    content: '';
+    position: absolute;
+    bottom: -80px;
+    right: -80px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(220, 20, 60, 0.14) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: otp-contact-orb-drift 10s ease-in-out infinite alternate-reverse;
+    pointer-events: none;
+}
+
+@keyframes otp-contact-orb-drift {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(60px, -60px);
+    }
+}
+
+/* Grid line texture overlay */
+.otp-contact-section .otp-container {
+    position: relative;
+    z-index: 2;
 }
 
 .otp-contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: flex-start;
-  max-width: 1100px;
-  margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: flex-start;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 /* Left Side Info */
 .otp-contact-info {
-  margin-top: 20px;
-  display: flex !important;
-  flex-direction: column;
+    margin-top: 20px;
+    display: flex !important;
+    flex-direction: column;
+    animation: otp-contact-slide-in-left 0.9s ease forwards;
+}
+
+@keyframes otp-contact-slide-in-left {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .otp-contact-title {
-  font-family: 'Poppins', sans-serif;
-  font-size: 3.5rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 20px;
-  line-height: 1.1;
-  letter-spacing: -1px;
-  text-align: left;
+    font-family: 'Poppins', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    text-align: left;
+    position: relative;
+}
+
+/* Red underline accent on title */
+.otp-contact-title::after {
+    content: '';
+    display: block;
+    margin-top: 14px;
+    width: 70px;
+    height: 4px;
+    background: linear-gradient(90deg, #dc143c, #ff4d6d);
+    border-radius: 4px;
+    box-shadow: 0 0 12px rgba(220, 20, 60, 0.6);
+    animation: otp-underline-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes otp-underline-glow {
+    from {
+        box-shadow: 0 0 8px rgba(220, 20, 60, 0.5);
+        width: 70px;
+    }
+
+    to {
+        box-shadow: 0 0 20px rgba(220, 20, 60, 0.9);
+        width: 90px;
+    }
 }
 
 .otp-contact-subtitle {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #94a3b8;
-  /* Light gray text */
-  max-width: 450px;
-  text-align: left;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #9ca3af;
+    max-width: 420px;
+    text-align: left;
+    margin-top: 20px;
 }
 
 /* Right Side Cards */
 .otp-contact-cards {
-  display: flex !important;
-  flex-direction: column;
-  gap: 25px;
+    display: flex !important;
+    flex-direction: column;
+    gap: 20px;
+    animation: otp-contact-slide-in-right 0.9s ease forwards;
 }
 
-/* Main Card */
+@keyframes otp-contact-slide-in-right {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Main WhatsApp Card */
 .otp-contact-card-main {
-  background: #1e2433;
-  /* Dark slate */
-  border-radius: 20px;
-  padding: 35px;
-  display: flex !important;
-  flex-direction: column;
-  gap: 25px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  /* Slight border for separation */
+    background: linear-gradient(135deg, #0f0f0f 0%, #1a0a0a 100%);
+    border-radius: 20px;
+    padding: 32px;
+    display: flex !important;
+    flex-direction: column;
+    gap: 22px;
+    border: 1px solid rgba(220, 20, 60, 0.25);
+    box-shadow: 0 0 30px rgba(220, 20, 60, 0.08), 0 8px 32px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.35s ease;
+}
+
+.otp-contact-card-main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #dc143c, transparent);
+    animation: otp-card-top-shimmer 3s linear infinite;
+}
+
+@keyframes otp-card-top-shimmer {
+    0% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.4;
+    }
+}
+
+.otp-contact-card-main:hover {
+    border-color: rgba(220, 20, 60, 0.5);
+    box-shadow: 0 0 50px rgba(220, 20, 60, 0.18), 0 12px 40px rgba(0, 0, 0, 0.6);
+    transform: translateY(-4px);
 }
 
 .otp-card-header {
-  display: flex !important;
-  justify-content: space-between;
-  align-items: flex-start;
+    display: flex !important;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
 .otp-card-header-text {
-  display: flex !important;
-  flex-direction: column;
-  gap: 8px;
+    display: flex !important;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .otp-card-label {
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: #34d399;
-  /* Mint green */
-  text-transform: uppercase;
-  letter-spacing: 2px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #dc143c;
+    text-transform: uppercase;
+    letter-spacing: 3px;
 }
 
 .otp-card-value {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: #ffffff;
-  margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0;
 }
 
-/* Icon Box used in all cards */
+/* Icon Box — red theme */
 .otp-card-icon-box {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  background: #25423f;
-  /* Deep teal/emerald background */
-  color: #4ade80;
-  /* Light emerald green icon */
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: rgba(220, 20, 60, 0.12);
+    color: #dc143c;
+    border: 1px solid rgba(220, 20, 60, 0.3);
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
 }
 
+.otp-contact-card-main:hover .otp-card-icon-box,
+.otp-contact-card-small:hover .otp-card-icon-box {
+    background: rgba(220, 20, 60, 0.25);
+    box-shadow: 0 0 16px rgba(220, 20, 60, 0.4);
+}
+
+/* WhatsApp Button */
 .otp-contact-btn-main {
-  width: 100%;
-  padding: 18px;
-  background: #2dd4bf;
-  /* Teal background for button */
-  color: #042f2e;
-  /* Very dark green/black text */
-  border: none;
-  border-radius: 12px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.1rem;
-  font-weight: 600;
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  cursor: pointer;
-  transition: opacity 0.2s, transform 0.2s;
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(90deg, #dc143c, #ff2d55);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(220, 20, 60, 0.45);
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+.otp-contact-btn-main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+    animation: otp-btn-shimmer 2.5s infinite;
+}
+
+@keyframes otp-btn-shimmer {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 200%;
+    }
 }
 
 .otp-contact-btn-main:hover {
-  opacity: 0.9;
-  transform: translateY(-2px);
+    transform: translateY(-3px) scale(1.01);
+    box-shadow: 0 10px 36px rgba(220, 20, 60, 0.65);
 }
 
 .otp-btn-icon {
-  font-size: 1.3rem;
+    font-size: 1.2rem;
 }
 
 /* Small Cards Row */
 .otp-contact-cards-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
-  /* Reduced from 25px */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
 }
 
 .otp-contact-card-small {
-  background: #1e2433;
-  border-radius: 20px;
-  padding: 12px 18px;
-  /* Reduced from 20px 15px */
-  display: flex !important;
-  flex-direction: row;
-  /* Changed to row */
-  align-items: center;
-  /* Center-align icon and text */
-  gap: 15px;
-  /* Space between icon and text */
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  transition: all 0.3s ease;
+    background: linear-gradient(135deg, #0f0f0f, #130808);
+    border-radius: 16px;
+    padding: 18px 16px;
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    gap: 14px;
+    border: 1px solid rgba(220, 20, 60, 0.18);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-.otp-contact-card-small-text {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
+.otp-contact-card-small::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #dc143c, #ff4d6d);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.otp-contact-card-small:hover::after {
+    transform: scaleX(1);
+}
+
+.otp-contact-card-small:hover {
+    border-color: rgba(220, 20, 60, 0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px rgba(220, 20, 60, 0.14);
 }
 
 .otp-contact-card-small .otp-card-icon-box {
-  /* margin-bottom: 20px;
-  margin-left: 42%; */
-  width: 40px;
-  height: 40px;
-  font-size: 1.1rem;
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    font-size: 1rem;
+}
+
+.otp-contact-card-small-text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 2px;
 }
 
 .otp-card-small-title {
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.95rem;
-  /* Reduced from 1.1rem */
-  font-weight: 600;
-  color: #ffffff;
-  margin: 0;
-  line-height: 1.2;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+    line-height: 1.2;
 }
 
 .otp-card-small-subtitle {
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.8rem;
-  /* Reduced from 0.9rem */
-  color: #94a3b8;
-  margin: 0;
-  line-height: 1.2;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.78rem;
+    color: #6b7280;
+    margin: 0;
+    line-height: 1.3;
 }
+
 
 /* Responsive Design - FIXED MOBILE TIMELINE */
 @media (max-width: 1200px) {
-  .otp-stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+    .otp-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
-  .otp-members-grid {
-    grid-template-columns: repeat(4, 1fr);
-    max-width: 700px;
-    margin: 0 auto;
-  }
+    .otp-members-grid {
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 700px;
+        margin: 0 auto;
+    }
 
-  .otp-team-count-card {
-    max-width: 850px;
-  }
+    .otp-team-count-card {
+        max-width: 850px;
+    }
 }
 
 @media (max-width: 1024px) {
-  .otp-title-text {
-    font-size: 4rem;
-  }
+    .otp-title-text {
+        font-size: 4rem;
+    }
 
-  .otp-section-title {
-    font-size: 2.5rem;
-  }
+    .otp-section-title {
+        font-size: 2.5rem;
+    }
 
-  .otp-year-headers {
-    padding: 0 20px;
-  }
+    .otp-year-headers {
+        padding: 0 20px;
+    }
 
-  .otp-timeline-mobile-year {
-    margin-left: 0%;
-  }
+    .otp-timeline-mobile-year {
+        margin-left: 0%;
+    }
 
-  /* Mobile timeline adjustments - FIXED */
-  .otp-quarter-container {
-    display: none !important;
-  }
+    /* Mobile timeline adjustments - FIXED */
+    .otp-quarter-container {
+        display: none !important;
+    }
 
-  .otp-timeline-year {
-    display: none !important;
-  }
+    .otp-timeline-year {
+        display: none !important;
+    }
 
-  /* Show mobile badge before content */
-  .otp-mobile-quarter-badge {
-    display: block;
-    position: absolute;
-    top: -25px;
-    left: 0;
-    z-index: 4;
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
+    /* Show mobile badge before content */
+    .otp-mobile-quarter-badge {
+        display: block;
+        position: absolute;
+        top: -25px;
+        left: 0;
+        z-index: 4;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
 
-  .otp-timeline-content {
-    max-width: calc(100% - 50px);
-    margin-left: 50px !important;
-    margin-right: 0 !important;
-    margin-top: 25px !important;
-  }
+    .otp-timeline-content {
+        max-width: calc(100% - 50px);
+        margin-left: 50px !important;
+        margin-right: 0 !important;
+        margin-top: 25px !important;
+    }
 
-  .otp-timeline-dot {
-    left: 25px;
-    top: -5px;
-  }
+    .otp-timeline-dot {
+        left: 25px;
+        top: -5px;
+    }
 
-  .otp-timeline-center-line {
-    left: 30px;
-  }
+    .otp-timeline-center-line {
+        left: 30px;
+    }
 
-  .otp-whatsapp-info {
-    flex-direction: column;
-    text-align: center;
-  }
+    .otp-whatsapp-info {
+        flex-direction: column;
+        text-align: center;
+    }
 
-  .otp-whatsapp-content {
-    text-align: center;
-    min-width: auto;
-  }
+    .otp-whatsapp-content {
+        text-align: center;
+        min-width: auto;
+    }
 
-  .otp-whatsapp-item {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 5px;
-  }
+    .otp-whatsapp-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 5px;
+    }
 
-  .otp-whatsapp-label {
-    min-width: auto;
-  }
+    .otp-whatsapp-label {
+        min-width: auto;
+    }
 
-  .otp-team-count-card {
-    max-width: 800px;
-    min-height: 200px;
-    padding: 35px 45px;
-    gap: 40px;
-  }
+    .otp-team-count-card {
+        max-width: 800px;
+        min-height: 200px;
+        padding: 35px 45px;
+        gap: 40px;
+    }
 
-  .otp-team-count-number {
-    font-size: 5.5rem;
-  }
+    .otp-team-count-number {
+        font-size: 5.5rem;
+    }
 
-  .otp-team-count-label {
-    font-size: 2rem;
-  }
+    .otp-team-count-label {
+        font-size: 2rem;
+    }
 
-  .otp-team-count-icon {
-    font-size: 4rem;
-  }
+    .otp-team-count-icon {
+        font-size: 4rem;
+    }
 
-  .otp-team-count-description {
-    font-size: 1.1rem;
-  }
+    .otp-team-count-description {
+        font-size: 1.1rem;
+    }
 }
 
 @media (max-width: 768px) {
-  .otp-title-text {
-    font-size: 3rem;
-  }
+    .otp-title-text {
+        font-size: 3rem;
+    }
 
-  .otp-title-sub {
-    font-size: 1.2rem;
-  }
+    .otp-title-sub {
+        font-size: 1.2rem;
+    }
 
-  .otp-header-description {
-    font-size: 1rem;
-  }
+    .otp-header-description {
+        font-size: 1rem;
+    }
 
-  .otp-section {
-    padding: 80px 0;
-  }
+    .otp-section {
+        padding: 80px 0;
+    }
 
-  .otp-section-title {
-    font-size: 2rem;
-  }
+    .otp-section-title {
+        font-size: 2rem;
+    }
 
-  .otp-stats-grid {
-    grid-template-columns: 1fr;
-    padding: 30px 20px;
-  }
+    .otp-stats-grid {
+        grid-template-columns: 1fr;
+        padding: 30px 20px;
+    }
 
-  .otp-projects-grid {
-    grid-template-columns: 1fr;
-  }
+    .otp-projects-grid {
+        grid-template-columns: 1fr;
+    }
 
-  .otp-members-grid {
-    grid-template-columns: 1fr;
-    max-width: 400px;
-  }
+    .otp-members-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
 
-  .otp-year-headers {
-    flex-direction: column;
-    gap: 30px;
-    align-items: center;
-    text-align: center;
-  }
+    .otp-year-headers {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+        text-align: center;
+    }
 
-  /* Further mobile timeline fixes */
-  .otp-timeline-content {
-    max-width: calc(100% - 40px);
-    margin-left: 40px !important;
-    padding: 20px;
-    margin-top: 30px !important;
-  }
+    /* Further mobile timeline fixes */
+    .otp-timeline-content {
+        max-width: calc(100% - 40px);
+        margin-left: 40px !important;
+        padding: 20px;
+        margin-top: 30px !important;
+    }
 
-  .otp-timeline-dot {
-    left: 20px;
-    width: 16px;
-    height: 16px;
-    top: -3px;
-  }
+    .otp-timeline-dot {
+        left: 20px;
+        width: 16px;
+        height: 16px;
+        top: -3px;
+    }
 
-  .otp-mobile-quarter-badge {
-    top: -30px;
-    left: 0;
-    font-size: 0.7rem;
-    padding: 4px 10px;
-  }
+    .otp-mobile-quarter-badge {
+        top: -30px;
+        left: 0;
+        font-size: 0.7rem;
+        padding: 4px 10px;
+    }
 
-  .otp-timeline-title {
-    font-size: 1.2rem;
-    margin-top: 5px;
-  }
+    .otp-timeline-title {
+        font-size: 1.2rem;
+        margin-top: 5px;
+    }
 
-  .otp-timeline-description {
-    font-size: 0.9rem;
-  }
+    .otp-timeline-description {
+        font-size: 0.9rem;
+    }
 
-  .otp-team-heading {
-    font-size: 0.85rem;
-  }
+    .otp-team-heading {
+        font-size: 0.85rem;
+    }
 
-  .otp-team-name {
-    font-size: 0.85rem;
-  }
+    .otp-team-name {
+        font-size: 0.85rem;
+    }
 
-  .otp-review-card {
-    padding: 30px 20px;
-  }
+    .otp-review-card {
+        padding: 30px 20px;
+    }
 
-  .otp-review-text {
-    font-size: 1rem;
-  }
+    .otp-review-text {
+        font-size: 1rem;
+    }
 
 
 
-  .otp-team-count-card {
-    flex-direction: column;
-    min-height: auto;
-    padding: 40px 35px;
-    gap: 25px;
-    max-width: 600px;
-    text-align: center;
-  }
+    .otp-team-count-card {
+        flex-direction: column;
+        min-height: auto;
+        padding: 40px 35px;
+        gap: 25px;
+        max-width: 600px;
+        text-align: center;
+    }
 
-  .otp-team-count-content {
-    text-align: center;
-    padding-top: 0;
-  }
+    .otp-team-count-content {
+        text-align: center;
+        padding-top: 0;
+    }
 
-  .otp-team-count-number {
-    font-size: 5rem;
-    margin-top: 0;
-    top: 0;
-  }
+    .otp-team-count-number {
+        font-size: 5rem;
+        margin-top: 0;
+        top: 0;
+    }
 
-  .otp-team-count-label {
-    font-size: 1.8rem;
-    margin-top: -10px;
-    left: 0;
-  }
+    .otp-team-count-label {
+        font-size: 1.8rem;
+        margin-top: -10px;
+        left: 0;
+    }
 
-  .otp-team-count-description {
-    max-width: 100%;
-    font-size: 1.1rem;
-    margin-left: 0;
-  }
+    .otp-team-count-description {
+        max-width: 100%;
+        font-size: 1.1rem;
+        margin-left: 0;
+    }
 
-  .otp-team-count-breakdown {
-    justify-content: center;
-    margin-left: 0;
-  }
+    .otp-team-count-breakdown {
+        justify-content: center;
+        margin-left: 0;
+    }
 
-  .otp-team-count-icon {
-    font-size: 4rem;
-    margin-left: 0;
-  }
+    .otp-team-count-icon {
+        font-size: 4rem;
+        margin-left: 0;
+    }
 }
 
 @media (max-width: 480px) {
-  .otp-title-text {
-    font-size: 2.5rem;
-  }
+    .otp-title-text {
+        font-size: 2.5rem;
+    }
 
-  .otp-title-sub {
-    font-size: 1rem;
-  }
+    .otp-title-sub {
+        font-size: 1rem;
+    }
 
-  .otp-stat-number {
-    font-size: 2.5rem;
-  }
+    .otp-stat-number {
+        font-size: 2.5rem;
+    }
 
-  .otp-team-count-card {
-    padding: 35px 25px;
-    max-width: 100%;
+    .otp-team-count-card {
+        padding: 35px 25px;
+        max-width: 100%;
+        gap: 20px;
+    }
+
+    .otp-team-count-number {
+        font-size: 4.5rem;
+    }
+
+    .otp-team-count-label {
+        font-size: 1.6rem;
+    }
+
+    .otp-team-count-description {
+        font-size: 1rem;
+    }
+}
+
+/* ==============================================================
+   CORE TEAM REDESIGN (Grid bg, Architectural Arches)
+   ============================================================== */
+.otp-core-team-redesign {
+    background-color: #050505;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+    background-size: 50px 50px;
+    padding: 80px 20px;
+    color: #fff;
+    position: relative;
+    width: 100%;
+}
+
+.otp-ct-header-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto 40px auto;
+    max-width: 1300px;
+}
+
+.otp-ct-title-light {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    font-weight: 300;
+    margin: 0;
+    text-align: center;
+    line-height: 1;
+}
+
+.otp-ct-title-bold {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3.8rem;
+    font-weight: 800;
+    margin: 0;
+    text-align: center;
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+.otp-ct-highlight {
+    color: #ffda44;
+    /* matching the image's yellow tone */
+}
+
+.otp-ct-desc {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    color: #aaa;
+    max-width: 850px;
+    margin: 25px auto 0;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.otp-ct-register {
+    margin-top: -10px;
+}
+
+.otp-ct-register-circle {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 218, 68, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #ffda44;
+    box-shadow: 0 0 30px rgba(255, 218, 68, 0.15) inset, 0 0 20px rgba(255, 218, 68, 0.1);
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.otp-ct-register-circle:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(255, 218, 68, 0.3) inset, 0 0 30px rgba(255, 218, 68, 0.2);
+}
+
+.otp-ct-social-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 5;
+}
+
+.otp-ct-social-icons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 12px;
+}
+
+.otp-ct-social-icon {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: 1px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.otp-ct-website {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    color: #fff;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.otp-ct-cards-area {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: -20px;
+    padding: 120px 20px 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+.otp-ct-card-new {
+    position: relative;
+    width: 280px;
+    height: 430px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+    padding: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    cursor: pointer;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    overflow: visible;
+}
+.otp-ct-arch-card-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    width: 100%;
+    flex-wrap: nowrap;
+}
+
+.otp-ct-card-new:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
+    z-index: 50 !important;
+}
+
+.otp-ct-avatar-container {
+    position: absolute;
+    top: -60px;
+    width: 200px;
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.otp-ct-avatar-img {
+    width: 320px;
+    height: 300px;
+    object-fit: contain;
+    filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.6));
+    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform-origin: bottom center;
+}
+
+.otp-ct-card-new:hover .otp-ct-avatar-img {
+    transform: scale(1.2) translateY(-20px);
+}
+
+.otp-ct-vertical-name {
+    position: absolute;
+    left: 20px;
+    bottom: 40px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-family: 'Poppins', sans-serif;
+    font-size: 4rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.05);
+    line-height: 1;
+    pointer-events: none;
+    transition: all 0.5s ease;
+}
+
+.otp-ct-card-new:hover .otp-ct-vertical-name {
+    color: rgba(255, 255, 255, 0.12);
+    transform: scale(1.05);
+}
+
+.otp-ct-member-info {
+    margin-top: auto;
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.otp-ct-member-name-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.otp-ct-member-role-text {
+    font-family: 'Aldrich', monospace;
+    font-size: 0.8rem;
+    color: #ffda44;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.otp-ct-card-new:nth-child(1) {
+    transform: translateY(40px) rotate(-15deg);
+}
+
+.otp-ct-card-new:nth-child(2) {
+    transform: translateY(-40px) rotate(0deg);
+    z-index: 5;
+}
+
+.otp-ct-card-new:nth-child(3) {
+    transform: translateY(15px) rotate(15deg);
+    z-index: 3;
+}
+
+.otp-ct-card-new:nth-child(4) {
+    transform: translateY(40px) rotate(15deg);
+}
+
+.otp-ct-card-new:hover {
+    transform: translateY(-40px) rotate(0deg) scale(1.1) !important;
+}
+
+@media (max-width: 1100px) {
+    .otp-ct-cards-area {
+        flex-wrap: wrap;
+        gap: 80px;
+        padding-top: 100px;
+    }
+
+    .otp-ct-card-new {
+        transform: none !important;
+        width: 100%;
+        max-width: 320px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .otp-ct-header-area {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .otp-ct-desc {
+        margin: 15px auto 0;
+    }
+
+    .otp-core-team-redesign {
+        padding: 40px 20px;
+        background-size: 30px 30px;
+    }
+}
+
+.otp-main-title,
+.otp-gradient-text {
+    font-family: 'Outfit', 'Poppins', sans-serif !important;
+}
+
+/* =============================================
+   PROJECTS SECTION: ANIMATED RED BENTO
+   ============================================= */
+
+.otp-projects-red-bento {
+    background-color: #030303;
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Background animated glow */
+.otp-projects-red-bento::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(220, 20, 60, 0.1) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    animation: otp-bento-pulse 8s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+@keyframes otp-bento-pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 1;
+    }
+}
+
+/* Header */
+.otp-projects-bento-header {
+    text-align: center;
+    max-width: 1500px;
+    margin: 0 auto 60px;
+    position: relative;
+    z-index: 2;
+    padding: 0 20px;
+}
+
+.otp-bento-badge {
+    display: inline-block;
+    background: rgba(220, 20, 60, 0.15);
+    border: 1px solid rgba(220, 20, 60, 0.5);
+    color: #ff4d6d;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 8px 20px;
+    border-radius: 100px;
+    margin-bottom: 20px;
+}
+
+.otp-bento-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.otp-bento-title-accent {
+    color: #dc143c;
+}
+
+.otp-bento-desc {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #9ca3af;
+}
+
+/* 4-Column Grid */
+.otp-projects-bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-  }
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+}
 
-  .otp-team-count-number {
-    font-size: 4.5rem;
-  }
+/* =============================================
+   CARD BASE — Tall cards, 2 per row
+   ============================================= */
+.otp-bento-card {
+    width: 100%;
+    min-height: 280px;
+    background: #dc143c;
+    padding: 10px;
+    /* Reduced paddings to allow images to be prominent */
+    position: relative;
+    overflow: hidden;
+    /* So border-radius affects images if they touch edges */
+    border: 1px solid rgba(255, 77, 109, 0.4);
+    /* Top corners and bottom corners rounded */
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.5s ease, box-shadow 0.4s ease;
+    animation: otp-bento-slide-up 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    opacity: 0;
+    transform: translateY(50px);
+    animation-delay: var(--delay);
+    /* Use drop-shadow filter instead of box-shadow so it follows the slanted clip-path! */
+    filter: drop-shadow(0 0 12px rgba(220, 20, 60, 0.4));
+}
 
-  .otp-team-count-label {
-    font-size: 1.6rem;
-  }
+/* Add an internal ::after block to provide the inset glow without being clipped weirdly */
+.otp-bento-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border-radius: 12px 12px 0 0;
+    box-shadow: inset 0 0 15px rgba(220, 20, 60, 0.3);
+    z-index: 10;
+}
 
-  .otp-team-count-description {
+/* Image Compartments Grid */
+.otp-card-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 70px 100px;
+    /* Top row squares, bottom row wide rectangle */
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.otp-gallery-item {
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    background-color: #2a2a35;
+    /* Fallback placeholder color */
+}
+
+.otp-gallery-sq-1 {
+    background: linear-gradient(135deg, #1f1c2c, #928DAB);
+}
+
+.otp-gallery-sq-2 {
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+}
+
+.otp-gallery-sq-3 {
+    background: linear-gradient(135deg, #4b1248, #F0C27B);
+}
+
+.otp-gallery-rect {
+    grid-column: span 3;
+    background: linear-gradient(135deg, #C21500, #FFC500);
+}
+
+@keyframes otp-bento-slide-up {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hover */
+.otp-bento-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: rgba(220, 20, 60, 0.8);
+    box-shadow: 0 0 30px rgba(220, 20, 60, 0.6), inset 0 0 25px rgba(220, 20, 60, 0.3);
+}
+
+/* Staggered float */
+.otp-bento-card:nth-child(1) {
+    animation: otp-bento-slide-up 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, otp-card-float-a 5s ease-in-out 1s infinite;
+}
+
+.otp-bento-card:nth-child(2) {
+    animation: otp-bento-slide-up 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, otp-card-float-b 6s ease-in-out 1.3s infinite;
+}
+
+.otp-bento-card:nth-child(3) {
+    animation: otp-bento-slide-up 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, otp-card-float-a 5.5s ease-in-out 1.6s infinite;
+}
+
+.otp-bento-card:nth-child(4) {
+    animation: otp-bento-slide-up 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, otp-card-float-b 6.5s ease-in-out 1.9s infinite;
+}
+
+@keyframes otp-card-float-a {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+@keyframes otp-card-float-b {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-4px);
+    }
+}
+
+@keyframes otp-bento-slide-up {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/* Responsive: stack on mobile */
+@media (max-width: 768px) {
+    .otp-projects-bento-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.otp-bento-card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at top right, rgba(220, 20, 60, 0.15) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.otp-bento-card:hover .otp-bento-card-bg {
+    opacity: 1;
+}
+
+.otp-bento-card-inner {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 15px;
+    /* Slight padding for inner content below gallery */
+    height: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.otp-bento-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+.otp-bento-icon {
+    width: 45px;
+    height: 45px;
+    background: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #dc0f0f;
+    transition: all 0.3s ease;
+}
+
+.otp-bento-card:hover .otp-bento-icon {
+    background: #f0f0f0;
+    color: #b00b0b;
+    transform: rotate(5deg) scale(1.1);
+}
+
+.otp-bento-status {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.25);
+    padding: 4px 12px;
+    border-radius: 100px;
+}
+
+.otp-bento-project-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.otp-bento-project-desc {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.5;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+/* Tags */
+.otp-bento-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.otp-bento-tag {
+    background: rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.75rem;
+    padding: 5px 10px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.otp-bento-card:hover .otp-bento-tag {
+    background: #ffffff;
+    border-color: #ffffff;
+    color: #dc0f0f;
+}
+
+/* Progress */
+.otp-bento-progress {
+    margin-top: auto;
+}
+
+.otp-bento-prog-label {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    color: #ffffff;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.otp-bento-prog-bar {
+    width: 100%;
+    height: 6px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.otp-bento-prog-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #ffffff, #f0f0f0);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Shimmer on progress bar */
+.otp-bento-prog-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transform: translateX(-100%);
+    animation: otp-bento-shimmer 2.5s infinite;
+}
+
+@keyframes otp-bento-shimmer {
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Abstract Quote Ticker */
+.otp-bento-ticker {
+    margin-top: 80px;
+    width: 100%;
+    background: #dc143c;
+    padding: 15px 0;
+    overflow: hidden;
+    transform: rotate(-1deg) scale(1.02);
+    box-shadow: 0 15px 30px rgba(220, 20, 60, 0.3);
+}
+
+.otp-bento-ticker-track {
+    display: flex;
+    white-space: nowrap;
+    gap: 30px;
+    animation: otp-bento-ticker-scroll 25s linear infinite;
+}
+
+.otp-bento-ticker-track span {
+    font-family: 'Poppins', sans-serif;
     font-size: 1rem;
-  }
+    font-weight: 600;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+@keyframes otp-bento-ticker-scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 1024px) {
+    .otp-contact-grid {
+        gap: 40px;
+        padding: 0 20px;
+    }
+    
+    .otp-contact-title {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .otp-bento-title {
+        font-size: 2.2rem;
+    }
+
+    .otp-bento-card {
+        flex: 1 1 100%;
+    }
+
+    /* Contact Section Mobile Responsiveness */
+    .otp-contact-section {
+        padding: 60px 0 80px;
+    }
+
+    .otp-contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 0 20px;
+    }
+
+    .otp-contact-info {
+        align-items: center;
+        text-align: center;
+    }
+
+    .otp-contact-title {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    .otp-contact-title::after {
+        margin: 14px auto 0;
+    }
+
+    .otp-contact-subtitle {
+        text-align: center;
+    }
+
+    .otp-contact-cards-row {
+        grid-template-columns: 1fr;
+    }
+
+    .otp-contact-card-main {
+        padding: 24px;
+    }
+
+    .otp-card-value {
+        font-size: 1.1rem;
+    }
 }

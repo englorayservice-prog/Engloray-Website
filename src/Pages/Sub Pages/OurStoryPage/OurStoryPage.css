@@ -489,6 +489,40 @@
   /* Shifted significantly left to align optically with description */
 }
 
+/* Responsive Typography for Mobile */
+@media (max-width: 768px) {
+
+  /* Target the large "Crafting the Engloray Legacy" title */
+  .osp-hero-main-title {
+    font-size: 28px !important;
+    /* Reduce from your current large size */
+    line-height: 1.2 !important;
+    text-align: left;
+    /* Keep it left-aligned or center it if preferred */
+    margin-bottom: 15px;
+    width: 100%;
+    /* Ensure it doesn't overflow */
+    word-wrap: break-word;
+  }
+
+  /* Target the "A story of passion..." description text */
+  .osp-hero-description {
+    font-size: 16px !important;
+    /* Smaller, readable size for mobile */
+    line-height: 1.5 !important;
+    width: 100%;
+    padding-right: 10px;
+    /* Gives a little breathing room on the right */
+  }
+
+  .hero-content-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
 .osp-hero-main-title span {
   background: linear-gradient(90deg, #a78bfa, #2dd4bf);
   -webkit-background-clip: text;
@@ -849,7 +883,80 @@
   }
 }
 
+@media (max-width: 768px) {
+  .osp-hero-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    align-items: center;
+    max-width: 300px;
+    margin: 0 auto;
+  }
 
+
+  .osp-hero-stats-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    padding: 15px 0;
+    background: transparent;
+  }
+
+  .osp-stat-card {
+    flex: 1 1 40%;
+    text-align: center;
+  }
+}
+
+/* Responsive Stats Grid for Mobile */
+@media (max-width: 768px) {
+  /* 1. Ensure the main container doesn't overflow */
+  .osp-stats-side {
+    width: 100% !important;
+    padding: 10px;
+    overflow: hidden;
+  }
+
+  /* 2. Change the grid to 2 columns instead of 4, or stack them */
+  .osp-grid-stats-box {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important; /* Two items per row */
+    gap: 20px;
+    width: 100% !important;
+  }
+  .osp-cta-desc-modern {
+    text-align: left;
+  }
+  /* 3. Style individual items to prevent text overflow */
+  .osp-stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  /* 4. Shrink the big numbers (20+, 1,000+, etc.) */
+  .osp-stat-num {
+    font-size: 28px !important; /* Smaller than desktop */
+    font-weight: bold;
+    display: block;
+    width: 100%;
+  }
+
+  /* 5. Shrink the sub-text (Years Of Experience, etc.) */
+  .osp-stat-sub {
+    font-size: 11px !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    display: block;
+    margin-top: 5px;
+  }
+}
 /* Container */
 .osp-container {
   max-width: 1200px;
@@ -1754,7 +1861,8 @@
   }
 
   .osp-vm-swapper-grid,
-  .osp-vm-swapper-grid.is-swapped {
+  .osp-vm-swapper-grid.is-swapped,
+  .osp-vm-scanner-grid {
     grid-template-columns: 1fr;
     text-align: center;
   }
@@ -1766,6 +1874,29 @@
   .osp-eclipse-beam {
     width: 100%;
     transform: translate(-50%, -50%) !important;
+  }
+
+  .osp-vm-left,
+  .osp-vm-right {
+    opacity: 1 !important;
+  }
+
+  .osp-vm-title {
+    font-size: 2.5rem;
+  }
+
+  .osp-vm-description {
+    font-size: 0.95rem;
+    margin: 0 auto;
+  }
+
+  .osp-vm-column {
+    padding: 20px;
+  }
+
+  .osp-eclipse-container {
+    max-width: 250px;
+    margin: 0 auto;
   }
 }
 
@@ -2010,6 +2141,14 @@
   border-radius: 10px;
   z-index: 2;
   animation: osp-spine-red-glow 2s ease-in-out infinite alternate;
+}
+
+@media (max-width: 768px) {
+  .osp-roadmap-vertical-line {
+    left: 25px !important;
+    transform: translateX(0) !important;
+    width: 8px !important;
+  }
 }
 
 @keyframes osp-spine-red-glow {
@@ -2305,42 +2444,101 @@
 /* Responsive Roadmap */
 @media (max-width: 900px) {
   .osp-roadmap-card {
-    padding: 40px 20px;
+    padding: 40px 15px;
+    border-radius: 30px;
   }
 
   .osp-roadmap-main-title {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
 
   .osp-roadmap-year {
-    font-size: 6rem;
+    font-size: 3rem;
   }
 
   .osp-roadmap-rocket-icon {
-    font-size: 4rem;
+    font-size: 3rem;
+  }
+
+  .osp-roadmap-header {
+    margin-left: 0;
+    justify-content: center;
+    text-align: center;
   }
 
   .osp-roadmap-item {
-    grid-template-columns: 80px 60px 1fr;
+    grid-template-columns: 50px 40px 1fr;
+    margin-bottom: 50px;
   }
 
   .osp-roadmap-q-side {
-    padding-right: 15px;
+    padding-right: 5px;
   }
 
   .osp-roadmap-q {
-    font-size: 4rem;
+    font-size: 1.2rem;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
   }
 
   .osp-roadmap-content-side {
-    padding-left: 20px;
+    padding-left: 15px;
   }
 
   .osp-roadmap-stage {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+  }
+
+  .osp-roadmap-item-title {
+    font-size: 1rem;
+  }
+
+  .osp-roadmap-item-desc {
+    font-size: 0.85rem;
   }
 }
+/* Remove Phase labels only in mobile view */
+/* Responsive Fix: Move Phase above Timeline Content */
+@media (max-width: 768px) {
+  /* 1. Stack Phase and Content vertically */
+  .osp-roadmap-item {
+    display: flex !important;
+    flex-direction: column !important; /* Forces Phase to stay on top */
+    align-items: flex-start !important;
+    gap: 8px !important; /* Space between Phase text and the card */
+    padding-left: 45px !important; /* Space for the vertical red line */
+    position: relative !important;
+  }
 
+  /* 2. Style the Phase text to sit naturally at the top */
+  .osp-roadmap-q-side {
+    width: auto !important;
+    position: relative !important; /* Removes absolute positioning that causes overlapping */
+    left: 0 !important;
+    margin: 0 !important;
+    display: block !important;
+  }
+
+  .osp-roadmap-q {
+    font-size: 14px !important;
+    font-weight: bold !important;
+    color: #ff6b6b !important; /* Use your red theme color */
+    text-align: left !important;
+    display: inline-block !important;
+  }
+
+  /* 3. Ensure the Card content takes full width below it */
+  .osp-roadmap-content-side {
+    width: 100% !important;
+    padding: 0 !important; /* Removes side padding since parent handles it */
+    text-align: left !important;
+  }
+
+  /* 4. Ensure the red line stays on the far left */
+  .osp-roadmap-vertical-line {
+    left: 20px !important; /* Keeps it behind the dots but cleared from text */
+  }
+}
 /* Expertise Section - Clean Logo Layout */
 .osp-projects-section {
   position: relative;

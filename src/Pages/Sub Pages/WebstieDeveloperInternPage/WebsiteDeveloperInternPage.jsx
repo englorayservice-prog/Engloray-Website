@@ -992,13 +992,13 @@ const WebsiteDeveloperInternPage = () => {
                           className={errors.agreeTerms ? 'WD-error' : ''}
                         />
                         <label htmlFor="agreeTerms">
-                          <FontAwesomeIcon icon={faCheckCircle} /> I agree to the Terms of Service and Privacy Policy
+                          I agree to the Terms of Service and Privacy Policy
                         </label>
                         {errors.agreeTerms && <span className="WD-error-message">{errors.agreeTerms}</span>}
                       </div>
 
                       <button type="submit" className="WD-submit-btn">
-                        <FontAwesomeIcon icon={faRocket} /> Register
+                        Register
                       </button>
                     </form>
                   </div>
@@ -1060,7 +1060,7 @@ const WebsiteDeveloperInternPage = () => {
                     A website developer builds and maintains the visual and functional aspects of websites. They use programming languages like HTML, CSS, and JavaScript to create responsive layouts, interactive elements, and seamless user experiences across various devices and platforms.
                   </p>
                   <button className="WD-banner-register-btn" onClick={() => setShowForm(true)}>
-                    <FontAwesomeIcon icon={faRocket} /> Register Now
+                    Register Now
                   </button>
                 </div>
               </div>
@@ -1125,13 +1125,13 @@ const WebsiteDeveloperInternPage = () => {
                                                     className={errors.agreeTerms ? 'WD-error' : ''}
                                                 />
                                                 <label htmlFor="agreeTerms">
-                                                    <FontAwesomeIcon icon={faCheckCircle} /> I agree to the Terms of Service and Privacy Policy
+                                                    I agree to the Terms of Service and Privacy Policy
                                                 </label>
                                                 {errors.agreeTerms && <span className="WD-error-message">{errors.agreeTerms}</span>}
                                             </div>
 
                                             <button type="submit" className="WD-submit-btn">
-                                                <FontAwesomeIcon icon={faRocket} /> Register
+                                                Register
                                             </button>
                                         </form>
                                     </div>
@@ -1140,23 +1140,16 @@ const WebsiteDeveloperInternPage = () => {
                                 <div className="WD-influencer-split">
                                     <div className="WD-influencer-left">
                                         <h2 className="WD-influencer-title">
-                                            Join <span className="WD-search-badge"><FontAwesomeIcon icon={faComments} style={{ fontSize: '0.6em', marginRight: '4px' }} /> Q</span> Our Codebase
+                                            Join <span className="WD-search-badge"><FontAwesomeIcon icon={faComments} style={{ fontSize: '0.6em', marginRight: '4px' }} /> Q</span> Our Course
                                             <br />
                                             <div className="WD-influencer-avatars">
                                                 <img src={iconGraduationCap} alt="Education Graduation Cap" />
                                                 <img src={iconEducationBook} alt="Education Book" />
                                                 <img src={iconCertificate} alt="Education Certificate" />
                                             </div>
-                                            to build apps
+                                            to collaborate
                                             <br />
                                             with us
-                                            {/* <div className="WD-influencer-search-bar">
-                        <span className="WD-search-placeholder"> Search</span>
-                        <div className="WD-search-actions">
-                          <FontAwesomeIcon icon={faStar} className="WD-voice-icon" />
-                          <button className="WD-search-submit"><FontAwesomeIcon icon={faComments} style={{ fontSize: '0.7em' }} /></button>
-                        </div>
-                      </div> */}
                                         </h2>
                                     </div>
                                     <div className="WD-influencer-right">
@@ -1193,7 +1186,7 @@ const WebsiteDeveloperInternPage = () => {
                     A website developer builds and maintains the visual and functional aspects of websites. They use programming languages like HTML, CSS, and JavaScript to create responsive layouts, interactive elements, and seamless user experiences across various devices and platforms.
                   </p>
                   <button className="WD-banner-register-btn" onClick={() => setShowForm(true)}>
-                    <FontAwesomeIcon icon={faRocket} /> Register Now
+                    Register Now
                   </button>
                 </div>
               </div>
@@ -1528,13 +1521,13 @@ const WebsiteDeveloperInternPage = () => {
                           className={errors.agreeTerms ? 'WD-error' : ''}
                         />
                         <label htmlFor="agreeTerms">
-                          <FontAwesomeIcon icon={faCheckCircle} /> I agree to the Terms of Service and Privacy Policy
+                          I agree to the Terms of Service and Privacy Policy
                         </label>
                         {errors.agreeTerms && <span className="WD-error-message">{errors.agreeTerms}</span>}
                       </div>
 
                       <button type="submit" className="WD-submit-btn">
-                        <FontAwesomeIcon icon={faRocket} /> Register
+                        Register
                       </button>
                     </form>
                   </div>
@@ -1596,7 +1589,7 @@ const WebsiteDeveloperInternPage = () => {
                     A website developer builds and maintains the visual and functional aspects of websites. They use programming languages like HTML, CSS, and JavaScript to create responsive layouts, interactive elements, and seamless user experiences across various devices and platforms.
                   </p>
                   <button className="WD-banner-register-btn" onClick={() => setShowForm(true)}>
-                    <FontAwesomeIcon icon={faRocket} /> Register Now
+                    Register Now
                   </button>
                 </div>
               </div>
@@ -1651,7 +1644,7 @@ const WebsiteDeveloperInternPage = () => {
                 </div>
                 <div className="WD-split-point" style={{ alignItems: 'center' }}>
                   <div className="WD-split-icon-green">
-                    <FontAwesomeIcon icon={faCheckCircle} style={{ color: '#00c48c', fontSize: '1.2rem' }} />
+                    <FontAwesomeIcon icon={faCheck} style={{ color: '#00c48c', fontSize: '1.2rem' }} />
                   </div>
                   <div className="WD-split-point-text">
                     <h4 style={{ margin: 0, fontSize: '1rem' }}>Includes lifetime access to premium assets + 6 months of design support.</h4>
@@ -1852,15 +1845,20 @@ const WebsiteDeveloperInternPage = () => {
                                     const cardClassIndex = (index % 5) + 1;
                                     const imgMap = {
                                         1: boy1, 2: girl1, 3: boy2, 4: girl2,
-                                        5: girl3, 6: boy3, 7: girl4, 8: boy4
+                                        5: boy3, 6: girl3, 7: boy4, 8: girl4
                                     };
-                                    const photoUrl = imgMap[testimonial.id] || boy1;
+                                    const photoUrl = imgMap[testimonial.id];
+                                    const isBoy = [1, 3, 5, 7].includes(testimonial.id);
 
 
                                     return (
                                         <div key={index} className={`WD-dt-card WD-dt-card-${cardClassIndex}`}>
                                             <div className="WD-dt-card-img-wrapper">
-                                                <img src={photoUrl} alt={testimonial.author} className="WD-dt-card-img" />
+                                                <img 
+                                                    src={photoUrl} 
+                                                    alt={testimonial.author} 
+                                                    className={`WD-dt-card-img ${isBoy ? 'WD-dt-boy-avatar' : ''}`} 
+                                                />
                                             </div>
                                             <div className={`WD-dt-card-content WD-dt-content-bg-${cardClassIndex}`}>
                                                 <h4 className="WD-dt-card-name">{testimonial.author}</h4>

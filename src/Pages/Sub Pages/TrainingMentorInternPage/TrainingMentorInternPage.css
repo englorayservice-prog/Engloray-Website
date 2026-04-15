@@ -1082,6 +1082,7 @@ body {
     font-size: 15px;
     font-family: 'Aldrich', sans-serif;
     letter-spacing: 0.5px;
+    text-align: left;
 }
 
 .TM-form-input {
@@ -4712,10 +4713,11 @@ body {
     border-radius: 50px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-end; /* Aligned to bottom */
     align-items: center;
-    padding: 1.5rem 0 1.5rem 0;
+    padding: 0 0 1.5rem 0;
     position: relative;
+    gap: 5px; /* Tighter gap */
 }
 
 .TM-dn-bg-dark {
@@ -4731,7 +4733,11 @@ body {
 .TM-dn-v-text {
     writing-mode: vertical-rl;
     transform: rotate(180deg);
+    white-space: nowrap;
+    padding-bottom: 0px;
+    padding-left: 15px; /* Left shift */
     font-size: 1.1rem;
+    font-weight: 700;
     letter-spacing: 1.5px;
 }
 

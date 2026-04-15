@@ -563,7 +563,7 @@
 
 .sad-about-img-wrap-new {
     width: 100%;
-    height: 100%;
+    height: 800px;
     position: relative;
     border-radius: 30px;
     overflow: hidden;
@@ -571,7 +571,7 @@
 
 .sad-about-img-wrap-new img {
     width: 100%;
-    height: 100%;
+    height: 800px;
     object-fit: cover;
 }
 
@@ -607,7 +607,7 @@
     background: #1a1a1a;
     border-radius: 30px;
     padding: 40px;
-    height: 100%;
+    height: 800px;
     display: flex;
     flex-direction: column;
     animation: fadeInPanelSad 0.5s ease-out;
@@ -1845,4 +1845,1820 @@
 .bi-info-features {
     text-align: left !important;
     margin-left: 0 !important;
+}
+
+/* ============================================================
+   COMPLETE RESPONSIVE FIXES FOR ALL SCREEN SIZES
+   ============================================================ */
+
+/* 1400px and above - Large Desktop */
+@media (max-width: 1400px) {
+    .sad-hero-container-new {
+        max-width: 100%;
+    }
+
+    .sad-hero-title-new {
+        font-size: 54px;
+    }
+
+    .sad-mission-container {
+        max-width: 1200px;
+    }
+}
+
+/* 1200px - Desktop */
+@media (max-width: 1200px) {
+    .sad-hero-container-new {
+        flex-direction: column;
+        padding: 40px 30px 60px 30px;
+        clip-path: none;
+        border-radius: 30px;
+    }
+
+    .sad-hero-left-new {
+        order: 1;
+        width: 100%;
+        max-width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+
+    .sad-hero-center-new {
+        order: 2;
+        width: 100%;
+        margin: 40px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sad-hero-right-new {
+        order: 3;
+        width: 100%;
+        max-width: 100%;
+        margin-top: 20px;
+    }
+
+    .sad-hero-title-new {
+        font-size: 48px;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .sad-hero-subtitle-new {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .sad-hero-title-desc-new {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        min-height: auto;
+        margin: 20px 0;
+        display: none;
+    }
+
+    .sad-hero-desc-new {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .sad-hero-stats-new {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .sad-hero-buttons-new {
+        justify-content: center;
+    }
+
+    .sad-hero-iphone14-img {
+        max-width: 60%;
+        margin: 0 auto;
+    }
+}
+
+/* 1100px - Tablet Landscape */
+@media (max-width: 1100px) {
+    .sad-about-inner-new {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .sad-about-left-tag {
+        font-size: 32px;
+        text-align: center;
+    }
+
+    .sad-about-left-title {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .sad-about-intro-new {
+        text-align: center;
+    }
+
+    .sad-about-left-header {
+        text-align: center;
+    }
+
+    .sad-agency-grid {
+        gap: 50px;
+    }
+
+    .sad-agency-main-title {
+        font-size: 42px;
+    }
+}
+
+/* 1024px - Tablet Landscape */
+@media (max-width: 1024px) {
+    .sad-el-container {
+        grid-template-columns: 1fr;
+        gap: 80px;
+        text-align: left;
+    }
+
+    .sad-el-left {
+        height: 450px;
+    }
+
+    .sad-el-right {
+        align-items: center;
+    }
+
+    .sad-el-title {
+        font-size: 36px;
+        text-align: center;
+    }
+
+    .sad-el-preheading {
+        margin-left: 0;
+        font-size: 28px;
+        justify-content: center;
+    }
+
+    .sad-el-desc,
+    .sad-el-sub-desc {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .sad-el-stats-new {
+        justify-content: center;
+    }
+
+    .sad-el-btn-discover {
+        margin-left: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .sad-courses-grid-wide {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .sad-agency-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .sad-agency-experience-badge {
+        left: 20px;
+    }
+
+    .sad-agency-main-title {
+        font-size: 36px;
+        margin-bottom: 50px;
+    }
+
+    .sad-reviews-title {
+        font-size: 36px;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .sad-testimonial-badge {
+        left: 0;
+        text-align: center;
+    }
+}
+
+/* 991px - Tablet */
+@media (max-width: 991px) {
+    .sad-prod-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 60px;
+    }
+
+    .sad-prod-left {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .sad-prod-title {
+        font-size: 36px;
+        text-align: center;
+    }
+
+    .sad-prod-desc {
+        text-align: center;
+    }
+
+    .sad-prod-buttons {
+        justify-content: center;
+    }
+
+    .sad-prod-avatars-box {
+        justify-content: center;
+    }
+
+    .sad-prod-avatar-text {
+        text-align: center;
+    }
+
+    .sad-prod-timeline::before {
+        left: 32px;
+    }
+}
+
+/* 900px - Small Desktop */
+@media (max-width: 900px) {
+    .sad-agency-info-row {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .sad-portrait-img {
+        height: 500px;
+    }
+}
+
+/* 768px - Mobile Landscape */
+@media (max-width: 768px) {
+    .sad-hero-section-new {
+        min-height: auto;
+        padding: 20px;
+    }
+
+    .sad-hero-container-new {
+        padding: 30px 20px 40px 20px;
+    }
+
+    .sad-hero-title-new {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .sad-hero-buttons-new {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .sad-btn-get-started-new,
+    .sad-btn-contact-us-new {
+        width: 100%;
+        text-align: center;
+    }
+
+    .sad-hero-desc-new {
+        font-size: 16px;
+    }
+
+    .sad-stat-item-new {
+        flex: 1;
+        min-width: 80px;
+    }
+
+    .sad-title-play-row {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .sad-case-title-new {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .sad-about-company-desc-new {
+        font-size: 14px;
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .sad-avatars-row-new {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .sad-performance-card-new {
+        padding: 20px;
+    }
+
+    .sad-about-section-new {
+        padding: 80px 20px 60px;
+        clip-path: none;
+        margin-top: 0;
+    }
+
+    .sad-about-left-tag {
+        font-size: 28px !important;
+        text-align: center !important;
+    }
+
+    .sad-about-left-title {
+        font-size: 24px !important;
+        text-align: center !important;
+    }
+
+    .sad-about-intro-new {
+        text-align: center !important;
+    }
+
+    .sad-about-left-header {
+        text-align: center !important;
+    }
+
+    .sad-about-img-wrap-new {
+        min-height: 320px;
+        height: auto;
+    }
+
+    .sad-about-badge-new {
+        padding: 10px 14px;
+    }
+
+    .sad-badge-num {
+        font-size: 20px;
+    }
+
+    .sad-about-service-item-new {
+        padding: 15px 18px !important;
+    }
+
+    .sad-service-item-left-about {
+        gap: 12px !important;
+    }
+
+    .sad-service-num-new {
+        font-size: 11px !important;
+    }
+
+    .sad-service-name-about {
+        font-size: 13px !important;
+    }
+
+    .sad-service-short-about {
+        font-size: 10px !important;
+    }
+
+    .sad-service-arrow-about {
+        font-size: 14px !important;
+    }
+
+    .sad-about-detail-panel {
+        padding: 20px 18px !important;
+        height: auto !important;
+        min-height: 500px;
+    }
+
+    .sad-detail-icon-wrap {
+        width: 44px;
+        height: 44px;
+    }
+
+    .sad-detail-icon {
+        font-size: 18px;
+    }
+
+    .sad-detail-num {
+        font-size: 9px;
+    }
+
+    .sad-detail-title {
+        font-size: 22px !important;
+    }
+
+    .sad-detail-desc {
+        font-size: 13px !important;
+    }
+
+    .sad-detail-stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .sad-detail-stat {
+        flex: 1;
+        min-width: 70px;
+    }
+
+    .sad-detail-stat-val {
+        font-size: 14px !important;
+    }
+
+    .sad-detail-stat-label {
+        font-size: 9px !important;
+    }
+
+    .sad-detail-cta {
+        padding: 12px 20px !important;
+        font-size: 13px !important;
+        width: 100%;
+    }
+
+    .sad-productivity-section {
+        padding: 80px 20px;
+    }
+
+    .sad-prod-title {
+        font-size: 32px;
+    }
+
+    .sad-prod-desc {
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+
+    .sad-prod-buttons {
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 40px;
+    }
+
+    .sad-btn-prod-primary,
+    .sad-btn-prod-secondary {
+        width: 100%;
+        text-align: center;
+        padding: 14px 24px;
+    }
+
+    .sad-prod-avatars-box {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .sad-prod-avatars {
+        justify-content: center;
+    }
+
+    .sad-prod-avatar-text {
+        text-align: center;
+        font-size: 12px;
+    }
+
+    .sad-prod-timeline {
+        margin-left: 0;
+        padding-left: 0;
+    }
+
+    .sad-prod-timeline::before {
+        left: 16px !important;
+        width: 2px;
+    }
+
+    .sad-timeline-item {
+        gap: 12px;
+        padding-bottom: 20px;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .sad-timeline-icon {
+        width: 40px !important;
+        height: 40px !important;
+        padding: 8px !important;
+    }
+
+    .sad-timeline-content h3 {
+        font-size: 16px;
+    }
+
+    .sad-timeline-content p {
+        font-size: 12px;
+    }
+
+    .sad-el-left {
+        height: 400px;
+    }
+
+    .sad-el-main {
+        width: 70%;
+    }
+
+    .sad-el-top-left,
+    .sad-el-bottom-left {
+        width: 60%;
+    }
+
+    .sad-el-title {
+        font-size: 32px;
+    }
+
+    .sad-el-desc {
+        font-size: 14px;
+    }
+
+    .sad-el-stats-new {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .sad-el-btn-discover {
+        margin-left: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .sad-mission-section {
+        padding: 60px 20px;
+    }
+
+    .sad-mission-title-new {
+        font-size: 32px;
+        margin-top: 0;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    .sad-mission-highlight-box {
+        padding: 0 8px;
+    }
+
+    .sad-reviews-section {
+        padding: 80px 20px;
+    }
+
+    .sad-reviews-title {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+
+    .sad-review-card {
+        width: 300px;
+        padding: 35px 25px;
+    }
+
+    .sad-review-text {
+        font-size: 13px;
+        min-height: 100px;
+    }
+
+    .sad-client-name {
+        font-size: 17px;
+    }
+
+    .sad-intern-courses {
+        padding: 80px 20px;
+    }
+
+    .sad-courses-grid-wide {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .sad-course-box {
+        padding: 30px;
+    }
+
+    .sad-course-box-title {
+        font-size: 20px;
+    }
+
+    .sad-agency-section {
+        padding: 60px 20px 100px;
+    }
+
+    .sad-agency-main-title {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+
+    .sad-portrait-img {
+        height: 400px;
+    }
+
+    .sad-agency-experience-badge {
+        padding: 15px 25px;
+    }
+
+    .sad-exp-num {
+        font-size: 28px;
+    }
+
+    .sad-exp-text {
+        font-size: 10px;
+    }
+
+    .sad-landscape-img {
+        position: relative;
+        height: 250px;
+    }
+
+    .sad-agency-bottom-img-wrap {
+        height: 250px;
+        position: relative;
+    }
+
+    .sad-hero-iphone14-img {
+        max-width: 70% !important;
+        margin: 0 auto;
+    }
+}
+
+/* 576px - Small Tablet / Large Phone */
+@media (max-width: 576px) {
+    .sad-hero-iphone14-img {
+        max-width: 80% !important;
+        margin: 0 auto;
+    }
+
+    .sad-el-left {
+        height: 350px;
+    }
+
+    .sad-el-main {
+        width: 75%;
+    }
+
+    .sad-el-top-left,
+    .sad-el-bottom-left {
+        width: 65%;
+    }
+
+    .sad-el-title {
+        font-size: 28px;
+    }
+
+    .sad-el-badge-volunteer {
+        left: 50%;
+        transform: translateX(-50%);
+        min-width: 180px;
+        padding: 12px 20px;
+    }
+
+    .sad-prod-timeline::before {
+        left: 14px !important;
+    }
+
+    .sad-timeline-icon {
+        width: 32px !important;
+        height: 32px !important;
+        padding: 6px !important;
+    }
+
+    .sad-timeline-item {
+        gap: 10px;
+    }
+
+    .sad-timeline-content h3 {
+        font-size: 14px;
+    }
+
+    .sad-timeline-content p {
+        font-size: 11px;
+    }
+
+    .sad-review-card {
+        width: 280px;
+        padding: 30px 20px;
+    }
+
+    .sad-review-avatar-container {
+        width: 70px;
+        height: 70px;
+    }
+
+    .sad-client-name {
+        font-size: 16px;
+    }
+
+    .sad-review-text {
+        font-size: 12px;
+    }
+}
+
+/* 480px - Mobile Portrait */
+@media (max-width: 480px) {
+    .sad-hero-title-new {
+        font-size: 28px;
+    }
+
+    .sad-hero-subtitle-new {
+        font-size: 16px;
+    }
+
+    .sad-hero-desc-new {
+        font-size: 14px;
+    }
+
+    .sad-hero-iphone14-img {
+        max-width: 85% !important;
+        margin: 0 auto;
+    }
+
+    .sad-stat-circle-new {
+        width: 50px;
+        height: 50px;
+    }
+
+    .sad-stat-number-new {
+        font-size: 11px;
+    }
+
+    .sad-stat-label-new {
+        font-size: 10px;
+    }
+
+    .sad-hero-stats-new {
+        gap: 20px;
+    }
+
+    .sad-avatar-group-new img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .sad-download-btn-new {
+        width: 32px;
+        height: 32px;
+    }
+
+    .sad-perf-value-new,
+    .sad-perf-value-bold-new {
+        font-size: 14px;
+    }
+
+    .sad-perf-label-new {
+        font-size: 8px;
+    }
+
+    .sad-about-left-tag {
+        font-size: 15px !important;
+    }
+
+    .sad-about-left-title {
+        font-size: 20px !important;
+    }
+
+    .sad-about-service-item-new {
+        padding: 12px 14px !important;
+    }
+
+    .sad-service-text-group {
+        max-width: 180px;
+    }
+
+    .sad-service-name-about {
+        font-size: 12px !important;
+        white-space: normal;
+        word-break: break-word;
+    }
+
+    .sad-service-short-about {
+        font-size: 9px !important;
+    }
+
+    .sad-about-detail-panel {
+        padding: 16px 14px !important;
+    }
+
+    .sad-detail-title {
+        font-size: 18px !important;
+    }
+
+    .sad-detail-desc {
+        font-size: 12px !important;
+    }
+
+    .sad-productivity-section {
+        padding: 60px 16px;
+    }
+
+    .sad-prod-title {
+        font-size: 28px;
+    }
+
+    .sad-btn-prod-primary,
+    .sad-btn-prod-secondary {
+        padding: 12px 20px;
+        font-size: 13px;
+    }
+
+    .sad-mission-title-new {
+        font-size: 28px;
+    }
+
+    .sad-mission-card-new {
+        padding: 25px;
+    }
+
+    .sad-mission-card-title {
+        font-size: 16px;
+    }
+
+    .sad-mission-card-subtitle {
+        font-size: 11px;
+    }
+
+    .sad-mission-card-desc {
+        font-size: 12px;
+    }
+
+    .sad-reviews-title {
+        font-size: 28px;
+    }
+
+    .sad-review-card {
+        width: 260px;
+        padding: 25px 18px;
+    }
+
+    .sad-review-text {
+        font-size: 12px;
+        min-height: 80px;
+    }
+
+    .sad-course-box-title {
+        font-size: 18px;
+    }
+
+    .sad-course-box-desc {
+        font-size: 13px;
+    }
+
+    .sad-agency-main-title {
+        font-size: 28px;
+    }
+
+    .sad-portrait-img {
+        height: 350px;
+    }
+
+    .sad-agency-desc {
+        font-size: 13px;
+    }
+
+    .sad-agency-list li {
+        font-size: 13px;
+    }
+}
+
+/* 360px - Small Mobile */
+@media (max-width: 360px) {
+    .sad-hero-title-new {
+        font-size: 24px;
+    }
+
+    .sad-hero-desc-new {
+        font-size: 13px;
+    }
+
+    .sad-hero-iphone14-img {
+        max-width: 90% !important;
+        margin: 0 auto;
+    }
+
+    .sad-stat-circle-new {
+        width: 45px;
+        height: 45px;
+    }
+
+    .sad-stat-number-new {
+        font-size: 10px;
+    }
+
+    .sad-stat-label-new {
+        font-size: 9px;
+    }
+
+    .sad-case-title-new {
+        font-size: 22px;
+    }
+
+    .sad-about-company-desc-new {
+        font-size: 12px;
+    }
+
+    .sad-service-text-group {
+        max-width: 150px;
+    }
+
+    .sad-service-name-about {
+        font-size: 11px !important;
+    }
+
+    .sad-service-short-about {
+        font-size: 8px !important;
+    }
+
+    .sad-detail-title {
+        font-size: 16px !important;
+    }
+
+    .sad-detail-desc {
+        font-size: 11px !important;
+    }
+
+    .sad-detail-stat-val {
+        font-size: 12px !important;
+    }
+
+    .sad-detail-stat-label {
+        font-size: 8px !important;
+    }
+
+    .sad-prod-title {
+        font-size: 24px;
+    }
+
+    .sad-prod-desc {
+        font-size: 12px;
+    }
+
+    .sad-btn-prod-primary,
+    .sad-btn-prod-secondary {
+        padding: 10px 16px;
+        font-size: 12px;
+    }
+
+    .sad-timeline-content h3 {
+        font-size: 12px;
+    }
+
+    .sad-timeline-content p {
+        font-size: 10px;
+    }
+
+    .sad-el-title {
+        font-size: 24px;
+    }
+
+    .sad-mission-title-new {
+        font-size: 24px;
+    }
+
+    .sad-mission-card-title {
+        font-size: 14px;
+    }
+
+    .sad-mission-card-desc {
+        font-size: 11px;
+    }
+
+    .sad-reviews-title {
+        font-size: 24px;
+    }
+
+    .sad-review-card {
+        width: 240px;
+        padding: 20px 15px;
+    }
+
+    .sad-client-name {
+        font-size: 14px;
+    }
+
+    .sad-review-text {
+        font-size: 11px;
+    }
+
+    .sad-course-box-title {
+        font-size: 16px;
+    }
+
+    .sad-agency-main-title {
+        font-size: 24px;
+    }
+}
+
+/* 320px - Extra Small Mobile */
+@media (max-width: 320px) {
+    .sad-hero-title-new {
+        font-size: 22px;
+    }
+
+    .sad-hero-subtitle-new {
+        font-size: 14px;
+    }
+
+    .sad-hero-desc-new {
+        font-size: 12px;
+    }
+
+    .sad-hero-iphone14-img {
+        max-width: 95% !important;
+        margin: 0 auto;
+    }
+
+    .sad-stat-circle-new {
+        width: 40px;
+        height: 40px;
+    }
+
+    .sad-stat-number-new {
+        font-size: 9px;
+    }
+
+    .sad-stat-label-new {
+        font-size: 8px;
+    }
+
+    .sad-hero-stats-new {
+        gap: 12px;
+    }
+
+    .sad-btn-get-started-new,
+    .sad-btn-contact-us-new {
+        padding: 10px 16px;
+        font-size: 11px;
+    }
+
+    .sad-case-title-new {
+        font-size: 18px;
+    }
+
+    .sad-about-company-desc-new {
+        font-size: 11px;
+    }
+
+    .sad-service-text-group {
+        max-width: 130px;
+    }
+
+    .sad-service-name-about {
+        font-size: 10px !important;
+    }
+
+    .sad-detail-title {
+        font-size: 15px !important;
+    }
+
+    .sad-detail-desc {
+        font-size: 10px !important;
+    }
+
+    .sad-prod-title {
+        font-size: 22px;
+    }
+
+    .sad-mission-title-new {
+        font-size: 22px;
+    }
+
+    .sad-reviews-title {
+        font-size: 22px;
+    }
+
+    .sad-review-card {
+        width: 220px;
+        padding: 18px 12px;
+    }
+
+    .sad-client-name {
+        font-size: 13px;
+    }
+
+    .sad-review-text {
+        font-size: 10px;
+    }
+}
+
+/* ============================================================
+   MISSION SECTION - REDUCED WIDTH & CENTERED CARDS
+   ============================================================ */
+
+/* Desktop - Normal fan layout (1301px and above) */
+@media (min-width: 1301px) {
+    .sad-mission-cards-fan {
+        position: relative;
+        width: 100%;
+        max-width: 1000px;
+        height: 500px;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    .sad-mission-card-new {
+        width: 260px;
+        height: 380px;
+        bottom: 50px;
+    }
+}
+
+/* 1300px and below - Switch to stacked centered layout */
+@media (max-width: 1300px) {
+    .sad-mission-cards-wrapper {
+        height: auto;
+        padding: 40px 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sad-mission-cards-fan {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 25px;
+        height: auto;
+        position: static;
+        max-width: 500px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .sad-mission-card-new {
+        position: static !important;
+        transform: none !important;
+        width: 100%;
+        max-width: 320px;
+        min-width: 280px;
+        margin: 0 auto 20px auto;
+        left: auto !important;
+        bottom: auto !important;
+        right: auto !important;
+        top: auto !important;
+    }
+
+    .sad-mission-card-new:hover {
+        transform: translateY(-10px) !important;
+    }
+
+    .sad-mission-card-new:last-child {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        left: auto !important;
+        right: auto !important;
+        position: relative !important;
+        transform: none !important;
+    }
+}
+
+/* 1024px - Tablet */
+@media (max-width: 1024px) {
+    .sad-mission-cards-fan {
+        max-width: 450px;
+    }
+
+    .sad-mission-card-new {
+        max-width: 300px;
+        min-width: 260px;
+    }
+
+    .sad-mission-card-desc {
+        font-size: 12px;
+    }
+
+    .sad-mission-card-title {
+        font-size: 16px;
+        white-space: normal;
+        word-break: break-word;
+    }
+}
+
+/* 768px - Mobile Landscape */
+@media (max-width: 768px) {
+    .sad-mission-cards-fan {
+        max-width: 380px;
+        gap: 20px;
+    }
+
+    .sad-mission-card-new {
+        max-width: 280px;
+        min-width: 260px;
+        margin: 0 auto 15px auto;
+        padding: 25px;
+        height: auto;
+        min-height: 360px;
+    }
+
+    .sad-mission-card-header {
+        margin-bottom: 15px;
+    }
+
+    .sad-mission-card-rating {
+        padding: 4px 10px;
+        font-size: 12px;
+    }
+}
+
+/* 576px - Small Tablet */
+@media (max-width: 576px) {
+    .sad-mission-cards-fan {
+        max-width: 340px;
+        gap: 18px;
+    }
+
+    .sad-mission-card-new {
+        max-width: 260px;
+        min-width: 240px;
+        padding: 22px;
+        min-height: 350px;
+    }
+}
+
+/* 480px - Mobile Portrait */
+@media (max-width: 480px) {
+    .sad-mission-cards-fan {
+        max-width: 300px;
+        gap: 15px;
+    }
+
+    .sad-mission-card-new {
+        max-width: 100%;
+        min-width: auto;
+        width: 280px;
+        padding: 20px;
+        min-height: 340px;
+    }
+
+    .sad-mission-card-title {
+        font-size: 15px;
+    }
+
+    .sad-mission-card-subtitle {
+        font-size: 10px;
+    }
+
+    .sad-mission-card-desc {
+        font-size: 11px;
+    }
+
+    .sad-card-icon {
+        width: 60px;
+        height: 60px;
+        margin-top: 10px;
+    }
+
+    .sad-card-icon svg {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* 360px - Small Mobile */
+@media (max-width: 360px) {
+    .sad-mission-cards-fan {
+        max-width: 260px;
+        gap: 12px;
+    }
+
+    .sad-mission-card-new {
+        width: 100%;
+        max-width: 250px;
+        padding: 18px;
+        min-height: 320px;
+    }
+
+    .sad-mission-card-title {
+        font-size: 14px;
+    }
+
+    .sad-mission-card-desc {
+        font-size: 10px;
+    }
+
+    .sad-card-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .sad-card-icon svg {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* ============================================================
+   SERVICES SECTION - RIGHT PANEL FIXES
+   ============================================================ */
+
+@media (max-width: 1024px) {
+    .sad-services-content-new {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .sad-services-list-new {
+        order: 1;
+    }
+
+    .sad-services-info-col-new {
+        order: 2;
+    }
+
+    .sad-services-image-col-new {
+        order: 3;
+    }
+
+    .sad-services-info-col-new {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .sad-services-card-dark-new,
+    .sad-services-card-green-new {
+        min-height: auto;
+        padding: 30px 25px;
+        height: auto !important;
+    }
+
+    .sad-services-card-sub-new,
+    .sad-services-card-sub-green-new {
+        order: 2;
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
+
+    .sad-services-card-action-new {
+        order: 3;
+        margin-top: 10px;
+    }
+
+    .sad-services-card-action-text-new,
+    .sad-services-card-action-text-green-new {
+        font-size: 20px;
+    }
+
+    .sad-services-image-wrapper-new {
+        height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sad-services-info-col-new {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .sad-services-card-dark-new,
+    .sad-services-card-green-new {
+        padding: 25px 20px;
+    }
+
+    .sad-services-card-sub-new,
+    .sad-services-card-sub-green-new {
+        font-size: 13px;
+        margin-bottom: 15px;
+    }
+}
+
+/* ============================================================
+   IPHONE 14 IMAGE VISIBILITY FIX
+   ============================================================ */
+
+/* Hide the problematic title-desc div */
+.sad-hero-title-desc-new {
+    display: none !important;
+}
+
+/* Ensure hero center panel is properly displayed */
+.sad-hero-center-new {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1.2;
+    z-index: 2;
+}
+
+/* Ensure iPhone 14 image is visible */
+.sad-hero-iphone14-img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+/* Ensure all images are responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Fix for overlapping elements on very small screens */
+@media (max-width: 380px) {
+    .sad-service-text-group {
+        max-width: 140px;
+    }
+
+    .sad-service-name-about {
+        font-size: 10px !important;
+    }
+
+    .sad-service-short-about {
+        font-size: 8px !important;
+    }
+
+    .sad-detail-title {
+        font-size: 15px !important;
+    }
+
+    .sad-detail-desc {
+        font-size: 10px !important;
+    }
+}
+
+/* ============================================================
+   MOBILE VIEW SPECIFIC FIXES FOR HERO SECTION, MISSION SECTION & AGENCY SECTION
+   ============================================================ */
+
+/* Hero Section - Mobile view fixes for image alignment and button sizes */
+@media (max-width: 768px) {
+
+    /* Move cube image slightly to the right */
+    .sad-page-hero-center-new {
+        display: flex;
+        justify-content: flex-end !important;
+        align-items: center;
+        padding-right: 20px;
+        margin-right: -20px;
+    }
+
+    .sad-page-cube-img-new {
+        transform: scale(0.95) translateX(15px);
+        max-width: 85%;
+    }
+
+    /* Reduce button sizes */
+    .sad-page-btn-get-started-new,
+    .sad-page-btn-contact-us-new {
+        padding: 10px 20px;
+        font-size: 11px;
+        width: auto;
+        min-width: 140px;
+    }
+
+    /* Reduce description font size */
+    .sad-page-hero-desc-new {
+        font-size: 14px;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Adjust stats circles size */
+    .sad-page-stat-circle-new {
+        width: 55px;
+        height: 55px;
+    }
+
+    .sad-page-stat-number-new {
+        font-size: 11px;
+    }
+
+    .sad-page-stat-label-new {
+        font-size: 10px;
+    }
+
+    .sad-page-hero-stats-new {
+        gap: 25px;
+    }
+}
+
+@media (max-width: 576px) {
+    .sad-page-hero-center-new {
+        padding-right: 25px;
+        margin-right: -20px;
+    }
+
+    .sad-page-cube-img-new {
+        transform: scale(0.9) translateX(20px);
+        max-width: 70%;
+    }
+}
+
+@media (max-width: 480px) {
+    .sad-page-hero-center-new {
+        padding-right: 30px;
+        margin-right: -25px;
+    }
+
+    .sad-page-cube-img-new {
+        transform: scale(0.85) translateX(25px);
+        max-width: 70%;
+    }
+
+    .sad-page-btn-get-started-new,
+    .sad-page-btn-contact-us-new {
+        padding: 8px 16px;
+        font-size: 10px;
+        min-width: 120px;
+    }
+
+    .sad-page-hero-desc-new {
+        font-size: 13px;
+    }
+
+    .sad-page-stat-circle-new {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 360px) {
+    .sad-page-hero-center-new {
+        padding-right: 35px;
+        margin-right: -40px;
+    }
+
+    .sad-page-cube-img-new {
+        transform: scale(0.8) translateX(35px);
+        max-width: 65%;
+    }
+
+    .sad-page-btn-get-started-new,
+    .sad-page-btn-contact-us-new {
+        padding: 6px 12px;
+        font-size: 9px;
+        min-width: 100px;
+    }
+}
+
+/* ============================================================
+   MISSION SECTION CARDS - INCREASE PADDING & REDUCE GAP IN MOBILE VIEW
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+    /* Increase card padding */
+    .sad-page-service-card {
+        padding: 30px 25px !important;
+        height: auto;
+        min-height: auto;
+    }
+
+    /* Reduce gap between content inside cards */
+    .sad-page-card-header {
+        margin-bottom: 12px !important;
+    }
+
+    .sad-page-service-card-desc {
+        margin: 10px 0 !important;
+        line-height: 1.4;
+        font-size: 12px;
+    }
+
+    /* Adjust title and subtitle spacing */
+    .sad-page-card-title-group {
+        gap: 4px !important;
+    }
+
+    .sad-page-service-card-title {
+        font-size: 16px !important;
+        white-space: normal;
+        word-break: break-word;
+        line-height: 1.3;
+    }
+
+    .sad-page-service-card-subtitle {
+        font-size: 11px !important;
+        margin-top: 2px;
+    }
+
+    /* Adjust badge size */
+    .sad-page-card-badge {
+        padding: 3px 8px;
+    }
+
+    .sad-page-badge-rating {
+        font-size: 11px;
+    }
+
+    /* Adjust icon area */
+    .sad-page-service-icon-wrap {
+        height: 70px;
+        margin-top: 15px;
+    }
+
+    .sad-page-service-icon-wrap svg {
+        width: 60px;
+        height: 60px;
+    }
+
+    /* Card grid spacing */
+    .sad-page-services-grid {
+        gap: 25px;
+    }
+}
+
+@media (max-width: 576px) {
+    .sad-page-service-card {
+        padding: 28px 22px !important;
+    }
+
+    .sad-page-card-header {
+        margin-bottom: 10px !important;
+    }
+
+    .sad-page-service-card-desc {
+        margin: 8px 0 !important;
+        font-size: 11.5px;
+    }
+
+    .sad-page-service-icon-wrap {
+        height: 65px;
+        margin-top: 12px;
+    }
+
+    .sad-page-service-icon-wrap svg {
+        width: 55px;
+        height: 55px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sad-page-service-card {
+        padding: 25px 20px !important;
+    }
+
+    .sad-page-service-card-title {
+        font-size: 15px !important;
+    }
+
+    .sad-page-service-card-subtitle {
+        font-size: 10px !important;
+    }
+
+    .sad-page-service-card-desc {
+        font-size: 11px !important;
+        margin: 6px 0 !important;
+    }
+
+    .sad-page-card-badge {
+        padding: 2px 6px;
+    }
+
+    .sad-page-badge-rating {
+        font-size: 10px;
+    }
+
+    .sad-page-service-icon-wrap {
+        height: 60px;
+        margin-top: 10px;
+    }
+
+    .sad-page-service-icon-wrap svg {
+        width: 50px;
+        height: 50px;
+    }
+
+    .sad-page-services-grid {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 360px) {
+    .sad-page-service-card {
+        padding: 22px 18px !important;
+    }
+
+    .sad-page-service-card-title {
+        font-size: 14px !important;
+    }
+
+    .sad-page-service-card-subtitle {
+        font-size: 9px !important;
+    }
+
+    .sad-page-service-card-desc {
+        font-size: 10px !important;
+        margin: 5px 0 !important;
+        line-height: 1.3;
+    }
+
+    .sad-page-card-header {
+        margin-bottom: 8px !important;
+    }
+
+    .sad-page-service-icon-wrap {
+        height: 55px;
+        margin-top: 8px;
+    }
+
+    .sad-page-service-icon-wrap svg {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+/* ============================================================
+   AGENCY SECTION - REDUCE IMAGE HEIGHT & STAT SIZE IN MOBILE VIEW
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+    /* Reduce the height of the left side portrait image */
+    .sad-page-portrait-img {
+        height: 380px !important;
+        object-fit: cover;
+        object-position: center top;
+    }
+
+    /* Reduce the size of the experience badge */
+    .sad-page-exp-badge {
+        padding: 15px 25px !important;
+        left: 15px !important;
+        bottom: 20px !important;
+    }
+
+    /* Reduce the numbers and text inside the badge */
+    .sad-page-exp-number {
+        font-size: 28px !important;
+    }
+
+    .sad-page-exp-text {
+        font-size: 10px !important;
+    }
+
+    /* Adjust the bottom landscape image height */
+    .sad-page-landscape-img {
+        height: 180px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .sad-page-portrait-img {
+        height: 320px !important;
+    }
+
+    .sad-page-exp-badge {
+        padding: 12px 20px !important;
+        left: 12px !important;
+        bottom: 15px !important;
+    }
+
+    .sad-page-exp-number {
+        font-size: 24px !important;
+    }
+
+    .sad-page-exp-text {
+        font-size: 9px !important;
+    }
+
+    .sad-page-landscape-img {
+        height: 160px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .sad-page-portrait-img {
+        height: 280px !important;
+    }
+
+    .sad-page-exp-badge {
+        padding: 10px 16px !important;
+        left: 10px !important;
+        bottom: 12px !important;
+    }
+
+    .sad-page-exp-number {
+        font-size: 22px !important;
+    }
+
+    .sad-page-exp-text {
+        font-size: 8px !important;
+    }
+
+    .sad-page-landscape-img {
+        height: 140px !important;
+    }
+}
+
+@media (max-width: 360px) {
+    .sad-page-portrait-img {
+        height: 250px !important;
+    }
+
+    .sad-page-exp-badge {
+        padding: 8px 12px !important;
+        left: 8px !important;
+        bottom: 10px !important;
+    }
+
+    .sad-page-exp-number {
+        font-size: 20px !important;
+    }
+
+    .sad-page-exp-text {
+        font-size: 7px !important;
+    }
+
+    .sad-page-landscape-img {
+        height: 120px !important;
+    }
 }

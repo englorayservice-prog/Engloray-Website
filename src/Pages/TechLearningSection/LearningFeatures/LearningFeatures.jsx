@@ -8,6 +8,7 @@ import projectIcon from '../../../assets/iicons/project based learning.png';
 import communityIcon from '../../../assets/iicons/community assces.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencil } from '@fortawesome/free-solid-svg-icons';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const LearningFeatures = () => {
     const [activeTab, setActiveTab] = useState('clubs');
@@ -70,136 +71,189 @@ const LearningFeatures = () => {
 
     return (
         <section className="learning-features-section">
-            <div className="learning-features-grid-bg"></div>
+    <div className="learning-features-grid-bg"></div>
 
+    <div className="learning-features-container">
+        <div className="main-content-column">
+            {/* Practice Header */}
+            <div className="features-header-box">
+                <motion.div 
+                    className="features-deco-icon"
+                    initial={{ opacity: 0, rotate: -15 }}
+                    whileInView={{ opacity: 1, rotate: 15 }}
+                    transition={{ duration: 0.8 }}
+                >
+                    <FontAwesomeIcon icon={faPencil} style={{ fontSize: '3rem', color: '#000000ff', transform: 'rotate(15deg)' }} />
+                </motion.div>
+                
+                <motion.h2 
+                    className="features-main-title"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false }}
+                    transition={{ duration: 0.8 }}
+                >
+                    Practice whatever way<br />is better for you
+                </motion.h2>
 
-            <div className="learning-features-container">
-                <div className="main-content-column">
-                    {/* Practice Header */}
-                    <div className="features-header-box">
-                        <div className="features-deco-icon">
-                            <FontAwesomeIcon icon={faPencil} style={{ fontSize: '3rem', color: '#000000ff', transform: 'rotate(15deg)' }} />
-                        </div>
-                        <h2 className="features-main-title">Practice whatever way<br />is better for you</h2>
-                        <div className="features-tab-nav">
-                            {Object.keys(tabs).map((tab) => (
-                                <button
-                                    key={tab}
-                                    className={`tab-btn ${activeTab === tab ? 'active' : ''}`}
-                                    onClick={() => setActiveTab(tab)}
-                                    style={{
-                                        backgroundColor: activeTab === tab ? '#ffffff' : tabs[tab].color,
-                                        /* Align text and fill gap for first tab when unselected */
-                                        ...(tab === 'clubs' && activeTab !== 'clubs' ? {
-                                            height: 'calc(100% + 30px)',
-                                            marginBottom: '-30px',
-                                            zIndex: 0,
-                                            borderBottomLeftRadius: '0',
-                                            display: 'flex',
-                                            alignItems: 'flex-start',
-                                            paddingTop: '1.2rem'
-                                        } : {})
-                                    }}
-                                >
-                                    {tabs[tab].title}
-                                </button>
-                            ))}
-                        </div>
-
-                        <div className="active-tab-content-card" style={{ borderTopLeftRadius: activeTab === 'clubs' ? '0' : '30px', zIndex: 1 }}>
-                            <div className="tab-text-side blue-style-list">
-                                <ul className="tab-details-list">
-                                    {tabs[activeTab].details.map((detail, i) => (
-                                        <li key={i}>
-                                            <span className="list-bullet">•</span>
-                                            <span className="list-text">{detail}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                                <button className="tab-cta-btn blue-card-btn">
-                                    Learn more and join
-                                </button>
-                            </div>
-                            <div className="tab-visual-side blue-style-visual">
-                                <img src={tabs[activeTab].img} alt={activeTab} className="tab-illustration" />
-                                <div className="floating-bubble blue-card-bubble">...</div>
-                            </div>
-                        </div>
-
-                        {/* Additional Content to Fill Space */}
-                        <div className="practice-benefits-section">
-                            <div className="benefit-item">
-                                <div className="benefit-icon">
-                                    <img src={mentorIcon} alt="Expert Mentors" />
-                                </div>
-                                <div className="benefit-text">
-                                    <h4>Expert Mentors</h4>
-                                    <p>Learn from industry professionals with years of experience.</p>
-                                </div>
-                            </div>
-                            <div className="benefit-item">
-                                <div className="benefit-icon">
-                                    <img src={projectIcon} alt="Real Projects" />
-                                </div>
-                                <div className="benefit-text">
-                                    <h4>Real Projects</h4>
-                                    <p>Build a portfolio with actual client work and case studies.</p>
-                                </div>
-                            </div>
-                            <div className="benefit-item">
-                                <div className="benefit-icon">
-                                    <img src={communityIcon} alt="Community" />
-                                </div>
-                                <div className="benefit-text">
-                                    <h4>Community</h4>
-                                    <p>Join a global network of ambitious tech learners.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div className="features-tab-nav">
+                    {Object.keys(tabs).map((tab, idx) => (
+                        <motion.button
+                            key={tab}
+                            className={`tab-btn ${activeTab === tab ? 'active' : ''}`}
+                            onClick={() => setActiveTab(tab)}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ delay: idx * 0.1 }}
+                            style={{
+                                backgroundColor: activeTab === tab ? '#ffffff' : tabs[tab].color,
+                                ...(tab === 'clubs' && activeTab !== 'clubs' ? {
+                                    height: 'calc(100% + 30px)',
+                                    marginBottom: '-30px',
+                                    zIndex: 0,
+                                    borderBottomLeftRadius: '0',
+                                    display: 'flex',
+                                    alignItems: 'flex-start',
+                                    paddingTop: '1.2rem'
+                                } : {})
+                            }}
+                        >
+                            {tabs[tab].title}
+                        </motion.button>
+                    ))}
                 </div>
 
-                {/* FAQ Sidebar Column */}
-                <div className="faq-sidebar-column">
-                    <div className="faq-header">
-                        <span className="faq-tag">FAQ</span>
-                        <div className="faq-decoration">
-                            <i className="fas fa-question"></i>
-                        </div>
+                <motion.div 
+                    key={activeTab} // Key ensures animation triggers on tab change
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className="active-tab-content-card" 
+                    style={{ borderTopLeftRadius: activeTab === 'clubs' ? '0' : '30px', zIndex: 1 }}
+                >
+                    <div className="tab-text-side blue-style-list">
+                        <ul className="tab-details-list">
+                            {tabs[activeTab].details.map((detail, i) => (
+                                <motion.li 
+                                    key={i}
+                                    initial={{ opacity: 0, x: -10 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ delay: i * 0.1 }}
+                                >
+                                    <span className="list-bullet">•</span>
+                                    <span className="list-text">{detail}</span>
+                                </motion.li>
+                            ))}
+                        </ul>
+                        <motion.button 
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            className="tab-cta-btn blue-card-btn"
+                        >
+                            Learn more and join
+                        </motion.button>
                     </div>
+                    <div className="tab-visual-side blue-style-visual">
+                        <motion.img 
+                            src={tabs[activeTab].img} 
+                            alt={activeTab} 
+                            className="tab-illustration" 
+                            initial={{ scale: 0.8, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                        />
+                        <div className="floating-bubble blue-card-bubble">...</div>
+                    </div>
+                </motion.div>
 
-                    <div className="faq-list">
-                        {faqs.map((faq, index) => (
-                            <div
-                                key={index}
-                                className={`faq-item ${openFaq === index ? 'open' : ''}`}
-                                onClick={() => setOpenFaq(openFaq === index ? -1 : index)}
-                            >
-                                <div className="faq-question">
-                                    <span>{faq.q}</span>
-                                    <span className="faq-toggle">{openFaq === index ? '−' : '+'}</span>
-                                </div>
-                                {openFaq === index && (
-                                    <div className="faq-answer">
-                                        <p>{faq.a}</p>
-                                    </div>
-                                )}
+                {/* Staggered Benefit Items */}
+                <div className="practice-benefits-section">
+                    {[
+                        { icon: mentorIcon, title: "Expert Mentors", desc: "Learn from industry professionals." },
+                        { icon: projectIcon, title: "Real Projects", desc: "Build a portfolio with client work." },
+                        { icon: communityIcon, title: "Community", desc: "Join a global network." }
+                    ].map((benefit, idx) => (
+                        <motion.div 
+                            key={idx}
+                            className="benefit-item"
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: false }}
+                            transition={{ duration: 0.6, delay: idx * 0.2 }}
+                        >
+                            <div className="benefit-icon"><img src={benefit.icon} alt={benefit.title} /></div>
+                            <div className="benefit-text">
+                                <h4>{benefit.title}</h4>
+                                <p>{benefit.desc}</p>
                             </div>
-                        ))}
-                    </div>
-
-                    {/* Personal Advice Box */}
-                    <div className="personal-advice-box">
-                        <h4>Any question left or need personal advice?</h4>
-                        <p>Sign up for a free consultation and we will guide you to the right choice.</p>
-                        <button className="advice-cta-btn">
-                            Book a Free Consultation
-                        </button>
-                        <div className="heart-float">💚</div>
-                    </div>
+                        </motion.div>
+                    ))}
                 </div>
             </div>
-        </section>
+        </div>
+
+        {/* FAQ Sidebar */}
+        <div className="faq-sidebar-column">
+            <motion.div 
+                className="faq-header"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+            >
+                <span className="faq-tag">FAQ</span>
+            </motion.div>
+
+            <div className="faq-list">
+                {faqs.map((faq, index) => (
+                    <div key={index} className={`faq-item ${openFaq === index ? 'open' : ''}`} onClick={() => setOpenFaq(openFaq === index ? -1 : index)}>
+                        <div className="faq-question">
+                            <span>{faq.q}</span>
+                            <motion.span animate={{ rotate: openFaq === index ? 180 : 0 }}>
+                                {openFaq === index ? '−' : '+'}
+                            </motion.span>
+                        </div>
+                        <AnimatePresence>
+                            {openFaq === index && (
+                                <motion.div 
+                                    className="faq-answer"
+                                    initial={{ height: 0, opacity: 0 }}
+                                    animate={{ height: 'auto', opacity: 1 }}
+                                    exit={{ height: 0, opacity: 0 }}
+                                    transition={{ duration: 0.3 }}
+                                >
+                                    <p>{faq.a}</p>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+                    </div>
+                ))}
+            </div>
+
+            {/* Advice Box Pop */}
+            <motion.div 
+                className="personal-advice-box"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.7 }}
+            >
+                <h4>Any question left or need personal advice?</h4>
+                <p>Sign up for a free consultation.</p>
+                <motion.button 
+                    whileHover={{ scale: 1.05 }}
+                    className="advice-cta-btn"
+                >
+                    Book a Free Consultation
+                </motion.button>
+                <motion.div 
+                    animate={{ y: [0, -10, 0] }}
+                    transition={{ repeat: Infinity, duration: 2 }}
+                    className="heart-float"
+                >
+                    💚
+                </motion.div>
+            </motion.div>
+        </div>
+    </div>
+</section>
     );
 };
 

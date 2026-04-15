@@ -22,8 +22,8 @@
 /* Top Right Corner Badge */
 .top-right-badge {
   position: absolute;
-  top: 150px;
-  right: 190px;
+  top: 100px;
+  right: 250px;
   background: black;
   color: white;
   padding: 10px 18px;
@@ -134,6 +134,8 @@
   display: inline-flex;
   align-items: center;
   margin: 0 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .switch-outer {
@@ -142,6 +144,11 @@
   height: 24px;
   background-color: #e0e0e0;
   border-radius: 20px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.switch-circle-container.toggled .switch-outer {
+  background-color: #ffcccc;
 }
 
 .switch-inner {
@@ -152,6 +159,11 @@
   border-radius: 20px;
   top: 4px;
   left: 4px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.switch-circle-container.toggled .switch-inner {
+  background-color: #ff3333;
 }
 
 .switch-dot {
@@ -163,6 +175,12 @@
   top: 3px;
   right: 3px;
   z-index: 2;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.switch-circle-container.toggled .switch-dot {
+  right: 27px;
+  /* 48 - 18 - 3 = 27 */
 }
 
 .rest-text {
@@ -216,9 +234,6 @@
   padding: 2.5rem 1.5rem;
   text-align: left;
   transition: all 0.4s ease;
-  opacity: 0;
-  transform: translateY(30px);
-  animation: benefitsMainFadeInUp 0.6s ease-out forwards;
 }
 
 /* Content alignment */
@@ -527,7 +542,7 @@
 }
 
 .benefits-cta-footer-brand {
-  animation: benefitsCtaFadeInLeft 0.8s ease-out;
+  display: block;
 }
 
 .benefits-cta-footer-logo {
@@ -593,7 +608,6 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
-  animation: benefitsCtaFadeInRight 0.8s ease-out;
 }
 
 .benefits-cta-footer-column {
