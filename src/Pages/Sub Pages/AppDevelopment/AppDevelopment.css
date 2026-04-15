@@ -955,7 +955,6 @@
     position: relative;
     width: 100%;
     height: 100%;
-    min-height: 480px;
     border-radius: 24px;
     overflow: hidden;
     background: #1a1a1a;
@@ -1199,7 +1198,7 @@
     font-weight: 700;
     cursor: pointer;
     transition: all 0.2s ease;
-    text-align: left;
+    text-align: center;
 }
 
 .app-page-detail-cta:hover {
@@ -1897,6 +1896,7 @@
     color: #ffffff;
     margin-bottom: 24px;
     letter-spacing: -1px;
+    text-align: left;
 }
 
 .app-page-prod-desc {
@@ -2116,7 +2116,7 @@
 
 .app-page-el-img-small-top {
     position: absolute;
-    left: 0;
+    left: 20px;
     top: 80px;
     width: 240px;
     height: 180px;
@@ -2129,7 +2129,7 @@
 
 .app-page-el-img-small-bottom {
     position: absolute;
-    left: 20px;
+    left: 40px;
     bottom: 40px;
     width: 250px;
     height: 190px;
@@ -2249,6 +2249,7 @@
     margin-bottom: 24px;
     font-family: 'Poppins', 'Inter', sans-serif;
     letter-spacing: -1px;
+    text-align: left;
 }
 
 .app-page-el-desc {
@@ -2351,7 +2352,7 @@
 
 /* MISSION & SERVICES SECTION */
 .app-page-mission-section {
-    padding: 100px 0 120px;
+    padding: 10px 0 40px;
     background-color: #fafafa;
     font-family: 'Inter', sans-serif;
 }
@@ -2364,7 +2365,7 @@
 
 .app-page-mission-header {
     text-align: left;
-    margin-bottom: 80px;
+    margin-bottom: 40px;
 }
 
 .app-page-mission-label {
@@ -2377,13 +2378,13 @@
 }
 
 .app-page-mission-title {
-    font-size: 50px;
+    font-size: 46px;
     font-weight: 800;
-    line-height: 1.15;
+    line-height: 1.2;
     color: #111111;
-    text-align: center;
     letter-spacing: -1px;
-    margin-left: 4%;
+    text-align: center;
+    margin-top: -70px;
 }
 
 .app-page-mission-highlight {
@@ -2399,8 +2400,8 @@
     align-items: flex-end;
     gap: -40px;
     /* Overlap handled by margins below */
-    margin-top: 80px;
-    padding: 60px 0;
+    margin-top: 10px;
+    padding: 20px 0 40px;
     position: relative;
     max-width: 1400px;
     margin-left: auto;
@@ -2415,7 +2416,7 @@
     /* Semi-circle top */
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
@@ -2442,6 +2443,7 @@
     justify-content: space-between;
     align-items: flex-start;
     width: 100%;
+    margin-bottom: 25px;
 }
 
 .app-page-card-title-group {
@@ -2454,14 +2456,15 @@
 }
 
 .app-page-service-card-title {
-    font-size: 19px;
-    font-weight: 800;
+    font-size: 18px;
+    font-weight: 200;
     margin: 0;
     color: #ffffff;
     letter-spacing: -0.5px;
     text-align: left !important;
     line-height: 1.2;
     word-break: break-word;
+    font-family: 'Aldrich', sans-serif;
 }
 
 .app-page-service-card-subtitle {
@@ -2475,13 +2478,14 @@
     font-size: 13.5px;
     line-height: 1.5;
     opacity: 0.85;
-    margin: 15px 0;
+    margin: 0;
     font-weight: 400;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
-    line-clamp: 3;
+    -webkit-line-clamp: 5;
+    line-clamp: 5;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    text-align: left;
 }
 
 /* Badge Style */
@@ -2520,6 +2524,7 @@
     height: 100px;
     /* Specific height to let text take space */
     width: 100%;
+    margin-top: auto;
 }
 
 
@@ -2661,7 +2666,7 @@
 }
 
 .app-page-agency-header {
-    text-align: left;
+    text-align: center;
     margin-bottom: 80px;
 }
 
@@ -2901,7 +2906,7 @@
 
 .app-page-testimonial-container {
     max-width: 100%;
-    text-align: left;
+    text-align: center;
 }
 
 .app-page-testimonial-label {
@@ -2911,7 +2916,7 @@
     letter-spacing: 0.5px;
     margin-bottom: 16px;
     font-style: italic;
-     margin-left: 50%;
+    margin-left: 50%;
 }
 
 .app-page-testimonial-heading {
@@ -3055,7 +3060,24 @@
 }
 
 /* Left Alignment Overrides */
-.ap-hero-title-new, .ap-hero-desc-new, .ap-hero-subtitle-new, .bi-info-subtitle, .bi-el-title, .bi-prod-title, .bi-detail-title, .bi-about-left-title, .bi-service-card-title, .bi-service-card-desc, .bi-agency-main-title, .bi-info-col, .bi-info-features {
+.ap-hero-title-new,
+.ap-hero-desc-new,
+.ap-hero-subtitle-new,
+.app-page-hero-title-desc-new,
+.bi-info-subtitle,
+.bi-prod-title,
+.bi-detail-title,
+.bi-about-left-title,
+.bi-service-card-title,
+.bi-service-card-desc,
+.bi-agency-main-title,
+.app-page-mission-title,
+.app-page-agency-header,
+.app-page-testimonial-container,
+/* .app-page-testimonial-heading,
+.app-page-testimonial-label, */
+.bi-info-col,
+.bi-info-features {
     text-align: left !important;
     margin-left: 0 !important;
 }

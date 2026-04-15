@@ -19,7 +19,7 @@
   position: relative;
   overflow: hidden;
   margin-top: 40px;
-  margin-bottom: -100px;
+  margin-bottom: 0px;
 }
 
 .vision-mission-container {
@@ -155,18 +155,22 @@
 
 .card-front {
   transform: rotateY(0deg);
+  opacity: 1; /* Completely visible by default */
 }
 
 .card-back {
   transform: rotateY(180deg);
+  opacity: 0; /* Hidden to prevent bleed-through */
 }
 
 .vm-card:hover .card-front {
   transform: rotateY(-180deg);
+  opacity: 0; /* Fade out as it rotates away */
 }
 
 .vm-card:hover .card-back {
   transform: rotateY(0deg);
+  opacity: 1; /* Fade in as it rotates into view */
 }
 
 /* ========================================
@@ -527,30 +531,41 @@
     padding: 60px 15px;
   }
 
-  .section-header {
-    margin-bottom: 60px;
+  .mission-vision-header {
+    display: flex !important;
+    flex-direction: column !important;
+    text-align: left !important;
+    margin-bottom: 40px !important;
+    align-items: flex-start !important;
   }
 
-  .section-header h2 {
-    font-size: 2rem;
+  .mission-vision-header h2 {
+    font-size: 2.2rem !important;
+    text-align: left !important;
+    margin-bottom: 15px !important;
+    width: 100% !important;
   }
 
-  .section-header p {
-    font-size: 1rem;
+  .mission-vision-header p {
+    font-size: 1.1rem !important;
+    text-align: left !important;
+    margin-top: 10px !important;
+    margin-left: 0 !important;
+    width: 100% !important;
   }
 
   .vm-card {
-    min-height: 400px;
+    min-height: 520px !important;
   }
 
   .card-front,
   .card-back {
-    padding: 35px 30px;
+    padding: 20px 20px !important;
   }
 
   .card-header {
-    gap: 15px;
-    margin-bottom: 25px;
+    gap: 12px !important;
+    margin-bottom: 15px !important;
   }
 
   .card-header h3 {
@@ -558,13 +573,18 @@
   }
 
   .card-icon {
-    width: 55px;
-    height: 55px;
+    width: 45px !important;
+    height: 45px !important;
+  }
+
+  .card-icon svg {
+    font-size: 1.2rem !important;
   }
 
   .bullet-list li {
-    font-size: 0.95rem;
-    margin-bottom: 15px;
+    font-size: 0.9rem !important;
+    margin-bottom: 10px !important;
+    line-height: 1.5 !important;
   }
 
   .back-text-icon {

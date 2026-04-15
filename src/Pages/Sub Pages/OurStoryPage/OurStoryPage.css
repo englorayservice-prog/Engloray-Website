@@ -1500,8 +1500,13 @@
   transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.osp-vm-left { text-align: left; }
-.osp-vm-right { text-align: left; }
+.osp-vm-left {
+  text-align: left;
+}
+
+.osp-vm-right {
+  text-align: left;
+}
 
 .osp-vm-label {
   font-family: 'Aldrich', monospace;
@@ -1646,15 +1651,13 @@
   left: 50%;
   width: 900px;
   height: 900px;
-  background: conic-gradient(
-    from 0deg at 50% 50%,
-    transparent 0deg,
-    rgba(5, 213, 255, 0.3) 10deg,
-    rgba(34, 102, 255, 0.7) 40deg,
-    rgba(5, 213, 255, 0.3) 70deg,
-    transparent 80deg,
-    transparent 360deg
-  );
+  background: conic-gradient(from 0deg at 50% 50%,
+      transparent 0deg,
+      rgba(5, 213, 255, 0.3) 10deg,
+      rgba(34, 102, 255, 0.7) 40deg,
+      rgba(5, 213, 255, 0.3) 70deg,
+      transparent 80deg,
+      transparent 360deg);
   filter: blur(40px);
   z-index: 1;
   pointer-events: none;

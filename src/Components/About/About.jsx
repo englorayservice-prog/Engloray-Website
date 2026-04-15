@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useLayoutEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {
     faArrowTrendUp,
     faPlay,
@@ -25,7 +27,11 @@ import {
     faCode
 } from '@fortawesome/free-solid-svg-icons';
 import './About.css';
-import aboutVideo from '../../assets/OurCoreValuebg.mp4';
+// import aboutVideo from '../../assets/OurCoreValuebg.mp4';
+import aboutVideo from '../../assets/anthem.mp4';
+import anthemThumbnail from '../../assets/anthemThumbnail.png';
+
+gsap.registerPlugin(ScrollTrigger);
 
 
 // 1. MODIFIED: Custom Hook for LocalStorage Persistence
@@ -78,6 +84,43 @@ const About = () => {
         if (e) e.preventDefault();
         if (callback) callback();
     };
+
+    // 4. MODIFIED: Cinematic Entrance Animations
+    useLayoutEffect(() => {
+        let ctx = gsap.context(() => {
+            const elements = [
+                ".stats-stack-card",
+                ".card-video-precise",
+                ".hero-heading-inline",
+                ".hero-description-p",
+                ".inline-action-group",
+                ".inline-icon-stack",
+                ".visual-hero-card",
+                ".stat-card-new"
+            ];
+
+            gsap.fromTo(elements, 
+                { 
+                    y: 100, 
+                    opacity: 0 
+                },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 1.2,
+                    ease: "power4.out",
+                    stagger: 0.15,
+                    scrollTrigger: {
+                        trigger: ".about-main-card",
+                        start: "top 85%",
+                        toggleActions: "restart none none restart"
+                    }
+                }
+            );
+        });
+
+        return () => ctx.revert();
+    }, []);
 
     return (
         <section id="engloray-about-section-precise" className="engloray-about-wrapper">
@@ -138,7 +181,7 @@ const About = () => {
                                         </div>
                                     </div>
                                     <div className="cv-right-side">
-                                        <div className="cv-preview-full">
+                                        <div className="cv-preview-full" style={{ backgroundImage: `url(${anthemThumbnail})` }}>
                                             <div className="cv-play-icon">
                                                 <FontAwesomeIcon icon={faPlay} />
                                             </div>
@@ -170,13 +213,7 @@ const About = () => {
                         </div>
 
                         <div className="grid-right-side">
-                            <div className="visual-hero-card">
-                                <div className="visual-pagination-dots">
-                                    <span></span>
-                                    <span className="active"></span>
-                                    <span></span>
-                                    <span></span>
-                                </div>
+                            <div className="visual-hero-card" style={{ backgroundImage: `url(${anthemThumbnail})` }}>
                                 <div className="visual-glass-footer">
                                     <div className="glass-content-left">
                                         <h3 className="join-text">Join Our<br />Platform</h3>

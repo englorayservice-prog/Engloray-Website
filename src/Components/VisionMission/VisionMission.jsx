@@ -23,60 +23,76 @@ const VisionMission = () => {
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      // 1. Header Animation (Fade up on scroll - NO PINNING)
-      gsap.fromTo(headerRef.current,
-        { opacity: 0, y: 80, scale: 0.95 },
+      // 1. Header Animation (Slowly from bottom)
+      gsap.fromTo(headerRef.current.querySelectorAll('h2, p'),
+        { opacity: 0, y: 100 },
         {
           opacity: 1,
           y: 0,
-          scale: 1,
-          duration: 1,
+          duration: 1.5,
+          stagger: 0.2,
           ease: "power2.out",
           scrollTrigger: {
             trigger: headerRef.current,
-            start: "top 80%",
-            end: "top 50%",
-            toggleActions: "play none none reverse"
+            start: "top 85%",
+            toggleActions: "restart none none restart"
           }
         }
       );
 
-      // 2. Vision Card (From Left with Rotation)
+      // 2. Vision Card Entrance (Slowly from bottom)
       gsap.fromTo(visionCardRef.current,
-        { x: -150, rotationY: -15, opacity: 0 },
+        { opacity: 0, y: 120, rotationX: 5 },
         {
-          x: 0,
-          rotationY: 0,
           opacity: 1,
-          duration: 1.2,
+          y: 0,
+          rotationX: 0,
+          duration: 1.8,
           ease: "power3.out",
           scrollTrigger: {
             trigger: visionCardRef.current,
-            start: "top 75%",
-            end: "top 40%",
+            start: "top 80%",
             toggleActions: "play none none reverse"
           }
         }
       );
 
-      // 3. Mission Card (From Right with Rotation)
+      // 3. Mission Card Entrance (Slowly from bottom)
       gsap.fromTo(missionCardRef.current,
-        { x: 150, rotationY: 15, opacity: 0, scale: 0.95 },
+        { opacity: 0, y: 120, rotationX: 5 },
         {
-          x: 0,
-          rotationY: 0,
           opacity: 1,
-          scale: 1,
-          duration: 1.2,
+          y: 0,
+          rotationX: 0,
+          duration: 1.8,
           ease: "power3.out",
           scrollTrigger: {
             trigger: missionCardRef.current,
-            start: "top 75%",
-            end: "top 40%",
-            toggleActions: "play none none reverse"
+            start: "top 80%",
+            toggleActions: "restart none none restart"
           }
         }
       );
+
+      // 4. Staggered text inside cards (TARGET FRONT ONLY)
+      [visionCardRef.current, missionCardRef.current].forEach((card) => {
+        gsap.fromTo(card.querySelectorAll('.card-front h3, .card-front li'),
+          { opacity: 0, y: 50 },
+          {
+            opacity: 1,
+            y: 0,
+            stagger: 0.08,
+            duration: 1.2,
+            delay: 0.5,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: card,
+              start: "top 85%",
+              toggleActions: "restart none none restart"
+            }
+          }
+        );
+      });
 
       // 4. Core Values Section Header (Fade in on scroll)
       gsap.fromTo(valuesRef.current,
@@ -90,7 +106,7 @@ const VisionMission = () => {
             trigger: valuesRef.current,
             start: "top 80%",
             end: "top 50%",
-            toggleActions: "play none none reverse"
+            toggleActions: "restart none none restart"
           }
         }
       );
@@ -109,7 +125,7 @@ const VisionMission = () => {
             trigger: valuesRef.current,
             start: "top 70%",
             end: "top 30%",
-            toggleActions: "play none none reverse"
+            toggleActions: "restart none none restart"
           }
         }
       );

@@ -512,3 +512,130 @@
         font-size: 1.6rem;
     }
 }
+
+/* Small Mobile Resolution Support: Centered Container with Left Aligned Content */
+@media screen and (max-width: 425px) {
+    .business-boost-container {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 40px 20px !important;
+    }
+
+    .boost-left-section {
+        align-items: flex-start !important;
+        text-align: left !important;
+        width: 100% !important;
+        padding-left: 0 !important;
+    }
+
+    .boost-intro-text, 
+    .boost-main-title, 
+    .boost-highlight, 
+    .boost-title-main, 
+    .boost-subtitle, 
+    .boost-description {
+        text-align: left !important;
+        margin-left: 0 !important;
+        width: 100% !important;
+    }
+
+    .boost-highlight {
+        font-size: 2.8rem !important;
+        margin-bottom: -10px !important;
+    }
+
+    .boost-title-main {
+        font-size: 3.2rem !important;
+    }
+
+    .boost-subtitle {
+        font-size: 1.8rem !important;
+        margin-top: -15px !important;
+        white-space: normal !important;
+    }
+
+    .boost-cta-button {
+        margin-left: 0 !important;
+        margin-right: auto !important;
+    }
+
+    .boost-stats {
+        align-items: flex-start !important;
+        margin-top: 20px !important;
+    }
+
+    .stat-item {
+        align-items: flex-start !important;
+        text-align: left !important;
+    }
+
+    .stat-text h4,
+    .stat-textt h4 {
+        margin-left: 0 !important;
+        text-align: left !important;
+    }
+
+    .stat-text p,
+    .stat-textt p {
+        margin-left: 0 !important;
+        text-align: left !important;
+        white-space: normal !important;
+    }
+
+    /* Cards Left Alignment */
+    .card-title-left {
+        text-align: left !important;
+        flex: 1 !important;
+    }
+
+    .card-description-right {
+        text-align: left !important;
+        padding-left: 0 !important;
+        padding-top: 10px !important;
+        border-left: none !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
+    }
+
+    .boost-card {
+        padding: 30px 20px !important;
+    }
+}
+
+/* laptop Resolution Fix: Reducing gaps and repositioning carousel */
+@media screen and (min-width: 1025px) and (max-width: 1600px) {
+    .business-boost-container {
+        padding-top: 20px !important;
+        padding-bottom: 0px !important;
+    }
+    .boost-highlight {
+        margin-bottom: -65px !important;
+    }
+    .boost-subtitle {
+        margin-top: -45px !important; /* Reduced negative margin to add gap */
+    }
+    .boost-intro-text {
+        margin-bottom: 5px !important;
+    }
+    .boost-main-title {
+        margin-top: 0px !important;
+        margin-bottom: 10px !important;
+    }
+    .boost-description {
+        margin-top: 0px !important;
+        margin-bottom: 25px !important;
+    }
+    .boost-cta-button {
+        margin-bottom: 40px !important;
+    }
+    
+    .boost-right-section {
+        margin-top: -80px !important; 
+        height: 130vh !important;
+    }
+    
+    .boost-stats {
+        margin-top: -10px !important;
+    }
+}

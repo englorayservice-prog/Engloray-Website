@@ -2352,7 +2352,7 @@
 
 /* MISSION & SERVICES SECTION */
 .dev-page-mission-section {
-    padding: 100px 0 120px;
+    padding: 10px 0 40px;
     background-color: #fafafa;
     font-family: 'Inter', sans-serif;
 }
@@ -2365,7 +2365,7 @@
 
 .dev-page-mission-header {
     text-align: left;
-    margin-bottom: 80px;
+    margin-bottom: 40px;
 }
 
 .dev-page-mission-label {
@@ -2378,13 +2378,13 @@
 }
 
 .dev-page-mission-title {
-    font-size: 50px;
+    font-size: 46px;
     font-weight: 800;
-    margin-left: 8%;
-    line-height: 1.15;
+    line-height: 1.2;
     color: #111111;
     letter-spacing: -1px;
     text-align: center;
+    margin-top: -70px;
 }
 
 .dev-page-mission-highlight {
@@ -2400,8 +2400,8 @@
     align-items: flex-end;
     gap: -40px;
     /* Overlap handled by margins below */
-    margin-top: 80px;
-    padding: 60px 0;
+    margin-top: 10px;
+    padding: 20px 0 40px;
     position: relative;
     max-width: 1400px;
     margin-left: auto;
@@ -2416,7 +2416,7 @@
     /* Semi-circle top */
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
@@ -2443,6 +2443,7 @@
     justify-content: space-between;
     align-items: flex-start;
     width: 100%;
+    margin-bottom: 25px;
 }
 
 .dev-page-card-title-group {
@@ -2455,14 +2456,15 @@
 }
 
 .dev-page-service-card-title {
-    font-size: 19px;
-    font-weight: 800;
+    font-size: 18px;
+    font-weight: 200;
     margin: 0;
     color: #ffffff;
     letter-spacing: -0.5px;
     text-align: left !important;
     line-height: 1.2;
     word-break: break-word;
+    font-family: 'Aldrich', sans-serif;
 }
 
 .dev-page-service-card-subtitle {
@@ -2474,16 +2476,16 @@
 
 .dev-page-service-card-desc {
     font-size: 13.5px;
-    text-align: left;
     line-height: 1.5;
     opacity: 0.85;
-    margin: 15px 0;
+    margin: 0;
     font-weight: 400;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
-    line-clamp: 3;
+    -webkit-line-clamp: 5;
+    line-clamp: 5;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    text-align: left;
 }
 
 /* Badge Style */
@@ -2522,6 +2524,7 @@
     height: 100px;
     /* Specific height to let text take space */
     width: 100%;
+    margin-top: auto;
 }
 
 

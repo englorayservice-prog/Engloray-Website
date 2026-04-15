@@ -6,7 +6,7 @@
 }
 
 /* ============================================================
-   HERO SECTION NEW â€” Exact match to image
+   HERO SECTION NEW — Exact match to image
    ============================================================ */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
@@ -501,7 +501,7 @@
 }
 
 /* ============================================================
-   SERVICES SECTION NEW â€” Exact match to image
+   SERVICES SECTION NEW — Exact match to image
    ============================================================ */
 .bi-services-section-new {
     padding: 100px 0;
@@ -626,8 +626,6 @@
 .bi-services-image-wrapper-new {
     width: 100%;
     height: 100%;
-    min-height: 500px;
-    max-height: 600px;
     border-radius: 30px;
     overflow: hidden;
     background: #1a1a1a;
@@ -637,6 +635,8 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
+    filter: brightness(1.1) contrast(1.1);
     animation: fadeInImage 0.4s ease-in-out;
 }
 
@@ -751,7 +751,7 @@
 }
 
 /* ============================================================
-   ABOUT SECTION NEW â€” Matching reference image (dark 3-col layout)
+   ABOUT SECTION NEW — Matching reference image (dark 3-col layout)
    ============================================================ */
 .bi-about-section-new {
     width: 100%;
@@ -806,7 +806,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    /* Prevent arrow from wrapping below */
     padding: 20px 24px;
     border-radius: 40px;
     border: 1px solid #2a2a2a;
@@ -855,6 +856,7 @@
     color: #666666;
     line-height: 1.7;
     margin-bottom: 0;
+    text-align: left;
 }
 
 
@@ -938,7 +940,7 @@
 }
 
 .bi-service-sub-list li::before {
-    content: 'â€¢';
+    content: '•';
     position: absolute;
     left: 0;
     color: #BAFF29;
@@ -1083,7 +1085,7 @@
     display: flex;
     flex-direction: column;
     gap: 18px;
-    height: 100%;
+    height: 840px;
     box-sizing: border-box;
     animation: bi-detail-pop 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -1199,7 +1201,7 @@
     font-weight: 700;
     cursor: pointer;
     transition: all 0.2s ease;
-    text-align: left;
+    text-align: center;
 }
 
 .bi-detail-cta:hover {
@@ -1207,6 +1209,7 @@
     transform: translateY(-2px);
     box-shadow: 0 8px 24px rgba(186, 255, 41, 0.2);
 }
+
 
 /* Responsive */
 @media (max-width: 1100px) {
@@ -1219,9 +1222,40 @@
     }
 
     .bi-about-detail-panel {
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: flex-start;
+        flex-direction: column !important;
+        flex-wrap: nowrap;
+        align-items: center;
+        text-align: center;
+        gap: 12px !important;
+        padding: 20px !important;
+    }
+
+    .bi-detail-title {
+        order: 1;
+        margin-bottom: 5px;
+    }
+
+    .bi-detail-desc {
+        order: 2;
+        margin-bottom: 5px;
+    }
+
+    .bi-detail-stats {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .bi-detail-cta {
+        order: 4;
+        margin-top: 5px !important;
+    }
+
+    /* Hide divider and num on tablet to save space */
+    .bi-detail-divider,
+    .bi-detail-num,
+    .bi-detail-icon-wrap {
+        display: none;
     }
 }
 
@@ -1398,7 +1432,7 @@
 }
 
 .bi-feature-item::before {
-    content: 'âœ“';
+    content: '✓';
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -2115,8 +2149,8 @@
 
 .bi-el-img-small-top {
     position: absolute;
-    left: 0;
-    top: 80px;
+    left: 20px;
+    top: 70px;
     width: 240px;
     height: 180px;
     object-fit: cover;
@@ -2128,8 +2162,8 @@
 
 .bi-el-img-small-bottom {
     position: absolute;
-    left: 20px;
-    bottom: 40px;
+    left: 40px;
+    bottom: 50px;
     width: 250px;
     height: 190px;
     object-fit: cover;
@@ -2164,7 +2198,7 @@
 
 .bi-el-badge-volunteer {
     position: absolute;
-    right: 40px;
+    right: 20px;
     bottom: 0;
     background: #ffffff;
     padding: 14px 24px;
@@ -2350,7 +2384,7 @@
 
 /* MISSION & SERVICES SECTION */
 .bi-mission-section {
-    padding: 100px 0 120px;
+    padding: 10px 0 40px;
     background-color: #fafafa;
     font-family: 'Inter', sans-serif;
 }
@@ -2363,7 +2397,7 @@
 
 .bi-mission-header {
     text-align: left;
-    margin-bottom: 80px;
+    margin-bottom: 40px;
 }
 
 .bi-mission-label {
@@ -2376,13 +2410,13 @@
 }
 
 .bi-mission-title {
-    font-size: 50px;
+    font-size: 46px;
     font-weight: 800;
-    line-height: 1.15;
+    line-height: 1.2;
     color: #111111;
     letter-spacing: -1px;
-    text-align: center;
-    margin-left: 4%;
+    text-align: left;
+    margin-top: -70px;
 }
 
 .bi-mission-highlight {
@@ -2398,15 +2432,15 @@
     align-items: flex-end;
     gap: -40px;
     /* Overlap handled by margins below */
-    margin-top: 80px;
-    padding: 60px 0;
+    margin-top: 10px;
+    padding: 20px 0 40px;
     position: relative;
     max-width: 1400px;
     margin-left: auto;
     margin-right: auto;
 }
 
-.bi-service-card {
+.bi-page-service-card {
     width: 280px;
     height: 400px;
     padding: 30px;
@@ -2414,7 +2448,7 @@
     /* Semi-circle top */
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
@@ -2426,21 +2460,22 @@
 }
 
 
-.bi-service-card:last-child {
+.bi-page-service-card:last-child {
     margin-right: 0;
 }
 
-.bi-service-card:hover {
+.bi-page-service-card:hover {
     transform: translateY(-30px) scale(1.05) !important;
     z-index: 20 !important;
 }
 
 /* Card Header Structure */
-.bi-card-header {
+.bi-page-card-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     width: 100%;
+    margin-bottom: 25px;
 }
 
 .bi-card-title-group {
@@ -2452,39 +2487,41 @@
     max-width: calc(100% - 75px);
 }
 
-.bi-service-card-title {
-    font-size: 19px;
-    font-weight: 800;
+.bi-page-service-card-title {
+    font-size: 18px;
+    font-weight: 200;
     margin: 0;
     color: #ffffff;
     letter-spacing: -0.5px;
     text-align: left !important;
     line-height: 1.2;
-    word-break: break-word;
+    overflow-wrap: break-word;
+    font-family: 'Aldrich', sans-serif;
 }
 
-.bi-service-card-subtitle {
+.bi-page-service-card-subtitle {
     font-size: 13px;
     font-weight: 500;
     opacity: 0.8;
     margin: 0;
 }
 
-.bi-service-card-desc {
+.bi-page-service-card-desc {
     font-size: 13.5px;
     line-height: 1.5;
     opacity: 0.85;
-    margin: 15px 0;
+    margin: 0;
     font-weight: 400;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
-    line-clamp: 3;
+    -webkit-line-clamp: 5;
+    line-clamp: 5;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    text-align: left;
 }
 
 /* Badge Style */
-.bi-card-badge {
+.bi-page-card-badge {
     background: rgba(0, 0, 0, 0.25);
     padding: 4px 10px;
     border-radius: 20px;
@@ -2494,7 +2531,7 @@
     backdrop-filter: blur(5px);
 }
 
-.bi-badge-icon-bg {
+.bi-page-badge-icon-bg {
     width: 20px;
     height: 20px;
     background: #ffffff;
@@ -2505,13 +2542,13 @@
     justify-content: center;
 }
 
-.bi-badge-rating {
+.bi-page-badge-rating {
     font-size: 12px;
     font-weight: 700;
 }
 
 /* Main Icon / Graphic area */
-.bi-service-icon-wrap {
+.bi-page-service-icon-wrap {
     margin: 0 auto;
     display: flex;
     align-items: flex-end;
@@ -2519,6 +2556,7 @@
     height: 100px;
     /* Specific height to let text take space */
     width: 100%;
+    margin-top: auto;
 }
 
 
@@ -2645,7 +2683,7 @@
 
 /* BUSINESS AGENCY SECTION */
 .bi-agency-section {
-    padding: 100px 0 140px;
+    padding: 100px 0 80px;
     background-color: #111111;
     color: #ffffff;
     font-family: 'Inter', sans-serif;
@@ -2680,7 +2718,7 @@
     color: #ffffff;
     text-transform: uppercase;
     font-family: 'Poppins', sans-serif;
-    margin-left: 40%;
+    /* margin-left: 40%; */
 }
 
 .bi-lime-highlight {
@@ -2706,7 +2744,12 @@
     display: grid;
     grid-template-columns: 1fr 1.1fr;
     gap: 80px;
-    align-items: flex-start;
+    align-items: stretch;
+}
+
+.bi-agency-right {
+    display: flex;
+    flex-direction: column;
 }
 
 .bi-agency-image-card {
@@ -2716,7 +2759,7 @@
 
 .bi-portrait-img {
     width: 100%;
-    height: 640px;
+    height: 560px;
     object-fit: cover;
     border-radius: 40px;
     box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
@@ -2766,7 +2809,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 50px;
-    margin-bottom: 70px;
+    margin-bottom: 50px;
 }
 
 .bi-info-subtitle {
@@ -2783,6 +2826,7 @@
     line-height: 1.8;
     color: rgba(255, 255, 255, 0.82);
     margin-bottom: 30px;
+    text-align: left;
 }
 
 .bi-agency-more-btn {
@@ -2817,6 +2861,7 @@
     font-size: 15px;
     font-weight: 700;
     color: #ffffff;
+    text-align: left;
 }
 
 .bi-check-icon {
@@ -2836,11 +2881,15 @@
 .bi-agency-bottom-img-wrap {
     position: relative;
     width: 100%;
+    flex-grow: 1;
 }
 
 .bi-landscape-img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 380px;
+    height: 100%;
     object-fit: cover;
     border-radius: 35px;
     box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
@@ -2886,6 +2935,10 @@
         left: 20px;
         bottom: -30px;
     }
+
+    .bi-agency-bottom-img-wrap {
+        min-height: 380px;
+    }
 }
 
 /* ============================================================
@@ -2911,7 +2964,7 @@
     letter-spacing: 0.5px;
     margin-bottom: 16px;
     font-style: italic;
-    margin-left: 40%;
+    margin-left: 45%;
 }
 
 .bi-testimonial-heading {
@@ -3054,7 +3107,910 @@
 }
 
 /* Left Alignment Overrides */
-.br-hero-title-new, .br-hero-desc-new, .br-hero-subtitle-new, .bi-info-subtitle, .bi-el-title, .bi-prod-title, .bi-detail-title, .bi-about-left-title, .bi-service-card-title, .bi-service-card-desc, .bi-agency-main-title, .bi-info-col, .bi-info-features {
+.br-hero-title-new,
+.br-hero-subtitle-new,
+.br-hero-desc-new,
+.bi-hero-title-desc-new,
+.bi-info-subtitle,
+.bi-el-title,
+.bi-prod-title,
+.bi-detail-title,
+.bi-about-left-title,
+.bi-service-card-title,
+.bi-service-card-desc,
+.bi-agency-main-title,
+.bi-mission-title,
+.bi-agency-header,
+.bi-testimonial-container,
+.bi-info-col,
+.bi-info-features {
     text-align: left !important;
     margin-left: 0 !important;
+}
+
+/* ============================================================
+   COMPREHENSIVE RESPONSIVE FIXES FOR ALL SECTIONS
+   ============================================================ */
+
+/* Hero Section Responsive Fixes */
+@media (max-width: 1200px) {
+    .bi-hero-container-new {
+        flex-direction: column;
+        padding: 40px 30px 60px 30px;
+        clip-path: none;
+    }
+
+    .bi-hero-left-new {
+        max-width: 100%;
+    }
+
+    .bi-hero-title-new {
+        font-size: 48px;
+        margin-left: 0;
+    }
+
+    .bi-hero-subtitle-new {
+        margin-left: 0;
+    }
+
+    .bi-hero-title-desc-new {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        min-height: auto;
+        margin: 20px 0;
+    }
+
+    .bi-hero-right-new {
+        max-width: 100%;
+    }
+
+    .bi-hero-stats-new {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .bi-hero-section-new {
+        min-height: auto;
+        padding: 20px;
+    }
+
+    .bi-hero-container-new {
+        padding: 30px 20px 40px 20px;
+    }
+
+    .bi-hero-title-new {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .bi-hero-buttons-new {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .bi-btn-get-started-new,
+    .bi-btn-contact-us-new {
+        width: 100%;
+        text-align: center;
+    }
+
+    .bi-hero-desc-new {
+        font-size: 16px;
+    }
+
+    .bi-stat-item-new {
+        flex: 1;
+        min-width: 80px;
+    }
+
+    .bi-title-play-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .bi-case-title-new {
+        font-size: 28px;
+    }
+
+    .bi-about-company-desc-new {
+        font-size: 14px;
+    }
+
+    .bi-performance-card-new {
+        padding: 20px;
+    }
+}
+
+/* About Section Responsive Fixes */
+@media (max-width: 1100px) {
+    .bi-about-inner-new {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .bi-about-left-tag {
+        font-size: 32px;
+    }
+
+    .bi-about-left-title {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    .bi-about-section-new {
+        padding: 80px 20px 60px;
+        clip-path: none;
+        margin-top: 0;
+    }
+
+    .bi-about-left-tag {
+        font-size: 28px !important;
+        text-align: center !important;
+    }
+
+    .bi-about-left-title {
+        font-size: 24px !important;
+        text-align: center !important;
+    }
+
+    .bi-about-intro-new {
+        text-align: center !important;
+    }
+
+    .bi-about-left-header {
+        text-align: center !important;
+    }
+
+    .bi-about-img-wrap-new {
+        min-height: 320px;
+    }
+
+    .bi-about-badge-new {
+        padding: 10px 14px;
+    }
+
+    .bi-badge-num {
+        font-size: 20px;
+    }
+
+    .bi-detail-title {
+        font-size: 22px;
+    }
+
+    .bi-detail-stats {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .bi-detail-stat {
+        flex: 1;
+        min-width: 80px;
+        border-right: none;
+    }
+
+    /* About Section Service List Items Responsive */
+    .bi-about-service-item-new {
+        padding: 15px 18px !important;
+    }
+
+    .bi-service-item-left-about {
+        gap: 12px !important;
+    }
+
+    .bi-service-num-new {
+        font-size: 11px !important;
+    }
+
+    .bi-service-name-about {
+        font-size: 13px !important;
+    }
+
+    .bi-service-short-about {
+        font-size: 10px !important;
+    }
+
+    .bi-service-arrow-about {
+        font-size: 14px !important;
+    }
+
+    /* About Section Right Detail Panel Responsive - Set height to 650px on mobile */
+    .bi-about-detail-panel {
+        padding: 20px 18px !important;
+        height: 650px !important;
+    }
+
+    .bi-detail-icon-wrap {
+        width: 44px;
+        height: 44px;
+    }
+
+    .bi-detail-icon {
+        font-size: 18px;
+    }
+
+    .bi-detail-num {
+        font-size: 9px;
+    }
+
+    .bi-detail-desc {
+        font-size: 13px !important;
+    }
+
+    .bi-detail-feature-item {
+        font-size: 11px !important;
+    }
+
+    .bi-detail-stat-val {
+        font-size: 14px !important;
+    }
+
+    .bi-detail-stat-label {
+        font-size: 9px !important;
+    }
+
+    .bi-detail-cta {
+        padding: 12px 20px !important;
+        font-size: 13px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .bi-about-left-tag {
+        font-size: 18px !important;
+    }
+
+    .bi-about-left-title {
+        font-size: 20px !important;
+    }
+
+    .bi-about-service-item-new {
+        padding: 12px 14px !important;
+    }
+
+    .bi-service-text-group {
+        max-width: 180px;
+    }
+
+    .bi-service-name-about {
+        font-size: 12px !important;
+        white-space: normal;
+        word-break: break-word;
+    }
+
+    .bi-service-short-about {
+        font-size: 9px !important;
+    }
+
+    .bi-about-detail-panel {
+        padding: 16px 14px !important;
+        height: 650px !important;
+    }
+
+    .bi-detail-title {
+        font-size: 18px !important;
+    }
+
+    .bi-detail-desc {
+        font-size: 12px !important;
+    }
+
+    .bi-detail-stats {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .bi-detail-stat {
+        flex: 1;
+        min-width: 70px;
+        padding: 0 8px;
+    }
+}
+
+/* Elevate Section Responsive */
+@media (max-width: 991px) {
+    .bi-el-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .bi-el-left {
+        height: 480px;
+    }
+
+    .bi-el-img-large {
+        width: 220px;
+        height: 380px;
+    }
+
+    .bi-el-img-small-top,
+    .bi-el-img-small-bottom {
+        width: 180px;
+    }
+
+    .bi-el-title {
+        font-size: 32px;
+    }
+
+    .bi-el-preheading {
+        margin-left: 0;
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 576px) {
+    .bi-el-left {
+        height: 400px;
+    }
+
+    .bi-el-img-large {
+        width: 160px;
+        height: 300px;
+        top: 60px;
+    }
+
+    .bi-el-img-small-top {
+        width: 140px;
+        height: 120px;
+        top: 20px;
+        left: 10px;
+    }
+
+    .bi-el-img-small-bottom {
+        width: 150px;
+        height: 130px;
+        left: 5px;
+        bottom: 20px;
+    }
+
+    .bi-el-title {
+        font-size: 28px;
+    }
+
+    .bi-el-stats {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .bi-el-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Productivity Section Responsive Fixes */
+@media (max-width: 991px) {
+    .bi-prod-container {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .bi-prod-left {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .bi-prod-title {
+        font-size: 36px;
+        text-align: center;
+    }
+
+    .bi-prod-desc {
+        text-align: center;
+    }
+
+    .bi-prod-buttons {
+        justify-content: center;
+    }
+
+    .bi-prod-avatars-box {
+        justify-content: center;
+    }
+
+    .bi-prod-avatar-text {
+        text-align: center;
+    }
+
+    .bi-prod-timeline::before {
+        left: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .bi-productivity-section {
+        padding: 80px 20px;
+    }
+
+    .bi-prod-title {
+        font-size: 32px;
+    }
+
+    .bi-prod-desc {
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+
+    .bi-prod-buttons {
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 40px;
+    }
+
+    .bi-btn-prod-primary,
+    .bi-btn-prod-secondary {
+        width: 100%;
+        text-align: center;
+        padding: 14px 24px;
+    }
+
+    .bi-prod-avatars-box {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .bi-prod-avatars {
+        justify-content: center;
+    }
+
+    .bi-prod-avatar-text {
+        text-align: center;
+        font-size: 12px;
+    }
+
+    /* FIX: Timeline adjustments for mobile - reduce icon size, move line left */
+    .bi-prod-timeline {
+        margin-left: 0;
+        padding-left: 0;
+    }
+
+    .bi-prod-timeline::before {
+        left: 16px !important;
+        width: 2px;
+    }
+
+    .bi-timeline-item {
+        gap: 12px;
+        padding-bottom: 20px;
+        position: relative;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    /* Reduce icon size */
+    .bi-timeline-icon {
+        width: 40px !important;
+        height: 40px !important;
+        padding: 8px !important;
+        flex-shrink: 0;
+        margin: 0;
+    }
+
+    .bi-timeline-icon svg {
+        width: 24px !important;
+        height: 24px !important;
+    }
+
+    /* Content styling */
+    .bi-timeline-content {
+        padding-top: 4px;
+        margin-left: 0;
+        flex: 1;
+    }
+
+    .bi-timeline-content h3 {
+        font-size: 16px;
+        margin-bottom: 4px;
+        text-align: left;
+    }
+
+    .bi-timeline-content p {
+        font-size: 12px;
+        line-height: 1.5;
+        text-align: left;
+    }
+}
+
+@media (max-width: 576px) {
+    .bi-productivity-section {
+        padding: 60px 16px;
+    }
+
+    .bi-prod-title {
+        font-size: 28px;
+    }
+
+    .bi-btn-prod-primary,
+    .bi-btn-prod-secondary {
+        padding: 12px 20px;
+        font-size: 13px;
+    }
+
+    /* Further reduce icon size for very small screens */
+    .bi-prod-timeline::before {
+        left: 14px !important;
+    }
+
+    .bi-timeline-icon {
+        width: 32px !important;
+        height: 32px !important;
+        padding: 6px !important;
+    }
+
+    .bi-timeline-icon svg {
+        width: 20px !important;
+        height: 20px !important;
+    }
+
+    .bi-timeline-item {
+        gap: 10px;
+    }
+
+    .bi-timeline-content h3 {
+        font-size: 14px;
+    }
+
+    .bi-timeline-content p {
+        font-size: 11px;
+    }
+}
+
+/* Mission & Services Grid Responsive Fixes */
+@media (max-width: 1300px) {
+    .bi-services-grid {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .bi-page-service-card {
+        margin-right: 0;
+        transform: rotate(0deg) translateY(0) !important;
+        width: calc(33.33% - 20px);
+        min-width: 280px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .bi-page-service-card {
+        width: calc(50% - 20px);
+    }
+
+    .bi-page-service-card-desc {
+        font-size: 12px;
+    }
+
+    .bi-page-service-card-title {
+        font-size: 17px;
+        white-space: normal;
+        word-break: break-word;
+    }
+}
+
+@media (max-width: 768px) {
+    .bi-page-service-card {
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    .bi-mission-title {
+        font-size: 32px;
+    }
+
+    .bi-mission-section {
+        padding: 60px 20px;
+    }
+
+    .bi-mission-highlight {
+        padding: 0 8px;
+    }
+
+    .bi-page-service-card-desc {
+        font-size: 12px;
+        -webkit-line-clamp: 4;
+        line-clamp: 4;
+    }
+}
+
+@media (max-width: 480px) {
+    .bi-mission-title {
+        font-size: 28px;
+        margin-top: 5px;
+        /* moves title slightly down */
+    }
+
+    .bi-page-service-card {
+        height: auto;
+        min-height: 380px;
+        padding: 25px;
+    }
+
+    .bi-page-service-card-title {
+        font-size: 16px;
+    }
+
+    .bi-page-service-card-subtitle {
+        font-size: 11px;
+    }
+
+    .bi-page-service-icon-wrap {
+        height: 70px;
+        margin-top: 10px;
+    }
+
+    .bi-page-service-icon-wrap svg {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+/* Agency Section Responsive */
+@media (max-width: 768px) {
+    .bi-agency-section {
+        padding: 60px 20px 100px;
+    }
+
+    .bi-agency-main-title {
+        font-size: 32px;
+    }
+
+    .bi-exp-badge {
+        padding: 20px 30px;
+    }
+
+    .bi-exp-number {
+        font-size: 36px;
+    }
+
+    .bi-exp-text {
+        font-size: 12px;
+    }
+
+    .bi-landscape-img {
+        height: 220px;
+    }
+}
+
+/* Testimonial Section Responsive */
+@media (max-width: 768px) {
+    .bi-testimonial-section {
+        padding: 60px 0 80px;
+    }
+
+    .bi-testimonial-label {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .bi-testimonial-heading {
+        font-size: 28px;
+        padding: 0 20px;
+        margin-left: 0;
+    }
+
+    .bi-testimonial-card-horizontal {
+        flex: 0 0 280px;
+        padding: 30px 20px;
+    }
+
+    .bi-testimonial-text {
+        height: auto;
+        min-height: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .bi-testimonial-card-horizontal {
+        flex: 0 0 260px;
+    }
+
+    .bi-testimonial-name {
+        font-size: 16px;
+    }
+
+    .bi-testimonial-text {
+        font-size: 13px;
+    }
+}
+
+/* Internship Courses Section Responsive */
+@media (max-width: 768px) {
+    .bi-courses-section {
+        padding: 60px 20px;
+    }
+
+    .bi-section-title {
+        font-size: 2rem;
+    }
+
+    .bi-courses-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .bi-course-card {
+        margin: 0 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .bi-section-title {
+        font-size: 1.8rem;
+    }
+
+    .bi-course-title {
+        font-size: 1.3rem;
+    }
+
+    .bi-course-desc {
+        font-size: 0.85rem;
+    }
+
+    .bi-feature-item {
+        font-size: 0.8rem;
+    }
+}
+
+/* Feedback/Slider Section Responsive */
+@media (max-width: 768px) {
+    .bi-feedback-section {
+        padding: 60px 20px;
+    }
+
+    .bi-feedback-card {
+        padding: 30px 25px;
+    }
+
+    .bi-feedback-text {
+        font-size: 1rem;
+    }
+
+    .bi-author-avatar {
+        width: 55px;
+        height: 55px;
+    }
+
+    .bi-author-info h4 {
+        font-size: 1rem;
+    }
+
+    .bi-author-info p {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .bi-feedback-card {
+        padding: 25px 20px;
+    }
+
+    .bi-feedback-text {
+        font-size: 0.9rem;
+    }
+
+    .bi-slider-arrow {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+}
+
+/* Services Section Responsive */
+@media (max-width: 768px) {
+    .bi-services-section-new {
+        padding: 60px 20px;
+    }
+
+    .bi-services-container-new {
+        padding: 0 20px;
+    }
+
+    .bi-services-title-new {
+        font-size: 36px;
+    }
+
+    .bi-services-content-new {
+        gap: 20px;
+    }
+
+    .bi-service-item-new {
+        padding: 18px 20px;
+    }
+
+    .bi-service-name-new {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .bi-services-title-new {
+        font-size: 28px;
+    }
+
+    .bi-service-item-new {
+        padding: 14px 16px;
+    }
+
+    .bi-service-name-new {
+        font-size: 14px;
+    }
+
+    .bi-service-id-new {
+        font-size: 14px;
+    }
+}
+
+/* General Mobile Improvements */
+@media (max-width: 480px) {
+    .bi-stat-circle-new {
+        width: 50px;
+        height: 50px;
+    }
+
+    .bi-stat-number-new {
+        font-size: 11px;
+    }
+
+    .bi-stat-label-new {
+        font-size: 10px;
+    }
+
+    .bi-hero-stats-new {
+        gap: 20px;
+    }
+
+    .bi-avatar-group-new img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .bi-avatar-icon-new,
+    .bi-download-btn-new {
+        width: 32px;
+        height: 32px;
+    }
+
+    .bi-perf-value-new,
+    .bi-perf-value-bold-new {
+        font-size: 14px;
+    }
+
+    .bi-perf-label-new {
+        font-size: 8px;
+    }
+}
+
+/* Ensure all images are responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Fix for overlapping elements on very small screens */
+@media (max-width: 380px) {
+    .bi-service-text-group {
+        max-width: 180px;
+    }
+
+    .bi-service-name-about {
+        font-size: 13px;
+        white-space: normal;
+        word-break: break-word;
+    }
+
+    .bi-service-short-about {
+        font-size: 10px;
+    }
+
+    .bi-detail-title {
+        font-size: 18px;
+    }
+
+    .bi-detail-desc {
+        font-size: 12px;
+    }
 }
