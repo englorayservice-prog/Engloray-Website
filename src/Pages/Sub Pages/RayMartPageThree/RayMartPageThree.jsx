@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './RayMartPageThree.css';
+import RayMartNavbar from '../../../Components/RayMartNavbar/RayMartNavbar';
 import financeStat from '../../../assets/fin stat.png';
 
 // Internal 3D Animated Assets
@@ -74,15 +75,16 @@ const RayMartPageThree = () => {
     return popularProducts[activeIndex].gallery || [];
   };
 
-    const scrollToOffers = () => {
-      const target = document.getElementById('offers-anchor');
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
-    };
+  const scrollToOffers = () => {
+    const target = document.getElementById('offers-anchor');
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <div className="rm3-page-container">
+      <RayMartNavbar />
       {/* Hero Section */}
       <section className="rm3-hero-section">
         <div className="rm3-hero-grid">

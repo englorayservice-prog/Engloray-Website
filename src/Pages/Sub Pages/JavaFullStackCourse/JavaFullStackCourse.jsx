@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { submitEnrollment } from "../../Sub Pages/HandleSubmit/HandleSubmit";
-
+import NavigationBar from '../../TechLearningSection/NavigationBar/NavigationBar';
 import {
   faPaintBrush,
   faLaptopCode,
@@ -627,6 +627,7 @@ const JavaFullStackCourse = () => {
 
   return (
     <div className="jfs-page" style={{ '--jfs-fluid-scale': `${fluidScale}px` }}>
+      <NavigationBar />
       {/* Hero Section Upgrade - Minimalist Premium Design */}
       <header className="jfs-hero-v3">
         {/* Animated Sparkles - Randomly placed, bigger and bolder */}

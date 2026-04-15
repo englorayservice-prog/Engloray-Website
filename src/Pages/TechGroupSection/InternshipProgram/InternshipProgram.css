@@ -43,126 +43,205 @@
 /* ── Container ── */
 .tgi-internship-container {
     max-width: 1500px;
-    /* Increased from 1200px */
     width: 95%;
-    /* Increased from 90% */
     margin: 0 auto;
     position: relative;
     z-index: 10;
 }
 
 /* ============================================================
-   MODERN FLOATING ACTION BUTTON
+   SCROLL ANIMATIONS - Text content fade up on scroll
    ============================================================ */
-.tgi-modern-fab {
+.tgi-benefits-main-badge,
+.tgi-internship-title,
+.tgi-internship-step,
+.tgi-internship-subtitle,
+.tgi-view-programs-btn {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+
+.tgi-benefits-main-badge.tgi-animated,
+.tgi-internship-title.tgi-animated,
+.tgi-internship-step.tgi-animated,
+.tgi-internship-subtitle.tgi-animated,
+.tgi-view-programs-btn.tgi-animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered delays */
+.tgi-benefits-main-badge.tgi-animated {
+    transition-delay: 0s;
+}
+
+.tgi-internship-title.tgi-animated {
+    transition-delay: 0.1s;
+}
+
+.tgi-internship-step.tgi-animated {
+    transition-delay: 0.2s;
+}
+
+.tgi-internship-subtitle.tgi-animated {
+    transition-delay: 0.3s;
+}
+
+.tgi-view-programs-btn.tgi-animated {
+    transition-delay: 0.4s;
+}
+
+/* ============================================================
+   CARD CONTENT ANIMATIONS - When active card changes
+   ============================================================ */
+/* Title animation inside card */
+.tgi-role-card.active .tgi-role-title {
+    animation: tgi-titleReveal 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
+}
+
+/* Description animation */
+.tgi-role-card.active .tgi-role-description {
+    animation: tgi-descReveal 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1) 0.1s forwards;
+}
+
+/* Skills widget animation */
+.tgi-role-card.active .tgi-skills-widget {
+    animation: tgi-skillsReveal 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1) 0.2s forwards;
+}
+
+/* View details button animation */
+.tgi-role-card.active .tgi-view-details-btn {
+    animation: tgi-btnReveal 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1) 0.3s forwards;
+}
+
+/* Keyframes for card content animations */
+@keyframes tgi-titleReveal {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes tgi-descReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes tgi-skillsReveal {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes tgi-btnReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ensure content is hidden by default on active cards until animation plays */
+.tgi-role-card.active .tgi-role-title,
+.tgi-role-card.active .tgi-role-description,
+.tgi-role-card.active .tgi-skills-widget,
+.tgi-role-card.active .tgi-view-details-btn {
+    opacity: 0;
+}
+
+/* Animation fill mode to keep final state */
+.tgi-role-card.active .tgi-role-title,
+.tgi-role-card.active .tgi-role-description,
+.tgi-role-card.active .tgi-skills-widget,
+.tgi-role-card.active .tgi-view-details-btn {
+    animation-fill-mode: forwards;
+}
+
+/* ============================================================
+   FLOATING ARROW
+   ============================================================ */
+.tgi-floating-arrow {
     position: fixed;
     left: 28px;
     top: 50%;
     transform: translateY(-50%);
-    width: 64px;
-    height: 64px;
-    border-radius: 32px;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--ip-white);
+    border: none;
     cursor: pointer;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    outline: none;
+    justify-content: center;
     z-index: 100;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    overflow: hidden;
-    padding: 0;
-    color: #fff;
-    animation: tgi-floatFab 3s ease-in-out infinite;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.22);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    animation: tgi-floatArrow 3s ease-in-out infinite;
 }
 
-@keyframes tgi-floatFab {
-    0%, 100% { transform: translateY(-50%); }
-    50% { transform: translateY(calc(-50% - 8px)); }
+.tgi-floating-arrow:hover {
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 14px 36px rgba(191, 4, 19, 0.35);
 }
 
-.tgi-modern-fab:hover {
-    width: 175px;
-    background: #000;
-    border-color: rgba(255, 255, 255, 0.4);
-    box-shadow: 0 14px 45px rgba(0, 0, 0, 0.4);
-}
-
-.tgi-fab-icon {
+.tgi-arrow-symbol {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 64px;
-    height: 64px;
-    flex-shrink: 0;
-    color: #fff;
     transition: transform 0.3s ease;
 }
 
-.tgi-modern-fab:hover .tgi-fab-icon {
-    transform: translateX(4px);
+.tgi-floating-arrow:hover .tgi-arrow-symbol {
+    transform: translateX(3px);
 }
 
-.tgi-fab-text {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1rem;
-    font-weight: 600;
-    white-space: nowrap;
-    opacity: 0;
-    transform: translateX(-15px);
-    transition: all 0.3s ease 0.1s;
-    letter-spacing: 0.03em;
-    padding-right: 15px;      /* Ensure it doesn't hit the right edge */
-    display: inline-flex;     /* Better alignment */
-    align-items: center;
-    height: 100%;             /* Use full height for precise centering */
-    margin-top: 2px;          /* Nudge slightly if FontAwesome baseline shifts it */
-}
-
-.tgi-modern-fab:hover .tgi-fab-text {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.tgi-fab-glow {
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.tgi-modern-fab:hover .tgi-fab-glow {
-    opacity: 1;
+.tgi-arrow-glow {
+    display: none;
 }
 
 /* ============================================================
    HEADER — 2-row × 2-col grid
-   Row 1: [badge]    | [subtitle text]
-   Row 2: [title]    | [CTA button]
    ============================================================ */
 .tgi-internship-header {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 5rem;
-    padding: 3rem 0;
+    display: grid;
+    grid-template-columns: minmax(0, 5.5fr) minmax(0, 4.5fr);
+    grid-template-rows: auto auto 1fr;
+    column-gap: 20rem;
+    margin-left: 1rem;
+    align-items: start;
+    margin-bottom: 3rem;
+    padding: 4rem 0 3rem;
+    position: relative;
 }
 
-/* ── LEFT SIDE (Badge + Title) ── */
 .tgi-benefits-main-badge {
-    flex: 0 0 100%;
-    /* forces it to its own row if needed, but we'll absolute position it for perfection */
     position: absolute;
-    top: -10px;
+    top: 1rem;
     left: 0;
-    display: block;
-    width: fit-content;
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
     font-weight: 600;
@@ -172,37 +251,10 @@
     margin: 0;
 }
 
-/* We need a wrapper concept, but we can't change JSX. 
-   So we use Grid with specific column/row spans. */
-.tgi-internship-header {
-    display: grid;
-    grid-template-columns: minmax(0, 5.5fr) minmax(0, 4.5fr);
-    grid-template-rows: auto auto 1fr;
-    /* tightly packs first two rows, stretches last */
-    column-gap: 20rem;
-    margin-left: 1rem;
-    align-items: start;
-    /* Align to top instead of center */
-    margin-bottom: 3rem;
-    /* Reduced to bring roles section closer */
-    padding: 4rem 0 3rem;
-    position: relative;
-}
-
-.tgi-benefits-main-badge {
-    position: absolute;
-    top: 1rem;
-    left: 0;
-    /* Badge styling */
-}
-
-/* Left side */
 .tgi-internship-title {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
-    /* Span only first row now so step can take second row */
     margin-top: 1rem;
-    /* slight nudge down to visually align top edge of text with right side */
     align-self: start;
     font-family: 'Poppins', sans-serif;
     font-size: clamp(3.4rem, 2vw, 3.8rem);
@@ -230,10 +282,8 @@
 
 .tgi-step-arrow {
     margin-bottom: -5px;
-    /* Nudge the drawn arrow down slightly to align with text */
 }
 
-/* Right side text */
 .tgi-internship-subtitle {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
@@ -269,10 +319,6 @@
     letter-spacing: 0.01em;
 }
 
-
-
-
-/* Arrow circle inside the button */
 .tgi-btn-arrow {
     display: inline-flex;
     align-items: center;
@@ -308,15 +354,14 @@
     box-shadow: 0 10px 28px rgba(0, 0, 0, 0.4);
 }
 
-
 /* ============================================================
    ROLES SECTION — Accordion style card strip
    ============================================================ */
 .tgi-roles-section {
+    animation: tgi-fadeInUp 0.8s ease-out 0.25s both;
     width: 100%;
 }
 
-/* Flex container for the accordion header & nav */
 .tgi-roles-header {
     display: flex;
     justify-content: flex-end;
@@ -325,14 +370,12 @@
     margin-bottom: 2.5rem;
     position: relative;
     z-index: 10;
-    /* Ensures buttons remain clickable over the section above */
 }
 
 .tgi-section-title {
     display: none;
 }
 
-/* Navigation Buttons */
 .tgi-roles-nav {
     display: flex;
     gap: 15px;
@@ -357,16 +400,13 @@
     transform: translateY(-2px);
 }
 
-/* Flex container for the accordion */
 .tgi-roles-grid {
     display: flex;
     gap: 1.2rem;
     width: 100%;
     height: 480px;
-    /* Fixed height for the hero cards */
 }
 
-/* Individual role card - Base styles */
 .tgi-role-card {
     background: var(--ip-card-bg);
     border-radius: 32px;
@@ -376,95 +416,68 @@
     transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
     display: flex;
     flex-direction: column;
+    animation: tgi-fadeInUp 0.55s ease-out both;
     backdrop-filter: blur(18px);
-    /* Default state managed by GSAP, fallback here */
     min-width: 80px;
     padding: 2rem 0;
     align-items: center;
-    justify-content: flex-start;
-    /* Text at top */
+    justify-content: flex-end;
 }
 
-/* Remove default borders and backgrounds from earlier */
 .tgi-role-card::before,
 .tgi-role-glow,
 .tgi-role-hover-effect {
     display: none !important;
 }
 
-/* ── Expanded State ── */
 .tgi-role-card.active {
     padding: 3rem 2.5rem;
     align-items: flex-start;
     justify-content: flex-start;
     background-color: #8b1322;
     border: none;
-    background-size: auto 100%;
-    background-position: right center;
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
 }
 
-/* Unique Image Backgrounds for Active Expanded State */
-/* Graphic Designer */
 .tgi-role-card.active[data-index="0"] {
     background-image: url('../../../assets/images/graphicdesignerintern.jpg');
-    background-size: cover;
-    background-position: center;
 }
 
-/* Website Developer */
 .tgi-role-card.active[data-index="1"] {
     background-image: url('../../../assets/Mern Developer.jfif');
-    background-size: cover;
-    background-position: center;
 }
 
-/* UI/UX Designer */
 .tgi-role-card.active[data-index="2"] {
-    background-image: url('../../../assets/images/uiux\ intern.jpg');
-    background-size: cover;
-    background-position: center;
+    background-image: url('../../../assets/images/uiux intern.jpg');
 }
 
-/* Software Developer */
 .tgi-role-card.active[data-index="3"] {
-    background-image: url('../../../assets/images/software\ developer.jpg');
-    background-size: cover;
-    background-position: center;
+    background-image: url('../../../assets/images/software developer.jpg');
 }
 
-/* Sales Executive */
 .tgi-role-card.active[data-index="4"] {
     background-image: url('../../../assets/images/salesexecutiveintern.jpg');
-    background-size: cover;
-    background-position: center;
 }
 
-/* Business Development Management */
 .tgi-role-card.active[data-index="5"] {
     background-image: url('../../../assets/images/businessdevelopmentintern.jpg');
-    background-size: cover;
-    background-position: center;
 }
 
-/* Training Mentor */
 .tgi-role-card.active[data-index="6"] {
     background-image: url('../../../assets/images/mentorintern.jpg');
-    background-size: cover;
-    background-position: center;
 }
 
-/* Gradient overlay to make text readable on active card */
 .tgi-role-card.active::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.2) 100%);
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 60%, transparent 100%);
     pointer-events: none;
     z-index: 1;
 }
 
-/* ── Collapsed State Backgrounds ── */
 .tgi-role-card.collapsed[data-index="0"] {
     background: linear-gradient(135deg, #2a2a2a 0%, #0a0a0a 100%);
     border: none;
@@ -492,7 +505,6 @@
     border: none;
 }
 
-/* Abstract wave emulation for collapsed cards */
 .tgi-role-card.collapsed::after {
     content: '';
     position: absolute;
@@ -504,15 +516,11 @@
     z-index: 1;
 }
 
-/* ── Content Elements inside Cards ── */
-
-/* Ensure z-index is above overlays */
 .tgi-role-card>* {
     position: relative;
     z-index: 2;
 }
 
-/* Titles */
 .tgi-role-title {
     font-family: 'Poppins', sans-serif;
     color: var(--ip-white);
@@ -520,16 +528,12 @@
     white-space: nowrap;
 }
 
-/* Expanded card title */
 .tgi-role-card.active .tgi-role-title {
-    font-size: 2.8rem;
-    font-weight: 700;
-    margin-bottom: 1.2rem;
-    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-    letter-spacing: -0.02em;
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
 }
 
-/* Collapsed card title (Vertical text) */
 .tgi-role-card.collapsed .tgi-role-title {
     font-size: 1.5rem;
     font-weight: 500;
@@ -537,73 +541,60 @@
     transform: rotate(180deg);
     text-orientation: mixed;
     margin: auto;
-    /* Centers horizontally and vertically inside flex container! */
     letter-spacing: 0.05em;
 }
 
-/* Fix for long title overflow */
 .tgi-role-card.collapsed[data-index="5"] .tgi-role-title {
     font-size: 1.15rem;
     letter-spacing: 0.02em;
 }
 
-/* Description (Only show on expanded card) */
 .tgi-role-description {
     font-family: 'Poppins', sans-serif;
-    font-size: 1.05rem;
-    font-weight: 400;
-    color: #ffffff;
-    line-height: 1.6;
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.5;
     margin: 0;
-    max-width: 550px;
+    max-width: 380px;
     display: none;
     text-align: left;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-    /* Hide by default */
 }
 
 .tgi-role-card.active .tgi-role-description {
     display: block;
-    /* Show only on expanded */
 }
 
-/* Icons and Indicators */
 .tgi-role-icon {
     display: none;
-    /* The UI image doesn't use these large top icons */
 }
 
 .tgi-click-indicator {
     display: none;
-    /* Hide default view details indicator */
 }
 
-/* Hover effects */
 .tgi-role-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
 }
 
-/* ── View Internship Details Pill Button ── */
 .tgi-view-details-btn {
     position: absolute;
-    bottom: 3.5rem;
-    right: 3.5rem;
+    bottom: 2rem;
+    right: 2rem;
     z-index: 10;
     display: inline-flex;
     align-items: center;
     gap: 0;
-    background: rgba(20, 30, 40, 0.55);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.10);
+    border: 1px solid rgba(255, 255, 255, 0.18);
     border-radius: 999px;
-    padding: 0.65rem 0.65rem 0.65rem 1.8rem;
+    padding: 0.55rem 0.55rem 0.55rem 1.4rem;
     cursor: pointer;
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    opacity: 0;
-    animation-fill-mode: forwards;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35), 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
 }
 
 .tgi-view-details-btn:hover {
@@ -628,7 +619,7 @@
     justify-content: center;
     width: 38px;
     height: 38px;
-    background: #111111;
+    background: rgba(10, 0, 5, 0.75);
     border-radius: 50%;
     color: #fff;
     flex-shrink: 0;
@@ -640,14 +631,13 @@
     transform: translateX(2px);
 }
 
-/* ── Tools & Skills Widget ── */
 .tgi-skills-widget {
     position: absolute;
-    bottom: 3.5rem;
-    left: 3.5rem;
+    bottom: 2rem;
+    left: 2rem;
     z-index: 10;
-    background: rgba(55, 15, 20, 0.95);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: linear-gradient(135deg, rgba(80, 8, 18, 0.85) 0%, rgba(40, 4, 10, 0.9) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 20px;
     padding: 1.5rem 2rem;
     backdrop-filter: blur(16px);
@@ -655,19 +645,16 @@
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.04) inset;
     max-width: 460px;
     width: max-content;
-    opacity: 0;
-    animation-fill-mode: forwards;
 }
 
 .tgi-skills-widget-title {
     font-family: 'Poppins', sans-serif;
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     font-weight: 600;
-    letter-spacing: 0.2rem;
+    letter-spacing: 0.15rem;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.75);
-    margin: 0 0 1rem 0;
-    text-align: center;
+    color: rgba(255, 180, 180, 0.75);
+    margin: 0 0 0.9rem 0;
 }
 
 .tgi-skills-grid {
@@ -680,10 +667,10 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.07);
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.09);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 999px;
-    padding: 0.4rem 1rem;
+    padding: 0.3rem 0.75rem;
     font-family: 'Poppins', sans-serif;
     font-size: 0.72rem;
     font-weight: 500;
@@ -699,7 +686,6 @@
     border-color: rgba(255, 255, 255, 0.3);
 }
 
-/* ── UI/UX Designer skills widget — wider horizontal layout for longer skill names ── */
 .tgi-skills-widget--uiux {
     max-width: 600px;
     width: max-content;
@@ -707,7 +693,6 @@
 
 .tgi-skills-widget--uiux .tgi-skills-grid {
     grid-template-columns: repeat(4, 1fr);
-    /* Keep horizontal 4-column style */
     gap: 0.5rem;
 }
 
@@ -718,22 +703,8 @@
     white-space: nowrap;
 }
 
-/* ── "View Internship Details" button — white text for UI/UX and Software Dev cards ── */
 .tgi-view-details-btn--light .tgi-view-details-label {
     color: rgba(255, 255, 255, 0.92);
-}
-
-/* Mobile: stack widget below the card content */
-@media (max-width: 768px) {
-    .tgi-skills-widget {
-        position: static;
-        margin-top: 1.5rem;
-        max-width: 100%;
-    }
-
-    .tgi-skills-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
 }
 
 /* ============================================================
@@ -805,7 +776,6 @@
     padding: 2rem;
 }
 
-/* ── Form ── */
 .tgi-enrollment-form {
     display: flex;
     flex-direction: column;
@@ -852,7 +822,6 @@
     font-weight: 400;
 }
 
-/* Radio */
 .tgi-radio-group {
     display: flex;
     gap: 1rem;
@@ -914,7 +883,6 @@
     font-weight: 600;
 }
 
-/* File upload */
 .tgi-file-upload {
     position: relative;
 }
@@ -949,7 +917,6 @@
     align-items: center;
 }
 
-/* Submit */
 .tgi-submit-btn {
     width: 100%;
     padding: 1.1rem 2rem;
@@ -978,7 +945,6 @@
     display: none;
 }
 
-/* Success message */
 .tgi-success-message {
     text-align: center;
     padding: 2.5rem 1.5rem;
@@ -1066,10 +1032,8 @@
 }
 
 /* ============================================================
-   RESPONSIVE
+   RESPONSIVE - KEPT EXACTLY AS REQUESTED
    ============================================================ */
-
-/* Tablet — Stack header */
 @media (max-width: 1024px) {
     .tgi-internship-header {
         grid-template-columns: 1fr;
@@ -1129,7 +1093,6 @@
     }
 }
 
-/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
 
     .tgi-internship-program *,
@@ -1143,10 +1106,9 @@
 
 /* ============================================================
    INTERNSHIP PROGRAM - ENHANCED RESPONSIVENESS
-   320px, 768px, 1024px, 1440px - 768px center aligned, 1024px left/right aligned
+   320px, 768px, 1024px, 1440px
    ============================================================ */
 
-/* ── 1440px+ (Desktop - Original Style) - UNCHANGED ── */
 @media (min-width: 1025px) {
     .tgi-internship-header {
         display: grid;
@@ -1247,14 +1209,12 @@
     }
 }
 
-/* ── 1024px (Tablet Landscape) - Title left, subtitle right, reduced card sizes ── */
 @media (max-width: 1024px) and (min-width: 769px) {
     .tgi-internship-container {
         max-width: 94%;
         width: 94%;
     }
 
-    /* Header - title left, subtitle right aligned */
     .tgi-internship-header {
         display: grid;
         grid-template-columns: minmax(0, 5fr) minmax(0, 5fr);
@@ -1309,8 +1269,8 @@
         font-size: 0.75rem;
         line-height: 1.45;
         margin: 0;
-        text-align: left;
-        margin-left: 0;
+        text-align: right;
+        margin-left: auto;
     }
 
     .tgi-view-programs-btn {
@@ -1328,7 +1288,6 @@
         height: 24px;
     }
 
-    /* Roles section - horizontal carousel */
     .tgi-roles-section {
         width: 100%;
         overflow-x: auto;
@@ -1362,7 +1321,6 @@
         min-width: 100%;
     }
 
-    /* Cards - reduced height */
     .tgi-role-card {
         min-width: 85px;
         width: 85px;
@@ -1372,7 +1330,6 @@
         flex: 0 0 auto;
     }
 
-    /* Active card */
     .tgi-role-card.active {
         min-width: 280px;
         width: 280px;
@@ -1383,7 +1340,6 @@
         flex: 0 0 auto;
     }
 
-    /* Collapsed card title - vertical text */
     .tgi-role-card.collapsed .tgi-role-title {
         writing-mode: vertical-rl;
         transform: rotate(180deg);
@@ -1392,20 +1348,17 @@
         white-space: nowrap;
     }
 
-    /* Fix for long titles */
     .tgi-role-card.collapsed[data-index="5"] .tgi-role-title {
         font-size: 0.7rem;
         letter-spacing: 0;
     }
 
-    /* Active card title */
     .tgi-role-card.active .tgi-role-title {
         font-size: 1.2rem;
         margin-bottom: 0.4rem;
         text-align: left;
     }
 
-    /* Description */
     .tgi-role-description {
         font-size: 0.7rem;
         line-height: 1.35;
@@ -1413,7 +1366,6 @@
         margin-bottom: 0.4rem;
     }
 
-    /* Skills widget */
     .tgi-skills-widget {
         position: static;
         margin-top: 0.6rem;
@@ -1444,7 +1396,6 @@
         border-radius: 12px;
     }
 
-    /* View details button */
     .tgi-view-details-btn {
         position: static;
         margin-top: 0.6rem;
@@ -1463,7 +1414,6 @@
         height: 22px;
     }
 
-    /* Navigation buttons */
     .tgi-roles-header {
         margin-top: 0.75rem;
         margin-bottom: 0.75rem;
@@ -1476,14 +1426,12 @@
         height: 32px;
     }
 
-    /* Floating arrow */
     .tgi-floating-arrow {
         left: 16px;
         width: 40px;
         height: 40px;
     }
 
-    /* Form modal */
     .tgi-form-modal {
         max-width: 420px;
     }
@@ -1527,7 +1475,6 @@
     }
 }
 
-/* ── 768px (Tablet Portrait) - All top text content centered ── */
 @media (max-width: 768px) {
     .tgi-internship-program {
         padding: 30px 0 50px;
@@ -1806,7 +1753,6 @@
     }
 }
 
-/* ── 320px (Mobile Extra Small) - UNCHANGED ── */
 @media (max-width: 320px) {
     .tgi-internship-container {
         width: 92%;
@@ -1890,7 +1836,6 @@
     }
 }
 
-/* ── Fix for landscape orientation on mobile ── */
 @media (max-width: 768px) and (orientation: landscape) {
     .tgi-internship-program {
         padding: 20px 0 30px;
@@ -1920,7 +1865,6 @@
     }
 }
 
-/* ── Ensure smooth transitions ── */
 .tgi-role-card,
 .tgi-role-card .tgi-role-title,
 .tgi-role-description,
@@ -1930,14 +1874,12 @@
     transition: all 0.3s ease;
 }
 
-/* Remove transition from title transform on mobile */
 @media (max-width: 768px) {
     .tgi-role-card.collapsed .tgi-role-title {
         transition: none;
     }
 }
 
-/* ── Fix for extremely long words in titles ── */
 @media (max-width: 768px) {
     .tgi-role-title {
         word-break: break-word;
@@ -1950,7 +1892,6 @@
     }
 }
 
-/* ── Ensure cards don't exceed container width ── */
 .tgi-role-card {
     max-width: 100%;
     box-sizing: border-box;

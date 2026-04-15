@@ -1,0 +1,308 @@
+/* Raymart Navbar Styles */
+.raymart-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 9.5px 30px;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.raymart-navbar-scrolled {
+    background: white;
+    backdrop-filter: none;
+    padding: 15px 40px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.raymart-navbar-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo Styles - Moved slightly to right */
+.raymart-navbar-logo {
+    flex-shrink: 0;
+    margin-right: 0;
+    transform: translateX(100px);
+    /* Move logo to right */
+}
+
+.raymart-navbar-logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.raymart-navbar-logo img {
+    height: 30px;
+    width: auto;
+    transition: all 0.3s ease;
+    object-fit: contain;
+}
+
+.raymart-navbar-scrolled .raymart-navbar-logo img {
+    height: 45px;
+}
+
+/* Desktop Menu - Moved slightly to left */
+.raymart-navbar-menu {
+    display: flex;
+    align-items: center;
+    gap: 130px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    transform: translateX(-200px);
+    /* Move menu to left */
+}
+
+.raymart-navbar-item {
+    position: relative;
+}
+
+.raymart-navbar-link {
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #333;
+    padding: 8px 0;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+}
+
+/* Underline effect */
+.raymart-navbar-link-underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #ff6b6b;
+    transition: width 0.3s ease;
+}
+
+.raymart-navbar-link:hover .raymart-navbar-link-underline,
+.raymart-navbar-link-active .raymart-navbar-link-underline {
+    width: 100%;
+}
+
+.raymart-navbar-link:hover {
+    color: #ff6b6b;
+}
+
+.raymart-navbar-link-active {
+    color: #ff6b6b;
+}
+
+/* Hover effect - slightly bigger text */
+.raymart-navbar-link:hover .raymart-navbar-link-text {
+    transform: scale(1.05);
+    display: inline-block;
+}
+
+.raymart-navbar-link-text {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+/* Mobile Menu Button */
+.raymart-navbar-hamburger {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    flex-direction: column;
+    gap: 6px;
+    z-index: 1001;
+}
+
+.raymart-hamburger-line {
+    width: 25px;
+    height: 2.5px;
+    background: #333;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.raymart-hamburger-active .raymart-hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.raymart-hamburger-active .raymart-hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.raymart-hamburger-active .raymart-hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Mobile Menu Overlay */
+.raymart-mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.raymart-mobile-overlay-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.raymart-mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -280px;
+    width: 280px;
+    height: 100vh;
+    background: white;
+    z-index: 1000;
+    transition: right 0.3s ease;
+    padding: 80px 20px 40px;
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+}
+
+.raymart-mobile-overlay-active .raymart-mobile-menu {
+    right: 0;
+}
+
+.raymart-mobile-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.raymart-mobile-close:hover {
+    color: #ff6b6b;
+    transform: scale(1.1);
+}
+
+.raymart-mobile-menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.raymart-mobile-menu-item {
+    text-align: center;
+}
+
+.raymart-mobile-menu-link {
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    padding: 10px 20px;
+    display: inline-block;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+.raymart-mobile-menu-link:hover,
+.raymart-mobile-link-active {
+    color: #ff6b6b;
+    background: rgba(255, 107, 107, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .raymart-navbar-logo {
+        transform: translateX(15px);
+    }
+
+    .raymart-navbar-menu {
+        transform: translateX(-15px);
+    }
+}
+
+@media (max-width: 992px) {
+    .raymart-navbar-logo {
+        transform: translateX(10px);
+    }
+
+    .raymart-navbar-menu {
+        transform: translateX(-10px);
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .raymart-navbar {
+        padding: 15px 20px;
+    }
+
+    .raymart-navbar-scrolled {
+        padding: 12px 20px;
+    }
+
+    .raymart-navbar-menu {
+        display: none;
+    }
+
+    .raymart-navbar-hamburger {
+        display: flex;
+    }
+
+    .raymart-navbar-logo img {
+        height: 40px;
+    }
+
+    .raymart-navbar-scrolled .raymart-navbar-logo img {
+        height: 38px;
+    }
+
+    /* Reset transforms on mobile */
+    .raymart-navbar-logo {
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 480px) {
+    .raymart-navbar {
+        padding: 12px 15px;
+    }
+
+    .raymart-navbar-logo img {
+        height: 35px;
+    }
+
+    .raymart-mobile-menu {
+        width: 260px;
+    }
+
+    .raymart-mobile-menu-link {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+
+    .raymart-navbar-logo {
+        transform: translateX(0);
+    }
+}

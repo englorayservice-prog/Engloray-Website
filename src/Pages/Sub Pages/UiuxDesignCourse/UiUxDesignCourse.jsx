@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { submitEnrollment } from "../../Sub Pages/HandleSubmit/HandleSubmit";
+import NavigationBar from '../../TechLearningSection/NavigationBar/NavigationBar';
 import {
   faArrowRight,
   faBook,
@@ -516,6 +517,7 @@ const UiuxDesignCourse = () => {
 
   return (
     <div className="uiux-page" style={{ '--uiux-fluid-scale': `${fluidScale}px` }}>
+      <NavigationBar />
       {/* Hero Section Upgrade - Minimalist Premium Design */}
       <header className="uiux-hero-v3">
         <div className="uiux-v3-sparkle-wrapper">
@@ -903,9 +905,9 @@ const UiuxDesignCourse = () => {
           <div
             className="uiux-dgm-floating-benefit-card uiux-dgm-floating-card-left"
             style={{
-              left: "calc(50% - (640 * var(--uiux-fluid-scale)))", 
-              top: "calc(200 * var(--uiux-fluid-scale))",              
-              width: "calc(240 * var(--uiux-fluid-scale))",            
+              left: "calc(50% - (640 * var(--uiux-fluid-scale)))",
+              top: "calc(200 * var(--uiux-fluid-scale))",
+              width: "calc(240 * var(--uiux-fluid-scale))",
               height: "calc(380 * var(--uiux-fluid-scale))",
               justifyContent: "center",
               padding: "calc(25 * var(--uiux-fluid-scale))"
@@ -922,9 +924,9 @@ const UiuxDesignCourse = () => {
 
           {/* Right Bottom Floating Card */}
           <div className="uiux-dgm-floating-benefit-card uiux-dgm-floating-card-right" style={{
-            right: "calc(50% - (640 * var(--uiux-fluid-scale)))", 
-            top: "calc(200 * var(--uiux-fluid-scale))",              
-            width: "calc(240 * var(--uiux-fluid-scale))",            
+            right: "calc(50% - (640 * var(--uiux-fluid-scale)))",
+            top: "calc(200 * var(--uiux-fluid-scale))",
+            width: "calc(240 * var(--uiux-fluid-scale))",
             height: "calc(380 * var(--uiux-fluid-scale))",
             justifyContent: "center",
             padding: "calc(25 * var(--uiux-fluid-scale))"

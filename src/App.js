@@ -84,6 +84,7 @@ import ContactPage from './Pages/Sub Pages/ContactPage/ContactPage';
 import StatsAndBenefits from './Pages/Sub Pages/StatsAndBenefits/StatsAndBenefits';
 import BusinessSuiteAI from './Pages/Sub Pages/BusinessSuiteAI/BusinessSuiteAI';
 import EnglorayShowcase from './Pages/Sub Pages/EnglorayShowcase/EnglorayShowcase';
+import RayMartNavbar from "./Components/RayMartNavbar/RayMartNavbar";
 
 
 
@@ -164,6 +165,7 @@ function App() {
           <Route path="/mainPageSubFooter" element={<MainPageSubFooter/>} />
           <Route path="/techGroupSubPageFooter" element={<TSPFFooter/>} />
           <Route path="/techLearningSubPageFooter" element={<TLSPFFooter/>} />
+          <Route path="/raymartNavbar" element={<RayMartNavbar/>} />
 
 
           <Route path="/privacyPolicyPage" element={<PrivacyPolicy  />} />

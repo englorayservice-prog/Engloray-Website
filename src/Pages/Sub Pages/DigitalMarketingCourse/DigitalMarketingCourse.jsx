@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { submitEnrollment } from "../../Sub Pages/HandleSubmit/HandleSubmit";
+import NavigationBar from '../../TechLearningSection/NavigationBar/NavigationBar';
 import {
     faArrowRight,
     faBook,
@@ -524,6 +525,7 @@ const DigitaMarketingCourse = () => {
 
     return (
         <div className="dgm-gdc-page">
+            <NavigationBar />
             {/* Hero Section Upgrade - Minimalist Premium Design */}
             <header className="dgm-gdc-hero-v3">
                 <div className="dgm-gdc-v3-sparkle-wrapper">
