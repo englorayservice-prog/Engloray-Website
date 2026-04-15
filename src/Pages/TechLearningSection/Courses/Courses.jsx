@@ -556,6 +556,16 @@ const Courses = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: false }}
               transition={{ duration: 0.6, delay: idx * 0.1 }}
+            >
+              <div className="goal-icon-box">
+                <FontAwesomeIcon icon={goal.icon} className="goal-custom-logo" />
+              </div>
+              <span className="goal-text">{goal.text}</span>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
       <div className="courses-container">
         {/* Header Section */}
         <div className="courses-header">
@@ -694,11 +704,9 @@ const Courses = () => {
               className={`category-item ${activeCategory === cat.name ? 'active' : ''}`}
               onClick={() => setActiveCategory(cat.name)}
             >
-              <div className="goal-icon-box">
-                <FontAwesomeIcon icon={goal.icon} className="goal-custom-logo" />
-              </div>
-              <span className="goal-text">{goal.text}</span>
-            </motion.div>
+              <FontAwesomeIcon icon={cat.icon} className="badge-icon" />
+              <span>{cat.name}</span>
+            </div>
           ))}
         </div>
       </div>
@@ -763,12 +771,17 @@ const Courses = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=400&auto=format&fit=crop" alt="Teachers" className="lh-teachers-bg" />
-              <div className="lh-teachers-content">
-                <div className="lh-teacher-avatars">
-                  <img src="https://i.pravatar.cc/150?u=t1" alt="T1" /><img src="https://i.pravatar.cc/150?u=t2" alt="T2" /><img src="https://i.pravatar.cc/150?u=t3" alt="T3" />
-                  <div className="lh-more-teachers">+8</div>
+                  <div className="lh-teachers-content">
+                    <div className="lh-teacher-avatars">
+                      <img src="https://i.pravatar.cc/150?u=t1" alt="T1" /><img src="https://i.pravatar.cc/150?u=t2" alt="T2" /><img src="https://i.pravatar.cc/150?u=t3" alt="T3" />
+                      <div className="lh-more-teachers">+8</div>
+                    </div>
+                    <h3 className="lh-teachers-title">Professional Teachers</h3>
+                  </div>
+                </motion.div>
 
-            <div className="cs-steps-grid">
+                {/* Keep the duplicated steps grid here as requested "dont delete anything" */}
+                <div className="cs-steps-grid">
               {/* Card 1 - Digital Marketing (Top Left) */}
               <div className="cs-step-card cs-card-pink ani-pulse">
                 <div className="cs-step-number">01</div>
@@ -822,11 +835,10 @@ const Courses = () => {
                   <div className="cs-card-footer">
                     <span className="cs-weeks-badge"><FontAwesomeIcon icon={faClock} /> 8 WEEKS</span>
                   </div>
+                  </div>
                 </div>
-                <h3 className="lh-teachers-title">Professional Teachers</h3>
               </div>
-            </motion.div>
-          </div>
+            </div>
 
           {/* RIGHT */}
           <motion.div 
@@ -846,9 +858,6 @@ const Courses = () => {
               <div className="lh-badge-time"><span className="lh-time-num">12</span><span className="lh-time-unit">Weeks</span></div>
             </div>
           </motion.div>
-            </button>
-            <p className="cs-subtext-info"> 100% Placement Assistance | Live Projects | Industry Mentors</p>
-          </div>
         </div>
       </div>
 
