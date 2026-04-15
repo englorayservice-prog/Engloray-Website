@@ -437,25 +437,25 @@ const SoftwareDeveloperInternPage = () => {
             id: 5,
             rating: 5,
             text: "Finally understood low-level system design. The practical exercises are light-years ahead of my university labs.",
-            author: "Natalie Sommers"
+            author: "Thomas Berg"
         },
         {
             id: 6,
             rating: 5,
             text: "The engineering culture here is inspiring. I learned to value code quality as much as functionality.",
-            author: "Oscar Fontaine"
+            author: "Claire Dubois"
         },
         {
             id: 7,
             rating: 4,
             text: "Mastered Java and Spring Boot in months. Moving from static code to dynamic systems was a huge milestone.",
-            author: "Claire Dubois"
+            author: "Oscar Fontaine"
         },
         {
             id: 8,
             rating: 5,
             text: "Got placed at a top-tier tech firm immediately after the internship. The technical prep is unparalleled.",
-            author: "Thomas Berg"
+            author: "Natalie Sommers"
         }
     ];
 
@@ -990,13 +990,13 @@ const SoftwareDeveloperInternPage = () => {
                           className={errors.agreeTerms ? 'SD-error' : ''}
                         />
                         <label htmlFor="agreeTerms">
-                          <FontAwesomeIcon icon={faCheckCircle} /> I agree to the Terms of Service and Privacy Policy
+                           I agree to the Terms of Service and Privacy Policy
                         </label>
                         {errors.agreeTerms && <span className="SD-error-message">{errors.agreeTerms}</span>}
                       </div>
 
                       <button type="submit" className="SD-submit-btn">
-                        <FontAwesomeIcon icon={faRocket} /> Register
+                         Register
                       </button>
                     </form>
                   </div>
@@ -1051,7 +1051,7 @@ const SoftwareDeveloperInternPage = () => {
                     A software developer designs, builds, and maintains complex software systems and applications. They apply computer science fundamentals, data structures, and algorithms to create scalable, efficient, and robust solutions for enterprise-level challenges and user-centric needs.
                   </p>
                   <button className="SD-banner-register-btn" onClick={() => setShowForm(true)}>
-                    <FontAwesomeIcon icon={faRocket} /> Register Now
+                     Register Now
                   </button>
                 </div>
               </div>
@@ -1116,13 +1116,13 @@ const SoftwareDeveloperInternPage = () => {
                                                     className={errors.agreeTerms ? 'SD-error' : ''}
                                                 />
                                                 <label htmlFor="agreeTerms">
-                                                    <FontAwesomeIcon icon={faCheckCircle} /> I agree to the Terms of Service and Privacy Policy
+                                                    I agree to the Terms of Service and Privacy Policy
                                                 </label>
                                                 {errors.agreeTerms && <span className="SD-error-message">{errors.agreeTerms}</span>}
                                             </div>
 
                                             <button type="submit" className="SD-submit-btn">
-                                                <FontAwesomeIcon icon={faRocket} /> Register
+                                                Register
                                             </button>
                                         </form>
                                     </div>
@@ -1141,13 +1141,7 @@ const SoftwareDeveloperInternPage = () => {
                                             to collaborate
                                             <br />
                                             with us
-                                            <div className="SD-influencer-search-bar">
-                                                <span className="SD-search-placeholder">| Search</span>
-                                                <div className="SD-search-actions">
-                                                    <FontAwesomeIcon icon={faStar} className="SD-voice-icon" />
-                                                    <button className="SD-search-submit"><FontAwesomeIcon icon={faComments} style={{ fontSize: '0.7em' }} /></button>
-                                                </div>
-                                            </div>
+
                                         </h2>
                                     </div>
                                     <div className="SD-influencer-right">
@@ -1184,7 +1178,7 @@ const SoftwareDeveloperInternPage = () => {
                     A software developer designs, builds, and maintains complex software systems and applications. They apply computer science fundamentals, data structures, and algorithms to create scalable, efficient, and robust solutions for enterprise-level challenges and user-centric needs.
                   </p>
                   <button className="SD-banner-register-btn" onClick={() => setShowForm(true)}>
-                    <FontAwesomeIcon icon={faRocket} /> Register Now
+                     Register Now
                   </button>
                 </div>
               </div>
@@ -1521,13 +1515,13 @@ const SoftwareDeveloperInternPage = () => {
                           className={errors.agreeTerms ? 'SD-error' : ''}
                         />
                         <label htmlFor="agreeTerms">
-                          <FontAwesomeIcon icon={faCheckCircle} /> I agree to the Terms of Service and Privacy Policy
+                          I agree to the Terms of Service and Privacy Policy
                         </label>
                         {errors.agreeTerms && <span className="SD-error-message">{errors.agreeTerms}</span>}
                       </div>
 
                       <button type="submit" className="SD-submit-btn">
-                        <FontAwesomeIcon icon={faRocket} /> Register
+                        Register
                       </button>
                     </form>
                   </div>
@@ -1589,7 +1583,7 @@ const SoftwareDeveloperInternPage = () => {
                     A software developer designs, builds, and maintains complex software systems and applications. They apply computer science fundamentals, data structures, and algorithms to create scalable, efficient, and robust solutions for enterprise-level challenges and user-centric needs.
                   </p>
                   <button className="SD-banner-register-btn" onClick={() => setShowForm(true)}>
-                    <FontAwesomeIcon icon={faRocket} /> Register Now
+                     Register Now
                   </button>
                 </div>
               </div>
@@ -1644,7 +1638,7 @@ const SoftwareDeveloperInternPage = () => {
                 </div>
                 <div className="SD-split-point" style={{ alignItems: 'center' }}>
                   <div className="SD-split-icon-green">
-                    <FontAwesomeIcon icon={faCheckCircle} style={{ color: '#00c48c', fontSize: '1.2rem' }} />
+                    <FontAwesomeIcon icon={faCheck} style={{ color: '#00c48c', fontSize: '1.2rem' }} />
                   </div>
                   <div className="SD-split-point-text">
                     <h4 style={{ margin: 0, fontSize: '1rem' }}>Includes lifetime access to premium assets + 6 months of design support.</h4>
@@ -1844,13 +1838,19 @@ const SoftwareDeveloperInternPage = () => {
                                     const cardClassIndex = (index % 5) + 1;
                                     const imgMap = {
                                         1: boy1, 2: girl1, 3: boy2, 4: girl2,
-                                        5: girl3, 6: boy3, 7: girl4, 8: boy4
+                                        5: boy3, 6: girl3, 7: boy4, 8: girl4
                                     };
                                     const photoUrl = imgMap[testimonial.id];
+                                    const isBoy = [1, 3, 5, 7].includes(testimonial.id);
+
                                     return (
                                         <div key={index} className={`SD-dt-card SD-dt-card-${cardClassIndex}`}>
                                             <div className="SD-dt-card-img-wrapper">
-                                                <img src={photoUrl} alt={testimonial.author} className="SD-dt-card-img" />
+                                                <img
+                                                    src={photoUrl}
+                                                    alt={testimonial.author}
+                                                    className={`SD-dt-card-img ${isBoy ? 'SD-dt-boy-avatar' : ''}`}
+                                                />
                                             </div>
                                             <div className={`SD-dt-card-content SD-dt-content-bg-${cardClassIndex}`}>
                                                 <h4 className="SD-dt-card-name">{testimonial.author}</h4>

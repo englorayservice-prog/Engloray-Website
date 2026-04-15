@@ -3,7 +3,7 @@
    ======================================== */
 
 /* Import Custom Matimo Font */
-@font-face {
+/* @font-face {
   font-family: 'Matimo';
   src: url('../../../assets/Fonts/Matimo-Regular.otf') format('opentype');
   font-weight: 400;
@@ -43,7 +43,7 @@
   src: url('../../../assets/Fonts/Matimo-Black.otf') format('opentype');
   font-weight: 900;
   font-style: normal;
-}
+} */
 
 /* Import Modern Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Manrope:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&family=Sora:wght@300;400;500;600;700&display=swap');
@@ -101,10 +101,11 @@
    ======================================== */
 
 .about-header {
-  text-align: center;
+  text-align: left;
   margin-bottom: 80px;
   position: relative;
   z-index: 1;
+  padding-right: 220px; /* Space for the button */
 }
 
 .about-title {
@@ -116,7 +117,7 @@
   color: #1f2937;
   line-height: 1.1;
   text-align: left;
-  max-width: 1000px;
+  max-width: 850px; /* Reduced to ensure button doesn't overlap text */
 }
 
 .title-accent {
@@ -807,34 +808,85 @@
   font-weight: 500;
 }
 
+/* Base style for button positioning */
+.get-started-btn {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #7c3aed;
+  color: white;
+  border: none;
+  padding: 16px 36px;
+  border-radius: 50px;
+  font-size: 1.15rem;
+  font-family: 'Sora', sans-serif;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 10;
+  white-space: nowrap;
+}
+
+.get-started-btn:hover {
+  transform: scale(1.08); /* Simplified from translateY(-55%) to avoid conflict */
+  background: #6d28d9;
+  box-shadow: 0 10px 25px rgba(124, 58, 237, 0.5);
+}
+
 /* ========================================
    RESPONSIVE DESIGN
    ======================================== */
 
-@media (max-width: 1024px) {
+@media (max-width: 1400px) {
   .about-content {
-    grid-template-columns: 1fr;
-    gap: 60px;
-  }
-
-  .about-text {
-    padding-right: 0;
-  }
-
-  .about-stats {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
+    margin-left: 150px;
+    gap: 40px;
   }
 }
 
-@media (max-width: 768px) {
-  .about-section {
-    padding: 80px 20px;
+@media (max-width: 1200px) {
+  .about-container {
+    transform: none;
+    padding: 0 40px;
   }
 
+  .about-content {
+    margin-left: 100px;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
 
-  .about-title {
-    font-size: 2.5rem;
+  .about-services-list {
+    position: relative;
+    left: 0;
+    height: auto;
+    width: 100%;
+    margin-bottom: 40px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .service-stat {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .about-visual {
+    flex-direction: column;
+  }
+
+  .visual-container {
+    margin-left: 0;
+    width: 100%;
   }
 
   .about-features {
@@ -857,105 +909,181 @@
     font-size: 2rem;
   }
 
-  .feature-card:nth-child(1),
-  .feature-card:nth-child(2) {
-    transform: rotate(0deg);
+  .get-started-btn {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+    width: auto;
+  }
+}
+
+@media (max-width: 1024px) {
+  .about-title {
+    font-size: 3.5rem;
+  }
+
+  .about-content {
+    margin-left: 0;
   }
 
   .about-stats {
     grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 60px 0 20px;
+  }
+
+  .about-container {
+    padding: 0 20px;
+  }
+
+  .title-accent {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    text-align: center;
+  }
+
+  .about-header {
+    padding-right: 0;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 50px;
+  }
+
+  .title-accent {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    text-align: left;
+    margin-bottom: 15px;
+  }
+
+  .about-title {
+    font-size: 2.5rem;
+    letter-spacing: -1.5px;
+    text-align: left;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .about-subtitle {
+    font-size: 1.15rem;
+    text-align: left;
+    margin-left: 0;
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .get-started-btn {
+    position: relative;
+    right: 0;
+    top: 0;
+    transform: none;
+    margin: 0;
+    padding: 16px 32px;
+    font-size: 1.1rem;
+    width: fit-content;
+  }
+
+  .about-features {
+    grid-template-columns: 1fr;
     gap: 20px;
   }
 
-  .stat-item {
+  .about-mission-card,
+  .technology-card,
+  .education-card {
+    grid-column: auto !important;
+    grid-row: auto !important;
     padding: 30px 20px;
   }
 
+  .technology-card h3 {
+    font-size: 1.5rem;
+  }
+
   .stat-item h4 {
-    font-size: 2.25rem;
+    font-size: 2rem;
   }
 
   .visual-grid {
     grid-template-columns: 1fr;
   }
 
-  .floating-icon {
-    font-size: 3rem;
-    opacity: 0.06;
+  .service-stat h4 {
+    font-size: 1.75rem;
   }
 }
 
 @media (max-width: 480px) {
-  .about-section {
-    padding: 60px 15px;
-  }
-
-  .about-title {
-    font-size: 2rem;
+  .about-header {
+    padding-right: 0;
+    margin-bottom: 40px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .title-accent {
-    font-size: 0.65rem;
-    letter-spacing: 2px;
+    font-size: 1.25rem;
+    letter-spacing: 1.5px;
+    text-align: left;
+    margin-bottom: 15px;
+  }
+
+  .about-title {
+    font-size: 1.8rem;
+    letter-spacing: -0.5px;
+    text-align: left;
+    max-width: 100%;
+    margin-bottom: 20px;
+    line-height: 1.2;
   }
 
   .about-subtitle {
     font-size: 1rem;
+    text-align: left;
+    margin-left: 0;
+    max-width: 100%;
+    margin-bottom: 30px;
   }
 
-  .about-description {
-    font-size: 1.125rem;
-  }
-
-  .about-stats {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
-
-  .stat-item {
-    padding: 25px 15px;
-  }
-
-  .stat-item h4 {
-    font-size: 2rem;
-  }
-
-  .stat-icon {
-    font-size: 1.75rem;
-  }
-
-  .feature-card {
-    padding: 30px 25px;
-  }
-
-  .feature-icon-container {
-    width: 55px;
-    height: 55px;
-    min-width: 55px;
-    font-size: 1.5rem;
-  }
-
-  .feature-card h3 {
-    font-size: 1.125rem;
-  }
-
-  .floating-icon {
-    font-size: 2.5rem;
-    opacity: 0.05;
+  .get-started-btn {
+    position: relative;
+    right: 0;
+    top: 0;
+    transform: none;
+    margin: 0;
+    padding: 14px 28px;
+    font-size: 1rem;
+    width: fit-content;
   }
 }
 
 @media (max-width: 360px) {
-  .about-stats {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+  .about-header {
+    align-items: center;
+    text-align: center;
   }
 
-  .stat-item {
-    padding: 20px 12px;
+  .title-accent {
+    text-align: center;
+    font-size: 1.1rem;
   }
 
-}
+  .about-title {
+    font-size: 1.5rem;
+    text-align: center;
+  }
 
 /* Get Started Button */
 .get-started-btn {
@@ -988,6 +1116,7 @@
   background: #6d28d9;
   box-shadow: 0 10px 25px rgba(124, 58, 237, 0.5);
 }
+
 
 .btn-icon {
   display: flex;

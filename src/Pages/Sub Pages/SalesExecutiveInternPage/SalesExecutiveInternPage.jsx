@@ -1,48 +1,27 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-    faPaintBrush,
     faLaptopCode,
-    faMobileAlt,
     faRocket,
     faBriefcase,
     faStar,
     faBook,
-    faPencilAlt,
-    faImage,
     faVideo,
-    faFont,
-    faCamera,
     faFileAlt,
-    faSave,
-    faClipboard,
     faChalkboardTeacher,
     faUserTie,
     faHandshake,
-    faGraduationCap,
-    faTrophy,
-    faSyncAlt,
     faBullseye,
-    faFlask,
     faEnvelope,
-    faPhone,
-    faMapMarkerAlt,
     faComments,
     faLock,
     faCheck,
     faCertificate,
     faBuilding,
-    faGlobe,
-    faQrcode,
     faUser,
-    faPlayCircle,
-    faPauseCircle,
-    faClock,
     faCheckCircle,
     faTimes,
     faArrowRight,
-    faRulerCombined,
-    faPenFancy,
     faLightbulb,
     faFilePdf,
     faFileArchive,
@@ -53,25 +32,16 @@ import {
     faMoneyBillWave,
     faNetworkWired,
     faTools,
-    faPalette,
-    faLayerGroup,
-    faEye,
-    faShieldAlt,
-    faCrown,
-    faGem,
-    faChartLine,
-    faInfoCircle  // This was added earlier
+    faTrophy,
+    faInfoCircle,
+    faClock
 } from '@fortawesome/free-solid-svg-icons';
 import './SalesExecutiveInternPage.css';
-import benefitCareer from '../../../assets/iicons/benefit_career.png';
-import benefitCertification from '../../../assets/iicons/benefit_certification.png';
-import benefitMentorship from '../../../assets/iicons/benefit_mentorship.png';
-import benefitSoftware from '../../../assets/iicons/benefit_software.png';
-import benefitNetworking from '../../../assets/iicons/benefit_networking.png';
-import benefitMoneyBack from '../../../assets/iicons/benefit_money_back.png';
+// Old benefits imports removed
 import iconGraduationCap from '../../../assets/iicons/icon_graduation_cap.png';
 import iconEducationBook from '../../../assets/iicons/icon_education_book.png';
 import iconCertificate from '../../../assets/iicons/icon_certificate.png';
+
 import boy1 from '../../../assets/images/boy1.png';
 import boy2 from '../../../assets/images/boy2.png';
 import boy3 from '../../../assets/images/boy3.png';
@@ -80,6 +50,20 @@ import girl1 from '../../../assets/images/girl1.png';
 import girl2 from '../../../assets/images/girl2.png';
 import girl3 from '../../../assets/images/girl3.png';
 import girl4 from '../../../assets/images/girl4.png';
+import salesLeadImg from '../../../assets/lead.jpeg';
+import negoImg from '../../../assets/negotiation.jpeg';
+import communicationImg from '../../../assets/pitch.jpeg';
+import crmImg from '../../../assets/crm_3d.jpg';
+import careerImg from '../../../assets/career-bg.png';
+import certImg from '../../../assets/cert.jpeg';
+import coachImg from '../../../assets/mentor.jpeg';
+import toolsImg from '../../../assets/tools.jpeg';
+import networkImg from '../../../assets/network2.jpeg';
+import growthImg from '../../../assets/growth.jpeg';
+import salesImg from '../../../assets/sales.jpeg';
+import outreachImg from '../../../assets/outreach.jpeg';
+import pitchImg from '../../../assets/pitch.jpeg';
+import crm1Img from '../../../assets/crm_3d_new.png';
 import { submitInternship } from "../../Sub Pages/HandleSubmit/InternshipSubmit";
 
 
@@ -87,8 +71,6 @@ import pathOne from '../../../assets/resources file/resources file/TECH/GRAPHICS
 import pathTwo from '../../../assets/resources file/resources file/TECH/GRAPHICS DESIGNERS/Graphic Designer Benefits.pdf';
 import pathFive from '../../../assets/resources file/resources file/TECH/GRAPHICS DESIGNERS/Learning, Skill Development & Growth.pdf';
 import pathSix from '../../../assets/resources file/resources file/TECH/GRAPHICS DESIGNERS/Productivity, AI & Workflow Support.pdf';
-import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
-import Navbar from '../../../Components/Navbar/Navbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import { Helmet } from 'react-helmet';
 
@@ -227,7 +209,7 @@ const SalesExecutiveInternPage = () => {
                 "Understanding the Buying Cycle"
             ],
             duration: "Foundations",
-            bgImage: "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+            bgImage: salesLeadImg,
             icon: <FontAwesomeIcon icon={faBullseye} />
         },
         {
@@ -242,7 +224,7 @@ const SalesExecutiveInternPage = () => {
                 "Building Client Rapport"
             ],
             duration: "Communication",
-            bgImage: "https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+            bgImage: communicationImg,
             icon: <FontAwesomeIcon icon={faComments} />
         },
         {
@@ -257,7 +239,7 @@ const SalesExecutiveInternPage = () => {
                 "Forecasting & Sales Reports"
             ],
             duration: "Management",
-            bgImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+            bgImage: crmImg,
             icon: <FontAwesomeIcon icon={faBriefcase} />
         },
         {
@@ -272,47 +254,47 @@ const SalesExecutiveInternPage = () => {
                 "Final Sales Presentation"
             ],
             duration: "Closing",
-            bgImage: "https://images.unsplash.com/photo-1573164060897-425941c302ba?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+            bgImage: negoImg,
             icon: <FontAwesomeIcon icon={faHandshake} />
         }
     ];
 
     const imagesWithDescriptions = [
         {
-            url: "https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
             title: "Sales Training Hub",
-            description: "Our dedicated training center equipped with the latest CRM tools and simulation setups for high-stakes selling.",
-            icon: <FontAwesomeIcon icon={faUserTie} />
+            description: "March 8, 2022",
+            icon: <FontAwesomeIcon icon={faUserTie} />,
+            url: salesImg,
         },
         {
-            url: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
             title: "Outreach Strategy Lab",
-            description: "Collaborative sessions where teams analyze market trends and develop multi-channel outreach strategies for lead generation.",
-            icon: <FontAwesomeIcon icon={faComments} />
+            description: "March 8, 2022",
+            icon: <FontAwesomeIcon icon={faComments} />,
+            url: outreachImg,
         },
         {
-            url: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
             title: "Pitch Presentation Room",
-            description: "A professional pitch room where interns practice executive-level presentations and receive real-time peer and mentor feedback.",
-            icon: <FontAwesomeIcon icon={faRocket} />
+            description: "March 8, 2022",
+            icon: <FontAwesomeIcon icon={faRocket} />,
+            url: pitchImg,
         },
         {
-            url: "https://images.unsplash.com/photo-1552581234-26160f608093?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+            url: "http://images.unsplash.com/photo-1552581234-26160f608093?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
             title: "Sales Performance Review",
-            description: "Weekly analysis of sales metrics and pipeline health, providing interns with direct insights into their professional growth.",
+            description: "March 8, 2022",
             icon: <FontAwesomeIcon icon={faBullseye} />
         },
         {
             url: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
             title: "Negotiation Masterclass",
-            description: "Expert-led workshops focusing on psychology, non-verbal cues, and strategic leverage to close complex business deals.",
+            description: "March 8, 2022",
             icon: <FontAwesomeIcon icon={faHandshake} />
         },
         {
-            url: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
             title: "CRM Virtual Lab",
-            description: "Hands-on experience with industry-leading CRM platforms like Salesforce, HubSpot, and Pipedrive to manage global leads.",
-            icon: <FontAwesomeIcon icon={faBuilding} />
+            description: "March 8, 2022",
+            icon: <FontAwesomeIcon icon={faBuilding} />,
+            url: crm1Img,
         }
     ];
 
@@ -448,32 +430,81 @@ const SalesExecutiveInternPage = () => {
         {
             icon: <FontAwesomeIcon icon={faBriefcase} />,
             title: "Career Opportunities",
-            description: "Direct access to high-paying sales roles with our 1000+ industry partners"
+            description: "Get direct access to high-paying sales roles through our network of 1000+ hiring partners",
+            bgImage: careerImg,
         },
         {
             icon: <FontAwesomeIcon icon={faCertificate} />,
             title: "Certification",
-            description: "Recognized Sales Excellence certification to validate your professional expertise"
+            description: "Get an industry-recognized certification that proves your sales expertise and boosts your resume credibility",
+            bgImage: certImg,
         },
         {
             icon: <FontAwesomeIcon icon={faChalkboardTeacher} />,
             title: "Sales Coaching",
-            description: "Weekly 1-on-1 coaching with senior sales leaders to refine your pitching and closing"
+            description: "Learn directly from experienced sales leaders with weekly 1-on-1 mentoring to improve your closing skills.",
+            bgImage: coachImg,
         },
         {
             icon: <FontAwesomeIcon icon={faTools} />,
             title: "Sales Tools Access",
-            description: "Hands-on experience with premium CRM and outreach automation software"
+            description: "Work with real tools used by top companies like CRM systems and automation platforms to gain hands-on experience",
+            bgImage: toolsImg,
         },
         {
             icon: <FontAwesomeIcon icon={faNetworkWired} />,
             title: "Business Networking",
-            description: "Connect with a global network of 10,000+ professionals and business leaders"
+            description: "Connect with 10,000+ professionals, founders, and business leaders to expand your opportunities",
+            bgImage: networkImg,
         },
         {
             icon: <FontAwesomeIcon icon={faMoneyBillWave} />,
             title: "Performance Growth",
-            description: "Learn how to consistently hit targets and scale your professional earning potential"
+            description: "Learn proven strategies to consistently hit targets, increase conversions, and grow your monthly income",
+            bgImage: growthImg,
+        }
+    ];
+
+    const expectations = [
+        {
+            icon: faBullseye,
+            textLine1: "Close deals confidently",
+            textLine2: "within weeks"
+        },
+        {
+            icon: faComments,
+            textLine1: "Improve communication",
+            textLine2: "& negotiation skills"
+        },
+        {
+            icon: faMoneyBillWave,
+            textLine1: "Increase earning potential",
+            textLine2: "(salary + incentives)"
+        },
+        {
+            icon: faBriefcase,
+            textLine1: "Become job-ready with",
+            textLine2: "practical experience"
+        },
+        {
+            icon: faLaptopCode,
+            textLine1: "Master CRM platforms",
+            textLine2: "(Salesforce/HubSpot)"
+        },
+        {
+            icon: faTrophy,
+            textLine1: "Develop high-impact",
+            textLine2: "B2B sales strategies"
+        },
+        {
+            icon: faUsers,
+            textLine1: "Build lasting",
+            textLine2: "professional networks"
+        },
+        {
+            icon: faCertificate,
+            textLine1: "Secure high-value",
+            textLine2: "internship certifications"
         }
     ];
 
@@ -981,7 +1012,7 @@ const SalesExecutiveInternPage = () => {
                       </div>
 
                       <button type="submit" className="SE-submit-btn">
-                        <FontAwesomeIcon icon={faRocket} /> Register
+                     Register
                       </button>
                     </form>
                   </div>
@@ -1108,13 +1139,13 @@ const SalesExecutiveInternPage = () => {
                                                     className={errors.agreeTerms ? 'SE-error' : ''}
                                                 />
                                                 <label htmlFor="agreeTerms">
-                                                    <FontAwesomeIcon icon={faCheckCircle} /> I agree to the Terms of Service and Privacy Policy
+                                                    I agree to the Terms of Service and Privacy Policy
                                                 </label>
                                                 {errors.agreeTerms && <span className="SE-error-message">{errors.agreeTerms}</span>}
                                             </div>
 
                                             <button type="submit" className="SE-submit-btn">
-                                                <FontAwesomeIcon icon={faRocket} /> Register
+                                                Register
                                             </button>
                                         </form>
                                     </div>
@@ -1273,47 +1304,47 @@ const SalesExecutiveInternPage = () => {
                                         <span style={{ color: '#ffd700', fontWeight: 'bold', fontSize: '0.9rem' }}>Tips</span>
                                     </div>
 
-                                    <h3 style={{ color: 'white', fontSize: '1.2rem', marginBottom: '1.2rem', fontWeight: 'bold' }}>Design Productivity Tips</h3>
+                                    <h3 style={{ color: 'white', fontSize: '1.2rem', marginBottom: '1.2rem', fontWeight: 'bold' }}>Sales Productivity Tips</h3>
 
                                     <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                                         {/* Tip 1 */}
                                         <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
                                             <FontAwesomeIcon icon={faCheckCircle} style={{ color: '#4caf50', marginTop: '4px', fontSize: '1rem' }} />
                                             <div>
-                                                <h4 style={{ color: 'white', fontSize: '0.95rem', marginBottom: '4px', fontWeight: '600' }}>Organize Your Design Files</h4>
-                                                <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.85rem', lineHeight: '1.4', margin: 0 }}>Keep your design files properly named and organized in folders so they are easy to locate and edit later.</p>
+                                                <h4 style={{ color: 'white', fontSize: '0.95rem', marginBottom: '4px', fontWeight: '600' }}>Know Your Product Well</h4>
+                                                <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.85rem', lineHeight: '1.4', margin: 0 }}>Understand features, benefits, and pricing clearly so you can confidently explain to customers.</p>
                                             </div>
                                         </div>
                                         {/* Tip 2 */}
                                         <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
                                             <FontAwesomeIcon icon={faCheckCircle} style={{ color: '#4caf50', marginTop: '4px', fontSize: '1rem' }} />
                                             <div>
-                                                <h4 style={{ color: 'white', fontSize: '0.95rem', marginBottom: '4px', fontWeight: '600' }}>Use Consistent Typography</h4>
-                                                <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.85rem', lineHeight: '1.4', margin: 0 }}>Always maintain consistent font styles, sizes, and spacing to ensure a professional and clean design layout.</p>
+                                                <h4 style={{ color: 'white', fontSize: '0.95rem', marginBottom: '4px', fontWeight: '600' }}>Listen to Customer Needs</h4>
+                                                <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.85rem', lineHeight: '1.4', margin: 0 }}>Ask questions and actively listen to identify customer pain points before offering solutions.</p>
                                             </div>
                                         </div>
                                         {/* Tip 3 */}
                                         <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
                                             <FontAwesomeIcon icon={faCheckCircle} style={{ color: '#4caf50', marginTop: '4px', fontSize: '1rem' }} />
                                             <div>
-                                                <h4 style={{ color: 'white', fontSize: '0.95rem', marginBottom: '4px', fontWeight: '600' }}>Leverage Design Shortcuts</h4>
-                                                <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.85rem', lineHeight: '1.4', margin: 0 }}>Use keyboard shortcuts in tools like Photoshop, Illustrator, or Figma to speed up your workflow.</p>
+                                                <h4 style={{ color: 'white', fontSize: '0.95rem', marginBottom: '4px', fontWeight: '600' }}>Follow Up Quickly</h4>
+                                                <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.85rem', lineHeight: '1.4', margin: 0 }}>Timely follow-ups increase conversion chances and show professionalism to clients.</p>
                                             </div>
                                         </div>
                                         {/* Tip 4 */}
                                         <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
                                             <FontAwesomeIcon icon={faCheckCircle} style={{ color: '#4caf50', marginTop: '4px', fontSize: '1rem' }} />
                                             <div>
-                                                <h4 style={{ color: 'white', fontSize: '0.95rem', marginBottom: '4px', fontWeight: '600' }}>Maintain Design Consistency</h4>
-                                                <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.85rem', lineHeight: '1.4', margin: 0 }}>Follow brand guidelines for colors, typography, and spacing to keep designs visually consistent.</p>
+                                                <h4 style={{ color: 'white', fontSize: '0.95rem', marginBottom: '4px', fontWeight: '600' }}>Handle Objections Smartly</h4>
+                                                <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.85rem', lineHeight: '1.4', margin: 0 }}>Stay calm, understand concerns, and provide clear solutions to build trust.</p>
                                             </div>
                                         </div>
                                         {/* Tip 5 */}
                                         <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
                                             <FontAwesomeIcon icon={faCheckCircle} style={{ color: '#4caf50', marginTop: '4px', fontSize: '1rem' }} />
                                             <div>
-                                                <h4 style={{ color: 'white', fontSize: '0.95rem', marginBottom: '4px', fontWeight: '600' }}>Optimize Images Before Export</h4>
-                                                <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.85rem', lineHeight: '1.4', margin: 0 }}>Compress and optimize images before exporting to improve performance and maintain quality.</p>
+                                                <h4 style={{ color: 'white', fontSize: '0.95rem', marginBottom: '4px', fontWeight: '600' }}>Track Your Leads</h4>
+                                                <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.85rem', lineHeight: '1.4', margin: 0 }}>Maintain records of leads and interactions to manage and close deals effectively.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -1656,6 +1687,7 @@ const SalesExecutiveInternPage = () => {
                                             <div className="SE-Gallery-card-overlay-new"></div>
                                             <div className="SE-Gallery-card-content-new">
                                                 <h3 className="SE-Gallery-medium-title-new">{item.title}</h3>
+                                                <span className="SE-Gallery-medium-date-new"><FontAwesomeIcon icon={faClock} /> March 8, 2022</span>
                                             </div>
                                         </div>
                                     );
@@ -1730,26 +1762,25 @@ const SalesExecutiveInternPage = () => {
                                 <svg className="SE-animated-star" viewBox="0 0 24 24" width="36" height="36" style={{ verticalAlign: 'middle', marginRight: '10px' }}>
                                     <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="#22c55e" />
                                 </svg>
-                                Sales Executive Benefits
+                                Become a High-Earning Sales Executive
                                 <svg className="SE-animated-star" viewBox="0 0 24 24" width="36" height="36" style={{ verticalAlign: 'middle', marginRight: '10px' }}>
                                     <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="#22c55e" />
                                 </svg>
                             </h2>
-                            <p className="SE-section-subtitle" style={{ margin: '0 auto', color: '#555' }}>
-                                When you join our comprehensive graphic design course, you unlock exclusive benefits
-                                that accelerate your career growth and skill development.
+                            <p className="SE-section-subtitle" style={{ margin: '0 auto', color: '#555', maxWidth: '1200px' }}>
+                                Master real-world sales skills, close more deals, and unlock unlimited earning potential with our industry-focused training program.
                             </p>
                         </div>
 
                         <div className="SE-benefits-image-grid-new">
                             {benefits.map((benefit, index) => {
                                 const benefitImages = [
-                                    benefitCareer,         // Career Opportunities - custom generated
-                                    benefitCertification,  // Certification - custom generated
-                                    benefitMentorship,     // Mentorship - custom generated
-                                    benefitSoftware,       // Software Access - bright 3D illustration
-                                    benefitNetworking,     // Networking - bright studio networking concept
-                                    benefitMoneyBack       // Money Back Guarantee - bright gold/security concept
+                                    careerImg,
+                                    certImg,
+                                    coachImg,
+                                    toolsImg,
+                                    networkImg,
+                                    growthImg
                                 ];
                                 return (
                                     <div
@@ -1768,6 +1799,32 @@ const SalesExecutiveInternPage = () => {
                                     </div>
                                 );
                             })}
+                        </div>
+                    </div>
+                </section>
+
+                <section className="SE-expectations-section">
+                    <div className="SE-expectations-container">
+                        <h2 className="SE-expectations-header">
+                            <svg className="SE-expectations-star-icon" viewBox="0 0 24 24" width="40" height="40" style={{ verticalAlign: 'middle', marginRight: '20px' }}>
+                                <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
+                            </svg>
+                            Results You Can Expect
+                            <svg className="SE-expectations-star-icon" viewBox="0 0 24 24" width="40" height="40" style={{ verticalAlign: 'middle', marginLeft: '20px' }}>
+                                <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
+                            </svg>
+                        </h2>
+                        <div className="SE-expectations-grid">
+                            {expectations.map((item, index) => (
+                                <div className="SE-expectation-card" key={index}>
+                                    <div className="SE-expectation-icon-wrapper">
+                                        <FontAwesomeIcon icon={item.icon} />
+                                    </div>
+                                    <p className="SE-expectation-text">
+                                        {item.textLine1}<br />{item.textLine2}
+                                    </p>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </section>
@@ -1795,11 +1852,11 @@ const SalesExecutiveInternPage = () => {
                                     const cardClassIndex = (index % 5) + 1;
                                     const imgMap = {
                                         1: boy1, 2: girl1, 3: boy2, 4: girl2,
-                                        5: girl3, 6: boy3, 7: girl4, 8: boy4
+                                        5: boy3, 6: girl3, 7: boy4, 8: girl4
                                     };
 
                                     const photoUrl = imgMap[testimonial.id];
-                                    const isBoy = [1, 3, 6, 8].includes(testimonial.id);
+                                    const isBoy = [1, 3, 5, 7].includes(testimonial.id);
 
                                     return (
                                         <div key={`${testimonial.id || index}-${index}`} className={`SE-dt-card SE-dt-card-${cardClassIndex}`}>

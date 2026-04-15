@@ -64,12 +64,6 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import './BusinessDevelopmentInternPage.css';
 import galleryPrototyping from '../../../assets/iicons/gallery_interactive_prototyping.png';
-import benefitCareer from '../../../assets/iicons/benefit_career.png';
-import benefitCertification from '../../../assets/iicons/benefit_certification.png';
-import benefitMentorship from '../../../assets/iicons/benefit_mentorship.png';
-import benefitSoftware from '../../../assets/iicons/benefit_software.png';
-import benefitNetworking from '../../../assets/iicons/benefit_networking.png';
-import benefitMoneyBack from '../../../assets/iicons/benefit_money_back.png';
 import iconGraduationCap from '../../../assets/iicons/icon_graduation_cap.png';
 import iconEducationBook from '../../../assets/iicons/icon_education_book.png';
 import iconCertificate from '../../../assets/iicons/icon_certificate.png';
@@ -81,6 +75,19 @@ import girl1 from '../../../assets/images/girl1.png';
 import girl2 from '../../../assets/images/girl2.png';
 import girl3 from '../../../assets/images/girl3.png';
 import girl4 from '../../../assets/images/girl4.png';
+import scaleImg from '../../../assets/scale.jpeg';
+import strategyImg from '../../../assets/strategy.jpeg';
+import marketImg from '../../../assets/market.jpeg';
+import partnershipImg from '../../../assets/partnership.jpeg';
+
+import scale2Img from '../../../assets/scale2.jpeg';
+import growth2Img from '../../../assets/growth2.jpeg';
+import oppurtunityImg from '../../../assets/oppurtunity.jpeg';
+import certImg from '../../../assets/cert.jpeg';
+import mentorImg from '../../../assets/mentor.jpeg';
+import toolImg from '../../../assets/tool.jpeg';
+import network2Img from '../../../assets/network2.jpeg';
+import roiImg from '../../../assets/roi.jpeg';
 import { submitInternship } from "../../Sub Pages/HandleSubmit/InternshipSubmit";
 
 
@@ -258,7 +265,7 @@ const BusinessDevelopmentInternPage = () => {
                 "Brand Expansion Tactics"
             ],
             duration: "Expansion",
-            bgImage: "https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+            bgImage: scaleImg,
             icon: <FontAwesomeIcon icon={faRocket} />
         },
         {
@@ -280,40 +287,40 @@ const BusinessDevelopmentInternPage = () => {
 
     const imagesWithDescriptions = [
         {
-            url: "https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+            url: strategyImg,
             title: "Business Strategy Hub",
             description: "Our state-of-the-art office space for strategic planning, market analysis, and high-level team collaborations.",
-            icon: <FontAwesomeIcon icon={faBuilding} />
+            icon: <FontAwesomeIcon icon={faBuilding} />,
         },
         {
-            url: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+            url: marketImg,
             title: "Market Analysis Session",
             description: "Dive into collaborative market research where interns analyze industry trends, competitor movements, and upcoming business opportunities.",
-            icon: <FontAwesomeIcon icon={faUsers} />
+            icon: <FontAwesomeIcon icon={faUsers} />,
         },
         {
-            url: "https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+            url: growth2Img,
             title: "Growth Planning Studio",
             description: "A professional business development space where students build growth strategies, lead pipelines, and business proposals using modern analytical tools.",
-            icon: <FontAwesomeIcon icon={faChartLine} />
+            icon: <FontAwesomeIcon icon={faChartLine} />,
         },
         {
-            url: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+            url: partnershipImg,
             title: "Partnership Review Session",
             description: "Interns present their curated business strategies to mentors and peers, receiving professional feedback to sharpen their strategic direction.",
-            icon: <FontAwesomeIcon icon={faHandshake} />
+            icon: <FontAwesomeIcon icon={faHandshake} />,
         },
         {
             url: "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
             title: "Proposal Design & Layout",
             description: "Master the structure of business proposals, contract lifecycle management, and visual storytelling to build compelling business cases.",
-            icon: <FontAwesomeIcon icon={faFileAlt} />
+            icon: <FontAwesomeIcon icon={faFileAlt} />,
         },
         {
-            url: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+            url: scale2Img,
             title: "Strategic Scaling Lab",
             description: "Transform business ideas into scalable models, testing market penetration strategies and validating growth concepts before full-scale implementation.",
-            icon: <FontAwesomeIcon icon={faRocket} />
+            icon: <FontAwesomeIcon icon={faRocket} />,
         }
     ];
 
@@ -449,32 +456,38 @@ const BusinessDevelopmentInternPage = () => {
         {
             icon: <FontAwesomeIcon icon={faChartLine} />,
             title: "Career Opportunities",
-            description: "Access to 1000+ business consulting and leadership roles with our global partners"
+            description: "Access to 1000+ business consulting and leadership roles with our global partners",
+            bgImage: oppurtunityImg,
         },
         {
             icon: <FontAwesomeIcon icon={faCertificate} />,
             title: "Certification",
-            description: "Internationally recognized Business Development certification to boost your resume"
+            description: "Internationally recognized Business Development certification to boost your resume",
+            bgImage: certImg,
         },
         {
             icon: <FontAwesomeIcon icon={faHandshake} />,
             title: "Strategic Mentorship",
-            description: "1-on-1 sessions with experienced business consultants and corporate strategists"
+            description: "1-on-1 sessions with experienced business consultants and corporate strategists",
+            bgImage: mentorImg,
         },
         {
             icon: <FontAwesomeIcon icon={faTools} />,
             title: "Analytical Tools",
-            description: "Free access to premium data analytics and market research software during the course"
+            description: "Free access to premium data analytics and market research software during the course",
+            bgImage: toolImg,
         },
         {
             icon: <FontAwesomeIcon icon={faNetworkWired} />,
             title: "Global Networking",
-            description: "Join our exclusive network of 10,000+ business leaders and corporate professionals"
+            description: "Join our exclusive network of 10,000+ business leaders and corporate professionals",
+            bgImage: network2Img,
         },
         {
             icon: <FontAwesomeIcon icon={faMoneyBillWave} />,
             title: "ROI Focused Training",
-            description: "Learn how to consistently deliver business value and scale your professional impact"
+            description: "Learn how to consistently deliver business value and scale your professional impact",
+            bgImage: roiImg,
         }
     ];
 
@@ -976,13 +989,13 @@ const BusinessDevelopmentInternPage = () => {
                           className={errors.agreeTerms ? 'BDM-error' : ''}
                         />
                         <label htmlFor="agreeTerms">
-                          <FontAwesomeIcon icon={faCheckCircle} /> I agree to the Terms of Service and Privacy Policy
+                          I agree to the Terms of Service and Privacy Policy
                         </label>
                         {errors.agreeTerms && <span className="BDM-error-message">{errors.agreeTerms}</span>}
                       </div>
 
                       <button type="submit" className="BDM-submit-btn">
-                        <FontAwesomeIcon icon={faRocket} /> Register
+                        Register
                       </button>
                     </form>
                   </div>
@@ -1044,7 +1057,7 @@ const BusinessDevelopmentInternPage = () => {
                     A graphic designer creates visual concepts that communicate messages through typography, color, imagery, and layout. They design logos, branding, posters, digital content, and user interfaces, blending creativity with strategy to solve problems and deliver clear, engaging visual communication across different media platforms.
                   </p>
                   <button className="BDM-banner-register-btn" onClick={() => setShowForm(true)}>
-                    <FontAwesomeIcon icon={faRocket} /> Register Now
+                    Register Now
                   </button>
                 </div>
               </div>
@@ -1109,13 +1122,13 @@ const BusinessDevelopmentInternPage = () => {
                                                     className={errors.agreeTerms ? 'BDM-error' : ''}
                                                 />
                                                 <label htmlFor="agreeTerms">
-                                                    <FontAwesomeIcon icon={faCheckCircle} /> I agree to the Terms of Service and Privacy Policy
+                                                    I agree to the Terms of Service and Privacy Policy
                                                 </label>
                                                 {errors.agreeTerms && <span className="BDM-error-message">{errors.agreeTerms}</span>}
                                             </div>
 
                                             <button type="submit" className="BDM-submit-btn">
-                                                <FontAwesomeIcon icon={faRocket} /> Register
+                                                Register
                                             </button>
                                         </form>
                                     </div>
@@ -1177,7 +1190,7 @@ const BusinessDevelopmentInternPage = () => {
                     A graphic designer creates visual concepts that communicate messages through typography, color, imagery, and layout. They design logos, branding, posters, digital content, and user interfaces, blending creativity with strategy to solve problems and deliver clear, engaging visual communication across different media platforms.
                   </p>
                   <button className="BDM-banner-register-btn" onClick={() => setShowForm(true)}>
-                    <FontAwesomeIcon icon={faRocket} /> Register Now
+                    Register Now
                   </button>
                 </div>
               </div>
@@ -1512,13 +1525,13 @@ const BusinessDevelopmentInternPage = () => {
                           className={errors.agreeTerms ? 'BDM-error' : ''}
                         />
                         <label htmlFor="agreeTerms">
-                          <FontAwesomeIcon icon={faCheckCircle} /> I agree to the Terms of Service and Privacy Policy
+                          I agree to the Terms of Service and Privacy Policy
                         </label>
                         {errors.agreeTerms && <span className="BDM-error-message">{errors.agreeTerms}</span>}
                       </div>
 
                       <button type="submit" className="BDM-submit-btn">
-                        <FontAwesomeIcon icon={faRocket} /> Register
+                        Register
                       </button>
                     </form>
                   </div>
@@ -1580,7 +1593,7 @@ const BusinessDevelopmentInternPage = () => {
                     A graphic designer creates visual concepts that communicate messages through typography, color, imagery, and layout. They design logos, branding, posters, digital content, and user interfaces, blending creativity with strategy to solve problems and deliver clear, engaging visual communication across different media platforms.
                   </p>
                   <button className="BDM-banner-register-btn" onClick={() => setShowForm(true)}>
-                    <FontAwesomeIcon icon={faRocket} /> Register Now
+                    Register Now
                   </button>
                 </div>
               </div>
@@ -1615,8 +1628,7 @@ const BusinessDevelopmentInternPage = () => {
                                     <span className="BDM-Gallery-badge-new">Environment</span>
                                     <h3 className="BDM-Gallery-large-title-new">{imagesWithDescriptions[0].title}</h3>
                                     <div className="BDM-Gallery-meta-new">
-                                        <span className="BDM-Gallery-meta-item-new"><FontAwesomeIcon icon={faClock} /> March 8, 2022</span>
-                                        <span className="BDM-Gallery-meta-item-new"><FontAwesomeIcon icon={faComments} /> No Comments</span>
+                                        <p className="BDM-Gallery-desc-new" style={{ color: 'rgba(255, 255, 255, 0.85)', fontSize: '0.95rem', lineHeight: '1.5', marginTop: '10px' }}>{imagesWithDescriptions[0].description}</p>
                                     </div>
                                 </div>
                             </div>
@@ -1637,7 +1649,7 @@ const BusinessDevelopmentInternPage = () => {
                                             <div className="BDM-Gallery-small-content-new">
                                                 <span className="BDM-Gallery-badge-text-new">Environment</span>
                                                 <h4 className="BDM-Gallery-small-title-new">{item.title}</h4>
-                                                <span className="BDM-Gallery-small-date-new"><FontAwesomeIcon icon={faClock} /> March 8, 2022</span>
+                                                <p className="BDM-Gallery-small-desc-new" style={{ color: 'rgba(255, 255, 255, 0.75)', fontSize: '0.85rem', lineHeight: '1.4', margin: '8px 0 0', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{item.description}</p>
                                             </div>
                                         </div>
                                     );
@@ -1658,6 +1670,7 @@ const BusinessDevelopmentInternPage = () => {
                                             <div className="BDM-Gallery-card-overlay-new"></div>
                                             <div className="BDM-Gallery-card-content-new">
                                                 <h3 className="BDM-Gallery-medium-title-new">{item.title}</h3>
+                                                <p className="BDM-Gallery-medium-desc-new" style={{ color: 'rgba(255, 255, 255, 0.8)', fontSize: '0.9rem', lineHeight: '1.4', marginTop: '8px', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{item.description}</p>
                                             </div>
                                         </div>
                                     );
@@ -1738,7 +1751,7 @@ const BusinessDevelopmentInternPage = () => {
                                 </svg>
                             </h2>
                             <p className="BDM-section-subtitle" style={{ margin: '0 auto', color: '#555' }}>
-                                When you join our comprehensive graphic design course, you unlock exclusive benefits
+                                When you join our comprehensive Business Development Management internship, you unlock exclusive benefits
                                 that accelerate your career growth and skill development.
                             </p>
                         </div>
@@ -1746,12 +1759,12 @@ const BusinessDevelopmentInternPage = () => {
                         <div className="BDM-benefits-image-grid-new">
                             {benefits.map((benefit, index) => {
                                 const benefitImages = [
-                                    benefitCareer,         // Career Opportunities - custom generated
-                                    benefitCertification,  // Certification - custom generated
-                                    benefitMentorship,     // Mentorship - custom generated
-                                    benefitSoftware,       // Software Access - bright 3D illustration
-                                    benefitNetworking,     // Networking - bright studio networking concept
-                                    benefitMoneyBack       // Money Back Guarantee - bright gold/security concept
+                                    benefit.bgImage,
+                                    benefit.bgImage,
+                                    benefit.bgImage,
+                                    benefit.bgImage,
+                                    benefit.bgImage,
+                                    benefit.bgImage,
                                 ];
                                 return (
                                     <div
@@ -1796,11 +1809,11 @@ const BusinessDevelopmentInternPage = () => {
                                     const cardClassIndex = (index % 5) + 1;
                                     const imgMap = {
                                         1: boy1, 2: girl1, 3: boy2, 4: girl2,
-                                        5: girl3, 6: boy3, 7: girl4, 8: boy4
+                                        5: boy3, 6: girl3, 7: boy4, 8: girl4
                                     };
 
                                     const photoUrl = imgMap[testimonial.id];
-                                    const isBoy = [1, 3, 6, 8].includes(testimonial.id);
+                                    const isBoy = [1, 3, 5, 7].includes(testimonial.id);
 
                                     return (
                                         <div key={`${testimonial.id || index}-${index}`} className={`BDM-dt-card BDM-dt-card-${cardClassIndex}`}>

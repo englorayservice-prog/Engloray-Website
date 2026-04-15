@@ -923,7 +923,6 @@ html {
 }
 
 .cp-paths-grid {
-  margin-left: -170px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 35px;

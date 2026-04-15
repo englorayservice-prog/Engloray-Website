@@ -181,6 +181,7 @@ function App() {
           <Route path="/contactPage" element={<ContactPage />} />
           <Route path="/businessSuiteAiPage" element={<BusinessSuiteAI />} />
         <Route path="/showcase" element={<EnglorayShowcase />} />
+        <Route path="/StatsAndBenefitsPage" element={<StatsAndBenefits />} />
 
 
 

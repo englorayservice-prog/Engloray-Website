@@ -952,8 +952,8 @@
 .gd-page-about-img-wrap-new {
     position: relative;
     width: 100%;
-    height: 100%;
-    min-height: 480px;
+    height: 750px;
+    min-height: 750px;
     border-radius: 24px;
     overflow: hidden;
     background: #1a1a1a;
@@ -962,7 +962,7 @@
 
 .gd-page-about-img-wrap-new img {
     width: 100%;
-    height: 100%;
+    height: 750px;
     object-fit: cover;
     object-position: center center;
 }
@@ -1077,11 +1077,11 @@
 .gd-page-about-detail-panel {
     background: #1a1a1a;
     border-radius: 24px;
-    padding: 32px 28px;
+    padding: 28px 28px;
     display: flex;
     flex-direction: column;
-    gap: 18px;
-    height: 100%;
+    gap: 10px;
+    height: 750px;
     box-sizing: border-box;
     animation: bi-detail-pop 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -1136,7 +1136,7 @@
 .gd-page-detail-desc {
     font-size: 14px;
     color: #888888;
-    line-height: 1.8;
+    line-height: 1.2;
     margin: 0;
     flex: 1;
     text-align: left;
@@ -2915,7 +2915,7 @@
     letter-spacing: 0.5px;
     margin-bottom: 16px;
     font-style: italic;
-    /* margin-left: 45% */
+    margin-left: 45%
 }
 
 .gd-page-testimonial-heading {
@@ -2926,7 +2926,7 @@
     margin-bottom: 60px;
     letter-spacing: -1px;
     padding: 0 40px;
-    /* margin-left: 25%; */
+    margin-left: 25%;
 }
 
 /* Scroll Wrapper with CSS Mask for Edge Fading */
@@ -3058,24 +3058,1430 @@
 }
 
 /* Left Alignment Overrides */
-.gr-hero-title-new, 
-.gr-hero-desc-new, 
-.gr-hero-subtitle-new, 
-.gd-page-hero-title-desc-new, 
-.bi-info-subtitle, 
-.bi-prod-title, 
-.bi-detail-title, 
-.bi-about-left-title, 
-.bi-service-card-title, 
-.bi-service-card-desc, 
-.bi-agency-main-title, 
-.gd-page-mission-title, 
-.gd-page-agency-header, 
-.gd-page-testimonial-container, 
-.gd-page-testimonial-heading, 
-.gd-page-testimonial-label,
-.bi-info-col, 
+.gr-hero-title-new,
+.gr-hero-desc-new,
+.gr-hero-subtitle-new,
+.gd-page-hero-title-desc-new,
+.bi-info-subtitle,
+.bi-prod-title,
+.bi-detail-title,
+.bi-about-left-title,
+.bi-service-card-title,
+.bi-service-card-desc,
+.bi-agency-main-title,
+.gd-page-mission-title,
+.gd-page-agency-header,
+.gd-page-testimonial-container,
+.bi-info-col,
 .bi-info-features {
     text-align: left !important;
     margin-left: 0 !important;
+}
+
+/* ============================================================
+   COMPREHENSIVE RESPONSIVE FIXES FOR ALL SCREEN SIZES
+   ============================================================ */
+
+/* 1400px and above - Large Desktop */
+@media (max-width: 1400px) {
+    .gd-page-hero-container-new {
+        max-width: 100%;
+    }
+
+    .gd-page-hero-title-new {
+        font-size: 58px;
+    }
+
+    .gd-page-services-container-new {
+        max-width: 1200px;
+    }
+
+    .gd-page-about-inner-new {
+        max-width: 1200px;
+    }
+}
+
+/* 1200px - Desktop */
+@media (max-width: 1200px) {
+    .gd-page-hero-container-new {
+        flex-direction: column;
+        padding: 40px 30px 60px 30px;
+        clip-path: none;
+    }
+
+    .gd-page-hero-left-new {
+        max-width: 100%;
+    }
+
+    .gd-page-hero-title-new {
+        font-size: 48px;
+        margin-left: 0;
+    }
+
+    .gd-page-hero-subtitle-new {
+        margin-left: 0;
+    }
+
+    .gd-page-hero-title-desc-new {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        min-height: auto;
+        margin: 20px 0;
+    }
+
+    .gd-page-hero-right-new {
+        max-width: 100%;
+    }
+
+    .gd-page-hero-stats-new {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .gd-page-services-grid {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .gd-page-service-card {
+        margin-right: 0;
+        transform: rotate(0deg) translateY(0) !important;
+        width: calc(33.33% - 20px);
+        min-width: 280px;
+    }
+}
+
+/* 1100px - Tablet Landscape */
+@media (max-width: 1100px) {
+    .gd-page-about-inner-new {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .gd-page-about-left-tag {
+        font-size: 32px;
+    }
+
+    .gd-page-about-left-title {
+        font-size: 28px;
+    }
+
+    .gd-page-agency-grid {
+        gap: 50px;
+    }
+
+    .gd-page-agency-main-title {
+        font-size: 42px;
+    }
+}
+
+/* 1024px - Tablet Landscape */
+@media (max-width: 1024px) {
+    .gd-page-services-content-new {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .gd-page-services-list-new {
+        order: 1;
+    }
+
+    .gd-page-services-info-col-new {
+        order: 2;
+    }
+
+    .gd-page-services-image-col-new {
+        order: 3;
+    }
+
+    .gd-page-services-info-col-new {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .gd-page-services-card-dark-new,
+    .gd-page-services-card-green-new {
+        min-height: auto;
+        padding: 30px 25px;
+    }
+
+    .gd-page-services-card-sub-new,
+    .gd-page-services-card-sub-green-new {
+        order: 2;
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
+
+    .gd-page-services-card-action-new {
+        order: 3;
+        margin-top: 10px;
+    }
+
+    .gd-page-services-card-action-text-new,
+    .gd-page-services-card-action-text-green-new {
+        font-size: 20px;
+    }
+
+    .gd-page-services-image-wrapper-new {
+        height: 400px;
+    }
+
+    .gd-page-service-card {
+        width: calc(50% - 20px);
+    }
+
+    .gd-page-service-card-desc {
+        font-size: 12px;
+    }
+
+    .gd-page-service-card-title {
+        font-size: 17px;
+        white-space: normal;
+        word-break: break-word;
+    }
+}
+
+/* 991px - Tablet */
+@media (max-width: 991px) {
+    .gd-page-prod-container {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .gd-page-prod-left {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .gd-page-prod-title {
+        font-size: 36px;
+        text-align: center;
+    }
+
+    .gd-page-prod-desc {
+        text-align: center;
+    }
+
+    .gd-page-prod-buttons {
+        justify-content: center;
+    }
+
+    .gd-page-prod-avatars-box {
+        justify-content: center;
+    }
+
+    .gd-page-prod-avatar-text {
+        text-align: center;
+    }
+
+    .gd-page-el-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .gd-page-el-left {
+        height: 480px;
+    }
+
+    .gd-page-el-img-large {
+        width: 220px;
+        height: 380px;
+    }
+
+    .gd-page-el-img-small-top,
+    .gd-page-el-img-small-bottom {
+        width: 180px;
+    }
+
+    .gd-page-el-title {
+        font-size: 32px;
+    }
+
+    .gd-page-el-preheading {
+        margin-left: 0;
+        font-size: 28px;
+    }
+}
+
+/* 900px - Small Desktop */
+@media (max-width: 900px) {
+    .gd-page-agency-grid {
+        grid-template-columns: 1fr;
+        gap: 100px;
+    }
+
+    .gd-page-agency-info-row {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .gd-page-portrait-img {
+        height: 500px;
+    }
+
+    .gd-page-exp-badge {
+        left: 20px;
+        bottom: -30px;
+    }
+}
+
+/* 768px - Mobile Landscape */
+@media (max-width: 768px) {
+    .gd-page-hero-section-new {
+        min-height: auto;
+        padding: 20px;
+    }
+
+    .gd-page-hero-container-new {
+        padding: 30px 20px 40px 20px;
+    }
+
+    .gd-page-hero-title-new {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .gd-page-hero-buttons-new {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .gd-page-btn-get-started-new,
+    .gd-page-btn-contact-us-new {
+        width: 100%;
+        text-align: center;
+    }
+
+    .gd-page-hero-desc-new {
+        font-size: 16px;
+    }
+
+    .gd-page-stat-item-new {
+        flex: 1;
+        min-width: 80px;
+    }
+
+    .gd-page-title-play-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .gd-page-case-title-new {
+        font-size: 28px;
+    }
+
+    .gd-page-about-company-desc-new {
+        font-size: 14px;
+    }
+
+    .gd-page-performance-card-new {
+        padding: 20px;
+    }
+
+    .gd-page-about-section-new {
+        padding: 80px 20px 60px;
+        clip-path: none;
+        margin-top: 0;
+    }
+
+    .gd-page-about-left-tag {
+        font-size: 28px !important;
+        text-align: center !important;
+    }
+
+    .gd-page-about-left-title {
+        font-size: 24px !important;
+        text-align: center !important;
+    }
+
+    .gd-page-about-intro-new {
+        text-align: center !important;
+    }
+
+    .gd-page-about-left-header {
+        text-align: center !important;
+    }
+
+    .gd-page-about-img-wrap-new {
+        min-height: 320px;
+        height: auto;
+    }
+
+    .gd-page-about-badge-new {
+        padding: 10px 14px;
+    }
+
+    .gd-page-badge-num {
+        font-size: 20px;
+    }
+
+    .gd-page-detail-title {
+        font-size: 22px;
+    }
+
+    .gd-page-detail-stats {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .gd-page-detail-stat {
+        flex: 1;
+        min-width: 80px;
+        border-right: none;
+    }
+
+    .gd-page-about-service-item-new {
+        padding: 15px 18px !important;
+    }
+
+    .gd-page-service-item-left-about {
+        gap: 12px !important;
+    }
+
+    .gd-page-service-num-new {
+        font-size: 11px !important;
+    }
+
+    .gd-page-service-name-about {
+        font-size: 13px !important;
+    }
+
+    .gd-page-service-short-about {
+        font-size: 10px !important;
+    }
+
+    .gd-page-service-arrow-about {
+        font-size: 14px !important;
+    }
+
+    .gd-page-about-detail-panel {
+        padding: 20px 18px !important;
+        height: auto !important;
+    }
+
+    .gd-page-detail-icon-wrap {
+        width: 44px;
+        height: 44px;
+    }
+
+    .gd-page-detail-icon {
+        font-size: 18px;
+    }
+
+    .gd-page-detail-num {
+        font-size: 9px;
+    }
+
+    .gd-page-detail-desc {
+        font-size: 13px !important;
+    }
+
+    .gd-page-detail-stat-val {
+        font-size: 14px !important;
+    }
+
+    .gd-page-detail-stat-label {
+        font-size: 9px !important;
+    }
+
+    .gd-page-detail-cta {
+        padding: 12px 20px !important;
+        font-size: 13px !important;
+    }
+
+    .gd-page-productivity-section {
+        padding: 80px 20px;
+    }
+
+    .gd-page-prod-title {
+        font-size: 32px;
+    }
+
+    .gd-page-prod-desc {
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+
+    .gd-page-prod-buttons {
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 40px;
+    }
+
+    .gd-page-btn-prod-primary,
+    .gd-page-btn-prod-secondary {
+        width: 100%;
+        text-align: center;
+        padding: 14px 24px;
+    }
+
+    .gd-page-prod-avatars-box {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .gd-page-prod-avatars {
+        justify-content: center;
+    }
+
+    .gd-page-prod-avatar-text {
+        text-align: center;
+        font-size: 12px;
+    }
+
+    .gd-page-prod-timeline {
+        margin-left: 0;
+        padding-left: 0;
+    }
+
+    .gd-page-prod-timeline::before {
+        left: 16px !important;
+        width: 2px;
+    }
+
+    .gd-page-timeline-item {
+        gap: 12px;
+        padding-bottom: 20px;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .gd-page-timeline-icon {
+        width: 40px !important;
+        height: 40px !important;
+        padding: 8px !important;
+    }
+
+    .gd-page-timeline-content h3 {
+        font-size: 16px;
+    }
+
+    .gd-page-timeline-content p {
+        font-size: 12px;
+    }
+
+    .gd-page-service-card {
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    .gd-page-mission-title {
+        margin-top: 5px;
+        font-size: 32px;
+    }
+
+    .gd-page-mission-section {
+        padding: 60px 20px;
+    }
+
+    .gd-page-services-section-new {
+        padding: 60px 20px;
+    }
+
+    .gd-page-services-container-new {
+        padding: 0 20px;
+    }
+
+    .gd-page-services-title-new {
+        font-size: 36px;
+    }
+
+    .gd-page-services-info-col-new {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .gd-page-services-card-dark-new,
+    .gd-page-services-card-green-new {
+        padding: 25px 20px;
+    }
+
+    .gd-page-agency-section {
+        padding: 60px 20px 100px;
+    }
+
+    .gd-page-agency-main-title {
+        font-size: 32px;
+    }
+
+    .gd-page-exp-badge {
+        padding: 20px 30px;
+    }
+
+    .gd-page-exp-number {
+        font-size: 36px;
+    }
+
+    .gd-page-landscape-img {
+        height: 220px;
+    }
+
+    .gd-page-testimonial-section {
+        padding: 60px 0 80px;
+    }
+
+    .gd-page-testimonial-heading {
+        font-size: 28px;
+        padding: 0 20px;
+        margin-left: 0;
+    }
+
+    .gd-page-testimonial-card-horizontal {
+        flex: 0 0 280px;
+        padding: 30px 20px;
+    }
+
+    .gd-page-testimonial-text {
+        height: auto;
+        min-height: 80px;
+    }
+
+    .gd-page-courses-section {
+        padding: 60px 20px;
+    }
+
+    .gd-page-section-title {
+        font-size: 2rem;
+    }
+
+    .gd-page-courses-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .gd-page-feedback-section {
+        padding: 60px 20px;
+    }
+
+    .gd-page-feedback-card {
+        padding: 30px 25px;
+    }
+
+    .gd-page-feedback-text {
+        font-size: 1rem;
+    }
+
+    /* Mission section 7th card alignment fix */
+    .gd-page-service-card:last-child {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        left: auto !important;
+        right: auto !important;
+        position: relative !important;
+        transform: none !important;
+    }
+}
+
+/* 576px - Small Tablet / Large Phone */
+@media (max-width: 576px) {
+    .gd-page-el-left {
+        height: 400px;
+    }
+
+    .gd-page-el-img-large {
+        width: 160px;
+        height: 300px;
+        top: 60px;
+    }
+
+    .gd-page-el-img-small-top {
+        width: 140px;
+        height: 120px;
+        top: 20px;
+        left: 10px;
+    }
+
+    .gd-page-el-img-small-bottom {
+        width: 150px;
+        height: 130px;
+        left: 5px;
+        bottom: 20px;
+    }
+
+    .gd-page-el-title {
+        font-size: 28px;
+    }
+
+    .gd-page-el-stats {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .gd-page-el-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .gd-page-prod-timeline::before {
+        left: 14px !important;
+    }
+
+    .gd-page-timeline-icon {
+        width: 32px !important;
+        height: 32px !important;
+        padding: 6px !important;
+    }
+
+    .gd-page-timeline-item {
+        gap: 10px;
+    }
+
+    .gd-page-timeline-content h3 {
+        font-size: 14px;
+    }
+
+    .gd-page-timeline-content p {
+        font-size: 11px;
+    }
+}
+
+/* 480px - Mobile Portrait */
+@media (max-width: 480px) {
+    .gd-page-hero-title-new {
+        font-size: 28px;
+    }
+
+    .gd-page-hero-subtitle-new {
+        font-size: 16px;
+    }
+
+    .gd-page-hero-desc-new {
+        font-size: 14px;
+    }
+
+    .gd-page-stat-circle-new {
+        width: 50px;
+        height: 50px;
+    }
+
+    .gd-page-stat-number-new {
+        font-size: 11px;
+    }
+
+    .gd-page-stat-label-new {
+        font-size: 10px;
+    }
+
+    .gd-page-hero-stats-new {
+        gap: 20px;
+    }
+
+    .gd-page-avatar-group-new img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .gd-page-avatar-icon-new,
+    .gd-page-download-btn-new {
+        width: 32px;
+        height: 32px;
+    }
+
+    .gd-page-perf-value-new,
+    .gd-page-perf-value-bold-new {
+        font-size: 14px;
+    }
+
+    .gd-page-perf-label-new {
+        font-size: 8px;
+    }
+
+    .gd-page-about-left-tag {
+        font-size: 15px !important;
+    }
+
+    .gd-page-about-left-title {
+        font-size: 20px !important;
+    }
+
+    .gd-page-about-service-item-new {
+        padding: 12px 14px !important;
+    }
+
+    .gd-page-service-text-group {
+        max-width: 180px;
+    }
+
+    .gd-page-service-name-about {
+        font-size: 12px !important;
+        white-space: normal;
+        word-break: break-word;
+    }
+
+    .gd-page-service-short-about {
+        font-size: 9px !important;
+    }
+
+    .gd-page-about-detail-panel {
+        padding: 16px 14px !important;
+    }
+
+    .gd-page-detail-title {
+        font-size: 18px !important;
+    }
+
+    .gd-page-detail-desc {
+        font-size: 12px !important;
+    }
+
+    .gd-page-productivity-section {
+        padding: 60px 16px;
+    }
+
+    .gd-page-prod-title {
+        font-size: 28px;
+    }
+
+    .gd-page-btn-prod-primary,
+    .gd-page-btn-prod-secondary {
+        padding: 12px 20px;
+        font-size: 13px;
+    }
+
+    .gd-page-mission-title {
+        margin-top: 5px;
+        font-size: 28px;
+    }
+
+    .gd-page-service-card {
+        height: auto;
+        min-height: 380px;
+        padding: 25px;
+    }
+
+    .gd-page-service-card-title {
+        font-size: 16px;
+    }
+
+    .gd-page-service-card-subtitle {
+        font-size: 11px;
+    }
+
+    .gd-page-service-icon-wrap {
+        height: 70px;
+        margin-top: 10px;
+    }
+
+    .gd-page-services-title-new {
+        font-size: 28px;
+    }
+
+    .gd-page-service-item-new {
+        padding: 14px 16px;
+    }
+
+    .gd-page-service-name-new {
+        font-size: 14px;
+    }
+
+    .gd-page-service-id-new {
+        font-size: 14px;
+    }
+
+    .gd-page-services-card-action-text-new,
+    .gd-page-services-card-action-text-green-new {
+        font-size: 18px;
+    }
+
+    .gd-page-section-title {
+        font-size: 1.8rem;
+    }
+
+    .gd-page-course-title {
+        font-size: 1.3rem;
+    }
+
+    .gd-page-course-desc {
+        font-size: 0.85rem;
+    }
+
+    .gd-page-feature-item {
+        font-size: 0.8rem;
+    }
+
+    .gd-page-feedback-card {
+        padding: 25px 20px;
+    }
+
+    .gd-page-feedback-text {
+        font-size: 0.9rem;
+    }
+
+    .gd-page-slider-arrow {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+
+    .gd-page-testimonial-card-horizontal {
+        flex: 0 0 260px;
+    }
+
+    .gd-page-testimonial-name {
+        font-size: 16px;
+    }
+
+    .gd-page-testimonial-text {
+        font-size: 13px;
+    }
+}
+
+/* 360px - Small Mobile */
+@media (max-width: 360px) {
+    .gd-page-hero-title-new {
+        font-size: 24px;
+    }
+
+    .gd-page-hero-desc-new {
+        font-size: 13px;
+    }
+
+    .gd-page-stat-circle-new {
+        width: 45px;
+        height: 45px;
+    }
+
+    .gd-page-stat-number-new {
+        font-size: 10px;
+    }
+
+    .gd-page-stat-label-new {
+        font-size: 9px;
+    }
+
+    .gd-page-case-title-new {
+        font-size: 22px;
+    }
+
+    .gd-page-about-company-desc-new {
+        font-size: 12px;
+    }
+
+    .gd-page-service-text-group {
+        max-width: 150px;
+    }
+
+    .gd-page-service-name-about {
+        font-size: 11px !important;
+    }
+
+    .gd-page-service-short-about {
+        font-size: 8px !important;
+    }
+
+    .gd-page-detail-title {
+        font-size: 16px !important;
+    }
+
+    .gd-page-detail-desc {
+        font-size: 11px !important;
+    }
+
+    .gd-page-detail-stat-val {
+        font-size: 12px !important;
+    }
+
+    .gd-page-detail-stat-label {
+        font-size: 8px !important;
+    }
+
+    .gd-page-prod-title {
+        font-size: 24px;
+    }
+
+    .gd-page-prod-desc {
+        font-size: 12px;
+    }
+
+    .gd-page-btn-prod-primary,
+    .gd-page-btn-prod-secondary {
+        padding: 10px 16px;
+        font-size: 12px;
+    }
+
+    .gd-page-timeline-content h3 {
+        font-size: 12px;
+    }
+
+    .gd-page-timeline-content p {
+        font-size: 10px;
+    }
+
+    .gd-page-mission-title {
+        font-size: 24px;
+    }
+
+    .gd-page-service-card-title {
+        font-size: 14px;
+    }
+
+    .gd-page-service-card-desc {
+        font-size: 11px;
+    }
+
+    .gd-page-services-title-new {
+        font-size: 24px;
+    }
+
+    .gd-page-service-name-new {
+        font-size: 12px;
+    }
+
+    .gd-page-service-id-new {
+        font-size: 12px;
+    }
+
+    .gd-page-section-title {
+        font-size: 1.5rem;
+    }
+
+    .gd-page-course-title {
+        font-size: 1.1rem;
+    }
+
+    .gd-page-feedback-text {
+        font-size: 0.85rem;
+    }
+
+    .gd-page-testimonial-heading {
+        font-size: 24px;
+    }
+
+    .gd-page-testimonial-card-horizontal {
+        flex: 0 0 240px;
+        padding: 20px 15px;
+    }
+
+    .gd-page-testimonial-name {
+        font-size: 14px;
+    }
+
+    .gd-page-testimonial-text {
+        font-size: 11px;
+    }
+}
+
+/* Ensure all images are responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Fix for overlapping elements on very small screens */
+@media (max-width: 380px) {
+    .gd-page-service-text-group {
+        max-width: 140px;
+    }
+
+    .gd-page-service-name-about {
+        font-size: 10px !important;
+    }
+
+    .gd-page-service-short-about {
+        font-size: 8px !important;
+    }
+
+    .gd-page-detail-title {
+        font-size: 15px !important;
+    }
+
+    .gd-page-detail-desc {
+        font-size: 10px !important;
+    }
+}
+
+/* ============================================================
+   MOBILE VIEW SPECIFIC FIXES FOR HERO SECTION, MISSION SECTION & AGENCY SECTION
+   ============================================================ */
+
+/* Hero Section - Mobile view fixes for image alignment and button sizes */
+@media (max-width: 768px) {
+
+    /* Move cube image slightly to the right */
+    .gd-page-hero-center-new {
+        display: flex;
+        justify-content: flex-end !important;
+        align-items: center;
+        padding-right: 20px;
+        margin-right: -20px;
+    }
+
+    .gd-page-cube-img-new {
+        transform: scale(0.95) translateX(15px);
+        max-width: 85%;
+    }
+
+    /* Reduce button sizes */
+    .gd-page-btn-get-started-new,
+    .gd-page-btn-contact-us-new {
+        padding: 10px 20px;
+        font-size: 11px;
+        width: auto;
+        min-width: 140px;
+    }
+
+    /* Reduce description font size */
+    .gd-page-hero-desc-new {
+        font-size: 14px;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Adjust stats circles size */
+    .gd-page-stat-circle-new {
+        width: 55px;
+        height: 55px;
+    }
+
+    .gd-page-stat-number-new {
+        font-size: 11px;
+    }
+
+    .gd-page-stat-label-new {
+        font-size: 10px;
+    }
+
+    .gd-page-hero-stats-new {
+        gap: 25px;
+    }
+}
+
+@media (max-width: 576px) {
+    .gd-page-hero-center-new {
+        padding-right: 25px;
+        margin-right: -20px;
+    }
+
+    .gd-page-cube-img-new {
+        transform: scale(0.9) translateX(20px);
+        max-width: 70%;
+    }
+}
+
+@media (max-width: 480px) {
+    .gd-page-hero-center-new {
+        padding-right: 30px;
+        margin-right: -25px;
+    }
+
+    .gd-page-cube-img-new {
+        transform: scale(0.85) translateX(25px);
+        max-width: 70%;
+    }
+
+    .gd-page-btn-get-started-new,
+    .gd-page-btn-contact-us-new {
+        padding: 8px 16px;
+        font-size: 10px;
+        min-width: 120px;
+    }
+
+    .gd-page-hero-desc-new {
+        font-size: 13px;
+    }
+
+    .gd-page-stat-circle-new {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 360px) {
+    .gd-page-hero-center-new {
+        padding-right: 35px;
+        margin-right: -40px;
+    }
+
+    .gd-page-cube-img-new {
+        transform: scale(0.8) translateX(35px);
+        max-width: 65%;
+    }
+
+    .gd-page-btn-get-started-new,
+    .gd-page-btn-contact-us-new {
+        padding: 6px 12px;
+        font-size: 9px;
+        min-width: 100px;
+    }
+}
+
+/* ============================================================
+   MISSION SECTION CARDS - INCREASE PADDING & REDUCE GAP IN MOBILE VIEW
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+    /* Increase card padding */
+    .gd-page-service-card {
+        padding: 30px 25px !important;
+        height: auto;
+        min-height: auto;
+    }
+
+    /* Reduce gap between content inside cards */
+    .gd-page-card-header {
+        margin-bottom: 12px !important;
+    }
+
+    .gd-page-service-card-desc {
+        margin: 10px 0 !important;
+        line-height: 1.4;
+        font-size: 12px;
+    }
+
+    /* Adjust title and subtitle spacing */
+    .gd-page-card-title-group {
+        gap: 4px !important;
+    }
+
+    .gd-page-service-card-title {
+        font-size: 16px !important;
+        white-space: normal;
+        word-break: break-word;
+        line-height: 1.3;
+    }
+
+    .gd-page-service-card-subtitle {
+        font-size: 11px !important;
+        margin-top: 2px;
+    }
+
+    /* Adjust badge size */
+    .gd-page-card-badge {
+        padding: 3px 8px;
+    }
+
+    .gd-page-badge-rating {
+        font-size: 11px;
+    }
+
+    /* Adjust icon area */
+    .gd-page-service-icon-wrap {
+        height: 70px;
+        margin-top: 15px;
+    }
+
+    .gd-page-service-icon-wrap svg {
+        width: 60px;
+        height: 60px;
+    }
+
+    /* Card grid spacing */
+    .gd-page-services-grid {
+        gap: 25px;
+    }
+}
+
+@media (max-width: 576px) {
+    .gd-page-service-card {
+        padding: 28px 22px !important;
+    }
+
+    .gd-page-card-header {
+        margin-bottom: 10px !important;
+    }
+
+    .gd-page-service-card-desc {
+        margin: 8px 0 !important;
+        font-size: 11.5px;
+    }
+
+    .gd-page-service-icon-wrap {
+        height: 65px;
+        margin-top: 12px;
+    }
+
+    .gd-page-service-icon-wrap svg {
+        width: 55px;
+        height: 55px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gd-page-service-card {
+        padding: 25px 20px !important;
+    }
+
+    .gd-page-service-card-title {
+        font-size: 15px !important;
+    }
+
+    .gd-page-service-card-subtitle {
+        font-size: 10px !important;
+    }
+
+    .gd-page-service-card-desc {
+        font-size: 11px !important;
+        margin: 6px 0 !important;
+    }
+
+    .gd-page-card-badge {
+        padding: 2px 6px;
+    }
+
+    .gd-page-badge-rating {
+        font-size: 10px;
+    }
+
+    .gd-page-service-icon-wrap {
+        height: 60px;
+        margin-top: 10px;
+    }
+
+    .gd-page-service-icon-wrap svg {
+        width: 50px;
+        height: 50px;
+    }
+
+    .gd-page-services-grid {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 360px) {
+    .gd-page-service-card {
+        padding: 22px 18px !important;
+    }
+
+    .gd-page-service-card-title {
+        font-size: 14px !important;
+    }
+
+    .gd-page-service-card-subtitle {
+        font-size: 9px !important;
+    }
+
+    .gd-page-service-card-desc {
+        font-size: 10px !important;
+        margin: 5px 0 !important;
+        line-height: 1.3;
+    }
+
+    .gd-page-card-header {
+        margin-bottom: 8px !important;
+    }
+
+    .gd-page-service-icon-wrap {
+        height: 55px;
+        margin-top: 8px;
+    }
+
+    .gd-page-service-icon-wrap svg {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+/* ============================================================
+   AGENCY SECTION - REDUCE IMAGE HEIGHT & STAT SIZE IN MOBILE VIEW
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+    /* Reduce the height of the left side portrait image */
+    .gd-page-portrait-img {
+        height: 380px !important;
+        object-fit: cover;
+        object-position: center top;
+    }
+
+    /* Reduce the size of the experience badge */
+    .gd-page-exp-badge {
+        padding: 15px 25px !important;
+        left: 15px !important;
+        bottom: 20px !important;
+    }
+
+    /* Reduce the numbers and text inside the badge */
+    .gd-page-exp-number {
+        font-size: 28px !important;
+    }
+
+    .gd-page-exp-text {
+        font-size: 10px !important;
+    }
+
+    /* Adjust the bottom landscape image height */
+    .gd-page-landscape-img {
+        height: 180px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .gd-page-portrait-img {
+        height: 320px !important;
+    }
+
+    .gd-page-exp-badge {
+        padding: 12px 20px !important;
+        left: 12px !important;
+        bottom: 15px !important;
+    }
+
+    .gd-page-exp-number {
+        font-size: 24px !important;
+    }
+
+    .gd-page-exp-text {
+        font-size: 9px !important;
+    }
+
+    .gd-page-landscape-img {
+        height: 160px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .gd-page-portrait-img {
+        height: 280px !important;
+    }
+
+    .gd-page-exp-badge {
+        padding: 10px 16px !important;
+        left: 10px !important;
+        bottom: 12px !important;
+    }
+
+    .gd-page-exp-number {
+        font-size: 22px !important;
+    }
+
+    .gd-page-exp-text {
+        font-size: 8px !important;
+    }
+
+    .gd-page-landscape-img {
+        height: 140px !important;
+    }
+}
+
+@media (max-width: 360px) {
+    .gd-page-portrait-img {
+        height: 250px !important;
+    }
+
+    .gd-page-exp-badge {
+        padding: 8px 12px !important;
+        left: 8px !important;
+        bottom: 10px !important;
+    }
+
+    .gd-page-exp-number {
+        font-size: 20px !important;
+    }
+
+    .gd-page-exp-text {
+        font-size: 7px !important;
+    }
+
+    .gd-page-landscape-img {
+        height: 120px !important;
+    }
 }

@@ -525,14 +525,44 @@
   font-weight: 800;
   letter-spacing: 1px;
 }
-
-
-
 .rm3-exact-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: auto;
+}
+@media (max-width: 768px) {
+    /* 1. Stack the footer items vertically to save horizontal space */
+    .rm3-exact-footer {
+        display: flex !important;
+        flex-direction: column !important; /* Change from row to column */
+        align-items: center !important;
+        text-align: center !important;
+        gap: 1.5rem !important; /* Add space between items */
+        padding: 1.5rem 1rem !important; /* Reduce overall height */
+        margin-top: 1rem !important;
+    }
+
+    /* 2. Shrink the big stats (10K+ Leads, etc.) */
+    .rm3-exact-stat-big {
+        font-size: 1.1rem !important; /* Smaller but still bold */
+        line-height: 1.2 !important;
+    }
+
+    /* 3. Reduce the size of the "Contact Us" green button */
+    .rm3-exact-footer .contact-us-btn,
+    .rm3-exact-footer div[style*="background-color: rgb(74, 222, 128)"] { 
+        width: 100% !important;
+        max-width: 200px !important;
+        padding: 10px 15px !important;
+        font-size: 0.9rem !important;
+    }
+
+    /* 4. Fix the 30 DAY FREE TRIAL text */
+    .rm3-exact-stats p {
+        font-size: 0.8rem !important;
+        margin: 0 auto !important;
+    }
 }
 
 .rm3-exact-stats {
@@ -1413,6 +1443,51 @@
     grid-template-columns: 1fr;
   }
 }
+@media (max-width: 600px) {
+    /* 1. Ensure the grid doesn't have huge gaps and fits the screen */
+    .rm3-app-cards-grid {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+        padding: 10px !important;
+        display: flex !important; /* Forces vertical stack if flex is active */
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    /* 2. Minimize the card size */
+    .rm3-app-card {
+        flex: 0 0 auto !important; /* Removes the 310px fixed width */
+        width: 92% !important;     /* Makes the card slightly narrower than the screen */
+        max-width: 300px !important; 
+        margin: 0 auto !important;
+    }
+
+    /* 3. Reduce image height to save vertical space */
+    .rm3-app-card-img {
+        height: 130px !important;
+    }
+
+    /* 4. Tighten up the body padding and text */
+    .rm3-app-card-body {
+        padding: 12px !important;
+    }
+
+    .rm3-app-card-title {
+        font-size: 0.8rem !important; /* Slightly smaller text */
+        margin-bottom: 5px !important;
+    }
+
+    .rm3-app-card-desc {
+        font-size: 0.75rem !important;
+        margin-bottom: 12px !important;
+        min-height: auto !important; /* Removes the forced empty space */
+    }
+
+    /* 5. Shrink buttons/footer to fit */
+    .rm3-app-card-footer {
+        gap: 8px !important;
+    }
+}
 
 /* ======================================== 
    BENTO HIGHLIGHTS SECTION (Selling Points)
@@ -1751,6 +1826,152 @@
   height: 100%;
   object-fit: cover;
 }
+/* my responsive only for above codes */
+/* Tablet & Small Desktop (1024px and below) */
+@media (max-width: 1024px) {
+  .rm3-hero-grid {
+    grid-template-columns: 1fr; /* Stack hero columns */
+    text-align: center;
+    padding-top: 40px;
+  }
+
+  .rm3-hero-left {
+    align-items: center;
+    text-align: center;
+  }
+
+  .rm3-hero-title, .rm3-title-accent {
+    font-size: 48px; /* Scale down title */
+    white-space: normal;
+  }
+
+  .rm3-hero-bottom-grid {
+    grid-template-columns: 1fr; /* Stack the bottom 3 cards */
+    justify-items: center;
+    gap: 20px;
+  }
+
+  .rm3-mint-card, .rm3-hl-col-right {
+    transform: translateX(0); /* Remove the 'moved left' offset for mobile/tab */
+  }
+  
+  .rm3-bottom-text-container {
+    text-align: center;
+    justify-self: center;
+  }
+}
+
+/* Mobile Devices (768px and below) */
+@media (max-width: 768px) {
+  .rm3-hero-section {
+    padding: 80px 20px 40px 20px;
+  }
+
+  .rm3-hero-title, .rm3-title-accent {
+    font-size: 34px;
+  }
+
+  .rm3-mockup-container {
+    height: 300px; /* Shrink image container */
+  }
+
+  .rm3-dash {
+    width: 100%; /* Make the dashboard image fit */
+    transform: none; /* Remove 3D tilt on mobile for better visibility */
+  }
+
+  .rm3-bottom-card {
+    width: 100%; /* Full width cards */
+    max-width: 330px;
+  }
+}
+@media (max-width: 768px) {
+  .rm3-exact-red-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;       /* Increased card width to full screen */
+    max-width: 100%;
+    height: auto;
+    min-height: unset;
+    padding: 25px 15px; /* Slightly more vertical padding for breathing room */
+    margin: 0;         /* Remove margins to touch screen edges if needed */
+  }
+
+  .rm3-exact-image-col, 
+  .rm3-exact-content-col {
+    width: 100%;       /* Ensure columns take up full card width */
+  }
+
+  .rm3-exact-hero-img {
+    height: 350px;     /* Increased height for a more "Full View" feel */
+    width: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+  .rm3-exact-title {
+    font-size: 2.1rem; /* Increased title size for better impact */
+    line-height: 1.2;
+    margin-bottom: 15px;
+    width: 100%;       /* Ensure title spans full width */
+  }
+
+  /* Grid for Thumbnails/Details inside the card */
+  .rm3-exact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 15px;         /* Increased gap for better touch targets */
+    width: 100%;       /* Forces grid to expand */
+  }
+
+  /* If there are items inside the grid, make them wider */
+  .rm3-exact-grid-item {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .rm3-exact-desc {
+    font-size: 1rem;   /* Increased description text size */
+    width: 100%;
+    line-height: 1.6;
+  }
+}
+@media (max-width: 992px) {
+  .rm3-highlights-container {
+    grid-template-columns: 1fr; /* Single column layout */
+    gap: 30px;
+  }
+
+  .rm3-hl-card-main {
+    -webkit-mask-image: none; /* Remove complex mask on mobile to avoid cropping */
+    mask-image: none;
+    height: 350px;
+  }
+
+  .rm3-hl-card-purple {
+    margin-left: 0; /* Reset the negative margin overlap */
+    width: 100%;
+  }
+
+  .rm3-hl-card-neon {
+    width: 100%;
+    margin-left: 0;
+  }
+  
+  .rm3-hl-col-right {
+     transform: translateX(0);
+  }
+}
+@media (max-width: 768px) {
+  .rm3-global-bricks {
+    grid-template-rows: repeat(2, 150px); /* Smaller rows */
+    grid-auto-columns: minmax(200px, 1fr);
+  }
+
+  .rm3-global-title {
+    font-size: 2rem;
+  }
+}
 
 /* Stat Overlay on Images */
 .rm3-brick-overlay-wash {
@@ -1992,4 +2213,258 @@
     gap: 20px;
     align-items: flex-start;
   }
+}
+/* Tablet & Mobile Fixes for Masonry Bricks */
+@media (max-width: 1024px) {
+  .rm3-brick-overlay-val {
+    font-size: 2.5rem; /* Scale down the 3.5rem massive stats */
+  }
+  
+  .rm3-brick-overlay {
+    padding: 20px; /* Tighter padding for tablet */
+  }
+}
+
+@media (max-width: 768px) {
+  .rm3-global-bricks {
+    /* Force a single column and let heights be auto */
+    display: flex;
+    flex-direction: column;
+    grid-template-rows: none; 
+    overflow-x: hidden;
+  }
+
+  .rm3-brick {
+    height: 300px; /* Give them a consistent height when stacked */
+    width: 100%;
+  }
+
+  .rm3-brick-overlay-val {
+    font-size: 2.2rem;
+  }
+  
+  .rm3-brick-quote {
+    font-size: 1.1rem;
+  }
+}
+/* Responsive Sales Grid */
+@media (max-width: 1100px) {
+  .rm3-sales-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+    gap: 20px;
+  }
+
+  /* Reset the asymmetrical spans so they fit in a 2-column grid */
+  .rm3-sales-card:nth-child(n) {
+    grid-column: span 1 !important;
+  }
+  
+  /* Optional: Keep one featured card wide if you want */
+  .rm3-sales-card:nth-child(3) {
+    grid-column: span 2 !important; 
+  }
+
+  .rm3-sales-card-img-box {
+    height: 300px; /* Slightly shorter images for tablet */
+  }
+}
+
+@media (max-width: 768px) {
+  .rm3-sales-container {
+    padding: 0 20px;
+  }
+
+  .rm3-sales-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .rm3-sales-grid {
+    grid-template-columns: 1fr; /* Single column for mobile */
+  }
+
+  .rm3-sales-card:nth-child(n) {
+    grid-column: span 1 !important; /* All cards take full width */
+  }
+
+  .rm3-sales-card-img-box {
+    height: 350px; /* Better height for mobile viewing */
+  }
+
+  .rm3-sales-filters {
+    width: 100%;
+    overflow-x: auto; /* Allow pills to scroll horizontally if they are too wide */
+    padding-bottom: 10px;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .rm3-sales-pill {
+    white-space: nowrap; /* Don't let text wrap inside pills */
+  }
+}
+@media (max-width: 768px) {
+  /* 1. Stack the Header (Title & Button) */
+  .rm3-redefine-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+
+  .rm3-rh-left, .rm3-rh-right {
+    flex: 0 0 100%;
+    width: 100%;
+  }
+
+  .rm3-rh-right h2 {
+    font-size: 1.8rem; /* Smaller title for mobile */
+  }
+
+  /* 2. Stack the Content (Tabs & Visual) */
+  .rm3-redefine-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .rm3-rc-tabs {
+    flex: 0 0 100%;
+    order: 2; /* Put tabs below the visual widget */
+  }
+
+  .rm3-rtab {
+    padding: 15px;
+  }
+
+  /* 3. Shrink the Chat Widget for Mobile View */
+  .rm3-rc-visual {
+    flex: 0 0 100%;
+    padding: 15px;
+    order: 1; /* Show the visual first */
+    min-height: auto;
+  }
+
+  .rm3-rv-chat-widget {
+    height: 380px; /* Shorter height */
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .rm3-rv-chat-bubble {
+    padding: 12px;
+    font-size: 0.85rem;
+    margin-left: 10px; /* Reduced margin to save space */
+  }
+
+  .rm3-rv-chat-options {
+    margin-left: 10px;
+  }
+
+  .rm3-cv-pill {
+    padding: 6px 12px;
+    font-size: 0.75rem;
+  }
+
+  /* 4. Adjust the Icon Pill */
+  .rm3-rh-icon-pill {
+    height: 40px;
+    padding: 4px 12px;
+    margin-left: 5px;
+    font-size: 1rem;
+  }
+
+  .rm3-rh-btn {
+    padding: 12px 24px;
+    font-size: 1rem;
+    width: 100%; /* Full width button */
+  }
+}
+/* ======================================== 
+   VERTICAL GALLERY / TESTIMONIAL STACK
+   ======================================== */
+
+.rm3-gallery-grid {
+  display: flex;
+  flex-direction: column; /* This stacks them vertically like the image */
+  gap: 25px;              /* Spacing between the stacked cards */
+  width: 100%;
+  max-width: 600px;       /* Keeps it from getting too wide on desktop */
+  margin: 0 auto;         /* Centers the stack */
+}
+
+.rm3-gallery-tile {
+  flex: none;             /* Prevents flex-grow/shrink issues */
+  width: 100%;            /* Makes every tile span the full container width */
+  height: 200px;          /* Adjusted height to look more like the screenshot */
+  border-radius: 20px;    /* Softer corners matching the UI */
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure the image inside stays "minimized" (visible) while covering */
+.rm3-gallery-tile-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  /* Optional: filter to make text pop more */
+  filter: brightness(0.8); 
+}
+
+/* Align text in center as per your image */
+.rm3-gallery-tile-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+.rm3-gallery-tile-content h3 {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5); /* Helps legibility on busy images */
+}
+
+/* ======================================== 
+   RESPONSIVE OVERRIDE 
+   ======================================== */
+@media (max-width: 768px) {
+  .rm3-gallery-container {
+    padding: 0 15px; /* Less side padding on phones */
+  }
+
+  .rm3-gallery-tile {
+    height: 180px;  /* Slightly shorter on mobile */
+  }
+
+  .rm3-gallery-tile-content h3 {
+    font-size: 1.2rem; /* Scale down text slightly */
+  }
+}
+
+  /* --- FINAL MOBILE OVERRIDE FOR CHAT BUBBLE --- */
+@media (max-width: 768px) {
+    .rm-rv-chat-bubble {
+        font-size: 0.85rem !important; /* Slightly smaller text to fit more content */
+        line-height: 1.5;
+        padding: 15px;
+    }
+
+    /* Arrow visibility - place them below the card for more space */
+    .rm-testi-outer-wrapper {
+        gap: 15px;
+    }
+    
+    .rm-testi-outer-arrow {
+        display: none; /* Often better to use dots only on mobile to save width */
+    }
 }

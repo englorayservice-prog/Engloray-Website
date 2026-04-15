@@ -45,7 +45,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    margin-top: 50px;
+    margin-top: 15px;
     margin-bottom: 2rem;
 }
 
@@ -92,7 +92,7 @@
     font-weight: 600;
     line-height: 1.1;
     letter-spacing: -1px;
-    margin-bottom: 1rem;
+    margin-bottom: 4rem;
     color: #ffffff;
     transform: translateY(-30px);
     margin-top: clamp(-100px, -6vw, -60px);
@@ -127,6 +127,14 @@
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     margin-bottom: 2rem;
+}
+
+/* Add this to your main CSS file (e.g., TechLearningHero.css) */
+
+/* Targets laptop-sized screens and larger */
+@media screen and (min-width: 1024px) {
+    /* .tlh-peoplr-students {
+    } */
 }
 
 /* Centered CTA Buttons */
@@ -350,17 +358,17 @@
 @media (max-width: 768px) {
     .tlh-peoplr-bottom-grid {
         grid-template-columns: 1fr;
+        gap: 0;
     }
 
     .tlh-float-card {
-        position: static;
-        width: 100%;
-        margin-bottom: 1rem;
+        display: none !important;
     }
 
+
     .tlh-peoplr-stage {
-        flex-direction: column;
-        align-items: center;
+        padding: 0%;
+        overflow: hidden;
     }
 
     .tlh-glass-ribbon {
@@ -432,6 +440,7 @@
     .tlh-icon-badges {
         gap: 10px;
     }
+
     /* NOTE: highlights now use clamp() fluid scaling — 1920px overrides no longer needed */
 }
 
@@ -546,4 +555,3 @@
         grid-template-columns: 1fr;
     }
 }
-

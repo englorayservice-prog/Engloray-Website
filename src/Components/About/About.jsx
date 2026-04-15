@@ -176,7 +176,7 @@ const About = () => {
                                             <FontAwesomeIcon icon={faClock} /> <span>4m 36s</span>
                                         </div>
                                         <div className="cv-text-box">
-                                            <h4>Watch Video</h4>
+                                            <h4>Watch Anthem</h4>
                                             <p>Watch Engloray's Insights</p>
                                         </div>
                                     </div>

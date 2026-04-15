@@ -80,8 +80,21 @@ import girl1 from '../../../assets/images/girl1.png';
 import girl2 from '../../../assets/images/girl2.png';
 import girl3 from '../../../assets/images/girl3.png';
 import girl4 from '../../../assets/images/girl4.png';
+import pedaImg from '../../../assets/peda.jpeg';
 import { submitInternship } from "../../Sub Pages/HandleSubmit/InternshipSubmit";
+import design1Img from '../../../assets/strategy.jpeg';
+import design2Img from '../../../assets/design2.jpeg';
+import design3Img from '../../../assets/design3.jpeg';
+import design4Img from '../../../assets/design4.jpeg';
+import design5Img from '../../../assets/design5.jpeg';
+import design6Img from '../../../assets/design6.jpeg';
 
+import train1Img from '../../../assets/train1.jpeg';
+import certImg from '../../../assets/cert.jpeg';
+import train3Img from '../../../assets/train3.jpeg';
+import train4Img from '../../../assets/train4s.jpeg';
+import train5Img from '../../../assets/train5.jpeg';
+import train6Img from '../../../assets/train6.jpeg';
 
 import pathOne from '../../../assets/resources file/resources file/TECH/GRAPHICS DESIGNERS/Design Tools & Technology.pdf';
 import pathTwo from '../../../assets/resources file/resources file/TECH/GRAPHICS DESIGNERS/Graphic Designer Benefits.pdf';
@@ -227,7 +240,7 @@ const TrainingMentorInternPage = () => {
                 "Understanding Learning Styles"
             ],
             duration: "Foundations",
-            bgImage: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+            bgImage: pedaImg,
             icon: <FontAwesomeIcon icon={faChalkboardTeacher} />
         },
         {
@@ -279,40 +292,40 @@ const TrainingMentorInternPage = () => {
 
     const imagesWithDescriptions = [
         {
-            url: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+            url: design1Img,
             title: "Modern Mentoring Hub",
             description: "Our dedicated classroom for teaching methods, student engagement training, and interactive learning sessions.",
             icon: <FontAwesomeIcon icon={faChalkboardTeacher} />
         },
         {
-            url: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
             title: "Collaborative Teaching Lab",
             description: "Dive into collaborative brainstorming sessions where new educational strategies and curriculum ideas are developed.",
-            icon: <FontAwesomeIcon icon={faUsers} />
+            icon: <FontAwesomeIcon icon={faUsers} />,
+            url: design2Img,
         },
         {
-            url: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
             title: "Instructional Design Studio",
             description: "A professional mentor training space where students build lesson plans, course content, and assessment frameworks.",
-            icon: <FontAwesomeIcon icon={faBook} />
+            icon: <FontAwesomeIcon icon={faBook} />,
+            url: design3Img,
         },
         {
-            url: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
             title: "Student Assessment Session",
             description: "Interns present their curated teaching portfolios to senior educators, receiving professional feedback to sharpen their mentoring skills.",
-            icon: <FontAwesomeIcon icon={faRocket} />
+            icon: <FontAwesomeIcon icon={faRocket} />,
+            url: design4Img,
         },
         {
-            url: "https://images.unsplash.com/photo-1513258496099-48168024aec0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
             title: "Educational Research Lab",
             description: "Master the fundamental rules of student psychology, learning curves, and visual aids to construct balanced educational experiences.",
-            icon: <FontAwesomeIcon icon={faLightbulb} />
+            icon: <FontAwesomeIcon icon={faLightbulb} />,
+            url: design5Img,
         },
         {
-            url: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
             title: "Interactive Mentoring Lab",
             description: "Transform theoretical lessons into interactive classroom flows, testing student engagement and validating training concepts.",
-            icon: <FontAwesomeIcon icon={faLaptopCode} />
+            icon: <FontAwesomeIcon icon={faLaptopCode} />,
+            url: design6Img,
         }
     ];
 
@@ -448,32 +461,38 @@ const TrainingMentorInternPage = () => {
         {
             icon: <FontAwesomeIcon icon={faBriefcase} />,
             title: "Career Opportunities",
-            description: "Access to 1000+ educational leadership and teaching roles with our partner institutions"
+            description: "Access to 1000+ educational leadership and teaching roles with our partner institutions",
+            bgImage: train1Img
         },
         {
             icon: <FontAwesomeIcon icon={faCertificate} />,
             title: "Certification",
-            description: "Professional Mentorship certification recognized globally in the academic sector"
+            description: "Professional Mentorship certification recognized globally in the academic sector",
+            bgImage: certImg
         },
         {
             icon: <FontAwesomeIcon icon={faChalkboardTeacher} />,
             title: "Master Mentorship",
-            description: "1-on-1 sessions with senior educators and instructional design experts"
+            description: "1-on-1 sessions with senior educators and instructional design experts",
+            bgImage: train3Img
         },
         {
             icon: <FontAwesomeIcon icon={faTools} />,
             title: "Teaching Software",
-            description: "Free access to premium classroom management and LMS tools during the course"
+            description: "Free access to premium classroom management and LMS tools during the course",
+            bgImage: train4Img
         },
         {
             icon: <FontAwesomeIcon icon={faNetworkWired} />,
             title: "Educator Network",
-            description: "Join our global community of 10,000+ mentors, teachers, and trainers"
+            description: "Join our global community of 10,000+ mentors, teachers, and trainers",
+            bgImage: train5Img
         },
         {
             icon: <FontAwesomeIcon icon={faMoneyBillWave} />,
             title: "Impact Growth",
-            description: "Learn how to consistently improve student outcomes and scale your educational impact"
+            description: "Learn how to consistently improve student outcomes and scale your educational impact",
+            bgImage: train6Img
         }
     ];
 
@@ -975,13 +994,13 @@ const TrainingMentorInternPage = () => {
                           className={errors.agreeTerms ? 'TM-error' : ''}
                         />
                         <label htmlFor="agreeTerms">
-                          <FontAwesomeIcon icon={faCheckCircle} /> I agree to the Terms of Service and Privacy Policy
+                          I agree to the Terms of Service and Privacy Policy
                         </label>
                         {errors.agreeTerms && <span className="TM-error-message">{errors.agreeTerms}</span>}
                       </div>
 
                       <button type="submit" className="TM-submit-btn">
-                        <FontAwesomeIcon icon={faRocket} /> Register
+                        Register
                       </button>
                     </form>
                   </div>
@@ -1108,13 +1127,13 @@ const TrainingMentorInternPage = () => {
                                                     className={errors.agreeTerms ? 'TM-error' : ''}
                                                 />
                                                 <label htmlFor="agreeTerms">
-                                                    <FontAwesomeIcon icon={faCheckCircle} /> I agree to the Terms of Service and Privacy Policy
+                                                    I agree to the Terms of Service and Privacy Policy
                                                 </label>
                                                 {errors.agreeTerms && <span className="TM-error-message">{errors.agreeTerms}</span>}
                                             </div>
 
                                             <button type="submit" className="TM-submit-btn">
-                                                <FontAwesomeIcon icon={faRocket} /> Register
+                                                Register
                                             </button>
                                         </form>
                                     </div>
@@ -1511,13 +1530,13 @@ const TrainingMentorInternPage = () => {
                           className={errors.agreeTerms ? 'TM-error' : ''}
                         />
                         <label htmlFor="agreeTerms">
-                          <FontAwesomeIcon icon={faCheckCircle} /> I agree to the Terms of Service and Privacy Policy
+                          I agree to the Terms of Service and Privacy Policy
                         </label>
                         {errors.agreeTerms && <span className="TM-error-message">{errors.agreeTerms}</span>}
                       </div>
 
                       <button type="submit" className="TM-submit-btn">
-                        <FontAwesomeIcon icon={faRocket} /> Register
+                        Register
                       </button>
                     </form>
                   </div>
@@ -1745,20 +1764,12 @@ const TrainingMentorInternPage = () => {
 
                         <div className="TM-benefits-image-grid-new">
                             {benefits.map((benefit, index) => {
-                                const benefitImages = [
-                                    benefitCareer,         // Career Opportunities - custom generated
-                                    benefitCertification,  // Certification - custom generated
-                                    benefitMentorship,     // Mentorship - custom generated
-                                    benefitSoftware,       // Software Access - bright 3D illustration
-                                    benefitNetworking,     // Networking - bright studio networking concept
-                                    benefitMoneyBack       // Money Back Guarantee - bright gold/security concept
-                                ];
                                 return (
                                     <div
                                         key={index}
                                         className={`TM-benefit-img-card-new TM-benefit-img-card-${index}-new`}
                                     >
-                                        <img src={benefitImages[index]} alt={benefit.title} className="TM-benefit-card-bg-new" />
+                                        <img src={benefit.bgImage} alt={benefit.title} className="TM-benefit-card-bg-new" />
                                         <div className="TM-benefit-card-overlay-new"></div>
                                         <div className="TM-benefit-card-content-new">
                                             <div className="TM-benefit-card-header-new">
@@ -1797,11 +1808,11 @@ const TrainingMentorInternPage = () => {
                                     const cardClassIndex = (index % 5) + 1;
                                     const imgMap = {
                                         1: boy1, 2: girl1, 3: boy2, 4: girl2,
-                                        5: girl3, 6: boy3, 7: girl4, 8: boy4
+                                        5: boy3, 6: girl3, 7: boy4, 8: girl4
                                     };
 
                                     const photoUrl = imgMap[testimonial.id];
-                                    const isBoy = [1, 3, 6, 8].includes(testimonial.id);
+                                    const isBoy = [1, 3, 5, 7].includes(testimonial.id);
 
                                     return (
                                         <div key={`${testimonial.id || index}-${index}`} className={`TM-dt-card TM-dt-card-${cardClassIndex}`}>

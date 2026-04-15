@@ -1070,6 +1070,7 @@ body {
     font-size: 15px;
     font-family: 'Aldrich', sans-serif;
     letter-spacing: 0.5px;
+    text-align: left;
 }
 
 .GD-form-input {
@@ -2056,15 +2057,11 @@ body {
 }
 
 .GD-benefits-section .GD-section-subtitle {
-    color: #5a3921;
-    font-size: 18px;
-    text-align: center;
-    max-width: 800px;
+    font-size: 1.1rem;
+    color: #4b5563;
+    max-width: 950px;
     margin: 0 auto 60px;
     line-height: 1.6;
-    font-family: 'Aldrich', sans-serif;
-    font-weight: 100;
-    letter-spacing: 0.5px;
 }
 
 /* FIXED: 3 cards per row (2 rows total) */
@@ -4700,10 +4697,11 @@ body {
     border-radius: 50px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-end; /* Aligned to bottom */
     align-items: center;
-    padding: 1.5rem 0 1.5rem 0;
+    padding: 0 0 1.5rem 0;
     position: relative;
+    gap: 5px; /* Tighter gap as requested */
 }
 
 .GD-dn-bg-dark {
@@ -4719,7 +4717,11 @@ body {
 .GD-dn-v-text {
     writing-mode: vertical-rl;
     transform: rotate(180deg);
+    white-space: nowrap;
+    padding-bottom: 0px; 
+    padding-left: 15px; /* Increased for left shift as requested */
     font-size: 1.1rem;
+    font-weight: 700;
     letter-spacing: 1.5px;
 }
 
@@ -4819,6 +4821,7 @@ body {
     font-size: 1rem;
     color: rgba(255, 255, 255, 0.9);
     line-height: 1.4;
+    text-align: left;
 
     margin-bottom: 1.5rem;
 }
@@ -5675,8 +5678,8 @@ body {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 80%;
-    background: linear-gradient(to top, rgba(16, 16, 40, 0.95) 0%, rgba(16, 16, 40, 0.5) 50%, transparent 100%);
+    height: 100%;
+    background: linear-gradient(to top, rgba(16, 16, 40, 0.8) 0%, rgba(16, 16, 40, 0.4) 50%, rgba(16, 16, 40, 0.6) 100%);
     z-index: 2;
 }
 
@@ -5684,6 +5687,7 @@ body {
     position: relative;
     z-index: 3;
     padding: 1.5rem;
+    text-align: left;
 }
 
 .GD-benefit-card-header-new {
@@ -5719,14 +5723,9 @@ body {
 .GD-benefit-card-desc-new {
     font-family: 'Inter', sans-serif;
     font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.9);
     margin: 0;
     line-height: 1.5;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
 }
 
 @media (max-width: 1024px) {
@@ -6729,5 +6728,120 @@ body {
 
     .GD-dn-dash-info {
         align-items: center !important;
+    }
+}
+
+/* Expectations Section (Results You Can Expect) */
+.GD-expectations-section {
+    padding: 80px 0 100px;
+    background-color: #ffffff;
+}
+
+.GD-expectations-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.GD-expectations-header {
+    font-family: 'Poppins', sans-serif;
+    font-size: 60px;
+    /* Even larger as requested */
+    font-weight: 900;
+    color: #111827;
+    text-align: center;
+    /* Centered */
+    margin-bottom: 54px;
+    letter-spacing: 4px;
+    /* Broader spread as requested */
+    text-transform: uppercase;
+    line-height: 1.1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.GD-expectations-star-icon {
+    color: #111827;
+    flex-shrink: 0;
+}
+
+.GD-expectations-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.GD-expectation-card {
+    background: #F8F8FB;
+    border-radius: 20px;
+    padding: 24px 28px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(0, 0, 0, 0.02);
+    min-height: 100px;
+}
+
+.GD-expectation-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.GD-expectation-icon-wrapper {
+    width: 52px;
+    height: 52px;
+    background: #F3E8FF;
+    color: #7C3AED;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 22px;
+}
+
+.GD-expectation-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14.5px;
+    /* Reduced further as requested */
+    font-weight: 650;
+    color: #111827;
+    line-height: 1.5;
+    margin: 0;
+    text-align: left;
+    letter-spacing: 0.1px;
+}
+
+/* Responsive design */
+@media (max-width: 1400px) {
+    .GD-expectations-header {
+        font-size: 48px;
+        letter-spacing: 3px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .GD-expectations-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .GD-expectations-header {
+        font-size: 32px;
+        text-align: center;
+        letter-spacing: 1px;
+    }
+
+    .GD-expectations-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .GD-expectation-card {
+        padding: 20px;
     }
 }

@@ -417,25 +417,25 @@ const UiuxDesignerInternPage = () => {
             id: 5,
             rating: 5,
             text: "Finally understood the 'why' behind design decisions. This isn't just a UI course, it's a UX masterclass.",
-            author: "Chloe Wagner"
+            author: "Ethan Jacobs"
         },
         {
             id: 6,
             rating: 5,
             text: "The integration with AI design tools helped me work 3x faster. A forward-thinking curriculum.",
-            author: "Ethan Jacobs"
+            author: "Chloe Wagner"
         },
         {
             id: 7,
             rating: 4,
             text: "Great emphasis on accessibility and user testing. Every designer should know this.",
-            author: "Penelope Quinn"
+            author: "Arjan Dhillon"
         },
         {
             id: 8,
             rating: 5,
             text: "Got placed at a top-tier tech firm immediately after the internship. The technical prep is unparalleled.",
-            author: "Arjan Dhillon"
+            author: "Penelope Quinn"
         }
     ];
 
@@ -667,7 +667,7 @@ const UiuxDesignerInternPage = () => {
                 <section className="UX-section UX-hero-section-new" id="home">
                     <div className="UX-hero-top-row">
                         <div className="UX-hero-badges">
-                            <span className="UX-hero-badge"><FontAwesomeIcon icon={faCheckCircle} /> 2023 BEST DESIGN</span>
+                            <span className="UX-hero-badge"><FontAwesomeIcon icon={faCheck} /> 2023 BEST DESIGN</span>
                             <span className="UX-hero-badge"><FontAwesomeIcon icon={faLaptopCode} /> DIGITAL EXPERIENCE</span>
                         </div>
                         <div className="UX-hero-top-line-container">
@@ -879,11 +879,11 @@ const UiuxDesignerInternPage = () => {
                                             </div>
                                             <div className="UX-form-group UX-checkbox-group">
                                                 <input type="checkbox" id="agreeTerms" name="agreeTerms" checked={formData.agreeTerms} onChange={handleFormChange} />
-                                                <label htmlFor="agreeTerms"><FontAwesomeIcon icon={faCheckCircle} /> I agree to the Terms of Service and Privacy Policy</label>
+                                                <label htmlFor="agreeTerms">I agree to the Terms of Service and Privacy Policy</label>
                                                 {errors.agreeTerms && <span className="UX-error-message">{errors.agreeTerms}</span>}
                                             </div>
                                             <button type="submit" className="UX-submit-btn">
-                                                <FontAwesomeIcon icon={faRocket} /> Register
+                                                Register
                                             </button>
                                         </form>
                                     </div>
@@ -902,13 +902,7 @@ const UiuxDesignerInternPage = () => {
                                             to collaborate
                                             <br />
                                             with us
-                                            <div className="UX-influencer-search-bar">
-                                                <span className="UX-search-placeholder">| Search</span>
-                                                <div className="UX-search-actions">
-                                                    <FontAwesomeIcon icon={faStar} className="UX-voice-icon" />
-                                                    <button className="UX-search-submit"><FontAwesomeIcon icon={faComments} style={{ fontSize: '0.7em' }} /></button>
-                                                </div>
-                                            </div>
+
                                         </h2>
                                     </div>
                                     <div className="UX-influencer-right">
@@ -1021,7 +1015,7 @@ const UiuxDesignerInternPage = () => {
                                                 </button>
                                             ) : (
                                                 <button className={`UX-dn-sc-btn ${downloadedResources.includes(resource.id) ? 'UX-downloaded' : ''}`} onClick={() => handleDownloadResource(resource.id, resource.title, resource.localPath, resource.fileName)} style={{ marginTop: 'auto', background: downloadedResources.includes(resource.id) ? '#4caf50' : '#1a1a2e', color: 'white' }}>
-                                                    {downloadedResources.includes(resource.id) ? <><FontAwesomeIcon icon={faCheckCircle} /> Downloaded</> : <><FontAwesomeIcon icon={faDownload} /> Download Now <FontAwesomeIcon icon={faArrowRight} style={{ transform: 'rotate(45deg)', marginLeft: '5px' }} /></>}
+                                                    {downloadedResources.includes(resource.id) ? <> <FontAwesomeIcon icon={faCheck} /> Downloaded</> : <> <FontAwesomeIcon icon={faDownload} /> Download Now <FontAwesomeIcon icon={faArrowRight} style={{ transform: 'rotate(45deg)', marginLeft: '5px' }} /> </>}
                                                 </button>
                                             )}
                                         </div>
@@ -1221,13 +1215,19 @@ const UiuxDesignerInternPage = () => {
                                     const cardClassIndex = (index % 5) + 1;
                                     const imgMap = {
                                         1: boy1, 2: girl1, 3: boy2, 4: girl2,
-                                        5: girl3, 6: boy3, 7: girl4, 8: boy4
+                                        5: boy3, 6: girl3, 7: boy4, 8: girl4
                                     };
                                     const photoUrl = imgMap[testimonial.id];
+                                    const isBoy = [1, 3, 5, 7].includes(testimonial.id);
+
                                     return (
                                         <div key={index} className={`UX-dt-card UX-dt-card-${cardClassIndex}`}>
                                             <div className="UX-dt-card-img-wrapper">
-                                                <img src={photoUrl} alt={testimonial.author} className="UX-dt-card-img" />
+                                                <img
+                                                    src={photoUrl}
+                                                    alt={testimonial.author}
+                                                    className={`UX-dt-card-img ${isBoy ? 'UX-dt-boy-avatar' : ''}`}
+                                                />
                                             </div>
                                             <div className={`UX-dt-card-content UX-dt-content-bg-${cardClassIndex}`}>
                                                 <h4 className="UX-dt-card-name">{testimonial.author}</h4>

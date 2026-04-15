@@ -1082,6 +1082,7 @@ body {
     font-size: 15px;
     font-family: 'Aldrich', sans-serif;
     letter-spacing: 0.5px;
+    text-align: left;
 }
 
 .WD-form-input {
@@ -2068,15 +2069,11 @@ body {
 }
 
 .WD-benefits-section .WD-section-subtitle {
-    color: #5a3921;
-    font-size: 18px;
-    text-align: center;
-    max-width: 800px;
+    font-size: 1.1rem;
+    color: #4b5563;
+    max-width: 950px;
     margin: 0 auto 60px;
     line-height: 1.6;
-    font-family: 'Aldrich', sans-serif;
-    font-weight: 100;
-    letter-spacing: 0.5px;
 }
 
 /* FIXED: 3 cards per row (2 rows total) */
@@ -4712,10 +4709,11 @@ body {
     border-radius: 50px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-end; /* Aligned to bottom */
     align-items: center;
-    padding: 1.5rem 0 1.5rem 0;
+    padding: 0 0 1.5rem 0;
     position: relative;
+    gap: 5px; /* Tighter gap */
 }
 
 .WD-dn-bg-dark {
@@ -4731,7 +4729,11 @@ body {
 .WD-dn-v-text {
     writing-mode: vertical-rl;
     transform: rotate(180deg);
+    white-space: nowrap;
+    padding-bottom: 0px;
+    padding-left: 15px; /* Left shift */
     font-size: 1.1rem;
+    font-weight: 700;
     letter-spacing: 1.5px;
 }
 
@@ -5676,8 +5678,8 @@ body {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 80%;
-    background: linear-gradient(to top, rgba(16, 16, 40, 0.95) 0%, rgba(16, 16, 40, 0.5) 50%, transparent 100%);
+    height: 100%;
+    background: linear-gradient(to top, rgba(16, 16, 40, 0.8) 0%, rgba(16, 16, 40, 0.4) 50%, rgba(16, 16, 40, 0.6) 100%);
     z-index: 2;
 }
 
@@ -5685,6 +5687,7 @@ body {
     position: relative;
     z-index: 3;
     padding: 1.5rem;
+    text-align: left;
 }
 
 .WD-benefit-card-header-new {
@@ -5720,14 +5723,9 @@ body {
 .WD-benefit-card-desc-new {
     font-family: 'Inter', sans-serif;
     font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.9);
     margin: 0;
     line-height: 1.5;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
 }
 
 @media (max-width: 1024px) {

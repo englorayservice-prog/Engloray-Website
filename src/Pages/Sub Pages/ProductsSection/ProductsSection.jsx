@@ -20,6 +20,47 @@ const products = [
 
 const gridClasses = ['ps-c0', 'ps-c1', 'ps-c2', 'ps-c3', 'ps-c4', 'ps-c5', 'ps-c6'];
 
+            bg: "#c62828",
+            text: "#FFFFFF",
+            route: "/businessSuiteAiPage",
+            isLarge: true,
+            hasShield: true
+        },
+        {
+            id: 4,
+            title: "CRM",
+            description: "Smart customer relationship tools to manage leads, sales, and customer engagement seamlessly.",
+            bg: "#ffffff",
+            text: "#111827",
+            route: "/crmpage"
+        },
+        {
+            id: 5,
+            title: "AI Chatbot",
+            description: "Intelligent conversational assistants that provide instant support and enhance user experience.",
+            bg: "#ffffff",
+            text: "#111827",
+            route: "/aiChatbotPage"
+        },
+        {
+            id: 6,
+            title: "Job Seeker",
+            description: "A smart platform connecting talent with opportunities through AI-driven job matching.",
+            bg: "#ffffff",
+            text: "#111827",
+            route: "/jobSeekerPage"
+        },
+        {
+            id: 7,
+            title: "Learning & Career",
+            description: "Interactive learning systems designed to upskill individuals and accelerate career growth.",
+            bg: "#ffffff",
+            text: "#111827",
+            route: "/learningPage"
+        }
+    ];
+
+    const gridClasses = ['ps-c0', 'ps-c1', 'ps-c2', 'ps-c3', 'ps-c4', 'ps-c5', 'ps-c6'];
 const ProductsSection = () => {
     const navigate = useNavigate();
 

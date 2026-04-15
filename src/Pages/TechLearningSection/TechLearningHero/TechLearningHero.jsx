@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion'; // Import motion
 import './TechLearningHero.css';
 import studentsImg from '../../../assets/images/students.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -13,30 +14,43 @@ const TechLearningHero = () => {
     return (
         <section className="tlh-peoplr-container" id="home">
 
-            {/* Top Purple Section containing Header, Text, and Image Stage */}
+            {/* Top Purple Section */}
             <div className="tlh-peoplr-top-section">
-                {/* Top Header/Nav Area — Book a call removed from here */}
                 <header className="tlh-peoplr-header">
-                    <nav className="tlh-nav-links">
-                        {/* Nav items removed per request */}
-                    </nav>
+                    <nav className="tlh-nav-links"></nav>
                 </header>
 
-                {/* Main Hero Header text */}
-                <h1 className="tlh-peoplr-title">
+                {/* ANIMATION: Title Fade Up */}
+                <motion.h1 
+                    className="tlh-peoplr-title"
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false }}
+                    transition={{ duration: 0.8 }}
+                >
                     UPSKILL FOR YOUR<br />CAREER
-                </h1>
+                </motion.h1>
 
-                {/* Main Stage with Image and Floating Cards */}
                 <div className="tlh-peoplr-stage">
-
-                    {/* Center Image — Start Learning button removed from here */}
-                    <div className="tlh-peoplr-image-wrapper">
+                    {/* ANIMATION: Image Wrapper Fade Up */}
+                    <motion.div 
+                        className="tlh-peoplr-image-wrapper"
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                    >
                         <img src={studentsImg} alt="Students" className="tlh-peoplr-students" />
-                    </div>
+                    </motion.div>
 
-                    {/* Floating Stat Card Left (90% Placement) */}
-                    <div className="tlh-float-card tlh-float-left">
+                    {/* ANIMATION: Floating Card Left */}
+                    <motion.div 
+                        className="tlh-float-card tlh-float-left"
+                        initial={{ opacity: 0, x: -30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: false }}
+                        transition={{ duration: 0.8, delay: 0.4 }}
+                    >
                         <div className="tlh-card-top-row">
                             <span className="tlh-huge-num">90<sup>%</sup></span>
                             <div className="tlh-card-icon-pill lime-icon">
@@ -49,10 +63,16 @@ const TechLearningHero = () => {
                             <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}><span style={{ color: '#d8ff4a' }}>✓</span> Mock Interviews</span>
                             <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}><span style={{ color: '#d8ff4a' }}>✓</span> Career Support</span>
                         </div>
-                    </div>
+                    </motion.div>
 
-                    {/* Floating Stat Card Right (300+ Partners) */}
-                    <div className="tlh-float-card tlh-float-right">
+                    {/* ANIMATION: Floating Card Right */}
+                    <motion.div 
+                        className="tlh-float-card tlh-float-right"
+                        initial={{ opacity: 0, x: 30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: false }}
+                        transition={{ duration: 0.8, delay: 0.5 }}
+                    >
                         <div className="tlh-card-top-row">
                             <span className="tlh-huge-num">300<sup>+</sup></span>
                             <div className="tlh-card-icon-pill dark-icon">
@@ -65,25 +85,40 @@ const TechLearningHero = () => {
                             <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}><span style={{ color: '#d8ff4a' }}>✓</span> Global Startups</span>
                             <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}><span style={{ color: '#d8ff4a' }}>✓</span> MNCs Connect</span>
                         </div>
-                    </div>
+                    </motion.div>
 
-                    {/* Centered CTA Buttons (Above Marquee) */}
+                    {/* ANIMATION: Buttons Pop In */}
                     <div className="tlh-center-cta-group">
-                        <Link to="/allCoursesPage" className="tlh-pill-btn-lime">
-                            Start Learning
-                            <span className="tlh-pill-icon"><FontAwesomeIcon icon={faPhone} /></span>
-                        </Link>
-                        <a href={whatsappURL} target="_blank" rel="noopener noreferrer" className="tlh-pill-btn-lime">
-                            Book a call
-                            <span className="tlh-pill-icon"><FontAwesomeIcon icon={faPhone} /></span>
-                        </a>
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: false }}
+                            transition={{ duration: 0.6, delay: 0.6 }}
+                            style={{ display: 'inline-block' }}
+                        >
+                            <Link to="/allCoursesPage" className="tlh-pill-btn-lime">
+                                Start Learning
+                                <span className="tlh-pill-icon"><FontAwesomeIcon icon={faPhone} /></span>
+                            </Link>
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: false }}
+                            transition={{ duration: 0.6, delay: 0.7 }}
+                            style={{ display: 'inline-block' }}
+                        >
+                            <a href={whatsappURL} target="_blank" rel="noopener noreferrer" className="tlh-pill-btn-lime">
+                                Book a call
+                                <span className="tlh-pill-icon"><FontAwesomeIcon icon={faPhone} /></span>
+                            </a>
+                        </motion.div>
                     </div>
                 </div>
 
-                {/* Overlapping Glass Marquee Track INSIDE the Top Card */}
                 <div className="tlh-marquee-container">
                     <div className="tlh-marquee-track">
-                        {/* Duplicate array multiple times for seamless marquee loop on large screens */}
                         {[1, 2, 3, 4, 5, 6, 7, 8].map(iteration => (
                             <React.Fragment key={iteration}>
                                 <div className="tlh-marquee-card"><FontAwesomeIcon icon={faChartLine} style={{ marginRight: '8px', color: '#d8ff4a' }} /> 50+ Industry Tools</div>
@@ -97,70 +132,35 @@ const TechLearningHero = () => {
                 </div>
             </div>
 
-            {/* Merged Highlights Section */}
+            {/* ANIMATION: Bottom Grid Cards Reveal */}
             <div className="tlh-peoplr-bottom-grid">
-                <div className="tlh-bottom-card">
-                    <div className="tlh-bcard-header">
-                        <h3>Real-World <br />Practice</h3>
-                        <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="tlh-card-arrow" />
-                    </div>
-                    <p>Develop your abilities with hands-on projects designed to simulate actual industry scenarios and workplace challenges.</p>
-                    <div className="tlh-card-footer">
-                        <span className="tlh-footer-pill lime-footer"><FontAwesomeIcon icon={faLaptopCode} style={{ marginRight: '6px' }} /> Live Projects</span>
-                        <div className="tlh-icon-badges" style={{ marginLeft: 'auto' }}>
-                            <div className="tlh-edu-badge" style={{ background: '#3b2c85' }}><FontAwesomeIcon icon={faLaptopCode} /></div>
-                            <div className="tlh-edu-badge" style={{ background: '#6a4ae0' }}><FontAwesomeIcon icon={faGraduationCap} /></div>
+                {[
+                    { title: "Real-World \n Practice", desc: "Develop your abilities with hands-on projects designed to simulate actual industry scenarios.", icon: faLaptopCode, pill: "Live Projects" },
+                    { title: "Guided \n Mentorship", desc: "Gain insights from experienced industry professionals who provide personalized support.", icon: faUsers, pill: "Expert Mentors" },
+                    { title: "Experience \n First", desc: "Equip yourself with the practical skills, strong portfolio, and confidence needed for success.", icon: faTrophy, pill: "90% Placement" },
+                    { title: "Industry-Ready \n Skills", desc: "Master in-demand technologies and frameworks used by top companies globally.", icon: faBriefcase, pill: "Job Ready" }
+                ].map((item, index) => (
+                    <motion.div 
+                        key={index}
+                        className="tlh-bottom-card"
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false }}
+                        transition={{ duration: 0.8, delay: index * 0.1 }}
+                    >
+                        <div className="tlh-bcard-header">
+                            <h3 style={{ whiteSpace: 'pre-line' }}>{item.title}</h3>
+                            <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="tlh-card-arrow" />
                         </div>
-                    </div>
-                </div>
-
-                <div className="tlh-bottom-card">
-                    <div className="tlh-bcard-header">
-                        <h3>Guided <br />Mentorship</h3>
-                        <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="tlh-card-arrow" />
-                    </div>
-                    <p>Gain insights from experienced industry professionals who provide personalized support and feedback throughout your journey.</p>
-                    <div className="tlh-card-footer">
-                        <span className="tlh-footer-pill lime-footer"><FontAwesomeIcon icon={faUsers} style={{ marginRight: '6px' }} /> Expert Mentors</span>
-                        <div className="tlh-icon-badges" style={{ marginLeft: 'auto' }}>
-                            <div className="tlh-edu-badge" style={{ background: '#3b2c85' }}><FontAwesomeIcon icon={faUsers} /></div>
+                        <p>{item.desc}</p>
+                        <div className="tlh-card-footer">
+                            <span className="tlh-footer-pill lime-footer"><FontAwesomeIcon icon={item.icon} style={{ marginRight: '6px' }} /> {item.pill}</span>
                         </div>
-                    </div>
-                </div>
-
-                <div className="tlh-bottom-card">
-                    <div className="tlh-bcard-header">
-                        <h3>Experience <br />First</h3>
-                        <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="tlh-card-arrow" />
-                    </div>
-                    <p>Equip yourself with the practical skills, strong portfolio, and confidence needed to secure top-tier tech opportunities.</p>
-                    <div className="tlh-card-footer">
-                        <span className="tlh-footer-pill lime-footer"><FontAwesomeIcon icon={faTrophy} style={{ marginRight: '6px' }} /> 90% Placement</span>
-                        <div className="tlh-icon-badges" style={{ marginLeft: 'auto' }}>
-                            <div className="tlh-edu-badge" style={{ background: '#3b2c85' }}><FontAwesomeIcon icon={faTrophy} /></div>
-                            <div className="tlh-edu-badge" style={{ background: '#6a4ae0' }}><FontAwesomeIcon icon={faHandshake} /></div>
-                            <div className="tlh-edu-badge" style={{ background: '#8b6ff0' }}><FontAwesomeIcon icon={faUsers} /></div>
-                        </div>
-                    </div>
-                </div>
-                <div className="tlh-bottom-card">
-                    <div className="tlh-bcard-header">
-                        <h3>Industry-Ready <br />Skills</h3>
-                        <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="tlh-card-arrow" />
-                    </div>
-                    <p>Master in-demand technologies and frameworks used by top companies, preparing you to hit the ground running from day one.</p>
-                    <div className="tlh-card-footer">
-                        <span className="tlh-footer-pill lime-footer"><FontAwesomeIcon icon={faBriefcase} style={{ marginRight: '6px' }} /> Job Ready</span>
-                        <div className="tlh-icon-badges" style={{ marginLeft: 'auto' }}>
-                            <div className="tlh-edu-badge" style={{ background: '#3b2c85' }}><FontAwesomeIcon icon={faBriefcase} /></div>
-                            <div className="tlh-edu-badge" style={{ background: '#6a4ae0' }}><FontAwesomeIcon icon={faLaptopCode} /></div>
-                        </div>
-                    </div>
-                </div>
+                    </motion.div>
+                ))}
             </div>
-
         </section>
     );
 };
 
-export default TechLearningHero;
+export default TechLearningHero;

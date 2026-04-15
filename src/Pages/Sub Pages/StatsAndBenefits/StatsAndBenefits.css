@@ -4,6 +4,8 @@
     margin-left: calc(-50vw + 50%);
     margin-right: calc(-50vw + 50%);
     background: transparent;
+    padding: 0;
+    /* Reduced to pull section up closer to icons section */
     padding: 0; /* Reduced to pull section up closer to icons section */
     margin-bottom: -5rem;
     /* Reduced margin to bring title closer to map */

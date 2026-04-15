@@ -6,7 +6,7 @@
 }
 
 /* ============================================================
-   HERO SECTION NEW â€” Exact match to image
+   HERO SECTION NEW — Exact match to image
    ============================================================ */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
@@ -503,7 +503,7 @@
 }
 
 /* ============================================================
-   SERVICES SECTION NEW â€” Exact match to image
+   SERVICES SECTION NEW — Exact match to image
    ============================================================ */
 .crm-page-services-section-new {
     padding: 100px 0;
@@ -753,7 +753,7 @@
 }
 
 /* ============================================================
-   ABOUT SECTION NEW â€” Matching reference image (dark 3-col layout)
+   ABOUT SECTION NEW — Matching reference image (dark 3-col layout)
    ============================================================ */
 .crm-page-about-section-new {
     width: 100%;
@@ -898,6 +898,42 @@
     transition: color 0.3s;
 }
 
+/* Feature bullet list inside service items */
+.crm-page-service-features {
+    list-style: none;
+    padding: 0;
+    margin: 8px 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    text-align: left;
+
+}
+
+.crm-page-service-feature-item {
+    font-size: 11px;
+    color: #444444;
+    line-height: 1.4;
+    padding-left: 14px;
+    position: relative;
+    transition: color 0.3s;
+    text-align: left;
+}
+
+.crm-page-service-feature-item::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: #BAFF29;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1;
+}
+
+.bi-service-active .crm-page-service-feature-item {
+    color: #888888;
+}
+
 .crm-page-about-service-item-new:hover .crm-page-service-name-about,
 .crm-page-about-service-item-new.crm-page-service-active .crm-page-service-name-about {
     color: #ffffff;
@@ -940,7 +976,7 @@
 }
 
 .crm-page-service-sub-list li::before {
-    content: 'â€¢';
+    content: '•';
     position: absolute;
     left: 0;
     color: #BAFF29;
@@ -1081,12 +1117,13 @@
 .crm-page-about-detail-panel {
     background: #1a1a1a;
     border-radius: 24px;
-    padding: 32px 28px;
+    padding: 24px 24px;
     display: flex;
     flex-direction: column;
-    gap: 18px;
-    height: 100%;
+    gap: 10px;
+    height: 650px;
     box-sizing: border-box;
+    overflow: hidden;
     animation: bi-detail-pop 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -1143,7 +1180,35 @@
     text-align: left;
     line-height: 1.8;
     margin: 0;
+}
+
+/* Feature bullets inside detail panel */
+.crm-page-detail-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
     flex: 1;
+}
+
+.crm-page-detail-feature-item {
+    font-size: 12px;
+    color: #666666;
+    line-height: 1.5;
+    padding-left: 16px;
+    position: relative;
+}
+
+.crm-page-detail-feature-item::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #BAFF29;
+    font-weight: 700;
+    font-size: 11px;
+    top: 1px;
 }
 
 .crm-page-detail-divider {
@@ -1201,13 +1266,28 @@
     font-weight: 700;
     cursor: pointer;
     transition: all 0.2s ease;
-    text-align: left;
+    text-align: center;
+    width: 100%;
+    display: block;
+    margin-top: auto;
 }
 
 .crm-page-detail-cta:hover {
     background: #d4ff5a;
     transform: translateY(-2px);
     box-shadow: 0 8px 24px rgba(186, 255, 41, 0.2);
+}
+
+/* Card title – keep words on single line */
+.crm-page-service-card-title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #ffffff;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* Responsive */
@@ -1400,7 +1480,7 @@
 }
 
 .crm-page-feature-item::before {
-    content: 'âœ“';
+    content: '✓';
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -1910,6 +1990,7 @@
 
 .crm-page-prod-buttons {
     display: flex;
+    justify-content: left;
     gap: 15px;
     margin-bottom: 60px;
 }
@@ -2117,7 +2198,7 @@
 
 .crm-page-el-img-small-top {
     position: absolute;
-    left: 0;
+    left: 30px;
     top: 80px;
     width: 240px;
     height: 180px;
@@ -2250,6 +2331,7 @@
     margin-bottom: 24px;
     font-family: 'Poppins', 'Inter', sans-serif;
     letter-spacing: -1px;
+    text-align: left;
 }
 
 .crm-page-el-desc {
@@ -2482,7 +2564,7 @@
     -webkit-line-clamp: 3;
     line-clamp: 3;
     -webkit-box-orient: vertical;
-    overflow: hidden;
+    overflow: visible;
 }
 
 /* Badge Style */
@@ -2682,6 +2764,7 @@
     color: #ffffff;
     text-transform: uppercase;
     font-family: 'Poppins', sans-serif;
+    text-align: center;
 }
 
 .crm-page-lime-highlight {
@@ -2840,6 +2923,7 @@
 }
 
 .crm-page-landscape-img {
+    margin-top: 15px;
     width: 100%;
     height: 320px;
     object-fit: cover;
@@ -3055,8 +3139,1256 @@
     }
 }
 
+.crm-page-testimonial-heading {
+    text-align: center;
+}
+
+/* ============================================================
+   COMPREHENSIVE RESPONSIVE FIXES FOR ALL SCREEN SIZES
+   ============================================================ */
+
+/* 1400px and above - Large Desktop */
+@media (max-width: 1400px) {
+    .crm-page-hero-container-new {
+        max-width: 100%;
+    }
+
+    .crm-page-hero-title-new {
+        font-size: 58px;
+    }
+
+    .crm-page-services-container-new {
+        max-width: 1200px;
+    }
+
+    .crm-page-about-inner-new {
+        max-width: 1200px;
+    }
+}
+
+/* 1200px - Desktop */
+@media (max-width: 1200px) {
+    .crm-page-hero-container-new {
+        flex-direction: column;
+        padding: 40px 30px 60px 30px;
+        clip-path: none;
+    }
+
+    .crm-page-hero-left-new {
+        max-width: 100%;
+    }
+
+    .crm-page-hero-title-new {
+        font-size: 48px;
+        margin-left: 0;
+    }
+
+    .crm-page-hero-subtitle-new {
+        margin-left: 0;
+    }
+
+    .crm-page-hero-title-desc-new {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        min-height: auto;
+        margin: 20px 0;
+    }
+
+    .crm-page-hero-right-new {
+        max-width: 100%;
+    }
+
+    .crm-page-hero-stats-new {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .crm-page-services-grid {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .crm-page-service-card {
+        margin-right: 0;
+        transform: rotate(0deg) translateY(0) !important;
+        width: calc(33.33% - 20px);
+        min-width: 280px;
+    }
+}
+
+/* 1024px - Tablet Landscape */
+@media (max-width: 1024px) {
+    .crm-page-services-content-new {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .crm-page-services-list-new {
+        order: 1;
+    }
+
+    .crm-page-services-info-col-new {
+        order: 2;
+    }
+
+    .crm-page-services-image-col-new {
+        order: 3;
+    }
+
+    .crm-page-services-info-col-new {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .crm-page-services-card-dark-new,
+    .crm-page-services-card-green-new {
+        min-height: auto;
+        padding: 30px 25px;
+    }
+
+    .crm-page-services-card-sub-new,
+    .crm-page-services-card-sub-green-new {
+        order: 2;
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
+
+    .crm-page-services-card-action-new {
+        order: 3;
+        margin-top: 10px;
+    }
+
+    .crm-page-services-card-action-text-new,
+    .crm-page-services-card-action-text-green-new {
+        font-size: 20px;
+    }
+
+    .crm-page-services-image-wrapper-new {
+        height: 400px;
+    }
+
+    .crm-page-service-card {
+        width: calc(50% - 20px);
+    }
+
+    .crm-page-service-card-desc {
+        font-size: 12px;
+    }
+
+    .crm-page-service-card-title {
+        font-size: 17px;
+        white-space: normal;
+        word-break: break-word;
+    }
+
+    .crm-page-about-inner-new {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .crm-page-about-left-tag {
+        font-size: 32px;
+    }
+
+    .crm-page-about-left-title {
+        font-size: 28px;
+    }
+}
+
+/* 991px - Tablet */
+@media (max-width: 991px) {
+    .crm-page-prod-container {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .crm-page-prod-left {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .crm-page-prod-title {
+        font-size: 36px;
+        text-align: center;
+    }
+
+    .crm-page-prod-desc {
+        text-align: center;
+    }
+
+    .crm-page-prod-buttons {
+        justify-content: center;
+    }
+
+    .crm-page-prod-avatars-box {
+        justify-content: center;
+    }
+
+    .crm-page-prod-avatar-text {
+        text-align: center;
+    }
+
+    .crm-page-el-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .crm-page-el-left {
+        height: 480px;
+    }
+
+    .crm-page-el-img-large {
+        width: 220px;
+        height: 380px;
+    }
+
+    .crm-page-el-img-small-top,
+    .crm-page-el-img-small-bottom {
+        width: 180px;
+    }
+
+    .crm-page-el-title {
+        font-size: 32px;
+    }
+
+    .crm-page-el-preheading {
+        margin-left: 0;
+        font-size: 28px;
+    }
+}
+
+/* 768px - Mobile Landscape */
+@media (max-width: 768px) {
+    .crm-page-hero-section-new {
+        min-height: auto;
+        padding: 20px;
+    }
+
+    .crm-page-hero-container-new {
+        padding: 30px 20px 40px 20px;
+    }
+
+    .crm-page-hero-title-new {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .crm-page-hero-buttons-new {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .crm-page-btn-get-started-new,
+    .crm-page-btn-contact-us-new {
+        width: 100%;
+        text-align: center;
+        padding: 10px 20px;
+        font-size: 11px;
+        width: auto;
+        min-width: 140px;
+    }
+
+    .crm-page-hero-desc-new {
+        font-size: 14px;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .crm-page-stat-item-new {
+        flex: 1;
+        min-width: 80px;
+    }
+
+    .crm-page-title-play-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .crm-page-case-title-new {
+        font-size: 28px;
+    }
+
+    .crm-page-about-company-desc-new {
+        font-size: 14px;
+    }
+
+    .crm-page-performance-card-new {
+        padding: 20px;
+    }
+
+    .crm-page-about-section-new {
+        padding: 80px 20px 60px;
+        clip-path: none;
+        margin-top: 0;
+    }
+
+    .crm-page-about-left-tag {
+        font-size: 28px !important;
+        text-align: center !important;
+    }
+
+    .crm-page-about-left-title {
+        font-size: 24px !important;
+        text-align: center !important;
+    }
+
+    .crm-page-about-intro-new {
+        text-align: center !important;
+    }
+
+    .crm-page-about-left-header {
+        text-align: center !important;
+    }
+
+    .crm-page-about-img-wrap-new {
+        min-height: 320px;
+        height: auto;
+    }
+
+    .crm-page-about-badge-new {
+        padding: 10px 14px;
+    }
+
+    .crm-page-badge-num {
+        font-size: 20px;
+    }
+
+    .crm-page-detail-title {
+        font-size: 22px;
+    }
+
+    .crm-page-detail-stats {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .crm-page-detail-stat {
+        flex: 1;
+        min-width: 80px;
+        border-right: none;
+    }
+
+    .crm-page-about-service-item-new {
+        padding: 15px 18px !important;
+    }
+
+    .crm-page-service-item-left-about {
+        gap: 12px !important;
+    }
+
+    .crm-page-service-num-new {
+        font-size: 11px !important;
+    }
+
+    .crm-page-service-name-about {
+        font-size: 13px !important;
+    }
+
+    .crm-page-service-short-about {
+        font-size: 10px !important;
+    }
+
+    .crm-page-service-arrow-about {
+        font-size: 14px !important;
+    }
+
+    .crm-page-about-detail-panel {
+        padding: 20px 18px !important;
+        height: auto !important;
+    }
+
+    .crm-page-detail-icon-wrap {
+        width: 44px;
+        height: 44px;
+    }
+
+    .crm-page-detail-icon {
+        font-size: 18px;
+    }
+
+    .crm-page-detail-num {
+        font-size: 9px;
+    }
+
+    .crm-page-detail-desc {
+        font-size: 13px !important;
+    }
+
+    .crm-page-detail-feature-item {
+        font-size: 11px !important;
+    }
+
+    .crm-page-detail-stat-val {
+        font-size: 14px !important;
+    }
+
+    .crm-page-detail-stat-label {
+        font-size: 9px !important;
+    }
+
+    .crm-page-detail-cta {
+        padding: 12px 20px !important;
+        font-size: 13px !important;
+    }
+
+    .crm-page-productivity-section {
+        padding: 80px 20px;
+    }
+
+    .crm-page-prod-title {
+        font-size: 32px;
+    }
+
+    .crm-page-prod-desc {
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+
+    .crm-page-prod-buttons {
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 40px;
+    }
+
+    .crm-page-btn-prod-primary,
+    .crm-page-btn-prod-secondary {
+        width: 100%;
+        text-align: center;
+        padding: 14px 24px;
+    }
+
+    .crm-page-prod-avatars-box {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .crm-page-prod-avatars {
+        justify-content: center;
+    }
+
+    .crm-page-prod-avatar-text {
+        text-align: center;
+        font-size: 12px;
+    }
+
+    .crm-page-prod-timeline::before {
+        left: 16px;
+        width: 2px;
+    }
+
+    .crm-page-timeline-item {
+        gap: 12px;
+        padding-bottom: 20px;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .crm-page-timeline-icon {
+        width: 40px !important;
+        height: 40px !important;
+        padding: 8px !important;
+    }
+
+    .crm-page-timeline-content h3 {
+        font-size: 16px;
+    }
+
+    .crm-page-timeline-content p {
+        font-size: 12px;
+    }
+
+    .crm-page-service-card {
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+        padding: 30px 25px !important;
+        height: auto;
+        min-height: auto;
+    }
+
+    .crm-page-mission-title {
+        font-size: 32px;
+        margin-top: 5px;
+    }
+
+    .crm-page-mission-section {
+        padding: 60px 20px;
+    }
+
+    .crm-page-services-section-new {
+        padding: 60px 20px;
+    }
+
+    .crm-page-services-container-new {
+        padding: 0 20px;
+    }
+
+    .crm-page-services-title-new {
+        font-size: 36px;
+    }
+
+    .crm-page-services-info-col-new {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .crm-page-services-card-dark-new,
+    .crm-page-services-card-green-new {
+        padding: 25px 20px;
+    }
+
+    .crm-page-agency-section {
+        padding: 60px 20px 100px;
+    }
+
+    .crm-page-agency-main-title {
+        font-size: 32px;
+    }
+
+    .crm-page-exp-badge {
+        padding: 15px 25px !important;
+        left: 15px !important;
+        bottom: 20px !important;
+    }
+
+    .crm-page-exp-number {
+        font-size: 28px !important;
+    }
+
+    .crm-page-exp-text {
+        font-size: 10px !important;
+    }
+
+    .crm-page-landscape-img {
+        height: 180px !important;
+    }
+
+    .crm-page-testimonial-section {
+        padding: 60px 0 80px;
+    }
+
+    .crm-page-testimonial-label {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .crm-page-testimonial-heading {
+        font-size: 28px;
+        padding: 0 20px;
+        margin-left: 0;
+    }
+
+    .crm-page-testimonial-card-horizontal {
+        flex: 0 0 280px;
+        padding: 30px 20px;
+    }
+
+    .crm-page-testimonial-text {
+        height: auto;
+        min-height: 80px;
+    }
+
+    .crm-page-courses-section {
+        padding: 60px 20px;
+    }
+
+    .crm-page-section-title {
+        font-size: 2rem;
+    }
+
+    .crm-page-courses-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .crm-page-feedback-section {
+        padding: 60px 20px;
+    }
+
+    .crm-page-feedback-card {
+        padding: 30px 25px;
+    }
+
+    .crm-page-feedback-text {
+        font-size: 1rem;
+    }
+
+    /* Mission section 7th card alignment fix */
+    .crm-page-service-card:last-child {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        left: auto !important;
+        right: auto !important;
+        position: relative !important;
+        transform: none !important;
+    }
+
+    /* Hero Section - Move iPhone image to the right */
+    .crm-page-hero-center-new {
+        display: flex;
+        justify-content: flex-end !important;
+        align-items: center;
+        padding-right: 20px;
+        margin-right: -20px;
+    }
+
+    .crm-page-cube-img-new {
+        transform: scale(0.95) translateX(15px);
+        max-width: 85%;
+    }
+
+    /* Reduce portrait image height */
+    .crm-page-portrait-img {
+        height: 380px !important;
+        object-fit: cover;
+        object-position: center top;
+    }
+
+    /* Card header spacing */
+    .crm-page-card-header {
+        margin-bottom: 12px !important;
+    }
+
+    .crm-page-service-card-desc {
+        margin: 10px 0 !important;
+        line-height: 1.4;
+        font-size: 12px;
+    }
+
+    .crm-page-card-title-group {
+        gap: 4px !important;
+    }
+
+    .crm-page-service-card-title {
+        font-size: 16px !important;
+        white-space: normal;
+        word-break: break-word;
+        line-height: 1.3;
+    }
+
+    .crm-page-service-card-subtitle {
+        font-size: 11px !important;
+        margin-top: 2px;
+    }
+
+    .crm-page-card-badge {
+        padding: 3px 8px;
+    }
+
+    .crm-page-badge-rating {
+        font-size: 11px;
+    }
+
+    .crm-page-service-icon-wrap {
+        height: 70px;
+        margin-top: 15px;
+    }
+
+    .crm-page-service-icon-wrap svg {
+        width: 60px;
+        height: 60px;
+    }
+
+    .crm-page-services-grid {
+        gap: 25px;
+    }
+}
+
+/* 576px - Small Tablet / Large Phone */
+@media (max-width: 576px) {
+    .crm-page-el-left {
+        height: 400px;
+    }
+
+    .crm-page-el-img-large {
+        width: 160px;
+        height: 300px;
+        top: 60px;
+    }
+
+    .crm-page-el-img-small-top {
+        width: 140px;
+        height: 120px;
+        top: 20px;
+        left: 10px;
+    }
+
+    .crm-page-el-img-small-bottom {
+        width: 150px;
+        height: 130px;
+        left: 5px;
+        bottom: 20px;
+    }
+
+    .crm-page-el-title {
+        font-size: 28px;
+    }
+
+    .crm-page-el-stats {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .crm-page-el-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .crm-page-prod-timeline::before {
+        left: 14px;
+    }
+
+    .crm-page-timeline-icon {
+        width: 32px !important;
+        height: 32px !important;
+        padding: 6px !important;
+    }
+
+    .crm-page-timeline-item {
+        gap: 10px;
+    }
+
+    .crm-page-timeline-content h3 {
+        font-size: 14px;
+    }
+
+    .crm-page-timeline-content p {
+        font-size: 11px;
+    }
+
+    .crm-page-portrait-img {
+        height: 320px !important;
+    }
+
+    .crm-page-exp-badge {
+        padding: 12px 20px !important;
+        left: 12px !important;
+        bottom: 15px !important;
+    }
+
+    .crm-page-exp-number {
+        font-size: 24px !important;
+    }
+
+    .crm-page-exp-text {
+        font-size: 9px !important;
+    }
+
+    .crm-page-landscape-img {
+        height: 160px !important;
+    }
+
+    .crm-page-hero-center-new {
+        padding-right: 25px;
+        margin-right: -20px;
+    }
+
+    .crm-page-cube-img-new {
+        transform: scale(0.9) translateX(20px);
+        max-width: 70%;
+    }
+
+    .crm-page-service-card {
+        padding: 28px 22px !important;
+    }
+
+    .crm-page-card-header {
+        margin-bottom: 10px !important;
+    }
+
+    .crm-page-service-card-desc {
+        margin: 8px 0 !important;
+        font-size: 11.5px;
+    }
+
+    .crm-page-service-icon-wrap {
+        height: 65px;
+        margin-top: 12px;
+    }
+
+    .crm-page-service-icon-wrap svg {
+        width: 55px;
+        height: 55px;
+    }
+}
+
+/* 480px - Mobile Portrait */
+@media (max-width: 480px) {
+    .crm-page-hero-title-new {
+        font-size: 28px;
+    }
+
+    .crm-page-hero-subtitle-new {
+        font-size: 16px;
+    }
+
+    .crm-page-hero-desc-new {
+        font-size: 13px;
+    }
+
+    .crm-page-stat-circle-new {
+        width: 50px;
+        height: 50px;
+    }
+
+    .crm-page-stat-number-new {
+        font-size: 11px;
+    }
+
+    .crm-page-stat-label-new {
+        font-size: 10px;
+    }
+
+    .crm-page-hero-stats-new {
+        gap: 20px;
+    }
+
+    .crm-page-avatar-group-new img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .crm-page-avatar-icon-new,
+    .crm-page-download-btn-new {
+        width: 32px;
+        height: 32px;
+    }
+
+    .crm-page-perf-value-new,
+    .crm-page-perf-value-bold-new {
+        font-size: 14px;
+    }
+
+    .crm-page-perf-label-new {
+        font-size: 8px;
+    }
+
+    .crm-page-about-left-tag {
+        font-size: 18px !important;
+    }
+
+    .crm-page-about-left-title {
+        font-size: 20px !important;
+    }
+
+    .crm-page-about-service-item-new {
+        padding: 12px 14px !important;
+    }
+
+    .crm-page-service-text-group {
+        max-width: 180px;
+    }
+
+    .crm-page-service-name-about {
+        font-size: 12px !important;
+        white-space: normal;
+        word-break: break-word;
+    }
+
+    .crm-page-service-short-about {
+        font-size: 9px !important;
+    }
+
+    .crm-page-about-detail-panel {
+        padding: 16px 14px !important;
+        height: auto !important;
+    }
+
+    .crm-page-detail-title {
+        font-size: 18px !important;
+    }
+
+    .crm-page-detail-desc {
+        font-size: 12px !important;
+    }
+
+    .crm-page-productivity-section {
+        padding: 60px 16px;
+    }
+
+    .crm-page-prod-title {
+        font-size: 28px;
+    }
+
+    .crm-page-btn-prod-primary,
+    .crm-page-btn-prod-secondary {
+        padding: 12px 20px;
+        font-size: 13px;
+    }
+
+    .crm-page-mission-title {
+        font-size: 28px;
+    }
+
+    .crm-page-service-card {
+        padding: 25px 20px !important;
+    }
+
+    .crm-page-service-card-title {
+        font-size: 15px !important;
+    }
+
+    .crm-page-service-card-subtitle {
+        font-size: 10px !important;
+    }
+
+    .crm-page-service-card-desc {
+        font-size: 11px !important;
+        margin: 6px 0 !important;
+    }
+
+    .crm-page-card-badge {
+        padding: 2px 6px;
+    }
+
+    .crm-page-badge-rating {
+        font-size: 10px;
+    }
+
+    .crm-page-service-icon-wrap {
+        height: 60px;
+        margin-top: 10px;
+    }
+
+    .crm-page-service-icon-wrap svg {
+        width: 50px;
+        height: 50px;
+    }
+
+    .crm-page-services-grid {
+        gap: 20px;
+    }
+
+    .crm-page-services-title-new {
+        font-size: 28px;
+    }
+
+    .crm-page-service-item-new {
+        padding: 14px 16px;
+    }
+
+    .crm-page-service-name-new {
+        font-size: 14px;
+    }
+
+    .crm-page-service-id-new {
+        font-size: 14px;
+    }
+
+    .crm-page-services-card-action-text-new,
+    .crm-page-services-card-action-text-green-new {
+        font-size: 18px;
+    }
+
+    .crm-page-section-title {
+        font-size: 1.8rem;
+    }
+
+    .crm-page-course-title {
+        font-size: 1.3rem;
+    }
+
+    .crm-page-course-desc {
+        font-size: 0.85rem;
+    }
+
+    .crm-page-feature-item {
+        font-size: 0.8rem;
+    }
+
+    .crm-page-feedback-card {
+        padding: 25px 20px;
+    }
+
+    .crm-page-feedback-text {
+        font-size: 0.9rem;
+    }
+
+    .crm-page-slider-arrow {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+
+    .crm-page-testimonial-card-horizontal {
+        flex: 0 0 260px;
+    }
+
+    .crm-page-testimonial-name {
+        font-size: 16px;
+    }
+
+    .crm-page-testimonial-text {
+        font-size: 13px;
+    }
+
+    .crm-page-hero-center-new {
+        padding-right: 30px;
+        margin-right: -25px;
+    }
+
+    .crm-page-cube-img-new {
+        transform: scale(0.85) translateX(25px);
+        max-width: 70%;
+    }
+
+    .crm-page-portrait-img {
+        height: 280px !important;
+    }
+
+    .crm-page-exp-badge {
+        padding: 10px 16px !important;
+        left: 10px !important;
+        bottom: 12px !important;
+    }
+
+    .crm-page-exp-number {
+        font-size: 22px !important;
+    }
+
+    .crm-page-exp-text {
+        font-size: 8px !important;
+    }
+
+    .crm-page-landscape-img {
+        height: 140px !important;
+    }
+}
+
+/* 360px - Small Mobile */
+@media (max-width: 360px) {
+    .crm-page-hero-title-new {
+        font-size: 24px;
+    }
+
+    .crm-page-hero-desc-new {
+        font-size: 13px;
+    }
+
+    .crm-page-stat-circle-new {
+        width: 45px;
+        height: 45px;
+    }
+
+    .crm-page-stat-number-new {
+        font-size: 10px;
+    }
+
+    .crm-page-stat-label-new {
+        font-size: 9px;
+    }
+
+    .crm-page-case-title-new {
+        font-size: 22px;
+    }
+
+    .crm-page-about-company-desc-new {
+        font-size: 12px;
+    }
+
+    .crm-page-service-text-group {
+        max-width: 150px;
+    }
+
+    .crm-page-service-name-about {
+        font-size: 11px !important;
+    }
+
+    .crm-page-service-short-about {
+        font-size: 8px !important;
+    }
+
+    .crm-page-detail-title {
+        font-size: 16px !important;
+    }
+
+    .crm-page-detail-desc {
+        font-size: 11px !important;
+    }
+
+    .crm-page-detail-stat-val {
+        font-size: 12px !important;
+    }
+
+    .crm-page-detail-stat-label {
+        font-size: 8px !important;
+    }
+
+    .crm-page-prod-title {
+        font-size: 24px;
+    }
+
+    .crm-page-prod-desc {
+        font-size: 12px;
+    }
+
+    .crm-page-btn-prod-primary,
+    .crm-page-btn-prod-secondary {
+        padding: 10px 16px;
+        font-size: 12px;
+    }
+
+    .crm-page-timeline-content h3 {
+        font-size: 12px;
+    }
+
+    .crm-page-timeline-content p {
+        font-size: 10px;
+    }
+
+    .crm-page-mission-title {
+        font-size: 24px;
+    }
+
+    .crm-page-service-card-title {
+        font-size: 14px !important;
+    }
+
+    .crm-page-service-card-desc {
+        font-size: 10px !important;
+        margin: 5px 0 !important;
+        line-height: 1.3;
+    }
+
+    .crm-page-card-header {
+        margin-bottom: 8px !important;
+    }
+
+    .crm-page-service-icon-wrap {
+        height: 55px;
+        margin-top: 8px;
+    }
+
+    .crm-page-service-icon-wrap svg {
+        width: 45px;
+        height: 45px;
+    }
+
+    .crm-page-services-title-new {
+        font-size: 24px;
+    }
+
+    .crm-page-service-name-new {
+        font-size: 12px;
+    }
+
+    .crm-page-service-id-new {
+        font-size: 12px;
+    }
+
+    .crm-page-section-title {
+        font-size: 1.5rem;
+    }
+
+    .crm-page-course-title {
+        font-size: 1.1rem;
+    }
+
+    .crm-page-feedback-text {
+        font-size: 0.85rem;
+    }
+
+    .crm-page-testimonial-heading {
+        font-size: 24px;
+    }
+
+    .crm-page-testimonial-card-horizontal {
+        flex: 0 0 240px;
+        padding: 20px 15px;
+    }
+
+    .crm-page-testimonial-name {
+        font-size: 14px;
+    }
+
+    .crm-page-testimonial-text {
+        font-size: 11px;
+    }
+
+    .crm-page-hero-center-new {
+        padding-right: 35px;
+        margin-right: -40px;
+    }
+
+    .crm-page-cube-img-new {
+        transform: scale(0.8) translateX(35px);
+        max-width: 65%;
+    }
+
+    .crm-page-portrait-img {
+        height: 250px !important;
+    }
+
+    .crm-page-exp-badge {
+        padding: 8px 12px !important;
+        left: 8px !important;
+        bottom: 10px !important;
+    }
+
+    .crm-page-exp-number {
+        font-size: 20px !important;
+    }
+
+    .crm-page-exp-text {
+        font-size: 7px !important;
+    }
+
+    .crm-page-landscape-img {
+        height: 120px !important;
+    }
+}
+
+/* Ensure all images are responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Fix for overlapping elements on very small screens */
+@media (max-width: 380px) {
+    .crm-page-service-text-group {
+        max-width: 140px;
+    }
+
+    .crm-page-service-name-about {
+        font-size: 10px !important;
+    }
+
+    .crm-page-service-short-about {
+        font-size: 8px !important;
+    }
+
+    .crm-page-detail-title {
+        font-size: 15px !important;
+    }
+
+    .crm-page-detail-desc {
+        font-size: 10px !important;
+    }
+}
+
 /* Left Alignment Overrides */
-.cr-hero-title-new, .cr-hero-desc-new, .cr-hero-subtitle-new, .bi-info-subtitle, .bi-el-title, .bi-prod-title, .bi-detail-title, .bi-about-left-title, .bi-service-card-title, .bi-service-card-desc, .bi-agency-main-title, .bi-info-col, .bi-info-features {
+.crm-page-prod-title,
+.crm-page-prod-desc,
+.crm-page-hero-title-new,
+.crm-page-hero-desc-new,
+.crm-page-hero-subtitle-new,
+.bi-info-subtitle,
+.bi-el-title,
+.bi-prod-title,
+.bi-detail-title,
+.bi-about-left-title,
+.bi-service-card-title,
+.bi-service-card-desc,
+.bi-agency-main-title,
+.bi-info-col,
+.bi-info-features {
     text-align: left !important;
     margin-left: 0 !important;
 }

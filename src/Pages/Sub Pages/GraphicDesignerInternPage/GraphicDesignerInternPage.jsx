@@ -461,25 +461,25 @@ const GraphicDesignerInternPage = () => {
             id: 5,
             rating: 5,
             text: "The hands-on projects were incredible. I learned more in 3 months than I did in 3 years of college!",
-            author: "Sarah J"
+            author: "Michael T"
         },
         {
             id: 6,
             rating: 5,
             text: "Excellent mentorship and resources. The templates alone are worth the course price.",
-            author: "Michael T"
+            author: "Sarah J"
         },
         {
             id: 7,
             rating: 4,
             text: "Great structure and flow. I really appreciated the real-world client briefs.",
-            author: "Priya S"
+            author: "David Chen"
         },
         {
             id: 8,
             rating: 5,
             text: "Transformed my career. I'm now working as a junior designer at a top agency!",
-            author: "David Chen"
+            author: "Priya S"
         }
     ];
 
@@ -1078,13 +1078,13 @@ const GraphicDesignerInternPage = () => {
                                                         className={errors.agreeTerms ? 'GD-error' : ''}
                                                     />
                                                     <label htmlFor="agreeTerms">
-                                                        <FontAwesomeIcon icon={faCheckCircle} /> I agree to the Terms of Service and Privacy Policy
+                                                        I agree to the Terms of Service and Privacy Policy
                                                     </label>
                                                     {errors.agreeTerms && <span className="GD-error-message">{errors.agreeTerms}</span>}
                                                 </div>
 
                                                 <button type="submit" className="GD-submit-btn">
-                                                    <FontAwesomeIcon icon={faRocket} /> Register
+                                                    Register
                                                 </button>
                                             </form>
                                         </div>
@@ -1140,7 +1140,7 @@ const GraphicDesignerInternPage = () => {
                     A graphic designer creates visual concepts that communicate messages through typography, color, imagery, and layout. They design logos, branding, posters, digital content, and user interfaces, blending creativity with strategy to solve problems and deliver clear, engaging visual communication across different media platforms.
                   </p>
                   <button className="GD-banner-register-btn" onClick={() => setShowForm(true)}>
-                    <FontAwesomeIcon icon={faRocket} /> Register Now
+                    Register Now
                   </button>
                 </div>
               </div>
@@ -1459,13 +1459,13 @@ const GraphicDesignerInternPage = () => {
                           className={errors.agreeTerms ? 'GD-error' : ''}
                         />
                         <label htmlFor="agreeTerms">
-                          <FontAwesomeIcon icon={faCheckCircle} /> I agree to the Terms of Service and Privacy Policy
+                          I agree to the Terms of Service and Privacy Policy
                         </label>
                         {errors.agreeTerms && <span className="GD-error-message">{errors.agreeTerms}</span>}
                       </div>
 
                       <button type="submit" className="GD-submit-btn">
-                        <FontAwesomeIcon icon={faRocket} /> Register
+                        Register
                       </button>
                     </form>
                   </div>
@@ -1527,7 +1527,7 @@ const GraphicDesignerInternPage = () => {
                     A graphic designer creates visual concepts that communicate messages through typography, color, imagery, and layout. They design logos, branding, posters, digital content, and user interfaces, blending creativity with strategy to solve problems and deliver clear, engaging visual communication across different media platforms.
                   </p>
                   <button className="GD-banner-register-btn" onClick={() => setShowForm(true)}>
-                    <FontAwesomeIcon icon={faRocket} /> Register Now
+                    Register Now
                   </button>
                 </div>
               </div>
@@ -1582,7 +1582,7 @@ const GraphicDesignerInternPage = () => {
                 </div>
                 <div className="GD-split-point" style={{ alignItems: 'center' }}>
                   <div className="GD-split-icon-green">
-                    <FontAwesomeIcon icon={faCheckCircle} style={{ color: '#00c48c', fontSize: '1.2rem' }} />
+                    <FontAwesomeIcon icon={faCheck} style={{ color: '#00c48c', fontSize: '1.2rem' }} />
                   </div>
                   <div className="GD-split-point-text">
                     <h4 style={{ margin: 0, fontSize: '1rem' }}>Includes lifetime access to premium assets + 6 months of design support.</h4>
@@ -1812,10 +1812,11 @@ const GraphicDesignerInternPage = () => {
                                         const cardClassIndex = (index % 5) + 1;
                                         const imgMap = {
                                             1: boy1, 2: girl1, 3: boy2, 4: girl2,
-                                            5: girl3, 6: boy3, 7: girl4, 8: boy4
+                                            5: boy3, 6: girl3, 7: boy4, 8: girl4
                                         };
 
                                         const photoUrl = imgMap[testimonial.id];
+                                        const isBoy = [1, 3, 5, 7].includes(testimonial.id);
 
                                         return (
                                             <div key={`${testimonial.id || index}-${index}`} className={`GD-dt-card GD-dt-card-${cardClassIndex}`}>

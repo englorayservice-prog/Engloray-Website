@@ -25,6 +25,7 @@ const StatsAndBenefits = () => {
             // ── Build the scroll-pinned timeline ──
             const tl = gsap.timeline({
                 scrollTrigger: {
+                    trigger: '.techGroup-stats-wrapper',
                     trigger: wrapper,
                     start: 'top top',
                     end: '+=2800',          // freeze for 2800px of scroll
@@ -66,6 +67,59 @@ const StatsAndBenefits = () => {
               .from('.techGroup-stat-card-six',
                     { x: -360, y: -220, opacity: 0, scale: 0.35, duration: 1 }, 1.75);
 
+            // ── Benefits Section Animation ──
+            const benefitCards = gsap.utils.toArray('.techGroup-slide-card');
+            
+            benefitCards.forEach((card) => {
+                // Get all text/content elements inside this specific card
+                const contentElements = card.querySelectorAll('.techGroup-badge, [class*="-header"], [class*="-footer"], [class*="-description"], .techGroup-card-two-tags span, .techGroup-inner-badge, .techGroup-card-three-grid-box, .techGroup-inner-badge-four, .techGroup-card-four-box');
+                
+                // Set initial state for card and its contents
+                gsap.set(card, { opacity: 0, y: 50 });
+                gsap.set(contentElements, { opacity: 0, y: 30 });
+
+                gsap.to(card, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: card,
+                        start: "top 90%",
+                        end: "bottom 20%",
+                        toggleActions: "play reverse play reverse",
+                    }
+                });
+
+                gsap.to(contentElements, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    stagger: 0.05,
+                    ease: "power2.out",
+                    delay: 0.2, // Start after card begins moving
+                    scrollTrigger: {
+                        trigger: card,
+                        start: "top 90%",
+                        end: "bottom 20%",
+                        toggleActions: "play reverse play reverse",
+                    }
+                });
+            });
+
+            // Animate section title separately
+            gsap.set('.techGroup-benefits-main-title', { opacity: 0, y: 40 });
+            gsap.to('.techGroup-benefits-main-title', {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: '.techGroup-benefits-main-title',
+                    start: "top 95%",
+                    toggleActions: "play reverse play reverse",
+                }
+            });
+
         }, wrapper);
 
         return () => ctx.revert();
@@ -73,6 +127,10 @@ const StatsAndBenefits = () => {
 
     return (
         <section className="techGroup-testimonials-section" style={{ padding: '0', marginBottom: '0' }}>
+            <div className="techGroup-testimonialSection-container" style={{ padding: '0' }} ref={wrapperRef}>
+
+                {/* ── PINNED STATS SECTION ── */}
+                <div className="techGroup-stats-wrapper">
             <div className="techGroup-testimonialSection-container" style={{ padding: '0' }}>
 
                 {/* ── PINNED STATS SECTION ── */}

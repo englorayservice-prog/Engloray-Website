@@ -30,6 +30,21 @@
 }
 
 .techGroup-testimonials-only-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 4rem;
+}
+
+/* Isolated Styles for Testimonials Only */
+.techGroup-testimonials-only-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.techGroup-testimonials-only-container {
   max-width: 1800px;
   /* Slightly wider to accommodate shift */
   margin-left: 200px;
@@ -100,7 +115,7 @@
 /* ================= STRIPE CAROUSEL ================= */
 .techGroup-stripe-carousel-wrapper {
   position: relative;
-  margin-bottom: 6rem;
+  margin: 0 auto 6rem;
   overflow: hidden;
   border-radius: 24px;
   max-width: 1300px;
@@ -1175,8 +1190,210 @@
   }
 }
 
-/* ================= RESPONSIVE DESIGN ================= */
+/* ================= RESPONSIVE DESIGN (FLUID SCALING FOR LARGE SCREENS) ================= */
+
+/* 2560px - 4K and Ultra Wide Screens */
+@media (min-width: 2560px) {
+  .techGroup-testimonialSection-container {
+    max-width: 2400px;
+    padding: 0 clamp(6rem, 8vw, 12rem);
+  }
+
+  .techGroup-testimonials-only-container {
+    max-width: 1800px;
+    padding: 0 clamp(4rem, 6vw, 8rem);
+    margin: 0 auto;
+  }
+
+  .techGroup-testimonials-title {
+    font-size: clamp(4rem, 4.5vw, 5.5rem);
+  }
+
+  .techGroup-testimonials-subtitle {
+    font-size: clamp(2rem, 2.2vw, 2.8rem);
+  }
+
+  .techGroup-stripe-carousel-wrapper {
+    max-width: clamp(1800px, 75vw, 2200px);
+    margin-bottom: 8rem;
+  }
+
+  .techGroup-stripe-carousel {
+    height: clamp(650px, 28vw, 800px);
+  }
+
+  .techGroup-testimonial-text {
+    font-size: clamp(1.8rem, 2vw, 2.5rem);
+    max-width: clamp(1200px, 45vw, 1600px);
+    line-height: 1.8;
+  }
+
+  .techGroup-quote-mark {
+    font-size: 6rem;
+  }
+
+  .techGroup-client-info h4,
+  .techGroup-client-position {
+    font-size: clamp(1.8rem, 2.2vw, 2.5rem);
+  }
+
+  .techGroup-stripe-arrows button {
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+  }
+
+  .techGroup-benefits-main-badge {
+    font-size: 1.2rem;
+    padding: 1rem 2.5rem;
+  }
+
+  .techGroup-grid-logos-container {
+    max-width: 1800px;
+    grid-template-rows: repeat(2, 250px);
+  }
+
+  .techGroup-grid-logo-image {
+    max-width: 280px;
+    max-height: 180px;
+  }
+}
+
+/* 1920px - Large Desktop */
+@media (min-width: 1920px) and (max-width: 2559px) {
+  .techGroup-testimonialSection-container {
+    max-width: 1800px;
+    padding: 0 clamp(4rem, 6vw, 8rem);
+  }
+
+  .techGroup-testimonials-only-container {
+    max-width: 1600px;
+    padding: 0 clamp(3rem, 5vw, 6rem);
+    margin: 0 auto;
+  }
+
+  .techGroup-testimonials-title {
+    font-size: clamp(3rem, 3.5vw, 4rem);
+  }
+
+  .techGroup-testimonials-subtitle {
+    font-size: clamp(1.5rem, 1.8vw, 2rem);
+  }
+
+  .techGroup-stripe-carousel-wrapper {
+    max-width: clamp(1500px, 80vw, 1800px);
+  }
+
+  .techGroup-stripe-carousel {
+    height: clamp(550px, 30vw, 650px);
+  }
+
+  .techGroup-testimonial-text {
+    font-size: clamp(1.3rem, 1.5vw, 1.8rem);
+    max-width: clamp(900px, 50vw, 1200px);
+  }
+
+  .techGroup-quote-mark {
+    font-size: 5rem;
+  }
+
+  .techGroup-client-info h4,
+  .techGroup-client-position {
+    font-size: clamp(1.4rem, 1.6vw, 1.8rem);
+  }
+
+  .techGroup-grid-logos-container {
+    max-width: 1400px;
+    grid-template-rows: repeat(2, 200px);
+  }
+
+  .techGroup-grid-logo-image {
+    max-width: 200px;
+    max-height: 120px;
+  }
+}
+
+/* 1440px - Desktop */
+@media (min-width: 1440px) and (max-width: 1919px) {
+  .techGroup-testimonialSection-container {
+    max-width: 1500px;
+    padding: 0 clamp(2rem, 4vw, 5rem);
+  }
+
+  .techGroup-testimonials-only-container {
+    max-width: 1300px;
+    padding: 0 2rem;
+    margin: 0 auto;
+  }
+
+  .techGroup-testimonials-title {
+    font-size: clamp(2.4rem, 2.8vw, 3rem);
+  }
+
+  .techGroup-testimonials-subtitle {
+    font-size: clamp(1.2rem, 1.5vw, 1.5rem);
+  }
+
+  .techGroup-stripe-carousel-wrapper {
+    max-width: clamp(1200px, 85vw, 1500px);
+  }
+
+  .techGroup-stripe-carousel {
+    height: clamp(420px, 35vw, 550px);
+  }
+
+  .techGroup-testimonial-text {
+    font-size: clamp(1.1rem, 1.3vw, 1.4rem);
+    max-width: clamp(700px, 60vw, 900px);
+  }
+
+  .techGroup-client-info h4,
+  .techGroup-client-position {
+    font-size: clamp(1.2rem, 1.3vw, 1.4rem);
+  }
+}
+
+/* ================= RESPONSIVE DESIGN (SMALLER SCREENS) ================= */
+@media (max-width: 1440px) {
+  .techGroup-testimonials-only-container {
+    margin-left: auto;
+    transform: none;
+    padding: 0 40px;
+  }
+
+  .techGroup-title-nav-row {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .techGroup-stripe-carousel-wrapper {
+    margin: 0 auto 6rem;
+  }
+}
+
 @media (max-width: 1024px) {
+  .techGroup-testimonials-only-container {
+    padding: 0 30px;
+  }
+
+  .techGroup-testimonialSection-header {
+    text-align: center;
+  }
+
+  .techGroup-title-nav-row {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .techGroup-testimonials-subtitle {
+    white-space: normal;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 1.5rem;
+  }
+
   .techGroup-stats-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
@@ -1195,11 +1412,7 @@
   }
 
   .techGroup-active-card {
-    flex: 0 0 45%;
-  }
-
-  .techGroup-stripe-arrows {
-    top: 160px;
+    flex: 0 0 60%;
   }
 
   .techGroup-testimonial-meta {
@@ -1215,217 +1428,198 @@
   .techGroup-trusted-by-header h3 {
     font-size: 1.4rem;
   }
-
-  .techGroup-benefits-slide-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
-
-  .techGroup-card-one-header,
-  .techGroup-card-two-header,
-  .techGroup-card-three-header,
-  .techGroup-card-four-header {
-    font-size: 28px;
-  }
-
-  .techGroup-card-three-grid-container {
-    width: 50%;
-    right: 20px;
-  }
-
-  .techGroup-card-three-arrow-section {
-    width: 45%;
-  }
-
-  .techGroup-card-four-layout {
-    margin-top: -30px;
-  }
-
-  .techGroup-card-three-bottom-description {
-    width: 45%;
-    font-size: 8px;
-  }
-
-  .techGroup-card-two-description {
-    font-size: 10px;
-  }
 }
 
 @media (max-width: 768px) {
-  .techGroup-testimonials-section {
+  .techGroup-testimonials-only-container {
+    padding: 0 20px;
+  }
+
+  .techGroup-testimonials-only-section {
     padding: 60px 0;
   }
 
-  .techGroup-testimonialSection-container {
-    padding: 0 1.5rem;
+  .techGroup-title-nav-row {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
   }
 
   .techGroup-testimonials-title {
-    font-size: 2.5rem;
-  }
-
-  .techGroup-stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
-
-  .techGroup-stat-card {
-    padding: 1.5rem;
-  }
-
-  .techGroup-stats-container {
-    min-height: auto;
-    padding: 2rem 0;
-  }
-
-  .techGroup-stripe-carousel {
-    height: 350px;
-  }
-
-  .techGroup-stripe-card {
-    flex: 0 0 45px;
-  }
-
-  .techGroup-active-card {
-    flex: 0 0 50%;
+    font-size: 2.2rem;
+    text-align: center;
+    width: 100%;
   }
 
   .techGroup-stripe-arrows {
-    top: 140px;
-  }
-
-  .techGroup-benefits-slide-grid {
-    grid-template-columns: 1fr;
-    gap: 15px;
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .techGroup-slide-card {
-    padding: 20px;
-    min-height: 320px;
-  }
-
-  .techGroup-card-one-header,
-  .techGroup-card-two-header,
-  .techGroup-card-three-header,
-  .techGroup-card-four-header {
-    font-size: 26px;
-  }
-
-  .techGroup-card-three-grid-container {
-    position: static;
+    justify-content: center;
     width: 100%;
-    margin-top: 15px;
-  }
-
-  .techGroup-card-three-arrow-section {
-    width: 100%;
-  }
-
-  .techGroup-card-four-layout {
     margin-top: 10px;
-    position: static;
   }
 
-  .techGroup-card-four-image {
-    margin-bottom: 15px;
+  .techGroup-stripe-carousel {
+    display: flex;
+    height: auto;
+    min-height: 480px;
+    gap: 0;
+    min-width: 100%;
+    padding-right: 0;
+    transform: none !important;
   }
 
-  .techGroup-card-three-grid {
-    gap: 10px;
+  .techGroup-stripe-card {
+    flex: 0 0 0;
+    margin: 0;
   }
 
-  .techGroup-card-three-bottom-description {
-    position: static;
+  .techGroup-active-card {
+    flex: 0 0 100%;
     width: 100%;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin: 0 auto;
+    border-radius: 20px;
   }
 
-  .techGroup-card-two-description {
-    font-size: 10px;
-    max-width: 100%;
+  .techGroup-stripe-card:not(.techGroup-active-card) {
+    display: none;
+  }
+
+  .techGroup-carousel-container {
+    padding: 2.5rem 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .techGroup-testimonial-active-card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .techGroup-quote-mark {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    line-height: 1;
+  }
+
+  .techGroup-testimonial-subtitle {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .techGroup-testimonial-text {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    max-width: 90%;
+  }
+
+  .techGroup-testimonial-meta {
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: center;
+    width: 100%;
+  }
+
+  .techGroup-client-info {
+    text-align: center;
+  }
+
+  .techGroup-project-highlight {
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .techGroup-grid-logos-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 140px);
+  }
+
+  .techGroup-grid-logo::after {
+    display: none;
+  }
+
+  .techGroup-grid-logo:nth-child(odd)::after {
+    display: block;
+  }
+
+  .techGroup-grid-logo:nth-child(even)::after {
+    display: none;
+  }
+
+  .techGroup-grid-logo:nth-child(n+1)::before {
+    display: block;
+  }
+
+  .techGroup-grid-logo:last-child::before,
+  .techGroup-grid-logo:nth-last-child(2)::before {
+    display: none;
   }
 }
 
 @media (max-width: 480px) {
+  .techGroup-testimonials-only-container {
+    padding: 0 15px;
+  }
+
+  .techGroup-benefits-main-badge {
+    font-size: 0.7rem;
+    padding: 0.4rem 1.2rem;
+  }
+
   .techGroup-testimonials-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
-  .techGroup-stats-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .techGroup-stat-card .techGroup-stat-number {
-    font-size: 2.2rem;
-  }
-
-  .techGroup-stat-card .techGroup-stat-label {
-    font-size: 0.75rem;
+  .techGroup-testimonials-subtitle {
+    font-size: 1rem;
   }
 
   .techGroup-stripe-carousel {
-    height: 300px;
-    gap: 8px;
+    min-height: 400px;
   }
 
-  .techGroup-stripe-card {
-    flex: 0 0 40px;
+  .techGroup-testimonial-text {
+    font-size: 0.9rem;
+    margin-bottom: 1.2rem;
   }
 
-  .techGroup-active-card {
-    flex: 0 0 55%;
+  .techGroup-testimonial-meta {
+    padding-top: 1rem;
   }
 
-  .techGroup-stripe-arrows {
-    top: 120px;
+  .techGroup-client-name {
+    font-size: 1.1rem;
+    margin-bottom: 2px;
   }
 
-  .techGroup-stripe-arrows button {
-    width: 30px;
-    height: 30px;
-    font-size: 16px;
+  .techGroup-client-position {
+    font-size: 0.85rem;
   }
 
-  .techGroup-slide-card {
-    padding: 18px;
-    min-height: 300px;
+  .techGroup-project-name {
+    font-size: 0.85rem;
   }
 
-  .techGroup-card-one-header,
-  .techGroup-card-two-header,
-  .techGroup-card-three-header,
-  .techGroup-card-four-header {
-    font-size: 24px;
+  .techGroup-project-result {
+    font-size: 0.75rem;
+    padding: 4px 12px;
   }
 
-  .techGroup-card-three-grid-box,
-  .techGroup-card-four-box {
-    font-size: 7px;
-    padding: 10px 6px 5px 6px;
-    min-height: 48px;
-  }
-
-  .techGroup-card-three-grid {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-
-  .techGroup-budget-image {
-    width: 40px;
-    height: 40px;
-  }
-
-  .techGroup-card-three-bottom-description {
-    font-size: 7px;
-  }
-
-  .techGroup-card-two-description {
-    font-size: 9px;
+  .techGroup-grid-logo-image {
+    max-width: 120px;
   }
 }
 

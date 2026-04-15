@@ -44,11 +44,16 @@ import {
   faLinkedinIn,
   faDev
 } from '@fortawesome/free-brands-svg-icons';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './BenifitsFooter.css';
+import benefitsBlueEarth from '../../../assets/download.png';
+
+// Register GSAP plugins
+gsap.registerPlugin(ScrollTrigger);
 
 // Import the image from assets
 //import titleImage from '../../../assets/image12.jfif'; // Adjust the path based on your asset location
-import benefitsBlueEarth from '../../../assets/download.png';
 
 // Add only the icons that are actually used in the component
 library.add(
@@ -74,6 +79,84 @@ const BenefitsFooter = ({ onOpenInternshipForm }) => {
     preference: '',
     resume: null
   });
+  const [isDoToggled, setIsDoToggled] = useState(false);
+  const sectionRef = React.useRef(null);
+
+  React.useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      // ── Header/Title Animation ──
+      const titleElements = '.top-right-badge, .custom-main-title, .switch-circle-container';
+      gsap.set(titleElements, { opacity: 0, y: 50 });
+
+      gsap.to(titleElements, {
+        opacity: 1,
+        y: 0,
+        duration: 1.2,
+        stagger: 0.15,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".benefits-main-header",
+          start: "top 85%",
+          toggleActions: "play reverse play reverse"
+        }
+      });
+
+      // ── Benefit Cards Reveal ──
+      const benefitItems = gsap.utils.toArray('.benefits-main-item');
+      benefitItems.forEach((item) => {
+        const innerContent = item.querySelectorAll('.benefits-main-icon, .benefits-main-item-title, .benefits-main-item-description');
+        
+        gsap.set(item, { opacity: 0, y: 60 });
+        gsap.set(innerContent, { opacity: 0, y: 30 });
+
+        gsap.to(item, {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: item,
+            start: "top 90%",
+            toggleActions: "play reverse play reverse"
+          }
+        });
+
+        gsap.to(innerContent, {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          stagger: 0.1,
+          ease: "back.out(1.2)",
+          delay: 0.2,
+          scrollTrigger: {
+            trigger: item,
+            start: "top 90%",
+            toggleActions: "play reverse play reverse"
+          }
+        });
+      });
+
+      // ── CTA Section Animation ──
+      const ctaElements = '.benefits-fresh-hero-title, .benefits-fresh-hero-description, .benefits-fresh-hero-actions';
+      gsap.set(ctaElements, { opacity: 0, y: 40 });
+
+      gsap.to(ctaElements, {
+        opacity: 1,
+        y: 0,
+        duration: 1.2,
+        stagger: 0.2,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".benefits-fresh-hero-content",
+          start: "top 85%",
+          toggleActions: "play reverse play reverse"
+        }
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
 
   // Social media URLs
   const socialLinks = {
@@ -290,7 +373,7 @@ const BenefitsFooter = ({ onOpenInternshipForm }) => {
           <meta property="og:description" content="Communicates core learning benefits and outcomes for every enrolled student." />
         </Helmet>
 
-        <section className="benefits-cta-section" id="benefits">
+        <section className="benefits-cta-section" id="benefits" ref={sectionRef}>
           <div className="benefits-cta-container">
             {/* Benefits Section */}
             <div className="benefits-main-section new-benefits-design">
@@ -335,7 +418,6 @@ const BenefitsFooter = ({ onOpenInternshipForm }) => {
                   <div
                     key={benefit.title}
                     className="benefits-main-item white-card"
-                    style={{ animationDelay: `${index * 0.2}s` }}
                   >
                     <div className="benefits-main-icon-wrapper">
                       <div className="benefits-main-icon">

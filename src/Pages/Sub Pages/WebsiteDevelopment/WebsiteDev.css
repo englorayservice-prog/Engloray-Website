@@ -956,9 +956,8 @@
 .web-page-about-img-wrap-new {
     position: relative;
     width: 100%;
-    /* height: 100%; */
-    height: 800px;
-    min-height: 480px;
+    height: 740px;
+    min-height: 740px;
     border-radius: 24px;
     overflow: hidden;
     background: #1a1a1a;
@@ -967,7 +966,7 @@
 
 .web-page-about-img-wrap-new img {
     width: 100%;
-    height: 100%;
+    height: 740px;
     object-fit: cover;
     object-position: center center;
 }
@@ -1086,7 +1085,7 @@
     display: flex;
     flex-direction: column;
     gap: 18px;
-    height: 100%;
+    height: 740px;
     box-sizing: border-box;
     animation: bi-detail-pop 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -1142,7 +1141,7 @@
     font-size: 14px;
     color: #888888;
     text-align: left;
-    line-height: 1.8;
+    line-height: 1.6;
     margin: 0;
     flex: 1;
 }
@@ -3083,4 +3082,1411 @@
 .bi-info-features {
     text-align: left !important;
     margin-left: 0 !important;
+}
+
+/* ============================================================
+   COMPLETE RESPONSIVE FIXES FOR WEB PAGE - MATCHING DATA PAGE PATTERNS
+   ============================================================ */
+
+/* 1400px and above - Large Desktop */
+@media (max-width: 1400px) {
+    .web-page-hero-container-new {
+        max-width: 100%;
+    }
+
+    .web-page-hero-title-new {
+        font-size: 58px;
+    }
+
+    .web-page-services-container-new {
+        max-width: 1200px;
+    }
+
+    .web-page-about-inner-new {
+        max-width: 1200px;
+    }
+}
+
+/* 1200px - Desktop */
+@media (max-width: 1200px) {
+    .web-page-hero-container-new {
+        flex-direction: column;
+        padding: 40px 30px 60px 30px;
+        clip-path: none;
+    }
+
+    .web-page-hero-left-new {
+        max-width: 100%;
+    }
+
+    .web-page-hero-title-new {
+        font-size: 48px;
+        margin-left: 0;
+    }
+
+    .web-page-hero-subtitle-new {
+        margin-left: 0;
+    }
+
+    .web-page-hero-title-desc-new {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        min-height: auto;
+        margin: 20px 0;
+    }
+
+    .web-page-hero-right-new {
+        max-width: 100%;
+    }
+
+    .web-page-hero-stats-new {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .web-page-services-grid {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .web-page-service-card {
+        margin-right: 0;
+        transform: rotate(0deg) translateY(0) !important;
+        width: calc(33.33% - 20px);
+        min-width: 280px;
+    }
+}
+
+/* 1100px - Tablet Landscape */
+@media (max-width: 1100px) {
+    .web-page-about-inner-new {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .web-page-about-left-tag {
+        font-size: 32px;
+    }
+
+    .web-page-about-left-title {
+        font-size: 28px;
+    }
+
+    .web-page-agency-grid {
+        gap: 50px;
+    }
+
+    .web-page-agency-main-title {
+        font-size: 42px;
+    }
+}
+
+/* 1024px - Tablet Landscape */
+@media (max-width: 1024px) {
+    .web-page-services-content-new {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .web-page-services-list-new {
+        order: 1;
+    }
+
+    .web-page-services-info-col-new {
+        order: 2;
+    }
+
+    .web-page-services-image-col-new {
+        order: 3;
+    }
+
+    .web-page-services-info-col-new {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .web-page-services-card-dark-new,
+    .web-page-services-card-green-new {
+        min-height: auto;
+        padding: 30px 25px;
+    }
+
+    .web-page-services-card-sub-new,
+    .web-page-services-card-sub-green-new {
+        order: 2;
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
+
+    .web-page-services-card-action-new {
+        order: 3;
+        margin-top: 10px;
+    }
+
+    .web-page-services-card-action-text-new,
+    .web-page-services-card-action-text-green-new {
+        font-size: 20px;
+    }
+
+    .web-page-services-image-wrapper-new {
+        height: 400px;
+    }
+
+    .web-page-service-card {
+        width: calc(50% - 20px);
+    }
+
+    .web-page-service-card-desc {
+        font-size: 12px;
+    }
+
+    .web-page-service-card-title {
+        font-size: 17px;
+        white-space: normal;
+        word-break: break-word;
+    }
+}
+
+/* 991px - Tablet */
+@media (max-width: 991px) {
+    .web-page-prod-container {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .web-page-prod-left {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .web-page-prod-title {
+        font-size: 36px;
+        text-align: center;
+    }
+
+    .web-page-prod-desc {
+        text-align: center;
+    }
+
+    .web-page-prod-buttons {
+        justify-content: center;
+    }
+
+    .web-page-prod-avatars-box {
+        justify-content: center;
+    }
+
+    .web-page-prod-avatar-text {
+        text-align: center;
+    }
+
+    .web-page-el-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .web-page-el-left {
+        height: 480px;
+    }
+
+    .web-page-el-img-large {
+        width: 220px;
+        height: 380px;
+    }
+
+    .web-page-el-img-small-top,
+    .web-page-el-img-small-bottom {
+        width: 180px;
+    }
+
+    .web-page-el-title {
+        font-size: 32px;
+    }
+
+    .web-page-el-preheading {
+        margin-left: 0;
+        font-size: 28px;
+    }
+}
+
+/* 900px - Small Desktop */
+@media (max-width: 900px) {
+    .web-page-agency-grid {
+        grid-template-columns: 1fr;
+        gap: 100px;
+    }
+
+    .web-page-agency-info-row {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .web-page-portrait-img {
+        height: 500px;
+    }
+
+    .web-page-exp-badge {
+        left: 20px;
+        bottom: -30px;
+    }
+}
+
+/* 768px - Mobile Landscape */
+@media (max-width: 768px) {
+    .web-page-hero-section-new {
+        min-height: auto;
+        padding: 20px;
+    }
+
+    .web-page-hero-container-new {
+        padding: 30px 20px 40px 20px;
+    }
+
+    .web-page-hero-title-new {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .web-page-hero-buttons-new {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .web-page-btn-get-started-new,
+    .web-page-btn-contact-us-new {
+        width: 100%;
+        text-align: center;
+    }
+
+    .web-page-hero-desc-new {
+        font-size: 16px;
+    }
+
+    .web-page-stat-item-new {
+        flex: 1;
+        min-width: 80px;
+    }
+
+    .web-page-title-play-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .web-page-case-title-new {
+        font-size: 28px;
+    }
+
+    .web-page-about-company-desc-new {
+        font-size: 14px;
+    }
+
+    .web-page-performance-card-new {
+        padding: 20px;
+    }
+
+    .web-page-about-section-new {
+        padding: 80px 20px 60px;
+        clip-path: none;
+        margin-top: 0;
+    }
+
+    .web-page-about-left-tag {
+        font-size: 28px !important;
+        text-align: center !important;
+    }
+
+    .web-page-about-left-title {
+        font-size: 24px !important;
+        text-align: center !important;
+    }
+
+    .web-page-about-intro-new {
+        text-align: center !important;
+    }
+
+    .web-page-about-left-header {
+        text-align: center !important;
+    }
+
+    .web-page-about-img-wrap-new {
+        min-height: 320px;
+        height: auto;
+    }
+
+    .web-page-about-badge-new {
+        padding: 10px 14px;
+    }
+
+    .web-page-badge-num {
+        font-size: 20px;
+    }
+
+    .web-page-detail-title {
+        font-size: 22px;
+    }
+
+    .web-page-detail-stats {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .web-page-detail-stat {
+        flex: 1;
+        min-width: 80px;
+        border-right: none;
+    }
+
+    .web-page-about-service-item-new {
+        padding: 15px 18px !important;
+    }
+
+    .web-page-service-item-left-about {
+        gap: 12px !important;
+    }
+
+    .web-page-service-num-new {
+        font-size: 11px !important;
+    }
+
+    .web-page-service-name-about {
+        font-size: 13px !important;
+    }
+
+    .web-page-service-short-about {
+        font-size: 10px !important;
+    }
+
+    .web-page-service-arrow-about {
+        font-size: 14px !important;
+    }
+
+    .web-page-about-detail-panel {
+        padding: 20px 18px !important;
+        height: auto !important;
+    }
+
+    .web-page-detail-icon-wrap {
+        width: 44px;
+        height: 44px;
+    }
+
+    .web-page-detail-icon {
+        font-size: 18px;
+    }
+
+    .web-page-detail-num {
+        font-size: 9px;
+    }
+
+    .web-page-detail-desc {
+        font-size: 13px !important;
+    }
+
+    .web-page-detail-stat-val {
+        font-size: 14px !important;
+    }
+
+    .web-page-detail-stat-label {
+        font-size: 9px !important;
+    }
+
+    .web-page-detail-cta {
+        padding: 12px 20px !important;
+        font-size: 13px !important;
+    }
+
+    .web-page-productivity-section {
+        padding: 80px 20px;
+    }
+
+    .web-page-prod-title {
+        font-size: 32px;
+    }
+
+    .web-page-prod-desc {
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+
+    .web-page-prod-buttons {
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 40px;
+    }
+
+    .web-page-btn-prod-primary,
+    .web-page-btn-prod-secondary {
+        width: 100%;
+        text-align: center;
+        padding: 14px 24px;
+    }
+
+    .web-page-prod-avatars-box {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .web-page-prod-avatars {
+        justify-content: center;
+    }
+
+    .web-page-prod-avatar-text {
+        text-align: center;
+        font-size: 12px;
+    }
+
+    .web-page-prod-timeline::before {
+        left: 16px !important;
+        width: 2px;
+    }
+
+    .web-page-timeline-item {
+        gap: 12px;
+        padding-bottom: 20px;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .web-page-timeline-icon {
+        width: 40px !important;
+        height: 40px !important;
+        padding: 8px !important;
+    }
+
+    .web-page-timeline-content h3 {
+        font-size: 16px;
+    }
+
+    .web-page-timeline-content p {
+        font-size: 12px;
+    }
+
+    .web-page-service-card {
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    .web-page-mission-title {
+        margin-top: 5px;
+        font-size: 32px;
+    }
+
+    .web-page-mission-section {
+        padding: 60px 20px;
+    }
+
+    .web-page-services-section-new {
+        padding: 60px 20px;
+    }
+
+    .web-page-services-container-new {
+        padding: 0 20px;
+    }
+
+    .web-page-services-title-new {
+        font-size: 36px;
+    }
+
+    .web-page-services-info-col-new {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .web-page-services-card-dark-new,
+    .web-page-services-card-green-new {
+        padding: 25px 20px;
+    }
+
+    .web-page-agency-section {
+        padding: 60px 20px 100px;
+    }
+
+    .web-page-agency-main-title {
+        font-size: 32px;
+    }
+
+    .web-page-exp-badge {
+        padding: 20px 30px;
+    }
+
+    .web-page-exp-number {
+        font-size: 36px;
+    }
+
+    .web-page-landscape-img {
+        height: 220px;
+    }
+
+    .web-page-testimonial-section {
+        padding: 60px 0 80px;
+    }
+
+    .web-page-testimonial-heading {
+        font-size: 28px;
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    .web-page-testimonial-card-horizontal {
+        flex: 0 0 280px;
+        padding: 30px 20px;
+    }
+
+    .web-page-testimonial-text {
+        height: auto;
+        min-height: 80px;
+    }
+
+    .web-page-courses-section {
+        padding: 60px 20px;
+    }
+
+    .web-page-section-title {
+        font-size: 2rem;
+    }
+
+    .web-page-courses-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .web-page-feedback-section {
+        padding: 60px 20px;
+    }
+
+    .web-page-feedback-card {
+        padding: 30px 25px;
+    }
+
+    .web-page-feedback-text {
+        font-size: 1rem;
+    }
+
+    /* Mission section 7th card alignment fix */
+    .web-page-service-card:last-child {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        left: auto !important;
+        right: auto !important;
+        position: relative !important;
+        transform: none !important;
+    }
+}
+
+/* 576px - Small Tablet / Large Phone */
+@media (max-width: 576px) {
+    .web-page-el-left {
+        height: 400px;
+    }
+
+    .web-page-el-img-large {
+        width: 160px;
+        height: 300px;
+        top: 60px;
+    }
+
+    .web-page-el-img-small-top {
+        width: 140px;
+        height: 120px;
+        top: 20px;
+        left: 10px;
+    }
+
+    .web-page-el-img-small-bottom {
+        width: 150px;
+        height: 130px;
+        left: 5px;
+        bottom: 20px;
+    }
+
+    .web-page-el-title {
+        font-size: 28px;
+    }
+
+    .web-page-el-stats {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .web-page-el-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .web-page-prod-timeline::before {
+        left: 14px !important;
+    }
+
+    .web-page-timeline-icon {
+        width: 32px !important;
+        height: 32px !important;
+        padding: 6px !important;
+    }
+
+    .web-page-timeline-item {
+        gap: 10px;
+    }
+
+    .web-page-timeline-content h3 {
+        font-size: 14px;
+    }
+
+    .web-page-timeline-content p {
+        font-size: 11px;
+    }
+}
+
+/* 480px - Mobile Portrait */
+@media (max-width: 480px) {
+    .web-page-hero-title-new {
+        font-size: 28px;
+    }
+
+    .web-page-hero-subtitle-new {
+        font-size: 16px;
+    }
+
+    .web-page-hero-desc-new {
+        font-size: 14px;
+    }
+
+    .web-page-stat-circle-new {
+        width: 50px;
+        height: 50px;
+    }
+
+    .web-page-stat-number-new {
+        font-size: 11px;
+    }
+
+    .web-page-stat-label-new {
+        font-size: 10px;
+    }
+
+    .web-page-hero-stats-new {
+        gap: 20px;
+    }
+
+    .web-page-avatar-group-new img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .web-page-avatar-icon-new,
+    .web-page-download-btn-new {
+        width: 32px;
+        height: 32px;
+    }
+
+    .web-page-perf-value-new,
+    .web-page-perf-value-bold-new {
+        font-size: 14px;
+    }
+
+    .web-page-perf-label-new {
+        font-size: 8px;
+    }
+
+    .web-page-about-left-tag {
+        font-size: 15px !important;
+    }
+
+    .web-page-about-left-title {
+        font-size: 20px !important;
+    }
+
+    .web-page-about-service-item-new {
+        padding: 12px 14px !important;
+    }
+
+    .web-page-service-text-group {
+        max-width: 180px;
+    }
+
+    .web-page-service-name-about {
+        font-size: 12px !important;
+        white-space: normal;
+        word-break: break-word;
+    }
+
+    .web-page-service-short-about {
+        font-size: 9px !important;
+    }
+
+    .web-page-about-detail-panel {
+        padding: 16px 14px !important;
+    }
+
+    .web-page-detail-title {
+        font-size: 18px !important;
+    }
+
+    .web-page-detail-desc {
+        font-size: 12px !important;
+    }
+
+    .web-page-productivity-section {
+        padding: 60px 16px;
+    }
+
+    .web-page-prod-title {
+        font-size: 28px;
+    }
+
+    .web-page-btn-prod-primary,
+    .web-page-btn-prod-secondary {
+        padding: 12px 20px;
+        font-size: 13px;
+    }
+
+    .web-page-mission-title {
+        margin-top: 5px;
+        font-size: 28px;
+    }
+
+    .web-page-service-card {
+        height: auto;
+        min-height: 380px;
+        padding: 25px;
+    }
+
+    .web-page-service-card-title {
+        font-size: 16px;
+    }
+
+    .web-page-service-card-subtitle {
+        font-size: 11px;
+    }
+
+    .web-page-service-icon-wrap {
+        height: 70px;
+        margin-top: 10px;
+    }
+
+    .web-page-services-title-new {
+        font-size: 28px;
+    }
+
+    .web-page-service-item-new {
+        padding: 14px 16px;
+    }
+
+    .web-page-service-name-new {
+        font-size: 14px;
+    }
+
+    .web-page-service-id-new {
+        font-size: 14px;
+    }
+
+    .web-page-services-card-action-text-new,
+    .web-page-services-card-action-text-green-new {
+        font-size: 18px;
+    }
+
+    .web-page-section-title {
+        font-size: 1.8rem;
+    }
+
+    .web-page-course-title {
+        font-size: 1.3rem;
+    }
+
+    .web-page-course-desc {
+        font-size: 0.85rem;
+    }
+
+    .web-page-feature-item {
+        font-size: 0.8rem;
+    }
+
+    .web-page-feedback-card {
+        padding: 25px 20px;
+    }
+
+    .web-page-feedback-text {
+        font-size: 0.9rem;
+    }
+
+    .web-page-slider-arrow {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+
+    .web-page-testimonial-card-horizontal {
+        flex: 0 0 260px;
+    }
+
+    .web-page-testimonial-name {
+        font-size: 16px;
+    }
+
+    .web-page-testimonial-text {
+        font-size: 13px;
+    }
+}
+
+/* 360px - Small Mobile */
+@media (max-width: 360px) {
+    .web-page-hero-title-new {
+        font-size: 24px;
+    }
+
+    .web-page-hero-desc-new {
+        font-size: 13px;
+    }
+
+    .web-page-stat-circle-new {
+        width: 45px;
+        height: 45px;
+    }
+
+    .web-page-stat-number-new {
+        font-size: 10px;
+    }
+
+    .web-page-stat-label-new {
+        font-size: 9px;
+    }
+
+    .web-page-case-title-new {
+        font-size: 22px;
+    }
+
+    .web-page-about-company-desc-new {
+        font-size: 12px;
+    }
+
+    .web-page-service-text-group {
+        max-width: 150px;
+    }
+
+    .web-page-service-name-about {
+        font-size: 11px !important;
+    }
+
+    .web-page-service-short-about {
+        font-size: 8px !important;
+    }
+
+    .web-page-detail-title {
+        font-size: 16px !important;
+    }
+
+    .web-page-detail-desc {
+        font-size: 11px !important;
+    }
+
+    .web-page-detail-stat-val {
+        font-size: 12px !important;
+    }
+
+    .web-page-detail-stat-label {
+        font-size: 8px !important;
+    }
+
+    .web-page-prod-title {
+        font-size: 24px;
+    }
+
+    .web-page-prod-desc {
+        font-size: 12px;
+    }
+
+    .web-page-btn-prod-primary,
+    .web-page-btn-prod-secondary {
+        padding: 10px 16px;
+        font-size: 12px;
+    }
+
+    .web-page-timeline-content h3 {
+        font-size: 12px;
+    }
+
+    .web-page-timeline-content p {
+        font-size: 10px;
+    }
+
+    .web-page-mission-title {
+        font-size: 24px;
+    }
+
+    .web-page-service-card-title {
+        font-size: 14px;
+    }
+
+    .web-page-service-card-desc {
+        font-size: 11px;
+    }
+
+    .web-page-services-title-new {
+        font-size: 24px;
+    }
+
+    .web-page-service-name-new {
+        font-size: 12px;
+    }
+
+    .web-page-service-id-new {
+        font-size: 12px;
+    }
+
+    .web-page-section-title {
+        font-size: 1.5rem;
+    }
+
+    .web-page-course-title {
+        font-size: 1.1rem;
+    }
+
+    .web-page-feedback-text {
+        font-size: 0.85rem;
+    }
+
+    .web-page-testimonial-heading {
+        font-size: 24px;
+    }
+
+    .web-page-testimonial-card-horizontal {
+        flex: 0 0 240px;
+        padding: 20px 15px;
+    }
+
+    .web-page-testimonial-name {
+        font-size: 14px;
+    }
+
+    .web-page-testimonial-text {
+        font-size: 11px;
+    }
+}
+
+/* ============================================================
+   MOBILE VIEW SPECIFIC FIXES FOR HERO SECTION & MISSION CARDS
+   ============================================================ */
+
+/* Hero Section - Mobile view fixes for image alignment and button sizes */
+@media (max-width: 768px) {
+
+    /* Move image slightly to the right */
+    .web-page-hero-center-new {
+        display: flex;
+        justify-content: flex-end !important;
+        align-items: center;
+        padding-right: 20px;
+        margin-right: -20px;
+    }
+
+    .web-page-cube-img-new {
+        transform: scale(0.95) translateX(15px);
+        max-width: 85%;
+    }
+
+    /* Reduce button sizes */
+    .web-page-btn-get-started-new,
+    .web-page-btn-contact-us-new {
+        padding: 10px 20px;
+        font-size: 11px;
+        width: auto;
+        min-width: 140px;
+    }
+
+    /* Reduce description font size */
+    .web-page-hero-desc-new {
+        font-size: 14px;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Adjust stats circles size */
+    .web-page-stat-circle-new {
+        width: 55px;
+        height: 55px;
+    }
+
+    .web-page-stat-number-new {
+        font-size: 11px;
+    }
+
+    .web-page-stat-label-new {
+        font-size: 10px;
+    }
+
+    .web-page-hero-stats-new {
+        gap: 25px;
+    }
+}
+
+@media (max-width: 576px) {
+    .web-page-hero-center-new {
+        padding-right: 25px;
+        margin-right: -20px;
+    }
+
+    .web-page-cube-img-new {
+        transform: scale(0.9) translateX(20px);
+        max-width: 70%;
+    }
+}
+
+@media (max-width: 480px) {
+    .web-page-hero-center-new {
+        padding-right: 30px;
+        margin-right: -25px;
+    }
+
+    .web-page-cube-img-new {
+        transform: scale(0.85) translateX(25px);
+        max-width: 70%;
+    }
+
+    .web-page-btn-get-started-new,
+    .web-page-btn-contact-us-new {
+        padding: 8px 16px;
+        font-size: 10px;
+        min-width: 120px;
+    }
+
+    .web-page-hero-desc-new {
+        font-size: 13px;
+    }
+
+    .web-page-stat-circle-new {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 360px) {
+    .web-page-hero-center-new {
+        padding-right: 35px;
+        margin-right: -40px;
+    }
+
+    .web-page-cube-img-new {
+        transform: scale(0.8) translateX(35px);
+        max-width: 65%;
+    }
+
+    .web-page-btn-get-started-new,
+    .web-page-btn-contact-us-new {
+        padding: 6px 12px;
+        font-size: 9px;
+        min-width: 100px;
+    }
+}
+
+/* ============================================================
+   MISSION SECTION CARDS - INCREASE PADDING & REDUCE GAP IN MOBILE VIEW
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+    /* Increase card padding */
+    .web-page-service-card {
+        padding: 30px 25px !important;
+        height: auto;
+        min-height: auto;
+    }
+
+    /* Reduce gap between content inside cards */
+    .web-page-card-header {
+        margin-bottom: 12px !important;
+    }
+
+    .web-page-service-card-desc {
+        margin: 10px 0 !important;
+        line-height: 1.4;
+        font-size: 12px;
+    }
+
+    /* Adjust title and subtitle spacing */
+    .web-page-card-title-group {
+        gap: 4px !important;
+    }
+
+    .web-page-service-card-title {
+        font-size: 16px !important;
+        white-space: normal;
+        word-break: break-word;
+        line-height: 1.3;
+    }
+
+    .web-page-service-card-subtitle {
+        font-size: 11px !important;
+        margin-top: 2px;
+    }
+
+    /* Adjust badge size */
+    .web-page-card-badge {
+        padding: 3px 8px;
+    }
+
+    .web-page-badge-rating {
+        font-size: 11px;
+    }
+
+    /* Adjust icon area */
+    .web-page-service-icon-wrap {
+        height: 70px;
+        margin-top: 15px;
+    }
+
+    .web-page-service-icon-wrap svg {
+        width: 60px;
+        height: 60px;
+    }
+
+    /* Card grid spacing */
+    .web-page-services-grid {
+        gap: 25px;
+    }
+}
+
+@media (max-width: 576px) {
+    .web-page-service-card {
+        padding: 28px 22px !important;
+    }
+
+    .web-page-card-header {
+        margin-bottom: 10px !important;
+    }
+
+    .web-page-service-card-desc {
+        margin: 8px 0 !important;
+        font-size: 11.5px;
+    }
+
+    .web-page-service-icon-wrap {
+        height: 65px;
+        margin-top: 12px;
+    }
+
+    .web-page-service-icon-wrap svg {
+        width: 55px;
+        height: 55px;
+    }
+}
+
+@media (max-width: 480px) {
+    .web-page-service-card {
+        padding: 25px 20px !important;
+    }
+
+    .web-page-service-card-title {
+        font-size: 15px !important;
+    }
+
+    .web-page-service-card-subtitle {
+        font-size: 10px !important;
+    }
+
+    .web-page-service-card-desc {
+        font-size: 11px !important;
+        margin: 6px 0 !important;
+    }
+
+    .web-page-card-badge {
+        padding: 2px 6px;
+    }
+
+    .web-page-badge-rating {
+        font-size: 10px;
+    }
+
+    .web-page-service-icon-wrap {
+        height: 60px;
+        margin-top: 10px;
+    }
+
+    .web-page-service-icon-wrap svg {
+        width: 50px;
+        height: 50px;
+    }
+
+    .web-page-services-grid {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 360px) {
+    .web-page-service-card {
+        padding: 22px 18px !important;
+    }
+
+    .web-page-service-card-title {
+        font-size: 14px !important;
+    }
+
+    .web-page-service-card-subtitle {
+        font-size: 9px !important;
+    }
+
+    .web-page-service-card-desc {
+        font-size: 10px !important;
+        margin: 5px 0 !important;
+        line-height: 1.3;
+    }
+
+    .web-page-card-header {
+        margin-bottom: 8px !important;
+    }
+
+    .web-page-service-icon-wrap {
+        height: 55px;
+        margin-top: 8px;
+    }
+
+    .web-page-service-icon-wrap svg {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+/* ============================================================
+   AGENCY SECTION - REDUCE IMAGE HEIGHT & STAT SIZE IN MOBILE VIEW
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+    /* Reduce the height of the left side portrait image */
+    .web-page-portrait-img {
+        height: 380px !important;
+        object-fit: cover;
+        object-position: center top;
+    }
+
+    /* Reduce the size of the experience badge */
+    .web-page-exp-badge {
+        padding: 15px 25px !important;
+        left: 15px !important;
+        bottom: 20px !important;
+    }
+
+    /* Reduce the numbers and text inside the badge */
+    .web-page-exp-number {
+        font-size: 28px !important;
+    }
+
+    .web-page-exp-text {
+        font-size: 10px !important;
+    }
+
+    /* Adjust the bottom landscape image height */
+    .web-page-landscape-img {
+        height: 180px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .web-page-portrait-img {
+        height: 320px !important;
+    }
+
+    .web-page-exp-badge {
+        padding: 12px 20px !important;
+        left: 12px !important;
+        bottom: 15px !important;
+    }
+
+    .web-page-exp-number {
+        font-size: 24px !important;
+    }
+
+    .web-page-exp-text {
+        font-size: 9px !important;
+    }
+
+    .web-page-landscape-img {
+        height: 160px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .web-page-portrait-img {
+        height: 280px !important;
+    }
+
+    .web-page-exp-badge {
+        padding: 10px 16px !important;
+        left: 10px !important;
+        bottom: 12px !important;
+    }
+
+    .web-page-exp-number {
+        font-size: 22px !important;
+    }
+
+    .web-page-exp-text {
+        font-size: 8px !important;
+    }
+
+    .web-page-landscape-img {
+        height: 140px !important;
+    }
+}
+
+@media (max-width: 360px) {
+    .web-page-portrait-img {
+        height: 250px !important;
+    }
+
+    .web-page-exp-badge {
+        padding: 8px 12px !important;
+        left: 8px !important;
+        bottom: 10px !important;
+    }
+
+    .web-page-exp-number {
+        font-size: 20px !important;
+    }
+
+    .web-page-exp-text {
+        font-size: 7px !important;
+    }
+
+    .web-page-landscape-img {
+        height: 120px !important;
+    }
+}
+
+/* ============================================================
+   GENERAL MOBILE IMPROVEMENTS
+   ============================================================ */
+
+/* Ensure all images are responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Fix for overlapping elements on very small screens */
+@media (max-width: 380px) {
+    .web-page-service-text-group {
+        max-width: 140px;
+    }
+
+    .web-page-service-name-about {
+        font-size: 10px !important;
+    }
+
+    .web-page-service-short-about {
+        font-size: 8px !important;
+    }
+
+    .web-page-detail-title {
+        font-size: 15px !important;
+    }
+
+    .web-page-detail-desc {
+        font-size: 10px !important;
+    }
 }
