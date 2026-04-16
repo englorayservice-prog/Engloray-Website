@@ -89,6 +89,7 @@ import girl4 from '../../../assets/images/girl4.png';
 import { submitInternship } from "../../Sub Pages/HandleSubmit/InternshipSubmit";
 
 
+
 import pathOne from '../../../assets/resources file/resources file/TECH/GRAPHICS DESIGNERS/Design Tools & Technology.pdf';
 import pathTwo from '../../../assets/resources file/resources file/TECH/GRAPHICS DESIGNERS/Graphic Designer Benefits.pdf';
 import pathFive from '../../../assets/resources file/resources file/TECH/GRAPHICS DESIGNERS/Learning, Skill Development & Growth.pdf';

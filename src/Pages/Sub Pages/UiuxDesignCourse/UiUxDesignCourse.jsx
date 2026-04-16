@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { submitEnrollment } from "../../Sub Pages/HandleSubmit/HandleSubmit";
 import NavigationBar from '../../TechLearningSection/NavigationBar/NavigationBar';
+import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import {
   faArrowRight,
   faBook,
@@ -517,6 +518,7 @@ const UiuxDesignCourse = () => {
 
   return (
     <div className="uiux-page" style={{ '--uiux-fluid-scale': `${fluidScale}px` }}>
+      <TopNavBar />
       <NavigationBar />
       {/* Hero Section Upgrade - Minimalist Premium Design */}
       <header className="uiux-hero-v3">

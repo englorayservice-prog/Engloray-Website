@@ -70,6 +70,7 @@ import pathSix from '../../../assets/resources file/resources file/TECH/Software
 
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import Navbar from '../../../Components/Navbar/Navbar';
+
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import Footer from '../../../Components/Footer/Footer';
 
@@ -740,8 +741,12 @@ const SoftwareDeveloperInternPage = () => {
             )}
 
             <div className="SD-content" ref={containerRef}>
-                {/* <TopNavBar/> */}
-                {/* <Navbar/> */}
+                    <TopNavBar />
+                    <Navbar />
+                    
+                    <Navbar />
+                
+                
 
                 {/* Hero Section */}
                 <section

@@ -74,6 +74,7 @@ import pathFive from '../../../assets/resources file/resources file/TECH/Website
 import pathSix from '../../../assets/resources file/resources file/TECH/Website developer/Frontend Development Stack.pdf';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import Navbar from '../../../Components/Navbar/Navbar';
+
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import { Helmet } from 'react-helmet';
 import Footer from '../../../Components/Footer/Footer';
@@ -746,8 +747,10 @@ const WebsiteDeveloperInternPage = () => {
             )}
 
             <div className="WD-content" ref={containerRef}>
-                {/* <TopNavBar/> */}
-                {/* <Navbar/> */}
+                    <TopNavBar />
+                    <Navbar />
+                
+                
 
                 {/* Hero Section */}
                 <section
