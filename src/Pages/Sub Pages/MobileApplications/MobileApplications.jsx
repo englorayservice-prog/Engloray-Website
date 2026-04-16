@@ -6,7 +6,7 @@ import './MobileApplications.css';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
-import MainPageSubFooter from '../MainPageSubFooter/MainPageSubFooter';
+import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 import { Helmet } from 'react-helmet';
 import { FaChartLine, FaChartBar, FaChartPie, FaDatabase, FaBrain, FaRobot, FaUsers, FaEye } from "react-icons/fa";
 import heroBg from "../../../assets/lineimage.jpeg";
@@ -655,7 +655,7 @@ const DataAnalytics = () => {
                             </div>
                         </div>
                     </section>
-                    <MainPageSubFooter />
+                    <WhiteFooter />
                     <BackToTop />
                 </div>
             </div>

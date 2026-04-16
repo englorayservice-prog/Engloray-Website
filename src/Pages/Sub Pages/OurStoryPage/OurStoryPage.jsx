@@ -33,7 +33,7 @@ import {
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import './OurStoryPage.css';
-import NewFooter from '../NewFooter/NewFooter';
+import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 
 // import { motion } from 'framer-motion';
@@ -1058,7 +1058,7 @@ const OurStoryPage = () => {
           handlePortfolioClick={handlePortfolioClick}
         />
       </main>
-      <NewFooter />
+      <WhiteFooter />
       <BackToTop />
     </div>
   );

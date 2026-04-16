@@ -41,8 +41,7 @@ import {
   faGlobe
 } from '@fortawesome/free-solid-svg-icons';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
-import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
-import MainPageSubFooter from '../MainPageSubFooter/MainPageSubFooter';
+import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 
 import avatar1 from '../../../assets/testimonials/cartoon_male_1.png';
 import avatar2 from '../../../assets/testimonials/cartoon_female_1.png';
@@ -291,7 +290,6 @@ const CareersPage = () => {
 
   return (
     <div className="cp-careers-container">
-      <TopNavBar />
       <TwoLineNavbar />
       {/* Progress Scroll Indicator */}
       <div className="cp-scroll-progress">
@@ -836,7 +834,7 @@ const CareersPage = () => {
           </form>
         </div>
       </section>
-      <MainPageSubFooter />
+      <WhiteFooter />
     </div>
   );
 };

@@ -43,7 +43,7 @@ import './MainCoursesPage.css';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import NavigationBar from '../../TechLearningSection/NavigationBar/NavigationBar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
-import TLSPFFooter from '../TechLearningSubPageFooter/TLSPFFooter';
+import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 
 import boyImg from '../../../assets/boy.jpg';
 import girlImg from '../../../assets/girl (2).jpg';
@@ -780,7 +780,7 @@ const MainCoursesPage = () => {
                     </div>
                 </div>
             </section>
-            <TLSPFFooter />
+            <WhiteFooter />
             <BackToTop />
         </div>
     );

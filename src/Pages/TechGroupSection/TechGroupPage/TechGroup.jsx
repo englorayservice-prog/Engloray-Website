@@ -6,20 +6,20 @@ import PortfolioSection from '../PortfolioSection/PortfolioSection';
 import TestimonialsSection from '../TestimonailsSection/TestimonialsSection';
 import InternshipProgram from '../InternshipProgram/InternshipProgram';
 import BenefitsFooter from '../BenfitsFooter/BenifitsFooter';
-import Navbar from '../../../Components/Navbar/Navbar';
+import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
+import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 
 import './TechGroup.css';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import AboutSection from '../AboutSection/About';
-import FooterOne from '../../Sub Pages/footerOne/FooterOne';
 
 const TechGroup = () => {
   return (
     <div className="tech-group-page">
 
       <TopNavBar />
-      <Navbar />
+      <TwoLineNavbar excludeItems={['works']} />
       <HeroSection />
       <ServicesSection />
       <ProductsSection />
@@ -28,10 +28,11 @@ const TechGroup = () => {
       <TestimonialsSection />
       <InternshipProgram />
       {/* <BenefitsFooter /> */}
-      <FooterOne />
+      <WhiteFooter />
       <BackToTop />
     </div>
   );
 };
+
 
 export default TechGroup;

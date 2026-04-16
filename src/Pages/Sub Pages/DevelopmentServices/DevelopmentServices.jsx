@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
-import Navbar from '../../../Components/Navbar/Navbar';
-import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
+import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
+import TopNavBar from '../../../Components/TopNavbar/TopNavBar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import './DevService.css';
-import TSPFFooter from '../TechGroupSubPagefooter/TSPFFooter';
+import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 
 import logoDesignImg from '../../../assets/services/logo_design.png';
 import colorPaletteImg from '../../../assets/services/color_palette.png';
@@ -265,7 +265,7 @@ const DevelopmentServices = () => {
     return (
         <div className="dev-page-page">
             <TopNavBar />
-            <Navbar />
+            <TwoLineNavbar />
             {/* Hero Section Rebuild */}
             <section className="dev-page-hero-section-new">
                 <div className="dev-page-hero-container-new">
@@ -913,7 +913,7 @@ const DevelopmentServices = () => {
                     </div>
                 </div>
             </section>
-            <TSPFFooter />
+            <WhiteFooter />
             <BackToTop />
         </div>
     );

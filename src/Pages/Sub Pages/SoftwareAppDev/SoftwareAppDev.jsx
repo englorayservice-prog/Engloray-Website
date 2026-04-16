@@ -1,10 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
-import Navbar from '../../../Components/Navbar/Navbar';
-import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
+import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
+import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import './SoftwareAppDev.css';
-import TSPFFooter from '../TechGroupSubPagefooter/TSPFFooter';
-import NewFooter1 from '../../Sub Pages/subFooterOne/NewFooter1';
 import { Helmet } from 'react-helmet';
 
 import iphone14Img from '../../../assets/Iphone14.png';
@@ -164,8 +162,7 @@ const SoftwareAppDev = () => {
                 <meta property="og:title" content="Software & App Development | Engloray" />
             </Helmet>
 
-            <TopNavBar />
-            <Navbar />
+            <TwoLineNavbar />
 
             {/* Hero Section */}
             <section className="sad-hero-section-new">
@@ -587,8 +584,7 @@ const SoftwareAppDev = () => {
             {/* Internship Programs */}
 
 
-            {/* <TSPFFooter /> */}
-            <NewFooter1 />
+            <WhiteFooter />
             <BackToTop />
         </div>
     );

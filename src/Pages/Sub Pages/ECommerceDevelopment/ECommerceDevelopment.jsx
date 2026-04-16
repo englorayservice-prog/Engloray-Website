@@ -1,10 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
-import Navbar from '../../../Components/Navbar/Navbar';
-import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
+import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import './ECommerce.css';
-import TSPFFooter from '../TechGroupSubPagefooter/TSPFFooter';
-import NewFooter1 from '../../Sub Pages/subFooterOne/NewFooter1';
+import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 
 
 import logoDesignImg from '../../../assets/services/logo_design.png';
@@ -261,8 +259,7 @@ const ECommerceDevelopment = () => {
 
     return (
         <div className="eco-page-page">
-            <TopNavBar />
-            <Navbar />
+            <TwoLineNavbar />
             {/* Hero Section Rebuild */}
             <section className="eco-page-hero-section-new">
                 <div className="eco-page-hero-container-new">
@@ -904,7 +901,7 @@ const ECommerceDevelopment = () => {
                 </div>
             </section>
             {/* <TSPFFooter /> */}
-                        <NewFooter1 />
+                        <WhiteFooter />
 
             <BackToTop />
         </div>

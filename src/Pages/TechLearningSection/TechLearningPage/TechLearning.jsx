@@ -10,7 +10,7 @@ import LearningExperience from '../LearningExperience/LearningExperience';
 import StudentTestimonials from '../StudentTestimonials/StudentTestimonials';
 import LearningFeatures from '../LearningFeatures/LearningFeatures';
 import TechCta from '../TechCta/TechCta';
-import LearningFooter from '../LearningFooter/LearningFooter';
+import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 
 const TechLearning = () => {
@@ -24,11 +24,12 @@ const TechLearning = () => {
             <StudentTestimonials />
             <LearningFeatures />
             <TechCta />
-            <LearningFooter />
+            <WhiteFooter />
             <BackToTop />
         </div>
     );
 };
+
 
 
 export default TechLearning;

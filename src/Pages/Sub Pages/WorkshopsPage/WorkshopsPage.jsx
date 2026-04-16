@@ -34,7 +34,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 import './WorkshopsPage.css';
-import MainPageSubFooter from '../MainPageSubFooter/MainPageSubFooter';
+import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 
 // Import staff specialty images
 import graphicDesignImg from '../../../assets/graphic_design.png';
@@ -1087,7 +1087,7 @@ const WorkshopsPage = () => {
                     </div>
                 </section>
             </main>
-            <MainPageSubFooter />
+            <WhiteFooter />
             <BackToTop />
         </div>
     );

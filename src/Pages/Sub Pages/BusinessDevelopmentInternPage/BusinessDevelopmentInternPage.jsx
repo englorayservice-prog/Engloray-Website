@@ -95,8 +95,8 @@ import pathOne from '../../../assets/resources file/resources file/TECH/GRAPHICS
 import pathTwo from '../../../assets/resources file/resources file/TECH/GRAPHICS DESIGNERS/Graphic Designer Benefits.pdf';
 import pathFive from '../../../assets/resources file/resources file/TECH/GRAPHICS DESIGNERS/Learning, Skill Development & Growth.pdf';
 import pathSix from '../../../assets/resources file/resources file/TECH/GRAPHICS DESIGNERS/Productivity, AI & Workflow Support.pdf';
-import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
-import Navbar from '../../../Components/Navbar/Navbar';
+import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
+import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import { Helmet } from 'react-helmet';
@@ -742,8 +742,7 @@ const BusinessDevelopmentInternPage = () => {
             )}
 
             <div className="BDM-content" ref={containerRef}>
-                    <TopNavBar />
-                    <Navbar />
+                    <TwoLineNavbar />
                 
                 
 
@@ -1845,6 +1844,7 @@ const BusinessDevelopmentInternPage = () => {
             </div> */}
                     </div>
                 </section>
+                <WhiteFooter />
                 <BackToTop />
             </div>
         </>

@@ -31,9 +31,8 @@ import {
     faChevronRight
 } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'motion/react';
-import TopNavbar from '../../../Components/TopNavbar/TopNavbar';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
-import Footer from '../../../Components/Footer/Footer';
+import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 import '../CrmPage/CrmPage.css';
 import './ErpPage.css';
 import imgErpAi from '../../../assets/images/erp_ai_analysis.png';
@@ -110,7 +109,6 @@ const ErpPage = () => {
 
     return (
         <>
-            <TopNavbar />
             <TwoLineNavbar />
             <div className="crm-subpage-container erp-theme">
 
@@ -522,7 +520,7 @@ const ErpPage = () => {
                 </section>
 
             </div>
-            <Footer />
+            <WhiteFooter />
         </>
     );
 };

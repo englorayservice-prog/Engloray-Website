@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
-import Navbar from '../../../Components/Navbar/Navbar';
+import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import './WebsiteDev.css';
 import TSPFFooter from '../TechGroupSubPagefooter/TSPFFooter';
-import NewFooter1 from '../../Sub Pages/subFooterOne/NewFooter1';
+import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 
 
 import logoDesignImg from '../../../assets/services/logo_design.png';
@@ -273,7 +273,7 @@ const WebsiteDevelopment = () => {
     return (
         <div className="web-page-page">
             <TopNavBar />
-            <Navbar />
+            <TwoLineNavbar />
             {/* Hero Section */}
             <section className="web-page-hero-section-new">
                 <div className="web-page-hero-container-new">
@@ -904,7 +904,7 @@ const WebsiteDevelopment = () => {
                 </div>
             </section>
             {/* <TSPFFooter /> */}
-            <NewFooter1 />
+            <WhiteFooter />
             <BackToTop />
         </div>
     );

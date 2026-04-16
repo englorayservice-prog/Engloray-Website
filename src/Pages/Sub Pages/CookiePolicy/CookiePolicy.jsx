@@ -1,4 +1,6 @@
 import React from 'react';
+import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
+import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 import './CookiePolicy.css';
 
 const CookiePolicy = () => {
@@ -62,6 +64,7 @@ const cookieSections = [
 
   return (
     <div className="copa-cookies-container">
+      <TwoLineNavbar />
       {/* Header Section */}
       <header className="copa-cookies-header-section">
         <div className="copa-cookies-header">
@@ -114,28 +117,7 @@ const cookieSections = [
         </div>
       </main>
       
-      {/* Footer Section */}
-      <footer className="copa-cookies-footer-section">
-        <div className="copa-cookies-footer">
-          <div className="copa-footer-content">
-            <div className="copa-footer-left">
-              <p className="copa-copyright">Engloray © 2025</p>
-            </div>
-            <div className="copa-footer-right">
-              <nav className="copa-footer-nav">
-                <a href="/privacyPolicyPage" className="copa-footer-link">Privacy</a>
-                <a href="/termsAndServicesPage" className="copa-footer-link">Terms of Use</a>
-                <a href="/" className="copa-footer-link active">Cookies Policy</a>
-              </nav>
-            </div>
-          </div>
-          <div className="copa-footer-bottom">
-            <div className="copa-footer-branding">
-              <p className="copa-company-logo">Engloray.com</p>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <WhiteFooter />
     </div>
   );
 };

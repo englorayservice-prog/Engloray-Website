@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
-import Navbar from '../../../Components/Navbar/Navbar';
-import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
+import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
+import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import './ErpSolutions.css';
-import TSPFFooter from '../TechGroupSubPagefooter/TSPFFooter';
 import { Helmet } from 'react-helmet';
 
 import iphone14Img from '../../../assets/Iphone14.png';
@@ -148,8 +147,7 @@ const ErpSolutions = () => {
                 <meta property="og:title" content="ERP & CRM Solutions | Engloray" />
             </Helmet>
 
-            <TopNavBar />
-            <Navbar />
+            <TwoLineNavbar />
 
             {/* Hero Section */}
             <section className="erp-hero-section-new">
@@ -598,7 +596,7 @@ const ErpSolutions = () => {
             {/* Internship Programs */}
 
 
-            <TSPFFooter />
+            <WhiteFooter />
             <BackToTop />
         </div>
     );

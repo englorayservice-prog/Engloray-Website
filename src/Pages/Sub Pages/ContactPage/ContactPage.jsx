@@ -16,8 +16,8 @@ import {
     faPaperPlane,
     faCircleCheck,
 } from '@fortawesome/free-solid-svg-icons';
-import RayMartNavbar from '../../../Components/RayMartNavbar/RayMartNavbar';
-import LearningFooter from '../../TechLearningSection/LearningFooter/LearningFooter';
+import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
+import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 //import heroBg from '../../../assets/contact_hero_bg.png';
 import './ContactPage.css';
 
@@ -58,7 +58,7 @@ const ContactPage = () => {
 
     return (
         <>
-            <RayMartNavbar />
+            <TwoLineNavbar />
             <Helmet>
                 <title>Contact Us | Engloray Learning</title>
                 <meta
@@ -307,63 +307,7 @@ const ContactPage = () => {
                 {/* ════════════════════════════════
             CUSTOM DARK FOOTER
         ════════════════════════════════ */}
-                <div className="sc-dark-footer-wrapper">
-                    <div className="sc-dark-footer">
-                        <div className="sc-df-top">
-                            <div className="sc-df-left">
-                                <div className="sc-df-logo-icon">
-                                    <img src={Logo} alt="Engloray Logo" style={{ maxWidth: '180px', height: 'auto' }} />
-                                </div>
-                                <h2 className="sc-df-title">
-                                    <span className="line">
-                                        <span className="sc-df-text-blue">Transform your </span>
-                                        <span className="sc-df-text-red">career!</span>
-                                    </span>
-
-                                    <span className="line">
-                                        <span className="sc-df-text-blue">Join </span>
-                                        <span className="sc-df-text-red">Engloray Learning</span>
-                                    </span>
-                                </h2>
-                            </div>
-
-                            <div className="sc-df-right">
-                                <div className="sc-df-col">
-                                    <h4>SERVICES</h4>
-                                    <a href="/brandingPage">Branding & Design</a>
-                                    <a href="/developmentPage">Web Development</a>
-                                    <a href="/marketingPage">Digital Marketing</a>
-                                    <a href="/UiUxPage">UI/UX Design</a>
-                                </div>
-                                <div className="sc-df-col">
-                                    <h4>COMPANY</h4>
-                                    <a href="/">About Us</a>
-                                    <a href="/allProjectsPage">Works</a>
-                                    <a href="/CareersPage">Careers</a>
-                                    <a href="/studentContactPage" className="sc-df-active-link">Contact</a>
-                                </div>
-                                <div className="sc-df-col">
-                                    <h4>PRODUCTS</h4>
-                                    <a href="/CrmPage">CRM</a>
-                                    <a href="/ErpPage">ERP</a>
-                                    <a href="/AiChatbotPage">AiChatbot</a>
-                                    <a href="/JobSeekerPage">Job Seeker</a>
-                                    <a href="/LearningAndCareerPage">Learning & Career</a>
-
-                                </div>
-                            </div>
-
-
-                            {/* The arch cutout causing the "feet" */}
-                            <div className="sc-df-cutout"></div>
-                        </div>
-
-                        <div className="sc-df-bottom-text">
-                            <span>Release 2024. All rights reserved.</span>
-                            <span>Terms and Conditions | Privacy policy</span>
-                        </div>
-                    </div>
-                </div>
+                <WhiteFooter />
             </div>
         </>
     );

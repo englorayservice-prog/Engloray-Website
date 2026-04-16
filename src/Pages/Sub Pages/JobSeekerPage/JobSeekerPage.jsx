@@ -4,7 +4,7 @@ import { faBriefcase, faSearch, faChartPie, faArrowRight, faHeadset, faChartLine
 import { motion } from 'motion/react';
 import TopNavbar from '../../../Components/TopNavbar/TopNavbar';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
-import Footer from '../../../Components/Footer/Footer';
+import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 import '../CrmPage/CrmPage.css';
 import './JobSeekerPage.css';
 import imgAi from '../../../assets/images/ai_follow_ups.png';
@@ -586,7 +586,7 @@ const JobSeekerPage = () => {
                     </div>
                 </section>
             </div>
-            <Footer />
+            <WhiteFooter />
         </>
     );
 };

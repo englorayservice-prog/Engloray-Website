@@ -29,9 +29,8 @@ import {
     faChevronRight
 } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'motion/react';
-import TopNavbar from '../../../Components/TopNavbar/TopNavbar';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
-import Footer from '../../../Components/Footer/Footer';
+import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 import './CrmPage.css';
 import crmHeroImage from '../../../assets/images/crmbg.png';
 import imgAi from '../../../assets/images/ai_follow_ups.png';
@@ -144,7 +143,6 @@ const CrmPage = () => {
 
     return (
         <>
-            <TopNavbar />
             <TwoLineNavbar />
 
             <div className="crm-subpage-container">
@@ -702,7 +700,7 @@ const CrmPage = () => {
                 </section >
 
             </div >
-            <Footer />
+            <WhiteFooter />
         </>
     );
 };

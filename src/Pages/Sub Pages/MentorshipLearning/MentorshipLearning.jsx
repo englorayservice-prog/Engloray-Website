@@ -54,7 +54,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import NavigationBar from '../../TechLearningSection/NavigationBar/NavigationBar';
-import TLSPFFooter from '../TechLearningSubPageFooter/TLSPFFooter';
+import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import { Helmet } from 'react-helmet';
 import studentPurpleBG from '../../../assets/images/student_purple_bg.png';
@@ -955,7 +955,7 @@ const MentorshipLearning = () => {
               </div>
             </section>
           </main>
-          <TLSPFFooter />
+          <WhiteFooter />
           <BackToTop />
         </div>
       </div>

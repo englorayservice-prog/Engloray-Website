@@ -47,7 +47,7 @@ import './OurTeamPage.css';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
-import MainPageSubFooter from '../MainPageSubFooter/MainPageSubFooter';
+import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 
 const OurTeamPage = () => {
     // const [projectIndex, setProjectIndex] = useState(0);
@@ -806,7 +806,7 @@ const OurTeamPage = () => {
                     </div>
                 </section>
             </main >
-            <MainPageSubFooter />
+            <WhiteFooter />
             <BackToTop />
         </div >
     );

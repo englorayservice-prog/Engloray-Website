@@ -49,8 +49,7 @@ import {
 import { faWhatsapp as faWhatsappBrand } from '@fortawesome/free-brands-svg-icons';
 import './CorporateTraining.css';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
-import MainPageSubFooter from '../MainPageSubFooter/MainPageSubFooter';
-import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
+import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
 import { Helmet } from 'react-helmet';
 import threeMenCorporateHero from '../../../assets/three_men_corporate_hero.png';
@@ -991,7 +990,7 @@ const CorporateTraining = () => {
               </div>
             </section>
           </main>
-          <MainPageSubFooter />
+          <WhiteFooter />
           <BackToTop />
         </div>
       </div>
