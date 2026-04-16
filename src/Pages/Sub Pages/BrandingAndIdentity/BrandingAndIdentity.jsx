@@ -22,6 +22,8 @@ import avatarFive from '../../../assets/cartoon_male_2.png';
 import avatarSix from '../../../assets/cartoon_female_3.png';
 import avatarSeven from '../../../assets/cartoon_male_3.png';
 import avatarEight from '../../../assets/female_avatar.png';
+// import subFooterOne from '../subFooterOne/NewFooter1';
+import NewFooter1 from '../../Sub Pages/subFooterOne/NewFooter1';
 
 // Removed missing premium_avatar local imports
 const BrandingAndIdentity = () => {
@@ -958,7 +960,8 @@ const BrandingAndIdentity = () => {
                     </div>
                 </div>
             </section>
-            <TSPFFooter />
+            {/* <TSPFFooter /> */}
+            <NewFooter1 />
             <BackToTop />
         </div>
     );

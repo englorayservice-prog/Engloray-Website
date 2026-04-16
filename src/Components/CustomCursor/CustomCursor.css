@@ -1,0 +1,51 @@
+/* Hide the native cursor everywhere */
+* {
+  cursor: none !important;
+}
+
+/* Cursor wrapper */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999999; /* Extremely high to stay on top of everything */
+  will-change: transform;
+  /* Adjust offset based on the tip of the generated arrow image */
+  margin-left: -5px;
+  margin-top: -5px;
+  transition: opacity 0.3s ease;
+}
+
+/* The cursor image */
+.custom-cursor-img {
+  width: 48px;
+  height: 48px;
+  display: block;
+  object-fit: contain;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.2));
+}
+
+/* Hover state: Scaling and glowing effect */
+.custom-cursor.hover .custom-cursor-img {
+  transform: scale(1.3);
+  filter: 
+    drop-shadow(0 0 10px rgba(255, 30, 30, 0.5))
+    drop-shadow(2px 6px 12px rgba(0, 0, 0, 0.3));
+}
+
+/* Click state effect (optional but nice) */
+.custom-cursor:active .custom-cursor-img {
+  transform: scale(1.1);
+}
+
+/* Disable on touch devices to restore system cursor */
+@media (pointer: coarse) {
+  * {
+    cursor: auto !important;
+  }
+  .custom-cursor {
+    display: none !important;
+  }
+}

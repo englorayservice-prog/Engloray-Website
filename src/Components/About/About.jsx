@@ -30,6 +30,7 @@ import './About.css';
 // import aboutVideo from '../../assets/OurCoreValuebg.mp4';
 import aboutVideo from '../../assets/anthem.mp4';
 import anthemThumbnail from '../../assets/anthemThumbnail.png';
+import EngImage from '../../assets/EngIamge.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -173,7 +174,7 @@ const About = () => {
                                 <div className="card-video-precise" onClick={(e) => handleAction(e, () => setIsVideoOpen(true))}>
                                     <div className="cv-left-side">
                                         <div className="cv-time-pill">
-                                            <FontAwesomeIcon icon={faClock} /> <span>4m 36s</span>
+                                            <FontAwesomeIcon icon={faClock} /> <span>3m 04s</span>
                                         </div>
                                         <div className="cv-text-box">
                                             <h4>Watch Anthem</h4>
@@ -213,7 +214,7 @@ const About = () => {
                         </div>
 
                         <div className="grid-right-side">
-                            <div className="visual-hero-card" style={{ backgroundImage: `url(${anthemThumbnail})` }}>
+                            <div className="visual-hero-card" style={{ backgroundImage: `url(${EngImage})` }}>
                                 <div className="visual-glass-footer">
                                     <div className="glass-content-left">
                                         <h3 className="join-text">Join Our<br />Platform</h3>

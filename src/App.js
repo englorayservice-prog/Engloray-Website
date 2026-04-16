@@ -17,6 +17,7 @@ import TopNavBar from './Components/TopNavbar/TopNavbar';
 import TechLearning from './Pages/TechLearningSection/TechLearningPage/TechLearning';
 import BackToTopArrow from './Components/BackToTop/BackToTop';
 import CustomScrollbar from './Components/CustomScrollbar/CustomScrollbar';
+import CustomCursor from './Components/CustomCursor/CustomCursor';
 import BrandingDesigning from './Pages/Sub Pages/TechBrandingAndDesigning/BrandingAndDesigning';
 import AppWebDev from './Pages/Sub Pages/WebAndAppDevelopment/AppWebDev';
 import UiUxPage from './Pages/Sub Pages/UiUxPage/UiUxPage';
@@ -85,6 +86,8 @@ import StatsAndBenefits from './Pages/Sub Pages/StatsAndBenefits/StatsAndBenefit
 import BusinessSuiteAI from './Pages/Sub Pages/BusinessSuiteAI/BusinessSuiteAI';
 import EnglorayShowcase from './Pages/Sub Pages/EnglorayShowcase/EnglorayShowcase';
 import RayMartNavbar from "./Components/RayMartNavbar/RayMartNavbar";
+import FooterOne from './Pages/Sub Pages/footerOne/FooterOne';
+import NewFooter1 from './Pages/Sub Pages/subFooterOne/NewFooter1';
 
 
 
@@ -94,6 +97,7 @@ function App() {
   return (
     <Router>
     <div className="App">
+      <CustomCursor />
       <CustomScrollbar />
       <Routes>
         <Route path='/' element={<HomePage />} />

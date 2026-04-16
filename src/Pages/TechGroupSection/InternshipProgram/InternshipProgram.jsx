@@ -7,6 +7,7 @@ import {
     faUserCheck,
     faCode,
     faArrowRight,
+    faArrowUp,
     faCheckCircle,
     faPaperclip,
     faChevronLeft,
@@ -20,7 +21,7 @@ import gsap from 'gsap';
 import './InternshipProgram.css';
 
 // Add icons to the library
-library.add(faPalette, faDesktop, faUserCheck, faCode, faArrowRight, faCheckCircle, faPaperclip, faChevronLeft, faChevronRight, faChartLine, faBriefcase, faChalkboardTeacher);
+library.add(faPalette, faDesktop, faUserCheck, faCode, faArrowRight, faArrowUp, faCheckCircle, faPaperclip, faChevronLeft, faChevronRight, faChartLine, faBriefcase, faChalkboardTeacher);
 
 const InternshipProgram = () => {
     const navigate = useNavigate();
@@ -290,7 +291,7 @@ const InternshipProgram = () => {
             <div className="tgi-floating-arrow" onClick={handleArrowClick}>
                 <div className="tgi-arrow-symbol">
                     <FontAwesomeIcon
-                        icon={faArrowRight}
+                        icon={faArrowUp}
                         style={{
                             color: '#fe0000fe',
                             fontSize: '1.5rem'

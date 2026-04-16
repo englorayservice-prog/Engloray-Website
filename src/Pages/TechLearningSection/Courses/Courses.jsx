@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import MernImg from '../../../assets/Mern Developer.jfif'
 import MernStack from '../../../assets/MernStack.jfif'
@@ -25,11 +25,60 @@ import {
   faCloud
 } from '@fortawesome/free-solid-svg-icons';
 import './Courses.css';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 
 const Courses = () => {
   const navigate = useNavigate();
   const [activeCategory, setActiveCategory] = useState('Graphic Design');
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Selectors for all text/content blocks to animate
+      const animTargets = [
+        '.goals-title',
+        '.goal-card',
+        '.lh-hero-title',
+        '.lh-hero-subtitle',
+        '.lh-cta-btn',
+        '.lh-card',
+        '.lh-card-column',
+        '.popular-badge',
+        '.courses-main-title',
+        '.category-item',
+        '.course-card',
+        '.view-all-container',
+        '.cs-main-heading',
+        '.cs-description',
+        '.cs-step-card',
+        '.cs-action-container',
+      ];
+
+      animTargets.forEach((selector) => {
+        gsap.set(selector, { y: 60, opacity: 0 });
+
+        gsap.to(selector, {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          stagger: 0.1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: selector,
+            start: 'top 90%',
+            end: 'top 40%',
+            toggleActions: 'restart none restart reset',
+          },
+        });
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
 
   const categories = [
     { id: 1, name: 'Graphic Design', icon: faPenNib, count: 25, route: "/graphicsDesignCoursePage" },
@@ -524,7 +573,7 @@ const Courses = () => {
 
 
   return (
-    <section className="popular-courses-section" id="courses">
+    <section className="popular-courses-section" id="courses" ref={sectionRef}>
       <div className="courses-container">
         {/* Header Section */}
         <div className="courses-header">

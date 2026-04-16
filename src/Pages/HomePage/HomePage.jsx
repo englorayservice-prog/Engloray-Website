@@ -47,7 +47,7 @@ const HomePage = () => {
 
         const handleFirstInteraction = (e) => {
             if (!introActive) return;
-            
+
             // STRICTLY VALIDATE ONLY DELIBERATE DOWNWARD SCROLLING MECHANISMS
             if (e.type === 'wheel') {
                 if (e.deltaY <= 15) return; // Ignore slight trackpad bumps
@@ -109,10 +109,10 @@ const HomePage = () => {
 
     return (
         <div className="homepage-master" style={containerStyle}>
-            
+
             {/* THIS OVERLAY IS ONLY RENDERED ON PAGE LOAD, DIES AFTER FIRST SCROLL */}
             {introActive && (
-                <motion.div 
+                <motion.div
                     className="homepage-intro-overlay"
                     initial={{ scale: 1, opacity: 1 }}
                     animate={controls}
@@ -130,7 +130,7 @@ const HomePage = () => {
 
                             <pattern id="spaceStars" width="100%" height="100%">
                                 <rect width="100%" height="100%" fill="#030816" />
-                                
+
                                 {/* Small center yellow particle with soft shadow glow */}
                                 <circle cx="50%" cy="55%" r="4vw" fill="url(#sunGlow)" opacity="0.6" />
                                 <circle cx="50%" cy="55%" r="0.4vw" fill="#fff9c4" opacity="0.8" />
@@ -149,7 +149,7 @@ const HomePage = () => {
                             </mask>
                         </defs>
                         <rect width="100%" height="100%" fill="url(#spaceStars)" mask="url(#textMask)" />
-                        
+
                         {/* SLEEK VISIBLE BORDERS TRACING THE CUTOUTS */}
                         <text x="50%" y="48%" textAnchor="middle" fill="none" stroke="rgba(255, 255, 255, 0.35)" strokeWidth="0.2vw" style={{ fontFamily: "'Bungee', cursive", fontWeight: 900 }}>
                             <tspan x="50%" dy="0" fontSize="12vw" letterSpacing="2px">WE ARE</tspan>
@@ -172,7 +172,7 @@ const HomePage = () => {
             <CoreServices />
             <Testimonials />
             <MarqueeBrands />
-            <Footer />
+            <Footer/>
             <BackToTopArrow />
         </div>
     );

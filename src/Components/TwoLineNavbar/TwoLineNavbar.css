@@ -715,8 +715,10 @@
 /* Tablet Styles - Hide second line and show mobile menu */
 @media (max-width: 768px) {
     .tlnbn-navbar-main-container {
-        top: 60px !important; /* Match TopNavbar height at 768px */
+        top: 60px !important;
+        /* Match TopNavbar height at 768px */
     }
+
     .tlnbn-desktop-menu {
         display: none;
     }
@@ -787,6 +789,7 @@
     .tlnbn-navbar-main-container {
         top: 60px !important;
     }
+
     .tlnbn-navbar-spacer {
         height: 70px !important;
     }
