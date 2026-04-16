@@ -392,21 +392,26 @@ body .engloray-about-wrapper {
     gap: 8px;
 }
 
+.cv-text-box {
+    text-align: left;
+}
+
 .cv-text-box h4 {
     margin: 0;
-    font-size: 24px;
-    font-weight: 500;
-    line-height: 1;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.2;
     color: #000;
-    letter-spacing: -0.5px;
+    letter-spacing: -0.2px;
 }
 
 .cv-text-box p {
-    margin: 4px 0 0 0;
-    font-size: 14px;
+    margin: 6px 0 0 0;
+    font-size: 11px;
     color: #666;
     font-weight: 400;
     text-transform: capitalize;
+    line-height: 1.4;
 }
 
 .cv-right-side {

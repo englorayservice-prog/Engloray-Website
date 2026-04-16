@@ -13,8 +13,7 @@ const Tagline = () => {
         <motion.div 
           className="tagline-container"
           initial={{ opacity: 0, y: 60, scale: 0.98 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          viewport={{ once: true, amount: 0.05 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 2.2, ease: [0.16, 1, 0.3, 1] }} // smooth cinematic ease
         >
           <h3 className="tagline-subtitle">BUILD BETTER BUSINESS</h3>

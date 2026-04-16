@@ -46,193 +46,75 @@ const SearchBar = ({ mobile = false }) => {
 
     // Comprehensive website content with proper page paths and section IDs
     const websiteContent = [
-        // Home Page Sections
-        { 
-            id: 'home', 
-            title: 'Home', 
-            content: 'Welcome to ENGLORAY - Digital solutions and education.',
-            keywords: ['home', 'welcome', 'engloray'],
-            path: '/',
-            type: 'page',
-            section: 'home',
-            page: 'home'
-        },
-        { 
-            id: 'services-home', 
-            title: 'Our Services', 
-            content: 'Comprehensive digital services including web development, mobile apps, UI/UX design, and branding.',
-            keywords: ['services', 'web development', 'mobile apps', 'design'],
-            path: '/',
-            type: 'section',
-            section: 'serviceSection',
-            page: 'home'
-        },
+        // Home Page
+        { id: 'home', title: 'Home', content: 'Digital solutions and education excellence.', keywords: ['home', 'engloray', 'main'], path: '/', type: 'page', section: 'home' },
         
-        // Services Pages with specific sections
-        { 
-            id: 'branding-service', 
-            title: 'Branding & Identity Design', 
-            content: 'Create memorable brands that resonate with your audience.',
-            keywords: ['branding', 'logo', 'identity', 'design', 'brand'],
-            path: '/brandingIdentityPage',
-            type: 'service',
-            section: 'branding-main', // Specific section on the page
-            page: 'branding'
-        },
-        { 
-            id: 'uiux-service', 
-            title: 'Website & UI/UX Design', 
-            content: 'User-centered designs that provide seamless experiences.',
-            keywords: ['ui/ux', 'website', 'design', 'user interface', 'user experience'],
-            path: '/uiuxDesignPage',
-            type: 'service',
-            section: 'uiux-main', // Specific section on the page
-            page: 'uiux'
-        },
-        { 
-            id: 'software-service', 
-            title: 'Software & App Development', 
-            content: 'Build scalable and efficient software solutions.',
-            keywords: ['software', 'app', 'development', 'mobile', 'web'],
-            path: '/softwareDevelopmentPage',
-            type: 'service',
-            section: 'software-main', // Specific section on the page
-            page: 'software'
-        },
-        { 
-            id: 'erp-service', 
-            title: 'ERP & CRM Solutions', 
-            content: 'Streamline your business operations with integrated systems.',
-            keywords: ['erp', 'crm', 'solutions', 'business', 'operations'],
-            path: '/erpSolutionsPage',
-            type: 'service',
-            section: 'erp-main', // Specific section on the page
-            page: 'erp'
-        },
-        { 
-            id: 'marketing-service', 
-            title: 'Digital Marketing', 
-            content: 'Data-driven marketing strategies to boost your online presence.',
-            keywords: ['digital marketing', 'seo', 'social media', 'marketing'],
-            path: '/digitalMarketingServicePage',
-            type: 'service',
-            section: 'marketing-main', // Specific section on the page
-            page: 'marketing'
-        },
+        // Services Pages
+        { id: 'branding', title: 'Branding & Designing', content: 'Professional branding and creative design services.', keywords: ['branding', 'design', 'creative', 'identity'], path: '/brandingPage', type: 'service', section: 'main' },
+        { id: 'development', title: 'App & Web Development', content: 'Custom software, web, and mobile app development.', keywords: ['web', 'app', 'development', 'software', 'coding'], path: '/developmentPage', type: 'service', section: 'main' },
+        { id: 'marketing', title: 'Digital Marketing', content: 'Results-driven digital marketing and SEO strategies.', keywords: ['marketing', 'seo', 'social media', 'ads', 'digital'], path: '/marketingPage', type: 'service', section: 'main' },
+        { id: 'uiux', title: 'UI/UX Design', content: 'User-centered design for seamless digital experiences.', keywords: ['ui', 'ux', 'design', 'interface', 'user experience'], path: '/UiUxPage', type: 'service', section: 'main' },
+        { id: 'mobileApps', title: 'Mobile Applications', content: 'High-performance mobile apps for iOS and Android.', keywords: ['mobile', 'apps', 'android', 'ios', 'applications'], path: '/mobileApplicationsPage', type: 'service', section: 'main' },
+        { id: 'saas', title: 'SaaS Development', content: 'Scalable Software as a Service solutions.', keywords: ['saas', 'cloud', 'software', 'business'], path: '/saasPage', type: 'service', section: 'main' },
         
-        // Course Pages with specific sections
-        { 
-            id: 'graphics-course', 
-            title: 'Graphics Design Course', 
-            content: 'Learn professional graphics design, logo creation, and brand identity development.',
-            keywords: ['graphics course', 'design course', 'logo design'],
-            path: '/graphicsDesignCoursePage',
-            type: 'course',
-            section: 'course-hero', // Main section of course page
-            page: 'graphics-course'
-        },
-        { 
-            id: 'uiux-course', 
-            title: 'UI/UX Design Mastery', 
-            content: 'Master User Interface and Experience design.',
-            keywords: ['ui/ux course', 'figma', 'design system'],
-            path: '/uiuxDesignCoursePage',
-            type: 'course',
-            section: 'course-hero',
-            page: 'uiux-course'
-        },
-        { 
-            id: 'fullstack-course', 
-            title: 'Full Stack Development', 
-            content: 'Complete web development course.',
-            keywords: ['fullstack', 'development', 'java'],
-            path: '/javaFullStackCourseCoursePage',
-            type: 'course',
-            section: 'course-hero',
-            page: 'fullstack-course'
-        },
-        { 
-            id: 'courses', 
-            title: 'Courses Home Page', 
-            content: 'Learn Courses for creative Contents.',
-            keywords: ['learning', 'course', 'courses'],
-            path: '/allCoursesPage',
-            type: 'course',
-            section: 'course-hero',
-            page: 'all courses page'
-        },
-        { 
-            id: 'marketing-course', 
-            title: 'Digital Marketing Course', 
-            content: 'Master digital marketing strategies.',
-            keywords: ['marketing course', 'digital marketing', 'seo'],
-            path: '/digitalMarketingServicePage',
-            type: 'course',
-            section: 'course-hero',
-            page: 'marketing-course'
-        },
-        { 
-            id: 'web-dev-course', 
-            title: 'Website Development Course', 
-            content: 'Professional website development training.',
-            keywords: ['website course', 'web development'],
-            path: '/websiteDeveloperInternPage',
-            type: 'course',
-            section: 'course-hero',
-            page: 'webdev-course'
-        },
-        
-        // Other Pages
-        { 
-            id: 'about', 
-            title: 'About Us', 
-            content: 'Learn about our company, mission, and values.',
-            keywords: ['about', 'company', 'mission'],
-            path: '/about',
-            type: 'page',
-            section: 'about-hero',
-            page: 'about'
-        },
-        { 
-            id: 'portfolio', 
-            title: 'Portfolio', 
-            content: 'View our completed projects.',
-            keywords: ['portfolio', 'projects', 'work'],
-            path: '/worksCaseStudiesPage',
-            type: 'page',
-            section: 'portfolio-hero',
-            page: 'portfolio'
-        },
-        { 
-            id: 'projects', 
-            title: 'All Projects', 
-            content: 'Explore our technology projects.',
-            keywords: ['projects', 'tech', 'development'],
-            path: '/allProjectsPage',
-            type: 'page',
-            section: 'projects-main',
-            page: 'projects'
-        },
-        { 
-            id: 'contact', 
-            title: 'Contact Us', 
-            content: 'Get in touch with our team.',
-            keywords: ['contact', 'support', 'help'],
-            path: '/',
-            type: 'section',
-            section: 'benefits-cta-main-section',
-            page: 'home'
-        },
-        { 
-            id: 'internship', 
-            title: 'Internship', 
-            content: 'Join our internship program.',
-            keywords: ['internship', 'training', 'career'],
-            path: '/allProgramsPage',
-            type: 'section',
-            section: 'internship',
-            page: 'home'
-        }
+        // Specialized Services
+        { id: 'brandingIdentity', title: 'Branding & Identity', content: 'Unique brand identities and logo designs.', keywords: ['logo', 'identity', 'branding'], path: '/brandingIdentityPage', type: 'service', section: 'main' },
+        { id: 'uiuxDesign', title: 'UI/UX Design Services', content: 'Advanced UI/UX research and design.', keywords: ['research', 'uiux', 'design'], path: '/uiuxDesignPage', type: 'service', section: 'main' },
+        { id: 'softwareDev', title: 'Software Development', content: 'Custom software engineering and development.', keywords: ['software', 'engineering', 'dev'], path: '/softwareDevelopmentPage', type: 'service', section: 'main' },
+        { id: 'erpSolutions', title: 'ERP Solutions', content: 'Enterprise Resource Planning systems.', keywords: ['erp', 'enterprise', 'management'], path: '/erpSolutionsPage', type: 'service', section: 'main' },
+        { id: 'crmServices', title: 'CRM Services', content: 'Customer Relationship Management solutions.', keywords: ['crm', 'customer', 'sales'], path: '/crmServicesPage', type: 'service', section: 'main' },
+        { id: 'digitalMarketingService', title: 'Marketing Services', content: 'Extended digital marketing offerings.', keywords: ['marketing', 'social', 'seo'], path: '/digitalMarketingServicePage', type: 'service', section: 'main' },
+        { id: 'aiServices', title: 'AI Services', content: 'Artificial Intelligence and Machine Learning solutions.', keywords: ['ai', 'ml', 'intelligence', 'automation'], path: '/aiServicesPage', type: 'service', section: 'service', section: 'main' },
+        { id: 'dataAnalytics', title: 'Data Analytics', content: 'Data-driven insights for business growth.', keywords: ['data', 'analytics', 'bi', 'insights'], path: '/dataAnalyticsPage', type: 'service', section: 'main' },
+
+        // Courses & Learning
+        { id: 'allCourses', title: 'All Courses', content: 'Browse our complete catalog of professional courses.', keywords: ['learning', 'courses', 'education', 'classes'], path: '/allCoursesPage', type: 'course', section: 'main' },
+        { id: 'graphicsCourse', title: 'Graphics Design Course', content: 'Master professional graphic design tools and techniques.', keywords: ['graphics', 'course', 'photoshop', 'illustrator'], path: '/graphicsDesignCoursePage', type: 'course', section: 'main' },
+        { id: 'uiuxCourse', title: 'UI/UX Design Course', content: 'Comprehensive training in UI/UX design and prototyping.', keywords: ['uiux', 'figma', 'design', 'course'], path: '/uiuxDesignCoursePage', type: 'course', section: 'main' },
+        { id: 'javaFullStack', title: 'Java Full Stack Course', content: 'End-to-end web development with Java and modern frameworks.', keywords: ['java', 'fullstack', 'backend', 'web', 'course'], path: '/javaFullStackCourseCoursePage', type: 'course', section: 'main' },
+        { id: 'drawingCourse', title: 'Drawing Course', content: 'Artistic training and foundational drawing skills.', keywords: ['drawing', 'art', 'creative', 'course'], path: '/drawingCoursePage', type: 'course', section: 'main' },
+        { id: 'digitalMarketingCourse', title: 'Digital Marketing Course', content: 'Learn SEO, SEM, and social media marketing.', keywords: ['marketing', 'seo', 'course', 'digital'], path: '/digitalMarketingCoursePage', type: 'course', section: 'main' },
+        { id: 'mentorship', title: 'Mentorship Learning', content: 'One-on-one professional guidance and mentorship.', keywords: ['mentor', 'learning', 'guidance'], path: '/mentorshipLearningPage', type: 'course', section: 'main' },
+        { id: 'projectBased', title: 'Project Based Learning', content: 'Learn by building real-world projects.', keywords: ['projects', 'hands-on', 'learning'], path: '/projectBasedLearningPage', type: 'course', section: 'main' },
+        { id: 'workshops', title: 'Workshops', content: 'Intensive short-term professional workshops.', keywords: ['workshops', 'training', 'session'], path: '/workshopsPage', type: 'course', section: 'main' },
+
+        // Tech Group & Projects
+        { id: 'techGroup', title: 'Tech Group', content: 'Our innovation and technology collective.', keywords: ['tech', 'group', 'innovation'], path: '/tech-group', type: 'page', section: 'main' },
+        { id: 'allProjects', title: 'All Projects', content: 'Portfolio of our technology and creative projects.', keywords: ['projects', 'portfolio', 'work'], path: '/allProjectsPage', type: 'page', section: 'main' },
+        { id: 'caseStudies', title: 'Case Studies', content: 'Detailed analysis of our successful projects.', keywords: ['cases', 'studies', 'portfolio'], path: '/worksCaseStudiesPage', type: 'page', section: 'main' },
+        { id: 'clientProjects', title: 'Client Projects', content: 'Work delivered for our global clients.', keywords: ['clients', 'work', 'projects'], path: '/worksClientProjectsPage', type: 'page', section: 'main' },
+        { id: 'showcase', title: 'Engloray Showcase', content: 'Exhibition of our best work and innovations.', keywords: ['showcase', 'display', 'work'], path: '/showcase', type: 'page', section: 'main' },
+
+        // Internships
+        { id: 'allPrograms', title: 'Internship Programs', content: 'Professional internship opportunities in various domains.', keywords: ['internship', 'career', 'hiring', 'trainee'], path: '/allProgramsPage', type: 'internship', section: 'main' },
+        { id: 'graphicsIntern', title: 'Graphics Designer Internship', content: 'Junior roles for aspiring graphic designers.', keywords: ['graphics', 'intern', 'design'], path: '/GraphicDesignerInternPage', type: 'internship', section: 'main' },
+        { id: 'webDevIntern', title: 'Web Developer Internship', content: 'Practical training for future web developers.', keywords: ['web', 'dev', 'intern', 'coding'], path: '/websiteDeveloperInternPage', type: 'internship', section: 'main' },
+        { id: 'uiuxIntern', title: 'UI/UX Designer Internship', content: 'Internship roles in product design and UI/UX.', keywords: ['uiux', 'intern', 'design'], path: '/uiuxDesignerInternPage', type: 'internship', section: 'main' },
+        { id: 'softwareIntern', title: 'Software Developer Internship', content: 'Software engineering internship opportunities.', keywords: ['software', 'intern', 'dev'], path: '/SoftwareDeveloperInternPage', type: 'internship', section: 'main' },
+        { id: 'salesIntern', title: 'Sales Executive Internship', content: 'Career start in business and sales.', keywords: ['sales', 'intern', 'business'], path: '/salesExecutiveInternPage', type: 'internship', section: 'main' },
+        { id: 'businessDevIntern', title: 'Business Development Internship', content: 'Internal roles in business growth and strategy.', keywords: ['business', 'dev', 'intern', 'strategy'], path: '/businessDevelopmentInternPage', type: 'internship', section: 'main' },
+        { id: 'trainingMentorIntern', title: 'Training Mentor Internship', content: 'Educational roles for training and mentorship.', keywords: ['mentor', 'trainer', 'intern', 'education'], path: '/trainingMentorInternPage', type: 'internship', section: 'main' },
+
+        // Company
+        { id: 'ourStory', title: 'Our Story', content: 'The history and vision of Engloray.', keywords: ['story', 'about', 'history', 'vision'], path: '/ourStoryPage', type: 'page', section: 'main' },
+        { id: 'ourTeam', title: 'Our Team', content: 'Meet the professionals behind Engloray.', keywords: ['team', 'people', 'staff', 'experts'], path: '/ourTeamPage', type: 'page', section: 'main' },
+        { id: 'careers', title: 'Careers', content: 'Join our team and grow professionally.', keywords: ['jobs', 'careers', 'hiring', 'work'], path: '/CareersPage', type: 'page', section: 'main' },
+        { id: 'contact', title: 'Contact Us', content: 'Get in touch for inquiries and support.', keywords: ['contact', 'email', 'phone', 'reach'], path: '/contactPage', type: 'page', section: 'main' },
+        { id: 'corporateTraining', title: 'Corporate Training', content: 'Tailored training solutions for businesses.', keywords: ['corporate', 'training', 'business', 'upskill'], path: '/corporateTraining', type: 'service', section: 'main' },
+
+        // Products & Specialized Pages
+        { id: 'aiProduct', title: 'AI Products', content: 'Innovative AI-powered software products.', keywords: ['ai', 'products', 'software'], path: '/aiProductPage', type: 'page', section: 'main' },
+        { id: 'aiChatbot', title: 'AI Chatbott', content: 'Intelligent conversational AI solutions.', keywords: ['chatbot', 'ai', 'conversation'], path: '/aiChatbotPage', type: 'page', section: 'main' },
+        { id: 'businessSuite', title: 'Business Suite AI', content: 'Comprehensive AI tools for business management.', keywords: ['suite', 'ai', 'business'], path: '/businessSuiteAiPage', type: 'page', section: 'main' },
+        { id: 'crmPage', title: 'CRM Platform', content: 'Efficient customer relationship management tool.', keywords: ['crm', 'platform', 'tool'], path: '/crmPage', type: 'page', section: 'main' },
+        { id: 'erpPage', title: 'ERP Platform', content: 'Advanced enterprise resource planning tool.', keywords: ['erp', 'platform', 'tool'], path: '/erpPage', type: 'page', section: 'main' },
+        { id: 'raymart', title: 'Raymart', content: 'Our specialized e-commerce and retail solution.', keywords: ['raymart', 'retail', 'ecommerce'], path: '/raymartPage', type: 'page', section: 'main' },
+        { id: 'jobSeeker', title: 'Job Seeker Portal', content: 'Tools and resources for job hunting.', keywords: ['jobs', 'seeker', 'career'], path: '/jobSeekerPage', type: 'page', section: 'main' },
+
+        // Policies
+        { id: 'privacy', title: 'Privacy Policy', content: 'How we handle your data and privacy.', keywords: ['privacy', 'data', 'terms'], path: '/privacyPolicyPage', type: 'page', section: 'main' },
+        { id: 'cookies', title: 'Cookie Policy', content: 'Information about how we use cookies.', keywords: ['cookies', 'tracking'], path: '/cookiesPolicyPage', type: 'page', section: 'main' },
+        { id: 'terms', title: 'Terms & Services', content: 'User agreement and terms of use.', keywords: ['terms', 'legal', 'agreement'], path: '/termsAndServicesPage', type: 'page', section: 'main' }
     ];
 
     // Fuzzy search function
@@ -259,7 +141,7 @@ const SearchBar = ({ mobile = false }) => {
                 }
                 
                 item.keywords.forEach(keyword => {
-                    if (keyword.includes(lowercaseQuery)) {
+                    if (keyword.toLowerCase().includes(lowercaseQuery)) {
                         score += 30;
                     }
                 });
@@ -311,25 +193,14 @@ const SearchBar = ({ mobile = false }) => {
         }
     };
 
-    // Handle search result click - FIXED navigation with section
+    // Handle search result click
     const handleResultClick = (result) => {
-        console.log('Navigating to:', result.path, 'Section:', result.section);
+        if (!result) return;
         
-        // Check if we're already on the target page
-        const isSamePage = location.pathname === result.path;
+        console.log('Navigating to:', result.path);
         
-        if (!isSamePage) {
-            // Navigate to new page with section info in state
-            navigate(result.path, { 
-                state: { 
-                    scrollToSection: result.section,
-                    fromSearch: true 
-                } 
-            });
-        } else {
-            // We're already on the page, just scroll to section
-            scrollToSection(result.section);
-        }
+        // Navigate to target page
+        navigate(result.path);
         
         // Close search and clear input
         setShowResults(false);
@@ -348,51 +219,9 @@ const SearchBar = ({ mobile = false }) => {
     const scrollToSection = (sectionId) => {
         if (!sectionId) return;
         
-        console.log('Attempting to scroll to section:', sectionId);
-        
-        // Helper function to try different element selectors
-        const trySelectors = (id) => {
-            const selectors = [
-                `#${id}`,
-                `.${id}`,
-                `[id*="${id}"]`,
-                `[class*="${id}"]`,
-                `section[id*="${id}"]`,
-                `div[id*="${id}"]`
-            ];
-            
-            for (const selector of selectors) {
-                const element = document.querySelector(selector);
-                if (element) {
-                    console.log('Found element with selector:', selector);
-                    return element;
-                }
-            }
-            return null;
-        };
-        
-        // Try the original sectionId first
-        let element = trySelectors(sectionId);
-        
-        // If not found, try common variations
-        if (!element) {
-            const variations = [
-                sectionId,
-                sectionId.replace(/-/g, ''),
-                sectionId.replace(/-main$/, ''),
-                `main-${sectionId}`,
-                `${sectionId}-section`,
-                `section-${sectionId}`
-            ];
-            
-            for (const variation of variations) {
-                element = trySelectors(variation);
-                if (element) break;
-            }
-        }
-        
+        const element = document.getElementById(sectionId);
         if (element) {
-            const headerOffset = 80; // Adjust based on your header height
+            const headerOffset = 80;
             const elementPosition = element.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
             
@@ -400,18 +229,6 @@ const SearchBar = ({ mobile = false }) => {
                 top: offsetPosition,
                 behavior: 'smooth'
             });
-            
-            // Add a visual highlight to the section
-            element.style.boxShadow = '0 0 0 4px rgba(66, 153, 225, 0.5)';
-            element.style.transition = 'box-shadow 0.3s ease';
-            
-            setTimeout(() => {
-                element.style.boxShadow = '';
-            }, 1500);
-        } else {
-            console.warn('Section not found:', sectionId);
-            // Fallback: scroll to top
-            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     };
 
@@ -482,6 +299,39 @@ const SearchBar = ({ mobile = false }) => {
         }
     }, [mobile]);
 
+    // Function to get icon based on type (replaces emojis)
+    const getResultIcon = (type) => {
+        switch(type) {
+            case 'course':
+                return (
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                    </svg>
+                );
+            case 'service':
+                return (
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                    </svg>
+                );
+            case 'internship':
+                return (
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                    </svg>
+                );
+            default:
+                return (
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                    </svg>
+                );
+        }
+    };
+
     return (
         <div 
             className={`search-container ${mobile ? 'mobile' : 'desktop'}`} 
@@ -491,7 +341,7 @@ const SearchBar = ({ mobile = false }) => {
                 <input
                     type="text"
                     className="search-input"
-                    placeholder={mobile ? "Search everything..." : "Search courses, services, pages..."}
+                    placeholder={mobile ? "Search website..." : "Search courses, services, pages..."}
                     value={searchQuery}
                     onChange={handleSearchChange}
                     onFocus={() => setShowResults(true)}
@@ -577,9 +427,7 @@ const SearchBar = ({ mobile = false }) => {
                                             onClick={() => handleResultClick(result)}
                                         >
                                             <div className="result-icon">
-                                                {result.type === 'course' ? '📚' :
-                                                 result.type === 'service' ? '🛠️' :
-                                                 result.type === 'page' ? '📄' : '📍'}
+                                                {getResultIcon(result.type)}
                                             </div>
                                             <div className="result-content">
                                                 <div className="result-title">
@@ -591,9 +439,6 @@ const SearchBar = ({ mobile = false }) => {
                                                     <span className="result-path">
                                                         {result.path === '/' ? 'Home Page' : result.path}
                                                     </span>
-                                                    <span className="result-section">
-                                                        {result.section.replace(/-/g, ' ')}
-                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
@@ -601,27 +446,16 @@ const SearchBar = ({ mobile = false }) => {
                                 </div>
                             ) : (
                                 <div className="no-results">
-                                    <div className="no-results-icon">🔍</div>
+                                    <div className="no-results-icon">
+                                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+                                            <circle cx="11" cy="11" r="8"></circle>
+                                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                        </svg>
+                                    </div>
                                     <div className="no-results-text">
                                         <div>No results found for "{searchQuery}"</div>
                                         <small>Try different keywords or check spelling</small>
                                     </div>
-                                    {recentSearches.length > 0 && (
-                                        <div className="suggestions">
-                                            <p>Try one of your recent searches:</p>
-                                            <div className="suggestion-tags">
-                                                {recentSearches.slice(0, 3).map((search, idx) => (
-                                                    <button
-                                                        key={idx}
-                                                        className="suggestion-tag"
-                                                        onClick={() => handleRecentSearchClick(search)}
-                                                    >
-                                                        {search}
-                                                    </button>
-                                                ))}
-                                            </div>
-                                        </div>
-                                    )}
                                 </div>
                             )}
                         </>
@@ -635,31 +469,27 @@ const SearchBar = ({ mobile = false }) => {
                             <div className="quick-links">
                                 <button 
                                     className="quick-link"
-                                    onClick={() => handleResultClick(websiteContent.find(c => c.id === 'graphics-course'))}
+                                    onClick={() => handleResultClick(websiteContent.find(c => c.id === 'allCourses'))}
                                 >
-                                    {/* <span>🎯</span> */}
                                     <span>All Courses</span>
                                 </button>
                                 <button 
                                     className="quick-link"
-                                    onClick={() => handleResultClick(websiteContent.find(c => c.id === 'branding-service'))}
+                                    onClick={() => handleResultClick(websiteContent.find(c => c.id === 'branding'))}
                                 >
-                                    {/* <span>🛠️</span> */}
                                     <span>Our Services</span>
                                 </button>
                                 <button 
                                     className="quick-link"
                                     onClick={() => handleResultClick(websiteContent.find(c => c.id === 'contact'))}
                                 >
-                                    {/* <span>📞</span> */}
                                     <span>Contact Us</span>
                                 </button>
                                 <button 
                                     className="quick-link"
-                                    onClick={() => handleResultClick(websiteContent.find(c => c.id === 'portfolio'))}
+                                    onClick={() => handleResultClick(websiteContent.find(c => c.id === 'allProjects'))}
                                 >
-                                    {/* <span>📁</span> */}
-                                    <span>Portfolio</span>
+                                    <span>Projects</span>
                                 </button>
                             </div>
                         </div>

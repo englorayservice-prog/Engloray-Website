@@ -12,6 +12,7 @@ import './TechGroup.css';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import AboutSection from '../AboutSection/About';
+import FooterOne from '../../Sub Pages/footerOne/FooterOne';
 
 const TechGroup = () => {
   return (
@@ -26,7 +27,8 @@ const TechGroup = () => {
       <AboutSection />
       <TestimonialsSection />
       <InternshipProgram />
-      <BenefitsFooter />
+      {/* <BenefitsFooter /> */}
+      <FooterOne />
       <BackToTop />
     </div>
   );

@@ -4,6 +4,7 @@ import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import './SoftwareAppDev.css';
 import TSPFFooter from '../TechGroupSubPagefooter/TSPFFooter';
+import NewFooter1 from '../../Sub Pages/subFooterOne/NewFooter1';
 import { Helmet } from 'react-helmet';
 
 import iphone14Img from '../../../assets/Iphone14.png';
@@ -17,6 +18,7 @@ import avatarFive from '../../../assets/cartoon_male_2.png';
 import avatarSix from '../../../assets/cartoon_female_3.png';
 import avatarSeven from '../../../assets/cartoon_male_3.png';
 import avatarEight from '../../../assets/female_avatar.png';
+
 
 
 const SoftwareAppDev = () => {
@@ -585,7 +587,8 @@ const SoftwareAppDev = () => {
             {/* Internship Programs */}
 
 
-            <TSPFFooter />
+            {/* <TSPFFooter /> */}
+            <NewFooter1 />
             <BackToTop />
         </div>
     );

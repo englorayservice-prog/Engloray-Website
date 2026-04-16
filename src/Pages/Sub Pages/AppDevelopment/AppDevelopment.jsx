@@ -4,6 +4,8 @@ import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import './AppDevelopment.css';
 import TSPFFooter from '../TechGroupSubPagefooter/TSPFFooter';
+import NewFooter1 from '../../Sub Pages/subFooterOne/NewFooter1';
+
 
 import logoDesignImg from '../../../assets/services/logo_design.png';
 import colorPaletteImg from '../../../assets/services/color_palette.png';
@@ -906,7 +908,9 @@ const AppDevelopment = () => {
                     </div>
                 </div>
             </section>
-            <TSPFFooter />
+            {/* <TSPFFooter /> */}
+                        <NewFooter1 />
+
             <BackToTop />
         </div>
     );

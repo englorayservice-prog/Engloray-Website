@@ -4,6 +4,8 @@ import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import './UiuxDesign.css';
 import TSPFFooter from '../TechGroupSubPagefooter/TSPFFooter';
+// import NewFooter1 from '../../Sub Pages/subFooterOne/NewFooter1';
+
 
 import iphone14Img from '../../../assets/Iphone14.png';
 
@@ -852,7 +854,7 @@ const UIDesignServices = () => {
                 </div>
             </section>
 
-            <TSPFFooter />
+            {/* <TSPFFooter /> */}
             <BackToTop />
         </div>
     );
