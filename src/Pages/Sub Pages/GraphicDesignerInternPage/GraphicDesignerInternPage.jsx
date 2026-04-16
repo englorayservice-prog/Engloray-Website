@@ -96,7 +96,6 @@ import pathFive from '../../../assets/resources file/resources file/TECH/GRAPHIC
 import pathSix from '../../../assets/resources file/resources file/TECH/GRAPHICS DESIGNERS/Productivity, AI & Workflow Support.pdf';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import Navbar from '../../../Components/Navbar/Navbar';
-
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import { Helmet } from 'react-helmet';
 
@@ -790,10 +789,8 @@ const GraphicDesignerInternPage = () => {
                 )}
 
                 <div className="GD-content" ref={containerRef}>
-                    <TopNavBar />
-                    <Navbar />
-                    
-                    
+                    {/* <TopNavBar/> */}
+                    {/* <Navbar/> */}
 
                     {/* Hero Section */}
                     <section
