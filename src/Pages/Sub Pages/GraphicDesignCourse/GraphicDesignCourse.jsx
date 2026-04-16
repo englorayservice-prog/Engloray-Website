@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { submitEnrollment } from "../../Sub Pages/HandleSubmit/HandleSubmit";
 import NavigationBar from '../../TechLearningSection/NavigationBar/NavigationBar';
+import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 
 import {
   faPaintBrush,
@@ -586,6 +587,7 @@ const GraphicDesignCourse = () => {
 
   return (
     <div className="gdc-page">
+      <TopNavBar />
       <NavigationBar />
       {/* Hero Section */}
       <header className="gdc-hero-v3">

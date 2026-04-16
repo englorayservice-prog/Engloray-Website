@@ -5,7 +5,6 @@ import MernStack from '../../../assets/MernStack.jfif'
 import JavaFull from '../../../assets/JavaFull.jfif'
 import graphicDesignImg from '../../../assets/graphic_design.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { motion } from 'framer-motion';
 import {
   faPalette,
   faChartLine,
@@ -526,46 +525,6 @@ const Courses = () => {
 
   return (
     <section className="popular-courses-section" id="courses">
-  <div className="courses-container">
-    {/* Header Section */}
-    <div className="courses-header">
-
-      {/* User Goal Selection Section */}
-      <div className="user-goals-container">
-        <motion.h2 
-          className="goals-title"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
-          transition={{ duration: 0.8 }}
-        >
-          What brings you to Engloray today?
-        </motion.h2>
-        
-        <div className="goals-grid">
-          {[
-            { icon: faFlag, text: "Start my career" },
-            { icon: faExchangeAlt, text: "Change my career" },
-            { icon: faChartLine, text: "Grow in my current role" },
-            { icon: faBinoculars, text: "Explore topics outside of work" }
-          ].map((goal, idx) => (
-            <motion.div 
-              key={idx}
-              className="goal-card"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: false }}
-              transition={{ duration: 0.6, delay: idx * 0.1 }}
-            >
-              <div className="goal-icon-box">
-                <FontAwesomeIcon icon={goal.icon} className="goal-custom-logo" />
-              </div>
-              <span className="goal-text">{goal.text}</span>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-
       <div className="courses-container">
         {/* Header Section */}
         <div className="courses-header">
@@ -704,84 +663,106 @@ const Courses = () => {
               className={`category-item ${activeCategory === cat.name ? 'active' : ''}`}
               onClick={() => setActiveCategory(cat.name)}
             >
-              <FontAwesomeIcon icon={cat.icon} className="badge-icon" />
-              <span>{cat.name}</span>
+              <div className="category-icon-box">
+                <FontAwesomeIcon icon={cat.icon} />
+              </div>
+              <div className="category-info">
+                <h4 className="category-name">{cat.name}</h4>
+                <p className="category-count">{cat.count} Modules</p>
+              </div>
             </div>
           ))}
         </div>
-      </div>
 
-      <div className="learning-head">
-        {/* Hero Text */}
-        <div className="lh-hero-text">
-          <motion.h1 
-            className="lh-hero-title"
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
-            transition={{ duration: 0.8 }}
-          >
-            <span>AI-Powered Learning<br />for Tomorrow's Leaders</span>
-          </motion.h1>
-          <motion.p 
-            className="lh-hero-subtitle"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-          >
-            Empowering Students with Personalized, Interactive Learning<br />
-            Designed to Build Essential Skills for Future Success
-          </motion.p>
-          <motion.button 
-            className="lh-cta-btn"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: false }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            Get Started
-          </motion.button>
+        {/* Courses Grid */}
+        <div className="courses-grid-layout">
+          {courses.filter(c => activeCategory === 'All' || c.category === activeCategory).map((course) => (
+            <div key={course.id} className="course-card" onClick={() => handleEnrollClick(course)}>
+              <div className="course-card-top">
+                <img src={course.image} alt={course.title} className="course-image" />
+                <div className="tagtop-container">
+                  {course.topTags?.map((tag, idx) => (
+                    <span key={idx} className="top-tag-white">{tag}</span>
+                  ))}
+                </div>
+                {course.badges && course.badges.length > 0 && (
+                  <div className="badge-overlay-container">
+                    {course.badges.map((badge, idx) => (
+                      <span key={idx} className={`overlay-badge badge-${badge.toLowerCase()}`}>
+                        {badge} <span className="fire-emoji"></span>
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              <div className="course-card-body">
+                <h3 className="course-title">{course.title}</h3>
+
+                <div className="course-rating-row">
+                  <FontAwesomeIcon icon={faStar} className="star-icon-yellow" />
+                  <span className="rating-text"><b>{course.rating}</b> (bought {course.buyers} ppl)</span>
+                </div>
+
+                <div className="course-skills-tags">
+                  {course.skills?.map((skill, idx) => (
+                    <span key={idx} className={`skill-pill skill-${skill.replace('#', '').toLowerCase()}`}>
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="course-stats-container">
+                  <div className="stat-item">
+                    <span className="stat-label">THEORY</span>
+                    <span className="stat-val">{course.theoryHours || (course.id % 2 === 0 ? '120' : '116')} Lessons.</span>
+                  </div>
+                  <div className="stat-item">
+                    <span className="stat-label">PRACTICE</span>
+                    <span className="stat-val">{course.practiceHours || (course.id % 2 === 0 ? '50' : '38')} Topics.</span>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+          ))}
         </div>
 
-        {/* 3-Column Card Grid */}
-        <div className="lh-cards-grid">
-          {/* LEFT */}
-          <motion.div 
-            className="lh-card lh-card-large lh-card-person"
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-          >
-            <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=900&auto=format&fit=crop" alt="Student learning" className="lh-card-img" />
-            <div className="lh-speech-bubble">
-              <p>Learn anytime, anywhere with our online courses.</p>
-              <div className="lh-bubble-brand"><span className="lh-brand-dot"></span>Engloray</div>
+        {/* View All Button */}
+        <div className="view-all-container">
+          <button className="view-all-btn" onClick={handleCTAClick}>
+            VIEW COURSE <FontAwesomeIcon icon={faArrowRight} style={{ marginLeft: '10px' }} />
+          </button>
+        </div>
+
+        {/* Coming Soon Section - New Stimulating Space Design */}
+        <div className="coming-soon-section">
+          <div className="cs-header-content">
+            <h2 className="cs-main-heading">
+              UPCOMING COURSES  <span className="cs-heading-accent"></span>
+            </h2>
+            <p className="cs-description">
+              Our upcoming professional programs are designed to inspire innovation and career mastery.
+              Stay ahead with our soon-to-be-launched expert-led courses.
+            </p>
+          </div>
+
+          <div className="cs-cards-container">
+            {/* Background Decorative Line - Vertical ZigZag */}
+            <div className="cs-decorative-line">
+              <svg viewBox="0 0 400 1200" preserveAspectRatio="none" style={{ height: '100%', width: '100%' }}>
+                <path
+                  d="M100,50 C150,150 350,200 300,350 C250,500 50,550 100,700 C150,850 350,900 300,1050"
+                  stroke="#cbd5e1"
+                  strokeDasharray="10 10"
+                  strokeWidth="2"
+                  fill="none"
+                />
+              </svg>
             </div>
-          </motion.div>
 
-          {/* MIDDLE */}
-          <div className="lh-card-column">
-            <motion.div 
-              className="lh-card lh-card-teachers"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=400&auto=format&fit=crop" alt="Teachers" className="lh-teachers-bg" />
-                  <div className="lh-teachers-content">
-                    <div className="lh-teacher-avatars">
-                      <img src="https://i.pravatar.cc/150?u=t1" alt="T1" /><img src="https://i.pravatar.cc/150?u=t2" alt="T2" /><img src="https://i.pravatar.cc/150?u=t3" alt="T3" />
-                      <div className="lh-more-teachers">+8</div>
-                    </div>
-                    <h3 className="lh-teachers-title">Professional Teachers</h3>
-                  </div>
-                </motion.div>
-
-                {/* Keep the duplicated steps grid here as requested "dont delete anything" */}
-                <div className="cs-steps-grid">
+            <div className="cs-steps-grid">
               {/* Card 1 - Digital Marketing (Top Left) */}
               <div className="cs-step-card cs-card-pink ani-pulse">
                 <div className="cs-step-number">01</div>
@@ -835,116 +816,64 @@ const Courses = () => {
                   <div className="cs-card-footer">
                     <span className="cs-weeks-badge"><FontAwesomeIcon icon={faClock} /> 8 WEEKS</span>
                   </div>
-                  </div>
                 </div>
               </div>
-            </div>
 
-          {/* RIGHT */}
-          <motion.div 
-            className="lh-card lh-card-large lh-card-math"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-          >
-            <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?q=80&w=900&auto=format&fit=crop" alt="VR learning" className="lh-card-img" />
-            <div className="lh-math-badge">
-              <span className="lh-badge-dot"></span>
-              <div className="lh-badge-info">
-                <h4>FUTURE OF LEARNING AND DEVELOPMENT</h4>
-                <span>For Beginner</span>
-              </div>
-              <div className="lh-badge-time"><span className="lh-time-num">12</span><span className="lh-time-unit">Weeks</span></div>
+
             </div>
-          </motion.div>
+          </div>
+
+          <div className="cs-action-container">
+            <button className="cs-premium-join-btn" onClick={handleJoinCourseClick}>
+              <span className="btn-label">JOIN COURSE NOW</span>
+              <div className="btn-icon">
+                <FontAwesomeIcon icon={faArrowRight} />
+              </div>
+            </button>
+            <p className="cs-subtext-info"> 100% Placement Assistance | Live Projects | Industry Mentors</p>
+          </div>
         </div>
       </div>
 
-      <motion.span 
-        className="popular-badge" 
-        style={{ marginTop: '30px', display: 'inline-block' }}
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
-        <FontAwesomeIcon icon={faList} className="badge-icon" />
-        POPULAR COURSES
-      </motion.span>
-      <motion.h2 
-        className="courses-main-title"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-      >
-        Our Career Courses
-      </motion.h2>
-    </div>
-
-    {/* Courses Grid */}
-    <div className="courses-grid-layout">
-      {courses.filter(c => activeCategory === 'All' || c.category === activeCategory).map((course, idx) => (
-        <motion.div 
-          key={course.id} 
-          className="course-card" 
-          onClick={() => handleEnrollClick(course)}
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
-          transition={{ duration: 0.6, delay: idx * 0.1 }}
-        >
-          {/* ... Card Content Stays Identical ... */}
-          <div className="course-card-top">
-            <img src={course.image} alt={course.title} className="course-image" />
-            {/* ... rest of your course card code ... */}
-          </div>
-          <div className="course-card-body">
-             <h3 className="course-title">{course.title}</h3>
-             {/* ... rest of body ... */}
-          </div>
-        </motion.div>
-      ))}
-    </div>
-
-    {/* Coming Soon Section */}
-    <div className="coming-soon-section">
-      <motion.div 
-        className="cs-header-content"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-      >
-        <h2 className="cs-main-heading">UPCOMING COURSES</h2>
-        <p className="cs-description">Stay ahead with our soon-to-be-launched expert-led courses.</p>
-      </motion.div>
-
-      <div className="cs-steps-grid">
-        {/* Apply animations to the Upcoming Cards */}
-        {[
-          { id: "01", title: "Cyber Security", color: "pink", desc: "Protect digital assets..." },
-          { id: "02", title: "Business Intelligence", color: "purple", desc: "Technology-driven framework..." },
-          { id: "03", title: "AI Creative Intelligence", color: "yellow", desc: "Harness power of Gen AI..." },
-          { id: "04", title: "Cloud Computing", color: "blue", desc: "Master AWS, Azure..." }
-        ].map((item, idx) => (
-          <motion.div 
-            key={idx}
-            className={`cs-step-card cs-card-${item.color}`}
-            initial={{ opacity: 0, scale: 0.9, y: 20 }}
-            whileInView={{ opacity: 1, scale: 1, y: 0 }}
-            viewport={{ once: false }}
-            transition={{ duration: 0.6, delay: idx * 0.15 }}
-          >
-            <div className="cs-step-number">{item.id}</div>
-            <div className="cs-card-content">
-              <h3 className="cs-step-title">{item.title}</h3>
-              <p className="cs-step-desc">{item.desc}</p>
+      {/* Enrollment form modal kept for functionality */}
+      {showEnrollmentForm && (
+        <div className="enrollment-form-overlay" onClick={handleCloseForm}>
+          <div className="enrollment-form-container" onClick={(e) => e.stopPropagation()}>
+            <button className="enrollment-form-close" onClick={handleCloseForm}>
+              <FontAwesomeIcon icon={faTimes} />
+            </button>
+            <div className="enrollment-form-header">
+              <h2 className="enrollment-form-title">Join Our Course</h2>
+              <p className="enrollment-form-subtitle">Fill out the form below and we'll get in touch with you</p>
             </div>
-          </motion.div>
-        ))}
-      </div>
-    </div>
-  </div>
-</section>
+            <form className="enrollment-form" onSubmit={handleFormSubmit}>
+              <div className="form-group">
+                <label htmlFor="name">Full Name *</label>
+                <input type="text" id="name" name="name" value={enrollmentData.name} onChange={handleInputChange} placeholder="Enter your full name" required />
+              </div>
+              <div className="form-group">
+                <label htmlFor="email">Email Address *</label>
+                <input type="email" id="email" name="email" value={enrollmentData.email} onChange={handleInputChange} placeholder="Enter your email" required />
+              </div>
+              <div className="form-group">
+                <label htmlFor="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" value={enrollmentData.phone} onChange={handleInputChange} placeholder="Enter your 10-digit phone number" required />
+              </div>
+              <div className="form-group">
+                <label htmlFor="course">Select Course *</label>
+                <select id="course" name="course" value={enrollmentData.course} onChange={(e) => handleCourseSelect(e.target.value)} required>
+                  <option value="">Choose a course</option>
+                  {courses.map(course => (
+                    <option key={course.id} value={course.title}>{course.title}</option>
+                  ))}
+                </select>
+              </div>
+              <button type="submit" className="enrollment-form-submit">Submit Enrollment Request</button>
+            </form>
+          </div>
+        </div>
+      )}
+    </section>
   );
 };
 

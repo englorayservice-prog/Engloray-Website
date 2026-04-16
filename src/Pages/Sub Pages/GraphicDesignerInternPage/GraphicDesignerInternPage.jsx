@@ -89,12 +89,14 @@ import girl4 from '../../../assets/images/girl4.png';
 import { submitInternship } from "../../Sub Pages/HandleSubmit/InternshipSubmit";
 
 
+
 import pathOne from '../../../assets/resources file/resources file/TECH/GRAPHICS DESIGNERS/Design Tools & Technology.pdf';
 import pathTwo from '../../../assets/resources file/resources file/TECH/GRAPHICS DESIGNERS/Graphic Designer Benefits.pdf';
 import pathFive from '../../../assets/resources file/resources file/TECH/GRAPHICS DESIGNERS/Learning, Skill Development & Growth.pdf';
 import pathSix from '../../../assets/resources file/resources file/TECH/GRAPHICS DESIGNERS/Productivity, AI & Workflow Support.pdf';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import Navbar from '../../../Components/Navbar/Navbar';
+
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import { Helmet } from 'react-helmet';
 
@@ -788,8 +790,10 @@ const GraphicDesignerInternPage = () => {
                 )}
 
                 <div className="GD-content" ref={containerRef}>
-                    {/* <TopNavBar/> */}
-                    {/* <Navbar/> */}
+                    <TopNavBar />
+                    <Navbar />
+                    
+                    
 
                     {/* Hero Section */}
                     <section

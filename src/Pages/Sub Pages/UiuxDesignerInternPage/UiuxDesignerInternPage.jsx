@@ -78,6 +78,7 @@ import pathSix from '../../../assets/resources file/resources file/TECH/UIUX Des
 
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import Navbar from '../../../Components/Navbar/Navbar';
+
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import Footer from '../../../Components/Footer/Footer';
 import { Helmet } from 'react-helmet';
@@ -660,8 +661,10 @@ const UiuxDesignerInternPage = () => {
             )}
 
             <div className="UX-content" ref={containerRef}>
-                {/* <TopNavBar /> */}
-                {/* <Navbar /> */}
+                    <TopNavBar />
+                    <Navbar />
+                
+                
 
                 {/* Hero Section */}
                 <section className="UX-section UX-hero-section-new" id="home">
