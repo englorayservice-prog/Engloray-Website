@@ -918,8 +918,7 @@ const GraphicDesignPage = () => {
                 </div>
             </section>
             {/* <TSPFFooter /> */}
-                        <NewFooter1 />
-
+            <NewFooter1 />
             <BackToTop />
         </div>
     );

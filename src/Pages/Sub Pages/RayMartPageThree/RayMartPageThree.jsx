@@ -11,6 +11,48 @@ import aiIcon from '../../../assets/ai_3d_new.png';
 import jobsIcon from '../../../assets/jobs_3d_new.png';
 import careerIcon from '../../../assets/character-illustration.png';
 
+import crmOne from '../../../assets/WEBSITE_IMAGES/crm sevices/1.png';
+import crmTwo from '../../../assets/WEBSITE_IMAGES/crm sevices/2.png';
+import crmThree from '../../../assets/WEBSITE_IMAGES/crm sevices/3.png';
+import crmFour from '../../../assets/WEBSITE_IMAGES/crm sevices/4.png';
+import crmFive from '../../../assets/WEBSITE_IMAGES/crm sevices/5.png';
+import crmSix from '../../../assets/WEBSITE_IMAGES/crm sevices/6.png';
+
+import erpOne from '../../../assets/WEBSITE_IMAGES/ERP SOFTWARE/1.png';
+import erpTwo from '../../../assets/WEBSITE_IMAGES/ERP SOFTWARE/2.png';
+import erpThree from '../../../assets/WEBSITE_IMAGES/ERP SOFTWARE/3.png';
+import erpFour from '../../../assets/WEBSITE_IMAGES/ERP SOFTWARE/4.png';
+import erpFive from '../../../assets/WEBSITE_IMAGES/ERP SOFTWARE/5.png';
+import erpSix from '../../../assets/WEBSITE_IMAGES/ERP SOFTWARE/6.png';
+import erpSeven from '../../../assets/WEBSITE_IMAGES/ERP SOFTWARE/7.png';
+
+
+import aiOne from '../../../assets/WEBSITE_IMAGES/AI CHATBOT/1.png';
+import aiTwo from '../../../assets/WEBSITE_IMAGES/AI CHATBOT/2.png';
+import aiThree from '../../../assets/WEBSITE_IMAGES/AI CHATBOT/3.png';
+import aiFour from '../../../assets/WEBSITE_IMAGES/AI CHATBOT/4.png';
+import aiFive from '../../../assets/WEBSITE_IMAGES/AI CHATBOT/5.png';
+import aiSix from '../../../assets/WEBSITE_IMAGES/AI CHATBOT/6.png';
+import aiSeven from '../../../assets/WEBSITE_IMAGES/AI CHATBOT/7.png';
+
+import jobOne from '../../../assets/WEBSITE_IMAGES/JOB SEEKER HUB/1.png';
+import jobTwo from '../../../assets/WEBSITE_IMAGES/JOB SEEKER HUB/2.png';
+import jobThree from '../../../assets/WEBSITE_IMAGES/JOB SEEKER HUB/3.png';
+import jobFour from '../../../assets/WEBSITE_IMAGES/JOB SEEKER HUB/4.png';
+import jobFive from '../../../assets/WEBSITE_IMAGES/JOB SEEKER HUB/5.png';
+import jobSix from '../../../assets/WEBSITE_IMAGES/JOB SEEKER HUB/6.png';
+
+import careerOne from '../../../assets/WEBSITE_IMAGES/LEARNING AND CAREER/1.png';
+import careerTwo from '../../../assets/WEBSITE_IMAGES/LEARNING AND CAREER/2.png';
+import careerThree from '../../../assets/WEBSITE_IMAGES/LEARNING AND CAREER/3.png';
+import careerFour from '../../../assets/WEBSITE_IMAGES/LEARNING AND CAREER/4.png';
+import careerFive from '../../../assets/WEBSITE_IMAGES/LEARNING AND CAREER/5.png';
+
+import saasOne from '../../../assets/WEBSITE_IMAGES/SAAS PRODUCT/1.png';
+import saasTwo from '../../../assets/WEBSITE_IMAGES/SAAS PRODUCT/2.png';
+import saasThree from '../../../assets/WEBSITE_IMAGES/SAAS PRODUCT/3.png';
+import saasFour from '../../../assets/WEBSITE_IMAGES/SAAS PRODUCT/4.png';
+
 const RayMartPageThree = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -330,12 +372,12 @@ const RayMartPageThree = () => {
             </div>
             <div className="rm3-app-cards-grid" ref={rowCRMRef}>
               {[
-                { title: "Ultimate Sales Hub", desc: "Track leads and close deals faster with our advanced sales pipeline.", img: "https://images.unsplash.com/photo-1552581234-26160f608093?q=80&w=800&auto=format&fit=crop", offer: "Lifetime Access Offer", discount: "50%" },
-                { title: "Customer Link Pro", desc: "Build meaningful relationships with integrated contact management.", img: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=800&auto=format&fit=crop", offer: "Early Bird Special", discount: "60%" },
-                { title: "Unified CRM Connect", desc: "Sync your entire organization with a single point of truth for data.", img: "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=800&auto=format&fit=crop", offer: "Flat $20 Off Credits", discount: "70%" },
-                { title: "Sales Growth Engine", desc: "Accelerate your revenue with AI-powered marketing automation.", img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop", offer: "Starter Pack Deal", discount: "45%" },
-                { title: "Omnichannel Sync", desc: "Manage chat, email, and social from one unified dashboard.", img: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop", offer: "Omni-Pack Sync", discount: "30%" },
-                { title: "Lead Scoring V2", desc: "Prioritize your top-tier prospects with AI predictive analysis.", img: "https://images.unsplash.com/photo-1454165833767-027ffea9e77b?q=80&w=800&auto=format&fit=crop", offer: "Pro Scoring Tier", discount: "25%" }
+                { title: "Ultimate Sales Hub", desc: "Track leads and close deals faster with our advanced sales pipeline.", img: crmOne, offer: "Lifetime Access Offer", discount: "50%" },
+                { title: "Customer Link Pro", desc: "Build meaningful relationships with integrated contact management.", img: crmTwo, offer: "Early Bird Special", discount: "60%" },
+                { title: "Unified CRM Connect", desc: "Sync your entire organization with a single point of truth for data.", img: crmThree, offer: "Flat $20 Off Credits", discount: "70%" },
+                { title: "Sales Growth Engine", desc: "Accelerate your revenue with AI-powered marketing automation.", img: crmFour, offer: "Starter Pack Deal", discount: "45%" },
+                { title: "Omnichannel Sync", desc: "Manage chat, email, and social from one unified dashboard.", img: crmFive, offer: "Omni-Pack Sync", discount: "30%" },
+                { title: "Lead Scoring V2", desc: "Prioritize your top-tier prospects with AI predictive analysis.", img: crmSix, offer: "Pro Scoring Tier", discount: "25%" }
               ].map((item, idx) => (
                 <div key={`crm-${idx}`} className="rm3-app-card" onClick={() => navigate('/raymartPageFour', { state: { id: "crm-products" } })} style={{ cursor: 'pointer' }}>
                   <div className="rm3-app-card-img" style={{ backgroundImage: `url('${item.img}')` }}></div>
@@ -371,13 +413,13 @@ const RayMartPageThree = () => {
             </div>
             <div className="rm3-app-cards-grid" ref={rowERPRef}>
               {[
-                { title: "Financial Intelligence", desc: "Automate your accounting and gain real-time financial insights.", img: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800&auto=format&fit=crop", offer: "Free Setup Included", discount: "40%" },
-                { title: "Supply Chain Master", desc: "Optimize your logistics from procurement to final delivery.", img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop", offer: "Bundle Deal Available", discount: "30%" },
-                { title: "Operations Core 3.0", desc: "Manage resources and manufacturing with industrial precision.", img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop", offer: "Limited Time Upgrade", discount: "50%" },
-                { title: "Enterprise Logic Hub", desc: "Scale globally with seamless multi-currency support.", img: "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=800&auto=format&fit=crop", offer: "Global Expansion Deal", discount: "25%" },
-                { title: "Inventory Radar", desc: "Predict stock shortages before they happen with smart IoT.", img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop", offer: "Asset Guard Plus", discount: "20%" },
-                { title: "Fleet Sync Pro", desc: "Real-time delivery tracking and fuel optimization algorithms.", img: "https://images.unsplash.com/photo-1580674285054-bed31e145f59?q=80&w=800&auto=format&fit=crop", offer: "Logistics Bundle", discount: "15%" },
-                { title: "HR Connect Core", desc: "Manage payroll and employee lifecycle in a single platform.", img: "https://images.unsplash.com/photo-1521791055366-0772eea2339d?q=80&w=800&auto=format&fit=crop", offer: "HR Starter Pack", discount: "35%" }
+                { title: "Financial Intelligence", desc: "Automate your accounting and gain real-time financial insights.", img: erpOne, offer: "Free Setup Included", discount: "40%" },
+                { title: "Supply Chain Master", desc: "Optimize your logistics from procurement to final delivery.", img: erpTwo, offer: "Bundle Deal Available", discount: "30%" },
+                { title: "Operations Core 3.0", desc: "Manage resources and manufacturing with industrial precision.", img: erpThree, offer: "Limited Time Upgrade", discount: "50%" },
+                { title: "Enterprise Logic Hub", desc: "Scale globally with seamless multi-currency support.", img: erpFour, offer: "Global Expansion Deal", discount: "25%" },
+                { title: "Inventory Radar", desc: "Predict stock shortages before they happen with smart IoT.", img: erpFive, offer: "Asset Guard Plus", discount: "20%" },
+                { title: "Fleet Sync Pro", desc: "Real-time delivery tracking and fuel optimization algorithms.", img: erpSix, offer: "Logistics Bundle", discount: "15%" },
+                { title: "HR Connect Core", desc: "Manage payroll and employee lifecycle in a single platform.", img: erpSeven, offer: "HR Starter Pack", discount: "35%" }
               ].map((item, idx) => (
                 <div key={`erp-${idx}`} className="rm3-app-card" onClick={() => navigate('/raymartPageFour', { state: { id: "erp-products" } })} style={{ cursor: 'pointer' }}>
                   <div className="rm3-app-card-img" style={{ backgroundImage: `url('${item.img}')` }}></div>
@@ -413,13 +455,13 @@ const RayMartPageThree = () => {
             </div>
             <div className="rm3-app-cards-grid" ref={rowBotRef}>
               {[
-                { title: "Razor AI Assistant", desc: "Deploy hyper-accurate voice and text assistants in minutes.", img: "https://images.unsplash.com/photo-1675271591211-126ad94e495d?q=80&w=800&auto=format&fit=crop", offer: "Double Token Pack", discount: "80%" },
-                { title: "Nexus GPT Node", desc: "Connect your enterprise data to a custom LLM pipeline.", img: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800&auto=format&fit=crop", offer: "Beta Access Offer", discount: "50%" },
-                { title: "Infinite Voice Flow", desc: "Crystal clear AI voice synthesis for global customer support.", img: "https://images.unsplash.com/photo-1589254065878-42c9da997008?q=80&w=800&auto=format&fit=crop", offer: "Annual Plan Savings", discount: "25%" },
-                { title: "Neural Link Desk", desc: "Automate complex queries with self-learning neural networks.", img: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800&auto=format&fit=crop", offer: "Founder Pack Deal", discount: "70%" },
-                { title: "Vision Interaction Hub", desc: "AI that can 'see' and respond to images sent by customers.", img: "https://images.unsplash.com/photo-1617791160536-59a861214870?q=80&w=800&auto=format&fit=crop", offer: "Vision Add-on", discount: "60%" },
-                { title: "Sentiment Sentinel", desc: "Real-time tone detection to escalate angry users to humans.", img: "https://images.unsplash.com/photo-1531746790731-6c087fecd05a?q=80&w=800&auto=format&fit=crop", offer: "Escalation Pro", discount: "40%" },
-                { title: "Global Translator X", desc: "Instant bi-directional translation for 100+ native languages.", img: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop", offer: "Global Comm Pack", discount: "30%" }
+                { title: "Razor AI Assistant", desc: "Deploy hyper-accurate voice and text assistants in minutes.", img: aiOne, offer: "Double Token Pack", discount: "80%" },
+                { title: "Nexus GPT Node", desc: "Connect your enterprise data to a custom LLM pipeline.", img: aiTwo, offer: "Beta Access Offer", discount: "50%" },
+                { title: "Infinite Voice Flow", desc: "Crystal clear AI voice synthesis for global customer support.", img: aiThree, offer: "Annual Plan Savings", discount: "25%" },
+                { title: "Neural Link Desk", desc: "Automate complex queries with self-learning neural networks.", img: aiFour, offer: "Founder Pack Deal", discount: "70%" },
+                { title: "Vision Interaction Hub", desc: "AI that can 'see' and respond to images sent by customers.", img: aiFive, offer: "Vision Add-on", discount: "60%" },
+                { title: "Sentiment Sentinel", desc: "Real-time tone detection to escalate angry users to humans.", img: aiSix, offer: "Escalation Pro", discount: "40%" },
+                { title: "Global Translator X", desc: "Instant bi-directional translation for 100+ native languages.", img: aiSeven, offer: "Global Comm Pack", discount: "30%" }
               ].map((item, idx) => (
                 <div key={`bot-${idx}`} className="rm3-app-card" onClick={() => navigate('/raymartPageFour', { state: { id: "ai-chatbot-products" } })} style={{ cursor: 'pointer' }}>
                   <div className="rm3-app-card-img" style={{ backgroundImage: `url('${item.img}')` }}></div>
@@ -455,12 +497,12 @@ const RayMartPageThree = () => {
             </div>
             <div className="rm3-app-cards-grid" ref={rowJobsRef}>
               {[
-                { title: "AI Resume Optimizer", desc: "Instantly score and improve your CV for applicant tracking systems.", img: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=800&auto=format&fit=crop", offer: "Resume Boost", discount: "15%" },
-                { title: "Job Market Scanner", desc: "Discover high-paying roles across multiple boards in one view.", img: "https://images.unsplash.com/photo-1521791136064-7986c2923ea4?q=80&w=800&auto=format&fit=crop", offer: "Market Insight", discount: "20%" },
-                { title: "Mock Interview Coach", desc: "Practice with AI-powered video interactions and get feedback.", img: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=800&auto=format&fit=crop", offer: "Interview Pass", discount: "10%" },
-                { title: "Industry Bridge Port", desc: "Network directly with professionals in your target expertise.", img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop", offer: "Network Pro", discount: "5%" },
-                { title: "Salary Negotiation AI", desc: "Get real-time data on your worth and scripts for the call.", img: "https://images.unsplash.com/photo-1454165833767-027ffea9e77b?q=80&w=800&auto=format&fit=crop", offer: "Negotiator Kit", discount: "40%" },
-                { title: "Freelance Catalyst", desc: "Optimize your Upwork and Fiverr profiles for top-tier gigs.", img: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=800&auto=format&fit=crop", offer: "Gigs Builder", discount: "30%" }
+                { title: "AI Resume Optimizer", desc: "Instantly score and improve your CV for applicant tracking systems.", img: jobOne, offer: "Resume Boost", discount: "15%" },
+                { title: "Job Market Scanner", desc: "Discover high-paying roles across multiple boards in one view.", img: jobTwo, offer: "Market Insight", discount: "20%" },
+                { title: "Mock Interview Coach", desc: "Practice with AI-powered video interactions and get feedback.", img: jobThree, offer: "Interview Pass", discount: "10%" },
+                { title: "Industry Bridge Port", desc: "Network directly with professionals in your target expertise.", img: jobFour, offer: "Network Pro", discount: "5%" },
+                { title: "Salary Negotiation AI", desc: "Get real-time data on your worth and scripts for the call.", img: jobFive, offer: "Negotiator Kit", discount: "40%" },
+                { title: "Freelance Catalyst", desc: "Optimize your Upwork and Fiverr profiles for top-tier gigs.", img: jobSix, offer: "Gigs Builder", discount: "30%" }
               ].map((item, idx) => (
                 <div key={`jobs-${idx}`} className="rm3-app-card" onClick={() => navigate('/raymartPageFour', { state: { id: "job-seeker-hub" } })} style={{ cursor: 'pointer' }}>
                   <div className="rm3-app-card-img" style={{ backgroundImage: `url('${item.img}')` }}></div>
@@ -496,11 +538,11 @@ const RayMartPageThree = () => {
             </div>
             <div className="rm3-app-cards-grid" ref={rowLearnRef}>
               {[
-                { title: "Fullstack Web Academy", desc: "Master modern frameworks and deployment for high-end dev roles.", img: "https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=800&auto=format&fit=crop", offer: "Certification Inc.", discount: "25%" },
-                { title: "Data Science Masters", desc: "Learn Python and machine learning with industry-level datasets.", img: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?q=80&w=800&auto=format&fit=crop", offer: "ML Bonus Pack", discount: "20%" },
-                { title: "UX/UI Design Lab", desc: "Bridge the gap between vision and interface with hands-on labs.", img: "https://images.unsplash.com/photo-1581291518066-8e75ff13e7ec?q=80&w=800&auto=format&fit=crop", offer: "UI Designer Pro", discount: "15%" },
-                { title: "Executive Leadership", desc: "Develop the strategy and soft skills to lead high-performing teams.", img: "https://images.unsplash.com/photo-1542744094-24638eff58bb?q=80&w=800&auto=format&fit=crop", offer: "Mentor Session", discount: "10%" },
-                { title: "Growth Marketing Pro", desc: "Scale startups using data-driven hacking and viral engineering.", img: "https://images.unsplash.com/photo-1533750349088-cd871a92f312?q=80&w=800&auto=format&fit=crop", offer: "Marketer Pack", discount: "50%" }
+                { title: "Fullstack Web Academy", desc: "Master modern frameworks and deployment for high-end dev roles.", img: careerOne, offer: "Certification Inc.", discount: "25%" },
+                { title: "Data Science Masters", desc: "Learn Python and machine learning with industry-level datasets.", img: careerTwo, offer: "ML Bonus Pack", discount: "20%" },
+                { title: "UX/UI Design Lab", desc: "Bridge the gap between vision and interface with hands-on labs.", img: careerThree, offer: "UI Designer Pro", discount: "15%" },
+                { title: "Executive Leadership", desc: "Develop the strategy and soft skills to lead high-performing teams.", img: careerFour, offer: "Mentor Session", discount: "10%" },
+                { title: "Growth Marketing Pro", desc: "Scale startups using data-driven hacking and viral engineering.", img: careerFive, offer: "Marketer Pack", discount: "50%" }
               ].map((item, idx) => (
                 <div key={`learn-${idx}`} className="rm3-app-card" onClick={() => navigate('/raymartPageFour', { state: { id: "learning-career" } })} style={{ cursor: 'pointer' }}>
                   <div className="rm3-app-card-img" style={{ backgroundImage: `url('${item.img}')` }}></div>
@@ -536,11 +578,11 @@ const RayMartPageThree = () => {
             </div>
             <div className="rm3-app-cards-grid" ref={rowSaasRef}>
               {[
-                { title: "Cloud Ops Manager", desc: "Monitor your entire cloud infrastructure from a single pane of glass.", img: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop", offer: "Enterprise Trial", discount: "20%" },
-                { title: "SaaS Billing Pro", desc: "Automate recurring payments and subscription lifecycle management.", img: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=800&auto=format&fit=crop", offer: "Free Gateway Setup", discount: "30%" },
-                { title: "API Nexus Hub", desc: "Connect and manage microservices with unified API gateways.", img: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=800&auto=format&fit=crop", offer: "Developer Pack", discount: "15%" },
-                { title: "User Auth Guard", desc: "Enterprise-grade single sign-on and identity management.", img: "https://images.unsplash.com/photo-1614064641936-e41fa8208453?q=80&w=800&auto=format&fit=crop", offer: "Security Bundle", discount: "40%" },
-                { title: "Metric Data Lake", desc: "Store and query massive amounts of product analytics instantly.", img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop", offer: "Data Starter", discount: "25%" },
+                { title: "Cloud Ops Manager", desc: "Monitor your entire cloud infrastructure from a single pane of glass.", img: saasOne, offer: "Enterprise Trial", discount: "20%" },
+                { title: "SaaS Billing Pro", desc: "Automate recurring payments and subscription lifecycle management.", img: saasTwo, offer: "Free Gateway Setup", discount: "30%" },
+                { title: "API Nexus Hub", desc: "Connect and manage microservices with unified API gateways.", img: saasThree, offer: "Developer Pack", discount: "15%" },
+                { title: "User Auth Guard", desc: "Enterprise-grade single sign-on and identity management.", img: saasFour, offer: "Security Bundle", discount: "40%" },
+                { title: "Metric Data Lake", desc: "Store and query massive amounts of product analytics instantly.", img: saasFour, offer: "Data Starter", discount: "25%" },
                 { title: "Tenant Sync DB", desc: "Multi-tenant database orchestration for scaling B2B SaaS.", img: "https://images.unsplash.com/photo-1631624215749-b10b3dd7bca5?q=80&w=800&auto=format&fit=crop", offer: "Scale Plan Deal", discount: "50%" }
               ].map((item, idx) => (
                 <div key={`saas-${idx}`} className="rm3-app-card" onClick={() => navigate('/raymartPageFour', { state: { id: "saas-products" } })} style={{ cursor: 'pointer' }}>

@@ -4,6 +4,70 @@ import './RayMartPageTwo.css';
 import RayMartNavbar from '../../../Components/RayMartNavbar/RayMartNavbar';
 import finstat from '../../../assets/hello admin.jpeg';
 
+import ecomOne from '../../../assets/WEBSITE_IMAGES/service 4, e commerce development/1.png';
+import ecomTwo from '../../../assets/WEBSITE_IMAGES/service 4, e commerce development/2.png';
+import ecomThree from '../../../assets/WEBSITE_IMAGES/service 4, e commerce development/3.png';
+import ecomFour from '../../../assets/WEBSITE_IMAGES/service 4, e commerce development/4.png';
+import ecomFive from '../../../assets/WEBSITE_IMAGES/service 4, e commerce development/5.png';
+import ecomSix from '../../../assets/WEBSITE_IMAGES/service 4, e commerce development/6.png';
+import ecomSeven from '../../../assets/WEBSITE_IMAGES/service 4, e commerce development/7.png';
+
+import appOne from '../../../assets/WEBSITE_IMAGES/service 5, app development/1.png';
+import appTwo from '../../../assets/WEBSITE_IMAGES/service 5, app development/2.png';
+import appThree from '../../../assets/WEBSITE_IMAGES/service 5, app development/3.png';
+import appFour from '../../../assets/WEBSITE_IMAGES/service 5, app development/4.png';
+import appFive from '../../../assets/WEBSITE_IMAGES/service 5, app development/5.png';
+import appSix from '../../../assets/WEBSITE_IMAGES/service 5, app development/android app development.png';
+
+import graphicOne from '../../../assets/WEBSITE_IMAGES/service 6, GRAPHIC DESING CARD6/1.png';
+import graphicTwo from '../../../assets/WEBSITE_IMAGES/service 6, GRAPHIC DESING CARD6/2.png';
+import graphicThree from '../../../assets/WEBSITE_IMAGES/service 6, GRAPHIC DESING CARD6/3.png';
+
+import uiOne from '../../../assets/WEBSITE_IMAGES/service 7, UI UX/1.png';
+import uiTwo from '../../../assets/WEBSITE_IMAGES/service 7, UI UX/2.png';
+import uiThree from '../../../assets/WEBSITE_IMAGES/service 7, UI UX/3.png';
+import uiFour from '../../../assets/WEBSITE_IMAGES/service 7, UI UX/4.png';
+
+import softOne from '../../../assets/WEBSITE_IMAGES/service 8, SOFTWERE SOLUTION/1.png';
+import softTwo from '../../../assets/WEBSITE_IMAGES/service 8, SOFTWERE SOLUTION/2.png';
+import softThree from '../../../assets/WEBSITE_IMAGES/service 8, SOFTWERE SOLUTION/3.png';
+import softFour from '../../../assets/WEBSITE_IMAGES/service 8, SOFTWERE SOLUTION/4.png';
+import softFive from '../../../assets/WEBSITE_IMAGES/service 8, SOFTWERE SOLUTION/5.png';
+import softSix from '../../../assets/WEBSITE_IMAGES/service 8, SOFTWERE SOLUTION/6.png';
+
+
+import dataOne from '../../../assets/WEBSITE_IMAGES/service 9, DATA ANALYTICS/1.png';
+import dataTwo from '../../../assets/WEBSITE_IMAGES/service 9, DATA ANALYTICS/2.png';
+import dataThree from '../../../assets/WEBSITE_IMAGES/service 9, DATA ANALYTICS/3.png';
+import dataFour from '../../../assets/WEBSITE_IMAGES/service 9, DATA ANALYTICS/4.png';
+import dataFive from '../../../assets/WEBSITE_IMAGES/service 9, DATA ANALYTICS/5.png';
+import dataSix from '../../../assets/WEBSITE_IMAGES/service 9, DATA ANALYTICS/6.png';
+import dataSeven from '../../../assets/WEBSITE_IMAGES/service 9, DATA ANALYTICS/7.png';
+import dataEight from '../../../assets/WEBSITE_IMAGES/service 9, DATA ANALYTICS/8.png';
+
+import aiOne from '../../../assets/WEBSITE_IMAGES/service 10, AI SERVICES/1.png';
+import aiTwo from '../../../assets/WEBSITE_IMAGES/service 10, AI SERVICES/2.png';
+import aiThree from '../../../assets/WEBSITE_IMAGES/service 10, AI SERVICES/3.png';
+import aiFour from '../../../assets/WEBSITE_IMAGES/service 10, AI SERVICES/4.png';
+import aiFive from '../../../assets/WEBSITE_IMAGES/service 10, AI SERVICES/5.png';
+import aiSix from '../../../assets/WEBSITE_IMAGES/service 10, AI SERVICES/6.png';
+import aiSeven from '../../../assets/WEBSITE_IMAGES/service 10, AI SERVICES/7.png';
+
+import crmOne from '../../../assets/WEBSITE_IMAGES/crm sevices/1.png';
+import crmTwo from '../../../assets/WEBSITE_IMAGES/crm sevices/2.png';
+import crmThree from '../../../assets/WEBSITE_IMAGES/crm sevices/3.png';
+import crmFour from '../../../assets/WEBSITE_IMAGES/crm sevices/4.png';
+import crmFive from '../../../assets/WEBSITE_IMAGES/crm sevices/5.png';
+import crmSix from '../../../assets/WEBSITE_IMAGES/crm sevices/6.png';
+
+import saasOne from '../../../assets/WEBSITE_IMAGES/SAAS PRODUCT/1.png';
+import saasTwo from '../../../assets/WEBSITE_IMAGES/SAAS PRODUCT/2.png';
+import saasThree from '../../../assets/WEBSITE_IMAGES/SAAS PRODUCT/3.png';
+import saasFour from '../../../assets/WEBSITE_IMAGES/SAAS PRODUCT/4.png';
+
+
+
+
 const howWeWorkSlides = [
   {
     title: "HOW WE WORK",
@@ -554,13 +618,13 @@ const RayMartPageTwo = () => {
             </div>
             <div className="rm-designs-cards-wrapper-four" ref={rowEcomRef}>
               {[
-                { title: "Online Store Dev", img: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&q=80&w=1200", desc: "Complete end-to-end online storefront solutions.", disc: "30%", offer: "RETAIL READY" },
-                { title: "Shopify / WooCommerce", img: "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&q=80&w=1200", desc: "Expert platform customization and store setup.", disc: "20%", offer: "PLATFORM PRO" },
-                { title: "Custom E-Commerce", img: "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=1200", desc: "Unique shopping experiences built from scratch.", disc: "40%", offer: "UNIQUE STORE" },
-                { title: "Product Management", img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1200", desc: "Intuitive systems for inventory and catalogs.", disc: "15%", offer: "INVENTORY HUB" },
-                { title: "Cart & Checkout", img: "https://images.unsplash.com/photo-1591084728795-1149f32d9866?auto=format&fit=crop&q=80&w=1200", desc: "Seamless and secure paths to purchase.", disc: "25%", offer: "CHECKOUT PRO" },
-                { title: "Order Management", img: "https://images.unsplash.com/photo-1512418490979-92798ccc13fb?auto=format&fit=crop&q=80&w=1200", desc: "Streamlined order tracking and fulfillment.", disc: "35%", offer: "ORDER SHIELD" },
-                { title: "Mobile E-Commerce", img: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&q=80&w=1200", desc: "Optimizing the journey for mobile users.", disc: "45%", offer: "M-COMMERCE" }
+                { title: "Online Store Dev", img: ecomOne, desc: "Complete end-to-end online storefront solutions.", disc: "30%", offer: "RETAIL READY" },
+                { title: "Shopify / WooCommerce", img: ecomTwo, desc: "Expert platform customization and store setup.", disc: "20%", offer: "PLATFORM PRO" },
+                { title: "Custom E-Commerce", img: ecomThree, desc: "Unique shopping experiences built from scratch.", disc: "40%", offer: "UNIQUE STORE" },
+                { title: "Product Management", img: ecomFour, desc: "Intuitive systems for inventory and catalogs.", disc: "15%", offer: "INVENTORY HUB" },
+                { title: "Cart & Checkout", img: ecomFive, desc: "Seamless and secure paths to purchase.", disc: "25%", offer: "CHECKOUT PRO" },
+                { title: "Order Management", img: ecomSix, desc: "Streamlined order tracking and fulfillment.", disc: "35%", offer: "ORDER SHIELD" },
+                { title: "Mobile E-Commerce", img: ecomSeven, desc: "Optimizing the journey for mobile users.", disc: "45%", offer: "M-COMMERCE" }
               ].map((item, idx) => (
                 <div className="rm-app-card" key={idx} onClick={() => navigate('/raymartPageFour', { state: { id: "ecommerce-development" } })} style={{ cursor: 'pointer' }}>
                   <div className="rm-app-card-img" style={{ backgroundImage: `url('${item.img}')` }}></div>
@@ -588,12 +652,12 @@ const RayMartPageTwo = () => {
             </div>
             <div className="rm-designs-cards-wrapper-four" ref={rowAppRef}>
               {[
-                { title: "Business App Solution", img: "https://images.unsplash.com/photo-1522199755839-a2bacb67c546?auto=format&fit=crop&q=80&w=1200", desc: "Apps designed for core business challenges.", disc: "20%", offer: "BIZ APP KIT" },
-                { title: "E-Commerce App", img: "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&q=80&w=1200", desc: "Mobile shopping platforms for your brand.", disc: "30%", offer: "SHOP APP PRO" },
-                { title: "Startup Launch Kit", img: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=1200", desc: "MVP development for rapid growth.", disc: "50%", offer: "LAUNCH BUNDLE" },
-                { title: "Custom App Dev", img: "https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&q=80&w=1200", desc: "Tailored mobile features for specific needs.", disc: "25%", offer: "BESPOKE MOBILE" },
-                { title: "Android App Dev", img: "https://images.unsplash.com/photo-1607252682822-d1be8e932abb?auto=format&fit=crop&q=80&w=1200", desc: "High-performance apps for Android.", disc: "33%", offer: "DROID MASTER" },
-                { title: "iOS App Dev", img: "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&q=80&w=1200", desc: "Premium iPhone and iPad app experiences.", disc: "33%", offer: "APPLE CORE" }
+                { title: "Business App Solution", img: appOne, desc: "Apps designed for core business challenges.", disc: "20%", offer: "BIZ APP KIT" },
+                { title: "E-Commerce App", img: appTwo, desc: "Mobile shopping platforms for your brand.", disc: "30%", offer: "SHOP APP PRO" },
+                { title: "Startup Launch Kit", img: appThree, desc: "MVP development for rapid growth.", disc: "50%", offer: "LAUNCH BUNDLE" },
+                { title: "Custom App Dev", img: appFour, desc: "Tailored mobile features for specific needs.", disc: "25%", offer: "BESPOKE MOBILE" },
+                { title: "Android App Dev", img: appFive, desc: "High-performance apps for Android.", disc: "33%", offer: "DROID MASTER" },
+                { title: "iOS App Dev", img: appSix, desc: "Premium iPhone and iPad app experiences.", disc: "33%", offer: "APPLE CORE" }
               ].map((item, idx) => (
                 <div className="rm-app-card" key={idx} onClick={() => navigate('/raymartPageFour', { state: { id: "app-development" } })} style={{ cursor: 'pointer' }}>
                   <div className="rm-app-card-img" style={{ backgroundImage: `url('${item.img}')` }}></div>
@@ -621,9 +685,9 @@ const RayMartPageTwo = () => {
             </div>
             <div className="rm-designs-cards-wrapper-four" ref={rowGraphicRef}>
               {[
-                { title: "Social Media Pack", img: "https://images.unsplash.com/photo-1611162617263-4ec3060a058e?auto=format&fit=crop&q=80&w=1200", desc: "Engaging visuals for social platforms.", disc: "25%", offer: "SOCIAL CONTENT" },
-                { title: "Business Branding Kit", img: "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=1200", desc: "Unified visual foundation for business.", disc: "40%", offer: "BIZ BRAND" },
-                { title: "Marketing Design", img: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1200", desc: "Creative solutions for campaigns.", disc: "20%", offer: "MARKET PRO" },
+                { title: "Social Media Pack", img: graphicOne, desc: "Engaging visuals for social platforms.", disc: "25%", offer: "SOCIAL CONTENT" },
+                { title: "Business Branding Kit", img: graphicTwo, desc: "Unified visual foundation for business.", disc: "40%", offer: "BIZ BRAND" },
+                { title: "Marketing Design", img: graphicThree, desc: "Creative solutions for campaigns.", disc: "20%", offer: "MARKET PRO" },
                 { title: "Advertisement Creative", img: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&q=80&w=1200", desc: "High-impact designs for digital ads.", disc: "35%", offer: "AD MASTER" },
                 { title: "Logo & Identity", img: "https://images.unsplash.com/photo-1626785774625-ddcddc3445e9?auto=format&fit=crop&q=80&w=1200", desc: "Perfect logos to build your brand vision.", disc: "50%", offer: "ID PACK" },
                 { title: "Corporate Design", img: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200", desc: "Clean designs for corporate use.", disc: "30%", offer: "CORP KIT" },
@@ -655,10 +719,10 @@ const RayMartPageTwo = () => {
             </div>
             <div className="rm-designs-cards-wrapper-four" ref={rowUiUxRef}>
               {[
-                { title: "Website UI/UX", img: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=1200", desc: "Engaging and user-centric web interfaces.", disc: "30%", offer: "UI EXPERT" },
-                { title: "Mobile UI/UX", img: "https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&q=80&w=1200", desc: "Seamless navigation for your mobile users.", disc: "40%", offer: "MOB DESIGN" },
-                { title: "Dashboard Design", img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200", desc: "Intuitive dashboards for complex data visualization.", disc: "20%", offer: "DASHBOARD PRO" },
-                { title: "Product UI/UX", img: "https://images.unsplash.com/photo-1522542550221-31fd19705268?auto=format&fit=crop&q=80&w=1200", desc: "End-to-end user journeys for digital products.", disc: "50%", offer: "UX MASTER" }
+                { title: "Website UI/UX", img: uiOne, desc: "Engaging and user-centric web interfaces.", disc: "30%", offer: "UI EXPERT" },
+                { title: "Mobile UI/UX", img: uiTwo, desc: "Seamless navigation for your mobile users.", disc: "40%", offer: "MOB DESIGN" },
+                { title: "Dashboard Design", img: uiThree, desc: "Intuitive dashboards for complex data visualization.", disc: "20%", offer: "DASHBOARD PRO" },
+                { title: "Product UI/UX", img: uiFour, desc: "End-to-end user journeys for digital products.", disc: "50%", offer: "UX MASTER" }
               ].map((item, idx) => (
                 <div className="rm-app-card" key={idx} onClick={() => navigate('/raymartPageFour', { state: { id: "ui-ux-design" } })} style={{ cursor: 'pointer' }}>
                   <div className="rm-app-card-img" style={{ backgroundImage: `url('${item.img}')` }}></div>
@@ -686,12 +750,12 @@ const RayMartPageTwo = () => {
             </div>
             <div className="rm-designs-cards-wrapper-four" ref={rowSoftwareRef}>
               {[
-                { title: "Custom Software", img: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1200", desc: "Bespoke software solutions for enterprise.", disc: "10%", offer: "SOFT CORE" },
-                { title: "Enterprise Solutions", img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200", desc: "Scaleable tech stacks for large organizations.", disc: "25%", offer: "ENT TECH" },
-                { title: "ERP & Management", img: "https://images.unsplash.com/photo-1454165833767-027ffea9e77b?auto=format&fit=crop&q=80&w=1200", desc: "Integrated systems for resource planning.", disc: "30%", offer: "ERP MASTER" },
-                { title: "Legacy Migration", img: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1200", desc: "Seamless modernization of existing legacy systems.", disc: "40%", offer: "SHIFT PRO" },
-                { title: "IT Consulting", img: "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=1200", desc: "Expert advice on technology strategy.", disc: "15%", offer: "TECH GUIDE" },
-                { title: "Tech Maintenance", img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200", desc: "Ongoing support and updates for your tech.", disc: "50%", offer: "CARE PACK" }
+                { title: "Custom Software", img: softOne, desc: "Bespoke software solutions for enterprise.", disc: "10%", offer: "SOFT CORE" },
+                { title: "Enterprise Solutions", img: softTwo, desc: "Scaleable tech stacks for large organizations.", disc: "25%", offer: "ENT TECH" },
+                { title: "ERP & Management", img: softThree, desc: "Integrated systems for resource planning.", disc: "30%", offer: "ERP MASTER" },
+                { title: "Legacy Migration", img: softFour, desc: "Seamless modernization of existing legacy systems.", disc: "40%", offer: "SHIFT PRO" },
+                { title: "IT Consulting", img: softFive, desc: "Expert advice on technology strategy.", disc: "15%", offer: "TECH GUIDE" },
+                { title: "Tech Maintenance", img: softSix, desc: "Ongoing support and updates for your tech.", disc: "50%", offer: "CARE PACK" }
               ].map((item, idx) => (
                 <div className="rm-app-card" key={idx} onClick={() => navigate('/raymartPageFour', { state: { id: "software-tech-solutions" } })} style={{ cursor: 'pointer' }}>
                   <div className="rm-app-card-img" style={{ backgroundImage: `url('${item.img}')` }}></div>
@@ -719,14 +783,14 @@ const RayMartPageTwo = () => {
             </div>
             <div className="rm-designs-cards-wrapper-four" ref={rowDataRef}>
               {[
-                { title: "Business Analytics", img: "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?auto=format&fit=crop&q=80&w=1200", desc: "Insights that drive better business decisions.", disc: "30%", offer: "DATA DRIVE" },
-                { title: "Visualization", img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200", desc: "Visual representations of your data.", disc: "50%", offer: "VISUAL PRO" },
-                { title: "Sales Performance", img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200", desc: "Track and optimize your sales ecosystem.", disc: "20%", offer: "SALES MAP" },
-                { title: "Customer Insights", img: "https://images.unsplash.com/photo-1518186239717-2e90987c3913?auto=format&fit=crop&q=80&w=1200", desc: "Know your audience through deep data segmentation.", disc: "42%", offer: "USER PULSE" },
-                { title: "Marketing Analytics", img: "https://images.unsplash.com/photo-1543286386-713bcd5140ce?auto=format&fit=crop&q=80&w=1200", desc: "Measure the ROI of your marketing spend.", disc: "33%", offer: "AD VALUE" },
-                { title: "Predictive AI", img: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&q=80&w=1200", desc: "Forecasting the future with smart algorithms.", disc: "25%", offer: "FUTURE MAP" },
-                { title: "Reporting Automation", img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200", desc: "Automated reports on core business metrics.", disc: "40%", offer: "FLOW REPORT" },
-                { title: "Optimization Strategy", img: "https://images.unsplash.com/photo-1504868584819-f8e905b637e6?auto=format&fit=crop&q=80&w=1200", desc: "Strategic plans for data maturity.", disc: "15%", offer: "GROWTH MAP" }
+                { title: "Business Analytics", img: dataOne, desc: "Insights that drive better business decisions.", disc: "30%", offer: "DATA DRIVE" },
+                { title: "Visualization", img: dataTwo,desc: "Visual representations of your data.", disc: "50%", offer: "VISUAL PRO" },
+                { title: "Sales Performance", img: dataThree, desc: "Track and optimize your sales ecosystem.", disc: "20%", offer: "SALES MAP" },
+                { title: "Customer Insights", img: dataFour, desc: "Know your audience through deep data segmentation.", disc: "42%", offer: "USER PULSE" },
+                { title: "Marketing Analytics", img: dataFive,desc: "Measure the ROI of your marketing spend.", disc: "33%", offer: "AD VALUE" },
+                { title: "Predictive AI", img: dataSix, desc: "Forecasting the future with smart algorithms.", disc: "25%", offer: "FUTURE MAP" },
+                { title: "Reporting Automation", img: dataSeven,desc: "Automated reports on core business metrics.", disc: "40%", offer: "FLOW REPORT" },
+                { title: "Optimization Strategy", img: dataEight, desc: "Strategic plans for data maturity.", disc: "15%", offer: "GROWTH MAP" }
               ].map((item, idx) => (
                 <div className="rm-app-card" key={idx} onClick={() => navigate('/raymartPageFour', { state: { id: "data-analytics" } })} style={{ cursor: 'pointer' }}>
                   <div className="rm-app-card-img" style={{ backgroundImage: `url('${item.img}')` }}></div>
@@ -754,13 +818,13 @@ const RayMartPageTwo = () => {
             </div>
             <div className="rm-designs-cards-wrapper-four" ref={rowAIRef}>
               {[
-                { title: "AI Chatbot Solution", img: "https://images.unsplash.com/photo-1531746790731-6c087fecd05a?auto=format&fit=crop&q=80&w=1200", desc: "24/7 smart customer service bots.", disc: "80%", offer: "DOUBLE TOKEN" },
-                { title: "AI Automation System", img: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=1200", desc: "Intelligent systems to automate manual tasks.", disc: "50%", offer: "BETA ACCESS" },
-                { title: "Custom AI Development", img: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&q=80&w=1200", desc: "Tailored AI models for unique data challenges.", disc: "25%", offer: "SMART BUILD" },
-                { title: "AI-Powered Tools", img: "https://images.unsplash.com/photo-1531746790731-6c087fecd05a?auto=format&fit=crop&q=80&w=1200", desc: "Enhancing productivity with AI tools.", disc: "70%", offer: "TOOL KIT" },
-                { title: "Machine Learning", img: "https://images.unsplash.com/photo-1507146426996-ef05306b995a?auto=format&fit=crop&q=80&w=1200", desc: "High-end ML models for pattern recognition.", disc: "65%", offer: "ML MASTER" },
-                { title: "AI Content Generation", img: "https://images.unsplash.com/photo-1589254065878-42c9da997008?auto=format&fit=crop&q=80&w=1200", desc: "Scale your creative output with generative AI.", disc: "55%", offer: "CONTENT AI" },
-                { title: "AI Intelligence Platform", img: "https://images.unsplash.com/photo-1527430253228-e90371c6a1f9?auto=format&fit=crop&q=80&w=1200", desc: "Unified AI platforms for strategy.", disc: "40%", offer: "CORE AI" }
+                { title: "AI Chatbot Solution", img: aiOne, desc: "24/7 smart customer service bots.", disc: "80%", offer: "DOUBLE TOKEN" },
+                { title: "AI Automation System", img: aiTwo, desc: "Intelligent systems to automate manual tasks.", disc: "50%", offer: "BETA ACCESS" },
+                { title: "Custom AI Development", img: aiThree, desc: "Tailored AI models for unique data challenges.", disc: "25%", offer: "SMART BUILD" },
+                { title: "AI-Powered Tools", img: aiFour, desc: "Enhancing productivity with AI tools.", disc: "70%", offer: "TOOL KIT" },
+                { title: "Machine Learning", img: aiFive, desc: "High-end ML models for pattern recognition.", disc: "65%", offer: "ML MASTER" },
+                { title: "AI Content Generation", img: aiSix, desc: "Scale your creative output with generative AI.", disc: "55%", offer: "CONTENT AI" },
+                { title: "AI Intelligence Platform", img: aiSeven, desc: "Unified AI platforms for strategy.", disc: "40%", offer: "CORE AI" }
               ].map((item, idx) => (
                 <div className="rm-app-card" key={idx} onClick={() => navigate('/raymartPageFour', { state: { id: "ai-services" } })} style={{ cursor: 'pointer' }}>
                   <div className="rm-app-card-img" style={{ backgroundImage: `url('${item.img}')` }}></div>
@@ -788,12 +852,12 @@ const RayMartPageTwo = () => {
             </div>
             <div className="rm-designs-cards-wrapper-four" ref={rowCRMRef}>
               {[
-                { title: "CRM Implementation", img: "https://images.unsplash.com/photo-1552581234-26160f608093?auto=format&fit=crop&q=80&w=1200", desc: "Setting up robust CRM systems to manage relations.", disc: "20%", offer: "RELATION SHIP" },
-                { title: "Customer Data Platform", img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200", desc: "Unified profiles for deep customer understanding.", disc: "30%", offer: "DATA HUB" },
-                { title: "Sales Automation", img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200", desc: "Automating lead funnels and sales tasks.", disc: "42%", offer: "FUNNEL PRO" },
-                { title: "CRM Strategy", img: "https://images.unsplash.com/photo-1454165833767-027ffea9e77b?auto=format&fit=crop&q=80&w=1200", desc: "Expert plans to maximize customer lifetime value.", disc: "50%", offer: "VALUE CORE" },
-                { title: "Workflow Automation", img: "https://images.unsplash.com/photo-1518186239717-2e90987c3913?auto=format&fit=crop&q=80&w=1200", desc: "Streamline repetitive tasks within your CRM.", disc: "25%", offer: "FLOW BUILD" },
-                { title: "Custom Integration", img: "https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?auto=format&fit=crop&q=80&w=1200", desc: "Sync your CRM with other business tools.", disc: "15%", offer: "SYNC PRO" }
+                { title: "CRM Implementation", img: crmOne, desc: "Setting up robust CRM systems to manage relations.", disc: "20%", offer: "RELATION SHIP" },
+                { title: "Customer Data Platform", img: crmTwo, desc: "Unified profiles for deep customer understanding.", disc: "30%", offer: "DATA HUB" },
+                { title: "Sales Automation", img: crmThree, desc: "Automating lead funnels and sales tasks.", disc: "42%", offer: "FUNNEL PRO" },
+                { title: "CRM Strategy", img: crmFour, desc: "Expert plans to maximize customer lifetime value.", disc: "50%", offer: "VALUE CORE" },
+                { title: "Workflow Automation", img: crmFive, desc: "Streamline repetitive tasks within your CRM.", disc: "25%", offer: "FLOW BUILD" },
+                { title: "Custom Integration", img: crmSix, desc: "Sync your CRM with other business tools.", disc: "15%", offer: "SYNC PRO" }
               ].map((item, idx) => (
                 <div className="rm-app-card" key={idx} onClick={() => navigate('/raymartPageFour', { state: { id: "crm-services" } })} style={{ cursor: 'pointer' }}>
                   <div className="rm-app-card-img" style={{ backgroundImage: `url('${item.img}')` }}></div>
@@ -821,10 +885,10 @@ const RayMartPageTwo = () => {
             </div>
             <div className="rm-designs-cards-wrapper-four" ref={rowSaasRef}>
               {[
-                { title: "Cloud Launch", img: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1200", desc: "Full-scale cloud deployment for new products.", disc: "20%", offer: "CLOUD READY" },
-                { title: "Multi-Tenant", img: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=1200", desc: "Build for thousands of users on one platform.", disc: "30%", offer: "SCALE PRO" },
-                { title: "Subscription Billing", img: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=1200", desc: "Automate recurrent revenue streams.", disc: "15%", offer: "BILLING HUB" },
-                { title: "SaaS Framework", img: "https://images.unsplash.com/photo-1614064641936-e41fa8208453?auto=format&fit=crop&q=80&w=1200", desc: "Perfect interfaces for scaleable software.", disc: "40%", offer: "SaaS STYLE" },
+                { title: "Cloud Launch", img: saasOne, desc: "Full-scale cloud deployment for new products.", disc: "20%", offer: "CLOUD READY" },
+                { title: "Multi-Tenant", img: saasTwo, desc: "Build for thousands of users on one platform.", disc: "30%", offer: "SCALE PRO" },
+                { title: "Subscription Billing", img: saasThree, desc: "Automate recurrent revenue streams.", disc: "15%", offer: "BILLING HUB" },
+                { title: "SaaS Framework", img: saasFour, desc: "Perfect interfaces for scaleable software.", disc: "40%", offer: "SaaS STYLE" },
                 { title: "Infrastructure", img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200", desc: "Reliable foundations for user growth.", disc: "25%", offer: "SKY CORE" },
                 { title: "Product Metrics", img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200", desc: "Deep analytics for your SaaS product success.", disc: "50%", offer: "VALUE MAP" }
               ].map((item, idx) => (
