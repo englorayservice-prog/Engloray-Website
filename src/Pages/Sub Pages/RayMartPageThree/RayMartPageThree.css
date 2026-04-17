@@ -1360,7 +1360,8 @@
 
 .rm3-app-card-img {
   height: 160px;
-  background-size: cover;
+  background-size: 100% 100%; /* Force image to fill entire card header without side gaps */
+  background-repeat: no-repeat;
   background-position: center;
   border-bottom: 2px solid #1e2837;
 }
