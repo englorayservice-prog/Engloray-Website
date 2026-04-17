@@ -38,7 +38,7 @@ import saasFeaturedBuilding from '../../../assets/saas_featured_building.png';
 import microsoftLogo from '../../../assets/microsoft.png';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar'
 import TopNavbar from '../../../Components/TopNavbar/TopNavbar'
-import Footer from '../../../Components/Footer/Footer'
+import SubFooterOne from '../../../Pages/Sub Pages/subFooterOne/NewFooter1'
 
 const StatItem = ({ value, label, suffix = "", itemClass = "crm-stat-item" }) => {
   const [ref, inView] = useInView({ threshold: 0.5, triggerOnce: true });
@@ -631,7 +631,7 @@ const SaaS = () => {
           </div>
         </section>
       </div>
-      <Footer />
+      <SubFooterOne />
     </>
   );
 };

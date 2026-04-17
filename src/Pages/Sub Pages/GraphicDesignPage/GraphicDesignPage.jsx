@@ -3,8 +3,7 @@ import Navbar from '../../../Components/Navbar/Navbar';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import './GraphicDesign.css';
-import TSPFFooter from '../TechGroupSubPagefooter/TSPFFooter';
-import NewFooter1 from '../../Sub Pages/subFooterOne/NewFooter1';
+import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 
 
 import logoDesignImg from '../../../assets/services/logo_design.png';
@@ -919,6 +918,8 @@ const GraphicDesignPage = () => {
             </section>
             {/* <TSPFFooter /> */}
             <NewFooter1 />
+                        <WhiteFooter />
+
             <BackToTop />
         </div>
     );

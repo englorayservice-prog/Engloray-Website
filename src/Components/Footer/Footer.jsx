@@ -211,9 +211,9 @@ const Footer = () => {
             Copyright ©{currentYear} All rights reserved | This template is made with <span className="heart">❤</span> by Engloray
           </div>
           <div className="legal-links">
-            <span onClick={() => handleLinkClick('/termsAndServicesPage')}>Terms</span>
-            <span onClick={() => handleLinkClick('/privacyPolicyPage')}>Privacy</span>
-            <span onClick={() => handleLinkClick('/cookiesPolicyPage')}>Compliances</span>
+            <span onClick={() => handleLinkClick('/termsAndServicesPage')}>Terms & Service</span>
+            <span onClick={() => handleLinkClick('/privacyPolicyPage')}>Privacy Policy</span>
+            <span onClick={() => handleLinkClick('/cookiesPolicyPage')}>Cookie Policy</span>
           </div>
         </div>
       </div>

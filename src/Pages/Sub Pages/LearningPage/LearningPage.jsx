@@ -4,7 +4,7 @@ import { faGraduationCap, faBookOpen, faArrowRight, faHeadset, faChartLine, faLi
 import { motion } from 'motion/react';
 import TopNavbar from '../../../Components/TopNavbar/TopNavbar';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
-import Footer from '../../../Components/Footer/Footer';
+import NewFooter1 from '../subFooterOne/NewFooter1';
 import '../CrmPage/CrmPage.css';
 import './LearningPage.css';
 import imgAi from '../../../assets/images/ai_follow_ups.png';
@@ -572,7 +572,7 @@ const LearningPage = () => {
                     </div>
                 </section>
             </div>
-            <Footer />
+            <NewFooter1 />
         </>
     );
 };

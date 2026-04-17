@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './DigitalMarketingService.css';
-import TSPFFooter from '../TechGroupSubPagefooter/TSPFFooter';
+import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
+import SubFooterOne from '../../../Pages/Sub Pages/subFooterOne/NewFooter1';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
-import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
-import Navbar from '../../../Components/Navbar/Navbar';
 import { Helmet } from 'react-helmet';
 
 const DigitalMarketingService = () => {
@@ -175,8 +174,7 @@ const DigitalMarketingService = () => {
             </Helmet>
         
         <div className="dima-page">
-            <TopNavBar/>
-            <Navbar/>
+            <TwoLineNavbar/>
             
             {/* Hero Section */}
             <section className="dima-hero-section">
@@ -404,7 +402,7 @@ const DigitalMarketingService = () => {
                 </div>
             </section>
             
-            <TSPFFooter/>
+            <SubFooterOne/>
             <BackToTop/>
         </div>
         </div>

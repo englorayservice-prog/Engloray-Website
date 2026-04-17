@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
-import Navbar from '../../../Components/Navbar/Navbar';
-import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
+import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import './BrandingAndIdentity.css';
-import TSPFFooter from '../TechGroupSubPagefooter/TSPFFooter';
+import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 
 import logoDesignImg from '../../../assets/services/logo_design.png';
 import colorPaletteImg from '../../../assets/services/color_palette.png';
@@ -23,7 +22,7 @@ import avatarSix from '../../../assets/cartoon_female_3.png';
 import avatarSeven from '../../../assets/cartoon_male_3.png';
 import avatarEight from '../../../assets/female_avatar.png';
 // import subFooterOne from '../subFooterOne/NewFooter1';
-import NewFooter1 from '../../Sub Pages/subFooterOne/NewFooter1';
+
 
 // Removed missing premium_avatar local imports
 const BrandingAndIdentity = () => {
@@ -318,8 +317,7 @@ const BrandingAndIdentity = () => {
 
     return (
         <div className="bi-page">
-            <TopNavBar />
-            <Navbar />
+            <TwoLineNavbar />
             {/* Hero Section Rebuild */}
             <section className="bi-hero-section-new">
                 <div className="bi-hero-container-new">
@@ -961,7 +959,7 @@ const BrandingAndIdentity = () => {
                 </div>
             </section>
             {/* <TSPFFooter /> */}
-            <NewFooter1 />
+            <WhiteFooter />
             <BackToTop />
         </div>
     );

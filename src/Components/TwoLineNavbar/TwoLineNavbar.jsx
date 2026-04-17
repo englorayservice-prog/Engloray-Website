@@ -6,7 +6,7 @@ import './TwoLineNavbar.css';
 import Logo from '../../assets/logo 2.png';
 import SearchBar from '../SearchBar/SearchBar';
 
-const TwoLineNavbar = () => {
+const TwoLineNavbar = ({ excludeItems = [] }) => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [activeMenu, setActiveMenu] = useState(null);
     const [activeMobileMenu, setActiveMobileMenu] = useState(null);
@@ -18,7 +18,7 @@ const TwoLineNavbar = () => {
     const navRef = useRef(null);
 
     // Define menu data with dropdowns only
-    const menuData = [
+    const allMenuData = [
         {
             id: 'home',
             title: 'Home',
@@ -136,13 +136,12 @@ const TwoLineNavbar = () => {
                     }
                 ]
             }
-        },
-        // {
-        //     id: 'raymart',
-        //     title: 'Raymart',
-        //     route: '/raymartPage'
-        // }
+        }
     ];
+
+    // Filter menuData based on excludeItems prop
+    const menuData = allMenuData.filter(item => !excludeItems.includes(item.id));
+
 
     // Function to handle Home button click
     const handleHomeClick = () => {

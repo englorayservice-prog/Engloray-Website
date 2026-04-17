@@ -98,6 +98,7 @@ import Navbar from '../../../Components/Navbar/Navbar';
 
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import { Helmet } from 'react-helmet';
+import SubFooterOne from '../../../Pages/Sub Pages/subFooterOne/NewFooter1';
 
 const GraphicDesignerInternPage = () => {
     const [activeSection, setActiveSection] = useState('home');
@@ -1851,6 +1852,7 @@ const GraphicDesignerInternPage = () => {
                         </div>
                     </section>
                     <BackToTop />
+                    <SubFooterOne />
                 </div>
             </div>
         </div>

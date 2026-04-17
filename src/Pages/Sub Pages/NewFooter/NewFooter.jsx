@@ -125,7 +125,7 @@ const NewFooter = () => {
                     </div>
                     <div className="newFooterLegal">
                         <a href="#" onClick={(e) => { e.preventDefault(); navigate('/privacyPolicyPage'); }}>Privacy Policy</a>
-                        <a href="#" onClick={(e) => { e.preventDefault(); navigate('/termsAndServicesPage'); }}>Terms of Use</a>
+                        <a href="#" onClick={(e) => { e.preventDefault(); navigate('/termsAndServicesPage'); }}>Terms & Service</a>
                         <a href="#" onClick={(e) => { e.preventDefault(); navigate('/cookiesPolicyPage'); }}>Cookie Policy</a>
                     </div>
                 </div>

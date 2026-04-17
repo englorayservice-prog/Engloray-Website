@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
-import Navbar from '../../../Components/Navbar/Navbar';
+import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import './SoftwareTech.css';
-import TSPFFooter from '../TechGroupSubPagefooter/TSPFFooter';
+import SubFooterOne from '../../../Pages/Sub Pages/subFooterOne/NewFooter1';
 
 import iphone14Img from '../../../assets/Iphone14.png';
 
@@ -298,7 +298,7 @@ const SoftwareTechSolution = () => {
     return (
         <div className="soft-page-page">
             <TopNavBar />
-            <Navbar />
+            <TwoLineNavbar />
 
             {/* Hero Section */}
             <section className="soft-page-hero-section-new">
@@ -894,7 +894,7 @@ const SoftwareTechSolution = () => {
                 </div>
             </section>
 
-            <TSPFFooter />
+            <SubFooterOne />
             <BackToTop />
         </div>
     );

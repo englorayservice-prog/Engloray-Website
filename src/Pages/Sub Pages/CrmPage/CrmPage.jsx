@@ -29,9 +29,8 @@ import {
     faChevronRight
 } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'motion/react';
-import TopNavbar from '../../../Components/TopNavbar/TopNavbar';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
-import Footer from '../../../Components/Footer/Footer';
+import SubFooterOne from '../../../Pages/Sub Pages/subFooterOne/NewFooter1'
 import './CrmPage.css';
 import crmHeroImage from '../../../assets/images/crmbg.png';
 import imgAi from '../../../assets/images/ai_follow_ups.png';
@@ -144,7 +143,6 @@ const CrmPage = () => {
 
     return (
         <>
-            <TopNavbar />
             <TwoLineNavbar />
 
             <div className="crm-subpage-container">
@@ -159,7 +157,7 @@ const CrmPage = () => {
 
                     <div className="showcase-container">
                         {/* Left side widgets */}
-                        <motion.div 
+                        <motion.div
                             className="hero-side-widget sw-left-top"
                             initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.5 }}
                         >
@@ -170,7 +168,7 @@ const CrmPage = () => {
                             </div>
                         </motion.div>
 
-                        <motion.div 
+                        <motion.div
                             className="hero-side-widget sw-left-bottom"
                             initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.7 }}
                         >
@@ -182,7 +180,7 @@ const CrmPage = () => {
                         </motion.div>
 
                         {/* Right side widgets */}
-                        <motion.div 
+                        <motion.div
                             className="hero-side-widget sw-right-top"
                             initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.6 }}
                         >
@@ -193,7 +191,7 @@ const CrmPage = () => {
                             </div>
                         </motion.div>
 
-                        <motion.div 
+                        <motion.div
                             className="hero-side-widget sw-right-bottom"
                             initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.8 }}
                         >
@@ -328,7 +326,7 @@ const CrmPage = () => {
                 <section className="crm-why-interactive">
                     <div className="cwi-container">
                         <div className="cwi-header-row">
-                            <motion.h2 
+                            <motion.h2
                                 className="cwi-title"
                                 initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }}
                                 whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
@@ -337,7 +335,7 @@ const CrmPage = () => {
                             >
                                 WHY CHOOSE <span>OUR CRM</span>
                             </motion.h2>
-                            <motion.p 
+                            <motion.p
                                 className="cwi-desc"
                                 initial={{ opacity: 0, y: 20, filter: 'blur(4px)' }}
                                 whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
@@ -702,7 +700,7 @@ const CrmPage = () => {
                 </section >
 
             </div >
-            <Footer />
+            <SubFooterOne />
         </>
     );
 };

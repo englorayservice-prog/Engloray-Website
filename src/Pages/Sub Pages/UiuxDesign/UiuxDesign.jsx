@@ -2,9 +2,10 @@ import React, { useState, useEffect, useRef } from 'react';
 import Navbar from '../../../Components/Navbar/Navbar';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
+import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 import './UiuxDesign.css';
-import TSPFFooter from '../TechGroupSubPagefooter/TSPFFooter';
-// import NewFooter1 from '../../Sub Pages/subFooterOne/NewFooter1';
+// import TSPFFooter from '../TechGroupSubPagefooter/TSPFFooter';
+// import NewFooter from '../../Sub Pages/subFooterOne/NewFooter1';
 
 
 import iphone14Img from '../../../assets/Iphone14.png';
@@ -854,7 +855,7 @@ const UIDesignServices = () => {
                 </div>
             </section>
 
-            {/* <TSPFFooter /> */}
+            <WhiteFooter />
             <BackToTop />
         </div>
     );

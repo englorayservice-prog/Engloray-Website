@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { submitEnrollment } from "../../Sub Pages/HandleSubmit/HandleSubmit";
 import NavigationBar from '../../TechLearningSection/NavigationBar/NavigationBar';
+import SubFooterTwo from '../subFooterTwo/NewFooter';
+import BackToTop from '../../../Components/BackToTop/BackToTop';
 import {
     faArrowRight,
     faBook,
@@ -1303,6 +1305,8 @@ const DigitaMarketingCourse = () => {
                     </div>
                 </div>
             )}
+            <SubFooterTwo />
+            <BackToTop />
         </div>
     );
 };

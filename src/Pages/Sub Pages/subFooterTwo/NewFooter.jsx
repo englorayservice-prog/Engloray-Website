@@ -1,17 +1,14 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import './NewFooter.css';
-import ContactForm from '../../Components/ContactForm/ContactForm';
-import Logo from '../../assets/favicon.ico'; // Import your logo
+import ContactForm from '../../../Components/ContactForm/ContactForm';
+import Logo from '../../../assets/favicon.ico'; // Import your logo
 
 const NewFooter = () => {
     const currentYear = new Date().getFullYear();
     const [isContactOpen, setIsContactOpen] = useState(false);
     const navigate = useNavigate();
-    const particleContainerRef = useRef(null);
-    const [particles, setParticles] = useState([]);
-    const buttonRefs = useRef([]);
 
     // Social media URLs
     const socialLinks = {
@@ -77,133 +74,14 @@ const NewFooter = () => {
         }
     ];
 
-    // Initialize particles
-    useEffect(() => {
-        if (!particleContainerRef.current) return;
-
-        // Create floating particles
-        const particleTypes = ['small', 'medium', 'large', 'glow', 'spark'];
-        const newParticles = [];
-
-        // Create 60 particles for desktop, 30 for mobile
-        const particleCount = window.innerWidth < 768 ? 30 : 60;
-
-        for (let i = 0; i < particleCount; i++) {
-            const type = particleTypes[Math.floor(Math.random() * particleTypes.length)];
-            const left = Math.random() * 100;
-            const delay = Math.random() * 15;
-            const duration = 8 + Math.random() * 12;
-            const animationType = Math.floor(Math.random() * 3) + 1;
-            let animation = `new-particle-float`;
-
-            if (type === 'spark') {
-                animation = 'new-particle-spark';
-            } else if (type === 'glow') {
-                animation = 'new-particle-glow';
-            } else {
-                animation = `new-particle-float-${animationType}`;
-            }
-
-            newParticles.push({
-                id: i,
-                type,
-                left,
-                delay,
-                duration: type === 'spark' ? 5 + Math.random() * 5 : duration,
-                animation
-            });
-        }
-
-        setParticles(newParticles);
-
-        // Create swirling particles
-        const swirlContainer = document.createElement('div');
-        swirlContainer.className = 'new-swirl-container';
-        particleContainerRef.current.appendChild(swirlContainer);
-
-        for (let i = 0; i < 20; i++) {
-            const particle = document.createElement('div');
-            particle.className = 'new-swirl-particle';
-            particle.style.animationDelay = `${i * 0.5}s`;
-            particle.style.opacity = `${0.1 + Math.random() * 0.2}`;
-            swirlContainer.appendChild(particle);
-        }
-
-        return () => {
-            if (swirlContainer.parentNode) {
-                swirlContainer.parentNode.removeChild(swirlContainer);
-            }
-        };
-    }, []);
-
-    // Button click particle effect
-    const createButtonParticles = (button, count = 8) => {
-        const rect = button.getBoundingClientRect();
-        const centerX = rect.left + rect.width / 2;
-        const centerY = rect.top + rect.height / 2;
-
-        for (let i = 0; i < count; i++) {
-            const particle = document.createElement('div');
-            particle.className = 'new-btn-particle';
-
-            const angle = (i / count) * Math.PI * 2;
-            const distance = 50 + Math.random() * 50;
-            const tx = Math.cos(angle) * distance;
-            const ty = Math.sin(angle) * distance;
-
-            particle.style.setProperty('--tx', `${tx}px`);
-            particle.style.setProperty('--ty', `${ty}px`);
-            particle.style.left = `${centerX}px`;
-            particle.style.top = `${centerY}px`;
-
-            document.body.appendChild(particle);
-
-            particle.style.animation = 'new-btn-particle-burst 0.6s ease-out forwards';
-
-            setTimeout(() => {
-                if (particle.parentNode) {
-                    particle.parentNode.removeChild(particle);
-                }
-            }, 600);
-        }
-    };
-
     const handleContactClick = () => {
         setIsContactOpen(true);
-    };
-
-    const openWhatsApp = () => {
-        const phoneNumber = '9047374263';
-        const message = 'Hello! I would like to start a project with ENGLORAY.';
-        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-        window.open(whatsappUrl, '_blank');
-    };
-
-    const navigateToTechLearning = () => {
-        navigate('/tech-learning');
-    };
-
-    const handleButtonClick = (e, action) => {
-        createButtonParticles(e.currentTarget);
-        setTimeout(() => {
-            if (action === 'whatsapp') {
-                openWhatsApp();
-            } else if (action === 'course') {
-                navigateToTechLearning();
-            } else if (action === 'contact') {
-                handleContactClick();
-            }
-        }, 300);
     };
 
     // Handle social media clicks
     const handleSocialClick = (e, platform) => {
         e.preventDefault();
-        createButtonParticles(e.currentTarget, 6);
-
-        setTimeout(() => {
-            window.open(socialLinks[platform], '_blank', 'noopener,noreferrer');
-        }, 200);
+        window.open(socialLinks[platform], '_blank', 'noopener,noreferrer');
     };
 
     // Handle navigation

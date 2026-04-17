@@ -48,10 +48,9 @@ import {
   faForward // Added for future-forward
 } from '@fortawesome/free-solid-svg-icons';
 import "./AllProgramsPage.css";
-import TopNavBar from "../../../Components/TopNavbar/TopNavbar";
-import Navbar from "../../../Components/Navbar/Navbar";
+import TwoLineNavbar from "../../../Components/TwoLineNavbar/TwoLineNavbar";
 import BackToTop from "../../../Components/BackToTop/BackToTop";
-import TSPFFooter from "../TechGroupSubPagefooter/TSPFFooter";
+import WhiteFooter from "../../../Components/WhiteFooter/WhiteFooter";
 
 const AllProgramsPage = () => {
   const navigate = useNavigate();
@@ -298,8 +297,7 @@ const handleScheduleSubmit = async (e) => {
           <span>Call scheduled successfully! We'll contact you soon.</span>
         </div>
       )}
-      <TopNavBar/>
-      <Navbar/>
+      <TwoLineNavbar />
       <section className="app-hero app-section" id="home">
         <div className="app-hero-content">
           <div className="app-pill">
@@ -559,7 +557,7 @@ const handleScheduleSubmit = async (e) => {
           </form>
         </div>
       </section>
-      <TSPFFooter/>
+      <WhiteFooter />
       <BackToTop/>
     </div>
   );

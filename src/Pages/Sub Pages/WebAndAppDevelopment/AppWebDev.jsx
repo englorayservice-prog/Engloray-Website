@@ -7,7 +7,7 @@ import './AppWebDev.css';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
-import MainPageSubFooter from '../MainPageSubFooter/MainPageSubFooter';
+import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 import { Helmet } from 'react-helmet';
 
 const AppWebDev = () => {
@@ -487,7 +487,7 @@ const AppWebDev = () => {
                             </div>
                         </div>
                     </section>
-                    <MainPageSubFooter />
+                    <WhiteFooter />
                     <BackToTop />
                 </div>
             </div>

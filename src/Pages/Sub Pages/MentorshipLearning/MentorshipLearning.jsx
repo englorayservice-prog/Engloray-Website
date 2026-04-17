@@ -54,7 +54,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import NavigationBar from '../../TechLearningSection/NavigationBar/NavigationBar';
-import TLSPFFooter from '../TechLearningSubPageFooter/TLSPFFooter';
+import SubFooterTwo from '../subFooterTwo/NewFooter';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import { Helmet } from 'react-helmet';
 import studentPurpleBG from '../../../assets/images/student_purple_bg.png';
@@ -182,7 +182,7 @@ const MentorshipLearning = () => {
   // Carousel State
   const [currentSlide, setCurrentSlide] = useState(0);
   const [cardsPerPage, setCardsPerPage] = useState(2);
-  
+
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 768) {
@@ -532,58 +532,58 @@ const MentorshipLearning = () => {
                 </div>
 
                 <div className="spbl-experts-scroll-container">
-                    <div className="spbl-experts-scroll">
-                      {[...mentors, ...mentors].map((expert, index) => (
-                        <div key={`${expert.id}-${index}`} className="spbl-expert-card" style={{ fontFamily: "'Poppins', sans-serif" }}>
-                          <div className="spbl-expert-header" style={{ justifyContent: 'flex-start' }}>
-                            <div className="spbl-expert-badge" style={{ backgroundColor: expert.color, fontFamily: "'Poppins', sans-serif", fontWeight: 500 }}>
-                              <FontAwesomeIcon icon={expert.badgeIcon} className="spbl-badge-icon" />
-                              {expert.badge}
-                            </div>
-                          </div>
-
-                          <div className="spbl-expert-info">
-                            <h3 className="spbl-expert-name" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600 }}>{expert.name}</h3>
-                            <p className="spbl-expert-role" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 500 }}>{expert.role}</p>
-                            <p className="spbl-expert-company" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}>{expert.company}</p>
-
-                            <div className="spbl-expert-experience">
-                              <span className="spbl-experience-icon" style={{ color: expert.color }}>
-                                <FontAwesomeIcon icon={faClock} />
-                              </span>
-                              <span className="spbl-experience-text" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}>{expert.experience}</span>
-                            </div>
-                          </div>
-
-                          <div className="spbl-expert-expertise">
-                            <h4 className="spbl-expertise-title" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600 }}>Specialized In:</h4>
-                            <div className="spbl-expertise-tags">
-                              {expert.expertise.map((skill, skillIndex) => (
-                                <span key={skillIndex} className="spbl-expertise-tag" style={{ backgroundColor: `${expert.color}20`, color: expert.color, fontFamily: "'Poppins', sans-serif", fontWeight: 500 }}>
-                                  {skill}
-                                </span>
-                              ))}
-                            </div>
-                          </div>
-
-                          <div className="spbl-expert-stats">
-                            <div className="spbl-expert-stat">
-                              <span className="spbl-stat-icon" style={{ color: expert.color }}>
-                                <FontAwesomeIcon icon={faUsers} />
-                              </span>
-                              <span className="spbl-stat-text" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}>{expert.students} students</span>
-                            </div>
-                            <div className="spbl-expert-stat">
-                              <span className="spbl-stat-icon" style={{ color: expert.color }}>
-                                <FontAwesomeIcon icon={faStar} />
-                              </span>
-                              <span className="spbl-stat-text" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}>{expert.rating} rating</span>
-                            </div>
+                  <div className="spbl-experts-scroll">
+                    {[...mentors, ...mentors].map((expert, index) => (
+                      <div key={`${expert.id}-${index}`} className="spbl-expert-card" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                        <div className="spbl-expert-header" style={{ justifyContent: 'flex-start' }}>
+                          <div className="spbl-expert-badge" style={{ backgroundColor: expert.color, fontFamily: "'Poppins', sans-serif", fontWeight: 500 }}>
+                            <FontAwesomeIcon icon={expert.badgeIcon} className="spbl-badge-icon" />
+                            {expert.badge}
                           </div>
                         </div>
-                      ))}
-                    </div>
+
+                        <div className="spbl-expert-info">
+                          <h3 className="spbl-expert-name" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600 }}>{expert.name}</h3>
+                          <p className="spbl-expert-role" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 500 }}>{expert.role}</p>
+                          <p className="spbl-expert-company" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}>{expert.company}</p>
+
+                          <div className="spbl-expert-experience">
+                            <span className="spbl-experience-icon" style={{ color: expert.color }}>
+                              <FontAwesomeIcon icon={faClock} />
+                            </span>
+                            <span className="spbl-experience-text" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}>{expert.experience}</span>
+                          </div>
+                        </div>
+
+                        <div className="spbl-expert-expertise">
+                          <h4 className="spbl-expertise-title" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600 }}>Specialized In:</h4>
+                          <div className="spbl-expertise-tags">
+                            {expert.expertise.map((skill, skillIndex) => (
+                              <span key={skillIndex} className="spbl-expertise-tag" style={{ backgroundColor: `${expert.color}20`, color: expert.color, fontFamily: "'Poppins', sans-serif", fontWeight: 500 }}>
+                                {skill}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+
+                        <div className="spbl-expert-stats">
+                          <div className="spbl-expert-stat">
+                            <span className="spbl-stat-icon" style={{ color: expert.color }}>
+                              <FontAwesomeIcon icon={faUsers} />
+                            </span>
+                            <span className="spbl-stat-text" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}>{expert.students} students</span>
+                          </div>
+                          <div className="spbl-expert-stat">
+                            <span className="spbl-stat-icon" style={{ color: expert.color }}>
+                              <FontAwesomeIcon icon={faStar} />
+                            </span>
+                            <span className="spbl-stat-text" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}>{expert.rating} rating</span>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
                   </div>
+                </div>
               </section>
             </>
 
@@ -602,30 +602,30 @@ const MentorshipLearning = () => {
                         <FontAwesomeIcon icon={faChevronLeft} />
                       </button>
                     )}
-                    
+
                     <div className="spbl-categories-carousel-viewport">
-                      <div className="spbl-categories-carousel-track" style={{ 
+                      <div className="spbl-categories-carousel-track" style={{
                         transform: `translateX(calc(-${currentSlide} * (100% / ${cardsPerPage} + ${cardsPerPage === 1 ? '0rem' : '1rem'})))`,
                       }}>
                         {learningPaths.map((path, index) => {
                           return (
-                            <div key={path.id} className="spbl-category-card" style={{ 
+                            <div key={path.id} className="spbl-category-card" style={{
                               fontFamily: "'Poppins', sans-serif",
                               flexDirection: 'column'
                             }}>
                               <div className="spbl-category-image-wrapper" style={{ position: 'relative' }}>
                                 <div className="spbl-image-mask" style={{ width: '100%', height: '100%', overflow: 'hidden', borderRadius: '48px' }}>
-                                  <img 
-                                    src={path.bgImage} 
-                                    alt={path.title} 
-                                    className={path.imageClass ? path.imageClass : ""} 
+                                  <img
+                                    src={path.bgImage}
+                                    alt={path.title}
+                                    className={path.imageClass ? path.imageClass : ""}
                                   />
                                 </div>
-                                <div className="spbl-category-level" style={{ 
+                                <div className="spbl-category-level" style={{
                                   position: 'absolute',
                                   top: '36px',
                                   right: '36px',
-                                  fontFamily: "'Poppins', sans-serif", 
+                                  fontFamily: "'Poppins', sans-serif",
                                   fontWeight: 600,
                                   color: '#1E293B',
                                   backgroundColor: 'rgba(255, 255, 255, 0.95)',
@@ -638,34 +638,34 @@ const MentorshipLearning = () => {
                                   {path.level}
                                 </div>
                               </div>
-                              
+
                               <div className="spbl-category-body" style={{ paddingTop: '20px' }}>
                                 <div className="spbl-category-content">
-                                  <h3 className="spbl-category-title" style={{ 
-                                    fontFamily: "'Poppins', sans-serif", 
+                                  <h3 className="spbl-category-title" style={{
+                                    fontFamily: "'Poppins', sans-serif",
                                     fontWeight: 700,
                                     color: '#0F172A'
                                   }}>{path.title}</h3>
-                                  <p className="spbl-category-description" style={{ 
-                                    fontFamily: "'Poppins', sans-serif", 
+                                  <p className="spbl-category-description" style={{
+                                    fontFamily: "'Poppins', sans-serif",
                                     fontWeight: 400,
                                     color: '#475569'
                                   }}>{path.description}</p>
-                                  
+
                                   <div className="spbl-category-duration">
                                     <span className="spbl-duration-icon" style={{ color: '#2563EB' }}>
                                       <FontAwesomeIcon icon={faClock} />
                                     </span>
-                                    <span className="spbl-duration-text" style={{ 
-                                      fontFamily: "'Poppins', sans-serif", 
+                                    <span className="spbl-duration-text" style={{
+                                      fontFamily: "'Poppins', sans-serif",
                                       fontWeight: 500,
                                       color: '#0F172A'
                                     }}>{path.duration}</span>
                                   </div>
 
                                   <div className="spbl-category-deliverables">
-                                    <h4 className="spbl-deliverables-title" style={{ 
-                                      fontFamily: "'Poppins', sans-serif", 
+                                    <h4 className="spbl-deliverables-title" style={{
+                                      fontFamily: "'Poppins', sans-serif",
                                       fontWeight: 600,
                                       color: '#0F172A'
                                     }}>What You'll Learn:</h4>
@@ -673,8 +673,8 @@ const MentorshipLearning = () => {
                                       {path.modules.map((del, i) => (
                                         <div key={i} className="spbl-deliverable-item">
                                           <span className="spbl-deliverable-icon" style={{ color: '#2563EB' }}><FontAwesomeIcon icon={faCheck} /></span>
-                                          <span className="spbl-deliverable-text" style={{ 
-                                            fontFamily: "'Poppins', sans-serif", 
+                                          <span className="spbl-deliverable-text" style={{
+                                            fontFamily: "'Poppins', sans-serif",
                                             fontWeight: 400,
                                             color: '#475569'
                                           }}>{del}</span>
@@ -695,7 +695,7 @@ const MentorshipLearning = () => {
                                       <span className="spbl-stat-text" style={{ color: '#475569' }}>{path.projects}</span>
                                     </div>
                                   </div>
-                                  <button className="spbl-enroll-btn" onClick={handleWhatsAppClick} style={{ 
+                                  <button className="spbl-enroll-btn" onClick={handleWhatsAppClick} style={{
                                     backgroundColor: '#2563EB',
                                     color: '#FFFFFF'
                                   }}>Schedule Consultation</button>
@@ -802,113 +802,113 @@ const MentorshipLearning = () => {
               </div>
 
               <div className="spbl-stories-marquee-container">
-                  <div className="spbl-stories-marquee-track">
-                    {/* First Loop */}
-                    {successStories.map((story) => (
-                      <div key={story.id} className="spbl-story-card">
-                        <div className="spbl-story-avatar" style={{ border: `2px solid ${story.color}`, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: `${story.color}20` }}>
-                          <FontAwesomeIcon icon={story.icon} style={{ color: story.color, fontSize: '2rem' }} />
+                <div className="spbl-stories-marquee-track">
+                  {/* First Loop */}
+                  {successStories.map((story) => (
+                    <div key={story.id} className="spbl-story-card">
+                      <div className="spbl-story-avatar" style={{ border: `2px solid ${story.color}`, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: `${story.color}20` }}>
+                        <FontAwesomeIcon icon={story.icon} style={{ color: story.color, fontSize: '2rem' }} />
+                      </div>
+
+                      <div className="spbl-story-content">
+                        <div className="spbl-story-header">
+                          <h3 className="spbl-story-name">{story.name}</h3>
+                          <div className="spbl-story-project">
+                            <span className="spbl-project-icon" style={{ color: story.color }}>
+                              <FontAwesomeIcon icon={faBriefcase} />
+                            </span>
+                            <span className="spbl-project-text">{story.before}</span>
+                          </div>
                         </div>
 
-                        <div className="spbl-story-content">
-                          <div className="spbl-story-header">
-                            <h3 className="spbl-story-name">{story.name}</h3>
-                            <div className="spbl-story-project">
-                              <span className="spbl-project-icon" style={{ color: story.color }}>
-                                <FontAwesomeIcon icon={faBriefcase} />
-                              </span>
-                              <span className="spbl-project-text">{story.before}</span>
-                            </div>
-                          </div>
+                        <div className="spbl-story-timeline">
+                          <span className="spbl-timeline-icon" style={{ color: story.color }}>
+                            <FontAwesomeIcon icon={faClock} />
+                          </span>
+                          <span className="spbl-timeline-text">Took {story.timeline}</span>
+                        </div>
 
-                          <div className="spbl-story-timeline">
-                            <span className="spbl-timeline-icon" style={{ color: story.color }}>
-                              <FontAwesomeIcon icon={faClock} />
+                        <div className="spbl-story-quote">
+                          <p className="spbl-quote-text">"{story.quote}"</p>
+                        </div>
+
+                        <div className="spbl-story-footer">
+                          <div className="spbl-story-mentor">
+                            <span className="spbl-mentor-icon" style={{ color: story.color }}>
+                              <FontAwesomeIcon icon={faChalkboardTeacher} />
                             </span>
-                            <span className="spbl-timeline-text">Took {story.timeline}</span>
+                            <span className="spbl-mentor-text">Mentor: {story.mentor}</span>
                           </div>
-
-                          <div className="spbl-story-quote">
-                            <p className="spbl-quote-text">"{story.quote}"</p>
+                          <div className="spbl-story-achievement">
+                            <span className="spbl-achievement-icon" style={{ color: story.color }}>
+                              <FontAwesomeIcon icon={faTrophy} />
+                            </span>
+                            <span className="spbl-achievement-text">{story.achievement}</span>
                           </div>
-
-                          <div className="spbl-story-footer">
-                            <div className="spbl-story-mentor">
-                              <span className="spbl-mentor-icon" style={{ color: story.color }}>
-                                <FontAwesomeIcon icon={faChalkboardTeacher} />
-                              </span>
-                              <span className="spbl-mentor-text">Mentor: {story.mentor}</span>
-                            </div>
-                            <div className="spbl-story-achievement">
-                              <span className="spbl-achievement-icon" style={{ color: story.color }}>
-                                <FontAwesomeIcon icon={faTrophy} />
-                              </span>
-                              <span className="spbl-achievement-text">{story.achievement}</span>
-                            </div>
-                            <div className="spbl-story-salary">
-                              <span className="spbl-salary-icon" style={{ color: story.color }}>
-                                <FontAwesomeIcon icon={faRocket} />
-                              </span>
-                              <span className="spbl-salary-text">{story.after}</span>
-                            </div>
+                          <div className="spbl-story-salary">
+                            <span className="spbl-salary-icon" style={{ color: story.color }}>
+                              <FontAwesomeIcon icon={faRocket} />
+                            </span>
+                            <span className="spbl-salary-text">{story.after}</span>
                           </div>
                         </div>
                       </div>
-                    ))}
-                    {/* Seamless Loop */}
-                    {successStories.map((story) => (
-                      <div key={`${story.id}-loop`} className="spbl-story-card">
-                        <div className="spbl-story-avatar" style={{ border: `2px solid ${story.color}`, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: `${story.color}20` }}>
-                          <FontAwesomeIcon icon={story.icon} style={{ color: story.color, fontSize: '2rem' }} />
+                    </div>
+                  ))}
+                  {/* Seamless Loop */}
+                  {successStories.map((story) => (
+                    <div key={`${story.id}-loop`} className="spbl-story-card">
+                      <div className="spbl-story-avatar" style={{ border: `2px solid ${story.color}`, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: `${story.color}20` }}>
+                        <FontAwesomeIcon icon={story.icon} style={{ color: story.color, fontSize: '2rem' }} />
+                      </div>
+
+                      <div className="spbl-story-content">
+                        <div className="spbl-story-header">
+                          <h3 className="spbl-story-name">{story.name}</h3>
+                          <div className="spbl-story-project">
+                            <span className="spbl-project-icon" style={{ color: story.color }}>
+                              <FontAwesomeIcon icon={faBriefcase} />
+                            </span>
+                            <span className="spbl-project-text">{story.before}</span>
+                          </div>
                         </div>
 
-                        <div className="spbl-story-content">
-                          <div className="spbl-story-header">
-                            <h3 className="spbl-story-name">{story.name}</h3>
-                            <div className="spbl-story-project">
-                              <span className="spbl-project-icon" style={{ color: story.color }}>
-                                <FontAwesomeIcon icon={faBriefcase} />
-                              </span>
-                              <span className="spbl-project-text">{story.before}</span>
-                            </div>
-                          </div>
+                        <div className="spbl-story-timeline">
+                          <span className="spbl-timeline-icon" style={{ color: story.color }}>
+                            <FontAwesomeIcon icon={faClock} />
+                          </span>
+                          <span className="spbl-timeline-text">Took {story.timeline}</span>
+                        </div>
 
-                          <div className="spbl-story-timeline">
-                            <span className="spbl-timeline-icon" style={{ color: story.color }}>
-                              <FontAwesomeIcon icon={faClock} />
+                        <div className="spbl-story-quote">
+                          <p className="spbl-quote-text">"{story.quote}"</p>
+                        </div>
+
+                        <div className="spbl-story-footer">
+                          <div className="spbl-story-mentor">
+                            <span className="spbl-mentor-icon" style={{ color: story.color }}>
+                              <FontAwesomeIcon icon={faChalkboardTeacher} />
                             </span>
-                            <span className="spbl-timeline-text">Took {story.timeline}</span>
+                            <span className="spbl-mentor-text">Mentor: {story.mentor}</span>
                           </div>
-
-                          <div className="spbl-story-quote">
-                            <p className="spbl-quote-text">"{story.quote}"</p>
+                          <div className="spbl-story-achievement">
+                            <span className="spbl-achievement-icon" style={{ color: story.color }}>
+                              <FontAwesomeIcon icon={faTrophy} />
+                            </span>
+                            <span className="spbl-achievement-text">{story.achievement}</span>
                           </div>
-
-                          <div className="spbl-story-footer">
-                            <div className="spbl-story-mentor">
-                              <span className="spbl-mentor-icon" style={{ color: story.color }}>
-                                <FontAwesomeIcon icon={faChalkboardTeacher} />
-                              </span>
-                              <span className="spbl-mentor-text">Mentor: {story.mentor}</span>
-                            </div>
-                            <div className="spbl-story-achievement">
-                              <span className="spbl-achievement-icon" style={{ color: story.color }}>
-                                <FontAwesomeIcon icon={faTrophy} />
-                              </span>
-                              <span className="spbl-achievement-text">{story.achievement}</span>
-                            </div>
-                            <div className="spbl-story-salary">
-                              <span className="spbl-salary-icon" style={{ color: story.color }}>
-                                <FontAwesomeIcon icon={faRocket} />
-                              </span>
-                              <span className="spbl-salary-text">{story.after}</span>
-                            </div>
+                          <div className="spbl-story-salary">
+                            <span className="spbl-salary-icon" style={{ color: story.color }}>
+                              <FontAwesomeIcon icon={faRocket} />
+                            </span>
+                            <span className="spbl-salary-text">{story.after}</span>
                           </div>
                         </div>
                       </div>
-                    ))}
-                  </div>
+                    </div>
+                  ))}
                 </div>
+              </div>
             </section>
 
             {/* CTA Section */}
@@ -955,7 +955,7 @@ const MentorshipLearning = () => {
               </div>
             </section>
           </main>
-          <TLSPFFooter />
+          <SubFooterTwo />
           <BackToTop />
         </div>
       </div>

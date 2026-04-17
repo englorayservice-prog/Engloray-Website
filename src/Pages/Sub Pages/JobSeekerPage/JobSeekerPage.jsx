@@ -4,7 +4,7 @@ import { faBriefcase, faSearch, faChartPie, faArrowRight, faHeadset, faChartLine
 import { motion } from 'motion/react';
 import TopNavbar from '../../../Components/TopNavbar/TopNavbar';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
-import Footer from '../../../Components/Footer/Footer';
+import SubFooterOne from '../../../Pages/Sub Pages/subFooterOne/NewFooter1'
 import '../CrmPage/CrmPage.css';
 import './JobSeekerPage.css';
 import imgAi from '../../../assets/images/ai_follow_ups.png';
@@ -84,7 +84,7 @@ const JobSeekerPage = () => {
                     </div>
                     <div className="showcase-container">
                         {/* Left side widgets */}
-                        <motion.div 
+                        <motion.div
                             className="hero-side-widget sw-left-top"
                             initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.5 }}
                         >
@@ -95,7 +95,7 @@ const JobSeekerPage = () => {
                             </div>
                         </motion.div>
 
-                        <motion.div 
+                        <motion.div
                             className="hero-side-widget sw-left-bottom"
                             initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.7 }}
                         >
@@ -107,7 +107,7 @@ const JobSeekerPage = () => {
                         </motion.div>
 
                         {/* Right side widgets */}
-                        <motion.div 
+                        <motion.div
                             className="hero-side-widget sw-right-top"
                             initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.6 }}
                         >
@@ -118,7 +118,7 @@ const JobSeekerPage = () => {
                             </div>
                         </motion.div>
 
-                        <motion.div 
+                        <motion.div
                             className="hero-side-widget sw-right-bottom"
                             initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.8 }}
                         >
@@ -586,7 +586,7 @@ const JobSeekerPage = () => {
                     </div>
                 </section>
             </div>
-            <Footer />
+            <SubFooterOne />
         </>
     );
 };

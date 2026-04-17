@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { submitEnrollment } from "../../Sub Pages/HandleSubmit/HandleSubmit";
 import NavigationBar from '../../TechLearningSection/NavigationBar/NavigationBar';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
+import SubFooterTwo from '../subFooterTwo/NewFooter';
+import BackToTop from '../../../Components/BackToTop/BackToTop';
 import {
   faArrowRight,
   faBook,
@@ -1294,6 +1296,8 @@ const UiuxDesignCourse = () => {
           </div>
         </div>
       )}
+      <SubFooterTwo />
+      <BackToTop />
     </div>
   );
 };

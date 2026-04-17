@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './AICreativeIntelligence.css';
+import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
+import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 
 const AICreativeIntelligence = () => {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -174,6 +176,7 @@ const AICreativeIntelligence = () => {
 
     return (
         <div className="ai-page" id='aiPage'>
+            <TwoLineNavbar />
             {/* Hero Section */}
             <section className="ai-hero-section">
                 <div className="ai-hero-bg"></div>
@@ -409,6 +412,7 @@ const AICreativeIntelligence = () => {
                     </div>
                 </div>
             </section>
+            <WhiteFooter />
         </div>
     );
 };

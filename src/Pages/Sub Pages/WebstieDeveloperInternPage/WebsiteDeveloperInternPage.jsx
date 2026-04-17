@@ -77,7 +77,7 @@ import Navbar from '../../../Components/Navbar/Navbar';
 
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import { Helmet } from 'react-helmet';
-import Footer from '../../../Components/Footer/Footer';
+import SubFooterOne from '../../../Pages/Sub Pages/subFooterOne/NewFooter1';
 import benefitCareer from '../../../assets/iicons/career_opportunities_vibrant.png';
 import benefitCertification from '../../../assets/iicons/image copy.png';
 import benefitMoneyBack from '../../../assets/iicons/money_back_guarantee.jpg';
@@ -1881,7 +1881,7 @@ const WebsiteDeveloperInternPage = () => {
                     </div>
                 </section>
                 <BackToTop />
-                <Footer />
+                <SubFooterOne />
             </div>
         </>
     );
