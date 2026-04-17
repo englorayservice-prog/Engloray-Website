@@ -71,15 +71,15 @@
 }
 
 .footer-btn-primary {
-  background: #fff;
-  color: #000;
+  background: #ff0000;
+  color: #fff;
   border: none;
   display: flex;
   align-items: center;
 }
 
 .footer-btn-primary:hover {
-  background: #ff0000;
+  background: #cc0000;
   color: #fff;
   transform: translateY(-5px);
 }
@@ -127,7 +127,7 @@
 
 .logo-img.icon-mode {
   height: 48px;
-  width: 48px;
+  width: 32px;
   object-fit: cover;
   object-position: left center;
   border-radius: 4px;

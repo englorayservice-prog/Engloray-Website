@@ -96,7 +96,7 @@ import pathTwo from '../../../assets/resources file/resources file/TECH/GRAPHICS
 import pathFive from '../../../assets/resources file/resources file/TECH/GRAPHICS DESIGNERS/Learning, Skill Development & Growth.pdf';
 import pathSix from '../../../assets/resources file/resources file/TECH/GRAPHICS DESIGNERS/Productivity, AI & Workflow Support.pdf';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
-import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
+import SubFooterOne from '../../../Pages/Sub Pages/subFooterOne/NewFooter1';
 
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import { Helmet } from 'react-helmet';
@@ -1844,7 +1844,7 @@ const BusinessDevelopmentInternPage = () => {
             </div> */}
                     </div>
                 </section>
-                <WhiteFooter />
+                <SubFooterOne />
                 <BackToTop />
             </div>
         </>

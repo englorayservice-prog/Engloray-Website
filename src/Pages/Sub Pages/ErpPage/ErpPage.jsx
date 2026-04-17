@@ -32,7 +32,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'motion/react';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
-import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
+import SubFooterOne from '../../../Pages/Sub Pages/subFooterOne/NewFooter1'
 import '../CrmPage/CrmPage.css';
 import './ErpPage.css';
 import imgErpAi from '../../../assets/images/erp_ai_analysis.png';
@@ -122,7 +122,7 @@ const ErpPage = () => {
 
                     <div className="showcase-container">
                         {/* Left side widgets */}
-                        <motion.div 
+                        <motion.div
                             className="hero-side-widget sw-left-top"
                             initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.5 }}
                         >
@@ -133,7 +133,7 @@ const ErpPage = () => {
                             </div>
                         </motion.div>
 
-                        <motion.div 
+                        <motion.div
                             className="hero-side-widget sw-left-bottom"
                             initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.7 }}
                         >
@@ -145,7 +145,7 @@ const ErpPage = () => {
                         </motion.div>
 
                         {/* Right side widgets */}
-                        <motion.div 
+                        <motion.div
                             className="hero-side-widget sw-right-top"
                             initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.6 }}
                         >
@@ -156,7 +156,7 @@ const ErpPage = () => {
                             </div>
                         </motion.div>
 
-                        <motion.div 
+                        <motion.div
                             className="hero-side-widget sw-right-bottom"
                             initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.8 }}
                         >
@@ -520,7 +520,7 @@ const ErpPage = () => {
                 </section>
 
             </div>
-            <WhiteFooter />
+            <SubFooterOne />
         </>
     );
 };

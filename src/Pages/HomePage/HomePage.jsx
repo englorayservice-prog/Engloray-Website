@@ -12,7 +12,7 @@ import About from '../../Components/About/About';
 import CoreServices from '../../Components/CoreSevices/CoreServices';
 import Testimonials from '../../Components/Testimonials/Testimonials';
 import MarqueeBrands from '../../Components/MarqueeBrands/MarqueeBrands';
-import WhiteFooter from '../../Components/WhiteFooter/WhiteFooter';
+import Footer from '../../Components/Footer/Footer';
 import BackToTopArrow from '../../Components/BackToTop/BackToTop';
 import './HomePage.css';
 
@@ -172,7 +172,7 @@ const HomePage = () => {
             <CoreServices />
             <Testimonials />
             <MarqueeBrands />
-            <WhiteFooter/>
+            <Footer/>
             <BackToTopArrow />
         </div>
     );

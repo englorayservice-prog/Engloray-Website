@@ -104,6 +104,7 @@ import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import Navbar from '../../../Components/Navbar/Navbar';
 
 import BackToTop from '../../../Components/BackToTop/BackToTop';
+import SubFooterOne from '../../../Pages/Sub Pages/subFooterOne/NewFooter1';
 import { Helmet } from 'react-helmet';
 
 const TrainingMentorInternPage = () => {
@@ -1845,6 +1846,7 @@ const TrainingMentorInternPage = () => {
                     </div>
                 </section>
                 <BackToTop />
+                <SubFooterOne />
             </div>
         </>
     );

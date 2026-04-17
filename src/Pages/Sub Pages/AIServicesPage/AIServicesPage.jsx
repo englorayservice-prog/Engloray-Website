@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import './AIServicesPage.css';
-import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
+import SubFooterOne from '../../../Pages/Sub Pages/subFooterOne/NewFooter1';
 
 import iphone14Img from '../../../assets/Iphone14.png';
 
@@ -896,7 +896,7 @@ const AIServicesPage = () => {
                 </div>
             </section>
 
-            <WhiteFooter />
+            <SubFooterOne />
             <BackToTop />
         </div>
     );

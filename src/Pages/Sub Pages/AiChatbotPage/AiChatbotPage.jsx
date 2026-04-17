@@ -29,7 +29,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'motion/react';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
-import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
+import SubFooterOne from '../../../Pages/Sub Pages/subFooterOne/NewFooter1'
 import '../CrmPage/CrmPage.css';
 import './AiChatbotPage.css';
 import imgAi from '../../../assets/images/ai_follow_ups.png';
@@ -114,7 +114,7 @@ const AiChatbotPage = () => {
                     </div>
                     <div className="showcase-container">
                         {/* Left side widgets */}
-                        <motion.div 
+                        <motion.div
                             className="hero-side-widget sw-left-top"
                             initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.5 }}
                         >
@@ -125,7 +125,7 @@ const AiChatbotPage = () => {
                             </div>
                         </motion.div>
 
-                        <motion.div 
+                        <motion.div
                             className="hero-side-widget sw-left-bottom"
                             initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.7 }}
                         >
@@ -137,7 +137,7 @@ const AiChatbotPage = () => {
                         </motion.div>
 
                         {/* Right side widgets */}
-                        <motion.div 
+                        <motion.div
                             className="hero-side-widget sw-right-top"
                             initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.6 }}
                         >
@@ -148,7 +148,7 @@ const AiChatbotPage = () => {
                             </div>
                         </motion.div>
 
-                        <motion.div 
+                        <motion.div
                             className="hero-side-widget sw-right-bottom"
                             initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.8 }}
                         >
@@ -607,7 +607,7 @@ const AiChatbotPage = () => {
                 </section>
 
             </div>
-            <WhiteFooter />
+            <SubFooterOne />
         </>
     );
 };

@@ -72,6 +72,7 @@ import pathTwo from '../../../assets/resources file/resources file/TECH/GRAPHICS
 import pathFive from '../../../assets/resources file/resources file/TECH/GRAPHICS DESIGNERS/Learning, Skill Development & Growth.pdf';
 import pathSix from '../../../assets/resources file/resources file/TECH/GRAPHICS DESIGNERS/Productivity, AI & Workflow Support.pdf';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
+import SubFooterOne from '../../../Pages/Sub Pages/subFooterOne/NewFooter1';
 import { Helmet } from 'react-helmet';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import Navbar from '../../../Components/Navbar/Navbar';
@@ -1890,6 +1891,7 @@ const SalesExecutiveInternPage = () => {
                     </div>
                 </section>
                 <BackToTop />
+                <SubFooterOne />
             </div>
         </>
     );

@@ -3,7 +3,7 @@ import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import './SoftwareTech.css';
-import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
+import SubFooterOne from '../../../Pages/Sub Pages/subFooterOne/NewFooter1';
 
 import iphone14Img from '../../../assets/Iphone14.png';
 
@@ -894,7 +894,7 @@ const SoftwareTechSolution = () => {
                 </div>
             </section>
 
-            <WhiteFooter />
+            <SubFooterOne />
             <BackToTop />
         </div>
     );

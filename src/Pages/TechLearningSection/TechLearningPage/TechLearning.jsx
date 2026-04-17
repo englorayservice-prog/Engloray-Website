@@ -10,7 +10,8 @@ import LearningExperience from '../LearningExperience/LearningExperience';
 import StudentTestimonials from '../StudentTestimonials/StudentTestimonials';
 import LearningFeatures from '../LearningFeatures/LearningFeatures';
 import TechCta from '../TechCta/TechCta';
-import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
+import SubFooterTwo from '../../../Pages/Sub Pages/subFooterTwo/NewFooter'
+
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 
 const TechLearning = () => {
@@ -24,7 +25,7 @@ const TechLearning = () => {
             <StudentTestimonials />
             <LearningFeatures />
             <TechCta />
-            <WhiteFooter />
+            <SubFooterTwo />
             <BackToTop />
         </div>
     );

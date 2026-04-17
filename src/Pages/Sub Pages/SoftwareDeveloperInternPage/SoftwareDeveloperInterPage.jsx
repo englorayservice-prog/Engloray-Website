@@ -72,7 +72,7 @@ import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import Navbar from '../../../Components/Navbar/Navbar';
 
 import BackToTop from '../../../Components/BackToTop/BackToTop';
-import Footer from '../../../Components/Footer/Footer';
+import SubFooterOne from '../../../Pages/Sub Pages/subFooterOne/NewFooter1';
 
 // Missing icon assets
 import iconGraduationCap from '../../../assets/iicons/icon_graduation_cap.png';
@@ -1875,7 +1875,7 @@ const SoftwareDeveloperInternPage = () => {
                     </div>
                 </section>
                 <BackToTop />
-                <Footer />
+                <SubFooterOne />
             </div>
         </>
     );

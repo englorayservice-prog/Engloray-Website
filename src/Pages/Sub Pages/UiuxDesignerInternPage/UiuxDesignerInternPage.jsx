@@ -80,7 +80,7 @@ import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import Navbar from '../../../Components/Navbar/Navbar';
 
 import BackToTop from '../../../Components/BackToTop/BackToTop';
-import Footer from '../../../Components/Footer/Footer';
+import SubFooterOne from '../../../Pages/Sub Pages/subFooterOne/NewFooter1';
 import { Helmet } from 'react-helmet';
 
 // Missing icon assets
@@ -1243,7 +1243,7 @@ const UiuxDesignerInternPage = () => {
                         </div>
                     </div>
                 </section>
-                <Footer />
+                <SubFooterOne />
                 <BackToTop />
             </div>
         </>
