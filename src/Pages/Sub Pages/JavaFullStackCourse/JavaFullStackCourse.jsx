@@ -62,7 +62,8 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import './JavaFullStackCourse.css';
-
+import SubFooterTwo from '../subFooterTwo/NewFooter';
+import BackToTop from '../../../Components/BackToTop/BackToTop';
 // Import your assets - KEEPING COMMENTED SECTIONS UNCHANGED
 import demoVideoFile from '../../../assets/Final GD Course video.mp4';
 import videoThumbnail from '../../../assets/DemoThumbnail.png'; // Optional
@@ -1359,6 +1360,8 @@ const JavaFullStackCourse = () => {
           </div>
         </div>
       )}
+      <SubFooterTwo />
+      <BackToTop />
     </div>
   );
 };

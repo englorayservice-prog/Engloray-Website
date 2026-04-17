@@ -3,7 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { submitEnrollment } from "../../Sub Pages/HandleSubmit/HandleSubmit";
 import NavigationBar from '../../TechLearningSection/NavigationBar/NavigationBar';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
-
+import SubFooterTwo from '../subFooterTwo/NewFooter';
+import BackToTop from '../../../Components/BackToTop/BackToTop';
 import {
   faPaintBrush,
   faLaptopCode,
@@ -99,7 +100,6 @@ import copyAiLogoV2 from '../../../assets/copy_ai_logo_v2.png';
 import illustratorLogoV2 from '../../../assets/illustrator_logo_v2.png';
 import luminarLogoV3 from '../../../assets/luminar_logo_v3.png';
 import chatgptLogoV2 from '../../../assets/chatgpt_logo_v2.png';
-
 // Custom Testimonial Avatars
 import avatarF1 from '../../../assets/t1.png';
 import avatarM1 from '../../../assets/t2.png';
@@ -1355,6 +1355,8 @@ const GraphicDesignCourse = () => {
           </div>
         </div>
       )}
+      <SubFooterTwo />
+      <BackToTop />
     </div>
   );
 };

@@ -65,7 +65,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import NavigationBar from '../../TechLearningSection/NavigationBar/NavigationBar';
-import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
+import SubFooterTwo from '../subFooterTwo/NewFooter';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import { Helmet } from 'react-helmet';
 import studentPurpleBG from '../../../assets/images/student_purple_bg.png';
@@ -1154,7 +1154,7 @@ const ProjectBasedLearning = () => {
               </div>
             </section>
           </main>
-          <WhiteFooter />
+          <SubFooterTwo />
           <BackToTop />
         </div>
       </div>
