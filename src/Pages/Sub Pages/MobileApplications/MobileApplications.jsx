@@ -1,20 +1,16 @@
 import React, { useState, useEffect, useRef } from 'react';
-import analyticsImageOne from '../../../assets/case study images/products/amico.png';
-import analyticsImageTwo from '../../../assets/case study images/products/brandex.png';
-import analyticsImageThree from '../../../assets/case study images/products/tamil natrals.png';
+import mobileImageOne from '../../../assets/case study images/uiux/pavizham.jpg';
+import mobileImageTwo from '../../../assets/case study images/uiux/viaan.jpg';
+import mobileImageThree from '../../../assets/case study images/uiux/gym life.png';
 import './MobileApplications.css';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
-import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
+import MainPageSubFooter from '../MainPageSubFooter/MainPageSubFooter';
 import { Helmet } from 'react-helmet';
-import { FaChartLine, FaChartBar, FaChartPie, FaDatabase, FaBrain, FaRobot, FaUsers, FaEye } from "react-icons/fa";
+import { FaMobileAlt, FaAppStoreIos, FaAndroid, FaCode, FaRocket, FaCheckCircle, FaUserCheck } from "react-icons/fa";
 import heroBg from "../../../assets/lineimage.jpeg";
-
-// Import project section background
 import projectsBg from '../../../assets/heroimage.jpeg';
-
-// Import brand logos for projects section
 import logo1 from '../../../assets/icons/logoipsum-396.png';
 import logo2 from '../../../assets/icons/logoipsum-397.png';
 import logo3 from '../../../assets/icons/logoipsum-399.png';
@@ -27,13 +23,13 @@ import logo9 from '../../../assets/icons/logoipsum-411.png';
 import logo10 from '../../../assets/icons/logoipsum-413.png';
 import logo11 from '../../../assets/icons/logoipsum-415.png';
 import logo12 from '../../../assets/icons/logoipsum-417.png';
+import avatarLeft from '../../../assets/rev_avatar_5.jfif';
+import avatarRight from '../../../assets/rev_avatar_4.jfif';
 
-const DataAnalytics = () => {
+const MobileApplications = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [autoSlide, setAutoSlide] = useState(true);
-    const feedbackTrackRef = useRef(null);
 
-    // Scroll to top when component mounts
     useEffect(() => {
         window.scrollTo(0, 0);
 
@@ -52,166 +48,158 @@ const DataAnalytics = () => {
         {
             id: 1,
             rating: "★★★★★",
-            text: "Engloray transformed our raw data into actionable insights that improved our business strategy.",
-            author: "Michael Fernandes ",
-            role: "Tech Consultant",
-            initial: "M"
+            text: "Our mobile app's engagement has increased by 150% since the redesign. The user experience is world-class.",
+            author: "Johnathan Smith",
+            role: "Product Owner",
+            initial: "J"
         },
         {
             id: 2,
             rating: "★★★★★",
-            text: "The analytics solutions from Engloray helped us understand customer trends and market behavior more effectively.",
-            author: "Aditya Singh ",
-            role: "Data Manager",
+            text: "Engloray delivered a robust application that handles thousands of concurrent users with zero latency.",
+            author: "Aisha Khan",
+            role: "CTO, RetailPlus",
             initial: "A"
         },
         {
             id: 3,
             rating: "★★★★★",
-            text: "Engloray helped us visualize our data in a clear and meaningful way that improved our planning process.",
-            author: "Pooja Agarwal ",
-            role: "Business Consultant",
-            initial: "P"
+            text: "The cross-platform development saved us 40% in development costs while maintaining native-level performance.",
+            author: "Liam O'Connor",
+            role: "Startup Founder",
+            initial: "L"
+        },
+        {
+            id: 4,
+            rating: "★★★★★",
+            text: "Highly professional team with deep expertise in both iOS and Android ecosystems. They truly care about the details.",
+            author: "Sofia Garcia",
+            role: "Mobile Strategy Lead",
+            initial: "S"
+        },
+        {
+            id: 5,
+            rating: "★★★★★",
+            text: "The new app is a game-changer for our business. Our users love the intuitive navigation and sleek interface.",
+            author: "Ethan Wright",
+            role: "Operations Director",
+            initial: "E"
+        },
+        {
+            id: 6,
+            rating: "★★★★★",
+            text: "Flawless execution from wireframing to deployment. Engloray is the best partner for mobile innovation.",
+            author: "Mia Wong",
+            role: "Marketing Head",
+            initial: "M"
         }
     ];
 
     const projects = [
         {
             id: 1,
-            title: "Amico Foods Analytics",
-            description: "Custom analytics dashboard with real-time sales tracking, customer segmentation, and inventory forecasting using machine learning.",
-            category: "Business Intelligence",
-            image: analyticsImageOne,
-            tech: ["Power BI", "Python", "SQL", "ML"],
+            title: "E-Commerce App",
+            description: "High-performance shopping application with seamless checkout, personalized recommendations, and AR integration.",
+            category: "Retail / Mobile",
+            image: mobileImageOne,
             stats: {
-                duration: "2 Months",
-                impact: "+40% Sales"
+                duration: "14 Weeks",
+                satisfaction: "100%"
             }
         },
         {
             id: 2,
-            title: "Tamil Naturals Insights",
-            description: "Predictive analytics model for demand forecasting and supply chain optimization with automated reporting.",
-            category: "Predictive Analytics",
-            image: analyticsImageTwo,
-            tech: ["R", "TensorFlow", "AWS", "Tableau"],
+            title: "Health Track",
+            description: "Wellness and fitness tracking app with real-time vitals monitoring and AI-driven coaching for a global user base.",
+            category: "Healthcare",
+            image: mobileImageTwo,
             stats: {
-                duration: "1.5 Months",
-                impact: "-35% Waste"
+                duration: "12 Weeks",
+                satisfaction: "98%"
             }
         },
         {
             id: 3,
-            title: "Brandex Performance Suite",
-            description: "Comprehensive data warehouse and visualization platform with real-time KPIs and executive dashboards.",
-            category: "Data Warehousing",
-            image: analyticsImageThree,
-            tech: ["Snowflake", "dbt", "Looker", "Airflow"],
+            title: "Fintech Wallet",
+            description: "Secure, encrypted financial management platform with multi-currency support and real-time transaction alerts.",
+            category: "Fintech",
+            image: mobileImageThree,
             stats: {
-                duration: "3 Months",
-                impact: "+50% Efficiency"
+                duration: "16 Weeks",
+                satisfaction: "99%"
             }
         }
     ];
 
-    // About section cards data
     const aboutCards = [
         {
             id: 1,
-            title: "Data Strategy & Architecture",
-            description: "We design scalable data architectures that consolidate information from multiple sources, ensuring data quality, governance, and accessibility for advanced analytics.",
-            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            title: "Product Strategy",
+            description: "We define the roadmap for your mobile application, focusing on user needs, feature prioritization, and market-fit to ensure your app actually delivers value.",
+            image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
         },
         {
             id: 2,
-            title: "Business Intelligence",
-            description: "Custom dashboards and visualization tools that transform complex data into actionable insights, enabling data-driven decision-making at every level of your organization.",
-            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            title: "Native & Hybrid Dev",
+            description: "Building powerful apps using Swift, Kotlin, or React Native. We choose the right technology to balance performance, cost, and speed-to-market.",
+            image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
         },
         {
             id: 3,
-            title: "Predictive Analytics",
-            description: "Machine learning models that forecast trends, customer behavior, and business outcomes, helping you stay ahead of market changes and optimize operations.",
-            image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            title: "Quality Assurance",
+            description: "Rigorous testing across hundreds of device configurations to ensure a bug-free experience. We prioritize security, stability, and pixel-perfection.",
+            image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
         },
         {
             id: 4,
-            title: "Data Engineering",
-            description: "Robust ETL pipelines, data warehousing solutions, and real-time processing systems that ensure your analytics infrastructure is scalable, reliable, and performant.",
-            image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            title: "App Store Success",
+            description: "Managing the entire lifecycle from beta testing to Store submission. We optimize for ASO and ensure your launch is successful and impactful.",
+            image: "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
         }
     ];
 
-    // How It Works steps data
     const howItWorksSteps = [
         {
             title: "Step 1",
-            heading: "Data Assessment",
-            text: "Evaluate current data infrastructure and identify key business questions."
+            heading: "Conceptualization",
+            text: "Brainstorming and defining the core value proposition of your mobile app."
         },
         {
             title: "Step 2",
-            heading: "Data Integration",
-            text: "Connect and consolidate data from multiple sources into a unified platform."
+            heading: "UI/UX Architecture",
+            text: "Designing intuitive user journeys and high-fidelity interfaces."
         },
         {
             title: "Step 3",
-            heading: "Analysis & Modeling",
-            text: "Apply statistical models and machine learning to uncover insights."
+            heading: "Agile Development",
+            text: "Iterative coding and feature implementation with regular feedback cycles."
         },
         {
             title: "Step 4",
-            heading: "Visualization",
-            text: "Create intuitive dashboards and reports for stakeholders."
+            heading: "Testing & QA",
+            text: "Comprehensive testing to ensure performance, security, and usability."
         },
         {
             title: "Step 5",
-            heading: "Deployment & Training",
-            text: "Implement solutions and train teams to leverage data insights."
-        }
-    ];
-
-    // Analytics DNA data
-    const analyticsDna = [
-        {
-            id: 1,
-            title: "Accuracy",
-            description: "Precision in data collection and analysis",
-            icon: <FaChartLine />,
+            heading: "Deployment & Support",
+            text: "Launching on App Stores and providing ongoing maintenance and updates."
         },
         {
-            id: 2,
-            title: "Insights",
-            description: "Actionable intelligence from complex data",
-            icon: <FaEye />,
-        },
-        {
-            id: 3,
-            title: "Scalability",
-            description: "Grows with your data volume and complexity",
-            icon: <FaDatabase />,
-        },
-        {
-            id: 4,
-            title: "Automation",
-            description: "Intelligent processes that learn and adapt",
-            icon: <FaRobot />,
-        },
-        {
-            id: 5,
-            title: "Visualization",
-            description: "Clear, intuitive data presentation",
-            icon: <FaChartPie />,
+            title: "Step 6",
+            heading: "Scale & Evolution",
+            text: "Regular updates and infrastructure scaling to support your growing user base."
         }
     ];
 
     const getPosition = (index) => {
-        const diff = index - currentSlide;
+        const len = feedbacks.length;
+        const prev = (currentSlide - 1 + len) % len;
+        const next = (currentSlide + 1) % len;
 
-        if (diff === 0) return "center";
-        if (diff === -1 || diff === 2) return "left";
-        if (diff === 1 || diff === -2) return "right";
-        return "";
+        if (index === currentSlide) return "center";
+        if (index === prev) return "left";
+        if (index === next) return "right";
+        return "hidden";
     };
 
     const handlePrevSlide = () => {
@@ -226,29 +214,27 @@ const DataAnalytics = () => {
         setTimeout(() => setAutoSlide(true), 10000);
     };
 
-    // Auto slide functionality
     useEffect(() => {
         let interval;
         if (autoSlide) {
             interval = setInterval(() => {
                 setCurrentSlide((prev) => (prev + 1) % feedbacks.length);
-            }, 5000);
+            }, 3000);
         }
         return () => clearInterval(interval);
     }, [autoSlide, feedbacks.length]);
 
     const badges = [
-        "Data Strategy",
-        "Business Intelligence",
-        "Predictive Analytics",
-        "Data Engineering",
-        "ML Models"
+        "iPhone & iPad",
+        "Android Dev",
+        "React Native",
+        "Mobile UI/UX",
+        "Flutter Apps"
     ];
 
     return (
         <>
             <div>
-                {/* SVG Definitions for Clip Path */}
                 <svg width="0" height="0" style={{ position: 'absolute' }}>
                     <defs>
                         <clipPath id="cardCurve" clipPathUnits="objectBoundingBox">
@@ -258,86 +244,74 @@ const DataAnalytics = () => {
                 </svg>
 
                 <Helmet>
-                    <title>Engloray - Data Analytics</title>
-                    <meta name="description" content="Transform your data into actionable insights with advanced analytics, business intelligence, and machine learning solutions." />
+                    <title>Engloray - Mobile Applications</title>
+                    <meta name="description" content="Build world-class mobile applications for iOS and Android with our expert development team." />
                     <meta name="robots" content="max-snippet:-1, max-image-preview: large, max-video-preview:-1" />
                     <meta property="og:locale" content="en_US" />
                     <meta property="og:type" content="website" />
-                    <meta property="og:title" content="Engloray | Data Analytics" />
-                    <meta property="og:description" content="Transform Data into Actionable Insights" />
+                    <meta property="og:title" content="Engloray | Mobile Applications" />
+                    <meta property="og:description" content="Innovative Mobile Solutions for Every Screen" />
                 </Helmet>
 
-                <div className="da-page" id='dataAnalyticsPage'>
+                <div className="ma-page" id='mobileApplicationsPage'>
                     <TopNavBar />
                     <TwoLineNavbar />
 
-                    {/* Hero Section - Updated to match Branding page structure */}
-                    <section className="da-hero">
-                        {/* Background image */}
-                        <img src={heroBg} className="da-hero-bg-image" alt="background texture" />
+                    <section className="ma-hero">
+                        <img src={heroBg} className="ma-hero-bg-image" alt="background texture" />
 
-                        {/* Gradient background shapes */}
-                        <div className="da-gradient-shape da-emerald-shape"></div>
-                        <div className="da-gradient-shape da-green-shape"></div>
+                        <div className="ma-gradient-shape ma-emerald-shape"></div>
+                        <div className="ma-gradient-shape ma-teal-shape"></div>
 
-                        {/* Floating cards */}
-                        <div className="da-floating-card da-left da-rotate-left">
-                            <img
-                                src="https://i.pravatar.cc/100?img=8"
-                                alt="Data analyst"
-                            />
-                            <div className="da-card-content">
-                                <h4>Data Analysis</h4>
-                                <p>Insights & Patterns</p>
-                                <div className="da-card-progress">
-                                    <div className="da-progress-fill"></div>
+                        <div className="ma-floating-card ma-left ma-rotate-left">
+                            <img src={avatarLeft} alt="App strategist" />
+                            <div className="ma-card-content">
+                                <h4>App Performance</h4>
+                                <p>Optimized Core Web Vitals</p>
+                                <div className="ma-card-progress">
+                                    <div className="ma-progress-fill" style={{ width: '92%' }}></div>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="da-floating-card da-right da-rotate-right">
-                            <img
-                                src="https://i.pravatar.cc/100?img=16"
-                                alt="ML engineer"
-                            />
-                            <div className="da-card-content">
-                                <h4>ML Models</h4>
-                                <p>Predictions & Forecasting</p>
-                                <div className="da-card-progress">
-                                    <div className="da-progress-fill"></div>
+                        <div className="ma-floating-card ma-right ma-rotate-right">
+                            <img src={avatarRight} alt="App designer" />
+                            <div className="ma-card-content">
+                                <h4>User Engagement</h4>
+                                <p>Retention & Happiness</p>
+                                <div className="ma-card-progress">
+                                    <div className="ma-progress-fill"></div>
                                 </div>
                             </div>
                         </div>
 
-                        {/* Main content */}
-                        <div className="da-hero-container">
-                            <div className="da-hero-badge">
-                                Data Analytics
+                        <div className="ma-hero-container">
+                            <div className="ma-hero-badge">
+                                Mobile Application Development
                             </div>
 
-                            <h1 className="da-hero-title">
-                                Transform Data into<br /> <span className="da-title-highlight">Actionable</span> <span className="da-title-highlight">Insights</span>
+                            <h1 className="ma-hero-title">
+                                Crafting Exceptional<br /> <span className="ma-title-highlight">Mobile</span> <span className="ma-title-highlight">Experiences</span>
                             </h1>
 
-                            <p className="da-hero-desc">
-                                We help businesses unlock the power of their data through advanced analytics,
-                                machine learning, and business intelligence solutions. Transform raw data into
-                                strategic assets that drive growth, efficiency, and competitive advantage.
+                            <p className="ma-hero-desc">
+                                We transform ideas into intuitive, high-performance mobile applications that users love.
+                                From native iOS and Android to cross-platform React Native solutions, we build 
+                                apps that scale with your business and define your digital presence.
                             </p>
 
-                            <div className="da-privacy-badge">
-                                Enterprise-grade data security & governance
+                            <div className="ma-privacy-badge">
+                                Scalable Apps Built for the Modern User
                             </div>
                         </div>
 
-                        {/* Bottom glass badges */}
-                        <div className="da-badge-glass">
+                        <div className="ma-badge-glass">
                             {badges.map((item, index) => (
                                 <span
                                     key={index}
-                                    className={`da-service-badge 
-                                    ${item === "Data Strategy" ? "da-badge-strategy" : ""} 
-                                    ${item === "ML Models" ? "da-badge-ml" : ""}`}
+                                    className={`ma-service-badge 
+                                    ${item === "iPhone & iPad" ? "ma-badge-strategy" : ""} 
+                                    ${item === "Flutter Apps" ? "ma-badge-guidelines" : ""}`}
                                 >
                                     {item}
                                 </span>
@@ -345,54 +319,49 @@ const DataAnalytics = () => {
                         </div>
                     </section>
 
-                    {/* About Section - Cards with alternating image positions */}
-                    <section className="da-about-section">
-                        <div className="da-container">
-                            {/* Title and Description at the top */}
-                            <div className="da-about-header">
-                                <h2 className="da-about-title">Why Choose ENGLORAY for Analytics?</h2>
-                                <p className="da-about-description">
-                                    We specialize in transforming complex data into clear, actionable insights.
-                                    Our analytics solutions combine technical expertise with business acumen to
-                                    deliver measurable results and competitive advantage.
+                    <section className="ma-about-section">
+                        <div className="ma-container">
+                            <div className="ma-about-header">
+                                <h2 className="ma-about-title">About Our Development Approach</h2>
+                                <p className="ma-about-description">
+                                    We believe a great app is more than just code. It's the intersection of 
+                                    cutting-edge technology and human-centered design. Our development process 
+                                    is built on transparency, performance, and a relentless focus on the end-user.
                                 </p>
                             </div>
 
-                            {/* Cards Grid */}
-                            <div className="da-cards-grid">
+                            <div className="ma-cards-grid">
                                 {aboutCards.map((card) => (
                                     <div
                                         key={card.id}
-                                        className={`da-about-card ${card.id === 2 || card.id === 4 ? 'da-card-image-bottom' : ''}`}
+                                        className={`ma-about-card ${card.id === 2 || card.id === 4 ? 'ma-card-image-bottom' : ''}`}
                                     >
-                                        {/* For cards 1 and 3: Image at top, content at bottom */}
                                         {card.id !== 2 && card.id !== 4 && (
                                             <>
-                                                <div className="da-card-image-wrapper">
-                                                    <div className="da-card-image">
+                                                <div className="ma-card-image-wrapper">
+                                                    <div className="ma-card-image">
                                                         <img src={card.image} alt={card.title} />
                                                     </div>
                                                 </div>
-                                                <div className="da-card-content-wrapper">
-                                                    <div className="da-card-content">
-                                                        <strong className="da-card-title">{card.title}</strong>
-                                                        <p className="da-card-description">{card.description}</p>
+                                                <div className="ma-card-content-wrapper">
+                                                    <div className="ma-card-content">
+                                                        <strong className="ma-card-title">{card.title}</strong>
+                                                        <p className="ma-card-description">{card.description}</p>
                                                     </div>
                                                 </div>
                                             </>
                                         )}
 
-                                        {/* For cards 2 and 4: Content at top, image at bottom */}
                                         {(card.id === 2 || card.id === 4) && (
                                             <>
-                                                <div className="da-card-content-wrapper">
-                                                    <div className="da-card-content">
-                                                        <strong className="da-card-title">{card.title}</strong>
-                                                        <p className="da-card-description">{card.description}</p>
+                                                <div className="ma-card-content-wrapper">
+                                                    <div className="ma-card-content">
+                                                        <strong className="ma-card-title">{card.title}</strong>
+                                                        <p className="ma-card-description">{card.description}</p>
                                                     </div>
                                                 </div>
-                                                <div className="da-card-image-wrapper">
-                                                    <div className="da-card-image">
+                                                <div className="ma-card-image-wrapper">
+                                                    <div className="ma-card-image">
                                                         <img src={card.image} alt={card.title} />
                                                     </div>
                                                 </div>
@@ -404,93 +373,115 @@ const DataAnalytics = () => {
                         </div>
                     </section>
 
-                    {/* Analytics DNA Section */}
-                    <section className="da-dna-section">
-                        <div className="da-dna-container">
-                            {/* LEFT CONTENT */}
-                            <div className="da-dna-left">
-                                <h2>Analytics DNA</h2>
-                                <h3 className="da-dna-subtitle">
-                                    The Core Elements of<br /> Data-Driven Success
+                    <section className="ma-branddna-section">
+                        <div className="ma-branddna-container">
+                            <div className="ma-branddna-left">
+                                <h2>Application DNA</h2>
+                                <h3 className="ma-branddna-subtitle">
+                                    The Core Principles of<br /> Successful App Development
                                 </h3>
                                 <p>
-                                    Exceptional analytics solutions are built on a foundation of key principles.
-                                    Our Analytics DNA framework defines the essential elements that guide how we
-                                    transform data into insights that drive business decisions and create value.
+                                    Every great app shares a common DNA: speed, reliability, and intuition. 
+                                    Our development framework ensures that every app we build is rooted in 
+                                    technical excellence and user-first functionality.
                                 </p>
                             </div>
 
-                            {/* RIGHT GRAPHIC */}
-                            <div className="da-dna-right">
-                                {/* circles */}
-                                <div className="da-dna-circle da-circle-accuracy" style={{ background: 'linear-gradient(135deg, #48bb78, #2f855a)' }}>
-                                    <FaChartLine className="da-icon" />
-                                    <h3>Accuracy</h3>
-                                    <p className="da-circle-desc">
-                                        Precision in every analysis
-                                    </p>
+                            <div className="ma-branddna-right">
+                                <svg className="ma-link-svg" viewBox="0 0 500 460">
+                                    <g className="ma-link-bases">
+                                        <path className="ma-base-path" d="M265,240 L265,20" />
+                                        <path className="ma-base-path" d="M265,240 L0,240" />
+                                        <path className="ma-base-path" d="M265,240 L500,240" />
+                                        <path className="ma-base-path" d="M265,240 L265,450" />
+                                        <path className="ma-base-path" d="M265,20 L500,240 L265,450 L0,240 Z" />
+                                    </g>
+
+                                    <g className="ma-animated-flows">
+                                        <g className="ma-phase-group ma-phase-1">
+                                            <path pathLength="100" className="ma-flow-path" d="M0,240 L265,20" />
+                                            <path pathLength="100" className="ma-flow-path" d="M0,240 L265,240" />
+                                            <path pathLength="100" className="ma-flow-path" d="M0,240 L265,450" />
+                                        </g>
+                                        <g className="ma-phase-group ma-phase-2">
+                                            <path pathLength="100" className="ma-flow-path" d="M265,20 L0,240" />
+                                            <path pathLength="100" className="ma-flow-path" d="M265,20 L265,240" />
+                                            <path pathLength="100" className="ma-flow-path" d="M265,20 L500,240" />
+                                        </g>
+                                        <g className="ma-phase-group ma-phase-3">
+                                            <path pathLength="100" className="ma-flow-path" d="M265,240 L0,240" />
+                                            <path pathLength="100" className="ma-flow-path" d="M265,240 L265,20" />
+                                            <path pathLength="100" className="ma-flow-path" d="M265,240 L500,240" />
+                                            <path pathLength="100" className="ma-flow-path" d="M265,240 L265,450" />
+                                        </g>
+                                        <g className="ma-phase-group ma-phase-4">
+                                            <path pathLength="100" className="ma-flow-path" d="M500,240 L265,20" />
+                                            <path pathLength="100" className="ma-flow-path" d="M500,240 L265,240" />
+                                            <path pathLength="100" className="ma-flow-path" d="M500,240 L265,450" />
+                                        </g>
+                                        <g className="ma-phase-group ma-phase-5">
+                                            <path pathLength="100" className="ma-flow-path" d="M265,450 L0,240" />
+                                            <path pathLength="100" className="ma-flow-path" d="M265,450 L265,240" />
+                                            <path pathLength="100" className="ma-flow-path" d="M265,450 L500,240" />
+                                        </g>
+                                    </g>
+                                </svg>
+
+                                <div className="ma-dna-circle ma-circle-purpose">
+                                    <FaCode className="ma-icon" />
+                                    <h3>Performance</h3>
+                                    <p className="ma-circle-desc">Native-level speed and responsiveness across devices.</p>
                                 </div>
 
-                                <div className="da-dna-circle da-circle-insights" style={{ background: 'linear-gradient(135deg, #38a169, #276749)' }}>
-                                    <FaEye className="da-icon" />
-                                    <h3>Insights</h3>
-                                    <p className="da-circle-desc">
-                                        Actionable intelligence
-                                    </p>
+                                <div className="ma-circle-voice ma-dna-circle">
+                                    <FaMobileAlt className="ma-icon" />
+                                    <h3>Responsive</h3>
+                                    <p className="ma-circle-desc">Seamless display across all screen sizes and ratios.</p>
                                 </div>
 
-                                <div className="da-dna-circle da-circle-scalability" style={{ background: 'linear-gradient(135deg, #48bb78, #2f855a)' }}>
-                                    <FaDatabase className="da-icon" />
-                                    <h3>Scalability</h3>
-                                    <p className="da-circle-desc">
-                                        Grows with your data
-                                    </p>
+                                <div className="ma-circle-values ma-dna-circle">
+                                    <FaUserCheck className="ma-icon" />
+                                    <h3>Intuitive</h3>
+                                    <p className="ma-circle-desc">User journeys that feel natural and effortless.</p>
                                 </div>
 
-                                <div className="da-dna-circle da-circle-automation" style={{ background: 'linear-gradient(135deg, #38a169, #276749)' }}>
-                                    <FaRobot className="da-icon" />
-                                    <h3>Automation</h3>
-                                    <p className="da-circle-desc">
-                                        Intelligent processes
-                                    </p>
+                                <div className="ma-circle-personality ma-dna-circle">
+                                    <FaRocket className="ma-icon" />
+                                    <h3>Scalable</h3>
+                                    <p className="ma-circle-desc">Architecture built to grow with millions of users.</p>
                                 </div>
 
-                                <div className="da-dna-circle da-circle-visualization" style={{ background: 'linear-gradient(135deg, #48bb78, #2f855a)' }}>
-                                    <FaChartPie className="da-icon" />
-                                    <h3>Visualization</h3>
-                                    <p className="da-circle-desc">
-                                        Clear data presentation
-                                    </p>
+                                <div className="ma-circle-visual ma-dna-circle">
+                                    <FaCheckCircle className="ma-icon" />
+                                    <h3>Robust</h3>
+                                    <p className="ma-circle-desc">Secure, stable, and extensively tested for reliability.</p>
                                 </div>
                             </div>
                         </div>
                     </section>
 
-                    {/* How It Works Section */}
-                    <section className="da-howworks">
-                        <div className="da-howworks-container">
-                            {/* LEFT SIDE */}
-                            <div className="da-left-side">
-                                <div className="da-badge">
-                                    <span className="da-dot"></span>
-                                    Analytics Process
+                    <section className="ma-howworks">
+                        <div className="ma-howworks-container">
+                            <div className="ma-left-side">
+                                <div className="ma-badge">
+                                    <span className="ma-dot"></span>
+                                    App Development Lifecycle
                                 </div>
-                                <p className="da-intro-text">
-                                    We transform raw data into strategic insights through a systematic approach of collection, analysis, modeling, and visualization.
+                                <p className="ma-intro-text">
+                                    We bring your mobile vision to life through an agile, transparent, and quality-driven development process.
                                 </p>
-                                <h2 className="da-main-title">
+                                <h2 className="ma-main-title">
                                     How It Works <br /> Step by Step
                                 </h2>
-                                <div className="da-arrow">→</div>
+                                <div className="ma-arrow">→</div>
                             </div>
 
-                            {/* RIGHT SIDE */}
-                            <div className="da-right-side">
-                                <h2 className="da-section-title">What We Analyze</h2>
-                                <div className="da-steps-grid">
+                            <div className="ma-right-side">
+                                <h2 className="ma-section-title">Our Development Engine</h2>
+                                <div className="ma-steps-grid">
                                     {howItWorksSteps.map((step, index) => (
-                                        <div key={index} className="da-step-card">
-                                            <span className="da-card-dot"></span>
+                                        <div key={index} className="ma-step-card">
+                                            <span className="ma-card-dot"></span>
                                             <h4>{step.title}</h4>
                                             <h3>{step.heading}</h3>
                                             <p>{step.text}</p>
@@ -501,147 +492,109 @@ const DataAnalytics = () => {
                         </div>
                     </section>
 
-                    {/* Circular Stats Section */}
-                    <section className="da-circular-stats">
-                        <div className="da-stats-layout">
-                            {/* LEFT CONTENT */}
-                            <div className="da-stats-content">
-                                <h2>Our Analytics Impact in Numbers</h2>
+                    <section className="ma-circular-stats">
+                        <div className="ma-branding-stats-layout">
+                            <div className="ma-stats-content">
+                                <h2>Our Mobile Success in Numbers</h2>
                                 <p>
-                                    We measure our success through the insights we deliver and the results we achieve.
-                                    These statistics highlight the value, accuracy, and trust we have developed with
-                                    clients across different industries.
+                                    Our work speaks for itself through the ratings, downloads, and 
+                                    satisfaction of the users who interact with our apps every day.
                                 </p>
                             </div>
 
-                            {/* CIRCLE STATS */}
-                            <div className="da-stats-wrapper">
-                                <div className="da-circle da-circle-top" style={{ background: '#48bb78', color: '#ffffff' }}>
-                                    <h2>50+</h2>
-                                    <p>Analytics Projects</p>
-                                </div>
-
-                                <div className="da-circle da-circle-left" style={{ background: '#38a169' }}>
+                            <div className="ma-stats-wrapper-cards">
+                                <div className="ma-stat-card">
                                     <h2>100+</h2>
-                                    <p>Data Sources</p>
+                                    <p>Apps Developed</p>
                                 </div>
-
-                                <div className="da-circle da-circle-right" style={{ background: '#48bb78', color: '#ffffff' }}>
-                                    <h2>99.5%</h2>
-                                    <p>Accuracy Rate</p>
+                                <div className="ma-stat-card">
+                                    <h2>1M+</h2>
+                                    <p>Active Users</p>
+                                </div>
+                                <div className="ma-stat-card">
+                                    <h2>4.8★</h2>
+                                    <p>Apple App Store</p>
+                                </div>
+                                <div className="ma-stat-card">
+                                    <h2>4.9★</h2>
+                                    <p>Google Play Store</p>
                                 </div>
                             </div>
                         </div>
 
-                        {/* BOTTOM STATS */}
-                        <div className="da-bottom-stats">
-                            <div className="da-stat">
-                                <h3>8+</h3>
+                        <div className="ma-bottom-stats">
+                            <div className="ma-stat">
+                                <h3>5+</h3>
                                 <p>YEARS EXPERIENCE</p>
                             </div>
-
-                            <div className="da-stat">
-                                <h3>30+</h3>
+                            <div className="ma-stat">
+                                <h3>25+</h3>
                                 <p>INDUSTRIES SERVED</p>
                             </div>
-
-                            <div className="da-stat">
-                                <h3>45+</h3>
+                            <div className="ma-stat">
+                                <h3>60+</h3>
                                 <p>GLOBAL CLIENTS</p>
                             </div>
-                            <div className="da-stat">
-                                <h3>200+</h3>
-                                <p>Models Deployed</p>
+                            <div className="ma-stat">
+                                <h3>500+</h3>
+                                <p>Successful Features Shipped</p>
                             </div>
                         </div>
                     </section>
 
-                    {/* Projects Section - UPDATED to match branding page design */}
-                    <section className="da-projects-section">
-                        {/* FULL BACKGROUND */}
-                        <img src={projectsBg} className="da-projects-bg-full" alt="" />
+                    <section className="ma-projects-section">
+                        <img src={projectsBg} className="ma-projects-bg-left" alt="background left mirror" />
+                        <img src={projectsBg} className="ma-projects-bg-right" alt="background right" />
 
-                        <div className="da-projects-logos da-left-logos">
-                            <div className="da-project-logo-card l1"><img src={logo1} className="da-project-logo" alt="brand logo" /></div>
-                            <div className="da-project-logo-card l2"><img src={logo2} className="da-project-logo" alt="brand logo" /></div>
-                            <div className="da-project-logo-card l3"><img src={logo3} className="da-project-logo" alt="brand logo" /></div>
-                            <div className="da-project-logo-card l4"><img src={logo4} className="da-project-logo" alt="brand logo" /></div>
-                            <div className="da-project-logo-card l5"><img src={logo9} className="da-project-logo" alt="brand logo" /></div>
-                            <div className="da-project-logo-card l6"><img src={logo10} className="da-project-logo" alt="brand logo" /></div>
+                        <div className="ma-projects-logos ma-left-logos">
+                            <div className="ma-project-logo-card l1"><img src={logo1} className="ma-project-logo" alt="brand logo" /></div>
+                            <div className="ma-project-logo-card l2"><img src={logo2} className="ma-project-logo" alt="brand logo" /></div>
+                            <div className="ma-project-logo-card l3"><img src={logo3} className="ma-project-logo" alt="brand logo" /></div>
+                            <div className="ma-project-logo-card l4"><img src={logo4} className="ma-project-logo" alt="brand logo" /></div>
+                            <div className="ma-project-logo-card l5"><img src={logo9} className="ma-project-logo" alt="brand logo" /></div>
+                            <div className="ma-project-logo-card l6"><img src={logo10} className="ma-project-logo" alt="brand logo" /></div>
                         </div>
 
-                        <div className="da-projects-logos da-right-logos">
-                            <div className="da-project-logo-card r1"><img src={logo5} className="da-project-logo" alt="brand logo" /></div>
-                            <div className="da-project-logo-card r2"><img src={logo6} className="da-project-logo" alt="brand logo" /></div>
-                            <div className="da-project-logo-card r3"><img src={logo7} className="da-project-logo" alt="brand logo" /></div>
-                            <div className="da-project-logo-card r4"><img src={logo8} className="da-project-logo" alt="brand logo" /></div>
-                            <div className="da-project-logo-card r5"><img src={logo11} className="da-project-logo" alt="brand logo" /></div>
-                            <div className="da-project-logo-card r6"><img src={logo12} className="da-project-logo" alt="brand logo" /></div>
+                        <div className="ma-projects-logos ma-right-logos">
+                            <div className="ma-project-logo-card r1"><img src={logo5} className="ma-project-logo" alt="brand logo" /></div>
+                            <div className="ma-project-logo-card r2"><img src={logo6} className="ma-project-logo" alt="brand logo" /></div>
+                            <div className="ma-project-logo-card r3"><img src={logo7} className="ma-project-logo" alt="brand logo" /></div>
+                            <div className="ma-project-logo-card r4"><img src={logo8} className="ma-project-logo" alt="brand logo" /></div>
+                            <div className="ma-project-logo-card r5"><img src={logo11} className="ma-project-logo" alt="brand logo" /></div>
+                            <div className="ma-project-logo-card r6"><img src={logo12} className="ma-project-logo" alt="brand logo" /></div>
                         </div>
 
-                        {/* CENTER CONTENT */}
-                        <div className="da-projects-content">
-                            <h1>
-                                Trusted by <br />
-                                Great Brands
-                            </h1>
-
-                            <p>
-                                We collaborate with forward-thinking brands to
-                                create meaningful digital experiences. Our clients
-                                trust us to deliver impactful design and scalable
-                                solutions.
-                            </p>
-
-                            <div className="da-projects-stats">
-                                <div>
-                                    <h2>20+</h2>
-                                    <span>Promoters</span>
-                                </div>
-                                <div>
-                                    <h2>100+</h2>
-                                    <span>contributions</span>
-                                </div>
-                                <div>
-                                    <h2>150+</h2>
-                                    <span>organizations</span>
-                                </div>
+                        <div className="ma-projects-content">
+                            <h1>Built for <br />Leading Brands</h1>
+                            <p>We collaborate with modern companies to define the mobile frontier.</p>
+                            <div className="ma-projects-stats">
+                                <div><h2>30+</h2><span>Fortune 500 Partners</span></div>
+                                <div><h2>200+</h2><span>App Store Launches</span></div>
+                                <div><h2>50+</h2><span>Design Awards</span></div>
                             </div>
                         </div>
                     </section>
 
-                    {/* Feedback Section - Updated to match carousel style */}
-                    <section className="da-feedback-section">
-                        <div className="da-container">
-                            <div className="da-feedback-header">
-                                <h2 className="da-feedback-title">
-                                    Client Success <span>Stories</span>
-                                </h2>
-                                <p className="da-feedback-description">
-                                    Hear what our clients have to say about our analytics solutions and how we've helped transform their data into strategic assets.
-                                </p>
+                    <section className="ma-feedback-section">
+                        <div className="ma-container">
+                            <div className="ma-feedback-header">
+                                <h2 className="ma-feedback-title">Success <span>Stories</span></h2>
+                                <p className="ma-feedback-description">Hear how our mobile solutions have helped businesses connect with users.</p>
                             </div>
 
-                            <div className="da-feedback-carousel">
+                            <div className="ma-feedback-carousel">
                                 {feedbacks.map((feedback, index) => {
                                     const position = getPosition(index);
-
                                     return (
-                                        <div
-                                            key={feedback.id}
-                                            className={`da-feedback-card ${position}`}
-                                        >
-                                            <div className="da-feedback-rating">{feedback.rating}</div>
-                                            <div className="da-feedback-quote-icon">❝</div>
-                                            <p className="da-feedback-text">{feedback.text}</p>
-
-                                            <div className="da-feedback-author">
-                                                <div className="da-author-avatar" style={{ background: 'linear-gradient(135deg, #48bb78, #38a169)' }}>
-                                                    <div className="da-avatar-initial">{feedback.initial}</div>
-                                                </div>
+                                        <div key={feedback.id} className={`ma-feedback-card ${position}`}>
+                                            <div className="ma-feedback-rating">{feedback.rating}</div>
+                                            <div className="ma-feedback-quote-icon">❝</div>
+                                            <p className="ma-feedback-text">{feedback.text}</p>
+                                            <div className="ma-feedback-author">
+                                                <div className="ma-author-avatar"><div className="ma-avatar-initial">{feedback.initial}</div></div>
                                                 <div>
-                                                    <div className="da-author-name">{feedback.author}</div>
-                                                    <div className="da-author-role">{feedback.role}</div>
+                                                    <div className="ma-author-name">{feedback.author}</div>
+                                                    <div className="ma-author-role">{feedback.role}</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -649,13 +602,13 @@ const DataAnalytics = () => {
                                 })}
                             </div>
 
-                            <div className="da-feedback-controls">
+                            <div className="ma-feedback-controls">
                                 <button onClick={handlePrevSlide} aria-label="Previous feedback">‹</button>
                                 <button onClick={handleNextSlide} aria-label="Next feedback">›</button>
                             </div>
                         </div>
                     </section>
-                    <WhiteFooter />
+                    <MainPageSubFooter />
                     <BackToTop />
                 </div>
             </div>
@@ -663,4 +616,4 @@ const DataAnalytics = () => {
     );
 };
 
-export default DataAnalytics;
+export default MobileApplications;

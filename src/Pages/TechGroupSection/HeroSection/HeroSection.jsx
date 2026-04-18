@@ -26,7 +26,7 @@ const HeroSection = () => {
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
     const popularServices = searchData.filter(item => 
-        ["Website Development", "CRM", "AI Chatbot Solution", "Mobile App Development", "UI/UX Design", "Business Analytics"].includes(item.title)
+        ["Website Development", "CRM", "AI Chatbot Solution", "Mobile App Development", "Website UI/UX", "Business Analytics"].includes(item.title)
     );
 
     useEffect(() => {

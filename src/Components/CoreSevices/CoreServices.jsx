@@ -248,16 +248,12 @@ const CoreServices = () => {
             </div>
           </div>
 
-          {/* Indicators */}
           <div className="color-dots-indicators">
             {services.map((service, index) => (
               <button
                 key={index}
                 className={`color-dot ${index === currentIndex ? 'active' : ''}`}
                 onClick={() => goToSlide(index)}
-                style={{
-                  backgroundColor: service.color
-                }}
               />
             ))}
           </div>

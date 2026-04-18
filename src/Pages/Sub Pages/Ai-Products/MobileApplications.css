@@ -1,4 +1,4 @@
-/* AI Products Page Styles - PURPLE THEME - COMPLETE FIXED VERSION */
+/* Branding & Designing Page Styles - COMPLETE FIXED VERSION */
 /* Reset and Base Styles */
 * {
     margin: 0;
@@ -27,7 +27,7 @@ body {
     padding: 160px 20px 260px;
     height: 700px;
     text-align: center;
-    background: radial-gradient(circle at top, #f0f0ff, #ffffff);
+    background: radial-gradient(circle at top, #f5f3ff, #ffffff);
     overflow: hidden;
 }
 
@@ -42,21 +42,23 @@ body {
 .ai-hero-badge {
     font-family: "Inter", sans-serif;
     display: inline-block;
-    background: #1e1b4b;
+    background: #000000;
     color: #fff;
     padding: 10px 40px;
     border-radius: 40px;
     font-size: 18px;
     margin-bottom: 34px;
-    box-shadow: 0 0 15px rgba(99, 102, 241, 0.6), 0 0 30px rgba(139, 92, 246, 0.5);
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.6), 0 0 30px rgba(139, 92, 246, 0.5), 0 0 60px rgba(139, 92, 246, 0.45), 0 0 90px rgba(139, 92, 246, 0.35);
 }
 
 .ai-hero-title {
     font-family: "Inter", sans-serif;
-    font-size: 50px;
+    font-size: 72px;
     line-height: 1.1;
-    font-weight: 700;
+    font-weight: 800;
     color: #111;
+    letter-spacing: -2px;
+    text-transform: uppercase;
     margin-bottom: 24px;
     max-width: 1050px;
     margin-left: auto;
@@ -66,11 +68,7 @@ body {
 .ai-title-highlight {
     font-family: "Inter", sans-serif;
     font-weight: 700;
-    color: #6366F1;
-}
-
-.ai-title-highlight:last-child {
-    color: #8B5CF6;
+    color: #8b5cf6;
 }
 
 .ai-hero-desc {
@@ -88,11 +86,10 @@ body {
     font-family: "Inter", sans-serif;
     display: inline-block;
     font-size: 15px;
-    color: #ffffff;
-    background: #8B5CF6;
-    padding: 12px 24px;
+    color: #fff;
+    background: #8b5cf6;
+    padding: 10px 20px;
     border-radius: 30px;
-    font-weight: 600;
 }
 
 .ai-floating-card {
@@ -144,7 +141,7 @@ body {
     font-family: "Inter", sans-serif;
     font-size: 10px;
     margin: 2px 0 6px;
-    color: #6b7280;
+    color: #7c3aed;
 }
 
 .ai-card-progress {
@@ -158,7 +155,7 @@ body {
 .ai-progress-fill {
     height: 100%;
     width: 70%;
-    background: #6366F1;
+    background: #8b5cf6;
     border-radius: 10px;
 }
 
@@ -199,58 +196,53 @@ body {
     font-size: 16px;
     padding: 12px 20px;
     border-radius: 26px;
-    background: rgba(99, 102, 241, 0.14);
-    color: #6366F1;
+    background: rgba(139, 92, 246, 0.14);
+    color: #8b5cf6;
     white-space: nowrap;
     position: relative;
 }
 
-.ai-badge-ml {
+.ai-badge-strategy {
     top: -90px;
     left: -80px;
-    background: #6366F1;
+    background: #8b5cf6;
     color: #ffffff;
     border-radius: 20px 0px 20px 20px;
 }
 
-.ai-badge-ml::after {
+.ai-badge-strategy::after {
     content: "";
     position: absolute;
     width: 20px;
     height: 20px;
-    border-top: 10px solid #000;
-    border-right: 10px solid #000;
+    border-top: 10px solid #8b5cf6;
+    border-right: 10px solid #8b5cf6;
     border-radius: 2px;
     top: -20px;
     right: -30px;
     transform: rotate(20deg);
 }
 
-.ai-badge-genai {
+.ai-badge-guidelines {
     top: -90px;
-    right: -280px;
-    background: #8B5CF6;
+    right: -120px;
+    background: #8b5cf6;
     color: #ffffff;
     border-radius: 0px 20px 20px 20px;
 }
 
-.ai-badge-genai::after {
+.ai-badge-guidelines::after {
     content: "";
     font-weight: 500;
     position: absolute;
     width: 20px;
     height: 20px;
-    border-top: 10px solid #000;
-    border-right: 10px solid #000;
+    border-top: 10px solid #8b5cf6;
+    border-right: 10px solid #8b5cf6;
     border-radius: 2px;
     top: -23px;
     left: -30px;
     transform: rotate(-115deg);
-}
-
-.ai-badge-ana {
-    bottom: 0px;
-    right: 170px;
 }
 
 .ai-gradient-shape {
@@ -263,13 +255,13 @@ body {
 }
 
 .ai-purple-shape {
-    background: radial-gradient(circle, #6366F1, transparent 70%);
+    background: radial-gradient(circle, #8b5cf6, transparent 70%);
     top: 90px;
     left: 15%;
 }
 
 .ai-indigo-shape {
-    background: radial-gradient(circle, #8B5CF6, transparent 80%);
+    background: radial-gradient(circle, #4f46e5, transparent 80%);
     top: 100px;
     right: 19%;
 }
@@ -279,7 +271,7 @@ body {
 /* ============================== */
 .ai-about-section {
     padding: 60px 0;
-    background: #1e1b4b;
+    background: #1e293b;
     position: relative;
 }
 
@@ -305,14 +297,14 @@ body {
     left: 0;
     width: 60px;
     height: 4px;
-    background: #6366F1;
+    background: #8b5cf6;
     border-radius: 2px;
 }
 
 .ai-about-description {
     font-size: 1.1rem;
     font-weight: 400;
-    color: #c7d2fe;
+    color: #ffffff;
     line-height: 1.4;
     margin-bottom: 0;
     font-family: 'Inter', sans-serif;
@@ -341,8 +333,8 @@ body {
 
 .ai-about-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(99, 102, 241, 0.1);
-    border-color: rgba(99, 102, 241, 0.3);
+    box-shadow: 0 20px 40px rgba(139, 92, 246, 0.1);
+    border-color: rgba(139, 92, 246, 0.3);
 }
 
 .ai-about-card.ai-card-image-bottom {
@@ -398,7 +390,7 @@ body {
 .ai-card-title {
     font-size: 1rem;
     font-weight: 600;
-    color: #1e1b4b;
+    color: #1e293b;
     margin-bottom: 10px;
     font-family: 'Inter', sans-serif;
     line-height: 1.3;
@@ -416,16 +408,16 @@ body {
 }
 
 /* ============================== */
-/* AI DNA SECTION */
+/* BRAND DNA SECTION */
 /* ============================== */
-.ai-dna-section {
+.ai-branddna-section {
     width: 100%;
     background: #f6f7f9;
     padding: 120px 0;
     font-family: 'Inter', sans-serif;
 }
 
-.ai-dna-container {
+.ai-branddna-container {
     width: 1200px;
     margin: auto;
     display: flex;
@@ -434,20 +426,21 @@ body {
     gap: 180px;
 }
 
-.ai-dna-left {
+.ai-branddna-left {
     max-width: 500px;
+    text-align: left;
 }
 
-.ai-dna-left h2 {
+.ai-branddna-left h2 {
     font-family: "inter", sans-serif;
     font-size: 50px;
-    color: #1e1b4b;
-    margin-right: 220px;
-    margin-bottom: 15px;
+    color: #27364a;
+    margin-bottom: 20px;
     font-weight: 700;
+    white-space: nowrap;
 }
 
-.ai-dna-subtitle {
+.ai-branddna-subtitle {
     font-family: "inter", sans-serif;
     font-size: 30px;
     color: #1e2a44;
@@ -456,7 +449,7 @@ body {
     text-align: left;
 }
 
-.ai-dna-left p {
+.ai-branddna-left p {
     font-family: "inter", sans-serif;
     font-size: 18px;
     line-height: 1.2;
@@ -465,7 +458,7 @@ body {
     text-align: left;
 }
 
-.ai-dna-right {
+.ai-branddna-right {
     position: relative;
     width: 500px;
     height: 460px;
@@ -485,6 +478,7 @@ body {
     text-align: center;
     padding: 12px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    z-index: 2;
 }
 
 .ai-dna-circle h3 {
@@ -505,35 +499,79 @@ body {
     margin-bottom: 3px;
 }
 
-.ai-circle-intelligence {
+.ai-circle-purpose {
     top: -60px;
     left: 185px;
-    background: linear-gradient(135deg, #6366F1, #8B5CF6);
+    background: linear-gradient(135deg, #1fa3a8, #5ad1b6);
 }
 
-.ai-circle-automation {
+.ai-circle-voice {
     top: 160px;
     left: -80px;
-    background: linear-gradient(135deg, #8B5CF6, #A78BFA);
+    background: linear-gradient(135deg, #4158d0, #647dee);
 }
 
-.ai-circle-insights {
+.ai-circle-values {
     top: 160px;
     right: -80px;
-    left: auto;
-    background: linear-gradient(135deg, #6366F1, #8B5CF6);
+    background: linear-gradient(135deg, #43a047, #7ad46a);
 }
 
-.ai-circle-language {
+.ai-circle-personality {
     top: 160px;
     left: 185px;
-    background: linear-gradient(135deg, #8B5CF6, #A78BFA);
+    background: linear-gradient(135deg, #ff7a18, #ffb347);
 }
 
-.ai-circle-vision {
+.ai-circle-visual {
     bottom: -70px;
     left: 185px;
-    background: linear-gradient(135deg, #6366F1, #8B5CF6);
+    background: linear-gradient(135deg, #6d28d9, #8b5cf6);
+}
+
+/* BRAND DNA LINK ANIMATION */
+.ai-link-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Faint base connecting lines */
+.ai-base-path {
+    fill: none;
+    stroke: #d8b4fe; /* Soft purple */
+    stroke-width: 1.5;
+    opacity: 0.3;
+}
+
+/* Animated flowing lines from center */
+.ai-flow-path {
+    fill: none;
+    stroke-width: 3.5;
+    stroke-linecap: round;
+    stroke-dasharray: 40 160;
+    opacity: 0; /* Strictly hidden before it's turn */
+    stroke-dashoffset: 140; /* Safely initialized offset */
+    animation: flow-sequence 15s infinite both;
+}
+
+/* 5-Phase Sequence using correctly ordered delays (Left -> Top -> Center -> Bottom -> Right) */
+.ai-phase-1 .ai-flow-path { stroke: #a78bfa; animation-delay: 0s; } /* Violet */
+.ai-phase-2 .ai-flow-path { stroke: #8b5cf6; animation-delay: 3s; } /* Purple */
+.ai-phase-3 .ai-flow-path { stroke: #7c3aed; animation-delay: 6s; } /* Deep Purple */
+.ai-phase-5 .ai-flow-path { stroke: #6d28d9; animation-delay: 9s; } /* Indigo */
+.ai-phase-4 .ai-flow-path { stroke: #4f46e5; animation-delay: 12s; } /* Blue-Violet */
+
+@keyframes flow-sequence {
+    0% { opacity: 0; stroke-dashoffset: 140; }
+    2% { opacity: 1; stroke-dashoffset: 140; }
+    18% { stroke-dashoffset: -100; opacity: 1; }
+    20% { opacity: 0; stroke-dashoffset: -100; }
+    100% { opacity: 0; stroke-dashoffset: -100; }
 }
 
 /* ============================== */
@@ -542,7 +580,7 @@ body {
 .ai-howworks {
     width: 100%;
     min-height: 700px;
-    background: #1e1b4b;
+    background: #1e293b;
     color: white;
     font-family: 'Inter', sans-serif;
     padding: 80px 0;
@@ -566,7 +604,7 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-    color: #A78BFA;
+    color: #8b5cf6;
     font-size: 14px;
     margin-top: 40px;
     font-family: 'Inter', sans-serif;
@@ -575,7 +613,7 @@ body {
 .ai-dot {
     width: 10px;
     height: 10px;
-    background: #A78BFA;
+    background: #8b5cf6;
     border-radius: 50%;
 }
 
@@ -583,7 +621,7 @@ body {
     font-size: 14.5px;
     font-weight: 500;
     line-height: 1.6;
-    color: #c7d2fe;
+    color: #cfd9dc;
     margin-top: 40px;
     text-align: left;
     font-family: 'Inter', sans-serif;
@@ -600,7 +638,7 @@ body {
 
 .ai-arrow {
     font-size: 60px;
-    color: #A78BFA;
+    color: #8b5cf6;
     margin-left: 400px;
     margin-top: -120px;
 }
@@ -616,7 +654,6 @@ body {
     margin-left: 400px;
     font-family: 'Inter', sans-serif;
     white-space: nowrap;
-    color: white;
 }
 
 .ai-steps-grid {
@@ -628,29 +665,30 @@ body {
 
 .ai-step-card {
     position: relative;
-    background: #1e1b4b;
+    background: rgba(45, 55, 72, 0.4); /* Subtle but clearly visible background */
     padding: 25px;
     border-radius: 16px;
     width: 100%;
-    opacity: 0.7;
-    transform: translateY(0px);
-    transition: all 0.35s ease;
+    opacity: 1; /* Fully visible by default */
+    border: 1px solid rgba(255, 255, 255, 0.05); /* Soft rim */
+    transform: scale(1);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     text-align: left;
-    border: 1px solid rgba(167, 139, 250, 0.2);
+    overflow: hidden;
 }
 
 .ai-step-card:hover {
-    opacity: 1;
-    transform: translateY(-6px);
-    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.2);
-    border-color: rgba(167, 139, 250, 0.4);
+    background: rgba(45, 55, 72, 0.6);
+    transform: scale(0.96); /* Subtle zoom out effect */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-color: rgba(198, 255, 79, 0.3);
 }
 
 .ai-step-card:hover .ai-card-dot {
-    box-shadow: 0 0 8px #A78BFA;
+    box-shadow: 0 0 8px #8b5cf6;
 }
 
 .ai-step-card h4 {
@@ -660,7 +698,6 @@ body {
     font-family: 'Inter', sans-serif;
     font-weight: 500;
     text-align: left;
-    color: #A78BFA;
 }
 
 .ai-step-card h3 {
@@ -670,7 +707,6 @@ body {
     font-weight: 600;
     text-align: left;
     line-height: 1.4;
-    color: white;
 }
 
 .ai-step-card p {
@@ -679,7 +715,6 @@ body {
     opacity: 0.8;
     font-family: 'Inter', sans-serif;
     text-align: left;
-    color: #c7d2fe;
 }
 
 .ai-card-dot {
@@ -688,17 +723,12 @@ body {
     right: 16px;
     width: 10px;
     height: 10px;
-    background: #A78BFA;
+    background: #8b5cf6;
     border-radius: 50%;
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.4);
 }
 
-.ai-step-card:nth-child(4) {
-    grid-column: 1/2;
-}
-
-.ai-step-card:nth-child(5) {
-    grid-column: 2/3;
-}
+/* Removed manual column positioning to support 6-card natural flow */
 
 /* ============================== */
 /* CIRCULAR STATS SECTION */
@@ -711,7 +741,7 @@ body {
     text-align: center;
 }
 
-.ai-stats-layout {
+.ai-branding-stats-layout {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -730,7 +760,7 @@ body {
     margin-bottom: 20px;
     font-weight: 800;
     width: 450px;
-    color: #1e1b4b;
+    color: #1e293b;
 }
 
 .ai-stats-content p {
@@ -742,75 +772,67 @@ body {
     font-weight: 500;
 }
 
-.ai-stats-wrapper {
-    position: relative;
-    width: 400px;
-    height: 260px;
+.ai-stats-wrapper-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    width: 480px;
     margin-top: 20px;
-    margin-right: 80px;
+    transform: translateX(-80px); /* Move left generally to balance the expanded bottom shift */
 }
 
-.ai-circle {
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
+.ai-stat-card {
+    position: relative;
+    left: 0;
+    background: #0f172a; /* Deep sleek black */
+    border-radius: 16px;
+    padding: 35px 20px;
+    width: 228px; /* Fixed identical sizing for all cards */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: #6366F1;
-    border: 2px solid rgba(255, 255, 255, 0.4);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
-    color: white;
-    animation: ai-floatCircle 4s ease-in-out infinite;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5); /* Deep shadow */
+    border: 1px solid rgba(255, 255, 255, 0.05); /* Slight bright rim */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.ai-circle h2 {
+.ai-stat-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(139, 92, 246, 0.25); /* Purple Glow on hover */
+}
+
+.ai-stat-card h2 {
     color: #ffffff;
-    font-size: 52px;
+    font-size: 48px;
     margin: 0;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
 }
 
-.ai-circle p {
+.ai-stat-card p {
     font-family: 'Inter', sans-serif;
-    font-size: 13.5px;
-    letter-spacing: 1px;
+    font-size: 14px;
+    letter-spacing: 0.5px;
     margin-top: 6px;
     font-weight: 600;
+    color: #94a3b8; /* Lighter slate gray for dark theme */
 }
 
-.ai-circle-top {
-    top: -80px;
-    left: 25%;
-    transform: translateX(-50%);
+/* Second Row Shifting Logic */
+.ai-stat-card:nth-child(3),
+.ai-stat-card:nth-child(4) {
+    left: 126px; /* Exactly half of (228px card + 24px gap) to beautifully position it slanted! */
 }
 
-.ai-circle-left {
-    bottom: -40px;
-    left: -70px;
-    animation-delay: 0.6s;
-    background: #8B5CF6;
-}
-
-.ai-circle-right {
-    bottom: -40px;
-    left: 280px;
-    animation-delay: 1.2s;
-}
-
-@keyframes ai-floatCircle {
-    0% {
-        transform: translateY(0px);
-    }
-
-    50% {
-        transform: translateY(-10px);
-    }
-
-    100% {
-        transform: translateY(0px);
-    }
+.ai-connector {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
 }
 
 .ai-bottom-stats {
@@ -824,7 +846,7 @@ body {
 .ai-stat h3 {
     font-family: "inter";
     font-weight: 600;
-    color: #1e1b4b;
+    color: #1e293b;
     font-size: 48px;
     margin: 0;
 }
@@ -839,7 +861,7 @@ body {
 }
 
 /* ============================== */
-/* PROJECTS SECTION - UPDATED */
+/* PROJECTS SECTION */
 /* ============================== */
 .ai-projects-section {
     position: relative;
@@ -852,15 +874,27 @@ body {
     overflow: hidden;
 }
 
-.ai-projects-bg-full {
+.ai-projects-bg-right {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
     z-index: 0;
-    opacity: 1;
+}
+
+.ai-projects-bg-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scaleX(-1);
+    clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+    z-index: 0;
 }
 
 .ai-projects-logos {
@@ -873,14 +907,14 @@ body {
 .ai-project-logo {
     position: absolute;
     object-fit: contain;
-    width: 50px;
-    height: 50px;
+    width: 38px;
+    height: 38px;
 }
 
 .ai-project-logo-card {
     position: absolute;
-    width: 55px;
-    height: 55px;
+    width: 48px;
+    height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -896,28 +930,28 @@ body {
 }
 
 .ai-left-logos .l2 {
-    top: 180px;
-    left: 230px;
+    top: 170px;
+    left: 250px;
 }
 
 .ai-left-logos .l3 {
-    top: 320px;
-    left: 180px;
+    top: 330px;
+    left: 80px;
 }
 
 .ai-left-logos .l4 {
     top: 460px;
-    left: 80px;
+    left: 140px;
 }
 
 .ai-left-logos .l5 {
-    top: 180px;
-    left: 20px;
+    top: 200px;
+    left: 50px;
 }
 
 .ai-left-logos .l6 {
     top: 520px;
-    left: 240px;
+    left: 260px;
 }
 
 .ai-right-logos .r1 {
@@ -1000,9 +1034,9 @@ body {
     color: #777;
 }
 
-/* ===================================== */
-/* FEEDBACK SECTION - CAROUSEL STYLE */
-/* ===================================== */
+/* ============================== */
+/* FEEDBACK SECTION */
+/* ============================== */
 .ai-feedback-section {
     width: 100%;
     padding: 80px 0;
@@ -1021,7 +1055,7 @@ body {
 .ai-feedback-title {
     font-size: 40px;
     font-weight: 700;
-    color: #1e1b4b;
+    color: #1e293b;
     margin-bottom: 10px;
     font-family: 'Inter', sans-serif;
 }
@@ -1029,7 +1063,7 @@ body {
 .ai-feedback-title span {
     font-family: 'Inter', sans-serif;
     font-weight: 700;
-    color: #8B5CF6;
+    color: #8b5cf6;
 }
 
 .ai-feedback-description {
@@ -1055,7 +1089,7 @@ body {
     width: 480px;
     padding: 35px;
     border-radius: 14px;
-    background: #1e1b4b;
+    background: #1e293b;
     transition: all 0.5s ease;
     text-align: left;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
@@ -1079,8 +1113,15 @@ body {
     z-index: 1;
 }
 
+.ai-feedback-card.hidden {
+    transform: scale(0.8);
+    opacity: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
 .ai-feedback-rating {
-    color: #A78BFA;
+    color: #8b5cf6;
     margin-bottom: 15px;
     font-size: 18px;
     letter-spacing: 2px;
@@ -1117,8 +1158,8 @@ body {
     height: 45px;
     border-radius: 50%;
     overflow: hidden;
-    border: 2px solid #8B5CF6;
-    background: linear-gradient(135deg, #6366F1, #8B5CF6);
+    border: 2px solid #8b5cf6;
+    background: linear-gradient(135deg, #8b5cf6, #a78bfa);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1128,7 +1169,7 @@ body {
 .ai-avatar-initial {
     font-size: 1.2rem;
     font-weight: bold;
-    color: #ffffff;
+    color: white;
     font-family: 'Inter', sans-serif;
 }
 
@@ -1143,7 +1184,7 @@ body {
 .ai-author-role {
     font-size: 13px;
     opacity: 0.7;
-    color: #c7d2fe;
+    color: #e2e8f0;
     font-family: 'Inter', sans-serif;
 }
 
@@ -1159,8 +1200,8 @@ body {
     height: 45px;
     border-radius: 50%;
     border: none;
-    background: #6366F1;
-    color: #ffffff;
+    background: #8b5cf6;
+    color: white;
     font-size: 24px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -1168,12 +1209,11 @@ body {
     align-items: center;
     justify-content: center;
     line-height: 1;
-    box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
-    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(139, 92, 246, 0.3);
 }
 
 .ai-feedback-controls button:hover {
-    background: #8B5CF6;
+    background: #ff5252;
     transform: scale(1.1);
     box-shadow: 0 8px 20px rgba(139, 92, 246, 0.4);
 }
@@ -1196,11 +1236,11 @@ body {
         max-width: 1320px;
     }
 
-    .ai-dna-container {
+    .ai-branddna-container {
         width: 1320px;
     }
 
-    .ai-stats-layout {
+    .ai-branding-stats-layout {
         width: 1320px;
     }
 }
@@ -1224,32 +1264,29 @@ body {
         gap: 20px;
     }
 
-    .ai-feedback-card {
-        width: 440px;
-    }
-
-    .ai-feedback-card.left {
-        transform: translateX(-520px) scale(0.9);
-    }
-
-    .ai-feedback-card.right {
-        transform: translateX(520px) scale(0.9);
-    }
-
-    .ai-feedback-header {
-        max-width: 1140px;
-    }
-
-    .ai-dna-container {
+    .ai-branddna-container {
         width: 90%;
         gap: 100px;
     }
 
-    .ai-dna-right {
+    .ai-branddna-right {
         right: 0;
     }
 
-    .ai-stats-layout {
+    .ai-howworks-container {
+        width: 90%;
+        gap: 60px;
+    }
+
+    .ai-arrow {
+        margin-left: 300px;
+    }
+
+    .ai-section-title {
+        margin-left: 300px;
+    }
+
+    .ai-branding-stats-layout {
         width: 90%;
     }
 
@@ -1263,6 +1300,18 @@ body {
 
     .ai-bottom-stats {
         gap: 100px;
+    }
+
+    .ai-feedback-card {
+        width: 440px;
+    }
+
+    .ai-feedback-card.left {
+        transform: translateX(-520px) scale(0.9);
+    }
+
+    .ai-feedback-card.right {
+        transform: translateX(520px) scale(0.9);
     }
 }
 
@@ -1304,13 +1353,11 @@ body {
         max-width: 90%;
     }
 
-    .ai-badge-ml,
-    .ai-badge-genai,
-    .ai-badge-ana {
+    .ai-badge-strategy,
+    .ai-badge-guidelines {
         top: 0;
         left: 0;
         right: 0;
-        bottom: 0;
     }
 
     .ai-gradient-shape {
@@ -1331,30 +1378,30 @@ body {
         height: 140px;
     }
 
-    .ai-dna-container {
+    .ai-branddna-container {
         flex-direction: column;
         width: 90%;
         gap: 60px;
     }
 
-    .ai-dna-left {
+    .ai-branddna-left {
         max-width: 100%;
         text-align: center;
     }
 
-    .ai-dna-left h2 {
+    .ai-branddna-left h2 {
         margin-right: 0;
     }
 
-    .ai-dna-subtitle {
+    .ai-branddna-subtitle {
         text-align: center;
     }
 
-    .ai-dna-left p {
+    .ai-branddna-left p {
         text-align: center;
     }
 
-    .ai-dna-right {
+    .ai-branddna-right {
         right: 0;
         margin: 0 auto;
     }
@@ -1402,13 +1449,9 @@ body {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .ai-step-card:nth-child(5) {
-        grid-column: 1/3;
-        max-width: 50%;
-        margin: 0 auto;
-    }
+    /* Natural flow for 6-card implementation grid */
 
-    .ai-stats-layout {
+    .ai-branding-stats-layout {
         flex-direction: column;
         width: 90%;
         gap: 60px;
@@ -1531,9 +1574,6 @@ body {
 
 /* Tablet Specific (768px - 1024px) */
 @media (max-width: 1024px) and (min-width: 768px) {
-    .ai-feedback-section {
-        padding: 70px 0;
-    }
 
     html,
     body {
@@ -1648,14 +1688,6 @@ body {
         padding: 8px 15px;
     }
 
-    .ai-badge-ml,
-    .ai-badge-genai,
-    .ai-badge-ana {
-        top: 0;
-        left: 0;
-        right: 0;
-    }
-
     .ai-gradient-shape {
         width: 300px;
         height: 300px;
@@ -1697,23 +1729,23 @@ body {
         font-size: 0.9rem;
     }
 
-    .ai-dna-section {
+    .ai-branddna-section {
         padding: 60px 0;
     }
 
-    .ai-dna-left h2 {
+    .ai-branddna-left h2 {
         font-size: 40px;
     }
 
-    .ai-dna-subtitle {
+    .ai-branddna-subtitle {
         font-size: 24px;
     }
 
-    .ai-dna-left p {
+    .ai-branddna-left p {
         font-size: 16px;
     }
 
-    .ai-dna-right {
+    .ai-branddna-right {
         width: 100%;
         height: 500px;
         right: 0;
@@ -1732,30 +1764,30 @@ body {
         font-size: 9px;
     }
 
-    .ai-circle-intelligence {
+    .ai-circle-purpose {
         top: -30px;
         left: 50%;
         transform: translateX(-50%);
     }
 
-    .ai-circle-automation {
+    .ai-circle-voice {
         top: 110px;
         left: 15px;
     }
 
-    .ai-circle-insights {
+    .ai-circle-values {
         top: 110px;
         right: 15px;
         left: auto;
     }
 
-    .ai-circle-language {
+    .ai-circle-personality {
         top: 250px;
         left: 50%;
         transform: translateX(-50%);
     }
 
-    .ai-circle-vision {
+    .ai-circle-visual {
         bottom: -30px;
         left: 50%;
         transform: translateX(-50%);
@@ -2032,15 +2064,15 @@ body {
         font-size: 0.85rem;
     }
 
-    .ai-dna-left h2 {
+    .ai-branddna-left h2 {
         font-size: 32px;
     }
 
-    .ai-dna-subtitle {
+    .ai-branddna-subtitle {
         font-size: 20px;
     }
 
-    .ai-dna-right {
+    .ai-branddna-right {
         height: 400px;
     }
 
@@ -2062,25 +2094,25 @@ body {
         font-size: 14px;
     }
 
-    .ai-circle-intelligence {
+    .ai-circle-purpose {
         top: -20px;
     }
 
-    .ai-circle-automation {
+    .ai-circle-voice {
         top: 90px;
         left: 10px;
     }
 
-    .ai-circle-insights {
+    .ai-circle-values {
         top: 90px;
         right: 10px;
     }
 
-    .ai-circle-language {
+    .ai-circle-personality {
         top: 200px;
     }
 
-    .ai-circle-vision {
+    .ai-circle-visual {
         bottom: -20px;
     }
 
@@ -2277,15 +2309,15 @@ body {
         font-size: 1.8rem;
     }
 
-    .ai-dna-left h2 {
+    .ai-branddna-left h2 {
         font-size: 28px;
     }
 
-    .ai-dna-subtitle {
+    .ai-branddna-subtitle {
         font-size: 18px;
     }
 
-    .ai-dna-right {
+    .ai-branddna-right {
         height: 350px;
     }
 
@@ -2298,25 +2330,25 @@ body {
         font-size: 11px;
     }
 
-    .ai-circle-intelligence {
+    .ai-circle-purpose {
         top: -15px;
     }
 
-    .ai-circle-automation {
+    .ai-circle-voice {
         top: 80px;
         left: 5px;
     }
 
-    .ai-circle-insights {
+    .ai-circle-values {
         top: 80px;
         right: 5px;
     }
 
-    .ai-circle-language {
+    .ai-circle-personality {
         top: 175px;
     }
 
-    .ai-circle-vision {
+    .ai-circle-visual {
         bottom: -15px;
     }
 
@@ -2489,3 +2521,4 @@ body {
         transition-duration: 0.01ms !important;
     }
 }
+

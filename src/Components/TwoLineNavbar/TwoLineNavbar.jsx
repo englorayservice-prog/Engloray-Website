@@ -6,7 +6,7 @@ import './TwoLineNavbar.css';
 import Logo from '../../assets/logo 2.png';
 import SearchBar from '../SearchBar/SearchBar';
 
-const TwoLineNavbar = ({ excludeItems = [] }) => {
+const TwoLineNavbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [activeMenu, setActiveMenu] = useState(null);
     const [activeMobileMenu, setActiveMobileMenu] = useState(null);
@@ -18,7 +18,7 @@ const TwoLineNavbar = ({ excludeItems = [] }) => {
     const navRef = useRef(null);
 
     // Define menu data with dropdowns only
-    const allMenuData = [
+    const menuData = [
         {
             id: 'home',
             title: 'Home',
@@ -136,12 +136,13 @@ const TwoLineNavbar = ({ excludeItems = [] }) => {
                     }
                 ]
             }
-        }
+        },
+        // {
+        //     id: 'raymart',
+        //     title: 'Raymart',
+        //     route: '/raymartPage'
+        // }
     ];
-
-    // Filter menuData based on excludeItems prop
-    const menuData = allMenuData.filter(item => !excludeItems.includes(item.id));
-
 
     // Function to handle Home button click
     const handleHomeClick = () => {
@@ -405,15 +406,84 @@ const TwoLineNavbar = ({ excludeItems = [] }) => {
                     className={`tlnbn-navbar-main-container ${showNavbar ? 'tlnbn-navbar-visible' : 'tlnbn-navbar-hidden'}`}
                     ref={navRef}
                 >
-                    {/* First Line */}
-                    <nav className="tlnbn-navbar-first-line">
-                        <div className="tlnbn-nav-first-content">
-                            {/* Logo - Center */}
+                    <nav className="tlnbn-single-line-nav">
+                        <div className="tlnbn-nav-content">
+                            {/* 1. Logo */}
                             <div className="tlnbn-logo" onClick={handleHomeClick}>
                                 <img src={Logo} alt="ENGLORAY" />
                             </div>
 
-                            {/* Action Buttons - Center (near logo) */}
+                            {/* 2. Menu Items (Track) */}
+                            <ul className="tlnbn-desktop-menu">
+                                {menuData.map((menu, index) => {
+                                    const isActive = location.pathname === menu.route || (menu.dropdown && menu.dropdown.items.some(item => location.pathname === item.route));
+                                    return (
+                                        <li
+                                            key={menu.id}
+                                            className={`tlnbn-nav-item ${activeMenu === menu.id ? 'tlnbn-active' : ''} ${isActive ? 'active-page' : ''} ${index === 0 ? 'tlnbn-first-item' : index === menuData.length - 1 ? 'tlnbn-last-item' : ''
+                                                }`}
+                                            onMouseEnter={() => handleMenuHover(menu.id)}
+                                            onMouseLeave={handleMenuLeave}
+                                        >
+                                            <div
+                                                className="tlnbn-nav-link"
+                                                onClick={(e) => handleMenuItemClick(menu, e)}
+                                                role="button"
+                                                tabIndex={0}
+                                                onKeyDown={(e) => {
+                                                    if (e.key === 'Enter' || e.key === ' ') {
+                                                        e.preventDefault();
+                                                        handleMenuItemClick(menu, e);
+                                                    }
+                                                }}
+                                            >
+                                                {menu.title}
+                                                {menu.dropdown && <span className="tlnbn-arrow">⌄</span>}
+                                            </div>
+
+                                            {menu.dropdown && (
+                                                <div className={`tlnbn-mega-dropdown ${activeMenu === menu.id ? 'tlnbn-visible' : ''}`}>
+                                                    <div className="tlnbn-dropdown-content">
+                                                        <h3>{menu.dropdown.title}</h3>
+                                                        <div className="tlnbn-dropdown-grid">
+                                                            {menu.dropdown.items.map((item, index) => (
+                                                                <div
+                                                                    key={item.id || index}
+                                                                    className="tlnbn-dropdown-item"
+                                                                    onClick={() => handleDropdownItemClick(item)}
+                                                                    role="button"
+                                                                    tabIndex={0}
+                                                                    onKeyDown={(e) => {
+                                                                        if (e.key === 'Enter' || e.key === ' ') {
+                                                                            handleDropdownItemClick(item);
+                                                                        }
+                                                                    }}
+                                                                >
+                                                                    <div className="tlnbn-item-icon">{item.icon}</div>
+                                                                    <div className="tlnbn-item-text">
+                                                                        <div className="tlnbn-item-title">{item.name}</div>
+                                                                        <div className="tlnbn-item-desc">{item.desc}</div>
+                                                                    </div>
+                                                                </div>
+                                                            ))}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            )}
+                                        </li>
+                                    );
+                                })}
+                                <li className="tlnbn-nav-subscribe-container">
+                                    <button
+                                        className="tlnbn-subscribe-btn"
+                                        onClick={navigateToFooterContact}
+                                    >
+                                        Contact
+                                    </button>
+                                </li>
+                            </ul>
+
+                            {/* 3. Action Buttons */}
                             <div className="tlnbn-action-buttons">
                                 <button
                                     className="tlnbn-btn tlnbn-start-project"
@@ -435,8 +505,10 @@ const TwoLineNavbar = ({ excludeItems = [] }) => {
                                 </button>
                             </div>
 
-                            {/* Subscribe Button - Right */}
-
+                            {/* 4. Search Bar at Last */}
+                            <div className="tlnbn-search-container-wrapper">
+                                <SearchBar />
+                            </div>
 
                             {/* Mobile Toggle */}
                             <button
@@ -448,82 +520,6 @@ const TwoLineNavbar = ({ excludeItems = [] }) => {
                                 <span></span>
                                 <span></span>
                             </button>
-                        </div>
-                    </nav>
-
-                    {/* Second Line - Desktop Only */}
-                    <nav className="tlnbn-navbar-second-line tlnbn-desktop-only">
-                        <div className="tlnbn-nav-second-content">
-                            <div className="tlnbn-search-container-wrapper">
-                                <SearchBar />
-                            </div>
-
-                            {/* Desktop Navigation Menu */}
-                            <ul className="tlnbn-desktop-menu">
-                                {menuData.map((menu, index) => (
-                                    <li
-                                        key={menu.id}
-                                        className={`tlnbn-nav-item ${activeMenu === menu.id ? 'tlnbn-active' : ''} ${index === 0 ? 'tlnbn-first-item' : index === menuData.length - 1 ? 'tlnbn-last-item' : ''
-                                            }`}
-                                        onMouseEnter={() => handleMenuHover(menu.id)}
-                                        onMouseLeave={handleMenuLeave}
-                                    >
-                                        <div
-                                            className="tlnbn-nav-link"
-                                            onClick={(e) => handleMenuItemClick(menu, e)}
-                                            role="button"
-                                            tabIndex={0}
-                                            onKeyDown={(e) => {
-                                                if (e.key === 'Enter' || e.key === ' ') {
-                                                    e.preventDefault();
-                                                    handleMenuItemClick(menu, e);
-                                                }
-                                            }}
-                                        >
-                                            {menu.title}
-                                            {menu.dropdown && <span className="tlnbn-arrow">⌄</span>}
-                                        </div>
-
-                                        {menu.dropdown && (
-                                            <div className={`tlnbn-mega-dropdown ${activeMenu === menu.id ? 'tlnbn-visible' : ''}`}>
-                                                <div className="tlnbn-dropdown-content">
-                                                    <h3>{menu.dropdown.title}</h3>
-                                                    <div className="tlnbn-dropdown-grid">
-                                                        {menu.dropdown.items.map((item, index) => (
-                                                            <div
-                                                                key={item.id || index}
-                                                                className="tlnbn-dropdown-item"
-                                                                onClick={() => handleDropdownItemClick(item)}
-                                                                role="button"
-                                                                tabIndex={0}
-                                                                onKeyDown={(e) => {
-                                                                    if (e.key === 'Enter' || e.key === ' ') {
-                                                                        handleDropdownItemClick(item);
-                                                                    }
-                                                                }}
-                                                            >
-                                                                <div className="tlnbn-item-icon">{item.icon}</div>
-                                                                <div className="tlnbn-item-text">
-                                                                    <div className="tlnbn-item-title">{item.name}</div>
-                                                                    <div className="tlnbn-item-desc">{item.desc}</div>
-                                                                </div>
-                                                            </div>
-                                                        ))}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        )}
-                                    </li>
-                                ))}
-                                <div className="tlnbn-nav-subscribe-container">
-                                    <button
-                                        className="tlnbn-subscribe-btn"
-                                        onClick={navigateToFooterContact}
-                                    >
-                                        Contact
-                                    </button>
-                                </div>
-                            </ul>
                         </div>
                     </nav>
                 </div>

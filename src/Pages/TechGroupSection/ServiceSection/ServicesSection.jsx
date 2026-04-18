@@ -5,23 +5,23 @@ import { faPalette, faDesktop, faMobileAlt, faCogs, faChartLine, faArrowUp, faAr
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import './ServicesSection.css';
-import serviceimage from "../../../assets/services_header.png";
+import serviceimage from "../../../assets/services_comprehensive.png";
 
 library.add(faPalette, faDesktop, faMobileAlt, faCogs, faChartLine, faArrowUp, faArrowRight);
 
 const services = [
-  { id: 1,  title: 'BRANDING & IDENTITY DESIGN',  shortDescription: 'Create a memorable brand that resonates with your audience and leaves a lasting impression.',          route: '/brandingIdentityPage'     },
-  { id: 2,  title: 'DEVELOPMENT SERVICES',         shortDescription: 'Custom software solutions and mobile applications tailored to your specific business needs.',         route: '/softwareDevelopmentPage'  },
-  { id: 3,  title: 'WEBSITE DEVELOPMENT',          shortDescription: 'Create intuitive, responsive, and high-performance websites optimized for all modern devices.',        route: '/websiteDevelopmentPage'   },
-  { id: 4,  title: 'E-COMMERCE DEVELOPMENT',       shortDescription: 'Build powerful online stores with seamless payment integration and expert inventory management.',      route: '/ecommerceDevelopmentPage' },
-  { id: 5,  title: 'APP DEVELOPMENT',              shortDescription: 'Develop cutting-edge mobile applications for iOS and Android platforms.',                              route: '/appDevelopmentPage'       },
-  { id: 6,  title: 'GRAPHIC DESIGN',               shortDescription: "Visually stunning designs that communicate your brand's unique message.",                              route: '/graphicDesignPage'        },
-  { id: 7,  title: 'UI/UX DESIGN',                 shortDescription: 'User-centered designs that provide seamless and intuitive digital experiences.',                       route: '/uiuxDesignPage'           },
-  { id: 8,  title: 'SOFTWARE & TECH SOLUTION',     shortDescription: 'Comprehensive technology solutions to drive your business forward in the digital age.',                route: '/softwareSolutionPage'     },
-  { id: 9,  title: 'DATA ANALYTICS',               shortDescription: 'Leverage data insights to make informed business decisions and drive growth.',                         route: '/dataAnalyticsPage'        },
-  { id: 10, title: 'AI SERVICES',                  shortDescription: 'Integrate artificial intelligence to automate and optimize your business processes.',                  route: '/aiServicesPage'           },
-  { id: 11, title: 'CRM SERVICES',                 shortDescription: 'Manage customer relationships with advanced and customized CRM systems.',                              route: '/crmServicesPage'          },
-  { id: 12, title: 'SAAS SERVICES',                shortDescription: 'Scalable cloud-based software solutions for modern and agile businesses.',                             route: '/saasPage'                 },
+  { id: 1,  title: 'BRANDING & IDENTITY DESIGN',  shortDescription: 'Create a memorable brand that resonates with your audience and leaves a lasting impression. We build cohesive visual identities, comprehensive brand guidelines, and unique design systems that establish trust.', route: '/brandingIdentityPage' },
+  { id: 2,  title: 'DEVELOPMENT SERVICES',         shortDescription: 'Custom software solutions and applications engineered to your specific requirements. We focus on scalable backend architectures, robust security protocols, and seamless performance to power modern operations.', route: '/softwareDevelopmentPage' },
+  { id: 3,  title: 'WEBSITE DEVELOPMENT',          shortDescription: 'Develop highly intuitive, responsive, and high-performance websites optimized perfectly for all modern devices. We prioritize loading speeds, accessibility, and aesthetics to deliver digital experiences.', route: '/websiteDevelopmentPage' },
+  { id: 4,  title: 'E-COMMERCE DEVELOPMENT',       shortDescription: 'Architect powerful online stores equipped with seamless payment gateways and expert inventory management. We empower your expanding business through tailored features designed to maximize online sales volume.', route: '/ecommerceDevelopmentPage' },
+  { id: 5,  title: 'APP DEVELOPMENT',              shortDescription: 'Engineer fluid, cutting-edge mobile applications for iOS and Android ecosystems. From native codebases to versatile cross-platform frameworks, we deliver highly engaging, polished cross-platform mobile experiences.', route: '/appDevelopmentPage' },
+  { id: 6,  title: 'GRAPHIC DESIGN',               shortDescription: "Deliver visually stunning graphic designs that beautifully communicate your brand's unique message. We expertly translate your core values into striking digital marketing materials and captivating layout designs.", route: '/graphicDesignPage' },
+  { id: 7,  title: 'UI/UX DESIGN',                 shortDescription: 'Craft deeply user-centered designs ensuring seamless and highly intuitive digital experiences across all platforms. We conduct rigorous user flow analytics and design optimization to guarantee maximum usability.', route: '/uiuxDesignPage' },
+  { id: 8,  title: 'SOFTWARE & TECH SOLUTION',     shortDescription: 'Deploy comprehensive technology infrastructure solutions to drive your entire business forward. We effectively bridge the gap between complex legacy operations and modern digital efficiency through expert IT strategy.', route: '/softwareSolutionPage' },
+  { id: 9,  title: 'DATA ANALYTICS',               shortDescription: 'Leverage extensive data analytics to make informed decisions and stimulate sustainable organizational growth. We transform complex metrics into highly actionable visualizations that continuously reveal opportunities.', route: '/dataAnalyticsPage' },
+  { id: 10, title: 'AI SERVICES',                  shortDescription: 'Integrate sophisticated artificial intelligence systems to autonomously optimize complex workflows and business processes. Our bespoke machine learning models deeply empower your team to work significantly smarter.', route: '/aiServicesPage' },
+  { id: 11, title: 'CRM SERVICES',                 shortDescription: 'Govern customer relationships effectively utilizing advanced, fully customized CRM integrations. We intelligently streamline your communication channels and manage pipelines to enhance personalized client engagements.', route: '/crmServicesPage' },
+  { id: 12, title: 'SAAS SERVICES',                shortDescription: 'Implement highly scalable, secure cloud-based SaaS solutions designed exclusively for modern businesses. We completely architect sophisticated subscription platforms ensuring continuous value and seamless experiences.', route: '/saasPage' },
 ];
 
 /* ─── Individual card: fades in when it enters the viewport ─── */

@@ -1,39 +1,35 @@
 import React, { useState, useEffect, useRef } from 'react';
-import aiImageOne from '../../../assets/case study images/Application/aara.png';
-import aiImageTwo from '../../../assets/case study images/Application/orthopetic clinic.png';
-import aiImageThree from '../../../assets/case study images/Application/pavizham.jpg';
+import aiImageOne from '../../../assets/case study images/uiux/pavizham.jpg';
+import aiImageTwo from '../../../assets/case study images/uiux/viaan.jpg';
+import aiImageThree from '../../../assets/case study images/uiux/gym life.png';
 import './MobileApplications.css';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
 import MainPageSubFooter from '../MainPageSubFooter/MainPageSubFooter';
 import { Helmet } from 'react-helmet';
-import { FaBrain, FaRobot, FaChartLine, FaLanguage, FaEye, FaMicrochip, FaCloud, FaShieldAlt } from "react-icons/fa";
+import { FaBrain, FaRobot, FaMicrochip, FaNetworkWired, FaDatabase, FaCogs, FaProjectDiagram } from "react-icons/fa";
 import heroBg from "../../../assets/lineimage.jpeg";
-
-// Import project section background
 import projectsBg from '../../../assets/heroimage.jpeg';
+import logo1 from '../../../assets/icons/logoipsum-247.png';
+import logo2 from '../../../assets/icons/logoipsum-248.png';
+import logo3 from '../../../assets/icons/logoipsum-249.png';
+import logo4 from '../../../assets/icons/logoipsum-292.png';
+import logo5 from '../../../assets/icons/logoipsum-293.png';
+import logo6 from '../../../assets/icons/logoipsum-294.png';
+import logo7 from '../../../assets/icons/logoipsum-295.png';
+import logo8 from '../../../assets/icons/logoipsum-296.png';
+import logo9 from '../../../assets/icons/logoipsum-298.png';
+import logo10 from '../../../assets/icons/logoipsum-299.png';
+import logo11 from '../../../assets/icons/logoipsum-327.png';
+import logo12 from '../../../assets/icons/logoipsum-338.png';
+import avatarLeft from '../../../assets/rev_avatar_5.jfif';
+import avatarRight from '../../../assets/rev_avatar_4.jfif';
 
-// Import brand logos for projects section
-import logo1 from '../../../assets/icons/logoipsum-419.png';
-import logo2 from '../../../assets/icons/logoipsum-424.png';
-import logo3 from '../../../assets/icons/logoipsum-387.png';
-import logo4 from '../../../assets/icons/logoipsum-394.png';
-import logo5 from '../../../assets/icons/logoipsum-374.png';
-import logo6 from '../../../assets/icons/logoipsum-383.png';
-import logo7 from '../../../assets/icons/logoipsum-293.png';
-import logo8 from '../../../assets/icons/logoipsum-340.png';
-import logo9 from '../../../assets/icons/logoipsum-361.png';
-import logo10 from '../../../assets/icons/logoipsum-371.png';
-import logo11 from '../../../assets/icons/logoipsum-392.png';
-import logo12 from '../../../assets/icons/logoipsum-249.png';
-
-const AiProducts = () => {
+const AiProductPage = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [autoSlide, setAutoSlide] = useState(true);
-    const feedbackTrackRef = useRef(null);
 
-    // Scroll to top when component mounts
     useEffect(() => {
         window.scrollTo(0, 0);
 
@@ -52,129 +48,158 @@ const AiProducts = () => {
         {
             id: 1,
             rating: "★★★★★",
-            text: "Engloray’s AI-powered branding helped us build a strong digital identity. Their intelligent branding insights helped us connect with the right audience.",
-            author: "Arjun Mehta ",
-            role: "Startup Founder",
+            text: "The AI implementation solved our inventory forecasting issues completely. We've seen a 25% reduction in waste.",
+            author: "Dr. Alan Grant",
+            role: "Supply Chain Director",
             initial: "A"
         },
         {
             id: 2,
             rating: "★★★★★",
-            text: "Their AI-powered branding approach helped us design a modern brand identity that reflects innovation and professionalism.",
-            author: "Daniel Thomas ",
-            role: "Product Manager",
-            initial: "D"
+            text: "Engloray's custom NLP models have automated 70% of our customer support queries with high accuracy.",
+            author: "Linda Hamilton",
+            role: "Customer Success VP",
+            initial: "L"
         },
         {
             id: 3,
             rating: "★★★★★",
-            text: "What impressed me most was how Engloray combined AI insights with creative branding ideas to create a strong brand presence.",
-            author: "Rohan Gupta ",
-            role: " Entrepreneur",
-            initial: "R"
+            text: "Predictive analytics provided us with insights we didn't even know we had. Our revenue has grown by 15% YOY.",
+            author: "Marcus Aurelius",
+            role: "Data Strategy Lead",
+            initial: "M"
+        },
+        {
+            id: 4,
+            rating: "★★★★★",
+            text: "The integration process was seamless. Their AI solutions are built for scalability and performance.",
+            author: "Sarah Connor",
+            role: "Technical Architect",
+            initial: "S"
+        },
+        {
+            id: 5,
+            rating: "★★★★★",
+            text: "Innovative, reliable, and forward-thinking. Engloray is pushing the boundaries of what's possible with AI.",
+            author: "Elon Tusk",
+            role: "Neural Tech Lead",
+            initial: "E"
+        },
+        {
+            id: 6,
+            rating: "★★★★★",
+            text: "Exceptional quality and support. The machine learning models are highly optimized for our specific needs.",
+            author: "Grace Hopper",
+            role: "Chief Innovation Officer",
+            initial: "G"
         }
     ];
 
     const projects = [
         {
             id: 1,
-            title: "AI Customer Support Assistant",
-            description: "Intelligent chatbot with natural language understanding, sentiment analysis, and automated ticket resolution. Handles complex queries with 95% accuracy.",
-            category: "Conversational AI",
+            title: "Predictive Analytics",
+            description: "Advanced machine learning models that predict market trends and consumer behavior with 94% accuracy.",
+            category: "Data Science",
             image: aiImageOne,
             stats: {
-                duration: "3 Months",
-                // satisfaction: "95%"
+                duration: "16 Weeks",
+                satisfaction: "100%"
             }
         },
         {
             id: 2,
-            title: "Predictive Analytics Platform",
-            description: "Machine learning models for sales forecasting, customer churn prediction, and inventory optimization with real-time dashboard and automated alerts.",
-            category: "Predictive AI",
+            title: "Computer Vision",
+            description: "Real-time object detection and recognition system for industrial automation and quality control.",
+            category: "Industrial AI",
             image: aiImageTwo,
             stats: {
-                duration: "4 Months",
-                // satisfaction: "98%"
+                duration: "10 Weeks",
+                satisfaction: "97%"
             }
         },
         {
             id: 3,
-            title: "Computer Vision System",
-            description: "Real-time object detection and quality inspection system for manufacturing with automated defect identification and production line optimization.",
-            category: "Computer Vision",
+            title: "NLP Engine",
+            description: "Multi-lingual Natural Language Processing engine for automated sentiment analysis and content generation.",
+            category: "NLP",
             image: aiImageThree,
             stats: {
-                duration: "5 Months",
-                // satisfaction: "97%"
+                duration: "12 Weeks",
+                satisfaction: "99%"
             }
         }
     ];
 
-    // About section cards data
     const aboutCards = [
         {
             id: 1,
-            title: "Custom AI Solutions",
-            description: "We develop tailored AI models for your specific business needs, from natural language processing to computer vision and predictive analytics. Our solutions are designed to integrate seamlessly with your existing infrastructure.",
-            image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            title: "AI Consultation",
+            description: "We help you identify where AI can bring the most value to your organization, assessing feasibility and defining potential ROI.",
+            image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
         },
         {
             id: 2,
-            title: "Machine Learning Engineering",
-            description: "Our ML engineers build robust, scalable models using state-of-the-art algorithms and frameworks. We handle everything from data preprocessing to model deployment and monitoring in production environments.",
-            image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            title: "Model Development",
+            description: "Building custom machine learning models tailored to your specific data and business challenges, from linear regression to deep learning.",
+            image: "https://images.unsplash.com/photo-1553356084-58ef4a67b2a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
         },
         {
             id: 3,
-            title: "AI Integration & Deployment",
-            description: "We seamlessly integrate AI capabilities into your existing applications and workflows. Our team ensures smooth deployment with comprehensive testing, monitoring, and ongoing optimization for peak performance.",
-            image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            title: "System Integration",
+            description: "Integrating AI capabilities into your existing software ecosystem, ensuring high availability, security, and seamless data flow.",
+            image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
         },
         {
             id: 4,
-            title: "LLM & Generative AI",
-            description: "Leverage cutting-edge large language models and generative AI for content creation, code generation, document analysis, and intelligent automation. We help you harness the power of foundation models safely and effectively.",
-            image: "https://epe.brightspotcdn.com/04/2a/cf21e17141ec9bb914524cedea75/052024-story-embed-cosn-ai-langreo-gt.gif"
+            title: "Continuous MLOps",
+            description: "Monitoring model performance in production, managing data drift, and ensuring your AI systems remain accurate and reliable over time.",
+            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
         }
     ];
 
-    // How It Works steps data
     const howItWorksSteps = [
         {
             title: "Step 1",
-            heading: "Problem Discovery",
-            text: "Identify business challenges where AI can create measurable value."
+            heading: "Data Assessment",
+            text: "Evaluating your existing data assets and identifying AI opportunities."
         },
         {
             title: "Step 2",
-            heading: "Data Assessment",
-            text: "Evaluate data availability, quality, and requirements for model training."
+            heading: "Model Prototyping",
+            text: "Creating initial proof-of-concept models to validate hypotheses."
         },
         {
             title: "Step 3",
-            heading: "Model Development",
-            text: "Build and train custom AI models using state-of-the-art algorithms."
+            heading: "Training & Tuning",
+            text: "Training robust models on your data and optimizing for accuracy."
         },
         {
             title: "Step 4",
-            heading: "Integration & Testing",
-            text: "Seamlessly integrate AI into your systems with rigorous testing."
+            heading: "Deployment",
+            text: "Launching AI models into production environments at scale."
         },
         {
             title: "Step 5",
-            heading: "Deployment & Monitoring",
-            text: "Deploy to production and continuously monitor model performance."
+            heading: "Monitoring",
+            text: "Continuous tracking and retraining to ensure long-term performance."
+        },
+        {
+            title: "Step 6",
+            heading: "Optimization & Expansion",
+            text: "Refining models based on live data and scaling to new use cases."
         }
     ];
 
     const getPosition = (index) => {
-        const diff = index - currentSlide;
+        const len = feedbacks.length;
+        const prev = (currentSlide - 1 + len) % len;
+        const next = (currentSlide + 1) % len;
 
-        if (diff === 0) return "center";
-        if (diff === -1 || diff === 2) return "left";
-        if (diff === 1 || diff === -2) return "right";
-        return "";
+        if (index === currentSlide) return "center";
+        if (index === prev) return "left";
+        if (index === next) return "right";
+        return "hidden";
     };
 
     const handlePrevSlide = () => {
@@ -189,29 +214,27 @@ const AiProducts = () => {
         setTimeout(() => setAutoSlide(true), 10000);
     };
 
-    // Auto slide functionality
     useEffect(() => {
         let interval;
         if (autoSlide) {
             interval = setInterval(() => {
                 setCurrentSlide((prev) => (prev + 1) % feedbacks.length);
-            }, 5000);
+            }, 3000);
         }
         return () => clearInterval(interval);
     }, [autoSlide, feedbacks.length]);
 
     const badges = [
         "Machine Learning",
+        "Deep Learning",
+        "NLP & LLMs",
         "Computer Vision",
-        "NLP",
-        "Generative AI",
-        "Predictive Analytics"
+        "Predictive Modeling"
     ];
 
     return (
         <>
             <div>
-                {/* SVG Definitions for Clip Path */}
                 <svg width="0" height="0" style={{ position: 'absolute' }}>
                     <defs>
                         <clipPath id="cardCurve" clipPathUnits="objectBoundingBox">
@@ -222,86 +245,73 @@ const AiProducts = () => {
 
                 <Helmet>
                     <title>Engloray - AI Products</title>
-                    <meta name="description" content="Transform your business with cutting-edge AI solutions - from machine learning and computer vision to natural language processing and generative AI." />
+                    <meta name="description" content="Harness the power of AI to transform your business with our custom intelligence solutions." />
                     <meta name="robots" content="max-snippet:-1, max-image-preview: large, max-video-preview:-1" />
                     <meta property="og:locale" content="en_US" />
                     <meta property="og:type" content="website" />
                     <meta property="og:title" content="Engloray | AI Products" />
-                    <meta property="og:description" content="Intelligent Solutions for Tomorrow's Challenges" />
+                    <meta property="og:description" content="Intelligent Solutions for a Smarter Future" />
                 </Helmet>
 
-                <div className="ai-page" id='aiProductsPage'>
+                <div className="ai-page" id='aiProductPage'>
                     <TopNavBar />
                     <TwoLineNavbar />
 
-                    {/* Hero Section */}
                     <section className="ai-hero">
-                        {/* Background image */}
                         <img src={heroBg} className="ai-hero-bg-image" alt="background texture" />
 
-                        {/* Gradient background shapes */}
                         <div className="ai-gradient-shape ai-purple-shape"></div>
                         <div className="ai-gradient-shape ai-indigo-shape"></div>
 
-                        {/* Floating cards */}
                         <div className="ai-floating-card ai-left ai-rotate-left">
-                            <img
-                                src="https://i.pravatar.cc/100?img=8"
-                                alt="AI Engineer"
-                            />
+                            <img src={avatarLeft} alt="AI Researcher" />
                             <div className="ai-card-content">
-                                <h4>Machine Learning</h4>
-                                <p>Custom Models</p>
+                                <h4>Model Accuracy</h4>
+                                <p>98.5% Performance</p>
                                 <div className="ai-card-progress">
-                                    <div className="ai-progress-fill"></div>
+                                    <div className="ai-progress-fill" style={{ width: '98%' }}></div>
                                 </div>
                             </div>
                         </div>
 
                         <div className="ai-floating-card ai-right ai-rotate-right">
-                            <img
-                                src="https://i.pravatar.cc/100?img=16"
-                                alt="Data Scientist"
-                            />
+                            <img src={avatarRight} alt="ML Engineer" />
                             <div className="ai-card-content">
-                                <h4>Deep Learning</h4>
-                                <p>Neural Networks</p>
+                                <h4>Neural Training</h4>
+                                <p>Optimizing Weights</p>
                                 <div className="ai-card-progress">
                                     <div className="ai-progress-fill"></div>
                                 </div>
                             </div>
                         </div>
 
-                        {/* Main content */}
                         <div className="ai-hero-container">
                             <div className="ai-hero-badge">
-                                AI PRODUCTS
+                                Artificial Intelligence
                             </div>
 
                             <h1 className="ai-hero-title">
-                                Intelligent Solutions<br /> <span className="ai-title-highlight">for Tomorrow's</span> <span className="ai-title-highlight">Challenges</span>
+                                Building Intelligent<br /> <span className="ai-title-highlight">Digital Futures</span>
                             </h1>
 
                             <p className="ai-hero-desc">
-                                We develop cutting-edge artificial intelligence solutions that transform businesses.
-                                From machine learning and computer vision to natural language processing and generative AI,
-                                our products deliver measurable results and competitive advantage.
+                                We develop custom AI products that solve complex business problems, automate
+                                repetitive tasks, and provide actionable insights through advanced 
+                                machine learning and data science methodologies.
                             </p>
 
                             <div className="ai-privacy-badge">
-                                Enterprise-grade AI with responsible practices
+                                Ethical & Secure AI for Enterprise Scale
                             </div>
                         </div>
 
-                        {/* Bottom glass badges */}
                         <div className="ai-badge-glass">
                             {badges.map((item, index) => (
                                 <span
                                     key={index}
                                     className={`ai-service-badge 
-                                    ${item === "Machine Learning" ? "ai-badge-ml" : ""} 
-                                    ${item === "Generative AI" ? "ai-badge-genai" : ""}
-                                    ${item === "Predictive Analytics" ? "ai-badge-ana" : ""}`}
+                                    ${item === "Machine Learning" ? "ai-badge-strategy" : ""} 
+                                    ${item === "Predictive Modeling" ? "ai-badge-guidelines" : ""}`}
                                 >
                                     {item}
                                 </span>
@@ -309,27 +319,23 @@ const AiProducts = () => {
                         </div>
                     </section>
 
-                    {/* About Section - Cards with images on top for 1&3, images at bottom for 2&4 */}
                     <section className="ai-about-section">
                         <div className="ai-container">
-                            {/* Title and Description at the top */}
                             <div className="ai-about-header">
-                                <h2 className="ai-about-title">Why Choose ENGLORAY for AI?</h2>
+                                <h2 className="ai-about-title">Why Enterprise Leaders Choose Us</h2>
                                 <p className="ai-about-description">
-                                    We combine deep technical expertise with business acumen to build AI solutions
-                                    that solve real-world problems. Our approach ensures your investment in AI delivers
-                                    measurable ROI and sustainable competitive advantage.
+                                    Our AI solutions are built for the real world. We focus on practical implementation,
+                                    ensuring that our models don't just stay in a lab but deliver measurable
+                                    efficiency and growth for your business.
                                 </p>
                             </div>
 
-                            {/* Cards Grid */}
                             <div className="ai-cards-grid">
                                 {aboutCards.map((card) => (
                                     <div
                                         key={card.id}
                                         className={`ai-about-card ${card.id === 2 || card.id === 4 ? 'ai-card-image-bottom' : ''}`}
                                     >
-                                        {/* For cards 1 and 3: Image at top, content at bottom */}
                                         {card.id !== 2 && card.id !== 4 && (
                                             <>
                                                 <div className="ai-card-image-wrapper">
@@ -346,7 +352,6 @@ const AiProducts = () => {
                                             </>
                                         )}
 
-                                        {/* For cards 2 and 4: Content at top, image at bottom */}
                                         {(card.id === 2 || card.id === 4) && (
                                             <>
                                                 <div className="ai-card-content-wrapper">
@@ -368,79 +373,103 @@ const AiProducts = () => {
                         </div>
                     </section>
 
-                    {/* AI DNA Section */}
-                    <section className="ai-dna-section">
-                        <div className="ai-dna-container">
-                            {/* LEFT CONTENT */}
-                            <div className="ai-dna-left">
-                                <h2>AI DNA</h2>
-                                <h3 className="ai-dna-subtitle">
-                                    The Core Elements of<br /> Intelligent Systems
+                    <section className="ai-branddna-section">
+                        <div className="ai-branddna-container">
+                            <div className="ai-branddna-left">
+                                <h2>Intelligence DNA</h2>
+                                <h3 className="ai-branddna-subtitle">
+                                    The Core Pillars of Advanced Intelligence
                                 </h3>
                                 <p>
-                                    Exceptional AI solutions are built on a foundation of key principles.
-                                    Our AI DNA framework defines the essential elements that guide how we
-                                    develop intelligent systems that learn, adapt, and create value for your business.
+                                    True AI excellence is more than just algorithms. It's the synthesis of 
+                                    quality data, rigorous architecture, and human-centric design.
+                                    Our Intelligence DNA defines how we build systems that learn, adapt, and empower.
                                 </p>
                             </div>
 
-                            {/* RIGHT GRAPHIC */}
-                            <div className="ai-dna-right">
-                                {/* circles */}
-                                <div className="ai-dna-circle ai-circle-intelligence">
+                            <div className="ai-branddna-right">
+                                <svg className="ai-link-svg" viewBox="0 0 500 460">
+                                    <g className="ai-link-bases">
+                                        <path className="ai-base-path" d="M265,240 L265,20" />
+                                        <path className="ai-base-path" d="M265,240 L0,240" />
+                                        <path className="ai-base-path" d="M265,240 L500,240" />
+                                        <path className="ai-base-path" d="M265,240 L265,450" />
+                                        <path className="ai-base-path" d="M265,20 L500,240 L265,450 L0,240 Z" />
+                                    </g>
+
+                                    <g className="ai-animated-flows">
+                                        <g className="ai-phase-group ai-phase-1">
+                                            <path pathLength="100" className="ai-flow-path" d="M0,240 L265,20" />
+                                            <path pathLength="100" className="ai-flow-path" d="M0,240 L265,240" />
+                                            <path pathLength="100" className="ai-flow-path" d="M0,240 L265,450" />
+                                        </g>
+                                        <g className="ai-phase-group ai-phase-2">
+                                            <path pathLength="100" className="ai-flow-path" d="M265,20 L0,240" />
+                                            <path pathLength="100" className="ai-flow-path" d="M265,20 L265,240" />
+                                            <path pathLength="100" className="ai-flow-path" d="M265,20 L500,240" />
+                                        </g>
+                                        <g className="ai-phase-group ai-phase-3">
+                                            <path pathLength="100" className="ai-flow-path" d="M265,240 L0,240" />
+                                            <path pathLength="100" className="ai-flow-path" d="M265,240 L265,20" />
+                                            <path pathLength="100" className="ai-flow-path" d="M265,240 L500,240" />
+                                            <path pathLength="100" className="ai-flow-path" d="M265,240 L265,450" />
+                                        </g>
+                                        <g className="ai-phase-group ai-phase-4">
+                                            <path pathLength="100" className="ai-flow-path" d="M500,240 L265,20" />
+                                            <path pathLength="100" className="ai-flow-path" d="M500,240 L265,240" />
+                                            <path pathLength="100" className="ai-flow-path" d="M500,240 L265,450" />
+                                        </g>
+                                        <g className="ai-phase-group ai-phase-5">
+                                            <path pathLength="100" className="ai-flow-path" d="M265,450 L0,240" />
+                                            <path pathLength="100" className="ai-flow-path" d="M265,450 L265,240" />
+                                            <path pathLength="100" className="ai-flow-path" d="M265,450 L500,240" />
+                                        </g>
+                                    </g>
+                                </svg>
+
+                                <div className="ai-dna-circle ai-circle-purpose">
                                     <FaBrain className="ai-icon" />
-                                    <h3>Intelligence</h3>
-                                    <p className="ai-circle-desc">
-                                        Adaptive learning systems
-                                    </p>
+                                    <h3>Neural</h3>
+                                    <p className="ai-circle-desc">Sophisticated architectures for complex reasoning.</p>
                                 </div>
 
-                                <div className="ai-dna-circle ai-circle-automation">
+                                <div className="ai-dna-circle ai-circle-voice">
+                                    <FaMicrochip className="ai-icon" />
+                                    <h3>Computational</h3>
+                                    <p className="ai-circle-desc">Highly optimized for speed and efficiency.</p>
+                                </div>
+
+                                <div className="ai-dna-circle ai-circle-values">
+                                    <FaDatabase className="ai-icon" />
+                                    <h3>Data Core</h3>
+                                    <p className="ai-circle-desc">The lifeblood of our intelligent systems.</p>
+                                </div>
+
+                                <div className="ai-dna-circle ai-circle-personality">
+                                    <FaProjectDiagram className="ai-icon" />
+                                    <h3>Adaptive</h3>
+                                    <p className="ai-circle-desc">Learning and evolving with every interaction.</p>
+                                </div>
+
+                                <div className="ai-dna-circle ai-circle-visual">
                                     <FaRobot className="ai-icon" />
-                                    <h3>Automation</h3>
-                                    <p className="ai-circle-desc">
-                                        Autonomous decision-making
-                                    </p>
-                                </div>
-
-                                <div className="ai-dna-circle ai-circle-insights">
-                                    <FaChartLine className="ai-icon" />
-                                    <h3>Insights</h3>
-                                    <p className="ai-circle-desc">
-                                        Actionable intelligence
-                                    </p>
-                                </div>
-
-                                <div className="ai-dna-circle ai-circle-language">
-                                    <FaLanguage className="ai-icon" />
-                                    <h3>Language</h3>
-                                    <p className="ai-circle-desc">
-                                        Natural language understanding
-                                    </p>
-                                </div>
-
-                                <div className="ai-dna-circle ai-circle-vision">
-                                    <FaEye className="ai-icon" />
-                                    <h3>Vision</h3>
-                                    <p className="ai-circle-desc">
-                                        Computer vision capabilities
-                                    </p>
+                                    <h3>Autonomous</h3>
+                                    <p className="ai-circle-desc">Reliable automation for mission-critical tasks.</p>
                                 </div>
                             </div>
                         </div>
                     </section>
 
-                    {/* How It Works Section */}
                     <section className="ai-howworks">
                         <div className="ai-howworks-container">
-                            {/* LEFT SIDE */}
                             <div className="ai-left-side">
                                 <div className="ai-badge">
                                     <span className="ai-dot"></span>
-                                    AI Development Process
+                                    AI Implementation Process
                                 </div>
                                 <p className="ai-intro-text">
-                                    We build intelligent systems through a systematic approach of discovery, development, and deployment that ensures your AI investment delivers real business value.
+                                    We bridge the gap between AI research and business reality through a structured
+                                    process that focuses on data integrity, model performance, and seamless integration.
                                 </p>
                                 <h2 className="ai-main-title">
                                     How It Works <br /> Step by Step
@@ -448,9 +477,8 @@ const AiProducts = () => {
                                 <div className="ai-arrow">→</div>
                             </div>
 
-                            {/* RIGHT SIDE */}
                             <div className="ai-right-side">
-                                <h2 className="ai-section-title">What Is AI Development</h2>
+                                <h2 className="ai-section-title">Our AI Methodology</h2>
                                 <div className="ai-steps-grid">
                                     {howItWorksSteps.map((step, index) => (
                                         <div key={index} className="ai-step-card">
@@ -465,80 +493,59 @@ const AiProducts = () => {
                         </div>
                     </section>
 
-                    {/* Circular Stats Section */}
                     <section className="ai-circular-stats">
-                        <div className="ai-stats-layout">
-                            {/* LEFT CONTENT */}
+                        <div className="ai-branding-stats-layout">
                             <div className="ai-stats-content">
                                 <h2>Our AI Impact in Numbers</h2>
                                 <p>
-                                    We measure our success through the intelligent solutions we deliver and the results we achieve.
-                                    These statistics highlight the accuracy, scale, and trust we have developed with clients across
-                                    different industries.
+                                    We deliver tangible results through advanced intelligence. Our work
+                                    helps companies scale faster, reduce costs, and innovate better.
                                 </p>
                             </div>
 
-                            {/* CIRCLE STATS */}
-                            <div className="ai-stats-wrapper">
-                                {/* <svg className="ai-connector" viewBox="0 0 400 300">
-                                    <path
-                                        d="M200 40 C120 80 120 200 200 230"
-                                        stroke="rgba(99,102,241,0.15)"
-                                        strokeWidth="2"
-                                        fill="none"
-                                    />
-                                    <path
-                                        d="M200 40 C280 80 280 200 200 230"
-                                        stroke="rgba(139,92,246,0.15)"
-                                        strokeWidth="2"
-                                        fill="none"
-                                    />
-                                </svg> */}
-
-                                <div className="ai-circle ai-circle-top">
+                            <div className="ai-stats-wrapper-cards">
+                                <div className="ai-stat-card">
                                     <h2>50+</h2>
-                                    <p>AI Models Deployed</p>
+                                    <p>AI Products Built</p>
                                 </div>
-
-                                <div className="ai-circle ai-circle-left">
-                                    <h2>100+</h2>
-                                    <p>Data Sources</p>
+                                <div className="ai-stat-card">
+                                    <h2>10B+</h2>
+                                    <p>Data Points Processed</p>
                                 </div>
-
-                                <div className="ai-circle ai-circle-right">
+                                <div className="ai-stat-card">
+                                    <h2>40%</h2>
+                                    <p>Cost Reduction</p>
+                                </div>
+                                <div className="ai-stat-card">
                                     <h2>99%</h2>
-                                    <p>Model Accuracy</p>
+                                    <p>Model Reliability</p>
                                 </div>
                             </div>
                         </div>
 
-                        {/* BOTTOM STATS */}
                         <div className="ai-bottom-stats">
                             <div className="ai-stat">
-                                <h3>8+</h3>
-                                <p>YEARS AI RESEARCH</p>
+                                <h3>5+</h3>
+                                <p>YEARS IN AI</p>
                             </div>
-
                             <div className="ai-stat">
                                 <h3>30+</h3>
-                                <p>INDUSTRIES SERVED</p>
+                                <p>ML MODELS DEPLOYED</p>
                             </div>
-
                             <div className="ai-stat">
-                                <h3>45+</h3>
-                                <p>AI ENGINEERS</p>
+                                <h3>100+</h3>
+                                <p>SUCCESSFUL INTEGRATIONS</p>
                             </div>
                             <div className="ai-stat">
                                 <h3>200+</h3>
-                                <p>SUCCESSFUL PROJECTS</p>
+                                <p>Happy Enterprise Clients</p>
                             </div>
                         </div>
                     </section>
 
-                    {/* Projects Section - UPDATED to match branding page design */}
                     <section className="ai-projects-section">
-                        {/* FULL BACKGROUND */}
-                        <img src={projectsBg} className="ai-projects-bg-full" alt="" />
+                        <img src={projectsBg} className="ai-projects-bg-left" alt="background left mirror" />
+                        <img src={projectsBg} className="ai-projects-bg-right" alt="background right" />
 
                         <div className="ai-projects-logos ai-left-logos">
                             <div className="ai-project-logo-card l1"><img src={logo1} className="ai-project-logo" alt="brand logo" /></div>
@@ -558,66 +565,34 @@ const AiProducts = () => {
                             <div className="ai-project-logo-card r6"><img src={logo12} className="ai-project-logo" alt="brand logo" /></div>
                         </div>
 
-                        {/* CENTER CONTENT */}
                         <div className="ai-projects-content">
-                            <h1>
-                                Trusted by <br />
-                                Great Brands
-                            </h1>
-
-                            <p>
-                                We collaborate with forward-thinking brands to
-                                create meaningful digital experiences. Our clients
-                                trust us to deliver impactful design and scalable
-                                solutions.
-                            </p>
-
+                            <h1>Powering <br />Great Innovations</h1>
+                            <p>We partner with industry leaders to build the engines of the future.</p>
                             <div className="ai-projects-stats">
-                                <div>
-                                    <h2>20+</h2>
-                                    <span>Promoters</span>
-                                </div>
-                                <div>
-                                    <h2>100+</h2>
-                                    <span>contributions</span>
-                                </div>
-                                <div>
-                                    <h2>150+</h2>
-                                    <span>organizations</span>
-                                </div>
+                                <div><h2>40+</h2><span>AI Patents Involved</span></div>
+                                <div><h2>1000+</h2><span>ML Experiments</span></div>
+                                <div><h2>50+</h2><span>Industrial Implementations</span></div>
                             </div>
                         </div>
                     </section>
 
-                    {/* Feedback Section - Carousel Style */}
                     <section className="ai-feedback-section">
                         <div className="ai-container">
                             <div className="ai-feedback-header">
-                                <h2 className="ai-feedback-title">
-                                    Client Success <span>Stories</span>
-                                </h2>
-                                <p className="ai-feedback-description">
-                                    Discover how our AI solutions are transforming businesses across industries.
-                                </p>
+                                <h2 className="ai-feedback-title">Partner <span>Success Stories</span></h2>
+                                <p className="ai-feedback-description">Hear how our AI solutions have transformed businesses across sectors.</p>
                             </div>
 
                             <div className="ai-feedback-carousel">
                                 {feedbacks.map((feedback, index) => {
                                     const position = getPosition(index);
-
                                     return (
-                                        <div
-                                            key={feedback.id}
-                                            className={`ai-feedback-card ${position}`}
-                                        >
+                                        <div key={feedback.id} className={`ai-feedback-card ${position}`}>
                                             <div className="ai-feedback-rating">{feedback.rating}</div>
                                             <div className="ai-feedback-quote-icon">❝</div>
                                             <p className="ai-feedback-text">{feedback.text}</p>
-
                                             <div className="ai-feedback-author">
-                                                <div className="ai-author-avatar">
-                                                    <div className="ai-avatar-initial">{feedback.initial}</div>
-                                                </div>
+                                                <div className="ai-author-avatar"><div className="ai-avatar-initial">{feedback.initial}</div></div>
                                                 <div>
                                                     <div className="ai-author-name">{feedback.author}</div>
                                                     <div className="ai-author-role">{feedback.role}</div>
@@ -642,4 +617,4 @@ const AiProducts = () => {
     );
 };
 
-export default AiProducts;
+export default AiProductPage;

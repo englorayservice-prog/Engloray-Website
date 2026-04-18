@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { submitEnrollment } from "../../Sub Pages/HandleSubmit/HandleSubmit";
 import NavigationBar from '../../TechLearningSection/NavigationBar/NavigationBar';
 import SubFooterTwo from '../subFooterTwo/NewFooter';
+import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import {
     faArrowRight,
@@ -445,268 +446,194 @@ const DrawingCourse = () => {
     const handleVideoPause = () => setIsPlaying(false);
 
     return (
-        <div className="dcp-page">
-            <NavigationBar />
-            {/* Hero Section Upgrade - Minimalist Premium Design */}
-            <header className="dcp-hero-v3">
-                <div className="dcp-v3-sparkle-wrapper">
-                    <div className="dcp-v3-sparkle sparkle-lg sparkle-pos-1">
-                        <FontAwesomeIcon icon={faStar} />
-                    </div>
-                    <div className="dcp-v3-sparkle sparkle-sm sparkle-pos-2">
-                        <FontAwesomeIcon icon={faStar} />
-                    </div>
-                    <div className="dcp-v3-sparkle sparkle-md sparkle-pos-3">
-                        <FontAwesomeIcon icon={faMagic} />
-                    </div>
-                    <div className="dcp-v3-sparkle sparkle-lg sparkle-pos-4">
-                        <FontAwesomeIcon icon={faStar} />
-                    </div>
-                    <div className="dcp-v3-sparkle sparkle-sm sparkle-pos-5">
-                        <FontAwesomeIcon icon={faMagic} />
-                    </div>
-                    <div className="dcp-v3-sparkle sparkle-md sparkle-pos-6">
-                        <FontAwesomeIcon icon={faStar} />
-                    </div>
-                    <div className="dcp-v3-sparkle sparkle-lg sparkle-pos-7">
-                        <FontAwesomeIcon icon={faStar} />
-                    </div>
-                    <div className="dcp-v3-sparkle sparkle-sm sparkle-pos-8">
-                        <FontAwesomeIcon icon={faMagic} />
-                    </div>
-                </div>
-
-                <div className="dcp-v3-container">
-                    <div className="dcp-v3-header-content">
-                        <h1 className="dcp-v3-main-title">
-                            Advanced <span className="dcp-v3-arrow-capsule-straight">→</span> Drawing <br /> Mastery Program
-                        </h1>
-
-                        <p className="dcp-v3-subtitle-original">
-                            Master sketching, shading, perspective & composition <br />
-                            to create expressive artworks and build a strong creative foundation.
-                        </p>
-
-                        <div className="dcp-v3-sub-row">
-                            <div className="dcp-v3-members-info">
-                                <p>With more than</p>
-                                <h3>2K+ ARTISTS</h3>
-                                <h3>500+ DRAWING LESSONS</h3>
+        <>
+            <div>
+                <TopNavBar />
+                <NavigationBar />
+                <div className="dcp-page">
+                    {/* Hero Section Upgrade - Minimalist Premium Design */}
+                    <header className="dcp-hero-v3">
+                        <div className="dcp-v3-sparkle-wrapper">
+                            <div className="dcp-v3-sparkle sparkle-lg sparkle-pos-1">
+                                <FontAwesomeIcon icon={faStar} />
                             </div>
-
-                            <button className="dcp-v3-join-btn" onClick={scrollToForm}>
-                                Join us <span className="dcp-v3-join-arrow">↗</span>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div className="dcp-v3-asset-gallery">
-                        <div className="dcp-v3-card dcp-card-blue">
-                            <img src={uiuxHeroAssets.a1} alt="UIUX Asset 1" className="dcp-v3-card-img" />
-                        </div>
-                        <div className="dcp-v3-card dcp-card-dark">
-                            <img src={uiuxHeroAssets.a2} alt="UIUX Asset 2" className="dcp-v3-card-img" />
-                        </div>
-                        <div className="dcp-v3-card dcp-card-center-featured">
-                            <img src={uiuxHeroAssets.a3} alt="UIUX Asset 3" className="dcp-v3-card-img" />
-                        </div>
-                        <div className="dcp-v3-card dcp-card-dark">
-                            <img src={uiuxHeroAssets.a4} alt="UIUX Asset 4" className="dcp-v3-card-img" />
-                        </div>
-                        <div className="dcp-v3-card dcp-card-blue">
-                            <img src={uiuxHeroAssets.a5} alt="UIUX Asset 5" className="dcp-v3-card-img" />
-                        </div>
-                    </div>
-                </div>
-            </header>
-
-            {/* Marquee Section bridging Hero and Intro */}
-            <div className="dcp-v2-marquee-container">
-                <div className="dcp-v2-marquee">
-                    <span>
-                        SKETCHING BASICS <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
-                        LINE ART <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
-                        SHADING TECHNIQUES <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
-                        PERSPECTIVE DRAWING <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
-                        HUMAN ANATOMY <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
-                        PORTRAIT DRAWING <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
-                        LIGHT & SHADOW <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
-                        COMPOSITION <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
-                        CHARACTER DESIGN <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
-                        CREATIVE SKETCHING <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
-                        SKETCHING BASICS <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
-                        SHADING TECHNIQUES
-                    </span>
-                    <span aria-hidden="true">
-                        SKETCHING BASICS <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
-                        LINE ART <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
-                        SHADING TECHNIQUES <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
-                        PERSPECTIVE DRAWING <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
-                        HUMAN ANATOMY <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
-                        PORTRAIT DRAWING <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
-                        LIGHT & SHADOW <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
-                        COMPOSITION <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
-                        CHARACTER DESIGN <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
-                        CREATIVE SKETCHING <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
-                        SKETCHING BASICS <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
-                        SHADING TECHNIQUES
-                    </span>
-                </div>
-            </div>
-
-            {/* New Intro Section - Re-designed to 2-column layout */}
-            <section className="dcp-intro-section">
-                <div className="dcp-container">
-                    <div className="dcp-intro-layout">
-                        <div className="dcp-intro-left">
-                            <h2 className="dcp-intro-title">
-                                Master Advanced <br /> Drawing in 6 Months
-                            </h2>
-                            <p className="dcp-intro-desc">
-                                The Advanced Drawing Classes are designed for students who have Mastered the basics and are ready to develop professional-Skill level
-                            </p>
-                            <button className="dcp-intro-cta" onClick={scrollToForm}>
-                                Contact
-                            </button>
+                            <div className="dcp-v3-sparkle sparkle-sm sparkle-pos-2">
+                                <FontAwesomeIcon icon={faStar} />
+                            </div>
+                            <div className="dcp-v3-sparkle sparkle-md sparkle-pos-3">
+                                <FontAwesomeIcon icon={faMagic} />
+                            </div>
+                            <div className="dcp-v3-sparkle sparkle-lg sparkle-pos-4">
+                                <FontAwesomeIcon icon={faStar} />
+                            </div>
+                            <div className="dcp-v3-sparkle sparkle-sm sparkle-pos-5">
+                                <FontAwesomeIcon icon={faMagic} />
+                            </div>
+                            <div className="dcp-v3-sparkle sparkle-md sparkle-pos-6">
+                                <FontAwesomeIcon icon={faStar} />
+                            </div>
+                            <div className="dcp-v3-sparkle sparkle-lg sparkle-pos-7">
+                                <FontAwesomeIcon icon={faStar} />
+                            </div>
+                            <div className="dcp-v3-sparkle sparkle-sm sparkle-pos-8">
+                                <FontAwesomeIcon icon={faMagic} />
+                            </div>
                         </div>
 
-                        <div className="dcp-intro-right">
-                            <div className="dcp-intro-grid">
-                                {introCategories.map((cat, i) => (
-                                    <div key={i} className="dcp-intro-category-box">
-                                        <div className="dcp-intro-card-icon" style={{ backgroundColor: cat.bgColor, color: cat.iconColor }}>
-                                            {cat.icon}
-                                        </div>
-                                        <div className="dcp-intro-card-content">
-                                            <h3 className="dcp-intro-card-title">{cat.title}</h3>
-                                            <div className="dcp-intro-card-points">
-                                                {cat.points.map((point, idx) => (
-                                                    <div key={idx} className="dcp-intro-point">
-                                                        <FontAwesomeIcon icon={faStar} className="dcp-intro-point-star" />
-                                                        {point}
-                                                    </div>
-                                                ))}
-                                            </div>
-                                        </div>
+                        <div className="dcp-v3-container">
+                            <div className="dcp-v3-header-content">
+                                <h1 className="dcp-v3-main-title">
+                                    Advanced <span className="dcp-v3-arrow-capsule-straight">→</span> Drawing <br /> Mastery Program
+                                </h1>
+
+                                <p className="dcp-v3-subtitle-original">
+                                    Master sketching, shading, perspective & composition <br />
+                                    to create expressive artworks and build a strong creative foundation.
+                                </p>
+
+                                <div className="dcp-v3-sub-row">
+                                    <div className="dcp-v3-members-info">
+                                        <p>With more than</p>
+                                        <h3>2K+ ARTISTS</h3>
+                                        <h3>500+ DRAWING LESSONS</h3>
                                     </div>
-                                ))}
+
+                                    <button className="dcp-v3-join-btn" onClick={scrollToForm}>
+                                        Join us <span className="dcp-v3-join-arrow">↗</span>
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            {/* Course Outcomes - Redesigned Numbered Grid */}
-            <section className="dcp-section dcp-outcomes-numbered">
-                <div className="dcp-container">
-                    <div className="dcp-outcomes-header-row">
-                        <div className="dcp-outcomes-title-col">
-                            <h2 className="dcp-outcomes-main-title">Course Outcomes</h2>
-                        </div>
-                        <div className="dcp-outcomes-desc-col">
-                            <p className="dcp-outcomes-top-desc text-left">
-                                What you'll achieve after completing this program. Master workflows, build case studies, and transform into an industry-ready Drawing Skills.
-                            </p>
-                        </div>
-                    </div>
 
-                    <div className="dcp-outcomes-numbered-grid">
-                        {courseOutcomes.map((outcome, index) => {
-                            const isBlack = index === 1 || index === 3 || index === 5;
-                            const cardNumber = (index + 1).toString().padStart(2, '0');
-
-                            return (
-                                <div
-                                    key={index}
-                                    className={`dcp-outcome-numbered-card ${isBlack ? 'black-bg' : 'white-bg'}`}
-                                >
-                                    <div className="dcp-outcome-card-content-wrapper">
-                                        {/* Left side - Number and Icon */}
-                                        <div className="dcp-outcome-card-left">
-                                            <div className="dcp-outcome-card-number">{cardNumber}</div>
-                                            <div className="dcp-outcome-numbered-icon">{outcome.icon}</div>
-                                        </div>
-
-                                        {/* Right side - Title and Description */}
-                                        <div className="dcp-outcome-card-right">
-                                            <h3 className="dcp-outcome-numbered-title">{outcome.title}</h3>
-                                            <p className="dcp-outcome-numbered-desc">{outcome.desc}</p>
-                                        </div>
-                                    </div>
+                            <div className="dcp-v3-asset-gallery">
+                                <div className="dcp-v3-card dcp-card-blue">
+                                    <img src={uiuxHeroAssets.a1} alt="UIUX Asset 1" className="dcp-v3-card-img" />
                                 </div>
-                            );
-                        })}
-                    </div>
-                </div>
-            </section>
-
-            {/* 6-Month Course Breakdown - Vertical Slider Redesign */}
-            <section className="dcp-curriculum-v2-section">
-                <div className="dcp-container">
-                    <div className="dcp-curriculum-v2-layout">
-                        <div className="dcp-curriculum-v2-left">
-                            <span className="dcp-curriculum-v2-tag">PRO COURSE</span>
-                            <h2 className="dcp-curriculum-v2-title">
-                                4-Month Course <br /> Breakdown
-                            </h2>
-                            <p className="dcp-curriculum-v2-desc">
-                                A structured digital marketing journey built for real-world success.
-                                Master performance marketing, SEO, content strategy, and analytics to create high-impact campaigns in 6 intensive months.
-                            </p>
-
-                            <div className="dcp-curriculum-v2-stats">
-                                <div className="dcp-stat-item">
-                                    <span className="dcp-stat-num">50+</span>
-                                    <span className="dcp-stat-label">Real Campaigns</span>
+                                <div className="dcp-v3-card dcp-card-dark">
+                                    <img src={uiuxHeroAssets.a2} alt="UIUX Asset 2" className="dcp-v3-card-img" />
                                 </div>
-                                <div className="dcp-stat-item">
-                                    <span className="dcp-stat-num">100%</span>
-                                    <span className="dcp-stat-label">Practical</span>
+                                <div className="dcp-v3-card dcp-card-center-featured">
+                                    <img src={uiuxHeroAssets.a3} alt="UIUX Asset 3" className="dcp-v3-card-img" />
+                                </div>
+                                <div className="dcp-v3-card dcp-card-dark">
+                                    <img src={uiuxHeroAssets.a4} alt="UIUX Asset 4" className="dcp-v3-card-img" />
+                                </div>
+                                <div className="dcp-v3-card dcp-card-blue">
+                                    <img src={uiuxHeroAssets.a5} alt="UIUX Asset 5" className="dcp-v3-card-img" />
                                 </div>
                             </div>
                         </div>
+                    </header>
 
-                        <div className="dcp-curriculum-v2-right">
-                            <div className="dcp-curriculum-nav-v2">
-                                <button className="dcp-nav-btn-v2" onClick={prevModule}>
-                                    <FontAwesomeIcon icon={faChevronUp} />
-                                </button>
-                                <button className="dcp-nav-btn-v2" onClick={nextModule}>
-                                    <FontAwesomeIcon icon={faChevronDown} />
-                                </button>
-                            </div>
+                    {/* Marquee Section bridging Hero and Intro */}
+                    <div className="dcp-v2-marquee-container">
+                        <div className="dcp-v2-marquee">
+                            <span>
+                                SKETCHING BASICS <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
+                                LINE ART <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
+                                SHADING TECHNIQUES <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
+                                PERSPECTIVE DRAWING <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
+                                HUMAN ANATOMY <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
+                                PORTRAIT DRAWING <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
+                                LIGHT & SHADOW <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
+                                COMPOSITION <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
+                                CHARACTER DESIGN <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
+                                CREATIVE SKETCHING <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
+                                SKETCHING BASICS <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
+                                SHADING TECHNIQUES
+                            </span>
+                            <span aria-hidden="true">
+                                SKETCHING BASICS <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
+                                LINE ART <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
+                                SHADING TECHNIQUES <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
+                                PERSPECTIVE DRAWING <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
+                                HUMAN ANATOMY <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
+                                PORTRAIT DRAWING <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
+                                LIGHT & SHADOW <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
+                                COMPOSITION <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
+                                CHARACTER DESIGN <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
+                                CREATIVE SKETCHING <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
+                                SKETCHING BASICS <FontAwesomeIcon icon={faStar} className="dcp-marquee-star" />
+                                SHADING TECHNIQUES
+                            </span>
+                        </div>
+                    </div>
 
-                            <div className="dcp-slider-v5-container">
-                                {sixMonthCurriculum.map((module, index) => {
-                                    const isActive = index === currentModuleIndex;
-                                    const isNext = index === (currentModuleIndex + 1) % sixMonthCurriculum.length;
-                                    const isPrev = index === (currentModuleIndex - 1 + sixMonthCurriculum.length) % sixMonthCurriculum.length;
+                    {/* New Intro Section - Re-designed to 2-column layout */}
+                    <section className="dcp-intro-section">
+                        <div className="dcp-container">
+                            <div className="dcp-intro-layout">
+                                <div className="dcp-intro-left">
+                                    <h2 className="dcp-intro-title">
+                                        Master Advanced <br /> Drawing in 6 Months
+                                    </h2>
+                                    <p className="dcp-intro-desc">
+                                        The Advanced Drawing Classes are designed for students who have Mastered the basics and are ready to develop professional-Skill level
+                                    </p>
+                                    <button className="dcp-intro-cta" onClick={scrollToForm}>
+                                        Contact
+                                    </button>
+                                </div>
 
-                                    let cardState = "hidden";
-                                    if (isActive) cardState = "active";
-                                    else if (isPrev) cardState = "top";
-                                    else if (isNext) cardState = "bottom";
-
-                                    return (
-                                        <div key={index} className={`dcp-curriculum-v5-card ${cardState}`}>
-                                            <div className="dcp-curriculum-v5-inner">
-                                                <div className="dcp-curriculum-v5-bg">
-                                                    <img src={module.bgImage} alt={module.title} className="dcp-curriculum-v5-img" />
-                                                    <div className="dcp-curriculum-v5-overlay"></div>
+                                <div className="dcp-intro-right">
+                                    <div className="dcp-intro-grid">
+                                        {introCategories.map((cat, i) => (
+                                            <div key={i} className="dcp-intro-category-box">
+                                                <div className="dcp-intro-card-icon" style={{ backgroundColor: cat.bgColor, color: cat.iconColor }}>
+                                                    {cat.icon}
                                                 </div>
-
-                                                <div className="dcp-curriculum-v5-content">
-                                                    <div className="dcp-curriculum-v5-header">
-                                                        <span className="dcp-curriculum-v5-month">{module.month}</span>
-                                                        <span className="dcp-curriculum-v5-proj">Projects: {module.projects}</span>
-                                                    </div>
-                                                    <h3 className="dcp-curriculum-v5-title">{module.title}</h3>
-                                                    <div className="dcp-curriculum-v5-topics">
-                                                        {module.topics.map((topic, tidx) => (
-                                                            <div key={tidx} className="dcp-curriculum-v5-topic">
-                                                                <FontAwesomeIcon icon={faCheck} className="dcp-curriculum-v5-check" /> {topic}
+                                                <div className="dcp-intro-card-content">
+                                                    <h3 className="dcp-intro-card-title">{cat.title}</h3>
+                                                    <div className="dcp-intro-card-points">
+                                                        {cat.points.map((point, idx) => (
+                                                            <div key={idx} className="dcp-intro-point">
+                                                                <FontAwesomeIcon icon={faStar} className="dcp-intro-point-star" />
+                                                                {point}
                                                             </div>
                                                         ))}
                                                     </div>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    {/* Course Outcomes - Redesigned Numbered Grid */}
+                    <section className="dcp-section dcp-outcomes-numbered">
+                        <div className="dcp-container">
+                            <div className="dcp-outcomes-header-row">
+                                <div className="dcp-outcomes-title-col">
+                                    <h2 className="dcp-outcomes-main-title">Course Outcomes</h2>
+                                </div>
+                                <div className="dcp-outcomes-desc-col">
+                                    <p className="dcp-outcomes-top-desc text-left">
+                                        What you'll achieve after completing this program. Master workflows, build case studies, and transform into an industry-ready Drawing Skills.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div className="dcp-outcomes-numbered-grid">
+                                {courseOutcomes.map((outcome, index) => {
+                                    const isBlack = index === 1 || index === 3 || index === 5;
+                                    const cardNumber = (index + 1).toString().padStart(2, '0');
+
+                                    return (
+                                        <div
+                                            key={index}
+                                            className={`dcp-outcome-numbered-card ${isBlack ? 'black-bg' : 'white-bg'}`}
+                                        >
+                                            <div className="dcp-outcome-card-content-wrapper">
+                                                {/* Left side - Number and Icon */}
+                                                <div className="dcp-outcome-card-left">
+                                                    <div className="dcp-outcome-card-number">{cardNumber}</div>
+                                                    <div className="dcp-outcome-numbered-icon">{outcome.icon}</div>
+                                                </div>
+
+                                                {/* Right side - Title and Description */}
+                                                <div className="dcp-outcome-card-right">
+                                                    <h3 className="dcp-outcome-numbered-title">{outcome.title}</h3>
+                                                    <p className="dcp-outcome-numbered-desc">{outcome.desc}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -714,520 +641,599 @@ const DrawingCourse = () => {
                                 })}
                             </div>
                         </div>
-                    </div>
-                </div>
-            </section>
+                    </section>
 
-            {/* Tools & Resources - Interactive V2 Redesign */}
-            <section className="dcp-tools-v2">
-                <div className="dcp-container">
-                    <div className="dcp-tools-v2-header">
-                        <h2 className="dcp-tools-v2-title"> Fun Drawing Tools & Materials</h2>
-                        <p className="dcp-tools-v2-subtitle">Everything kids need to bring their vibrant imagination to life!</p>
-                    </div>
+                    {/* 6-Month Course Breakdown - Vertical Slider Redesign */}
+                    <section className="dcp-curriculum-v2-section">
+                        <div className="dcp-container">
+                            <div className="dcp-curriculum-v2-layout">
+                                <div className="dcp-curriculum-v2-left">
+                                    <span className="dcp-curriculum-v2-tag">PRO COURSE</span>
+                                    <h2 className="dcp-curriculum-v2-title">
+                                        4-Month Course <br /> Breakdown
+                                    </h2>
+                                    <p className="dcp-curriculum-v2-desc">
+                                        A structured digital marketing journey built for real-world success.
+                                        Master performance marketing, SEO, content strategy, and analytics to create high-impact campaigns in 6 intensive months.
+                                    </p>
 
-                    <div className="dcp-tools-v2-layout">
-                        <div className="dcp-tools-sidebar">
-                            {["Crayons & Shading", "Watercolors", "Sketch Tools", "Crafting Items"].map((label, idx) => (
-                                <button key={idx} className={`dcp-tool-tab ${activeToolCategory === idx ? "active" : ""}`} onClick={() => setActiveToolCategory(idx)}>
-                                    <span className="tab-number">0{idx + 1}</span>
-                                    <span className="tab-label">{label}</span>
-                                </button>
-                            ))}
-                        </div>
-
-                        <div className="dcp-tools-main-display">
-                            <div className="dcp-pods-container" key={activeToolCategory}>
-                                {toolsV2Data[activeToolCategory].map((tool, index) => (
-                                    <div key={index} className={`dcp-tool-pod pod-${index + 1}`}>
-                                        <div className="dcp-pod-inner">
-                                            <div className="dcp-pod-bg-image" style={{ background: tool.bg ? tool.bg : `url(${tool.img})`, backgroundPosition: 'center', backgroundSize: 'cover' }}></div>
-                                            <div className="dcp-pod-content">
-                                                <div className="dcp-pod-icon">{tool.icon}</div>
-                                                <h4 className="dcp-pod-name">{tool.name}</h4>
-                                                <p className="dcp-pod-desc">{tool.desc}</p>
-                                            </div>
+                                    <div className="dcp-curriculum-v2-stats">
+                                        <div className="dcp-stat-item">
+                                            <span className="dcp-stat-num">50+</span>
+                                            <span className="dcp-stat-label">Real Campaigns</span>
                                         </div>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Benefits Section - Where Features Meet For You Upgrade */}
-            <section className="dcp-section dcp-benefits-reimagined">
-                <div className="dcp-container">
-                    <div className="dcp-benefits-header">
-                        <h2 className="dcp-benefits-title">Where Features Meet For You</h2>
-                    </div>
-
-                    <div className="dcp-benefits-staggered">
-                        {/* Row 1: 5 Cards */}
-                        <div className="dcp-benefits-row dcp-row-5">
-                            {benefits.slice(0, 5).map((benefit, index) => (
-                                <div key={index} className="dcp-new-benefit-card">
-                                    {(() => {
-                                        const absoluteIndex = 0 + index;
-                                        const color = benefitIconPalette[absoluteIndex] || "#BAE6FD";
-                                        return (
-                                            <div className="dcp-new-icon" style={{ background: hexToRgba(color, 0.18), color }}>
-                                                {benefit.icon}
-                                            </div>
-                                        );
-                                    })()}
-                                    <div className="dcp-new-content">
-                                        <h3>{benefit.title}</h3>
-                                        <p>{benefit.description.substring(0, 70)}...</p>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-
-                        {/* Row 2: 3 Cards */}
-                        <div className="dcp-benefits-row dcp-row-3">
-                            {benefits.slice(5, 8).map((benefit, index) => (
-                                <div key={index} className="dcp-new-benefit-card">
-                                    {(() => {
-                                        const absoluteIndex = 5 + index;
-                                        const color = benefitIconPalette[absoluteIndex] || "#BAE6FD";
-                                        return (
-                                            <div className="dcp-new-icon" style={{ background: hexToRgba(color, 0.18), color }}>
-                                                {benefit.icon}
-                                            </div>
-                                        );
-                                    })()}
-                                    <div className="dcp-new-content">
-                                        <h3>{benefit.title}</h3>
-                                        <p>{benefit.description.substring(0, 70)}...</p>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-
-                        {/* Row 3: 2 Original Cards */}
-                        <div className="dcp-benefits-row dcp-row-2" style={{ gap: "50px" }}>
-                            {benefits.slice(8, 10).map((benefit, index) => (
-                                <div key={index} className="dcp-new-benefit-card">
-                                    {(() => {
-                                        const absoluteIndex = 8 + index;
-                                        const color = benefitIconPalette[absoluteIndex] || "#BAE6FD";
-                                        return (
-                                            <div className="dcp-new-icon" style={{ background: hexToRgba(color, 0.18), color }}>
-                                                {benefit.icon}
-                                            </div>
-                                        );
-                                    })()}
-                                    <div className="dcp-new-content">
-                                        <h3>{benefit.title}</h3>
-                                        <p>{benefit.description.substring(0, 70)}...</p>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* Floating Cards - Positioned Independently */}
-                    {/* Left Bottom Floating Card */}
-                    {/* You can manually change the left, top, bottom, and width values here to reposition or resize the card */}
-                    <div
-                        className="dcp-floating-benefit-card dcp-floating-card-left"
-                        style={{
-                            left: "calc(50% - 505px)",
-                            top: "320px",
-                            bottom: "0px",
-                            width: "190px",
-                            height: "auto",
-                            justifyContent: "center",
-                            padding: "18px"
-                        }}
-                    >
-                        <div className="dcp-new-icon" style={{ background: hexToRgba("#BAE6FD", 0.18), color: "#BAE6FD" }}>
-                            <FontAwesomeIcon icon={faStar} />
-                        </div>
-                        <div className="dcp-new-content" >
-                            <h3>Creative Milestones</h3>
-                            <p>Celebrate your child's artistic journey with certificates of completion that highlight their new creative skills. Each beautiful certificate rewards their hard work and boosts their unique imagination.</p>
-                        </div>
-                    </div>
-
-                    {/* Right Bottom Floating Card */}
-                    <div className="dcp-floating-benefit-card dcp-floating-card-right" style={{
-                        right: "calc(50% - 505px)",
-                        top: "320px",
-                        bottom: "0px",
-                        width: "190px",
-                        height: "auto",
-                        justifyContent: "center",
-                        padding: "18px"
-                    }}>
-                        <div className="dcp-new-icon" style={{ background: hexToRgba("#C4B5FD", 0.18), color: "#C4B5FD" }}>
-                            <FontAwesomeIcon icon={faTrophy} />
-                        </div>
-                        <div className="dcp-new-content">
-                            <h3>Endless Creativity</h3>
-                            <p>Enjoy unlimited free access to our growing library of fun drawing lessons, keeping your little artist constantly inspired. We regularly add new exciting modules and engaging projects so they always have fresh creative challenges.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Certificate Section with Simplified Lock Overlay */}
-            <section className="dcp-section dcp-dark-bg">
-                <div className="dcp-container">
-                    <h2 className="dcp-section-title">Professional Certification</h2>
-                    <p className="dcp-section-subtitle">Earn a globally recognized certificate upon completion</p>
-
-                    <div className="dcp-certificate-single">
-                        <div className="dcp-certificate-image-wrapper">
-                            <img
-                                src={certificate.image}
-                                alt="UI/UX Design Mastery Certificate"
-                                className="dcp-certificate-image"
-                                onError={(e) => {
-                                    e.target.onerror = null;
-                                    e.target.src = "https://images.unsplash.com/photo-1587440871875-191322ee64b0?auto=format&fit=crop&w=1200&q=80";
-                                }}
-                            />
-
-                            <div className="dcp-certificate-lock-overlay">
-                                <div className="dcp-lock-icon">
-                                    <FontAwesomeIcon icon={faLock} />
-                                </div>
-                                <div className="dcp-lock-text">Certificate Locked</div>
-                            </div>
-
-                            <div className="dcp-certificate-overlay">
-                                <span className="dcp-certificate-badge">Your Professional Certificate Template</span>
-                            </div>
-                            <div className="dcp-certificate-download-note">
-                                <p>This is a sample template. Your actual certificate will include your name, course details, and issue date.</p>
-                            </div>
-                        </div>
-
-                        <div className="dcp-certificate-info-single">
-                            <h3 className="dcp-certificate-title-single">{certificate.title}</h3>
-                            <p className="dcp-certificate-desc-single">{certificate.description}</p>
-
-                            <div className="dcp-certificate-features-single">
-                                {certificate.features.map((feature, index) => (
-                                    <div key={index} className="dcp-certificate-feature-item-single">
-                                        <FontAwesomeIcon icon={faCheckCircle} /> {feature.replace("✅ ", "")}
-                                    </div>
-                                ))}
-                            </div>
-
-                            <div className="dcp-certificate-benefits">
-                                <div className="dcp-benefit">
-                                    <span className="dcp-benefit-icon">
-                                        <FontAwesomeIcon icon={faGraduationCap} />
-                                    </span>
-                                    <span className="dcp-benefit-text">Builds creativity and imagination skills</span>
-                                </div>
-
-                                <div className="dcp-benefit">
-                                    <span className="dcp-benefit-icon">
-                                        <FontAwesomeIcon icon={faBriefcase} />
-                                    </span>
-                                    <span className="dcp-benefit-text">Improves focus and fine motor skills</span>
-                                </div>
-
-                                <div className="dcp-benefit">
-                                    <span className="dcp-benefit-icon">
-                                        <FontAwesomeIcon icon={faGlobe} />
-                                    </span>
-                                    <span className="dcp-benefit-text">Encourages self-expression through art</span>
-                                </div>
-
-                                <div className="dcp-benefit">
-                                    <span className="dcp-benefit-icon">
-                                        <FontAwesomeIcon icon={faCheckCircle} />
-                                    </span>
-                                    <span className="dcp-benefit-text">Certificate of completion provided</span>
-                                </div>
-                            </div>
-
-                            <div className="dcp-certificate-instructions dcp-cert-left">
-                                <h4>
-                                    <FontAwesomeIcon icon={faCertificate} /> Certificate Details:
-                                </h4>
-                                <ul>
-                                    <li>
-                                        <FontAwesomeIcon icon={faCheck} /> Issued upon successful completion of the course
-                                    </li>
-                                    <li>
-                                        <FontAwesomeIcon icon={faCheck} /> Includes student name and unique certificate ID
-                                    </li>
-                                    <li>
-                                        <FontAwesomeIcon icon={faCheck} /> Verified through our online portal
-                                    </li>
-                                    <li>
-                                        <FontAwesomeIcon icon={faCheck} /> Available in digital (PDF) and physical formats
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Premium Testimonials - V9 Grid Layout */}
-            <section className="dcp-testi-grid-section">
-                <div className="dcp-container">
-                    <div className="dcp-testi-grid-wrapper">
-                        <div className="dcp-testi-grid-left">
-                            <h2 className="dcp-testi-main-title">Experience Learning Like Never Before</h2>
-                            <p className="dcp-testi-subtitle">
-                                Discover personalized, practical learning that prepares you for real product teams. Read stories from learners who transformed their Marketing careers with our mentorship.
-                            </p>
-                        </div>
-
-                        <div className="dcp-testi-grid-right">
-                            <div
-                                className="dcp-testi-card-top"
-                                style={{ backgroundImage: "url(https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=800)" }}
-                            >
-                                <div className="dcp-testi-card-overlay">
-                                    <div className="dcp-testi-quote-content fade-in-anim" key={testiSetIndex}>
-                                        <p>"{activeTestimonials[0]?.text}"</p>
-                                        <div className="dcp-testi-author">
-                                            <img src={activeTestimonials[0]?.avatar} alt={activeTestimonials[0]?.name} />
-                                            <div>
-                                                <h4>{activeTestimonials[0]?.name}</h4>
-                                                <p>{activeTestimonials[0]?.role}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="dcp-testi-squares-row">
-                                <div className="dcp-testi-card-bottom-left">
-                                    <div className="dcp-testi-quote-content fade-in-anim" key={testiSetIndex}>
-                                        <p>"{activeTestimonials[1]?.text}"</p>
-                                        <div className="dcp-testi-author">
-                                            <img src={activeTestimonials[1]?.avatar} alt={activeTestimonials[1]?.name} />
-                                            <div>
-                                                <h4>{activeTestimonials[1]?.name}</h4>
-                                                <p>{activeTestimonials[1]?.role}</p>
-                                            </div>
+                                        <div className="dcp-stat-item">
+                                            <span className="dcp-stat-num">100%</span>
+                                            <span className="dcp-stat-label">Practical</span>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div className="dcp-testi-card-bottom-right">
-                                    <div className="dcp-testi-quote-content fade-in-anim" key={testiSetIndex}>
-                                        <p>"{activeTestimonials[2]?.text}"</p>
-                                        <div className="dcp-testi-author">
-                                            <img src={activeTestimonials[2]?.avatar} alt={activeTestimonials[2]?.name} />
-                                            <div>
-                                                <h4>{activeTestimonials[2]?.name}</h4>
-                                                <p>{activeTestimonials[2]?.role}</p>
-                                            </div>
-                                        </div>
+                                <div className="dcp-curriculum-v2-right">
+                                    <div className="dcp-curriculum-nav-v2">
+                                        <button className="dcp-nav-btn-v2" onClick={prevModule}>
+                                            <FontAwesomeIcon icon={faChevronUp} />
+                                        </button>
+                                        <button className="dcp-nav-btn-v2" onClick={nextModule}>
+                                            <FontAwesomeIcon icon={faChevronDown} />
+                                        </button>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
-            {/* Enroll Now Section (V2 Expansion) */}
-            <section className="dcp-dark-enrollment-FIXED" ref={formSectionRef}>
-                <div className="dcp-container">
-                    <div className="dcp-floating-icons-v2">
-                        {floatingIcons.map((icon, index) => (
-                            <div
-                                key={index}
-                                className="dcp-v2-float-icon"
-                                style={{
-                                    animationDelay: `${index * 0.5}s`,
-                                    left: `${(index * 12.5) % 100}%`,
-                                    top: `${20 + (index * 10) % 60}%`
-                                }}
-                            >
-                                {icon}
-                            </div>
-                        ))}
-                    </div>
+                                    <div className="dcp-slider-v5-container">
+                                        {sixMonthCurriculum.map((module, index) => {
+                                            const isActive = index === currentModuleIndex;
+                                            const isNext = index === (currentModuleIndex + 1) % sixMonthCurriculum.length;
+                                            const isPrev = index === (currentModuleIndex - 1 + sixMonthCurriculum.length) % sixMonthCurriculum.length;
 
-                    <section className="dcp-v3-community-banner">
-                        <div className="dcp-banner-grid-overlay"></div>
-                        <div className="dcp-banner-decor-sparkle sp-1">✦</div>
-                        <div className="dcp-banner-decor-sparkle sp-2">✦</div>
-                        <div className="dcp-banner-decor-sparkle sp-3">✦</div>
-                        <div className="dcp-banner-decor-circle cir-1"></div>
-                        <div className="dcp-banner-decor-circle cir-2"></div>
+                                            let cardState = "hidden";
+                                            if (isActive) cardState = "active";
+                                            else if (isPrev) cardState = "top";
+                                            else if (isNext) cardState = "bottom";
 
-                        <div className="dcp-banner-container">
-                            <div className="dcp-banner-content">
-                                <h2 className="dcp-banner-title">
-                                    Start Your Drawing <br /> Journey Today
-                                </h2>
+                                            return (
+                                                <div key={index} className={`dcp-curriculum-v5-card ${cardState}`}>
+                                                    <div className="dcp-curriculum-v5-inner">
+                                                        <div className="dcp-curriculum-v5-bg">
+                                                            <img src={module.bgImage} alt={module.title} className="dcp-curriculum-v5-img" />
+                                                            <div className="dcp-curriculum-v5-overlay"></div>
+                                                        </div>
 
-                                <div className="dcp-banner-ratings">
-                                    <div className="dcp-rating-box">
-                                        <div className="dcp-stars">★★★★★</div>
-                                        <div className="dcp-rating-text">4.9 / 5 rating</div>
-                                        <div className="dcp-rating-source">Happy Kids</div>
-                                    </div>
-                                    <div className="dcp-rating-box">
-                                        <div className="dcp-stars">★★★★★</div>
-                                        <div className="dcp-rating-text">4.8 / 5 rating</div>
-                                        <div className="dcp-rating-source">Parents Choice</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="dcp-ray dcp-ray-left-top">
-                                <div className="dcp-ray-trail"></div>
-                                <div className="dcp-ray-box">
-                                    <div className="dcp-ray-icon icon-email">
-                                        <FontAwesomeIcon icon={faEnvelope} />
-                                    </div>
-                                    <div className="dcp-ray-content">
-                                        <h4>Email Support</h4>
-                                        <p>hello@engloraylearn.com</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="dcp-ray dcp-ray-left-bottom">
-                                <div className="dcp-ray-trail"></div>
-                                <div className="dcp-ray-box">
-                                    <div className="dcp-ray-icon icon-whatsapp">
-                                        <FontAwesomeIcon icon={faWhatsapp} />
-                                    </div>
-                                    <div className="dcp-ray-content">
-                                        <h4>WHATSAPP</h4>
-                                        <p>+91 63681 75990</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="dcp-ray dcp-ray-right-top">
-                                <div className="dcp-ray-trail"></div>
-                                <div className="dcp-ray-box">
-                                    <div className="dcp-ray-icon icon-center">
-                                        <FontAwesomeIcon icon={faMapMarkerAlt} />
-                                    </div>
-                                    <div className="dcp-ray-content">
-                                        <h4>Learning Center</h4>
-                                        <p>Madurai, Tamil Nadu</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="dcp-ray dcp-ray-right-bottom">
-                                <div className="dcp-ray-trail"></div>
-                                <div className="dcp-ray-box">
-                                    <div className="dcp-ray-icon icon-chat">
-                                        <FontAwesomeIcon icon={faComments} />
-                                    </div>
-                                    <div className="dcp-ray-content">
-                                        <h4>Quick Chat</h4>
-                                        <p>Live Chat Available</p>
+                                                        <div className="dcp-curriculum-v5-content">
+                                                            <div className="dcp-curriculum-v5-header">
+                                                                <span className="dcp-curriculum-v5-month">{module.month}</span>
+                                                                <span className="dcp-curriculum-v5-proj">Projects: {module.projects}</span>
+                                                            </div>
+                                                            <h3 className="dcp-curriculum-v5-title">{module.title}</h3>
+                                                            <div className="dcp-curriculum-v5-topics">
+                                                                {module.topics.map((topic, tidx) => (
+                                                                    <div key={tidx} className="dcp-curriculum-v5-topic">
+                                                                        <FontAwesomeIcon icon={faCheck} className="dcp-curriculum-v5-check" /> {topic}
+                                                                    </div>
+                                                                ))}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            );
+                                        })}
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </section>
 
-                    {/* Single Black Container with Left Content and Right Form */}
-                    <div className="dcp-single-enroll-container">
-                        {/* Left Side - Content */}
-                        <div className="dcp-enroll-left-content">
-                            <h3 className="dcp-enroll-title">Start Your Creative Adventure</h3>
-                            <p className="dcp-enroll-subtitle">Join our fun drawing classes tailored for kids! Help your child explore their imagination, master exciting new art techniques, and build a beautiful collection of artworks they'll be proud to share.</p>
+                    {/* Tools & Resources - Interactive V2 Redesign */}
+                    <section className="dcp-tools-v2">
+                        <div className="dcp-container">
+                            <div className="dcp-tools-v2-header">
+                                <h2 className="dcp-tools-v2-title"> Fun Drawing Tools & Materials</h2>
+                                <p className="dcp-tools-v2-subtitle">Everything kids need to bring their vibrant imagination to life!</p>
+                            </div>
+
+                            <div className="dcp-tools-v2-layout">
+                                <div className="dcp-tools-sidebar">
+                                    {["Crayons & Shading", "Watercolors", "Sketch Tools", "Crafting Items"].map((label, idx) => (
+                                        <button key={idx} className={`dcp-tool-tab ${activeToolCategory === idx ? "active" : ""}`} onClick={() => setActiveToolCategory(idx)}>
+                                            <span className="tab-number">0{idx + 1}</span>
+                                            <span className="tab-label">{label}</span>
+                                        </button>
+                                    ))}
+                                </div>
+
+                                <div className="dcp-tools-main-display">
+                                    <div className="dcp-pods-container" key={activeToolCategory}>
+                                        {toolsV2Data[activeToolCategory].map((tool, index) => (
+                                            <div key={index} className={`dcp-tool-pod pod-${index + 1}`}>
+                                                <div className="dcp-pod-inner">
+                                                    <div className="dcp-pod-bg-image" style={{ background: tool.bg ? tool.bg : `url(${tool.img})`, backgroundPosition: 'center', backgroundSize: 'cover' }}></div>
+                                                    <div className="dcp-pod-content">
+                                                        <div className="dcp-pod-icon">{tool.icon}</div>
+                                                        <h4 className="dcp-pod-name">{tool.name}</h4>
+                                                        <p className="dcp-pod-desc">{tool.desc}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                    </section>
 
-                        {/* Right Side - Form */}
-                        <div className="dcp-enroll-right-form">
-                            <div className="dcp-enroll-form-wrapper">
-                                <h4 className="dcp-enroll-form-title">Enrollment Form</h4>
-                                <form onSubmit={handleSubmit} className="dcp-enroll-form">
-                                    <div className="dcp-enroll-form-grid">
-                                        <div className="dcp-enroll-form-group">
-                                            <label>Full Name *</label>
-                                            <input
-                                                type="text"
-                                                name="name"
-                                                value={formData.name}
-                                                onChange={handleInputChange}
-                                                required
-                                                placeholder="Enter your full name"
-                                            />
+                    {/* Benefits Section - Where Features Meet For You Upgrade */}
+                    <section className="dcp-section dcp-benefits-reimagined">
+                        <div className="dcp-container">
+                            <div className="dcp-benefits-header">
+                                <h2 className="dcp-benefits-title">Where Features Meet For You</h2>
+                            </div>
+
+                            <div className="dcp-benefits-staggered">
+                                {/* Row 1: 5 Cards */}
+                                <div className="dcp-benefits-row dcp-row-5">
+                                    {benefits.slice(0, 5).map((benefit, index) => (
+                                        <div key={index} className="dcp-new-benefit-card">
+                                            {(() => {
+                                                const absoluteIndex = 0 + index;
+                                                const color = benefitIconPalette[absoluteIndex] || "#BAE6FD";
+                                                return (
+                                                    <div className="dcp-new-icon" style={{ background: hexToRgba(color, 0.18), color }}>
+                                                        {benefit.icon}
+                                                    </div>
+                                                );
+                                            })()}
+                                            <div className="dcp-new-content">
+                                                <h3>{benefit.title}</h3>
+                                                <p>{benefit.description.substring(0, 70)}...</p>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+
+                                {/* Row 2: 3 Cards */}
+                                <div className="dcp-benefits-row dcp-row-3">
+                                    {benefits.slice(5, 8).map((benefit, index) => (
+                                        <div key={index} className="dcp-new-benefit-card">
+                                            {(() => {
+                                                const absoluteIndex = 5 + index;
+                                                const color = benefitIconPalette[absoluteIndex] || "#BAE6FD";
+                                                return (
+                                                    <div className="dcp-new-icon" style={{ background: hexToRgba(color, 0.18), color }}>
+                                                        {benefit.icon}
+                                                    </div>
+                                                );
+                                            })()}
+                                            <div className="dcp-new-content">
+                                                <h3>{benefit.title}</h3>
+                                                <p>{benefit.description.substring(0, 70)}...</p>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+
+                                {/* Row 3: 2 Original Cards */}
+                                <div className="dcp-benefits-row dcp-row-2" style={{ gap: "50px" }}>
+                                    {benefits.slice(8, 10).map((benefit, index) => (
+                                        <div key={index} className="dcp-new-benefit-card">
+                                            {(() => {
+                                                const absoluteIndex = 8 + index;
+                                                const color = benefitIconPalette[absoluteIndex] || "#BAE6FD";
+                                                return (
+                                                    <div className="dcp-new-icon" style={{ background: hexToRgba(color, 0.18), color }}>
+                                                        {benefit.icon}
+                                                    </div>
+                                                );
+                                            })()}
+                                            <div className="dcp-new-content">
+                                                <h3>{benefit.title}</h3>
+                                                <p>{benefit.description.substring(0, 70)}...</p>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* Floating Cards - Positioned Independently */}
+                            {/* Left Bottom Floating Card */}
+                            {/* You can manually change the left, top, bottom, and width values here to reposition or resize the card */}
+                            <div
+                                className="dcp-floating-benefit-card dcp-floating-card-left"
+                                style={{
+                                    left: "calc(50% - 505px)",
+                                    top: "320px",
+                                    bottom: "0px",
+                                    width: "190px",
+                                    height: "auto",
+                                    justifyContent: "center",
+                                    padding: "18px"
+                                }}
+                            >
+                                <div className="dcp-new-icon" style={{ background: hexToRgba("#BAE6FD", 0.18), color: "#BAE6FD" }}>
+                                    <FontAwesomeIcon icon={faStar} />
+                                </div>
+                                <div className="dcp-new-content" >
+                                    <h3>Creative Milestones</h3>
+                                    <p>Celebrate your child's artistic journey with certificates of completion that highlight their new creative skills. Each beautiful certificate rewards their hard work and boosts their unique imagination.</p>
+                                </div>
+                            </div>
+
+                            {/* Right Bottom Floating Card */}
+                            <div className="dcp-floating-benefit-card dcp-floating-card-right" style={{
+                                right: "calc(50% - 505px)",
+                                top: "320px",
+                                bottom: "0px",
+                                width: "190px",
+                                height: "auto",
+                                justifyContent: "center",
+                                padding: "18px"
+                            }}>
+                                <div className="dcp-new-icon" style={{ background: hexToRgba("#C4B5FD", 0.18), color: "#C4B5FD" }}>
+                                    <FontAwesomeIcon icon={faTrophy} />
+                                </div>
+                                <div className="dcp-new-content">
+                                    <h3>Endless Creativity</h3>
+                                    <p>Enjoy unlimited free access to our growing library of fun drawing lessons, keeping your little artist constantly inspired. We regularly add new exciting modules and engaging projects so they always have fresh creative challenges.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Certificate Section with Simplified Lock Overlay */}
+                    <section className="dcp-section dcp-dark-bg">
+                        <div className="dcp-container">
+                            <h2 className="dcp-section-title">Professional Certification</h2>
+                            <p className="dcp-section-subtitle">Earn a globally recognized certificate upon completion</p>
+
+                            <div className="dcp-certificate-single">
+                                <div className="dcp-certificate-image-wrapper">
+                                    <img
+                                        src={certificate.image}
+                                        alt="UI/UX Design Mastery Certificate"
+                                        className="dcp-certificate-image"
+                                        onError={(e) => {
+                                            e.target.onerror = null;
+                                            e.target.src = "https://images.unsplash.com/photo-1587440871875-191322ee64b0?auto=format&fit=crop&w=1200&q=80";
+                                        }}
+                                    />
+
+                                    <div className="dcp-certificate-lock-overlay">
+                                        <div className="dcp-lock-icon">
+                                            <FontAwesomeIcon icon={faLock} />
+                                        </div>
+                                        <div className="dcp-lock-text">Certificate Locked</div>
+                                    </div>
+
+                                    <div className="dcp-certificate-overlay">
+                                        <span className="dcp-certificate-badge">Your Professional Certificate Template</span>
+                                    </div>
+                                    <div className="dcp-certificate-download-note">
+                                        <p>This is a sample template. Your actual certificate will include your name, course details, and issue date.</p>
+                                    </div>
+                                </div>
+
+                                <div className="dcp-certificate-info-single">
+                                    <h3 className="dcp-certificate-title-single">{certificate.title}</h3>
+                                    <p className="dcp-certificate-desc-single">{certificate.description}</p>
+
+                                    <div className="dcp-certificate-features-single">
+                                        {certificate.features.map((feature, index) => (
+                                            <div key={index} className="dcp-certificate-feature-item-single">
+                                                <FontAwesomeIcon icon={faCheckCircle} /> {feature.replace("✅ ", "")}
+                                            </div>
+                                        ))}
+                                    </div>
+
+                                    <div className="dcp-certificate-benefits">
+                                        <div className="dcp-benefit">
+                                            <span className="dcp-benefit-icon">
+                                                <FontAwesomeIcon icon={faGraduationCap} />
+                                            </span>
+                                            <span className="dcp-benefit-text">Builds creativity and imagination skills</span>
                                         </div>
 
-                                        <div className="dcp-enroll-form-group">
-                                            <label>Email ID *</label>
-                                            <input
-                                                type="email"
-                                                name="email"
-                                                value={formData.email}
-                                                onChange={handleInputChange}
-                                                required
-                                                placeholder="Enter your email"
-                                            />
+                                        <div className="dcp-benefit">
+                                            <span className="dcp-benefit-icon">
+                                                <FontAwesomeIcon icon={faBriefcase} />
+                                            </span>
+                                            <span className="dcp-benefit-text">Improves focus and fine motor skills</span>
                                         </div>
 
-                                        <div className="dcp-enroll-form-group">
-                                            <label>Phone Number *</label>
-                                            <input
-                                                type="tel"
-                                                name="phone"
-                                                value={formData.phone}
-                                                onChange={handleInputChange}
-                                                required
-                                                placeholder="Enter your phone number"
-                                            />
+                                        <div className="dcp-benefit">
+                                            <span className="dcp-benefit-icon">
+                                                <FontAwesomeIcon icon={faGlobe} />
+                                            </span>
+                                            <span className="dcp-benefit-text">Encourages self-expression through art</span>
                                         </div>
 
-                                        <div className="dcp-enroll-form-group">
-                                            <label>Select Course *</label>
-                                            <select
-                                                name="course"
-                                                value={formData.course}
-                                                onChange={handleInputChange}
-                                                required
-                                            >
-                                                <option value="Drawing">Drawing</option>
-                                                <option value="Graphic Design">Graphic Design</option>
-                                                <option value="Ui/Ux Design">Ui/Ux Design</option>
-                                                <option value="Java Full Stack">Java Full Stack</option>
-                                                <option value="Digital Marketing">Digital Marketing</option>
-                                            </select>
+                                        <div className="dcp-benefit">
+                                            <span className="dcp-benefit-icon">
+                                                <FontAwesomeIcon icon={faCheckCircle} />
+                                            </span>
+                                            <span className="dcp-benefit-text">Certificate of completion provided</span>
                                         </div>
                                     </div>
 
-                                    <button type="submit" className="dcp-enroll-submit-btn">
-                                        Complete Enrollment
-                                    </button>
-                                </form>
+                                    <div className="dcp-certificate-instructions dcp-cert-left">
+                                        <h4>
+                                            <FontAwesomeIcon icon={faCertificate} /> Certificate Details:
+                                        </h4>
+                                        <ul>
+                                            <li>
+                                                <FontAwesomeIcon icon={faCheck} /> Issued upon successful completion of the course
+                                            </li>
+                                            <li>
+                                                <FontAwesomeIcon icon={faCheck} /> Includes student name and unique certificate ID
+                                            </li>
+                                            <li>
+                                                <FontAwesomeIcon icon={faCheck} /> Verified through our online portal
+                                            </li>
+                                            <li>
+                                                <FontAwesomeIcon icon={faCheck} /> Available in digital (PDF) and physical formats
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </section>
+                    </section>
 
-            {showSuccess && (
-                <div className="dcp-toast">
-                    <div className="dcp-toast-content">
-                        <div className="dcp-toast-icon">
-                            <FontAwesomeIcon icon={faTrophy} />
+                    {/* Premium Testimonials - V9 Grid Layout */}
+                    <section className="dcp-testi-grid-section">
+                        <div className="dcp-container">
+                            <div className="dcp-testi-grid-wrapper">
+                                <div className="dcp-testi-grid-left">
+                                    <h2 className="dcp-testi-main-title">Experience Learning Like Never Before</h2>
+                                    <p className="dcp-testi-subtitle">
+                                        Discover personalized, practical learning that prepares you for real product teams. Read stories from learners who transformed their Marketing careers with our mentorship.
+                                    </p>
+                                </div>
+
+                                <div className="dcp-testi-grid-right">
+                                    <div
+                                        className="dcp-testi-card-top"
+                                        style={{ backgroundImage: "url(https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=800)" }}
+                                    >
+                                        <div className="dcp-testi-card-overlay">
+                                            <div className="dcp-testi-quote-content fade-in-anim" key={testiSetIndex}>
+                                                <p>"{activeTestimonials[0]?.text}"</p>
+                                                <div className="dcp-testi-author">
+                                                    <img src={activeTestimonials[0]?.avatar} alt={activeTestimonials[0]?.name} />
+                                                    <div>
+                                                        <h4>{activeTestimonials[0]?.name}</h4>
+                                                        <p>{activeTestimonials[0]?.role}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="dcp-testi-squares-row">
+                                        <div className="dcp-testi-card-bottom-left">
+                                            <div className="dcp-testi-quote-content fade-in-anim" key={testiSetIndex}>
+                                                <p>"{activeTestimonials[1]?.text}"</p>
+                                                <div className="dcp-testi-author">
+                                                    <img src={activeTestimonials[1]?.avatar} alt={activeTestimonials[1]?.name} />
+                                                    <div>
+                                                        <h4>{activeTestimonials[1]?.name}</h4>
+                                                        <p>{activeTestimonials[1]?.role}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div className="dcp-testi-card-bottom-right">
+                                            <div className="dcp-testi-quote-content fade-in-anim" key={testiSetIndex}>
+                                                <p>"{activeTestimonials[2]?.text}"</p>
+                                                <div className="dcp-testi-author">
+                                                    <img src={activeTestimonials[2]?.avatar} alt={activeTestimonials[2]?.name} />
+                                                    <div>
+                                                        <h4>{activeTestimonials[2]?.name}</h4>
+                                                        <p>{activeTestimonials[2]?.role}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div className="dcp-toast-message">
-                            <h4>Enrollment Successful!</h4>
-                            <p>Welcome to UI/UX Design Mastery! Our team will contact you within 24 hours.</p>
+                    </section>
+
+                    {/* Enroll Now Section (V2 Expansion) */}
+                    <section className="dcp-dark-enrollment-FIXED" ref={formSectionRef}>
+                        <div className="dcp-container">
+                            <div className="dcp-floating-icons-v2">
+                                {floatingIcons.map((icon, index) => (
+                                    <div
+                                        key={index}
+                                        className="dcp-v2-float-icon"
+                                        style={{
+                                            animationDelay: `${index * 0.5}s`,
+                                            left: `${(index * 12.5) % 100}%`,
+                                            top: `${20 + (index * 10) % 60}%`
+                                        }}
+                                    >
+                                        {icon}
+                                    </div>
+                                ))}
+                            </div>
+
+                            <section className="dcp-v3-community-banner">
+                                <div className="dcp-banner-grid-overlay"></div>
+                                <div className="dcp-banner-decor-sparkle sp-1">✦</div>
+                                <div className="dcp-banner-decor-sparkle sp-2">✦</div>
+                                <div className="dcp-banner-decor-sparkle sp-3">✦</div>
+                                <div className="dcp-banner-decor-circle cir-1"></div>
+                                <div className="dcp-banner-decor-circle cir-2"></div>
+
+                                <div className="dcp-banner-container">
+                                    <div className="dcp-banner-content">
+                                        <h2 className="dcp-banner-title">
+                                            Start Your Drawing <br /> Journey Today
+                                        </h2>
+
+                                        <div className="dcp-banner-ratings">
+                                            <div className="dcp-rating-box">
+                                                <div className="dcp-stars">★★★★★</div>
+                                                <div className="dcp-rating-text">4.9 / 5 rating</div>
+                                                <div className="dcp-rating-source">Happy Kids</div>
+                                            </div>
+                                            <div className="dcp-rating-box">
+                                                <div className="dcp-stars">★★★★★</div>
+                                                <div className="dcp-rating-text">4.8 / 5 rating</div>
+                                                <div className="dcp-rating-source">Parents Choice</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="dcp-ray dcp-ray-left-top">
+                                        <div className="dcp-ray-trail"></div>
+                                        <div className="dcp-ray-box">
+                                            <div className="dcp-ray-icon icon-email">
+                                                <FontAwesomeIcon icon={faEnvelope} />
+                                            </div>
+                                            <div className="dcp-ray-content">
+                                                <h4>Email Support</h4>
+                                                <p>hello@engloraylearn.com</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="dcp-ray dcp-ray-left-bottom">
+                                        <div className="dcp-ray-trail"></div>
+                                        <div className="dcp-ray-box">
+                                            <div className="dcp-ray-icon icon-whatsapp">
+                                                <FontAwesomeIcon icon={faWhatsapp} />
+                                            </div>
+                                            <div className="dcp-ray-content">
+                                                <h4>WHATSAPP</h4>
+                                                <p>+91 63681 75990</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="dcp-ray dcp-ray-right-top">
+                                        <div className="dcp-ray-trail"></div>
+                                        <div className="dcp-ray-box">
+                                            <div className="dcp-ray-icon icon-center">
+                                                <FontAwesomeIcon icon={faMapMarkerAlt} />
+                                            </div>
+                                            <div className="dcp-ray-content">
+                                                <h4>Learning Center</h4>
+                                                <p>Madurai, Tamil Nadu</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="dcp-ray dcp-ray-right-bottom">
+                                        <div className="dcp-ray-trail"></div>
+                                        <div className="dcp-ray-box">
+                                            <div className="dcp-ray-icon icon-chat">
+                                                <FontAwesomeIcon icon={faComments} />
+                                            </div>
+                                            <div className="dcp-ray-content">
+                                                <h4>Quick Chat</h4>
+                                                <p>Live Chat Available</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                            {/* Single Black Container with Left Content and Right Form */}
+                            <div className="dcp-single-enroll-container">
+                                {/* Left Side - Content */}
+                                <div className="dcp-enroll-left-content">
+                                    <h3 className="dcp-enroll-title">Start Your Creative Adventure</h3>
+                                    <p className="dcp-enroll-subtitle">Join our fun drawing classes tailored for kids! Help your child explore their imagination, master exciting new art techniques, and build a beautiful collection of artworks they'll be proud to share.</p>
+                                </div>
+
+                                {/* Right Side - Form */}
+                                <div className="dcp-enroll-right-form">
+                                    <div className="dcp-enroll-form-wrapper">
+                                        <h4 className="dcp-enroll-form-title">Enrollment Form</h4>
+                                        <form onSubmit={handleSubmit} className="dcp-enroll-form">
+                                            <div className="dcp-enroll-form-grid">
+                                                <div className="dcp-enroll-form-group">
+                                                    <label>Full Name *</label>
+                                                    <input
+                                                        type="text"
+                                                        name="name"
+                                                        value={formData.name}
+                                                        onChange={handleInputChange}
+                                                        required
+                                                        placeholder="Enter your full name"
+                                                    />
+                                                </div>
+
+                                                <div className="dcp-enroll-form-group">
+                                                    <label>Email ID *</label>
+                                                    <input
+                                                        type="email"
+                                                        name="email"
+                                                        value={formData.email}
+                                                        onChange={handleInputChange}
+                                                        required
+                                                        placeholder="Enter your email"
+                                                    />
+                                                </div>
+
+                                                <div className="dcp-enroll-form-group">
+                                                    <label>Phone Number *</label>
+                                                    <input
+                                                        type="tel"
+                                                        name="phone"
+                                                        value={formData.phone}
+                                                        onChange={handleInputChange}
+                                                        required
+                                                        placeholder="Enter your phone number"
+                                                    />
+                                                </div>
+
+                                                <div className="dcp-enroll-form-group">
+                                                    <label>Select Course *</label>
+                                                    <select
+                                                        name="course"
+                                                        value={formData.course}
+                                                        onChange={handleInputChange}
+                                                        required
+                                                    >
+                                                        <option value="Drawing">Drawing</option>
+                                                        <option value="Graphic Design">Graphic Design</option>
+                                                        <option value="Ui/Ux Design">Ui/Ux Design</option>
+                                                        <option value="Java Full Stack">Java Full Stack</option>
+                                                        <option value="Digital Marketing">Digital Marketing</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <button type="submit" className="dcp-enroll-submit-btn">
+                                                Complete Enrollment
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </section>
+
+                    {showSuccess && (
+                        <div className="dcp-toast">
+                            <div className="dcp-toast-content">
+                                <div className="dcp-toast-icon">
+                                    <FontAwesomeIcon icon={faTrophy} />
+                                </div>
+                                <div className="dcp-toast-message">
+                                    <h4>Enrollment Successful!</h4>
+                                    <p>Welcome to UI/UX Design Mastery! Our team will contact you within 24 hours.</p>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+                    <SubFooterTwo />
+                    <BackToTop />
                 </div>
-            )}
-            <SubFooterTwo />
-            <BackToTop />
-        </div>
+            </div>
+        </>
     );
 };
 

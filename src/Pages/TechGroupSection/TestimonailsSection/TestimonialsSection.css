@@ -109,7 +109,9 @@
   color: #718096;
   font-family: 'Inter';
   font-weight: 500;
-  white-space: nowrap;
+  white-space: normal;
+  max-width: 900px;
+  line-height: 1.6;
 }
 
 /* ================= STRIPE CAROUSEL ================= */

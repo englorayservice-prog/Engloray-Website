@@ -46,12 +46,24 @@ const CustomScrollbar = () => {
         window.addEventListener('scroll', updateScroll);
         window.addEventListener('resize', updateScroll);
 
+        // Robust detection: Watch for any layout changes (like intro unmounting)
+        const resizeObserver = new ResizeObserver(() => {
+            updateScroll();
+        });
+
+        if (document.body) {
+            resizeObserver.observe(document.body);
+            // Also watch documentElement for safety on some browsers
+            resizeObserver.observe(document.documentElement);
+        }
+
         // Initial check
         updateScroll();
 
         return () => {
             window.removeEventListener('scroll', updateScroll);
             window.removeEventListener('resize', updateScroll);
+            resizeObserver.disconnect();
             clearTimeout(hideTimeout.current);
         };
     }, [updateScroll]);

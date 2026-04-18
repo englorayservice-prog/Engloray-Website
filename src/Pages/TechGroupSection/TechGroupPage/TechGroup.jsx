@@ -6,7 +6,7 @@ import PortfolioSection from '../PortfolioSection/PortfolioSection';
 import TestimonialsSection from '../TestimonailsSection/TestimonialsSection';
 import InternshipProgram from '../InternshipProgram/InternshipProgram';
 import BenefitsFooter from '../BenfitsFooter/BenifitsFooter';
-import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
+import TwoLineNavbar from '../../../Components/Navbar/Navbar';
 import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 
 import './TechGroup.css';
@@ -27,8 +27,8 @@ const TechGroup = () => {
       <AboutSection />
       <TestimonialsSection />
       <InternshipProgram />
-      {/* <BenefitsFooter /> */}
-      <WhiteFooter />
+      <BenefitsFooter />
+      {/* <WhiteFooter /> */}
       <BackToTop />
     </div>
   );

@@ -70,6 +70,8 @@
     margin: 0 auto;
     padding: 2rem 0;
     margin-top: 70px;
+    position: relative;
+    z-index: 10; /* Fixes overlap by placing hero content above the client marquee */
 }
 
 /* ---- Vetra-style Feature Badge ---- */
@@ -141,8 +143,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1;
-    /* Creates stacking context for pseudo-elements */
+    z-index: 50;
+    /* Creates stacking context for pseudo-elements and ensures dropdown is on top */
 }
 
 /* The sharp neon horizontal strike behind the search box */

@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&display=swap');
+
+.entry-intro-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  background-color: #000;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  overflow-y: scroll; /* Allows the scroll spacer inside to be scrolled */
+  overflow-x: hidden;
+  overscroll-behavior: none;
+}
+
+/* WebGL Canvas */
+#webgl-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* UI Layer */
+.ui-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.flash-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  mix-blend-mode: screen;
+  filter: brightness(1.5);
+  opacity: 0;
+  z-index: 99999;
+  pointer-events: none;
+}
+
+.screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-screen {
+  background: url('./back-ground.jpeg') center center / cover no-repeat;
+  z-index: 20;
+}
+
+.content-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Typography for Opening Sequence */
+.word-sequence {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  max-width: none;
+  padding: 0;
+}
+
+.neon-line-1 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(2.7rem, 8.7vw, 7rem);
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  display: inline-block;
+  transform: scaleX(1.3);
+  text-shadow: none;
+  line-height: 1.1;
+  white-space: nowrap;
+  will-change: transform, opacity;
+  text-transform: uppercase;
+}
+
+.neon-line-2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(4.5rem, 12vw, 9rem);
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  display: inline-block;
+  transform: scaleX(1.3);
+  color: #000;
+  text-shadow: none;
+  line-height: 1.1;
+  will-change: transform, opacity;
+  text-transform: uppercase;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  opacity: 0; /* Fade in via GSAP */
+}
+
+.scroll-indicator p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Final Screen content initially hidden */
+.final-screen {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Height defines how much total scroll distance we have */
+.scroll-spacer {
+  position: relative;
+  width: 100%;
+  height: 180vh;
+  z-index: -1;
+}
