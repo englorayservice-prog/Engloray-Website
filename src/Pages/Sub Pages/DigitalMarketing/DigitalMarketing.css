@@ -1,4 +1,4 @@
-/* UI/UX Page Styles - BLUE/PINK THEME - COMPLETE FIXED VERSION */
+/* Digital Marketing Page Styles - CLONED FROM BRANDING & DESIGNING */
 /* Reset and Base Styles */
 * {
     margin: 0;
@@ -12,7 +12,7 @@ body {
     line-height: 1.6;
 }
 
-.uiuxp-container {
+.dm-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
@@ -22,16 +22,16 @@ body {
 /* ============================== */
 /* HERO SECTION */
 /* ============================== */
-.uiuxp-hero {
+.dm-hero {
     position: relative;
     padding: 160px 20px 260px;
     height: 700px;
     text-align: center;
-    background: radial-gradient(circle at top, #eef4ff, #ffffff);
+    background: radial-gradient(circle at top, #fff7ed, #ffffff);
     overflow: hidden;
 }
 
-.uiuxp-hero-container {
+.dm-hero-container {
     bottom: 30px;
     max-width: 1100px;
     margin: auto;
@@ -39,19 +39,19 @@ body {
     z-index: 2;
 }
 
-.uiuxp-hero-badge {
+.dm-hero-badge {
     font-family: "Inter", sans-serif;
     display: inline-block;
-    background: #3b82f6;
+    background: #000000;
     color: #fff;
     padding: 10px 40px;
     border-radius: 40px;
     font-size: 18px;
     margin-bottom: 34px;
-    box-shadow: 0 0 15px rgba(59, 130, 246, 0.6), 0 0 30px rgba(236, 72, 153, 0.3);
+    box-shadow: 0 0 15px rgba(249, 115, 22, 0.6), 0 0 30px rgba(249, 115, 22, 0.5), 0 0 60px rgba(249, 115, 22, 0.45), 0 0 90px rgba(249, 115, 22, 0.35);
 }
 
-.uiuxp-hero-title {
+.dm-hero-title {
     font-family: "Inter", sans-serif;
     font-size: 66px;
     line-height: 1.1;
@@ -63,17 +63,13 @@ body {
     margin-right: auto;
 }
 
-.uiuxp-title-highlight {
+.dm-title-highlight {
     font-family: "Inter", sans-serif;
     font-weight: 700;
-    color: #3b82f6;
+    color: #f97316;
 }
 
-.uiuxp-title-highlight:last-child {
-    color: #ec4899;
-}
-
-.uiuxp-hero-desc {
+.dm-hero-desc {
     font-family: "Inter", sans-serif;
     font-size: 18px;
     line-height: 1.7;
@@ -84,17 +80,17 @@ body {
     margin-right: auto;
 }
 
-.uiuxp-privacy-badge {
+.dm-privacy-badge {
     font-family: "Inter", sans-serif;
     display: inline-block;
     font-size: 15px;
     color: #fff;
-    background: #ec4899;
+    background: #fb923c;
     padding: 12px 24px;
     border-radius: 30px;
 }
 
-.uiuxp-floating-card {
+.dm-floating-card {
     position: absolute;
     display: flex;
     align-items: center;
@@ -107,17 +103,17 @@ body {
     width: 220px;
 }
 
-.uiuxp-floating-card.uiuxp-left {
+.dm-floating-card.dm-left {
     top: 140px;
     left: 90px;
 }
 
-.uiuxp-floating-card.uiuxp-right {
+.dm-floating-card.dm-right {
     top: 140px;
     right: 100px;
 }
 
-.uiuxp-floating-card img {
+.dm-floating-card img {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -125,13 +121,13 @@ body {
     flex-shrink: 0;
 }
 
-.uiuxp-card-content {
+.dm-card-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.uiuxp-card-content h4 {
+.dm-card-content h4 {
     font-family: "Inter", sans-serif;
     font-size: 13px;
     font-weight: 600;
@@ -139,14 +135,14 @@ body {
     color: #000;
 }
 
-.uiuxp-card-content p {
+.dm-card-content p {
     font-family: "Inter", sans-serif;
     font-size: 10px;
     margin: 2px 0 6px;
     color: #6b7280;
 }
 
-.uiuxp-card-progress {
+.dm-card-progress {
     height: 4px;
     width: 100%;
     background: #eee;
@@ -154,22 +150,22 @@ body {
     overflow: hidden;
 }
 
-.uiuxp-progress-fill {
+.dm-progress-fill {
     height: 100%;
     width: 70%;
-    background: #3b82f6;
+    background: #f97316;
     border-radius: 10px;
 }
 
-.uiuxp-rotate-left {
+.dm-rotate-left {
     transform: rotate(-6deg);
 }
 
-.uiuxp-rotate-right {
+.dm-rotate-right {
     transform: rotate(6deg);
 }
 
-.uiuxp-hero-bg-image {
+.dm-hero-bg-image {
     position: absolute;
     width: 70%;
     height: 70%;
@@ -181,7 +177,7 @@ body {
     pointer-events: none;
 }
 
-.uiuxp-badge-glass {
+.dm-badge-glass {
     position: absolute;
     bottom: 60px;
     left: 50%;
@@ -193,26 +189,26 @@ body {
     z-index: 5;
 }
 
-.uiuxp-service-badge {
+.dm-service-badge {
     font-family: "Inter", sans-serif;
     font-size: 16px;
     padding: 12px 20px;
     border-radius: 26px;
-    background: rgba(59, 130, 246, 0.14);
-    color: #3b82f6;
+    background: rgba(249, 115, 22, 0.14);
+    color: #f97316;
     white-space: nowrap;
     position: relative;
 }
 
-.uiuxp-badge-research {
+.dm-badge-strategy {
     top: -90px;
     left: -80px;
-    background: #3b82f6;
+    background: #f97316;
     color: #ffffff;
     border-radius: 20px 0px 20px 20px;
 }
 
-.uiuxp-badge-research::after {
+.dm-badge-strategy::after {
     content: "";
     position: absolute;
     width: 20px;
@@ -225,15 +221,15 @@ body {
     transform: rotate(20deg);
 }
 
-.uiuxp-badge-testing {
+.dm-badge-guidelines {
     top: -90px;
     right: -120px;
-    background: #ec4899;
+    background: #f97316;
     color: #ffffff;
     border-radius: 0px 20px 20px 20px;
 }
 
-.uiuxp-badge-testing::after {
+.dm-badge-guidelines::after {
     content: "";
     font-weight: 500;
     position: absolute;
@@ -247,7 +243,7 @@ body {
     transform: rotate(-115deg);
 }
 
-.uiuxp-gradient-shape {
+.dm-gradient-shape {
     position: absolute;
     width: 600px;
     height: 600px;
@@ -256,14 +252,14 @@ body {
     z-index: 1;
 }
 
-.uiuxp-blue-shape {
-    background: radial-gradient(circle, #3b82f6, transparent 70%);
+.dm-blue-shape {
+    background: radial-gradient(circle, #fb923c, transparent 70%);
     top: 90px;
     left: 15%;
 }
 
-.uiuxp-pink-shape {
-    background: radial-gradient(circle, #ec4899, transparent 70%);
+.dm-sand-shape {
+    background: radial-gradient(circle, #e5bb71, transparent 80%);
     top: 100px;
     right: 19%;
 }
@@ -271,19 +267,19 @@ body {
 /* ============================== */
 /* ABOUT SECTION */
 /* ============================== */
-.uiuxp-about-section {
+.dm-about-section {
     padding: 60px 0;
     background: #1e293b;
     position: relative;
 }
 
-.uiuxp-about-header {
+.dm-about-header {
     text-align: left;
     margin-bottom: 40px;
     max-width: 800px;
 }
 
-.uiuxp-about-title {
+.dm-about-title {
     font-size: 3rem;
     font-weight: 700;
     color: #ffffff;
@@ -292,18 +288,18 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
-.uiuxp-about-title::after {
+.dm-about-title::after {
     content: '';
     position: absolute;
     bottom: -10px;
     left: 0;
     width: 60px;
     height: 4px;
-    background: #ec4899;
+    background: #f97316;
     border-radius: 2px;
 }
 
-.uiuxp-about-description {
+.dm-about-description {
     font-size: 1.1rem;
     font-weight: 400;
     color: #ffffff;
@@ -312,14 +308,14 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
-.uiuxp-cards-grid {
+.dm-cards-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 25px;
     margin-top: 40px;
 }
 
-.uiuxp-about-card {
+.dm-about-card {
     background: #ffffff;
     border-radius: 10px;
     overflow: hidden;
@@ -333,30 +329,30 @@ body {
     max-width: 100%;
 }
 
-.uiuxp-about-card:hover {
+.dm-about-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(236, 72, 153, 0.1);
-    border-color: rgba(236, 72, 153, 0.3);
+    box-shadow: 0 20px 40px rgba(249, 115, 22, 0.1);
+    border-color: rgba(249, 115, 22, 0.3);
 }
 
-.uiuxp-about-card.uiuxp-card-image-bottom {
+.dm-about-card.dm-card-image-bottom {
     flex-direction: column;
 }
 
-.uiuxp-about-card.uiuxp-card-image-bottom .uiuxp-card-image-wrapper {
+.dm-about-card.dm-card-image-bottom .dm-card-image-wrapper {
     order: 2;
 }
 
-.uiuxp-about-card.uiuxp-card-image-bottom .uiuxp-card-content-wrapper {
+.dm-about-card.dm-card-image-bottom .dm-card-content-wrapper {
     order: 1;
 }
 
-.uiuxp-card-image-wrapper {
+.dm-card-image-wrapper {
     padding: 6px;
     width: 100%;
 }
 
-.uiuxp-card-image {
+.dm-card-image {
     width: 100%;
     height: 150px;
     overflow: hidden;
@@ -364,23 +360,23 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-.uiuxp-card-image img {
+.dm-card-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease;
 }
 
-.uiuxp-about-card:hover .uiuxp-card-image img {
+.dm-about-card:hover .dm-card-image img {
     transform: scale(1.1);
 }
 
-.uiuxp-card-content-wrapper {
+.dm-card-content-wrapper {
     padding: 6px;
     width: 100%;
 }
 
-.uiuxp-card-content {
+.dm-card-content {
     background: transparent;
     border-radius: 10px;
     padding: 16px 14px;
@@ -389,7 +385,7 @@ body {
     text-align: left;
 }
 
-.uiuxp-card-title {
+.dm-card-title {
     font-size: 1rem;
     font-weight: 600;
     color: #1e293b;
@@ -400,8 +396,8 @@ body {
     text-align: left;
 }
 
-.uiuxp-card-description {
-    font-size: 1rem;
+.dm-card-description {
+    font-size: 0.8rem;
     color: #475569;
     line-height: 1.5;
     font-family: 'Inter', sans-serif;
@@ -410,16 +406,16 @@ body {
 }
 
 /* ============================== */
-/* UI/UX DNA SECTION */
+/* DIGITAL MARKETING DNA SECTION */
 /* ============================== */
-.uiuxp-dna-section {
+.dm-dna-section {
     width: 100%;
     background: #f6f7f9;
     padding: 120px 0;
     font-family: 'Inter', sans-serif;
 }
 
-.uiuxp-dna-container {
+.dm-dna-container {
     width: 1200px;
     margin: auto;
     display: flex;
@@ -428,21 +424,21 @@ body {
     gap: 180px;
 }
 
-.uiuxp-dna-left {
+.dm-dna-left {
     max-width: 500px;
 }
 
-.uiuxp-dna-left h2 {
-    width: 300px;
+.dm-dna-left h2 {
     font-family: "inter", sans-serif;
     font-size: 50px;
     color: #27364a;
-    margin-right: 220px;
     margin-bottom: 15px;
     font-weight: 700;
+    text-align: left;
+    white-space: nowrap;
 }
 
-.uiuxp-dna-subtitle {
+.dm-dna-subtitle {
     font-family: "inter", sans-serif;
     font-size: 30px;
     color: #1e2a44;
@@ -451,7 +447,7 @@ body {
     text-align: left;
 }
 
-.uiuxp-dna-left p {
+.dm-dna-left p {
     font-family: "inter", sans-serif;
     font-size: 18px;
     line-height: 1.2;
@@ -460,14 +456,14 @@ body {
     text-align: left;
 }
 
-.uiuxp-dna-right {
+.dm-dna-right {
     position: relative;
     width: 500px;
     height: 460px;
     right: 30px;
 }
 
-.uiuxp-dna-circle {
+.dm-dna-circle {
     position: absolute;
     width: 160px;
     height: 160px;
@@ -480,14 +476,15 @@ body {
     text-align: center;
     padding: 12px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    z-index: 2;
 }
 
-.uiuxp-dna-circle h3 {
+.dm-dna-circle h3 {
     margin-top: 10px;
     font-size: 18px;
 }
 
-.uiuxp-circle-desc {
+.dm-circle-desc {
     font-family: 'Inter', sans-serif;
     font-size: 10px;
     margin-top: 3px;
@@ -495,41 +492,87 @@ body {
     opacity: 0.9;
 }
 
-.uiuxp-dna-circle .uiuxp-icon {
+.dm-dna-circle .dm-icon {
     font-size: 15px;
     margin-bottom: 3px;
 }
 
-.uiuxp-circle-usability {
+.dm-circle-purpose {
     top: -60px;
     left: 185px;
+    background: linear-gradient(135deg, #f97316, #fb923c);
 }
 
-.uiuxp-circle-accessibility {
+.dm-circle-voice {
     top: 160px;
     left: -80px;
+    background: linear-gradient(135deg, #ea580c, #f97316);
 }
 
-.uiuxp-circle-visual {
+.dm-circle-values {
     top: 160px;
     right: -80px;
-    left: auto;
+    background: linear-gradient(135deg, #d97706, #f59e0b);
 }
 
-.uiuxp-circle-interaction {
+.dm-circle-personality {
     top: 160px;
     left: 185px;
+    background: linear-gradient(135deg, #ff7a18, #ffb347);
 }
 
-.uiuxp-circle-responsive {
+.dm-circle-visual {
     bottom: -70px;
     left: 185px;
+    background: linear-gradient(135deg, #451a03, #7c2d12);
+}
+
+/* DNA LINK ANIMATION */
+.dm-link-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.dm-base-path {
+    fill: none;
+    stroke: #ffbd59;
+    stroke-width: 1.5;
+    opacity: 0.3;
+}
+
+.dm-flow-path {
+    fill: none;
+    stroke-width: 3.5;
+    stroke-linecap: round;
+    stroke-dasharray: 40 160;
+    opacity: 0;
+    stroke-dashoffset: 140;
+    animation: dm-flow-sequence 15s infinite both;
+}
+
+.dm-phase-1 .dm-flow-path { stroke: #fb923c; animation-delay: 0s; }
+.dm-phase-2 .dm-flow-path { stroke: #ffbd59; animation-delay: 3s; }
+.dm-phase-3 .dm-flow-path { stroke: #ff7a18; animation-delay: 6s; }
+.dm-phase-5 .dm-flow-path { stroke: #ea580c; animation-delay: 9s; }
+.dm-phase-4 .dm-flow-path { stroke: #f97316; animation-delay: 12s; }
+
+@keyframes dm-flow-sequence {
+    0% { opacity: 0; stroke-dashoffset: 140; }
+    2% { opacity: 1; stroke-dashoffset: 140; }
+    18% { stroke-dashoffset: -100; opacity: 1; }
+    20% { opacity: 0; stroke-dashoffset: -100; }
+    100% { opacity: 0; stroke-dashoffset: -100; }
 }
 
 /* ============================== */
 /* HOW IT WORKS SECTION */
 /* ============================== */
-.uiuxp-howworks {
+.dm-howworks {
     width: 100%;
     min-height: 700px;
     background: #1e293b;
@@ -538,7 +581,7 @@ body {
     padding: 80px 0;
 }
 
-.uiuxp-howworks-container {
+.dm-howworks-container {
     width: 1200px;
     max-width: 90%;
     margin: 0 auto;
@@ -547,29 +590,29 @@ body {
     gap: 80px;
 }
 
-.uiuxp-left-side {
+.dm-left-side {
     margin-top: 60px;
     position: relative;
 }
 
-.uiuxp-badge {
+.dm-badge {
     display: flex;
     align-items: center;
     gap: 10px;
-    color: #ec4899;
+    color: #f97316;
     font-size: 14px;
     margin-top: 40px;
     font-family: 'Inter', sans-serif;
 }
 
-.uiuxp-dot {
+.dm-dot {
     width: 10px;
     height: 10px;
-    background: #ec4899;
+    background: #3b82f6;
     border-radius: 50%;
 }
 
-.uiuxp-intro-text {
+.dm-intro-text {
     font-size: 14.5px;
     font-weight: 500;
     line-height: 1.6;
@@ -579,7 +622,7 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
-.uiuxp-main-title {
+.dm-main-title {
     font-size: 44px;
     font-weight: 700;
     line-height: 1.1;
@@ -588,112 +631,101 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
-.uiuxp-arrow {
+.dm-arrow {
     font-size: 60px;
-    color: #ec4899;
+    color: #f97316;
     margin-left: 400px;
     margin-top: -120px;
 }
 
-.uiuxp-right-side {
+.dm-right-side {
     position: relative;
 }
 
-.uiuxp-section-title {
+.dm-section-title {
     font-size: 36px;
     font-weight: 600;
     margin-bottom: 30px;
     margin-left: 400px;
     font-family: 'Inter', sans-serif;
     white-space: nowrap;
-    color: white;
 }
 
-.uiuxp-steps-grid {
+.dm-steps-grid {
     margin-top: 40px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
-.uiuxp-step-card {
+.dm-step-card {
     position: relative;
-    background: #1e293b;
+    background: rgba(45, 55, 72, 0.4);
     padding: 25px;
     border-radius: 16px;
     width: 100%;
-    opacity: 0.7;
-    transform: translateY(0px);
-    transition: all 0.35s ease;
+    opacity: 1;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transform: scale(1);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     text-align: left;
-    border: 1px solid rgba(236, 72, 153, 0.2);
+    overflow: hidden;
 }
 
-.uiuxp-step-card:hover {
-    opacity: 1;
-    transform: translateY(-6px);
-    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.2);
-    border-color: rgba(236, 72, 153, 0.4);
+.dm-step-card:hover {
+    background: rgba(45, 55, 72, 0.6);
+    transform: scale(0.96);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-color: rgba(249, 115, 22, 0.3);
 }
 
-.uiuxp-step-card:hover .uiuxp-card-dot {
-    box-shadow: 0 0 8px #ec4899;
+.dm-step-card:hover .dm-card-dot {
+    box-shadow: 0 0 8px #f97316;
 }
 
-.uiuxp-step-card h4 {
+.dm-step-card h4 {
     font-size: 14px;
     opacity: 0.7;
     margin-bottom: 12px;
     font-family: 'Inter', sans-serif;
     font-weight: 500;
     text-align: left;
-    color: #ec4899;
 }
 
-.uiuxp-step-card h3 {
+.dm-step-card h3 {
     font-size: 16px;
     margin-bottom: 12px;
     font-family: 'Inter', sans-serif;
     font-weight: 600;
     text-align: left;
     line-height: 1.4;
-    color: white;
 }
 
-.uiuxp-step-card p {
+.dm-step-card p {
     font-size: 13px;
     line-height: 1.5;
     opacity: 0.8;
     font-family: 'Inter', sans-serif;
     text-align: left;
-    color: #cbd5e1;
 }
 
-.uiuxp-card-dot {
+.dm-card-dot {
     position: absolute;
     top: 16px;
     right: 16px;
     width: 10px;
     height: 10px;
-    background: #ec4899;
+    background: #f97316;
     border-radius: 50%;
-}
-
-.uiuxp-step-card:nth-child(4) {
-    grid-column: 1/2;
-}
-
-.uiuxp-step-card:nth-child(5) {
-    grid-column: 2/3;
 }
 
 /* ============================== */
 /* CIRCULAR STATS SECTION */
 /* ============================== */
-.uiuxp-circular-stats {
+.dm-circular-stats {
     width: 100%;
     background: #ffffff;
     padding: 120px 0;
@@ -701,7 +733,7 @@ body {
     text-align: center;
 }
 
-.uiuxp-stats-layout {
+.dm-stats-layout {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -709,12 +741,12 @@ body {
     margin: auto;
 }
 
-.uiuxp-stats-content {
+.dm-stats-content {
     max-width: 420px;
     text-align: left;
 }
 
-.uiuxp-stats-content h2 {
+.dm-stats-content h2 {
     font-family: "inter";
     font-size: 45px;
     margin-bottom: 20px;
@@ -723,7 +755,7 @@ body {
     color: #1e293b;
 }
 
-.uiuxp-stats-content p {
+.dm-stats-content p {
     font-family: "inter";
     font-size: 17px;
     line-height: 1.6;
@@ -732,86 +764,67 @@ body {
     font-weight: 500;
 }
 
-.uiuxp-stats-wrapper {
-    position: relative;
-    width: 400px;
-    height: 260px;
+.dm-stats-wrapper-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    width: 480px;
     margin-top: 20px;
-    margin-right: 80px;
+    transform: translateX(-80px);
 }
 
-.uiuxp-circle {
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
+.dm-stat-card {
+    position: relative;
+    left: 0;
+    background: #0f172a;
+    border-radius: 16px;
+    padding: 35px 20px;
+    width: 228px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: #3b82f6;
-    border: 2px solid rgba(255, 255, 255, 0.4);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
-    color: white;
-    animation: uiuxp-floatCircle 4s ease-in-out infinite;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.uiuxp-circle h2 {
+.dm-stat-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(249, 115, 22, 0.25);
+}
+
+.dm-stat-card h2 {
     color: #ffffff;
-    font-size: 52px;
+    font-size: 48px;
     margin: 0;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
 }
 
-.uiuxp-circle p {
+.dm-stat-card p {
     font-family: 'Inter', sans-serif;
-    font-size: 13.5px;
-    letter-spacing: 1px;
+    font-size: 14px;
+    letter-spacing: 0.5px;
     margin-top: 6px;
     font-weight: 600;
+    color: #94a3b8;
 }
 
-.uiuxp-circle-top {
-    top: -80px;
-    left: 25%;
-    transform: translateX(-50%);
+.dm-stat-card:nth-child(3),
+.dm-stat-card:nth-child(4) {
+    left: 126px;
 }
 
-.uiuxp-circle-left {
-    bottom: -40px;
-    left: -70px;
-    animation-delay: 0.6s;
-    background: #ec4899;
-}
-
-.uiuxp-circle-right {
-    bottom: -40px;
-    left: 280px;
-    animation-delay: 1.2s;
-}
-
-@keyframes uiuxp-floatCircle {
-    0% {
-        transform: translateY(0px);
-    }
-
-    50% {
-        transform: translateY(-10px);
-    }
-
-    100% {
-        transform: translateY(0px);
-    }
-}
-
-.uiuxp-bottom-stats {
+.dm-bottom-stats {
     margin-top: 120px;
     display: flex;
     justify-content: center;
-    grid-template-columns: repeat(4, 1fr);
     gap: 160px;
 }
 
-.uiuxp-stat h3 {
+.dm-stat h3 {
     font-family: "inter";
     font-weight: 600;
     color: #1e293b;
@@ -819,7 +832,7 @@ body {
     margin: 0;
 }
 
-.uiuxp-stat p {
+.dm-stat p {
     font-family: "inter", sans-serif;
     font-size: 16px;
     letter-spacing: 1px;
@@ -829,9 +842,9 @@ body {
 }
 
 /* ============================== */
-/* PROJECTS SECTION - UPDATED */
+/* PROJECTS SECTION */
 /* ============================== */
-.uiuxp-projects-section {
+.dm-projects-section {
     position: relative;
     width: 100%;
     height: 600px;
@@ -842,35 +855,47 @@ body {
     overflow: hidden;
 }
 
-.uiuxp-projects-bg-full {
+.dm-projects-bg-right {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
     z-index: 0;
-    opacity: 1;
 }
 
-.uiuxp-projects-logos {
+.dm-projects-bg-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scaleX(-1);
+    clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+    z-index: 0;
+}
+
+.dm-projects-logos {
     position: absolute;
     width: 100%;
     height: 100%;
     z-index: 1;
 }
 
-.uiuxp-project-logo {
+.dm-project-logo {
     position: absolute;
     object-fit: contain;
-    width: 50px;
-    height: 50px;
+    width: 38px;
+    height: 38px;
 }
 
-.uiuxp-project-logo-card {
+.dm-project-logo-card {
     position: absolute;
-    width: 55px;
-    height: 55px;
+    width: 48px;
+    height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -880,74 +905,28 @@ body {
     backdrop-filter: blur(6px);
 }
 
-.uiuxp-left-logos .l1 {
-    top: 80px;
-    left: 120px;
-}
+.dm-left-logos .l1 { top: 80px; left: 120px; }
+.dm-left-logos .l2 { top: 170px; left: 250px; }
+.dm-left-logos .l3 { top: 330px; left: 80px; }
+.dm-left-logos .l4 { top: 460px; left: 140px; }
+.dm-left-logos .l5 { top: 200px; left: 50px; }
+.dm-left-logos .l6 { top: 520px; left: 260px; }
 
-.uiuxp-left-logos .l2 {
-    top: 180px;
-    left: 230px;
-}
+.dm-right-logos .r1 { top: 80px; right: 120px; }
+.dm-right-logos .r2 { top: 170px; right: 250px; }
+.dm-right-logos .r3 { top: 330px; right: 80px; }
+.dm-right-logos .r4 { top: 460px; right: 140px; }
+.dm-right-logos .r5 { top: 200px; right: 50px; }
+.dm-right-logos .r6 { top: 520px; right: 260px; }
 
-.uiuxp-left-logos .l3 {
-    top: 320px;
-    left: 180px;
-}
-
-.uiuxp-left-logos .l4 {
-    top: 460px;
-    left: 80px;
-}
-
-.uiuxp-left-logos .l5 {
-    top: 180px;
-    left: 20px;
-}
-
-.uiuxp-left-logos .l6 {
-    top: 520px;
-    left: 240px;
-}
-
-.uiuxp-right-logos .r1 {
-    top: 80px;
-    right: 120px;
-}
-
-.uiuxp-right-logos .r2 {
-    top: 170px;
-    right: 250px;
-}
-
-.uiuxp-right-logos .r3 {
-    top: 330px;
-    right: 80px;
-}
-
-.uiuxp-right-logos .r4 {
-    top: 460px;
-    right: 140px;
-}
-
-.uiuxp-right-logos .r5 {
-    top: 200px;
-    right: 50px;
-}
-
-.uiuxp-right-logos .r6 {
-    top: 520px;
-    right: 260px;
-}
-
-.uiuxp-projects-content {
+.dm-projects-content {
     text-align: center;
     max-width: 700px;
     z-index: 5;
     position: relative;
 }
 
-.uiuxp-projects-content h1 {
+.dm-projects-content h1 {
     font-family: "inter", sans-serif;
     font-size: 68px;
     max-width: 700px;
@@ -957,7 +936,7 @@ body {
     margin: 0;
 }
 
-.uiuxp-projects-content p {
+.dm-projects-content p {
     font-family: "inter", sans-serif;
     margin-top: 20px;
     width: 650px;
@@ -969,14 +948,14 @@ body {
     margin-right: auto;
 }
 
-.uiuxp-projects-stats {
+.dm-projects-stats {
     display: flex;
     justify-content: center;
     gap: 60px;
     margin-top: 30px;
 }
 
-.uiuxp-projects-stats h2 {
+.dm-projects-stats h2 {
     font-family: "inter", sans-serif;
     font-size: 46px;
     font-weight: 800;
@@ -984,7 +963,7 @@ body {
     color: #111;
 }
 
-.uiuxp-projects-stats span {
+.dm-projects-stats span {
     font-family: "inter", sans-serif;
     font-size: 20px;
     color: #777;
@@ -993,7 +972,7 @@ body {
 /* ============================== */
 /* FEEDBACK SECTION */
 /* ============================== */
-.uiuxp-feedback-section {
+.dm-feedback-section {
     width: 100%;
     padding: 80px 0;
     background: #ffffff;
@@ -1001,14 +980,14 @@ body {
     overflow: hidden;
 }
 
-.uiuxp-feedback-header {
+.dm-feedback-header {
     max-width: 1200px;
     margin: 0 auto 60px;
     padding: 0 20px;
     text-align: left;
 }
 
-.uiuxp-feedback-title {
+.dm-feedback-title {
     font-size: 40px;
     font-weight: 700;
     color: #1e293b;
@@ -1016,13 +995,13 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
-.uiuxp-feedback-title span {
+.dm-feedback-title span {
     font-family: 'Inter', sans-serif;
     font-weight: 700;
-    color: #ec4899;
+    color: #f97316;
 }
 
-.uiuxp-feedback-description {
+.dm-feedback-description {
     font-size: 1.1rem;
     color: #475569;
     font-weight: 500;
@@ -1031,7 +1010,7 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
-.uiuxp-feedback-carousel {
+.dm-feedback-carousel {
     position: relative;
     width: 100%;
     height: 300px;
@@ -1040,7 +1019,7 @@ body {
     justify-content: center;
 }
 
-.uiuxp-feedback-card {
+.dm-feedback-card {
     position: absolute;
     width: 480px;
     padding: 35px;
@@ -1051,32 +1030,19 @@ body {
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
-.uiuxp-feedback-card.center {
-    transform: translateX(0) scale(1);
-    z-index: 3;
-    opacity: 1;
-}
+.dm-feedback-card.center { transform: translateX(0) scale(1); z-index: 3; opacity: 1; }
+.dm-feedback-card.left { transform: translateX(-480px) scale(0.9); opacity: 0.4; z-index: 1; }
+.dm-feedback-card.right { transform: translateX(480px) scale(0.9); opacity: 0.4; z-index: 1; }
+.dm-feedback-card.hidden { transform: scale(0.8); opacity: 0; z-index: 0; pointer-events: none; }
 
-.uiuxp-feedback-card.left {
-    transform: translateX(-480px) scale(0.9);
-    opacity: 0.4;
-    z-index: 1;
-}
-
-.uiuxp-feedback-card.right {
-    transform: translateX(480px) scale(0.9);
-    opacity: 0.4;
-    z-index: 1;
-}
-
-.uiuxp-feedback-rating {
-    color: #ec4899;
+.dm-feedback-rating {
+    color: #f97316;
     margin-bottom: 15px;
     font-size: 18px;
     letter-spacing: 2px;
 }
 
-.uiuxp-feedback-quote-icon {
+.dm-feedback-quote-icon {
     position: absolute;
     top: 20px;
     right: 25px;
@@ -1086,7 +1052,7 @@ body {
     font-family: Georgia, serif;
 }
 
-.uiuxp-feedback-text {
+.dm-feedback-text {
     font-size: 15px;
     line-height: 1.7;
     margin-bottom: 25px;
@@ -1096,33 +1062,33 @@ body {
     font-style: italic;
 }
 
-.uiuxp-feedback-author {
+.dm-feedback-author {
     display: flex;
     align-items: center;
     gap: 12px;
 }
 
-.uiuxp-author-avatar {
+.dm-author-avatar {
     width: 45px;
     height: 45px;
     border-radius: 50%;
     overflow: hidden;
-    border: 2px solid #ec4899;
-    background: linear-gradient(135deg, #3b82f6, #ec4899);
+    border: 2px solid #f97316;
+    background: linear-gradient(135deg, #f97316, #fb923c);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
 }
 
-.uiuxp-avatar-initial {
+.dm-avatar-initial {
     font-size: 1.2rem;
     font-weight: bold;
     color: white;
     font-family: 'Inter', sans-serif;
 }
 
-.uiuxp-author-name {
+.dm-author-name {
     font-weight: 700;
     color: #ffffff;
     font-family: 'Inter', sans-serif;
@@ -1130,26 +1096,26 @@ body {
     margin-bottom: 4px;
 }
 
-.uiuxp-author-role {
+.dm-author-role {
     font-size: 13px;
     opacity: 0.7;
     color: #e2e8f0;
     font-family: 'Inter', sans-serif;
 }
 
-.uiuxp-feedback-controls {
+.dm-feedback-controls {
     margin-top: 40px;
     display: flex;
     justify-content: center;
     gap: 20px;
 }
 
-.uiuxp-feedback-controls button {
+.dm-feedback-controls button {
     width: 45px;
     height: 45px;
     border-radius: 50%;
     border: none;
-    background: #ec4899;
+    background: #f97316;
     color: white;
     font-size: 24px;
     cursor: pointer;
@@ -1158,1319 +1124,55 @@ body {
     align-items: center;
     justify-content: center;
     line-height: 1;
-    box-shadow: 0 5px 15px rgba(236, 72, 153, 0.3);
+    box-shadow: 0 5px 15px rgba(249, 115, 22, 0.3);
 }
 
-.uiuxp-feedback-controls button:hover {
-    background: #3b82f6;
+.dm-feedback-controls button:hover {
+    background: #ea580c;
     transform: scale(1.1);
-    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
-}
-
-.uiuxp-feedback-controls button:active {
-    transform: scale(0.95);
+    box-shadow: 0 8px 20px rgba(249, 115, 22, 0.4);
 }
 
 /* ============================== */
 /* RESPONSIVE DESIGN */
 /* ============================== */
 
-/* Large Desktop (1400px and above) */
-@media (min-width: 1400px) {
-    .uiuxp-container {
-        max-width: 1320px;
-    }
-
-    .uiuxp-feedback-header {
-        max-width: 1320px;
-    }
-
-    .uiuxp-dna-container {
-        width: 1320px;
-    }
-
-    .uiuxp-stats-layout {
-        width: 1320px;
-    }
-}
-
-/* Desktop (1200px - 1399px) */
-@media (max-width: 1399px) and (min-width: 1025px) {
-    .uiuxp-container {
-        max-width: 1140px;
-    }
-
-    .uiuxp-hero-title {
-        font-size: 60px;
-    }
-
-    .uiuxp-about-title {
-        font-size: 2.8rem;
-    }
-
-    .uiuxp-cards-grid {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 20px;
-    }
-
-    .uiuxp-dna-container {
-        width: 90%;
-        gap: 100px;
-    }
-
-    .uiuxp-dna-right {
-        right: 0;
-    }
-
-    .uiuxp-howworks-container {
-        width: 90%;
-        gap: 60px;
-    }
-
-    .uiuxp-arrow {
-        margin-left: 300px;
-    }
-
-    .uiuxp-section-title {
-        margin-left: 300px;
-    }
-
-    .uiuxp-stats-layout {
-        width: 90%;
-    }
-
-    .uiuxp-stats-content p {
-        width: 100%;
-    }
-
-    .uiuxp-stats-wrapper {
-        margin-right: 40px;
-    }
-
-    .uiuxp-bottom-stats {
-        gap: 100px;
-    }
-
-    .uiuxp-feedback-card {
-        width: 440px;
-    }
-
-    .uiuxp-feedback-card.left {
-        transform: translateX(-520px) scale(0.9);
-    }
-
-    .uiuxp-feedback-card.right {
-        transform: translateX(520px) scale(0.9);
-    }
-}
-
-/* Tablet (1024px and below) */
 @media (max-width: 1024px) {
-    .uiuxp-hero {
-        padding: 140px 20px 220px;
-        height: auto;
-        min-height: 650px;
-    }
-
-    .uiuxp-hero-title {
-        font-size: 54px;
-    }
-
-    .uiuxp-hero-desc {
-        font-size: 16px;
-        max-width: 700px;
-    }
-
-    .uiuxp-floating-card.uiuxp-left {
-        left: 30px;
-    }
-
-    .uiuxp-floating-card.uiuxp-right {
-        right: 30px;
-    }
-
-    .uiuxp-floating-card {
-        width: 200px;
-        padding: 12px 15px;
-    }
-
-    .uiuxp-badge-glass {
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
-        bottom: 40px;
-        max-width: 90%;
-    }
-
-    .uiuxp-badge-research,
-    .uiuxp-badge-testing {
-        top: 0;
-        left: 0;
-        right: 0;
-    }
-
-    .uiuxp-gradient-shape {
-        width: 400px;
-        height: 400px;
-    }
-
-    .uiuxp-about-title {
-        font-size: 2.5rem;
-    }
-
-    .uiuxp-cards-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
-
-    .uiuxp-card-image {
-        height: 140px;
-    }
-
-    .uiuxp-dna-container {
-        flex-direction: column;
-        width: 90%;
-        gap: 60px;
-    }
-
-    .uiuxp-dna-left {
-        max-width: 100%;
-        text-align: center;
-    }
-
-    .uiuxp-dna-left h2 {
-        margin-right: 0;
-    }
-
-    .uiuxp-dna-subtitle {
-        text-align: center;
-    }
-
-    .uiuxp-dna-left p {
-        text-align: center;
-    }
-
-    .uiuxp-dna-right {
-        right: 0;
-        margin: 0 auto;
-    }
-
-    .uiuxp-howworks-container {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .uiuxp-left-side {
-        text-align: center;
-        margin-top: 20px;
-    }
-
-    .uiuxp-badge {
-        justify-content: center;
-    }
-
-    .uiuxp-intro-text {
-        text-align: center;
-    }
-
-    .uiuxp-main-title {
-        text-align: center;
-    }
-
-    .uiuxp-arrow {
-        margin-left: 0;
-        margin-top: 20px;
-        text-align: center;
-    }
-
-    .uiuxp-right-side {
-        text-align: center;
-    }
-
-    .uiuxp-section-title {
-        margin-left: 0;
-        text-align: center;
-        font-size: 32px;
-        white-space: normal;
-    }
-
-    .uiuxp-steps-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .uiuxp-step-card:nth-child(5) {
-        grid-column: 1/3;
-        max-width: 50%;
-        margin: 0 auto;
-    }
-
-    .uiuxp-stats-layout {
-        flex-direction: column;
-        width: 90%;
-        gap: 60px;
-    }
-
-    .uiuxp-stats-content {
-        max-width: 100%;
-        text-align: center;
-    }
-
-    .uiuxp-stats-content h2 {
-        width: 100%;
-    }
-
-    .uiuxp-stats-content p {
-        width: 100%;
-    }
-
-    .uiuxp-stats-wrapper {
-        margin-right: 0;
-    }
-
-    .uiuxp-bottom-stats {
-        gap: 60px;
-        flex-wrap: wrap;
-    }
-
-    .uiuxp-projects-content h1 {
-        font-size: 50px;
-    }
-
-    .uiuxp-projects-content p {
-        width: 450px;
-        font-size: 16px;
-    }
-
-    .uiuxp-left-logos .l1 {
-        left: 60px;
-    }
-
-    .uiuxp-left-logos .l2 {
-        left: 150px;
-    }
-
-    .uiuxp-left-logos .l3 {
-        left: 100px;
-    }
-
-    .uiuxp-left-logos .l4 {
-        left: 30px;
-    }
-
-    .uiuxp-left-logos .l5 {
-        left: 10px;
-    }
-
-    .uiuxp-left-logos .l6 {
-        left: 180px;
-    }
-
-    .uiuxp-right-logos .r1 {
-        right: 60px;
-    }
-
-    .uiuxp-right-logos .r2 {
-        right: 150px;
-    }
-
-    .uiuxp-right-logos .r3 {
-        right: 30px;
-    }
-
-    .uiuxp-right-logos .r4 {
-        right: 100px;
-    }
-
-    .uiuxp-right-logos .r5 {
-        right: 20px;
-    }
-
-    .uiuxp-right-logos .r6 {
-        right: 200px;
-    }
-
-    .uiuxp-feedback-header {
-        padding: 0 25px;
-        margin-bottom: 50px;
-    }
-
-    .uiuxp-feedback-title {
-        font-size: 36px;
-    }
-
-    .uiuxp-feedback-description {
-        font-size: 1rem;
-        max-width: 500px;
-    }
-
-    .uiuxp-feedback-card {
-        width: 400px;
-        padding: 30px;
-    }
-
-    .uiuxp-feedback-card.left {
-        transform: translateX(-470px) scale(0.9);
-    }
-
-    .uiuxp-feedback-card.right {
-        transform: translateX(470px) scale(0.9);
-    }
-
-    .uiuxp-feedback-text {
-        font-size: 14px;
-    }
-
-    .uiuxp-feedback-carousel {
-        height: 340px;
-    }
+    .dm-hero { padding: 140px 20px 220px; height: auto; min-height: 650px; }
+    .dm-hero-title { font-size: 54px; }
+    .dm-floating-card { display: none; }
+    .dm-cards-grid { grid-template-columns: repeat(2, 1fr); }
+    .dm-dna-container { flex-direction: column; gap: 60px; }
+    .dm-howworks-container { grid-template-columns: 1fr; }
+    .dm-stats-layout { flex-direction: column; gap: 60px; }
+    .dm-projects-content h1 { font-size: 50px; }
 }
 
-/* Tablet Specific (768px - 1024px) */
-@media (max-width: 1024px) and (min-width: 768px) {
-
-    html,
-    body {
-        max-width: 100%;
-        overflow-x: hidden;
-    }
-
-    .uiuxp-container {
-        width: 100%;
-        box-sizing: border-box;
-        padding: 0 25px;
-    }
-
-    section {
-        max-width: 100vw;
-        overflow: hidden;
-    }
-
-    .uiuxp-about-section,
-    .uiuxp-howworks,
-    .uiuxp-circular-stats,
-    .uiuxp-projects-section,
-    .uiuxp-feedback-section {
-        padding: 80px 0;
-    }
-
-    .uiuxp-feedback-section {
-        padding: 70px 0;
-        margin-bottom: 40px;
-    }
-
-    .uiuxp-cards-grid {
-        gap: 20px;
-    }
-
-    .uiuxp-card-image {
-        height: 150px;
-    }
-}
-
-/* Nest Hub specific fix */
-@media (width: 1024px) and (height: 600px) {
-    .uiuxp-hero {
-        min-height: 550px;
-    }
-
-    .uiuxp-feedback-carousel {
-        height: 300px;
-    }
-}
-
-/* iPad Pro portrait specific */
-@media (width: 1024px) and (height: 1366px) {
-    .uiuxp-container {
-        max-width: 95%;
-        padding: 0 30px;
-    }
-
-    .uiuxp-about-section,
-    .uiuxp-howworks,
-    .uiuxp-circular-stats,
-    .uiuxp-projects-section {
-        padding: 100px 0;
-    }
-
-    .uiuxp-feedback-carousel {
-        height: 340px;
-    }
-}
-
-/* Mobile (768px and below) */
 @media (max-width: 768px) {
-    .uiuxp-hero {
-        padding: 120px 15px 200px;
-        min-height: 600px;
-    }
-
-    .uiuxp-hero-title {
-        font-size: 42px;
-    }
-
-    .uiuxp-hero-badge {
-        font-size: 16px;
-        padding: 8px 25px;
-    }
-
-    .uiuxp-hero-desc {
-        font-size: 15px;
-        max-width: 100%;
-        padding: 0 15px;
-    }
-
-    .uiuxp-privacy-badge {
-        font-size: 14px;
-        padding: 10px 20px;
-    }
-
-    .uiuxp-floating-card {
-        display: none;
-    }
-
-    .uiuxp-badge-glass {
-        gap: 10px;
-        position: relative;
-        bottom: 0;
-        margin-top: 40px;
-        flex-wrap: wrap;
-    }
-
-    .uiuxp-service-badge {
-        font-size: 14px;
-        padding: 8px 15px;
-    }
-
-    .uiuxp-gradient-shape {
-        width: 300px;
-        height: 300px;
-    }
-
-    .uiuxp-about-section {
-        padding: 60px 0;
-    }
-
-    .uiuxp-about-title {
-        font-size: 2.2rem;
-        text-align: center;
-    }
-
-    .uiuxp-about-title::after {
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .uiuxp-about-description {
-        text-align: center;
-        font-size: 1rem;
-    }
-
-    .uiuxp-cards-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .uiuxp-card-image {
-        height: 160px;
-    }
-
-    .uiuxp-card-title {
-        font-size: 1.1rem;
-    }
-
-    .uiuxp-card-description {
-        font-size: 0.9rem;
-    }
-
-    .uiuxp-dna-section {
-        padding: 60px 0;
-    }
-
-    .uiuxp-dna-left h2 {
-        font-size: 40px;
-    }
-
-    .uiuxp-dna-subtitle {
-        font-size: 24px;
-    }
-
-    .uiuxp-dna-left p {
-        font-size: 16px;
-    }
-
-    .uiuxp-dna-right {
-        width: 100%;
-        height: 500px;
-        right: 0;
-    }
-
-    .uiuxp-dna-circle {
-        width: 130px;
-        height: 130px;
-    }
-
-    .uiuxp-dna-circle h3 {
-        font-size: 14px;
-    }
-
-    .uiuxp-circle-desc {
-        font-size: 9px;
-    }
-
-    .uiuxp-circle-usability {
-        top: -30px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .uiuxp-circle-accessibility {
-        top: 110px;
-        left: 15px;
-    }
-
-    .uiuxp-circle-visual {
-        top: 110px;
-        right: 15px;
-        left: auto;
-    }
-
-    .uiuxp-circle-interaction {
-        top: 250px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .uiuxp-circle-responsive {
-        bottom: -30px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .uiuxp-howworks {
-        padding: 60px 0;
-        min-height: auto;
-    }
-
-    .uiuxp-left-side {
-        margin-top: 0;
-    }
-
-    .uiuxp-badge {
-        margin-top: 20px;
-    }
-
-    .uiuxp-intro-text {
-        margin-top: 20px;
-        font-size: 14px;
-    }
-
-    .uiuxp-main-title {
-        font-size: 36px;
-        margin-top: 20px;
-    }
-
-    .uiuxp-steps-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-
-    .uiuxp-step-card {
-        padding: 20px;
-        min-height: auto;
-    }
-
-    .uiuxp-step-card h3 {
-        font-size: 16px;
-    }
-
-    .uiuxp-step-card p {
-        font-size: 13px;
-    }
-
-    .uiuxp-step-card:nth-child(4),
-    .uiuxp-step-card:nth-child(5) {
-        grid-column: auto;
-    }
-
-    .uiuxp-circular-stats {
-        padding: 60px 0;
-    }
-
-    .uiuxp-stats-content h2 {
-        font-size: 32px;
-    }
-
-    .uiuxp-stats-content p {
-        font-size: 15px;
-    }
-
-    .uiuxp-stats-wrapper {
-        width: 300px;
-        height: 220px;
-        margin: 20px auto;
-    }
-
-    .uiuxp-circle {
-        width: 150px;
-        height: 150px;
-    }
-
-    .uiuxp-circle h2 {
-        font-size: 36px;
-    }
-
-    .uiuxp-circle p {
-        font-size: 11px;
-    }
-
-    .uiuxp-circle-top {
-        top: -60px;
-        left: 30%;
-    }
-
-    .uiuxp-circle-left {
-        bottom: -30px;
-        left: -30px;
-    }
-
-    .uiuxp-circle-right {
-        bottom: -30px;
-        left: 180px;
-    }
-
-    .uiuxp-bottom-stats {
-        gap: 40px;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 80px;
-    }
-
-    .uiuxp-stat h3 {
-        font-size: 36px;
-    }
-
-    .uiuxp-stat p {
-        font-size: 14px;
-    }
-
-    .uiuxp-projects-section {
-        height: 500px;
-    }
-
-    .uiuxp-projects-content h1 {
-        font-size: 40px;
-    }
-
-    .uiuxp-projects-content p {
-        width: 90%;
-        font-size: 15px;
-        margin-top: 15px;
-    }
-
-    .uiuxp-projects-stats {
-        gap: 30px;
-        margin-top: 20px;
-    }
-
-    .uiuxp-projects-stats h2 {
-        font-size: 28px;
-    }
-
-    .uiuxp-projects-stats span {
-        font-size: 13px;
-    }
-
-    .uiuxp-left-logos .l3,
-    .uiuxp-left-logos .l5,
-    .uiuxp-right-logos .r3,
-    .uiuxp-right-logos .r5 {
-        display: none;
-    }
-
-    .uiuxp-feedback-section {
-        padding: 60px 0;
-    }
-
-    .uiuxp-feedback-header {
-        padding: 0 20px;
-        margin-bottom: 40px;
-    }
-
-    .uiuxp-feedback-title {
-        font-size: 32px;
-    }
-
-    .uiuxp-feedback-description {
-        font-size: 0.95rem;
-        max-width: 100%;
-    }
-
-    .uiuxp-feedback-carousel {
-        height: 400px;
-    }
-
-    .uiuxp-feedback-card {
-        width: 340px;
-        padding: 25px;
-    }
-
-    .uiuxp-feedback-card.left {
-        transform: translateX(-360px) scale(0.9);
-    }
-
-    .uiuxp-feedback-card.right {
-        transform: translateX(360px) scale(0.9);
-    }
-
-    .uiuxp-feedback-text {
-        font-size: 13px;
-        line-height: 1.6;
-        margin-bottom: 22px;
-    }
-
-    .uiuxp-feedback-quote-icon {
-        font-size: 40px;
-        top: 15px;
-        right: 20px;
-    }
-
-    .uiuxp-feedback-rating {
-        font-size: 16px;
-    }
-
-    .uiuxp-author-avatar {
-        width: 40px;
-        height: 40px;
-    }
-
-    .uiuxp-avatar-initial {
-        font-size: 1.1rem;
-    }
-
-    .uiuxp-author-name {
-        font-size: 15px;
-    }
-
-    .uiuxp-author-role {
-        font-size: 12px;
-    }
-
-    .uiuxp-feedback-controls button {
-        width: 40px;
-        height: 40px;
-        font-size: 20px;
-    }
-
-    html,
-    body {
-        overflow-x: hidden;
-        width: 100%;
-    }
-
-    .uiuxp-container {
-        padding: 0 15px;
-    }
+    .dm-hero-title { font-size: 42px; }
+    .dm-about-title { font-size: 2.2rem; text-align: center; }
+    .dm-cards-grid { grid-template-columns: 1fr; }
+    .dm-feedback-card { width: 340px; }
+    .dm-feedback-card.left { transform: translateX(-360px) scale(0.9); }
+    .dm-feedback-card.right { transform: translateX(360px) scale(0.9); }
 }
 
-/* Small Mobile (480px and below) */
 @media (max-width: 480px) {
-    .uiuxp-hero-title {
-        font-size: 32px;
-    }
-
-    .uiuxp-hero-badge {
-        font-size: 14px;
-        padding: 6px 20px;
-    }
-
-    .uiuxp-hero-desc {
-        font-size: 14px;
-    }
-
-    .uiuxp-privacy-badge {
-        font-size: 12px;
-        padding: 8px 16px;
-    }
-
-    .uiuxp-service-badge {
-        font-size: 12px;
-        padding: 6px 12px;
-    }
-
-    .uiuxp-about-title {
-        font-size: 2rem;
-    }
-
-    .uiuxp-about-description {
-        font-size: 0.95rem;
-    }
-
-    .uiuxp-card-image {
-        height: 140px;
-    }
-
-    .uiuxp-card-title {
-        font-size: 1rem;
-    }
-
-    .uiuxp-card-description {
-        font-size: 0.85rem;
-    }
-
-    .uiuxp-dna-left h2 {
-        font-size: 32px;
-    }
-
-    .uiuxp-dna-subtitle {
-        font-size: 20px;
-    }
-
-    .uiuxp-dna-right {
-        height: 400px;
-    }
-
-    .uiuxp-dna-circle {
-        width: 110px;
-        height: 110px;
-    }
-
-    .uiuxp-dna-circle h3 {
-        font-size: 12px;
-        margin-top: 5px;
-    }
-
-    .uiuxp-circle-desc {
-        display: none;
-    }
-
-    .uiuxp-dna-circle .uiuxp-icon {
-        font-size: 14px;
-    }
-
-    .uiuxp-circle-usability {
-        top: -20px;
-    }
-
-    .uiuxp-circle-accessibility {
-        top: 90px;
-        left: 10px;
-    }
-
-    .uiuxp-circle-visual {
-        top: 90px;
-        right: 10px;
-    }
-
-    .uiuxp-circle-interaction {
-        top: 200px;
-    }
-
-    .uiuxp-circle-responsive {
-        bottom: -20px;
-    }
-
-    .uiuxp-main-title {
-        font-size: 32px;
-    }
-
-    .uiuxp-intro-text {
-        font-size: 13px;
-    }
-
-    .uiuxp-section-title {
-        font-size: 28px;
-    }
-
-    .uiuxp-step-card h3 {
-        font-size: 15px;
-    }
-
-    .uiuxp-step-card p {
-        font-size: 12px;
-    }
-
-    .uiuxp-stats-content h2 {
-        font-size: 28px;
-    }
-
-    .uiuxp-stats-content p {
-        font-size: 14px;
-    }
-
-    .uiuxp-stats-wrapper {
-        width: 260px;
-        height: 200px;
-    }
-
-    .uiuxp-circle {
-        width: 120px;
-        height: 120px;
-    }
-
-    .uiuxp-circle h2 {
-        font-size: 28px;
-    }
-
-    .uiuxp-circle-top {
-        top: -50px;
-        left: 30%;
-    }
-
-    .uiuxp-circle-left {
-        bottom: -20px;
-        left: -20px;
-    }
-
-    .uiuxp-circle-right {
-        bottom: -20px;
-        left: 150px;
-    }
-
-    .uiuxp-bottom-stats {
-        gap: 30px;
-    }
-
-    .uiuxp-stat h3 {
-        font-size: 32px;
-    }
-
-    .uiuxp-projects-section {
-        height: 450px;
-    }
-
-    .uiuxp-projects-content h1 {
-        font-size: 32px;
-    }
-
-    .uiuxp-projects-content p {
-        font-size: 14px;
-    }
-
-    .uiuxp-projects-stats {
-        gap: 20px;
-    }
-
-    .uiuxp-projects-stats h2 {
-        font-size: 24px;
-    }
-
-    .uiuxp-projects-stats span {
-        font-size: 12px;
-    }
-
-    .uiuxp-left-logos .l2,
-    .uiuxp-left-logos .l6,
-    .uiuxp-right-logos .r2,
-    .uiuxp-right-logos .r6 {
-        display: none;
-    }
-
-    .uiuxp-feedback-header {
-        padding: 0 15px;
-        margin-bottom: 35px;
-    }
-
-    .uiuxp-feedback-title {
-        font-size: 28px;
-    }
-
-    .uiuxp-feedback-description {
-        font-size: 0.9rem;
-    }
-
-    .uiuxp-feedback-carousel {
-        height: 420px;
-    }
-
-    .uiuxp-feedback-card {
-        width: 280px;
-        padding: 22px;
-    }
-
-    .uiuxp-feedback-card.left {
-        transform: translateX(-300px) scale(0.9);
-    }
-
-    .uiuxp-feedback-card.right {
-        transform: translateX(300px) scale(0.9);
-    }
-
-    .uiuxp-feedback-text {
-        font-size: 12px;
-        line-height: 1.5;
-        margin-bottom: 20px;
-        padding-right: 10px;
-    }
-
-    .uiuxp-feedback-quote-icon {
-        font-size: 36px;
-        top: 12px;
-        right: 15px;
-    }
-
-    .uiuxp-feedback-rating {
-        font-size: 14px;
-        margin-bottom: 10px;
-    }
-
-    .uiuxp-author-avatar {
-        width: 35px;
-        height: 35px;
-    }
-
-    .uiuxp-avatar-initial {
-        font-size: 1rem;
-    }
-
-    .uiuxp-author-name {
-        font-size: 14px;
-        margin-bottom: 2px;
-    }
-
-    .uiuxp-author-role {
-        font-size: 11px;
-    }
-
-    .uiuxp-feedback-controls {
-        gap: 15px;
-        margin-top: 30px;
-    }
-
-    .uiuxp-feedback-controls button {
-        width: 38px;
-        height: 38px;
-        font-size: 18px;
-    }
-}
-
-/* Extra Small Mobile (375px and below) */
-@media (max-width: 375px) {
-    .uiuxp-hero-title {
-        font-size: 28px;
-    }
-
-    .uiuxp-hero-badge {
-        font-size: 12px;
-        padding: 5px 15px;
-    }
-
-    .uiuxp-hero-desc {
-        font-size: 13px;
-    }
-
-    .uiuxp-about-title {
-        font-size: 1.8rem;
-    }
-
-    .uiuxp-dna-left h2 {
-        font-size: 28px;
-    }
-
-    .uiuxp-dna-subtitle {
-        font-size: 18px;
-    }
-
-    .uiuxp-dna-right {
-        height: 350px;
-    }
-
-    .uiuxp-dna-circle {
-        width: 100px;
-        height: 100px;
-    }
-
-    .uiuxp-dna-circle h3 {
-        font-size: 11px;
-    }
-
-    .uiuxp-circle-usability {
-        top: -15px;
-    }
-
-    .uiuxp-circle-accessibility {
-        top: 80px;
-        left: 5px;
-    }
-
-    .uiuxp-circle-visual {
-        top: 80px;
-        right: 5px;
-    }
-
-    .uiuxp-circle-interaction {
-        top: 175px;
-    }
-
-    .uiuxp-circle-responsive {
-        bottom: -15px;
-    }
-
-    .uiuxp-stats-wrapper {
-        width: 220px;
-    }
-
-    .uiuxp-circle {
-        width: 100px;
-        height: 100px;
-    }
-
-    .uiuxp-circle h2 {
-        font-size: 24px;
-    }
-
-    .uiuxp-circle-top {
-        top: -40px;
-        left: 30%;
-    }
-
-    .uiuxp-circle-left {
-        bottom: -15px;
-        left: -15px;
-    }
-
-    .uiuxp-circle-right {
-        bottom: -15px;
-        left: 120px;
-    }
-
-    .uiuxp-projects-content h1 {
-        font-size: 28px;
-    }
-
-    .uiuxp-projects-stats {
-        gap: 15px;
-    }
-
-    .uiuxp-projects-stats h2 {
-        font-size: 22px;
-    }
-
-    .uiuxp-feedback-header {
-        padding: 0 12px;
-    }
-
-    .uiuxp-feedback-title {
-        font-size: 24px;
-    }
-
-    .uiuxp-feedback-description {
-        font-size: 0.85rem;
-    }
-
-    .uiuxp-feedback-card {
-        width: 260px;
-        padding: 20px;
-    }
-
-    .uiuxp-feedback-card.left {
-        transform: translateX(-280px) scale(0.9);
-    }
-
-    .uiuxp-feedback-card.right {
-        transform: translateX(280px) scale(0.9);
-    }
-
-    .uiuxp-feedback-text {
-        font-size: 11.5px;
-        margin-bottom: 18px;
-    }
-
-    .uiuxp-feedback-quote-icon {
-        font-size: 32px;
-    }
-
-    .uiuxp-author-avatar {
-        width: 32px;
-        height: 32px;
-    }
-
-    .uiuxp-avatar-initial {
-        font-size: 0.9rem;
-    }
-
-    .uiuxp-author-name {
-        font-size: 13px;
-    }
-
-    .uiuxp-author-role {
-        font-size: 10px;
-    }
-
-    .uiuxp-card-image {
-        height: 120px;
-    }
-}
-
-/* Landscape Mode Fixes */
-@media (max-height: 500px) and (orientation: landscape) {
-    .uiuxp-hero {
-        min-height: 500px;
-        padding: 100px 20px 150px;
-    }
-
-    .uiuxp-floating-card {
-        transform: scale(0.8);
-    }
-
-    .uiuxp-badge-glass {
-        bottom: 20px;
-    }
-
-    .uiuxp-howworks {
-        min-height: auto;
-        padding: 60px 0;
-    }
-
-    .uiuxp-circular-stats {
-        padding: 60px 0;
-    }
-
-    .uiuxp-bottom-stats {
-        margin-top: 80px;
-    }
-
-    .uiuxp-projects-section {
-        height: 400px;
-    }
-
-    .uiuxp-feedback-carousel {
-        height: 280px;
-    }
-
-    .uiuxp-feedback-card {
-        padding: 20px;
-    }
-
-    .uiuxp-feedback-text {
-        max-height: 100px;
-        overflow-y: auto;
-        margin-bottom: 15px;
-    }
-
-    .uiuxp-feedback-author {
-        margin-top: 10px;
-    }
+    .dm-hero-title { font-size: 32px; }
+    .dm-dna-circle { width: 110px; height: 110px; }
+    .dm-stat-card { width: 100%; left: 0 !important; }
 }
 
 /* Performance optimizations */
-.uiuxp-card-image img,
-.uiuxp-project-image img {
+.dm-card-image img,
+.dm-project-image img {
     will-change: transform;
 }
 
 /* Smooth transitions */
-.uiuxp-feedback-card,
-.uiuxp-about-card,
-.uiuxp-step-card,
-.uiuxp-dna-circle {
+.dm-feedback-card,
+.dm-about-card,
+.dm-step-card,
+.dm-dna-circle {
     transition: all 0.3s ease;
-}
-
-/* Accessibility improvements */
-@media (prefers-reduced-motion: reduce) {
-    * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
 }

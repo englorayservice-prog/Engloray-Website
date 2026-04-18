@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { submitEnrollment } from "../../Sub Pages/HandleSubmit/HandleSubmit";
+import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import NavigationBar from '../../TechLearningSection/NavigationBar/NavigationBar';
 import {
   faPaintBrush,
@@ -95,6 +96,7 @@ import jfsHero2 from '../../../assets/jfs_hero_2.jpeg';
 import jfsHero3 from '../../../assets/j.jpeg';
 import jfsHero4 from '../../../assets/v.jpeg';
 import jfsHero5 from '../../../assets/jfs_hero_5.jpeg';
+import { div } from 'three/src/nodes/math/OperatorNode.js';
 
 const jfsHeroAssets = {
   a1: jfsHero1,
@@ -627,247 +629,175 @@ const JavaFullStackCourse = () => {
   };
 
   return (
-    <div className="jfs-page" style={{ '--jfs-fluid-scale': `${fluidScale}px` }}>
-      <NavigationBar />
-      {/* Hero Section Upgrade - Minimalist Premium Design */}
-      <header className="jfs-hero-v3">
-        {/* Animated Sparkles - Randomly placed, bigger and bolder */}
-        <div className="jfs-v3-sparkle-wrapper">
-          <div className="jfs-v3-sparkle sparkle-lg sparkle-pos-1"><FontAwesomeIcon icon={faStar} /></div>
-          <div className="jfs-v3-sparkle sparkle-sm sparkle-pos-2"><FontAwesomeIcon icon={faStar} /></div>
-          <div className="jfs-v3-sparkle sparkle-md sparkle-pos-3"><FontAwesomeIcon icon={faMagic} /></div>
-          <div className="jfs-v3-sparkle sparkle-lg sparkle-pos-4"><FontAwesomeIcon icon={faStar} /></div>
-          <div className="jfs-v3-sparkle sparkle-sm sparkle-pos-5"><FontAwesomeIcon icon={faMagic} /></div>
-          <div className="jfs-v3-sparkle sparkle-md sparkle-pos-6"><FontAwesomeIcon icon={faStar} /></div>
-          <div className="jfs-v3-sparkle sparkle-lg sparkle-pos-7"><FontAwesomeIcon icon={faStar} /></div>
-          <div className="jfs-v3-sparkle sparkle-sm sparkle-pos-8"><FontAwesomeIcon icon={faMagic} /></div>
-        </div>
+    <>
+      <div>
+        <TopNavBar />
+        <NavigationBar />
+        <div className="jfs-page" style={{ '--jfs-fluid-scale': `${fluidScale}px` }}>
+          {/* Hero Section Upgrade - Minimalist Premium Design */}
+          <header className="jfs-hero-v3">
+            {/* Animated Sparkles - Randomly placed, bigger and bolder */}
+            <div className="jfs-v3-sparkle-wrapper">
+              <div className="jfs-v3-sparkle sparkle-lg sparkle-pos-1"><FontAwesomeIcon icon={faStar} /></div>
+              <div className="jfs-v3-sparkle sparkle-sm sparkle-pos-2"><FontAwesomeIcon icon={faStar} /></div>
+              <div className="jfs-v3-sparkle sparkle-md sparkle-pos-3"><FontAwesomeIcon icon={faMagic} /></div>
+              <div className="jfs-v3-sparkle sparkle-lg sparkle-pos-4"><FontAwesomeIcon icon={faStar} /></div>
+              <div className="jfs-v3-sparkle sparkle-sm sparkle-pos-5"><FontAwesomeIcon icon={faMagic} /></div>
+              <div className="jfs-v3-sparkle sparkle-md sparkle-pos-6"><FontAwesomeIcon icon={faStar} /></div>
+              <div className="jfs-v3-sparkle sparkle-lg sparkle-pos-7"><FontAwesomeIcon icon={faStar} /></div>
+              <div className="jfs-v3-sparkle sparkle-sm sparkle-pos-8"><FontAwesomeIcon icon={faMagic} /></div>
+            </div>
 
-        <div className="jfs-v3-container">
-          <div className="jfs-v3-header-content">
-            <h1 className="jfs-v3-main-title">
-              Professional <span className="jfs-v3-arrow-capsule-straight">→</span> Java <br /> Full Stack Mastery
-            </h1>
+            <div className="jfs-v3-container">
+              <div className="jfs-v3-header-content">
+                <h1 className="jfs-v3-main-title">
+                  Professional <span className="jfs-v3-arrow-capsule-straight">→</span> Java <br /> Full Stack Mastery
+                </h1>
 
-            <p className="jfs-v3-subtitle-original">
-              Transform Your Tech Career in 6 Months. Master industry frameworks like Spring Boot, Microservices & React.js to build scalable enterprise apps.
-            </p>
+                <p className="jfs-v3-subtitle-original">
+                  Transform Your Tech Career in 6 Months. Master industry frameworks like Spring Boot, Microservices & React.js to build scalable enterprise apps.
+                </p>
 
-            <div className="jfs-v3-sub-row">
-              <div className="jfs-v3-members-info">
-                <p>With more than</p>
-                <h3>3K+ DEVELOPERS</h3>
-                <h3>800+ LAB SESSIONS</h3>
+                <div className="jfs-v3-sub-row">
+                  <div className="jfs-v3-members-info">
+                    <p>With more than</p>
+                    <h3>3K+ DEVELOPERS</h3>
+                    <h3>800+ LAB SESSIONS</h3>
+                  </div>
+
+                  <button className="jfs-v3-join-btn" onClick={scrollToForm}>
+                    Join us <span className="jfs-v3-join-arrow">↗</span>
+                  </button>
+                </div>
               </div>
 
-              <button className="jfs-v3-join-btn" onClick={scrollToForm}>
-                Join us <span className="jfs-v3-join-arrow">↗</span>
-              </button>
+              <div className="jfs-v3-asset-gallery">
+                <div className="jfs-v3-card jfs-card-blue">
+                  <img src={jfsHeroAssets.a1} alt="JFS Asset 1" className="jfs-v3-card-img" />
+                </div>
+                <div className="jfs-v3-card jfs-card-dark">
+                  <img src={jfsHeroAssets.a2} alt="JFS Asset 2" className="jfs-v3-card-img" />
+                </div>
+                <div className="jfs-v3-card jfs-card-center-featured">
+                  <img src={jfsHeroAssets.a3} alt="JFS Asset 3" className="jfs-v3-card-img" />
+                </div>
+                <div className="jfs-v3-card jfs-card-dark">
+                  <img src={jfsHeroAssets.a4} alt="JFS Asset 4" className="jfs-v3-card-img" />
+                </div>
+                <div className="jfs-v3-card jfs-card-blue">
+                  <img src={jfsHeroAssets.a5} alt="JFS Asset 5" className="jfs-v3-card-img" />
+                </div>
+              </div>
+            </div>
+          </header>
+
+          {/* Marquee Section bridging Hero and Intro */}
+          <div className="jfs-v2-marquee-container">
+            <div className="jfs-v2-marquee">
+              <span>
+                JAVA <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
+                SPRING BOOT <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
+                MICROSERVICES <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
+                REACT.JS <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
+                AWS CLOUD <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
+                DOCKER <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
+                SQL & NO-SQL <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
+                KUBERNETES <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
+                JAVA <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
+                SPRING BOOT <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
+                MICROSERVICES <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
+                REACT.JS
+              </span>
+              <span aria-hidden="true">
+                JAVA <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
+                SPRING BOOT <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
+                MICROSERVICES <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
+                REACT.JS <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
+                AWS CLOUD <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
+                DOCKER <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
+                SQL & NO-SQL <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
+                KUBERNETES <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
+                JAVA <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
+                SPRING BOOT <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
+                MICROSERVICES <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
+                REACT.JS
+              </span>
             </div>
           </div>
 
-          <div className="jfs-v3-asset-gallery">
-            <div className="jfs-v3-card jfs-card-blue">
-              <img src={jfsHeroAssets.a1} alt="JFS Asset 1" className="jfs-v3-card-img" />
-            </div>
-            <div className="jfs-v3-card jfs-card-dark">
-              <img src={jfsHeroAssets.a2} alt="JFS Asset 2" className="jfs-v3-card-img" />
-            </div>
-            <div className="jfs-v3-card jfs-card-center-featured">
-              <img src={jfsHeroAssets.a3} alt="JFS Asset 3" className="jfs-v3-card-img" />
-            </div>
-            <div className="jfs-v3-card jfs-card-dark">
-              <img src={jfsHeroAssets.a4} alt="JFS Asset 4" className="jfs-v3-card-img" />
-            </div>
-            <div className="jfs-v3-card jfs-card-blue">
-              <img src={jfsHeroAssets.a5} alt="JFS Asset 5" className="jfs-v3-card-img" />
-            </div>
-          </div>
-        </div>
-      </header>
+          {/* New Intro Section - Re-designed to 2-column layout */}
+          <section className="jfs-intro-section">
+            <div className="jfs-container">
+              <div className="jfs-intro-layout">
+                <div className="jfs-intro-left">
+                  <h2 className="jfs-intro-title">Master Java Full <br /> Stack in 6 Months</h2>
+                  <p className="jfs-intro-desc">
+                    Unleash your developer potential with our intensive program designed to transform beginners into industry-ready engineers. Master every tool and concept needed for a global software career.
+                  </p>
+                  <button className="jfs-intro-cta" onClick={scrollToForm}>Contact</button>
+                </div>
 
-      {/* Marquee Section bridging Hero and Intro */}
-      <div className="jfs-v2-marquee-container">
-        <div className="jfs-v2-marquee">
-          <span>
-            JAVA <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
-            SPRING BOOT <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
-            MICROSERVICES <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
-            REACT.JS <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
-            AWS CLOUD <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
-            DOCKER <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
-            SQL & NO-SQL <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
-            KUBERNETES <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
-            JAVA <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
-            SPRING BOOT <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
-            MICROSERVICES <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
-            REACT.JS
-          </span>
-          <span aria-hidden="true">
-            JAVA <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
-            SPRING BOOT <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
-            MICROSERVICES <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
-            REACT.JS <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
-            AWS CLOUD <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
-            DOCKER <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
-            SQL & NO-SQL <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
-            KUBERNETES <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
-            JAVA <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
-            SPRING BOOT <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
-            MICROSERVICES <FontAwesomeIcon icon={faStar} className="jfs-marquee-star" />
-            REACT.JS
-          </span>
-        </div>
-      </div>
-
-      {/* New Intro Section - Re-designed to 2-column layout */}
-      <section className="jfs-intro-section">
-        <div className="jfs-container">
-          <div className="jfs-intro-layout">
-            <div className="jfs-intro-left">
-              <h2 className="jfs-intro-title">Master Java Full <br /> Stack in 6 Months</h2>
-              <p className="jfs-intro-desc">
-                Unleash your developer potential with our intensive program designed to transform beginners into industry-ready engineers. Master every tool and concept needed for a global software career.
-              </p>
-              <button className="jfs-intro-cta" onClick={scrollToForm}>Contact</button>
-            </div>
-
-            <div className="jfs-intro-right">
-              <div className="jfs-intro-grid">
-                {introCategories.map((cat, i) => (
-                  <div key={i} className="jfs-intro-category-box">
-                    <div className="jfs-intro-card-icon" style={{ backgroundColor: cat.bgColor, color: cat.iconColor }}>
-                      {cat.icon}
-                    </div>
-                    <div className="jfs-intro-card-content">
-                      <h3 className="jfs-intro-card-title">{cat.title}</h3>
-                      <div className="jfs-intro-card-points">
-                        {cat.points.map((point, idx) => (
-                          <div key={idx} className="jfs-intro-point">
-                            <FontAwesomeIcon icon={faStar} className="jfs-intro-point-star" />
-                            {point}
+                <div className="jfs-intro-right">
+                  <div className="jfs-intro-grid">
+                    {introCategories.map((cat, i) => (
+                      <div key={i} className="jfs-intro-category-box">
+                        <div className="jfs-intro-card-icon" style={{ backgroundColor: cat.bgColor, color: cat.iconColor }}>
+                          {cat.icon}
+                        </div>
+                        <div className="jfs-intro-card-content">
+                          <h3 className="jfs-intro-card-title">{cat.title}</h3>
+                          <div className="jfs-intro-card-points">
+                            {cat.points.map((point, idx) => (
+                              <div key={idx} className="jfs-intro-point">
+                                <FontAwesomeIcon icon={faStar} className="jfs-intro-point-star" />
+                                {point}
+                              </div>
+                            ))}
                           </div>
-                        ))}
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Course Outcomes - Redesigned Numbered Grid */}
-      <section className="jfs-dgm-section jfs-dgm-outcomes-numbered">
-        <div className="jfs-dgm-container">
-          <div className="jfs-dgm-outcomes-header-row">
-            <div className="jfs-dgm-outcomes-title-col">
-              <h2 className="jfs-dgm-outcomes-main-title">Course Outcomes</h2>
-            </div>
-            <div className="jfs-dgm-outcomes-desc-col">
-              <p className="jfs-dgm-outcomes-top-desc text-left">
-                What you'll achieve after completing this program. Master full-stack architectures, build scalable applications, and transform into an industry-ready Java Full Stack Developer.
-              </p>
-            </div>
-          </div>
-
-          <div className="jfs-dgm-outcomes-numbered-grid">
-            {courseOutcomes.map((outcome, index) => {
-              const isBlack = index === 1 || index === 3 || index === 5;
-              const cardNumber = (index + 1).toString().padStart(2, '0');
-
-              return (
-                <div
-                  key={index}
-                  className={`jfs-dgm-outcome-numbered-card ${isBlack ? 'black-bg' : 'white-bg'}`}
-                >
-                  <div className="jfs-dgm-outcome-card-content-wrapper">
-                    {/* Left side - Number and Icon */}
-                    <div className="jfs-dgm-outcome-card-left">
-                      <div className="jfs-dgm-outcome-card-number">{cardNumber}</div>
-                      <div className="jfs-dgm-outcome-numbered-icon">{outcome.icon}</div>
-                    </div>
-
-                    {/* Right side - Title and Description */}
-                    <div className="jfs-dgm-outcome-card-right">
-                      <h3 className="jfs-dgm-outcome-numbered-title">{outcome.title}</h3>
-                      <p className="jfs-dgm-outcome-numbered-desc">{outcome.desc}</p>
-                    </div>
+                    ))}
                   </div>
                 </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-
-      {/* 6-Month Course Breakdown - Vertical Slider Redesign */}
-      <section className="jfs-curriculum-v2-section">
-        <div className="jfs-container">
-          <div className="jfs-curriculum-v2-layout">
-            <div className="jfs-curriculum-v2-left">
-              <span className="jfs-curriculum-v2-tag">PRO COURSE</span>
-              <h2 className="jfs-curriculum-v2-title">6-Month Course <br /> Breakdown</h2>
-              <p className="jfs-curriculum-v2-desc">
-                A comprehensive structured learning path designed for industry excellence. Master software architecture, professional frameworks, and portfolio building in 6 intensive months.
-              </p>
-
-              <div className="jfs-curriculum-v2-stats">
-                <div className="jfs-stat-item">
-                  <span className="jfs-stat-num">50+</span>
-                  <span className="jfs-stat-label">Real Projects</span>
-                </div>
-                <div className="jfs-stat-item">
-                  <span className="jfs-stat-num">100%</span>
-                  <span className="jfs-stat-label">Practical</span>
-                </div>
               </div>
             </div>
+          </section>
 
-            <div className="jfs-curriculum-v2-right">
-              {/* Vertical Navigation Controls - Top Right precisely as per design */}
-              <div className="jfs-curriculum-nav-v2">
-                <button className="jfs-nav-btn-v2" onClick={prevModule}><FontAwesomeIcon icon={faChevronUp} /></button>
-                <button className="jfs-nav-btn-v2" onClick={nextModule}><FontAwesomeIcon icon={faChevronDown} /></button>
+          {/* Course Outcomes - Redesigned Numbered Grid */}
+          <section className="jfs-dgm-section jfs-dgm-outcomes-numbered">
+            <div className="jfs-dgm-container">
+              <div className="jfs-dgm-outcomes-header-row">
+                <div className="jfs-dgm-outcomes-title-col">
+                  <h2 className="jfs-dgm-outcomes-main-title">Course Outcomes</h2>
+                </div>
+                <div className="jfs-dgm-outcomes-desc-col">
+                  <p className="jfs-dgm-outcomes-top-desc text-left">
+                    What you'll achieve after completing this program. Master full-stack architectures, build scalable applications, and transform into an industry-ready Java Full Stack Developer.
+                  </p>
+                </div>
               </div>
 
-              <div className="jfs-slider-v5-container">
-                {sixMonthCurriculum.map((module, index) => {
-                  const isActive = index === currentModuleIndex;
-                  const isNext = index === (currentModuleIndex + 1) % sixMonthCurriculum.length;
-                  const isPrev = index === (currentModuleIndex - 1 + sixMonthCurriculum.length) % sixMonthCurriculum.length;
-
-                  let cardState = "hidden";
-                  if (isActive) cardState = "active";
-                  else if (isPrev) cardState = "top";
-                  else if (isNext) cardState = "bottom";
+              <div className="jfs-dgm-outcomes-numbered-grid">
+                {courseOutcomes.map((outcome, index) => {
+                  const isBlack = index === 1 || index === 3 || index === 5;
+                  const cardNumber = (index + 1).toString().padStart(2, '0');
 
                   return (
                     <div
                       key={index}
-                      className={`jfs-curriculum-v5-card ${cardState}`}
+                      className={`jfs-dgm-outcome-numbered-card ${isBlack ? 'black-bg' : 'white-bg'}`}
                     >
-                      <div className="jfs-curriculum-v5-inner">
-                        <div className="jfs-curriculum-v5-bg">
-                          <img src={module.bgImage} alt={module.title} className="jfs-curriculum-v5-img" />
-                          <div className="jfs-curriculum-v5-overlay"></div>
+                      <div className="jfs-dgm-outcome-card-content-wrapper">
+                        {/* Left side - Number and Icon */}
+                        <div className="jfs-dgm-outcome-card-left">
+                          <div className="jfs-dgm-outcome-card-number">{cardNumber}</div>
+                          <div className="jfs-dgm-outcome-numbered-icon">{outcome.icon}</div>
                         </div>
 
-                        <div className="jfs-curriculum-v5-content">
-                          <div className="jfs-curriculum-v5-header">
-                            <span className="jfs-curriculum-v5-month">{module.month}</span>
-                            <span className="jfs-curriculum-v5-proj">Projects: {module.projects}</span>
-                          </div>
-                          <h3 className="jfs-curriculum-v5-title">{module.title}</h3>
-                          <div className="jfs-curriculum-v5-topics">
-                            {module.topics.map((topic, tidx) => (
-                              <div key={tidx} className="jfs-curriculum-v5-topic">
-                                <FontAwesomeIcon icon={faCheck} className="jfs-curriculum-v5-check" /> {topic}
-                              </div>
-                            ))}
-                          </div>
+                        {/* Right side - Title and Description */}
+                        <div className="jfs-dgm-outcome-card-right">
+                          <h3 className="jfs-dgm-outcome-numbered-title">{outcome.title}</h3>
+                          <p className="jfs-dgm-outcome-numbered-desc">{outcome.desc}</p>
                         </div>
                       </div>
                     </div>
@@ -875,494 +805,571 @@ const JavaFullStackCourse = () => {
                 })}
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-      {/* Tools & Resources - Interactive V2 Redesign */}
-      <section className="jfs-tools-v2 jfs-tools-container">
-        <div className="jfs-container">
-          <div className="jfs-tools-v2-header">
-            <h2 className="jfs-tools-v2-title"> AI Tools & Resources</h2>
-            <p className="jfs-tools-v2-subtitle">Master the industry's most powerful creative workflow</p>
-          </div>
+          </section>
 
-          <div className="jfs-tools-v2-layout">
-            {/* Sidebar Tabs */}
-            <div className="jfs-tools-sidebar">
-              {["AI Dev Assistants", "Backend & AI", "Cloud & Data", "Engineering Suite"].map((label, idx) => (
-                <button
-                  key={idx}
-                  className={`jfs-tool-tab ${activeToolCategory === idx ? 'active' : ''}`}
-                  onClick={() => setActiveToolCategory(idx)}
-                >
-                  <span className="tab-number">0{idx + 1}</span>
-                  <span className="tab-label">{label}</span>
-                </button>
-              ))}
-            </div>
 
-            {/* Main Overlapping Pods Display */}
-            <div className="jfs-tools-main-display">
-              <div className="jfs-pods-container" key={activeToolCategory}>
-                {toolsV2Data[activeToolCategory].map((tool, index) => (
-                  <div key={index} className={`jfs-tool-pod pod-${index + 1}`}>
-                    <div className="jfs-pod-inner">
-                      <div className="jfs-pod-bg-image" style={{ background: tool.bg || `url(${tool.img})`, backgroundPosition: 'center', backgroundSize: 'cover' }}></div>
-                      <div className="jfs-pod-content">
-                        <div className="jfs-pod-icon">{tool.icon}</div>
-                        <h4 className="jfs-pod-name">{tool.name}</h4>
-                        <p className="jfs-pod-desc">{tool.desc}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits Section - Where Features Meet For You Upgrade */}
-      <section className="jfs-dgm-section jfs-dgm-benefits-reimagined">
-        <div className="jfs-dgm-container">
-          <div className="jfs-dgm-benefits-header">
-            <h2 className="jfs-dgm-benefits-title">Where Features Meet For You</h2>
-          </div>
-
-          <div className="jfs-dgm-benefits-staggered">
-            {/* Row 1: 5 Cards */}
-            <div className="jfs-dgm-benefits-row jfs-dgm-row-5">
-              {benefits.slice(0, 5).map((benefit, index) => (
-                <div key={index} className="jfs-dgm-new-benefit-card">
-                  {(() => {
-                    const absoluteIndex = 0 + index;
-                    const color = benefitIconPalette[absoluteIndex] || "#BAE6FD";
-                    return (
-                      <div className="jfs-dgm-new-icon" style={{ background: hexToRgba(color, 0.18), color }}>
-                        {benefit.icon}
-                      </div>
-                    );
-                  })()}
-                  <div className="jfs-dgm-new-content">
-                    <h3>{benefit.title}</h3>
-                    <p>{benefit.description.substring(0, 70)}...</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Bottom Layout - Left Tall + Middle Col (Row 2 & 3) + Right Tall */}
-            <div className="jfs-dgm-benefits-bottom-layout">
-
-              {/* Left Tall Card */}
-              <div className="jfs-dgm-new-benefit-card jfs-dgm-benefit-card-tall">
-                <div className="jfs-dgm-new-icon" style={{ background: hexToRgba("#BAE6FD", 0.18), color: "#BAE6FD" }}>
-                  <FontAwesomeIcon icon={faStar} />
-                </div>
-                <div className="jfs-dgm-new-content">
-                  <h3>Industry Recognition</h3>
-                  <p>
-                    Get certified with globally recognized credentials that validate your expertise and strengthen your professional credibility across industries. Showcase your skills with confidence and stand out in competitive job markets. Unlock better global career opportunities with certifications.
+          {/* 6-Month Course Breakdown - Vertical Slider Redesign */}
+          <section className="jfs-curriculum-v2-section">
+            <div className="jfs-container">
+              <div className="jfs-curriculum-v2-layout">
+                <div className="jfs-curriculum-v2-left">
+                  <span className="jfs-curriculum-v2-tag">PRO COURSE</span>
+                  <h2 className="jfs-curriculum-v2-title">6-Month Course <br /> Breakdown</h2>
+                  <p className="jfs-curriculum-v2-desc">
+                    A comprehensive structured learning path designed for industry excellence. Master software architecture, professional frameworks, and portfolio building in 6 intensive months.
                   </p>
+
+                  <div className="jfs-curriculum-v2-stats">
+                    <div className="jfs-stat-item">
+                      <span className="jfs-stat-num">50+</span>
+                      <span className="jfs-stat-label">Real Projects</span>
+                    </div>
+                    <div className="jfs-stat-item">
+                      <span className="jfs-stat-num">100%</span>
+                      <span className="jfs-stat-label">Practical</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="jfs-curriculum-v2-right">
+                  {/* Vertical Navigation Controls - Top Right precisely as per design */}
+                  <div className="jfs-curriculum-nav-v2">
+                    <button className="jfs-nav-btn-v2" onClick={prevModule}><FontAwesomeIcon icon={faChevronUp} /></button>
+                    <button className="jfs-nav-btn-v2" onClick={nextModule}><FontAwesomeIcon icon={faChevronDown} /></button>
+                  </div>
+
+                  <div className="jfs-slider-v5-container">
+                    {sixMonthCurriculum.map((module, index) => {
+                      const isActive = index === currentModuleIndex;
+                      const isNext = index === (currentModuleIndex + 1) % sixMonthCurriculum.length;
+                      const isPrev = index === (currentModuleIndex - 1 + sixMonthCurriculum.length) % sixMonthCurriculum.length;
+
+                      let cardState = "hidden";
+                      if (isActive) cardState = "active";
+                      else if (isPrev) cardState = "top";
+                      else if (isNext) cardState = "bottom";
+
+                      return (
+                        <div
+                          key={index}
+                          className={`jfs-curriculum-v5-card ${cardState}`}
+                        >
+                          <div className="jfs-curriculum-v5-inner">
+                            <div className="jfs-curriculum-v5-bg">
+                              <img src={module.bgImage} alt={module.title} className="jfs-curriculum-v5-img" />
+                              <div className="jfs-curriculum-v5-overlay"></div>
+                            </div>
+
+                            <div className="jfs-curriculum-v5-content">
+                              <div className="jfs-curriculum-v5-header">
+                                <span className="jfs-curriculum-v5-month">{module.month}</span>
+                                <span className="jfs-curriculum-v5-proj">Projects: {module.projects}</span>
+                              </div>
+                              <h3 className="jfs-curriculum-v5-title">{module.title}</h3>
+                              <div className="jfs-curriculum-v5-topics">
+                                {module.topics.map((topic, tidx) => (
+                                  <div key={tidx} className="jfs-curriculum-v5-topic">
+                                    <FontAwesomeIcon icon={faCheck} className="jfs-curriculum-v5-check" /> {topic}
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
+            </div>
+          </section>
+          {/* Tools & Resources - Interactive V2 Redesign */}
+          <section className="jfs-tools-v2 jfs-tools-container">
+            <div className="jfs-container">
+              <div className="jfs-tools-v2-header">
+                <h2 className="jfs-tools-v2-title"> AI Tools & Resources</h2>
+                <p className="jfs-tools-v2-subtitle">Master the industry's most powerful creative workflow</p>
+              </div>
 
-              {/* Middle Grid Column */}
-              <div className="jfs-dgm-benefits-middle-col">
-                <div className="jfs-dgm-benefits-row jfs-dgm-row-3">
-                  {benefits.slice(5, 8).map((benefit, index) => (
-                    <div key={index} className="jfs-dgm-new-benefit-card">
-                      {(() => {
-                        const absoluteIndex = 5 + index;
-                        const color = benefitIconPalette[absoluteIndex] || "#BAE6FD";
-                        return (
-                          <div className="jfs-dgm-new-icon" style={{ background: hexToRgba(color, 0.18), color }}>
-                            {benefit.icon}
-                          </div>
-                        );
-                      })()}
-                      <div className="jfs-dgm-new-content">
-                        <h3>{benefit.title}</h3>
-                        <p>{benefit.description.substring(0, 70)}...</p>
-                      </div>
-                    </div>
+              <div className="jfs-tools-v2-layout">
+                {/* Sidebar Tabs */}
+                <div className="jfs-tools-sidebar">
+                  {["AI Dev Assistants", "Backend & AI", "Cloud & Data", "Engineering Suite"].map((label, idx) => (
+                    <button
+                      key={idx}
+                      className={`jfs-tool-tab ${activeToolCategory === idx ? 'active' : ''}`}
+                      onClick={() => setActiveToolCategory(idx)}
+                    >
+                      <span className="tab-number">0{idx + 1}</span>
+                      <span className="tab-label">{label}</span>
+                    </button>
                   ))}
                 </div>
 
-                <div className="jfs-dgm-benefits-row jfs-dgm-row-2">
-                  {benefits.slice(8, 10).map((benefit, index) => (
-                    <div key={index} className="jfs-dgm-new-benefit-card">
-                      {(() => {
-                        const absoluteIndex = 8 + index;
-                        const color = benefitIconPalette[absoluteIndex] || "#BAE6FD";
-                        return (
-                          <div className="jfs-dgm-new-icon" style={{ background: hexToRgba(color, 0.18), color }}>
-                            {benefit.icon}
+                {/* Main Overlapping Pods Display */}
+                <div className="jfs-tools-main-display">
+                  <div className="jfs-pods-container" key={activeToolCategory}>
+                    {toolsV2Data[activeToolCategory].map((tool, index) => (
+                      <div key={index} className={`jfs-tool-pod pod-${index + 1}`}>
+                        <div className="jfs-pod-inner">
+                          <div className="jfs-pod-bg-image" style={{ background: tool.bg || `url(${tool.img})`, backgroundPosition: 'center', backgroundSize: 'cover' }}></div>
+                          <div className="jfs-pod-content">
+                            <div className="jfs-pod-icon">{tool.icon}</div>
+                            <h4 className="jfs-pod-name">{tool.name}</h4>
+                            <p className="jfs-pod-desc">{tool.desc}</p>
                           </div>
-                        );
-                      })()}
-                      <div className="jfs-dgm-new-content">
-                        <h3>{benefit.title}</h3>
-                        <p>{benefit.description.substring(0, 70)}...</p>
+                        </div>
                       </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Right Tall Card */}
-              <div className="jfs-dgm-new-benefit-card jfs-dgm-benefit-card-tall">
-                <div className="jfs-dgm-new-icon" style={{ background: hexToRgba("#C4B5FD", 0.18), color: "#C4B5FD" }}>
-                  <FontAwesomeIcon icon={faTrophy} />
-                </div>
-                <div className="jfs-dgm-new-content">
-                  <h3>Lifetime Updates</h3>
-                  <p>
-                    Stay ahead with free lifetime access to all future course updates and continuously evolving learning materials. Keep your skills sharp by exploring practical resources, real-world examples, and new concepts. Adapt confidently to the changing digital landscape and achieve long-term career growth.
-                  </p>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-      {/* Certificate Section with Simplified Lock Overlay */}
-      <section className="jfs-section jfs-dark-bg">
-        <div className="jfs-container">
-          <h2 className="jfs-section-title">Professional Certification</h2>
-          <p className="jfs-section-subtitle">Earn a globally recognized certificate upon completion</p>
-
-          <div className="jfs-certificate-single">
-            <div className="jfs-certificate-image-wrapper">
-              <img
-                src={certificate.image}
-                alt="Graphic Design Masterclass Certificate"
-                className="jfs-certificate-image"
-                onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src = "https://images.unsplash.com/photo-1589330273594-fade1ee91647?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80";
-                }}
-              />
-
-              {/* Simplified Lock Overlay - No button, just lock icon and text */}
-              <div className="jfs-certificate-lock-overlay">
-                <div className="jfs-lock-icon"><FontAwesomeIcon icon={faLock} /></div>
-                <div className="jfs-lock-text">Certificate Locked</div>
-              </div>
-
-              <div className="jfs-certificate-overlay">
-                <span className="jfs-certificate-badge">Your Professional Certificate Template</span>
-              </div>
-              <div className="jfs-certificate-download-note">
-                <p>This is a sample template. Your actual certificate will include your name, course details, and issue date.</p>
-              </div>
-            </div>
-
-            <div className="jfs-certificate-info-single">
-              <h3 className="jfs-certificate-title-single">{certificate.title}</h3>
-              <p className="jfs-certificate-desc-single">{certificate.description}</p>
-
-              <div className="jfs-certificate-features-single">
-                {certificate.features.map((feature, index) => (
-                  <div key={index} className="jfs-certificate-feature-item-single">
-                    <FontAwesomeIcon icon={faCheckCircle} /> {feature.replace('âœ… ', '')}
-                  </div>
-                ))}
-              </div>
-
-              <div className="jfs-certificate-benefits">
-                <div className="jfs-benefit">
-                  <span className="jfs-benefit-icon"><FontAwesomeIcon icon={faGraduationCap} /></span>
-                  <span className="jfs-benefit-text">Enhances your professional credibility</span>
-                </div>
-                <div className="jfs-benefit">
-                  <span className="jfs-benefit-icon"><FontAwesomeIcon icon={faBriefcase} /></span>
-                  <span className="jfs-benefit-text">Increases job opportunities by 75%</span>
-                </div>
-                <div className="jfs-benefit">
-                  <span className="jfs-benefit-icon"><FontAwesomeIcon icon={faGlobe} /></span>
-                  <span className="jfs-benefit-text">Globally recognized by employers</span>
-                </div>
-                <div className="jfs-benefit">
-                  <span className="jfs-benefit-icon"><FontAwesomeIcon icon={faQrcode} /></span>
-                  <span className="jfs-benefit-text">QR code verification for authenticity</span>
-                </div>
-              </div>
-
-              <div className="jfs-certificate-instructions">
-                <h4><FontAwesomeIcon icon={faCertificate} /> Certificate Details:</h4>
-                <ul>
-                  <li><FontAwesomeIcon icon={faCheck} /> Issued upon successful completion of the course</li>
-                  <li><FontAwesomeIcon icon={faCheck} /> Includes student name and unique certificate ID</li>
-                  <li><FontAwesomeIcon icon={faCheck} /> Verified through our online portal</li>
-                  <li><FontAwesomeIcon icon={faCheck} /> Available in digital (PDF) and physical formats</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-
-      {/* Premium Testimonials - V9 Grid Layout */}
-      <section className="jfs-testi-grid-section">
-        <div className="jfs-container">
-          <div className="jfs-testi-grid-wrapper">
-
-            {/* Left side: Headers and Intro */}
-            <div className="jfs-testi-grid-left">
-              <h2 className="jfs-testi-main-title">Experience Learning Like Never Before</h2>
-              <p className="jfs-testi-subtitle">
-                Discover Personalized, AI-Powered Learning that prepares students for success in the real world. Read transformational stories from our top alumni.
-              </p>
-            </div>
-
-            {/* Right side: 3-Card Grid */}
-            <div className="jfs-testi-grid-right">
-              {/* Top Large Card */}
-              <div className="jfs-testi-card-top" style={{ backgroundImage: `url(https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=800)` }}>
-                <div className="jfs-testi-card-overlay">
-                  <div className="jfs-testi-quote-content fade-in-anim" key={testiSetIndex}>
-                    <p>"{activeTestimonials[0].text}"</p>
-                    <div className="jfs-testi-author">
-                      <img src={activeTestimonials[0].avatar} alt={activeTestimonials[0].name} />
-                      <div>
-                        <h4>{activeTestimonials[0].name}</h4>
-                        <p>{activeTestimonials[0].role}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Bottom Row */}
-              <div className="jfs-testi-squares-row">
-                {/* Bottom Left: Lime Green Theme */}
-                <div className="jfs-testi-card-bottom-left">
-                  <div className="jfs-testi-quote-content fade-in-anim" key={testiSetIndex}>
-                    <p>"{activeTestimonials[1].text}"</p>
-                    <div className="jfs-testi-author">
-                      <img src={activeTestimonials[1].avatar} alt={activeTestimonials[1].name} />
-                      <div>
-                        <h4>{activeTestimonials[1].name}</h4>
-                        <p>{activeTestimonials[1].role}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Bottom Right: Light Purple Theme */}
-                <div className="jfs-testi-card-bottom-right">
-                  <div className="jfs-testi-quote-content fade-in-anim" key={testiSetIndex}>
-                    <p>"{activeTestimonials[2].text}"</p>
-                    <div className="jfs-testi-author">
-                      <img src={activeTestimonials[2].avatar} alt={activeTestimonials[2].name} />
-                      <div>
-                        <h4>{activeTestimonials[2].name}</h4>
-                        <p>{activeTestimonials[2].role}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Enroll Now Section (V2 Expansion) */}
-      <section className="jfs-dark-enrollment-FIXED" ref={formSectionRef}>
-        <div className="jfs-container">
-          <div className="jfs-floating-icons-v2">
-            {floatingIcons.map((icon, index) => (
-              <div
-                key={index}
-                className="jfs-v2-float-icon"
-                style={{
-                  animationDelay: `${index * 0.5}s`,
-                  left: `${(index * 12.5) % 100}%`,
-                  top: `${20 + (index * 10) % 60}%`
-                }}
-              >
-                {icon}
-              </div>
-            ))}
-          </div>
-
-          {/* Redesigned Contact Section - Start Your Design Journey Today */}
-          <section className="jfs-v3-community-banner">
-            <div className="jfs-banner-grid-overlay"></div>
-            <div className="jfs-banner-decor-sparkle sp-1">✦</div>
-            <div className="jfs-banner-decor-sparkle sp-2">✦</div>
-            <div className="jfs-banner-decor-sparkle sp-3">✦</div>
-            <div className="jfs-banner-decor-circle cir-1"></div>
-            <div className="jfs-banner-decor-circle cir-2"></div>
-
-            <div className="jfs-banner-container">
-              <div className="jfs-banner-content">
-                <h2 className="jfs-banner-title">Start Your Tech <br /> Journey Today</h2>
-
-
-                <div className="jfs-banner-ratings">
-                  <div className="jfs-rating-box">
-                    <div className="jfs-stars">★★★★★</div>
-                    <div className="jfs-rating-text">4.9 / 5 rating</div>
-                    <div className="jfs-rating-source">Coursezilla</div>
-                  </div>
-                  <div className="jfs-rating-box">
-                    <div className="jfs-stars">★★★★★</div>
-                    <div className="jfs-rating-text">4.8 / 5 rating</div>
-                    <div className="jfs-rating-source">Globalskills</div>
-                  </div>
-                </div>
-
-
-              </div>
-
-              {/* Contact Rays */}
-              <div className="jfs-ray jfs-ray-left-top">
-                <div className="jfs-ray-trail"></div>
-                <div className="jfs-ray-box">
-                  <div className="jfs-ray-icon icon-email"><FontAwesomeIcon icon={faEnvelope} /></div>
-                  <div className="jfs-ray-content">
-                    <h4>Email Support</h4>
-                    <p>hello@engloraylearn.com</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="jfs-ray jfs-ray-left-bottom">
-                <div className="jfs-ray-trail"></div>
-                <div className="jfs-ray-box">
-                  <div className="jfs-ray-icon icon-whatsapp"><FontAwesomeIcon icon={faWhatsapp} /></div>
-                  <div className="jfs-ray-content">
-                    <h4>WHATSAPP</h4>
-                    <p>+91 63681 75990</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="jfs-ray jfs-ray-right-top">
-                <div className="jfs-ray-trail"></div>
-                <div className="jfs-ray-box">
-                  <div className="jfs-ray-icon icon-center"><FontAwesomeIcon icon={faMapMarkerAlt} /></div>
-                  <div className="jfs-ray-content">
-                    <h4>Learning Center</h4>
-                    <p>Madurai, Tamil Nadu</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="jfs-ray jfs-ray-right-bottom">
-                <div className="jfs-ray-trail"></div>
-                <div className="jfs-ray-box">
-                  <div className="jfs-ray-icon icon-chat"><FontAwesomeIcon icon={faComments} /></div>
-                  <div className="jfs-ray-content">
-                    <h4>Quick Chat</h4>
-                    <p>Live Chat Available</p>
+                    ))}
                   </div>
                 </div>
               </div>
             </div>
           </section>
 
-          {/* Single Black Container with Left Content and Right Form */}
-          <div className="jfs-single-enroll-container">
-            {/* Left Side - Content */}
-            <div className="jfs-enroll-left-content">
-              <h3 className="jfs-enroll-title">Start Your Journey</h3>
-              <p className="jfs-enroll-subtitle">join a focused learning experience designed to help you master practical skills, build a standout portfolio, and launch your journey as a professional FullStack Developer</p>
-            </div>
+          {/* Benefits Section - Where Features Meet For You Upgrade */}
+          <section className="jfs-dgm-section jfs-dgm-benefits-reimagined">
+            <div className="jfs-dgm-container">
+              <div className="jfs-dgm-benefits-header">
+                <h2 className="jfs-dgm-benefits-title">Where Features Meet For You</h2>
+              </div>
 
-            {/* Right Side - Form */}
-            <div className="jfs-enroll-right-form">
-              <div className="jfs-enroll-form-wrapper">
-                <h4 className="jfs-enroll-form-title">Enrollment Form</h4>
-                <form onSubmit={handleSubmit} className="jfs-enroll-form">
-                  <div className="jfs-enroll-form-grid">
-                    <div className="jfs-enroll-form-group">
-                      <label>Full Name *</label>
-                      <input
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        required
-                        placeholder="Enter your full name"
-                      />
+              <div className="jfs-dgm-benefits-staggered">
+                {/* Row 1: 5 Cards */}
+                <div className="jfs-dgm-benefits-row jfs-dgm-row-5">
+                  {benefits.slice(0, 5).map((benefit, index) => (
+                    <div key={index} className="jfs-dgm-new-benefit-card">
+                      {(() => {
+                        const absoluteIndex = 0 + index;
+                        const color = benefitIconPalette[absoluteIndex] || "#BAE6FD";
+                        return (
+                          <div className="jfs-dgm-new-icon" style={{ background: hexToRgba(color, 0.18), color }}>
+                            {benefit.icon}
+                          </div>
+                        );
+                      })()}
+                      <div className="jfs-dgm-new-content">
+                        <h3>{benefit.title}</h3>
+                        <p>{benefit.description.substring(0, 70)}...</p>
+                      </div>
                     </div>
+                  ))}
+                </div>
 
-                    <div className="jfs-enroll-form-group">
-                      <label>Email ID *</label>
-                      <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        required
-                        placeholder="Enter your email"
-                      />
+                {/* Bottom Layout - Left Tall + Middle Col (Row 2 & 3) + Right Tall */}
+                <div className="jfs-dgm-benefits-bottom-layout">
+
+                  {/* Left Tall Card */}
+                  <div className="jfs-dgm-new-benefit-card jfs-dgm-benefit-card-tall">
+                    <div className="jfs-dgm-new-icon" style={{ background: hexToRgba("#BAE6FD", 0.18), color: "#BAE6FD" }}>
+                      <FontAwesomeIcon icon={faStar} />
                     </div>
-
-                    <div className="jfs-enroll-form-group">
-                      <label>Phone Number *</label>
-                      <input
-                        type="tel"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleInputChange}
-                        required
-                        placeholder="Enter your phone number"
-                      />
-                    </div>
-
-                    <div className="jfs-enroll-form-group">
-                      <label>Select Course *</label>
-                      <select
-                        name="course"
-                        value={formData.course}
-                        onChange={handleInputChange}
-                        required
-                      >
-                        <option value="Java Full Stack">Java Full Stack</option>
-                        <option value="Graphic Design">Graphic Design</option>
-                        <option value="Ui/Ux Design">Ui/Ux Design</option>
-                        <option value="Drawing">Drawing</option>
-                        <option value="Digital Marketing">Digital Marketing</option>
-                      </select>
+                    <div className="jfs-dgm-new-content">
+                      <h3>Industry Recognition</h3>
+                      <p>
+                        Get certified with globally recognized credentials that validate your expertise and strengthen your professional credibility across industries. Showcase your skills with confidence and stand out in competitive job markets. Unlock better global career opportunities with certifications.
+                      </p>
                     </div>
                   </div>
 
-                  <button type="submit" className="jfs-enroll-submit-btn">
-                    Complete Enrollment
-                  </button>
-                </form>
+                  {/* Middle Grid Column */}
+                  <div className="jfs-dgm-benefits-middle-col">
+                    <div className="jfs-dgm-benefits-row jfs-dgm-row-3">
+                      {benefits.slice(5, 8).map((benefit, index) => (
+                        <div key={index} className="jfs-dgm-new-benefit-card">
+                          {(() => {
+                            const absoluteIndex = 5 + index;
+                            const color = benefitIconPalette[absoluteIndex] || "#BAE6FD";
+                            return (
+                              <div className="jfs-dgm-new-icon" style={{ background: hexToRgba(color, 0.18), color }}>
+                                {benefit.icon}
+                              </div>
+                            );
+                          })()}
+                          <div className="jfs-dgm-new-content">
+                            <h3>{benefit.title}</h3>
+                            <p>{benefit.description.substring(0, 70)}...</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="jfs-dgm-benefits-row jfs-dgm-row-2">
+                      {benefits.slice(8, 10).map((benefit, index) => (
+                        <div key={index} className="jfs-dgm-new-benefit-card">
+                          {(() => {
+                            const absoluteIndex = 8 + index;
+                            const color = benefitIconPalette[absoluteIndex] || "#BAE6FD";
+                            return (
+                              <div className="jfs-dgm-new-icon" style={{ background: hexToRgba(color, 0.18), color }}>
+                                {benefit.icon}
+                              </div>
+                            );
+                          })()}
+                          <div className="jfs-dgm-new-content">
+                            <h3>{benefit.title}</h3>
+                            <p>{benefit.description.substring(0, 70)}...</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Right Tall Card */}
+                  <div className="jfs-dgm-new-benefit-card jfs-dgm-benefit-card-tall">
+                    <div className="jfs-dgm-new-icon" style={{ background: hexToRgba("#C4B5FD", 0.18), color: "#C4B5FD" }}>
+                      <FontAwesomeIcon icon={faTrophy} />
+                    </div>
+                    <div className="jfs-dgm-new-content">
+                      <h3>Lifetime Updates</h3>
+                      <p>
+                        Stay ahead with free lifetime access to all future course updates and continuously evolving learning materials. Keep your skills sharp by exploring practical resources, real-world examples, and new concepts. Adapt confidently to the changing digital landscape and achieve long-term career growth.
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
+          </section>
 
-      {/* Success Toast Message */}
-      {showSuccess && (
-        <div className="jfs-toast">
-          <div className="jfs-toast-content">
-            <div className="jfs-toast-icon"><FontAwesomeIcon icon={faTrophy} /></div>
-            <div className="jfs-toast-message">
-              <h4>Enrollment Successful!</h4>
-              <p>Welcome to Java Full Stack Course! Our team will contact you within 24 hours.</p>
+
+          {/* Certificate Section with Simplified Lock Overlay */}
+          <section className="jfs-section jfs-dark-bg">
+            <div className="jfs-container">
+              <h2 className="jfs-section-title">Professional Certification</h2>
+              <p className="jfs-section-subtitle">Earn a globally recognized certificate upon completion</p>
+
+              <div className="jfs-certificate-single">
+                <div className="jfs-certificate-image-wrapper">
+                  <img
+                    src={certificate.image}
+                    alt="Graphic Design Masterclass Certificate"
+                    className="jfs-certificate-image"
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = "https://images.unsplash.com/photo-1589330273594-fade1ee91647?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80";
+                    }}
+                  />
+
+                  {/* Simplified Lock Overlay - No button, just lock icon and text */}
+                  <div className="jfs-certificate-lock-overlay">
+                    <div className="jfs-lock-icon"><FontAwesomeIcon icon={faLock} /></div>
+                    <div className="jfs-lock-text">Certificate Locked</div>
+                  </div>
+
+                  <div className="jfs-certificate-overlay">
+                    <span className="jfs-certificate-badge">Your Professional Certificate Template</span>
+                  </div>
+                  <div className="jfs-certificate-download-note">
+                    <p>This is a sample template. Your actual certificate will include your name, course details, and issue date.</p>
+                  </div>
+                </div>
+
+                <div className="jfs-certificate-info-single">
+                  <h3 className="jfs-certificate-title-single">{certificate.title}</h3>
+                  <p className="jfs-certificate-desc-single">{certificate.description}</p>
+
+                  <div className="jfs-certificate-features-single">
+                    {certificate.features.map((feature, index) => (
+                      <div key={index} className="jfs-certificate-feature-item-single">
+                        <FontAwesomeIcon icon={faCheckCircle} /> {feature.replace('âœ… ', '')}
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="jfs-certificate-benefits">
+                    <div className="jfs-benefit">
+                      <span className="jfs-benefit-icon"><FontAwesomeIcon icon={faGraduationCap} /></span>
+                      <span className="jfs-benefit-text">Enhances your professional credibility</span>
+                    </div>
+                    <div className="jfs-benefit">
+                      <span className="jfs-benefit-icon"><FontAwesomeIcon icon={faBriefcase} /></span>
+                      <span className="jfs-benefit-text">Increases job opportunities by 75%</span>
+                    </div>
+                    <div className="jfs-benefit">
+                      <span className="jfs-benefit-icon"><FontAwesomeIcon icon={faGlobe} /></span>
+                      <span className="jfs-benefit-text">Globally recognized by employers</span>
+                    </div>
+                    <div className="jfs-benefit">
+                      <span className="jfs-benefit-icon"><FontAwesomeIcon icon={faQrcode} /></span>
+                      <span className="jfs-benefit-text">QR code verification for authenticity</span>
+                    </div>
+                  </div>
+
+                  <div className="jfs-certificate-instructions">
+                    <h4><FontAwesomeIcon icon={faCertificate} /> Certificate Details:</h4>
+                    <ul>
+                      <li><FontAwesomeIcon icon={faCheck} /> Issued upon successful completion of the course</li>
+                      <li><FontAwesomeIcon icon={faCheck} /> Includes student name and unique certificate ID</li>
+                      <li><FontAwesomeIcon icon={faCheck} /> Verified through our online portal</li>
+                      <li><FontAwesomeIcon icon={faCheck} /> Available in digital (PDF) and physical formats</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
+          </section>
+
+
+
+          {/* Premium Testimonials - V9 Grid Layout */}
+          <section className="jfs-testi-grid-section">
+            <div className="jfs-container">
+              <div className="jfs-testi-grid-wrapper">
+
+                {/* Left side: Headers and Intro */}
+                <div className="jfs-testi-grid-left">
+                  <h2 className="jfs-testi-main-title">Experience Learning Like Never Before</h2>
+                  <p className="jfs-testi-subtitle">
+                    Discover Personalized, AI-Powered Learning that prepares students for success in the real world. Read transformational stories from our top alumni.
+                  </p>
+                </div>
+
+                {/* Right side: 3-Card Grid */}
+                <div className="jfs-testi-grid-right">
+                  {/* Top Large Card */}
+                  <div className="jfs-testi-card-top" style={{ backgroundImage: `url(https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=800)` }}>
+                    <div className="jfs-testi-card-overlay">
+                      <div className="jfs-testi-quote-content fade-in-anim" key={testiSetIndex}>
+                        <p>"{activeTestimonials[0].text}"</p>
+                        <div className="jfs-testi-author">
+                          <img src={activeTestimonials[0].avatar} alt={activeTestimonials[0].name} />
+                          <div>
+                            <h4>{activeTestimonials[0].name}</h4>
+                            <p>{activeTestimonials[0].role}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Bottom Row */}
+                  <div className="jfs-testi-squares-row">
+                    {/* Bottom Left: Lime Green Theme */}
+                    <div className="jfs-testi-card-bottom-left">
+                      <div className="jfs-testi-quote-content fade-in-anim" key={testiSetIndex}>
+                        <p>"{activeTestimonials[1].text}"</p>
+                        <div className="jfs-testi-author">
+                          <img src={activeTestimonials[1].avatar} alt={activeTestimonials[1].name} />
+                          <div>
+                            <h4>{activeTestimonials[1].name}</h4>
+                            <p>{activeTestimonials[1].role}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Bottom Right: Light Purple Theme */}
+                    <div className="jfs-testi-card-bottom-right">
+                      <div className="jfs-testi-quote-content fade-in-anim" key={testiSetIndex}>
+                        <p>"{activeTestimonials[2].text}"</p>
+                        <div className="jfs-testi-author">
+                          <img src={activeTestimonials[2].avatar} alt={activeTestimonials[2].name} />
+                          <div>
+                            <h4>{activeTestimonials[2].name}</h4>
+                            <p>{activeTestimonials[2].role}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Enroll Now Section (V2 Expansion) */}
+          <section className="jfs-dark-enrollment-FIXED" ref={formSectionRef}>
+            <div className="jfs-container">
+              <div className="jfs-floating-icons-v2">
+                {floatingIcons.map((icon, index) => (
+                  <div
+                    key={index}
+                    className="jfs-v2-float-icon"
+                    style={{
+                      animationDelay: `${index * 0.5}s`,
+                      left: `${(index * 12.5) % 100}%`,
+                      top: `${20 + (index * 10) % 60}%`
+                    }}
+                  >
+                    {icon}
+                  </div>
+                ))}
+              </div>
+
+              {/* Redesigned Contact Section - Start Your Design Journey Today */}
+              <section className="jfs-v3-community-banner">
+                <div className="jfs-banner-grid-overlay"></div>
+                <div className="jfs-banner-decor-sparkle sp-1">✦</div>
+                <div className="jfs-banner-decor-sparkle sp-2">✦</div>
+                <div className="jfs-banner-decor-sparkle sp-3">✦</div>
+                <div className="jfs-banner-decor-circle cir-1"></div>
+                <div className="jfs-banner-decor-circle cir-2"></div>
+
+                <div className="jfs-banner-container">
+                  <div className="jfs-banner-content">
+                    <h2 className="jfs-banner-title">Start Your Tech <br /> Journey Today</h2>
+
+
+                    <div className="jfs-banner-ratings">
+                      <div className="jfs-rating-box">
+                        <div className="jfs-stars">★★★★★</div>
+                        <div className="jfs-rating-text">4.9 / 5 rating</div>
+                        <div className="jfs-rating-source">Coursezilla</div>
+                      </div>
+                      <div className="jfs-rating-box">
+                        <div className="jfs-stars">★★★★★</div>
+                        <div className="jfs-rating-text">4.8 / 5 rating</div>
+                        <div className="jfs-rating-source">Globalskills</div>
+                      </div>
+                    </div>
+
+
+                  </div>
+
+                  {/* Contact Rays */}
+                  <div className="jfs-ray jfs-ray-left-top">
+                    <div className="jfs-ray-trail"></div>
+                    <div className="jfs-ray-box">
+                      <div className="jfs-ray-icon icon-email"><FontAwesomeIcon icon={faEnvelope} /></div>
+                      <div className="jfs-ray-content">
+                        <h4>Email Support</h4>
+                        <p>hello@engloraylearn.com</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="jfs-ray jfs-ray-left-bottom">
+                    <div className="jfs-ray-trail"></div>
+                    <div className="jfs-ray-box">
+                      <div className="jfs-ray-icon icon-whatsapp"><FontAwesomeIcon icon={faWhatsapp} /></div>
+                      <div className="jfs-ray-content">
+                        <h4>WHATSAPP</h4>
+                        <p>+91 63681 75990</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="jfs-ray jfs-ray-right-top">
+                    <div className="jfs-ray-trail"></div>
+                    <div className="jfs-ray-box">
+                      <div className="jfs-ray-icon icon-center"><FontAwesomeIcon icon={faMapMarkerAlt} /></div>
+                      <div className="jfs-ray-content">
+                        <h4>Learning Center</h4>
+                        <p>Madurai, Tamil Nadu</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="jfs-ray jfs-ray-right-bottom">
+                    <div className="jfs-ray-trail"></div>
+                    <div className="jfs-ray-box">
+                      <div className="jfs-ray-icon icon-chat"><FontAwesomeIcon icon={faComments} /></div>
+                      <div className="jfs-ray-content">
+                        <h4>Quick Chat</h4>
+                        <p>Live Chat Available</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              {/* Single Black Container with Left Content and Right Form */}
+              <div className="jfs-single-enroll-container">
+                {/* Left Side - Content */}
+                <div className="jfs-enroll-left-content">
+                  <h3 className="jfs-enroll-title">Start Your Journey</h3>
+                  <p className="jfs-enroll-subtitle">join a focused learning experience designed to help you master practical skills, build a standout portfolio, and launch your journey as a professional FullStack Developer</p>
+                </div>
+
+                {/* Right Side - Form */}
+                <div className="jfs-enroll-right-form">
+                  <div className="jfs-enroll-form-wrapper">
+                    <h4 className="jfs-enroll-form-title">Enrollment Form</h4>
+                    <form onSubmit={handleSubmit} className="jfs-enroll-form">
+                      <div className="jfs-enroll-form-grid">
+                        <div className="jfs-enroll-form-group">
+                          <label>Full Name *</label>
+                          <input
+                            type="text"
+                            name="name"
+                            value={formData.name}
+                            onChange={handleInputChange}
+                            required
+                            placeholder="Enter your full name"
+                          />
+                        </div>
+
+                        <div className="jfs-enroll-form-group">
+                          <label>Email ID *</label>
+                          <input
+                            type="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleInputChange}
+                            required
+                            placeholder="Enter your email"
+                          />
+                        </div>
+
+                        <div className="jfs-enroll-form-group">
+                          <label>Phone Number *</label>
+                          <input
+                            type="tel"
+                            name="phone"
+                            value={formData.phone}
+                            onChange={handleInputChange}
+                            required
+                            placeholder="Enter your phone number"
+                          />
+                        </div>
+
+                        <div className="jfs-enroll-form-group">
+                          <label>Select Course *</label>
+                          <select
+                            name="course"
+                            value={formData.course}
+                            onChange={handleInputChange}
+                            required
+                          >
+                            <option value="Java Full Stack">Java Full Stack</option>
+                            <option value="Graphic Design">Graphic Design</option>
+                            <option value="Ui/Ux Design">Ui/Ux Design</option>
+                            <option value="Drawing">Drawing</option>
+                            <option value="Digital Marketing">Digital Marketing</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <button type="submit" className="jfs-enroll-submit-btn">
+                        Complete Enrollment
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Success Toast Message */}
+          {showSuccess && (
+            <div className="jfs-toast">
+              <div className="jfs-toast-content">
+                <div className="jfs-toast-icon"><FontAwesomeIcon icon={faTrophy} /></div>
+                <div className="jfs-toast-message">
+                  <h4>Enrollment Successful!</h4>
+                  <p>Welcome to Java Full Stack Course! Our team will contact you within 24 hours.</p>
+                </div>
+              </div>
+            </div>
+          )}
+          <SubFooterTwo />
+          <BackToTop />
         </div>
-      )}
-      <SubFooterTwo />
-      <BackToTop />
-    </div>
+      </div>
+    </>
   );
 };
 

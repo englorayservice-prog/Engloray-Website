@@ -440,8 +440,10 @@
     width: 20rem !important;
     font-size: 1.6rem !important;
     height: 5.5rem !important;
-    top: auto !important; /* Clears base top: 82% to allow bottom anchoring */
-    bottom: 60px !important; /* Moved 40px up from -100px for perfect iPad Mini alignment */
+    top: auto !important;
+    /* Clears base top: 82% to allow bottom anchoring */
+    bottom: 60px !important;
+    /* Moved 40px up from -100px for perfect iPad Mini alignment */
     left: 0 !important;
     padding-left: 10px !important;
     border-radius: 0 45px 35px 0 !important;
@@ -784,9 +786,19 @@
     background: white !important;
     z-index: 10 !important;
   }
-  .tagline-section .tagline-bottom-text span { font-size: 2.6rem !important; }
-  .tagline-section .tagline-bottom-text .tagline-long-arrow { width: 85px !important; margin: 0 15px !important; }
-  .tagline-section .tagline-bottom-text .tagline-icon { height: 45px !important; }
+
+  .tagline-section .tagline-bottom-text span {
+    font-size: 2.6rem !important;
+  }
+
+  .tagline-section .tagline-bottom-text .tagline-long-arrow {
+    width: 85px !important;
+    margin: 0 15px !important;
+  }
+
+  .tagline-section .tagline-bottom-text .tagline-icon {
+    height: 45px !important;
+  }
 }
 
 /* 2. Surface Pro 7 (912px) */
@@ -807,9 +819,19 @@
     background: white !important;
     z-index: 10 !important;
   }
-  .tagline-section .tagline-bottom-text span { font-size: 2.6rem !important; }
-  .tagline-section .tagline-bottom-text .tagline-long-arrow { width: 85px !important; margin: 0 15px !important; }
-  .tagline-section .tagline-bottom-text .tagline-icon { height: 45px !important; }
+
+  .tagline-section .tagline-bottom-text span {
+    font-size: 2.6rem !important;
+  }
+
+  .tagline-section .tagline-bottom-text .tagline-long-arrow {
+    width: 85px !important;
+    margin: 0 15px !important;
+  }
+
+  .tagline-section .tagline-bottom-text .tagline-icon {
+    height: 45px !important;
+  }
 }
 
 /* 3. Nest Hub (1024 x 600) */
@@ -830,9 +852,19 @@
     border-radius: 0 45px 35px 0 !important;
     border-bottom: 2px solid white !important;
   }
-  .tagline-section .tagline-bottom-text span { font-size: 2.1rem !important; }
-  .tagline-section .tagline-bottom-text .tagline-long-arrow { width: 75px !important; margin: 0 12px !important; }
-  .tagline-section .tagline-bottom-text .tagline-icon { height: 38px !important; }
+
+  .tagline-section .tagline-bottom-text span {
+    font-size: 2.1rem !important;
+  }
+
+  .tagline-section .tagline-bottom-text .tagline-long-arrow {
+    width: 75px !important;
+    margin: 0 12px !important;
+  }
+
+  .tagline-section .tagline-bottom-text .tagline-icon {
+    height: 38px !important;
+  }
 }
 
 /* 4. Surface Duo (540px) */
@@ -853,9 +885,19 @@
     background: white !important;
     z-index: 10 !important;
   }
-  .tagline-section .tagline-bottom-text span { font-size: 1.8rem !important; }
-  .tagline-section .tagline-bottom-text .tagline-long-arrow { width: 68px !important; margin: 0 10px !important; }
-  .tagline-section .tagline-bottom-text .tagline-icon { height: 34px !important; }
+
+  .tagline-section .tagline-bottom-text span {
+    font-size: 1.8rem !important;
+  }
+
+  .tagline-section .tagline-bottom-text .tagline-long-arrow {
+    width: 68px !important;
+    margin: 0 10px !important;
+  }
+
+  .tagline-section .tagline-bottom-text .tagline-icon {
+    height: 34px !important;
+  }
 }
 
 /* 5. iPhone XR (414px) */
@@ -876,9 +918,19 @@
     background: white !important;
     z-index: 10 !important;
   }
-  .tagline-section .tagline-bottom-text span { font-size: 1.8rem !important; }
-  .tagline-section .tagline-bottom-text .tagline-long-arrow { width: 65px !important; margin: 0 10px !important; }
-  .tagline-section .tagline-bottom-text .tagline-icon { height: 32px !important; }
+
+  .tagline-section .tagline-bottom-text span {
+    font-size: 1.8rem !important;
+  }
+
+  .tagline-section .tagline-bottom-text .tagline-long-arrow {
+    width: 65px !important;
+    margin: 0 10px !important;
+  }
+
+  .tagline-section .tagline-bottom-text .tagline-icon {
+    height: 32px !important;
+  }
 }
 
 /* 6. Pixel 7 / S20 Ultra (412px) */
@@ -899,9 +951,19 @@
     background: white !important;
     z-index: 10 !important;
   }
-  .tagline-section .tagline-bottom-text span { font-size: 1.8rem !important; }
-  .tagline-section .tagline-bottom-text .tagline-long-arrow { width: 65px !important; margin: 0 10px !important; }
-  .tagline-section .tagline-bottom-text .tagline-icon { height: 32px !important; }
+
+  .tagline-section .tagline-bottom-text span {
+    font-size: 1.8rem !important;
+  }
+
+  .tagline-section .tagline-bottom-text .tagline-long-arrow {
+    width: 65px !important;
+    margin: 0 10px !important;
+  }
+
+  .tagline-section .tagline-bottom-text .tagline-icon {
+    height: 32px !important;
+  }
 }
 
 /* 7. Samsung S8+ (360px) */
@@ -922,7 +984,17 @@
     justify-content: flex-start !important;
     padding-left: 10px !important;
   }
-  .tagline-section .tagline-bottom-text span { font-size: 1.55rem !important; }
-  .tagline-section .tagline-bottom-text .tagline-long-arrow { width: 55px !important; margin: 0 8px !important; }
-  .tagline-section .tagline-bottom-text .tagline-icon { height: 28px !important; }
+
+  .tagline-section .tagline-bottom-text span {
+    font-size: 1.55rem !important;
+  }
+
+  .tagline-section .tagline-bottom-text .tagline-long-arrow {
+    width: 55px !important;
+    margin: 0 8px !important;
+  }
+
+  .tagline-section .tagline-bottom-text .tagline-icon {
+    height: 28px !important;
+  }
 }

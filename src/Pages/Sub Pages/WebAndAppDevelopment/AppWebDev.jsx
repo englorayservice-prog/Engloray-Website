@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-
 import webImageOne from '../../../assets/case study images/websites/Divya makeovers.jpg';
 import webImageTwo from '../../../assets/case study images/websites/green park school.png';
 import webImageThree from '../../../assets/case study images/websites/say.jpg';
@@ -9,25 +8,29 @@ import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
 import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 import { Helmet } from 'react-helmet';
+import { FaCode, FaShieldAlt, FaLayerGroup, FaExpandArrowsAlt, FaBolt, FaRocket, FaDatabase, FaMobileAlt, FaCloud, FaLaptopCode, FaCubes } from "react-icons/fa";
+import heroBg from "../../../assets/lineimage.jpeg";
+import projectsBg from '../../../assets/heroimage.jpeg';
+
+// Import logos for projects section
+import logo1 from '../../../assets/icons/logoipsum-247.png';
+import logo2 from '../../../assets/icons/logoipsum-248.png';
+import logo3 from '../../../assets/icons/logoipsum-249.png';
+import logo4 from '../../../assets/icons/logoipsum-292.png';
+import logo5 from '../../../assets/icons/logoipsum-293.png';
+import logo6 from '../../../assets/icons/logoipsum-294.png';
+import logo7 from '../../../assets/icons/logoipsum-295.png';
+import logo8 from '../../../assets/icons/logoipsum-296.png';
+import avatarLeft from '../../../assets/rev_avatar_5.jfif';
+import avatarRight from '../../../assets/rev_avatar_4.jfif';
 
 const AppWebDev = () => {
-    const [isExpanded, setIsExpanded] = useState(false);
     const [currentSlide, setCurrentSlide] = useState(0);
     const [autoSlide, setAutoSlide] = useState(true);
-    const [visibleImages, setVisibleImages] = useState([]);
-    const feedbackTrackRef = useRef(null);
-
-    // State to track loaded images
-    const [loadedImages, setLoadedImages] = useState({
-        webImageOne: false,
-        webImageTwo: false,
-        webImageThree: false
-    });
 
     // Scroll to top when component mounts
     useEffect(() => {
         window.scrollTo(0, 0);
-
         if (window.location.hash) {
             const id = window.location.hash.replace('#', '');
             setTimeout(() => {
@@ -42,145 +45,74 @@ const AppWebDev = () => {
     const feedbacks = [
         {
             id: 1,
-            text: "Our website looks elegant and professional. ENGLORAY understood our brand clearly and helped us get more customer inquiries",
+            rating: "★★★★★",
+            text: "Our website looks elegant and professional. ENGLORAY understood our brand clearly and helped us get more customer inquiries.",
             author: "Divya Makeovers",
-            role: "Makeover Studio"
+            role: "Makeover Studio",
+            initial: "D"
         },
         {
             id: 2,
+            rating: "★★★★★",
             text: "The website is clear, informative, and easy for parents to use. Very helpful for communication and admissions.",
             author: "Green Park School",
-            role: "School Application"
+            role: "School Application",
+            initial: "G"
         },
         {
             id: 3,
+            rating: "★★★★★",
             text: "The website is beautiful and perfectly matches our bridal brand. Clients connect with our work easily now.",
             author: "Say Bridals",
-            role: "Bridal Studio and makeups"
+            role: "Bridal Studio",
+            initial: "S"
         }
     ];
 
-    const projects = [
+    const aboutCards = [
         {
             id: 1,
-            title: "Divya Makeovers",
-            description: "Full-stack e-commerce solution with advanced inventory management, payment integration, and real-time analytics dashboard.",
-            category: "Web App",
-            image: webImageOne,
-            tech: ["React", "Node.js", "MongoDB", "Stripe"],
-            stats: {
-                timeline: "1.5 Months",
-                performance: "99.9%"
-            }
+            title: "Research & Discovery",
+            description: "We begin every development project by understanding your unique challenges and goals. We analyze your requirements and user needs to build a solid technical foundation.",
+            image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
         },
         {
             id: 2,
-            title: "Green Park School",
-            description: "Cross-platform School application with AI-powered workout recommendations and social features.",
-            category: "Mobile App",
-            image: webImageTwo,
-            tech: ["React Native", "Firebase", "AI/ML", "Redux"],
-            stats: {
-                timeline: "2 Months",
-                performance: "4.9 Rating"
-            }
+            title: "Technical Architecture",
+            description: "Designing scalable, secure, and robust system architectures that grow with your business. We plan every layer from database design to high-performance APIs.",
+            image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc48?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
         },
         {
             id: 3,
-            title: "Say Bridal Studio",
-            description: "Enterprise-Web application for appointment and tracking systems.",
-            category: "Enterprise Web",
-            image: webImageThree,
-            tech: ["Vue.js", "Python", "PostgreSQL", "AWS"],
-            stats: {
-                timeline: "1.5 Months",
-                performance: "100k Users"
-            }
+            title: "Agile Development",
+            description: "Our iterative coding process ensures rapid progress and high code quality. We use the latest frameworks to build fast, responsive, and intuitive digital experiences.",
+            image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            id: 4,
+            title: "Testing & Deployment",
+            description: "Rigorous quality assurance and automated testing ensure a bug-free launch. We handle complex cloud deployments to keep your application running at peak performance.",
+            image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
         }
     ];
 
-    // Web development related images - same size as main image
-    const extraImages = [
-        {
-            id: 1,
-            url: "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-            title: "UI/UX Design",
-            description: "Creating intuitive user interfaces and seamless user experiences"
-        },
-        {
-            id: 2,
-            url: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-            title: "Testing & Quality",
-            description: "Rigorous testing ensuring flawless application performance"
-        },
-        {
-            id: 3,
-            url: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-            title: "Cloud Deployment",
-            description: "Scalable cloud infrastructure and deployment solutions"
-        }
+    const howItWorksSteps = [
+        { title: "Step 1", heading: "Requirement Gathering", text: "In-depth analysis of your business vision and user needs." },
+        { title: "Step 2", heading: "System Architecture", text: "Planning the stack, database, and infrastructure scalability." },
+        { title: "Step 3", heading: "UI/UX & Prototyping", text: "Designing intuitive interfaces that engage and convert users." },
+        { title: "Step 4", heading: "Agile Development", text: "Fast-paced coding with regular updates and quality checks." },
+        { title: "Step 5", heading: "Deployment & QA", text: "Rigorous testing and launch across production environments." },
+        { title: "Step 6", heading: "Scaling & Maintenance", text: "Continuous monitoring and feature updates for long-term success." }
     ];
 
-    // Handle image load events
-    const handleImageLoad = (imageName) => {
-        setLoadedImages(prev => ({
-            ...prev,
-            [imageName]: true
-        }));
-    };
-
-    const handleImageError = (imageName) => {
-        console.error(`Error loading image: ${imageName}`);
-        setLoadedImages(prev => ({
-            ...prev,
-            [imageName]: false
-        }));
-    };
-
-    // Handle slide change
-    useEffect(() => {
-        if (feedbackTrackRef.current) {
-            feedbackTrackRef.current.style.transform = `translateX(-${currentSlide * 100}%)`;
-        }
-    }, [currentSlide]);
-
-    // Auto slide functionality
-    useEffect(() => {
-        let interval;
-        if (autoSlide) {
-            interval = setInterval(() => {
-                setCurrentSlide((prev) => (prev + 1) % feedbacks.length);
-            }, 5000);
-        }
-        return () => clearInterval(interval);
-    }, [autoSlide, feedbacks.length]);
-
-    // Handle image animation when expanded
-    useEffect(() => {
-        if (isExpanded) {
-            // Show images one by one with delay
-            const timeouts = [];
-            extraImages.forEach((img, index) => {
-                const timeout = setTimeout(() => {
-                    setVisibleImages(prev => [...prev, img.id]);
-                }, index * 300); // 300ms delay between each image
-                timeouts.push(timeout);
-            });
-
-            return () => {
-                timeouts.forEach(timeout => clearTimeout(timeout));
-                setVisibleImages([]);
-            };
-        } else {
-            // Clear all images when collapsed
-            setVisibleImages([]);
-        }
-    }, [isExpanded]);
-
-    const handleDotClick = (index) => {
-        setCurrentSlide(index);
-        setAutoSlide(false);
-        setTimeout(() => setAutoSlide(true), 10000);
+    const getPosition = (index) => {
+        const len = feedbacks.length;
+        const prev = (currentSlide - 1 + len) % len;
+        const next = (currentSlide + 1) % len;
+        if (index === currentSlide) return "center";
+        if (index === prev) return "left";
+        if (index === next) return "right";
+        return "hidden";
     };
 
     const handlePrevSlide = () => {
@@ -195,298 +127,278 @@ const AppWebDev = () => {
         setTimeout(() => setAutoSlide(true), 10000);
     };
 
-    const handleReadMore = () => {
-        setIsExpanded(!isExpanded);
-    };
+    useEffect(() => {
+        let interval;
+        if (autoSlide) {
+            interval = setInterval(() => {
+                setCurrentSlide((prev) => (prev + 1) % feedbacks.length);
+            }, 3000);
+        }
+        return () => clearInterval(interval);
+    }, [autoSlide, feedbacks.length]);
+
+    const badges = [
+        "Web App Development",
+        "Mobile App Development",
+        "Cloud Solutions",
+        "UI/UX Design Systems",
+        "Custom Software"
+    ];
 
     return (
         <>
-            <div>
+            <div className="awd-page-wrapper">
+                <svg width="0" height="0" style={{ position: 'absolute' }}>
+                    <defs>
+                        <clipPath id="cardCurve" clipPathUnits="objectBoundingBox">
+                            <path d="M 0.15,0 L 0.85,0 A 0.15,0.15 0,0,1 1,0.15 L 1,0.75 A 0.08,0.06 0,0,1 0.92,0.81 L 0.9,0.81 A 0.06,0.06 0,0,0 0.84,0.87 L 0.84,0.92 A 0.08,0.08 0,0,1 0.76,1 L 0.15,1 A 0.15,0.15 0,0,1 0,0.85 L 0,0.15 A 0.15,0.15 0,0,1 0.15,0 Z" />
+                        </clipPath>
+                    </defs>
+                </svg>
+
                 <Helmet>
-                    <title>Engloray</title>
-                    <meta name="description" content="Master the MERN stack (MongoDB, Express, React, Node.js) through real projects ." />
-                    <meta name="robots" content="max-snippet:-1, max-image-preview: large, max-video-preview:-1" />
-                    {/* <link rel="canonical" href="https://yourapp.com" /> */}
-                    <meta property="og:locale" content="en_US" />
-                    <meta property="og:type" content="website" />
-                    <meta property="og:title" content="Your App | Config" />
-                    <meta property="og:description" content="Lorem Ipsum" />
-                    {/* <meta property="og:url" content="https://yourapp.com" /> */}
+                    <title>Engloray - App & Web Development</title>
+                    <meta name="description" content="Expert Web and App Development services providing scalable and robust digital solutions." />
                 </Helmet>
 
                 <div className="awd-page" id='appWebPage'>
                     <TopNavBar />
                     <TwoLineNavbar />
-                    {/* Hero Section */}
-                    <section className="awd-hero-section">
-                        <div className="awd-hero-bg"></div>
-                        <div className="awd-hero-overlay"></div>
-                        <div className="awd-container">
-                            <div className="awd-hero-content">
-                                <span className="awd-hero-badge">Web Development</span>
-                                <h1 className="awd-hero-title">Crafting Digital Solutions That Drive Business Growth</h1>
-                                <h2 className="awd-hero-subtitle">Full-Stack Development Services for Modern Businesses</h2>
-                                <p className="awd-hero-description">
-                                    We build scalable, high-performance web and mobile applications using cutting-edge technologies.
-                                    Our development team transforms ideas into robust digital products that deliver exceptional user
-                                    experiences and measurable business results.
-                                </p>
-                                <div className="awd-tech-stack">
-                                    <span className="awd-tech-item">React & React Native</span>
-                                    <span className="awd-tech-item">Node.js & Python</span>
-                                    <span className="awd-tech-item">Cloud Architecture</span>
-                                    <span className="awd-tech-item">UI/UX Design</span>
-                                    <span className="awd-tech-item">DevOps & CI/CD</span>
-                                </div>
+
+                    <section className="awd-hero">
+                        <img src={heroBg} className="awd-hero-bg-image" alt="background texture" />
+                        <div className="awd-gradient-shape awd-blue-shape"></div>
+                        <div className="awd-gradient-shape awd-sand-shape"></div>
+
+                        <div className="awd-floating-card awd-left awd-rotate-left">
+                            <img src={avatarLeft} alt="App Architect" />
+                            <div className="awd-card-content">
+                                <h4>Scalable Code</h4>
+                                <p>System Architecture</p>
+                                <div className="awd-card-progress"><div className="awd-progress-fill"></div></div>
                             </div>
+                        </div>
+
+                        <div className="awd-floating-card awd-right awd-rotate-right">
+                            <img src={avatarRight} alt="Lead Developer" />
+                            <div className="awd-card-content">
+                                <h4>Live Ops</h4>
+                                <p>Cloud Deployment</p>
+                                <div className="awd-card-progress"><div className="awd-progress-fill"></div></div>
+                            </div>
+                        </div>
+
+                        <div className="awd-hero-container">
+                            <div className="awd-hero-badge">Web & App Development</div>
+                            <h1 className="awd-hero-title">
+                                Crafting Exceptional<br /> <span className="awd-title-highlight">Digital</span> <span className="awd-title-highlight">Solutions</span>
+                            </h1>
+                            <p className="awd-hero-desc">
+                                We build scalable, high-performance web and mobile applications using cutting-edge technologies. Our team transforms complex business challenges into robust digital products.
+                            </p>
+                            <div className="awd-privacy-badge">Built for scalability and high performance since 2018.</div>
+                        </div>
+
+                        <div className="awd-badge-glass">
+                            {badges.map((item, index) => (
+                                <span key={index} className={`awd-service-badge ${index === 0 ? "awd-badge-strategy" : index === 4 ? "awd-badge-guidelines" : ""}`}>
+                                    {item}
+                                </span>
+                            ))}
                         </div>
                     </section>
 
-                    {/* About Section */}
-                    <section className={`awd-about-section ${isExpanded ? 'awd-image-scroll' : ''}`}>
+                    <section className="awd-about-section">
                         <div className="awd-container">
-                            <div className="awd-about-content">
-                                <div className="awd-about-text">
-                                    <h2 className="awd-about-title">Why Choose ENGLORAY for Development?</h2>
-                                    <p className="awd-about-description">
-                                        We specialize in creating custom web and mobile applications that solve complex business challenges.
-                                        Our agile development approach ensures timely delivery while maintaining the highest quality standards.
-                                    </p>
-                                    <ul className="awd-about-points">
-                                        <li className="awd-about-point">Full-cycle development from concept to deployment</li>
-                                        <li className="awd-about-point">Scalable solutions that grow with your business</li>
-                                        <li className="awd-about-point">Focus on performance, security, and user experience</li>
-                                        <li className="awd-about-point">Cross-platform development for wider reach</li>
-                                        <li className="awd-about-point">Ongoing support and maintenance services</li>
-                                    </ul>
+                            <div className="awd-about-header">
+                                <h2 className="awd-about-title">About Our Engineering</h2>
+                                <p className="awd-about-description">
+                                    At ENGLORAY, we believe that great development is more than just writing code — it's about building scalable systems. Our engineering philosophy combines technical rigor with innovative problem-solving to deliver applications that scale.
+                                </p>
+                            </div>
 
-                                    <button
-                                        className={`awd-read-more-btn ${isExpanded ? 'expanded' : ''}`}
-                                        onClick={handleReadMore}
-                                    >
-                                        {isExpanded ? 'Read Less' : 'Read More'}
-                                        <span className="awd-arrow">↓</span>
-                                    </button>
-
-                                    <div className={`awd-expanded-content ${isExpanded ? 'expanded' : ''}`}>
-                                        <div className="awd-expanded-paragraphs">
-                                            <p>
-                                                <strong>Technical Architecture:</strong> Our development process begins with a comprehensive
-                                                technical assessment and architecture planning. We design scalable systems that can handle
-                                                growth while maintaining optimal performance and security standards.
-                                            </p>
-                                            <p>
-                                                <strong>Agile Development:</strong> We utilize modern development methodologies including
-                                                Agile and Scrum to ensure flexibility and adaptability. Regular sprints and continuous
-                                                integration ensure transparent progress and timely delivery.
-                                            </p>
-                                            <p>
-                                                <strong>Quality Assurance:</strong> Every application undergoes rigorous testing including
-                                                unit testing, integration testing, and user acceptance testing. We implement automated
-                                                testing pipelines to ensure code quality and reliability.
-                                            </p>
-                                            <p>
-                                                <strong>Deployment & DevOps:</strong> We provide complete DevOps solutions with CI/CD pipelines,
-                                                cloud deployment, and ongoing monitoring. Our team ensures smooth deployment and 24/7
-                                                monitoring for optimal application performance.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="awd-about-images-column">
-                                    {/* Main Image */}
-                                    <div className="awd-about-image-main">
-                                        <img
-                                            src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                                            alt="App Development Team"
-                                        />
-                                        <div className="awd-image-overlay">
-                                            <h3>Expert Development Team</h3>
-                                            <p>Our team of 50+ developers, designers, and engineers delivering excellence since 2018</p>
-                                        </div>
-                                    </div>
-
-                                    {/* Extra Images Section - SAME SIZE AS MAIN IMAGE */}
-                                    <div className={`awd-extra-images-fill ${isExpanded ? 'show' : ''}`}>
-                                        {extraImages.map((image) => (
-                                            <div
-                                                key={image.id}
-                                                className={`awd-extra-image-fill ${visibleImages.includes(image.id) ? 'visible' : ''}`}
-                                            >
-                                                <div className="awd-fill-image-wrapper">
-                                                    <img src={image.url} alt={image.title} />
-                                                    <div className="awd-fill-image-overlay">
-                                                        <h4>{image.title}</h4>
-                                                        <p>{image.description}</p>
+                            <div className="awd-cards-grid">
+                                {aboutCards.map((card) => (
+                                    <div key={card.id} className={`awd-about-card ${card.id === 2 || card.id === 4 ? 'awd-card-image-bottom' : ''}`}>
+                                        {card.id !== 2 && card.id !== 4 ? (
+                                            <>
+                                                <div className="awd-card-image-wrapper">
+                                                    <div className="awd-card-image"><img src={card.image} alt={card.title} /></div>
+                                                </div>
+                                                <div className="awd-card-content-wrapper">
+                                                    <div className="awd-card-content">
+                                                        <strong className="awd-card-title">{card.title}</strong>
+                                                        <p className="awd-card-description">{card.description}</p>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        ))}
+                                            </>
+                                        ) : (
+                                            <>
+                                                <div className="awd-card-content-wrapper">
+                                                    <div className="awd-card-content">
+                                                        <strong className="awd-card-title">{card.title}</strong>
+                                                        <p className="awd-card-description">{card.description}</p>
+                                                    </div>
+                                                </div>
+                                                <div className="awd-card-image-wrapper">
+                                                    <div className="awd-card-image"><img src={card.image} alt={card.title} /></div>
+                                                </div>
+                                            </>
+                                        )}
                                     </div>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+
+                    <section className="awd-branddna-section">
+                        <div className="awd-branddna-container">
+                            <div className="awd-branddna-left">
+                                <h2>Tech DNA</h2>
+                                <h3 className="awd-branddna-subtitle">The Foundation of<br />Agile Modern Systems</h3>
+                                <p>
+                                    Our Technical DNA framework ensures every line of code serves a strategic purpose. We prioritize scalability, security, and performance to ensure your digital ecosystem remains resilient and efficient as your business scales.
+                                </p>
+                            </div>
+
+                            <div className="awd-branddna-right">
+                                <svg className="awd-link-svg" viewBox="0 0 500 460">
+                                    <g className="awd-link-bases">
+                                        <path className="awd-base-path" d="M265,240 L265,20" />
+                                        <path className="awd-base-path" d="M265,240 L0,240" />
+                                        <path className="awd-base-path" d="M265,240 L500,240" />
+                                        <path className="awd-base-path" d="M265,240 L265,450" />
+                                        <path className="awd-base-path" d="M265,20 L500,240 L265,450 L0,240 Z" />
+                                    </g>
+                                    <g className="awd-animated-flows">
+                                        <g className="awd-phase-group awd-phase-1"><path pathLength="100" className="awd-flow-path" d="M0,240 L265,20" /><path pathLength="100" className="awd-flow-path" d="M0,240 L265,240" /><path pathLength="100" className="awd-flow-path" d="M0,240 L265,450" /></g>
+                                        <g className="awd-phase-group awd-phase-2"><path pathLength="100" className="awd-flow-path" d="M265,20 L0,240" /><path pathLength="100" className="awd-flow-path" d="M265,20 L265,240" /><path pathLength="100" className="awd-flow-path" d="M265,20 L500,240" /></g>
+                                        <g className="awd-phase-group awd-phase-3"><path pathLength="100" className="awd-flow-path" d="M265,240 L0,240" /><path pathLength="100" className="awd-flow-path" d="M265,240 L265,20" /><path pathLength="100" className="awd-flow-path" d="M265,240 L500,240" /><path pathLength="100" className="awd-flow-path" d="M265,240 L265,450" /></g>
+                                        <g className="awd-phase-group awd-phase-4"><path pathLength="100" className="awd-flow-path" d="M500,240 L265,20" /><path pathLength="100" className="awd-flow-path" d="M500,240 L265,240" /><path pathLength="100" className="awd-flow-path" d="M500,240 L265,450" /></g>
+                                        <g className="awd-phase-group awd-phase-5"><path pathLength="100" className="awd-flow-path" d="M265,450 L0,240" /><path pathLength="100" className="awd-flow-path" d="M265,450 L265,240" /><path pathLength="100" className="awd-flow-path" d="M265,450 L500,240" /></g>
+                                    </g>
+                                </svg>
+                                
+                                <div className="awd-dna-circle awd-circle-purpose"><FaLayerGroup className="awd-icon" /><h3>Architecture</h3><p className="awd-circle-desc">Robust foundations for long-term growth.</p></div>
+                                <div className="awd-dna-circle awd-circle-voice"><FaCode className="awd-icon" /><h3>Code Quality</h3><p className="awd-circle-desc">Clean, maintainable, and audited codebases.</p></div>
+                                <div className="awd-dna-circle awd-circle-values"><FaShieldAlt className="awd-icon" /><h3>Security</h3><p className="awd-circle-desc">Enterprise-grade protection by default.</p></div>
+                                <div className="awd-dna-circle awd-circle-personality"><FaExpandArrowsAlt className="awd-icon" /><h3>Scalability</h3><p className="awd-circle-desc">Seamlessly handle increasing traffic loads.</p></div>
+                                <div className="awd-dna-circle awd-circle-visual"><FaBolt className="awd-icon" /><h3>Performance</h3><p className="awd-circle-desc">Optimized for maximum speed and efficiency.</p></div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section className="awd-howworks">
+                        <div className="awd-howworks-container">
+                            <div className="awd-left-side">
+                                <div className="awd-badge"><span className="awd-dot"></span>DevOps Lifecycle</div>
+                                <p className="awd-intro-text">We build high-performance digital products through strategic planning, agile development, and rigorous QA.</p>
+                                <h2 className="awd-main-title">How It Works <br /> Stage by Stage</h2>
+                                <div className="awd-arrow">→</div>
+                            </div>
+
+                            <div className="awd-right-side">
+                                <h2 className="awd-section-title">Development Workflow</h2>
+                                <div className="awd-steps-grid">
+                                    {howItWorksSteps.map((step, index) => (
+                                        <div key={index} className="awd-step-card">
+                                            <span className="awd-card-dot"></span>
+                                            <h4>{step.title}</h4>
+                                            <h3>{step.heading}</h3>
+                                            <p>{step.text}</p>
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
                         </div>
                     </section>
 
-                    {/* Projects Section */}
+                    <section className="awd-circular-stats">
+                        <div className="awd-branding-stats-layout">
+                            <div className="awd-stats-content">
+                                <h2>Our Engineering Impact</h2>
+                                <p>We measure success through the stability and performance of the systems we build. These metrics reflect the trust and scalability we bring to our clients.</p>
+                            </div>
+
+                            <div className="awd-stats-wrapper-cards">
+                                <div className="awd-stat-card"><h2>200+</h2><p>Apps Built</p></div>
+                                <div className="awd-stat-card"><h2>500+</h2><p>Systems Managed</p></div>
+                                <div className="awd-stat-card"><h2>99.9%</h2><p>System Uptime</p></div>
+                                <div className="awd-stat-card"><h2>4.9/5</h2><p>Client Satisfaction</p></div>
+                            </div>
+                        </div>
+
+                        <div className="awd-bottom-stats">
+                            <div className="awd-stat"><h3>5+</h3><p>YEARS EXPERIENCE</p></div>
+                            <div className="awd-stat"><h3>50+</h3><p>CLOUDS DEPLOYED</p></div>
+                            <div className="awd-stat"><h3>1M+</h3><p>ACTIVE USERS</p></div>
+                            <div className="awd-stat"><h3>250+</h3><p>Code Audits Completed</p></div>
+                        </div>
+                    </section>
+
                     <section className="awd-projects-section">
-                        <div className="awd-container">
-                            <div className="awd-section-header">
-                                <h2 className="awd-section-title">Featured Projects</h2>
-                                <p className="awd-section-subtitle">
-                                    Real-world solutions delivering exceptional results for our clients
-                                </p>
-                            </div>
+                        <img src={projectsBg} className="awd-projects-bg-left" alt="bg" />
+                        <img src={projectsBg} className="awd-projects-bg-right" alt="bg" />
 
-                            <div className="awd-projects-grid">
-                                {projects.map((project, index) => (
-                                    <div className="awd-project-card" key={project.id}>
-                                        <div className="awd-project-image">
-                                            {/* First image debugging */}
-                                            {project.id === 1 ? (
-                                                <>
-                                                    <img
-                                                        src={project.image}
-                                                        alt={project.title}
-                                                        onLoad={() => handleImageLoad('webImageOne')}
-                                                        onError={() => handleImageError('webImageOne')}
-                                                        style={{
-                                                            border: !loadedImages.webImageOne ? '2px solid red' : 'none',
-                                                            backgroundColor: !loadedImages.webImageOne ? '#f0f0f0' : 'transparent'
-                                                        }}
-                                                    />
-                                                    {!loadedImages.webImageOne && (
-                                                        <div className="awd-image-fallback" style={{
-                                                            position: 'absolute',
-                                                            top: 0,
-                                                            left: 0,
-                                                            right: 0,
-                                                            bottom: 0,
-                                                            backgroundColor: '#f0f0f0',
-                                                            display: 'flex',
-                                                            alignItems: 'center',
-                                                            justifyContent: 'center',
-                                                            color: '#666',
-                                                            fontFamily: 'Arial',
-                                                            fontSize: '14px'
-                                                        }}>
-                                                            <div>
-                                                                <p>Loading image...</p>
-                                                                <p>Path: {typeof project.image === 'string' ? project.image : 'Imported module'}</p>
-                                                                <p>Check if file exists at: assets/case study images/websites/divya Makeovers.jpg</p>
-                                                            </div>
-                                                        </div>
-                                                    )}
-                                                </>
-                                            ) : (
-                                                <img
-                                                    src={project.image}
-                                                    alt={project.title}
-                                                    onLoad={() => handleImageLoad(`webImage${index + 1}`)}
-                                                    onError={() => handleImageError(`webImage${index + 1}`)}
-                                                />
-                                            )}
-                                            <span className="awd-project-category">{project.category}</span>
-                                        </div>
-                                        <div className="awd-project-content">
-                                            <h3 className="awd-project-title">{project.title}</h3>
-                                            <p className="awd-project-description">{project.description}</p>
+                        <div className="awd-projects-logos awd-left-logos">
+                            <div className="awd-project-logo-card l1"><img src={logo1} className="awd-project-logo" alt="logo" /></div>
+                            <div className="awd-project-logo-card l2"><img src={logo2} className="awd-project-logo" alt="logo" /></div>
+                            <div className="awd-project-logo-card l3"><img src={logo3} className="awd-project-logo" alt="logo" /></div>
+                            <div className="awd-project-logo-card l4"><img src={logo4} className="awd-project-logo" alt="logo" /></div>
+                        </div>
 
-                                            <div className="awd-project-tech">
-                                                {project.tech.map((tech, index) => (
-                                                    <span className="awd-tech-tag" key={index}>{tech}</span>
-                                                ))}
-                                            </div>
+                        <div className="awd-projects-logos awd-right-logos">
+                            <div className="awd-project-logo-card r1"><img src={logo5} className="awd-project-logo" alt="logo" /></div>
+                            <div className="awd-project-logo-card r2"><img src={logo6} className="awd-project-logo" alt="logo" /></div>
+                            <div className="awd-project-logo-card r3"><img src={logo7} className="awd-project-logo" alt="logo" /></div>
+                            <div className="awd-project-logo-card r4"><img src={logo8} className="awd-project-logo" alt="logo" /></div>
+                        </div>
 
-                                            <div className="awd-project-stats">
-                                                <div className="awd-project-stat">
-                                                    <span className="awd-stat-number">{project.stats.timeline}</span>
-                                                    <span className="awd-stat-label">Development Time</span>
-                                                </div>
-                                                <div className="awd-project-stat">
-                                                    <span className="awd-stat-number">{project.stats.performance}</span>
-                                                    <span className="awd-stat-label">Performance</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                ))}
+                        <div className="awd-projects-content">
+                            <h1>Trusted by innovators</h1>
+                            <p>We work with tech-driven companies to create meaningful digital experiences. Our partners trust us to deliver impactful engineering and scalable software solutions.</p>
+                            <div className="awd-projects-stats">
+                                <div><h2>20+</h2><span>Cloud Promoters</span></div>
+                                <div><h2>100+</h2><span>Systems Audited</span></div>
+                                <div><h2>150+</h2><span>Apps Optimized</span></div>
                             </div>
                         </div>
                     </section>
 
-                    {/* Feedback Section - WIDER LIKE BRANDING - AVATAR REMOVED */}
                     <section className="awd-feedback-section">
-                        <div className="awd-container awd-feedback-container-wide">
-                            <div className="awd-section-header">
-                                <h2 className="awd-section-title">Client Success Stories</h2>
-                                <p className="awd-section-subtitle">
-                                    Hear what our clients have to say about working with ENGLORAY
-                                </p>
+                        <div className="awd-container">
+                            <div className="awd-feedback-header">
+                                <h2 className="awd-feedback-title">Testimonials <span>from Clients</span></h2>
+                                <p className="awd-feedback-description">Here is what businesses say about our development and engineering excellence.</p>
                             </div>
 
-                            <div className="awd-feedback-wrapper-wide">
-                                {/* Left Button */}
-                                <button
-                                    className="awd-feedback-nav-btn awd-feedback-prev"
-                                    onClick={handlePrevSlide}
-                                    aria-label="Previous feedback"
-                                >
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                                        <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                    </svg>
-                                </button>
-
-                                {/* Feedback Slider - WIDER */}
-                                <div className="awd-feedback-slider-wide">
-                                    <div className="awd-feedback-track" ref={feedbackTrackRef}>
-                                        {feedbacks.map((feedback) => (
-                                            <div key={feedback.id} className="awd-feedback-slide">
-                                                <div className="awd-feedback-card-wide">
-                                                    <div className="awd-feedback-content">
-                                                        <div className="awd-feedback-quote">"</div>
-                                                        <p className="awd-feedback-text-wide">{feedback.text}</p>
-
-                                                        {/* AUTHOR INFO WITHOUT AVATAR */}
-                                                        <div className="awd-feedback-author-simple">
-                                                            <div className="awd-author-info-simple">
-                                                                <h4>{feedback.author}</h4>
-                                                                <p>{feedback.role}</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                            <div className="awd-feedback-carousel">
+                                {feedbacks.map((f, i) => {
+                                    const pos = getPosition(i);
+                                    return (
+                                        <div key={f.id} className={`awd-feedback-card ${pos}`}>
+                                            <div className="awd-feedback-rating">{f.rating}</div>
+                                            <div className="awd-feedback-quote-icon">❝</div>
+                                            <p className="awd-feedback-text">{f.text}</p>
+                                            <div className="awd-feedback-author">
+                                                <div className="awd-author-avatar"><div className="awd-avatar-initial">{f.initial}</div></div>
+                                                <div>
+                                                    <div className="awd-author-name">{f.author}</div>
+                                                    <div className="awd-author-role">{f.role}</div>
                                                 </div>
                                             </div>
-                                        ))}
-                                    </div>
-                                </div>
-
-                                {/* Right Button */}
-                                <button
-                                    className="awd-feedback-nav-btn awd-feedback-next"
-                                    onClick={handleNextSlide}
-                                    aria-label="Next feedback"
-                                >
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                                        <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                    </svg>
-                                </button>
+                                        </div>
+                                    );
+                                })}
                             </div>
 
-                            {/* Dots */}
-                            <div className="awd-slider-dots">
-                                {feedbacks.map((_, index) => (
-                                    <button
-                                        key={index}
-                                        className={`awd-slider-dot ${index === currentSlide ? 'active' : ''}`}
-                                        onClick={() => handleDotClick(index)}
-                                        aria-label={`Go to slide ${index + 1}`}
-                                    />
-                                ))}
+                            <div className="awd-feedback-controls">
+                                <button onClick={handlePrevSlide}>‹</button>
+                                <button onClick={handleNextSlide}>›</button>
                             </div>
                         </div>
                     </section>
+
                     <WhiteFooter />
                     <BackToTop />
                 </div>

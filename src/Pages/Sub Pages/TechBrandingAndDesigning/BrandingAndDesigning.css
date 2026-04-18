@@ -295,7 +295,7 @@ body {
     left: 0;
     width: 60px;
     height: 4px;
-    background: #ff6b6b;
+    background: #2563eb;
     border-radius: 2px;
 }
 
@@ -331,8 +331,8 @@ body {
 
 .bd-about-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(255, 107, 107, 0.1);
-    border-color: rgba(255, 107, 107, 0.3);
+    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.1);
+    border-color: rgba(37, 99, 235, 0.3);
 }
 
 .bd-about-card.bd-card-image-bottom {
@@ -475,6 +475,7 @@ body {
     text-align: center;
     padding: 12px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    z-index: 2;
 }
 
 .bd-dna-circle h3 {
@@ -525,6 +526,51 @@ body {
     background: linear-gradient(135deg, #1e2a44, #2e3c5f);
 }
 
+/* BRAND DNA LINK ANIMATION */
+.bd-link-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Faint base connecting lines */
+.bd-base-path {
+    fill: none;
+    stroke: #b3c5ef; /* Soft blue, no black */
+    stroke-width: 1.5;
+    opacity: 0.3;
+}
+
+/* Animated flowing lines from center */
+.bd-flow-path {
+    fill: none;
+    stroke-width: 3.5;
+    stroke-linecap: round;
+    stroke-dasharray: 40 160;
+    opacity: 0; /* Strictly hidden before it's turn */
+    stroke-dashoffset: 140; /* Safely initialized offset */
+    animation: flow-sequence 15s infinite both;
+}
+
+/* 5-Phase Sequence using correctly ordered delays (Left -> Top -> Center -> Bottom -> Right) */
+.bd-phase-1 .bd-flow-path { stroke: #647dee; animation-delay: 0s; } /* Left - Voice */
+.bd-phase-2 .bd-flow-path { stroke: #1fa3a8; animation-delay: 3s; } /* Top - Purpose */
+.bd-phase-3 .bd-flow-path { stroke: #ff7a18; animation-delay: 6s; } /* Center - Personality */
+.bd-phase-5 .bd-flow-path { stroke: #1e2a44; animation-delay: 9s; } /* Bottom - Visual Style */
+.bd-phase-4 .bd-flow-path { stroke: #43a047; animation-delay: 12s; } /* Right - Values */
+
+@keyframes flow-sequence {
+    0% { opacity: 0; stroke-dashoffset: 140; }
+    2% { opacity: 1; stroke-dashoffset: 140; }
+    18% { stroke-dashoffset: -100; opacity: 1; }
+    20% { opacity: 0; stroke-dashoffset: -100; }
+    100% { opacity: 0; stroke-dashoffset: -100; }
+}
+
 /* ============================== */
 /* HOW IT WORKS SECTION */
 /* ============================== */
@@ -555,7 +601,7 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-    color: #c6ff4f;
+    color: #3b82f6;
     font-size: 14px;
     margin-top: 40px;
     font-family: 'Inter', sans-serif;
@@ -564,7 +610,7 @@ body {
 .bd-dot {
     width: 10px;
     height: 10px;
-    background: #c6ff4f;
+    background: #3b82f6;
     border-radius: 50%;
 }
 
@@ -589,7 +635,7 @@ body {
 
 .bd-arrow {
     font-size: 60px;
-    color: #c6ff4f;
+    color: #2563eb;
     margin-left: 400px;
     margin-top: -120px;
 }
@@ -616,27 +662,30 @@ body {
 
 .bd-step-card {
     position: relative;
-    background: #1e293b;
+    background: rgba(45, 55, 72, 0.4); /* Subtle but clearly visible background */
     padding: 25px;
     border-radius: 16px;
     width: 100%;
-    opacity: 0.7;
-    transform: translateY(0px);
-    transition: all 0.35s ease;
+    opacity: 1; /* Fully visible by default */
+    border: 1px solid rgba(255, 255, 255, 0.05); /* Soft rim */
+    transform: scale(1);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     text-align: left;
+    overflow: hidden;
 }
 
 .bd-step-card:hover {
-    opacity: 1;
-    transform: translateY(-6px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    background: rgba(45, 55, 72, 0.6);
+    transform: scale(0.96); /* Subtle zoom out effect */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-color: rgba(198, 255, 79, 0.3);
 }
 
 .bd-step-card:hover .bd-card-dot {
-    box-shadow: 0 0 8px #c6ff4f;
+    box-shadow: 0 0 8px #2563eb;
 }
 
 .bd-step-card h4 {
@@ -671,17 +720,11 @@ body {
     right: 16px;
     width: 10px;
     height: 10px;
-    background: #c6ff4f;
+    background: #2563eb;
     border-radius: 50%;
 }
 
-.bd-step-card:nth-child(4) {
-    grid-column: 1/2;
-}
-
-.bd-step-card:nth-child(5) {
-    grid-column: 2/3;
-}
+/* Removed manual column positioning for natural flow */
 
 /* ============================== */
 /* CIRCULAR STATS SECTION */
@@ -725,74 +768,58 @@ body {
     font-weight: 500;
 }
 
-.bd-stats-wrapper {
-    position: relative;
-    width: 400px;
-    height: 260px;
+.bd-stats-wrapper-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    width: 480px;
     margin-top: 20px;
-    margin-right: 80px;
+    transform: translateX(-80px); /* Move left generally to balance the expanded bottom shift */
 }
 
-.bd-circle {
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
+.bd-stat-card {
+    position: relative;
+    left: 0;
+    background: #0f172a; /* Deep sleek black */
+    border-radius: 16px;
+    padding: 35px 20px;
+    width: 228px; /* Fixed identical sizing for all cards */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: #1e293b;
-    border: 2px solid rgba(0, 0, 0, 0.4);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
-    color: white;
-    animation: bd-floatCircle 4s ease-in-out infinite;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5); /* Deep shadow */
+    border: 1px solid rgba(255, 255, 255, 0.05); /* Slight bright rim */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.bd-circle h2 {
+.bd-stat-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(59, 130, 246, 0.25); /* Glow on hover */
+}
+
+.bd-stat-card h2 {
     color: #ffffff;
-    font-size: 52px;
+    font-size: 48px;
     margin: 0;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
 }
 
-.bd-circle p {
+.bd-stat-card p {
     font-family: 'Inter', sans-serif;
-    font-size: 13.5px;
-    letter-spacing: 1px;
+    font-size: 14px;
+    letter-spacing: 0.5px;
     margin-top: 6px;
     font-weight: 600;
+    color: #94a3b8; /* Lighter slate gray for dark theme */
 }
 
-.bd-circle-top {
-    top: -80px;
-    left: 25%;
-    transform: translateX(-50%);
-}
-
-.bd-circle-left {
-    bottom: -40px;
-    left: -70px;
-    animation-delay: 0.6s;
-}
-
-.bd-circle-right {
-    bottom: -40px;
-    left: 280px;
-    animation-delay: 1.2s;
-}
-
-@keyframes bd-floatCircle {
-    0% {
-        transform: translateY(0px);
-    }
-
-    50% {
-        transform: translateY(-10px);
-    }
-
-    100% {
-        transform: translateY(0px);
-    }
+/* Second Row Shifting Logic */
+.bd-stat-card:nth-child(3),
+.bd-stat-card:nth-child(4) {
+    left: 126px; /* Exactly half of (228px card + 24px gap) to beautifully position it slanted! */
 }
 
 .bd-connector {
@@ -843,15 +870,27 @@ body {
     overflow: hidden;
 }
 
-.bd-projects-bg-full {
+.bd-projects-bg-right {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
     z-index: 0;
-    opacity: 1;
+}
+
+.bd-projects-bg-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scaleX(-1);
+    clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+    z-index: 0;
 }
 
 .bd-projects-logos {
@@ -864,14 +903,14 @@ body {
 .bd-project-logo {
     position: absolute;
     object-fit: contain;
-    width: 50px;
-    height: 50px;
+    width: 38px;
+    height: 38px;
 }
 
 .bd-project-logo-card {
     position: absolute;
-    width: 55px;
-    height: 55px;
+    width: 48px;
+    height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -887,28 +926,28 @@ body {
 }
 
 .bd-left-logos .l2 {
-    top: 180px;
-    left: 230px;
+    top: 170px;
+    left: 250px;
 }
 
 .bd-left-logos .l3 {
-    top: 320px;
-    left: 180px;
+    top: 330px;
+    left: 80px;
 }
 
 .bd-left-logos .l4 {
     top: 460px;
-    left: 80px;
+    left: 140px;
 }
 
 .bd-left-logos .l5 {
-    top: 180px;
-    left: 20px;
+    top: 200px;
+    left: 50px;
 }
 
 .bd-left-logos .l6 {
     top: 520px;
-    left: 240px;
+    left: 260px;
 }
 
 .bd-right-logos .r1 {
@@ -1020,7 +1059,7 @@ body {
 .bd-feedback-title span {
     font-family: 'Inter', sans-serif;
     font-weight: 700;
-    color: #ff6b6b;
+    color: #2563eb;
 }
 
 .bd-feedback-description {
@@ -1070,8 +1109,15 @@ body {
     z-index: 1;
 }
 
+.bd-feedback-card.hidden {
+    transform: scale(0.8);
+    opacity: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
 .bd-feedback-rating {
-    color: #ff6b6b;
+    color: #2563eb;
     margin-bottom: 15px;
     font-size: 18px;
     letter-spacing: 2px;
@@ -1108,8 +1154,8 @@ body {
     height: 45px;
     border-radius: 50%;
     overflow: hidden;
-    border: 2px solid #ff6b6b;
-    background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+    border: 2px solid #2563eb;
+    background: linear-gradient(135deg, #2563eb, #60a5fa);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1150,7 +1196,7 @@ body {
     height: 45px;
     border-radius: 50%;
     border: none;
-    background: #ff6b6b;
+    background: #2563eb;
     color: white;
     font-size: 24px;
     cursor: pointer;
@@ -1159,13 +1205,13 @@ body {
     align-items: center;
     justify-content: center;
     line-height: 1;
-    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
 }
 
 .bd-feedback-controls button:hover {
-    background: #ff5252;
+    background: #1d4ed8;
     transform: scale(1.1);
-    box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
 }
 
 .bd-feedback-controls button:active {
@@ -1399,11 +1445,7 @@ body {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .bd-step-card:nth-child(5) {
-        grid-column: 1/3;
-        max-width: 50%;
-        margin: 0 auto;
-    }
+    /* Removed manual targeting for step 5 since we have 6 steps now */
 
     .bd-branding-stats-layout {
         flex-direction: column;

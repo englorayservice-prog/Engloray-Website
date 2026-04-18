@@ -7,7 +7,7 @@ import './BrandingAndDesigning.css';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
-import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
+import MainPageSubFooter from '../MainPageSubFooter/MainPageSubFooter';
 import { Helmet } from 'react-helmet';
 // import profile from '../../../assets/heroimage.jpeg';
 import { FaLightbulb, FaPalette, FaComments, FaLayerGroup, FaCompass, FaUserCircle, FaGem } from "react-icons/fa";
@@ -29,6 +29,10 @@ import logo9 from '../../../assets/icons/logoipsum-298.png';
 import logo10 from '../../../assets/icons/logoipsum-299.png';
 import logo11 from '../../../assets/icons/logoipsum-327.png';
 import logo12 from '../../../assets/icons/logoipsum-338.png';
+import avatarLeft from '../../../assets/rev_avatar_5.jfif';
+import avatarRight from '../../../assets/rev_avatar_4.jfif';
+
+
 
 const BrandingDesigning = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -74,6 +78,30 @@ const BrandingDesigning = () => {
             author: "ISHA Bites",
             role: "Food And Beverage",
             initial: "I"
+        },
+        {
+            id: 4,
+            rating: "★★★★★",
+            text: "Their strategic approach to our visual identity completely transformed how our customers perceive our brand. Incredible attention to detail.",
+            author: "TechFlow Solutions",
+            role: "Software Company",
+            initial: "T"
+        },
+        {
+            id: 5,
+            rating: "★★★★★",
+            text: "Engloray's branding guidelines provided us with the perfect foundation. It's so much easier for our team to stay consistent now.",
+            author: "Nova Retail",
+            role: "Retail Chain",
+            initial: "N"
+        },
+        {
+            id: 6,
+            rating: "★★★★★",
+            text: "The new logo and color palette perfectly capture our company's mission. We've seen a noticeable increase in brand recognition.",
+            author: "Apex Consulting",
+            role: "Business Services",
+            initial: "A"
         }
     ];
 
@@ -167,16 +195,23 @@ const BrandingDesigning = () => {
             title: "Step 5",
             heading: "Launch & Grow Your Brand",
             text: "Apply your brand consistently across platforms to build recognition."
+        },
+        {
+            title: "Step 6",
+            heading: "Audit & Scale Evolution",
+            text: "Continuously monitor impact and evolve your brand to stay ahead."
         }
     ];
 
     const getPosition = (index) => {
-        const diff = index - currentSlide;
+        const len = feedbacks.length;
+        const prev = (currentSlide - 1 + len) % len;
+        const next = (currentSlide + 1) % len;
 
-        if (diff === 0) return "center";
-        if (diff === -1 || diff === 2) return "left";
-        if (diff === 1 || diff === -2) return "right";
-        return "";
+        if (index === currentSlide) return "center";
+        if (index === prev) return "left";
+        if (index === next) return "right";
+        return "hidden";
     };
 
     const handlePrevSlide = () => {
@@ -197,7 +232,7 @@ const BrandingDesigning = () => {
         if (autoSlide) {
             interval = setInterval(() => {
                 setCurrentSlide((prev) => (prev + 1) % feedbacks.length);
-            }, 5000);
+            }, 3000); // Swipes continuously after a short delay
         }
         return () => clearInterval(interval);
     }, [autoSlide, feedbacks.length]);
@@ -248,7 +283,7 @@ const BrandingDesigning = () => {
                         {/* Floating cards */}
                         <div className="bd-floating-card bd-left bd-rotate-left">
                             <img
-                                src="https://i.pravatar.cc/100?img=5"
+                                src={avatarLeft}
                                 alt="Brand strategist"
                             />
                             <div className="bd-card-content">
@@ -262,7 +297,7 @@ const BrandingDesigning = () => {
 
                         <div className="bd-floating-card bd-right bd-rotate-right">
                             <img
-                                src="https://i.pravatar.cc/100?img=12"
+                                src={avatarRight}
                                 alt="Creative director"
                             />
                             <div className="bd-card-content">
@@ -389,9 +424,62 @@ const BrandingDesigning = () => {
 
                             {/* RIGHT GRAPHIC */}
                             <div className="bd-branddna-right">
+                                {/* SVG Link Animation (Expanding Lines from Center) */}
+                                <svg className="bd-link-svg" viewBox="0 0 500 460">
+                                    {/* Faint base lines connecting everything (no black, soft blue) */}
+                                    <g className="bd-link-bases">
+                                        <path className="bd-base-path" d="M265,240 L265,20" />
+                                        <path className="bd-base-path" d="M265,240 L0,240" />
+                                        <path className="bd-base-path" d="M265,240 L500,240" />
+                                        <path className="bd-base-path" d="M265,240 L265,450" />
+                                        {/* Connect outer nodes together */}
+                                        <path className="bd-base-path" d="M265,20 L500,240 L265,450 L0,240 Z" />
+                                    </g>
+
+                                    {/* Animated flowing lines from center/nodes, sequenced */}
+                                    <g className="bd-animated-flows">
+                                        {/* PHASE 1: Voice (0,240) -> Purpose (265,20), Personality (265,240), Visual Style (265,450) */}
+                                        <g className="bd-phase-group bd-phase-1">
+                                            <path pathLength="100" className="bd-flow-path" d="M0,240 L265,20" />
+                                            <path pathLength="100" className="bd-flow-path" d="M0,240 L265,240" />
+                                            <path pathLength="100" className="bd-flow-path" d="M0,240 L265,450" />
+                                        </g>
+
+                                        {/* PHASE 2: Purpose (265,20) -> Voice (0,240), Personality (265,240), Values (500,240) */}
+                                        <g className="bd-phase-group bd-phase-2">
+                                            <path pathLength="100" className="bd-flow-path" d="M265,20 L0,240" />
+                                            <path pathLength="100" className="bd-flow-path" d="M265,20 L265,240" />
+                                            <path pathLength="100" className="bd-flow-path" d="M265,20 L500,240" />
+                                        </g>
+
+                                        {/* PHASE 3: Personality (265,240) -> Voice (0,240), Purpose (265,20), Values (500,240), Visual Style (265,450) */}
+                                        <g className="bd-phase-group bd-phase-3">
+                                            <path pathLength="100" className="bd-flow-path" d="M265,240 L0,240" />
+                                            <path pathLength="100" className="bd-flow-path" d="M265,240 L265,20" />
+                                            <path pathLength="100" className="bd-flow-path" d="M265,240 L500,240" />
+                                            <path pathLength="100" className="bd-flow-path" d="M265,240 L265,450" />
+                                        </g>
+
+                                        {/* PHASE 4: Values (500,240) -> Purpose (265,20), Personality (265,240), Visual Style (265,450) */}
+                                        <g className="bd-phase-group bd-phase-4">
+                                            <path pathLength="100" className="bd-flow-path" d="M500,240 L265,20" />
+                                            <path pathLength="100" className="bd-flow-path" d="M500,240 L265,240" />
+                                            <path pathLength="100" className="bd-flow-path" d="M500,240 L265,450" />
+                                        </g>
+
+                                        {/* PHASE 5: Visual Style (265,450) -> Voice (0,240), Personality (265,240), Values (500,240) */}
+                                        <g className="bd-phase-group bd-phase-5">
+                                            <path pathLength="100" className="bd-flow-path" d="M265,450 L0,240" />
+                                            <path pathLength="100" className="bd-flow-path" d="M265,450 L265,240" />
+                                            <path pathLength="100" className="bd-flow-path" d="M265,450 L500,240" />
+                                        </g>
+                                    </g>
+                                </svg>
+
                                 {/* circles */}
                                 <div className="bd-dna-circle bd-circle-purpose">
                                     <FaCompass className="bd-icon" />
+
                                     <h3>Purpose</h3>
                                     <p className="bd-circle-desc">
                                         Defines why the brand exists and the impact it creates.
@@ -482,36 +570,26 @@ const BrandingDesigning = () => {
                                 </p>
                             </div>
 
-                            {/* CIRCLE STATS */}
-                            <div className="bd-stats-wrapper">
-                                <svg className="bd-connector" viewBox="0 0 400 300">
-                                    <path
-                                        d="M200 40 C120 80 120 200 200 230"
-                                        stroke="rgba(255,255,255,0.15)"
-                                        strokeWidth="2"
-                                        fill="none"
-                                    />
-                                    <path
-                                        d="M200 40 C280 80 280 200 200 230"
-                                        stroke="rgba(255,255,255,0.15)"
-                                        strokeWidth="2"
-                                        fill="none"
-                                    />
-                                </svg>
-
-                                <div className="bd-circle bd-circle-top">
+                            {/* CARD STATS */}
+                            <div className="bd-stats-wrapper-cards">
+                                <div className="bd-stat-card">
                                     <h2>120+</h2>
                                     <p>Brands Built</p>
                                 </div>
 
-                                <div className="bd-circle bd-circle-left">
+                                <div className="bd-stat-card">
                                     <h2>300+</h2>
                                     <p>Projects Delivered</p>
                                 </div>
 
-                                <div className="bd-circle bd-circle-right">
+                                <div className="bd-stat-card">
                                     <h2>95%</h2>
                                     <p>Client Satisfaction</p>
+                                </div>
+
+                                <div className="bd-stat-card">
+                                    <h2>50+</h2>
+                                    <p>Industry Awards</p>
                                 </div>
                             </div>
                         </div>
@@ -519,7 +597,7 @@ const BrandingDesigning = () => {
                         {/* BOTTOM STATS */}
                         <div className="bd-bottom-stats">
                             <div className="bd-stat">
-                                <h3>10+</h3>
+                                <h3>5+</h3>
                                 <p>YEARS EXPERIENCE</p>
                             </div>
 
@@ -541,8 +619,9 @@ const BrandingDesigning = () => {
 
                     {/* Projects Section - UPDATED to match HeroSection design */}
                     <section className="bd-projects-section">
-                        {/* FULL BACKGROUND */}
-                        <img src={projectsBg} className="bd-projects-bg-full" alt="hi" />
+                        {/* MIRRORED BACKGROUND */}
+                        <img src={projectsBg} className="bd-projects-bg-left" alt="background left mirror" />
+                        <img src={projectsBg} className="bd-projects-bg-right" alt="background right" />
 
                         <div className="bd-projects-logos bd-left-logos">
                             <div className="bd-project-logo-card l1"><img src={logo1} className="bd-project-logo" alt="brand logo" /></div>
@@ -638,7 +717,7 @@ const BrandingDesigning = () => {
                             </div>
                         </div>
                     </section>
-                    <WhiteFooter />
+                    <MainPageSubFooter />
                     <BackToTop />
                 </div>
             </div>

@@ -50,7 +50,9 @@ import { faWhatsapp as faWhatsappBrand } from '@fortawesome/free-brands-svg-icon
 import './CorporateTraining.css';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
+import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
+import NavigationBar from '../../TechLearningSection/NavigationBar/NavigationBar';
 import { Helmet } from 'react-helmet';
 import threeMenCorporateHero from '../../../assets/three_men_corporate_hero.png';
 import corporateImage from '../../../assets/corporate.jpeg';
@@ -447,6 +449,7 @@ const CorporateTraining = () => {
           <section className="ct-arc-hero">
             {/* Navigation Layers */}
             <div className="ct-arc-nav">
+              <TopNavBar />
               <TwoLineNavbar />
             </div>
 

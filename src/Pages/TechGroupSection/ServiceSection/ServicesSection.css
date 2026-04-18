@@ -33,6 +33,13 @@
   padding: 0 28px;
 }
 
+/* Extends container specifically on large desktop ratios to reduce side gaps */
+@media (min-width: 1440px) {
+  .ss-container {
+    max-width: 1600px;
+  }
+}
+
 /* ──────────────────────────────────────────
    MASTER GRID
    4 columns, 3 rows matching the reference:
@@ -173,7 +180,7 @@
   color: #6b7280;
   line-height: 1.5;
   margin: 0;
-  text-align: left;
+  text-align: justify;
 }
 
 /* ── Card Grid Placements (Desktop) ── */
