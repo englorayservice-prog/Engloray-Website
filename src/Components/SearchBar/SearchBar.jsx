@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import './SearchBar.css';
 import { useNavigate, useLocation } from 'react-router-dom';
 
-const SearchBar = ({ mobile = false }) => {
+const SearchBar = ({ mobile = false, source = 'main' }) => {
     const [searchQuery, setSearchQuery] = useState('');
     const [searchResults, setSearchResults] = useState([]);
     const [showResults, setShowResults] = useState(false);
@@ -117,6 +117,47 @@ const SearchBar = ({ mobile = false }) => {
         { id: 'terms', title: 'Terms & Services', content: 'User agreement and terms of use.', keywords: ['terms', 'legal', 'agreement'], path: '/termsAndServicesPage', type: 'page', section: 'main' }
     ];
 
+    const raymartContent = [
+        // CRM
+        { id: 'rm1', title: 'Ultimate Sales Hub', content: 'CRM Product', type: 'Product', path: '/raymartPageFour', navId: 'crm-products', keywords: ['crm', 'sales'] },
+        { id: 'rm2', title: 'Customer Link Pro', content: 'CRM Product', type: 'Product', path: '/raymartPageFour', navId: 'crm-products', keywords: ['crm'] },
+        { id: 'rm3', title: 'Unified CRM Connect', content: 'CRM Product', type: 'Product', path: '/raymartPageFour', navId: 'crm-products', keywords: ['crm'] },
+        { id: 'rm4', title: 'Sales Growth Engine', content: 'CRM Product', type: 'Product', path: '/raymartPageFour', navId: 'crm-products', keywords: ['crm'] },
+        
+        // ERP
+        { id: 'rm5', title: 'Financial Intelligence', content: 'ERP Product', type: 'Product', path: '/raymartPageFour', navId: 'erp-products', keywords: ['erp', 'financial'] },
+        { id: 'rm6', title: 'Supply Chain Master', content: 'ERP Product', type: 'Product', path: '/raymartPageFour', navId: 'erp-products', keywords: ['erp', 'supply'] },
+        { id: 'rm7', title: 'Operations Core 3.0', content: 'ERP Product', type: 'Product', path: '/raymartPageFour', navId: 'erp-products', keywords: ['erp'] },
+        { id: 'rm8', title: 'Enterprise Logic Hub', content: 'ERP Product', type: 'Product', path: '/raymartPageFour', navId: 'erp-products', keywords: ['erp'] },
+        
+        // AI CHATBOT
+        { id: 'rm9', title: 'Razor AI Assistant', content: 'AI Chatbot Product', type: 'Product', path: '/raymartPageFour', navId: 'ai-chatbot-products', keywords: ['ai', 'bot'] },
+        { id: 'rm10', title: 'Nexus GPT Node', content: 'AI Chatbot Product', type: 'Product', path: '/raymartPageFour', navId: 'ai-chatbot-products', keywords: ['ai', 'bot'] },
+        
+        // JOB SEEKER
+        { id: 'rm13', title: 'AI Resume Optimizer', content: 'Job Seeker Product', type: 'Product', path: '/raymartPageFour', navId: 'job-seeker-hub', keywords: ['job', 'resume', 'career'] },
+        
+        // LEARNING & CAREER
+        { id: 'rm17', title: 'Fullstack Web Academy', content: 'Learning Product', type: 'Product', path: '/raymartPageFour', navId: 'learning-career', keywords: ['learning', 'course', 'web'] },
+        
+        // SAAS & BUSINESS
+        { id: 'rm21', title: 'Cloud Ops Manager', content: 'SaaS Product', type: 'Product', path: '/raymartPageFour', navId: 'saas-products', keywords: ['saas', 'cloud'] },
+        { id: 'rm22', title: 'SaaS Billing Pro', content: 'SaaS Product', type: 'Product', path: '/raymartPageFour', navId: 'saas-products', keywords: ['saas', 'billing'] },
+        { id: 'rm25', title: 'Executive AI Dashboard', content: 'Business Suit AI', type: 'Product', path: '/raymartPageFour', navId: 'business-suit-ai', keywords: ['business', 'ai'] },
+
+        // SERVICES 
+        { id: 'rms101', title: 'Brand Strategy', content: 'Branding Service', type: 'Service', path: '/raymartPageFour', navId: 'branding-identity', keywords: ['brand', 'identity'] },
+        { id: 'rms103', title: 'Logo Design', content: 'Branding Service', type: 'Service', path: '/raymartPageFour', navId: 'branding-identity', keywords: ['brand', 'logo'] },
+        { id: 'rms201', title: 'Website Development', content: 'Development Service', type: 'Service', path: '/raymartPageFour', navId: 'development-services', keywords: ['web', 'dev'] },
+        { id: 'rms202', title: 'E-Commerce Development', content: 'Development Service', type: 'Service', path: '/raymartPageFour', navId: 'development-services', keywords: ['web', 'ecommerce'] },
+        { id: 'rms501', title: 'Business App Solution', content: 'App Development', type: 'Service', path: '/raymartPageFour', navId: 'app-development', keywords: ['app', 'mobile'] },
+        { id: 'rms601', title: 'Social Media Pack', content: 'Graphic Design', type: 'Service', path: '/raymartPageFour', navId: 'graphic-design', keywords: ['graphic', 'design', 'social'] },
+        { id: 'rms701', title: 'Website UI/UX', content: 'UI/UX Service', type: 'Service', path: '/raymartPageFour', navId: 'ui-ux-design', keywords: ['ui', 'ux', 'design'] },
+        { id: 'rms801', title: 'Custom Software', content: 'Tech Solutions', type: 'Service', path: '/raymartPageFour', navId: 'software-tech-solutions', keywords: ['software', 'custom'] },
+        { id: 'rms901', title: 'Business Analytics', content: 'Data Analytics', type: 'Service', path: '/raymartPageFour', navId: 'data-analytics', keywords: ['data', 'analytics'] },
+    ];
+
+
     // Fuzzy search function
     const performSearch = useCallback((query) => {
         if (!query.trim()) {
@@ -128,7 +169,9 @@ const SearchBar = ({ mobile = false }) => {
         setIsSearching(true);
         const lowercaseQuery = query.toLowerCase().trim();
 
-        const results = websiteContent
+        const dataToSearch = source === 'raymart' ? raymartContent : websiteContent;
+
+        const results = dataToSearch
             .map(item => {
                 let score = 0;
                 
@@ -200,7 +243,11 @@ const SearchBar = ({ mobile = false }) => {
         console.log('Navigating to:', result.path);
         
         // Navigate to target page
-        navigate(result.path);
+        if (source === 'raymart' && result.navId) {
+            navigate(result.path, { state: { id: result.navId } });
+        } else {
+            navigate(result.path);
+        }
         
         // Close search and clear input
         setShowResults(false);
@@ -341,7 +388,7 @@ const SearchBar = ({ mobile = false }) => {
                 <input
                     type="text"
                     className="search-input"
-                    placeholder={mobile ? "Search website..." : "Search courses, services, pages..."}
+                    placeholder={source === 'raymart' ? "Search services and products..." : (mobile ? "Search website..." : "Search courses, services, pages...")}
                     value={searchQuery}
                     onChange={handleSearchChange}
                     onFocus={() => setShowResults(true)}
@@ -464,33 +511,58 @@ const SearchBar = ({ mobile = false }) => {
                     {!searchQuery.trim() && (
                         <div className="search-section">
                             <div className="section-header">
-                                <span>Quick Links</span>
+                                <span>{source === 'raymart' ? 'Top Raymart Picks' : 'Quick Links'}</span>
                             </div>
                             <div className="quick-links">
-                                <button 
-                                    className="quick-link"
-                                    onClick={() => handleResultClick(websiteContent.find(c => c.id === 'allCourses'))}
-                                >
-                                    <span>All Courses</span>
-                                </button>
-                                <button 
-                                    className="quick-link"
-                                    onClick={() => handleResultClick(websiteContent.find(c => c.id === 'branding'))}
-                                >
-                                    <span>Our Services</span>
-                                </button>
-                                <button 
-                                    className="quick-link"
-                                    onClick={() => handleResultClick(websiteContent.find(c => c.id === 'contact'))}
-                                >
-                                    <span>Contact Us</span>
-                                </button>
-                                <button 
-                                    className="quick-link"
-                                    onClick={() => handleResultClick(websiteContent.find(c => c.id === 'allProjects'))}
-                                >
-                                    <span>Projects</span>
-                                </button>
+                                {source === 'raymart' ? (
+                                    <>
+                                        <button 
+                                            className="quick-link"
+                                            onClick={() => handleResultClick(raymartContent.find(c => c.id === 'rm1'))}
+                                        >
+                                            <span>Ultimate Sales Hub</span>
+                                        </button>
+                                        <button 
+                                            className="quick-link"
+                                            onClick={() => handleResultClick(raymartContent.find(c => c.id === 'rms101'))}
+                                        >
+                                            <span>Brand Strategy</span>
+                                        </button>
+                                        <button 
+                                            className="quick-link"
+                                            onClick={() => handleResultClick(raymartContent.find(c => c.id === 'rm5'))}
+                                        >
+                                            <span>Financial Intelligence</span>
+                                        </button>
+                                    </>
+                                ) : (
+                                    <>
+                                        <button 
+                                            className="quick-link"
+                                            onClick={() => handleResultClick(websiteContent.find(c => c.id === 'allCourses'))}
+                                        >
+                                            <span>All Courses</span>
+                                        </button>
+                                        <button 
+                                            className="quick-link"
+                                            onClick={() => handleResultClick(websiteContent.find(c => c.id === 'branding'))}
+                                        >
+                                            <span>Our Services</span>
+                                        </button>
+                                        <button 
+                                            className="quick-link"
+                                            onClick={() => handleResultClick(websiteContent.find(c => c.id === 'contact'))}
+                                        >
+                                            <span>Contact Us</span>
+                                        </button>
+                                        <button 
+                                            className="quick-link"
+                                            onClick={() => handleResultClick(websiteContent.find(c => c.id === 'allProjects'))}
+                                        >
+                                            <span>Projects</span>
+                                        </button>
+                                    </>
+                                )}
                             </div>
                         </div>
                     )}

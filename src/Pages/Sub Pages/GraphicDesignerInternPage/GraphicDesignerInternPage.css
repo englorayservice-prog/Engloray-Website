@@ -402,6 +402,7 @@ body {
     line-height: 1.6;
     color: #666;
     margin-bottom: 2.5rem;
+    text-align: left;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -4697,11 +4698,13 @@ body {
     border-radius: 50px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end; /* Aligned to bottom */
+    justify-content: flex-end;
+    /* Aligned to bottom */
     align-items: center;
     padding: 0 0 1.5rem 0;
     position: relative;
-    gap: 5px; /* Tighter gap as requested */
+    gap: 5px;
+    /* Tighter gap as requested */
 }
 
 .GD-dn-bg-dark {
@@ -4718,8 +4721,9 @@ body {
     writing-mode: vertical-rl;
     transform: rotate(180deg);
     white-space: nowrap;
-    padding-bottom: 0px; 
-    padding-left: 15px; /* Increased for left shift as requested */
+    padding-bottom: 0px;
+    padding-left: 15px;
+    /* Increased for left shift as requested */
     font-size: 1.1rem;
     font-weight: 700;
     letter-spacing: 1.5px;
@@ -6815,33 +6819,214 @@ body {
     letter-spacing: 0.1px;
 }
 
-/* Responsive design */
-@media (max-width: 1400px) {
-    .GD-expectations-header {
-        font-size: 48px;
-        letter-spacing: 3px;
-    }
-}
+/* ================================================= */
+/* RESPONSIVE HERO - TABLET & MOBILE (Max 1024px)    */
+/* ================================================= */
 
-@media (max-width: 1200px) {
-    .GD-expectations-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
+@media (max-width: 1024px) {
 
-@media (max-width: 768px) {
-    .GD-expectations-header {
-        font-size: 32px;
+    /* 1. HIDE UNWANTED ELEMENTS */
+    .GD-rotating-stamp,
+    .GD-sparkle-icon,
+    .GD-sparkle-icon-large,
+    .GD-sparkle-icon-small,
+    .GD-hero-image-pill,
+    .GD-hero-top-line-container,
+    .GD-stamp-star,
+    .GD-hero-desc-small {
+        display: none !important;
+    }
+
+    /* 2. RE-ORDER MAIN SECTION */
+    .GD-hero-section-new {
+        padding: 4rem 1.5rem 2rem 1.5rem;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center;
         text-align: center;
-        letter-spacing: 1px;
     }
 
-    .GD-expectations-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
+    /* POSITION 1: ALL TITLES (3 lines) */
+    .GD-hero-typography {
+        order: 1 !important;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
     }
 
-    .GD-expectation-card {
+    .GD-hero-line {
+        justify-content: center !important;
+        gap: 0 !important;
+    }
+
+    .GD-hero-title-word {
+        /* Scales fluidly: Base 2.5rem, grows to 4.5rem */
+        font-size: clamp(2.5rem, 8vw, 4.5rem) !important;
+        line-height: 1.1;
+        gap: 0 !important;
+        white-space: normal;
+        display: block;
+    }
+
+
+
+    /* POSITION 3: LARGE DESCRIPTION (Extracted from bottom row) */
+    .GD-hero-bottom-row {
+        order: 3 !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-top: 0 !important;
+    }
+
+    .GD-hero-bottom-left {
+        padding: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .GD-hero-desc-large {
+        order: 1;
+        /* First inside the bottom row */
+        display: block !important;
+        margin-bottom: 2rem !important;
+        max-width: 600px;
+        text-align: left;
+    }
+
+    /* POSITION 4: ACTION BUTTONS */
+    .GD-hero-actions {
+        order: 2;
+        /* Second inside the bottom row */
+        justify-content: center;
+    }
+
+    /* UTILITY: Move Badges to the very top */
+    .GD-hero-top-row {
+        order: 0 !important;
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
+}
+
+/* Specific Mobile Tweaks (Max 480px) */
+@media (max-width: 480px) {
+    .GD-hero-title-word {
+        font-size: 2.2rem !important;
+        /* Smaller text for tiny phones */
+    }
+
+    .GD-btn-primary {
+        padding: 0.8rem 1.8rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Tablet and Mobile (1024px and below) */
+@media (max-width: 1024px) {
+
+    /* 1. Remove all Images (Pills) and Star Icons */
+    .GD-hero-image-pill,
+    .GD-sparkle-icon,
+    .GD-sparkle-icon-small,
+    .GD-rotating-stamp,
+    .GD-stamp-star,
+    .GD-hero-top-line {
+        display: none !important;
+    }
+
+    /* 2. Layout Stacking */
+    .GD-main-layout-wrapper {
+        display: flex;
+        flex-direction: column;
         padding: 20px;
+    }
+
+    /* 3. Titles Group (Set to first) */
+    .GD-hero-typography {
+        order: 1;
+        flex-direction: column;
+        gap: 0 !important;
+        /* Remove gaps to keep text tight */
+        margin-bottom: 20px;
+    }
+
+    /* 4. Descriptions Group (Set to second) */
+    .GD-description-group {
+        order: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* 5. Clean up the Title lines */
+    .GD-hero-line {
+        display: block !important;
+        /* Forces each title to its own line */
+        width: 100%;
+    }
+
+    .GD-hero-title-word {
+        font-size: 3.5rem;
+        /* Big bold titles */
+        line-height: 1;
+        margin: 0;
+        padding: 5px 0;
+    }
+
+    /* Ensure badges don't look messy */
+    .GD-hero-top-row {
+        justify-content: flex-start;
+        padding: 10px 20px;
+    }
+
+    /* 3. Titles Group (Set to first) */
+    .GD-hero-typography {
+        gap: 0 !important;
+        display: flex;
+        flex-direction: column;
+        line-height: 1.1;
+        /* Remove gaps to keep text tight */
+    }
+
+    .GD-hero-typography>* {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+    }
+}
+
+/* Extra small mobile tweak */
+@media (max-width: 480px) {
+
+    /* 5. Clean up the Title lines */
+    .GD-hero-title-word {
+        font-size: 3.5rem;
+        line-height: 0.9;
+        /* Reduced from 1 to 0.9 to pull lines closer */
+        margin: 0;
+        padding: 0;
+        /* Removed the 5px vertical padding */
+    }
+
+    .GD-hero-typography {
+        order: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 0 !important;
+        height: 30px;
+        /* Forces zero spacing between the flex items */
+        margin-bottom: 20px;
+    }
+
+    .GD-hero-typography>* {
+        margin: 0 !important;
+        line-height: 0.9 !important;
     }
 }

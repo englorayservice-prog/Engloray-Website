@@ -28,6 +28,7 @@ import {
     faChevronRight
 } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'motion/react';
+import TopNavbar from '../../../Components/TopNavbar/TopNavbar';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
 import SubFooterOne from '../../../Pages/Sub Pages/subFooterOne/NewFooter1'
 import '../CrmPage/CrmPage.css';
@@ -102,6 +103,7 @@ const AiChatbotPage = () => {
 
     return (
         <>
+            <TopNavbar />
             <TwoLineNavbar />
             <div className="crm-subpage-container ai-theme">
 
@@ -456,7 +458,7 @@ const AiChatbotPage = () => {
                                 {[
                                     {
                                         title: "Self-Learning AI Model",
-                                        desc: "The bot continuously learns from past conversations to improve accuracy and handle edge cases.",
+                                        desc: "The bot continuously learns from past conversations to improve accuracy and handle edge cases automatically. By utilizing advanced machine learning feedback loops, our model refines its understanding of user intent with every interaction, ensuring increasingly precise responses over time.",
                                         imgBg: "rgba(168,85,247,0.12)",
                                         visual: (
                                             <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="ai-card-svg">
@@ -477,7 +479,7 @@ const AiChatbotPage = () => {
                                     },
                                     {
                                         title: "Live Agent Handoff",
-                                        desc: "Detect frustration signals and escalate to a human agent instantly with full context preserved.",
+                                        desc: "Detect frustration signals and escalate to a human agent instantly with full context preserved for a seamless transition. Our system identifies complex queries that require human empathy, bridging the gap between automated efficiency and personalized care.",
                                         imgBg: "rgba(192,132,252,0.12)",
                                         visual: (
                                             <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="ai-card-svg">
@@ -502,7 +504,7 @@ const AiChatbotPage = () => {
                                     },
                                     {
                                         title: "Conversation Analytics",
-                                        desc: "Deep insights into chat volume, resolution rate, and user sentiment across all channels.",
+                                        desc: "Deep insights into chat volume, resolution rate, and user sentiment across all channels in a single dashboard. Track key performance indicators in real-time, allowing you to optimize your knowledge base and improve customer satisfaction based on data-driven metrics.",
                                         imgBg: "rgba(168,85,247,0.18)",
                                         visual: (
                                             <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="ai-card-svg">
@@ -523,7 +525,7 @@ const AiChatbotPage = () => {
                                     },
                                     {
                                         title: "Bank-Grade Security",
-                                        desc: "All conversations are encrypted end-to-end. Fully GDPR, HIPAA and ISO 27001 compliant.",
+                                        desc: "All conversations are encrypted end-to-end. Our platform is fully GDPR, HIPAA and ISO 27001 compliant, ensuring the highest standards of data protection. We implement rigorous security protocols to safeguard your sensitive business and customer information at all times.",
                                         imgBg: "rgba(109,40,217,0.15)",
                                         visual: (
                                             <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="ai-card-svg">
@@ -544,7 +546,7 @@ const AiChatbotPage = () => {
                                     },
                                     {
                                         title: "Omnichannel Deployment",
-                                        desc: "Deploy on web, WhatsApp, Messenger, Slack and mobile with one unified management console.",
+                                        desc: "Deploy on web, WhatsApp, Messenger, Slack and mobile with one unified management console. Our cross-platform architecture ensures a consistent brand voice and seamless user experience, no matter where your customers choose to engage with your AI agent.",
                                         imgBg: "rgba(139,92,246,0.15)",
                                         visual: (
                                             <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="ai-card-svg">

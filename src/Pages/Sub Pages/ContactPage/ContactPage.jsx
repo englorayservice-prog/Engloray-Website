@@ -16,15 +16,17 @@ import {
     faPaperPlane,
     faCircleCheck,
 } from '@fortawesome/free-solid-svg-icons';
-import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
-import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
+import RayMartNavbar from '../../../Components/RayMartNavbar/RayMartNavbar';
+import LearningFooter from '../../TechLearningSection/LearningFooter/LearningFooter';
 //import heroBg from '../../../assets/contact_hero_bg.png';
 import './ContactPage.css';
+import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 
 const ContactPage = () => {
     const [formData, setFormData] = useState({
         fullName: '',
         email: '',
+        phone: '',
         subject: '',
         message: '',
     });
@@ -35,13 +37,38 @@ const ContactPage = () => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
-        setTimeout(() => {
-            setLoading(false);
+
+        try {
+            const response = await fetch("https://localhost:8081/api/ContactForm", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    name: formData.fullName,
+                    email: formData.email,
+                    phoneNumber: formData.phone,
+                    message: formData.message
+                })
+            });
+
+            if (!response.ok) {
+                const errorText = await response.text();
+                throw new Error(errorText || "Failed to submit contact form");
+            }
+
             setSubmitted(true);
-        }, 1500);
+            setLoading(false);
+            setFormData({ fullName: '', email: '', phone: '', subject: '', message: '' });
+        } catch (error) {
+            console.error("Submission error:", error);
+            // Show alert or let UI handle it
+            alert("Form submission failed. Please verify the backend is running. Error: " + error.message);
+            setLoading(false);
+        }
     };
 
     const socialLinks = {
@@ -58,7 +85,8 @@ const ContactPage = () => {
 
     return (
         <>
-            <TwoLineNavbar />
+            <TopNavBar/>
+            <RayMartNavbar />
             <Helmet>
                 <title>Contact Us | Engloray Learning</title>
                 <meta
@@ -231,6 +259,20 @@ const ContactPage = () => {
                                     </div>
 
                                     <div className="sc-form-group">
+                                        <label htmlFor="phone" className="sc-label">Phone Number</label>
+                                        <input
+                                            id="phone"
+                                            name="phone"
+                                            type="tel"
+                                            placeholder="Your phone number"
+                                            className="sc-input"
+                                            value={formData.phone}
+                                            onChange={handleChange}
+                                            required
+                                        />
+                                    </div>
+
+                                    {/* <div className="sc-form-group">
                                         <label htmlFor="subject" className="sc-label">Subject</label>
                                         <input
                                             id="subject"
@@ -242,7 +284,7 @@ const ContactPage = () => {
                                             onChange={handleChange}
                                             required
                                         />
-                                    </div>
+                                    </div> */}
 
                                     <div className="sc-form-group">
                                         <label htmlFor="message" className="sc-label">Message</label>
@@ -307,7 +349,63 @@ const ContactPage = () => {
                 {/* ════════════════════════════════
             CUSTOM DARK FOOTER
         ════════════════════════════════ */}
-                <WhiteFooter />
+                <div className="sc-dark-footer-wrapper">
+                    <div className="sc-dark-footer">
+                        <div className="sc-df-top">
+                            <div className="sc-df-left">
+                                <div className="sc-df-logo-icon">
+                                    <img src={Logo} alt="Engloray Logo" style={{ maxWidth: '180px', height: 'auto' }} />
+                                </div>
+                                <h2 className="sc-df-title">
+                                    <span className="line">
+                                        <span className="sc-df-text-blue">Transform your </span>
+                                        <span className="sc-df-text-red">career!</span>
+                                    </span>
+
+                                    <span className="line">
+                                        <span className="sc-df-text-blue">Join </span>
+                                        <span className="sc-df-text-red">Engloray Learning</span>
+                                    </span>
+                                </h2>
+                            </div>
+
+                            <div className="sc-df-right">
+                                <div className="sc-df-col">
+                                    <h4>SERVICES</h4>
+                                    <a href="/brandingPage">Branding & Design</a>
+                                    <a href="/developmentPage">Web Development</a>
+                                    <a href="/marketingPage">Digital Marketing</a>
+                                    <a href="/UiUxPage">UI/UX Design</a>
+                                </div>
+                                <div className="sc-df-col">
+                                    <h4>COMPANY</h4>
+                                    <a href="/">About Us</a>
+                                    <a href="/allProjectsPage">Works</a>
+                                    <a href="/CareersPage">Careers</a>
+                                    <a href="/studentContactPage" className="sc-df-active-link">Contact</a>
+                                </div>
+                                <div className="sc-df-col">
+                                    <h4>PRODUCTS</h4>
+                                    <a href="/CrmPage">CRM</a>
+                                    <a href="/ErpPage">ERP</a>
+                                    <a href="/AiChatbotPage">AiChatbot</a>
+                                    <a href="/JobSeekerPage">Job Seeker</a>
+                                    <a href="/LearningAndCareerPage">Learning & Career</a>
+
+                                </div>
+                            </div>
+
+
+                            {/* The arch cutout causing the "feet" */}
+                            <div className="sc-df-cutout"></div>
+                        </div>
+
+                        <div className="sc-df-bottom-text">
+                            <span>Release 2024. All rights reserved.</span>
+                            <span>Terms and Conditions | Privacy policy</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </>
     );

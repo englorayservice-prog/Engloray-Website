@@ -130,7 +130,7 @@ const LearningExperience = () => {
         transition={{ duration: 0.8, delay: 0.3 }}
         style={{ cursor: 'pointer', position: 'relative', overflow: 'hidden' }}
       >
-        <div style={{ height: '220px', background: 'linear-gradient(180deg, #FFF1F1 0%, rgba(255, 241, 241, 0) 100%)', width: '100%', position: 'absolute', top: 0, left: 0 }}></div>
+        <div style={{ height: '220px', background: 'linear-gradient(180deg, #FFF1F1 0%, rgba(255, 241, 241, 0) 100%)', width: '100%', position: 'absolute', top: 0, left: 0, borderTopLeftRadius: '24px', borderTopRightRadius: '24px' }}></div>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '25px', marginBottom: '30px', marginTop: '10px', position: 'relative', zIndex: 3 }}>
           <div className="section-icon" style={{ width: '84px', height: '84px', borderRadius: '50%', backgroundColor: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 8px 20px rgba(0,0,0,0.15)', border: '4px solid white', color: '#EF4444', fontSize: '32px' }}>
@@ -179,7 +179,7 @@ const LearningExperience = () => {
         transition={{ duration: 0.8, delay: 0.4 }}
         style={{ cursor: 'pointer', position: 'relative', overflow: 'hidden' }}
       >
-        <div style={{ height: '220px', background: 'linear-gradient(180deg, #E0F2FF 0%, rgba(224, 242, 255, 0) 100%)', width: '100%', position: 'absolute', top: 0, left: 0 }}></div>
+        <div style={{ height: '220px', background: 'linear-gradient(180deg, #E0F2FF 0%, rgba(224, 242, 255, 0) 100%)', width: '100%', position: 'absolute', top: 0, left: 0, borderTopLeftRadius: '24px', borderTopRightRadius: '24px' }}></div>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '25px', marginBottom: '30px', marginTop: '10px', position: 'relative', zIndex: 3 }}>
           <div className="section-icon" style={{ width: '84px', height: '84px', borderRadius: '50%', backgroundColor: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 8px 20px rgba(0,0,0,0.15)', border: '4px solid white', color: '#3B82F6', fontSize: '32px' }}>

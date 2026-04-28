@@ -60,18 +60,33 @@ const About = () => {
       // -- Visual Items (Grid Stagger) --
       gsap.fromTo('.visual-item', revealDefaults, {
         ...revealTo,
-        stagger: 0.05,
+        stagger: 0.02, // Sped up from 0.05
+        duration: 0.4, // Overrides the default 1s duration
         scrollTrigger: { trigger: '.visual-grid', ...triggerDefaults }
       });
 
-      // -- Stats (Stagger + Counter) --
-      const statsTimeline = gsap.timeline({
-        scrollTrigger: { trigger: '.about-stats', ...triggerDefaults }
-      });
-
-      statsTimeline.fromTo('.stat-item', revealDefaults, {
-        ...revealTo,
-        stagger: 0.15
+      // -- Stats (Number Counter Animation) --
+      const counters = gsap.utils.toArray('.counter-value');
+      
+      counters.forEach(counter => {
+        const target = parseFloat(counter.getAttribute('data-target'));
+        const isDecimal = counter.getAttribute('data-decimal') === 'true';
+        const suffix = counter.getAttribute('data-suffix') || '';
+        const obj = { val: 0 };
+        
+        gsap.to(obj, {
+          val: target,
+          duration: 2.5,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: '.service-stat',
+            start: "top 85%",
+            toggleActions: "play none none reverse"
+          },
+          onUpdate: () => {
+             counter.innerText = (isDecimal ? obj.val.toFixed(1) : Math.floor(obj.val)) + suffix;
+          }
+        });
       });
 
     }, sectionRef);
@@ -91,7 +106,7 @@ const About = () => {
         <div className="about-header">
           <span className="title-accent">ABOUT ENGLORAY</span>
           <h2 className="about-title">
-            Empowering businesses through technology & education
+            Empowering businesses <br /> through technology & education
           </h2>
           <p className="about-subtitle">
             Engloray is a dynamic technology and education group that bridges the gap between business innovation and learning excellence through comprehensive digital solutions.
@@ -123,13 +138,13 @@ const About = () => {
                 <span className="service-pill">Customer Experience</span>
 
                 <div className="service-stat">
-                  <h4>230+</h4>
-                  <p>Project Completed</p>
-                  <h4>170+</h4>
+                  <h4 className="counter-value" data-target="230" data-suffix="+">0+</h4>
+                  <p>Projects Completed</p>
+                  <h4 className="counter-value" data-target="170" data-suffix="+">0+</h4>
                   <p>Happy Clients</p>
-                  <h4>1.7k</h4>
+                  <h4 className="counter-value" data-target="1.7" data-decimal="true" data-suffix="k">0k</h4>
                   <p>Learners Trained</p>
-                  <h4>20+</h4>
+                  <h4 className="counter-value" data-target="20" data-suffix="+">0+</h4>
                   <p>Industries Served</p>
                 </div>
               </div>
@@ -171,13 +186,7 @@ const About = () => {
             </div>
 
             <div className="about-features">
-              <motion.div
-                className="technology-card"
-                initial={{ opacity: 0, y: 44, scale: 0.97 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                viewport={{ once: false, amount: 0.5 }}
-                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-              >
+              <div className="technology-card">
                 <div className="feature-card-header">
                   <div className="feature-icon-container">
                     <FaCode />
@@ -190,15 +199,9 @@ const About = () => {
                   and seamless integration of emerging tech into your core operations for
                   unmatched competitive advantage.Empowering your business with future-ready digital ecosystems that evolve with market demands.
                 </p>
-              </motion.div>
+              </div>
 
-              <motion.div
-                className="about-mission-card"
-                initial={{ opacity: 0, y: 44, scale: 0.97 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                viewport={{ once: false, amount: 0.5 }}
-                transition={{ duration: 0.7, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
-              >
+              <div className="about-mission-card">
                 <div className="feature-card-header">
                   <div className="feature-icon-container">
                     <FaLightbulb />
@@ -210,15 +213,9 @@ const About = () => {
                   educational expertise to drive measurable
                   growth and transformation
                 </p>
-              </motion.div>
+              </div>
 
-              <motion.div
-                className="education-card"
-                initial={{ opacity: 0, y: 44, scale: 0.97 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                viewport={{ once: false, amount: 0.5 }}
-                transition={{ duration: 0.7, delay: 0.24, ease: [0.22, 1, 0.36, 1] }}
-              >
+              <div className="education-card">
                 <div className="feature-card-header">
                   <div className="feature-icon-container">
                     <FaUserGraduate />
@@ -226,7 +223,7 @@ const About = () => {
                   <h3>Learning Platforms</h3>
                 </div>
                 <p>Comprehensive educational solutions that empower organizations and individuals with future-ready skills.</p>
-              </motion.div>
+              </div>
             </div>
           </div>
 

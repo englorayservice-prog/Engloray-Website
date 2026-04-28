@@ -70,9 +70,8 @@ import pathSix from '../../../assets/resources file/resources file/TECH/Software
 
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import Navbar from '../../../Components/Navbar/Navbar';
-
 import BackToTop from '../../../Components/BackToTop/BackToTop';
-import SubFooterOne from '../../../Pages/Sub Pages/subFooterOne/NewFooter1';
+import Footer from '../../../Components/Footer/Footer';
 
 // Missing icon assets
 import iconGraduationCap from '../../../assets/iicons/icon_graduation_cap.png';
@@ -741,12 +740,8 @@ const SoftwareDeveloperInternPage = () => {
             )}
 
             <div className="SD-content" ref={containerRef}>
-                    <TopNavBar />
-                    <Navbar />
-                    
-                    <Navbar />
-                
-                
+                {/* <TopNavBar/> */}
+                {/* <Navbar/> */}
 
                 {/* Hero Section */}
                 <section
@@ -1875,7 +1870,7 @@ const SoftwareDeveloperInternPage = () => {
                     </div>
                 </section>
                 <BackToTop />
-                <SubFooterOne />
+                <Footer />
             </div>
         </>
     );

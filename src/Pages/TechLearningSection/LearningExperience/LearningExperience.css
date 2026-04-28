@@ -75,8 +75,8 @@
 .main-content-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 5rem;
-  margin-bottom: 6rem;
+  gap: 2rem;
+  margin-bottom: -3rem;
 }
 
 .content-section {
@@ -94,14 +94,29 @@
 }
 
 /* Project Section - Peach Tint */
-.project-section:hover, .mentor-section:hover {
+.project-section:hover,
+.mentor-section:hover {
   transform: translateY(-8px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
+@media (min-width: 1025px) {
+  .project-section {
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  .mentor-section {
+    margin-left: 0;
+    margin-right: auto;
+  }
+}
+
 /* DECORATIVE ELEMENTS */
 /* Large dashed circle decoration */
-.section-decoration, .project-section::before, .mentor-section::before {
+.section-decoration,
+.project-section::before,
+.mentor-section::before {
   display: none;
 }
 
@@ -344,5 +359,15 @@
 @media (max-width: 480px) {
   .impact-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 1440px) {
+  .learning-section {
+    zoom: 1.2;
+  }
+
+  .main-content-grid {
+    gap: 5rem;
   }
 }

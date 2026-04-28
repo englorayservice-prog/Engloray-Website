@@ -17,12 +17,22 @@ import {
   faCloud,
   faShieldHalved,
   faChartPie,
-  faRocket,
+  faBolt,
+  faArrowTrendUp,
   faHeadset,
   faPuzzlePiece,
   faLock,
   faStar,
-  faThumbsUp
+  faThumbsUp,
+  faMicrochip,
+  faNetworkWired,
+  faUpRightAndDownLeftFromCenter,
+  faMicroscope,
+  faServer,
+  faDatabase,
+  faLink,
+  faBrain,
+  faKey
 } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'motion/react';
 import { useInView } from 'react-intersection-observer';
@@ -136,7 +146,7 @@ const TypingText = ({ text, className = "typing-description", tag: Tag = "p" }) 
 // Memoized background graphics to prevent re-renders on scroll
 const BackgroundGraphics = React.memo(() => (
   <div className="saas-hero-bg-graphics" style={{ pointerEvents: 'none' }}>
-    <div className="saas-bg-icon path-icon-1">🚀</div>
+    <div className="saas-bg-icon path-icon-1">⚡</div>
     <div className="saas-bg-icon path-icon-2">💡</div>
     <div className="saas-bg-icon path-icon-3">🛠️</div>
     <div className="saas-bg-icon path-icon-4">🎯</div>
@@ -181,34 +191,35 @@ const SaaS = () => {
                     Optimize Your <span>Future Enterprise</span>
                   </h1>
                   <p className="saas-v2-hero-subtitle anim-on-scroll delay-1">
-                    Next-gen business automation & cloud orchestration <br />
-                    Across 25+ Global Server Zones
+                    Unlock unprecedented efficiency and accelerate digital transformation with our next-generation business automation and advanced cloud orchestration platforms.
+                    Designed to streamline complex workflows, our solutions empower your workforce with intelligent process automation, seamless data Integrations
+                    Leverage our secure, scalable infrastructure spanning 25+ Global Server Zones to ensure high availability, reduced latency, and unmatched performance.
                   </p>
 
-                  {/* Search Bar (Matches Reference Image Layout) */}
-                  <div className="saas-v2-search-panel anim-on-scroll delay-2">
-                    <div className="saas-v2-search-group">
-                      <div className="saas-v2-field">
-                        <label>Service Type</label>
-                        <div className="saas-v2-select-wrap">
-                          <span>Managed Cloud</span>
-                          <FontAwesomeIcon icon={faArrowRight} className="fa-rotate-90" />
+                  {/* Action Row: Search Bar and Contact Button in a straight line */}
+                  <div className="saas-v2-hero-actions anim-on-scroll delay-2">
+                    <div className="saas-v2-search-panel">
+                      <div className="saas-v2-search-group">
+                        <div className="saas-v2-field">
+                          <label>Service Type</label>
+                          <div className="saas-v2-select-wrap">
+                            <span>Managed Cloud</span>
+                            <FontAwesomeIcon icon={faArrowRight} className="fa-rotate-90" />
+                          </div>
+                        </div>
+                      </div>
+                      <div className="saas-v2-divider"></div>
+                      <div className="saas-v2-search-group">
+                        <div className="saas-v2-field">
+                          <label>Resource Tier</label>
+                          <div className="saas-v2-select-wrap">
+                            <span>Enterprise Pro</span>
+                            <FontAwesomeIcon icon={faArrowRight} className="fa-rotate-90" />
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <div className="saas-v2-divider"></div>
-                    <div className="saas-v2-search-group">
-                      <div className="saas-v2-field">
-                        <label>Resource Tier</label>
-                        <div className="saas-v2-select-wrap">
-                          <span>Enterprise Pro</span>
-                          <FontAwesomeIcon icon={faArrowRight} className="fa-rotate-90" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
 
-                  <div className="saas-v2-quick-links anim-on-scroll delay-3">
                     <button className="saas-v2-contact-btn-shiny">
                       Contact Us
                       <div className="saas-v2-shiny-sweep"></div>
@@ -216,66 +227,99 @@ const SaaS = () => {
                   </div>
                 </div>
 
-                {/* Right Side: Dual Auto-Scrolling Card Columns over Background */}
-                <div className="saas-v2-dynamic-visual">
-                  {/* ON MOBILE/TABLET: This column contains all 4 cards in sequence */}
+                {/* Right Side: Productivity Card moved to Hero Top Right */}
+                {/* <div className="saas-v2-productivity-card anim-on-scroll delay-5 hero-top-right">
+                  <div className="saas-v2-prod-icon"><FontAwesomeIcon icon={faChartLine} /></div>
+                  <div className="saas-v2-prod-info">
+                    <span className="saas-v2-prod-val">85%</span>
+                    <span className="saas-v2-prod-label">Efficiency Boost</span>
+                  </div>
+                </div> */}
+
+                {/* Right Side: Dual Auto-Scrolling Card Columns for visual depth */}
+                <div className="saas-v2-dynamic-visual anim-on-scroll delay-4">
+                  {/* Column 1: Scrolling Up */}
                   <div className="saas-v2-scroll-col col-main">
                     <div className="saas-v2-scroll-track">
-                      {[1, 2].map((_, i) => (
-                        <React.Fragment key={i}>
-                          <div className="saas-v2-glass-strip-card">
-                            <div className="saas-v2-strip-icon" style={{ background: '#dcfce7' }}><FontAwesomeIcon icon={faChartPie} /></div>
-                            <div className="saas-v2-strip-text">
-                              <h4>Scalable Infra</h4>
-                              <p>Global edge nodes</p>
-                            </div>
+                      {[
+                        { icon: faChartPie, title: 'Scalable Infra', desc: 'Global edge nodes', bg: '#dcfce7' },
+                        { icon: faShieldHalved, title: 'Secure SOC2', desc: 'Military grade', bg: '#fef9c3' },
+                        { icon: faBolt, title: 'Fast Deploy', desc: 'CI/CD pipeline', bg: '#fef08a' },
+                        { icon: faRobot, title: 'AI Engine', desc: 'Neural workflows', bg: '#ddd6fe' },
+                        { icon: faNetworkWired, title: 'Smart Routing', desc: 'Optimized traffic', bg: '#bae6fd' },
+                        { icon: faUpRightAndDownLeftFromCenter, title: 'Auto Scaling', desc: 'Dynamic resources', bg: '#fbcfe8' },
+                        { icon: faMicroscope, title: '24/7 Monitor', desc: 'Deep health checks', bg: '#dcfce7' },
+                        { icon: faServer, title: 'Load Balancing', desc: 'High availability', bg: '#fef9c3' }
+                      ].map((card, idx) => (
+                        <div className="saas-v2-glass-strip-card" key={idx}>
+                          <div className="saas-v2-strip-icon" style={{ background: card.bg }}><FontAwesomeIcon icon={card.icon} /></div>
+                          <div className="saas-v2-strip-text">
+                            <h4>{card.title}</h4>
+                            <p>{card.desc}</p>
                           </div>
-                          <div className="saas-v2-glass-strip-card">
-                            <div className="saas-v2-strip-icon" style={{ background: '#fef9c3' }}><FontAwesomeIcon icon={faShieldHalved} /></div>
-                            <div className="saas-v2-strip-text">
-                              <h4>Secure SOC2</h4>
-                              <p>Military grade</p>
-                            </div>
+                        </div>
+                      ))}
+                      {/* Duplicate for seamless loop */}
+                      {[
+                        { icon: faChartPie, title: 'Scalable Infra', desc: 'Global edge nodes', bg: '#dcfce7' },
+                        { icon: faShieldHalved, title: 'Secure SOC2', desc: 'Military grade', bg: '#fef9c3' },
+                        { icon: faBolt, title: 'Fast Deploy', desc: 'CI/CD pipeline', bg: '#fef08a' },
+                        { icon: faRobot, title: 'AI Engine', desc: 'Neural workflows', bg: '#ddd6fe' },
+                        { icon: faNetworkWired, title: 'Smart Routing', desc: 'Optimized traffic', bg: '#bae6fd' },
+                        { icon: faUpRightAndDownLeftFromCenter, title: 'Auto Scaling', desc: 'Dynamic resources', bg: '#fbcfe8' },
+                        { icon: faMicroscope, title: '24/7 Monitor', desc: 'Deep health checks', bg: '#dcfce7' },
+                        { icon: faServer, title: 'Load Balancing', desc: 'High availability', bg: '#fef9c3' }
+                      ].map((card, idx) => (
+                        <div className="saas-v2-glass-strip-card" key={`dup-${idx}`}>
+                          <div className="saas-v2-strip-icon" style={{ background: card.bg }}><FontAwesomeIcon icon={card.icon} /></div>
+                          <div className="saas-v2-strip-text">
+                            <h4>{card.title}</h4>
+                            <p>{card.desc}</p>
                           </div>
-                          <div className="saas-v2-glass-strip-card">
-                            <div className="saas-v2-strip-icon" style={{ background: '#fef08a' }}><FontAwesomeIcon icon={faRocket} /></div>
-                            <div className="saas-v2-strip-text">
-                              <h4>Fast Deploy</h4>
-                              <p>CI/CD pipeline</p>
-                            </div>
-                          </div>
-                          <div className="saas-v2-glass-strip-card">
-                            <div className="saas-v2-strip-icon" style={{ background: '#ddd6fe' }}><FontAwesomeIcon icon={faRobot} /></div>
-                            <div className="saas-v2-strip-text">
-                              <h4>AI Engine</h4>
-                              <p>Neural workflows</p>
-                            </div>
-                          </div>
-                        </React.Fragment>
+                        </div>
                       ))}
                     </div>
                   </div>
 
-                  {/* ON DESKTOP: This column provides the second axis for the dual-motion effect */}
+                  {/* Column 2: Scrolling Down */}
                   <div className="saas-v2-scroll-col col-right-desktop-only">
                     <div className="saas-v2-scroll-track reverse">
-                      {[1, 2].map((_, i) => (
-                        <React.Fragment key={i}>
-                          <div className="saas-v2-glass-strip-card">
-                            <div className="saas-v2-strip-icon" style={{ background: '#fef08a' }}><FontAwesomeIcon icon={faRocket} /></div>
-                            <div className="saas-v2-strip-text">
-                              <h4>Fast Deploy</h4>
-                              <p>CI/CD pipeline</p>
-                            </div>
+                      {[
+                        { icon: faCloud, title: 'Cloud Sync', desc: 'Data bridge', bg: '#bae6fd' },
+                        { icon: faPuzzlePiece, title: 'API Nexus', desc: 'Modular', bg: '#fbcfe8' },
+                        { icon: faChartLine, title: 'Auto Analytics', desc: 'AI Insights', bg: '#dcfce7' },
+                        { icon: faMicrochip, title: 'Edge Compute', desc: 'Low Latency', bg: '#fef9c3' },
+                        { icon: faDatabase, title: 'Data Lake', desc: 'Elastic storage', bg: '#fef08a' },
+                        { icon: faLink, title: 'Smart Hooks', desc: 'Real-time events', bg: '#ddd6fe' },
+                        { icon: faBrain, title: 'Neural Mesh', desc: 'Distributed AI', bg: '#bae6fd' },
+                        { icon: faKey, title: 'Crypto Shield', desc: 'Advanced encryption', bg: '#fbcfe8' }
+                      ].map((card, idx) => (
+                        <div className="saas-v2-glass-strip-card" key={idx}>
+                          <div className="saas-v2-strip-icon" style={{ background: card.bg }}><FontAwesomeIcon icon={card.icon} /></div>
+                          <div className="saas-v2-strip-text">
+                            <h4>{card.title}</h4>
+                            <p>{card.desc}</p>
                           </div>
-                          <div className="saas-v2-glass-strip-card">
-                            <div className="saas-v2-strip-icon" style={{ background: '#ddd6fe' }}><FontAwesomeIcon icon={faRobot} /></div>
-                            <div className="saas-v2-strip-text">
-                              <h4>AI Engine</h4>
-                              <p>Neural workflows</p>
-                            </div>
+                        </div>
+                      ))}
+                      {/* Duplicate for seamless loop */}
+                      {[
+                        { icon: faCloud, title: 'Cloud Sync', desc: 'Data bridge', bg: '#bae6fd' },
+                        { icon: faPuzzlePiece, title: 'API Nexus', desc: 'Modular', bg: '#fbcfe8' },
+                        { icon: faChartLine, title: 'Auto Analytics', desc: 'AI Insights', bg: '#dcfce7' },
+                        { icon: faMicrochip, title: 'Edge Compute', desc: 'Low Latency', bg: '#fef9c3' },
+                        { icon: faDatabase, title: 'Data Lake', desc: 'Elastic storage', bg: '#fef08a' },
+                        { icon: faLink, title: 'Smart Hooks', desc: 'Real-time events', bg: '#ddd6fe' },
+                        { icon: faBrain, title: 'Neural Mesh', desc: 'Distributed AI', bg: '#bae6fd' },
+                        { icon: faKey, title: 'Crypto Shield', desc: 'Advanced encryption', bg: '#fbcfe8' }
+                      ].map((card, idx) => (
+                        <div className="saas-v2-glass-strip-card" key={`dup-${idx}`}>
+                          <div className="saas-v2-strip-icon" style={{ background: card.bg }}><FontAwesomeIcon icon={card.icon} /></div>
+                          <div className="saas-v2-strip-text">
+                            <h4>{card.title}</h4>
+                            <p>{card.desc}</p>
                           </div>
-                        </React.Fragment>
+                        </div>
                       ))}
                     </div>
                   </div>
@@ -291,27 +335,51 @@ const SaaS = () => {
 
             {/* White Footer */}
             <div className="saas-v2-white-footer">
-              <div className="saas-v2-hero-white-space-content anim-on-scroll delay-5">
+              <div className="saas-v2-footer-header anim-on-scroll">
                 <div className="saas-v2-live-status-pill">
-                  <span className="saas-v2-pulse-dot"></span>
-                  <strong>Live:</strong> 500+ Global Edge Nodes
+                  <div className="saas-v2-pulse-dot"></div>
+                  <span>Live Status: <strong>500+ Global Edge Nodes</strong></span>
                 </div>
-                <div className="saas-v2-productivity-card">
-                  <div className="saas-v2-prod-icon"><FontAwesomeIcon icon={faChartLine} /></div>
-                  <div className="saas-v2-prod-info">
-                    <span className="saas-v2-prod-val">85%</span>
-                    <span className="saas-v2-prod-label">Efficiency Boost</span>
-                  </div>
+                <h2 className="saas-v2-footer-title">THE INFRASTRUCTURE POWERING <br /><span>GLOBAL EFFICIENCY</span></h2>
+                <p className="saas-v2-footer-subtitle">
+                  Our proprietary global network backbone leverages advanced software-defined networking (SDN) and edge computing to ensure lightning-fast connectivity,
+                  ultra-low latency, and enterprise-grade reliability at every scale, anywhere in the world.
+                </p>
+              </div>
+
+              <div className="saas-v2-middle-stats anim-on-scroll delay-5">
+                <div className="saas-v2-m-stat">
+                  <strong>Global Reach</strong>
+                  <p>
+                    Connecting over 10,000+ global enterprises across 150+ countries with localized edge nodes for maximum performance and regional data sovereignty.
+                    Our expansive network ensures that your data travels the shortest possible distance, reducing latency and improving user experience worldwide.
+                  </p>
+                </div>
+                <div className="saas-v2-m-divider"></div>
+                <div className="saas-v2-m-stat">
+                  <strong>Enterprise Grade</strong>
+                  <p>
+                    Highest-tier security protocols with end-to-end encryption, SOC2 compliance, and multi-layer threat detection systems.
+                    We provide a fortress-like environment for your most sensitive data, utilizing real-time monitoring and automated incident response to keep your operations secure 24/7.
+                  </p>
+                </div>
+                <div className="saas-v2-m-divider"></div>
+                <div className="saas-v2-m-stat">
+                  <strong>Expert Support</strong>
+                  <p>
+                    Unmatched 24/7 dedicated technical assistance from elite engineers ready to optimize your infrastructure at any moment.
+                    From initial migration to complex troubleshooting, our team acts as an extension of your own, ensuring your mission-critical systems never skip a beat.
+                  </p>
                 </div>
               </div>
 
               <div className="saas-v2-footer-content">
                 <div className="saas-v2-bottom-badge anim-on-scroll delay-5">
                   <div className="saas-v2-spot-details">
-                    <span className="saas-v2-spot-loc"><FontAwesomeIcon icon={faChartLine} style={{ marginRight: '8px' }} /> Real-time Analytics Hub</span>
+                    <span className="saas-v2-spot-loc"><FontAwesomeIcon icon={faChartLine} style={{ marginRight: '10px' }} /> <strong>Real-time Analytics Hub:</strong> Monitoring 2.5B+ requests daily</span>
                     <div className="saas-v2-spot-price">
-                      <strong>99.9% Uptime</strong>
-                      <button className="saas-v2-spot-btn">Explore Metrics</button>
+                      <strong>99.99% Uptime SLA</strong>
+                      <button className="saas-v2-spot-btn">Explore Live Metrics</button>
                     </div>
                   </div>
                 </div>
@@ -330,7 +398,7 @@ const SaaS = () => {
                     <span>Chatbot AI</span>
                   </div>
                   <div className="saas-v2-logo-box">
-                    <div className="saas-v2-logo-icon" style={{ color: '#ec4899' }}><FontAwesomeIcon icon={faRocket} /></div>
+                    <div className="saas-v2-logo-icon" style={{ color: '#ec4899' }}><FontAwesomeIcon icon={faBriefcase} /></div>
                     <span>Job seeker hub</span>
                   </div>
                 </div>
@@ -357,46 +425,58 @@ const SaaS = () => {
                 instead of repetitive administrative tasks.
               </p>
 
-              <a href="#!" className="stats-modern-btn anim-on-scroll delay-3">CONTACT US</a>
+              <a href="#!" className="stats-modern-btn anim-on-scroll delay-3">BOOK A DEMO NOW</a>
             </div>
 
             <div className="stats-modern-right">
-              <div className="stats-visual-container">
-                {/* Circular Path Animation */}
-                <div className="stats-circular-path-wrap">
-                  <div className="stats-main-arc"></div>
-                  <div className="stats-rotating-orbit">
-                    <div className="orbit-item icon-1">
-                      <div className="orbit-icon-inner" style={{ background: 'rgba(255,255,255,0.1)', color: '#ff4d4d' }}><FontAwesomeIcon icon={faCloud} /></div>
-                    </div>
-                    <div className="orbit-item icon-2">
-                      <div className="orbit-icon-inner" style={{ background: 'rgba(255,255,255,0.1)', color: '#a855f7' }}><FontAwesomeIcon icon={faComments} /></div>
-                    </div>
-                    <div className="orbit-item icon-3">
-                      <div className="orbit-icon-inner" style={{ background: 'rgba(255,255,255,0.2)', color: '#ffffff' }}><FontAwesomeIcon icon={faRobot} /></div>
-                    </div>
-                    <div className="orbit-item icon-4">
-                      <div className="orbit-icon-inner" style={{ background: 'rgba(255,255,255,0.1)', color: '#ffffff' }}><FontAwesomeIcon icon={faRocket} /></div>
-                    </div>
-                  </div>
-                </div>
+                <div className="saas-v3-portal-wrap">
+                  {/* Layered Background Rings */}
+                  <div className="portal-ring ring-outer"></div>
+                  <div className="portal-ring ring-middle"></div>
+                  <div className="portal-ring ring-inner"></div>
 
-                {/* Stats List */}
-                <div className="stats-modern-values">
-                  <div className="sm-stat-item anim-on-scroll">
-                    <h4>100%</h4>
-                    <p>Response rate</p>
+                  {/* Central Core Node */}
+                  <div className="portal-core">
+                    <div className="core-pulse"></div>
+                    <div className="core-inner">
+                      <FontAwesomeIcon icon={faBrain} />
+                    </div>
                   </div>
-                  <div className="sm-stat-item anim-on-scroll delay-1">
-                    <h4>120x</h4>
-                    <p>ROI</p>
+
+                  {/* Floating Stat Cards */}
+                  <div className="portal-stat-card s-card-1 anim-on-scroll">
+                    <div className="s-card-glow"></div>
+                    <div className="s-card-content">
+                      <span className="s-val">100%</span>
+                      <span className="s-label">Accuracy Rate</span>
+                    </div>
                   </div>
-                  <div className="sm-stat-item anim-on-scroll delay-2">
-                    <h4>10x</h4>
-                    <p>Cost reduction</p>
+
+                  <div className="portal-stat-card s-card-2 anim-on-scroll delay-1">
+                    <div className="s-card-glow"></div>
+                    <div className="s-card-content">
+                      <span className="s-val">120x</span>
+                      <span className="s-label">Efficiency ROI</span>
+                    </div>
+                  </div>
+
+                  <div className="portal-stat-card s-card-3 anim-on-scroll delay-2">
+                    <div className="s-card-glow"></div>
+                    <div className="s-card-content">
+                      <span className="s-val">10x</span>
+                      <span className="s-label">Cost Reduction</span>
+                    </div>
+                  </div>
+
+                  {/* Left Side Card */}
+                  <div className="portal-stat-card s-card-4 anim-on-scroll delay-3">
+                    <div className="s-card-glow"></div>
+                    <div className="s-card-content">
+                      <span className="s-val">99.9%</span>
+                      <span className="s-label">Uptime SLA</span>
+                    </div>
                   </div>
                 </div>
-              </div>
             </div>
 
           </div>
@@ -526,7 +606,7 @@ const SaaS = () => {
               </div>
 
               <div className="saasb-card saasb-bottom">
-                <div className="saasb-card-icon"><FontAwesomeIcon icon={faRocket} /></div>
+                <div className="saasb-card-icon"><FontAwesomeIcon icon={faArrowTrendUp} /></div>
                 <h4>Scalability</h4>
                 <p>Grow without limits</p>
               </div>

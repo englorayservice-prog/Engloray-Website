@@ -30,7 +30,7 @@ import './About.css';
 // import aboutVideo from '../../assets/OurCoreValuebg.mp4';
 import aboutVideo from '../../assets/anthem.mp4';
 import anthemThumbnail from '../../assets/anthemThumbnail.png';
-import EngImage from '../../assets/EngIamge.png';
+import anthemThumbnail1 from '../../assets/anthemThumbnail1.jpeg';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -100,10 +100,10 @@ const About = () => {
                 ".stat-card-new"
             ];
 
-            gsap.fromTo(elements, 
-                { 
-                    y: 100, 
-                    opacity: 0 
+            gsap.fromTo(elements,
+                {
+                    y: 100,
+                    opacity: 0
                 },
                 {
                     y: 0,
@@ -174,7 +174,7 @@ const About = () => {
                                 <div className="card-video-precise" onClick={(e) => handleAction(e, () => setIsVideoOpen(true))}>
                                     <div className="cv-left-side">
                                         <div className="cv-time-pill">
-                                            <FontAwesomeIcon icon={faClock} /> <span>3m 04s</span>
+                                            <FontAwesomeIcon icon={faClock} /> <span>4m 36s</span>
                                         </div>
                                         <div className="cv-text-box">
                                             <h4>Watch Anthem</h4>
@@ -207,22 +207,24 @@ const About = () => {
                                     </span>
                                 </h1>
                                 <p className="hero-description-p">
-                                    ENGLORAY is a leading digital transformation partner, dedicated to empowering businesses through cutting-edge technology and creative excellence. Since our inception in 2023, we have evolved from a specialized branding studio into a comprehensive ecosystem of innovation, offering bespoke solutions in ERP systems, AI-driven marketing, and high-performance web development. Our mission is to bridge the gap between complex technical requirements and seamless user experiences, ensuring our clients achieve sustainable growth in an ever-evolving digital landscape.
+                                    ENGLORAY is a leading digital transformation partner, dedicated to empowering businesses through cutting-edge technology and creative excellence. Since our inception in 2023, we have evolved from a specialized branding studio into a comprehensive ecosystem of innovation, offering bespoke solutions in ERP systems, AI-driven marketing, and high-performance web development. Our mission is to bridge the gap between complex technical requirements and seamless user experiences, ensuring our clients achieve sustainable growth in an ever-evolving digital landscape.By integrating data-driven strategies with visionary design, we create scalable solutions tailored to meet the unique challenges of modern enterprises. Partner with us to redefine your digital presence and unlock new avenues for success in the global marketplace.
                                 </p>
 
                             </div>
                         </div>
 
                         <div className="grid-right-side">
-                            <div className="visual-hero-card" style={{ backgroundImage: `url(${EngImage})` }}>
+                            <div className="visual-hero-card" style={{ backgroundImage: `url(${anthemThumbnail1})` }}>
                                 <div className="visual-glass-footer">
                                     <div className="glass-content-left">
                                         <h3 className="join-text">Join Our<br />Platform</h3>
                                         <div className="glass-divider"></div>
-                                        <p className="learn-text">& Learn<br />How To<br />Start</p>
+                                        <p className="learn-text">& Learn How To Start</p>
                                     </div>
                                     <div className="glass-toggle-group" onClick={(e) => handleAction(e)}>
-                                        <div className="toggle-circle-white"></div>
+                                        <div className="toggle-circle-white">
+                                            <FontAwesomeIcon icon={faChevronRight} />
+                                        </div>
                                         <div className="toggle-circle-black">
                                             <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
                                         </div>
@@ -244,14 +246,14 @@ const About = () => {
                         <div className="stat-card-new highlight-card">
                             <div className="stat-card-icon"><FontAwesomeIcon icon={faFaceSmile} /></div>
                             <div className="stat-card-info">
-                                <span className="stat-card-num">150+</span>
+                                <span className="stat-card-num">330+</span>
                                 <span className="stat-card-lbl">Happy Brands</span>
                             </div>
                         </div>
                         <div className="stat-card-new">
                             <div className="stat-card-icon"><FontAwesomeIcon icon={faFlask} /></div>
                             <div className="stat-card-info">
-                                <span className="stat-card-num">12+</span>
+                                <span className="stat-card-num">50+</span>
                                 <span className="stat-card-lbl">Tech Solutions</span>
                             </div>
                         </div>

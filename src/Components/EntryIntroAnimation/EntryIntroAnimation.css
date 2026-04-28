@@ -142,6 +142,64 @@
   visibility: hidden;
 }
 
+/* Mouse Scroll Indicator */
+.eia-mouse-scroll-indicator {
+  width: 40px;
+  height: 60px;
+  border: 3px solid rgba(255, 255, 255, 0.7);
+  border-radius: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 8px;
+}
+
+.eia-mouse-chevron {
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid white;
+  border-right: 2px solid white;
+  display: block;
+}
+
+.eia-mouse-chevron-down-1,
+.eia-mouse-chevron-down-2 {
+  transform: rotate(135deg);
+  margin-top: -3px;
+  animation: eia-chevron-fade 1.5s infinite;
+}
+
+.eia-mouse-chevron-down-1 {
+  animation-delay: 0s;
+}
+
+.eia-mouse-chevron-down-2 {
+  animation-delay: 0.2s;
+}
+
+.eia-mouse-dot {
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  margin: 3px 0;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  animation: eia-mouse-dot-slide 1.5s infinite ease-in-out;
+}
+
+@keyframes eia-mouse-dot-slide {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(5px); }
+}
+
+@keyframes eia-chevron-fade {
+  0%, 100% { opacity: 0.3; border-color: rgba(255, 255, 255, 0.3); }
+  50% { opacity: 1; border-color: rgba(255, 255, 255, 0.9); }
+}
+
+
 /* Height defines how much total scroll distance we have */
 .scroll-spacer {
   position: relative;

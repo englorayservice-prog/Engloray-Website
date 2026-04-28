@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
+import Navbar from '../../../Components/Navbar/Navbar';
+import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import './BrandingAndIdentity.css';
 import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
@@ -40,6 +41,14 @@ const BrandingAndIdentity = () => {
             title: 'Brand Strategy',
             icon: '✦',
             short: 'Brand Strategy services',
+            features: [
+                'Core brand purpose & positioning',
+                'Target audience & market research',
+                'Competitor analysis & differentiation',
+                'Brand messaging framework',
+                'Long-term growth roadmap',
+                'Performance monitoring & adjustment'
+            ],
             stats: { val1: '128+', lab1: 'Completed', val2: '3 Months', lab2: 'Avg Speed', val3: '5.0★', lab3: 'Satisfaction' },
             description: 'We define your brand\'s core purpose, values, and positioning to create a powerful foundation for growth. Our strategic approach ensures your messaging resonates deeply with your target audience across all channels. We conduct thorough market research to keep your brand ahead of industry trends and competitor moves. Every strategy we build is data-driven and focused on long-term sustainability and market leadership. We provide ongoing support to monitor your brand performance and adjust strategies as market dynamics shift. Our goal is to ensure your brand remains a powerful asset that consistently drives business value and growth.',
             image: "https://i.pinimg.com/1200x/6f/b0/1a/6fb01adbccd1f7398a2f46bad1ac3a0b.jpg"
@@ -50,6 +59,14 @@ const BrandingAndIdentity = () => {
             title: 'Brand Naming',
             icon: '◈',
             short: 'Brand Naming services',
+            features: [
+                'Creative & memorable name ideation',
+                'Linguistic & cultural research',
+                'Trademark availability screening',
+                'Domain name acquisition support',
+                'Brand recall & emotional impact testing',
+                'Comprehensive naming frameworks'
+            ],
             stats: { val1: '81+', lab1: 'Completed', val2: '6 Months', lab2: 'Avg Speed', val3: '4.6★', lab3: 'Satisfaction' },
             description: 'We craft memorable and impactful names that capture the essence of your business and stand out in the market. Our naming process combines creativity with linguistic research to ensure global appeal and trademark availability. We explore cultural nuances and phonetics to ensure your brand name sounds right across different languages and regions. A great name is the first step toward building a brand that people recognize and trust instantly. We ensure your brand name has a strong emotional impact and high recall value among your target demographic. Our exhaustive selection process filters out weak candidates to leave you with only the most compelling and legally sound options.',
             image: "https://i.pinimg.com/736x/4b/c4/b9/4bc4b96d820ff7392f9c1f8692246cd5.jpg"
@@ -60,6 +77,14 @@ const BrandingAndIdentity = () => {
             title: 'Logo Design',
             icon: '✦',
             short: 'Logo Design services',
+            features: [
+                'Custom, timeless logo concepts',
+                'Mathematical precision & balance',
+                'Iterative design process based on feedback',
+                'Responsive formats (Favicons to billboards)',
+                'Brand personality alignment',
+                'Complete asset delivery (Vector & raster)'
+            ],
             stats: { val1: '42+', lab1: 'Designs', val2: '4 Weeks', lab2: 'Creative', val3: '5.0★', lab3: 'Satisfaction' },
             description: 'We design unique and timeless logos that serve as the distinct visual anchor for your brand identity. Each logo is meticulously crafted to be simple, memorable, and reflective of your brand\'s unique personality. We provide multiple concepts and iterate based on your feedback to ensure the final design perfectly aligns with your vision. Our logos are optimized for all formats, from tiny favicons to massive outdoor billboards and signage. We focus on the mathematical precision and visual balance of every logo to ensure it looks perfect at any size or resolution. Your logo will be a symbol of quality that builds immediate trust and recognition with every person who sees it.',
             image: "https://i.pinimg.com/736x/35/cd/d2/35cdd2c488ebb6bcf1cba345487303a1.jpg"
@@ -70,6 +95,14 @@ const BrandingAndIdentity = () => {
             title: 'Brand Identity Design',
             icon: '◈',
             short: 'Brand Identity Design services',
+            features: [
+                'Cohesive visual design systems',
+                'Custom color palette selection',
+                'Typography & font pairing',
+                'Imagery & photography styles',
+                'Iconography & graphic elements',
+                'Cross-platform consistency'
+            ],
             stats: { val1: '47+', lab1: 'Designs', val2: '5 Months', lab2: 'Creative', val3: '4.7★', lab3: 'Satisfaction' },
             description: 'We create comprehensive visual systems including color palettes, typography, and imagery styles that define your brand. Our holistic design approach ensures a consistent and professional look across every physical and digital touchpoint. We focus on creating a visual language that communicates your brand\'s values without saying a single word. This consistency helps build brand recognition and fosters a deeper connection with your global audience. We carefully select colors and fonts that evoke the right emotions and communicate your brand\'s unique story effectively. This cohesive visual system acts as the silent ambassador for your brand in every market you choose to enter.',
             image: "https://i.pinimg.com/1200x/09/72/34/0972349fb37b88011b7dc8bfc8f75cb7.jpg"
@@ -80,6 +113,14 @@ const BrandingAndIdentity = () => {
             title: 'Brand Guidelines (Brand Book)',
             icon: '✦',
             short: 'Brand Guidelines (Brand Book) services',
+            features: [
+                'Detailed brand usage manuals',
+                'Logo & clear space rules',
+                'Color codes (CMYK, RGB, HEX)',
+                'Tone of voice & messaging rules',
+                'Typography hierarchy',
+                'Living documentation for creative teams'
+            ],
             stats: { val1: '133+', lab1: 'Completed', val2: '5 Weeks', lab2: 'Avg Speed', val3: '5.0★', lab3: 'Satisfaction' },
             description: 'We develop detailed brand guidelines that serve as the definitive manual for maintaining your brand\'s visual integrity. This brand book ensures that anyone representing your company can deliver a consistent and unified brand experience. Our guidelines cover everything from logo usage and color specifications to tone of voice and photography styles. This comprehensive resource empowers your team to produce high-quality brand assets independently and correctly. This living document evolves with your brand, providing a reliable source of truth for all your creative endeavors and marketing campaigns. It protects your brand equity by ensuring that every piece of content you produce is unmistakably yours and of high quality.',
             image: "https://i.pinimg.com/1200x/2b/bf/16/2bbf1641970af2f3fe1bed7c7397d38d.jpg"
@@ -90,6 +131,14 @@ const BrandingAndIdentity = () => {
             title: 'Business & Marketing Assets',
             icon: '◈',
             short: 'Business & Marketing Assets services',
+            features: [
+                'Professional business card design',
+                'Letterheads & corporate stationery',
+                'Brochures & presentation templates',
+                'High-end print & paper finish consulting',
+                'Sales & event collateral',
+                'Conversion-focused marketing materials'
+            ],
             stats: { val1: '144+', lab1: 'Completed', val2: '5 Months', lab2: 'Avg Speed', val3: '4.7★', lab3: 'Satisfaction' },
             description: 'We design professional business cards, letterheads, brochures, and marketing collateral that enhance your corporate presence. Our assets are designed to leave a lasting positive impression on your clients and business partners. We pay attention to paper quality, printing techniques, and finishing touches to ensure your physical assets feel as premium as your services. Great design in every touchpoint demonstrates your brand\'s commitment to excellence and professional quality. We leverage modern design trends while respecting timeless principles to ensure your marketing materials never feel outdated or generic. Every asset we produce is a tool designed to convert interest into action and build long-term loyalty with your clients.',
             image: "https://i.pinimg.com/1200x/f2/bf/1d/f2bf1d799653ce6079f2e05e64d0d6d7.jpg"
@@ -100,6 +149,14 @@ const BrandingAndIdentity = () => {
             title: 'Social Media Branding',
             icon: '✦',
             short: 'Social Media Branding services',
+            features: [
+                'Custom profile & cover graphics',
+                'Reusable post & story templates',
+                'Cohesive grid & feed curation',
+                'Platform-specific asset optimization',
+                'Engaging visual content creation',
+                'Brand persona consistency online'
+            ],
             stats: { val1: '118+', lab1: 'Designs', val2: '5 Months', lab2: 'Creative', val3: '4.9★', lab3: 'Satisfaction' },
             description: 'We optimize your brand\'s presence across social platforms with custom profile graphics, post templates, and content styles. Our social branding ensures your business maintains a cohesive and engaging personality in the digital space. We create visually striking templates that make your social media feed look professional and organized while making content creation easy. Engaging social visuals help increase your brand\'s reach and foster an active, loyal community online. We help you maintain a consistent posting schedule by providing easy-to-use design assets that don\'t require advanced technical skills to update. Your brand will stay top-of-mind with a feed that looks curated, intentional, and highly professional at all times.',
             image: "https://i.pinimg.com/736x/ea/e1/24/eae124894b63a41758a311c5da351143.jpg"
@@ -110,6 +167,14 @@ const BrandingAndIdentity = () => {
             title: 'Rebranding Services',
             icon: '◈',
             short: 'Rebranding Services services',
+            features: [
+                'Brand audit & legacy preservation',
+                'Modernized identity & visual refresh',
+                'Audience reconnection strategies',
+                'Smooth multi-platform transition plan',
+                'Internal team alignment & training',
+                'Market rollout & launch support'
+            ],
             stats: { val1: '90+', lab1: 'Completed', val2: '3 Months', lab2: 'Avg Speed', val3: '4.6★', lab3: 'Satisfaction' },
             description: 'We revitalize existing brands with a fresh perspective, modernizing your identity while preserving your core values. Our rebranding process helps you reconnect with your audience and stay relevant in an evolving market. We manage the entire transition process to ensure your new brand is launched smoothly across all existing platforms and channels. A well-executed rebrand can breathe new life into your business and drive a significant increase in customer interest. We help you navigate the complexities of rebranding to minimize confusion and maximize excitement among your existing customer base. Rebranding is an opportunity to tell a new story and we make sure that story is heard loud and clear by the right people.',
             image: "https://i.pinimg.com/1200x/7c/33/34/7c3334d7f40eef263597af6d0a4c167c.jpg"
@@ -317,7 +382,8 @@ const BrandingAndIdentity = () => {
 
     return (
         <div className="bi-page">
-            <TwoLineNavbar />
+            <TopNavBar />
+            <Navbar />
             {/* Hero Section Rebuild */}
             <section className="bi-hero-section-new">
                 <div className="bi-hero-container-new">
@@ -520,6 +586,13 @@ const BrandingAndIdentity = () => {
                             <span className="bi-detail-num">{brandServices[selectedService].num}</span>
                             <h3 className="bi-detail-title">{brandServices[selectedService].title}</h3>
                             <p className="bi-detail-desc">{brandServices[selectedService].description}</p>
+                            {brandServices[selectedService].features && (
+                                <ul className="bi-detail-features">
+                                    {brandServices[selectedService].features.map((f, fi) => (
+                                        <li key={fi} className="bi-detail-feature-item">{f}</li>
+                                    ))}
+                                </ul>
+                            )}
                             <div className="bi-detail-divider" />
                             <div className="bi-detail-stats">
                                 <div className="bi-detail-stat">

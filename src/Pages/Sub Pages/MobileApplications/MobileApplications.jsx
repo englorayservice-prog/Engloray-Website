@@ -6,7 +6,7 @@ import './MobileApplications.css';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
-import MainPageSubFooter from '../MainPageSubFooter/MainPageSubFooter';
+import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 import { Helmet } from 'react-helmet';
 import { FaMobileAlt, FaAppStoreIos, FaAndroid, FaCode, FaRocket, FaCheckCircle, FaUserCheck } from "react-icons/fa";
 import heroBg from "../../../assets/lineimage.jpeg";
@@ -23,8 +23,8 @@ import logo9 from '../../../assets/icons/logoipsum-411.png';
 import logo10 from '../../../assets/icons/logoipsum-413.png';
 import logo11 from '../../../assets/icons/logoipsum-415.png';
 import logo12 from '../../../assets/icons/logoipsum-417.png';
-import avatarLeft from '../../../assets/rev_avatar_5.jfif';
-import avatarRight from '../../../assets/rev_avatar_4.jfif';
+import avatarLeft from '../../../assets/cartoon_female_1.png';
+import avatarRight from '../../../assets/cartoon_male_1.png';
 
 const MobileApplications = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -92,6 +92,30 @@ const MobileApplications = () => {
             author: "Mia Wong",
             role: "Marketing Head",
             initial: "M"
+        },
+        {
+            id: 7,
+            rating: "★★★★★",
+            text: "The push notification strategy Engloray implemented tripled our daily active users. Their insights into user behavior are invaluable.",
+            author: "Growth Labs",
+            role: "Growth Lead",
+            initial: "G"
+        },
+        {
+            id: 8,
+            rating: "★★★★★",
+            text: "A truly seamless experience. The app is fast, looks amazing, and our customers love the new biometric login feature.",
+            author: "App Hub",
+            role: "Tech Lead",
+            initial: "A"
+        },
+        {
+            id: 9,
+            rating: "★★★★★",
+            text: "Their expertise in both iOS and Android ensures that our product feels native on every device. A rare find in development agencies.",
+            author: "Native First",
+            role: "Founder",
+            initial: "N"
         }
     ];
 
@@ -296,7 +320,7 @@ const MobileApplications = () => {
 
                             <p className="ma-hero-desc">
                                 We transform ideas into intuitive, high-performance mobile applications that users love.
-                                From native iOS and Android to cross-platform React Native solutions, we build 
+                                From native iOS and Android to cross-platform React Native solutions, we build
                                 apps that scale with your business and define your digital presence.
                             </p>
 
@@ -324,8 +348,8 @@ const MobileApplications = () => {
                             <div className="ma-about-header">
                                 <h2 className="ma-about-title">About Our Development Approach</h2>
                                 <p className="ma-about-description">
-                                    We believe a great app is more than just code. It's the intersection of 
-                                    cutting-edge technology and human-centered design. Our development process 
+                                    We believe a great app is more than just code. It's the intersection of
+                                    cutting-edge technology and human-centered design. Our development process
                                     is built on transparency, performance, and a relentless focus on the end-user.
                                 </p>
                             </div>
@@ -381,10 +405,16 @@ const MobileApplications = () => {
                                     The Core Principles of<br /> Successful App Development
                                 </h3>
                                 <p>
-                                    Every great app shares a common DNA: speed, reliability, and intuition. 
-                                    Our development framework ensures that every app we build is rooted in 
+                                    Every great app shares a common DNA: speed, reliability, and intuition.
+                                    Our development framework ensures that every app we build is rooted in
                                     technical excellence and user-first functionality.
                                 </p>
+                                <ul className="ma-dna-list">
+                                    <li><strong>Native & Cross-Platform:</strong> Expertise in iOS, Android, Flutter, and React Native for global reach.</li>
+                                    <li><strong>Offline-First Design:</strong> Robust synchronization ensuring apps work perfectly even without connectivity.</li>
+                                    <li><strong>Biometric Security:</strong> Advanced fingerprint and face recognition integration for data protection.</li>
+                                    <li><strong>Interactive Micro-Animations:</strong> Enhancing UX with smooth, high-performance visual feedback.</li>
+                                </ul>
                             </div>
 
                             <div className="ma-branddna-right">
@@ -497,9 +527,15 @@ const MobileApplications = () => {
                             <div className="ma-stats-content">
                                 <h2>Our Mobile Success in Numbers</h2>
                                 <p>
-                                    Our work speaks for itself through the ratings, downloads, and 
+                                    Our work speaks for itself through the ratings, downloads, and
                                     satisfaction of the users who interact with our apps every day.
                                 </p>
+                                <ul className="ma-impact-list">
+                                    <li>4.8+ Average Rating across the Apple App Store and Google Play.</li>
+                                    <li>85% User Retention Rate after the first 30 days of launch.</li>
+                                    <li>Rapid Feature Iteration cycles ensuring your app stays ahead of trends.</li>
+                                    <li>Successfully managed 1M+ active daily users on high-traffic platforms.</li>
+                                </ul>
                             </div>
 
                             <div className="ma-stats-wrapper-cards">
@@ -608,7 +644,7 @@ const MobileApplications = () => {
                             </div>
                         </div>
                     </section>
-                    <MainPageSubFooter />
+                    <WhiteFooter />
                     <BackToTop />
                 </div>
             </div>

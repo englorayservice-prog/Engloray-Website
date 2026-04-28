@@ -2,13 +2,13 @@
 
 #raymart-hero-root {
   width: 100%;
-  min-height: 100vh;
+  min-height: auto;
   background-color: #fafafa;
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
   font-family: 'Inter', sans-serif !important;
-  padding: 40px 20px !important;
+  padding: 160px 20px 50px 20px !important;
   box-sizing: border-box !important;
 }
 
@@ -23,7 +23,7 @@
   max-width: 1250px;
   width: 100%;
   position: relative;
-  min-height: 700px;
+  min-height: 600px;
 }
 
 #raymart-hero-root .rm-hero-content {
@@ -706,7 +706,7 @@
 /* POPULAR SERVICES SECTION */
 .rm-services-section {
   width: 100%;
-  padding: 100px 20px;
+  padding: 20px 20px 50px 20px;
   background: linear-gradient(to bottom, #ffffff 190px, #e3e1e1 140px);
   /* Shifted 10px higher */
   display: flex;
@@ -773,14 +773,16 @@
 .rm-service-hero-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: 100% 100%;
+  /* Force full image visibility */
   position: absolute;
   top: 0;
   left: 0;
   border-radius: 12px;
   opacity: 0;
   transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
-  transform: scale(1.05); /* Subtle scale for premium feel */
+  transform: scale(1);
+  /* Removed scale to prevent corner cut-off */
 }
 
 .rm-service-hero-img.active {
@@ -851,7 +853,8 @@
 }
 
 .rm-preview-box.active {
-  border-color: #a3e635; /* Neon green active border */
+  border-color: #a3e635;
+  /* Neon green active border */
   box-shadow: 0 0 15px rgba(163, 230, 53, 0.4);
   transform: scale(1.05);
 }
@@ -888,7 +891,8 @@
 .rm-preview-box img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: 100% 100%;
+  /* Force full image visibility */
   opacity: 0.85;
   transition: all 0.4s ease;
 }
@@ -1245,7 +1249,7 @@
    ======================================== */
 
 .rm-how-we-work-section {
-  padding: 100px 5%;
+  padding: 50px 5%;
   background-color: #fafbfc;
   /* Extremely light off-white background */
   font-family: 'Inter', sans-serif;
@@ -1670,7 +1674,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-size: cover;
+  background-size: 100% 100%;
+  /* Show full slide image */
   background-position: center;
   opacity: 0;
   transition: opacity 0.8s ease-in-out;
@@ -1680,8 +1685,9 @@
 
 .rm-hww-slide-img.active {
   opacity: 1;
-  animation: rmHwwZoomIn 20s infinite alternate linear;
 }
+
+/* Removed rmHwwZoomIn animation to prevent corner cut-off */
 
 @keyframes rmHwwZoomIn {
   0% {
@@ -1788,7 +1794,7 @@
    DESIGNS SECTION (MARKETPLACE STYLE)
    ======================================== */
 .rm-designs-section-ref {
-  padding: 80px 5%;
+  padding: 40px 5% 10px 5%;
   background-color: #f7f9fc;
   font-family: 'Inter', sans-serif;
 }
@@ -1799,7 +1805,7 @@
 }
 
 .rm-designs-row {
-  margin-bottom: 60px;
+  margin-bottom: 15px;
 }
 
 .rm-designs-row-header {
@@ -2188,7 +2194,7 @@
    ======================================== */
 .rm-marquee-wrapper {
   background-color: #fafbfc;
-  padding: 20px 5% 80px 5%;
+  padding: 0px 5% 30px 5%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2305,7 +2311,7 @@
   align-items: center;
   width: 100%;
   max-width: 1100px;
-  margin-top: 30px;
+  margin-top: 15px;
   gap: 15px;
 }
 
@@ -2325,7 +2331,7 @@
    DELIVER SECTION
    ======================================== */
 .rm-deliver-section {
-  padding: 100px 5%;
+  padding: 0px 5% 50px 5%;
   background-color: #ffffff;
   font-family: 'Inter', sans-serif;
 }
@@ -3197,7 +3203,7 @@
 
 /* ---- REDEFINING EXPEIRENCE SECTION ---- */
 .rm-redefine-section {
-  padding: 80px 20px;
+  padding: 40px 20px;
   background: #ffffff;
 }
 
@@ -3613,7 +3619,7 @@
 
 /* ---- OUR PRODUCTS GALLERY SECTION (STATIC 5-IN-A-ROW) ---- */
 .rm-products-section {
-  padding: 50px 0;
+  padding: 25px 0;
   background: #f1f3f5;
   border-top: 1px solid #e2e8f0;
   border-bottom: 1px solid #e2e8f0;
@@ -3623,6 +3629,66 @@
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 40px;
+}
+
+.rm-products-header {
+  text-align: center;
+  margin-bottom: 50px;
+  padding: 0 20px;
+}
+
+.rm-products-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 800;
+  color: #111;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+}
+
+.rm-products-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.rm-products-footer {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.rm-products-btn {
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 40px;
+  padding: 16px 36px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.rm-products-btn:hover {
+  background: #333;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.rm-products-btn span {
+  font-size: 1.3rem;
+  transition: transform 0.3s ease;
+}
+
+.rm-products-btn:hover span {
+  transform: translateX(5px);
 }
 
 .rm-prod-gallery {
@@ -3717,6 +3783,34 @@
   margin: 0;
   letter-spacing: 0.5px;
   text-transform: capitalize;
+  transition: transform 0.4s ease;
+}
+
+.rm-prod-tile::before {
+  content: "Learn More →";
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  z-index: 5;
+  opacity: 0;
+  transition: all 0.4s ease;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 6px 16px;
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
+}
+
+.rm-prod-tile:hover::before {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.rm-prod-tile:hover .rm-prod-tile-content h3 {
+  transform: translateY(-20px);
 }
 
 
@@ -4014,5 +4108,43 @@
   .rm-testi-outer-arrow {
     display: none;
     /* Often better to use dots only on mobile to save width */
+  }
+}
+
+@media (min-width: 1440px) {
+  .rm-page-two {
+    zoom: 1.22;
+  }
+
+  .rm-container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .rm-redefine-header {
+    justify-content: center !important;
+    gap: 120px !important;
+  }
+
+  .rm-rh-left {
+    margin-left: 0 !important;
+    flex: 0 0 35% !important;
+  }
+
+  .rm-rh-right {
+    flex: 0 0 45% !important;
+  }
+
+  .rm-redefine-content {
+    justify-content: center !important;
+  }
+
+  .rm-rc-tabs {
+    margin-left: 0 !important;
+    flex: 0 0 35% !important;
+  }
+
+  .rm-rc-visual {
+    flex: 0 0 50% !important;
   }
 }

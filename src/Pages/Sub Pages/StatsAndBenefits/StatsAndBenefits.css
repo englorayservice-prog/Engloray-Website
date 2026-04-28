@@ -5,10 +5,8 @@
     margin-right: calc(-50vw + 50%);
     background: transparent;
     padding: 0;
-    /* Reduced to pull section up closer to icons section */
-    padding: 0; /* Reduced to pull section up closer to icons section */
+    margin-top: 0; /* Reset from -60px to stop it from sliding under previous section and hiding the title */
     margin-bottom: -5rem;
-    /* Reduced margin to bring title closer to map */
 }
 
 .techGroup-stats-main-title {
@@ -43,8 +41,7 @@
     margin: 0 auto;
     padding: 0 4rem;
     position: relative;
-    min-height: 850px;
-    /* Reduced height for a tighter layout */
+    min-height: 700px; /* Reduced from 850px to fit completely within the screen height */
     display: flex;
     align-items: center;
     justify-content: center;

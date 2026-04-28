@@ -3,7 +3,8 @@
 .wf-footer {
     background-color: #ffffff;
     color: #1a1d23;
-    padding: 80px 0 40px 0;
+    padding: 80px 0 0 0;
+    /* Removed bottom padding so the red banner hits the absolute end of the page */
     font-family: 'Outfit', sans-serif;
     border-top: 1px solid #f0f0f0;
 }
@@ -206,6 +207,7 @@
 
 /* Other Links Section */
 .wf-other-links {
+    margin-top: -80px;
     margin-bottom: 60px;
 }
 
@@ -270,35 +272,51 @@
 
 /* Bottom Bar */
 .wf-bottom-bar {
+    background-color: #ff0000;
+    /* Engloray Red */
+    width: 100%;
+    margin-top: 60px;
+    border-top: 4px solid #b91c1c;
+    /* Distinctive edge */
+    padding: 24px 0;
+}
+
+.wf-bottom-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 32px;
-    border-top: 1px solid #f8fafc;
 }
 
 .wf-copyright {
-    font-size: 0.875rem;
-    color: #94a3b8;
+    font-size: 0.95rem;
+    color: #ffffff;
+    font-weight: 500;
 }
 
 .wf-legal-links {
     display: flex;
-    gap: 24px;
+    gap: 16px;
 }
 
 .wf-legal-links button {
-    background: none;
+    background: transparent;
     border: none;
-    padding: 0;
-    font-size: 0.875rem;
-    color: #64748b;
+    border-radius: 30px;
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    color: #ffffff;
     cursor: pointer;
-    transition: color 0.2s ease;
+    transition: all 0.3s ease;
+    font-weight: 500;
 }
 
 .wf-legal-links button:hover {
-    color: #0f172a;
+    background: #ffffff;
+    color: #ef4444;
+    transform: translateY(-2px);
 }
 
 /* Responsive */
@@ -384,5 +402,12 @@
         flex-direction: column;
         gap: 12px;
         align-items: flex-start;
+    }
+}
+
+
+@media (min-width: 1440px) {
+    .wf-footer {
+        zoom: 1.42;
     }
 }

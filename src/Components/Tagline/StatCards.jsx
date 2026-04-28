@@ -7,10 +7,11 @@ import './StatCards.css';
 const StatCards = () => {
     const navigate = useNavigate();
     return (
-        <motion.div 
+        <motion.div
             className="bphs-stat-cards-container"
             initial={{ opacity: 0, y: 60, scale: 0.98 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.05 }}
             transition={{ duration: 2.2, ease: [0.16, 1, 0.3, 1] }}
         >
             <div className="bphs-stat-left-column">
@@ -22,101 +23,126 @@ const StatCards = () => {
                         <img src={require('../../assets/01.png')} alt="Stat 01" />
                         <img src={require('../../assets/09.png')} alt="Stat 09" />
                         <img src={require('../../assets/018.png')} alt="Stat 018" />
+                        <img src={require('../../assets/logo 01.png')} alt="Stat logo 01" />
+
                         {/* Set 2 */}
                         <img src={require('../../assets/01.png')} alt="Stat 01" />
                         <img src={require('../../assets/09.png')} alt="Stat 09" />
                         <img src={require('../../assets/018.png')} alt="Stat 018" />
+                        <img src={require('../../assets/logo 01.png')} alt="Stat logo 01" />
                         {/* Set 3 */}
                         <img src={require('../../assets/01.png')} alt="Stat 01" />
                         <img src={require('../../assets/09.png')} alt="Stat 09" />
                         <img src={require('../../assets/018.png')} alt="Stat 018" />
+                        <img src={require('../../assets/logo 01.png')} alt="Stat logo 01" />
                         {/* Set 4 */}
                         <img src={require('../../assets/01.png')} alt="Stat 01" />
                         <img src={require('../../assets/09.png')} alt="Stat 09" />
                         <img src={require('../../assets/018.png')} alt="Stat 018" />
+                        <img src={require('../../assets/logo 01.png')} alt="Stat logo 01" />
                         {/* Set 5 */}
                         <img src={require('../../assets/01.png')} alt="Stat 01" />
                         <img src={require('../../assets/09.png')} alt="Stat 09" />
                         <img src={require('../../assets/018.png')} alt="Stat 018" />
+                        <img src={require('../../assets/logo 01.png')} alt="Stat logo 01" />
                         {/* Set 6 */}
                         <img src={require('../../assets/01.png')} alt="Stat 01" />
                         <img src={require('../../assets/09.png')} alt="Stat 09" />
                         <img src={require('../../assets/018.png')} alt="Stat 018" />
+                        <img src={require('../../assets/logo 01.png')} alt="Stat logo 01" />
 
                         {/* Set 7 */}
                         <img src={require('../../assets/01.png')} alt="Stat 01" />
                         <img src={require('../../assets/09.png')} alt="Stat 09" />
                         <img src={require('../../assets/018.png')} alt="Stat 018" />
+                        <img src={require('../../assets/logo 01.png')} alt="Stat logo 01" />
                         {/* Set 8 */}
                         <img src={require('../../assets/01.png')} alt="Stat 01" />
                         <img src={require('../../assets/09.png')} alt="Stat 09" />
                         <img src={require('../../assets/018.png')} alt="Stat 018" />
+                        <img src={require('../../assets/logo 01.png')} alt="Stat logo 01" />
                         {/* Set 9 */}
                         <img src={require('../../assets/01.png')} alt="Stat 01" />
                         <img src={require('../../assets/09.png')} alt="Stat 09" />
                         <img src={require('../../assets/018.png')} alt="Stat 018" />
+                        <img src={require('../../assets/logo 01.png')} alt="Stat logo 01" />
                         {/* Set 10 */}
                         <img src={require('../../assets/01.png')} alt="Stat 01" />
                         <img src={require('../../assets/09.png')} alt="Stat 09" />
                         <img src={require('../../assets/018.png')} alt="Stat 018" />
+                        <img src={require('../../assets/logo 01.png')} alt="Stat logo 01" />
                         {/* Set 11 */}
                         <img src={require('../../assets/01.png')} alt="Stat 01" />
                         <img src={require('../../assets/09.png')} alt="Stat 09" />
                         <img src={require('../../assets/018.png')} alt="Stat 018" />
+                        <img src={require('../../assets/logo 01.png')} alt="Stat logo 01" />
                         {/* Set 12 */}
                         <img src={require('../../assets/01.png')} alt="Stat 01" />
                         <img src={require('../../assets/09.png')} alt="Stat 09" />
                         <img src={require('../../assets/018.png')} alt="Stat 018" />
+                        <img src={require('../../assets/logo 01.png')} alt="Stat logo 01" />
 
                         {/* Duplicate Half (Sets 13-24) */}
                         {/* Set 13 */}
                         <img src={require('../../assets/01.png')} alt="Stat 01" />
                         <img src={require('../../assets/09.png')} alt="Stat 09" />
                         <img src={require('../../assets/018.png')} alt="Stat 018" />
+                        <img src={require('../../assets/logo 01.png')} alt="Stat logo 01" />
                         {/* Set 14 */}
                         <img src={require('../../assets/01.png')} alt="Stat 01" />
                         <img src={require('../../assets/09.png')} alt="Stat 09" />
                         <img src={require('../../assets/018.png')} alt="Stat 018" />
+                        <img src={require('../../assets/logo 01.png')} alt="Stat logo 01" />
                         {/* Set 15 */}
                         <img src={require('../../assets/01.png')} alt="Stat 01" />
                         <img src={require('../../assets/09.png')} alt="Stat 09" />
                         <img src={require('../../assets/018.png')} alt="Stat 018" />
+                        <img src={require('../../assets/logo 01.png')} alt="Stat logo 01" />
                         {/* Set 16 */}
                         <img src={require('../../assets/01.png')} alt="Stat 01" />
                         <img src={require('../../assets/09.png')} alt="Stat 09" />
                         <img src={require('../../assets/018.png')} alt="Stat 018" />
+                        <img src={require('../../assets/logo 01.png')} alt="Stat logo 01" />
                         {/* Set 17 */}
                         <img src={require('../../assets/01.png')} alt="Stat 01" />
                         <img src={require('../../assets/09.png')} alt="Stat 09" />
                         <img src={require('../../assets/018.png')} alt="Stat 018" />
+                        <img src={require('../../assets/logo 01.png')} alt="Stat logo 01" />
                         {/* Set 18 */}
                         <img src={require('../../assets/01.png')} alt="Stat 01" />
                         <img src={require('../../assets/09.png')} alt="Stat 09" />
                         <img src={require('../../assets/018.png')} alt="Stat 018" />
+                        <img src={require('../../assets/logo 01.png')} alt="Stat logo 01" />
                         {/* Set 19 */}
                         <img src={require('../../assets/01.png')} alt="Stat 01" />
                         <img src={require('../../assets/09.png')} alt="Stat 09" />
                         <img src={require('../../assets/018.png')} alt="Stat 018" />
+                        <img src={require('../../assets/logo 01.png')} alt="Stat logo 01" />
                         {/* Set 20 */}
                         <img src={require('../../assets/01.png')} alt="Stat 01" />
                         <img src={require('../../assets/09.png')} alt="Stat 09" />
                         <img src={require('../../assets/018.png')} alt="Stat 018" />
+                        <img src={require('../../assets/logo 01.png')} alt="Stat logo 01" />
                         {/* Set 21 */}
                         <img src={require('../../assets/01.png')} alt="Stat 01" />
                         <img src={require('../../assets/09.png')} alt="Stat 09" />
                         <img src={require('../../assets/018.png')} alt="Stat 018" />
+                        <img src={require('../../assets/logo 01.png')} alt="Stat logo 01" />
                         {/* Set 22 */}
                         <img src={require('../../assets/01.png')} alt="Stat 01" />
                         <img src={require('../../assets/09.png')} alt="Stat 09" />
                         <img src={require('../../assets/018.png')} alt="Stat 018" />
+                        <img src={require('../../assets/logo 01.png')} alt="Stat logo 01" />
                         {/* Set 23 */}
                         <img src={require('../../assets/01.png')} alt="Stat 01" />
                         <img src={require('../../assets/09.png')} alt="Stat 09" />
                         <img src={require('../../assets/018.png')} alt="Stat 018" />
+                        <img src={require('../../assets/logo 01.png')} alt="Stat logo 01" />
                         {/* Set 24 */}
                         <img src={require('../../assets/01.png')} alt="Stat 01" />
                         <img src={require('../../assets/09.png')} alt="Stat 09" />
                         <img src={require('../../assets/018.png')} alt="Stat 018" />
+                        <img src={require('../../assets/logo 01.png')} alt="Stat logo 01" />
                     </div>
                 </div>
             </div>

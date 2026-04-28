@@ -4,6 +4,16 @@ import MernImg from '../../../assets/Mern Developer.jfif'
 import MernStack from '../../../assets/MernStack.jfif'
 import JavaFull from '../../../assets/JavaFull.jfif'
 import graphicDesignImg from '../../../assets/graphic_design.png'
+import typographyBrandingImg from '../../../assets/typography_branding_course.jpeg'
+import cloudComputingImg from '../../../assets/cloud_computing_course.png'
+import javaFullstackImg from '../../../assets/java_fullstack_course.png'
+import illustrationConceptImg from '../../../assets/illustration_concept_art_course.png'
+import socialMediaImg from '../../../assets/social_media_course.png'
+import seoMasteryImg from '../../../assets/Seo_Mastery.png'
+import dataAnalyticsImg from '../../../assets/data_analytics_course.png'
+import maleAvatar from '../../../assets/testimonials/male_avatar.png'
+import femaleAvatar from '../../../assets/testimonials/cartoon_female_2.png'
+import femaleAvatar2 from '../../../assets/testimonials/cartoon_female_3.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faPalette,
@@ -59,21 +69,21 @@ const Courses = () => {
       ];
 
       animTargets.forEach((selector) => {
-        gsap.set(selector, { y: 60, opacity: 0 });
-
-        gsap.to(selector, {
-          y: 0,
-          opacity: 1,
-          duration: 0.8,
-          stagger: 0.1,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: selector,
-            start: 'top 90%',
-            end: 'top 40%',
-            toggleActions: 'restart none restart reset',
-          },
-        });
+        gsap.fromTo(selector,
+          { y: 60, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            stagger: 0.1,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: selector,
+              start: 'top 95%', // Triggers nicely when entering from bottom
+              toggleActions: 'play none none reverse', // Only plays on enter, smoothly reverses if completely off-screen top
+            },
+          }
+        );
       });
     }, sectionRef);
 
@@ -123,7 +133,7 @@ const Courses = () => {
       rating: 4.9,
       buyers: 420,
       authorImage: "https://i.pravatar.cc/150?u=alice",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKpBlO5O2mie0KMe2m86SK7UP4bfmLRhweyQ&s",
+      image: typographyBrandingImg,
       topTags: ["Mentorship"],
       badges: [],
       skills: ["Intermediate", "#ProjectBased"]
@@ -168,7 +178,7 @@ const Courses = () => {
       buyers: 1250,
       authorImage: "https://i.pravatar.cc/150?u=john",
       price: "FREE",
-      image: MernImg,
+      image: cloudComputingImg,
       topTags: ["Self-paced"],
       badges: ["Popular"],
       skills: ["Beginner", "#Portfolio", "#frontend"]
@@ -210,7 +220,7 @@ const Courses = () => {
       practiceHours: "10+",
       authorImage: "https://i.pravatar.cc/150?u=kevin2",
       price: "FREE",
-      image: JavaFull,
+      image: javaFullstackImg,
       topTags: ["Job-ready"],
       badges: ["Career Boost"],
       skills: ["Advanced", "#MasterClass", "Jobready"]
@@ -294,7 +304,7 @@ const Courses = () => {
       buyers: 2400,
       authorImage: "https://i.pravatar.cc/150?u=zak",
       price: "FREE",
-      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop",
+      image: socialMediaImg,
       topTags: ["community"],
       badges: ["Top Rated"],
       skills: ["Beginner", "#CaseStudy", "#Growth"]
@@ -316,7 +326,7 @@ const Courses = () => {
       practiceHours: "10+",
       authorImage: "https://i.pravatar.cc/150?u=emma",
       price: "FREE",
-      image: "https://images.unsplash.com/photo-1557838923-2985c318be48?q=80&w=800&auto=format&fit=crop",
+      image: seoMasteryImg,
       topTags: ["Lifetime Access"],
       badges: [],
       skills: ["Intermediate", "#LiveMentorship"]
@@ -338,7 +348,7 @@ const Courses = () => {
       practiceHours: "10+",
       authorImage: "https://i.pravatar.cc/150?u=robert",
       price: "FREE",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+      image: dataAnalyticsImg,
       topTags: ["Mentorship"],
       badges: ["High Demand"],
       skills: ["Advanced", "#analytics", "#DataMining"]
@@ -400,7 +410,7 @@ const Courses = () => {
       theoryHours: "12+",
       practiceHours: "12+",
       authorImage: "https://i.pravatar.cc/150?u=drawing3",
-      image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=800&auto=format&fit=crop",
+      image: illustrationConceptImg,
       topTags: ["Illustration"],
       badges: ["Mastery"],
       skills: ["Advanced", "#ConceptArt", "#Creative"]
@@ -653,9 +663,9 @@ const Courses = () => {
                   <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=400&auto=format&fit=crop" alt="Teachers Background" className="lh-teachers-bg" />
                   <div className="lh-teachers-content">
                     <div className="lh-teacher-avatars">
-                      <img src="https://i.pravatar.cc/150?u=t1" alt="Teacher 1" />
-                      <img src="https://i.pravatar.cc/150?u=t2" alt="Teacher 2" />
-                      <img src="https://i.pravatar.cc/150?u=t3" alt="Teacher 3" />
+                      <img src={femaleAvatar} alt="Teacher 1" />
+                      <img src={maleAvatar} alt="Teacher 3" />
+                      <img src={femaleAvatar2} alt="Teacher 2" />
                       <div className="lh-more-teachers">+8</div>
                     </div>
                     <h3 className="lh-teachers-title">

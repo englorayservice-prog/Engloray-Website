@@ -77,6 +77,43 @@ const BenefitsFooter = ({ onOpenInternshipForm }) => {
         resume: null
     });
     const sectionRef = React.useRef(null);
+    const [isAnimatingToggle, setIsAnimatingToggle] = useState(false);
+
+    const toggleBenefits = () => {
+        if (isAnimatingToggle) return;
+        setIsAnimatingToggle(true);
+
+        const cards = gsap.utils.toArray('.benefits-main-item');
+        
+        // 1. Fade OUT the current content
+        gsap.to(cards, {
+            opacity: 0,
+            y: -20,
+            duration: 0.3,
+            stagger: 0.02,
+            ease: "power2.in",
+            onComplete: () => {
+                // 2. Swap the state
+                setIsSwitched(prev => !prev);
+                
+                // 3. Fade IN the new content after React renders it
+                setTimeout(() => {
+                    const newCards = gsap.utils.toArray('.benefits-main-item');
+                    gsap.fromTo(newCards,
+                        { opacity: 0, y: 20 },
+                        { 
+                            opacity: 1, 
+                            y: 0, 
+                            duration: 0.4, 
+                            stagger: 0.05, 
+                            ease: "power2.out",
+                            onComplete: () => setIsAnimatingToggle(false)
+                        }
+                    );
+                }, 50);
+            }
+        });
+    };
 
     React.useLayoutEffect(() => {
         let ctx = gsap.context(() => {
@@ -113,7 +150,7 @@ const BenefitsFooter = ({ onOpenInternshipForm }) => {
                     scrollTrigger: {
                         trigger: item,
                         start: "top 90%",
-                        toggleActions: "play reverse play reverse"
+                        toggleActions: "play none none reverse"
                     }
                 });
 
@@ -127,7 +164,7 @@ const BenefitsFooter = ({ onOpenInternshipForm }) => {
                     scrollTrigger: {
                         trigger: item,
                         start: "top 90%",
-                        toggleActions: "play reverse play reverse"
+                        toggleActions: "play none none reverse"
                     }
                 });
             });
@@ -381,7 +418,7 @@ const BenefitsFooter = ({ onOpenInternshipForm }) => {
                                                     <span className="red-text">do</span>
                                                     <div
                                                         className={`switch-circle-container ${isSwitched ? 'switch-active' : ''}`}
-                                                        onClick={() => setIsSwitched(!isSwitched)}
+                                                        onClick={toggleBenefits}
                                                         role="button"
                                                         aria-label="Toggle benefits view"
                                                     >

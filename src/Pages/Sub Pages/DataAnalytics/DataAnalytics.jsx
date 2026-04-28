@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
-import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
+import Navbar from '../../../Components/Navbar/Navbar';
+import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import './DataAnalytics.css';
-import SubFooterOne from '../../../Pages/Sub Pages/subFooterOne/NewFooter1';
+import TSPFFooter from '../TechGroupSubPagefooter/TSPFFooter';
 
 import iphone14Img from '../../../assets/Iphone14.png';
 
@@ -263,7 +264,8 @@ const DataAnalytics = () => {
 
     return (
         <div className="data-page-page">
-            <TwoLineNavbar />
+            <TopNavBar />
+            <Navbar />
 
             {/* ── Hero Section ── */}
             <section className="data-page-hero-section-new">
@@ -850,7 +852,7 @@ const DataAnalytics = () => {
                 </div>
             </section>
 
-            <SubFooterOne />
+            <TSPFFooter />
             <BackToTop />
         </div>
     );

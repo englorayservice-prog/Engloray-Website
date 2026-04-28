@@ -1,0 +1,5726 @@
+html {
+    scroll-behavior: smooth;
+}
+
+/* Base Styles */
+.wsp-page {
+    font-family: 'Aldrich', monospace;
+    background: #0a0a0a;
+    color: #ffffff;
+    min-height: 100vh;
+    overflow-x: hidden;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* HEXCO Text Style */
+.wsp-hexco-text {
+    font-family: 'HEXCO', sans-serif;
+    font-weight: 100;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* =========================================================================== */
+/* REDESIGNED HEADER SECTION (MATCHING REFERENCE IMAGE)                        */
+/* =========================================================================== */
+
+.wsp-header-redesign {
+    background-color: #fafbfc;
+    padding: 140px 20px 50px;
+    /* Added top padding to clear the navbar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    min-height: 80vh;
+}
+
+.wsp-header-redesign::before,
+.wsp-header-redesign::after {
+    display: none;
+    /* Remove any pseudo-elements that might cause black spots */
+}
+
+.wsp-header-container {
+    max-width: 1600px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 5;
+    position: relative;
+}
+
+/* Side Floating Cards */
+.wsp-side-card {
+    position: absolute;
+    width: 280px;
+    min-height: 400px;
+    background: #ffffff;
+    padding: 16px;
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+    text-align: left;
+    z-index: 10;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    animation: wsp-side-float 4s ease-in-out infinite alternate;
+}
+
+.wsp-side-section-top {
+    flex: 1;
+}
+
+.wsp-side-section-bottom {
+    margin-top: 20px;
+}
+
+.wsp-side-desc {
+    font-family: 'Poppins', 'Inter', sans-serif;
+    font-size: 0.82rem;
+    color: #475569;
+    line-height: 1.5;
+    margin-top: 12px;
+    font-weight: 500;
+}
+
+.wsp-side-desc-mini {
+    font-family: 'Poppins', 'Inter', sans-serif;
+    font-size: 0.68rem;
+    color: #94a3b8;
+    margin-top: 4px;
+}
+
+.wsp-side-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.wsp-mini-tag {
+    font-size: 0.65rem;
+    padding: 4px 10px;
+    background: rgba(255, 107, 107, 0.05);
+    /* Soft Red */
+    color: #ff6b6b;
+    border-radius: 100px;
+    font-weight: 600;
+    border: 1px solid rgba(255, 107, 107, 0.1);
+    transition: all 0.3s ease;
+}
+
+.wsp-mini-tag:hover {
+    background: rgba(255, 107, 107, 0.1);
+    transform: translateY(-2px);
+}
+
+.wsp-side-left {
+    left: -220px;
+    top: 40px;
+}
+
+.wsp-side-right {
+    right: -220px;
+    top: 80px;
+    animation-delay: 1.5s;
+}
+
+.wsp-card-head {
+    width: 100%;
+    height: 160px;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.wsp-side-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.wsp-card-wave-bar {
+    display: flex;
+    align-items: center;
+    background: #ff6b6b;
+    border-radius: 12px;
+    padding: 10px 14px;
+    gap: 10px;
+    margin: -35px auto 15px;
+    position: relative;
+    z-index: 2;
+    width: fit-content;
+    box-shadow: 0 8px 16px rgba(255, 107, 107, 0.2);
+}
+
+.wsp-wave-icon {
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+.wsp-wave-bars {
+    display: flex;
+    gap: 3px;
+    align-items: center;
+}
+
+.wsp-wave-bars span {
+    width: 2px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 1px;
+}
+
+.wsp-wave-bars span:nth-child(even) {
+    height: 16px;
+}
+
+.wsp-listeners-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.wsp-side-divider {
+    border: none;
+    border-top: 1px dashed #e2e8f0;
+    margin: 12px 0;
+    width: 100%;
+}
+
+.wsp-side-platforms {
+    display: flex;
+    gap: 15px;
+    color: #ff6b6b;
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+.wsp-mini-avatars {
+    display: flex;
+}
+
+.wsp-ma-1,
+.wsp-ma-2,
+.wsp-ma-3 {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    margin-left: -8px;
+}
+
+.wsp-ma-1 {
+    background: #ff6b6b;
+    margin-left: 0;
+}
+
+.wsp-ma-2 {
+    background: #4ecdc4;
+}
+
+.wsp-ma-3 {
+    background: #ffd166;
+}
+
+.wsp-l-count {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+@keyframes wsp-side-float {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-15px);
+    }
+}
+
+@media (max-width: 1400px) {
+    .wsp-side-left {
+        left: 40px;
+        top: -50px;
+        z-index: -1;
+        opacity: 0.3;
+    }
+
+    .wsp-side-right {
+        right: 40px;
+        top: -50px;
+        z-index: -1;
+        opacity: 0.3;
+    }
+}
+
+@media (max-width: 1100px) {
+    .wsp-side-card {
+        display: flex;
+    }
+}
+
+.wsp-gradient-text {
+    background: linear-gradient(90deg, #4b0082 0%, #6a0dad 50%, #8b00ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.wsp-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(3rem, 5vw, 4.2rem);
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 25px;
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+.wsp-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: #444;
+    max-width: 600px;
+    margin: 0 auto 50px;
+    line-height: 1.6;
+}
+
+.wsp-stats-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.wsp-stat-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 24px 20px 20px;
+    width: min(220px, 100%);
+    height: auto;
+    min-height: 240px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+
+.wsp-card-checkbox {
+    display: none;
+}
+
+.wsp-check-icon {
+    font-size: 9px;
+}
+
+.wsp-card-icon {
+    margin: 0 auto 20px auto;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    font-size: 28px;
+}
+
+.wsp-icon-red {
+    background: linear-gradient(135deg, #fff0f0, #ffe6e6);
+    color: #ff5252;
+}
+
+.wsp-icon-green {
+    background: linear-gradient(135deg, #f0fff4, #dcfce7);
+    color: #22c55e;
+}
+
+.wsp-icon-purple {
+    background: linear-gradient(135deg, #f3e8ff, #e9d5ff);
+    color: #a855f7;
+}
+
+.wsp-icon-pink {
+    background: linear-gradient(135deg, #fce7f3, #fbcfe8);
+    color: #ec4899;
+}
+
+.wsp-icon-blue {
+    background: linear-gradient(135deg, #eff6ff, #dbeafe);
+    color: #3b82f6;
+}
+
+.wsp-icon-orange {
+    background: linear-gradient(135deg, #fff7ed, #ffedd5);
+    color: #f97316;
+}
+
+.wsp-icon-white {
+    background: #ffffff;
+    color: #111111;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.wsp-card-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 5px;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+}
+
+.wsp-card-desc {
+    font-size: 13px;
+    color: #666;
+    font-weight: 600;
+    text-transform: capitalize;
+    text-align: center;
+    line-height: 1.4;
+    letter-spacing: 0px;
+}
+
+.wsp-cta-button {
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 40px;
+    padding: 18px 45px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+}
+
+.wsp-cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.wsp-header-features {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 25px;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+}
+
+.wsp-feature-item {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #444;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.wsp-feature-item svg {
+    color: #000;
+    font-size: 14px;
+}
+
+.wsp-header-logos-wrapper {
+    width: 100%;
+    max-width: 900px;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    padding-top: 40px;
+}
+
+.wsp-header-logos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    opacity: 0.8;
+    filter: grayscale(100%);
+}
+
+.wsp-logo-placeholder {
+    font-size: 20px;
+    color: #111;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.wsp-logo-placeholder strong {
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+/* New Floating Bottom Cards */
+.wsp-floating-card {
+    position: absolute;
+    bottom: 0px;
+    background: white;
+    border-radius: 20px;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+    z-index: 10;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    animation: wsp-side-float 4s ease-in-out infinite alternate;
+}
+
+.wsp-floating-left {
+    left: 0px;
+}
+
+.wsp-floating-right {
+    right: 0px;
+    animation-delay: 1.5s;
+}
+
+.wsp-floating-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: white;
+    flex-shrink: 0;
+}
+
+.wsp-floating-content h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #111;
+    margin: 0 0 2px 0;
+    text-align: left;
+}
+
+.wsp-floating-content p {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: #666;
+    margin: 0;
+    text-align: left;
+}
+
+@media (max-width: 1400px) {
+    .wsp-floating-left {
+        left: 20px;
+    }
+
+    .wsp-floating-right {
+        right: 20px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .wsp-floating-card {
+        display: none;
+    }
+}
+
+@media (max-width: 1024px) {
+    .wsp-header-redesign {
+        padding: 60px 20px 80px;
+    }
+
+    .wsp-stats-cards {
+        gap: 15px;
+    }
+
+    .wsp-stat-card {
+        width: calc(50% - 15px);
+        max-width: 180px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .wsp-banner-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .wsp-banner-text {
+        margin: 0 auto 35px;
+    }
+
+    .wsp-banner-features-grid {
+        justify-content: center;
+    }
+
+    .wsp-banner-feat {
+        justify-content: center;
+    }
+
+    .wsp-speech-bubble-pop {
+        top: 0;
+        right: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .wsp-header-banner {
+        padding: 40px 20px;
+        border-radius: 30px;
+    }
+
+    .wsp-banner-features-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.wsp-header-stat {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 140px;
+    max-width: 200px;
+}
+
+.wsp-stat-icon {
+    font-size: 1.5rem;
+    color: #FF6B6B;
+}
+
+.wsp-stat-value {
+    font-family: 'HEXCO', sans-serif;
+    font-size: clamp(1.3rem, 3vw, 2rem);
+    font-weight: 100;
+    color: #222222;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+    line-height: 1;
+}
+
+.wsp-stat-label {
+    font-family: 'Aldrich', monospace;
+    font-size: 0.7rem;
+    color: #666666;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.wsp-scroll-indicator {
+    margin-top: 40px;
+    animation: wsp-bounce 2s infinite;
+}
+
+@keyframes wsp-bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-10px);
+    }
+
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+.wsp-scroll-text {
+    display: block;
+    font-family: 'Aldrich', monospace;
+    font-size: 0.8rem;
+    color: #666666;
+    margin-bottom: 10px;
+    letter-spacing: 1.5px;
+}
+
+.wsp-scroll-arrow {
+    font-size: 1.5rem;
+    color: #FF6B6B;
+    animation: wsp-arrow-pulse 1.5s infinite;
+}
+
+@keyframes wsp-arrow-pulse {
+
+    0%,
+    100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Container */
+.wsp-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    /* Restored centering */
+    padding: 10px 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Section Styles */
+.wsp-section {
+    padding: 80px 0;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Dark Background Sections */
+.wsp-workshops-section {
+    background: #0c0c0e;
+    position: relative;
+    overflow: hidden;
+    padding: 40px 0 5px !important;
+}
+
+.wsp-workshops-section .wsp-container {
+    max-width: 1600px;
+    /* Increased to fit 4 cards without shrinking */
+}
+
+.wsp-workshops-section::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    left: -200px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(108, 92, 231, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.wsp-workshops-section::after {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    right: -100px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(162, 155, 254, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.wsp-awards-section,
+.wsp-contact-section {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0 20px !important;
+    overflow: hidden;
+}
+
+.wsp-awards-section .wsp-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Light Background Sections */
+.wsp-staff-section,
+.wsp-reviews-section,
+.wsp-success-stories-section {
+    background: linear-gradient(135deg, #f0f2f5 0%, #e4e7eb 100%);
+}
+
+/* Section Headers - Dark Theme */
+.wsp-workshops-section .wsp-section-header,
+.wsp-awards-section .wsp-section-header,
+.wsp-contact-section .wsp-section-header {
+    text-align: center;
+    margin-bottom: 10px;
+    padding: 0 15px;
+}
+
+.wsp-workshops-section .wsp-section-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 900;
+    margin-bottom: 12px;
+    color: #ffffff;
+    letter-spacing: -2px;
+    line-height: 1.1;
+    text-align: center;
+    margin-left: 0;
+}
+
+.wsp-workshops-section .wsp-section-title span {
+    background: linear-gradient(90deg, #a29bfe, #6c5ce7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.wsp-workshops-section .wsp-section-subtitle,
+.wsp-awards-section .wsp-section-subtitle,
+.wsp-contact-section .wsp-section-subtitle {
+    font-family: 'Aldrich', monospace;
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+/* Section Headers - Light Theme */
+.wsp-staff-section .wsp-section-header,
+.wsp-reviews-section .wsp-section-header,
+.wsp-success-stories-section .wsp-section-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 0 15px;
+}
+
+.wsp-staff-section .wsp-section-title,
+.wsp-reviews-section .wsp-section-title,
+.wsp-success-stories-section .wsp-section-title {
+    font-family: 'HEXCO', sans-serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 100;
+    margin-bottom: 10px;
+    color: #333333;
+    letter-spacing: 2px;
+    line-height: 1.2;
+}
+
+.wsp-staff-section .wsp-section-subtitle,
+.wsp-reviews-section .wsp-section-subtitle,
+.wsp-success-stories-section .wsp-section-subtitle {
+    font-family: 'Aldrich', monospace;
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+    color: #666666;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+/* SUCCESS STORIES SECTION - WIDER & SHORTER CARDS */
+.wsp-success-stories-section .wsp-section-description {
+    font-family: 'Aldrich', monospace;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    color: #555555;
+    max-width: 600px;
+    margin: 15px auto 0;
+    line-height: 1.6;
+}
+
+.wsp-stories-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.wsp-stories-track {
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 20px 0 40px;
+    scroll-snap-type: x mandatory;
+    cursor: grab;
+}
+
+.wsp-stories-track:active {
+    cursor: grabbing;
+}
+
+.wsp-stories-track::-webkit-scrollbar {
+    display: none;
+}
+
+/* WIDER & SHORTER CARD DIMENSIONS */
+.wsp-story-card {
+    flex: 0 0 380px;
+    /* Wider: 380px instead of 320px */
+    min-width: 380px;
+    max-width: 380px;
+    height: 220px;
+    /* Shorter: 220px instead of 250px */
+    background: #ffffff;
+    /* Removed backdrop-filter to eliminate glass effect */
+    border-radius: 16px;
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    scroll-snap-align: start;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.wsp-story-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+    border-color: rgba(255, 107, 107, 0.3);
+}
+
+.wsp-story-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, #FF6B6B, #4ECDC4);
+}
+
+/* COMPACT HEADER WITH BETTER ALIGNMENT */
+.wsp-story-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    /* Increased gap for better spacing */
+    margin-bottom: 12px;
+    flex-shrink: 0;
+}
+
+.wsp-story-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FF6B6B, #FFD166);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'HEXCO', sans-serif;
+    font-size: 1.3rem;
+    color: white;
+    font-weight: 100;
+    flex-shrink: 0;
+    box-shadow: 0 3px 10px rgba(255, 107, 107, 0.3);
+}
+
+.wsp-story-info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.wsp-story-name {
+    font-family: 'HEXCO', sans-serif;
+    font-size: 1.1rem;
+    /* Slightly larger for wider card */
+    font-weight: 100;
+    color: #222222;
+    margin-bottom: 4px;
+    letter-spacing: 0.7px;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.wsp-story-role {
+    font-family: 'Aldrich', monospace;
+    font-size: 0.75rem;
+    color: #666666;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.wsp-story-company {
+    font-family: 'HEXCO', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 100;
+    color: #FF6B6B;
+    letter-spacing: 0.7px;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 2px;
+}
+
+/* COMPACT CONTENT */
+.wsp-story-content {
+    flex: 1;
+    margin-bottom: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.wsp-story-quote {
+    font-family: 'Aldrich', monospace;
+    font-size: 0.85rem;
+    /* Slightly larger for wider card */
+    line-height: 1.4;
+    color: #444444;
+    font-style: italic;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+    padding-left: 12px;
+}
+
+.wsp-story-quote::before {
+    content: '"';
+    position: absolute;
+    left: 0;
+    top: -5px;
+    font-size: 1.6rem;
+    color: #FF6B6B;
+    opacity: 0.3;
+    font-family: serif;
+    line-height: 1;
+}
+
+/* COMPACT FOOTER */
+.wsp-story-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 12px;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    flex-shrink: 0;
+}
+
+.wsp-story-tag {
+    font-family: 'Aldrich', monospace;
+    font-size: 0.75rem;
+    padding: 4px 12px;
+    border-radius: 12px;
+    background: rgba(255, 107, 107, 0.1);
+    color: #FF6B6B;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    white-space: nowrap;
+}
+
+.wsp-story-date {
+    font-family: 'Aldrich', monospace;
+    font-size: 0.75rem;
+    color: #777777;
+    white-space: nowrap;
+}
+
+/* NAVIGATION */
+.wsp-story-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 25px;
+}
+
+.wsp-story-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.wsp-story-indicator.active {
+    background: #FF6B6B;
+    transform: scale(1.3);
+}
+
+.wsp-story-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: #FF6B6B;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: none;
+    z-index: 10;
+}
+
+.wsp-story-nav:hover {
+    background: #FF6B6B;
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 15px rgba(255, 107, 107, 0.3);
+}
+
+.wsp-story-nav-prev {
+    left: 5px;
+}
+
+.wsp-story-nav-next {
+    right: 5px;
+}
+
+/* Workshops Section */
+.wsp-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    padding: 0 15px;
+}
+
+.wsp-tab {
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    color: rgba(255, 255, 255, 0.6);
+    font-family: 'Aldrich', monospace;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    flex: 1;
+    min-width: 150px;
+    justify-content: center;
+}
+
+.wsp-tab:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.wsp-tab.wsp-active {
+    background: #FF6B6B;
+    border-color: transparent;
+    color: white;
+    box-shadow: 0 10px 25px rgba(255, 107, 107, 0.3);
+}
+
+.wsp-tab-icon {
+    font-size: 1rem;
+}
+
+.wsp-tab-text {
+    letter-spacing: 0.8px;
+}
+
+.wsp-workshops-grid,
+.wsp-bento-grid,
+.wsp-upcoming-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 25px;
+    padding: 0 15px;
+}
+
+.wsp-workshop-card {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.wsp-workshop-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.wsp-workshop-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px 20px 0;
+}
+
+.wsp-workshop-icon {
+    font-size: 2.5rem;
+    color: #FF6B6B;
+    animation: wsp-icon-float 4s ease-in-out infinite;
+}
+
+@keyframes wsp-icon-float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.wsp-workshop-badge {
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-family: 'Aldrich', monospace;
+    font-size: 0.7rem;
+    background-color: #FF6B6B;
+    color: white;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.wsp-workshop-content {
+    padding: 20px;
+}
+
+.wsp-workshop-title {
+    font-family: 'HEXCO', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 100;
+    color: #ffffff;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+    line-height: 1.3;
+}
+
+.wsp-workshop-description {
+    font-family: 'Aldrich', monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 15px;
+}
+
+.wsp-workshop-details {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.wsp-detail-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.wsp-detail-icon {
+    font-size: 0.9rem;
+    color: #FF6B6B;
+    opacity: 0.8;
+}
+
+.wsp-detail-text {
+    font-family: 'Aldrich', monospace;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.wsp-upcoming-info {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.wsp-price-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.wsp-price-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.wsp-price-label {
+    font-family: 'Aldrich', monospace;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.wsp-price {
+    font-family: 'HEXCO', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 100;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+.wsp-early-bird {
+    color: #FF6B6B;
+    text-decoration: line-through;
+    opacity: 0.8;
+}
+
+.wsp-seats-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.wsp-seats-label {
+    font-family: 'Aldrich', monospace;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.wsp-seats-count {
+    font-family: 'HEXCO', sans-serif;
+    font-size: 1rem;
+    color: #FF6B6B;
+    font-weight: 100;
+    letter-spacing: 1px;
+}
+
+.wsp-workshop-actions {
+    padding: 0 20px 20px;
+}
+
+.wsp-register-btn,
+.wsp-view-btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    font-family: 'HEXCO', sans-serif;
+    font-size: 1rem;
+    font-weight: 100;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    border: none;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.wsp-register-btn {
+    background-color: #FF6B6B;
+    color: white;
+}
+
+.wsp-view-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.wsp-register-btn:hover,
+.wsp-view-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.wsp-view-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.wsp-btn-text {
+    letter-spacing: 1px;
+}
+
+.wsp-btn-arrow {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.wsp-btn-icon {
+    font-size: 1rem;
+}
+
+.wsp-register-btn:hover .wsp-btn-arrow {
+    transform: translateX(3px);
+}
+
+/* Marquee Bar */
+.wsp-hero-marquee {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 15px 0;
+    overflow: hidden;
+    z-index: 100;
+}
+
+.wsp-hero-marquee.top {
+    top: 100px;
+    bottom: auto;
+}
+
+
+.wsp-workshop-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 107, 107, 0.05);
+    opacity: 0.05;
+    pointer-events: none;
+}
+
+/* =========================================================================== */
+/* STAFF SECTION - RESPONSIVE GRID */
+/* =========================================================================== */
+.wsp-staff-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr) !important;
+    gap: 20px;
+    padding: 0 15px;
+    width: 100%;
+}
+
+/* Small screens (mobile) - 1 column */
+@media (max-width: 767px) {
+    .wsp-staff-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
+
+/* Medium screens (tablet) - 2 columns */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .wsp-staff-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+/* =========================================================================== */
+/* STAFF SECTION V2 - NFT STYLE REDESIGN */
+/* =========================================================================== */
+
+.wsp-staff-section-v2 {
+    background: #08080a !important;
+    padding: 40px 0 60px !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.wsp-staff-section-v2::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 40%;
+    height: 40%;
+    background: radial-gradient(circle, rgba(112, 0, 255, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.wsp-section-title-v2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 800;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 10px;
+    background: linear-gradient(to right, #fff, #ffffff88);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.wsp-section-subtitle-v2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    margin-bottom: 60px;
+    letter-spacing: 1px;
+}
+
+/* NFT Card V2 */
+.wsp-staff-card-v2 {
+    background: #141416;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 24px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.wsp-staff-card-v2:hover {
+    transform: translateY(-12px);
+    border-color: rgba(112, 0, 255, 0.4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.wsp-staff-v2-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.wsp-staff-v2-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #fff;
+    flex-shrink: 0;
+}
+
+.wsp-v2-avatar-txt {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.wsp-staff-v2-info {
+    flex: 1;
+}
+
+.wsp-v2-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.2;
+}
+
+.wsp-v2-handle {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.wsp-v2-verified {
+    color: #3897f0;
+    font-size: 0.9rem;
+}
+
+/* Main Feature Image Placeholder */
+.wsp-staff-v2-main-img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    background: #0c0c0e;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wsp-v2-img-backdrop {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.wsp-v2-staff-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.wsp-staff-card-v2:hover .wsp-v2-staff-img {
+    transform: scale(1.1);
+}
+
+
+.wsp-v2-floating-icon {
+    font-size: 5rem;
+    color: #fff;
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5));
+    animation: wsp-v2-float 6s ease-in-out infinite;
+}
+
+@keyframes wsp-v2-float {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-15px) scale(1.05);
+    }
+}
+
+.wsp-v2-card-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 60%;
+    filter: blur(60px);
+    opacity: 0.15;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Metadata area */
+.wsp-staff-v2-meta {
+    width: 100%;
+}
+
+.wsp-v2-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 20px;
+    line-height: 1.4;
+    height: 3rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.wsp-v2-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wsp-v2-bid-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.wsp-v2-bid-lbl {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.wsp-v2-bid-val {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #fff;
+}
+
+.wsp-v2-action-btn {
+    padding: 10px 20px;
+    border-radius: 12px;
+    border: none;
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.wsp-v2-action-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(112, 0, 255, 0.4);
+}
+
+/* Staff Grid Adjustments */
+.wsp-staff-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+@media (max-width: 1024px) {
+    .wsp-staff-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .wsp-staff-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .wsp-staff-card-v2 {
+        padding: 16px;
+    }
+}
+
+/* Benefits Grid */
+.wsp-neon-benefits {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    width: 100%;
+}
+
+.wsp-staff-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+
+
+.wsp-skill-tag {
+    font-family: 'Aldrich', monospace;
+    font-size: 0.7rem;
+    padding: 3px 8px;
+    border-radius: 10px;
+    background-color: rgba(255, 107, 107, 0.15);
+    color: #FF6B6B;
+}
+
+@media (max-width: 767px) {
+    .wsp-skill-tag {
+        font-size: 0.6rem;
+        padding: 2px 6px;
+    }
+}
+
+.wsp-staff-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+    border-radius: 15px;
+}
+
+.wsp-staff-card:hover .wsp-staff-hover {
+    opacity: 1;
+}
+
+.wsp-hover-text {
+    font-family: 'HEXCO', sans-serif;
+    font-size: 1rem;
+    color: #ffffff;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 0 15px;
+}
+
+.wsp-hover-arrow {
+    font-size: 1.2rem;
+    color: #FF6B6B;
+    animation: wsp-arrow-bounce 1s infinite;
+}
+
+@keyframes wsp-arrow-bounce {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(3px);
+    }
+}
+
+/* =========================================================================== */
+/* AWARDS SECTION — SNAKE ZIGZAG TIMELINE                                      */
+/* =========================================================================== */
+
+/* ── Timeline container ── */
+.wsp-az-timeline-horizontal {
+    display: flex;
+    justify-content: flex-start;
+    padding: 20px 0 !important;
+    position: relative;
+    width: fit-content;
+    overflow: visible;
+    gap: 0;
+}
+
+.wsp-timeline-marquee-anim {
+    animation: wsp-timeline-scroll 30s linear infinite;
+}
+
+.wsp-timeline-marquee-anim:hover {
+    animation-play-state: paused;
+}
+
+@keyframes wsp-timeline-scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-350px * 6));
+    }
+}
+
+.wsp-az-timeline-horizontal::-webkit-scrollbar {
+    display: none;
+}
+
+/* Horizontal axis line */
+.wsp-az-main-hline {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.wsp-az-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    flex: 0 0 350px;
+}
+
+.wsp-az-item--top {
+    justify-content: flex-end;
+    margin-bottom: 30px;
+    /* Space for the badge axis */
+}
+
+.wsp-az-item--bottom {
+    justify-content: flex-start;
+    margin-top: 30px;
+    /* Space for the badge axis */
+    flex-direction: column-reverse;
+}
+
+/* Side cells (top / bottom) */
+.wsp-az-side-h {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.wsp-az-item--top .wsp-az-side-h {
+    justify-content: flex-end;
+    padding-bottom: 40px;
+}
+
+.wsp-az-item--bottom .wsp-az-side-h {
+    justify-content: flex-start;
+    padding-top: 40px;
+}
+
+/* Axis badge column */
+.wsp-az-badge-col-h {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 80px;
+    position: relative;
+}
+
+/* Horizontal connectors between badges */
+.wsp-az-hline-connect {
+    height: 2px;
+    flex: 1;
+    min-width: 50px;
+}
+
+/* ── Numbered Badge ── */
+.wsp-az-badge {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 2px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(10, 12, 20, 0.95);
+    backdrop-filter: blur(12px);
+    z-index: 3;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-shrink: 0;
+}
+
+.wsp-az-badge-num {
+    font-family: 'HEXCO', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 100;
+}
+
+/* ── Pill cards ── */
+.wsp-az-pill {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 22px;
+    border: 1.5px dashed rgba(255, 255, 255, 0.22);
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    max-width: 310px;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+/* Top pills connect to badge on BOTTOM side */
+.wsp-az-item--top .wsp-az-pill {
+    border-bottom-color: var(--pill-color, rgba(255, 255, 255, 0.35));
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-radius: 50px 50px 0 0;
+    padding-bottom: 20px;
+}
+
+/* Bottom pills connect to badge on TOP side */
+.wsp-az-item--bottom .wsp-az-pill {
+    border-top-color: var(--pill-color, rgba(255, 255, 255, 0.35));
+    border-top-style: solid;
+    border-top-width: 2px;
+    border-radius: 0 0 50px 50px;
+    padding-top: 20px;
+}
+
+.wsp-az-pill:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.40);
+}
+
+.wsp-az-item--top .wsp-az-pill:hover {
+    transform: translateY(-5px) scale(1.01);
+}
+
+.wsp-az-item--bottom .wsp-az-pill:hover {
+    transform: translateY(5px) scale(1.01);
+}
+
+.wsp-az-pill-icon {
+    font-size: 1.5rem;
+}
+
+.wsp-az-pill-title {
+    font-family: 'HEXCO', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 100;
+    color: #ffffff;
+    margin: 0 0 4px;
+}
+
+.wsp-az-pill-meta {
+    font-family: 'Aldrich', monospace;
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.45);
+    margin: 0;
+}
+
+/* S-curve vertical connector arms in horizontal space */
+.wsp-az-item--top .wsp-az-side-h::after {
+    content: '';
+    width: 2px;
+    height: 40px;
+    border-left: 2px dashed rgba(255, 255, 255, 0.12);
+    position: absolute;
+    bottom: 60px;
+    /* Above the badge axis */
+}
+
+.wsp-az-item--bottom .wsp-az-side-h::after {
+    content: '';
+    width: 2px;
+    height: 40px;
+    border-left: 2px dashed rgba(255, 255, 255, 0.12);
+    position: absolute;
+    top: 60px;
+    /* Below the badge axis */
+}
+
+/* ── Mobile responsive ── */
+@media (max-width: 767px) {
+    .wsp-az-timeline {
+        padding: 0 10px 20px;
+    }
+
+    .wsp-az-row {
+        min-height: 80px;
+    }
+
+    .wsp-az-badge-col {
+        width: 56px;
+    }
+
+    .wsp-az-badge {
+        width: 44px;
+        height: 44px;
+    }
+
+    .wsp-az-badge-num {
+        font-size: 1rem;
+    }
+
+    .wsp-az-pill {
+        padding: 12px 16px;
+        gap: 10px;
+        max-width: 220px;
+    }
+
+    .wsp-az-pill-title {
+        font-size: 0.75rem;
+    }
+
+}
+
+/* =========================================================================== */
+/* REVIEWS SECTION - RESPONSIVE GRID */
+/* =========================================================================== */
+.wsp-reviews-grid {
+    display: grid;
+    gap: 20px;
+    padding: 0 15px;
+    width: 100%;
+}
+
+/* Small screens (mobile) - 1 column */
+@media (max-width: 767px) {
+    .wsp-reviews-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
+
+/* Medium screens (tablet) - 2 columns */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .wsp-reviews-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+/* Large screens (desktop) - 2 columns */
+@media (min-width: 1024px) {
+    .wsp-reviews-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px;
+    }
+}
+
+/* ============================= NEW REVIEW SECTION ============================= */
+.wsp-reviews-section-new {
+    background: linear-gradient(160deg, #07080f 0%, #0d1017 40%, #0f1219 100%);
+    padding: 40px 20px 80px !important;
+    --wsp-review-offset: 140px;
+    --wsp-review-step: 312px;
+}
+
+.wsp-reviews-section-new .wsp-section-header {
+    text-align: center;
+    margin-bottom: 0;
+    padding: 0 15px;
+}
+
+.wsp-reviews-section-new .wsp-section-title {
+    font-family: 'HEXCO', sans-serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 100;
+    margin-bottom: 10px;
+    color: #ffffff;
+    letter-spacing: 2px;
+    line-height: 1.2;
+}
+
+.wsp-reviews-section-new .wsp-section-subtitle {
+    font-family: 'Aldrich', monospace;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    color: rgba(255, 255, 255, 0.45);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+/* ========== REVIEWS CAROUSEL — TRACK-BASED ========== */
+.wsp-reviews-carousel-wrapper {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    padding: 90px 0 20px;
+}
+
+.wsp-reviews-track {
+    display: flex;
+    gap: 32px;
+    transition: transform 0.75s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+    /* No padding-left — centering handled by 50vw in JSX transform */
+}
+
+.wsp-review-card-new {
+    border-radius: 22px;
+    overflow: visible;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.5s ease,
+        box-shadow 0.5s ease;
+    cursor: pointer;
+    width: 280px;
+    min-width: 280px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-top: 90px;
+    /* more space for big avatar */
+    transform: scale(0.80);
+    opacity: 0.40;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    border: none;
+}
+
+.wsp-review-card-new.active {
+    transform: scale(1.15);
+    opacity: 1;
+    box-shadow:
+        0 30px 90px rgba(0, 0, 0, 0.65),
+        0 0 0 1px rgba(255, 255, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* === PREMIUM DARK VIVID THEME === */
+.wsp-review-card-new {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
+}
+
+.wsp-review-card-new .wsp-review-text-new {
+    color: #d0d0d0 !important;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.wsp-review-card-new .wsp-review-name-new {
+    color: #ffffff !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5) !important;
+}
+
+.wsp-review-card-new .wsp-review-role {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.wsp-review-card-new .wsp-review-meta-new {
+    border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: #999 !important;
+}
+
+.wsp-review-card-new .wsp-review-workshop-new {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.wsp-review-card-new .wsp-review-date-new {
+    color: #b0b0b0 !important;
+}
+
+.wsp-review-card-new .wsp-review-bottom {
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.55) 100%) !important;
+}
+
+
+.wsp-review-card-new:hover {
+    box-shadow: 0 22px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(255, 255, 255, 0.06);
+}
+
+.wsp-review-top {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    min-height: 150px;
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+    border-radius: 22px 22px 0 0;
+}
+
+.wsp-review-top::after {
+    content: none;
+}
+
+/* === PREMIUM GLOSSY SHINE EFFECT === */
+
+.wsp-review-top::before {
+    content: none;
+}
+
+
+.wsp-review-top::after {
+    content: none;
+}
+
+.wsp-review-card-new::before {
+    content: none;
+}
+
+.wsp-review-card-new::after {
+    content: none;
+}
+
+.wsp-review-avatar-large {
+    /* Big, Disney-character-style floating avatar */
+    width: 210px;
+    height: 210px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    position: absolute;
+    top: -85px;
+    /* Moved down slightly while increasing size */
+    /* floats WAY above the card */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    /* Depth shadow below avatar so it looks like it's standing on the card */
+    filter: drop-shadow(0 18px 24px rgba(0, 0, 0, 0.55)) drop-shadow(0 6px 8px rgba(0, 0, 0, 0.35));
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.wsp-review-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.wsp-review-card-new:hover .wsp-review-avatar-large {
+    transform: translateX(-50%) translateY(-12px) scale(1.15);
+    filter: drop-shadow(0 28px 32px rgba(0, 0, 0, 0.65)) drop-shadow(0 10px 12px rgba(0, 0, 0, 0.4));
+}
+
+.wsp-review-bottom {
+    padding: 20px 22px 22px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+    /* Dark bottom overlay for text legibility on vivid backgrounds */
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 0.35) 40%,
+            rgba(0, 0, 0, 0.55) 100%);
+    border-radius: 0 0 22px 22px;
+}
+
+.wsp-review-color-bar {
+    height: 3px;
+    border-radius: 2px;
+    margin-bottom: 6px;
+    opacity: 0.6;
+}
+
+.wsp-review-name-new {
+    font-family: 'HEXCO', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 100;
+    color: #ffffff;
+    margin: 0;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.wsp-review-role {
+    font-family: 'Aldrich', monospace;
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 400;
+    margin: 0;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+}
+
+.wsp-review-rating-new {
+    display: flex;
+    gap: 5px;
+    margin: 10px 0;
+    color: #FFD166;
+    font-size: 0.9rem;
+}
+
+.wsp-review-text-new {
+    font-size: 0.9rem;
+    color: #d0d0d0;
+    font-style: italic;
+    line-height: 1.5;
+    margin: 15px 0 0;
+    flex-grow: 1;
+}
+
+.wsp-review-meta-new {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: #999;
+    margin-top: auto;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Dot indicators */
+.wsp-review-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 32px;
+}
+
+.wsp-review-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    cursor: pointer;
+    transition: all 0.35s ease;
+    padding: 0;
+}
+
+.wsp-review-dot.active {
+    background: #FF6B6B;
+    width: 28px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+}
+
+.wsp-review-workshop-new {
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 70%;
+    font-size: 0.75rem;
+}
+
+.wsp-review-date-new {
+    color: #b0b0b0;
+}
+
+/* Responsive - Reviews Carousel */
+@media (max-width: 1024px) {
+    .wsp-review-card-new {
+        width: 300px;
+        margin-top: 55px;
+        transform: scale(0.85);
+    }
+
+    .wsp-review-card-new.active {
+        transform: scale(1.12);
+    }
+
+    .wsp-review-top {
+        min-height: 140px;
+    }
+
+    .wsp-review-avatar-large {
+        width: 180px;
+        height: 180px;
+        top: -65px;
+    }
+}
+
+@media (max-width: 768px) {
+    .wsp-reviews-section-new {
+        padding: 60px 15px !important;
+    }
+
+    .wsp-reviews-carousel {
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .wsp-review-card-new {
+        width: 300px;
+        margin-top: 45px;
+        transform: scale(0.85);
+    }
+
+    .wsp-review-card-new.active {
+        transform: scale(1.12);
+    }
+
+    .wsp-review-top {
+        padding: 30px 20px 20px;
+        min-height: 120px;
+    }
+
+    .wsp-review-avatar-large {
+        width: 160px;
+        height: 160px;
+        top: -55px;
+    }
+
+    .wsp-review-bottom {
+        padding: 20px;
+        gap: 8px;
+    }
+
+    .wsp-review-name-new {
+        font-size: 1rem;
+    }
+
+    .wsp-review-text-new {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .wsp-review-card-new {
+        width: 300px;
+        margin-top: 45px;
+        transform: scale(0.85);
+    }
+
+    .wsp-review-card-new.active {
+        transform: scale(1.12);
+    }
+
+    .wsp-review-avatar-large {
+        width: 140px;
+        height: 140px;
+        top: -50px;
+    }
+}
+
+/* ============================= END NEW REVIEW SECTION ============================= */
+
+.wsp-review-card {
+    background: #ffffff;
+    /* Removed backdrop-filter to eliminate glass effect */
+    border-radius: 15px;
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 767px) {
+    .wsp-review-card {
+        padding: 15px;
+        border-radius: 12px;
+    }
+}
+
+.wsp-review-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.wsp-review-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 767px) {
+    .wsp-review-header {
+        gap: 10px;
+        margin-bottom: 12px;
+    }
+}
+
+.wsp-reviewer-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #FF6B6B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+@media (max-width: 767px) {
+    .wsp-reviewer-avatar {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+.wsp-avatar-initials {
+    font-family: 'HEXCO', sans-serif;
+    font-size: 1rem;
+    color: #ffffff;
+    font-weight: 100;
+}
+
+@media (max-width: 767px) {
+    .wsp-avatar-initials {
+        font-size: 0.9rem;
+    }
+}
+
+.wsp-reviewer-info {
+    flex: 1;
+}
+
+.wsp-reviewer-name {
+    font-family: 'HEXCO', sans-serif;
+    font-size: 1rem;
+    color: #222222;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+    line-height: 1.2;
+}
+
+@media (max-width: 767px) {
+    .wsp-reviewer-name {
+        font-size: 0.9rem;
+    }
+}
+
+.wsp-reviewer-company {
+    font-family: 'Aldrich', monospace;
+    font-size: 0.75rem;
+    color: #555555;
+}
+
+@media (max-width: 767px) {
+    .wsp-reviewer-company {
+        font-size: 0.65rem;
+    }
+}
+
+.wsp-review-rating {
+    color: #FFD700;
+    font-size: 1rem;
+    letter-spacing: 1.5px;
+}
+
+@media (max-width: 767px) {
+    .wsp-review-rating {
+        font-size: 0.8rem;
+    }
+}
+
+.wsp-review-content {
+    position: relative;
+    z-index: 2;
+}
+
+.wsp-review-text {
+    font-family: 'Aldrich', monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #333333;
+    margin-bottom: 12px;
+    font-style: italic;
+}
+
+@media (max-width: 767px) {
+    .wsp-review-text {
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+}
+
+.wsp-review-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 12px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+@media (max-width: 767px) {
+    .wsp-review-meta {
+        padding-top: 10px;
+        gap: 8px;
+    }
+}
+
+.wsp-review-workshop {
+    font-family: 'Aldrich', monospace;
+    font-size: 0.8rem;
+    color: #FF6B6B;
+    background: rgba(255, 107, 107, 0.1);
+    padding: 3px 8px;
+    border-radius: 10px;
+}
+
+@media (max-width: 767px) {
+    .wsp-review-workshop {
+        font-size: 0.7rem;
+        padding: 2px 6px;
+    }
+}
+
+.wsp-review-date {
+    font-family: 'Aldrich', monospace;
+    font-size: 0.75rem;
+    color: #777777;
+}
+
+@media (max-width: 767px) {
+    .wsp-review-date {
+        font-size: 0.65rem;
+    }
+}
+
+.wsp-review-quote {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 3rem;
+    color: rgba(0, 0, 0, 0.05);
+    font-family: serif;
+}
+
+/* Contact Section */
+.wsp-contact-section {
+    padding: 60px 0;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+}
+
+.wsp-contact-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 30px;
+}
+
+.wsp-contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    width: 100%;
+    align-items: stretch;
+}
+
+.wsp-contact-info {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    padding: 25px;
+}
+
+.wsp-contact-form {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    padding: 25px;
+}
+
+@media (min-width: 768px) {
+    .wsp-contact-grid {
+        grid-template-columns: 1fr 1fr;
+        align-items: stretch;
+        gap: 30px;
+    }
+
+    .wsp-contact-info,
+    .wsp-contact-form {
+        height: 100%;
+        min-height: auto;
+    }
+}
+
+.wsp-info-content,
+.wsp-form-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.wsp-info-title {
+    font-family: 'HEXCO', sans-serif;
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    line-height: 1.2;
+}
+
+.wsp-info-subtitle {
+    font-family: 'Aldrich', monospace;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.wsp-benefits-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 20px 0;
+    flex: 1;
+}
+
+.wsp-benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 0;
+}
+
+.wsp-benefit-icon {
+    font-size: 1.1rem;
+    color: #FF6B6B;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.wsp-benefit-content {
+    flex: 1;
+}
+
+.wsp-benefit-title {
+    font-family: 'Aldrich', monospace;
+    font-size: 0.9rem;
+    color: #ffffff;
+    margin-bottom: 4px;
+    font-weight: bold;
+}
+
+.wsp-benefit-text {
+    font-family: 'Aldrich', monospace;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.4;
+}
+
+.wsp-contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+}
+
+.wsp-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.wsp-contact-icon {
+    font-size: 1.2rem;
+    color: #FF6B6B;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 107, 107, 0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.wsp-contact-text {
+    flex: 1;
+}
+
+.wsp-contact-label {
+    font-family: 'Aldrich', monospace;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 3px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.wsp-contact-value {
+    font-family: 'Aldrich', monospace;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.4;
+}
+
+.wsp-form-header {
+    margin-bottom: 25px;
+}
+
+.wsp-form-title {
+    font-family: 'HEXCO', sans-serif;
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+    line-height: 1.2;
+}
+
+.wsp-form-subtitle {
+    font-family: 'Aldrich', monospace;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.5;
+}
+
+.wsp-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+}
+
+.wsp-form-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.wsp-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.wsp-form-label {
+    font-family: 'Aldrich', monospace;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.8);
+    letter-spacing: 0.8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.wsp-form-required {
+    color: #FF6B6B;
+    font-size: 0.8rem;
+}
+
+.wsp-form-input,
+.wsp-form-select,
+.wsp-form-textarea {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-family: 'Aldrich', monospace;
+    font-size: 0.9rem;
+    color: #ffffff;
+    transition: all 0.3s ease;
+    min-height: 48px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.wsp-form-input:focus,
+.wsp-form-select:focus,
+.wsp-form-textarea:focus {
+    outline: none;
+    border-color: #FF6B6B;
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 2px rgba(255, 107, 107, 0.1);
+}
+
+.wsp-form-input::placeholder,
+.wsp-form-select::placeholder,
+.wsp-form-textarea::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.9rem;
+}
+
+.wsp-form-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23ffffff' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 14px;
+    padding-right: 45px;
+    cursor: pointer;
+}
+
+.wsp-form-textarea {
+    resize: vertical;
+    min-height: 100px;
+    max-height: 180px;
+    line-height: 1.5;
+    padding: 16px;
+}
+
+.wsp-form-agreement {
+    margin: 15px 0 10px;
+}
+
+.wsp-agreement-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-family: 'Aldrich', monospace;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.85rem;
+    cursor: pointer;
+    line-height: 1.4;
+}
+
+.wsp-agreement-label input[type="checkbox"] {
+    margin-top: 2px;
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    accent-color: #FF6B6B;
+    cursor: pointer;
+}
+
+.wsp-agreement-label span {
+    line-height: 1.4;
+}
+
+.wsp-form-actions {
+    margin-top: auto;
+    padding-top: 20px;
+}
+
+.wsp-submit-btn {
+    background: #FF6B6B;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 16px 30px;
+    font-family: 'HEXCO', sans-serif;
+    font-size: 1rem;
+    font-weight: 100;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.wsp-submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+    background: #ff8e8e;
+}
+
+/* =========================================================================== */
+/* FIX FOR 320PX SCREENS - FORM SECTION SPECIFIC */
+/* =========================================================================== */
+@media (max-width: 320px) {
+    .wsp-contact-section {
+        padding: 30px 0 !important;
+        width: 100vw !important;
+        overflow-x: hidden !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        position: relative;
+        left: 0;
+        right: 0;
+    }
+
+    .wsp-contact-content {
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        gap: 20px !important;
+    }
+
+    .wsp-contact-grid {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        gap: 20px !important;
+        grid-template-columns: 1fr !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    .wsp-contact-info,
+    .wsp-contact-form {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 100% !important;
+        padding: 18px !important;
+        margin: 0 !important;
+        border-radius: 10px !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+        position: relative;
+        left: 0;
+        right: 0;
+    }
+
+    .wsp-form {
+        width: 100% !important;
+        gap: 15px !important;
+    }
+
+    .wsp-form-group {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .wsp-form-input,
+    .wsp-form-select,
+    .wsp-form-textarea {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 100% !important;
+        padding: 12px 14px !important;
+        font-size: 14px !important;
+        box-sizing: border-box !important;
+        margin: 0 !important;
+        border-radius: 8px !important;
+    }
+
+    .wsp-form-textarea {
+        min-height: 80px !important;
+        max-height: 120px !important;
+        padding: 14px !important;
+    }
+
+    .wsp-form-select {
+        padding-right: 40px !important;
+        background-position: right 14px center !important;
+    }
+
+    .wsp-form-row {
+        gap: 15px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+
+    .wsp-info-title,
+    .wsp-form-title {
+        font-size: 1.2rem !important;
+        line-height: 1.3 !important;
+        margin-bottom: 8px !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+    }
+
+    .wsp-info-subtitle,
+    .wsp-form-subtitle {
+        font-size: 0.8rem !important;
+        line-height: 1.4 !important;
+        margin-bottom: 15px !important;
+        word-wrap: break-word !important;
+    }
+
+    .wsp-benefit-item {
+        padding: 10px 0 !important;
+        gap: 10px !important;
+    }
+
+    .wsp-benefit-icon {
+        font-size: 1rem !important;
+        min-width: 20px !important;
+    }
+
+    .wsp-benefit-title {
+        font-size: 0.8rem !important;
+    }
+
+    .wsp-benefit-text {
+        font-size: 0.75rem !important;
+        line-height: 1.3 !important;
+    }
+
+    .wsp-contact-details {
+        padding-top: 15px !important;
+        margin-top: 15px !important;
+        gap: 12px !important;
+    }
+
+    .wsp-contact-item {
+        gap: 10px !important;
+        align-items: flex-start !important;
+    }
+
+    .wsp-contact-icon {
+        width: 32px !important;
+        height: 32px !important;
+        font-size: 1rem !important;
+        flex-shrink: 0 !important;
+    }
+
+    .wsp-contact-label {
+        font-size: 0.7rem !important;
+    }
+
+    .wsp-contact-value {
+        font-size: 0.8rem !important;
+        line-height: 1.3 !important;
+        word-wrap: break-word !important;
+    }
+
+    .wsp-agreement-label {
+        font-size: 0.75rem !important;
+        line-height: 1.3 !important;
+        gap: 10px !important;
+        align-items: flex-start !important;
+    }
+
+    .wsp-agreement-label input[type="checkbox"] {
+        width: 16px !important;
+        height: 16px !important;
+        margin-top: 1px !important;
+        flex-shrink: 0 !important;
+    }
+
+    .wsp-form-actions {
+        padding-top: 15px !important;
+        margin-top: 10px !important;
+    }
+
+    .wsp-submit-btn {
+        padding: 14px 20px !important;
+        font-size: 0.9rem !important;
+        border-radius: 8px !important;
+        width: 100% !important;
+    }
+
+    /* Ensure no horizontal scroll */
+    .wsp-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 15px !important;
+        margin: 0 auto !important;
+        box-sizing: border-box !important;
+        overflow-x: hidden !important;
+    }
+
+    /* Fix for the entire page on 320px */
+    .wsp-page {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+
+    /* Additional safety to prevent overflow */
+    body,
+    html {
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+
+    * {
+        box-sizing: border-box !important;
+    }
+}
+
+/* Additional fix for screens between 321px and 374px */
+@media (min-width: 321px) and (max-width: 374px) {
+    .wsp-contact-section {
+        padding: 35px 0 !important;
+    }
+
+    .wsp-contact-info,
+    .wsp-contact-form {
+        padding: 20px !important;
+    }
+
+    .wsp-form-input,
+    .wsp-form-select,
+    .wsp-form-textarea {
+        padding: 13px 15px !important;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 374px) {
+    .wsp-contact-section {
+        padding: 40px 0;
+    }
+
+    .wsp-contact-content {
+        gap: 20px;
+    }
+
+    .wsp-contact-grid {
+        gap: 20px;
+    }
+
+    .wsp-contact-info,
+    .wsp-contact-form {
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    .wsp-info-title,
+    .wsp-form-title {
+        font-size: 1.3rem;
+        margin-bottom: 8px;
+    }
+
+    .wsp-info-subtitle,
+    .wsp-form-subtitle {
+        font-size: 0.85rem;
+        margin-bottom: 15px;
+    }
+
+    .wsp-benefit-item {
+        gap: 10px;
+        padding: 10px 0;
+    }
+
+    .wsp-benefit-icon {
+        font-size: 1rem;
+    }
+
+    .wsp-benefit-title {
+        font-size: 0.85rem;
+    }
+
+    .wsp-benefit-text {
+        font-size: 0.8rem;
+    }
+
+    .wsp-contact-details {
+        gap: 12px;
+        margin-top: 15px;
+        padding-top: 15px;
+    }
+
+    .wsp-contact-item {
+        gap: 10px;
+    }
+
+    .wsp-contact-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 1.1rem;
+    }
+
+    .wsp-form {
+        gap: 15px;
+    }
+
+    .wsp-form-row {
+        gap: 15px;
+    }
+
+    .wsp-form-group {
+        gap: 6px;
+    }
+
+    .wsp-form-input,
+    .wsp-form-select,
+    .wsp-form-textarea {
+        padding: 12px 14px;
+        min-height: 44px;
+        font-size: 0.85rem;
+        border-radius: 8px;
+    }
+
+    .wsp-form-textarea {
+        min-height: 90px;
+        padding: 14px;
+    }
+
+    .wsp-form-select {
+        padding-right: 40px;
+        background-position: right 14px center;
+    }
+
+    .wsp-form-agreement {
+        margin: 10px 0 5px;
+    }
+
+    .wsp-agreement-label {
+        gap: 10px;
+        font-size: 0.8rem;
+    }
+
+    .wsp-form-actions {
+        padding-top: 15px;
+    }
+
+    .wsp-submit-btn {
+        padding: 14px 25px;
+        font-size: 0.9rem;
+    }
+
+    /* SUCCESS STORIES MOBILE FIX - WIDER & SHORTER */
+    .wsp-story-card {
+        flex: 0 0 300px;
+        /* Wider on mobile too */
+        min-width: 300px;
+        max-width: 300px;
+        height: 200px;
+        /* Shorter */
+        padding: 16px;
+    }
+
+    .wsp-story-avatar {
+        width: 42px;
+        height: 42px;
+        font-size: 1.1rem;
+    }
+
+    .wsp-story-name {
+        font-size: 1rem;
+    }
+
+    .wsp-story-role {
+        font-size: 0.7rem;
+    }
+
+    .wsp-story-company {
+        font-size: 0.8rem;
+    }
+
+    .wsp-story-quote {
+        font-size: 0.8rem;
+        line-height: 1.3;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+        padding-left: 10px;
+    }
+
+    .wsp-story-quote::before {
+        font-size: 1.4rem;
+    }
+
+    .wsp-story-tag,
+    .wsp-story-date {
+        font-size: 0.7rem;
+    }
+}
+
+@media (min-width: 375px) and (max-width: 479px) {
+    .wsp-contact-section {
+        padding: 45px 0;
+    }
+
+    .wsp-contact-content {
+        gap: 25px;
+    }
+
+    .wsp-contact-grid {
+        gap: 25px;
+    }
+
+    .wsp-contact-info,
+    .wsp-contact-form {
+        padding: 22px;
+        border-radius: 14px;
+    }
+
+    .wsp-info-title,
+    .wsp-form-title {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+    }
+
+    .wsp-form-input,
+    .wsp-form-select,
+    .wsp-form-textarea {
+        padding: 13px 15px;
+    }
+
+    /* SUCCESS STORIES - WIDER & SHORTER */
+    .wsp-story-card {
+        flex: 0 0 320px;
+        min-width: 320px;
+        max-width: 320px;
+        height: 210px;
+        padding: 18px;
+    }
+
+    .wsp-story-avatar {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+    }
+
+    .wsp-story-name {
+        font-size: 1.05rem;
+    }
+
+    .wsp-story-quote {
+        font-size: 0.82rem;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+    .wsp-contact-section {
+        padding: 50px 0;
+    }
+
+    .wsp-contact-content {
+        gap: 30px;
+    }
+
+    .wsp-contact-grid {
+        gap: 30px;
+    }
+
+    .wsp-contact-info,
+    .wsp-contact-form {
+        padding: 25px;
+        border-radius: 15px;
+    }
+
+    .wsp-info-title,
+    .wsp-form-title {
+        font-size: 1.5rem;
+    }
+
+    .wsp-form-input,
+    .wsp-form-select,
+    .wsp-form-textarea {
+        padding: 14px 16px;
+    }
+
+    /* SUCCESS STORIES - WIDER & SHORTER */
+    .wsp-story-card {
+        flex: 0 0 340px;
+        min-width: 340px;
+        max-width: 340px;
+        height: 220px;
+        padding: 20px;
+    }
+
+    .wsp-story-nav {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .wsp-contact-section {
+        padding: 60px 0;
+    }
+
+    .wsp-contact-content {
+        gap: 35px;
+        padding: 0 20px;
+    }
+
+    .wsp-contact-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .wsp-contact-info,
+    .wsp-contact-form {
+        padding: 28px;
+        border-radius: 18px;
+    }
+
+    .wsp-info-title,
+    .wsp-form-title {
+        font-size: 1.7rem;
+        margin-bottom: 12px;
+    }
+
+    .wsp-info-subtitle,
+    .wsp-form-subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 22px;
+    }
+
+    .wsp-form-row {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .wsp-form-group.full-width {
+        grid-column: 1;
+    }
+
+    .wsp-form-group:has(.wsp-form-textarea) {
+        grid-column: 1;
+    }
+
+    .wsp-form-input,
+    .wsp-form-select,
+    .wsp-form-textarea {
+        padding: 15px 17px;
+        min-height: 50px;
+        font-size: 0.93rem;
+        width: 100%;
+    }
+
+    .wsp-form-textarea {
+        min-height: 110px;
+        padding: 17px;
+    }
+
+    .wsp-benefit-item {
+        gap: 13px;
+        padding: 13px 0;
+    }
+
+    .wsp-benefit-icon {
+        font-size: 1.15rem;
+    }
+
+    .wsp-benefit-title {
+        font-size: 0.95rem;
+    }
+
+    .wsp-benefit-text {
+        font-size: 0.88rem;
+    }
+
+    .wsp-contact-details {
+        gap: 18px;
+        margin-top: 25px;
+        padding-top: 22px;
+    }
+
+    .wsp-contact-item {
+        gap: 13px;
+    }
+
+    .wsp-contact-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 1.25rem;
+    }
+
+    .wsp-form {
+        gap: 22px;
+    }
+
+    .wsp-form-group {
+        gap: 9px;
+    }
+
+    .wsp-form-select {
+        padding-right: 48px;
+        background-position: right 17px center;
+    }
+
+    .wsp-form-agreement {
+        margin: 18px 0 12px;
+    }
+
+    .wsp-agreement-label {
+        gap: 13px;
+        font-size: 0.88rem;
+    }
+
+    .wsp-form-actions {
+        padding-top: 22px;
+    }
+
+    .wsp-submit-btn {
+        padding: 17px 32px;
+        font-size: 1.05rem;
+    }
+
+    /* SUCCESS STORIES TABLET - WIDER & SHORTER */
+    .wsp-header {
+        min-height: 650px;
+    }
+
+    .wsp-header-content {
+        padding: 0 30px;
+    }
+
+    .wsp-header-description {
+        padding: 0 20px;
+    }
+
+    .wsp-header-stats {
+        gap: 25px;
+    }
+
+    .wsp-header-stat {
+        min-width: 150px;
+        padding: 15px 20px;
+    }
+
+    .wsp-stat-value {
+        font-size: 1.5rem;
+    }
+
+    .wsp-stat-label {
+        font-size: 0.7rem;
+    }
+
+    .wsp-section {
+        padding: 70px 0;
+    }
+
+    .wsp-container {
+        padding: 0 30px;
+    }
+
+    .wsp-workshops-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .wsp-tabs {
+        gap: 20px;
+        padding: 0 20px;
+    }
+
+    .wsp-tab {
+        padding: 12px 25px;
+        min-width: 160px;
+    }
+
+    .wsp-section-header {
+        margin-bottom: 50px;
+    }
+
+    .wsp-section-title {
+        font-size: 2.5rem;
+    }
+
+    .wsp-section-subtitle {
+        font-size: 1.1rem;
+    }
+
+    /* WIDER & SHORTER SUCCESS STORY CARDS */
+    .wsp-story-card {
+        flex: 0 0 380px;
+        min-width: 380px;
+        max-width: 380px;
+        height: 220px;
+    }
+
+    .wsp-story-nav {
+        width: 42px;
+        height: 42px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .wsp-contact-section {
+        padding: 80px 0;
+    }
+
+    .wsp-contact-content {
+        gap: 50px;
+    }
+
+    .wsp-contact-grid {
+        gap: 50px;
+    }
+
+    .wsp-contact-info,
+    .wsp-contact-form {
+        padding: 35px;
+    }
+
+    .wsp-info-title,
+    .wsp-form-title {
+        font-size: 2rem;
+    }
+
+    .wsp-info-subtitle,
+    .wsp-form-subtitle {
+        font-size: 1.05rem;
+    }
+
+    .wsp-form-row {
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+    }
+
+    .wsp-form-group.full-width {
+        grid-column: 1 / -1;
+    }
+
+    .wsp-form-group:has(.wsp-form-textarea) {
+        grid-column: 1 / -1;
+    }
+
+    .wsp-form-textarea {
+        min-height: 130px;
+    }
+
+    .wsp-submit-btn {
+        padding: 20px 40px;
+        font-size: 1.1rem;
+    }
+
+    /* SUCCESS STORIES DESKTOP - WIDER & SHORTER */
+    .wsp-header {
+        height: 35vh;
+        min-height: 700px;
+    }
+
+    .wsp-title-text {
+        font-size: 4.5rem;
+    }
+
+    .wsp-title-sub {
+        font-size: 1.4rem;
+    }
+
+    .wsp-header-description {
+        font-size: 1.1rem;
+        margin-bottom: 50px;
+    }
+
+    .wsp-header-stats {
+        gap: 30px;
+    }
+
+    .wsp-header-stat {
+        min-width: 180px;
+        padding: 20px 25px;
+    }
+
+    .wsp-stat-value {
+        font-size: 1.8rem;
+    }
+
+    .wsp-stat-label {
+        font-size: 0.75rem;
+    }
+
+    .wsp-section {
+        padding: 80px 0;
+    }
+
+    .wsp-workshops-grid,
+    .wsp-bento-grid,
+    .wsp-upcoming-grid {
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 35px;
+    }
+
+    .wsp-section-title {
+        font-size: 3rem;
+    }
+
+    .wsp-section-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .wsp-tabs {
+        gap: 25px;
+    }
+
+    .wsp-tab {
+        padding: 15px 30px;
+        font-size: 1rem;
+    }
+
+    /* WIDER & SHORTER SUCCESS STORY CARDS */
+    .wsp-story-card {
+        flex: 0 0 380px;
+        min-width: 380px;
+        max-width: 380px;
+        height: 220px;
+        padding: 20px;
+    }
+
+    .wsp-stories-track {
+        gap: 25px;
+    }
+
+    .wsp-story-avatar {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+    }
+
+    .wsp-story-name {
+        font-size: 1.1rem;
+    }
+
+    .wsp-story-role {
+        font-size: 0.75rem;
+    }
+
+    .wsp-story-company {
+        font-size: 0.85rem;
+    }
+
+    .wsp-story-quote {
+        font-size: 0.85rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .wsp-contact-section {
+        padding: 90px 0;
+    }
+
+    .wsp-contact-content {
+        gap: 60px;
+    }
+
+    .wsp-contact-grid {
+        gap: 60px;
+    }
+
+    .wsp-contact-info,
+    .wsp-contact-form {
+        padding: 40px;
+    }
+
+    .wsp-info-title,
+    .wsp-form-title {
+        font-size: 2.2rem;
+    }
+
+    .wsp-form-textarea {
+        min-height: 140px;
+    }
+
+    .wsp-submit-btn {
+        padding: 22px 45px;
+        font-size: 1.2rem;
+    }
+
+    /* SUCCESS STORIES LARGE DESKTOP - WIDER & SHORTER */
+    .wsp-header-content {
+        padding: 0;
+    }
+
+    .wsp-title-text {
+        font-size: 5rem;
+    }
+
+    .wsp-title-sub {
+        font-size: 1.5rem;
+    }
+
+    .wsp-header-description {
+        font-size: 1.2rem;
+        padding: 0;
+    }
+
+    .wsp-header-stats {
+        gap: 40px;
+    }
+
+    .wsp-container {
+        padding: 0 20px;
+    }
+
+    .wsp-workshops-grid {
+        gap: 40px;
+    }
+
+    .wsp-reviews-grid {
+        gap: 40px;
+    }
+
+    /* WIDER & SHORTER SUCCESS STORY CARDS */
+    .wsp-story-card {
+        flex: 0 0 400px;
+        min-width: 400px;
+        max-width: 400px;
+        height: 230px;
+        padding: 22px;
+    }
+
+    .wsp-story-quote {
+        font-size: 0.87rem;
+    }
+}
+
+@media (min-width: 480px) {
+    .wsp-header-stats {
+        gap: 15px;
+    }
+
+    .wsp-header-stat {
+        min-width: 120px;
+        padding: 12px 15px;
+    }
+
+    .wsp-stat-value {
+        font-size: 1.2rem;
+    }
+
+    .wsp-stat-label {
+        font-size: 0.65rem;
+    }
+
+    .wsp-title-text {
+        font-size: clamp(2.8rem, 8vw, 4rem);
+    }
+
+    .wsp-title-sub {
+        font-size: clamp(1.1rem, 3vw, 1.3rem);
+    }
+
+    .wsp-workshops-grid {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+}
+
+@media (max-width: 479px) {
+    .wsp-header {
+        min-height: 500px;
+        height: 85vh;
+    }
+
+    .wsp-header-content {
+        padding: 0 15px;
+    }
+
+    .wsp-title-text {
+        font-size: 2.2rem;
+        letter-spacing: 1px;
+    }
+
+    .wsp-title-sub {
+        font-size: 0.9rem;
+        letter-spacing: 1.5px;
+    }
+
+    .wsp-header-description {
+        font-size: 0.85rem;
+        line-height: 1.5;
+        margin-bottom: 30px;
+    }
+
+    .wsp-header-stats {
+        gap: 12px;
+        margin-bottom: 40px;
+    }
+
+    .wsp-header-stat {
+        min-width: calc(50% - 10px);
+        padding: 12px;
+        gap: 8px;
+    }
+
+    .wsp-stat-icon {
+        font-size: 1.2rem;
+    }
+
+    .wsp-stat-value {
+        font-size: 1.1rem;
+    }
+
+    .wsp-stat-label {
+        font-size: 0.6rem;
+        letter-spacing: 0.5px;
+    }
+
+    .wsp-section {
+        padding: 50px 0;
+    }
+
+    .wsp-section-header {
+        margin-bottom: 35px;
+    }
+
+    .wsp-section-title {
+        font-size: 1.8rem;
+        letter-spacing: 1.5px;
+    }
+
+    .wsp-section-subtitle {
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+    }
+
+    .wsp-workshops-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .wsp-workshop-card {
+        border-radius: 12px;
+    }
+
+    .wsp-workshop-title {
+        font-size: 1.2rem;
+    }
+
+    .wsp-workshop-description {
+        font-size: 0.85rem;
+    }
+
+    .wsp-workshop-details {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .wsp-price {
+        font-size: 1.3rem;
+    }
+
+    .wsp-tabs {
+        gap: 10px;
+        padding: 0 10px;
+    }
+
+    .wsp-tab {
+        min-width: 100%;
+        padding: 10px 15px;
+        font-size: 0.85rem;
+    }
+
+    .wsp-scroll-text {
+        font-size: 0.7rem;
+    }
+
+    .wsp-scroll-arrow {
+        font-size: 1.2rem;
+    }
+}
+
+/* ============ WORKSHOP CARD V2 REDESIGN (FARHAN STYLE) ============ */
+
+.wsp-workshop-card-v2 {
+    position: relative;
+    padding: 20px;
+    background: transparent;
+    width: 100%;
+    animation: wsp-card-fade-in 0.8s ease-out;
+}
+
+@keyframes wsp-card-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Corner Dots for blueprint look */
+.wsp-card-blueprint-dots {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    pointer-events: none;
+}
+
+.wsp-dot {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+}
+
+.wsp-dot.tl {
+    top: -4px;
+    left: -4px;
+}
+
+.wsp-dot.tr {
+    top: -4px;
+    right: -4px;
+}
+
+.wsp-dot.bl {
+    bottom: -4px;
+    left: -4px;
+}
+
+.wsp-dot.br {
+    bottom: -4px;
+    right: -4px;
+}
+
+/* Inner Card - Refined for Farhan Style */
+.wsp-card-inner-v2 {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    /* More rounded */
+    overflow: hidden;
+    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.12);
+    /* Much softer, wider shadow */
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    /* Translucent white border */
+    transition: all 0.3s ease;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    /* Insets the elements correctly */
+}
+
+.wsp-workshop-card-v2:hover .wsp-card-inner-v2 {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.2);
+}
+
+/* Red Header Strip - Inset Version */
+.wsp-card-urgent-tag {
+    background: #FF5A5A;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-align: center;
+    padding: 10px 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 12px;
+    /* Large radius for pill look */
+    margin: 5px 0 10px;
+    /* Inset from the card edges */
+    width: 100%;
+    /* Spans the full inset area */
+    box-shadow: 0 4px 6px rgba(255, 90, 90, 0.2);
+}
+
+/* New Inset Dotted Border Container Match */
+.wsp-card-dotted-border-container {
+    border: 1px dashed #cccccc;
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.wsp-card-body-v2 {
+    padding: 15px 12px;
+    /* Adjusted padding for better fit */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.wsp-card-title-v2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+    line-height: 1.25;
+}
+
+.wsp-card-desc-v2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: #888888;
+    /* Softer color */
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+/* Mid Section (Avatars and Label) */
+.wsp-card-mid-v2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.wsp-avatar-stack-v2 {
+    display: flex;
+    align-items: center;
+}
+
+.wsp-avatar-v2 {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    background-size: cover;
+    background-position: center;
+    margin-right: -10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    color: #888;
+}
+
+.wsp-avatar-v2.p1 {
+    background-image: url('https://i.pravatar.cc/100?u=1');
+}
+
+.wsp-avatar-v2.p2 {
+    background-image: url('https://i.pravatar.cc/100?u=2');
+}
+
+.wsp-avatar-v2.p3 {
+    background-image: url('https://i.pravatar.cc/100?u=3');
+}
+
+.wsp-avatar-v2.p4 {
+    background: #eee;
+    border-style: dashed;
+    margin-right: 0;
+    padding-left: 2px;
+}
+
+.wsp-status-label-v2 {
+    background: #f4f4f4;
+    color: #888888;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+/* Divider */
+.wsp-card-divider-v2 {
+    height: 1px;
+    border-bottom: 1px dashed #e0e0e0;
+    margin-bottom: 15px;
+}
+
+/* Footer Stats */
+.wsp-card-footer-v2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wsp-footer-stats-v2 {
+    display: flex;
+    gap: 15px;
+}
+
+.wsp-stat-item-v2 {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #666;
+    font-size: 0.85rem;
+}
+
+.wsp-stat-item-v2 span {
+    font-weight: 500;
+}
+
+.wsp-footer-date-v2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #999;
+}
+
+/* Enquiry Btn (V2 Match) */
+.wsp-card-action-btn-v2 {
+    width: calc(100% - 40px);
+    margin: 15px 20px 0;
+    padding: 12px;
+    background: #ffffff;
+    color: #1a1a1a;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Aldrich', monospace;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.wsp-workshop-card-v2:hover .wsp-card-action-btn-v2 {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.wsp-card-action-btn-v2:hover {
+    background: #FF6B6B;
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+}
+
+/* Mobile Adjustments for V2 */
+@media (max-width: 480px) {
+    .wsp-card-title-v2 {
+        font-size: 1.2rem;
+    }
+
+    .wsp-stat-item-v2 {
+        gap: 3px;
+        font-size: 0.75rem;
+    }
+}
+
+/* =========================================================================== */
+/* BRAND MARQUEE REDESIGNED (MATCHING SECOND IMAGE UI) */
+/* =========================================================================== */
+/* Old marquee styles removed in favor of new bar design */
+
+/* =========================================================================== */
+/* BENTO WORKSHOPS REDESIGN (OVERRIDING OLD STYLES)                            */
+/* =========================================================================== */
+
+.wsp-workshops-section {
+    background: #000000 !important;
+    background-image:
+        linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px) !important;
+    background-size: 80px 80px !important;
+    position: relative;
+}
+
+.wsp-workshops-section .wsp-section-title {
+    color: #f7f8ff !important;
+    font-weight: 600 !important;
+    font-family: 'Inter', sans-serif !important;
+}
+
+.wsp-workshops-section .wsp-section-subtitle {
+    color: #6b7280 !important;
+}
+
+.wsp-workshops-section .wsp-tab {
+    color: #6b7280 !important;
+    border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.wsp-workshops-section .wsp-tab:hover {
+    background: rgba(0, 0, 0, 0.05) !important;
+    color: #1c1d29 !important;
+}
+
+.wsp-workshops-section .wsp-tab.wsp-active {
+    background: #1c1d29 !important;
+    color: #ffffff !important;
+    border-color: transparent !important;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* OLD BENTO STYLES REMOVED */
+
+.wsp-bento-card {
+    position: relative;
+    background-color: #171822;
+    border-radius: 20px;
+    padding: 30px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px -10px var(--card-shadow), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+    border-bottom: 4px solid var(--card-color);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-height: 200px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wsp-bento-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 30px 50px -10px var(--card-shadow), inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+}
+
+.wsp-bento-glow {
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle at center, var(--card-color) 0%, transparent 65%);
+    opacity: 0.6;
+    pointer-events: none;
+    filter: blur(25px);
+    z-index: 1;
+}
+
+.wsp-bento-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    background: linear-gradient(to bottom, var(--card-color) 0%, transparent 100%);
+    opacity: 0.08;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Exact SVG Sparkles */
+.wsp-bento-sparkles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.wsp-svg-sparkle {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    animation: wsp-sparkle-twinkle 3s infinite ease-in-out;
+}
+
+/* Cluster sparkles near the top right glow */
+.wsp-svg-sparkle.wsp-s1 {
+    top: 8%;
+    right: 12%;
+    width: 45px;
+    height: 45px;
+    animation-delay: 0s;
+}
+
+.wsp-svg-sparkle.wsp-s2 {
+    top: 22%;
+    right: 5%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 0.5s;
+}
+
+.wsp-svg-sparkle.wsp-s3 {
+    top: 32%;
+    right: 22%;
+    width: 35px;
+    height: 35px;
+    animation-delay: 1.2s;
+}
+
+.wsp-svg-sparkle.wsp-s4 {
+    top: 12%;
+    right: 32%;
+    width: 18px;
+    height: 18px;
+    animation-delay: 0.8s;
+}
+
+.wsp-svg-sparkle.wsp-s5 {
+    top: 40%;
+    right: 10%;
+    width: 22px;
+    height: 22px;
+    animation-delay: 1.5s;
+}
+
+@keyframes wsp-sparkle-twinkle {
+
+    0%,
+    100% {
+        transform: scale(0.8);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+}
+
+.wsp-bento-icon-box {
+    position: relative;
+    z-index: 3;
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.wsp-bento-icon {
+    font-size: 1.25rem;
+    filter: drop-shadow(0 0 6px var(--icon-color));
+}
+
+.wsp-bento-content {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.wsp-bento-title {
+    font-family: 'Inter', 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.35rem;
+    color: #ffffff;
+    margin: 0;
+    letter-spacing: 0.3px;
+    line-height: 1.3;
+}
+
+.wsp-bento-desc {
+    font-family: 'Inter', 'Aldrich', sans-serif;
+    font-size: 0.95rem;
+    color: #a0a4b8;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.wsp-bento-btn {
+    margin-top: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: all 0.3s ease;
+    font-family: 'Inter', sans-serif;
+}
+
+.wsp-bento-btn:hover {
+    background: rgba(219, 36, 36, 0.2);
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* =========================================================================== */
+/* NEON CONTACT SECTION REDESIGN                                               */
+/* =========================================================================== */
+
+.wsp-neon-contact-section {
+    position: relative;
+    background-color: #0d0c10;
+    padding: 60px 0 120px !important;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    color: #fff;
+}
+
+/* Big Faded Background Text */
+.wsp-neon-bg-text {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'HEXCO', sans-serif;
+    font-size: clamp(6rem, 15vw, 15rem);
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.03);
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 0;
+    letter-spacing: 5px;
+}
+
+.wsp-neon-contact-container {
+    position: relative;
+    z-index: 10;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 0 20px;
+}
+
+.wsp-neon-header-area {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.wsp-neon-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 16px;
+    border: 1px dashed #20e360;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+.wsp-neon-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #20e360;
+    box-shadow: 0 0 8px #20e360;
+}
+
+.wsp-neon-main-title {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 700;
+    margin: 0;
+    color: #ffffff;
+}
+
+.wsp-neon-highlight {
+    color: #20e360;
+}
+
+.wsp-neon-subtitle {
+    color: #888;
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Layout Grid */
+.wsp-neon-contact-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 40px;
+}
+
+@media (max-width: 900px) {
+    .wsp-neon-contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Form Styles */
+.wsp-neon-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.wsp-neon-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+@media (max-width: 600px) {
+    .wsp-neon-form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.wsp-neon-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.wsp-neon-input-group label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #eee;
+}
+
+.wsp-neon-input-group input,
+.wsp-neon-select-wrapper select,
+.wsp-neon-input-group textarea {
+    background-color: #101116;
+    border: 1px solid #1c1d24;
+    border-radius: 12px;
+    padding: 14px 18px;
+    color: #fff;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.wsp-neon-input-group input:focus,
+.wsp-neon-select-wrapper select:focus,
+.wsp-neon-input-group textarea:focus {
+    outline: none;
+    border-color: rgba(32, 227, 96, 0.4);
+    box-shadow: 0 0 15px rgba(32, 227, 96, 0.1);
+}
+
+.wsp-neon-input-group input::placeholder,
+.wsp-neon-input-group textarea::placeholder {
+    color: #5a5a66;
+}
+
+.wsp-neon-select-wrapper {
+    position: relative;
+}
+
+.wsp-neon-select-wrapper select {
+    appearance: none;
+}
+
+.wsp-neon-select-wrapper::after {
+    content: '▼';
+    font-size: 0.7rem;
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #5a5a66;
+    pointer-events: none;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.wsp-neon-checkbox-group {
+    margin-top: -5px;
+}
+
+.wsp-neon-checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+}
+
+.wsp-neon-checkbox-text {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.wsp-neon-submit-btn {
+    align-self: flex-start;
+    margin-top: 10px;
+    background-color: #20e360;
+    color: #000;
+    border: none;
+    border-radius: 30px;
+    padding: 14px 30px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.wsp-neon-submit-btn:hover {
+    background-color: #17bb4c;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(32, 227, 96, 0.3);
+}
+
+/* Info Card */
+.wsp-neon-info-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #1c1d24;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.wsp-neon-info-top {
+    position: relative;
+    background-color: #101116;
+    padding: 35px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.wsp-neon-grid-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.wsp-neon-info-block {
+    position: relative;
+    z-index: 1;
+}
+
+.wsp-neon-info-block h4 {
+    color: #20e360;
+    margin: 0 0 10px 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.wsp-neon-info-block p {
+    margin: 0 0 6px 0;
+    color: #aaa;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.wsp-neon-info-bottom {
+    position: relative;
+    background-color: #20e360;
+    padding: 30px 35px;
+    color: #000;
+    overflow: hidden;
+}
+
+.wsp-neon-topo-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(circle at 20% -20%, transparent 20%, rgba(0, 0, 0, 0.05) 21%, rgba(0, 0, 0, 0.05) 24%, transparent 25%),
+        radial-gradient(circle at 80% 120%, transparent 20%, rgba(0, 0, 0, 0.05) 21%, rgba(0, 0, 0, 0.05) 24%, transparent 25%);
+    background-size: 100% 100%;
+    opacity: 0.6;
+}
+
+.wsp-neon-bottom-title {
+    position: relative;
+    margin: 0 0 15px 0;
+    font-size: 1.1rem;
+    font-weight: 800;
+    z-index: 1;
+    color: #0e632b;
+}
+
+.wsp-neon-benefits {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    width: 100%;
+}
+
+
+.wsp-neon-benefit-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background-color: #101116;
+    color: #20e360;
+    border-radius: 10px;
+    border: 1px solid rgba(32, 227, 96, 0.4);
+    font-size: 1.25rem;
+    transition: all 0.3s ease;
+    cursor: help;
+}
+
+.wsp-neon-benefit-item svg {
+    filter: drop-shadow(0 0 6px #20e360);
+}
+
+.wsp-neon-benefit-item:hover {
+    transform: translateY(-4px) scale(1.1);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3), inset 0 0 8px rgba(32, 227, 96, 0.2);
+    border-color: rgba(32, 227, 96, 0.8);
+}
+
+/* Custom Program Grid matching the image */
+.wsp-program-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.wsp-staff-section-v2 .wsp-container {
+    max-width: 1750px;
+}
+
+@media (max-width: 1400px) {
+    .wsp-program-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 1100px) {
+    .wsp-program-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .wsp-program-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .wsp-program-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.wsp-program-card {
+    position: relative;
+    border-radius: 32px;
+    padding: 30px;
+    color: white;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+}
+
+.wsp-program-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), transparent);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.wsp-program-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+.wsp-program-main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 3;
+    height: 100%;
+}
+
+.wsp-program-tags {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.wsp-program-tag {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 100px;
+    padding: 6px 14px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    white-space: nowrap;
+    letter-spacing: 0.5px;
+}
+
+.wsp-program-image {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    border-radius: 20px !important;
+    margin: 15px 0 20px !important;
+    object-fit: contain;
+    transition: all 0.5s ease;
+    display: block !important;
+    transform: none !important;
+    box-sizing: border-box;
+    z-index: 5;
+}
+
+.wsp-program-card:hover .wsp-program-image {
+    transform: rotate(0deg) scale(1.05);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.wsp-program-name {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-family: 'Aldrich', monospace;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+}
+
+.wsp-program-title {
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.5px;
+    line-height: 1.25;
+    text-align: center;
+}
+
+.wsp-program-desc {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    opacity: 0.85;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+}
+
+.wsp-program-bottom {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.wsp-program-price {
+    background: white;
+    color: #111;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.wsp-program-link {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-decoration: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.3s ease;
+    opacity: 0.7;
+}
+
+.wsp-program-link:hover {
+    opacity: 1;
+    transform: translateX(3px);
+}
+
+@media (max-width: 600px) {
+    .wsp-program-card {
+        padding: 25px;
+        min-height: auto;
+    }
+
+    .wsp-program-main {
+        width: 100%;
+    }
+
+    .wsp-program-image {
+        opacity: 1 !important;
+        right: auto !important;
+        top: auto !important;
+        transform: none !important;
+        margin: 0 auto 20px !important;
+        width: 100% !important;
+        max-width: 250px !important;
+        height: 180px !important;
+        rotate: 0deg !important;
+        position: relative !important;
+        display: block !important;
+        filter: none !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .wsp-reviews-section-new {
+        --wsp-review-offset: 130px !important;
+        --wsp-review-step: 292px !important;
+        /* 260 width + 32 gap */
+        padding: 60px 0 !important;
+    }
+
+    .wsp-review-card-new {
+        width: 260px !important;
+        min-width: 260px !important;
+    }
+
+    .wsp-review-card-new.active {
+        transform: scale(1.1) !important;
+        /* Slightly less zoom on mobile to prevent overflow */
+    }
+
+    .wsp-reviews-carousel-wrapper {
+        padding-top: 100px !important;
+    }
+}
+
+/* =========================================
+   NEW SCI-FI BENTO PEDESTAL CARDS - FINAL
+========================================= */
+
+/* =========================================
+   NFT MARKETPLACE STYLE CARDS
+========================================= */
+
+.wsp-bento-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)) !important;
+    gap: 30px !important;
+    max-width: 1600px !important;
+    margin: 80px auto 0 !important;
+    padding: 0 40px 100px;
+    width: 100%;
+}
+
+/* Specific grid for conducted workshops - 4 cards per row */
+.wsp-conducted-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+}
+
+/* Specific grid for upcoming workshops - 2 cards per row as requested */
+.wsp-upcoming-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+}
+
+@media (max-width: 1400px) {
+
+    .wsp-conducted-grid,
+    .wsp-upcoming-grid {
+        grid-template-columns: repeat(4, 1fr) !important;
+    }
+}
+
+@media (max-width: 900px) {
+    .wsp-upcoming-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .wsp-conducted-grid {
+        grid-template-columns: 1fr !important;
+        padding: 0 20px;
+    }
+}
+
+.wsp-nft-card {
+    background: #16161a;
+    border-radius: 35px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.wsp-nft-card:hover {
+    transform: translateY(-15px);
+    border-color: rgba(108, 92, 231, 0.3);
+    box-shadow: 0 30px 60px rgba(108, 92, 231, 0.2);
+}
+
+/* User Profile Header */
+.wsp-nft-user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-left: 5px;
+}
+
+.wsp-nft-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #a29bfe, #6c5ce7);
+    border: 2px solid #fff;
+}
+
+.wsp-nft-user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.wsp-nft-username {
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.wsp-nft-id {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.7rem;
+    font-family: 'Aldrich', monospace;
+}
+
+/* Main Visual Area */
+.wsp-nft-image-wrap {
+    width: 100%;
+    height: 280px;
+    border-radius: 25px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.wsp-nft-image-wrap::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.4));
+}
+
+.wsp-nft-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.wsp-nft-card:hover .wsp-nft-img {
+    transform: scale(1.1) rotate(2deg);
+}
+
+/* Content & Footer */
+.wsp-nft-content {
+    margin-top: 25px;
+    padding: 0 10px;
+}
+
+.wsp-nft-title {
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+
+.wsp-nft-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: auto;
+}
+
+.wsp-nft-price-box {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.wsp-nft-price-label {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.wsp-nft-price-val {
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 900;
+}
+
+.wsp-nft-enroll-btn {
+    background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 0.85rem;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(108, 92, 231, 0.3);
+    transition: all 0.3s ease;
+}
+
+.wsp-nft-enroll-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 25px rgba(108, 92, 231, 0.5);
+}
+
+/* Tabs for Dark Theme */
+.wsp-tabs {
+    background: rgba(255, 255, 255, 0.05) !important;
+    backdrop-filter: blur(10px);
+    padding: 10px !important;
+    border-radius: 30px !important;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.wsp-tab {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.wsp-tab.wsp-active {
+    background: #6c5ce7 !important;
+    color: #fff !important;
+    box-shadow: 0 10px 20px rgba(108, 92, 231, 0.3) !important;
+}
+
+/* =========================================================================== */
+/* COMPREHENSIVE RESPONSIVE FIXES FOR MOBILE AND TABLET                        */
+/* =========================================================================== */
+
+/* Tablet & Mobile Breakpoint (1024px and below) */
+@media (max-width: 1024px) {
+    .wsp-header-redesign {
+        padding: 120px 20px 60px;
+        min-height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .wsp-title {
+        font-size: clamp(2.2rem, 8vw, 3.8rem);
+        margin-bottom: 15px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .wsp-subtitle {
+        margin: 0 auto 40px;
+        font-size: 14px;
+        line-height: 1.6;
+        max-width: 500px;
+        color: #555;
+        text-align: center;
+    }
+
+    .wsp-stats-cards {
+        margin-bottom: 30px;
+    }
+
+    .wsp-workshops-section .wsp-section-title {
+        font-size: 2.8rem;
+        text-align: center;
+    }
+
+    .wsp-program-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px;
+    }
+}
+
+/* Mobile Breakpoint (768px and below) */
+@media (max-width: 768px) {
+    .wsp-header-redesign {
+        padding: 180px 15px 40px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        min-height: auto !important;
+    }
+
+    .wsp-header-container {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .wsp-title {
+        font-size: clamp(2rem, 10vw, 3.2rem) !important;
+        letter-spacing: -1px !important;
+        font-weight: 800 !important;
+        text-align: center !important;
+        margin-left: 0 !important;
+        width: 100% !important;
+    }
+
+    .wsp-header-features {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px 25px;
+        margin: 30px auto 40px !important;
+        max-width: 200px;
+        justify-content: center !important;
+    }
+
+    .wsp-feature-item {
+        font-size: 12px;
+        justify-content: center !important;
+        text-align: center !important;
+    }
+
+    .wsp-stats-cards {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 15px;
+        padding: 0 10px;
+        justify-items: center !important;
+        align-items: center !important;
+        width: 100%;
+    }
+
+    .wsp-stat-card {
+        width: 100%;
+        min-height: 220px;
+        padding: 20px 15px;
+    }
+
+    .wsp-card-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .wsp-card-title {
+        font-size: 18px;
+    }
+
+    .wsp-card-desc {
+        font-size: 12px;
+    }
+
+    .wsp-cta-button {
+        padding: 16px 40px;
+        font-size: 16px;
+        margin: 20px auto 0;
+        width: 100%;
+        max-width: 320px;
+    }
+
+
+    /* Snake Timeline Mobile Fix */
+    .wsp-header-logos-wrapper {
+        padding-top: 10px;
+        margin-top: 20px;
+    }
+
+    .wsp-header-logos {
+        gap: 15px;
+        justify-content: center;
+    }
+
+    .wsp-az-row {
+        flex-direction: row !important;
+        display: flex !important;
+        min-height: 120px;
+        gap: 15px;
+    }
+
+    /* Center the badge column on the left for a vertical timeline look */
+    .wsp-az-badge-col {
+        order: 1;
+        width: 60px !important;
+    }
+
+    .wsp-az-side--left,
+    .wsp-az-side--right {
+        order: 2;
+        flex: 1;
+        display: flex !important;
+        align-items: center;
+        justify-content: flex-start !important;
+        padding: 10px 0 !important;
+    }
+
+    /* Hide empty cells on mobile */
+    .wsp-az-side:has(.wsp-az-arm) {
+        display: none !important;
+    }
+
+    .wsp-az-arm {
+        display: none !important;
+    }
+
+    .wsp-az-pill {
+        margin: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        transform: none !important;
+        padding: 15px !important;
+        text-align: left !important;
+        flex-direction: row !important;
+    }
+
+    .wsp-az-pill-body {
+        padding-left: 15px !important;
+        padding-right: 0 !important;
+    }
+
+    /* NFT Grid Fix */
+    .wsp-bento-grid,
+    .wsp-conducted-grid,
+    .wsp-upcoming-grid {
+        grid-template-columns: 1fr !important;
+        padding: 0 20px 60px !important;
+        margin-top: 40px !important;
+    }
+
+    .wsp-nft-image-wrap {
+        height: 240px;
+    }
+
+    /* Expert Instructors Mobile */
+    .wsp-program-grid {
+        grid-template-columns: 1fr !important;
+        padding: 0 15px;
+    }
+
+    .wsp-program-card {
+        min-height: auto;
+        padding: 25px;
+        border-radius: 20px;
+    }
+
+    /* Neon Contact Mobile */
+    .wsp-neon-contact-section {
+        padding: 60px 0;
+    }
+
+    .wsp-neon-contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .wsp-neon-main-title {
+        font-size: 1.8rem;
+    }
+
+    .wsp-neon-bg-text {
+        font-size: 5rem;
+        top: 5px;
+    }
+
+    /* Floating items safety */
+    .wsp-side-card,
+    .wsp-floating-card {
+        display: none !important;
+    }
+}
+
+/* Very Small Mobile (480px and below) */
+@media (max-width: 480px) {
+    .wsp-stats-cards {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .wsp-stat-card {
+        min-height: 180px;
+    }
+
+    .wsp-tabs {
+        flex-direction: column;
+        padding: 8px !important;
+        border-radius: 15px !important;
+    }
+
+    .wsp-tab {
+        width: 100%;
+        justify-content: center;
+        padding: 12px !important;
+    }
+
+    .wsp-az-badge-col {
+        width: 45px;
+    }
+
+    .wsp-az-badge {
+        width: 38px;
+        height: 38px;
+    }
+
+    .wsp-az-badge-num {
+        font-size: 0.9rem;
+    }
+
+    .wsp-header-redesign {
+        padding-top: 80px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    .wsp-title {
+        font-size: 1.8rem !important;
+        line-height: 1.2 !important;
+        text-align: center !important;
+        margin: 0 auto !important;
+    }
+
+    .wsp-section-title {
+        font-size: 1.8rem !important;
+        letter-spacing: -0.5px !important;
+    }
+}
+
+/* Premium Visual Enhancements for Mobile */
+@media (max-width: 768px) {
+    .wsp-header-redesign {
+        background: radial-gradient(circle at 50% 30%, #ffffff 0%, #f8f9fa 100%) !important;
+    }
+
+    .wsp-stat-card {
+        border: 1px solid rgba(0, 0, 0, 0.03);
+        backdrop-filter: blur(10px);
+    }
+
+    .wsp-neon-bg-text {
+        opacity: 0.02;
+        /* Even more subtle on mobile */
+    }
+}
+
+
+/* Global Overflow Fix */
+.wsp-page,
+body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    position: relative;
+}
+
+/* ==========================================================================
+   TABLET SPECIFIC FIXES (768px - 1024px) — DO NOT EDIT ABOVE
+   ========================================================================== */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    /* 1. Stat cards (6 cards below hero) — bigger, tighter gap */
+    .wsp-stats-cards {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 0px !important;
+    }
+
+    .wsp-stat-card {
+        min-height: 280px !important;
+        padding: 28px 10px !important;
+    }
+
+    .wsp-card-icon {
+        width: 60px !important;
+        height: 60px !important;
+        font-size: 24px !important;
+    }
+
+    .wsp-card-title {
+        font-size: 22px !important;
+    }
+
+    .wsp-card-desc {
+        font-size: 14px !important;
+    }
+
+    /* 2. Feature items: single column so "Limited Slots" stacks below "Verified Industry Experts" */
+    .wsp-header-features {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+        width: fit-content !important;
+        margin: 20px auto !important;
+    }
+
+    .wsp-feature-item {
+        justify-content: center !important;
+        text-align: center !important;
+    }
+
+    /* 3. Student Reviews: smaller cards, properly centred carousel */
+    .wsp-reviews-section-new {
+        --wsp-review-offset: 110px !important;
+        --wsp-review-step: 252px !important;
+    }
+
+    .wsp-review-card-new {
+        width: 220px !important;
+        min-width: 220px !important;
+    }
+
+    .wsp-review-card-new.active {
+        transform: scale(1.12) !important;
+    }
+}

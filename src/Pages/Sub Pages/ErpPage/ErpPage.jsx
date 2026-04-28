@@ -31,6 +31,7 @@ import {
     faChevronRight
 } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'motion/react';
+import TopNavbar from '../../../Components/TopNavbar/TopNavbar';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
 import SubFooterOne from '../../../Pages/Sub Pages/subFooterOne/NewFooter1'
 import '../CrmPage/CrmPage.css';
@@ -109,6 +110,7 @@ const ErpPage = () => {
 
     return (
         <>
+            <TopNavbar />
             <TwoLineNavbar />
             <div className="crm-subpage-container erp-theme">
 
@@ -461,20 +463,35 @@ const ErpPage = () => {
                         <div className="crm-insights-carousel-wrapper">
                             <div className="crm-insights-grid">
                                 {[
-                                    { //image: imgErpAi, 
-                                        title: "AI Result Analysis", desc: "Instantly identify underperforming students and suggest personalised improvement plans.", imgBg: "rgba(16,185,129,0.18)"
+                                    {
+                                        image: imgErpAi,
+                                        title: "AI Result Analysis",
+                                        desc: "Instantly identify underperforming students and suggest personalised improvement plans based on historical data. Our system analyzes performance trends across multiple subjects to provide actionable insights for teachers and administrators.",
+                                        imgBg: "rgba(16,185,129,0.18)"
                                     },
-                                    { //image: imgErpParent, 
-                                        title: "Parent Communication Hub", desc: "Automated SMS, email and in-app notifications keep parents informed at every step.", imgBg: "rgba(6,182,212,0.18)"
+                                    {
+                                        image: imgErpParent,
+                                        title: "Parent Communication Hub",
+                                        desc: "Automated SMS, email and in-app notifications keep parents informed at every step of their child's journey. From daily attendance alerts to real-time exam results, ensure parents stay connected and engaged with institution updates.",
+                                        imgBg: "rgba(6,182,212,0.18)"
                                     },
-                                    { //image: imgErpForecast, 
-                                        title: "Academic Forecasting", desc: "Predictive analytics to forecast exam outcomes and flag at-risk students early.", imgBg: "rgba(16,185,129,0.25)"
+                                    {
+                                        image: imgErpForecast,
+                                        title: "Academic Forecasting",
+                                        desc: "Predictive analytics to forecast exam outcomes and flag at-risk students early in the semester. By leveraging machine learning models, institutions can intervene proactively to support student success and improve overall graduation rates.",
+                                        imgBg: "rgba(16,185,129,0.25)"
                                     },
-                                    { //image: imgErpCompliance, 
-                                        title: "GDPR & DPDP Compliant", desc: "Role-based access, audit logs and encrypted student records built-in from day one.", imgBg: "rgba(5,150,105,0.2)"
+                                    {
+                                        image: imgErpCompliance,
+                                        title: "GDPR & DPDP Compliant",
+                                        desc: "Role-based access, comprehensive audit logs and end-to-end encrypted student records built-in from day one. We prioritize institutional data privacy, ensuring full compliance with international and local data protection regulations.",
+                                        imgBg: "rgba(5,150,105,0.2)"
                                     },
-                                    { //image: imgErpAttendance, 
-                                        title: "Smart Attendance Tracking", desc: "Biometric and QR-based attendance with real-time parent alerts for every absence.", imgBg: "rgba(20,184,166,0.2)"
+                                    {
+                                        image: imgErpAttendance,
+                                        title: "Smart Attendance Tracking",
+                                        desc: "Biometric and QR-based attendance with real-time parent alerts for every absence or late arrival. Streamline the morning roll-call process and eliminate manual entry errors while providing instant transparency to guardians.",
+                                        imgBg: "rgba(20,184,166,0.2)"
                                     },
                                 ].map((item, i) => (
                                     <motion.div

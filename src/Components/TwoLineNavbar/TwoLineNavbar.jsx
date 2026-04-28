@@ -459,7 +459,7 @@ const TwoLineNavbar = () => {
                                                                         }
                                                                     }}
                                                                 >
-                                                                    <div className="tlnbn-item-icon">{item.icon}</div>
+                                                                    {item.icon && <div className="tlnbn-item-icon">{item.icon}</div>}
                                                                     <div className="tlnbn-item-text">
                                                                         <div className="tlnbn-item-title">{item.name}</div>
                                                                         <div className="tlnbn-item-desc">{item.desc}</div>
@@ -585,7 +585,7 @@ const TwoLineNavbar = () => {
                                                             }
                                                         }}
                                                     >
-                                                        <span className="tlnbn-mobile-icon">{item.icon}</span>
+                                                        {item.icon && <span className="tlnbn-mobile-icon">{item.icon}</span>}
                                                         <div className="tlnbn-mobile-item-text">
                                                             <div className="tlnbn-mobile-item-title">{item.name}</div>
                                                             <div className="tlnbn-mobile-item-desc">{item.desc}</div>

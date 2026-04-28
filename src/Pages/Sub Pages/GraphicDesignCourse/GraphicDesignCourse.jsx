@@ -2,8 +2,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { submitEnrollment } from "../../Sub Pages/HandleSubmit/HandleSubmit";
 import NavigationBar from '../../TechLearningSection/NavigationBar/NavigationBar';
-import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import SubFooterTwo from '../subFooterTwo/NewFooter';
+import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import {
   faPaintBrush,
@@ -26,6 +26,7 @@ import {
   faHandshake,
   faGraduationCap,
   faTrophy,
+  faUserGraduate,
   faSyncAlt,
   faBullseye,
   faFlask,
@@ -100,6 +101,7 @@ import copyAiLogoV2 from '../../../assets/copy_ai_logo_v2.png';
 import illustratorLogoV2 from '../../../assets/illustrator_logo_v2.png';
 import luminarLogoV3 from '../../../assets/luminar_logo_v3.png';
 import chatgptLogoV2 from '../../../assets/chatgpt_logo_v2.png';
+
 // Custom Testimonial Avatars
 import avatarF1 from '../../../assets/t1.png';
 import avatarM1 from '../../../assets/t2.png';
@@ -188,7 +190,7 @@ const GraphicDesignCourse = () => {
     },
     {
       title: "Portfolio Building",
-      icon: <FontAwesomeIcon icon={faRocket} />,
+      icon: <FontAwesomeIcon icon={faBriefcase} />,
       points: ["50+ Real Projects", "Professional Showcase", "Case Study Prep"],
       bgColor: "rgba(61, 82, 217, 0.12)",
       iconColor: "#3D52D9"
@@ -368,7 +370,7 @@ const GraphicDesignCourse = () => {
       description: 'Conduct real user testing and gather insights to refine designs through data-driven decisions.'
     },
     {
-      icon: <FontAwesomeIcon icon={faRocket} />,
+      icon: <FontAwesomeIcon icon={faUserGraduate} />,
       title: 'Career Coaching',
       description: 'Interview preparation and portfolio reviews with our strategic experts to land your dream job.'
     }
@@ -591,7 +593,6 @@ const GraphicDesignCourse = () => {
         <TopNavBar />
         <NavigationBar />
         <div className="gdc-page">
-
           {/* Hero Section */}
           <header className="gdc-hero-v3">
             <div className="gdc-v3-sparkle-wrapper">
@@ -969,20 +970,24 @@ const GraphicDesignCourse = () => {
             </div>
           </section>
 
-          {/* Demo Video Section */}
-          <section className="gdc-demo-video-section gdc-white-bg">
-            <div className="gdc-container">
-              <h2 className="gdc-section-title gdc-red-text">Experience Our Teaching</h2>
-              <p className="gdc-section-subtitle">Watch a sample lesson from our course</p>
+          {/* Local Demo Video Section */}
+          <section className="dgm-section dgm-white-bg">
+            <div className="dgm-container">
+              <h2 className="dgm-section-title dgm-red-text">Experience Our Teaching</h2>
+              <p className="dgm-section-subtitle">Watch a sample lesson from our course</p>
 
-              <div className="gdc-video-layout">
-                <div className="gdc-video-left">
-                  <div className="gdc-single-video-container">
-                    <div className="gdc-video-card-light">
-                      <div className="gdc-video-thumbnail-single" onClick={handlePlayVideo}>
+              {/* NEW WRAPPER */}
+              <div className="dgm-video-layout">
+
+                {/* LEFT SIDE - VIDEO */}
+                <div className="dgm-video-left">
+                  <div className="dgm-single-video-container">
+                    <div className="dgm-video-card-light">
+                      <div className="dgm-video-thumbnail-single" onClick={handlePlayVideo}>
+
                         <video
                           ref={videoRef}
-                          className="gdc-video-player"
+                          className="dgm-video-player"
                           poster={demoVideo.thumbnail}
                           onClick={handlePlayVideo}
                           onEnded={handleVideoEnd}
@@ -995,19 +1000,22 @@ const GraphicDesignCourse = () => {
                         </video>
 
                         {!isPlaying && (
-                          <div className="gdc-video-overlay-single">
-                            <div className="gdc-play-button-single">
+                          <div className="dgm-video-overlay-single">
+                            <div className="dgm-play-button-single">
                               <FontAwesomeIcon icon={faPlayCircle} />
                             </div>
-                            <div className="gdc-video-duration-single">
+                            <div className="dgm-video-duration-single">
                               <FontAwesomeIcon icon={faClock} /> {demoVideo.duration}
                             </div>
                           </div>
                         )}
 
                         {isPlaying && (
-                          <div className="gdc-video-controls-overlay">
-                            <button className="gdc-video-control-btn" onClick={handlePlayVideo}>
+                          <div className="dgm-video-controls-overlay">
+                            <button
+                              className="dgm-video-control-btn"
+                              onClick={handlePlayVideo}
+                            >
                               {isPlaying
                                 ? <FontAwesomeIcon icon={faPauseCircle} />
                                 : <FontAwesomeIcon icon={faPlayCircle} />}
@@ -1016,15 +1024,18 @@ const GraphicDesignCourse = () => {
                         )}
                       </div>
 
-                      <div className="gdc-video-info-single-light">
-                        <h3 className="gdc-video-title-single-light">{demoVideo.title}</h3>
-                        <p className="gdc-video-instructor-single-light">
+                      <div className="dgm-video-info-single-light">
+                        <h3 className="dgm-video-title-single-light">{demoVideo.title}</h3>
+                        <p className="dgm-video-instructor-single-light">
                           Instructor: <span>{demoVideo.instructor}</span>
                         </p>
-                        <p className="gdc-video-description-single-light">
+                        <p className="dgm-video-description-single-light">
                           {demoVideo.description}
                         </p>
-                        <button className="gdc-watch-btn-single" onClick={handlePlayVideo}>
+                        <button
+                          className="dgm-watch-btn-single"
+                          onClick={handlePlayVideo}
+                        >
                           {isPlaying
                             ? <><FontAwesomeIcon icon={faPauseCircle} /> Pause Video</>
                             : <><FontAwesomeIcon icon={faPlayCircle} /> Watch Free Demo Lesson</>}
@@ -1034,15 +1045,19 @@ const GraphicDesignCourse = () => {
                   </div>
                 </div>
 
-                <div className="gdc-video-right">
-                  <h3 className="gdc-video-side-title">Learn by Watching Real Sessions</h3>
-                  <p className="gdc-video-side-desc">
+                {/* RIGHT SIDE - NEW CONTENT */}
+                <div className="dgm-video-right">
+                  <h3 className="dgm-video-side-title">
+                    Learn by Watching Real Sessions
+                  </h3>
+                  <p className="dgm-video-side-desc">
                     Experience our teaching approach through real-time lessons designed to give you practical insights.
                     Understand how concepts are explained, how projects are built, and how students are guided step-by-step
                     to achieve industry-level skills. This preview gives you a clear idea of the learning experience,
                     mentorship quality, and hands-on approach we follow in our programs.
                   </p>
                 </div>
+
               </div>
             </div>
           </section>

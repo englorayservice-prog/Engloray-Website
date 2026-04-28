@@ -95,9 +95,8 @@ import pathOne from '../../../assets/resources file/resources file/TECH/GRAPHICS
 import pathTwo from '../../../assets/resources file/resources file/TECH/GRAPHICS DESIGNERS/Graphic Designer Benefits.pdf';
 import pathFive from '../../../assets/resources file/resources file/TECH/GRAPHICS DESIGNERS/Learning, Skill Development & Growth.pdf';
 import pathSix from '../../../assets/resources file/resources file/TECH/GRAPHICS DESIGNERS/Productivity, AI & Workflow Support.pdf';
-import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
-import SubFooterOne from '../../../Pages/Sub Pages/subFooterOne/NewFooter1';
-
+import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
+import Navbar from '../../../Components/Navbar/Navbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import { Helmet } from 'react-helmet';
 
@@ -742,9 +741,8 @@ const BusinessDevelopmentInternPage = () => {
             )}
 
             <div className="BDM-content" ref={containerRef}>
-                    <TwoLineNavbar />
-                
-                
+                {/* <TopNavBar/> */}
+                {/* <Navbar/> */}
 
                 {/* Hero Section */}
                 <section
@@ -1070,136 +1068,96 @@ const BusinessDevelopmentInternPage = () => {
                 {/* Dream Navigator Section */}
 
 
-                <section className="BDM-section BDM-influencer-section" id="signin">
-                    <div className="BDM-influencer-container">
-                        <div className="BDM-influencer-content">
-                            {showForm ? (
-                                <div className="BDM-form-section BDM-in-influencer">
-                                    <div className="BDM-form-wrapper BDM-dark-form">
-                                        <button
-                                            className="BDM-close-form-btn BDM-close-dark"
-                                            onClick={() => setShowForm(false)}
-                                            aria-label="Close form"
-                                        >
-                                            <FontAwesomeIcon icon={faTimes} />
-                                        </button>
+               <section className="BDM-section BDM-influencer-section" id="signin">
+  <div className="BDM-influencer-container">
+    <div className="BDM-influencer-content">
+      {showForm ? (
+        /* FORM VIEW */
+        <div className="BDM-form-section BDM-in-influencer">
+          <div className="BDM-form-wrapper BDM-dark-form">
+            <button
+              className="BDM-close-form-btn BDM-close-dark"
+              onClick={() => setShowForm(false)}
+              aria-label="Close form"
+            >
+              <FontAwesomeIcon icon={faTimes} />
+            </button>
 
-                                        <form className="BDM-signin-form" onSubmit={handleSignSubmit}>
-                                            <h3 className="BDM-form-dark-title">Register Now</h3>
-                                            <div className="BDM-form-group">
-                                                <label htmlFor="email"><FontAwesomeIcon icon={faEnvelope} /> Email Address</label>
-                                                <input
-                                                    type="email"
-                                                    id="email"
-                                                    name="email"
-                                                    value={formData.email}
-                                                    onChange={handleFormChange}
-                                                    className={`BDM-form-input ${errors.email ? 'BDM-error' : ''}`}
-                                                    placeholder="Enter your email"
-                                                />
-                                                {errors.email && <span className="BDM-error-message">{errors.email}</span>}
-                                            </div>
-
-                                            <div className="BDM-form-group">
-                                                <label htmlFor="course"><FontAwesomeIcon icon={faBook} /> Course</label>
-                                                <input
-                                                    type="text"
-                                                    id="course"
-                                                    name="course"
-                                                    value={formData.course}
-                                                    onChange={handleFormChange}
-                                                    className={`BDM-form-input ${errors.course ? 'BDM-error' : ''}`}
-                                                    placeholder="Enter Course Name"
-                                                />
-                                                {errors.course && <span className="BDM-error-message">{errors.course}</span>}
-                                            </div>
-
-                                            <div className="BDM-form-group BDM-checkbox-group">
-                                                <input
-                                                    type="checkbox"
-                                                    id="agreeTerms"
-                                                    name="agreeTerms"
-                                                    checked={formData.agreeTerms}
-                                                    onChange={handleFormChange}
-                                                    className={errors.agreeTerms ? 'BDM-error' : ''}
-                                                />
-                                                <label htmlFor="agreeTerms">
-                                                    I agree to the Terms of Service and Privacy Policy
-                                                </label>
-                                                {errors.agreeTerms && <span className="BDM-error-message">{errors.agreeTerms}</span>}
-                                            </div>
-
-                                            <button type="submit" className="BDM-submit-btn">
-                                                Register
-                                            </button>
-                                        </form>
-                                    </div>
-                                </div>
-                            ) : (
-                                <div className="BDM-influencer-split">
-                                    <div className="BDM-influencer-left">
-                                        <h2 className="BDM-influencer-title">
-                                            Join <span className="BDM-search-badge"><FontAwesomeIcon icon={faComments} style={{ fontSize: '0.6em', marginRight: '4px' }} /> Q</span> Our Course
-                                            <br />
-                                            <div className="BDM-influencer-avatars">
-                                                <img src={iconGraduationCap} alt="Education Graduation Cap" />
-                                                <img src={iconEducationBook} alt="Education Book" />
-                                                <img src={iconCertificate} alt="Education Certificate" />
-                                            </div>
-                                            to collaborate
-                                            <br />
-                                            with us
-                                            {/* <div className="BDM-influencer-search-bar">
-                        <span className="BDM-search-placeholder"> Search</span>
-                        <div className="BDM-search-actions">
-                          <FontAwesomeIcon icon={faStar} className="BDM-voice-icon" />
-                          <button className="BDM-search-submit"><FontAwesomeIcon icon={faComments} style={{ fontSize: '0.7em' }} /></button>
-                        </div>
-                      </div> */}
-                                        </h2>
-                                    </div>
-                                    <div className="BDM-influencer-right">
-                                        <div
-                                            className="BDM-see-how-card"
-                                            onClick={() => setShowForm(true)}
-                                        >
-                                            <div className="BDM-card-top-icons">
-                                                <div className="BDM-video-circle">
-                                                    <FontAwesomeIcon icon={faVideo} />
-                                                </div>
-                                                <div className="BDM-arrow-circle">
-                                                    <FontAwesomeIcon icon={faArrowRight} style={{ transform: 'rotate(-45deg)' }} />
-                                                </div>
-                                            </div>
-                                            <h3 className="BDM-see-how-text">See how<br />it's done</h3>
-                                            <div className="BDM-card-decorations">
-                                                <div className="BDM-decor-ring-1"></div>
-                                                <div className="BDM-decor-ring-2"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            )}
-                        </div>
-
-
-                        {/* {!showForm && (
-              <div className="BDM-join-course-banner">
-                <h3 className="BDM-join-banner-title">JOIN OUR COURSE</h3>
-                <div className="BDM-join-banner-content">
-                  <h4 className="BDM-join-course-subtitle"><FontAwesomeIcon icon={faPaintBrush} /> Business Development Management course</h4>
-                  <p className="BDM-join-course-desc">
-                    A graphic designer creates visual concepts that communicate messages through typography, color, imagery, and layout. They design logos, branding, posters, digital content, and user interfaces, blending creativity with strategy to solve problems and deliver clear, engaging visual communication across different media platforms.
-                  </p>
-                  <button className="BDM-banner-register-btn" onClick={() => setShowForm(true)}>
-                    Register Now
-                  </button>
-                </div>
+            <form className="BDM-signin-form" onSubmit={handleSignSubmit}>
+              <h3 className="BDM-form-dark-title">Register Now</h3>
+              
+              <div className="BDM-form-group">
+                <label htmlFor="email"><FontAwesomeIcon icon={faEnvelope} /> Email Address</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleFormChange}
+                  className={`BDM-form-input ${errors.email ? 'BDM-error' : ''}`}
+                  placeholder="Enter your email"
+                />
+                {errors.email && <span className="BDM-error-message">{errors.email}</span>}
               </div>
-            )} */}
-                    </div>
-                </section>
 
+              <div className="BDM-form-group">
+                <label htmlFor="course"><FontAwesomeIcon icon={faBook} /> Course</label>
+                <input
+                  type="text"
+                  id="course"
+                  name="course"
+                  value={formData.course}
+                  onChange={handleFormChange}
+                  className={`BDM-form-input ${errors.course ? 'BDM-error' : ''}`}
+                  placeholder="Enter Course Name"
+                />
+                {errors.course && <span className="BDM-error-message">{errors.course}</span>}
+              </div>
+
+              <div className="BDM-form-group BDM-checkbox-group">
+                <input
+                  type="checkbox"
+                  id="agreeTerms"
+                  name="agreeTerms"
+                  checked={formData.agreeTerms}
+                  onChange={handleFormChange}
+                />
+                <label htmlFor="agreeTerms">I agree to the Terms & Privacy</label>
+              </div>
+
+              <button type="submit" className="BDM-submit-btn">Register</button>
+            </form>
+          </div>
+        </div>
+      ) : (
+        /* SPLIT CONTENT VIEW */
+        <div className="BDM-influencer-split">
+          <div className="BDM-influencer-left">
+            <h2 className="BDM-influencer-title">
+              Join <span className="BDM-search-badge"><FontAwesomeIcon icon={faComments} /> Q</span> Our Course
+              <div className="BDM-influencer-avatars">
+                <img src={iconGraduationCap} alt="Graduation Cap" />
+                <img src={iconEducationBook} alt="Book" />
+                <img src={iconCertificate} alt="Certificate" />
+              </div>
+              to collaborate with us
+            </h2>
+          </div>
+
+          <div className="BDM-influencer-right">
+            <div className="BDM-see-how-card" onClick={() => setShowForm(true)}>
+              <div className="BDM-card-top-icons">
+                <div className="BDM-video-circle"><FontAwesomeIcon icon={faVideo} /></div>
+                <div className="BDM-arrow-circle"><FontAwesomeIcon icon={faArrowRight} /></div>
+              </div>
+              <h3 className="BDM-see-how-text">See how<br />it's done</h3>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  </div>
+</section>
                 <section className="BDM-section BDM-dream-navigator-section" id="dream-navigator">
                     <div className="BDM-dn-container">
 
@@ -1844,7 +1802,6 @@ const BusinessDevelopmentInternPage = () => {
             </div> */}
                     </div>
                 </section>
-                <SubFooterOne />
                 <BackToTop />
             </div>
         </>

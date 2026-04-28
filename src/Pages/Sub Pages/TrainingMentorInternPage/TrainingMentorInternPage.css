@@ -400,6 +400,7 @@ body {
 .TM-hero-desc-large {
     font-size: 0.9rem;
     line-height: 1.6;
+    text-align: left;
     color: #666;
     margin-bottom: 2.5rem;
     font-family: 'Poppins', sans-serif;
@@ -4713,11 +4714,13 @@ body {
     border-radius: 50px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end; /* Aligned to bottom */
+    justify-content: flex-end;
+    /* Aligned to bottom */
     align-items: center;
     padding: 0 0 1.5rem 0;
     position: relative;
-    gap: 5px; /* Tighter gap */
+    gap: 5px;
+    /* Tighter gap */
 }
 
 .TM-dn-bg-dark {
@@ -4735,7 +4738,8 @@ body {
     transform: rotate(180deg);
     white-space: nowrap;
     padding-bottom: 0px;
-    padding-left: 15px; /* Left shift */
+    padding-left: 15px;
+    /* Left shift */
     font-size: 1.1rem;
     font-weight: 700;
     letter-spacing: 1.5px;
@@ -6697,5 +6701,38 @@ body {
 
     .TM-dn-dash-info {
         align-items: center !important;
+    }
+}
+
+@media (max-width: 1024px) {
+
+    /* 1. Remove all Images (Pills) and Star Icons */
+    .TM-hero-image-pill,
+    .TM-sparkle-icon,
+    .TM-sparkle-icon-small,
+    .TM-rotating-stamp,
+    .TM-hero-desc-small,
+    .TM-hero-top-line {
+        display: none !important;
+    }
+
+    .TM-hero-typography {
+        gap: 0% !important;
+    }
+    
+    /* 3. Titles Group (Set to first) */
+    .TM-hero-typography {
+        gap: 0 !important;
+        display: flex;
+        flex-direction: column;
+        line-height: 1.1;
+        /* Remove gaps to keep text tight */
+    }
+
+    .TM-hero-typography>* {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
     }
 }

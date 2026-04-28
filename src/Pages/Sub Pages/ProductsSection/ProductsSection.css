@@ -28,6 +28,13 @@
     padding: 0 28px;
 }
 
+/* Extends container specifically on large desktop ratios to reduce side gaps */
+@media (min-width: 1440px) {
+    .ps-container {
+        max-width: 1600px;
+    }
+}
+
 /* ── Header Row ── */
 .ps-header-row {
     display: flex;

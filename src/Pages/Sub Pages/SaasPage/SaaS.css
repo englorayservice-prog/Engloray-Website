@@ -104,6 +104,7 @@ img {
     background: transparent;
     color: inherit;
     display: flex;
+    margin-top: -10px;
     flex-direction: column;
     align-items: center;
     position: relative;
@@ -128,7 +129,7 @@ img {
 }
 
 .saas-hero-container {
-    max-width: 1400px;
+    max-width: 1700px;
     margin: 0 auto;
     padding: 0 40px;
     width: 100%;
@@ -386,6 +387,7 @@ img {
     justify-content: flex-end;
 }
 
+
 .saas-media-floating-card {
     background: #ffffff;
     border-radius: 40px;
@@ -438,8 +440,7 @@ img {
 
 /* ─── SaaS AI Workforce Section (Modern Stats Edition) ─── */
 .saas-stats-modern-section {
-    padding: 160px 0 40px;
-    /* Reduced bottom padding */
+    padding: 50px 0 0; /* Reduced bottom padding further */
     background: #000 !important;
     width: 100%;
     position: relative;
@@ -449,12 +450,14 @@ img {
 
 .stats-modern-grid {
     display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
+    grid-template-columns: 1.2fr 0.8fr; /* Favoring left content further */
     gap: 100px;
     align-items: center;
-    max-width: 1400px;
+    max-width: 1800px;
+    /* Increased to fill gaps */
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 60px;
+    /* Balanced side padding */
 }
 
 .stats-modern-left {
@@ -502,8 +505,8 @@ img {
     font-size: 1.25rem;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.7);
-    max-width: 550px;
-    margin-bottom: 45px;
+    max-width: 1100px; /* Increased to fill gaps as requested */
+    margin-bottom: 30px; /* Reduced from 45px */
     font-weight: 400;
     text-align: left;
     margin-left: 0;
@@ -577,116 +580,59 @@ img {
     border-radius: 4px;
 }
 
-/* Right Section Visuals */
 .stats-modern-right {
-    position: relative;
     display: flex;
     justify-content: flex-end;
+    transform: translateX(40px); /* Nudged right as requested */
 }
 
-.stats-visual-container {
-    width: 100%;
-    height: 550px;
-    /* Shortened to remove excess bottom gap */
+/* ─── NEW ORBIT PORTAL DESIGN ─── */
+.saas-v3-portal-wrap {
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
-
-/* The Arc Animation - Improved to show only a quarter/half */
-.stats-circular-path-wrap {
-    position: absolute;
-    top: 50%;
-    right: -250px;
-    transform: translateY(-50%);
-    width: 800px;
-    height: 800px;
-    overflow: hidden;
-    /* This will hide icons when not on path if sized right */
-    border-radius: 50%;
-    /* Masking effectively so only a portion is seen */
-    mask-image: linear-gradient(135deg, black 40%, transparent 80%);
-}
-
-.stats-main-arc {
-    position: absolute;
-    inset: 0px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1.5px solid rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    z-index: 1;
-    backdrop-filter: blur(20px);
-    box-shadow: 0 0 80px rgba(255, 255, 255, 0.03);
-}
-
-.stats-rotating-orbit {
-    position: absolute;
-    inset: 0;
-    z-index: 5;
-    animation: statsMainRotate 25s linear infinite;
-}
-
-@keyframes statsMainRotate {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(-360deg);
-    }
-
-    /* Rotating counter-clockwise like in image */
-}
-
-.orbit-item {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    top: 50%;
-    left: 50%;
-    margin-top: -50px;
-    margin-left: -50px;
-}
-
-/* Positioning items on the circle - adjusted radius */
-.orbit-item.icon-1 {
-    transform: rotate(0deg) translate(340px) rotate(0deg);
-}
-
-.orbit-item.icon-2 {
-    transform: rotate(60deg) translate(340px) rotate(-60deg);
-}
-
-.orbit-item.icon-3 {
-    transform: rotate(120deg) translate(340px) rotate(-120deg);
-}
-
-.orbit-item.icon-4 {
-    transform: rotate(180deg) translate(340px) rotate(-180deg);
-}
-
-/* Add more if needed */
-
-.orbit-icon-inner {
-    width: 85px;
-    height: 85px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(12px);
-    color: #ffffff;
-    border-radius: 50%;
+    width: 500px; /* Reduced from 650px */
+    height: 500px; /* Reduced from 650px */
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.8rem;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    /* Individual counter-rotation removed to match "old" style */
+    perspective: 1000px;
 }
 
-@keyframes statsIconSelfRotate {
+/* Layered Geometric Rings */
+.portal-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px dashed rgba(255, 255, 255, 0.15);
+    animation: portalRotate 30s linear infinite;
+}
 
-    /* Need to keep the icons upright while the parent rotates */
+.ring-outer {
+    width: 480px;
+    height: 480px;
+    border-style: double;
+    border-width: 2px;
+    opacity: 0.3;
+}
+
+.ring-middle {
+    width: 360px;
+    height: 360px;
+    border-style: dotted;
+    animation-duration: 20s;
+    animation-direction: reverse;
+    opacity: 0.4;
+}
+
+.ring-inner {
+    width: 240px;
+    height: 240px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(99, 102, 241, 0.2);
+    animation-duration: 15s;
+    opacity: 0.6;
+}
+
+@keyframes portalRotate {
     from {
         transform: rotate(0deg);
     }
@@ -696,30 +642,136 @@ img {
     }
 }
 
-/* Stats Values */
-.stats-modern-values {
+/* Central Core */
+.portal-core {
     position: relative;
-    z-index: 15;
-    margin-right: 120px;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.core-pulse {
+    position: absolute;
+    inset: -20px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.4), transparent 70%);
+    border-radius: 50%;
+    animation: corePulse 3s ease-in-out infinite;
+}
+
+.core-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    border: 2px solid #6366f1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: #fff;
+    box-shadow: 0 0 40px rgba(99, 102, 241, 0.5);
+}
+
+@keyframes corePulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scale(1.3);
+        opacity: 0.8;
+    }
+}
+
+/* Holographic Stat Cards */
+.portal-stat-card {
+    position: absolute;
+    width: 180px; /* Reduced width */
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 15px;
+    z-index: 20;
+    transition: all 0.4s ease;
+    cursor: default;
+}
+
+.portal-stat-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-5px) scale(1.05) !important;
+    border-color: rgba(99, 102, 241, 0.5);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.s-card-glow {
+    position: absolute;
+    top: -20%;
+    right: -20%;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.2), transparent 70%);
+    filter: blur(10px);
+}
+
+.s-card-content {
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    /* Reduced gap between stats */
+    gap: 5px;
 }
 
-.sm-stat-item h4 {
-    font-size: 3.5rem;
-    font-weight: 400;
+.s-val {
+    font-size: 2.2rem; /* Scaled down */
+    font-weight: 800;
+    color: #fff;
+    font-family: 'HEXCO', sans-serif;
     line-height: 1;
-    margin-bottom: 10px;
-    font-family: 'Times New Roman', serif;
-    color: #ffffff;
 }
 
-.sm-stat-item p {
-    font-size: 1.1rem;
-    color: rgba(255, 255, 255, 0.6);
-    font-weight: 500;
+.s-label {
+    font-size: 0.8rem; /* Scaled down */
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+/* Card Positions around the circle */
+.s-card-1 {
+    top: 5%;
+    right: -20px; /* Nudged in */
+    transform: rotate(5deg);
+}
+
+.s-card-2 {
+    bottom: 15%;
+    right: -30px; /* Nudged in */
+    transform: rotate(-5deg);
+}
+
+.s-card-3 {
+    bottom: 5%;
+    left: -40px; /* Nudged in */
+    transform: rotate(5deg);
+}
+
+/* New left-center card */
+.s-card-4 {
+    top: 25%;
+    left: -50px; /* Nudged in */
+    transform: rotate(-4deg);
+    border-color: rgba(99, 102, 241, 0.2);
+}
+
+.s-card-4 .s-card-glow {
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.25), transparent 70%);
 }
 
 @media (max-width: 1200px) {
@@ -810,9 +862,9 @@ img {
 
 /* ─── SaaS Benefits Section ────────────────── */
 .saas-benefits-section {
-    padding: 120px 0;
+    padding: 80px 0;
+    /* Reduced top/bottom gap */
     background: #f8fafc;
-    /* Subtle light gray for separation */
     position: relative;
     overflow: hidden;
 }
@@ -842,8 +894,10 @@ img {
 
 .saas-benefits-section .section-header {
     text-align: center;
-    max-width: 800px;
-    margin: 0 auto 80px;
+    max-width: 1200px;
+    /* Increased to fill gaps */
+    margin: 0 auto 50px;
+    /* Reduced gap between elements */
     position: relative;
     z-index: 10;
 }
@@ -982,7 +1036,8 @@ img {
 .section-subtitle {
     font-size: 1.15rem;
     color: #64748b;
-    max-width: 800px;
+    max-width: 1100px;
+    /* Increased width */
     margin: 0 auto;
     line-height: 1.6;
     font-weight: 400;
@@ -992,8 +1047,8 @@ img {
 /* ─── SaaS Products Showcase (Arquitectural Edition) ─── */
 .saas-products-showcase {
     width: 100%;
-    padding: 60px 0;
-    /* Reduced from 120px */
+    padding: 60px 0 20px;
+    /* Reduced vertical gap */
     background: #ffffff;
     overflow: hidden;
     position: relative;
@@ -1001,15 +1056,18 @@ img {
 }
 
 .saas-products-showcase .section-header {
-    margin-bottom: 20px;
-    /* Even closer to cards */
+    margin-bottom: 30px;
+    /* Balanced gap */
     text-align: center;
-    padding: 0 40px;
+    padding: 0 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 15px;
-    /* Vertical space between title and desc */
+    max-width: 1400px;
+    /* Increased to fill gaps */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .showcase-grid {
@@ -1027,15 +1085,14 @@ img {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    /* Align content to bottom */
-    padding: 80px 40px;
+    padding: 100px 50px;
+    /* Increased padding for better scale */
     background: #ffffff;
     transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     cursor: pointer;
     overflow: hidden;
     text-decoration: none !important;
     text-align: center;
-    /* Center all text elements */
 }
 
 .showcase-item:last-child {
@@ -1221,8 +1278,7 @@ img {
 /* ─── SaaS Roadmap V3 (Horizontal Curved Glowing Path) ─── */
 .saas-roadmap-v3 {
     width: 100%;
-    padding: 160px 0 210px;
-    /* Reduced padding to remove dead space */
+    padding: 80px 0;
     background: #080a0e;
     color: #ffffff;
     overflow: hidden;
@@ -1230,11 +1286,8 @@ img {
 }
 
 .roadmap-v3-container {
-    max-width: 1750px;
+    max-width: 1700px;
     margin: 0 auto;
-    padding: 0 40px;
-    display: flex;
-    align-items: center;
     gap: 60px;
 }
 
@@ -1547,19 +1600,21 @@ img {
 
 .saas-v2-hero-wrapper {
     width: 100%;
-    padding: 20px 40px;
-    background: #f1f3f6;
-    margin-top: -20px;
+    padding: 0;
+    background: transparent;
+    margin-top: 116px;
 }
 
 .saas-v2-master-card {
-    max-width: 1440px;
-    margin: 0 auto;
+    width: 100%;
     background: #ffffff;
-    border-radius: 60px;
+    border-radius: 0;
     overflow: hidden;
     position: relative;
-    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.05);
+}
+
+.saas-v2-middle-stats {
+    margin-top: 18px !important;
 }
 
 .saas-v2-dark-block {
@@ -1569,12 +1624,7 @@ img {
     position: relative;
     z-index: 3;
     overflow: hidden;
-    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 1000' preserveAspectRatio='none'%3E%3Cpath d='M 0,0 H 1000 V 820 Q 1000,860 960,860 H 420 C 380,860 380,900 380,930 C 380,980 340,1000 300,1000 H 0 Z' fill='black' /%3E%3C/svg%3E");
-    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 1000' preserveAspectRatio='none'%3E%3Cpath d='M 0,0 H 1000 V 820 Q 1000,860 960,860 H 420 C 380,860 380,900 380,930 C 380,980 340,1000 300,1000 H 0 Z' fill='black' /%3E%3C/svg%3E");
-    -webkit-mask-size: 100% 100%;
-    mask-size: 100% 100%;
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
+    /* Removed SVG mask for straight box layout */
 }
 
 .saas-v2-hero-bg-image {
@@ -1606,33 +1656,46 @@ img {
 }
 
 .saas-v2-hero-main {
+    max-width: 1700px;
+    margin: 0 auto;
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    gap: 100px;
+    gap: 40px;
     align-items: center;
     position: relative;
+    flex-wrap: wrap;
+    /* Allow natural wrap for smaller screens */
     z-index: 10;
 }
 
 .saas-v2-hero-body {
     flex: 1;
-    max-width: 580px;
+    max-width: 1500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    transform: translateX(-50px);
+    /* Nudged left as requested */
 }
 
 .saas-v2-hero-title {
-    font-size: 5.5rem;
-    font-weight: bold;
-    line-height: 1.05;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 400;
+    line-height: 1.1;
     color: #ffffff;
     margin-bottom: 25px;
-    font-family: Arial, Helvetica, sans-serif !important;
-    letter-spacing: normal !important;
+    font-family: 'HEXCO', sans-serif !important;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    text-align: center;
 }
 
 .saas-v2-hero-title span {
     color: #ff4d4d;
-    /* Adjusting span color to match the theme or as per the screenshot */
-    font-family: Arial, Helvetica, sans-serif !important;
+    font-family: inherit !important;
 }
 
 .saas-v2-hero-subtitle {
@@ -1640,6 +1703,21 @@ img {
     color: rgba(255, 255, 255, 0.5);
     line-height: 1.7;
     margin-bottom: 40px;
+    max-width: 1400px;
+    /* Increased to fill the gap */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.saas-v2-hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-top: 20px;
+    /* Reduced gap as requested */
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .saas-v2-search-panel {
@@ -1650,7 +1728,6 @@ img {
     align-items: center;
     gap: 10px;
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
-    margin-bottom: 45px;
     width: fit-content;
 }
 
@@ -1706,13 +1783,18 @@ img {
 
 /* Dual Auto-Scrolling Columns */
 .saas-v2-dynamic-visual {
-    width: 520px;
-    height: 450px;
+    width: 650px;
+    height: 650px;
+    /* Increased height */
     display: flex;
+    margin-top: -65px;
     gap: 25px;
     position: relative;
     overflow: hidden;
-    mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+    /* Fading at the very edges (5% / 95%) */
+    mask-image: linear-gradient(to bottom, transparent, black 5%, black 95%, transparent);
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black 5%, black 95%, transparent);
+    pointer-events: none;
 }
 
 .saas-v2-scroll-col {
@@ -1724,12 +1806,14 @@ img {
 .saas-v2-scroll-track {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    animation: saasV2ScrollUp 20s linear infinite;
+    gap: 25px;
+    animation: saasV2ScrollUp 35s linear infinite;
+    will-change: transform;
 }
 
 .saas-v2-scroll-track.reverse {
-    animation: saasV2ScrollDown 20s linear infinite;
+    animation: saasV2ScrollDown 35s linear infinite;
+    will-change: transform;
 }
 
 @keyframes saasV2ScrollUp {
@@ -1828,11 +1912,11 @@ img {
 
 .saas-v2-white-footer {
     background: #ffffff;
-    padding: 15px 80px 25px;
-    /* Significantly reduced height */
+    padding: 40px 0 60px;
     position: relative;
     z-index: 5;
-    margin-top: -20px;
+    margin-top: -30px;
+    box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.02);
 }
 
 /* Shiny Contact Button */
@@ -1843,7 +1927,6 @@ img {
     padding: 14px 40px;
     border-radius: 30px;
     font-weight: 700;
-    margin-left: -170px;
     font-size: 1rem;
     cursor: pointer;
     position: relative;
@@ -1884,9 +1967,63 @@ img {
 }
 
 .saas-v2-footer-content {
+    max-width: 1700px;
+    width: 95%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
+    padding: 40px;
+    border-top: 1px solid #f1f5f9;
+}
+
+.saas-v2-white-footer {
+    width: 100%;
+    background: #ffffff;
+    padding: 60px 0;
+    /* Reduced top/bottom gap */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 20;
+}
+
+.saas-v2-footer-header {
+    text-align: center;
+    margin-bottom: 40px;
+    max-width: 1600px;
+    /* Increased for 1440px ratio */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.saas-v2-footer-title {
+    font-size: 3.5rem;
+    /* Slightly larger for wider layout */
+    color: #1e293b;
+    font-family: 'HEXCO', sans-serif;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.saas-v2-footer-title span {
+    color: #6366f1;
+}
+
+.saas-v2-footer-subtitle {
+    font-size: 1.15rem;
+    color: #64748b;
+    line-height: 1.7;
+    max-width: 1300px;
+    /* Increased width to accommodate more text */
+    margin-top: 10px;
+}
+
+.saas-v2-hero-white-space-content {
+    display: none;
+    /* Replaced by footer-header */
 }
 
 .saas-v2-bottom-badge {
@@ -1919,10 +2056,18 @@ img {
     background: #bef264;
     color: #365314;
     border: none;
-    padding: 8px 16px;
-    border-radius: 8px;
+    padding: 10px 20px;
+    border-radius: 12px;
     font-weight: 800;
     cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(190, 242, 100, 0.3);
+}
+
+.saas-v2-spot-btn:hover {
+    transform: translateY(-2px);
+    background: #a3e635;
+    box-shadow: 0 6px 15px rgba(190, 242, 100, 0.4);
 }
 
 .saas-v2-partner-logos {
@@ -1930,15 +2075,68 @@ img {
     gap: 15px;
 }
 
+.saas-v2-middle-stats {
+    max-width: 1750px;
+    /* Expanded for new content */
+    margin: 0 auto 50px;
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 120px;
+    padding: 80px 40px;
+    /* Increased vertical padding */
+    background: #f8fafc;
+    border-radius: 40px;
+    border: 1px solid #f1f5f9;
+}
+
+.saas-v2-m-stat {
+    text-align: center;
+    flex: 1;
+    max-width: 500px;
+    /* Increased for longer descriptions */
+}
+
+.saas-v2-m-stat strong {
+    display: block;
+    font-size: 1.3rem;
+    /* Slightly larger heading */
+    color: #1e293b;
+    margin-bottom: 12px;
+}
+
+.saas-v2-m-stat p {
+    font-size: 0.95rem;
+    /* Larger font for more content */
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.saas-v2-m-divider {
+    width: 1px;
+    height: 40px;
+    background: #e2e8f0;
+}
+
 .saas-v2-logo-box {
-    background: #f1f5f9;
-    padding: 15px 30px;
-    border-radius: 18px;
+    background: #f8fafc;
+    padding: 15px 25px;
+    border-radius: 20px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     font-weight: 700;
-    color: #64748b;
+    color: #475569;
+    border: 1px solid #f1f5f9;
+    transition: all 0.3s ease;
+}
+
+.saas-v2-logo-box:hover {
+    background: #ffffff;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    border-color: #e2e8f0;
 }
 
 @media (max-width: 1200px) {
@@ -1982,8 +2180,8 @@ img {
 }
 
 .saas-core-benefits-section {
-    padding: 100px 80px 30px;
-    /* Reduced bottom padding */
+    padding: 60px 0 30px;
+    /* Reduced top/bottom gap */
     background: #ffffff !important;
     color: #1e293b !important;
     font-family: "Inter", sans-serif;
@@ -1994,7 +2192,7 @@ img {
 }
 
 .saas-core-benefits-section .section-header {
-    margin-bottom: 60px;
+    margin: 0 auto 60px; /* Centered and consistent gap */
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -2002,8 +2200,8 @@ img {
     justify-content: space-between;
     gap: 30px;
     text-align: left;
-    max-width: 100%;
-    padding: 0 0px;
+    max-width: 1700px; /* Match the content container below */
+    padding: 0 60px; /* Match the content container padding */
     box-sizing: border-box;
 }
 
@@ -2011,7 +2209,7 @@ img {
     margin-bottom: 0;
     flex: none;
     color: #1e293b;
-    margin-left: 50px; /* Align with build smarter title */
+    /* Removed manual margin to allow container-based alignment */
 }
 
 .saas-core-benefits-section .saasb-section-sub-subtitle {
@@ -2022,7 +2220,7 @@ img {
     font-size: 1.02rem;
     line-height: 1.6;
     color: #64748b;
-    margin-right: 60px; /* Symmetry */
+    /* Removed manual margin to allow container-based alignment */
 }
 
 .saasb-hero .saas-container {
@@ -2033,12 +2231,18 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 1700px;
+    /* Increased to fill gaps */
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 60px;
 }
 
 /* LEFT SIDE */
 .saasb-hero-left {
-    max-width: 700px;
-    margin-left: 60px;
+    max-width: 800px;
+    /* Increased width */
+    margin-left: 0;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -2266,37 +2470,59 @@ img {
 
 /* NEW: WHITE SPACE CONTENT STYLES - Consolidated and Positioned Correctly */
 .saas-v2-live-status-pill {
-    position: absolute;
-    bottom: 35px;
-    left: 550px;
-    /* Final shift for the 'perfect' alignment */
-    background: #ffffff;
-    padding: 8px 18px;
-    border-radius: 50px;
+    background: #f8fafc;
+    padding: 10px 20px;
+    border-radius: 100px;
     display: flex;
     align-items: center;
     gap: 10px;
     font-size: 0.85rem;
-    color: #475569;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-    z-index: 10;
+    color: #1e293b;
+    border: 1px solid #e2e8f0;
+    margin-bottom: 25px;
+    width: fit-content;
+}
+
+.saas-v2-live-status-pill:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    border-color: #cbd5e1;
 }
 
 .saas-v2-productivity-card {
-    position: absolute;
-    bottom: 19px;
-    /* Moved 6px down as requested */
-    right: 100px;
-    /* Filling the right side of the white gap */
     background: #ffffff;
-    padding: 15px 22px;
-    border-radius: 20px;
+    padding: 20px 30px;
+    border-radius: 24px;
     display: flex;
     align-items: center;
-    gap: 15px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    gap: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.06);
     border: 1px solid #f1f5f9;
-    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.saas-v2-productivity-card.hero-top-right {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.2);
+    z-index: 110;
+}
+
+.saas-v2-productivity-card.hero-top-right .saas-v2-prod-val {
+    color: #ffffff;
+}
+
+.saas-v2-productivity-card.hero-top-right .saas-v2-prod-label {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.saas-v2-productivity-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.1);
 }
 
 .saas-v2-prod-icon {
@@ -2310,18 +2536,50 @@ img {
 }
 
 .saas-v2-prod-val {
-    font-weight: 900;
-    font-size: 1.3rem;
+    font-weight: 800;
+    font-size: 1.6rem;
     color: #1e293b;
-    line-height: 1.2;
+    line-height: 1;
+    font-family: 'HEXCO', sans-serif;
 }
 
 .saas-v2-prod-label {
-    font-size: 0.7rem;
-    color: #94a3b8;
+    font-size: 0.75rem;
+    color: #64748b;
     text-transform: uppercase;
-    font-weight: 800;
-    letter-spacing: 0.5px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-top: 4px;
+}
+
+.saas-v2-pulse-dot {
+    width: 10px;
+    height: 10px;
+    background: #10b981;
+    border-radius: 50%;
+    position: relative;
+}
+
+.saas-v2-pulse-dot::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    background: #10b981;
+    border-radius: 50%;
+    opacity: 0.4;
+    animation: saasPulse 2s infinite;
+}
+
+@keyframes saasPulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.4;
+    }
+
+    100% {
+        transform: scale(2.5);
+        opacity: 0;
+    }
 }
 
 /* LOWER (Row 3: 2 Cards) */
@@ -2394,14 +2652,22 @@ img {
     }
 
     .saas-v2-search-panel {
-        width: 100%;
-        max-width: 320px;
-        margin: 0 auto 50px !important;
-        /* Centered with bottom gap */
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
         display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        width: fit-content;
+        margin: 0 auto 30px !important;
+        justify-content: center;
+    }
+
+    .saas-v2-hero-actions {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
         justify-content: center;
     }
 
@@ -2639,7 +2905,7 @@ img {
 
     /* Hero Responsiveness */
     .saas-v2-master-card {
-        border-radius: 30px;
+        border-radius: 0;
         width: 100% !important;
         margin: 0 !important;
     }
@@ -2654,9 +2920,11 @@ img {
     }
 
     .saas-v2-hero-main {
-        flex-direction: column;
-        gap: 40px;
-        text-align: center;
+        flex-direction: row;
+        /* Preserve side-by-side as requested */
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
     }
 
     .saas-v2-hero-body {
@@ -2668,6 +2936,7 @@ img {
         position: relative !important;
         left: 0 !important;
         transform: none !important;
+        /* Reset shift for mobile */
         margin: 0 auto;
     }
 
@@ -2682,22 +2951,23 @@ img {
     }
 
     .saas-v2-search-panel {
-        width: 100%;
-        max-width: 320px;
-        max-width: 320px;
-        margin: 0 auto 30px !important;
-        flex-direction: column;
-        gap: 20px;
-        padding: 20px;
-        align-items: center;
         display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        width: fit-content;
+        margin: 0 auto 30px !important;
         justify-content: center;
-        text-align: center;
-        position: relative !important;
-        left: 0 !important;
-        right: 0 !important;
-        transform: none !important;
-        z-index: 50;
+    }
+
+    .saas-v2-hero-actions {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .saas-v2-search-group {
@@ -2901,43 +3171,62 @@ img {
         font-size: 1rem;
     }
 
-    .stats-visual-container {
+    .saas-v3-portal-wrap {
+        width: 450px;
+        height: 450px;
+        margin: 0 auto;
+    }
+
+    .ring-outer {
+        width: 420px;
         height: 420px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
     }
 
-    .stats-circular-path-wrap {
-        position: absolute;
-        width: 580px;
-        height: 580px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+    .ring-middle {
+        width: 320px;
+        height: 320px;
     }
 
-    .orbit-item.icon-1 {
-        transform: rotate(0deg) translate(265px) rotate(0deg);
+    .ring-inner {
+        width: 220px;
+        height: 220px;
     }
 
-    .orbit-item.icon-2 {
-        transform: rotate(60deg) translate(265px) rotate(-60deg);
+    .portal-stat-card {
+        width: 160px;
+        padding: 12px;
     }
 
-    .orbit-item.icon-3 {
-        transform: rotate(120deg) translate(265px) rotate(-120deg);
+    .s-val {
+        font-size: 1.8rem;
     }
 
-    .orbit-item.icon-4 {
-        transform: rotate(180deg) translate(265px) rotate(-180deg);
+    .s-label {
+        font-size: 0.7rem;
     }
 
-    .orbit-icon-inner {
-        width: 50px;
-        height: 50px;
-        font-size: 1.1rem;
+    .s-card-1 {
+        top: 0;
+        right: 0;
+    }
+
+    .s-card-2 {
+        bottom: 15%;
+        right: -20px;
+    }
+
+    .s-card-3 {
+        bottom: 0;
+        left: -20px;
+    }
+
+    .portal-core {
+        width: 80px;
+        height: 80px;
+    }
+
+    .core-inner {
+        font-size: 1.8rem;
     }
 
     .saas-v2-white-footer {
@@ -3055,20 +3344,25 @@ img {
     }
 
     .saas-v2-search-panel {
-        max-width: 100% !important;
-        padding: 20px 10px;
-        margin: 0 auto 30px;
+        display: flex;
+
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
         width: 100%;
+        padding: 10px;
+        margin-bottom: 30px;
+        justify-content: center;
     }
 
-    .saas-v2-search-btn {
-        width: 100%;
-        padding: 14px;
-        font-size: 0.9rem;
-        margin: 0 auto;
+    .saas-v2-hero-actions {
         display: flex;
-        justify-content: center;
+        flex-direction: row;
         align-items: center;
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .saas-v2-glass-strip-card {
@@ -3084,45 +3378,64 @@ img {
         font-size: 1.8rem;
     }
 
-    .stats-visual-container {
-        height: 480px;
-        /* Increased vertical clearance for rotation */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: visible !important;
+    .saas-v3-portal-wrap {
+        width: 320px;
+        height: 400px;
+        margin: 0 auto;
     }
 
-    .stats-circular-path-wrap {
-        width: 360px;
-        height: 360px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        overflow: visible !important;
+    .ring-outer {
+        width: 300px;
+        height: 300px;
     }
 
-    .stats-main-arc {
-        width: 100%;
-        height: 100%;
+    .ring-middle {
+        width: 220px;
+        height: 220px;
     }
 
-    /* Proportional Radar for Mobile Smartphones */
-    .orbit-item.icon-1 {
-        transform: rotate(0deg) translate(155px) rotate(0deg);
+    .ring-inner {
+        width: 150px;
+        height: 150px;
     }
 
-    .orbit-item.icon-2 {
-        transform: rotate(60deg) translate(155px) rotate(-60deg);
+    .portal-stat-card {
+        width: 130px;
+        padding: 10px;
+        border-radius: 16px;
     }
 
-    .orbit-item.icon-3 {
-        transform: rotate(120deg) translate(155px) rotate(-120deg);
+    .s-val {
+        font-size: 1.4rem;
     }
 
-    .orbit-item.icon-4 {
-        transform: rotate(180deg) translate(145px) rotate(-180deg);
+    .s-label {
+        font-size: 0.6rem;
+    }
+
+    .s-card-1 {
+        top: -20px;
+        right: 50%;
+        transform: translateX(50%) !important;
+    }
+
+    .s-card-2 {
+        bottom: 10px;
+        right: 0;
+    }
+
+    .s-card-3 {
+        bottom: 10px;
+        left: 0;
+    }
+
+    .portal-core {
+        width: 60px;
+        height: 60px;
+    }
+
+    .core-inner {
+        font-size: 1.4rem;
     }
 
     /* Slower offset for rocket */
@@ -3130,73 +3443,58 @@ img {
 
 /* ULTRA MOBILE (320px) */
 @media (max-width: 320px) {
-    .stats-visual-container {
-        height: 380px;
+    .saas-v3-portal-wrap {
+        width: 280px;
+        height: 350px;
     }
 
-    .stats-circular-path-wrap {
-        width: 280px;
-        height: 280px;
+    .portal-stat-card {
+        width: 110px;
+        padding: 8px;
+    }
+
+    .s-val {
+        font-size: 1.2rem;
+    }
+
+    .portal-core {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* ULTRA MOBILE (320px) RE-ORDER */
+@media (max-width: 320px) {
+    .stats-modern-left {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        text-align: left !important;
     }
 
     .stats-main-title {
-        font-size: 1.5rem !important;
-        /* Smaller text for SE screens */
+        order: 1 !important;
+        font-size: 1.7rem !important;
+        margin-bottom: 8px !important;
     }
 
-    .stats-modern-value h3 {
-        font-size: 1.8rem !important;
+    .stats-modern-left .tiny-badge-new {
+        order: 2 !important;
+        margin: 0 !important;
+        align-self: flex-start !important;
     }
 
-    .orbit-item.icon-1 {
-        transform: rotate(0deg) translate(115px) rotate(0deg);
+    .saas-container {
+        padding: 0 !important;
     }
 
-    .orbit-item.icon-2 {
-        transform: rotate(60deg) translate(115px) rotate(-60deg);
+    .saas-v2-master-card {
+        border-radius: 0 !important;
+        width: 100% !important;
+        margin: 0 !important;
     }
 
-    .orbit-item.icon-3 {
-        transform: rotate(120deg) translate(115px) rotate(-120deg);
-    }
-
-    .orbit-item.icon-4 {
-        transform: rotate(180deg) translate(110px) rotate(-180deg);
-    }
-
-    /* ULTRA MOBILE (320px) RE-ORDER */
-    @media (max-width: 320px) {
-        .stats-modern-left {
-            display: flex !important;
-            flex-direction: column !important;
-            align-items: flex-start !important;
-            text-align: left !important;
-        }
-
-        .stats-main-title {
-            order: 1 !important;
-            font-size: 1.7rem !important;
-            margin-bottom: 8px !important;
-        }
-
-        .stats-modern-left .tiny-badge-new {
-            order: 2 !important;
-            margin: 0 !important;
-            align-self: flex-start !important;
-        }
-
-        .saas-container {
-            padding: 0 !important;
-        }
-
-        .saas-v2-master-card {
-            border-radius: 0 !important;
-            width: 100% !important;
-            margin: 0 !important;
-        }
-
-        /* Rest of 320 styles continue... */
-    }
+    /* Rest of 320 styles continue... */
 
     .saas-v2-dark-block {
         padding: 50px 5px 30px !important;

@@ -2947,7 +2947,7 @@
 }
 
 .ui-page-testimonial-label {
-    font-size: 14px;
+    font-size: 24px;
     font-weight: 600;
     color: #e05a5a;
     letter-spacing: 0.5px;
@@ -4521,5 +4521,149 @@ img {
 
     .ui-page-landscape-img {
         height: 120px !important;
+    }
+}
+
+@media (min-width: 1440px) {
+
+    /* Container width */
+    .ui-page-agency-container {
+        max-width: 1600px;
+    }
+
+    /* GRID spacing (IMPORTANT — correct element) */
+    .ui-page-agency-grid {
+        gap: 120px;
+        align-items: center;
+    }
+
+    /* Title */
+    .ui-page-agency-main-title {
+        font-size: 58px;
+        line-height: 1.2;
+    }
+
+    /* Left image */
+    .ui-page-portrait-img {
+        height: 580px;
+        object-fit: cover;
+    }
+
+    /* Bottom image */
+    .ui-page-landscape-img {
+        height: 260px;
+        object-fit: cover;
+    }
+
+    /* Experience badge */
+    .ui-page-exp-badge {
+        padding: 40px 55px;
+        left: -40px;
+    }
+
+    .ui-page-exp-number {
+        font-size: 60px;
+    }
+
+    .ui-page-exp-text {
+        font-size: 18px;
+        line-height: 1.4;
+    }
+
+    /* Description text */
+    .ui-page-info-desc {
+        font-size: 18px;
+        line-height: 1.7;
+    }
+
+    /* Feature list */
+    .ui-page-features-list li {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    /* Right side spacing */
+    .ui-page-agency-info-row {
+        gap: 60px;
+    }
+
+    .ui-page-el-container {
+        max-width: 1600px;
+        gap: 120px;
+    }
+
+    .ui-page-el-left {
+        height: 680px;
+    }
+
+    .ui-page-el-img-large {
+        width: 360px;
+        height: 580px;
+    }
+
+    .ui-page-el-img-small-top {
+        width: 320px;
+        height: 240px;
+        left: 40px;
+    }
+
+    .ui-page-el-img-small-bottom {
+        width: 330px;
+        height: 250px;
+        left: 60px;
+    }
+
+    .ui-page-el-title {
+        font-size: 54px;
+    }
+
+    .ui-page-el-desc {
+        font-size: 17px;
+    }
+
+    .ui-page-el-preheading {
+        font-size: 42px;
+    }
+
+    .ui-page-el-stat-num {
+        font-size: 28px;
+    }
+
+    .ui-page-el-badge-volunteer {
+        right: 40px;
+    }
+
+    .ui-page-prod-container {
+        max-width: 1600px;
+        gap: 120px;
+    }
+
+    .ui-page-prod-title {
+        font-size: 50px;
+    }
+
+    .ui-page-prod-desc {
+        font-size: 19px;
+        max-width: 600px;
+    }
+
+    .ui-page-timeline-icon {
+        width: 80px;
+        height: 80px;
+        padding: 20px;
+    }
+
+    .ui-page-timeline-content h3 {
+        font-size: 24px;
+    }
+
+    .ui-page-timeline-content p {
+        font-size: 16px;
+    }
+
+    .ui-page-btn-prod-primary,
+    .ui-page-btn-prod-secondary {
+        padding: 18px 36px;
+        font-size: 16px;
     }
 }

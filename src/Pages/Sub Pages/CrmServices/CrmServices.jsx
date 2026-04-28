@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
-import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
+import React, { useState } from 'react';
+import Navbar from '../../../Components/Navbar/Navbar';
+import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import './CrmServices.css';
 import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
@@ -16,12 +17,8 @@ import cartoonFemale3 from '../../../assets/cartoon_female_3.png';
 import femaleAvatar from '../../../assets/female_avatar.png';
 
 const CrmServices = () => {
-    const [isExpanded, setIsExpanded] = useState(false);
-    const [currentSlide, setCurrentSlide] = useState(0);
-    const [autoSlide, setAutoSlide] = useState(true);
-    const [visibleImages, setVisibleImages] = useState([]);
     const [selectedService, setSelectedService] = useState(0);
-    const feedbackTrackRef = useRef(null);
+
 
     // WhatsApp navigation function
     const navigateToWhatsApp = () => {
@@ -184,86 +181,16 @@ const CrmServices = () => {
         }
     ];
 
-    const extraImages = [
-        {
-            id: 1,
-            url: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80',
-            title: 'CRM Strategy Workshop',
-            description: 'Collaborative sessions to map customer journeys and define CRM architecture'
-        },
-        {
-            id: 2,
-            url: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&q=80',
-            title: 'Data Pipeline Setup',
-            description: 'Building robust data flows between CRM and business systems'
-        },
-        {
-            id: 3,
-            url: 'https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?w=800&q=80',
-            title: 'Team Onboarding',
-            description: 'Training your teams to get the most out of your new CRM platform'
-        }
-    ];
 
-    useEffect(() => {
-        if (feedbackTrackRef.current) {
-            feedbackTrackRef.current.style.transform = `translateX(-${currentSlide * 100}%)`;
-        }
-    }, [currentSlide]);
 
-    useEffect(() => {
-        let interval;
-        if (autoSlide) {
-            interval = setInterval(() => {
-                setCurrentSlide((prev) => (prev + 1) % feedbacks.length);
-            }, 5000);
-        }
-        return () => clearInterval(interval);
-    }, [autoSlide, feedbacks.length]);
 
-    useEffect(() => {
-        if (isExpanded) {
-            const timeouts = [];
-            extraImages.forEach((img, index) => {
-                const timeout = setTimeout(() => {
-                    setVisibleImages(prev => [...prev, img.id]);
-                }, index * 300);
-                timeouts.push(timeout);
-            });
-            return () => {
-                timeouts.forEach(timeout => clearTimeout(timeout));
-                setVisibleImages([]);
-            };
-        } else {
-            setVisibleImages([]);
-        }
-    }, [isExpanded]);
 
-    const handleDotClick = (index) => {
-        setCurrentSlide(index);
-        setAutoSlide(false);
-        setTimeout(() => setAutoSlide(true), 10000);
-    };
 
-    const handlePrevSlide = () => {
-        setCurrentSlide((prev) => (prev === 0 ? feedbacks.length - 1 : prev - 1));
-        setAutoSlide(false);
-        setTimeout(() => setAutoSlide(true), 10000);
-    };
-
-    const handleNextSlide = () => {
-        setCurrentSlide((prev) => (prev + 1) % feedbacks.length);
-        setAutoSlide(false);
-        setTimeout(() => setAutoSlide(true), 10000);
-    };
-
-    const handleReadMore = () => {
-        setIsExpanded(!isExpanded);
-    };
 
     return (
         <div className="crm-page-page">
-            <TwoLineNavbar />
+            <TopNavBar />
+            <Navbar />
 
             {/* ── HERO SECTION ── */}
             <section className="crm-page-hero-section-new">
@@ -436,7 +363,7 @@ const CrmServices = () => {
                             {brandServices.map((service, i) => (
                                 <div
                                     key={service.id}
-                                    className={`bi-about-service-item-new ${selectedService === i ? 'bi-service-active' : ''}`}
+                                    className={`bi-about-service-item-new ${selectedService === i ? 'crm-page-service-active' : ''}`}
                                     onClick={() => setSelectedService(i)}
                                 >
                                     <div className="crm-page-service-item-left-about">
@@ -485,18 +412,18 @@ const CrmServices = () => {
                                 </ul>
                             )}
                             <div className="crm-page-detail-divider" />
-                            <div className="bi-detail-stats">
-                                <div className="bi-detail-stat">
-                                    <span className="bi-detail-stat-val">{brandServices[selectedService].stats?.val1 || '100+'}</span>
-                                    <span className="bi-detail-stat-label">{brandServices[selectedService].stats?.lab1 || 'Projects'}</span>
+                            <div className="crm-page-detail-stats">
+                                <div className="crm-page-detail-stat">
+                                    <span className="crm-page-detail-stat-val">{brandServices[selectedService].stats?.val1 || '100+'}</span>
+                                    <span className="crm-page-detail-stat-label">{brandServices[selectedService].stats?.lab1 || 'Projects'}</span>
                                 </div>
-                                <div className="bi-detail-stat">
-                                    <span className="bi-detail-stat-val">{brandServices[selectedService].stats?.val2 || '3 Weeks'}</span>
-                                    <span className="bi-detail-stat-label">{brandServices[selectedService].stats?.lab2 || 'Timeline'}</span>
+                                <div className="crm-page-detail-stat">
+                                    <span className="crm-page-detail-stat-val">{brandServices[selectedService].stats?.val2 || '3 Weeks'}</span>
+                                    <span className="crm-page-detail-stat-label">{brandServices[selectedService].stats?.lab2 || 'Timeline'}</span>
                                 </div>
-                                <div className="bi-detail-stat">
-                                    <span className="bi-detail-stat-val">{brandServices[selectedService].stats?.val3 || '4.9★'}</span>
-                                    <span className="bi-detail-stat-label">{brandServices[selectedService].stats?.lab3 || 'Rating'}</span>
+                                <div className="crm-page-detail-stat">
+                                    <span className="crm-page-detail-stat-val">{brandServices[selectedService].stats?.val3 || '4.9★'}</span>
+                                    <span className="crm-page-detail-stat-label">{brandServices[selectedService].stats?.lab3 || 'Rating'}</span>
                                 </div>
                             </div>
                             <button onClick={navigateToWhatsApp} className="crm-page-detail-cta">Get Started →</button>
@@ -654,7 +581,7 @@ const CrmServices = () => {
 
             {/* ── MISSION & SERVICES GRID ── */}
             <section className="crm-page-mission-section">
-                <div className="crm-page-mission-container">
+                <div className="crm-page-container">
                     <div className="crm-page-mission-header">
                         <h2 className="crm-page-mission-title">
                             Our Mission Is To Make Your<br />
@@ -664,141 +591,141 @@ const CrmServices = () => {
 
                     <div className="crm-page-services-grid">
                         {/* Card 1 */}
-                        <div className="crm-page-service-card bi-card-variant-1">
-                            <div className="crm-page-card-header">
+                        <div className="crm-page-page-service-card crm-page-card-variant-1">
+                            <div className="crm-page-page-card-header">
                                 <div className="crm-page-card-title-group">
-                                    <h3 className="crm-page-service-card-title">CRM<br />Implementation</h3>
-                                    <p className="crm-page-service-card-subtitle">Full setup & go-live</p>
+                                    <h3 className="crm-page-page-service-card-title">CRM<br />Implementation</h3>
+                                    <p className="crm-page-page-service-card-subtitle">Full setup & go-live</p>
                                 </div>
-                                <div className="crm-page-card-badge">
-                                    <div className="crm-page-badge-icon-bg">
+                                <div className="crm-page-page-card-badge">
+                                    <div className="crm-page-page-badge-icon-bg">
                                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
                                     </div>
-                                    <span className="crm-page-badge-rating">4.9</span>
+                                    <span className="crm-page-page-badge-rating">4.9</span>
                                 </div>
                             </div>
-                            <p className="crm-page-service-card-desc">End-to-end CRM deployment — from discovery and configuration to data migration, user training, and launch.</p>
-                            <div className="crm-page-service-icon-wrap">
+                            <p className="crm-page-page-service-card-desc">End-to-end CRM deployment — from discovery and configuration to data migration, user training, and launch.</p>
+                            <div className="crm-page-page-service-icon-wrap">
                                 <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" /><line x1="8" y1="21" x2="16" y2="21" /><line x1="12" y1="17" x2="12" y2="21" /></svg>
                             </div>
                         </div>
 
                         {/* Card 2 */}
-                        <div className="crm-page-service-card bi-card-variant-2">
-                            <div className="crm-page-card-header">
+                        <div className="crm-page-page-service-card crm-page-card-variant-2">
+                            <div className="crm-page-page-card-header">
                                 <div className="crm-page-card-title-group">
-                                    <h3 className="crm-page-service-card-title">Sales<br />Pipeline</h3>
-                                    <p className="crm-page-service-card-subtitle">Deal tracking & forecasting</p>
+                                    <h3 className="crm-page-page-service-card-title">Sales<br />Pipeline</h3>
+                                    <p className="crm-page-page-service-card-subtitle">Deal tracking & forecasting</p>
                                 </div>
-                                <div className="crm-page-card-badge">
-                                    <div className="crm-page-badge-icon-bg">
+                                <div className="crm-page-page-card-badge">
+                                    <div className="crm-page-page-badge-icon-bg">
                                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
                                     </div>
-                                    <span className="crm-page-badge-rating">4.8</span>
+                                    <span className="crm-page-page-badge-rating">4.8</span>
                                 </div>
                             </div>
-                            <p className="crm-page-service-card-desc">Visual pipelines with drag-and-drop stages, deal scoring, revenue forecasting, and activity tracking.</p>
-                            <div className="crm-page-service-icon-wrap">
+                            <p className="crm-page-page-service-card-desc">Visual pipelines with drag-and-drop stages, deal scoring, revenue forecasting, and activity tracking.</p>
+                            <div className="crm-page-page-service-icon-wrap">
                                 <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" /></svg>
                             </div>
                         </div>
 
                         {/* Card 3 */}
-                        <div className="crm-page-service-card bi-card-variant-7">
-                            <div className="crm-page-card-header">
+                        <div className="crm-page-page-service-card crm-page-card-variant-7">
+                            <div className="crm-page-page-card-header">
                                 <div className="crm-page-card-title-group">
-                                    <h3 className="crm-page-service-card-title">Lead<br />Management</h3>
-                                    <p className="crm-page-service-card-subtitle">Capture, score & convert</p>
+                                    <h3 className="crm-page-page-service-card-title">Lead<br />Management</h3>
+                                    <p className="crm-page-page-service-card-subtitle">Capture, score & convert</p>
                                 </div>
-                                <div className="crm-page-card-badge">
-                                    <div className="crm-page-badge-icon-bg">
+                                <div className="crm-page-page-card-badge">
+                                    <div className="crm-page-page-badge-icon-bg">
                                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
                                     </div>
-                                    <span className="crm-page-badge-rating">4.8</span>
+                                    <span className="crm-page-page-badge-rating">4.8</span>
                                 </div>
                             </div>
-                            <p className="crm-page-service-card-desc">Multi-source lead capture, intelligent scoring, automated nurturing sequences, and no-leak follow-up systems.</p>
-                            <div className="crm-page-service-icon-wrap">
+                            <p className="crm-page-page-service-card-desc">Multi-source lead capture, intelligent scoring, automated nurturing sequences, and no-leak follow-up systems.</p>
+                            <div className="crm-page-page-service-icon-wrap">
                                 <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
                             </div>
                         </div>
 
                         {/* Card 4 */}
-                        <div className="crm-page-service-card bi-card-variant-3">
-                            <div className="crm-page-card-header">
+                        <div className="crm-page-page-service-card crm-page-card-variant-3">
+                            <div className="crm-page-page-card-header">
                                 <div className="crm-page-card-title-group">
-                                    <h3 className="crm-page-service-card-title">Sales<br />Automation</h3>
-                                    <p className="crm-page-service-card-subtitle">Workflows on autopilot</p>
+                                    <h3 className="crm-page-page-service-card-title">Sales<br />Automation</h3>
+                                    <p className="crm-page-page-service-card-subtitle">Workflows on autopilot</p>
                                 </div>
-                                <div className="crm-page-card-badge">
-                                    <div className="crm-page-badge-icon-bg">
+                                <div className="crm-page-page-card-badge">
+                                    <div className="crm-page-page-badge-icon-bg">
                                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
                                     </div>
-                                    <span className="crm-page-badge-rating">5.0</span>
+                                    <span className="crm-page-page-badge-rating">5.0</span>
                                 </div>
                             </div>
-                            <p className="crm-page-service-card-desc">Automated follow-ups, task assignments, email sequences, deal stage triggers, and intelligent reminders.</p>
-                            <div className="crm-page-service-icon-wrap">
+                            <p className="crm-page-page-service-card-desc">Automated follow-ups, task assignments, email sequences, deal stage triggers, and intelligent reminders.</p>
+                            <div className="crm-page-page-service-icon-wrap">
                                 <svg width="110" height="110" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="3" /><path d="M19.07 4.93l-1.41 1.41M5.34 18.66l-1.41 1.41M2 12h2M20 12h2M19.07 19.07l-1.41-1.41M5.34 5.34L3.93 3.93M12 2v2M12 20v2" /></svg>
                             </div>
                         </div>
 
                         {/* Card 5 */}
-                        <div className="crm-page-service-card bi-card-variant-4">
-                            <div className="crm-page-card-header">
+                        <div className="crm-page-page-service-card crm-page-card-variant-4">
+                            <div className="crm-page-page-card-header">
                                 <div className="crm-page-card-title-group">
-                                    <h3 className="crm-page-service-card-title">CRM<br />Integration</h3>
-                                    <p className="crm-page-service-card-subtitle">Connect your entire stack</p>
+                                    <h3 className="crm-page-page-service-card-title">CRM<br />Integration</h3>
+                                    <p className="crm-page-page-service-card-subtitle">Connect your entire stack</p>
                                 </div>
-                                <div className="crm-page-card-badge">
-                                    <div className="crm-page-badge-icon-bg">
+                                <div className="crm-page-page-card-badge">
+                                    <div className="crm-page-page-badge-icon-bg">
                                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
                                     </div>
-                                    <span className="crm-page-badge-rating">4.7</span>
+                                    <span className="crm-page-page-badge-rating">4.7</span>
                                 </div>
                             </div>
-                            <p className="crm-page-service-card-desc">Seamless two-way sync between your CRM and email, marketing, ecommerce, telephony, and ERP platforms.</p>
-                            <div className="crm-page-service-icon-wrap">
+                            <p className="crm-page-page-service-card-desc">Seamless two-way sync between your CRM and email, marketing, ecommerce, telephony, and ERP platforms.</p>
+                            <div className="crm-page-page-service-icon-wrap">
                                 <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
                             </div>
                         </div>
 
                         {/* Card 6 */}
-                        <div className="crm-page-service-card bi-card-variant-5">
-                            <div className="crm-page-card-header">
+                        <div className="crm-page-page-service-card crm-page-card-variant-5">
+                            <div className="crm-page-page-card-header">
                                 <div className="crm-page-card-title-group">
-                                    <h3 className="crm-page-service-card-title">CRM<br />Analytics</h3>
-                                    <p className="crm-page-service-card-subtitle">Data-driven decisions</p>
+                                    <h3 className="crm-page-page-service-card-title">CRM<br />Analytics</h3>
+                                    <p className="crm-page-page-service-card-subtitle">Data-driven decisions</p>
                                 </div>
-                                <div className="crm-page-card-badge">
-                                    <div className="crm-page-badge-icon-bg">
+                                <div className="crm-page-page-card-badge">
+                                    <div className="crm-page-page-badge-icon-bg">
                                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
                                     </div>
-                                    <span className="crm-page-badge-rating">4.9</span>
+                                    <span className="crm-page-page-badge-rating">4.9</span>
                                 </div>
                             </div>
-                            <p className="crm-page-service-card-desc">Real-time dashboards, revenue forecasting, team performance reports, and customer health score tracking.</p>
-                            <div className="crm-page-service-icon-wrap">
+                            <p className="crm-page-page-service-card-desc">Real-time dashboards, revenue forecasting, team performance reports, and customer health score tracking.</p>
+                            <div className="crm-page-page-service-icon-wrap">
                                 <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="20" x2="18" y2="10" /><line x1="12" y1="20" x2="12" y2="4" /><line x1="6" y1="20" x2="6" y2="14" /></svg>
                             </div>
                         </div>
 
                         {/* Card 7 */}
-                        <div className="crm-page-service-card bi-card-variant-6">
-                            <div className="crm-page-card-header">
+                        <div className="crm-page-page-service-card crm-page-card-variant-6">
+                            <div className="crm-page-page-card-header">
                                 <div className="crm-page-card-title-group">
-                                    <h3 className="crm-page-service-card-title">Customer<br />Retention</h3>
-                                    <p className="crm-page-service-card-subtitle">Reduce churn, grow loyalty</p>
+                                    <h3 className="crm-page-page-service-card-title">Customer<br />Retention</h3>
+                                    <p className="crm-page-page-service-card-subtitle">Reduce churn, grow loyalty</p>
                                 </div>
-                                <div className="crm-page-card-badge">
-                                    <div className="crm-page-badge-icon-bg">
+                                <div className="crm-page-page-card-badge">
+                                    <div className="crm-page-page-badge-icon-bg">
                                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
                                     </div>
-                                    <span className="crm-page-badge-rating">4.6</span>
+                                    <span className="crm-page-page-badge-rating">4.6</span>
                                 </div>
                             </div>
-                            <p className="crm-page-service-card-desc">Automated renewal reminders, churn prediction alerts, satisfaction surveys, and loyalty program integrations.</p>
-                            <div className="crm-page-service-icon-wrap">
+                            <p className="crm-page-page-service-card-desc">Automated renewal reminders, churn prediction alerts, satisfaction surveys, and loyalty program integrations.</p>
+                            <div className="crm-page-page-service-icon-wrap">
                                 <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" /></svg>
                             </div>
                         </div>
@@ -840,7 +767,7 @@ const CrmServices = () => {
                                         We are a dedicated team of CRM architects, developers, and sales process consultants who specialize in building customer relationship systems that drive measurable growth. Our mission is simple: make your customer data your biggest competitive advantage.
                                     </p>
                                 </div>
-                                <div className="crm-page-info-features">
+                                <div className="crm-page-info-col">
                                     <p className="crm-page-info-subtitle">WHY CHOOSE US</p>
                                     <ul className="crm-page-features-list">
                                         <li><span className="crm-page-check-icon">✓</span> Guaranteed Measurable Results</li>

@@ -173,17 +173,9 @@ const CoreServices = () => {
 
         {/* Carousel */}
         <div className="carousel-full-wrapper">
-          <div className="carousel-controls-top">
-            <button className="carousel-btn" onClick={prevSlide}>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <polyline points="15 18 9 12 15 6"></polyline>
-              </svg>
-            </button>
-            <button className="carousel-btn" onClick={nextSlide}>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <polyline points="9 18 15 12 9 6"></polyline>
-              </svg>
-            </button>
+          <div className="compact-carousel-controls">
+            <button className="carousel-btn prev-btn" onClick={prevSlide}>‹</button>
+            <button className="carousel-btn next-btn" onClick={nextSlide}>›</button>
           </div>
 
           <div className="carousel-full-container">

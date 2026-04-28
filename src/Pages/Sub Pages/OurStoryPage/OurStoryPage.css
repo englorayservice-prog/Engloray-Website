@@ -1,5 +1,6 @@
 /* Our Story Page - Complete Design with OSP Prefix - Red Dominant Theme */
 @import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap');
 
 /* HEXCO Font */
 @font-face {
@@ -34,7 +35,7 @@
   position: relative;
   min-height: 100vh;
   background: radial-gradient(circle at center, #0d0e28 0%, #02030f 100%);
-  padding-top: 80px;
+  padding-top: 160px;
   overflow: hidden;
 }
 
@@ -478,9 +479,9 @@
 }
 
 .osp-hero-main-title {
-  font-family: 'HEXCO', sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-size: 4.8rem;
-  font-weight: 100 !important;
+  font-weight: 900 !important;
   line-height: 1;
   color: #ffffff;
   margin-bottom: 25px;
@@ -971,8 +972,8 @@
 }
 
 .osp-values-section {
-  padding-top: 40px !important;
-  padding-bottom: 20px !important;
+  padding-top: 60px !important;
+  padding-bottom: 10px !important;
 }
 
 .osp-section-header {
@@ -2762,7 +2763,9 @@
   align-items: center;
   margin-bottom: 50px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding-bottom: 25px;
+  padding: 0 40px 25px; /* Added side padding */
+  max-width: 1300px; /* Aligns with hero */
+  margin: 0 auto;
 }
 
 .osp-values-pill {
@@ -2832,7 +2835,7 @@
 
 .osp-values-embla {
   overflow: hidden;
-  padding: 20px 0;
+  padding: 60px 0 20px 0;
 }
 
 .osp-values-embla-container {
@@ -2848,7 +2851,7 @@
 }
 
 .osp-value-card {
-  height: 320px;
+  height: 450px;
   padding: 2px;
   border-radius: 20px;
   background: linear-gradient(135deg, var(--card-color), rgba(255, 255, 255, 0.05));
@@ -2982,20 +2985,20 @@
 }
 
 .osp-cta-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 60px;
+  display: flex;
+  justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .osp-cta-content-modern {
   position: relative;
   z-index: 10;
-  max-width: 1200px;
+  max-width: 800px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
+  align-items: center;
+  text-align: center;
 }
 
 .osp-cta-tag {
@@ -3038,6 +3041,8 @@
 
 .osp-cta-badges {
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 25px;
   margin-bottom: 60px;
 }
@@ -3088,6 +3093,7 @@
 
 .osp-cta-actions-modern {
   display: flex;
+  justify-content: center;
   gap: 20px;
 }
 
@@ -4025,5 +4031,31 @@
 
   .osp-title-sub {
     font-size: 0.9rem;
+  }
+}
+
+/* Widescreen Ratio */
+@media (min-width: 1440px) {
+  .osp-page {
+    zoom: 1.22;
+  }
+}
+
+/* Full Width Core Values Carousel */
+.osp-values-section .osp-container {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.osp-values-embla {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .osp-values-header-row {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }

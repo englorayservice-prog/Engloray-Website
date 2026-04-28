@@ -110,7 +110,7 @@
   font-family: 'Inter';
   font-weight: 500;
   white-space: normal;
-  max-width: 900px;
+  max-width: 1300px;
   line-height: 1.6;
 }
 
@@ -1639,5 +1639,28 @@
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+@media (min-width: 1440px) {
+  .techGroup-stripe-arrows {
+    margin-right: 70px;
+  }
+
+  .techGroup-testimonials-only-container {
+    zoom: 1;
+    max-width: 100% !important;
+    padding: 0 3% !important;
+  }
+
+  .techGroup-title-nav-row,
+  .techGroup-testimonials-subtitle,
+  .techGroup-stripe-carousel-wrapper {
+    max-width: 100% !important;
+  }
+
+  .techGroup-active-card {
+    flex: 1 1 auto !important;
+    /* Forces the active card to stretch and fill all remaining right-side space */
   }
 }

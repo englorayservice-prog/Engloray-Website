@@ -2,20 +2,23 @@ import React, { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { submitEnrollment } from "../../Sub Pages/HandleSubmit/HandleSubmit";
 import NavigationBar from '../../TechLearningSection/NavigationBar/NavigationBar';
-import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import SubFooterTwo from '../subFooterTwo/NewFooter';
+import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import {
   faArrowRight,
   faBook,
   faBriefcase,
   faBullseye,
+  faFileLines,
   faCertificate,
   faCheck,
   faCheckCircle,
   faChevronDown,
   faChevronUp,
   faClock,
+  faChartLine,
+  faPenNib,
   faComments,
   faEnvelope,
   faFlask,
@@ -233,7 +236,7 @@ const UiuxDesignCourse = () => {
     },
     {
       title: "Portfolio",
-      icon: <FontAwesomeIcon icon={faRocket} />,
+      icon: <FontAwesomeIcon icon={faFileLines} />,
       points: ["Case Studies", "Storytelling", "Handoff Ready"],
       bgColor: "rgba(61, 82, 217, 0.12)",
       iconColor: "#3D52D9"
@@ -331,7 +334,7 @@ const UiuxDesignCourse = () => {
       },
       {
         name: "Jasper AI",
-        icon: <FontAwesomeIcon icon={faRocket} />,
+        icon: <FontAwesomeIcon icon={faPenNib} />,
         desc: "Executive AI copy for product messaging.",
         bg: "linear-gradient(135deg, #fccb90 0%, #d57eeb 100%)"
       }
@@ -345,7 +348,7 @@ const UiuxDesignCourse = () => {
       },
       {
         name: "Colors AI",
-        icon: <FontAwesomeIcon icon={faRocket} />,
+        icon: <FontAwesomeIcon icon={faPenNib} />,
         desc: "Dynamic color concepts and mood boards.",
         bg: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)"
       },
@@ -403,7 +406,7 @@ const UiuxDesignCourse = () => {
       },
       {
         name: "Spline AI",
-        icon: <FontAwesomeIcon icon={faRocket} />,
+        icon: <FontAwesomeIcon icon={faPenNib} />,
         desc: "Interactive 3D web experiences.",
         bg: "linear-gradient(135deg, #EC4899 0%, #BE185D 100%)"
       },
@@ -426,7 +429,7 @@ const UiuxDesignCourse = () => {
     { icon: <FontAwesomeIcon icon={faLaptopCode} />, title: "Tool Mastery", description: "Hands-on practice with modern tools and workflows used by product teams worldwide." },
     { icon: <FontAwesomeIcon icon={faBullseye} />, title: "Project-Based Learning", description: "Build real case studies and portfolio projects that stand out in UI/UX interviews." },
     { icon: <FontAwesomeIcon icon={faFlask} />, title: "Usability Testing", description: "Learn to test prototypes, gather insights, and iterate confidently with real feedback." },
-    { icon: <FontAwesomeIcon icon={faRocket} />, title: "Career Coaching", description: "Interview prep and storytelling guidance to land your first UI/UX role faster." }
+    { icon: <FontAwesomeIcon icon={faChartLine} />, title: "Career Coaching", description: "Interview prep and storytelling guidance to land your first UI/UX role faster." }
   ];
 
   const hexToRgba = (hex, alpha) => {

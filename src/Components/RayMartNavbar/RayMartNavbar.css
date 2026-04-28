@@ -1,7 +1,7 @@
 /* Raymart Navbar Styles */
 .raymart-navbar {
     position: fixed;
-    top: 0;
+    top: 28px;
     left: 0;
     right: 0;
     background: white;

@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
-import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
+import Navbar from '../../../Components/Navbar/Navbar';
+import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import './AIServicesPage.css';
-import SubFooterOne from '../../../Pages/Sub Pages/subFooterOne/NewFooter1';
+import TSPFFooter from '../TechGroupSubPagefooter/TSPFFooter';
 
 import iphone14Img from '../../../assets/Iphone14.png';
 
@@ -14,6 +15,7 @@ import cartoonFemale1 from '../../../assets/cartoon_female_1.png';
 import cartoonFemale2 from '../../../assets/cartoon_female_2.png';
 import cartoonFemale3 from '../../../assets/cartoon_female_3.png';
 import femaleAvatar from '../../../assets/female_avatar.png';
+import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 
 const AIServicesPage = () => {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -200,9 +202,13 @@ const AIServicesPage = () => {
         }
     ];
 
-    // WhatsApp navigation function
-    const handleWhatsAppNavigation = () => {
-        window.open('https://wa.me/916381759909', '_blank');
+    // WhatsApp navigation functions
+    const handleGetStartedWhatsApp = () => {
+        window.open('https://wa.me/916381759909?text=Hello!%20I%20would%20like%20to%20start%20a%20project%20with%20ENGLORAY%20regarding%20AI%20Services.', '_blank');
+    };
+
+    const handleContactUsWhatsApp = () => {
+        window.open('https://wa.me/916381759909?text=Hello!%20I%20want%20to%20contact%20ENGLORAY%20about%20AI%20Services.', '_blank');
     };
 
     useEffect(() => {
@@ -263,7 +269,8 @@ const AIServicesPage = () => {
 
     return (
         <div className="ai-page-page">
-            <TwoLineNavbar />
+            <TopNavBar />
+            <Navbar />
 
             {/* ── HERO SECTION ── */}
             <section className="ai-page-hero-section-new">
@@ -273,18 +280,10 @@ const AIServicesPage = () => {
                     <div className="ai-page-hero-left-new">
                         <h4 className="ai-page-hero-subtitle-new">WE ARE ENGLORAY</h4>
                         <h1 className="ai-page-hero-title-new">{pageData.title}</h1>
-                        <h1 className="ai-page-hero-title-desc-new">
-                            <img
-                                src={iphone14Img}
-                                alt="Engloray AI Services iPhone Mockup"
-                                className="ai-page-hero-iphone14-img"
-                                style={{ maxWidth: '55%', height: '20%' }}
-                            />
-                        </h1>
 
                         <div className="ai-page-hero-buttons-new">
-                            <button onClick={handleWhatsAppNavigation} className="ai-page-btn-get-started-new">GET STARTED</button>
-                            <button onClick={handleWhatsAppNavigation} className="ai-page-btn-contact-us-new">CONTACT US</button>
+                            <button onClick={handleGetStartedWhatsApp} className="ai-page-btn-get-started-new">GET STARTED</button>
+                            <button onClick={handleContactUsWhatsApp} className="ai-page-btn-contact-us-new">CONTACT US</button>
                         </div>
 
                         <p className="ai-page-hero-desc-new">
@@ -296,7 +295,7 @@ const AIServicesPage = () => {
                                 <div className="ai-page-stat-circle-new">
                                     <svg viewBox="0 0 36 36">
                                         <path className="ai-page-circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                        <path className="ai-page-circle-val bi-circle-blue" strokeDasharray="15, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                        <path className="ai-page-circle-val ai-page-circle-blue" strokeDasharray="15, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
                                     </svg>
                                     <span className="ai-page-stat-number-new">15<span className="ai-page-stat-dash">+</span></span>
                                 </div>
@@ -306,7 +305,7 @@ const AIServicesPage = () => {
                                 <div className="ai-page-stat-circle-new">
                                     <svg viewBox="0 0 36 36">
                                         <path className="ai-page-circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                        <path className="ai-page-circle-val bi-circle-green" strokeDasharray="75, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                        <path className="ai-page-circle-val ai-page-circle-green" strokeDasharray="75, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
                                     </svg>
                                     <span className="ai-page-stat-number-new">300<span className="ai-page-stat-dash">+</span></span>
                                 </div>
@@ -316,7 +315,7 @@ const AIServicesPage = () => {
                                 <div className="ai-page-stat-circle-new">
                                     <svg viewBox="0 0 36 36">
                                         <path className="ai-page-circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                        <path className="ai-page-circle-val bi-circle-gray" strokeDasharray="98, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                        <path className="ai-page-circle-val ai-page-circle-gray" strokeDasharray="98, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
                                     </svg>
                                     <span className="ai-page-stat-number-new">4.9<span className="ai-page-stat-dash">+</span></span>
                                 </div>
@@ -329,7 +328,7 @@ const AIServicesPage = () => {
                                 <div className="ai-page-stat-circle-new">
                                     <svg viewBox="0 0 36 36">
                                         <path className="ai-page-circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                        <path className="ai-page-circle-val bi-circle-blue" strokeDasharray="40, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                        <path className="ai-page-circle-val ai-page-circle-blue" strokeDasharray="40, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
                                     </svg>
                                     <span className="ai-page-stat-number-new">40<span className="ai-page-stat-dash">+</span></span>
                                 </div>
@@ -339,7 +338,7 @@ const AIServicesPage = () => {
                                 <div className="ai-page-stat-circle-new">
                                     <svg viewBox="0 0 36 36">
                                         <path className="ai-page-circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                        <path className="ai-page-circle-val bi-circle-green" strokeDasharray="80, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                        <path className="ai-page-circle-val ai-page-circle-green" strokeDasharray="80, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
                                     </svg>
                                     <span className="ai-page-stat-number-new">500<span className="ai-page-stat-dash">+</span></span>
                                 </div>
@@ -349,7 +348,7 @@ const AIServicesPage = () => {
                                 <div className="ai-page-stat-circle-new">
                                     <svg viewBox="0 0 36 36">
                                         <path className="ai-page-circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                        <path className="ai-page-circle-val bi-circle-gray" strokeDasharray="50, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                        <path className="ai-page-circle-val ai-page-circle-gray" strokeDasharray="50, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
                                     </svg>
                                     <span className="ai-page-stat-number-new">5<span className="ai-page-stat-dash">+</span></span>
                                 </div>
@@ -413,6 +412,15 @@ const AIServicesPage = () => {
                             </div>
                         </div>
                     </div>
+
+                    {/* Highly Absolute Image from Branding Section */}
+                    <div className="ai-page-hero-title-desc-new">
+                        <img
+                            src={iphone14Img}
+                            alt="Engloray AI Services Mockup"
+                            className="ai-page-hero-iphone14-img"
+                        />
+                    </div>
                 </div>
             </section>
 
@@ -436,7 +444,7 @@ const AIServicesPage = () => {
                             {brandServices.map((service, i) => (
                                 <div
                                     key={service.id}
-                                    className={`bi-about-service-item-new ${selectedService === i ? 'bi-service-active' : ''}`}
+                                    className={`ai-page-about-service-item-new ${selectedService === i ? 'ai-page-service-active' : ''}`}
                                     onClick={() => setSelectedService(i)}
                                 >
                                     <div className="ai-page-service-item-left-about">
@@ -485,21 +493,21 @@ const AIServicesPage = () => {
                                 </ul>
                             )}
                             <div className="ai-page-detail-divider" />
-                            <div className="bi-detail-stats">
-                                <div className="bi-detail-stat">
-                                    <span className="bi-detail-stat-val">{brandServices[selectedService].stats?.val1 || '100+'}</span>
-                                    <span className="bi-detail-stat-label">{brandServices[selectedService].stats?.lab1 || 'Projects'}</span>
+                            <div className="ai-page-detail-stats">
+                                <div className="ai-page-detail-stat">
+                                    <span className="ai-page-detail-stat-val">{brandServices[selectedService].stats?.val1 || '100+'}</span>
+                                    <span className="ai-page-detail-stat-label">{brandServices[selectedService].stats?.lab1 || 'Projects'}</span>
                                 </div>
-                                <div className="bi-detail-stat">
-                                    <span className="bi-detail-stat-val">{brandServices[selectedService].stats?.val2 || '3 Weeks'}</span>
-                                    <span className="bi-detail-stat-label">{brandServices[selectedService].stats?.lab2 || 'Timeline'}</span>
+                                <div className="ai-page-detail-stat">
+                                    <span className="ai-page-detail-stat-val">{brandServices[selectedService].stats?.val2 || '3 Weeks'}</span>
+                                    <span className="ai-page-detail-stat-label">{brandServices[selectedService].stats?.lab2 || 'Timeline'}</span>
                                 </div>
-                                <div className="bi-detail-stat">
-                                    <span className="bi-detail-stat-val">{brandServices[selectedService].stats?.val3 || '4.9★'}</span>
-                                    <span className="bi-detail-stat-label">{brandServices[selectedService].stats?.lab3 || 'Rating'}</span>
+                                <div className="ai-page-detail-stat">
+                                    <span className="ai-page-detail-stat-val">{brandServices[selectedService].stats?.val3 || '4.9★'}</span>
+                                    <span className="ai-page-detail-stat-label">{brandServices[selectedService].stats?.lab3 || 'Rating'}</span>
                                 </div>
                             </div>
-                            <button onClick={handleWhatsAppNavigation} className="ai-page-detail-cta">Get Started →</button>
+                            <button onClick={handleGetStartedWhatsApp} className="ai-page-detail-cta">Get Started →</button>
                         </div>
                     </div>
                 </div>
@@ -577,7 +585,7 @@ const AIServicesPage = () => {
                             Whether you need a conversational AI for customer service, a predictive model for demand forecasting, or a full AI transformation strategy — we have the expertise and track record to deliver results that exceed expectations.
                         </p>
 
-                        <button onClick={handleWhatsAppNavigation} className="ai-page-el-btn">Discover More</button>
+                        <button onClick={handleGetStartedWhatsApp} className="ai-page-el-btn">Discover More</button>
                     </div>
                 </div>
             </section>
@@ -591,8 +599,8 @@ const AIServicesPage = () => {
                             From intelligent chatbots and automation systems to custom ML models and AI strategy — we deliver end-to-end AI solutions that save time, reduce cost, and unlock new revenue opportunities.
                         </p>
                         <div className="ai-page-prod-buttons">
-                            <button onClick={handleWhatsAppNavigation} className="ai-page-btn-prod-primary">Get started</button>
-                            <button onClick={handleWhatsAppNavigation} className="ai-page-btn-prod-secondary">Talk to our AI team</button>
+                            <button onClick={handleGetStartedWhatsApp} className="ai-page-btn-prod-primary">Get started</button>
+                            <button onClick={handleContactUsWhatsApp} className="ai-page-btn-prod-secondary">Talk to our AI team</button>
                         </div>
                         <div className="ai-page-prod-avatars-box">
                             <div className="ai-page-prod-avatars">
@@ -867,7 +875,7 @@ const AIServicesPage = () => {
             <section className="ai-page-testimonial-section">
                 <div className="ai-page-testimonial-container">
                     <p className="ai-page-testimonial-label">Testimonial</p>
-                    <h2 className="ai-page-testimonial-heading">We Care About Our Clients'<br />AI Success Too</h2>
+                    <h2 className="ai-page-testimonial-heading">We Care About Our Client's<br />AI Success Too</h2>
 
                     <div className="ai-page-testimonial-scroll-wrapper">
                         <div className="ai-page-testimonial-scroll-mask-left"></div>
@@ -896,7 +904,7 @@ const AIServicesPage = () => {
                 </div>
             </section>
 
-            <SubFooterOne />
+            <WhiteFooter />
             <BackToTop />
         </div>
     );

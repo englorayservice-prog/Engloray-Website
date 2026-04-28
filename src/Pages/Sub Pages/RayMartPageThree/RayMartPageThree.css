@@ -12,13 +12,14 @@
 /* Hero Section - The only dark part of the page */
 .rm3-hero-section {
   width: 100%;
-  min-height: 100vh;
+  min-height: auto;
   background-color: #0b0b0b;
   position: relative;
   display: flex !important;
   flex-direction: column !important;
-  justify-content: space-between;
-  padding: 100px 40px 60px 40px;
+  justify-content: flex-start;
+  gap: 60px;
+  padding: 135px 40px 60px 40px;
   box-sizing: border-box;
 }
 
@@ -146,10 +147,28 @@
 }
 
 @keyframes rm3BgCycle {
-  0%, 28% { background-color: #1e3a8a; } /* Blue (AI) */
-  33%, 61% { background-color: #581c87; } /* Purple (Analytics) */
-  66%, 94% { background-color: #0d1117; } /* Dark (Support) */
-  100% { background-color: #1e3a8a; }
+
+  0%,
+  28% {
+    background-color: #1e3a8a;
+  }
+
+  /* Blue (AI) */
+  33%,
+  61% {
+    background-color: #581c87;
+  }
+
+  /* Purple (Analytics) */
+  66%,
+  94% {
+    background-color: #0d1117;
+  }
+
+  /* Dark (Support) */
+  100% {
+    background-color: #1e3a8a;
+  }
 }
 
 .rm3-feature-swapper {
@@ -188,52 +207,71 @@
 }
 
 @keyframes rm3FeatureSwap {
-  0%, 28% { transform: translateY(0); }
-  33%, 61% { transform: translateY(-60px); }
-  66%, 94% { transform: translateY(-120px); }
-  100% { transform: translateY(0); }
+
+  0%,
+  28% {
+    transform: translateY(0);
+  }
+
+  33%,
+  61% {
+    transform: translateY(-60px);
+  }
+
+  66%,
+  94% {
+    transform: translateY(-120px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .rm3-mint-card {
   background-color: #d1fadb;
   color: #000;
   justify-self: start;
-  transform: translateX(-80px); /* Moved further left as requested */
+  transform: translateX(-80px);
+  /* Moved further left as requested */
 }
 
 /* Gloss Shine Sweep Effect for Hero Cards */
-.rm3-ai-card, .rm3-mint-card {
+.rm3-ai-card,
+.rm3-mint-card {
   position: relative;
   overflow: hidden;
   transition: opacity 0.3s ease;
 }
 
-.rm3-ai-card::after, .rm3-mint-card::after {
+.rm3-ai-card::after,
+.rm3-mint-card::after {
   content: "";
   position: absolute;
   top: 0;
   left: -200%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.4) 50%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  background: linear-gradient(to right,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.4) 50%,
+      rgba(255, 255, 255, 0) 100%);
   transform: skewX(-25deg);
   transition: left 0.7s ease-in-out;
   pointer-events: none;
   z-index: 5;
 }
 
-.rm3-ai-card:hover::after, .rm3-mint-card:hover::after {
+.rm3-ai-card:hover::after,
+.rm3-mint-card:hover::after {
   left: 300%;
 }
 
 .rm3-bottom-text-container {
-  justify-self: start; /* Corrected from end */
-  text-align: left;    /* Corrected from right */
+  justify-self: start;
+  /* Corrected from end */
+  text-align: left;
+  /* Corrected from right */
 }
 
 .rm3-bottom-paragraph {
@@ -278,12 +316,14 @@
   display: flex;
   flex-direction: row;
   height: 100%;
-  width: 400%; /* For 4 items (3 + 1 clone) */
+  width: 400%;
+  /* For 4 items (3 + 1 clone) */
   animation: rm3-swap-stat 12s infinite cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .rm3-count-item {
-  flex: 0 0 25%; /* 1/4 of the 400% width */
+  flex: 0 0 25%;
+  /* 1/4 of the 400% width */
   font-size: 2.8rem;
   font-weight: 800;
   color: #000;
@@ -294,11 +334,32 @@
 }
 
 @keyframes rm3-swap-stat {
-  0%, 22%   { transform: translateX(0); }
-  25%, 47%  { transform: translateX(-25%); }
-  50%, 72%  { transform: translateX(-50%); }
-  75%, 97%  { transform: translateX(-75%); }
-  100%      { transform: translateX(-75%); } /* Instant reset home in next loop */
+
+  0%,
+  22% {
+    transform: translateX(0);
+  }
+
+  25%,
+  47% {
+    transform: translateX(-25%);
+  }
+
+  50%,
+  72% {
+    transform: translateX(-50%);
+  }
+
+  75%,
+  97% {
+    transform: translateX(-75%);
+  }
+
+  100% {
+    transform: translateX(-75%);
+  }
+
+  /* Instant reset home in next loop */
 }
 
 .rm3-mint-title {
@@ -327,16 +388,18 @@
 
 .rm3-products-section {
   width: 100%;
-  padding: 100px 20px;
-  background-color: #0b0b0b; /* Dark black background as requested */
+  padding: 40px 20px;
+  background-color: #0b0b0b;
+  /* Dark black background as requested */
   display: flex !important;
   flex-direction: column !important;
   justify-content: center;
   align-items: center;
 }
 
-.rm3-products-section .rm3-section-title-global {
-  color: #ffffff; /* White title for dark section */
+.rm3-products-section {
+  color: #ffffff;
+  /* White title for dark section */
 }
 
 .rm3-carousel-outer {
@@ -351,7 +414,8 @@
 .rm3-exact-red-card {
   flex: 1;
   background-color: #a8211a;
-  border-radius: 8px; /* Matched to page two */
+  border-radius: 8px;
+  /* Matched to page two */
   display: flex;
   width: 100%;
   min-height: 500px;
@@ -363,7 +427,8 @@
 }
 
 .rm3-exact-image-col {
-  flex: 1.4; /* Matched to page two */
+  flex: 1.4;
+  /* Matched to page two */
   height: auto;
   min-height: 100%;
   padding: 15px;
@@ -383,13 +448,15 @@
 .rm3-exact-hero-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: 100% 100%;
+  /* Force full visibility */
   position: absolute;
   top: 0;
   left: 0;
   opacity: 0;
   transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
-  transform: scale(1.05); /* Subtle scale for premium feel */
+  transform: scale(1);
+  /* Prevent cut-off */
 }
 
 .rm3-exact-hero-img.active {
@@ -456,7 +523,8 @@
 }
 
 .rm3-exact-grid-item.active {
-  border-color: #c0ff4d; /* Matching neon accent */
+  border-color: #c0ff4d;
+  /* Matching neon accent */
   box-shadow: 0 0 15px rgba(192, 255, 77, 0.4);
   transform: scale(1.05);
 }
@@ -481,7 +549,8 @@
 .rm3-exact-grid-item img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: 100% 100%;
+  /* Force full visibility */
 }
 
 .rm3-exact-grid-overlay {
@@ -525,44 +594,51 @@
   font-weight: 800;
   letter-spacing: 1px;
 }
+
 .rm3-exact-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: auto;
 }
+
 @media (max-width: 768px) {
-    /* 1. Stack the footer items vertically to save horizontal space */
-    .rm3-exact-footer {
-        display: flex !important;
-        flex-direction: column !important; /* Change from row to column */
-        align-items: center !important;
-        text-align: center !important;
-        gap: 1.5rem !important; /* Add space between items */
-        padding: 1.5rem 1rem !important; /* Reduce overall height */
-        margin-top: 1rem !important;
-    }
 
-    /* 2. Shrink the big stats (10K+ Leads, etc.) */
-    .rm3-exact-stat-big {
-        font-size: 1.1rem !important; /* Smaller but still bold */
-        line-height: 1.2 !important;
-    }
+  /* 1. Stack the footer items vertically to save horizontal space */
+  .rm3-exact-footer {
+    display: flex !important;
+    flex-direction: column !important;
+    /* Change from row to column */
+    align-items: center !important;
+    text-align: center !important;
+    gap: 1.5rem !important;
+    /* Add space between items */
+    padding: 1.5rem 1rem !important;
+    /* Reduce overall height */
+    margin-top: 1rem !important;
+  }
 
-    /* 3. Reduce the size of the "Contact Us" green button */
-    .rm3-exact-footer .contact-us-btn,
-    .rm3-exact-footer div[style*="background-color: rgb(74, 222, 128)"] { 
-        width: 100% !important;
-        max-width: 200px !important;
-        padding: 10px 15px !important;
-        font-size: 0.9rem !important;
-    }
+  /* 2. Shrink the big stats (10K+ Leads, etc.) */
+  .rm3-exact-stat-big {
+    font-size: 1.1rem !important;
+    /* Smaller but still bold */
+    line-height: 1.2 !important;
+  }
 
-    /* 4. Fix the 30 DAY FREE TRIAL text */
-    .rm3-exact-stats p {
-        font-size: 0.8rem !important;
-        margin: 0 auto !important;
-    }
+  /* 3. Reduce the size of the "Contact Us" green button */
+  .rm3-exact-footer .contact-us-btn,
+  .rm3-exact-footer div[style*="background-color: rgb(74, 222, 128)"] {
+    width: 100% !important;
+    max-width: 200px !important;
+    padding: 10px 15px !important;
+    font-size: 0.9rem !important;
+  }
+
+  /* 4. Fix the 30 DAY FREE TRIAL text */
+  .rm3-exact-stats p {
+    font-size: 0.8rem !important;
+    margin: 0 auto !important;
+  }
 }
 
 .rm3-exact-stats {
@@ -613,7 +689,8 @@
   background: transparent;
   border: none;
   font-size: 3rem;
-  color: #ffffff; /* White arrows for dark background */
+  color: #ffffff;
+  /* White arrows for dark background */
   cursor: pointer;
   transition: color 0.3s ease;
   padding: 0 10px;
@@ -672,7 +749,7 @@
 
 /* --- REDEFINING CONVERSATIONS SECTION (from Page Two) --- */
 .rm3-redefine-section {
-  padding: 100px 40px;
+  padding: 40px 40px;
   background: #ffffff;
 }
 
@@ -710,8 +787,10 @@
   border: none;
   border-radius: 40px;
   padding: 16px 44px;
-  width: 100%; /* Wider button */
-  max-width: 550px; /* Align with description width */
+  width: 100%;
+  /* Wider button */
+  max-width: 550px;
+  /* Align with description width */
   font-size: 1.1rem;
   font-weight: 600;
   display: flex;
@@ -798,7 +877,8 @@
   position: relative;
   overflow: hidden;
   background: #f8fafc;
-  text-align: left; /* Explicitly left aligned */
+  text-align: left;
+  /* Explicitly left aligned */
 }
 
 .rm3-rtab:hover {
@@ -911,7 +991,8 @@
   color: #444;
   line-height: 1.6;
   margin-left: 36px;
-  text-align: left; /* Corrected to left */
+  text-align: left;
+  /* Corrected to left */
 }
 
 .rm3-rv-chat-options {
@@ -1007,7 +1088,7 @@
    NEW STORE-STYLE SECTION (Steam Ref)
    ======================================== */
 .rm3-store-section {
-  padding: 60px 0;
+  padding: 15px 0;
   background: #f8f9fa;
   /* Light grey background */
   color: #333;
@@ -1025,10 +1106,11 @@
 }
 
 .rm3-store-row {
-  background: #e6e6e6; /* Light grey background for the cards */
+  background: #e6e6e6;
+  /* Light grey background for the cards */
   padding: 25px;
   border-radius: 12px;
-  margin-bottom: 50px;
+  margin-bottom: 5px;
 }
 
 .rm3-store-row-title {
@@ -1037,7 +1119,7 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   color: #111;
-  margin-bottom: 30px;
+  margin-bottom: -10px;
   border-left: 5px solid #10b981;
   /* Green accent to match theme */
   padding-left: 15px;
@@ -1064,7 +1146,8 @@
 }
 
 .rm3-app-card {
-  flex: 0 0 310px !important; /* Fixed width for carousel */
+  flex: 0 0 310px !important;
+  /* Fixed width for carousel */
   background: #f8fafc;
   border-radius: 16px;
   overflow: hidden;
@@ -1129,7 +1212,8 @@
 
 .rm3-store-card-img {
   height: 220px;
-  background-size: cover;
+  background-size: 100% 100%;
+  /* Full visibility for store items */
   background-position: center;
   border-bottom: 3px solid #1e2837;
 }
@@ -1229,7 +1313,7 @@
 
 /* --- FINAL STATIC 5-COLUMN GALLERY (from Page Two) --- */
 .rm3-gallery-section {
-  padding: 80px 0;
+  padding: 40px 0;
   background: #ffffff;
   /* White bg for clean look */
   border-top: 1px solid #eee;
@@ -1269,13 +1353,15 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-size: cover;
+  background-size: 100% 100%;
+  /* Show full gallery image */
   background-position: center;
   transition: transform 0.6s ease;
 }
 
 .rm3-gallery-tile:hover .rm3-gallery-tile-img {
-  transform: scale(1.15);
+  transform: scale(1);
+  /* Removed scale to prevent cut-off */
 }
 
 /* Gloss shine sweep effect */
@@ -1360,7 +1446,8 @@
 
 .rm3-app-card-img {
   height: 160px;
-  background-size: 100% 100%; /* Force image to fill entire card header without side gaps */
+  background-size: 100% 100%;
+  /* Force image to fill entire card header without side gaps */
   background-repeat: no-repeat;
   background-position: center;
   border-bottom: 2px solid #1e2837;
@@ -1385,7 +1472,8 @@
   line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  min-height: 1.25em; /* Ensures title row has same height even if empty (unlikely but safe) */
+  min-height: 1.25em;
+  /* Ensures title row has same height even if empty (unlikely but safe) */
 }
 
 .rm3-app-card-desc {
@@ -1398,7 +1486,8 @@
   line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  min-height: 3em; /* 2 lines * 1.5 line-height */
+  min-height: 3em;
+  /* 2 lines * 1.5 line-height */
   flex-grow: 1;
 }
 
@@ -1444,58 +1533,70 @@
     grid-template-columns: 1fr;
   }
 }
+
 @media (max-width: 600px) {
-    /* 1. Ensure the grid doesn't have huge gaps and fits the screen */
-    .rm3-app-cards-grid {
-        grid-template-columns: 1fr !important;
-        gap: 15px !important;
-        padding: 10px !important;
-        display: flex !important; /* Forces vertical stack if flex is active */
-        flex-direction: column !important;
-        align-items: center !important;
-    }
 
-    /* 2. Minimize the card size */
-    .rm3-app-card {
-        flex: 0 0 auto !important; /* Removes the 310px fixed width */
-        width: 92% !important;     /* Makes the card slightly narrower than the screen */
-        max-width: 300px !important; 
-        margin: 0 auto !important;
-    }
+  /* 1. Ensure the grid doesn't have huge gaps and fits the screen */
+  .rm3-app-cards-grid {
+    grid-template-columns: 1fr !important;
+    gap: 15px !important;
+    padding: 10px !important;
+    display: flex !important;
+    /* Forces vertical stack if flex is active */
+    flex-direction: column !important;
+    align-items: center !important;
+  }
 
-    /* 3. Reduce image height to save vertical space */
-    .rm3-app-card-img {
-        height: 130px !important;
-    }
+  /* 2. Minimize the card size */
+  .rm3-app-card {
+    flex: 0 0 auto !important;
+    /* Removes the 310px fixed width */
+    width: 92% !important;
+    /* Makes the card slightly narrower than the screen */
+    max-width: 300px !important;
+    margin: 0 auto !important;
+  }
 
-    /* 4. Tighten up the body padding and text */
-    .rm3-app-card-body {
-        padding: 12px !important;
-    }
+  /* 3. Reduce image height to save vertical space */
+  .rm3-app-card-img {
+    height: 130px !important;
+  }
 
-    .rm3-app-card-title {
-        font-size: 0.8rem !important; /* Slightly smaller text */
-        margin-bottom: 5px !important;
-    }
+  /* 4. Tighten up the body padding and text */
+  .rm3-app-card-body {
+    padding: 12px !important;
+  }
 
-    .rm3-app-card-desc {
-        font-size: 0.75rem !important;
-        margin-bottom: 12px !important;
-        min-height: auto !important; /* Removes the forced empty space */
-    }
+  .rm3-app-card-title {
+    font-size: 0.8rem !important;
+    /* Slightly smaller text */
+    margin-bottom: 5px !important;
+  }
 
-    /* 5. Shrink buttons/footer to fit */
-    .rm3-app-card-footer {
-        gap: 8px !important;
-    }
+  .rm3-app-card-desc {
+    font-size: 0.75rem !important;
+    margin-bottom: 12px !important;
+    min-height: auto !important;
+    /* Removes the forced empty space */
+  }
+
+  /* 5. Shrink buttons/footer to fit */
+  .rm3-app-card-footer {
+    gap: 8px !important;
+  }
 }
 
 /* ======================================== 
    BENTO HIGHLIGHTS SECTION (Selling Points)
    ======================================== */
 .rm3-highlights-section {
-  padding: 40px 0 80px;
+  padding: 20px 0 40px;
   background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* margin-right: 20px; */
 }
 
 .rm3-highlights-container {
@@ -1626,7 +1727,9 @@
   /* Compact font for shorter height */
   font-weight: 600;
   line-height: 1.3;
-  margin-bottom: 25px;
+  margin-top: auto;
+  margin-bottom: auto;
+  text-align: center;
 }
 
 .rm3-hl-avatar-group {
@@ -1751,7 +1854,7 @@
    GLOBAL STORIES MASONRY SECTION
    ======================================== */
 .rm3-global-reviews-section {
-  padding: 80px 0;
+  padding: 40px 0;
   background: #fdfdfd;
 }
 
@@ -1827,11 +1930,13 @@
   height: 100%;
   object-fit: cover;
 }
+
 /* my responsive only for above codes */
 /* Tablet & Small Desktop (1024px and below) */
 @media (max-width: 1024px) {
   .rm3-hero-grid {
-    grid-template-columns: 1fr; /* Stack hero columns */
+    grid-template-columns: 1fr;
+    /* Stack hero columns */
     text-align: center;
     padding-top: 40px;
   }
@@ -1841,21 +1946,26 @@
     text-align: center;
   }
 
-  .rm3-hero-title, .rm3-title-accent {
-    font-size: 48px; /* Scale down title */
+  .rm3-hero-title,
+  .rm3-title-accent {
+    font-size: 48px;
+    /* Scale down title */
     white-space: normal;
   }
 
   .rm3-hero-bottom-grid {
-    grid-template-columns: 1fr; /* Stack the bottom 3 cards */
+    grid-template-columns: 1fr;
+    /* Stack the bottom 3 cards */
     justify-items: center;
     gap: 20px;
   }
 
-  .rm3-mint-card, .rm3-hl-col-right {
-    transform: translateX(0); /* Remove the 'moved left' offset for mobile/tab */
+  .rm3-mint-card,
+  .rm3-hl-col-right {
+    transform: translateX(0);
+    /* Remove the 'moved left' offset for mobile/tab */
   }
-  
+
   .rm3-bottom-text-container {
     text-align: center;
     justify-self: center;
@@ -1865,64 +1975,79 @@
 /* Mobile Devices (768px and below) */
 @media (max-width: 768px) {
   .rm3-hero-section {
-    padding: 80px 20px 40px 20px;
+    padding: 80px 20px 20px 20px;
   }
 
-  .rm3-hero-title, .rm3-title-accent {
+  .rm3-hero-title,
+  .rm3-title-accent {
     font-size: 34px;
   }
 
   .rm3-mockup-container {
-    height: 300px; /* Shrink image container */
+    height: 300px;
+    /* Shrink image container */
   }
 
   .rm3-dash {
-    width: 100%; /* Make the dashboard image fit */
-    transform: none; /* Remove 3D tilt on mobile for better visibility */
+    width: 100%;
+    /* Make the dashboard image fit */
+    transform: none;
+    /* Remove 3D tilt on mobile for better visibility */
   }
 
   .rm3-bottom-card {
-    width: 100%; /* Full width cards */
+    width: 100%;
+    /* Full width cards */
     max-width: 330px;
   }
 }
+
 @media (max-width: 768px) {
   .rm3-exact-red-card {
     display: flex;
     flex-direction: column;
-    width: 100%;       /* Increased card width to full screen */
+    width: 100%;
+    /* Increased card width to full screen */
     max-width: 100%;
     height: auto;
     min-height: unset;
-    padding: 25px 15px; /* Slightly more vertical padding for breathing room */
-    margin: 0;         /* Remove margins to touch screen edges if needed */
+    padding: 25px 15px;
+    /* Slightly more vertical padding for breathing room */
+    margin: 0;
+    /* Remove margins to touch screen edges if needed */
   }
 
-  .rm3-exact-image-col, 
+  .rm3-exact-image-col,
   .rm3-exact-content-col {
-    width: 100%;       /* Ensure columns take up full card width */
+    width: 100%;
+    /* Ensure columns take up full card width */
   }
 
   .rm3-exact-hero-img {
-    height: 350px;     /* Increased height for a more "Full View" feel */
+    height: 350px;
+    /* Increased height for a more "Full View" feel */
     width: 100%;
     object-fit: cover;
     border-radius: 12px;
   }
 
   .rm3-exact-title {
-    font-size: 2.1rem; /* Increased title size for better impact */
+    font-size: 2.1rem;
+    /* Increased title size for better impact */
     line-height: 1.2;
     margin-bottom: 15px;
-    width: 100%;       /* Ensure title spans full width */
+    width: 100%;
+    /* Ensure title spans full width */
   }
 
   /* Grid for Thumbnails/Details inside the card */
   .rm3-exact-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 15px;         /* Increased gap for better touch targets */
-    width: 100%;       /* Forces grid to expand */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    /* Increased gap for better touch targets */
+    width: 100%;
+    /* Forces grid to expand */
   }
 
   /* If there are items inside the grid, make them wider */
@@ -1932,25 +2057,30 @@
   }
 
   .rm3-exact-desc {
-    font-size: 1rem;   /* Increased description text size */
+    font-size: 1rem;
+    /* Increased description text size */
     width: 100%;
     line-height: 1.6;
   }
 }
+
 @media (max-width: 992px) {
   .rm3-highlights-container {
-    grid-template-columns: 1fr; /* Single column layout */
+    grid-template-columns: 1fr;
+    /* Single column layout */
     gap: 30px;
   }
 
   .rm3-hl-card-main {
-    -webkit-mask-image: none; /* Remove complex mask on mobile to avoid cropping */
+    -webkit-mask-image: none;
+    /* Remove complex mask on mobile to avoid cropping */
     mask-image: none;
     height: 350px;
   }
 
   .rm3-hl-card-purple {
-    margin-left: 0; /* Reset the negative margin overlap */
+    margin-left: 0;
+    /* Reset the negative margin overlap */
     width: 100%;
   }
 
@@ -1958,14 +2088,16 @@
     width: 100%;
     margin-left: 0;
   }
-  
+
   .rm3-hl-col-right {
-     transform: translateX(0);
+    transform: translateX(0);
   }
 }
+
 @media (max-width: 768px) {
   .rm3-global-bricks {
-    grid-template-rows: repeat(2, 150px); /* Smaller rows */
+    grid-template-rows: repeat(2, 150px);
+    /* Smaller rows */
     grid-auto-columns: minmax(200px, 1fr);
   }
 
@@ -2073,7 +2205,7 @@
    PRODUCT PERFORMANCE GRID (Pinterest Style)
    ======================================== */
 .rm3-sales-stats-section {
-  padding: 80px 0;
+  padding: 40px 0;
   background: #ffffff;
 }
 
@@ -2087,7 +2219,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
+}
+
+.rm3-sales-header .rm3-section-title-global {
+  margin-bottom: 0;
 }
 
 .rm3-sales-filters {
@@ -2215,14 +2351,17 @@
     align-items: flex-start;
   }
 }
+
 /* Tablet & Mobile Fixes for Masonry Bricks */
 @media (max-width: 1024px) {
   .rm3-brick-overlay-val {
-    font-size: 2.5rem; /* Scale down the 3.5rem massive stats */
+    font-size: 2.5rem;
+    /* Scale down the 3.5rem massive stats */
   }
-  
+
   .rm3-brick-overlay {
-    padding: 20px; /* Tighter padding for tablet */
+    padding: 20px;
+    /* Tighter padding for tablet */
   }
 }
 
@@ -2231,27 +2370,30 @@
     /* Force a single column and let heights be auto */
     display: flex;
     flex-direction: column;
-    grid-template-rows: none; 
+    grid-template-rows: none;
     overflow-x: hidden;
   }
 
   .rm3-brick {
-    height: 300px; /* Give them a consistent height when stacked */
+    height: 300px;
+    /* Give them a consistent height when stacked */
     width: 100%;
   }
 
   .rm3-brick-overlay-val {
     font-size: 2.2rem;
   }
-  
+
   .rm3-brick-quote {
     font-size: 1.1rem;
   }
 }
+
 /* Responsive Sales Grid */
 @media (max-width: 1100px) {
   .rm3-sales-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 columns for tablets */
     gap: 20px;
   }
 
@@ -2259,14 +2401,15 @@
   .rm3-sales-card:nth-child(n) {
     grid-column: span 1 !important;
   }
-  
+
   /* Optional: Keep one featured card wide if you want */
   .rm3-sales-card:nth-child(3) {
-    grid-column: span 2 !important; 
+    grid-column: span 2 !important;
   }
 
   .rm3-sales-card-img-box {
-    height: 300px; /* Slightly shorter images for tablet */
+    height: 300px;
+    /* Slightly shorter images for tablet */
   }
 }
 
@@ -2282,29 +2425,36 @@
   }
 
   .rm3-sales-grid {
-    grid-template-columns: 1fr; /* Single column for mobile */
+    grid-template-columns: 1fr;
+    /* Single column for mobile */
   }
 
   .rm3-sales-card:nth-child(n) {
-    grid-column: span 1 !important; /* All cards take full width */
+    grid-column: span 1 !important;
+    /* All cards take full width */
   }
 
   .rm3-sales-card-img-box {
-    height: 350px; /* Better height for mobile viewing */
+    height: 350px;
+    /* Better height for mobile viewing */
   }
 
   .rm3-sales-filters {
     width: 100%;
-    overflow-x: auto; /* Allow pills to scroll horizontally if they are too wide */
+    overflow-x: auto;
+    /* Allow pills to scroll horizontally if they are too wide */
     padding-bottom: 10px;
     -webkit-overflow-scrolling: touch;
   }
-  
+
   .rm3-sales-pill {
-    white-space: nowrap; /* Don't let text wrap inside pills */
+    white-space: nowrap;
+    /* Don't let text wrap inside pills */
   }
 }
+
 @media (max-width: 768px) {
+
   /* 1. Stack the Header (Title & Button) */
   .rm3-redefine-header {
     flex-direction: column;
@@ -2313,13 +2463,15 @@
     margin-bottom: 40px;
   }
 
-  .rm3-rh-left, .rm3-rh-right {
+  .rm3-rh-left,
+  .rm3-rh-right {
     flex: 0 0 100%;
     width: 100%;
   }
 
   .rm3-rh-right h2 {
-    font-size: 1.8rem; /* Smaller title for mobile */
+    font-size: 1.8rem;
+    /* Smaller title for mobile */
   }
 
   /* 2. Stack the Content (Tabs & Visual) */
@@ -2330,7 +2482,8 @@
 
   .rm3-rc-tabs {
     flex: 0 0 100%;
-    order: 2; /* Put tabs below the visual widget */
+    order: 2;
+    /* Put tabs below the visual widget */
   }
 
   .rm3-rtab {
@@ -2341,12 +2494,14 @@
   .rm3-rc-visual {
     flex: 0 0 100%;
     padding: 15px;
-    order: 1; /* Show the visual first */
+    order: 1;
+    /* Show the visual first */
     min-height: auto;
   }
 
   .rm3-rv-chat-widget {
-    height: 380px; /* Shorter height */
+    height: 380px;
+    /* Shorter height */
     width: 100%;
     max-width: 100%;
   }
@@ -2354,7 +2509,8 @@
   .rm3-rv-chat-bubble {
     padding: 12px;
     font-size: 0.85rem;
-    margin-left: 10px; /* Reduced margin to save space */
+    margin-left: 10px;
+    /* Reduced margin to save space */
   }
 
   .rm3-rv-chat-options {
@@ -2377,34 +2533,124 @@
   .rm3-rh-btn {
     padding: 12px 24px;
     font-size: 1rem;
-    width: 100%; /* Full width button */
+    width: 100%;
+    /* Full width button */
   }
 }
+
 /* ======================================== 
    VERTICAL GALLERY / TESTIMONIAL STACK
    ======================================== */
 
 .rm3-gallery-grid {
   display: flex;
-  flex-direction: column; /* This stacks them vertically like the image */
-  gap: 25px;              /* Spacing between the stacked cards */
+  flex-direction: column;
+  /* This stacks them vertically like the image */
+  gap: 25px;
+  /* Spacing between the stacked cards */
   width: 100%;
-  max-width: 600px;       /* Keeps it from getting too wide on desktop */
-  margin: 0 auto;         /* Centers the stack */
+  max-width: 600px;
+  /* Keeps it from getting too wide on desktop */
+  margin: 0 auto;
+  /* Centers the stack */
 }
 
-.rm3-gallery-tile {
-  flex: none;             /* Prevents flex-grow/shrink issues */
-  width: 100%;            /* Makes every tile span the full container width */
-  height: 200px;          /* Adjusted height to look more like the screenshot */
-  border-radius: 20px;    /* Softer corners matching the UI */
+.rm3-products-section {
+  padding: 100px 0;
+  background: #fafafa;
+  width: 100%;
+}
+
+.rm3-products-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.rm3-products-header {
+  text-align: center;
+  margin-bottom: 50px;
+  padding: 0 20px;
+}
+
+.rm3-products-title {
+  font-family: 'Orbitron', sans-serif !important;
+  font-size: 3.5rem !important;
+  font-weight: 900 !important;
+  color: #1a1a1a !important;
+  text-transform: uppercase !important;
+  margin-bottom: 20px !important;
+  letter-spacing: 1px !important;
+  line-height: 1.2;
+}
+
+.rm3-products-subtitle {
+  font-size: 1.15rem;
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.rm3-products-footer {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.rm3-products-btn {
+  background: #111 !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 50px !important;
+  padding: 18px 48px !important;
+  font-size: 1.2rem !important;
+  font-weight: 700 !important;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.rm3-products-btn:hover {
+  background: #333;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.rm3-products-btn span {
+  font-size: 1.3rem;
+  transition: transform 0.3s ease;
+}
+
+.rm3-products-btn:hover span {
+  transform: translateX(5px);
+}
+
+.rm3-prod-gallery {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.rm3-prod-tile {
+  flex: 1;
+  height: 320px;
+  border-radius: 24px;
   overflow: hidden;
   position: relative;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Ensure the image inside stays "minimized" (visible) while covering */
-.rm3-gallery-tile-img {
+.rm3-prod-tile:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.rm3-prod-tile-img {
   position: absolute;
   top: 0;
   left: 0;
@@ -2412,60 +2658,114 @@
   height: 100%;
   background-size: cover;
   background-position: center;
-  /* Optional: filter to make text pop more */
-  filter: brightness(0.8); 
+  transition: transform 0.6s ease;
 }
 
-/* Align text in center as per your image */
-.rm3-gallery-tile-content {
+.rm3-prod-tile:hover .rm3-prod-tile-img {
+  transform: scale(1.1);
+}
+
+.rm3-prod-tile-overlay {
   position: absolute;
   inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.7));
+  z-index: 1;
+}
+
+.rm3-prod-tile-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 5;
+  padding: 20px;
+  text-align: center;
 }
 
-.rm3-gallery-tile-content h3 {
-  color: #ffffff;
-  font-size: 1.5rem;
+.rm3-prod-tile-content h3 {
+  color: #fff;
+  font-size: 1.6rem;
   font-weight: 900;
+  margin: 0;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.5); /* Helps legibility on busy images */
+  font-family: 'Orbitron', sans-serif;
 }
 
-/* ======================================== 
-   RESPONSIVE OVERRIDE 
-   ======================================== */
-@media (max-width: 768px) {
-  .rm3-gallery-container {
-    padding: 0 15px; /* Less side padding on phones */
-  }
+/* Gloss shine sweep effect */
+.rm3-prod-tile::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.3) 50%,
+      rgba(255, 255, 255, 0) 100%);
+  transform: skewX(-25deg);
+  transition: left 0.6s ease-out;
+  pointer-events: none;
+  z-index: 3;
+}
 
-  .rm3-gallery-tile {
-    height: 180px;  /* Slightly shorter on mobile */
-  }
+.rm3-prod-tile:hover::after {
+  left: 200%;
+}
 
-  .rm3-gallery-tile-content h3 {
-    font-size: 1.2rem; /* Scale down text slightly */
+@media (max-width: 1200px) {
+  .rm3-prod-tile {
+    flex: 0 0 calc(33.33% - 20px);
   }
 }
 
-  /* --- FINAL MOBILE OVERRIDE FOR CHAT BUBBLE --- */
 @media (max-width: 768px) {
-    .rm-rv-chat-bubble {
-        font-size: 0.85rem !important; /* Slightly smaller text to fit more content */
-        line-height: 1.5;
-        padding: 15px;
-    }
+  .rm3-products-container {
+    padding: 0 20px;
+  }
 
-    /* Arrow visibility - place them below the card for more space */
-    .rm-testi-outer-wrapper {
-        gap: 15px;
-    }
-    
-    .rm-testi-outer-arrow {
-        display: none; /* Often better to use dots only on mobile to save width */
-    }
+  .rm3-prod-tile {
+    flex: 0 0 100%;
+    height: 200px;
+  }
+
+  .rm3-products-title {
+    font-size: 1.8rem;
+  }
+}
+
+/* --- FINAL MOBILE OVERRIDE FOR CHAT BUBBLE --- */
+@media (max-width: 768px) {
+  .rm-rv-chat-bubble {
+    font-size: 0.85rem !important;
+    /* Slightly smaller text to fit more content */
+    line-height: 1.5;
+    padding: 15px;
+  }
+
+  /* Arrow visibility - place them below the card for more space */
+  .rm-testi-outer-wrapper {
+    gap: 15px;
+  }
+
+  .rm-testi-outer-arrow {
+    display: none;
+    /* Often better to use dots only on mobile to save width */
+  }
+}
+
+@media (min-width: 1440px) {
+  .rm3-pagethree {
+    zoom: 1.22;
+  }
+
+  .rm3-highlights-section {
+    margin-left: 80px;
+    /* margin-right: 20px; */
+  }
 }

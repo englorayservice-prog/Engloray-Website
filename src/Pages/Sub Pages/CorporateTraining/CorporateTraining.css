@@ -1542,13 +1542,14 @@
   top: 50%;
   left: 0;
   right: 0;
+  max-width: 1300px;
+  margin: 0 auto;
   transform: translateY(-50%);
   pointer-events: none;
   z-index: 100;
   display: flex;
   justify-content: space-between;
-  padding: 0 1vw;
-  /* Moved further out to edges */
+  padding: 0 20px;
 }
 
 .ct-arc-nav-btn {
@@ -4072,5 +4073,84 @@
 @media (max-width: 768px) {
   .desktop-only {
     display: none !important;
+  }
+}
+
+/* ===== WIDESCREEN 1440px+ - Fill Left/Right Side Gaps ===== */
+@media (min-width: 1440px) {
+  /* Main container - reduce side padding so content fills the screen */
+  .ct-container {
+    padding: 0 3% !important;
+  }
+
+  /* Hero arc content wrapper - expand to fill width */
+  .ct-arc-content-wrapper {
+    max-width: 1380px !important;
+  }
+
+  /* Benefits grid - allow it to use more horizontal space */
+  .ct-benefits-grid {
+    max-width: 1380px !important;
+    padding: 0 20px !important;
+  }
+
+  /* Companies grid - expand columns to fill gap */
+  .ct-companies-grid {
+    max-width: 1380px !important;
+  }
+
+  /* Programs grid - fill horizontal space */
+  .ct-programs-grid {
+    max-width: 1380px !important;
+    margin: 0 auto !important;
+  }
+
+  /* Stories section container */
+  .ct-stories-container {
+    max-width: 1380px !important;
+    padding: 0 20px !important;
+  }
+
+  /* Stories wrapper */
+  .ct-stories-wrapper {
+    max-width: 1380px !important;
+  }
+
+  /* Whatsapp section content */
+  .ct-whatsapp-content {
+    max-width: 1380px !important;
+    margin: 0 auto !important;
+  }
+
+  /* Section general padding */
+  .ct-section {
+    padding: 80px 3% !important;
+  }
+}
+
+@media (min-width: 1920px) {
+  .ct-container {
+    padding: 0 5% !important;
+  }
+
+  .ct-arc-content-wrapper {
+    max-width: 1700px !important;
+  }
+
+  .ct-benefits-grid {
+    max-width: 1700px !important;
+  }
+
+  .ct-companies-grid {
+    max-width: 1700px !important;
+  }
+
+  .ct-programs-grid {
+    max-width: 1700px !important;
+  }
+
+  .ct-stories-container,
+  .ct-stories-wrapper {
+    max-width: 1700px !important;
   }
 }

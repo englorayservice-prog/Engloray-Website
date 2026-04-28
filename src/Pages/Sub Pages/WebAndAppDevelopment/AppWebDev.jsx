@@ -21,8 +21,8 @@ import logo5 from '../../../assets/icons/logoipsum-293.png';
 import logo6 from '../../../assets/icons/logoipsum-294.png';
 import logo7 from '../../../assets/icons/logoipsum-295.png';
 import logo8 from '../../../assets/icons/logoipsum-296.png';
-import avatarLeft from '../../../assets/rev_avatar_5.jfif';
-import avatarRight from '../../../assets/rev_avatar_4.jfif';
+import avatarLeft from '../../../assets/cartoon_female_1.png';
+import avatarRight from '../../../assets/cartoon_male_1.png';
 
 const AppWebDev = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -66,6 +66,30 @@ const AppWebDev = () => {
             author: "Say Bridals",
             role: "Bridal Studio",
             initial: "S"
+        },
+        {
+            id: 4,
+            rating: "★★★★★",
+            text: "The transition to our new cloud architecture was seamless. Engloray's expertise in DevOps saved us months of potential downtime.",
+            author: "CloudScale Tech",
+            role: "CTO",
+            initial: "C"
+        },
+        {
+            id: 5,
+            rating: "★★★★★",
+            text: "Fast, responsive, and incredibly easy to work with. They didn't just build an app; they built a scalable business tool.",
+            author: "Innovate Apps",
+            role: "Product Owner",
+            initial: "I"
+        },
+        {
+            id: 6,
+            rating: "★★★★★",
+            text: "Their code quality is outstanding. We had our system audited by a third party, and they were thoroughly impressed with the architecture.",
+            author: "Secure Systems",
+            role: "Security Lead",
+            initial: "S"
         }
     ];
 
@@ -80,7 +104,7 @@ const AppWebDev = () => {
             id: 2,
             title: "Technical Architecture",
             description: "Designing scalable, secure, and robust system architectures that grow with your business. We plan every layer from database design to high-performance APIs.",
-            image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc48?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            image: "https://i.pinimg.com/736x/f7/6a/17/f76a172d2cff2bde2062f44a00129659.jpg"
         },
         {
             id: 3,
@@ -255,10 +279,16 @@ const AppWebDev = () => {
                         <div className="awd-branddna-container">
                             <div className="awd-branddna-left">
                                 <h2>Tech DNA</h2>
-                                <h3 className="awd-branddna-subtitle">The Foundation of<br />Agile Modern Systems</h3>
+                                <h3 className="awd-branddna-subtitle">The Foundation of Agile Modern Systems</h3>
                                 <p>
                                     Our Technical DNA framework ensures every line of code serves a strategic purpose. We prioritize scalability, security, and performance to ensure your digital ecosystem remains resilient and efficient as your business scales.
                                 </p>
+                                <ul className="awd-dna-list">
+                                    <li><strong>Modular Microservices:</strong> Building decoupled systems for maximum flexibility and rapid scaling.</li>
+                                    <li><strong>Zero-Downtime Deployment:</strong> Robust CI/CD pipelines ensuring seamless updates without interruption.</li>
+                                    <li><strong>Security-First Code:</strong> Rigorous audits and encryption standards at every layer of development.</li>
+                                    <li><strong>Performance Optimization:</strong> High-speed architectures designed for sub-second response times.</li>
+                                </ul>
                             </div>
 
                             <div className="awd-branddna-right">
@@ -278,7 +308,7 @@ const AppWebDev = () => {
                                         <g className="awd-phase-group awd-phase-5"><path pathLength="100" className="awd-flow-path" d="M265,450 L0,240" /><path pathLength="100" className="awd-flow-path" d="M265,450 L265,240" /><path pathLength="100" className="awd-flow-path" d="M265,450 L500,240" /></g>
                                     </g>
                                 </svg>
-                                
+
                                 <div className="awd-dna-circle awd-circle-purpose"><FaLayerGroup className="awd-icon" /><h3>Architecture</h3><p className="awd-circle-desc">Robust foundations for long-term growth.</p></div>
                                 <div className="awd-dna-circle awd-circle-voice"><FaCode className="awd-icon" /><h3>Code Quality</h3><p className="awd-circle-desc">Clean, maintainable, and audited codebases.</p></div>
                                 <div className="awd-dna-circle awd-circle-values"><FaShieldAlt className="awd-icon" /><h3>Security</h3><p className="awd-circle-desc">Enterprise-grade protection by default.</p></div>
@@ -318,6 +348,12 @@ const AppWebDev = () => {
                             <div className="awd-stats-content">
                                 <h2>Our Engineering Impact</h2>
                                 <p>We measure success through the stability and performance of the systems we build. These metrics reflect the trust and scalability we bring to our clients.</p>
+                                <ul className="awd-impact-list">
+                                    <li>99.9% Server Uptime maintained across all enterprise-grade deployments.</li>
+                                    <li>60% Average Reduction in page load times and API latency.</li>
+                                    <li>Zero critical security breaches reported across 500+ managed systems.</li>
+                                    <li>100% Successful migration rate for complex legacy infrastructures.</li>
+                                </ul>
                             </div>
 
                             <div className="awd-stats-wrapper-cards">

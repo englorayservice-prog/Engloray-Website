@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
+import Navbar from '../../../Components/Navbar/Navbar';
+import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import './AppDevelopment.css';
 import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
@@ -265,7 +266,8 @@ const AppDevelopment = () => {
 
     return (
         <div className="app-page-page">
-            <TwoLineNavbar />
+            <TopNavBar />
+            <Navbar />
             {/* Hero Section Rebuild */}
             <section className="app-page-hero-section-new">
                 <div className="app-page-hero-container-new">
@@ -417,7 +419,7 @@ const AppDevelopment = () => {
                     {/* Left: Clickable Service List */}
                     <div className="app-page-about-left-new">
                         <div className="app-page-about-left-header">
-                            <h2 className="app-page-about-left-title">Why Choose Our<br />Branding & Design?</h2>
+                            <h2 className="app-page-about-left-title">Why Choose Our<br />App Development?</h2>
                             <p className="app-page-about-intro-new">
                                 Click any service below to explore what we offer.
                             </p>
@@ -826,10 +828,9 @@ const AppDevelopment = () => {
             <section className="app-page-agency-section">
                 <div className="app-page-agency-container">
                     <div className="app-page-agency-header">
-                        {/* <p className="app-page-agency-welcome">WELCOME TO ENGLORAY</p> */}
                         <h2 className="app-page-agency-main-title">
-                            WE ARE A PROFESSIONAL<br />
-                            <span className="app-page-lime-highlight">BUSINESS AGENCY</span>
+                            WE BUILD POWERFUL<br />
+                            <span className="app-page-lime-highlight">MOBILE & WEB APPS</span>
                         </h2>
                     </div>
 
@@ -837,10 +838,10 @@ const AppDevelopment = () => {
                         <div className="app-page-agency-left">
                             <div className="app-page-agency-image-card">
                                 <div className="app-page-dot-pattern-circle"></div>
-                                <img src={portraitImg} alt="Our Expert" className="app-page-portrait-img" />
+                                <img src={portraitImg} alt="App Developer" className="app-page-portrait-img" />
                                 <div className="app-page-exp-badge">
                                     <span className="app-page-exp-number">5+</span>
-                                    <span className="app-page-exp-text">Years of<br />Experience</span>
+                                    <span className="app-page-exp-text">Years of<br />Development</span>
                                 </div>
                             </div>
                         </div>
@@ -850,24 +851,24 @@ const AppDevelopment = () => {
                                 <div className="app-page-info-col">
                                     <p className="app-page-info-subtitle">WHO WE ARE</p>
                                     <p className="app-page-info-desc">
-                                        We are a dynamic team of thinkers, designers, and developers dedicated to creating brands that leave a lasting impact. Our mission is to empower businesses with strategic design and innovative digital solutions that drive real growth and engagement.
+                                        We are a passionate team of app developers, UI/UX designers, and tech innovators focused on building scalable mobile and web applications. Our goal is to turn your ideas into high-performance digital products that deliver seamless user experiences.
                                     </p>
-
                                 </div>
+
                                 <div className="app-page-info-features">
                                     <p className="app-page-info-subtitle">WHY CHOOSE US</p>
                                     <ul className="app-page-features-list">
-                                        <li><span className="app-page-check-icon">✓</span> Top Guaranteed Results</li>
-                                        <li><span className="app-page-check-icon">✓</span> Team of Industry Experts</li>
-                                        <li><span className="app-page-check-icon">✓</span> 250+ Total Projects Worldwide</li>
-                                        <li><span className="app-page-check-icon">✓</span> 5+ Years of Experience</li>
+                                        <li><span className="app-page-check-icon">✓</span> High-Performance App Solutions</li>
+                                        <li><span className="app-page-check-icon">✓</span> Expert Developers & Designers</li>
+                                        <li><span className="app-page-check-icon">✓</span> 250+ Apps Delivered Successfully</li>
+                                        <li><span className="app-page-check-icon">✓</span> 5+ Years of Development Experience</li>
                                     </ul>
                                 </div>
                             </div>
 
                             <div className="app-page-agency-bottom-img-wrap">
                                 <div className="app-page-dot-pattern-square"></div>
-                                <img src={landscapeImg} alt="Our Workplace" className="app-page-landscape-img" />
+                                <img src={landscapeImg} alt="App Development Workspace" className="app-page-landscape-img" />
                             </div>
                         </div>
                     </div>
@@ -906,7 +907,7 @@ const AppDevelopment = () => {
                 </div>
             </section>
             {/* <TSPFFooter /> */}
-                        <WhiteFooter />
+            <WhiteFooter />
 
             <BackToTop />
         </div>

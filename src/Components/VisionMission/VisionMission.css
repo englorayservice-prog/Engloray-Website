@@ -25,6 +25,7 @@
 .vision-mission-container {
   max-width: 1400px;
   margin: 0 auto;
+  margin-top: -70px;
   position: relative;
   z-index: 1;
   /* margin-bottom: -30px; */
@@ -99,6 +100,7 @@
 
 .cards-row {
   display: grid;
+  margin-top: -40px;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
   margin-bottom: 0;
@@ -155,22 +157,26 @@
 
 .card-front {
   transform: rotateY(0deg);
-  opacity: 1; /* Completely visible by default */
+  opacity: 1;
+  /* Completely visible by default */
 }
 
 .card-back {
   transform: rotateY(180deg);
-  opacity: 0; /* Hidden to prevent bleed-through */
+  opacity: 0;
+  /* Hidden to prevent bleed-through */
 }
 
 .vm-card:hover .card-front {
   transform: rotateY(-180deg);
-  opacity: 0; /* Fade out as it rotates away */
+  opacity: 0;
+  /* Fade out as it rotates away */
 }
 
 .vm-card:hover .card-back {
   transform: rotateY(0deg);
-  opacity: 1; /* Fade in as it rotates into view */
+  opacity: 1;
+  /* Fade in as it rotates into view */
 }
 
 /* ========================================
@@ -443,9 +449,12 @@
   font-weight: 400;
 }
 
-/* ========================================
-   RESPONSIVE DESIGN
-   ======================================== */
+@media (min-width: 1440px) {
+  .vision-mission-section {
+    padding: 150px 80px 100px 80px;
+    min-height: auto;
+  }
+}
 
 @media (max-width: 1200px) {
   .values-grid {
