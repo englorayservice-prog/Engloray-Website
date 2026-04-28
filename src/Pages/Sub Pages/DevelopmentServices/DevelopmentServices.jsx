@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
-import TopNavBar from '../../../Components/TopNavbar/TopNavBar';
+import Navbar from '../../../Components/Navbar/Navbar';
+import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import './DevService.css';
 import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
@@ -265,7 +265,7 @@ const DevelopmentServices = () => {
     return (
         <div className="dev-page-page">
             <TopNavBar />
-            <TwoLineNavbar />
+            <Navbar />
             {/* Hero Section Rebuild */}
             <section className="dev-page-hero-section-new">
                 <div className="dev-page-hero-container-new">

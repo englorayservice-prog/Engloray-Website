@@ -471,7 +471,12 @@ const EntryIntroAnimation = ({ onComplete }) => {
                         </div>
                     </div>
                     <div className="scroll-indicator">
-                        <p>SCROLL TO EXPLORE</p>
+                        <div className="eia-mouse-scroll-indicator">
+                            <div className="eia-mouse-dot"></div>
+                            <div className="eia-mouse-chevron eia-mouse-chevron-down-1"></div>
+                            <div className="eia-mouse-chevron eia-mouse-chevron-down-2"></div>
+                        </div>
+                        <p>SCROLL DOWN</p>
                     </div>
                 </section>
             </main>

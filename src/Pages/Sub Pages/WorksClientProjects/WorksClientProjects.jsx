@@ -495,469 +495,471 @@ const WorksClientProjects = () => {
     };
 
     return (
-        <div className="wcp-container">
+        <div>
             <TopNavBar />
             <TwoLineNavbar />
+            <div className="wcp-container">
 
-            {/* NEW HERO SECTION - EXACTLY FROM THE PROVIDED FILE */}
-            <section className="hero">
+                {/* NEW HERO SECTION - EXACTLY FROM THE PROVIDED FILE */}
+                <section className="hero">
 
-                {/* BACKGROUND IMAGE */}
-                <div className="hero-video-container">
-                    <img
-                        src={heroBackgroundImage}
-                        alt="Background"
-                        className="hero-video"
-                    />
-                    <div className="hero-video-overlay"></div>
-                </div>
-
-                {/* FIRST SECTION - Badge, Title, Project Growth Card, Right Side Cards */}
-                <div className="hero-first-section">
-                    {/* CASE STUDIES BADGE - TOP CENTER */}
-                    <div className="case-studies-badge">
-                        <span className="badge">Client Projects</span>
+                    {/* BACKGROUND IMAGE */}
+                    <div className="hero-video-container">
+                        <img
+                            src={heroBackgroundImage}
+                            alt="Background"
+                            className="hero-video"
+                        />
+                        <div className="hero-video-overlay"></div>
                     </div>
 
-                    {/* LEFT CONTENT */}
-                    <div className="hero-left">
-                        <h1>
-                            OUR <br /> Client Success
-                        </h1>
+                    {/* FIRST SECTION - Badge, Title, Project Growth Card, Right Side Cards */}
+                    <div className="hero-first-section">
+                        {/* CASE STUDIES BADGE - TOP CENTER */}
+                        <div className="case-studies-badge">
+                            <span className="badge">Client Projects</span>
+                        </div>
 
-                        {/* Insight Card with Graph */}
-                        <div className="glass card salary-card">
-                            <h4>Project Growth</h4>
-                            <div className="chart-container">
-                                <svg className="growth-chart" viewBox="0 0 300 80">
-                                    <polyline
-                                        points="0,60 40,45 80,30 120,35 160,25 200,40 240,20 280,30 300,25"
-                                        fill="none"
-                                        stroke="#b7ff3c"
-                                        strokeWidth="2"
-                                    />
-                                    {[0, 40, 80, 120, 160, 200, 240, 280, 300].map((x, i) => (
-                                        <circle
-                                            key={i}
-                                            cx={x}
-                                            cy={i === 0 ? 60 : i === 1 ? 45 : i === 2 ? 30 : i === 3 ? 35 : i === 4 ? 25 : i === 5 ? 40 : i === 6 ? 20 : i === 7 ? 30 : 25}
-                                            r="3"
-                                            fill="#b7ff3c"
+                        {/* LEFT CONTENT */}
+                        <div className="hero-left">
+                            <h1>
+                                OUR <br /> Client Success
+                            </h1>
+
+                            {/* Insight Card with Graph */}
+                            <div className="glass card salary-card">
+                                <h4>Project Growth</h4>
+                                <div className="chart-container">
+                                    <svg className="growth-chart" viewBox="0 0 300 80">
+                                        <polyline
+                                            points="0,60 40,45 80,30 120,35 160,25 200,40 240,20 280,30 300,25"
+                                            fill="none"
+                                            stroke="#b7ff3c"
+                                            strokeWidth="2"
                                         />
-                                    ))}
-                                </svg>
-                                <div className="chart-line">
-                                    <div className="dot">+120%</div>
-                                </div>
-                            </div>
-                            <div className="months">
-                                <span>Mar</span><span>Apr</span><span>May</span>
-                                <span>Jun</span><span>Jul</span><span>Aug</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="hero-right">
-                        {/* FIRST CARD - Active Projects */}
-                        <div className="glass card small">
-                            <h4>Active Projects</h4>
-                            <div className="stats">
-                                <span className="stat-left">200</span>
-                                <span>310</span>
-                                <span className="active stat-right">50+</span>
-                            </div>
-                            <div className="tabs">
-                                <button>Branding</button>
-                                <button>Product</button>
-                                <button className="active">UI/UX</button>
-                            </div>
-                        </div>
-
-                        {/* SECOND + THIRD IN ONE ROW */}
-                        <div className="row-cards">
-                            <div className="glass card small performance-card">
-                                <h4>Performance Score</h4>
-                                <div className="performance-score">
-                                    <div className="score-circle">
-                                        <span className="score-value">92</span>
-                                        <span className="score-label">/100</span>
-                                    </div>
-                                    <p className="score-description">Overall Excellence Rating</p>
-                                </div>
-                                <div className="performance-metrics">
-                                    <div className="metric">
-                                        <span className="metric-label">Efficiency</span>
-                                        <div className="metric-bar">
-                                            <div className="metric-fill" style={{ width: '100%' }}></div>
-                                        </div>
-                                        <span className="metric-value">88%</span>
-                                    </div>
-                                    <div className="metric">
-                                        <span className="metric-label">Quality</span>
-                                        <div className="metric-bar">
-                                            <div className="metric-fill" style={{ width: '100%' }}></div>
-                                        </div>
-                                        <span className="metric-value">94%</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="glass card small case-studies-card">
-                                <h4>Client Projects</h4>
-                                <div className="case-studies-content">
-                                    <p className="big centered-number">100+</p>
-                                    <div className="bars centered-bars">
-                                        <span></span><span></span><span></span>
-                                        <span></span><span></span>
-                                    </div>
-                                    <p className="case-studies-footer">Completed Projects</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {/* SECOND SECTION - Filter Bar and Bottom Cards */}
-                <div className="hero-second-section">
-                    {/* FILTER BAR */}
-                    <div className="filters">
-                        <button className={`filter-btn ${activeCategory === 'all' ? 'active' : ''}`} onClick={() => setActiveCategory('all')}>All Projects</button>
-                        <button className={`filter-btn ${activeCategory === 'UiUx' ? 'active' : ''}`} onClick={() => setActiveCategory('UiUx')}>UI/UX</button>
-                        <button className={`filter-btn ${activeCategory === 'Branding' ? 'active' : ''}`} onClick={() => setActiveCategory('Branding')}>Branding</button>
-                        <button className={`filter-btn ${activeCategory === 'Products' ? 'active' : ''}`} onClick={() => setActiveCategory('Products')}>Products</button>
-                        <button className={`filter-btn ${activeCategory === 'App' ? 'active' : ''}`} onClick={() => setActiveCategory('App')}>App</button>
-                        <button className={`filter-btn ${activeCategory === 'Website' ? 'active' : ''}`} onClick={() => setActiveCategory('Website')}>Website</button>
-                    </div>
-
-                    {/* CASE STUDY CARDS */}
-                    <div className="jobs">
-                        {/* Dynamically show filtered projects as cards */}
-                        {filteredProjects.slice(0, 3).map((project) => (
-                            <div key={project.id} className="job-card glass">
-                                <div className="job-top">
-                                    <h4>{project.title}</h4>
-                                    <span className="close">×</span>
-                                </div>
-
-                                <div className="job-meta">
-                                    <span>{getCategoryLabel(project.category)}</span>
-                                    <span>{project.duration}</span>
-                                    <span>{project.results}</span>
-                                </div>
-
-                                <div className="location">
-                                    {project.subtitle}
-                                </div>
-
-                                <div className="match">
-                                    <div className="circle">
-                                        <span>{Math.floor(Math.random() * 30) + 70}%</span>
-                                    </div>
-                                    <p>Success Rate</p>
-                                </div>
-
-                                {/* bottom badges */}
-                                <div className="job-badges">
-                                    <span>{getCategoryLabel(project.category)}</span>
-                                    <span>Client: {project.client}</span>
-                                    <span>Innovation</span>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-
-            </section>
-
-            {/* Success Stories Section - Updated to match the provided design */}
-            <section className="wcp-recognition-section">
-                {/* LEFT */}
-                <div className="wcp-left">
-                    <h1>Our Success Stories</h1>
-
-                    <p>
-                        We transform ideas into reality through innovative solutions and cutting-edge technology. Each project tells a story of challenges overcome and goals achieved.
-                    </p>
-
-                    {/* CURVE */}
-                    <div className="wcp-curve-container">
-                        <svg viewBox="0 0 900 220" className="wcp-curve">
-                            <path
-                                d="M15,160 C200,-100 350,300 500,150 C650,0 750,250 880,80"
-                                fill="transparent"
-                                stroke="rgba(255, 200, 0, 0.6)"
-                                strokeWidth="3"
-                                strokeDasharray="6 6"
-                                className="wcp-curve-path"
-                            />
-
-                            {/* DOTS */}
-                            {[
-                                { x: 18, y: 155 },
-                                { x: 220, y: 85 },
-                                { x: 420, y: 185 },
-                                { x: 650, y: 105 },
-                                { x: 875, y: 80 }
-                            ].map((dot, i) => (
-                                <g key={i}>
-                                    <circle cx={dot.x} cy={dot.y} r="6" className="wcp-dot" />
-                                    <circle cx={dot.x} cy={dot.y} r="16" className="wcp-ring" />
-                                </g>
-                            ))}
-                        </svg>
-
-                        {/* FLOATING TEXTS */}
-                        <div className="wcp-floating-text wcp-ft-1">
-                            <h4>Client Brie</h4>
-                            <p>Understanding Business</p>
-                        </div>
-
-                        <div className="wcp-floating-text wcp-ft-2">
-                            <h4>Insights</h4>
-                            <p>User & Market Research</p>
-                        </div>
-
-                        <div className="wcp-floating-text wcp-ft-3">
-                            <h4>Solution</h4>
-                            <p>Product Strategy</p>
-                        </div>
-
-                        <div className="wcp-floating-text wcp-ft-4">
-                            <h4>Deliver</h4>
-                            <p>Implementation</p>
-                        </div>
-
-                        <div className="wcp-floating-text wcp-ft-5">
-                            <h4>Impact</h4>
-                            <p> Business Growth</p>
-                        </div>
-                    </div>
-
-                    {/* STATS */}
-                    <div className="wcp-stats">
-                        <div className="wcp-card">
-                            <h3>{clientProjects.length}+</h3>
-                            <p>Projects Completed</p>
-                        </div>
-
-                        <div className="wcp-card">
-                            <h3>98%</h3>
-                            <p>Client Satisfaction</p>
-                        </div>
-
-                        <div className="wcp-card">
-                            <h3>10+</h3>
-                            <p>Industry Awards</p>
-                        </div>
-                    </div>
-                </div>
-
-                {/* RIGHT */}
-                <div className="wcp-right">
-                    <div className="wcp-trophy">🏆</div>
-
-                    <div className="wcp-right-cards">
-                        <div className="wcp-card wcp-small">
-                            <span>⭐</span>
-                            <p>Excellence</p>
-                        </div>
-
-                        <div className="wcp-card wcp-small">
-                            <span>🏅</span>
-                            <p>Recognition</p>
-                        </div>
-
-                        <div className="wcp-card wcp-small">
-                            <span>💎</span>
-                            <p>Premium</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Projects Section - White BG */}
-            <section className="wcp-projects-section" ref={containerRef}>
-                <div className="wcp-projects-container">
-                    <div className="wcp-section-header">
-                        <h2 className="wcp-section-title">Featured Client Projects</h2>
-                        <p className="wcp-section-subtitle">
-                            Browse our portfolio of successful implementations across different domains
-                        </p>
-                    </div>
-
-                    {/* Floating Control Buttons on Left Side */}
-                    <div className="wcp-floating-controls">
-                        <button className="wcp-floating-btn wcp-up-btn" onClick={goToPrevious} aria-label="Previous project">
-                            <FontAwesomeIcon icon={faChevronUp} />
-                        </button>
-                        <button className="wcp-floating-btn wcp-down-btn" onClick={goToNext} aria-label="Next project">
-                            <FontAwesomeIcon icon={faChevronDown} />
-                        </button>
-                    </div>
-
-                    {/* Projects Slider - Static Layout with Content Change */}
-                    <div className="wcp-projects-slider">
-                        {filteredProjects.length > 0 && (
-                            <div className="wcp-project-slide">
-                                {/* Left Side - Static Image Container with White Background */}
-                                <div className="wcp-slide-left">
-                                    <div className="wcp-slide-image-container">
-                                        <div className="wcp-image-white-bg">
-                                            <img
-                                                src={filteredProjects[currentProjectIndex].image}
-                                                alt={filteredProjects[currentProjectIndex].title}
-                                                className="wcp-slide-image"
+                                        {[0, 40, 80, 120, 160, 200, 240, 280, 300].map((x, i) => (
+                                            <circle
+                                                key={i}
+                                                cx={x}
+                                                cy={i === 0 ? 60 : i === 1 ? 45 : i === 2 ? 30 : i === 3 ? 35 : i === 4 ? 25 : i === 5 ? 40 : i === 6 ? 20 : i === 7 ? 30 : 25}
+                                                r="3"
+                                                fill="#b7ff3c"
                                             />
-                                            <div className="wcp-image-footer">
-                                                <div className="wcp-image-text">
-                                                    <span className="wcp-image-title">Engloray</span>
-                                                    <p className="wcp-image-description">{filteredProjects[currentProjectIndex].description}</p>
+                                        ))}
+                                    </svg>
+                                    <div className="chart-line">
+                                        <div className="dot">+120%</div>
+                                    </div>
+                                </div>
+                                <div className="months">
+                                    <span>Mar</span><span>Apr</span><span>May</span>
+                                    <span>Jun</span><span>Jul</span><span>Aug</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="hero-right">
+                            {/* FIRST CARD - Active Projects */}
+                            <div className="glass card small">
+                                <h4>Active Projects</h4>
+                                <div className="stats">
+                                    <span className="stat-left">200</span>
+                                    <span>310</span>
+                                    <span className="active stat-right">50+</span>
+                                </div>
+                                <div className="tabs">
+                                    <button>Branding</button>
+                                    <button>Product</button>
+                                    <button className="active">UI/UX</button>
+                                </div>
+                            </div>
+
+                            {/* SECOND + THIRD IN ONE ROW */}
+                            <div className="row-cards">
+                                <div className="glass card small performance-card">
+                                    <h4>Performance Score</h4>
+                                    <div className="performance-score">
+                                        <div className="score-circle">
+                                            <span className="score-value">92</span>
+                                            <span className="score-label">/100</span>
+                                        </div>
+                                        <p className="score-description">Overall Excellence Rating</p>
+                                    </div>
+                                    <div className="performance-metrics">
+                                        <div className="metric">
+                                            <span className="metric-label">Efficiency</span>
+                                            <div className="metric-bar">
+                                                <div className="metric-fill" style={{ width: '100%' }}></div>
+                                            </div>
+                                            <span className="metric-value">88%</span>
+                                        </div>
+                                        <div className="metric">
+                                            <span className="metric-label">Quality</span>
+                                            <div className="metric-bar">
+                                                <div className="metric-fill" style={{ width: '100%' }}></div>
+                                            </div>
+                                            <span className="metric-value">94%</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="glass card small case-studies-card">
+                                    <h4>Client Projects</h4>
+                                    <div className="case-studies-content">
+                                        <p className="big centered-number">100+</p>
+                                        <div className="bars centered-bars">
+                                            <span></span><span></span><span></span>
+                                            <span></span><span></span>
+                                        </div>
+                                        <p className="case-studies-footer">Completed Projects</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* SECOND SECTION - Filter Bar and Bottom Cards */}
+                    <div className="hero-second-section">
+                        {/* FILTER BAR */}
+                        <div className="filters">
+                            <button className={`filter-btn ${activeCategory === 'all' ? 'active' : ''}`} onClick={() => setActiveCategory('all')}>All Projects</button>
+                            <button className={`filter-btn ${activeCategory === 'UiUx' ? 'active' : ''}`} onClick={() => setActiveCategory('UiUx')}>UI/UX</button>
+                            <button className={`filter-btn ${activeCategory === 'Branding' ? 'active' : ''}`} onClick={() => setActiveCategory('Branding')}>Branding</button>
+                            <button className={`filter-btn ${activeCategory === 'Products' ? 'active' : ''}`} onClick={() => setActiveCategory('Products')}>Products</button>
+                            <button className={`filter-btn ${activeCategory === 'App' ? 'active' : ''}`} onClick={() => setActiveCategory('App')}>App</button>
+                            <button className={`filter-btn ${activeCategory === 'Website' ? 'active' : ''}`} onClick={() => setActiveCategory('Website')}>Website</button>
+                        </div>
+
+                        {/* CASE STUDY CARDS */}
+                        <div className="jobs">
+                            {/* Dynamically show filtered projects as cards */}
+                            {filteredProjects.slice(0, 3).map((project) => (
+                                <div key={project.id} className="job-card glass">
+                                    <div className="job-top">
+                                        <h4>{project.title}</h4>
+                                        <span className="close">×</span>
+                                    </div>
+
+                                    <div className="job-meta">
+                                        <span>{getCategoryLabel(project.category)}</span>
+                                        <span>{project.duration}</span>
+                                        <span>{project.results}</span>
+                                    </div>
+
+                                    <div className="location">
+                                        {project.subtitle}
+                                    </div>
+
+                                    <div className="match">
+                                        <div className="circle">
+                                            <span>{Math.floor(Math.random() * 30) + 70}%</span>
+                                        </div>
+                                        <p>Success Rate</p>
+                                    </div>
+
+                                    {/* bottom badges */}
+                                    <div className="job-badges">
+                                        <span>{getCategoryLabel(project.category)}</span>
+                                        <span>Client: {project.client}</span>
+                                        <span>Innovation</span>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                </section>
+
+                {/* Success Stories Section - Updated to match the provided design */}
+                <section className="wcp-recognition-section">
+                    {/* LEFT */}
+                    <div className="wcp-left">
+                        <h1>Our Success Stories</h1>
+
+                        <p>
+                            We transform ideas into reality through innovative solutions and cutting-edge technology. Each project tells a story of challenges overcome and goals achieved.
+                        </p>
+
+                        {/* CURVE */}
+                        <div className="wcp-curve-container">
+                            <svg viewBox="0 0 900 220" className="wcp-curve">
+                                <path
+                                    d="M15,160 C200,-100 350,300 500,150 C650,0 750,250 880,80"
+                                    fill="transparent"
+                                    stroke="rgba(255, 200, 0, 0.6)"
+                                    strokeWidth="3"
+                                    strokeDasharray="6 6"
+                                    className="wcp-curve-path"
+                                />
+
+                                {/* DOTS */}
+                                {[
+                                    { x: 18, y: 155 },
+                                    { x: 220, y: 85 },
+                                    { x: 420, y: 185 },
+                                    { x: 650, y: 105 },
+                                    { x: 875, y: 80 }
+                                ].map((dot, i) => (
+                                    <g key={i}>
+                                        <circle cx={dot.x} cy={dot.y} r="6" className="wcp-dot" />
+                                        <circle cx={dot.x} cy={dot.y} r="16" className="wcp-ring" />
+                                    </g>
+                                ))}
+                            </svg>
+
+                            {/* FLOATING TEXTS */}
+                            <div className="wcp-floating-text wcp-ft-1">
+                                <h4>Client Brie</h4>
+                                <p>Understanding Business</p>
+                            </div>
+
+                            <div className="wcp-floating-text wcp-ft-2">
+                                <h4>Insights</h4>
+                                <p>User & Market Research</p>
+                            </div>
+
+                            <div className="wcp-floating-text wcp-ft-3">
+                                <h4>Solution</h4>
+                                <p>Product Strategy</p>
+                            </div>
+
+                            <div className="wcp-floating-text wcp-ft-4">
+                                <h4>Deliver</h4>
+                                <p>Implementation</p>
+                            </div>
+
+                            <div className="wcp-floating-text wcp-ft-5">
+                                <h4>Impact</h4>
+                                <p> Business Growth</p>
+                            </div>
+                        </div>
+
+                        {/* STATS */}
+                        <div className="wcp-stats">
+                            <div className="wcp-card">
+                                <h3>{clientProjects.length}+</h3>
+                                <p>Projects Completed</p>
+                            </div>
+
+                            <div className="wcp-card">
+                                <h3>98%</h3>
+                                <p>Client Satisfaction</p>
+                            </div>
+
+                            <div className="wcp-card">
+                                <h3>10+</h3>
+                                <p>Industry Awards</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* RIGHT */}
+                    <div className="wcp-right">
+                        <div className="wcp-trophy">🏆</div>
+
+                        <div className="wcp-right-cards">
+                            <div className="wcp-card wcp-small">
+                                <span>⭐</span>
+                                <p>Excellence</p>
+                            </div>
+
+                            <div className="wcp-card wcp-small">
+                                <span>🏅</span>
+                                <p>Recognition</p>
+                            </div>
+
+                            <div className="wcp-card wcp-small">
+                                <span>💎</span>
+                                <p>Premium</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Projects Section - White BG */}
+                <section className="wcp-projects-section" ref={containerRef}>
+                    <div className="wcp-projects-container">
+                        <div className="wcp-section-header">
+                            <h2 className="wcp-section-title">Featured Client Projects</h2>
+                            <p className="wcp-section-subtitle">
+                                Browse our portfolio of successful implementations across different domains
+                            </p>
+                        </div>
+
+                        {/* Floating Control Buttons on Left Side */}
+                        <div className="wcp-floating-controls">
+                            <button className="wcp-floating-btn wcp-up-btn" onClick={goToPrevious} aria-label="Previous project">
+                                <FontAwesomeIcon icon={faChevronUp} />
+                            </button>
+                            <button className="wcp-floating-btn wcp-down-btn" onClick={goToNext} aria-label="Next project">
+                                <FontAwesomeIcon icon={faChevronDown} />
+                            </button>
+                        </div>
+
+                        {/* Projects Slider - Static Layout with Content Change */}
+                        <div className="wcp-projects-slider">
+                            {filteredProjects.length > 0 && (
+                                <div className="wcp-project-slide">
+                                    {/* Left Side - Static Image Container with White Background */}
+                                    <div className="wcp-slide-left">
+                                        <div className="wcp-slide-image-container">
+                                            <div className="wcp-image-white-bg">
+                                                <img
+                                                    src={filteredProjects[currentProjectIndex].image}
+                                                    alt={filteredProjects[currentProjectIndex].title}
+                                                    className="wcp-slide-image"
+                                                />
+                                                <div className="wcp-image-footer">
+                                                    <div className="wcp-image-text">
+                                                        <span className="wcp-image-title">Engloray</span>
+                                                        <p className="wcp-image-description">{filteredProjects[currentProjectIndex].description}</p>
+                                                    </div>
+                                                    <span className="wcp-image-badge" style={{ backgroundColor: filteredProjects[currentProjectIndex].color }}>
+                                                        {getCategoryLabel(filteredProjects[currentProjectIndex].category)}
+                                                    </span>
                                                 </div>
-                                                <span className="wcp-image-badge" style={{ backgroundColor: filteredProjects[currentProjectIndex].color }}>
-                                                    {getCategoryLabel(filteredProjects[currentProjectIndex].category)}
-                                                </span>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                {/* Right Side - Content with fade-in/fade-out effect */}
-                                <div className="wcp-slide-right">
-                                    <div className={`wcp-content-wrapper ${isFading ? 'fade-out' : 'fade-in'}`}>
-                                        <h3 className="wcp-slide-title">{filteredProjects[currentProjectIndex].title}</h3>
-                                        <p className="wcp-slide-subtitle">{filteredProjects[currentProjectIndex].subtitle}</p>
-                                        <p className="wcp-slide-client">Client: {filteredProjects[currentProjectIndex].client}</p>
+                                    {/* Right Side - Content with fade-in/fade-out effect */}
+                                    <div className="wcp-slide-right">
+                                        <div className={`wcp-content-wrapper ${isFading ? 'fade-out' : 'fade-in'}`}>
+                                            <h3 className="wcp-slide-title">{filteredProjects[currentProjectIndex].title}</h3>
+                                            <p className="wcp-slide-subtitle">{filteredProjects[currentProjectIndex].subtitle}</p>
+                                            <p className="wcp-slide-client">Client: {filteredProjects[currentProjectIndex].client}</p>
 
-                                        <div className="wcp-slide-metrics">
-                                            <div className="wcp-slide-metric">
-                                                <span className="wcp-slide-metric-label">
-                                                    <FontAwesomeIcon icon={faCalendarCheck} className="wcp-slide-metric-icon" />
-                                                    Duration
-                                                </span>
-                                                <span className="wcp-slide-metric-value">{filteredProjects[currentProjectIndex].duration}</span>
+                                            <div className="wcp-slide-metrics">
+                                                <div className="wcp-slide-metric">
+                                                    <span className="wcp-slide-metric-label">
+                                                        <FontAwesomeIcon icon={faCalendarCheck} className="wcp-slide-metric-icon" />
+                                                        Duration
+                                                    </span>
+                                                    <span className="wcp-slide-metric-value">{filteredProjects[currentProjectIndex].duration}</span>
+                                                </div>
+                                                <div className="wcp-slide-metric">
+                                                    <span className="wcp-slide-metric-label">
+                                                        <FontAwesomeIcon icon={faTrophy} className="wcp-slide-metric-icon" />
+                                                        Results
+                                                    </span>
+                                                    <span className="wcp-slide-metric-value-highlighter">{filteredProjects[currentProjectIndex].results}</span>
+                                                </div>
                                             </div>
-                                            <div className="wcp-slide-metric">
-                                                <span className="wcp-slide-metric-label">
-                                                    <FontAwesomeIcon icon={faTrophy} className="wcp-slide-metric-icon" />
-                                                    Results
-                                                </span>
-                                                <span className="wcp-slide-metric-value-highlighter">{filteredProjects[currentProjectIndex].results}</span>
-                                            </div>
+
+                                            <p className="wcp-slide-description">{filteredProjects[currentProjectIndex].description}</p>
                                         </div>
-
-                                        <p className="wcp-slide-description">{filteredProjects[currentProjectIndex].description}</p>
                                     </div>
                                 </div>
+                            )}
+                        </div>
+
+                        {/* Marquee Infinity Scroll for Logos - Full Width */}
+                        <div className="wcp-marquee-full-wrapper">
+                            <div className="wcp-marquee-full-container"
+                                ref={marqueeRef}
+                                onMouseDown={handleMouseDown}
+                                onMouseLeave={handleMouseLeave}
+                                onMouseUp={handleMouseUp}
+                                onMouseMove={handleMouseMove}
+                                style={{ cursor: 'grab' }}>
+                                <div className="wcp-marquee-full-track">
+                                    {logoImages.map((logo, index) => (
+                                        <div key={index} className="wcp-marquee-full-item">
+                                            <img src={logo} alt={`Logo ${index + 1}`} className="wcp-marquee-full-logo" />
+                                        </div>
+                                    ))}
+                                    {/* Duplicate for seamless loop */}
+                                    {logoImages.map((logo, index) => (
+                                        <div key={`duplicate-${index}`} className="wcp-marquee-full-item">
+                                            <img src={logo} alt={`Logo ${index + 1}`} className="wcp-marquee-full-logo" />
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Empty State */}
+                        {filteredProjects.length === 0 && (
+                            <div className="wcp-empty-state">
+                                <h3>No projects found in this category</h3>
+                                <p>Try selecting a different category to view our client projects</p>
                             </div>
                         )}
                     </div>
+                </section>
 
-                    {/* Marquee Infinity Scroll for Logos - Full Width */}
-                    <div className="wcp-marquee-full-wrapper">
-                        <div className="wcp-marquee-full-container"
-                            ref={marqueeRef}
-                            onMouseDown={handleMouseDown}
-                            onMouseLeave={handleMouseLeave}
-                            onMouseUp={handleMouseUp}
-                            onMouseMove={handleMouseMove}
-                            style={{ cursor: 'grab' }}>
-                            <div className="wcp-marquee-full-track">
-                                {logoImages.map((logo, index) => (
-                                    <div key={index} className="wcp-marquee-full-item">
-                                        <img src={logo} alt={`Logo ${index + 1}`} className="wcp-marquee-full-logo" />
-                                    </div>
-                                ))}
-                                {/* Duplicate for seamless loop */}
-                                {logoImages.map((logo, index) => (
-                                    <div key={`duplicate-${index}`} className="wcp-marquee-full-item">
-                                        <img src={logo} alt={`Logo ${index + 1}`} className="wcp-marquee-full-logo" />
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
+                {/* Testimonials Section */}
+                <section className="wcp-testimonials-section">
+                    {/* TOP BADGE */}
+                    <div className="wcp-badge-wrapper">
+                        <span className="wcp-line"></span>
+                        <span className="wcp-badge">Testimonials</span>
+                        <span className="wcp-line"></span>
                     </div>
 
-                    {/* Empty State */}
-                    {filteredProjects.length === 0 && (
-                        <div className="wcp-empty-state">
-                            <h3>No projects found in this category</h3>
-                            <p>Try selecting a different category to view our client projects</p>
-                        </div>
-                    )}
-                </div>
-            </section>
+                    {/* TITLE */}
+                    <h1 className="wcp-title">What our clients are saying</h1>
+                    <p className="wcp-subtitle">
+                        Hear directly from our clients about their experience working with us
+                    </p>
 
-            {/* Testimonials Section */}
-            <section className="wcp-testimonials-section">
-                {/* TOP BADGE */}
-                <div className="wcp-badge-wrapper">
-                    <span className="wcp-line"></span>
-                    <span className="wcp-badge">Testimonials</span>
-                    <span className="wcp-line"></span>
-                </div>
+                    {/* CARDS CAROUSEL - 3 cards visible at a time */}
+                    <div className="wcp-testimonials-carousel">
+                        <div className="wcp-cards-container">
+                            {getVisibleTestimonials().map((testimonial, idx) => (
+                                <div
+                                    key={`${testimonial.originalIndex}-${currentTestimonialIndex}`}
+                                    className="wcp-card testimonial-card"
+                                >
+                                    {/* QUOTE ICON */}
+                                    <div className="wcp-quote">“</div>
 
-                {/* TITLE */}
-                <h1 className="wcp-title">What our clients are saying</h1>
-                <p className="wcp-subtitle">
-                    Hear directly from our clients about their experience working with us
-                </p>
+                                    <p className="wcp-card-text">{testimonial.text}</p>
 
-                {/* CARDS CAROUSEL - 3 cards visible at a time */}
-                <div className="wcp-testimonials-carousel">
-                    <div className="wcp-cards-container">
-                        {getVisibleTestimonials().map((testimonial, idx) => (
-                            <div
-                                key={`${testimonial.originalIndex}-${currentTestimonialIndex}`}
-                                className="wcp-card testimonial-card"
-                            >
-                                {/* QUOTE ICON */}
-                                <div className="wcp-quote">“</div>
-
-                                <p className="wcp-card-text">{testimonial.text}</p>
-
-                                <div className="wcp-user">
-                                    <div className="wcp-user-icon">{testimonial.icon}</div>
-                                    <div>
-                                        <h4>{testimonial.author}</h4>
-                                        <span>{testimonial.role}</span>
+                                    <div className="wcp-user">
+                                        <div className="wcp-user-icon">{testimonial.icon}</div>
+                                        <div>
+                                            <h4>{testimonial.author}</h4>
+                                            <span>{testimonial.role}</span>
+                                        </div>
                                     </div>
+
+                                    {/* PURPLE GRADIENT INSIDE CARD */}
+                                    <div className="wcp-card-gradient"></div>
                                 </div>
-
-                                {/* PURPLE GRADIENT INSIDE CARD */}
-                                <div className="wcp-card-gradient"></div>
-                            </div>
-                        ))}
-                    </div>
-
-                    {/* Navigation Buttons */}
-                    <div className="wcp-testimonial-controls">
-                        <button
-                            className="wcp-nav-btn wcp-prev-btn"
-                            onClick={prevTestimonial}
-                            aria-label="Previous testimonial"
-                        >
-                            <FontAwesomeIcon icon={faChevronLeft} />
-                        </button>
-                        <div className="wcp-testimonial-dots">
-                            {clientTestimonials.map((_, index) => (
-                                <button
-                                    key={index}
-                                    className={`wcp-testimonial-dot ${index === currentTestimonialIndex ? 'active' : ''}`}
-                                    onClick={() => handleTestimonialDotClick(index)}
-                                    aria-label={`Go to testimonial set starting at ${index + 1}`}
-                                />
                             ))}
                         </div>
-                        <button
-                            className="wcp-nav-btn wcp-next-btn"
-                            onClick={nextTestimonial}
-                            aria-label="Next testimonial"
-                        >
-                            <FontAwesomeIcon icon={faChevronRight} />
-                        </button>
+
+                        {/* Navigation Buttons */}
+                        <div className="wcp-testimonial-controls">
+                            <button
+                                className="wcp-nav-btn wcp-prev-btn"
+                                onClick={prevTestimonial}
+                                aria-label="Previous testimonial"
+                            >
+                                <FontAwesomeIcon icon={faChevronLeft} />
+                            </button>
+                            <div className="wcp-testimonial-dots">
+                                {clientTestimonials.map((_, index) => (
+                                    <button
+                                        key={index}
+                                        className={`wcp-testimonial-dot ${index === currentTestimonialIndex ? 'active' : ''}`}
+                                        onClick={() => handleTestimonialDotClick(index)}
+                                        aria-label={`Go to testimonial set starting at ${index + 1}`}
+                                    />
+                                ))}
+                            </div>
+                            <button
+                                className="wcp-nav-btn wcp-next-btn"
+                                onClick={nextTestimonial}
+                                aria-label="Next testimonial"
+                            >
+                                <FontAwesomeIcon icon={faChevronRight} />
+                            </button>
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            </div>
             <NewFooter1 />
             <BackToTop />
         </div>

@@ -76,7 +76,8 @@ const JobSeekerPage = () => {
     ];
     return (
         <>
-            <TopNavbar /><TwoLineNavbar />
+            <TopNavbar />
+            <TwoLineNavbar />
             <div className="crm-subpage-container job-theme">
                 <section className="crm-subpage-hero crm-showcase-hero job-showcase-hero">
                     <div className="showcase-bg-layer">
@@ -408,7 +409,7 @@ const JobSeekerPage = () => {
                                 {[
                                     {
                                         title: "AI Resume Scoring",
-                                        desc: "Instant feedback with keyword optimization tips to pass ATS filters effortlessly.",
+                                        desc: "Instant feedback with keyword optimization tips to pass ATS filters effortlessly and reach the top of recruiter shortlists. Our advanced scanning engine analyzes your resume against industry-standard benchmarks, providing specific recommendations to highlight your key accomplishments effectively.",
                                         imgBg: "rgba(245,158,11,0.12)",
                                         visual: (
                                             <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="job-card-svg">
@@ -434,7 +435,7 @@ const JobSeekerPage = () => {
                                     },
                                     {
                                         title: "Mock Interview Coach",
-                                        desc: "Practice with our AI interviewer and get real-time feedback on answers and tone.",
+                                        desc: "Practice with our AI interviewer and get real-time feedback on answers, body language, and tone of voice. Our coach simulates high-pressure environments, helping you refine your storytelling and build the confidence needed to impress even the most demanding hiring managers.",
                                         imgBg: "rgba(251,191,36,0.12)",
                                         visual: (
                                             <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="job-card-svg">
@@ -461,7 +462,7 @@ const JobSeekerPage = () => {
                                     },
                                     {
                                         title: "Salary Benchmarking",
-                                        desc: "Know your market worth with real-time salary data by role and experience level.",
+                                        desc: "Know your market worth with real-time salary data by role, experience level, and geographic location. We aggregate thousands of data points to provide accurate compensation insights, empowering you to negotiate with confidence and ensure you are being paid fairly for your skills.",
                                         imgBg: "rgba(245,158,11,0.18)",
                                         visual: (
                                             <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="job-card-svg">
@@ -489,7 +490,7 @@ const JobSeekerPage = () => {
                                     },
                                     {
                                         title: "Confidential Job Search",
-                                        desc: "Hidden mode lets you explore opportunities without your current employer knowing.",
+                                        desc: "Hidden mode lets you explore new opportunities without your current employer or colleagues ever knowing. We use advanced privacy shields to mask your profile from specific companies, giving you the ultimate freedom to browse and apply to roles with complete peace of mind.",
                                         imgBg: "rgba(180,83,9,0.12)",
                                         visual: (
                                             <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="job-card-svg">
@@ -517,7 +518,7 @@ const JobSeekerPage = () => {
                                     },
                                     {
                                         title: "Application Pipeline",
-                                        desc: "Track every application, interview stage, and offer letter in a visual kanban board.",
+                                        desc: "Track every single application, interview stage, and offer letter in a clear, visual kanban board. Organize your job search like a professional project, setting follow-up reminders and keeping notes on every interaction so you never miss an opportunity to follow through.",
                                         imgBg: "rgba(217,119,6,0.12)",
                                         visual: (
                                             <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="job-card-svg">

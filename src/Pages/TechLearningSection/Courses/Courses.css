@@ -2329,3 +2329,9 @@
     bottom: 14px;
   }
 }
+
+@media (min-width: 1440px) {
+  .courses-container {
+    zoom: 1.32;
+  }
+}

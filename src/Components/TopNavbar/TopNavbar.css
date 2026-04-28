@@ -251,4 +251,12 @@ body.route-tech-group .topnav-main {
 
 body.route-tech-learning .topnav-main {
     border-bottom-color: #10b981;
+}
+
+/* Widescreen Full-Width layout for >= 1440px */
+@media screen and (min-width: 1440px) {
+    .topnav-container {
+        max-width: 100% !important;
+        padding: 0 40px !important;
+    }
 }

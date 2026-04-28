@@ -2893,9 +2893,150 @@
     }
 }
 
-/* ============================================================
-   REFINED TESTIMONIAL SECTION — Infinite Marquee & Mask Fade
-   ============================================================ */
+
+
+/* Scroll Wrapper with CSS Mask for Edge Fading */
+
+/* Pause on Hover */
+
+@keyframes bi-marquee-spin {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+        /* Halfway through the doubled list */
+    }
+}
+
+@media (max-width: 768px) {
+
+    .dev-page-marquee-spin {
+        animation-duration: 30s;
+    }
+}
+
+/* Left Alignment Overrides */
+.de-hero-title-new, .de-hero-desc-new, .de-hero-subtitle-new, .bi-info-subtitle, .bi-el-title, .bi-prod-title, .bi-detail-title, .bi-about-left-title, .bi-service-card-title, .bi-service-card-desc, .bi-agency-main-title, .bi-info-col, .bi-info-features {
+    text-align: left !important;
+    margin-left: 0 !important;
+}
+
+@media (min-width: 1440px) {
+
+    .dev-page-el-container,
+    .dev-page-prod-container,
+    .dev-page-agency-container {
+        max-width: 1600px;
+        gap: 120px;
+    }
+
+    .dev-page-el-left {
+        height: 680px;
+    }
+
+    .dev-page-el-img-large {
+        width: 360px;
+        height: 580px;
+    }
+
+    .dev-page-el-img-small-top {
+        width: 320px;
+        height: 240px;
+        left: 40px;
+    }
+
+    .dev-page-el-img-small-bottom {
+        width: 330px;
+        height: 250px;
+        left: 60px;
+    }
+
+    .dev-page-el-title {
+        font-size: 54px;
+    }
+
+    .dev-page-el-desc {
+        font-size: 17px;
+    }
+
+    .dev-page-el-preheading {
+        font-size: 42px;
+    }
+
+    .dev-page-el-stat-num {
+        font-size: 28px;
+    }
+
+    /* Agency Section Scaling */
+    .dev-page-agency-main-title {
+        font-size: 58px;
+    }
+
+    .dev-page-portrait-img {
+        height: 580px;
+    }
+
+    .dev-page-info-desc {
+        font-size: 18px;
+    }
+
+    .dev-page-exp-badge {
+        padding: 40px 55px;
+        left: -40px;
+    }
+
+    .dev-page-exp-number {
+        font-size: 60px;
+    }
+
+    .dev-page-exp-text {
+        font-size: 18px;
+    }
+
+    .dev-page-features-list li {
+        font-size: 18px;
+    }
+
+    /* Productivity Section Scaling */
+    .dev-page-prod-title {
+        font-size: 50px;
+    }
+
+    .dev-page-prod-desc {
+        font-size: 19px;
+        max-width: 600px;
+    }
+
+    .dev-page-timeline-icon {
+        width: 80px;
+        height: 80px;
+        padding: 20px;
+    }
+
+    .dev-page-timeline-content h3 {
+        font-size: 24px;
+    }
+
+    .dev-page-timeline-content p {
+        font-size: 16px;
+    }
+
+    .dev-page-btn-prod-primary,
+    .dev-page-btn-prod-secondary {
+        padding: 18px 36px;
+        font-size: 16px;
+    }
+
+    .dev-page-el-badge-volunteer {
+        right: 40px;
+    }
+}
+
+/* ═══════════════════════════════════════════
+   TESTIMONIAL SECTION — Mirrored from BrandingAndIdentity
+   ═══════════════════════════════════════════ */
 .dev-page-testimonial-section {
     width: 100%;
     background: #f5f5f7;
@@ -2910,13 +3051,13 @@
 }
 
 .dev-page-testimonial-label {
-    font-size: 14px;
+    font-size: 24px;
     font-weight: 600;
     color: #e05a5a;
     letter-spacing: 0.5px;
     margin-bottom: 16px;
-    margin-left: 50%;
     font-style: italic;
+    margin-left: 45%;
 }
 
 .dev-page-testimonial-heading {
@@ -2924,13 +3065,16 @@
     font-weight: 700;
     color: #1a1a1a;
     line-height: 1.25;
-    margin-left: 10%;
     margin-bottom: 60px;
     letter-spacing: -1px;
+    /* margin-left: 10%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+
 }
 
-/* Scroll Wrapper with CSS Mask for Edge Fading */
 .dev-page-testimonial-scroll-wrapper {
     position: relative;
     width: 100%;
@@ -2947,16 +3091,15 @@
     /* Critical for marquee */
     gap: 32px;
     padding: 20px 0 40px;
-    animation: bi-marquee-spin 40s linear infinite;
+    animation: dev-page-marquee-spin 40s linear infinite;
     will-change: transform;
 }
 
-/* Pause on Hover */
 .dev-page-testimonial-scroll-wrapper:hover .dev-page-testimonial-grid-horizontal {
     animation-play-state: paused;
 }
 
-@keyframes bi-marquee-spin {
+@keyframes dev-page-marquee-spin {
     from {
         transform: translateX(0);
     }
@@ -3044,6 +3187,86 @@
     color: #FFD700;
 }
 
+    .dev-page-testimonial-card-horizontal {
+        flex: 0 0 300px;
+    }
+
+    .dev-page-testimonial-heading {
+        font-size: 32px;
+    }
+
+.dev-page-testimonial-container,
+.bi-info-col,
+.bi-info-features {
+    text-align: left !important;
+    margin-left: 0 !important;
+}
+
+    .dev-page-testimonial-section {
+        padding: 60px 0 80px;
+    }
+
+    .dev-page-testimonial-label {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .dev-page-testimonial-heading {
+        font-size: 28px;
+        padding: 0 20px;
+        margin-left: 0;
+    }
+
+    .dev-page-testimonial-card-horizontal {
+        flex: 0 0 280px;
+        padding: 30px 20px;
+    }
+
+    .dev-page-testimonial-text {
+        height: auto;
+        min-height: 80px;
+    }
+
+    .dev-page-testimonial-card-horizontal {
+        flex: 0 0 260px;
+    }
+
+    .dev-page-testimonial-name {
+        font-size: 16px;
+    }
+
+    .dev-page-testimonial-text {
+        font-size: 13px;
+    }
+
+    .dev-page-testimonial-heading {
+        font-size: 24px;
+    }
+
+    .dev-page-testimonial-card-horizontal {
+        flex: 0 0 240px;
+        padding: 20px 15px;
+    }
+
+    .dev-page-testimonial-name {
+        font-size: 14px;
+    }
+
+    .dev-page-testimonial-text {
+        font-size: 11px;
+    }
+
+@keyframes dev-page-marquee-spin {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+        /* Halfway through the doubled list */
+    }
+}
+
 @media (max-width: 768px) {
     .dev-page-testimonial-card-horizontal {
         flex: 0 0 300px;
@@ -3058,8 +3281,679 @@
     }
 }
 
-/* Left Alignment Overrides */
-.de-hero-title-new, .de-hero-desc-new, .de-hero-subtitle-new, .bi-info-subtitle, .bi-el-title, .bi-prod-title, .bi-detail-title, .bi-about-left-title, .bi-service-card-title, .bi-service-card-desc, .bi-agency-main-title, .bi-info-col, .bi-info-features {
-    text-align: left !important;
-    margin-left: 0 !important;
+@media (max-width: 768px) {
+    .bi-hero-section-new {
+        min-height: auto;
+        padding: 20px;
+    }
+
+    .bi-hero-container-new {
+        padding: 30px 20px 40px 20px;
+    }
+
+    .bi-hero-title-new {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .bi-hero-buttons-new {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .bi-btn-get-started-new,
+    .bi-btn-contact-us-new {
+        width: 100%;
+        text-align: center;
+    }
+
+    .bi-hero-desc-new {
+        font-size: 16px;
+    }
+
+    .bi-stat-item-new {
+        flex: 1;
+        min-width: 80px;
+    }
+
+    .bi-title-play-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .bi-case-title-new {
+        font-size: 28px;
+    }
+
+    .bi-about-company-desc-new {
+        font-size: 14px;
+    }
+
+    .bi-performance-card-new {
+        padding: 20px;
+    }
+
+    .bi-about-section-new {
+        padding: 80px 20px 60px;
+        clip-path: none;
+        margin-top: 0;
+    }
+
+    .bi-about-left-tag {
+        font-size: 28px !important;
+        text-align: center !important;
+    }
+
+    .bi-about-left-title {
+        font-size: 24px !important;
+        text-align: center !important;
+    }
+
+    .bi-about-intro-new {
+        text-align: center !important;
+    }
+
+    .bi-about-left-header {
+        text-align: center !important;
+    }
+
+    .bi-about-img-wrap-new {
+        min-height: 320px;
+        height: auto;
+    }
+
+    .bi-about-badge-new {
+        padding: 10px 14px;
+    }
+
+    .bi-badge-num {
+        font-size: 20px;
+    }
+
+    .bi-detail-title {
+        font-size: 22px;
+    }
+
+    .bi-detail-stats {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .bi-detail-stat {
+        flex: 1;
+        min-width: 80px;
+        border-right: none;
+    }
+
+    .bi-about-service-item-new {
+        padding: 15px 18px !important;
+    }
+
+    .bi-service-item-left-about {
+        gap: 12px !important;
+    }
+
+    .bi-service-num-new {
+        font-size: 11px !important;
+    }
+
+    .bi-service-name-about {
+        font-size: 13px !important;
+    }
+
+    .bi-service-short-about {
+        font-size: 10px !important;
+    }
+
+    .bi-service-arrow-about {
+        font-size: 14px !important;
+    }
+
+    .bi-about-detail-panel {
+        padding: 20px 18px !important;
+        height: auto !important;
+    }
+
+    .bi-detail-icon-wrap {
+        width: 44px;
+        height: 44px;
+    }
+
+    .bi-detail-icon {
+        font-size: 18px;
+    }
+
+    .bi-detail-num {
+        font-size: 9px;
+    }
+
+    .bi-detail-desc {
+        font-size: 13px !important;
+    }
+
+    .bi-detail-stat-val {
+        font-size: 14px !important;
+    }
+
+    .bi-detail-stat-label {
+        font-size: 9px !important;
+    }
+
+    .bi-detail-cta {
+        padding: 12px 20px !important;
+        font-size: 13px !important;
+    }
+
+    .bi-productivity-section {
+        padding: 80px 20px;
+    }
+
+    .bi-prod-title {
+        font-size: 32px;
+    }
+
+    .bi-prod-desc {
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+
+    .bi-prod-buttons {
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 40px;
+    }
+
+    .bi-btn-prod-primary,
+    .bi-btn-prod-secondary {
+        width: 100%;
+        text-align: center;
+        padding: 14px 24px;
+    }
+
+    .bi-prod-avatars-box {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .bi-prod-avatars {
+        justify-content: center;
+    }
+
+    .bi-prod-avatar-text {
+        text-align: center;
+        font-size: 12px;
+    }
+
+    .bi-prod-timeline {
+        margin-left: 0;
+        padding-left: 0;
+    }
+
+    .bi-prod-timeline::before {
+        left: 16px !important;
+        width: 2px;
+    }
+
+    .bi-timeline-item {
+        gap: 12px;
+        padding-bottom: 20px;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .bi-timeline-icon {
+        width: 40px !important;
+        height: 40px !important;
+        padding: 8px !important;
+    }
+
+    .bi-timeline-content h3 {
+        font-size: 16px;
+    }
+
+    .bi-timeline-content p {
+        font-size: 12px;
+    }
+
+    .bi-page-service-card {
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    .bi-mission-title {
+        margin-top: 5px;
+        font-size: 32px;
+    }
+
+    .bi-mission-section {
+        padding: 60px 20px;
+    }
+
+    .bi-services-section-new {
+        padding: 60px 20px;
+    }
+
+    .bi-services-container-new {
+        padding: 0 20px;
+    }
+
+    .bi-services-title-new {
+        font-size: 36px;
+    }
+
+    .bi-services-info-col-new {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .bi-services-card-dark-new,
+    .bi-services-card-green-new {
+        padding: 25px 20px;
+    }
+
+    .bi-agency-section {
+        padding: 60px 20px 100px;
+    }
+
+    .bi-agency-main-title {
+        font-size: 32px;
+    }
+
+    .bi-exp-badge {
+        padding: 20px 30px;
+    }
+
+    .bi-exp-number {
+        font-size: 36px;
+    }
+
+    .bi-landscape-img {
+        height: 220px;
+    }
+
+    .dev-page-testimonial-section {
+        padding: 60px 0 80px;
+    }
+
+    .dev-page-testimonial-label {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .dev-page-testimonial-heading {
+        font-size: 28px;
+        padding: 0 20px;
+        margin-left: 0;
+    }
+
+    .dev-page-testimonial-card-horizontal {
+        flex: 0 0 280px;
+        padding: 30px 20px;
+    }
+
+    .dev-page-testimonial-text {
+        height: auto;
+        min-height: 80px;
+    }
+
+    .bi-courses-section {
+        padding: 60px 20px;
+    }
+
+    .bi-section-title {
+        font-size: 2rem;
+    }
+
+    .bi-courses-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .bi-feedback-section {
+        padding: 60px 20px;
+    }
+
+    .bi-feedback-card {
+        padding: 30px 25px;
+    }
+
+    .bi-feedback-text {
+        font-size: 1rem;
+    }
+
+    /* Mission section 7th card alignment fix */
+    .bi-page-service-card:last-child {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        left: auto !important;
+        right: auto !important;
+        position: relative !important;
+        transform: none !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .bi-hero-title-new {
+        font-size: 28px;
+    }
+
+    .bi-hero-subtitle-new {
+        font-size: 16px;
+    }
+
+    .bi-hero-desc-new {
+        font-size: 14px;
+    }
+
+    .bi-stat-circle-new {
+        width: 50px;
+        height: 50px;
+    }
+
+    .bi-stat-number-new {
+        font-size: 11px;
+    }
+
+    .bi-stat-label-new {
+        font-size: 10px;
+    }
+
+    .bi-hero-stats-new {
+        gap: 20px;
+    }
+
+    .bi-avatar-group-new img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .bi-avatar-icon-new,
+    .bi-download-btn-new {
+        width: 32px;
+        height: 32px;
+    }
+
+    .bi-perf-value-new,
+    .bi-perf-value-bold-new {
+        font-size: 14px;
+    }
+
+    .bi-perf-label-new {
+        font-size: 8px;
+    }
+
+    .bi-about-left-tag {
+        font-size: 15px !important;
+    }
+
+    .bi-about-left-title {
+        font-size: 20px !important;
+    }
+
+    .bi-about-service-item-new {
+        padding: 12px 14px !important;
+    }
+
+    .bi-service-text-group {
+        max-width: 180px;
+    }
+
+    .bi-service-name-about {
+        font-size: 12px !important;
+        white-space: normal;
+        word-break: break-word;
+    }
+
+    .bi-service-short-about {
+        font-size: 9px !important;
+    }
+
+    .bi-about-detail-panel {
+        padding: 16px 14px !important;
+        height: auto !important;
+    }
+
+    .bi-detail-title {
+        font-size: 18px !important;
+    }
+
+    .bi-detail-desc {
+        font-size: 12px !important;
+    }
+
+    .bi-productivity-section {
+        padding: 60px 16px;
+    }
+
+    .bi-prod-title {
+        font-size: 28px;
+    }
+
+    .bi-btn-prod-primary,
+    .bi-btn-prod-secondary {
+        padding: 12px 20px;
+        font-size: 13px;
+    }
+
+    .bi-mission-title {
+        margin-top: 5px;
+        font-size: 28px;
+    }
+
+    .bi-page-service-card {
+        height: auto;
+        min-height: 380px;
+        padding: 25px;
+    }
+
+    .bi-page-service-card-title {
+        font-size: 16px;
+    }
+
+    .bi-page-service-card-subtitle {
+        font-size: 11px;
+    }
+
+    .bi-page-service-icon-wrap {
+        height: 70px;
+        margin-top: 10px;
+    }
+
+    .bi-services-title-new {
+        font-size: 28px;
+    }
+
+    .bi-service-item-new {
+        padding: 14px 16px;
+    }
+
+    .bi-service-name-new {
+        font-size: 14px;
+    }
+
+    .bi-service-id-new {
+        font-size: 14px;
+    }
+
+    .bi-services-card-action-text-new,
+    .bi-services-card-action-text-green-new {
+        font-size: 18px;
+    }
+
+    .bi-section-title {
+        font-size: 1.8rem;
+    }
+
+    .bi-course-title {
+        font-size: 1.3rem;
+    }
+
+    .bi-course-desc {
+        font-size: 0.85rem;
+    }
+
+    .bi-feature-item {
+        font-size: 0.8rem;
+    }
+
+    .bi-feedback-card {
+        padding: 25px 20px;
+    }
+
+    .bi-feedback-text {
+        font-size: 0.9rem;
+    }
+
+    .bi-slider-arrow {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+
+    .dev-page-testimonial-card-horizontal {
+        flex: 0 0 260px;
+    }
+
+    .dev-page-testimonial-name {
+        font-size: 16px;
+    }
+
+    .dev-page-testimonial-text {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 360px) {
+    .bi-hero-title-new {
+        font-size: 24px;
+    }
+
+    .bi-hero-desc-new {
+        font-size: 13px;
+    }
+
+    .bi-stat-circle-new {
+        width: 45px;
+        height: 45px;
+    }
+
+    .bi-stat-number-new {
+        font-size: 10px;
+    }
+
+    .bi-stat-label-new {
+        font-size: 9px;
+    }
+
+    .bi-case-title-new {
+        font-size: 22px;
+    }
+
+    .bi-about-company-desc-new {
+        font-size: 12px;
+    }
+
+    .bi-service-text-group {
+        max-width: 150px;
+    }
+
+    .bi-service-name-about {
+        font-size: 11px !important;
+    }
+
+    .bi-service-short-about {
+        font-size: 8px !important;
+    }
+
+    .bi-detail-title {
+        font-size: 16px !important;
+    }
+
+    .bi-detail-desc {
+        font-size: 11px !important;
+    }
+
+    .bi-detail-stat-val {
+        font-size: 12px !important;
+    }
+
+    .bi-detail-stat-label {
+        font-size: 8px !important;
+    }
+
+    .bi-prod-title {
+        font-size: 24px;
+    }
+
+    .bi-prod-desc {
+        font-size: 12px;
+    }
+
+    .bi-btn-prod-primary,
+    .bi-btn-prod-secondary {
+        padding: 10px 16px;
+        font-size: 12px;
+    }
+
+    .bi-timeline-content h3 {
+        font-size: 12px;
+    }
+
+    .bi-timeline-content p {
+        font-size: 10px;
+    }
+
+    .bi-mission-title {
+        font-size: 24px;
+    }
+
+    .bi-page-service-card-title {
+        font-size: 14px;
+    }
+
+    .bi-page-service-card-desc {
+        font-size: 11px;
+    }
+
+    .bi-services-title-new {
+        font-size: 24px;
+    }
+
+    .bi-service-name-new {
+        font-size: 12px;
+    }
+
+    .bi-service-id-new {
+        font-size: 12px;
+    }
+
+    .bi-section-title {
+        font-size: 1.5rem;
+    }
+
+    .bi-course-title {
+        font-size: 1.1rem;
+    }
+
+    .bi-feedback-text {
+        font-size: 0.85rem;
+    }
+
+    .dev-page-testimonial-heading {
+        font-size: 24px;
+    }
+
+    .dev-page-testimonial-card-horizontal {
+        flex: 0 0 240px;
+        padding: 20px 15px;
+    }
+
+    .dev-page-testimonial-name {
+        font-size: 14px;
+    }
+
+    .dev-page-testimonial-text {
+        font-size: 11px;
+    }
 }

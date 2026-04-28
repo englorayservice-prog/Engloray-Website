@@ -378,7 +378,8 @@
   height: 8px;
   border-radius: 10px;
   opacity: 1;
-  background: #6D28D9 !important; /* Default purple, can be overridden by inline style */
+  background: #6D28D9 !important;
+  /* Default purple, can be overridden by inline style */
   box-shadow: 0 0 20px rgba(109, 40, 217, 0.4);
 }
 
@@ -721,14 +722,17 @@
     text-align: left !important;
     opacity: 0.8 !important;
     line-height: 1.4 !important;
-    margin: 5px 0 10px 0 !important; /* Minimal bottom margin */
+    margin: 5px 0 10px 0 !important;
+    /* Minimal bottom margin */
     display: block !important;
   }
 
   /* One card at a time with refined centering */
   .carousel-full-container {
-    height: 320px !important; /* Reduced height as requested */
-    margin-top: 40px !important; /* Reduced top gap as requested */
+    height: 320px !important;
+    /* Reduced height as requested */
+    margin-top: 40px !important;
+    /* Reduced top gap as requested */
     overflow: visible !important;
     width: 100vw !important;
     position: relative !important;
@@ -772,11 +776,12 @@
   .slide-wrapper,
   .carousel-slide.center-card .slide-wrapper,
   .carousel-slide.side-card .slide-wrapper {
-    transform: scale(0.38) translateY(0) !important; /* Slightly smaller to fit tighter height */
+    transform: scale(0.38) translateY(0) !important;
+    /* Slightly smaller to fit tighter height */
     transform-origin: center center !important;
     margin: 0 auto !important;
     width: 500px !important;
-    height: 800px !important; 
+    height: 800px !important;
     opacity: 1 !important;
   }
 
@@ -786,8 +791,10 @@
   }
 
   .card-ui-action {
-    top: 810px !important; /* Vertically centered within the 800px card's notch */
-    left: 380px !important; /* Move it right to align with the clip-path shelf */
+    top: 810px !important;
+    /* Vertically centered within the 800px card's notch */
+    left: 380px !important;
+    /* Move it right to align with the clip-path shelf */
     width: 120px !important;
     height: 120px !important;
     z-index: 50 !important;
@@ -900,8 +907,8 @@
 
   .slide-content {
     width: 450px;
-    height: 630px;
-    clip-path: path("M 30,0 L 420,0 A 30,30 0,0,1 450,30 L 450,420 A 60,60 0,0,1 390,480 L 340,480 A 60,60 0,0,0 280,540 L 280,570 A 60,60 0,0,1 220,630 L 30,630 A 30,30 0,0,1 0,600 L 0,30 A 30,30 0,0,1 30,0 Z");
+    height: 580px;
+    clip-path: path("M 30,0 L 420,0 A 30,30 0,0,1 450,30 L 450,370 A 60,60 0,0,1 390,430 L 340,430 A 60,60 0,0,0 280,490 L 280,520 A 60,60 0,0,1 220,580 L 30,580 A 30,30 0,0,1 0,550 L 0,30 A 30,30 0,0,1 30,0 Z");
   }
 
   /* Scale internal content */
@@ -928,7 +935,7 @@
 
   /* Scale internal action button */
   .card-ui-action {
-    top: 655px;
+    top: 605px;
     left: 290px;
   }
 
@@ -956,5 +963,49 @@
   .color-dot.active {
     width: 48px;
     height: 12px;
+  }
+}
+
+/* User's Specific Ratio (1440px+) - Scaling up cards to reduce horizontal gaps */
+@media (min-width: 1440px) and (max-width: 1599px) {
+  .carousel-full-container {
+    height: 460px !important; /* Shrunk dead space to move navigation up visually */
+  }
+
+  .compact-carousel-controls {
+    top: 45% !important; /* Forces optical centering upwards */
+  }
+
+  .slide-wrapper,
+  .carousel-slide.center-card .slide-wrapper,
+  .carousel-slide.side-card .slide-wrapper {
+    transform: scale(0.74) translateY(0px) !important;
+    height: 650px !important;
+  }
+
+  .slide-content {
+    height: 450px !important;
+    clip-path: path("M 30,0 L 470,0 A 30,30 0,0,1 500,30 L 500,240 A 60,60 0,0,1 440,300 L 390,300 A 60,60 0,0,0 330,360 L 330,390 A 60,60 0,0,1 270,450 L 30,450 A 30,30 0,0,1 0,420 L 0,30 A 30,30 0,0,1 30,0 Z") !important;
+  }
+
+  .card-ui-action {
+    top: 475px !important;
+  }
+}
+
+@media (min-width: 1600px) {
+  .carousel-full-container {
+    height: 550px !important; /* Reduced properly */
+  }
+
+  .compact-carousel-controls {
+    top: 45% !important; 
+  }
+
+  .slide-wrapper,
+  .carousel-slide.center-card .slide-wrapper,
+  .carousel-slide.side-card .slide-wrapper {
+    /* Slightly zoomed out from 0.92 per user request but still larger than the original 0.75 */
+    transform: scale(0.85) translateY(0px) !important;
   }
 }

@@ -1,18 +1,12 @@
-/* Software & App Development Page Styles - Based on Branding & Identity Design Structure */
-.sad-page {
-    font-family: 'Inter', sans-serif;
-    color: #1a1a1a;
-    background: #f4f5f5;
-}
-
+/* Branding & Identity Page Styles - Updated with #B41818 Color Theme */
 .sad-container {
-    max-width: 2200px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
 /* ============================================================
-   HERO SECTION NEW 
+   HERO SECTION NEW — Exact match to image
    ============================================================ */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
@@ -32,6 +26,7 @@
     width: 100%;
     max-width: 2000px;
     min-height: 670px;
+    /* margin: 20px auto 40px auto; */
     margin: 20px auto;
     margin-top: -10px;
     display: flex;
@@ -52,6 +47,7 @@
             27.5% 90%,
             20% 100%,
             0% 100%);
+    /* clip-path: path('M 0 61 L 0 60 C 15 60 20 55 25 45 L 35 25 C 40 15 45 0 60 0 L 260 0 C 275 0 280 15 285 25 L 295 45 C 300 55 305 60 320 60 L 320 61 Z'); */
 }
 
 .sad-hero-title-desc-new {
@@ -59,22 +55,17 @@
     font-weight: 700;
     line-height: 1.1;
     color: #1a1a1a;
+    /* margin-bottom: 35px; */
     letter-spacing: -2px;
     position: absolute;
     top: 200px;
     left: 62%;
     transform: translateX(-50%);
-    text-align: center;
+    text-align: left;
     max-width: 1010px;
     width: 100%;
     min-height: 2000px;
     z-index: 3;
-    pointer-events: none;
-}
-
-.sad-hero-iphone14-img {
-    max-width: 55%;
-    height: auto;
 }
 
 /* LEFT PANEL */
@@ -94,7 +85,6 @@
     margin-bottom: 10px;
     text-transform: uppercase;
     margin-left: -100px;
-    font-family: 'HEXCO', sans-serif;
 }
 
 .sad-hero-title-new {
@@ -105,7 +95,6 @@
     margin-bottom: 35px;
     letter-spacing: -2px;
     margin-left: -60px;
-    font-family: 'HEXCO', sans-serif;
 }
 
 .sad-hero-buttons-new {
@@ -115,8 +104,7 @@
 }
 
 .sad-btn-get-started-new {
-    background: #6366F1;
-    /* Indigo */
+    background: #3B5BDA;
     color: white;
     font-size: 13px;
     font-weight: 600;
@@ -124,18 +112,17 @@
     border-radius: 30px;
     border: none;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+    box-shadow: 0 4px 15px rgba(59, 91, 218, 0.3);
     transition: all 0.2s ease;
 }
 
 .sad-btn-get-started-new:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+    box-shadow: 0 6px 20px rgba(59, 91, 218, 0.4);
 }
 
 .sad-btn-contact-us-new {
-    background: #EEF2FF;
-    /* Light Indigo */
+    background: #E0F9B5;
     color: #1a1a1a;
     font-size: 13px;
     font-weight: 600;
@@ -148,7 +135,7 @@
 
 .sad-btn-contact-us-new:hover {
     transform: translateY(-2px);
-    background: #E0E7FF;
+    background: #d4f794;
 }
 
 .sad-hero-desc-new {
@@ -157,7 +144,7 @@
     line-height: 1.6;
     margin-bottom: 40px;
     max-width: 500px;
-    text-align: left;
+    text-align: Left;
 }
 
 .sad-hero-stats-new {
@@ -202,16 +189,16 @@
     stroke-linecap: round;
 }
 
-.sad-circle-indigo {
-    stroke: #6366F1;
-}
-
-.sad-circle-violet {
-    stroke: #8B5CF6;
-}
-
 .sad-circle-blue {
-    stroke: #3B82F6;
+    stroke: #3B5BDA;
+}
+
+.sad-circle-green {
+    stroke: #A1DFA4;
+}
+
+.sad-circle-gray {
+    stroke: #888;
 }
 
 .sad-stat-number-new {
@@ -224,13 +211,30 @@
 }
 
 .sad-stat-dash {
-    color: #6366F1;
+    color: #3B5BDA;
     font-weight: bold;
 }
 
 .sad-stat-label-new {
     font-size: 12px;
     color: #999;
+}
+
+/* CENTER PANEL */
+.sad-hero-center-new {
+    flex: 1.2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.sad-cube-img-new {
+    width: 110%;
+    max-width: 750px;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+    transform: scale(1.1) translateY(-20px);
 }
 
 /* RIGHT PANEL */
@@ -247,13 +251,18 @@
     background: transparent;
 }
 
+.sad-case-subtitle-new {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 8px;
+}
+
 .sad-case-title-new {
     font-size: 24px;
     font-weight: 500;
     color: #1a1a1a;
     line-height: 1.1;
     margin-bottom: 0px;
-    text-align: left;
 }
 
 .sad-title-play-row {
@@ -298,28 +307,6 @@
     padding-left: 2px;
 }
 
-.sad-about-company-desc-new {
-    font-size: 15px;
-    color: #666;
-    line-height: 1.7;
-    text-align: left;
-    margin-bottom: 35px;
-    max-width: 480px;
-    animation: fadeInDescSad 0.8s ease-out forwards;
-}
-
-@keyframes fadeInDescSad {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 .sad-avatars-row-new {
     display: flex;
     align-items: center;
@@ -339,9 +326,13 @@
     margin-right: -10px;
     border: 2px solid white;
     background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     object-fit: cover;
 }
 
+.sad-avatar-icon-new,
 .sad-download-btn-new {
     width: 38px;
     height: 38px;
@@ -351,6 +342,35 @@
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.sad-avatar-icon-new:hover,
+.sad-download-btn-new:hover {
+    transform: translateY(-2px);
+}
+
+.sad-about-company-desc-new {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 35px;
+    max-width: 480px;
+    text-align: left;
+    animation: fadeInDesc 0.8s ease-out forwards;
+}
+
+@keyframes fadeInDesc {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* PERFORMANCE CARD */
@@ -375,6 +395,10 @@
     display: flex;
     flex-direction: column;
     gap: 4px;
+}
+
+.sad-perf-item-new.text-right {
+    align-items: flex-end;
 }
 
 .sad-perf-label-new {
@@ -410,26 +434,324 @@
     align-items: flex-end;
 }
 
-.sad-bar-indigo-new {
-    background: #EEF2FF;
+.sad-bar-green-new,
+.sad-bar-gray-new,
+.sad-bar-blue-new {
     width: 100%;
     border-radius: 2px 2px 0 0;
 }
 
+.sad-bar-green-new {
+    background: #EAFCA4;
+}
+
 .sad-bar-gray-new {
     background: transparent;
-    width: 100%;
     background-image: repeating-linear-gradient(90deg, #e0e0e0, #e0e0e0 2px, transparent 2px, transparent 6px);
 }
 
-.sad-bar-violet-new {
+.sad-bar-blue-new {
     background: transparent;
-    width: 100%;
-    background-image: repeating-linear-gradient(90deg, #6366F1, #6366F1 2px, transparent 2px, transparent 6px);
+    background-image: repeating-linear-gradient(90deg, #5B7BFF, #5B7BFF 2px, transparent 2px, transparent 6px);
+}
+
+/* NOTCH CUTOUT */
+.sad-hero-notch-new {
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 320px;
+    height: 61px;
+    background-color: #f4f5f5;
+    clip-path: path('M 0 61 L 0 60 C 15 60 20 55 25 45 L 35 25 C 40 15 45 0 60 0 L 260 0 C 275 0 280 15 285 25 L 295 45 C 300 55 305 60 320 60 L 320 61 Z');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.sad-bottom-bar-content-new {
+    background: transparent;
+    padding: 0;
+    font-size: 18px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.sad-bottom-icon-new {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 20px;
+}
+
+.sad-b-icon-blue {
+    width: 12px;
+    height: 22px;
+    background: #3B5BDA;
+    border-radius: 10px 0 0 10px;
+}
+
+.sad-b-icon-black {
+    font-weight: bold;
+    color: #1a1a1a;
 }
 
 /* ============================================================
-   ABOUT SECTION (INTERACTIVE SERVICES)
+   SERVICES SECTION NEW — Exact match to image
+   ============================================================ */
+.sad-services-section-new {
+    padding: 100px 0;
+    background: #111111;
+    font-family: 'Inter', sans-serif;
+    color: #ffffff;
+}
+
+.sad-services-container-new {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.sad-services-header-new {
+    margin-bottom: 50px;
+}
+
+.sad-services-title-new {
+    font-size: 48px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.sad-services-badge-new {
+    background: #BAFF29;
+    color: #1a1a1a;
+    padding: 4px 24px;
+    border-radius: 40px;
+    font-weight: 700;
+    display: inline-block;
+}
+
+.sad-services-subtitle-new {
+    font-size: 16px;
+    color: #888888;
+    line-height: 1.6;
+}
+
+.sad-services-content-new {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    gap: 30px;
+    align-items: stretch;
+}
+
+/* LEFT COLUMN - LIST */
+.sad-services-list-new {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sad-service-item-new {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 28px;
+    border-radius: 40px;
+    border: 1px solid #333333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+.sad-service-item-new:hover {
+    border-color: #555555;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.sad-service-item-new.active {
+    background: #1a1a1a;
+    border: 1px solid #444444;
+}
+
+.sad-service-item-left-new {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.sad-service-id-new {
+    font-size: 16px;
+    font-weight: 700;
+    color: #666666;
+}
+
+.sad-service-item-new.active .sad-service-id-new {
+    color: #BAFF29;
+}
+
+.sad-service-name-new {
+    font-size: 18px;
+    font-weight: 500;
+    color: #888888;
+}
+
+.sad-service-item-new.active .sad-service-name-new {
+    color: #ffffff;
+}
+
+.sad-service-arrow-new {
+    color: #666666;
+    display: flex;
+    align-items: center;
+}
+
+.sad-service-item-new.active .sad-service-arrow-new {
+    color: #ffffff;
+}
+
+/* CENTER COLUMN - IMAGE */
+.sad-services-image-col-new {
+    width: 100%;
+    height: 100%;
+}
+
+.sad-services-image-wrapper-new {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+    background: #1a1a1a;
+}
+
+.sad-services-image-new {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(1.1) contrast(1.1);
+    animation: fadeInImage 0.4s ease-in-out;
+}
+
+@keyframes fadeInImage {
+    from {
+        opacity: 0;
+        transform: scale(1.02);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* RIGHT COLUMN - INFO CARDS */
+.sad-services-info-col-new {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sad-services-card-dark-new,
+.sad-services-card-green-new {
+    border-radius: 30px;
+    padding: 40px 30px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sad-services-card-dark-new {
+    background: #1a1a1a;
+}
+
+.sad-services-card-green-new {
+    background: #BAFF29;
+}
+
+.sad-services-card-sub-new {
+    font-size: 15px;
+    color: #888888;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+.sad-services-card-sub-green-new {
+    font-size: 15px;
+    color: #1a1a1a;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+.sad-services-card-action-new {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.sad-services-card-action-text-new {
+    font-size: 26px;
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1.2;
+}
+
+.sad-services-card-action-text-green-new {
+    font-size: 26px;
+    font-weight: 600;
+    color: #1a1a1a;
+    line-height: 1.2;
+}
+
+.sad-services-card-action-btn-new {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.sad-services-card-action-btn-new:hover {
+    transform: scale(1.05);
+}
+
+.sad-services-card-action-btn-new.dark-btn {
+    background: #2a2a2a;
+}
+
+.sad-services-card-action-btn-new.green-btn {
+    background: #ffffff;
+}
+
+@media (max-width: 1024px) {
+    .sad-services-content-new {
+        grid-template-columns: 1fr;
+    }
+
+    .sad-services-image-wrapper-new {
+        height: 400px;
+        min-height: auto;
+    }
+
+    .sad-services-card-dark-new,
+    .sad-services-card-green-new {
+        min-height: 250px;
+    }
+}
+
+/* ============================================================
+   ABOUT SECTION NEW — Matching reference image (dark 3-col layout)
    ============================================================ */
 .sad-about-section-new {
     width: 100%;
@@ -437,6 +759,7 @@
     padding: 160px 40px 80px;
     margin-top: -80px;
     clip-path: polygon(0% 80px, 20% 70px, 27.5% 0%, 71% 0%, 80% 70px, 100% 80px, 100% 100%, 0% 100%);
+    font-family: 'Inter', sans-serif;
     color: #ffffff;
     position: relative;
 }
@@ -446,20 +769,11 @@
     top: 35px;
     left: 50%;
     transform: translateX(-50%);
-    text-align: center;
+    text-align: left;
     z-index: 10;
 }
 
-.sad-about-left-tag {
-    font-size: 41px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    color: #BAFF29;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-    display: block;
-}
-
+/* 🔥 GRID SYSTEM */
 .sad-about-inner-new {
     max-width: 1400px;
     margin: 0 auto;
@@ -469,25 +783,42 @@
     align-items: stretch;
 }
 
+/* --- LEFT COLUMN --- */
+.sad-about-left-new {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+}
+
 .sad-about-left-header {
-    margin-bottom: 30px;
+    margin-bottom: 8px;
+}
+
+.sad-about-left-tag {
+    font-size: 41px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #BAFF29;
+    text-transform: uppercase;
+    margin-bottom: 12px;
 }
 
 .sad-about-left-title {
-    font-size: 38px;
-    line-height: 1.1;
+    font-size: 26px;
     font-weight: 700;
-    margin-bottom: 15px;
-    font-family: 'HEXCO', sans-serif;
-    text-align: left;
+    color: #ffffff;
+    line-height: 1.25;
+    margin-bottom: 12px;
 }
 
 .sad-about-intro-new {
-    font-size: 14px;
-    color: #888;
-    text-align: left;
+    font-size: 13px;
+    color: #666666;
+    line-height: 1.7;
 }
 
+/* SERVICE LIST */
 .sad-about-services-list-new {
     display: flex;
     flex-direction: column;
@@ -498,488 +829,929 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 18px 24px;
-    border: 1px solid #333;
-    border-radius: 50px;
+    flex-wrap: wrap;
+    padding: 20px 24px;
+    border-radius: 40px;
+    border: 1px solid #2a2a2a;
     cursor: pointer;
     transition: all 0.3s ease;
+    background: transparent;
+    gap: 10px;
 }
 
 .sad-about-service-item-new:hover {
-    border-color: #555;
-    background: rgba(255, 255, 255, 0.02);
+    border-color: #444444;
+    background: rgba(255, 255, 255, 0.03);
 }
 
-.sad-service-active {
-    background: #1a1a1a;
-    border-color: #444;
+.sad-about-service-item-new.sad-service-active {
+    border-color: #BAFF29;
+    background: rgba(186, 255, 41, 0.06);
+    border-radius: 20px;
 }
 
 .sad-service-item-left-about {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 18px;
 }
 
 .sad-service-num-new {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 700;
-    color: #555;
+    color: #555555;
+    min-width: 24px;
 }
 
-.sad-service-active .sad-service-num-new {
+.sad-about-service-item-new.sad-service-expanded .sad-service-num-new {
     color: #BAFF29;
 }
 
-.sad-service-name-about {
-    font-size: 16px;
-    font-weight: 600;
-    color: #888;
+.sad-service-text-group {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
 }
 
-.sad-service-active .sad-service-name-about {
-    color: #fff;
+.sad-service-name-about {
+    font-size: 15px;
+    font-weight: 500;
+    color: #aaaaaa;
+    transition: color 0.3s;
 }
 
 .sad-service-short-about {
     font-size: 12px;
-    color: #555;
-    display: block;
+    color: #555555;
+    transition: color 0.3s;
+}
+
+.sad-about-service-item-new:hover .sad-service-name-about,
+.sad-about-service-item-new.sad-service-active .sad-service-name-about {
+    color: #ffffff;
+}
+
+.sad-about-service-item-new.sad-service-active .sad-service-num-new {
+    color: #BAFF29;
 }
 
 .sad-service-arrow-about {
-    color: #444;
+    color: #555555;
+    font-size: 16px;
+    transition: 0.3s;
 }
 
-.sad-service-active .sad-service-arrow-about {
-    color: #fff;
+.sad-about-service-item-new:hover .sad-service-arrow-about {
+    color: #BAFF29;
 }
 
+/* SUB LIST */
+.sad-service-sub-list {
+    width: 100%;
+    padding: 10px 0 0 42px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.sad-service-sub-list li {
+    font-size: 13px;
+    color: #888888;
+    padding-left: 16px;
+    position: relative;
+}
+
+.sad-service-sub-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #BAFF29;
+}
+
+/* --- CENTER COLUMN --- */
 .sad-about-center-new {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    min-height: 0;
 }
 
 .sad-about-img-wrap-new {
-    width: 100%;
-    height: 800px;
     position: relative;
-    border-radius: 30px;
+    width: 100%;
+    min-height: 0;
+    height: 100%;
+    border-radius: 24px;
     overflow: hidden;
+    background: #1a1a1a;
+    flex: 1;
 }
 
 .sad-about-img-wrap-new img {
     width: 100%;
-    height: 800px;
+    height: 100%;
     object-fit: cover;
 }
 
-.sad-about-badge-new {
-    position: absolute;
-    bottom: 30px;
-    left: 30px;
-    background: #6366F1;
-    padding: 15px 25px;
-    border-radius: 20px;
-    display: flex;
-    gap: 15px;
-    align-items: center;
+/* IMAGE ANIMATION */
+.sad-dynamic-img-fade {
+    animation: fadeInDynamic 0.4s ease-in-out;
 }
 
-.sad-badge-num {
-    font-size: 24px;
-    font-weight: 800;
-}
-
-.sad-badge-label {
-    font-size: 12px;
-    font-weight: 600;
-    line-height: 1.2;
-}
-
-.sad-about-right-new {
-    display: flex;
-    flex-direction: column;
-}
-
-.sad-about-detail-panel {
-    background: #1a1a1a;
-    border-radius: 30px;
-    padding: 40px;
-    height: 800px;
-    display: flex;
-    flex-direction: column;
-    animation: fadeInPanelSad 0.5s ease-out;
-}
-
-@keyframes fadeInPanelSad {
+@keyframes fadeInDynamic {
     from {
         opacity: 0;
-        transform: translateX(20px);
+        transform: scale(0.98);
     }
 
     to {
         opacity: 1;
-        transform: translateX(0);
+        transform: scale(1);
     }
 }
 
-.sad-detail-icon-wrap {
-    width: 60px;
-    height: 60px;
-    background: #2a2a2a;
-    border-radius: 50%;
+/* BADGE */
+.sad-about-badge-new {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(17, 17, 17, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid #2a2a2a;
+    border-radius: 16px;
+    padding: 14px 18px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 30px;
+    gap: 12px;
 }
 
-.sad-detail-icon {
-    font-size: 24px;
-}
-
-.sad-detail-num {
-    font-size: 13px;
-    color: #555;
+.sad-badge-num {
+    font-size: 26px;
     font-weight: 700;
-    margin-bottom: 10px;
-    display: block;
+    color: #BAFF29;
 }
 
+.sad-badge-label {
+    font-size: 12px;
+    color: #aaaaaa;
+}
+
+/* --- RIGHT COLUMN --- */
+.sad-about-right-new {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.sad-about-detail-panel {
+    background: #1a1a1a;
+    border-radius: 24px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 100%;
+}
+
+/* TEXT */
 .sad-detail-title {
-    font-size: 32px;
+    font-size: 24px;
     font-weight: 700;
-    margin-bottom: 20px;
-    font-family: 'HEXCO', sans-serif;
+    color: #ffffff;
 }
 
 .sad-detail-desc {
-    font-size: 15px;
-    color: #999;
-    line-height: 1.7;
-    margin-bottom: 30px;
-    flex-grow: 1;
-    text-align: left;
+    font-size: 14px;
+    color: #888888;
+    line-height: 1.8;
+    flex: 1;
 }
 
-.sad-detail-divider {
-    height: 1px;
-    background: #333;
-    margin-bottom: 30px;
-}
-
+/* STATS */
 .sad-detail-stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
-    margin-bottom: 30px;
+    display: flex;
+}
+
+.sad-detail-stat {
+    flex: 1;
+    text-align: center;
+    border-right: 1px solid #2a2a2a;
+}
+
+.sad-detail-stat:last-child {
+    border-right: none;
 }
 
 .sad-detail-stat-val {
-    font-size: 18px;
+    color: #BAFF29;
     font-weight: 700;
-    color: #fff;
-    display: block;
 }
 
-.sad-detail-stat-label {
-    font-size: 11px;
-    color: #555;
-    text-transform: uppercase;
-}
-
+/* CTA */
 .sad-detail-cta {
     background: #BAFF29;
     color: #111;
-    border: none;
-    padding: 16px;
-    border-radius: 50px;
-    font-weight: 700;
+    border-radius: 30px;
+    padding: 14px 24px;
     cursor: pointer;
+    text-align: center;
 }
 
-/* ============================================================
-   ELEVATE SECTION REDESIGN
-   ============================================================ */
-.sad-elevate-section {
-    padding: 140px 40px;
-    background: #fff;
-    font-family: 'Inter', sans-serif;
+.sad-detail-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(186, 255, 41, 0.2);
 }
 
-.sad-el-container {
-    max-width: 1400px;
+/* Responsive */
+@media (max-width: 1100px) {
+    .sad-about-inner-new {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .sad-about-right-new {
+        grid-column: 1 / -1;
+    }
+
+    .sad-about-detail-panel {
+        flex-direction: column !important;
+        flex-wrap: nowrap;
+        align-items: center;
+        text-align: center;
+        gap: 12px !important;
+        padding: 20px !important;
+    }
+
+    .sad-detail-title {
+        order: 1;
+        margin-bottom: 5px;
+    }
+
+    .sad-detail-desc {
+        order: 2;
+        margin-bottom: 5px;
+    }
+
+    .sad-detail-stats {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .sad-detail-cta {
+        order: 4;
+        margin-top: 5px !important;
+    }
+
+    /* Hide divider and num on tablet to save space */
+    .sad-detail-divider,
+    .sad-detail-num,
+    .sad-detail-icon-wrap {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .sad-about-section-new {
+        padding: 60px 20px;
+    }
+
+    .sad-about-inner-new {
+        grid-template-columns: 1fr;
+    }
+
+    .sad-about-detail-panel {
+        flex-direction: column;
+    }
+
+    .sad-about-img-wrap-new {
+        height: 300px;
+    }
+}
+
+/* Internship Courses Section - Updated Colors */
+.sad-courses-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #B41818, #8a1212);
+}
+
+.sad-section-header {
+    text-align: left;
+    margin-bottom: 60px;
+}
+
+.sad-section-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 15px;
+    font-family: 'HEXCO', sans-serif;
+}
+
+.sad-section-title1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: white;
+}
+
+.sad-section-title2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #B41818;
+}
+
+.sad-section-subtitle {
+    color: white;
+    font-size: 1.2rem;
+    max-width: 600px;
     margin: 0 auto;
+    line-height: 1.6;
+    font-family: 'Aldrich', sans-serif;
+}
+
+.sad-section-subtitle2 {
+    color: #333;
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+    font-family: 'Aldrich', sans-serif;
+}
+
+.sad-courses-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 120px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.sad-course-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(180, 24, 24, 0.2);
+    transition: all 0.3s ease;
+    animation: biFadeInUp 0.5s ease-out;
+    animation-fill-mode: both;
+}
+
+.sad-course-card:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+.sad-course-card:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.sad-course-card:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+@keyframes biFadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.sad-course-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(180, 24, 24, 0.5);
+    box-shadow: 0 20px 40px rgba(180, 24, 24, 0.2);
+}
+
+.sad-course-header {
+    padding: 25px 25px 20px;
+    border-bottom: 1px solid rgba(180, 24, 24, 0.1);
+}
+
+.sad-course-logo {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    display: inline-block;
+    animation: biIconFloat 3s ease-in-out infinite;
+}
+
+@keyframes biIconFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.sad-course-title {
+    font-size: 1.5rem;
+    color: #B41818;
+    margin-bottom: 10px;
+    font-family: 'HEXCO', sans-serif;
+}
+
+.sad-course-desc {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    font-family: 'Aldrich', sans-serif;
+}
+
+.sad-course-features {
+    padding: 20px 25px;
+    border-bottom: 1px solid rgba(180, 24, 24, 0.1);
+}
+
+.sad-features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sad-feature-item {
+    display: flex;
+    align-items: center;
+    color: #333;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    font-family: 'Aldrich', sans-serif;
+}
+
+.sad-feature-item::before {
+    content: '✓';
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, #B41818, #8a1212);
+    color: white;
+    border-radius: 50%;
+    margin-right: 10px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.sad-course-details {
+    padding: 20px 25px;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
-.sad-el-left {
-    position: relative;
-    height: 650px;
+.sad-detail-item {
+    text-align: left;
 }
 
-.sad-el-img-grid {
-    position: relative;
-    width: 100%;
-    height: 100%;
+.sad-detail-label {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 5px;
+    font-family: 'Aldrich', sans-serif;
 }
 
-.sad-el-img-item {
+.sad-detail-value {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #B41818;
+    font-family: 'HEXCO', sans-serif;
+}
+
+/* Feedback Section - White Background Kept */
+.sad-feedback-section {
+    padding: 100px 0;
+    background: #ffffff;
+}
+
+.sad-feedback-slider {
+    position: relative;
+    overflow: hidden;
+}
+
+.sad-feedback-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sad-feedback-slide {
+    min-width: 100%;
+    padding: 0 20px;
+}
+
+.sad-feedback-card {
+    background: white;
+    padding: 50px 40px;
     border-radius: 20px;
-    overflow: visible;
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
-    position: absolute;
-    transition: transform 0.3s ease;
+    box-shadow: 0 10px 30px rgba(180, 24, 24, 0.1);
+    border: 1px solid rgba(180, 24, 24, 0.2);
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    animation: biCardPop 0.5s ease-out;
+    border-left: 4px solid #B41818;
+    animation: biCardPulse 4s ease-in-out infinite;
 }
 
-.sad-el-img-item img {
+@keyframes biCardPulse {
+
+    0%,
+    100% {
+        border-left-color: #B41818;
+    }
+
+    50% {
+        border-left-color: #8a1212;
+    }
+}
+
+@keyframes biCardPop {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.sad-feedback-quote {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    font-size: 2.5rem;
+    color: #B41818;
+    opacity: 0.2;
+}
+
+.sad-feedback-text {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    font-style: italic;
+    font-family: 'Aldrich', sans-serif;
+    text-align: left;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sad-feedback-author {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-align: left;
+}
+
+.sad-author-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #B41818;
+    animation: biBorderPulse 3s ease-in-out infinite;
+}
+
+@keyframes biBorderPulse {
+
+    0%,
+    100% {
+        border-color: #B41818;
+    }
+
+    50% {
+        border-color: #8a1212;
+    }
+}
+
+.sad-author-avatar img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 20px;
-    display: block;
 }
 
-.sad-el-main {
-    width: 65%;
-    height: 100%;
-    right: 0;
-    top: 0;
-    z-index: 1;
-}
-
-.sad-el-top-left {
-    width: 55%;
-    height: 38%;
-    left: 0;
-    top: 10%;
-    z-index: 3;
-    border: 8px solid #fff;
-}
-
-.sad-el-bottom-left {
-    width: 55%;
-    height: 38%;
-    left: 40px;
-    bottom: 5%;
-    z-index: 2;
-    border: 8px solid #fff;
-}
-
-.sad-el-float-icon {
-    position: absolute;
-    top: -20px;
-    left: -20px;
-    width: 50px;
-    height: 50px;
-    background: #6366F1;
-    /* Indigo */
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    color: #fff;
-    box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
-}
-
-.sad-el-badge-volunteer {
-    position: absolute;
-    bottom: -30px;
-    left: 80%;
-    transform: translateX(-50%);
-    background: #fff;
-    padding: 15px 25px;
-    border-radius: 15px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-    z-index: 4;
-    min-width: 200px;
-    text-align: center;
-}
-
-.sad-el-vol-title {
-    font-size: 13px;
-    font-weight: 800;
-    color: #6366F1;
-    margin-bottom: 8px;
-    display: block;
-    text-transform: uppercase;
-}
-
-.sad-el-vol-avatars {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.sad-el-vol-avatars img {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    border: 2px solid #fff;
-    margin-left: -10px;
-}
-
-.sad-el-vol-avatars img:first-child {
-    margin-left: 0;
-}
-
-.sad-el-vol-count {
-    width: 32px;
-    height: 32px;
-    background: #f0f0f0;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 10px;
-    font-weight: 700;
-    color: #555;
-    margin-left: 2px;
-}
-
-.sad-el-right {
-    display: flex;
-    flex-direction: column;
-}
-
-.sad-el-preheading {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 34px;
-    font-weight: 600;
-    color: #5b58ee;
-    margin-left: 20%;
-    text-align: center;
-    margin-bottom: 16px;
-    text-transform: capitalize;
-}
-
-
-.sad-el-title {
-    font-size: 40px;
-    font-weight: 900;
-    color: #111111;
-    margin-bottom: 30px;
-    line-height: 1.1;
-    font-family: 'HEXCO', sans-serif;
+.sad-author-info {
     text-align: left;
 }
 
-.sad-el-desc {
-    font-size: 16px;
-    text-align: left;
-    color: #666;
-    line-height: 1.8;
-    margin-bottom: 40px;
-    max-width: 580px;
-}
-
-.sad-el-stats-new {
-    display: flex;
-    gap: 50px;
-    margin-bottom: 40px;
-}
-
-.sad-el-stat-card {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.sad-el-stat-icon-wrap {
-    width: 45px;
-    height: 45px;
-    border: 2.5px solid #6366F1;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #6366F1;
-    font-size: 18px;
-}
-
-.sad-el-stat-val {
-    font-size: 24px;
-    font-weight: 900;
-    color: #111;
-    display: block;
-    line-height: 1;
+.sad-author-info h4 {
+    font-size: 1.2rem;
+    color: #333;
     margin-bottom: 5px;
+    font-family: 'HEXCO', sans-serif;
 }
 
-.sad-el-stat-txt {
-    font-size: 12px;
-    font-weight: 600;
-    color: #777;
-    text-transform: uppercase;
+.sad-author-info p {
+    font-size: 0.9rem;
+    color: #666;
+    font-family: 'Aldrich', sans-serif;
 }
 
-.sad-el-sub-desc {
-    font-size: 15px;
-    color: #888;
-    line-height: 1.7;
-    margin-bottom: 40px;
-    max-width: 550px;
-    font-style: italic;
-    text-align: left;
+.sad-slider-nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 35px;
 }
 
-.sad-el-btn-discover {
-    background: #6366F1;
-    color: #fff;
+.sad-slider-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ffcccc;
     border: none;
-    padding: 16px 36px;
-    border-radius: 8px;
-    font-weight: 800;
-    font-size: 15px;
-    width: fit-content;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
-    margin-left: 25%;
 }
 
-.sad-el-btn-discover:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(99, 102, 241, 0.4);
+.sad-slider-dot.active {
+    background: linear-gradient(135deg, #B41818, #8a1212);
+    transform: scale(1.3);
+    animation: biDotPulse 2s ease-in-out infinite;
 }
 
+@keyframes biDotPulse {
+
+    0%,
+    100% {
+        transform: scale(1.3);
+    }
+
+    50% {
+        transform: scale(1.5);
+    }
+}
+
+.sad-slider-arrows {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    padding: 0 10px;
+    z-index: 2;
+}
+
+.sad-slider-arrow {
+    background: white;
+    border: 1px solid rgba(180, 24, 24, 0.2);
+    width: 45px;
+    height: 45px;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(180, 24, 24, 0.1);
+    transition: all 0.3s ease;
+    color: #B41818;
+    font-weight: bold;
+    font-family: 'HEXCO', sans-serif;
+    font-size: 1.2rem;
+}
+
+.sad-slider-arrow:hover {
+    background: linear-gradient(135deg, #B41818, #8a1212);
+    color: white;
+    transform: scale(1.1);
+    animation: biArrowSpin 0.5s ease;
+}
+
+@keyframes biArrowSpin {
+    from {
+        transform: scale(1.1) rotate(0deg);
+    }
+
+    to {
+        transform: scale(1.1) rotate(360deg);
+    }
+}
+
+/* Responsive Design */
 @media (max-width: 1024px) {
-    .sad-el-container {
+    .sad-hero-content {
+        width: calc(100% - 60px);
+        padding: 50px 40px;
+        max-width: 850px;
+    }
+
+    .sad-hero-title {
+        font-size: 2.8rem;
+    }
+
+    .sad-about-content {
         grid-template-columns: 1fr;
-        gap: 80px;
-        text-align: left;
+        gap: 40px;
     }
 
-    .sad-el-left {
-        height: 450px;
+    .sad-about-text {
+        padding-right: 0;
     }
 
-    .sad-el-right {
-        align-items: center;
+    /* On mobile, image is always relative */
+    .sad-about-image-main {
+        position: relative !important;
+        top: 0 !important;
+        height: 400px;
     }
 
-    .sad-el-title {
-        font-size: 42px;
+    .sad-image-scroll .sad-about-image-main {
+        position: relative !important;
     }
 
-    .sad-el-desc,
-    .sad-el-sub-desc {
-        margin-left: auto;
-        margin-right: auto;
+    .sad-section-title {
+        font-size: 2.4rem;
+    }
+
+    .sad-courses-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sad-feedback-card {
+        padding: 40px 30px;
+    }
+
+    .sad-feedback-text {
+        font-size: 1.1rem;
+    }
+
+    /* Adjust image sizes on tablet */
+    .sad-extra-image-fill {
+        height: 400px;
+    }
+
+    .sad-fill-image-overlay {
+        padding: 25px;
+    }
+
+    .sad-fill-image-overlay h4 {
+        font-size: 1.3rem;
+    }
+
+    .sad-fill-image-overlay p {
+        font-size: 0.9rem;
     }
 }
 
-/* ============================================================
-   PRODUCTIVITY SECTION REDESIGN
-   ============================================================ */
+@media (max-width: 768px) {
+    .sad-hero-section {
+        min-height: 100vh;
+        padding: 60px 0;
+    }
+
+    .sad-hero-content {
+        width: calc(100% - 40px);
+        padding: 40px 30px;
+        margin: 0 auto;
+    }
+
+    .sad-hero-title {
+        font-size: 2.2rem;
+    }
+
+    .sad-hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .sad-hero-description {
+        font-size: 1rem;
+    }
+
+    .sad-about-title {
+        font-size: 2rem;
+    }
+
+    .sad-section-title {
+        font-size: 2.2rem;
+    }
+
+    .sad-courses-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sad-feedback-card {
+        padding: 35px;
+    }
+
+    .sad-slider-arrows {
+        position: relative;
+        transform: none;
+        margin-top: 25px;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .sad-slider-arrow {
+        border-radius: 0;
+    }
+
+    /* Adjust image sizes on mobile */
+    .sad-about-image-main {
+        height: 350px;
+    }
+
+    .sad-extra-image-fill {
+        height: 350px;
+    }
+
+    .sad-fill-image-overlay {
+        padding: 20px;
+    }
+
+    .sad-fill-image-overlay h4 {
+        font-size: 1.2rem;
+    }
+
+    .sad-fill-image-overlay p {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .sad-hero-content {
+        width: calc(100% - 30px);
+        padding: 35px 25px;
+    }
+
+    .sad-hero-title {
+        font-size: 1.9rem;
+    }
+
+    .sad-hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .sad-hero-description {
+        font-size: 0.95rem;
+    }
+
+    .sad-feedback-card {
+        padding: 25px;
+    }
+
+    .sad-feedback-text {
+        font-size: 1.05rem;
+    }
+
+    .sad-tech-stack {
+        gap: 8px;
+    }
+
+    .sad-tech-item {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+
+    /* Adjust image sizes on small screens */
+    .sad-about-image-main {
+        height: 300px;
+    }
+
+    .sad-extra-image-fill {
+        height: 300px;
+    }
+
+    .sad-fill-image-overlay {
+        padding: 15px;
+    }
+
+    .sad-fill-image-overlay h4 {
+        font-size: 1.1rem;
+    }
+
+    .sad-fill-image-overlay p {
+        font-size: 0.8rem;
+    }
+
+    .sad-image-overlay {
+        padding: 20px;
+    }
+
+    .sad-image-overlay h3 {
+        font-size: 1.3rem;
+    }
+
+    .sad-image-overlay p {
+        font-size: 0.8rem;
+    }
+}
+
+.sad-image-overlay p {
+    font-size: 0.8rem;
+}
+
+
+/* PRODUCTIVITY SECTION */
 .sad-productivity-section {
     width: 100%;
     background: #0a0a0a;
@@ -1003,15 +1775,14 @@
 }
 
 .sad-prod-title {
-    font-size: 40px;
-    font-weight: 500;
-    text-align: left;
+
+    text-align: Left;
+    font-size: 46px;
+    font-weight: 700;
     line-height: 1.15;
     color: #ffffff;
     margin-bottom: 24px;
     letter-spacing: -1px;
-    font-family: 'HEXCO', sans-serif;
-    text-transform: uppercase;
 }
 
 .sad-prod-desc {
@@ -1019,7 +1790,7 @@
     color: #a0a0a0;
     line-height: 1.6;
     margin-bottom: 40px;
-    text-align: left;
+    text-align: Left;
 }
 
 .sad-prod-buttons {
@@ -1034,7 +1805,7 @@
     border: none;
     padding: 16px 32px;
     font-size: 15px;
-    font-weight: 700;
+    font-weight: 600;
     border-radius: 12px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -1118,10 +1889,16 @@
 .sad-timeline-item {
     display: flex;
     gap: 24px;
-    align-items: center;
+    align-items: flex-start;
     position: relative;
     z-index: 2;
-    padding-bottom: 20px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #1a1a1a;
+}
+
+.sad-timeline-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
 }
 
 .sad-timeline-icon {
@@ -1136,10 +1913,16 @@
     justify-content: center;
     flex-shrink: 0;
     padding: 16px;
-    color: #BAFF29;
+}
+
+.sad-timeline-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .sad-timeline-content {
+    padding-top: 8px;
     text-align: left;
 }
 
@@ -1157,13 +1940,12 @@
     font-size: 14px;
     color: #a0a0a0;
     line-height: 1.6;
-    max-width: 350px;
 }
 
 @media (max-width: 991px) {
     .sad-prod-container {
         flex-direction: column;
-        text-align: center;
+        text-align: left;
         gap: 60px;
     }
 
@@ -1181,530 +1963,650 @@
     }
 }
 
-
-/* ============================================================
-   MISSION SECTION - REDESIGNED PIXEL-PERFECT FAN CARDS
-   ============================================================ */
-.sad-mission-section {
-    padding: 100px 0 40px;
-    background: #ffffff;
-    /* White background from image */
-    overflow: hidden;
-}
-
-.sad-mission-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.sad-mission-title-new {
-    font-size: 46px;
-    font-weight: 800;
-    color: #1a1a1a;
-    line-height: 1.2;
-    margin-top: -70px;
-    font-family: 'HEXCO', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-align: center;
-}
-
-.sad-mission-highlight-box {
-    background: #BAFF29;
-    color: #000;
-    padding: 5px 20px;
-    border-radius: 12px;
-    display: inline-block;
-    margin: 0 10px;
-}
-
-.sad-mission-cards-wrapper {
-    position: relative;
-    height: 550px;
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-}
-
-.sad-mission-cards-fan {
-    position: relative;
+/* ELEVATE SECTION */
+.sad-elevate-section {
     width: 100%;
-    max-width: 1000px;
-    height: 500px;
-    display: flex;
-    justify-content: center;
-}
-
-.sad-mission-card-new {
-    position: absolute;
-    width: 270px;
-    height: 400px;
-    bottom: 50px;
-    background: var(--card-color);
-    border-radius: 30px;
-    padding: 30px;
-    color: #fff;
-    text-align: left;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-    transform-origin: center bottom;
-    transform: translateX(-50%) rotate(var(--card-rot)) translateY(var(--card-transY));
-    left: var(--card-left);
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
-
-.sad-mission-card-new:hover {
-    transform: translateX(-50%) rotate(0deg) translateY(-100px) scale(1.1);
-    z-index: 100;
-    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.3);
-}
-
-.sad-mission-card-inner {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.sad-mission-card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 25px;
-}
-
-.sad-mission-card-title {
-    font-family: 'Aldrich', sans-serif;
-    font-size: 18px;
-    font-weight: 200;
-    line-height: 1.1;
-    margin-bottom: 6px;
-}
-
-.sad-mission-card-subtitle {
-    font-size: 14px;
-    opacity: 0.8;
-    display: block;
-}
-
-.sad-mission-card-rating {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(5px);
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 14px;
-    font-weight: 800;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.sad-mission-card-desc {
-    font-size: 15px;
-    line-height: 1.6;
-    margin: 0;
-    opacity: 0.9;
-    font-weight: 500;
-    text-align: left;
-}
-
-.sad-mission-card-icon-bottom {
-    margin-top: auto;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
-}
-
-.sad-card-icon {
-    width: 64px;
-    height: 64px;
-    opacity: 0.5;
-    color: #fff;
-    stroke: #fff;
-    transition: all 0.3s ease;
-}
-
-.sad-mission-card-new:hover .sad-card-icon {
-    opacity: 1;
-    transform: scale(1.1);
-}
-
-@media (max-width: 1024px) {
-    .sad-mission-cards-wrapper {
-        height: auto;
-        padding-top: 50px;
-    }
-
-    .sad-mission-cards-fan {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-        height: auto;
-        position: static;
-    }
-
-    .sad-mission-card-new {
-        position: static;
-        transform: none !important;
-        width: 100%;
-        margin-bottom: 20px;
-        left: auto;
-    }
-
-    .sad-mission-card-new:hover {
-        transform: translateY(-10px) !important;
-    }
-
-    .sad-mission-title-new {
-        font-size: 32px;
-        margin-bottom: 60px;
-    }
-}
-
-/* ============================================================
-   REVIEWS SECTION REDESIGN
-   ============================================================ */
-.sad-reviews-section {
-    padding: 120px 40px;
-    background: #f4f5f5;
-    /* Off-white background from image */
-    text-align: left;
+    background: #ffffff;
+    padding: 40px;
     font-family: 'Inter', sans-serif;
-    overflow: hidden;
-    /* Important for marquee */
+    color: #1a1a1a;
+    display: flex;
+    justify-content: center;
 }
 
-.sad-testimonial-badge {
-    color: #ff4d4d;
-    font-size: 14px;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-style: italic;
-    margin-bottom: 40px;
+.sad-el-container {
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 80px;
+
+    align-items: center;
+}
+
+.sad-el-left {
     position: relative;
-    left: 45%;
-    letter-spacing: 1px;
+    width: 100%;
+    height: 560px;
 }
 
-.sad-reviews-title {
-    font-family: 'HEXCO', sans-serif;
-    font-size: 42px;
-    font-weight: 900;
-    color: #000000;
-    text-transform: uppercase;
-    margin-bottom: 70px;
-    line-height: 1.1;
-    max-width: 800px;
-    text-align: center;
-    margin-left: 23%;
-    /* margin-right: auto; */
+.sad-el-img-large {
+    position: absolute;
+    right: 0;
+    top: 40px;
+    width: 280px;
+    height: 460px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    z-index: 1;
 }
 
-.sad-reviews-slider-box {
+.sad-el-img-small-top {
+    position: absolute;
+    left: 20px;
+    top: 70px;
+    width: 240px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    border: 4px solid #fff;
+}
+
+.sad-el-img-small-bottom {
+    position: absolute;
+    left: 40px;
+    bottom: 50px;
+    width: 250px;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    border: 4px solid #fff;
+}
+
+.sad-el-badge-rocket {
+    position: absolute;
+    left: 30px;
+    top: 40px;
+    width: 54px;
+    height: 54px;
+    background: #06c281;
+    border-radius: 50%;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    /* Start from left for marquee */
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
-    position: relative;
-    padding: 20px 0;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    outline: 6px solid #ffffff;
+    z-index: 3;
 }
 
-.sad-reviews-slider {
-    width: 100%;
-    overflow: hidden;
+.sad-el-badge-rocket svg {
+    fill: #ffffff;
+    width: 24px;
+    height: 24px;
 }
 
-.sad-review-track {
-    display: flex;
-    gap: 30px;
-    width: max-content;
-    animation: sad-marquee 40s linear infinite;
-}
-
-.sad-reviews-slider:hover .sad-review-track {
-    animation-play-state: paused;
-}
-
-@keyframes sad-marquee {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(calc(-50% - 15px));
-    }
-}
-
-.sad-review-card {
+.sad-el-badge-volunteer {
+    position: absolute;
+    right: 20px;
+    bottom: 0;
     background: #ffffff;
+    padding: 14px 24px;
     border-radius: 20px;
-    padding: 50px 35px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    /* Soft shadow from image */
-    text-align: center;
-    transition: all 0.3s ease;
-    width: 380px;
-    /* Fixed width for better marquee flow */
-    flex-shrink: 0;
-    border: 1px solid rgba(0, 0, 0, 0.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
 }
 
-.sad-review-avatar-container {
-    width: 90px;
-    height: 90px;
+.sad-el-vol-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #06c281;
+}
+
+.sad-el-vol-avatars {
+    display: flex;
+    align-items: center;
+}
+
+.sad-el-vol-avatars img {
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
-    margin: 0 auto 25px;
-    overflow: hidden;
-    background: #eef5ff;
-}
-
-.sad-review-avatar-container img {
-    width: 100%;
-    height: 100%;
+    border: 3px solid #ffffff;
+    margin-left: -12px;
     object-fit: cover;
 }
 
-.sad-client-name {
-    font-size: 19px;
-    font-weight: 800;
-    margin-bottom: 6px;
-    color: #111111;
-    text-transform: uppercase;
-    font-family: 'Inter', sans-serif;
-    letter-spacing: 0.5px;
+.sad-el-vol-avatars img:first-child {
+    margin-left: 0;
 }
 
-.sad-client-role {
-    font-size: 13px;
-    font-weight: 700;
-    color: #ff4d4d;
-    /* Red/Orange from image */
-    text-transform: uppercase;
-    margin-bottom: 25px;
-    display: block;
-    letter-spacing: 1px;
-}
-
-.sad-review-text {
-    font-size: 15px;
-    color: #888888;
-    /* Light gray from image */
-    line-height: 1.6;
-    margin-bottom: 30px;
-    font-weight: 500;
-    min-height: 80px;
-}
-
-.sad-review-stars {
-    display: flex;
-    justify-content: center;
-    gap: 5px;
-    color: #ffb800;
-    /* Yellow from image */
-    font-size: 18px;
-}
-
-/* ============================================================
-   INTERNSHIP COURSES
-   ============================================================ */
-.sad-intern-courses {
-    padding: 120px 40px;
-    background: #fff;
-}
-
-.sad-courses-grid-wide {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 30px;
-}
-
-.sad-course-box {
-    background: #f8f9fa;
-    border-radius: 30px;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s;
-    border: 1px solid #eee;
-}
-
-.sad-course-box:hover {
-    transform: translateY(-10px);
-    background: #fff;
-    border-color: #6366F1;
-    box-shadow: 0 20px 40px rgba(99, 102, 241, 0.1);
-}
-
-.sad-course-box-title {
-    font-size: 24px;
-    font-weight: 700;
-    color: #1a1a1a;
-    margin-bottom: 20px;
-    font-family: 'HEXCO', sans-serif;
-}
-
-.sad-course-box-desc {
-    font-size: 14px;
-    color: #666;
-    line-height: 1.6;
-    margin-bottom: 30px;
-    flex-grow: 1;
-}
-
-.sad-course-item-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 30px;
-}
-
-.sad-course-li {
+.sad-el-vol-count {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 3px solid #ffffff;
+    background: #f0f0f0;
     font-size: 11px;
     font-weight: 700;
-    color: #6366F1;
-    background: rgba(99, 102, 241, 0.08);
-    padding: 6px 12px;
-    border-radius: 20px;
-    text-transform: uppercase;
-}
-
-.sad-course-box-footer {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding-top: 25px;
-    border-top: 1px solid #eee;
+    justify-content: center;
+    margin-left: -12px;
+    color: #666;
 }
 
-.sad-meta-label {
-    font-size: 10px;
-    color: #999;
-    text-transform: uppercase;
+.sad-el-right {
+    padding-left: 20px;
+}
+
+.sad-el-preheading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 34px;
+    font-weight: 600;
+    color: #5b58ee;
+    margin-left: 20%;
+    margin-bottom: 16px;
+    text-transform: capitalize;
+}
+
+.sad-el-preheading::before {
+    content: '';
     display: block;
-    margin-bottom: 4px;
+    width: 40px;
+    height: 2px;
+    background: #5b58ee;
 }
 
-.sad-meta-val {
-    font-size: 14px;
-    font-weight: 700;
-    color: #111;
+.sad-el-title {
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #1a1a1a;
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: left;
+    text-align: left;
+    font-family: 'Poppins', 'Inter', sans-serif;
+    letter-spacing: -1px;
 }
 
-.sad-course-btn {
-    background: #1a1a1a;
-    color: #fff;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 40px;
-    font-weight: 700;
+.sad-el-desc {
+    font-size: 15px;
+    color: #666666;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    text-align: Left;
+}
+
+.sad-el-stats {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.sad-el-stat-box {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.sad-el-stat-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sad-el-stat-icon svg {
+    width: 40px;
+    height: 40px;
+    fill: none;
+    stroke: #5b58ee;
+    stroke-width: 1.5;
+}
+
+.sad-el-stat-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.sad-el-stat-num {
+    font-size: 22px;
+    font-weight: 800;
+    color: #1a1a1a;
+    line-height: 1.1;
+}
+
+.sad-el-stat-label {
     font-size: 13px;
-    cursor: pointer;
+    color: #888888;
+    margin-top: 4px;
 }
 
-/* Responsive adjustments */
-@media (max-width: 1024px) {
-    .sad-hero-container-new {
-        flex-direction: column;
-        padding: 40px;
-        clip-path: none;
-        border-radius: 30px;
-    }
+.sad-el-btn {
+    background: #5b58ee;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 16px 36px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 10px;
+}
 
-    .sad-hero-left-new {
-        align-items: center;
-        text-align: center;
-    }
+.sad-el-btn:hover {
+    background: #4a47d2;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(91, 88, 238, 0.2);
+}
 
-    .sad-hero-subtitle-new,
-    .sad-hero-title-new {
-        margin-left: 0;
-    }
-
-    .sad-hero-desc-new {
-        max-width: 100%;
-    }
-
-    .sad-hero-title-desc-new {
-        display: none;
-    }
-
-    .sad-about-inner-new {
-        grid-template-columns: 1fr;
-    }
-
-    .sad-el-container,
-    .sad-prod-container,
-    .sad-services-grid,
-    .sad-courses-grid-wide {
+@media (max-width: 991px) {
+    .sad-el-container {
         grid-template-columns: 1fr;
         gap: 40px;
     }
 
     .sad-el-left {
-        height: 400px;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .sad-el-right {
+        padding-left: 0;
+        text-align: left;
+    }
+
+    .sad-el-preheading {
+        justify-content: center;
+    }
+
+    .sad-el-stats {
+        justify-content: center;
     }
 }
 
-/* ============================================================
-   AGENCY SECTION REDESIGN
-   ============================================================ */
+/* MISSION & SERVICES SECTION */
+.sad-mission-section {
+    padding: 10px 0 40px;
+    background-color: #fafafa;
+    font-family: 'Inter', sans-serif;
+}
+
+.sad-mission-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.sad-mission-header {
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.sad-mission-label {
+    font-size: 14px;
+    font-weight: 800;
+    color: #BAFF29;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.sad-mission-title {
+    font-size: 46px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #111111;
+    letter-spacing: -1px;
+    text-align: left;
+    margin-top: -70px;
+}
+
+.sad-mission-highlight {
+    background-color: #BAFF29;
+    padding: 0 15px;
+    border-radius: 12px;
+    display: inline-block;
+}
+
+.sad-services-grid {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: -40px;
+    /* Overlap handled by margins below */
+    margin-top: 10px;
+    padding: 20px 0 40px;
+    position: relative;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sad-page-service-card {
+    width: 280px;
+    height: 400px;
+    padding: 30px;
+    border-radius: 40px 40px 45px 45px;
+    /* Semi-circle top */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    margin-right: -100px;
+    /* Overlap */
+    color: #ffffff;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+
+.sad-page-service-card:last-child {
+    margin-right: 0;
+}
+
+.sad-page-service-card:hover {
+    transform: translateY(-30px) scale(1.05) !important;
+    z-index: 20 !important;
+}
+
+/* Card Header Structure */
+.sad-page-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.sad-card-title-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 2px;
+    max-width: calc(100% - 75px);
+}
+
+.sad-page-service-card-title {
+    font-size: 18px;
+    font-weight: 200;
+    margin: 0;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+    text-align: left !important;
+    line-height: 1.2;
+    overflow-wrap: break-word;
+    font-family: 'Aldrich', sans-serif;
+}
+
+.sad-page-service-card-subtitle {
+    font-size: 13px;
+    font-weight: 500;
+    opacity: 0.8;
+    margin: 0;
+}
+
+.sad-page-service-card-desc {
+    font-size: 13.5px;
+    line-height: 1.5;
+    opacity: 0.85;
+    margin: 0;
+    font-weight: 400;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-align: left;
+}
+
+/* Badge Style */
+.sad-page-card-badge {
+    background: rgba(0, 0, 0, 0.25);
+    padding: 4px 10px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    backdrop-filter: blur(5px);
+}
+
+.sad-page-badge-icon-bg {
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    color: #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sad-page-badge-rating {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* Main Icon / Graphic area */
+.sad-page-service-icon-wrap {
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 100px;
+    /* Specific height to let text take space */
+    width: 100%;
+    margin-top: auto;
+}
+
+
+.sad-service-icon-wrap svg {
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
+    transition: transform 0.3s ease;
+}
+
+.sad-service-card:hover .sad-service-icon-wrap svg {
+    transform: scale(1.1);
+}
+
+/* Color & Rotation Variants */
+/* Fanned Layout logic - Middle card (variant-3) in front, 7 cards total */
+.sad-card-variant-1 {
+    background: linear-gradient(135deg, #7B39FD 0%, #5A27C2 100%);
+    transform: rotate(-24deg) translateY(80px);
+    z-index: 1;
+}
+
+.sad-card-variant-2 {
+    background: linear-gradient(135deg, #F74A53 0%, #D43A43 100%);
+    transform: rotate(-16deg) translateY(45px);
+    z-index: 2;
+}
+
+.sad-card-variant-7 {
+    background: linear-gradient(135deg, #FF9519 0%, #D47B15 100%);
+    transform: rotate(-8deg) translateY(15px);
+    z-index: 3;
+}
+
+.sad-card-variant-3 {
+    background: linear-gradient(135deg, #3BC9FF 0%, #29B4E6 100%);
+    transform: rotate(0deg) translateY(0px);
+    /* TOP CARD (Visual Identity) */
+    z-index: 10;
+}
+
+.sad-card-variant-4 {
+    background: linear-gradient(135deg, #36D19E 0%, #2AB88B 100%);
+    transform: rotate(8deg) translateY(15px);
+    z-index: 4;
+}
+
+.sad-card-variant-5 {
+    background: linear-gradient(135deg, #4867FF 0%, #3050E6 100%);
+    transform: rotate(16deg) translateY(45px);
+    z-index: 3;
+}
+
+.sad-card-variant-6 {
+    background: linear-gradient(135deg, #FF7ACD 0%, #E65FB1 100%);
+    transform: rotate(24deg) translateY(80px);
+    z-index: 2;
+}
+
+/* Specific Badge Icon Colors */
+.sad-card-variant-1 .sad-badge-icon-bg {
+    color: #7B39FD;
+}
+
+.sad-card-variant-2 .sad-badge-icon-bg {
+    color: #F74A53;
+}
+
+.sad-card-variant-3 .sad-badge-icon-bg {
+    color: #29B4E6;
+}
+
+.sad-card-variant-4 .sad-badge-icon-bg {
+    color: #2AB88B;
+}
+
+.sad-card-variant-5 .sad-badge-icon-bg {
+    color: #3050E6;
+}
+
+.sad-card-variant-6 .sad-badge-icon-bg {
+    color: #E65FB1;
+}
+
+.sad-card-variant-7 .sad-badge-icon-bg {
+    color: #FF9519;
+}
+
+
+.sad-mission-section {
+    padding: 120px 0;
+    background: #ffffff;
+    /* Keeping original section theme as requested */
+    overflow: hidden;
+}
+
+.sad-mission-title {
+    color: #1a1a1a;
+}
+
+
+/* Responsive */
+@media (max-width: 1100px) {
+    .sad-services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sad-mission-title {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sad-services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sad-mission-title {
+        font-size: 32px;
+    }
+
+    .sad-mission-section {
+        padding: 80px 0;
+    }
+}
+
+/* BUSINESS AGENCY SECTION */
 .sad-agency-section {
-    background: #000;
-    padding: 100px 40px;
-    color: #fff;
-    text-align: center;
+    padding: 100px 0 80px;
+    background-color: #111111;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    position: relative;
+    overflow: hidden;
 }
 
 .sad-agency-container {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 40px;
+}
+
+.sad-agency-header {
+    text-align: left;
+    margin-bottom: 80px;
+}
+
+.sad-agency-welcome {
+    font-size: 13px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
 }
 
 .sad-agency-main-title {
     font-size: 52px;
-    font-weight: 800;
-    margin-bottom: 80px;
+    font-weight: 900;
     line-height: 1.1;
-    font-family: 'HEXCO', sans-serif;
-    color: #fff;
+    color: #ffffff;
     text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    /* margin-left: 40%; */
 }
 
-.sad-agency-highlight {
-    color: #fff;
-    border-bottom: 5px solid #BAFF29;
+.sad-lime-highlight {
+    position: relative;
+    display: inline-block;
+    padding: 0 4px;
+    z-index: 1;
+}
+
+.sad-lime-highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    width: 100%;
+    height: 12px;
+    background-color: #BAFF29;
+    z-index: -1;
+    opacity: 0.9;
 }
 
 .sad-agency-grid {
     display: grid;
     grid-template-columns: 1fr 1.1fr;
     gap: 80px;
-    text-align: left;
     align-items: stretch;
-}
-
-.sad-agency-left {
-    position: relative;
-    width: 100%;
 }
 
 .sad-agency-right {
     display: flex;
     flex-direction: column;
-}
-
-.sad-agency-info-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    margin-bottom: 50px;
 }
 
 .sad-agency-image-card {
@@ -1718,6 +2620,119 @@
     object-fit: cover;
     border-radius: 40px;
     box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+}
+
+.sad-dot-pattern-circle {
+    position: absolute;
+    top: -40px;
+    left: -40px;
+    width: 140px;
+    height: 140px;
+    background-image: radial-gradient(#BAFF29 3px, transparent 3px);
+    background-size: 20px 20px;
+    z-index: -1;
+}
+
+.sad-exp-badge {
+    position: absolute;
+    bottom: 40px;
+    left: -30px;
+    background-color: #BAFF29;
+    padding: 30px 40px;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 15px 40px rgba(186, 255, 41, 0.4);
+    z-index: 5;
+}
+
+.sad-exp-number {
+    font-size: 48px;
+    font-weight: 900;
+    color: #111111;
+    line-height: 1;
+}
+
+.sad-exp-text {
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #111111;
+    text-transform: uppercase;
+}
+
+.sad-agency-info-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 50px;
+}
+
+.sad-info-subtitle {
+    font-size: 13px;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.sad-info-desc {
+    font-size: 15px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.82);
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.sad-agency-more-btn {
+    background-color: #BAFF29;
+    border: none;
+    padding: 18px 40px;
+    border-radius: 60px;
+    font-weight: 800;
+    font-size: 14px;
+    color: #111111;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 20px rgba(186, 255, 41, 0.2);
+}
+
+.sad-agency-more-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(186, 255, 41, 0.3);
+    background-color: #a8e624;
+}
+
+.sad-features-list {
+    list-style: none;
+    padding: 0;
+}
+
+.sad-features-list li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 18px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: left;
+}
+
+.sad-check-icon {
+    width: 26px;
+    height: 26px;
+    background-color: #BAFF29;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: #111111;
+    flex-shrink: 0;
+    font-weight: 900;
 }
 
 .sad-agency-bottom-img-wrap {
@@ -1737,118 +2752,85 @@
     box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
 }
 
-.sad-agency-experience-badge {
+.sad-dot-pattern-square {
     position: absolute;
-    bottom: 40px;
-    left: -20px;
-    background: #BAFF29;
-    color: #111111;
-    padding: 25px 35px;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    box-shadow: 0 10px 40px rgba(186, 255, 41, 0.4);
-    z-index: 5;
+    bottom: -30px;
+    right: -30px;
+    width: 100px;
+    height: 100px;
+    background-image: radial-gradient(#BAFF29 3px, transparent 3px);
+    background-size: 15px 15px;
+    z-index: -1;
 }
 
-.sad-exp-num {
-    font-size: 36px;
-    font-weight: 900;
-    color: #111111;
-}
-
-.sad-exp-text {
-    font-size: 11px;
-    font-weight: 800;
-    line-height: 1.2;
-    text-transform: uppercase;
-    color: #111111;
-}
-
-.sad-agency-small-title {
-    font-size: 13px;
-    font-weight: 900;
-    color: #ffffff;
-    margin-bottom: 20px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-.sad-agency-desc {
-    font-size: 15px;
-    line-height: 1.8;
-    color: rgba(255, 255, 255, 0.82);
-    margin-bottom: 30px;
-}
-
-.sad-agency-list {
-    list-style: none;
-    padding: 0;
-}
-
-.sad-agency-list li {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 18px;
-    font-size: 15px;
-    font-weight: 700;
-    color: #ffffff;
-}
-
-.sad-check-icon {
-    width: 26px;
-    height: 26px;
-    background-color: #BAFF29;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    color: #111111;
-    flex-shrink: 0;
-    font-weight: 900;
-}
-
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
     .sad-agency-grid {
-        grid-template-columns: 1fr;
-        gap: 60px;
-    }
-
-    .sad-agency-experience-badge {
-        left: 20px;
+        gap: 50px;
     }
 
     .sad-agency-main-title {
-        font-size: 36px;
-        margin-bottom: 50px;
+        font-size: 42px;
+    }
+}
+
+@media (max-width: 900px) {
+    .sad-agency-grid {
+        grid-template-columns: 1fr;
+        gap: 100px;
+    }
+
+    .sad-agency-info-row {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .sad-portrait-img {
+        height: 500px;
+    }
+
+    .sad-exp-badge {
+        left: 20px;
+        bottom: -30px;
+    }
+
+    .sad-agency-bottom-img-wrap {
+        min-height: 380px;
+    }
+}
+
+
+
+/* Scroll Wrapper with CSS Mask for Edge Fading */
+
+/* Pause on Hover */
+
+@media (max-width: 768px) {
+
+    .sad-marquee-spin {
+        animation-duration: 30s;
     }
 }
 
 /* Left Alignment Overrides */
-.sad-hero-title-new,
-.sad-hero-subtitle-new,
-.sad-hero-desc-new,
+.br-hero-title-new,
+.br-hero-subtitle-new,
+.br-hero-desc-new,
 .sad-hero-title-desc-new,
-.bi-info-subtitle,
-.bi-prod-title,
+.sad-info-subtitle,
+.sad-el-title,
+.sad-prod-title,
 .sad-detail-title,
+.sad-about-left-title,
+.sad-service-card-title,
+.sad-service-card-desc,
 .sad-agency-main-title,
 .sad-mission-title,
-.sad-agency-header,
-.sad-testimonial-container,
-.sad-testimonial-heading,
-.sad-testimonial-label,
-.bi-info-col,
-.bi-info-features {
-    text-align: left !important;
-    margin-left: 0 !important;
+.sad-agency-header {
+    text-align: left;
 }
 
 /* ============================================================
-   COMPLETE RESPONSIVE FIXES FOR ALL SCREEN SIZES
+   COMPREHENSIVE RESPONSIVE FIXES FOR ALL SCREEN SIZES
    ============================================================ */
 
 /* 1400px and above - Large Desktop */
@@ -1858,10 +2840,14 @@
     }
 
     .sad-hero-title-new {
-        font-size: 54px;
+        font-size: 58px;
     }
 
-    .sad-mission-container {
+    .sad-services-container-new {
+        max-width: 1200px;
+    }
+
+    .sad-about-inner-new {
         max-width: 1200px;
     }
 }
@@ -1872,42 +2858,19 @@
         flex-direction: column;
         padding: 40px 30px 60px 30px;
         clip-path: none;
-        border-radius: 30px;
     }
 
     .sad-hero-left-new {
-        order: 1;
-        width: 100%;
         max-width: 100%;
-        align-items: center;
-        text-align: center;
-    }
-
-    .sad-hero-center-new {
-        order: 2;
-        width: 100%;
-        margin: 40px 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .sad-hero-right-new {
-        order: 3;
-        width: 100%;
-        max-width: 100%;
-        margin-top: 20px;
     }
 
     .sad-hero-title-new {
         font-size: 48px;
         margin-left: 0;
-        text-align: center;
     }
 
     .sad-hero-subtitle-new {
         margin-left: 0;
-        text-align: center;
     }
 
     .sad-hero-title-desc-new {
@@ -1917,11 +2880,9 @@
         transform: none;
         min-height: auto;
         margin: 20px 0;
-        display: none;
     }
 
-    .sad-hero-desc-new {
-        text-align: center;
+    .sad-hero-right-new {
         max-width: 100%;
     }
 
@@ -1930,18 +2891,87 @@
         justify-content: center;
     }
 
-    .sad-hero-buttons-new {
+    .sad-services-grid {
+        flex-wrap: wrap;
         justify-content: center;
+        gap: 20px;
     }
 
-    .sad-hero-iphone14-img {
-        max-width: 60%;
-        margin: 0 auto;
+    .sad-page-service-card {
+        margin-right: 0;
+        transform: rotate(0deg) translateY(0) !important;
+        width: calc(33.33% - 20px);
+        min-width: 280px;
     }
 }
 
-/* 1100px - Tablet Landscape */
-@media (max-width: 1100px) {
+/* 1024px - Tablet Landscape */
+@media (max-width: 1024px) {
+    .sad-services-content-new {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .sad-services-list-new {
+        order: 1;
+    }
+
+    .sad-services-info-col-new {
+        order: 2;
+    }
+
+    .sad-services-image-col-new {
+        order: 3;
+    }
+
+    .sad-services-info-col-new {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .sad-services-card-dark-new,
+    .sad-services-card-green-new {
+        min-height: auto;
+        padding: 30px 25px;
+    }
+
+    .sad-services-card-sub-new,
+    .sad-services-card-sub-green-new {
+        order: 2;
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
+
+    .sad-services-card-action-new {
+        order: 3;
+        margin-top: 10px;
+    }
+
+    .sad-services-card-action-text-new,
+    .sad-services-card-action-text-green-new {
+        font-size: 20px;
+    }
+
+    .sad-services-image-wrapper-new {
+        height: 400px;
+    }
+
+    .sad-page-service-card {
+        width: calc(50% - 20px);
+    }
+
+    .sad-page-service-card-desc {
+        font-size: 12px;
+    }
+
+    .sad-page-service-card-title {
+        font-size: 17px;
+        white-space: normal;
+        word-break: break-word;
+    }
+
     .sad-about-inner-new {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -1949,102 +2979,10 @@
 
     .sad-about-left-tag {
         font-size: 32px;
-        text-align: center;
     }
 
     .sad-about-left-title {
         font-size: 28px;
-        text-align: center;
-    }
-
-    .sad-about-intro-new {
-        text-align: center;
-    }
-
-    .sad-about-left-header {
-        text-align: center;
-    }
-
-    .sad-agency-grid {
-        gap: 50px;
-    }
-
-    .sad-agency-main-title {
-        font-size: 42px;
-    }
-}
-
-/* 1024px - Tablet Landscape */
-@media (max-width: 1024px) {
-    .sad-el-container {
-        grid-template-columns: 1fr;
-        gap: 80px;
-        text-align: left;
-    }
-
-    .sad-el-left {
-        height: 450px;
-    }
-
-    .sad-el-right {
-        align-items: center;
-    }
-
-    .sad-el-title {
-        font-size: 36px;
-        text-align: center;
-    }
-
-    .sad-el-preheading {
-        margin-left: 0;
-        font-size: 28px;
-        justify-content: center;
-    }
-
-    .sad-el-desc,
-    .sad-el-sub-desc {
-        text-align: center;
-        max-width: 100%;
-    }
-
-    .sad-el-stats-new {
-        justify-content: center;
-    }
-
-    .sad-el-btn-discover {
-        margin-left: 0;
-        width: 100%;
-        text-align: center;
-    }
-
-    .sad-courses-grid-wide {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
-    }
-
-    .sad-agency-grid {
-        grid-template-columns: 1fr;
-        gap: 60px;
-    }
-
-    .sad-agency-experience-badge {
-        left: 20px;
-    }
-
-    .sad-agency-main-title {
-        font-size: 36px;
-        margin-bottom: 50px;
-    }
-
-    .sad-reviews-title {
-        font-size: 36px;
-        margin-left: 0;
-        text-align: center;
-    }
-
-    .sad-testimonial-badge {
-        left: 0;
-        text-align: center;
     }
 }
 
@@ -2052,8 +2990,7 @@
 @media (max-width: 991px) {
     .sad-prod-container {
         flex-direction: column;
-        text-align: center;
-        gap: 60px;
+        gap: 50px;
     }
 
     .sad-prod-left {
@@ -2082,20 +3019,32 @@
         text-align: center;
     }
 
-    .sad-prod-timeline::before {
-        left: 32px;
-    }
-}
-
-/* 900px - Small Desktop */
-@media (max-width: 900px) {
-    .sad-agency-info-row {
+    .sad-el-container {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 50px;
     }
 
-    .sad-portrait-img {
-        height: 500px;
+    .sad-el-left {
+        height: 480px;
+    }
+
+    .sad-el-img-large {
+        width: 220px;
+        height: 380px;
+    }
+
+    .sad-el-img-small-top,
+    .sad-el-img-small-bottom {
+        width: 180px;
+    }
+
+    .sad-el-title {
+        font-size: 32px;
+    }
+
+    .sad-el-preheading {
+        margin-left: 0;
+        font-size: 28px;
     }
 }
 
@@ -2138,24 +3087,14 @@
     .sad-title-play-row {
         flex-direction: column;
         gap: 15px;
-        align-items: center;
     }
 
     .sad-case-title-new {
         font-size: 28px;
-        text-align: center;
     }
 
     .sad-about-company-desc-new {
         font-size: 14px;
-        text-align: center;
-        max-width: 100%;
-    }
-
-    .sad-avatars-row-new {
-        flex-direction: column;
-        gap: 15px;
-        align-items: center;
     }
 
     .sad-performance-card-new {
@@ -2199,6 +3138,21 @@
         font-size: 20px;
     }
 
+    .sad-detail-title {
+        font-size: 22px;
+    }
+
+    .sad-detail-stats {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .sad-detail-stat {
+        flex: 1;
+        min-width: 80px;
+        border-right: none;
+    }
+
     .sad-about-service-item-new {
         padding: 15px 18px !important;
     }
@@ -2226,7 +3180,6 @@
     .sad-about-detail-panel {
         padding: 20px 18px !important;
         height: auto !important;
-        min-height: 500px;
     }
 
     .sad-detail-icon-wrap {
@@ -2242,24 +3195,8 @@
         font-size: 9px;
     }
 
-    .sad-detail-title {
-        font-size: 22px !important;
-    }
-
     .sad-detail-desc {
         font-size: 13px !important;
-    }
-
-    .sad-detail-stats {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
-        margin-bottom: 20px;
-    }
-
-    .sad-detail-stat {
-        flex: 1;
-        min-width: 70px;
     }
 
     .sad-detail-stat-val {
@@ -2273,7 +3210,6 @@
     .sad-detail-cta {
         padding: 12px 20px !important;
         font-size: 13px !important;
-        width: 100%;
     }
 
     .sad-productivity-section {
@@ -2347,91 +3283,41 @@
         font-size: 12px;
     }
 
-    .sad-el-left {
-        height: 400px;
-    }
-
-    .sad-el-main {
-        width: 70%;
-    }
-
-    .sad-el-top-left,
-    .sad-el-bottom-left {
-        width: 60%;
-    }
-
-    .sad-el-title {
-        font-size: 32px;
-    }
-
-    .sad-el-desc {
-        font-size: 14px;
-    }
-
-    .sad-el-stats-new {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .sad-el-btn-discover {
-        margin-left: 0;
+    .sad-page-service-card {
         width: 100%;
-        text-align: center;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    .sad-mission-title {
+        margin-top: 5px;
+        font-size: 32px;
     }
 
     .sad-mission-section {
         padding: 60px 20px;
     }
 
-    .sad-mission-title-new {
-        font-size: 32px;
-        margin-top: 0;
-        margin-bottom: 40px;
-        text-align: center;
+    .sad-services-section-new {
+        padding: 60px 20px;
     }
 
-    .sad-mission-highlight-box {
-        padding: 0 8px;
+    .sad-services-container-new {
+        padding: 0 20px;
     }
 
-    .sad-reviews-section {
-        padding: 80px 20px;
+    .sad-services-title-new {
+        font-size: 36px;
     }
 
-    .sad-reviews-title {
-        font-size: 32px;
-        margin-bottom: 40px;
-    }
-
-    .sad-review-card {
-        width: 300px;
-        padding: 35px 25px;
-    }
-
-    .sad-review-text {
-        font-size: 13px;
-        min-height: 100px;
-    }
-
-    .sad-client-name {
-        font-size: 17px;
-    }
-
-    .sad-intern-courses {
-        padding: 80px 20px;
-    }
-
-    .sad-courses-grid-wide {
+    .sad-services-info-col-new {
         grid-template-columns: 1fr;
         gap: 20px;
     }
 
-    .sad-course-box {
-        padding: 30px;
-    }
-
-    .sad-course-box-title {
-        font-size: 20px;
+    .sad-services-card-dark-new,
+    .sad-services-card-green-new {
+        padding: 25px 20px;
     }
 
     .sad-agency-section {
@@ -2440,70 +3326,94 @@
 
     .sad-agency-main-title {
         font-size: 32px;
-        margin-bottom: 40px;
     }
 
-    .sad-portrait-img {
-        height: 400px;
+    .sad-exp-badge {
+        padding: 20px 30px;
     }
 
-    .sad-agency-experience-badge {
-        padding: 15px 25px;
-    }
-
-    .sad-exp-num {
-        font-size: 28px;
-    }
-
-    .sad-exp-text {
-        font-size: 10px;
+    .sad-exp-number {
+        font-size: 36px;
     }
 
     .sad-landscape-img {
-        position: relative;
-        height: 250px;
+        height: 220px;
     }
 
-    .sad-agency-bottom-img-wrap {
-        height: 250px;
-        position: relative;
+    .sad-courses-section {
+        padding: 60px 20px;
     }
 
-    .sad-hero-iphone14-img {
-        max-width: 70% !important;
-        margin: 0 auto;
+    .sad-section-title {
+        font-size: 2rem;
+    }
+
+    .sad-courses-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .sad-feedback-section {
+        padding: 60px 20px;
+    }
+
+    .sad-feedback-card {
+        padding: 30px 25px;
+    }
+
+    .sad-feedback-text {
+        font-size: 1rem;
+    }
+
+    /* Mission section 7th card alignment fix */
+    .sad-page-service-card:last-child {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        left: auto !important;
+        right: auto !important;
+        position: relative !important;
+        transform: none !important;
     }
 }
 
 /* 576px - Small Tablet / Large Phone */
 @media (max-width: 576px) {
-    .sad-hero-iphone14-img {
-        max-width: 80% !important;
-        margin: 0 auto;
-    }
-
     .sad-el-left {
-        height: 350px;
+        height: 400px;
     }
 
-    .sad-el-main {
-        width: 75%;
+    .sad-el-img-large {
+        width: 160px;
+        height: 300px;
+        top: 60px;
     }
 
-    .sad-el-top-left,
-    .sad-el-bottom-left {
-        width: 65%;
+    .sad-el-img-small-top {
+        width: 140px;
+        height: 120px;
+        top: 20px;
+        left: 10px;
+    }
+
+    .sad-el-img-small-bottom {
+        width: 150px;
+        height: 130px;
+        left: 5px;
+        bottom: 20px;
     }
 
     .sad-el-title {
         font-size: 28px;
     }
 
-    .sad-el-badge-volunteer {
-        left: 50%;
-        transform: translateX(-50%);
-        min-width: 180px;
-        padding: 12px 20px;
+    .sad-el-stats {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .sad-el-btn {
+        width: 100%;
+        text-align: center;
     }
 
     .sad-prod-timeline::before {
@@ -2527,24 +3437,6 @@
     .sad-timeline-content p {
         font-size: 11px;
     }
-
-    .sad-review-card {
-        width: 280px;
-        padding: 30px 20px;
-    }
-
-    .sad-review-avatar-container {
-        width: 70px;
-        height: 70px;
-    }
-
-    .sad-client-name {
-        font-size: 16px;
-    }
-
-    .sad-review-text {
-        font-size: 12px;
-    }
 }
 
 /* 480px - Mobile Portrait */
@@ -2559,11 +3451,6 @@
 
     .sad-hero-desc-new {
         font-size: 14px;
-    }
-
-    .sad-hero-iphone14-img {
-        max-width: 85% !important;
-        margin: 0 auto;
     }
 
     .sad-stat-circle-new {
@@ -2588,6 +3475,7 @@
         height: 35px;
     }
 
+    .sad-avatar-icon-new,
     .sad-download-btn-new {
         width: 32px;
         height: 32px;
@@ -2630,6 +3518,7 @@
 
     .sad-about-detail-panel {
         padding: 16px 14px !important;
+        height: auto !important;
     }
 
     .sad-detail-title {
@@ -2654,63 +3543,81 @@
         font-size: 13px;
     }
 
-    .sad-mission-title-new {
+    .sad-mission-title {
+        margin-top: 5px;
         font-size: 28px;
     }
 
-    .sad-mission-card-new {
+    .sad-page-service-card {
+        height: auto;
+        min-height: 380px;
         padding: 25px;
     }
 
-    .sad-mission-card-title {
+    .sad-page-service-card-title {
         font-size: 16px;
     }
 
-    .sad-mission-card-subtitle {
+    .sad-page-service-card-subtitle {
         font-size: 11px;
     }
 
-    .sad-mission-card-desc {
-        font-size: 12px;
+    .sad-page-service-icon-wrap {
+        height: 70px;
+        margin-top: 10px;
     }
 
-    .sad-reviews-title {
+    .sad-services-title-new {
         font-size: 28px;
     }
 
-    .sad-review-card {
-        width: 260px;
-        padding: 25px 18px;
+    .sad-service-item-new {
+        padding: 14px 16px;
     }
 
-    .sad-review-text {
-        font-size: 12px;
-        min-height: 80px;
+    .sad-service-name-new {
+        font-size: 14px;
     }
 
-    .sad-course-box-title {
+    .sad-service-id-new {
+        font-size: 14px;
+    }
+
+    .sad-services-card-action-text-new,
+    .sad-services-card-action-text-green-new {
         font-size: 18px;
     }
 
-    .sad-course-box-desc {
-        font-size: 13px;
+    .sad-section-title {
+        font-size: 1.8rem;
     }
 
-    .sad-agency-main-title {
-        font-size: 28px;
+    .sad-course-title {
+        font-size: 1.3rem;
     }
 
-    .sad-portrait-img {
-        height: 350px;
+    .sad-course-desc {
+        font-size: 0.85rem;
     }
 
-    .sad-agency-desc {
-        font-size: 13px;
+    .sad-feature-item {
+        font-size: 0.8rem;
     }
 
-    .sad-agency-list li {
-        font-size: 13px;
+    .sad-feedback-card {
+        padding: 25px 20px;
     }
+
+    .sad-feedback-text {
+        font-size: 0.9rem;
+    }
+
+    .sad-slider-arrow {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+
 }
 
 /* 360px - Small Mobile */
@@ -2721,11 +3628,6 @@
 
     .sad-hero-desc-new {
         font-size: 13px;
-    }
-
-    .sad-hero-iphone14-img {
-        max-width: 90% !important;
-        margin: 0 auto;
     }
 
     .sad-stat-circle-new {
@@ -2799,449 +3701,42 @@
         font-size: 10px;
     }
 
-    .sad-el-title {
+    .sad-mission-title {
         font-size: 24px;
     }
 
-    .sad-mission-title-new {
-        font-size: 24px;
-    }
-
-    .sad-mission-card-title {
+    .sad-page-service-card-title {
         font-size: 14px;
     }
 
-    .sad-mission-card-desc {
+    .sad-page-service-card-desc {
         font-size: 11px;
     }
 
-    .sad-reviews-title {
+    .sad-services-title-new {
         font-size: 24px;
     }
 
-    .sad-review-card {
-        width: 240px;
-        padding: 20px 15px;
-    }
-
-    .sad-client-name {
-        font-size: 14px;
-    }
-
-    .sad-review-text {
-        font-size: 11px;
-    }
-
-    .sad-course-box-title {
-        font-size: 16px;
-    }
-
-    .sad-agency-main-title {
-        font-size: 24px;
-    }
-}
-
-/* 320px - Extra Small Mobile */
-@media (max-width: 320px) {
-    .sad-hero-title-new {
-        font-size: 22px;
-    }
-
-    .sad-hero-subtitle-new {
-        font-size: 14px;
-    }
-
-    .sad-hero-desc-new {
+    .sad-service-name-new {
         font-size: 12px;
     }
 
-    .sad-hero-iphone14-img {
-        max-width: 95% !important;
-        margin: 0 auto;
-    }
-
-    .sad-stat-circle-new {
-        width: 40px;
-        height: 40px;
-    }
-
-    .sad-stat-number-new {
-        font-size: 9px;
-    }
-
-    .sad-stat-label-new {
-        font-size: 8px;
-    }
-
-    .sad-hero-stats-new {
-        gap: 12px;
-    }
-
-    .sad-btn-get-started-new,
-    .sad-btn-contact-us-new {
-        padding: 10px 16px;
-        font-size: 11px;
-    }
-
-    .sad-case-title-new {
-        font-size: 18px;
-    }
-
-    .sad-about-company-desc-new {
-        font-size: 11px;
-    }
-
-    .sad-service-text-group {
-        max-width: 130px;
-    }
-
-    .sad-service-name-about {
-        font-size: 10px !important;
-    }
-
-    .sad-detail-title {
-        font-size: 15px !important;
-    }
-
-    .sad-detail-desc {
-        font-size: 10px !important;
-    }
-
-    .sad-prod-title {
-        font-size: 22px;
-    }
-
-    .sad-mission-title-new {
-        font-size: 22px;
-    }
-
-    .sad-reviews-title {
-        font-size: 22px;
-    }
-
-    .sad-review-card {
-        width: 220px;
-        padding: 18px 12px;
-    }
-
-    .sad-client-name {
-        font-size: 13px;
-    }
-
-    .sad-review-text {
-        font-size: 10px;
-    }
-}
-
-/* ============================================================
-   MISSION SECTION - REDUCED WIDTH & CENTERED CARDS
-   ============================================================ */
-
-/* Desktop - Normal fan layout (1301px and above) */
-@media (min-width: 1301px) {
-    .sad-mission-cards-fan {
-        position: relative;
-        width: 100%;
-        max-width: 1000px;
-        height: 500px;
-        display: flex;
-        justify-content: center;
-        margin: 0 auto;
-    }
-
-    .sad-mission-card-new {
-        width: 260px;
-        height: 380px;
-        bottom: 50px;
-    }
-}
-
-/* 1300px and below - Switch to stacked centered layout */
-@media (max-width: 1300px) {
-    .sad-mission-cards-wrapper {
-        height: auto;
-        padding: 40px 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .sad-mission-cards-fan {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 25px;
-        height: auto;
-        position: static;
-        max-width: 500px;
-        width: 100%;
-        margin: 0 auto;
-    }
-
-    .sad-mission-card-new {
-        position: static !important;
-        transform: none !important;
-        width: 100%;
-        max-width: 320px;
-        min-width: 280px;
-        margin: 0 auto 20px auto;
-        left: auto !important;
-        bottom: auto !important;
-        right: auto !important;
-        top: auto !important;
-    }
-
-    .sad-mission-card-new:hover {
-        transform: translateY(-10px) !important;
-    }
-
-    .sad-mission-card-new:last-child {
-        margin-left: auto !important;
-        margin-right: auto !important;
-        left: auto !important;
-        right: auto !important;
-        position: relative !important;
-        transform: none !important;
-    }
-}
-
-/* 1024px - Tablet */
-@media (max-width: 1024px) {
-    .sad-mission-cards-fan {
-        max-width: 450px;
-    }
-
-    .sad-mission-card-new {
-        max-width: 300px;
-        min-width: 260px;
-    }
-
-    .sad-mission-card-desc {
+    .sad-service-id-new {
         font-size: 12px;
     }
 
-    .sad-mission-card-title {
-        font-size: 16px;
-        white-space: normal;
-        word-break: break-word;
-    }
-}
-
-/* 768px - Mobile Landscape */
-@media (max-width: 768px) {
-    .sad-mission-cards-fan {
-        max-width: 380px;
-        gap: 20px;
+    .sad-section-title {
+        font-size: 1.5rem;
     }
 
-    .sad-mission-card-new {
-        max-width: 280px;
-        min-width: 260px;
-        margin: 0 auto 15px auto;
-        padding: 25px;
-        height: auto;
-        min-height: 360px;
+    .sad-course-title {
+        font-size: 1.1rem;
     }
 
-    .sad-mission-card-header {
-        margin-bottom: 15px;
+    .sad-feedback-text {
+        font-size: 0.85rem;
     }
 
-    .sad-mission-card-rating {
-        padding: 4px 10px;
-        font-size: 12px;
-    }
-}
-
-/* 576px - Small Tablet */
-@media (max-width: 576px) {
-    .sad-mission-cards-fan {
-        max-width: 340px;
-        gap: 18px;
-    }
-
-    .sad-mission-card-new {
-        max-width: 260px;
-        min-width: 240px;
-        padding: 22px;
-        min-height: 350px;
-    }
-}
-
-/* 480px - Mobile Portrait */
-@media (max-width: 480px) {
-    .sad-mission-cards-fan {
-        max-width: 300px;
-        gap: 15px;
-    }
-
-    .sad-mission-card-new {
-        max-width: 100%;
-        min-width: auto;
-        width: 280px;
-        padding: 20px;
-        min-height: 340px;
-    }
-
-    .sad-mission-card-title {
-        font-size: 15px;
-    }
-
-    .sad-mission-card-subtitle {
-        font-size: 10px;
-    }
-
-    .sad-mission-card-desc {
-        font-size: 11px;
-    }
-
-    .sad-card-icon {
-        width: 60px;
-        height: 60px;
-        margin-top: 10px;
-    }
-
-    .sad-card-icon svg {
-        width: 50px;
-        height: 50px;
-    }
-}
-
-/* 360px - Small Mobile */
-@media (max-width: 360px) {
-    .sad-mission-cards-fan {
-        max-width: 260px;
-        gap: 12px;
-    }
-
-    .sad-mission-card-new {
-        width: 100%;
-        max-width: 250px;
-        padding: 18px;
-        min-height: 320px;
-    }
-
-    .sad-mission-card-title {
-        font-size: 14px;
-    }
-
-    .sad-mission-card-desc {
-        font-size: 10px;
-    }
-
-    .sad-card-icon {
-        width: 50px;
-        height: 50px;
-    }
-
-    .sad-card-icon svg {
-        width: 40px;
-        height: 40px;
-    }
-}
-
-/* ============================================================
-   SERVICES SECTION - RIGHT PANEL FIXES
-   ============================================================ */
-
-@media (max-width: 1024px) {
-    .sad-services-content-new {
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-    }
-
-    .sad-services-list-new {
-        order: 1;
-    }
-
-    .sad-services-info-col-new {
-        order: 2;
-    }
-
-    .sad-services-image-col-new {
-        order: 3;
-    }
-
-    .sad-services-info-col-new {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-    }
-
-    .sad-services-card-dark-new,
-    .sad-services-card-green-new {
-        min-height: auto;
-        padding: 30px 25px;
-        height: auto !important;
-    }
-
-    .sad-services-card-sub-new,
-    .sad-services-card-sub-green-new {
-        order: 2;
-        margin-bottom: 20px;
-        margin-top: 10px;
-    }
-
-    .sad-services-card-action-new {
-        order: 3;
-        margin-top: 10px;
-    }
-
-    .sad-services-card-action-text-new,
-    .sad-services-card-action-text-green-new {
-        font-size: 20px;
-    }
-
-    .sad-services-image-wrapper-new {
-        height: 400px;
-    }
-}
-
-@media (max-width: 768px) {
-    .sad-services-info-col-new {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .sad-services-card-dark-new,
-    .sad-services-card-green-new {
-        padding: 25px 20px;
-    }
-
-    .sad-services-card-sub-new,
-    .sad-services-card-sub-green-new {
-        font-size: 13px;
-        margin-bottom: 15px;
-    }
-}
-
-/* ============================================================
-   IPHONE 14 IMAGE VISIBILITY FIX
-   ============================================================ */
-
-/* Hide the problematic title-desc div */
-.sad-hero-title-desc-new {
-    display: none !important;
-}
-
-/* Ensure hero center panel is properly displayed */
-.sad-hero-center-new {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 1.2;
-    z-index: 2;
-}
-
-/* Ensure iPhone 14 image is visible */
-.sad-hero-iphone14-img {
-    max-width: 100%;
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    display: block;
 }
 
 /* Ensure all images are responsive */
@@ -3281,7 +3776,7 @@ img {
 @media (max-width: 768px) {
 
     /* Move cube image slightly to the right */
-    .sad-page-hero-center-new {
+    .sad-hero-center-new {
         display: flex;
         justify-content: flex-end !important;
         align-items: center;
@@ -3289,14 +3784,14 @@ img {
         margin-right: -20px;
     }
 
-    .sad-page-cube-img-new {
+    .sad-cube-img-new {
         transform: scale(0.95) translateX(15px);
         max-width: 85%;
     }
 
     /* Reduce button sizes */
-    .sad-page-btn-get-started-new,
-    .sad-page-btn-contact-us-new {
+    .sad-btn-get-started-new,
+    .sad-btn-contact-us-new {
         padding: 10px 20px;
         font-size: 11px;
         width: auto;
@@ -3304,7 +3799,7 @@ img {
     }
 
     /* Reduce description font size */
-    .sad-page-hero-desc-new {
+    .sad-hero-desc-new {
         font-size: 14px;
         max-width: 90%;
         margin-left: auto;
@@ -3312,77 +3807,77 @@ img {
     }
 
     /* Adjust stats circles size */
-    .sad-page-stat-circle-new {
+    .sad-stat-circle-new {
         width: 55px;
         height: 55px;
     }
 
-    .sad-page-stat-number-new {
+    .sad-stat-number-new {
         font-size: 11px;
     }
 
-    .sad-page-stat-label-new {
+    .sad-stat-label-new {
         font-size: 10px;
     }
 
-    .sad-page-hero-stats-new {
+    .sad-hero-stats-new {
         gap: 25px;
     }
 }
 
 @media (max-width: 576px) {
-    .sad-page-hero-center-new {
+    .sad-hero-center-new {
         padding-right: 25px;
         margin-right: -20px;
     }
 
-    .sad-page-cube-img-new {
+    .sad-cube-img-new {
         transform: scale(0.9) translateX(20px);
         max-width: 70%;
     }
 }
 
 @media (max-width: 480px) {
-    .sad-page-hero-center-new {
+    .sad-hero-center-new {
         padding-right: 30px;
         margin-right: -25px;
     }
 
-    .sad-page-cube-img-new {
+    .sad-cube-img-new {
         transform: scale(0.85) translateX(25px);
         max-width: 70%;
     }
 
-    .sad-page-btn-get-started-new,
-    .sad-page-btn-contact-us-new {
+    .sad-btn-get-started-new,
+    .sad-btn-contact-us-new {
         padding: 8px 16px;
         font-size: 10px;
         min-width: 120px;
     }
 
-    .sad-page-hero-desc-new {
+    .sad-hero-desc-new {
         font-size: 13px;
     }
 
-    .sad-page-stat-circle-new {
+    .sad-stat-circle-new {
         width: 50px;
         height: 50px;
     }
 }
 
 @media (max-width: 360px) {
-    .sad-page-hero-center-new {
+    .sad-hero-center-new {
         padding-right: 35px;
         margin-right: -40px;
     }
 
-    .sad-page-cube-img-new {
+    .sad-cube-img-new {
         transform: scale(0.8) translateX(35px);
         max-width: 65%;
     }
 
-    .sad-page-btn-get-started-new,
-    .sad-page-btn-contact-us-new {
+    .sad-btn-get-started-new,
+    .sad-btn-contact-us-new {
         padding: 6px 12px;
         font-size: 9px;
         min-width: 100px;
@@ -3414,7 +3909,7 @@ img {
     }
 
     /* Adjust title and subtitle spacing */
-    .sad-page-card-title-group {
+    .sad-card-title-group {
         gap: 4px !important;
     }
 
@@ -3451,7 +3946,7 @@ img {
     }
 
     /* Card grid spacing */
-    .sad-page-services-grid {
+    .sad-services-grid {
         gap: 25px;
     }
 }
@@ -3517,7 +4012,7 @@ img {
         height: 50px;
     }
 
-    .sad-page-services-grid {
+    .sad-services-grid {
         gap: 20px;
     }
 }
@@ -3563,102 +4058,1122 @@ img {
 @media (max-width: 768px) {
 
     /* Reduce the height of the left side portrait image */
-    .sad-page-portrait-img {
+    .sad-portrait-img {
         height: 380px !important;
         object-fit: cover;
         object-position: center top;
     }
 
     /* Reduce the size of the experience badge */
-    .sad-page-exp-badge {
+    .sad-exp-badge {
         padding: 15px 25px !important;
         left: 15px !important;
         bottom: 20px !important;
     }
 
     /* Reduce the numbers and text inside the badge */
-    .sad-page-exp-number {
+    .sad-exp-number {
         font-size: 28px !important;
     }
 
-    .sad-page-exp-text {
+    .sad-exp-text {
         font-size: 10px !important;
     }
 
     /* Adjust the bottom landscape image height */
-    .sad-page-landscape-img {
+    .sad-landscape-img {
         height: 180px !important;
     }
 }
 
 @media (max-width: 576px) {
-    .sad-page-portrait-img {
+    .sad-portrait-img {
         height: 320px !important;
     }
 
-    .sad-page-exp-badge {
+    .sad-exp-badge {
         padding: 12px 20px !important;
         left: 12px !important;
         bottom: 15px !important;
     }
 
-    .sad-page-exp-number {
+    .sad-exp-number {
         font-size: 24px !important;
     }
 
-    .sad-page-exp-text {
+    .sad-exp-text {
         font-size: 9px !important;
     }
 
-    .sad-page-landscape-img {
+    .sad-landscape-img {
         height: 160px !important;
     }
 }
 
 @media (max-width: 480px) {
-    .sad-page-portrait-img {
+    .sad-portrait-img {
         height: 280px !important;
     }
 
-    .sad-page-exp-badge {
+    .sad-exp-badge {
         padding: 10px 16px !important;
         left: 10px !important;
         bottom: 12px !important;
     }
 
-    .sad-page-exp-number {
+    .sad-exp-number {
         font-size: 22px !important;
     }
 
-    .sad-page-exp-text {
+    .sad-exp-text {
         font-size: 8px !important;
     }
 
-    .sad-page-landscape-img {
+    .sad-landscape-img {
         height: 140px !important;
     }
 }
 
 @media (max-width: 360px) {
-    .sad-page-portrait-img {
+    .sad-portrait-img {
         height: 250px !important;
     }
 
-    .sad-page-exp-badge {
+    .sad-exp-badge {
         padding: 8px 12px !important;
         left: 8px !important;
         bottom: 10px !important;
     }
 
-    .sad-page-exp-number {
+    .sad-exp-number {
         font-size: 20px !important;
     }
 
-    .sad-page-exp-text {
+    .sad-exp-text {
         font-size: 7px !important;
     }
 
-    .sad-page-landscape-img {
+    .sad-landscape-img {
         height: 120px !important;
+    }
+}
+
+@media (min-width: 1440px) {
+    .sad-about-center-new {
+        max-height: 830px;
+    }
+
+    .sad-el-container,
+    .sad-prod-container,
+    .sad-agency-container {
+        max-width: 1600px;
+        gap: 120px;
+    }
+
+    .sad-el-left {
+        height: 680px;
+    }
+
+    .sad-el-img-large {
+        width: 360px;
+        height: 580px;
+    }
+
+    .sad-el-img-small-top {
+        width: 320px;
+        height: 240px;
+        left: 40px;
+    }
+
+    .sad-el-img-small-bottom {
+        width: 330px;
+        height: 250px;
+        left: 60px;
+    }
+
+    .sad-el-title {
+        font-size: 54px;
+    }
+
+    .sad-el-desc {
+        font-size: 17px;
+    }
+
+    .sad-el-preheading {
+        font-size: 42px;
+    }
+
+    .sad-el-stat-num {
+        font-size: 28px;
+    }
+
+    /* Agency Section Scaling */
+    .sad-agency-main-title {
+        font-size: 58px;
+    }
+
+    .sad-portrait-img {
+        height: 580px;
+    }
+
+    .sad-info-desc {
+        font-size: 18px;
+    }
+
+    .sad-exp-badge {
+        padding: 40px 55px;
+        left: -40px;
+    }
+
+    .sad-exp-number {
+        font-size: 60px;
+    }
+
+    .sad-exp-text {
+        font-size: 18px;
+    }
+
+    .sad-features-list li {
+        font-size: 18px;
+    }
+
+    /* Productivity Section Scaling */
+    .sad-prod-title {
+        font-size: 50px;
+    }
+
+    .sad-prod-desc {
+        font-size: 19px;
+        max-width: 600px;
+    }
+
+    .sad-timeline-icon {
+        width: 80px;
+        height: 80px;
+        padding: 20px;
+    }
+
+    .sad-timeline-content h3 {
+        font-size: 24px;
+    }
+
+    .sad-timeline-content p {
+        font-size: 16px;
+    }
+
+    .sad-btn-prod-primary,
+    .sad-btn-prod-secondary {
+        padding: 18px 36px;
+        font-size: 16px;
+    }
+
+    .sad-el-badge-volunteer {
+        right: 40px;
+    }
+}
+
+/* ═══════════════════════════════════════════
+   TESTIMONIAL SECTION — Mirrored from BrandingAndIdentity
+   ═══════════════════════════════════════════ */
+/* =========================
+   SECTION
+========================= */
+.sad-testimonial-section {
+    width: 100%;
+    background: #f5f5f7;
+    padding: 90px 0 100px;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+}
+
+.sad-testimonial-container {
+    max-width: 100%;
+    text-align: center;
+}
+
+/* =========================
+   HEADER
+========================= */
+.sad-testimonial-label {
+    font-size: 24px;
+    font-weight: 600;
+    color: #e05a5a;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+    font-style: italic;
+}
+
+.sad-testimonial-heading {
+    font-size: 42px;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.25;
+    margin-bottom: 60px;
+    letter-spacing: -1px;
+}
+
+/* =========================
+   SCROLL
+========================= */
+.sad-testimonial-scroll-wrapper {
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.sad-testimonial-grid-horizontal {
+    display: flex;
+    width: max-content;
+    gap: 32px;
+    padding: 20px 0 40px;
+    animation: sad-marquee-spin 40s linear infinite;
+}
+
+.sad-testimonial-scroll-wrapper:hover .sad-testimonial-grid-horizontal {
+    animation-play-state: paused;
+}
+
+@keyframes sad-marquee-spin {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* =========================
+   CARD
+========================= */
+.sad-testimonial-card-horizontal {
+    flex: 0 0 380px;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    opacity: 0.95;
+}
+
+.sad-testimonial-card-horizontal:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    opacity: 1;
+}
+
+/* =========================
+   AVATAR
+========================= */
+.sad-testimonial-avatar-wrap {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: 4px solid #f0f0f0;
+}
+
+.sad-testimonial-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* =========================
+   TEXT
+========================= */
+.sad-testimonial-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 6px;
+}
+
+.sad-testimonial-role {
+    font-size: 13px;
+    color: #e05a5a;
+    font-weight: 600;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+}
+
+.sad-testimonial-text {
+    font-size: 14px;
+    color: #666666;
+    line-height: 1.8;
+    text-align: center;
+    margin-bottom: 24px;
+    height: 100px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* =========================
+   STARS
+========================= */
+.sad-testimonial-stars {
+    display: flex;
+    gap: 5px;
+}
+
+.sad-star {
+    font-size: 18px;
+    color: #dddddd;
+}
+
+.sad-star.filled {
+    color: #FFD700;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 1024px) {
+    .sad-testimonial-card-horizontal {
+        flex: 0 0 320px;
+    }
+
+    .sad-testimonial-heading {
+        font-size: 34px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sad-testimonial-section {
+        padding: 60px 0 80px;
+    }
+
+    .sad-testimonial-heading {
+        font-size: 28px;
+        padding: 0 20px;
+    }
+
+    .sad-testimonial-card-horizontal {
+        flex: 0 0 280px;
+        padding: 30px 20px;
+    }
+
+    .sad-testimonial-text {
+        font-size: 13px;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .sad-testimonial-heading {
+        font-size: 24px;
+    }
+
+    .sad-testimonial-card-horizontal {
+        flex: 0 0 240px;
+        padding: 20px 15px;
+    }
+
+    .sad-testimonial-name {
+        font-size: 14px;
+    }
+
+    .sad-testimonial-text {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sad-testimonial-card-horizontal {
+        flex: 0 0 300px;
+    }
+
+    .sad-testimonial-heading {
+        font-size: 32px;
+    }
+
+    .sad-marquee-spin {
+        animation-duration: 30s;
+    }
+}
+
+@media (max-width: 768px) {
+    .bi-hero-section-new {
+        min-height: auto;
+        padding: 20px;
+    }
+
+    .bi-hero-container-new {
+        padding: 30px 20px 40px 20px;
+    }
+
+    .bi-hero-title-new {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .bi-hero-buttons-new {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .bi-btn-get-started-new,
+    .bi-btn-contact-us-new {
+        width: 100%;
+        text-align: center;
+    }
+
+    .bi-hero-desc-new {
+        font-size: 16px;
+    }
+
+    .bi-stat-item-new {
+        flex: 1;
+        min-width: 80px;
+    }
+
+    .bi-title-play-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .bi-case-title-new {
+        font-size: 28px;
+    }
+
+    .bi-about-company-desc-new {
+        font-size: 14px;
+    }
+
+    .bi-performance-card-new {
+        padding: 20px;
+    }
+
+    .bi-about-section-new {
+        padding: 80px 20px 60px;
+        clip-path: none;
+        margin-top: 0;
+    }
+
+    .bi-about-left-tag {
+        font-size: 28px !important;
+        text-align: center !important;
+    }
+
+    .bi-about-left-title {
+        font-size: 24px !important;
+        text-align: center !important;
+    }
+
+    .bi-about-intro-new {
+        text-align: center !important;
+    }
+
+    .bi-about-left-header {
+        text-align: center !important;
+    }
+
+    .bi-about-img-wrap-new {
+        min-height: 320px;
+        height: auto;
+    }
+
+    .bi-about-badge-new {
+        padding: 10px 14px;
+    }
+
+    .bi-badge-num {
+        font-size: 20px;
+    }
+
+    .bi-detail-title {
+        font-size: 22px;
+    }
+
+    .bi-detail-stats {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .bi-detail-stat {
+        flex: 1;
+        min-width: 80px;
+        border-right: none;
+    }
+
+    .bi-about-service-item-new {
+        padding: 15px 18px !important;
+    }
+
+    .bi-service-item-left-about {
+        gap: 12px !important;
+    }
+
+    .bi-service-num-new {
+        font-size: 11px !important;
+    }
+
+    .bi-service-name-about {
+        font-size: 13px !important;
+    }
+
+    .bi-service-short-about {
+        font-size: 10px !important;
+    }
+
+    .bi-service-arrow-about {
+        font-size: 14px !important;
+    }
+
+    .bi-about-detail-panel {
+        padding: 20px 18px !important;
+        height: auto !important;
+    }
+
+    .bi-detail-icon-wrap {
+        width: 44px;
+        height: 44px;
+    }
+
+    .bi-detail-icon {
+        font-size: 18px;
+    }
+
+    .bi-detail-num {
+        font-size: 9px;
+    }
+
+    .bi-detail-desc {
+        font-size: 13px !important;
+    }
+
+    .bi-detail-stat-val {
+        font-size: 14px !important;
+    }
+
+    .bi-detail-stat-label {
+        font-size: 9px !important;
+    }
+
+    .bi-detail-cta {
+        padding: 12px 20px !important;
+        font-size: 13px !important;
+    }
+
+    .bi-productivity-section {
+        padding: 80px 20px;
+    }
+
+    .bi-prod-title {
+        font-size: 32px;
+    }
+
+    .bi-prod-desc {
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+
+    .bi-prod-buttons {
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 40px;
+    }
+
+    .bi-btn-prod-primary,
+    .bi-btn-prod-secondary {
+        width: 100%;
+        text-align: center;
+        padding: 14px 24px;
+    }
+
+    .bi-prod-avatars-box {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .bi-prod-avatars {
+        justify-content: center;
+    }
+
+    .bi-prod-avatar-text {
+        text-align: center;
+        font-size: 12px;
+    }
+
+    .bi-prod-timeline {
+        margin-left: 0;
+        padding-left: 0;
+    }
+
+    .bi-prod-timeline::before {
+        left: 16px !important;
+        width: 2px;
+    }
+
+    .bi-timeline-item {
+        gap: 12px;
+        padding-bottom: 20px;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .bi-timeline-icon {
+        width: 40px !important;
+        height: 40px !important;
+        padding: 8px !important;
+    }
+
+    .bi-timeline-content h3 {
+        font-size: 16px;
+    }
+
+    .bi-timeline-content p {
+        font-size: 12px;
+    }
+
+    .bi-page-service-card {
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    .bi-mission-title {
+        margin-top: 5px;
+        font-size: 32px;
+    }
+
+    .bi-mission-section {
+        padding: 60px 20px;
+    }
+
+    .bi-services-section-new {
+        padding: 60px 20px;
+    }
+
+    .bi-services-container-new {
+        padding: 0 20px;
+    }
+
+    .bi-services-title-new {
+        font-size: 36px;
+    }
+
+    .bi-services-info-col-new {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .bi-services-card-dark-new,
+    .bi-services-card-green-new {
+        padding: 25px 20px;
+    }
+
+    .bi-agency-section {
+        padding: 60px 20px 100px;
+    }
+
+    .bi-agency-main-title {
+        font-size: 32px;
+    }
+
+    .bi-exp-badge {
+        padding: 20px 30px;
+    }
+
+    .bi-exp-number {
+        font-size: 36px;
+    }
+
+    .bi-landscape-img {
+        height: 220px;
+    }
+
+    .sad-testimonial-section {
+        padding: 60px 0 80px;
+    }
+
+    .sad-testimonial-label {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .sad-testimonial-heading {
+        font-size: 28px;
+        padding: 0 20px;
+        margin-left: 0;
+    }
+
+    .sad-testimonial-card-horizontal {
+        flex: 0 0 280px;
+        padding: 30px 20px;
+    }
+
+    .sad-testimonial-text {
+        height: auto;
+        min-height: 80px;
+    }
+
+    .bi-courses-section {
+        padding: 60px 20px;
+    }
+
+    .bi-section-title {
+        font-size: 2rem;
+    }
+
+    .bi-courses-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .bi-feedback-section {
+        padding: 60px 20px;
+    }
+
+    .bi-feedback-card {
+        padding: 30px 25px;
+    }
+
+    .bi-feedback-text {
+        font-size: 1rem;
+    }
+
+    /* Mission section 7th card alignment fix */
+    .bi-page-service-card:last-child {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        left: auto !important;
+        right: auto !important;
+        position: relative !important;
+        transform: none !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .bi-hero-title-new {
+        font-size: 28px;
+    }
+
+    .bi-hero-subtitle-new {
+        font-size: 16px;
+    }
+
+    .bi-hero-desc-new {
+        font-size: 14px;
+    }
+
+    .bi-stat-circle-new {
+        width: 50px;
+        height: 50px;
+    }
+
+    .bi-stat-number-new {
+        font-size: 11px;
+    }
+
+    .bi-stat-label-new {
+        font-size: 10px;
+    }
+
+    .bi-hero-stats-new {
+        gap: 20px;
+    }
+
+    .bi-avatar-group-new img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .bi-avatar-icon-new,
+    .bi-download-btn-new {
+        width: 32px;
+        height: 32px;
+    }
+
+    .bi-perf-value-new,
+    .bi-perf-value-bold-new {
+        font-size: 14px;
+    }
+
+    .bi-perf-label-new {
+        font-size: 8px;
+    }
+
+    .bi-about-left-tag {
+        font-size: 15px !important;
+    }
+
+    .bi-about-left-title {
+        font-size: 20px !important;
+    }
+
+    .bi-about-service-item-new {
+        padding: 12px 14px !important;
+    }
+
+    .bi-service-text-group {
+        max-width: 180px;
+    }
+
+    .bi-service-name-about {
+        font-size: 12px !important;
+        white-space: normal;
+        word-break: break-word;
+    }
+
+    .bi-service-short-about {
+        font-size: 9px !important;
+    }
+
+    .bi-about-detail-panel {
+        padding: 16px 14px !important;
+        height: auto !important;
+    }
+
+    .bi-detail-title {
+        font-size: 18px !important;
+    }
+
+    .bi-detail-desc {
+        font-size: 12px !important;
+    }
+
+    .bi-productivity-section {
+        padding: 60px 16px;
+    }
+
+    .bi-prod-title {
+        font-size: 28px;
+    }
+
+    .bi-btn-prod-primary,
+    .bi-btn-prod-secondary {
+        padding: 12px 20px;
+        font-size: 13px;
+    }
+
+    .bi-mission-title {
+        margin-top: 5px;
+        font-size: 28px;
+    }
+
+    .bi-page-service-card {
+        height: auto;
+        min-height: 380px;
+        padding: 25px;
+    }
+
+    .bi-page-service-card-title {
+        font-size: 16px;
+    }
+
+    .bi-page-service-card-subtitle {
+        font-size: 11px;
+    }
+
+    .bi-page-service-icon-wrap {
+        height: 70px;
+        margin-top: 10px;
+    }
+
+    .bi-services-title-new {
+        font-size: 28px;
+    }
+
+    .bi-service-item-new {
+        padding: 14px 16px;
+    }
+
+    .bi-service-name-new {
+        font-size: 14px;
+    }
+
+    .bi-service-id-new {
+        font-size: 14px;
+    }
+
+    .bi-services-card-action-text-new,
+    .bi-services-card-action-text-green-new {
+        font-size: 18px;
+    }
+
+    .bi-section-title {
+        font-size: 1.8rem;
+    }
+
+    .bi-course-title {
+        font-size: 1.3rem;
+    }
+
+    .bi-course-desc {
+        font-size: 0.85rem;
+    }
+
+    .bi-feature-item {
+        font-size: 0.8rem;
+    }
+
+    .bi-feedback-card {
+        padding: 25px 20px;
+    }
+
+    .bi-feedback-text {
+        font-size: 0.9rem;
+    }
+
+    .bi-slider-arrow {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+
+    .sad-testimonial-card-horizontal {
+        flex: 0 0 260px;
+    }
+
+    .sad-testimonial-name {
+        font-size: 16px;
+    }
+
+    .sad-testimonial-text {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 360px) {
+    .bi-hero-title-new {
+        font-size: 24px;
+    }
+
+    .bi-hero-desc-new {
+        font-size: 13px;
+    }
+
+    .bi-stat-circle-new {
+        width: 45px;
+        height: 45px;
+    }
+
+    .bi-stat-number-new {
+        font-size: 10px;
+    }
+
+    .bi-stat-label-new {
+        font-size: 9px;
+    }
+
+    .bi-case-title-new {
+        font-size: 22px;
+    }
+
+    .bi-about-company-desc-new {
+        font-size: 12px;
+    }
+
+    .bi-service-text-group {
+        max-width: 150px;
+    }
+
+    .bi-service-name-about {
+        font-size: 11px !important;
+    }
+
+    .bi-service-short-about {
+        font-size: 8px !important;
+    }
+
+    .bi-detail-title {
+        font-size: 16px !important;
+    }
+
+    .bi-detail-desc {
+        font-size: 11px !important;
+    }
+
+    .bi-detail-stat-val {
+        font-size: 12px !important;
+    }
+
+    .bi-detail-stat-label {
+        font-size: 8px !important;
+    }
+
+    .bi-prod-title {
+        font-size: 24px;
+    }
+
+    .bi-prod-desc {
+        font-size: 12px;
+    }
+
+    .bi-btn-prod-primary,
+    .bi-btn-prod-secondary {
+        padding: 10px 16px;
+        font-size: 12px;
+    }
+
+    .bi-timeline-content h3 {
+        font-size: 12px;
+    }
+
+    .bi-timeline-content p {
+        font-size: 10px;
+    }
+
+    .bi-mission-title {
+        font-size: 24px;
+    }
+
+    .bi-page-service-card-title {
+        font-size: 14px;
+    }
+
+    .bi-page-service-card-desc {
+        font-size: 11px;
+    }
+
+    .bi-services-title-new {
+        font-size: 24px;
+    }
+
+    .bi-service-name-new {
+        font-size: 12px;
+    }
+
+    .bi-service-id-new {
+        font-size: 12px;
+    }
+
+    .bi-section-title {
+        font-size: 1.5rem;
+    }
+
+    .bi-course-title {
+        font-size: 1.1rem;
+    }
+
+    .bi-feedback-text {
+        font-size: 0.85rem;
+    }
+
+    .sad-testimonial-heading {
+        font-size: 24px;
+    }
+
+    .sad-testimonial-card-horizontal {
+        flex: 0 0 240px;
+        padding: 20px 15px;
+    }
+
+    .sad-testimonial-name {
+        font-size: 14px;
+    }
+
+    .sad-testimonial-text {
+        font-size: 11px;
     }
 }

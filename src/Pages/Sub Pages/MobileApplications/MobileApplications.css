@@ -1,5 +1,3 @@
-/* Branding & Designing Page Styles - COMPLETE FIXED VERSION */
-/* Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -85,7 +83,7 @@ body {
     display: inline-block;
     font-size: 15px;
     background: #10b981;
-    color: #fff;
+    color: #000000;
     padding: 12px 24px;
     border-radius: 30px;
     box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2);
@@ -455,6 +453,41 @@ body {
     color: #6c7a89;
     font-weight: 400;
     text-align: left;
+    margin-bottom: 25px;
+}
+
+.ma-dna-list, .ma-impact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.ma-dna-list li, .ma-impact-list li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 15px;
+    font-family: "inter", sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #4a5568;
+}
+
+.ma-dna-list li::before, .ma-impact-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #10b981;
+    font-weight: bold;
+}
+
+.ma-dna-list li strong {
+    color: #1e2a44;
+    font-weight: 600;
+}
+
+.ma-stats-content p {
+    margin-bottom: 25px;
 }
 
 .ma-branddna-right {
@@ -528,7 +561,7 @@ body {
     background: linear-gradient(135deg, #1e2a44, #2e3c5f);
 }
 
-/* BRAND DNA LINK ANIMATION */
+/* DNA LINK ANIMATION */
 .ma-link-svg {
     position: absolute;
     top: 0;
@@ -539,38 +572,73 @@ body {
     pointer-events: none;
 }
 
-/* Faint base connecting lines */
 .ma-base-path {
     fill: none;
-    stroke: #b3efd5; /* Soft green */
+    stroke: #b3efd5;
     stroke-width: 1.5;
     opacity: 0.3;
 }
 
-/* Animated flowing lines from center */
 .ma-flow-path {
     fill: none;
     stroke-width: 3.5;
     stroke-linecap: round;
     stroke-dasharray: 40 160;
-    opacity: 0; /* Strictly hidden before it's turn */
-    stroke-dashoffset: 140; /* Safely initialized offset */
+    opacity: 0;
+    stroke-dashoffset: 140;
     animation: flow-sequence 15s infinite both;
 }
 
-/* 5-Phase Sequence using correctly ordered delays (Left -> Top -> Center -> Bottom -> Right) */
-.ma-phase-1 .ma-flow-path { stroke: #647dee; animation-delay: 0s; } /* Left - Voice */
-.ma-phase-2 .ma-flow-path { stroke: #1fa3a8; animation-delay: 3s; } /* Top - Purpose */
-.ma-phase-3 .ma-flow-path { stroke: #ff7a18; animation-delay: 6s; } /* Center - Personality */
-.ma-phase-5 .ma-flow-path { stroke: #1e2a44; animation-delay: 9s; } /* Bottom - Visual Style */
-.ma-phase-4 .ma-flow-path { stroke: #43a047; animation-delay: 12s; } /* Right - Values */
+.ma-phase-1 .ma-flow-path {
+    stroke: #647dee;
+    animation-delay: 0s;
+}
+
+.ma-phase-2 .ma-flow-path {
+    stroke: #1fa3a8;
+    animation-delay: 3s;
+}
+
+.ma-phase-3 .ma-flow-path {
+    stroke: #ff7a18;
+    animation-delay: 6s;
+}
+
+.ma-phase-5 .ma-flow-path {
+    stroke: #1e2a44;
+    animation-delay: 9s;
+}
+
+.ma-phase-4 .ma-flow-path {
+    stroke: #43a047;
+    animation-delay: 12s;
+}
 
 @keyframes flow-sequence {
-    0% { opacity: 0; stroke-dashoffset: 140; }
-    2% { opacity: 1; stroke-dashoffset: 140; }
-    18% { stroke-dashoffset: -100; opacity: 1; }
-    20% { opacity: 0; stroke-dashoffset: -100; }
-    100% { opacity: 0; stroke-dashoffset: -100; }
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 140;
+    }
+
+    2% {
+        opacity: 1;
+        stroke-dashoffset: 140;
+    }
+
+    18% {
+        stroke-dashoffset: -100;
+        opacity: 1;
+    }
+
+    20% {
+        opacity: 0;
+        stroke-dashoffset: -100;
+    }
+
+    100% {
+        opacity: 0;
+        stroke-dashoffset: -100;
+    }
 }
 
 /* ============================== */
@@ -664,12 +732,12 @@ body {
 
 .ma-step-card {
     position: relative;
-    background: rgba(45, 55, 72, 0.4); /* Subtle but clearly visible background */
+    background: rgba(45, 55, 72, 0.4);
     padding: 25px;
     border-radius: 16px;
     width: 100%;
-    opacity: 1; /* Fully visible by default */
-    border: 1px solid rgba(255, 255, 255, 0.05); /* Soft rim */
+    opacity: 1;
+    border: 1px solid rgba(255, 255, 255, 0.05);
     transform: scale(1);
     transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
@@ -681,7 +749,7 @@ body {
 
 .ma-step-card:hover {
     background: rgba(45, 55, 72, 0.6);
-    transform: scale(0.96); /* Subtle zoom out effect */
+    transform: scale(0.96);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     border-color: rgba(198, 255, 79, 0.3);
 }
@@ -725,8 +793,6 @@ body {
     background: #c6ff4f;
     border-radius: 50%;
 }
-
-/* Step grid updated to 6 items */
 
 /* ============================== */
 /* CIRCULAR STATS SECTION */
@@ -777,29 +843,29 @@ body {
     gap: 24px;
     width: 480px;
     margin-top: 20px;
-    transform: translateX(-80px); /* Move left generally to balance the expanded bottom shift */
+    transform: translateX(-80px);
 }
 
 .ma-stat-card {
     position: relative;
     left: 0;
-    background: #0f172a; /* Deep sleek black */
+    background: #0f172a;
     border-radius: 16px;
     padding: 35px 20px;
-    width: 228px; /* Fixed identical sizing for all cards */
+    width: 228px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5); /* Deep shadow */
-    border: 1px solid rgba(255, 255, 255, 0.05); /* Slight bright rim */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .ma-stat-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 20px 50px rgba(16, 185, 129, 0.25); /* Green Glow on hover */
+    box-shadow: 0 20px 50px rgba(16, 185, 129, 0.25);
 }
 
 .ma-stat-card h2 {
@@ -816,22 +882,12 @@ body {
     letter-spacing: 0.5px;
     margin-top: 6px;
     font-weight: 600;
-    color: #94a3b8; /* Lighter slate gray for dark theme */
+    color: #94a3b8;
 }
 
-/* Second Row Shifting Logic */
 .ma-stat-card:nth-child(3),
 .ma-stat-card:nth-child(4) {
-    left: 126px; /* Exactly half of (228px card + 24px gap) to beautifully position it slanted! */
-}
-
-.ma-connector {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
+    left: 126px;
 }
 
 .ma-bottom-stats {
@@ -1046,7 +1102,7 @@ body {
 
 .ma-feedback-header {
     max-width: 1200px;
-    margin: 0 auto 60px;
+    margin: 0 auto 20px;
     padding: 0 20px;
     text-align: left;
 }
@@ -1217,15 +1273,10 @@ body {
     box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4);
 }
 
-.ma-feedback-controls button:active {
-    transform: scale(0.95);
-}
-
 /* ============================== */
-/* RESPONSIVE DESIGN */
+/* RESPONSIVE DESIGN - EXACTLY MATCHING AWD PAGE */
 /* ============================== */
 
-/* Large Desktop (1400px and above) */
 @media (min-width: 1400px) {
     .ma-container {
         max-width: 1320px;
@@ -1244,7 +1295,6 @@ body {
     }
 }
 
-/* Desktop (1200px - 1399px) */
 @media (max-width: 1399px) and (min-width: 1025px) {
     .ma-container {
         max-width: 1140px;
@@ -1293,10 +1343,6 @@ body {
         width: 100%;
     }
 
-    .ma-stats-wrapper {
-        margin-right: 40px;
-    }
-
     .ma-bottom-stats {
         gap: 100px;
     }
@@ -1314,7 +1360,6 @@ body {
     }
 }
 
-/* Tablet (1024px and below) */
 @media (max-width: 1024px) {
     .ma-hero {
         padding: 140px 20px 220px;
@@ -1389,6 +1434,7 @@ body {
     }
 
     .ma-branddna-left h2 {
+        white-space: normal;
         margin-right: 0;
     }
 
@@ -1448,8 +1494,6 @@ body {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    /* Removed step positioning override for 6-card grid */
-
     .ma-branding-stats-layout {
         flex-direction: column;
         width: 90%;
@@ -1469,8 +1513,9 @@ body {
         width: 100%;
     }
 
-    .ma-stats-wrapper {
-        margin-right: 0;
+    .ma-stats-wrapper-cards {
+        transform: translateX(0);
+        margin: 0 auto;
     }
 
     .ma-bottom-stats {
@@ -1485,54 +1530,6 @@ body {
     .ma-projects-content p {
         width: 450px;
         font-size: 16px;
-    }
-
-    .ma-left-logos .l1 {
-        left: 60px;
-    }
-
-    .ma-left-logos .l2 {
-        left: 150px;
-    }
-
-    .ma-left-logos .l3 {
-        left: 100px;
-    }
-
-    .ma-left-logos .l4 {
-        left: 30px;
-    }
-
-    .ma-left-logos .l5 {
-        left: 10px;
-    }
-
-    .ma-left-logos .l6 {
-        left: 180px;
-    }
-
-    .ma-right-logos .r1 {
-        right: 60px;
-    }
-
-    .ma-right-logos .r2 {
-        right: 150px;
-    }
-
-    .ma-right-logos .r3 {
-        right: 30px;
-    }
-
-    .ma-right-logos .r4 {
-        right: 100px;
-    }
-
-    .ma-right-logos .r5 {
-        right: 20px;
-    }
-
-    .ma-right-logos .r6 {
-        right: 200px;
     }
 
     .ma-feedback-header {
@@ -1571,79 +1568,6 @@ body {
     }
 }
 
-/* Tablet Specific (768px - 1024px) */
-@media (max-width: 1024px) and (min-width: 768px) {
-
-    html,
-    body {
-        max-width: 100%;
-        overflow-x: hidden;
-    }
-
-    .ma-container {
-        width: 100%;
-        box-sizing: border-box;
-        padding: 0 25px;
-    }
-
-    section {
-        max-width: 100vw;
-        overflow: hidden;
-    }
-
-    .ma-about-section,
-    .ma-howworks,
-    .ma-circular-stats,
-    .ma-projects-section,
-    .ma-feedback-section {
-        padding: 80px 0;
-    }
-
-    .ma-feedback-section {
-        padding: 70px 0;
-        margin-bottom: 40px;
-    }
-
-    .ma-cards-grid {
-        gap: 20px;
-    }
-
-    .ma-card-image {
-        height: 150px;
-    }
-}
-
-/* Nest Hub specific fix */
-@media (width: 1024px) and (height: 600px) {
-    .ma-hero {
-        min-height: 550px;
-    }
-
-    .ma-feedback-carousel {
-        height: 300px;
-    }
-}
-
-/* iPad Pro portrait specific */
-@media (width: 1024px) and (height: 1366px) {
-    .ma-container {
-        max-width: 95%;
-        padding: 0 30px;
-    }
-
-    .ma-about-section,
-    .ma-howworks,
-    .ma-circular-stats,
-    .ma-projects-section {
-        padding: 100px 0;
-    }
-
-    .ma-feedback-carousel {
-        height: 340px;
-    }
-}
-
-/* Mobile (768px and below) */
 @media (max-width: 768px) {
     .ma-hero {
         padding: 120px 15px 200px;
@@ -1833,11 +1757,6 @@ body {
         font-size: 13px;
     }
 
-    .ma-step-card:nth-child(4),
-    .ma-step-card:nth-child(5) {
-        grid-column: auto;
-    }
-
     .ma-circular-stats {
         padding: 60px 0;
     }
@@ -1850,87 +1769,190 @@ body {
         font-size: 15px;
     }
 
-    .ma-stats-wrapper {
-        width: 300px;
-        height: 220px;
+    .ma-stats-wrapper-cards {
+        width: 100%;
         margin: 20px auto;
+        transform: translateX(0);
     }
 
-    .ma-circle {
-        width: 150px;
-        height: 150px;
+    .ma-stat-card {
+        width: 100% !important;
+        padding: 20px 10px;
     }
 
-    .ma-circle h2 {
-        font-size: 36px;
+    .ma-stat-card h2 {
+        font-size: 28px !important;
     }
 
-    .ma-circle p {
-        font-size: 11px;
+    .ma-stat-card p {
+        font-size: 11px !important;
     }
 
-    .ma-circle-top {
-        top: -60px;
-        left: 30%;
-    }
-
-    .ma-circle-left {
-        bottom: -30px;
-        left: -30px;
-    }
-
-    .ma-circle-right {
-        bottom: -30px;
-        left: 180px;
+    .ma-stat-card:nth-child(3),
+    .ma-stat-card:nth-child(4) {
+        left: 0 !important;
     }
 
     .ma-bottom-stats {
-        gap: 40px;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 80px;
+        margin-top: 60px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        width: 100%;
+        padding: 0 15px;
     }
 
     .ma-stat h3 {
-        font-size: 36px;
-    }
-
-    .ma-stat p {
-        font-size: 14px;
-    }
-
-    .ma-projects-section {
-        height: 500px;
-    }
-
-    .ma-projects-content h1 {
-        font-size: 40px;
-    }
-
-    .ma-projects-content p {
-        width: 90%;
-        font-size: 15px;
-        margin-top: 15px;
-    }
-
-    .ma-projects-stats {
-        gap: 30px;
-        margin-top: 20px;
-    }
-
-    .ma-projects-stats h2 {
         font-size: 28px;
     }
 
-    .ma-projects-stats span {
-        font-size: 13px;
+    .ma-stat p {
+        font-size: 12px;
     }
 
-    .ma-left-logos .l3,
-    .ma-left-logos .l5,
-    .ma-right-logos .r3,
-    .ma-right-logos .r5 {
+    .ma-projects-section {
+        height: auto;
+        min-height: auto;
+        padding: 80px 15px 100px 15px;
+        flex-direction: column;
+        position: relative;
+        background: #f6f8fa;
+    }
+
+    .ma-projects-bg-right,
+    .ma-projects-bg-left {
         display: none;
+    }
+
+    .ma-projects-content {
+        max-width: 100%;
+        padding: 0;
+        z-index: 10;
+        position: relative;
+    }
+
+    .ma-projects-content h1 {
+        font-size: 32px;
+        max-width: 100%;
+        line-height: 1.2;
+        text-align: center;
+        margin-bottom: 15px;
+        word-break: break-word;
+    }
+
+    .ma-projects-content p {
+        width: 100%;
+        font-size: 14px;
+        margin-top: 12px;
+        line-height: 1.5;
+        text-align: center;
+        padding: 0 5px;
+    }
+
+    .ma-projects-stats {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 30px;
+        margin-bottom: 40px;
+        flex-wrap: wrap;
+    }
+
+    .ma-projects-stats h2 {
+        font-size: 24px;
+        margin: 0;
+        font-weight: 800;
+    }
+
+    .ma-projects-stats span {
+        font-size: 11px;
+        display: block;
+        margin-top: 5px;
+    }
+
+    .ma-projects-stats>div {
+        text-align: center;
+        flex: 1;
+        min-width: 85px;
+    }
+
+    .ma-projects-logos {
+        position: relative !important;
+        width: 100% !important;
+        height: auto !important;
+        margin-top: 20px;
+        display: block !important;
+    }
+
+    .ma-left-logos,
+    .ma-right-logos {
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 15px !important;
+        justify-items: center !important;
+        align-items: center !important;
+        position: relative !important;
+        width: 100% !important;
+        margin: 0 !important;
+        margin-top: 20px;
+        padding: 0 !important;
+    }
+
+    .ma-right-logos {
+        margin-top: 15px !important;
+    }
+
+    .ma-left-logos .ma-project-logo-card,
+    .ma-right-logos .ma-project-logo-card {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+    }
+
+    .ma-left-logos .l1,
+    .ma-left-logos .l2,
+    .ma-left-logos .l3,
+    .ma-left-logos .l4,
+    .ma-left-logos .l5,
+    .ma-left-logos .l6,
+    .ma-right-logos .r1,
+    .ma-right-logos .r2,
+    .ma-right-logos .r3,
+    .ma-right-logos .r4,
+    .ma-right-logos .r5,
+    .ma-right-logos .r6 {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+    }
+
+    .ma-project-logo-card {
+        margin-top: 0px !important;
+        width: 50px !important;
+        height: 50px !important;
+        border-radius: 12px !important;
+        background: white !important;
+        border: 1px solid rgba(0, 0, 0, 0.1) !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        transition: transform 0.2s ease;
+    }
+
+    .ma-project-logo-card:hover {
+        transform: scale(1.05);
+    }
+
+    .ma-project-logo {
+        width: 30px !important;
+        height: 30px !important;
+        object-fit: contain !important;
     }
 
     .ma-feedback-section {
@@ -2018,7 +2040,6 @@ body {
     }
 }
 
-/* Small Mobile (480px and below) */
 @media (max-width: 480px) {
     .ma-hero-title {
         font-size: 32px;
@@ -2033,34 +2054,8 @@ body {
         font-size: 14px;
     }
 
-    .ma-privacy-badge {
-        font-size: 12px;
-        padding: 8px 16px;
-    }
-
-    .ma-service-badge {
-        font-size: 12px;
-        padding: 6px 12px;
-    }
-
     .ma-about-title {
         font-size: 2rem;
-    }
-
-    .ma-about-description {
-        font-size: 0.95rem;
-    }
-
-    .ma-card-image {
-        height: 140px;
-    }
-
-    .ma-card-title {
-        font-size: 1rem;
-    }
-
-    .ma-card-description {
-        font-size: 0.85rem;
     }
 
     .ma-branddna-left h2 {
@@ -2072,16 +2067,33 @@ body {
     }
 
     .ma-branddna-right {
-        height: 400px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
+        justify-items: center;
+        align-items: center;
+        height: auto;
+        width: 100%;
+    }
+
+    .ma-link-svg {
+        display: none !important;
     }
 
     .ma-dna-circle {
-        width: 110px;
-        height: 110px;
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        width: 100px !important;
+        height: 100px !important;
+        margin: 0;
+        padding: 8px;
     }
 
     .ma-dna-circle h3 {
-        font-size: 12px;
+        font-size: 11px;
         margin-top: 5px;
     }
 
@@ -2090,142 +2102,104 @@ body {
     }
 
     .ma-dna-circle .ma-icon {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .ma-circle-purpose {
-        top: -20px;
+        grid-column: 1/2;
+        grid-row: 1/2;
+        margin-left: 50px;
     }
 
     .ma-circle-voice {
-        top: 90px;
-        left: 10px;
+        grid-column: 2/3;
+        grid-row: 1/2;
+        margin-left: -145px;
     }
 
     .ma-circle-values {
-        top: 90px;
-        right: 10px;
+        grid-column: 3/4;
+        grid-row: 1/2;
+        margin-left: -110px;
     }
 
     .ma-circle-personality {
-        top: 200px;
+        grid-column: 1/2;
+        grid-row: 2/3;
+        justify-self: end;
+        margin-top: 20px;
+        margin-right: -50px;
     }
 
     .ma-circle-visual {
-        bottom: -20px;
+        grid-column: 2/3;
+        grid-row: 2/3;
+        justify-self: start;
+        margin-top: 20px;
+        margin-left: 60px;
     }
 
     .ma-main-title {
         font-size: 32px;
     }
 
-    .ma-intro-text {
-        font-size: 13px;
-    }
-
-    .ma-section-title {
-        font-size: 28px;
-    }
-
-    .ma-step-card h3 {
-        font-size: 15px;
-    }
-
-    .ma-step-card p {
-        font-size: 12px;
-    }
-
     .ma-stats-content h2 {
         font-size: 28px;
     }
 
-    .ma-stats-content p {
-        font-size: 14px;
-    }
-
-    .ma-stats-wrapper {
-        width: 260px;
-        height: 200px;
-    }
-
-    .ma-circle {
-        width: 120px;
-        height: 120px;
-    }
-
-    .ma-circle h2 {
-        font-size: 28px;
-    }
-
-    .ma-circle-top {
-        top: -50px;
-        left: 30%;
-    }
-
-    .ma-circle-left {
-        bottom: -20px;
-        left: -20px;
-    }
-
-    .ma-circle-right {
-        bottom: -20px;
-        left: 150px;
-    }
-
     .ma-bottom-stats {
-        gap: 30px;
-    }
-
-    .ma-stat h3 {
-        font-size: 32px;
-    }
-
-    .ma-projects-section {
-        height: 450px;
-    }
-
-    .ma-projects-content h1 {
-        font-size: 32px;
-    }
-
-    .ma-projects-content p {
-        font-size: 14px;
-    }
-
-    .ma-projects-stats {
         gap: 20px;
     }
 
-    .ma-projects-stats h2 {
+    .ma-stat h3 {
         font-size: 24px;
     }
 
-    .ma-projects-stats span {
+    .ma-stat p {
+        font-size: 11px;
+    }
+
+    .ma-projects-section {
+        padding: 60px 12px 80px 12px;
+    }
+
+    .ma-projects-content h1 {
+        font-size: 26px;
+    }
+
+    .ma-projects-content p {
         font-size: 12px;
     }
 
-    .ma-left-logos .l2,
-    .ma-left-logos .l6,
-    .ma-right-logos .r2,
-    .ma-right-logos .r6 {
-        display: none;
+    .ma-projects-stats {
+        gap: 10px;
     }
 
-    .ma-feedback-header {
-        padding: 0 15px;
-        margin-bottom: 35px;
+    .ma-projects-stats h2 {
+        font-size: 20px;
+    }
+
+    .ma-projects-stats span {
+        font-size: 9px;
+    }
+
+    .ma-left-logos,
+    .ma-right-logos {
+        gap: 10px !important;
+    }
+
+    .ma-project-logo-card {
+        width: 42px !important;
+        height: 42px !important;
+    }
+
+    .ma-project-logo {
+        width: 24px !important;
+        height: 24px !important;
     }
 
     .ma-feedback-title {
         font-size: 28px;
-    }
-
-    .ma-feedback-description {
-        font-size: 0.9rem;
-    }
-
-    .ma-feedback-carousel {
-        height: 420px;
     }
 
     .ma-feedback-card {
@@ -2243,43 +2217,6 @@ body {
 
     .ma-feedback-text {
         font-size: 12px;
-        line-height: 1.5;
-        margin-bottom: 20px;
-        padding-right: 10px;
-    }
-
-    .ma-feedback-quote-icon {
-        font-size: 36px;
-        top: 12px;
-        right: 15px;
-    }
-
-    .ma-feedback-rating {
-        font-size: 14px;
-        margin-bottom: 10px;
-    }
-
-    .ma-author-avatar {
-        width: 35px;
-        height: 35px;
-    }
-
-    .ma-avatar-initial {
-        font-size: 1rem;
-    }
-
-    .ma-author-name {
-        font-size: 14px;
-        margin-bottom: 2px;
-    }
-
-    .ma-author-role {
-        font-size: 11px;
-    }
-
-    .ma-feedback-controls {
-        gap: 15px;
-        margin-top: 30px;
     }
 
     .ma-feedback-controls button {
@@ -2287,120 +2224,81 @@ body {
         height: 38px;
         font-size: 18px;
     }
+
+    /* Hero badges vertical gap exactly like AWD */
+    .ma-badge-glass {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 20px !important;
+        position: relative !important;
+        bottom: auto !important;
+        margin-top: 40px !important;
+        transform: none !important;
+        left: auto !important;
+        right: auto !important;
+        background: transparent !important;
+        backdrop-filter: none !important;
+        width: 100%;
+    }
+
+    .ma-badge-strategy,
+    .ma-badge-guidelines {
+        position: relative !important;
+        border-radius: 20px !important;
+        width: auto !important;
+        display: inline-block !important;
+    }
+
+    .ma-badge-strategy::after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-top: 10px solid #10b981;
+        border-right: 10px solid #10b981;
+        border-radius: 2px;
+        top: -20px !important;
+        right: -30px !important;
+        left: auto !important;
+        transform: rotate(20deg) !important;
+    }
+
+    .ma-badge-guidelines::after {
+        content: "";
+        font-weight: 500;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-top: 10px solid #10b981;
+        border-right: 10px solid #10b981;
+        border-radius: 2px;
+        top: -15px !important;
+        left: -30px !important;
+        right: auto !important;
+        transform: rotate(-115deg) !important;
+    }
 }
 
-/* Extra Small Mobile (375px and below) */
 @media (max-width: 375px) {
     .ma-hero-title {
         font-size: 28px;
     }
 
-    .ma-hero-badge {
-        font-size: 12px;
-        padding: 5px 15px;
-    }
-
-    .ma-hero-desc {
-        font-size: 13px;
-    }
-
-    .ma-about-title {
-        font-size: 1.8rem;
-    }
-
-    .ma-branddna-left h2 {
-        font-size: 28px;
-    }
-
-    .ma-branddna-subtitle {
-        font-size: 18px;
-    }
-
-    .ma-branddna-right {
-        height: 350px;
-    }
-
     .ma-dna-circle {
-        width: 100px;
-        height: 100px;
+        width: 90px !important;
+        height: 90px !important;
     }
 
-    .ma-dna-circle h3 {
-        font-size: 11px;
+    .ma-project-logo-card {
+        width: 38px !important;
+        height: 38px !important;
     }
 
-    .ma-circle-purpose {
-        top: -15px;
-    }
-
-    .ma-circle-voice {
-        top: 80px;
-        left: 5px;
-    }
-
-    .ma-circle-values {
-        top: 80px;
-        right: 5px;
-    }
-
-    .ma-circle-personality {
-        top: 175px;
-    }
-
-    .ma-circle-visual {
-        bottom: -15px;
-    }
-
-    .ma-stats-wrapper {
-        width: 220px;
-    }
-
-    .ma-circle {
-        width: 100px;
-        height: 100px;
-    }
-
-    .ma-circle h2 {
-        font-size: 24px;
-    }
-
-    .ma-circle-top {
-        top: -40px;
-        left: 30%;
-    }
-
-    .ma-circle-left {
-        bottom: -15px;
-        left: -15px;
-    }
-
-    .ma-circle-right {
-        bottom: -15px;
-        left: 120px;
-    }
-
-    .ma-projects-content h1 {
-        font-size: 28px;
-    }
-
-    .ma-projects-stats {
-        gap: 15px;
-    }
-
-    .ma-projects-stats h2 {
-        font-size: 22px;
-    }
-
-    .ma-feedback-header {
-        padding: 0 12px;
-    }
-
-    .ma-feedback-title {
-        font-size: 24px;
-    }
-
-    .ma-feedback-description {
-        font-size: 0.85rem;
+    .ma-project-logo {
+        width: 22px !important;
+        height: 22px !important;
     }
 
     .ma-feedback-card {
@@ -2415,39 +2313,8 @@ body {
     .ma-feedback-card.right {
         transform: translateX(280px) scale(0.9);
     }
-
-    .ma-feedback-text {
-        font-size: 11.5px;
-        margin-bottom: 18px;
-    }
-
-    .ma-feedback-quote-icon {
-        font-size: 32px;
-    }
-
-    .ma-author-avatar {
-        width: 32px;
-        height: 32px;
-    }
-
-    .ma-avatar-initial {
-        font-size: 0.9rem;
-    }
-
-    .ma-author-name {
-        font-size: 13px;
-    }
-
-    .ma-author-role {
-        font-size: 10px;
-    }
-
-    .ma-card-image {
-        height: 120px;
-    }
 }
 
-/* Landscape Mode Fixes */
 @media (max-height: 500px) and (orientation: landscape) {
     .ma-hero {
         min-height: 500px;
@@ -2458,53 +2325,25 @@ body {
         transform: scale(0.8);
     }
 
-    .ma-badge-glass {
-        bottom: 20px;
-    }
-
     .ma-howworks {
         min-height: auto;
-        padding: 60px 0;
-    }
-
-    .ma-circular-stats {
-        padding: 60px 0;
-    }
-
-    .ma-bottom-stats {
-        margin-top: 80px;
     }
 
     .ma-projects-section {
-        height: 400px;
+        height: auto;
+        padding: 40px;
     }
 
     .ma-feedback-carousel {
         height: 280px;
     }
-
-    .ma-feedback-card {
-        padding: 20px;
-    }
-
-    .ma-feedback-text {
-        max-height: 100px;
-        overflow-y: auto;
-        margin-bottom: 15px;
-    }
-
-    .ma-feedback-author {
-        margin-top: 10px;
-    }
 }
 
-/* Performance optimizations */
 .ma-card-image img,
 .ma-project-image img {
     will-change: transform;
 }
 
-/* Smooth transitions */
 .ma-feedback-card,
 .ma-about-card,
 .ma-step-card,
@@ -2512,12 +2351,302 @@ body {
     transition: all 0.3s ease;
 }
 
-/* Accessibility improvements */
-@media (prefers-reduced-motion: reduce) {
-    * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
+/* ==========================================================================
+   Widescreen Optimizations (1440px and higher)
+   ========================================================================== */
+@media (min-width: 1440px) {
+    .ma-container,
+    .ma-branddna-container,
+    .ma-howworks-container,
+    .ma-branding-stats-layout {
+        max-width: 1600px;
+        width: 1600px;
+        margin: 0 auto;
+    }
+
+    /* Hero Section Scaling */
+    .ma-hero {
+        height: 750px;
+        padding: 160px 20px 220px;
+    }
+
+    .ma-hero-title {
+        font-size: 72px;
+        max-width: 1300px;
+    }
+
+    .ma-hero-desc {
+        font-size: 20px;
+        max-width: 1100px;
+        margin-bottom: 50px;
+    }
+
+    .ma-hero-badge {
+        font-size: 18px;
+        padding: 10px 45px;
+    }
+
+    .ma-floating-card {
+        width: 280px;
+        padding: 20px 24px;
+    }
+
+    .ma-floating-card.ma-left {
+        top: 180px;
+        left: 120px;
+    }
+
+    .ma-floating-card.ma-right {
+        top: 180px;
+        right: 140px;
+    }
+
+    .ma-card-content h4 {
+        font-size: 16px;
+    }
+
+    .ma-badge-glass {
+        gap: 30px;
+        bottom: 100px;
+    }
+
+    .ma-service-badge {
+        font-size: 18px;
+        padding: 14px 24px;
+    }
+
+    /* About Section Scaling */
+    .ma-about-section {
+        padding: 80px 0;
+    }
+
+    .ma-about-header {
+        max-width: 1000px;
+        margin-bottom: 60px;
+    }
+
+    .ma-about-title {
+        font-size: 3.5rem;
+    }
+
+    .ma-about-description {
+        font-size: 1.25rem;
+    }
+
+    .ma-cards-grid {
+        gap: 40px;
+    }
+
+    .ma-card-title {
+        font-size: 1.4rem;
+    }
+
+    .ma-card-description {
+        font-size: 1rem;
+    }
+
+    .ma-card-image {
+        height: 220px;
+    }
+
+    /* DNA Section Scaling */
+    .ma-branddna-section {
+        padding: 100px 0;
+    }
+
+    .ma-branddna-container {
+        gap: 240px;
+    }
+
+    .ma-branddna-left h2 {
+        font-size: 58px;
+    }
+
+    .ma-branddna-subtitle {
+        font-size: 34px;
+    }
+
+    .ma-branddna-left p {
+        font-size: 20px;
+    }
+
+    .ma-branddna-right {
+        width: 650px;
+        height: 600px;
+    }
+
+    .ma-dna-circle {
+        width: 200px;
+        height: 200px;
+    }
+
+    .ma-dna-circle h3 {
+        font-size: 20px;
+    }
+
+    .ma-circle-desc {
+        font-size: 13px;
+    }
+
+    .ma-circle-purpose {
+        top: -80px;
+        left: 225px;
+    }
+
+    .ma-circle-voice {
+        top: 200px;
+        left: -100px;
+    }
+
+    .ma-circle-values {
+        top: 200px;
+        right: -100px;
+    }
+
+    .ma-circle-personality {
+        top: 200px;
+        left: 225px;
+    }
+
+    .ma-circle-visual {
+        bottom: -90px;
+        left: 225px;
+    }
+
+    /* How It Works Scaling */
+    .ma-howworks {
+        padding: 80px 0;
+    }
+
+    .ma-howworks-container {
+        grid-template-columns: 500px 1fr;
+        gap: 120px;
+    }
+
+    .ma-main-title {
+        font-size: 54px;
+    }
+
+    .ma-intro-text {
+        font-size: 17px;
+    }
+
+    .ma-section-title {
+        font-size: 42px;
+    }
+
+    .ma-steps-grid {
+        gap: 30px;
+    }
+
+    .ma-step-card {
+        padding: 35px;
+    }
+
+    .ma-step-card h3 {
+        font-size: 20px;
+    }
+
+    .ma-step-card p {
+        font-size: 15px;
+    }
+
+    /* Stats Section Scaling */
+    .ma-circular-stats {
+        padding: 100px 0;
+    }
+
+    .ma-stats-content h2 {
+        font-size: 52px;
+        width: 600px;
+    }
+
+    .ma-stats-content p {
+        font-size: 18px;
+        max-width: 550px;
+    }
+
+    .ma-stat-card {
+        width: 240px !important;
+        height: 240px !important;
+    }
+
+    .ma-stat-card h2 {
+        font-size: 42px !important;
+    }
+
+    .ma-bottom-stats {
+        margin-top: 100px;
+        gap: 80px;
+    }
+
+    .ma-stat h3 {
+        font-size: 42px;
+    }
+
+    .ma-stat p {
+        font-size: 15px;
+    }
+
+    /* Projects Section Scaling */
+    .ma-projects-section {
+        padding: 100px 0;
+    }
+
+    .ma-projects-content h1 {
+        font-size: 48px;
+    }
+
+    .ma-projects-content p {
+        font-size: 18px;
+        width: 700px;
+    }
+
+    .ma-projects-stats h2 {
+        font-size: 40px;
+    }
+
+    .ma-project-logo-card {
+        width: 100px;
+        height: 100px;
+    }
+
+    /* Feedback Section Scaling */
+    .ma-feedback-section {
+        padding: 100px 0;
+    }
+
+    .ma-feedback-title {
+        font-size: 48px;
+    }
+
+    .ma-feedback-description {
+        font-size: 1.25rem;
+        max-width: 900px;
+    }
+
+    .ma-feedback-card {
+        width: 650px;
+        padding: 60px;
+    }
+
+    .ma-feedback-card.left {
+        transform: translateX(-500px) scale(0.85);
+    }
+
+    .ma-feedback-card.right {
+        transform: translateX(500px) scale(0.85);
+    }
+
+    .ma-feedback-text {
+        font-size: 18px;
+    }
+
+    .ma-author-name {
+        font-size: 20px;
+    }
+
+    .ma-feedback-carousel {
+        height: 500px;
     }
 }
-

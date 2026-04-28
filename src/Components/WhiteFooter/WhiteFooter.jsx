@@ -214,9 +214,11 @@ const WhiteFooter = () => {
                         ))}
                     </div>
                 </div>
+                </div>
 
-                {/* Bottom Bar */}
-                <div className="wf-bottom-bar">
+            {/* Bottom Bar - Red Full-Width Banner */}
+            <div className="wf-bottom-bar">
+                <div className="wf-bottom-container">
                     <p className="wf-copyright">© {currentYear} ENGLORAY. All rights reserved.</p>
                     <div className="wf-legal-links">
                         <button onClick={() => handleLinkClick('/privacyPolicyPage')}>Privacy Policy</button>

@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import NavigationBar from '../../../Pages/TechLearningSection/NavigationBar/NavigationBar';
 import brandingData from './raymart_branding_data.json';
@@ -11,9 +11,171 @@ import './FaqRaymart.css';
 import emilycarter from '../../../assets/images/emilybg.jpg.jpeg';
 import michaelchen from '../../../assets/images/michaelchen.jpg.jpeg';
 import sarahjenkins from '../../../assets/images/sarahjenkins.jpg.jpeg';
+import RayMartNavbar from '../../../Components/RayMartNavbar/RayMartNavbar';
+
+import brandOne from '../../../assets/WEBSITE_IMAGES/Branding & Identity/1.png';
+import brandTwo from '../../../assets/WEBSITE_IMAGES/Branding & Identity/2.png';
+import brandThree from '../../../assets/WEBSITE_IMAGES/Branding & Identity/3.png';
+import brandFour from '../../../assets/WEBSITE_IMAGES/Branding & Identity/4.png';
+import brandFive from '../../../assets/WEBSITE_IMAGES/Branding & Identity/5.png';
+import brandSix from '../../../assets/WEBSITE_IMAGES/Branding & Identity/6.png';
+import brandSeven from '../../../assets/WEBSITE_IMAGES/Branding & Identity/7.png';
+import brandEight from '../../../assets/WEBSITE_IMAGES/Branding & Identity/8.png';
+
+import websiteOne from '../../../assets/WEBSITE_IMAGES/website/1.png';
+import websiteTwo from '../../../assets/WEBSITE_IMAGES/website/2.png';
+import webstieThree from '../../../assets/WEBSITE_IMAGES/website/3.png';
+import websiteFour from '../../../assets/WEBSITE_IMAGES/website/4.png';
+import websiteFive from '../../../assets/WEBSITE_IMAGES/website/5.png';
+import websiteSix from '../../../assets/WEBSITE_IMAGES/website/6.png';
+import websiteSeven from '../../../assets/WEBSITE_IMAGES/website/7.png';
+import websiteEight from '../../../assets/WEBSITE_IMAGES/website/8.png';
+
+
+import devlopOne from '../../../assets/WEBSITE_IMAGES/development/1.png';
+import devlopTwo from '../../../assets/WEBSITE_IMAGES/development/2.png';
+import devlopThree from '../../../assets/WEBSITE_IMAGES/development/3.png';
+import devlopFour from '../../../assets/WEBSITE_IMAGES/development/4.png';
+import devlopFive from '../../../assets/WEBSITE_IMAGES/development/5.png';
+import devlopSix from '../../../assets/WEBSITE_IMAGES/development/6.png';
+import devlopSeven from '../../../assets/WEBSITE_IMAGES/development/7.png';
+import devlopEight from '../../../assets/WEBSITE_IMAGES/development/8.png';
+
+import ecomOne from '../../../assets/WEBSITE_IMAGES/service 4, e commerce development/1.png';
+import ecomTwo from '../../../assets/WEBSITE_IMAGES/service 4, e commerce development/2.png';
+import ecomThree from '../../../assets/WEBSITE_IMAGES/service 4, e commerce development/3.png';
+import ecomFour from '../../../assets/WEBSITE_IMAGES/service 4, e commerce development/4.png';
+import ecomFive from '../../../assets/WEBSITE_IMAGES/service 4, e commerce development/5.png';
+import ecomSix from '../../../assets/WEBSITE_IMAGES/service 4, e commerce development/6.png';
+import ecomSeven from '../../../assets/WEBSITE_IMAGES/service 4, e commerce development/7.png';
+
+
+import appOne from '../../../assets/WEBSITE_IMAGES/service 5, app development/1.png';
+import appTwo from '../../../assets/WEBSITE_IMAGES/service 5, app development/2.png';
+import appThree from '../../../assets/WEBSITE_IMAGES/service 5, app development/3.png';
+import appFour from '../../../assets/WEBSITE_IMAGES/service 5, app development/4.png';
+import appFive from '../../../assets/WEBSITE_IMAGES/service 5, app development/5.png';
+
+
+import graphicOne from '../../../assets/WEBSITE_IMAGES/service 6, GRAPHIC DESING CARD6/1.png';
+import graphicTwo from '../../../assets/WEBSITE_IMAGES/service 6, GRAPHIC DESING CARD6/2.png';
+import graphicThree from '../../../assets/WEBSITE_IMAGES/service 6, GRAPHIC DESING CARD6/3.png';
+import graphicFour from '../../../assets/WEBSITE_IMAGES/service 6, GRAPHIC DESING CARD6/4.png';
+import graphicFive from '../../../assets/WEBSITE_IMAGES/service 6, GRAPHIC DESING CARD6/5.png';
+import graphicSix from '../../../assets/WEBSITE_IMAGES/service 6, GRAPHIC DESING CARD6/6.png';
+import graphicSeven from '../../../assets/WEBSITE_IMAGES/service 6, GRAPHIC DESING CARD6/7.png';
+import graphicEight from '../../../assets/WEBSITE_IMAGES/service 6, GRAPHIC DESING CARD6/8.png';
+
+
+import uiOne from '../../../assets/WEBSITE_IMAGES/service 7, UI UX/1.png';
+import uiTwo from '../../../assets/WEBSITE_IMAGES/service 7, UI UX/2.png';
+import uiThree from '../../../assets/WEBSITE_IMAGES/service 7, UI UX/3.png';
+import uiFour from '../../../assets/WEBSITE_IMAGES/service 7, UI UX/4.png';
+import uiFive from '../../../assets/WEBSITE_IMAGES/service 7, UI UX/5.png';
+
+
+import softOne from '../../../assets/WEBSITE_IMAGES/service 8, SOFTWERE SOLUTION/1.png';
+import softTwo from '../../../assets/WEBSITE_IMAGES/service 8, SOFTWERE SOLUTION/2.png';
+import softThree from '../../../assets/WEBSITE_IMAGES/service 8, SOFTWERE SOLUTION/3.png';
+import softFour from '../../../assets/WEBSITE_IMAGES/service 8, SOFTWERE SOLUTION/4.png';
+import softFive from '../../../assets/WEBSITE_IMAGES/service 8, SOFTWERE SOLUTION/5.png';
+import softSix from '../../../assets/WEBSITE_IMAGES/service 8, SOFTWERE SOLUTION/6.png';
+
+
+import dataOne from '../../../assets/WEBSITE_IMAGES/service 9, DATA ANALYTICS/1.png';
+import dataTwo from '../../../assets/WEBSITE_IMAGES/service 9, DATA ANALYTICS/2.png';
+import dataThree from '../../../assets/WEBSITE_IMAGES/service 9, DATA ANALYTICS/3.png';
+import dataFour from '../../../assets/WEBSITE_IMAGES/service 9, DATA ANALYTICS/4.png';
+import dataFive from '../../../assets/WEBSITE_IMAGES/service 9, DATA ANALYTICS/5.png';
+import dataSix from '../../../assets/WEBSITE_IMAGES/service 9, DATA ANALYTICS/6.png';
+import dataSeven from '../../../assets/WEBSITE_IMAGES/service 9, DATA ANALYTICS/7.png';
+import dataEight from '../../../assets/WEBSITE_IMAGES/service 9, DATA ANALYTICS/8.png';
+
+
+import aiOne from '../../../assets/WEBSITE_IMAGES/service 10, AI SERVICES/1.png';
+import aiTwo from '../../../assets/WEBSITE_IMAGES/service 10, AI SERVICES/2.png';
+import aiThree from '../../../assets/WEBSITE_IMAGES/service 10, AI SERVICES/3.png';
+import aiFour from '../../../assets/WEBSITE_IMAGES/service 10, AI SERVICES/4.png';
+import aiFive from '../../../assets/WEBSITE_IMAGES/service 10, AI SERVICES/5.png';
+import aiSix from '../../../assets/WEBSITE_IMAGES/service 10, AI SERVICES/6.png';
+import aiSeven from '../../../assets/WEBSITE_IMAGES/service 10, AI SERVICES/7.png';
+
+
+import crmOne from '../../../assets/WEBSITE_IMAGES/crm sevices/1.png';
+import crmTwo from '../../../assets/WEBSITE_IMAGES/crm sevices/2.png';
+import crmThree from '../../../assets/WEBSITE_IMAGES/crm sevices/3.png';
+import crmFour from '../../../assets/WEBSITE_IMAGES/crm sevices/4.png';
+import crmFive from '../../../assets/WEBSITE_IMAGES/crm sevices/5.png';
+import crmSix from '../../../assets/WEBSITE_IMAGES/crm sevices/6.png';
+
+
+import saasOne from '../../../assets/WEBSITE_IMAGES/SAAS PRODUCT/1.png';
+import saasTwo from '../../../assets/WEBSITE_IMAGES/SAAS PRODUCT/2.png';
+import saasThree from '../../../assets/WEBSITE_IMAGES/SAAS PRODUCT/3.png';
+import saasFour from '../../../assets/WEBSITE_IMAGES/SAAS PRODUCT/4.png';
+import saasFive from '../../../assets/WEBSITE_IMAGES/SAAS PRODUCT/5.png';
+import saasSix from '../../../assets/WEBSITE_IMAGES/SAAS PRODUCT/6.png';
+
+import devOne from '../../../assets/WEBSITE_IMAGES/service 2,DEVELOPMENT SERVICES/1.png';
+import devTwo from '../../../assets/WEBSITE_IMAGES/service 2,DEVELOPMENT SERVICES/2.png';
+import devThree from '../../../assets/WEBSITE_IMAGES/service 2,DEVELOPMENT SERVICES/3.png';
+import devFour from '../../../assets/WEBSITE_IMAGES/service 2,DEVELOPMENT SERVICES/4.png';
+import devFive from '../../../assets/WEBSITE_IMAGES/service 2,DEVELOPMENT SERVICES/5.png';
+import devSix from '../../../assets/WEBSITE_IMAGES/service 2,DEVELOPMENT SERVICES/6.png';
+import devSeven from '../../../assets/WEBSITE_IMAGES/service 2,DEVELOPMENT SERVICES/7.png';
+import devEight from '../../../assets/WEBSITE_IMAGES/service 2,DEVELOPMENT SERVICES/8.png';
+
+import webOne from '../../../assets/WEBSITE_IMAGES/service 3_WEBSITE_DEVELOPMENT/CORPORATE WEBSITE.png';
+import webTwo from '../../../assets/WEBSITE_IMAGES/service 3_WEBSITE_DEVELOPMENT/landing page image 1.png';
+import webThree from '../../../assets/WEBSITE_IMAGES/service 3_WEBSITE_DEVELOPMENT/landing page images.png';
+import webFour from '../../../assets/WEBSITE_IMAGES/service 3_WEBSITE_DEVELOPMENT/online store development.png';
+import webFive from '../../../assets/WEBSITE_IMAGES/service 3_WEBSITE_DEVELOPMENT/PORTFOLIO.png';
+import webSix from '../../../assets/WEBSITE_IMAGES/service 3_WEBSITE_DEVELOPMENT/portpolio website.png';
+import webSeven from '../../../assets/WEBSITE_IMAGES/service 3_WEBSITE_DEVELOPMENT/web development.png';
+import webEight from '../../../assets/WEBSITE_IMAGES/service 3_WEBSITE_DEVELOPMENT/website for business.png';
+
+import chatOne from '../../../assets/WEBSITE_IMAGES/AI CHATBOT/1.png';
+import chatTwo from '../../../assets/WEBSITE_IMAGES/AI CHATBOT/2.png';
+import chatThree from '../../../assets/WEBSITE_IMAGES/AI CHATBOT/3.png';
+import chatFour from '../../../assets/WEBSITE_IMAGES/AI CHATBOT/4.png';
+import chatFive from '../../../assets/WEBSITE_IMAGES/AI CHATBOT/5.png';
+import chatSix from '../../../assets/WEBSITE_IMAGES/AI CHATBOT/6.png';
+import chatSeven from '../../../assets/WEBSITE_IMAGES/AI CHATBOT/7.png';
+
+import bizAiOne from '../../../assets/WEBSITE_IMAGES/BUSINESS AI SUIT/1.png';
+import bizAiTwo from '../../../assets/WEBSITE_IMAGES/BUSINESS AI SUIT/2.png';
+import bizAiThree from '../../../assets/WEBSITE_IMAGES/BUSINESS AI SUIT/3.png';
+import bizAiFour from '../../../assets/WEBSITE_IMAGES/BUSINESS AI SUIT/4.png';
+import bizAiFive from '../../../assets/WEBSITE_IMAGES/BUSINESS AI SUIT/5.png';
+import bizAiSix from '../../../assets/WEBSITE_IMAGES/BUSINESS AI SUIT/6.png';
+
+import erpOne from '../../../assets/WEBSITE_IMAGES/ERP SOFTWARE/1.png';
+import erpTwo from '../../../assets/WEBSITE_IMAGES/ERP SOFTWARE/2.png';
+import erpThree from '../../../assets/WEBSITE_IMAGES/ERP SOFTWARE/3.png';
+import erpFour from '../../../assets/WEBSITE_IMAGES/ERP SOFTWARE/4.png';
+import erpFive from '../../../assets/WEBSITE_IMAGES/ERP SOFTWARE/5.png';
+import erpSix from '../../../assets/WEBSITE_IMAGES/ERP SOFTWARE/6.png';
+import erpSeven from '../../../assets/WEBSITE_IMAGES/ERP SOFTWARE/7.png';
+
+import jobOne from '../../../assets/WEBSITE_IMAGES/JOB SEEKER HUB/1.png';
+import jobTwo from '../../../assets/WEBSITE_IMAGES/JOB SEEKER HUB/2.png';
+import jobThree from '../../../assets/WEBSITE_IMAGES/JOB SEEKER HUB/3.png';
+import jobFour from '../../../assets/WEBSITE_IMAGES/JOB SEEKER HUB/4.png';
+import jobFive from '../../../assets/WEBSITE_IMAGES/JOB SEEKER HUB/5.png';
+import jobSix from '../../../assets/WEBSITE_IMAGES/JOB SEEKER HUB/6.png';
+import jobSeven from '../../../assets/WEBSITE_IMAGES/JOB SEEKER HUB/7.png';
+
+import learnOne from '../../../assets/WEBSITE_IMAGES/LEARNING AND CAREER/1.png';
+import learnTwo from '../../../assets/WEBSITE_IMAGES/LEARNING AND CAREER/2.png';
+import learnThree from '../../../assets/WEBSITE_IMAGES/LEARNING AND CAREER/3.png';
+import learnFour from '../../../assets/WEBSITE_IMAGES/LEARNING AND CAREER/4.png';
+import learnFive from '../../../assets/WEBSITE_IMAGES/LEARNING AND CAREER/5.png';
+import learnSix from '../../../assets/WEBSITE_IMAGES/LEARNING AND CAREER/graphic design courses.png';
+
 
 const FaqRaymart = () => {
     const location = useLocation();
+    const navigate = useNavigate();
     const [openIndex, setOpenIndex] = useState(0);
     const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
     const [isFading, setIsFading] = useState(false);
@@ -27,6 +189,91 @@ const FaqRaymart = () => {
         "Emily Carter": emilycarter,
         "Michael Chen": michaelchen,
         "Sarah Jenkins": sarahjenkins
+    };
+
+    const mainImageMap = {
+        "EcomOne": ecomOne, "EcomTwo": ecomTwo, "EcomThree": ecomThree, "EcomFour": ecomFour, "EcomFive": ecomFive, "EcomSix": ecomSix, "EcomSeven": ecomSeven,
+        "AppOne": appOne, "AppTwo": appTwo, "AppThree": appThree, "AppFour": appFour, "AppFive": appFive,
+        "GraphicOne": graphicOne, "GraphicTwo": graphicTwo, "GraphicThree": graphicThree, "GraphicFour": graphicFour, "GraphicFive": graphicFive, "GraphicSix": graphicSix, "GraphicSeven": graphicSeven, "GraphicEight": graphicEight,
+        "UiOne": uiOne, "UiTwo": uiTwo, "UiThree": uiThree, "UiFour": uiFour, "UiFive": uiFive,
+        "SoftOne": softOne, "SoftTwo": softTwo, "SoftThree": softThree, "SoftFour": softFour, "SoftFive": softFive, "SoftSix": softSix,
+        "DataOne": dataOne, "DataTwo": dataTwo, "DataThree": dataThree, "DataFour": dataFour, "DataFive": dataFive, "DataSix": dataSix, "DataSeven": dataSeven, "DataEight": dataEight,
+        "AiOne": aiOne, "AiTwo": aiTwo, "AiThree": aiThree, "AiFour": aiFour, "AiFive": aiFive, "AiSix": aiSix, "AiSeven": aiSeven,
+        "CrmOne": crmOne, "CrmTwo": crmTwo, "CrmThree": crmThree, "CrmFour": crmFour, "CrmFive": crmFive, "CrmSix": crmSix,
+        "SaasOne": saasOne, "SaasTwo": saasTwo, "SaasThree": saasThree, "SaasFour": saasFour, "SaasFive": saasFive, "SaasSix": saasSix,
+        "DevOne": devOne, "DevTwo": devTwo, "DevThree": devThree, "DevFour": devFour, "DevFive": devFive, "DevSix": devSix, "DevSeven": devSeven, "DevEight": devEight,
+        "WebOne": webOne, "WebTwo": webTwo, "WebThree": webThree, "WebFour": webFour, "WebFive": webFive, "WebSix": webSix, "WebSeven": webSeven, "WebEight": webEight,
+        "ChatOne": chatOne, "ChatTwo": chatTwo, "ChatThree": chatThree, "ChatFour": chatFour, "ChatFive": chatFive, "ChatSix": chatSix, "ChatSeven": chatSeven,
+        "BizAiOne": bizAiOne, "BizAiTwo": bizAiTwo, "BizAiThree": bizAiThree, "BizAiFour": bizAiFour, "BizAiFive": bizAiFive, "BizAiSix": bizAiSix,
+        "ErpOne": erpOne, "ErpTwo": erpTwo, "ErpThree": erpThree, "ErpFour": erpFour, "ErpFive": erpFive, "ErpSix": erpSix, "ErpSeven": erpSeven,
+        "JobOne": jobOne, "JobTwo": jobTwo, "JobThree": jobThree, "JobFour": jobFour, "JobFive": jobFive, "JobSix": jobSix, "JobSeven": jobSeven,
+        "LearnOne": learnOne, "LearnTwo": learnTwo, "LearnThree": learnThree, "LearnFour": learnFour, "LearnFive": learnFive, "LearnSix": learnSix,
+        "BrandOne": brandOne, "BrandTwo": brandTwo, "BrandThree": brandThree, "BrandFour": brandFour, "BrandFive": brandFive, "BrandSix": brandSix, "BrandSeven": brandSeven, "BrandEight": brandEight,
+        "WebsiteOne": websiteOne, "WebsiteTwo": websiteTwo, "WebsiteThree": webstieThree, "WebsiteFour": websiteFour, "WebsiteFive": websiteFive, "WebsiteSix": websiteSix, "WebsiteSeven": websiteSeven, "WebsiteEight": websiteEight,
+        "DevlopOne": devlopOne, "DevlopTwo": devlopTwo, "DevlopThree": devlopThree, "DevlopFour": devlopFour, "DevlopFive": devlopFive, "DevlopSix": devlopSix, "DevlopSeven": devlopSeven, "DevlopEight": devlopEight
+    };
+
+    // Image swapping state
+    const [heroImage, setHeroImage] = useState(pageData.mainImage);
+    const [thumbImages, setThumbImages] = useState(pageData.thumbnails);
+
+    useEffect(() => {
+        setHeroImage(pageData.mainImage);
+        setThumbImages(pageData.thumbnails);
+    }, [pageData]);
+
+    const handleThumbClick = (index) => {
+        const newThumbs = [...thumbImages];
+        const clickedThumb = newThumbs[index];
+        const currentHero = heroImage;
+
+        // Swap
+        newThumbs[index] = currentHero;
+        setHeroImage(clickedThumb);
+        setThumbImages(newThumbs);
+    };
+
+    const handleNextThumb = () => {
+        const newThumbs = [...thumbImages];
+        const currentHero = heroImage;
+        const firstThumb = newThumbs.shift();
+        newThumbs.push(currentHero);
+        setHeroImage(firstThumb);
+        setThumbImages(newThumbs);
+    };
+
+    const handlePrevThumb = () => {
+        const newThumbs = [...thumbImages];
+        const currentHero = heroImage;
+        const lastThumb = newThumbs.pop();
+        newThumbs.unshift(currentHero);
+        setHeroImage(lastThumb);
+        setThumbImages(newThumbs);
+    };
+
+    // --- RELATED SERVICES/PRODUCTS LOGIC ---
+    const serviceIds = [
+        "branding-identity", "development-services", "website-development",
+        "ecommerce-development", "app-development", "graphic-design",
+        "ui-ux-design", "software-tech-solutions", "data-analytics",
+        "ai-services", "crm-services", "saas-services"
+    ];
+
+    const productIds = [
+        "crm-products", "saas-products", "erp-products",
+        "ai-chatbot-products", "job-seeker-hub", "learning-career",
+        "business-suit-ai"
+    ];
+
+    const isService = serviceIds.includes(activeId);
+    const relatedItems = isService
+        ? brandingData.filter(item => serviceIds.includes(item.id) && item.id !== activeId)
+        : brandingData.filter(item => productIds.includes(item.id) && item.id !== activeId);
+
+    const relatedTitle = isService ? "other related services" : "other related products";
+
+    const handleCardClick = (id) => {
+        navigate('/raymartPageFour', { state: { id } });
     };
 
     // Use testimonials from JSON data
@@ -59,13 +306,16 @@ const FaqRaymart = () => {
     };
 
     useEffect(() => {
-        // Initial position: start at the middle set
+        // Scroll to top on mount or when activeId changes
+        window.scrollTo(0, 0);
+
+        // Initial position: start at the middle set for the carousel
         if (scrollRef.current) {
             const { scrollWidth } = scrollRef.current;
             const singleSetWidth = (scrollWidth + 15) / 3;
             scrollRef.current.scrollLeft = singleSetWidth;
         }
-    }, []);
+    }, [activeId]);
 
     useEffect(() => {
         if (testimonialsData.length === 0) return;
@@ -108,7 +358,7 @@ const FaqRaymart = () => {
                 <title>FAQ & Feedback | Engloray</title>
             </Helmet>
 
-            {/* <NavigationBar /> */}
+            <RayMartNavbar />
 
             <div className="faq-raymart-container">
 
@@ -120,14 +370,27 @@ const FaqRaymart = () => {
 
                         {/* MAIN HERO */}
                         <div className="cs-hero">
-                            <img src={pageData.mainImage} alt={pageData.title} />
+                            <img src={mainImageMap[heroImage] || mainImageMap[pageData.id] || heroImage} alt={pageData.title} />
                         </div>
 
                         {/* THUMBNAILS */}
-                        <div className="cs-thumbs">
-                            {pageData.thumbnails.map((img, i) => (
-                                <img key={i} src={img} alt={`branding-${i}`} />
-                            ))}
+                        <div className="cs-thumbs-wrapper">
+                            <button className="thumb-nav-btn left" onClick={handlePrevThumb}>
+                                <FontAwesomeIcon icon={faChevronLeft} />
+                            </button>
+                            <div className="cs-thumbs">
+                                {thumbImages.map((img, i) => (
+                                    <img
+                                        key={i}
+                                        src={mainImageMap[img] || img}
+                                        alt={`branding-${i}`}
+                                        onClick={() => handleThumbClick(i)}
+                                    />
+                                ))}
+                            </div>
+                            <button className="thumb-nav-btn right" onClick={handleNextThumb}>
+                                <FontAwesomeIcon icon={faChevronRight} />
+                            </button>
                         </div>
 
                     </div>
@@ -137,7 +400,7 @@ const FaqRaymart = () => {
 
                         {/* TOP SMALL IMAGE */}
                         <div className="cs-side-image">
-                            <img src={pageData.sidebarImage} alt="Side" />
+                            <img src={mainImageMap[pageData.sidebarImage] || pageData.sidebarImage} alt="Side" />
                         </div>
 
                         {/* CONTENT */}
@@ -315,7 +578,7 @@ const FaqRaymart = () => {
                     {/* LEFT SIDE */}
                     <div className="cs-final-left">
                         <div className="cs-final-image">
-                            <img src={pageData.finalImage} alt="Final Case Study" />
+                            <img src={mainImageMap[pageData.finalImage] || pageData.finalImage} alt="Final Case Study" />
                         </div>
                         <p className="cs-final-desc">
                             {pageData.finalDescription}
@@ -336,9 +599,9 @@ const FaqRaymart = () => {
                         <div className="cs-final-box">
                             <h4>Achievements</h4>
                             <div className="cs-img-grid">
-                                <img src={pageData.thumbnails[0]} alt="Achievement 1" />
-                                <img src={pageData.thumbnails[1]} alt="Achievement 2" />
-                                <img src={pageData.thumbnails[2]} alt="Achievement 3" />
+                                <img src={mainImageMap[pageData.thumbnails[0]] || pageData.thumbnails[0]} alt="Achievement 1" />
+                                <img src={mainImageMap[pageData.thumbnails[1]] || pageData.thumbnails[1]} alt="Achievement 2" />
+                                <img src={mainImageMap[pageData.thumbnails[2]] || pageData.thumbnails[2]} alt="Achievement 3" />
                                 <div className="number-container"><span className="count">+{pageData.achievementsCount}</span></div>
                             </div>
                         </div>
@@ -346,9 +609,9 @@ const FaqRaymart = () => {
                         <div className="cs-final-box">
                             <h4>Visual Assets</h4>
                             <div className="cs-img-grid">
-                                <img src={pageData.thumbnails[3]} alt="Asset 1" />
-                                <img src={pageData.thumbnails[2]} alt="Asset 2" />
-                                <img src={pageData.thumbnails[1]} alt="Asset 3" />
+                                <img src={mainImageMap[pageData.thumbnails[3]] || pageData.thumbnails[3]} alt="Asset 1" />
+                                <img src={mainImageMap[pageData.thumbnails[2]] || pageData.thumbnails[2]} alt="Asset 2" />
+                                <img src={mainImageMap[pageData.thumbnails[1]] || pageData.thumbnails[1]} alt="Asset 3" />
                                 <div className="number-container"><span className="count">+{pageData.visualAssetsCount}</span></div>
                             </div>
                         </div>
@@ -391,7 +654,7 @@ const FaqRaymart = () => {
 
                 {/* Our Services Section */}
                 <section className="fr-services-section">
-                    <h2 className="fr-srv-main-title">more related services</h2>
+                    <h2 className="fr-srv-main-title">{relatedTitle}</h2>
 
                     <div className="fr-srv-banner">
                         <button className="fr-srv-arrow left" onClick={() => scroll('left')}>
@@ -399,41 +662,10 @@ const FaqRaymart = () => {
                         </button>
 
                         <div className="fr-srv-grid" ref={scrollRef} style={{ overflowX: 'hidden' }}>
-                            {[
-                                ...[
-                                    { title: "Premium Logo Forge", tag1: "Branding", tag2: "Identity", offer: "15% off", img: "https://images.unsplash.com/photo-1572044162444-ad60f128bde2?auto=format&fit=crop&q=80&w=600&h=400" },
-                                    { title: "Visual Narrative", tag1: "Branding", tag2: "Strategy", offer: "20% off", img: "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80&w=600&h=400" },
-                                    { title: "Brand Voice & Style", tag1: "Copy", tag2: "Voice", offer: "25% off", img: "https://images.unsplash.com/photo-1434626881859-194d67b2b86f?auto=format&fit=crop&q=80&w=600&h=400" },
-                                    { title: "Identity Suite", tag1: "Design", tag2: "Full", offer: "30% off", img: "https://images.unsplash.com/photo-1586717791821-3f44a563eb4c?auto=format&fit=crop&q=80&w=600&h=400" },
-                                    { title: "Motion Branding", tag1: "Video", tag2: "Modern", offer: "35% off", img: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=600&h=400" },
-                                    { title: "Typography System", tag1: "Type", tag2: "System", offer: "20% off", img: "https://images.unsplash.com/photo-1517433367423-c7e5b0f35086?auto=format&fit=crop&q=80&w=600&h=400" },
-                                    { title: "Color Psychology", tag1: "Theory", tag2: "Brand", offer: "15% off", img: "https://images.unsplash.com/photo-1502691876148-a8437c02905a?auto=format&fit=crop&q=80&w=600&h=400" },
-                                    { title: "Corporate Asset Kit", tag1: "Assets", tag2: "Kit", offer: "25% off", img: "https://images.unsplash.com/photo-1454165205732-d031f131f372?auto=format&fit=crop&q=80&w=600&h=400" }
-                                ],
-                                ...[
-                                    { title: "Premium Logo Forge", tag1: "Branding", tag2: "Identity", offer: "15% off", img: "https://images.unsplash.com/photo-1572044162444-ad60f128bde2?auto=format&fit=crop&q=80&w=600&h=400" },
-                                    { title: "Visual Narrative", tag1: "Branding", tag2: "Strategy", offer: "20% off", img: "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80&w=600&h=400" },
-                                    { title: "Brand Voice & Style", tag1: "Copy", tag2: "Voice", offer: "25% off", img: "https://images.unsplash.com/photo-1434626881859-194d67b2b86f?auto=format&fit=crop&q=80&w=600&h=400" },
-                                    { title: "Identity Suite", tag1: "Design", tag2: "Full", offer: "30% off", img: "https://images.unsplash.com/photo-1586717791821-3f44a563eb4c?auto=format&fit=crop&q=80&w=600&h=400" },
-                                    { title: "Motion Branding", tag1: "Video", tag2: "Modern", offer: "35% off", img: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=600&h=400" },
-                                    { title: "Typography System", tag1: "Type", tag2: "System", offer: "20% off", img: "https://images.unsplash.com/photo-1517433367423-c7e5b0f35086?auto=format&fit=crop&q=80&w=600&h=400" },
-                                    { title: "Color Psychology", tag1: "Theory", tag2: "Brand", offer: "15% off", img: "https://images.unsplash.com/photo-1502691876148-a8437c02905a?auto=format&fit=crop&q=80&w=600&h=400" },
-                                    { title: "Corporate Asset Kit", tag1: "Assets", tag2: "Kit", offer: "25% off", img: "https://images.unsplash.com/photo-1454165205732-d031f131f372?auto=format&fit=crop&q=80&w=600&h=400" }
-                                ],
-                                ...[
-                                    { title: "Premium Logo Forge", tag1: "Branding", tag2: "Identity", offer: "15% off", img: "https://images.unsplash.com/photo-1572044162444-ad60f128bde2?auto=format&fit=crop&q=80&w=600&h=400" },
-                                    { title: "Visual Narrative", tag1: "Branding", tag2: "Strategy", offer: "20% off", img: "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80&w=600&h=400" },
-                                    { title: "Brand Voice & Style", tag1: "Copy", tag2: "Voice", offer: "25% off", img: "https://images.unsplash.com/photo-1434626881859-194d67b2b86f?auto=format&fit=crop&q=80&w=600&h=400" },
-                                    { title: "Identity Suite", tag1: "Design", tag2: "Full", offer: "30% off", img: "https://images.unsplash.com/photo-1586717791821-3f44a563eb4c?auto=format&fit=crop&q=80&w=600&h=400" },
-                                    { title: "Motion Branding", tag1: "Video", tag2: "Modern", offer: "35% off", img: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=600&h=400" },
-                                    { title: "Typography System", tag1: "Type", tag2: "System", offer: "20% off", img: "https://images.unsplash.com/photo-1517433367423-c7e5b0f35086?auto=format&fit=crop&q=80&w=600&h=400" },
-                                    { title: "Color Psychology", tag1: "Theory", tag2: "Brand", offer: "15% off", img: "https://images.unsplash.com/photo-1502691876148-a8437c02905a?auto=format&fit=crop&q=80&w=600&h=400" },
-                                    { title: "Corporate Asset Kit", tag1: "Assets", tag2: "Kit", offer: "25% off", img: "https://images.unsplash.com/photo-1454165205732-d031f131f372?auto=format&fit=crop&q=80&w=600&h=400" }
-                                ]
-                            ].map((srv, idx) => (
-                                <div className="fr-srv-card" key={idx}>
+                            {relatedItems.map((srv, idx) => (
+                                <div className="fr-srv-card" key={idx} onClick={() => handleCardClick(srv.id)}>
                                     <div className="fr-srv-img-box">
-                                        <img src={srv.img} alt={srv.title} />
+                                        <img src={mainImageMap[srv.mainImage] || srv.mainImage} alt={srv.title} />
                                     </div>
                                     <div className="fr-srv-content">
                                         <h4 className="fr-srv-title">{srv.title}</h4>
@@ -441,7 +673,7 @@ const FaqRaymart = () => {
                                             <button className="fr-srv-footer-icon">
                                                 <FontAwesomeIcon icon={faBorderAll} />
                                             </button>
-                                            <div className="fr-srv-price">{srv.offer}</div>
+                                            <div className="fr-srv-price">Explore</div>
                                             <span className="fr-srv-brand-tag">ENGLORAY</span>
                                         </div>
                                     </div>

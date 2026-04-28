@@ -56,7 +56,7 @@
 
 .tagline-container {
   position: relative;
-  padding: 80px 60px;
+  padding: 130px 60px 80px;
   width: 100%;
   min-height: 90vh;
 
@@ -67,6 +67,7 @@
   gap: 1.5rem;
   z-index: 2;
 }
+
 
 
 
@@ -129,7 +130,7 @@
   }
 
   .tagline-container {
-    padding: 80px 60px;
+    padding: 130px 60px 80px;
     gap: 1.25vw;
   }
 }
@@ -137,7 +138,7 @@
 /* Apply negative margin ONLY for Desktop */
 @media screen and (min-width: 1201px) {
   .tagline-section {
-    margin-top: -40px;
+    margin-top: 20px;
   }
 }
 
@@ -436,46 +437,13 @@
 
   .tagline-bottom-text {
     display: flex !important;
-    /* iPad Mini portrait specific positioning: aligned with shortened background */
+    /* Restore VERIFIED box at tablet size */
     width: 20rem !important;
     font-size: 1.6rem !important;
     height: 5.5rem !important;
-    top: auto !important;
-    /* Clears base top: 82% to allow bottom anchoring */
-    bottom: 60px !important;
-    /* Moved 40px up from -100px for perfect iPad Mini alignment */
+    top: 68% !important;
     left: 0 !important;
     padding-left: 10px !important;
-    border-radius: 0 45px 35px 0 !important;
-    border-bottom: 2px solid white !important;
-    /* box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15) !important; */
-    background: white !important;
-    z-index: 10 !important;
-    transform: translateY(-50%) !important;
-  }
-
-  /* Specific background height for iPad MiniPortrait */
-  .tagline-section::before {
-    height: 125vh !important;
-    /* bottom: auto !important; */
-  }
-
-  /* Conflict Resolution for short tablet screens (e.g., 768x600 landscape) */
-  @media (max-height: 750px) {
-    .tagline-bottom-text {
-      bottom: 18px !important;
-      /* Prevents overlap with next section on short viewports */
-      height: 4.8rem !important;
-      border-radius: 0 40px 0 0 !important;
-    }
-
-    /* Ensure background image covers more area in landscape */
-    .tagline-section::before {
-      height: 175vh !important;
-      bottom: -100px !important;
-      background-size: cover !important;
-      background-position: center bottom !important;
-    }
   }
 
   .tagline-bottom-text span {
@@ -527,6 +495,8 @@
   }
 
   .tagline-bottom-text {
+    top: 75% !important;
+    /* Move box down slightly to give buttons more room above */
     width: 18rem !important;
     font-size: 1.4rem !important;
     height: 5rem !important;
@@ -538,463 +508,5 @@
 
   .tagline-long-arrow {
     width: 60px !important;
-  }
-}
-
-/* --- Discrete Mobile Device Targeting --- */
-
-/* 320px (iPhone 5/SE old) */
-@media screen and (max-width: 320px) {
-  .tagline-bottom-text {
-    top: auto !important;
-    bottom: -60px !important;
-    width: 14rem !important;
-    font-size: 1.1rem !important;
-    height: 4.2rem !important;
-    border-radius: 0 28px 18px 0 !important;
-    display: flex !important;
-    left: 0 !important;
-    padding-left: 8px !important;
-    border-bottom: 2px solid white !important;
-  }
-
-  .tagline-bottom-text span {
-    font-size: 1.3rem !important;
-  }
-
-  .tagline-long-arrow {
-    width: 40px !important;
-  }
-
-  .tagline-icon {
-    height: 22px !important;
-  }
-}
-
-/* 375px (iPhone SE Modern / iPhone 6,7,8) */
-@media screen and (width: 375px) {
-  .tagline-bottom-text {
-    top: auto !important;
-    bottom: -69px !important;
-    width: 16.5rem !important;
-    font-size: 1.4rem !important;
-    height: 5rem !important;
-    border-radius: 0 35px 25px 0 !important;
-    display: flex !important;
-    left: 0 !important;
-    padding-left: 10px !important;
-    border-bottom: 2px solid white !important;
-  }
-
-  .tagline-bottom-text span {
-    font-size: 1.65rem !important;
-  }
-
-  .tagline-long-arrow {
-    width: 55px !important;
-  }
-
-  .tagline-icon {
-    height: 28px !important;
-  }
-}
-
-/* 425px (Specific Conflict Resolution) */
-@media screen and (width: 425px) {
-  .tagline-bottom-text {
-    top: auto !important;
-    bottom: -79px !important;
-    width: 18rem !important;
-    font-size: 1.55rem !important;
-    height: 5.6rem !important;
-    border-radius: 0 50px 40px 0 !important;
-    display: flex !important;
-    left: 0 !important;
-    padding-left: 15px !important;
-    border-bottom: 2px solid white !important;
-  }
-
-  .tagline-bottom-text span {
-    font-size: 1.9rem !important;
-  }
-
-  .tagline-long-arrow {
-    width: 70px !important;
-  }
-
-  .tagline-icon {
-    height: 34px !important;
-  }
-}
-
-/* Ranges for other devices */
-
-/* Small Devices (excluding 320px) */
-@media screen and (min-width: 321px) and (max-width: 365px) {
-  .tagline-bottom-text {
-    top: auto !important;
-    bottom: -60px !important;
-    width: 16rem !important;
-    font-size: 1.3rem !important;
-    height: 4.8rem !important;
-    border-radius: 0 32px 22px 0 !important;
-    display: flex !important;
-    left: 0 !important;
-    padding-left: 10px !important;
-    border-bottom: 2px solid white !important;
-  }
-
-  .tagline-bottom-text span {
-    font-size: 1.5rem !important;
-  }
-
-  .tagline-long-arrow {
-    width: 50px !important;
-  }
-
-  .tagline-icon {
-    height: 26px !important;
-  }
-}
-
-/* Intermediate Devices (excluding 375px) */
-@media screen and (min-width: 376px) and (max-width: 385px) {
-  .tagline-bottom-text {
-    top: auto !important;
-    bottom: -59px !important;
-    width: 16.5rem !important;
-    font-size: 1.4rem !important;
-    height: 5rem !important;
-    border-radius: 0 35px 25px 0 !important;
-    display: flex !important;
-    left: 0 !important;
-    padding-left: 10px !important;
-    border-bottom: 2px solid white !important;
-  }
-}
-
-/* iPhone 12 Pro (390px) */
-@media screen and (min-width: 386px) and (max-width: 400px) {
-  .tagline-bottom-text {
-    top: auto !important;
-    bottom: -109px !important;
-    width: 17rem !important;
-    font-size: 1.45rem !important;
-    height: 5.2rem !important;
-    border-radius: 0 40px 30px 0 !important;
-    display: flex !important;
-    left: 0 !important;
-    padding-left: 12px !important;
-    border-bottom: 2px solid white !important;
-  }
-
-  .tagline-bottom-text span {
-    font-size: 1.7rem !important;
-  }
-
-  .tagline-long-arrow {
-    width: 60px !important;
-  }
-
-  .tagline-icon {
-    height: 30px !important;
-  }
-}
-
-/* Pixel 7 / S20 Ultra (412px) & iPhone XR (414px) */
-@media screen and (min-width: 401px) and (max-width: 420px) {
-  .tagline-bottom-text {
-    top: auto !important;
-    bottom: -79px !important;
-    width: 17.5rem !important;
-    font-size: 1.5rem !important;
-    height: 5.4rem !important;
-    border-radius: 0 45px 35px 0 !important;
-    display: flex !important;
-    left: 0 !important;
-    padding-left: 15px !important;
-    border-bottom: 2px solid white !important;
-  }
-
-  .tagline-bottom-text span {
-    font-size: 1.8rem !important;
-  }
-
-  .tagline-long-arrow {
-    width: 65px !important;
-  }
-
-  .tagline-icon {
-    height: 32px !important;
-  }
-}
-
-/* Large Phones (excluding 425px) */
-@media screen and (min-width: 421px) and (max-width: 440px) {
-  .tagline-bottom-text {
-    top: auto !important;
-    bottom: -79px !important;
-    width: 18rem !important;
-    font-size: 1.55rem !important;
-    height: 5.6rem !important;
-    border-radius: 0 50px 40px 0 !important;
-    display: flex !important;
-    left: 0 !important;
-    padding-left: 15px !important;
-    border-bottom: 2px solid white !important;
-  }
-
-  .tagline-bottom-text span {
-    font-size: 1.9rem !important;
-  }
-
-  .tagline-long-arrow {
-    width: 70px !important;
-  }
-
-  .tagline-icon {
-    height: 34px !important;
-  }
-}
-
-/* Universal Background Extension */
-@media screen and (max-width: 480px) {
-  .tagline-section::before {
-    height: 156vh !important;
-    bottom: -150px !important;
-    top: 0 !important;
-  }
-}
-
-/* --- Brand Specific Media Queries --- */
-
-/* 1. iPad Pro (1024px) */
-@media screen and (width: 1024px) {
-  .tagline-section .tagline-bottom-text {
-    top: auto !important;
-    bottom: 78px !important;
-    width: 25rem !important;
-    font-size: 2.2rem !important;
-    height: 9rem !important;
-    border-radius: 0 60px 45px 0 !important;
-    left: 0 !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: flex-start !important;
-    padding-left: 35px !important;
-    border-bottom: 2px solid white !important;
-    background: white !important;
-    z-index: 10 !important;
-  }
-
-  .tagline-section .tagline-bottom-text span {
-    font-size: 2.6rem !important;
-  }
-
-  .tagline-section .tagline-bottom-text .tagline-long-arrow {
-    width: 85px !important;
-    margin: 0 15px !important;
-  }
-
-  .tagline-section .tagline-bottom-text .tagline-icon {
-    height: 45px !important;
-  }
-}
-
-/* 2. Surface Pro 7 (912px) */
-@media screen and (width: 912px) {
-  .tagline-section .tagline-bottom-text {
-    top: auto !important;
-    bottom: 75px !important;
-    width: 25rem !important;
-    font-size: 2.2rem !important;
-    height: 9rem !important;
-    border-radius: 0 60px 45px 0 !important;
-    left: 0 !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: flex-start !important;
-    padding-left: 35px !important;
-    border-bottom: 2px solid white !important;
-    background: white !important;
-    z-index: 10 !important;
-  }
-
-  .tagline-section .tagline-bottom-text span {
-    font-size: 2.6rem !important;
-  }
-
-  .tagline-section .tagline-bottom-text .tagline-long-arrow {
-    width: 85px !important;
-    margin: 0 15px !important;
-  }
-
-  .tagline-section .tagline-bottom-text .tagline-icon {
-    height: 45px !important;
-  }
-}
-
-/* 3. Nest Hub (1024 x 600) */
-@media screen and (width: 1024px) and (height: 600px) {
-  .tagline-section .tagline-bottom-text {
-    top: auto !important;
-    bottom: 195px !important;
-    height: 6.5rem !important;
-    width: 20rem !important;
-    font-size: 1.8rem !important;
-    left: 0 !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: flex-start !important;
-    padding-left: 25px !important;
-    background: white !important;
-    z-index: 10 !important;
-    border-radius: 0 45px 35px 0 !important;
-    border-bottom: 2px solid white !important;
-  }
-
-  .tagline-section .tagline-bottom-text span {
-    font-size: 2.1rem !important;
-  }
-
-  .tagline-section .tagline-bottom-text .tagline-long-arrow {
-    width: 75px !important;
-    margin: 0 12px !important;
-  }
-
-  .tagline-section .tagline-bottom-text .tagline-icon {
-    height: 38px !important;
-  }
-}
-
-/* 4. Surface Duo (540px) */
-@media screen and (width: 540px) {
-  .tagline-section .tagline-bottom-text {
-    top: auto !important;
-    bottom: -40px !important;
-    width: 18.5rem !important;
-    font-size: 1.55rem !important;
-    height: 5.4rem !important;
-    border-radius: 0 42px 32px 0 !important;
-    left: 0 !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: flex-start !important;
-    padding-left: 15px !important;
-    border-bottom: 2px solid white !important;
-    background: white !important;
-    z-index: 10 !important;
-  }
-
-  .tagline-section .tagline-bottom-text span {
-    font-size: 1.8rem !important;
-  }
-
-  .tagline-section .tagline-bottom-text .tagline-long-arrow {
-    width: 68px !important;
-    margin: 0 10px !important;
-  }
-
-  .tagline-section .tagline-bottom-text .tagline-icon {
-    height: 34px !important;
-  }
-}
-
-/* 5. iPhone XR (414px) */
-@media screen and (width: 414px) {
-  .tagline-section .tagline-bottom-text {
-    top: auto !important;
-    bottom: -109px !important;
-    width: 17.5rem !important;
-    font-size: 1.5rem !important;
-    height: 5.4rem !important;
-    border-radius: 0 45px 35px 0 !important;
-    left: 0 !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: flex-start !important;
-    padding-left: 15px !important;
-    border-bottom: 2px solid white !important;
-    background: white !important;
-    z-index: 10 !important;
-  }
-
-  .tagline-section .tagline-bottom-text span {
-    font-size: 1.8rem !important;
-  }
-
-  .tagline-section .tagline-bottom-text .tagline-long-arrow {
-    width: 65px !important;
-    margin: 0 10px !important;
-  }
-
-  .tagline-section .tagline-bottom-text .tagline-icon {
-    height: 32px !important;
-  }
-}
-
-/* 6. Pixel 7 / S20 Ultra (412px) */
-@media screen and (width: 412px) {
-  .tagline-section .tagline-bottom-text {
-    top: auto !important;
-    bottom: -109px !important;
-    width: 17.5rem !important;
-    font-size: 1.5rem !important;
-    height: 5.4rem !important;
-    border-radius: 0 45px 35px 0 !important;
-    left: 0 !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: flex-start !important;
-    padding-left: 15px !important;
-    border-bottom: 2px solid white !important;
-    background: white !important;
-    z-index: 10 !important;
-  }
-
-  .tagline-section .tagline-bottom-text span {
-    font-size: 1.8rem !important;
-  }
-
-  .tagline-section .tagline-bottom-text .tagline-long-arrow {
-    width: 65px !important;
-    margin: 0 10px !important;
-  }
-
-  .tagline-section .tagline-bottom-text .tagline-icon {
-    height: 32px !important;
-  }
-}
-
-/* 7. Samsung S8+ (360px) */
-@media screen and (width: 360px) {
-  .tagline-section .tagline-bottom-text {
-    top: auto !important;
-    bottom: -90px !important;
-    width: 16rem !important;
-    font-size: 1.35rem !important;
-    height: 4.8rem !important;
-    border-radius: 0 35px 25px 0 !important;
-    left: 0 !important;
-    display: flex !important;
-    border-bottom: 2px solid white !important;
-    background: white !important;
-    z-index: 10 !important;
-    align-items: center !important;
-    justify-content: flex-start !important;
-    padding-left: 10px !important;
-  }
-
-  .tagline-section .tagline-bottom-text span {
-    font-size: 1.55rem !important;
-  }
-
-  .tagline-section .tagline-bottom-text .tagline-long-arrow {
-    width: 55px !important;
-    margin: 0 8px !important;
-  }
-
-  .tagline-section .tagline-bottom-text .tagline-icon {
-    height: 28px !important;
   }
 }

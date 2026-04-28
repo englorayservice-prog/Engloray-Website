@@ -826,7 +826,7 @@ const UIDesignServices = () => {
             <section className="ui-page-testimonial-section">
                 <div className="ui-page-testimonial-container">
                     <p className="ui-page-testimonial-label">Testimonial</p>
-                    <h2 className="ui-page-testimonial-heading">We Care About Our Clients'<br />Design Success Too</h2>
+                    <h2 className="ui-page-testimonial-heading">We Care About Our Client's<br />Design Success Too</h2>
 
                     <div className="ui-page-testimonial-scroll-wrapper">
                         <div className="ui-page-testimonial-scroll-mask-left"></div>

@@ -6,7 +6,7 @@ import './MobileApplications.css';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
-import MainPageSubFooter from '../MainPageSubFooter/MainPageSubFooter';
+import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 import { Helmet } from 'react-helmet';
 import { FaBrain, FaRobot, FaMicrochip, FaNetworkWired, FaDatabase, FaCogs, FaProjectDiagram } from "react-icons/fa";
 import heroBg from "../../../assets/lineimage.jpeg";
@@ -23,8 +23,8 @@ import logo9 from '../../../assets/icons/logoipsum-298.png';
 import logo10 from '../../../assets/icons/logoipsum-299.png';
 import logo11 from '../../../assets/icons/logoipsum-327.png';
 import logo12 from '../../../assets/icons/logoipsum-338.png';
-import avatarLeft from '../../../assets/rev_avatar_5.jfif';
-import avatarRight from '../../../assets/rev_avatar_4.jfif';
+import avatarLeft from '../../../assets/cartoon_female_2.png';
+import avatarRight from '../../../assets/cartoon_male_2.png';
 
 const AiProductPage = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -92,6 +92,30 @@ const AiProductPage = () => {
             author: "Grace Hopper",
             role: "Chief Innovation Officer",
             initial: "G"
+        },
+        {
+            id: 7,
+            rating: "★★★★★",
+            text: "The predictive maintenance model Engloray built for us has saved us millions in potential hardware failures. A must-have for any modern industrial setup.",
+            author: "Industrial Tech",
+            role: "Engineering Director",
+            initial: "I"
+        },
+        {
+            id: 8,
+            rating: "★★★★★",
+            text: "Their LLM integration is world-class. Our internal documentation is now searchable and actionable in ways we never thought possible.",
+            author: "Data Core",
+            role: "Data Scientist",
+            initial: "D"
+        },
+        {
+            id: 9,
+            rating: "★★★★★",
+            text: "A truly visionary team. They don't just follow trends; they create intelligent solutions that provide a real competitive advantage.",
+            author: "Vision AI",
+            role: "VP of Product",
+            initial: "V"
         }
     ];
 
@@ -148,7 +172,7 @@ const AiProductPage = () => {
             id: 3,
             title: "System Integration",
             description: "Integrating AI capabilities into your existing software ecosystem, ensuring high availability, security, and seamless data flow.",
-            image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            image: "https://i.pinimg.com/1200x/03/f0/c6/03f0c6f3ee099f2f8d5bbbcb15b83caf.jpg"
         },
         {
             id: 4,
@@ -296,7 +320,7 @@ const AiProductPage = () => {
 
                             <p className="ai-hero-desc">
                                 We develop custom AI products that solve complex business problems, automate
-                                repetitive tasks, and provide actionable insights through advanced 
+                                repetitive tasks, and provide actionable insights through advanced
                                 machine learning and data science methodologies.
                             </p>
 
@@ -381,10 +405,16 @@ const AiProductPage = () => {
                                     The Core Pillars of Advanced Intelligence
                                 </h3>
                                 <p>
-                                    True AI excellence is more than just algorithms. It's the synthesis of 
+                                    True AI excellence is more than just algorithms. It's the synthesis of
                                     quality data, rigorous architecture, and human-centric design.
                                     Our Intelligence DNA defines how we build systems that learn, adapt, and empower.
                                 </p>
+                                <ul className="ai-dna-list">
+                                    <li><strong>Natural Language Processing:</strong> Advanced NLP models for seamless human-computer interaction.</li>
+                                    <li><strong>Automated Machine Learning:</strong> Rapidly prototyping and deploying highly accurate ML models.</li>
+                                    <li><strong>Edge AI Deployment:</strong> Running intelligent models locally for sub-millisecond latency.</li>
+                                    <li><strong>Ethical & Explainable AI:</strong> Building transparent systems with fairness and accountability at their core.</li>
+                                </ul>
                             </div>
 
                             <div className="ai-branddna-right">
@@ -501,6 +531,12 @@ const AiProductPage = () => {
                                     We deliver tangible results through advanced intelligence. Our work
                                     helps companies scale faster, reduce costs, and innovate better.
                                 </p>
+                                <ul className="ai-impact-list">
+                                    <li>70% Average Reduction in manual data entry and processing tasks.</li>
+                                    <li>Real-Time Insights generated from billions of complex data points.</li>
+                                    <li>Intelligent Workflow Automation saving enterprise partners millions annually.</li>
+                                    <li>Custom-built LLM agents integrated into internal documentation workflows.</li>
+                                </ul>
                             </div>
 
                             <div className="ai-stats-wrapper-cards">
@@ -609,7 +645,7 @@ const AiProductPage = () => {
                             </div>
                         </div>
                     </section>
-                    <MainPageSubFooter />
+                    <WhiteFooter />
                     <BackToTop />
                 </div>
             </div>

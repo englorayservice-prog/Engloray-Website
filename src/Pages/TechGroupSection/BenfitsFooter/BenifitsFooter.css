@@ -182,14 +182,14 @@
     background-color: #ffffff;
     border-radius: 50%;
     top: 3px;
-    right: 3px;
+    left: 3px;
     z-index: 2;
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .switch-active .switch-dot {
-    transform: translateX(-24px);
-    /* Slide to the left */
+    transform: translateX(24px);
+    /* Slide to the right */
 }
 
 .rest-text {
@@ -1502,5 +1502,11 @@
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
+    }
+}
+
+@media (min-width: 1440px) {
+    .benefits-cta-container {
+        zoom: 1.23;
     }
 }

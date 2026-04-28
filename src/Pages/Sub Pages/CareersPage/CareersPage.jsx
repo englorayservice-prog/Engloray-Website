@@ -40,6 +40,7 @@ import {
   faLeaf,
   faGlobe
 } from '@fortawesome/free-solid-svg-icons';
+import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
 import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 
@@ -48,6 +49,7 @@ import avatar2 from '../../../assets/testimonials/cartoon_female_1.png';
 import avatar3 from '../../../assets/testimonials/cartoon_male_2.png';
 import avatar4 from '../../../assets/testimonials/cartoon_female_2.png';
 import avatar5 from '../../../assets/testimonials/cartoon_male_3.png';
+import dataAiImage from '../../../assets/data_ai_careers.png';
 
 const CareersPage = () => {
   const [formData, setFormData] = useState({
@@ -117,7 +119,7 @@ const CareersPage = () => {
       ],
       color: '#F59E0B',
       secondaryColor: '#EF4444',
-      image: 'https://www.consultancy.nl/illustrations/news/detail/2025-02-03-033733575-De_belangrijkste_trends_in_data___AI_voor_2025.jpg?size=900/514'
+      image: dataAiImage
     }
   ];
 
@@ -290,6 +292,7 @@ const CareersPage = () => {
 
   return (
     <div className="cp-careers-container">
+      <TopNavBar />
       <TwoLineNavbar />
       {/* Progress Scroll Indicator */}
       <div className="cp-scroll-progress">
@@ -326,10 +329,10 @@ const CareersPage = () => {
           </div>
 
           {/* Subtext moved to right side above white card */}
-          <div className="cp-hero-subtext-right">
+          {/* <div className="cp-hero-subtext-right">
             <p>Learn, develop, and gain the skills needed to move forward with confidence.
               Unlock new possibilities and shape a future that aligns with your goals.</p>
-          </div>
+          </div> */}
 
           {/* Bottom Section - Avatar, Stats Container, Image Container, Right Card */}
           <div className="cp-hero-bottom">

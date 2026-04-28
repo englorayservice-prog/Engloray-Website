@@ -29,6 +29,7 @@ import {
     faChevronRight
 } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'motion/react';
+import TopNavbar from '../../../Components/TopNavbar/TopNavbar';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
 import SubFooterOne from '../../../Pages/Sub Pages/subFooterOne/NewFooter1'
 import './CrmPage.css';
@@ -143,6 +144,7 @@ const CrmPage = () => {
 
     return (
         <>
+            <TopNavbar />
             <TwoLineNavbar />
 
             <div className="crm-subpage-container">
@@ -600,7 +602,7 @@ const CrmPage = () => {
                             <span className="crm-section-badge-dark">
                                 <FontAwesomeIcon icon={faLightbulb} /> CRM Intelligence
                             </span>
-                            <h2>Work Smarter,<br /><span>Not Harder</span></h2>
+                            <h2>WORK SMARTER, <span className="crm-gradient-span">Not Harder</span></h2>
                             <motion.p
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
@@ -617,27 +619,27 @@ const CrmPage = () => {
                                     {
                                         image: imgAi,
                                         title: "AI-Powered Follow-Ups",
-                                        desc: "Let the system predict the best time to reach out and draft personalised messages automatically."
+                                        desc: "Let the system predict the best time to reach out and draft personalised messages automatically based on previous interactions. Our AI analyzes customer sentiment and timing to ensure your outreach hits the mark every single time."
                                     },
                                     {
                                         image: imgOmnichannel,
                                         title: "Omnichannel Support",
-                                        desc: "Consolidate emails, calls, chats and social into one unified inbox your team will love."
+                                        desc: "Consolidate emails, calls, chats and social into one unified inbox your team will love. Never lose track of a conversation again as our platform synchronizes all customer touchpoints into a single, cohesive thread for maximum efficiency."
                                     },
                                     {
                                         image: imgAutomation,
                                         title: "Automated Workflows",
-                                        desc: "Trigger tasks automatically based on client behavior without lifting a finger."
+                                        desc: "Trigger tasks automatically based on client behavior without lifting a finger. From automated lead scoring to post-purchase follow-ups, our workflow engine handles the repetitive tasks so your team can focus on closing deals."
                                     },
                                     {
                                         image: imgForecasting,
                                         title: "Predictive Forecasting",
-                                        desc: "See what's coming before it happens. Our models help you plan quarters with confidence."
+                                        desc: "See what's coming before it happens. Our models help you plan quarters with confidence by analyzing historical sales data, market trends, and current pipeline health to provide highly accurate revenue predictions."
                                     },
                                     {
                                         image: imgSmartFunnel,
                                         title: "Smart Deal Funnels",
-                                        desc: "Visualize your entire sales pipeline and instantly identify bottlenecks using AI-driven tracking."
+                                        desc: "Visualize your entire sales pipeline and instantly identify bottlenecks using AI-driven tracking. Get real-time updates on deal progress and receive smart suggestions on how to move stagnant leads forward through the funnel."
                                     }
                                 ].map((item, i) => (
                                     <motion.div

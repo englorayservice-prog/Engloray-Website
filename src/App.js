@@ -88,6 +88,8 @@ import EnglorayShowcase from './Pages/Sub Pages/EnglorayShowcase/EnglorayShowcas
 import RayMartNavbar from "./Components/RayMartNavbar/RayMartNavbar";
 import FooterOne from './Pages/Sub Pages/footerOne/FooterOne';
 import NewFooter1 from './Pages/Sub Pages/subFooterOne/NewFooter1';
+import ScrollToTop from './Components/ScrollToTop/ScrollToTop';
+
 
 
 
@@ -96,8 +98,10 @@ import HomePage from './Pages/HomePage/HomePage';
 function App() {
   return (
     <Router>
+    <ScrollToTop />
     <div className="App">
       <CustomCursor />
+
       <CustomScrollbar />
       <Routes>
         <Route path='/' element={<HomePage />} />

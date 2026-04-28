@@ -51,12 +51,6 @@
 }
 
 .ai-page-hero-title-desc-new {
-    font-size: 47px;
-    font-weight: 700;
-    line-height: 1.1;
-    color: #1a1a1a;
-    /* margin-bottom: 35px; */
-    letter-spacing: -2px;
     position: absolute;
     top: 200px;
     left: 62%;
@@ -66,6 +60,11 @@
     width: 100%;
     min-height: 2000px;
     z-index: 3;
+}
+
+.ai-page-hero-iphone14-img {
+    max-width: 55%;
+    height: 20%;
 }
 
 /* LEFT PANEL */
@@ -84,7 +83,7 @@
     color: #555;
     margin-bottom: 10px;
     text-transform: uppercase;
-    margin-left: -100px;
+    margin-left: 100px;
 }
 
 .ai-page-hero-title-new {
@@ -94,20 +93,21 @@
     color: #1a1a1a;
     margin-bottom: 35px;
     letter-spacing: -2px;
-    margin-left: -60px;
+    margin-left: 80px;
 }
 
 .ai-page-hero-buttons-new {
     display: flex;
     gap: 15px;
     margin-bottom: 40px;
+    margin-left: 60px;
 }
 
 .ai-page-btn-get-started-new {
     background: #3B5BDA;
     color: white;
     font-size: 13px;
-    font-weight: 600;
+    font-weight: 700;
     padding: 14px 28px;
     border-radius: 30px;
     border: none;
@@ -122,15 +122,16 @@
 }
 
 .ai-page-btn-contact-us-new {
-    background: #E0F9B5;
+    background: #BAFF29;
     color: #1a1a1a;
     font-size: 13px;
-    font-weight: 600;
+    font-weight: 700;
     padding: 14px 28px;
     border-radius: 30px;
     border: none;
     cursor: pointer;
     transition: all 0.2s ease;
+    box-shadow: 0 4px 15px rgba(186, 255, 41, 0.3);
 }
 
 .ai-page-btn-contact-us-new:hover {
@@ -145,17 +146,19 @@
     margin-bottom: 40px;
     text-align: left;
     max-width: 500px;
+    margin-left: 60px;
 }
 
 .ai-page-hero-stats-new {
     display: flex;
     gap: 40px;
+    margin-left: 60px;
 }
 
 .ai-page-stat-item-new {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     gap: 12px;
 }
 
@@ -263,6 +266,7 @@
     color: #1a1a1a;
     line-height: 1.1;
     margin-bottom: 0px;
+    text-align: left;
 }
 
 .ai-page-title-play-row {
@@ -501,7 +505,7 @@
 }
 
 /* ============================================================
-   SERVICES SECTION NEW — Exact match to image
+   SERVICES SECTION NEW â€” Exact match to image
    ============================================================ */
 .ai-page-services-section-new {
     padding: 100px 0;
@@ -751,7 +755,7 @@
 }
 
 /* ============================================================
-   ABOUT SECTION NEW — Matching reference image (dark 3-col layout)
+   ABOUT SECTION NEW â€” Matching reference image (dark 3-col layout)
    ============================================================ */
 .ai-page-about-section-new {
     width: 100%;
@@ -769,7 +773,7 @@
     top: 35px;
     left: 50%;
     transform: translateX(-50%);
-    text-align: left;
+    text-align: center;
     z-index: 10;
 }
 
@@ -862,6 +866,7 @@
     display: flex;
     align-items: center;
     gap: 18px;
+    text-align: left;
 }
 
 .ai-page-service-num-new {
@@ -938,7 +943,7 @@
 }
 
 .ai-page-service-sub-list li::before {
-    content: '•';
+    content: 'â€¢';
     position: absolute;
     left: 0;
     color: #BAFF29;
@@ -1283,7 +1288,7 @@
 }
 
 .ai-page-section-header {
-    text-align: left;
+    text-align: center;
     margin-bottom: 60px;
 }
 
@@ -1431,7 +1436,7 @@
 }
 
 .ai-page-feature-item::before {
-    content: '✓';
+    content: 'âœ“';
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -1453,7 +1458,7 @@
 }
 
 .ai-page-detail-item {
-    text-align: left;
+    text-align: center;
 }
 
 .ai-page-detail-label {
@@ -1545,7 +1550,7 @@
     margin-bottom: 25px;
     font-style: italic;
     font-family: 'Aldrich', sans-serif;
-    text-align: left;
+    text-align: center;
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
@@ -1556,7 +1561,7 @@
     flex-direction: column;
     align-items: center;
     gap: 15px;
-    text-align: left;
+    text-align: center;
 }
 
 .ai-page-author-avatar {
@@ -1587,7 +1592,7 @@
 }
 
 .ai-page-author-info {
-    text-align: left;
+    text-align: center;
 }
 
 .ai-page-author-info h4 {
@@ -1936,7 +1941,7 @@
     color: #a0a0a0;
     line-height: 1.6;
     margin-bottom: 40px;
-    text-align: left;
+    text-align: center;
 }
 
 .ai-page-prod-buttons {
@@ -2006,7 +2011,7 @@
     font-size: 13px;
     color: #a0a0a0;
     line-height: 1.6;
-    text-align: left;
+    text-align: center;
 }
 
 .ai-page-prod-right {
@@ -2070,7 +2075,7 @@
 
 .ai-page-timeline-content {
     padding-top: 8px;
-    text-align: left;
+    text-align: center;
 }
 
 .ai-page-timeline-content h3 {
@@ -2092,7 +2097,7 @@
 @media (max-width: 991px) {
     .ai-page-prod-container {
         flex-direction: column;
-        text-align: left;
+        text-align: center;
         gap: 60px;
     }
 
@@ -2102,7 +2107,7 @@
     }
 
     .ai-page-timeline-item {
-        text-align: left;
+        text-align: center;
     }
 
     .ai-page-prod-timeline::before {
@@ -2282,7 +2287,7 @@
     margin-bottom: 24px;
     font-family: 'Poppins', 'Inter', sans-serif;
     letter-spacing: -1px;
-    text-align: left;
+    text-align: center;
 }
 
 .ai-page-el-desc {
@@ -2290,7 +2295,7 @@
     color: #666666;
     line-height: 1.7;
     margin-bottom: 30px;
-    text-align: left;
+    text-align: center;
 }
 
 .ai-page-el-stats {
@@ -2371,7 +2376,7 @@
 
     .ai-page-el-right {
         padding-left: 0;
-        text-align: left;
+        text-align: center;
     }
 
     .ai-page-el-preheading {
@@ -2397,7 +2402,7 @@
 }
 
 .ai-page-mission-header {
-    text-align: left;
+    text-align: center;
     margin-bottom: 80px;
 }
 
@@ -2481,7 +2486,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    text-align: left;
+    text-align: center;
     gap: 2px;
     max-width: calc(100% - 75px);
 }
@@ -2511,7 +2516,7 @@
     line-height: 1.5;
     opacity: 0.85;
     margin: 15px 0;
-    text-align: left;
+    text-align: center;
     font-weight: 400;
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -2698,7 +2703,7 @@
 }
 
 .ai-page-agency-header {
-    text-align: left;
+    text-align: center;
     margin-bottom: 80px;
 }
 
@@ -2819,7 +2824,7 @@
     font-size: 15px;
     line-height: 1.8;
     color: rgba(255, 255, 255, 0.82);
-    text-align: left;
+    text-align: center;
 }
 
 .ai-page-agency-more-btn {
@@ -2851,7 +2856,7 @@
     align-items: center;
     gap: 15px;
     margin-bottom: 18px;
-    text-align: left;
+    text-align: center;
     font-size: 15px;
     font-weight: 700;
     color: #ffffff;
@@ -2927,7 +2932,7 @@
 }
 
 /* ============================================================
-   REFINED TESTIMONIAL SECTION — Infinite Marquee & Mask Fade
+   REFINED TESTIMONIAL SECTION â€” Infinite Marquee & Mask Fade
    ============================================================ */
 .ai-page-testimonial-section {
     width: 100%;
@@ -2939,23 +2944,25 @@
 
 .ai-page-testimonial-container {
     max-width: 100%;
-    text-align: left;
+    text-align: center;
 }
 
 .ai-page-testimonial-label {
-    font-size: 14px;
+    font-size: 24px;
     font-weight: 600;
     color: #e05a5a;
     letter-spacing: 0.5px;
     margin-bottom: 16px;
     margin-left: 45%;
     font-style: italic;
+    text-align: center;
+    margin-right: 45%;
 }
 
 .ai-page-testimonial-heading {
     font-size: 42px;
     font-weight: 700;
-    margin-left: 4%;
+    /* margin-left: 4%; */
     color: #1a1a1a;
     line-height: 1.25;
     margin-bottom: 60px;
@@ -3054,7 +3061,7 @@
     font-size: 14px;
     color: #666666;
     line-height: 1.8;
-    text-align: left;
+    text-align: center;
     margin-bottom: 24px;
     height: 100px;
     display: -webkit-box;
@@ -3099,9 +3106,9 @@
 /* Left Alignment Overrides */
 .ai-page-prod-title,
 .ai-page-prod-desc,
-.ai-page-hero-title-new,
+
 .ai-page-hero-desc-new,
-.ai-page-hero-subtitle-new,
+
 .bi-info-subtitle,
 .bi-el-title,
 .bi-prod-title,
@@ -3148,6 +3155,7 @@
     }
 
     .ai-page-hero-left-new {
+        align-items: center;
         max-width: 100%;
     }
 
@@ -3352,6 +3360,7 @@
     }
 
     .ai-page-hero-buttons-new {
+        justify-content: center;
         flex-direction: column;
         gap: 12px;
     }
@@ -4497,5 +4506,91 @@ img {
 
     .ai-page-landscape-img {
         height: 120px !important;
+    }
+}
+
+@media (min-width: 1440px) {
+
+    .ai-page-el-container {
+        max-width: 1600px;
+        gap: 120px;
+    }
+
+    .ai-page-el-left {
+        height: 680px;
+    }
+
+    .ai-page-el-img-large {
+        width: 360px;
+        height: 580px;
+    }
+
+    .ai-page-el-img-small-top {
+        width: 320px;
+        height: 240px;
+        left: 40px;
+    }
+
+    .ai-page-el-img-small-bottom {
+        width: 330px;
+        height: 250px;
+        left: 60px;
+    }
+
+    .ai-page-el-title {
+        font-size: 54px;
+    }
+
+    .ai-page-el-desc {
+        font-size: 17px;
+    }
+
+    .ai-page-el-preheading {
+        font-size: 42px;
+    }
+
+    .ai-page-el-stat-num {
+        font-size: 28px;
+    }
+
+    .ai-page-el-badge-volunteer {
+        right: 40px;
+    }
+
+    .ai-page-agency-container {
+        max-width: 1600px;
+    }
+
+    .ai-page-agency-grid {
+        gap: 120px;
+    }
+
+    .ai-page-agency-main-title {
+        font-size: 58px;
+    }
+
+    .ai-page-portrait-img {
+        height: 580px;
+    }
+
+    .ai-page-info-desc {
+        font-size: 18px;
+    }
+
+    .ai-page-exp-badge {
+        padding: 40px 55px;
+        left: -40px;
+    }
+
+    .ai-page-exp-number {
+        font-size: 60px;
+    }
+
+    .ai-page-exp-text {
+        font-size: 18px;
+    }
+
+    .ai-page-features-list li {
+        font-size: 18px;
     }
 }

@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 const boostCardsData = [
     {
         title: "SaaS",
-        description: "Cloud-based software solutions that are scalable, secure, and accessible anytime, anywhere.",
+        description: "Cloud-based software solutions that are scalable, secure, and accessible anytime, anywhere, for modern businesses worldwide.",
         bg: "#D6C1E8", // Lilac
         text: "#1F2937"
     },
@@ -23,31 +23,31 @@ const boostCardsData = [
     },
     {
         title: "CRM",
-        description: "Smart customer relationship tools to manage leads, sales, and customer engagement seamlessly.",
+        description: "Smart customer relationship tools to manage leads, sales, and customer engagement seamlessly across multiple channels efficiently.",
         bg: "#08262C", // Dark Teal (Kept existing)
         text: "#FFFFFF"
     },
     {
         title: "Business Suite AI",
-        description: "AI-powered business tools that automate operations, improve decisions, and boost productivity.",
+        description: "AI-powered business tools that automate operations, improve decisions, and boost productivity across industries worldwide",
         bg: "#124A59", // Medium Teal (Kept existing)
         text: "#FFFFFF"
     },
     {
         title: "AI Chatbot",
-        description: "Intelligent conversational assistants that provide instant support and enhance user experience.",
+        description: "Intelligent conversational assistants that provide instant support and enhance user experience across platforms globally.",
         bg: "#F4F8F9", // Frosted Snow (Kept existing)
         text: "#1F2937"
     },
     {
         title: "Job Seeker",
-        description: "A smart platform connecting talent with opportunities through AI-driven job matching.",
+        description: "A smart platform connecting talent with opportunities through AI-driven job matching for faster hiring outcomes.",
         bg: "#292F91", // Previous SaaS Blue (Dark Blue)
         text: "#FFFFFF"
     },
     {
         title: "Learning & Career",
-        description: "Interactive learning systems designed to upskill individuals and accelerate career growth.",
+        description: "Interactive learning systems designed to upskill individuals and accelerate career growth in modern industries.",
         bg: "#4CA8DD", // Previous ERP Blue (Light Blue)
         text: "#FFFFFF"
     }
@@ -70,7 +70,7 @@ const BusinessBoost = () => {
             ];
 
             entranceElements.forEach((selector, i) => {
-                gsap.fromTo(selector, 
+                gsap.fromTo(selector,
                     { opacity: 0, y: 100 },
                     {
                         opacity: 1,
@@ -90,7 +90,7 @@ const BusinessBoost = () => {
             // 2. Infinite vertical scrolling animation using GSAP
             if (scrollTrackRef.current) {
                 const totalHeight = scrollTrackRef.current.scrollHeight / 2; // Half because content is duplicated
-                
+
                 // Vertical scrolling animation
                 gsap.set(scrollTrackRef.current, { y: 0 });
 

@@ -7,6 +7,8 @@ import './OtherSectionCarousel.css';
 import eLearningImage from '../../assets/5559881.png';
 import techGroupImage from '../../assets/7935511.png';
 import fullStackImage from '../../assets/6970537.png';
+// Add new image for RayMart (update this path to your actual image)
+import rayMartImage from '../../assets/ray mart.png'; // Change this to your actual image path
 
 const OtherSectionCarousel = () => {
   const navigate = useNavigate();
@@ -48,6 +50,18 @@ const OtherSectionCarousel = () => {
       imgScale: 1.03,
       imgHoverScale: 1.1,
       imgFit: 'contain'
+    },
+    {
+      id: 4,
+      title: "RayMart",
+      image: rayMartImage, // Make sure to add your image file
+      path: '/raymartPage',
+      description: "Your One-Stop Digital Marketplace for Everything",
+      clickable: true,
+      imgScale: 1.05,
+      imgHoverScale: 1.15,
+      imgFit: 'contain',
+      cardHeight: '380px'
     }
   ];
 
@@ -113,8 +127,8 @@ const OtherSectionCarousel = () => {
 
   return (
 
-    <motion.div 
-      className="compact-carousel-section" 
+    <motion.div
+      className="compact-carousel-section"
       ref={sectionRef}
       initial={{ opacity: 0, y: 60 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -142,7 +156,7 @@ const OtherSectionCarousel = () => {
                     } ${!service.clickable ? 'non-clickable' : ''}`}
                   onClick={() => handleCardClick(service, index)}
                   ref={addToRefs}
-                  style={{ 
+                  style={{
                     cursor: (service.clickable && index === currentIndex) ? 'pointer' : 'default',
                     '--img-scale': service.imgScale || 1,
                     '--img-hover-scale': service.imgHoverScale || 1.1,
@@ -150,8 +164,8 @@ const OtherSectionCarousel = () => {
                   }}
                 >
                   <div className="compact-card-image">
-                    <img 
-                      src={service.image} 
+                    <img
+                      src={service.image}
                       alt={service.title}
                       className="zoom-image"
                       style={{ objectFit: service.imgFit || 'contain' }}

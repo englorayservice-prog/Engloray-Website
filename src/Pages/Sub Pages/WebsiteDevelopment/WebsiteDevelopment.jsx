@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
+import Navbar from '../../../Components/Navbar/Navbar';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import './WebsiteDev.css';
@@ -273,7 +273,7 @@ const WebsiteDevelopment = () => {
     return (
         <div className="web-page-page">
             <TopNavBar />
-            <TwoLineNavbar />
+            <Navbar />
             {/* Hero Section */}
             <section className="web-page-hero-section-new">
                 <div className="web-page-hero-container-new">
@@ -282,6 +282,14 @@ const WebsiteDevelopment = () => {
                     <div className="web-page-hero-left-new">
                         <h4 className="web-page-hero-subtitle-new">WE ARE ENGLORAY</h4>
                         <h1 className="web-page-hero-title-new">{pageData.title}</h1>
+                        <h1 className="web-page-hero-title-desc-new">
+                            <img
+                                src={iphone14Img}
+                                alt="Engloray Branding iPhone Mockup"
+                                className="web-page-hero-iphone14-img"
+                                style={{ maxWidth: "55%", height: "20%" }}
+                            />
+                        </h1>
 
                         <div className="web-page-hero-buttons-new">
                             <button className="web-page-btn-get-started-new" onClick={() => window.open('https://wa.me/916381759909?text=Hello!%20I%20would%20like%20to%20start%20a%20project%20with%20ENGLORAY%20regarding%20Website%20Development.', '_blank')}>GET STARTED</button>
@@ -340,15 +348,6 @@ const WebsiteDevelopment = () => {
                                 <span className="web-page-stat-label-new">Years</span>
                             </div>
                         </div>
-                    </div>
-
-                    {/* CENTER PANEL - iPhone 14 Image */}
-                    <div className="web-page-hero-center-new">
-                        <img
-                            src={iphone14Img}
-                            alt="iPhone 14 Mockup"
-                            className="web-page-hero-iphone14-img"
-                        />
                     </div>
 
                     {/* RIGHT PANEL */}

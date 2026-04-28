@@ -16,6 +16,7 @@ import {
     faChevronDown,
     faChevronUp,
     faClock,
+    faHandsHelping,
     faSearch,
     faComments,
     faEnvelope,
@@ -36,6 +37,7 @@ import {
     faPaintBrush,
     faPencilAlt,
     faPenFancy,
+    faCircleHalfStroke,
     faRulerCombined,
     faStar,
     faSyncAlt,
@@ -68,6 +70,12 @@ import adobeFireflyBg from '../../../assets/adobe_firefly_logo.png';
 import midjourneyBg from '../../../assets/midjourney_logo.png';
 import leonardoAiBg from '../../../assets/leonardo_ai_logo.png';
 import dalleBg from '../../../assets/dalle_logo.png';
+
+const uiuxHero1 = require('../../../assets/10 Easy Paper Crafts for Kids - ALESTER LOJIC.jfif');
+const uiuxHero2 = require('../../../assets/Cartoon boy with paintbrush and palette.jfif');
+const uiuxHero3 = require('../../../assets/Creative Art Activities for Grade 1 and 2 - Educators Technology.jfif');
+const uiuxHero4 = require('../../../assets/download.jfif');
+const uiuxHero5 = require('../../../assets/Personal Touch_ DIY Cards for Grandparents Day.jfif');
 
 const DrawingCourse = () => {
     const [showEnrollment, setShowEnrollment] = useState(false);
@@ -104,11 +112,11 @@ const DrawingCourse = () => {
     });
 
     // Hero Images from user upload
-    const uiuxHero1 = require('../../../assets/10 Easy Paper Crafts for Kids - ALESTER LOJIC.jfif');
-    const uiuxHero2 = require('../../../assets/Cartoon boy with paintbrush and palette.jfif');
-    const uiuxHero3 = require('../../../assets/Creative Art Activities for Grade 1 and 2 - Educators Technology.jfif');
-    const uiuxHero4 = require('../../../assets/download.jfif');
-    const uiuxHero5 = require('../../../assets/Personal Touch_ DIY Cards for Grandparents Day.jfif');
+    // const uiuxHero1 = require('../../../assets/10 Easy Paper Crafts for Kids - ALESTER LOJIC.jfif');
+    // const uiuxHero2 = require('../../../assets/Cartoon boy with paintbrush and palette.jfif');
+    // const uiuxHero3 = require('../../../assets/Creative Art Activities for Grade 1 and 2 - Educators Technology.jfif');
+    // const uiuxHero4 = require('../../../assets/download.jfif');
+    // const uiuxHero5 = require('../../../assets/Personal Touch_ DIY Cards for Grandparents Day.jfif');
 
     // New UI/UX-themed hero gallery images (do not reuse GD assets)
     const uiuxHeroAssets = {
@@ -216,7 +224,7 @@ const DrawingCourse = () => {
         },
         {
             title: "Light and Shadow",
-            icon: <FontAwesomeIcon icon={faRocket} />,
+            icon: <FontAwesomeIcon icon={faCircleHalfStroke} />,
             points: ["Understanding light source", "Creating depth & contrast", "Shading methods"],
             bgColor: "rgba(61, 82, 217, 0.12)",
             iconColor: "#3D52D9"
@@ -353,7 +361,7 @@ const DrawingCourse = () => {
         { icon: <FontAwesomeIcon icon={faPencilAlt} />, title: "Master Colors & Shapes", description: "Hands-on practice with crayons, pastels, and basic shapes to understand color theory easily." },
         { icon: <FontAwesomeIcon icon={faBook} />, title: "Fun Art Projects", description: "Engaging weekly themes and drawing adventures to keep kids excited and actively learning." },
         { icon: <FontAwesomeIcon icon={faMagic} />, title: "Showcase & Feedback", description: "Kids learn to proudly present their artworks and receive positive, encouraging feedback." },
-        { icon: <FontAwesomeIcon icon={faRocket} />, title: "Confidence Building", description: "Careful guidance to help kids express their imagination freely, boosting their creative confidence." }
+        { icon: <FontAwesomeIcon icon={faHandsHelping} />, title: "Confidence Building", description: "Careful guidance to help kids express their imagination freely, boosting their creative confidence." }
     ];
 
     const hexToRgba = (hex, alpha) => {
@@ -1229,10 +1237,11 @@ const DrawingCourse = () => {
                             </div>
                         </div>
                     )}
-                    <SubFooterTwo />
-                    <BackToTop />
                 </div>
+                <SubFooterTwo />
+                <BackToTop />
             </div>
+
         </>
     );
 };

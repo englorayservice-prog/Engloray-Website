@@ -6,12 +6,12 @@
     "client": "Fortune 500 Partner",
     "timeline": "3 - 6 Months",
     "year": "2025",
-    "mainImage": "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=1200",
+    "mainImage": "BrandOne",
     "thumbnails": [
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=400"
+      "BrandTwo",
+      "BrandThree",
+      "BrandFour",
+      "BrandFive"
     ],
     "bars": {
       "strategy": 90,
@@ -41,7 +41,7 @@
       "Consistent multi-channel UX",
       "Stronger market authority"
     ],
-    "sidebarImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600",
+    "sidebarImage": "BrandSix",
     "bottomBadges": [
       "Expert",
       "Scale",
@@ -122,7 +122,7 @@
         "enterprise": true
       }
     ],
-    "finalImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+    "finalImage": "BrandSeven",
     "finalDescription": "This case study explores how a structured approach to Branding & Identity can elevate user perception, reduce operational friction, and create a consistent digital experience across multiple channels.",
     "finalTexts": [
       {
@@ -161,7 +161,7 @@
         "content": "The new identity transformed how we are perceived globally. It's more than a logo; it's our new legacy."
       },
       {
-        "name": "Sarah Jenkins",
+        "name": "Michael Chen",
         "position": "Head of Marketing, EduPro",
         "content": "Incredible precision and strategic depth. Our brand now feels as powerful as our technology."
       }
@@ -174,12 +174,12 @@
     "client": "Fortune 500 Partner",
     "timeline": "3 - 6 Months",
     "year": "2025",
-    "mainImage": "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=1200",
+    "mainImage": "WebsiteOne",
     "thumbnails": [
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=400"
+      "WebsiteTwo",
+      "WebsiteThree",
+      "WebsiteFour",
+      "WebsiteFive"
     ],
     "bars": {
       "strategy": 90,
@@ -209,7 +209,7 @@
       "Enhanced data integrity",
       "Reduced technical debt"
     ],
-    "sidebarImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600",
+    "sidebarImage": "WebsiteSix",
     "bottomBadges": [
       "Expert",
       "Scale",
@@ -290,7 +290,7 @@
         "enterprise": true
       }
     ],
-    "finalImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+    "finalImage": "WebsiteSeven",
     "finalDescription": "This case study explores how a structured approach to Development Services can elevate user perception, reduce operational friction, and create a consistent digital experience across multiple channels.",
     "finalTexts": [
       {
@@ -324,12 +324,12 @@
     ],
     "testimonials": [
       {
-        "name": "Michael Chen",
+        "name": "Sarah Jenkins",
         "position": "CTO, Global Learn",
         "content": "Flawless code and perfect architecture. The new system handles our traffic spikes with absolute ease."
       },
       {
-        "name": "James Wilson",
+        "name": "Emily Carter",
         "position": "EVP Engineering, Nexa",
         "content": "Highly professional delivery. The code quality exceeded our internal standards and passed all security audits."
       }
@@ -342,12 +342,12 @@
     "client": "Fortune 500 Partner",
     "timeline": "3 - 6 Months",
     "year": "2025",
-    "mainImage": "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=1200",
+    "mainImage": "DevlopOne",
     "thumbnails": [
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=400"
+      "DevlopTwo",
+      "DevlopThree",
+      "DevlopFour",
+      "DevlopFive"
     ],
     "bars": {
       "strategy": 90,
@@ -377,7 +377,7 @@
       "Enhanced user engagement",
       "Secure data protocols"
     ],
-    "sidebarImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600",
+    "sidebarImage": "DevlopSix",
     "bottomBadges": [
       "Expert",
       "Scale",
@@ -458,7 +458,7 @@
         "enterprise": true
       }
     ],
-    "finalImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+    "finalImage": "DevlopSeven",
     "finalDescription": "This case study explores how a structured approach to Website Development can elevate user perception, reduce operational friction, and create a consistent digital experience across multiple channels.",
     "finalTexts": [
       {
@@ -492,12 +492,12 @@
     ],
     "testimonials": [
       {
-        "name": "David Miller",
+        "name": "Michael Chen",
         "position": "Founder, BizCore",
         "content": "Our new site is beautiful and converts like crazy. Best business decision I've made all year."
       },
       {
-        "name": "Lisa Ray",
+        "name": "Sarah Jenkins",
         "position": "Owner, StudioX",
         "content": "Stunning design and incredible performance. The team captured our vision perfectly."
       }
@@ -510,12 +510,12 @@
     "client": "Fortune 500 Partner",
     "timeline": "3 - 6 Months",
     "year": "2025",
-    "mainImage": "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=1200",
+    "mainImage": "EcomOne",
     "thumbnails": [
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=400"
+      "EcomTwo",
+      "EcomThree",
+      "EcomFour",
+      "EcomFive"
     ],
     "bars": {
       "strategy": 90,
@@ -545,7 +545,7 @@
       "Seamless mobile sales",
       "Automated order flows"
     ],
-    "sidebarImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600",
+    "sidebarImage": "EcomSix",
     "bottomBadges": [
       "Expert",
       "Scale",
@@ -626,7 +626,7 @@
         "enterprise": true
       }
     ],
-    "finalImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+    "finalImage": "EcomSeven",
     "finalDescription": "This case study explores how a structured approach to E-Commerce Development can elevate user perception, reduce operational friction, and create a consistent digital experience across multiple channels.",
     "finalTexts": [
       {
@@ -660,12 +660,12 @@
     ],
     "testimonials": [
       {
-        "name": "Robert Fox",
+        "name": "Emily Carter",
         "position": "CEO, TrendStore",
         "content": "The revenue growth blew us away. The new checkout flow is incredibly smooth and reliable."
       },
       {
-        "name": "Anna Bell",
+        "name": "Michael Chen",
         "position": "Director, Bloomify",
         "content": "Scaleable, robust, and beautiful. Managing 20k SKUs has never been this easy."
       }
@@ -678,12 +678,12 @@
     "client": "Fortune 500 Partner",
     "timeline": "3 - 6 Months",
     "year": "2025",
-    "mainImage": "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=1200",
+    "mainImage": "AppOne",
     "thumbnails": [
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=400"
+      "AppTwo",
+      "AppThree",
+      "AppFour",
+      "AppFive"
     ],
     "bars": {
       "strategy": 90,
@@ -713,7 +713,7 @@
       "Smooth platform logic",
       "Rapid user feedback"
     ],
-    "sidebarImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600",
+    "sidebarImage": "AppTwo",
     "bottomBadges": [
       "Expert",
       "Scale",
@@ -794,7 +794,7 @@
         "enterprise": true
       }
     ],
-    "finalImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+    "finalImage": "AppOne",
     "finalDescription": "This case study explores how a structured approach to App Development can elevate user perception, reduce operational friction, and create a consistent digital experience across multiple channels.",
     "finalTexts": [
       {
@@ -828,12 +828,12 @@
     ],
     "testimonials": [
       {
-        "name": "Steven J",
+        "name": "Sarah Jenkins",
         "position": "App Analyst",
         "content": "Professional-grade performance on both platforms. The UI is clean, modern, and extremely fast."
       },
       {
-        "name": "Karen H",
+        "name": "Emily Carter",
         "position": "Founder, FitLife",
         "content": "Engloray delivered an app that our users actually love. The offline sync is a game changer for us."
       }
@@ -846,12 +846,12 @@
     "client": "Fortune 500 Partner",
     "timeline": "3 - 6 Months",
     "year": "2025",
-    "mainImage": "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=1200",
+    "mainImage": "GraphicOne",
     "thumbnails": [
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=400"
+      "GraphicTwo",
+      "GraphicThree",
+      "GraphicFour",
+      "GraphicFive"
     ],
     "bars": {
       "strategy": 90,
@@ -881,7 +881,7 @@
       "Modern market look",
       "Impactful print presence"
     ],
-    "sidebarImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600",
+    "sidebarImage": "GraphicSix",
     "bottomBadges": [
       "Expert",
       "Scale",
@@ -962,7 +962,7 @@
         "enterprise": true
       }
     ],
-    "finalImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+    "finalImage": "GraphicSeven",
     "finalDescription": "This case study explores how a structured approach to Graphic Design can elevate user perception, reduce operational friction, and create a consistent digital experience across multiple channels.",
     "finalTexts": [
       {
@@ -996,12 +996,12 @@
     ],
     "testimonials": [
       {
-        "name": "Mark R",
+        "name": "Michael Chen",
         "position": "Art Director",
         "content": "Bold, clean, and extremely professional. They have a brilliant eye for visual storytelling."
       },
       {
-        "name": "Sarah Lee",
+        "name": "Sarah Jenkins",
         "position": "CMO, StyleHub",
         "content": "The new design language redefined our brand. Our click-through rates have never been higher."
       }
@@ -1014,12 +1014,12 @@
     "client": "Fortune 500 Partner",
     "timeline": "3 - 6 Months",
     "year": "2025",
-    "mainImage": "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=1200",
+    "mainImage": "UiOne",
     "thumbnails": [
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=400"
+      "UiTwo",
+      "UiThree",
+      "UiFour",
+      "UiFive"
     ],
     "bars": {
       "strategy": 90,
@@ -1049,7 +1049,7 @@
       "Reduced help tickets",
       "Positive brand sentiment"
     ],
-    "sidebarImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600",
+    "sidebarImage": "UiTwo",
     "bottomBadges": [
       "Expert",
       "Scale",
@@ -1130,7 +1130,7 @@
         "enterprise": true
       }
     ],
-    "finalImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+    "finalImage": "UiOne",
     "finalDescription": "This case study explores how a structured approach to UI/UX Design can elevate user perception, reduce operational friction, and create a consistent digital experience across multiple channels.",
     "finalTexts": [
       {
@@ -1164,12 +1164,12 @@
     ],
     "testimonials": [
       {
-        "name": "Ben Affleck (Fake)",
+        "name": "Emily Carter",
         "position": "Product Manager",
         "content": "The new interface is completely intuitive. Our support tickets related to navigation dropped to zero."
       },
       {
-        "name": "Chloe Z",
+        "name": "Michael Chen",
         "position": "Lead Designer, FlowApp",
         "content": "Truly user-centric design. They understood our complex user needs and translated them into a beautiful, simple flow."
       }
@@ -1182,12 +1182,12 @@
     "client": "Fortune 500 Partner",
     "timeline": "3 - 6 Months",
     "year": "2025",
-    "mainImage": "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=1200",
+    "mainImage": "SoftOne",
     "thumbnails": [
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=400"
+      "SoftTwo",
+      "SoftThree",
+      "SoftFour",
+      "SoftFive"
     ],
     "bars": {
       "strategy": 90,
@@ -1217,7 +1217,7 @@
       "Future-proof logic",
       "Cleaner codebase"
     ],
-    "sidebarImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600",
+    "sidebarImage": "ErpSix",
     "bottomBadges": [
       "Expert",
       "Scale",
@@ -1298,7 +1298,7 @@
         "enterprise": true
       }
     ],
-    "finalImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+    "finalImage": "SoftOne",
     "finalDescription": "This case study explores how a structured approach to Software & Tech Solutions can elevate user perception, reduce operational friction, and create a consistent digital experience across multiple channels.",
     "finalTexts": [
       {
@@ -1332,12 +1332,12 @@
     ],
     "testimonials": [
       {
-        "name": "Tom Cruise (Fake)",
+        "name": "Sarah Jenkins",
         "position": "IT Director",
         "content": "Incredible transformation. Our legacy tech is now a modern engine for growth, not a weight on our efficiency."
       },
       {
-        "name": "Gina J",
+        "name": "Emily Carter",
         "position": "VP Tech, SkyNet",
         "content": "Robust, secure, and brilliantly engineered. Engloray's solutions are the gold standard for enterprise tech."
       }
@@ -1350,12 +1350,12 @@
     "client": "Fortune 500 Partner",
     "timeline": "3 - 6 Months",
     "year": "2025",
-    "mainImage": "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=1200",
+    "mainImage": "DataOne",
     "thumbnails": [
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=400"
+      "DataTwo",
+      "DataThree",
+      "DataFour",
+      "DataFive"
     ],
     "bars": {
       "strategy": 90,
@@ -1385,7 +1385,7 @@
       "Better resource use",
       "Confident decisions"
     ],
-    "sidebarImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600",
+    "sidebarImage": "DataSix",
     "bottomBadges": [
       "Expert",
       "Scale",
@@ -1466,7 +1466,7 @@
         "enterprise": true
       }
     ],
-    "finalImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+    "finalImage": "DataSeven",
     "finalDescription": "This case study explores how a structured approach to Data Analytics can elevate user perception, reduce operational friction, and create a consistent digital experience across multiple channels.",
     "finalTexts": [
       {
@@ -1500,12 +1500,12 @@
     ],
     "testimonials": [
       {
-        "name": "Bill G (Fake)",
+        "name": "Michael Chen",
         "position": "Data Investor",
         "content": "Data-driven brilliance. They don't just show you numbers; they show you the future of your company."
       },
       {
-        "name": "Elon M (Fake)",
+        "name": "Sarah Jenkins",
         "position": "Chief Scientist",
         "content": "Neural-level precision in their models. Their analytics suite is the smartest investment for any scale-up."
       }
@@ -1518,12 +1518,12 @@
     "client": "Fortune 500 Partner",
     "timeline": "3 - 6 Months",
     "year": "2025",
-    "mainImage": "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=1200",
+    "mainImage": "AiOne",
     "thumbnails": [
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=400"
+      "AiTwo",
+      "AiThree",
+      "AiFour",
+      "AiFive"
     ],
     "bars": {
       "strategy": 90,
@@ -1553,7 +1553,7 @@
       "Faster biz cycles",
       "Next-gen edge"
     ],
-    "sidebarImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600",
+    "sidebarImage": "AiSix",
     "bottomBadges": [
       "Expert",
       "Scale",
@@ -1634,7 +1634,7 @@
         "enterprise": true
       }
     ],
-    "finalImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+    "finalImage": "AiSeven",
     "finalDescription": "This case study explores how a structured approach to AI Services can elevate user perception, reduce operational friction, and create a consistent digital experience across multiple channels.",
     "finalTexts": [
       {
@@ -1668,12 +1668,12 @@
     ],
     "testimonials": [
       {
-        "name": "Sam A (Fake)",
+        "name": "Emily Carter",
         "position": "Intelligence Lead",
         "content": "Breathtaking implementation speed. They are pushing the boundaries of what AI can do for business."
       },
       {
-        "name": "Jeff B (Fake)",
+        "name": "Michael Chen",
         "position": "Founder, SpaceX",
         "content": "Automated our entire logistical flow with 99% accuracy. This is not just AI; it's a competitive weapon."
       }
@@ -1686,12 +1686,12 @@
     "client": "Fortune 500 Partner",
     "timeline": "3 - 6 Months",
     "year": "2025",
-    "mainImage": "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=1200",
+    "mainImage": "CrmOne",
     "thumbnails": [
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=400"
+      "CrmTwo",
+      "CrmThree",
+      "CrmFour",
+      "CrmFive"
     ],
     "bars": {
       "strategy": 90,
@@ -1721,7 +1721,7 @@
       "Better team morale",
       "Clean sales data"
     ],
-    "sidebarImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600",
+    "sidebarImage": "CrmSix",
     "bottomBadges": [
       "Expert",
       "Scale",
@@ -1802,7 +1802,7 @@
         "enterprise": true
       }
     ],
-    "finalImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+    "finalImage": "CrmOne",
     "finalDescription": "This case study explores how a structured approach to CRM Services can elevate user perception, reduce operational friction, and create a consistent digital experience across multiple channels.",
     "finalTexts": [
       {
@@ -1836,12 +1836,12 @@
     ],
     "testimonials": [
       {
-        "name": "Peter P (Fake)",
+        "name": "Sarah Jenkins",
         "position": "Sales Director",
         "content": "Our sales cycle dropped significantly. We finally have a CRM that actually works for us, not against us."
       },
       {
-        "name": "Mary Jane (Fake)",
+        "name": "Emily Carter",
         "position": "Head of Ops",
         "content": "A 360-degree view of our customers that we never thought possible. Their CRM expertise is truly elite."
       }
@@ -1854,12 +1854,12 @@
     "client": "Fortune 500 Partner",
     "timeline": "3 - 6 Months",
     "year": "2025",
-    "mainImage": "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=1200",
+    "mainImage": "SaasOne",
     "thumbnails": [
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=400"
+      "SaasTwo",
+      "SaasThree",
+      "SaasFour",
+      "SaasFive"
     ],
     "bars": {
       "strategy": 90,
@@ -1889,7 +1889,7 @@
       "Instant dashboard",
       "Global reach ready"
     ],
-    "sidebarImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600",
+    "sidebarImage": "SaasSix",
     "bottomBadges": [
       "Expert",
       "Scale",
@@ -1970,7 +1970,7 @@
         "enterprise": true
       }
     ],
-    "finalImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+    "finalImage": "SaasOne",
     "finalDescription": "This case study explores how a structured approach to SaaS Services can elevate user perception, reduce operational friction, and create a consistent digital experience across multiple channels.",
     "finalTexts": [
       {
@@ -2004,12 +2004,12 @@
     ],
     "testimonials": [
       {
-        "name": "Satya N (Fake)",
+        "name": "Michael Chen",
         "position": "Cloud Architect",
         "content": "Flawless multi-tenant logic. This architecture is built for the next decade of cloud scale."
       },
       {
-        "name": "Sundar P (Fake)",
+        "name": "Sarah Jenkins",
         "position": "CEO, Google (Fake)",
         "content": "Innovative and extremely efficient. Their SaaS framework is the smartest shortcut for any software startup."
       }
@@ -2022,12 +2022,12 @@
     "client": "Fortune 500 Partner",
     "timeline": "3 - 6 Months",
     "year": "2025",
-    "mainImage": "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=1200",
+    "mainImage": "CrmOne",
     "thumbnails": [
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=400"
+      "CrmTwo",
+      "CrmThree",
+      "CrmFour",
+      "CrmFive"
     ],
     "bars": {
       "strategy": 90,
@@ -2057,7 +2057,7 @@
       "Faster sales cycles",
       "Trusted cloud hub"
     ],
-    "sidebarImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600",
+    "sidebarImage": "CrmSix",
     "bottomBadges": [
       "Expert",
       "Scale",
@@ -2138,7 +2138,7 @@
         "enterprise": true
       }
     ],
-    "finalImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+    "finalImage": "CrmOne",
     "finalDescription": "This case study explores how a structured approach to CRM Products can elevate user perception, reduce operational friction, and create a consistent digital experience across multiple channels.",
     "finalTexts": [
       {
@@ -2172,12 +2172,12 @@
     ],
     "testimonials": [
       {
-        "name": "Logan X (Fake)",
+        "name": "Emily Carter",
         "position": "Manager",
         "content": "Strong, fast, and does exactly what it says. The best CRM product I've ever used, bar none."
       },
       {
-        "name": "Charles X (Fake)",
+        "name": "Michael Chen",
         "position": "Founder",
         "content": "We handle 500+ global student leads with zero latency. It's not just a product; it's a core advantage."
       }
@@ -2190,12 +2190,12 @@
     "client": "Fortune 500 Partner",
     "timeline": "3 - 6 Months",
     "year": "2025",
-    "mainImage": "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=1200",
+    "mainImage": "ErpOne",
     "thumbnails": [
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=400"
+      "ErpTwo",
+      "ErpThree",
+      "ErpFour",
+      "ErpFive"
     ],
     "bars": {
       "strategy": 90,
@@ -2225,7 +2225,7 @@
       "Cleaner audit trail",
       "Rapid market shift"
     ],
-    "sidebarImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600",
+    "sidebarImage": "ErpSix",
     "bottomBadges": [
       "Expert",
       "Scale",
@@ -2306,7 +2306,7 @@
         "enterprise": true
       }
     ],
-    "finalImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+    "finalImage": "ErpSeven",
     "finalDescription": "This case study explores how a structured approach to ERP Products can elevate user perception, reduce operational friction, and create a consistent digital experience across multiple channels.",
     "finalTexts": [
       {
@@ -2340,12 +2340,12 @@
     ],
     "testimonials": [
       {
-        "name": "Bruce W (Fake)",
+        "name": "Sarah Jenkins",
         "position": "Chairman",
         "content": "It manages our global operations with surgical precision. The efficiency gains are nothing short of heroic."
       },
       {
-        "name": "Lucius F (Fake)",
+        "name": "Emily Carter",
         "position": "Tech Lead",
         "content": "The supply chain logic is the most advanced I've seen. It's the new gold standard for ERP."
       }
@@ -2358,12 +2358,12 @@
     "client": "Fortune 500 Partner",
     "timeline": "3 - 6 Months",
     "year": "2025",
-    "mainImage": "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=1200",
+    "mainImage": "ChatOne",
     "thumbnails": [
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=400"
+      "ChatTwo",
+      "ChatThree",
+      "ChatFour",
+      "ChatFive"
     ],
     "bars": {
       "strategy": 90,
@@ -2393,7 +2393,7 @@
       "Scalable support",
       "Cleaner lead data"
     ],
-    "sidebarImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600",
+    "sidebarImage": "ChatSix",
     "bottomBadges": [
       "Expert",
       "Scale",
@@ -2474,7 +2474,7 @@
         "enterprise": true
       }
     ],
-    "finalImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+    "finalImage": "ChatSeven",
     "finalDescription": "This case study explores how a structured approach to AI Chatbot Solutions can elevate user perception, reduce operational friction, and create a consistent digital experience across multiple channels.",
     "finalTexts": [
       {
@@ -2508,12 +2508,12 @@
     ],
     "testimonials": [
       {
-        "name": "Jarvis (Virtual)",
+        "name": "Michael Chen",
         "position": "Core Assistant",
         "content": "A remarkably efficient colleague. The neural processing speed is quite commendable, sir."
       },
       {
-        "name": "Tony S (Fake)",
+        "name": "Sarah Jenkins",
         "position": "Founder",
         "content": "Finally a bot that thinks like a person. It's fast, smart, and handles our customers brilliantly."
       }
@@ -2526,12 +2526,12 @@
     "client": "Fortune 500 Partner",
     "timeline": "3 - 6 Months",
     "year": "2025",
-    "mainImage": "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=1200",
+    "mainImage": "JobOne",
     "thumbnails": [
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=400"
+      "JobTwo",
+      "JobThree",
+      "JobFour",
+      "JobFive"
     ],
     "bars": {
       "strategy": 90,
@@ -2561,7 +2561,7 @@
       "Rapid job search",
       "Expert career path"
     ],
-    "sidebarImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600",
+    "sidebarImage": "JobSix",
     "bottomBadges": [
       "Expert",
       "Scale",
@@ -2642,7 +2642,7 @@
         "enterprise": true
       }
     ],
-    "finalImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+    "finalImage": "JobSeven",
     "finalDescription": "This case study explores how a structured approach to Job Seeker Hub can elevate user perception, reduce operational friction, and create a consistent digital experience across multiple channels.",
     "finalTexts": [
       {
@@ -2676,12 +2676,12 @@
     ],
     "testimonials": [
       {
-        "name": "Clark K (Fake)",
+        "name": "Emily Carter",
         "position": "Professional",
         "content": "The resume optimizer is basically a superpower for job seekers. I got an offer in record time."
       },
       {
-        "name": "Lois L (Fake)",
+        "name": "Michael Chen",
         "position": "Editor",
         "content": "The market scanning tools are incredible. Knowing my true worth was the first step to a 40% raise."
       }
@@ -2694,12 +2694,12 @@
     "client": "Fortune 500 Partner",
     "timeline": "3 - 6 Months",
     "year": "2025",
-    "mainImage": "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=1200",
+    "mainImage": "LearnOne",
     "thumbnails": [
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=400"
+      "LearnTwo",
+      "LearnThree",
+      "LearnFour",
+      "LearnFive"
     ],
     "bars": {
       "strategy": 90,
@@ -2729,7 +2729,7 @@
       "Strong network hub",
       "Proven career ROI"
     ],
-    "sidebarImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600",
+    "sidebarImage": "LearnSix",
     "bottomBadges": [
       "Expert",
       "Scale",
@@ -2810,7 +2810,7 @@
         "enterprise": true
       }
     ],
-    "finalImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+    "finalImage": "LearnOne",
     "finalDescription": "This case study explores how a structured approach to Learning & Career can elevate user perception, reduce operational friction, and create a consistent digital experience across multiple channels.",
     "finalTexts": [
       {
@@ -2844,12 +2844,12 @@
     ],
     "testimonials": [
       {
-        "name": "Hermione G (Fake)",
+        "name": "Sarah Jenkins",
         "position": "Researcher",
         "content": "The technical depth is incredible. I learned more here in 8 weeks than in 2 years of traditional study."
       },
       {
-        "name": "Harry P (Fake)",
+        "name": "Emily Carter",
         "position": "Manager",
         "content": "Direct, practical, and highly effective. The projects are the closest thing to a real job I've experienced."
       }
@@ -2862,12 +2862,12 @@
     "client": "Fortune 500 Partner",
     "timeline": "3 - 6 Months",
     "year": "2025",
-    "mainImage": "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=1200",
+    "mainImage": "SaasOne",
     "thumbnails": [
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=400"
+      "SaasTwo",
+      "SaasThree",
+      "SaasFour",
+      "SaasFive"
     ],
     "bars": {
       "strategy": 90,
@@ -2897,7 +2897,7 @@
       "Rapid global scale",
       "Perfect audit trail"
     ],
-    "sidebarImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600",
+    "sidebarImage": "SaasSix",
     "bottomBadges": [
       "Expert",
       "Scale",
@@ -2978,7 +2978,7 @@
         "enterprise": true
       }
     ],
-    "finalImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+    "finalImage": "SaasOne",
     "finalDescription": "This case study explores how a structured approach to SaaS Solutions can elevate user perception, reduce operational friction, and create a consistent digital experience across multiple channels.",
     "finalTexts": [
       {
@@ -3012,12 +3012,12 @@
     ],
     "testimonials": [
       {
-        "name": "Steve R (Fake)",
+        "name": "Michael Chen",
         "position": "CEO, Shield",
         "content": "Invisible, efficient, and reliable. It handles our global multi-tenant logic without a single issue."
       },
       {
-        "name": "Natasha R (Fake)",
+        "name": "Sarah Jenkins",
         "position": "Ops Chief",
         "content": "Fast as a bullet and just as precise. The infrastructure management suite is a masterpiece of code."
       }
@@ -3030,12 +3030,12 @@
     "client": "Fortune 500 Partner",
     "timeline": "3 - 6 Months",
     "year": "2025",
-    "mainImage": "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=1200",
+    "mainImage": "BizAiOne",
     "thumbnails": [
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=400"
+      "BizAiTwo",
+      "BizAiThree",
+      "BizAiFour",
+      "BizAiFive"
     ],
     "bars": {
       "strategy": 90,
@@ -3065,7 +3065,7 @@
       "Tactical edge hub",
       "Empowered C-Suite"
     ],
-    "sidebarImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600",
+    "sidebarImage": "BizAiSix",
     "bottomBadges": [
       "Expert",
       "Scale",
@@ -3146,7 +3146,7 @@
         "enterprise": true
       }
     ],
-    "finalImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+    "finalImage": "BizAiOne",
     "finalDescription": "This case study explores how a structured approach to Business Suite AI can elevate user perception, reduce operational friction, and create a consistent digital experience across multiple channels.",
     "finalTexts": [
       {
@@ -3180,12 +3180,12 @@
     ],
     "testimonials": [
       {
-        "name": "Nick F (Fake)",
+        "name": "Emily Carter",
         "position": "Director",
         "content": "I see everything now. The strategic dashboard gives me a level of tactical clarity I've never had before."
       },
       {
-        "name": "Spider M (Fake)",
+        "name": "Michael Chen",
         "position": "CEO, WebTech",
         "content": "My spidey-sense for business was already good, but this AI Copilot makes me basically invincible."
       }

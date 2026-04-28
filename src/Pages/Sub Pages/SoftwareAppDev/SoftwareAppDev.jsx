@@ -1,5 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
-import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
+import React, { useState } from 'react';
+
+import Navbar from '../../../Components/Navbar/Navbar';
+import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import './SoftwareAppDev.css';
@@ -14,8 +16,7 @@ import avatarThree from '../../../assets/cartoon_female_1.png';
 import avatarFour from '../../../assets/cartoon_female_2.png';
 import avatarFive from '../../../assets/cartoon_male_2.png';
 import avatarSix from '../../../assets/cartoon_female_3.png';
-import avatarSeven from '../../../assets/cartoon_male_3.png';
-import avatarEight from '../../../assets/female_avatar.png';
+
 
 
 
@@ -88,32 +89,8 @@ const SoftwareAppDev = () => {
         }
     ];
 
-    const internshipPrograms = [
-        {
-            id: 1,
-            name: "Full-Stack Development",
-            esc: "FWD101",
-            duration: "12 Weeks",
-            description: "Master modern web development with React, Node.js, and databases. Build production-ready web applications from scratch.",
-            features: ["React & Redux", "Node.js & Express", "MongoDB & SQL", "RESTful APIs", "Authentication", "Cloud Deployment"]
-        },
-        {
-            id: 2,
-            name: "Mobile App Development",
-            esc: "MAD201",
-            duration: "10 Weeks",
-            description: "Build cross-platform mobile applications with React Native. Master native device features and app store publishing.",
-            features: ["React Native", "Expo Ecosystem", "Firebase Auth", "State Management", "Native APIs", "Store Deployment"]
-        },
-        {
-            id: 3,
-            name: "Backend & API Architecture",
-            esc: "BAD301",
-            duration: "8 Weeks",
-            description: "Dive deep into server-side programming and complex API design. Learn to build scalable, high-performance backend systems.",
-            features: ["Node.js Advanced", "Python/Django", "GraphQL Design", "Microservices", "Redis Caching", "Docker/K8s"]
-        }
-    ];
+
+
 
     const testimonials = [
         {
@@ -162,7 +139,8 @@ const SoftwareAppDev = () => {
                 <meta property="og:title" content="Software & App Development | Engloray" />
             </Helmet>
 
-            <TwoLineNavbar />
+            <TopNavBar />
+            <Navbar />
 
             {/* Hero Section */}
             <section className="sad-hero-section-new">
@@ -170,6 +148,9 @@ const SoftwareAppDev = () => {
                     <div className="sad-hero-left-new">
                         <h4 className="sad-hero-subtitle-new">WE ARE ENGLORAY</h4>
                         <h1 className="sad-hero-title-new">SOFTWARE & APPS</h1>
+                        <h1 className="sad-hero-title-desc-new">
+                            <img src={iphone14Img} alt="Software Mockup" className="sad-hero-iphone14-img" style={{ maxWidth: "55%", height: "20%" }} />
+                        </h1>
 
                         <div className="sad-hero-buttons-new">
                             <button className="sad-btn-get-started-new" onClick={() => window.open('https://wa.me/916381759909?text=Hello!%20I%20would%20like%20to%20start%20a%20project%20with%20ENGLORAY%20regarding%20Software%20%26%20App%20Development.', '_blank')}>GET STARTED</button>
@@ -183,21 +164,21 @@ const SoftwareAppDev = () => {
                         <div className="sad-hero-stats-new">
                             <div className="sad-stat-item-new">
                                 <div className="sad-stat-circle-new">
-                                    <svg viewBox="0 0 36 36"><path className="sad-circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" /><path className="sad-circle-val sad-circle-indigo" strokeDasharray="92, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" /></svg>
+                                    <svg viewBox="0 0 36 36"><path className="sad-circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" /><path className="sad-circle-val sad-circle-blue" strokeDasharray="92, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" /></svg>
                                     <span className="sad-stat-number-new">120<span className="sad-stat-dash">+</span></span>
                                 </div>
                                 <span className="sad-stat-label-new">Deployed</span>
                             </div>
                             <div className="sad-stat-item-new">
                                 <div className="sad-stat-circle-new">
-                                    <svg viewBox="0 0 36 36"><path className="sad-circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" /><path className="sad-circle-val sad-circle-violet" strokeDasharray="88, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" /></svg>
+                                    <svg viewBox="0 0 36 36"><path className="sad-circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" /><path className="sad-circle-val sad-circle-green" strokeDasharray="88, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" /></svg>
                                     <span className="sad-stat-number-new">50<span className="sad-stat-dash">+</span></span>
                                 </div>
                                 <span className="sad-stat-label-new">Engineers</span>
                             </div>
                             <div className="sad-stat-item-new">
                                 <div className="sad-stat-circle-new">
-                                    <svg viewBox="0 0 36 36"><path className="sad-circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" /><path className="sad-circle-val sad-circle-blue" strokeDasharray="98, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" /></svg>
+                                    <svg viewBox="0 0 36 36"><path className="sad-circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" /><path className="sad-circle-val sad-circle-gray" strokeDasharray="98, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" /></svg>
                                     <span className="sad-stat-number-new">99<span className="sad-stat-dash">%</span></span>
                                 </div>
                                 <span className="sad-stat-label-new">Uptime</span>
@@ -207,17 +188,12 @@ const SoftwareAppDev = () => {
                         <div className="sad-hero-stats-new" style={{ marginTop: '30px' }}>
                             <div className="sad-stat-item-new">
                                 <div className="sad-stat-circle-new">
-                                    <svg viewBox="0 0 36 36"><path className="sad-circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" /><path className="sad-circle-val sad-circle-indigo" strokeDasharray="75, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" /></svg>
+                                    <svg viewBox="0 0 36 36"><path className="sad-circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" /><path className="sad-circle-val sad-circle-blue" strokeDasharray="75, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" /></svg>
                                     <span className="sad-stat-number-new">2018</span>
                                 </div>
                                 <span className="sad-stat-label-new">Established</span>
                             </div>
                         </div>
-                    </div>
-
-                    {/* CENTER PANEL - iPhone 14 Image - ADD THIS MISSING DIV */}
-                    <div className="sad-hero-center-new">
-                        <img src={iphone14Img} alt="Software Mockup" className="sad-hero-iphone14-img" />
                     </div>
 
                     <div className="sad-hero-right-new">
@@ -255,9 +231,9 @@ const SoftwareAppDev = () => {
                                 </div>
                             </div>
                             <div className="sad-perf-chart-new">
-                                <div className="sad-chart-col-new"><div className="sad-bar-indigo-new" style={{ height: '40%' }}></div></div>
+                                <div className="sad-chart-col-new"><div className="sad-bar-green-new" style={{ height: '40%' }}></div></div>
                                 <div className="sad-chart-col-new"><div className="sad-bar-gray-new" style={{ height: '70%' }}></div></div>
-                                <div className="sad-chart-col-new"><div className="sad-bar-violet-new" style={{ height: '90%' }}></div></div>
+                                <div className="sad-chart-col-new"><div className="sad-bar-blue-new" style={{ height: '90%' }}></div></div>
                             </div>
                         </div>
                     </div>
@@ -334,64 +310,54 @@ const SoftwareAppDev = () => {
             <section className="sad-elevate-section">
                 <div className="sad-el-container">
                     <div className="sad-el-left">
-                        <div className="sad-el-img-grid">
-                            <div className="sad-el-img-item sad-el-main">
-                                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Software Engineering" />
-                                <div className="sad-el-badge-volunteer">
-                                    <span className="sad-el-vol-title">Core Dev Team</span>
-                                    <div className="sad-el-vol-avatars">
-                                        <img src={avatarTwo} alt="s1" />
-                                        <img src={avatarThree} alt="s2" />
-                                        <img src={avatarFour} alt="s3" />
-                                        <div className="sad-el-vol-count">+50</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="sad-el-img-item sad-el-top-left">
-                                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Deep Coding" />
-                                <div className="sad-el-float-icon">
-                                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
-                                </div>
-                            </div>
-                            <div className="sad-el-img-item sad-el-bottom-left">
-                                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="System Planning" />
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Software Engineering" className="sad-el-img-large" />
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Deep Coding" className="sad-el-img-small-top" />
+                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="System Planning" className="sad-el-img-small-bottom" />
+
+                        <div className="sad-el-badge-volunteer">
+                            <span className="sad-el-vol-title">Core Dev Team</span>
+                            <div className="sad-el-vol-avatars">
+                                <img src={avatarTwo} alt="s1" />
+                                <img src={avatarThree} alt="s2" />
+                                <img src={avatarFour} alt="s3" />
+                                <div className="sad-el-vol-count">+50</div>
                             </div>
                         </div>
                     </div>
-
                     <div className="sad-el-right">
-                        <div className="sad-el-preheading">— About Us</div>
+                        <div className="sad-el-preheading">About Us</div>
                         <h2 className="sad-el-title">Powerful Software<br />Designed for Scale</h2>
                         <p className="sad-el-desc">
                             We engineer robust software solutions tailored to solve your most complex business challenges. Our focus is on reliability, efficiency, and future-proof technology.
                         </p>
 
-                        <div className="sad-el-stats-new">
-                            <div className="sad-el-stat-card">
-                                <div className="sad-el-stat-icon-wrap">
-                                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                        <div className="sad-el-stats">
+                            <div className="sad-el-stat-box">
+                                <div className="sad-el-stat-icon">
+                                    <svg viewBox="0 0 24 24" width="32" height="32" stroke="#5b58ee" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M12 20V10"></path><path d="M18 20V4"></path><path d="M6 20v-4"></path></svg>
                                 </div>
-                                <div className="sad-el-stat-info">
-                                    <span className="sad-el-stat-val">80+</span>
-                                    <span className="sad-el-stat-txt">Custom Systems</span>
+                                <div className="sad-el-stat-content">
+                                    <span className="sad-el-stat-num">80+</span>
+                                    <span className="sad-el-stat-label">Custom Systems</span>
                                 </div>
                             </div>
-                            <div className="sad-el-stat-card">
-                                <div className="sad-el-stat-icon-wrap">
-                                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+
+                            <div className="sad-el-stat-box">
+                                <div className="sad-el-stat-icon">
+                                    <svg viewBox="0 0 24 24" width="32" height="32" stroke="#ffc107" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
                                 </div>
-                                <div className="sad-el-stat-info">
-                                    <span className="sad-el-stat-val">5+ Years</span>
-                                    <span className="sad-el-stat-txt">Software Engineering</span>
+                                <div className="sad-el-stat-content">
+                                    <span className="sad-el-stat-num">5+ Years</span>
+                                    <span className="sad-el-stat-label">Software Engineering</span>
                                 </div>
                             </div>
                         </div>
 
-                        <p className="sad-el-sub-desc">
+                        <p className="sad-el-desc">
                             From enterprise-grade tools to custom software integrations, our team delivers high-quality code that empowers your business to reach and sustain new heights.
                         </p>
 
-                        <button className="sad-el-btn-discover" onClick={() => window.open('https://wa.me/916381759909?text=Hello!%20I%20have%20a%20Software%20Development%20inquiry.', '_blank')}>Talk to Tech Lead</button>
+                        <button className="sad-el-btn" onClick={() => window.open('https://wa.me/916381759909?text=Hello!%20I%20have%20a%20Software%20Development%20inquiry.', '_blank')}>Talk to Tech Lead</button>
                     </div>
                 </div>
             </section>
@@ -453,74 +419,68 @@ const SoftwareAppDev = () => {
                 </div>
             </section>
 
-            {/* Mission Section - Redesigned as Fan Cards */}
+            {/* Mission Section */}
             <section className="sad-mission-section">
-                <div className="sad-mission-container">
-                    <h2 className="sad-mission-title-new">
-                        OUR MISSION IS TO MAKE YOUR <span className="sad-mission-highlight-box">SOFTWARE</span><br />
-                        BETTER THROUGH TECHNOLOGY
-                    </h2>
+                <div className="sad-container">
+                    <div className="sad-mission-header">
+                        <h2 className="sad-mission-title">
+                            OUR MISSION IS TO MAKE YOUR <span className="sad-mission-highlight">SOFTWARE</span><br />
+                            BETTER THROUGH TECHNOLOGY
+                        </h2>
+                    </div>
 
-                    <div className="sad-mission-cards-wrapper">
-                        <div className="sad-mission-cards-fan">
-                            {[
-                                { id: 1, title: 'CUSTOM SOFTWARE', subtitle: 'Scalable Solutions', desc: 'Building tailored software solutions that address your unique business needs with high scalability, performance, and enterprise-grade security for long-term reliability.', rating: '4.9', color: '#6A26E1', icon: <svg viewBox="0 0 24 24" width="64" height="64" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>, rot: -18, transY: 50, left: '15%' },
-                                { id: 2, title: 'WEB DEVELOPMENT', subtitle: 'High Performance', desc: 'Designing and developing fast, responsive, and high-performance web applications using modern frameworks and cutting-edge digital technologies for maximum impact.', rating: '4.8', color: '#F14949', icon: <svg viewBox="0 0 24 24" width="64" height="64" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>, rot: -12, transY: 25, left: '26%' },
-                                { id: 3, title: 'MOBILE APPS', subtitle: 'Cross-platform', desc: 'Creating powerful native and cross-platform mobile applications for both iOS and Android that deliver premium user experiences and high performance at scale.', rating: '4.7', color: '#F7931E', icon: <svg viewBox="0 0 24 24" width="64" height="64" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>, rot: -6, transY: 8, left: '38%' },
-                                { id: 4, title: 'API INTEGRATION', subtitle: 'Seamless Connect', desc: 'Developing and integrating robust, scalable APIs to ensure seamless communication between your diverse digital systems and third-party services globally.', rating: '5.0', color: '#36B0E3', icon: <svg viewBox="0 0 24 24" width="64" height="64" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>, rot: 0, transY: 0, left: '50%' },
-                                { id: 5, title: 'CLOUD SOLUTIONS', subtitle: 'Secure & Global', desc: 'Leveraging world-class cloud platforms to build secure, global, and highly available infrastructure for your applications and complex business data.', rating: '4.7', color: '#38C172', icon: <svg viewBox="0 0 24 24" width="64" height="64" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>, rot: 6, transY: 8, left: '62%' },
-                                { id: 6, title: 'DEV OPS', subtitle: 'Fast Deployment', desc: 'Implementing highly efficient CI/CD pipelines and automated testing to ensure rapid, reliable, and consistent software delivery across your entire pipeline.', rating: '4.9', color: '#4F5EDB', rot: 12, transY: 25, left: '74%', icon: <svg viewBox="0 0 24 24" width="64" height="64" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M22 12c0 6-4.39 10-10 10S2 18 2 12 6.39 2 12 2s10 4 10 10z"></path><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path><path d="M2 12h20"></path></svg> },
-                                { id: 7, title: 'MAINTENANCE', subtitle: 'Ongoing Support', desc: 'Providing dedicated maintenance, proactive security monitoring, and regular updates to keep your software running smoothly and efficiently for years to come.', rating: '4.6', color: '#F06292', icon: <svg viewBox="0 0 24 24" width="64" height="64" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>, rot: 18, transY: 50, left: '85%' }
-                            ].map((card) => (
-                                <div
-                                    className="sad-mission-card-new"
-                                    key={card.id}
-                                    style={{
-                                        '--card-color': card.color,
-                                        '--card-rot': `${card.rot}deg`,
-                                        '--card-transY': `${card.transY}px`,
-                                        '--card-left': card.left
-                                    }}
-                                >
-                                    <div className="sad-mission-card-inner">
-                                        <div className="sad-mission-card-header">
-                                            <div className="sad-mission-card-titles">
-                                                <h3 className="sad-mission-card-title">{card.title}</h3>
-                                                <span className="sad-mission-card-subtitle">{card.subtitle}</span>
-                                            </div>
-                                            <div className="sad-mission-card-rating">
-                                                <span>⭐</span> {card.rating}
-                                            </div>
+                    <div className="sad-services-grid">
+                        {[
+                            { id: 1, title: 'Custom', title2: 'Software', subtitle: 'Scalable Solutions', desc: 'Building tailored software solutions that address your unique business needs with high scalability, performance, and enterprise-grade security for long-term reliability.', rating: '4.9', variant: '1', icon: <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg> },
+                            { id: 2, title: 'Web', title2: 'Dev', subtitle: 'High Performance', desc: 'Designing and developing fast, responsive, and high-performance web applications using modern frameworks and cutting-edge digital technologies for maximum impact.', rating: '4.8', variant: '2', icon: <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg> },
+                            { id: 3, title: 'Mobile', title2: 'Apps', subtitle: 'Cross-platform', desc: 'Creating powerful native and cross-platform mobile applications for both iOS and Android that deliver premium user experiences and high performance at scale.', rating: '4.7', variant: '7', icon: <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg> },
+                            { id: 4, title: 'API', title2: 'Integration', subtitle: 'Seamless Connect', desc: 'Developing and integrating robust, scalable APIs to ensure seamless communication between your diverse digital systems and third-party services globally.', rating: '5.0', variant: '3', icon: <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg> },
+                            { id: 5, title: 'Cloud', title2: 'Solutions', subtitle: 'Secure & Global', desc: 'Leveraging world-class cloud platforms to build secure, global, and highly available infrastructure for your applications and complex business data.', rating: '4.7', variant: '4', icon: <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg> },
+                            { id: 6, title: 'Dev', title2: 'Ops', subtitle: 'Fast Deployment', desc: 'Implementing highly efficient CI/CD pipelines and automated testing to ensure rapid, reliable, and consistent software delivery across your entire pipeline.', rating: '4.9', variant: '5', icon: <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 12c0 6-4.39 10-10 10S2 18 2 12 6.39 2 12 2s10 4 10 10z"></path><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path><path d="M2 12h20"></path></svg> },
+                            { id: 7, title: 'Maintenance', title2: 'Support', subtitle: 'Ongoing Support', desc: 'Providing dedicated maintenance, proactive security monitoring, and regular updates to keep your software running smoothly and efficiently for years to come.', rating: '4.6', variant: '6', icon: <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg> }
+                        ].map((card) => (
+                            <div className={`sad-page-service-card sad-card-variant-${card.variant}`} key={card.id}>
+                                <div className="sad-page-card-header">
+                                    <div className="sad-card-title-group">
+                                        <h3 className="sad-page-service-card-title">{card.title}<br />{card.title2}</h3>
+                                        <p className="sad-page-service-card-subtitle">{card.subtitle}</p>
+                                    </div>
+                                    <div className="sad-page-card-badge">
+                                        <div className="sad-page-badge-icon-bg">
+                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
                                         </div>
-
-                                        <p className="sad-mission-card-desc">{card.desc}</p>
-
-                                        <div className="sad-mission-card-icon-bottom">
-                                            <span className="sad-card-icon">{card.icon}</span>
-                                        </div>
+                                        <span className="sad-page-badge-rating">{card.rating}</span>
                                     </div>
                                 </div>
-                            ))}
-                        </div>
+                                <p className="sad-page-service-card-desc">{card.desc}</p>
+                                <div className="sad-page-service-icon-wrap">
+                                    {card.icon}
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
 
             {/* Agency Section - Software Dev Focus */}
+            {/* BUSINESS AGENCY SECTION */}
             <section className="sad-agency-section">
                 <div className="sad-agency-container">
-                    <h2 className="sad-agency-main-title">
-                        WE ARE A PROFESSIONAL <br />
-                        <span className="sad-agency-highlight">DEVELOPMENT AGENCY</span>
-                    </h2>
+                    <div className="sad-agency-header">
+                        <h2 className="sad-agency-main-title">
+                            WE ARE A PROFESSIONAL<br />
+                            <span className="sad-lime-highlight">DEVELOPMENT AGENCY</span>
+                        </h2>
+                    </div>
 
                     <div className="sad-agency-grid">
                         <div className="sad-agency-left">
                             <div className="sad-agency-image-card">
+                                <div className="sad-dot-pattern-circle"></div>
                                 <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Dev Team" className="sad-portrait-img" />
-                                <div className="sad-agency-experience-badge">
-                                    <span className="sad-exp-num">5+</span>
-                                    <span className="sad-exp-text">YEARS OF <br /> EXPERIENCE</span>
+                                <div className="sad-exp-badge">
+                                    <span className="sad-exp-number">5+</span>
+                                    <span className="sad-exp-text">Years of<br />Experience</span>
                                 </div>
                             </div>
                         </div>
@@ -528,13 +488,13 @@ const SoftwareAppDev = () => {
                         <div className="sad-agency-right">
                             <div className="sad-agency-info-row">
                                 <div className="sad-info-col">
-                                    <h4 className="sad-agency-small-title">WHO WE ARE</h4>
-                                    <p className="sad-agency-desc">
+                                    <p className="sad-info-subtitle">WHO WE ARE</p>
+                                    <p className="sad-info-desc">
                                         We are experts in building high-performance, scalable software solutions. We focus on clean code, modular architecture, and modern tech stacks to ensure your digital products stay competitive and resilient.
                                     </p>
                                 </div>
-                                <div className="sad-info-features">
-                                    <h4 className="sad-agency-small-title">WHY CHOOSE US</h4>
+                                <div className="sad-info-col">
+                                    <p className="sad-info-subtitle">WHY CHOOSE US</p>
                                     <ul className="sad-agency-list">
                                         <li><span className="sad-check-icon">✓</span> Top Guaranteed Quality</li>
                                         <li><span className="sad-check-icon">✓</span> Team of Senior Developers</li>
@@ -545,6 +505,7 @@ const SoftwareAppDev = () => {
                             </div>
 
                             <div className="sad-agency-bottom-img-wrap">
+                                <div className="sad-dot-pattern-square"></div>
                                 <img src={sadDashboardImg} alt="Software Analytics" className="sad-landscape-img" />
                             </div>
                         </div>
@@ -553,30 +514,35 @@ const SoftwareAppDev = () => {
             </section>
 
             {/* Testimonials */}
-            <section className="sad-reviews-section">
-                <div className="sad-container">
-                    <span className="sad-testimonial-badge">Testimonial</span>
-                    <h2 className="sad-reviews-title">WE CARE ABOUT OUR CUSTOMERS EXPERIENCE TOO</h2>
-                    <div className="sad-reviews-slider-box">
-                        <div className="sad-reviews-slider">
-                            <div className="sad-review-track">
-                                {[...testimonials, ...testimonials].map((review, index) => (
-                                    <div className="sad-review-card" key={`${review.id}-${index}`}>
-                                        <div className="sad-review-avatar-container">
-                                            <img src={review.avatar} alt={review.clientName} />
-                                        </div>
-                                        <h3 className="sad-client-name">{review.clientName}</h3>
-                                        <span className="sad-client-role">{review.role}</span>
-                                        <p className="sad-review-text">{review.text}</p>
-                                        <div className="sad-review-stars">
-                                            {[...Array(review.stars)].map((_, i) => (
-                                                <span key={i}>★</span>
-                                            ))}
-                                        </div>
+            {/* Testimonials */}
+            <section className="sad-testimonial-section">
+                <div className="sad-testimonial-container">
+                    <p className="sad-testimonial-label">Testimonial</p>
+                    <h2 className="sad-testimonial-heading">We Care About Our Customers<br />Experience Too</h2>
+
+                    <div className="sad-testimonial-scroll-wrapper">
+                        <div className="sad-testimonial-scroll-mask-left"></div>
+                        <div className="sad-testimonial-grid-horizontal">
+                            {[...testimonials, ...testimonials].map((review, index) => (
+                                <div className="sad-testimonial-card-horizontal" key={`${review.id}-${index}`}>
+                                    <div className="sad-testimonial-avatar-wrap">
+                                        <img src={review.avatar} alt={review.clientName} className="sad-testimonial-avatar" />
                                     </div>
-                                ))}
-                            </div>
+                                    <h4 className="sad-testimonial-name">{review.clientName}</h4>
+                                    <p className="sad-testimonial-role">{review.role}</p>
+                                    <p className="sad-testimonial-text">{review.text}</p>
+                                    <div className="sad-testimonial-stars">
+                                        {Array.from({ length: review.stars }).map((_, i) => (
+                                            <span key={i} className="sad-star filled">★</span>
+                                        ))}
+                                        {Array.from({ length: 5 - review.stars }).map((_, i) => (
+                                            <span key={i} className="sad-star">★</span>
+                                        ))}
+                                    </div>
+                                </div>
+                            ))}
                         </div>
+                        <div className="sad-testimonial-scroll-mask-right"></div>
                     </div>
                 </div>
             </section>

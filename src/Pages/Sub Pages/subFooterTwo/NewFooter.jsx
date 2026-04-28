@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import './NewFooter.css';
 import ContactForm from '../../../Components/ContactForm/ContactForm';
-import Logo from '../../../assets/favicon.ico'; // Import your logo
+import Logo from '../../../assets/09.png'; // Import your logo
 
 const NewFooter = () => {
     const currentYear = new Date().getFullYear();
@@ -114,12 +114,12 @@ const NewFooter = () => {
                                 <div className="new-footer-brand">
                                     <div className="new-brand-wrapper">
                                         <img src={Logo} alt="ENGLORAY Logo" className="new-footer-logo" />
-                                        <h3>ENGLORAY</h3>
+
                                     </div>
                                     <p>Transforming businesses and empowering individuals through innovative digital solutions and education.</p>
 
                                     {/* Contact Info - Below paragraph and above social links (KEPT - NOT REMOVED) */}
-                                    <div className="new-contact-info">
+                                    {/* <div className="new-contact-info">
                                         <div className="new-contact-item">
                                             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                                                 <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
@@ -141,7 +141,7 @@ const NewFooter = () => {
                                             </svg>
                                             <span className="new-address-text">Madurai<br />TamilNadu, INDIA</span>
                                         </div>
-                                    </div>
+                                    </div> */}
 
                                     <div className="new-social-links">
                                         <a
@@ -188,7 +188,7 @@ const NewFooter = () => {
                                             rel="noopener noreferrer"
                                         >
                                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987s11.987-5.367 11.987-11.987C24.014 5.367 18.647.001 12.017.001zM8.449 16.988c-1.297 0-2.448-.49-3.323-1.297C4.24 14.816 3.75 13.665 3.75 12.368s.49-2.448 1.376-3.323c.875-.807 2.026-1.297 3.323-1.297s2.448.49 3.323 1.297c.886.875 1.376 2.026 1.376 3.323s-.49 2.448-1.376 3.323c-.875.807-2.026 1.297-3.323 1.297zm8.062-1.063c-.328 0-.656-.109-.985-.328-.328-.219-.547-.547-.547-.985s.219-.766.547-.985c.329-.219.657-.328.985-.328s.656.109.985.328c.328.219.547.547.547.985s-.219.766-.547.985c-.329.219-.657.328-.985.328zm1.422-4.391c-.328.328-.766.492-1.203.492s-.875-.164-1.203-.492c-.328-.328-.492-.766-.492-1.203s.164-.875.492-1.203c.328-.328.766-.492 1.203-.492s.875.164 1.203.492c.328.328.492.766.492 1.203s-.164.875-.492 1.203z" />
+                                                <path d="M22 12c0-2.739-.024-3.047-.146-4.104-.12-1.045-.33-1.602-.767-2.04-.438-.437-.995-.647-2.04-.767C18.047 5.024 17.739 5 15 5s-3.047.024-4.104.146c-1.045.12-1.602.33-2.04.767-.437.438-.647.995-.767 2.04C8.024 8.953 8 9.261 8 12s.024 3.047.146 4.104c.12 1.045.33 1.602.767 2.04.438.437.995.647 2.04.767C11.953 18.976 12.261 19 15 19s3.047-.024 4.104-.146c1.045-.12 1.602-.33 2.04-.767.437-.438.647-.995.767-2.04.122-1.057.146-1.365.146-4.104zm2 0c0 2.784-.012 3.12-.077 4.216-.195 3.322-1.813 4.941-5.135 5.135-1.096.065-1.432.077-4.216.077s-3.12-.012-4.216-.077c-3.327-.194-4.94-1.813-5.135-5.135-.065-1.096-.077-1.432-.077-4.216s.012-3.12.077-4.216c.194-3.327 1.813-4.94 5.135-5.135 1.096-.065 1.432-.077 4.216-.077s3.12.012 4.216.077c3.322.195 4.941 1.813 5.135 5.135.065 1.096.077 1.432.077 4.216zM15 8.412A3.588 3.588 0 1 0 18.588 12 3.588 3.588 0 0 0 15 8.412zM15 17c-2.761 0-5-2.239-5-5s2.239-5 5-5 5 2.239 5 5-2.239 5-5 5zm5.545-12.09a1.28 1.28 0 1 0 1.28 1.28 1.28 1.28 0 0 0-1.28-1.28z" />
                                             </svg>
                                         </a>
                                     </div>
@@ -197,33 +197,60 @@ const NewFooter = () => {
                                 {/* Only 3 columns - Services, Education, Company (4th Contact Info column REMOVED) */}
                                 <div className="new-footer-links">
                                     <div className="new-footer-column">
-                                        <h4>Services</h4>
+                                        <h4>QUICK LINKS</h4>
                                         <ul>
-                                            <li><a href="/brandingPage" onClick={(e) => handleLinkClick(e, '/brandingPage')}>Branding & Design</a></li>
-                                            <li><a href="/developmentPage" onClick={(e) => handleLinkClick(e, '/developmentPage')}>Web Development</a></li>
-                                            <li><a href="/marketingPage" onClick={(e) => handleLinkClick(e, '/marketingPage')}>Digital Marketing</a></li>
-                                            <li><a href="/UiUxPage" onClick={(e) => handleLinkClick(e, '/UiUxPage')}>UI/UX Design</a></li>
+                                            <li><a href="/allCoursesPage" onClick={(e) => handleLinkClick(e, '/allCoursesPage')}>Courses</a></li>
+                                            <li><a href="/allProgramsPage" onClick={(e) => handleLinkClick(e, '/allProgramsPage')}>Learning Programs</a></li>
+                                            <li><a href="/worksCaseStudiesPage" onClick={(e) => handleLinkClick(e, '/worksCaseStudiesPage')}>Success Stories</a></li>
+                                            <li><a href="/mentorshipLearningPage" onClick={(e) => handleLinkClick(e, '/mentorshipLearningPage')}>Mentorship</a></li>
                                         </ul>
                                     </div>
 
                                     <div className="new-footer-column">
-                                        <h4>Education</h4>
+                                        <h4>OUR COURSES</h4>
                                         <ul>
-                                            <li><a href="/allProgramsPage" onClick={(e) => handleLinkClick(e, '/allProgramsPage')}>All Programs</a></li>
-                                            <li><a href="/workshopsPage" onClick={(e) => handleLinkClick(e, '/workshopsPage')}>Workshops</a></li>
-                                            <li><a href="/corporateTraining" onClick={(e) => handleLinkClick(e, '/corporateTraining')}>Corporate Training</a></li>
-                                            <li><a href="/allCoursesPage" onClick={(e) => handleLinkClick(e, '/allCoursesPage')}>E-learning</a></li>
+                                            <li><a href="/graphicsDesignCoursePage" onClick={(e) => handleLinkClick(e, '/graphicsDesignCoursePage')}>Graphic Design</a></li>
+                                            <li><a href="/uiuxDesignCoursePage" onClick={(e) => handleLinkClick(e, '/uiuxDesignCoursePage')}>UX/UI Design</a></li>
+                                            <li><a href="/javaFullStackCourseCoursePage" onClick={(e) => handleLinkClick(e, '/javaFullStackCourseCoursePage')}>Java full stack</a></li>
+                                            <li><a href="/cyberSecurityCoursePage">Cyber Security</a></li>
                                         </ul>
                                     </div>
 
                                     <div className="new-footer-column">
-                                        <h4>Company</h4>
+                                        <h4>OUR PROGRAMS</h4>
                                         <ul>
-                                            <li><a href="/ourStoryPage" onClick={(e) => handleLinkClick(e, '/ourStoryPage')}>About Us</a></li>
-                                            <li><a href="/worksCaseStudiesPage" onClick={(e) => handleLinkClick(e, '/worksCaseStudiesPage')}>Works</a></li>
                                             <li><a href="/CareersPage" onClick={(e) => handleLinkClick(e, '/CareersPage')}>Careers</a></li>
-                                            <li><a href="#footer" onClick={handleContactClick}>Contact</a></li>
+                                            <li><a href="/mentorshipLearningPage" onClick={(e) => handleLinkClick(e, '/mentorshipLearningPage')}>MentorShip Learning</a></li>
+                                            <li><a href="/workshopsPage" onClick={(e) => handleLinkClick(e, '/workshopsPage')}>WorkShops</a></li>
+                                            <li><a href="/projectBasedLearningPage" onClick={(e) => handleLinkClick(e, '/projectBasedLearningPage')}>Project Learning</a></li>
                                         </ul>
+                                    </div>
+
+                                    <div className="new-footer-column">
+                                        <h4>CONTACT US</h4>
+                                        <div className="new-contact-info">
+                                            <div className="new-contact-item">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                                                </svg>
+                                                <span className="new-contact-text">engloray@gmail.com</span>
+                                            </div>
+                                            <div className="new-contact-item">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57-.35-.11-.74-.03-1.02.24l-2.2 2.2c-2.83-1.44-5.15-3.75-6.59-6.59l2.2-2.21c.28-.26.36-.65.25-1C8.7 6.45 8.5 5.25 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1z" />
+                                                </svg>
+                                                <div className="new-phone-numbers">
+                                                    <div className="new-phone-number">+91 6381759909</div>
+                                                    <div className="new-phone-number">+91 6369945920</div>
+                                                </div>
+                                            </div>
+                                            <div className="new-contact-item">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                                                </svg>
+                                                <span className="new-address-text">Madurai<br />TamilNadu, INDIA</span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

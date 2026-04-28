@@ -109,7 +109,7 @@ html {
   height: auto;
   position: relative;
   overflow: hidden;
-  padding: 100px 0 40px;
+  padding: 160px 0 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -265,17 +265,17 @@ html {
 /* Bottom Section - No Grid, Flexbox Instead */
 .cp-hero-bottom {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  /* flex-wrap: wrap; */
+  justify-content: center;
   align-items: flex-start;
-  gap: 50px;
+  gap: 30px;
   position: relative;
 }
 
 /* Avatar Section */
 .cp-hero-avatar-section {
   margin-top: 0px;
-  margin-left: -40px;
+  margin-left: 0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -327,7 +327,7 @@ html {
   padding: 15px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   margin-top: 90px;
-  margin-left: -300px;
+  margin-left: 0;
   position: relative;
   z-index: 5;
   flex-shrink: 0;
@@ -415,7 +415,7 @@ html {
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-  margin-left: -20px;
+  margin-left: 0;
   position: relative;
   z-index: 4;
   flex-shrink: 0;
@@ -435,7 +435,7 @@ html {
 /* Right Side White Card - Reduced Size */
 .cp-hero-right-card {
   margin-top: 70px;
-  margin-right: -30px;
+  margin-right: 10px;
   background: white;
   border-radius: 20px;
   padding: 15px;
@@ -3491,5 +3491,145 @@ html {
   .cp-marquee-item {
     font-size: 0.85rem;
     padding: 0 12px;
+  }
+}
+
+/* Widescreen Specific Adjustments */
+@media (min-width: 1440px) {
+
+  /* Increase Main Container Widths */
+  .cp-hero-content-wrapper,
+  .cp-section-wrapper,
+  .cp-culture-header-wrapper,
+  .cp-learning-section-header {
+    max-width: 1600px !important;
+  }
+
+  /* Scaling Content & Typography */
+  .cp-hero-main-title {
+    font-size: 5.5rem !important;
+  }
+
+  .cp-hero-main-subtitle {
+    font-size: 1.5rem !important;
+    max-width: 600px !important;
+    display: block !important;
+  }
+
+  .cp-section-title {
+    font-size: 4rem !important;
+  }
+
+  .cp-culture-section-title,
+  .cp-learning-section-title,
+  .cp-form-contact-title,
+  .cp-form-title {
+    font-size: 4rem !important;
+  }
+
+  /* Reverted to Original Hero Alignment & Position */
+  /* Centered Hero Bottom Group with Original Alignment */
+  .cp-hero-bottom {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    width: fit-content !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    position: relative !important;
+    gap: 0 !important;
+  }
+
+  .cp-hero-avatar-section {
+    margin-left: 20px !important;
+  }
+
+  .cp-hero-stats-container {
+    margin-left: -190px !important;
+    margin-top: 90px !important;
+  }
+
+  .cp-hero-image-container {
+    width: 780px !important;
+    height: 500px !important;
+    margin-left: 40px !important;
+  }
+
+  .cp-hero-right-card {
+    width: 450px !important;
+    margin-right: -30px !important;
+    margin-left: 40px !important;
+    margin-top: 70px !important;
+  }
+
+  .cp-hero-subtext-right {
+    position: absolute !important;
+    right: 80px !important;
+    top: 320px !important;
+    max-width: 450px !important;
+    margin: 0 !important;
+    text-align: left !important;
+  }
+
+  .cp-hero-subtext-right p {
+    font-size: 1.1rem !important;
+    text-align: left !important;
+  }
+
+  .cp-floating-stat {
+    position: absolute !important;
+    left: 100px !important;
+    bottom: 420px !important;
+    min-width: 180px !important;
+    display: block !important;
+    text-align: center !important;
+  }
+
+  .cp-floating-stat-number {
+    font-size: 2.5rem !important;
+    display: block !important;
+  }
+
+  .cp-floating-stat-label {
+    font-size: 1.1rem !important;
+    margin-top: 10px !important;
+  }
+
+  /* Career Path Grid scaling */
+  .cp-paths-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 30px !important;
+  }
+
+  .cp-path-card-new {
+    min-height: 650px !important;
+  }
+
+  .cp-card-image-container {
+    height: 350px !important;
+  }
+
+  /* Learning section scaling */
+  .cp-learning-container {
+    gap: 80px !important;
+  }
+
+  .cp-learning-big-container {
+    max-width: 1000px !important;
+  }
+
+  .cp-learning-left {
+    flex: 1.5 !important;
+  }
+
+  /* Form scaling */
+  .cp-form-section {
+    max-width: 1550px !important;
+    margin: 0 auto !important;
+    gap: 100px !important;
+  }
+
+  .cp-form-container {
+    max-width: 1000px !important;
   }
 }

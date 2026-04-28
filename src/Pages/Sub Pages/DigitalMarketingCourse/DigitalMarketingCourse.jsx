@@ -18,7 +18,9 @@ import {
     faClock,
     faSearch,
     faComments,
+    faBrain,
     faEnvelope,
+    faSitemap,
     faChartLine,
     faFlask,
     faGlobe,
@@ -217,7 +219,7 @@ const DigitaMarketingCourse = () => {
         },
         {
             title: "Brand & Growth Strategy",
-            icon: <FontAwesomeIcon icon={faRocket} />,
+            icon: <FontAwesomeIcon icon={faBriefcase} />,
             points: ["Funnel Building", "Customer Journey Mapping", "Scaling Strategies"],
             bgColor: "rgba(61, 82, 217, 0.12)",
             iconColor: "#3D52D9"
@@ -333,7 +335,7 @@ const DigitaMarketingCourse = () => {
             },
             {
                 name: "Screaming Frog",
-                icon: <FontAwesomeIcon icon={faRocket} />,
+                icon: <FontAwesomeIcon icon={faSitemap} />,
                 desc: "Technical website crawler.",
                 bg: "linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%)"
             },
@@ -434,7 +436,7 @@ const DigitaMarketingCourse = () => {
         { icon: <FontAwesomeIcon icon={faLaptopCode} />, title: "Tool Mastery", description: "Hands-on practice with modern ad platforms, SEO tools, and analytics workflows used globally." },
         { icon: <FontAwesomeIcon icon={faBullseye} />, title: "Project-Based Learning", description: "Build real marketing campaigns and data-driven case studies that stand out in interviews." },
         { icon: <FontAwesomeIcon icon={faChartLine} />, title: "Data-Driven Approach", description: "Learn to track metrics, gather insights, and optimize campaigns confidently with real data." },
-        { icon: <FontAwesomeIcon icon={faRocket} />, title: "Career Coaching", description: "Interview prep and strategizing guidance to land your first Digital Marketing role faster." }
+        { icon: <FontAwesomeIcon icon={faBrain} />, title: "Career Coaching", description: "Interview prep and strategizing guidance to land your first Digital Marketing role faster." }
     ];
 
     const hexToRgba = (hex, alpha) => {

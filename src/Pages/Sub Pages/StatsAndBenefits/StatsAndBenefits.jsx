@@ -22,22 +22,38 @@ const StatsAndBenefits = () => {
             gsap.set('.sab-pin-title', { opacity: 0, y: 30 });
             gsap.set('.sab-pin-bg', { opacity: 0 });
 
-            // ── Build the scroll-pinned timeline ──
+            // Early fade-in for title and background as soon as it enters screen
+            gsap.to('.sab-pin-title', {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: '.techGroup-stats-wrapper',
+                    start: 'top 80%' // Triggers significantly earlier to prevent blank space
+                }
+            });
+
+            gsap.to('.sab-pin-bg', {
+                opacity: 0.35,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: '.techGroup-stats-wrapper',
+                    start: 'top 80%' // Triggers significantly earlier
+                }
+            });
+
+            // ── Build the scroll-pinned timeline FOR THE CARDS ──
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: '.techGroup-stats-wrapper',
-                    start: 'top top',
-                    end: '+=2800',          // freeze for 2800px of scroll
+                    start: 'top 100px',
+                    end: '+=1200',          // accelerated freeze distance for faster reveal
                     pin: true,
-                    scrub: 1.5,
+                    scrub: 0.5,
                     anticipatePin: 1,
                     invalidateOnRefresh: true,
                 }
             });
-
-            // 1. Title + world map fade in
-            tl.to('.sab-pin-title', { opacity: 1, y: 0, duration: 0.3 }, 0)
-                .to('.sab-pin-bg', { opacity: 0.35, duration: 0.4 }, 0);
 
             // 2. Cards fly FROM centre TO final positions, one by one.
             //    Each "from" offset is the vector from the card's natural CSS
@@ -80,7 +96,7 @@ const StatsAndBenefits = () => {
                 gsap.to(card, {
                     opacity: 1,
                     y: 0,
-                    duration: 1,
+                    duration: 0.5,
                     ease: "power2.out",
                     scrollTrigger: {
                         trigger: card,
@@ -93,10 +109,10 @@ const StatsAndBenefits = () => {
                 gsap.to(contentElements, {
                     opacity: 1,
                     y: 0,
-                    duration: 0.8,
-                    stagger: 0.05,
+                    duration: 0.4,
+                    stagger: 0.03,
                     ease: "power2.out",
-                    delay: 0.2, // Start after card begins moving
+                    delay: 0.1, // Start after card begins moving
                     scrollTrigger: {
                         trigger: card,
                         start: "top 90%",
@@ -111,7 +127,7 @@ const StatsAndBenefits = () => {
             gsap.to('.techGroup-benefits-main-title', {
                 opacity: 1,
                 y: 0,
-                duration: 1,
+                duration: 0.5,
                 scrollTrigger: {
                     trigger: '.techGroup-benefits-main-title',
                     start: "top 95%",
@@ -126,7 +142,7 @@ const StatsAndBenefits = () => {
 
     return (
         <section className="techGroup-testimonials-section" style={{ padding: '0', marginBottom: '0' }}>
-            <div className="techGroup-testimonialSection-container" style={{ padding: '0' }} ref={wrapperRef}>
+            <div className="techGroup-testimonialSection-container" style={{ padding: '0', marginTop: '0' }} ref={wrapperRef}>
 
                 {/* ── PINNED STATS SECTION ── */}
                 <div className="techGroup-stats-wrapper">

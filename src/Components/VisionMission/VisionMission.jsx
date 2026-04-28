@@ -22,113 +22,100 @@ const VisionMission = () => {
   };
 
   useLayoutEffect(() => {
+    let observer;
     const ctx = gsap.context(() => {
+      // Create a master timeline for the entrance animations
+      const tl = gsap.timeline({ paused: true });
+
       // 1. Header Animation (Slowly from bottom)
-      gsap.fromTo(headerRef.current.querySelectorAll('h2, p'),
+      tl.fromTo(headerRef.current.querySelectorAll('h2, p'),
         { opacity: 0, y: 100 },
         {
           opacity: 1,
           y: 0,
           duration: 1.5,
           stagger: 0.2,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: headerRef.current,
-            start: "top 85%",
-            toggleActions: "restart none none restart"
-          }
+          ease: "power2.out"
         }
       );
 
-      // 2. Vision Card Entrance (Slowly from bottom)
-      gsap.fromTo(visionCardRef.current,
+      // 2. Vision & Mission Cards Entrance (Slowly from bottom)
+      tl.fromTo([visionCardRef.current, missionCardRef.current],
         { opacity: 0, y: 120, rotationX: 5 },
         {
           opacity: 1,
           y: 0,
           rotationX: 0,
           duration: 1.8,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: visionCardRef.current,
-            start: "top 80%",
-            toggleActions: "play none none reverse"
-          }
-        }
+          stagger: 0, // Perfectly simultaneous entrance
+          ease: "power3.out"
+        },
+        "-=1.2" // Overlap with header
       );
 
-      // 3. Mission Card Entrance (Slowly from bottom)
-      gsap.fromTo(missionCardRef.current,
-        { opacity: 0, y: 120, rotationX: 5 },
-        {
-          opacity: 1,
-          y: 0,
-          rotationX: 0,
-          duration: 1.8,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: missionCardRef.current,
-            start: "top 80%",
-            toggleActions: "restart none none restart"
-          }
-        }
-      );
-
-      // 4. Staggered text inside cards (TARGET FRONT ONLY)
-      [visionCardRef.current, missionCardRef.current].forEach((card) => {
-        gsap.fromTo(card.querySelectorAll('.card-front h3, .card-front li'),
+      // 3. Staggered text inside cards (TARGET FRONT ONLY)
+      [visionCardRef.current, missionCardRef.current].forEach((card, index) => {
+        tl.fromTo(card.querySelectorAll('.card-front h3, .card-front li'),
           { opacity: 0, y: 50 },
           {
             opacity: 1,
             y: 0,
             stagger: 0.08,
             duration: 1.2,
-            delay: 0.5,
-            ease: "power2.out",
-            scrollTrigger: {
-              trigger: card,
-              start: "top 85%",
-              toggleActions: "restart none none restart"
-            }
-          }
+            ease: "power2.out"
+          },
+          index === 0 ? "-=1.0" : "<" // Simultaneous start for both cards' internal text
         );
       });
 
-      // 4. Core Values Section Header (Fade in on scroll)
-      gsap.fromTo(valuesRef.current,
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: valuesRef.current,
-            start: "top 80%",
-            end: "top 50%",
-            toggleActions: "restart none none restart"
-          }
-        }
-      );
+      // 4. Core Values Section Header (if present)
+      if (valuesRef.current) {
+        tl.fromTo(valuesRef.current,
+          { opacity: 0, y: 50 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power2.out"
+          },
+          "-=0.6"
+        );
+      }
 
-      // 5. Core Values Cards (Staggered fade-in on scroll)
-      gsap.fromTo(valueItemsRef.current,
-        { opacity: 0, y: 80, scale: 0.95 },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 0.8,
-          stagger: 0.15,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: valuesRef.current,
-            start: "top 70%",
-            end: "top 30%",
-            toggleActions: "restart none none restart"
+      // 5. Core Values Cards (if present)
+      if (valueItemsRef.current.length > 0) {
+        tl.fromTo(valueItemsRef.current,
+          { opacity: 0, y: 80, scale: 0.95 },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.8,
+            stagger: 0.15,
+            ease: "power2.out"
+          },
+          "-=0.4"
+        );
+      }
+
+      // --- Intersection Observer for re-triggering behavior ---
+      observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // Re-play from start every time it enters the viewport
+            tl.restart();
+          } else {
+            // Completely reset when moving out of viewport
+            tl.progress(0).pause();
           }
-        }
-      );
+        });
+      }, {
+        threshold: 0.15 // Triggers when 15% of the section is visible
+      });
+
+      if (sectionRef.current) {
+        observer.observe(sectionRef.current);
+      }
 
       // --- LAYERED MAGNETIC HOVER EFFECT (Desktop Only) ---
       if (window.innerWidth > 768) {
@@ -215,7 +202,10 @@ const VisionMission = () => {
 
     }, sectionRef);
 
-    return () => ctx.revert();
+    return () => {
+      ctx.revert();
+      if (observer) observer.disconnect();
+    };
   }, []);
 
   return (

@@ -335,7 +335,7 @@ body {
 }
 
 .acp-section-title {
-    font-family: 'HEXCO', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 48px;
     font-weight: 100;
     margin-bottom: 20px;
@@ -345,7 +345,7 @@ body {
 }
 
 .acp-section-title span {
-    font-family: 'HEXCO';
+    font-family: 'Poppins', sans-serif;
     font-size: 2.5rem;
 }
 
@@ -1392,7 +1392,7 @@ body {
 }
 
 .acp-contact-title {
-    font-family: 'HEXCO', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 48px;
     font-weight: 100;
     margin-bottom: 12px;

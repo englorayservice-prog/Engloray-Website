@@ -402,6 +402,7 @@ body {
     line-height: 1.6;
     color: #666;
     margin-bottom: 2.5rem;
+    text-align: left;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -4713,11 +4714,13 @@ body {
     border-radius: 50px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end; /* Aligned to bottom */
+    justify-content: flex-end;
+    /* Aligned to bottom */
     align-items: center;
     padding: 0 0 1.5rem 0;
     position: relative;
-    gap: 5px; /* Tighter gap */
+    gap: 5px;
+    /* Tighter gap */
 }
 
 .SE-dn-bg-dark {
@@ -4736,7 +4739,8 @@ body {
     display: flex;
     justify-content: flex-end;
     padding-bottom: 0px;
-    padding-left: 15px; /* Left shift */
+    padding-left: 15px;
+    /* Left shift */
     font-size: 1.1rem;
     font-weight: 700;
     letter-spacing: 1.5px;
@@ -6718,7 +6722,8 @@ body {
     font-size: 60px;
     font-weight: 900;
     color: #111827;
-    text-align: center; /* Centered */
+    text-align: center;
+    /* Centered */
     margin-bottom: 54px;
     letter-spacing: 4px;
     text-transform: uppercase;
@@ -6809,5 +6814,122 @@ body {
     .SE-expectation-card {
         padding: 20px;
         min-height: auto;
+    }
+
+    .SE-dn-v-num {
+        transform: translateX(15px) !important;
+    }
+
+    .SE-dn-v-text {
+        font-size: 0.5rem;
+    }
+
+    .SE-dn-title-line2 {
+        font-size: 1.6rem;
+    }
+}
+
+/* Tablet and Mobile (1024px and below) */
+@media (max-width: 1024px) {
+
+    /* 1. Remove all Images (Pills) and Star Icons */
+    .SE-hero-image-pill,
+    .SE-sparkle-icon,
+    .SE-sparkle-icon-small,
+    .SE-rotating-stamp,
+    .SE-stamp-star,
+    .SE-hero-top-line {
+        display: none !important;
+    }
+
+    /* 2. Layout Stacking */
+    .SE-main-layout-wrapper {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    /* 3. Titles Group (Set to first) */
+    .SE-hero-typography {
+        order: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        /* Remove gaps to keep text tight */
+        margin-bottom: 20px;
+    }
+
+    /* 4. Descriptions Group (Set to second) */
+    .SE-description-group {
+        order: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* 5. Clean up the Title lines */
+    .SE-hero-line {
+        display: block !important;
+        /* Forces each title to its own line */
+        width: 100%;
+    }
+
+    .SE-hero-title-word {
+        font-size: 3.5rem;
+        /* Big bold titles */
+        line-height: 1;
+        margin: 0;
+        padding: 5px 0;
+    }
+
+    /* Ensure badges don't look messy */
+    .SE-hero-top-row {
+        justify-content: flex-start;
+        padding: 10px 20px;
+    }
+
+    /* 3. Titles Group (Set to first) */
+    .SE-hero-typography {
+        gap: 0 !important;
+        display: flex;
+        flex-direction: column;
+        line-height: 1.1;
+        /* Remove gaps to keep text tight */
+    }
+
+    .SE-hero-typography>* {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+    }
+}
+
+/* Extra small mobile tweak */
+@media (max-width: 480px) {
+
+    /* 5. Clean up the Title lines */
+    .SE-hero-title-word {
+        font-size: 3.5rem;
+        line-height: 0.9;
+        /* Reduced from 1 to 0.9 to pull lines closer */
+        margin: 0;
+        padding: 0;
+        /* Removed the 5px vertical padding */
+    }
+
+    .SE-hero-typography {
+        order: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 0 !important;
+        height: 30px;
+        /* Forces zero spacing between the flex items */
+        margin-bottom: 20px;
+    }
+
+    .SE-hero-typography>* {
+        margin: 0 !important;
+        line-height: 0.9 !important;
     }
 }

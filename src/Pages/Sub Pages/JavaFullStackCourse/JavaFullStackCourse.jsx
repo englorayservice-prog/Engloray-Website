@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { submitEnrollment } from "../../Sub Pages/HandleSubmit/HandleSubmit";
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import NavigationBar from '../../TechLearningSection/NavigationBar/NavigationBar';
+
 import {
   faPaintBrush,
   faLaptopCode,
@@ -1365,9 +1366,9 @@ const JavaFullStackCourse = () => {
               </div>
             </div>
           )}
-          <SubFooterTwo />
-          <BackToTop />
         </div>
+        <SubFooterTwo />
+        <BackToTop />
       </div>
     </>
   );

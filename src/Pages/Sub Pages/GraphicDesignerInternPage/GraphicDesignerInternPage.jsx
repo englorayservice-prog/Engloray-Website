@@ -89,7 +89,6 @@ import girl4 from '../../../assets/images/girl4.png';
 import { submitInternship } from "../../Sub Pages/HandleSubmit/InternshipSubmit";
 
 
-
 import pathOne from '../../../assets/resources file/resources file/TECH/GRAPHICS DESIGNERS/Design Tools & Technology.pdf';
 import pathTwo from '../../../assets/resources file/resources file/TECH/GRAPHICS DESIGNERS/Graphic Designer Benefits.pdf';
 import pathFive from '../../../assets/resources file/resources file/TECH/GRAPHICS DESIGNERS/Learning, Skill Development & Growth.pdf';
@@ -793,10 +792,7 @@ const GraphicDesignerInternPage = () => {
                     {/* <Navbar/> */}
 
                     {/* Hero Section */}
-                    <section
-                        className="GD-section GD-hero-section-new"
-                        id="home"
-                    >
+                    <section className="GD-section GD-hero-section-new" id="home">
                         <div className="GD-hero-top-row">
                             <div className="GD-hero-badges">
                                 <span className="GD-hero-badge"><FontAwesomeIcon icon={faCheckCircle} /> 2023 BEST DEVELOPMENT</span>
@@ -810,43 +806,43 @@ const GraphicDesignerInternPage = () => {
                             </div>
                         </div>
 
-                        <div className="GD-hero-typography">
-                            <div className="GD-hero-line GD-hero-line-1">
-                                <svg className="GD-sparkle-icon-large" viewBox="0 0 24 24" width="42" height="42">
-                                    <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
-                                </svg>
-                                <h1 className="GD-hero-title-word">Where Teams</h1>
-                                <p className="GD-hero-desc-small">
-                                    Creative developer studio builds modern digital experiences for web apps brands and startups through design code innovation collaboration and scalable technology solutions for global users.
-                                </p>
-                            </div>
-
-                            <div className="GD-hero-line GD-hero-line-2">
-                                <div className="GD-hero-image-pill GD-hero-image-1">
-                                    <img src={gdHeroImg} alt="Graphic Designer" style={{ objectFit: 'cover', objectPosition: 'center' }} />
+                        <div className="GD-hero-responsive-wrapper">
+                            {/* GROUP 1: ALL TITLES */}
+                            <div className="GD-title-group">
+                                <div className="GD-hero-line GD-hero-line-1">
+                                    <h1 className="GD-hero-title-word">Where Teams</h1>
                                 </div>
-                                <h1 className="GD-hero-title-word GD-text-purple">Design &amp; Learn</h1>
-                                <svg className="GD-sparkle-icon-small" viewBox="0 0 24 24" width="22" height="22">
-                                    <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
-                                </svg>
-                            </div>
 
-                            <div className="GD-hero-line GD-hero-line-3">
-                                <svg className="GD-sparkle-icon-small" viewBox="0 0 24 24" width="22" height="22">
-                                    <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
-                                </svg>
-                                <h1 className="GD-hero-title-word">Together</h1>
-                                <div className="GD-hero-image-pill GD-hero-image-2">
-                                    <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Graphic Designer Studio" style={{ objectFit: 'cover', objectPosition: 'center' }} />
-                                    <div className="GD-play-btn">
-                                        <div className="GD-play-icon-triangle"></div>
+                                <div className="GD-hero-line GD-hero-line-2">
+                                    <div className="GD-hero-image-pill GD-hero-image-1">
+                                        <img src={gdHeroImg} alt="Graphic Designer" style={{ objectFit: 'cover', objectPosition: 'center' }} />
+                                    </div>
+                                    <h1 className="GD-hero-title-word GD-text-purple">Design &amp; Learn</h1>
+                                </div>
+
+                                <div className="GD-hero-line GD-hero-line-3">
+                                    <h1 className="GD-hero-title-word">Together</h1>
+                                    <div className="GD-hero-image-pill GD-hero-image-2">
+                                        <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Graphic Designer Studio" style={{ objectFit: 'cover', objectPosition: 'center' }} />
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div className="GD-hero-bottom-row">
-                            <div className="GD-hero-bottom-left">
+                            {/* GROUP 2: MOBILE IMAGES (Hidden via CSS) */}
+                            <div className="GD-mobile-only-images">
+                                <div className="GD-hero-image-pill">
+                                    <img src={gdHeroImg} alt="Graphic Designer" />
+                                </div>
+                                <div className="GD-hero-image-pill">
+                                    <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Graphic Designer Studio" />
+                                </div>
+                            </div>
+
+                            {/* GROUP 3: ALL DESCRIPTIONS */}
+                            <div className="GD-content-group">
+                                <p className="GD-hero-desc-small">
+                                    Creative developer studio builds modern digital experiences for web apps brands and startups through design code innovation collaboration and scalable technology solutions for global users.
+                                </p>
                                 <p className="GD-hero-desc-large">
                                     Creative Developer Studio empowers teams to transform ideas into powerful digital products. We combine creativity, engineering expertise, and strategic thinking to build responsive websites, intelligent platforms, and engaging user experiences that support innovation, improve productivity, and help businesses expand confidently in today’s fast-evolving online ecosystem.
                                 </p>
@@ -855,7 +851,10 @@ const GraphicDesignerInternPage = () => {
                                     <button className="GD-btn-icon" onClick={() => scrollToSection('course')}><FontAwesomeIcon icon={faArrowRight} style={{ transform: 'rotate(-45deg)' }} /></button>
                                 </div>
                             </div>
+                        </div>
 
+                        {/* GROUP 4: STAMP */}
+                        <div className="GD-hero-bottom-row">
                             <div className="GD-hero-bottom-right">
                                 <div className="GD-rotating-stamp">
                                     <svg viewBox="0 0 100 100" className="GD-stamp-text-svg">
@@ -865,9 +864,6 @@ const GraphicDesignerInternPage = () => {
                                                 C R E A T I V E • D E V E L O P E R •
                                             </textPath>
                                         </text>
-                                    </svg>
-                                    <svg className="GD-stamp-star" viewBox="0 0 24 24" width="30" height="30">
-                                        <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
                                     </svg>
                                 </div>
                             </div>

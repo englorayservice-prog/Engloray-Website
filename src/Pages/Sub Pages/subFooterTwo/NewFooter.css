@@ -510,12 +510,19 @@
 .new-social-links a {
     color: #666;
     transition: all 0.3s ease;
-    padding: 10px;
+    width: 40px;
+    height: 40px;
     border-radius: 8px;
     background: rgba(0, 0, 0, 0.05);
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0;
+}
+
+.new-social-links a svg {
+    width: 24px;
+    height: 24px;
 }
 
 .new-social-links a:hover {
@@ -524,13 +531,13 @@
     transform: translateY(-2px);
 }
 
-/* Footer Links - 3 columns (Services, Education, Company) */
+/* Footer Links - 4 columns */
 .new-footer-links {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 60px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
     align-items: start;
-    margin-left: 80px;
+    margin-left: 20px;
 }
 
 .new-footer-column h4 {
@@ -749,7 +756,7 @@
     }
 
     .new-footer-links {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 40px;
         margin-left: 0;
     }
@@ -1188,5 +1195,11 @@
 
     .new-contact-item svg {
         color: #000 !important;
+    }
+}
+
+@media (min-width: 1440px) {
+    .new-footer {
+        zoom: 1.22;
     }
 }

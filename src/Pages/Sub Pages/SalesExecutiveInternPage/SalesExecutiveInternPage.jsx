@@ -72,10 +72,7 @@ import pathTwo from '../../../assets/resources file/resources file/TECH/GRAPHICS
 import pathFive from '../../../assets/resources file/resources file/TECH/GRAPHICS DESIGNERS/Learning, Skill Development & Growth.pdf';
 import pathSix from '../../../assets/resources file/resources file/TECH/GRAPHICS DESIGNERS/Productivity, AI & Workflow Support.pdf';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
-import SubFooterOne from '../../../Pages/Sub Pages/subFooterOne/NewFooter1';
 import { Helmet } from 'react-helmet';
-import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
-import Navbar from '../../../Components/Navbar/Navbar';
 
 const SalesExecutiveInternPage = () => {
     const [activeSection, setActiveSection] = useState('home');
@@ -761,94 +758,94 @@ const SalesExecutiveInternPage = () => {
             )}
 
             <div className="SE-content" ref={containerRef}>
-                    <TopNavBar />
-                    <Navbar />
-                
-                
+                {/* <TopNavBar/> */}
+                {/* <Navbar/> */}
 
                 {/* Hero Section */}
-                <section
-                    className="SE-section SE-hero-section-new"
-                    id="home"
-                >
-                    <div className="SE-hero-top-row">
-                        <div className="SE-hero-badges">
-                            <span className="SE-hero-badge"><FontAwesomeIcon icon={faCheckCircle} /> 2023 BEST SALES</span>
-                            <span className="SE-hero-badge"><FontAwesomeIcon icon={faLaptopCode} /> WORLD CLASS REVENUE</span>
-                        </div>
-                        <div className="SE-hero-top-line-container">
-                            <hr className="SE-hero-top-line" />
-                            <svg className="SE-sparkle-icon" viewBox="0 0 24 24" width="24" height="24">
-                                <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
-                            </svg>
-                        </div>
+           <section className="SE-section SE-hero-section-new" id="home">
+    <div className="SE-hero-top-row">
+        <div className="SE-hero-badges">
+            <span className="SE-hero-badge"><FontAwesomeIcon icon={faCheckCircle} /> 2023 BEST SALES</span>
+            <span className="SE-hero-badge"><FontAwesomeIcon icon={faLaptopCode} /> WORLD CLASS REVENUE</span>
+        </div>
+        <div className="SE-hero-top-line-container">
+            <hr className="SE-hero-top-line" />
+            <svg className="SE-sparkle-icon" viewBox="0 0 24 24" width="24" height="24">
+                <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
+            </svg>
+        </div>
+    </div>
+
+    <div className="SE-main-layout-wrapper">
+        <div className="SE-hero-typography">
+            {/* Line 1 */}
+            <div className="SE-hero-line SE-hero-line-1">
+                <div className="SE-hero-title-wrapper">
+                    <svg className="SE-sparkle-icon-large" viewBox="0 0 24 24" width="40" height="40">
+                        <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
+                    </svg>
+                    <h1 className="SE-hero-title-word">Where Teams</h1>
+                </div>
+            </div>
+
+            {/* Line 2 */}
+            <div className="SE-hero-line SE-hero-line-2">
+                <div className="SE-hero-image-pill SE-hero-image-1">
+                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Sales Executive" />
+                </div>
+                <h1 className="SE-hero-title-word SE-text-purple">Sell & Grow</h1>
+                <svg className="SE-sparkle-icon-small" viewBox="0 0 24 24" width="20" height="20">
+                    <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
+                </svg>
+            </div>
+
+            {/* Line 3 */}
+            <div className="SE-hero-line SE-hero-line-3">
+                <svg className="SE-sparkle-icon-small" viewBox="0 0 24 24" width="25" height="25" >
+                    <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
+                </svg>
+                <h1 className="SE-hero-title-word" >Together</h1>
+                <div className="SE-hero-image-pill SE-hero-image-2">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Sales Executive Studio" />
+                    <div className="SE-play-btn">
+                        <div className="SE-play-icon-triangle"></div>
                     </div>
+                </div>
+            </div>
+        </div>
 
-                    <div className="SE-hero-typography">
-                        <div className="SE-hero-line SE-hero-line-1">
-                            <div className="SE-hero-title-wrapper">
-                                <svg className="SE-sparkle-icon-large" viewBox="0 0 24 24" width="40" height="40">
-                                    <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
-                                </svg>
-                                <h1 className="SE-hero-title-word">Where Teams</h1>
-                            </div>
-                            <p className="SE-hero-desc-small">
-                                Creative developer studio builds modern digital experiences for web apps brands and startups through design code innovation collaboration and scalable technology solutions for global users.
-                            </p>
-                        </div>
+        <div className="SE-description-group">
+            <p className="SE-hero-desc-small">
+                Creative developer studio builds modern digital experiences for web apps brands and startups through design code innovation collaboration and scalable technology solutions for global users.
+            </p>
+            <p className="SE-hero-desc-large">
+                Creative Developer Studio empowers teams to transform ideas into powerful digital products. We combine creativity, engineering expertise, and strategic thinking to build responsive websites, intelligent platforms, and engaging user experiences that support innovation, improve productivity, and help businesses expand confidently in today’s fast-evolving online ecosystem.
+            </p>
+            <div className="SE-hero-actions">
+                <button className="SE-btn-primary" onClick={() => scrollToSection('course')}>Get Started</button>
+                <button className="SE-btn-icon" onClick={() => scrollToSection('course')}><FontAwesomeIcon icon={faArrowRight} style={{ transform: 'rotate(-45deg)' }} /></button>
+            </div>
+        </div>
+    </div>
 
-                        <div className="SE-hero-line SE-hero-line-2">
-                            <div className="SE-hero-image-pill SE-hero-image-1">
-                                <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Sales Executive" style={{ objectFit: 'cover', objectPosition: 'center' }} />
-                            </div>
-                            <h1 className="SE-hero-title-word SE-text-purple">Sell & Grow</h1>
-                            <svg className="SE-sparkle-icon-small" viewBox="0 0 24 24" width="20" height="20">
-                                <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
-                            </svg>
-                        </div>
-
-                        <div className="SE-hero-line SE-hero-line-3">
-                            <svg className="SE-sparkle-icon-small" viewBox="0 0 24 24" width="25" height="25" >
-                                <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
-                            </svg>
-                            <h1 className="SE-hero-title-word" >Together</h1>
-                            <div className="SE-hero-image-pill SE-hero-image-2">
-                                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Sales Executive Studio" style={{ objectFit: 'cover', objectPosition: 'center' }} />
-                                <div className="SE-play-btn">
-                                    <div className="SE-play-icon-triangle"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="SE-hero-bottom-row">
-                        <div className="SE-hero-bottom-left">
-                            <p className="SE-hero-desc-large">
-                                Creative Developer Studio empowers teams to transform ideas into powerful digital products. We combine creativity, engineering expertise, and strategic thinking to build responsive websites, intelligent platforms, and engaging user experiences that support innovation, improve productivity, and help businesses expand confidently in today’s fast-evolving online ecosystem.
-                            </p>
-                            <div className="SE-hero-actions">
-                                <button className="SE-btn-primary" onClick={() => scrollToSection('course')}>Get Started</button>
-                                <button className="SE-btn-icon" onClick={() => scrollToSection('course')}><FontAwesomeIcon icon={faArrowRight} style={{ transform: 'rotate(-45deg)' }} /></button>
-                            </div>
-                        </div>
-
-                        <div className="SE-hero-bottom-right">
-                            <div className="SE-rotating-stamp">
-                                <svg viewBox="0 0 100 100" className="SE-stamp-text-svg">
-                                    <path id="circlePath" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="none" />
-                                    <text>
-                                        <textPath href="#circlePath" startOffset="0%">
-                                            C R E A T I V E • D E V E L O P E R •
-                                        </textPath>
-                                    </text>
-                                </svg>
-                                <svg className="SE-stamp-star" viewBox="0 0 24 24" width="30" height="30">
-                                    <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+    <div className="SE-hero-bottom-row">
+        <div className="SE-hero-bottom-right">
+            <div className="SE-rotating-stamp">
+                <svg viewBox="0 0 100 100" className="SE-stamp-text-svg">
+                    <path id="circlePath" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="none" />
+                    <text>
+                        <textPath href="#circlePath" startOffset="0%">
+                            C R E A T I V E • D E V E L O P E R •
+                        </textPath>
+                    </text>
+                </svg>
+                <svg className="SE-stamp-star" viewBox="0 0 24 24" width="30" height="30">
+                    <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
 
                 {/* Course Content Section */}
                 <section
@@ -1236,7 +1233,7 @@ const SalesExecutiveInternPage = () => {
                                     <div className="SE-dn-title-line2" style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginTop: '0.5rem', flexWrap: 'nowrap' }}>
                                         <button
                                             className="SE-split-action-btn"
-                                            style={{ padding: '1.7rem 1.5rem', fontSize: '1rem', margin: 0, flexShrink: 0 }}
+                                            style={{ padding: '1.7rem 1.5rem', fontSize: '0.5rem', margin: 0, flexShrink: 0 }}
                                             onClick={() => showLockedSectionToast("Sales Strategy & Performance Support")}
                                         >
                                             <FontAwesomeIcon icon={faLock} /> Join course to Access
@@ -1891,7 +1888,6 @@ const SalesExecutiveInternPage = () => {
                     </div>
                 </section>
                 <BackToTop />
-                <SubFooterOne />
             </div>
         </>
     );

@@ -7,7 +7,7 @@ import './BrandingAndDesigning.css';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
-import MainPageSubFooter from '../MainPageSubFooter/MainPageSubFooter';
+import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 import { Helmet } from 'react-helmet';
 // import profile from '../../../assets/heroimage.jpeg';
 import { FaLightbulb, FaPalette, FaComments, FaLayerGroup, FaCompass, FaUserCircle, FaGem } from "react-icons/fa";
@@ -29,8 +29,8 @@ import logo9 from '../../../assets/icons/logoipsum-298.png';
 import logo10 from '../../../assets/icons/logoipsum-299.png';
 import logo11 from '../../../assets/icons/logoipsum-327.png';
 import logo12 from '../../../assets/icons/logoipsum-338.png';
-import avatarLeft from '../../../assets/rev_avatar_5.jfif';
-import avatarRight from '../../../assets/rev_avatar_4.jfif';
+import avatarLeft from '../../../assets/cartoon_female_3.png';
+import avatarRight from '../../../assets/cartoon_male_3.png';
 
 
 
@@ -102,6 +102,30 @@ const BrandingDesigning = () => {
             author: "Apex Consulting",
             role: "Business Services",
             initial: "A"
+        },
+        {
+            id: 7,
+            rating: "★★★★★",
+            text: "The brand storytelling Engloray crafted for us is truly unique. It has given us a distinct voice in a crowded market.",
+            author: "Creative Edge",
+            role: "Creative Director",
+            initial: "C"
+        },
+        {
+            id: 8,
+            rating: "★★★★★",
+            text: "Their design system is a masterpiece of efficiency. Our internal teams can now produce consistent assets in half the time.",
+            author: "Nexus Ops",
+            role: "Operations Lead",
+            initial: "N"
+        },
+        {
+            id: 9,
+            rating: "★★★★★",
+            text: "Exceeded all expectations. The visual identity is not just beautiful; it's strategically aligned with our long-term goals.",
+            author: "Founders Hub",
+            role: "Founder",
+            initial: "F"
         }
     ];
 
@@ -412,7 +436,7 @@ const BrandingDesigning = () => {
                             <div className="bd-branddna-left">
                                 <h2>Brand DNA</h2>
                                 <h3 className="bd-branddna-subtitle">
-                                    The Foundation of Every<br /> Strong Brand
+                                    The Foundation of Every Strong Brand
                                 </h3>
                                 <p>
                                     Great brands are not built by design alone—they are shaped by
@@ -420,6 +444,12 @@ const BrandingDesigning = () => {
                                     framework defines the strategic elements that guide how your
                                     brand thinks, speaks, and visually connects with your audience.
                                 </p>
+                                <ul className="bd-dna-list">
+                                    <li><strong>Visual Storytelling:</strong> Crafting narratives that resonate deeply with your target audience.</li>
+                                    <li><strong>Emotional Resonance:</strong> Building connections that turn customers into brand advocates.</li>
+                                    <li><strong>Strategic Consistency:</strong> Ensuring a unified brand voice across every digital touchpoint.</li>
+                                    <li><strong>Future-Proof Design:</strong> Scalable visual identities that evolve with your business growth.</li>
+                                </ul>
                             </div>
 
                             {/* RIGHT GRAPHIC */}
@@ -568,6 +598,12 @@ const BrandingDesigning = () => {
                                     creativity, and trust we have developed with businesses
                                     across different industries.
                                 </p>
+                                <ul className="bd-impact-list">
+                                    <li>100% Brand Recognition Uplift for our primary partners.</li>
+                                    <li>45% Average Increase in Customer Loyalty and engagement.</li>
+                                    <li>Reduced Time-to-Market for new brand assets by 30%.</li>
+                                    <li>Global reach with brand identities recognized across 15+ countries.</li>
+                                </ul>
                             </div>
 
                             {/* CARD STATS */}
@@ -717,7 +753,7 @@ const BrandingDesigning = () => {
                             </div>
                         </div>
                     </section>
-                    <MainPageSubFooter />
+                    <WhiteFooter />
                     <BackToTop />
                 </div>
             </div>

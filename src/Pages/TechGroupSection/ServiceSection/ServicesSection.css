@@ -117,13 +117,13 @@
   position: relative;
   background: #ffffff;
   border-radius: 20px;
-  padding: 20px 24px;
+  padding: 24px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
   border: 1px solid rgba(0, 0, 0, 0.04);
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  min-height: 160px;
+  height: 100%;
   /* Transitions only for hover states now */
   transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
               box-shadow 0.4s ease,
@@ -145,12 +145,12 @@
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
   width: 100%;
 }
 
 .ss-stat-title {
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 800;
   color: #111827;
   margin: 0;
@@ -175,10 +175,10 @@
 }
 
 .ss-stat-desc {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 500;
   color: #6b7280;
-  line-height: 1.5;
+  line-height: 1.6;
   margin: 0;
   text-align: justify;
 }

@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 
 .learning-footer {
-  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%); /* The purple background from the image */
+  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+  /* The purple background from the image */
   position: relative;
   width: 100%;
-  padding-top: 100px; /* Space for the wave */
+  padding-top: 100px;
+  /* Space for the wave */
   color: #333;
   font-family: 'Montserrat', sans-serif;
 }
@@ -27,13 +29,14 @@
 }
 
 .learning-footer-wave .shape-fill {
-  fill: #FFFFFF; /* Matches the background of the section above */
+  fill: #FFFFFF;
+  /* Matches the background of the section above */
 }
 
 /* Main Container */
 .learning-container {
   max-width: 100%;
-  margin: 0;
+  margin-top: -10rem;
   padding: 0;
 }
 
@@ -108,7 +111,7 @@
   margin-bottom: 12px;
 }
 
-.learning-col-list a, 
+.learning-col-list a,
 .learning-col-list span {
   text-decoration: none;
   color: #555;
@@ -135,7 +138,8 @@
   font-weight: 800;
   color: #111;
   margin-bottom: 40px;
-  text-align: left; /* Aligned left as per instruction */
+  text-align: left;
+  /* Aligned left as per instruction */
   letter-spacing: 1px;
 }
 
@@ -277,6 +281,7 @@
     grid-template-columns: 1fr 1fr;
     gap: 40px;
   }
+
   .learning-other-grid {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -287,15 +292,24 @@
     padding: 60px 30px 40px;
     border-radius: 40px 40px 0 0;
   }
+
   .learning-footer-top {
     grid-template-columns: 1fr;
   }
+
   .learning-other-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .learning-bottom-bar {
     flex-direction: column;
     gap: 20px;
     text-align: center;
+  }
+}
+
+@media (min-width: 1440px) {
+  .learning-footer {
+    zoom: 1.32;
   }
 }

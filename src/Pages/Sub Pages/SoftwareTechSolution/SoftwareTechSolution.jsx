@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
+import Navbar from '../../../Components/Navbar/Navbar';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import './SoftwareTech.css';
@@ -15,12 +15,12 @@ import cartoonFemale1 from '../../../assets/cartoon_female_1.png';
 import cartoonFemale2 from '../../../assets/cartoon_female_2.png';
 import cartoonFemale3 from '../../../assets/cartoon_female_3.png';
 import femaleAvatar from '../../../assets/female_avatar.png';
-// import customSoftImg from '../../../assets/Custom Software Development.jpg';
-// import busAutoImg from '../../../assets/Business Automation System.jpg';
-// import crmErpImg from '../../../assets/CRM & ERP Solution.jpg';
-// import saasProdImg from '../../../assets/SaaS Product Development.jpg';
-// import startupKitImg from '../../../assets/Startup Tech Launch Kit.jpg';
-// import realDevImg from '../../../assets/software developer.jpg';
+import customSoftImg from '../../../assets/images/Custom Software Development.jpg';
+import busAutoImg from '../../../assets/images/Business Automation System.jpg';
+import crmErpImg from '../../../assets/images/CRM & ERP Solution.jpg';
+import saasProdImg from '../../../assets/images/SaaS Product Development.jpg';
+import startupKitImg from '../../../assets/images/Startup Tech Launch Kit.jpg';
+import realDevImg from '../../../assets/images/Software solution.jpg';
 // import agencyCodingImg from '../../../assets/agency_coding.jpg';
 
 const SoftwareTechSolution = () => {
@@ -44,7 +44,7 @@ const SoftwareTechSolution = () => {
             ],
             stats: { val1: '133+', lab1: 'Deploys', val2: '4 Weeks', lab2: 'Sprints', val3: '4.8★', lab3: 'Satisfaction' },
             description: 'We design and develop custom software solutions tailored to your unique business workflows. From enterprise platforms to lightweight tools, our engineers build scalable, secure, and maintainable systems that eliminate inefficiencies and drive operational excellence.',
-            // image: customSoftImg
+            image: customSoftImg
         },
         {
             id: 2, num: '02', title: 'Business Automation System', icon: '◈', short: 'Automate repetitive tasks & streamline operations',
@@ -57,8 +57,8 @@ const SoftwareTechSolution = () => {
                 'Real-time anomaly alerts'
             ],
             stats: { val1: '125+', lab1: 'Completed', val2: '2 Weeks', lab2: 'Avg Speed', val3: '5.0★', lab3: 'Satisfaction' },
-            description: 'Transform your business operations with intelligent automation systems. We build workflow automation, RPA solutions, and process orchestration tools that reduce manual effort, eliminate errors, and let your team focus on what truly matters — growing your business.',
-            // image: busAutoImg
+            description: 'Free your team from tedious, repetitive tasks with automated software robots and smart workflows. We build integrated automation systems that connect your existing applications, reduce manual data entry errors, and accelerate daily operational throughput.',
+            image: busAutoImg
         },
         {
             id: 3, num: '03', title: 'CRM & ERP Solution', icon: '✦', short: 'Unified platforms for sales, ops, and finance',
@@ -72,7 +72,7 @@ const SoftwareTechSolution = () => {
             ],
             stats: { val1: '138+', lab1: 'Completed', val2: '4 Months', lab2: 'Avg Speed', val3: '4.5★', lab3: 'Satisfaction' },
             description: 'Centralize your customer relationships and enterprise resources with powerful CRM and ERP platforms. We implement and customize solutions that give you a 360° view of your business — from lead management and order processing to inventory control and financial reporting.',
-            // image: crmErpImg
+            image: crmErpImg
         },
         {
             id: 4, num: '04', title: 'SaaS Product Development', icon: '◈', short: 'Build and launch your own cloud-based product',
@@ -86,7 +86,7 @@ const SoftwareTechSolution = () => {
             ],
             stats: { val1: '84+', lab1: 'Deploys', val2: '5 Weeks', lab2: 'Sprints', val3: '4.9★', lab3: 'Satisfaction' },
             description: 'Turn your software idea into a market-ready SaaS product. From architecture design and multi-tenancy setup to subscription billing and CI/CD pipelines, we help founders and enterprises launch robust, scalable SaaS platforms that are ready to grow from day one.',
-            // image: saasProdImg
+            image: saasProdImg
         },
         {
             id: 5, num: '05', title: 'Startup Tech Launch', icon: '✦', short: 'Everything a startup needs to go live fast',
@@ -100,7 +100,7 @@ const SoftwareTechSolution = () => {
             ],
             stats: { val1: '63+', lab1: 'Completed', val2: '6 Weeks', lab2: 'Avg Speed', val3: '4.5★', lab3: 'Satisfaction' },
             description: 'Launch your startup with speed and confidence. Our Startup Tech Launch Kit includes MVP development, cloud infrastructure setup, DevOps pipelines, and tech strategy consulting — giving early-stage companies a solid technical foundation without the overhead of a full in-house team.',
-            // image: startupKitImg
+            image: startupKitImg
         }
     ];
 
@@ -298,7 +298,7 @@ const SoftwareTechSolution = () => {
     return (
         <div className="soft-page-page">
             <TopNavBar />
-            <TwoLineNavbar />
+            <Navbar />
 
             {/* Hero Section */}
             <section className="soft-page-hero-section-new">
@@ -307,7 +307,7 @@ const SoftwareTechSolution = () => {
                     {/* Left Panel */}
                     <div className="soft-page-hero-left-new">
                         <h4 className="soft-page-hero-subtitle-new">WE ARE ENGLORAY</h4>
-                        <h1 className="soft-page-hero-title-new">SOFTWARE &amp; TECH<br />SOLUTION</h1>
+                        <h1 className="soft-page-hero-title-new">SOFTWARE &amp; TECH SOLUTION</h1>
                         <h1 className="soft-page-hero-title-desc-new">
                             <img
                                 src={iphone14Img}
@@ -818,7 +818,7 @@ const SoftwareTechSolution = () => {
                             <div className="soft-page-agency-image-card">
                                 <div className="soft-page-dot-pattern-circle"></div>
                                 <img
-                                    // src={agencyCodingImg}
+                                    src={realDevImg}
                                     alt="Professional Technology Agency"
                                     className="soft-page-portrait-img"
                                 />
@@ -865,7 +865,7 @@ const SoftwareTechSolution = () => {
             <section className="soft-page-testimonial-section">
                 <div className="soft-page-testimonial-container">
                     <p className="soft-page-testimonial-label">Testimonial</p>
-                    <h2 className="soft-page-testimonial-heading" style={{ position: 'relative', left: '-180px' }}>We Care About Our Customers<br />Experience Too</h2>
+                    <h2 className="soft-page-testimonial-heading">We Care About Our Customers<br />Experience Too</h2>
 
                     <div className="soft-page-testimonial-scroll-wrapper">
                         <div className="soft-page-testimonial-scroll-mask-left"></div>

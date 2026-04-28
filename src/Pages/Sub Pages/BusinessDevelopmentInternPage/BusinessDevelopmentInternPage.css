@@ -401,6 +401,7 @@ body {
     font-size: 0.9rem;
     line-height: 1.6;
     color: #666;
+    text-align: left;
     margin-bottom: 2.5rem;
     font-family: 'Poppins', sans-serif;
 }
@@ -4709,11 +4710,13 @@ body {
     border-radius: 50px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end; /* Aligned to bottom */
+    justify-content: flex-end;
+    /* Aligned to bottom */
     align-items: center;
     padding: 0 0 1.5rem 0;
     position: relative;
-    gap: 5px; /* Tighter gap */
+    gap: 5px;
+    /* Tighter gap */
 }
 
 .BDM-dn-bg-dark {
@@ -4731,7 +4734,8 @@ body {
     transform: rotate(180deg);
     white-space: nowrap;
     padding-bottom: 0px;
-    padding-left: 15px; /* Left shift */
+    padding-left: 15px;
+    /* Left shift */
     font-size: 1.1rem;
     font-weight: 700;
     letter-spacing: 1.5px;
@@ -6688,5 +6692,102 @@ body {
 
     .BDM-dn-dash-info {
         align-items: center !important;
+    }
+}
+
+@media (max-width: 1024px) {
+
+    /* 1. Remove all Images (Pills) and Star Icons */
+    .BDM-hero-image-pill,
+    .BDM-sparkle-icon,
+    .BDM-sparkle-icon-large,
+    .BDM-sparkle-icon-small,
+    .BDM-rotating-stamp,
+    .BDM-hero-desc-small,
+    .BDM-hero-top-line {
+        display: none !important;
+    }
+
+    .BDM-hero-typography {
+        gap: 0% !important;
+    }
+
+    /* 3. Titles Group (Set to first) */
+    .BDM-hero-typography {
+        gap: 0 !important;
+        display: flex;
+        flex-direction: column;
+        line-height: 1.1;
+        /* Remove gaps to keep text tight */
+    }
+
+    .BDM-hero-typography>* {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+    }
+}
+
+/* Container sizing */
+.BDM-influencer-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Flexbox Layout */
+.BDM-influencer-split {
+    display: flex;
+    flex-direction: column;
+    /* Mobile first: stack vertically */
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+}
+
+/* Desktop View */
+@media (min-width: 768px) {
+    .BDM-influencer-split {
+        flex-direction: row;
+        /* Side by side on larger screens */
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    .BDM-influencer-left,
+    .BDM-influencer-right {
+        flex: 1;
+    }
+}
+
+/* Form Responsiveness */
+.BDM-form-wrapper {
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 15px;
+    position: relative;
+}
+
+/* Make avatars smaller on mobile */
+.BDM-influencer-avatars img {
+    width: 40px;
+    height: 40px;
+    margin-right: -10px;
+    /* Overlap effect */
+}
+
+@media (max-width: 480px) {
+    .BDM-influencer-title {
+        font-size: 1.8rem;
+    }
+
+    .BDM-see-how-card {
+        width: 100%;
+        /* Card takes full width on small mobile */
+        padding: 30px;
     }
 }

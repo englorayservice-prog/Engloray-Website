@@ -76,7 +76,8 @@ const LearningPage = () => {
     ];
     return (
         <>
-            <TopNavbar /><TwoLineNavbar />
+            <TopNavbar />
+            <TwoLineNavbar />
             <div className="crm-subpage-container learn-theme">
                 <section className="crm-subpage-hero crm-showcase-hero learn-showcase-hero">
                     <div className="showcase-bg-layer">
@@ -408,7 +409,7 @@ const LearningPage = () => {
                                 {[
                                     {
                                         title: "AI Learning Recommendations",
-                                        desc: "The platform learns your pace and style to recommend the most relevant content and projects.",
+                                        desc: "The platform learns your unique learning pace and style to recommend the most relevant content and specialized courses. Our AI engine continuously adapts to your progress, ensuring you are always challenged.",
                                         imgBg: "rgba(239,68,68,0.10)",
                                         visual: (
                                             <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="learn-card-svg">
@@ -433,7 +434,7 @@ const LearningPage = () => {
                                     },
                                     {
                                         title: "Career Counselling Sessions",
-                                        desc: "1:1 sessions with career coaches who map your strengths to the best opportunities.",
+                                        desc: "Engage in 1:1 sessions with career coaches who map your strengths to industry opportunities. Our mentors provide actionable advice on interview techniques and career pathing to help you land your dream role.",
                                         imgBg: "rgba(248,113,113,0.10)",
                                         visual: (
                                             <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="learn-card-svg">
@@ -458,7 +459,7 @@ const LearningPage = () => {
                                     },
                                     {
                                         title: "Progress & Skill Analytics",
-                                        desc: "Track course completion, quiz scores and skill growth in a real-time dashboard.",
+                                        desc: "Track your course completion, quiz scores, and skill growth in a real-time dashboard. Gain deep insights with visualizations that highlight your mastery and identify areas for further improvement.",
                                         imgBg: "rgba(239,68,68,0.15)",
                                         visual: (
                                             <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="learn-card-svg">
@@ -483,7 +484,7 @@ const LearningPage = () => {
                                     },
                                     {
                                         title: "Secure & Verified Profiles",
-                                        desc: "Blockchain-verified certificates and encrypted profiles that employers trust completely.",
+                                        desc: "Benefit from blockchain-verified certificates and encrypted profiles that global employers trust. We provide a secure environment for showcasing your achievements and credentials with potential recruiters.",
                                         imgBg: "rgba(185,28,28,0.12)",
                                         visual: (
                                             <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="learn-card-svg">
@@ -510,7 +511,7 @@ const LearningPage = () => {
                                     },
                                     {
                                         title: "Live Placement Pipeline",
-                                        desc: "Track your job applications, interview stages and offer letters in one unified dashboard.",
+                                        desc: "Track your job applications, interview stages, and offer letters in one unified dashboard. We streamline your transition to professional life by providing tools to manage your career search effectively.",
                                         imgBg: "rgba(220,38,38,0.12)",
                                         visual: (
                                             <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="learn-card-svg">

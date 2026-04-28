@@ -14,7 +14,10 @@ import uiuxProjectImg from '../../../assets/Makeover_img.jpg';
 import gymProjectImg from '../../../assets/Gym_img.jpg';
 import jewelleryProjectImg from '../../../assets/Jewellery_img.jpg';
 import healthcareProjectImg from '../../../assets/Healthcare_img.jpg';
-// import ProjectsBg from '../../../assets/otp-projects-bg.png';
+import CTVisual1 from '../../../assets/ct_visual_1.png';
+import CTVisual2 from '../../../assets/ct_visual_2.png';
+import CTVisual3 from '../../../assets/ct_visual_3.png';
+import CTVisual4 from '../../../assets/ct_visual_4.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faRobot,
@@ -41,7 +44,9 @@ import {
     faRocket,
     faHandshake,
     faArrowRight,
-    faQuoteRight
+    faQuoteRight,
+    faChartLine,
+    faWandMagic
 } from '@fortawesome/free-solid-svg-icons';
 import './OurTeamPage.css';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
@@ -92,43 +97,43 @@ const OurTeamPage = () => {
     const teamProjects = [
         {
             id: 1,
-            title: 'Ui/Ux Design for Makeover',
-            description: 'User Friendly Navigation for booking Appointments',
-            icon: <FontAwesomeIcon icon={faRobot} />,
-            tags: ['Ui/Ux', 'Branding', 'Designing'],
+            title: 'Creative Visionaries',
+            description: 'Blending art and strategy to create stunning visual identities that resonate.',
+            icon: <FontAwesomeIcon icon={faPaintBrush} />,
+            tags: ['Branding', 'UI/UX', 'Design'],
             completion: '100%',
             color: '#FF6B6B',
-            image: uiuxProjectImg
+            image: CTVisual1
         },
         {
             id: 2,
-            title: 'Gym Life',
-            description: 'Website To Showcase Gym Facilities And Programs',
-            icon: <FontAwesomeIcon icon={faShoppingCart} />,
-            tags: ['Next.js', 'Node.js', 'MongoDB', 'Redis'],
+            title: 'Tech Innovators',
+            description: 'Engineering robust digital solutions with cutting-edge technologies and scale.',
+            icon: <FontAwesomeIcon icon={faLaptopCode} />,
+            tags: ['Development', 'AI', 'Cloud'],
             completion: '100%',
             color: '#4ECDC4',
-            image: gymProjectImg
+            image: CTVisual2
         },
         {
             id: 3,
-            title: 'Mobile App For Jewellery',
-            description: 'Mobile Based Digital System For customers',
-            icon: <FontAwesomeIcon icon={faMobileAlt} />,
-            tags: ['React Native', 'Kotlin', 'Swift', 'Firebase'],
+            title: 'Strategic Planners',
+            description: 'Aligning business goals with effective digital transformation and growth.',
+            icon: <FontAwesomeIcon icon={faChartLine} />,
+            tags: ['Strategy', 'Consulting', 'Growth'],
             completion: '100%',
             color: '#45B7D1',
-            image: jewelleryProjectImg
+            image: CTVisual3
         },
         {
             id: 4,
-            title: 'Healthcare App for clinic',
-            description: 'Patient Friendly mobile App for booking Appointments',
-            icon: <FontAwesomeIcon icon={faHospital} />,
-            tags: ['Python', 'PyTorch', 'PostgreSQL', 'Docker'],
+            title: 'Continuous Learning',
+            description: 'Empowering our team with the latest industry knowledge and elite skills.',
+            icon: <FontAwesomeIcon icon={faGraduationCap} />,
+            tags: ['Training', 'R&D', 'Innovation'],
             completion: '100%',
             color: '#96CEB4',
-            image: healthcareProjectImg
+            image: CTVisual4
         }
     ];
 
@@ -375,10 +380,17 @@ const OurTeamPage = () => {
                                 <span style={{ fontFamily: "'Aclonica', sans-serif" }}>BUILD BETTER BUSINESS</span></span>
                         </h1>
 
-                        <p className="otp-main-subtitle-new">
-                            ENGLORAY is trusted by clients, valued by customers, empowering <br />
-                            students and suported by a strong Team.
-                        </p>
+
+                    </div>
+
+                    <div className="otp-slogan-container">
+                        <h2 className="otp-slogan-main">Transforming businesses and empowering individuals through innovative digital solutions and education.</h2>
+                        <div className="otp-slogan-separator"></div>
+                        <div className="otp-cta-row">
+                            <button className="otp-btn-access-new">
+                                <span className="otp-btn-text">Work With US</span> <FontAwesomeIcon icon={faArrowRight} style={{ marginLeft: '8px' }} />
+                            </button>
+                        </div>
                     </div>
 
                     <div className="otp-3d-cards-container">
@@ -466,22 +478,10 @@ const OurTeamPage = () => {
                             <div className="otp-side-section-bottom">
                                 <hr className="otp-side-divider" />
                                 <div className="otp-side-platforms">
-                                    <FontAwesomeIcon icon={faGlobe} /><FontAwesomeIcon icon={faRocket} /><FontAwesomeIcon icon={faBrain} />
+                                    <FontAwesomeIcon icon={faGlobe} /><FontAwesomeIcon icon={faWandMagic} /><FontAwesomeIcon icon={faBrain} />
                                 </div>
                                 <p className="otp-side-desc-mini">Our awesome guests are industry experts.</p>
                             </div>
-                        </div>
-                    </div>
-
-
-                    <div className="otp-slogan-container">
-                        <h2 className="otp-slogan-main">Transforming businesses and empowering individuals through innovative digital solutions and education.</h2>
-                        <div className="otp-slogan-separator"></div>
-                        <p className="otp-slogan-sub">YOUR GATEWAY TO EXCLUSIVE BUSINESS SCALING, TECH SOLUTIONS, AND ELITE CAREER GROWTH.</p>
-                        <div className="otp-cta-row">
-                            <button className="otp-btn-access-new">
-                                <span className="otp-btn-text">Work With US</span> <FontAwesomeIcon icon={faArrowRight} style={{ marginLeft: '8px' }} />
-                            </button>
                         </div>
                     </div>
                 </div>
@@ -495,34 +495,46 @@ const OurTeamPage = () => {
 
                 {/* Core Team - Redesigned like image */}
                 <section className="otp-core-team-redesign">
-                    <div className="otp-ct-header-area">
-                        <div className="otp-ct-title-section">
-                            <h2 className="otp-ct-title-bold">OUR</h2>
-                            <h2 className="otp-ct-title-bold"><span className="otp-ct-highlight">CREATIVE</span> TEAM</h2>
-                            <p className="otp-ct-desc">
-                                Including Designers, Developers, Strategists and Specialists working together to deliver exceptional results. We focus on transforming businesses and empowering individuals through innovative digital solutions.
-                            </p>
+                    <div className="otp-ct-zoom-wrapper">
+                        <div className="otp-ct-header-area">
+                            <div className="otp-ct-title-section">
+                                <h2 className="otp-ct-title-bold">OUR</h2>
+                                <h2 className="otp-ct-title-bold"><span className="otp-ct-highlight">CREATIVE</span> TEAM</h2>
+                                <p className="otp-ct-desc">
+                                    Including Designers, Developers, Strategists and Specialists working together to deliver exceptional results. We focus on transforming businesses and empowering individuals through innovative digital solutions.
+                                </p>
+                            </div>
+
                         </div>
 
-                    </div>
 
 
-
-                    <div className="otp-ct-cards-area">
-                        {teamMembers.map((member, index) => {
-                            return (
-                                <div key={member.id} className="otp-ct-card-new">
-                                    <div className="otp-ct-avatar-container">
-                                        <img src={member.img} alt={member.name} className="otp-ct-avatar-img" />
+                        <div className="otp-ct-cards-area">
+                            {teamMembers.map((member, index) => {
+                                return (
+                                    <div key={member.id} className="otp-ct-card-new">
+                                        <div className="otp-ct-avatar-container">
+                                            <img src={member.img} alt={member.name} className="otp-ct-avatar-img" />
+                                        </div>
+                                        <h3 className="otp-ct-vertical-name">{member.name}</h3>
+                                        <div className="otp-ct-member-info">
+                                            <h4 className="otp-ct-member-name-text">{member.name}</h4>
+                                            <p className="otp-ct-member-role-text">{member.role}</p>
+                                        </div>
                                     </div>
-                                    <h3 className="otp-ct-vertical-name">{member.name}</h3>
-                                    <div className="otp-ct-member-info">
-                                        <h4 className="otp-ct-member-name-text">{member.name}</h4>
-                                        <p className="otp-ct-member-role-text">{member.role}</p>
-                                    </div>
-                                </div>
-                            );
-                        })}
+                                );
+                            })}
+                        </div>
+
+                        {/* Team Strength Indicator */}
+                        <div className="otp-ct-strength-container">
+                            <div className="otp-ct-strength-badge">
+                                <span className="otp-ct-dot"></span> LIVE
+                            </div>
+                            <h3 className="otp-ct-strength-text">
+                                Powering Excellence with <span className="otp-ct-strength-highlight">16+ Dedicated</span> Professionals
+                            </h3>
+                        </div>
                     </div>
                 </section>
 
@@ -530,12 +542,12 @@ const OurTeamPage = () => {
                 <section className="otp-projects-red-bento">
                     {/* Header */}
                     <div className="otp-projects-bento-header">
-                        <span className="otp-bento-badge">Our Projects</span>
+                        <span className="otp-bento-badge">Our Collaborative Excellence</span>
                         <h2 className="otp-bento-title">
-                            Our Professional <span className="otp-bento-title-accent"> <br />Amazing Services for Your Business</span>
+                            Driving Innovation Through <span className="otp-bento-title-accent"> <br />Team Synergy & Expertise</span>
                         </h2>
                         <p className="otp-bento-desc">
-                            Expert-led digital transformation strategies that elevate your brand presence and operational efficiency. We focus on delivering value-driven innovations that resonate with your global audience and future-proof your business model.
+                            Our team's collective expertise fuels every project we undertake. We believe in the power of collaboration, blending diverse skills and perspectives to build digital solutions that not only solve problems but also inspire growth and long-term success.
                         </p>
                     </div>
 
@@ -802,6 +814,29 @@ const OurTeamPage = () => {
                                 </div>
 
                             </div>
+
+                            {/* Right Side: Extra Info / Location */}
+                            <div className="otp-contact-extra">
+                                <div className="otp-contact-card-main otp-location-card">
+                                    <div className="otp-card-header">
+                                        <div className="otp-card-header-text">
+                                            <span className="otp-card-label">HEADQUARTERS</span>
+                                            <h3 className="otp-card-value">Global Innovation Center</h3>
+                                        </div>
+                                        <div className="otp-card-icon-box">
+                                            <FontAwesomeIcon icon={faGlobe} />
+                                        </div>
+                                    </div>
+                                    <p className="otp-location-desc" style={{ color: '#aaa', marginTop: '20px', lineHeight: '1.6', fontSize: '0.9rem' }}>
+                                        Visit our primary design and development hub to meet the team and discuss your next big project in person. Our doors are always open for visionary collaborations.
+                                    </p>
+                                    <div className="otp-side-tags" style={{ marginTop: '20px', justifyContent: 'flex-start' }}>
+                                        <span className="otp-mini-tag">#TechHub</span>
+                                        <span className="otp-mini-tag">#DesignStudio</span>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </section>

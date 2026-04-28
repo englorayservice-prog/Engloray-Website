@@ -6,7 +6,7 @@ import './DigitalMarketing.css';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
-import MainPageSubFooter from '../MainPageSubFooter/MainPageSubFooter';
+import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 import { Helmet } from 'react-helmet';
 import { FaChartLine, FaBullhorn, FaSearchDollar, FaMobileAlt, FaEnvelopeOpenText, FaUserCircle, FaGem, FaChartBar, FaGlobe, FaRocket } from "react-icons/fa";
 import heroBg from "../../../assets/lineimage.jpeg";
@@ -27,8 +27,8 @@ import logo9 from '../../../assets/icons/logoipsum-298.png';
 import logo10 from '../../../assets/icons/logoipsum-299.png';
 import logo11 from '../../../assets/icons/logoipsum-327.png';
 import logo12 from '../../../assets/icons/logoipsum-338.png';
-import avatarLeft from '../../../assets/rev_avatar_5.jfif';
-import avatarRight from '../../../assets/rev_avatar_4.jfif';
+import avatarLeft from '../../../assets/cartoon_female_2.png';
+import avatarRight from '../../../assets/cartoon_male_2.png';
 
 const DigitalMarketing = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -97,6 +97,30 @@ const DigitalMarketing = () => {
             author: "Apex Consulting",
             role: "Managing Partner",
             initial: "A"
+        },
+        {
+            id: 7,
+            rating: "★★★★★",
+            text: "The conversion rate optimization work they did on our landing pages was a game changer. We're seeing more sales with the same traffic.",
+            author: "Global Retail",
+            role: "E-commerce Manager",
+            initial: "G"
+        },
+        {
+            id: 8,
+            rating: "★★★★★",
+            text: "A truly professional team that understands both the technical and creative sides of marketing. Our brand presence has never been stronger.",
+            author: "Starlight Media",
+            role: "Brand Manager",
+            initial: "S"
+        },
+        {
+            id: 9,
+            rating: "★★★★★",
+            text: "Engloray is more than an agency; they are a growth partner. Their proactive ideas have opened up new markets for us.",
+            author: "Horizon Sales",
+            role: "Director of Sales",
+            initial: "H"
         }
     ];
 
@@ -263,8 +287,8 @@ const DigitalMarketing = () => {
                                 Accelerating Growth with<br /> <span className="dm-title-highlight">Data</span> <span className="dm-title-highlight">Marketing</span>
                             </h1>
                             <p className="dm-hero-desc">
-                                We help businesses scale through performance-driven digital strategies, 
-                                maximizing your reach and converting traffic into measurable revenue 
+                                We help businesses scale through performance-driven digital strategies,
+                                maximizing your reach and converting traffic into measurable revenue
                                 with cutting-edge marketing technology and creative execution.
                             </p>
                             <div className="dm-privacy-badge">Your ROI is our top priority.</div>
@@ -341,6 +365,12 @@ const DigitalMarketing = () => {
                                     measured by results. We've decoded the DNA of high-growth
                                     marketing to provide your business with the ultimate scale-up framework.
                                 </p>
+                                <ul className="dm-dna-list">
+                                    <li><strong>Conversion Rate Optimization:</strong> Precision engineering of user journeys to maximize sales.</li>
+                                    <li><strong>Predictive Targeting:</strong> Using AI to reach high-intent audiences before the competition.</li>
+                                    <li><strong>Multi-Channel Attribution:</strong> Clear insights into which platforms are driving your ROI.</li>
+                                    <li><strong>Real-Time Analytics:</strong> 24/7 performance tracking and agile budget optimization.</li>
+                                </ul>
                             </div>
 
                             <div className="dm-dna-right">
@@ -402,6 +432,12 @@ const DigitalMarketing = () => {
                             <div className="dm-stats-content">
                                 <h2>Marketing Impact in Numbers</h2>
                                 <p>We don't just promise growth; we deliver it. Our metrics reflect millions in managed ad spend and countless successful scaling operations for our partners.</p>
+                                <ul className="dm-impact-list">
+                                    <li>3.5x Average ROI Growth for our long-term scaling partners.</li>
+                                    <li>Reduced Cost Per Acquisition (CPA) by 40% through targeted optimization.</li>
+                                    <li>1M+ Verified leads generated across diverse B2B and B2C industries.</li>
+                                    <li>Dominance in search results with 300+ keywords in top 3 positions.</li>
+                                </ul>
                             </div>
 
                             <div className="dm-stats-wrapper-cards">
@@ -485,7 +521,7 @@ const DigitalMarketing = () => {
                         </div>
                     </section>
 
-                    <MainPageSubFooter />
+                    <WhiteFooter />
                     <BackToTop />
                 </div>
             </div>

@@ -84,7 +84,7 @@ body {
     font-family: "Inter", sans-serif;
     display: inline-block;
     font-size: 15px;
-    color: #fff;
+    color: #000000;
     background: #bbf7d0;
     padding: 12px 24px;
     border-radius: 30px;
@@ -432,8 +432,8 @@ body {
     font-family: "inter", sans-serif;
     font-size: 50px;
     color: #27364a;
-    margin-right: 220px;
     margin-bottom: 15px;
+    text-align: left;
     font-weight: 700;
 }
 
@@ -453,6 +453,41 @@ body {
     color: #6c7a89;
     font-weight: 400;
     text-align: left;
+    margin-bottom: 25px;
+}
+
+.awd-dna-list, .awd-impact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.awd-dna-list li, .awd-impact-list li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 15px;
+    font-family: "inter", sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #4a5568;
+}
+
+.awd-dna-list li::before, .awd-impact-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #22c55e;
+    font-weight: bold;
+}
+
+.awd-dna-list li strong {
+    color: #1e2a44;
+    font-weight: 600;
+}
+
+.awd-stats-content p {
+    margin-bottom: 25px;
 }
 
 .awd-branddna-right {
@@ -540,7 +575,8 @@ body {
 /* Faint base connecting lines */
 .awd-base-path {
     fill: none;
-    stroke: #a7f3d0; /* Soft blue, no black */
+    stroke: #a7f3d0;
+    /* Soft blue, no black */
     stroke-width: 1.5;
     opacity: 0.3;
 }
@@ -551,24 +587,192 @@ body {
     stroke-width: 3.5;
     stroke-linecap: round;
     stroke-dasharray: 40 160;
-    opacity: 0; /* Strictly hidden before it's turn */
-    stroke-dashoffset: 140; /* Safely initialized offset */
+    opacity: 0;
+    /* Strictly hidden before it's turn */
+    stroke-dashoffset: 140;
+    /* Safely initialized offset */
     animation: flow-sequence 15s infinite both;
 }
 
 /* 5-Phase Sequence using correctly ordered delays (Left -> Top -> Center -> Bottom -> Right) */
-.awd-phase-1 .awd-flow-path { stroke: #22c55e; animation-delay: 0s; } /* Left - Voice */
-.awd-phase-2 .awd-flow-path { stroke: #10b981; animation-delay: 3s; } /* Top - Purpose */
-.awd-phase-3 .awd-flow-path { stroke: #ff7a18; animation-delay: 6s; } /* Center - Personality */
-.awd-phase-5 .awd-flow-path { stroke: #1e2a44; animation-delay: 9s; } /* Bottom - Visual Style */
-.awd-phase-4 .awd-flow-path { stroke: #43a047; animation-delay: 12s; } /* Right - Values */
+.awd-phase-1 .awd-flow-path {
+    stroke: #22c55e;
+    animation-delay: 0s;
+}
+
+/* Left - Voice */
+.awd-phase-2 .awd-flow-path {
+    stroke: #10b981;
+    animation-delay: 3s;
+}
+
+/* Top - Purpose */
+.awd-phase-3 .awd-flow-path {
+    stroke: #ff7a18;
+    animation-delay: 6s;
+}
+
+/* Center - Personality */
+.awd-phase-5 .awd-flow-path {
+    stroke: #1e2a44;
+    animation-delay: 9s;
+}
+
+/* Bottom - Visual Style */
+.awd-phase-4 .awd-flow-path {
+    stroke: #43a047;
+    animation-delay: 12s;
+}
+
+/* Right - Values */
 
 @keyframes flow-sequence {
-    0% { opacity: 0; stroke-dashoffset: 140; }
-    2% { opacity: 1; stroke-dashoffset: 140; }
-    18% { stroke-dashoffset: -100; opacity: 1; }
-    20% { opacity: 0; stroke-dashoffset: -100; }
-    100% { opacity: 0; stroke-dashoffset: -100; }
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 140;
+    }
+
+    2% {
+        opacity: 1;
+        stroke-dashoffset: 140;
+    }
+
+    18% {
+        stroke-dashoffset: -100;
+        opacity: 1;
+    }
+
+    20% {
+        opacity: 0;
+        stroke-dashoffset: -100;
+    }
+
+    100% {
+        opacity: 0;
+        stroke-dashoffset: -100;
+    }
+}
+
+/* ============================== */
+/* RESPONSIVE STYLES - 768px */
+/* ============================== */
+@media screen and (max-width: 768px) {
+
+    /* Move personality (scalability) slightly up */
+    .awd-circle-personality {
+        top: 190px !important;
+        left: 360px !important;
+    }
+
+    /* Move voice (code quality) slightly down */
+    .awd-circle-voice {
+        top: 190px !important;
+    }
+
+    /* Move values (performance) slightly down */
+    .awd-circle-values {
+        top: 190px !important;
+    }
+}
+
+/* ============================== */
+/* RESPONSIVE STYLES - 320px */
+/* ============================== */
+@media screen and (max-width: 480px) {
+    .awd-branddna-right {
+        width: 100%;
+        height: auto;
+        position: relative;
+        right: 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
+        justify-items: center;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    /* Hide link lines */
+    .awd-link-svg {
+        display: none !important;
+    }
+
+    /* Reset all circle positions */
+    .awd-dna-circle {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        width: 100px !important;
+        height: 100px !important;
+        margin: 0;
+        padding: 8px;
+    }
+
+    /* Purpose (Architecture) - Row 1, Col 1 */
+    .awd-circle-purpose {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        margin-left: 37px;
+    }
+
+    /* Voice (Code Quality) - Row 1, Col 2 */
+    .awd-circle-voice {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        margin-left: -155px;
+    }
+
+    /* Values (Security) - Row 1, Col 3 */
+    .awd-circle-values {
+        grid-column: 3 / 4;
+        grid-row: 1 / 2;
+        margin-left: -110px
+    }
+
+    /* Personality (Scalability) - Row 2, Col 2 (centered) */
+    .awd-circle-personality {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+
+    }
+
+    /* Better layout for row 2 - two circles centered */
+    .awd-circle-personality {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        justify-self: end;
+        margin-top: -50px;
+        margin-right: -50px;
+    }
+
+    /* Visual (Performance) - Row 2, Col 2 */
+    .awd-circle-visual {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+        justify-self: start;
+        margin-top: -50px;
+        margin-left: 60px;
+    }
+
+    /* Adjust circle content to prevent text cutoff */
+    .awd-dna-circle h3 {
+        font-size: 11px;
+        margin-top: 5px;
+        text-align: center;
+        word-break: break-word;
+    }
+
+    .awd-circle-desc {
+        font-size: 7px;
+        display: none;
+    }
+
+    .awd-dna-circle .awd-icon {
+        font-size: 16px;
+        margin-bottom: 2px;
+    }
 }
 
 /* ============================== */
@@ -662,12 +866,15 @@ body {
 
 .awd-step-card {
     position: relative;
-    background: rgba(45, 55, 72, 0.4); /* Subtle but clearly visible background */
+    background: rgba(45, 55, 72, 0.4);
+    /* Subtle but clearly visible background */
     padding: 25px;
     border-radius: 16px;
     width: 100%;
-    opacity: 1; /* Fully visible by default */
-    border: 1px solid rgba(255, 255, 255, 0.05); /* Soft rim */
+    opacity: 1;
+    /* Fully visible by default */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    /* Soft rim */
     transform: scale(1);
     transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
@@ -679,7 +886,8 @@ body {
 
 .awd-step-card:hover {
     background: rgba(45, 55, 72, 0.6);
-    transform: scale(0.96); /* Subtle zoom out effect */
+    transform: scale(0.96);
+    /* Subtle zoom out effect */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     border-color: rgba(198, 255, 79, 0.3);
 }
@@ -774,29 +982,35 @@ body {
     gap: 24px;
     width: 480px;
     margin-top: 20px;
-    transform: translateX(-80px); /* Move left generally to balance the expanded bottom shift */
+    transform: translateX(-80px);
+    /* Move left generally to balance the expanded bottom shift */
 }
 
 .awd-stat-card {
     position: relative;
     left: 0;
-    background: #0f172a; /* Deep sleek black */
+    background: #0f172a;
+    /* Deep sleek black */
     border-radius: 16px;
     padding: 35px 20px;
-    width: 228px; /* Fixed identical sizing for all cards */
+    width: 228px;
+    /* Fixed identical sizing for all cards */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5); /* Deep shadow */
-    border: 1px solid rgba(255, 255, 255, 0.05); /* Slight bright rim */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    /* Deep shadow */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    /* Slight bright rim */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .awd-stat-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 20px 50px rgba(74, 222, 128, 0.25); /* Glow on hover */
+    box-shadow: 0 20px 50px rgba(74, 222, 128, 0.25);
+    /* Glow on hover */
 }
 
 .awd-stat-card h2 {
@@ -813,13 +1027,15 @@ body {
     letter-spacing: 0.5px;
     margin-top: 6px;
     font-weight: 600;
-    color: #94a3b8; /* Lighter slate gray for dark theme */
+    color: #94a3b8;
+    /* Lighter slate gray for dark theme */
 }
 
 /* Second Row Shifting Logic */
 .awd-stat-card:nth-child(3),
 .awd-stat-card:nth-child(4) {
-    left: 126px; /* Exactly half of (228px card + 24px gap) to beautifully position it slanted! */
+    left: 126px;
+    /* Exactly half of (228px card + 24px gap) to beautifully position it slanted! */
 }
 
 .awd-connector {
@@ -854,6 +1070,103 @@ body {
     opacity: 0.8;
     color: #000;
     font-weight: 700;
+}
+
+/* ============================== */
+/* RESPONSIVE STYLES - 320px */
+/* ============================== */
+@media screen and (max-width: 480px) {
+    .awd-circular-stats {
+        padding: 60px 0;
+    }
+
+    .awd-branding-stats-layout {
+        width: 100%;
+        flex-direction: column;
+        padding: 0 15px;
+        gap: 40px;
+    }
+
+    .awd-stats-content {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .awd-stats-content h2 {
+        font-size: 28px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .awd-stats-content p {
+        font-size: 15px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .awd-stats-wrapper-cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        width: 100%;
+        transform: translateX(0);
+        margin-top: 20px;
+    }
+
+    /* Reduce card size */
+    .awd-stat-card {
+        width: 100% !important;
+        padding: 20px 10px;
+        left: 0 !important;
+    }
+
+    /* Reduce inner content size */
+    .awd-stat-card h2 {
+        font-size: 28px !important;
+    }
+
+    .awd-stat-card p {
+        font-size: 11px !important;
+    }
+
+    /* Reset second row shifting */
+    .awd-stat-card:nth-child(3),
+    .awd-stat-card:nth-child(4) {
+        left: 0 !important;
+    }
+
+    /* Bottom stats - 2x2 layout */
+    .awd-bottom-stats {
+        margin-top: 60px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    /* Reduce bottom stat size */
+    .awd-stat h3 {
+        font-size: 28px;
+    }
+
+    .awd-stat p {
+        font-size: 12px;
+    }
+}
+
+/* ============================== */
+/* RESPONSIVE STYLES - 768px */
+/* ============================== */
+@media screen and (max-width: 768px) {
+
+    /* Bottom stats - 2x2 layout only */
+    .awd-bottom-stats {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 40px !important;
+        margin-top: 80px !important;
+    }
 }
 
 /* ============================== */
@@ -1031,6 +1344,221 @@ body {
 }
 
 /* ============================== */
+/* PROJECTS SECTION - COMPLETE 320px RESPONSIVE */
+/* ============================== */
+@media screen and (max-width: 480px) {
+    .awd-projects-section {
+        height: auto;
+        min-height: auto;
+        padding: 80px 15px 100px 15px;
+        flex-direction: column;
+        position: relative;
+        background: #f6f8fa;
+    }
+
+    /* Hide background images on mobile for cleaner look */
+    .awd-projects-bg-right,
+    .awd-projects-bg-left {
+        display: none;
+    }
+
+    /* Content styling */
+    .awd-projects-content {
+        max-width: 100%;
+        padding: 0;
+        z-index: 10;
+        position: relative;
+    }
+
+    .awd-projects-content h1 {
+        font-size: 32px;
+        max-width: 100%;
+        line-height: 1.2;
+        text-align: center;
+        margin-bottom: 15px;
+        word-break: break-word;
+    }
+
+    .awd-projects-content p {
+        width: 100%;
+        font-size: 14px;
+        margin-top: 12px;
+        line-height: 1.5;
+        text-align: center;
+        padding: 0 5px;
+    }
+
+    /* Stats styling - horizontal line */
+    .awd-projects-stats {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 30px;
+        margin-bottom: 40px;
+        flex-wrap: wrap;
+    }
+
+    .awd-projects-stats h2 {
+        font-size: 24px;
+        margin: 0;
+        font-weight: 800;
+    }
+
+    .awd-projects-stats span {
+        font-size: 11px;
+        display: block;
+        margin-top: 5px;
+    }
+
+    .awd-projects-stats>div {
+        text-align: center;
+        flex: 1;
+        min-width: 85px;
+    }
+
+    /* Logo grid container - placed below stats */
+    .awd-projects-logos {
+        position: relative !important;
+        width: 100% !important;
+        height: auto !important;
+        margin-top: 20px;
+        /* margin-bottom: 20px; */
+        display: block !important;
+    }
+
+    /* Create a single grid for all logos */
+    .awd-left-logos,
+    .awd-right-logos {
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 15px !important;
+        justify-items: center !important;
+        align-items: center !important;
+        position: relative !important;
+        width: 100% !important;
+        margin: 0 !important;
+        margin-top: 20px;
+        padding: 0 !important;
+    }
+
+    /* Add spacing between left and right logo sections */
+    .awd-right-logos {
+        margin-top: 15px !important;
+    }
+
+    /* Remove absolute positioning from all logos */
+    .awd-left-logos .awd-project-logo-card,
+    .awd-right-logos .awd-project-logo-card {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+    }
+
+    /* Remove individual positioning for each logo */
+    .awd-left-logos .l1,
+    .awd-left-logos .l2,
+    .awd-left-logos .l3,
+    .awd-left-logos .l4,
+    .awd-left-logos .l5,
+    .awd-left-logos .l6,
+    .awd-right-logos .r1,
+    .awd-right-logos .r2,
+    .awd-right-logos .r3,
+    .awd-right-logos .r4,
+    .awd-right-logos .r5,
+    .awd-right-logos .r6 {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+    }
+
+    /* Logo card styling */
+    .awd-project-logo-card {
+        margin-top: 0px !important;
+        width: 50px !important;
+        height: 50px !important;
+        border-radius: 12px !important;
+        background: white !important;
+        border: 1px solid rgba(0, 0, 0, 0.1) !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        transition: transform 0.2s ease;
+    }
+
+    .awd-project-logo-card:hover {
+        transform: scale(1.05);
+    }
+
+    /* Logo image styling */
+    .awd-project-logo {
+        width: 30px !important;
+        height: 30px !important;
+        object-fit: contain !important;
+    }
+
+    /* Ensure all logos are visible */
+    .awd-left-logos,
+    .awd-right-logos,
+    .awd-projects-logos {
+        overflow: visible !important;
+    }
+
+    /* Additional spacing for very small devices */
+    @media screen and (max-width: 360px) {
+        .awd-projects-section {
+            padding: 60px 12px 80px 12px;
+        }
+
+        .awd-projects-content h1 {
+            margin-top: 30px;
+            font-size: 26px;
+        }
+
+        .awd-projects-content p {
+            font-size: 12px;
+        }
+
+        .awd-projects-stats {
+            gap: 10px;
+        }
+
+        .awd-projects-stats h2 {
+            font-size: 20px;
+        }
+
+        .awd-projects-stats span {
+            font-size: 9px;
+        }
+
+        .awd-left-logos {
+            margin-top: 60px !important;
+        }
+
+        .awd-right-logos {
+            margin-top: 10px !important;
+            gap: 5px !important;
+        }
+
+        .awd-project-logo-card {
+            width: 42px !important;
+            height: 42px !important;
+        }
+
+        .awd-project-logo {
+            width: 24px !important;
+            height: 24px !important;
+        }
+    }
+}
+
+/* ============================== */
 /* FEEDBACK SECTION */
 /* ============================== */
 .awd-feedback-section {
@@ -1043,7 +1571,7 @@ body {
 
 .awd-feedback-header {
     max-width: 1200px;
-    margin: 0 auto 60px;
+    margin: 0 auto 20px;
     padding: 0 20px;
     text-align: left;
 }
@@ -2222,6 +2750,7 @@ body {
     }
 
     .awd-feedback-carousel {
+        margin-top: -100px;
         height: 420px;
     }
 
@@ -2276,7 +2805,7 @@ body {
 
     .awd-feedback-controls {
         gap: 15px;
-        margin-top: 30px;
+        margin-top: -60px;
     }
 
     .awd-feedback-controls button {
@@ -2518,3 +3047,373 @@ body {
     }
 }
 
+/* ============================== */
+/* HERO SECTION BADGES - VERTICAL GAP AT 320px (ARROWS UNCHANGED) */
+/* ============================== */
+@media screen and (max-width: 480px) {
+
+    /* Add vertical gap between badges */
+    .awd-badge-glass {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 20px !important;
+        position: relative !important;
+        bottom: auto !important;
+        margin-top: 40px !important;
+        transform: none !important;
+        left: auto !important;
+        right: auto !important;
+        background: transparent !important;
+        backdrop-filter: none !important;
+        width: 100%;
+    }
+
+    /* Keep badges in their original relative positions */
+    .awd-badge-strategy,
+    .awd-badge-guidelines {
+        position: relative !important;
+        border-radius: 20px !important;
+        width: auto !important;
+        display: inline-block !important;
+    }
+
+    /* Keep original arrow positions exactly as they were */
+    .awd-badge-strategy::after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-top: 10px solid #000;
+        border-right: 10px solid #000;
+        border-radius: 2px;
+        top: -20px !important;
+        right: -30px !important;
+        left: auto !important;
+        transform: rotate(20deg) !important;
+    }
+
+    .awd-badge-guidelines::after {
+        content: "";
+        font-weight: 500;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-top: 10px solid #000;
+        border-right: 10px solid #000;
+        border-radius: 2px;
+        top: -15px !important;
+        left: -30px !important;
+        right: auto !important;
+        transform: rotate(-115deg) !important;
+    }
+}
+
+.awd-feedback-card,
+.awd-about-card,
+.awd-step-card,
+.awd-dna-circle {
+    transition: all 0.3s ease;
+}
+
+/* ==========================================================================
+   Widescreen Optimizations (1440px and higher)
+   ========================================================================== */
+@media (min-width: 1440px) {
+
+    .awd-container,
+    .awd-branddna-container,
+    .awd-howworks-container,
+    .awd-branding-stats-layout {
+        max-width: 1600px;
+        width: 1600px;
+        margin: 0 auto;
+    }
+
+    /* Hero Section Scaling */
+    .awd-hero {
+        height: 750px;
+        padding: 160px 20px 220px;
+    }
+
+    .awd-hero-title {
+        font-size: 72px;
+        max-width: 1300px;
+    }
+
+    .awd-hero-desc {
+        font-size: 20px;
+        max-width: 1100px;
+        margin-bottom: 50px;
+    }
+
+    .awd-hero-badge {
+        font-size: 18px;
+        padding: 10px 45px;
+    }
+
+    .awd-floating-card {
+        width: 280px;
+        padding: 20px 24px;
+    }
+
+    .awd-floating-card.awd-left {
+        top: 180px;
+        left: 120px;
+    }
+
+    .awd-floating-card.awd-right {
+        top: 180px;
+        right: 140px;
+    }
+
+    .awd-card-content h4 {
+        font-size: 16px;
+    }
+
+    .awd-badge-glass {
+        gap: 30px;
+        bottom: 100px;
+    }
+
+    .awd-service-badge {
+        font-size: 18px;
+        padding: 14px 24px;
+    }
+
+    /* About Section Scaling */
+    .awd-about-section {
+        padding: 80px 0;
+    }
+
+    .awd-about-header {
+        max-width: 1000px;
+        margin-bottom: 60px;
+    }
+
+    .awd-about-title {
+        font-size: 3.5rem;
+    }
+
+    .awd-about-description {
+        font-size: 1.25rem;
+    }
+
+    .awd-cards-grid {
+        gap: 40px;
+    }
+
+    .awd-card-title {
+        font-size: 1.4rem;
+    }
+
+    .awd-card-description {
+        font-size: 1rem;
+    }
+
+    .awd-card-image {
+        height: 220px;
+    }
+
+    /* DNA Section Scaling */
+    .awd-branddna-section {
+        padding: 100px 0;
+    }
+
+    .awd-branddna-container {
+        gap: 240px;
+    }
+
+    .awd-branddna-left h2 {
+        font-size: 58px;
+    }
+
+    .awd-branddna-subtitle {
+        font-size: 34px;
+    }
+
+    .awd-branddna-left p {
+        font-size: 20px;
+    }
+
+    .awd-branddna-right {
+        width: 650px;
+        height: 600px;
+    }
+
+    .awd-dna-circle {
+        width: 200px;
+        height: 200px;
+    }
+
+    .awd-dna-circle h3 {
+        font-size: 20px;
+    }
+
+    .awd-circle-desc {
+        font-size: 13px;
+    }
+
+    .awd-circle-purpose {
+        top: -80px;
+        left: 225px;
+    }
+
+    .awd-circle-voice {
+        top: 200px;
+        left: -100px;
+    }
+
+    .awd-circle-values {
+        top: 200px;
+        right: -100px;
+    }
+
+    .awd-circle-personality {
+        top: 200px;
+        left: 225px;
+    }
+
+    .awd-circle-visual {
+        bottom: -90px;
+        left: 225px;
+    }
+
+    /* How It Works Scaling */
+    .awd-howworks {
+        padding: 80px 0;
+    }
+
+    .awd-howworks-container {
+        grid-template-columns: 500px 1fr;
+        gap: 120px;
+    }
+
+    .awd-main-title {
+        font-size: 54px;
+    }
+
+    .awd-intro-text {
+        font-size: 17px;
+    }
+
+    .awd-section-title {
+        font-size: 42px;
+    }
+
+    .awd-steps-grid {
+        gap: 30px;
+    }
+
+    .awd-step-card {
+        padding: 35px;
+    }
+
+    .awd-step-card h3 {
+        font-size: 20px;
+    }
+
+    .awd-step-card p {
+        font-size: 15px;
+    }
+
+    /* Stats Section Scaling */
+    .awd-circular-stats {
+        padding: 100px 0;
+    }
+
+    .awd-stats-content h2 {
+        font-size: 52px;
+        width: 600px;
+    }
+
+    .awd-stats-content p {
+        font-size: 18px;
+        max-width: 550px;
+    }
+
+    .awd-stat-card {
+        width: 240px !important;
+        height: 240px !important;
+    }
+
+    .awd-stat-card h2 {
+        font-size: 42px !important;
+    }
+
+    .awd-bottom-stats {
+        margin-top: 100px;
+        gap: 80px;
+    }
+
+    .awd-stat h3 {
+        font-size: 42px;
+    }
+
+    .awd-stat p {
+        font-size: 15px;
+    }
+
+    /* Projects Section Scaling */
+    .awd-projects-section {
+        padding: 100px 0;
+    }
+
+    .awd-projects-content h1 {
+        font-size: 48px;
+    }
+
+    .awd-projects-content p {
+        font-size: 18px;
+        width: 700px;
+    }
+
+    .awd-projects-stats h2 {
+        font-size: 40px;
+    }
+
+    .awd-project-logo-card {
+        width: 100px;
+        height: 100px;
+    }
+
+    /* Feedback Section Scaling */
+    .awd-feedback-section {
+        padding: 100px 0;
+    }
+
+    .awd-feedback-title {
+        font-size: 48px;
+    }
+
+    .awd-feedback-description {
+        font-size: 1.25rem;
+        max-width: 900px;
+    }
+
+    .awd-feedback-card {
+        width: 650px;
+        padding: 60px;
+    }
+
+    .awd-feedback-card.left {
+        transform: translateX(-500px) scale(0.85);
+    }
+
+    .awd-feedback-card.right {
+        transform: translateX(500px) scale(0.85);
+    }
+
+    .awd-feedback-text {
+        font-size: 18px;
+    }
+
+    .awd-author-name {
+        font-size: 20px;
+    }
+
+    .awd-feedback-carousel {
+        height: 500px;
+    }
+}

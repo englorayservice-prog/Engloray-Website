@@ -102,9 +102,7 @@ import pathFive from '../../../assets/resources file/resources file/TECH/GRAPHIC
 import pathSix from '../../../assets/resources file/resources file/TECH/GRAPHICS DESIGNERS/Productivity, AI & Workflow Support.pdf';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import Navbar from '../../../Components/Navbar/Navbar';
-
 import BackToTop from '../../../Components/BackToTop/BackToTop';
-import SubFooterOne from '../../../Pages/Sub Pages/subFooterOne/NewFooter1';
 import { Helmet } from 'react-helmet';
 
 const TrainingMentorInternPage = () => {
@@ -748,10 +746,8 @@ const TrainingMentorInternPage = () => {
             )}
 
             <div className="TM-content" ref={containerRef}>
-                    <TopNavBar />
-                    <Navbar />
-                
-                
+                {/* <TopNavBar/> */}
+                {/* <Navbar/> */}
 
                 {/* Hero Section */}
                 <section
@@ -1846,7 +1842,6 @@ const TrainingMentorInternPage = () => {
                     </div>
                 </section>
                 <BackToTop />
-                <SubFooterOne />
             </div>
         </>
     );
