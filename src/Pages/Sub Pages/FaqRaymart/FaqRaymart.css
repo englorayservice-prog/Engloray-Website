@@ -5,7 +5,7 @@
   font-family: 'Inter', sans-serif;
   background-color: #f6f6f6;
   min-height: 100vh;
-  padding: 40px 5% 60px;
+  padding: 140px 5% 60px;
   color: #1a1a1a;
 }
 
@@ -779,6 +779,8 @@
   font-weight: 600;
   border: none;
   cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
   transition: background 0.3s;
 }
 
@@ -1223,7 +1225,8 @@
   font-weight: 600;
 }
 
-.cs-box button {
+.cs-box button,
+.cs-box .cs-contact-btn {
   background: #2d6cdf;
   color: #fff;
   border: none;
@@ -1234,8 +1237,14 @@
   transition: background 0.3s ease;
 }
 
-.cs-box button:hover {
+.cs-box button:hover,
+.cs-box .cs-contact-btn:hover {
   background: #1e4faa;
+}
+
+.cs-box .cs-contact-btn {
+  display: inline-block;
+  text-decoration: none;
 }
 
 /* Separate container for BOX 2 UL */

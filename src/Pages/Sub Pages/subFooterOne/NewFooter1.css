@@ -983,3 +983,10 @@
         color: #000 !important;
     }
 }
+
+/* Extra Large Desktop (1400px and above) - Zoom in Footer */
+@media (min-width: 1400px) {
+    .new1-footer {
+        zoom: 1.15;
+    }
+}

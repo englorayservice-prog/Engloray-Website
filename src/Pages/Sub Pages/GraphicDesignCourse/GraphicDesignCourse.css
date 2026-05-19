@@ -5444,6 +5444,104 @@ section.gdc-tools-v2-section {
   }
 }
 
+/* ===== BENEFITS SECTION BOTTOM LAYOUT FIX ===== */
+
+/* Bottom Layout (Left Tall + Middle Grid + Right Tall) */
+.gdc-benefits-bottom-layout {
+  display: flex !important;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+  align-items: stretch;
+  margin-top: 15px;
+}
+
+.gdc-benefits-middle-col {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Tall variant — Industry Recognition & Lifetime Updates */
+.gdc-new-benefit-card.gdc-benefit-card-tall {
+  width: 190px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 16px;
+  /* slightly smaller padding to fit more text */
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s ease;
+}
+
+.gdc-new-benefit-card.gdc-benefit-card-tall:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+  border-color: rgba(61, 82, 217, 0.2);
+  z-index: 10;
+}
+
+/* Allow full text to show (no line-clamp) on tall cards */
+.gdc-new-benefit-card.gdc-benefit-card-tall .gdc-new-content p {
+  display: block;
+  -webkit-line-clamp: unset;
+  line-clamp: unset;
+  overflow: visible;
+  line-height: 1.4;
+}
+
+/* 1440px lock for the new row with scaled up sizes for larger ratios */
+@media (min-width: 1440px) {
+  .gdc-benefits-bottom-layout {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: stretch !important;
+    gap: 20px !important;
+    max-width: 1400px;
+    margin: 20px auto 0 !important;
+    position: relative !important;
+  }
+
+  .gdc-benefits-middle-col {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+    width: auto !important;
+  }
+
+  .gdc-new-benefit-card.gdc-benefit-card-tall {
+    width: 220px !important;
+    padding: 22px !important;
+    height: auto !important;
+    position: relative !important;
+    margin: 0 !important;
+  }
+
+  .gdc-new-benefit-card.gdc-benefit-card-tall .gdc-new-content p {
+    font-size: 0.85rem !important;
+    /* Scaled up compression */
+    line-height: 1.45 !important;
+    margin-bottom: 0 !important;
+    overflow: visible !important;
+  }
+
+  .gdc-new-benefit-card.gdc-benefit-card-tall .gdc-new-content h3 {
+    font-size: 0.98rem !important;
+    margin-bottom: 8px !important;
+  }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .gdc-benefits-bottom-layout {
+    flex-wrap: wrap;
+  }
+}
+
 /* Anti-Gravity Testimonial Card Styles Migration */
 .gdc-ag-testimonials-section {
   padding: calc(100 * var(--gdc-fluid-scale)) 0;

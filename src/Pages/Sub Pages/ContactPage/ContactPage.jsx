@@ -41,8 +41,16 @@ const ContactPage = () => {
         e.preventDefault();
         setLoading(true);
 
+        // Construct Gmail redirection link
+        const subject = encodeURIComponent("Contact Form Submission");
+        const body = encodeURIComponent(
+            `Name: ${formData.fullName}\nEmail: ${formData.email}\nPhone: ${formData.phone}\n\nMessage:\n${formData.message}`
+        );
+        const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=engloray@gmail.com&su=${subject}&body=${body}`;
+
+        // Attempt backend database submission
         try {
-            const response = await fetch("https://localhost:8081/api/ContactForm", {
+            await fetch("https://localhost:8081/api/ContactForm", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -54,28 +62,23 @@ const ContactPage = () => {
                     message: formData.message
                 })
             });
-
-            if (!response.ok) {
-                const errorText = await response.text();
-                throw new Error(errorText || "Failed to submit contact form");
-            }
-
-            setSubmitted(true);
-            setLoading(false);
-            setFormData({ fullName: '', email: '', phone: '', subject: '', message: '' });
         } catch (error) {
-            console.error("Submission error:", error);
-            // Show alert or let UI handle it
-            alert("Form submission failed. Please verify the backend is running. Error: " + error.message);
-            setLoading(false);
+            console.error("Backend database submission bypassed, opening Gmail directly:", error);
         }
+
+        // Open Gmail Compose in a new tab with pre-filled content
+        window.open(gmailUrl, '_blank');
+
+        setSubmitted(true);
+        setLoading(false);
+        setFormData({ fullName: '', email: '', phone: '', subject: '', message: '' });
     };
 
     const socialLinks = {
-        facebook: 'https://www.facebook.com/profile.php?id=61583697831413',
-        twitter: 'https://x.com/engloraylearn',
-        instagram: 'https://www.instagram.com/engloray.learning/',
-        linkedin: 'https://www.linkedin.com/in/engloray-learning-603620391/',
+        facebook: 'https://www.facebook.com/profile.php?id=61583616114977',
+        twitter: 'https://x.com/engloraytech',
+        linkedin: 'https://www.linkedin.com/in/engloray-group-7534b6391/',
+        instagram: 'https://www.instagram.com/engloray/',
     };
 
     const handleSocialClick = (e, url) => {
@@ -172,7 +175,7 @@ const ContactPage = () => {
                                 <div className="sc-info-card">
                                     <h4 className="sc-info-card-title">Email</h4>
                                     <p className="sc-info-card-line">
-                                        <a href="mailto:engloraylearn@gmail.com">engloraylearn@gmail.com</a>
+                                        <a href="mailto:engloray@gmail.com">engloray@gmail.com</a>
                                     </p>
                                 </div>
 
@@ -379,19 +382,18 @@ const ContactPage = () => {
                                 </div>
                                 <div className="sc-df-col">
                                     <h4>COMPANY</h4>
-                                    <a href="/">About Us</a>
-                                    <a href="/allProjectsPage">Works</a>
+                                    <a href="/ourStoryPage">About Us</a>
+                                    <a href="/worksCaseStudiesPage">Works</a>
                                     <a href="/CareersPage">Careers</a>
-                                    <a href="/studentContactPage" className="sc-df-active-link">Contact</a>
+                                    <a href="/contactPage" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="sc-df-active-link">Contact</a>
                                 </div>
                                 <div className="sc-df-col">
                                     <h4>PRODUCTS</h4>
-                                    <a href="/CrmPage">CRM</a>
-                                    <a href="/ErpPage">ERP</a>
-                                    <a href="/AiChatbotPage">AiChatbot</a>
-                                    <a href="/JobSeekerPage">Job Seeker</a>
-                                    <a href="/LearningAndCareerPage">Learning & Career</a>
-
+                                    <a href="/crmPage">CRM</a>
+                                    <a href="/erpPage">ERP</a>
+                                    <a href="/aiChatbotPage">AiChatbot</a>
+                                    <a href="/jobSeekerPage">Job Seeker</a>
+                                    <a href="/learningPage">Learning & Career</a>
                                 </div>
                             </div>
 

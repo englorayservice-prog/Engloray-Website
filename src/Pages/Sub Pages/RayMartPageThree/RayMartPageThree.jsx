@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import './RayMartPageThree.css';
 import RayMartNavbar from '../../../Components/RayMartNavbar/RayMartNavbar';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
@@ -68,6 +68,11 @@ import bgClientMatchups from '../../../assets/bg_client_matchups.png';
 import bgCommunityUsers from '../../../assets/bg_community_users.png';
 import bgUserSatisfaction from '../../../assets/bg_user_satisfaction.png';
 import bgCountriesServed from '../../../assets/bg_countries_served.png';
+import brandOne from '../../../assets/WEBSITE_IMAGES/Branding & Identity/1.png';
+import webOne from '../../../assets/WEBSITE_IMAGES/website/1.png';
+import devOne from '../../../assets/WEBSITE_IMAGES/development/1.png';
+import ecomOne from '../../../assets/WEBSITE_IMAGES/service 4, e commerce development/1.png';
+import appOne from '../../../assets/WEBSITE_IMAGES/service 5, app development/1.png';
 import bgUserBase from '../../../assets/bg_user_base.png';
 
 
@@ -77,15 +82,25 @@ const RayMartPageThree = () => {
   const [internalImgIndex, setInternalImgIndex] = useState(0);
   const [testiIndex, setTestiIndex] = useState(0);
   const navigate = useNavigate();
+  const location = useLocation();
   
-  // Ensure the page starts at the very top (hero section) on mount
+  // Ensure the page starts at the very top (hero section) or scrolls to target on mount
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'instant'
-    });
-  }, []);
+    if (location.state && location.state.scrollToSection) {
+      setTimeout(() => {
+        const target = document.getElementById(location.state.scrollToSection);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }, 100);
+    } else {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'instant'
+      });
+    }
+  }, [location]);
 
 
   // Carousel Refs
@@ -147,7 +162,7 @@ const RayMartPageThree = () => {
   };
 
   const scrollToOffers = () => {
-    const target = document.getElementById('offers-anchor');
+    const target = document.getElementById('crm-products');
     if (target) {
       target.scrollIntoView({ behavior: 'smooth' });
     }
@@ -390,7 +405,7 @@ const RayMartPageThree = () => {
 
 
         {/* CRM SECTION (6 Cards) */}
-        <section className="rm3-store-section" id="offers-anchor">
+        <section className="rm3-store-section" id="crm-products">
           <div className="rm3-store-container">
             <h2 className="rm3-section-title-global" style={{ textAlign: 'center', marginBottom: '30px' }}>our offer for the products</h2>
             <div className="rm3-store-row">
@@ -432,7 +447,7 @@ const RayMartPageThree = () => {
         </section>
 
         {/* ERP SECTION (7 Cards) */}
-        <section className="rm3-store-section">
+        <section className="rm3-store-section" id="erp-products">
           <div className="rm3-store-container">
             <div className="rm3-store-row">
               <div className="rm3-store-row-header">
@@ -474,7 +489,7 @@ const RayMartPageThree = () => {
         </section>
 
         {/* AI CHATBOT SECTION (7 Cards) */}
-        <section className="rm3-store-section">
+        <section className="rm3-store-section" id="ai-chatbot-products">
           <div className="rm3-store-container">
             <div className="rm3-store-row">
               <div className="rm3-store-row-header">
@@ -516,7 +531,7 @@ const RayMartPageThree = () => {
         </section>
 
         {/* JOB SEEKER HUB SECTION (6 Cards) */}
-        <section className="rm3-store-section">
+        <section className="rm3-store-section" id="job-seeker-products">
           <div className="rm3-store-container">
             <div className="rm3-store-row">
               <div className="rm3-store-row-header">
@@ -557,7 +572,7 @@ const RayMartPageThree = () => {
         </section>
 
         {/* CAREER & LEARNING SECTION (5 Cards) */}
-        <section className="rm3-store-section">
+        <section className="rm3-store-section" id="learning-products">
           <div className="rm3-store-container">
             <div className="rm3-store-row">
               <div className="rm3-store-row-header">
@@ -841,7 +856,7 @@ const RayMartPageThree = () => {
             </div>
             <div className="rm3-prod-gallery">
               {categoryTiles.map((cat, idx) => (
-                <div key={idx} className="rm3-prod-tile">
+                <div key={idx} className="rm3-prod-tile" onClick={() => navigate('/raymartPageTwo', { state: { scrollToSection: cat.id } })} style={{ cursor: 'pointer' }}>
                   <div className="rm3-prod-tile-img" style={{ backgroundImage: `url(${cat.img})` }}></div>
                   <div className="rm3-prod-tile-overlay"></div>
                   <div className="rm3-prod-tile-content">
@@ -851,7 +866,7 @@ const RayMartPageThree = () => {
               ))}
             </div>
             <div className="rm3-products-footer">
-              <button className="rm3-products-btn" onClick={() => window.location.href = '/RayMart'}>
+              <button className="rm3-products-btn" onClick={() => navigate('/raymartPageTwo')}>
                 View All Services <span>&#8594;</span>
               </button>
             </div>
@@ -954,11 +969,11 @@ const testimonials = [
 ];
 
 const categoryTiles = [
-  { title: "CRM SERVICES", img: crmIcon },
-  { title: "ERP SOLUTIONS", img: erpIcon },
-  { title: "AI CHATBOTS", img: aiIcon },
-  { title: "JOB SEEKER HUB", img: jobsIcon },
-  { title: "CAREER & LEARNING", img: careerIcon }
+  { title: "BRANDING & IDENTITY", img: brandOne, id: "branding-identity" },
+  { title: "DEVELOPMENT SERVICES", img: devOne, id: "development-services" },
+  { title: "WEBSITE DEVELOPMENT", img: webOne, id: "website-development" },
+  { title: "E-COMMERCE DEVELOPMENT", img: ecomOne, id: "ecommerce-development" },
+  { title: "APP DEVELOPMENT", img: appOne, id: "app-development" }
 ];
 
 export default RayMartPageThree;

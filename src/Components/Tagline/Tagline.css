@@ -510,3 +510,218 @@
     width: 60px !important;
   }
 }
+
+/* Custom fluid scaling for 1024px - 1440px range (safe min-width 1000px for scrollbars) */
+@media screen and (min-width: 1000px) and (max-width: 1440px) {
+  .tagline-bottom-text {
+    width: 32vw !important;
+    height: 6.5vw !important;
+    left: -5px;
+    font-size: 4.6vw !important;
+    border-radius: 0 2vw 0 0 !important;
+    padding-left: 0.78vw !important;
+    border-top-width: 0.156vw !important;
+    /* bottom: auto !important; */
+    top: 82% !important;
+    /* Prevents vertical stretching on different aspect ratios */
+  }
+
+  .tagline-bottom-text span {
+    font-size: 4vw !important;
+    /* Scales text fluidly */
+    margin-left: -0.52vw !important;
+    margin-top: -0.52vw !important;
+    margin-bottom: -0.5vw !important;
+  }
+
+  .tagline-long-arrow {
+    width: 7vw !important;
+    /* Scales arrow length fluidly */
+    margin: 0 0.5vw !important;
+  }
+
+  .tagline-icon {
+    height: 4vw !important;
+    /* Scales badge height fluidly */
+    margin-left: 0.625vw !important;
+  }
+
+  /* Fluid Mouse Scroll Indicator to prevent vertical crowding */
+  .scroll-indicator-container {
+    margin-top: 2.5vw !important;
+    gap: 0.8vw !important;
+  }
+
+  .mouse-scroll-indicator {
+    width: 2.2vw !important;
+    height: 3.8vw !important;
+    min-width: 26px !important;
+    min-height: 44px !important;
+    border-width: 0.2vw !important;
+    padding-top: 0.8vw !important;
+    border-radius: 1.1vw !important;
+  }
+
+  .scroll-text {
+    font-size: clamp(0.7rem, 0.8vw, 0.9rem) !important;
+    letter-spacing: 0.1vw !important;
+  }
+}
+
+/* Zoom background earth image and remove corner cut ONLY for 768px - 1024px */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .tagline-section::before {
+    background-size: 350% 150% !important;
+    /* Zoom earth background */
+    background-position: center !important;
+    /* Center the zoomed graphic */
+    border-bottom-left-radius: 0 !important;
+    /* Hide the bottom-left curved white cut completely */
+  }
+
+  .tagline-container {
+    padding: 10.42vw 2.6vw 7.81vw 2.6vw !important;
+    min-height: 80vh !important;
+    gap: 3.125vw !important;
+  }
+
+  .tagline-subtitle {
+    font-size: 2.5vw !important;
+    letter-spacing: 0.13vw !important;
+  }
+
+  .tagline-title {
+    font-size: 5.21vw !important;
+    line-height: 1.2 !important;
+  }
+
+  .tagline-description {
+    font-size: 1.98vw !important;
+    padding: 0 1.3vw !important;
+    max-width: 78.1vw !important;
+  }
+
+  .tagline-buttons {
+    flex-direction: column !important;
+    gap: 1.56vw !important;
+    width: 100% !important;
+    max-width: 36.46vw !important;
+    margin-top: 2.6vw !important;
+  }
+
+  .tagline-btn {
+    width: 100% !important;
+    min-width: unset !important;
+    padding: 1.3vw 2.6vw !important;
+    font-size: 1.88vw !important;
+    border-radius: 1vw !important;
+  }
+
+  .tagline-bottom-text {
+    display: flex !important;
+    top: 100% !important;
+    /* Move box up significantly */
+    width: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    border-radius: 0 !important;
+    height: 10.42vw !important;
+    font-size: 2.92vw !important;
+    z-index: 10 !important;
+    /* Ensure it stays on top */
+    padding-left: 5vw !important;
+    /* Elegant horizontal alignment offset */
+  }
+
+  .tagline-bottom-text span {
+    margin-left: -3vw;
+    font-size: 4.17vw !important;
+  }
+
+  .tagline-long-arrow {
+    margin-top: -1vw;
+    width: 53vw !important;
+  }
+
+  .tagline-icon {
+    margin-left: 1vw;
+    height: 5.2vw !important;
+  }
+
+  .scroll-indicator-container {
+    margin-top: 3.9vw !important;
+  }
+
+  .mouse-scroll-indicator {
+    width: 3.9vw !important;
+    height: 6.5vw !important;
+    border-width: 0.39vw !important;
+    border-radius: 1vw !important;
+  }
+
+  .bphs-stat-left-column {
+    margin-top: 45.57vw !important;
+  }
+}
+
+/* Fluid responsive styling for the verified bottom text in the 320px - 767px range */
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .tagline-bottom-text {
+    position: absolute !important;
+    top: auto !important;
+    /* Mathematically precise calc to scale perfectly with width and remain 100% independent of screen height */
+    bottom: calc( -115px - 8.5vw ) !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    margin-left: 0 !important;
+    margin-top: 0 !important;
+
+    /* Fluid dimensions matching the 425px aspect ratio */
+    width: 75vw !important;
+    height: 20vw !important;
+
+    /* Fluid styling */
+    padding-left: 2.5vw !important;
+    border-top: 0.7vw solid white !important;
+    border-radius: 0 9vw 0 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  .tagline-bottom-text span {
+    font-size: 6.6vw !important;
+    margin-left: -5vw !important;
+    margin-top: -2vw !important;
+    font-weight: 400 !important;
+  }
+
+  .tagline-long-arrow {
+    width: 18.8vw !important;
+    height: 0.47vw !important;
+    margin-top: -2vw !important;
+    background-color: #333 !important;
+    position: relative !important;
+  }
+
+  .tagline-long-arrow::after {
+    content: '' !important;
+    position: absolute !important;
+    right: 0 !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: 0 !important;
+    height: 0 !important;
+    border-top: 1.18vw solid transparent !important;
+    border-bottom: 1.18vw solid transparent !important;
+    border-left: 1.88vw solid #333 !important;
+  }
+
+  .tagline-icon {
+    height: 7.1vw !important;
+    width: auto !important;
+    margin-top: -3.5vw !important;
+    margin-left: 2.8vw !important;
+    object-fit: contain !important;
+  }
+}

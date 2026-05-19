@@ -12,6 +12,7 @@ import emilycarter from '../../../assets/images/emilybg.jpg.jpeg';
 import michaelchen from '../../../assets/images/michaelchen.jpg.jpeg';
 import sarahjenkins from '../../../assets/images/sarahjenkins.jpg.jpeg';
 import RayMartNavbar from '../../../Components/RayMartNavbar/RayMartNavbar';
+import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 
 import brandOne from '../../../assets/WEBSITE_IMAGES/Branding & Identity/1.png';
 import brandTwo from '../../../assets/WEBSITE_IMAGES/Branding & Identity/2.png';
@@ -348,6 +349,16 @@ const FaqRaymart = () => {
         }
     ];
 
+    const getWhatsAppUrl = (subject = "Branding & Identity") => {
+        const phoneNumber = '916381759909';
+        const message = `Hello! I would like to get started with ENGLORAY regarding ${subject}.`;
+        return `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    };
+
+    const getEmailUrl = () => {
+        return 'https://mail.google.com/mail/?view=cm&fs=1&to=engloray@gmail.com';
+    };
+
     const toggleAccordion = (index) => {
         setOpenIndex(openIndex === index ? null : index);
     };
@@ -358,9 +369,10 @@ const FaqRaymart = () => {
                 <title>FAQ & Feedback | Engloray</title>
             </Helmet>
 
-            <RayMartNavbar />
+            <TopNavBar />
 
             <div className="faq-raymart-container">
+                <RayMartNavbar />
 
                 {/* ═══════════ HERO SECTION (Case Study Layout) ═══════════ */}
                 <div className="cs-wrapper">
@@ -483,7 +495,7 @@ const FaqRaymart = () => {
                                     <div className="cs-box-right">
                                         <span className="green-tag">{pageData.offerContents[0].tag}</span>
                                         <span className="price">{pageData.offerContents[0].price}</span>
-                                        <button>Contact soon</button>
+                                        <a href={getWhatsAppUrl(pageData.offerContents[0].title)} target="_blank" rel="noopener noreferrer" className="cs-contact-btn">Contact now</a>
                                     </div>
                                 </div>
                             </div>
@@ -496,7 +508,7 @@ const FaqRaymart = () => {
                                     <div className="cs-box-right">
                                         <span className="green-tag">{pageData.offerContents[1].tag}</span>
                                         <span className="price">{pageData.offerContents[1].price}</span>
-                                        <button>Contact soon</button>
+                                        <a href={getWhatsAppUrl(pageData.offerContents[1].title)} target="_blank" rel="noopener noreferrer" className="cs-contact-btn">Contact now</a>
                                     </div>
                                 </div>
                                 <div className="cs-list-container">
@@ -524,7 +536,7 @@ const FaqRaymart = () => {
                                 <div className="cs-total">
                                     <span className="green-tag">{pageData.offerContents[2].tag}</span>
                                     <span className="price">{pageData.offerContents[2].price}</span>
-                                    <button>Contact soon</button>
+                                    <a href={getWhatsAppUrl(pageData.offerContents[2].title)} target="_blank" rel="noopener noreferrer" className="cs-contact-btn">Contact now</a>
                                 </div>
                             </div>
                         )}
@@ -814,7 +826,7 @@ const FaqRaymart = () => {
 
                     <div className="fr-banner-card">
                         <h2 className="fr-banner-title">Ready to work with us ?</h2>
-                        <button className="fr-banner-btn">Get Started &nbsp; &gt;</button>
+                        <a href={getEmailUrl()} target="_blank" rel="noopener noreferrer" className="fr-banner-btn">Get Started &nbsp; &gt;</a>
                     </div>
 
                     <div className="fr-footer-area">

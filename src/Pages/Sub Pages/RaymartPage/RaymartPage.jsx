@@ -6,6 +6,7 @@ import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import { BarChart, Bar, XAxis, ResponsiveContainer, Tooltip } from 'recharts';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowTrendUp, faFire, faStar, faChartLine, faRobot, faCheck, faWandMagicSparkles, faUsers, faRotateLeft, faShieldHalved, faBriefcase, faHeadset, faNewspaper, faGraduationCap, faChevronRight, faChevronLeft, faEnvelope, faBuilding, faPlus, faHandshake, faCode, faStore, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faFacebookF, faXTwitter, faInstagram, faYoutube, faPaypal } from '@fortawesome/free-brands-svg-icons';
 import aiProduct01Img from '../../../assets/ai-product-01.png';
 import aiProductImg from '../../../assets/ai-product.png';
 import brandingDesignKitImg from '../../../assets/brandinganddesignkit.png';
@@ -615,6 +616,9 @@ const RaymartPage = () => {
   const [serviceShowcaseSearch, setServiceShowcaseSearch] = useState('');
   const [serviceShowcaseSearchFocused, setServiceShowcaseSearchFocused] = useState(false);
   const [ctaEmail, setCtaEmail] = useState('');
+  const [ctaSubscribed, setCtaSubscribed] = useState(false);
+  const [showComingSoon, setShowComingSoon] = useState(false);
+  const [showAboutStore, setShowAboutStore] = useState(false);
 
   const allServiceCategories = [
     'BRANDING & IDENTITY', 'DEVELOPMENT SERVICES', 'WEBSITE DEVELOPMENT',
@@ -1583,26 +1587,66 @@ const RaymartPage = () => {
             </p>
             <div className="rm-cta-actions">
               <div className="rm-cta-input-group">
-                <FontAwesomeIcon icon={faEnvelope} style={{ color: '#888', marginRight: '10px' }} />
-                <input
-                  type="email"
-                  placeholder="Enter your email address"
-                  className="rm-cta-input"
-                  value={ctaEmail}
-                  onChange={(e) => setCtaEmail(e.target.value)}
-                />
-                <button
-                  className="rm-cta-subscribe-btn"
-                  onClick={() => {
-                    if (ctaEmail.trim()) {
-                      const subject = encodeURIComponent('Get Updates Subscription');
-                      const body = encodeURIComponent(`Please subscribe me to receive updates. My email is: ${ctaEmail}`);
-                      window.open(`mailto:engloray@gmail.com?subject=${subject}&body=${body}`, '_self');
-                    }
-                  }}
-                >
-                  Get Updates
-                </button>
+                {ctaSubscribed ? (
+                  <span className="rm-cta-success-message" style={{ color: '#008a00', fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '15px', padding: '10px' }}>
+                    <FontAwesomeIcon icon={faCheck} />
+                    Thank you! Greetings and updates will be on the way!
+                  </span>
+                ) : (
+                  <>
+                    <FontAwesomeIcon icon={faEnvelope} style={{ color: '#888', marginRight: '10px' }} />
+                    <input
+                      type="email"
+                      placeholder="Enter your email address"
+                      className="rm-cta-input"
+                      value={ctaEmail}
+                      onChange={(e) => setCtaEmail(e.target.value)}
+                    />
+                    <button
+                      className="rm-cta-subscribe-btn"
+                      onClick={async () => {
+                        if (ctaEmail.trim()) {
+                          const userEmail = ctaEmail.trim();
+                          
+                          // Set subscribed state instantly for premium visual response
+                          setCtaSubscribed(true);
+                          setCtaEmail('');
+
+                          // Make automatic background call to EmailJS API to send direct subscriber welcome email
+                          try {
+                            await fetch("https://api.emailjs.com/api/v1.0/email/send", {
+                              method: "POST",
+                              headers: {
+                                "Content-Type": "application/json"
+                              },
+                              body: JSON.stringify({
+                                service_id: "service_af9xhe7",
+                                template_id: "template_uu7k2jb",
+                                user_id: "h67fs5ervDVPLSKJj",
+                                template_params: {
+                                  email: userEmail,
+                                  to_email: userEmail,
+                                  user_email: userEmail,
+                                  subscriber_email: userEmail,
+                                  reply_to: "engloray@gmail.com"
+                                }
+                              })
+                            });
+                          } catch (error) {
+                            console.error("Automatic welcome email failed to send:", error);
+                          }
+
+                          // Return form input fields back after 5 seconds
+                          setTimeout(() => {
+                            setCtaSubscribed(false);
+                          }, 5000);
+                        }
+                      }}
+                    >
+                      Get Updates
+                    </button>
+                  </>
+                )}
               </div>
               <button
                 className="rm-cta-trial-btn"
@@ -1628,38 +1672,110 @@ const RaymartPage = () => {
                 <p className="rm-footer-phone">6381769909 <br />6369945920</p>
                 <p className="rm-footer-address">ECEC Skill School, Opp to Fenner, Madurai<br />Tamil Nadu 625009</p>
                 <p className="rm-footer-email">engloray@gmail.com</p>
-                <div className="rm-footer-socials" style={{ margin: '20px 0' }}>
-                  <img src={socialMediaImg} alt="Social Media" style={{ height: '30px', width: 'auto', objectFit: 'contain', transform: 'scale(3)', transformOrigin: 'left' }} />
+                <div className="rm-footer-socials" style={{ margin: '24px 0', display: 'flex', gap: '20px', alignItems: 'center' }}>
+                  <a href="https://x.com/engloraytech" target="_blank" rel="noopener noreferrer" style={{ transition: 'transform 0.2s ease', display: 'inline-flex' }} onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.2)'} onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}>
+                    <FontAwesomeIcon icon={faXTwitter} style={{ color: '#000000', fontSize: '1.8rem', cursor: 'pointer' }} />
+                  </a>
+                  <a href="https://www.facebook.com/profile.php?id=61583616114977" target="_blank" rel="noopener noreferrer" style={{ transition: 'transform 0.2s ease', display: 'inline-flex' }} onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.2)'} onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}>
+                    <FontAwesomeIcon icon={faFacebookF} style={{ color: '#1877F2', fontSize: '1.8rem', cursor: 'pointer' }} />
+                  </a>
+                  <a href="https://www.instagram.com/engloray/" target="_blank" rel="noopener noreferrer" style={{ transition: 'transform 0.2s ease', display: 'inline-flex' }} onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.2)'} onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}>
+                    <FontAwesomeIcon icon={faInstagram} style={{ color: '#E1306C', fontSize: '1.8rem', cursor: 'pointer' }} />
+                  </a>
+                  <a href="https://www.youtube.com/@engloray" target="_blank" rel="noopener noreferrer" style={{ transition: 'transform 0.2s ease', display: 'inline-flex' }} onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.2)'} onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}>
+                    <FontAwesomeIcon icon={faYoutube} style={{ color: '#FF0000', fontSize: '1.8rem', cursor: 'pointer' }} />
+                  </a>
+                  <a href="https://www.paypal.com" target="_blank" rel="noopener noreferrer" style={{ transition: 'transform 0.2s ease', display: 'inline-flex' }} onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.2)'} onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}>
+                    <FontAwesomeIcon icon={faPaypal} style={{ color: '#003087', fontSize: '1.8rem', cursor: 'pointer' }} />
+                  </a>
                 </div>
               </div>
 
               {/* Col 2 – Top Categories */}
               <div className="rm-footer-col">
                 <h5 className="rm-footer-col-title">TOP CATEGORIES</h5>
-                {['Branding & Identity', 'UI/UX Design', 'Website Development', 'App Development', 'AI Products', 'Advertising', 'SaaS Tools', 'Office'].map(l => (
-                  <p key={l} className="rm-footer-link">{l}</p>
+                {[
+                  { name: 'Branding & Identity', path: '/brandingIdentityPage' },
+                  { name: 'UI/UX Design', path: '/uiuxDesignPage' },
+                  { name: 'Website Development', path: '/websiteDevelopmentPage' },
+                  { name: 'App Development', path: '/appDevelopmentPage' },
+                  { name: 'AI Products', path: '/aiProductPage' },
+                  { name: 'Advertising', path: null },
+                  { name: 'SaaS Tools', path: '/saasPage' },
+                  { name: 'Office', path: null }
+                ].map(item => (
+                  <p 
+                    key={item.name} 
+                    className="rm-footer-link"
+                    style={{ cursor: 'pointer' }}
+                    onClick={() => {
+                      if (item.path) {
+                        navigate(item.path);
+                      } else {
+                        setShowComingSoon(true);
+                      }
+                    }}
+                  >
+                    {item.name}
+                  </p>
                 ))}
               </div>
 
               {/* Col 3 – Company */}
               <div className="rm-footer-col">
                 <h5 className="rm-footer-col-title">COMPANY</h5>
-                {['About Store', 'Contact', 'Career', 'Blog', 'Sitemap', 'Store Locations'].map(l => (
-                  <p key={l} className="rm-footer-link">{l}</p>
+                {[
+                  { name: 'About Store', action: 'about' },
+                  { name: 'Contact', path: '/contactPage' },
+                  { name: 'Career', path: '/CareersPage' },
+                  { name: 'Blog', path: null },
+                  { name: 'Sitemap', path: null },
+                  { name: 'Store Locations', path: null }
+                ].map(item => (
+                  <p 
+                    key={item.name} 
+                    className="rm-footer-link"
+                    style={{ cursor: 'pointer' }}
+                    onClick={() => {
+                      if (item.action === 'about') {
+                        setShowAboutStore(true);
+                      } else if (item.path) {
+                        navigate(item.path);
+                      } else {
+                        setShowComingSoon(true);
+                      }
+                    }}
+                  >
+                    {item.name}
+                  </p>
                 ))}
               </div>
 
               {/* Col 4 – Help Center */}
               <div className="rm-footer-col">
                 <h5 className="rm-footer-col-title">HELP CENTER</h5>
-                {['Customer Service', 'Policy', 'Terms & Conditions', 'Track Order', 'FAQs', 'My Account', 'Product Support'].map(l => (
+                {[
+                  { name: 'Customer Service', path: '/contactPage' },
+                  { name: 'Policy', path: '/privacyPolicyPage' },
+                  { name: 'Terms & Conditions', path: '/termsAndServicesPage' },
+                  { name: 'Track Order', path: null },
+                  { name: 'FAQs', path: '/raymartPageFour' },
+                  { name: 'My Account', path: null },
+                  { name: 'Product Support', path: null }
+                ].map(item => (
                   <p
-                    key={l}
+                    key={item.name}
                     className="rm-footer-link"
-                    onClick={() => { if (l === 'Customer Service') navigate('/contactPage'); }}
-                    style={{ cursor: l === 'Customer Service' ? 'pointer' : 'default' }}
+                    style={{ cursor: 'pointer' }}
+                    onClick={() => {
+                      if (item.path) {
+                        navigate(item.path);
+                      } else {
+                        setShowComingSoon(true);
+                      }
+                    }}
                   >
-                    {l}
+                    {item.name}
                   </p>
                 ))}
               </div>
@@ -1667,8 +1783,28 @@ const RaymartPage = () => {
               {/* Col 5 – Partner */}
               <div className="rm-footer-col">
                 <h5 className="rm-footer-col-title">PARTNER</h5>
-                {['Become Seller', 'All Seller', 'Advertise', 'Partnerships'].map(l => (
-                  <p key={l} className="rm-footer-link">{l}</p>
+                {[
+                  { name: 'Become Seller', path: null, ext: 'https://wa.me/916381769909' },
+                  { name: 'All Seller', path: null },
+                  { name: 'Advertise', path: null },
+                  { name: 'Partnerships', path: null, ext: 'https://wa.me/916381769909' }
+                ].map(item => (
+                  <p 
+                    key={item.name} 
+                    className="rm-footer-link"
+                    style={{ cursor: 'pointer' }}
+                    onClick={() => {
+                      if (item.ext) {
+                        window.open(item.ext, '_blank');
+                      } else if (item.path) {
+                        navigate(item.path);
+                      } else {
+                        setShowComingSoon(true);
+                      }
+                    }}
+                  >
+                    {item.name}
+                  </p>
                 ))}
               </div>
             </div>
@@ -1698,7 +1834,7 @@ const RaymartPage = () => {
                   <button className="rm-footer-subscribe-btn">SUBSCRIBE</button>
                 </div>
                 <p className="rm-footer-newsletter-note" style={{ textAlign: 'left', fontSize: '0.75rem' }}>
-                  By subscribing, you're agreed to our <a href="#" className="rm-footer-policy-link">Policy</a>
+                  By subscribing, you're agreed to our <a href="#" onClick={(e) => { e.preventDefault(); navigate('/privacyPolicyPage'); }} className="rm-footer-policy-link" style={{ cursor: 'pointer' }}>Policy</a>
                 </p>
               </div>
             </div>
@@ -1712,6 +1848,199 @@ const RaymartPage = () => {
               <a href="#" className="rm-footer-mobile-app">Mobile App</a>
             </div>
           </footer>
+
+          {showComingSoon && (
+            <div style={{
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              backgroundColor: 'rgba(0, 0, 0, 0.7)',
+              backdropFilter: 'blur(10px)',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              zIndex: 99999,
+              fontFamily: 'system-ui, -apple-system, sans-serif'
+            }}>
+              <div style={{
+                background: '#ffffff',
+                borderRadius: '28px',
+                padding: '44px 36px',
+                textAlign: 'center',
+                boxShadow: '0 24px 64px rgba(0, 0, 0, 0.4)',
+                maxWidth: '420px',
+                width: '90%',
+                border: '1px solid rgba(255, 255, 255, 0.1)',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                gap: '16px'
+              }}>
+                <FontAwesomeIcon 
+                  icon={faStore} 
+                  style={{
+                    fontSize: '4rem',
+                    color: '#0f172a',
+                    marginBottom: '10px'
+                  }} 
+                />
+                <h3 style={{
+                  fontSize: '1.9rem',
+                  fontWeight: '800',
+                  color: '#0f172a',
+                  margin: '0',
+                  letterSpacing: '-0.025em'
+                }}>Coming Soon!</h3>
+                <p style={{
+                  fontSize: '1.05rem',
+                  color: '#475569',
+                  lineHeight: '1.6',
+                  margin: '0 0 16px'
+                }}>
+                  We are crafting something amazing. This feature will be live in our upcoming update!
+                </p>
+                <button 
+                  onClick={() => setShowComingSoon(false)}
+                  style={{
+                    background: '#000000',
+                    color: '#ffffff',
+                    border: 'none',
+                    padding: '14px 40px',
+                    borderRadius: '50px',
+                    fontWeight: '700',
+                    fontSize: '1rem',
+                    cursor: 'pointer',
+                    boxShadow: '0 8px 24px rgba(0, 0, 0, 0.25)',
+                    transition: 'all 0.2s ease',
+                    width: '100%'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.transform = 'translateY(-2px)';
+                    e.target.style.boxShadow = '0 12px 28px rgba(0,0,0,0.3)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.transform = 'translateY(0)';
+                    e.target.style.boxShadow = '0 8px 24px rgba(0,0,0,0.25)';
+                  }}
+                >
+                  Got it!
+                </button>
+              </div>
+            </div>
+          )}
+
+          {showAboutStore && (
+            <div style={{
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              backgroundColor: 'rgba(0, 0, 0, 0.7)',
+              backdropFilter: 'blur(10px)',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              zIndex: 99999,
+              fontFamily: 'system-ui, -apple-system, sans-serif'
+            }}>
+              <div style={{
+                background: '#ffffff',
+                borderRadius: '28px',
+                padding: '40px 36px',
+                boxShadow: '0 24px 64px rgba(0, 0, 0, 0.4)',
+                maxWidth: '480px',
+                width: '90%',
+                border: '1px solid rgba(255, 255, 255, 0.1)',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                gap: '16px'
+              }}>
+                <FontAwesomeIcon 
+                  icon={faStore} 
+                  style={{
+                    fontSize: '4.2rem',
+                    color: '#0f172a',
+                    marginBottom: '10px'
+                  }} 
+                />
+                <h3 style={{
+                  fontSize: '1.9rem',
+                  fontWeight: '800',
+                  color: '#0f172a',
+                  margin: '0',
+                  letterSpacing: '-0.025em'
+                }}>About Raymart Store</h3>
+                <p style={{
+                  fontSize: '1.05rem',
+                  color: '#475569',
+                  lineHeight: '1.6',
+                  textAlign: 'center',
+                  margin: '0 0 10px'
+                }}>
+                  <strong>Raymart</strong> is the ultimate, next-generation <strong>1st Tech Online Marketplace</strong> powered by Engloray.
+                </p>
+                <div style={{
+                  width: '100%',
+                  textAlign: 'left',
+                  background: '#f8fafc',
+                  borderRadius: '16px',
+                  padding: '20px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '12px',
+                  boxSizing: 'border-box'
+                }}>
+                  <div style={{ display: 'flex', gap: '14px', alignItems: 'center' }}>
+                    <FontAwesomeIcon icon={faStore} style={{ color: '#0f172a', width: '20px', fontSize: '1.1rem' }} />
+                    <span style={{ fontSize: '0.95rem', color: '#334155' }}><strong>E-Commerce Solutions:</strong> High-converting stores built for retail.</span>
+                  </div>
+                  <div style={{ display: 'flex', gap: '14px', alignItems: 'center' }}>
+                    <FontAwesomeIcon icon={faRobot} style={{ color: '#0f172a', width: '20px', fontSize: '1.1rem' }} />
+                    <span style={{ fontSize: '0.95rem', color: '#334155' }}><strong>AI Assistants:</strong> Automation to boost conversions.</span>
+                  </div>
+                  <div style={{ display: 'flex', gap: '14px', alignItems: 'center' }}>
+                    <FontAwesomeIcon icon={faWandMagicSparkles} style={{ color: '#0f172a', width: '20px', fontSize: '1.1rem' }} />
+                    <span style={{ fontSize: '0.95rem', color: '#334155' }}><strong>Branding Design:</strong> Fast identity packages under 48 hours.</span>
+                  </div>
+                  <div style={{ display: 'flex', gap: '14px', alignItems: 'center' }}>
+                    <FontAwesomeIcon icon={faBriefcase} style={{ color: '#0f172a', width: '20px', fontSize: '1.1rem' }} />
+                    <span style={{ fontSize: '0.95rem', color: '#334155' }}><strong>ERP & CRM:</strong> Unified analytics and streamline operations.</span>
+                  </div>
+                </div>
+                <button 
+                  onClick={() => setShowAboutStore(false)}
+                  style={{
+                    background: '#000000',
+                    color: '#ffffff',
+                    border: 'none',
+                    padding: '14px 40px',
+                    borderRadius: '50px',
+                    fontWeight: '700',
+                    fontSize: '1rem',
+                    cursor: 'pointer',
+                    boxShadow: '0 8px 24px rgba(0, 0, 0, 0.25)',
+                    transition: 'all 0.2s ease',
+                    width: '100%',
+                    marginTop: '8px'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.transform = 'translateY(-2px)';
+                    e.target.style.boxShadow = '0 12px 28px rgba(0,0,0,0.3)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.transform = 'translateY(0)';
+                    e.target.style.boxShadow = '0 8px 24px rgba(0,0,0,0.25)';
+                  }}
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          )}
 
         </div>
       </div>

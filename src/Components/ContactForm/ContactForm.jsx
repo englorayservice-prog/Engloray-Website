@@ -24,8 +24,16 @@ const ContactForm = ({ isOpen, onClose }) => {
     e.preventDefault();
     setIsSubmitting(true);
 
+    // Construct Gmail redirection link
+    const subject = encodeURIComponent("Contact Form Submission");
+    const body = encodeURIComponent(
+        `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\n\nMessage:\n${formData.message}`
+    );
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=engloray@gmail.com&su=${subject}&body=${body}`;
+
+    // Attempt backend database submission
     try {
-      const response = await fetch("https://localhost:8081/api/ContactForm", {
+      await fetch("https://localhost:8081/api/ContactForm", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -37,32 +45,26 @@ const ContactForm = ({ isOpen, onClose }) => {
           message: formData.message
         })
       });
-
-      if (!response.ok) {
-        throw new Error("Failed to submit form");
-      }
-
-      await response.json();
-
-      setIsSubmitted(true);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        message: ''
-      });
-
-      setTimeout(() => {
-        onClose();
-        setIsSubmitted(false);
-      }, 2000);
-
     } catch (error) {
-      console.error("API Error:", error);
-      alert("Form submission failed. Check console.");
-    } finally {
-      setIsSubmitting(false);
+      console.error("Backend database submission bypassed, opening Gmail directly:", error);
     }
+
+    // Open Gmail Compose in a new tab with pre-filled content
+    window.open(gmailUrl, '_blank');
+
+    setIsSubmitted(true);
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      message: ''
+    });
+
+    setTimeout(() => {
+      onClose();
+      setIsSubmitted(false);
+      setIsSubmitting(false);
+    }, 2000);
   };
 
   const handleOverlayClick = (e) => {

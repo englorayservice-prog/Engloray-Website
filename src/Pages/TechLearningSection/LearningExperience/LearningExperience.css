@@ -19,11 +19,12 @@
 }
 
 .learning-section {
-  padding: 2rem 1rem 6rem;
+  padding: 12rem 1rem 6rem; /* Moved content even lower to guarantee gorgeous breathing room below sticky navbars */
   background: #ffffff;
   /* Pure White Background */
   font-family: 'Inter', sans-serif;
   color: var(--le-primary);
+  scroll-margin-top: 180px; /* Keeps anchor scrolling perfectly offset below sticky header */
 }
 
 .learning-container {
@@ -326,7 +327,8 @@
 
 @media (max-width: 768px) {
   .learning-section {
-    padding: 4rem 1rem;
+    padding: 9rem 1rem 4rem 1rem; /* Even lower top padding for gorgeous mobile visibility */
+    scroll-margin-top: 150px;
   }
 
   .learning-title {
