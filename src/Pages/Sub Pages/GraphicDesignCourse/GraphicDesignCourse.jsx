@@ -103,9 +103,12 @@ import luminarLogoV3 from '../../../assets/luminar_logo_v3.png';
 import chatgptLogoV2 from '../../../assets/chatgpt_logo_v2.png';
 
 // Custom Testimonial Avatars
-import avatarF1 from '../../../assets/t1.png';
-import avatarM1 from '../../../assets/t2.png';
-import avatarF2 from '../../../assets/t3.png';
+import avatarF1 from "../../../assets/testimonials/cartoon_female_1.png";
+import avatarF3 from "../../../assets/testimonials/cartoon_female_3.png";
+import avatarM1 from "../../../assets/testimonials/cartoon_male_1.png";
+import avatarM2 from "../../../assets/testimonials/cartoon_male_2.png";
+import avatarM3 from "../../../assets/testimonials/cartoon_male_3.png";
+import avatarF2 from "../../../assets/testimonials/cartoon_female_2.png";
 
 const GraphicDesignCourse = () => {
   const [showEnrollment, setShowEnrollment] = useState(false);
@@ -127,13 +130,13 @@ const GraphicDesignCourse = () => {
   const allTestimonials = [
     { name: "Suresh P", role: "UI/UX Designer", text: "Gained confidence of working with real client projects which I used to fear. Facing a client is now easy! The course provided me with the exactly industry-standard skills and professional communication techniques needed for global success.", avatar: avatarM1 },
     { name: "Priya R", role: "Graphic Designer", text: "The practical approach and project-based learning completely transformed how I design. Highly recommended!", avatar: avatarF1 },
-    { name: "Rahul M", role: "Creative Director", text: "The curriculum is perfectly aligned with industry standards. Easily the best investment for my career. The projects really challenged my limits.", avatar: avatarM1 },
+    { name: "Rahul M", role: "Creative Director", text: "The curriculum is perfectly aligned with industry standards. Easily the best investment for my career. The projects really challenged my limits.", avatar: avatarM2 },
     { name: "Anita K", role: "Freelancer", text: "I landed my first freelance gig within weeks of starting the program. The support here is unmatched and the mentors really help you bridge the gap between creative ideation and professional execution for international clients.", avatar: avatarF2 },
-    { name: "Vikas S", role: "Product Designer", text: "From zero to building full-fledged design systems. The mentors really push you to bring out your best.", avatar: avatarM1 },
-    { name: "Sneha T", role: "Marketing", text: "Learning visual storytelling here helped me create high-converting ad campaigns. Truly a game-changer.", avatar: avatarF1 },
+    { name: "Vikas S", role: "Product Designer", text: "From zero to building full-fledged design systems. The mentors really push you to bring out your best.", avatar: avatarM3 },
+    { name: "Sneha T", role: "Marketing", text: "Learning visual storytelling here helped me create high-converting ad campaigns. Truly a game-changer.", avatar: avatarF2 },
     { name: "Rohan D", role: "Visual Designer", text: "The focus on modern tools like Figma and Midjourney sets this course apart from all other programs. It provided me with the exactly industry-standard skills needed to land a high-paying role as a visual designer at a top global firm.", avatar: avatarM1 },
-    { name: "Kavya J", role: "Brand Identity", text: "I finally understand the psychology behind colors and typography. The deep dives are perfect for crafting premium visual identities for my global design clients.", avatar: avatarF1 },
-    { name: "Manoj V", role: "Web Designer", text: "The community and constant feedback loops made learning complex layouts feel like a breeze. It's the perfect environment for anyone entering the world of digital design.", avatar: avatarM1 }
+    { name: "Kavya J", role: "Brand Identity", text: "I finally understand the psychology behind colors and typography. The deep dives are perfect for crafting premium visual identities for my global design clients.", avatar: avatarF3 },
+    { name: "Manoj V", role: "Web Designer", text: "The community and constant feedback loops made learning complex layouts feel like a breeze. It's the perfect environment for anyone entering the world of digital design.", avatar: avatarM2 }
   ];
 
   const activeTestimonials = allTestimonials.slice(testiSetIndex * 3, (testiSetIndex * 3) + 3);
@@ -1373,9 +1376,9 @@ const GraphicDesignCourse = () => {
               </div>
             </div>
           )}
-          <SubFooterTwo />
-          <BackToTop />
         </div>
+        <SubFooterTwo />
+        <BackToTop />
       </div>
     </>
   );

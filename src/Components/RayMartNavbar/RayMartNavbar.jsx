@@ -123,6 +123,27 @@ const RayMartNavbar = () => {
         closeMobileMenu();
     };
 
+    // Function to focus and scroll to search bar
+    const focusSearchBar = () => {
+        closeMobileMenu();
+        setTimeout(() => {
+            const inputs = document.querySelectorAll('.search-input');
+            let focused = false;
+            for (const input of inputs) {
+                const rect = input.getBoundingClientRect();
+                if (rect.width > 0 && rect.height > 0) {
+                    input.focus();
+                    input.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    focused = true;
+                    break;
+                }
+            }
+            if (!focused && inputs.length > 0) {
+                inputs[0].focus();
+            }
+        }, 150);
+    };
+
     // Adjust dropdown positions dynamically
     const adjustDropdownPositions = () => {
         if (typeof window === 'undefined') return;
@@ -375,14 +396,14 @@ const RayMartNavbar = () => {
                                 </button>
                                 <button
                                     className="tlnbn-btn tlnbn-get-started"
-                                    onClick={navigateToFooterContact}
+                                    onClick={openWhatsApp}
                                     style={{ color: '#4a5568', borderColor: '#cbd5e0' }}
                                 >
                                     Partner with Us
                                 </button>
                                 <button
                                     className="tlnbn-btn tlnbn-join-now"
-                                    onClick={navigateToTechLearning}
+                                    onClick={focusSearchBar}
                                 >
                                     Explore Store
                                 </button>
@@ -479,28 +500,27 @@ const RayMartNavbar = () => {
                                         )}
                                     </div>
                                 ))}
-                            </div>
-
-                            {/* Mobile Action Buttons */}
-                            <div className="tlnbn-mobile-actions">
-                                <button
-                                    className="tlnbn-btn tlnbn-start-project"
-                                    onClick={openWhatsApp}
-                                >
-                                    Start a Project
-                                </button>
-                                <button
-                                    className="tlnbn-btn tlnbn-get-started"
-                                    onClick={navigateToFooterContact}
-                                >
-                                    Partner with Us
-                                </button>
-                                <button
-                                    className="tlnbn-btn tlnbn-join-now"
-                                    onClick={navigateToTechLearning}
-                                >
-                                    Explore Store
-                                </button>
+                                {/* Mobile Action Buttons */}
+                                <div className="tlnbn-mobile-actions">
+                                    <button
+                                        className="tlnbn-btn tlnbn-start-project"
+                                        onClick={openWhatsApp}
+                                    >
+                                        Start a Project
+                                    </button>
+                                    <button
+                                        className="tlnbn-btn tlnbn-get-started"
+                                        onClick={openWhatsApp}
+                                    >
+                                        Partner with Us
+                                    </button>
+                                    <button
+                                        className="tlnbn-btn tlnbn-join-now"
+                                        onClick={focusSearchBar}
+                                    >
+                                        Explore Store
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>

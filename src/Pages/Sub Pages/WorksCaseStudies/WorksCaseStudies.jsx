@@ -53,7 +53,7 @@ import caseStudyLogoEight from '../../../assets/case study images/websites/say.j
 import caseStudyLogoNine from '../../../assets/case study images/Application/aara.png';
 import caseStudyLogoTen from '../../../assets/case study images/Application/orthopetic clinic.png';
 import './WorksCaseStudies.css';
-import MainPageSubFooter from '../MainPageSubFooter/MainPageSubFooter';
+import NewFooter1 from '../subFooterOne/NewFooter1';
 // Import the hero background image
 import heroBackgroundImage from '../../../assets/download (29).jpeg'; // Update this path to your actual image
 
@@ -87,7 +87,95 @@ const WorksCaseStudies = () => {
     const marqueeRef = useRef(null);
     const studiesContainerRef = useRef(null);
 
-    // Case study data
+    const filterOptions = [
+        'This month',
+        'All Industries',
+        'High Impact',
+        'Design + Development',
+        'Featured'
+    ];
+
+    const [selectedFilter, setSelectedFilter] = useState('All Industries');
+
+    const jobCardsData = [
+        {
+            id: 1,
+            title: "Generative AI & LLMs",
+            meta: ["Enterprise AI", "8 Weeks", "LLM Pipeline"],
+            location: "Neural Networks · Model Tuning",
+            rate: "94%",
+            rateLabel: "Accuracy Rate",
+            badges: ["GPT-4", "LangChain", "Python", "VectorDB", "Fine-Tuning"],
+            filters: ["All Industries", "This month", "Featured"]
+        },
+        {
+            id: 2,
+            title: "Web3 & Smart Contracts",
+            meta: ["DApp Project", "6 Weeks", "Solidity"],
+            location: "Ethereum Mesh · DeFi Protocol",
+            rate: "88%",
+            rateLabel: "Security Audit",
+            badges: ["Solidity", "Ethers.js", "Hardhat", "IPFS", "GraphQL"],
+            filters: ["All Industries", "This month", "High Impact"]
+        },
+        {
+            id: 3,
+            title: "Zero Trust Cybersecurity",
+            meta: ["Security Audit", "4 Weeks", "SecOps"],
+            location: "Threat Vectors · Identity Access",
+            rate: "99.9%",
+            rateLabel: "Threat Mitigation",
+            badges: ["IAM", "OAuth 2.1", "Cloudflare", "Kubernetes", "SIEM"],
+            filters: ["All Industries", "This month", "Featured"]
+        },
+        {
+            id: 4,
+            title: "Cloud-Native Kubernetes",
+            meta: ["DevOps Project", "12 Weeks", "AWS"],
+            location: "Microservices · Infrastructure",
+            rate: "99.99%",
+            rateLabel: "Uptime SLA",
+            badges: ["Docker", "Kubernetes", "Terraform", "Helm", "Prometheus"],
+            filters: ["All Industries", "High Impact", "Design + Development"]
+        },
+        {
+            id: 5,
+            title: "Spatial VR Interface",
+            meta: ["R&D Project", "10 Weeks", "Unity"],
+            location: "AR/VR Mesh · Immersive HUD",
+            rate: "90%",
+            rateLabel: "User Satisfaction",
+            badges: ["Unity 3D", "C#", "OpenXR", "WebXR", "3D Modeling"],
+            filters: ["All Industries", "Design + Development", "Featured"]
+        },
+        {
+            id: 6,
+            title: "Edge IoT Analytics",
+            meta: ["Telemetry", "8 Weeks", "Edge Computing"],
+            location: "Smart Grid · Spatial Data",
+            rate: "85%",
+            rateLabel: "Latency Reduction",
+            badges: ["MQTT", "Raspberry Pi", "InfluxDB", "Grafana", "Node-RED"],
+            filters: ["All Industries", "High Impact", "Design + Development"]
+        }
+    ];
+
+    const filteredCards = jobCardsData.filter(card => card.filters.includes(selectedFilter));
+
+    const jobsContainerRef = useRef(null);
+
+    const scrollJobsLeft = () => {
+        if (jobsContainerRef.current) {
+            jobsContainerRef.current.scrollBy({ left: -510, behavior: 'smooth' });
+        }
+    };
+
+    const scrollJobsRight = () => {
+        if (jobsContainerRef.current) {
+            jobsContainerRef.current.scrollBy({ left: 510, behavior: 'smooth' });
+        }
+    };
+
     const caseStudies = [
         {
             id: 1,
@@ -98,6 +186,7 @@ const WorksCaseStudies = () => {
             duration: "1.5 Months",
             results: "+180% Sales Increase",
             description: "Complete redesign of an e-commerce platform focusing on user experience and conversion optimization.",
+            cardDescription: "Complete redesign of an e-commerce platform focusing on user experience and conversion optimization, with intuitive product navigation, seamless checkout flows, and high-performance visual galleries.",
             image: caseStudyLogoOne,
             color: "#FF6B6B",
         },
@@ -110,6 +199,7 @@ const WorksCaseStudies = () => {
             duration: "1.5 Months",
             results: "+95% User Engagement",
             description: "Development of full branding with real-time features and logo integration.",
+            cardDescription: "Development of full branding with real-time features and logo integration, creating a memorable, vibrant visual identity that scales across diverse digital platforms, signage, and packaging formats.",
             image: caseStudyLogoThree,
             color: "#4ECDC4",
         },
@@ -122,6 +212,7 @@ const WorksCaseStudies = () => {
             duration: "1.5 Months",
             results: "+300% Productivity",
             description: "Created the Productive designs for the natural food product company.",
+            cardDescription: "Created the Productive designs for the natural food product company, highlighting clean organic visuals, eco-friendly messaging, and user-centric layouts to elevate standard brand visibility.",
             image: caseStudyLogoFive,
             color: "#45B7D1",
         },
@@ -134,6 +225,7 @@ const WorksCaseStudies = () => {
             duration: "1 Months",
             results: "+150% Lead Generation",
             description: "Comprehensive enterprise campaign across social media, search, and email channels.",
+            cardDescription: "Comprehensive enterprise campaign across social media, search, and email channels, optimizing audience targeting, creative ad messaging, and funnel performance to maximize long-term conversion rates.",
             image: caseStudyLogoTwo,
             color: "#FF6B6B",
         },
@@ -146,6 +238,7 @@ const WorksCaseStudies = () => {
             duration: "1.5 Months",
             results: "+200% Operational Efficiency",
             description: "Enterprise branding platform for internal operations.",
+            cardDescription: "Enterprise branding platform for internal operations, creating modern guidelines, cohesive digital assets, and high-impact visual design strategies that align operational values with market demands.",
             image: caseStudyLogoFour,
             color: "#4ECDC4",
         },
@@ -158,6 +251,7 @@ const WorksCaseStudies = () => {
             duration: "1 Months",
             results: "+250% Insight Generation",
             description: "Creative Logos and Design for the product Company.",
+            cardDescription: "Creative Logos and Design for the product Company, focusing on unique conceptual graphics, custom brand palettes, and professional visual guidelines to build an instantly recognizable market presence.",
             image: caseStudyLogoSix,
             color: "#45B7D1",
         },
@@ -170,6 +264,7 @@ const WorksCaseStudies = () => {
             duration: "2 Months",
             results: "+180% Digitalization",
             description: "Complete redesign of an erp platform focusing on user experience and conversion optimization.",
+            cardDescription: "Complete redesign of an erp platform focusing on user experience and conversion optimization, streamlining multi-tier portal accessibility, student dashboard management, and clean user flows.",
             image: caseStudyLogoSeven,
             color: "#3D0C41",
         },
@@ -182,6 +277,7 @@ const WorksCaseStudies = () => {
             duration: "1.5 Months",
             results: "+95% User Engagement",
             description: "Development of full website with real-time features and logo integration.",
+            cardDescription: "Development of full website with real-time features and logo integration, incorporating premium visual showcases, interactive appointment scheduling, and smooth responsive transitions.",
             image: caseStudyLogoEight,
             color: "#3D0C41",
         },
@@ -194,6 +290,7 @@ const WorksCaseStudies = () => {
             duration: "2.5 Months",
             results: "+300% Productivity",
             description: "Created the Productive application for the medical testing lab .",
+            cardDescription: "Created the Productive application for the medical testing lab, optimizing secure report generation, fast patient navigation, seamless database queries, and clear data visualization panels.",
             image: caseStudyLogoNine,
             color: "#8B0000",
         },
@@ -206,6 +303,7 @@ const WorksCaseStudies = () => {
             duration: "2 Months",
             results: "+150% Lead Patients",
             description: "Comprehensive enterprise App across social media, search, and email channels.",
+            cardDescription: "Comprehensive enterprise App across social media, search, and email channels, maximizing appointment bookings, direct doctor communication pipelines, and sleek onboarding designs.",
             image: caseStudyLogoTen,
             color: "#8B0000",
         },
@@ -419,7 +517,7 @@ const WorksCaseStudies = () => {
                                         <polyline
                                             points="0,60 40,45 80,30 120,35 160,25 200,40 240,20 280,30 300,25"
                                             fill="none"
-                                            stroke="#b7ff3c"
+                                            stroke="#00d2ff"
                                             strokeWidth="2"
                                         />
                                         {[0, 40, 80, 120, 160, 200, 240, 280, 300].map((x, i) => (
@@ -428,7 +526,7 @@ const WorksCaseStudies = () => {
                                                 cx={x}
                                                 cy={i === 0 ? 60 : i === 1 ? 45 : i === 2 ? 30 : i === 3 ? 35 : i === 4 ? 25 : i === 5 ? 40 : i === 6 ? 20 : i === 7 ? 30 : 25}
                                                 r="3"
-                                                fill="#b7ff3c"
+                                                fill="#00d2ff"
                                             />
                                         ))}
                                     </svg>
@@ -505,118 +603,59 @@ const WorksCaseStudies = () => {
 
                     {/* SECOND SECTION - Filter Bar and Bottom Cards */}
                     <div className="hero-second-section">
-                        {/* FILTER BAR */}
-                        <div className="filters">
-                            <span>This month</span>
-                            <span>All Industries</span>
-                            <span>High Impact</span>
-                            <span>Design + Development</span>
-                            <span>Featured</span>
+                        {/* FILTER BAR & NAVIGATION ROW DIRECTLY ABOVE CARDS */}
+                        <div className="jobs-nav-row">
+                            <div className="filters">
+                                {filterOptions.map((option) => (
+                                    <span
+                                        key={option}
+                                        className={selectedFilter === option ? 'active' : ''}
+                                        onClick={() => setSelectedFilter(option)}
+                                    >
+                                        {option}
+                                    </span>
+                                ))}
+                            </div>
+                            <div className="jobs-nav-controls">
+                                <button className="jobs-nav-btn left" onClick={scrollJobsLeft}>‹</button>
+                                <button className="jobs-nav-btn right" onClick={scrollJobsRight}>›</button>
+                            </div>
                         </div>
 
                         {/* CASE STUDY CARDS */}
-                        <div className="jobs">
-                            {/* Card 1: Brand Identity Design - UNCHANGED */}
-                            <div key={1} className="job-card glass">
-                                <div className="job-top">
-                                    <h4>Brand Identity Design</h4>
-                                    <span className="close">×</span>
-                                </div>
-
-                                <div className="job-meta">
-                                    <span>Client Project</span>
-                                    <span>6 Weeks</span>
-                                    <span>UI/UX</span>
-                                </div>
-
-                                <div className="location">
-                                    Fintech · Global Product
-                                </div>
-
-                                <div className="match">
-                                    <div className="circle">
-                                        <span>79%</span>
+                        <div className="jobs" ref={jobsContainerRef}>
+                            {filteredCards.map((card) => (
+                                <div key={card.id} className="job-card glass">
+                                    <div className="job-top">
+                                        <h4>{card.title}</h4>
+                                        <span className="close">×</span>
                                     </div>
-                                    <p>Success Rate</p>
-                                </div>
 
-                                {/* bottom badges */}
-                                <div className="job-badges">
-                                    <span>Branding</span>
-                                    <span>Figma</span>
-                                    <span>UX Strategy</span>
-                                    <span>Research</span>
-                                    <span>Design System</span>
-                                </div>
-                            </div>
-
-                            {/* Card 2: WEB DEVELOPMENT - UPDATED */}
-                            <div key={2} className="job-card glass">
-                                <div className="job-top">
-                                    <h4>Web Development</h4>
-                                    <span className="close">×</span>
-                                </div>
-
-                                <div className="job-meta">
-                                    <span>Enterprise Project</span>
-                                    <span>8 Weeks</span>
-                                    <span>Full Stack</span>
-                                </div>
-
-                                <div className="location">
-                                    E-Commerce · Scalable Platform
-                                </div>
-
-                                <div className="match">
-                                    <div className="circle">
-                                        <span>86%</span>
+                                    <div className="job-meta">
+                                        {card.meta.map((m, idx) => (
+                                            <span key={idx}>{m}</span>
+                                        ))}
                                     </div>
-                                    <p>Performance Boost</p>
-                                </div>
 
-                                {/* bottom badges */}
-                                <div className="job-badges">
-                                    <span>React</span>
-                                    <span>Node.js</span>
-                                    <span>MongoDB</span>
-                                    <span>REST API</span>
-                                    <span>Cloud</span>
-                                </div>
-                            </div>
-
-                            {/* Card 3: DATA ANALYTICS - UPDATED */}
-                            <div key={3} className="job-card glass">
-                                <div className="job-top">
-                                    <h4>Data Analytics</h4>
-                                    <span className="close">×</span>
-                                </div>
-
-                                <div className="job-meta">
-                                    <span>Analytics Project</span>
-                                    <span>10 Weeks</span>
-                                    <span>Data Science</span>
-                                </div>
-
-                                <div className="location">
-                                    Business Intelligence · Insights
-                                </div>
-
-                                <div className="match">
-                                    <div className="circle">
-                                        <span>92%</span>
+                                    <div className="location">
+                                        {card.location}
                                     </div>
-                                    <p>Accuracy Rate</p>
-                                </div>
 
-                                {/* bottom badges */}
-                                <div className="job-badges">
-                                    <span>Python</span>
-                                    <span>SQL</span>
-                                    <span>Tableau</span>
-                                    <span>Machine Learning</span>
-                                    <span>Predictive Models</span>
+                                    <div className="match">
+                                        <div className="circle">
+                                            <span>{card.rate}</span>
+                                        </div>
+                                        <p>{card.rateLabel}</p>
+                                    </div>
+
+                                    {/* bottom badges */}
+                                    <div className="job-badges">
+                                        {card.badges.map((b, idx) => (
+                                            <span key={idx}>{b}</span>
+                                        ))}
+                                    </div>
                                 </div>
-                            </div>
+                            ))}
                         </div>
                     </div>
 
@@ -760,12 +799,12 @@ const WorksCaseStudies = () => {
                                                 <img
                                                     src={filteredStudies[currentStudyIndex].image}
                                                     alt={filteredStudies[currentStudyIndex].title}
-                                                    className="wcs-slide-image"
+                                                    className={`wcs-slide-image wcs-slide-image-${filteredStudies[currentStudyIndex].id}`}
                                                 />
                                                 <div className="wcs-image-footer">
                                                     <div className="wcs-image-text">
                                                         {/* <span className="wcs-image-title">Engloray</span> */}
-                                                        <p className="wcs-image-description">{filteredStudies[currentStudyIndex].description}</p>
+                                                        <p className="wcs-image-description">{filteredStudies[currentStudyIndex].cardDescription || filteredStudies[currentStudyIndex].description}</p>
                                                     </div>
                                                     <span className="wcs-image-badge" style={{ backgroundColor: filteredStudies[currentStudyIndex].color }}>
                                                         {getCategoryLabel(filteredStudies[currentStudyIndex].category)}
@@ -915,7 +954,7 @@ const WorksCaseStudies = () => {
                     </div>
                 </section>
             </div>
-            <MainPageSubFooter />
+            <NewFooter1 />
             <BackToTop />
         </div>
     );

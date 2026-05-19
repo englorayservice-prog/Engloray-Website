@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import './RayMartPageTwo.css';
 import RayMartNavbar from '../../../Components/RayMartNavbar/RayMartNavbar';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
@@ -100,6 +100,11 @@ import saasFour from '../../../assets/WEBSITE_IMAGES/SAAS PRODUCT/4.png';
 import saasFive from '../../../assets/WEBSITE_IMAGES/SAAS PRODUCT/5.png';
 import saasSix from '../../../assets/WEBSITE_IMAGES/SAAS PRODUCT/6.png';
 
+import erpFour from '../../../assets/WEBSITE_IMAGES/ERP SOFTWARE/4.png';
+import jobOne from '../../../assets/WEBSITE_IMAGES/JOB SEEKER HUB/1.png';
+import careerOne from '../../../assets/WEBSITE_IMAGES/LEARNING AND CAREER/1.png';
+import chatbotAiOne from '../../../assets/WEBSITE_IMAGES/AI CHATBOT/1.png';
+
 
 
 
@@ -148,11 +153,11 @@ const testimonials = [
 ];
 
 const productCategories = [
-  { title: "Cloud CRM", img: "/assets/3d/CRM.png" },
-  { title: "AI Chatbots", img: "/assets/3d/Chatbots.png" },
-  { title: "Big Data", img: "/assets/3d/BigData.png" },
-  { title: "E-Commerce", img: "/assets/3d/Ecommerce.png" },
-  { title: "Analytics", img: "/assets/3d/Analytics.png" }
+  { title: "Ultimate Sales Hub", img: crmOne, id: "crm-products" },
+  { title: "Razor AI Assistant", img: chatbotAiOne, id: "ai-chatbot-products" },
+  { title: "Enterprise Logic Hub", img: erpFour, id: "erp-products" },
+  { title: "AI Resume Optimizer", img: jobOne, id: "job-seeker-products" },
+  { title: "Fullstack Web Academy", img: careerOne, id: "learning-products" }
 ];
 
 const RayMartPageTwo = () => {
@@ -161,6 +166,29 @@ const RayMartPageTwo = () => {
   const [howWeWorkSlide, setHowWeWorkSlide] = useState(0);
   const [testiIndex, setTestiIndex] = useState(0);
   const navigate = useNavigate();
+
+  const handleProductCategoryClick = (cat) => {
+    navigate('/raymartPageThree', { state: { scrollToSection: cat.id } });
+  };
+
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state && location.state.scrollToSection) {
+      setTimeout(() => {
+        const target = document.getElementById(location.state.scrollToSection);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }, 100);
+    } else {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'instant'
+      });
+    }
+  }, [location]);
 
   // Carousel Refs
   const rowBrandingRef = useRef(null);
@@ -538,7 +566,7 @@ const RayMartPageTwo = () => {
         <section className="rm-designs-section-ref">
           <div className="rm-designs-container-ref">
             <h2 className="rm-offers-title-main">offers for  our service </h2>      {/* 1. BRANDING & IDENTITY */}
-            <div className="rm-designs-row">
+            <div className="rm-designs-row" id="branding-identity">
               <div className="rm-designs-row-header">
                 <h2 className="rm-designs-row-title">branding & identity</h2>
                 <div className="rm-carousel-nav">
@@ -575,7 +603,7 @@ const RayMartPageTwo = () => {
 
 
             {/* 2. DEVELOPMENT SERVICES */}
-            <div className="rm-designs-row" style={{ marginTop: '20px' }}>
+            <div className="rm-designs-row" style={{ marginTop: '20px' }} id="development-services">
               <div className="rm-designs-row-header">
                 <h2 className="rm-designs-row-title">development services</h2>
                 <div className="rm-carousel-nav">
@@ -610,7 +638,7 @@ const RayMartPageTwo = () => {
             </div>
 
             {/* 3. WEBSITE DEVELOPMENT */}
-            <div className="rm-designs-row" style={{ marginTop: '20px' }}>
+            <div className="rm-designs-row" style={{ marginTop: '20px' }} id="website-development">
               <div className="rm-designs-row-header">
                 <h2 className="rm-designs-row-title">website development</h2>
                 <div className="rm-carousel-nav">
@@ -645,7 +673,7 @@ const RayMartPageTwo = () => {
             </div>
 
             {/* 4. E-COMMERCE DEVELOPMENT */}
-            <div className="rm-designs-row" style={{ marginTop: '20px' }}>
+            <div className="rm-designs-row" style={{ marginTop: '20px' }} id="ecommerce-development">
               <div className="rm-designs-row-header">
                 <h2 className="rm-designs-row-title">e-commerce development</h2>
                 <div className="rm-carousel-nav">
@@ -679,7 +707,7 @@ const RayMartPageTwo = () => {
             </div>
 
             {/* 5. APP DEVELOPMENT */}
-            <div className="rm-designs-row" style={{ marginTop: '20px' }}>
+            <div className="rm-designs-row" style={{ marginTop: '20px' }} id="app-development">
               <div className="rm-designs-row-header">
                 <h2 className="rm-designs-row-title">app development</h2>
                 <div className="rm-carousel-nav">
@@ -1214,7 +1242,7 @@ const RayMartPageTwo = () => {
             </div>
             <div className="rm-prod-gallery">
               {productCategories.map((cat, idx) => (
-                <div key={idx} className="rm-prod-tile">
+                <div key={idx} className="rm-prod-tile" onClick={() => handleProductCategoryClick(cat)} style={{ cursor: 'pointer' }}>
                   <div className="rm-prod-tile-img" style={{ backgroundImage: `url(${cat.img})` }}></div>
                   <div className="rm-prod-tile-overlay"></div>
                   <div className="rm-prod-tile-content">
@@ -1224,7 +1252,7 @@ const RayMartPageTwo = () => {
               ))}
             </div>
             <div className="rm-products-footer">
-              <button className="rm-products-btn" onClick={() => window.location.href = '/RayMart'}>
+              <button className="rm-products-btn" onClick={() => navigate('/raymartPageThree')}>
                 View All Products <span>&#8594;</span>
               </button>
             </div>

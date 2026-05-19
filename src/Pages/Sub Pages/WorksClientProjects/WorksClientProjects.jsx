@@ -74,7 +74,6 @@ const logoImages = [
     clientLogoSix,
     clientLogoSeven,
     clientLogoEight,
-    clientLogoNine,
     clientLogoTen,
     clientLogoOne,
     clientLogoTwo,
@@ -92,7 +91,20 @@ const WorksClientProjects = () => {
     const [startX, setStartX] = useState(0);
     const [scrollLeft, setScrollLeft] = useState(0);
     const marqueeRef = useRef(null);
+    const jobsContainerRef = useRef(null);
     const containerRef = useRef(null);
+
+    const scrollJobsLeft = () => {
+        if (jobsContainerRef.current) {
+            jobsContainerRef.current.scrollBy({ left: -510, behavior: 'smooth' });
+        }
+    };
+
+    const scrollJobsRight = () => {
+        if (jobsContainerRef.current) {
+            jobsContainerRef.current.scrollBy({ left: 510, behavior: 'smooth' });
+        }
+    };
 
     // Client projects data
     const clientProjects = [
@@ -100,11 +112,13 @@ const WorksClientProjects = () => {
             id: 1,
             title: "Divya Makeovers",
             subtitle: "Modernizing Makeovers with Designs",
-            category: "UiUx",
+            categories: ["UiUx"],
+            successRate: 94,
             client: "Divya Makeovers",
             duration: "1 Months",
             results: "+40% Digital actions",
             description: "Built a Ui/Ux design for the makeovers to outlast their needs.",
+            cardDescription: "Tailored UI/UX layout and graceful cosmetic visual elements designed to deliver a modern, intuitive, and seamlessly navigable online presence that outlasts customer expectations.",
             image: clientLogoOne,
             icon: faBrush,
             color: "#FF6B6B",
@@ -123,11 +137,13 @@ const WorksClientProjects = () => {
             id: 2,
             title: "Via Nature",
             subtitle: "Nature inspired visual system with organic color palette",
-            category: "Branding",
+            categories: ["Branding", "Products"],
+            successRate: 88,
             client: "Via Nature",
             duration: "1 Months",
             results: "+30% Faster Processing",
             description: "Clean and minimal label designs using the Label Designing and UI designing.",
+            cardDescription: "Clean and minimal label layouts incorporating organic tone-on-tone color schemes to build a natural, highly memorable, and authentic branding experience for wellness consumers.",
             image: clientLogoThree,
             icon: faLeaf,
             color: "#4ECDC4",
@@ -145,11 +161,13 @@ const WorksClientProjects = () => {
             id: 3,
             title: "Maxx Life",
             subtitle: "About the health and wellness of the people",
-            category: "Products",
+            categories: ["Products", "App"],
+            successRate: 96,
             client: "Maxx Life",
             duration: "1 Months",
             results: "+5000 Active Users",
             description: "Interactive wellness plaftorm with application and progress tracking.",
+            cardDescription: "A highly premium and modern label design series using clean spacing, bold typography, and sophisticated branding frameworks to establish a commanding health sector retail presence.",
             image: clientLogoFive,
             icon: faBriefcase,
             color: "#FFD166",
@@ -167,11 +185,13 @@ const WorksClientProjects = () => {
             id: 4,
             title: "Gym Life",
             subtitle: "Optimizing the Fitness World",
-            category: "UiUx",
+            categories: ["UiUx", "App"],
+            successRate: 92,
             client: "Gym Life",
             duration: "2 Months",
             results: "+35% Faster Usage",
             description: "Regularing the routine the of the Gym freaks using the Featured UI.",
+            cardDescription: "A bold and energetic fitness-focused interface featuring high-impact typography, clear call-to-action pathways, personalized workout trackers, and seamless booking integration to drive member growth and retention.",
             image: clientLogoTwo,
             icon: faDumbbell,
             color: "#FF6B6B",
@@ -189,11 +209,13 @@ const WorksClientProjects = () => {
             id: 5,
             title: "Say Bridals",
             subtitle: "Modern Bridals discovery",
-            category: "Branding",
+            categories: ["Branding", "Website"],
+            successRate: 95,
             client: "Say Bridals",
             duration: "1.5 Months",
             results: "+300% Lead Increase",
             description: "Getting the bridals through the easy searching and with fixed SEO's.",
+            cardDescription: "An elegant, visually breathtaking bridal design layout optimized with tailored digital search capabilities, rich portfolio showcases, and graceful booking inquiry flows.",
             image: clientLogoFour,
             icon: faGem,
             color: "#4ECDC4",
@@ -211,11 +233,13 @@ const WorksClientProjects = () => {
             id: 6,
             title: "Studio Makeup",
             subtitle: "Clean and elegant design for makeup studio",
-            category: "Products",
+            categories: ["Branding", "Products"],
+            successRate: 90,
             client: "Studio Makeup",
             duration: "1 Months",
             results: "+60% Online Orders",
             description: "Enhanced brand image with premium product appearence.",
+            cardDescription: "Premium custom cosmetic packaging layouts and refined product labeling built with modern minimal style vectors to elevate brand value and accelerate checkout conversions.",
             image: clientLogoSix,
             icon: faKissWinkHeart,
             color: "#FFD166",
@@ -232,11 +256,13 @@ const WorksClientProjects = () => {
             id: 7,
             title: "Aara Labs",
             subtitle: "creative Lab application Designs",
-            category: "Website",
+            categories: ["Website", "UiUx"],
+            successRate: 89,
             client: "Aara Labs",
             duration: "2.5 Months",
             results: "+300% Productivity",
             description: "Created the Productive application for the medical testing lab .",
+            cardDescription: "A highly efficient, secure, and user-centric lab testing mobile application design offering patients instant report access, simplified booking, and streamlined digital inquiry.",
             image: clientLogoSeven,
             icon: faFlask,
             color: "#DC143C",
@@ -254,11 +280,13 @@ const WorksClientProjects = () => {
             id: 8,
             title: "Mitt Travels",
             subtitle: "Inspired visual design with natural color palette",
-            category: "Website",
+            categories: ["Website"],
+            successRate: 87,
             client: "Mitt Travels",
             duration: "1 Months",
             results: "+30% Faster Processing",
             description: "Clean and minimal web designs using the web Designing and UI designing.",
+            cardDescription: "Inspiring and modern travel inquiry website utilizing clean UI systems, natural layouts, and high-conversion reservation forms to provide a seamless travel booking experience.",
             image: clientLogoEight,
             icon: faPlane,
             color: "#DC143C",
@@ -273,39 +301,16 @@ const WorksClientProjects = () => {
             ]
         },
         {
-            id: 9,
-            title: "Pavizham Jewellery",
-            subtitle: "Modernizing online shopping experience",
-            category: "App",
-            client: "Pavizham Jewellers",
-            duration: "1.5 Months",
-            results: "+180% Sales Increase",
-            description: "Complete redesign of an e-commerce platform focusing on user experience and conversion optimization.",
-            image: clientLogoNine,
-            icon: faCrown,
-            color: "#6A0DAD",
-            challenges: [
-                "No mobile-based digital system for customers ",
-                "Manual processes caused delays and confusion",
-                "Poor user experience in accessing services"
-            ],
-            solutions: [
-                "Designed and developed a user-friendly mobile application ",
-                "Structured features for easy service access and communication",
-                "Focused on smooth navigation and usability ",
-                "Clean and intuitive mobile UI",
-                "Smooth user flow for service interaction"
-            ]
-        },
-        {
             id: 10,
             title: "Orthopedic Clinic",
             subtitle: "Multi-channel Clinic app",
-            category: "App",
+            categories: ["App"],
+            successRate: 98,
             client: "Orthopedic clinic",
             duration: "2 Months",
             results: "+150% Lead Patients",
             description: "Comprehensive enterprise App across social media, search, and email channels.",
+            cardDescription: "Comprehensive clinical enterprise application designed to streamline patient booking and interaction across digital social media networks, search engines, and direct email channels.",
             image: clientLogoTen,
             icon: faStethoscope,
             color: "#6A0DAD",
@@ -319,7 +324,7 @@ const WorksClientProjects = () => {
                 "Integrated appointment booking and notifications",
                 "Simplified patient interaction with the clinic"
             ]
-        },
+        }
     ];
 
     // Client testimonials
@@ -369,7 +374,7 @@ const WorksClientProjects = () => {
     // Filter projects by category
     const filteredProjects = activeCategory === 'all'
         ? clientProjects
-        : clientProjects.filter(project => project.category === activeCategory);
+        : clientProjects.filter(project => project.categories.includes(activeCategory));
 
     // Auto rotate projects every 3 seconds with fade effect only for right side content
     useEffect(() => {
@@ -620,20 +625,26 @@ const WorksClientProjects = () => {
 
                     {/* SECOND SECTION - Filter Bar and Bottom Cards */}
                     <div className="hero-second-section">
-                        {/* FILTER BAR */}
-                        <div className="filters">
-                            <button className={`filter-btn ${activeCategory === 'all' ? 'active' : ''}`} onClick={() => setActiveCategory('all')}>All Projects</button>
-                            <button className={`filter-btn ${activeCategory === 'UiUx' ? 'active' : ''}`} onClick={() => setActiveCategory('UiUx')}>UI/UX</button>
-                            <button className={`filter-btn ${activeCategory === 'Branding' ? 'active' : ''}`} onClick={() => setActiveCategory('Branding')}>Branding</button>
-                            <button className={`filter-btn ${activeCategory === 'Products' ? 'active' : ''}`} onClick={() => setActiveCategory('Products')}>Products</button>
-                            <button className={`filter-btn ${activeCategory === 'App' ? 'active' : ''}`} onClick={() => setActiveCategory('App')}>App</button>
-                            <button className={`filter-btn ${activeCategory === 'Website' ? 'active' : ''}`} onClick={() => setActiveCategory('Website')}>Website</button>
+                        {/* FILTER BAR & NAVIGATION ROW DIRECTLY ABOVE CARDS */}
+                        <div className="jobs-nav-row">
+                            <div className="filters">
+                                <button className={`filter-btn ${activeCategory === 'all' ? 'active' : ''}`} onClick={() => setActiveCategory('all')}>All Projects</button>
+                                <button className={`filter-btn ${activeCategory === 'UiUx' ? 'active' : ''}`} onClick={() => setActiveCategory('UiUx')}>UI/UX</button>
+                                <button className={`filter-btn ${activeCategory === 'Branding' ? 'active' : ''}`} onClick={() => setActiveCategory('Branding')}>Branding</button>
+                                <button className={`filter-btn ${activeCategory === 'Products' ? 'active' : ''}`} onClick={() => setActiveCategory('Products')}>Products</button>
+                                <button className={`filter-btn ${activeCategory === 'App' ? 'active' : ''}`} onClick={() => setActiveCategory('App')}>App</button>
+                                <button className={`filter-btn ${activeCategory === 'Website' ? 'active' : ''}`} onClick={() => setActiveCategory('Website')}>Website</button>
+                            </div>
+                            <div className="jobs-nav-controls">
+                                <button className="jobs-nav-btn left" onClick={scrollJobsLeft}>‹</button>
+                                <button className="jobs-nav-btn right" onClick={scrollJobsRight}>›</button>
+                            </div>
                         </div>
 
                         {/* CASE STUDY CARDS */}
-                        <div className="jobs">
+                        <div className="jobs" ref={jobsContainerRef}>
                             {/* Dynamically show filtered projects as cards */}
-                            {filteredProjects.slice(0, 3).map((project) => (
+                            {filteredProjects.map((project) => (
                                 <div key={project.id} className="job-card glass">
                                     <div className="job-top">
                                         <h4>{project.title}</h4>
@@ -641,25 +652,25 @@ const WorksClientProjects = () => {
                                     </div>
 
                                     <div className="job-meta">
-                                        <span>{getCategoryLabel(project.category)}</span>
+                                        <span>{getCategoryLabel(project.categories[0])}</span>
                                         <span>{project.duration}</span>
                                         <span>{project.results}</span>
                                     </div>
 
                                     <div className="location">
-                                        {project.subtitle}
+                                        {project.cardDescription || project.subtitle}
                                     </div>
 
                                     <div className="match">
                                         <div className="circle">
-                                            <span>{Math.floor(Math.random() * 30) + 70}%</span>
+                                            <span>{project.successRate}%</span>
                                         </div>
                                         <p>Success Rate</p>
                                     </div>
 
                                     {/* bottom badges */}
                                     <div className="job-badges">
-                                        <span>{getCategoryLabel(project.category)}</span>
+                                        <span>{getCategoryLabel(project.categories[0])}</span>
                                         <span>Client: {project.client}</span>
                                         <span>Innovation</span>
                                     </div>
@@ -807,12 +818,12 @@ const WorksClientProjects = () => {
                                                 <img
                                                     src={filteredProjects[currentProjectIndex].image}
                                                     alt={filteredProjects[currentProjectIndex].title}
-                                                    className="wcp-slide-image"
+                                                    className={`wcp-slide-image wcp-slide-image-${filteredProjects[currentProjectIndex].id}`}
                                                 />
                                                 <div className="wcp-image-footer">
                                                     <div className="wcp-image-text">
-                                                        <span className="wcp-image-title">Engloray</span>
-                                                        <p className="wcp-image-description">{filteredProjects[currentProjectIndex].description}</p>
+
+                                                        <p className="wcp-image-description">{filteredProjects[currentProjectIndex].cardDescription || filteredProjects[currentProjectIndex].description}</p>
                                                     </div>
                                                     <span className="wcp-image-badge" style={{ backgroundColor: filteredProjects[currentProjectIndex].color }}>
                                                         {getCategoryLabel(filteredProjects[currentProjectIndex].category)}
