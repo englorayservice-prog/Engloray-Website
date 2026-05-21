@@ -742,8 +742,8 @@
 }
 
 .dgm-gdc-intro-title {
-    font-size: 3.5rem;
-    margin-bottom: calc(25 * var(--dgm-gdc-fluid-scale));
+    font-size: 3rem;
+    margin-bottom: calc(12 * var(--dgm-gdc-fluid-scale));
     text-align: left;
 }
 
@@ -1613,6 +1613,16 @@
 .dgm-gdc-curriculum-v2-section {
     padding: calc(120 * var(--dgm-gdc-fluid-scale)) 0;
     background: #ffffff;
+}
+
+.dgm-gdc-curriculum-v2-desc {
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 400;
+    color: #4b5563;
+    margin-top: calc(15 * var(--dgm-gdc-fluid-scale));
+    margin-left: calc(50 * var(--dgm-gdc-fluid-scale));
+    text-align: left;
 }
 
 .dgm-gdc-curriculum-v2-layout {
@@ -2995,7 +3005,7 @@ section.dgm-gdc-tools-v2-section {
    ========================================================================== */
 .dgm-gdc-dark-enrollment-FIXED {
     background: #ffffff !important;
-    padding: calc(80 * var(--dgm-gdc-fluid-scale)) 0;
+    padding: 0 0 calc(80 * var(--dgm-gdc-fluid-scale));
     position: relative;
     overflow: hidden;
 }
@@ -3640,7 +3650,7 @@ section.dgm-gdc-tools-v2-section {
 /* Make sure the section doesn't cut off content */
 .dgm-gdc-dark-enrollment-FIXED {
     background: #ffffff !important;
-    padding: calc(80 * var(--dgm-gdc-fluid-scale)) 0;
+    padding: 0 0 calc(80 * var(--dgm-gdc-fluid-scale));
     position: relative;
     overflow: visible;
 }
@@ -4563,23 +4573,23 @@ section.dgm-gdc-tools-v2-section {
 
 .dgm-gdc-intro-desc {
     font-family: 'Poppins', sans-serif;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: #555555;
-    line-height: 1.6;
+    line-height: 1.5;
     margin-bottom: calc(35 * var(--dgm-gdc-fluid-scale));
     text-align: left;
     /* Ensure sharp alignment */
-    max-width: 90%;
+    max-width: 95%;
 }
 
 .dgm-gdc-intro-cta {
     background: #3D52D9;
     color: #ffffff;
     border: none;
-    padding: calc(16 * var(--dgm-gdc-fluid-scale)) calc(50 * var(--dgm-gdc-fluid-scale));
+    padding: calc(12 * var(--dgm-gdc-fluid-scale)) calc(40 * var(--dgm-gdc-fluid-scale));
     border-radius: calc(40 * var(--dgm-gdc-fluid-scale));
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: 1.0rem;
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 calc(4 * var(--dgm-gdc-fluid-scale)) calc(15 * var(--dgm-gdc-fluid-scale)) rgba(61, 82, 217, 0.2);
@@ -5182,7 +5192,7 @@ section.dgm-gdc-tools-v2-section {
 
 /* --- Premium Testimonials Grid Section --- */
 .dgm-gdc-testi-grid-section {
-    padding: calc(100 * var(--dgm-gdc-fluid-scale)) 0;
+    padding: calc(100 * var(--dgm-gdc-fluid-scale)) 0 calc(40 * var(--dgm-gdc-fluid-scale));
     background-color: #fcfcfc;
 }
 
@@ -5555,6 +5565,13 @@ section.dgm-gdc-tools-v2-section {
     position: relative;
 }
 
+.dgm-new-benefit-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 calc(15 * var(--dgm-gdc-fluid-scale)) calc(40 * var(--dgm-gdc-fluid-scale)) rgba(0, 0, 0, 0.12);
+    border-color: rgba(61, 82, 217, 0.2);
+    z-index: 10;
+}
+
 .dgm-new-icon {
     width: calc(45 * var(--dgm-gdc-fluid-scale));
     height: calc(30 * var(--dgm-gdc-fluid-scale));
@@ -5564,6 +5581,192 @@ section.dgm-gdc-tools-v2-section {
     justify-content: center;
     margin-bottom: calc(12 * var(--dgm-gdc-fluid-scale));
     font-size: 1.1rem;
+    color: #222;
+}
+
+.dgm-new-content h3 {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: #111111;
+    margin-bottom: calc(8 * var(--dgm-gdc-fluid-scale));
+    line-height: 1.25;
+    text-align: left;
+}
+
+.dgm-new-content p {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 0.78rem;
+    color: #666666;
+    line-height: 1.5;
+    margin: 0;
+    text-align: left;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* ===== BENEFITS SECTION FIX (MIGRATED FROM JFS) ===== */
+
+/* Bottom Layout (Left Tall + Middle Grid + Right Tall) */
+.dgm-benefits-bottom-layout {
+    display: flex !important;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    align-items: stretch;
+    margin-top: 15px;
+}
+
+.dgm-benefits-middle-col {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Tall variant — Industry Recognition & Lifetime Updates */
+.dgm-new-benefit-card.dgm-benefit-card-tall {
+    width: 190px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+    border-radius: 12px;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s ease;
+}
+
+.dgm-new-benefit-card.dgm-benefit-card-tall:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    border-color: rgba(61, 82, 217, 0.2);
+    z-index: 10;
+}
+
+/* Allow full text to show (no line-clamp) on tall cards */
+.dgm-new-benefit-card.dgm-benefit-card-tall .dgm-new-content p {
+    display: block;
+    -webkit-line-clamp: unset;
+    line-clamp: unset;
+    overflow: visible;
+    line-height: 1.4;
+}
+
+/* 1440px lock for the new row with scaled up sizes for larger ratios */
+@media (min-width: 1440px) {
+    .dgm-benefits-reimagined {
+        padding-top: 80px !important;
+        padding-bottom: 80px !important;
+        zoom: 1.15;
+    }
+
+    .dgm-gdc-curriculum-v2-right {
+        zoom: 1.15;
+    }
+
+    .dgm-benefits-header {
+        max-width: 1400px;
+        margin: 0 auto 70px;
+    }
+
+    .dgm-benefits-staggered {
+        max-width: 1400px;
+        margin: 0 auto;
+        gap: 25px;
+    }
+
+    .dgm-benefits-row {
+        gap: 20px;
+    }
+
+    .dgm-new-benefit-card {
+        width: 220px;
+        min-height: 160px;
+        border-radius: 14px;
+        padding: 22px;
+    }
+
+    .dgm-new-icon {
+        width: 50px;
+        height: 35px;
+        border-radius: 18px;
+        margin-bottom: 14px;
+        font-size: 1.25rem;
+    }
+
+    .dgm-new-content h3 {
+        font-size: 1.05rem;
+        margin-bottom: 10px;
+    }
+
+    .dgm-new-content p {
+        font-size: 0.88rem;
+    }
+
+    .dgm-benefits-bottom-layout {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: stretch !important;
+        gap: 20px !important;
+        max-width: 1400px;
+        margin: 20px auto 0 !important;
+        position: relative !important;
+    }
+
+    .dgm-benefits-middle-col {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+        width: auto !important;
+    }
+
+    .dgm-new-benefit-card.dgm-benefit-card-tall {
+        width: 220px !important;
+        padding: 22px !important;
+        height: auto !important;
+        position: relative !important;
+        margin: 0 !important;
+    }
+
+    .dgm-new-benefit-card.dgm-benefit-card-tall .dgm-new-content p {
+        font-size: 0.85rem !important;
+        line-height: 1.45 !important;
+        margin-bottom: 0 !important;
+        overflow: visible !important;
+    }
+
+    .dgm-new-benefit-card.dgm-benefit-card-tall .dgm-new-content h3 {
+        font-size: 0.98rem !important;
+        margin-bottom: 8px !important;
+    }
+}
+
+/* Hide old floating cards */
+.dgm-floating-card-left,
+.dgm-floating-card-right {
+    display: none !important;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .dgm-benefits-row {
+        flex-wrap: wrap;
+    }
+    .dgm-new-benefit-card {
+        width: calc(50% - calc(10 * var(--dgm-gdc-fluid-scale)));
+        max-width: calc(170 * var(--dgm-gdc-fluid-scale));
+    }
+}
+
+@media (max-width: 992px) {
+    .dgm-benefits-bottom-layout {
+        flex-wrap: wrap;
+    }
 }
 
 /* ========================================================================== 
@@ -6167,6 +6370,10 @@ section.dgm-gdc-tools-v2-section {
     .dgm-floating-card-right {
         transform: translateY(calc(0px)) !important;
     }
+
+    .dgm-benefits-reimagined {
+        zoom: 1.15;
+    }
 }
 
 @media (max-width: 767px) {
@@ -6522,4 +6729,16 @@ section.dgm-gdc-tools-v2-section {
     .dgm-gdc-banner-title {
         font-size: calc(26 * var(--dgm-gdc-fluid-scale)) !important;
     }
+}
+
+/* Widescreen scaling calculation for Ultra-Wide monitors */
+@media (min-width: 1441px) {
+  .dgm-gdc-intro-section,
+  .dgm-section,
+  .dgm-gdc-testi-grid-section {
+    zoom: calc(100vw / 1440);
+  }
+  .dgm-gdc-curriculum-v2-right {
+    zoom: calc(1.15 * (100vw / 1440)) !important;
+  }
 }

@@ -652,6 +652,15 @@ const DigitaMarketingCourse = () => {
                                     <p className="dgm-gdc-intro-desc">
                                         Learn the complete digital marketing process from strategy to execution. Build real campaigns, master industry tools, and become job-ready with hands-on experience and measurable results.
                                     </p>
+                                    <p className="dgm-gdc-intro-desc" style={{ marginTop: '6px', marginBottom: '4px', fontWeight: '600', color: '#222' }}>
+                                        What makes this program different:
+                                    </p>
+                                    <ul className="dgm-gdc-intro-desc" style={{ paddingLeft: '20px', listStyleType: 'disc', margin: '0 0 12px' }}>
+                                        <li style={{ marginBottom: '4px' }}><strong>Live Campaign Budgets:</strong> Practice running ads with real-world budget allocations.</li>
+                                        <li style={{ marginBottom: '4px' }}><strong>1:1 Expert Critiques:</strong> Get detailed campaign performance reviews directly from seasoned mentors.</li>
+                                        <li style={{ marginBottom: '4px' }}><strong>End-to-End Analytics:</strong> Master complete tracking setup from tracking pixels to GA4 dashboards.</li>
+                                        <li style={{ marginBottom: '0px' }}><strong>Portfolio of Audits:</strong> Build industry-ready SEO audits and social media strategies to showcase.</li>
+                                    </ul>
                                     <button className="dgm-gdc-intro-cta" onClick={scrollToForm}>
                                         Contact
                                     </button>
@@ -751,6 +760,31 @@ const DigitaMarketingCourse = () => {
                                         <div className="dgm-gdc-stat-item">
                                             <span className="dgm-gdc-stat-num">100%</span>
                                             <span className="dgm-gdc-stat-label">Practical</span>
+                                        </div>
+                                    </div>
+
+                                    <p className="dgm-gdc-curriculum-v2-desc" style={{ marginTop: '20px', color: '#5b6470', fontSize: '0.98rem', lineHeight: '1.6' }}>
+                                        Every week features interactive live sessions where students analyze campaigns alongside industry experts. We guide you from absolute basics to advanced performance marketing and automation strategies, helping you build real-world marketing confidence.
+                                    </p>
+                                    <p className="dgm-gdc-curriculum-v2-desc" style={{ marginTop: '20px', marginBottom: '12px', fontWeight: '700', color: '#111' }}>
+                                        <strong>Key milestones on your path to digital marketing mastery:</strong>
+                                    </p>
+                                    <div className="dgm-gdc-curriculum-v2-desc" style={{ marginTop: '10px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                                        <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '0.96rem', lineHeight: '1.45', color: '#5b6470' }}>
+                                            <FontAwesomeIcon icon={faCheck} style={{ color: '#3D52D9', marginTop: '3px', flexShrink: 0, fontSize: '0.85rem' }} />
+                                            <span><strong>Month 1:</strong> Digital marketing foundations, audience research, positioning, and funnel basics.</span>
+                                        </div>
+                                        <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '0.96rem', lineHeight: '1.45', color: '#5b6470' }}>
+                                            <FontAwesomeIcon icon={faCheck} style={{ color: '#3D52D9', marginTop: '3px', flexShrink: 0, fontSize: '0.85rem' }} />
+                                            <span><strong>Months 2-3:</strong> In-depth Paid Advertising across Google Ads, Meta Ads, and budget ROI management.</span>
+                                        </div>
+                                        <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '0.96rem', lineHeight: '1.45', color: '#5b6470' }}>
+                                            <FontAwesomeIcon icon={faCheck} style={{ color: '#3D52D9', marginTop: '3px', flexShrink: 0, fontSize: '0.85rem' }} />
+                                            <span><strong>Months 4-5:</strong> SEO keyword research, on-page optimization, content strategy, and email automation.</span>
+                                        </div>
+                                        <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '0.96rem', lineHeight: '1.45', color: '#5b6470' }}>
+                                            <FontAwesomeIcon icon={faCheck} style={{ color: '#3D52D9', marginTop: '3px', flexShrink: 0, fontSize: '0.85rem' }} />
+                                            <span><strong>Month 6:</strong> Google Analytics (GA4), custom dashboards, campaign performance audits, and freelance prep.</span>
                                         </div>
                                     </div>
                                 </div>
@@ -875,88 +909,78 @@ const DigitaMarketingCourse = () => {
                                     ))}
                                 </div>
 
-                                {/* Row 2: 3 Cards */}
-                                <div className="dgm-benefits-row dgm-row-3">
-                                    {benefits.slice(5, 8).map((benefit, index) => (
-                                        <div key={index} className="dgm-new-benefit-card">
-                                            {(() => {
-                                                const absoluteIndex = 5 + index;
-                                                const color = benefitIconPalette[absoluteIndex] || "#BAE6FD";
-                                                return (
-                                                    <div className="dgm-new-icon" style={{ background: hexToRgba(color, 0.18), color }}>
-                                                        {benefit.icon}
-                                                    </div>
-                                                );
-                                            })()}
-                                            <div className="dgm-new-content">
-                                                <h3>{benefit.title}</h3>
-                                                <p>{benefit.description}</p>
-                                            </div>
+                                {/* Bottom Layout - Left Tall + Middle Col (Row 2 & 3) + Right Tall */}
+                                <div className="dgm-benefits-bottom-layout">
+
+                                    {/* Left Tall Card */}
+                                    <div className="dgm-new-benefit-card dgm-benefit-card-tall">
+                                        <div className="dgm-new-icon" style={{ background: hexToRgba("#BAE6FD", 0.18), color: "#BAE6FD" }}>
+                                            <FontAwesomeIcon icon={faStar} />
                                         </div>
-                                    ))}
-                                </div>
-
-                                {/* Row 3: 2 Original Cards */}
-                                <div className="dgm-benefits-row dgm-row-2" style={{ gap: "50px" }}>
-                                    {benefits.slice(8, 10).map((benefit, index) => (
-                                        <div key={index} className="dgm-new-benefit-card">
-                                            {(() => {
-                                                const absoluteIndex = 8 + index;
-                                                const color = benefitIconPalette[absoluteIndex] || "#BAE6FD";
-                                                return (
-                                                    <div className="dgm-new-icon" style={{ background: hexToRgba(color, 0.18), color }}>
-                                                        {benefit.icon}
-                                                    </div>
-                                                );
-                                            })()}
-                                            <div className="dgm-new-content">
-                                                <h3>{benefit.title}</h3>
-                                                <p>{benefit.description}</p>
-                                            </div>
+                                        <div className="dgm-new-content">
+                                            <h3>Industry Recognition</h3>
+                                            <p>
+                                                Get certified with globally recognized credentials. Our prestigious certification proves to top-tier employers that you have mastered modern marketing strategies and hands-on campaign execution.
+                                            </p>
                                         </div>
-                                    ))}
-                                </div>
-                            </div>
+                                    </div>
 
-                            {/* Floating Cards - Positioned Independently */}
-                            {/* Left Bottom Floating Card */}
-                            <div
-                                className="dgm-floating-benefit-card dgm-floating-card-left"
-                                style={{
-                                    left: "calc(50% - 505px)", // Move left or right (e.g. "100px", "5%", "calc(50% - 505px)")
-                                    top: "320px",              // Moves the card up and down
-                                    bottom: "0px",             // Stretches the card to the bottom 
-                                    width: "190px",            // Width of the card
-                                    height: "auto",
-                                    justifyContent: "center",
-                                    padding: "18px"
-                                }}
-                            >
-                                <div className="dgm-new-icon" style={{ background: hexToRgba("#BAE6FD", 0.18), color: "#BAE6FD" }}>
-                                    <FontAwesomeIcon icon={faStar} />
-                                </div>
-                                <div className="dgm-new-content">
-                                    <h3>Industry Recognition</h3>
-                                    <p>Get certified with globally recognized credentials. Our prestigious certification proves to top-tier employers that you have mastered modern marketing strategies and hands-on campaign execution.</p>
-                                </div>
-                            </div>
+                                    {/* Middle Grid Column */}
+                                    <div className="dgm-benefits-middle-col">
+                                        <div className="dgm-benefits-row dgm-row-3">
+                                            {benefits.slice(5, 8).map((benefit, index) => (
+                                                <div key={index} className="dgm-new-benefit-card">
+                                                    {(() => {
+                                                        const absoluteIndex = 5 + index;
+                                                        const color = benefitIconPalette[absoluteIndex] || "#BAE6FD";
+                                                        return (
+                                                            <div className="dgm-new-icon" style={{ background: hexToRgba(color, 0.18), color }}>
+                                                                {benefit.icon}
+                                                            </div>
+                                                        );
+                                                    })()}
+                                                    <div className="dgm-new-content">
+                                                        <h3>{benefit.title}</h3>
+                                                        <p>{benefit.description}</p>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
 
-                            {/* Right Bottom Floating Card */}
-                            <div className="dgm-floating-benefit-card dgm-floating-card-right" style={{
-                                right: "calc(50% - 505px)", // Move left or right (e.g. "100px", "5%", "calc(50% - 505px)")
-                                top: "320px",              // Moves the card up and down
-                                bottom: "0px",             // Stretches the card to the bottom 
-                                width: "190px",            // Width of the card
-                                height: "auto",
-                                justifyContent: "center",
-                                padding: "18px"
-                            }}>
-                                <div className="dgm-new-icon" style={{ background: hexToRgba("#C4B5FD", 0.18), color: "#C4B5FD" }}>
-                                    <FontAwesomeIcon icon={faTrophy} />
-                                </div>
-                                <div className="dgm-new-content">
-                                    <h3>Lifetime Updates</h3>
-                                    <p>Stay ahead with free lifetime access to all future course updates and industry-relevant content additions. You will always have direct access to the latest platform changes and cutting-edge tools to remain a competitive expert.</p>
+                                        <div className="dgm-benefits-row dgm-row-2">
+                                            {benefits.slice(8, 10).map((benefit, index) => (
+                                                <div key={index} className="dgm-new-benefit-card">
+                                                    {(() => {
+                                                        const absoluteIndex = 8 + index;
+                                                        const color = benefitIconPalette[absoluteIndex] || "#BAE6FD";
+                                                        return (
+                                                            <div className="dgm-new-icon" style={{ background: hexToRgba(color, 0.18), color }}>
+                                                                {benefit.icon}
+                                                            </div>
+                                                        );
+                                                    })()}
+                                                    <div className="dgm-new-content">
+                                                        <h3>{benefit.title}</h3>
+                                                        <p>{benefit.description}</p>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+
+                                    {/* Right Tall Card */}
+                                    <div className="dgm-new-benefit-card dgm-benefit-card-tall">
+                                        <div className="dgm-new-icon" style={{ background: hexToRgba("#C4B5FD", 0.18), color: "#C4B5FD" }}>
+                                            <FontAwesomeIcon icon={faTrophy} />
+                                        </div>
+                                        <div className="dgm-new-content">
+                                            <h3>Lifetime Updates</h3>
+                                            <p>
+                                                Stay ahead with free lifetime access to all future course updates and industry-relevant content additions. You will always have direct access to the latest platform changes and cutting-edge tools to remain a competitive expert.
+                                            </p>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -1066,7 +1090,18 @@ const DigitaMarketingCourse = () => {
                                     <h2 className="dgm-gdc-testi-main-title">Experience Learning Like Never Before</h2>
                                     <p className="dgm-gdc-testi-subtitle">
                                         Discover personalized, practical learning that prepares you for real product teams. Read stories from learners who transformed their Marketing careers with our mentorship.
+                                        <br /><br />
+                                        Our encouraging environment ensures students learn with joy. Engage in regular weekly challenges, positive peer reviews, and interactive show-and-tell sessions. We bridge the gap between simple concepts and fully optimized, high-performing campaigns.
                                     </p>
+                                    <p className="dgm-gdc-testi-subtitle" style={{ marginTop: '15px', marginBottom: '10px', fontWeight: '600' }}>
+                                        Why our students succeed:
+                                    </p>
+                                    <ul className="dgm-gdc-testi-subtitle" style={{ paddingLeft: '20px', listStyleType: 'disc', margin: '0', textAlign: 'left' }}>
+                                        <li style={{ marginBottom: '8px' }}><strong>Live Campaign Budgets:</strong> Practice running ads with real-world budget allocations.</li>
+                                        <li style={{ marginBottom: '8px' }}><strong>1:1 Expert Critiques:</strong> Get detailed campaign performance reviews directly from seasoned mentors.</li>
+                                        <li style={{ marginBottom: '8px' }}><strong>End-to-End Analytics:</strong> Master complete tracking setup from tracking pixels to GA4 dashboards.</li>
+                                        <li><strong>Portfolio of Audits:</strong> Build industry-ready SEO audits and social media strategies to showcase.</li>
+                                    </ul>
                                 </div>
 
                                 <div className="dgm-gdc-testi-grid-right">
@@ -1152,6 +1187,20 @@ const DigitaMarketingCourse = () => {
                                         <h2 className="dgm-gdc-banner-title">
                                             Start Your Marketing <br /> Journey Today
                                         </h2>
+
+                                        <p style={{
+                                            color: '#555',
+                                            fontSize: '1.05rem',
+                                            lineHeight: '1.7',
+                                            maxWidth: '600px',
+                                            margin: '0 auto 20px',
+                                            fontWeight: '500',
+                                            textAlign: 'center'
+                                        }}>
+                                            Join thousands of ambitious marketers who have accelerated their career growth through our Digital Marketing Mastery Program.
+                                            Whether you are taking your first steps in understanding keyword research or aiming to master advanced paid advertising funnels, our structured 6-month syllabus
+                                            delivers everything you need—from setting up GA4 analytics tracking to running optimized, real-budget ad campaigns.
+                                        </p>
 
                                         <div className="dgm-gdc-banner-ratings">
                                             <div className="dgm-gdc-rating-box">
@@ -1311,9 +1360,9 @@ const DigitaMarketingCourse = () => {
                             </div>
                         </div>
                     )}
-                    <SubFooterTwo />
                     <BackToTop />
                 </div>
+                <SubFooterTwo />
             </div>
         </>
     );

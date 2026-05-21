@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'; // Import motion
 import './TechLearningHero.css';
 import studentsImg from '../../../assets/images/students.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPhone, faGraduationCap, faHandshake, faArrowUpRightFromSquare, faChartLine, faLaptopCode, faUsers, faTrophy, faBriefcase } from '@fortawesome/free-solid-svg-icons';
+import { faPhone, faGraduationCap, faHandshake, faArrowUpRightFromSquare, faChartLine, faLaptopCode, faUsers, faTrophy, faBriefcase, faCode, faChalkboardTeacher, faAward, faTools } from '@fortawesome/free-solid-svg-icons';
 
 const TechLearningHero = () => {
     const whatsappNumber = '6381759909';
@@ -21,7 +21,7 @@ const TechLearningHero = () => {
                 </header>
 
                 {/* ANIMATION: Title Fade Up */}
-                <motion.h1 
+                <motion.h1
                     className="tlh-peoplr-title"
                     initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -33,7 +33,7 @@ const TechLearningHero = () => {
 
                 <div className="tlh-peoplr-stage">
                     {/* ANIMATION: Image Wrapper Fade Up */}
-                    <motion.div 
+                    <motion.div
                         className="tlh-peoplr-image-wrapper"
                         initial={{ opacity: 0, y: 50 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -44,7 +44,7 @@ const TechLearningHero = () => {
                     </motion.div>
 
                     {/* ANIMATION: Floating Card Left */}
-                    <motion.div 
+                    <motion.div
                         className="tlh-float-card tlh-float-left"
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -52,21 +52,24 @@ const TechLearningHero = () => {
                         transition={{ duration: 0.8, delay: 0.4 }}
                     >
                         <div className="tlh-card-top-row">
-                            <span className="tlh-huge-num">90<sup>%</sup></span>
+                            <div className="tlh-card-title-group">
+                                <span className="tlh-huge-num">90<sup>%</sup></span>
+                                <span className="tlh-card-desc">Placement Assistance</span>
+                            </div>
                             <div className="tlh-card-icon-pill lime-icon">
                                 <FontAwesomeIcon icon={faGraduationCap} />
                             </div>
                         </div>
-                        <p className="tlh-card-desc" style={{ marginBottom: '15px' }}>Placement<br />Assistance</p>
-                        <div className="tlh-card-extra" style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.6)', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                        <div className="tlh-card-extra" style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.6)', display: 'flex', flexDirection: 'column', gap: '6px', marginTop: '15px', alignItems: 'center' }}>
                             <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}><span style={{ color: '#d8ff4a' }}>✓</span> Resume Building</span>
                             <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}><span style={{ color: '#d8ff4a' }}>✓</span> Mock Interviews</span>
                             <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}><span style={{ color: '#d8ff4a' }}>✓</span> Career Support</span>
+                            <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}><span style={{ color: '#d8ff4a' }}>✓</span> Job Referrals</span>
                         </div>
                     </motion.div>
 
                     {/* ANIMATION: Floating Card Right */}
-                    <motion.div 
+                    <motion.div
                         className="tlh-float-card tlh-float-right"
                         initial={{ opacity: 0, x: 30 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -74,16 +77,19 @@ const TechLearningHero = () => {
                         transition={{ duration: 0.8, delay: 0.5 }}
                     >
                         <div className="tlh-card-top-row">
-                            <span className="tlh-huge-num">300<sup>+</sup></span>
+                            <div className="tlh-card-title-group">
+                                <span className="tlh-huge-num">300<sup>+</sup></span>
+                                <span className="tlh-card-desc">Hiring Partners</span>
+                            </div>
                             <div className="tlh-card-icon-pill dark-icon">
                                 <FontAwesomeIcon icon={faHandshake} />
                             </div>
                         </div>
-                        <p className="tlh-card-desc" style={{ marginBottom: '15px' }}>Hiring<br />Partners</p>
-                        <div className="tlh-card-extra" style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.6)', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                        <div className="tlh-card-extra" style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.6)', display: 'flex', flexDirection: 'column', gap: '6px', marginTop: '15px', alignItems: 'center' }}>
                             <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}><span style={{ color: '#d8ff4a' }}>✓</span> Top Tech Firms</span>
                             <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}><span style={{ color: '#d8ff4a' }}>✓</span> Global Startups</span>
                             <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}><span style={{ color: '#d8ff4a' }}>✓</span> MNCs Connect</span>
+                            <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}><span style={{ color: '#d8ff4a' }}>✓</span> Direct Interviews</span>
                         </div>
                     </motion.div>
 
@@ -135,12 +141,12 @@ const TechLearningHero = () => {
             {/* ANIMATION: Bottom Grid Cards Reveal */}
             <div className="tlh-peoplr-bottom-grid">
                 {[
-                    { title: "Real-World \n Practice", desc: "Develop your abilities with hands-on projects designed to simulate actual industry scenarios.", icon: faLaptopCode, pill: "Live Projects" },
-                    { title: "Guided \n Mentorship", desc: "Gain insights from experienced industry professionals who provide personalized support.", icon: faUsers, pill: "Expert Mentors" },
-                    { title: "Experience \n First", desc: "Equip yourself with the practical skills, strong portfolio, and confidence needed for success.", icon: faTrophy, pill: "90% Placement" },
-                    { title: "Industry-Ready \n Skills", desc: "Master in-demand technologies and frameworks used by top companies globally.", icon: faBriefcase, pill: "Job Ready" }
+                    { title: "Real-World Practice", desc: "Develop your abilities with hands-on projects designed to simulate actual industry scenarios.", headerIcon: faCode, icon: faLaptopCode, pill: "Live Projects" },
+                    { title: "Guided Mentorship", desc: "Gain insights from experienced industry professionals who provide personalized support.", headerIcon: faChalkboardTeacher, icon: faUsers, pill: "Expert Mentors" },
+                    { title: "Experience First", desc: "Equip yourself with the practical skills, strong portfolio, and confidence needed for success.", headerIcon: faAward, icon: faTrophy, pill: "90% Placement" },
+                    { title: "Industry-Ready Skills", desc: "Master in-demand technologies and frameworks used by top companies globally.", headerIcon: faTools, icon: faBriefcase, pill: "Job Ready" }
                 ].map((item, index) => (
-                    <motion.div 
+                    <motion.div
                         key={index}
                         className="tlh-bottom-card"
                         initial={{ opacity: 0, y: 50 }}
@@ -149,8 +155,8 @@ const TechLearningHero = () => {
                         transition={{ duration: 0.8, delay: index * 0.1 }}
                     >
                         <div className="tlh-bcard-header">
-                            <h3 style={{ whiteSpace: 'pre-line' }}>{item.title}</h3>
-                            <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="tlh-card-arrow" />
+                            <h3>{item.title}</h3>
+                            <FontAwesomeIcon icon={item.headerIcon} className="tlh-card-arrow" />
                         </div>
                         <p>{item.desc}</p>
                         <div className="tlh-card-footer">

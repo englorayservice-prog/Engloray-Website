@@ -645,6 +645,16 @@ const UiuxDesignCourse = () => {
                   <p className="uiux-intro-desc">
                     Learn the complete product design process from research to high-fidelity UI. Build case studies, master modern tools, and become job-ready with real-world project experience.
                   </p>
+
+                  <p className="uiux-intro-desc" style={{ marginTop: '6px', marginBottom: '4px', fontWeight: '600', color: '#222' }}>
+                    What makes this program different:
+                  </p>
+                  <ul className="uiux-intro-desc" style={{ paddingLeft: '20px', listStyleType: 'disc', margin: '0 0 12px' }}>
+                    <li style={{ marginBottom: '4px' }}><strong>Hands-on Labs:</strong> Complete 30+ comprehensive design case studies.</li>
+                    <li style={{ marginBottom: '4px' }}><strong>Live Workflows:</strong> Participate in interactive prototyping sprints with product managers.</li>
+                    <li style={{ marginBottom: '4px' }}><strong>Premium Tools:</strong> Master Figma, FigJam, Spline, and modern design systems.</li>
+                    <li style={{ marginBottom: '0px' }}><strong>Career Ready:</strong> 1:1 portfolio reviews, resume writing &amp; mock interviews.</li>
+                  </ul>
                   <button className="uiux-intro-cta" onClick={scrollToForm}>
                     Contact
                   </button>
@@ -742,6 +752,31 @@ const UiuxDesignCourse = () => {
                     <div className="uiux-stat-item">
                       <span className="uiux-stat-num">100%</span>
                       <span className="uiux-stat-label">Practical</span>
+                    </div>
+                  </div>
+
+                  <p className="uiux-curriculum-v2-desc" style={{ marginTop: '20px', color: '#5b6470', fontSize: '0.98rem', lineHeight: '1.6' }}>
+                    Every week features real design sprints and direct mentor reviews. We bridge the gap between aesthetic execution and business logic, preparing you to pitch prototypes confidently to global design teams.
+                  </p>
+                  <p className="uiux-curriculum-v2-desc" style={{ marginTop: '20px', marginBottom: '12px', fontWeight: '700', color: '#111' }}>
+                    <strong>Key milestones on your path to professional mastery:</strong>
+                  </p>
+                  <div className="uiux-curriculum-v2-desc" style={{ marginTop: '10px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '0.96rem', lineHeight: '1.45', color: '#5b6470' }}>
+                      <FontAwesomeIcon icon={faCheck} style={{ color: '#3D52D9', marginTop: '3px', flexShrink: 0, fontSize: '0.85rem' }} />
+                      <span><strong>Month 1:</strong> User Research, Empathy Mapping &amp; Information Architecture.</span>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '0.96rem', lineHeight: '1.45', color: '#5b6470' }}>
+                      <FontAwesomeIcon icon={faCheck} style={{ color: '#3D52D9', marginTop: '3px', flexShrink: 0, fontSize: '0.85rem' }} />
+                      <span><strong>Month 2-3:</strong> Wireframing, Figma Mastery &amp; Interactive Prototyping.</span>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '0.96rem', lineHeight: '1.45', color: '#5b6470' }}>
+                      <FontAwesomeIcon icon={faCheck} style={{ color: '#3D52D9', marginTop: '3px', flexShrink: 0, fontSize: '0.85rem' }} />
+                      <span><strong>Month 4-5:</strong> High-Fidelity UI Design Systems, Micro-interactions &amp; Usability.</span>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '0.96rem', lineHeight: '1.45', color: '#5b6470' }}>
+                      <FontAwesomeIcon icon={faCheck} style={{ color: '#3D52D9', marginTop: '3px', flexShrink: 0, fontSize: '0.85rem' }} />
+                      <span><strong>Month 6:</strong> Capstone Case Study, Portfolio Storytelling &amp; Career Prep.</span>
                     </div>
                   </div>
                 </div>
@@ -866,86 +901,78 @@ const UiuxDesignCourse = () => {
                   ))}
                 </div>
 
-                {/* Row 2: 3 Cards */}
-                <div className="uiux-dgm-benefits-row uiux-dgm-row-3">
-                  {benefits.slice(5, 8).map((benefit, index) => (
-                    <div key={index} className="uiux-dgm-new-benefit-card">
-                      {(() => {
-                        const absoluteIndex = 5 + index;
-                        const color = benefitIconPalette[absoluteIndex] || "#BAE6FD";
-                        return (
-                          <div className="uiux-dgm-new-icon" style={{ background: hexToRgba(color, 0.18), color }}>
-                            {benefit.icon}
-                          </div>
-                        );
-                      })()}
-                      <div className="uiux-dgm-new-content">
-                        <h3>{benefit.title}</h3>
-                        <p>{benefit.description.substring(0, 70)}...</p>
-                      </div>
+                {/* Bottom Layout - Left Tall + Middle Col (Row 2 & 3) + Right Tall */}
+                <div className="uiux-dgm-benefits-bottom-layout">
+
+                  {/* Left Tall Card */}
+                  <div className="uiux-dgm-new-benefit-card uiux-dgm-benefit-card-tall">
+                    <div className="uiux-dgm-new-icon" style={{ background: hexToRgba("#BAE6FD", 0.18), color: "#BAE6FD" }}>
+                      <FontAwesomeIcon icon={faStar} />
                     </div>
-                  ))}
-                </div>
-
-                {/* Row 3: 2 Original Cards */}
-                <div className="uiux-dgm-benefits-row uiux-dgm-row-2" style={{ gap: "50px" }}>
-                  {benefits.slice(8, 10).map((benefit, index) => (
-                    <div key={index} className="uiux-dgm-new-benefit-card">
-                      {(() => {
-                        const absoluteIndex = 8 + index;
-                        const color = benefitIconPalette[absoluteIndex] || "#BAE6FD";
-                        return (
-                          <div className="uiux-dgm-new-icon" style={{ background: hexToRgba(color, 0.18), color }}>
-                            {benefit.icon}
-                          </div>
-                        );
-                      })()}
-                      <div className="uiux-dgm-new-content">
-                        <h3>{benefit.title}</h3>
-                        <p>{benefit.description.substring(0, 70)}...</p>
-                      </div>
+                    <div className="uiux-dgm-new-content">
+                      <h3>Industry Recognition</h3>
+                      <p>
+                        Get certified with globally recognized credentials that validate your expertise and boost your career worldwide. Strengthen your profile with trusted certification and gain the confidence to pursue better opportunities.
+                      </p>
                     </div>
-                  ))}
-                </div>
-              </div>
+                  </div>
 
-              {/* Floating Cards - Positioned Independently */}
-              {/* Left Bottom Floating Card */}
-              <div
-                className="uiux-dgm-floating-benefit-card uiux-dgm-floating-card-left"
-                style={{
-                  left: "calc(50% - (640 * var(--uiux-fluid-scale)))",
-                  top: "calc(200 * var(--uiux-fluid-scale))",
-                  width: "calc(240 * var(--uiux-fluid-scale))",
-                  height: "calc(380 * var(--uiux-fluid-scale))",
-                  justifyContent: "center",
-                  padding: "calc(25 * var(--uiux-fluid-scale))"
-                }}
-              >
-                <div className="uiux-dgm-new-icon" style={{ background: hexToRgba("#BAE6FD", 0.18), color: "#BAE6FD" }}>
-                  <FontAwesomeIcon icon={faStar} />
-                </div>
-                <div className="uiux-dgm-new-content">
-                  <h3>Industry Recognition</h3>
-                  <p>Get certified with globally recognized credentials that validate your expertise and boost your career worldwide.Strengthen your profile with trusted certification and gain the confidence to pursue better opportunities.</p>
-                </div>
-              </div>
+                  {/* Middle Grid Column */}
+                  <div className="uiux-dgm-benefits-middle-col">
+                    <div className="uiux-dgm-benefits-row uiux-dgm-row-3">
+                      {benefits.slice(5, 8).map((benefit, index) => (
+                        <div key={index} className="uiux-dgm-new-benefit-card">
+                          {(() => {
+                            const absoluteIndex = 5 + index;
+                            const color = benefitIconPalette[absoluteIndex] || "#BAE6FD";
+                            return (
+                              <div className="uiux-dgm-new-icon" style={{ background: hexToRgba(color, 0.18), color }}>
+                                {benefit.icon}
+                              </div>
+                            );
+                          })()}
+                          <div className="uiux-dgm-new-content">
+                            <h3>{benefit.title}</h3>
+                            <p>{benefit.description.substring(0, 70)}...</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
 
-              {/* Right Bottom Floating Card */}
-              <div className="uiux-dgm-floating-benefit-card uiux-dgm-floating-card-right" style={{
-                right: "calc(50% - (640 * var(--uiux-fluid-scale)))",
-                top: "calc(200 * var(--uiux-fluid-scale))",
-                width: "calc(240 * var(--uiux-fluid-scale))",
-                height: "calc(380 * var(--uiux-fluid-scale))",
-                justifyContent: "center",
-                padding: "calc(25 * var(--uiux-fluid-scale))"
-              }}>
-                <div className="uiux-dgm-new-icon" style={{ background: hexToRgba("#C4B5FD", 0.18), color: "#C4B5FD" }}>
-                  <FontAwesomeIcon icon={faTrophy} />
-                </div>
-                <div className="uiux-dgm-new-content">
-                  <h3>Lifetime Updates</h3>
-                  <p>Stay ahead with free lifetime access to all future course updates and industry-relevant content additions. Keep learning with updated lessons and resources to improve your skills and stay competitive always.</p>
+                    <div className="uiux-dgm-benefits-row uiux-dgm-row-2">
+                      {benefits.slice(8, 10).map((benefit, index) => (
+                        <div key={index} className="uiux-dgm-new-benefit-card">
+                          {(() => {
+                            const absoluteIndex = 8 + index;
+                            const color = benefitIconPalette[absoluteIndex] || "#BAE6FD";
+                            return (
+                              <div className="uiux-dgm-new-icon" style={{ background: hexToRgba(color, 0.18), color }}>
+                                {benefit.icon}
+                              </div>
+                            );
+                          })()}
+                          <div className="uiux-dgm-new-content">
+                            <h3>{benefit.title}</h3>
+                            <p>{benefit.description.substring(0, 70)}...</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Right Tall Card */}
+                  <div className="uiux-dgm-new-benefit-card uiux-dgm-benefit-card-tall">
+                    <div className="uiux-dgm-new-icon" style={{ background: hexToRgba("#C4B5FD", 0.18), color: "#C4B5FD" }}>
+                      <FontAwesomeIcon icon={faTrophy} />
+                    </div>
+                    <div className="uiux-dgm-new-content">
+                      <h3>Lifetime Updates</h3>
+                      <p>
+                        Stay ahead with free lifetime access to all future course updates and industry-relevant content additions. Keep learning with updated lessons and resources to improve your skills and stay competitive always.
+                      </p>
+                    </div>
+                  </div>
+
                 </div>
               </div>
             </div>
@@ -1057,7 +1084,18 @@ const UiuxDesignCourse = () => {
                   <h2 className="uiux-testi-main-title">Experience Learning Like Never Before</h2>
                   <p className="uiux-testi-subtitle">
                     Discover personalized, practical learning that prepares you for real product teams. Read stories from learners who transformed their UI/UX careers with our mentorship.
+                    <br /><br />
+                    Our collaborative environment ensures you learn alongside product peers. Engage in design challenges, peer reviews, and critique sessions. We bridge the gap between creative concepts and launch-ready specifications.
                   </p>
+                  <p className="uiux-testi-subtitle" style={{ marginTop: '15px', marginBottom: '10px', fontWeight: '600' }}>
+                    Why our students succeed:
+                  </p>
+                  <ul className="uiux-testi-subtitle" style={{ paddingLeft: '20px', listStyleType: 'disc', margin: '0', textAlign: 'left' }}>
+                    <li style={{ marginBottom: '8px' }}><strong>Figma Sprints:</strong> Design with professional team files.</li>
+                    <li style={{ marginBottom: '8px' }}><strong>Industry Critiques:</strong> Weekly feedback from senior product designers.</li>
+                    <li style={{ marginBottom: '8px' }}><strong>Accredited Case Studies:</strong> Write research-backed portfolios.</li>
+                    <li><strong>Design Community:</strong> Connect with global creative networks.</li>
+                  </ul>
                 </div>
 
                 <div className="uiux-testi-grid-right">
@@ -1143,6 +1181,20 @@ const UiuxDesignCourse = () => {
                     <h2 className="uiux-banner-title">
                       Start Your UI/UX <br /> Journey Today
                     </h2>
+
+                    <p style={{
+                      color: '#555',
+                      fontSize: '1.05rem',
+                      lineHeight: '1.7',
+                      maxWidth: '600px',
+                      margin: '0 auto 20px',
+                      fontWeight: '500',
+                      textAlign: 'center'
+                    }}>
+                      Join thousands of digital designers who have transformed their careers through our industry-leading UI/UX Mastery Program.
+                      Whether you are a beginner taking your first steps or a visual designer seeking to master user experience workflows, our structured 6-month curriculum
+                      delivers everything you need—from user research to building premium interactive web portfolios.
+                    </p>
 
                     <div className="uiux-banner-ratings">
                       <div className="uiux-rating-box">
@@ -1301,9 +1353,9 @@ const UiuxDesignCourse = () => {
               </div>
             </div>
           )}
-          <SubFooterTwo />
           <BackToTop />
         </div>
+        <SubFooterTwo />
       </div>
     </>
   );

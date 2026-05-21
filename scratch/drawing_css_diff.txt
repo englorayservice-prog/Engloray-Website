@@ -1,0 +1,107 @@
+diff --git a/src/Pages/Sub Pages/DrawingCourse/DrawingCourse.css b/src/Pages/Sub Pages/DrawingCourse/DrawingCourse.css
+index 76093e6..881092a 100644
+--- a/src/Pages/Sub Pages/DrawingCourse/DrawingCourse.css	
++++ b/src/Pages/Sub Pages/DrawingCourse/DrawingCourse.css	
+@@ -719,8 +719,8 @@
+ }
+ 
+ .dcp-intro-title {
+-    font-size: 3.5rem;
+-    margin-bottom: calc(25 * var(--dcp-fluid-scale));
++    font-size: 3rem;
++    margin-bottom: calc(12 * var(--dcp-fluid-scale));
+     text-align: left;
+ }
+ 
+@@ -1624,7 +1624,7 @@
+     color: #111;
+     margin-bottom: calc(25 * var(--dcp-fluid-scale));
+     letter-spacing: -2px;
+-    margin-left: 2px;
++    margin-left: calc(50 * var(--dcp-fluid-scale));
+     /* Synchronized left sync */
+ }
+ 
+@@ -2972,7 +2972,7 @@ section.dcp-tools-v2-section {
+    ========================================================================== */
+ .dcp-dark-enrollment-FIXED {
+     background: #ffffff !important;
+-    padding: calc(80 * var(--dcp-fluid-scale)) 0;
++    padding: 0 0 calc(80 * var(--dcp-fluid-scale));
+     position: relative;
+     overflow: hidden;
+ }
+@@ -3617,7 +3617,7 @@ section.dcp-tools-v2-section {
+ /* Make sure the section doesn't cut off content */
+ .dcp-dark-enrollment-FIXED {
+     background: #ffffff !important;
+-    padding: calc(80 * var(--dcp-fluid-scale)) 0;
++    padding: 0 0 calc(80 * var(--dcp-fluid-scale));
+     position: relative;
+     overflow: visible;
+ }
+@@ -4540,23 +4540,23 @@ section.dcp-tools-v2-section {
+ 
+ .dcp-intro-desc {
+     font-family: 'Poppins', sans-serif;
+-    font-size: 1.1rem;
++    font-size: 1.2rem;
+     color: #555555;
+-    line-height: 1.6;
++    line-height: 1.5;
+     margin-bottom: calc(35 * var(--dcp-fluid-scale));
+     text-align: left;
+     /* Ensure sharp alignment */
+-    max-width: 90%;
++    max-width: 95%;
+ }
+ 
+ .dcp-intro-cta {
+     background: #3D52D9;
+     color: #ffffff;
+     border: none;
+-    padding: calc(16 * var(--dcp-fluid-scale)) calc(50 * var(--dcp-fluid-scale));
++    padding: calc(12 * var(--dcp-fluid-scale)) calc(40 * var(--dcp-fluid-scale));
+     border-radius: calc(40 * var(--dcp-fluid-scale));
+     font-weight: 700;
+-    font-size: 1.1rem;
++    font-size: 1.0rem;
+     cursor: pointer;
+     transition: all 0.3s ease;
+     box-shadow: 0 calc(4 * var(--dcp-fluid-scale)) calc(15 * var(--dcp-fluid-scale)) rgba(61, 82, 217, 0.2);
+@@ -5159,7 +5159,7 @@ section.dcp-tools-v2-section {
+ 
+ /* --- Premium Testimonials Grid Section --- */
+ .dcp-testi-grid-section {
+-    padding: calc(100 * var(--dcp-fluid-scale)) 0;
++    padding: calc(100 * var(--dcp-fluid-scale)) 0 calc(40 * var(--dcp-fluid-scale));
+     background-color: #fcfcfc;
+ }
+ 
+@@ -6144,6 +6144,10 @@ section.dcp-tools-v2-section {
+     .dcp-floating-card-right {
+         transform: translateY(calc(0px)) !important;
+     }
++
++    .dcp-benefits-reimagined {
++        zoom: 1.15;
++    }
+ }
+ 
+ @media (max-width: 767px) {
+@@ -6499,4 +6503,14 @@ section.dcp-tools-v2-section {
+     .dcp-banner-title {
+         font-size: calc(26 * var(--dcp-fluid-scale)) !important;
+     }
++}
++
++/* Widescreen scaling calculation for Ultra-Wide monitors */
++@media (min-width: 1441px) {
++  .dcp-intro-section,
++  .dcp-curriculum-v2-section,
++  .dcp-dgm-section,
++  .dcp-testi-grid-section {
++    zoom: calc(100vw / 1440);
++  }
+ }
+\ No newline at end of file

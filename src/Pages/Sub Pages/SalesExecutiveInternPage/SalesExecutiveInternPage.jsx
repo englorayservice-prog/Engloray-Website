@@ -65,6 +65,11 @@ import outreachImg from '../../../assets/outreach.jpeg';
 import pitchImg from '../../../assets/pitch.jpeg';
 import crm1Img from '../../../assets/crm_3d_new.png';
 import { submitInternship } from "../../Sub Pages/HandleSubmit/InternshipSubmit";
+import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
+import Navbar from '../../../Components/Navbar/Navbar';
+import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
+import BenefitsFooter from '../../TechGroupSection/BenfitsFooter/BenifitsFooter';
+
 
 
 import pathOne from '../../../assets/resources file/resources file/TECH/GRAPHICS DESIGNERS/Design Tools & Technology.pdf';
@@ -111,11 +116,38 @@ const SalesExecutiveInternPage = () => {
         }
     };
 
+    const [scale, setScale] = useState(1);
+    const scalingRef = useRef(null);
+    const [contentHeight, setContentHeight] = useState(0);
+
+    useEffect(() => {
+        const updateScale = () => {
+            const designWidth = 1440;
+            const currentWidth = window.innerWidth;
+            const newScale = currentWidth / designWidth;
+            setScale(newScale);
+            if (scalingRef.current) {
+                setContentHeight(scalingRef.current.offsetHeight);
+            }
+        };
+
+        updateScale();
+        window.addEventListener('resize', updateScale);
+
+        // Initial delay to ensure all dynamic elements are rendered for height calculation
+        const timeout = setTimeout(updateScale, 1000);
+
+        return () => {
+            window.removeEventListener('resize', updateScale);
+            clearTimeout(timeout);
+        };
+    }, []);
+
     // Handle scroll to update active section
     useEffect(() => {
         const handleScroll = () => {
             const sections = ['home', 'course', 'signin', 'assets', 'gallery', 'templates', 'resources', 'benefits', 'feedback'];
-            const scrollPosition = window.scrollY + 100;
+            const scrollPosition = (window.scrollY / scale) + 100;
 
             for (const section of sections) {
                 const element = document.getElementById(section);
@@ -133,7 +165,7 @@ const SalesExecutiveInternPage = () => {
 
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    }, [scale]);
 
     // Show toast message
     useEffect(() => {
@@ -729,232 +761,315 @@ const SalesExecutiveInternPage = () => {
     return (
         <>
             <div>
-                <Helmet>
-                    <title>Engloray Tech</title>
-                    <meta name="description" content="Transform creative concepts into professional designs while mastering Adobe" />
-                    <meta name="robots" content="max-snippet:-1, max-image-preview: large, max-video-preview:-1" />
-                    {/* <link rel="canonical" href="https://yourapp.com" /> */}
-                    <meta property="og:locale" content="en_US" />
-                    <meta property="og:type" content="website" />
-                    <meta property="og:title" content="Your App | Config" />
-                    <meta property="og:description" content="Lorem Ipsum" />
-                    {/* <meta property="og:url" content="https://yourapp.com" /> */}
-                </Helmet>
-            </div>
-            {/* Toast Message - Fixed Position */}
-            {showToast && (
-                <div className="SE-toast-message show">
-                    <div className="SE-toast-content">
-                        <span className="SE-toast-icon"><FontAwesomeIcon icon={faLock} /></span>
-                        <span className="SE-toast-text">{toastMessage}</span>
-                        <button
-                            className="SE-toast-close"
-                            onClick={() => setShowToast(false)}
-                        >
-                            <FontAwesomeIcon icon={faTimes} />
-                        </button>
-                    </div>
-                </div>
-            )}
+                <TopNavBar />
+                <Navbar />
 
-            <div className="SE-content" ref={containerRef}>
-                {/* <TopNavBar/> */}
-                {/* <Navbar/> */}
-
-                {/* Hero Section */}
-           <section className="SE-section SE-hero-section-new" id="home">
-    <div className="SE-hero-top-row">
-        <div className="SE-hero-badges">
-            <span className="SE-hero-badge"><FontAwesomeIcon icon={faCheckCircle} /> 2023 BEST SALES</span>
-            <span className="SE-hero-badge"><FontAwesomeIcon icon={faLaptopCode} /> WORLD CLASS REVENUE</span>
-        </div>
-        <div className="SE-hero-top-line-container">
-            <hr className="SE-hero-top-line" />
-            <svg className="SE-sparkle-icon" viewBox="0 0 24 24" width="24" height="24">
-                <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
-            </svg>
-        </div>
-    </div>
-
-    <div className="SE-main-layout-wrapper">
-        <div className="SE-hero-typography">
-            {/* Line 1 */}
-            <div className="SE-hero-line SE-hero-line-1">
-                <div className="SE-hero-title-wrapper">
-                    <svg className="SE-sparkle-icon-large" viewBox="0 0 24 24" width="40" height="40">
-                        <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
-                    </svg>
-                    <h1 className="SE-hero-title-word">Where Teams</h1>
-                </div>
-            </div>
-
-            {/* Line 2 */}
-            <div className="SE-hero-line SE-hero-line-2">
-                <div className="SE-hero-image-pill SE-hero-image-1">
-                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Sales Executive" />
-                </div>
-                <h1 className="SE-hero-title-word SE-text-purple">Sell & Grow</h1>
-                <svg className="SE-sparkle-icon-small" viewBox="0 0 24 24" width="20" height="20">
-                    <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
-                </svg>
-            </div>
-
-            {/* Line 3 */}
-            <div className="SE-hero-line SE-hero-line-3">
-                <svg className="SE-sparkle-icon-small" viewBox="0 0 24 24" width="25" height="25" >
-                    <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
-                </svg>
-                <h1 className="SE-hero-title-word" >Together</h1>
-                <div className="SE-hero-image-pill SE-hero-image-2">
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Sales Executive Studio" />
-                    <div className="SE-play-btn">
-                        <div className="SE-play-icon-triangle"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div className="SE-description-group">
-            <p className="SE-hero-desc-small">
-                Creative developer studio builds modern digital experiences for web apps brands and startups through design code innovation collaboration and scalable technology solutions for global users.
-            </p>
-            <p className="SE-hero-desc-large">
-                Creative Developer Studio empowers teams to transform ideas into powerful digital products. We combine creativity, engineering expertise, and strategic thinking to build responsive websites, intelligent platforms, and engaging user experiences that support innovation, improve productivity, and help businesses expand confidently in today’s fast-evolving online ecosystem.
-            </p>
-            <div className="SE-hero-actions">
-                <button className="SE-btn-primary" onClick={() => scrollToSection('course')}>Get Started</button>
-                <button className="SE-btn-icon" onClick={() => scrollToSection('course')}><FontAwesomeIcon icon={faArrowRight} style={{ transform: 'rotate(-45deg)' }} /></button>
-            </div>
-        </div>
-    </div>
-
-    <div className="SE-hero-bottom-row">
-        <div className="SE-hero-bottom-right">
-            <div className="SE-rotating-stamp">
-                <svg viewBox="0 0 100 100" className="SE-stamp-text-svg">
-                    <path id="circlePath" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="none" />
-                    <text>
-                        <textPath href="#circlePath" startOffset="0%">
-                            C R E A T I V E • D E V E L O P E R •
-                        </textPath>
-                    </text>
-                </svg>
-                <svg className="SE-stamp-star" viewBox="0 0 24 24" width="30" height="30">
-                    <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
-                </svg>
-            </div>
-        </div>
-    </div>
-</section>
-
-                {/* Course Content Section */}
-                <section
-                    className="SE-section SE-course-horizontal-section"
-                    id="course"
+                <div
+                    className="SE-scaling-outer-wrapper"
+                    style={{
+                        width: '100%',
+                        height: contentHeight * scale,
+                        overflow: 'hidden',
+                        backgroundColor: '#000000',
+                        position: 'relative'
+                    }}
                 >
-                    <div className="SE-course-background-top"></div>
-                    <div className="SE-course-background-bottom"></div>
-
-                    <div className="SE-course-horizontal-container" style={{ zIndex: 2, position: 'relative' }}>
-                        <div className="SE-course-header-row">
-                            <div className="SE-course-header-left">
-                                <h2 className="SE-section-title" style={{ color: '#2d2d2d' }}>INTERNSHIP</h2>
-                                <h2 className="SE-section-title">
-                                    <span className="SE-text-purple">TRAINING</span> <span style={{ color: '#2d2d2d' }}>PROGRAM</span>
-                                </h2>
+                    <div
+                        ref={scalingRef}
+                        className="SE-scaling-inner-container"
+                        style={{
+                            width: '1440px',
+                            transform: `scale(${scale})`,
+                            transformOrigin: 'top left',
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                            backgroundColor: '#000000'
+                        }}
+                    >
+                        <div>
+                            <Helmet>
+                                <title>Engloray Tech</title>
+                                <meta name="description" content="Transform creative concepts into professional designs while mastering Adobe" />
+                                <meta name="robots" content="max-snippet:-1, max-image-preview: large, max-video-preview:-1" />
+                                {/* <link rel="canonical" href="https://yourapp.com" /> */}
+                                <meta property="og:locale" content="en_US" />
+                                <meta property="og:type" content="website" />
+                                <meta property="og:title" content="Your App | Config" />
+                                <meta property="og:description" content="Lorem Ipsum" />
+                                {/* <meta property="og:url" content="https://yourapp.com" /> */}
+                            </Helmet>
+                        </div>
+                        {/* Toast Message - Fixed Position */}
+                        {showToast && (
+                            <div className="SE-toast-message show">
+                                <div className="SE-toast-content">
+                                    <span className="SE-toast-icon"><FontAwesomeIcon icon={faLock} /></span>
+                                    <span className="SE-toast-text">{toastMessage}</span>
+                                    <button
+                                        className="SE-toast-close"
+                                        onClick={() => setShowToast(false)}
+                                    >
+                                        <FontAwesomeIcon icon={faTimes} />
+                                    </button>
+                                </div>
                             </div>
-                            <svg className="SE-sparkle-icon-header" viewBox="0 0 24 24" width="20" height="20">
-                                <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
-                            </svg>
-                            <div className="SE-course-header-right">
-                                <a href="#course" className="SE-view-all-link">View All</a>
+                        )}
+
+                        <div className="SE-content" ref={containerRef}>
+                    {/* <TopNavBar/> */}
+                    {/* <Navbar/> */}
+
+                    {/* Hero Section */}
+                    <section className="SE-section SE-hero-section-new" id="home">
+                        <div className="SE-hero-top-row">
+                            <div className="SE-hero-badges">
+                                <span className="SE-hero-badge">
+                                    <FontAwesomeIcon icon={faCheckCircle} /> 2023 BEST SALES
+                                </span>
+                                <span className="SE-hero-badge">
+                                    <FontAwesomeIcon icon={faLaptopCode} /> WORLD CLASS REVENUE
+                                </span>
+                            </div>
+
+                            <div className="SE-hero-top-line-container">
+                                <hr className="SE-hero-top-line" />
+                                <svg className="SE-sparkle-icon" viewBox="0 0 24 24" width="24" height="24">
+                                    <path
+                                        d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"
+                                        fill="currentColor"
+                                    />
+                                </svg>
                             </div>
                         </div>
 
-                        <div className="SE-course-carousel-container">
-                            <div className="SE-carousel-wrapper">
-                                <div
-                                    className="SE-course-cards-wrapper"
-                                    ref={cardsWrapperRef}
-                                    style={{
-                                        '--active-index': activeCourseIndex,
-                                        transition: isTransitioning ? 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)' : 'none'
-                                    }}
-                                    onTransitionEnd={handleTransitionEnd}
-                                >
-                                    {infiniteContent.map((item) => (
-                                        <div key={item.uniqueId} className="SE-course-new-card">
-                                            <div className="SE-course-card-badges">
-                                                <span className="SE-badge-pill">Phase {item.id}</span>
-                                                <span className="SE-badge-pill SE-badge-dark">{item.duration}</span>
-                                            </div>
-                                            <h3 className="SE-course-card-title">{item.title}</h3>
+                        <div className="SE-hero-typography">
 
-                                            {/* Checklist items in 2-column grid */}
-                                            <div className="SE-course-card-checklist">
-                                                {Array.isArray(item.description) ? item.description.map((point, i) => (
-                                                    <div key={i} className="SE-checklist-item">
-                                                        <FontAwesomeIcon icon={faCheck} className="SE-checklist-icon" />
-                                                        <span>{point}</span>
-                                                    </div>
-                                                )) : (
-                                                    <p className="SE-course-card-desc">{item.description}</p>
-                                                )}
-                                            </div>
+                            <div className="SE-hero-line SE-hero-line-1">
+                                <div className="SE-hero-title-wrapper">
+                                    <svg className="SE-sparkle-icon-large" viewBox="0 0 24 24" width="40" height="40">
+                                        <path
+                                            d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"
+                                            fill="currentColor"
+                                        />
+                                    </svg>
 
-                                            <div className="SE-course-card-image">
-                                                <img src={item.bgImage} alt={item.title} />
-                                            </div>
-                                        </div>
-                                    ))}
+                                    <h1 className="SE-hero-title-word">Where Teams</h1>
+                                </div>
+
+                                <p className="SE-hero-desc-small">
+                                    Creative developer studio builds modern digital experiences for web apps brands and startups through design code innovation collaboration and scalable technology solutions for global users.
+                                </p>
+                            </div>
+
+                            <div className="SE-hero-line SE-hero-line-2">
+                                <div className="SE-hero-image-pill SE-hero-image-1">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+                                        alt="Sales Executive"
+                                        style={{ objectFit: 'cover', objectPosition: 'center' }}
+                                    />
+                                </div>
+
+                                <h1 className="SE-hero-title-word SE-text-purple">
+                                    Sell & Grow
+                                </h1>
+
+                                <svg className="SE-sparkle-icon-small" viewBox="0 0 24 24" width="20" height="20">
+                                    <path
+                                        d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"
+                                        fill="currentColor"
+                                    />
+                                </svg>
+                            </div>
+
+                            <div className="SE-hero-line SE-hero-line-3">
+                                <svg className="SE-sparkle-icon-small" viewBox="0 0 24 24" width="25" height="25">
+                                    <path
+                                        d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"
+                                        fill="currentColor"
+                                    />
+                                </svg>
+
+                                <h1 className="SE-hero-title-word">Together</h1>
+
+                                <div className="SE-hero-image-pill SE-hero-image-2">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+                                        alt="Sales Executive Studio"
+                                        style={{ objectFit: 'cover', objectPosition: 'center' }}
+                                    />
+
+                                    <div className="SE-play-btn">
+                                        <div className="SE-play-icon-triangle"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="SE-hero-bottom-row">
+
+                            <div className="SE-hero-bottom-left">
+                                <p className="SE-hero-desc-large">
+                                    Creative Developer Studio empowers teams to transform ideas into powerful digital products. We combine creativity, engineering expertise, and strategic thinking to build responsive websites, intelligent platforms, and engaging user experiences that support innovation, improve productivity, and help businesses expand confidently in today’s fast-evolving online ecosystem.
+                                </p>
+
+                                <div className="SE-hero-actions">
+                                    <button
+                                        className="SE-btn-primary"
+                                        onClick={() => scrollToSection('course')}
+                                    >
+                                        Get Started
+                                    </button>
+
+                                    <button
+                                        className="SE-btn-icon"
+                                        onClick={() => scrollToSection('course')}
+                                    >
+                                        <FontAwesomeIcon
+                                            icon={faArrowRight}
+                                            style={{ transform: 'rotate(-45deg)' }}
+                                        />
+                                    </button>
                                 </div>
                             </div>
 
-                            <div className="SE-carousel-arrows">
-                                <button
-                                    className="SE-carousel-arrow SE-carousel-arrow-left"
-                                    onClick={handlePrevClick}
-                                    aria-label="Previous module"
-                                >
-                                    <FontAwesomeIcon icon={faArrowRight} style={{ transform: 'rotate(180deg)' }} />
-                                </button>
+                            <div className="SE-hero-bottom-right">
+                                <div className="SE-rotating-stamp">
+                                    <svg viewBox="0 0 100 100" className="SE-stamp-text-svg">
+                                        <path
+                                            id="circlePath"
+                                            d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0"
+                                            fill="none"
+                                        />
 
-                                <button
-                                    className="SE-carousel-arrow SE-carousel-arrow-right"
-                                    onClick={handleNextClick}
-                                    aria-label="Next module"
-                                >
-                                    <FontAwesomeIcon icon={faArrowRight} />
-                                </button>
+                                        <text>
+                                            <textPath href="#circlePath" startOffset="0%">
+                                                C R E A T I V E • D E V E L O P E R •
+                                            </textPath>
+                                        </text>
+                                    </svg>
+
+                                    <svg className="SE-stamp-star" viewBox="0 0 24 24" width="30" height="30">
+                                        <path
+                                            d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"
+                                            fill="currentColor"
+                                        />
+                                    </svg>
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
+
+                    {/* Course Content Section */}
+                    <section
+                        className="SE-section SE-course-horizontal-section"
+                        id="course"
+                    >
+                        <div className="SE-course-background-top"></div>
+                        <div className="SE-course-background-bottom"></div>
+
+                        <div className="SE-course-horizontal-container" style={{ zIndex: 2, position: 'relative' }}>
+                            <div className="SE-course-header-row">
+                                <div className="SE-course-header-left">
+                                    <h2 className="SE-section-title" style={{ color: '#2d2d2d' }}>INTERNSHIP</h2>
+                                    <h2 className="SE-section-title">
+                                        <span className="SE-text-purple">TRAINING</span> <span style={{ color: '#2d2d2d' }}>PROGRAM</span>
+                                    </h2>
+                                </div>
+                                <svg className="SE-sparkle-icon-header" viewBox="0 0 24 24" width="20" height="20">
+                                    <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
+                                </svg>
+                                <div className="SE-course-header-right">
+                                    <a href="#course" className="SE-view-all-link">View All</a>
+                                </div>
+                            </div>
+
+                            <div className="SE-course-carousel-container">
+                                <div className="SE-carousel-wrapper">
+                                    <div
+                                        className="SE-course-cards-wrapper"
+                                        ref={cardsWrapperRef}
+                                        style={{
+                                            '--active-index': activeCourseIndex,
+                                            transition: isTransitioning ? 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)' : 'none'
+                                        }}
+                                        onTransitionEnd={handleTransitionEnd}
+                                    >
+                                        {infiniteContent.map((item) => (
+                                            <div key={item.uniqueId} className="SE-course-new-card">
+                                                <div className="SE-course-card-badges">
+                                                    <span className="SE-badge-pill">Phase {item.id}</span>
+                                                    <span className="SE-badge-pill SE-badge-dark">{item.duration}</span>
+                                                </div>
+                                                <h3 className="SE-course-card-title">{item.title}</h3>
+
+                                                {/* Checklist items in 2-column grid */}
+                                                <div className="SE-course-card-checklist">
+                                                    {Array.isArray(item.description) ? item.description.map((point, i) => (
+                                                        <div key={i} className="SE-checklist-item">
+                                                            <FontAwesomeIcon icon={faCheck} className="SE-checklist-icon" />
+                                                            <span>{point}</span>
+                                                        </div>
+                                                    )) : (
+                                                        <p className="SE-course-card-desc">{item.description}</p>
+                                                    )}
+                                                </div>
+
+                                                <div className="SE-course-card-image">
+                                                    <img src={item.bgImage} alt={item.title} />
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                <div className="SE-carousel-arrows">
+                                    <button
+                                        className="SE-carousel-arrow SE-carousel-arrow-left"
+                                        onClick={handlePrevClick}
+                                        aria-label="Previous module"
+                                    >
+                                        <FontAwesomeIcon icon={faArrowRight} style={{ transform: 'rotate(180deg)' }} />
+                                    </button>
+
+                                    <button
+                                        className="SE-carousel-arrow SE-carousel-arrow-right"
+                                        onClick={handleNextClick}
+                                        aria-label="Next module"
+                                    >
+                                        <FontAwesomeIcon icon={faArrowRight} />
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div className="SE-course-dots">
+                                {courseContent.map((_, index) => {
+                                    const isActive = (activeCourseIndex % courseContent.length) === index;
+                                    return (
+                                        <div key={index} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+                                            <button
+                                                className={`SE-course-dot ${isActive ? 'SE-active-dot' : ''}`}
+                                                onClick={() => handleDotNavigation(index)}
+                                                aria-label={`Go to slide ${index + 1}`}
+                                            />
+                                            <span style={{
+                                                color: isActive ? 'white' : 'rgba(255, 255, 255, 0.4)',
+                                                fontSize: '0.8rem',
+                                                fontFamily: 'Inter',
+                                                fontWeight: '600'
+                                            }}>
+                                                0{index + 1}
+                                            </span>
+                                        </div>
+                                    );
+                                })}
                             </div>
                         </div>
+                    </section>
 
-                        <div className="SE-course-dots">
-                            {courseContent.map((_, index) => {
-                                const isActive = (activeCourseIndex % courseContent.length) === index;
-                                return (
-                                    <div key={index} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
-                                        <button
-                                            className={`SE-course-dot ${isActive ? 'SE-active-dot' : ''}`}
-                                            onClick={() => handleDotNavigation(index)}
-                                            aria-label={`Go to slide ${index + 1}`}
-                                        />
-                                        <span style={{
-                                            color: isActive ? 'white' : 'rgba(255, 255, 255, 0.4)',
-                                            fontSize: '0.8rem',
-                                            fontFamily: 'Inter',
-                                            fontWeight: '600'
-                                        }}>
-                                            0{index + 1}
-                                        </span>
-                                    </div>
-                                );
-                            })}
-                        </div>
-                    </div>
-                </section>
-
-                {/* <section className="SE-section SE-influencer-section" id="signin">
+                    {/* <section className="SE-section SE-influencer-section" id="signin">
           <div className="SE-influencer-container">
             <div className="SE-influencer-content">
               {showForm ? (
@@ -1081,126 +1196,126 @@ const SalesExecutiveInternPage = () => {
                 </div>
               </div>
             )} */}
-                {/* </div>
+                    {/* </div>
         </section> */}
 
-                {/* Dream Navigator Section */}
+                    {/* Dream Navigator Section */}
 
 
-                <section className="SE-section SE-influencer-section" id="signin">
-                    <div className="SE-influencer-container">
-                        <div className="SE-influencer-content">
-                            {showForm ? (
-                                <div className="SE-form-section SE-in-influencer">
-                                    <div className="SE-form-wrapper SE-dark-form">
-                                        <button
-                                            className="SE-close-form-btn SE-close-dark"
-                                            onClick={() => setShowForm(false)}
-                                            aria-label="Close form"
-                                        >
-                                            <FontAwesomeIcon icon={faTimes} />
-                                        </button>
-
-                                        <form className="SE-signin-form" onSubmit={handleSignSubmit}>
-                                            <h3 className="SE-form-dark-title">Register Now</h3>
-                                            <div className="SE-form-group">
-                                                <label htmlFor="email"><FontAwesomeIcon icon={faEnvelope} /> Email Address</label>
-                                                <input
-                                                    type="email"
-                                                    id="email"
-                                                    name="email"
-                                                    value={formData.email}
-                                                    onChange={handleFormChange}
-                                                    className={`SE-form-input ${errors.email ? 'SE-error' : ''}`}
-                                                    placeholder="Enter your email"
-                                                />
-                                                {errors.email && <span className="SE-error-message">{errors.email}</span>}
-                                            </div>
-
-                                            <div className="SE-form-group">
-                                                <label htmlFor="course"><FontAwesomeIcon icon={faBook} /> Course</label>
-                                                <input
-                                                    type="text"
-                                                    id="course"
-                                                    name="course"
-                                                    value={formData.course}
-                                                    onChange={handleFormChange}
-                                                    className={`SE-form-input ${errors.course ? 'SE-error' : ''}`}
-                                                    placeholder="Enter Course Name"
-                                                />
-                                                {errors.course && <span className="SE-error-message">{errors.course}</span>}
-                                            </div>
-
-                                            <div className="SE-form-group SE-checkbox-group">
-                                                <input
-                                                    type="checkbox"
-                                                    id="agreeTerms"
-                                                    name="agreeTerms"
-                                                    checked={formData.agreeTerms}
-                                                    onChange={handleFormChange}
-                                                    className={errors.agreeTerms ? 'SE-error' : ''}
-                                                />
-                                                <label htmlFor="agreeTerms">
-                                                    I agree to the Terms of Service and Privacy Policy
-                                                </label>
-                                                {errors.agreeTerms && <span className="SE-error-message">{errors.agreeTerms}</span>}
-                                            </div>
-
-                                            <button type="submit" className="SE-submit-btn">
-                                                Register
+                    <section className="SE-section SE-influencer-section" id="signin">
+                        <div className="SE-influencer-container">
+                            <div className="SE-influencer-content">
+                                {showForm ? (
+                                    <div className="SE-form-section SE-in-influencer">
+                                        <div className="SE-form-wrapper SE-dark-form">
+                                            <button
+                                                className="SE-close-form-btn SE-close-dark"
+                                                onClick={() => setShowForm(false)}
+                                                aria-label="Close form"
+                                            >
+                                                <FontAwesomeIcon icon={faTimes} />
                                             </button>
-                                        </form>
+
+                                            <form className="SE-signin-form" onSubmit={handleSignSubmit}>
+                                                <h3 className="SE-form-dark-title">Register Now</h3>
+                                                <div className="SE-form-group">
+                                                    <label htmlFor="email"><FontAwesomeIcon icon={faEnvelope} /> Email Address</label>
+                                                    <input
+                                                        type="email"
+                                                        id="email"
+                                                        name="email"
+                                                        value={formData.email}
+                                                        onChange={handleFormChange}
+                                                        className={`SE-form-input ${errors.email ? 'SE-error' : ''}`}
+                                                        placeholder="Enter your email"
+                                                    />
+                                                    {errors.email && <span className="SE-error-message">{errors.email}</span>}
+                                                </div>
+
+                                                <div className="SE-form-group">
+                                                    <label htmlFor="course"><FontAwesomeIcon icon={faBook} /> Course</label>
+                                                    <input
+                                                        type="text"
+                                                        id="course"
+                                                        name="course"
+                                                        value={formData.course}
+                                                        onChange={handleFormChange}
+                                                        className={`SE-form-input ${errors.course ? 'SE-error' : ''}`}
+                                                        placeholder="Enter Course Name"
+                                                    />
+                                                    {errors.course && <span className="SE-error-message">{errors.course}</span>}
+                                                </div>
+
+                                                <div className="SE-form-group SE-checkbox-group">
+                                                    <input
+                                                        type="checkbox"
+                                                        id="agreeTerms"
+                                                        name="agreeTerms"
+                                                        checked={formData.agreeTerms}
+                                                        onChange={handleFormChange}
+                                                        className={errors.agreeTerms ? 'SE-error' : ''}
+                                                    />
+                                                    <label htmlFor="agreeTerms">
+                                                        I agree to the Terms of Service and Privacy Policy
+                                                    </label>
+                                                    {errors.agreeTerms && <span className="SE-error-message">{errors.agreeTerms}</span>}
+                                                </div>
+
+                                                <button type="submit" className="SE-submit-btn">
+                                                    Register
+                                                </button>
+                                            </form>
+                                        </div>
                                     </div>
-                                </div>
-                            ) : (
-                                <div className="SE-influencer-split">
-                                    <div className="SE-influencer-left">
-                                        <h2 className="SE-influencer-title">
-                                            Join <span className="SE-search-badge"><FontAwesomeIcon icon={faComments} style={{ fontSize: '0.6em', marginRight: '4px' }} /> Q</span> Our Course
-                                            <br />
-                                            <div className="SE-influencer-avatars">
-                                                <img src={iconGraduationCap} alt="Education Graduation Cap" />
-                                                <img src={iconEducationBook} alt="Education Book" />
-                                                <img src={iconCertificate} alt="Education Certificate" />
-                                            </div>
-                                            to collaborate
-                                            <br />
-                                            with us
-                                            {/* <div className="SE-influencer-search-bar">
+                                ) : (
+                                    <div className="SE-influencer-split">
+                                        <div className="SE-influencer-left">
+                                            <h2 className="SE-influencer-title">
+                                                Join <span className="SE-search-badge"><FontAwesomeIcon icon={faComments} style={{ fontSize: '0.6em', marginRight: '4px' }} /> Q</span> Our Course
+                                                <br />
+                                                <div className="SE-influencer-avatars">
+                                                    <img src={iconGraduationCap} alt="Education Graduation Cap" />
+                                                    <img src={iconEducationBook} alt="Education Book" />
+                                                    <img src={iconCertificate} alt="Education Certificate" />
+                                                </div>
+                                                to collaborate
+                                                <br />
+                                                with us
+                                                {/* <div className="SE-influencer-search-bar">
                         <span className="SE-search-placeholder"> Search</span>
                         <div className="SE-search-actions">
                           <FontAwesomeIcon icon={faStar} className="SE-voice-icon" />
                           <button className="SE-search-submit"><FontAwesomeIcon icon={faComments} style={{ fontSize: '0.7em' }} /></button>
                         </div>
                       </div> */}
-                                        </h2>
-                                    </div>
-                                    <div className="SE-influencer-right">
-                                        <div
-                                            className="SE-see-how-card"
-                                            onClick={() => setShowForm(true)}
-                                        >
-                                            <div className="SE-card-top-icons">
-                                                <div className="SE-video-circle">
-                                                    <FontAwesomeIcon icon={faVideo} />
+                                            </h2>
+                                        </div>
+                                        <div className="SE-influencer-right">
+                                            <div
+                                                className="SE-see-how-card"
+                                                onClick={() => setShowForm(true)}
+                                            >
+                                                <div className="SE-card-top-icons">
+                                                    <div className="SE-video-circle">
+                                                        <FontAwesomeIcon icon={faVideo} />
+                                                    </div>
+                                                    <div className="SE-arrow-circle">
+                                                        <FontAwesomeIcon icon={faArrowRight} style={{ transform: 'rotate(-45deg)' }} />
+                                                    </div>
                                                 </div>
-                                                <div className="SE-arrow-circle">
-                                                    <FontAwesomeIcon icon={faArrowRight} style={{ transform: 'rotate(-45deg)' }} />
+                                                <h3 className="SE-see-how-text">See how<br />it's done</h3>
+                                                <div className="SE-card-decorations">
+                                                    <div className="SE-decor-ring-1"></div>
+                                                    <div className="SE-decor-ring-2"></div>
                                                 </div>
-                                            </div>
-                                            <h3 className="SE-see-how-text">See how<br />it's done</h3>
-                                            <div className="SE-card-decorations">
-                                                <div className="SE-decor-ring-1"></div>
-                                                <div className="SE-decor-ring-2"></div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            )}
-                        </div>
+                                )}
+                            </div>
 
 
-                        {/* {!showForm && (
+                            {/* {!showForm && (
               <div className="SE-join-course-banner">
                 <h3 className="SE-join-banner-title">JOIN OUR COURSE</h3>
                 <div className="SE-join-banner-content">
@@ -1214,283 +1329,283 @@ const SalesExecutiveInternPage = () => {
                 </div>
               </div>
             )} */}
-                    </div>
-                </section>
+                        </div>
+                    </section>
 
-                <section className="SE-section SE-dream-navigator-section" id="dream-navigator">
-                    <div className="SE-dn-container">
+                    <section className="SE-section SE-dream-navigator-section" id="dream-navigator">
+                        <div className="SE-dn-container">
 
-                        {/* Design Resources Title - styled like Dream Navigator header */}
-                        <div className="SE-dn-resources-title-row" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginTop: '0', marginBottom: '0.5rem', position: 'relative' }}>
-                            <div style={{ flex: 1 }}>
-                                <h2 className="SE-dn-title">
-                                    <div className="SE-dn-title-line1">
-                                        Sales Strategy &
-                                        <svg className="SE-dn-icon-sparkle" viewBox="0 0 24 24" width="30" height="30" style={{ marginLeft: '10px' }}>
+                            {/* Design Resources Title - styled like Dream Navigator header */}
+                            <div className="SE-dn-resources-title-row" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginTop: '0', marginBottom: '0.5rem', position: 'relative' }}>
+                                <div style={{ flex: 1 }}>
+                                    <h2 className="SE-dn-title">
+                                        <div className="SE-dn-title-line1">
+                                            Sales Strategy &
+                                            <svg className="SE-dn-icon-sparkle" viewBox="0 0 24 24" width="30" height="30" style={{ marginLeft: '10px' }}>
+                                                <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
+                                            </svg>
+                                        </div>
+                                        <div className="SE-dn-title-line2" style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginTop: '0.5rem', flexWrap: 'nowrap' }}>
+                                            <button
+                                                className="SE-split-action-btn"
+                                                style={{ padding: '1.7rem 1.5rem', fontSize: '0.5rem', margin: 0, flexShrink: 0 }}
+                                                onClick={() => showLockedSectionToast("Sales Strategy & Performance Support")}
+                                            >
+                                                <FontAwesomeIcon icon={faLock} /> Join course to Access
+                                            </button>
+                                            <span style={{ whiteSpace: 'nowrap' }}>Performance Support</span>
+                                            <svg className="SE-dn-icon-sparkle-outline" viewBox="0 0 24 24" width="30" height="30" style={{ flexShrink: 0 }}>
+                                                <path d="M12 2L14.26 9.74L22 12L14.26 14.26L12 22L9.74 14.26L2 12L9.74 9.74L12 2ZM12 6.86L10.85 10.85L6.86 12L10.85 13.15L12 17.14L13.15 13.15L17.14 12L13.15 10.85L12 6.86Z" fill="currentColor" />
+                                            </svg>
+                                        </div>
+                                    </h2>
+                                    <div className="SE-dn-header-right" style={{ flex: 'unset', padding: '1.2rem 0 0 0' }}>
+                                        <svg className="SE-dn-small-sparkies" viewBox="0 0 24 24" width="16" height="16">
                                             <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
                                         </svg>
-                                    </div>
-                                    <div className="SE-dn-title-line2" style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginTop: '0.5rem', flexWrap: 'nowrap' }}>
-                                        <button
-                                            className="SE-split-action-btn"
-                                            style={{ padding: '1.7rem 1.5rem', fontSize: '0.5rem', margin: 0, flexShrink: 0 }}
-                                            onClick={() => showLockedSectionToast("Sales Strategy & Performance Support")}
-                                        >
-                                            <FontAwesomeIcon icon={faLock} /> Join course to Access
-                                        </button>
-                                        <span style={{ whiteSpace: 'nowrap' }}>Performance Support</span>
-                                        <svg className="SE-dn-icon-sparkle-outline" viewBox="0 0 24 24" width="30" height="30" style={{ flexShrink: 0 }}>
-                                            <path d="M12 2L14.26 9.74L22 12L14.26 14.26L12 22L9.74 14.26L2 12L9.74 9.74L12 2ZM12 6.86L10.85 10.85L6.86 12L10.85 13.15L12 17.14L13.15 13.15L17.14 12L13.15 10.85L12 6.86Z" fill="currentColor" />
-                                        </svg>
-                                    </div>
-                                </h2>
-                                <div className="SE-dn-header-right" style={{ flex: 'unset', padding: '1.2rem 0 0 0' }}>
-                                    <svg className="SE-dn-small-sparkies" viewBox="0 0 24 24" width="16" height="16">
-                                        <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
-                                    </svg>
-                                    <p>
-                                        Get access to modern CRM tools, high-converting pitch decks, and direct mentorship
-                                        to accelerate your sales performance and career growth.
-                                    </p>
-                                </div>
-                            </div>
-
-                            {/* Quick Tips Toggle Button */}
-                            <div className="SE-quick-tips-container" ref={quickTipsRef} style={{ position: 'relative' }}>
-                                <button
-                                    className="SE-quick-tips-btn"
-                                    onClick={() => setShowQuickTips(!showQuickTips)}
-                                    style={{
-                                        background: '#1a1a2e',
-                                        color: '#fff',
-                                        border: 'none',
-                                        padding: '0.8rem 1.5rem',
-                                        borderRadius: '30px',
-                                        cursor: 'pointer',
-                                        fontWeight: '600',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        gap: '8px',
-                                        boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
-                                        transition: 'all 0.3s ease',
-                                        marginTop: '1rem'
-                                    }}
-                                >
-                                    <FontAwesomeIcon icon={faLightbulb} style={{ color: '#ffd700' }} />
-                                    Quick Tips & Shortcuts
-                                </button>
-
-                                {/* Floating Tips Panel */}
-                                <div
-                                    className={`SE-quick-tips-panel ${showQuickTips ? 'SE-show' : ''}`}
-                                    style={{
-                                        position: 'absolute',
-                                        top: 'calc(100% + 15px)',
-                                        right: 0,
-                                        width: '350px',
-                                        background: '#1a1a2e',
-                                        borderRadius: '16px',
-                                        padding: '1.5rem',
-                                        boxShadow: '0 10px 40px rgba(0,0,0,0.2)',
-                                        zIndex: 100,
-                                        opacity: showQuickTips ? 1 : 0,
-                                        visibility: showQuickTips ? 'visible' : 'hidden',
-                                        transform: showQuickTips ? 'translateY(0)' : 'translateY(-10px)',
-                                        transition: 'all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)'
-                                    }}
-                                >
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '1rem' }}>
-                                        <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: 'rgba(255,215,0,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                                            <FontAwesomeIcon icon={faLightbulb} style={{ color: '#ffd700', fontSize: '0.9rem' }} />
-                                        </div>
-                                        <span style={{ color: '#ffd700', fontWeight: 'bold', fontSize: '0.9rem' }}>Tips</span>
-                                    </div>
-
-                                    <h3 style={{ color: 'white', fontSize: '1.2rem', marginBottom: '1.2rem', fontWeight: 'bold' }}>Sales Productivity Tips</h3>
-
-                                    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                                        {/* Tip 1 */}
-                                        <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                                            <FontAwesomeIcon icon={faCheckCircle} style={{ color: '#4caf50', marginTop: '4px', fontSize: '1rem' }} />
-                                            <div>
-                                                <h4 style={{ color: 'white', fontSize: '0.95rem', marginBottom: '4px', fontWeight: '600' }}>Know Your Product Well</h4>
-                                                <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.85rem', lineHeight: '1.4', margin: 0 }}>Understand features, benefits, and pricing clearly so you can confidently explain to customers.</p>
-                                            </div>
-                                        </div>
-                                        {/* Tip 2 */}
-                                        <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                                            <FontAwesomeIcon icon={faCheckCircle} style={{ color: '#4caf50', marginTop: '4px', fontSize: '1rem' }} />
-                                            <div>
-                                                <h4 style={{ color: 'white', fontSize: '0.95rem', marginBottom: '4px', fontWeight: '600' }}>Listen to Customer Needs</h4>
-                                                <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.85rem', lineHeight: '1.4', margin: 0 }}>Ask questions and actively listen to identify customer pain points before offering solutions.</p>
-                                            </div>
-                                        </div>
-                                        {/* Tip 3 */}
-                                        <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                                            <FontAwesomeIcon icon={faCheckCircle} style={{ color: '#4caf50', marginTop: '4px', fontSize: '1rem' }} />
-                                            <div>
-                                                <h4 style={{ color: 'white', fontSize: '0.95rem', marginBottom: '4px', fontWeight: '600' }}>Follow Up Quickly</h4>
-                                                <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.85rem', lineHeight: '1.4', margin: 0 }}>Timely follow-ups increase conversion chances and show professionalism to clients.</p>
-                                            </div>
-                                        </div>
-                                        {/* Tip 4 */}
-                                        <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                                            <FontAwesomeIcon icon={faCheckCircle} style={{ color: '#4caf50', marginTop: '4px', fontSize: '1rem' }} />
-                                            <div>
-                                                <h4 style={{ color: 'white', fontSize: '0.95rem', marginBottom: '4px', fontWeight: '600' }}>Handle Objections Smartly</h4>
-                                                <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.85rem', lineHeight: '1.4', margin: 0 }}>Stay calm, understand concerns, and provide clear solutions to build trust.</p>
-                                            </div>
-                                        </div>
-                                        {/* Tip 5 */}
-                                        <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                                            <FontAwesomeIcon icon={faCheckCircle} style={{ color: '#4caf50', marginTop: '4px', fontSize: '1rem' }} />
-                                            <div>
-                                                <h4 style={{ color: 'white', fontSize: '0.95rem', marginBottom: '4px', fontWeight: '600' }}>Track Your Leads</h4>
-                                                <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.85rem', lineHeight: '1.4', margin: 0 }}>Maintain records of leads and interactions to manage and close deals effectively.</p>
-                                            </div>
-                                        </div>
+                                        <p>
+                                            Get access to modern CRM tools, high-converting pitch decks, and direct mentorship
+                                            to accelerate your sales performance and career growth.
+                                        </p>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
 
-                        {/* Main Visual Row - Accordion */}
-                        <div className="SE-dn-visual-row SE-resources-accordion">
-                            {courseResources.slice(0, 6).map((resource, index) => {
-                                const isActive = activeAccordionIndex === index;
-                                const num = `0${index + 1}`;
+                                {/* Quick Tips Toggle Button */}
+                                <div className="SE-quick-tips-container" ref={quickTipsRef} style={{ position: 'relative' }}>
+                                    <button
+                                        className="SE-quick-tips-btn"
+                                        onClick={() => setShowQuickTips(!showQuickTips)}
+                                        style={{
+                                            background: '#1a1a2e',
+                                            color: '#fff',
+                                            border: 'none',
+                                            padding: '0.8rem 1.5rem',
+                                            borderRadius: '30px',
+                                            cursor: 'pointer',
+                                            fontWeight: '600',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            gap: '8px',
+                                            boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
+                                            transition: 'all 0.3s ease',
+                                            marginTop: '1rem'
+                                        }}
+                                    >
+                                        <FontAwesomeIcon icon={faLightbulb} style={{ color: '#ffd700' }} />
+                                        Quick Tips & Shortcuts
+                                    </button>
 
-                                if (isActive) {
-                                    return (
-                                        <div key={resource.id} className="SE-accordion-panel SE-accordion-expanded SE-dn-spark-card" style={{ background: index % 2 === 0 ? 'linear-gradient(135deg, #dcfce7 0%, #86efac 100%)' : 'linear-gradient(135deg, #f0fdf4 0%, #bbf7d0 100%)' }}>
-                                            <div className="SE-dn-sc-header">
-                                                <div className="SE-dn-sc-num">{num}</div>
-                                                <div className="SE-dn-sc-avatar" style={{ backgroundColor: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#1a1a2e', fontSize: '1.2rem' }}>
-                                                    {resource.icon}
+                                    {/* Floating Tips Panel */}
+                                    <div
+                                        className={`SE-quick-tips-panel ${showQuickTips ? 'SE-show' : ''}`}
+                                        style={{
+                                            position: 'absolute',
+                                            top: 'calc(100% + 15px)',
+                                            right: 0,
+                                            width: '350px',
+                                            background: '#1a1a2e',
+                                            borderRadius: '16px',
+                                            padding: '1.5rem',
+                                            boxShadow: '0 10px 40px rgba(0,0,0,0.2)',
+                                            zIndex: 100,
+                                            opacity: showQuickTips ? 1 : 0,
+                                            visibility: showQuickTips ? 'visible' : 'hidden',
+                                            transform: showQuickTips ? 'translateY(0)' : 'translateY(-10px)',
+                                            transition: 'all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)'
+                                        }}
+                                    >
+                                        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '1rem' }}>
+                                            <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: 'rgba(255,215,0,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                                <FontAwesomeIcon icon={faLightbulb} style={{ color: '#ffd700', fontSize: '0.9rem' }} />
+                                            </div>
+                                            <span style={{ color: '#ffd700', fontWeight: 'bold', fontSize: '0.9rem' }}>Tips</span>
+                                        </div>
+
+                                        <h3 style={{ color: 'white', fontSize: '1.2rem', marginBottom: '1.2rem', fontWeight: 'bold' }}>Sales Productivity Tips</h3>
+
+                                        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                                            {/* Tip 1 */}
+                                            <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                                                <FontAwesomeIcon icon={faCheckCircle} style={{ color: '#4caf50', marginTop: '4px', fontSize: '1rem' }} />
+                                                <div>
+                                                    <h4 style={{ color: 'white', fontSize: '0.95rem', marginBottom: '4px', fontWeight: '600' }}>Know Your Product Well</h4>
+                                                    <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.85rem', lineHeight: '1.4', margin: 0 }}>Understand features, benefits, and pricing clearly so you can confidently explain to customers.</p>
                                                 </div>
                                             </div>
-                                            <h3 className="SE-dn-sc-title" style={{ fontSize: '1.5rem', marginBottom: '0.9rem', color: '#1a1a2e', fontWeight: 'bold' }}>{resource.title}</h3>
-                                            <p className="SE-dn-sc-desc" style={{ marginBottom: '1rem', color: '#1a1a2e', opacity: 0.8, fontSize: '0.9rem' }}>{resource.description}</p>
+                                            {/* Tip 2 */}
+                                            <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                                                <FontAwesomeIcon icon={faCheckCircle} style={{ color: '#4caf50', marginTop: '4px', fontSize: '1rem' }} />
+                                                <div>
+                                                    <h4 style={{ color: 'white', fontSize: '0.95rem', marginBottom: '4px', fontWeight: '600' }}>Listen to Customer Needs</h4>
+                                                    <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.85rem', lineHeight: '1.4', margin: 0 }}>Ask questions and actively listen to identify customer pain points before offering solutions.</p>
+                                                </div>
+                                            </div>
+                                            {/* Tip 3 */}
+                                            <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                                                <FontAwesomeIcon icon={faCheckCircle} style={{ color: '#4caf50', marginTop: '4px', fontSize: '1rem' }} />
+                                                <div>
+                                                    <h4 style={{ color: 'white', fontSize: '0.95rem', marginBottom: '4px', fontWeight: '600' }}>Follow Up Quickly</h4>
+                                                    <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.85rem', lineHeight: '1.4', margin: 0 }}>Timely follow-ups increase conversion chances and show professionalism to clients.</p>
+                                                </div>
+                                            </div>
+                                            {/* Tip 4 */}
+                                            <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                                                <FontAwesomeIcon icon={faCheckCircle} style={{ color: '#4caf50', marginTop: '4px', fontSize: '1rem' }} />
+                                                <div>
+                                                    <h4 style={{ color: 'white', fontSize: '0.95rem', marginBottom: '4px', fontWeight: '600' }}>Handle Objections Smartly</h4>
+                                                    <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.85rem', lineHeight: '1.4', margin: 0 }}>Stay calm, understand concerns, and provide clear solutions to build trust.</p>
+                                                </div>
+                                            </div>
+                                            {/* Tip 5 */}
+                                            <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                                                <FontAwesomeIcon icon={faCheckCircle} style={{ color: '#4caf50', marginTop: '4px', fontSize: '1rem' }} />
+                                                <div>
+                                                    <h4 style={{ color: 'white', fontSize: '0.95rem', marginBottom: '4px', fontWeight: '600' }}>Track Your Leads</h4>
+                                                    <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.85rem', lineHeight: '1.4', margin: 0 }}>Maintain records of leads and interactions to manage and close deals effectively.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-                                            <div className="SE-resource-meta" style={{ marginBottom: '1.5rem', color: '#1a1a2e', opacity: 0.9, fontSize: '0.85rem', display: 'flex', gap: '1.5rem', fontWeight: 'bold', marginTop: '2rem' }}>
-                                                <span>{resource.type.toUpperCase()} • {resource.size}</span>
-                                                <span><FontAwesomeIcon icon={faDownload} /> {resource.downloads.toLocaleString()} downloads</span>
-                                                {resource.isRestricted && (
-                                                    <span style={{ color: '#d32f2f' }}><FontAwesomeIcon icon={faLock} /> Exclusive</span>
+                            {/* Main Visual Row - Accordion */}
+                            <div className="SE-dn-visual-row SE-resources-accordion">
+                                {courseResources.slice(0, 6).map((resource, index) => {
+                                    const isActive = activeAccordionIndex === index;
+                                    const num = `0${index + 1}`;
+
+                                    if (isActive) {
+                                        return (
+                                            <div key={resource.id} className="SE-accordion-panel SE-accordion-expanded SE-dn-spark-card" style={{ background: index % 2 === 0 ? 'linear-gradient(135deg, #dcfce7 0%, #86efac 100%)' : 'linear-gradient(135deg, #f0fdf4 0%, #bbf7d0 100%)' }}>
+                                                <div className="SE-dn-sc-header">
+                                                    <div className="SE-dn-sc-num">{num}</div>
+                                                    <div className="SE-dn-sc-avatar" style={{ backgroundColor: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#1a1a2e', fontSize: '1.2rem' }}>
+                                                        {resource.icon}
+                                                    </div>
+                                                </div>
+                                                <h3 className="SE-dn-sc-title" style={{ fontSize: '1.5rem', marginBottom: '0.9rem', color: '#1a1a2e', fontWeight: 'bold' }}>{resource.title}</h3>
+                                                <p className="SE-dn-sc-desc" style={{ marginBottom: '1rem', color: '#1a1a2e', opacity: 0.8, fontSize: '0.9rem' }}>{resource.description}</p>
+
+                                                <div className="SE-resource-meta" style={{ marginBottom: '1.5rem', color: '#1a1a2e', opacity: 0.9, fontSize: '0.85rem', display: 'flex', gap: '1.5rem', fontWeight: 'bold', marginTop: '2rem' }}>
+                                                    <span>{resource.type.toUpperCase()} • {resource.size}</span>
+                                                    <span><FontAwesomeIcon icon={faDownload} /> {resource.downloads.toLocaleString()} downloads</span>
+                                                    {resource.isRestricted && (
+                                                        <span style={{ color: '#d32f2f' }}><FontAwesomeIcon icon={faLock} /> Exclusive</span>
+                                                    )}
+                                                </div>
+
+                                                {resource.isRestricted ? (
+                                                    <button
+                                                        className="SE-dn-sc-btn"
+                                                        onClick={() => handleJoinCourseForResource(resource.title)}
+                                                        style={{ marginTop: 'auto', background: '#1a1a2e', color: 'white' }}
+                                                    >
+                                                        <FontAwesomeIcon icon={faLock} /> Join Course to Download <FontAwesomeIcon icon={faArrowRight} style={{ transform: 'rotate(45deg)', marginLeft: '5px' }} />
+                                                    </button>
+                                                ) : (
+                                                    <button
+                                                        className={`SE-dn-sc-btn ${downloadedResources.includes(resource.id) ? 'SE-downloaded' : ''}`}
+                                                        onClick={() => handleDownloadResource(resource.id, resource.title, resource.localPath, resource.fileName)}
+                                                        style={{ marginTop: 'auto', background: downloadedResources.includes(resource.id) ? '#4caf50' : '#1a1a2e', color: 'white' }}
+                                                    >
+                                                        {downloadedResources.includes(resource.id) ? (
+                                                            <><FontAwesomeIcon icon={faCheckCircle} /> Downloaded</>
+                                                        ) : (
+                                                            <><FontAwesomeIcon icon={faDownload} /> Download Now <FontAwesomeIcon icon={faArrowRight} style={{ transform: 'rotate(45deg)', marginLeft: '5px' }} /></>
+                                                        )}
+                                                    </button>
                                                 )}
                                             </div>
+                                        );
+                                    } else {
+                                        return (
+                                            <div
+                                                key={resource.id}
+                                                className={`SE-accordion-panel SE-accordion-collapsed SE-dn-v-pill ${index % 2 === 0 ? 'SE-dn-bg-dark' : 'SE-dn-bg-light'}`}
+                                                onClick={() => setActiveAccordionIndex(index)}
+                                            >
+                                                <span className="SE-dn-v-text">{resource.title}</span>
+                                                <div className="SE-dn-v-num">{num}</div>
+                                            </div>
+                                        );
+                                    }
+                                })}
+                            </div>
 
-                                            {resource.isRestricted ? (
-                                                <button
-                                                    className="SE-dn-sc-btn"
-                                                    onClick={() => handleJoinCourseForResource(resource.title)}
-                                                    style={{ marginTop: 'auto', background: '#1a1a2e', color: 'white' }}
-                                                >
-                                                    <FontAwesomeIcon icon={faLock} /> Join Course to Download <FontAwesomeIcon icon={faArrowRight} style={{ transform: 'rotate(45deg)', marginLeft: '5px' }} />
-                                                </button>
-                                            ) : (
-                                                <button
-                                                    className={`SE-dn-sc-btn ${downloadedResources.includes(resource.id) ? 'SE-downloaded' : ''}`}
-                                                    onClick={() => handleDownloadResource(resource.id, resource.title, resource.localPath, resource.fileName)}
-                                                    style={{ marginTop: 'auto', background: downloadedResources.includes(resource.id) ? '#4caf50' : '#1a1a2e', color: 'white' }}
-                                                >
-                                                    {downloadedResources.includes(resource.id) ? (
-                                                        <><FontAwesomeIcon icon={faCheckCircle} /> Downloaded</>
-                                                    ) : (
-                                                        <><FontAwesomeIcon icon={faDownload} /> Download Now <FontAwesomeIcon icon={faArrowRight} style={{ transform: 'rotate(45deg)', marginLeft: '5px' }} /></>
-                                                    )}
-                                                </button>
-                                            )}
+                            {/* Stats Row - horizontal style matching the reference UI */}
+                            <div className="SE-dn-stats-row">
+                                <div className="SE-dn-stat-items">
+                                    <div className="SE-dn-stat-item"><strong>20</strong> Total Resources</div>
+                                    <div className="SE-dn-stat-item"><strong>32,000</strong> Total Downloads</div>
+                                    <div className="SE-dn-stat-item"><strong>{yourDownloadsCount}</strong> Your Downloads</div>
+                                </div>
+                                <div className="SE-dn-socials">
+                                    <span className="SE-dn-social-icon" title="Total Resources"><FontAwesomeIcon icon={faFileAlt} /></span>
+                                    <span className="SE-dn-social-icon" title="Total Downloads"><FontAwesomeIcon icon={faDownload} /></span>
+                                    <span className="SE-dn-social-icon" title="Your Downloads"><FontAwesomeIcon icon={faUser} /></span>
+                                </div>
+                            </div>
+
+                            <div className="SE-resources-note">
+                                <h4><FontAwesomeIcon icon={faLightbulb} /> Note:</h4>
+                                <p>
+                                    Our course includes <strong>20 comprehensive resources</strong> to support your design journey.
+                                    First 4 resources are available for free download. <strong>Design Software Cheatsheets</strong> and
+                                    <strong> Portfolio Building Guide</strong> are exclusive to enrolled students.
+                                    Join our course to access all 20 premium resources and unlock full learning potential.
+                                </p>
+                            </div>
+
+                            <hr className="SE-dn-divider" />
+
+                            {/* Bottom Dashboard Row */}
+                            <div className="SE-dn-dashboard-row">
+                                <div className="SE-dn-dash-left">
+                                    <h3 className="SE-dn-dash-title"> 30-day money-back guarantee <br />Lifetime access  Certificate included </h3>
+                                    <button
+                                        className="SE-dn-dash-btn"
+                                        onClick={handleBenefitsClick}
+                                    >
+                                        Join course to Access <FontAwesomeIcon icon={faArrowRight} style={{ fontSize: '0.8rem', marginLeft: '4px' }} />
+                                    </button>
+                                </div>
+                                <div className="SE-dn-dash-right">
+                                    <div className="SE-dn-dash-card">
+                                        <div className="SE-dn-dash-icon SE-dash-icon-1"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#16a34a" strokeWidth="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2" /><line x1="12" y1="8" x2="12" y2="16" /><line x1="8" y1="12" x2="8" y2="16" /><line x1="16" y1="16" x2="16" y2="16" /></svg></div>
+                                        <div className="SE-dn-dash-info">
+                                            <span className="SE-dn-dash-label">Successful Graduates</span>
+                                            <span className="SE-dn-dash-value">10,000+</span>
                                         </div>
-                                    );
-                                } else {
-                                    return (
-                                        <div
-                                            key={resource.id}
-                                            className={`SE-accordion-panel SE-accordion-collapsed SE-dn-v-pill ${index % 2 === 0 ? 'SE-dn-bg-dark' : 'SE-dn-bg-light'}`}
-                                            onClick={() => setActiveAccordionIndex(index)}
-                                        >
-                                            <span className="SE-dn-v-text">{resource.title}</span>
-                                            <div className="SE-dn-v-num">{num}</div>
+                                    </div>
+                                    <div className="SE-dn-dash-card">
+                                        <div className="SE-dn-dash-icon SE-dash-icon-2"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#16a34a" strokeWidth="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" /></svg></div>
+                                        <div className="SE-dn-dash-info">
+                                            <span className="SE-dn-dash-label">Job Placement Rate</span>
+                                            <span className="SE-dn-dash-value">94%</span>
                                         </div>
-                                    );
-                                }
-                            })}
-                        </div>
-
-                        {/* Stats Row - horizontal style matching the reference UI */}
-                        <div className="SE-dn-stats-row">
-                            <div className="SE-dn-stat-items">
-                                <div className="SE-dn-stat-item"><strong>20</strong> Total Resources</div>
-                                <div className="SE-dn-stat-item"><strong>32,000</strong> Total Downloads</div>
-                                <div className="SE-dn-stat-item"><strong>{yourDownloadsCount}</strong> Your Downloads</div>
-                            </div>
-                            <div className="SE-dn-socials">
-                                <span className="SE-dn-social-icon" title="Total Resources"><FontAwesomeIcon icon={faFileAlt} /></span>
-                                <span className="SE-dn-social-icon" title="Total Downloads"><FontAwesomeIcon icon={faDownload} /></span>
-                                <span className="SE-dn-social-icon" title="Your Downloads"><FontAwesomeIcon icon={faUser} /></span>
-                            </div>
-                        </div>
-
-                        <div className="SE-resources-note">
-                            <h4><FontAwesomeIcon icon={faLightbulb} /> Note:</h4>
-                            <p>
-                                Our course includes <strong>20 comprehensive resources</strong> to support your design journey.
-                                First 4 resources are available for free download. <strong>Design Software Cheatsheets</strong> and
-                                <strong> Portfolio Building Guide</strong> are exclusive to enrolled students.
-                                Join our course to access all 20 premium resources and unlock full learning potential.
-                            </p>
-                        </div>
-
-                        <hr className="SE-dn-divider" />
-
-                        {/* Bottom Dashboard Row */}
-                        <div className="SE-dn-dashboard-row">
-                            <div className="SE-dn-dash-left">
-                                <h3 className="SE-dn-dash-title"> 30-day money-back guarantee <br />Lifetime access  Certificate included </h3>
-                                <button
-                                    className="SE-dn-dash-btn"
-                                    onClick={handleBenefitsClick}
-                                >
-                                    Join course to Access <FontAwesomeIcon icon={faArrowRight} style={{ fontSize: '0.8rem', marginLeft: '4px' }} />
-                                </button>
-                            </div>
-                            <div className="SE-dn-dash-right">
-                                <div className="SE-dn-dash-card">
-                                    <div className="SE-dn-dash-icon SE-dash-icon-1"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#16a34a" strokeWidth="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2" /><line x1="12" y1="8" x2="12" y2="16" /><line x1="8" y1="12" x2="8" y2="16" /><line x1="16" y1="16" x2="16" y2="16" /></svg></div>
-                                    <div className="SE-dn-dash-info">
-                                        <span className="SE-dn-dash-label">Successful Graduates</span>
-                                        <span className="SE-dn-dash-value">10,000+</span>
                                     </div>
-                                </div>
-                                <div className="SE-dn-dash-card">
-                                    <div className="SE-dn-dash-icon SE-dash-icon-2"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#16a34a" strokeWidth="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" /></svg></div>
-                                    <div className="SE-dn-dash-info">
-                                        <span className="SE-dn-dash-label">Job Placement Rate</span>
-                                        <span className="SE-dn-dash-value">94%</span>
+                                    <div className="SE-dn-dash-card">
+                                        <div className="SE-dn-dash-icon SE-dash-icon-3"><FontAwesomeIcon icon={faUsers} style={{ color: '#16a34a' }} /></div>
+                                        <div className="SE-dn-dash-info">
+                                            <span className="SE-dn-dash-label">Industry Partners</span>
+                                            <span className="SE-dn-dash-value">50+</span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="SE-dn-dash-card">
-                                    <div className="SE-dn-dash-icon SE-dash-icon-3"><FontAwesomeIcon icon={faUsers} style={{ color: '#16a34a' }} /></div>
-                                    <div className="SE-dn-dash-info">
-                                        <span className="SE-dn-dash-label">Industry Partners</span>
-                                        <span className="SE-dn-dash-value">50+</span>
-                                    </div>
-                                </div>
-                                <div className="SE-dn-dash-card">
-                                    <div className="SE-dn-dash-icon SE-dash-icon-4"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#16a34a" strokeWidth="2"><circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" /></svg></div>
-                                    <div className="SE-dn-dash-info">
-                                        <span className="SE-dn-dash-label">Community Support</span>
-                                        <span className="SE-dn-dash-value">24/7</span>
+                                    <div className="SE-dn-dash-card">
+                                        <div className="SE-dn-dash-icon SE-dash-icon-4"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#16a34a" strokeWidth="2"><circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" /></svg></div>
+                                        <div className="SE-dn-dash-info">
+                                            <span className="SE-dn-dash-label">Community Support</span>
+                                            <span className="SE-dn-dash-value">24/7</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
 
-                {/* Find Influencers Section (Dark UI Style) */}
-                {/* <section className="SE-section SE-influencer-section" id="signin">
+                    {/* Find Influencers Section (Dark UI Style) */}
+                    {/* <section className="SE-section SE-influencer-section" id="signin">
           <div className="SE-influencer-container">
             <div className="SE-influencer-content">
               {showForm ? (
@@ -1617,100 +1732,100 @@ const SalesExecutiveInternPage = () => {
                 </div>
               </div>
             )} */}
-                {/* </div> */}
+                    {/* </div> */}
 
 
-                {/* Image Gallery Section */}
-                <section
-                    className="SE-section SE-new-gallery-section"
-                    id="gallery"
-                >
-                    <div className="SE-Gallery-container-new">
-                        <div className="SE-Gallery-header-new">
-                            <div className="SE-Gallery-title-wrapper-new">
-                                <span className="SE-Gallery-title-line-new"></span>
-                                <h2 className="SE-Gallery-title-new">Learning Environment</h2>
+                    {/* Image Gallery Section */}
+                    <section
+                        className="SE-section SE-new-gallery-section"
+                        id="gallery"
+                    >
+                        <div className="SE-Gallery-container-new">
+                            <div className="SE-Gallery-header-new">
+                                <div className="SE-Gallery-title-wrapper-new">
+                                    <span className="SE-Gallery-title-line-new"></span>
+                                    <h2 className="SE-Gallery-title-new">Learning Environment</h2>
+                                </div>
+                                {/* <p className="SE-Gallery-view-all-new">Explore our dynamic learning environment, where creativity meets collaboration. From hands-on projects to expert guidance, we provide everything you need to excel in your graphic design journey.</p> */}
                             </div>
-                            {/* <p className="SE-Gallery-view-all-new">Explore our dynamic learning environment, where creativity meets collaboration. From hands-on projects to expert guidance, we provide everything you need to excel in your graphic design journey.</p> */}
-                        </div>
 
-                        <div className="SE-Gallery-grid-new">
-                            {/* Left Column (1 Large Card) */}
-                            <div
-                                className="SE-Gallery-large-card-new"
-                                onClick={() => handleImageClick(imagesWithDescriptions[0])}
-                            >
-                                <img src={imagesWithDescriptions[0].url} alt={imagesWithDescriptions[0].title} className="SE-Gallery-card-bg-new" />
-                                <div className="SE-Gallery-card-overlay-new"></div>
-                                <div className="SE-Gallery-card-content-new">
-                                    <span className="SE-Gallery-badge-new">Environment</span>
-                                    <h3 className="SE-Gallery-large-title-new">{imagesWithDescriptions[0].title}</h3>
-                                    <div className="SE-Gallery-meta-new">
-                                        <span className="SE-Gallery-meta-item-new"><FontAwesomeIcon icon={faClock} /> March 8, 2022</span>
-                                        <span className="SE-Gallery-meta-item-new"><FontAwesomeIcon icon={faComments} /> No Comments</span>
+                            <div className="SE-Gallery-grid-new">
+                                {/* Left Column (1 Large Card) */}
+                                <div
+                                    className="SE-Gallery-large-card-new"
+                                    onClick={() => handleImageClick(imagesWithDescriptions[0])}
+                                >
+                                    <img src={imagesWithDescriptions[0].url} alt={imagesWithDescriptions[0].title} className="SE-Gallery-card-bg-new" />
+                                    <div className="SE-Gallery-card-overlay-new"></div>
+                                    <div className="SE-Gallery-card-content-new">
+                                        <span className="SE-Gallery-badge-new">Environment</span>
+                                        <h3 className="SE-Gallery-large-title-new">{imagesWithDescriptions[0].title}</h3>
+                                        <div className="SE-Gallery-meta-new">
+                                            <span className="SE-Gallery-meta-item-new"><FontAwesomeIcon icon={faClock} /> March 8, 2022</span>
+                                            <span className="SE-Gallery-meta-item-new"><FontAwesomeIcon icon={faComments} /> No Comments</span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            {/* Middle Column (3 Small Cards) */}
-                            <div className="SE-Gallery-middle-col-new">
-                                {[1, 2, 3].map((index) => {
-                                    const item = imagesWithDescriptions[index % imagesWithDescriptions.length];
-                                    return (
-                                        <div
-                                            key={index}
-                                            className="SE-Gallery-small-card-new"
-                                            onClick={() => handleImageClick(item)}
-                                        >
-                                            <div className="SE-Gallery-small-image-new">
-                                                <img src={item.url} alt={item.title} />
+                                {/* Middle Column (3 Small Cards) */}
+                                <div className="SE-Gallery-middle-col-new">
+                                    {[1, 2, 3].map((index) => {
+                                        const item = imagesWithDescriptions[index % imagesWithDescriptions.length];
+                                        return (
+                                            <div
+                                                key={index}
+                                                className="SE-Gallery-small-card-new"
+                                                onClick={() => handleImageClick(item)}
+                                            >
+                                                <div className="SE-Gallery-small-image-new">
+                                                    <img src={item.url} alt={item.title} />
+                                                </div>
+                                                <div className="SE-Gallery-small-content-new">
+                                                    <span className="SE-Gallery-badge-text-new">Environment</span>
+                                                    <h4 className="SE-Gallery-small-title-new">{item.title}</h4>
+                                                    <span className="SE-Gallery-small-date-new"><FontAwesomeIcon icon={faClock} /> March 8, 2022</span>
+                                                </div>
                                             </div>
-                                            <div className="SE-Gallery-small-content-new">
-                                                <span className="SE-Gallery-badge-text-new">Environment</span>
-                                                <h4 className="SE-Gallery-small-title-new">{item.title}</h4>
-                                                <span className="SE-Gallery-small-date-new"><FontAwesomeIcon icon={faClock} /> March 8, 2022</span>
-                                            </div>
-                                        </div>
-                                    );
-                                })}
-                            </div>
+                                        );
+                                    })}
+                                </div>
 
-                            {/* Right Column (2 Medium Cards) */}
-                            <div className="SE-Gallery-right-col-new">
-                                {[4, 5].map((index) => {
-                                    const item = imagesWithDescriptions[index % imagesWithDescriptions.length];
-                                    return (
-                                        <div
-                                            key={index}
-                                            className="SE-Gallery-medium-card-new"
-                                            onClick={() => handleImageClick(item)}
-                                        >
-                                            <img src={item.url} alt={item.title} className="SE-Gallery-card-bg-new" />
-                                            <div className="SE-Gallery-card-overlay-new"></div>
-                                            <div className="SE-Gallery-card-content-new">
-                                                <h3 className="SE-Gallery-medium-title-new">{item.title}</h3>
-                                                <span className="SE-Gallery-medium-date-new"><FontAwesomeIcon icon={faClock} /> March 8, 2022</span>
+                                {/* Right Column (2 Medium Cards) */}
+                                <div className="SE-Gallery-right-col-new">
+                                    {[4, 5].map((index) => {
+                                        const item = imagesWithDescriptions[index % imagesWithDescriptions.length];
+                                        return (
+                                            <div
+                                                key={index}
+                                                className="SE-Gallery-medium-card-new"
+                                                onClick={() => handleImageClick(item)}
+                                            >
+                                                <img src={item.url} alt={item.title} className="SE-Gallery-card-bg-new" />
+                                                <div className="SE-Gallery-card-overlay-new"></div>
+                                                <div className="SE-Gallery-card-content-new">
+                                                    <h3 className="SE-Gallery-medium-title-new">{item.title}</h3>
+                                                    <span className="SE-Gallery-medium-date-new"><FontAwesomeIcon icon={faClock} /> March 8, 2022</span>
+                                                </div>
                                             </div>
-                                        </div>
-                                    );
-                                })}
-                            </div>
-                        </div>
-
-                        {/* Existing Note Logic */}
-                        {activeDescription && (
-                            <div className="SE-gallery-description" style={{ marginTop: '2rem' }}>
-                                <div className="SE-description-content">
-                                    <h4><FontAwesomeIcon icon={faInfoCircle} /> About this Environment:</h4>
-                                    <p>{imagesWithDescriptions.find(img => img.title === activeDescription)?.description}</p>
+                                        );
+                                    })}
                                 </div>
                             </div>
-                        )}
-                    </div>
-                </section>
 
-                {/* Ready-to-Use Design Templates */}
-                {/* <section
+                            {/* Existing Note Logic */}
+                            {activeDescription && (
+                                <div className="SE-gallery-description" style={{ marginTop: '2rem' }}>
+                                    <div className="SE-description-content">
+                                        <h4><FontAwesomeIcon icon={faInfoCircle} /> About this Environment:</h4>
+                                        <p>{imagesWithDescriptions.find(img => img.title === activeDescription)?.description}</p>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+                    </section>
+
+                    {/* Ready-to-Use Design Templates */}
+                    {/* <section
           className="SE-section SE-locked-section SE-templates-section"
           id="templates"
         >
@@ -1736,159 +1851,165 @@ const SalesExecutiveInternPage = () => {
                 <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
               </svg>
               One-time payment for lifetime access to all template updates  {/* Changed from faSparkles to faStar */}
-                {/* </p>
+                    {/* </p>
           </div>
         </section> */}
 
-                {/* Previous Resources Section removed as it's now integrated into the Dream Navigator section */}
+                    {/* Previous Resources Section removed as it's now integrated into the Dream Navigator section */}
 
-                {/* Sales Executive Benefits Section */}
-                <section
-                    className="SE-section SE-new-benefits-section"
-                    id="benefits"
-                >
-                    {/* Background decorative SVG elements */}
-                    <div className="SE-benefits-bg-shapes">
-                        <svg className="SE-bg-shape SE-bg-shape-1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M10,100 C10,20 100,10 180,90 C100,200 20,180 10,100 Z" fill="none" stroke="#06D6A0" strokeWidth="2" />
-                        </svg>
-                        <svg className="SE-bg-shape SE-bg-shape-2" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M190,100 C190,20 100,10 20,90 C100,200 180,180 190,100 Z" fill="none" stroke="#06D6A0" strokeWidth="2" />
-                        </svg>
-                    </div>
-
-                    <div className="SE-benefits-container-new">
-                        {/* Keeping the original title and subtitle */}
-                        <div style={{ textAlign: 'center', marginBottom: '3rem', position: 'relative', zIndex: 2 }}>
-                            <h2 className="SE-section-title">
-                                <svg className="SE-animated-star" viewBox="0 0 24 24" width="36" height="36" style={{ verticalAlign: 'middle', marginRight: '10px' }}>
-                                    <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="#22c55e" />
-                                </svg>
-                                Become a High-Earning Sales Executive
-                                <svg className="SE-animated-star" viewBox="0 0 24 24" width="36" height="36" style={{ verticalAlign: 'middle', marginRight: '10px' }}>
-                                    <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="#22c55e" />
-                                </svg>
-                            </h2>
-                            <p className="SE-section-subtitle" style={{ margin: '0 auto', color: '#555', maxWidth: '1200px' }}>
-                                Master real-world sales skills, close more deals, and unlock unlimited earning potential with our industry-focused training program.
-                            </p>
-                        </div>
-
-                        <div className="SE-benefits-image-grid-new">
-                            {benefits.map((benefit, index) => {
-                                const benefitImages = [
-                                    careerImg,
-                                    certImg,
-                                    coachImg,
-                                    toolsImg,
-                                    networkImg,
-                                    growthImg
-                                ];
-                                return (
-                                    <div
-                                        key={index}
-                                        className={`SE-benefit-img-card-new SE-benefit-img-card-${index}-new`}
-                                    >
-                                        <img src={benefitImages[index]} alt={benefit.title} className="SE-benefit-card-bg-new" />
-                                        <div className="SE-benefit-card-overlay-new"></div>
-                                        <div className="SE-benefit-card-content-new">
-                                            <div className="SE-benefit-card-header-new">
-                                                <span className="SE-benefit-card-icon-new">{benefit.icon}</span>
-                                                <h3 className="SE-benefit-card-title-new">{benefit.title}</h3>
-                                            </div>
-                                            <p className="SE-benefit-card-desc-new">{benefit.description}</p>
-                                        </div>
-                                    </div>
-                                );
-                            })}
-                        </div>
-                    </div>
-                </section>
-
-                <section className="SE-expectations-section">
-                    <div className="SE-expectations-container">
-                        <h2 className="SE-expectations-header">
-                            <svg className="SE-expectations-star-icon" viewBox="0 0 24 24" width="40" height="40" style={{ verticalAlign: 'middle', marginRight: '20px' }}>
-                                <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
+                    {/* Sales Executive Benefits Section */}
+                    <section
+                        className="SE-section SE-new-benefits-section"
+                        id="benefits"
+                    >
+                        {/* Background decorative SVG elements */}
+                        <div className="SE-benefits-bg-shapes">
+                            <svg className="SE-bg-shape SE-bg-shape-1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10,100 C10,20 100,10 180,90 C100,200 20,180 10,100 Z" fill="none" stroke="#06D6A0" strokeWidth="2" />
                             </svg>
-                            Results You Can Expect
-                            <svg className="SE-expectations-star-icon" viewBox="0 0 24 24" width="40" height="40" style={{ verticalAlign: 'middle', marginLeft: '20px' }}>
-                                <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
+                            <svg className="SE-bg-shape SE-bg-shape-2" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M190,100 C190,20 100,10 20,90 C100,200 180,180 190,100 Z" fill="none" stroke="#06D6A0" strokeWidth="2" />
                             </svg>
-                        </h2>
-                        <div className="SE-expectations-grid">
-                            {expectations.map((item, index) => (
-                                <div className="SE-expectation-card" key={index}>
-                                    <div className="SE-expectation-icon-wrapper">
-                                        <FontAwesomeIcon icon={item.icon} />
-                                    </div>
-                                    <p className="SE-expectation-text">
-                                        {item.textLine1}<br />{item.textLine2}
-                                    </p>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-
-                {/* Testimonials Section - Restyled to Dream Team UI */}
-                <section
-                    className="SE-section SE-dt-section"
-                    id="feedback"
-                >
-                    <div className="SE-dt-container">
-                        <div className="SE-dt-header">
-                            <h2 className="SE-dt-title">
-                                <span>Sales Team</span> <span>Testimonials<svg className="SE-dt-title-underline" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 5 Q 50 10 100 5" stroke="#16a34a" strokeWidth="8" fill="none" strokeLinecap="round" /></svg></span>
-                            </h2>
-
-
-                            <p className="SE-dt-subtitle">
-                                Hear what our students have to say about their learning experience
-                            </p>
                         </div>
 
-                        <div className="SE-dt-cards-wrapper">
-                            <div className="SE-dt-cards">
-                                {[...testimonials, ...testimonials].map((testimonial, index) => {
-                                    const cardClassIndex = (index % 5) + 1;
-                                    const imgMap = {
-                                        1: boy1, 2: girl1, 3: boy2, 4: girl2,
-                                        5: boy3, 6: girl3, 7: boy4, 8: girl4
-                                    };
+                        <div className="SE-benefits-container-new">
+                            {/* Keeping the original title and subtitle */}
+                            <div style={{ textAlign: 'center', marginBottom: '3rem', position: 'relative', zIndex: 2 }}>
+                                <h2 className="SE-section-title">
+                                    <svg className="SE-animated-star" viewBox="0 0 24 24" width="36" height="36" style={{ verticalAlign: 'middle', marginRight: '10px' }}>
+                                        <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="#22c55e" />
+                                    </svg>
+                                    Become a High-Earning Sales Executive
+                                    <svg className="SE-animated-star" viewBox="0 0 24 24" width="36" height="36" style={{ verticalAlign: 'middle', marginRight: '10px' }}>
+                                        <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="#22c55e" />
+                                    </svg>
+                                </h2>
+                                <p className="SE-section-subtitle" style={{ margin: '0 auto', color: '#555', maxWidth: '1200px' }}>
+                                    Master real-world sales skills, close more deals, and unlock unlimited earning potential with our industry-focused training program.
+                                </p>
+                            </div>
 
-                                    const photoUrl = imgMap[testimonial.id];
-                                    const isBoy = [1, 3, 5, 7].includes(testimonial.id);
-
+                            <div className="SE-benefits-image-grid-new">
+                                {benefits.map((benefit, index) => {
+                                    const benefitImages = [
+                                        careerImg,
+                                        certImg,
+                                        coachImg,
+                                        toolsImg,
+                                        networkImg,
+                                        growthImg
+                                    ];
                                     return (
-                                        <div key={`${testimonial.id || index}-${index}`} className={`SE-dt-card SE-dt-card-${cardClassIndex}`}>
-                                            <div className="SE-dt-card-img-wrapper">
-                                                <img
-                                                    src={photoUrl}
-                                                    alt={testimonial.author}
-                                                    className={`SE-dt-card-img ${isBoy ? 'SE-dt-boy-avatar' : ''}`}
-                                                />
-                                                <div className="SE-dt-pattern-bg"></div>
-                                            </div>
-                                            <div className={`SE-dt-card-content SE-dt-content-bg-${cardClassIndex}`}>
-                                                <h4 className="SE-dt-card-name">{testimonial.author}</h4>
-                                                <p className="SE-dt-card-text">{testimonial.text}</p>
+                                        <div
+                                            key={index}
+                                            className={`SE-benefit-img-card-new SE-benefit-img-card-${index}-new`}
+                                        >
+                                            <img src={benefitImages[index]} alt={benefit.title} className="SE-benefit-card-bg-new" />
+                                            <div className="SE-benefit-card-overlay-new"></div>
+                                            <div className="SE-benefit-card-content-new">
+                                                <div className="SE-benefit-card-header-new">
+                                                    <span className="SE-benefit-card-icon-new">{benefit.icon}</span>
+                                                    <h3 className="SE-benefit-card-title-new">{benefit.title}</h3>
+                                                </div>
+                                                <p className="SE-benefit-card-desc-new">{benefit.description}</p>
                                             </div>
                                         </div>
                                     );
                                 })}
                             </div>
                         </div>
+                    </section>
 
-                        {/* <div className="SE-dt-dots">
+                    <section className="SE-expectations-section">
+                        <div className="SE-expectations-container">
+                            <h2 className="SE-expectations-header">
+                                <svg className="SE-expectations-star-icon" viewBox="0 0 24 24" width="40" height="40" style={{ verticalAlign: 'middle', marginRight: '20px' }}>
+                                    <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
+                                </svg>
+                                Results You Can Expect
+                                <svg className="SE-expectations-star-icon" viewBox="0 0 24 24" width="40" height="40" style={{ verticalAlign: 'middle', marginLeft: '20px' }}>
+                                    <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
+                                </svg>
+                            </h2>
+                            <div className="SE-expectations-grid">
+                                {expectations.map((item, index) => (
+                                    <div className="SE-expectation-card" key={index}>
+                                        <div className="SE-expectation-icon-wrapper">
+                                            <FontAwesomeIcon icon={item.icon} />
+                                        </div>
+                                        <p className="SE-expectation-text">
+                                            {item.textLine1}<br />{item.textLine2}
+                                        </p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Testimonials Section - Restyled to Dream Team UI */}
+                    <section
+                        className="SE-section SE-dt-section"
+                        id="feedback"
+                    >
+                        <div className="SE-dt-container">
+                            <div className="SE-dt-header">
+                                <h2 className="SE-dt-title">
+                                    <span>Sales Team</span> <span>Testimonials<svg className="SE-dt-title-underline" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 5 Q 50 10 100 5" stroke="#16a34a" strokeWidth="8" fill="none" strokeLinecap="round" /></svg></span>
+                                </h2>
+
+
+                                <p className="SE-dt-subtitle">
+                                    Hear what our students have to say about their learning experience
+                                </p>
+                            </div>
+
+                            <div className="SE-dt-cards-wrapper">
+                                <div className="SE-dt-cards">
+                                    {[...testimonials, ...testimonials].map((testimonial, index) => {
+                                        const cardClassIndex = (index % 5) + 1;
+                                        const imgMap = {
+                                            1: boy1, 2: girl1, 3: boy2, 4: girl2,
+                                            5: boy3, 6: girl3, 7: boy4, 8: girl4
+                                        };
+
+                                        const photoUrl = imgMap[testimonial.id];
+                                        const isBoy = [1, 3, 5, 7].includes(testimonial.id);
+
+                                        return (
+                                            <div key={`${testimonial.id || index}-${index}`} className={`SE-dt-card SE-dt-card-${cardClassIndex}`}>
+                                                <div className="SE-dt-card-img-wrapper">
+                                                    <img
+                                                        src={photoUrl}
+                                                        alt={testimonial.author}
+                                                        className={`SE-dt-card-img ${isBoy ? 'SE-dt-boy-avatar' : ''}`}
+                                                    />
+                                                    <div className="SE-dt-pattern-bg"></div>
+                                                </div>
+                                                <div className={`SE-dt-card-content SE-dt-content-bg-${cardClassIndex}`}>
+                                                    <h4 className="SE-dt-card-name">{testimonial.author}</h4>
+                                                    <p className="SE-dt-card-text">{testimonial.text}</p>
+                                                </div>
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+                            </div>
+
+                            {/* <div className="SE-dt-dots">
               <span className="SE-dt-dot SE-dt-dot-active"></span>
               <span className="SE-dt-dot"></span>
               <span className="SE-dt-dot"></span>
             </div> */}
+                        </div>
+                    </section>
+                </div>
                     </div>
-                </section>
+                </div>
                 <BackToTop />
+
+                <WhiteFooter />
             </div>
+
         </>
     );
 }

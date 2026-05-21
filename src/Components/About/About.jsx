@@ -28,8 +28,8 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import './About.css';
 // import aboutVideo from '../../assets/OurCoreValuebg.mp4';
-import aboutVideo from '../../assets/anthem.mp4';
-import anthemThumbnail from '../../assets/anthemThumbnail.png';
+import aboutVideo from '../../assets/RISE BEYOND - Engloray (1080p, h264).mp4';
+import anthemThumbnail from '../../assets/englorayanthempost.jpeg';
 import anthemThumbnail1 from '../../assets/anthemThumbnail1.jpeg';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -143,7 +143,7 @@ const About = () => {
                                             </div>
                                         </div>
                                         <div className="stat-success-badge">
-                                            <span className="success-num">99%</span>
+                                            <span className="success-num">100%</span>
                                             <span className="success-lbl">success<br />rate</span>
                                         </div>
                                         {/* <div className="stat-projects-badge">
@@ -177,12 +177,12 @@ const About = () => {
                                             <FontAwesomeIcon icon={faClock} /> <span>4m 36s</span>
                                         </div>
                                         <div className="cv-text-box">
-                                            <h4>Watch Anthem</h4>
+                                            <h4>Rise Beyond</h4>
                                             <p>Watch Engloray's Insights</p>
                                         </div>
                                     </div>
                                     <div className="cv-right-side">
-                                        <div className="cv-preview-full" style={{ backgroundImage: `url(${anthemThumbnail})` }}>
+                                        <div className="cv-preview-full" style={{ backgroundImage: `url(${anthemThumbnail})`, backgroundSize: '80%', backgroundPosition: 'center' }}>
                                             <div className="cv-play-icon">
                                                 <FontAwesomeIcon icon={faPlay} />
                                             </div>
@@ -193,17 +193,20 @@ const About = () => {
 
                             <div className="about-hero-precise-section">
                                 <h1 className="hero-heading-inline">
-                                    About Our Successful Achievements
-                                    <div className="inline-action-group">
-                                        <button className="pill-learn-btn" onClick={(e) => handleAction(e, () => navigate('/ourStoryPage'))}>Learn More</button>
-                                        <div className="arrow-circle-btn" onClick={(e) => handleAction(e, () => navigate('/ourStoryPage'))}>
-                                            <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-                                        </div>
-                                    </div>
-                                    <span className="inline-icon-stack">
-                                        <div className="stack-icon icon-bio" key="tech-icon-1"><FontAwesomeIcon icon={faDesktop} /></div>
-                                        <div className="stack-icon icon-galaxy" key="edu-icon"><FontAwesomeIcon icon={faGraduationCap} /></div>
-                                        <div className="stack-icon icon-flask" key="tech-icon-2"><FontAwesomeIcon icon={faCode} /></div>
+                                    About Our Successful{" "}
+                                    <span className="heading-inline-row">
+                                        Achievements
+                                        <span className="inline-action-group">
+                                            <button className="pill-learn-btn" onClick={(e) => handleAction(e, () => navigate('/ourStoryPage'))}>Learn More</button>
+                                            <span className="arrow-circle-btn" onClick={(e) => handleAction(e, () => navigate('/ourStoryPage'))}>
+                                                <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                                            </span>
+                                        </span>
+                                        <span className="inline-icon-stack">
+                                            <span className="stack-icon icon-bio" key="tech-icon-1"><FontAwesomeIcon icon={faDesktop} /></span>
+                                            <span className="stack-icon icon-galaxy" key="edu-icon"><FontAwesomeIcon icon={faGraduationCap} /></span>
+                                            <span className="stack-icon icon-flask" key="tech-icon-2"><FontAwesomeIcon icon={faCode} /></span>
+                                        </span>
                                     </span>
                                 </h1>
                                 <p className="hero-description-p">
@@ -221,7 +224,14 @@ const About = () => {
                                         <div className="glass-divider"></div>
                                         <p className="learn-text">& Learn How To Start</p>
                                     </div>
-                                    <div className="glass-toggle-group" onClick={(e) => handleAction(e)}>
+                                    <div
+                                        className="glass-toggle-group"
+                                        onClick={(e) => handleAction(e, () => {
+                                            const whatsappNumber = '916381759909';
+                                            const whatsappMessage = 'Hello! I would like to start a project with you.';
+                                            window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
+                                        })}
+                                    >
                                         <div className="toggle-circle-white">
                                             <FontAwesomeIcon icon={faChevronRight} />
                                         </div>
@@ -260,7 +270,7 @@ const About = () => {
                         <div className="stat-card-new">
                             <div className="stat-card-icon"><FontAwesomeIcon icon={faArrowTrendUp} /></div>
                             <div className="stat-card-info">
-                                <span className="stat-card-num">99%</span>
+                                <span className="stat-card-num">100%</span>
                                 <span className="stat-card-lbl">Client Satisfaction</span>
                             </div>
                         </div>

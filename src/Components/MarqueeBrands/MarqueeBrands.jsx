@@ -11,18 +11,21 @@ import logoSeven from '../../assets/logos/amico-Photoroom.png';
 import logoEight from '../../assets/logos/brandex-Photoroom.png';
 import logoNine from '../../assets/logos/nestoria-Photoroom.png';
 import logoTen from '../../assets/logos/vels.png';
+import logoEleven from '../../assets/logos/LOGO_VARIATION1-01.png';
+import { color, scale } from 'motion';
 
 const MarqueeBrands = () => {
   // Array of online placeholder logos (replace with your actual client logos later)
   const clientLogos = [
     { src: logoTwo, name: "Maax Life" },
-    { src: logoFour, name: "Pavizham", scale: 1.3 }, // Increased size
+    { src: logoFour, name: "Pavizham", scale: 2 }, // Increased size
     { src: logoFive, name: "ECEC" },
     { src: logoSix, name: "Aara" },
     { src: logoSeven, name: "Amico", scale: 0.85 }, // Decreased size
     { src: logoEight, name: "Brandex" },
     { src: logoNine, name: "Nestoria" },
-    { src: logoTen, name: "Vels" }
+    { src: logoTen, name: "Vels", color: "#600763ff" },
+    { src: logoEleven, name: "garuda", scale: 1.7, minWidth: "180px" }
   ];
 
   // Duplicate for seamless loop
@@ -32,13 +35,17 @@ const MarqueeBrands = () => {
     <section className="clients-section">
       <div className="clients-container">
         <h2 className="clients-title">Trusted By Industry Leaders</h2>
-        
+
         <div className="marquee-container">
           <div className="marquee-track">
             {duplicatedLogos.map((logo, index) => (
-              <div key={`logo-${index}`} className="logo-item">
-                <img 
-                  src={logo.src} 
+              <div
+                key={`logo-${index}`}
+                className={`logo-item ${logo.name === "Vels" ? "vels-logo-item" : ""}`}
+                style={logo.minWidth ? { minWidth: logo.minWidth } : {}}
+              >
+                <img
+                  src={logo.src}
                   alt={logo.name}
                   className="client-logo"
                   style={{ transform: `scale(${logo.scale || 1})` }}

@@ -967,13 +967,49 @@
 }
 
 /* User's Specific Ratio (1440px+) - Scaling up cards to reduce horizontal gaps */
-@media (min-width: 1440px) and (max-width: 1599px) {
+/* Fluid Scaling between 1024px and 1440px to prevent card squishing/collapse */
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
   .carousel-full-container {
-    height: 460px !important; /* Shrunk dead space to move navigation up visually */
+    height: calc(12vw + 245px) !important;
+    /* Increased to fill bottom gap */
   }
 
   .compact-carousel-controls {
-    top: 45% !important; /* Forces optical centering upwards */
+    top: 45% !important;
+  }
+
+  .slide-wrapper,
+  .carousel-slide.center-card .slide-wrapper,
+  .carousel-slide.side-card .slide-wrapper {
+    /* Math-derived fluid scaling keeping perfect proportional padding & gaps */
+    transform: scale(calc(0.00043269 * 100vw + 0.037)) !important;
+    height: 800px !important;
+    /* Increased to fill bottom gap */
+  }
+
+  .slide-content {
+    height: 580px !important;
+    /* Increased content height to fill gap */
+    clip-path: path("M 30,0 L 470,0 A 30,30 0,0,1 500,30 L 500,370 A 60,60 0,0,1 440,430 L 390,430 A 60,60 0,0,0 330,490 L 330,520 A 60,60 0,0,1 270,580 L 30,580 A 30,30 0,0,1 0,550 L 0,30 A 30,30 0,0,1 30,0 Z") !important;
+    /* Clip-path updated to match 580px height */
+  }
+
+  .card-ui-action {
+    top: 605px !important;
+    /* Repositioned for 580px card height */
+  }
+}
+
+/* User's Specific Ratio (1441px+) - Scaling up cards to reduce horizontal gaps */
+@media (min-width: 1441px) and (max-width: 1599px) {
+  .carousel-full-container {
+    height: 460px !important;
+    /* Shrunk dead space to move navigation up visually */
+  }
+
+  .compact-carousel-controls {
+    top: 45% !important;
+    /* Forces optical centering upwards */
   }
 
   .slide-wrapper,
@@ -995,11 +1031,12 @@
 
 @media (min-width: 1600px) {
   .carousel-full-container {
-    height: 550px !important; /* Reduced properly */
+    height: 550px !important;
+    /* Reduced properly */
   }
 
   .compact-carousel-controls {
-    top: 45% !important; 
+    top: 45% !important;
   }
 
   .slide-wrapper,

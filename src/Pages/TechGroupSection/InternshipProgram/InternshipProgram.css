@@ -445,7 +445,7 @@
 }
 
 .tgi-role-card.active[data-index="1"] {
-    background-image: url('../../../assets/Mern Developer.jfif');
+    background-image: url('../../../assets/Full-Stack-Devloper.png');
 }
 
 .tgi-role-card.active[data-index="2"] {
@@ -453,7 +453,10 @@
 }
 
 .tgi-role-card.active[data-index="3"] {
-    background-image: url('../../../assets/images/software developer.jpg');
+    background-image: url('../../../assets/Software-Developer.png');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .tgi-role-card.active[data-index="4"] {
@@ -465,7 +468,7 @@
 }
 
 .tgi-role-card.active[data-index="6"] {
-    background-image: url('../../../assets/images/mentorintern.jpg');
+    background-image: url('../../../assets/images/mentorintern.png');
 }
 
 .tgi-role-card.active::after {

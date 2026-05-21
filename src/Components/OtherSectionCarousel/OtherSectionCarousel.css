@@ -70,10 +70,10 @@
 }
 
 .compact-carousel-container {
-    max-width: 100%;
-    margin: 0 auto;
+    max-width: 107%;
+    margin-left: -3.7%;
     padding: 0;
-    width: 100%;
+    width: 107%;
 }
 
 .carousel-header {
@@ -632,7 +632,7 @@
 .compact-carousel-controls {
     position: absolute;
     width: 100%;
-    top: 50%;
+    top: 63%;
     left: 0;
     display: flex;
     justify-content: space-between;
@@ -712,12 +712,12 @@
 
 .prev-btn {
     margin-left: 16px;
-    margin-top: 20px;
+    margin-top: 75px;
 }
 
 .next-btn {
     margin-right: 16px;
-    margin-top: 20px;
+    margin-top: 75px;
 }
 
 /* Small Mobile Screens Fix (320px range) */

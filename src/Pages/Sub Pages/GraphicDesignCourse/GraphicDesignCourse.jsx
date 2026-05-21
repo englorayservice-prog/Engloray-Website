@@ -682,6 +682,16 @@ const GraphicDesignCourse = () => {
                   <p className="gdc-intro-desc">
                     Unleash your creative potential with our intensive program designed to transform beginners into industry-ready professionals. Master every tool and concept needed for a global creative career.
                   </p>
+
+                  <p className="gdc-intro-desc" style={{ marginTop: '6px', marginBottom: '4px', fontWeight: '600', color: '#222' }}>
+                    What makes this program different:
+                  </p>
+                  <ul className="gdc-intro-desc" style={{ paddingLeft: '20px', listStyleType: 'disc', margin: '0 0 12px' }}>
+                    <li style={{ marginBottom: '4px' }}><strong>Project-Driven:</strong> Complete 50+ real-world projects from day one.</li>
+                    <li style={{ marginBottom: '4px' }}><strong>Live Sessions:</strong> Learn directly from experts in interactive classes.</li>
+                    <li style={{ marginBottom: '4px' }}><strong>Global Tools:</strong> Master Adobe Suite, Figma, and cutting-edge AI design tools.</li>
+                    <li style={{ marginBottom: '0px' }}><strong>Career Ready:</strong> Portfolio reviews, mock interviews &amp; placement support.</li>
+                  </ul>
                   <button className="gdc-intro-cta" onClick={scrollToForm}>Contact</button>
                 </div>
 
@@ -772,6 +782,32 @@ const GraphicDesignCourse = () => {
                     <div className="gdc-stat-item">
                       <span className="gdc-stat-num">100%</span>
                       <span className="gdc-stat-label">Practical</span>
+                    </div>
+                  </div>
+
+                  <p className="gdc-curriculum-v2-desc" style={{ marginTop: '20px', color: '#5b6470', fontSize: '0.98rem', lineHeight: '1.6' }}>
+                    Every week is packed with practical challenges and direct mentor feedback. We bridge the gap between creative skills and business strategy, preparing you to pitch confidently to premium global clients.
+                  </p>
+
+                  <p className="gdc-curriculum-v2-desc" style={{ marginTop: '20px', marginBottom: '12px', fontWeight: '700', color: '#111' }}>
+                    <strong>Key milestones on your path to professional mastery:</strong>
+                  </p>
+                  <div className="gdc-curriculum-v2-desc" style={{ marginTop: '10px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '0.96rem', lineHeight: '1.45', color: '#5b6470' }}>
+                      <FontAwesomeIcon icon={faCheck} style={{ color: '#3D52D9', marginTop: '3px', flexShrink: 0, fontSize: '0.85rem' }} />
+                      <span><strong>Month 1:</strong> Foundations of color theory, typography, and composition.</span>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '0.96rem', lineHeight: '1.45', color: '#5b6470' }}>
+                      <FontAwesomeIcon icon={faCheck} style={{ color: '#3D52D9', marginTop: '3px', flexShrink: 0, fontSize: '0.85rem' }} />
+                      <span><strong>Month 2-3:</strong> Core tools mastery in Photoshop, Illustrator & Figma.</span>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '0.96rem', lineHeight: '1.45', color: '#5b6470' }}>
+                      <FontAwesomeIcon icon={faCheck} style={{ color: '#3D52D9', marginTop: '3px', flexShrink: 0, fontSize: '0.85rem' }} />
+                      <span><strong>Month 4-5:</strong> Building premium brand identities & UI designs.</span>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '0.96rem', lineHeight: '1.45', color: '#5b6470' }}>
+                      <FontAwesomeIcon icon={faCheck} style={{ color: '#3D52D9', marginTop: '3px', flexShrink: 0, fontSize: '0.85rem' }} />
+                      <span><strong>Month 6:</strong> Personal branding, freelancing & career launch.</span>
                     </div>
                   </div>
                 </div>
@@ -1058,7 +1094,25 @@ const GraphicDesignCourse = () => {
                     Understand how concepts are explained, how projects are built, and how students are guided step-by-step
                     to achieve industry-level skills. This preview gives you a clear idea of the learning experience,
                     mentorship quality, and hands-on approach we follow in our programs.
+                    <br /><br />
+                    Dive deep into the professional workflow of expert graphic designers. From initial ideation and sketching
+                    to final polished designs, you'll see every tool and technique used in action. We believe that the best
+                    way to master complex software like Photoshop, Illustrator, and Figma is by observing how industry
+                    veterans navigate them to solve real-world creative challenges.
+                    <br /><br />
+                    By watching these unedited, comprehensive sessions, you'll uncover insider tips, workflow shortcuts,
+                    and the critical design thinking required to elevate your portfolio. Start your creative journey today
+                    and see exactly what it takes to produce stunning, high-converting digital art and brand identities.
                   </p>
+                  <p className="dgm-video-side-desc" style={{ marginTop: '15px', marginBottom: '10px' }}>
+                    <strong>Key takeaways from our interactive sessions:</strong>
+                  </p>
+                  <ul className="dgm-video-side-desc" style={{ paddingLeft: '25px', listStyleType: 'disc', margin: '0' }}>
+                    <li style={{ marginBottom: '8px' }}><strong>Master Industry Standard Tools:</strong> Gain hands-on expertise in Adobe Photoshop, Illustrator, InDesign, and Figma.</li>
+                    <li style={{ marginBottom: '8px' }}><strong>Build a Premium Portfolio:</strong> Complete real-world case studies that stand out to top employers and global clients.</li>
+                    <li style={{ marginBottom: '8px' }}><strong>Personalized Career Guidance:</strong> Receive 1:1 mentorship, resume reviews, and comprehensive interview preparation.</li>
+                    <li><strong>Develop Creative Confidence:</strong> Learn to pitch your design ideas effectively and manage professional end-to-end workflows.</li>
+                  </ul>
                 </div>
 
               </div>
@@ -1149,7 +1203,18 @@ const GraphicDesignCourse = () => {
                   <h2 className="gdc-testi-main-title">Experience Learning Like Never Before</h2>
                   <p className="gdc-testi-subtitle">
                     Discover Personalized, AI-Powered Learning that prepares students for success in the real world. Read transformational stories from our top alumni.
+                    <br /><br />
+                    Our community-driven approach ensures that you never learn in isolation. Engage with peers, participate in live workshops, and receive actionable feedback on your designs. We bridge the gap between academic theory and industry expectations by focusing on practical, portfolio-ready outcomes.
                   </p>
+                  <p className="gdc-testi-subtitle" style={{ marginTop: '15px', marginBottom: '10px', fontWeight: '600' }}>
+                    Why our students succeed:
+                  </p>
+                  <ul className="gdc-testi-subtitle" style={{ paddingLeft: '20px', listStyleType: 'disc', margin: '0', textAlign: 'left' }}>
+                    <li style={{ marginBottom: '8px' }}><strong>Real-World Projects:</strong> Build designs based on actual client briefs.</li>
+                    <li style={{ marginBottom: '8px' }}><strong>Industry Mentors:</strong> Get feedback from professionals with global experience.</li>
+                    <li style={{ marginBottom: '8px' }}><strong>Peer Collaboration:</strong> Join a network of creative minds to share ideas.</li>
+                    <li><strong>Continuous Support:</strong> Lifetime access to resources and community forums.</li>
+                  </ul>
                 </div>
 
                 <div className="gdc-testi-grid-right">
@@ -1230,6 +1295,20 @@ const GraphicDesignCourse = () => {
                 <div className="gdc-banner-container">
                   <div className="gdc-banner-content">
                     <h2 className="gdc-banner-title">Start Your Design <br /> Journey Today</h2>
+
+                    <p style={{
+                      color: '#555',
+                      fontSize: '1.05rem',
+                      lineHeight: '1.7',
+                      maxWidth: '600px',
+                      margin: '0 auto 20px',
+                      fontWeight: '500',
+                      textAlign: 'center'
+                    }}>
+                      Join thousands of creative professionals who have transformed their careers through our industry-leading Graphic Design Masterclass.
+                      Whether you're a complete beginner or looking to sharpen your existing skills, our structured 6-month program gives you everything you need —
+                      from mastering design tools to building a portfolio that gets you hired. Take the first step toward a rewarding creative career today.
+                    </p>
 
                     <div className="gdc-banner-ratings">
                       <div className="gdc-rating-box">

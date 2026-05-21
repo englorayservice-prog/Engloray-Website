@@ -3,7 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faGem, faShieldAlt } from '@fortawesome/free-solid-svg-icons';
-import statsBgImage from '../../../assets/image21.jfif';
+import statsBgImage from '../../../assets/image21.png';
 import budgetImage from '../../../assets/images/red_bar_chart.png';
 import './StatsAndBenefits.css';
 
@@ -63,6 +63,10 @@ const StatsAndBenefits = () => {
                 // Top-centre card (24/7 Support) – starts just above centre
                 .from('.techGroup-stat-card-four',
                     { x: 0, y: 340, opacity: 0, scale: 0.35, duration: 1 }, 0.25)
+
+                // Mid-centre card (50+ Team Members) – from centre
+                .from('.techGroup-stat-card-eight',
+                    { x: 0, y: 340, opacity: 0, scale: 0.35, duration: 1 }, 0.30)
                 // Top-left card (250+ Projects) – from centre-right area
                 .from('.techGroup-stat-card-one',
                     { x: 320, y: 310, opacity: 0, scale: 0.35, duration: 1 }, 0.50)
@@ -170,7 +174,7 @@ const StatsAndBenefits = () => {
                                 <div className="techGroup-stat-label">PROJECTS DELIVERED</div>
                             </div>
 
-                            {/* 2 – Black: 24/7 Support (top-centre) */}
+                            {/* 2 – Black: 24/7 Support */}
                             <div className="techGroup-stat-card techGroup-stat-card-four">
                                 <div className="techGroup-stat-number">24/7</div>
                                 <div className="techGroup-stat-label">SUPPORT AVAILABLE</div>
@@ -206,6 +210,12 @@ const StatsAndBenefits = () => {
                                 <div className="techGroup-stat-label">YEARS EXPERIENCE</div>
                             </div>
 
+                            {/* 8 – Purple: 50+ Team Members */}
+                            <div className="techGroup-stat-card techGroup-stat-card-eight">
+                                <div className="techGroup-stat-number">50+</div>
+                                <div className="techGroup-stat-label">TEAM MEMBERS</div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -225,9 +235,9 @@ const StatsAndBenefits = () => {
                             }}>
                             <div className="techGroup-card-top-overlay" />
                             <div className="techGroup-badge techGroup-badge-top">INNOVATION</div>
-                            <div className="techGroup-card-top-header">Digital <br /> Transformation</div>
+                            <div className="techGroup-card-top-header">Digital Transformation</div>
                             <div className="techGroup-card-top-footer">
-                                We empower businesses to adapt and thrive in the modern age using cutting-edge technology, scalable frameworks, and data-driven intelligence. Our holistic approach ensures seamless integration of AI-driven solutions and cloud architecture to future-proof your infrastructure.
+                                We empower modern businesses to adapt, evolve, and thrive in the digital age using cutting-edge technology, scalable cloud frameworks, and data-driven intelligence. Our holistic transformation approach ensures seamless integration of custom AI-driven solutions, robust database management, and agile cloud architectures. We work closely with your teams to future-proof core infrastructure, accelerate operational efficiency, automate complex workflows, optimize organizational productivity, and deliver measurable, long-term sustainable growth for global enterprises navigating an ever-evolving, highly competitive global marketplace.
                             </div>
                         </div>
 
@@ -240,10 +250,10 @@ const StatsAndBenefits = () => {
                             }}>
                             <div className="techGroup-card-one-overlay" />
                             <div className="techGroup-badge techGroup-badge-one">BENEFITS</div>
-                            <div className="techGroup-card-one-header">Branding <br /> Plan</div>
+                            <div className="techGroup-card-one-header">Branding Plan</div>
                             <FontAwesomeIcon icon={faGem} className="techGroup-card-inner-icon-one" />
                             <div className="techGroup-card-one-footer">
-                                Engloray builds strong corporate identity through strategic design, consistent messaging, digital presence, and creative storytelling to establish trust and recognition. We craft immersive brand experiences that resonate with target audiences, leveraging market psychology and visual excellence.
+                                Engloray builds a powerful, cohesive corporate identity through strategic design, consistent messaging across channels, dynamic digital presence, and creative storytelling to establish absolute market trust and recognition. We craft immersive, memorable brand experiences that resonate deeply with your target audiences, leveraging consumer psychology, comprehensive market insights, visual excellence, innovative brand architecture, and multi-channel marketing strategies. By aligning your brand values with modern customer expectations, we elevate your company's market standing, secure customer loyalty, and drive scalable business success in competitive global sectors.
                             </div>
                         </div>
 
@@ -275,7 +285,7 @@ const StatsAndBenefits = () => {
                         {/* Card 3 – Quality Assurance */}
                         <div className="techGroup-slide-card techGroup-card-three">
                             <div className="techGroup-badge techGroup-badge-three">BENEFITS</div>
-                            <div className="techGroup-card-three-header">Quality &<br />Assurance</div>
+                            <div className="techGroup-card-three-header">Quality & Assurance</div>
                             <FontAwesomeIcon icon={faShieldAlt} className="techGroup-card-inner-icon-three" />
                             <div className="techGroup-card-three-grid-container">
                                 <div className="techGroup-card-three-grid">
@@ -347,9 +357,9 @@ const StatsAndBenefits = () => {
                             }}>
                             <div className="techGroup-card-bottom-overlay" />
                             <div className="techGroup-badge techGroup-badge-bottom">FUTURE</div>
-                            <div className="techGroup-card-bottom-header">Global <br /> Community</div>
+                            <div className="techGroup-card-bottom-header">Global Community</div>
                             <div className="techGroup-card-bottom-footer">
-                                Join our worldwide network of innovators, creators, and leaders. Step into the future and build sustainable technology ecosystems with Engloray. Connect with industry pioneers and collaborate on boundary-pushing initiatives that drive social impact and progress.
+                                Join our worldwide network of forward-thinking innovators, creative designers, and visionary leaders. Step into the future and build sustainable, high-impact technology ecosystems in collaboration with Engloray. We connect you with industry pioneers to collaborate on boundary-pushing initiatives that drive positive social impact, advance tech boundaries, foster mutual growth, and build lasting legacy systems. Through global meetups, shared knowledge bases, and collaborative projects, we empower members to lead transformation and influence global development for generations to come.
                             </div>
                         </div>
 

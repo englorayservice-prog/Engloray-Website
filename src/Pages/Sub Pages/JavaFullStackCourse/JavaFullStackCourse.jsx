@@ -735,6 +735,16 @@ const JavaFullStackCourse = () => {
                   <p className="jfs-intro-desc">
                     Unleash your developer potential with our intensive program designed to transform beginners into industry-ready engineers. Master every tool and concept needed for a global software career.
                   </p>
+
+                  <p className="jfs-intro-desc" style={{ marginTop: '6px', marginBottom: '4px', fontWeight: '600', color: '#222' }}>
+                    What makes this program different:
+                  </p>
+                  <ul className="jfs-intro-desc" style={{ paddingLeft: '20px', listStyleType: 'disc', margin: '0 0 12px' }}>
+                    <li style={{ marginBottom: '4px' }}><strong>Hands-on Labs:</strong> Work on 50+ real enterprise application projects.</li>
+                    <li style={{ marginBottom: '4px' }}><strong>Live Mentorship:</strong> Learn direct from senior Java architects &amp; developers.</li>
+                    <li style={{ marginBottom: '4px' }}><strong>Production Workflows:</strong> Master Spring Boot, AWS, Docker, and CI/CD pipelines.</li>
+                    <li style={{ marginBottom: '0px' }}><strong>Career Launchpad:</strong> Complete interview prep, coding reviews &amp; job assistance.</li>
+                  </ul>
                   <button className="jfs-intro-cta" onClick={scrollToForm}>Contact</button>
                 </div>
 
@@ -828,6 +838,32 @@ const JavaFullStackCourse = () => {
                     <div className="jfs-stat-item">
                       <span className="jfs-stat-num">100%</span>
                       <span className="jfs-stat-label">Practical</span>
+                    </div>
+                  </div>
+
+                  <p className="jfs-curriculum-v2-desc" style={{ marginTop: '20px', color: '#5b6470', fontSize: '0.98rem', lineHeight: '1.6' }}>
+                    Every week is packed with real coding labs and direct PR reviews. We bridge the gap between core syntax and scalable architectures, preparing you to deploy high-concurrency systems to global production clouds.
+                  </p>
+
+                  <p className="jfs-curriculum-v2-desc" style={{ marginTop: '20px', marginBottom: '12px', fontWeight: '700', color: '#111' }}>
+                    <strong>Key milestones on your path to professional mastery:</strong>
+                  </p>
+                  <div className="jfs-curriculum-v2-desc" style={{ marginTop: '10px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '0.96rem', lineHeight: '1.45', color: '#5b6470' }}>
+                      <FontAwesomeIcon icon={faCheck} style={{ color: '#3D52D9', marginTop: '3px', flexShrink: 0, fontSize: '0.85rem' }} />
+                      <span><strong>Month 1:</strong> Java Foundations, OOP Principles &amp; Algorithm Design.</span>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '0.96rem', lineHeight: '1.45', color: '#5b6470' }}>
+                      <FontAwesomeIcon icon={faCheck} style={{ color: '#3D52D9', marginTop: '3px', flexShrink: 0, fontSize: '0.85rem' }} />
+                      <span><strong>Month 2-3:</strong> Enterprise Systems, Spring Boot Core &amp; Hibernate ORM.</span>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '0.96rem', lineHeight: '1.45', color: '#5b6470' }}>
+                      <FontAwesomeIcon icon={faCheck} style={{ color: '#3D52D9', marginTop: '3px', flexShrink: 0, fontSize: '0.85rem' }} />
+                      <span><strong>Month 4-5:</strong> Microservices, Frontend Mastery with React &amp; RESTful APIs.</span>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '0.96rem', lineHeight: '1.45', color: '#5b6470' }}>
+                      <FontAwesomeIcon icon={faCheck} style={{ color: '#3D52D9', marginTop: '3px', flexShrink: 0, fontSize: '0.85rem' }} />
+                      <span><strong>Month 6:</strong> Cloud &amp; DevOps (AWS, Docker, CI/CD) &amp; Full Stack projects.</span>
                     </div>
                   </div>
                 </div>
@@ -1124,7 +1160,18 @@ const JavaFullStackCourse = () => {
                   <h2 className="jfs-testi-main-title">Experience Learning Like Never Before</h2>
                   <p className="jfs-testi-subtitle">
                     Discover Personalized, AI-Powered Learning that prepares students for success in the real world. Read transformational stories from our top alumni.
+                    <br /><br />
+                    Our enterprise-driven syllabus ensures you learn real system architecture rather than just basic syntax. Build backend microservices, scale APIs under high traffic, and construct polished React interfaces. We focus intensely on code reviews, industry design patterns, and deployment pipelines.
                   </p>
+                  <p className="jfs-testi-subtitle" style={{ marginTop: '15px', marginBottom: '10px', fontWeight: '600' }}>
+                    Why our students succeed:
+                  </p>
+                  <ul className="jfs-testi-subtitle" style={{ paddingLeft: '20px', listStyleType: 'disc', margin: '0', textAlign: 'left' }}>
+                    <li style={{ marginBottom: '8px' }}><strong>Scalable Systems:</strong> Design apps supporting millions of transactions.</li>
+                    <li style={{ marginBottom: '8px' }}><strong>Expert Reviews:</strong> Get code architecture feedback from principal engineers.</li>
+                    <li style={{ marginBottom: '8px' }}><strong>Active Labs:</strong> Build production-ready portfolio projects.</li>
+                    <li><strong>Dev Ecosystem:</strong> Lifetime access to the Engloray network &amp; materials.</li>
+                  </ul>
                 </div>
 
                 {/* Right side: 3-Card Grid */}
@@ -1212,6 +1259,20 @@ const JavaFullStackCourse = () => {
                 <div className="jfs-banner-container">
                   <div className="jfs-banner-content">
                     <h2 className="jfs-banner-title">Start Your Tech <br /> Journey Today</h2>
+
+                    <p style={{
+                      color: '#555',
+                      fontSize: '1.05rem',
+                      lineHeight: '1.7',
+                      maxWidth: '600px',
+                      margin: '0 auto 20px',
+                      fontWeight: '500',
+                      textAlign: 'center'
+                    }}>
+                      Join thousands of software engineers who have accelerated their careers through our industry-leading Java Full Stack Program.
+                      Whether you're a beginner starting your coding journey or a developer looking to master enterprise cloud systems, our structured 6-month syllabus
+                      gives you everything you need — from core backend services to cloud deployment and professional frontend frameworks. Take the first step today.
+                    </p>
 
 
                     <div className="jfs-banner-ratings">

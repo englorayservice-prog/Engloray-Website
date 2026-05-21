@@ -42,7 +42,7 @@ const InternshipProgram = () => {
     // Skills for each role (ordered by role index 0-6)
     const roleSkills = [
         ['Photoshop', 'Illustrator', 'Figma', 'Branding', 'Typography', 'Web Design'],
-        ['HTML', 'CSS', 'JavaScript', 'React', 'Tailwind CSS', 'Node.js'],
+        ['HTML', 'CSS', 'JavaScript', 'React', 'Spring Boot', 'MySQL'],
         ['Figma', 'Adobe XD', 'Wireframing', 'User Research', 'Usability Testing', 'Design Systems'],
         ['Java', 'Spring Boot', 'Python', 'REST APIs', 'MySQL', 'Docker'],
         ['Communication', 'Lead Generation', 'CRM', 'Negotiation', 'Market Research', 'Pitching'],
@@ -73,7 +73,7 @@ const InternshipProgram = () => {
         },
         {
             id: 2,
-            title: "Website Developer",
+            title: "Full-Stack Developer",
             icon: faDesktop,
             iconColor: roleColors.websiteDeveloper,
             description: "Build responsive and interactive web applications using modern technologies, ensuring fast performance, user-friendly interfaces, secure functionality, and seamless experiences across devices.",
