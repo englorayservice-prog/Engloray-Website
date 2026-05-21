@@ -1,6 +1,7 @@
 .clients-section {
   padding: 60px 0;
-  background: white; /* White background for the section */
+  background: white;
+  /* White background for the section */
   position: relative;
   overflow: hidden;
 }
@@ -24,26 +25,25 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  background: #1f2937; /* Dark background for the marquee track line */
+  background: #1f2937;
+  /* Dark background for the marquee track line */
   border-radius: 12px;
-  padding: 40px 0;
-  mask: linear-gradient(
-    90deg,
-    transparent,
-    white 15%,
-    white 85%,
-    transparent
-  );
-  -webkit-mask: linear-gradient(
-    90deg,
-    transparent,
-    white 15%,
-    white 85%,
-    transparent
-  );
+  padding: 20px 0;
+  mask: linear-gradient(90deg,
+      transparent,
+      white 15%,
+      white 85%,
+      transparent);
+  -webkit-mask: linear-gradient(90deg,
+      transparent,
+      white 15%,
+      white 85%,
+      transparent);
+  min-height: 80px;
 }
 
 .marquee-track {
+  min-height: 80px;
   display: flex;
   align-items: center;
   gap: 100px;
@@ -60,8 +60,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 25px 40px;
-  background: white; /* White cards on dark background */
+  padding: 15px 30px;
+  background: white;
+  /* White cards on dark background */
   border-radius: 8px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   transition: all 0.3s ease;
@@ -90,10 +91,16 @@
   transform: scale(1.1);
 }
 
+.vels-logo-item:hover .client-logo {
+  /* This filter creates a light pink color from a dark logo */
+  filter: invert(83%) sepia(35%) saturate(3048%) hue-rotate(303deg) brightness(102%) contrast(98%);
+}
+
 @keyframes marquee-scroll {
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(calc(-100% / 2));
   }
@@ -104,40 +111,36 @@
   .clients-section {
     padding: 0 0 40px 0 !important;
   }
-  
+
   .clients-title {
     font-size: 2rem;
     margin-bottom: 30px;
   }
-  
+
   .marquee-container {
     padding: 30px 0;
-    mask: linear-gradient(
-      90deg,
-      transparent,
-      white 10%,
-      white 90%,
-      transparent
-    );
-    -webkit-mask: linear-gradient(
-      90deg,
-      transparent,
-      white 10%,
-      white 90%,
-      transparent
-    );
+    mask: linear-gradient(90deg,
+        transparent,
+        white 10%,
+        white 90%,
+        transparent);
+    -webkit-mask: linear-gradient(90deg,
+        transparent,
+        white 10%,
+        white 90%,
+        transparent);
   }
-  
+
   .marquee-track {
     gap: 60px;
     animation: marquee-scroll 35s linear infinite;
   }
-  
+
   .client-logo {
     height: 45px;
     max-width: 120px;
   }
-  
+
   .logo-item {
     padding: 20px 30px;
   }
@@ -147,26 +150,26 @@
   .clients-section {
     padding: 0 0 30px 0 !important;
   }
-  
+
   .clients-title {
     font-size: 1.5rem;
   }
-  
+
   .marquee-container {
     padding: 25px 0;
     border-radius: 8px;
   }
-  
+
   .marquee-track {
     gap: 50px;
     animation: marquee-scroll 25s linear infinite;
   }
-  
+
   .client-logo {
     height: 35px;
     max-width: 100px;
   }
-  
+
   .logo-item {
     padding: 15px 25px;
   }
@@ -181,11 +184,19 @@
     gap: 30px;
     width: 100%;
   }
-  
+
   .marquee-container {
     mask: none;
     -webkit-mask: none;
     background: transparent;
     padding: 0;
+  }
+}
+
+@media (min-width: 1441px) {
+  .marquee-container {
+    width: 140%;
+    margin-left: -250px;
+
   }
 }

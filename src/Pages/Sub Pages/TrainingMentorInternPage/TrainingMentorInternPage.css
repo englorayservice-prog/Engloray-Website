@@ -59,6 +59,12 @@ body {
 
 }
 
+.TM-main-layout-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
 
 /* Section Titles */
 .TM-section-title {
@@ -6719,7 +6725,7 @@ body {
     .TM-hero-typography {
         gap: 0% !important;
     }
-    
+
     /* 3. Titles Group (Set to first) */
     .TM-hero-typography {
         gap: 0 !important;

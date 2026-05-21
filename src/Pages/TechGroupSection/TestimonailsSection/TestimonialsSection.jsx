@@ -14,11 +14,20 @@ import techLogoSeven from '../../../assets/logos/tamil natrals-Photoroom.png';
 import techLogoEight from '../../../assets/logos/maax life-Photoroom.png';
 import techLogNine from '../../../assets/logos/brandex-Photoroom.png';
 import techLogoTen from '../../../assets/logos/wooden street-Photoroom.png';
-import techLogoEleven from '../../../assets/logos/amoura-Photoroom.png';
 import techLogoTwelve from '../../../assets/logos/coreFitness-Photoroom.png';
 import techLogoThirteen from '../../../assets/logos/ecec logo.png';
-import techLogoFourteen from '../../../assets/logos/studio makeup-Photoroom.png';
 import techLogoFifteen from '../../../assets/logos/Pavizham-Photoroom.png';
+import techLogoSixteen from '../../../assets/logos/LOGO_VARIATION1-01.png';
+import techLogoSeventeen from '../../../assets/case study images/websites/green park school.png';
+import techLogoEighteen from '../../../assets/logos/vels.png';
+import techLogoNineteen from '../../../assets/logos/thulasi-Photoroom.png';
+import techLogoTwentyOne from '../../../assets/logos/logos/gym life-Photoroom.png';
+import techLogoTwentyThree from '../../../assets/logos/logos/kiaaron collection-Photoroom.png';
+import techLogoTwentyFour from '../../../assets/logos/logos/beautiy makeover artist-Photoroom.png';
+import techLogoProMoo from '../../../assets/logos/logos/pro moo-Photoroom.png';
+import techLogoBlanco from '../../../assets/logos/logos/blanco-Photoroom.png';
+import techLogoTgs04 from '../../../assets/logos/logos/tgs logo 04.png';
+import techLogoIbc from '../../../assets/logos/logos/orthopetic clinic-Photoroom.png';
 // import budgetImage from '../../../assets/image14.png';
 // import budgetImage1 from '../../../assets/image16.png';
 import statsBgImage from '../../../assets/image21.jfif';
@@ -132,6 +141,7 @@ const testimonials = [
 
 // Array of all logo images
 const logoImages = [
+  // Set 0 (Logos 1-8)
   { id: 1, src: techLogoOne, alt: "Aara" },
   { id: 3, src: techLogoFifteen, alt: "pavizham" },
   { id: 2, src: techLogoTwo, alt: "Amico" },
@@ -140,14 +150,25 @@ const logoImages = [
   { id: 6, src: techLogoFive, alt: "Nestoria" },
   { id: 7, src: techLogoSix, alt: "Say" },
   { id: 8, src: techLogoSeven, alt: "Tamil Naturals" },
+  // Set 1 (Logos 9-16)
   { id: 9, src: techLogNine, alt: "Brandex" },
   { id: 10, src: techLogoTen, alt: "Wooden Street" },
-  { id: 11, src: techLogoEleven, alt: "Amoura" },
+  { id: 11, src: techLogoTwentyThree, alt: "Kiaaron Collection" },
   { id: 12, src: techLogoThirteen, alt: "ECEC" },
   { id: 13, src: techLogoFour, alt: "Manjari" },
-  { id: 14, src: techLogoFourteen, alt: "Studio Makeup" },
+  { id: 14, src: techLogoProMoo, alt: "Pro Moo" },
   { id: 15, src: techLogoThree, alt: "Malar" },
-  { id: 16, src: techLogoOne, alt: "Aara" },
+  { id: 16, src: techLogoSixteen, alt: "Garuda" },
+  // Set 2 (Logos 17-24)
+  { id: 17, src: techLogoSeventeen, alt: "Greenpark School" },
+  { id: 18, src: techLogoEighteen, alt: "Vels" },
+  { id: 19, src: techLogoNineteen, alt: "Thulasi" },
+  { id: 20, src: techLogoBlanco, alt: "Blanco" },
+  { id: 21, src: techLogoTwentyOne, alt: "Gym Life" },
+  { id: 22, src: techLogoIbc, alt: "IBC" },
+  { id: 23, src: techLogoTgs04, alt: "TGS Logo 4" },
+
+  { id: 24, src: techLogoTwentyFour, alt: "Beauty Makeover Artist" },
 ];
 
 const TestimonialsSection = () => {
@@ -221,7 +242,7 @@ const TestimonialsSection = () => {
       // After fade out (0.4s), switch to fade in with new set
       setTimeout(() => {
         setLogoAnimationState(prev => {
-          const newSet = prev[currentLogoIndex].set === 0 ? 1 : 0;
+          const newSet = (prev[currentLogoIndex].set + 1) % 3;
           return {
             ...prev,
             [currentLogoIndex]: {
@@ -307,13 +328,37 @@ const TestimonialsSection = () => {
 
   // Function to get logo class
   const getLogoClass = (id) => {
+    if (id === 18) {
+      return 'techGroup-grid-logo-image techGroup-vels-logo';
+    }
+    if (id === 19) {
+      return 'techGroup-grid-logo-image techGroup-thulasi-logo';
+    }
+    if (id === 16) {
+      return 'techGroup-grid-logo-image techGroup-garuda-logo';
+    }
+    if (id === 3) {
+      return 'techGroup-grid-logo-image techGroup-pavizham-logo';
+    }
+    if (id === 21) {
+      return 'techGroup-grid-logo-image techGroup-gym-logo';
+    }
+    if (id === 8) {
+      return 'techGroup-grid-logo-image techGroup-tamilnaturals-logo';
+    }
+    if (id === 20) {
+      return 'techGroup-grid-logo-image techGroup-blanco-logo';
+    }
+    if (id === 22) {
+      return 'techGroup-grid-logo-image techGroup-IBC-logo';
+    }
     return 'techGroup-grid-logo-image';
   };
 
   // Get logo source based on position layout, and the column's current set
   const getLogoForPosition = (position) => {
     const setNumber = logoAnimationState[position].set;
-    const indexInArray = setNumber === 0 ? position : position + 8;
+    const indexInArray = position + setNumber * 8;
     return logoImages[indexInArray];
   };
 

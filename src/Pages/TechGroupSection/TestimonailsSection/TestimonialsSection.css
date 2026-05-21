@@ -444,6 +444,43 @@
   opacity: 1;
 }
 
+.techGroup-vels-logo {
+  filter: brightness(0) saturate(100%) invert(82%) sepia(13%) saturate(1487%) hue-rotate(303deg) brightness(103%) contrast(101%) !important;
+}
+
+.techGroup-grid-logo:hover .techGroup-vels-logo {
+  filter: brightness(0) saturate(100%) invert(82%) sepia(13%) saturate(1487%) hue-rotate(303deg) brightness(103%) contrast(101%) !important;
+  opacity: 1;
+}
+
+.techGroup-thulasi-logo {
+  transform: scale(1.7) !important;
+}
+
+.techGroup-garuda-logo {
+  transform: scale(1.7) !important;
+}
+
+.techGroup-pavizham-logo {
+  transform: scale(1.4) !important;
+}
+
+.techGroup-gym-logo {
+  transform: scale(1.4) !important;
+}
+
+.techGroup-tamilnaturals-logo {
+  transform: scale(1.35) !important;
+}
+
+.techGroup-blanco-logo {
+  transform: scale(1.35) !important;
+}
+
+.techGroup-IBC-logo {
+  transform: scale(1.55) !important;
+}
+
 /* ===== COLUMN ANIMATIONS ===== */
 .logo-fade-out {
   animation: fadeOutSlow 0.4s ease-in-out forwards;
@@ -1649,6 +1686,7 @@
 
   .techGroup-testimonials-only-container {
     zoom: 1;
+    margin-top: -50px !important;
     max-width: 100% !important;
     padding: 0 3% !important;
   }

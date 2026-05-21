@@ -738,8 +738,8 @@
 }
 
 .uiux-intro-title {
-  font-size: 3.5rem;
-  margin-bottom: calc(25 * var(--uiux-fluid-scale));
+  font-size: 3rem;
+  margin-bottom: calc(12 * var(--uiux-fluid-scale));
   text-align: left;
 }
 
@@ -1627,6 +1627,16 @@
   background: #ffffff;
 }
 
+.uiux-curriculum-v2-desc {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  font-weight: 400;
+  color: #4b5563;
+  margin-top: calc(15 * var(--uiux-fluid-scale));
+  margin-left: calc(50 * var(--uiux-fluid-scale));
+  text-align: left;
+}
+
 .uiux-curriculum-v2-layout {
   display: flex;
   gap: calc(80 * var(--uiux-fluid-scale));
@@ -1659,7 +1669,7 @@
   color: #111;
   margin-bottom: calc(25 * var(--uiux-fluid-scale));
   letter-spacing: -2px;
-  margin-left: 2px;
+  margin-left: calc(50 * var(--uiux-fluid-scale));
   /* Synchronized left sync */
 }
 
@@ -3007,7 +3017,7 @@ section.uiux-tools-v2-section {
    ========================================================================== */
 .uiux-dark-enrollment-FIXED {
   background: #ffffff !important;
-  padding: calc(80 * var(--uiux-fluid-scale)) 0;
+  padding: 0 0 calc(80 * var(--uiux-fluid-scale));
   position: relative;
   overflow: hidden;
 }
@@ -3652,7 +3662,7 @@ section.uiux-tools-v2-section {
 /* Make sure the section doesn't cut off content */
 .uiux-dark-enrollment-FIXED {
   background: #ffffff !important;
-  padding: calc(80 * var(--uiux-fluid-scale)) 0;
+  padding: 0 0 calc(80 * var(--uiux-fluid-scale));
   position: relative;
   overflow: visible;
 }
@@ -4575,23 +4585,23 @@ section.uiux-tools-v2-section {
 
 .uiux-intro-desc {
   font-family: 'Poppins', sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: #555555;
-  line-height: 1.6;
-  margin-bottom: calc(35 * var(--uiux-fluid-scale));
+  line-height: 1.5;
+  margin-bottom: calc(20 * var(--uiux-fluid-scale));
   text-align: left;
   /* Ensure sharp alignment */
-  max-width: 90%;
+  max-width: 95%;
 }
 
 .uiux-intro-cta {
   background: #3D52D9;
   color: #ffffff;
   border: none;
-  padding: calc(16 * var(--uiux-fluid-scale)) calc(50 * var(--uiux-fluid-scale));
+  padding: calc(12 * var(--uiux-fluid-scale)) calc(40 * var(--uiux-fluid-scale));
   border-radius: calc(40 * var(--uiux-fluid-scale));
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1.0rem;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 calc(4 * var(--uiux-fluid-scale)) calc(15 * var(--uiux-fluid-scale)) rgba(61, 82, 217, 0.2);
@@ -4788,7 +4798,7 @@ section.uiux-tools-v2-section {
 }
 
 /* New Benefit Card Styling - High-Fidelity & Clean */
-.uiux-new-benefit-card {
+.uiux-dgm-new-benefit-card {
   background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: calc(12 * var(--uiux-fluid-scale));
@@ -4803,7 +4813,7 @@ section.uiux-tools-v2-section {
   position: relative;
 }
 
-.uiux-new-benefit-card:hover {
+.uiux-dgm-new-benefit-card:hover {
   transform: scale(1.05);
   /* Zoom transition as requested */
   box-shadow: 0 calc(15 * var(--uiux-fluid-scale)) calc(40 * var(--uiux-fluid-scale)) rgba(0, 0, 0, 0.12);
@@ -4811,7 +4821,7 @@ section.uiux-tools-v2-section {
   z-index: 10;
 }
 
-.uiux-new-icon {
+.uiux-dgm-new-icon {
   width: calc(45 * var(--uiux-fluid-scale));
   height: calc(30 * var(--uiux-fluid-scale));
   border-radius: calc(15 * var(--uiux-fluid-scale));
@@ -4824,7 +4834,7 @@ section.uiux-tools-v2-section {
   color: #222;
 }
 
-.uiux-new-content h3 {
+.uiux-dgm-new-content h3 {
   font-family: 'Poppins', sans-serif !important;
   font-size: 0.9rem;
   font-weight: 800;
@@ -4835,7 +4845,7 @@ section.uiux-tools-v2-section {
   /* Explicitly left-aligned */
 }
 
-.uiux-new-content p {
+.uiux-dgm-new-content p {
   font-family: 'Poppins', sans-serif !important;
   font-size: 0.78rem;
   color: #666666;
@@ -4869,7 +4879,7 @@ section.uiux-tools-v2-section {
     gap: calc(15 * var(--uiux-fluid-scale));
   }
 
-  .uiux-new-benefit-card {
+  .uiux-dgm-new-benefit-card {
     width: calc(50% - calc(10 * var(--uiux-fluid-scale)));
     max-width: calc(170 * var(--uiux-fluid-scale));
   }
@@ -4884,9 +4894,158 @@ section.uiux-tools-v2-section {
     gap: calc(15 * var(--uiux-fluid-scale));
   }
 
-  .uiux-new-benefit-card {
+  .uiux-dgm-new-benefit-card {
     width: calc(50% - calc(10 * var(--uiux-fluid-scale)));
     min-height: calc(150 * var(--uiux-fluid-scale));
+  }
+}
+
+/* ===== BENEFITS SECTION FIX (MIGRATED FROM GDC & JFS) ===== */
+
+/* Bottom Layout (Left Tall + Middle Grid + Right Tall) */
+.uiux-dgm-benefits-bottom-layout {
+  display: flex !important;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+  align-items: stretch;
+  margin-top: 15px;
+}
+
+.uiux-dgm-benefits-middle-col {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Tall variant — Industry Recognition & Lifetime Updates */
+.uiux-dgm-new-benefit-card.uiux-dgm-benefit-card-tall {
+  width: 190px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 16px;
+  /* slightly smaller padding to fit more text */
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s ease;
+}
+
+.uiux-dgm-new-benefit-card.uiux-dgm-benefit-card-tall:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+  border-color: rgba(61, 82, 217, 0.2);
+  z-index: 10;
+}
+
+/* Allow full text to show (no line-clamp) on tall cards */
+.uiux-dgm-new-benefit-card.uiux-dgm-benefit-card-tall .uiux-dgm-new-content p {
+  display: block;
+  -webkit-line-clamp: unset;
+  line-clamp: unset;
+  overflow: visible;
+  line-height: 1.4;
+}
+
+/* 1440px lock for the new row with scaled up sizes for larger ratios */
+@media (min-width: 1440px) {
+
+  .uiux-dgm-benefits-reimagined {
+    padding-top: 80px !important;
+    padding-bottom: 80px !important;
+    zoom: 1.15;
+  }
+
+  .uiux-dgm-benefits-header {
+    max-width: 1400px;
+    margin: 0 auto 70px;
+  }
+
+  .uiux-dgm-benefits-staggered {
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 25px;
+  }
+
+  .uiux-dgm-benefits-row {
+    gap: 20px;
+  }
+
+  .uiux-dgm-new-benefit-card {
+    width: 220px;
+    min-height: 160px;
+    border-radius: 14px;
+    padding: 22px;
+  }
+
+  .uiux-dgm-new-icon {
+    width: 50px;
+    height: 35px;
+    border-radius: 18px;
+    margin-bottom: 14px;
+    font-size: 1.25rem;
+  }
+
+  .uiux-dgm-new-content h3 {
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+  }
+
+  .uiux-dgm-new-content p {
+    font-size: 0.88rem;
+  }
+
+  .uiux-dgm-benefits-bottom-layout {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: stretch !important;
+    gap: 20px !important;
+    max-width: 1400px;
+    margin: 20px auto 0 !important;
+    position: relative !important;
+  }
+
+  .uiux-dgm-benefits-middle-col {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+    width: auto !important;
+  }
+
+  .uiux-dgm-new-benefit-card.uiux-dgm-benefit-card-tall {
+    width: 220px !important;
+    padding: 22px !important;
+    height: auto !important;
+    position: relative !important;
+    margin: 0 !important;
+  }
+
+  .uiux-dgm-new-benefit-card.uiux-dgm-benefit-card-tall .uiux-dgm-new-content p {
+    font-size: 0.85rem !important;
+    line-height: 1.45 !important;
+    margin-bottom: 0 !important;
+    overflow: visible !important;
+  }
+
+  .uiux-dgm-new-benefit-card.uiux-dgm-benefit-card-tall .uiux-dgm-new-content h3 {
+    font-size: 0.98rem !important;
+    margin-bottom: 8px !important;
+  }
+}
+
+/* Hide old floating cards */
+.uiux-dgm-floating-card-left,
+.uiux-dgm-floating-card-right {
+  display: none !important;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .uiux-dgm-benefits-bottom-layout {
+    flex-wrap: wrap;
   }
 }
 
@@ -5194,7 +5353,7 @@ section.uiux-tools-v2-section {
 
 /* --- Premium Testimonials Grid Section --- */
 .uiux-testi-grid-section {
-  padding: calc(100 * var(--uiux-fluid-scale)) 0;
+  padding: calc(100 * var(--uiux-fluid-scale)) 0 calc(40 * var(--uiux-fluid-scale));
   background-color: #fcfcfc;
 }
 
@@ -6534,5 +6693,26 @@ section.uiux-tools-v2-section {
   .uiux-dgm-floating-card-left,
   .uiux-dgm-floating-card-right {
     transform: translateY(calc(120px)) !important;
+  }
+
+  .uiux-dgm-benefits-reimagined {
+    zoom: 1.15;
+  }
+
+  .uiux-curriculum-v2-right {
+    zoom: calc(100vw / 1440);
+  }
+}
+
+/* Widescreen scaling calculation for Ultra-Wide monitors */
+@media (min-width: 1441px) {
+  .uiux-intro-section,
+  .uiux-curriculum-v2-section,
+  .uiux-dgm-section,
+  .uiux-testi-grid-section {
+    zoom: calc(100vw / 1440);
+  }
+  .uiux-curriculum-v2-right {
+    zoom: 1 !important;
   }
 }

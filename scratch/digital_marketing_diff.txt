@@ -1,0 +1,15 @@
+diff --git a/src/Pages/Sub Pages/DigitalMarketingCourse/DigitalMarketingCourse.jsx b/src/Pages/Sub Pages/DigitalMarketingCourse/DigitalMarketingCourse.jsx
+index d97d5cb..5f65767 100644
+--- a/src/Pages/Sub Pages/DigitalMarketingCourse/DigitalMarketingCourse.jsx	
++++ b/src/Pages/Sub Pages/DigitalMarketingCourse/DigitalMarketingCourse.jsx	
+@@ -1311,9 +1311,9 @@ const DigitaMarketingCourse = () => {
+                             </div>
+                         </div>
+                     )}
+-                    <SubFooterTwo />
+                     <BackToTop />
+                 </div>
++                <SubFooterTwo />
+             </div>
+         </>
+     );

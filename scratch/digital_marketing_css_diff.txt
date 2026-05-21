@@ -1,0 +1,15 @@
+diff --git a/src/Pages/Sub Pages/DigitalMarketingCourse/DigitalMarketingCourse.css b/src/Pages/Sub Pages/DigitalMarketingCourse/DigitalMarketingCourse.css
+index 34475be..9e7797b 100644
+--- a/src/Pages/Sub Pages/DigitalMarketingCourse/DigitalMarketingCourse.css	
++++ b/src/Pages/Sub Pages/DigitalMarketingCourse/DigitalMarketingCourse.css	
+@@ -6167,6 +6167,10 @@ section.dgm-gdc-tools-v2-section {
+     .dgm-floating-card-right {
+         transform: translateY(calc(0px)) !important;
+     }
++
++    .dgm-benefits-reimagined {
++        zoom: 1.15;
++    }
+ }
+ 
+ @media (max-width: 767px) {

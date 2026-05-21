@@ -1,6 +1,6 @@
 /* Portfolio Section Styles */
 .ps-portfolio-section {
-    padding: 100px 0;
+    padding: 100px 0 0;
     background: #ffffff;
     color: #111;
     position: relative;
@@ -20,8 +20,10 @@
 .ps-portfolio-container {
     max-width: 1200px;
     margin: 0 auto;
+    min-height: 50vh !important;
     padding: 0 2rem;
     position: relative;
+    margin-bottom: -500px !important;
     z-index: 2;
 }
 
@@ -534,7 +536,7 @@
 
 @media (max-width: 768px) {
     .ps-portfolio-section {
-        padding: 60px 0;
+        padding: 60px 0 0;
     }
 
     .ps-portfolio-container {
@@ -615,7 +617,7 @@
    ======================================== */
 .ps-constellation-section {
     position: relative;
-    padding: 40px 0 60px;
+    padding: 40px 0 0;
     background-color: #ffffff;
     overflow: hidden;
     font-family: 'Inter', sans-serif;
@@ -1079,7 +1081,7 @@
 
 @media (max-width: 768px) {
     .ps-constellation-section {
-        padding: 80px 0;
+        padding: 40px 0 20px;
     }
 
     .ps-constellation-nodes {

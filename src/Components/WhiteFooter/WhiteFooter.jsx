@@ -1,25 +1,96 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
     Facebook,
-    Twitter,
     Linkedin,
     Instagram,
     Mail,
     Phone,
     MapPin,
-    ChevronRight,
-    Monitor,
-    GraduationCap,
-    Building2,
-    PhoneCall
+    Check
 } from 'lucide-react';
 import './WhiteFooter.css';
-import logo from '../../assets/Logo.png';
+
+const XIcon = ({ size = 18 }) => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        width={size}
+        height={size}
+        style={{ display: 'inline-block', verticalAlign: 'middle' }}
+    >
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+    </svg>
+);
 
 const WhiteFooter = () => {
     const navigate = useNavigate();
     const currentYear = new Date().getFullYear();
+    
+    const [email, setEmail] = useState('');
+    const [isValid, setIsValid] = useState(true);
+    const [isLoading, setIsLoading] = useState(false);
+    const [showSuccess, setShowSuccess] = useState(false);
+
+    const validateEmail = (emailVal) => {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(emailVal);
+    };
+
+    const handleEmailChange = (e) => {
+        const val = e.target.value;
+        setEmail(val);
+        if (!isValid) {
+            setIsValid(true);
+        }
+    };
+
+    const handleSubscribe = async (e) => {
+        e.preventDefault();
+        const trimmedEmail = email.trim();
+        if (!trimmedEmail || !validateEmail(trimmedEmail)) {
+            setIsValid(false);
+            return;
+        }
+
+        setIsValid(true);
+        setIsLoading(true);
+
+        try {
+            const response = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    service_id: "service_af9xhe7",
+                    template_id: "template_uu7k2jb",
+                    user_id: "h67fs5ervDVPLSKJj",
+                    template_params: {
+                        email: trimmedEmail,
+                        to_email: trimmedEmail,
+                        user_email: trimmedEmail,
+                        subscriber_email: trimmedEmail,
+                        reply_to: "engloray@gmail.com"
+                    }
+                })
+            });
+
+            if (response.ok) {
+                setShowSuccess(true);
+                setEmail('');
+            } else {
+                console.error("Subscription failed:", await response.text());
+                alert("Subscription failed. Please try again later.");
+            }
+        } catch (error) {
+            console.error("Subscription error:", error);
+            alert("An error occurred. Please check your connection and try again.");
+        } finally {
+            setIsLoading(false);
+        }
+    };
 
     const handleLinkClick = (path) => {
         navigate(path);
@@ -33,7 +104,7 @@ const WhiteFooter = () => {
 
     const socialLinks = [
         { icon: <Facebook size={18} />, url: 'https://www.facebook.com/profile.php?id=61583616114977', label: 'Facebook' },
-        { icon: <Twitter size={18} />, url: 'https://x.com/engloraytech', label: 'Twitter' },
+        { icon: <XIcon size={18} />, url: 'https://x.com/engloraytech', label: 'X (Twitter)' },
         { icon: <Linkedin size={18} />, url: 'https://www.linkedin.com/in/engloray-group-7534b6391/', label: 'LinkedIn' },
         { icon: <Instagram size={18} />, url: 'https://www.instagram.com/engloray/', label: 'Instagram' }
     ];
@@ -88,9 +159,8 @@ const WhiteFooter = () => {
         {
             category: "LEARNING",
             links: [
-                { name: "All Programs", path: "/allProgramsPage" },
-                { name: "Mentorship Learning", path: "/mentorshipLearningPage" },
-                { name: "Project Based Learning", path: "/projectBasedLearningPage" }
+                { name: "Mentorship", path: "/mentorshipLearningPage" },
+                { name: "Project Based", path: "/projectBasedLearningPage" }
             ]
         },
         {
@@ -106,7 +176,7 @@ const WhiteFooter = () => {
             links: [
                 { name: "Case Studies", path: "/worksCaseStudiesPage" },
                 { name: "Client Projects", path: "/worksClientProjectsPage" },
-                { name: "Tech Group Projects", path: "/allProjectsPage" }
+                { name: "Tech Group", path: "/allProjectsPage" }
             ]
         },
         {
@@ -120,113 +190,195 @@ const WhiteFooter = () => {
     ];
 
     return (
-        <footer className="wf-footer">
-            <div className="wf-container">
-                {/* Top Section */}
-                <div className="wf-top-grid">
-                    {/* Brand Column */}
-                    <div className="wf-brand-col">
+        <footer className="wf-footer-new">
+            <div className="wf-container-new">
+
+                {/* Left Card */}
+                <div className="wf-card-left">
+                    <div className="wf-left-top">
                         <div className="wf-logo-area" onClick={() => handleLinkClick('/')}>
-                            <span className="wf-brand-name">ENGLORAY</span>
+                            {/* <img src={logo} alt="ENGLORAY" className="wf-logo" /> */}
+                            <span className="wf-brand-name">EGR Family</span>
                         </div>
+
                         <p className="wf-brand-description">
-                            Transforming businesses and empowering individuals through innovative digital solutions and education.
+                            Transforming businesses and empowering individuals,<br />
+                            <span style={{ color: '#8b8b8b' }}>through innovative digital solutions.</span>
                         </p>
-                        <div className="wf-socials">
-                            {socialLinks.map((social, idx) => (
-                                <a
-                                    key={idx}
-                                    href={social.url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="wf-social-link"
-                                    aria-label={social.label}
-                                >
-                                    {social.icon}
-                                </a>
+
+                        <div className="wf-socials-row">
+                            <span className="wf-stay-touch">Stay in touch!</span>
+                            <div className="wf-socials">
+                                {socialLinks.map((social, idx) => (
+                                    <a
+                                        key={idx}
+                                        href={social.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="wf-social-link"
+                                        aria-label={social.label}
+                                    >
+                                        {social.icon}
+                                    </a>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="wf-left-middle">
+                        <div className="wf-glass-card">
+                            <p className="wf-vision-tagline">
+                                Pioneering digital excellence through synergistic technology solutions and professional incubation.
+                            </p>
+                            <div className="wf-pillar-item">
+                                <h4 className="wf-pillar-title">Digital Engineering</h4>
+                                <p className="wf-pillar-desc">Architecting robust, scalable, and secure software ecosystems that power enterprise growth.</p>
+                            </div>
+                            <div className="wf-pillar-item">
+                                <h4 className="wf-pillar-title">Talent Incubation</h4>
+                                <p className="wf-pillar-desc">Cultivating next-generation technology leaders through high-impact professional programs.</p>
+                            </div>
+                            <div className="wf-pillar-item">
+                                <h4 className="wf-pillar-title">Creative Strategy</h4>
+                                <p className="wf-pillar-desc">Designing immersive brand experiences and intuitive user interfaces that captivate audiences.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="wf-left-bottom-new">
+                        <p className="wf-left-motto">Pioneering Innovation. Cultivating Excellence.</p>
+                    </div>
+                </div>
+
+                {/* Right Card */}
+                <div className="wf-card-right">
+
+                    {/* Top Section: Links Grid */}
+                    <div className="wf-links-wrapper">
+                        <div className="wf-links-grid-main">
+                            {footerColumns.map((col, idx) => (
+                                <div key={`col-${idx}`} className="wf-nav-col">
+                                    <h4 className="wf-col-title">{col.title}</h4>
+                                    <ul className="wf-link-list">
+                                        {col.links.map((link, lIdx) => (
+                                            <li key={lIdx}>
+                                                <button onClick={() => handleLinkClick(link.path)} className="wf-link">
+                                                    {link.name}
+                                                </button>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            ))}
+                            {/* Contact Column mapped into the same grid style */}
+                            <div className="wf-nav-col">
+                                <h4 className="wf-col-title" style={{ whiteSpace: 'nowrap', display: 'inline-block', background: '#111827', color: '#ffffff', padding: '6px 16px', borderRadius: '8px', fontSize: '1.1rem', letterSpacing: '1.5px' }}>CONTACT INFO</h4>
+                                <ul className="wf-link-list">
+                                    <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                        <Mail size={16} style={{ color: '#111827', flexShrink: 0 }} />
+                                        <button className="wf-link" style={{ cursor: 'default' }}>engloray@gmail.com</button>
+                                    </li>
+                                    <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                        <Phone size={16} style={{ color: '#111827', flexShrink: 0 }} />
+                                        <button onClick={() => handleWhatsAppClick('6381759909')} className="wf-link">+91 6381759909</button>
+                                    </li>
+                                    <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                        <Phone size={16} style={{ color: '#111827', flexShrink: 0 }} />
+                                        <button onClick={() => handleWhatsAppClick('6369945920')} className="wf-link">+91 6369945920</button>
+                                    </li>
+                                    <li style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', marginTop: '4px' }}>
+                                        <MapPin size={16} style={{ color: '#111827', flexShrink: 0, marginTop: '3px' }} />
+                                        <span className="wf-link" style={{ cursor: 'default', fontWeight: '600', lineHeight: '1.4' }}>
+                                            Madurai, Tamil Nadu
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div className="wf-divider-subtle"></div>
+
+                        <div className="wf-links-grid-other">
+                            {otherLinksSections.map((section, idx) => (
+                                <div key={idx} className="wf-nav-col">
+                                    <h5 className="wf-col-title-sub">{section.category}</h5>
+                                    <ul className="wf-link-list">
+                                        {section.links.map((link, lIdx) => (
+                                            <li key={lIdx}>
+                                                <button onClick={() => handleLinkClick(link.path)} className="wf-link">
+                                                    {link.name}
+                                                </button>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
                             ))}
                         </div>
                     </div>
 
-                    {/* Navigation Columns */}
-                    {footerColumns.map((col, idx) => (
-                        <div key={idx} className="wf-nav-col">
-                            <h4 className="wf-col-title">{col.title}</h4>
-                            <ul className="wf-link-list">
-                                {col.links.map((link, lIdx) => (
-                                    <li key={lIdx}>
-                                        <button onClick={() => handleLinkClick(link.path)} className="wf-link">
-                                            {link.name}
-                                        </button>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    ))}
-
-                    {/* Contact Column */}
-                    <div className="wf-nav-col wf-contact-col">
-                        <h4 className="wf-col-title">CONTACT INFO</h4>
-                        <div className="wf-contact-info">
-                            <div className="wf-contact-item">
-                                <div className="wf-icon-box"><Mail size={16} /></div>
-                                <span className="wf-contact-text">engloray@gmail.com</span>
-                            </div>
-                            <div className="wf-contact-item clickable" onClick={() => handleWhatsAppClick('6381759909')}>
-                                <div className="wf-icon-box"><Phone size={16} /></div>
-                                <div className="wf-phone-wrapper">
-                                    <span className="wf-contact-text">+91 6381759909</span>
-                                </div>
-                            </div>
-                            <div className="wf-contact-item clickable" onClick={() => handleWhatsAppClick('6369945920')}>
-                                <div className="wf-icon-box" style={{ opacity: 0 }}><Phone size={16} /></div>
-                                <div className="wf-phone-wrapper">
-                                    <span className="wf-contact-text">+91 6369945920</span>
-                                </div>
-                            </div>
-                            <div className="wf-contact-item">
-                                <div className="wf-icon-box"><MapPin size={16} /></div>
-                                <span className="wf-contact-text">Madurai, TamilNadu, INDIA</span>
+                    {/* Bottom Section: Copyright & Newsletter */}
+                    <div className="wf-right-bottom">
+                        <div className="wf-legal">
+                            <p className="wf-copyright">© {currentYear} ENGLORAY. All rights reserved.</p>
+                            <div className="wf-legal-links">
+                                <button onClick={() => handleLinkClick('/privacyPolicyPage')}>Privacy</button>
+                                <span>·</span>
+                                <button onClick={() => handleLinkClick('/termsAndServicesPage')}>Terms</button>
                             </div>
                         </div>
-                    </div>
-                </div>
 
-                <hr className="wf-divider" />
-
-                {/* Other Links Section */}
-                <div className="wf-other-links">
-                    <h3 className="wf-other-title">OTHER LINKS</h3>
-                    <div className="wf-other-grid">
-                        {otherLinksSections.map((section, idx) => (
-                            <div key={idx} className="wf-other-col">
-                                <h5 className="wf-other-cat">{section.category}</h5>
-                                <ul className="wf-other-list">
-                                    {section.links.map((link, lIdx) => (
-                                        <li key={lIdx}>
-                                            <button onClick={() => handleLinkClick(link.path)} className="wf-other-link">
-                                                {link.name}
-                                            </button>
-                                        </li>
-                                    ))}
-                                </ul>
+                        <div className="wf-newsletter">
+                            <div className="wf-nl-text">
+                                <span style={{ color: '#8b8b8b' }}>Tech moves fast.</span><br />
+                                <span style={{ fontWeight: 600, color: '#000' }}>Stay ahead with Engloray.</span>
                             </div>
-                        ))}
+                            <div className="wf-nl-row">
+                                <form onSubmit={handleSubscribe} className={`wf-nl-form ${!isValid ? 'is-invalid' : ''}`}>
+                                    <input 
+                                        type="email" 
+                                        placeholder="Enter email address" 
+                                        className={`wf-nl-input ${!isValid ? 'is-invalid' : ''}`}
+                                        value={email}
+                                        onChange={handleEmailChange}
+                                        disabled={isLoading}
+                                    />
+                                </form>
+                                <button 
+                                    type="button"
+                                    className="wf-nl-btn"
+                                    disabled={isLoading}
+                                    onClick={handleSubscribe}
+                                >
+                                    {isLoading ? 'Subscribing...' : 'Subscribe'}
+                                </button>
+                            </div>
+                            {!isValid && (
+                                <p className="wf-nl-error">
+                                    Please enter a valid email address.
+                                </p>
+                            )}
+                        </div>
                     </div>
-                </div>
                 </div>
 
-            {/* Bottom Bar - Red Full-Width Banner */}
-            <div className="wf-bottom-bar">
-                <div className="wf-bottom-container">
-                    <p className="wf-copyright">© {currentYear} ENGLORAY. All rights reserved.</p>
-                    <div className="wf-legal-links">
-                        <button onClick={() => handleLinkClick('/privacyPolicyPage')}>Privacy Policy</button>
-                        <button onClick={() => handleLinkClick('/termsAndServicesPage')}>Terms of Service</button>
-                        <button onClick={() => handleLinkClick('/cookiesPolicyPage')}>Cookie Policy</button>
-                    </div>
-                </div>
             </div>
+
+            {showSuccess && (
+                <div className="wf-success-overlay" onClick={() => setShowSuccess(false)}>
+                    <div className="wf-success-modal" onClick={(e) => e.stopPropagation()}>
+                        <div className="wf-success-icon-box">
+                            <Check size={40} strokeWidth={3} />
+                        </div>
+                        <h3 className="wf-success-title">Success!</h3>
+                        <p className="wf-success-desc">
+                            Thanks for subscribing! A confirmation email has been successfully sent to your address.
+                        </p>
+                        <button className="wf-success-btn" onClick={() => setShowSuccess(false)}>
+                            Done
+                        </button>
+                    </div>
+                </div>
+            )}
         </footer>
     );
 };

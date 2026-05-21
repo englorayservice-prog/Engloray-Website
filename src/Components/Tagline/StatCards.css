@@ -71,7 +71,7 @@
 
 .bphs-scrolling-image-track {
     display: inline-flex;
-    gap: 100px;
+    gap: 50px;
 
     /* 3D Preservation */
     transform-style: preserve-3d;

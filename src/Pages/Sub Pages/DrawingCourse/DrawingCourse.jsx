@@ -129,57 +129,57 @@ const DrawingCourse = () => {
 
     const allTestimonials = [
         {
-            name: "Suresh P",
-            role: "Digital Marketing Executive",
-            text: "Gained confidence working on real product flows. What felt complex before is now structured and clear—from research to wireframes to high-fidelity prototypes and developer handoff.",
+            name: "Karan S",
+            role: "Parent of Aarav (Age 8)",
+            text: "My son used to struggle with shapes, but these live drawing sessions made everything so simple. His shading skills have improved dramatically, and he looks forward to art class every single week!",
             avatar: avatarM1
         },
         {
             name: "Priya R",
-            role: "Digital Marketing Executive",
-            text: "The step-by-step approach made UI design feel simple. I learned spacing, typography, components, and design systems in a way that helped me build clean, professional screens fast.",
+            role: "Parent of Diya (Age 10)",
+            text: "The step-by-step approach made watercolor painting feel easy. Diya has built a wonderful collection of landscape drawings. The encouraging feedback has boosted her creative confidence tremendously.",
             avatar: avatarF1
         },
         {
             name: "Rahul M",
-            role: "Performance Marketer",
-            text: "The curriculum is perfectly aligned with modern product teams. I improved my UX thinking, created case studies, and learned stakeholder-ready presentations for real-world projects.",
+            role: "High School Art Student",
+            text: "The perspective drawing and human anatomy lessons were exactly what I needed. The instructor's direct feedback helped me refine my sketches and build an impressive portfolio for my art school application.",
             avatar: avatarM3
         },
         {
             name: "Anita K",
-            role: "Freelancer",
-            text: "I started freelancing with confidence after learning discovery, client briefs, wireframes, and prototyping. The mentorship helped me communicate design decisions with clarity and impact.",
+            role: "Parent of Kabir (Age 7)",
+            text: "I am amazed by how much my child has learned. From basic line practice to realistic animal sketching, the structured modules are incredibly engaging and perfect for young minds.",
             avatar: avatarF2
         },
         {
             name: "Vikas S",
-            role: "Freelancer",
-            text: "From user research to usability testing, the process finally clicked. I learned how to validate ideas, iterate quickly, and build experiences that actually solve user problems.",
+            role: "Parent of Arjun (Age 9)",
+            text: "The teacher's personalized attention is outstanding. Arjun has mastered color blending using oil pastels, and his drawings show so much depth and contrast now. It is a fantastic program!",
             avatar: avatarM2
         },
         {
             name: "Sneha T",
-            role: "Performance Marketer",
-            text: "Learning design systems and components changed everything. I can now build consistent UI, maintain scalability, and deliver pixel-perfect screens with fast iteration cycles.",
+            role: "Hobbyist Painter",
+            text: "Learning advanced shading and perspective has completely changed how I paint. The lessons are extremely practical, and the lifetime access lets me practice and perfect each technique at my own pace.",
             avatar: avatarF3
         },
         {
             name: "Rohan D",
-            role: "Digital Marketing Executive",
-            text: "The focus on real product case studies helped me create a strong portfolio. The project reviews made my work polished and ready for interviews with top product companies.",
+            role: "Parent of Vihaan (Age 6)",
+            text: "This program has been wonderful for Vihaan's fine motor skills and creativity. He proudly shows everyone his drawing book filled with colorful cartoon characters and beautiful sceneries.",
             avatar: avatarM3
         },
         {
             name: "Kavya J",
-            role: "Performance Marketer",
-            text: "I finally understand how to run interviews, synthesize insights, and turn research into meaningful design decisions. The frameworks and practice sessions were incredibly useful.",
+            role: "Parent of Meera (Age 11)",
+            text: "Meera has learned to express her imagination beautifully through theme-based drawings. The classes are lively, safe, and highly encouraging, making it her absolute favorite activity.",
             avatar: avatarF3
         },
         {
             name: "Manoj V",
-            role: "Freelancer",
-            text: "The prototyping and interaction lessons made my work feel alive. I learned micro-interactions, motion intent, and how to present flows in a way developers can implement easily.",
+            role: "Art Enthusiast",
+            text: "The sketching and bird wing details taught in the third month are highly professional. The step-by-step videos and interactive lessons have greatly refined my line weight and overall sketching quality.",
             avatar: avatarM1
         }
     ];
@@ -235,34 +235,36 @@ const DrawingCourse = () => {
         {
             icon: <FontAwesomeIcon icon={faBullseye} />,
             title: "Drawing Fundamentals",
-            desc: "Learn the basics of sketching, line control, and shapes. Understand proportions, hand movement, and how to build a strong foundation for all types of drawing."
+            desc: "Master the essential foundations of sketching, pencil grips, and line weight control. Learn how to accurately measure proportions, draw basic 2D and 3D shapes, and build structural accuracy in every sketch. Gain complete control over your hand movements, master smooth pencil transitions, and learn to sketch complex real-world objects from sight with perfect symmetry and professional-grade accuracy."
         },
         {
             icon: <FontAwesomeIcon icon={faRulerCombined} />,
             title: "Shading & Light Mastery",
-            desc: "Master light, shadow, and depth using different shading techniques. Learn how to create realistic forms, textures, and volume in your drawings."
+            desc: "Understand how light behaves on various surfaces. Master hatching, cross-hatching, stippling, and smooth blending techniques to create realistic forms, render rich textures, and add depth and volume to your artworks. Learn how to identify core shadows, highlights, cast shadows, and midtones to transform simple flat shapes into hyper-realistic three-dimensional drawings."
         },
         {
             icon: <FontAwesomeIcon icon={faPaintBrush} />,
             title: "Perspective & Composition",
-            desc: "Understand 1-point, 2-point, and 3-point perspective. Learn how to compose scenes, balance elements, and create visually appealing artwork."
+            desc: "Master one-point, two-point, and three-point perspective to draw realistic environments and structural layouts. Learn key composition principles like the rule of thirds, focal points, and dynamic balance. Understand how to lead the viewer's eye through your artwork, create dramatic visual depth, and construct immersive architectural and natural landscapes with professional spatial realism."
         },
         {
             icon: <FontAwesomeIcon icon={faMobileAlt} />,
             title: "Human Anatomy & Portraits",
-            desc: "Master keyword research, on-page SEO, and technical optimization. Learn how to improve search rankings, drive organic traffic, and create content that attracts and converts users."
+            desc: "Learn the anatomy of the human face and body. Master step-by-step portrait construction, capturing facial features, understanding muscle structures, and drawing realistic figures with correct proportions. Develop a deep understanding of facial expression dynamics, skeletal structures, gesture drawing, and human motion to create expressive, life-like character drawings and anatomically precise figurative art."
         },
         {
             icon: <FontAwesomeIcon icon={faBriefcase} />,
             title: "Creative Illustration & Style",
-            desc: "Explore character design, creative sketching, and personal art styles. Learn how to express ideas visually and develop a unique artistic identity."
+            desc: "Develop your unique artistic voice and personal style. Explore creative character design, stylized illustration, cartooning, and visual storytelling techniques to bring your imaginative ideas to life on paper. Master the art of conceptualizing unique themes, designing expressive mascots, and mixing diverse visual elements to create highly original, stylized illustrations that tell compelling stories."
         },
         {
             icon: <FontAwesomeIcon icon={faStar} />,
             title: "Advanced Artwork & Portfolio",
-            desc: "Create detailed artworks and final pieces for your portfolio. Learn presentation techniques, finishing touches, and how to showcase your work professionally."
+            desc: "Combine all your skills to create stunning, highly detailed final masterpieces. Learn how to refine your pieces with professional finishing touches and organize your artwork into a premium, showcase-ready portfolio. Master professional presentation strategies, high-quality scanning and cropping methods, and curation techniques to display your artistic milestones and creative achievements to prospective clients, schools, or galleries."
         }
     ];
+
+
 
     // New UI/UX-themed curriculum backgrounds (do not reuse GD assets)
     const sixMonthCurriculum = [
@@ -575,8 +577,17 @@ const DrawingCourse = () => {
                                         Master Advanced <br /> Drawing in 6 Months
                                     </h2>
                                     <p className="dcp-intro-desc">
-                                        The Advanced Drawing Classes are designed for students who have Mastered the basics and are ready to develop professional-Skill level
+                                        The Advanced Drawing Classes are designed for students who have Mastered the basics and are ready to develop professional-Skill level.
                                     </p>
+                                    <p className="dcp-intro-desc" style={{ marginTop: '6px', marginBottom: '4px', fontWeight: '600', color: '#222' }}>
+                                        What makes this program different:
+                                    </p>
+                                    <ul className="dcp-intro-desc" style={{ paddingLeft: '20px', listStyleType: 'disc', margin: '0 0 12px' }}>
+                                        <li style={{ marginBottom: '4px' }}><strong>Hands-on Sceneries:</strong> Create beautiful landscape and outdoor sceneries step-by-step.</li>
+                                        <li style={{ marginBottom: '4px' }}><strong>Step-by-Step Guidance:</strong> Personalized guidance tailored to each student's pace.</li>
+                                        <li style={{ marginBottom: '4px' }}><strong>Medium Diversity:</strong> Master crayons, oil pastels, color pencils, and watercolors.</li>
+                                        <li style={{ marginBottom: '0px' }}><strong>Portfolio Ready:</strong> Build an impressive collection of finished art pieces to showcase.</li>
+                                    </ul>
                                     <button className="dcp-intro-cta" onClick={scrollToForm}>
                                         Contact
                                     </button>
@@ -661,18 +672,42 @@ const DrawingCourse = () => {
                                         4-Month Course <br /> Breakdown
                                     </h2>
                                     <p className="dcp-curriculum-v2-desc">
-                                        A structured digital marketing journey built for real-world success.
-                                        Master performance marketing, SEO, content strategy, and analytics to create high-impact campaigns in 6 intensive months.
+                                        A structured drawing journey designed to nurture creativity and artistic skill. Master shading, coloring, landscape painting, and portfolio creation in 4 intensive months.
                                     </p>
 
                                     <div className="dcp-curriculum-v2-stats">
                                         <div className="dcp-stat-item">
                                             <span className="dcp-stat-num">50+</span>
-                                            <span className="dcp-stat-label">Real Campaigns</span>
+                                            <span className="dcp-stat-label">Art Projects</span>
                                         </div>
                                         <div className="dcp-stat-item">
                                             <span className="dcp-stat-num">100%</span>
                                             <span className="dcp-stat-label">Practical</span>
+                                        </div>
+                                    </div>
+
+                                    <p className="dcp-curriculum-v2-desc" style={{ marginTop: '20px', color: '#5b6470', fontSize: '0.98rem', lineHeight: '1.6' }}>
+                                        Every week features interactive live sessions where students draw along with expert artists. We guide each child from absolute basics to advanced visual storytelling, helping them build unique creative confidence.
+                                    </p>
+                                    <p className="dcp-curriculum-v2-desc" style={{ marginTop: '20px', marginBottom: '12px', fontWeight: '700', color: '#111' }}>
+                                        <strong>Key milestones on your path to artistic mastery:</strong>
+                                    </p>
+                                    <div className="dcp-curriculum-v2-desc" style={{ marginTop: '10px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                                        <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '0.96rem', lineHeight: '1.45', color: '#5b6470' }}>
+                                            <FontAwesomeIcon icon={faCheck} style={{ color: '#3D52D9', marginTop: '3px', flexShrink: 0, fontSize: '0.85rem' }} />
+                                            <span><strong>Month 1:</strong> Crayon coloring, pencil shading basics, and color combinations.</span>
+                                        </div>
+                                        <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '0.96rem', lineHeight: '1.45', color: '#5b6470' }}>
+                                            <FontAwesomeIcon icon={faCheck} style={{ color: '#3D52D9', marginTop: '3px', flexShrink: 0, fontSize: '0.85rem' }} />
+                                            <span><strong>Month 2:</strong> Imagination drawing, 3D shading, and landscape sceneries.</span>
+                                        </div>
+                                        <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '0.96rem', lineHeight: '1.45', color: '#5b6470' }}>
+                                            <FontAwesomeIcon icon={faCheck} style={{ color: '#3D52D9', marginTop: '3px', flexShrink: 0, fontSize: '0.85rem' }} />
+                                            <span><strong>Month 3:</strong> Advanced coloring, realistic animal sketching, and theme drawing.</span>
+                                        </div>
+                                        <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '0.96rem', lineHeight: '1.45', color: '#5b6470' }}>
+                                            <FontAwesomeIcon icon={faCheck} style={{ color: '#3D52D9', marginTop: '3px', flexShrink: 0, fontSize: '0.85rem' }} />
+                                            <span><strong>Month 4:</strong> Watercolors, color harmony, and final portfolio exhibition.</span>
                                         </div>
                                     </div>
                                 </div>
@@ -797,89 +832,70 @@ const DrawingCourse = () => {
                                     ))}
                                 </div>
 
-                                {/* Row 2: 3 Cards */}
-                                <div className="dcp-benefits-row dcp-row-3">
-                                    {benefits.slice(5, 8).map((benefit, index) => (
-                                        <div key={index} className="dcp-new-benefit-card">
-                                            {(() => {
-                                                const absoluteIndex = 5 + index;
-                                                const color = benefitIconPalette[absoluteIndex] || "#BAE6FD";
-                                                return (
-                                                    <div className="dcp-new-icon" style={{ background: hexToRgba(color, 0.18), color }}>
-                                                        {benefit.icon}
-                                                    </div>
-                                                );
-                                            })()}
-                                            <div className="dcp-new-content">
-                                                <h3>{benefit.title}</h3>
-                                                <p>{benefit.description.substring(0, 70)}...</p>
-                                            </div>
+                                <div className="dcp-benefits-bottom-layout">
+                                    <div className="dcp-new-benefit-card dcp-benefit-card-tall">
+                                        <div className="dcp-new-icon" style={{ background: hexToRgba("#BAE6FD", 0.18), color: "#BAE6FD" }}>
+                                            <FontAwesomeIcon icon={faStar} />
                                         </div>
-                                    ))}
-                                </div>
-
-                                {/* Row 3: 2 Original Cards */}
-                                <div className="dcp-benefits-row dcp-row-2" style={{ gap: "50px" }}>
-                                    {benefits.slice(8, 10).map((benefit, index) => (
-                                        <div key={index} className="dcp-new-benefit-card">
-                                            {(() => {
-                                                const absoluteIndex = 8 + index;
-                                                const color = benefitIconPalette[absoluteIndex] || "#BAE6FD";
-                                                return (
-                                                    <div className="dcp-new-icon" style={{ background: hexToRgba(color, 0.18), color }}>
-                                                        {benefit.icon}
-                                                    </div>
-                                                );
-                                            })()}
-                                            <div className="dcp-new-content">
-                                                <h3>{benefit.title}</h3>
-                                                <p>{benefit.description.substring(0, 70)}...</p>
-                                            </div>
+                                        <div className="dcp-new-content">
+                                            <h3>Creative Milestones</h3>
+                                            <p>Celebrate your child's artistic journey with certificates of completion that highlight their new creative skills. Each beautiful certificate rewards their hard work and boosts their unique imagination.</p>
                                         </div>
-                                    ))}
-                                </div>
-                            </div>
+                                    </div>
 
-                            {/* Floating Cards - Positioned Independently */}
-                            {/* Left Bottom Floating Card */}
-                            {/* You can manually change the left, top, bottom, and width values here to reposition or resize the card */}
-                            <div
-                                className="dcp-floating-benefit-card dcp-floating-card-left"
-                                style={{
-                                    left: "calc(50% - 505px)",
-                                    top: "320px",
-                                    bottom: "0px",
-                                    width: "190px",
-                                    height: "auto",
-                                    justifyContent: "center",
-                                    padding: "18px"
-                                }}
-                            >
-                                <div className="dcp-new-icon" style={{ background: hexToRgba("#BAE6FD", 0.18), color: "#BAE6FD" }}>
-                                    <FontAwesomeIcon icon={faStar} />
-                                </div>
-                                <div className="dcp-new-content" >
-                                    <h3>Creative Milestones</h3>
-                                    <p>Celebrate your child's artistic journey with certificates of completion that highlight their new creative skills. Each beautiful certificate rewards their hard work and boosts their unique imagination.</p>
-                                </div>
-                            </div>
+                                    <div className="dcp-benefits-middle-col">
+                                        {/* Row 2: 3 Cards */}
+                                        <div className="dcp-benefits-row dcp-row-3">
+                                            {benefits.slice(5, 8).map((benefit, index) => (
+                                                <div key={index} className="dcp-new-benefit-card">
+                                                    {(() => {
+                                                        const absoluteIndex = 5 + index;
+                                                        const color = benefitIconPalette[absoluteIndex] || "#BAE6FD";
+                                                        return (
+                                                            <div className="dcp-new-icon" style={{ background: hexToRgba(color, 0.18), color }}>
+                                                                {benefit.icon}
+                                                            </div>
+                                                        );
+                                                    })()}
+                                                    <div className="dcp-new-content">
+                                                        <h3>{benefit.title}</h3>
+                                                        <p>{benefit.description.substring(0, 70)}...</p>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
 
-                            {/* Right Bottom Floating Card */}
-                            <div className="dcp-floating-benefit-card dcp-floating-card-right" style={{
-                                right: "calc(50% - 505px)",
-                                top: "320px",
-                                bottom: "0px",
-                                width: "190px",
-                                height: "auto",
-                                justifyContent: "center",
-                                padding: "18px"
-                            }}>
-                                <div className="dcp-new-icon" style={{ background: hexToRgba("#C4B5FD", 0.18), color: "#C4B5FD" }}>
-                                    <FontAwesomeIcon icon={faTrophy} />
-                                </div>
-                                <div className="dcp-new-content">
-                                    <h3>Endless Creativity</h3>
-                                    <p>Enjoy unlimited free access to our growing library of fun drawing lessons, keeping your little artist constantly inspired. We regularly add new exciting modules and engaging projects so they always have fresh creative challenges.</p>
+                                        {/* Row 3: 2 Original Cards */}
+                                        <div className="dcp-benefits-row dcp-row-2">
+                                            {benefits.slice(8, 10).map((benefit, index) => (
+                                                <div key={index} className="dcp-new-benefit-card">
+                                                    {(() => {
+                                                        const absoluteIndex = 8 + index;
+                                                        const color = benefitIconPalette[absoluteIndex] || "#BAE6FD";
+                                                        return (
+                                                            <div className="dcp-new-icon" style={{ background: hexToRgba(color, 0.18), color }}>
+                                                                {benefit.icon}
+                                                            </div>
+                                                        );
+                                                    })()}
+                                                    <div className="dcp-new-content">
+                                                        <h3>{benefit.title}</h3>
+                                                        <p>{benefit.description.substring(0, 70)}...</p>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+
+                                    <div className="dcp-new-benefit-card dcp-benefit-card-tall">
+                                        <div className="dcp-new-icon" style={{ background: hexToRgba("#C4B5FD", 0.18), color: "#C4B5FD" }}>
+                                            <FontAwesomeIcon icon={faTrophy} />
+                                        </div>
+                                        <div className="dcp-new-content">
+                                            <h3>Endless Creativity</h3>
+                                            <p>Enjoy unlimited free access to our growing library of fun drawing lessons, keeping your little artist constantly inspired. We regularly add new exciting modules and engaging projects so they always have fresh creative challenges.</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -991,8 +1007,19 @@ const DrawingCourse = () => {
                                 <div className="dcp-testi-grid-left">
                                     <h2 className="dcp-testi-main-title">Experience Learning Like Never Before</h2>
                                     <p className="dcp-testi-subtitle">
-                                        Discover personalized, practical learning that prepares you for real product teams. Read stories from learners who transformed their Marketing careers with our mentorship.
+                                        Discover personalized, practical learning that prepares you for creative excellence. Read stories from our young artists who transformed their drawing skills and unleashed their unique imaginations under our supportive guidance.
+                                        <br /><br />
+                                        Our encouraging environment ensures kids learn with joy. Engage in regular weekly challenges, positive peer reviews, and interactive show-and-tell sessions. We bridge the gap between simple doodles and finished, beautiful artwork.
                                     </p>
+                                    <p className="dcp-testi-subtitle" style={{ marginTop: '15px', marginBottom: '10px', fontWeight: '600' }}>
+                                        Why our students succeed:
+                                    </p>
+                                    <ul className="dcp-testi-subtitle" style={{ paddingLeft: '20px', listStyleType: 'disc', margin: '0', textAlign: 'left' }}>
+                                        <li style={{ marginBottom: '8px' }}><strong>Guided Sketch Sprints:</strong> Learn structured line and shape building.</li>
+                                        <li style={{ marginBottom: '8px' }}><strong>Positive Critiques:</strong> Receive gentle, encouraging feedback from artists.</li>
+                                        <li style={{ marginBottom: '8px' }}><strong>Theme Adventures:</strong> Weekly drawing missions to inspire creativity.</li>
+                                        <li><strong>Art Exhibition:</strong> Display finished masterpieces in our community gallery.</li>
+                                    </ul>
                                 </div>
 
                                 <div className="dcp-testi-grid-right">
@@ -1078,6 +1105,20 @@ const DrawingCourse = () => {
                                         <h2 className="dcp-banner-title">
                                             Start Your Drawing <br /> Journey Today
                                         </h2>
+
+                                        <p style={{
+                                            color: '#555',
+                                            fontSize: '1.05rem',
+                                            lineHeight: '1.7',
+                                            maxWidth: '600px',
+                                            margin: '0 auto 20px',
+                                            fontWeight: '500',
+                                            textAlign: 'center'
+                                        }}>
+                                            Join thousands of happy young artists who have discovered their creative potential through our Advanced Drawing Mastery Program.
+                                            Whether your child is taking their first steps in sketching basic shapes or aiming to master advanced watercolor compositions, our structured 4-month syllabus
+                                            delivers everything they need—from pencil shading techniques to building an impressive, professional art portfolio.
+                                        </p>
 
                                         <div className="dcp-banner-ratings">
                                             <div className="dcp-rating-box">

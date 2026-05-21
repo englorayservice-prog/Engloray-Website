@@ -704,11 +704,17 @@
 }
 
 .jfs-intro-title {
-  font-size: 3.5rem;
-  margin-bottom: calc(25 * var(--jfs-fluid-scale));
+  font-size: 3rem;
+  margin-bottom: calc(12 * var(--jfs-fluid-scale));
   text-align: left;
 }
 
+
+@media (min-width: 1441px) {
+  .jfs-dgm-section {
+    zoom: calc(100vw / 1440);
+  }
+}
 
 /* Course Outcomes - Numbered Grid Section */
 .jfs-dgm-outcomes-numbered {
@@ -1555,6 +1561,22 @@
   background: #ffffff;
 }
 
+@media (min-width: 1441px) {
+  .jfs-curriculum-v2-section {
+    zoom: calc(100vw / 1440);
+  }
+}
+
+.jfs-curriculum-v2-desc {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  font-weight: 400;
+  color: #4b5563;
+  margin-top: calc(15 * var(--jfs-fluid-scale));
+  margin-left: calc(50 * var(--jfs-fluid-scale));
+  text-align: left;
+}
+
 .jfs-curriculum-v2-layout {
   display: flex;
   gap: calc(80 * var(--jfs-fluid-scale));
@@ -1587,7 +1609,7 @@
   color: #111;
   margin-bottom: calc(25 * var(--jfs-fluid-scale));
   letter-spacing: -2px;
-  margin-left: 2px;
+  margin-left: calc(50 * var(--jfs-fluid-scale));
   /* Synchronized left sync */
 }
 
@@ -2936,7 +2958,7 @@ section.jfs-tools-v2-section {
    ========================================================================== */
 .jfs-dark-enrollment-FIXED {
   background: #ffffff !important;
-  padding: calc(80 * var(--jfs-fluid-scale)) 0;
+  padding: 0 0 calc(80 * var(--jfs-fluid-scale));
   position: relative;
   overflow: hidden;
 }
@@ -3581,7 +3603,7 @@ section.jfs-tools-v2-section {
 /* Make sure the section doesn't cut off content */
 .jfs-dark-enrollment-FIXED {
   background: #ffffff !important;
-  padding: calc(80 * var(--jfs-fluid-scale)) 0;
+  padding: 0 0 calc(80 * var(--jfs-fluid-scale));
   position: relative;
   overflow: visible;
 }
@@ -4489,6 +4511,12 @@ section.jfs-tools-v2-section {
   background: #ffffff;
 }
 
+@media (min-width: 1441px) {
+  .jfs-intro-section {
+    zoom: calc(100vw / 1440);
+  }
+}
+
 .jfs-intro-layout {
   display: flex;
   margin-left: calc(80 * var(--jfs-fluid-scale));
@@ -4504,23 +4532,23 @@ section.jfs-tools-v2-section {
 
 .jfs-intro-desc {
   font-family: 'Poppins', sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: #555555;
-  line-height: 1.6;
-  margin-bottom: calc(35 * var(--jfs-fluid-scale));
+  line-height: 1.5;
+  margin-bottom: calc(16 * var(--jfs-fluid-scale));
   text-align: left;
   /* Ensure sharp alignment */
-  max-width: 90%;
+  max-width: 95%;
 }
 
 .jfs-intro-cta {
   background: #3D52D9;
   color: #ffffff;
   border: none;
-  padding: calc(16 * var(--jfs-fluid-scale)) calc(50 * var(--jfs-fluid-scale));
+  padding: calc(12 * var(--jfs-fluid-scale)) calc(40 * var(--jfs-fluid-scale));
   border-radius: calc(40 * var(--jfs-fluid-scale));
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1.0rem;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 calc(4 * var(--jfs-fluid-scale)) calc(15 * var(--jfs-fluid-scale)) rgba(61, 82, 217, 0.2);
@@ -5123,8 +5151,14 @@ section.jfs-tools-v2-section {
 
 /* --- Premium Testimonials Grid Section --- */
 .jfs-testi-grid-section {
-  padding: calc(100 * var(--jfs-fluid-scale)) 0;
+  padding: calc(100 * var(--jfs-fluid-scale)) 0 calc(40 * var(--jfs-fluid-scale));
   background-color: #fcfcfc;
+}
+
+@media (min-width: 1441px) {
+  .jfs-testi-grid-section {
+    zoom: calc(100vw / 1440);
+  }
 }
 
 .jfs-testi-grid-wrapper {
@@ -5563,6 +5597,7 @@ section.jfs-tools-v2-section {
   .jfs-dgm-benefits-reimagined {
     padding-top: 80px !important;
     padding-bottom: 80px !important;
+    zoom: 1.15;
   }
 
   .jfs-dgm-benefits-header {

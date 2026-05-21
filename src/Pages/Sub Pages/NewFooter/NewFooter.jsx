@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faFacebookF,
-  faTwitter,
+  faXTwitter,
   faInstagram,
   faLinkedinIn
 } from '@fortawesome/free-brands-svg-icons';
@@ -44,7 +44,7 @@ const NewFooter = () => {
                         </p>
                         <div className="newFooterSocials">
                             <a href="https://www.facebook.com/profile.php?id=61583616114977" target="_blank" rel="noopener noreferrer" className="newFooterSocialLink"><FontAwesomeIcon icon={faFacebookF} /></a>
-                            <a href="https://x.com/engloraytech" target="_blank" rel="noopener noreferrer" className="newFooterSocialLink"><FontAwesomeIcon icon={faTwitter} /></a>
+                            <a href="https://x.com/engloraytech" target="_blank" rel="noopener noreferrer" className="newFooterSocialLink"><FontAwesomeIcon icon={faXTwitter} /></a>
                             <a href="https://www.instagram.com/engloray/" target="_blank" rel="noopener noreferrer" className="newFooterSocialLink"><FontAwesomeIcon icon={faInstagram} /></a>
                             <a href="https://www.linkedin.com/in/engloray-group-7534b6391/" target="_blank" rel="noopener noreferrer" className="newFooterSocialLink"><FontAwesomeIcon icon={faLinkedinIn} /></a>
                         </div>

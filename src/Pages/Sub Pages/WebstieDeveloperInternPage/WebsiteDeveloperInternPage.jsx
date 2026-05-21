@@ -77,6 +77,8 @@ import Navbar from '../../../Components/Navbar/Navbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import { Helmet } from 'react-helmet';
 import Footer from '../../../Components/Footer/Footer';
+import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
+
 import benefitCareer from '../../../assets/iicons/career_opportunities_vibrant.png';
 import benefitCertification from '../../../assets/iicons/image copy.png';
 import benefitMoneyBack from '../../../assets/iicons/money_back_guarantee.jpg';
@@ -149,11 +151,38 @@ const WebsiteDeveloperInternPage = () => {
         }
     };
 
+    const [scale, setScale] = useState(1);
+    const scalingRef = useRef(null);
+    const [contentHeight, setContentHeight] = useState(0);
+
+    useEffect(() => {
+        const updateScale = () => {
+            const designWidth = 1440;
+            const currentWidth = window.innerWidth;
+            const newScale = currentWidth / designWidth;
+            setScale(newScale);
+            if (scalingRef.current) {
+                setContentHeight(scalingRef.current.offsetHeight);
+            }
+        };
+
+        updateScale();
+        window.addEventListener('resize', updateScale);
+
+        // Initial delay to ensure all dynamic elements are rendered for height calculation
+        const timeout = setTimeout(updateScale, 1000);
+
+        return () => {
+            window.removeEventListener('resize', updateScale);
+            clearTimeout(timeout);
+        };
+    }, []);
+
     // Handle scroll to update active section
     useEffect(() => {
         const handleScroll = () => {
             const sections = ['home', 'course', 'signin', 'assets', 'gallery', 'templates', 'resources', 'benefits', 'feedback'];
-            const scrollPosition = window.scrollY + 100;
+            const scrollPosition = (window.scrollY / scale) + 100;
 
             for (const section of sections) {
                 const element = document.getElementById(section);
@@ -171,7 +200,7 @@ const WebsiteDeveloperInternPage = () => {
 
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    }, [scale]);
 
     // Show toast message
     useEffect(() => {
@@ -719,755 +748,254 @@ const WebsiteDeveloperInternPage = () => {
     return (
         <>
             <div>
-                <Helmet>
-                    <title>Engloray Tech | Website Developer Internship</title>
-                    <meta name="description" content="Build modern, scalable web applications and master full-stack development with our premium internship program." />
-                    <meta name="robots" content="max-snippet:-1, max-image-preview: large, max-video-preview:-1" />
-                    <meta property="og:locale" content="en_US" />
-                    <meta property="og:type" content="website" />
-                    <meta property="og:title" content="Engloray Tech | Website Developer" />
-                    <meta property="og:description" content="Join our premium web development internship program." />
-                </Helmet>
-            </div>
-            {/* Toast Message - Fixed Position */}
-            {showToast && (
-                <div className="WD-toast-message show">
-                    <div className="WD-toast-content">
-                        <span className="WD-toast-icon"><FontAwesomeIcon icon={faLock} /></span>
-                        <span className="WD-toast-text">{toastMessage}</span>
-                        <button
-                            className="WD-toast-close"
-                            onClick={() => setShowToast(false)}
-                        >
-                            <FontAwesomeIcon icon={faTimes} />
-                        </button>
-                    </div>
-                </div>
-            )}
 
-            <div className="WD-content" ref={containerRef}>
-                {/* <TopNavBar/> */}
-                {/* <Navbar/> */}
+                <TopNavBar />
+                <Navbar excludeItems={['works']} />
 
-                {/* Hero Section */}
-                <section
-                    className="WD-section WD-hero-section-new"
-                    id="home"
+                <div
+                    className="WD-scaling-outer-wrapper"
+                    style={{
+                        width: '100%',
+                        height: contentHeight * scale,
+                        overflow: 'hidden',
+                        backgroundColor: '#000000',
+                        position: 'relative'
+                    }}
                 >
-                    <div className="WD-hero-top-row">
-                        <div className="WD-hero-badges">
-                            <span className="WD-hero-badge"><FontAwesomeIcon icon={faCheckCircle} /> 2023 BEST DEVELOPMENT</span>
-                            <span className="WD-hero-badge"><FontAwesomeIcon icon={faLaptopCode} /> WORLD CLASS DEVELOPMENT</span>
+                    <div
+                        ref={scalingRef}
+                        className="WD-scaling-inner-container"
+                        style={{
+                            width: '1440px',
+                            transform: `scale(${scale})`,
+                            transformOrigin: 'top left',
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                            backgroundColor: '#000000'
+                        }}
+                    >
+                        <div>
+                            <Helmet>
+                                <title>Engloray Tech | Website Developer Internship</title>
+                                <meta name="description" content="Build modern, scalable web applications and master full-stack development with our premium internship program." />
+                                <meta name="robots" content="max-snippet:-1, max-image-preview: large, max-video-preview:-1" />
+                                <meta property="og:locale" content="en_US" />
+                                <meta property="og:type" content="website" />
+                                <meta property="og:title" content="Engloray Tech | Website Developer" />
+                                <meta property="og:description" content="Join our premium web development internship program." />
+                            </Helmet>
                         </div>
-                        <div className="WD-hero-top-line-container">
-                            <hr className="WD-hero-top-line" />
-                            <svg className="WD-sparkle-icon" viewBox="0 0 24 24" width="24" height="24">
-                                <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
-                            </svg>
-                        </div>
-                    </div>
-
-                    <div className="WD-hero-typography">
-                        <div className="WD-hero-line WD-hero-line-1">
-                            <svg className="WD-sparkle-icon-large" viewBox="0 0 24 24" width="40" height="40">
-                                <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
-                            </svg>
-                            <h1 className="WD-hero-title-word">Where Teams</h1>
-                            <p className="WD-hero-desc-small">
-                                Creative developer studio builds modern digital experiences for web apps brands and startups through design code innovation collaboration and scalable technology solutions for global users.
-                            </p>
-                        </div>
-
-                        <div className="WD-hero-line WD-hero-line-2">
-                            <div className="WD-hero-image-pill WD-hero-image-1">
-                                <img src={wdHeroImg} alt="Website Developer" style={{ objectFit: 'cover', objectPosition: 'center' }} />
-                            </div>
-                            <h1 className="WD-hero-title-word WD-text-blue">Build & Deploy</h1>
-                            <svg className="WD-sparkle-icon-small" viewBox="0 0 24 24" width="20" height="20">
-                                <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
-                            </svg>
-                        </div>
-
-                        <div className="WD-hero-line WD-hero-line-3">
-                            <svg className="WD-sparkle-icon-small" viewBox="0 0 24 24" width="25" height="25" style={{ marginRight: '0rem' }}>
-                                <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
-                            </svg>
-                            <h1 className="WD-hero-title-word" style={{ marginLeft: '-1rem' }}>Together</h1>
-                            <div className="WD-hero-image-pill WD-hero-image-2">
-                                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80" alt="Web Development Studio" style={{ objectFit: 'cover', objectPosition: 'center' }} />
-                                <div className="WD-play-btn">
-                                    <div className="WD-play-icon-triangle"></div>
+                        {/* Toast Message - Fixed Position */}
+                        {showToast && (
+                            <div className="WD-toast-message show">
+                                <div className="WD-toast-content">
+                                    <span className="WD-toast-icon"><FontAwesomeIcon icon={faLock} /></span>
+                                    <span className="WD-toast-text">{toastMessage}</span>
+                                    <button
+                                        className="WD-toast-close"
+                                        onClick={() => setShowToast(false)}
+                                    >
+                                        <FontAwesomeIcon icon={faTimes} />
+                                    </button>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                        )}
 
-                    <div className="WD-hero-bottom-row">
-                        <div className="WD-hero-bottom-left">
-                            <p className="WD-hero-desc-large">
-                                Creative Developer Studio empowers teams to transform ideas into powerful digital products. We combine creativity, engineering expertise, and strategic thinking to build responsive websites, intelligent platforms, and engaging user experiences that support innovation, improve productivity, and help businesses expand confidently in today’s fast-evolving online ecosystem.
-                            </p>
-                            <div className="WD-hero-actions">
-                                <button className="WD-btn-primary" onClick={() => scrollToSection('course')}>Get Started</button>
-                                <button className="WD-btn-icon" onClick={() => scrollToSection('course')}><FontAwesomeIcon icon={faArrowRight} style={{ transform: 'rotate(-45deg)' }} /></button>
+                        <div className="WD-content" ref={containerRef}>
+                    {/* <TopNavBar/> */}
+                    {/* <Navbar/> */}
+
+                    {/* Hero Section */}
+                    <section
+                        className="WD-section WD-hero-section-new"
+                        id="home"
+                    >
+                        <div className="WD-hero-top-row">
+                            <div className="WD-hero-badges">
+                                <span className="WD-hero-badge"><FontAwesomeIcon icon={faCheckCircle} /> 2023 BEST DEVELOPMENT</span>
+                                <span className="WD-hero-badge"><FontAwesomeIcon icon={faLaptopCode} /> WORLD CLASS DEVELOPMENT</span>
                             </div>
-                        </div>
-
-                        <div className="WD-hero-bottom-right">
-                            <div className="WD-rotating-stamp">
-                                <svg viewBox="0 0 100 100" className="WD-stamp-text-svg">
-                                    <path id="circlePath" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="none" />
-                                    <text>
-                                        <textPath href="#circlePath" startOffset="0%">
-                                            C R E A T I V E • D E V E L O P E R •
-                                        </textPath>
-                                    </text>
-                                </svg>
-                                <svg className="WD-stamp-star" viewBox="0 0 24 24" width="30" height="30">
+                            <div className="WD-hero-top-line-container">
+                                <hr className="WD-hero-top-line" />
+                                <svg className="WD-sparkle-icon" viewBox="0 0 24 24" width="24" height="24">
                                     <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
                                 </svg>
                             </div>
                         </div>
-                    </div>
-                </section>
 
-                {/* Course Content Section */}
-                <section
-                    className="WD-section WD-course-horizontal-section"
-                    id="course"
-                >
-                    <div className="WD-course-background-top"></div>
-                    <div className="WD-course-background-bottom"></div>
-
-                    <div className="WD-course-horizontal-container" style={{ zIndex: 2, position: 'relative' }}>
-                        <div className="WD-course-header-row">
-                            <div className="WD-course-header-left">
-                                <h2 className="WD-section-title" style={{ color: '#2d2d2d' }}>INTERNSHIP</h2>
-                                <h2 className="WD-section-title">
-                                    <span className="WD-text-blue">TRAINING</span> <span style={{ color: '#2d2d2d' }}>PROGRAM</span>
-                                </h2>
+                        <div className="WD-hero-typography">
+                            <div className="WD-hero-line WD-hero-line-1">
+                                <svg className="WD-sparkle-icon-large" viewBox="0 0 24 24" width="40" height="40">
+                                    <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
+                                </svg>
+                                <h1 className="WD-hero-title-word">Where Teams</h1>
+                                <p className="WD-hero-desc-small">
+                                    Creative developer studio builds modern digital experiences for web apps brands and startups through design code innovation collaboration and scalable technology solutions for global users.
+                                </p>
                             </div>
-                            <svg className="WD-sparkle-icon-header" viewBox="0 0 24 24" width="20" height="20">
-                                <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
-                            </svg>
-                            <div className="WD-course-header-right">
-                                <a href="#course" className="WD-view-all-link">View All</a>
+
+                            <div className="WD-hero-line WD-hero-line-2">
+                                <div className="WD-hero-image-pill WD-hero-image-1">
+                                    <img src={wdHeroImg} alt="Website Developer" style={{ objectFit: 'cover', objectPosition: 'center' }} />
+                                </div>
+                                <h1 className="WD-hero-title-word WD-text-blue">Build & Deploy</h1>
+                                <svg className="WD-sparkle-icon-small" viewBox="0 0 24 24" width="20" height="20">
+                                    <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
+                                </svg>
+                            </div>
+
+                            <div className="WD-hero-line WD-hero-line-3">
+                                <svg className="WD-sparkle-icon-small" viewBox="0 0 24 24" width="25" height="25" style={{ marginRight: '0rem' }}>
+                                    <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
+                                </svg>
+                                <h1 className="WD-hero-title-word" style={{ marginLeft: '-1rem' }}>Together</h1>
+                                <div className="WD-hero-image-pill WD-hero-image-2">
+                                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80" alt="Web Development Studio" style={{ objectFit: 'cover', objectPosition: 'center' }} />
+                                    <div className="WD-play-btn">
+                                        <div className="WD-play-icon-triangle"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
-                        <div className="WD-course-carousel-container">
-                            <div className="WD-carousel-wrapper">
-                                <div
-                                    className="WD-course-cards-wrapper"
-                                    ref={cardsWrapperRef}
-                                    style={{
-                                        '--active-index': activeCourseIndex,
-                                        transition: isTransitioning ? 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)' : 'none'
-                                    }}
-                                    onTransitionEnd={handleTransitionEnd}
-                                >
-                                    {infiniteContent.map((item) => (
-                                        <div key={item.uniqueId} className="WD-course-new-card">
-                                            <div className="WD-course-card-badges">
-                                                <span className="WD-badge-pill">Phase {item.id}</span>
-                                                <span className="WD-badge-pill WD-badge-dark">{item.duration}</span>
-                                            </div>
-                                            <h3 className="WD-course-card-title">{item.title}</h3>
-
-                                            {/* Checklist items in 2-column grid */}
-                                            <div className="WD-course-card-checklist">
-                                                {Array.isArray(item.description) ? item.description.map((point, i) => (
-                                                    <div key={i} className="WD-checklist-item">
-                                                        <FontAwesomeIcon icon={faCheck} className="WD-checklist-icon" />
-                                                        <span>{point}</span>
-                                                    </div>
-                                                )) : (
-                                                    <p className="WD-course-card-desc">{item.description}</p>
-                                                )}
-                                            </div>
-
-                                            <div className="WD-course-card-image">
-                                                <img src={item.bgImage} alt={item.title} />
-                                            </div>
-                                        </div>
-                                    ))}
+                        <div className="WD-hero-bottom-row">
+                            <div className="WD-hero-bottom-left">
+                                <p className="WD-hero-desc-large">
+                                    Creative Developer Studio empowers teams to transform ideas into powerful digital products. We combine creativity, engineering expertise, and strategic thinking to build responsive websites, intelligent platforms, and engaging user experiences that support innovation, improve productivity, and help businesses expand confidently in today’s fast-evolving online ecosystem.
+                                </p>
+                                <div className="WD-hero-actions">
+                                    <button className="WD-btn-primary" onClick={() => scrollToSection('course')}>Get Started</button>
+                                    <button className="WD-btn-icon" onClick={() => scrollToSection('course')}><FontAwesomeIcon icon={faArrowRight} style={{ transform: 'rotate(-45deg)' }} /></button>
                                 </div>
                             </div>
 
-                            <div className="WD-carousel-arrows">
-                                <button
-                                    className="WD-carousel-arrow WD-carousel-arrow-left"
-                                    onClick={handlePrevClick}
-                                    aria-label="Previous module"
-                                >
-                                    <FontAwesomeIcon icon={faArrowRight} style={{ transform: 'rotate(180deg)' }} />
-                                </button>
-
-                                <button
-                                    className="WD-carousel-arrow WD-carousel-arrow-right"
-                                    onClick={handleNextClick}
-                                    aria-label="Next module"
-                                >
-                                    <FontAwesomeIcon icon={faArrowRight} />
-                                </button>
-                            </div>
-                        </div>
-
-                        <div className="WD-course-dots">
-                            {courseContent.map((_, index) => {
-                                const isActive = (activeCourseIndex % courseContent.length) === index;
-                                return (
-                                    <div key={index} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
-                                        <button
-                                            className={`WD-course-dot ${isActive ? 'WD-active-dot' : ''}`}
-                                            onClick={() => handleDotNavigation(index)}
-                                            aria-label={`Go to slide ${index + 1}`}
-                                        />
-                                        <span style={{
-                                            color: isActive ? 'white' : 'rgba(255, 255, 255, 0.4)',
-                                            fontSize: '0.8rem',
-                                            fontFamily: 'Inter',
-                                            fontWeight: '600'
-                                        }}>
-                                            0{index + 1}
-                                        </span>
-                                    </div>
-                                );
-                            })}
-                        </div>
-                    </div>
-                </section>
-
-                {/* <section className="WD-section WD-influencer-section" id="signin">
-          <div className="WD-influencer-container">
-            <div className="WD-influencer-content">
-              {showForm ? (
-                <div className="WD-form-section WD-in-influencer">
-                  <div className="WD-form-wrapper WD-dark-form">
-                    <button
-                      className="WD-close-form-btn WD-close-dark"
-                      onClick={() => setShowForm(false)}
-                      aria-label="Close form"
-                    >
-                      <FontAwesomeIcon icon={faTimes} />
-                    </button>
-
-                    <form className="WD-signin-form" onSubmit={handleSignSubmit}>
-                      <h3 className="WD-form-dark-title">Register Now</h3>
-                      <div className="WD-form-group">
-                        <label htmlFor="email"><FontAwesomeIcon icon={faEnvelope} /> Email Address</label>
-                        <input
-                          type="email"
-                          id="email"
-                          name="email"
-                          value={formData.email}
-                          onChange={handleFormChange}
-                          className={`WD-form-input ${errors.email ? 'WD-error' : ''}`}
-                          placeholder="Enter your email"
-                        />
-                        {errors.email && <span className="WD-error-message">{errors.email}</span>}
-                      </div>
-
-                      <div className="WD-form-group">
-                        <label htmlFor="course"><FontAwesomeIcon icon={faBook} /> Course</label>
-                        <input
-                          type="text"
-                          id="course"
-                          name="course"
-                          value={formData.course}
-                          onChange={handleFormChange}
-                          className={`WD-form-input ${errors.course ? 'WD-error' : ''}`}
-                          placeholder="Enter Course Name"
-                        />
-                        {errors.course && <span className="WD-error-message">{errors.course}</span>}
-                      </div>
-
-                      <div className="WD-form-group WD-checkbox-group">
-                        <input
-                          type="checkbox"
-                          id="agreeTerms"
-                          name="agreeTerms"
-                          checked={formData.agreeTerms}
-                          onChange={handleFormChange}
-                          className={errors.agreeTerms ? 'WD-error' : ''}
-                        />
-                        <label htmlFor="agreeTerms">
-                          I agree to the Terms of Service and Privacy Policy
-                        </label>
-                        {errors.agreeTerms && <span className="WD-error-message">{errors.agreeTerms}</span>}
-                      </div>
-
-                      <button type="submit" className="WD-submit-btn">
-                        Register
-                      </button>
-                    </form>
-                  </div>
-                </div>
-              ) : (
-                <div className="WD-influencer-split">
-                  <div className="WD-influencer-left">
-                    <h2 className="WD-influencer-title">
-                      Join <span className="WD-search-badge"><FontAwesomeIcon icon={faComments} style={{ fontSize: '0.6em', marginRight: '4px' }} /> Q</span> Our Course
-                      <br />
-                      <div className="WD-influencer-avatars">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="User 1" />
-                        <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="User 2" />
-                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="User 3" />
-                      </div>
-                      to collaborate
-                      <br />
-                      with us
-                      <div className="WD-influencer-search-bar">
-                        <span className="WD-search-placeholder">| Search</span>
-                        <div className="WD-search-actions">
-                          <FontAwesomeIcon icon={faStar} className="WD-voice-icon" />
-                          <button className="WD-search-submit"><FontAwesomeIcon icon={faComments} style={{ fontSize: '0.7em' }} /></button>
-                        </div>
-                      </div>
-                    </h2>
-                  </div>
-                  <div className="WD-influencer-right">
-                    <div
-                      className="WD-see-how-card"
-                      onClick={() => setShowForm(true)}
-                    >
-                      <div className="WD-card-top-icons">
-                        <div className="WD-video-circle">
-                          <FontAwesomeIcon icon={faVideo} />
-                        </div>
-                        <div className="WD-arrow-circle">
-                          <FontAwesomeIcon icon={faArrowRight} style={{ transform: 'rotate(-45deg)' }} />
-                        </div>
-                      </div>
-                      <h3 className="WD-see-how-text">See how<br />it's done</h3>
-                      <div className="WD-card-decorations">
-                        <div className="WD-decor-ring-1"></div>
-                        <div className="WD-decor-ring-2"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-
-
-            {/* {!showForm && (
-              <div className="WD-join-course-banner">
-                <h3 className="WD-join-banner-title">JOIN OUR COURSE</h3>
-                <div className="WD-join-banner-content">
-                  <h4 className="WD-join-course-subtitle"><FontAwesomeIcon icon={faLaptopCode} /> Website Developer course</h4>
-                  <p className="WD-join-course-desc">
-                    A website developer builds and maintains the visual and functional aspects of websites. They use programming languages like HTML, CSS, and JavaScript to create responsive layouts, interactive elements, and seamless user experiences across various devices and platforms.
-                  </p>
-                  <button className="WD-banner-register-btn" onClick={() => setShowForm(true)}>
-                    Register Now
-                  </button>
-                </div>
-              </div>
-            )} */}
-                {/* </div>
-        </section> */}
-
-                {/* Dream Navigator Section */}
-
-
-                <section className="WD-section WD-influencer-section" id="signin">
-                    <div className="WD-influencer-container">
-                        <div className="WD-influencer-content">
-                            {showForm ? (
-                                <div className="WD-form-section WD-in-influencer">
-                                    <div className="WD-form-wrapper WD-dark-form">
-                                        <button
-                                            className="WD-close-form-btn WD-close-dark"
-                                            onClick={() => setShowForm(false)}
-                                            aria-label="Close form"
-                                        >
-                                            <FontAwesomeIcon icon={faTimes} />
-                                        </button>
-
-                                        <form className="WD-signin-form" onSubmit={handleSignSubmit}>
-                                            <h3 className="WD-form-dark-title">Register Now</h3>
-                                            <div className="WD-form-group">
-                                                <label htmlFor="email"><FontAwesomeIcon icon={faEnvelope} /> Email Address</label>
-                                                <input
-                                                    type="email"
-                                                    id="email"
-                                                    name="email"
-                                                    value={formData.email}
-                                                    onChange={handleFormChange}
-                                                    className={`WD-form-input ${errors.email ? 'WD-error' : ''}`}
-                                                    placeholder="Enter your email"
-                                                />
-                                                {errors.email && <span className="WD-error-message">{errors.email}</span>}
-                                            </div>
-
-                                            <div className="WD-form-group">
-                                                <label htmlFor="course"><FontAwesomeIcon icon={faBook} /> Course</label>
-                                                <input
-                                                    type="text"
-                                                    id="course"
-                                                    name="course"
-                                                    value={formData.course}
-                                                    onChange={handleFormChange}
-                                                    className={`WD-form-input ${errors.course ? 'WD-error' : ''}`}
-                                                    placeholder="Enter Course Name"
-                                                />
-                                                {errors.course && <span className="WD-error-message">{errors.course}</span>}
-                                            </div>
-
-                                            <div className="WD-form-group WD-checkbox-group">
-                                                <input
-                                                    type="checkbox"
-                                                    id="agreeTerms"
-                                                    name="agreeTerms"
-                                                    checked={formData.agreeTerms}
-                                                    onChange={handleFormChange}
-                                                    className={errors.agreeTerms ? 'WD-error' : ''}
-                                                />
-                                                <label htmlFor="agreeTerms">
-                                                    I agree to the Terms of Service and Privacy Policy
-                                                </label>
-                                                {errors.agreeTerms && <span className="WD-error-message">{errors.agreeTerms}</span>}
-                                            </div>
-
-                                            <button type="submit" className="WD-submit-btn">
-                                                Register
-                                            </button>
-                                        </form>
-                                    </div>
-                                </div>
-                            ) : (
-                                <div className="WD-influencer-split">
-                                    <div className="WD-influencer-left">
-                                        <h2 className="WD-influencer-title">
-                                            Join <span className="WD-search-badge"><FontAwesomeIcon icon={faComments} style={{ fontSize: '0.6em', marginRight: '4px' }} /> Q</span> Our Course
-                                            <br />
-                                            <div className="WD-influencer-avatars">
-                                                <img src={iconGraduationCap} alt="Education Graduation Cap" />
-                                                <img src={iconEducationBook} alt="Education Book" />
-                                                <img src={iconCertificate} alt="Education Certificate" />
-                                            </div>
-                                            to collaborate
-                                            <br />
-                                            with us
-                                        </h2>
-                                    </div>
-                                    <div className="WD-influencer-right">
-                                        <div
-                                            className="WD-see-how-card"
-                                            onClick={() => setShowForm(true)}
-                                        >
-                                            <div className="WD-card-top-icons">
-                                                <div className="WD-video-circle">
-                                                    <FontAwesomeIcon icon={faVideo} />
-                                                </div>
-                                                <div className="WD-arrow-circle">
-                                                    <FontAwesomeIcon icon={faArrowRight} style={{ transform: 'rotate(-45deg)' }} />
-                                                </div>
-                                            </div>
-                                            <h3 className="WD-see-how-text">See how<br />it's done</h3>
-                                            <div className="WD-card-decorations">
-                                                <div className="WD-decor-ring-1"></div>
-                                                <div className="WD-decor-ring-2"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            )}
-                        </div>
-
-
-                        {/* {!showForm && (
-              <div className="WD-join-course-banner">
-                <h3 className="WD-join-banner-title">JOIN OUR COURSE</h3>
-                <div className="WD-join-banner-content">
-                  <h4 className="WD-join-course-subtitle"><FontAwesomeIcon icon={faLaptopCode} /> Website Developer course</h4>
-                  <p className="WD-join-course-desc">
-                    A website developer builds and maintains the visual and functional aspects of websites. They use programming languages like HTML, CSS, and JavaScript to create responsive layouts, interactive elements, and seamless user experiences across various devices and platforms.
-                  </p>
-                  <button className="WD-banner-register-btn" onClick={() => setShowForm(true)}>
-                    Register Now
-                  </button>
-                </div>
-              </div>
-            )} */}
-                    </div>
-                </section>
-
-                <section className="WD-section WD-dream-navigator-section" id="dream-navigator">
-                    <div className="WD-dn-container">
-
-                        {/* Design Resources Title - styled like Dream Navigator header */}
-                        <div className="WD-dn-resources-title-row" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginTop: '0', marginBottom: '2rem', position: 'relative' }}>
-                            <div style={{ flex: 1 }}>
-                                <h2 className="WD-dn-title">
-                                    <div className="WD-dn-title-line1">
-                                        Tools, Code & Development
-                                        <svg className="WD-dn-icon-sparkle" viewBox="0 0 24 24" width="30" height="30">
-                                            <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
-                                        </svg>
-                                    </div>
-                                    <div className="WD-dn-title-line2" style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                                        <button
-                                            className="WD-split-action-btn"
-                                            style={{ padding: '1.7rem 1.5rem', fontSize: '1rem', margin: 0 }}
-                                            onClick={() => showLockedSectionToast("Assets, Branding & Design Support")}
-                                        >
-                                            <FontAwesomeIcon icon={faLock} /> Join course to Access
-                                        </button>
-                                        <span>Support</span>
-                                        <svg className="WD-dn-icon-sparkle-outline" viewBox="0 0 24 24" width="30" height="30">
-                                            <path d="M12 2L14.26 9.74L22 12L14.26 14.26L12 22L9.74 14.26L2 12L9.74 9.74L12 2ZM12 6.86L10.85 10.85L6.86 12L10.85 13.15L12 17.14L13.15 13.15L17.14 12L13.15 10.85L12 6.86Z" fill="currentColor" />
-                                        </svg>
-                                    </div>
-                                </h2>
-                                <div className="WD-dn-header-right" style={{ flex: 'unset', padding: '1.2rem 0 0 0' }}>
-                                    <svg className="WD-dn-small-sparkies" viewBox="0 0 24 24" width="16" height="16">
+                            <div className="WD-hero-bottom-right">
+                                <div className="WD-rotating-stamp">
+                                    <svg viewBox="0 0 100 100" className="WD-stamp-text-svg">
+                                        <path id="circlePath" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="none" />
+                                        <text>
+                                            <textPath href="#circlePath" startOffset="0%">
+                                                C R E A T I V E • D E V E L O P E R •
+                                            </textPath>
+                                        </text>
+                                    </svg>
+                                    <svg className="WD-stamp-star" viewBox="0 0 24 24" width="30" height="30">
                                         <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
                                     </svg>
-                                    <p>
-                                        Get access to modern frameworks, production-ready components, and direct support
-                                        to accelerate your development workflow.
-                                    </p>
-                                </div>
-                            </div>
-
-                            {/* Quick Tips Toggle Button */}
-                            <div className="WD-quick-tips-container" ref={quickTipsRef} style={{ position: 'relative' }}>
-                                <button
-                                    className="WD-quick-tips-btn"
-                                    onClick={() => setShowQuickTips(!showQuickTips)}
-                                    style={{
-                                        background: '#1a1a2e',
-                                        color: '#fff',
-                                        border: 'none',
-                                        padding: '0.8rem 1.5rem',
-                                        borderRadius: '30px',
-                                        cursor: 'pointer',
-                                        fontWeight: '600',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        gap: '8px',
-                                        boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
-                                        transition: 'all 0.3s ease',
-                                        marginTop: '1rem'
-                                    }}
-                                >
-                                    <FontAwesomeIcon icon={faLightbulb} style={{ color: '#ffd700' }} />
-                                    Quick Tips & Shortcuts
-                                </button>
-
-                                {/* Floating Tips Panel */}
-                                <div
-                                    className={`WD-quick-tips-panel ${showQuickTips ? 'WD-show' : ''}`}
-                                    style={{
-                                        position: 'absolute',
-                                        top: 'calc(100% + 15px)',
-                                        right: 0,
-                                        width: '350px',
-                                        background: '#1a1a2e',
-                                        borderRadius: '16px',
-                                        padding: '1.5rem',
-                                        boxShadow: '0 10px 40px rgba(0,0,0,0.2)',
-                                        zIndex: 100,
-                                        opacity: showQuickTips ? 1 : 0,
-                                        visibility: showQuickTips ? 'visible' : 'hidden',
-                                        transform: showQuickTips ? 'translateY(0)' : 'translateY(-10px)',
-                                        transition: 'all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)'
-                                    }}
-                                >
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '1rem' }}>
-                                        <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: 'rgba(255,215,0,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                                            <FontAwesomeIcon icon={faLightbulb} style={{ color: '#ffd700', fontSize: '0.9rem' }} />
-                                        </div>
-                                        <span style={{ color: '#ffd700', fontWeight: 'bold', fontSize: '0.9rem' }}>Tips</span>
-                                    </div>
-
-                                    <h3 style={{ color: 'white', fontSize: '1.2rem', marginBottom: '1.2rem', fontWeight: 'bold' }}>Developer Productivity Tips</h3>
-
-                                    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                                        {/* Tip 1 */}
-                                        <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                                            <FontAwesomeIcon icon={faCheckCircle} style={{ color: '#4caf50', marginTop: '4px', fontSize: '1rem' }} />
-                                            <div>
-                                                <h4 style={{ color: 'white', fontSize: '0.95rem', marginBottom: '4px', fontWeight: '600' }}>Organize Your Project Files</h4>
-                                                <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.85rem', lineHeight: '1.4', margin: 0 }}>Keep your codebase properly structured with separate folders for components, styles, and assets to ensure maintainability.</p>
-                                            </div>
-                                        </div>
-                                        {/* Tip 2 */}
-                                        <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                                            <FontAwesomeIcon icon={faCheckCircle} style={{ color: '#4caf50', marginTop: '4px', fontSize: '1rem' }} />
-                                            <div>
-                                                <h4 style={{ color: 'white', fontSize: '0.95rem', marginBottom: '4px', fontWeight: '600' }}>Use Consistent Coding Standards</h4>
-                                                <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.85rem', lineHeight: '1.4', margin: 0 }}>Always maintain consistent naming conventions, indentation, and linting rules to ensure a professional and readable codebase.</p>
-                                            </div>
-                                        </div>
-                                        {/* Tip 3 */}
-                                        <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                                            <FontAwesomeIcon icon={faCheckCircle} style={{ color: '#4caf50', marginTop: '4px', fontSize: '1rem' }} />
-                                            <div>
-                                                <h4 style={{ color: 'white', fontSize: '0.95rem', marginBottom: '4px', fontWeight: '600' }}>Leverage IDE Shortcuts</h4>
-                                                <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.85rem', lineHeight: '1.4', margin: 0 }}>Use keyboard shortcuts in VS Code, IntelliJ, or other IDEs to speed up your development workflow and efficiency.</p>
-                                            </div>
-                                        </div>
-                                        {/* Tip 4 */}
-                                        <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                                            <FontAwesomeIcon icon={faCheckCircle} style={{ color: '#4caf50', marginTop: '4px', fontSize: '1rem' }} />
-                                            <div>
-                                                <h4 style={{ color: 'white', fontSize: '0.95rem', marginBottom: '4px', fontWeight: '600' }}>Maintain Code Documentation</h4>
-                                                <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.85rem', lineHeight: '1.4', margin: 0 }}>Follow documentation standards like JSDoc or maintain a clear README to help other developers understand your logic.</p>
-                                            </div>
-                                        </div>
-                                        {/* Tip 5 */}
-                                        <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                                            <FontAwesomeIcon icon={faCheckCircle} style={{ color: '#4caf50', marginTop: '4px', fontSize: '1rem' }} />
-                                            <div>
-                                                <h4 style={{ color: 'white', fontSize: '0.95rem', marginBottom: '4px', fontWeight: '600' }}>Optimize Performance Before Deploy</h4>
-                                                <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.85rem', lineHeight: '1.4', margin: 0 }}>Minify your code and optimize assets like images or fonts to improve page load speed and Lighthouse scores.</p>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
+                    </section>
 
-                        {/* Main Visual Row - Accordion */}
-                        <div className="WD-dn-visual-row WD-resources-accordion">
-                            {courseResources.slice(0, 6).map((resource, index) => {
-                                const isActive = activeAccordionIndex === index;
-                                const num = `0${index + 1}`;
+                    {/* Course Content Section */}
+                    <section
+                        className="WD-section WD-course-horizontal-section"
+                        id="course"
+                    >
+                        <div className="WD-course-background-top"></div>
+                        <div className="WD-course-background-bottom"></div>
 
-                                if (isActive) {
-                                    return (
-                                        <div key={resource.id} className="WD-accordion-panel WD-accordion-expanded WD-dn-spark-card" style={{ background: index % 2 === 0 ? 'linear-gradient(135deg, #e0ebff 0%, #b3caff 100%)' : 'linear-gradient(135deg, #eae0ff 0%, #cbb3ff 100%)' }}>
-                                            <div className="WD-dn-sc-header">
-                                                <div className="WD-dn-sc-num">{num}</div>
-                                                <div className="WD-dn-sc-avatar" style={{ backgroundColor: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#1a1a2e', fontSize: '1.2rem' }}>
-                                                    {resource.icon}
+                        <div className="WD-course-horizontal-container" style={{ zIndex: 2, position: 'relative' }}>
+                            <div className="WD-course-header-row">
+                                <div className="WD-course-header-left">
+                                    <h2 className="WD-section-title" style={{ color: '#2d2d2d' }}>INTERNSHIP</h2>
+                                    <h2 className="WD-section-title">
+                                        <span className="WD-text-blue">TRAINING</span> <span style={{ color: '#2d2d2d' }}>PROGRAM</span>
+                                    </h2>
+                                </div>
+                                <svg className="WD-sparkle-icon-header" viewBox="0 0 24 24" width="20" height="20">
+                                    <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
+                                </svg>
+                                <div className="WD-course-header-right">
+                                    <a href="#course" className="WD-view-all-link">View All</a>
+                                </div>
+                            </div>
+
+                            <div className="WD-course-carousel-container">
+                                <div className="WD-carousel-wrapper">
+                                    <div
+                                        className="WD-course-cards-wrapper"
+                                        ref={cardsWrapperRef}
+                                        style={{
+                                            '--active-index': activeCourseIndex,
+                                            transition: isTransitioning ? 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)' : 'none'
+                                        }}
+                                        onTransitionEnd={handleTransitionEnd}
+                                    >
+                                        {infiniteContent.map((item) => (
+                                            <div key={item.uniqueId} className="WD-course-new-card">
+                                                <div className="WD-course-card-badges">
+                                                    <span className="WD-badge-pill">Phase {item.id}</span>
+                                                    <span className="WD-badge-pill WD-badge-dark">{item.duration}</span>
+                                                </div>
+                                                <h3 className="WD-course-card-title">{item.title}</h3>
+
+                                                {/* Checklist items in 2-column grid */}
+                                                <div className="WD-course-card-checklist">
+                                                    {Array.isArray(item.description) ? item.description.map((point, i) => (
+                                                        <div key={i} className="WD-checklist-item">
+                                                            <FontAwesomeIcon icon={faCheck} className="WD-checklist-icon" />
+                                                            <span>{point}</span>
+                                                        </div>
+                                                    )) : (
+                                                        <p className="WD-course-card-desc">{item.description}</p>
+                                                    )}
+                                                </div>
+
+                                                <div className="WD-course-card-image">
+                                                    <img src={item.bgImage} alt={item.title} />
                                                 </div>
                                             </div>
-                                            <h3 className="WD-dn-sc-title" style={{ fontSize: '1.5rem', marginBottom: '0.9rem', color: '#1a1a2e', fontWeight: 'bold' }}>{resource.title}</h3>
-                                            <p className="WD-dn-sc-desc" style={{ marginBottom: '1rem', color: '#1a1a2e', opacity: 0.8, fontSize: '0.9rem' }}>{resource.description}</p>
+                                        ))}
+                                    </div>
+                                </div>
 
-                                            <div className="WD-resource-meta" style={{ marginBottom: '1.5rem', color: '#1a1a2e', opacity: 0.9, fontSize: '0.85rem', display: 'flex', gap: '1.5rem', fontWeight: 'bold', marginTop: '2rem' }}>
-                                                <span>{resource.type.toUpperCase()} • {resource.size}</span>
-                                                <span><FontAwesomeIcon icon={faDownload} /> {resource.downloads.toLocaleString()} downloads</span>
-                                                {resource.isRestricted && (
-                                                    <span style={{ color: '#d32f2f' }}><FontAwesomeIcon icon={faLock} /> Exclusive</span>
-                                                )}
-                                            </div>
+                                <div className="WD-carousel-arrows">
+                                    <button
+                                        className="WD-carousel-arrow WD-carousel-arrow-left"
+                                        onClick={handlePrevClick}
+                                        aria-label="Previous module"
+                                    >
+                                        <FontAwesomeIcon icon={faArrowRight} style={{ transform: 'rotate(180deg)' }} />
+                                    </button>
 
-                                            {resource.isRestricted ? (
-                                                <button
-                                                    className="WD-dn-sc-btn"
-                                                    onClick={() => handleJoinCourseForResource(resource.title)}
-                                                    style={{ marginTop: 'auto', background: '#1a1a2e', color: 'white' }}
-                                                >
-                                                    <FontAwesomeIcon icon={faLock} /> Join Course to Download <FontAwesomeIcon icon={faArrowRight} style={{ transform: 'rotate(45deg)', marginLeft: '5px' }} />
-                                                </button>
-                                            ) : (
-                                                <button
-                                                    className={`WD-dn-sc-btn ${downloadedResources.includes(resource.id) ? 'WD-downloaded' : ''}`}
-                                                    onClick={() => handleDownloadResource(resource.id, resource.title, resource.localPath, resource.fileName)}
-                                                    style={{ marginTop: 'auto', background: downloadedResources.includes(resource.id) ? '#4caf50' : '#1a1a2e', color: 'white' }}
-                                                >
-                                                    {downloadedResources.includes(resource.id) ? (
-                                                        <><FontAwesomeIcon icon={faCheckCircle} /> Downloaded</>
-                                                    ) : (
-                                                        <><FontAwesomeIcon icon={faDownload} /> Download Now <FontAwesomeIcon icon={faArrowRight} style={{ transform: 'rotate(45deg)', marginLeft: '5px' }} /></>
-                                                    )}
-                                                </button>
-                                            )}
-                                        </div>
-                                    );
-                                } else {
+                                    <button
+                                        className="WD-carousel-arrow WD-carousel-arrow-right"
+                                        onClick={handleNextClick}
+                                        aria-label="Next module"
+                                    >
+                                        <FontAwesomeIcon icon={faArrowRight} />
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div className="WD-course-dots">
+                                {courseContent.map((_, index) => {
+                                    const isActive = (activeCourseIndex % courseContent.length) === index;
                                     return (
-                                        <div
-                                            key={resource.id}
-                                            className={`WD-accordion-panel WD-accordion-collapsed WD-dn-v-pill ${index % 2 === 0 ? 'WD-dn-bg-dark' : 'WD-dn-bg-light'}`}
-                                            onClick={() => setActiveAccordionIndex(index)}
-                                        >
-                                            <span className="WD-dn-v-text">{resource.title}</span>
-                                            <div className="WD-dn-v-num">{num}</div>
+                                        <div key={index} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+                                            <button
+                                                className={`WD-course-dot ${isActive ? 'WD-active-dot' : ''}`}
+                                                onClick={() => handleDotNavigation(index)}
+                                                aria-label={`Go to slide ${index + 1}`}
+                                            />
+                                            <span style={{
+                                                color: isActive ? 'white' : 'rgba(255, 255, 255, 0.4)',
+                                                fontSize: '0.8rem',
+                                                fontFamily: 'Inter',
+                                                fontWeight: '600'
+                                            }}>
+                                                0{index + 1}
+                                            </span>
                                         </div>
                                     );
-                                }
-                            })}
-                        </div>
-
-                        {/* Stats Row - horizontal style matching the reference UI */}
-                        <div className="WD-dn-stats-row">
-                            <div className="WD-dn-stat-items">
-                                <div className="WD-dn-stat-item"><strong>20</strong> Total Resources</div>
-                                <div className="WD-dn-stat-item"><strong>32,000</strong> Total Downloads</div>
-                                <div className="WD-dn-stat-item"><strong>{yourDownloadsCount}</strong> Your Downloads</div>
-                            </div>
-                            <div className="WD-dn-socials">
-                                <span className="WD-dn-social-icon" title="Total Resources"><FontAwesomeIcon icon={faFileAlt} /></span>
-                                <span className="WD-dn-social-icon" title="Total Downloads"><FontAwesomeIcon icon={faDownload} /></span>
-                                <span className="WD-dn-social-icon" title="Your Downloads"><FontAwesomeIcon icon={faUser} /></span>
+                                })}
                             </div>
                         </div>
+                    </section>
 
-                        <div className="WD-resources-note">
-                            <h4><FontAwesomeIcon icon={faLightbulb} /> Note:</h4>
-                            <p>
-                                Our course includes <strong>20 comprehensive resources</strong> to support your development journey.
-                                First 4 resources are available for free download. <strong>Web Development Cheatsheets</strong> and
-                                <strong> Project Portfolio Guide</strong> are exclusive to enrolled students.
-                                Join our course to access all 20 premium resources and unlock full learning potential.
-                            </p>
-                        </div>
-
-                        <hr className="WD-dn-divider" />
-
-                        {/* Bottom Dashboard Row */}
-                        <div className="WD-dn-dashboard-row">
-                            <div className="WD-dn-dash-left">
-                                <h3 className="WD-dn-dash-title"> 30-day money-back guarantee <br />Lifetime access  Certificate included </h3>
-                                <button
-                                    className="WD-dn-dash-btn"
-                                    onClick={handleBenefitsClick}
-                                >
-                                    Join course to Access <FontAwesomeIcon icon={faArrowRight} style={{ fontSize: '0.8rem', marginLeft: '4px' }} />
-                                </button>
-                            </div>
-                            <div className="WD-dn-dash-right">
-                                <div className="WD-dn-dash-card">
-                                    <div className="WD-dn-dash-icon WD-dash-icon-1"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#2563eb" strokeWidth="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2" /><line x1="12" y1="8" x2="12" y2="16" /><line x1="8" y1="12" x2="8" y2="16" /><line x1="16" y1="16" x2="16" y2="16" /></svg></div>
-                                    <div className="WD-dn-dash-info">
-                                        <span className="WD-dn-dash-label">Successful Graduates</span>
-                                        <span className="WD-dn-dash-value">10,000+</span>
-                                    </div>
-                                </div>
-                                <div className="WD-dn-dash-card">
-                                    <div className="WD-dn-dash-icon WD-dash-icon-2"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#2563eb" strokeWidth="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" /></svg></div>
-                                    <div className="WD-dn-dash-info">
-                                        <span className="WD-dn-dash-label">Job Placement Rate</span>
-                                        <span className="WD-dn-dash-value">94%</span>
-                                    </div>
-                                </div>
-                                <div className="WD-dn-dash-card">
-                                    <div className="WD-dn-dash-icon WD-dash-icon-3"><FontAwesomeIcon icon={faUsers} style={{ color: '#2563eb' }} /></div>
-                                    <div className="WD-dn-dash-info">
-                                        <span className="WD-dn-dash-label">Industry Partners</span>
-                                        <span className="WD-dn-dash-value">50+</span>
-                                    </div>
-                                </div>
-                                <div className="WD-dn-dash-card">
-                                    <div className="WD-dn-dash-icon WD-dash-icon-4"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#2563eb" strokeWidth="2"><circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" /></svg></div>
-                                    <div className="WD-dn-dash-info">
-                                        <span className="WD-dn-dash-label">Community Support</span>
-                                        <span className="WD-dn-dash-value">24/7</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                {/* Find Influencers Section (Dark UI Style) */}
-                {/* <section className="WD-section WD-influencer-section" id="signin">
+                    {/* <section className="WD-section WD-influencer-section" id="signin">
           <div className="WD-influencer-container">
             <div className="WD-influencer-content">
               {showForm ? (
@@ -1594,11 +1122,540 @@ const WebsiteDeveloperInternPage = () => {
                 </div>
               </div>
             )} */}
-                {/* </div> */}
-                {/* </section> */}
+                    {/* </div>
+        </section> */}
 
-                {/* Assets, Branding & Design Support (Video Layout Style) */}
-                {/* <section className="WD-section WD-split-section WD-split-reverse" id="assets">
+                    {/* Dream Navigator Section */}
+
+
+                    <section className="WD-section WD-influencer-section" id="signin">
+                        <div className="WD-influencer-container">
+                            <div className="WD-influencer-content">
+                                {showForm ? (
+                                    <div className="WD-form-section WD-in-influencer">
+                                        <div className="WD-form-wrapper WD-dark-form">
+                                            <button
+                                                className="WD-close-form-btn WD-close-dark"
+                                                onClick={() => setShowForm(false)}
+                                                aria-label="Close form"
+                                            >
+                                                <FontAwesomeIcon icon={faTimes} />
+                                            </button>
+
+                                            <form className="WD-signin-form" onSubmit={handleSignSubmit}>
+                                                <h3 className="WD-form-dark-title">Register Now</h3>
+                                                <div className="WD-form-group">
+                                                    <label htmlFor="email"><FontAwesomeIcon icon={faEnvelope} /> Email Address</label>
+                                                    <input
+                                                        type="email"
+                                                        id="email"
+                                                        name="email"
+                                                        value={formData.email}
+                                                        onChange={handleFormChange}
+                                                        className={`WD-form-input ${errors.email ? 'WD-error' : ''}`}
+                                                        placeholder="Enter your email"
+                                                    />
+                                                    {errors.email && <span className="WD-error-message">{errors.email}</span>}
+                                                </div>
+
+                                                <div className="WD-form-group">
+                                                    <label htmlFor="course"><FontAwesomeIcon icon={faBook} /> Course</label>
+                                                    <input
+                                                        type="text"
+                                                        id="course"
+                                                        name="course"
+                                                        value={formData.course}
+                                                        onChange={handleFormChange}
+                                                        className={`WD-form-input ${errors.course ? 'WD-error' : ''}`}
+                                                        placeholder="Enter Course Name"
+                                                    />
+                                                    {errors.course && <span className="WD-error-message">{errors.course}</span>}
+                                                </div>
+
+                                                <div className="WD-form-group WD-checkbox-group">
+                                                    <input
+                                                        type="checkbox"
+                                                        id="agreeTerms"
+                                                        name="agreeTerms"
+                                                        checked={formData.agreeTerms}
+                                                        onChange={handleFormChange}
+                                                        className={errors.agreeTerms ? 'WD-error' : ''}
+                                                    />
+                                                    <label htmlFor="agreeTerms">
+                                                        I agree to the Terms of Service and Privacy Policy
+                                                    </label>
+                                                    {errors.agreeTerms && <span className="WD-error-message">{errors.agreeTerms}</span>}
+                                                </div>
+
+                                                <button type="submit" className="WD-submit-btn">
+                                                    Register
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                ) : (
+                                    <div className="WD-influencer-split">
+                                        <div className="WD-influencer-left">
+                                            <h2 className="WD-influencer-title">
+                                                Join <span className="WD-search-badge"><FontAwesomeIcon icon={faComments} style={{ fontSize: '0.6em', marginRight: '4px' }} /> Q</span> Our Course
+                                                <br />
+                                                <div className="WD-influencer-avatars">
+                                                    <img src={iconGraduationCap} alt="Education Graduation Cap" />
+                                                    <img src={iconEducationBook} alt="Education Book" />
+                                                    <img src={iconCertificate} alt="Education Certificate" />
+                                                </div>
+                                                to collaborate
+                                                <br />
+                                                with us
+                                            </h2>
+                                        </div>
+                                        <div className="WD-influencer-right">
+                                            <div
+                                                className="WD-see-how-card"
+                                                onClick={() => setShowForm(true)}
+                                            >
+                                                <div className="WD-card-top-icons">
+                                                    <div className="WD-video-circle">
+                                                        <FontAwesomeIcon icon={faVideo} />
+                                                    </div>
+                                                    <div className="WD-arrow-circle">
+                                                        <FontAwesomeIcon icon={faArrowRight} style={{ transform: 'rotate(-45deg)' }} />
+                                                    </div>
+                                                </div>
+                                                <h3 className="WD-see-how-text">See how<br />it's done</h3>
+                                                <div className="WD-card-decorations">
+                                                    <div className="WD-decor-ring-1"></div>
+                                                    <div className="WD-decor-ring-2"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
+
+
+                            {/* {!showForm && (
+              <div className="WD-join-course-banner">
+                <h3 className="WD-join-banner-title">JOIN OUR COURSE</h3>
+                <div className="WD-join-banner-content">
+                  <h4 className="WD-join-course-subtitle"><FontAwesomeIcon icon={faLaptopCode} /> Website Developer course</h4>
+                  <p className="WD-join-course-desc">
+                    A website developer builds and maintains the visual and functional aspects of websites. They use programming languages like HTML, CSS, and JavaScript to create responsive layouts, interactive elements, and seamless user experiences across various devices and platforms.
+                  </p>
+                  <button className="WD-banner-register-btn" onClick={() => setShowForm(true)}>
+                    Register Now
+                  </button>
+                </div>
+              </div>
+            )} */}
+                        </div>
+                    </section>
+
+                    <section className="WD-section WD-dream-navigator-section" id="dream-navigator">
+                        <div className="WD-dn-container">
+
+                            {/* Design Resources Title - styled like Dream Navigator header */}
+                            <div className="WD-dn-resources-title-row" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginTop: '0', marginBottom: '2rem', position: 'relative' }}>
+                                <div style={{ flex: 1 }}>
+                                    <h2 className="WD-dn-title">
+                                        <div className="WD-dn-title-line1">
+                                            Tools, Code & Development
+                                            <svg className="WD-dn-icon-sparkle" viewBox="0 0 24 24" width="30" height="30">
+                                                <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
+                                            </svg>
+                                        </div>
+                                        <div className="WD-dn-title-line2" style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                                            <button
+                                                className="WD-split-action-btn"
+                                                style={{ padding: '1.7rem 1.5rem', fontSize: '1rem', margin: 0 }}
+                                                onClick={() => showLockedSectionToast("Assets, Branding & Design Support")}
+                                            >
+                                                <FontAwesomeIcon icon={faLock} /> Join course to Access
+                                            </button>
+                                            <span>Support</span>
+                                            <svg className="WD-dn-icon-sparkle-outline" viewBox="0 0 24 24" width="30" height="30">
+                                                <path d="M12 2L14.26 9.74L22 12L14.26 14.26L12 22L9.74 14.26L2 12L9.74 9.74L12 2ZM12 6.86L10.85 10.85L6.86 12L10.85 13.15L12 17.14L13.15 13.15L17.14 12L13.15 10.85L12 6.86Z" fill="currentColor" />
+                                            </svg>
+                                        </div>
+                                    </h2>
+                                    <div className="WD-dn-header-right" style={{ flex: 'unset', padding: '1.2rem 0 0 0' }}>
+                                        <svg className="WD-dn-small-sparkies" viewBox="0 0 24 24" width="16" height="16">
+                                            <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
+                                        </svg>
+                                        <p>
+                                            Get access to modern frameworks, production-ready components, and direct support
+                                            to accelerate your development workflow.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                {/* Quick Tips Toggle Button */}
+                                <div className="WD-quick-tips-container" ref={quickTipsRef} style={{ position: 'relative' }}>
+                                    <button
+                                        className="WD-quick-tips-btn"
+                                        onClick={() => setShowQuickTips(!showQuickTips)}
+                                        style={{
+                                            background: '#1a1a2e',
+                                            color: '#fff',
+                                            border: 'none',
+                                            padding: '0.8rem 1.5rem',
+                                            borderRadius: '30px',
+                                            cursor: 'pointer',
+                                            fontWeight: '600',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            gap: '8px',
+                                            boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
+                                            transition: 'all 0.3s ease',
+                                            marginTop: '1rem'
+                                        }}
+                                    >
+                                        <FontAwesomeIcon icon={faLightbulb} style={{ color: '#ffd700' }} />
+                                        Quick Tips & Shortcuts
+                                    </button>
+
+                                    {/* Floating Tips Panel */}
+                                    <div
+                                        className={`WD-quick-tips-panel ${showQuickTips ? 'WD-show' : ''}`}
+                                        style={{
+                                            position: 'absolute',
+                                            top: 'calc(100% + 15px)',
+                                            right: 0,
+                                            width: '350px',
+                                            background: '#1a1a2e',
+                                            borderRadius: '16px',
+                                            padding: '1.5rem',
+                                            boxShadow: '0 10px 40px rgba(0,0,0,0.2)',
+                                            zIndex: 100,
+                                            opacity: showQuickTips ? 1 : 0,
+                                            visibility: showQuickTips ? 'visible' : 'hidden',
+                                            transform: showQuickTips ? 'translateY(0)' : 'translateY(-10px)',
+                                            transition: 'all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)'
+                                        }}
+                                    >
+                                        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '1rem' }}>
+                                            <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: 'rgba(255,215,0,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                                <FontAwesomeIcon icon={faLightbulb} style={{ color: '#ffd700', fontSize: '0.9rem' }} />
+                                            </div>
+                                            <span style={{ color: '#ffd700', fontWeight: 'bold', fontSize: '0.9rem' }}>Tips</span>
+                                        </div>
+
+                                        <h3 style={{ color: 'white', fontSize: '1.2rem', marginBottom: '1.2rem', fontWeight: 'bold' }}>Developer Productivity Tips</h3>
+
+                                        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                                            {/* Tip 1 */}
+                                            <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                                                <FontAwesomeIcon icon={faCheckCircle} style={{ color: '#4caf50', marginTop: '4px', fontSize: '1rem' }} />
+                                                <div>
+                                                    <h4 style={{ color: 'white', fontSize: '0.95rem', marginBottom: '4px', fontWeight: '600' }}>Organize Your Project Files</h4>
+                                                    <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.85rem', lineHeight: '1.4', margin: 0 }}>Keep your codebase properly structured with separate folders for components, styles, and assets to ensure maintainability.</p>
+                                                </div>
+                                            </div>
+                                            {/* Tip 2 */}
+                                            <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                                                <FontAwesomeIcon icon={faCheckCircle} style={{ color: '#4caf50', marginTop: '4px', fontSize: '1rem' }} />
+                                                <div>
+                                                    <h4 style={{ color: 'white', fontSize: '0.95rem', marginBottom: '4px', fontWeight: '600' }}>Use Consistent Coding Standards</h4>
+                                                    <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.85rem', lineHeight: '1.4', margin: 0 }}>Always maintain consistent naming conventions, indentation, and linting rules to ensure a professional and readable codebase.</p>
+                                                </div>
+                                            </div>
+                                            {/* Tip 3 */}
+                                            <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                                                <FontAwesomeIcon icon={faCheckCircle} style={{ color: '#4caf50', marginTop: '4px', fontSize: '1rem' }} />
+                                                <div>
+                                                    <h4 style={{ color: 'white', fontSize: '0.95rem', marginBottom: '4px', fontWeight: '600' }}>Leverage IDE Shortcuts</h4>
+                                                    <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.85rem', lineHeight: '1.4', margin: 0 }}>Use keyboard shortcuts in VS Code, IntelliJ, or other IDEs to speed up your development workflow and efficiency.</p>
+                                                </div>
+                                            </div>
+                                            {/* Tip 4 */}
+                                            <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                                                <FontAwesomeIcon icon={faCheckCircle} style={{ color: '#4caf50', marginTop: '4px', fontSize: '1rem' }} />
+                                                <div>
+                                                    <h4 style={{ color: 'white', fontSize: '0.95rem', marginBottom: '4px', fontWeight: '600' }}>Maintain Code Documentation</h4>
+                                                    <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.85rem', lineHeight: '1.4', margin: 0 }}>Follow documentation standards like JSDoc or maintain a clear README to help other developers understand your logic.</p>
+                                                </div>
+                                            </div>
+                                            {/* Tip 5 */}
+                                            <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                                                <FontAwesomeIcon icon={faCheckCircle} style={{ color: '#4caf50', marginTop: '4px', fontSize: '1rem' }} />
+                                                <div>
+                                                    <h4 style={{ color: 'white', fontSize: '0.95rem', marginBottom: '4px', fontWeight: '600' }}>Optimize Performance Before Deploy</h4>
+                                                    <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.85rem', lineHeight: '1.4', margin: 0 }}>Minify your code and optimize assets like images or fonts to improve page load speed and Lighthouse scores.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Main Visual Row - Accordion */}
+                            <div className="WD-dn-visual-row WD-resources-accordion">
+                                {courseResources.slice(0, 6).map((resource, index) => {
+                                    const isActive = activeAccordionIndex === index;
+                                    const num = `0${index + 1}`;
+
+                                    if (isActive) {
+                                        return (
+                                            <div key={resource.id} className="WD-accordion-panel WD-accordion-expanded WD-dn-spark-card" style={{ background: index % 2 === 0 ? 'linear-gradient(135deg, #e0ebff 0%, #b3caff 100%)' : 'linear-gradient(135deg, #eae0ff 0%, #cbb3ff 100%)' }}>
+                                                <div className="WD-dn-sc-header">
+                                                    <div className="WD-dn-sc-num">{num}</div>
+                                                    <div className="WD-dn-sc-avatar" style={{ backgroundColor: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#1a1a2e', fontSize: '1.2rem' }}>
+                                                        {resource.icon}
+                                                    </div>
+                                                </div>
+                                                <h3 className="WD-dn-sc-title" style={{ fontSize: '1.5rem', marginBottom: '0.9rem', color: '#1a1a2e', fontWeight: 'bold' }}>{resource.title}</h3>
+                                                <p className="WD-dn-sc-desc" style={{ marginBottom: '1rem', color: '#1a1a2e', opacity: 0.8, fontSize: '0.9rem' }}>{resource.description}</p>
+
+                                                <div className="WD-resource-meta" style={{ marginBottom: '1.5rem', color: '#1a1a2e', opacity: 0.9, fontSize: '0.85rem', display: 'flex', gap: '1.5rem', fontWeight: 'bold', marginTop: '2rem' }}>
+                                                    <span>{resource.type.toUpperCase()} • {resource.size}</span>
+                                                    <span><FontAwesomeIcon icon={faDownload} /> {resource.downloads.toLocaleString()} downloads</span>
+                                                    {resource.isRestricted && (
+                                                        <span style={{ color: '#d32f2f' }}><FontAwesomeIcon icon={faLock} /> Exclusive</span>
+                                                    )}
+                                                </div>
+
+                                                {resource.isRestricted ? (
+                                                    <button
+                                                        className="WD-dn-sc-btn"
+                                                        onClick={() => handleJoinCourseForResource(resource.title)}
+                                                        style={{ marginTop: 'auto', background: '#1a1a2e', color: 'white' }}
+                                                    >
+                                                        <FontAwesomeIcon icon={faLock} /> Join Course to Download <FontAwesomeIcon icon={faArrowRight} style={{ transform: 'rotate(45deg)', marginLeft: '5px' }} />
+                                                    </button>
+                                                ) : (
+                                                    <button
+                                                        className={`WD-dn-sc-btn ${downloadedResources.includes(resource.id) ? 'WD-downloaded' : ''}`}
+                                                        onClick={() => handleDownloadResource(resource.id, resource.title, resource.localPath, resource.fileName)}
+                                                        style={{ marginTop: 'auto', background: downloadedResources.includes(resource.id) ? '#4caf50' : '#1a1a2e', color: 'white' }}
+                                                    >
+                                                        {downloadedResources.includes(resource.id) ? (
+                                                            <><FontAwesomeIcon icon={faCheckCircle} /> Downloaded</>
+                                                        ) : (
+                                                            <><FontAwesomeIcon icon={faDownload} /> Download Now <FontAwesomeIcon icon={faArrowRight} style={{ transform: 'rotate(45deg)', marginLeft: '5px' }} /></>
+                                                        )}
+                                                    </button>
+                                                )}
+                                            </div>
+                                        );
+                                    } else {
+                                        return (
+                                            <div
+                                                key={resource.id}
+                                                className={`WD-accordion-panel WD-accordion-collapsed WD-dn-v-pill ${index % 2 === 0 ? 'WD-dn-bg-dark' : 'WD-dn-bg-light'}`}
+                                                onClick={() => setActiveAccordionIndex(index)}
+                                            >
+                                                <span className="WD-dn-v-text">{resource.title}</span>
+                                                <div className="WD-dn-v-num">{num}</div>
+                                            </div>
+                                        );
+                                    }
+                                })}
+                            </div>
+
+                            {/* Stats Row - horizontal style matching the reference UI */}
+                            <div className="WD-dn-stats-row">
+                                <div className="WD-dn-stat-items">
+                                    <div className="WD-dn-stat-item"><strong>20</strong> Total Resources</div>
+                                    <div className="WD-dn-stat-item"><strong>32,000</strong> Total Downloads</div>
+                                    <div className="WD-dn-stat-item"><strong>{yourDownloadsCount}</strong> Your Downloads</div>
+                                </div>
+                                <div className="WD-dn-socials">
+                                    <span className="WD-dn-social-icon" title="Total Resources"><FontAwesomeIcon icon={faFileAlt} /></span>
+                                    <span className="WD-dn-social-icon" title="Total Downloads"><FontAwesomeIcon icon={faDownload} /></span>
+                                    <span className="WD-dn-social-icon" title="Your Downloads"><FontAwesomeIcon icon={faUser} /></span>
+                                </div>
+                            </div>
+
+                            <div className="WD-resources-note">
+                                <h4><FontAwesomeIcon icon={faLightbulb} /> Note:</h4>
+                                <p>
+                                    Our course includes <strong>20 comprehensive resources</strong> to support your development journey.
+                                    First 4 resources are available for free download. <strong>Web Development Cheatsheets</strong> and
+                                    <strong> Project Portfolio Guide</strong> are exclusive to enrolled students.
+                                    Join our course to access all 20 premium resources and unlock full learning potential.
+                                </p>
+                            </div>
+
+                            <hr className="WD-dn-divider" />
+
+                            {/* Bottom Dashboard Row */}
+                            <div className="WD-dn-dashboard-row">
+                                <div className="WD-dn-dash-left">
+                                    <h3 className="WD-dn-dash-title"> 30-day money-back guarantee <br />Lifetime access  Certificate included </h3>
+                                    <button
+                                        className="WD-dn-dash-btn"
+                                        onClick={handleBenefitsClick}
+                                    >
+                                        Join course to Access <FontAwesomeIcon icon={faArrowRight} style={{ fontSize: '0.8rem', marginLeft: '4px' }} />
+                                    </button>
+                                </div>
+                                <div className="WD-dn-dash-right">
+                                    <div className="WD-dn-dash-card">
+                                        <div className="WD-dn-dash-icon WD-dash-icon-1"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#2563eb" strokeWidth="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2" /><line x1="12" y1="8" x2="12" y2="16" /><line x1="8" y1="12" x2="8" y2="16" /><line x1="16" y1="16" x2="16" y2="16" /></svg></div>
+                                        <div className="WD-dn-dash-info">
+                                            <span className="WD-dn-dash-label">Successful Graduates</span>
+                                            <span className="WD-dn-dash-value">10,000+</span>
+                                        </div>
+                                    </div>
+                                    <div className="WD-dn-dash-card">
+                                        <div className="WD-dn-dash-icon WD-dash-icon-2"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#2563eb" strokeWidth="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" /></svg></div>
+                                        <div className="WD-dn-dash-info">
+                                            <span className="WD-dn-dash-label">Job Placement Rate</span>
+                                            <span className="WD-dn-dash-value">94%</span>
+                                        </div>
+                                    </div>
+                                    <div className="WD-dn-dash-card">
+                                        <div className="WD-dn-dash-icon WD-dash-icon-3"><FontAwesomeIcon icon={faUsers} style={{ color: '#2563eb' }} /></div>
+                                        <div className="WD-dn-dash-info">
+                                            <span className="WD-dn-dash-label">Industry Partners</span>
+                                            <span className="WD-dn-dash-value">50+</span>
+                                        </div>
+                                    </div>
+                                    <div className="WD-dn-dash-card">
+                                        <div className="WD-dn-dash-icon WD-dash-icon-4"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#2563eb" strokeWidth="2"><circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" /></svg></div>
+                                        <div className="WD-dn-dash-info">
+                                            <span className="WD-dn-dash-label">Community Support</span>
+                                            <span className="WD-dn-dash-value">24/7</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Find Influencers Section (Dark UI Style) */}
+                    {/* <section className="WD-section WD-influencer-section" id="signin">
+          <div className="WD-influencer-container">
+            <div className="WD-influencer-content">
+              {showForm ? (
+                <div className="WD-form-section WD-in-influencer">
+                  <div className="WD-form-wrapper WD-dark-form">
+                    <button
+                      className="WD-close-form-btn WD-close-dark"
+                      onClick={() => setShowForm(false)}
+                      aria-label="Close form"
+                    >
+                      <FontAwesomeIcon icon={faTimes} />
+                    </button>
+
+                    <form className="WD-signin-form" onSubmit={handleSignSubmit}>
+                      <h3 className="WD-form-dark-title">Register Now</h3>
+                      <div className="WD-form-group">
+                        <label htmlFor="email"><FontAwesomeIcon icon={faEnvelope} /> Email Address</label>
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleFormChange}
+                          className={`WD-form-input ${errors.email ? 'WD-error' : ''}`}
+                          placeholder="Enter your email"
+                        />
+                        {errors.email && <span className="WD-error-message">{errors.email}</span>}
+                      </div>
+
+                      <div className="WD-form-group">
+                        <label htmlFor="course"><FontAwesomeIcon icon={faBook} /> Course</label>
+                        <input
+                          type="text"
+                          id="course"
+                          name="course"
+                          value={formData.course}
+                          onChange={handleFormChange}
+                          className={`WD-form-input ${errors.course ? 'WD-error' : ''}`}
+                          placeholder="Enter Course Name"
+                        />
+                        {errors.course && <span className="WD-error-message">{errors.course}</span>}
+                      </div>
+
+                      <div className="WD-form-group WD-checkbox-group">
+                        <input
+                          type="checkbox"
+                          id="agreeTerms"
+                          name="agreeTerms"
+                          checked={formData.agreeTerms}
+                          onChange={handleFormChange}
+                          className={errors.agreeTerms ? 'WD-error' : ''}
+                        />
+                        <label htmlFor="agreeTerms">
+                          I agree to the Terms of Service and Privacy Policy
+                        </label>
+                        {errors.agreeTerms && <span className="WD-error-message">{errors.agreeTerms}</span>}
+                      </div>
+
+                      <button type="submit" className="WD-submit-btn">
+                        Register
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              ) : (
+                <div className="WD-influencer-split">
+                  <div className="WD-influencer-left">
+                    <h2 className="WD-influencer-title">
+                      Join <span className="WD-search-badge"><FontAwesomeIcon icon={faComments} style={{ fontSize: '0.6em', marginRight: '4px' }} /> Q</span> Our Course
+                      <br />
+                      <div className="WD-influencer-avatars">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="User 1" />
+                        <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="User 2" />
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="User 3" />
+                      </div>
+                      to collaborate
+                      <br />
+                      with us
+                      <div className="WD-influencer-search-bar">
+                        <span className="WD-search-placeholder">| Search</span>
+                        <div className="WD-search-actions">
+                          <FontAwesomeIcon icon={faStar} className="WD-voice-icon" />
+                          <button className="WD-search-submit"><FontAwesomeIcon icon={faComments} style={{ fontSize: '0.7em' }} /></button>
+                        </div>
+                      </div>
+                    </h2>
+                  </div>
+                  <div className="WD-influencer-right">
+                    <div
+                      className="WD-see-how-card"
+                      onClick={() => setShowForm(true)}
+                    >
+                      <div className="WD-card-top-icons">
+                        <div className="WD-video-circle">
+                          <FontAwesomeIcon icon={faVideo} />
+                        </div>
+                        <div className="WD-arrow-circle">
+                          <FontAwesomeIcon icon={faArrowRight} style={{ transform: 'rotate(-45deg)' }} />
+                        </div>
+                      </div>
+                      <h3 className="WD-see-how-text">See how<br />it's done</h3>
+                      <div className="WD-card-decorations">
+                        <div className="WD-decor-ring-1"></div>
+                        <div className="WD-decor-ring-2"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+
+
+            {/* {!showForm && (
+              <div className="WD-join-course-banner">
+                <h3 className="WD-join-banner-title">JOIN OUR COURSE</h3>
+                <div className="WD-join-banner-content">
+                  <h4 className="WD-join-course-subtitle"><FontAwesomeIcon icon={faLaptopCode} /> Website Developer course</h4>
+                  <p className="WD-join-course-desc">
+                    A website developer builds and maintains the visual and functional aspects of websites. They use programming languages like HTML, CSS, and JavaScript to create responsive layouts, interactive elements, and seamless user experiences across various devices and platforms.
+                  </p>
+                  <button className="WD-banner-register-btn" onClick={() => setShowForm(true)}>
+                    Register Now
+                  </button>
+                </div>
+              </div>
+            )} */}
+                    {/* </div> */}
+                    {/* </section> */}
+
+                    {/* Assets, Branding & Design Support (Video Layout Style) */}
+                    {/* <section className="WD-section WD-split-section WD-split-reverse" id="assets">
           <div className="WD-split-container">
             <div className="WD-split-left">
               <div className="WD-video-visual">
@@ -1668,217 +1725,221 @@ const WebsiteDeveloperInternPage = () => {
           </div>
         </section> */}
 
-                {/* Image Gallery Section */}
-                <section
-                    className="WD-section WD-new-gallery-section"
-                    id="gallery"
-                >
-                    <div className="WD-Gallery-container-new">
-                        <div className="WD-Gallery-header-new">
-                            <div className="WD-Gallery-title-wrapper-new">
-                                <span className="WD-Gallery-title-line-new"></span>
-                                <h2 className="WD-Gallery-title-new">Learning Environment</h2>
+                    {/* Image Gallery Section */}
+                    <section
+                        className="WD-section WD-new-gallery-section"
+                        id="gallery"
+                    >
+                        <div className="WD-Gallery-container-new">
+                            <div className="WD-Gallery-header-new">
+                                <div className="WD-Gallery-title-wrapper-new">
+                                    <span className="WD-Gallery-title-line-new"></span>
+                                    <h2 className="WD-Gallery-title-new">Learning Environment</h2>
+                                </div>
+                                {/* <p className="WD-Gallery-view-all-new">Explore our dynamic learning environment, where creativity meets collaboration. From hands-on projects to expert guidance, we provide everything you need to excel in your graphic design journey.</p> */}
                             </div>
-                            {/* <p className="WD-Gallery-view-all-new">Explore our dynamic learning environment, where creativity meets collaboration. From hands-on projects to expert guidance, we provide everything you need to excel in your graphic design journey.</p> */}
-                        </div>
 
-                        <div className="WD-Gallery-grid-new">
-                            {/* Left Column (1 Large Card) */}
-                            <div
-                                className="WD-Gallery-large-card-new"
-                                onClick={() => handleImageClick(imagesWithDescriptions[0])}
-                            >
-                                <img src={imagesWithDescriptions[0].url} alt={imagesWithDescriptions[0].title} className="WD-Gallery-card-bg-new" />
-                                <div className="WD-Gallery-card-overlay-new"></div>
-                                <div className="WD-Gallery-card-content-new">
-                                    <span className="WD-Gallery-badge-new">Environment</span>
-                                    <h3 className="WD-Gallery-large-title-new">{imagesWithDescriptions[0].title}</h3>
-                                    <div className="WD-Gallery-meta-new">
-                                        <span className="WD-Gallery-meta-item-new"><FontAwesomeIcon icon={faClock} /> March 8, 2022</span>
-                                        <span className="WD-Gallery-meta-item-new"><FontAwesomeIcon icon={faComments} /> No Comments</span>
+                            <div className="WD-Gallery-grid-new">
+                                {/* Left Column (1 Large Card) */}
+                                <div
+                                    className="WD-Gallery-large-card-new"
+                                    onClick={() => handleImageClick(imagesWithDescriptions[0])}
+                                >
+                                    <img src={imagesWithDescriptions[0].url} alt={imagesWithDescriptions[0].title} className="WD-Gallery-card-bg-new" />
+                                    <div className="WD-Gallery-card-overlay-new"></div>
+                                    <div className="WD-Gallery-card-content-new">
+                                        <span className="WD-Gallery-badge-new">Environment</span>
+                                        <h3 className="WD-Gallery-large-title-new">{imagesWithDescriptions[0].title}</h3>
+                                        <div className="WD-Gallery-meta-new">
+                                            <span className="WD-Gallery-meta-item-new"><FontAwesomeIcon icon={faClock} /> March 8, 2022</span>
+                                            <span className="WD-Gallery-meta-item-new"><FontAwesomeIcon icon={faComments} /> No Comments</span>
+                                        </div>
                                     </div>
+                                </div>
+
+                                {/* Middle Column (3 Small Cards) */}
+                                <div className="WD-Gallery-middle-col-new">
+                                    {[1, 2, 3].map((index) => {
+                                        const item = imagesWithDescriptions[index % imagesWithDescriptions.length];
+                                        return (
+                                            <div
+                                                key={index}
+                                                className="WD-Gallery-small-card-new"
+                                                onClick={() => handleImageClick(item)}
+                                            >
+                                                <div className="WD-Gallery-small-image-new">
+                                                    <img src={item.url} alt={item.title} />
+                                                </div>
+                                                <div className="WD-Gallery-small-content-new">
+                                                    <span className="WD-Gallery-badge-text-new">Environment</span>
+                                                    <h4 className="WD-Gallery-small-title-new">{item.title}</h4>
+                                                    <span className="WD-Gallery-small-date-new"><FontAwesomeIcon icon={faClock} /> March 8, 2022</span>
+                                                </div>
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+
+                                {/* Right Column (2 Medium Cards) */}
+                                <div className="WD-Gallery-right-col-new">
+                                    {[4, 5].map((index) => {
+                                        const item = imagesWithDescriptions[index % imagesWithDescriptions.length];
+                                        return (
+                                            <div
+                                                key={index}
+                                                className="WD-Gallery-medium-card-new"
+                                                onClick={() => handleImageClick(item)}
+                                            >
+                                                <img src={item.url} alt={item.title} className="WD-Gallery-card-bg-new" />
+                                                <div className="WD-Gallery-card-overlay-new"></div>
+                                                <div className="WD-Gallery-card-content-new">
+                                                    <h3 className="WD-Gallery-medium-title-new">{item.title}</h3>
+                                                </div>
+                                            </div>
+                                        );
+                                    })}
                                 </div>
                             </div>
 
-                            {/* Middle Column (3 Small Cards) */}
-                            <div className="WD-Gallery-middle-col-new">
-                                {[1, 2, 3].map((index) => {
-                                    const item = imagesWithDescriptions[index % imagesWithDescriptions.length];
-                                    return (
-                                        <div
-                                            key={index}
-                                            className="WD-Gallery-small-card-new"
-                                            onClick={() => handleImageClick(item)}
-                                        >
-                                            <div className="WD-Gallery-small-image-new">
-                                                <img src={item.url} alt={item.title} />
-                                            </div>
-                                            <div className="WD-Gallery-small-content-new">
-                                                <span className="WD-Gallery-badge-text-new">Environment</span>
-                                                <h4 className="WD-Gallery-small-title-new">{item.title}</h4>
-                                                <span className="WD-Gallery-small-date-new"><FontAwesomeIcon icon={faClock} /> March 8, 2022</span>
-                                            </div>
-                                        </div>
-                                    );
-                                })}
+                            {/* Existing Note Logic */}
+                            {activeDescription && (
+                                <div className="WD-gallery-description" style={{ marginTop: '2rem' }}>
+                                    <div className="WD-description-content">
+                                        <h4><FontAwesomeIcon icon={faInfoCircle} /> About this Environment:</h4>
+                                        <p>{imagesWithDescriptions.find(img => img.title === activeDescription)?.description}</p>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+                    </section>
+
+
+                    {/* Previous Resources Section removed as it's now integrated into the Dream Navigator section */}
+
+                    {/* Graphic Designer Benefits Section */}
+                    <section
+                        className="WD-section WD-new-benefits-section"
+                        id="benefits"
+                    >
+                        {/* Background decorative SVG elements */}
+                        <div className="WD-benefits-bg-shapes">
+                            <svg className="WD-bg-shape WD-bg-shape-1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10,100 C10,20 100,10 180,90 C100,200 20,180 10,100 Z" fill="none" stroke="#cfcaff" strokeWidth="2" />
+                            </svg>
+                            <svg className="WD-bg-shape WD-bg-shape-2" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M190,100 C190,20 100,10 20,90 C100,200 180,180 190,100 Z" fill="none" stroke="#cfcaff" strokeWidth="2" />
+                            </svg>
+                        </div>
+
+                        <div className="WD-benefits-container-new">
+                            {/* Keeping the original title and subtitle */}
+                            <div style={{ textAlign: 'center', marginBottom: '3rem', position: 'relative', zIndex: 2 }}>
+                                <h2 className="WD-section-title">
+                                    <svg className="WD-animated-star" viewBox="0 0 24 24" width="36" height="36" style={{ verticalAlign: 'middle', marginRight: '10px' }}>
+                                        <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="black" />
+                                    </svg>
+                                    Website Developer Benefits
+                                    <svg className="WD-animated-star" viewBox="0 0 24 24" width="36" height="36" style={{ verticalAlign: 'middle', marginRight: '10px' }}>
+                                        <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="black" />
+                                    </svg>
+                                </h2>
+                                <p className="WD-section-subtitle" style={{ margin: '0 auto', color: '#555' }}>
+                                    When you join our comprehensive website development course, you unlock exclusive benefits
+                                    that accelerate your career growth and engineering mastery.
+                                </p>
                             </div>
 
-                            {/* Right Column (2 Medium Cards) */}
-                            <div className="WD-Gallery-right-col-new">
-                                {[4, 5].map((index) => {
-                                    const item = imagesWithDescriptions[index % imagesWithDescriptions.length];
+                            <div className="WD-benefits-image-grid-new">
+                                {benefits.map((benefit, index) => {
+                                    const benefitImages = [
+                                        benefitCareer,         // Career Opportunities - custom generated
+                                        benefitCertification,  // Certification - custom generated
+                                        benefitMentorship,     // Mentorship - custom generated
+                                        benefitSoftware,       // Software Access - bright 3D illustration
+                                        benefitNetworking,     // Networking - bright studio networking concept
+                                        benefitMoneyBack       // Money Back Guarantee - bright gold/security concept
+                                    ];
                                     return (
                                         <div
                                             key={index}
-                                            className="WD-Gallery-medium-card-new"
-                                            onClick={() => handleImageClick(item)}
+                                            className={`WD-benefit-img-card-new WD-benefit-img-card-${index}-new`}
                                         >
-                                            <img src={item.url} alt={item.title} className="WD-Gallery-card-bg-new" />
-                                            <div className="WD-Gallery-card-overlay-new"></div>
-                                            <div className="WD-Gallery-card-content-new">
-                                                <h3 className="WD-Gallery-medium-title-new">{item.title}</h3>
+                                            <img src={benefitImages[index]} alt={benefit.title} className="WD-benefit-card-bg-new" />
+                                            <div className="WD-benefit-card-overlay-new"></div>
+                                            <div className="WD-benefit-card-content-new">
+                                                <div className="WD-benefit-card-header-new">
+                                                    <span className="WD-benefit-card-icon-new">{benefit.icon}</span>
+                                                    <h3 className="WD-benefit-card-title-new">{benefit.title}</h3>
+                                                </div>
+                                                <p className="WD-benefit-card-desc-new">{benefit.description}</p>
                                             </div>
                                         </div>
                                     );
                                 })}
                             </div>
                         </div>
+                    </section>
 
-                        {/* Existing Note Logic */}
-                        {activeDescription && (
-                            <div className="WD-gallery-description" style={{ marginTop: '2rem' }}>
-                                <div className="WD-description-content">
-                                    <h4><FontAwesomeIcon icon={faInfoCircle} /> About this Environment:</h4>
-                                    <p>{imagesWithDescriptions.find(img => img.title === activeDescription)?.description}</p>
+                    {/* Testimonials Section - Restyled to Dream Team UI */}
+                    <section
+                        className="WD-section WD-dt-section"
+                        id="feedback"
+                    >
+                        <div className="WD-dt-container">
+                            <div className="WD-dt-header">
+                                <h2 className="WD-dt-title">
+                                    <span>Web Developers</span> <span>Testimonials<svg className="WD-dt-title-underline" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 5 Q 50 10 100 5" stroke="#7ad690" strokeWidth="8" fill="none" strokeLinecap="round" /></svg></span>
+                                </h2>
+
+                                <p className="WD-dt-subtitle">
+                                    Hear what our students have to say about their learning experience
+                                </p>
+                            </div>
+
+                            <div className="WD-dt-cards-wrapper">
+                                <div className="WD-dt-cards">
+                                    {[...testimonials, ...testimonials].map((testimonial, index) => {
+                                        const cardClassIndex = (index % 5) + 1;
+                                        const imgMap = {
+                                            1: boy1, 2: girl1, 3: boy2, 4: girl2,
+                                            5: boy3, 6: girl3, 7: boy4, 8: girl4
+                                        };
+                                        const photoUrl = imgMap[testimonial.id];
+                                        const isBoy = [1, 3, 5, 7].includes(testimonial.id);
+
+
+                                        return (
+                                            <div key={index} className={`WD-dt-card WD-dt-card-${cardClassIndex}`}>
+                                                <div className="WD-dt-card-img-wrapper">
+                                                    <img
+                                                        src={photoUrl}
+                                                        alt={testimonial.author}
+                                                        className={`WD-dt-card-img ${isBoy ? 'WD-dt-boy-avatar' : ''}`}
+                                                    />
+                                                </div>
+                                                <div className={`WD-dt-card-content WD-dt-content-bg-${cardClassIndex}`}>
+                                                    <h4 className="WD-dt-card-name">{testimonial.author}</h4>
+                                                    <p className="WD-dt-card-text">{testimonial.text}</p>
+                                                </div>
+                                            </div>
+                                        );
+                                    })}
                                 </div>
                             </div>
-                        )}
-                    </div>
-                </section>
 
-
-                {/* Previous Resources Section removed as it's now integrated into the Dream Navigator section */}
-
-                {/* Graphic Designer Benefits Section */}
-                <section
-                    className="WD-section WD-new-benefits-section"
-                    id="benefits"
-                >
-                    {/* Background decorative SVG elements */}
-                    <div className="WD-benefits-bg-shapes">
-                        <svg className="WD-bg-shape WD-bg-shape-1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M10,100 C10,20 100,10 180,90 C100,200 20,180 10,100 Z" fill="none" stroke="#cfcaff" strokeWidth="2" />
-                        </svg>
-                        <svg className="WD-bg-shape WD-bg-shape-2" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M190,100 C190,20 100,10 20,90 C100,200 180,180 190,100 Z" fill="none" stroke="#cfcaff" strokeWidth="2" />
-                        </svg>
-                    </div>
-
-                    <div className="WD-benefits-container-new">
-                        {/* Keeping the original title and subtitle */}
-                        <div style={{ textAlign: 'center', marginBottom: '3rem', position: 'relative', zIndex: 2 }}>
-                            <h2 className="WD-section-title">
-                                <svg className="WD-animated-star" viewBox="0 0 24 24" width="36" height="36" style={{ verticalAlign: 'middle', marginRight: '10px' }}>
-                                    <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="black" />
-                                </svg>
-                                Website Developer Benefits
-                                <svg className="WD-animated-star" viewBox="0 0 24 24" width="36" height="36" style={{ verticalAlign: 'middle', marginRight: '10px' }}>
-                                    <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="black" />
-                                </svg>
-                            </h2>
-                            <p className="WD-section-subtitle" style={{ margin: '0 auto', color: '#555' }}>
-                                When you join our comprehensive website development course, you unlock exclusive benefits
-                                that accelerate your career growth and engineering mastery.
-                            </p>
-                        </div>
-
-                        <div className="WD-benefits-image-grid-new">
-                            {benefits.map((benefit, index) => {
-                                const benefitImages = [
-                                    benefitCareer,         // Career Opportunities - custom generated
-                                    benefitCertification,  // Certification - custom generated
-                                    benefitMentorship,     // Mentorship - custom generated
-                                    benefitSoftware,       // Software Access - bright 3D illustration
-                                    benefitNetworking,     // Networking - bright studio networking concept
-                                    benefitMoneyBack       // Money Back Guarantee - bright gold/security concept
-                                ];
-                                return (
-                                    <div
-                                        key={index}
-                                        className={`WD-benefit-img-card-new WD-benefit-img-card-${index}-new`}
-                                    >
-                                        <img src={benefitImages[index]} alt={benefit.title} className="WD-benefit-card-bg-new" />
-                                        <div className="WD-benefit-card-overlay-new"></div>
-                                        <div className="WD-benefit-card-content-new">
-                                            <div className="WD-benefit-card-header-new">
-                                                <span className="WD-benefit-card-icon-new">{benefit.icon}</span>
-                                                <h3 className="WD-benefit-card-title-new">{benefit.title}</h3>
-                                            </div>
-                                            <p className="WD-benefit-card-desc-new">{benefit.description}</p>
-                                        </div>
-                                    </div>
-                                );
-                            })}
-                        </div>
-                    </div>
-                </section>
-
-                {/* Testimonials Section - Restyled to Dream Team UI */}
-                <section
-                    className="WD-section WD-dt-section"
-                    id="feedback"
-                >
-                    <div className="WD-dt-container">
-                        <div className="WD-dt-header">
-                            <h2 className="WD-dt-title">
-                                <span>Web Developers</span> <span>Testimonials<svg className="WD-dt-title-underline" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 5 Q 50 10 100 5" stroke="#7ad690" strokeWidth="8" fill="none" strokeLinecap="round" /></svg></span>
-                            </h2>
-
-                            <p className="WD-dt-subtitle">
-                                Hear what our students have to say about their learning experience
-                            </p>
-                        </div>
-
-                        <div className="WD-dt-cards-wrapper">
-                            <div className="WD-dt-cards">
-                                {[...testimonials, ...testimonials].map((testimonial, index) => {
-                                    const cardClassIndex = (index % 5) + 1;
-                                    const imgMap = {
-                                        1: boy1, 2: girl1, 3: boy2, 4: girl2,
-                                        5: boy3, 6: girl3, 7: boy4, 8: girl4
-                                    };
-                                    const photoUrl = imgMap[testimonial.id];
-                                    const isBoy = [1, 3, 5, 7].includes(testimonial.id);
-
-
-                                    return (
-                                        <div key={index} className={`WD-dt-card WD-dt-card-${cardClassIndex}`}>
-                                            <div className="WD-dt-card-img-wrapper">
-                                                <img 
-                                                    src={photoUrl} 
-                                                    alt={testimonial.author} 
-                                                    className={`WD-dt-card-img ${isBoy ? 'WD-dt-boy-avatar' : ''}`} 
-                                                />
-                                            </div>
-                                            <div className={`WD-dt-card-content WD-dt-content-bg-${cardClassIndex}`}>
-                                                <h4 className="WD-dt-card-name">{testimonial.author}</h4>
-                                                <p className="WD-dt-card-text">{testimonial.text}</p>
-                                            </div>
-                                        </div>
-                                    );
-                                })}
-                            </div>
-                        </div>
-
-                        {/* <div className="WD-dt-dots">
+                            {/* <div className="WD-dt-dots">
               <span className="WD-dt-dot WD-dt-dot-active"></span>
               <span className="WD-dt-dot"></span>
               <span className="WD-dt-dot"></span>
             </div> */}
+                        </div>
+                    </section>
+
+                </div>
                     </div>
-                </section>
+                </div>
                 <BackToTop />
-                <Footer />
+                <WhiteFooter />
             </div>
         </>
     );

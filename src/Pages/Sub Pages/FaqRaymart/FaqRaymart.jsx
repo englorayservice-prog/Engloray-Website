@@ -5,7 +5,7 @@ import NavigationBar from '../../../Pages/TechLearningSection/NavigationBar/Navi
 import brandingData from './raymart_branding_data.json';
 import Logo from '../../../../src/assets/18.png'; // Using the logo from assets
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebookF, faTwitter, faLinkedinIn, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faFacebookF, faXTwitter, faLinkedinIn, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faPhone, faEnvelope, faLocationDot, faArrowRight, faComments, faChevronLeft, faChevronRight, faHeart, faBorderAll } from '@fortawesome/free-solid-svg-icons';
 import './FaqRaymart.css';
 import emilycarter from '../../../assets/images/emilybg.jpg.jpeg';
@@ -839,7 +839,7 @@ const FaqRaymart = () => {
                             </p>
                             <div className="fr-socials">
                                 <div className="fr-social-icon"><FontAwesomeIcon icon={faFacebookF} /></div>
-                                <div className="fr-social-icon"><FontAwesomeIcon icon={faTwitter} /></div>
+                                <div className="fr-social-icon"><FontAwesomeIcon icon={faXTwitter} /></div>
                                 <div className="fr-social-icon"><FontAwesomeIcon icon={faLinkedinIn} /></div>
                                 <div className="fr-social-icon"><FontAwesomeIcon icon={faInstagram} /></div>
                             </div>

@@ -1,0 +1,7 @@
+EnglorayPortfolio.API/
+build/
+scratch/
+check*.js
+fix*.js
+*.sql
+*.csv
