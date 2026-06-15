@@ -493,6 +493,7 @@ const MobileApplications = () => {
                     <section className="ma-howworks">
                         <div className="ma-howworks-container">
                             <div className="ma-left-side">
+                                <h2 className="ma-howworks-title">Our Development Engine</h2>
                                 <div className="ma-badge">
                                     <span className="ma-dot"></span>
                                     App Development Lifecycle
@@ -507,7 +508,6 @@ const MobileApplications = () => {
                             </div>
 
                             <div className="ma-right-side">
-                                <h2 className="ma-section-title">Our Development Engine</h2>
                                 <div className="ma-steps-grid">
                                     {howItWorksSteps.map((step, index) => (
                                         <div key={index} className="ma-step-card">
@@ -602,7 +602,9 @@ const MobileApplications = () => {
 
                         <div className="ma-projects-content">
                             <h1>Built for <br />Leading Brands</h1>
-                            <p>We collaborate with modern companies to define the mobile frontier.</p>
+                            <p>
+                                We collaborate with modern companies to define the mobile frontier. By combining engineering excellence and native development paradigms, we create powerful applications that optimize engagement and drive business growth.
+                            </p>
                             <div className="ma-projects-stats">
                                 <div><h2>30+</h2><span>Fortune 500 Partners</span></div>
                                 <div><h2>200+</h2><span>App Store Launches</span></div>

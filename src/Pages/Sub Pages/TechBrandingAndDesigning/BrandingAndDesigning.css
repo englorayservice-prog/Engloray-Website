@@ -24,15 +24,15 @@
     /* ============================== */
     .bd-hero {
         position: relative;
-        padding: 160px 20px 260px;
-        height: 700px;
+        padding: 190px 20px 260px;
+        height: 730px;
         text-align: center;
         background: radial-gradient(circle at top, #eef4ff, #ffffff);
         overflow: hidden;
     }
 
     .bd-hero-container {
-        bottom: 30px;
+        bottom: 0px;
         max-width: 1100px;
         margin: auto;
         position: relative;
@@ -104,12 +104,12 @@
     }
 
     .bd-floating-card.bd-left {
-        top: 140px;
+        top: 200px;
         left: 90px;
     }
 
     .bd-floating-card.bd-right {
-        top: 140px;
+        top: 200px;
         right: 100px;
     }
 
@@ -170,7 +170,7 @@
         width: 70%;
         height: 70%;
         object-fit: cover;
-        top: 80px;
+        top: 110px;
         left: 200px;
         z-index: 0;
         opacity: 0.09;
@@ -254,13 +254,13 @@
 
     .bd-blue-shape {
         background: radial-gradient(circle, #3b82f6, transparent 70%);
-        top: 90px;
+        top: 120px;
         left: 15%;
     }
 
     .bd-sand-shape {
         background: radial-gradient(circle, #e5bb71, transparent 80%);
-        top: 100px;
+        top: 130px;
         right: 19%;
     }
 
@@ -456,14 +456,16 @@
         margin-bottom: 25px;
     }
 
-    .bd-dna-list, .bd-impact-list {
+    .bd-dna-list,
+    .bd-impact-list {
         list-style: none;
         padding: 0;
         margin: 0;
         text-align: left;
     }
 
-    .bd-dna-list li, .bd-impact-list li {
+    .bd-dna-list li,
+    .bd-impact-list li {
         position: relative;
         padding-left: 25px;
         margin-bottom: 15px;
@@ -473,7 +475,8 @@
         color: #4a5568;
     }
 
-    .bd-dna-list li::before, .bd-impact-list li::before {
+    .bd-dna-list li::before,
+    .bd-impact-list li::before {
         content: "✓";
         position: absolute;
         left: 0;
@@ -650,7 +653,7 @@
         background: #1e293b;
         color: white;
         font-family: 'Inter', sans-serif;
-        padding: 80px 0;
+        padding: 55px 0 80px;
     }
 
     .bd-howworks-container {
@@ -663,7 +666,7 @@
     }
 
     .bd-left-side {
-        margin-top: 60px;
+        margin-top: 35px;
         position: relative;
     }
 
@@ -673,7 +676,7 @@
         gap: 10px;
         color: #3b82f6;
         font-size: 14px;
-        margin-top: 40px;
+        margin-top: 0;
         font-family: 'Inter', sans-serif;
     }
 
@@ -689,7 +692,7 @@
         font-weight: 500;
         line-height: 1.6;
         color: #cfd9dc;
-        margin-top: 40px;
+        margin-top: 20px;
         text-align: left;
         font-family: 'Inter', sans-serif;
     }
@@ -714,17 +717,18 @@
         position: relative;
     }
 
-    .bd-section-title {
+    .bd-howworks-title {
         font-size: 36px;
         font-weight: 600;
-        margin-bottom: 30px;
-        margin-left: 400px;
+        margin-bottom: 15px;
+        margin-left: 0 !important;
         font-family: 'Inter', sans-serif;
         white-space: nowrap;
+        text-align: left !important;
     }
 
     .bd-steps-grid {
-        margin-top: 40px;
+        margin-top: 15px;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 20px;
@@ -1102,17 +1106,22 @@
     /* ============================== */
     .bd-feedback-section {
         width: 100%;
-        padding: 80px 0;
+        padding: 80px 0 0 0;
         background: #ffffff;
         font-family: 'Inter', sans-serif;
         overflow: hidden;
     }
 
+    .bd-page .wf-footer-new {
+        padding-top: 15px;
+    }
+
     .bd-feedback-header {
         max-width: 1200px;
         margin: 0 auto 20px;
-        padding: 0 20px;
+        padding: 0;
         text-align: left;
+        transform: translateX(-100px);
     }
 
     .bd-feedback-title {
@@ -1141,7 +1150,7 @@
     .bd-feedback-carousel {
         position: relative;
         width: 100%;
-        height: 300px;
+        height: 270px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1252,7 +1261,8 @@
     }
 
     .bd-feedback-controls {
-        margin-top: 40px;
+        margin-top: -15px;
+        margin-bottom: 10px;
         display: flex;
         justify-content: center;
         gap: 20px;
@@ -1339,8 +1349,9 @@
             margin-left: 300px;
         }
 
-        .bd-section-title {
-            margin-left: 300px;
+        .bd-howworks-title {
+            margin-left: 0 !important;
+            text-align: left !important;
         }
 
         .bd-branding-stats-layout {
@@ -1370,9 +1381,9 @@
 
     @media (max-width: 1024px) {
         .bd-hero {
-            padding: 140px 20px 220px;
+            padding: 170px 20px 220px;
             height: auto;
-            min-height: 650px;
+            min-height: 680px;
         }
 
         .bd-hero-title {
@@ -1490,7 +1501,7 @@
             text-align: center;
         }
 
-        .bd-section-title {
+        .bd-howworks-title {
             margin-left: 0;
             text-align: center;
             font-size: 32px;
@@ -1540,8 +1551,9 @@
         }
 
         .bd-feedback-header {
-            padding: 0 25px;
+            padding: 0;
             margin-bottom: 50px;
+            transform: none;
         }
 
         .bd-feedback-title {
@@ -1571,14 +1583,14 @@
         }
 
         .bd-feedback-carousel {
-            height: 340px;
+            height: 300px;
         }
     }
 
     @media (max-width: 768px) {
         .bd-hero {
-            padding: 120px 15px 200px;
-            min-height: 600px;
+            padding: 150px 15px 200px;
+            min-height: 630px;
         }
 
         .bd-hero-title {
@@ -1963,12 +1975,13 @@
         }
 
         .bd-feedback-section {
-            padding: 60px 0;
+            padding: 60px 0 0 0;
         }
 
         .bd-feedback-header {
-            padding: 0 20px;
+            padding: 0;
             margin-bottom: 40px;
+            transform: none;
         }
 
         .bd-feedback-title {
@@ -1981,7 +1994,7 @@
         }
 
         .bd-feedback-carousel {
-            height: 400px;
+            height: 360px;
         }
 
         .bd-feedback-card {
@@ -2319,8 +2332,8 @@
 
         /* Hero Section Scaling */
         .bd-hero {
-            height: 750px;
-            padding: 160px 20px 220px;
+            height: 780px;
+            padding: 190px 20px 220px;
         }
 
         .bd-hero-title {
@@ -2345,12 +2358,12 @@
         }
 
         .bd-floating-card.bd-left {
-            top: 180px;
+            top: 240px;
             left: 120px;
         }
 
         .bd-floating-card.bd-right {
-            top: 180px;
+            top: 240px;
             right: 140px;
         }
 
@@ -2379,11 +2392,11 @@
         }
 
         .bd-about-title {
-            font-size: 3.5rem;
+            font-size: 3rem;
         }
 
         .bd-about-description {
-            font-size: 1.25rem;
+            font-size: 1.1rem;
         }
 
         .bd-cards-grid {
@@ -2391,11 +2404,11 @@
         }
 
         .bd-card-title {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
         }
 
         .bd-card-description {
-            font-size: 1rem;
+            font-size: 0.85rem;
         }
 
         .bd-card-image {
@@ -2468,7 +2481,7 @@
 
         /* How It Works Scaling */
         .bd-howworks {
-            padding: 80px 0;
+            padding: 55px 0 80px;
         }
 
         .bd-howworks-container {
@@ -2484,8 +2497,10 @@
             font-size: 17px;
         }
 
-        .bd-section-title {
+        .bd-howworks-title {
             font-size: 42px;
+            text-align: left !important;
+            margin-left: 0 !important;
         }
 
         .bd-steps-grid {
@@ -2547,16 +2562,20 @@
         }
 
         .bd-projects-content h1 {
-            font-size: 48px;
+            font-size: 56px;
         }
 
         .bd-projects-content p {
-            font-size: 18px;
+            font-size: 20px;
             width: 700px;
         }
 
         .bd-projects-stats h2 {
-            font-size: 40px;
+            font-size: 44px;
+        }
+
+        .bd-projects-stats span {
+            font-size: 22px;
         }
 
         .bd-project-logo-card {
@@ -2566,7 +2585,11 @@
 
         /* Feedback Section Scaling */
         .bd-feedback-section {
-            padding: 100px 0;
+            padding: 100px 0 0 0;
+        }
+
+        .bd-page .wf-footer-new {
+            padding-top: 25px;
         }
 
         .bd-feedback-title {
@@ -2600,6 +2623,6 @@
         }
 
         .bd-feedback-carousel {
-            height: 500px;
+            height: 430px;
         }
     }

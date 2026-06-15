@@ -85,7 +85,7 @@
     min-height: 300px;
     width: auto;
     height: auto;
-    transform: translate(-50%, -50%) scale(0.8);
+    transform: translate(-50%, -50%) scale(0.52);
     object-fit: cover;
     opacity: 1;
     pointer-events: none;
@@ -94,7 +94,7 @@
 
 /* Optional: Add hover effect to see scale change */
 .hero-video-container:hover .hero-video {
-    transform: translate(-50%, -50%) scale(0.8);
+    transform: translate(-50%, -50%) scale(0.52);
 }
 
 .hero-video-overlay {
@@ -628,58 +628,60 @@
     /* Firefox */
 }
 
-.job-card {
-    width: 480px;
-    height: 240px;
+.wcs-container .job-card {
+    width: calc((100% - 60px) / 3);
+    height: 215px;
+    padding: 16px 18px;
     position: relative;
     flex-shrink: 0;
     /* Prevents cards from shrinking */
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.job-card:hover {
+.wcs-container .job-card:hover {
     transform: translateY(-5px);
 }
 
-.job-top {
+.wcs-container .job-top {
     display: flex;
     justify-content: space-between;
     text-align: left;
 }
 
-.job-top h4 {
+.wcs-container .job-top h4 {
     font-family: "inter", sans-serif;
-    font-family: 600;
+    font-weight: 600;
+    font-size: 18px;
     text-align: left;
 }
 
-.close {
+.wcs-container .close {
     opacity: 0.5;
     cursor: pointer;
 }
 
-.job-meta {
+.wcs-container .job-meta {
     font-family: "inter", sans-serif;
     display: flex;
-    gap: 10px;
-    font-size: 12px;
+    gap: 8px;
+    font-size: 11px;
     margin: 3px 0;
     opacity: 0.7;
     text-align: left;
     justify-content: flex-start;
 }
 
-.location {
+.wcs-container .location {
     font-family: "inter", sans-serif;
-    font-size: 12px;
+    font-size: 11px;
     opacity: 0.6;
     text-align: left;
 }
 
-.match {
+.wcs-container .match {
     position: absolute;
-    bottom: 20px;
-    right: 25px;
+    bottom: 16px;
+    right: 18px;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -689,10 +691,10 @@
 }
 
 .wcs-container .circle {
-    width: 60px;
-    height: 60px;
+    width: 52px;
+    height: 52px;
     border-radius: 50%;
-    border: 4px solid #00d2ff;
+    border: 3px solid #00d2ff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -700,16 +702,16 @@
     margin: 0 0 4px 0;
 }
 
-.circle span {
+.wcs-container .circle span {
     font-family: "inter", sans-serif;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 12px;
     color: #ffffff;
 }
 
 .wcs-container .match p {
     font-family: "inter", sans-serif;
-    font-size: 11px;
+    font-size: 10px;
     color: #00d2ff;
     opacity: 0.9;
     font-weight: 600;
@@ -728,24 +730,24 @@
 }
 
 /* bottom left badges - LEFT ALIGNED */
-.job-badges {
+.wcs-container .job-badges {
     position: absolute;
-    bottom: 30px;
-    left: 20px;
+    bottom: 18px;
+    left: 18px;
     display: flex;
-    gap: 6px;
+    gap: 5px;
     flex-wrap: wrap;
-    max-width: 70%;
+    max-width: 65%;
     text-align: left;
     justify-content: flex-start;
 }
 
-.job-badges span {
+.wcs-container .job-badges span {
     font-family: "inter", sans-serif;
     background: rgba(255, 255, 255, 0.08);
-    padding: 4px 10px;
-    border-radius: 13px;
-    font-size: 13px;
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 11px;
     white-space: nowrap;
 }
 
@@ -764,8 +766,9 @@
         justify-content: center;
     }
 
-    .job-card {
+    .wcs-container .job-card {
         width: 380px;
+        height: 200px;
     }
 
     .case-studies-badge {
@@ -774,7 +777,7 @@
 
     /* Adjust image size for tablet */
     .hero-video {
-        transform: translate(-50%, -50%) scale(0.8);
+        transform: translate(-50%, -50%) scale(0.52);
     }
 
     /* Responsive case studies card adjustments */
@@ -859,9 +862,10 @@
         align-items: center;
     }
 
-    .job-card {
+    .wcs-container .job-card {
         width: 100%;
         max-width: 400px;
+        height: 200px;
     }
 
     .circle {
@@ -931,7 +935,7 @@
 
     /* Adjust image size for mobile */
     .hero-video {
-        transform: translate(-50%, -50%) scale(0.75);
+        transform: translate(-50%, -50%) scale(0.44);
     }
 
     /* Responsive case studies card adjustments for tablet */
@@ -989,7 +993,7 @@
         font-size: 32px;
     }
 
-    .job-card {
+    .wcs-container .job-card {
         max-width: 100%;
     }
 
@@ -1008,11 +1012,11 @@
         right: 5px;
     }
 
-    .job-badges {
+    .wcs-container .job-badges {
         max-width: 70%;
     }
 
-    .job-badges span {
+    .wcs-container .job-badges span {
         font-size: 11px;
         padding: 3px 8px;
     }
@@ -1063,7 +1067,7 @@
 
     /* Further adjust image size for small mobile */
     .hero-video {
-        transform: translate(-50%, -50%) scale(0.7);
+        transform: translate(-50%, -50%) scale(0.78);
     }
 
     /* Responsive case studies card adjustments for mobile */
@@ -1114,7 +1118,7 @@
 .wcs-recognition-section {
     display: flex;
     justify-content: space-between;
-    padding: 10px 80px 20px 80px; /* Reduced top padding to pull section closer */
+    padding: 60px 80px 20px 80px; /* Increased top padding to add gap above title */
     background: radial-gradient(circle at right, #1e293b, #020617);
     color: #fff;
     font-family: "Inter", sans-serif;
@@ -1242,16 +1246,19 @@
     width: 40%;
     text-align: center;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* TROPHY */
 .wcs-trophy {
     font-size: 200px;
-    margin-right: -100px;
-    margin-bottom: -10px;
+    margin: 0 auto -10px auto;
     filter: drop-shadow(0 0 30px rgba(255, 200, 0, 0.6));
     position: relative;
     z-index: 1;
+    transform: translateX(80px); /* Perfect center shift to the right */
 }
 
 /* Circular gradient behind trophy */
@@ -1262,8 +1269,8 @@
     height: 260px;
     opacity: 0.5;
     top: 10px;
-    left: 55%;
-    transform: translateX(-50%);
+    left: 50%;
+    transform: translateX(calc(-50% + 80px)); /* Shift glow to match the trophy */
     background: radial-gradient(circle,
             rgba(255, 200, 0, 0.6) 0%,
             rgba(255, 200, 0, 0.25) 40%,
@@ -1274,18 +1281,20 @@
     z-index: 0;
 }
 
-/* RIGHT CARDS - Updated icons and labels, centered content */
+/* RIGHT CARDS - Centered horizontally, shifted right to match trophy, gap adjusted */
 .wcs-right-cards {
     display: flex;
     justify-content: center;
     gap: 20px;
-    margin-bottom: 20px;
+    margin: 0 auto 20px auto;
     position: relative;
-    height: 200px;
+    height: 150px; /* Increased height to add more gap */
+    width: 440px;
+    transform: translateX(80px); /* Shift cards container to match trophy perfectly */
 }
 
 .wcs-right-cards .wcs-card {
-    position: absolute;
+    position: relative; /* Changed to relative so flexbox handles horizontal alignment */
     background: rgba(30, 41, 59, 0.6);
     backdrop-filter: blur(12px);
     border-radius: 14px;
@@ -1324,22 +1333,19 @@
 .wcs-right-cards .wcs-card:nth-child(1) {
     width: 120px;
     height: 100px;
-    top: 70px;
-    left: 0px;
+    top: -10px; /* Adjusted gap */
 }
 
 .wcs-right-cards .wcs-card:nth-child(2) {
     width: 120px;
     height: 100px;
-    top: 100px;
-    left: 160px;
+    top: 20px; /* Adjusted gap */
 }
 
 .wcs-right-cards .wcs-card:nth-child(3) {
     width: 120px;
     height: 100px;
-    top: 70px;
-    left: 320px;
+    top: -10px; /* Adjusted gap */
 }
 
 /* FLOATING TEXT - Updated with 5th position */
@@ -1368,28 +1374,28 @@
 /* Position control - Updated with 5th floating text */
 .wcs-ft-1 {
     top: 168px;
-    left: 18px;
+    left: 2.4%;
 }
 
 .wcs-ft-2 {
     top: 58px;
-    left: 220px;
+    left: 29%;
 }
 
 .wcs-ft-3 {
     top: 145px;
-    left: 420px;
+    left: 55.4%;
 }
 
 .wcs-ft-4 {
     top: 35px;
-    left: 650px;
+    left: 85.8%;
 }
 
 /* NEW 5TH FLOATING TEXT POSITION */
 .wcs-ft-5 {
-    top: 5px;
-    left: 875px;
+    top: -25px;
+    left: 113%;
 }
 
 /* Case Studies Section - White BG */
@@ -2520,19 +2526,26 @@
     .wcs-right-cards .wcs-card:nth-child(2),
     .wcs-right-cards .wcs-card:nth-child(3) {
         position: relative;
-        top: 0;
+        top: 0 !important;
         left: 0;
     }
 
     .wcs-right-cards {
+        width: auto;
+        max-width: 100%;
         flex-wrap: wrap;
         justify-content: center;
         gap: 20px;
         margin-top: 40px;
+        margin-left: 0 !important;
+        height: auto !important;
+        transform: none !important;
     }
 
     .wcs-trophy {
         font-size: 120px;
+        margin-left: 0 !important;
+        transform: none !important;
     }
 
     .hero {
@@ -2589,6 +2602,7 @@
     .wcs-right-cards {
         display: flex;
         flex-direction: column;
+        width: 100%;
         height: auto;
         gap: 30px;
         align-items: center;
@@ -3062,5 +3076,9 @@
 @media (min-width: 1440px) {
     .wcs-container {
         zoom: 1.22;
+    }
+
+    .hero-video {
+        transform: translate(-50%, -50%) scale(0.43) !important;
     }
 }

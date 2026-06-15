@@ -685,26 +685,47 @@
 /* Tablet Styles */
 @media (max-width: 1024px) {
     .tlnbn-navbar-main-container {
-        top: 60px !important;
+        top: 33px !important; /* Keep it at the desktop top position */
     }
 
     .tlnbn-nav-content {
-        padding: 10px 20px;
-        border-radius: 40px;
+        padding: 6px 12px !important;
+        border-radius: 40px !important;
+        gap: 8px !important;
     }
 
-    .tlnbn-desktop-menu,
-    .tlnbn-action-buttons,
+    .tlnbn-desktop-menu {
+        display: flex !important;
+        gap: 4px !important;
+        padding: 6px 8px !important;
+    }
+
+    .tlnbn-action-buttons {
+        display: flex !important;
+        gap: 6px !important;
+    }
+
     .tlnbn-search-container-wrapper {
-        display: none !important;
+        display: flex !important;
+        flex: 0 1 80px !important;
     }
 
     .tlnbn-mobile-toggle {
-        display: flex !important;
+        display: none !important;
     }
 
     .tlnbn-logo img {
-        height: 35px;
+        height: 32px !important;
+    }
+
+    .tlnbn-nav-link {
+        font-size: 11px !important;
+        padding: 6px 8px !important;
+    }
+
+    .tlnbn-btn {
+        font-size: 11px !important;
+        padding: 5px 10px !important;
     }
 }
 
@@ -716,15 +737,15 @@
     }
 
     .tlnbn-desktop-menu {
-        display: none;
+        display: none !important;
     }
 
     .tlnbn-mobile-toggle {
-        display: flex;
+        display: flex !important;
     }
 
     .tlnbn-nav-subscribe-container {
-        display: none;
+        display: none !important;
     }
 
     .tlnbn-nav-first-content {
@@ -738,7 +759,7 @@
     }
 
     .tlnbn-action-buttons {
-        display: none;
+        display: none !important;
     }
 
     .tlnbn-navbar-spacer {
@@ -752,11 +773,12 @@
 
     /* Hide second line on tablet/mobile */
     .tlnbn-navbar-second-line.tlnbn-desktop-only {
-        display: none;
+        display: none !important;
     }
 
     .tlnbn-search-container-wrapper {
         max-width: 100%;
+        display: none !important;
     }
 
     .tlnbn-mobile-menu {
@@ -1028,96 +1050,140 @@ body.menu-open {
 /* ==================================================== */
 @media screen and (min-width: 1024px) and (max-width: 1440px) {
     .tlnbn-navbar-main-container {
-        zoom: 1.15;
-        margin-top: -5px;
+        zoom: 1 !important; /* Disable zoom overlay which causes clipping */
+        margin-top: 0 !important;
+        top: 33px !important;
     }
 
-    /* 1. Shrink main container padding and gaps */
+    /* Raymart Page Only Overrides */
+    .rm-page {
+        padding-top: 35px !important;
+    }
+
+    .rm-page .tlnbn-navbar-main-container {
+        zoom: 1.05 !important;
+        margin-top: 3px !important;
+    }
+
+    .rm-page .search-container.desktop {
+        width: 250px !important;
+    }
+
+    .rm-page .search-container.desktop .search-results {
+        width: 250px !important;
+        left: 0 !important;
+        right: 0 !important;
+        border-radius: 10px !important;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12) !important;
+    }
+
+    .rm-page .search-container.desktop .search-section {
+        padding: 6px 10px 10px 10px !important;
+    }
+
+    .rm-page .search-container.desktop .section-header {
+        margin-bottom: 6px !important;
+        font-size: 10px !important;
+    }
+
+    .rm-page .search-container.desktop .quick-links {
+        grid-template-columns: 1fr !important;
+        gap: 5px !important;
+    }
+
+    .rm-page .search-container.desktop .quick-link {
+        padding: 5px 8px !important;
+        font-size: 11px !important;
+        gap: 4px !important;
+        border-radius: 6px !important;
+    }
+
+    /* 1. Fluid main container padding and gaps */
     .tlnbn-nav-content {
-        padding: 6px 12px !important;
-        gap: 6px !important;
+        padding: clamp(6px, -3.8px + 0.96vw, 10px) clamp(10px, 10px, 20px) !important;
+        gap: clamp(8px, -21.5px + 2.88vw, 20px) !important;
     }
 
-    /* 2. Shrink logo */
+    /* 2. Fluid logo size */
     .tlnbn-logo img {
-        height: 32px !important;
+        height: clamp(32px, 0px + 3.13vw, 45px) !important;
     }
 
-    /* 3. Shrink navigation items & track */
+    /* 3. Fluid navigation items & track */
     .tlnbn-desktop-menu {
-        gap: 3px !important;
-        padding: 4px 8px !important;
+        gap: clamp(2px, -12.8px + 1.44vw, 8px) !important;
+        padding: clamp(4px, -5.8px + 0.96vw, 8px) clamp(6px, -3.8px + 0.96vw, 10px) !important;
     }
 
     .tlnbn-nav-link {
-        padding: 6px 10px !important;
-        font-size: 12.5px !important;
-        gap: 4px !important;
+        padding: clamp(4px, -5.8px + 0.96vw, 8px) clamp(6px, -3.8px + 0.96vw, 10px) !important;
+        font-size: clamp(10px, -2.3px + 1.2vw, 15px) !important;
+        gap: clamp(3px, -4.4px + 0.72vw, 6px) !important;
     }
 
     .tlnbn-arrow {
-        font-size: 11px !important;
-        margin-left: 3px !important;
+        font-size: clamp(9px, -0.8px + 0.96vw, 13px) !important;
+        margin-left: clamp(3px, -4.4px + 0.72vw, 6px) !important;
         transform: translateY(-2px) !important;
     }
 
-    /* 4. Shrink Contact button in menu */
+    /* 4. Fluid Contact button in menu */
     .tlnbn-subscribe-btn {
-        padding: 6px 14px !important;
-        font-size: 12.5px !important;
+        padding: clamp(6px, -3.8px + 0.96vw, 10px) clamp(14px, -0.8px + 1.44vw, 20px) !important;
+        font-size: clamp(10px, -2.3px + 1.2vw, 14px) !important;
     }
 
-    /* 5. Shrink actions container & buttons */
+    /* 5. Fluid actions container & buttons */
     .tlnbn-action-buttons {
-        gap: 4px !important;
+        gap: clamp(4px, -10.8px + 1.44vw, 10px) !important;
     }
 
     .tlnbn-btn {
-        padding: 5px 8px !important;
-        font-size: 11.5px !important;
+        padding: clamp(4px, -5.8px + 0.96vw, 8px) clamp(6px, -3.8px + 0.96vw, 10px) !important;
+        font-size: clamp(9.5px, 0.9px + 0.84vw, 13px) !important;
     }
 
     /* 6. Fix Search Bar Wrapper Flex */
     .tlnbn-search-container-wrapper {
-        flex: 0 0 auto !important;
-        margin-left: 5px !important;
+        display: flex !important;
+        flex: 1 1 auto !important;
+        max-width: clamp(120px, -200px + 31.25vw, 250px) !important;
+        margin-left: clamp(4px, -5.8px + 0.96vw, 8px) !important;
     }
 
-    /* 7. Shrink search bar container and elements */
+    /* 7. Fluid search bar container and elements */
     .search-container.desktop {
-        width: 200px !important;
-        /* Extremely compact width to fit 1024px-1440px perfectly */
-        margin-left: 5px !important;
+        width: clamp(120px, -200px + 31.25vw, 250px) !important;
+        margin-left: clamp(4px, -5.8px + 0.96vw, 8px) !important;
         display: block !important;
     }
 
     .search-container.desktop .search-input {
-        padding: 8px 30px 8px 12px !important;
-        font-size: 12.5px !important;
-        height: 34px !important;
-        border-radius: 20px !important;
+        padding: clamp(6px, -8.8px + 1.44vw, 12px) clamp(25px, -36.5px + 6vw, 50px) clamp(6px, -8.8px + 1.44vw, 12px) clamp(8px, -1.8px + 0.96vw, 12px) !important;
+        font-size: clamp(11px, 3.6px + 0.72vw, 14px) !important;
+        height: clamp(30px, 5.4px + 2.4vw, 40px) !important;
+        border-radius: clamp(16px, 6.1px + 0.96vw, 20px) !important;
     }
 
     .search-container.desktop .search-icon {
-        right: 10px !important;
-        font-size: 13px !important;
+        right: clamp(10px, -2.3px + 1.2vw, 15px) !important;
+        font-size: clamp(11px, 1.1px + 0.96vw, 15px) !important;
     }
 
     .search-container.desktop .search-clear-btn {
-        right: 28px !important;
-        font-size: 12px !important;
+        right: clamp(25px, -12px + 3.61vw, 40px) !important;
+        font-size: clamp(10px, 5.1px + 0.48vw, 12px) !important;
     }
 
     .search-container.desktop .keyboard-hint {
         display: none !important;
-        /* Hide keyboard shortcut hints in compact mode to preserve space */
     }
 
     /* 8. Align and shrink search results dropdown to prevent cutoff */
     .search-container.desktop .search-results {
         left: auto !important;
         right: 0 !important;
-        width: 310px !important; /* Shrunk from 350px/500px, but wide enough for grid items */
+        width: clamp(250px, 102.3px + 14.42vw, 310px) !important;
         border-radius: 10px !important;
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15) !important;
     }
@@ -1146,7 +1212,7 @@ body.menu-open {
         font-size: 13px !important;
         gap: 6px !important;
     }
-    
+
     .search-container.desktop .quick-link span:first-child {
         font-size: 14px !important;
     }

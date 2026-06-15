@@ -24,15 +24,15 @@ body {
 /* ============================== */
 .awd-hero {
     position: relative;
-    padding: 160px 20px 260px;
-    height: 700px;
+    padding: 190px 20px 260px;
+    height: 730px;
     text-align: center;
     background: radial-gradient(circle at top, #f0fdf4, #ffffff);
     overflow: hidden;
 }
 
 .awd-hero-container {
-    bottom: 30px;
+    bottom: 0px;
     max-width: 1100px;
     margin: auto;
     position: relative;
@@ -104,12 +104,12 @@ body {
 }
 
 .awd-floating-card.awd-left {
-    top: 140px;
+    top: 200px;
     left: 90px;
 }
 
 .awd-floating-card.awd-right {
-    top: 140px;
+    top: 200px;
     right: 100px;
 }
 
@@ -170,7 +170,7 @@ body {
     width: 70%;
     height: 70%;
     object-fit: cover;
-    top: 80px;
+    top: 110px;
     left: 200px;
     z-index: 0;
     opacity: 0.09;
@@ -254,13 +254,13 @@ body {
 
 .awd-blue-shape {
     background: radial-gradient(circle, #4ade80, transparent 70%);
-    top: 90px;
+    top: 120px;
     left: 15%;
 }
 
 .awd-sand-shape {
     background: radial-gradient(circle, #e5bb71, transparent 80%);
-    top: 100px;
+    top: 130px;
     right: 19%;
 }
 
@@ -784,7 +784,7 @@ body {
     background: #1e293b;
     color: white;
     font-family: 'Inter', sans-serif;
-    padding: 80px 0;
+    padding: 55px 0 80px;
 }
 
 .awd-howworks-container {
@@ -797,7 +797,7 @@ body {
 }
 
 .awd-left-side {
-    margin-top: 60px;
+    margin-top: 35px;
     position: relative;
 }
 
@@ -807,7 +807,7 @@ body {
     gap: 10px;
     color: #4ade80;
     font-size: 14px;
-    margin-top: 40px;
+    margin-top: 0;
     font-family: 'Inter', sans-serif;
 }
 
@@ -823,7 +823,7 @@ body {
     font-weight: 500;
     line-height: 1.6;
     color: #cfd9dc;
-    margin-top: 40px;
+    margin-top: 20px;
     text-align: left;
     font-family: 'Inter', sans-serif;
 }
@@ -848,17 +848,18 @@ body {
     position: relative;
 }
 
-.awd-section-title {
+.awd-howworks-title {
     font-size: 36px;
     font-weight: 600;
-    margin-bottom: 30px;
-    margin-left: 400px;
+    margin-bottom: 15px;
+    margin-left: 0 !important;
+    text-align: left !important;
     font-family: 'Inter', sans-serif;
     white-space: nowrap;
 }
 
 .awd-steps-grid {
-    margin-top: 40px;
+    margin-top: 15px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
@@ -1563,17 +1564,22 @@ body {
 /* ============================== */
 .awd-feedback-section {
     width: 100%;
-    padding: 80px 0;
+    padding: 80px 0 0 0;
     background: #ffffff;
     font-family: 'Inter', sans-serif;
     overflow: hidden;
 }
 
+.awd-page .wf-footer-new {
+    padding-top: 15px;
+}
+
 .awd-feedback-header {
     max-width: 1200px;
     margin: 0 auto 20px;
-    padding: 0 20px;
+    padding: 0;
     text-align: left;
+    transform: translateX(-100px);
 }
 
 .awd-feedback-title {
@@ -1602,7 +1608,7 @@ body {
 .awd-feedback-carousel {
     position: relative;
     width: 100%;
-    height: 300px;
+    height: 270px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1713,7 +1719,8 @@ body {
 }
 
 .awd-feedback-controls {
-    margin-top: 40px;
+    margin-top: -15px;
+    margin-bottom: 10px;
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -1806,8 +1813,9 @@ body {
         margin-left: 300px;
     }
 
-    .awd-section-title {
-        margin-left: 300px;
+    .awd-howworks-title {
+        margin-left: 0 !important;
+        text-align: left !important;
     }
 
     .awd-branding-stats-layout {
@@ -1842,9 +1850,9 @@ body {
 /* Tablet (1024px and below) */
 @media (max-width: 1024px) {
     .awd-hero {
-        padding: 140px 20px 220px;
+        padding: 170px 20px 220px;
         height: auto;
-        min-height: 650px;
+        min-height: 680px;
     }
 
     .awd-hero-title {
@@ -1962,7 +1970,7 @@ body {
         text-align: center;
     }
 
-    .awd-section-title {
+    .awd-howworks-title {
         margin-left: 0;
         text-align: center;
         font-size: 32px;
@@ -2092,7 +2100,7 @@ body {
     }
 
     .awd-feedback-carousel {
-        height: 340px;
+        height: 300px;
     }
 }
 
@@ -2171,8 +2179,8 @@ body {
 /* Mobile (768px and below) */
 @media (max-width: 768px) {
     .awd-hero {
-        padding: 120px 15px 200px;
-        min-height: 600px;
+        padding: 150px 15px 200px;
+        min-height: 630px;
     }
 
     .awd-hero-title {
@@ -2459,7 +2467,7 @@ body {
     }
 
     .awd-feedback-section {
-        padding: 60px 0;
+        padding: 60px 0 0 0;
     }
 
     .awd-feedback-header {
@@ -2477,7 +2485,7 @@ body {
     }
 
     .awd-feedback-carousel {
-        height: 400px;
+        height: 360px;
     }
 
     .awd-feedback-card {
@@ -2648,7 +2656,7 @@ body {
         font-size: 13px;
     }
 
-    .awd-section-title {
+    .awd-howworks-title {
         font-size: 28px;
     }
 
@@ -2751,7 +2759,7 @@ body {
 
     .awd-feedback-carousel {
         margin-top: -100px;
-        height: 420px;
+        height: 380px;
     }
 
     .awd-feedback-card {
@@ -3133,8 +3141,8 @@ body {
 
     /* Hero Section Scaling */
     .awd-hero {
-        height: 750px;
-        padding: 160px 20px 220px;
+        height: 780px;
+        padding: 190px 20px 220px;
     }
 
     .awd-hero-title {
@@ -3159,12 +3167,12 @@ body {
     }
 
     .awd-floating-card.awd-left {
-        top: 180px;
+        top: 240px;
         left: 120px;
     }
 
     .awd-floating-card.awd-right {
-        top: 180px;
+        top: 240px;
         right: 140px;
     }
 
@@ -3193,11 +3201,11 @@ body {
     }
 
     .awd-about-title {
-        font-size: 3.5rem;
+        font-size: 3rem;
     }
 
     .awd-about-description {
-        font-size: 1.25rem;
+        font-size: 1.1rem;
     }
 
     .awd-cards-grid {
@@ -3205,11 +3213,11 @@ body {
     }
 
     .awd-card-title {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
     }
 
     .awd-card-description {
-        font-size: 1rem;
+        font-size: 0.85rem;
     }
 
     .awd-card-image {
@@ -3282,7 +3290,7 @@ body {
 
     /* How It Works Scaling */
     .awd-howworks {
-        padding: 80px 0;
+        padding: 55px 0 80px;
     }
 
     .awd-howworks-container {
@@ -3298,7 +3306,7 @@ body {
         font-size: 17px;
     }
 
-    .awd-section-title {
+    .awd-howworks-title {
         font-size: 42px;
     }
 
@@ -3361,16 +3369,20 @@ body {
     }
 
     .awd-projects-content h1 {
-        font-size: 48px;
+        font-size: 56px;
     }
 
     .awd-projects-content p {
-        font-size: 18px;
+        font-size: 20px;
         width: 700px;
     }
 
     .awd-projects-stats h2 {
-        font-size: 40px;
+        font-size: 44px;
+    }
+
+    .awd-projects-stats span {
+        font-size: 22px;
     }
 
     .awd-project-logo-card {
@@ -3380,7 +3392,11 @@ body {
 
     /* Feedback Section Scaling */
     .awd-feedback-section {
-        padding: 100px 0;
+        padding: 100px 0 0 0;
+    }
+
+    .awd-page .wf-footer-new {
+        padding-top: 25px;
     }
 
     .awd-feedback-title {
@@ -3414,6 +3430,6 @@ body {
     }
 
     .awd-feedback-carousel {
-        height: 500px;
+        height: 430px;
     }
 }

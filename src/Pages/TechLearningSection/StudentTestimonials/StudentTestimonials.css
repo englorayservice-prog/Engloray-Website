@@ -1,15 +1,18 @@
-/* Student Testimonials Section */
 .student-testimonials-section {
-  padding: 4rem 1rem;
+  padding: 4rem 1rem 1.5rem 1rem;
+  /* Reduced bottom padding from 4rem to 1.5rem */
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  min-height: 400px !important;
   position: relative;
   overflow: hidden;
 }
 
 .student-container {
   width: 100%;
-  max-width: none !important; /* Global edge-to-edge layout for all ratios */
+  max-width: none !important;
+  /* Global edge-to-edge layout for all ratios */
   padding: 0 !important;
+
   margin: 0 auto;
   position: relative;
 }
@@ -58,14 +61,16 @@
   font-family: 'Aldrich';
 }
 
-/* Horizontal Scroll Container */
 .student-horizontal-scroll {
   overflow-x: hidden;
   cursor: grab;
-  padding: 2rem 0 4rem 0;
-  margin: 0; /* Align perfectly with browser edges */
+  padding: 2rem 0 2.5rem 0;
+  /* Reduced bottom padding from 4rem to 2.5rem */
+  margin: 0;
+  /* Align perfectly with browser edges */
   position: relative;
-  min-height: 480px;
+  min-height: 435px;
+  /* Reduced from 480px to pull the bottom boundary up */
 }
 
 .student-horizontal-scroll:active {
@@ -75,12 +80,10 @@
 .student-testimonials-track {
   display: flex;
   gap: 1rem;
-  /* Further reduced gap */
   width: max-content;
   animation: none;
   padding: 0 1rem;
   align-items: flex-start;
-  /* Align items to the top */
 }
 
 /* Testimonial Card - Further reduced for better responsiveness */
@@ -92,10 +95,10 @@
   border: 1px solid #e2e8f0;
   display: flex;
   flex-direction: column;
-  height: auto;
+  height: 350px;
   position: relative;
-  overflow: visible;
-  width: clamp(220px, 17.5vw, 320px); /* Proportional scaling; drastically narrows for mobile while expanding up to 320px */
+  overflow: hidden;
+  width: clamp(220px, 17.5vw, 320px);
   flex-shrink: 0;
 }
 
@@ -218,26 +221,23 @@
   font-family: 'Aldrich';
 }
 
-/* Testimonial Text - Further reduced */
 .student-testimonial-text {
   font-size: 0.72rem;
-  /* Further reduced from 0.78rem */
   line-height: 1.35;
-  /* Further reduced from 1.4 */
   color: #475569;
   font-style: italic;
   margin-bottom: 0.6rem;
-  /* Further reduced from 0.7rem */
   font-family: 'Aldrich';
   background: #f8fafc;
   padding: 0.5rem;
-  /* Further reduced from 0.6rem */
   border-radius: 6px;
-  /* Slightly reduced */
   border-left: 2px solid #667eea;
   word-break: break-word;
-  overflow: visible;
-  display: block;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  flex-shrink: 0;
 }
 
 /* Course Info */
@@ -285,19 +285,19 @@
 
 .student-skills-label {
   font-size: 0.58rem;
-  /* Further reduced from 0.64rem */
   color: #64748b;
   font-weight: 100;
   font-family: 'HEXCO';
-  margin-bottom: 0.15rem;
-  /* Further reduced from 0.2rem */
+  margin-bottom: 0.3rem;
+  text-align: center;
 }
 
 .student-skills-list {
   display: flex;
   flex-wrap: wrap;
   gap: 0.25rem;
-  /* Further reduced from 0.3rem */
+  justify-content: center;
+  align-items: center;
 }
 
 .student-skill-tag {
@@ -317,7 +317,7 @@
 /* Outcome */
 .student-outcome {
   text-align: center;
-  margin-top: auto;
+  margin-top: 0.5rem;
 }
 
 .student-outcome-badge {
@@ -996,6 +996,10 @@
 
 /* ==================== ULTRA-WIDE OPTIMIZATION (1920px+) ==================== */
 @media (min-width: 1920px) {
+  .student-testimonials-section {
+    height: 80vh;
+  }
+
   /* Only essential layout refinements for 1920px since edge-to-edge is now global */
   .student-horizontal-scroll {
     padding: 3rem 0 6rem 0;
@@ -1003,11 +1007,12 @@
   }
 
   .student-testimonials-track {
-    gap: 2rem; 
+    gap: 2rem;
   }
 
   .student-testimonial-card {
-    width: 320px; 
+    min-height: 350px;
+    width: 320px;
     padding: 1.4rem;
     border-radius: 18px;
   }

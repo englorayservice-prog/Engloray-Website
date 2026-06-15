@@ -202,148 +202,149 @@ const StudentTestimonials = () => {
   };
 
   return (
-   <section className="student-testimonials-section" id='feedback'>
-  <div className="student-container">
-    {/* Section Header */}
-    <div className="student-section-header">
-      <motion.div 
-        className="student-badge" 
-        style={{ fontFamily: "'Poppins', sans-serif" }}
-        initial={{ opacity: 0, scale: 0.8 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.6 }}
-      >
-        Student Success Stories
-      </motion.div>
-      
-      <motion.h2 
-        className="student-section-title" 
-        style={{ fontFamily: "'Poppins', sans-serif", fontWeight: '600' }}
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false }}
-        transition={{ duration: 0.8 }}
-      >
-        Transformative <span className="student-highlight" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: '600' }}>Learning</span> Experiences
-      </motion.h2>
-      
-      <motion.p 
-        className="student-section-description" 
-        style={{ fontFamily: "'Poppins', sans-serif" }}
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-      >
-        ENGLORAY is trusted by clients, valued by customers, empowering students, and supported by a strong team
-      </motion.p>
-    </div>
-
-    {/* Horizontal Scroll Container */}
-    <div className="student-horizontal-scroll" ref={scrollContainerRef}>
-      <div className="student-testimonials-track">
-        {duplicatedTestimonials.map((testimonial, index) => (
+    <section className="student-testimonials-section" id='feedback'>
+      <div className="student-container">
+        {/* Section Header */}
+        <div className="student-section-header">
           <motion.div
-            key={`${testimonial.id}-${index}`}
-            className={`student-testimonial-card ${isVisible ? 'student-visible' : ''} ${activeCard === testimonial.id ? 'student-card-active' : ''}`}
-            onMouseEnter={() => handleCardHover(testimonial.id)}
-            onMouseLeave={handleCardLeave}
-            
-            // --- Animation Logic ---
-            initial={{ opacity: 0, scale: 0.9, y: 20 }}
-            whileInView={{ opacity: 1, scale: 1, y: 0 }}
-            viewport={{ once: false, margin: "-50px" }}
-            transition={{ 
-                duration: 0.6, 
-                delay: (index % 3) * 0.15 // Staggers based on visible row/set
-            }}
-            whileHover={{ y: -10 }} // Extra lift on hover
+            className="student-badge"
+            style={{ fontFamily: "'Poppins', sans-serif" }}
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6 }}
           >
-            {/* Clip PNG */}
-            <img src={clipImg} alt="clip" className="student-card-clip" />
-
-            {/* Animated Background Elements */}
-            <div className="student-card-bg-animation"></div>
-            <div className="student-card-floating-elements">
-              <div className="student-floating-circle student-circle-1"></div>
-              <div className="student-floating-circle student-circle-2"></div>
-              <div className="student-floating-circle student-circle-3"></div>
-            </div>
-
-            {/* Card Header */}
-            <div className="student-card-header">
-              <div className="student-avatar-badge">
-                <div className="student-avatar">
-                  {testimonial.avatar}
-                </div>
-                <div className="student-verified">
-                  <i className="fas fa-check-circle"></i> Verified Graduate
-                </div>
-              </div>
-              <div className="student-basic-info">
-                <h3 className="student-name">{testimonial.name}</h3>
-                <p className="student-role">{testimonial.role}</p>
-                <p className="student-company">{testimonial.company}</p>
-              </div>
-            </div>
-
-            {/* Rating */}
-            <div className="student-rating">
-              {[...Array(testimonial.rating)].map((_, i) => (
-                <span key={i} className="student-star">⭐</span>
-              ))}
-              <span className="student-rating-text">Excellent</span>
-            </div>
-
-            {/* Testimonial Text */}
-            <blockquote className="student-testimonial-text">
-              "{testimonial.text}"
-            </blockquote>
-
-            {/* Course Info */}
-            <div className="student-course-info">
-              <div className="student-course-badge">
-                <i className="fas fa-book"></i>
-                {testimonial.course}
-              </div>
-              <div className="student-duration">
-                <i className="fas fa-clock"></i>
-                {testimonial.duration}
-              </div>
-            </div>
-
-            {/* Skills Learned */}
-            <div className="student-skills">
-              <div className="student-skills-label">Skills Mastered:</div>
-              <div className="student-skills-list">
-                {testimonial.skills.map((skill, skillIndex) => (
-                  <span key={skillIndex} className="student-skill-tag">
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Success Outcome */}
-            <div className="student-outcome">
-              <motion.div 
-                className="student-outcome-badge"
-                initial={{ opacity: 0, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.5 }}
-              >
-                <i className="fas fa-trophy"></i>
-                {testimonial.outcome}
-              </motion.div>
-            </div>
-
-            {/* Hover Effect Layer */}
-            <div className="student-card-hover"></div>
+            Student Success Stories
           </motion.div>
-        ))}
+
+          <motion.h2
+            className="student-section-title"
+            style={{ fontFamily: "'Poppins', sans-serif", fontWeight: '600' }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.8 }}
+          >
+            Transformative <span className="student-highlight" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: '600' }}>Learning</span> Experiences
+          </motion.h2>
+
+          <motion.p
+            className="student-section-description"
+            style={{ fontFamily: "'Poppins', sans-serif" }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            ENGLORAY is trusted by clients, valued by customers, empowering students, and supported by a strong team
+          </motion.p>
+        </div>
+
+        {/* Horizontal Scroll Container */}
+        <div className="student-horizontal-scroll" ref={scrollContainerRef}>
+          <div className="student-testimonials-track">
+            {duplicatedTestimonials.map((testimonial, index) => (
+              <motion.div
+                key={`${testimonial.id}-${index}`}
+                className={`student-testimonial-card ${isVisible ? 'student-visible' : ''} ${activeCard === testimonial.id ? 'student-card-active' : ''}`}
+                onMouseEnter={() => handleCardHover(testimonial.id)}
+                onMouseLeave={handleCardLeave}
+
+                // --- Animation Logic ---
+                initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                viewport={{ once: false, margin: "-50px" }}
+                transition={{
+                  duration: 0.6,
+                  delay: (index % 3) * 0.15 // Staggers based on visible row/set
+                }}
+                whileHover={{ y: -10 }} // Extra lift on hover
+              >
+                {/* Clip PNG */}
+                <img src={clipImg} alt="clip" className="student-card-clip" />
+
+                {/* Animated Background Elements */}
+                <div className="student-card-bg-animation"></div>
+                <div className="student-card-floating-elements">
+                  <div className="student-floating-circle student-circle-1"></div>
+                  <div className="student-floating-circle student-circle-2"></div>
+                  <div className="student-floating-circle student-circle-3"></div>
+                </div>
+
+                {/* Card Header */}
+                <div className="student-card-header">
+                  <div className="student-avatar-badge">
+                    <div className="student-avatar">
+                      {testimonial.avatar}
+                    </div>
+                    <div className="student-verified">
+                      <i className="fas fa-check-circle"></i> Verified Graduate
+                    </div>
+                  </div>
+                  <div className="student-basic-info">
+                    <h3 className="student-name">{testimonial.name}</h3>
+                    <p className="student-role">{testimonial.role}</p>
+                    <p className="student-company">{testimonial.company}</p>
+                  </div>
+                </div>
+
+                {/* Rating */}
+                <div className="student-rating">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <span key={i} className="student-star">⭐</span>
+                  ))}
+                  <span className="student-rating-text">Excellent</span>
+                </div>
+
+                {/* Testimonial Text */}
+                <blockquote className="student-testimonial-text">
+                  "{testimonial.text}"
+                </blockquote>
+
+                {/* Course Info */}
+                <div className="student-course-info">
+                  <div className="student-course-badge">
+                    <i className="fas fa-book"></i>
+                    {testimonial.course}
+                  </div>
+                  <div className="student-duration">
+                    <i className="fas fa-clock"></i>
+                    {testimonial.duration}
+                  </div>
+                </div>
+
+                {/* Skills Learned */}
+                <div className="student-skills">
+                  <div className="student-skills-label">Skills Mastered:</div>
+                  <div className="student-skills-list" style={{ display: 'flex', flexWrap: 'wrap', gap: '0.85rem', alignItems: 'center', justifyContent: 'center' }}>
+                    {testimonial.skills.map((skill, skillIndex) => (
+                      <span key={skillIndex} className="student-skill-tag">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Success Outcome */}
+                <div className="student-outcome">
+                  <motion.div
+                    className="student-outcome-badge"
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.5 }}
+                    style={{ gap: '10px' }}
+                  >
+                    <i className="fas fa-trophy"></i>
+                    {testimonial.outcome}
+                  </motion.div>
+                </div>
+
+                {/* Hover Effect Layer */}
+                <div className="student-card-hover"></div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
   );
 };
 

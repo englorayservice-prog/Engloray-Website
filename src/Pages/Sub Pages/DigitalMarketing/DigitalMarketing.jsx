@@ -404,6 +404,7 @@ const DigitalMarketing = () => {
                     <section className="dm-howworks">
                         <div className="dm-howworks-container">
                             <div className="dm-left-side">
+                                <h2 className="dm-howworks-title">Scale Step by Step</h2>
                                 <div className="dm-badge"><span className="dm-dot"></span>Growth Methodology</div>
                                 <p className="dm-intro-text">We create measurable impact through a systematic 6-step marketing framework built for transparency and scale.</p>
                                 <h2 className="dm-main-title">Our Growth <br /> Process</h2>
@@ -411,7 +412,6 @@ const DigitalMarketing = () => {
                             </div>
 
                             <div className="dm-right-side">
-                                <h2 className="dm-section-title">Scale Step by Step</h2>
                                 <div className="dm-steps-grid">
                                     {howItWorksSteps.map((step, index) => (
                                         <div key={index} className="dm-step-card">
@@ -476,8 +476,13 @@ const DigitalMarketing = () => {
                         </div>
 
                         <div className="dm-projects-content">
-                            <h1>Scaling Leading Brands</h1>
-                            <p>We've helped these organizations dominate their digital space and achieve sustainable, recurring revenue through expert marketing.</p>
+                            <h1>
+                                Scaling Leading <br />
+                                Brands
+                            </h1>
+                            <p>
+                                We've helped these organizations dominate their digital space and achieve sustainable, recurring revenue through expert marketing. By combining data-driven analytics and creative execution, we build marketing ecosystems that drive high-intent leads and build lasting brand value.
+                            </p>
                             <div className="dm-projects-stats">
                                 <div><h2>$2M+</h2><span>Ad Managed</span></div>
                                 <div><h2>50M+</h2><span>Total Reach</span></div>

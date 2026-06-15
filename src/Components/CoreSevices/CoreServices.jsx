@@ -39,7 +39,7 @@ const CoreServices = () => {
       background: designingImg,
       features: ["Logo & Identity", "Brand Strategy", "UI/UX Design", "Visual Systems"],
       color: "#18181A",
-      route: '/marketingPage'
+      route: '/UiUxPage'
     },
     {
       id: 2,
@@ -79,7 +79,7 @@ const CoreServices = () => {
       background: analyticsImg,
       features: ["Api Integration", "cross paltform support", "personalization", "Data Encryption"],
       color: "#18181A",
-      route: '/mobileApplicationsPage'
+      route: '/dataAnalyticsPage'
     },
     {
       id: 6,

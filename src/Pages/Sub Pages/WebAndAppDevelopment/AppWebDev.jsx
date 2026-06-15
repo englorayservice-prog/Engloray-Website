@@ -321,6 +321,7 @@ const AppWebDev = () => {
                     <section className="awd-howworks">
                         <div className="awd-howworks-container">
                             <div className="awd-left-side">
+                                <h2 className="awd-howworks-title">Development Workflow</h2>
                                 <div className="awd-badge"><span className="awd-dot"></span>DevOps Lifecycle</div>
                                 <p className="awd-intro-text">We build high-performance digital products through strategic planning, agile development, and rigorous QA.</p>
                                 <h2 className="awd-main-title">How It Works <br /> Stage by Stage</h2>
@@ -328,7 +329,6 @@ const AppWebDev = () => {
                             </div>
 
                             <div className="awd-right-side">
-                                <h2 className="awd-section-title">Development Workflow</h2>
                                 <div className="awd-steps-grid">
                                     {howItWorksSteps.map((step, index) => (
                                         <div key={index} className="awd-step-card">
@@ -391,8 +391,13 @@ const AppWebDev = () => {
                         </div>
 
                         <div className="awd-projects-content">
-                            <h1>Trusted by innovators</h1>
-                            <p>We work with tech-driven companies to create meaningful digital experiences. Our partners trust us to deliver impactful engineering and scalable software solutions.</p>
+                            <h1>
+                                Trusted by <br />
+                                Innovators
+                            </h1>
+                            <p>
+                                We work with tech-driven companies to create meaningful digital experiences. Our partners trust us to deliver impactful engineering and scalable software solutions. By combining engineering excellence and clean code practices, we build robust applications that optimize performance and drive business efficiency.
+                            </p>
                             <div className="awd-projects-stats">
                                 <div><h2>20+</h2><span>Cloud Promoters</span></div>
                                 <div><h2>100+</h2><span>Systems Audited</span></div>

@@ -5,7 +5,7 @@ import RayMartNavbar from '../../../Components/RayMartNavbar/RayMartNavbar';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import { BarChart, Bar, XAxis, ResponsiveContainer, Tooltip } from 'recharts';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowTrendUp, faFire, faStar, faChartLine, faRobot, faCheck, faWandMagicSparkles, faUsers, faRotateLeft, faShieldHalved, faBriefcase, faHeadset, faNewspaper, faGraduationCap, faChevronRight, faChevronLeft, faEnvelope, faBuilding, faPlus, faHandshake, faCode, faStore, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faArrowTrendUp, faFire, faStar, faChartLine, faRobot, faCheck, faWandMagicSparkles, faUsers, faRotateLeft, faShieldHalved, faBriefcase, faHeadset, faNewspaper, faGraduationCap, faChevronRight, faChevronLeft, faEnvelope, faBuilding, faPlus, faHandshake, faCode, faStore, faSearch, faPalette, faDesktop, faBullhorn, faLaptopCode, faChartPie, faCloud, faComments } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookF, faXTwitter, faInstagram, faYoutube, faPaypal } from '@fortawesome/free-brands-svg-icons';
 import aiProduct01Img from '../../../assets/ai-product-01.png';
 import aiProductImg from '../../../assets/ai-product.png';
@@ -534,6 +534,25 @@ const popularCards = [
   }
 ];
 
+/* ─── Category Icon Mapper ──────────────────────────────────── */
+const getCategoryIcon = (category, type) => {
+  const cat = category ? category.toUpperCase() : '';
+  
+  if (cat.includes('CRM')) return faUsers;
+  if (cat.includes('ERP')) return faChartLine;
+  if (cat.includes('AI CHATBOT')) return faComments;
+  if (cat.includes('AI') || cat.includes('BOT')) return faRobot;
+  if (cat.includes('SAAS')) return faCloud;
+  if (cat.includes('BRANDING') || cat.includes('IDENTITY') || cat.includes('GRAPHIC')) return faPalette;
+  if (cat.includes('UI/UX')) return faDesktop;
+  if (cat.includes('ADVERTISING') || cat.includes('MARKETING')) return faBullhorn;
+  if (cat.includes('APP DEVELOPMENT') || cat.includes('DEVELOPMENT') || cat.includes('SOFTWARE') || cat.includes('WEBSITE') || cat.includes('E-COMMERCE')) return faCode;
+  if (cat.includes('DATA') || cat.includes('ANALYTICS')) return faChartPie;
+  if (cat.includes('JOB') || cat.includes('SEEKER') || cat.includes('CAREER') || cat.includes('LEARNING')) return faGraduationCap;
+
+  return type === 'Product' ? faBuilding : faBriefcase;
+};
+
 /* ─── Main Component ─────────────────────────────────────────── */
 const RaymartPage = () => {
   const [search, setSearch] = useState('');
@@ -876,8 +895,11 @@ const RaymartPage = () => {
                                   className="rm-search-dropdown-item"
                                   onMouseDown={() => handleSuggestionClick(item)}
                                 >
-                                  <span className="rm-search-item-type"></span>
+                                  <span className="rm-search-item-type product-icon-color">
+                                    <FontAwesomeIcon icon={getCategoryIcon(item.category, item.type)} className="rm-search-item-icon" />
+                                  </span>
                                   <div className="rm-search-item-info">
+
                                     <span className="rm-search-item-name">{item.name}</span>
                                     <span className="rm-search-item-cat">{item.category}</span>
                                   </div>
@@ -895,7 +917,9 @@ const RaymartPage = () => {
                                   className="rm-search-dropdown-item"
                                   onMouseDown={() => handleSuggestionClick(item)}
                                 >
-                                  <span className="rm-search-item-type">🛠</span>
+                                  <span className="rm-search-item-type service-icon-color">
+                                    <FontAwesomeIcon icon={getCategoryIcon(item.category, item.type)} className="rm-search-item-icon" />
+                                  </span>
                                   <div className="rm-search-item-info">
                                     <span className="rm-search-item-name">{item.name}</span>
                                     <span className="rm-search-item-cat">{item.category}</span>
@@ -1607,7 +1631,7 @@ const RaymartPage = () => {
                       onClick={async () => {
                         if (ctaEmail.trim()) {
                           const userEmail = ctaEmail.trim();
-                          
+
                           // Set subscribed state instantly for premium visual response
                           setCtaSubscribed(true);
                           setCtaEmail('');
@@ -1704,8 +1728,8 @@ const RaymartPage = () => {
                   { name: 'SaaS Tools', path: '/saasPage' },
                   { name: 'Office', path: null }
                 ].map(item => (
-                  <p 
-                    key={item.name} 
+                  <p
+                    key={item.name}
                     className="rm-footer-link"
                     style={{ cursor: 'pointer' }}
                     onClick={() => {
@@ -1732,8 +1756,8 @@ const RaymartPage = () => {
                   { name: 'Sitemap', path: null },
                   { name: 'Store Locations', path: null }
                 ].map(item => (
-                  <p 
-                    key={item.name} 
+                  <p
+                    key={item.name}
                     className="rm-footer-link"
                     style={{ cursor: 'pointer' }}
                     onClick={() => {
@@ -1789,8 +1813,8 @@ const RaymartPage = () => {
                   { name: 'Advertise', path: null },
                   { name: 'Partnerships', path: null, ext: 'https://wa.me/916381769909' }
                 ].map(item => (
-                  <p 
-                    key={item.name} 
+                  <p
+                    key={item.name}
                     className="rm-footer-link"
                     style={{ cursor: 'pointer' }}
                     onClick={() => {
@@ -1878,13 +1902,13 @@ const RaymartPage = () => {
                 alignItems: 'center',
                 gap: '16px'
               }}>
-                <FontAwesomeIcon 
-                  icon={faStore} 
+                <FontAwesomeIcon
+                  icon={faStore}
                   style={{
                     fontSize: '4rem',
                     color: '#0f172a',
                     marginBottom: '10px'
-                  }} 
+                  }}
                 />
                 <h3 style={{
                   fontSize: '1.9rem',
@@ -1901,7 +1925,7 @@ const RaymartPage = () => {
                 }}>
                   We are crafting something amazing. This feature will be live in our upcoming update!
                 </p>
-                <button 
+                <button
                   onClick={() => setShowComingSoon(false)}
                   style={{
                     background: '#000000',
@@ -1959,13 +1983,13 @@ const RaymartPage = () => {
                 alignItems: 'center',
                 gap: '16px'
               }}>
-                <FontAwesomeIcon 
-                  icon={faStore} 
+                <FontAwesomeIcon
+                  icon={faStore}
                   style={{
                     fontSize: '4.2rem',
                     color: '#0f172a',
                     marginBottom: '10px'
-                  }} 
+                  }}
                 />
                 <h3 style={{
                   fontSize: '1.9rem',
@@ -2011,7 +2035,7 @@ const RaymartPage = () => {
                     <span style={{ fontSize: '0.95rem', color: '#334155' }}><strong>ERP & CRM:</strong> Unified analytics and streamline operations.</span>
                   </div>
                 </div>
-                <button 
+                <button
                   onClick={() => setShowAboutStore(false)}
                   style={{
                     background: '#000000',

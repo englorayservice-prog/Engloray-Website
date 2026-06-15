@@ -544,7 +544,7 @@ const BrandingDesigning = () => {
                                     <FaPalette className="bd-icon" />
                                     <h3>Visual Style</h3>
                                     <p className="bd-circle-desc">
-                                        Design system including colors, typography and imagery.
+                                         Design system including colors, typography and imagery.
                                     </p>
                                 </div>
                             </div>
@@ -556,6 +556,7 @@ const BrandingDesigning = () => {
                         <div className="bd-howworks-container">
                             {/* LEFT SIDE */}
                             <div className="bd-left-side">
+                                <h2 className="bd-howworks-title">What Is Branding</h2>
                                 <div className="bd-badge">
                                     <span className="bd-dot"></span>
                                     Brand Strategy Process
@@ -571,7 +572,6 @@ const BrandingDesigning = () => {
 
                             {/* RIGHT SIDE */}
                             <div className="bd-right-side">
-                                <h2 className="bd-section-title">What Is Branding</h2>
                                 <div className="bd-steps-grid">
                                     {howItWorksSteps.map((step, index) => (
                                         <div key={index} className="bd-step-card">
@@ -586,7 +586,6 @@ const BrandingDesigning = () => {
                         </div>
                     </section>
 
-                    {/* Circular Stats Section - Added after How It Works */}
                     <section className="bd-circular-stats">
                         <div className="bd-branding-stats-layout">
                             {/* LEFT CONTENT */}
@@ -688,7 +687,8 @@ const BrandingDesigning = () => {
                                 We collaborate with forward-thinking brands to
                                 create meaningful digital experiences. Our clients
                                 trust us to deliver impactful design and scalable
-                                solutions.
+                                solutions. By combining design innovation and strategic thinking, 
+                                we craft cohesive brand systems that resonate and drive long-term growth.
                             </p>
 
                             <div className="bd-projects-stats">
