@@ -493,6 +493,7 @@ const AiProductPage = () => {
                     <section className="ai-howworks">
                         <div className="ai-howworks-container">
                             <div className="ai-left-side">
+                                <h2 className="ai-howworks-title">Our Intelligence Engine</h2>
                                 <div className="ai-badge">
                                     <span className="ai-dot"></span>
                                     AI Implementation Process
@@ -508,7 +509,6 @@ const AiProductPage = () => {
                             </div>
 
                             <div className="ai-right-side">
-                                <h2 className="ai-section-title">Our AI Methodology</h2>
                                 <div className="ai-steps-grid">
                                     {howItWorksSteps.map((step, index) => (
                                         <div key={index} className="ai-step-card">
@@ -603,7 +603,7 @@ const AiProductPage = () => {
 
                         <div className="ai-projects-content">
                             <h1>Powering <br />Great Innovations</h1>
-                            <p>We partner with industry leaders to build the engines of the future.</p>
+                            <p>We partner with industry leaders to build the engines of the future. By combining engineering excellence and neural network architectures, we build robust systems that optimize operations and drive business growth.</p>
                             <div className="ai-projects-stats">
                                 <div><h2>40+</h2><span>AI Patents Involved</span></div>
                                 <div><h2>1000+</h2><span>ML Experiments</span></div>

@@ -31,39 +31,46 @@ const TwoLineNavbar = () => {
                 title: 'Explore Our Services',
                 items: [
                     {
-                        id: 'branding',
-                        name: 'Branding & Design',
-                        desc: 'Logo design, brand identity, and visual storytelling',
-                        icon: '',
-                        route: '/brandingPage'
-                    },
-                    {
-                        id: 'web-dev',
-                        name: 'Web & Development',
-                        desc: 'Custom websites, e-commerce, and portfolios',
-                        icon: '',
-                        route: '/developmentPage'
-                    },
-                    {
-                        id: 'digital-marketing',
-                        name: 'Digital Marketing',
-                        desc: 'SEO, Social Media, PPC, and Content Marketing',
-                        icon: '',
-                        route: '/marketingPage'
-                    },
-                    {
-                        id: 'erp-crm',
-                        name: 'UI / UX Designs',
-                        desc: 'Enterprise resource planning and customer relationship management',
+                        id: 'designing',
+                        name: 'Designing',
+                        desc: 'Logo design, brand identity, and UI/UX design.',
                         icon: '',
                         route: '/UiUxPage'
                     },
                     {
-                        id: 'ai-solutions',
-                        name: 'Mobile Applications',
-                        desc: 'Machine Learning, Automation, and AI Integration',
+                        id: 'development',
+                        name: 'Development',
+                        desc: 'Custom websites, mobile apps, and portfolios.',
                         icon: '',
-                        route: '/mobileApplicationsPage'
+                        route: '/developmentPage'
+                    },
+                    {
+                        id: 'saas',
+                        name: 'SAAS',
+                        desc: 'Scalable, multi-tenant cloud software systems.',
+                        icon: '',
+                        route: '/saasPage'
+                    },
+                    {
+                        id: 'branding',
+                        name: 'Branding',
+                        desc: 'Corporate training, branding, and visual identity.',
+                        icon: '',
+                        route: '/brandingPage'
+                    },
+                    {
+                        id: 'data-analytics',
+                        name: 'Data Analytics',
+                        desc: 'ETL pipelines, BI dashboards, and data insights.',
+                        icon: '',
+                        route: '/dataAnalyticsPage'
+                    },
+                    {
+                        id: 'ai-product',
+                        name: 'AI Product',
+                        desc: 'Machine learning, automation, and AI integration.',
+                        icon: '',
+                        route: '/aiProductPage'
                     }
                 ]
             }

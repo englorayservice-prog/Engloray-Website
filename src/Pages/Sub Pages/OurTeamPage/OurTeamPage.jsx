@@ -3,13 +3,10 @@ import React, { useState, useEffect, useRef } from 'react';
 // import Growth from '../../../assets/Growth.jfif';
 // import AI from '../../../assets/AIpowered.jfif';
 // import Omni from '../../../assets/Omni.jfif';
-import TeamHeroImg from '../../../assets/page_career.jpg';
-import BrandingHeroImg from '../../../assets/uiux_hero_1.png';
 import Avatar1 from '../../../assets/Gowtham_img.png';
 import Avatar2 from '../../../assets/Surya_img.png';
 //import Avatar3 from '../../../assets/';
 import Avatar4 from '../../../assets/Lily_image.png';
-import DigitalSolutionsImg from '../../../assets/Side_img.png';
 import uiuxProjectImg from '../../../assets/Makeover_img.jpg';
 import gymProjectImg from '../../../assets/Gym_img.jpg';
 import jewelleryProjectImg from '../../../assets/Jewellery_img.jpg';
@@ -376,8 +373,7 @@ const OurTeamPage = () => {
 
                         <h1 className="otp-main-title">
                             <span style={{ fontWeight: "900" }}>OUR TEAM</span> <br />
-                            <span className="otp-gradient-text">
-                                <span style={{ fontFamily: "'Aclonica', sans-serif" }}>BUILD BETTER BUSINESS</span></span>
+                            <span className="otp-gradient-text">BUILD BETTER BUSINESS</span>
                         </h1>
 
 
@@ -393,97 +389,7 @@ const OurTeamPage = () => {
                         </div>
                     </div>
 
-                    <div className="otp-3d-cards-container">
-                        {/* Curved Glass Backdrop mimicking the image */}
-                        <div className="otp-glass-curve-backdrop"></div>
 
-                        {/* Glowing Floor Spotlight Base */}
-                        <div className="otp-glowing-floor-base"></div>
-
-                        {/* Speedy Dashes next to center card */}
-                        <div className="otp-speed-lines-left">
-                            <span className="otp-speed-line"></span>
-                            <span className="otp-speed-line"></span>
-                            <span className="otp-speed-line"></span>
-                        </div>
-                        <div className="otp-speed-lines-right">
-                            <span className="otp-speed-line"></span>
-                            <span className="otp-speed-line"></span>
-                            <span className="otp-speed-line"></span>
-                        </div>
-
-                        {/* Left Card — Our Team Related */}
-                        <div className="otp-3d-card otp-card-left">
-                            <div className="otp-side-section-top">
-                                <div className="otp-card-head">
-                                    <img src={TeamHeroImg} alt="Our Team" className="otp-side-img" />
-                                </div>
-                                <p className="otp-side-desc">A passionate team of designers, developers and strategists building digital excellence together.</p>
-
-                                <div className="otp-side-tags">
-                                    <span className="otp-mini-tag">#TeamWork</span>
-                                    <span className="otp-mini-tag">#Experts</span>
-                                    <span className="otp-mini-tag">#Innovation</span>
-                                </div>
-                            </div>
-
-                            <div className="otp-side-section-bottom">
-                                <hr className="otp-side-divider" />
-                                <div className="otp-side-platforms">
-                                    <FontAwesomeIcon icon={faUsers} /><FontAwesomeIcon icon={faBriefcase} /><FontAwesomeIcon icon={faHandshake} />
-                                </div>
-                                <p className="otp-side-desc-mini">16+ dedicated team members.</p>
-                            </div>
-                        </div>
-
-                        {/* Center Card (Main) */}
-                        <div className="otp-3d-card otp-card-center">
-                            <div className="otp-side-section-top">
-                                <div className="otp-card-head">
-                                    <img src={BrandingHeroImg} alt="Visionary" className="otp-side-img" />
-                                </div>
-                                <p className="otp-side-desc">Transforming ideas into stunning visual identities that resonate with your audience.</p>
-
-                                <div className="otp-side-tags">
-                                    <span className="otp-mini-tag">#CreativeStrategy</span>
-                                    <span className="otp-mini-tag">#Branding</span>
-                                    <span className="otp-mini-tag">#UI/UX</span>
-                                </div>
-                            </div>
-
-                            <div className="otp-side-section-bottom">
-                                <hr className="otp-side-divider" />
-                                <div className="otp-side-platforms">
-                                    <FontAwesomeIcon icon={faPaintBrush} /><FontAwesomeIcon icon={faPencilAlt} /><FontAwesomeIcon icon={faLaptopCode} />
-                                </div>
-                                <p className="otp-side-desc-mini">Our awesome guests are industry experts.</p>
-                            </div>
-                        </div>
-
-                        {/* Right Card */}
-                        <div className="otp-3d-card otp-card-right">
-                            <div className="otp-side-section-top">
-                                <div className="otp-card-head">
-                                    <img src={DigitalSolutionsImg} alt="Strategy" className="otp-side-img" />
-                                </div>
-                                <p className="otp-side-desc">Engineering scalable digital solutions that drive growth and business efficiency.</p>
-
-                                <div className="otp-side-tags">
-                                    <span className="otp-mini-tag">#TechGroup</span>
-                                    <span className="otp-mini-tag">#Systems</span>
-                                    <span className="otp-mini-tag">#Growth</span>
-                                </div>
-                            </div>
-
-                            <div className="otp-side-section-bottom">
-                                <hr className="otp-side-divider" />
-                                <div className="otp-side-platforms">
-                                    <FontAwesomeIcon icon={faGlobe} /><FontAwesomeIcon icon={faWandMagic} /><FontAwesomeIcon icon={faBrain} />
-                                </div>
-                                <p className="otp-side-desc-mini">Our awesome guests are industry experts.</p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
             </header >
@@ -516,7 +422,6 @@ const OurTeamPage = () => {
                                         <div className="otp-ct-avatar-container">
                                             <img src={member.img} alt={member.name} className="otp-ct-avatar-img" />
                                         </div>
-                                        <h3 className="otp-ct-vertical-name">{member.name}</h3>
                                         <div className="otp-ct-member-info">
                                             <h4 className="otp-ct-member-name-text">{member.name}</h4>
                                             <p className="otp-ct-member-role-text">{member.role}</p>

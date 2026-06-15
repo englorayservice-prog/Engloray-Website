@@ -1286,13 +1286,24 @@ img {
 }
 
 .roadmap-v3-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     max-width: 1700px;
     margin: 0 auto;
-    gap: 60px;
+    gap: 40px;
+    padding: 0 40px;
+}
+
+.roadmap-v3-side-title {
+    width: auto;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .roadmap-v3-side-title h2 {
-    font-size: 3.2rem;
+    font-size: 3.5rem;
     font-weight: 900;
     line-height: 1.1;
     color: #ffffff;
@@ -1300,11 +1311,14 @@ img {
     text-transform: uppercase;
     font-family: Arial, Helvetica, sans-serif !important;
     letter-spacing: -1px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
 }
 
 .roadmap-v3-side-title span {
-    display: block;
-    margin-top: 10px;
+    display: inline-block;
     background: linear-gradient(90deg, #f472b6, #a855f7, #3b82f6);
     -webkit-background-clip: text;
     background-clip: text;
@@ -1312,9 +1326,9 @@ img {
 }
 
 .roadmap-v3-main-visual {
-    flex: 1;
+    width: 100%;
     position: relative;
-    height: 500px;
+    height: 700px;
     /* Taller for card spacing */
 }
 
@@ -1355,17 +1369,15 @@ img {
 }
 
 .roadmap-v3-year-pill.start {
-    left: -30px;
-    top: 80%;
-    /* Aligned with M0 320 in 400 viewBox */
+    left: 0;
+    top: 50%;
     transform: translateY(-50%);
     box-shadow: 0 0 30px rgba(244, 114, 182, 0.4);
 }
 
 .roadmap-v3-year-pill.end {
-    right: -30px;
-    top: 20%;
-    /* Aligned with 1200 80 in 400 viewBox */
+    right: 0;
+    top: 50%;
     transform: translateY(-50%);
     box-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
 }
@@ -1487,26 +1499,26 @@ img {
 
 /* Positioning Together the S-Curve - Accurate Path Y% Values */
 .q1-pos {
-    left: 10%;
-    top: 80%;
+    left: 20%;
+    top: 50%;
 }
 
 /* Path Start Level 320/400 */
 .q2-pos {
-    left: 28%;
-    top: 75%;
+    left: 40%;
+    top: 50%;
 }
 
 /* Slight drop into curve */
 .q3-pos {
-    left: 56%;
-    top: 40%;
+    left: 60%;
+    top: 50%;
 }
 
 /* Transition */
 .q4-pos {
-    left: 75%;
-    top: 24%;
+    left: 80%;
+    top: 50%;
 }
 
 /* Path End Level 80/400 */
@@ -1952,191 +1964,393 @@ img {
     animation: saasShinyShine 3s infinite;
 }
 
-@keyframes saasShinyShine {
-    0% {
-        left: -150%;
-    }
-
-    20% {
-        left: 150%;
-    }
-
-    100% {
-        left: 150%;
-    }
-}
-
-.saas-v2-footer-content {
-    max-width: 1700px;
-    width: 95%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding: 40px;
-    border-top: 1px solid #f1f5f9;
-}
-
-.saas-v2-white-footer {
+@.saas-v2-white-footer {
     width: 100%;
-    background: #ffffff;
-    padding: 60px 0;
-    /* Reduced top/bottom gap */
+    background: #f8fafc; /* off-white / light slate background */
+    padding: 100px 0 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
     z-index: 20;
+    overflow: hidden;
 }
 
-.saas-v2-footer-header {
-    text-align: center;
-    margin-bottom: 40px;
-    max-width: 1600px;
-    /* Increased for 1440px ratio */
+/* 2-Column Infrastructure Grid */
+.saas-v3-infra-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1700px;
+    width: 95%;
+    margin: 0 auto 80px;
+}
+
+.saas-v3-infra-left {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    text-align: left;
 }
 
-.saas-v2-footer-title {
+.saas-v2-live-status-pill {
+    background: rgba(37, 99, 235, 0.08);
+    border: 1px solid rgba(37, 99, 235, 0.15);
+    border-radius: 100px;
+    padding: 8px 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.saas-v2-pulse-dot {
+    width: 8px;
+    height: 8px;
+    background: #10b981; /* Green dot */
+    border-radius: 50%;
+    position: relative;
+}
+
+.saas-v2-pulse-dot::after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border-radius: 50%;
+    border: 2px solid #10b981;
+    opacity: 0;
+    animation: radar-ping 1.8s infinite;
+}
+
+.saas-v3-infra-title {
     font-size: 3.5rem;
-    /* Slightly larger for wider layout */
-    color: #1e293b;
-    font-family: 'HEXCO', sans-serif;
-    margin-bottom: 15px;
+    font-weight: 900;
+    line-height: 1.15;
+    color: #0f172a; /* Slate 900 */
+    font-family: Arial, Helvetica, sans-serif !important;
+    letter-spacing: -1.5px;
+    margin-bottom: 25px;
     text-transform: uppercase;
-    width: 100%;
 }
 
-.saas-v2-footer-title span {
-    color: #6366f1;
+.saas-v3-infra-title span {
+    background: linear-gradient(90deg, #2563eb, #7c3aed); /* Blue to Purple gradient */
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.saas-v2-footer-subtitle {
+.saas-v3-infra-description {
     font-size: 1.15rem;
-    color: #64748b;
+    color: #475569; /* Slate 600 */
     line-height: 1.7;
-    max-width: 1300px;
-    /* Increased width to accommodate more text */
-    margin-top: 10px;
+    margin-bottom: 40px;
+    max-width: 720px;
 }
 
-.saas-v2-hero-white-space-content {
-    display: none;
-    /* Replaced by footer-header */
-}
-
-.saas-v2-bottom-badge {
-    background: #f8fafc;
-    padding: 15px 30px;
-    border-radius: 20px;
+.saas-v3-infra-actions {
     display: flex;
-    align-items: center;
-    gap: 30px;
-}
-
-.saas-v2-spot-loc {
-    font-size: 0.8rem;
-    color: #94a3b8;
-    font-weight: 700;
-}
-
-.saas-v2-spot-price {
-    display: flex;
-    align-items: center;
     gap: 20px;
 }
 
-.saas-v2-spot-price strong {
-    font-size: 1.1rem;
-    color: #1e293b;
-}
-
-.saas-v2-spot-btn {
-    background: #bef264;
-    color: #365314;
+/* Action Buttons */
+.saas-v3-btn-primary {
+    background: linear-gradient(135deg, #2563eb, #4f46e5);
+    color: #ffffff;
     border: none;
-    padding: 10px 20px;
-    border-radius: 12px;
-    font-weight: 800;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(190, 242, 100, 0.3);
-}
-
-.saas-v2-spot-btn:hover {
-    transform: translateY(-2px);
-    background: #a3e635;
-    box-shadow: 0 6px 15px rgba(190, 242, 100, 0.4);
-}
-
-.saas-v2-partner-logos {
-    display: flex;
-    gap: 15px;
-}
-
-.saas-v2-middle-stats {
-    max-width: 1750px;
-    /* Expanded for new content */
-    margin: 0 auto 50px;
-    width: 95%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 120px;
-    padding: 80px 40px;
-    /* Increased vertical padding */
-    background: #f8fafc;
-    border-radius: 40px;
-    border: 1px solid #f1f5f9;
-}
-
-.saas-v2-m-stat {
-    text-align: center;
-    flex: 1;
-    max-width: 500px;
-    /* Increased for longer descriptions */
-}
-
-.saas-v2-m-stat strong {
-    display: block;
-    font-size: 1.3rem;
-    /* Slightly larger heading */
-    color: #1e293b;
-    margin-bottom: 12px;
-}
-
-.saas-v2-m-stat p {
-    font-size: 0.95rem;
-    /* Larger font for more content */
-    color: #64748b;
-    line-height: 1.6;
-    margin: 0;
-}
-
-.saas-v2-m-divider {
-    width: 1px;
-    height: 40px;
-    background: #e2e8f0;
-}
-
-.saas-v2-logo-box {
-    background: #f8fafc;
-    padding: 15px 25px;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
+    padding: 16px 36px;
+    border-radius: 30px;
     font-weight: 700;
-    color: #475569;
-    border: 1px solid #f1f5f9;
-    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.25);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.saas-v2-logo-box:hover {
+.saas-v3-btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(37, 99, 235, 0.35);
+}
+
+.saas-v3-btn-secondary {
     background: #ffffff;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-    border-color: #e2e8f0;
+    color: #1e293b;
+    border: 1px solid #e2e8f0;
+    padding: 16px 36px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.saas-v3-btn-secondary:hover {
+    transform: translateY(-3px);
+    border-color: #cbd5e1;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* Right Column: Globe Graphic Container */
+.saas-v3-infra-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.saas-v3-globe-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.saas-v3-globe-glow {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.18), transparent 70%);
+    filter: blur(30px);
+    border-radius: 50%;
+    z-index: 1;
+    animation: corePulse 4s ease-in-out infinite;
+}
+
+.saas-v3-globe-img {
+    width: 95%;
+    height: auto;
+    object-fit: contain;
+    z-index: 2;
+    filter: drop-shadow(0 20px 40px rgba(37, 99, 235, 0.15));
+    animation: floatGlobe 6s ease-in-out infinite;
+}
+
+@keyframes floatGlobe {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+/* Pulsing Ping Nodes over the Earth */
+.saas-v3-pulse-node {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #60a5fa; /* Light blue node */
+    border-radius: 50%;
+    z-index: 3;
+    box-shadow: 0 0 15px #60a5fa, 0 0 25px #3b82f6;
+}
+
+.saas-v3-pulse-node::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 50%;
+    border: 2px solid #60a5fa;
+    opacity: 0;
+    animation: radar-ping 2s infinite;
+}
+
+.saas-v3-pulse-node.p1 {
+    top: 40%;
+    left: 25%;
+    animation-delay: 0s;
+}
+
+.saas-v3-pulse-node.p2 {
+    top: 55%;
+    right: 20%;
+    animation-delay: 0.6s;
+}
+
+.saas-v3-pulse-node.p3 {
+    top: 25%;
+    right: 40%;
+    animation-delay: 1.2s;
+}
+
+/* Bottom Horizontal Stats Bar */
+.saas-v3-infra-stats-bar {
+    max-width: 1700px;
+    width: 95%;
+    background: #ffffff;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    border-radius: 24px;
+    padding: 35px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.03);
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.saas-v3-infra-stat-item {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+/* Icon Wrap Colors */
+.saas-v3-stat-icon-wrap {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.02);
+}
+
+.saas-v3-stat-icon-wrap.blue-bg {
+    background: rgba(37, 99, 235, 0.08);
+}
+.saas-v3-stat-icon-wrap.blue-bg .blue-icon {
+    color: #2563eb;
+}
+
+.saas-v3-stat-icon-wrap.purple-bg {
+    background: rgba(124, 58, 237, 0.08);
+}
+.saas-v3-stat-icon-wrap.purple-bg .purple-icon {
+    color: #7c3aed;
+}
+
+.saas-v3-stat-icon-wrap.green-bg {
+    background: rgba(16, 185, 129, 0.08);
+}
+.saas-v3-stat-icon-wrap.green-bg .green-icon {
+    color: #10b981;
+}
+
+.saas-v3-stat-icon-wrap.blue-light-bg {
+    background: rgba(59, 130, 246, 0.08);
+}
+.saas-v3-stat-icon-wrap.blue-light-bg .blue-light-icon {
+    color: #3b82f6;
+}
+
+/* Text Content Inside Stat Item */
+.saas-v3-stat-text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.saas-v3-stat-val {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.1;
+    margin-bottom: 4px;
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+.saas-v3-stat-label {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #334155;
+    margin-bottom: 2px;
+}
+
+.saas-v3-stat-sub {
+    font-size: 0.8rem;
+    color: #64748b;
+    font-weight: 500;
+}
+
+/* Vertical divider between columns */
+.saas-v3-stat-divider {
+    width: 1px;
+    height: 50px;
+    background: #e2e8f0;
+    flex-shrink: 0;
+}
+
+@media (max-width: 1200px) {
+    .saas-v3-infra-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        text-align: center;
+    }
+
+    .saas-v3-infra-left {
+        align-items: center;
+        text-align: center;
+    }
+
+    .saas-v3-infra-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .saas-v3-infra-stats-bar {
+        flex-wrap: wrap;
+        padding: 30px;
+        gap: 30px;
+    }
+
+    .saas-v3-infra-stat-item {
+        flex: 1 1 40%;
+        justify-content: center;
+    }
+
+    .saas-v3-stat-divider {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .saas-v3-infra-stats-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 35px;
+        padding: 30px 25px;
+    }
+
+    .saas-v3-infra-stat-item {
+        flex: 1 1 100%;
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .saas-v3-infra-title {
+        font-size: 2.5rem;
+    }
+
+    .saas-v3-infra-actions {
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+    }
+
+    .saas-v3-btn-primary,
+    .saas-v3-btn-secondary {
+        width: 100%;
+        justify-content: center;
+    }
 }
 
 @media (max-width: 1200px) {

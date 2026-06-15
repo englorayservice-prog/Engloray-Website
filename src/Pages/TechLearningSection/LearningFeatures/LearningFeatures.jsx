@@ -168,9 +168,21 @@ const LearningFeatures = () => {
                 {/* Staggered Benefit Items */}
                 <div className="practice-benefits-section">
                     {[
-                        { icon: mentorIcon, title: "Expert Mentors", desc: "Learn from industry professionals." },
-                        { icon: projectIcon, title: "Real Projects", desc: "Build a portfolio with client work." },
-                        { icon: communityIcon, title: "Community", desc: "Join a global network." }
+                        { 
+                            icon: mentorIcon, 
+                            title: "Expert Mentors", 
+                            desc: "Learn from seasoned industry professionals who provide personalized, 1-on-1 code reviews, real career guidance, and deep technical insights." 
+                        },
+                        { 
+                            icon: projectIcon, 
+                            title: "Real Projects", 
+                            desc: "Build an outstanding professional portfolio by working on production-ready client applications using modern enterprise technology stacks." 
+                        },
+                        { 
+                            icon: communityIcon, 
+                            title: "Community", 
+                            desc: "Join an active, global network of passionate developers, creative designers, and tech innovators to collaborate, learn, and grow together." 
+                        }
                     ].map((benefit, idx) => (
                         <motion.div 
                             key={idx}

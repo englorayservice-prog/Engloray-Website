@@ -186,7 +186,7 @@
   color: #ffffff !important;
   margin-bottom: 6px !important;
   text-transform: uppercase !important;
-  letter-spacing: -0.2px;
+  letter-spacing: 1.5px !important;
 }
 
 .rm-app-card-desc {
@@ -1029,7 +1029,7 @@
 
 .rm-pagination-dots {
   position: absolute;
-  bottom: -50px;
+  bottom: -25px;
   display: flex;
   gap: 12px;
 }
@@ -2000,6 +2000,7 @@
   font-weight: 600;
   color: #fff;
   margin-bottom: 8px;
+  letter-spacing: 1.5px !important;
 }
 
 .rm-app-card-desc {
@@ -2194,12 +2195,13 @@
    ======================================== */
 .rm-marquee-wrapper {
   background-color: #fafbfc;
-  padding: 0px 5% 30px 5%;
+  padding: 0px 0 30px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   overflow: hidden;
   font-family: 'Inter', sans-serif;
+  width: 100%;
 }
 
 .rm-marquee-top-decor {
@@ -2331,7 +2333,7 @@
    DELIVER SECTION
    ======================================== */
 .rm-deliver-section {
-  padding: 0px 5% 50px 5%;
+  padding: 0px 5% 25px 5%;
   background-color: #ffffff;
   font-family: 'Inter', sans-serif;
 }
@@ -3050,7 +3052,7 @@
    ======================================== */
 
 .rm-deliver-section {
-  padding: 60px 5%;
+  padding: 30px 5%;
   overflow: hidden;
 }
 
@@ -3113,16 +3115,19 @@
   }
 
   .rm-deliver-section {
-    padding: 100px 5%;
+    padding: 40px 5%;
   }
 }
 
 /* Extra Large Desktop Scaling (1440px +) */
 @media (min-width: 1440px) {
   .rm-deliver-container {
-    transform: scale(1.05);
-    /* Slight upscale for large displays */
-    transform-origin: center;
+    max-width: 1650px !important;
+    transform: none !important;
+  }
+
+  .rm-deliver-section {
+    zoom: 1.1;
   }
 }
 
@@ -3203,7 +3208,7 @@
 
 /* ---- REDEFINING EXPEIRENCE SECTION ---- */
 .rm-redefine-section {
-  padding: 40px 20px;
+  padding: 20px 20px;
   background: #ffffff;
 }
 
@@ -4079,7 +4084,7 @@
    ======================================== */
 @media (max-width: 768px) {
   .rm-redefine-section {
-    padding: 40px 10px;
+    padding: 20px 10px;
     /* Reduce outer section padding */
   }
 
@@ -4111,14 +4116,30 @@
   }
 }
 
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .rm-container {
+    max-width: 1350px;
+    width: 94%;
+    margin: 0 auto;
+  }
+
+  .rm-redefine-section {
+    zoom: 1.08;
+  }
+}
+
 @media (min-width: 1440px) {
   .rm-page-two {
     zoom: 1.22;
   }
 
   .rm-container {
-    max-width: 1400px;
+    max-width: 1650px;
     margin: 0 auto;
+  }
+
+  .rm-redefine-section {
+    zoom: 1.1;
   }
 
   .rm-redefine-header {

@@ -280,10 +280,15 @@ const ProjectBasedLearning = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth <= 768) {
+      const width = window.innerWidth;
+      if (width <= 768) {
         setCardsPerPage(1);
-      } else {
+      } else if (width <= 1440) {
         setCardsPerPage(2);
+      } else if (width <= 1820) {
+        setCardsPerPage(3);
+      } else {
+        setCardsPerPage(4);
       }
     };
     handleResize(); // Initial check
@@ -373,36 +378,42 @@ const ProjectBasedLearning = () => {
       icon: faProjectDiagram,
       title: "Real-World Projects",
       description: "Work on industry-relevant projects with real business requirements",
+      extraDescription: " to gain practical, hands-on software development experience that prepares you directly for professional engineering roles.",
       color: "#2563EB"
     },
     {
       icon: faCodeBranch,
       title: "Git Portfolio",
       description: "Build an impressive GitHub portfolio with production-ready code",
+      extraDescription: " showcasing your version control skills, structured code design, and collaborative development history.",
       color: "#3B82F6"
     },
     {
       icon: faUsers,
       title: "Team Collaboration",
       description: "Learn agile methodologies and team collaboration tools",
+      extraDescription: " including scrum workflows, pull request reviews, and cooperative problem solving with peer developers.",
       color: "#93C5FD"
     },
     {
       icon: faClipboardCheck,
       title: "Project Management",
       description: "Master project planning, tracking, and delivery processes",
+      extraDescription: " by taking ownership of features, mapping milestones, and ensuring timely, high-quality deliverables.",
       color: "#1D4ED8"
     },
     {
       icon: faRocket,
       title: "Deployment Experience",
       description: "Deploy projects to cloud platforms with CI/CD pipelines",
+      extraDescription: " using modern cloud services and automated integration setups to launch fully live, public-facing websites.",
       color: "#2563EB"
     },
     {
       icon: faHandshake,
       title: "Industry Connections",
       description: "Network with professionals and potential employers",
+      extraDescription: " to discover new career opportunities, secure mentorships, and showcase your engineering capabilities.",
       color: "#3B82F6"
     }
   ];
@@ -413,6 +424,7 @@ const ProjectBasedLearning = () => {
       step: 1,
       title: "Project Selection",
       description: "Choose from 50+ real-world project templates",
+      extraDescription: " tailored to modern tech stacks and structured to challenge your engineering capabilities.",
       icon: faClipboardList,
       color: "#2563EB"
     },
@@ -420,6 +432,7 @@ const ProjectBasedLearning = () => {
       step: 2,
       title: "Requirements Analysis",
       description: "Understand project scope and business requirements",
+      extraDescription: " to bridge the gap between abstract business goals and concrete technical specifications.",
       icon: faFileAlt,
       color: "#3B82F6"
     },
@@ -427,6 +440,7 @@ const ProjectBasedLearning = () => {
       step: 3,
       title: "Technical Planning",
       description: "Design architecture and select technologies",
+      extraDescription: " defining data flows, schema designs, and scaling paths before writing the first line of code.",
       icon: faSitemap,
       color: "#3B82F6"
     },
@@ -434,6 +448,7 @@ const ProjectBasedLearning = () => {
       step: 4,
       title: "Development Phase",
       description: "Code implementation with expert guidance",
+      extraDescription: " following clean coding practices, structured design patterns, and continuous unit testing.",
       icon: faLaptopCode,
       color: "#1D4ED8"
     },
@@ -441,6 +456,7 @@ const ProjectBasedLearning = () => {
       step: 5,
       title: "Testing & Debugging",
       description: "Learn testing methodologies and debugging techniques",
+      extraDescription: " to catch edge cases, fix complex errors, and verify high-performance application behaviors.",
       icon: faBug,
       color: "#2563EB"
     },
@@ -448,6 +464,7 @@ const ProjectBasedLearning = () => {
       step: 6,
       title: "Deployment & Showcase",
       description: "Deploy project and create portfolio presentation",
+      extraDescription: " optimized to present your creations to technical recruiters and potential employers.",
       icon: faRocket,
       color: "#3B82F6"
     }
@@ -741,7 +758,7 @@ const ProjectBasedLearning = () => {
                     <p className="spbl-section-subtitle" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}>Select from diverse real-world project categories</p>
                   </div>
                   <div className="spbl-categories-carousel-container">
-                    {currentSlide > 0 && cardsPerPage > 1 && (
+                    {currentSlide > 0 && (
                       <button className="spbl-carousel-arrow left" onClick={prevSlide} aria-label="Previous Path">
                         <FontAwesomeIcon icon={faChevronLeft} />
                       </button>
@@ -749,13 +766,14 @@ const ProjectBasedLearning = () => {
 
                     <div className="spbl-categories-carousel-viewport">
                       <div className="spbl-categories-carousel-track" style={{
-                        transform: `translateX(calc(-${currentSlide} * (100% / ${cardsPerPage} + ${cardsPerPage === 1 ? '0rem' : '1rem'})))`,
+                        transform: `translateX(calc(-${currentSlide} * (100% + var(--carousel-gap, 2rem)) / ${cardsPerPage}))`,
                       }}>
                         {projectCategories.map((category, index) => {
                           return (
                             <div key={category.id} className="spbl-category-card" style={{
                               fontFamily: "'Poppins', sans-serif",
-                              flexDirection: 'column'
+                              flexDirection: 'column',
+                              flex: `0 0 calc((100% - (var(--carousel-gap, 2rem) * (${cardsPerPage} - 1))) / ${cardsPerPage})`
                             }}>
                               <div className="spbl-category-image-wrapper" style={{ position: 'relative' }}>
                                 <div className="spbl-image-mask" style={{ width: '100%', height: '100%', overflow: 'hidden', borderRadius: '48px' }}>
@@ -889,7 +907,10 @@ const ProjectBasedLearning = () => {
                       <h3 className="staffing-card-title">{benefit.title}</h3>
                       <div className="staffing-card-underline"></div>
                     </div>
-                    <p className="staffing-card-desc">{benefit.description}</p>
+                    <p className="staffing-card-desc">
+                      {benefit.description}
+                      <span className="spbl-widescreen-extra">{benefit.extraDescription}</span>
+                    </p>
                   </div>
                 ))}
               </div>
@@ -932,7 +953,10 @@ const ProjectBasedLearning = () => {
                         </div>
                         <h3 className="quality-card-title-bold">{step.title}</h3>
                         <div className="quality-card-divider"></div>
-                        <p className="quality-card-desc-muted">{step.description}</p>
+                        <p className="quality-card-desc-muted">
+                          {step.description}
+                          <span className="spbl-widescreen-extra">{step.extraDescription}</span>
+                        </p>
                       </div>
                     );
                   })}
@@ -963,25 +987,25 @@ const ProjectBasedLearning = () => {
                   <div className="spbl-tech-marquee-track" style={{ display: 'flex', width: 'max-content', animation: 'pblMarqueeLeftToRight 30s linear infinite' }}>
 
                     {/* First Set */}
-                    <div style={{ display: 'flex', gap: '24px', paddingRight: '24px' }}>
+                    <div style={{ display: 'flex', gap: '20px', paddingRight: '20px' }}>
                       {technologies.map((tech, index) => (
-                        <div key={`set1-${index}`} className="spbl-tech-card" style={{ flex: '0 0 240px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '40px 20px', background: '#1E293B', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)', transition: 'transform 0.3s ease', cursor: 'default' }}>
-                          <div className="spbl-tech-icon" style={{ color: tech.color, fontSize: '3.5rem', marginBottom: '20px' }}>
+                        <div key={`set1-${index}`} className="spbl-tech-card" style={{ flex: '0 0 160px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '24px 16px', background: '#1E293B', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)', transition: 'transform 0.3s ease', cursor: 'default' }}>
+                          <div className="spbl-tech-icon" style={{ color: tech.color, fontSize: '2.5rem', marginBottom: '12px' }}>
                             <FontAwesomeIcon icon={tech.icon} />
                           </div>
-                          <h3 className="spbl-tech-name" style={{ color: '#F8FAFC', fontSize: '1.3rem', fontWeight: '600', margin: 0 }}>{tech.name}</h3>
+                          <h3 className="spbl-tech-name" style={{ color: '#F8FAFC', fontSize: '0.95rem', fontWeight: '600', margin: 0 }}>{tech.name}</h3>
                         </div>
                       ))}
                     </div>
 
                     {/* Second Set */}
-                    <div style={{ display: 'flex', gap: '24px', paddingRight: '24px' }}>
+                    <div style={{ display: 'flex', gap: '20px', paddingRight: '20px' }}>
                       {technologies.map((tech, index) => (
-                        <div key={`set2-${index}`} className="spbl-tech-card" style={{ flex: '0 0 240px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '40px 20px', background: '#1E293B', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)', transition: 'transform 0.3s ease', cursor: 'default' }}>
-                          <div className="spbl-tech-icon" style={{ color: tech.color, fontSize: '3.5rem', marginBottom: '20px' }}>
+                        <div key={`set2-${index}`} className="spbl-tech-card" style={{ flex: '0 0 160px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '24px 16px', background: '#1E293B', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)', transition: 'transform 0.3s ease', cursor: 'default' }}>
+                          <div className="spbl-tech-icon" style={{ color: tech.color, fontSize: '2.5rem', marginBottom: '12px' }}>
                             <FontAwesomeIcon icon={tech.icon} />
                           </div>
-                          <h3 className="spbl-tech-name" style={{ color: '#F8FAFC', fontSize: '1.3rem', fontWeight: '600', margin: 0 }}>{tech.name}</h3>
+                          <h3 className="spbl-tech-name" style={{ color: '#F8FAFC', fontSize: '0.95rem', fontWeight: '600', margin: 0 }}>{tech.name}</h3>
                         </div>
                       ))}
                     </div>
@@ -1147,7 +1171,7 @@ const ProjectBasedLearning = () => {
                   </button>
 
                   <div className="cta-light-note">
-                    <span className="cta-note-icon">💡</span>
+                    ?
                     <span className="cta-note-text">Free project planning session • Portfolio review included</span>
                   </div>
                 </div>

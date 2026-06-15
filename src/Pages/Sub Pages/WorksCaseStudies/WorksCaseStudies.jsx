@@ -55,7 +55,7 @@ import caseStudyLogoTen from '../../../assets/case study images/Application/orth
 import './WorksCaseStudies.css';
 import NewFooter1 from '../subFooterOne/NewFooter1';
 // Import the hero background image
-import heroBackgroundImage from '../../../assets/download (29).jpeg'; // Update this path to your actual image
+import heroBackgroundImage from '../../../assets/case_studies_hero_bg.png'; // Update this path to your actual image
 
 // Logo data for marquee - 15 logos
 const logoImages = [

@@ -32,9 +32,10 @@ import {
   faDatabase,
   faLink,
   faBrain,
-  faKey
+  faKey,
+  faGlobe
 } from '@fortawesome/free-solid-svg-icons';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
 import './SaaS.css';
@@ -46,6 +47,7 @@ import learning3d from '../../../assets/learning_3d.png';
 //import saas3dShape from '../../../assets/saas_3d_shape.png';
 import saasFeaturedBuilding from '../../../assets/saas_featured_building.png';
 import microsoftLogo from '../../../assets/microsoft.png';
+import globeBg from '../../../assets/World-sass.png';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar'
 import TopNavbar from '../../../Components/TopNavbar/TopNavbar'
 import SubFooterOne from '../../../Pages/Sub Pages/subFooterOne/NewFooter1'
@@ -335,71 +337,100 @@ const SaaS = () => {
 
             {/* White Footer */}
             <div className="saas-v2-white-footer">
-              <div className="saas-v2-footer-header anim-on-scroll">
-                <div className="saas-v2-live-status-pill">
-                  <div className="saas-v2-pulse-dot"></div>
-                  <span>Live Status: <strong>500+ Global Edge Nodes</strong></span>
+              <div className="saas-v3-infra-grid anim-on-scroll">
+
+                {/* Left Column: Content */}
+                <div className="saas-v3-infra-left">
+                  <div className="saas-v2-live-status-pill">
+                    <div className="saas-v2-pulse-dot"></div>
+                    <span>Live Status: <strong style={{ color: '#2563eb' }}>500+ Global Edge Nodes</strong></span>
+                  </div>
+
+                  <h2 className="saas-v3-infra-title">
+                    THE INFRASTRUCTURE POWERING <br />
+                    <span>GLOBAL EFFICIENCY</span>
+                  </h2>
+
+                  <p className="saas-v3-infra-description">
+                    Our proprietary global network backbone leverages advanced software-defined networking (SDN) and edge computing to deliver ultra-low latency, unmatched reliability, and enterprise-grade performance—anywhere in the world.
+                  </p>
+
+                  <div className="saas-v3-infra-actions">
+                    <button className="saas-v3-btn-primary">
+                      <FontAwesomeIcon icon={faGlobe} style={{ marginRight: '8px' }} />
+                      Explore Network
+                    </button>
+                    <button className="saas-v3-btn-secondary">
+                      <FontAwesomeIcon icon={faChartLine} style={{ marginRight: '8px' }} />
+                      View Live Status
+                    </button>
+                  </div>
                 </div>
-                <h2 className="saas-v2-footer-title">THE INFRASTRUCTURE POWERING <br /><span>GLOBAL EFFICIENCY</span></h2>
-                <p className="saas-v2-footer-subtitle">
-                  Our proprietary global network backbone leverages advanced software-defined networking (SDN) and edge computing to ensure lightning-fast connectivity,
-                  ultra-low latency, and enterprise-grade reliability at every scale, anywhere in the world.
-                </p>
+
+                {/* Right Column: Interactive Globe */}
+                <div className="saas-v3-infra-right">
+                  <div className="saas-v3-globe-container">
+                    <div className="saas-v3-globe-glow"></div>
+                    <img src={globeBg} alt="Global Network Globe" className="saas-v3-globe-img" />
+
+                  </div>
+                </div>
+
               </div>
 
-              <div className="saas-v2-middle-stats anim-on-scroll delay-5">
-                <div className="saas-v2-m-stat">
-                  <strong>Global Reach</strong>
-                  <p>
-                    Connecting over 10,000+ global enterprises across 150+ countries with localized edge nodes for maximum performance and regional data sovereignty.
-                    Our expansive network ensures that your data travels the shortest possible distance, reducing latency and improving user experience worldwide.
-                  </p>
-                </div>
-                <div className="saas-v2-m-divider"></div>
-                <div className="saas-v2-m-stat">
-                  <strong>Enterprise Grade</strong>
-                  <p>
-                    Highest-tier security protocols with end-to-end encryption, SOC2 compliance, and multi-layer threat detection systems.
-                    We provide a fortress-like environment for your most sensitive data, utilizing real-time monitoring and automated incident response to keep your operations secure 24/7.
-                  </p>
-                </div>
-                <div className="saas-v2-m-divider"></div>
-                <div className="saas-v2-m-stat">
-                  <strong>Expert Support</strong>
-                  <p>
-                    Unmatched 24/7 dedicated technical assistance from elite engineers ready to optimize your infrastructure at any moment.
-                    From initial migration to complex troubleshooting, our team acts as an extension of your own, ensuring your mission-critical systems never skip a beat.
-                  </p>
-                </div>
-              </div>
-
-              <div className="saas-v2-footer-content">
-                <div className="saas-v2-bottom-badge anim-on-scroll delay-5">
-                  <div className="saas-v2-spot-details">
-                    <span className="saas-v2-spot-loc"><FontAwesomeIcon icon={faChartLine} style={{ marginRight: '10px' }} /> <strong>Real-time Analytics Hub:</strong> Monitoring 2.5B+ requests daily</span>
-                    <div className="saas-v2-spot-price">
-                      <strong>99.99% Uptime SLA</strong>
-                      <button className="saas-v2-spot-btn">Explore Live Metrics</button>
-                    </div>
+              {/* Bottom Horizontal Stats Bar */}
+              <div className="saas-v3-infra-stats-bar anim-on-scroll delay-1">
+                {/* Stat 1 */}
+                <div className="saas-v3-infra-stat-item">
+                  <div className="saas-v3-stat-icon-wrap blue-bg">
+                    <FontAwesomeIcon icon={faUsers} className="blue-icon" />
+                  </div>
+                  <div className="saas-v3-stat-text">
+                    <div className="saas-v3-stat-val">10,000+</div>
+                    <div className="saas-v3-stat-label">Global Enterprises</div>
+                    <div className="saas-v3-stat-sub">Trust our network</div>
                   </div>
                 </div>
 
-                <div className="saas-v2-partner-logos anim-on-scroll delay-5">
-                  <div className="saas-v2-logo-box">
-                    <div className="saas-v2-logo-icon" style={{ color: '#6366f1' }}><FontAwesomeIcon icon={faCloud} /></div>
-                    <span>Crm Solutions</span>
+                <div className="saas-v3-stat-divider"></div>
+
+                {/* Stat 2 */}
+                <div className="saas-v3-infra-stat-item">
+                  <div className="saas-v3-stat-icon-wrap purple-bg">
+                    <FontAwesomeIcon icon={faGlobe} className="purple-icon" />
                   </div>
-                  <div className="saas-v2-logo-box">
-                    <div className="saas-v2-logo-icon" style={{ color: '#10b981' }}><FontAwesomeIcon icon={faShieldHalved} /></div>
-                    <span>ERP Software</span>
+                  <div className="saas-v3-stat-text">
+                    <div className="saas-v3-stat-val">150+</div>
+                    <div className="saas-v3-stat-label">Countries</div>
+                    <div className="saas-v3-stat-sub">Connected worldwide</div>
                   </div>
-                  <div className="saas-v2-logo-box">
-                    <div className="saas-v2-logo-icon" style={{ color: '#f59e0b' }}><FontAwesomeIcon icon={faChartPie} /></div>
-                    <span>Chatbot AI</span>
+                </div>
+
+                <div className="saas-v3-stat-divider"></div>
+
+                {/* Stat 3 */}
+                <div className="saas-v3-infra-stat-item">
+                  <div className="saas-v3-stat-icon-wrap green-bg">
+                    <FontAwesomeIcon icon={faServer} className="green-icon" />
                   </div>
-                  <div className="saas-v2-logo-box">
-                    <div className="saas-v2-logo-icon" style={{ color: '#ec4899' }}><FontAwesomeIcon icon={faBriefcase} /></div>
-                    <span>Job seeker hub</span>
+                  <div className="saas-v3-stat-text">
+                    <div className="saas-v3-stat-val">500+</div>
+                    <div className="saas-v3-stat-label">Global Edge Nodes</div>
+                    <div className="saas-v3-stat-sub">Across 6 continents</div>
+                  </div>
+                </div>
+
+                <div className="saas-v3-stat-divider"></div>
+
+                {/* Stat 4 */}
+                <div className="saas-v3-infra-stat-item">
+                  <div className="saas-v3-stat-icon-wrap blue-light-bg">
+                    <FontAwesomeIcon icon={faShieldHalved} className="blue-light-icon" />
+                  </div>
+                  <div className="saas-v3-stat-text">
+                    <div className="saas-v3-stat-val">99.99%</div>
+                    <div className="saas-v3-stat-label">Network Uptime (SLA)</div>
+                    <div className="saas-v3-stat-sub">Reliability you can count on</div>
                   </div>
                 </div>
               </div>
@@ -429,54 +460,54 @@ const SaaS = () => {
             </div>
 
             <div className="stats-modern-right">
-                <div className="saas-v3-portal-wrap">
-                  {/* Layered Background Rings */}
-                  <div className="portal-ring ring-outer"></div>
-                  <div className="portal-ring ring-middle"></div>
-                  <div className="portal-ring ring-inner"></div>
+              <div className="saas-v3-portal-wrap">
+                {/* Layered Background Rings */}
+                <div className="portal-ring ring-outer"></div>
+                <div className="portal-ring ring-middle"></div>
+                <div className="portal-ring ring-inner"></div>
 
-                  {/* Central Core Node */}
-                  <div className="portal-core">
-                    <div className="core-pulse"></div>
-                    <div className="core-inner">
-                      <FontAwesomeIcon icon={faBrain} />
-                    </div>
-                  </div>
-
-                  {/* Floating Stat Cards */}
-                  <div className="portal-stat-card s-card-1 anim-on-scroll">
-                    <div className="s-card-glow"></div>
-                    <div className="s-card-content">
-                      <span className="s-val">100%</span>
-                      <span className="s-label">Accuracy Rate</span>
-                    </div>
-                  </div>
-
-                  <div className="portal-stat-card s-card-2 anim-on-scroll delay-1">
-                    <div className="s-card-glow"></div>
-                    <div className="s-card-content">
-                      <span className="s-val">120x</span>
-                      <span className="s-label">Efficiency ROI</span>
-                    </div>
-                  </div>
-
-                  <div className="portal-stat-card s-card-3 anim-on-scroll delay-2">
-                    <div className="s-card-glow"></div>
-                    <div className="s-card-content">
-                      <span className="s-val">10x</span>
-                      <span className="s-label">Cost Reduction</span>
-                    </div>
-                  </div>
-
-                  {/* Left Side Card */}
-                  <div className="portal-stat-card s-card-4 anim-on-scroll delay-3">
-                    <div className="s-card-glow"></div>
-                    <div className="s-card-content">
-                      <span className="s-val">99.9%</span>
-                      <span className="s-label">Uptime SLA</span>
-                    </div>
+                {/* Central Core Node */}
+                <div className="portal-core">
+                  <div className="core-pulse"></div>
+                  <div className="core-inner">
+                    <FontAwesomeIcon icon={faBrain} />
                   </div>
                 </div>
+
+                {/* Floating Stat Cards */}
+                <div className="portal-stat-card s-card-1 anim-on-scroll">
+                  <div className="s-card-glow"></div>
+                  <div className="s-card-content">
+                    <span className="s-val">100%</span>
+                    <span className="s-label">Accuracy Rate</span>
+                  </div>
+                </div>
+
+                <div className="portal-stat-card s-card-2 anim-on-scroll delay-1">
+                  <div className="s-card-glow"></div>
+                  <div className="s-card-content">
+                    <span className="s-val">120x</span>
+                    <span className="s-label">Efficiency ROI</span>
+                  </div>
+                </div>
+
+                <div className="portal-stat-card s-card-3 anim-on-scroll delay-2">
+                  <div className="s-card-glow"></div>
+                  <div className="s-card-content">
+                    <span className="s-val">10x</span>
+                    <span className="s-label">Cost Reduction</span>
+                  </div>
+                </div>
+
+                {/* Left Side Card */}
+                <div className="portal-stat-card s-card-4 anim-on-scroll delay-3">
+                  <div className="s-card-glow"></div>
+                  <div className="s-card-content">
+                    <span className="s-val">99.9%</span>
+                    <span className="s-label">Uptime SLA</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
           </div>
@@ -625,19 +656,19 @@ const SaaS = () => {
           <div className="roadmap-v3-container">
 
             <div className="roadmap-v3-side-title anim-on-scroll">
-              <h2>ROADMAP<br /><span>2023</span></h2>
+              <h2>ROADMAP <span>2023</span></h2>
             </div>
 
             <div className="roadmap-v3-main-visual">
               <div className="roadmap-v3-path-svg-wrap">
                 <svg viewBox="0 0 1200 400" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                  <path d="M0 320C200 320 400 320 600 200C800 80 1000 80 1200 80" stroke="url(#roadmap_glow)" strokeWidth="20" strokeLinecap="round" style={{ filter: 'blur(20px)', opacity: 0.6 }} />
-                  <path d="M0 320C200 320 400 320 600 200C800 80 1000 80 1200 80" stroke="url(#roadmap_gradient)" strokeWidth="8" strokeLinecap="round" />
+                  <path d="M0 200 L1200 200" stroke="url(#roadmap_glow)" strokeWidth="20" strokeLinecap="round" style={{ filter: 'blur(20px)', opacity: 0.6 }} />
+                  <path d="M0 200 L1200 200" stroke="url(#roadmap_gradient)" strokeWidth="8" strokeLinecap="round" />
                   {/* The Running Glow Light Effect */}
-                  <path className="roadmap-path-runner" d="M0 320C200 320 400 320 600 200C800 80 1000 80 1200 80" stroke="#fff" strokeWidth="4" strokeLinecap="round" />
+                  <path className="roadmap-path-runner" d="M0 200 L1200 200" stroke="#fff" strokeWidth="4" strokeLinecap="round" />
                   <defs>
-                    <linearGradient id="roadmap_gradient" x1="0" y1="320" x2="1200" y2="80" gradientUnits="userSpaceOnUse"><stop stopColor="#f472b6" /><stop offset="0.5" stopColor="#a855f7" /><stop offset="1" stopColor="#3b82f6" /></linearGradient>
-                    <linearGradient id="roadmap_glow" x1="0" y1="320" x2="1200" y2="80" gradientUnits="userSpaceOnUse"><stop stopColor="#f472b6" /><stop offset="0.5" stopColor="#a855f7" /><stop offset="1" stopColor="#3b82f6" /></linearGradient>
+                    <linearGradient id="roadmap_gradient" x1="0" y1="200" x2="1200" y2="200" gradientUnits="userSpaceOnUse"><stop stopColor="#f472b6" /><stop offset="0.5" stopColor="#a855f7" /><stop offset="1" stopColor="#3b82f6" /></linearGradient>
+                    <linearGradient id="roadmap_glow" x1="0" y1="200" x2="1200" y2="200" gradientUnits="userSpaceOnUse"><stop stopColor="#f472b6" /><stop offset="0.5" stopColor="#a855f7" /><stop offset="1" stopColor="#3b82f6" /></linearGradient>
                   </defs>
                 </svg>
               </div>

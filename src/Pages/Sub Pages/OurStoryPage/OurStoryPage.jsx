@@ -29,22 +29,40 @@ import {
   faSuitcase,
   faDiamond,
   faEye,
-  faCompass
+  faCompass,
+  faArrowRight,
+  faFire,
+  faWandMagicSparkles
 } from '@fortawesome/free-solid-svg-icons';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import './OurStoryPage.css';
 import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
+import Brain3D from '../../../Components/Brain3D/Brain3D';
 
 // import { motion } from 'framer-motion';
-import engloray_story_visual from '../../../assets/engloray_story_visual_1774975212945.png';
+import engloray_story_visual from '../../../assets/engloray_legacy_story.png';
 import journeyStarting from '../../../assets/journey_starting.png';
-
+import design2 from '../../../assets/design2.jpeg';
+import design3 from '../../../assets/design3.jpeg';
+import design4 from '../../../assets/design4.jpeg';
+import figmaLogo from '../../../assets/figma_logo_v2.png';
+import photoshopLogo from '../../../assets/photoshop_logo.png';
+import illustratorLogo from '../../../assets/illustrator_logo_v2.png';
+import peach_3d_shapes from '../../../assets/peach_3d_shapes.png';
+import brainLogo from '../../../assets/brain.png';
+import hand_holding_phone from '../../../assets/hand_holding_phone.png';
+import cyberpunk_avatar from '../../../assets/cyberpunk_avatar.png';
+import designer_avatar_top from '../../../assets/designer_avatar_top.png';
+import cartoon_male_1 from '../../../assets/cartoon_male_1.png';
+import cartoon_female_1 from '../../../assets/cartoon_female_1.png';
+import cartoon_male_2 from '../../../assets/cartoon_male_2.png';
 
 import journeyGrowth from '../../../assets/journey_growth.png';
 import journeyPresent from '../../../assets/journey_present.png';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 import useEmblaCarousel from 'embla-carousel-react';
 
@@ -96,8 +114,7 @@ const CtaSpotlightSection = ({ handleWhatsAppClick, handlePortfolioClick }) => {
             <motion.span className="osp-cta-tag" variants={itemVariants}>READY FOR IMPACT?</motion.span>
 
             <motion.h2 className="osp-cta-title-modern" variants={itemVariants}>
-              Ready to Create<br />
-              <span className="osp-cta-title-glow">Your Legacy?</span>
+              Ready to Create <span className="osp-cta-title-glow">Your Legacy?</span>
             </motion.h2>
 
             <motion.p className="osp-cta-desc-modern" variants={itemVariants}>
@@ -142,8 +159,189 @@ const CtaSpotlightSection = ({ handleWhatsAppClick, handlePortfolioClick }) => {
   );
 };
 
+// Helper component to render a grid of arrow chevrons
+const ArrowGrid = ({ rows = 14, cols = 5 }) => {
+  return (
+    <div className="osp-arrow-grid" style={{ gridTemplateColumns: `repeat(${cols}, 1fr)` }}>
+      {Array.from({ length: rows }).map((_, r) =>
+        Array.from({ length: cols }).map((_, c) => {
+          // Stagger delays from bottom row to top row to create an upward sweeping wave
+          const delay = ((rows - r) * 0.15).toFixed(2);
+          return (
+            <svg
+              key={`${r}-${c}`}
+              className="osp-arrow-svg"
+              style={{ animationDelay: `${delay}s` }}
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="3"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          );
+        })
+      )}
+    </div>
+  );
+};
+
+const HowWeGrowSection = React.memo(() => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  return (
+    <section className="osp-how-we-grow-section" ref={ref}>
+      <div className="osp-container">
+        <motion.div
+          className="osp-how-header centered"
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h2 className="osp-how-main-title">HOW WE GROW</h2>
+          <div className="osp-how-underline"></div>
+        </motion.div>
+
+        <div className="osp-how-visual-container">
+          {/* Central Hub */}
+          <div className="osp-how-hub-wrapper">
+            <motion.div
+              className="osp-how-hub"
+              animate={{
+                boxShadow: ["0 0 20px rgba(255, 60, 60, 0.4)", "0 0 40px rgba(255, 60, 60, 0.7)", "0 0 20px rgba(255, 60, 60, 0.4)"]
+              }}
+              transition={{ duration: 4, repeat: Infinity }}
+            >
+              <div className="osp-how-hub-inner">
+                <FontAwesomeIcon icon={faBrain} />
+              </div>
+            </motion.div>
+
+            {/* Connecting Lines SVG */}
+            <svg className="osp-how-lines-svg" viewBox="0 0 800 500">
+              {/* Top Left */}
+              <path
+                d="M400,250 C300,250 200,200 150,100"
+                className="osp-how-path"
+              />
+              {/* Top Right */}
+              <path
+                d="M400,250 C500,250 600,200 650,100"
+                className="osp-how-path"
+              />
+              {/* Bottom Left */}
+              <path
+                d="M400,250 C300,250 200,300 150,400"
+                className="osp-how-path"
+              />
+              {/* Bottom Right */}
+              <path
+                d="M400,250 C500,250 600,300 650,400"
+                className="osp-how-path"
+              />
+            </svg>
+          </div>
+
+          {/* Corner Content Nodes */}
+          <div className="osp-how-nodes">
+            <motion.div 
+              className="osp-how-node top-left" 
+              initial={{ opacity: 0, x: -30 }} 
+              animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }} 
+              transition={{ delay: 0.3 }}
+            >
+              <div className="osp-node-icon"><FontAwesomeIcon icon={faBriefcase} /></div>
+              <h3>Strategic Vision</h3>
+              <p>Mapping out the high-level roadmap for exponential growth and long-term brand success.</p>
+            </motion.div>
+
+            <motion.div 
+              className="osp-how-node top-right" 
+              initial={{ opacity: 0, x: 30 }} 
+              animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }} 
+              transition={{ delay: 0.5 }}
+            >
+              <div className="osp-node-icon"><FontAwesomeIcon icon={faChartBar} /></div>
+              <h3>Data Analytics</h3>
+              <p>Utilizing advanced market insights and performance data to drive scaling decisions.</p>
+            </motion.div>
+
+            <motion.div 
+              className="osp-how-node bottom-left" 
+              initial={{ opacity: 0, x: -30 }} 
+              animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }} 
+              transition={{ delay: 0.7 }}
+            >
+              <div className="osp-node-icon"><FontAwesomeIcon icon={faPalette} /></div>
+              <h3>Creative Design</h3>
+              <p>Breaking boundaries with world-class user experiences and modern brand identity.</p>
+            </motion.div>
+
+            <motion.div 
+              className="osp-how-node bottom-right" 
+              initial={{ opacity: 0, x: 30 }} 
+              animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }} 
+              transition={{ delay: 0.9 }}
+            >
+              <div className="osp-node-icon"><FontAwesomeIcon icon={faRocket} /></div>
+              <h3>Tech Innovation</h3>
+              <p>Building robust, scalable architectures that grow seamlessly with your digital needs.</p>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+});
+
 const OurStoryPage = () => {
   const navigate = useNavigate();
+
+  // Mouse position tracking for background parallax effect
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
+  // Controlled rotating disc states and ref
+  const [isHovered, setIsHovered] = useState(false);
+  const [mouseAngle, setMouseAngle] = useState(0);
+  const hubRef = useRef(null);
+
+  const handleMouseMoveHub = (e) => {
+    if (!hubRef.current) return;
+    const rect = hubRef.current.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    const radians = Math.atan2(e.clientY - centerY, e.clientX - centerX);
+    const degrees = radians * (180 / Math.PI) + 90;
+    setMouseAngle(degrees);
+  };
+
+  const getCardOpacity = (angle, targetAngle) => {
+    const norm = (angle % 360 + 360) % 360;
+    const dist = Math.abs(norm - targetAngle);
+    const diff = Math.min(dist, 360 - dist);
+    if (diff >= 70) return 0;
+    return 1 - (diff / 70);
+  };
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      const { clientX, clientY } = e;
+      // Calculate offset from center of screen normalized between -15 and 15 pixels
+      const x = ((clientX - window.innerWidth / 2) / (window.innerWidth / 2)) * 15;
+      const y = ((clientY - window.innerHeight / 2) / (window.innerHeight / 2)) * 15;
+      setMousePos({ x, y });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
 
   // Data Constants - MOVED UP TO FIX INITIALIZATION ERRORS
   const projectFields = [
@@ -341,105 +539,216 @@ const OurStoryPage = () => {
       <TwoLineNavbar />
       <div className="osp-page">
 
-        {/* Redesigned NFT-style Header */}
+        {/* Redesigned Bento-Layout Header */}
         <header className="osp-hero-section">
-          <div className="osp-hero-container">
-            <div className="osp-hero-grid">
-              {/* Left Content */}
-              <div className="osp-hero-content-left">
-                <motion.h1
-                  className="osp-hero-main-title"
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: false }}
-                  transition={{ duration: 0.8 }}
-                >
-                  Crafting the <br />
-                  <span>Engloray Legacy</span>
-                </motion.h1>
-                <motion.p
-                  className="osp-hero-description"
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: false }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
-                >
-                  A story of passion, precision, and the relentless pursuit of digital excellence.
-                  From creative roots to the global tech group we are today.
-                  Beyond just code and color, we build digital experiences that drive value and foster true human connection.
-                  Our mission continues to evolve, but our core commitment to your success remains unchanged.
-                </motion.p>
+          {/* Decorative background overlay items */}
+          <div className="osp-light-noise"></div>
+          <div className="osp-dot-matrix"></div>
+          <div className="osp-glow-orb orb-red"></div>
+          <div className="osp-glow-orb orb-purple"></div>
+          <div className="osp-glow-orb orb-blue"></div>
 
-                <motion.div
-                  className="osp-hero-actions"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: false }}
-                  transition={{ duration: 0.8, delay: 0.4 }}
-                >
-                  <button
-                    className="osp-btn-discover"
-                    onClick={() => document.getElementById('vision-journey')?.scrollIntoView({ behavior: 'smooth' })}
-                  >
-                    Discover
-                  </button>
-                  <button className="osp-btn-create" onClick={handleWhatsAppClick}>Contact</button>
-                  <div className="osp-watch-video">
-                    <FontAwesomeIcon icon={faCompass} />
-                    <span>Start a Journey</span>
-                  </div>
-                </motion.div>
+          {/* Interactive Arrow Grids with parallax */}
+          <div className="osp-arrow-grid-container left" style={{ transform: `translate(${mousePos.x}px, ${mousePos.y}px)` }}>
+            <ArrowGrid rows={14} cols={5} />
+          </div>
+          <div className="osp-arrow-grid-container right" style={{ transform: `translate(${mousePos.x * -1}px, ${mousePos.y * -1}px)` }}>
+            <ArrowGrid rows={14} cols={5} />
+          </div>
 
-                {/* Stats Row */}
-                <motion.div
-                  className="osp-hero-stats-row"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: false }}
-                  transition={{ duration: 0.8, delay: 0.6 }}
-                >
-                  <div className="osp-stat-card">
-                    <h3>200+</h3>
-                    <p>Projects</p>
-                  </div>
-                  <div className="osp-stat-card">
-                    <h3>15+</h3>
-                    <p>Industries</p>
-                  </div>
-                  <div className="osp-stat-card">
-                    <h3>2+</h3>
-                    <p>Years</p>
-                  </div>
-                </motion.div>
+          {/* Floating Widget Containers */}
+          <div className="osp-floating-widgets-container">
+            {/* Left Side Widgets Group */}
+            <div className="osp-left-widgets-group">
+              {/* Left Side vertical scale pill */}
+              <div className="osp-vertical-scale-pill osp-left-scale-pill">
+                <div className="osp-scale-item active-emoji item-brain">
+                  <FontAwesomeIcon icon={faBrain} />
+                </div>
+                <div className="osp-scale-item item-palette">
+                  <FontAwesomeIcon icon={faPalette} />
+                </div>
+                <div className="osp-scale-item item-code">
+                  <FontAwesomeIcon icon={faCode} />
+                </div>
+                <div className="osp-scale-item item-chart">
+                  <FontAwesomeIcon icon={faChartBar} />
+                </div>
+                <div className="osp-scale-item item-globe">
+                  <FontAwesomeIcon icon={faGlobe} />
+                </div>
               </div>
 
-              {/* Right Image Content */}
-              <motion.div
-                className="osp-hero-visual-right"
-                initial={{ opacity: 0, y: 60 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false }}
-                transition={{ duration: 1, delay: 0.3 }}
-              >
-                <div className="osp-nft-card">
-                  <div className="osp-nft-image-wrap">
-                    <img src={engloray_story_visual} alt="Our Story Chronicles Visual" />
+              <div className="osp-left-cards-column">
+                {/* Tech Group Card */}
+                <div className="osp-widget-float float-left-1">
+                  <div className="osp-widget-badge">DIVISION</div>
+                  <h4 className="osp-widget-title">Tech Group</h4>
+                  <p className="osp-widget-desc">Enterprise software & custom web architecture.</p>
+                  <div className="osp-widget-meta">
+                    <span className="osp-meta-status active"></span>
+                    <span>Active Systems</span>
                   </div>
-                  <div className="osp-nft-card-footer">
-                    <div className="osp-nft-info">
-                      <p>Founded in:</p>
-                      <h4>JAN 2023</h4>
-                      <button className="osp-place-bid" onClick={handleWhatsAppClick}>Connect Now</button>
+                </div>
+
+                {/* Middle Experience Card */}
+                <div className="osp-widget-float float-left-mid">
+                  <div className="osp-widget-badge">EXPERIENCE</div>
+                  <h4 className="osp-widget-title">3+ Years</h4>
+                  <p className="osp-widget-desc">Pioneering creative & digital excellence.</p>
+                  <div className="osp-widget-meta">
+                    <span className="osp-meta-status active"></span>
+                    <span>Est. Jan 2023</span>
+                  </div>
+                </div>
+
+                {/* Track Record Card */}
+                <div className="osp-widget-float float-left-2">
+                  <div className="osp-widget-badge">TRACK RECORD</div>
+                  <h4 className="osp-widget-title">1,000+ Projects</h4>
+                  <p className="osp-widget-desc">Delivered across 15+ global industries.</p>
+                  {/* Mini Sparkline Chart */}
+                  <div className="osp-sparkline">
+                    <div className="osp-spark-bar" style={{ height: '40%' }}></div>
+                    <div className="osp-spark-bar" style={{ height: '60%' }}></div>
+                    <div className="osp-spark-bar" style={{ height: '50%' }}></div>
+                    <div className="osp-spark-bar" style={{ height: '80%' }}></div>
+                    <div className="osp-spark-bar" style={{ height: '95%' }}></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* New: Activity Capsule Pill on Left (similar to Heart Activity) */}
+            <div className="osp-widget-pill float-left-pill">
+              <div className="osp-pill-icon"><FontAwesomeIcon icon={faHeart} /></div>
+              <div className="osp-pill-text-wrap">
+                <span className="osp-pill-title">Brand Quality</span>
+                <span className="osp-pill-sub">A Grade Agency</span>
+              </div>
+            </div>
+
+            {/* Right Side Widgets Group */}
+            <div className="osp-right-widgets-group">
+              {/* Top Row: Learning Gen (left), Stacked Boxes (middle), Emoji Scale (right) */}
+              <div className="osp-right-top-row">
+                <div className="osp-widget-float float-right-1">
+                  <div className="osp-widget-badge">ACADEMY</div>
+                  <h4 className="osp-widget-title">Learning Gen</h4>
+                  <p className="osp-widget-desc">UI/UX & graphic design courses.</p>
+                  <div className="osp-widget-progress-container">
+                    <div className="osp-widget-progress-label">
+                      <span>Graduation Rate</span>
+                      <span>98%</span>
                     </div>
-                    <div className="osp-nft-bid">
-                      <p>Client Retention</p>
-                      <h4>95% Score</h4>
-                      <button className="osp-purchase" onClick={handlePortfolioClick}>Our Works</button>
+                    <div className="osp-widget-progress-bar">
+                      <div className="osp-widget-progress-fill" style={{ width: '98%' }}></div>
                     </div>
                   </div>
                 </div>
-              </motion.div>
+
+                <div className="osp-right-stacked-boxes">
+                  <div className="osp-mini-square-box box-arrow">
+                    <div className="osp-circle-icon-wrap">
+                      <span className="osp-arrow-symbol">↗</span>
+                    </div>
+                  </div>
+                  <div className="osp-mini-square-box box-gauge">
+                    <div className="osp-gauge-circle">
+                      <div className="osp-gauge-fill" style={{ height: '75%' }}></div>
+                      <span className="osp-gauge-label">99%</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="osp-vertical-scale-pill">
+                  <div className="osp-scale-item active-emoji item-brain">
+                    <FontAwesomeIcon icon={faBrain} />
+                  </div>
+                  <div className="osp-scale-item item-palette">
+                    <FontAwesomeIcon icon={faPalette} />
+                  </div>
+                  <div className="osp-scale-item item-code">
+                    <FontAwesomeIcon icon={faCode} />
+                  </div>
+                  <div className="osp-scale-item item-chart">
+                    <FontAwesomeIcon icon={faChartBar} />
+                  </div>
+                  <div className="osp-scale-item item-globe">
+                    <FontAwesomeIcon icon={faGlobe} />
+                  </div>
+                </div>
+              </div>
+
+              {/* Bottom Row: Satisfaction (wide card) */}
+              <div className="osp-widget-float float-right-2 wide-card">
+                <div className="osp-widget-badge">SATISFACTION</div>
+                <h4 className="osp-widget-title">95% Retention</h4>
+                <p className="osp-widget-desc">Continuous evolution & trusted partnerships.</p>
+                <div className="osp-widget-circle-meta">
+                  <div className="osp-circle-pulse"></div>
+                  <span>Top Rated Agency</span>
+                </div>
+              </div>
+
+              {/* Bottom Row: Global Impact (wide card) */}
+              <div className="osp-widget-float float-right-wide wide-card">
+                <div className="osp-widget-badge">GLOBAL IMPACT</div>
+                <h4 className="osp-widget-title">15+ Industries</h4>
+                <p className="osp-widget-desc">Empowering enterprises worldwide with custom systems.</p>
+                <div className="osp-widget-circle-meta">
+                  <div className="osp-circle-pulse"></div>
+                  <span>Active Globally</span>
+                </div>
+              </div>
             </div>
+
+            {/* Bottom Widgets */}
+            <div className="osp-widget-float float-bottom-1">
+              <div className="osp-bottom-widget-row">
+                <div className="osp-bottom-widget-col">
+                  <span className="osp-bottom-label">FOUNDED</span>
+                  <strong className="osp-bottom-val">2023</strong>
+                </div>
+                <div className="osp-bottom-divider"></div>
+                <div className="osp-bottom-widget-col2">
+                  <span className="osp-bottom-label">CURRENT ROADMAP</span>
+                  <strong className="osp-bottom-val">PHASE 05/06</strong>
+                  <span className="osp-bottom-sub">SaaS & AI expansions</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="osp-modern-hero-container">
+            {/* Center Content */}
+            <motion.div
+              className="osp-hero-centered-content"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.0 }}
+            >
+              {/* Header Badge capsule */}
+              <div className="osp-hero-badge">
+                <span className="osp-badge-square">■</span>
+                <span>Building Intelligent Solutions for The Digital Future</span>
+              </div>
+
+              {/* Title with Outfit and Playfair Display mix */}
+              <h1 className="osp-hero-centered-title">
+                ENGLORAY LEGACY<span className="osp-italic-serif">A story of passion, precision, and digital excellence</span>
+              </h1>
+
+              {/* CTA Buttons */}
+              <div className="osp-hero-centered-actions">
+                <button className="osp-hero-btn-primary" onClick={handleWhatsAppClick}>
+                  START PROJECT
+                </button>
+                <button className="osp-hero-btn-secondary" onClick={handlePortfolioClick}>
+                  EXPLORE WORKS
+                </button>
+              </div>
+            </motion.div>
           </div>
 
           {/* Bottom Product Marquee */}
@@ -617,22 +926,21 @@ const OurStoryPage = () => {
           </section>
 
           {/* HIGH-FIDELITY VISION MISSION SCANNER (3-Column Center Hub) */}
-          <section className="osp-vm-scanner-section" id="vision-mission-unified">
+          <section 
+            className="osp-vm-scanner-section" 
+            id="vision-mission-unified"
+            ref={hubRef}
+            onMouseMove={handleMouseMoveHub}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
             <div className="osp-container osp-vm-scanner-container">
               <div className="osp-vm-scanner-grid">
 
-                {/* Left Column: Vision - Synced binary visibility (Shown when Radar is Right) */}
-                <motion.div
-                  className="osp-vm-column osp-vm-left"
-                  animate={{
-                    opacity: [1, 1, 0, 0, 1],
-                  }}
-                  transition={{
-                    duration: 8,
-                    repeat: Infinity,
-                    times: [0, 0.499, 0.5, 0.999, 1],
-                    ease: "linear"
-                  }}
+                {/* Left Column: Vision - Synced scanning visibility */}
+                <div
+                  className={`osp-vm-column osp-vm-left ${!isHovered ? 'auto-scan-vision' : ''}`}
+                  style={isHovered ? { opacity: getCardOpacity(mouseAngle, 270), transition: 'opacity 0.15s ease-out' } : {}}
                 >
                   <div className="osp-vm-content-box">
                     <span className="osp-vm-label" style={{ color: '#30b0e4' }}>2020 — ESTABLISHED</span>
@@ -641,15 +949,17 @@ const OurStoryPage = () => {
                       {visionMissionContent.vision.text}
                     </p>
                   </div>
-                </motion.div>
+                </div>
 
                 {/* Center Column: Controlled Rotating Hub */}
                 <div className="osp-vm-hub-column">
-                  <div className="osp-eclipse-container">
-                    <motion.div
-                      className="osp-eclipse-graphic blue-theme"
-                      animate={{ rotate: [0, 360] }}
-                      transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                  <div 
+                    className="osp-eclipse-container"
+                    style={{ cursor: 'pointer' }}
+                  >
+                    <div
+                      className={`osp-eclipse-graphic blue-theme ${!isHovered ? 'auto-rotate' : ''}`}
+                      style={isHovered ? { transform: `rotate(${mouseAngle - 40}deg)`, transition: 'transform 0.15s ease-out' } : {}}
                     >
                       {/* The Integrated Shadow (Joined to the circle) */}
                       <div className="osp-eclipse-beam blue"></div>
@@ -663,22 +973,14 @@ const OurStoryPage = () => {
                         animate={{ scale: [1, 2.5], opacity: [0.8, 0] }}
                         transition={{ duration: 3, repeat: Infinity, ease: "easeOut" }}
                       ></motion.div>
-                    </motion.div>
+                    </div>
                   </div>
                 </div>
 
-                {/* Right Column: Mission - Synced binary visibility (Shown when Radar is Left) */}
-                <motion.div
-                  className="osp-vm-column osp-vm-right"
-                  animate={{
-                    opacity: [0, 0, 1, 1, 0],
-                  }}
-                  transition={{
-                    duration: 8,
-                    repeat: Infinity,
-                    times: [0, 0.499, 0.5, 0.999, 1],
-                    ease: "linear"
-                  }}
+                {/* Right Column: Mission - Synced scanning visibility */}
+                <div
+                  className={`osp-vm-column osp-vm-right ${!isHovered ? 'auto-scan-mission' : ''}`}
+                  style={isHovered ? { opacity: getCardOpacity(mouseAngle, 90), transition: 'opacity 0.15s ease-out' } : {}}
                 >
                   <div className="osp-vm-content-box" style={{ color: '#fff' }}>
                     <span className="osp-vm-label" style={{ color: '#30b0e4' }}>2026 — FUTURE</span>
@@ -687,7 +989,7 @@ const OurStoryPage = () => {
                       {visionMissionContent.mission.text}
                     </p>
                   </div>
-                </motion.div>
+                </div>
 
               </div>
             </div>
@@ -749,99 +1051,7 @@ const OurStoryPage = () => {
               </div>
             </div>
           </section>        {/* How We Grow Section */}
-          <section className="osp-how-we-grow-section">
-            <div className="osp-container">
-              <motion.div
-                className="osp-how-header centered"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-              >
-                <h2 className="osp-how-main-title">HOW WE GROW</h2>
-                <div className="osp-how-underline"></div>
-              </motion.div>
-
-              <div className="osp-how-visual-container">
-                {/* Central Hub */}
-                <div className="osp-how-hub-wrapper">
-                  <motion.div
-                    className="osp-how-hub"
-                    animate={{
-                      boxShadow: ["0 0 20px rgba(255, 60, 60, 0.4)", "0 0 40px rgba(255, 60, 60, 0.7)", "0 0 20px rgba(255, 60, 60, 0.4)"]
-                    }}
-                    transition={{ duration: 4, repeat: Infinity }}
-                  >
-                    <div className="osp-how-hub-inner">
-                      <FontAwesomeIcon icon={faBrain} />
-                    </div>
-                  </motion.div>
-
-                  {/* Connecting Lines SVG */}
-                  <svg className="osp-how-lines-svg" viewBox="0 0 800 500">
-                    {/* Top Left */}
-                    <motion.path
-                      d="M400,250 C300,250 200,200 150,100"
-                      className="osp-how-path"
-                      initial={{ pathLength: 0 }}
-                      whileInView={{ pathLength: 1 }}
-                      transition={{ duration: 1.5, delay: 0.2 }}
-                    />
-                    {/* Top Right */}
-                    <motion.path
-                      d="M400,250 C500,250 600,200 650,100"
-                      className="osp-how-path"
-                      initial={{ pathLength: 0 }}
-                      whileInView={{ pathLength: 1 }}
-                      transition={{ duration: 1.5, delay: 0.4 }}
-                    />
-                    {/* Bottom Left */}
-                    <motion.path
-                      d="M400,250 C300,250 200,300 150,400"
-                      className="osp-how-path"
-                      initial={{ pathLength: 0 }}
-                      whileInView={{ pathLength: 1 }}
-                      transition={{ duration: 1.5, delay: 0.6 }}
-                    />
-                    {/* Bottom Right */}
-                    <motion.path
-                      d="M400,250 C500,250 600,300 650,400"
-                      className="osp-how-path"
-                      initial={{ pathLength: 0 }}
-                      whileInView={{ pathLength: 1 }}
-                      transition={{ duration: 1.5, delay: 0.8 }}
-                    />
-                  </svg>
-                </div>
-
-                {/* Corner Content Nodes */}
-                <div className="osp-how-nodes">
-                  <motion.div className="osp-how-node top-left" initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ delay: 0.3 }}>
-                    <div className="osp-node-icon"><FontAwesomeIcon icon={faBriefcase} /></div>
-                    <h3>Strategic Vision</h3>
-                    <p>Mapping out the high-level roadmap for exponential growth and long-term brand success.</p>
-                  </motion.div>
-
-                  <motion.div className="osp-how-node top-right" initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ delay: 0.5 }}>
-                    <div className="osp-node-icon"><FontAwesomeIcon icon={faChartBar} /></div>
-                    <h3>Data Analytics</h3>
-                    <p>Utilizing advanced market insights and performance data to drive scaling decisions.</p>
-                  </motion.div>
-
-                  <motion.div className="osp-how-node bottom-left" initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ delay: 0.7 }}>
-                    <div className="osp-node-icon"><FontAwesomeIcon icon={faPalette} /></div>
-                    <h3>Creative Design</h3>
-                    <p>Breaking boundaries with world-class user experiences and modern brand identity.</p>
-                  </motion.div>
-
-                  <motion.div className="osp-how-node bottom-right" initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ delay: 0.9 }}>
-                    <div className="osp-node-icon"><FontAwesomeIcon icon={faRocket} /></div>
-                    <h3>Tech Innovation</h3>
-                    <p>Building robust, scalable architectures that grow seamlessly with your digital needs.</p>
-                  </motion.div>
-                </div>
-              </div>
-            </div>
-          </section>
+          <HowWeGrowSection />
 
           {/* Core Values Section - Carousel Implementation */}
           <section className="osp-section osp-values-section">

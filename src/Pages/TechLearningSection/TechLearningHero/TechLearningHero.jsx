@@ -141,10 +141,34 @@ const TechLearningHero = () => {
             {/* ANIMATION: Bottom Grid Cards Reveal */}
             <div className="tlh-peoplr-bottom-grid">
                 {[
-                    { title: "Real-World Practice", desc: "Develop your abilities with hands-on projects designed to simulate actual industry scenarios.", headerIcon: faCode, icon: faLaptopCode, pill: "Live Projects" },
-                    { title: "Guided Mentorship", desc: "Gain insights from experienced industry professionals who provide personalized support.", headerIcon: faChalkboardTeacher, icon: faUsers, pill: "Expert Mentors" },
-                    { title: "Experience First", desc: "Equip yourself with the practical skills, strong portfolio, and confidence needed for success.", headerIcon: faAward, icon: faTrophy, pill: "90% Placement" },
-                    { title: "Industry-Ready Skills", desc: "Master in-demand technologies and frameworks used by top companies globally.", headerIcon: faTools, icon: faBriefcase, pill: "Job Ready" }
+                    {
+                        title: "Real-World Practice",
+                        desc: "Develop your abilities with hands-on projects designed to simulate real industry scenarios and gain practical experience for professional environments.",
+                        headerIcon: faCode,
+                        icon: faLaptopCode,
+                        pill: "Live Projects"
+                    },
+                    {
+                        title: "Guided Mentorship",
+                        desc: "Learn from experienced industry professionals who provide personalized guidance and mentorship to help you grow your technical skills confidently.",
+                        headerIcon: faChalkboardTeacher,
+                        icon: faUsers,
+                        pill: "Expert Mentors"
+                    },
+                    {
+                        title: "Experience First",
+                        desc: "Build practical knowledge, create a strong portfolio, and gain the confidence needed to succeed in interviews and real workplace environments.",
+                        headerIcon: faAward,
+                        icon: faTrophy,
+                        pill: "90% Placement"
+                    },
+                    {
+                        title: "Industry-Ready Skills",
+                        desc: "Master modern technologies and frameworks used by leading companies through industry-focused training and real-time project experience.",
+                        headerIcon: faTools,
+                        icon: faBriefcase,
+                        pill: "Job Ready"
+                    }
                 ].map((item, index) => (
                     <motion.div
                         key={index}

@@ -81,7 +81,7 @@
     min-height: 300px;
     width: auto;
     height: auto;
-    transform: translate(-50%, -50%) scale(0.8);
+    transform: translate(-50%, -50%) scale(0.88);
     object-fit: cover;
     opacity: 1;
     pointer-events: none;
@@ -89,7 +89,7 @@
 }
 
 .hero-video-container:hover .hero-video {
-    transform: translate(-50%, -50%) scale(0.8);
+    transform: translate(-50%, -50%) scale(0.88);
 }
 
 .hero-video-overlay {
@@ -604,8 +604,9 @@
 }
 
 .wcp-container .job-card {
-    width: 480px;
-    height: 240px;
+    width: calc((100% - 60px) / 3);
+    height: 215px;
+    padding: 16px 18px;
     position: relative;
     flex-shrink: 0; /* Prevents cards from shrinking */
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -615,47 +616,46 @@
     transform: translateY(-5px);
 }
 
-.job-top {
+.wcp-container .job-top {
     display: flex;
     justify-content: space-between;
     text-align: left;
 }
 
-.job-top h4 {
+.wcp-container .job-top h4 {
     font-family: "inter", sans-serif;
     font-weight: 600;
+    font-size: 18px;
     text-align: left;
 }
 
-.close {
+.wcp-container .close {
     opacity: 0.5;
     cursor: pointer;
 }
 
-.job-meta {
+.wcp-container .job-meta {
     font-family: "inter", sans-serif;
     display: flex;
-    gap: 10px;
-    font-size: 12px;
+    gap: 8px;
+    font-size: 11px;
     margin: 3px 0;
     opacity: 0.7;
     text-align: left;
     justify-content: flex-start;
 }
 
-.location {
+.wcp-container .location {
     font-family: "inter", sans-serif;
-    font-size: 12px;
+    font-size: 11px;
     opacity: 0.6;
     text-align: left;
 }
 
-
-
-.match {
+.wcp-container .match {
     position: absolute;
-    bottom: 20px;
-    right: 25px;
+    bottom: 16px;
+    right: 18px;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -664,11 +664,11 @@
     z-index: 5;
 }
 
-.circle {
-    width: 60px;
-    height: 60px;
+.wcp-container .circle {
+    width: 52px;
+    height: 52px;
     border-radius: 50%;
-    border: 4px solid #b7ff3c;
+    border: 3px solid #b7ff3c;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -676,16 +676,16 @@
     margin: 0 0 4px 0;
 }
 
-.circle span {
+.wcp-container .circle span {
     font-family: "inter", sans-serif;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 12px;
     color: #ffffff;
 }
 
-.match p {
+.wcp-container .match p {
     font-family: "inter", sans-serif;
-    font-size: 11px;
+    font-size: 10px;
     color: #b7ff3c;
     opacity: 0.9;
     font-weight: 600;
@@ -702,24 +702,24 @@
 }
 
 /* bottom left badges */
-.job-badges {
+.wcp-container .job-badges {
     position: absolute;
-    bottom: 30px;
-    left: 20px;
+    bottom: 18px;
+    left: 18px;
     display: flex;
-    gap: 6px;
+    gap: 5px;
     flex-wrap: wrap;
-    max-width: 70%;
+    max-width: 65%;
     text-align: left;
     justify-content: flex-start;
 }
 
-.job-badges span {
+.wcp-container .job-badges span {
     font-family: "inter", sans-serif;
     background: rgba(255, 255, 255, 0.08);
-    padding: 4px 10px;
-    border-radius: 13px;
-    font-size: 13px;
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 11px;
     white-space: nowrap;
 }
 
@@ -738,8 +738,9 @@
         justify-content: center;
     }
 
-    .job-card {
+    .wcp-container .job-card {
         width: 380px;
+        height: 200px;
     }
 
     .case-studies-badge {
@@ -747,7 +748,7 @@
     }
 
     .hero-video {
-        transform: translate(-50%, -50%) scale(0.8);
+        transform: translate(-50%, -50%) scale(0.88);
     }
 
     .centered-number {
@@ -791,9 +792,10 @@
         align-items: center;
     }
 
-    .job-card {
+    .wcp-container .job-card {
         width: 100%;
         max-width: 400px;
+        height: 200px;
     }
 
     .circle {
@@ -846,7 +848,7 @@
     }
 
     .hero-video {
-        transform: translate(-50%, -50%) scale(0.75);
+        transform: translate(-50%, -50%) scale(0.82);
     }
 }
 
@@ -859,7 +861,7 @@
         font-size: 32px;
     }
 
-    .job-card {
+    .wcp-container .job-card {
         max-width: 100%;
     }
 
@@ -878,11 +880,11 @@
         right: 5px;
     }
 
-    .job-badges {
+    .wcp-container .job-badges {
         max-width: 70%;
     }
 
-    .job-badges span {
+    .wcp-container .job-badges span {
         font-size: 11px;
         padding: 3px 8px;
     }
@@ -907,7 +909,7 @@
     }
 
     .hero-video {
-        transform: translate(-50%, -50%) scale(0.7);
+        transform: translate(-50%, -50%) scale(0.77);
     }
 }
 
@@ -915,7 +917,7 @@
 .wcp-recognition-section {
     display: flex;
     justify-content: space-between;
-    padding: 10px 80px 20px 80px; /* Reduced top padding to pull section closer */
+    padding: 60px 80px 20px 80px; /* Increased top padding to add gap above title */
     background: radial-gradient(circle at right, #1e293b, #020617);
     color: #fff;
     font-family: "Inter", sans-serif;
@@ -1040,15 +1042,18 @@
     width: 40%;
     text-align: center;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .wcp-trophy {
     font-size: 200px;
-    margin-right: -100px;
-    margin-bottom: -10px;
+    margin: 0 auto -10px auto;
     filter: drop-shadow(0 0 30px rgba(255, 200, 0, 0.6));
     position: relative;
     z-index: 1;
+    transform: translateX(80px); /* Perfect center shift to the right */
 }
 
 /* Circular gradient behind trophy */
@@ -1059,8 +1064,8 @@
     height: 260px;
     opacity: 0.5;
     top: 10px;
-    left: 55%;
-    transform: translateX(-50%);
+    left: 50%;
+    transform: translateX(calc(-50% + 80px)); /* Shift glow to match the trophy */
     background: radial-gradient(circle,
             rgba(255, 200, 0, 0.6) 0%,
             rgba(255, 200, 0, 0.25) 40%,
@@ -1071,18 +1076,20 @@
     z-index: 0;
 }
 
-/* RIGHT CARDS */
+/* RIGHT CARDS - Centered horizontally, shifted right to match trophy, gap adjusted */
 .wcp-right-cards {
     display: flex;
     justify-content: center;
     gap: 20px;
-    margin-bottom: 20px;
+    margin: 0 auto 20px auto;
     position: relative;
-    height: 200px;
+    height: 150px; /* Increased height to add more gap */
+    width: 440px;
+    transform: translateX(80px); /* Shift cards container to match trophy perfectly */
 }
 
 .wcp-right-cards .wcp-card {
-    position: absolute;
+    position: relative; /* Changed to relative so flexbox handles horizontal alignment */
     background: rgba(30, 41, 59, 0.6);
     backdrop-filter: blur(12px);
     border-radius: 14px;
@@ -1121,28 +1128,30 @@
 .wcp-right-cards .wcp-card:nth-child(1) {
     width: 120px;
     height: 100px;
-    top: 70px;
-    left: 0px;
+    top: -10px; /* Adjusted gap */
 }
 
 .wcp-right-cards .wcp-card:nth-child(2) {
     width: 120px;
     height: 100px;
-    top: 100px;
-    left: 160px;
+    top: 20px; /* Adjusted gap */
 }
 
 .wcp-right-cards .wcp-card:nth-child(3) {
     width: 120px;
     height: 100px;
-    top: 70px;
-    left: 320px;
+    top: -10px; /* Adjusted gap */
 }
 
 /* FLOATING TEXT */
 .wcp-floating-text {
     position: absolute;
     text-align: center;
+    transform: translateX(-50%);
+    width: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     color: #fff;
 }
 
@@ -1157,29 +1166,31 @@
     margin: 0;
 }
 
+/* Position control - Updated with 5th floating text */
 .wcp-ft-1 {
-    top: 170px;
-    left: 20px;
+    top: 168px;
+    left: 2.4%;
 }
 
 .wcp-ft-2 {
-    top: 80px;
-    left: 180px;
+    top: 58px;
+    left: 29%;
 }
 
 .wcp-ft-3 {
-    top: 150px;
-    left: 420px;
+    top: 145px;
+    left: 55.4%;
 }
 
 .wcp-ft-4 {
-    top: 40px;
-    left: 650px;
+    top: 35px;
+    left: 85.8%;
 }
 
+/* NEW 5TH FLOATING TEXT POSITION */
 .wcp-ft-5 {
-    top: -70px;
-    left: 950px;
+    top: -25px;
+    left: 113%;
 }
 
 /* ==================== PROJECTS SECTION ==================== */
@@ -1905,19 +1916,26 @@
     .wcp-right-cards .wcp-card:nth-child(2),
     .wcp-right-cards .wcp-card:nth-child(3) {
         position: relative;
-        top: 0;
+        top: 0 !important;
         left: 0;
     }
 
     .wcp-right-cards {
+        width: auto;
+        max-width: 100%;
         flex-wrap: wrap;
         justify-content: center;
         gap: 20px;
         margin-top: 40px;
+        margin-left: 0 !important;
+        height: auto !important;
+        transform: none !important;
     }
 
     .wcp-trophy {
         font-size: 120px;
+        margin-left: 0 !important;
+        transform: none !important;
     }
 
     .wcp-project-slide {

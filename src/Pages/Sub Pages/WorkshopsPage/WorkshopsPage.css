@@ -2339,8 +2339,9 @@ html {
 
 .wsp-review-rating-new {
     display: flex;
+    justify-content: center;
     gap: 5px;
-    margin: 10px 0;
+    margin: 10px 0 0;
     color: #FFD166;
     font-size: 0.9rem;
 }
@@ -2350,7 +2351,7 @@ html {
     color: #d0d0d0;
     font-style: italic;
     line-height: 1.5;
-    margin: 15px 0 0;
+    margin: 8px 0 0;
     flex-grow: 1;
 }
 
@@ -4399,8 +4400,8 @@ html {
 }
 
 .wsp-workshops-section .wsp-tab:hover {
-    background: rgba(0, 0, 0, 0.05) !important;
-    color: #1c1d29 !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
 }
 
 .wsp-workshops-section .wsp-tab.wsp-active {
@@ -4781,15 +4782,32 @@ textarea {
 }
 
 .wsp-neon-checkbox-group label {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 12px !important;
     cursor: pointer;
+    width: auto !important;
+}
+
+.wsp-neon-checkbox-group input[type="checkbox"] {
+    width: 18px !important;
+    height: 18px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background-color: transparent !important;
+    border: 1px solid #1c1d24 !important;
+    border-radius: 4px !important;
+    cursor: pointer;
+    box-shadow: none !important;
+    flex-shrink: 0;
 }
 
 .wsp-neon-checkbox-text {
     font-size: 0.8rem;
     color: #888;
+    text-align: left;
 }
 
 .wsp-neon-submit-btn {
@@ -4895,39 +4913,39 @@ textarea {
     color: #0e632b;
 }
 
-.wsp-neon-benefits {
+.wsp-neon-benefits-list {
     position: relative;
     z-index: 1;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
     width: 100%;
+    margin-top: 10px;
 }
 
-
-.wsp-neon-benefit-item {
+.wsp-neon-benefit-row {
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 44px;
-    height: 44px;
-    background-color: #101116;
-    color: #20e360;
-    border-radius: 10px;
-    border: 1px solid rgba(32, 227, 96, 0.4);
-    font-size: 1.25rem;
+    gap: 12px;
     transition: all 0.3s ease;
-    cursor: help;
 }
 
-.wsp-neon-benefit-item svg {
-    filter: drop-shadow(0 0 6px #20e360);
+.wsp-neon-benefit-row:hover {
+    transform: translateX(4px);
 }
 
-.wsp-neon-benefit-item:hover {
-    transform: translateY(-4px) scale(1.1);
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3), inset 0 0 8px rgba(32, 227, 96, 0.2);
-    border-color: rgba(32, 227, 96, 0.8);
+.wsp-neon-benefit-icon {
+    font-size: 1.2rem;
+    color: #101116;
+    flex-shrink: 0;
+}
+
+.wsp-neon-benefit-text-label {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #101116;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: -0.2px;
 }
 
 /* Custom Program Grid matching the image */

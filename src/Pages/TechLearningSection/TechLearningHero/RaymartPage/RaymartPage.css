@@ -2235,7 +2235,7 @@
 ═══════════════════════════════════════════════════════════════ */
 .rm-help-section {
   background: #000;
-  padding: 100px 48px;
+  padding: 50px 48px;
   color: #fff;
 }
 
@@ -2397,7 +2397,7 @@
 .rm-cta-section {
   background: linear-gradient(90deg, #6ee7b7 0%, #34d399 50%, #10b981 100%);
   /* Vibrant Mint/Emerald Gradient */
-  padding: 80px 48px;
+  padding: 40px 48px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -3432,5 +3432,56 @@
     padding-left: 0;
     padding-top: 15px;
     text-align: center;
+  }
+}
+
+/* ── LAPTOP RESOLUTION OVERRIDES (1024px - 1440px) ── */
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .rm-global-impact-container {
+    max-width: 100%;
+    padding: 0 40px;
+    gap: 40px !important;
+  }
+
+  .rm-global-left {
+    flex: 0 0 35% !important;
+  }
+
+  .rm-global-img {
+    max-width: 420px !important;
+    height: auto !important;
+  }
+
+  .rm-global-right {
+    flex: 1 !important;
+    max-width: 580px !important;
+    padding-right: 0 !important;
+  }
+
+  .rm-global-title {
+    font-size: 1.7rem !important;
+    margin-bottom: 30px !important;
+    line-height: 1.4 !important;
+  }
+
+  .rm-global-title br {
+    display: none !important;
+  }
+
+  .rm-global-stats-grid {
+    gap: 20px !important;
+  }
+
+  .rm-global-stat-item {
+    padding-left: 14px !important;
+  }
+
+  .rm-global-stat-value {
+    font-size: 1.3rem !important;
+    margin-bottom: 4px !important;
+  }
+
+  .rm-global-stat-label {
+    font-size: 0.78rem !important;
   }
 }

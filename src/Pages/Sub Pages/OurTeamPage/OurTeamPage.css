@@ -38,7 +38,7 @@
 .otp-new-header {
     position: relative;
     min-height: 100vh;
-    background: linear-gradient(135deg, #050505 40%, #0d1b2a 100%);
+    background: linear-gradient(135deg, #050505 40%, #200505 100%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,7 +56,7 @@
     left: 20%;
     width: 300px;
     height: 300px;
-    background: radial-gradient(circle, rgba(0, 80, 255, 0.3) 0%, transparent 60%);
+    background: radial-gradient(circle, rgba(255, 0, 0, 0.35) 0%, transparent 60%);
     filter: blur(50px);
     animation: otp-float-glow 8s ease-in-out infinite alternate;
     z-index: -1;
@@ -127,7 +127,7 @@
 }
 
 .otp-badge-tag {
-    background: linear-gradient(90deg, #ff3b3b, #3b82f6);
+    background: linear-gradient(90deg, #ff3b3b, #990000);
     padding: 3px 12px;
     border-radius: 100px;
     font-weight: 700;
@@ -153,8 +153,9 @@
 }
 
 .otp-gradient-text {
-    font-family: 'Aclonica', sans-serif !important;
-    background: linear-gradient(90deg, #9ae5f5 0%, #031e4a 100%);
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 800;
+    background: linear-gradient(90deg, #ff8a8a 0%, #7a0303 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -697,7 +698,7 @@
     align-items: center;
     justify-content: center;
     gap: 12px;
-    background: linear-gradient(90deg, #ff3b3b, #3b82f6);
+    background: linear-gradient(90deg, #ff3b3b, #990000);
     color: #ffffff;
     border: none;
     padding: 16px 40px;
@@ -707,12 +708,12 @@
     font-size: 1.1rem;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+    box-shadow: 0 10px 30px rgba(255, 59, 59, 0.4);
 }
 
 .otp-btn-access-new:hover {
     transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 15px 40px rgba(255, 59, 59, 0.5), 0 0 20px rgba(59, 130, 246, 0.6);
+    box-shadow: 0 15px 40px rgba(255, 59, 59, 0.5), 0 0 20px rgba(255, 59, 59, 0.6);
 }
 
 /* Brand Footer */
@@ -747,7 +748,7 @@
 .otp-slogan-separator {
     width: 70px;
     height: 4px;
-    background: linear-gradient(90deg, #ff3b3b, #3b82f6);
+    background: linear-gradient(90deg, #ff3b3b, #990000);
     border-radius: 100px;
     margin-bottom: 30px;
     box-shadow: 0 0 10px rgba(255, 59, 59, 0.5);
@@ -3769,7 +3770,7 @@
 .otp-ct-card-new {
     position: relative;
     width: 280px;
-    height: 430px;
+    height: 350px;
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -3778,7 +3779,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 50px;
+    gap: 20px;
     padding: 20px;
     flex-wrap: wrap;
     align-items: center;
@@ -3828,31 +3829,10 @@
     transform: scale(1.2) translateY(-20px);
 }
 
-.otp-ct-vertical-name {
-    position: absolute;
-    left: 20px;
-    bottom: 40px;
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-    font-family: 'Poppins', sans-serif;
-    font-size: 4rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.05);
-    line-height: 1;
-    pointer-events: none;
-    transition: all 0.5s ease;
-}
-
-.otp-ct-card-new:hover .otp-ct-vertical-name {
-    color: rgba(255, 255, 255, 0.12);
-    transform: scale(1.05);
-}
-
 .otp-ct-member-info {
     margin-top: auto;
     width: 100%;
-    padding: 30px;
+    padding: 10px 20px 20px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -4652,7 +4632,7 @@
     /* Adjust Creative Team Card Sizes */
     .otp-ct-card-new {
         width: 320px !important;
-        height: 480px !important;
+        height: 390px !important;
     }
 
     .otp-ct-avatar-container {

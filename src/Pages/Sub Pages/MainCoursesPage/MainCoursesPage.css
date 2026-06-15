@@ -725,12 +725,13 @@ body {
 
 /* Courses Section */
 .acp-courses-section {
-    padding: 120px 0;
+    padding: 60px 0 120px 0;
 }
 
 /* Left-align: Master In-Demand Skills header */
 .acp-courses-section .acp-section-header {
     text-align: left;
+    margin-bottom: 25px;
 }
 
 .acp-courses-section .acp-section-subtitle {
@@ -797,7 +798,7 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
     gap: 30px;
-    margin-top: 60px;
+    margin-top: 20px;
     justify-content: center;
 }
 
@@ -2581,77 +2582,31 @@ body {
 
 .acp-hero-v2-section {
     position: relative;
-    background: #000000 !important;
+    background: linear-gradient(180deg, #eaf4ed 0%, #e2eedd 100%) !important;
     overflow: hidden;
-    padding: 60px 0 0 !important;
-    min-height: 90vh;
+    padding: 120px 0 0 !important;
+    min-height: 95vh;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 .acp-hero-v2-section::before {
     display: none !important;
 }
 
-/* ── Sparkle decorations ── */
-.acp-v2-spark {
-    position: absolute;
-    color: #22c55e;
-    opacity: 0.65;
-    pointer-events: none;
-    z-index: 1;
-    animation: acp-v2-twinkle 2.4s ease-in-out infinite alternate;
-}
-
-.acp-v2-s1 {
-    top: 22%;
-    left: 46%;
-    font-size: 20px;
-}
-
-.acp-v2-s2 {
-    top: 65%;
-    left: 55%;
-    font-size: 14px;
-    animation-delay: 0.6s;
-}
-
-.acp-v2-s3 {
-    top: 35%;
-    left: 52%;
-    font-size: 26px;
-    opacity: 0.3;
-    animation-delay: 1.1s;
-}
-
-.acp-v2-s4 {
-    top: 78%;
-    left: 43%;
-    font-size: 16px;
-    animation-delay: 1.8s;
-}
-
-@keyframes acp-v2-twinkle {
-    0% {
-        opacity: 0.25;
-        transform: scale(0.8) rotate(0deg);
-    }
-
-    100% {
-        opacity: 0.85;
-        transform: scale(1.3) rotate(25deg);
-    }
-}
-
-/* ── Main two-column grid ── */
+/* ── Main two-column grid (Enlarged and optimized columns) ── */
 .acp-hero-v2-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.42fr 0.58fr;
     align-items: center;
-    padding: 20px 0 100px;
-    gap: 60px;
+    padding: 40px 0;
+    gap: 40px;
     position: relative;
     z-index: 2;
+    max-width: 1300px;
+    margin: 0 auto;
+    width: 100%;
 }
 
 /* ── LEFT side ── */
@@ -2660,585 +2615,702 @@ body {
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
-    gap: 30px;
-    position: relative;
-    top: -60px;
-    left: -40px;
+    gap: 50px;
 }
 
 .acp-hero-v2-title {
-    color: #ffffff;
-    font-size: 3.8rem;
+    color: #0f172a;
+    font-size: 6.2rem;
     font-family: 'Inter', sans-serif;
-    font-weight: 800;
-    line-height: 1.08;
+    line-height: 1.25;
     letter-spacing: -2px;
 }
 
-.acp-v2-plain {
-    color: #ffffff;
-}
-
-.acp-v2-extraordinary {
-    color: #ffffff;
-    position: relative;
-    display: inline;
-}
-
-/* Green underline highlight under "Extraordinary" */
-.acp-v2-extraordinary::after {
-    content: '';
-    position: absolute;
-    bottom: 2px;
-    left: 0;
-    width: 100%;
-    height: 7px;
-    background: #cbfb45;
-    border-radius: 4px;
-    opacity: 0.55;
-}
-
-.acp-v2-green {
-    color: #cbfb45;
-}
-
-.acp-hero-v2-desc {
-    font-size: 16px;
-    color: #94A3B8;
-    line-height: 1.75;
-    max-width: 460px;
-
-    font-family: 'Aldrich', sans-serif;
-}
-
-/* ── CTA Buttons ── */
-.acp-hero-v2-btns {
+.acp-v2-title-row {
     display: flex;
+    align-items: center;
     gap: 16px;
-    align-items: center;
-    margin-left: 60px;
+    flex-wrap: nowrap;
+    margin-bottom: 12px;
 }
 
-.acp-v2-btn-primary {
-    background: #cbfb45;
-    color: #111111;
-    border: none;
-    padding: 14px 30px;
-    border-radius: 12px;
-    font-size: 15px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-family: 'Inter', sans-serif;
-    letter-spacing: 0.3px;
+.acp-v2-medium {
+    font-weight: 500;
+    color: #0f172a;
+    font-size: 6.2rem;
 }
 
-.acp-v2-btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 24px rgba(203, 251, 69, 0.3);
+.acp-v2-bold {
+    font-weight: 900;
+    color: #0f172a;
+    font-size: 6.2rem;
 }
 
-.acp-v2-btn-ghost {
-    background: transparent;
-    color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 14px 30px;
-    border-radius: 12px;
-    font-size: 15px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-family: 'Inter', sans-serif;
-}
-
-.acp-v2-btn-ghost:hover {
-    border-color: #cbfb45;
-    color: #cbfb45;
-}
-
-.acp-v2-arrow-wrapper {
-    margin-top: -10px;
-    margin-left: 65%;
-    opacity: 0.8;
-}
-
-/* ── Stats row ── */
-.acp-hero-v2-stats {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    margin-top: 6px;
-}
-
-.acp-v2-sitem {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-}
-
-.acp-v2-snum {
-    font-size: 1.65rem;
-    font-weight: 800;
-    color: #ffffff;
-    font-family: 'Inter', sans-serif;
-}
-
-.acp-v2-slbl {
-    font-size: 13px;
-    color: #64748B;
-    font-family: 'Aldrich', sans-serif;
-}
-
-.acp-v2-sdivider {
-    display: none;
-}
-
-/* ── RIGHT side – absolutely positioned cards ── */
-.acp-hero-v2-right {
+/* Loop Wrap & SVG (Fitted around Learn baseline) */
+.acp-v2-loop-wrap {
     position: relative;
-    height: 560px;
+    display: inline-block;
+    padding: 0 12px;
+    font-weight: 500;
+    color: #0f172a;
+    font-size: 6.2rem;
+    z-index: 2;
 }
 
-/* Course Card base */
-.acp-v2-card {
+.acp-v2-loop-svg {
     position: absolute;
-    width: 250px;
-    background: #ffffff;
-    border-radius: 20px;
-    padding: 10px;
-    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.55);
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    top: 45%;
+    left: -5%;
+    width: 110%;
+    height: 60%;
+    pointer-events: none;
+    z-index: -1;
+    transform: rotate(-2deg);
 }
 
-.acp-v2-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 32px 80px rgba(0, 0, 0, 0.7);
+/* Title Avatar Wrapper - Rotated vertical capsule (Enlarged) */
+.acp-v2-title-avatar-wrap {
+    position: relative;
+    width: 110px;
+    height: 155px;
+    border-radius: 55px;
+    border: 3px solid #0f172a;
+    background-color: #ff5c35;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 20px;
+    transform: rotate(-8deg);
 }
 
-/* Card A – upper-left of the right panel */
-.acp-v2-card-a {
-    top: 0;
-    left: 0;
-    z-index: 5;
-}
-
-/* Card B – lower-right of the right panel */
-.acp-v2-card-b {
-    bottom: 80px;
-    right: -80px;
-    z-index: 6;
-}
-
-.acp-v2-card-img-wrapper {
-    width: 100%;
-    height: 170px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    border-radius: 14px;
-}
-
-.acp-v2-card-img {
+.acp-v2-title-avatar {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 52px;
     display: block;
 }
 
-.acp-v2-card-body {
-    padding: 14px 4px 4px 4px;
-    display: flex;
-    flex-direction: column;
+/* Curved rotating text over the avatar (Enlarged) */
+.acp-v2-curved-text-svg {
+    position: absolute;
+    top: -45px;
+    left: -35px;
+    width: 180px;
+    height: 180px;
+    pointer-events: none;
+    z-index: 3;
+    animation: acp-v2-rotate-slow 18s linear infinite;
 }
 
-.acp-v2-card-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.acp-v2-cname {
-    font-size: 15px;
-    font-weight: 800;
-    color: #111111;
-    font-family: 'Inter', sans-serif;
-}
-
-.acp-v2-clikes {
-    font-size: 11px;
-    color: #64748B;
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-}
-
-.acp-v2-user-row {
-    margin: 10px 0 15px 0;
-}
-
-.acp-v2-user {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.acp-v2-avatar {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    background: #cbd5e1;
-}
-
-.acp-v2-user span {
-    font-size: 11px;
-    color: #475569;
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-}
-
-.acp-v2-bid-row {
-    border-top: 1px solid #f1f5f9;
-    padding-top: 12px;
-}
-
-.acp-v2-cbid-lbl {
-    font-size: 11px;
-    color: #64748B;
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-}
-
-.acp-v2-cbid-val {
-    font-size: 14px;
-    font-weight: 800;
-    color: #111111;
-    font-family: 'Inter', sans-serif;
-}
-
-/* ── Client Feedback Strip (Inside Card) ── */
-.acp-v2-fb-strip {
-    margin-top: 14px;
-    padding-top: 14px;
-    border-top: 1px solid #f1f5f9;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    text-align: center;
-}
-
-.acp-v2-fb-avatar {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 1px solid #cbd5e1;
-}
-
-.acp-v2-client-avs {
-    display: flex;
-    align-items: center;
-}
-
-.acp-v2-av {
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
+.acp-v2-curved-text {
     font-size: 8px;
-    font-weight: bold;
-    border: 1px solid white;
-    margin-left: -5px;
-}
-
-.acp-v2-av:first-child {
-    margin-left: 0;
-}
-
-.acp-v2-client-quotes {
-    position: relative;
-    flex: 1;
-    height: 14px;
-}
-
-.acp-v2-qt {
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-size: 10px;
-    font-family: 'Inter', sans-serif;
-    color: #334155;
-    font-weight: 500;
-    opacity: 0;
-    animation: acp-v2-fadeScroll 9s infinite;
-    white-space: nowrap;
-}
-
-.acp-v2-qt-1 {
-    animation-delay: 0s;
-}
-
-.acp-v2-qt-2 {
-    animation-delay: 3s;
-}
-
-.acp-v2-qt-3 {
-    animation-delay: 6s;
-}
-
-@keyframes acp-v2-fadeScroll {
-    0% {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-
-    5% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    30% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    35% {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-
-    100% {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-}
-
-/* ── Rotating stamp badge ── */
-.acp-v2-stamp {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 88px;
-    height: 88px;
-    z-index: 10;
-}
-
-.acp-v2-stamp-ring {
-    width: 88px;
-    height: 88px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    animation: acp-v2-spin-slow 9s linear infinite;
-    background: rgba(10, 10, 10, 0.75);
-    backdrop-filter: blur(6px);
-}
-
-.acp-v2-stamp-core {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.acp-v2-stamp-star {
-    font-size: 18px;
-    color: #22c55e;
-    line-height: 1;
-}
-
-.acp-v2-stamp-txt {
-    font-size: 9px;
-    color: #ffffff;
+    fill: #0f172a;
     font-weight: 700;
-    letter-spacing: 1.2px;
-    margin: 3px 0 0;
-    line-height: 1.3;
-    font-family: 'Inter', sans-serif;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
 }
 
-@keyframes acp-v2-spin-slow {
+@keyframes acp-v2-rotate-slow {
     from {
         transform: rotate(0deg);
     }
-
     to {
         transform: rotate(360deg);
     }
 }
 
+/* Purple Pill button in Title (Enlarged) */
+.acp-v2-title-pill-btn {
+    background: #7a52e9;
+    color: #ffffff;
+    border: 3px solid #0f172a;
+    border-radius: 50px;
+    padding: 0 32px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    height: 72px;
+    vertical-align: middle;
+    margin-left: 24px;
+    transition: transform 0.15s ease, background-color 0.15s ease;
+    box-shadow: none;
+}
+
+.acp-v2-title-pill-btn:hover {
+    transform: scale(1.02);
+    background-color: #6a3de8;
+}
+
+.acp-v2-pill-text-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.15;
+    text-align: left;
+}
+
+.acp-v2-pill-arrow {
+    width: 20px;
+    height: 20px;
+    stroke: #ffffff;
+    stroke-width: 2.5;
+}
+
+/* ── Widgets Container ── */
+.acp-hero-v2-widgets {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+/* Double Outline Discover Button (Transparent gap) */
+.acp-v2-btn-container {
+    position: relative;
+    display: inline-block;
+}
+
+.acp-v2-btn-black {
+    background: #0f172a;
+    color: #ffffff;
+    border: 2.5px solid #0f172a;
+    border-radius: 6px;
+    padding: 20px 48px;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    position: relative;
+    z-index: 2;
+    transition: transform 0.15s ease;
+}
+
+.acp-v2-btn-shadow {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    width: 100%;
+    height: 100%;
+    border: 2.5px solid #0f172a;
+    background: transparent;
+    border-radius: 6px;
+    z-index: 1;
+    transition: transform 0.15s ease;
+}
+
+.acp-v2-btn-container:hover .acp-v2-btn-black {
+    transform: translate(-3px, -3px);
+}
+
+.acp-v2-btn-container:hover .acp-v2-btn-shadow {
+    transform: translate(3px, 3px);
+}
+
+/* Yellow Sparkles above Discover button */
+.acp-v2-btn-sparkles {
+    position: absolute;
+    top: -24px;
+    left: -15px;
+    pointer-events: none;
+    z-index: 3;
+    display: flex;
+    gap: 2px;
+}
+
+.acp-v2-sparkle {
+    color: #ffb300;
+    font-size: 20px;
+    animation: acp-v2-sparkle-float 2.5s ease-in-out infinite alternate;
+}
+
+.acp-v2-sparkle.s1 { animation-delay: 0.2s; font-size: 16px; }
+.acp-v2-sparkle.s2 { animation-delay: 0.6s; font-size: 22px; }
+.acp-v2-sparkle.s3 { animation-delay: 1.1s; font-size: 14px; }
+
+@keyframes acp-v2-sparkle-float {
+    0% {
+        transform: translateY(0) scale(0.8) rotate(0deg);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(-8px) scale(1.2) rotate(15deg);
+        opacity: 1;
+    }
+}
+
+/* Green experts Badge Container (Double outline & transparent gap) */
+.acp-v2-experts-container {
+    position: relative;
+    display: inline-block;
+}
+
+.acp-v2-experts-badge {
+    background: #5cc87d;
+    border: 2.5px solid #0f172a;
+    border-radius: 6px;
+    padding: 16px 36px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    z-index: 2;
+    transition: transform 0.15s ease;
+}
+
+.acp-v2-experts-shadow {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    width: 100%;
+    height: 100%;
+    border: 2.5px solid #0f172a;
+    background: transparent;
+    border-radius: 6px;
+    z-index: 1;
+    transition: transform 0.15s ease;
+}
+
+.acp-v2-experts-container:hover .acp-v2-experts-badge {
+    transform: translate(-3px, -3px);
+}
+
+.acp-v2-experts-container:hover .acp-v2-experts-shadow {
+    transform: translate(3px, 3px);
+}
+
+.acp-v2-experts-avatars {
+    display: flex;
+    align-items: center;
+}
+
+.acp-v2-expert-av {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 2.5px solid #0f172a;
+    margin-left: -12px;
+    object-fit: cover;
+    background: #ffffff;
+}
+
+.acp-v2-expert-av:first-child {
+    margin-left: 0;
+}
+
+.acp-v2-expert-more {
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.acp-v2-experts-text {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.2px;
+}
+
+/* ── RIGHT side illustration ── */
+.acp-hero-v2-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.acp-v2-illustration-container {
+    position: relative;
+    width: 420px;
+    height: 520px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Starburst background graphic */
+.acp-v2-starburst-bg {
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    top: 20%;
+    left: 20%;
+    transform: translate(-30%, -30%);
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.85;
+}
+
+.acp-v2-starburst-bg svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Orange crescent shape */
+.acp-v2-orange-crescent {
+    position: absolute;
+    width: 180px;
+    height: 90px;
+    background-color: #ff5c35;
+    border: 3px solid #0f172a;
+    border-top-left-radius: 90px;
+    border-top-right-radius: 90px;
+    bottom: 25px;
+    left: 20px;
+    z-index: 3;
+    pointer-events: none;
+    transform: rotate(-10deg);
+}
+
+/* Arched Dome Frame */
+.acp-v2-arch-frame {
+    position: relative;
+    width: 300px;
+    height: 420px;
+    border-radius: 150px 150px 0 0;
+    border: 3px solid #0f172a;
+    overflow: hidden;
+    background: #ffffff;
+    z-index: 2;
+    box-shadow: 12px 12px 0px rgba(15, 23, 42, 0.08);
+}
+
+.acp-v2-arch-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+/* ── Centered bottom description ── */
+.acp-hero-v2-bottom-desc {
+    max-width: 850px;
+    margin: 80px auto 30px;
+    text-align: center;
+    position: relative;
+    z-index: 3;
+}
+
+.acp-hero-v2-bottom-desc p {
+    font-size: 18px;
+    color: #0f172a;
+    font-weight: 500;
+    line-height: 1.6;
+    font-family: 'Inter', sans-serif;
+}
+
 /* ── Marquee bar ── */
 .acp-v2-marquee-bar {
-    background: #1c1c1e;
-    padding: 36px 0;
+    background: #111111;
+    padding: 24px 0;
     overflow: hidden;
-    position: absolute;
-    bottom: 80px;
-    left: -2%;
-    width: 104%;
-    z-index: 2;
+    position: relative;
+    width: 100%;
+    z-index: 4;
     display: flex;
     white-space: nowrap;
-    transform: rotate(3deg);
-    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.5);
+    border-top: 3px solid #0f172a;
+    border-bottom: 3px solid #0f172a;
 }
 
 .acp-v2-marquee-track {
     display: inline-flex;
-    animation: acp-v2-scroll 25s linear infinite;
-    gap: 80px;
+    animation: acp-v2-scroll-new 20s linear infinite;
+    gap: 60px;
 }
 
 .acp-v2-marquee-item {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 800;
-    color: rgba(255, 255, 255, 0.95);
+    color: #ffffff;
     font-family: 'Inter', sans-serif;
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 12px;
     white-space: nowrap;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
 }
 
-@keyframes acp-v2-scroll {
+@keyframes acp-v2-scroll-new {
     from {
         transform: translateX(0);
     }
-
     to {
         transform: translateX(-50%);
     }
 }
 
 /* =========================================================================== */
-/* COMPREHENSIVE RESPONSIVE FIXES FOR V2 HERO SECTION                         */
+/* COMPREHENSIVE RESPONSIVE & FLUID SCALING                                   */
 /* =========================================================================== */
 
-@media (max-width: 1024px) {
+/* ── Fluid Widescreen Scaling (>1440px) ── */
+@media (min-width: 1440px) {
+    .acp-container {
+        max-width: 90vw !important;
+    }
     .acp-hero-v2-grid {
-        grid-template-columns: 1fr !important;
-        text-align: center !important;
-        gap: 0 !important;
-        padding: 20px 0 100px !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
+        max-width: 88vw !important;
+        gap: 3vw !important;
+        padding: 3vw 0 !important;
     }
-
-    .acp-hero-v2-left {
-        align-items: center !important;
-        text-align: center !important;
-        top: 0 !important;
-        left: 0 !important;
-        gap: 25px !important;
-        max-width: 100% !important;
-    }
-
-    .acp-v2-title-row {
-        justify-content: center !important;
-        flex-wrap: wrap;
-        gap: 8px;
-    }
-
     .acp-hero-v2-title {
-        font-size: clamp(1.8rem, 8vw, 2.5rem) !important;
-        text-align: center !important;
-        margin-bottom: 20px !important;
+        font-size: 6.6vw !important;
+        letter-spacing: -0.15vw !important;
     }
-
-    .acp-hero-v2-desc {
-        text-align: center !important;
-        margin: 0 auto !important;
-        max-width: 90% !important;
+    .acp-v2-medium, .acp-v2-bold, .acp-v2-loop-wrap {
+        font-size: 6.6vw !important;
     }
-
-    .acp-hero-v2-btns {
-        margin: 0 !important;
-        justify-content: center !important;
-        width: 100% !important;
+    .acp-v2-title-avatar-wrap {
+        width: 7.6vw !important;
+        height: 10.7vw !important;
+        border-radius: 3.8vw !important;
+        border-width: 0.2vw !important;
+        margin: 0 1.4vw !important;
     }
-
-    .acp-v2-arrow-wrapper {
-        display: none !important;
+    .acp-v2-title-avatar {
+        border-radius: 3.6vw !important;
     }
-
-    .acp-hero-v2-right {
-        height: auto !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 30px !important;
-        padding: 40px 0 !important;
-        width: 100% !important;
-        position: relative !important;
+    .acp-v2-curved-text-svg {
+        width: 12.5vw !important;
+        height: 12.5vw !important;
+        top: -3.1vw !important;
+        left: -2.4vw !important;
     }
-
-    .acp-v2-card {
-        position: relative !important;
-        top: auto !important;
-        left: auto !important;
-        right: auto !important;
-        bottom: auto !important;
-        transform: none !important;
-        width: 280px !important;
-        margin: 0 auto !important;
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4) !important;
+    .acp-v2-title-pill-btn {
+        height: 5vw !important;
+        padding: 0 2.2vw !important;
+        font-size: 1.05vw !important;
+        border-width: 0.2vw !important;
+        margin-left: 1.6vw !important;
+        border-radius: 3.5vw !important;
     }
-
-    .acp-v2-card-b {
-        margin-top: -10px !important;
-        /* Slight overlap for aesthetics */
+    .acp-v2-pill-arrow {
+        width: 1.4vw !important;
+        height: 1.4vw !important;
+        stroke-width: 0.2vw !important;
     }
-
-    .acp-v2-marquee-bar {
-        position: relative !important;
-        bottom: auto !important;
-        margin-top: 40px !important;
-        transform: rotate(0deg) !important;
-        left: 0 !important;
-        width: 100% !important;
-        padding: 20px 0 !important;
-        box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.3) !important;
+    .acp-hero-v2-widgets {
+        gap: 2.8vw !important;
+        margin-top: 1vw !important;
     }
-
-    .acp-v2-stamp {
-        position: relative !important;
-        margin: 40px auto 0 !important;
-        top: auto !important;
-        right: auto !important;
+    .acp-v2-btn-black {
+        padding: 1.4vw 3.3vw !important;
+        font-size: 1.4vw !important;
+        border-width: 0.2vw !important;
+        border-radius: 0.4vw !important;
     }
-
-    .acp-v2-trust-bar {
-        flex-direction: column !important;
-        padding: 20px !important;
-        gap: 20px !important;
-        text-align: center !important;
+    .acp-v2-btn-shadow {
+        top: 0.6vw !important;
+        left: 0.6vw !important;
+        border-width: 0.2vw !important;
+        border-radius: 0.4vw !important;
     }
-
-    .acp-v2-trust-logos {
-        justify-content: center !important;
-        flex-wrap: wrap !important;
+    .acp-v2-experts-badge {
+        padding: 1.1vw 2.5vw !important;
+        border-width: 0.2vw !important;
+        border-radius: 0.4vw !important;
+        gap: 1.4vw !important;
+    }
+    .acp-v2-experts-shadow {
+        top: 0.6vw !important;
+        left: 0.6vw !important;
+        border-width: 0.2vw !important;
+        border-radius: 0.4vw !important;
+    }
+    .acp-v2-expert-av {
+        width: 3.1vw !important;
+        height: 3.1vw !important;
+        border-width: 0.17vw !important;
+        margin-left: -0.8vw !important;
+    }
+    .acp-v2-experts-text {
+        font-size: 1.25vw !important;
+    }
+    .acp-v2-illustration-container {
+        width: 29vw !important;
+        height: 36vw !important;
+    }
+    .acp-v2-arch-frame {
+        width: 21vw !important;
+        height: 29vw !important;
+        border-radius: 10.5vw 10.5vw 0 0 !important;
+        border-width: 0.2vw !important;
+    }
+    .acp-v2-starburst-bg {
+        width: 22vw !important;
+        height: 22vw !important;
+    }
+    .acp-v2-orange-crescent {
+        width: 12.5vw !important;
+        height: 6.25vw !important;
+        border-top-left-radius: 6.25vw !important;
+        border-top-right-radius: 6.25vw !important;
+        bottom: 1.7vw !important;
+        left: 1.4vw !important;
+        border-width: 0.2vw !important;
+    }
+    .acp-hero-v2-bottom-desc {
+        margin: 5vw auto 2vw !important;
+        max-width: 60vw !important;
+    }
+    .acp-hero-v2-bottom-desc p {
+        font-size: 1.25vw !important;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 1200px) {
+    .acp-hero-v2-title {
+        font-size: 4.8rem;
+    }
+    .acp-v2-medium, .acp-v2-bold, .acp-v2-loop-wrap {
+        font-size: 4.8rem;
+    }
+    .acp-v2-title-avatar-wrap {
+        width: 90px;
+        height: 125px;
+        margin: 0 12px;
+    }
+    .acp-v2-curved-text-svg {
+        width: 145px;
+        height: 145px;
+        top: -38px;
+        left: -28px;
+    }
+    .acp-v2-title-pill-btn {
+        height: 64px;
+        font-size: 14px;
+        padding: 0 28px;
+        margin-left: 20px;
+        border-width: 2.5px;
+    }
+    .acp-v2-btn-black {
+        padding: 16px 36px;
+        font-size: 18px;
+    }
+}
 
-    .acp-v2-btn-primary,
-    .acp-v2-btn-ghost {
-        width: 100% !important;
-        padding: 14px 20px !important;
-        max-width: 280px !important;
+@media (max-width: 1024px) {
+    .acp-hero-v2-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+        padding: 20px 0;
     }
 
-    .acp-hero-v2-btns {
-        flex-direction: column !important;
-        gap: 15px !important;
+    .acp-hero-v2-left {
+        align-items: center;
+        text-align: center;
+    }
+
+    .acp-v2-title-row {
+        justify-content: center;
+    }
+
+    .acp-hero-v2-title {
+        font-size: clamp(2.6rem, 7vw, 4.2rem);
+        text-align: center;
+    }
+
+    .acp-v2-medium, .acp-v2-bold, .acp-v2-loop-wrap {
+        font-size: clamp(2.6rem, 7vw, 4.2rem);
+    }
+
+    .acp-hero-v2-widgets {
+        justify-content: center;
+    }
+
+    .acp-v2-illustration-container {
+        width: 360px;
+        height: 460px;
+    }
+
+    .acp-v2-arch-frame {
+        width: 260px;
+        height: 360px;
+    }
+}
+
+@media (max-width: 600px) {
+    .acp-hero-v2-section {
+        padding: 80px 0 0 !important;
+    }
+
+    .acp-hero-v2-title {
+        font-size: clamp(1.8rem, 6vw, 2.6rem);
+    }
+
+    .acp-v2-medium, .acp-v2-bold, .acp-v2-loop-wrap {
+        font-size: clamp(1.8rem, 6vw, 2.6rem);
+    }
+
+    .acp-v2-title-avatar-wrap {
+        width: 65px;
+        height: 90px;
+        border-width: 2px;
+        margin: 0 8px;
+    }
+
+    .acp-v2-curved-text-svg {
+        width: 110px;
+        height: 110px;
+        top: -24px;
+        left: -20px;
+    }
+
+    .acp-v2-title-pill-btn {
+        height: 48px;
+        font-size: 12px;
+        padding: 0 16px;
+        margin-left: 8px;
+    }
+
+    .acp-hero-v2-widgets {
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .acp-v2-btn-container {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .acp-v2-btn-black {
+        width: 100%;
+    }
+
+    .acp-v2-experts-container {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .acp-v2-experts-badge {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .acp-hero-v2-bottom-desc p {
+        font-size: 14px;
+    }
+}
+
+/* Widescreen Scaling */
+@media (min-width: 1400px) {
+    .acp-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 24px;
     }
 }
 

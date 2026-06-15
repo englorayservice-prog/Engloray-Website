@@ -117,7 +117,7 @@ const howWeWorkSlides = [
   {
     title: "DESIGN & BUILD",
     desc: "Our expert team crafts engaging interfaces and engineers scalable, high-performance solutions tailored to your needs.",
-    img: webEight
+    img: webSeven
   },
   {
     title: "TEST & LAUNCH",
@@ -127,7 +127,7 @@ const howWeWorkSlides = [
   {
     title: "SUPPORT & EVOLVE",
     desc: "We provide 24/7 proactive technical support and continuous platform evolution to guarantee your long-term digital success.",
-    img: softSix
+    img: devSeven
   }
 ];
 

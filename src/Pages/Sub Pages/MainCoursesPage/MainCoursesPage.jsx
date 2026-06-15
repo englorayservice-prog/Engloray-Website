@@ -47,6 +47,12 @@ import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 
 import boyImg from '../../../assets/boy.jpg';
 import girlImg from '../../../assets/girl (2).jpg';
+import pixarLeft from '../../../assets/pixar_left.png';
+import pixarRight from '../../../assets/pixar_right.png';
+import cartoonFemale1 from '../../../assets/cartoon_female_1.png';
+import cartoonFemale2 from '../../../assets/cartoon_female_2.png';
+import cartoonMale1 from '../../../assets/cartoon_male_1.png';
+import cartoonMale2 from '../../../assets/cartoon_male_2.png';
 
 const MainCoursesPage = () => {
     const navigate = useNavigate();
@@ -315,13 +321,8 @@ const MainCoursesPage = () => {
         <div className="acp-main-courses-page">
             <TopNavBar />
             <NavigationBar />
-            {/* Hero Section – NFT-style Dark */}
+            {/* Hero Section – NextLearn Style Mint Green */}
             <section className="acp-hero-v2-section">
-
-                {/* Sparkle decorations */}
-                <div className="acp-v2-spark acp-v2-s1">✦</div>
-                <div className="acp-v2-spark acp-v2-s2">✦</div>
-
                 <div className="acp-container">
                     <div className="acp-hero-v2-grid">
 
@@ -329,85 +330,95 @@ const MainCoursesPage = () => {
                         <div className="acp-hero-v2-left">
                             <h1 className="acp-hero-v2-title">
                                 <div className="acp-v2-title-row">
-                                    <span className="acp-v2-plain">Let's build</span>
-                                    <span className="acp-v2-green">your</span>
+                                    <span className="acp-v2-loop-wrap">
+                                        Learn
+                                        <svg className="acp-v2-loop-svg" viewBox="0 0 110 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M10 25C10 25 30 5 60 5C90 5 100 15 100 25C100 35 90 45 60 45C30 45 10 35 10 25Z" stroke="#ff5c35" strokeWidth="3.5" strokeLinecap="round" />
+                                        </svg>
+                                    </span>
+                                    <div className="acp-v2-title-avatar-wrap">
+                                        <svg className="acp-v2-curved-text-svg" viewBox="0 0 100 100">
+                                            <path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none" />
+                                            <text className="acp-v2-curved-text">
+                                                <textPath href="#circlePath">Join Community • Join Community •</textPath>
+                                            </text>
+                                        </svg>
+                                        <img src={pixarLeft} alt="Student Avatar" className="acp-v2-title-avatar" />
+                                    </div>
+                                    <span className="acp-v2-medium">From</span>
                                 </div>
-                                <div className="acp-v2-plain">Extraordinary</div>
                                 <div className="acp-v2-title-row">
-                                    <span className="acp-v2-green">Tech</span>
-                                    <span className="acp-v2-plain">Career</span>
+                                    <span className="acp-v2-bold">Experts</span>
+                                    <button className="acp-v2-title-pill-btn" onClick={handleBookConsultation}>
+                                        <div className="acp-v2-pill-text-wrap">
+                                            <span>Explore</span>
+                                            <span>Our Courses</span>
+                                        </div>
+                                        <svg className="acp-v2-pill-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M6 6 L18 18 M18 18 H10 M18 18 V10" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                                        </svg>
+                                    </button>
                                 </div>
                             </h1>
-                            <p className="acp-hero-v2-desc">
-                                Gain industry-demanded skills with our intensive software development bootcamps and assure your future with our 100% placement focus.
-                            </p>
-                            <div className="acp-hero-v2-btns">
-                                <button className="acp-v2-btn-primary" onClick={handleWhatsAppNavigation}>Discover</button>
-                                <button className="acp-v2-btn-ghost" onClick={handleBookConsultation}>Learn More</button>
-                            </div>
 
-                            <div className="acp-v2-arrow-wrapper">
-                                <svg width="90" height="45" viewBox="0 0 60 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5 25 Q 15 15 35 25 T 55 10 M 45 5 L 55 10 L 50 20" stroke="white" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-                                </svg>
+                            <div className="acp-hero-v2-widgets">
+                                {/* Discover Button Container (Double outline & transparent gap) */}
+                                <div className="acp-v2-btn-container">
+                                    <div className="acp-v2-btn-sparkles">
+                                        <span className="acp-v2-sparkle s1">✦</span>
+                                        <span className="acp-v2-sparkle s2">✦</span>
+                                        <span className="acp-v2-sparkle s3">✦</span>
+                                    </div>
+                                    <button className="acp-v2-btn-black" onClick={handleWhatsAppNavigation}>
+                                        Discover
+                                    </button>
+                                    <div className="acp-v2-btn-shadow"></div>
+                                </div>
+
+                                {/* Experts worldwide Badge (Double outline & transparent gap) */}
+                                <div className="acp-v2-experts-container">
+                                    <div className="acp-v2-experts-badge">
+                                        <div className="acp-v2-experts-avatars">
+                                            <img src={cartoonFemale1} alt="Expert 1" className="acp-v2-expert-av" />
+                                            <img src={cartoonMale1} alt="Expert 2" className="acp-v2-expert-av" />
+                                            <img src={cartoonFemale2} alt="Expert 3" className="acp-v2-expert-av" />
+                                            <img src={cartoonMale2} alt="Expert 4" className="acp-v2-expert-av" />
+                                            <div className="acp-v2-expert-av acp-v2-expert-more">2k+</div>
+                                        </div>
+                                        <span className="acp-v2-experts-text">Experts worldwide</span>
+                                    </div>
+                                    <div className="acp-v2-experts-shadow"></div>
+                                </div>
                             </div>
                         </div>
 
-                        {/* ── RIGHT: floating cards ── */}
+                        {/* ── RIGHT ── */}
                         <div className="acp-hero-v2-right">
-
-                            <div className="acp-v2-card acp-v2-card-a">
-                                <div className="acp-v2-card-img-wrapper" style={{ background: '#f8fafc' }}>
-                                    <img className="acp-v2-card-img"
-                                        src={girlImg}
-                                        alt="Harini Student Image" style={{ objectPosition: 'top' }} />
+                            <div className="acp-v2-illustration-container">
+                                {/* Starburst Background */}
+                                <div className="acp-v2-starburst-bg">
+                                    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M100 0 L115 70 L185 50 L130 100 L185 150 L115 130 L100 200 L85 130 L15 150 L70 100 L15 50 L85 70 Z" fill="#bde3cb" />
+                                    </svg>
                                 </div>
-                                <div className="acp-v2-card-body">
-                                    <div className="acp-v2-card-row">
-                                        <span className="acp-v2-cname">Java Fullstack</span>
-                                        <span className="acp-v2-clikes">24 Weeks</span>
-                                    </div>
-                                    <div className="acp-v2-card-row acp-v2-bid-row" style={{ marginTop: '10px' }}>
-                                        <span className="acp-v2-cbid-lbl">Enroll Now</span>
-                                        <span className="acp-v2-cbid-val">Get Placed</span>
-                                    </div>
-                                    {/* Client Feedback inside card */}
-                                    <div className="acp-v2-fb-strip" style={{ marginTop: '15px', borderTop: '1px solid #f1f5f9', paddingTop: '15px' }}>
-                                        <div className="acp-v2-fb-text" style={{ fontStyle: 'italic', fontSize: '13px', color: '#475569', lineHeight: '1.6', textAlign: 'center', fontWeight: '500' }}>
-                                            "Got exactly the skills I needed for a career in tech! Now placed in a top company!" <br /><br /><strong>— Harini K ⭐</strong>
-                                        </div>
-                                    </div>
+
+                                {/* Orange Semicircle overlay */}
+                                <div className="acp-v2-orange-crescent"></div>
+
+                                {/* Arch Dome Window Frame */}
+                                <div className="acp-v2-arch-frame">
+                                    <img src={pixarRight} alt="Tech Student Illustration" className="acp-v2-arch-img" />
                                 </div>
                             </div>
-
-                            {/* Rotating stamp badge */}
-
-
-                            <div className="acp-v2-card acp-v2-card-b">
-                                <div className="acp-v2-card-img-wrapper" style={{ background: '#f8fafc' }}>
-                                    <img className="acp-v2-card-img"
-                                        src={boyImg}
-                                        alt="Arjun Student Image" style={{ objectPosition: 'top' }} />
-                                </div>
-                                <div className="acp-v2-card-body">
-                                    <div className="acp-v2-card-row">
-                                        <span className="acp-v2-cname">MERN Stack</span>
-                                        <span className="acp-v2-clikes">18 Weeks</span>
-                                    </div>
-                                    <div className="acp-v2-card-row acp-v2-bid-row" style={{ marginTop: '10px' }}>
-                                        <span className="acp-v2-cbid-lbl">Enroll Now</span>
-                                        <span className="acp-v2-cbid-val">Get Placed</span>
-                                    </div>
-                                    {/* Client Feedback inside card */}
-                                    <div className="acp-v2-fb-strip" style={{ marginTop: '15px', borderTop: '1px solid #f1f5f9', paddingTop: '15px' }}>
-                                        <div className="acp-v2-fb-text" style={{ fontStyle: 'italic', fontSize: '13px', color: '#475569', lineHeight: '1.6', textAlign: 'center', fontWeight: '500' }}>
-                                            "The intensive hands-on projects helped me build a great portfolio and landed me a job!" <br /><br /><strong>— Arjun D ⭐</strong>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
+
+                    </div>
+
+                    {/* Centered description text at the bottom */}
+                    <div className="acp-hero-v2-bottom-desc">
+                        <p>
+                            Let's build your extraordinary tech career. Gain industry-demanded skills with our intensive software development bootcamps and assure your future with our 100% placement focus.
+                        </p>
                     </div>
                 </div>
 
@@ -424,7 +435,6 @@ const MainCoursesPage = () => {
                         ))}
                     </div>
                 </div>
-
             </section>
 
 
@@ -482,11 +492,6 @@ const MainCoursesPage = () => {
                                 <span className="acp-slash-word acp-accent-word">In-Demand</span>{' '}
                                 <span className="acp-slash-word">Skills</span>
                             </h2>
-                            <div className="acp-circle-path">
-                                <div className="acp-path-dot acp-path-dot-1"></div>
-                                <div className="acp-path-dot acp-path-dot-2"></div>
-                                <div className="acp-path-dot acp-path-dot-3"></div>
-                            </div>
                         </div>
                         <p className="acp-section-subtitle">
                             Hands-on courses with real-world projects and industry mentorship
