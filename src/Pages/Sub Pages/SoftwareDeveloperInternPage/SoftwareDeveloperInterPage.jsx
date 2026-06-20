@@ -154,8 +154,19 @@ const SoftwareDeveloperInternPage = () => {
         const updateScale = () => {
             const designWidth = 1440;
             const currentWidth = window.innerWidth;
-            const newScale = currentWidth / designWidth;
-            setScale(newScale);
+
+            if (currentWidth > 1440) {
+                // Use fluid scaling for screens wider than 1440px (no scale transform)
+                setScale(1);
+            } else if (currentWidth >= 1024) {
+                // Scale down for standard desktop screens down to 1024px
+                const newScale = currentWidth / designWidth;
+                setScale(newScale);
+            } else {
+                // For mobile/tablet, stay at scale 1 and let CSS handle responsiveness
+                setScale(1);
+            }
+
             if (scalingRef.current) {
                 setContentHeight(scalingRef.current.offsetHeight);
             }
@@ -332,19 +343,22 @@ const SoftwareDeveloperInternPage = () => {
             url: galleryCollab,
             title: "Agile Development Office",
             description: "Teams practicing scrum and agile methodologies in our dedicated stand-up and collaboration zones.",
-            icon: <FontAwesomeIcon icon={faUsers} />
+            icon: <FontAwesomeIcon icon={faUsers} />,
+            benefit: "Scrum Methodology"
         },
         {
             url: galleryWorkstation,
             title: "Professional Workstation",
             description: "Individual engineering stations equipped with specialized IDEs and performance monitoring tools.",
-            icon: <FontAwesomeIcon icon={faTerminal} />
+            icon: <FontAwesomeIcon icon={faTerminal} />,
+            benefit: "Code Optimization"
         },
         {
             url: galleryPresentation,
             title: "Architecture Review",
             description: "Engineers presenting complex system architectures and receiving peer feedback in our review room.",
-            icon: <FontAwesomeIcon icon={faNetworkWired} />
+            icon: <FontAwesomeIcon icon={faNetworkWired} />,
+            benefit: "System Design"
         },
         {
             url: galleryInteractive,
@@ -553,6 +567,48 @@ const SoftwareDeveloperInternPage = () => {
         }
     };
 
+    const handleDownloadAllResources = () => {
+        let count = 0;
+        courseResources.forEach((resource, index) => {
+            if (!resource.isRestricted && resource.localPath) {
+                setTimeout(() => {
+                    const link = document.createElement('a');
+                    link.href = resource.localPath;
+                    link.download = resource.fileName || `${resource.title}.pdf`;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    
+                    if (!downloadedResources.includes(resource.id)) {
+                        setDownloadedResources(prev => [...prev, resource.id]);
+                    }
+                }, count * 350);
+                count++;
+            }
+        });
+        if (count > 0) {
+            setToastMessage(`✅ Downloading all ${count} free resources...`);
+        } else {
+            setToastMessage(`❌ No free resources available to download.`);
+        }
+    };
+
+    const handleShowDownloadHistory = () => {
+        if (downloadedResources.length === 0) {
+            setToastMessage("🏆 You haven't downloaded any resources yet. Start downloading below!");
+        } else {
+            const downloadedTitles = courseResources
+                .filter(res => downloadedResources.includes(res.id))
+                .map(res => res.title);
+            
+            if (downloadedTitles.length > 0) {
+                setToastMessage(`🏆 Downloaded resources: ${downloadedTitles.join(', ')}`);
+            } else {
+                setToastMessage("🏆 You haven't downloaded any resources yet. Start downloading below!");
+            }
+        }
+    };
+
     const handleJoinCourseForResource = (resourceTitle) => {
         setToastMessage(`🔒 "${resourceTitle}" is only available to enrolled students. Please join our course to download this premium resource.`);
 
@@ -747,8 +803,8 @@ const SoftwareDeveloperInternPage = () => {
                     className="SD-scaling-outer-wrapper"
                     style={{
                         width: '100%',
-                        height: contentHeight * scale,
-                        overflow: 'hidden',
+                        height: scale === 1 ? 'auto' : contentHeight * scale,
+                        overflow: scale === 1 ? 'visible' : 'hidden',
                         backgroundColor: '#000000',
                         position: 'relative'
                     }}
@@ -757,13 +813,13 @@ const SoftwareDeveloperInternPage = () => {
                         ref={scalingRef}
                         className="SD-scaling-inner-container"
                         style={{
-                            width: '1440px',
-                            transform: `scale(${scale})`,
+                            width: scale === 1 ? '100%' : '1440px',
+                            transform: scale === 1 ? 'none' : `scale(${scale})`,
                             transformOrigin: 'top left',
-                            position: 'absolute',
+                            position: scale === 1 ? 'relative' : 'absolute',
                             top: 0,
                             left: 0,
-                            backgroundColor: '#000000'
+                            backgroundColor: '#e8e8e8' // Match hero bg to avoid black bars
                         }}
                     >
                         <div>
@@ -1106,15 +1162,47 @@ const SoftwareDeveloperInternPage = () => {
                   </p>
                   <button className="SD-banner-register-btn" onClick={() => setShowForm(true)}>
                      Register Now
-                  </button>
-                </div>
-              </div>
-            )} */}
-                    {/* </div>
-        </section> */}
-
-                    {/* Dream Navigator Section */}
-
+                    {/* Tools, Code & Development Support Header Section */}
+                    <section className="SD-section SD-dream-navigator-section">
+                        <div className="SD-dn-container">
+                            {/* Top Header Row */}
+                            <div className="SD-dn-header-row">
+                                <div className="SD-dn-header-left">
+                                    <h2 className="SD-dn-title">
+                                        <div className="SD-dn-title-line1">
+                                            Tools, Code & Development
+                                            <svg className="SD-animated-star" viewBox="0 0 24 24" width="24" height="24" style={{ verticalAlign: 'middle', marginLeft: '5px' }}>
+                                                <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
+                                            </svg>
+                                        </div>
+                                        <div className="SD-dn-title-line2" style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', marginTop: '0.5rem' }}>
+                                            <button
+                                                className="SD-split-action-btn"
+                                                style={{ padding: '1.5rem 2rem', fontSize: '1rem', margin: 0 }}
+                                                onClick={() => showLockedSectionToast("Software Development Tools & Code Resources")}
+                                            >
+                                                <FontAwesomeIcon icon={faLock} /> Join course to Access
+                                            </button>
+                                            <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                                                Support
+                                                <svg className="SD-animated-star" viewBox="0 0 24 24" width="24" height="24" style={{ verticalAlign: 'middle' }}>
+                                                    <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
+                                                </svg>
+                                            </span>
+                                        </div>
+                                    </h2>
+                                </div>
+                                <div className="SD-dn-header-right">
+                                    <svg className="SD-dn-small-sparkies" viewBox="0 0 24 24" width="16" height="16">
+                                        <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
+                                    </svg>
+                                    <p>
+                                        Get access to modern frameworks, production-ready components, and direct support to accelerate your development workflow.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
 
                     <section className="SD-section SD-influencer-section" id="signin">
                         <div className="SD-influencer-container">
@@ -1221,53 +1309,24 @@ const SoftwareDeveloperInternPage = () => {
                                     </div>
                                 )}
                             </div>
-
-
-                            {/* {!showForm && (
-              <div className="SD-join-course-banner">
-                <h3 className="SD-join-banner-title">JOIN OUR COURSE</h3>
-                <div className="SD-join-banner-content">
-                  <h4 className="SD-join-course-subtitle"><FontAwesomeIcon icon={faDesktop} /> Software Developer course</h4>
-                  <p className="SD-join-course-desc">
-                    A software developer designs, builds, and maintains complex software systems and applications. They apply computer science fundamentals, data structures, and algorithms to create scalable, efficient, and robust solutions for enterprise-level challenges and user-centric needs.
-                  </p>
-                  <button className="SD-banner-register-btn" onClick={() => setShowForm(true)}>
-                     Register Now
-                  </button>
-                </div>
-              </div>
-            )} */}
                         </div>
                     </section>
 
                     <section className="SD-section SD-dream-navigator-section" id="dream-navigator">
                         <div className="SD-dn-container">
 
-                            {/* Design Resources Title - styled like Dream Navigator header */}
+                            {/* Development Resources Title */}
                             <div className="SD-dn-resources-title-row" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginTop: '0', marginBottom: '2rem', position: 'relative' }}>
                                 <div style={{ flex: 1 }}>
                                     <h2 className="SD-dn-title">
-                                        <div className="SD-dn-title-line1">
-                                            Tools, Code & Development
-                                            <svg className="SD-animated-star" viewBox="0 0 24 24" width="24" height="24" style={{ verticalAlign: 'middle', marginLeft: '5px' }}>
-                                                <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
-                                            </svg>
-                                        </div>
-                                        <div className="SD-dn-title-line2" style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', marginTop: '0.5rem' }}>
-                                            <button
-                                                className="SD-split-action-btn"
-                                                style={{ padding: '1.5rem 2rem', fontSize: '1rem', margin: 0 }}
-                                                onClick={() => showLockedSectionToast("Software Development Tools & Code Resources")}
-                                            >
-                                                <FontAwesomeIcon icon={faLock} /> Join course to Access
-                                            </button>
-                                            <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                                                Support
-                                                <svg className="SD-animated-star" viewBox="0 0 24 24" width="24" height="24" style={{ verticalAlign: 'middle' }}>
-                                                    <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
-                                                </svg>
-                                            </span>
-                                        </div>
+                                        DEVELOPMENT
+                                        <svg className="SD-animated-star" viewBox="0 0 24 24" width="24" height="24" style={{ verticalAlign: 'middle', marginLeft: '5px' }}>
+                                            <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
+                                        </svg>
+                                        RESOURCES
+                                        <svg className="SD-animated-star" viewBox="0 0 24 24" width="24" height="24" style={{ verticalAlign: 'middle' }}>
+                                            <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
+                                        </svg>
                                     </h2>
                                     <div className="SD-dn-header-right" style={{ flex: 'unset', padding: '1.2rem 0 0 0' }}>
                                         <svg className="SD-dn-small-sparkies" viewBox="0 0 24 24" width="16" height="16">
@@ -1451,9 +1510,9 @@ const SoftwareDeveloperInternPage = () => {
                                     <div className="SD-dn-stat-item"><strong>{yourDownloadsCount}</strong> Your Downloads</div>
                                 </div>
                                 <div className="SD-dn-socials">
-                                    <span className="SD-dn-social-icon" title="Total Resources"><FontAwesomeIcon icon={faFileAlt} /></span>
-                                    <span className="SD-dn-social-icon" title="Total Downloads"><FontAwesomeIcon icon={faDownload} /></span>
-                                    <span className="SD-dn-social-icon" title="Your Downloads"><FontAwesomeIcon icon={faUser} /></span>
+                                    <span className="SD-dn-social-icon" title="Total Resources" onClick={() => scrollToSection('dream-navigator')}><FontAwesomeIcon icon={faGem} /></span>
+                                    <span className="SD-dn-social-icon" title="Download All Free Resources" onClick={handleDownloadAllResources}><FontAwesomeIcon icon={faDownload} /></span>
+                                    <span className="SD-dn-social-icon" title="Your Downloads" onClick={handleShowDownloadHistory}><FontAwesomeIcon icon={faTrophy} /></span>
                                 </div>
                             </div>
 
@@ -1764,7 +1823,9 @@ const SoftwareDeveloperInternPage = () => {
                                                 <div className="SD-Gallery-small-content-new">
                                                     <span className="SD-Gallery-badge-text-new">Environment</span>
                                                     <h4 className="SD-Gallery-small-title-new">{item.title}</h4>
-                                                    <span className="SD-Gallery-small-date-new"><FontAwesomeIcon icon={faClock} /> March 8, 2022</span>
+                                                    <span className="SD-Gallery-small-date-new" style={{ color: '#c4290a', fontWeight: '600' }}>
+                                                        {item.icon} <span style={{ marginLeft: '4px' }}>{item.benefit}</span>
+                                                    </span>
                                                 </div>
                                             </div>
                                         );

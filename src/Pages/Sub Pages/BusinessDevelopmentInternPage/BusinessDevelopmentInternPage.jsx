@@ -91,15 +91,18 @@ import roiImg from '../../../assets/roi.jpeg';
 import { submitInternship } from "../../Sub Pages/HandleSubmit/InternshipSubmit";
 
 
-import pathOne from '../../../assets/resources file/resources file/TECH/GRAPHICS DESIGNERS/Design Tools & Technology.pdf';
-import pathTwo from '../../../assets/resources file/resources file/TECH/GRAPHICS DESIGNERS/Graphic Designer Benefits.pdf';
-import pathFive from '../../../assets/resources file/resources file/TECH/GRAPHICS DESIGNERS/Learning, Skill Development & Growth.pdf';
-import pathSix from '../../../assets/resources file/resources file/TECH/GRAPHICS DESIGNERS/Productivity, AI & Workflow Support.pdf';
+import pathOne from '../../../assets/resources file/resources file/TECH/Business development/Business Strategy & Management.pdf';
+import pathTwo from '../../../assets/resources file/resources file/TECH/Business development/Business Development Management Benefits.pdf';
+import pathThree from '../../../assets/resources file/resources file/TECH/Business development/Market Analysis Reference Guide.pdf';
+import pathFour from '../../../assets/resources file/resources file/TECH/Business development/Proposal & Contract Pack.pdf';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import Navbar from '../../../Components/Navbar/Navbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 import { Helmet } from 'react-helmet';
+
+const pathFive = null;
+const pathSix = null;
 
 const BusinessDevelopmentInternPage = () => {
     const [activeSection, setActiveSection] = useState('home');
@@ -146,8 +149,19 @@ const BusinessDevelopmentInternPage = () => {
         const updateScale = () => {
             const designWidth = 1440;
             const currentWidth = window.innerWidth;
-            const newScale = currentWidth / designWidth;
-            setScale(newScale);
+
+            if (currentWidth > 1440) {
+                // Use fluid scaling for screens wider than 1440px (no scale transform)
+                setScale(1);
+            } else if (currentWidth >= 1024) {
+                // Scale down for standard desktop screens down to 1024px
+                const newScale = currentWidth / designWidth;
+                setScale(newScale);
+            } else {
+                // For mobile/tablet, stay at scale 1 and let CSS handle responsiveness
+                setScale(1);
+            }
+
             if (scalingRef.current) {
                 setContentHeight(scalingRef.current.offsetHeight);
             }
@@ -325,18 +339,21 @@ const BusinessDevelopmentInternPage = () => {
             title: "Market Analysis Session",
             description: "Dive into collaborative market research where interns analyze industry trends, competitor movements, and upcoming business opportunities.",
             icon: <FontAwesomeIcon icon={faUsers} />,
+            benefit: "Market Research"
         },
         {
             url: growth2Img,
             title: "Growth Planning Studio",
             description: "A professional business development space where students build growth strategies, lead pipelines, and business proposals using modern analytical tools.",
             icon: <FontAwesomeIcon icon={faChartLine} />,
+            benefit: "Pipeline Building"
         },
         {
             url: partnershipImg,
             title: "Partnership Review Session",
             description: "Interns present their curated business strategies to mentors and peers, receiving professional feedback to sharpen their strategic direction.",
             icon: <FontAwesomeIcon icon={faHandshake} />,
+            benefit: "Expert Mentorship"
         },
         {
             url: "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
@@ -388,19 +405,19 @@ const BusinessDevelopmentInternPage = () => {
             icon: <FontAwesomeIcon icon={faGlobe} />,
             isRestricted: false,
             fileName: "Market Analysis Reference Guide.pdf",
-            localPath: pathOne
+            localPath: pathThree
         },
         {
             id: 4,
             title: "Proposal & Contract Pack",
             description: "Collection of 50+ professionally structured templates for business proposals, partnership contracts, pitch decks, and commercial agreements. These templates help interns quickly understand document structure, pricing models, and strategic storytelling used in professional business cases. Interns can customize terms, growth metrics, and scaling plans to create unique proposals while learning efficient business development workflows used in corporate expansions and global partnerships.",
-            type: "zip",
-            size: "35 MB",
+            type: "pdf",
+            size: "0.4 MB",
             downloads: 945,
             icon: <FontAwesomeIcon icon={faFileAlt} />,
             isRestricted: false,
-            fileName: "Proposal & Contract Pack.zip",
-            localPath: pathOne
+            fileName: "Proposal & Contract Pack.pdf",
+            localPath: pathFour
         },
         {
             id: 5,
@@ -549,6 +566,48 @@ const BusinessDevelopmentInternPage = () => {
         } catch (error) {
             console.error('Download error:', error);
             setToastMessage(`❌ Error downloading ${resourceTitle}. File might not exist.`);
+        }
+    };
+
+    const handleDownloadAllResources = () => {
+        let count = 0;
+        courseResources.forEach((resource, index) => {
+            if (!resource.isRestricted && resource.localPath) {
+                setTimeout(() => {
+                    const link = document.createElement('a');
+                    link.href = resource.localPath;
+                    link.download = resource.fileName || `${resource.title}.pdf`;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    
+                    if (!downloadedResources.includes(resource.id)) {
+                        setDownloadedResources(prev => [...prev, resource.id]);
+                    }
+                }, count * 350);
+                count++;
+            }
+        });
+        if (count > 0) {
+            setToastMessage(`✅ Downloading all ${count} free resources...`);
+        } else {
+            setToastMessage(`❌ No free resources available to download.`);
+        }
+    };
+
+    const handleShowDownloadHistory = () => {
+        if (downloadedResources.length === 0) {
+            setToastMessage("🏆 You haven't downloaded any resources yet. Start downloading below!");
+        } else {
+            const downloadedTitles = courseResources
+                .filter(res => downloadedResources.includes(res.id))
+                .map(res => res.title);
+            
+            if (downloadedTitles.length > 0) {
+                setToastMessage(`🏆 Downloaded resources: ${downloadedTitles.join(', ')}`);
+            } else {
+                setToastMessage("🏆 You haven't downloaded any resources yet. Start downloading below!");
+            }
         }
     };
 
@@ -746,8 +805,8 @@ const BusinessDevelopmentInternPage = () => {
                     className="BDM-scaling-outer-wrapper"
                     style={{
                         width: '100%',
-                        height: contentHeight * scale,
-                        overflow: 'hidden',
+                        height: scale === 1 ? 'auto' : contentHeight * scale,
+                        overflow: scale === 1 ? 'visible' : 'hidden',
                         backgroundColor: '#000000',
                         position: 'relative'
                     }}
@@ -756,13 +815,13 @@ const BusinessDevelopmentInternPage = () => {
                         ref={scalingRef}
                         className="BDM-scaling-inner-container"
                         style={{
-                            width: '1440px',
-                            transform: `scale(${scale})`,
+                            width: scale === 1 ? '100%' : '1440px',
+                            transform: scale === 1 ? 'none' : `scale(${scale})`,
                             transformOrigin: 'top left',
-                            position: 'absolute',
+                            position: scale === 1 ? 'relative' : 'absolute',
                             top: 0,
                             left: 0,
-                            backgroundColor: '#000000'
+                            backgroundColor: '#e8e8e8' // Match hero bg to avoid black bars
                         }}
                     >
                         <div>
@@ -1119,8 +1178,46 @@ const BusinessDevelopmentInternPage = () => {
                     {/* </div>
         </section> */}
 
-                    {/* Dream Navigator Section */}
-
+                    {/* Strategic Growth & Market Intelligence Header Section */}
+                    <section className="BDM-section BDM-dream-navigator-section">
+                        <div className="BDM-dn-container">
+                            {/* Top Header Row */}
+                            <div className="BDM-dn-header-row">
+                                <div className="BDM-dn-header-left">
+                                    <h2 className="BDM-dn-title">
+                                        <div className="BDM-dn-title-line1">
+                                            Strategic Growth &
+                                            <svg className="BDM-dn-icon-sparkle" viewBox="0 0 24 24" width="30" height="30" style={{ marginLeft: '10px' }}>
+                                                <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
+                                            </svg>
+                                        </div>
+                                        <div className="BDM-dn-title-line2" style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginTop: '0.5rem', flexWrap: 'nowrap' }}>
+                                            <button
+                                                className="BDM-split-action-btn"
+                                                style={{ padding: '1.7rem 1.5rem', fontSize: '1rem', margin: 0, flexShrink: 0 }}
+                                                onClick={() => showLockedSectionToast("Strategic Growth & Market Intelligence")}
+                                            >
+                                                <FontAwesomeIcon icon={faLock} /> Join course to Access
+                                            </button>
+                                            <span style={{ whiteSpace: 'nowrap' }}>Market Intelligence</span>
+                                            <svg className="BDM-dn-icon-sparkle-outline" viewBox="0 0 24 24" width="30" height="30" style={{ flexShrink: 0 }}>
+                                                <path d="M12 2L14.26 9.74L22 12L14.26 14.26L12 22L9.74 14.26L2 12L9.74 9.74L12 2ZM12 6.86L10.85 10.85L6.86 12L10.85 13.15L12 17.14L13.15 13.15L17.14 12L13.15 10.85L12 6.86Z" fill="currentColor" />
+                                            </svg>
+                                        </div>
+                                    </h2>
+                                </div>
+                                <div className="BDM-dn-header-right">
+                                    <svg className="BDM-dn-small-sparkies" viewBox="0 0 24 24" width="16" height="16">
+                                        <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
+                                    </svg>
+                                    <p>
+                                        Download valuable business strategy templates, market analysis guides, and partnership frameworks
+                                        to enhance your growth planning process.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
 
                     <section className="BDM-section BDM-influencer-section" id="signin">
                         <div className="BDM-influencer-container">
@@ -1188,13 +1285,16 @@ const BusinessDevelopmentInternPage = () => {
                                     <div className="BDM-influencer-split">
                                         <div className="BDM-influencer-left">
                                             <h2 className="BDM-influencer-title">
-                                                Join <span className="BDM-search-badge"><FontAwesomeIcon icon={faComments} /> Q</span> Our Course
+                                                 Join <span className="BDM-search-badge"><FontAwesomeIcon icon={faComments} style={{ fontSize: '0.6em', marginRight: '4px' }} /> Q</span> Our Course
+                                                 <br />
                                                 <div className="BDM-influencer-avatars">
                                                     <img src={iconGraduationCap} alt="Graduation Cap" />
                                                     <img src={iconEducationBook} alt="Book" />
                                                     <img src={iconCertificate} alt="Certificate" />
                                                 </div>
-                                                to collaborate with us
+                                                 to collaborate
+                                                 <br />
+                                                 with us
                                             </h2>
                                         </div>
 
@@ -1215,29 +1315,18 @@ const BusinessDevelopmentInternPage = () => {
                     <section className="BDM-section BDM-dream-navigator-section" id="dream-navigator">
                         <div className="BDM-dn-container">
 
-                            {/* Design Resources Title - styled like Dream Navigator header */}
-                            <div className="BDM-dn-resources-title-row" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginTop: '0', marginBottom: '0.5rem', position: 'relative' }}>
+                            {/* Growth Resources Title */}
+                            <div className="BDM-dn-resources-title-row" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginTop: '0', marginBottom: '2rem', position: 'relative' }}>
                                 <div style={{ flex: 1 }}>
                                     <h2 className="BDM-dn-title">
-                                        <div className="BDM-dn-title-line1">
-                                            Strategic Growth &
-                                            <svg className="BDM-dn-icon-sparkle" viewBox="0 0 24 24" width="30" height="30" style={{ marginLeft: '10px' }}>
-                                                <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
-                                            </svg>
-                                        </div>
-                                        <div className="BDM-dn-title-line2" style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginTop: '0.5rem', flexWrap: 'nowrap' }}>
-                                            <button
-                                                className="BDM-split-action-btn"
-                                                style={{ padding: '1.7rem 1.5rem', fontSize: '1rem', margin: 0, flexShrink: 0 }}
-                                                onClick={() => showLockedSectionToast("Strategic Growth & Market Intelligence")}
-                                            >
-                                                <FontAwesomeIcon icon={faLock} /> Join course to Access
-                                            </button>
-                                            <span style={{ whiteSpace: 'nowrap' }}>Market Intelligence</span>
-                                            <svg className="BDM-dn-icon-sparkle-outline" viewBox="0 0 24 24" width="30" height="30" style={{ flexShrink: 0 }}>
-                                                <path d="M12 2L14.26 9.74L22 12L14.26 14.26L12 22L9.74 14.26L2 12L9.74 9.74L12 2ZM12 6.86L10.85 10.85L6.86 12L10.85 13.15L12 17.14L13.15 13.15L17.14 12L13.15 10.85L12 6.86Z" fill="currentColor" />
-                                            </svg>
-                                        </div>
+                                        GROWTH
+                                        <svg className="BDM-dn-icon-sparkle" viewBox="0 0 24 24" width="30" height="30">
+                                            <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
+                                        </svg>
+                                        RESOURCES
+                                        <svg className="BDM-dn-icon-sparkle-outline" viewBox="0 0 24 24" width="30" height="30">
+                                            <path d="M12 2L14.26 9.74L22 12L14.26 14.26L12 22L9.74 14.26L2 12L9.74 9.74L12 2ZM12 6.86L10.85 10.85L6.86 12L10.85 13.15L12 17.14L13.15 13.15L17.14 12L13.15 10.85L12 6.86Z" fill="currentColor" />
+                                        </svg>
                                     </h2>
                                     <div className="BDM-dn-header-right" style={{ flex: 'unset', padding: '1.2rem 0 0 0' }}>
                                         <svg className="BDM-dn-small-sparkies" viewBox="0 0 24 24" width="16" height="16">
@@ -1421,9 +1510,9 @@ const BusinessDevelopmentInternPage = () => {
                                     <div className="BDM-dn-stat-item"><strong>{yourDownloadsCount}</strong> Your Downloads</div>
                                 </div>
                                 <div className="BDM-dn-socials">
-                                    <span className="BDM-dn-social-icon" title="Total Resources"><FontAwesomeIcon icon={faFileAlt} /></span>
-                                    <span className="BDM-dn-social-icon" title="Total Downloads"><FontAwesomeIcon icon={faDownload} /></span>
-                                    <span className="BDM-dn-social-icon" title="Your Downloads"><FontAwesomeIcon icon={faUser} /></span>
+                                    <span className="BDM-dn-social-icon" title="Total Resources" onClick={() => scrollToSection('dream-navigator')}><FontAwesomeIcon icon={faGem} /></span>
+                                    <span className="BDM-dn-social-icon" title="Download All Free Resources" onClick={handleDownloadAllResources}><FontAwesomeIcon icon={faDownload} /></span>
+                                    <span className="BDM-dn-social-icon" title="Your Downloads" onClick={handleShowDownloadHistory}><FontAwesomeIcon icon={faTrophy} /></span>
                                 </div>
                             </div>
 
@@ -1663,7 +1752,9 @@ const BusinessDevelopmentInternPage = () => {
                                                 <div className="BDM-Gallery-small-content-new">
                                                     <span className="BDM-Gallery-badge-text-new">Environment</span>
                                                     <h4 className="BDM-Gallery-small-title-new">{item.title}</h4>
-                                                    <p className="BDM-Gallery-small-desc-new" style={{ color: 'rgba(255, 255, 255, 0.75)', fontSize: '0.85rem', lineHeight: '1.4', margin: '8px 0 0', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{item.description}</p>
+                                                    <span className="BDM-Gallery-small-date-new" style={{ color: '#ea580c', fontWeight: '600' }}>
+                                                        {item.icon} <span style={{ marginLeft: '4px' }}>{item.benefit}</span>
+                                                    </span>
                                                 </div>
                                             </div>
                                         );

@@ -145,8 +145,19 @@ const GraphicDesignerInternPage = () => {
         const updateScale = () => {
             const designWidth = 1440;
             const currentWidth = window.innerWidth;
-            const newScale = currentWidth / designWidth;
-            setScale(newScale);
+            
+            if (currentWidth > 1440) {
+                // Use fluid scaling for screens wider than 1440px (no scale transform)
+                setScale(1);
+            } else if (currentWidth >= 1024) {
+                // Scale down for standard desktop screens down to 1024px
+                const newScale = currentWidth / designWidth;
+                setScale(newScale);
+            } else {
+                // For mobile/tablet, stay at scale 1 and let CSS handle responsiveness
+                setScale(1);
+            }
+
             if (scalingRef.current) {
                 setContentHeight(scalingRef.current.offsetHeight);
             }
@@ -324,19 +335,22 @@ const GraphicDesignerInternPage = () => {
             url: galleryBrainstorming,
             title: "Brainstorming & Ideation",
             description: "Dive into collaborative brainstorming sessions where creative ideas are born, using mood boards, sketches, and visual planning.",
-            icon: <FontAwesomeIcon icon={faUsers} />
+            icon: <FontAwesomeIcon icon={faUsers} />,
+            benefit: "Concept Ideation"
         },
         {
             url: galleryDesignStudio,
             title: "Creative Design Studio",
             description: "A professional graphic design studio where students bring their brand identities, logos, and print media to life using industry-standard tools.",
-            icon: <FontAwesomeIcon icon={faLaptopCode} />
+            icon: <FontAwesomeIcon icon={faLaptopCode} />,
+            benefit: "Brand Design"
         },
         {
             url: galleryPortfolioReview,
             title: "Portfolio Review Session",
             description: "Students present their curated design portfolios to mentors and peers, receiving professional feedback to sharpen their creative direction.",
-            icon: <FontAwesomeIcon icon={faRocket} />
+            icon: <FontAwesomeIcon icon={faRocket} />,
+            benefit: "Design Critiques"
         },
         {
             url: galleryTypography,
@@ -547,6 +561,48 @@ const GraphicDesignerInternPage = () => {
         }
     };
 
+    const handleDownloadAllResources = () => {
+        let count = 0;
+        courseResources.forEach((resource, index) => {
+            if (!resource.isRestricted && resource.localPath) {
+                setTimeout(() => {
+                    const link = document.createElement('a');
+                    link.href = resource.localPath;
+                    link.download = resource.fileName || `${resource.title}.pdf`;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    
+                    if (!downloadedResources.includes(resource.id)) {
+                        setDownloadedResources(prev => [...prev, resource.id]);
+                    }
+                }, count * 350);
+                count++;
+            }
+        });
+        if (count > 0) {
+            setToastMessage(`✅ Downloading all ${count} free resources...`);
+        } else {
+            setToastMessage(`❌ No free resources available to download.`);
+        }
+    };
+
+    const handleShowDownloadHistory = () => {
+        if (downloadedResources.length === 0) {
+            setToastMessage("🏆 You haven't downloaded any resources yet. Start downloading below!");
+        } else {
+            const downloadedTitles = courseResources
+                .filter(res => downloadedResources.includes(res.id))
+                .map(res => res.title);
+            
+            if (downloadedTitles.length > 0) {
+                setToastMessage(`🏆 Downloaded resources: ${downloadedTitles.join(', ')}`);
+            } else {
+                setToastMessage("🏆 You haven't downloaded any resources yet. Start downloading below!");
+            }
+        }
+    };
+
     const handleJoinCourseForResource = (resourceTitle) => {
         setToastMessage(`🔒 "${resourceTitle}" is only available to enrolled students. Please join our course to download this premium resource.`);
 
@@ -741,8 +797,8 @@ const GraphicDesignerInternPage = () => {
                 className="GD-scaling-outer-wrapper"
                 style={{
                     width: '100%',
-                    height: contentHeight * scale,
-                    overflow: 'hidden',
+                    height: scale === 1 ? 'auto' : contentHeight * scale,
+                    overflow: scale === 1 ? 'visible' : 'hidden',
                     backgroundColor: '#000000',
                     position: 'relative'
                 }}
@@ -751,13 +807,13 @@ const GraphicDesignerInternPage = () => {
                     ref={scalingRef}
                     className="GD-scaling-inner-container"
                     style={{
-                        width: '1440px',
-                        transform: `scale(${scale})`,
+                        width: scale === 1 ? '100%' : '1440px',
+                        transform: scale === 1 ? 'none' : `scale(${scale})`,
                         transformOrigin: 'top left',
-                        position: 'absolute',
+                        position: scale === 1 ? 'relative' : 'absolute',
                         top: 0,
                         left: 0,
-                        backgroundColor: '#000000'
+                        backgroundColor: '#e8e8e8' // Match hero bg to avoid black bars
                     }}
                 >
                     <div>
@@ -837,7 +893,7 @@ const GraphicDesignerInternPage = () => {
                                     </svg>
                                     <h1 className="GD-hero-title-word">Together</h1>
                                     <div className="GD-hero-image-pill GD-hero-image-2">
-                                        <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Graphic Designer Studio" style={{ objectFit: 'cover', objectPosition: 'center' }} />
+                                        <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Graphic Designer Studio" style={{ objectFit: 'cover', objectPosition: 'center' }} />
                                         <div className="GD-play-btn">
                                             <div className="GD-play-icon-triangle"></div>
                                         </div>
@@ -1347,9 +1403,9 @@ const GraphicDesignerInternPage = () => {
                                         <div className="GD-dn-stat-item"><strong>{yourDownloadsCount}</strong> Your Downloads</div>
                                     </div>
                                     <div className="GD-dn-socials">
-                                        <span className="GD-dn-social-icon" title="Total Resources"><FontAwesomeIcon icon={faFileAlt} /></span>
-                                        <span className="GD-dn-social-icon" title="Total Downloads"><FontAwesomeIcon icon={faDownload} /></span>
-                                        <span className="GD-dn-social-icon" title="Your Downloads"><FontAwesomeIcon icon={faUser} /></span>
+                                        <span className="GD-dn-social-icon" title="Total Resources" onClick={() => scrollToSection('dream-navigator')}><FontAwesomeIcon icon={faGem} /></span>
+                                        <span className="GD-dn-social-icon" title="Download All Free Resources" onClick={handleDownloadAllResources}><FontAwesomeIcon icon={faDownload} /></span>
+                                        <span className="GD-dn-social-icon" title="Your Downloads" onClick={handleShowDownloadHistory}><FontAwesomeIcon icon={faTrophy} /></span>
                                     </div>
                                 </div>
 
@@ -1660,7 +1716,9 @@ const GraphicDesignerInternPage = () => {
                                                     <div className="GD-Gallery-small-content-new">
                                                         <span className="GD-Gallery-badge-text-new">Environment</span>
                                                         <h4 className="GD-Gallery-small-title-new">{item.title}</h4>
-                                                        <span className="GD-Gallery-small-date-new"><FontAwesomeIcon icon={faClock} /> March 8, 2022</span>
+                                                        <span className="GD-Gallery-small-date-new" style={{ color: '#6C2BD9', fontWeight: '600' }}>
+                                                            {item.icon} <span style={{ marginLeft: '4px' }}>{item.benefit}</span>
+                                                        </span>
                                                     </div>
                                                 </div>
                                             );
@@ -1756,7 +1814,7 @@ const GraphicDesignerInternPage = () => {
                                             <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="black" />
                                         </svg>
                                         Graphic Designer Benefits
-                                        <svg className="GD-animated-star" viewBox="0 0 24 24" width="36" height="36" style={{ verticalAlign: 'middle', marginRight: '10px' }}>
+                                        <svg className="GD-animated-star" viewBox="0 0 24 24" width="36" height="36" style={{ verticalAlign: 'middle', marginLeft: '10px' }}>
                                             <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="black" />
                                         </svg>
                                     </h2>

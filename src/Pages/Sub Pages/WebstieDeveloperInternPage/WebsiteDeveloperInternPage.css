@@ -4732,9 +4732,12 @@ body {
 .WD-dn-v-text {
     writing-mode: vertical-rl;
     transform: rotate(180deg);
-    white-space: nowrap;
+    white-space: normal;
+    max-height: calc(100% - 65px);
+    text-align: center;
+    line-height: 1.2;
     padding-bottom: 0px;
-    padding-left: 15px;
+    padding-left: 0px;
     /* Left shift */
     font-size: 1.1rem;
     font-weight: 700;
@@ -4942,6 +4945,13 @@ body {
     justify-content: center;
     text-decoration: none;
     font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.WD-dn-social-icon:hover {
+    transform: scale(1.15);
+    filter: brightness(1.2);
 }
 
 .WD-dn-social-behance {
@@ -5089,7 +5099,7 @@ body {
 
 /* --- Dream Team / Testimonials Section --- */
 .WD-dt-section {
-    padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 3vw, 2rem);
+    padding: 1.5rem 2rem 2.2rem;
     background-color: #fcfdfe;
     /* subtle off-white */
     position: relative;
@@ -5562,7 +5572,7 @@ body {
 .WD-new-benefits-section {
     position: relative;
     background: linear-gradient(135deg, #f8faff 0%, #edf1ff 100%);
-    padding: clamp(3rem, 6vw, 6rem) clamp(1rem, 5vw, 2rem);
+    padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1rem, 5vw, 2rem) clamp(3rem, 6vw, 6rem) clamp(1rem, 5vw, 2rem);
     overflow: hidden;
     width: 100%;
 }
@@ -6542,7 +6552,7 @@ body {
 
     /* Testimonials Responsive Overrides */
     .WD-dt-section {
-        padding: 4rem 0 !important;
+        padding: 2rem 0 !important;
         background-color: #fcfdfe !important;
         overflow: hidden !important;
     }
@@ -6554,7 +6564,7 @@ body {
 
     .WD-dt-header {
         padding: 0 1.5rem !important;
-        margin-bottom: 3rem !important;
+        margin-bottom: 1.5rem !important;
         text-align: center !important;
         display: block !important;
     }
@@ -6578,7 +6588,7 @@ body {
     }
 
     .WD-dt-cards-wrapper {
-        padding: 3rem 0 !important;
+        padding: 1.5rem 0 !important;
         margin-top: 1rem !important;
         -webkit-mask-image: none !important;
         mask-image: none !important;
@@ -6725,5 +6735,237 @@ body {
         padding-top: 0 !important;
         margin-bottom: 0 !important;
         padding-bottom: 0 !important;
+    }
+}
+
+@media (min-width: 1440px) {
+    .WD-course-horizontal-section {
+        min-height: 55rem;
+        padding-bottom: 0rem !important;
+    }
+
+    /* Fluid scaling for cards to fill the space and move container top */
+    .WD-course-horizontal-container {
+        max-width: 100% !important;
+        padding-left: 8rem !important;
+        padding-right: 8rem !important;
+        padding-top: 0 !important;
+        margin-top: -2rem !important;
+        /* Move container top */
+    }
+
+    /* Reduce the height of the bottom background */
+    .WD-course-background-bottom {
+        height: 42% !important;
+    }
+
+    /* Fluid scaling for Dream Navigator Section */
+    .WD-dream-navigator-section {
+        padding-left: 6rem !important;
+        padding-right: 6rem !important;
+    }
+
+    .WD-dn-container {
+        max-width: 100% !important;
+    }
+
+    .WD-dn-title {
+        font-size: clamp(2.2rem, 3.8vw, 4.2rem) !important;
+    }
+
+    .WD-dn-title-line2 {
+        gap: 1.5rem !important;
+        margin-top: 1rem !important;
+    }
+
+    .WD-dream-navigator-section .WD-split-action-btn {
+        font-size: 1.1rem !important;
+        padding: 1.5rem 1.8rem !important;
+    }
+
+    .WD-dream-navigator-section .WD-dn-icon-sparkle,
+    .WD-dream-navigator-section .WD-dn-icon-sparkle-outline {
+        width: 36px !important;
+        height: 36px !important;
+    }
+
+    .WD-dn-header-right {
+        flex: 0 0 420px !important;
+        font-size: 1.1rem !important;
+        line-height: 1.5 !important;
+        padding-top: 1.5rem !important;
+    }
+
+    /* Fluid scaling and size adjustment for Influencer Section */
+    .WD-section.WD-influencer-section {
+        padding-top: 3.5rem !important;
+        padding-bottom: 3.5rem !important;
+    }
+
+    .WD-influencer-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        padding: 0 4rem !important;
+        position: relative !important;
+        left: -5rem !important;
+    }
+
+    .WD-influencer-content {
+        width: 100% !important;
+    }
+
+    .WD-influencer-split {
+        width: 100% !important;
+        gap: 6rem !important;
+    }
+
+    .WD-influencer-left {
+        flex: 1 1 65% !important;
+        max-width: 65% !important;
+    }
+
+    .WD-influencer-title {
+        font-size: 5rem !important;
+        letter-spacing: -1.5px !important;
+    }
+
+    .WD-search-badge {
+        height: 60px !important;
+        font-size: 1.6rem !important;
+        padding: 0 1.6rem !important;
+        margin: 0 0.8rem !important;
+    }
+
+    .WD-influencer-avatars img {
+        width: 72px !important;
+        height: 72px !important;
+        border-width: 2.5px !important;
+        margin-left: -15px !important;
+    }
+
+    .WD-influencer-avatars img:first-child {
+        margin-left: 0 !important;
+    }
+
+    .WD-see-how-card {
+        width: 320px !important;
+        height: 235px !important;
+        padding: 2.2rem !important;
+        border-radius: 28px !important;
+    }
+
+    .WD-video-circle {
+        width: 52px !important;
+        height: 52px !important;
+        font-size: 1.3rem !important;
+    }
+
+    .WD-arrow-circle {
+        font-size: 2rem !important;
+    }
+
+    .WD-see-how-text {
+        font-size: 2rem !important;
+        margin: 0 !important;
+        line-height: 1.2 !important;
+    }
+
+    .WD-dn-dash-card {
+        justify-content: center !important;
+        padding: 1.8rem 1.5rem !important;
+        gap: 1.5rem !important;
+    }
+
+    .WD-dn-dash-icon {
+        width: 55px !important;
+        height: 55px !important;
+        border-radius: 14px !important;
+        font-size: 1.3rem !important;
+    }
+
+    .WD-dn-dash-icon svg {
+        width: 24px !important;
+        height: 24px !important;
+    }
+
+    .WD-dn-dash-label {
+        font-size: 0.95rem !important;
+    }
+
+    .WD-dn-dash-value {
+        font-size: 1.5rem !important;
+        margin-top: 2px !important;
+    }
+
+    /* Fluid scaling for Gallery Section */
+    .WD-new-gallery-section {
+        padding-left: 6rem !important;
+        padding-right: 6rem !important;
+    }
+
+    .WD-Gallery-container-new {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .WD-Gallery-grid-new {
+        grid-template-columns: 1.45fr 1fr 1fr !important;
+    }
+
+    .WD-Gallery-large-title-new {
+        font-size: 1.8rem !important;
+    }
+
+    .WD-Gallery-medium-title-new {
+        font-size: 1.5rem !important;
+    }
+
+    .WD-Gallery-small-title-new {
+        font-size: 1.3rem !important;
+    }
+
+    .WD-Gallery-badge-new {
+        font-size: 0.9rem !important;
+    }
+
+    .WD-Gallery-badge-text-new {
+        font-size: 0.9rem !important;
+    }
+
+    .WD-Gallery-small-date-new {
+        font-size: 0.9rem !important;
+    }
+
+    /* Fluid scaling for Benefits Section */
+    .WD-new-benefits-section {
+        padding-left: 6rem !important;
+        padding-right: 6rem !important;
+        padding-bottom: 3.5rem !important;
+    }
+
+    .WD-benefits-container-new {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+
+    .WD-section-subtitle {
+        font-size: clamp(1.2rem, 1.5vw, 1.45rem) !important;
+        max-width: 850px !important;
+        line-height: 1.6 !important;
+    }
+
+    /* Fluid scaling for Testimonials (Dream Team) Section */
+    .WD-dt-section {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        padding-top: 1.5rem !important;
+        padding-bottom: 2.2rem !important;
+    }
+
+    .WD-dt-container {
+        max-width: 100% !important;
+        width: 100% !important;
     }
 }

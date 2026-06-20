@@ -2129,3 +2129,54 @@
         font-size: 1rem;
     }
 }
+
+/* Global Stat Card Suffix & Value Alignment Overrides */
+.stat-value {
+    display: flex;
+    align-items: center;
+}
+
+.stat-suffix {
+    display: inline-flex;
+    align-items: center;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--card-color);
+    margin-left: 2px;
+}
+
+.crm-impact-section {
+    padding-top: 75px;
+}
+
+@media (min-width: 1440px) {
+    .stat-card-inner {
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .stat-top-row {
+        gap: 12px;
+    }
+
+    .stat-labels {
+        flex-direction: row;
+        gap: 5px;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+        margin-top: 0;
+    }
+
+    .stat-card {
+        padding: 24px 18px;
+    }
+
+    .stat-value {
+        font-size: 2.2rem;
+    }
+
+    .stat-suffix {
+        font-size: 1.5rem;
+    }
+}

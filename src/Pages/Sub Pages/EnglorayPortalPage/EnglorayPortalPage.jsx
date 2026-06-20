@@ -21,32 +21,7 @@ import expertiseBg from '../../../assets/OurExperise&Learning.png';
 import experienceBeyondClassroom from '../../../assets/experience_beyond_classroom.png';
 
 export default function EnglorayPortalPage() {
-  // 1. Slideshow State (Hero background)
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const totalSlides = 5;
 
-  useEffect(() => {
-    const slideInterval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % totalSlides);
-    }, 4000);
-    return () => clearInterval(slideInterval);
-  }, []);
-
-  // 2. Animated Heading State
-  const [currentTextIndex, setCurrentTextIndex] = useState(0);
-  const [animClass, setAnimClass] = useState('active');
-  const textArray = ["Full-Stack Dev (MERN)", "AI & Machine Learning", "Creative UI/UX Design", "Graphic Design & Digital Art"];
-
-  useEffect(() => {
-    const textInterval = setInterval(() => {
-      setAnimClass('exit');
-      setTimeout(() => {
-        setCurrentTextIndex((prev) => (prev + 1) % textArray.length);
-        setAnimClass('active');
-      }, 500);
-    }, 3500);
-    return () => clearInterval(textInterval);
-  }, []);
 
   // 3. Dynamic Registration Closing Date
   const [closingDate, setClosingDate] = useState('');
@@ -258,11 +233,7 @@ export default function EnglorayPortalPage() {
         <section ref={heroRef} className="hero-section" data-astro-cid-dvh7tqhi>
           <div className="hero-background" data-astro-cid-dvh7tqhi>
             <div className="hero-slideshow" data-astro-cid-dvh7tqhi>
-              <div className={`hero-slide ${currentSlide === 0 ? 'active' : ''}`} style={{ backgroundImage: `url(${mentorBg})` }} data-astro-cid-dvh7tqhi></div>
-              <div className={`hero-slide ${currentSlide === 1 ? 'active' : ''}`} style={{ backgroundImage: `url(${corporateBg})` }} data-astro-cid-dvh7tqhi></div>
-              <div className={`hero-slide ${currentSlide === 2 ? 'active' : ''}`} style={{ backgroundImage: `url(${eLearningBg})` }} data-astro-cid-dvh7tqhi></div>
-              <div className={`hero-slide ${currentSlide === 3 ? 'active' : ''}`} style={{ backgroundImage: `url(${softwareBg})` }} data-astro-cid-dvh7tqhi></div>
-              <div className={`hero-slide ${currentSlide === 4 ? 'active' : ''}`} style={{ backgroundImage: `url(${expertiseBg})` }} data-astro-cid-dvh7tqhi></div>
+              <div className="hero-slide active" style={{ backgroundImage: `url(${mentorBg})` }} data-astro-cid-dvh7tqhi></div>
             </div>
             <div className="hero-overlay" data-astro-cid-dvh7tqhi></div>
 
@@ -272,7 +243,7 @@ export default function EnglorayPortalPage() {
                   <h2 className="hero-heading" data-astro-cid-dvh7tqhi>
                     <span data-astro-cid-dvh7tqhi>Become an Expert in</span> <br data-astro-cid-dvh7tqhi />
                     <span className="hero-highlight-wrapper" data-astro-cid-dvh7tqhi>
-                      <span className={`hero-highlight ${animClass}`} data-astro-cid-dvh7tqhi>{textArray[currentTextIndex]}</span>
+                      <span className="hero-highlight active" data-astro-cid-dvh7tqhi>AI & Machine Learning</span>
                     </span>
                   </h2>
                   <ul className="hero-list" data-astro-cid-dvh7tqhi>

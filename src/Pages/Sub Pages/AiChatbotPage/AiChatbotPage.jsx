@@ -454,145 +454,244 @@ const AiChatbotPage = () => {
                         </motion.div>
                         <div className="crm-insights-carousel-wrapper">
                             <div className="crm-insights-grid">
-                                {/* Card 0 — Self-Learning AI Model */}
-                                {[
-                                    {
-                                        title: "Self-Learning AI Model",
-                                        desc: "The bot continuously learns from past conversations to improve accuracy and handle edge cases automatically. By utilizing advanced machine learning feedback loops, our model refines its understanding of user intent with every interaction, ensuring increasingly precise responses over time.",
-                                        imgBg: "rgba(168,85,247,0.12)",
-                                        visual: (
-                                            <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="ai-card-svg">
-                                                {/* Neural nodes */}
-                                                {[[40, 80], [90, 40], [90, 80], [90, 120], [140, 60], [140, 100], [190, 80]].map(([cx, cy], k) => (
-                                                    <circle key={k} cx={cx} cy={cy} r="10" fill="rgba(168,85,247,0.3)" stroke="#a855f7" strokeWidth="1.5" className={`ai-node ai-node-${k}`} />
-                                                ))}
-                                                {/* Connections */}
-                                                {[[40, 80, 90, 40], [40, 80, 90, 80], [40, 80, 90, 120], [90, 40, 140, 60], [90, 80, 140, 60], [90, 80, 140, 100], [90, 120, 140, 100], [140, 60, 190, 80], [140, 100, 190, 80]].map(([x1, y1, x2, y2], k) => (
-                                                    <line key={k} x1={x1} y1={y1} x2={x2} y2={y2} stroke="rgba(168,85,247,0.4)" strokeWidth="1" className="ai-conn" />
-                                                ))}
-                                                {/* Pulse rings */}
-                                                <circle cx="190" cy="80" r="16" fill="none" stroke="#a855f7" strokeWidth="1" opacity="0.6" className="ai-pulse" />
-                                                <circle cx="190" cy="80" r="22" fill="none" stroke="#a855f7" strokeWidth="0.5" opacity="0.3" className="ai-pulse2" />
-                                                <text x="120" y="152" textAnchor="middle" fill="rgba(192,132,252,0.7)" fontSize="9" fontFamily="Inter,sans-serif">Neural Learning Engine</text>
-                                            </svg>
-                                        )
-                                    },
-                                    {
-                                        title: "Live Agent Handoff",
-                                        desc: "Detect frustration signals and escalate to a human agent instantly with full context preserved for a seamless transition. Our system identifies complex queries that require human empathy, bridging the gap between automated efficiency and personalized care.",
-                                        imgBg: "rgba(192,132,252,0.12)",
-                                        visual: (
-                                            <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="ai-card-svg">
-                                                {/* Bot head */}
-                                                <rect x="20" y="50" width="60" height="55" rx="10" fill="rgba(168,85,247,0.25)" stroke="#a855f7" strokeWidth="1.5" />
-                                                <circle cx="38" cy="72" r="5" fill="#c084fc" className="ai-blink" />
-                                                <circle cx="62" cy="72" r="5" fill="#c084fc" className="ai-blink" />
-                                                <path d="M38 88 Q50 96 62 88" stroke="#c084fc" strokeWidth="2" fill="none" />
-                                                {/* Arrow */}
-                                                <path d="M90 77 L150 77" stroke="#a855f7" strokeWidth="2" strokeDasharray="6 3" className="ai-arrow-dash" />
-                                                <polygon points="148,71 158,77 148,83" fill="#a855f7" />
-                                                {/* Human head */}
-                                                <circle cx="188" cy="60" r="18" fill="rgba(192,132,252,0.25)" stroke="#c084fc" strokeWidth="1.5" />
-                                                <circle cx="188" cy="57" r="7" fill="#c084fc" opacity="0.6" />
-                                                <path d="M170 80 Q188 92 206 80" fill="rgba(192,132,252,0.3)" stroke="#c084fc" strokeWidth="1" />
-                                                {/* Alert dot */}
-                                                <circle cx="95" cy="60" r="8" fill="rgba(239,68,68,0.8)" className="ai-alert-pulse" />
-                                                <text x="95" y="64" textAnchor="middle" fill="white" fontSize="9" fontWeight="bold">!</text>
-                                                <text x="120" y="152" textAnchor="middle" fill="rgba(192,132,252,0.7)" fontSize="9" fontFamily="Inter,sans-serif">Instant Escalation</text>
-                                            </svg>
-                                        )
-                                    },
-                                    {
-                                        title: "Conversation Analytics",
-                                        desc: "Deep insights into chat volume, resolution rate, and user sentiment across all channels in a single dashboard. Track key performance indicators in real-time, allowing you to optimize your knowledge base and improve customer satisfaction based on data-driven metrics.",
-                                        imgBg: "rgba(168,85,247,0.18)",
-                                        visual: (
-                                            <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="ai-card-svg">
-                                                {/* Bars */}
-                                                {[{ x: 30, h: 60, c: "#a855f7" }, { x: 65, h: 40, c: "#7c3aed" }, { x: 100, h: 80, c: "#a855f7" }, { x: 135, h: 50, c: "#c084fc" }, { x: 170, h: 100, c: "#a855f7" }].map((b, k) => (
-                                                    <rect key={k} x={b.x} y={120 - b.h} width="28" height={b.h} rx="4" fill={b.c} opacity="0.75" className={`ai-bar-rise ai-bar-rise-${k}`} />
-                                                ))}
-                                                {/* Trend line */}
-                                                <polyline points="44,90 79,100 114,70 149,85 184,40" stroke="#f0abfc" strokeWidth="2" fill="none" strokeDasharray="200" strokeDashoffset="0" className="ai-trend-line" />
-                                                {[44, 79, 114, 149, 184].map((x, k) => (
-                                                    <circle key={k} cx={x} cy={[90, 100, 70, 85, 40][k]} r="4" fill="#e879f9" className="ai-dot-pop" />
-                                                ))}
-                                                {/* Axis */}
-                                                <line x1="18" y1="120" x2="210" y2="120" stroke="rgba(192,132,252,0.3)" strokeWidth="1" />
-                                                <text x="120" y="152" textAnchor="middle" fill="rgba(192,132,252,0.7)" fontSize="9" fontFamily="Inter,sans-serif">Chat Volume & Sentiment</text>
-                                            </svg>
-                                        )
-                                    },
-                                    {
-                                        title: "Bank-Grade Security",
-                                        desc: "All conversations are encrypted end-to-end. Our platform is fully GDPR, HIPAA and ISO 27001 compliant, ensuring the highest standards of data protection. We implement rigorous security protocols to safeguard your sensitive business and customer information at all times.",
-                                        imgBg: "rgba(109,40,217,0.15)",
-                                        visual: (
-                                            <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="ai-card-svg">
-                                                {/* Shield */}
-                                                <path d="M120 18 L165 38 L165 85 Q165 120 120 140 Q75 120 75 85 L75 38 Z" fill="rgba(109,40,217,0.3)" stroke="#a855f7" strokeWidth="2" className="ai-shield-glow" />
-                                                {/* Lock body */}
-                                                <rect x="106" y="80" width="28" height="22" rx="4" fill="rgba(168,85,247,0.6)" stroke="#c084fc" strokeWidth="1" />
-                                                {/* Lock shackle */}
-                                                <path d="M112 80 L112 72 Q120 62 128 72 L128 80" fill="none" stroke="#c084fc" strokeWidth="2.5" strokeLinecap="round" />
-                                                {/* Checkmark */}
-                                                <polyline points="112,91 118,97 130,84" stroke="white" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" className="ai-check-draw" />
-                                                {/* Orbit rings */}
-                                                <ellipse cx="120" cy="79" rx="50" ry="18" fill="none" stroke="rgba(168,85,247,0.2)" strokeWidth="1" strokeDasharray="4 3" />
-                                                <ellipse cx="120" cy="79" rx="65" ry="28" fill="none" stroke="rgba(168,85,247,0.12)" strokeWidth="1" />
-                                                <text x="120" y="152" textAnchor="middle" fill="rgba(192,132,252,0.7)" fontSize="9" fontFamily="Inter,sans-serif">End-to-End Encrypted</text>
-                                            </svg>
-                                        )
-                                    },
-                                    {
-                                        title: "Omnichannel Deployment",
-                                        desc: "Deploy on web, WhatsApp, Messenger, Slack and mobile with one unified management console. Our cross-platform architecture ensures a consistent brand voice and seamless user experience, no matter where your customers choose to engage with your AI agent.",
-                                        imgBg: "rgba(139,92,246,0.15)",
-                                        visual: (
-                                            <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="ai-card-svg">
-                                                {/* Center hub */}
-                                                <circle cx="120" cy="80" r="20" fill="rgba(168,85,247,0.5)" stroke="#a855f7" strokeWidth="2" className="ai-hub-pulse" />
-                                                <text x="120" y="84" textAnchor="middle" fill="white" fontSize="10" fontWeight="bold">AI</text>
-                                                {/* Channel nodes */}
-                                                {[{ cx: 50, cy: 35, label: "Web" }, { cx: 190, cy: 35, label: "WA" }, { cx: 50, cy: 125, label: "Msg" }, { cx: 190, cy: 125, label: "Slack" }, { cx: 120, cy: 20, label: "App" }].map((n, k) => (
-                                                    <g key={k}>
-                                                        <line x1="120" y1="80" x2={n.cx} y2={n.cy} stroke="rgba(168,85,247,0.35)" strokeWidth="1.5" strokeDasharray="5 3" className={`ai-spoke ai-spoke-${k}`} />
-                                                        <circle cx={n.cx} cy={n.cy} r="16" fill="rgba(139,92,246,0.3)" stroke="#c084fc" strokeWidth="1.5" className={`ai-chan-pop ai-chan-pop-${k}`} />
-                                                        <text x={n.cx} y={n.cy + 4} textAnchor="middle" fill="#e9d5ff" fontSize="8" fontWeight="600">{n.label}</text>
-                                                    </g>
-                                                ))}
-                                                <text x="120" y="152" textAnchor="middle" fill="rgba(192,132,252,0.7)" fontSize="9" fontFamily="Inter,sans-serif">One Console, Every Channel</text>
-                                            </svg>
-                                        )
-                                    },
-                                ].map((item, i) => (
-                                    <motion.div
-                                        key={i}
-                                        className={`crm-insight-card ai-arc-card insight-card-${i} ${activeInsight === i ? 'active-card ai-active-card' : ''}`}
-                                        initial={{ opacity: 0 }}
-                                        whileInView={{ opacity: 1 }}
-                                        transition={{ duration: 0.6, delay: i * 0.15 }}
-                                        viewport={{ once: true }}
-                                        onClick={() => setActiveInsight(i)}
-                                    >
-                                        {i === 0 && (
-                                            <button className="card-attached-arrow left" onClick={(e) => { e.stopPropagation(); setActiveInsight(Math.max(0, activeInsight - 1)); }} style={{ opacity: activeInsight === 0 ? 0.3 : 1, pointerEvents: activeInsight === 0 ? 'none' : 'auto' }}>
-                                                <FontAwesomeIcon icon={faChevronLeft} />
-                                            </button>
-                                        )}
-                                        {i === 4 && (
-                                            <button className="card-attached-arrow right" onClick={(e) => { e.stopPropagation(); setActiveInsight(Math.min(4, activeInsight + 1)); }} style={{ opacity: activeInsight === 4 ? 0.3 : 1, pointerEvents: activeInsight === 4 ? 'none' : 'auto' }}>
-                                                <FontAwesomeIcon icon={faChevronRight} />
-                                            </button>
-                                        )}
-                                        <div className="cic-image-wrapper ai-svg-wrapper" style={{ background: item.imgBg }}>
-                                            {item.visual}
-                                        </div>
-                                        <h3>{item.title}</h3>
-                                        <p>{item.desc}</p>
-                                        <div className="cic-line ai-cic-line" />
-                                    </motion.div>
-                                ))}
+                                {(() => {
+                                    const cardsList = [
+                                        {
+                                            title: "Self-Learning AI Model",
+                                            desc: "The bot continuously learns from past conversations to improve accuracy and handle edge cases automatically. By utilizing advanced machine learning feedback loops, our model refines its understanding of user intent with every interaction, ensuring increasingly precise responses over time.",
+                                            imgBg: "rgba(168,85,247,0.12)",
+                                            visual: (
+                                                <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="ai-card-svg">
+                                                    {/* Neural nodes */}
+                                                    {[[40, 80], [90, 40], [90, 80], [90, 120], [140, 60], [140, 100], [190, 80]].map(([cx, cy], k) => (
+                                                        <circle key={k} cx={cx} cy={cy} r="10" fill="rgba(168,85,247,0.3)" stroke="#a855f7" strokeWidth="1.5" className={`ai-node ai-node-${k}`} />
+                                                    ))}
+                                                    {/* Connections */}
+                                                    {[[40, 80, 90, 40], [40, 80, 90, 80], [40, 80, 90, 120], [90, 40, 140, 60], [90, 80, 140, 60], [90, 80, 140, 100], [90, 120, 140, 100], [140, 60, 190, 80], [140, 100, 190, 80]].map(([x1, y1, x2, y2], k) => (
+                                                        <line key={k} x1={x1} y1={y1} x2={x2} y2={y2} stroke="rgba(168,85,247,0.4)" strokeWidth="1" className="ai-conn" />
+                                                    ))}
+                                                    {/* Pulse rings */}
+                                                    <circle cx="190" cy="80" r="16" fill="none" stroke="#a855f7" strokeWidth="1" opacity="0.6" className="ai-pulse" />
+                                                    <circle cx="190" cy="80" r="22" fill="none" stroke="#a855f7" strokeWidth="0.5" opacity="0.3" className="ai-pulse2" />
+                                                    <text x="120" y="152" textAnchor="middle" fill="rgba(192,132,252,0.7)" fontSize="9" fontFamily="Inter,sans-serif">Neural Learning Engine</text>
+                                                </svg>
+                                            )
+                                        },
+                                        {
+                                            title: "Live Agent Handoff",
+                                            desc: "Detect frustration signals and escalate to a human agent instantly with full context preserved for a seamless transition. Our system identifies complex queries that require human empathy, bridging the gap between automated efficiency and personalized care.",
+                                            imgBg: "rgba(192,132,252,0.12)",
+                                            visual: (
+                                                <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="ai-card-svg">
+                                                    {/* Bot head */}
+                                                    <rect x="20" y="50" width="60" height="55" rx="10" fill="rgba(168,85,247,0.25)" stroke="#a855f7" strokeWidth="1.5" />
+                                                    <circle cx="38" cy="72" r="5" fill="#c084fc" className="ai-blink" />
+                                                    <circle cx="62" cy="72" r="5" fill="#c084fc" className="ai-blink" />
+                                                    <path d="M38 88 Q50 96 62 88" stroke="#c084fc" strokeWidth="2" fill="none" />
+                                                    {/* Arrow */}
+                                                    <path d="M90 77 L150 77" stroke="#a855f7" strokeWidth="2" strokeDasharray="6 3" className="ai-arrow-dash" />
+                                                    <polygon points="148,71 158,77 148,83" fill="#a855f7" />
+                                                    {/* Human head */}
+                                                    <circle cx="188" cy="60" r="18" fill="rgba(192,132,252,0.25)" stroke="#c084fc" strokeWidth="1.5" />
+                                                    <circle cx="188" cy="57" r="7" fill="#c084fc" opacity="0.6" />
+                                                    <path d="M170 80 Q188 92 206 80" fill="rgba(192,132,252,0.3)" stroke="#c084fc" strokeWidth="1" />
+                                                    {/* Alert dot */}
+                                                    <circle cx="95" cy="60" r="8" fill="rgba(239,68,68,0.8)" className="ai-alert-pulse" />
+                                                    <text x="95" y="64" textAnchor="middle" fill="white" fontSize="9" fontWeight="bold">!</text>
+                                                    <text x="120" y="152" textAnchor="middle" fill="rgba(192,132,252,0.7)" fontSize="9" fontFamily="Inter,sans-serif">Instant Escalation</text>
+                                                </svg>
+                                            )
+                                        },
+                                        {
+                                            title: "Conversation Analytics",
+                                            desc: "Deep insights into chat volume, resolution rate, and user sentiment across all channels in a single dashboard. Track key performance indicators in real-time, allowing you to optimize your knowledge base and improve customer satisfaction based on data-driven metrics.",
+                                            imgBg: "rgba(168,85,247,0.18)",
+                                            visual: (
+                                                <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="ai-card-svg">
+                                                    {/* Bars */}
+                                                    {[{ x: 30, h: 60, c: "#a855f7" }, { x: 65, h: 40, c: "#7c3aed" }, { x: 100, h: 80, c: "#a855f7" }, { x: 135, h: 50, c: "#c084fc" }, { x: 170, h: 100, c: "#a855f7" }].map((b, k) => (
+                                                        <rect key={k} x={b.x} y={120 - b.h} width="28" height={b.h} rx="4" fill={b.c} opacity="0.75" className={`ai-bar-rise ai-bar-rise-${k}`} />
+                                                    ))}
+                                                    {/* Trend line */}
+                                                    <polyline points="44,90 79,100 114,70 149,85 184,40" stroke="#f0abfc" strokeWidth="2" fill="none" strokeDasharray="200" strokeDashoffset="0" className="ai-trend-line" />
+                                                    {[44, 79, 114, 149, 184].map((x, k) => (
+                                                        <circle key={k} cx={x} cy={[90, 100, 70, 85, 40][k]} r="4" fill="#e879f9" className="ai-dot-pop" />
+                                                    ))}
+                                                    {/* Axis */}
+                                                    <line x1="18" y1="120" x2="210" y2="120" stroke="rgba(192,132,252,0.3)" strokeWidth="1" />
+                                                    <text x="120" y="152" textAnchor="middle" fill="rgba(192,132,252,0.7)" fontSize="9" fontFamily="Inter,sans-serif">Chat Volume & Sentiment</text>
+                                                </svg>
+                                            )
+                                        },
+                                        {
+                                            title: "Bank-Grade Security",
+                                            desc: "All conversations are encrypted end-to-end. Our platform is fully GDPR, HIPAA and ISO 27001 compliant, ensuring the highest standards of data protection. We implement rigorous security protocols to safeguard your sensitive business and customer information at all times.",
+                                            imgBg: "rgba(109,40,217,0.15)",
+                                            visual: (
+                                                <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="ai-card-svg">
+                                                    {/* Shield */}
+                                                    <path d="M120 18 L165 38 L165 85 Q165 120 120 140 Q75 120 75 85 L75 38 Z" fill="rgba(109,40,217,0.3)" stroke="#a855f7" strokeWidth="2" className="ai-shield-glow" />
+                                                    {/* Lock body */}
+                                                    <rect x="106" y="80" width="28" height="22" rx="4" fill="rgba(168,85,247,0.6)" stroke="#c084fc" strokeWidth="1" />
+                                                    {/* Lock shackle */}
+                                                    <path d="M112 80 L112 72 Q120 62 128 72 L128 80" fill="none" stroke="#c084fc" strokeWidth="2.5" strokeLinecap="round" />
+                                                    {/* Checkmark */}
+                                                    <polyline points="112,91 118,97 130,84" stroke="white" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" className="ai-check-draw" />
+                                                    {/* Orbit rings */}
+                                                    <ellipse cx="120" cy="79" rx="50" ry="18" fill="none" stroke="rgba(168,85,247,0.2)" strokeWidth="1" strokeDasharray="4 3" />
+                                                    <ellipse cx="120" cy="79" rx="65" ry="28" fill="none" stroke="rgba(168,85,247,0.12)" strokeWidth="1" />
+                                                    <text x="120" y="152" textAnchor="middle" fill="rgba(192,132,252,0.7)" fontSize="9" fontFamily="Inter,sans-serif">End-to-End Encrypted</text>
+                                                </svg>
+                                            )
+                                        },
+                                        {
+                                            title: "Omnichannel Deployment",
+                                            desc: "Deploy on web, WhatsApp, Messenger, Slack and mobile with one unified management console. Our cross-platform architecture ensures a consistent brand voice and seamless user experience, no matter where your customers choose to engage with your AI agent.",
+                                            imgBg: "rgba(139,92,246,0.15)",
+                                            visual: (
+                                                <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="ai-card-svg">
+                                                    {/* Center hub */}
+                                                    <circle cx="120" cy="80" r="20" fill="rgba(168,85,247,0.5)" stroke="#a855f7" strokeWidth="2" className="ai-hub-pulse" />
+                                                    <text x="120" y="84" textAnchor="middle" fill="white" fontSize="10" fontWeight="bold">AI</text>
+                                                    {/* Channel nodes */}
+                                                    {[{ cx: 50, cy: 35, label: "Web" }, { cx: 190, cy: 35, label: "WA" }, { cx: 50, cy: 125, label: "Msg" }, { cx: 190, cy: 125, label: "Slack" }, { cx: 120, cy: 20, label: "App" }].map((n, k) => (
+                                                        <g key={k}>
+                                                            <line x1="120" y1="80" x2={n.cx} y2={n.cy} stroke="rgba(168,85,247,0.35)" strokeWidth="1.5" strokeDasharray="5 3" className={`ai-spoke ai-spoke-${k}`} />
+                                                            <circle cx={n.cx} cy={n.cy} r="16" fill="rgba(139,92,246,0.3)" stroke="#c084fc" strokeWidth="1.5" className={`ai-chan-pop ai-chan-pop-${k}`} />
+                                                            <text x={n.cx} y={n.cy + 4} textAnchor="middle" fill="#e9d5ff" fontSize="8" fontWeight="600">{n.label}</text>
+                                                        </g>
+                                                    ))}
+                                                    <text x="120" y="152" textAnchor="middle" fill="rgba(192,132,252,0.7)" fontSize="9" fontFamily="Inter,sans-serif">One Console, Every Channel</text>
+                                                </svg>
+                                            )
+                                        },
+                                        {
+                                            title: "Natural Language Processing",
+                                            desc: "Deploy advanced intent recognition models that process conversational nuances, slang, and context dynamically. Our NLP engine classifies user inputs with high certainty values, routing complex conversations to appropriate dialogue flows.",
+                                            imgBg: "rgba(139,92,246,0.15)",
+                                            visual: (
+                                                <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="ai-card-svg">
+                                                    {/* Parsing blocks */}
+                                                    <rect x="25" y="40" width="70" height="28" rx="6" fill="rgba(168,85,247,0.25)" stroke="#a855f7" strokeWidth="1.5" />
+                                                    <text x="60" y="58" textAnchor="middle" fill="#e9d5ff" fontSize="9" fontWeight="bold">"hello chatbot"</text>
+                                                    
+                                                    <path d="M100 54 L140 54" stroke="#a855f7" strokeWidth="1.5" strokeDasharray="3 3" />
+                                                    
+                                                    <rect x="145" y="40" width="70" height="28" rx="6" fill="rgba(139,92,246,0.3)" stroke="#8b5cf6" strokeWidth="1.5" />
+                                                    <text x="180" y="58" textAnchor="middle" fill="#e9d5ff" fontSize="9" fontWeight="bold">Intent: Greet</text>
+                                                    
+                                                    <path d="M60 72 L60 100" stroke="#a855f7" strokeWidth="1.5" />
+                                                    <path d="M180 72 L180 100" stroke="#8b5cf6" strokeWidth="1.5" />
+                                                    
+                                                    <rect x="25" y="104" width="70" height="28" rx="6" fill="rgba(168,85,247,0.12)" stroke="#a855f7" strokeWidth="1" />
+                                                    <text x="60" y="121" textAnchor="middle" fill="rgba(192,132,252,0.7)" fontSize="8">Confidence: 99%</text>
+                                                    
+                                                    <rect x="145" y="104" width="70" height="28" rx="6" fill="rgba(139,92,246,0.12)" stroke="#8b5cf6" strokeWidth="1" />
+                                                    <text x="180" y="121" textAnchor="middle" fill="rgba(192,132,252,0.7)" fontSize="8">Entities: None</text>
+                                                    
+                                                    <text x="120" y="152" textAnchor="middle" fill="rgba(192,132,252,0.7)" fontSize="9" fontFamily="Inter,sans-serif">Semantic Parsing Engine</text>
+                                                </svg>
+                                            )
+                                        },
+                                        {
+                                            title: "Context Sentiment Analysis",
+                                            desc: "Track and analyze customer emotions in real-time. Detect frustration, joy, or urgency during conversations, allowing the chatbot to adjust its tone dynamically or initiate immediate agent intervention.",
+                                            imgBg: "rgba(192,132,252,0.12)",
+                                            visual: (
+                                                <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="ai-card-svg">
+                                                    {/* Radial meter */}
+                                                    <circle cx="120" cy="70" r="45" fill="none" stroke="rgba(168,85,247,0.2)" strokeWidth="6" />
+                                                    <path d="M80 90 A 45 45 0 1 1 160 90" fill="none" stroke="#a855f7" strokeWidth="6" strokeLinecap="round" />
+                                                    {/* Indicator needle */}
+                                                    <line x1="120" y1="70" x2="145" y2="45" stroke="#f0abfc" strokeWidth="3" strokeLinecap="round" />
+                                                    <circle cx="120" cy="70" r="5" fill="#f0abfc" />
+                                                    {/* Sentiment faces/text */}
+                                                    <text x="65" y="105" textAnchor="middle" fill="rgba(192,132,252,0.6)" fontSize="9" fontWeight="bold">Negative</text>
+                                                    <text x="175" y="105" textAnchor="middle" fill="#a855f7" fontSize="9" fontWeight="bold">Positive</text>
+                                                    <text x="120" y="32" textAnchor="middle" fill="#e9d5ff" fontSize="10" fontWeight="bold">Sentiment: Happy (92%)</text>
+                                                    <text x="120" y="152" textAnchor="middle" fill="rgba(192,132,252,0.7)" fontSize="9" fontFamily="Inter,sans-serif">Real-Time Emotion Tracking</text>
+                                                </svg>
+                                            )
+                                        },
+                                        {
+                                            title: "Automated Knowledge Sync",
+                                            desc: "Keep your chatbot updated automatically by connecting it directly to your knowledge base, FAQs, and help docs. The AI dynamically scans new documentation to answer user queries with fresh, accurate information.",
+                                            imgBg: "rgba(168,85,247,0.12)",
+                                            visual: (
+                                                <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="ai-card-svg">
+                                                    {/* Cloud/Sync representation */}
+                                                    <rect x="50" y="45" width="40" height="50" rx="5" fill="rgba(168,85,247,0.25)" stroke="#a855f7" strokeWidth="1.5" />
+                                                    <line x1="60" y1="58" x2="80" y2="58" stroke="#a855f7" strokeWidth="1.5" />
+                                                    <line x1="60" y1="70" x2="80" y2="70" stroke="#a855f7" strokeWidth="1.5" />
+                                                    <line x1="60" y1="82" x2="72" y2="82" stroke="#a855f7" strokeWidth="1.5" />
+                                                    
+                                                    {/* Sync arrows in middle */}
+                                                    <path d="M108 60 A 15 15 0 0 1 132 60" fill="none" stroke="#c084fc" strokeWidth="2" strokeLinecap="round" />
+                                                    <polygon points="130,55 137,60 130,65" fill="#c084fc" />
+                                                    
+                                                    <path d="M132 80 A 15 15 0 0 1 108 80" fill="none" stroke="#c084fc" strokeWidth="2" strokeLinecap="round" />
+                                                    <polygon points="110,75 103,80 110,85" fill="#c084fc" />
+                                                    
+                                                    {/* DB representation */}
+                                                    <rect x="150" y="45" width="40" height="50" rx="5" fill="rgba(139,92,246,0.3)" stroke="#8b5cf6" strokeWidth="1.5" />
+                                                    <ellipse cx="170" cy="55" rx="12" ry="4" fill="none" stroke="#8b5cf6" strokeWidth="1.5" />
+                                                    <path d="M158 55 L158 68 Q170 73 182 68 L182 55" fill="none" stroke="#8b5cf6" strokeWidth="1.5" />
+                                                    <path d="M158 68 L158 81 Q170 86 182 81 L182 68" fill="none" stroke="#8b5cf6" strokeWidth="1.5" />
+                                                    
+                                                    <text x="120" y="120" textAnchor="middle" fill="#e9d5ff" fontSize="9">Auto Synchronised</text>
+                                                    <text x="120" y="152" textAnchor="middle" fill="rgba(192,132,252,0.7)" fontSize="9" fontFamily="Inter,sans-serif">Knowledge Base & FAQ Connector</text>
+                                                </svg>
+                                            )
+                                        }
+                                    ];
+
+                                    return [0, 1, 2, 3, 4].map((i) => {
+                                        const cardIndex = (activeInsight - 2 + i + cardsList.length) % cardsList.length;
+                                        const item = cardsList[cardIndex];
+                                        const isActive = activeInsight === cardIndex;
+
+                                        return (
+                                            <motion.div
+                                                key={i}
+                                                className={`crm-insight-card ai-arc-card insight-card-${i} ${isActive ? 'active-card ai-active-card' : ''}`}
+                                                initial={{ opacity: 0 }}
+                                                whileInView={{ opacity: 1 }}
+                                                transition={{ duration: 0.6, delay: i * 0.15 }}
+                                                viewport={{ once: true }}
+                                                onClick={() => setActiveInsight(cardIndex)}
+                                            >
+                                                {i === 0 && (
+                                                    <button
+                                                        className="card-attached-arrow left"
+                                                        onClick={(e) => {
+                                                            e.stopPropagation();
+                                                            setActiveInsight((prev) => (prev + 1) % cardsList.length);
+                                                        }}
+                                                    >
+                                                        <FontAwesomeIcon icon={faChevronLeft} />
+                                                    </button>
+                                                )}
+                                                {i === 4 && (
+                                                    <button
+                                                        className="card-attached-arrow right"
+                                                        onClick={(e) => {
+                                                            e.stopPropagation();
+                                                            setActiveInsight((prev) => (prev - 1 + cardsList.length) % cardsList.length);
+                                                        }}
+                                                    >
+                                                        <FontAwesomeIcon icon={faChevronRight} />
+                                                    </button>
+                                                )}
+                                                <div className="cic-image-wrapper ai-svg-wrapper" style={{ background: item.imgBg }}>
+                                                    {item.visual}
+                                                </div>
+                                                <h3>{item.title}</h3>
+                                                <p>{item.desc}</p>
+                                                <div className="cic-line ai-cic-line" />
+                                            </motion.div>
+                                        );
+                                    });
+                                })()}
                             </div>
                         </div>
                         <motion.div className="crm-cta-strip ai-cta-strip" initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>

@@ -406,161 +406,269 @@ const LearningPage = () => {
                         </motion.div>
                         <div className="crm-insights-carousel-wrapper">
                             <div className="crm-insights-grid">
-                                {[
-                                    {
-                                        title: "AI Learning Recommendations",
-                                        desc: "The platform learns your unique learning pace and style to recommend the most relevant content and specialized courses. Our AI engine continuously adapts to your progress, ensuring you are always challenged.",
-                                        imgBg: "rgba(239,68,68,0.10)",
-                                        visual: (
-                                            <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="learn-card-svg">
-                                                {/* Book stack */}
-                                                <rect x="30" y="90" width="80" height="12" rx="3" fill="rgba(239,68,68,0.6)" stroke="#ef4444" strokeWidth="1" />
-                                                <rect x="34" y="75" width="72" height="12" rx="3" fill="rgba(239,68,68,0.45)" stroke="#ef4444" strokeWidth="1" />
-                                                <rect x="38" y="60" width="64" height="12" rx="3" fill="rgba(239,68,68,0.3)" stroke="#fca5a5" strokeWidth="1" />
-                                                {/* AI brain glowing on right */}
-                                                <circle cx="170" cy="70" r="32" fill="rgba(239,68,68,0.12)" stroke="#ef4444" strokeWidth="1.5" className="learn-brain-ring" />
-                                                <circle cx="170" cy="70" r="20" fill="rgba(239,68,68,0.25)" stroke="#fca5a5" strokeWidth="1" className="learn-brain-inner" />
-                                                {/* Brain squiggles */}
-                                                <path d="M158 65 Q163 58 170 65 Q177 58 182 65" stroke="#fca5a5" strokeWidth="1.5" fill="none" />
-                                                <path d="M157 72 Q162 80 170 72 Q178 80 183 72" stroke="#fca5a5" strokeWidth="1.5" fill="none" />
-                                                {/* Connecting sparks from book to brain */}
-                                                {[[115, 90], [130, 80], [145, 72]].map(([cx, cy], k) => (
-                                                    <circle key={k} cx={cx} cy={cy} r="3" fill="#ef4444" className={`learn-spark learn-spark-${k}`} />
-                                                ))}
-                                                <path d="M110 90 Q130 72 148 70" stroke="rgba(239,68,68,0.4)" strokeWidth="1.5" strokeDasharray="4 3" fill="none" className="learn-connect-dash" />
-                                                <text x="120" y="152" textAnchor="middle" fill="rgba(252,165,165,0.7)" fontSize="9" fontFamily="Inter,sans-serif">Personalised Learning Path</text>
-                                            </svg>
-                                        )
-                                    },
-                                    {
-                                        title: "Career Counselling Sessions",
-                                        desc: "Engage in 1:1 sessions with career coaches who map your strengths to industry opportunities. Our mentors provide actionable advice on interview techniques and career pathing to help you land your dream role.",
-                                        imgBg: "rgba(248,113,113,0.10)",
-                                        visual: (
-                                            <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="learn-card-svg">
-                                                {/* Student */}
-                                                <circle cx="65" cy="52" r="18" fill="rgba(239,68,68,0.2)" stroke="#ef4444" strokeWidth="1.5" />
-                                                <circle cx="65" cy="49" r="7" fill="#fca5a5" opacity="0.6" />
-                                                <path d="M47 70 Q65 82 83 70" fill="rgba(239,68,68,0.15)" stroke="#ef4444" strokeWidth="1" />
-                                                {/* Mentor */}
-                                                <circle cx="175" cy="52" r="18" fill="rgba(220,38,38,0.2)" stroke="#dc2626" strokeWidth="1.5" />
-                                                <circle cx="175" cy="49" r="7" fill="#fca5a5" opacity="0.6" />
-                                                <path d="M157 70 Q175 82 193 70" fill="rgba(220,38,38,0.15)" stroke="#dc2626" strokeWidth="1" />
-                                                {/* Chat bubbles exchanged */}
-                                                <path d="M88 40 Q110 28 132 40 Q132 54 114 54 L106 62 L108 54 Q88 54 88 40 Z" fill="rgba(239,68,68,0.2)" stroke="#fca5a5" strokeWidth="1" className="learn-bubble-l" />
-                                                <path d="M152 40 Q152 54 136 54 L128 62 L130 54 L130 54 Q120 54 120 40 Q130 28 152 40 Z" fill="rgba(220,38,38,0.2)" stroke="#fca5a5" strokeWidth="1" className="learn-bubble-r" />
-                                                {/* Stars/rating */}
-                                                {[100, 115, 130].map((x, k) => (
-                                                    <text key={k} x={x} y="100" textAnchor="middle" fill="#ef4444" fontSize="12" className={`learn-star learn-star-${k}`}>★</text>
-                                                ))}
-                                                <text x="120" y="152" textAnchor="middle" fill="rgba(252,165,165,0.7)" fontSize="9" fontFamily="Inter,sans-serif">Expert-Led 1:1 Mentorship</text>
-                                            </svg>
-                                        )
-                                    },
-                                    {
-                                        title: "Progress & Skill Analytics",
-                                        desc: "Track your course completion, quiz scores, and skill growth in a real-time dashboard. Gain deep insights with visualizations that highlight your mastery and identify areas for further improvement.",
-                                        imgBg: "rgba(239,68,68,0.15)",
-                                        visual: (
-                                            <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="learn-card-svg">
-                                                {/* Radial skill rings */}
-                                                {[45, 36, 27, 18].map((r, k) => (
-                                                    <circle key={k} cx="75" cy="80" r={r} fill="none" stroke={`rgba(239,68,68,${0.15 + k * 0.15})`} strokeWidth="8" strokeLinecap="round"
-                                                        strokeDasharray={`${[0.9, 0.7, 0.55, 0.85][k] * 2 * Math.PI * r} ${2 * Math.PI * r}`} strokeDashoffset={-10}
-                                                        className={`learn-ring learn-ring-${k}`} />
-                                                ))}
-                                                <text x="75" y="84" textAnchor="middle" fill="#ef4444" fontSize="11" fontWeight="bold">87%</text>
-                                                {/* Skill bars on right */}
-                                                {[{ label: "React", pct: 90 }, { label: "Python", pct: 70 }, { label: "Design", pct: 55 }, { label: "SQL", pct: 80 }].map((s, k) => (
-                                                    <g key={k}>
-                                                        <text x="135" y={30 + k * 26} fill="rgba(252,165,165,0.7)" fontSize="7">{s.label}</text>
-                                                        <rect x="135" y={35 + k * 26} width="80" height="8" rx="4" fill="rgba(239,68,68,0.1)" stroke="rgba(239,68,68,0.2)" strokeWidth="0.5" />
-                                                        <rect x="135" y={35 + k * 26} width={s.pct * 0.8} height="8" rx="4" fill="rgba(239,68,68,0.6)" className={`learn-skillbar learn-skillbar-${k}`} />
-                                                    </g>
-                                                ))}
-                                                <text x="120" y="152" textAnchor="middle" fill="rgba(252,165,165,0.7)" fontSize="9" fontFamily="Inter,sans-serif">Live Skill Growth Dashboard</text>
-                                            </svg>
-                                        )
-                                    },
-                                    {
-                                        title: "Secure & Verified Profiles",
-                                        desc: "Benefit from blockchain-verified certificates and encrypted profiles that global employers trust. We provide a secure environment for showcasing your achievements and credentials with potential recruiters.",
-                                        imgBg: "rgba(185,28,28,0.12)",
-                                        visual: (
-                                            <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="learn-card-svg">
-                                                {/* Certificate scroll */}
-                                                <rect x="50" y="30" width="100" height="80" rx="6" fill="rgba(239,68,68,0.15)" stroke="#ef4444" strokeWidth="1.5" />
-                                                <line x1="50" y1="50" x2="150" y2="50" stroke="rgba(252,165,165,0.3)" strokeWidth="1" />
-                                                <text x="100" y="45" textAnchor="middle" fill="rgba(252,165,165,0.6)" fontSize="7" fontWeight="600">CERTIFICATE</text>
-                                                {[65, 78, 91].map((y, k) => (
-                                                    <rect key={k} x="62" y={y} width={[60, 45, 52][k]} height="5" rx="2" fill="rgba(239,68,68,0.35)" className={`learn-cert-line learn-cert-line-${k}`} />
-                                                ))}
-                                                {/* Seal */}
-                                                <circle cx="120" cy="100" r="14" fill="rgba(220,38,38,0.4)" stroke="#ef4444" strokeWidth="1.5" className="learn-seal-spin" />
-                                                <text x="120" y="104" textAnchor="middle" fill="white" fontSize="8" fontWeight="bold">✓</text>
-                                                {/* Block chain links */}
-                                                {[[168, 40], [185, 55], [168, 70], [185, 85]].map(([cx, cy], k) => (
-                                                    <g key={k}>
-                                                        <rect x={cx - 8} y={cy - 6} width="16" height="12" rx="3" fill="rgba(239,68,68,0.25)" stroke="#fca5a5" strokeWidth="1" className={`learn-block learn-block-${k}`} />
-                                                        {k < 3 && <line x1={cx + (k % 2 === 0 ? 8 : -8)} y1={cy} x2={(k % 2 === 0 ? 185 : 168) - 8} y2={[55, 70, 85][k]} stroke="rgba(252,165,165,0.4)" strokeWidth="1" />}
-                                                    </g>
-                                                ))}
-                                                <text x="120" y="152" textAnchor="middle" fill="rgba(252,165,165,0.7)" fontSize="9" fontFamily="Inter,sans-serif">Blockchain-Verified Credentials</text>
-                                            </svg>
-                                        )
-                                    },
-                                    {
-                                        title: "Live Placement Pipeline",
-                                        desc: "Track your job applications, interview stages, and offer letters in one unified dashboard. We streamline your transition to professional life by providing tools to manage your career search effectively.",
-                                        imgBg: "rgba(220,38,38,0.12)",
-                                        visual: (
-                                            <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="learn-card-svg">
-                                                {/* Pipeline stages as funnel */}
-                                                {[
-                                                    { w: 180, y: 22, label: "Applied — 24 roles", c: "rgba(239,68,68,0.35)" },
-                                                    { w: 140, y: 48, label: "Shortlisted — 12", c: "rgba(239,68,68,0.5)" },
-                                                    { w: 100, y: 74, label: "Interviews — 6", c: "rgba(220,38,38,0.65)" },
-                                                    { w: 60, y: 100, label: "Offers — 2 ✓", c: "rgba(185,28,28,0.85)" },
-                                                ].map((s, k) => (
-                                                    <g key={k}>
-                                                        <rect x={(220 - s.w) / 2} y={s.y} width={s.w} height="18" rx="4" fill={s.c} className={`learn-funnel learn-funnel-${k}`} />
-                                                        <text x="120" y={s.y + 13} textAnchor="middle" fill="white" fontSize="7.5" fontWeight="500">{s.label}</text>
-                                                    </g>
-                                                ))}
-                                                {/* Trophy at bottom */}
-                                                <text x="120" y="138" textAnchor="middle" fill="#ef4444" fontSize="20" className="learn-trophy">🏆</text>
-                                                <text x="120" y="152" textAnchor="middle" fill="rgba(252,165,165,0.7)" fontSize="9" fontFamily="Inter,sans-serif">Your Placement Funnel</text>
-                                            </svg>
-                                        )
-                                    },
-                                ].map((item, i) => (
-                                    <motion.div
-                                        key={i}
-                                        className={`crm-insight-card learn-arc-card insight-card-${i} ${activeInsight === i ? 'active-card learn-active-card' : ''}`}
-                                        initial={{ opacity: 0 }}
-                                        whileInView={{ opacity: 1 }}
-                                        transition={{ duration: 0.6, delay: i * 0.15 }}
-                                        viewport={{ once: true }}
-                                        onClick={() => setActiveInsight(i)}
-                                    >
-                                        {i === 0 && (
-                                            <button className="card-attached-arrow left" onClick={(e) => { e.stopPropagation(); setActiveInsight(Math.max(0, activeInsight - 1)); }} style={{ opacity: activeInsight === 0 ? 0.3 : 1, pointerEvents: activeInsight === 0 ? 'none' : 'auto' }}>
-                                                <FontAwesomeIcon icon={faChevronLeft} />
-                                            </button>
-                                        )}
-                                        {i === 4 && (
-                                            <button className="card-attached-arrow right" onClick={(e) => { e.stopPropagation(); setActiveInsight(Math.min(4, activeInsight + 1)); }} style={{ opacity: activeInsight === 4 ? 0.3 : 1, pointerEvents: activeInsight === 4 ? 'none' : 'auto' }}>
-                                                <FontAwesomeIcon icon={faChevronRight} />
-                                            </button>
-                                        )}
-                                        <div className="cic-image-wrapper learn-svg-wrapper" style={{ background: item.imgBg }}>
-                                            {item.visual}
-                                        </div>
-                                        <h3>{item.title}</h3>
-                                        <p>{item.desc}</p>
-                                        <div className="cic-line learn-cic-line" />
-                                    </motion.div>
-                                ))}
+                                {(() => {
+                                    const cardsList = [
+                                        {
+                                            title: "AI Learning Recommendations",
+                                            desc: "The platform learns your unique learning pace and style to recommend the most relevant content and specialized courses. Our AI engine continuously adapts to your progress, ensuring you are always challenged.",
+                                            imgBg: "rgba(239,68,68,0.10)",
+                                            visual: (
+                                                <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="learn-card-svg">
+                                                    {/* Book stack */}
+                                                    <rect x="30" y="90" width="80" height="12" rx="3" fill="rgba(239,68,68,0.6)" stroke="#ef4444" strokeWidth="1" />
+                                                    <rect x="34" y="75" width="72" height="12" rx="3" fill="rgba(239,68,68,0.45)" stroke="#ef4444" strokeWidth="1" />
+                                                    <rect x="38" y="60" width="64" height="12" rx="3" fill="rgba(239,68,68,0.3)" stroke="#fca5a5" strokeWidth="1" />
+                                                    {/* AI brain glowing on right */}
+                                                    <circle cx="170" cy="70" r="32" fill="rgba(239,68,68,0.12)" stroke="#ef4444" strokeWidth="1.5" className="learn-brain-ring" />
+                                                    <circle cx="170" cy="70" r="20" fill="rgba(239,68,68,0.25)" stroke="#fca5a5" strokeWidth="1" className="learn-brain-inner" />
+                                                    {/* Brain squiggles */}
+                                                    <path d="M158 65 Q163 58 170 65 Q177 58 182 65" stroke="#fca5a5" strokeWidth="1.5" fill="none" />
+                                                    <path d="M157 72 Q162 80 170 72 Q178 80 183 72" stroke="#fca5a5" strokeWidth="1.5" fill="none" />
+                                                    {/* Connecting sparks from book to brain */}
+                                                    {[[115, 90], [130, 80], [145, 72]].map(([cx, cy], k) => (
+                                                        <circle key={k} cx={cx} cy={cy} r="3" fill="#ef4444" className={`learn-spark learn-spark-${k}`} />
+                                                    ))}
+                                                    <path d="M110 90 Q130 72 148 70" stroke="rgba(239,68,68,0.4)" strokeWidth="1.5" strokeDasharray="4 3" fill="none" className="learn-connect-dash" />
+                                                    <text x="120" y="152" textAnchor="middle" fill="rgba(252,165,165,0.7)" fontSize="9" fontFamily="Inter,sans-serif">Personalised Learning Path</text>
+                                                </svg>
+                                            )
+                                        },
+                                        {
+                                            title: "Career Counselling Sessions",
+                                            desc: "Engage in 1:1 sessions with career coaches who map your strengths to industry opportunities. Our mentors provide actionable advice on interview techniques and career pathing to help you land your dream role.",
+                                            imgBg: "rgba(248,113,113,0.10)",
+                                            visual: (
+                                                <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="learn-card-svg">
+                                                    {/* Student */}
+                                                    <circle cx="65" cy="52" r="18" fill="rgba(239,68,68,0.2)" stroke="#ef4444" strokeWidth="1.5" />
+                                                    <circle cx="65" cy="49" r="7" fill="#fca5a5" opacity="0.6" />
+                                                    <path d="M47 70 Q65 82 83 70" fill="rgba(239,68,68,0.15)" stroke="#ef4444" strokeWidth="1" />
+                                                    {/* Mentor */}
+                                                    <circle cx="175" cy="52" r="18" fill="rgba(220,38,38,0.2)" stroke="#dc2626" strokeWidth="1.5" />
+                                                    <circle cx="175" cy="49" r="7" fill="#fca5a5" opacity="0.6" />
+                                                    <path d="M157 70 Q175 82 193 70" fill="rgba(220,38,38,0.15)" stroke="#dc2626" strokeWidth="1" />
+                                                    {/* Chat bubbles exchanged */}
+                                                    <path d="M88 40 Q110 28 132 40 Q132 54 114 54 L106 62 L108 54 Q88 54 88 40 Z" fill="rgba(239,68,68,0.2)" stroke="#fca5a5" strokeWidth="1" className="learn-bubble-l" />
+                                                    <path d="M152 40 Q152 54 136 54 L128 62 L130 54 L130 54 Q120 54 120 40 Q130 28 152 40 Z" fill="rgba(220,38,38,0.2)" stroke="#fca5a5" strokeWidth="1" className="learn-bubble-r" />
+                                                    {/* Stars/rating */}
+                                                    {[100, 115, 130].map((x, k) => (
+                                                        <text key={k} x={x} y="100" textAnchor="middle" fill="#ef4444" fontSize="12" className={`learn-star learn-star-${k}`}>★</text>
+                                                    ))}
+                                                    <text x="120" y="152" textAnchor="middle" fill="rgba(252,165,165,0.7)" fontSize="9" fontFamily="Inter,sans-serif">Expert-Led 1:1 Mentorship</text>
+                                                </svg>
+                                            )
+                                        },
+                                        {
+                                            title: "Progress & Skill Analytics",
+                                            desc: "Track your course completion, quiz scores, and skill growth in a real-time dashboard. Gain deep insights with visualizations that highlight your mastery and identify areas for further improvement.",
+                                            imgBg: "rgba(239,68,68,0.15)",
+                                            visual: (
+                                                <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="learn-card-svg">
+                                                    {/* Radial skill rings */}
+                                                    {[45, 36, 27, 18].map((r, k) => (
+                                                        <circle key={k} cx="75" cy="80" r={r} fill="none" stroke={`rgba(239,68,68,${0.15 + k * 0.15})`} strokeWidth="8" strokeLinecap="round"
+                                                            strokeDasharray={`${[0.9, 0.7, 0.55, 0.85][k] * 2 * Math.PI * r} ${2 * Math.PI * r}`} strokeDashoffset={-10}
+                                                            className={`learn-ring learn-ring-${k}`} />
+                                                    ))}
+                                                    <text x="75" y="84" textAnchor="middle" fill="#ef4444" fontSize="11" fontWeight="bold">87%</text>
+                                                    {/* Skill bars on right */}
+                                                    {[{ label: "React", pct: 90 }, { label: "Python", pct: 70 }, { label: "Design", pct: 55 }, { label: "SQL", pct: 80 }].map((s, k) => (
+                                                        <g key={k}>
+                                                            <text x="135" y={30 + k * 26} fill="rgba(252,165,165,0.7)" fontSize="7">{s.label}</text>
+                                                            <rect x="135" y={35 + k * 26} width="80" height="8" rx="4" fill="rgba(239,68,68,0.1)" stroke="rgba(239,68,68,0.2)" strokeWidth="0.5" />
+                                                            <rect x="135" y={35 + k * 26} width={s.pct * 0.8} height="8" rx="4" fill="rgba(239,68,68,0.6)" className={`learn-skillbar learn-skillbar-${k}`} />
+                                                        </g>
+                                                    ))}
+                                                    <text x="120" y="152" textAnchor="middle" fill="rgba(252,165,165,0.7)" fontSize="9" fontFamily="Inter,sans-serif">Live Skill Growth Dashboard</text>
+                                                </svg>
+                                            )
+                                        },
+                                        {
+                                            title: "Secure & Verified Profiles",
+                                            desc: "Benefit from blockchain-verified certificates and encrypted profiles that global employers trust. We provide a secure environment for showcasing your achievements and credentials with potential recruiters.",
+                                            imgBg: "rgba(185,28,28,0.12)",
+                                            visual: (
+                                                <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="learn-card-svg">
+                                                    {/* Certificate scroll */}
+                                                    <rect x="50" y="30" width="100" height="80" rx="6" fill="rgba(239,68,68,0.15)" stroke="#ef4444" strokeWidth="1.5" />
+                                                    <line x1="50" y1="50" x2="150" y2="50" stroke="rgba(252,165,165,0.3)" strokeWidth="1" />
+                                                    <text x="100" y="45" textAnchor="middle" fill="rgba(252,165,165,0.6)" fontSize="7" fontWeight="600">CERTIFICATE</text>
+                                                    {[65, 78, 91].map((y, k) => (
+                                                        <rect key={k} x="62" y={y} width={[60, 45, 52][k]} height="5" rx="2" fill="rgba(239,68,68,0.35)" className={`learn-cert-line learn-cert-line-${k}`} />
+                                                    ))}
+                                                    {/* Seal */}
+                                                    <circle cx="120" cy="100" r="14" fill="rgba(220,38,38,0.4)" stroke="#ef4444" strokeWidth="1.5" className="learn-seal-spin" />
+                                                    <text x="120" y="104" textAnchor="middle" fill="white" fontSize="8" fontWeight="bold">✓</text>
+                                                    {/* Block chain links */}
+                                                    {[[168, 40], [185, 55], [168, 70], [185, 85]].map(([cx, cy], k) => (
+                                                        <g key={k}>
+                                                            <rect x={cx - 8} y={cy - 6} width="16" height="12" rx="3" fill="rgba(239,68,68,0.25)" stroke="#fca5a5" strokeWidth="1" className={`learn-block learn-block-${k}`} />
+                                                            {k < 3 && <line x1={cx + (k % 2 === 0 ? 8 : -8)} y1={cy} x2={(k % 2 === 0 ? 185 : 168) - 8} y2={[55, 70, 85][k]} stroke="rgba(252,165,165,0.4)" strokeWidth="1" />}
+                                                        </g>
+                                                    ))}
+                                                    <text x="120" y="152" textAnchor="middle" fill="rgba(252,165,165,0.7)" fontSize="9" fontFamily="Inter,sans-serif">Blockchain-Verified Credentials</text>
+                                                </svg>
+                                            )
+                                        },
+                                        {
+                                            title: "Live Placement Pipeline",
+                                            desc: "Track your job applications, interview stages, and offer letters in one unified dashboard. We streamline your transition to professional life by providing tools to manage your career search effectively.",
+                                            imgBg: "rgba(220,38,38,0.12)",
+                                            visual: (
+                                                <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="learn-card-svg">
+                                                    {/* Pipeline stages as funnel */}
+                                                    {[
+                                                        { w: 180, y: 22, label: "Applied — 24 roles", c: "rgba(239,68,68,0.35)" },
+                                                        { w: 140, y: 48, label: "Shortlisted — 12", c: "rgba(239,68,68,0.5)" },
+                                                        { w: 100, y: 74, label: "Interviews — 6", c: "rgba(220,38,38,0.65)" },
+                                                        { w: 60, y: 100, label: "Offers — 2 ✓", c: "rgba(185,28,28,0.85)" },
+                                                    ].map((s, k) => (
+                                                        <g key={k}>
+                                                            <rect x={(220 - s.w) / 2} y={s.y} width={s.w} height="18" rx="4" fill={s.c} className={`learn-funnel learn-funnel-${k}`} />
+                                                            <text x="120" y={s.y + 13} textAnchor="middle" fill="white" fontSize="7.5" fontWeight="500">{s.label}</text>
+                                                        </g>
+                                                    ))}
+                                                    {/* Trophy at bottom */}
+                                                    <text x="120" y="138" textAnchor="middle" fill="#ef4444" fontSize="20" className="learn-trophy">🏆</text>
+                                                    <text x="120" y="152" textAnchor="middle" fill="rgba(252,165,165,0.7)" fontSize="9" fontFamily="Inter,sans-serif">Your Placement Funnel</text>
+                                                </svg>
+                                            )
+                                        },
+                                        {
+                                            title: "Active Peer Coding Group",
+                                            desc: "Engage in collaborative code reviews, group projects, and pair programming assignments. Solve complex challenges together with your batchmates, building robust collaboration skills essential for modern tech teams.",
+                                            imgBg: "rgba(239,68,68,0.12)",
+                                            visual: (
+                                                <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="learn-card-svg">
+                                                    {/* Connecting users in a circle */}
+                                                    <circle cx="120" cy="70" r="38" fill="none" stroke="rgba(239,68,68,0.2)" strokeWidth="1.5" strokeDasharray="5 3" />
+                                                    
+                                                    {/* Left User */}
+                                                    <circle cx="82" cy="70" r="10" fill="rgba(239,68,68,0.25)" stroke="#ef4444" strokeWidth="1" />
+                                                    <circle cx="82" cy="67" r="4" fill="#fca5a5" />
+                                                    
+                                                    {/* Right User */}
+                                                    <circle cx="158" cy="70" r="10" fill="rgba(239,68,68,0.25)" stroke="#ef4444" strokeWidth="1" />
+                                                    <circle cx="158" cy="67" r="4" fill="#fca5a5" />
+                                                    
+                                                    {/* Top User */}
+                                                    <circle cx="120" cy="32" r="10" fill="rgba(220,38,38,0.25)" stroke="#dc2626" strokeWidth="1" />
+                                                    <circle cx="120" cy="29" r="4" fill="#fca5a5" />
+                                                    
+                                                    {/* Bottom User */}
+                                                    <circle cx="120" cy="108" r="10" fill="rgba(220,38,38,0.25)" stroke="#dc2626" strokeWidth="1" />
+                                                    <circle cx="120" cy="105" r="4" fill="#fca5a5" />
+                                                    
+                                                    {/* Shared code bracket in middle */}
+                                                    <text x="120" y="74" textAnchor="middle" fill="#ef4444" fontSize="16" fontWeight="bold">&lt;/&gt;</text>
+                                                    <text x="120" y="152" textAnchor="middle" fill="rgba(252,165,165,0.7)" fontSize="9" fontFamily="Inter,sans-serif">Collaborative Dev Environment</text>
+                                                </svg>
+                                            )
+                                        },
+                                        {
+                                            title: "Mock Technical Interviews",
+                                            desc: "Solve structural algorithmic problems and design large-scale systems under timed simulation. Get detailed score sheets, key improvements, and custom recommendations to pass challenging technical rounds.",
+                                            imgBg: "rgba(248,113,113,0.12)",
+                                            visual: (
+                                                <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="learn-card-svg">
+                                                    {/* Whiteboard with system design */}
+                                                    <rect x="40" y="30" width="160" height="90" rx="4" fill="rgba(239,68,68,0.12)" stroke="#ef4444" strokeWidth="1.5" />
+                                                    
+                                                    {/* DB representation */}
+                                                    <rect x="52" y="65" width="28" height="35" rx="3" fill="none" stroke="#ef4444" strokeWidth="1.2" />
+                                                    <ellipse cx="66" cy="72" rx="10" ry="3" fill="none" stroke="#ef4444" strokeWidth="1.2" />
+                                                    <path d="M56 72 L56 82 Q66 86 76 82 L76 72" fill="none" stroke="#ef4444" strokeWidth="1.2" />
+                                                    
+                                                    {/* Server boxes */}
+                                                    <rect x="136" y="45" width="48" height="18" rx="2" fill="rgba(239,68,68,0.2)" stroke="#ef4444" strokeWidth="1" />
+                                                    <text x="160" y="56" textAnchor="middle" fill="#fca5a5" fontSize="7">API Gate</text>
+                                                    
+                                                    <rect x="136" y="85" width="48" height="18" rx="2" fill="rgba(239,68,68,0.2)" stroke="#ef4444" strokeWidth="1" />
+                                                    <text x="160" y="96" textAnchor="middle" fill="#fca5a5" fontSize="7">Worker</text>
+                                                    
+                                                    {/* Connection lines */}
+                                                    <path d="M80 82 H110 V54 H136" stroke="#ef4444" strokeWidth="1.2" fill="none" strokeDasharray="3 2" />
+                                                    <path d="M110 82 V94 H136" stroke="#ef4444" strokeWidth="1.2" fill="none" strokeDasharray="3 2" />
+                                                    
+                                                    <text x="120" y="152" textAnchor="middle" fill="rgba(252,165,165,0.7)" fontSize="9" fontFamily="Inter,sans-serif">System Design Whiteboard</text>
+                                                </svg>
+                                            )
+                                        },
+                                        {
+                                            title: "Project Portfolio Showcase",
+                                            desc: "Deploy live applications directly to our showcase environment. Share your interactive works, receive feedback from the developer community, and showcase functional code to potential hiring partners.",
+                                            imgBg: "rgba(220,38,38,0.12)",
+                                            visual: (
+                                                <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="learn-card-svg">
+                                                    {/* Browser screen mockup */}
+                                                    <rect x="45" y="30" width="150" height="90" rx="5" fill="rgba(239,68,68,0.1)" stroke="#ef4444" strokeWidth="1.5" />
+                                                    <circle cx="55" cy="38" r="2.5" fill="#ef4444" />
+                                                    <circle cx="63" cy="38" r="2.5" fill="#fca5a5" />
+                                                    <circle cx="71" cy="38" r="2.5" fill="rgba(239,68,68,0.3)" />
+                                                    
+                                                    {/* Displaying project image + title */}
+                                                    <rect x="58" y="52" width="70" height="52" rx="3" fill="rgba(239,68,68,0.25)" stroke="#ef4444" strokeWidth="1" />
+                                                    <line x1="68" y1="78" x2="118" y2="78" stroke="#ef4444" strokeWidth="1.5" />
+                                                    <circle cx="93" cy="68" r="8" fill="rgba(252,165,165,0.4)" />
+                                                    
+                                                    {/* Text detail */}
+                                                    <rect x="136" y="56" width="48" height="6" rx="2" fill="rgba(252,165,165,0.5)" />
+                                                    <rect x="136" y="70" width="40" height="6" rx="2" fill="rgba(252,165,165,0.5)" />
+                                                    <rect x="136" y="84" width="44" height="6" rx="2" fill="rgba(239,68,68,0.5)" />
+                                                    
+                                                    <text x="120" y="152" textAnchor="middle" fill="rgba(252,165,165,0.7)" fontSize="9" fontFamily="Inter,sans-serif">Live Code Project Showcase</text>
+                                                </svg>
+                                            )
+                                        }
+                                    ];
+
+                                    return [0, 1, 2, 3, 4].map((i) => {
+                                        const cardIndex = (activeInsight - 2 + i + cardsList.length) % cardsList.length;
+                                        const item = cardsList[cardIndex];
+                                        const isActive = activeInsight === cardIndex;
+
+                                        return (
+                                            <motion.div
+                                                key={i}
+                                                className={`crm-insight-card learn-arc-card insight-card-${i} ${isActive ? 'active-card learn-active-card' : ''}`}
+                                                initial={{ opacity: 0 }}
+                                                whileInView={{ opacity: 1 }}
+                                                transition={{ duration: 0.6, delay: i * 0.15 }}
+                                                viewport={{ once: true }}
+                                                onClick={() => setActiveInsight(cardIndex)}
+                                            >
+                                                {i === 0 && (
+                                                    <button
+                                                        className="card-attached-arrow left"
+                                                        onClick={(e) => {
+                                                            e.stopPropagation();
+                                                            setActiveInsight((prev) => (prev + 1) % cardsList.length);
+                                                        }}
+                                                    >
+                                                        <FontAwesomeIcon icon={faChevronLeft} />
+                                                    </button>
+                                                )}
+                                                {i === 4 && (
+                                                    <button
+                                                        className="card-attached-arrow right"
+                                                        onClick={(e) => {
+                                                            e.stopPropagation();
+                                                            setActiveInsight((prev) => (prev - 1 + cardsList.length) % cardsList.length);
+                                                        }}
+                                                    >
+                                                        <FontAwesomeIcon icon={faChevronRight} />
+                                                    </button>
+                                                )}
+                                                <div className="cic-image-wrapper learn-svg-wrapper" style={{ background: item.imgBg }}>
+                                                    {item.visual}
+                                                </div>
+                                                <h3>{item.title}</h3>
+                                                <p>{item.desc}</p>
+                                                <div className="cic-line learn-cic-line" />
+                                            </motion.div>
+                                        );
+                                    });
+                                })()}
                             </div>
                         </div>
                         <motion.div className="crm-cta-strip learn-cta-strip" initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>

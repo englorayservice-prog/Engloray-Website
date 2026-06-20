@@ -560,7 +560,7 @@ body {
 .GD-course-horizontal-section {
     position: relative;
     background: transparent;
-    padding: 0.5rem 1rem 0.5rem 1rem;
+    padding: 0 1rem 0.5rem 1rem !important;
     /* Removed top padding */
     min-height: auto;
     width: 100%;
@@ -594,7 +594,8 @@ body {
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 1rem !important;
+    padding-top: 0 !important;
     display: flex;
     flex-direction: column;
 }
@@ -603,6 +604,8 @@ body {
 .GD-course-header-row {
     display: flex;
     align-items: flex-start;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
     margin-bottom: 3rem;
     width: 100%;
     position: relative;
@@ -4720,13 +4723,16 @@ body {
 .GD-dn-v-text {
     writing-mode: vertical-rl;
     transform: rotate(180deg);
-    white-space: nowrap;
+    white-space: normal;
+    max-height: calc(100% - 65px);
+    display: block;
+    text-align: center;
     padding-bottom: 0px;
-    padding-left: 15px;
-    /* Increased for left shift as requested */
+    padding-left: 0px;
     font-size: 1.1rem;
     font-weight: 700;
     letter-spacing: 1.5px;
+    line-height: 1.2;
 }
 
 .GD-dn-v-num {
@@ -4931,6 +4937,13 @@ body {
     justify-content: center;
     text-decoration: none;
     font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.GD-dn-social-icon:hover {
+    transform: scale(1.15);
+    filter: brightness(1.2);
 }
 
 .GD-dn-social-behance {
@@ -5090,7 +5103,7 @@ body {
 
 /* --- Dream Team / Testimonials Section --- */
 .GD-dt-section {
-    padding: 3rem 2rem 6rem;
+    padding: 1.5rem 2rem 2.2rem;
     background-color: #fcfdfe;
     /* subtle off-white */
     position: relative;
@@ -5562,7 +5575,7 @@ body {
 .GD-new-benefits-section {
     position: relative;
     background: linear-gradient(135deg, #f8faff 0%, #edf1ff 100%);
-    padding: 6rem 2rem;
+    padding: 3rem 2rem 3.5rem 2rem;
     overflow: hidden;
     width: 100%;
 }
@@ -6522,6 +6535,7 @@ body {
         white-space: normal !important;
         text-align: center !important;
         display: block !important;
+        max-height: none !important;
     }
 
     .GD-dn-v-num {
@@ -6575,7 +6589,7 @@ body {
 
     /* Dream Team (Testimonials) Responsive Overrides */
     .GD-dt-section {
-        padding: 4rem 0 !important;
+        padding: 2rem 0 !important;
         background-color: #fcfdfe !important;
         overflow: hidden !important;
     }
@@ -6587,7 +6601,7 @@ body {
 
     .GD-dt-header {
         padding: 0 1.5rem !important;
-        margin-bottom: 3rem !important;
+        margin-bottom: 1.5rem !important;
         text-align: center !important;
         display: block !important;
     }
@@ -6611,7 +6625,7 @@ body {
     }
 
     .GD-dt-cards-wrapper {
-        padding: 3rem 0 !important;
+        padding: 1.5rem 0 !important;
         margin-top: 1rem !important;
         -webkit-mask-image: none !important;
         mask-image: none !important;
@@ -7028,5 +7042,237 @@ body {
     .GD-hero-typography>* {
         margin: 0 !important;
         line-height: 0.9 !important;
+    }
+}
+
+@media (min-width: 1440px) {
+    .GD-course-horizontal-section {
+        min-height: 55rem;
+        padding-bottom: 0rem !important;
+    }
+
+    /* Fluid scaling for cards to fill the space and move container top */
+    .GD-course-horizontal-container {
+        max-width: 100% !important;
+        padding-left: 8rem !important;
+        padding-right: 8rem !important;
+        padding-top: 0 !important;
+        margin-top: -2rem !important;
+        /* Move container top */
+    }
+
+    /* Reduce the height of the bottom background */
+    .GD-course-background-bottom {
+        height: 42% !important;
+    }
+
+    /* Fluid scaling for Dream Navigator Section */
+    .GD-dream-navigator-section {
+        padding-left: 6rem !important;
+        padding-right: 6rem !important;
+    }
+
+    .GD-dn-container {
+        max-width: 100% !important;
+    }
+
+    .GD-dn-title {
+        font-size: clamp(2.2rem, 3.8vw, 4.2rem) !important;
+    }
+
+    .GD-dn-title-line2 {
+        gap: 1.5rem !important;
+        margin-top: 1rem !important;
+    }
+
+    .GD-dream-navigator-section .GD-split-action-btn {
+        font-size: 1.1rem !important;
+        padding: 1.5rem 1.8rem !important;
+    }
+
+    .GD-dream-navigator-section .GD-dn-icon-sparkle,
+    .GD-dream-navigator-section .GD-dn-icon-sparkle-outline {
+        width: 36px !important;
+        height: 36px !important;
+    }
+
+    .GD-dn-header-right {
+        flex: 0 0 420px !important;
+        font-size: 1.1rem !important;
+        line-height: 1.5 !important;
+        padding-top: 1.5rem !important;
+    }
+
+    /* Fluid scaling and size adjustment for Influencer Section */
+    .GD-section.GD-influencer-section {
+        padding-top: 3.5rem !important;
+        padding-bottom: 3.5rem !important;
+    }
+
+    .GD-influencer-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        padding: 0 4rem !important;
+        position: relative !important;
+        left: -5rem !important;
+    }
+
+    .GD-influencer-content {
+        width: 100% !important;
+    }
+
+    .GD-influencer-split {
+        width: 100% !important;
+        gap: 6rem !important;
+    }
+
+    .GD-influencer-left {
+        flex: 1 1 65% !important;
+        max-width: 65% !important;
+    }
+
+    .GD-influencer-title {
+        font-size: 5rem !important;
+        letter-spacing: -1.5px !important;
+    }
+
+    .GD-search-badge {
+        height: 60px !important;
+        font-size: 1.6rem !important;
+        padding: 0 1.6rem !important;
+        margin: 0 0.8rem !important;
+    }
+
+    .GD-influencer-avatars img {
+        width: 72px !important;
+        height: 72px !important;
+        border-width: 2.5px !important;
+        margin-left: -15px !important;
+    }
+
+    .GD-influencer-avatars img:first-child {
+        margin-left: 0 !important;
+    }
+
+    .GD-see-how-card {
+        width: 320px !important;
+        height: 235px !important;
+        padding: 2.2rem !important;
+        border-radius: 28px !important;
+    }
+
+    .GD-video-circle {
+        width: 52px !important;
+        height: 52px !important;
+        font-size: 1.3rem !important;
+    }
+
+    .GD-arrow-circle {
+        font-size: 2rem !important;
+    }
+
+    .GD-see-how-text {
+        font-size: 2rem !important;
+        margin: 0 !important;
+        line-height: 1.2 !important;
+    }
+
+    .GD-dn-dash-card {
+        justify-content: center !important;
+        padding: 1.8rem 1.5rem !important;
+        gap: 1.5rem !important;
+    }
+
+    .GD-dn-dash-icon {
+        width: 55px !important;
+        height: 55px !important;
+        border-radius: 14px !important;
+        font-size: 1.3rem !important;
+    }
+
+    .GD-dn-dash-icon svg {
+        width: 24px !important;
+        height: 24px !important;
+    }
+
+    .GD-dn-dash-label {
+        font-size: 0.95rem !important;
+    }
+
+    .GD-dn-dash-value {
+        font-size: 1.5rem !important;
+        margin-top: 2px !important;
+    }
+
+    /* Fluid scaling for Gallery Section */
+    .GD-new-gallery-section {
+        padding-left: 6rem !important;
+        padding-right: 6rem !important;
+    }
+
+    .GD-Gallery-container-new {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .GD-Gallery-grid-new {
+        grid-template-columns: 1.45fr 1fr 1fr !important;
+    }
+
+    .GD-Gallery-large-title-new {
+        font-size: 1.8rem !important;
+    }
+
+    .GD-Gallery-medium-title-new {
+        font-size: 1.5rem !important;
+    }
+
+    .GD-Gallery-small-title-new {
+        font-size: 1.3rem !important;
+    }
+
+    .GD-Gallery-badge-new {
+        font-size: 0.9rem !important;
+    }
+
+    .GD-Gallery-badge-text-new {
+        font-size: 0.9rem !important;
+    }
+
+    .GD-Gallery-small-date-new {
+        font-size: 0.9rem !important;
+    }
+
+    /* Fluid scaling for Benefits Section */
+    .GD-new-benefits-section {
+        padding-left: 6rem !important;
+        padding-right: 6rem !important;
+        padding-bottom: 3.5rem !important;
+    }
+
+    .GD-benefits-container-new {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+
+    .GD-section-subtitle {
+        font-size: clamp(1.2rem, 1.5vw, 1.45rem) !important;
+        max-width: 850px !important;
+        line-height: 1.6 !important;
+    }
+
+    /* Fluid scaling for Testimonials (Dream Team) Section */
+    .GD-dt-section {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        padding-top: 1.5rem !important;
+        padding-bottom: 2.2rem !important;
+    }
+
+    .GD-dt-container {
+        max-width: 100% !important;
+        width: 100% !important;
     }
 }
