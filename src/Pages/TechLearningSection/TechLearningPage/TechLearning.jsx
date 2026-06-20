@@ -9,6 +9,7 @@ import Courses from '../Courses/Courses';
 import LearningExperience from '../LearningExperience/LearningExperience';
 import StudentTestimonials from '../StudentTestimonials/StudentTestimonials';
 import LearningFeatures from '../LearningFeatures/LearningFeatures';
+import TechPortalGateway from '../TechPortalGateway/TechPortalGateway';
 import TechCta from '../TechCta/TechCta';
 import SubFooterTwo from '../../../Pages/Sub Pages/subFooterTwo/NewFooter'
 
@@ -24,6 +25,7 @@ const TechLearning = () => {
             <LearningExperience />
             <StudentTestimonials />
             <LearningFeatures />
+            <TechPortalGateway />
             <TechCta />
             <SubFooterTwo />
             <BackToTop />

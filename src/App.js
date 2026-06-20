@@ -94,6 +94,7 @@ import ScrollToTop from './Components/ScrollToTop/ScrollToTop';
 
 
 import HomePage from './Pages/HomePage/HomePage';
+import EnglorayPortalPage from './Pages/Sub Pages/EnglorayPortalPage/EnglorayPortalPage';
 
 function App() {
   return (
@@ -192,6 +193,7 @@ function App() {
           <Route path="/businessSuiteAiPage" element={<BusinessSuiteAI />} />
         <Route path="/showcase" element={<EnglorayShowcase />} />
         <Route path="/StatsAndBenefitsPage" element={<StatsAndBenefits />} />
+        <Route path="/admissionPortal" element={<EnglorayPortalPage />} />
 
 
 

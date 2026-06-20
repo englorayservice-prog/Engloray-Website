@@ -34,7 +34,8 @@ import {
     faTools,
     faTrophy,
     faInfoCircle,
-    faClock
+    faClock,
+    faGem
 } from '@fortawesome/free-solid-svg-icons';
 import './SalesExecutiveInternPage.css';
 // Old benefits imports removed
@@ -72,12 +73,15 @@ import BenefitsFooter from '../../TechGroupSection/BenfitsFooter/BenifitsFooter'
 
 
 
-import pathOne from '../../../assets/resources file/resources file/TECH/GRAPHICS DESIGNERS/Design Tools & Technology.pdf';
-import pathTwo from '../../../assets/resources file/resources file/TECH/GRAPHICS DESIGNERS/Graphic Designer Benefits.pdf';
-import pathFive from '../../../assets/resources file/resources file/TECH/GRAPHICS DESIGNERS/Learning, Skill Development & Growth.pdf';
-import pathSix from '../../../assets/resources file/resources file/TECH/GRAPHICS DESIGNERS/Productivity, AI & Workflow Support.pdf';
+import pathOne from '../../../assets/resources file/resources file/TECH/Sales executive/Sales Strategy & CRM Tools.pdf';
+import pathTwo from '../../../assets/resources file/resources file/TECH/Sales executive/Sales Executive Benefits.pdf';
+import pathThree from '../../../assets/resources file/resources file/TECH/Sales executive/Prospecting & Script Pack.pdf';
+import pathFour from '../../../assets/resources file/resources file/TECH/Sales executive/Client Proposal Templates.pdf';
+import pathFive from '../../../assets/resources file/resources file/TECH/Sales executive/Negotiation & Growth Strategies locked.pdf';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import { Helmet } from 'react-helmet';
+
+const pathSix = null;
 
 const SalesExecutiveInternPage = () => {
     const [activeSection, setActiveSection] = useState('home');
@@ -124,8 +128,19 @@ const SalesExecutiveInternPage = () => {
         const updateScale = () => {
             const designWidth = 1440;
             const currentWidth = window.innerWidth;
-            const newScale = currentWidth / designWidth;
-            setScale(newScale);
+
+            if (currentWidth > 1440) {
+                // Use fluid scaling for screens wider than 1440px (no scale transform)
+                setScale(1);
+            } else if (currentWidth >= 1024) {
+                // Scale down for standard desktop screens down to 1024px
+                const newScale = currentWidth / designWidth;
+                setScale(newScale);
+            } else {
+                // For mobile/tablet, stay at scale 1 and let CSS handle responsiveness
+                setScale(1);
+            }
+
             if (scalingRef.current) {
                 setContentHeight(scalingRef.current.offsetHeight);
             }
@@ -303,18 +318,21 @@ const SalesExecutiveInternPage = () => {
             description: "March 8, 2022",
             icon: <FontAwesomeIcon icon={faComments} />,
             url: outreachImg,
+            benefit: "Lead Generation"
         },
         {
             title: "Pitch Presentation Room",
             description: "March 8, 2022",
             icon: <FontAwesomeIcon icon={faRocket} />,
             url: pitchImg,
+            benefit: "Objection Handling"
         },
         {
             url: "http://images.unsplash.com/photo-1552581234-26160f608093?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
             title: "Sales Performance Review",
             description: "March 8, 2022",
-            icon: <FontAwesomeIcon icon={faBullseye} />
+            icon: <FontAwesomeIcon icon={faBullseye} />,
+            benefit: "Funnel Optimization"
         },
         {
             url: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
@@ -366,19 +384,19 @@ const SalesExecutiveInternPage = () => {
             icon: <FontAwesomeIcon icon={faComments} />,
             isRestricted: false,
             fileName: "Prospecting & Script Pack.pdf",
-            localPath: pathOne
+            localPath: pathThree
         },
         {
             id: 4,
             title: "Client Proposal Templates",
             description: "Professional, customizable proposal and presentation templates for B2B and SaaS sales. Learn how to structure pricing, showcase ROI, and address common client pain points visually and strategically to increase your win rate and shorten the overall sales cycle significantly.",
-            type: "zip",
-            size: "22 MB",
+            type: "pdf",
+            size: "0.4 MB",
             downloads: 1980,
             icon: <FontAwesomeIcon icon={faFileAlt} />,
             isRestricted: false,
-            fileName: "Client Proposal Templates.zip",
-            localPath: pathOne
+            fileName: "Client Proposal Templates.pdf",
+            localPath: pathFour
         },
         {
             id: 5,
@@ -389,7 +407,7 @@ const SalesExecutiveInternPage = () => {
             downloads: 1420,
             icon: <FontAwesomeIcon icon={faMoneyBillWave} />,
             isRestricted: true,
-            fileName: "Negotiation & Growth Strategies.pdf",
+            fileName: "Negotiation & Growth Strategies locked.pdf",
             localPath: pathFive
         },
         {
@@ -570,6 +588,48 @@ const SalesExecutiveInternPage = () => {
         } catch (error) {
             console.error('Download error:', error);
             setToastMessage(`❌ Error downloading ${resourceTitle}. File might not exist.`);
+        }
+    };
+
+    const handleDownloadAllResources = () => {
+        let count = 0;
+        courseResources.forEach((resource, index) => {
+            if (!resource.isRestricted && resource.localPath) {
+                setTimeout(() => {
+                    const link = document.createElement('a');
+                    link.href = resource.localPath;
+                    link.download = resource.fileName || `${resource.title}.pdf`;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    
+                    if (!downloadedResources.includes(resource.id)) {
+                        setDownloadedResources(prev => [...prev, resource.id]);
+                    }
+                }, count * 350);
+                count++;
+            }
+        });
+        if (count > 0) {
+            setToastMessage(`✅ Downloading all ${count} free resources...`);
+        } else {
+            setToastMessage(`❌ No free resources available to download.`);
+        }
+    };
+
+    const handleShowDownloadHistory = () => {
+        if (downloadedResources.length === 0) {
+            setToastMessage("🏆 You haven't downloaded any resources yet. Start downloading below!");
+        } else {
+            const downloadedTitles = courseResources
+                .filter(res => downloadedResources.includes(res.id))
+                .map(res => res.title);
+            
+            if (downloadedTitles.length > 0) {
+                setToastMessage(`🏆 Downloaded resources: ${downloadedTitles.join(', ')}`);
+            } else {
+                setToastMessage("🏆 You haven't downloaded any resources yet. Start downloading below!");
+            }
         }
     };
 
@@ -768,8 +828,8 @@ const SalesExecutiveInternPage = () => {
                     className="SE-scaling-outer-wrapper"
                     style={{
                         width: '100%',
-                        height: contentHeight * scale,
-                        overflow: 'hidden',
+                        height: scale === 1 ? 'auto' : contentHeight * scale,
+                        overflow: scale === 1 ? 'visible' : 'hidden',
                         backgroundColor: '#000000',
                         position: 'relative'
                     }}
@@ -778,13 +838,13 @@ const SalesExecutiveInternPage = () => {
                         ref={scalingRef}
                         className="SE-scaling-inner-container"
                         style={{
-                            width: '1440px',
-                            transform: `scale(${scale})`,
+                            width: scale === 1 ? '100%' : '1440px',
+                            transform: scale === 1 ? 'none' : `scale(${scale})`,
                             transformOrigin: 'top left',
-                            position: 'absolute',
+                            position: scale === 1 ? 'relative' : 'absolute',
                             top: 0,
                             left: 0,
-                            backgroundColor: '#000000'
+                            backgroundColor: '#e8e8e8' // Match hero bg to avoid black bars
                         }}
                     >
                         <div>
@@ -1192,15 +1252,45 @@ const SalesExecutiveInternPage = () => {
                   </p>
                   <button className="SE-banner-register-btn" onClick={() => setShowForm(true)}>
                     <FontAwesomeIcon icon={faRocket} /> Register Now
-                  </button>
-                </div>
-              </div>
-            )} */}
-                    {/* </div>
-        </section> */}
-
-                    {/* Dream Navigator Section */}
-
+                    {/* Sales Strategy & Performance Support Header Section */}
+                    <section className="SE-section SE-dream-navigator-section">
+                        <div className="SE-dn-container">
+                            {/* Top Header Row */}
+                            <div className="SE-dn-header-row">
+                                <div className="SE-dn-header-left">
+                                    <h2 className="SE-dn-title">
+                                        <div className="SE-dn-title-line1">
+                                            Sales Strategy &
+                                            <svg className="SE-dn-icon-sparkle" viewBox="0 0 24 24" width="30" height="30" style={{ marginLeft: '10px' }}>
+                                                <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
+                                            </svg>
+                                        </div>
+                                        <div className="SE-dn-title-line2" style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginTop: '0.5rem', flexWrap: 'nowrap' }}>
+                                            <button
+                                                className="SE-split-action-btn"
+                                                style={{ padding: '1.7rem 1.5rem', fontSize: '1rem', margin: 0, flexShrink: 0 }}
+                                                onClick={() => showLockedSectionToast("Sales Strategy & Performance Support")}
+                                            >
+                                                <FontAwesomeIcon icon={faLock} /> Join course to Access
+                                            </button>
+                                            <span style={{ whiteSpace: 'nowrap' }}>Performance Support</span>
+                                            <svg className="SE-dn-icon-sparkle-outline" viewBox="0 0 24 24" width="30" height="30" style={{ flexShrink: 0 }}>
+                                                <path d="M12 2L14.26 9.74L22 12L14.26 14.26L12 22L9.74 14.26L2 12L9.74 9.74L12 2ZM12 6.86L10.85 10.85L6.86 12L10.85 13.15L12 17.14L13.15 13.15L17.14 12L13.15 10.85L12 6.86Z" fill="currentColor" />
+                                            </svg>
+                                        </div>
+                                    </h2>
+                                </div>
+                                <div className="SE-dn-header-right">
+                                    <svg className="SE-dn-small-sparkies" viewBox="0 0 24 24" width="16" height="16">
+                                        <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
+                                    </svg>
+                                    <p>
+                                        Get access to modern CRM tools, high-converting pitch decks, and direct mentorship to accelerate your sales performance and career growth.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
 
                     <section className="SE-section SE-influencer-section" id="signin">
                         <div className="SE-influencer-container">
@@ -1281,13 +1371,6 @@ const SalesExecutiveInternPage = () => {
                                                 to collaborate
                                                 <br />
                                                 with us
-                                                {/* <div className="SE-influencer-search-bar">
-                        <span className="SE-search-placeholder"> Search</span>
-                        <div className="SE-search-actions">
-                          <FontAwesomeIcon icon={faStar} className="SE-voice-icon" />
-                          <button className="SE-search-submit"><FontAwesomeIcon icon={faComments} style={{ fontSize: '0.7em' }} /></button>
-                        </div>
-                      </div> */}
                                             </h2>
                                         </div>
                                         <div className="SE-influencer-right">
@@ -1313,51 +1396,24 @@ const SalesExecutiveInternPage = () => {
                                     </div>
                                 )}
                             </div>
-
-
-                            {/* {!showForm && (
-              <div className="SE-join-course-banner">
-                <h3 className="SE-join-banner-title">JOIN OUR COURSE</h3>
-                <div className="SE-join-banner-content">
-                  <h4 className="SE-join-course-subtitle"><FontAwesomeIcon icon={faPaintBrush} /> Sales Executive course</h4>
-                  <p className="SE-join-course-desc">
-                    A graphic designer creates visual concepts that communicate messages through typography, color, imagery, and layout. They design logos, branding, posters, digital content, and user interfaces, blending creativity with strategy to solve problems and deliver clear, engaging visual communication across different media platforms.
-                  </p>
-                  <button className="SE-banner-register-btn" onClick={() => setShowForm(true)}>
-                    <FontAwesomeIcon icon={faRocket} /> Register Now
-                  </button>
-                </div>
-              </div>
-            )} */}
                         </div>
                     </section>
 
                     <section className="SE-section SE-dream-navigator-section" id="dream-navigator">
                         <div className="SE-dn-container">
 
-                            {/* Design Resources Title - styled like Dream Navigator header */}
-                            <div className="SE-dn-resources-title-row" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginTop: '0', marginBottom: '0.5rem', position: 'relative' }}>
+                            {/* Sales Resources Title */}
+                            <div className="SE-dn-resources-title-row" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginTop: '0', marginBottom: '2rem', position: 'relative' }}>
                                 <div style={{ flex: 1 }}>
                                     <h2 className="SE-dn-title">
-                                        <div className="SE-dn-title-line1">
-                                            Sales Strategy &
-                                            <svg className="SE-dn-icon-sparkle" viewBox="0 0 24 24" width="30" height="30" style={{ marginLeft: '10px' }}>
-                                                <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
-                                            </svg>
-                                        </div>
-                                        <div className="SE-dn-title-line2" style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginTop: '0.5rem', flexWrap: 'nowrap' }}>
-                                            <button
-                                                className="SE-split-action-btn"
-                                                style={{ padding: '1.7rem 1.5rem', fontSize: '0.5rem', margin: 0, flexShrink: 0 }}
-                                                onClick={() => showLockedSectionToast("Sales Strategy & Performance Support")}
-                                            >
-                                                <FontAwesomeIcon icon={faLock} /> Join course to Access
-                                            </button>
-                                            <span style={{ whiteSpace: 'nowrap' }}>Performance Support</span>
-                                            <svg className="SE-dn-icon-sparkle-outline" viewBox="0 0 24 24" width="30" height="30" style={{ flexShrink: 0 }}>
-                                                <path d="M12 2L14.26 9.74L22 12L14.26 14.26L12 22L9.74 14.26L2 12L9.74 9.74L12 2ZM12 6.86L10.85 10.85L6.86 12L10.85 13.15L12 17.14L13.15 13.15L17.14 12L13.15 10.85L12 6.86Z" fill="currentColor" />
-                                            </svg>
-                                        </div>
+                                        SALES
+                                        <svg className="SE-dn-icon-sparkle" viewBox="0 0 24 24" width="30" height="30">
+                                            <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="currentColor" />
+                                        </svg>
+                                        RESOURCES
+                                        <svg className="SE-dn-icon-sparkle-outline" viewBox="0 0 24 24" width="30" height="30">
+                                            <path d="M12 2L14.26 9.74L22 12L14.26 14.26L12 22L9.74 14.26L2 12L9.74 9.74L12 2ZM12 6.86L10.85 10.85L6.86 12L10.85 13.15L12 17.14L13.15 13.15L17.14 12L13.15 10.85L12 6.86Z" fill="currentColor" />
+                                        </svg>
                                     </h2>
                                     <div className="SE-dn-header-right" style={{ flex: 'unset', padding: '1.2rem 0 0 0' }}>
                                         <svg className="SE-dn-small-sparkies" viewBox="0 0 24 24" width="16" height="16">
@@ -1541,9 +1597,9 @@ const SalesExecutiveInternPage = () => {
                                     <div className="SE-dn-stat-item"><strong>{yourDownloadsCount}</strong> Your Downloads</div>
                                 </div>
                                 <div className="SE-dn-socials">
-                                    <span className="SE-dn-social-icon" title="Total Resources"><FontAwesomeIcon icon={faFileAlt} /></span>
-                                    <span className="SE-dn-social-icon" title="Total Downloads"><FontAwesomeIcon icon={faDownload} /></span>
-                                    <span className="SE-dn-social-icon" title="Your Downloads"><FontAwesomeIcon icon={faUser} /></span>
+                                    <span className="SE-dn-social-icon" title="Total Resources" onClick={() => scrollToSection('dream-navigator')}><FontAwesomeIcon icon={faGem} /></span>
+                                    <span className="SE-dn-social-icon" title="Download All Free Resources" onClick={handleDownloadAllResources}><FontAwesomeIcon icon={faDownload} /></span>
+                                    <span className="SE-dn-social-icon" title="Your Downloads" onClick={handleShowDownloadHistory}><FontAwesomeIcon icon={faTrophy} /></span>
                                 </div>
                             </div>
 
@@ -1783,7 +1839,9 @@ const SalesExecutiveInternPage = () => {
                                                 <div className="SE-Gallery-small-content-new">
                                                     <span className="SE-Gallery-badge-text-new">Environment</span>
                                                     <h4 className="SE-Gallery-small-title-new">{item.title}</h4>
-                                                    <span className="SE-Gallery-small-date-new"><FontAwesomeIcon icon={faClock} /> March 8, 2022</span>
+                                                    <span className="SE-Gallery-small-date-new" style={{ color: '#16a34a', fontWeight: '600' }}>
+                                                        {item.icon} <span style={{ marginLeft: '4px' }}>{item.benefit}</span>
+                                                    </span>
                                                 </div>
                                             </div>
                                         );

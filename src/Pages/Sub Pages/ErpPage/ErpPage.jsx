@@ -462,65 +462,105 @@ const ErpPage = () => {
                         </motion.div>
                         <div className="crm-insights-carousel-wrapper">
                             <div className="crm-insights-grid">
-                                {[
-                                    {
-                                        image: imgErpAi,
-                                        title: "AI Result Analysis",
-                                        desc: "Instantly identify underperforming students and suggest personalised improvement plans based on historical data. Our system analyzes performance trends across multiple subjects to provide actionable insights for teachers and administrators.",
-                                        imgBg: "rgba(16,185,129,0.18)"
-                                    },
-                                    {
-                                        image: imgErpParent,
-                                        title: "Parent Communication Hub",
-                                        desc: "Automated SMS, email and in-app notifications keep parents informed at every step of their child's journey. From daily attendance alerts to real-time exam results, ensure parents stay connected and engaged with institution updates.",
-                                        imgBg: "rgba(6,182,212,0.18)"
-                                    },
-                                    {
-                                        image: imgErpForecast,
-                                        title: "Academic Forecasting",
-                                        desc: "Predictive analytics to forecast exam outcomes and flag at-risk students early in the semester. By leveraging machine learning models, institutions can intervene proactively to support student success and improve overall graduation rates.",
-                                        imgBg: "rgba(16,185,129,0.25)"
-                                    },
-                                    {
-                                        image: imgErpCompliance,
-                                        title: "GDPR & DPDP Compliant",
-                                        desc: "Role-based access, comprehensive audit logs and end-to-end encrypted student records built-in from day one. We prioritize institutional data privacy, ensuring full compliance with international and local data protection regulations.",
-                                        imgBg: "rgba(5,150,105,0.2)"
-                                    },
-                                    {
-                                        image: imgErpAttendance,
-                                        title: "Smart Attendance Tracking",
-                                        desc: "Biometric and QR-based attendance with real-time parent alerts for every absence or late arrival. Streamline the morning roll-call process and eliminate manual entry errors while providing instant transparency to guardians.",
-                                        imgBg: "rgba(20,184,166,0.2)"
-                                    },
-                                ].map((item, i) => (
-                                    <motion.div
-                                        key={i}
-                                        className={`crm-insight-card erp-arc-card insight-card-${i} ${activeInsight === i ? 'active-card' : ''}`}
-                                        initial={{ opacity: 0 }}
-                                        whileInView={{ opacity: 1 }}
-                                        transition={{ duration: 0.6, delay: i * 0.15 }}
-                                        viewport={{ once: true }}
-                                        onClick={() => setActiveInsight(i)}
-                                    >
-                                        {i === 0 && (
-                                            <button className="card-attached-arrow left" onClick={(e) => { e.stopPropagation(); setActiveInsight(Math.max(0, activeInsight - 1)); }} style={{ opacity: activeInsight === 0 ? 0.3 : 1, pointerEvents: activeInsight === 0 ? 'none' : 'auto' }}>
-                                                <FontAwesomeIcon icon={faChevronLeft} />
-                                            </button>
-                                        )}
-                                        {i === 4 && (
-                                            <button className="card-attached-arrow right" onClick={(e) => { e.stopPropagation(); setActiveInsight(Math.min(4, activeInsight + 1)); }} style={{ opacity: activeInsight === 4 ? 0.3 : 1, pointerEvents: activeInsight === 4 ? 'none' : 'auto' }}>
-                                                <FontAwesomeIcon icon={faChevronRight} />
-                                            </button>
-                                        )}
-                                        <div className="cic-image-wrapper" style={{ background: item.imgBg }}>
-                                            <img src={item.image} alt={item.title} />
-                                        </div>
-                                        <h3>{item.title}</h3>
-                                        <p>{item.desc}</p>
-                                        <div className="cic-line erp-cic-line" />
-                                    </motion.div>
-                                ))}
+                                {(() => {
+                                    const cardsList = [
+                                        {
+                                            image: imgErpAi,
+                                            title: "AI Result Analysis",
+                                            desc: "Instantly identify underperforming students and suggest personalised improvement plans based on historical data. Our system analyzes performance trends across multiple subjects to provide actionable insights for teachers and administrators.",
+                                            imgBg: "rgba(16,185,129,0.18)"
+                                        },
+                                        {
+                                            image: imgErpParent,
+                                            title: "Parent Communication Hub",
+                                            desc: "Automated SMS, email and in-app notifications keep parents informed at every step of their child's journey. From daily attendance alerts to real-time exam results, ensure parents stay connected and engaged with institution updates.",
+                                            imgBg: "rgba(6,182,212,0.18)"
+                                        },
+                                        {
+                                            image: imgErpForecast,
+                                            title: "Academic Forecasting",
+                                            desc: "Predictive analytics to forecast exam outcomes and flag at-risk students early in the semester. By leveraging machine learning models, institutions can intervene proactively to support student success and improve overall graduation rates.",
+                                            imgBg: "rgba(16,185,129,0.25)"
+                                        },
+                                        {
+                                            image: imgErpCompliance,
+                                            title: "GDPR & DPDP Compliant",
+                                            desc: "Role-based access, comprehensive audit logs and end-to-end encrypted student records built-in from day one. We prioritize institutional data privacy, ensuring full compliance with international and local data protection regulations.",
+                                            imgBg: "rgba(5,150,105,0.2)"
+                                        },
+                                        {
+                                            image: imgErpAttendance,
+                                            title: "Smart Attendance Tracking",
+                                            desc: "Biometric and QR-based attendance with real-time parent alerts for every absence or late arrival. Streamline the morning roll-call process and eliminate manual entry errors while providing instant transparency to guardians.",
+                                            imgBg: "rgba(20,184,166,0.2)"
+                                        },
+                                        {
+                                            image: imgErpForecast,
+                                            title: "Smart Fee Automation",
+                                            desc: "Automate fee structures, invoicing, receipt generation, and payment reminders. Parents can make payments securely online with instant ledger reconciliation and real-time finance tracking.",
+                                            imgBg: "rgba(16,185,129,0.2)"
+                                        },
+                                        {
+                                            image: imgErpAttendance,
+                                            title: "Hostel & Mess Admin",
+                                            desc: "Manage room allocations, hostel attendance, visitor logs, and daily meal planning in one unified module. Ensure student safety with instant digital gate pass approvals and notifications.",
+                                            imgBg: "rgba(6,182,212,0.2)"
+                                        },
+                                        {
+                                            image: imgErpCompliance,
+                                            title: "Digital Library Manager",
+                                            desc: "Streamline library cataloging, search, borrowing history, and resource availability. Send automated return reminders and manage fine collections seamlessly with digital receipts.",
+                                            imgBg: "rgba(5,150,105,0.2)"
+                                        }
+                                    ];
+
+                                    return [0, 1, 2, 3, 4].map((i) => {
+                                        const cardIndex = (activeInsight - 2 + i + cardsList.length) % cardsList.length;
+                                        const item = cardsList[cardIndex];
+                                        const isActive = activeInsight === cardIndex;
+
+                                        return (
+                                            <motion.div
+                                                key={i}
+                                                className={`crm-insight-card erp-arc-card insight-card-${i} ${isActive ? 'active-card' : ''}`}
+                                                initial={{ opacity: 0 }}
+                                                whileInView={{ opacity: 1 }}
+                                                transition={{ duration: 0.6, delay: i * 0.15 }}
+                                                viewport={{ once: true }}
+                                                onClick={() => setActiveInsight(cardIndex)}
+                                            >
+                                                {i === 0 && (
+                                                    <button
+                                                        className="card-attached-arrow left"
+                                                        onClick={(e) => {
+                                                            e.stopPropagation();
+                                                            setActiveInsight((prev) => (prev + 1) % cardsList.length);
+                                                        }}
+                                                    >
+                                                        <FontAwesomeIcon icon={faChevronLeft} />
+                                                    </button>
+                                                )}
+                                                {i === 4 && (
+                                                    <button
+                                                        className="card-attached-arrow right"
+                                                        onClick={(e) => {
+                                                            e.stopPropagation();
+                                                            setActiveInsight((prev) => (prev - 1 + cardsList.length) % cardsList.length);
+                                                        }}
+                                                    >
+                                                        <FontAwesomeIcon icon={faChevronRight} />
+                                                    </button>
+                                                )}
+                                                <div className="cic-image-wrapper" style={{ background: item.imgBg }}>
+                                                    <img src={item.image} alt={item.title} />
+                                                </div>
+                                                <h3>{item.title}</h3>
+                                                <p>{item.desc}</p>
+                                                <div className="cic-line erp-cic-line" />
+                                            </motion.div>
+                                        );
+                                    });
+                                })()}
                             </div>
                         </div>
                         <motion.div className="crm-cta-strip erp-cta-strip" initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>

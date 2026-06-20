@@ -1,223 +1,715 @@
- .newFooterOuter {
-  background-color: #ffffff;
-  /* Reverted to White theme */
-  color: #1a1a1a;
-  padding: 80px 0 30px 0;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  border-top: 1px solid #f1f1f1;
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap');
+
+.nf-footer-new {
+    background-color: #ffffff;
+    color: #1a1d23;
+    padding: 60px 0;
+    font-family: 'Outfit', sans-serif;
 }
 
-.newFooterContainer {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 40px;
+.nf-container-new {
+    max-width: 1320px;
+    margin: 0 auto;
+    margin-left: 10px;
+    padding: 0 32px;
+    display: flex;
+    gap: 24px;
 }
 
-.newFooterGrid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr); /* Equal columns for equal spacing */
-  gap: 80px; /* Noticeable separation between content clusters */
-  margin-bottom: 60px;
-  padding-left: 0; /* Brand is anchored to the left corner */
+/* Card Styling */
+.nf-card-left,
+.nf-card-right {
+    background-color: #f4f4f5;
+    /* Light gray from image */
+    border-radius: 24px;
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Brand Column at the left corner */
-.newFooterBrandCol {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  margin-left: -120px; /* Shifted even further left into the corner */
+.nf-card-left {
+    flex: 0 0 35%;
+    /* Fixed width for left card */
+    justify-content: space-between;
+    /* Pushes logo to top, content to bottom */
+    min-height: 500px;
+    background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
+    color: #ffffff;
 }
 
-.newFooterLogo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 25px;
+.nf-card-left .nf-brand-name,
+.nf-card-left .nf-brand-description,
+.nf-card-left .nf-stay-touch {
+    color: #ffffff;
 }
 
-.newFooterLogoImg {
-  width: 55px;
-  /* Slightly bigger logo */
-  height: 55px;
-  object-fit: contain;
+.nf-card-left .nf-brand-description span {
+    color: rgba(255, 255, 255, 0.7) !important;
 }
 
-.newFooterBrandName {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #1a1a1a;
+.nf-card-left .nf-logo {
+    filter: brightness(0) invert(1);
 }
 
-.newFooterBrandDesc {
-  font-size: 0.95rem;
-  line-height: 1.7;
-  color: #6c757d;
-  margin-bottom: 25px;
-  max-width: 480px; /* Wider to ensure 2-3 lines only */
-  text-align: left;
+.nf-card-right {
+    flex: 1;
+    /* Takes up remaining space */
+    justify-content: space-between;
 }
 
-
-.newFooterSocials {
-  display: flex;
-  gap: 15px;
-  justify-content: flex-start;
+/* Left Card Elements */
+.nf-logo-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    cursor: pointer;
+    width: 100%;
 }
 
-.newFooterSocialLink {
-  color: #1a1a1a;
-  font-size: 0.95rem;
-  transition: all 0.3s ease;
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: #f8f9fa;
+.nf-logo {
+    height: 32px;
+    width: auto;
 }
 
-.newFooterSocialLink:hover {
-  transform: translateY(-5px);
-  color: #0d6efd;
-  background: rgba(13, 110, 253, 0.1);
+.nf-brand-name {
+    font-size: 2.3rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.5px;
+    color: #111827;
 }
 
-/* Header with Icon */
-.newFooterColHeader {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 25px;
-  justify-content: flex-start;
+.nf-left-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 32px;
+    width: 100%;
 }
 
-.newFooterHeaderIcon {
-  color: #1a1a1a;
-  font-size: 1.1rem;
+.nf-left-middle {
+    display: flex;
+    flex-direction: column;
+    margin: 24px 0;
 }
 
-.newFooterColTitle {
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: #1a1a1a;
-  text-transform: uppercase;
-  margin: 0;
+.nf-glass-card {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
 }
 
-.newFooterLinkList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  text-align: left;
+.nf-glass-card:hover {
+    background: rgba(255, 255, 255, 0.09);
+    border-color: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
 }
 
-.newFooterLinkList li {
-  margin-bottom: 12px;
+.nf-vision-tagline {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.95);
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 16px;
+    margin: 0;
 }
 
-.newFooterLinkList a {
-  text-decoration: none;
-  color: #6c757d;
-  font-size: 0.95rem;
-  transition: color 0.3s ease, padding-left 0.3s ease;
+.nf-pillar-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    text-align: left;
 }
 
-.newFooterLinkList a:hover {
-  color: #1a1a1a;
-  padding-left: 5px;
+.nf-pillar-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: #ffffff;
+    margin: 0;
 }
 
-/* Contact Column - shifted slightly left */
-.newFooterContactCol {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  margin-left: -40px; /* Moved slightly left for a tighter visual group */
+.nf-pillar-desc {
+    font-size: 0.85rem;
+    line-height: 1.45;
+    color: rgba(255, 255, 255, 0.75);
+    margin: 0;
 }
 
-.newFooterContactItem {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-bottom: 20px;
-  color: #6c757d;
-  text-align: left;
+.nf-left-bottom-new {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
 }
 
-.newFooterContactIcon {
-  width: 35px;
-  height: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #e7f1ff;
-  color: #0d6efd;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  transform: rotate(-15deg); /* Professional slant for icons */
+.nf-left-motto {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    margin: 0;
 }
 
-
-
-.newFooterContactText {
-  font-size: 0.95rem;
-  font-weight: 500;
+.nf-brand-description {
+    font-size: 1.25rem;
+    line-height: 1.4;
+    color: #111827;
+    font-weight: 500;
+    text-align: center;
+    margin: 0;
 }
 
-/* Bottom Bar */
-.newFooterBottom {
-  border-top: 1px solid #f1f1f1;
-  padding-top: 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: #6c757d;
-  font-size: 0.9rem;
+.nf-socials-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    width: 100%;
 }
 
-.newFooterLegal {
-  display: flex;
-  gap: 25px;
+.nf-stay-touch {
+    font-family: 'Caveat', cursive;
+    /* To match the handwritten style in the image */
+    font-size: 1.6rem;
+    color: #64748b;
 }
 
-.newFooterLegal a {
-  text-decoration: none;
-  color: #6c757d;
-  transition: color 0.3s ease;
+.nf-socials {
+    display: flex;
+    gap: 8px;
 }
 
-.newFooterLegal a:hover {
-  color: #1a1a1a;
+.nf-social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #1f2937;
+    /* Dark rounded squares */
+    color: #ffffff;
+    transition: all 0.2s ease;
+}
+
+.nf-social-link:hover {
+    background-color: #000000;
+    transform: translateY(-2px);
+}
+
+/* Right Card Elements */
+.nf-links-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.nf-links-grid-main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.nf-divider-subtle {
+    height: 1px;
+    background-color: #e2e8f0;
+    width: 100%;
+}
+
+.nf-links-grid-other {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 40px;
+    column-gap: 24px;
+}
+
+.nf-col-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem !important;
+    color: #111827;
+    margin: 0 0 20px 0;
+    font-weight: 700;
+}
+
+.nf-col-title-sub {
+    font-family: 'poppins', sans-serif;
+    font-size: 1.3rem;
+    color: #64748b;
+    margin: 0 0 16px 0;
+
+    font-weight: 500;
+}
+
+.nf-nav-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.nf-link-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.nf-link {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 0.95rem;
+    color: #111827;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: left;
+    transition: color 0.2s ease;
+    font-family: 'Outfit', sans-serif;
+}
+
+.nf-link:hover {
+    color: #6366f1;
+    /* Mild hover color */
+}
+
+/* Bottom Section */
+.nf-right-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 60px;
+}
+
+.nf-legal {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.nf-copyright {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin: 0;
+}
+
+.nf-legal-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.nf-legal-links button {
+    background: none;
+    border: none;
+    padding: 0;
+    color: #64748b;
+    cursor: pointer;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.85rem;
+}
+
+.nf-legal-links button:hover {
+    color: #111827;
+}
+
+/* Newsletter */
+.nf-newsletter {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* Or flex-end depending on spacing */
+    gap: 16px;
+    max-width: 380px;
+    position: relative;
+}
+
+.nf-nl-text {
+    font-size: 1.25rem;
+    line-height: 1.4;
+    text-align: center;
+    margin-left: -220px;
+    width: auto;
+    white-space: nowrap;
+    margin-top: -100px !important;
+    color: #111827;
+    margin-bottom: 20px !important;
+}
+
+/* Newsletter row: white input box + button side by side */
+.nf-nl-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    margin-left: -40px;
+}
+
+.nf-nl-form {
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 6px 12px 6px 6px;
+    flex: 1;
+}
+
+.nf-nl-input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 12px 16px;
+    font-size: 0.95rem;
+    outline: none;
+    font-family: 'Outfit', sans-serif;
+    color: #111827;
+}
+
+.nf-nl-input::placeholder {
+    color: #94a3b8;
+}
+
+.nf-nl-btn {
+    background-color: #1f2937;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 0 20px;
+    height: 62px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    font-family: 'Outfit', sans-serif;
+    white-space: nowrap;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nf-nl-btn:disabled {
+    font-size: 0.78rem !important;
+    padding: 0 10px !important;
+    height: 62px;
+    background-color: #4b5563;
+    cursor: not-allowed;
+}
+
+.nf-nl-btn:hover {
+    background-color: #000000;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .nf-links-grid-main {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .nf-links-grid-other {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 1024px) {
-  .newFooterGrid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+    .nf-container-new {
+        flex-direction: column;
+    }
+
+    .nf-card-left {
+        min-height: auto;
+    }
+
+    .nf-right-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 32px;
+    }
 }
 
 @media (max-width: 768px) {
-  .newFooterOuter {
-    padding: 60px 0 30px 0;
-  }
 
-  .newFooterGrid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
+    .nf-card-left,
+    .nf-card-right {
+        padding: 32px;
+    }
 
-  .newFooterBottom {
-    flex-direction: column;
-    gap: 20px;
-    text-align: center;
-  }
+    .nf-links-grid-main,
+    .nf-links-grid-other {
+        grid-template-columns: 1fr;
+    }
+}
 
-  .newFooterLegal {
-    flex-wrap: wrap;
+@media screen and (min-width: 1441px) {
+    .nf-container-new {
+        max-width: 92%;
+        gap: 1.5vw;
+        padding: 0 1.5vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .nf-card-left,
+    .nf-card-right {
+        padding: 2vw;
+        border-radius: 20px;
+    }
+
+    .nf-card-left {
+        flex: 0 0 30%;
+        min-height: auto;
+    }
+
+    .nf-brand-name {
+        font-size: clamp(1.8rem, 2vw, 2.2rem);
+    }
+
+    .nf-brand-description {
+        font-size: clamp(0.95rem, 1vw, 1.1rem);
+    }
+
+    .nf-col-title {
+        font-size: clamp(1.1rem, 1.2vw, 1.35rem) !important;
+        margin-bottom: 20px;
+    }
+
+    .nf-col-title-sub {
+        font-size: clamp(0.95rem, 1.05vw, 1.15rem);
+        margin-bottom: 16px;
+    }
+
+    .nf-links-grid-main {
+        gap: 1.5vw;
+    }
+
+    .nf-links-grid-other {
+        row-gap: 2vw;
+        column-gap: 1.5vw;
+    }
+
+    .nf-link {
+        font-size: clamp(0.8rem, 0.85vw, 0.9rem);
+    }
+
+    .nf-stay-touch {
+        font-size: clamp(1.2rem, 1.35vw, 1.5rem);
+    }
+
+    .nf-vision-tagline {
+        font-size: clamp(0.8rem, 0.85vw, 0.9rem);
+        padding-bottom: 16px;
+    }
+
+    .nf-pillar-title {
+        font-size: clamp(0.75rem, 0.8vw, 0.85rem);
+    }
+
+    .nf-pillar-desc {
+        font-size: clamp(0.7rem, 0.75vw, 0.8rem);
+    }
+
+    .nf-left-motto {
+        font-size: clamp(0.75rem, 0.8vw, 0.85rem);
+    }
+
+    .nf-copyright {
+        font-size: clamp(0.75rem, 0.8vw, 0.85rem);
+    }
+
+    .nf-legal-links button,
+    .nf-legal-links span {
+        font-size: clamp(0.75rem, 0.8vw, 0.85rem);
+    }
+
+    .nf-newsletter {
+        align-items: center;
+        max-width: 100%;
+    }
+
+    .nf-nl-text {
+        font-size: clamp(0.85rem, 0.9vw, 1rem);
+        margin-top: 0 !important;
+        margin-left: 0 !important;
+        margin-bottom: 0 !important;
+        text-align: center;
+        width: 100%;
+    }
+
+    .nf-nl-form {
+        padding: 4px 8px;
+    }
+
+    .nf-nl-input {
+        font-size: clamp(0.8rem, 0.85vw, 0.9rem);
+        padding: 8px 12px;
+    }
+
+    .nf-nl-btn {
+        font-size: clamp(0.8rem, 0.85vw, 0.9rem);
+        height: 48px;
+        padding: 0 16px;
+    }
+
+    .nf-nl-row {
+        margin-left: 0;
+    }
+}
+
+/* Invalid state validation styles */
+.nf-nl-form.is-invalid {
+    border: 1px solid #ef4444 !important;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.25) !important;
+}
+
+.nf-nl-input.is-invalid {
+    color: #ef4444 !important;
+}
+
+.nf-nl-input.is-invalid::placeholder {
+    color: rgba(239, 68, 68, 0.6) !important;
+}
+
+.nf-nl-error {
+    position: absolute;
+    color: #ef4444;
+    font-size: 0.85rem;
+    font-family: 'Outfit', sans-serif;
+    text-align: left;
+    bottom: -24px;
+    left: -20px;
+    margin: 0;
+    z-index: 10;
+    white-space: nowrap;
+    animation: fadeInError 0.2s ease-out forwards;
+}
+
+@keyframes fadeInError {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Premium Success Modal/Popup */
+.nf-success-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    display: flex;
     justify-content: center;
-  }
+    align-items: center;
+    z-index: 10000;
+    animation: fadeInOverlay 0.3s ease-out forwards;
+}
+
+.nf-success-modal {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 440px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transform: translateY(20px);
+    opacity: 0;
+    animation: slideInModal 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    font-family: 'Outfit', sans-serif;
+}
+
+.nf-success-icon-box {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #10b981, #059669);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+    color: #ffffff;
+}
+
+.nf-success-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #111827;
+    margin: 0 0 12px;
+}
+
+.nf-success-desc {
+    font-size: 1rem;
+    color: #4b5563;
+    line-height: 1.6;
+    margin: 0 0 28px;
+}
+
+.nf-success-btn {
+    background-color: #1f2937;
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    padding: 14px 32px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(31, 41, 55, 0.2);
+}
+
+.nf-success-btn:hover {
+    background-color: #000000;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes fadeInOverlay {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInModal {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }

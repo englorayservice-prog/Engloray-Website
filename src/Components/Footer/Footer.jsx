@@ -21,7 +21,7 @@ import {
 import ELogo from '../../assets/018.png';
 import globeBg from '../../assets/globe_v3.png';
 import './Footer.css';
-import WhiteFooter from '../WhiteFooter/WhiteFooter';
+import NewFooter from '../../Pages/Sub Pages/NewFooter/NewFooter';
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
@@ -91,7 +91,7 @@ const Footer = () => {
                 </div>
             </motion.div>
 
-            <WhiteFooter />
+            <NewFooter />
 
         </footer>
     );

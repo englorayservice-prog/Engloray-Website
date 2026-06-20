@@ -406,175 +406,271 @@ const JobSeekerPage = () => {
                         </motion.div>
                         <div className="crm-insights-carousel-wrapper">
                             <div className="crm-insights-grid">
-                                {[
-                                    {
-                                        title: "AI Resume Scoring",
-                                        desc: "Instant feedback with keyword optimization tips to pass ATS filters effortlessly and reach the top of recruiter shortlists. Our advanced scanning engine analyzes your resume against industry-standard benchmarks, providing specific recommendations to highlight your key accomplishments effectively.",
-                                        imgBg: "rgba(245,158,11,0.12)",
-                                        visual: (
-                                            <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="job-card-svg">
-                                                {/* Resume doc */}
-                                                <rect x="55" y="20" width="90" height="120" rx="6" fill="rgba(245,158,11,0.15)" stroke="#f59e0b" strokeWidth="1.5" />
-                                                {/* Lines of text */}
-                                                {[40, 55, 70, 85, 100, 115].map((y, k) => (
-                                                    <rect key={k} x="70" y={y} width={k === 0 ? 50 : 65} height="6" rx="3" fill="rgba(251,191,36,0.4)" className={`job-line-fade job-line-fade-${k}`} />
-                                                ))}
-                                                {/* AI scan beam */}
-                                                <line x1="55" y1="80" x2="145" y2="80" stroke="#fbbf24" strokeWidth="2" strokeDasharray="200" className="job-scan-beam" />
-                                                {/* Score badge */}
-                                                <circle cx="175" cy="55" r="22" fill="rgba(245,158,11,0.3)" stroke="#f59e0b" strokeWidth="2" className="job-score-ring" />
-                                                <text x="175" y="52" textAnchor="middle" fill="#fbbf24" fontSize="12" fontWeight="bold">94</text>
-                                                <text x="175" y="64" textAnchor="middle" fill="rgba(251,191,36,0.7)" fontSize="7">ATS Score</text>
-                                                {/* Check sparks */}
-                                                {[[163, 30], [188, 30], [163, 80], [188, 80]].map(([cx, cy], k) => (
-                                                    <circle key={k} cx={cx} cy={cy} r="3" fill="#fbbf24" opacity="0.5" className={`job-spark job-spark-${k}`} />
-                                                ))}
-                                                <text x="120" y="152" textAnchor="middle" fill="rgba(251,191,36,0.7)" fontSize="9" fontFamily="Inter,sans-serif">AI-Powered ATS Filter</text>
-                                            </svg>
-                                        )
-                                    },
-                                    {
-                                        title: "Mock Interview Coach",
-                                        desc: "Practice with our AI interviewer and get real-time feedback on answers, body language, and tone of voice. Our coach simulates high-pressure environments, helping you refine your storytelling and build the confidence needed to impress even the most demanding hiring managers.",
-                                        imgBg: "rgba(251,191,36,0.12)",
-                                        visual: (
-                                            <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="job-card-svg">
-                                                {/* Person */}
-                                                <circle cx="70" cy="55" r="20" fill="rgba(245,158,11,0.25)" stroke="#f59e0b" strokeWidth="1.5" />
-                                                <circle cx="70" cy="52" r="8" fill="#fbbf24" opacity="0.5" />
-                                                <path d="M50 75 Q70 88 90 75" fill="rgba(245,158,11,0.2)" stroke="#f59e0b" strokeWidth="1" />
-                                                {/* Speech bubble person */}
-                                                <path d="M94 42 Q130 30 130 55 Q130 70 108 70 L100 78 L102 70 Q94 70 94 55 Z" fill="rgba(245,158,11,0.2)" stroke="#fbbf24" strokeWidth="1.2" className="job-bubble-1" />
-                                                {/* Waveform inside bubble */}
-                                                {[108, 114, 120, 126].map((x, k) => (
-                                                    <line key={k} x1={x} y1={55 - ([5, 9, 6, 4][k])} x2={x} y2={55 + ([5, 9, 6, 4][k])} stroke="#fbbf24" strokeWidth="2" strokeLinecap="round" className={`job-wave job-wave-${k}`} />
-                                                ))}
-                                                {/* AI robot */}
-                                                <rect x="155" y="40" width="50" height="45" rx="8" fill="rgba(245,158,11,0.25)" stroke="#f59e0b" strokeWidth="1.5" />
-                                                <circle cx="168" cy="57" r="5" fill="#fbbf24" className="job-eye-blink" />
-                                                <circle cx="192" cy="57" r="5" fill="#fbbf24" className="job-eye-blink" />
-                                                <rect x="166" y="68" width="28" height="5" rx="2" fill="rgba(251,191,36,0.5)" />
-                                                {/* AI speech bubble */}
-                                                <path d="M148 38 Q138 25 155 25 Q172 25 172 35 L165 42 Z" fill="rgba(251,191,36,0.3)" stroke="#fbbf24" strokeWidth="1" className="job-bubble-2" />
-                                                <text x="120" y="152" textAnchor="middle" fill="rgba(251,191,36,0.7)" fontSize="9" fontFamily="Inter,sans-serif">Real-Time AI Coaching</text>
-                                            </svg>
-                                        )
-                                    },
-                                    {
-                                        title: "Salary Benchmarking",
-                                        desc: "Know your market worth with real-time salary data by role, experience level, and geographic location. We aggregate thousands of data points to provide accurate compensation insights, empowering you to negotiate with confidence and ensure you are being paid fairly for your skills.",
-                                        imgBg: "rgba(245,158,11,0.18)",
-                                        visual: (
-                                            <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="job-card-svg">
-                                                {/* Horizontal bars */}
-                                                {[
-                                                    { label: "Junior", w: 80, y: 30, c: "rgba(245,158,11,0.5)" },
-                                                    { label: "Mid", w: 130, y: 55, c: "rgba(251,191,36,0.7)" },
-                                                    { label: "Senior", w: 170, y: 80, c: "#f59e0b" },
-                                                    { label: "Lead", w: 140, y: 105, c: "rgba(234,88,12,0.6)" },
-                                                ].map((b, k) => (
-                                                    <g key={k}>
-                                                        <text x="18" y={b.y + 10} fill="rgba(251,191,36,0.6)" fontSize="8">{b.label}</text>
-                                                        <rect x="50" y={b.y} width={b.w} height="16" rx="4" fill={b.c} className={`job-hbar job-hbar-${k}`} />
-                                                    </g>
-                                                ))}
-                                                {/* You marker */}
-                                                <line x1="150" y1="18" x2="150" y2="130" stroke="#fbbf24" strokeWidth="1.5" strokeDasharray="4 3" />
-                                                <polygon points="146,20 154,20 150,14" fill="#fbbf24" />
-                                                <text x="152" y="14" fill="#fbbf24" fontSize="7">You</text>
-                                                {/* Currency symbol */}
-                                                <text x="200" y="80" fill="rgba(251,191,36,0.4)" fontSize="36" fontWeight="bold">₹</text>
-                                                <text x="120" y="152" textAnchor="middle" fill="rgba(251,191,36,0.7)" fontSize="9" fontFamily="Inter,sans-serif">Real-Time Market Data</text>
-                                            </svg>
-                                        )
-                                    },
-                                    {
-                                        title: "Confidential Job Search",
-                                        desc: "Hidden mode lets you explore new opportunities without your current employer or colleagues ever knowing. We use advanced privacy shields to mask your profile from specific companies, giving you the ultimate freedom to browse and apply to roles with complete peace of mind.",
-                                        imgBg: "rgba(180,83,9,0.12)",
-                                        visual: (
-                                            <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="job-card-svg">
-                                                {/* Background blurred profiles */}
-                                                {[[40, 60], [80, 45], [120, 65], [160, 50], [200, 60]].map(([cx, cy], k) => (
-                                                    <g key={k} opacity="0.25">
-                                                        <circle cx={cx} cy={cy} r="12" fill="rgba(245,158,11,0.4)" stroke="#f59e0b" strokeWidth="1" />
-                                                        <rect x={cx - 10} y={cy + 14} width="20" height="8" rx="2" fill="rgba(245,158,11,0.3)" />
-                                                    </g>
-                                                ))}
-                                                {/* Incognito hood */}
-                                                <ellipse cx="120" cy="65" rx="38" ry="42" fill="rgba(30,20,0,0.7)" stroke="#f59e0b" strokeWidth="2" className="job-incognito" />
-                                                {/* Eye slits */}
-                                                <ellipse cx="108" cy="62" rx="8" ry="5" fill="rgba(251,191,36,0.9)" className="job-eye-glow" />
-                                                <ellipse cx="132" cy="62" rx="8" ry="5" fill="rgba(251,191,36,0.9)" className="job-eye-glow" />
-                                                {/* Slash / hidden */}
-                                                <line x1="84" y1="95" x2="96" y2="110" stroke="rgba(245,158,11,0.4)" strokeWidth="1.5" />
-                                                <line x1="100" y1="95" x2="112" y2="110" stroke="rgba(245,158,11,0.4)" strokeWidth="1.5" />
-                                                {/* Shield badge */}
-                                                <path d="M195 20 L210 28 L210 48 Q210 60 195 65 Q180 60 180 48 L180 28 Z" fill="rgba(245,158,11,0.25)" stroke="#f59e0b" strokeWidth="1.5" className="job-shield-pulse" />
-                                                <text x="195" y="46" textAnchor="middle" fill="#fbbf24" fontSize="14">🔒</text>
-                                                <text x="120" y="152" textAnchor="middle" fill="rgba(251,191,36,0.7)" fontSize="9" fontFamily="Inter,sans-serif">100% Employer Hidden</text>
-                                            </svg>
-                                        )
-                                    },
-                                    {
-                                        title: "Application Pipeline",
-                                        desc: "Track every single application, interview stage, and offer letter in a clear, visual kanban board. Organize your job search like a professional project, setting follow-up reminders and keeping notes on every interaction so you never miss an opportunity to follow through.",
-                                        imgBg: "rgba(217,119,6,0.12)",
-                                        visual: (
-                                            <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="job-card-svg">
-                                                {/* Kanban columns */}
-                                                {["Applied", "Interview", "Offer"].map((label, col) => (
-                                                    <g key={col}>
-                                                        <rect x={20 + col * 73} y="18" width="62" height="120" rx="6" fill="rgba(245,158,11,0.08)" stroke="rgba(245,158,11,0.25)" strokeWidth="1" />
-                                                        <text x={51 + col * 73} y="32" textAnchor="middle" fill="rgba(251,191,36,0.6)" fontSize="7" fontWeight="600">{label}</text>
-                                                    </g>
-                                                ))}
-                                                {/* Cards in columns */}
-                                                {[
-                                                    { col: 0, row: 0, c: "rgba(245,158,11,0.4)", w: 50, label: "Google" },
-                                                    { col: 0, row: 1, c: "rgba(245,158,11,0.3)", w: 50, label: "Amazon" },
-                                                    { col: 0, row: 2, c: "rgba(245,158,11,0.25)", w: 50, label: "Stripe" },
-                                                    { col: 1, row: 0, c: "rgba(251,191,36,0.5)", w: 50, label: "Meta" },
-                                                    { col: 1, row: 1, c: "rgba(251,191,36,0.35)", w: 50, label: "Netflix" },
-                                                    { col: 2, row: 0, c: "rgba(234,88,12,0.6)", w: 50, label: "Apple ✓" },
-                                                ].map((card, k) => (
-                                                    <g key={k}>
-                                                        <rect x={27 + card.col * 73} y={42 + card.row * 30} width={card.w} height="22" rx="4" fill={card.c} className={`job-kcard job-kcard-${k}`} />
-                                                        <text x={52 + card.col * 73} y={57 + card.row * 30} textAnchor="middle" fill="white" fontSize="7" fontWeight="500">{card.label}</text>
-                                                    </g>
-                                                ))}
-                                                <text x="120" y="152" textAnchor="middle" fill="rgba(251,191,36,0.7)" fontSize="9" fontFamily="Inter,sans-serif">Visual Kanban Tracker</text>
-                                            </svg>
-                                        )
-                                    },
-                                ].map((item, i) => (
-                                    <motion.div
-                                        key={i}
-                                        className={`crm-insight-card job-arc-card insight-card-${i} ${activeInsight === i ? 'active-card job-active-card' : ''}`}
-                                        initial={{ opacity: 0 }}
-                                        whileInView={{ opacity: 1 }}
-                                        transition={{ duration: 0.6, delay: i * 0.15 }}
-                                        viewport={{ once: true }}
-                                        onClick={() => setActiveInsight(i)}
-                                    >
-                                        {i === 0 && (
-                                            <button className="card-attached-arrow left" onClick={(e) => { e.stopPropagation(); setActiveInsight(Math.max(0, activeInsight - 1)); }} style={{ opacity: activeInsight === 0 ? 0.3 : 1, pointerEvents: activeInsight === 0 ? 'none' : 'auto' }}>
-                                                <FontAwesomeIcon icon={faChevronLeft} />
-                                            </button>
-                                        )}
-                                        {i === 4 && (
-                                            <button className="card-attached-arrow right" onClick={(e) => { e.stopPropagation(); setActiveInsight(Math.min(4, activeInsight + 1)); }} style={{ opacity: activeInsight === 4 ? 0.3 : 1, pointerEvents: activeInsight === 4 ? 'none' : 'auto' }}>
-                                                <FontAwesomeIcon icon={faChevronRight} />
-                                            </button>
-                                        )}
-                                        <div className="cic-image-wrapper job-svg-wrapper" style={{ background: item.imgBg }}>
-                                            {item.visual}
-                                        </div>
-                                        <h3>{item.title}</h3>
-                                        <p>{item.desc}</p>
-                                        <div className="cic-line job-cic-line" />
-                                    </motion.div>
-                                ))}
+                                {(() => {
+                                    const cardsList = [
+                                        {
+                                            title: "AI Resume Scoring",
+                                            desc: "Instant feedback with keyword optimization tips to pass ATS filters effortlessly and reach the top of recruiter shortlists. Our advanced scanning engine analyzes your resume against industry-standard benchmarks, providing specific recommendations to highlight your key accomplishments effectively.",
+                                            imgBg: "rgba(245,158,11,0.12)",
+                                            visual: (
+                                                <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="job-card-svg">
+                                                    {/* Resume doc */}
+                                                    <rect x="55" y="20" width="90" height="120" rx="6" fill="rgba(245,158,11,0.15)" stroke="#f59e0b" strokeWidth="1.5" />
+                                                    {/* Lines of text */}
+                                                    {[40, 55, 70, 85, 100, 115].map((y, k) => (
+                                                        <rect key={k} x="70" y={y} width={k === 0 ? 50 : 65} height="6" rx="3" fill="rgba(251,191,36,0.4)" className={`job-line-fade job-line-fade-${k}`} />
+                                                    ))}
+                                                    {/* AI scan beam */}
+                                                    <line x1="55" y1="80" x2="145" y2="80" stroke="#fbbf24" strokeWidth="2" strokeDasharray="200" className="job-scan-beam" />
+                                                    {/* Score badge */}
+                                                    <circle cx="175" cy="55" r="22" fill="rgba(245,158,11,0.3)" stroke="#f59e0b" strokeWidth="2" className="job-score-ring" />
+                                                    <text x="175" y="52" textAnchor="middle" fill="#fbbf24" fontSize="12" fontWeight="bold">94</text>
+                                                    <text x="175" y="64" textAnchor="middle" fill="rgba(251,191,36,0.7)" fontSize="7">ATS Score</text>
+                                                    {/* Check sparks */}
+                                                    {[[163, 30], [188, 30], [163, 80], [188, 80]].map(([cx, cy], k) => (
+                                                        <circle key={k} cx={cx} cy={cy} r="3" fill="#fbbf24" opacity="0.5" className={`job-spark job-spark-${k}`} />
+                                                    ))}
+                                                    <text x="120" y="152" textAnchor="middle" fill="rgba(251,191,36,0.7)" fontSize="9" fontFamily="Inter,sans-serif">AI-Powered ATS Filter</text>
+                                                </svg>
+                                            )
+                                        },
+                                        {
+                                            title: "Mock Interview Coach",
+                                            desc: "Practice with our AI interviewer and get real-time feedback on answers, body language, and tone of voice. Our coach simulates high-pressure environments, helping you refine your storytelling and build the confidence needed to impress even the most demanding hiring managers.",
+                                            imgBg: "rgba(251,191,36,0.12)",
+                                            visual: (
+                                                <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="job-card-svg">
+                                                    {/* Person */}
+                                                    <circle cx="70" cy="55" r="20" fill="rgba(245,158,11,0.25)" stroke="#f59e0b" strokeWidth="1.5" />
+                                                    <circle cx="70" cy="52" r="8" fill="#fbbf24" opacity="0.5" />
+                                                    <path d="M50 75 Q70 88 90 75" fill="rgba(245,158,11,0.2)" stroke="#f59e0b" strokeWidth="1" />
+                                                    {/* Speech bubble person */}
+                                                    <path d="M94 42 Q130 30 130 55 Q130 70 108 70 L100 78 L102 70 Q94 70 94 55 Z" fill="rgba(245,158,11,0.2)" stroke="#fbbf24" strokeWidth="1.2" className="job-bubble-1" />
+                                                    {/* Waveform inside bubble */}
+                                                    {[108, 114, 120, 126].map((x, k) => (
+                                                        <line key={k} x1={x} y1={55 - ([5, 9, 6, 4][k])} x2={x} y2={55 + ([5, 9, 6, 4][k])} stroke="#fbbf24" strokeWidth="2" strokeLinecap="round" className={`job-wave job-wave-${k}`} />
+                                                    ))}
+                                                    {/* AI robot */}
+                                                    <rect x="155" y="40" width="50" height="45" rx="8" fill="rgba(245,158,11,0.25)" stroke="#f59e0b" strokeWidth="1.5" />
+                                                    <circle cx="168" cy="57" r="5" fill="#fbbf24" className="job-eye-blink" />
+                                                    <circle cx="192" cy="57" r="5" fill="#fbbf24" className="job-eye-blink" />
+                                                    <rect x="166" y="68" width="28" height="5" rx="2" fill="rgba(251,191,36,0.5)" />
+                                                    {/* AI speech bubble */}
+                                                    <path d="M148 38 Q138 25 155 25 Q172 25 172 35 L165 42 Z" fill="rgba(251,191,36,0.3)" stroke="#fbbf24" strokeWidth="1" className="job-bubble-2" />
+                                                    <text x="120" y="152" textAnchor="middle" fill="rgba(251,191,36,0.7)" fontSize="9" fontFamily="Inter,sans-serif">Real-Time AI Coaching</text>
+                                                </svg>
+                                            )
+                                        },
+                                        {
+                                            title: "Salary Benchmarking",
+                                            desc: "Know your market worth with real-time salary data by role, experience level, and geographic location. We aggregate thousands of data points to provide accurate compensation insights, empowering you to negotiate with confidence and ensure you are being paid fairly for your skills.",
+                                            imgBg: "rgba(245,158,11,0.18)",
+                                            visual: (
+                                                <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="job-card-svg">
+                                                    {/* Horizontal bars */}
+                                                    {[
+                                                        { label: "Junior", w: 80, y: 30, c: "rgba(245,158,11,0.5)" },
+                                                        { label: "Mid", w: 130, y: 55, c: "rgba(251,191,36,0.7)" },
+                                                        { label: "Senior", w: 170, y: 80, c: "#f59e0b" },
+                                                        { label: "Lead", w: 140, y: 105, c: "rgba(234,88,12,0.6)" },
+                                                    ].map((b, k) => (
+                                                        <g key={k}>
+                                                            <text x="18" y={b.y + 10} fill="rgba(251,191,36,0.6)" fontSize="8">{b.label}</text>
+                                                            <rect x="50" y={b.y} width={b.w} height="16" rx="4" fill={b.c} className={`job-hbar job-hbar-${k}`} />
+                                                        </g>
+                                                    ))}
+                                                    {/* You marker */}
+                                                    <line x1="150" y1="18" x2="150" y2="130" stroke="#fbbf24" strokeWidth="1.5" strokeDasharray="4 3" />
+                                                    <polygon points="146,20 154,20 150,14" fill="#fbbf24" />
+                                                    <text x="152" y="14" fill="#fbbf24" fontSize="7">You</text>
+                                                    {/* Currency symbol */}
+                                                    <text x="200" y="80" fill="rgba(251,191,36,0.4)" fontSize="36" fontWeight="bold">₹</text>
+                                                    <text x="120" y="152" textAnchor="middle" fill="rgba(251,191,36,0.7)" fontSize="9" fontFamily="Inter,sans-serif">Real-Time Market Data</text>
+                                                </svg>
+                                            )
+                                        },
+                                        {
+                                            title: "Confidential Job Search",
+                                            desc: "Hidden mode lets you explore new opportunities without your current employer or colleagues ever knowing. We use advanced privacy shields to mask your profile from specific companies, giving you the ultimate freedom to browse and apply to roles with complete peace of mind.",
+                                            imgBg: "rgba(180,83,9,0.12)",
+                                            visual: (
+                                                <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="job-card-svg">
+                                                    {/* Background blurred profiles */}
+                                                    {[[40, 60], [80, 45], [120, 65], [160, 50], [200, 60]].map(([cx, cy], k) => (
+                                                        <g key={k} opacity="0.25">
+                                                            <circle cx={cx} cy={cy} r="12" fill="rgba(245,158,11,0.4)" stroke="#f59e0b" strokeWidth="1" />
+                                                            <rect x={cx - 10} y={cy + 14} width="20" height="8" rx="2" fill="rgba(245,158,11,0.3)" />
+                                                        </g>
+                                                    ))}
+                                                    {/* Incognito hood */}
+                                                    <ellipse cx="120" cy="65" rx="38" ry="42" fill="rgba(30,20,0,0.7)" stroke="#f59e0b" strokeWidth="2" className="job-incognito" />
+                                                    {/* Eye slits */}
+                                                    <ellipse cx="108" cy="62" rx="8" ry="5" fill="rgba(251,191,36,0.9)" className="job-eye-glow" />
+                                                    <ellipse cx="132" cy="62" rx="8" ry="5" fill="rgba(251,191,36,0.9)" className="job-eye-glow" />
+                                                    {/* Slash / hidden */}
+                                                    <line x1="84" y1="95" x2="96" y2="110" stroke="rgba(245,158,11,0.4)" strokeWidth="1.5" />
+                                                    <line x1="100" y1="95" x2="112" y2="110" stroke="rgba(245,158,11,0.4)" strokeWidth="1.5" />
+                                                    {/* Shield badge */}
+                                                    <path d="M195 20 L210 28 L210 48 Q210 60 195 65 Q180 60 180 48 L180 28 Z" fill="rgba(245,158,11,0.25)" stroke="#f59e0b" strokeWidth="1.5" className="job-shield-pulse" />
+                                                    <text x="195" y="46" textAnchor="middle" fill="#fbbf24" fontSize="14">🔒</text>
+                                                    <text x="120" y="152" textAnchor="middle" fill="rgba(251,191,36,0.7)" fontSize="9" fontFamily="Inter,sans-serif">100% Employer Hidden</text>
+                                                </svg>
+                                            )
+                                        },
+                                        {
+                                            title: "Application Pipeline",
+                                            desc: "Track every single application, interview stage, and offer letter in a clear, visual kanban board. Organize your job search like a professional project, setting follow-up reminders and keeping notes on every interaction so you never miss an opportunity to follow through.",
+                                            imgBg: "rgba(217,119,6,0.12)",
+                                            visual: (
+                                                <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="job-card-svg">
+                                                    {/* Kanban columns */}
+                                                    {["Applied", "Interview", "Offer"].map((label, col) => (
+                                                        <g key={col}>
+                                                            <rect x={20 + col * 73} y="18" width="62" height="120" rx="6" fill="rgba(245,158,11,0.08)" stroke="rgba(245,158,11,0.25)" strokeWidth="1" />
+                                                            <text x={51 + col * 73} y="32" textAnchor="middle" fill="rgba(251,191,36,0.6)" fontSize="7" fontWeight="600">{label}</text>
+                                                        </g>
+                                                    ))}
+                                                    {/* Cards in columns */}
+                                                    {[
+                                                        { col: 0, row: 0, c: "rgba(245,158,11,0.4)", w: 50, label: "Google" },
+                                                        { col: 0, row: 1, c: "rgba(245,158,11,0.3)", w: 50, label: "Amazon" },
+                                                        { col: 0, row: 2, c: "rgba(245,158,11,0.25)", w: 50, label: "Stripe" },
+                                                        { col: 1, row: 0, c: "rgba(251,191,36,0.5)", w: 50, label: "Meta" },
+                                                        { col: 1, row: 1, c: "rgba(251,191,36,0.35)", w: 50, label: "Netflix" },
+                                                        { col: 2, row: 0, c: "rgba(234,88,12,0.6)", w: 50, label: "Apple ✓" },
+                                                    ].map((card, k) => (
+                                                        <g key={k}>
+                                                            <rect x={27 + card.col * 73} y={42 + card.row * 30} width={card.w} height="22" rx="4" fill={card.c} className={`job-kcard job-kcard-${k}`} />
+                                                            <text x={52 + card.col * 73} y={57 + card.row * 30} textAnchor="middle" fill="white" fontSize="7" fontWeight="500">{card.label}</text>
+                                                        </g>
+                                                    ))}
+                                                    <text x="120" y="152" textAnchor="middle" fill="rgba(251,191,36,0.7)" fontSize="9" fontFamily="Inter,sans-serif">Visual Kanban Tracker</text>
+                                                </svg>
+                                            )
+                                        },
+                                        {
+                                            title: "AI Interview Simulation",
+                                            desc: "Interactive roleplay with AI bots simulating real company interview loops. Practice answering common tech, product, or behavioral questions, and receive feedback on clarity, structure, and keyword optimization.",
+                                            imgBg: "rgba(245,158,11,0.12)",
+                                            visual: (
+                                                <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="job-card-svg">
+                                                    {/* Interview questions console */}
+                                                    <rect x="35" y="30" width="170" height="85" rx="6" fill="rgba(30,20,0,0.7)" stroke="#f59e0b" strokeWidth="1.5" />
+                                                    <circle cx="50" cy="42" r="3" fill="#ef4444" />
+                                                    <circle cx="60" cy="42" r="3" fill="#f59e0b" />
+                                                    <circle cx="70" cy="42" r="3" fill="#10b981" />
+                                                    
+                                                    <text x="48" y="62" fill="#fbbf24" fontSize="8" fontFamily="Courier,monospace">Q: Explain closures in JS...</text>
+                                                    <text x="48" y="77" fill="#a3e635" fontSize="8" fontFamily="Courier,monospace">A: A closure is a combination...</text>
+                                                    
+                                                    <rect x="48" y="90" width="120" height="4" rx="2" fill="rgba(251,191,36,0.3)" />
+                                                    <rect x="48" y="90" width="90" height="4" rx="2" fill="#fbbf24" />
+                                                    
+                                                    <text x="120" y="152" textAnchor="middle" fill="rgba(251,191,36,0.7)" fontSize="9" fontFamily="Inter,sans-serif">Live Mock Session Console</text>
+                                                </svg>
+                                            )
+                                        },
+                                        {
+                                            title: "Smart Portfolio Review",
+                                            desc: "Upload your personal website, GitHub, or case studies to get direct recommendations. Highlight projects, identify gaps in your portfolio, and improve your chances of getting noticed by technical recruiters.",
+                                            imgBg: "rgba(251,191,36,0.12)",
+                                            visual: (
+                                                <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="job-card-svg">
+                                                    {/* Portfolio layout */}
+                                                    <rect x="40" y="30" width="160" height="90" rx="5" fill="rgba(245,158,11,0.15)" stroke="#f59e0b" strokeWidth="1.5" />
+                                                    
+                                                    {/* Grid layout */}
+                                                    <rect x="52" y="42" width="62" height="32" rx="3" fill="rgba(251,191,36,0.25)" stroke="#fbbf24" strokeWidth="1" />
+                                                    <circle cx="83" cy="58" r="8" fill="rgba(251,191,36,0.4)" />
+                                                    
+                                                    <rect x="126" y="42" width="62" height="32" rx="3" fill="rgba(251,191,36,0.25)" stroke="#fbbf24" strokeWidth="1" />
+                                                    <rect x="136" y="55" width="42" height="4" rx="2" fill="rgba(251,191,36,0.4)" />
+                                                    
+                                                    {/* Bottom bar */}
+                                                    <rect x="52" y="84" width="136" height="24" rx="3" fill="rgba(234,88,12,0.2)" stroke="#ea580c" strokeWidth="1" />
+                                                    <text x="120" y="99" textAnchor="middle" fill="#fbbf24" fontSize="8" fontWeight="bold">Portfolio Strength: Excellent</text>
+                                                    
+                                                    <text x="120" y="152" textAnchor="middle" fill="rgba(251,191,36,0.7)" fontSize="9" fontFamily="Inter,sans-serif">ATS Portfolio Grader</text>
+                                                </svg>
+                                            )
+                                        },
+                                        {
+                                            title: "Personalized Roadmaps",
+                                            desc: "Fill skill gaps with curated roadmap recommendations customized for your target roles. Track your progress dynamically, earn badges, and display verified credentials directly on your profile.",
+                                            imgBg: "rgba(217,119,6,0.12)",
+                                            visual: (
+                                                <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" className="job-card-svg">
+                                                    {/* Roadmap nodes */}
+                                                    <circle cx="50" cy="80" r="14" fill="#f59e0b" stroke="#fbbf24" strokeWidth="2" />
+                                                    <text x="50" y="84" textAnchor="middle" fill="white" fontSize="11" fontWeight="bold">✓</text>
+                                                    <text x="50" y="106" textAnchor="middle" fill="rgba(251,191,36,0.7)" fontSize="7" fontWeight="bold">HTML/CSS</text>
+                                                    
+                                                    <line x1="64" y1="80" x2="106" y2="80" stroke="#fbbf24" strokeWidth="2.5" />
+                                                    
+                                                    <circle cx="120" cy="80" r="14" fill="#f59e0b" stroke="#fbbf24" strokeWidth="2" />
+                                                    <text x="120" y="84" textAnchor="middle" fill="white" fontSize="11" fontWeight="bold">✓</text>
+                                                    <text x="120" y="106" textAnchor="middle" fill="rgba(251,191,36,0.7)" fontSize="7" fontWeight="bold">React.js</text>
+                                                    
+                                                    <line x1="134" y1="80" x2="176" y2="80" stroke="rgba(251,191,36,0.3)" strokeWidth="2.5" strokeDasharray="4 2" />
+                                                    
+                                                    <circle cx="190" cy="80" r="14" fill="rgba(245,158,11,0.2)" stroke="rgba(251,191,36,0.5)" strokeWidth="1.5" />
+                                                    <text x="190" y="84" textAnchor="middle" fill="#fbbf24" fontSize="10" fontWeight="bold">3</text>
+                                                    <text x="190" y="106" textAnchor="middle" fill="rgba(251,191,36,0.5)" fontSize="7">Node.js</text>
+                                                    
+                                                    <text x="120" y="32" textAnchor="middle" fill="#fbbf24" fontSize="10" fontWeight="bold">Full-Stack Career Track</text>
+                                                    <text x="120" y="152" textAnchor="middle" fill="rgba(251,191,36,0.7)" fontSize="9" fontFamily="Inter,sans-serif">Adaptive Learning Paths</text>
+                                                </svg>
+                                            )
+                                        }
+                                    ];
+
+                                    return [0, 1, 2, 3, 4].map((i) => {
+                                        const cardIndex = (activeInsight - 2 + i + cardsList.length) % cardsList.length;
+                                        const item = cardsList[cardIndex];
+                                        const isActive = activeInsight === cardIndex;
+
+                                        return (
+                                            <motion.div
+                                                key={i}
+                                                className={`crm-insight-card job-arc-card insight-card-${i} ${isActive ? 'active-card job-active-card' : ''}`}
+                                                initial={{ opacity: 0 }}
+                                                whileInView={{ opacity: 1 }}
+                                                transition={{ duration: 0.6, delay: i * 0.15 }}
+                                                viewport={{ once: true }}
+                                                onClick={() => setActiveInsight(cardIndex)}
+                                            >
+                                                {i === 0 && (
+                                                    <button
+                                                        className="card-attached-arrow left"
+                                                        onClick={(e) => {
+                                                            e.stopPropagation();
+                                                            setActiveInsight((prev) => (prev + 1) % cardsList.length);
+                                                        }}
+                                                    >
+                                                        <FontAwesomeIcon icon={faChevronLeft} />
+                                                    </button>
+                                                )}
+                                                {i === 4 && (
+                                                    <button
+                                                        className="card-attached-arrow right"
+                                                        onClick={(e) => {
+                                                            e.stopPropagation();
+                                                            setActiveInsight((prev) => (prev - 1 + cardsList.length) % cardsList.length);
+                                                        }}
+                                                    >
+                                                        <FontAwesomeIcon icon={faChevronRight} />
+                                                    </button>
+                                                )}
+                                                <div className="cic-image-wrapper job-svg-wrapper" style={{ background: item.imgBg }}>
+                                                    {item.visual}
+                                                </div>
+                                                <h3>{item.title}</h3>
+                                                <p>{item.desc}</p>
+                                                <div className="cic-line job-cic-line" />
+                                            </motion.div>
+                                        );
+                                    });
+                                })()}
                             </div>
                         </div>
                         <motion.div className="crm-cta-strip job-cta-strip" initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>

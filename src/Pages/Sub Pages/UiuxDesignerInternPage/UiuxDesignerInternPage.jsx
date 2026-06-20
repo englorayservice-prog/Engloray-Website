@@ -164,8 +164,19 @@ const UiuxDesignerInternPage = () => {
         const updateScale = () => {
             const designWidth = 1440;
             const currentWidth = window.innerWidth;
-            const newScale = currentWidth / designWidth;
-            setScale(newScale);
+
+            if (currentWidth > 1440) {
+                // Use fluid scaling for screens wider than 1440px (no scale transform)
+                setScale(1);
+            } else if (currentWidth >= 1024) {
+                // Scale down for standard desktop screens down to 1024px
+                const newScale = currentWidth / designWidth;
+                setScale(newScale);
+            } else {
+                // For mobile/tablet, stay at scale 1 and let CSS handle responsiveness
+                setScale(1);
+            }
+
             if (scalingRef.current) {
                 setContentHeight(scalingRef.current.offsetHeight);
             }
@@ -313,19 +324,22 @@ const UiuxDesignerInternPage = () => {
             url: galleryCollab,
             title: "Empathy Workshops",
             description: "Designers conducting user research and empathy mapping sessions in our dedicated brainstorming areas.",
-            icon: <FontAwesomeIcon icon={faUsers} />
+            icon: <FontAwesomeIcon icon={faUsers} />,
+            benefit: "User Research"
         },
         {
             url: galleryWorkstation,
             title: "Figma Prototyping",
             description: "Specialized workstations optimized for real-time collaboration and complex interactive prototyping.",
-            icon: <FontAwesomeIcon icon={faObjectGroup} />
+            icon: <FontAwesomeIcon icon={faObjectGroup} />,
+            benefit: "Interactive Prototypes"
         },
         {
             url: galleryPresentation,
             title: "UX Review Sessions",
             description: "Designers presenting user flow diagrams and high-fidelity mockups for comprehensive stakeholder feedback.",
-            icon: <FontAwesomeIcon icon={faEye} />
+            icon: <FontAwesomeIcon icon={faEye} />,
+            benefit: "Design Critique"
         },
         {
             url: galleryInteractive,
@@ -533,6 +547,48 @@ const UiuxDesignerInternPage = () => {
         }, 1000);
     };
 
+    const handleDownloadAllResources = () => {
+        let count = 0;
+        courseResources.forEach((resource, index) => {
+            if (!resource.isRestricted && resource.localPath) {
+                setTimeout(() => {
+                    const link = document.createElement('a');
+                    link.href = resource.localPath;
+                    link.download = resource.fileName || `${resource.title}.pdf`;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    
+                    if (!downloadedResources.includes(resource.id)) {
+                        setDownloadedResources(prev => [...prev, resource.id]);
+                    }
+                }, count * 350);
+                count++;
+            }
+        });
+        if (count > 0) {
+            setToastMessage(`✅ Downloading all ${count} free resources...`);
+        } else {
+            setToastMessage(`❌ No free resources available to download.`);
+        }
+    };
+
+    const handleShowDownloadHistory = () => {
+        if (downloadedResources.length === 0) {
+            setToastMessage("🏆 You haven't downloaded any resources yet. Start downloading below!");
+        } else {
+            const downloadedTitles = courseResources
+                .filter(res => downloadedResources.includes(res.id))
+                .map(res => res.title);
+            
+            if (downloadedTitles.length > 0) {
+                setToastMessage(`🏆 Downloaded resources: ${downloadedTitles.join(', ')}`);
+            } else {
+                setToastMessage("🏆 You haven't downloaded any resources yet. Start downloading below!");
+            }
+        }
+    };
+
     const [isTransitioning, setIsTransitioning] = useState(true);
     const infiniteContent = Array(20).fill(courseContent).flat().map((item, i) => ({ ...item, uniqueId: i }));
 
@@ -672,8 +728,8 @@ const UiuxDesignerInternPage = () => {
                     className="UX-scaling-outer-wrapper"
                     style={{
                         width: '100%',
-                        height: contentHeight * scale,
-                        overflow: 'hidden',
+                        height: scale === 1 ? 'auto' : contentHeight * scale,
+                        overflow: scale === 1 ? 'visible' : 'hidden',
                         backgroundColor: '#000000',
                         position: 'relative'
                     }}
@@ -682,13 +738,13 @@ const UiuxDesignerInternPage = () => {
                         ref={scalingRef}
                         className="UX-scaling-inner-container"
                         style={{
-                            width: '1440px',
-                            transform: `scale(${scale})`,
+                            width: scale === 1 ? '100%' : '1440px',
+                            transform: scale === 1 ? 'none' : `scale(${scale})`,
                             transformOrigin: 'top left',
-                            position: 'absolute',
+                            position: scale === 1 ? 'relative' : 'absolute',
                             top: 0,
                             left: 0,
-                            backgroundColor: '#000000'
+                            backgroundColor: '#e8e8e8' // Match hero bg to avoid black bars
                         }}
                     >
                         <div>
@@ -1092,6 +1148,11 @@ const UiuxDesignerInternPage = () => {
                                     <div className="UX-dn-stat-item"><strong>15,000</strong> Total Downloads</div>
                                     <div className="UX-dn-stat-item"><strong>{downloadedResources.length}</strong> Your Downloads</div>
                                 </div>
+                                <div className="UX-dn-socials">
+                                    <span className="UX-dn-social-icon" title="Total Resources" onClick={() => scrollToSection('dream-navigator')}><FontAwesomeIcon icon={faGem} /></span>
+                                    <span className="UX-dn-social-icon" title="Download All Free Resources" onClick={handleDownloadAllResources}><FontAwesomeIcon icon={faDownload} /></span>
+                                    <span className="UX-dn-social-icon" title="Your Downloads" onClick={handleShowDownloadHistory}><FontAwesomeIcon icon={faTrophy} /></span>
+                                </div>
                             </div>
 
                             <div className="UX-resources-note">
@@ -1173,6 +1234,9 @@ const UiuxDesignerInternPage = () => {
                                                 </div>
                                                 <div className="UX-Gallery-small-content-new">
                                                     <h4 className="UX-Gallery-small-title-new">{item.title}</h4>
+                                                    <span className="UX-Gallery-small-date-new" style={{ color: '#ec4899', fontWeight: '600' }}>
+                                                        {item.icon} <span style={{ marginLeft: '4px' }}>{item.benefit}</span>
+                                                    </span>
                                                 </div>
                                             </div>
                                         );
