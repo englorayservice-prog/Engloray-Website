@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Laptop, Code2, Building2 } from 'lucide-react';
 import './EnglorayPortalPage.css';
 
-// Import Assets
-import englorayLogo from '../../../assets/3.png';
+import TopNavbar from '../../../Components/TopNavbar/TopNavbar';
+import NavigationBar from '../../TechLearningSection/NavigationBar/NavigationBar';
+import SubFooterTwo from '../subFooterTwo/NewFooter';
 import cartoonMale1 from '../../../assets/cartoon_male_1.png';
 import cartoonMale2 from '../../../assets/cartoon_male_2.png';
 import cartoonMale3 from '../../../assets/cartoon_male_3.png';
@@ -13,15 +15,43 @@ import cartoonFemale3 from '../../../assets/cartoon_female_3.png';
 import cartoonFemale4 from '../../../assets/cartoon_female_4.png';
 
 // Import Backgrounds
-import mentorBg from '../../../assets/mentor.jpeg';
-import corporateBg from '../../../assets/corporate.jpeg';
-import eLearningBg from '../../../assets/eLearning.png';
-import softwareBg from '../../../assets/Software-Developer.png';
-import expertiseBg from '../../../assets/OurExperise&Learning.png';
+import mentorBg from '../../../assets/dev_workshops.png';
+import corporateBg from '../../../assets/corp_internships.png';
+import eLearningBg from '../../../assets/ai_courses.png';
+import softwareBg from '../../../assets/fullstack_sprints.png';
+import expertiseBg from '../../../assets/uiux_design_labs.png';
 import experienceBeyondClassroom from '../../../assets/experience_beyond_classroom.png';
+
+// Import Program Assets
+import programAiSprints from '../../../assets/program_ai_sprints.png';
+import programSaasBuild from '../../../assets/program_saas_build.png';
+import programUiuxDesign from '../../../assets/program_uiux_design.png';
+import programCloudDevops from '../../../assets/program_cloud_devops.png';
+import programMobileDev from '../../../assets/program_mobile_dev.png';
+import programPlacementPrep from '../../../assets/program_placement_prep.png';
+
+// Import Certificate Assets
+import gdCertificate from '../../../assets/GD Certificate.jpeg';
+import uiuxCertificate from '../../../assets/UI Certificate.jpeg';
+import javaCertificate from '../../../assets/java certifcate.jpeg';
+
+// Import Admission Portal Assets
+import admissionPortal1Person from '../../../assets/images/applicationportal1person.png';
+import admissionPortal2Person from '../../../assets/images/applicationportal2person.png';
+import admissionPortal3Person from '../../../assets/images/applicationportal3personimage.png';
 
 export default function EnglorayPortalPage() {
 
+  // 1. Slideshow State (Hero background)
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const totalSlides = 5;
+
+  useEffect(() => {
+    const slideInterval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % totalSlides);
+    }, 4000);
+    return () => clearInterval(slideInterval);
+  }, []);
 
   // 3. Dynamic Registration Closing Date
   const [closingDate, setClosingDate] = useState('');
@@ -75,20 +105,65 @@ export default function EnglorayPortalPage() {
     }
   };
 
-  // 5. University Tabs & Carousel
-  const [activeRegion, setActiveRegion] = useState('all');
+  // 5. Program Tabs & Carousel
+  const [activeStatus, setActiveStatus] = useState('all');
   const uniTrackRef = useRef(null);
 
-  const universityCards = [
-    { name: "SMR University", region: "telangana", city: "Hyderabad", status: "admissions-open", badge: "Admissions Open", img: "https://d14qv6cm1t62pm.cloudfront.net/niat/state-icons-telangana.png" },
-    { name: "Aurora Deemed University", region: "telangana", city: "Hyderabad", status: "admissions-open", badge: "Admissions Open", img: "https://d14qv6cm1t62pm.cloudfront.net/niat/state-icons-telangana.png" },
-    { name: "GMR Institute of Technology", region: "andhra", city: "Vizianagaram", status: "admissions-open", badge: "Admissions Open", img: "https://d14qv6cm1t62pm.cloudfront.net/niat/state-icons-andhra-pradesh.png" },
-    { name: "Annamacharya University", region: "andhra", city: "Kadapa", status: "admissions-open", badge: "Admissions Open", img: "https://d14qv6cm1t62pm.cloudfront.net/niat/state-icons-andhra-pradesh.png" },
-    { name: "Chalapathi Institute of Technology", region: "andhra", city: "Guntur", status: "admissions-open", badge: "Admissions Open", img: "https://d14qv6cm1t62pm.cloudfront.net/niat/state-icons-andhra-pradesh.png" },
-    { name: "Yenepoya University", region: "karnataka", city: "Mangalore", status: "admissions-open", badge: "Admissions Open", img: "https://d14qv6cm1t62pm.cloudfront.net/niat/state-icons-india.png" },
-    { name: "Geeta University", region: "haryana", city: "Panipat", status: "admissions-open", badge: "Admissions Open", img: "https://d14qv6cm1t62pm.cloudfront.net/niat/state-icons-haryana.png" },
-    { name: "Vivekananda Global University", region: "rajasthan", city: "Jaipur", status: "admissions-open", badge: "Admissions Open", img: "https://d14qv6cm1t62pm.cloudfront.net/niat/state-icons-india.png" },
-    { name: "Noida International University", region: "delhi", city: "Delhi Noida", status: "admissions-open", badge: "Admissions Open", img: "https://d14qv6cm1t62pm.cloudfront.net/niat/state-icons-india.png" }
+  const programCards = [
+    { 
+      name: "Generative AI & LLM Sprints", 
+      category: "AI & Machine Learning", 
+      status: "conducted", 
+      badge: "Conducted", 
+      venue: "SMR University, Hyderabad",
+      desc: "Hands-on implementation of LLM agents, RAG pipelines, and automated chatbot integrations on cloud infrastructure.",
+      img: programAiSprints 
+    },
+    { 
+      name: "Full-Stack SaaS Buildathons", 
+      category: "Full-Stack Dev", 
+      status: "conducted", 
+      badge: "Conducted", 
+      venue: "GMRIT, Vizianagaram",
+      desc: "Developing and launching production-ready multi-tenant SaaS products from database schema to live deployment.",
+      img: programSaasBuild 
+    },
+    { 
+      name: "UI/UX Design Sprints", 
+      category: "UI/UX & Design", 
+      status: "upcoming", 
+      badge: "Upcoming", 
+      venue: "Aurora University, Hyderabad",
+      desc: "Intensive wireframing, high-fidelity prototypes, interactive user journeys, and component-driven design systems.",
+      img: programUiuxDesign 
+    },
+    { 
+      name: "Cloud & DevOps Sprints", 
+      category: "Cloud & DevOps", 
+      status: "conducted", 
+      badge: "Conducted", 
+      venue: "Yenepoya University, Mangalore",
+      desc: "Setting up CI/CD automation, serverless APIs, Docker containers, and live scaling on AWS/GCP clusters.",
+      img: programCloudDevops 
+    },
+    { 
+      name: "Mobile App Development Labs", 
+      category: "Mobile Dev", 
+      status: "upcoming", 
+      badge: "Upcoming", 
+      venue: "Geeta University, Panipat",
+      desc: "Building native cross-platform mobile apps with responsive layouts, push notifications, and local state management.",
+      img: programMobileDev 
+    },
+    { 
+      name: "Placement & DSA Bootcamp", 
+      category: "Placement Prep", 
+      status: "upcoming", 
+      badge: "Upcoming", 
+      venue: "Noida International University, Delhi",
+      desc: "Comprehensive software engineering mock trials, DSA revision sprints, and direct placement matching drives.",
+      img: programPlacementPrep 
+    }
   ];
 
   const handleUniScroll = (direction) => {
@@ -107,9 +182,9 @@ export default function EnglorayPortalPage() {
   // 6. Certificate Slider
   const [activeCert, setActiveCert] = useState(0);
   const certs = [
-    { title: "Industry Ready Certificate", desc: "Recognized by top tech firms as validation of production-ready development capabilities." },
-    { title: "AI and Cloud Automation Certs", desc: "Showcases expertise in advanced generative models, workflow pipelines, and systems deployment." },
-    { title: "Product Builder Capstone Cert", desc: "Credentials awarded for completing hackathons and launching active revenue-generating applications." }
+    { title: "Professional Java FullStack Certification", desc: "Globally recognized certificate accredited by International Tech Council, validating enterprise backend & frontend capabilities.", image: javaCertificate },
+    { title: "Professional Graphic Design Certification", desc: "Globally recognized certificate accredited by International Design Council, validating print, brand identity, and layout expertise.", image: gdCertificate },
+    { title: "Professional UI/UX Certification", desc: "Globally recognized certificate accredited by International Design Council, validating user research, wireframing, and design systems.", image: uiuxCertificate }
   ];
 
   useEffect(() => {
@@ -126,7 +201,9 @@ export default function EnglorayPortalPage() {
     { name: "Dhanwada Srija", role: "Secured Internship at Asylcorp", text: "My confidence during the internship drive came from the constant guidance, practice sessions, and encouragement I received from Engloray mentors.", avatar: cartoonFemale2 },
     { name: "Patil Pranav", role: "Secured Internship at IntelxLabs", text: "The support from my mentors and the confidence I gained through real-world projects made me feel well-prepared during the placement drive.", avatar: cartoonMale3 },
     { name: "Nakirikanti Sai Vivek", role: "Secured Internship at Mage Data", text: "I learned AWS, Angular, Flask, and gained deep practical knowledge of Generative AI, which enhanced my ability to deploy production-level apps.", avatar: cartoonMale4 },
-    { name: "Chenna Kiran Kumar", role: "Secured Internship at TechWave", text: "The confidence I gained from real-time practice and Engloray's direct support helped me feel ready while applying and attending interview rounds.", avatar: cartoonFemale4 }
+    { name: "Chenna Kiran Kumar", role: "Secured Internship at TechWave", text: "The confidence I gained from real-time practice and Engloray's direct support helped me feel ready while applying and attending interview rounds.", avatar: cartoonFemale4 },
+    { name: "Kotrike Avinash Gupta", role: "Secured Internship at Wendor", text: "The constant support from mentors and hands-on learning in web development & DSA boosted my skills and confidence.", avatar: cartoonMale2 },
+    { name: "Chitukula Abhishek Reddy", role: "Secured Internship at C-Hub Innovations", text: "Attending Engloray helped me learn skills in a way where I can implement my learnings directly into hands-on practice and got exposure to so many opportunities.", avatar: cartoonMale1 }
   ];
 
   const handleTestimonialChange = (index) => {
@@ -139,22 +216,22 @@ export default function EnglorayPortalPage() {
 
   const faqs = {
     general: [
-      { q: "What is the main focus of the Engloray Portal?", a: "Engloray Portal offers specialized project-based courses, internships, and mentor-guided pathways to help students bridge the gap between academic syllabus and practical corporate expectations." },
-      { q: "Is the UGC-recognized degree awarded by Engloray?", a: "No. Engloray is not a university or degree-awarding body. Students receive their standard UGC-recognized/AICTE-approved degree from the enrolled collaborating university upon completing credits, and separately earn their Industry-Ready Certificate from Engloray." },
-      { q: "How do workshops fit into the upskilling programs?", a: "Workshops are hands-on sprints integrated into our core courses, allowing students to learn topics like AI Tools, Graphic Design, and UI/UX wireframing in intensive 3-6 hour practical sessions." }
+      { q: "How does Engloray partner with schools and colleges?", a: "We establish a formal academic partnership (MOU) to take over and transform standard campus lab spaces into modern, co-branded Sandbox Coding Labs, running specialized developer and designer programs." },
+      { q: "Does the institution need to pay for the lab setup?", a: "We offer flexible partnership models. Engloray manages the deployment of sandbox tools, setup of Cloud coding hubs, and developer mentoring pipelines, ensuring minimal setup friction for college management." },
+      { q: "What is the duration of the partnership MOU?", a: "Typically, partnership agreements run for 1 to 3 academic years, allowing us to cover multiple student batches through ongoing workshops, lab iterations, and internship drives." }
     ],
     eat: [
-      { q: "How do workshops fit into the upskilling programs?", a: "Workshops are hands-on sprints integrated into our core courses, allowing students to learn topics like AI Tools, Graphic Design, and UI/UX wireframing in intensive 3-6 hour practical sessions." },
-      { q: "Who are the instructors guiding us?", a: "Our instructors are seasoned developers and designers—like Surya (Graphic Design), Priya (UI/UX), Ashwin (AI tools), and Foujaan (Full Stack)—who currently build real production applications." },
-      { q: "Can I transition from workshops to a full internship?", a: "Yes, students demonstrating progress and building solid project portfolios during the workshop tracks are directly matched with corporate partners for paid internships." }
+      { q: "What workshops are conducted under this partnership?", a: "We conduct hands-on, intensive developer and design sprints on modern tech stacks: Generative AI tools, UI/UX Wireframing, Full-Stack SaaS building, and Cloud Pipelines." },
+      { q: "Who conducts the campus workshops and programs?", a: "Our workshops are run by active software engineers, tech leads, and product designers (e.g., developers from top tech firms), bringing real-world production practices directly to campus labs." },
+      { q: "What is the student capacity for the on-campus workshops?", a: "Our lab takeovers support batches of 60 to 120 students per session, ensuring every student gets hands-on coding practice and real-time guidance during building sprints." }
     ],
     curriculum: [
-      { q: "Will I build real-world applications during upskilling?", a: "Absolutely. The program emphasizes hands-on, project-based learning where students build 50+ real-world applications mimicking platforms like Netflix, Amazon, and WhatsApp, using production-ready cloud architectures." },
-      { q: "What specialization tracks are offered?", a: "Specialization tracks include Full-Stack Web Development, Data Science & Analytics, AI Engineering, Cloud Systems, and Creative UI/UX Designing." }
+      { q: "How do Engloray programs align with the university syllabus?", a: "We map our practical building modules and workshops directly to the existing AICTE/UGC university curriculum, enabling students to fulfill academic course credits while learning industry-ready skills." },
+      { q: "What do students build inside the co-branded Sandbox Labs?", a: "Students build and deploy 50+ real-world applications, cloud-hosted pipelines, and functional SaaS portfolios with custom domains, preparing them for modern job roles." }
     ],
     placements: [
-      { q: "Does Engloray guarantee placements or internships?", a: "We provide comprehensive placement support including direct connections to 2500+ corporate hiring partners, mock interviews, and assessment preparation. While outcomes depend on student effort and performance, over 200+ students have secured internships with stipends from their first year." },
-      { q: "What is the typical stipend range for internships?", a: "Students in their first and second years have secured stipend packages with average monthly payouts of ₹20,000, with top performers securing placements up to ₹80 LPA." }
+      { q: "How do direct paid internships and placements work?", a: "Through our network of 2500+ corporate hiring partners, we coordinate mock trials, recruitment drives, and match qualified student developers directly with paid internships and full-time placement offers." },
+      { q: "How does this benefit the college placement cell?", a: "We work alongside the college placement officer, sharing student portfolio links, real-time performance analytics, and placement metrics to significantly boost the college's overall placement records." }
     ]
   };
 
@@ -164,7 +241,7 @@ export default function EnglorayPortalPage() {
     email: '',
     phone: '',
     college: '',
-    degree: 'B.Tech',
+    degree: 'Principal/Director',
     year: '2026'
   });
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -194,37 +271,8 @@ export default function EnglorayPortalPage() {
         <div className="loader-circle" data-astro-cid-t34ph5kx></div>
       </div>
 
-      {/* Header Announcement */}
-      <header className="header" data-astro-cid-2w66rqv5>
-        <div className="header-announcement-container" data-astro-cid-2w66rqv5>
-          <div className="nat-banner" data-astro-cid-2w66rqv5>
-            <div className="nat-banner-text" data-astro-cid-2w66rqv5>
-              Admissions open for Engloray Courses, Internships, & Bootcamps. Next cohort starting next week!
-            </div>
-            <button className="nat-banner-btn" onClick={scrollToApply} data-astro-cid-2w66rqv5 style={{border:'none', cursor:'pointer'}}>
-              Apply Now
-            </button>
-          </div>
-        </div>
-
-        {/* Main Nav */}
-        <div className="header-main-container" data-astro-cid-2w66rqv5>
-          <div className="header-main" data-astro-cid-2w66rqv5>
-            <div className="header-main-content" data-astro-cid-2w66rqv5>
-              <div className="header-logo-wrapper" data-astro-cid-2w66rqv5>
-                <div className="header-logo" data-astro-cid-2w66rqv5>
-                  <img src={englorayLogo} alt="Engloray Logo" className="header-logo-svg" data-astro-cid-2w66rqv5 />
-                </div>
-              </div>
-              <div className="header-apply-container" id="header-apply-container" data-astro-cid-2w66rqv5>
-                <button className="fixed-apply-button" onClick={scrollToApply} data-astro-cid-2w66rqv5>
-                  Apply Now
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
+      <TopNavbar />
+      <NavigationBar />
 
       {/* Main Content Root */}
       <main id="astro-root" className="main-container">
@@ -233,7 +281,11 @@ export default function EnglorayPortalPage() {
         <section ref={heroRef} className="hero-section" data-astro-cid-dvh7tqhi>
           <div className="hero-background" data-astro-cid-dvh7tqhi>
             <div className="hero-slideshow" data-astro-cid-dvh7tqhi>
-              <div className="hero-slide active" style={{ backgroundImage: `url(${mentorBg})` }} data-astro-cid-dvh7tqhi></div>
+              <div className={`hero-slide ${currentSlide === 0 ? 'active' : ''}`} style={{ backgroundImage: `url(${mentorBg})` }} data-astro-cid-dvh7tqhi></div>
+              <div className={`hero-slide ${currentSlide === 1 ? 'active' : ''}`} style={{ backgroundImage: `url(${corporateBg})` }} data-astro-cid-dvh7tqhi></div>
+              <div className={`hero-slide ${currentSlide === 2 ? 'active' : ''}`} style={{ backgroundImage: `url(${eLearningBg})` }} data-astro-cid-dvh7tqhi></div>
+              <div className={`hero-slide ${currentSlide === 3 ? 'active' : ''}`} style={{ backgroundImage: `url(${softwareBg})` }} data-astro-cid-dvh7tqhi></div>
+              <div className={`hero-slide ${currentSlide === 4 ? 'active' : ''}`} style={{ backgroundImage: `url(${expertiseBg})` }} data-astro-cid-dvh7tqhi></div>
             </div>
             <div className="hero-overlay" data-astro-cid-dvh7tqhi></div>
 
@@ -241,38 +293,44 @@ export default function EnglorayPortalPage() {
               <div className="hero-info" data-astro-cid-dvh7tqhi>
                 <div className="hero-info-content" data-astro-cid-dvh7tqhi>
                   <h2 className="hero-heading" data-astro-cid-dvh7tqhi>
-                    <span data-astro-cid-dvh7tqhi>Become an Expert in</span> <br data-astro-cid-dvh7tqhi />
+                    <span data-astro-cid-dvh7tqhi>Transforming Campuses into</span> <br data-astro-cid-dvh7tqhi />
                     <span className="hero-highlight-wrapper" data-astro-cid-dvh7tqhi>
-                      <span className="hero-highlight active" data-astro-cid-dvh7tqhi>AI & Machine Learning</span>
+                      <span className="hero-highlight active" data-astro-cid-dvh7tqhi style={{ transition: 'all 0.5s ease-in-out' }}>
+                        {currentSlide === 0 && "Specialized Developer Workshops"}
+                        {currentSlide === 1 && "Paid Corporate Internships"}
+                        {currentSlide === 2 && "Hands-on AI & Software Courses"}
+                        {currentSlide === 3 && "Full-Stack Coding Sprints"}
+                        {currentSlide === 4 && "Creative UI/UX Design Labs"}
+                      </span>
                     </span>
                   </h2>
                   <ul className="hero-list" data-astro-cid-dvh7tqhi>
                     <li className="hero-list-item" data-astro-cid-dvh7tqhi>
                       <span className="hero-check" data-astro-cid-dvh7tqhi></span>
-                      <span data-astro-cid-dvh7tqhi>Project-Based Learning with Live Cloud & SaaS Deployments</span>
+                      <span data-astro-cid-dvh7tqhi>Setting up Modern Sandbox Coding Labs on Campus</span>
                     </li>
                     <li className="hero-list-item" data-astro-cid-dvh7tqhi>
                       <span className="hero-check" data-astro-cid-dvh7tqhi></span>
-                      <span data-astro-cid-dvh7tqhi>Hands-on Sprints & Specialized Certification Workshops</span>
+                      <span data-astro-cid-dvh7tqhi>Conducting Intensive Specialized Tech & Design Workshops</span>
                     </li>
                     <li className="hero-list-item" data-astro-cid-dvh7tqhi>
                       <span className="hero-check" data-astro-cid-dvh7tqhi></span>
-                      <span data-astro-cid-dvh7tqhi>Paid Internships & Placements with 2500+ Hiring Partners</span>
+                      <span data-astro-cid-dvh7tqhi>Direct Paid Internships & Placements from Day One</span>
                     </li>
                   </ul>
 
                   <div className="hero-course-details-card" data-astro-cid-dvh7tqhi>
                     <div className="hero-course-details-item" data-astro-cid-dvh7tqhi>
-                      <p className="hero-course-details-label" data-astro-cid-dvh7tqhi>Program Mode</p>
-                      <p className="hero-course-details-value" data-astro-cid-dvh7tqhi>On-Campus Workshops & Online Sprints</p>
+                      <p className="hero-course-details-label" data-astro-cid-dvh7tqhi>Partnership Mode</p>
+                      <p className="hero-course-details-value" data-astro-cid-dvh7tqhi>On-Campus Incubations & Lab Setups</p>
                     </div>
                     <div className="hero-course-details-divider" data-astro-cid-dvh7tqhi>
                       <div className="hero-course-details-divider-line" data-astro-cid-dvh7tqhi></div>
                     </div>
                     <div className="hero-course-details-item" data-astro-cid-dvh7tqhi>
-                      <p className="hero-course-details-label" data-astro-cid-dvh7tqhi>Admissions Status</p>
+                      <p className="hero-course-details-label" data-astro-cid-dvh7tqhi>Collaboration Status</p>
                       <p className="hero-course-details-value" data-astro-cid-dvh7tqhi>
-                        <span data-astro-cid-dvh7tqhi>Cohort Commencing Soon</span> (Limited Slots Available)
+                        <span data-astro-cid-dvh7tqhi>Open for Academic Year Partnerships</span>
                       </p>
                     </div>
                   </div>
@@ -284,64 +342,63 @@ export default function EnglorayPortalPage() {
                 <div className="hero-form-card" data-astro-cid-dvh7tqhi>
                   {formSubmitted ? (
                     <div className="form-success-message" style={{padding: '40px 20px', textAlign: 'center', background: '#fff', borderRadius: '12px'}}>
-                      <h3 style={{color: '#0056d2', fontSize: '24px', marginBottom: '12px'}}>Registration Successful!</h3>
+                      <h3 style={{color: '#0056d2', fontSize: '24px', marginBottom: '12px'}}>Inquiry Received!</h3>
                       <p style={{color: '#334155', fontSize: '15px', lineHeight: '1.5'}}>
-                        Thank you for applying. An admissions counselor will reach out to you within 24 hours to guide you on courses, workshops, and internship tracks.
+                        Thank you for contacting us. A partnership representative will reach out to you within 24 hours to schedule a consultation and demo.
                       </p>
-                      <div style={{marginTop: '24px', fontSize: '32px'}}>🚀</div>
+                      <div style={{marginTop: '24px', fontSize: '32px'}}>🏫</div>
                     </div>
                   ) : (
                     <form onSubmit={handleFormSubmit} style={{display: 'flex', flexDirection: 'column', gap: '16px', padding: '24px', background: '#fff', borderRadius: '12px'}}>
-                      <h3 style={{fontSize: '20px', fontWeight: '700', color: '#1e293b', margin: '0 0 4px', textAlign: 'center'}}>Apply for Incubation & Internships</h3>
-                      <p style={{fontSize: '13px', color: '#64748b', margin: '0 0 8px', textAlign: 'center'}}>Fill details to secure your seat and placement support</p>
+                      <h3 style={{fontSize: '20px', fontWeight: '700', color: '#1e293b', margin: '0 0 4px', textAlign: 'center'}}>Partner with Engloray</h3>
+                      <p style={{fontSize: '13px', color: '#64748b', margin: '0 0 8px', textAlign: 'center'}}>Bring specialized developer workshops and coding labs to your campus</p>
                       
                       {formError && <p style={{color: '#ef4444', fontSize: '13px', margin: '0', textAlign: 'center'}}>{formError}</p>}
 
                       <div className="form-group" style={{display: 'flex', flexDirection: 'column', gap: '6px'}}>
-                        <label style={{fontSize: '13px', fontWeight: '600', color: '#475569'}}>Full Name *</label>
+                        <label style={{fontSize: '13px', fontWeight: '600', color: '#475569'}}>Your Name *</label>
                         <input type="text" name="name" value={formData.name} onChange={handleFormChange} placeholder="Enter your full name" style={{padding: '10px 12px', border: '1px solid #cbd5e1', borderRadius: '6px', fontSize: '14px'}} />
                       </div>
 
                       <div className="form-group" style={{display: 'flex', flexDirection: 'column', gap: '6px'}}>
-                        <label style={{fontSize: '13px', fontWeight: '600', color: '#475569'}}>Email Address *</label>
-                        <input type="email" name="email" value={formData.email} onChange={handleFormChange} placeholder="Enter your email" style={{padding: '10px 12px', border: '1px solid #cbd5e1', borderRadius: '6px', fontSize: '14px'}} />
+                        <label style={{fontSize: '13px', fontWeight: '600', color: '#475569'}}>Official Email Address *</label>
+                        <input type="email" name="email" value={formData.email} onChange={handleFormChange} placeholder="Enter official email" style={{padding: '10px 12px', border: '1px solid #cbd5e1', borderRadius: '6px', fontSize: '14px'}} />
                       </div>
 
                       <div className="form-group" style={{display: 'flex', flexDirection: 'column', gap: '6px'}}>
-                        <label style={{fontSize: '13px', fontWeight: '600', color: '#475569'}}>Mobile Number *</label>
+                        <label style={{fontSize: '13px', fontWeight: '600', color: '#475569'}}>Contact Number *</label>
                         <input type="tel" name="phone" value={formData.phone} onChange={handleFormChange} placeholder="Enter 10 digit number" style={{padding: '10px 12px', border: '1px solid #cbd5e1', borderRadius: '6px', fontSize: '14px'}} />
                       </div>
 
                       <div className="form-group" style={{display: 'flex', flexDirection: 'column', gap: '6px'}}>
-                        <label style={{fontSize: '13px', fontWeight: '600', color: '#475569'}}>College / School Name *</label>
-                        <input type="text" name="college" value={formData.college} onChange={handleFormChange} placeholder="Current institution name" style={{padding: '10px 12px', border: '1px solid #cbd5e1', borderRadius: '6px', fontSize: '14px'}} />
+                        <label style={{fontSize: '13px', fontWeight: '600', color: '#475569'}}>College / Institution Name *</label>
+                        <input type="text" name="college" value={formData.college} onChange={handleFormChange} placeholder="Institution name" style={{padding: '10px 12px', border: '1px solid #cbd5e1', borderRadius: '6px', fontSize: '14px'}} />
                       </div>
 
                       <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px'}}>
                         <div className="form-group" style={{display: 'flex', flexDirection: 'column', gap: '6px'}}>
-                          <label style={{fontSize: '13px', fontWeight: '600', color: '#475569'}}>Degree</label>
+                          <label style={{fontSize: '13px', fontWeight: '600', color: '#475569'}}>Designation</label>
                           <select name="degree" value={formData.degree} onChange={handleFormChange} style={{padding: '10px 12px', border: '1px solid #cbd5e1', borderRadius: '6px', fontSize: '14px', background: '#fff'}}>
-                            <option>B.Tech</option>
-                            <option>B.Sc</option>
-                            <option>BCA</option>
-                            <option>12th / Inter</option>
+                            <option>Principal/Director</option>
+                            <option>HOD</option>
+                            <option>Placement Officer</option>
+                            <option>Management/Trustee</option>
+                            <option>Professor/Teacher</option>
                             <option>Other</option>
                           </select>
                         </div>
                         <div className="form-group" style={{display: 'flex', flexDirection: 'column', gap: '6px'}}>
-                          <label style={{fontSize: '13px', fontWeight: '600', color: '#475569'}}>Passing Year</label>
+                          <label style={{fontSize: '13px', fontWeight: '600', color: '#475569'}}>Partnership Year</label>
                           <select name="year" value={formData.year} onChange={handleFormChange} style={{padding: '10px 12px', border: '1px solid #cbd5e1', borderRadius: '6px', fontSize: '14px', background: '#fff'}}>
-                            <option>2025</option>
                             <option>2026</option>
                             <option>2027</option>
                             <option>2028</option>
-                            <option>2029</option>
                           </select>
                         </div>
                       </div>
 
                       <button type="submit" style={{marginTop: '8px', padding: '12px', background: '#0056d2', color: '#fff', border: 'none', borderRadius: '6px', fontSize: '15px', fontWeight: '700', cursor: 'pointer', transition: 'background 0.2s'}}>
-                        Register for Incubation Sprints
+                        Inquire for Campus Partnership
                       </button>
                     </form>
                   )}
@@ -361,17 +418,17 @@ export default function EnglorayPortalPage() {
                 </div>
                 <div className="journey-features" data-astro-cid-moggeisx>
                   <h2 className="journey-heading" data-astro-cid-moggeisx>
-                    Experience Beyond the <span className="journey-highlight" data-astro-cid-moggeisx>Classroom</span>
+                    Integrating Corporate Incubation <span className="journey-highlight" data-astro-cid-moggeisx>Within Campus Walls</span>
                   </h2>
                   <div className="journey-features-list" data-astro-cid-moggeisx>
                     <div className="journey-feature" data-astro-cid-moggeisx>
                       <div className="journey-feature-icon" data-astro-cid-moggeisx>
                         {/* Embedded SVG icon */}
-                        <svg xmlns="http://www.w3.org/2000/svg" width="39" height="39" viewBox="0 0 39 39" fill="none"><path d="M14.2356 29.6161V29.3073C14.2356 29.1551 14.359 29.0316 14.5113 29.0316H18.8908V23.5445L18.4482 23.4557C17.434 23.252 16.5258 22.8198 15.7487 22.1716C14.9796 21.5296 14.4252 20.7179 14.1011 19.7586L13.9896 19.4287L13.6438 19.3876C12.2538 19.2225 11.1134 18.6488 10.1581 17.6347C9.21038 16.6291 8.75 15.4688 8.75 14.087V12.7785C8.75 12.392 8.88692 12.0673 9.16841 11.7855C9.44991 11.504 9.77489 11.3671 10.1611 11.3671H13.7575V9.87291C13.7575 9.25265 14.2601 8.75 14.8804 8.75H23.761C24.3813 8.75 24.884 9.25265 24.884 9.87291V11.3671H28.4803C28.8668 11.3671 29.1915 11.504 29.4733 11.7855C29.7548 12.067 29.8917 12.392 29.8917 12.7782V14.0867C29.8917 15.4685 29.4314 16.6288 28.484 17.634C27.5283 18.6485 26.3882 19.2219 24.9982 19.387L24.6524 19.4281L24.5409 19.758C24.2165 20.7173 23.6621 21.529 22.893 22.171C22.1162 22.8195 21.2077 23.2514 20.1935 23.4551L19.7506 23.5439V29.031H24.1301C24.2824 29.031 24.4058 29.1545 24.4058 29.3067V29.6154C24.4058 29.7677 24.2824 29.8911 24.1301 29.8911H14.511C14.3587 29.8911 14.2353 29.7677 14.2353 29.6154L14.2356 29.6161ZM14.6427 17.9872C14.6427 19.2826 15.1012 20.3978 16.0057 21.302C16.9102 22.2066 18.0255 22.6654 19.3209 22.6654C20.6162 22.6654 21.7315 22.2066 22.636 21.302C23.5405 20.3975 23.999 19.2823 23.999 17.9872V10.1369C23.999 9.84626 23.7632 9.61041 23.4725 9.61041H15.1692C14.8785 9.61041 14.6427 9.84626 14.6427 10.1369V17.9875V17.9872ZM24.884 18.5159L25.5566 18.3643C26.5601 18.1379 27.3978 17.6264 28.0466 16.8432C28.6999 16.0547 29.0313 15.1273 29.0313 14.087V13.0876C29.0313 12.6125 28.6463 12.2272 28.1709 12.2272H24.8837V18.5159H24.884ZM9.6101 14.087C9.6101 15.1273 9.94152 16.0547 10.5949 16.8432C11.2439 17.6261 12.0817 18.1379 13.0848 18.3643L13.7575 18.5159V12.2272H10.45C9.98624 12.2272 9.6101 12.6033 9.6101 13.0671V14.087Z" fill="#0056d2" stroke="#0056d2" stroke-width="0.652475"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="39" height="39" viewBox="0 0 39 39" fill="none"><path d="M14.2356 29.6161V29.3073C14.2356 29.1551 14.359 29.0316 14.5113 29.0316H18.8908V23.5445L18.4482 23.4557C17.434 23.252 16.5258 22.8198 15.7487 22.1716C14.9796 21.5296 14.4252 20.7179 14.1011 19.7586L13.9896 19.4287L13.6438 19.3876C12.2538 19.2225 11.1134 18.6488 10.1581 17.6347C9.21038 16.6291 8.75 15.4688 8.75 14.087V12.7785C8.75 12.392 8.88692 12.0673 9.16841 11.7855C9.44991 11.504 9.77489 11.3671 10.1611 11.3671H13.7575V9.87291C13.7575 9.25265 14.2601 8.75 14.8804 8.75H23.761C24.3813 8.75 24.884 9.25265 24.884 9.87291V11.3671H28.4803C28.8668 11.3671 29.1915 11.504 29.4733 11.7855C29.7548 12.067 29.8917 12.392 29.8917 12.7782V14.0867C29.8917 15.4685 29.4314 16.6288 28.484 17.634C27.5283 18.6485 26.3882 19.2219 24.9982 19.387L24.6524 19.4281L24.5409 19.758C24.2165 20.7173 23.6621 21.529 22.893 22.171C22.1162 22.8195 21.2077 23.2514 20.1935 23.4551L19.7506 23.5439V29.031H24.1301C24.2824 29.031 24.4058 29.1545 24.4058 29.3067V29.6154C24.4058 29.7677 24.2824 29.8911 24.1301 29.8911H14.511C14.3587 29.8911 14.2353 29.7677 14.2353 29.6154L14.2356 29.6161ZM14.6427 17.9872C14.6427 19.2826 15.1012 20.3978 16.0057 21.302C16.9102 22.2066 18.0255 22.6654 19.3209 22.6654C20.6162 22.6654 21.7315 22.2066 22.636 21.302C23.5405 20.3975 23.999 19.2823 23.999 17.9872V10.1369C23.999 9.84626 23.7632 9.61041 23.4725 9.61041H15.1692C14.8785 9.61041 14.6427 9.84626 14.6427 10.1369V17.9875V17.9872ZM24.884 18.5159L25.5566 18.3643C26.5601 18.1379 27.3978 17.6264 28.0466 16.8432C28.6999 16.0547 29.0313 14.087V13.0876C29.0313 12.6125 28.6463 12.2272 28.1709 12.2272H24.8837V18.5159H24.884ZM9.6101 14.087C9.6101 15.1273 9.94152 16.0547 10.5949 16.8432C11.2439 17.6261 12.0817 18.1379 13.0848 18.3643L13.7575 18.5159V12.2272H10.45C9.98624 12.2272 9.6101 12.6033 9.6101 13.0671V14.087Z" fill="#0056d2" stroke="#0056d2" stroke-width="0.652475"/></svg>
                       </div>
                       <div className="journey-feature-content" data-astro-cid-moggeisx>
-                        <p className="journey-feature-title" data-astro-cid-moggeisx>Win Hackathons & Buildathons</p>
-                        <p className="journey-feature-description" data-astro-cid-moggeisx>Sharp team sprints that accelerate actual code execution.</p>
+                        <p className="journey-feature-title" data-astro-cid-moggeisx>Syllabus-Aligned Specialized Sprints</p>
+                        <p className="journey-feature-description" data-astro-cid-moggeisx>We integrate practical code execution directly into the college curriculum.</p>
                       </div>
                     </div>
 
@@ -380,8 +437,8 @@ export default function EnglorayPortalPage() {
                         <svg xmlns="http://www.w3.org/2000/svg" width="39" height="39" viewBox="0 0 39 39" fill="none"><path d="M8.48828 31.6927V25.4506C8.48828 24.8791 8.6864 24.404 9.09367 23.9975C9.50171 23.5902 9.97795 23.3925 10.5494 23.3925H28.0898C28.6612 23.3925 29.1371 23.5906 29.5451 23.9986C29.9528 24.4063 30.1513 24.8825 30.1513 25.454V31.6931H8.48828V31.6927ZM10.5498 24.2558C10.218 24.2558 9.92308 24.375 9.69716 24.601C9.47085 24.8277 9.35198 25.1225 9.35198 25.4536V30.8294H29.2883V25.4536C29.2883 25.1222 29.1691 24.8276 28.9439 24.6017C28.7172 24.375 28.4224 24.2558 28.0905 24.2558H10.5498ZM14.9197 19.8116C13.1234 19.8116 11.6349 19.1963 10.3692 17.9306C9.10358 16.665 8.48828 15.1761 8.48828 13.3797C8.48828 11.5833 9.10358 10.0952 10.3692 8.82918C11.6352 7.56354 13.1238 6.94824 14.9197 6.94824H23.7194C25.5158 6.94824 27.0043 7.56354 28.27 8.82918C29.5356 10.0948 30.1509 11.5833 30.1509 13.3797C30.1509 15.1761 29.5356 16.6646 28.27 17.9302C27.0043 19.1959 25.5158 19.8112 23.7194 19.8112H14.9197V19.8116ZM14.9197 7.81156C13.3741 7.81156 12.0456 8.35638 10.9708 9.43114C9.89603 10.5059 9.35122 11.8344 9.35122 13.3801C9.35122 14.9258 9.89603 16.2543 10.9708 17.329C12.0456 18.4038 13.3741 18.9486 14.9197 18.9486H23.7194C25.2651 18.9486 26.5936 18.4038 27.6684 17.329C28.7432 16.2543 29.288 14.9258 29.288 13.3801C29.288 11.8344 28.7432 10.5059 27.6684 9.43114C26.5936 8.35638 25.2651 7.81156 23.7194 7.81156H14.9197ZM23.7194 13.9893C23.5328 13.9893 23.4017 13.9379 23.2817 13.8178C23.1617 13.6978 23.1106 13.5668 23.1106 13.3797C23.1106 13.1926 23.1621 13.062 23.2821 12.942C23.4025 12.8216 23.5335 12.7705 23.7202 12.7705C23.9069 12.7705 24.0376 12.8219 24.1576 12.942C24.278 13.0627 24.3294 13.1938 24.3294 13.3805C24.3294 13.5672 24.278 13.6978 24.158 13.8178C24.0376 13.9379 23.9065 13.9893 23.7194 13.9893ZM14.9194 13.9893C14.7327 13.9893 14.6016 13.9379 14.4816 13.8178C14.3616 13.6975 14.3102 13.5664 14.3102 13.3797C14.3102 13.193 14.3616 13.0623 14.4816 12.9423C14.6024 12.8219 14.7334 12.7705 14.9201 12.7705C15.1068 12.7705 15.2375 12.8219 15.3575 12.942C15.4775 13.0623 15.5289 13.1934 15.5289 13.3805C15.5289 13.5675 15.4775 13.6982 15.3575 13.8182C15.2375 13.9382 15.1064 13.9893 14.9194 13.9893Z" fill="#0056d2" stroke="#0056d2" stroke-width="0.681341"/></svg>
                       </div>
                       <div className="journey-feature-content" data-astro-cid-moggeisx>
-                        <p className="journey-feature-title" data-astro-cid-moggeisx>Build in Advanced Tech Labs</p>
-                        <p className="journey-feature-description" data-astro-cid-moggeisx>Hands-on practice with API architectures, cloud nodes, and active platforms.</p>
+                        <p className="journey-feature-title" data-astro-cid-moggeisx>Setting up Co-branded Labs</p>
+                        <p className="journey-feature-description" data-astro-cid-moggeisx>We convert unused campus infrastructure into active sandbox labs and cloud hubs.</p>
                       </div>
                     </div>
 
@@ -390,8 +447,8 @@ export default function EnglorayPortalPage() {
                         <svg xmlns="http://www.w3.org/2000/svg" width="39" height="39" viewBox="0 0 39 39" fill="none"><path d="M9.37413 30.118C8.85875 30.118 8.43554 29.9455 8.0804 29.5903C7.72526 29.2352 7.55273 28.812 7.55273 28.2966V14.8695C7.55273 14.3541 7.72526 13.9309 8.0804 13.5757C8.43554 13.2206 8.85851 13.0481 9.37413 13.0481H15.3107V10.3439C15.3107 9.82848 15.4832 9.40527 15.8384 9.05013C16.1935 8.69499 16.6165 8.52246 17.1321 8.52246H21.5083C22.0237 8.52246 22.4469 8.69499 22.802 9.05013C23.1571 9.40527 23.3297 9.82824 23.3297 10.3439V13.0481H29.2665C29.7819 13.0481 30.2051 13.2206 30.5602 13.5757C30.9154 13.9309 31.0879 14.3538 31.0879 14.8695V28.2966C31.0879 28.812 30.9154 29.2352 30.5602 29.5903C30.2051 29.9455 29.7821 30.118 29.2665 30.118H9.37413ZM9.37413 13.9554C9.13623 13.9554 8.91528 14.0508 8.73513 14.2314C8.55547 14.4106 8.46012 14.6316 8.46012 14.8695V28.2966C8.46012 28.5345 8.55547 28.7552 8.73612 28.9356C8.91528 29.1153 9.13623 29.2109 9.37413 29.2109H29.2662C29.5042 29.2109 29.7251 29.1155 29.9052 28.9349C30.0849 28.7557 30.1803 28.5348 30.1803 28.2968V14.8695C30.1803 14.6316 30.0849 14.4106 29.9043 14.2305C29.7251 14.0508 29.5042 13.9554 29.2662 13.9554H9.37413ZM17.1321 9.43009C16.8942 9.43009 16.6732 9.52545 16.4931 9.70609C16.3134 9.88525 16.2178 10.1062 16.2178 10.3441V13.0483H22.4221V10.3441C22.4221 10.1062 22.3267 9.88525 22.1461 9.7051C21.9669 9.52545 21.7459 9.42984 21.508 9.42984H17.1319L17.1321 9.43009Z" fill="#0056d2" stroke="#0056d2" stroke-width="0.722497"/></svg>
                       </div>
                       <div className="journey-feature-content" data-astro-cid-moggeisx>
-                        <p className="journey-feature-title" data-astro-cid-moggeisx>Start Early, Grow Faster</p>
-                        <p className="journey-feature-description" data-astro-cid-moggeisx>200+ students in collaborating colleges secured paid internships early on.</p>
+                        <p className="journey-feature-title" data-astro-cid-moggeisx>Turnkey Placement Ecosystems</p>
+                        <p className="journey-feature-description" data-astro-cid-moggeisx>Direct placement and paid internship matchups for students from day one.</p>
                       </div>
                     </div>
 
@@ -400,8 +457,8 @@ export default function EnglorayPortalPage() {
                         <svg xmlns="http://www.w3.org/2000/svg" width="39" height="39" viewBox="0 0 39 39" fill="none"><path d="M19.3203 32.5699C18.8304 32.5699 18.4124 32.4465 18.0426 32.1929C17.677 31.942 17.4287 31.6232 17.4287 31.2184L17.1512 30.8479H16.3257C15.8632 30.8479 15.475 30.6844 15.1385 30.3479C14.8019 30.0113 14.6385 29.6231 14.6385 29.1607V23.933L14.3692 23.7698C12.9486 22.9089 11.8151 21.7382 11 20.2905C10.1847 18.8426 9.77148 17.2713 9.77148 15.6201C9.77148 14.2907 10.0047 13.0481 10.4647 11.9267C10.9242 10.8066 11.625 9.77056 12.5479 8.8477C13.4708 7.92484 14.5068 7.2238 15.6269 6.7645C16.7483 6.30452 17.9909 6.07129 19.3203 6.07129C20.6497 6.07129 21.8923 6.30452 23.0138 6.7645C24.1339 7.22403 25.1699 7.92484 26.0927 8.8477C27.0156 9.77056 27.7166 10.8066 28.1759 11.9267C28.6359 13.0481 28.8691 14.2907 28.8691 15.6201C28.8691 17.3008 28.4563 18.8793 27.6419 20.3113C26.8269 21.7447 25.6929 22.9084 24.2716 23.7698L24.0024 23.933V29.1607C24.0024 29.6231 23.8389 30.0113 23.5024 30.3479C23.1658 30.6844 22.7776 30.8479 22.3152 30.8479H21.4896L21.357 31.2184C21.2121 31.6232 20.9639 31.9418 20.5981 32.1929C20.2284 32.4465 19.8103 32.5699 19.3203 32.5699ZM15.7664 29.7197H22.8742V27.1962H15.7664V29.7197ZM15.7664 26.9898H22.8742V24.4203H15.7664V26.9898ZM19.6542 18.1416V23.2921H22.7423L22.8572 23.2369C24.2893 22.5475 25.4722 21.5193 26.3729 20.1814C27.2808 18.833 27.741 17.2984 27.741 15.6201C27.741 13.2804 26.9177 11.2708 25.2935 9.64668C23.6694 8.02256 21.6598 7.19921 19.3201 7.19921C16.9804 7.19921 14.9708 8.02256 13.3466 9.64668C11.7228 11.2706 10.8992 13.2804 10.8992 15.6201C10.8992 17.2984 11.3594 18.833 12.2673 20.1814C13.168 21.5193 14.3509 22.5473 15.7829 23.2369L15.8979 23.2921H18.986V18.1416L16.0097 15.1653L16.4748 14.7002L19.3201 17.5454L22.1654 14.7002L22.6305 15.1653L19.6542 18.1416Z" fill="#0056d2" stroke="#0056d2" stroke-width="0.658544"/></svg>
                       </div>
                       <div className="journey-feature-content" data-astro-cid-moggeisx>
-                        <p className="journey-feature-title" data-astro-cid-moggeisx>Be a Product Innovator</p>
-                        <p className="journey-feature-description" data-astro-cid-moggeisx>Don't stop at textbook assignments. Build applications that actual users interact with.</p>
+                        <p className="journey-feature-title" data-astro-cid-moggeisx>Structured Hackathons & Sprints</p>
+                        <p className="journey-feature-description" data-astro-cid-moggeisx>We handle and execute end-to-end hackathons and buildathons at your campus.</p>
                       </div>
                     </div>
                   </div>
@@ -478,8 +535,8 @@ export default function EnglorayPortalPage() {
         <section className="outcomes-section" data-astro-cid-ybotxm6t>
           <div className="outcomes-container" data-astro-cid-ybotxm6t>
             <div className="outcomes-header" data-astro-cid-ybotxm6t>
-              <h2 className="outcomes-heading" data-astro-cid-ybotxm6t>Delivering <span data-astro-cid-ybotxm6t>Outcomes</span> That Matter</h2>
-              <p className="outcomes-subtext" data-astro-cid-ybotxm6t>From hands-on project sprints to active career breakthroughs, here is the impact we create.</p>
+              <h2 className="outcomes-heading" data-astro-cid-ybotxm6t>Delivering <span data-astro-cid-ybotxm6t>Institutional Impact</span> That Matters</h2>
+              <p className="outcomes-subtext" data-astro-cid-ybotxm6t>How our specialized developer workshops and lab takeovers convert standard campuses into active tech hubs.</p>
             </div>
 
             <div className="outcomes-carousel-wrapper" data-astro-cid-ybotxm6t>
@@ -487,44 +544,44 @@ export default function EnglorayPortalPage() {
                 <div className="outcomes-grid" id="outcomes-grid" data-astro-cid-ybotxm6t>
                   <div className="outcome-card" data-astro-cid-ybotxm6t>
                     <div className="outcome-icon" data-astro-cid-ybotxm6t>
-                      <img src="https://d14qv6cm1t62pm.cloudfront.net/niat/outcomes-ai-projects.png" alt="AI Projects" width="36" height="36" data-astro-cid-ybotxm6t />
+                      <img src="https://d14qv6cm1t62pm.cloudfront.net/niat/outcomes-ai-projects.png" alt="Campuses" width="36" height="36" data-astro-cid-ybotxm6t />
                     </div>
-                    <div className="outcome-number" data-astro-cid-ybotxm6t>1200+</div>
+                    <div className="outcome-number" data-astro-cid-ybotxm6t>30+</div>
                     <div className="outcome-divider" data-astro-cid-ybotxm6t></div>
-                    <div className="outcome-label" data-astro-cid-ybotxm6t>Production-Grade Projects Built</div>
+                    <div className="outcome-label" data-astro-cid-ybotxm6t>Campuses Transformed Nationwide</div>
                   </div>
 
                   <div className="outcome-card" data-astro-cid-ybotxm6t>
                     <div className="outcome-icon" data-astro-cid-ybotxm6t>
-                      <img src="https://d14qv6cm1t62pm.cloudfront.net/niat/outcomes-startups.png" alt="Startups" width="36" height="36" data-astro-cid-ybotxm6t />
+                      <img src="https://d14qv6cm1t62pm.cloudfront.net/niat/outcomes-startups.png" alt="Students Trained" width="36" height="36" data-astro-cid-ybotxm6t />
                     </div>
-                    <div className="outcome-number" data-astro-cid-ybotxm6t>20+</div>
+                    <div className="outcome-number" data-astro-cid-ybotxm6t>15,000+</div>
                     <div className="outcome-divider" data-astro-cid-ybotxm6t></div>
-                    <div className="outcome-label" data-astro-cid-ybotxm6t>SaaS Startups Launched</div>
+                    <div className="outcome-label" data-astro-cid-ybotxm6t>Students Trained & Upskilled</div>
                   </div>
 
                   <div className="outcome-card" data-astro-cid-ybotxm6t>
                     <div className="outcome-icon" data-astro-cid-ybotxm6t>
-                      <img src="https://d14qv6cm1t62pm.cloudfront.net/niat/outcomes-internships.png" alt="Internships" width="36" height="36" data-astro-cid-ybotxm6t />
+                      <img src="https://d14qv6cm1t62pm.cloudfront.net/niat/outcomes-internships.png" alt="Workshops" width="36" height="36" data-astro-cid-ybotxm6t />
                     </div>
-                    <div className="outcome-number" data-astro-cid-ybotxm6t>200+</div>
+                    <div className="outcome-number" data-astro-cid-ybotxm6t>500+</div>
                     <div className="outcome-divider" data-astro-cid-ybotxm6t></div>
-                    <div className="outcome-label" data-astro-cid-ybotxm6t>Students Secured Internships with Stipends</div>
+                    <div className="outcome-label" data-astro-cid-ybotxm6t>Tech Workshops Conducted</div>
                   </div>
 
                   <div className="outcome-card" data-astro-cid-ybotxm6t>
                     <div className="outcome-icon" data-astro-cid-ybotxm6t>
-                      <img src="https://d14qv6cm1t62pm.cloudfront.net/niat/outcomes-companies.png" alt="Companies" width="36" height="36" data-astro-cid-ybotxm6t />
+                      <img src="https://d14qv6cm1t62pm.cloudfront.net/niat/outcomes-companies.png" alt="Hiring Partners" width="36" height="36" data-astro-cid-ybotxm6t />
                     </div>
                     <div className="outcome-number" data-astro-cid-ybotxm6t>2500+</div>
                     <div className="outcome-divider" data-astro-cid-ybotxm6t></div>
-                    <div className="outcome-label" data-astro-cid-ybotxm6t>Hiring Partners in Corporate Network</div>
+                    <div className="outcome-label" data-astro-cid-ybotxm6t>Active Corporate Hiring Partners</div>
                   </div>
                 </div>
               </div>
             </div>
             <p className="outcomes-disclaimer" data-astro-cid-ybotxm6t>
-              <strong>Disclaimer:</strong> Outcomes are cumulative across cohorts and include placements, internships, and corporate hackathon sponsorships.
+              <strong>Disclaimer:</strong> Outcomes are cumulative across partner campus cohorts and represent verified student metrics.
             </p>
           </div>
         </section>
@@ -533,7 +590,7 @@ export default function EnglorayPortalPage() {
         <section className="sa-section" data-astro-cid-nbqiasj5>
           <div className="sa-inner" data-astro-cid-nbqiasj5>
             <div className="sa-header" data-astro-cid-nbqiasj5>
-              <h2 className="sa-heading" data-astro-cid-nbqiasj5>Our Students & Interns Are <span data-astro-cid-nbqiasj5>Thriving at Engloray</span></h2>
+              <h2 className="sa-heading" data-astro-cid-nbqiasj5>Transforming Campus Talent into <span data-astro-cid-nbqiasj5>Industry Professionals</span></h2>
             </div>
 
             <div className="sa-card1" data-astro-cid-nbqiasj5>
@@ -543,7 +600,7 @@ export default function EnglorayPortalPage() {
                 <img src="https://d14qv6cm1t62pm.cloudfront.net/niat/Vector-bg-internships.png" alt="" aria-hidden="true" data-astro-cid-nbqiasj5 />
               </div>
               <div className="sa-card1-left" data-astro-cid-nbqiasj5>
-                <h3 className="sa-card1-title" data-astro-cid-nbqiasj5>200+ Englorayians Secured Internships<br data-astro-cid-nbqiasj5 />With Stipends</h3>
+                <h3 className="sa-card1-title" data-astro-cid-nbqiasj5>Empowering Students to Secure<br data-astro-cid-nbqiasj5 />High-Stipend Internships</h3>
                 <div className="sa-logos-wrap" data-astro-cid-nbqiasj5>
                   <div className="sa-logos-track" data-astro-cid-nbqiasj5>
                     {["cwtgpZPqB4JzdocknTpzOV4I.png", "8cCqYdMwpx8aaY4SIZxS05stI.png", "48b7iyaRO9KUnKrh0m2mDaa4m3A.png", "Hvaw7M8YBg3IQEEtKrs7g4ZoiTE.png", "fk7WvMj3CJpuRw31lrG49CUd1A.png", "InLMJ2X9q1AQdDE0jMXzYdD07ug.png", "DEqXpQqUOIo9qD95xXpackmeN6I.png"].map((logo, i) => (
@@ -553,24 +610,24 @@ export default function EnglorayPortalPage() {
                 </div>
               </div>
               <div className="sa-card1-right" data-astro-cid-nbqiasj5>
-                <img src="https://d14qv6cm1t62pm.cloudfront.net/niat/achivement-group-one.png" alt="Portal students" className="sa-students-img" data-astro-cid-nbqiasj5 />
+                <img src={admissionPortal3Person} alt="Portal students" className="sa-students-img" data-astro-cid-nbqiasj5 />
               </div>
             </div>
 
             <div className="sa-bottom-grid" data-astro-cid-nbqiasj5>
               <div className="sa-card-bizhack" data-astro-cid-nbqiasj5>
                 <div className="sa-bizhack-text" data-astro-cid-nbqiasj5>
-                  <h3 className="sa-bizhack-title" data-astro-cid-nbqiasj5><span style={{ whiteSpace: "nowrap" }} data-astro-cid-nbqiasj5>22+ Startups Launched</span><br data-astro-cid-nbqiasj5 />by Learners</h3>
+                  <h3 className="sa-bizhack-title" data-astro-cid-nbqiasj5><span style={{ whiteSpace: "nowrap" }} data-astro-cid-nbqiasj5>22+ Tech Startups Deployed</span><br data-astro-cid-nbqiasj5 /><span style={{ whiteSpace: "nowrap" }} data-astro-cid-nbqiasj5>from Sandbox Labs</span></h3>
                   <p className="sa-bizhack-sub" style={{ whiteSpace: "nowrap" }} data-astro-cid-nbqiasj5>8 already generating active revenue!</p>
                 </div>
                 <div className="sa-bizhack-right" data-astro-cid-nbqiasj5>
                   <img src="https://d14qv6cm1t62pm.cloudfront.net/niat/Vector-sachin-bg.png" alt="" aria-hidden="true" className="sa-bizhack-vector" data-astro-cid-nbqiasj5 />
-                  <img src="https://d14qv6cm1t62pm.cloudfront.net/niat/sachin-bg-achivements.png" alt="Winner photo" className="sa-bizhack-photo" data-astro-cid-nbqiasj5 />
+                  <img src={admissionPortal1Person} alt="Winner photo" className="sa-bizhack-photo" data-astro-cid-nbqiasj5 />
                 </div>
               </div>
-              <div className="sa-card-openai" data-astro-cid-nbqiasj5>
+              <div className="sa-card-openai" data-astro-cid-nbqiasj5 style={{ backgroundImage: `url(${admissionPortal2Person})` }}>
                 <div className="sa-openai-content" data-astro-cid-nbqiasj5>
-                  <p className="sa-openai-title" data-astro-cid-nbqiasj5><span style={{ whiteSpace: "nowrap" }} data-astro-cid-nbqiasj5>OpenAI Academy × Buildathon</span><br data-astro-cid-nbqiasj5 /><span style={{ whiteSpace: "nowrap" }} data-astro-cid-nbqiasj5>Grand Finale Competition,</span></p>
+                  <p className="sa-openai-title" data-astro-cid-nbqiasj5><span style={{ whiteSpace: "nowrap" }} data-astro-cid-nbqiasj5>OpenAI Academy × Buildathon</span><br data-astro-cid-nbqiasj5 /><span style={{ whiteSpace: "nowrap" }} data-astro-cid-nbqiasj5>Winning National Sprints,</span></p>
                   <p className="sa-openai-sub" style={{ whiteSpace: "nowrap" }} data-astro-cid-nbqiasj5>Engloray teams walked away with ₹3,50,000 cash prizes.</p>
                 </div>
               </div>
@@ -583,66 +640,69 @@ export default function EnglorayPortalPage() {
           <div className="au-inner" data-astro-cid-6ffk7ym5>
             <div className="au-header" data-astro-cid-6ffk7ym5>
               <h2 className="au-title" data-astro-cid-6ffk7ym5>
-                Our Upskilling Programs Offered at <span className="au-highlight" data-astro-cid-6ffk7ym5>30+ Collaborating Institutions</span>
+                Campus Programs & <span className="au-highlight" data-astro-cid-6ffk7ym5>Specialized Tech Sprints</span>
               </h2>
             </div>
 
             <div className="au-tabs-wrap" data-astro-cid-6ffk7ym5>
               <div className="au-tabs" id="au-tabs" role="tablist" data-astro-cid-6ffk7ym5>
                 {[
-                  { id: 'all', label: 'All', icon: "https://d14qv6cm1t62pm.cloudfront.net/niat/state-icons-india.png" },
-                  { id: 'telangana', label: 'Telangana', icon: "https://d14qv6cm1t62pm.cloudfront.net/niat/state-icons-telangana.png" },
-                  { id: 'andhra', label: 'Andhra Pradesh', icon: "https://d14qv6cm1t62pm.cloudfront.net/niat/state-icons-andhra-pradesh.png" },
-                  { id: 'haryana', label: 'Haryana', icon: "https://d14qv6cm1t62pm.cloudfront.net/niat/state-icons-haryana.png" }
+                  { id: 'all', label: 'All Programs' },
+                  { id: 'conducted', label: 'Conducted Sprints' },
+                  { id: 'upcoming', label: 'Upcoming Sprints' }
                 ].map((tab) => (
-                  <button key={tab.id} type="button" role="tab" className={`au-tab ${activeRegion === tab.id ? 'is-active' : ''}`} onClick={() => setActiveRegion(tab.id)} aria-selected={activeRegion === tab.id} data-astro-cid-6ffk7ym5>
-                    <span className="au-tab-icon" data-astro-cid-6ffk7ym5>
-                      <img src={tab.icon} alt={tab.label} data-astro-cid-6ffk7ym5 />
-                    </span>
-                    <span className="au-tab-label" data-astro-cid-6ffk7ym5>{tab.label}</span>
+                  <button key={tab.id} type="button" role="tab" className={`au-tab ${activeStatus === tab.id ? 'is-active' : ''}`} onClick={() => setActiveStatus(tab.id)} aria-selected={activeStatus === tab.id} data-astro-cid-6ffk7ym5 style={{ padding: '12px 24px' }}>
+                    <span className="au-tab-label" data-astro-cid-6ffk7ym5 style={{ marginLeft: 0 }}>{tab.label}</span>
                   </button>
                 ))}
               </div>
             </div>
 
             <div className="au-carousel-wrap" data-astro-cid-6ffk7ym5>
-              <button type="button" className="au-nav" onClick={() => handleUniScroll('left')} data-astro-cid-6ffk7ym5 aria-label="Previous universities">
+              <button type="button" className="au-nav" onClick={() => handleUniScroll('left')} data-astro-cid-6ffk7ym5 aria-label="Previous programs">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
               </button>
               
               <div className="au-track-outer" data-astro-cid-6ffk7ym5>
                 <div ref={uniTrackRef} className="au-track" id="au-track" data-astro-cid-6ffk7ym5>
-                  {universityCards
-                    .filter((card) => activeRegion === 'all' || card.region === activeRegion)
+                  {programCards
+                    .filter((card) => activeStatus === 'all' || card.status === activeStatus)
                     .map((card, i) => (
-                      <div className="au-card" key={i} data-region={card.region} data-astro-cid-6ffk7ym5>
+                      <div className="au-card" key={i} data-region={card.status} data-astro-cid-6ffk7ym5 style={{ height: 'auto', minHeight: '440px' }}>
                         <div className="au-img-wrap" data-astro-cid-6ffk7ym5>
                           <img src={card.img} alt={card.name} className="au-img" data-astro-cid-6ffk7ym5 />
-                          <span className={`au-badge ${card.status === 'closed' ? 'au-badge--closed' : ''}`} data-status={card.status} data-astro-cid-6ffk7ym5>
+                          <span className={`au-badge ${card.status === 'upcoming' ? 'au-badge--upcoming' : 'au-badge--conducted'}`} data-status={card.status} data-astro-cid-6ffk7ym5>
                             {card.badge}
                           </span>
                         </div>
-                        <div className="au-card-body" data-astro-cid-6ffk7ym5>
-                          <h3 className="au-card-name" data-astro-cid-6ffk7ym5>{card.name}</h3>
-                          <p className="au-card-subtitle" data-astro-cid-6ffk7ym5>Collaborating Partner Campus</p>
-                          <p className="au-card-city" data-astro-cid-6ffk7ym5>
-                            <svg className="au-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                            {card.city}
+                        <div className="au-card-body" data-astro-cid-6ffk7ym5 style={{ display: 'flex', flexDirection: 'column', gap: '8px', padding: '20px' }}>
+                          <span className="au-card-category" data-astro-cid-6ffk7ym5 style={{ fontSize: '11px', fontWeight: '700', textTransform: 'uppercase', color: '#0056D2', letterSpacing: '0.5px' }}>
+                            {card.category}
+                          </span>
+                          <h3 className="au-card-name" data-astro-cid-6ffk7ym5 style={{ margin: 0, fontSize: '18px', fontWeight: '700', color: '#0f172a', lineHeight: '1.3' }}>
+                            {card.name}
+                          </h3>
+                          <p className="au-card-desc" data-astro-cid-6ffk7ym5 style={{ fontSize: '13px', color: '#475569', lineHeight: '1.5', margin: '4px 0 8px', flexGrow: 1 }}>
+                            {card.desc}
                           </p>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#64748b', fontSize: '12px', borderTop: '1px solid #f1f5f9', paddingTop: '8px', marginTop: 'auto' }}>
+                            <svg className="au-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ width: '14px', height: '14px', flexShrink: 0 }}><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            <span style={{ fontWeight: '500' }}>{card.venue}</span>
+                          </div>
                         </div>
                       </div>
                     ))}
                 </div>
               </div>
 
-              <button type="button" className="au-nav" onClick={() => handleUniScroll('right')} data-astro-cid-6ffk7ym5 aria-label="Next universities">
+              <button type="button" className="au-nav" onClick={() => handleUniScroll('right')} data-astro-cid-6ffk7ym5 aria-label="Next programs">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
               </button>
             </div>
 
             <div className="au-cta-wrap" data-astro-cid-6ffk7ym5>
               <button type="button" className="au-cta-btn" onClick={scrollToApply} data-astro-cid-6ffk7ym5>
-                Explore Syllabus & Campus Slots
+                Inquire About Hosting Sprints on Your Campus
               </button>
             </div>
           </div>
@@ -671,7 +731,6 @@ export default function EnglorayPortalPage() {
                         <div className="mentor-card-content" data-astro-cid-6pcgkbdw>
                           <h3 className="mentor-card-name" data-astro-cid-6pcgkbdw>{mentor.name}</h3>
                           <p className="mentor-card-subtitle" data-astro-cid-6pcgkbdw>{mentor.role}</p>
-                          <img src={mentor.company} alt="company" className="mentor-card-company" data-astro-cid-6pcgkbdw />
                         </div>
                       </div>
                     ))}
@@ -691,7 +750,6 @@ export default function EnglorayPortalPage() {
                         <div className="mentor-card-content" data-astro-cid-6pcgkbdw>
                           <h3 className="mentor-card-name" data-astro-cid-6pcgkbdw>{mentor.name}</h3>
                           <p className="mentor-card-subtitle" data-astro-cid-6pcgkbdw>{mentor.role}</p>
-                          <img src={mentor.company} alt="company" className="mentor-card-company" data-astro-cid-6pcgkbdw />
                         </div>
                       </div>
                     ))}
@@ -731,30 +789,30 @@ export default function EnglorayPortalPage() {
         </section>
 
         {/* NIAT PORTAL ADVANTAGES TABLE */}
-        <section className="niat-advantages-section" data-astro-cid-qvveo2su style={{background:'#fcfcfc', padding:'56px 32px'}}>
+        <section className="niat-advantages-section" data-astro-cid-qvveo2su style={{background:'#fcfcfc', padding:'28px 32px'}}>
           <div style={{maxWidth:'1200px', margin:'0 auto', width:'100%'}}>
             <h2 style={{fontFamily:'Satoshi, sans-serif', fontSize:'36px', fontWeight:'700', textAlign:'center', color:'#1e293b', marginBottom:'40px'}}>
-              Why Choose <span style={{color:'#0056d2'}}>Engloray’s</span> Industry-ready Upskilling?
+              Why Colleges Choose the <span style={{color:'#0056d2'}}>Engloray</span> Campus Takeover Model?
             </h2>
             <div style={{overflowX:'auto', borderRadius:'16px', border:'1px solid #cbd5e1', boxShadow:'0 4px 12px #0000000a'}}>
               <table style={{width:'100%', borderCollapse:'collapse', background:'#fff', minWidth:'600px'}}>
                 <thead>
                   <tr style={{background:'#f8fafc', borderBottom:'1px solid #cbd5e1'}}>
-                    <th style={{padding:'20px', textAlign:'left', fontSize:'16px', fontWeight:'700', color:'#475569'}}>Upskilling Parameter</th>
-                    <th style={{padding:'20px', textAlign:'left', fontSize:'16px', fontWeight:'700', color:'#475569'}}>Traditional Learning</th>
-                    <th style={{padding:'20px', textAlign:'left', fontSize:'16px', fontWeight:'700', color:'#0056d2', background:'#e8f0fe'}}>Engloray Advantage</th>
+                    <th style={{padding:'20px', textAlign:'center', fontSize:'16px', fontWeight:'700', color:'#475569', borderRight:'1px solid #cbd5e1'}}>Academic Metric</th>
+                    <th style={{padding:'20px', textAlign:'center', fontSize:'16px', fontWeight:'700', color:'#475569'}}>Traditional College Model</th>
+                    <th style={{padding:'20px', textAlign:'center', fontSize:'16px', fontWeight:'700', color:'#0056d2', background:'#e8f0fe'}}>Engloray Takeover Model</th>
                   </tr>
                 </thead>
                 <tbody>
                   {[
-                    { p: "Curriculum Alignment", t: "Outdated general theoretical topics", e: "Industry-aligned, updated dynamically based on real employer stack reviews" },
-                    { p: "Learning Mode", t: "Lecture-heavy classroom discussions", e: "Active sandbox practice, project sprints, buildathons & hackathons" },
-                    { p: "Instructor Profile", t: "Syllabus teaching without commercial coding experience", e: "Professors of Practice and Active developers from tech majors" },
-                    { p: "Project Portfolio", t: "Academic reports without functional codebase links", e: "50+ production projects deployed with custom domains and live users" },
-                    { p: "Placement support", t: "Campus placement cells with general listings", e: "Dedicated career coaching, corporate network of 2500+ tech firms, mock trials" }
+                    { p: "Curriculum Alignment", t: "Theoretical syllabus updated once in 5-10 years", e: "Continuously aligned with active production stacks & AI tools" },
+                    { p: "Lab Infrastructure", t: "Standard computing systems with basic local compilers", e: "Co-branded Sandbox Coding Labs with live Cloud Dev accounts" },
+                    { p: "Learning Mode", t: "Rote-memorization and manual book exercises", e: "Developer-led workshops, buildathons, & practical hackathons" },
+                    { p: "Placement Support", t: "Outdated portal listings and local company visits", e: "Direct matching with 2500+ corporate hiring partners & paid internships" },
+                    { p: "Project Output", t: "Theoretical project reports on paper or PDFs", e: "50+ deployed SaaS applications with custom domains & active users" }
                   ].map((row, index) => (
                     <tr key={index} style={{borderBottom:'1px solid #e2e8f0'}}>
-                      <td style={{padding:'18px 20px', fontSize:'15px', fontWeight:'700', color:'#1e293b'}}>{row.p}</td>
+                      <td style={{padding:'18px 20px', fontSize:'15px', fontWeight:'700', color:'#1e293b', borderRight:'1px solid #e2e8f0'}}>{row.p}</td>
                       <td style={{padding:'18px 20px', fontSize:'14px', color:'#64748b'}}>{row.t}</td>
                       <td style={{padding:'18px 20px', fontSize:'14px', color:'#1e293b', fontWeight:'600', background:'#f0f4f9'}}>{row.e}</td>
                     </tr>
@@ -771,9 +829,9 @@ export default function EnglorayPortalPage() {
             <div className="certificate-left" data-astro-cid-qvveo2su>
               <div className="tablet-frame" data-astro-cid-qvveo2su>
                 <div className="tablet-screen" data-astro-cid-qvveo2su>
-                  <div className="cert-track" style={{ transform: `translateX(-${activeCert * 100}%)`, width: `${certs.length * 100}%`, display: 'flex' }} data-astro-cid-qvveo2su>
-                    {certs.map((_, i) => (
-                      <img key={i} src="https://d14qv6cm1t62pm.cloudfront.net/niat/experience-beyond-classroom.png" alt="Cert Preview" className="cert-image" style={{ width: '100%' }} data-astro-cid-qvveo2su />
+                  <div className="cert-track" style={{ transform: `translateX(-${(activeCert * 100) / certs.length}%)`, width: `${certs.length * 100}%`, display: 'flex' }} data-astro-cid-qvveo2su>
+                    {certs.map((cert, i) => (
+                      <img key={i} src={cert.image} alt="Cert Preview" className="cert-image" style={{ width: `${100 / certs.length}%` }} data-astro-cid-qvveo2su />
                     ))}
                   </div>
                   <div className="carousel-dots" data-astro-cid-qvveo2su>
@@ -788,7 +846,7 @@ export default function EnglorayPortalPage() {
             <div className="certificate-right" data-astro-cid-qvveo2su>
               <span className="cert-badge" data-astro-cid-qvveo2su>Accredited Certification</span>
               <h2 className="cert-heading" data-astro-cid-qvveo2su>
-                Certifications You Get via <span className="cert-heading-red" data-astro-cid-qvveo2su>Engloray Sprints</span>
+                Certifications Awarded During <span className="cert-heading-red" data-astro-cid-qvveo2su>Campus Programs</span>
               </h2>
               <ul className="cert-list" data-astro-cid-qvveo2su>
                 {certs.map((cert, i) => (
@@ -806,12 +864,12 @@ export default function EnglorayPortalPage() {
         </section>
 
         {/* SCHOLARSHIP CTA */}
-        <section className="usf-section" data-astro-cid-qvveo2su style={{background:'#0056d2', padding:'64px 32px', color:'#fff', textAlign:'center'}}>
+        <section className="usf-section" data-astro-cid-qvveo2su style={{background:'#0056d2', padding:'32px 32px', color:'#fff', textAlign:'center'}}>
           <div style={{maxWidth:'800px', margin:'0 auto'}}>
-            <h2 style={{fontSize:'36px', fontWeight:'700', marginBottom:'16px', color:'#fff'}}>Unlock Your Potential with Project & Mentor-Based Learning</h2>
-            <p style={{fontSize:'16px', marginBottom:'32px', color:'#e8f0fe', lineHeight:'1.5'}}>Choose from our high-demand courses, participate in practical workshops, and start earning through paid internships with our hiring network.</p>
+            <h2 style={{fontSize:'36px', fontWeight:'700', marginBottom:'16px', color:'#fff'}}>Elevate Your College’s Placement Metrics & Tech Infrastructure</h2>
+            <p style={{fontSize:'16px', marginBottom:'32px', color:'#e8f0fe', lineHeight:'1.5'}}>Partner with Engloray to establish modern sandbox labs, conduct developer workshops, and secure paid internships for your students.</p>
             <button className="fixed-apply-button" onClick={scrollToApply} style={{background:'#ffffff', color:'#0056d2', padding:'14px 28px', border:'none', borderRadius:'8px', fontSize:'16px', fontWeight:'700', cursor:'pointer'}}>
-              Explore Courses & Internships
+              Schedule a Lab Demo & Consultation
             </button>
           </div>
         </section>
@@ -821,43 +879,72 @@ export default function EnglorayPortalPage() {
           <div className="testimonials-container" data-astro-cid-zl3frkeu>
             <div className="testimonials-wrapper" data-astro-cid-zl3frkeu>
               <h2 className="testimonials-heading" data-astro-cid-zl3frkeu>
-                Hear It From <span className="testimonials-highlight" data-astro-cid-zl3frkeu>Englorayians</span>
+                Success Stories from <span className="testimonials-highlight" data-astro-cid-zl3frkeu>Partner Campuses</span>
               </h2>
 
               <div className="testimonials-carousel-wrap" data-astro-cid-zl3frkeu>
+                <button type="button" className="carousel-btn carousel-btn--prev testimonials-btn-prev" onClick={() => handleTestimonialChange((activeTestimonial - 1 + testimonials.length) % testimonials.length)} data-astro-cid-zl3frkeu>
+                  <span data-astro-cid-zl3frkeu>‹</span>
+                </button>
+
                 <div className="carousel" data-astro-cid-zl3frkeu>
                   <div className="carousel__track" data-astro-cid-zl3frkeu style={{justifyContent: 'center'}}>
-                    {testimonials.map((t, idx) => {
-                      const isActive = idx === activeTestimonial;
-                      const isNeighbor = Math.abs(idx - activeTestimonial) === 1;
-                      return (
-                        <div className="carousel__slide" key={idx} data-active={isActive ? "true" : undefined} data-neighbor={isNeighbor ? "true" : undefined} data-astro-cid-zl3frkeu style={{display: isActive || isNeighbor ? 'block' : 'none'}}>
-                          <div className="testimonial-card" data-astro-cid-zl3frkeu>
-                            <div className="testimonial-card-header" data-astro-cid-zl3frkeu>
-                              <div className="testimonial-avatar" data-astro-cid-zl3frkeu>
-                                <img src={t.avatar} alt={t.name} className="testimonial-avatar-image" data-astro-cid-zl3frkeu />
+                    {(() => {
+                      const leftIdx = (activeTestimonial - 1 + testimonials.length) % testimonials.length;
+                      const activeIdx = activeTestimonial;
+                      const rightIdx = (activeTestimonial + 1) % testimonials.length;
+                      return [leftIdx, activeIdx, rightIdx].map((idx) => {
+                        const t = testimonials[idx];
+                        const isActive = idx === activeTestimonial;
+                        const isNeighbor = !isActive;
+                        return (
+                          <div 
+                            className="carousel__slide" 
+                            key={idx} 
+                            data-active={isActive ? "true" : undefined} 
+                            data-neighbor={isNeighbor ? "true" : undefined} 
+                            data-astro-cid-zl3frkeu 
+                            style={{
+                              display: 'block', 
+                              cursor: isNeighbor ? 'pointer' : 'default'
+                            }}
+                            onClick={() => {
+                              if (isNeighbor) {
+                                handleTestimonialChange(idx);
+                              }
+                            }}
+                          >
+                            <div className="testimonial-card" data-astro-cid-zl3frkeu>
+                              <div className="testimonial-card-header" data-astro-cid-zl3frkeu>
+                                <div className="testimonial-avatar" data-astro-cid-zl3frkeu>
+                                  <img src={t.avatar} alt={t.name} className="testimonial-avatar-image" data-astro-cid-zl3frkeu />
+                                </div>
+                                <div className="testimonial-info" data-astro-cid-zl3frkeu>
+                                  <h3 className="testimonial-name" data-astro-cid-zl3frkeu>{t.name}</h3>
+                                  <p className="testimonial-role" data-astro-cid-zl3frkeu>{t.role}</p>
+                                </div>
                               </div>
-                              <div className="testimonial-info" data-astro-cid-zl3frkeu>
-                                <h3 className="testimonial-name" data-astro-cid-zl3frkeu>{t.name}</h3>
-                                <p className="testimonial-role" data-astro-cid-zl3frkeu>{t.role}</p>
-                              </div>
+                              <p className="testimonial-quote" data-astro-cid-zl3frkeu>
+                                "{t.text}"
+                              </p>
                             </div>
-                            <p className="testimonial-quote" data-astro-cid-zl3frkeu>
-                              "{t.text}"
-                            </p>
                           </div>
-                        </div>
-                      );
-                    })}
+                        );
+                      });
+                    })()}
                   </div>
                 </div>
 
+                <button type="button" className="carousel-btn carousel-btn--next testimonials-btn-next" onClick={() => handleTestimonialChange((activeTestimonial + 1) % testimonials.length)} data-astro-cid-zl3frkeu>
+                  <span data-astro-cid-zl3frkeu>›</span>
+                </button>
+
                 <div className="testimonials-mobile-arrows" data-astro-cid-zl3frkeu>
                   <button type="button" className="carousel-btn carousel-btn--prev-mobile" onClick={() => handleTestimonialChange((activeTestimonial - 1 + testimonials.length) % testimonials.length)} data-astro-cid-zl3frkeu>
-                    <span>‹</span>
+                    <span data-astro-cid-zl3frkeu>‹</span>
                   </button>
                   <button type="button" className="carousel-btn carousel-btn--next-mobile" onClick={() => handleTestimonialChange((activeTestimonial + 1) % testimonials.length)} data-astro-cid-zl3frkeu>
-                    <span>›</span>
+                    <span data-astro-cid-zl3frkeu>›</span>
                   </button>
                 </div>
               </div>
@@ -865,7 +952,7 @@ export default function EnglorayPortalPage() {
               <div className="testimonials-actions" data-astro-cid-zl3frkeu>
                 <div className="testimonials-divider" data-astro-cid-zl3frkeu></div>
                 <button type="button" className="button-base button-md button-primary testimonials-button" onClick={scrollToApply} data-astro-cid-f4ytvlcn>
-                  Be the Next Success Story
+                  Bring Engloray to Your College
                 </button>
                 <div className="testimonials-divider" data-astro-cid-zl3frkeu></div>
               </div>
@@ -874,63 +961,46 @@ export default function EnglorayPortalPage() {
         </section>
 
         {/* EAT ASSESSMENT PREPARATION */}
-        <section className="np-section" data-astro-cid-qvveo2su style={{background:'#f8fafc', padding:'56px 32px'}}>
+        <section className="np-section" data-astro-cid-qvveo2su style={{background:'#f8fafc', padding:'28px 32px'}}>
           <div style={{maxWidth:'1200px', margin:'0 auto'}}>
             <h2 style={{fontFamily:'Satoshi, sans-serif', fontSize:'36px', fontWeight:'700', textAlign:'center', color:'#1e293b', marginBottom:'48px'}}>
-              Our 3 Pillars of Practical Upskilling
+              Our 3-Step Campus Takeover Model
             </h2>
             <div style={{display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(280px, 1fr))', gap: '32px'}}>
-              <div style={{background:'#fff', padding:'32px', borderRadius:'16px', border:'1px solid #e2e8f0'}}>
-                <div style={{fontSize:'32px', marginBottom:'16px'}}>💻</div>
-                <h3 style={{fontSize:'20px', fontWeight:'700', color:'#1e293b', marginBottom:'12px'}}>Project-Based Learning</h3>
-                <p style={{fontSize:'14px', color:'#64748b', lineHeight:'1.5'}}>Build SaaS Platforms: Deploy functional projects with live code repositories, custom domains, and database connections.</p>
+              <div style={{background:'#fff', padding:'32px', borderRadius:'16px', border:'1px solid #e2e8f0', display: 'flex', flexDirection: 'column', alignItems: 'flex-start'}}>
+                <div style={{ marginBottom: '20px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '56px', height: '56px', borderRadius: '12px', background: '#e8f0fe', color: '#0056d2' }}>
+                  <Laptop size={28} />
+                </div>
+                <h3 style={{fontSize:'20px', fontWeight:'700', color:'#1e293b', marginBottom:'12px', textAlign:'left'}}>Lab Setup & Integration</h3>
+                <p style={{fontSize:'14px', color:'#64748b', lineHeight:'1.5', textAlign:'left'}}>Sandbox Infrastructure: We transform standard college computing facilities into co-branded coding labs with cloud platforms.</p>
               </div>
-              <div style={{background:'#fff', padding:'32px', borderRadius:'16px', border:'1px solid #e2e8f0'}}>
-                <div style={{fontSize:'32px', marginBottom:'16px'}}>🤝</div>
-                <h3 style={{fontSize:'20px', fontWeight:'700', color:'#1e293b', marginBottom:'12px'}}>Mentor & Workshop Guidance</h3>
-                <p style={{fontSize:'14px', color:'#64748b', lineHeight:'1.5'}}>Industry Expert Sprints: Participate in specialized workshops led by senior engineers and active design practitioners.</p>
+              <div style={{background:'#fff', padding:'32px', borderRadius:'16px', border:'1px solid #e2e8f0', display: 'flex', flexDirection: 'column', alignItems: 'flex-start'}}>
+                <div style={{ marginBottom: '20px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '56px', height: '56px', borderRadius: '12px', background: '#e8f0fe', color: '#0056d2' }}>
+                  <Code2 size={28} />
+                </div>
+                <h3 style={{fontSize:'20px', fontWeight:'700', color:'#1e293b', marginBottom:'12px', textAlign:'left'}}>Developer-Led Workshops</h3>
+                <p style={{fontSize:'14px', color:'#64748b', lineHeight:'1.5', textAlign:'left'}}>Specialized Tech Sprints: We conduct intensive, practical workshops covering AI Tools, Full-Stack Dev, UI/UX, and SaaS building.</p>
               </div>
-              <div style={{background:'#fff', padding:'32px', borderRadius:'16px', border:'1px solid #e2e8f0'}}>
-                <div style={{fontSize:'32px', marginBottom:'16px'}}>🏢</div>
-                <h3 style={{fontSize:'20px', fontWeight:'700', color:'#1e293b', marginBottom:'12px'}}>Corporate Internships</h3>
-                <p style={{fontSize:'14px', color:'#64748b', lineHeight:'1.5'}}>Gain Paid Placements: Work on real-world client deliverables and secure paid internships with corporate teams.</p>
+              <div style={{background:'#fff', padding:'32px', borderRadius:'16px', border:'1px solid #e2e8f0', display: 'flex', flexDirection: 'column', alignItems: 'flex-start'}}>
+                <div style={{ marginBottom: '20px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '56px', height: '56px', borderRadius: '12px', background: '#e8f0fe', color: '#0056d2' }}>
+                  <Building2 size={28} />
+                </div>
+                <h3 style={{fontSize:'20px', fontWeight:'700', color:'#1e293b', marginBottom:'12px', textAlign:'left'}}>Corporate Placement Pipeline</h3>
+                <p style={{fontSize:'14px', color:'#64748b', lineHeight:'1.5', textAlign:'left'}}>Direct Career Opportunities: We link upskilled student groups with paid internships and hiring options across our corporate networks.</p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* ENROLLMENT PROCESS SECTION */}
-        <section className="admission-process-section" data-astro-cid-qvveo2su style={{background:'#fff', padding:'56px 32px'}}>
-          <div style={{maxWidth:'1200px', margin:'0 auto'}}>
-            <h2 style={{fontFamily:'Satoshi, sans-serif', fontSize:'36px', fontWeight:'700', textAlign:'center', color:'#1e293b', marginBottom:'48px'}}>
-              Engloray Portal Enrollment Process
-            </h2>
-            <div style={{display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(220px, 1fr))', gap:'24px', position:'relative'}}>
-              {[
-                { step: "1", title: "Submit Application Form", desc: "Complete the online lead registration capture in the hero card above." },
-                { step: "2", title: "Choose Track & Workshops", desc: "Select your specialized upskilling and interactive workshop track." },
-                { step: "3", title: "1:1 Mentorship Session", desc: "Participate in a counseling and goal-alignment review with tech professionals." },
-                { step: "4", title: "Confirm Cohort Incubation", desc: "Confirm your cohort seat, join the incubation group, and begin learning!" }
-              ].map((item, idx) => (
-                <div key={idx} style={{position:'relative', padding:'24px', background:'#f8fafc', borderRadius:'12px', border:'1px solid #e2e8f0'}}>
-                  <div style={{width:'36px', height:'36px', background:'#0056d2', color:'#fff', borderRadius:'50%', display:'grid', placeItems:'center', fontSize:'16px', fontWeight:'700', marginBottom:'16px'}}>
-                    {item.step}
-                  </div>
-                  <h3 style={{fontSize:'18px', fontWeight:'700', color:'#1e293b', marginBottom:'8px'}}>{item.title}</h3>
-                  <p style={{fontSize:'13px', color:'#64748b', lineHeight: '1.5'}}>{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+
 
         {/* FINAL HERO CTA SECTION */}
-        <section className="build-it-section" data-astro-cid-qvveo2su style={{background:'#f0f4f9', padding:'64px 32px', textAlign:'center'}}>
+        <section className="build-it-section" data-astro-cid-qvveo2su style={{background:'#f0f4f9', padding:'32px 32px', textAlign:'center'}}>
           <div style={{maxWidth:'600px', margin:'0 auto'}}>
-            <h2 style={{fontFamily:'Satoshi, sans-serif', fontSize:'32px', fontWeight:'700', color:'#1e293b', marginBottom:'16px'}}>Don't just prepare for the future. Build it.</h2>
-            <p style={{fontSize:'15px', color:'#475569', marginBottom:'32px', lineHeight:'1.5'}}>Accelerate your academic journey with live cloud pipelines, coding sandboxes, and world-class mentors.</p>
+            <h2 style={{fontFamily:'Satoshi, sans-serif', fontSize:'32px', fontWeight:'700', color:'#1e293b', marginBottom:'16px'}}>Ready to Transform Your Campus Tech Ecosystem?</h2>
+            <p style={{fontSize:'15px', color:'#475569', marginBottom:'32px', lineHeight:'1.5'}}>Partner with Engloray to bring top-tier developer workshops, co-branded sandbox labs, and direct corporate internships to your college.</p>
             <button className="button-base button-md button-primary" onClick={scrollToApply} style={{border:'none', cursor:'pointer', padding:'12px 24px', background:'#0056d2', color:'#fff', fontWeight:'700', borderRadius:'6px'}}>
-              Apply Now
+              Schedule a Call
             </button>
           </div>
         </section>
@@ -944,10 +1014,10 @@ export default function EnglorayPortalPage() {
 
             <div className="faqnewsection__tabs" data-astro-cid-l47k3pvc>
               {[
-                { id: 'general', label: 'General Queries' },
-                { id: 'eat', label: 'Workshops & Mentors' },
-                { id: 'curriculum', label: 'Curriculum & Sandboxes' },
-                { id: 'placements', label: 'Placements & Stipends' }
+                { id: 'general', label: 'Partnership FAQs' },
+                { id: 'eat', label: 'Lab & Workshop Setup' },
+                { id: 'curriculum', label: 'Curriculum & Syllabus' },
+                { id: 'placements', label: 'Placements & Internships' }
               ].map((tab) => (
                 <button key={tab.id} className={`faqnewsection__tab ${faqTab === tab.id ? 'faqnewsection__tab--active' : ''}`} onClick={() => { setFaqTab(tab.id); setOpenFaqId(null); }} data-astro-cid-l47k3pvc>
                   {tab.label}
@@ -983,52 +1053,13 @@ export default function EnglorayPortalPage() {
 
       </main>
 
-      {/* FOOTER SECTION */}
-      <footer className="footernew" data-astro-cid-pmd2h3wn>
-        <div className="footernew__container" data-astro-cid-pmd2h3wn>
-          <div className="footernew__top" data-astro-cid-pmd2h3wn>
-            <div className="footernew__logo-wrap" data-astro-cid-pmd2h3wn>
-              <img src={englorayLogo} alt="Engloray Logo" className="footernew__logo" data-astro-cid-pmd2h3wn />
-            </div>
-            
-            <div className="footernew__col" data-astro-cid-pmd2h3wn>
-              <h4 className="footernew__col-heading" data-astro-cid-pmd2h3wn>Quick Links</h4>
-              <ul className="footernew__link-list" data-astro-cid-pmd2h3wn>
-                <li><a href="/" className="footernew__link" data-astro-cid-pmd2h3wn>Home</a></li>
-                <li><a href="/ourStoryPage" className="footernew__link" data-astro-cid-pmd2h3wn>Our Story</a></li>
-                <li><a href="/CareersPage" className="footernew__link" data-astro-cid-pmd2h3wn>Careers</a></li>
-                <li><a href="/contactPage" className="footernew__link" data-astro-cid-pmd2h3wn>Contact Us</a></li>
-              </ul>
-            </div>
-
-            <div className="footernew__col footernew__col--wide" data-astro-cid-pmd2h3wn>
-              <h4 className="footernew__col-heading" data-astro-cid-pmd2h3wn>Contact Us</h4>
-              <p className="footernew__address" data-astro-cid-pmd2h3wn>
-                <strong>Engloray Tech</strong> <br />
-                Financial District, Nanakramguda, <br />
-                Hyderabad, Telangana 500032
-              </p>
-            </div>
-          </div>
-
-          <div className="footernew__divider" data-astro-cid-pmd2h3wn></div>
-
-          <div className="footernew__bottom" data-astro-cid-pmd2h3wn>
-            <p className="footernew__subtext" data-astro-cid-pmd2h3wn>© 2026 Engloray. All rights reserved.</p>
-            <div className="footernew__legal" data-astro-cid-pmd2h3wn>
-              <a href="/privacyPolicyPage" className="footernew__legal-link" data-astro-cid-pmd2h3wn>Privacy Policy</a>
-              <a href="/cookiesPolicyPage" className="footernew__legal-link" data-astro-cid-pmd2h3wn>Cookie Policy</a>
-              <a href="/termsAndServicesPage" className="footernew__legal-link" data-astro-cid-pmd2h3wn>Terms of Service</a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <SubFooterTwo />
 
       {/* Floating Sticky apply banner for mobile/desktop scroll */}
       {stickyVisible && (
         <div style={{ position: 'fixed', bottom: '16px', left: '50%', transform: 'translateX(-50%)', zIndex: 100, width: '90%', maxWidth: '400px' }}>
           <button onClick={scrollToApply} style={{ width: '100%', padding: '14px 20px', background: '#0056d2', color: '#fff', border: 'none', borderRadius: '100px', fontSize: '15px', fontWeight: '700', boxShadow: '0 8px 30px rgba(0, 86, 210, 0.4)', cursor: 'pointer', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '8px' }}>
-            <span>Apply for Incubation Sprints</span>
+            <span>Inquire for Campus Partnership</span>
             <span>→</span>
           </button>
         </div>
