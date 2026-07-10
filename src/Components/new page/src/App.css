@@ -1,0 +1,77 @@
+/* App.css - Marquee carousel styles */
+
+.app-container {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Marquee Container */
+.marquee {
+  overflow: hidden;
+  background: white;
+}
+
+/* Marquee Track */
+.marquee-track {
+  display: inline-flex;
+  min-width: 200%;
+  animation-duration: 40s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+/* Left to Right Animation (Courses) */
+.marquee-left {
+  animation-name: scroll-left;
+}
+
+/* Right to Left Animation (Internships) */
+.marquee-right {
+  animation-name: scroll-right;
+  
+}
+
+/* Scroll Left Keyframes */
+@keyframes scroll-left {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Scroll Right Keyframes */
+@keyframes scroll-right {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Smooth hover effect */
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .marquee-track {
+    animation-duration: 35s;
+  }
+}
+
+/* Button interactions */
+button {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:active {
+  transform: scale(0.98);
+}
