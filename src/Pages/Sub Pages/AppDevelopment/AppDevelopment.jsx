@@ -3,17 +3,19 @@ import Navbar from '../../../Components/Navbar/Navbar';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import './AppDevelopment.css';
-import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
+// import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 
 
-import logoDesignImg from '../../../assets/services/logo_design.png';
+import AppDevOne from '../../../assets/Service images/Appdevelopment/business app solution.png';
+import AppDevTwo from '../../../assets/Service images/Appdevelopment/stratup app.png';
+import AppDevThree from '../../../assets/Service images/Appdevelopment/android app.png';
 import colorPaletteImg from '../../../assets/services/color_palette.png';
 import typographyImg from '../../../assets/services/typography.png';
 import visualStyleImg from '../../../assets/services/visual_style.png';
 import environmentImg from '../../../assets/services/environmental_branding.png';
 import portraitImg from '../../../assets/agency/branding_concept_abstract.png';
 import landscapeImg from '../../../assets/agency/landscape.png';
-import iphone14Img from '../../../assets/Iphone14.png';
+import iphone14Img from '../../../assets/Service images/App Development.png';
 
 import avatarOne from '../../../assets/male_avatar.png';
 import avatarTwo from '../../../assets/cartoon_male_1.png';
@@ -37,7 +39,8 @@ const AppDevelopment = () => {
     const brandServices = [{
         id: 1, num: '01', title: 'Business App Solution', icon: '✦', short: 'Business App Solution services', stats: { val1: '62+', lab1: 'Completed', val2: '4 Months', lab2: 'Avg Speed', val3: '4.8★', lab3: 'Satisfaction' },
         description: 'Business App Solution focused solutions provided by Engloray expert team Our comprehensive business app solution streamlines daily operations by integrating project management and communication tools into one platform. Employees can track tasks in real time and share critical updates instantly which reduces project delays. The mobile app enables remote workers to submit reports immediately and access company resources from any location. Management teams utilize the centralized data analytics dashboard to make informed decisions and improve productivity. Implementing this software solution helps businesses reduce overhead costs and increase overall efficiency..',
-        image: "https://i.pinimg.com/736x/15/ca/1f/15ca1f6f0dff507379b6e14f975153ac.jpg"
+        // image: "https://i.pinimg.com/736x/15/ca/1f/15ca1f6f0dff507379b6e14f975153ac.jpg"
+        image: AppDevOne
     },
     {
         id: 2, num: '02', title: 'E-Commerce App Package', icon: '◈', short: 'E-Commerce App Package services', stats: { val1: '87+', lab1: 'Completed', val2: '5 Weeks', lab2: 'Avg Speed', val3: '4.7★', lab3: 'Satisfaction' },
@@ -47,7 +50,8 @@ const AppDevelopment = () => {
     {
         id: 3, num: '03', title: 'Startup App Launch Kit', icon: '✦', short: 'Startup App Launch Kit services', stats: { val1: '58+', lab1: 'Completed', val2: '5 Weeks', lab2: 'Avg Speed', val3: '4.6★', lab3: 'Satisfaction' },
         description: 'Startup App Launch Kit focused solutions provided by Engloray expert team.A comprehensive app launch kit empowers startups to deploy their digital product within thirty days by providing a structured roadmap and essential resources. This toolkit streamlines development workflows through pre-configured technology stacks such as Flutter for cross-platform apps or React Native for rapid iteration. It includes foundational elements like backend setup with Node.js and PostgreSQL as well as essential frontend tools including Tailwind CSS. These kits often feature built-in security protocols like JWT authentication and Stripe integration to ensure a secure and compliant product launch. Using a curated launch kit reduces technical debt and accelerates time to market for new venture',
-        image: "https://i.pinimg.com/1200x/18/59/b9/1859b90826919f2362b9fd6f415441cb.jpg"
+        // image: "https://i.pinimg.com/1200x/18/59/b9/1859b90826919f2362b9fd6f415441cb.jpg"
+        image: AppDevTwo
     },
     {
         id: 4, num: '04', title: 'Custom App Development', icon: '◈', short: 'Custom App Development services', stats: { val1: '146+', lab1: 'Deploys', val2: '6 Weeks', lab2: 'Sprints', val3: '4.7★', lab3: 'Satisfaction' },
@@ -56,8 +60,9 @@ const AppDevelopment = () => {
     },
     {
         id: 5, num: '05', title: 'Android App Development', icon: '✦', short: 'Android App Development services', stats: { val1: '101+', lab1: 'Deploys', val2: '6 Months', lab2: 'Sprints', val3: '4.7★', lab3: 'Satisfaction' },
-        description: 'Android App Development focused solutions provided by Engloray expert team.',
-        image: "https://i.pinimg.com/736x/96/4e/5b/964e5b4b1881dd66816a59b11bb16fd6.jpg"
+        description: 'Android app development involves creating software specifically tailored for the Android operating system, utilizing programming languages like Kotlin and Java. This specialized process ensures that applications can run seamlessly across a vast array of devices from different manufacturers, maintaining high performance and compatibility. Developers leverage the Android SDK to build robust, secure, and feature-rich applications that take full advantage of native hardware capabilities. By following the Material Design guidelines, creators can ensure their apps feel intuitive and visually appealing for millions of Android users globally. Successful deployment requires thorough testing on various screen sizes and a seamless launch process on the Google Play Store.',
+        // image: "https://i.pinimg.com/736x/96/4e/5b/964e5b4b1881dd66816a59b11bb16fd6.jpg"
+        image: AppDevThree
     },
     {
         id: 6, num: '06', title: 'iOS App Development', icon: '◈', short: 'iOS App Development services', stats: { val1: '139+', lab1: 'Deploys', val2: '5 Weeks', lab2: 'Sprints', val3: '4.7★', lab3: 'Satisfaction' },
@@ -464,9 +469,6 @@ const AppDevelopment = () => {
                     {/* Right: Detail Panel - pops content when service is clicked */}
                     <div className="app-page-about-right-new">
                         <div className="app-page-about-detail-panel" key={selectedService}>
-                            <div className="app-page-detail-icon-wrap">
-                                <span className="app-page-detail-icon">{brandServices[selectedService].icon}</span>
-                            </div>
                             <span className="app-page-detail-num">{brandServices[selectedService].num}</span>
                             <h3 className="app-page-detail-title">{brandServices[selectedService].title}</h3>
                             <p className="app-page-detail-desc">{brandServices[selectedService].description}</p>
@@ -485,7 +487,7 @@ const AppDevelopment = () => {
                                     <span className="bi-detail-stat-label">{brandServices[selectedService].stats?.lab3 || 'Rating'}</span>
                                 </div>
                             </div>
-                            <button className="app-page-detail-cta" onClick={() => window.open('https://wa.me/916381759909?text=Hello!%20I%20would%20like%20to%20get%20started%20with%20ENGLORAY%20on%20App%20Development.', '_blank')}>Get Started →</button>
+                            <button className="app-page-detail-cta" onClick={() => window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=engloraytechgroup.com&su=Inquiry regarding ${encodeURIComponent(brandServices[selectedService].title)} service`, '_blank')}>Get Started →</button>
                         </div>
                     </div>
 
@@ -907,7 +909,7 @@ const AppDevelopment = () => {
                 </div>
             </section>
             {/* <TSPFFooter /> */}
-            <WhiteFooter />
+            {/* <WhiteFooter /> */}
 
             <BackToTop />
         </div>

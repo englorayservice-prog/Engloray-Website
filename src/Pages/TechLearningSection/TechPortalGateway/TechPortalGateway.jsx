@@ -3,6 +3,40 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import './TechPortalGateway.css';
 
+const stepCards = [
+    {
+        stepLabel: 'STEP 01 · EXPLORE',
+        stepNumber: '01',
+        title: 'Explore',
+        desc: 'Discover the track built for where you want to go: AI & ML, MERN Stack, UI/UX, or Graphic Design.',
+    },
+    {
+        stepLabel: 'STEP 02 · BUILD',
+        stepNumber: '02',
+        title: 'Build',
+        desc: 'Train under real industry mentors with hands-on sprints and certification workshops.',
+    },
+    {
+        stepLabel: 'STEP 03 · LAUNCH',
+        stepNumber: '03',
+        title: 'Launch',
+        desc: "Walk into a paid internship or placement backed by your mentor's referral.",
+    },
+];
+
+const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (index) => ({
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.45,
+            delay: index * 0.08,
+            ease: 'easeOut',
+        },
+    }),
+};
+
 const TechPortalGateway = () => {
     const navigate = useNavigate();
 
@@ -13,49 +47,48 @@ const TechPortalGateway = () => {
 
     return (
         <section className="tech-portal-gateway-section">
-            <div className="portal-gateway-grid-bg"></div>
+            <div className="portal-gateway-grid-bg" />
 
             <div className="portal-gateway-container">
                 {/* Left Column - Content Description */}
                 <div className="portal-left-column">
                     <span className="portal-tagline">Integrated Upskilling</span>
-                    
-                    <motion.h2 
+
+                    <motion.h2
                         className="portal-title"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        Admission & <span>Program Portal</span>
+                        Admission & <span>Program Path</span>
                     </motion.h2>
 
-                    <motion.p 
+                    <motion.p
                         className="portal-description"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.1 }}
                     >
-                        Ready to accelerate your tech career? Enter our Admissions Portal to secure your seat in our specialized industry-ready upskilling programs, paid internships, and mentor-guided coding cohorts.
-                    </motion.p>
+                        Every path here is mapped — from your first project sprint to the day you walk into a paid role. Explore specialized tracks, train under mentors who work in the industry today, and build a portfolio companies actually look at.                    </motion.p>
 
                     <ul className="portal-feature-list">
                         <li className="portal-feature-item">
-                            <span className="portal-feature-bullet"></span>
-                            <span>Hands-on Sprints & Specialized Certification Workshops</span>
+                            <span className="portal-feature-bullet" />
+                            <span>Project-based learning across AI & ML, MERN Stack, UI/UX & More </span>
                         </li>
                         <li className="portal-feature-item">
-                            <span className="portal-feature-bullet"></span>
-                            <span>Direct 1:1 Corporate Mentor Matchups & Portfolio Audits</span>
+                            <span className="portal-feature-bullet" />
+                            <span>1:1 guidance from working industry mentors — not lecturers, practitioners</span>
                         </li>
                         <li className="portal-feature-item">
-                            <span className="portal-feature-bullet"></span>
-                            <span>Paid Internships & Placements from Year 1</span>
+                            <span className="portal-feature-bullet" />
+                            <span>Paid internships from Year 1, backed by your mentor's own referral</span>
                         </li>
                     </ul>
 
-                    <motion.button 
+                    <motion.button
                         className="portal-cta-button"
                         onClick={handleNavigate}
                         whileHover={{ scale: 1.03 }}
@@ -65,40 +98,29 @@ const TechPortalGateway = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.2 }}
                     >
-                        Enter Admission Portal →
+                        Begin the journey →
                     </motion.button>
                 </div>
 
-                {/* Right Column - Highlight Cards */}
+                {/* Right Column - Journey-Led Step Cards */}
                 <div className="portal-right-column">
-                    {[
-                        {
-                            num: "1",
-                            title: "Apply Online",
-                            desc: "Fill in your student profile details in our responsive lead capture form."
-                        },
-                        {
-                            num: "2",
-                            title: "Choose Program Track",
-                            desc: "Select your specialized track: AI & ML, MERN Stack, UI/UX, or Graphic Design."
-                        },
-                        {
-                            num: "3",
-                            title: "Align with Mentor",
-                            desc: "Review your goals with our industry experts and lock in internship placements."
-                        }
-                    ].map((card, index) => (
-                        <motion.div 
-                            className="portal-info-card" 
-                            key={index}
-                            initial={{ opacity: 0, x: 30 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: index * 0.15 }}
+                    {stepCards.map((card, index) => (
+                        <motion.div
+                            className="portal-info-card"
+                            key={card.stepNumber}
+                            custom={index}
+                            variants={cardVariants}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, amount: 0.4 }}
+                            whileHover={{ y: -2 }}
+                            transition={{ duration: 0.2, ease: 'easeOut' }}
                         >
                             <div className="portal-card-icon-wrap">
-                                {card.num}
+                                <span className="portal-card-label">{card.stepLabel}</span>
+                                <span className="portal-card-number">{card.stepNumber}</span>
                             </div>
+
                             <div className="portal-card-details">
                                 <h4 className="portal-card-title">{card.title}</h4>
                                 <p className="portal-card-desc">{card.desc}</p>

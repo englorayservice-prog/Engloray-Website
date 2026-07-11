@@ -3,9 +3,15 @@ import Navbar from '../../../Components/Navbar/Navbar';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import './CrmServices.css';
-import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
+// import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 
-import iphone14Img from '../../../assets/Iphone14.png';
+import crmOne from '../../../assets/Service images/CRM/CRM implementation.png';
+import crmTwo from '../../../assets/Service images/CRM/custom CRM.png';
+import crmThree from '../../../assets/Service images/CRM/CRM integration.png';
+import crmFour from '../../../assets/Service images/CRM/sales automation.png';
+import crmFive from '../../../assets/Service images/CRM/customer retention.png';
+
+import iphone14Img from '../../../assets/Service images/CRM Services-Photoroom.png';
 
 import cartoonMale1 from '../../../assets/cartoon_male_1.png';
 import cartoonMale2 from '../../../assets/cartoon_male_2.png';
@@ -39,7 +45,8 @@ const CrmServices = () => {
             ],
             stats: { val1: '56+', lab1: 'Projects', val2: '2 Weeks', lab2: 'Avg Speed', val3: '4.8★', lab3: 'Rating' },
             description: 'We handle full CRM implementation — from needs assessment and stakeholder alignment to system configuration, data migration, and user training. Our experts ensure seamless deployment that aligns perfectly with your sales, marketing, and support team workflows for maximum productivity from day one.',
-            image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80'
+            // image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80'
+            image: crmOne
         },
         {
             id: 2, num: '02', title: 'Custom CRM Development', icon: '◈',
@@ -54,7 +61,8 @@ const CrmServices = () => {
             ],
             stats: { val1: '96+', lab1: 'Deploys', val2: '5 Months', lab2: 'Avg Sprint', val3: '5.0★', lab3: 'Rating' },
             description: 'We build modular, fully custom CRM platforms designed around your exact business model — with custom fields, deal pipelines, contact modules, automated workflows, and role-based access. No bloat, no compromises, just a system that scales with you.',
-            image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80'
+            // image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80'
+            image: crmTwo
         },
         {
             id: 3, num: '03', title: 'CRM Integration', icon: '❆',
@@ -69,7 +77,8 @@ const CrmServices = () => {
             ],
             stats: { val1: '146+', lab1: 'Integrations', val2: '3 Weeks', lab2: 'Avg Speed', val3: '4.8★', lab3: 'Rating' },
             description: 'Sync your CRM with Gmail, Outlook, marketing platforms, ecommerce systems, telephony tools, and ERPs. We create a single source of truth across your entire tech stack, eliminating data silos and ensuring every team works from the same real-time information.',
-            image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80'
+            // image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80'
+            image: crmThree
         },
         {
             id: 4, num: '04', title: 'Sales Automation', icon: '◈',
@@ -84,7 +93,8 @@ const CrmServices = () => {
             ],
             stats: { val1: '129+', lab1: 'Automations', val2: '3 Weeks', lab2: 'Setup Time', val3: '4.5★', lab3: 'Rating' },
             description: 'Replace manual tasks with intelligent automation — lead scoring, follow-up sequences, deal stage triggers, email drip campaigns, and task assignments. Your team focuses entirely on selling while our automation handles all the repetitive groundwork behind the scenes.',
-            image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80'
+            // image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80'
+            image: crmFour
         },
         {
             id: 5, num: '05', title: 'Lead Management', icon: '❆',
@@ -114,7 +124,8 @@ const CrmServices = () => {
             ],
             stats: { val1: '86+', lab1: 'Projects', val2: '5 Weeks', lab2: 'Avg Speed', val3: '4.7★', lab3: 'Rating' },
             description: 'Build long-term customer loyalty with automated retention workflows, satisfaction surveys, renewal reminders, loyalty programs, and churn prediction alerts. Our retention systems help you identify at-risk customers early and act before they leave.',
-            image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&q=80'
+            // image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&q=80'
+            image: crmFive
         }
     ];
 
@@ -363,7 +374,7 @@ const CrmServices = () => {
                             {brandServices.map((service, i) => (
                                 <div
                                     key={service.id}
-                                    className={`bi-about-service-item-new ${selectedService === i ? 'crm-page-service-active' : ''}`}
+                                    className={`crm-page-about-service-item-new ${selectedService === i ? 'crm-page-service-active' : ''}`}
                                     onClick={() => setSelectedService(i)}
                                 >
                                     <div className="crm-page-service-item-left-about">
@@ -398,9 +409,6 @@ const CrmServices = () => {
                     {/* Right: Detail Panel */}
                     <div className="crm-page-about-right-new">
                         <div className="crm-page-about-detail-panel" key={selectedService}>
-                            <div className="crm-page-detail-icon-wrap">
-                                <span className="crm-page-detail-icon">{brandServices[selectedService].icon}</span>
-                            </div>
                             <span className="crm-page-detail-num">{brandServices[selectedService].num}</span>
                             <h3 className="crm-page-detail-title">{brandServices[selectedService].title}</h3>
                             <p className="crm-page-detail-desc">{brandServices[selectedService].description}</p>
@@ -426,7 +434,7 @@ const CrmServices = () => {
                                     <span className="crm-page-detail-stat-label">{brandServices[selectedService].stats?.lab3 || 'Rating'}</span>
                                 </div>
                             </div>
-                            <button onClick={navigateToWhatsApp} className="crm-page-detail-cta">Get Started →</button>
+                            <button className="crm-page-detail-cta" onClick={() => window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=engloraytechgroup.com&su=Inquiry regarding ${encodeURIComponent(brandServices[selectedService].title)} service`, '_blank')}>Get Started →</button>
                         </div>
                     </div>
                 </div>
@@ -824,7 +832,7 @@ const CrmServices = () => {
                 </div>
             </section>
 
-            <WhiteFooter />
+            {/* <WhiteFooter /> */}
             <BackToTop />
         </div>
     );

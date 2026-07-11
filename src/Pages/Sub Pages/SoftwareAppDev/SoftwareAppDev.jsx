@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 
 import Navbar from '../../../Components/Navbar/Navbar';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
-import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
+// import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import './SoftwareAppDev.css';
 import { Helmet } from 'react-helmet';
 
-import iphone14Img from '../../../assets/Iphone14.png';
+import iphone14Img from '../../../assets/Service images/development services (2)-Photoroom.png';
 import sadDashboardImg from '../../../assets/erp_dashboard_analytics.png';
 
 import avatarOne from '../../../assets/male_avatar.png';
@@ -16,6 +16,8 @@ import avatarThree from '../../../assets/cartoon_female_1.png';
 import avatarFour from '../../../assets/cartoon_female_2.png';
 import avatarFive from '../../../assets/cartoon_male_2.png';
 import avatarSix from '../../../assets/cartoon_female_3.png';
+
+import mobileAppDev from '../../../assets/images/service Images/mobile development 1.jpg';
 
 
 
@@ -30,7 +32,13 @@ const SoftwareAppDev = () => {
             title: 'Custom Software',
             icon: '✦',
             short: 'Tailored enterprise solutions',
-            description: 'We build bespoke software solutions designed to solve your specific business challenges. From complex CRM systems to automated inventory management, our custom applications are built for high performance and total scalability.We build bespoke software solutions designed to solve your specific business challenges. From complex CRM systems to automated inventory management, our custom applications are built for high performance and total scalability.',
+            description: 'We build bespoke software solutions designed to solve your specific business challenges. From complex CRM systems to automated inventory management, our custom applications are built for high performance and total scalability. By leveraging the latest architectural patterns, we ensure your software remains future-proof and adaptable to changing market demands. Our agile development process guarantees transparency, rapid iteration, and a final product that perfectly aligns with your strategic business objectives and operational workflows. We emphasize clean coding practices and modular design, allowing your internal teams to easily maintain and scale the product post-launch.',
+            features: [
+                'Custom CRM & ERP development',
+                'Legacy system modernization',
+                'Enterprise software solutions',
+                'Scalable cloud architecture'
+            ],
             image: "https://i.pinimg.com/1200x/ab/b5/33/abb533741bcd9b568b61308b20d49673.jpg"
         },
         {
@@ -39,8 +47,15 @@ const SoftwareAppDev = () => {
             title: 'Mobile App Dev',
             icon: '✦',
             short: 'iOS & Android excellence',
-            description: 'We create intuitive, high-performance mobile applications for iOS and Android. Our cross-platform solutions ensure a consistent user experience while leveraging native capabilities for maximum efficiency and security.We create intuitive, high-performance mobile applications for iOS and Android. Our cross-platform solutions ensure a consistent user experience while leveraging native capabilities for maximum efficiency and security.',
-            image: "https://i.pinimg.com/736x/53/cd/eb/53cdebbe94ba413f2dacbe58315acc9c.jpg"
+            description: 'We create intuitive, high-performance mobile applications for iOS and Android. Our cross-platform solutions ensure a consistent user experience while leveraging native capabilities for maximum efficiency and security. We focus on optimizing battery consumption, minimizing memory footprints, and delivering smooth, 60fps animations that engage users. From concept to App Store launch, our team handles the entire lifecycle, ensuring your mobile presence is powerful, reliable, and continuously updated with the latest OS features. We integrate advanced analytics to track user behavior, enabling data-driven decisions for future updates.',
+            // image: "https://i.pinimg.com/736x/53/cd/eb/53cdebbe94ba413f2dacbe58315acc9c.jpg"
+            features: [
+                'Native iOS & Android apps',
+                'Cross-platform React Native apps',
+                'UI/UX design & prototyping',
+                'App store optimization'
+            ],
+            image: mobileAppDev
         },
         {
             id: 3,
@@ -48,7 +63,13 @@ const SoftwareAppDev = () => {
             title: 'Web Applications',
             icon: '✦',
             short: 'Modern dynamic web apps',
-            description: 'We develop responsive and dynamic web applications using modern frameworks like React and Node.js. Our web products are designed to be fast, secure, and user-centric, providing a seamless experience across all devices.We develop responsive and dynamic web applications using modern frameworks like React and Node.js. Our web products are designed to be fast, secure, and user-centric, providing a seamless experience across all devices.',
+            description: 'We develop responsive and dynamic web applications using modern frameworks like React and Node.js. Our web products are designed to be fast, secure, and user-centric, providing a seamless experience across all devices. By implementing advanced caching strategies and server-side rendering, we dramatically improve load times and SEO rankings. Security is built into the core, protecting your user data against modern vulnerabilities while delivering an app-like experience directly in the browser. We ensure full compliance with accessibility standards (WCAG) so your applications can be used by everyone.',
+            features: [
+                'Responsive single-page applications',
+                'Progressive web apps (PWA)',
+                'E-commerce & portal development',
+                'Custom backend development'
+            ],
             image: "https://i.pinimg.com/1200x/bc/a8/73/bca873cf91377ef59d1e0bb0369b7d98.jpg"
         },
         {
@@ -57,7 +78,13 @@ const SoftwareAppDev = () => {
             title: 'API Integration',
             icon: '✦',
             short: 'Unified digital ecosystem',
-            description: 'We specialize in integrating complex third-party APIs and developing custom RESTful and GraphQL endpoints. We ensure your software communicates perfectly with other systems, creating a unified data environment.We specialize in integrating complex third-party APIs and developing custom RESTful and GraphQL endpoints. We ensure your software communicates perfectly with other systems, creating a unified data environment.',
+            description: 'We specialize in integrating complex third-party APIs and developing custom RESTful and GraphQL endpoints. We ensure your software communicates perfectly with other systems, creating a unified data environment. Our robust architecture handles rate-limiting, secure authentication, and seamless data synchronization across multiple platforms without bottlenecks. Whether connecting legacy systems or modern SaaS platforms, we build resilient bridges that empower your business with real-time analytics and automated workflows. Detailed interactive documentation is generated automatically, making it incredibly simple for third-party developers to consume your APIs.',
+            features: [
+                'Third-party API integration',
+                'Custom RESTful & GraphQL APIs',
+                'Payment gateway integration',
+                'Microservices architecture'
+            ],
             image: "https://i.pinimg.com/1200x/fd/42/0f/fd420fa93aeaa55e10b5dcbe75e9d0ee.jpg"
         },
         {
@@ -66,7 +93,13 @@ const SoftwareAppDev = () => {
             title: 'Quality Assurance',
             icon: '✦',
             short: 'Zero-bug performance',
-            description: 'Our rigorous testing strategy includes automated unit tests, integration testing, and comprehensive user acceptance labs. We guarantee reliable, secure, and bug-free software that performs perfectly under heavy loads.Our rigorous testing strategy includes automated unit tests, integration testing, and comprehensive user acceptance labs. We guarantee reliable, secure, and bug-free software that performs perfectly under heavy loads.',
+            description: 'Our rigorous testing strategy includes automated unit tests, integration testing, and comprehensive user acceptance labs. We guarantee reliable, secure, and bug-free software that performs perfectly under heavy loads. Utilizing advanced CI/CD pipelines, we execute thousands of test cases automatically before every deployment, preventing regressions. We simulate extreme traffic spikes to ensure your infrastructure scales gracefully, protecting your brand reputation and delivering a flawless end-user experience every single time. Dedicated penetration testing phases uncover and neutralize potential security vulnerabilities before they can be exploited.',
+            features: [
+                'Automated testing strategies',
+                'Performance & load testing',
+                'Security vulnerability assessment',
+                'Continuous integration (CI/CD)'
+            ],
             image: "https://i.pinimg.com/1200x/a1/7e/92/a17e926721d214ed38986aa592f425ca.jpg"
         },
         {
@@ -75,7 +108,13 @@ const SoftwareAppDev = () => {
             title: 'DevOps & Cloud',
             icon: '✦',
             short: 'Scalable cloud infrastructure',
-            description: 'We implement modern CI/CD pipelines and manage robust cloud infrastructure on AWS, Azure, and Google Cloud. Our DevOps practices ensure rapid deployment, zero downtime, and automatic scaling for your applications.We implement modern CI/CD pipelines and manage robust cloud infrastructure on AWS, Azure, and Google Cloud. Our DevOps practices ensure rapid deployment, zero downtime, and automatic scaling for your applications.',
+            description: 'We implement modern CI/CD pipelines and manage robust cloud infrastructure on AWS, Azure, and Google Cloud. Our DevOps practices ensure rapid deployment, zero downtime, and automatic scaling for your applications. By embracing Infrastructure as Code (IaC) and container orchestration with Kubernetes, we create environments that are reproducible, secure, and highly cost-efficient. Our 24/7 proactive monitoring catches and resolves anomalies before they impact your users, ensuring maximum uptime and reliability. We establish comprehensive disaster recovery and automated backup protocols to guarantee your data is always protected.',
+            features: [
+                'Cloud infrastructure setup (AWS/GCP/Azure)',
+                'DevOps consulting & implementation',
+                'Containerization (Docker/Kubernetes)',
+                'Infrastructure as code (IaC)'
+            ],
             image: "https://i.pinimg.com/1200x/40/48/22/404822461652af128e9fe3c651580175.jpg"
         },
         {
@@ -84,7 +123,13 @@ const SoftwareAppDev = () => {
             title: 'UI/UX Integration',
             icon: '✦',
             short: 'Human-centric design',
-            description: 'Every line of code is written with the final user in mind. We bridge the gap between creative design and technical execution, ensuring that beautiful UI transitions into a high-performance functional product.Every line of code is written with the final user in mind. We bridge the gap between creative design and technical execution, ensuring that beautiful UI transitions into a high-performance functional product.',
+            description: 'Every line of code is written with the final user in mind. We bridge the gap between creative design and technical execution, ensuring that beautiful UI transitions into a high-performance functional product. We meticulously translate Figma prototypes into pixel-perfect, accessible components that look stunning on any screen size. By prioritizing micro-interactions, smooth state transitions, and intuitive navigation flows, we elevate the digital experience, turning casual visitors into loyal, engaged customers. We conduct extensive A/B testing on core user journeys to mathematically prove which designs generate the highest conversion rates.',
+            features: [
+                'User-centric wireframing',
+                'Interactive prototyping',
+                'Front-end architecture alignment',
+                'Usability testing & refinement'
+            ],
             image: "https://i.pinimg.com/1200x/07/98/ae/0798aefc1cf97ba532375aa914bc5131.jpg"
         }
     ];
@@ -279,12 +324,16 @@ const SoftwareAppDev = () => {
 
                     <div className="sad-about-right-new">
                         <div className="sad-about-detail-panel" key={selectedService}>
-                            <div className="sad-detail-icon-wrap">
-                                <span className="sad-detail-icon">{sadServices[selectedService].icon}</span>
-                            </div>
                             <span className="sad-detail-num">{sadServices[selectedService].num}</span>
                             <h3 className="sad-detail-title">{sadServices[selectedService].title}</h3>
                             <p className="sad-detail-desc">{sadServices[selectedService].description}</p>
+                            {sadServices[selectedService].features && (
+                                <ul className="sad-detail-features">
+                                    {sadServices[selectedService].features.map((f, fi) => (
+                                        <li key={fi} className="sad-detail-feature-item">{f}</li>
+                                    ))}
+                                </ul>
+                            )}
                             <div className="sad-detail-divider" />
                             <div className="sad-detail-stats">
                                 <div className="sad-detail-stat">
@@ -300,7 +349,7 @@ const SoftwareAppDev = () => {
                                     <span className="sad-detail-stat-label">QA Score</span>
                                 </div>
                             </div>
-                            <button className="sad-detail-cta" onClick={() => window.open('https://wa.me/916381759909?text=Hello!%20I%20would%20like%20to%20start%20a%20build%20with%20ENGLORAY%20regarding%20Software%20%26%20App%20Development.', '_blank')}>Start Build →</button>
+                            <button className="sad-detail-cta" onClick={() => window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=engloraytechgroup.com&su=Inquiry regarding ${encodeURIComponent(sadServices[selectedService].title)} service`, '_blank')}>Start Build →</button>
                         </div>
                     </div>
                 </div>
@@ -550,7 +599,7 @@ const SoftwareAppDev = () => {
             {/* Internship Programs */}
 
 
-            <WhiteFooter />
+            {/* <WhiteFooter /> */}
             <BackToTop />
         </div>
     );

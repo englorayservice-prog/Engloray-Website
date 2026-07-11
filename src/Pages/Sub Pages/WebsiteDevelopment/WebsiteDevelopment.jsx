@@ -4,7 +4,7 @@ import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import './WebsiteDev.css';
 import TSPFFooter from '../TechGroupSubPagefooter/TSPFFooter';
-import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
+// import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 
 
 import logoDesignImg from '../../../assets/services/logo_design.png';
@@ -14,7 +14,7 @@ import visualStyleImg from '../../../assets/services/visual_style.png';
 import environmentImg from '../../../assets/services/environmental_branding.png';
 import portraitImg from '../../../assets/agency/branding_concept_abstract.png';
 import landscapeImg from '../../../assets/agency/landscape.png';
-import iphone14Img from '../../../assets/Iphone14.png';
+import iphone14Img from '../../../assets/Service images/website development services-Photoroom.png';
 
 import avatarOne from '../../../assets/male_avatar.png';
 import avatarTwo from '../../../assets/cartoon_male_1.png';
@@ -24,6 +24,11 @@ import avatarFive from '../../../assets/cartoon_male_2.png';
 import avatarSix from '../../../assets/cartoon_female_3.png';
 import avatarSeven from '../../../assets/cartoon_male_3.png';
 import avatarEight from '../../../assets/female_avatar.png';
+
+import webdevelopment from '../../../assets/Service images/website/business website devlopments.png';
+import webdevelopmentOne from '../../../assets/Service images/website/corporate website.png';
+import webdevelopmentTwo from '../../../assets/Service images/website/custom website.png';
+import webdevelopmentThree from '../../../assets/Service images/website/responsive.png';
 
 
 // Removed missing premium_avatar local imports
@@ -38,12 +43,14 @@ const WebsiteDevelopment = () => {
     const brandServices = [{
         id: 1, num: '01', title: 'Business Website Development', icon: '✦', short: 'Business Website Development services', stats: { val1: '45+', lab1: 'Deploys', val2: '2 Weeks', lab2: 'Sprints', val3: '4.8★', lab3: 'Satisfaction' },
         description: 'Business website development is the strategic process of planning, designing, coding, and maintaining a digital presence tailored to achieve commercial goals, such as generating leads, selling products, and establishing brand credibility. It involves creating a secure, responsive, and user-friendly experience across all devices, often utilizing content management systems (CMS) for flexibility. Key phases include market analysis, wireframing, frontend/backend development, and SEO optimization to ensure high performance and search engine visibility Business Website Development focused solutions provided by Engloray expert team.',
-        image: "https://i.pinimg.com/736x/a3/a3/fc/a3a3fcf846518ccede3af2f2867e97f1.jpg"
+        // image: "https://i.pinimg.com/736x/a3/a3/fc/a3a3fcf846518ccede3af2f2867e97f1.jpg"
+        image: webdevelopment
     },
     {
         id: 2, num: '02', title: 'Corporate Website Development', icon: '◈', short: 'Corporate Website Development services', stats: { val1: '87+', lab1: 'Deploys', val2: '4 Weeks', lab2: 'Sprints', val3: '4.8★', lab3: 'Satisfaction' },
         description: 'Corporate website development creates a professional digital presence to establish brand credibility, engage stakeholders, and drive growth through secure, responsive platforms. The process involves strategic planning, UI/UX design, and coding (front-end/back-end) to integrate content management, search functionality, and secure, high-speed performance, often utilizing CMS platforms Corporate Website Development focused solutions provided by Engloray expert team.',
-        image: "https://i.pinimg.com/736x/6e/9a/39/6e9a39ddb69f1f0c6b9871ccedd9f408.jpg"
+        // image: "https://i.pinimg.com/736x/6e/9a/39/6e9a39ddb69f1f0c6b9871ccedd9f408.jpg"
+        image: webdevelopmentOne
     },
     {
         id: 3, num: '03', title: 'Portfolio Website Development', icon: '✦', short: 'Portfolio Website Development services', stats: { val1: '145+', lab1: 'Deploys', val2: '3 Months', lab2: 'Sprints', val3: '4.7★', lab3: 'Satisfaction' },
@@ -58,12 +65,14 @@ const WebsiteDevelopment = () => {
     {
         id: 5, num: '05', title: 'Custom Website Development', icon: '✦', short: 'Custom Website Development services', stats: { val1: '138+', lab1: 'Deploys', val2: '4 Months', lab2: 'Sprints', val3: '4.9★', lab3: 'Satisfaction' },
         description: 'Custom web application development is the process of designing and building software specifically tailored to an organization’s unique workflows, users, and business goals. Unlike off-the-shelf software, which offers a "one-size-fits-all" approach, custom web apps are engineered from the ground up to solve specific, complex problems that generic products cannot address. These applications run in a web browser and do not require local installation, providing seamless accessibility across different devices and platforms. Key advantages of this bespoke approach includeCustom Website Development focused solutions provided by Engloray expert team.',
-        image: "https://i.pinimg.com/736x/d8/66/a8/d866a8ec39b5f64f66a7159792b02737.jpg"
+        // image: "https://i.pinimg.com/736x/d8/66/a8/d866a8ec39b5f64f66a7159792b02737.jpg"
+        image: webdevelopmentTwo
     },
     {
         id: 6, num: '06', title: 'Responsive (Mobile-Friendly) Design', icon: '◈', short: 'Responsive (Mobile-Friendly) Design services', stats: { val1: '143+', lab1: 'Designs', val2: '6 Weeks', lab2: 'Creative', val3: '4.9★', lab3: 'Satisfaction' },
         description: 'Responsive (Mobile-Friendly) Responsive (mobile-friendly) design ensures websites automatically adapt to any screen size—from smartphones to desktops—by using flexible grids, layouts, and CSS media queries. It improves user experience through touch-friendly elements, fast loading, and readable text. Key techniques include implementing a viewport meta tag and prioritizing mobile-first layouts Design focused solutions provided by Engloray expert team.',
-        image: "https://i.pinimg.com/736x/94/a4/0f/94a40fcad366c4f7ccd5a1bf535cd3f5.jpg"
+        // image: "https://i.pinimg.com/736x/94/a4/0f/94a40fcad366c4f7ccd5a1bf535cd3f5.jpg"
+        image: webdevelopmentThree
     },
     {
         id: 7, num: '07', title: 'SEO-Friendly Website Structure', icon: '✦', short: 'SEO-Friendly Website Structure services', stats: { val1: '75+', lab1: 'Completed', val2: '6 Months', lab2: 'Avg Speed', val3: '4.7★', lab3: 'Satisfaction' },
@@ -457,28 +466,26 @@ const WebsiteDevelopment = () => {
                     {/* Right: Detail Panel - pops content when service is clicked */}
                     <div className="web-page-about-right-new">
                         <div className="web-page-about-detail-panel" key={selectedService}>
-                            <div className="web-page-detail-icon-wrap">
-                                <span className="web-page-detail-icon">{brandServices[selectedService].icon}</span>
-                            </div>
+
                             <span className="web-page-detail-num">{brandServices[selectedService].num}</span>
                             <h3 className="web-page-detail-title">{brandServices[selectedService].title}</h3>
                             <p className="web-page-detail-desc">{brandServices[selectedService].description}</p>
                             <div className="web-page-detail-divider" />
-                            <div className="bi-detail-stats">
-                                <div className="bi-detail-stat">
-                                    <span className="bi-detail-stat-val">{brandServices[selectedService].stats?.val1 || '100+'}</span>
-                                    <span className="bi-detail-stat-label">{brandServices[selectedService].stats?.lab1 || 'Projects'}</span>
+                            <div className="web-page-detail-stats">
+                                <div className="web-page-detail-stat">
+                                    <span className="web-page-detail-stat-val">{brandServices[selectedService].stats?.val1 || '100+'}</span>
+                                    <span className="web-page-detail-stat-label">{brandServices[selectedService].stats?.lab1 || 'Projects'}</span>
                                 </div>
-                                <div className="bi-detail-stat">
-                                    <span className="bi-detail-stat-val">{brandServices[selectedService].stats?.val2 || '3 Weeks'}</span>
-                                    <span className="bi-detail-stat-label">{brandServices[selectedService].stats?.lab2 || 'Timeline'}</span>
+                                <div className="web-page-detail-stat">
+                                    <span className="web-page-detail-stat-val">{brandServices[selectedService].stats?.val2 || '3 Weeks'}</span>
+                                    <span className="web-page-detail-stat-label">{brandServices[selectedService].stats?.lab2 || 'Timeline'}</span>
                                 </div>
-                                <div className="bi-detail-stat">
-                                    <span className="bi-detail-stat-val">{brandServices[selectedService].stats?.val3 || '4.9★'}</span>
-                                    <span className="bi-detail-stat-label">{brandServices[selectedService].stats?.lab3 || 'Rating'}</span>
+                                <div className="web-page-detail-stat">
+                                    <span className="web-page-detail-stat-val">{brandServices[selectedService].stats?.val3 || '4.9★'}</span>
+                                    <span className="web-page-detail-stat-label">{brandServices[selectedService].stats?.lab3 || 'Rating'}</span>
                                 </div>
                             </div>
-                            <button className="web-page-detail-cta" onClick={() => window.open('https://wa.me/916381759909?text=Hello!%20I%20would%20like%20to%20get%20started%20with%20ENGLORAY%20on%20Website%20Development.', '_blank')}>Get Started →</button>
+                            <button className="web-page-detail-cta" onClick={() => window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=engloraytechgroup.com&su=Inquiry regarding ${encodeURIComponent(brandServices[selectedService].title)} service`, '_blank')}>Get Started →</button>
                         </div>
                     </div>
 
@@ -903,7 +910,7 @@ const WebsiteDevelopment = () => {
                 </div>
             </section>
             {/* <TSPFFooter /> */}
-            <WhiteFooter />
+            {/* <WhiteFooter /> */}
             <BackToTop />
         </div>
     );

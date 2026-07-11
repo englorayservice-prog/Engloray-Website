@@ -810,12 +810,14 @@
     color: #ffffff;
     line-height: 1.25;
     margin-bottom: 12px;
+    text-align: left;
 }
 
 .sad-about-intro-new {
     font-size: 13px;
     color: #666666;
     line-height: 1.7;
+    text-align: left;
 }
 
 /* SERVICE LIST */
@@ -871,6 +873,7 @@
     display: flex;
     flex-direction: column;
     gap: 3px;
+    text-align: left;
 }
 
 .sad-service-name-about {
@@ -951,7 +954,7 @@
 .sad-about-img-wrap-new img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: fill;
 }
 
 /* IMAGE ANIMATION */
@@ -1014,37 +1017,92 @@
 }
 
 /* TEXT */
+.sad-detail-num {
+    font-size: 14px;
+    font-weight: 700;
+    color: #BAFF29;
+    text-align: left;
+    margin-bottom: -5px;
+}
+
 .sad-detail-title {
     font-size: 24px;
     font-weight: 700;
     color: #ffffff;
+    text-align: left;
 }
 
 .sad-detail-desc {
     font-size: 14px;
     color: #888888;
     line-height: 1.8;
+    text-align: left;
+}
+
+.sad-detail-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
     flex: 1;
+}
+
+.sad-detail-feature-item {
+    font-size: 12px;
+    color: #666666;
+    line-height: 1.5;
+    padding-left: 16px;
+    position: relative;
+    text-align: left;
+}
+
+.sad-detail-feature-item::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #BAFF29;
+    font-weight: 700;
+    font-size: 11px;
+    top: 2px;
 }
 
 /* STATS */
 .sad-detail-stats {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-top: auto;
+    padding-top: 15px;
 }
 
 .sad-detail-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
     flex: 1;
-    text-align: center;
+    text-align: left;
     border-right: 1px solid #2a2a2a;
+    padding-right: 10px;
 }
 
 .sad-detail-stat:last-child {
     border-right: none;
+    padding-right: 0;
 }
 
 .sad-detail-stat-val {
     color: #BAFF29;
     font-weight: 700;
+    font-size: 18px;
+}
+
+.sad-detail-stat-label {
+    font-size: 12px;
+    color: #888;
 }
 
 /* CTA */
@@ -1075,8 +1133,8 @@
     .sad-about-detail-panel {
         flex-direction: column !important;
         flex-wrap: nowrap;
-        align-items: center;
-        text-align: center;
+        align-items: flex-start;
+        text-align: left;
         gap: 12px !important;
         padding: 20px !important;
     }
@@ -1755,7 +1813,7 @@
 .sad-productivity-section {
     width: 100%;
     background: #0a0a0a;
-    padding: 120px 40px;
+    padding: 40px 40px;
     font-family: 'Inter', sans-serif;
     color: #ffffff;
 }
@@ -2206,6 +2264,9 @@
     cursor: pointer;
     transition: all 0.3s;
     margin-top: 10px;
+    display: block;
+    margin-left: 0;
+    margin-right: auto;
 }
 
 .sad-el-btn:hover {
@@ -2540,7 +2601,7 @@
 
 /* BUSINESS AGENCY SECTION */
 .sad-agency-section {
-    padding: 100px 0 80px;
+    padding: 100px 0 20px;
     background-color: #111111;
     color: #ffffff;
     font-family: 'Inter', sans-serif;
@@ -4281,7 +4342,7 @@ img {
 .sad-testimonial-section {
     width: 100%;
     background: #f5f5f7;
-    padding: 90px 0 100px;
+    padding: 40px 0 40px;
     font-family: 'Inter', sans-serif;
     overflow: hidden;
 }

@@ -166,7 +166,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-}
+    }
 
 .bi-stat-circle-new svg {
     position: absolute;
@@ -224,7 +224,6 @@
 .bi-hero-center-new {
     flex: 1.2;
     display: flex;
-    justify-content: center;
     align-items: center;
     z-index: 1;
 }
@@ -249,6 +248,7 @@
 
 .bi-right-top-new {
     background: transparent;
+    flex: 1;
 }
 
 .bi-case-subtitle-new {
@@ -328,7 +328,6 @@
     background: white;
     display: flex;
     align-items: center;
-    justify-content: center;
     object-fit: cover;
 }
 
@@ -446,7 +445,8 @@
 }
 
 .bi-bar-gray-new {
-    background: transparent;
+    background: #1a1a1a;
+    flex: 1;
     background-image: repeating-linear-gradient(90deg,
             #e0e0e0,
             #e0e0e0 2px,
@@ -455,7 +455,8 @@
 }
 
 .bi-bar-blue-new {
-    background: transparent;
+    background: #1a1a1a;
+    flex: 1;
     background-image: repeating-linear-gradient(90deg,
             #5b7bff,
             #5b7bff 2px,
@@ -475,13 +476,13 @@
     clip-path: path("M 0 61 L 0 60 C 15 60 20 55 25 45 L 35 25 C 40 15 45 0 60 0 L 260 0 C 275 0 280 15 285 25 L 295 45 C 300 55 305 60 320 60 L 320 61 Z"
         );
     display: flex;
-    justify-content: center;
     align-items: center;
     z-index: 10;
 }
 
 .bi-bottom-bar-content-new {
-    background: transparent;
+    background: #1a1a1a;
+    flex: 1;
     padding: 0;
     font-size: 18px;
     font-weight: 500;
@@ -577,7 +578,8 @@
     border: 1px solid #333333;
     cursor: pointer;
     transition: all 0.3s ease;
-    background: transparent;
+    background: #1a1a1a;
+    flex: 1;
 }
 
 .bi-service-item-new:hover {
@@ -726,7 +728,6 @@
     border-radius: 50%;
     display: flex;
     align-items: center;
-    justify-content: center;
     cursor: pointer;
     transition: transform 0.2s;
 }
@@ -854,7 +855,8 @@
     border: 1px solid #2a2a2a;
     cursor: pointer;
     transition: all 0.3s ease;
-    background: transparent;
+    background: #1a1a1a;
+    flex: 1;
     gap: 10px;
 }
 
@@ -970,7 +972,7 @@
 .bi-about-img-wrap-new img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: fill;
 }
 
 /* IMAGE ANIMATION */
@@ -1033,10 +1035,22 @@
     /* MATCH GRID */
 }
 
+/* NUMBER in right card */
+.bi-detail-num {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #BAFF29;
+    text-align: left;
+    text-transform: uppercase;
+    display: block;
+}
+
 /* TEXT */
 .bi-detail-title {
     font-size: 24px;
     font-weight: 700;
+    text-align: left;
 }
 
 .bi-detail-desc {
@@ -1143,7 +1157,6 @@
     .bi-detail-stats {
         order: 3;
         width: 100%;
-        justify-content: center;
     }
 
     .bi-detail-cta {
@@ -1335,7 +1348,6 @@
     content: "✓";
     display: inline-flex;
     align-items: center;
-    justify-content: center;
     width: 20px;
     height: 20px;
     background: linear-gradient(135deg, #b41818, #8a1212);
@@ -1506,7 +1518,6 @@
 
 .bi-slider-nav {
     display: flex;
-    justify-content: center;
     gap: 15px;
     margin-top: 35px;
 }
@@ -1559,7 +1570,6 @@
     border-radius: 0;
     display: flex;
     align-items: center;
-    justify-content: center;
     cursor: pointer;
     box-shadow: 0 5px 15px rgba(180, 24, 24, 0.1);
     transition: all 0.3s ease;
@@ -1696,8 +1706,7 @@
         position: relative;
         transform: none;
         margin-top: 25px;
-        justify-content: center;
-        gap: 20px;
+    gap: 20px;
     }
 
     .bi-slider-arrow {
@@ -1803,7 +1812,7 @@
 .bi-productivity-section {
     width: 100%;
     background: #0a0a0a;
-    padding: 120px 40px;
+    padding: 40px 40px;
     font-family: "Inter", sans-serif;
     color: #ffffff;
 }
@@ -1956,7 +1965,6 @@
     box-shadow: 0 0 15px rgba(186, 255, 41, 0.2);
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-shrink: 0;
     padding: 16px;
 }
@@ -1997,7 +2005,6 @@
 
     .bi-prod-buttons,
     .bi-prod-avatars {
-        justify-content: center;
     }
 
     .bi-timeline-item {
@@ -2017,8 +2024,7 @@
     font-family: "Inter", sans-serif;
     color: #1a1a1a;
     display: flex;
-    justify-content: center;
-}
+    }
 
 .bi-el-container {
     max-width: 1200px;
@@ -2083,7 +2089,6 @@
     border-radius: 50%;
     display: flex;
     align-items: center;
-    justify-content: center;
     color: white;
     font-size: 20px;
     outline: 6px solid #ffffff;
@@ -2145,7 +2150,6 @@
     font-weight: 700;
     display: flex;
     align-items: center;
-    justify-content: center;
     margin-left: -12px;
     color: #666;
 }
@@ -2209,8 +2213,7 @@
     height: 50px;
     display: flex;
     align-items: center;
-    justify-content: center;
-}
+    }
 
 .bi-el-stat-icon svg {
     width: 40px;
@@ -2274,11 +2277,9 @@
     }
 
     .bi-el-preheading {
-        justify-content: center;
     }
 
     .bi-el-stats {
-        justify-content: center;
     }
 }
 
@@ -2328,7 +2329,6 @@
 
 .bi-services-grid {
     display: flex;
-    justify-content: center;
     align-items: flex-end;
     gap: -40px;
     /* Overlap handled by margins below */
@@ -2363,10 +2363,7 @@
     margin-right: 0;
 }
 
-.bi-page-service-card:hover {
-    transform: translateY(-30px) scale(1.05) !important;
-    z-index: 20 !important;
-}
+/* Removed generic hover */
 
 /* Card Header Structure */
 .bi-page-card-header {
@@ -2438,8 +2435,7 @@
     border-radius: 50%;
     display: flex;
     align-items: center;
-    justify-content: center;
-}
+    }
 
 .bi-page-badge-rating {
     font-size: 12px;
@@ -2451,7 +2447,6 @@
     margin: 0 auto;
     display: flex;
     align-items: flex-end;
-    justify-content: center;
     height: 100px;
     /* Specific height to let text take space */
     width: 100%;
@@ -2579,7 +2574,7 @@
 
 /* BUSINESS AGENCY SECTION */
 .bi-agency-section {
-    padding: 100px 0 80px;
+    padding: 100px 0 20px;
     background-color: #111111;
     color: #ffffff;
     font-family: "Inter", sans-serif;
@@ -2767,7 +2762,6 @@
     border-radius: 50%;
     display: flex;
     align-items: center;
-    justify-content: center;
     font-size: 14px;
     color: #111111;
     flex-shrink: 0;
@@ -2843,7 +2837,7 @@
 .bi-testimonial-section {
     width: 100%;
     background: #f5f5f7;
-    padding: 90px 0 100px;
+    padding: 40px 0 40px;
     font-family: "Inter", sans-serif;
     overflow: hidden;
 }
@@ -2872,7 +2866,6 @@
     letter-spacing: -1px;
     /* margin-left: 10%; */
     display: flex;
-    justify-content: center;
     align-items: center;
     text-align: center;
 }
@@ -3094,13 +3087,11 @@
 
     .bi-hero-stats-new {
         flex-wrap: wrap;
-        justify-content: center;
     }
 
     .bi-services-grid {
         flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
+    gap: 20px;
     }
 
     .bi-page-service-card {
@@ -3214,11 +3205,9 @@
     }
 
     .bi-prod-buttons {
-        justify-content: center;
     }
 
     .bi-prod-avatars-box {
-        justify-content: center;
     }
 
     .bi-prod-avatar-text {
@@ -3450,7 +3439,6 @@
     }
 
     .bi-prod-avatars {
-        justify-content: center;
     }
 
     .bi-prod-avatar-text {
@@ -4526,3 +4514,118 @@ img {
         right: 40px;
     }
 }
+/* =========================================================
+   FORCE LEFT ALIGNMENT FOR ABOUT SECTION
+   ========================================================= */
+
+.bi-about-intro-new {
+    text-align: left !important;
+}
+
+.bi-about-left-header {
+    text-align: left !important;
+}
+
+.bi-service-text-group {
+    text-align: left !important;
+    align-items: flex-start !important;
+}
+
+.bi-service-name-about {
+    text-align: left !important;
+}
+
+.bi-service-short-about {
+    text-align: left !important;
+}
+
+/* =========================================================
+   DETAIL PANEL TWEAKS: ALIGNMENT & STATS LAYOUT
+   ========================================================= */
+
+/* Left align the description text */
+.bi-detail-desc {
+    text-align: left !important;
+}
+
+/* Make stats show in the same order, evenly spaced in one line */
+.bi-detail-stats {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important; /* Prevent wrapping onto multiple lines */
+    justify-content: space-between !important;
+    align-items: stretch !important;
+}
+
+/* Stack the stat value and label cleanly */
+.bi-detail-stat {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 4px !important;
+    flex: 1 !important; /* Equal width for all columns */
+}
+
+/* Prevent awkward text wrapping in the labels */
+.bi-detail-stat-label {
+    white-space: nowrap !important;
+    display: block !important;
+}
+
+/* Make sure the value is also clearly displayed */
+.bi-detail-stat-val {
+    display: block !important;
+    white-space: nowrap !important;
+}
+
+/* =========================================================
+   ELEVATE BRAND SECTION TWEAKS
+   ========================================================= */
+
+/* Align the preheading "About Us" to the left */
+.bi-el-preheading {
+    margin-left: 0 !important;
+    justify-content: flex-start !important;
+}
+
+/* Align the CTA button to the left */
+.bi-el-btn {
+    margin-left: 0 !important;
+    display: inline-block !important;
+    text-align: center !important; /* Keep text inside button centered */
+}
+
+/* Ensure the entire right column is strictly left-aligned */
+.bi-el-right {
+    text-align: left !important;
+}
+
+
+
+
+
+
+
+/* FIX TEXT RENDERING GLITCHES ON HOVER */
+.bi-page-service-card {
+    -webkit-font-smoothing: antialiased !important;
+    backface-visibility: hidden !important;
+    transform-style: preserve-3d !important;
+    will-change: transform !important;
+}
+
+/* VARIANT-SPECIFIC HOVERS TO PRESERVE ROTATION - NO SCALE TO PREVENT RE-RENDERING BLUR */
+.bi-card-variant-1:hover { transform: rotate(-24deg) translateY(50px) !important; z-index: 20 !important; }
+.bi-card-variant-2:hover { transform: rotate(-16deg) translateY(15px) !important; z-index: 20 !important; }
+.bi-card-variant-7:hover { transform: rotate(-8deg) translateY(-15px) !important; z-index: 20 !important; }
+.bi-card-variant-3:hover { transform: rotate(0deg) translateY(-30px) !important; z-index: 20 !important; }
+.bi-card-variant-4:hover { transform: rotate(8deg) translateY(-15px) !important; z-index: 20 !important; }
+.bi-card-variant-5:hover { transform: rotate(16deg) translateY(15px) !important; z-index: 20 !important; }
+.bi-card-variant-6:hover { transform: rotate(24deg) translateY(50px) !important; z-index: 20 !important; }
+
+
+
+
+
+

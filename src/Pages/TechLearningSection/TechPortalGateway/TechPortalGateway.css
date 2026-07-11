@@ -142,27 +142,49 @@
     padding: 1.5rem;
     display: flex;
     gap: 1.25rem;
-    transition: all 0.3s ease;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
 }
 
 .portal-info-card:hover {
-    transform: translateX(8px);
+    transform: translateY(-2px);
     border-color: rgba(0, 86, 210, 0.2);
-    box-shadow: 0 10px 15px -3px rgba(0, 86, 210, 0.05), 0 4px 6px -2px rgba(0, 86, 210, 0.03);
+    box-shadow: 0 10px 20px -6px rgba(0, 86, 210, 0.1), 0 6px 12px -8px rgba(0, 86, 210, 0.08);
 }
 
 .portal-card-icon-wrap {
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
+    min-width: 76px;
+    min-height: 76px;
+    border-radius: 18px;
     background-color: #e8f0fe;
     color: #0056d2;
-    display: grid;
-    place-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
     flex-shrink: 0;
-    font-size: 1.5rem;
+    padding: 0.85rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.portal-info-card:hover .portal-card-icon-wrap {
+    background-color: #0056d2;
+    color: #ffffff;
+}
+
+.portal-card-label {
+    font-size: 0.65rem;
     font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    line-height: 1.2;
+}
+
+.portal-card-number {
+    font-size: 1.3rem;
+    font-weight: 800;
+    line-height: 1;
 }
 
 .portal-card-details {

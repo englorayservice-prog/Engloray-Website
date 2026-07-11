@@ -37,9 +37,9 @@ import {
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import './OurStoryPage.css';
-import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
+// import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
-import Brain3D from '../../../Components/Brain3D/Brain3D';
+// import Brain3D from '../../../Components/Brain3D/Brain3D';
 
 // import { motion } from 'framer-motion';
 import engloray_story_visual from '../../../assets/engloray_legacy_story.png';
@@ -630,7 +630,6 @@ const OurStoryPage = () => {
 
             {/* Right Side Widgets Group */}
             <div className="osp-right-widgets-group">
-              {/* Top Row: Learning Gen (left), Stacked Boxes (middle), Emoji Scale (right) */}
               <div className="osp-right-top-row">
                 <div className="osp-widget-float float-right-1">
                   <div className="osp-widget-badge">ACADEMY</div>
@@ -703,7 +702,17 @@ const OurStoryPage = () => {
               </div>
             </div>
 
-            {/* Bottom Widgets */}
+            {/* Mobile-only CTA Buttons positioned before bottom card */}
+            <div className="osp-hero-centered-actions mobile-only">
+              <button className="osp-hero-btn-primary" onClick={handleWhatsAppClick}>
+                START PROJECT
+              </button>
+              <button className="osp-hero-btn-secondary" onClick={handlePortfolioClick}>
+                EXPLORE WORKS
+              </button>
+            </div>
+
+            {/* Bottom Card - Expanded Roadmap/Details */}
             <div className="osp-widget-float float-bottom-1">
               <div className="osp-bottom-widget-row">
                 <div className="osp-bottom-widget-col">
@@ -739,8 +748,8 @@ const OurStoryPage = () => {
                 ENGLORAY LEGACY<span className="osp-italic-serif">A story of passion, precision, and digital excellence</span>
               </h1>
 
-              {/* CTA Buttons */}
-              <div className="osp-hero-centered-actions">
+              {/* CTA Buttons (Desktop) */}
+              <div className="osp-hero-centered-actions desktop-only">
                 <button className="osp-hero-btn-primary" onClick={handleWhatsAppClick}>
                   START PROJECT
                 </button>
@@ -1118,7 +1127,7 @@ const OurStoryPage = () => {
             handlePortfolioClick={handlePortfolioClick}
           />
         </main>
-        <WhiteFooter />
+        {/* <WhiteFooter /> */}
         <BackToTop />
       </div>
     </div>

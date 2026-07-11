@@ -5,7 +5,7 @@ import BackToTop from '../../../Components/BackToTop/BackToTop';
 import './AIServicesPage.css';
 import TSPFFooter from '../TechGroupSubPagefooter/TSPFFooter';
 
-import iphone14Img from '../../../assets/Iphone14.png';
+import iphone14Img from '../../../assets/Service images/Ai Services.png';
 
 import cartoonMale1 from '../../../assets/cartoon_male_1.png';
 import cartoonMale2 from '../../../assets/cartoon_male_2.png';
@@ -15,7 +15,11 @@ import cartoonFemale1 from '../../../assets/cartoon_female_1.png';
 import cartoonFemale2 from '../../../assets/cartoon_female_2.png';
 import cartoonFemale3 from '../../../assets/cartoon_female_3.png';
 import femaleAvatar from '../../../assets/female_avatar.png';
-import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
+// import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
+
+import AiOne from '../../../assets/Service images/Chatbot/ai chatbot.png';
+import AiTwo from '../../../assets/Service images/Chatbot/ai develomet.png';
+import AiThree from '../../../assets/Service images/Chatbot/ai powerd business.png';
 
 const AIServicesPage = () => {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -479,9 +483,6 @@ const AIServicesPage = () => {
                     {/* Right: Detail Panel */}
                     <div className="ai-page-about-right-new">
                         <div className="ai-page-about-detail-panel" key={selectedService}>
-                            <div className="ai-page-detail-icon-wrap">
-                                <span className="ai-page-detail-icon">{brandServices[selectedService].icon}</span>
-                            </div>
                             <span className="ai-page-detail-num">{brandServices[selectedService].num}</span>
                             <h3 className="ai-page-detail-title">{brandServices[selectedService].title}</h3>
                             <p className="ai-page-detail-desc">{brandServices[selectedService].description}</p>
@@ -507,7 +508,7 @@ const AIServicesPage = () => {
                                     <span className="ai-page-detail-stat-label">{brandServices[selectedService].stats?.lab3 || 'Rating'}</span>
                                 </div>
                             </div>
-                            <button onClick={handleGetStartedWhatsApp} className="ai-page-detail-cta">Get Started →</button>
+                            <button className="ai-page-detail-cta" onClick={() => window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=engloraytechgroup.com&su=Inquiry regarding ${encodeURIComponent(brandServices[selectedService].title)} service`, '_blank')}>Get Started →</button>
                         </div>
                     </div>
                 </div>
@@ -904,7 +905,7 @@ const AIServicesPage = () => {
                 </div>
             </section>
 
-            <WhiteFooter />
+            {/* <WhiteFooter /> */}
             <BackToTop />
         </div>
     );

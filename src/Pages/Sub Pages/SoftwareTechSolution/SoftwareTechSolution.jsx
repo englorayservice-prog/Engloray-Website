@@ -3,9 +3,9 @@ import Navbar from '../../../Components/Navbar/Navbar';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import './SoftwareTech.css';
-import SubFooterOne from '../../../Pages/Sub Pages/subFooterOne/NewFooter1';
+// import SubFooterOne from '../../../Pages/Sub Pages/subFooterOne/NewFooter1';
 
-import iphone14Img from '../../../assets/Iphone14.png';
+import iphone14Img from '../../../assets/Service images/Software and tech solutions-Photoroom.png';
 
 import cartoonMale1 from '../../../assets/cartoon_male_1.png';
 import cartoonMale2 from '../../../assets/cartoon_male_2.png';
@@ -16,7 +16,7 @@ import cartoonFemale2 from '../../../assets/cartoon_female_2.png';
 import cartoonFemale3 from '../../../assets/cartoon_female_3.png';
 import femaleAvatar from '../../../assets/female_avatar.png';
 import customSoftImg from '../../../assets/images/Custom Software Development.jpg';
-import busAutoImg from '../../../assets/images/Business Automation System.jpg';
+import busAutoImg from '../../../assets/Service images/Software/business automation system.png';
 import crmErpImg from '../../../assets/images/CRM & ERP Solution.jpg';
 import saasProdImg from '../../../assets/images/SaaS Product Development.jpg';
 import startupKitImg from '../../../assets/images/Startup Tech Launch Kit.jpg';
@@ -481,9 +481,6 @@ const SoftwareTechSolution = () => {
                     {/* Right: Detail Panel */}
                     <div className="soft-page-about-right-new">
                         <div className="soft-page-about-detail-panel" key={selectedService}>
-                            <div className="soft-page-detail-icon-wrap">
-                                <span className="soft-page-detail-icon">{brandServices[selectedService].icon}</span>
-                            </div>
                             <span className="soft-page-detail-num">{brandServices[selectedService].num}</span>
                             <h3 className="soft-page-detail-title">{brandServices[selectedService].title}</h3>
                             <p className="soft-page-detail-desc">{brandServices[selectedService].description}</p>
@@ -509,7 +506,7 @@ const SoftwareTechSolution = () => {
                                     <span className="bi-detail-stat-label">{brandServices[selectedService].stats?.lab3 || 'Rating'}</span>
                                 </div>
                             </div>
-                            <button onClick={handleWhatsAppNavigation} className="soft-page-detail-cta">Get Started →</button>
+                            <button className="soft-page-detail-cta" onClick={() => window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=engloraytechgroup.com&su=Inquiry regarding ${encodeURIComponent(brandServices[selectedService].title)} service`, '_blank')}>Get Started →</button>
                         </div>
                     </div>
                 </div>
@@ -894,7 +891,7 @@ const SoftwareTechSolution = () => {
                 </div>
             </section>
 
-            <SubFooterOne />
+            {/* <SubFooterOne /> */}
             <BackToTop />
         </div>
     );

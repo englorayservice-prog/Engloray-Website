@@ -356,10 +356,10 @@
 }
 
 .ai-page-about-company-desc-new {
-    font-size: 15px;
+    font-size: 12px;
     color: #666;
     text-align: left;
-    line-height: 1.7;
+    line-height: 1.1;
     margin-bottom: 35px;
     max-width: 480px;
     animation: fadeInDesc 0.8s ease-out forwards;
@@ -834,6 +834,7 @@
 /* Left header */
 .ai-page-about-left-header {
     margin-bottom: 8px;
+    text-align: left !important;
 }
 
 .ai-page-about-left-tag {
@@ -852,6 +853,7 @@
     color: #ffffff;
     line-height: 1.25;
     margin-bottom: 12px;
+    text-align: left !important;
 }
 
 .ai-page-about-intro-new {
@@ -859,6 +861,7 @@
     color: #666666;
     line-height: 1.7;
     margin-bottom: 0;
+    text-align: left !important;
 }
 
 
@@ -884,6 +887,7 @@
     display: flex;
     flex-direction: column;
     gap: 3px;
+    text-align: left !important;
 }
 
 .ai-page-service-name-about {
@@ -970,7 +974,7 @@
 .ai-page-about-img-wrap-new img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: fill;
     object-position: center center;
 }
 
@@ -1126,11 +1130,13 @@
 }
 
 .ai-page-detail-num {
-    font-size: 11px;
-    font-weight: 600;
+    font-size: 14px;
+    font-weight: 700;
     letter-spacing: 2px;
-    color: #555555;
+    color: #BAFF29;
+    text-align: left;
     text-transform: uppercase;
+    display: block;
 }
 
 .ai-page-detail-title {
@@ -1139,6 +1145,7 @@
     color: #ffffff;
     line-height: 1.2;
     margin: 0;
+    text-align: left;
 }
 
 .ai-page-detail-desc {
@@ -1908,7 +1915,7 @@
 .ai-page-productivity-section {
     width: 100%;
     background: #0a0a0a;
-    padding: 120px 40px;
+    padding: 60px 40px;
     font-family: 'Inter', sans-serif;
     color: #ffffff;
 }
@@ -2119,7 +2126,7 @@
 .ai-page-elevate-section {
     width: 100%;
     background: #ffffff;
-    padding: 100px 40px;
+    padding: 40px 40px 100px 40px;
     font-family: 'Inter', sans-serif;
     color: #1a1a1a;
     display: flex;
@@ -2355,6 +2362,9 @@
     cursor: pointer;
     transition: all 0.3s;
     margin-top: 10px;
+    display: flex;
+    margin-right: auto;
+    margin-left: 0;
 }
 
 .ai-page-el-btn:hover {
@@ -2390,7 +2400,7 @@
 
 /* MISSION & SERVICES SECTION */
 .ai-page-mission-section {
-    padding: 100px 0 120px;
+    padding: 0 0 120px;
     background-color: #fafafa;
     font-family: 'Inter', sans-serif;
 }
@@ -2403,7 +2413,7 @@
 
 .ai-page-mission-header {
     text-align: center;
-    margin-bottom: 80px;
+    margin-bottom: 30px;
 }
 
 .ai-page-mission-label {
@@ -2422,6 +2432,7 @@
     text-align: center;
     color: #111111;
     letter-spacing: -1px;
+    margin-top: 0;
 }
 
 .ai-page-mission-highlight {
@@ -2437,8 +2448,8 @@
     align-items: flex-end;
     gap: -40px;
     /* Overlap handled by margins below */
-    margin-top: 80px;
-    padding: 60px 0;
+    margin-top: 30px;
+    padding: 20px 0;
     position: relative;
     max-width: 1400px;
     margin-left: auto;
@@ -2650,7 +2661,7 @@
 
 
 .ai-page-mission-section {
-    padding: 120px 0;
+    padding: 0px 0 120px;
     background: #ffffff;
     /* Keeping original section theme as requested */
     overflow: hidden;
@@ -2682,13 +2693,13 @@
     }
 
     .ai-page-mission-section {
-        padding: 80px 0;
+        padding: 0 0 80px;
     }
 }
 
 /* BUSINESS AGENCY SECTION */
 .ai-page-agency-section {
-    padding: 100px 0 140px;
+    padding: 40px 0 60px;
     background-color: #111111;
     color: #ffffff;
     font-family: 'Inter', sans-serif;
@@ -2703,7 +2714,7 @@
 }
 
 .ai-page-agency-header {
-    text-align: center;
+    text-align: left;
     margin-bottom: 80px;
 }
 
@@ -2723,7 +2734,7 @@
     color: #ffffff;
     text-transform: uppercase;
     font-family: 'Poppins', sans-serif;
-    text-align: center;
+    text-align: left;
 }
 
 .ai-page-lime-highlight {
@@ -2748,18 +2759,19 @@
 .ai-page-agency-grid {
     display: grid;
     grid-template-columns: 1fr 1.1fr;
-    gap: 80px;
-    align-items: flex-start;
+    gap: 70px;
+    align-items: stretch;
 }
 
 .ai-page-agency-image-card {
     position: relative;
     width: 100%;
+    height: 100%;
 }
 
 .ai-page-portrait-img {
     width: 100%;
-    height: 640px;
+    height: 100%;
     object-fit: cover;
     border-radius: 40px;
     box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
@@ -2805,6 +2817,12 @@
     text-transform: uppercase;
 }
 
+.ai-page-agency-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .ai-page-agency-info-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -2812,19 +2830,20 @@
 }
 
 .ai-page-info-subtitle {
-    font-size: 13px;
+    font-size: 11px;
     font-weight: 900;
     color: #ffffff;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     letter-spacing: 2px;
     text-transform: uppercase;
+    text-align: left;
 }
 
 .ai-page-info-desc {
-    font-size: 15px;
-    line-height: 1.8;
+    font-size: 13px;
+    line-height: 1.6;
     color: rgba(255, 255, 255, 0.82);
-    text-align: center;
+    text-align: left;
 }
 
 .ai-page-agency-more-btn {
@@ -2855,9 +2874,9 @@
     display: flex;
     align-items: center;
     gap: 15px;
-    margin-bottom: 18px;
-    text-align: center;
-    font-size: 15px;
+    margin-bottom: 14px;
+    text-align: left;
+    font-size: 13px;
     font-weight: 700;
     color: #ffffff;
 }
@@ -2879,11 +2898,12 @@
 .ai-page-agency-bottom-img-wrap {
     position: relative;
     width: 100%;
+    margin-top: 40px;
 }
 
 .ai-page-landscape-img {
     width: 100%;
-    height: 290px;
+    height: 210px;
     object-fit: cover;
     border-radius: 35px;
     box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
@@ -2937,7 +2957,7 @@
 .ai-page-testimonial-section {
     width: 100%;
     background: #f5f5f7;
-    padding: 90px 0 100px;
+    padding: 40px 0 60px;
     font-family: 'Inter', sans-serif;
     overflow: hidden;
 }
@@ -2965,7 +2985,7 @@
     /* margin-left: 4%; */
     color: #1a1a1a;
     line-height: 1.25;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
     letter-spacing: -1px;
     padding: 0 40px;
     text-align: center;
@@ -2987,7 +3007,7 @@
     width: max-content;
     /* Critical for marquee */
     gap: 32px;
-    padding: 20px 0 40px;
+    padding: 20px 0 20px;
     animation: bi-marquee-spin 40s linear infinite;
     will-change: transform;
 }
@@ -3595,7 +3615,7 @@
     }
 
     .ai-page-mission-section {
-        padding: 60px 20px;
+        padding: 0 20px 60px;
     }
 
     .ai-page-services-section-new {
