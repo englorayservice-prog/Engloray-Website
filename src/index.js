@@ -4,6 +4,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import './Styles/Style.css';
 import './Styles/globals.css';
 import './index.css';
+import './Styles/custom-cursor-overrides.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 

@@ -90,13 +90,13 @@ export const CTA = ({ onOpenApply }) => {
 
     // Animation loop
     let animationFrameId;
-    const clock = new THREE.Clock();
+    const startTime = performance.now();
 
     const animate = () => {
       animationFrameId = requestAnimationFrame(animate);
 
       // Auto-rotation over time
-      const elapsedTime = clock.getElapsedTime();
+      const elapsedTime = (performance.now() - startTime) * 0.001;
       knot.rotation.y = elapsedTime * 0.15;
 
       // Mouse interactive tilt (smoothly lerped)

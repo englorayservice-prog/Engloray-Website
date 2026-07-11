@@ -19,6 +19,19 @@ const EntryIntroAnimation = ({ onComplete }) => {
 
         const scene = new THREE.Scene();
 
+        const sanitizeArray = (array) => {
+            for (let i = 0; i < array.length; i++) {
+                if (!Number.isFinite(array[i])) {
+                    array[i] = 0;
+                }
+            }
+            return array;
+        };
+
+        const createSafeAttribute = (array, itemSize) => {
+            return new THREE.BufferAttribute(sanitizeArray(array), itemSize);
+        };
+
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 2000);
         camera.position.z = 10;
         camera.position.y = 0;
@@ -135,9 +148,9 @@ const EntryIntroAnimation = ({ onComplete }) => {
                 col[i * 3] = c.r; col[i * 3 + 1] = c.g; col[i * 3 + 2] = c.b;
                 sz[i] = sizeFn(i);
             }
-            geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
-            geo.setAttribute('aColor', new THREE.BufferAttribute(col, 3));
-            geo.setAttribute('aSize', new THREE.BufferAttribute(sz, 1));
+            geo.setAttribute('position', createSafeAttribute(pos, 3));
+            geo.setAttribute('aColor', createSafeAttribute(col, 3));
+            geo.setAttribute('aSize', createSafeAttribute(sz, 1));
             const mat = new THREE.ShaderMaterial({
                 vertexShader: starVertShader,
                 fragmentShader: starFragShader,
@@ -258,7 +271,7 @@ const EntryIntroAnimation = ({ onComplete }) => {
                 nPos[i * 3 + 1] = y + gauss2 * scaleY * 0.35;
                 nPos[i * 3 + 2] = z + gauss3 * scaleZ * 0.35;
             }
-            nGeo.setAttribute('position', new THREE.BufferAttribute(nPos, 3));
+            nGeo.setAttribute('position', createSafeAttribute(nPos, 3));
             scene.add(new THREE.Points(nGeo, new THREE.PointsMaterial({
                 size: 2.5,
                 color: new THREE.Color(r / 255, g / 255, b / 255),
@@ -307,7 +320,7 @@ const EntryIntroAnimation = ({ onComplete }) => {
             dustPos[i * 3 + 1] = (Math.random() - 0.5) * 30;
             dustPos[i * 3 + 2] = -100 - Math.random() * 300;
         }
-        dustGeo.setAttribute('position', new THREE.BufferAttribute(dustPos, 3));
+        dustGeo.setAttribute('position', createSafeAttribute(dustPos, 3));
         scene.add(new THREE.Points(dustGeo, new THREE.PointsMaterial({
             size: 10, color: 0x553322,
             map: makeGlowTex(80, 50, 30, 0.08),
@@ -432,7 +445,6 @@ const EntryIntroAnimation = ({ onComplete }) => {
             ease: "power2.in"
         }, 2.4);
 
-        const clock = new THREE.Clock();
         let animationFrameId;
         function animate() {
             renderer.render(scene, camera);

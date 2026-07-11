@@ -1,0 +1,8 @@
+/* Neutralize embedded cursor images so React CustomCursor is used site-wide */
+html, body, a, button, select, input, textarea, [role=button], .cursor-pointer {
+  cursor: auto !important;
+}
+
+.no-native-cursor * {
+  cursor: none !important;
+}

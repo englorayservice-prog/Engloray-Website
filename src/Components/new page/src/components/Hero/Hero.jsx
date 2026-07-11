@@ -107,6 +107,7 @@ export const Hero = ({ onOpenApply }) => {
           position: 'relative', zIndex: 1,
           maxWidth: '1200px', margin: '0 auto',
           width: '100%',
+          minWidth: 0,
           padding: '10px 24px 10px',
           display: 'grid',
           gridTemplateColumns: 'minmax(0,1.15fr) minmax(0,0.85fr)',
