@@ -881,6 +881,8 @@
     display: flex;
     flex-direction: column;
     gap: 3px;
+    align-items: flex-start;
+    text-align: left;
 }
 
 .crm-page-service-name-about {
@@ -889,6 +891,7 @@
     color: #aaaaaa;
     transition: color 0.3s;
     line-height: 1.2;
+    text-align: left;
 }
 
 .crm-page-service-short-about {
@@ -896,6 +899,7 @@
     color: #555555;
     line-height: 1.2;
     transition: color 0.3s;
+    text-align: left;
 }
 
 .crm-page-about-service-item-new:hover .crm-page-service-name-about,
@@ -967,7 +971,7 @@
 .crm-page-about-img-wrap-new img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: fill;
     object-position: center center;
 }
 
@@ -1122,11 +1126,13 @@
 }
 
 .crm-page-detail-num {
-    font-size: 11px;
-    font-weight: 600;
+    font-size: 14px;
+    font-weight: 700;
     letter-spacing: 2px;
-    color: #555555;
+    color: #BAFF29;
+    text-align: left;
     text-transform: uppercase;
+    display: block;
 }
 
 .crm-page-detail-title {
@@ -1135,6 +1141,7 @@
     color: #ffffff;
     line-height: 1.2;
     margin: 0;
+    text-align: left;
 }
 
 .crm-page-detail-desc {
@@ -1933,7 +1940,7 @@
 .crm-page-productivity-section {
     width: 100%;
     background: #0a0a0a;
-    padding: 120px 40px;
+    padding: 60px 40px;
     font-family: 'Inter', sans-serif;
     color: #ffffff;
 }
@@ -2143,7 +2150,7 @@
 .crm-page-elevate-section {
     width: 100%;
     background: #ffffff;
-    padding: 40px;
+    padding: 20px 40px;
     font-family: 'Inter', sans-serif;
     color: #1a1a1a;
     display: flex;
@@ -2379,6 +2386,9 @@
     cursor: pointer;
     transition: all 0.3s;
     margin-top: 10px;
+    display: block;
+    margin-left: 0;
+    margin-right: auto;
 }
 
 .crm-page-el-btn:hover {
@@ -2414,7 +2424,7 @@
 
 /* MISSION & SERVICES SECTION */
 .crm-page-mission-section {
-    padding: 10px 0 40px;
+    padding: 100px 0 60px;
     background-color: #fafafa;
     font-family: 'Inter', sans-serif;
 }
@@ -2426,7 +2436,7 @@
 }
 
 .crm-page-mission-header {
-    text-align: left;
+    text-align: center;
     margin-bottom: 40px;
 }
 
@@ -2445,8 +2455,6 @@
     line-height: 1.2;
     color: #111111;
     letter-spacing: -1px;
-    text-align: left;
-    margin-top: -70px;
 }
 
 .crm-page-mission-highlight {
@@ -2675,7 +2683,7 @@
 
 
 .crm-page-mission-section {
-    padding: 120px 0;
+    padding: 100px 0 60px;
     background: #ffffff;
     /* Keeping original section theme as requested */
     overflow: hidden;
@@ -2713,7 +2721,7 @@
 
 /* BUSINESS AGENCY SECTION */
 .crm-page-agency-section {
-    padding: 100px 0 80px;
+    padding: 40px 0 80px;
     background-color: #111111;
     color: #ffffff;
     font-family: 'Inter', sans-serif;
@@ -2995,7 +3003,6 @@
 .crm-page-service-card-title,
 .crm-page-service-card-desc,
 .crm-page-agency-main-title,
-.crm-page-mission-title,
 .crm-page-agency-header,
 .crm-page-exp-badge {
     text-align: left !important;
@@ -4450,7 +4457,7 @@ img {
 .crm-page-testimonial-section {
     width: 100%;
     background: #f5f5f7;
-    padding: 90px 0 100px;
+    padding: 40px 0 60px;
     font-family: 'Inter', sans-serif;
     overflow: hidden;
 }
@@ -4477,7 +4484,7 @@ img {
     font-weight: 700;
     color: #1a1a1a;
     line-height: 1.25;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
     letter-spacing: -1px;
 }
 
@@ -4497,7 +4504,7 @@ img {
     display: flex;
     width: max-content;
     gap: 32px;
-    padding: 20px 0 40px;
+    padding: 20px 0 20px;
     animation: crm-page-marquee-spin 40s linear infinite;
 }
 

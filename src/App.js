@@ -89,6 +89,7 @@ import RayMartNavbar from "./Components/RayMartNavbar/RayMartNavbar";
 import FooterOne from './Pages/Sub Pages/footerOne/FooterOne';
 import NewFooter1 from './Pages/Sub Pages/subFooterOne/NewFooter1';
 import ScrollToTop from './Components/ScrollToTop/ScrollToTop';
+import Chatbot from './Components/Chatbot/Chatbot';
 
 
 
@@ -104,6 +105,7 @@ function App() {
       <CustomCursor />
 
       <CustomScrollbar />
+      <Chatbot />
       <Routes>
         <Route path='/' element={<HomePage />} />
           <Route path="/brandingPage" element={<BrandingDesigning />} />

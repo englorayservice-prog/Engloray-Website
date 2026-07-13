@@ -49,10 +49,11 @@ import {
 import { faWhatsapp as faWhatsappBrand } from '@fortawesome/free-brands-svg-icons';
 import './CorporateTraining.css';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
-import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
+// import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
 import NavigationBar from '../../TechLearningSection/NavigationBar/NavigationBar';
+// import footer from '';
 import { Helmet } from 'react-helmet';
 import threeMenCorporateHero from '../../../assets/three_men_corporate_hero.png';
 import corporateImage from '../../../assets/corporate.jpeg';
@@ -60,6 +61,9 @@ import ctVisual1 from '../../../assets/ct_visual_1.png';
 import ctVisual2 from '../../../assets/ct_visual_2.png';
 import ctVisual3 from '../../../assets/ct_visual_3.png';
 import ctVisual4 from '../../../assets/ct_visual_4.png';
+import ctVisual5 from '../../../assets/ct_expert_faculty.png';
+import ctVisual6 from '../../../assets/ct_global_certs.png';
+import ctVisual7 from '../../../assets/ct_hands_on_labs.png';
 import cardImg1 from '../../../assets/eLearning.png';
 import cardImg2 from '../../../assets/education.png';
 
@@ -450,7 +454,8 @@ const CorporateTraining = () => {
             {/* Navigation Layers */}
             <div className="ct-arc-nav">
               <TopNavBar />
-              <TwoLineNavbar />
+              {/* <TwoLineNavbar /> */}
+              <NavigationBar />
             </div>
 
             {/* NEW: Top Right Gradient Glow */}
@@ -508,14 +513,16 @@ const CorporateTraining = () => {
                     <img src={ctVisual2} alt="Corporate Visual" className="ct-strip-img" />
                     <img src={ctVisual3} alt="Corporate Visual" className="ct-strip-img" />
                     <img src={ctVisual4} alt="Corporate Visual" className="ct-strip-img" />
+                    <img src={ctVisual5} alt="Corporate Visual" className="ct-strip-img" />
+                    <img src={ctVisual6} alt="Corporate Visual" className="ct-strip-img" />
+                    <img src={ctVisual7} alt="Corporate Visual" className="ct-strip-img" />
                     <img src={ctVisual1} alt="Corporate Visual" className="ct-strip-img" />
                     <img src={ctVisual2} alt="Corporate Visual" className="ct-strip-img" />
                     <img src={ctVisual3} alt="Corporate Visual" className="ct-strip-img" />
                     <img src={ctVisual4} alt="Corporate Visual" className="ct-strip-img" />
-                    <img src={ctVisual1} alt="Corporate Visual" className="ct-strip-img" />
-                    <img src={ctVisual2} alt="Corporate Visual" className="ct-strip-img" />
-                    <img src={ctVisual3} alt="Corporate Visual" className="ct-strip-img" />
-                    <img src={ctVisual4} alt="Corporate Visual" className="ct-strip-img" />
+                    <img src={ctVisual5} alt="Corporate Visual" className="ct-strip-img" />
+                    <img src={ctVisual6} alt="Corporate Visual" className="ct-strip-img" />
+                    <img src={ctVisual7} alt="Corporate Visual" className="ct-strip-img" />
                   </div>
                 </div>
 
@@ -557,12 +564,12 @@ const CorporateTraining = () => {
 
             <section className="ct-section ct-anti-gravity-section">
               <div className="ct-container">
-                <div className="ct-section-header">
-                  <h2 className="ct-section-title">Enterprise Training Programs</h2>
-                  <p className="ct-section-subtitle">Tailored modules for your growth</p>
+                <div className="ct-section-header" style={{ marginTop: '-60px', marginBottom: '0px' }}>
+                  <h2 className="ct-section-title" style={{ marginTop: '0px' }}>Enterprise Training Programs</h2>
+                  <p className="ct-section-subtitle" style={{ marginBottom: '0px' }}>Tailored modules for your growth</p>
                 </div>
 
-                <div className="ct-arc-viewport">
+                <div className="ct-arc-viewport" style={{ marginTop: '10px' }}>
                   <div className="ct-arc-track">
                     {arcPrograms.map((program, index) => {
                       const diff = (index - activeArcIndex + arcPrograms.length) % arcPrograms.length;
@@ -644,11 +651,11 @@ const CorporateTraining = () => {
             </section>
 
             {/* Why Enterprise Leaders Choose Us section - PREMIUM WHITE REDESIGN */}
-            <section className="ct-section ct-benefits-section-white">
+            <section className="ct-section ct-benefits-section-white" style={{ paddingBottom: '0px', marginBottom: '-60px' }}>
               <div className="ct-container">
-                <div className="ct-section-header-centered">
-                  <h2 className="ct-section-title-alt" style={{ fontSize: '2.5rem' }}>Why Enterprise Leaders Choose Us</h2>
-                  <p className="ct-section-subtitle-alt" style={{ fontSize: '0.9rem' }}>ELITE TRAINING BENEFITS FOR GLOBAL ORGANIZATIONS</p>
+                <div className="ct-section-header-centered" style={{ marginTop: '-40px', marginBottom: '30px' }}>
+                  <h2 className="ct-section-title-alt" style={{ fontSize: '2.5rem', marginTop: '0px' }}>Why Enterprise Leaders Choose Us</h2>
+                  <p className="ct-section-subtitle-alt" style={{ fontSize: '0.9rem', marginBottom: '10px' }}>ELITE TRAINING BENEFITS FOR GLOBAL ORGANIZATIONS</p>
                   <div className="ct-section-underline-blue"></div>
                 </div>
 
@@ -765,7 +772,7 @@ const CorporateTraining = () => {
             </section>
 
             {/* Success Stories Section - Side-by-Side Split Gallery */}
-            <section className="ct-section ct-stories-section">
+            <section className="ct-section ct-stories-section" style={{ paddingTop: '0px', marginTop: '-40px', paddingBottom: '0px', marginBottom: '-60px' }}>
               <div className="ct-container ct-stories-split-layout">
                 {/* Left Side: Title & Description */}
                 <div className="ct-stories-left" style={{ textAlign: 'left' }}>
@@ -857,7 +864,7 @@ const CorporateTraining = () => {
             </section>
 
             {/* Process Section - Updated with FontAwesome icons */}
-            <section className="ct-section ct-process-section">
+            <section className="ct-section ct-process-section" style={{ paddingTop: '20px', paddingBottom: '20px' }}>
               <div className="ct-container">
                 <div className="ct-arc-header-split">
                   <div className="ct-arc-header-left">
@@ -961,10 +968,10 @@ const CorporateTraining = () => {
             </section>
 
             {/* WhatsApp Contact Section - Updated with FontAwesome icons */}
-            <section className="ct-section ct-whatsapp-minimal">
-              <div className="ct-container" style={{ position: 'relative', zIndex: 10 }}>
-                <div className="ct-w-minimal-card">
-                  <h2 className="ct-w-title-big">Ready To Transform Your Team?</h2>
+            <section className="ct-section ct-whatsapp-minimal" style={{ paddingTop: '0px', paddingBottom: '40px' }}>
+              <div className="ct-container" style={{ position: 'relative', zIndex: 10, paddingTop: '0px', marginTop: '0px' }}>
+                <div className="ct-w-minimal-card" style={{ paddingTop: '0px', marginTop: '0px' }}>
+                  <h2 className="ct-w-title-big" style={{ marginTop: '-30px', paddingTop: '0px' }}>Ready To Transform Your Team?</h2>
                   <p className="ct-w-subtitle-slim">
                     Contact us directly on WhatsApp for personalized consultation,<br className="desktop-only" />
                     customized training proposals, and immediate assistance.
@@ -993,7 +1000,7 @@ const CorporateTraining = () => {
               </div>
             </section>
           </main>
-          <WhiteFooter />
+          {/* <WhiteFooter /> */}
           <BackToTop />
         </div>
       </div>

@@ -3,7 +3,7 @@ import Navbar from '../../../Components/Navbar/Navbar';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import './ECommerce.css';
-import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
+// import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 import ecommerce1 from "../../../assets/images/ecommerce1.jpg";
 import ecommerce2 from "../../../assets/images/ecommerce2.jpg";
 import ecommerce3 from "../../../assets/images/ecommerce3.jpg";
@@ -11,7 +11,7 @@ import ecommerce4 from "../../../assets/images/ecommerce4.jpg";
 import ecommerce5 from "../../../assets/images/ecommerce5.jpg";
 
 
-import iphone14Img from '../../../assets/Iphone14.png';
+import iphone14Img from '../../../assets/Service images/Ecommerce.png';
 
 import avatarOne from '../../../assets/male_avatar.png';
 import avatarTwo from '../../../assets/cartoon_male_1.png';
@@ -23,12 +23,12 @@ import avatarSeven from '../../../assets/cartoon_male_3.png';
 import avatarEight from '../../../assets/female_avatar.png';
 
 // New E-Commerce Images
-import ecom01 from '../../../assets/images/Online Store Development.jpg';
+import ecom01 from '../../../assets/Service images/Ecommerce/online sore developemt.png';
 import ecom02 from '../../../assets/images/Shopify  WooCommerce Development.jpg';
 import ecom03 from '../../../assets/images/Custom E-Commerce Website Development.jpg';
 import ecom04 from '../../../assets/images/Product & Inventory Management.jpg';
-import ecom05 from '../../../assets/images/Shopping Cart & Checkout System.jpg';
-import ecom06 from '../../../assets/images/Order Management System.jpg';
+import ecom05 from '../../../assets/Service images/Ecommerce/shopping cart and checkout.png';
+import ecom06 from '../../../assets/Service images/Ecommerce/order mangamnets.png';
 
 
 
@@ -40,27 +40,39 @@ const ECommerceDevelopment = () => {
 
     const brandServices = [{
         id: 1, num: '01', title: 'Online Store Development', icon: '✦', short: 'Online Store Development services', stats: { val1: '87+', lab1: 'Deploys', val2: '2 Weeks', lab2: 'Sprints', val3: '4.8★', lab3: 'Satisfaction' },
-        description: 'Online Store Development focused solutions provided by Engloray expert team. We meticulously design dynamic frontends layered over robust backend infrastructure. Elevate your retail business with an engaging digital platform that continuously enhances everyday user experiences and fundamentally secures high operational conversion rates.', image: ecom01
+        description: 'Online Store Development focused solutions provided by Engloray expert team. We meticulously design dynamic frontends layered over robust backend infrastructure. Elevate your retail business with an engaging digital platform that continuously enhances everyday user experiences and fundamentally secures high operational conversion rates.',
+        features: ['Responsive UI/UX design', 'High-performance backend', 'SEO-friendly architecture', 'Mobile-first optimization'],
+        image: ecom01
     },
     {
         id: 2, num: '02', title: 'Shopify / WooCommerce Development', icon: '◈', short: 'Shopify / WooCommerce Development services', stats: { val1: '140+', lab1: 'Deploys', val2: '2 Weeks', lab2: 'Sprints', val3: '4.7★', lab3: 'Satisfaction' },
-        description: 'Shopify / WooCommerce Development focused solutions provided by Engloray expert team. Maximize your overall online selling potential with robust themes tailored precisely to your brand. We confidently configure intuitive global shipping matrices and complex dynamic tax calculation methods securely.', image: ecom02
+        description: 'Shopify / WooCommerce Development focused solutions provided by Engloray expert team. Maximize your overall online selling potential with robust themes tailored precisely to your brand. We confidently configure intuitive global shipping matrices and complex dynamic tax calculation methods securely.',
+        features: ['Custom theme development', 'Plugin & App integration', 'Secure payment setup', 'Store migration services'],
+        image: ecom02
     },
     {
         id: 3, num: '03', title: 'Custom E-Commerce Development', icon: '✦', short: 'Custom E-Commerce Development services', stats: { val1: '61+', lab1: 'Deploys', val2: '6 Weeks', lab2: 'Sprints', val3: '4.9★', lab3: 'Satisfaction' },
-        description: 'Custom E-Commerce Development focused solutions provided by Engloray expert team. Achieve absolute, unparalleled digital autonomy using unrestrictive architectural structures engineered from scratch. We confidently create totally bespoke scalable frameworks featuring deep custom API logic guaranteeing brilliant, lightning-fast cross-device performance.', image: ecom03
+        description: 'Custom E-Commerce Development focused solutions provided by Engloray expert team. Achieve absolute, unparalleled digital autonomy using unrestrictive architectural structures engineered from scratch. We confidently create totally bespoke scalable frameworks featuring deep custom API logic guaranteeing brilliant, lightning-fast cross-device performance.',
+        features: ['Bespoke platform architecture', 'Advanced API integrations', 'Enterprise-grade security', 'Complex workflow automation'],
+        image: ecom03
     },
     {
         id: 4, num: '04', title: 'Product & Inventory Management', icon: '◈', short: 'Product & Inventory Management services', stats: { val1: '112+', lab1: 'Completed', val2: '3 Months', lab2: 'Avg Speed', val3: '4.9★', lab3: 'Satisfaction' },
-        description: 'Product & Inventory Management focused solutions provided by Engloray expert team. Maintain absolute operational control through streamlined barcode scanning methodologies and strategic multi-warehouse logistics. Eliminate unforeseen stockouts using predictive algorithm insights balanced carefully against current overhead inventory storage limits.', image: ecom04
+        description: 'Product & Inventory Management focused solutions provided by Engloray expert team. Maintain absolute operational control through streamlined barcode scanning methodologies and strategic multi-warehouse logistics. Eliminate unforeseen stockouts using predictive algorithm insights balanced carefully against current overhead inventory storage limits.',
+        features: ['Real-time stock syncing', 'Multi-warehouse support', 'Automated reorder alerts', 'Detailed analytics dashboards'],
+        image: ecom04
     },
     {
         id: 5, num: '05', title: 'Shopping Cart & Checkout System', icon: '✦', short: 'Shopping Cart & Checkout System services', stats: { val1: '82+', lab1: 'Completed', val2: '3 Months', lab2: 'Avg Speed', val3: '5.0★', lab3: 'Satisfaction' },
-        description: 'Shopping Cart & Checkout System focused solutions provided by Engloray expert team. Supercharge your fundamental conversion metrics using fully robust, frictionless single-page purchase workflows. We masterfully eliminate digital transaction obstacles by automating live geo-tax variables across secure, diverse client checkout formats.', image: ecom05
+        description: 'Shopping Cart & Checkout System focused solutions provided by Engloray expert team. Supercharge your fundamental conversion metrics using fully robust, frictionless single-page purchase workflows. We masterfully eliminate digital transaction obstacles by automating live geo-tax variables across secure, diverse client checkout formats.',
+        features: ['Frictionless one-page checkout', 'Multiple payment gateways', 'Automated tax calculation', 'Abandoned cart recovery'],
+        image: ecom05
     },
     {
         id: 6, num: '06', title: 'Order Management System', icon: '◈', short: 'Order Management System services', stats: { val1: '79+', lab1: 'Completed', val2: '3 Months', lab2: 'Avg Speed', val3: '4.8★', lab3: 'Satisfaction' },
-        description: 'Order Management System focused solutions provided by Engloray expert team. Streamline every segment of your fulfillment operations within one central intelligent administrative hub. Accelerate packaging efficiency manually routing automatic consumer shipping updates thoroughly from the transaction point straight to delivery.', image: ecom06
+        description: 'Order Management System focused solutions provided by Engloray expert team. Streamline every segment of your fulfillment operations within one central intelligent administrative hub. Accelerate packaging efficiency manually routing automatic consumer shipping updates thoroughly from the transaction point straight to delivery.',
+        features: ['Centralized fulfillment hub', 'Automated shipping updates', 'Streamlined return processing', 'Real-time order tracking'],
+        image: ecom06
     }];
 
     const pageData = {
@@ -356,9 +368,6 @@ const ECommerceDevelopment = () => {
                     {/* Right: Detail Panel - pops content when service is clicked */}
                     <div className="eco-page-about-right-new">
                         <div className="eco-page-about-detail-panel" key={selectedService}>
-                            <div className="eco-page-detail-icon-wrap">
-                                <span className="eco-page-detail-icon">{brandServices[selectedService].icon}</span>
-                            </div>
                             <span className="eco-page-detail-num">{brandServices[selectedService].num}</span>
                             <h3 className="eco-page-detail-title">{brandServices[selectedService].title}</h3>
                             <p className="eco-page-detail-desc">{brandServices[selectedService].description}</p>
@@ -384,7 +393,7 @@ const ECommerceDevelopment = () => {
                                     <span className="eco-page-detail-stat-label">{brandServices[selectedService].stats?.lab3 || 'Rating'}</span>
                                 </div>
                             </div>
-                            <button className="eco-page-detail-cta" onClick={() => window.open('https://wa.me/916381759909?text=Hello!%20I%20would%20like%20to%20get%20started%20with%20ENGLORAY%20on%20E-Commerce%20Development.', '_blank')}>Get Started →</button>
+                            <button className="eco-page-detail-cta" onClick={() => window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=engloraytechgroup.com&su=Inquiry regarding ${encodeURIComponent(brandServices[selectedService].title)} service`, '_blank')}>Get Started →</button>
                         </div>
                     </div>
 
@@ -808,7 +817,7 @@ const ECommerceDevelopment = () => {
                 </div>
             </section>
             {/* <TSPFFooter /> */}
-            <WhiteFooter />
+            {/* <WhiteFooter /> */}
 
             <BackToTop />
         </div>

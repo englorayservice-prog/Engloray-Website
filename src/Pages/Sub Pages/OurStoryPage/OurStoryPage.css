@@ -6590,9 +6590,8 @@
 }
 
 @media (max-width: 768px) {
-  .osp-widget-float,
   .float-left-pill,
-  .osp-mini-grid-container,
+  .osp-left-scale-pill,
   .osp-vertical-scale-pill {
     display: none !important;
   }
@@ -6904,12 +6903,7 @@
   }
 }
 
-@media (max-width: 768px) {
-  .osp-right-widgets-group {
-    display: none !important;
-  }
-}
-
+/* Mobile right group visibility is now handled below */
 /* Grouped layout container for left side dashboard elements */
 .osp-left-widgets-group {
   position: absolute;
@@ -6982,159 +6976,71 @@
   }
 }
 
-@media (max-width: 768px) {
-  .osp-left-widgets-group {
-    display: none !important;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1024px) {
-  /* 1. Hero Section Layout */
-  .osp-hero-section {
-    height: auto !important;
-    min-height: 100vh !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: flex-start !important;
-    align-items: center !important;
-    padding-top: 120px !important;
-    padding-bottom: 120px !important; /* Space for the bottom marquee */
-  }
-
-  .osp-modern-hero-container {
-    order: 1 !important;
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 20px !important;
-    display: flex !important;
-    justify-content: center !important;
-  }
-
-  .osp-hero-centered-content {
-    position: relative !important;
-    top: auto !important;
-    margin: 0 auto !important;
-    padding: 20px !important;
-    max-width: 750px !important;
-  }
-
+/* Laptop and smaller screens native scaling adjustment to prevent overlap */
+@media (min-width: 1025px) and (max-width: 1800px) {
+  /* Scale down central typography */
   .osp-hero-centered-title {
-    font-size: 3.5rem !important;
-    margin-bottom: 24px !important;
+    font-size: 4.2rem !important;
   }
-
+  
   .osp-italic-serif {
-    font-size: 2.4rem !important;
-    margin-top: 12px !important;
+    font-size: 2.2rem !important;
+  }
+  
+  .osp-modern-badge {
+    font-size: 0.75rem !important;
+    padding: 6px 12px !important;
   }
 
-  /* 2. Floating Widgets Container to Normal Flow */
-  .osp-floating-widgets-container {
-    order: 2 !important;
-    position: relative !important;
-    inset: auto !important;
-    width: 100% !important;
-    height: auto !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    gap: 24px !important;
-    padding: 20px !important;
-    overflow: visible !important;
-    pointer-events: auto !important;
-  }
-
-  /* 3. Hide purely decorative floating elements */
-  .osp-left-scale-pill,
-  .float-left-pill,
-  .osp-right-stacked-boxes,
-  .osp-vertical-scale-pill {
-    display: none !important;
-  }
-
-  /* 4. Left Widgets Group (Stats Row 1) */
+  /* Adjust floating widgets containers to use screen edges better and scale down uniformly */
   .osp-left-widgets-group {
-    position: relative !important;
-    left: auto !important;
-    top: auto !important;
-    width: 100% !important;
-    max-width: 900px !important;
-    display: flex !important;
-    justify-content: center !important;
-    pointer-events: auto !important;
-    margin: 0 !important;
+    left: 4% !important;
+    top: 14vh !important;
+    transform: scale(0.9);
+    transform-origin: left center;
   }
-
+  
   .osp-left-cards-column {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 20px !important;
-    width: 100% !important;
+    gap: 12px !important;
   }
-
-  /* 5. Right Widgets Group (Stats Row 2) */
+  
   .osp-right-widgets-group {
-    position: relative !important;
-    right: auto !important;
-    top: auto !important;
-    width: 100% !important;
-    max-width: 900px !important;
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 20px !important;
-    pointer-events: auto !important;
-    margin: 0 !important;
+    right: 4% !important;
+    top: 14vh !important;
+    gap: 12px !important;
+    transform: scale(0.9);
+    transform-origin: right center;
   }
 
-  .osp-right-top-row {
-    display: contents !important; /* Flatten to let float-right-1 participate in the parent grid */
+  /* Reduce width of wide cards slightly to give center content more breathing room */
+  .osp-left-widgets-group .float-left-1,
+  .osp-left-widgets-group .float-left-mid,
+  .osp-left-widgets-group .float-left-2,
+  .osp-left-widgets-group .float-left-wide {
+    width: 250px !important;
+  }
+  
+  .osp-right-widgets-group .float-right-1 {
+    width: 220px !important; /* Scale down learning gen card */
   }
 
-  /* 6. Card Styles normalization */
-  .osp-widget-float {
-    position: relative !important;
-    left: auto !important;
-    right: auto !important;
-    top: auto !important;
-    bottom: auto !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 !important;
-    transform: none !important;
-    animation: none !important; /* Disable hover float animations on touch screens */
-    box-sizing: border-box !important;
+  .osp-right-widgets-group .float-right-2.wide-card,
+  .osp-right-widgets-group .float-right-wide.wide-card {
+    width: 280px !important; 
   }
 
-  .float-right-2.wide-card,
-  .float-right-wide.wide-card {
-    width: 100% !important;
-  }
-
-  /* 7. Bottom Roadmap Card */
+  /* Scale down bottom card and move it up to prevent overlapping with buttons and the bottom marquee */
   .float-bottom-1 {
-    position: relative !important;
-    left: auto !important;
-    bottom: auto !important;
-    transform: none !important;
-    width: 100% !important;
-    max-width: 500px !important;
-    margin: 20px auto 0 !important;
-    display: block !important;
-    box-sizing: border-box !important;
+    transform: translateX(-50%) scale(0.85) !important;
+    transform-origin: bottom center !important;
+    bottom: 8vh !important;
   }
 
-  .osp-bottom-widget-row {
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    width: 100% !important;
-  }
-
-  .osp-bottom-divider {
-    width: 1px !important;
-    height: 36px !important;
-    display: block !important;
+  /* Adjust Brand Quality pill to prevent overlap with the moved side cards */
+  .float-left-pill {
+    top: 6vh !important;
+    left: 16% !important;
+    transform: scale(0.85);
   }
 }
 
@@ -7148,5 +7054,145 @@
   }
   .osp-cta-desc-modern {
     max-width: 1000px !important;
+  }
+}
+
+.mobile-only { display: none; }
+
+/* ----------------------------------------------------
+   Mobile and Tablet specific stack ordering for Hero Section
+   ---------------------------------------------------- */
+@media (max-width: 1024px) {
+  .osp-hero-section {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    height: auto !important;
+    min-height: auto !important;
+    padding-top: 100px !important;
+    padding-bottom: 60px !important;
+    gap: 24px !important;
+  }
+
+  .mobile-only { display: flex !important; margin: 16px auto !important; width: 100% !important; justify-content: center !important; gap: 16px !important; }
+  .desktop-only { display: none !important; }
+
+  /* Main Layout Wrappers */
+  .osp-modern-hero-container {
+    position: relative !important;
+    order: 1 !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    margin-top: 40px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .osp-floating-widgets-container {
+    position: relative !important;
+    inset: auto !important;
+    order: 2 !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 24px !important;
+    padding: 0 !important;
+    pointer-events: auto !important;
+  }
+
+  .osp-product-marquee {
+    position: relative !important;
+    order: 3 !important;
+    width: 100% !important;
+    margin-top: 40px !important;
+  }
+
+  .osp-hero-centered-content {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* Internal Ordering within .osp-floating-widgets-container */
+  .osp-left-widgets-group { order: 1 !important; margin: 0 !important; width: 100% !important; }
+  .osp-right-widgets-group { order: 2 !important; margin: 0 !important; width: 100% !important; }
+  .mobile-only { order: 3 !important; }
+  .float-bottom-1 { order: 4 !important; margin-top: 24px !important; }
+
+  /* Reset positioning */
+  .osp-left-widgets-group,
+  .osp-right-widgets-group,
+  .float-bottom-1,
+  .osp-widget-float {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    animation: none !important; /* Disable floating animations on touch devices */
+    width: 90% !important;
+    max-width: 400px !important;
+    margin: 0 auto !important;
+  }
+
+  /* Internal flex structures */
+  .osp-left-cards-column,
+  .osp-right-widgets-group {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+  
+  .osp-right-top-row {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+  
+  .osp-right-stacked-boxes {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    gap: 12px !important;
+  }
+  
+  .osp-right-stacked-boxes .float-right-square {
+    width: 48% !important;
+  }
+  
+  /* Reset specific widths */
+  .osp-left-widgets-group .float-left-1,
+  .osp-left-widgets-group .float-left-mid,
+  .osp-left-widgets-group .float-left-2,
+  .osp-left-widgets-group .float-left-wide,
+  .osp-right-widgets-group .float-right-1,
+  .osp-right-widgets-group .float-right-2.wide-card,
+  .osp-right-widgets-group .float-right-wide.wide-card,
+  .float-bottom-1 {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Typography */
+  .osp-hero-centered-title {
+    font-size: 2.5rem !important;
+    text-align: center !important;
+    margin: 16px 0 0 0 !important;
+  }
+  
+  .osp-italic-serif {
+    font-size: 1.5rem !important;
+    display: block !important;
+    margin-top: 12px !important;
   }
 }

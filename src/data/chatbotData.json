@@ -1,0 +1,183 @@
+{
+  "badWords": [
+    "fuck", "shit", "bitch", "ass", "cunt", "dick", "pussy", "bastard", "slut", "whore", "idiot", "stupid", "dumb"
+  ],
+  "fallbackMessage": "I'm sorry, I couldn't quite understand that or it's outside my area of expertise. For any other details or specific questions, please reach out to us directly at engloray@gmail.com or call 6381759909.",
+  "knowledgeBase": [
+    {
+      "question": "What is Engloray's tagline?",
+      "keywords": ["tagline", "step", "world", "engloray", "gateway", "scaling", "slogan", "motto"],
+      "answer": "STEP INTO THE WORLD OF ENGLORAY - Your gateway to exclusive business scaling, tech solutions, and elite career growth."
+    },
+    {
+      "question": "Hello",
+      "keywords": ["hello", "hi", "hey", "greetings", "good morning", "good evening", "good afternoon", "start", "begin"],
+      "answer": "Hello there! Welcome to Engloray. I can help you with information about our Services, Courses, Internships, Products, Raymart, or Company Info. What would you like to know?"
+    },
+    {
+      "question": "What services do you provide?",
+      "keywords": ["service", "services", "offer", "offerings", "provide", "do you do", "what do you do", "all services"],
+      "answer": "Yes, at Engloray we offer a wide range of services including Branding & Identity, Web & App Development, Digital Marketing, UI/UX Design, SaaS products, ERP Solutions, CRM Services, AI Services, and Data Analytics."
+    },
+    {
+      "question": "Do you provide Web and App Development?",
+      "keywords": ["web", "website", "development", "app", "application", "mobile", "ios", "android", "software", "custom software"],
+      "answer": "Absolutely! Our Software & App Development services provide high-performance, responsive web products and native/cross-platform mobile apps. We build scalable digital ecosystems tailored to your business needs."
+    },
+    {
+      "question": "Tell me about your Website Development services.",
+      "keywords": ["website development", "build website", "create website", "web design"],
+      "answer": "Yes, our Website Development service crafts responsive, fast, and SEO-optimized websites that perfectly represent your brand and drive conversions."
+    },
+    {
+      "question": "Tell me about your Ecommerce Development services.",
+      "keywords": ["ecommerce", "e-commerce", "online store", "shop", "woocommerce", "shopify"],
+      "answer": "Yes, we specialize in Ecommerce Development! We build secure, high-converting online stores designed to scale and provide seamless shopping experiences for your customers."
+    },
+    {
+      "question": "Do you offer UI/UX and Graphic Design?",
+      "keywords": ["ui", "ux", "design", "interface", "experience", "graphic", "graphics", "ui/ux"],
+      "answer": "Yes! Our UI/UX & Graphic Design services focus on creating intuitive, seamless, and visually stunning digital experiences. We design user-centric interfaces that drive engagement and satisfaction."
+    },
+    {
+      "question": "Do you provide Branding Identity services?",
+      "keywords": ["brand", "branding", "identity", "logo", "strategy", "visual", "brand identity"],
+      "answer": "Yes, our Branding & Identity services deliver strategic visual identities and compelling brand stories. We help you establish a powerful market presence that resonates with your target audience."
+    },
+    {
+      "question": "Can you help with Digital Marketing?",
+      "keywords": ["marketing", "digital", "seo", "growth", "ads", "promotions", "social media", "market", "campaign"],
+      "answer": "Yes, absolutely. Our Digital Marketing services offer data-driven growth strategies, SEO mastery, and digital promotions to maximize your online visibility and ROI."
+    },
+    {
+      "question": "What AI services do you provide?",
+      "keywords": ["ai", "artificial intelligence", "chatbot", "machine learning", "smart", "automation", "engineer", "research", "accuracy", "ai product"],
+      "answer": "Yes, we provide advanced AI Services and Products. Our AI capabilities boast 99% Model Accuracy, leverage 8+ years of AI research, and serve 30+ industries with a team of 45+ AI Engineers."
+    },
+    {
+      "question": "Do you provide ERP Solutions?",
+      "keywords": ["erp", "enterprise resource planning", "management system", "erp solutions"],
+      "answer": "Yes, our ERP Solutions empower your business by unifying your operations, from attendance tracking to financial analytics, into one seamless, scalable system."
+    },
+    {
+      "question": "Do you provide CRM Services?",
+      "keywords": ["crm", "customer relationship", "customer management", "crm services"],
+      "answer": "Yes, our CRM Services help you build stronger relationships with your clients through unified dashboards, smart follow-ups, and data-driven customer insights."
+    },
+    {
+      "question": "Tell me about SaaS Services.",
+      "keywords": ["saas", "software as a service", "cloud", "cloud platform"],
+      "answer": "Yes, we develop and offer scalable SaaS platforms that provide powerful, cloud-based software solutions tailored for modern business needs."
+    },
+    {
+      "question": "Tell me about your Data Analytics services.",
+      "keywords": ["data", "analytics", "analysis", "statistics", "reports", "insights", "metrics", "sources"],
+      "answer": "Yes, our Data Analytics services transform raw data into actionable insights from diverse data sources, helping you make informed decisions, track performance metrics, and optimize your business strategies."
+    },
+    {
+      "question": "What is Raymart?",
+      "keywords": ["raymart", "market", "marketplace", "online", "store", "buy", "sell", "1st tech online market", "shop"],
+      "answer": "Yes, Raymart is our premier 1st Tech Online Market! It's a comprehensive platform where you can explore and purchase our digital products, SaaS services, and business solutions with instant digital delivery and 24/7 support."
+    },
+    {
+      "question": "What products do you offer?",
+      "keywords": ["product", "products", "item", "software products", "buy products", "business suite"],
+      "answer": "We offer a diverse range of digital products and SaaS platforms on Raymart. From advanced Business Suite AI tools and ERP/CRM systems to customized web and mobile applications, you can explore all our products there."
+    },
+    {
+      "question": "Can I see your case studies and past work?",
+      "keywords": ["case", "study", "studies", "portfolio", "past", "work", "clients", "projects", "examples"],
+      "answer": "Yes, absolutely! We have a dedicated Portfolio section featuring case studies from clients like Amico Food Products, Malar Herbal Products, and Brandex, showcasing our successful branding, design, and software solutions."
+    },
+    {
+      "question": "What courses does Engloray Academy offer?",
+      "keywords": ["course", "courses", "learn", "learning", "academy", "training", "education", "student", "study", "teach", "classes", "all courses"],
+      "answer": "Yes, Engloray Learning Generations offers industry-leading courses including UI/UX Design, Graphic Design, Java Full Stack Development, Digital Marketing, and Drawing. We also offer Corporate Training and Workshops."
+    },
+    {
+      "question": "Tell me about the Graphic Design Course.",
+      "keywords": ["graphic design course", "learn graphics", "photoshop", "illustrator", "design course"],
+      "answer": "Yes, our Graphic Design Course takes you from basics to advanced techniques, teaching you industry-standard tools like Adobe Photoshop, Illustrator, and more through project-based learning."
+    },
+    {
+      "question": "Tell me about the UI/UX Design Course.",
+      "keywords": ["ui/ux course", "learn ui", "learn ux", "figma", "interface design course"],
+      "answer": "Yes, our UI/UX Design Course covers user research, wireframing, prototyping, and high-fidelity design using Figma, preparing you for a successful career as a product designer."
+    },
+    {
+      "question": "Tell me about the Java Full Stack Course.",
+      "keywords": ["java full stack", "learn java", "full stack course", "coding", "programming", "backend", "frontend"],
+      "answer": "Yes, our Java Full Stack Course is a comprehensive program teaching you both front-end and back-end development, ensuring you are market-ready to build robust web applications."
+    },
+    {
+      "question": "Do you offer a Digital Marketing Course?",
+      "keywords": ["digital marketing course", "learn marketing", "learn seo", "marketing training"],
+      "answer": "Yes, our Digital Marketing Course covers SEO, social media marketing, ad campaigns, and analytics, giving you the practical skills needed to drive digital growth."
+    },
+    {
+      "question": "Do you provide Corporate Training?",
+      "keywords": ["corporate", "training", "upskill", "corporate training", "company training", "workforce"],
+      "answer": "Yes, we provide Corporate Training programs designed to upskill your workforce with the latest technologies, tailored specifically to your company's goals and industry standards."
+    },
+    {
+      "question": "Are you hiring interns?",
+      "keywords": ["intern", "internship", "internships", "career", "careers", "job", "hiring", "work", "vacancy", "apply", "openings"],
+      "answer": "Yes, we are! We offer exciting Internship programs in Web Development, UI/UX Design, Graphic Design, Software Development, Sales, and Business Development. Visit our Careers page to apply."
+    },
+    {
+      "question": "Tell me about the Sales Executive Internship.",
+      "keywords": ["sales executive", "sales intern", "sales internship"],
+      "answer": "Yes, our Sales Executive Internship is a great opportunity to learn client communication, lead generation, and closing strategies in a fast-paced tech environment."
+    },
+    {
+      "question": "Tell me about the Business Development Internship.",
+      "keywords": ["business development", "bda", "bde", "business intern", "business internship"],
+      "answer": "Yes, our Business Development Internship will teach you how to analyze markets, forge strategic partnerships, and drive company growth. Apply on our Careers page!"
+    },
+    {
+      "question": "Tell me about the Training & Mentor Internship.",
+      "keywords": ["training mentor", "mentor intern", "training intern", "mentorship"],
+      "answer": "Yes, our Training & Mentor Internship is perfect for those who love to teach and guide others. You will help facilitate our courses and mentor new students."
+    },
+    {
+      "question": "What is the story behind Engloray?",
+      "keywords": ["about", "story", "history", "who are you", "team", "engloray", "company", "background", "founded", "vision", "mission"],
+      "answer": "ENGLORAY represents the pinnacle of digital craftsmanship. We started as a creative branding studio and expanded into a full-service agency encompassing Tech Group and Learning Generations."
+    },
+    {
+      "question": "How can I contact Engloray?",
+      "keywords": ["contact", "reach", "email", "phone", "number", "address", "location", "support", "help", "admin", "connect"],
+      "answer": "You can reach us directly via email at engloray@gmail.com or call us at 6381759909. Our team is always ready to assist you!"
+    },
+    {
+      "question": "What is your email address and phone number?",
+      "keywords": ["email", "phone", "number", "mobile", "gmail", "call", "dial", "admin", "contact"],
+      "answer": "Our email address is engloray@gmail.com and our phone number is 6381759909."
+    },
+    {
+      "question": "What is your pricing?",
+      "keywords": ["price", "cost", "fee", "budget", "quote", "pricing", "money", "pay", "charge"],
+      "answer": "Our pricing depends on the specific requirements and scope of your project or chosen course. Please contact us at engloray@gmail.com or 6381759909 for a customized quote."
+    },
+    {
+      "question": "Tell me about Business Suite AI.",
+      "keywords": ["business suite ai", "business suite", "ai for business", "business page"],
+      "answer": "Yes, our Business Suite AI is an advanced platform that integrates artificial intelligence into your business operations. It offers smart analytics, automated CRM/ERP features, and AI-driven growth strategies to supercharge your business efficiency."
+    },
+    {
+      "question": "Can I see your Client Projects and Works?",
+      "keywords": ["client", "client page", "client projects", "works", "past clients"],
+      "answer": "Yes! You can explore our Client Projects page to see our extensive portfolio. We've successfully delivered cutting-edge products, branding, and software solutions to diverse clients globally, transforming their digital presence."
+    },
+    {
+      "question": "Tell me about your Case Studies.",
+      "keywords": ["case studies", "case study", "studies", "client success"],
+      "answer": "Yes, our Works Case Studies page details the exact strategies and results we've achieved for our clients, including a 300% productivity boost for our partners through custom software and branding."
+    },
+    {
+      "question": "What is the Jobseeker Hub for students?",
+      "keywords": ["jobseeker", "job seeker", "student", "student page", "find job", "hiring hub"],
+      "answer": "Yes, our Jobseeker Hub is designed specifically for students and professionals looking to launch their careers! You can explore open roles, apply for premium internships, and connect directly with recruiters through our platform."
+    }
+  ]
+}

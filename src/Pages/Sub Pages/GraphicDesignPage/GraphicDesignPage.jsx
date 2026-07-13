@@ -3,7 +3,7 @@ import Navbar from '../../../Components/Navbar/Navbar';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import './GraphicDesign.css';
-import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
+// import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 //import NewFooter1 from '../../../Components/NewFooter1/NewFooter1';
 
 
@@ -14,7 +14,11 @@ import visualStyleImg from '../../../assets/services/visual_style.png';
 import environmentImg from '../../../assets/services/environmental_branding.png';
 import portraitImg from '../../../assets/agency/branding_concept_abstract.png';
 import landscapeImg from '../../../assets/agency/landscape.png';
-import iphone14Img from '../../../assets/Iphone14.png';
+import iphone14Img from '../../../assets/Service images/Graphic design-Photoroom.png';
+
+import GraphicOne from '../../../assets/Service images/graphic Design/business barnding and identy.png';
+import GraphicTwo from '../../../assets/Service images/graphic Design/logo and identity design.png';
+
 
 import avatarOne from '../../../assets/male_avatar.png';
 import avatarTwo from '../../../assets/cartoon_male_1.png';
@@ -45,7 +49,8 @@ const GraphicDesignPage = () => {
     {
         id: 2, num: '02', title: 'Business Branding Kit', icon: '◈', short: 'Business Branding Kit services', stats: { val1: '89+', lab1: 'Designs', val2: '5 Months', lab2: 'Creative', val3: '4.8★', lab3: 'Satisfaction' },
         description: 'A business branding kit serves as a centralized digital hub that stores all the essential visual and strategic assets needed to maintain a consistent professional identity across every customer touchpoint. This comprehensive resource typically includes various versions of the company logo such as primary horizontal and secondary square layouts alongside a defined color palette featuring exact hex codes to ensure accurate reproduction on screens and in print. Modern 2026 kits from platforms like Canva or Adobe Express also house specific typography pairings and curated image libraries that reflect the unique personality and values of the brand. By organizing these elements in a single accessible location businesses can streamline their creative workflows and empower team members or external partners to produce on brand marketing materials quickly without constant supervision. s provided by Engloray expert team.',
-        image: "https://i.pinimg.com/736x/4b/c4/b9/4bc4b96d820ff7392f9c1f8692246cd5.jpg"
+        // image: "https://i.pinimg.com/736x/4b/c4/b9/4bc4b96d820ff7392f9c1f8692246cd5.jpg"
+        image: GraphicOne
     },
     {
         id: 3, num: '03', title: 'Marketing Design Solution', icon: '✦', short: 'Marketing Design Solution services', stats: { val1: '40+', lab1: 'Designs', val2: '3 Months', lab2: 'Creative', val3: '5.0★', lab3: 'Satisfaction' },
@@ -59,17 +64,18 @@ const GraphicDesignPage = () => {
     },
     {
         id: 5, num: '05', title: 'Logo & Identity Design', icon: '✦', short: 'Logo & Identity Design services', stats: { val1: '98+', lab1: 'Designs', val2: '5 Months', lab2: 'Creative', val3: '4.6★', lab3: 'Satisfaction' },
-        description: 'Logo & Identity Print design solutions encompass the creation of physical marketing materials that help businesses communicate with their customers through tangible media like brochures and business cards and large scale banners. This specialized field focuses on high resolution graphics  Design focused solutions provided by Engloray expert team.',
-        image: "https://i.pinimg.com/736x/61/a2/49/61a2490a11c58c122a1a82dd19e6cb91.jpg"
+        description: 'Logo and Identity design focuses on crafting the foundational visual elements that define a brand\'s unique character and market presence. This includes designing a striking, memorable primary logo along with secondary variations tailored for different contexts and screen sizes. By carefully selecting corresponding typography and color palettes, we ensure your brand communicates the right emotions and values to your target audience. A cohesive identity system not only builds immediate consumer trust but also serves as the cornerstone for all future marketing and advertising efforts. Our expert team at Engloray meticulously aligns every design decision with your long-term business strategy to secure lasting recognition. We provide comprehensive brand guidelines to ensure visual consistency as your company expands across new channels. Ultimately, a strong identity distinguishes you from competitors and leaves an unforgettable impression.',
+        // image: "https://i.pinimg.com/736x/61/a2/49/61a2490a11c58c122a1a82dd19e6cb91.jpg"
+        image: GraphicTwo
     },
     {
         id: 6, num: '06', title: 'Corporate Design Package', icon: '◈', short: 'Corporate Design Package services', stats: { val1: '86+', lab1: 'Designs', val2: '6 Months', lab2: 'Creative', val3: '4.7★', lab3: 'Satisfaction' },
-        description: 'Corporate Design Package focused solutions provided primary recognizable face of a business across digital and physical platforms. Modern 2026 workflows from top firms like Chermayeff & Geismar & Haviv or Landor extend far beyond a single graphic to include a cohesive set of rules for how a brand should look and feel in every context by Engloray expert team.',
+        description: 'A comprehensive Corporate Design Package provides the essential visual framework needed to maintain a highly professional and consistent brand image across all corporate communications. This specialized package goes beyond basic logo design to establish strict visual guidelines, dictating exactly how your brand should be presented in every possible context. From official letterheads and email signatures to detailed presentation templates and business cards, we ensure every touchpoint reflects your company\'s core values. By implementing a standardized corporate design system, your team can communicate with absolute authority and instantly build credibility with stakeholders. Engloray\'s expert designers craft these cohesive packages to elevate your corporate presence and outshine the competition.',
         image: "https://i.pinimg.com/736x/a6/84/65/a684653e07f061b0510381dd79e9ac1d.jpg"
     },
     {
         id: 7, num: '07', title: 'Print Design Solution', icon: '✦', short: 'Print Design Solution services', stats: { val1: '53+', lab1: 'Designs', val2: '2 Months', lab2: 'Creative', val3: '4.8★', lab3: 'Satisfaction' },
-        description: 'Print design solutions encompass the creation of physical marketing materials that help businesses communicate with their customers through tangible media like brochures and business cards and large scale banners. This specialized field focuses on high resolution graphics and precise color management systems like CMYK to ensure that what appears on a computer screen translates perfectly onto paper or fabric. Modern 2026 workflows from providers like Vistaprint or MOO integrate advanced finishing techniques such as foil stamping and spot UV coating to create premium tactile experiences that digital screens cannot replicate.Print Design Solution focused solutions provided by Engloray expert team.',
+        description: 'Print design solutions encompass the creation of physical marketing materials that help businesses communicate with their customers through tangible media like brochures, business cards, and large-scale banners. This specialized field focuses on high-resolution graphics and precise color management systems like CMYK to ensure that what appears on a computer screen translates perfectly onto paper or fabric. Modern workflows integrate advanced finishing techniques such as foil stamping and spot UV coating to create premium tactile experiences that digital screens simply cannot replicate. Physical materials offer a lasting impression, giving your clients something tangible to hold and remember your brand by. Our team carefully oversees the print preparation process so every final product reflects the absolute highest standard of quality and professionalism.',
         image: "https://i.pinimg.com/736x/c1/af/a2/c1afa29cca2eaf42015a5ccf33c1cf5e.jpg"
     }];
 
@@ -472,9 +478,9 @@ const GraphicDesignPage = () => {
                     {/* Right: Detail Panel - pops content when service is clicked */}
                     <div className="gd-page-about-right-new">
                         <div className="gd-page-about-detail-panel" key={selectedService}>
-                            <div className="gd-page-detail-icon-wrap">
+                            {/* <div className="gd-page-detail-icon-wrap">
                                 <span className="gd-page-detail-icon">{brandServices[selectedService].icon}</span>
-                            </div>
+                            </div> */}
                             <span className="gd-page-detail-num">{brandServices[selectedService].num}</span>
                             <h3 className="gd-page-detail-title">{brandServices[selectedService].title}</h3>
                             <p className="gd-page-detail-desc">{brandServices[selectedService].description}</p>
@@ -493,7 +499,7 @@ const GraphicDesignPage = () => {
                                     <span className="bi-detail-stat-label">{brandServices[selectedService].stats?.lab3 || 'Rating'}</span>
                                 </div>
                             </div>
-                            <button className="gd-page-detail-cta" onClick={() => window.open('https://wa.me/916381759909?text=Hello!%20I%20would%20like%20to%20get%20started%20with%20ENGLORAY%20on%20Graphic%20Design.', '_blank')}>Get Started →</button>
+                            <button className="gd-page-detail-cta" onClick={() => window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=engloraytechgroup.com&su=Inquiry regarding ${encodeURIComponent(brandServices[selectedService].title)} service`, '_blank')}>Get Started →</button>
                         </div>
                     </div>
 
@@ -919,7 +925,7 @@ const GraphicDesignPage = () => {
             </section>
             {/* <TSPFFooter /> */}
             {/* <NewFooter1 /> */}
-            <WhiteFooter />
+            {/* <WhiteFooter /> */}
 
             <BackToTop />
         </div>

@@ -1,182 +1,249 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './DataAnalytics.css';
-import BackToTop from '../../../Components/BackToTop/BackToTop';
+import Navbar from '../../../Components/Navbar/Navbar';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
-import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
-import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
-import { Helmet } from 'react-helmet';
-import { FaCode, FaRocket, FaCheckCircle, FaUserCheck, FaDatabase, FaChartBar, FaProjectDiagram, FaCogs } from "react-icons/fa";
-import heroBg from "../../../assets/lineimage.jpeg";
-import projectsBg from '../../../assets/heroimage.jpeg';
-import logo1 from '../../../assets/icons/logoipsum-396.png';
-import logo2 from '../../../assets/icons/logoipsum-397.png';
-import logo3 from '../../../assets/icons/logoipsum-399.png';
-import logo4 from '../../../assets/icons/logoipsum-401.png';
-import logo5 from '../../../assets/icons/logoipsum-403.png';
-import logo6 from '../../../assets/icons/logoipsum-405.png';
-import logo7 from '../../../assets/icons/logoipsum-407.png';
-import logo8 from '../../../assets/icons/logoipsum-409.png';
-import logo9 from '../../../assets/icons/logoipsum-411.png';
-import logo10 from '../../../assets/icons/logoipsum-413.png';
-import logo11 from '../../../assets/icons/logoipsum-415.png';
-import logo12 from '../../../assets/icons/logoipsum-417.png';
-import avatarLeft from '../../../assets/cartoon_female_1.png';
-import avatarRight from '../../../assets/cartoon_male_1.png';
+import BackToTop from '../../../Components/BackToTop/BackToTop';
+import './DataAnalytics.css';
+import TSPFFooter from '../TechGroupSubPagefooter/TSPFFooter';
+
+import iphone14Img from '../../../assets/Iphone14.png';
+
+import cartoonMale1 from '../../../assets/cartoon_male_1.png';
+import cartoonMale2 from '../../../assets/cartoon_male_2.png';
+import cartoonMale3 from '../../../assets/cartoon_male_3.png';
+import maleAvatar from '../../../assets/male_avatar.png';
+import cartoonFemale1 from '../../../assets/cartoon_female_1.png';
+import cartoonFemale2 from '../../../assets/cartoon_female_2.png';
+import cartoonFemale3 from '../../../assets/cartoon_female_3.png';
+import femaleAvatar from '../../../assets/female_avatar.png';
+
+// import businessDataImg from '../../../assets/images/Business Data Analytics Solution.png';
+// import dashboardImg from '../../../assets/images/Data Dashboard & Visualization.jpg';
+// import customerInsightsImg from '../../../assets/images/Customer Insights & Segmentation.jpg';
+// import marketingAnalyticsImg from '../../../assets/images/Marketing Analytics Solution.jpg';
 
 const DataAnalytics = () => {
+    const [isExpanded, setIsExpanded] = useState(false);
     const [currentSlide, setCurrentSlide] = useState(0);
     const [autoSlide, setAutoSlide] = useState(true);
+    const [visibleImages, setVisibleImages] = useState([]);
+    const [selectedService, setSelectedService] = useState(0);
+    const feedbackTrackRef = useRef(null);
 
-    useEffect(() => {
-        window.scrollTo(0, 0);
-
-        if (window.location.hash) {
-            const id = window.location.hash.replace('#', '');
-            setTimeout(() => {
-                const element = document.getElementById(id);
-                if (element) {
-                    element.scrollIntoView();
-                }
-            }, 0);
+    const brandServices = [
+        {
+            id: 1, num: '01', title: 'Business Data Analytics Solution', icon: '✦', short: 'Transform raw data into actionable insights',
+            features: [
+                'Data mining & preparation workflows',
+                'Executive KPI performance tracking',
+                'Automated reporting pipelines',
+                'Root cause & trend analysis',
+                'Cloud data warehouse structuring',
+                'Board-ready financial insight modeling'
+            ],
+            stats: { val1: '50+', lab1: 'Reports', val2: '3 Months', lab2: 'Avg Delivery', val3: '4.5★', lab3: 'Satisfaction' },
+            description: 'Our Business Data Analytics solutions provide organizations with sophisticated tools and methodologies to transform raw information into actionable strategic insights. We deliver custom dashboards, KPI tracking, and automated reporting pipelines that empower leadership to make confident, data-driven decisions and achieve sustainable growth.',
+            image: "https://i.pinimg.com/736x/f7/e0/56/f7e056e0c8181d44016dc971038774c4.jpg"
+        },
+        {
+            id: 2, num: '02', title: 'Data Dashboard & Visualization', icon: '◈', short: 'Interactive charts and real-time dashboards',
+            features: [
+                'Interactive PowerBI/Tableau builds',
+                'Real-time streaming data visuals',
+                'Custom D3.js embedded charting',
+                'Mobile-responsive dashboard views',
+                'Self-service BI deployment',
+                'Visual storytelling & UX design'
+            ],
+            stats: { val1: '150+', lab1: 'Dashboards', val2: '3 Weeks', lab2: 'Build Time', val3: '4.9★', lab3: 'Satisfaction' },
+            description: 'Data Dashboard & Visualization solutions provide businesses with a centralized visual command center that transforms complex datasets into easy-to-understand charts and interactive graphs. Our experts design intuitive, real-time dashboards tailored to your industry so every stakeholder can interpret data instantly and act with confidence.',
+            image: "https://i.pinimg.com/736x/d7/3d/44/d73d44700aaedf5fe202f687a2237bcb.jpg"
+        },
+        {
+            id: 3, num: '03', title: 'Performance Analytics', icon: '✦', short: 'Track revenue drivers and team performance',
+            features: [
+                'Sales funnel conversion tracking',
+                'Individual rep performance metrics',
+                'Revenue forecasting & modeling',
+                'CRM data cleansing & integration',
+                'Geographic territory analysis',
+                'Win/loss predictive indicators'
+            ],
+            stats: { val1: '87+', lab1: 'Projects', val2: '2 Months', lab2: 'Avg Speed', val3: '4.9★', lab3: 'Satisfaction' },
+            description: 'Sales and performance analytics solutions provide businesses with a powerful framework to track key revenue drivers and individual team contributions. We integrate CRM platforms, financial systems, and custom data sources to deliver real-time performance reports, sales forecasting models, and automated alerting that keep your team on target.',
+            image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+        },
+        {
+            id: 4, num: '04', title: 'Customer Insights', icon: '◈', short: 'Deep audience profiling and segmentation',
+            features: [
+                '360-degree customer profiling',
+                'Behavioral cohort segmentation',
+                'Lifetime value (LTV) modeling',
+                'Churn risk probability scoring',
+                'Purchase pattern recognition',
+                'Personalization engine data feeds'
+            ],
+            stats: { val1: '141+', lab1: 'Segments', val2: '6 Weeks', lab2: 'Avg Speed', val3: '4.9★', lab3: 'Satisfaction' },
+            description: 'Customer Insights & Segmentation solutions provide businesses with a deep understanding of their diverse audience by dividing large consumer bases into specific groups based on shared behaviors, demographics, and purchasing patterns. We gather data from multiple touchpoints to build rich customer profiles that power targeted campaigns and product improvements.',
+            image: "https://i.pinimg.com/1200x/38/84/02/388402143e1958f05c341b8e3fc5e4a0.jpg"
+        },
+        {
+            id: 5, num: '05', title: 'Marketing Analytics', icon: '✦', short: 'Measure and optimize campaign performance',
+            features: [
+                'Multi-touch attribution modeling',
+                'Cross-channel ad spend ROI',
+                'A/B testing statistical readouts',
+                'Social media sentiment tracking',
+                'Web traffic funnel optimization',
+                'Automated agency reporting'
+            ],
+            stats: { val1: '73+', lab1: 'Campaigns', val2: '4 Months', lab2: 'Avg Speed', val3: '4.6★', lab3: 'Satisfaction' },
+            description: 'Marketing Analytics solutions provide businesses with a sophisticated framework to measure and optimize the effectiveness of promotional campaigns across digital and physical channels. We build attribution models, funnel analysis tools, and multi-channel ROI dashboards that give your marketing team the clarity to allocate budget intelligently and scale what works.',
+            image: "https://i.pinimg.com/736x/9c/7b/63/9c7b639a76ff775b1d0b89aceb8cebc2.jpg"
         }
-    }, []);
+    ];
+
+    const pageData = {
+        title: 'DATA ANALYTICS',
+        description: 'Leverage data insights to make informed business decisions and drive growth.',
+        fullDescription: 'We deliver scalable, insight-driven analytics solutions tailored to your specific business requirements — from raw data pipelines to executive dashboards.',
+    };
 
     const feedbacks = [
         {
+            id: 1, name: 'Alex Thompson', role: 'CEO, TechVentures',
+            photo: cartoonMale1,
+            text: 'The analytics dashboards Engloray built gave us a clear view of our entire pipeline. Decision-making has never been faster or more confident. Truly transformative for our operations.',
+            stars: 5
+        },
+        {
+            id: 2, name: 'Ryan Miller', role: 'Marketing Director',
+            photo: cartoonMale2,
+            text: 'Our marketing ROI visibility went from zero to real-time. The attribution models they built finally showed us exactly which channels were driving revenue. Outstanding work.',
+            stars: 5
+        },
+        {
+            id: 3, name: 'Jessica Lee', role: 'Head of Sales',
+            photo: cartoonFemale1,
+            text: 'Sales forecasting used to be guesswork. Now our reps have live performance scorecards and our managers have accurate weekly forecasts. The team at Engloray delivered beyond expectations.',
+            stars: 5
+        },
+        {
+            id: 4, name: 'Sophie Wagner', role: 'Data Strategy Lead',
+            photo: cartoonFemale2,
+            text: 'Customer segmentation used to take our team weeks. With the automated pipeline Engloray set up, we now refresh segments daily. The business impact has been incredible.',
+            stars: 5
+        },
+        {
+            id: 5, name: 'Michael Zhang', role: 'Product Lead',
+            photo: cartoonMale3,
+            text: 'The product analytics infrastructure they built for us is rock-solid. We can trace every user interaction and tie it back to revenue outcomes. Highly recommended for any data-driven team.',
+            stars: 5
+        },
+        {
+            id: 6, name: 'Olivia Brown', role: 'Operations Director',
+            photo: cartoonFemale3,
+            text: 'We now have a single source of truth across every department. The custom reporting suite Engloray built saved us 20+ hours per week in manual reporting. Exceptional quality.',
+            stars: 5
+        },
+        {
+            id: 7, name: 'Christopher Scott', role: 'Startup Founder',
+            photo: maleAvatar,
+            text: 'As an early-stage startup, having clear metrics was critical. Engloray helped us instrument everything from day one and build investor-ready dashboards. Worth every penny.',
+            stars: 5
+        },
+        {
+            id: 8, name: 'Isabella Garcia', role: 'COO, Retail Group',
+            photo: femaleAvatar,
+            text: 'The inventory and demand forecasting models Engloray delivered cut our overstock costs by 30%. Their team genuinely understood our business before writing a single line of code.',
+            stars: 5
+        }
+    ];
+
+    const extraImages = [
+        {
             id: 1,
-            rating: "★★★★★",
-            text: "The analytics dashboards Engloray built gave us a clear view of our entire pipeline. Decision-making has never been faster or more confident.",
-            author: "Alex Thompson",
-            role: "CEO, TechVentures",
-            initial: "A"
+            url: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            title: 'Data Strategy Workshop',
+            description: 'Collaborative sessions to define KPIs, data sources, and analytics roadmap'
         },
         {
             id: 2,
-            rating: "★★★★★",
-            text: "Our marketing ROI visibility went from zero to real-time. The attribution models they built finally showed us exactly which channels were driving revenue.",
-            author: "Ryan Miller",
-            role: "Marketing Director",
-            initial: "R"
+            url: 'https://images.unsplash.com/photo-1543286386-713bdd548da4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            title: 'Dashboard Design Process',
+            description: 'Wireframing and prototyping interactive dashboards for every stakeholder'
         },
         {
             id: 3,
-            rating: "★★★★★",
-            text: "Sales forecasting used to be guesswork. Now our reps have live performance scorecards and our managers have accurate weekly forecasts.",
-            author: "Jessica Lee",
-            role: "Head of Sales",
-            initial: "J"
-        },
-        {
-            id: 4,
-            rating: "★★★★★",
-            text: "Customer segmentation used to take our team weeks. With the automated pipeline Engloray set up, we now refresh segments daily.",
-            author: "Sophie Wagner",
-            role: "Data Strategy Lead",
-            initial: "S"
-        },
-        {
-            id: 5,
-            rating: "★★★★★",
-            text: "The product analytics infrastructure they built for us is rock-solid. We can trace every user interaction and tie it back to revenue outcomes.",
-            author: "Michael Zhang",
-            role: "Product Lead",
-            initial: "M"
-        },
-        {
-            id: 6,
-            rating: "★★★★★",
-            text: "We now have a single source of truth across every department. The custom reporting suite Engloray built saved us 20+ hours per week in manual reporting.",
-            author: "Olivia Brown",
-            role: "Operations Director",
-            initial: "O"
-        },
-        {
-            id: 7,
-            rating: "★★★★★",
-            text: "As an early-stage startup, having clear metrics was critical. Engloray helped us instrument everything from day one and build investor-ready dashboards.",
-            author: "Christopher Scott",
-            role: "Startup Founder",
-            initial: "C"
-        },
-        {
-            id: 8,
-            rating: "★★★★★",
-            text: "The inventory and demand forecasting models Engloray delivered cut our overstock costs by 30%. Their team genuinely understood our business.",
-            author: "Isabella Garcia",
-            role: "COO, Retail Group",
-            initial: "I"
+            url: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            title: 'Analytics Engineering',
+            description: 'Building robust data pipelines and warehouses for reliable reporting'
         }
     ];
 
-    const aboutCards = [
+    const internshipCourses = [
         {
-            id: 1,
-            title: "Data Engineering & ETL",
-            description: "Consolidate raw datasets into a single, clean source of truth with automated ETL/ELT pipelines and scalable cloud data warehouses.",
-            image: "https://images.unsplash.com/photo-1543286386-713bdd548da4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            id: 1, name: 'Data Analytics Fundamentals', esc: 'DA101', duration: '8 Weeks',
+            description: 'Master core analytics concepts, from data wrangling and SQL to statistical thinking and visualization.',
+            logo: '📊',
+            features: ['SQL & Database Queries', 'Data Cleaning & Wrangling', 'Statistical Foundations', 'Visualization Principles', 'Excel & Google Sheets', 'Reporting Best Practices']
         },
         {
-            id: 2,
-            title: "Interactive BI Dashboards",
-            description: "Translate complex metrics into intuitive visual stories with responsive Power BI, Tableau, or custom D3.js dashboard architectures.",
-            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            id: 2, name: 'Business Intelligence & Dashboards', esc: 'BI201', duration: '12 Weeks',
+            description: 'Design and build enterprise-grade BI dashboards using modern tools and real business datasets.',
+            logo: '📈',
+            features: ['Power BI & Tableau', 'KPI Framework Design', 'DAX & Calculated Measures', 'Data Modeling', 'Executive Reporting', 'Live Dashboard Deployment']
         },
         {
-            id: 3,
-            title: "Advanced Predictive Analytics",
-            description: "Identify future patterns, forecast demand, score churn risks, and model scenarios using machine learning time-series models.",
-            image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-        },
-        {
-            id: 4,
-            title: "Customer Insights",
-            description: "Segment your user base based on behavioral cohorts, track conversion funnels, and calculate customer lifetime value metrics.",
-            image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            id: 3, name: 'Advanced Analytics & Forecasting', esc: 'AA301', duration: '10 Weeks',
+            description: 'Apply predictive and prescriptive analytics to real-world business problems using Python and ML.',
+            logo: '🤖',
+            features: ['Python for Data Analysis', 'Machine Learning Basics', 'Time-Series Forecasting', 'Cohort & Funnel Analysis', 'A/B Testing', 'Model Deployment']
         }
     ];
 
-    const howItWorksSteps = [
-        {
-            title: "Step 1",
-            heading: "Data Audit",
-            text: "Identifying data sources, auditing existing metrics, and mapping target schemas."
-        },
-        {
-            title: "Step 2",
-            heading: "Pipeline Engineering",
-            text: "Orchestrating robust data pipelines and setting up secure storage layers."
-        },
-        {
-            title: "Step 3",
-            heading: "Data Warehousing",
-            text: "Loading and indexing datasets in cloud platforms like Snowflake or BigQuery."
-        },
-        {
-            title: "Step 4",
-            heading: "Visual Modeling",
-            text: "Designing interactive dashboard wireframes and configuring UI data layouts."
-        },
-        {
-            title: "Step 5",
-            heading: "Insights Deployment",
-            text: "Launching real-time analytics instances and configuring alert distributions."
-        },
-        {
-            title: "Step 6",
-            heading: "Scale & Optimize",
-            text: "Continuous validation, query optimization, and tuning pipeline performance."
+    // WhatsApp navigation function
+    const handleWhatsAppNavigation = () => {
+        window.open('https://wa.me/916381759909', '_blank');
+    };
+
+    useEffect(() => {
+        if (feedbackTrackRef.current) {
+            feedbackTrackRef.current.style.transform = `translateX(-${currentSlide * 100}%)`;
         }
-    ];
+    }, [currentSlide]);
 
-    const getPosition = (index) => {
-        const len = feedbacks.length;
-        const prev = (currentSlide - 1 + len) % len;
-        const next = (currentSlide + 1) % len;
+    useEffect(() => {
+        let interval;
+        if (autoSlide) {
+            interval = setInterval(() => {
+                setCurrentSlide((prev) => (prev + 1) % feedbacks.length);
+            }, 5000);
+        }
+        return () => clearInterval(interval);
+    }, [autoSlide, feedbacks.length]);
 
-        if (index === currentSlide) return "center";
-        if (index === prev) return "left";
-        if (index === next) return "right";
-        return "hidden";
+    useEffect(() => {
+        if (isExpanded) {
+            const timeouts = [];
+            extraImages.forEach((img, index) => {
+                const timeout = setTimeout(() => {
+                    setVisibleImages(prev => [...prev, img.id]);
+                }, index * 300);
+                timeouts.push(timeout);
+            });
+            return () => {
+                timeouts.forEach(timeout => clearTimeout(timeout));
+                setVisibleImages([]);
+            };
+        } else {
+            setVisibleImages([]);
+        }
+    }, [isExpanded]);
+
+    const handleDotClick = (index) => {
+        setCurrentSlide(index);
+        setAutoSlide(false);
+        setTimeout(() => setAutoSlide(true), 10000);
     };
 
     const handlePrevSlide = () => {
@@ -191,416 +258,600 @@ const DataAnalytics = () => {
         setTimeout(() => setAutoSlide(true), 10000);
     };
 
-    useEffect(() => {
-        let interval;
-        if (autoSlide) {
-            interval = setInterval(() => {
-                setCurrentSlide((prev) => (prev + 1) % feedbacks.length);
-            }, 3000);
-        }
-        return () => clearInterval(interval);
-    }, [autoSlide, feedbacks.length]);
-
-    const badges = [
-        "Data Warehousing",
-        "ETL Pipelines",
-        "BI Dashboards",
-        "Predictive Analytics",
-        "Data Consulting"
-    ];
+    const handleReadMore = () => {
+        setIsExpanded(!isExpanded);
+    };
 
     return (
-        <>
-            <div>
-                <svg width="0" height="0" style={{ position: 'absolute' }}>
-                    <defs>
-                        <clipPath id="cardCurve" clipPathUnits="objectBoundingBox">
-                            <path d="M 0.15,0 L 0.85,0 A 0.15,0.15 0,0,1 1,0.15 L 1,0.75 A 0.08,0.06 0,0,1 0.92,0.81 L 0.9,0.81 A 0.06,0.06 0,0,0 0.84,0.87 L 0.84,0.92 A 0.08,0.08 0,0,1 0.76,1 L 0.15,1 A 0.15,0.15 0,0,1 0,0.85 L 0,0.15 A 0.15,0.15 0,0,1 0.15,0 Z" />
-                        </clipPath>
-                    </defs>
-                </svg>
+        <div className="data-page-page">
+            <TopNavBar />
+            <Navbar />
 
-                <Helmet>
-                    <title>Engloray - Data Analytics Services</title>
-                    <meta name="description" content="Leverage data insights to make informed business decisions and drive growth with our expert data analytics team." />
-                    <meta name="robots" content="max-snippet:-1, max-image-preview: large, max-video-preview:-1" />
-                    <meta property="og:locale" content="en_US" />
-                    <meta property="og:type" content="website" />
-                    <meta property="og:title" content="Engloray | Data Analytics Services" />
-                    <meta property="og:description" content="Insight-Driven Analytics Solutions for Smarter Decisions" />
-                </Helmet>
+            {/* ── Hero Section ── */}
+            <section className="data-page-hero-section-new">
+                <div className="data-page-hero-container-new">
 
-                <div className="da-page" id='dataAnalyticsPage'>
-                    <TopNavBar />
-                    <TwoLineNavbar />
+                    {/* Left Panel */}
+                    <div className="data-page-hero-left-new">
+                        <h4 className="data-page-hero-subtitle-new">WE ARE ENGLORAY</h4>
+                        <h1 className="data-page-hero-title-new">{pageData.title}</h1>
+                        <h1 className="data-page-hero-title-desc-new">
+                            <img
+                                src={iphone14Img}
+                                alt="Engloray Data Analytics iPhone Mockup"
+                                className="data-page-hero-iphone14-img"
+                                style={{ maxWidth: '55%', height: '20%' }}
+                            />
+                        </h1>
 
-                    <section className="da-hero">
-                        <img src={heroBg} className="da-hero-bg-image" alt="background texture" />
+                        <div className="data-page-hero-buttons-new">
+                            <button onClick={handleWhatsAppNavigation} className="data-page-btn-get-started-new">GET STARTED</button>
+                            <button onClick={handleWhatsAppNavigation} className="data-page-btn-contact-us-new">CONTACT US</button>
+                        </div>
 
-                        <div className="da-gradient-shape da-cyan-shape"></div>
-                        <div className="da-gradient-shape da-blue-shape"></div>
+                        <p className="data-page-hero-desc-new">{pageData.fullDescription}</p>
 
-                        <div className="da-floating-card da-left da-rotate-left">
-                            <img src={avatarLeft} alt="Data accuracy analyst" />
-                            <div className="da-card-content">
-                                <h4>Data Accuracy</h4>
-                                <p>Clean & Validated Data</p>
-                                <div className="da-card-progress">
-                                    <div className="da-progress-fill" style={{ width: '98%' }}></div>
+                        <div className="data-page-hero-stats-new">
+                            <div className="data-page-stat-item-new">
+                                <div className="data-page-stat-circle-new">
+                                    <svg viewBox="0 0 36 36"><path className="data-page-circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" /><path className="data-page-circle-val bi-circle-blue" strokeDasharray="15, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" /></svg>
+                                    <span className="data-page-stat-number-new">15<span className="data-page-stat-dash">+</span></span>
                                 </div>
+                                <span className="data-page-stat-label-new">Partners</span>
+                            </div>
+                            <div className="data-page-stat-item-new">
+                                <div className="data-page-stat-circle-new">
+                                    <svg viewBox="0 0 36 36"><path className="data-page-circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" /><path className="data-page-circle-val bi-circle-green" strokeDasharray="75, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" /></svg>
+                                    <span className="data-page-stat-number-new">300<span className="data-page-stat-dash">+</span></span>
+                                </div>
+                                <span className="data-page-stat-label-new">Clients</span>
+                            </div>
+                            <div className="data-page-stat-item-new">
+                                <div className="data-page-stat-circle-new">
+                                    <svg viewBox="0 0 36 36"><path className="data-page-circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" /><path className="data-page-circle-val bi-circle-gray" strokeDasharray="98, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" /></svg>
+                                    <span className="data-page-stat-number-new">4.9<span className="data-page-stat-dash">+</span></span>
+                                </div>
+                                <span className="data-page-stat-label-new">Rating</span>
                             </div>
                         </div>
 
-                        <div className="da-floating-card da-right da-rotate-right">
-                            <img src={avatarRight} alt="BI dashboard designer" />
-                            <div className="da-card-content">
-                                <h4>Insight Delivery</h4>
-                                <p>Real-Time Visualizations</p>
-                                <div className="da-card-progress">
-                                    <div className="da-progress-fill" style={{ width: '95%' }}></div>
+                        <div className="data-page-hero-stats-new" style={{ marginTop: '30px' }}>
+                            <div className="data-page-stat-item-new">
+                                <div className="data-page-stat-circle-new">
+                                    <svg viewBox="0 0 36 36"><path className="data-page-circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" /><path className="data-page-circle-val bi-circle-blue" strokeDasharray="40, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" /></svg>
+                                    <span className="data-page-stat-number-new">40<span className="data-page-stat-dash">+</span></span>
                                 </div>
+                                <span className="data-page-stat-label-new">Awards</span>
+                            </div>
+                            <div className="data-page-stat-item-new">
+                                <div className="data-page-stat-circle-new">
+                                    <svg viewBox="0 0 36 36"><path className="data-page-circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" /><path className="data-page-circle-val bi-circle-green" strokeDasharray="80, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" /></svg>
+                                    <span className="data-page-stat-number-new">500<span className="data-page-stat-dash">+</span></span>
+                                </div>
+                                <span className="data-page-stat-label-new">Projects</span>
+                            </div>
+                            <div className="data-page-stat-item-new">
+                                <div className="data-page-stat-circle-new">
+                                    <svg viewBox="0 0 36 36"><path className="data-page-circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" /><path className="data-page-circle-val bi-circle-gray" strokeDasharray="50, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" /></svg>
+                                    <span className="data-page-stat-number-new">5<span className="data-page-stat-dash">+</span></span>
+                                </div>
+                                <span className="data-page-stat-label-new">Years</span>
                             </div>
                         </div>
+                    </div>
 
-                        <div className="da-hero-container">
-                            <div className="da-hero-badge">
-                                Data Analytics Services
+                    {/* Right Panel */}
+                    <div className="data-page-hero-right-new">
+                        <div className="data-page-right-top-new">
+                            <div className="data-page-title-play-row">
+                                <h2 className="data-page-case-title-new">About Our<br />Company</h2>
+                                <div className="data-page-play-circle-new">
+                                    <span className="data-page-play-text-new">Play</span>
+                                    <div className="data-page-play-icon-new">▶</div>
+                                </div>
                             </div>
 
-                            <h1 className="da-hero-title">
-                                Transforming Data<br /> Into <span className="da-title-highlight">Actionable</span> <span className="da-title-highlight">Insights</span>
-                            </h1>
-
-                            <p className="da-hero-desc">
-                                We help you unlock the value in your databases. From real-time data streaming
-                                and robust pipeline engineering to interactive dashboards and predictive analytics,
-                                we turn complex data into strategic business assets.
+                            <p className="data-page-about-company-desc-new">
+                                We deliver innovative data analytics solutions that help businesses grow faster, uncover hidden opportunities, and create measurable impact. Our team of analysts, engineers, and strategists focuses on quality, clarity, and results you can act on immediately.
                             </p>
 
-                            <div className="da-privacy-badge">
-                                Scale Decisions with Confidence
+                            <div className="data-page-avatars-row-new">
+                                <div className="data-page-avatar-icon-new">
+                                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="#555" strokeWidth="2" fill="none"><circle cx="12" cy="12" r="10"></circle><polyline points="12 8 12 12 14 14"></polyline></svg>
+                                </div>
+                                <div className="data-page-avatar-group-new">
+                                    <img src="https://t3.ftcdn.net/jpg/07/28/48/98/360_F_728489827_qtQHjlMEeD53QhTdUEtdOvNPQw21pYjh.jpg" alt="avatar" />
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGQ53aAyRQ8l1h3GkPHeexbL9wyuTlrf1laQ&s" alt="avatar" />
+                                    <img src="https://t4.ftcdn.net/jpg/06/43/68/65/360_F_643686558_Efl6HB1ITw98bx1PdAd1wy56QpUTMh47.jpg" alt="avatar" />
+                                </div>
+                                <div className="data-page-download-btn-new">
+                                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="#1a1a1a" strokeWidth="2" fill="none"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                                </div>
                             </div>
                         </div>
 
-                        <div className="da-badge-glass">
-                            {badges.map((item, index) => (
-                                <span
-                                    key={index}
-                                    className={`da-service-badge 
-                                    ${item === "Data Warehousing" ? "da-badge-strategy" : ""} 
-                                    ${item === "Data Consulting" ? "da-badge-guidelines" : ""}`}
+                        <div className="data-page-performance-card-new">
+                            <div className="data-page-perf-header-new">
+                                <div className="data-page-perf-item-new">
+                                    <span className="data-page-perf-label-new">DATA ACCURACY</span>
+                                    <span className="data-page-perf-value-new">96%</span>
+                                </div>
+                                <div className="data-page-perf-item-new text-right">
+                                    <span className="data-page-perf-label-new">INSIGHT DELIVERY</span>
+                                    <span className="data-page-perf-value-bold-new">98% ↑</span>
+                                </div>
+                            </div>
+                            <div className="data-page-perf-chart-new">
+                                <div className="data-page-chart-col-new"><div className="data-page-bar-green-new" style={{ height: '35%' }}></div></div>
+                                <div className="data-page-chart-col-new"><div className="data-page-bar-gray-new" style={{ height: '60%' }}></div></div>
+                                <div className="data-page-chart-col-new"><div className="data-page-bar-blue-new" style={{ height: '80%' }}></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* ── Services / About Section ── */}
+            <section className="data-page-about-section-new">
+                <div className="data-page-about-top-notch-content">
+                    <span className="data-page-about-left-tag">OUR SERVICES</span>
+                </div>
+                <div className="data-page-about-inner-new">
+
+                    {/* Left: Clickable Service List */}
+                    <div className="data-page-about-left-new">
+                        <div className="data-page-about-left-header">
+                            <h2 className="data-page-about-left-title">Why Choose Our<br />Data Analytics?</h2>
+                            <p className="data-page-about-intro-new">
+                                Click any service below to explore what we offer.
+                            </p>
+                        </div>
+
+                        <div className="data-page-about-services-list-new">
+                            {brandServices.map((service, i) => (
+                                <div
+                                    key={service.id}
+                                    className={`bi-about-service-item-new ${selectedService === i ? 'bi-service-active' : ''}`}
+                                    onClick={() => setSelectedService(i)}
                                 >
-                                    {item}
-                                </span>
+                                    <div className="data-page-service-item-left-about">
+                                        <span className="data-page-service-num-new">{service.num}</span>
+                                        <div className="data-page-service-text-group">
+                                            <span className="data-page-service-name-about">{service.title}</span>
+                                            <span className="data-page-service-short-about">{service.short}</span>
+                                        </div>
+                                    </div>
+                                    <span className="data-page-service-arrow-about">{selectedService === i ? '↘' : '→'}</span>
+                                </div>
                             ))}
                         </div>
-                    </section>
+                    </div>
 
-                    <section className="da-about-section">
-                        <div className="da-container">
-                            <div className="da-about-header">
-                                <h2 className="da-about-title">About Our Analytics Approach</h2>
-                                <p className="da-about-description">
-                                    We believe a great dashboard is more than just charts. It's the intersection of
-                                    empathy-driven KPI discovery and high-performance database engineering. Our process
-                                    is built on query speed, validation, and a relentless focus on data clarity.
-                                </p>
-                            </div>
-
-                            <div className="da-cards-grid">
-                                {aboutCards.map((card) => (
-                                    <div
-                                        key={card.id}
-                                        className={`da-about-card ${card.id === 2 || card.id === 4 ? 'da-card-image-bottom' : ''}`}
-                                    >
-                                        {card.id !== 2 && card.id !== 4 && (
-                                            <>
-                                                <div className="da-card-image-wrapper">
-                                                    <div className="da-card-image">
-                                                        <img src={card.image} alt={card.title} />
-                                                    </div>
-                                                </div>
-                                                <div className="da-card-content-wrapper">
-                                                    <div className="da-card-content">
-                                                        <strong className="da-card-title">{card.title}</strong>
-                                                        <p className="da-card-description">{card.description}</p>
-                                                    </div>
-                                                </div>
-                                            </>
-                                        )}
-
-                                        {(card.id === 2 || card.id === 4) && (
-                                            <>
-                                                <div className="da-card-content-wrapper">
-                                                    <div className="da-card-content">
-                                                        <strong className="da-card-title">{card.title}</strong>
-                                                        <p className="da-card-description">{card.description}</p>
-                                                    </div>
-                                                </div>
-                                                <div className="da-card-image-wrapper">
-                                                    <div className="da-card-image">
-                                                        <img src={card.image} alt={card.title} />
-                                                    </div>
-                                                </div>
-                                            </>
-                                        )}
-                                    </div>
-                                ))}
+                    {/* Center: Main Image */}
+                    <div className="data-page-about-center-new">
+                        <div className="data-page-about-img-wrap-new">
+                            <img
+                                key={selectedService}
+                                src={brandServices[selectedService].image}
+                                alt={brandServices[selectedService].title}
+                                className="data-page-dynamic-img-fade"
+                            />
+                            <div className="data-page-about-badge-new">
+                                <span className="data-page-badge-num">50+</span>
+                                <span className="data-page-badge-label">Expert<br />Analysts</span>
                             </div>
                         </div>
-                    </section>
+                    </div>
 
-                    <section className="da-branddna-section">
-                        <div className="da-branddna-container">
-                            <div className="da-branddna-left">
-                                <h2>Analytics DNA</h2>
-                                <h3 className="da-branddna-subtitle">
-                                    The Core Principles of<br /> Smarter Analytics
-                                </h3>
-                                <p>
-                                    A successful analytics engine requires technical precision, visual clarity, and data strategy alignment.
-                                </p>
-                                <ul className="da-dna-list">
-                                    <li><strong>ETL Pipelines:</strong> Clean, automated data collection from multiple API sources.</li>
-                                    <li><strong>BI Dashboards:</strong> Real-time metrics presented clearly for business leadership.</li>
-                                    <li><strong>Scenarios & Modeling:</strong> Advanced forecasting using time-series algorithms.</li>
-                                    <li><strong>Data Optimization:</strong> Secure, scalable, and WCAG compliant dashboards.</li>
-                                </ul>
-                            </div>
-
-                            <div className="da-branddna-right">
-                                <svg className="da-link-svg" viewBox="0 0 500 460">
-                                    <g className="da-link-bases">
-                                        <path className="da-base-path" d="M265,240 L265,20" />
-                                        <path className="da-base-path" d="M265,240 L0,240" />
-                                        <path className="da-base-path" d="M265,240 L500,240" />
-                                        <path className="da-base-path" d="M265,240 L265,450" />
-                                        <path className="da-base-path" d="M265,20 L500,240 L265,450 L0,240 Z" />
-                                    </g>
-
-                                    <g className="da-animated-flows">
-                                        <g className="da-phase-group da-phase-1">
-                                            <path pathLength="100" className="da-flow-path" d="M0,240 L265,20" />
-                                            <path pathLength="100" className="da-flow-path" d="M0,240 L265,240" />
-                                            <path pathLength="100" className="da-flow-path" d="M0,240 L265,450" />
-                                        </g>
-                                        <g className="da-phase-group da-phase-2">
-                                            <path pathLength="100" className="da-flow-path" d="M265,20 L0,240" />
-                                            <path pathLength="100" className="da-flow-path" d="M265,20 L265,240" />
-                                            <path pathLength="100" className="da-flow-path" d="M265,20 L500,240" />
-                                        </g>
-                                        <g className="da-phase-group da-phase-3">
-                                            <path pathLength="100" className="da-flow-path" d="M265,240 L0,240" />
-                                            <path pathLength="100" className="da-flow-path" d="M265,240 L265,20" />
-                                            <path pathLength="100" className="da-flow-path" d="M265,240 L500,240" />
-                                            <path pathLength="100" className="da-flow-path" d="M265,240 L265,450" />
-                                        </g>
-                                        <g className="da-phase-group da-phase-4">
-                                            <path pathLength="100" className="da-flow-path" d="M500,240 L265,20" />
-                                            <path pathLength="100" className="da-flow-path" d="M500,240 L265,240" />
-                                            <path pathLength="100" className="da-flow-path" d="M500,240 L265,450" />
-                                        </g>
-                                        <g className="da-phase-group da-phase-5">
-                                            <path pathLength="100" className="da-flow-path" d="M265,450 L0,240" />
-                                            <path pathLength="100" className="da-flow-path" d="M265,450 L265,240" />
-                                            <path pathLength="100" className="da-flow-path" d="M265,450 L500,240" />
-                                        </g>
-                                    </g>
-                                </svg>
-
-                                <div className="da-dna-circle da-circle-purpose">
-                                    <FaDatabase className="da-icon" />
-                                    <h3>Pipelines</h3>
-                                    <p className="da-circle-desc">Automated ETL pipelines loading cloud databases.</p>
-                                </div>
-
-                                <div className="da-circle-voice da-dna-circle">
-                                    <FaProjectDiagram className="da-icon" />
-                                    <h3>Warehousing</h3>
-                                    <p className="da-circle-desc">Secure cloud data warehouses mapping fields.</p>
-                                </div>
-
-                                <div className="da-circle-values da-dna-circle">
-                                    <FaChartBar className="da-icon" />
-                                    <h3>Reporting</h3>
-                                    <p className="da-circle-desc">Visual summaries mapping real business KPIs.</p>
-                                </div>
-
-                                <div className="da-circle-personality da-dna-circle">
-                                    <FaCogs className="da-icon" />
-                                    <h3>Predictive</h3>
-                                    <p className="da-circle-desc">Algorithms mapping demand forecasts and trends.</p>
-                                </div>
-
-                                <div className="da-circle-visual da-dna-circle">
-                                    <FaCheckCircle className="da-icon" />
-                                    <h3>Optimized</h3>
-                                    <p className="da-circle-desc">Tuned indexes ensuring speed and reliability.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section className="da-howworks">
-                        <div className="da-howworks-container">
-                            <div className="da-left-side">
-                                <h2 className="da-howworks-title">Our Analytics Engine</h2>
-                                <div className="da-badge">
-                                    <span className="da-dot"></span>
-                                    Data Analytics Lifecycle
-                                </div>
-                                <p className="da-intro-text">
-                                    We deliver reliable insights through an agile, step-by-step pipeline discovery and data validation lifecycle.
-                                </p>
-                                <h2 className="da-main-title">
-                                    How It Works <br /> Step by Step
-                                </h2>
-                                <div className="da-arrow">→</div>
-                            </div>
-
-                            <div className="da-right-side">
-                                <div className="da-steps-grid">
-                                    {howItWorksSteps.map((step, index) => (
-                                        <div key={index} className="da-step-card">
-                                            <span className="da-card-dot"></span>
-                                            <h4>{step.title}</h4>
-                                            <h3>{step.heading}</h3>
-                                            <p>{step.text}</p>
-                                        </div>
+                    {/* Right: Detail Panel */}
+                    <div className="data-page-about-right-new">
+                        <div className="data-page-about-detail-panel" key={selectedService}>
+                            <span className="data-page-detail-num">{brandServices[selectedService].num}</span>
+                            <h3 className="data-page-detail-title">{brandServices[selectedService].title}</h3>
+                            <p className="data-page-detail-desc">{brandServices[selectedService].description}</p>
+                            {brandServices[selectedService].features && (
+                                <ul className="data-page-detail-features">
+                                    {brandServices[selectedService].features.map((f, fi) => (
+                                        <li key={fi} className="data-page-detail-feature-item">{f}</li>
                                     ))}
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section className="da-circular-stats">
-                        <div className="da-branding-stats-layout">
-                            <div className="da-stats-content">
-                                <h2>Our Analytics Success in Numbers</h2>
-                                <p>
-                                    Our solutions help organizations eliminate blindspots, save hours of manual reporting, and validate actions.
-                                </p>
-                                <ul className="da-impact-list">
-                                    <li>96% Data Validation Accuracy on multi-source pipelines.</li>
-                                    <li>20+ Hours saved weekly per department on manual reports.</li>
-                                    <li>-30% Overstock and waste through custom demand models.</li>
-                                    <li>100+ Enterprise dashboards successfully deployed.</li>
                                 </ul>
-                            </div>
-
-                            <div className="da-stats-wrapper-cards">
-                                <div className="da-stat-card">
-                                    <h2>100+</h2>
-                                    <p>Dashboards Built</p>
+                            )}
+                            <div className="data-page-detail-divider" />
+                            <div className="bi-detail-stats">
+                                <div className="bi-detail-stat">
+                                    <span className="bi-detail-stat-val">{brandServices[selectedService].stats?.val1}</span>
+                                    <span className="bi-detail-stat-label">{brandServices[selectedService].stats?.lab1}</span>
                                 </div>
-                                <div className="da-stat-card">
-                                    <h2>96%</h2>
-                                    <p>Data Accuracy</p>
+                                <div className="bi-detail-stat">
+                                    <span className="bi-detail-stat-val">{brandServices[selectedService].stats?.val2}</span>
+                                    <span className="bi-detail-stat-label">{brandServices[selectedService].stats?.lab2}</span>
                                 </div>
-                                <div className="da-stat-card">
-                                    <h2>4.9★</h2>
-                                    <p>Avg Rating</p>
-                                </div>
-                                <div className="da-stat-card">
-                                    <h2>20h+</h2>
-                                    <p>Saved Weekly</p>
+                                <div className="bi-detail-stat">
+                                    <span className="bi-detail-stat-val">{brandServices[selectedService].stats?.val3}</span>
+                                    <span className="bi-detail-stat-label">{brandServices[selectedService].stats?.lab3}</span>
                                 </div>
                             </div>
+                            <button className="data-page-detail-cta" onClick={() => window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=engloraytechgroup.com&su=Inquiry regarding ${encodeURIComponent(brandServices[selectedService].title)} service`, '_blank')}>Get Started →</button>
                         </div>
-
-                        <div className="da-bottom-stats">
-                            <div className="da-stat">
-                                <h3>5+</h3>
-                                <p>YEARS EXPERIENCE</p>
-                            </div>
-                            <div className="da-stat">
-                                <h3>25+</h3>
-                                <p>INDUSTRIES SERVED</p>
-                            </div>
-                            <div className="da-stat">
-                                <h3>60+</h3>
-                                <p>GLOBAL CLIENTS</p>
-                            </div>
-                            <div className="da-stat">
-                                <h3>1M+</h3>
-                                <p>ACTIVE DAILY QUERIES RUN</p>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section className="da-projects-section">
-                        <img src={projectsBg} className="da-projects-bg-left" alt="background left mirror" />
-                        <img src={projectsBg} className="da-projects-bg-right" alt="background right" />
-
-                        <div className="da-projects-logos da-left-logos">
-                            <div className="da-project-logo-card l1"><img src={logo1} className="da-project-logo" alt="brand logo" /></div>
-                            <div className="da-project-logo-card l2"><img src={logo2} className="da-project-logo" alt="brand logo" /></div>
-                            <div className="da-project-logo-card l3"><img src={logo3} className="da-project-logo" alt="brand logo" /></div>
-                            <div className="da-project-logo-card l4"><img src={logo4} className="da-project-logo" alt="brand logo" /></div>
-                            <div className="da-project-logo-card l5"><img src={logo9} className="da-project-logo" alt="brand logo" /></div>
-                            <div className="da-project-logo-card l6"><img src={logo10} className="da-project-logo" alt="brand logo" /></div>
-                        </div>
-
-                        <div className="da-projects-logos da-right-logos">
-                            <div className="da-project-logo-card r1"><img src={logo5} className="da-project-logo" alt="brand logo" /></div>
-                            <div className="da-project-logo-card r2"><img src={logo6} className="da-project-logo" alt="brand logo" /></div>
-                            <div className="da-project-logo-card r3"><img src={logo7} className="da-project-logo" alt="brand logo" /></div>
-                            <div className="da-project-logo-card r4"><img src={logo8} className="da-project-logo" alt="brand logo" /></div>
-                            <div className="da-project-logo-card r5"><img src={logo11} className="da-project-logo" alt="brand logo" /></div>
-                            <div className="da-project-logo-card r6"><img src={logo12} className="da-project-logo" alt="brand logo" /></div>
-                        </div>
-
-                        <div className="da-projects-content">
-                            <h1>Designed for <br />Leading Brands</h1>
-                            <p>
-                                We collaborate with modern companies to define their metrics layer. By combining data engineering excellence and dashboard UX, we create robust analytics systems.
-                            </p>
-                            <div className="da-projects-stats">
-                                <div><h2>30+</h2><span>Fortune 500 Partners</span></div>
-                                <div><h2>200+</h2><span>BI Implementations</span></div>
-                                <div><h2>50+</h2><span>Case Studies Done</span></div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section className="da-feedback-section">
-                        <div className="da-container">
-                            <div className="da-feedback-header">
-                                <h2 className="da-feedback-title">Success <span>Stories</span></h2>
-                                <p className="da-feedback-description">Hear how our data analytics solutions have helped businesses make smart decisions.</p>
-                            </div>
-
-                            <div className="da-feedback-carousel">
-                                {feedbacks.map((feedback, index) => {
-                                    const position = getPosition(index);
-                                    return (
-                                        <div key={feedback.id} className={`da-feedback-card ${position}`}>
-                                            <div className="da-feedback-rating">{feedback.rating}</div>
-                                            <div className="da-feedback-quote-icon">❝</div>
-                                            <p className="da-feedback-text">{feedback.text}</p>
-                                            <div className="da-feedback-author">
-                                                <div className="da-author-avatar"><div className="da-avatar-initial">{feedback.initial}</div></div>
-                                                <div>
-                                                    <div className="da-author-name">{feedback.author}</div>
-                                                    <div className="da-author-role">{feedback.role}</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    );
-                                })}
-                            </div>
-
-                            <div className="da-feedback-controls">
-                                <button onClick={handlePrevSlide} aria-label="Previous feedback">‹</button>
-                                <button onClick={handleNextSlide} aria-label="Next feedback">›</button>
-                            </div>
-                        </div>
-                    </section>
-                    <WhiteFooter />
-                    <BackToTop />
+                    </div>
                 </div>
-            </div>
-        </>
+            </section>
+
+            {/* ── Elevate Section ── */}
+            <section className="data-page-elevate-section">
+                <div className="data-page-el-container">
+                    <div className="data-page-el-left">
+                        <img
+                            src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Data analytics team at work"
+                            className="data-page-el-img-large"
+                        />
+                        <img
+                            src="https://images.unsplash.com/photo-1543286386-713bdd548da4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                            alt="Dashboard wireframing"
+                            className="data-page-el-img-small-top"
+                        />
+                        <img
+                            src="https://images.unsplash.com/photo-1599658880436-c61792e70672?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                            alt="Data pipeline engineering"
+                            className="data-page-el-img-small-bottom"
+                        />
+
+                        <div className="data-page-el-badge-volunteer">
+                            <span className="data-page-el-vol-title">Join Our Team</span>
+                            <div className="data-page-el-vol-avatars">
+                                <img src={cartoonMale1} alt="user" />
+                                <img src={cartoonMale2} alt="user" />
+                                <img src={cartoonMale3} alt="user" />
+                                <div className="data-page-el-vol-count">+14</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="data-page-el-right">
+                        <div className="data-page-el-preheading">About Us</div>
+                        <h2 className="data-page-el-title">Elevate your business<br />with data clarity</h2>
+                        <p className="data-page-el-desc">
+                            At the core of every high-performing business is a strong data strategy. We design and deliver end-to-end analytics solutions — from data infrastructure and ETL pipelines to interactive dashboards and predictive models — that give your teams the insights they need to act with confidence.
+                        </p>
+
+                        <div className="data-page-el-stats">
+                            <div className="data-page-el-stat-box">
+                                <div className="data-page-el-stat-icon">
+                                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="7" strokeDasharray="4 2" /><path d="M12 7c-1.5 1.5-1.5 4-1.5 6 1.5 0 2-2 2-2s1 3 3 1c0-2.5-2-4-3.5-5z" fill="#5b58ee" /></svg>
+                                </div>
+                                <div className="data-page-el-stat-content">
+                                    <span className="data-page-el-stat-num">250+</span>
+                                    <span className="data-page-el-stat-label">Analytics solutions delivered</span>
+                                </div>
+                            </div>
+                            <div className="data-page-el-stat-box">
+                                <div className="data-page-el-stat-icon">
+                                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="7" strokeDasharray="4 2" /><path d="M10.5 9.5a2.5 2.5 0 113 0v5a2.5 2.5 0 11-3 0v-5z" fill="#5b58ee" /></svg>
+                                </div>
+                                <div className="data-page-el-stat-content">
+                                    <span className="data-page-el-stat-num">5+ Years</span>
+                                    <span className="data-page-el-stat-label">of data expertise</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p className="data-page-el-desc">
+                            Explore a structured approach to analytics where precision meets strategy — helping you build lasting competitive advantages through better data and smarter decisions.
+                        </p>
+
+                        <button onClick={handleWhatsAppNavigation} className="data-page-el-btn">Discover More</button>
+                    </div>
+                </div>
+            </section>
+
+            {/* ── Productivity / Process Section ── */}
+            <section className="data-page-productivity-section">
+                <div className="data-page-prod-container">
+                    <div className="data-page-prod-left">
+                        <h2 className="data-page-prod-title">Power your business with a robust data strategy</h2>
+                        <p className="data-page-prod-desc">
+                            From data collection and warehousing to advanced visualization and predictive analytics, we build end-to-end solutions that turn information into your most valuable asset.
+                        </p>
+                        <div className="data-page-prod-buttons">
+                            <button onClick={handleWhatsAppNavigation} className="data-page-btn-prod-primary">Get started</button>
+                            <button onClick={handleWhatsAppNavigation} className="data-page-btn-prod-secondary">Talk to our team</button>
+                        </div>
+                        <div className="data-page-prod-avatars-box">
+                            <div className="data-page-prod-avatars">
+                                <img src={cartoonFemale1} alt="user" />
+                                <img src={cartoonFemale2} alt="user" />
+                                <img src={cartoonFemale3} alt="user" />
+                            </div>
+                            <p className="data-page-prod-avatar-text">
+                                Trusted by data-driven companies worldwide —<br />we help you find signal in the noise!
+                            </p>
+                        </div>
+                    </div>
+
+                    <div className="data-page-prod-right">
+                        <div className="data-page-prod-timeline">
+                            <div className="data-page-timeline-item">
+                                <div className="data-page-timeline-icon">
+                                    <svg viewBox="0 0 24 24" width="32" height="32" stroke="#BAFF29" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                                </div>
+                                <div className="data-page-timeline-content">
+                                    <h3>DISCOVER</h3>
+                                    <p>Audit your existing data sources, define KPIs, and map the analytics landscape unique to your business.</p>
+                                </div>
+                            </div>
+                            <div className="data-page-timeline-item">
+                                <div className="data-page-timeline-icon">
+                                    <svg viewBox="0 0 24 24" width="32" height="32" stroke="#BAFF29" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                                </div>
+                                <div className="data-page-timeline-content">
+                                    <h3>BUILD</h3>
+                                    <p>Engineer reliable data pipelines, warehouses, and visualization layers tailored to your stack and scale.</p>
+                                </div>
+                            </div>
+                            <div className="data-page-timeline-item">
+                                <div className="data-page-timeline-icon">
+                                    <svg viewBox="0 0 24 24" width="32" height="32" stroke="#BAFF29" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                                </div>
+                                <div className="data-page-timeline-content">
+                                    <h3>ACTIVATE</h3>
+                                    <p>Deliver insights to every stakeholder through live dashboards, automated reports, and alert systems.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* ── Mission / Service Cards Section ── */}
+            <section className="data-page-mission-section">
+                <div className="data-page-mission-container">
+                    <div className="data-page-mission-header">
+                        <h2 className="data-page-mission-title">
+                            Our Mission Is To Make Your<br />
+                            <span className="data-page-mission-highlight">Data Analytics</span> Smarter Through Data
+                        </h2>
+                    </div>
+
+                    <div className="data-page-services-grid">
+
+                        {/* Card 1 */}
+                        <div className="data-page-service-card bi-card-variant-1">
+                            <div className="data-page-card-header">
+                                <div className="data-page-card-title-group">
+                                    <h3 className="data-page-service-card-title">Data<br />Engineering</h3>
+                                    <p className="data-page-service-card-subtitle">Reliable pipelines</p>
+                                </div>
+                                <div className="data-page-card-badge">
+                                    <div className="data-page-badge-icon-bg">
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                                    </div>
+                                    <span className="data-page-badge-rating">4.9</span>
+                                </div>
+                            </div>
+                            <p className="data-page-service-card-desc">Design and build scalable ETL/ELT pipelines and data warehouses that consolidate your data into a single reliable source of truth.</p>
+                            <div className="data-page-service-icon-wrap">
+                                <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                            </div>
+                        </div>
+
+                        {/* Card 2 */}
+                        <div className="data-page-service-card bi-card-variant-2">
+                            <div className="data-page-card-header">
+                                <div className="data-page-card-title-group">
+                                    <h3 className="data-page-service-card-title">BI &<br />Dashboards</h3>
+                                    <p className="data-page-service-card-subtitle">Executive visibility</p>
+                                </div>
+                                <div className="data-page-card-badge">
+                                    <div className="data-page-badge-icon-bg">
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                                    </div>
+                                    <span className="data-page-badge-rating">4.8</span>
+                                </div>
+                            </div>
+                            <p className="data-page-service-card-desc">Build interactive Power BI and Tableau dashboards that translate complex data into clear, actionable stories for every level of leadership.</p>
+                            <div className="data-page-service-icon-wrap">
+                                <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" /><path d="M3 9h18M9 21V9" /></svg>
+                            </div>
+                        </div>
+
+                        {/* Card 3 */}
+                        <div className="data-page-service-card bi-card-variant-7">
+                            <div className="data-page-card-header">
+                                <div className="data-page-card-title-group">
+                                    <h3 className="data-page-service-card-title">Predictive<br />Analytics</h3>
+                                    <p className="data-page-service-card-subtitle">Forecast the future</p>
+                                </div>
+                                <div className="data-page-card-badge">
+                                    <div className="data-page-badge-icon-bg">
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                                    </div>
+                                    <span className="data-page-badge-rating">4.8</span>
+                                </div>
+                            </div>
+                            <p className="data-page-service-card-desc">Apply machine learning and statistical models to forecast demand, churn, revenue, and other critical business outcomes with confidence.</p>
+                            <div className="data-page-service-icon-wrap">
+                                <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="20" x2="18" y2="10" /><line x1="12" y1="20" x2="12" y2="4" /><line x1="6" y1="20" x2="6" y2="14" /></svg>
+                            </div>
+                        </div>
+
+                        {/* Card 4 */}
+                        <div className="data-page-service-card bi-card-variant-3">
+                            <div className="data-page-card-header">
+                                <div className="data-page-card-title-group">
+                                    <h3 className="data-page-service-card-title">Customer<br />Analytics</h3>
+                                    <p className="data-page-service-card-subtitle">Know your audience</p>
+                                </div>
+                                <div className="data-page-card-badge">
+                                    <div className="data-page-badge-icon-bg">
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                                    </div>
+                                    <span className="data-page-badge-rating">5.0</span>
+                                </div>
+                            </div>
+                            <p className="data-page-service-card-desc">Segment customers by behavior, lifetime value, and demographics to power hyper-personalized marketing and product experiences.</p>
+                            <div className="data-page-service-icon-wrap">
+                                <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                            </div>
+                        </div>
+
+                        {/* Card 5 */}
+                        <div className="data-page-service-card bi-card-variant-4">
+                            <div className="data-page-card-header">
+                                <div className="data-page-card-title-group">
+                                    <h3 className="data-page-service-card-title">Marketing<br />Analytics</h3>
+                                    <p className="data-page-service-card-subtitle">Optimize spend</p>
+                                </div>
+                                <div className="data-page-card-badge">
+                                    <div className="data-page-badge-icon-bg">
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                                    </div>
+                                    <span className="data-page-badge-rating">4.7</span>
+                                </div>
+                            </div>
+                            <p className="data-page-service-card-desc">Measure campaign ROI across every channel with attribution models, funnel analysis, and A/B testing frameworks that guide smarter budget allocation.</p>
+                            <div className="data-page-service-icon-wrap">
+                                <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                            </div>
+                        </div>
+
+                        {/* Card 6 */}
+                        <div className="data-page-service-card bi-card-variant-5">
+                            <div className="data-page-card-header">
+                                <div className="data-page-card-title-group">
+                                    <h3 className="data-page-service-card-title">Real-Time<br />Reporting</h3>
+                                    <p className="data-page-service-card-subtitle">Always current</p>
+                                </div>
+                                <div className="data-page-card-badge">
+                                    <div className="data-page-badge-icon-bg">
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                                    </div>
+                                    <span className="data-page-badge-rating">4.9</span>
+                                </div>
+                            </div>
+                            <p className="data-page-service-card-desc">Automate report generation and delivery so your teams receive the right data at the right time — without manual effort or stale numbers.</p>
+                            <div className="data-page-service-icon-wrap">
+                                <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                            </div>
+                        </div>
+
+                        {/* Card 7 */}
+                        <div className="data-page-service-card bi-card-variant-6">
+                            <div className="data-page-card-header">
+                                <div className="data-page-card-title-group">
+                                    <h3 className="data-page-service-card-title">Data<br />Governance</h3>
+                                    <p className="data-page-service-card-subtitle">Trust your data</p>
+                                </div>
+                                <div className="data-page-card-badge">
+                                    <div className="data-page-badge-icon-bg">
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                                    </div>
+                                    <span className="data-page-badge-rating">4.6</span>
+                                </div>
+                            </div>
+                            <p className="data-page-service-card-desc">Establish data quality standards, lineage tracking, and access controls that ensure every decision is based on accurate, trustworthy information.</p>
+                            <div className="data-page-service-icon-wrap">
+                                <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* ── Agency Section ── */}
+            <section className="data-page-agency-section">
+                <div className="data-page-agency-container">
+                    <div className="data-page-agency-header">
+                        <h2 className="data-page-agency-main-title">
+                            WE ARE A PROFESSIONAL<br />
+                            <span className="data-page-lime-highlight">DATA ANALYTICS AGENCY</span>
+                        </h2>
+                    </div>
+
+                    <div className="data-page-agency-grid">
+                        <div className="data-page-agency-left">
+                            <div className="data-page-agency-image-card">
+                                <div className="data-page-dot-pattern-circle"></div>
+                                <img
+                                    src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                    alt="Analytics team collaboration"
+                                    className="data-page-portrait-img"
+                                />
+                                <div className="data-page-exp-badge">
+                                    <span className="data-page-exp-number">5+</span>
+                                    <span className="data-page-exp-text">Years of<br />Experience</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="data-page-agency-right">
+                            <div className="data-page-agency-info-row">
+                                <div className="data-page-info-col">
+                                    <p className="data-page-info-subtitle">WHO WE ARE</p>
+                                    <p className="data-page-info-desc">
+                                        We are a focused team of data analysts, engineers, and strategists dedicated to turning your raw data into clear, actionable intelligence. Our mission is to equip businesses with the analytics infrastructure and insights needed to compete confidently in a data-driven world.
+                                    </p>
+                                </div>
+                                <div className="data-page-info-features">
+                                    <p className="data-page-info-subtitle">WHY CHOOSE US</p>
+                                    <ul className="data-page-features-list">
+                                        <li><span className="data-page-check-icon">✓</span> Top Guaranteed Results</li>
+                                        <li><span className="data-page-check-icon">✓</span> Team of Data & BI Experts</li>
+                                        <li><span className="data-page-check-icon">✓</span> 250+ Analytics Projects Delivered</li>
+                                        <li><span className="data-page-check-icon">✓</span> 5+ Years of Data Expertise</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div className="data-page-agency-bottom-img-wrap">
+                                <div className="data-page-dot-pattern-square"></div>
+                                <img
+                                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                    alt="Analytics dashboard in action"
+                                    className="data-page-landscape-img"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* ── Testimonials ── */}
+            <section className="data-page-testimonial-section">
+                <div className="data-page-testimonial-container">
+                    <p className="data-page-testimonial-label">Testimonial</p>
+                    <h2 className="data-page-testimonial-heading">We Care About Our Customers<br />Experience Too</h2>
+
+                    <div className="data-page-testimonial-scroll-wrapper">
+                        <div className="data-page-testimonial-scroll-mask-left"></div>
+                        <div className="data-page-testimonial-grid-horizontal">
+                            {[...feedbacks, ...feedbacks].map((feedback, index) => (
+                                <div className="data-page-testimonial-card-horizontal" key={`${feedback.id}-${index}`}>
+                                    <div className="data-page-testimonial-avatar-wrap">
+                                        <img src={feedback.photo} alt={feedback.name} className="data-page-testimonial-avatar" />
+                                    </div>
+                                    <h4 className="data-page-testimonial-name">{feedback.name}</h4>
+                                    <p className="data-page-testimonial-role">{feedback.role}</p>
+                                    <p className="data-page-testimonial-text">{feedback.text}</p>
+                                    <div className="data-page-testimonial-stars">
+                                        {Array.from({ length: feedback.stars }).map((_, i) => (
+                                            <span key={i} className="data-page-star filled">★</span>
+                                        ))}
+                                        {Array.from({ length: 5 - feedback.stars }).map((_, i) => (
+                                            <span key={i} className="data-page-star">★</span>
+                                        ))}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                        <div className="data-page-testimonial-scroll-mask-right"></div>
+                    </div>
+                </div>
+            </section>
+
+            <TSPFFooter />
+            <BackToTop />
+        </div>
     );
 };
 

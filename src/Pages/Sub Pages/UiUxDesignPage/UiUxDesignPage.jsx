@@ -3,7 +3,7 @@ import Navbar from '../../../Components/Navbar/Navbar';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import './UiUxDesign.css';
-import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
+// import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 import avatarTwo from '../../../assets/cartoon_male_1.png';
 import avatarThree from '../../../assets/cartoon_female_1.png';
 import avatarFour from '../../../assets/cartoon_female_2.png';
@@ -316,9 +316,9 @@ const UiUxDesignPage = () => {
                     {/* Right: Detail Panel - pops content when service is clicked */}
                     <div className="uiux-page-about-right-new">
                         <div className="uiux-page-about-detail-panel" key={selectedService}>
-                            <div className="uiux-page-detail-icon-wrap">
+                            {/* <div className="uiux-page-detail-icon-wrap">
                                 <span className="uiux-page-detail-icon">{brandServices[selectedService].icon}</span>
-                            </div>
+                            </div> */}
                             <span className="uiux-page-detail-num">{brandServices[selectedService].num}</span>
                             <h3 className="uiux-page-detail-title">{brandServices[selectedService].title}</h3>
                             <p className="uiux-page-detail-desc">{brandServices[selectedService].description}</p>
@@ -769,7 +769,7 @@ const UiUxDesignPage = () => {
                 </div>
             </section>
             {/* <TSPFFooter /> */}
-            <WhiteFooter />
+            {/* <WhiteFooter /> */}
             <BackToTop />
         </div>
     );
