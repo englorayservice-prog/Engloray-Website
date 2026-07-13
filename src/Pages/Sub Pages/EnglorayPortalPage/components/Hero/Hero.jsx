@@ -105,7 +105,7 @@ export const Hero = ({ onOpenApply }) => {
       <div
         style={{
           position: 'relative', zIndex: 1,
-          maxWidth: '95%', margin: '0 auto',
+          maxWidth: '1200px', margin: '0 auto',
           width: '100%',
           minWidth: 0,
           padding: '10px 24px 10px',
@@ -139,7 +139,7 @@ export const Hero = ({ onOpenApply }) => {
             transition={{ duration: 0.5, delay: 0.08 }}
           >
             <h1 style={{
-              fontFamily: "'Plus Jakarta Sans', sans-serif",
+              fontFamily: "'HEXCO', 'Matimo', 'Plus Jakarta Sans', sans-serif",
               fontWeight: 800,
               fontSize: 'clamp(1.9rem, 4.2vw, 3.1rem)',
               lineHeight: 1.1,
@@ -210,7 +210,7 @@ export const Hero = ({ onOpenApply }) => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.3 }}
-            style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', alignItems: 'center' }}
+            style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', width: '100%' }}
           >
             <button
               onClick={onOpenApply}
@@ -220,20 +220,7 @@ export const Hero = ({ onOpenApply }) => {
               <FaRocket style={{ fontSize: '0.78rem' }} />
               Start Your Journey
             </button>
-            <button
-              onClick={() => setVideoOpen(true)}
-              className="btn-outline-purple"
-              style={{ display: 'inline-flex', alignItems: 'center', gap: '7px', padding: '10px 20px' }}
-            >
-              <span style={{
-                width: '24px', height: '24px', borderRadius: '50%',
-                background: 'rgba(108,76,241,0.1)',
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-              }}>
-                <FaPlay style={{ fontSize: '0.5rem', marginLeft: '2px', color: '#6C4CF1' }} />
-              </span>
-              How It Works
-            </button>
+            
           </motion.div>
 
           {/* Social proof + stats in one compact row */}

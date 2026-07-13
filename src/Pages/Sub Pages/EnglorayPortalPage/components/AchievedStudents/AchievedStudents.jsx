@@ -17,7 +17,7 @@ const partnerLogos = [
   { name: 'Hiring Partner 5', src: logo5 }
 ];
 
-export function AchievedStudents() {
+export const AchievedStudents = () => {
   const [placementCount, setPlacementCount] = useState(0);
 
   useEffect(() => {
@@ -242,6 +242,6 @@ export function AchievedStudents() {
       </div>
     </section>
   );
-}
+};
 
 export default AchievedStudents;

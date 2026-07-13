@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { motion, useScroll, useTransform, useMotionValue, animate } from 'framer-motion';
+import { motion, useScroll, useTransform, useMotionValue, animate, useSpring } from 'framer-motion';
 import {
   FiTrendingUp,
   FiCheckCircle,
@@ -27,7 +27,7 @@ function GrowthChart({ progress, variant }) {
   const isAfter = variant === 'after';
   const [selectedKey, setSelectedKey] = React.useState('CODE');
 
-  const scaleVal = useTransform(progress, [0.25, 0.85], [0.15, 1.0]);
+  const scaleVal = useTransform(progress, [0.20, 0.70], [0.15, 1.0]);
 
   const stats = {
     CODE: { name: 'Coding Fluency', before: '15%', after: '95%', color: '#0ea5e9', desc: 'Clean architecture, deep framework usage, and dry patterns.' },
@@ -161,130 +161,84 @@ function GrowthChart({ progress, variant }) {
 export default function JourneySlider() {
   const containerRef = useRef(null);
 
-  const controlledProgress = useMotionValue(0);
-  const [paused, setPaused] = useState(false);
-  const [revealed, setRevealed] = useState(false);
+  const rawProgress = useMotionValue(0);
+  const smoothProgress = useSpring(rawProgress, {
+    damping: 35,
+    stiffness: 150,
+    mass: 0.2
+  });
 
   const getLiveProgress = () => {
     if (!containerRef.current) return 0;
     const rect = containerRef.current.getBoundingClientRect();
-    const scrollableRange = rect.height - window.innerHeight;
-    if (scrollableRange <= 0) return 0;
-    return Math.max(0, Math.min(1, -rect.top / scrollableRange));
+    const vh = window.innerHeight;
+    const stickyTop = 0.07 * vh;
+    const stickyHeight = 0.86 * vh;
+    const totalScrollRange = rect.height - stickyHeight - stickyTop;
+    if (totalScrollRange <= 0) return 0;
+    
+    // Calculate progress zoom-safely from the exact moment sticky pinning starts
+    const scrolled = stickyTop - rect.top;
+    return Math.max(0, Math.min(1, scrolled / totalScrollRange));
   };
 
-  // Keep controlledProgress synced to scroll when not paused.
   useEffect(() => {
     const handleScroll = () => {
-      if (paused) return;
-      controlledProgress.set(getLiveProgress());
+      if (!containerRef.current) return;
+      rawProgress.set(getLiveProgress());
     };
-
-    // Initialize progress on mount
-    handleScroll();
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     window.addEventListener('resize', handleScroll);
+    
+    // Check initial state
+    handleScroll();
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleScroll);
     };
-  }, [paused, controlledProgress]);
+  }, [rawProgress]);
 
-  // IntersectionObserver: when section is mostly visible, pause and run reveal.
+  const [prefersReduced, setPrefersReduced] = useState(false);
   useEffect(() => {
-    const el = containerRef.current;
-    if (!el || revealed) return;
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setPrefersReduced(mediaQuery.matches);
+    const listener = (e) => setPrefersReduced(e.matches);
+    mediaQuery.addEventListener('change', listener);
+    return () => mediaQuery.removeEventListener('change', listener);
+  }, []);
 
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          // threshold chosen to trigger when majority of sticky is visible
-          if (entry.isIntersecting && entry.intersectionRatio >= 0.3 && !revealed) {
-            setPaused(true);
-            const current = getLiveProgress();
-            controlledProgress.set(current);
+  const staticProgress = useMotionValue(0.72);
+  const progress = prefersReduced ? staticProgress : smoothProgress;
 
-            // Respect reduced motion preference
-            const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-            if (prefersReduced) {
-              setRevealed(true);
-              // resume sync immediately
-              controlledProgress.set(getLiveProgress());
-              setPaused(false);
-              return;
-            }
-
-            // Animate controlledProgress forward to a value that reveals the "after" state,
-            // then resume by syncing back to real scroll position.
-            const revealTarget = 0.72; // value that maps to the revealed clip/after texts
-            animate(controlledProgress, revealTarget, { duration: 1.3, ease: [0.22, 0.8, 0.2, 1] }).then(() => {
-              setRevealed(true);
-              // short pause after reveal then resume
-              setTimeout(() => {
-                const currentNow = getLiveProgress();
-                // animate controlledProgress back to live scroll to avoid jump
-                animate(controlledProgress, currentNow, { duration: 0.35 }).then(() => {
-                  setPaused(false);
-                });
-              }, 350);
-            });
-          }
-        });
-      },
-      { threshold: [0.0, 0.25, 0.3, 0.6, 0.9] }
-    );
-
-    io.observe(el);
-    return () => io.disconnect();
-  }, [containerRef, controlledProgress, revealed]);
-
-  const progress = controlledProgress;
-
-  const clipPercentage = useTransform(progress, [0.08, 0.92], [100, 0]);
+  const clipPercentage = useTransform(progress, [0.10, 0.70], [100, 0]);
   const clipPathStyle  = useTransform(clipPercentage, (pct) => `polygon(0 0, ${pct}% 0, ${pct}% 100%, 0 100%)`);
-  const barrierOpacity     = useTransform(progress, [0, 0.35, 0.75, 1], [1, 0.9, 0.6, 0.15]);
-  const headerOpacity      = useTransform(progress, [0, 0.15, 0.85, 1], [1, 1, 0.8, 0]);
-  const headerY            = useTransform(progress, [0, 0.12], [-16, 0]);
-  const beforeNumberOpacity= useTransform(progress, [0, 0.08, 0.28], [1, 0.9, 0.3]);
-  const afterBarWidth      = useTransform(progress, [0.18, 0.82], ['0%', '99%']);
-  const beforeBarWidth     = useTransform(progress, [0, 0.38], ['90%', '8%']);
+  const barrierOpacity     = useTransform(progress, [0.10, 0.45, 0.70], [1, 0.9, 0.15]);
+  const headerOpacity      = 1;
+  const headerY            = 0;
+  const beforeNumberOpacity= useTransform(progress, [0.0, 0.15, 0.45], [1, 0.9, 0.2]);
+  const afterBarWidth      = useTransform(progress, [0.20, 0.70], ['0%', '99%']);
+  const beforeBarWidth     = useTransform(progress, [0.0, 0.45], ['90%', '8%']);
 
-  const beforeTextOpacity  = useTransform(progress, [0.08, 0.44], [1, 0]);
-  const beforeTextY        = useTransform(progress, [0.08, 0.44], [0, -14]);
-  const afterTextOpacity   = useTransform(progress, [0.56, 0.92], [0, 1]);
-  const afterTextY         = useTransform(progress, [0.56, 0.92], [14, 0]);
+  const beforeTextOpacity  = useTransform(progress, [0.10, 0.45], [1, 0]);
+  const beforeTextY        = useTransform(progress, [0.10, 0.45], [0, -10]);
+  const afterTextOpacity   = useTransform(progress, [0.35, 0.70], [0, 1]);
+  const afterTextY         = useTransform(progress, [0.35, 0.70], [10, 0]);
 
-  const cardScale = useTransform(progress, [0, 0.07], [0.96, 1]);
-  const cardY     = useTransform(progress, [0, 0.07], [10, -28]);
+  const cardScale = useTransform(progress, [0.0, 0.70, 0.95, 1.0], [0.95, 1.0, 1.0, 0.98]);
+  const cardOpacity = useTransform(progress, [0.0, 0.65], [0.80, 1.0]);
+  const cardY     = useTransform(progress, [0.0, 0.70], [15, 0]);
 
-  const blobOneY = useTransform(progress, [0, 1], [-30, 60]);
-  const blobTwoY = useTransform(progress, [0, 1], [40, -70]);
+  const blobOneY = useTransform(progress, [0, 1], [-40, 80]);
+  const blobTwoY = useTransform(progress, [0, 1], [60, -90]);
 
-  const afterCountRaw  = useTransform(progress, [0.20, 0.82], [0, 99]);
+  const afterCountRaw  = useTransform(progress, [0.20, 0.70], [0, 99]);
   const afterCountText = useTransform(afterCountRaw, (v) => `${Math.round(v)}%`);
 
   return (
-    <div ref={containerRef} className="relative z-10 h-[150vh] section-light text-brand-navy">
-      <style>{`
-        .journey-card-custom {
-          height: auto !important;
-          min-height: 280px !important;
-        }
-        @media (min-width: 640px) {
-          .journey-card-custom {
-            min-height: 320px !important;
-          }
-        }
-        @media (min-width: 768px) {
-          .journey-card-custom {
-            height: 44vh !important;
-            min-height: 300px !important;
-            max-height: 390px !important;
-          }
-        }
-      `}</style>
-      <div className="sticky top-[22vh] z-20 h-[68vh] w-full overflow-hidden flex flex-col justify-between items-center pt-[40px] pb-3 px-3 sm:px-5 md:px-11 select-none">
+    <div ref={containerRef} className="relative z-10 h-[200vh] section-light text-brand-navy">
+      <div className="sticky top-[7vh] z-20 h-[86vh] w-full overflow-hidden flex flex-col justify-center gap-2 sm:gap-3 py-2 sm:py-3 px-3 sm:px-5 md:px-11 select-none">
         <motion.div
           style={{ y: blobOneY }}
           className="absolute top-1/4 left-1/4 w-[220px] sm:w-[500px] h-[220px] sm:h-[500px] bg-brand-sky/5 rounded-full blur-[80px] sm:blur-[140px] pointer-events-none"
@@ -296,7 +250,7 @@ export default function JourneySlider() {
 
         {/* Ambient floating icons for a bit of student-friendly playfulness */}
         <motion.div
-          className="hidden md:block absolute top-[25%] left-[8%] text-brand-sky/20 pointer-events-none"
+          className="hidden md:block absolute top-[18%] left-[8%] text-brand-sky/20 pointer-events-none"
           animate={{ y: [0, -10, 0], rotate: [0, 6, 0] }}
           transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
         >
@@ -310,7 +264,7 @@ export default function JourneySlider() {
           <FiTerminal size={28} />
         </motion.div>
 
-          <div className="relative z-30 max-w-2xl mx-auto text-center pointer-events-none">
+        <div className="relative z-30 max-w-2xl mx-auto text-center pointer-events-none">
           <motion.div
             style={{ opacity: headerOpacity, y: headerY }}
             className="space-y-1 sm:space-y-1.5 section-heading-glow"
@@ -325,8 +279,8 @@ export default function JourneySlider() {
         </div>
 
         <motion.div
-          style={{ scale: cardScale, y: cardY }}
-          className="journey-card-custom relative w-full max-w-6xl mx-auto bg-white rounded-2xl sm:rounded-3xl border border-gray-100 overflow-hidden shadow-xl flex flex-col md:flex-row items-stretch justify-between gap-3 sm:gap-5 p-4 sm:p-5"
+          style={{ scale: cardScale, y: cardY, opacity: cardOpacity }}
+          className="relative w-full max-w-6xl mx-auto h-[52vh] max-h-[480px] min-h-[450px] sm:min-h-[380px] bg-white rounded-2xl sm:rounded-3xl border border-gray-100 overflow-hidden shadow-xl flex flex-col md:flex-row items-stretch justify-between gap-3 sm:gap-5 p-3 sm:p-4 md:p-5"
         >
           <div className="absolute inset-0 bg-gradient-to-br from-white via-slate-50 to-white opacity-90" />
 
@@ -347,13 +301,13 @@ export default function JourneySlider() {
                 Endless scrolling through coding videos but unable to build a project from scratch or crack technical screenings.
               </p>
               <ul className="space-y-1.5 text-[10.5px] sm:text-xs text-gray-600 font-poppins">
-                <StaggerItem progress={progress} range={[0.06, 0.2]} index={0}>
+                <StaggerItem progress={progress} range={[0.05, 0.15]} index={0}>
                   <div className="flex items-center gap-2 hover:translate-x-1.5 transition-transform duration-300 cursor-pointer">
                     <FiAlertCircle className="text-rose-400 shrink-0" />
                     <span>Locked in tutorial loops with no live system practice</span>
                   </div>
                 </StaggerItem>
-                <StaggerItem progress={progress} range={[0.06, 0.2]} index={1}>
+                <StaggerItem progress={progress} range={[0.05, 0.15]} index={1}>
                   <div className="flex items-center gap-2 hover:translate-x-1.5 transition-transform duration-300 cursor-pointer">
                     <FiAlertCircle className="text-rose-400 shrink-0" />
                     <span>Resumes ignored due to lack of production deployments</span>
@@ -377,13 +331,13 @@ export default function JourneySlider() {
                 Build real-world microservices, deploy on live clouds, work in developer sprints, and land top-tier tech roles.
               </p>
               <ul className="space-y-1.5 text-[10.5px] sm:text-xs text-gray-700 font-poppins">
-                <StaggerItem progress={progress} range={[0.56, 0.78]} index={0}>
+                <StaggerItem progress={progress} range={[0.45, 0.70]} index={0}>
                   <div className="flex items-center gap-2 hover:translate-x-1.5 hover:text-brand-sky transition-all duration-300 cursor-pointer">
                     <FiCheckCircle className="text-brand-sky shrink-0" />
                     <span>Deploy scalable systems with container orchestration</span>
                   </div>
                 </StaggerItem>
-                <StaggerItem progress={progress} range={[0.56, 0.78]} index={1}>
+                <StaggerItem progress={progress} range={[0.45, 0.70]} index={1}>
                   <div className="flex items-center gap-2 hover:translate-x-1.5 hover:text-brand-sky transition-all duration-300 cursor-pointer">
                     <FiCheckCircle className="text-brand-sky shrink-0" />
                     <span>Direct referrals, verified resume audits, and mock rounds</span>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaBars, FaTimes, FaRocket } from 'react-icons/fa';
+import englorayLogo from '../../assets/image.png';
 
 export const Navbar = ({ onOpenApply }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -40,7 +41,7 @@ export const Navbar = ({ onOpenApply }) => {
           style={{ padding: 0 }}
         >
           <img
-            src="/logo_generation.png"
+            src={englorayLogo}
             alt="Engloray"
             className="h-11 md:h-13 w-auto object-contain"
             style={{ display: 'block' }}

@@ -3,6 +3,7 @@
 .project-learning-section {
   position: relative;
   overflow: hidden;
+  background-color: #070D19 !important;
 }
 
 /* ── Shared dark panel shell (timeline card + dashboard card) ── */
@@ -52,9 +53,9 @@
 .pl-step {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
+  gap: 12px;
   position: relative;
-  padding-bottom: 10px;
+  padding-bottom: 18px;
 }
 .pl-step:last-child {
   padding-bottom: 0;
@@ -62,8 +63,8 @@
 
 .pl-step-connector {
   position: absolute;
-  left: 12px;
-  top: 26px;
+  left: 15px;
+  top: 32px;
   bottom: -2px;
   width: 2px;
   background: rgba(255, 255, 255, 0.08);
@@ -74,13 +75,13 @@
 }
 
 .pl-step-icon {
-  width: 26px;
-  height: 26px;
+  width: 32px;
+  height: 32px;
   border-radius: 9999px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 11px;
+  font-size: 13px;
   flex-shrink: 0;
   z-index: 2;
   background: #131d35;
@@ -108,7 +109,7 @@
 }
 
 .pl-step-label {
-  font-size: 11.5px;
+  font-size: 13px;
   font-weight: 700;
   color: #64748b;
   transition: color 0.3s ease;
@@ -118,7 +119,7 @@
   color: #e2e8f0;
 }
 .pl-step-sub {
-  font-size: 9.5px;
+  font-size: 10.5px;
   color: #475569;
   margin-top: 1px;
 }
@@ -187,4 +188,58 @@
   font-size: 11px;
   font-weight: 700;
   color: #38bdf8;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ── Achievement tiles (2x2 outcomes grid) ── */
+.pl-achv-tile {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: rgba(19, 29, 53, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 16px 20px;
+  transition: border-color 0.3s ease;
+}
+.pl-achv-tile:hover {
+  border-color: rgba(56, 189, 248, 0.3);
+}
+.pl-achv-icon-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.pl-achv-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 9999px;
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  color: #38bdf8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+.pl-achv-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.pl-achv-desc {
+  font-size: 11px;
+  color: #94a3b8;
+  line-height: 1.6;
+  font-family: 'Poppins', sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

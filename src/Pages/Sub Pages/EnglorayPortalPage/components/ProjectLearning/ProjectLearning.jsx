@@ -20,14 +20,6 @@ const lifecycleSteps = [
 
 const techStack = ['React', 'Node.js', 'PostgreSQL', 'Docker', 'AWS'];
 
-// Rotating dashboard metric — cycles through all four numbers in one tile
-const rotatingMetrics = [
-  { label: 'Student Projects', value: 120, suffix: '+' },
-  { label: 'Live Deployments', value: 85, suffix: '+' },
-  { label: 'Mentor Code Reviews', value: 482, suffix: '' },
-  { label: 'Graduate Portfolios', value: 500, suffix: '+' }
-];
-
 // Right-column outcome grid — a fixed 2x2 grid of the four core outcomes.
 const achievements = [
   { icon: FaCode, title: 'Live Projects', desc: 'Build & ship 3+ live production apps.' },
@@ -36,33 +28,13 @@ const achievements = [
   { icon: FaFileAlt, title: 'Career Portfolio', desc: 'Graduate with verified linkable credentials.' }
 ];
 
-// Single-line rotator under the paragraph — carries the "before vs after" and
-// outcome messaging without adding a new visual block.
+// Single-line rotator under the paragraph
 const outcomeTicker = [
   'From tutorial exercises → to production code',
   'From individual studies → to team collaborations',
   'From blank resumes → to linkable portfolios',
   'From raw uncertainty → to interview readiness'
 ];
-
-// ─── Count-up used inside the rotating dashboard tile ───────────────────────
-function Counter({ to, duration = 1.1, suffix = '' }) {
-  const [value, setValue] = useState(0);
-  useEffect(() => {
-    let start;
-    let raf;
-    setValue(0);
-    const step = (ts) => {
-      if (!start) start = ts;
-      const progress = Math.min((ts - start) / (duration * 1000), 1);
-      setValue(Math.round(to * progress));
-      if (progress < 1) raf = requestAnimationFrame(step);
-    };
-    raf = requestAnimationFrame(step);
-    return () => cancelAnimationFrame(raf);
-  }, [to, duration]);
-  return <>{value}{suffix}</>;
-}
 
 // ─── One static achievement tile in the 2x2 outcomes grid ──────────────────
 function AchievementTile({ icon: Icon, title, desc }) {
@@ -75,25 +47,25 @@ function AchievementTile({ icon: Icon, title, desc }) {
       initial={{ opacity: 0, y: 10 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.3 }}
-      className="flex flex-col gap-1 bg-white/[0.03] border border-white/5 rounded-lg p-2 sm:p-2.5"
+      className="pl-achv-tile"
     >
-      <div className="flex items-center gap-1.5">
-        <span className="w-5 h-5 rounded-full bg-brand-sky/10 border border-brand-sky/25 text-brand-sky flex items-center justify-center text-[9px] shrink-0">
+      <div className="pl-achv-icon-row">
+        <span className="pl-achv-icon">
           <Icon />
         </span>
-        <h4 className="text-[10.5px] sm:text-[11px] font-bold text-white whitespace-nowrap overflow-hidden text-ellipsis">
+        <h4 className="pl-achv-title">
           {title}
         </h4>
       </div>
-      <p className="text-[9px] sm:text-[9.5px] text-slate-400 leading-snug font-poppins">{desc}</p>
+      <p className="pl-achv-desc">{desc}</p>
     </motion.div>
   );
 }
 
 export const ProjectLearning = ({ onOpenApply }) => {
-  const [activeIndex, setActiveIndex] = useState(0);
+  // Start with active step = 1 (Guided Development) so it matches the reference image configuration on load
+  const [activeIndex, setActiveIndex] = useState(1);
   const [autoPlay, setAutoPlay] = useState(true);
-  const [metricIdx, setMetricIdx] = useState(0);
   const [tickerIdx, setTickerIdx] = useState(0);
 
   // Auto-advance the lifecycle timeline, looping back to the start
@@ -104,14 +76,6 @@ export const ProjectLearning = ({ onOpenApply }) => {
     }, 2200);
     return () => clearInterval(interval);
   }, [autoPlay]);
-
-  // Rotate the dashboard's headline metric every 2.6s
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setMetricIdx((prev) => (prev + 1) % rotatingMetrics.length);
-    }, 2600);
-    return () => clearInterval(interval);
-  }, []);
 
   // Rotate the "before → after" outcome ticker under the paragraph
   useEffect(() => {
@@ -129,17 +93,21 @@ export const ProjectLearning = ({ onOpenApply }) => {
 
   const sprintProgress = Math.round(((activeIndex + 1) / lifecycleSteps.length) * 100);
   const isFinalStepActive = activeIndex === lifecycleSteps.length - 1;
-  const currentMetric = rotatingMetrics[metricIdx];
 
   return (
-    <section className="relative z-10 w-full py-2 section-dark border-b border-white/5 project-learning-section" id="project-learning">
+    <section 
+      className="relative z-10 w-full py-12 border-b border-white/5 project-learning-section" 
+      id="project-learning"
+      style={{ backgroundColor: '#070D19' }}
+    >
       {/* Decorative grid pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:3rem_3rem] pointer-events-none" />
+      
       <div className="max-w-5xl w-full mx-auto px-4 relative z-10">
 
         {/* Centered section header */}
-        <div className="flex flex-col items-center text-center mb-1.5">
-          <div className="w-8 h-8 rounded-lg bg-brand-sky flex items-center justify-center text-white text-sm mb-1.5 shadow-glow-sky">
+        <div className="flex flex-col items-center text-center mb-10">
+          <div className="w-8 h-8 rounded-lg bg-brand-sky flex items-center justify-center text-white text-sm mb-3 shadow-glow-sky">
             <FaLaptopCode />
           </div>
           <span className="text-[10px] text-brand-sky tracking-widest uppercase font-bold block mb-1 font-aldrich">
@@ -151,15 +119,15 @@ export const ProjectLearning = ({ onOpenApply }) => {
         </div>
 
         {/* Project lifecycle timeline (left 38%) — dashboard + outcomes (right 62%) */}
-        <div className="grid grid-cols-1 md:grid-cols-[38%_1fr] gap-2 sm:gap-3 items-start mb-1">
+        <div className="flex flex-col md:flex-row gap-6 items-start mb-8">
 
           {/* Interactive lifecycle timeline card */}
-          <div className="pl-panel w-full relative">
+          <div className="pl-panel w-full relative md:w-[38%] md:shrink-0">
             <div className="pl-panel-header">
               <div className="dot dot-red" />
               <div className="dot dot-yellow" />
               <div className="dot dot-green" />
-              <span className="pl-panel-title">Project Lifecycle // Live</span>
+              <span className="pl-panel-title">PROJECT LIFECYCLE // LIVE</span>
             </div>
 
             <div className="pl-timeline">
@@ -189,9 +157,9 @@ export const ProjectLearning = ({ onOpenApply }) => {
           </div>
 
           {/* RIGHT: Compact live dashboard + outcomes stacked directly below it */}
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-6 w-full md:w-[62%]">
 
-            {/* Live project dashboard — reduced size */}
+            {/* Live project dashboard */}
             <div className="pl-panel w-full">
               <div className="pl-dash-row-sm">
                 <div className="flex items-center gap-1.5">
@@ -200,18 +168,18 @@ export const ProjectLearning = ({ onOpenApply }) => {
                 </div>
                 <div className="flex items-center gap-1 shrink-0">
                   <span className="pl-live-dot" />
-                  <span className="text-[9px] font-mono font-bold text-green-400 uppercase">Live</span>
+                  <span className="text-[9px] font-mono font-bold text-green-400 uppercase">LIVE</span>
                 </div>
               </div>
 
-              <div className="p-3 flex flex-col gap-2.5">
+              <div className="p-4 flex flex-col gap-3.5">
                 {/* Sprint progress */}
                 <div>
-                  <div className="flex items-center justify-between mb-1">
-                    <span className="text-[9px] font-mono font-bold text-slate-400 uppercase tracking-wide">Sprint Progress</span>
-                    <span className="text-[9px] font-mono font-bold text-brand-sky">{sprintProgress}%</span>
+                  <div className="flex items-center justify-between mb-1.5">
+                    <span className="text-[9.5px] font-mono font-bold text-slate-400 uppercase tracking-widest">SPRINT PROGRESS</span>
+                    <span className="text-[9.5px] font-mono font-bold text-brand-sky">{sprintProgress}%</span>
                   </div>
-                  <div className="w-full bg-white/5 h-1 rounded-full overflow-hidden">
+                  <div className="w-full bg-[#1e293b] h-1.5 rounded-full overflow-hidden">
                     <motion.div
                       className="h-full bg-gradient-to-r from-brand-sky to-sky-400"
                       animate={{ width: `${sprintProgress}%` }}
@@ -220,32 +188,20 @@ export const ProjectLearning = ({ onOpenApply }) => {
                   </div>
                 </div>
 
-                {/* Stat tiles — first tile rotates through all four counters */}
-                <div className="grid grid-cols-3 gap-1.5">
+                {/* Stat tiles */}
+                <div className="grid grid-cols-3 gap-2">
                   <div className="pl-stat-tile-sm">
-                    <AnimatePresence mode="wait">
-                      <motion.div
-                        key={metricIdx}
-                        initial={{ opacity: 0, y: 6 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -6 }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        <div className="pl-stat-label-sm truncate">{currentMetric.label}</div>
-                        <div className="pl-stat-value-sm">
-                          <Counter to={currentMetric.value} suffix={currentMetric.suffix} />
-                        </div>
-                      </motion.div>
-                    </AnimatePresence>
+                    <div className="pl-stat-label-sm truncate">GRADUATE PORTFOLIOS</div>
+                    <div className="pl-stat-value-sm">68+</div>
                   </div>
                   <div className="pl-stat-tile-sm">
-                    <div className="pl-stat-label-sm">Mentor</div>
+                    <div className="pl-stat-label-sm">MENTOR</div>
                     <div className="pl-stat-value-sm flex items-center gap-1">
                       4.9 <FaStar className="text-yellow-400 text-[10px]" />
                     </div>
                   </div>
                   <div className="pl-stat-tile-sm">
-                    <div className="pl-stat-label-sm">Deploy</div>
+                    <div className="pl-stat-label-sm">DEPLOY</div>
                     <div className="pl-stat-value-sm text-green-400">
                       {isFinalStepActive ? 'Shipped' : 'Deployed'}
                     </div>
@@ -255,7 +211,7 @@ export const ProjectLearning = ({ onOpenApply }) => {
                 {/* Tech stack chips */}
                 <div className="flex flex-wrap gap-1.5">
                   {techStack.map((tech) => (
-                    <span key={tech} className="feature-badge text-[9px] font-mono text-brand-sky px-2 py-0.5 rounded-full">
+                    <span key={tech} className="feature-badge text-[9px] font-mono text-brand-sky px-2.5 py-0.5 rounded-full">
                       {tech}
                     </span>
                   ))}
@@ -263,9 +219,9 @@ export const ProjectLearning = ({ onOpenApply }) => {
               </div>
             </div>
 
-            {/* Outcomes: ticker + fixed 2x2 outcomes grid + CTA — placed directly below the dashboard */}
-            <div className="flex flex-col">
-              <div className="h-4 mb-2 flex items-center">
+            {/* Outcomes: ticker + fixed 2x2 outcomes grid */}
+            <div className="flex flex-col gap-3">
+              <div className="h-5 flex items-center">
                 <AnimatePresence mode="wait">
                   <motion.span
                     key={tickerIdx}
@@ -273,25 +229,29 @@ export const ProjectLearning = ({ onOpenApply }) => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -6 }}
                     transition={{ duration: 0.35 }}
-                    className="pl-outcomes-rotator font-poppins"
+                    className="pl-outcomes-rotator font-poppins text-xs"
                   >
                     {outcomeTicker[tickerIdx]}
                   </motion.span>
                 </AnimatePresence>
               </div>
 
-              <div className="grid grid-cols-2 gap-1.5 mb-2">
+              <div className="relative grid grid-cols-2 gap-3 mb-16">
                 {achievements.map((item) => (
                   <AchievementTile key={item.title} icon={item.icon} title={item.title} desc={item.desc} />
                 ))}
-              </div>
 
-              <button
-                onClick={onOpenApply}
-                className="self-center text-xs font-bold px-5 py-2.5 rounded-full bg-white hover:bg-brand-sky text-brand-navy hover:text-white shadow-sm hover:shadow-glow-sky transition-all hover:scale-105 active:scale-95 border-none cursor-pointer"
-              >
-                Explore Project Track
-              </button>
+                {/* Explore Button - Centered horizontally at the bottom of the 2x2 grid */}
+                <div className="absolute left-1/2 bottom-[-10] -translate-x-1/2 z-30">
+                  <button
+                    onClick={onOpenApply}
+                    className="font-bold px-6 py-2.5 rounded-full bg-white hover:bg-brand-sky text-slate-900 hover:text-white shadow-xl hover:shadow-glow-sky transition-all hover:scale-105 active:scale-95 border border-slate-800 cursor-pointer text-[10px] sm:text-xs whitespace-nowrap"
+                    style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+                  >
+                    Explore the project
+                  </button>
+                </div>
+              </div>
             </div>
 
           </div>
