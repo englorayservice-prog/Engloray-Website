@@ -17,6 +17,7 @@ const Chatbot = () => {
     }
   ]);
   const messagesEndRef = useRef(null);
+  const [isIntroActive, setIsIntroActive] = useState(false);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -25,6 +26,19 @@ const Chatbot = () => {
   useEffect(() => {
     scrollToBottom();
   }, [messages, isOpen]);
+
+  useEffect(() => {
+    const checkIntro = () => {
+      const introEl = document.querySelector('.entry-intro-wrapper');
+      setIsIntroActive(!!introEl);
+    };
+
+    checkIntro();
+    const observer = new MutationObserver(checkIntro);
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    return () => observer.disconnect();
+  }, []);
 
   const toggleChat = () => {
     setIsOpen(!isOpen);
@@ -91,6 +105,8 @@ const Chatbot = () => {
       setMessages(prev => [...prev, { text: botResponse, sender: "bot", time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) }]);
     }, 500); // 500ms delay to simulate typing/thinking
   };
+
+  if (isIntroActive) return null;
 
   return (
     <div className="engloray-chatbot-container">

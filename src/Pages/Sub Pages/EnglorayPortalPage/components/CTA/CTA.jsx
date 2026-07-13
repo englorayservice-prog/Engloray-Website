@@ -22,13 +22,18 @@ export const CTA = ({ onOpenApply }) => {
     camera.position.z = 24;
 
     // Create renderer with alpha: true so the background video shows through
-    const renderer = new THREE.WebGLRenderer({
-      canvas: canvasRef.current,
-      alpha: true,
-      antialias: true
-    });
-    renderer.setSize(width, height);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    let renderer;
+    try {
+      renderer = new THREE.WebGLRenderer({
+        canvas: canvasRef.current,
+        alpha: true,
+        antialias: true
+      });
+      renderer.setSize(width, height);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    } catch (e) {
+      console.error("WebGL context creation failed on CTA:", e);
+    }
 
     // Create geometry - Torus Knot representing the complex, twisting path of ideas
     const geometry = new THREE.TorusKnotGeometry(4.2, 1.3, 220, 16, 2, 3);
@@ -83,7 +88,9 @@ export const CTA = ({ onOpenApply }) => {
       const h = containerRef.current.clientHeight;
       camera.aspect = w / h;
       camera.updateProjectionMatrix();
-      renderer.setSize(w, h);
+      if (renderer) {
+        renderer.setSize(w, h);
+      }
     };
 
     window.addEventListener('resize', handleResize);
@@ -106,7 +113,9 @@ export const CTA = ({ onOpenApply }) => {
       knot.rotation.x = targetRotationRef.current.x + elapsedTime * 0.1;
       knot.rotation.y = targetRotationRef.current.y + elapsedTime * 0.15;
 
-      renderer.render(scene, camera);
+      if (renderer) {
+        renderer.render(scene, camera);
+      }
     };
 
     animate();
@@ -115,10 +124,12 @@ export const CTA = ({ onOpenApply }) => {
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('touchmove', handleTouchMove);
       window.removeEventListener('resize', handleResize);
-      cancelAnimationFrame(animationFrameId);
-      geometry.dispose();
-      material.dispose();
-      renderer.dispose();
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
+      if (geometry) geometry.dispose();
+      if (material) material.dispose();
+      if (renderer) renderer.dispose();
     };
   }, []);
 

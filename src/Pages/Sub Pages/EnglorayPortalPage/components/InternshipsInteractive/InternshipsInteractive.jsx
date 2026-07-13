@@ -168,7 +168,7 @@ const cardVariants = {
   }),
   left: (width) => ({
     x: "-50%",
-    left: width < 480 ? "15%" : (width < 768 ? "18%" : "22%"),
+    left: width < 480 ? "24%" : (width < 768 ? "20%" : "22%"),
     scale: width < 480 ? 0.55 : (width < 768 ? 0.65 : 0.75),
     rotateY: 32,
     filter: "blur(2.5px)",
@@ -177,7 +177,7 @@ const cardVariants = {
   }),
   right: (width) => ({
     x: "-50%",
-    left: width < 480 ? "85%" : (width < 768 ? "82%" : "78%"),
+    left: width < 480 ? "76%" : (width < 768 ? "80%" : "78%"),
     scale: width < 480 ? 0.55 : (width < 768 ? 0.65 : 0.75),
     rotateY: -32,
     filter: "blur(2.5px)",

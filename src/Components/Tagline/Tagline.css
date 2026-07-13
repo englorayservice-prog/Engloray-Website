@@ -207,7 +207,7 @@
   flex-direction: column;
   align-items: center;
   /* justify-content: center; */
-  padding-top: 15px;
+  padding-top: 12px;
   /* Push content down slightly */
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   position: relative;
@@ -225,17 +225,18 @@
 .mouse-chevron-down-1,
 .mouse-chevron-down-2 {
   transform: rotate(135deg);
-  margin-top: -4px;
   animation: chevron-fade 1.5s infinite;
 }
 
 /* Sequential animation delay */
 .mouse-chevron-down-1 {
   animation-delay: 0s;
+  margin-top: 4px; /* Increased gap from dot */
 }
 
 .mouse-chevron-down-2 {
   animation-delay: 0.2s;
+  margin-top: -4px; /* Keep chevrons close together */
 }
 
 

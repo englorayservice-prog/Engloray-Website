@@ -17,7 +17,7 @@ import avatarFour from '../../../assets/cartoon_female_2.png';
 import avatarFive from '../../../assets/cartoon_male_2.png';
 import avatarSix from '../../../assets/cartoon_female_3.png';
 
-import mobileAppDev from '../../../assets/images/service Images/mobile development 1.jpg';
+import mobileAppDev from '../../../assets/Service images/mobile development 1.jpg.jpeg';
 
 
 

@@ -19,7 +19,7 @@ import visualStyleImg from '../../../assets/services/visual_style.png';
 import environmentImg from '../../../assets/services/environmental_branding.png';
 import portraitImg from '../../../assets/agency/branding_concept_abstract.png';
 import landscapeImg from '../../../assets/agency/landscape.png';
-import customBrandImage from '../../../assets/services/brand_identity_custom.png';
+//import customBrandImage from '../../../assets/services/brand_identity_custom.png';
 import iphone14Img from '../../../assets/Service images/Branding & identity-Photoroom.png';
 
 import avatarOne from '../../../assets/male_avatar.png';

@@ -12,15 +12,15 @@ html body * {
   z-index: 9999999; /* Extremely high to stay on top of everything */
   will-change: transform;
   /* Adjust offset based on the tip of the generated arrow image */
-  margin-left: -5px;
-  margin-top: -5px;
+  margin-left: -3px;
+  margin-top: -3px;
   transition: opacity 0.3s ease;
 }
 
 /* The cursor image */
 .custom-cursor-img {
-  width: 48px;
-  height: 48px;
+  width: 36px;
+  height: 36px;
   display: block;
   object-fit: contain;
   transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);

@@ -161,26 +161,35 @@ function GrowthChart({ progress, variant }) {
 export default function JourneySlider() {
   const containerRef = useRef(null);
 
-  // Use a controlled motion value so we can "freeze" progress while
-  // running the before->after reveal animation, then resume smoothly.
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ['start end', 'end start']
-  });
-
   const controlledProgress = useMotionValue(0);
   const [paused, setPaused] = useState(false);
   const [revealed, setRevealed] = useState(false);
 
+  const getLiveProgress = () => {
+    if (!containerRef.current) return 0;
+    const rect = containerRef.current.getBoundingClientRect();
+    const scrollableRange = rect.height - window.innerHeight;
+    if (scrollableRange <= 0) return 0;
+    return Math.max(0, Math.min(1, -rect.top / scrollableRange));
+  };
+
   // Keep controlledProgress synced to scroll when not paused.
   useEffect(() => {
-    // initialize
-    controlledProgress.set(scrollYProgress.get());
-    const unsubscribe = scrollYProgress.onChange((v) => {
-      if (!paused) controlledProgress.set(v);
-    });
-    return () => unsubscribe();
-  }, [scrollYProgress, paused, controlledProgress]);
+    const handleScroll = () => {
+      if (paused) return;
+      controlledProgress.set(getLiveProgress());
+    };
+
+    // Initialize progress on mount
+    handleScroll();
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
+  }, [paused, controlledProgress]);
 
   // IntersectionObserver: when section is mostly visible, pause and run reveal.
   useEffect(() => {
@@ -191,9 +200,9 @@ export default function JourneySlider() {
       (entries) => {
         entries.forEach((entry) => {
           // threshold chosen to trigger when majority of sticky is visible
-          if (entry.isIntersecting && entry.intersectionRatio > 0.6 && !revealed) {
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.3 && !revealed) {
             setPaused(true);
-            const current = scrollYProgress.get();
+            const current = getLiveProgress();
             controlledProgress.set(current);
 
             // Respect reduced motion preference
@@ -201,7 +210,7 @@ export default function JourneySlider() {
             if (prefersReduced) {
               setRevealed(true);
               // resume sync immediately
-              controlledProgress.set(scrollYProgress.get());
+              controlledProgress.set(getLiveProgress());
               setPaused(false);
               return;
             }
@@ -209,11 +218,11 @@ export default function JourneySlider() {
             // Animate controlledProgress forward to a value that reveals the "after" state,
             // then resume by syncing back to real scroll position.
             const revealTarget = 0.72; // value that maps to the revealed clip/after texts
-            animate(controlledProgress, revealTarget, { duration: 0.8, ease: [0.22, 0.8, 0.2, 1] }).then(() => {
+            animate(controlledProgress, revealTarget, { duration: 1.3, ease: [0.22, 0.8, 0.2, 1] }).then(() => {
               setRevealed(true);
               // short pause after reveal then resume
               setTimeout(() => {
-                const currentNow = scrollYProgress.get();
+                const currentNow = getLiveProgress();
                 // animate controlledProgress back to live scroll to avoid jump
                 animate(controlledProgress, currentNow, { duration: 0.35 }).then(() => {
                   setPaused(false);
@@ -223,12 +232,12 @@ export default function JourneySlider() {
           }
         });
       },
-      { threshold: [0.0, 0.25, 0.6, 0.9] }
+      { threshold: [0.0, 0.25, 0.3, 0.6, 0.9] }
     );
 
     io.observe(el);
     return () => io.disconnect();
-  }, [containerRef, scrollYProgress, controlledProgress, revealed]);
+  }, [containerRef, controlledProgress, revealed]);
 
   const progress = controlledProgress;
 
@@ -247,7 +256,7 @@ export default function JourneySlider() {
   const afterTextY         = useTransform(progress, [0.56, 0.92], [14, 0]);
 
   const cardScale = useTransform(progress, [0, 0.07], [0.96, 1]);
-  const cardY     = useTransform(progress, [0, 0.07], [24, 0]);
+  const cardY     = useTransform(progress, [0, 0.07], [10, -28]);
 
   const blobOneY = useTransform(progress, [0, 1], [-30, 60]);
   const blobTwoY = useTransform(progress, [0, 1], [40, -70]);
@@ -256,8 +265,26 @@ export default function JourneySlider() {
   const afterCountText = useTransform(afterCountRaw, (v) => `${Math.round(v)}%`);
 
   return (
-    <div ref={containerRef} className="relative h-[250vh] section-light text-brand-navy">
-      <div className="sticky top-0 z-20 h-screen w-full overflow-hidden flex flex-col justify-center gap-3 sm:gap-4 py-3 sm:py-4 px-3 sm:px-5 md:px-11 select-none">
+    <div ref={containerRef} className="relative z-10 h-[150vh] section-light text-brand-navy">
+      <style>{`
+        .journey-card-custom {
+          height: auto !important;
+          min-height: 280px !important;
+        }
+        @media (min-width: 640px) {
+          .journey-card-custom {
+            min-height: 320px !important;
+          }
+        }
+        @media (min-width: 768px) {
+          .journey-card-custom {
+            height: 44vh !important;
+            min-height: 300px !important;
+            max-height: 390px !important;
+          }
+        }
+      `}</style>
+      <div className="sticky top-[22vh] z-20 h-[68vh] w-full overflow-hidden flex flex-col justify-between items-center pt-[40px] pb-3 px-3 sm:px-5 md:px-11 select-none">
         <motion.div
           style={{ y: blobOneY }}
           className="absolute top-1/4 left-1/4 w-[220px] sm:w-[500px] h-[220px] sm:h-[500px] bg-brand-sky/5 rounded-full blur-[80px] sm:blur-[140px] pointer-events-none"
@@ -269,7 +296,7 @@ export default function JourneySlider() {
 
         {/* Ambient floating icons for a bit of student-friendly playfulness */}
         <motion.div
-          className="hidden md:block absolute top-[18%] left-[8%] text-brand-sky/20 pointer-events-none"
+          className="hidden md:block absolute top-[25%] left-[8%] text-brand-sky/20 pointer-events-none"
           animate={{ y: [0, -10, 0], rotate: [0, 6, 0] }}
           transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
         >
@@ -283,7 +310,7 @@ export default function JourneySlider() {
           <FiTerminal size={28} />
         </motion.div>
 
-        <div className="relative z-30 max-w-2xl mx-auto text-center pointer-events-none">
+          <div className="relative z-30 max-w-2xl mx-auto text-center pointer-events-none">
           <motion.div
             style={{ opacity: headerOpacity, y: headerY }}
             className="space-y-1 sm:space-y-1.5 section-heading-glow"
@@ -299,12 +326,12 @@ export default function JourneySlider() {
 
         <motion.div
           style={{ scale: cardScale, y: cardY }}
-          className="relative w-full max-w-6xl mx-auto h-[52vh] max-h-[480px] min-h-[340px] sm:min-h-[380px] bg-white rounded-2xl sm:rounded-3xl border border-gray-100 overflow-hidden shadow-xl flex flex-col md:flex-row items-stretch justify-between gap-3 sm:gap-5 p-3 sm:p-4 md:p-5"
+          className="journey-card-custom relative w-full max-w-6xl mx-auto bg-white rounded-2xl sm:rounded-3xl border border-gray-100 overflow-hidden shadow-xl flex flex-col md:flex-row items-stretch justify-between gap-3 sm:gap-5 p-4 sm:p-5"
         >
           <div className="absolute inset-0 bg-gradient-to-br from-white via-slate-50 to-white opacity-90" />
 
           {/* LEFT COLUMN: Cross-fading, sliding description text */}
-          <div className="w-full md:w-1/2 relative min-h-[140px] md:min-h-0 flex items-center z-10">
+          <div className="w-full md:w-1/2 relative min-h-[220px] md:min-h-0 flex items-center z-10">
             {/* BEFORE state text */}
             <motion.div
               style={{ opacity: beforeTextOpacity, y: beforeTextY }}

@@ -151,7 +151,7 @@ export const ProjectLearning = ({ onOpenApply }) => {
         </div>
 
         {/* Project lifecycle timeline (left 38%) — dashboard + outcomes (right 62%) */}
-        <div className="grid gap-2 sm:gap-3 items-start mb-1" style={{ gridTemplateColumns: '38% 1fr' }}>
+        <div className="grid grid-cols-1 md:grid-cols-[38%_1fr] gap-2 sm:gap-3 items-start mb-1">
 
           {/* Interactive lifecycle timeline card */}
           <div className="pl-panel w-full relative">
