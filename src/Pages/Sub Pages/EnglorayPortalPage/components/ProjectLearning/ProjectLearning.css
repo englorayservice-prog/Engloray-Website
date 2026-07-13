@@ -15,6 +15,17 @@
   overflow: hidden;
 }
 
+/* Left timeline card only — stretches to match the right column's total
+   height (dashboard + outcomes) and lays its header/timeline out vertically
+   so the timeline can grow into the extra space. Scoped to its own class
+   (not baked into .pl-panel) so the dashboard panel below, which also uses
+   .pl-panel, is unaffected. */
+.pl-panel-fill {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 .pl-panel-header {
   background: #131d35;
   padding: 8px 14px;
@@ -48,6 +59,16 @@
   flex-direction: column;
   padding: 12px 14px 10px;
   position: relative;
+}
+
+/* When the left panel is stretched to match the right column's height,
+   distribute the steps across the full available space instead of
+   leaving dead space at the bottom. */
+.pl-timeline-fill {
+  flex: 1;
+}
+.pl-timeline-fill .pl-step {
+  flex: 1;
 }
 
 .pl-step {

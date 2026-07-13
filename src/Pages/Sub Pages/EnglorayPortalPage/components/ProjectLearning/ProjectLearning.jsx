@@ -119,10 +119,10 @@ export const ProjectLearning = ({ onOpenApply }) => {
         </div>
 
         {/* Project lifecycle timeline (left 38%) — dashboard + outcomes (right 62%) */}
-        <div className="flex flex-col md:flex-row gap-6 items-start mb-8">
+        <div className="flex flex-col md:flex-row gap-6 items-stretch mb-8">
 
           {/* Interactive lifecycle timeline card */}
-          <div className="pl-panel w-full relative md:w-[38%] md:shrink-0">
+          <div className="pl-panel pl-panel-fill w-full relative md:w-[38%] md:shrink-0">
             <div className="pl-panel-header">
               <div className="dot dot-red" />
               <div className="dot dot-yellow" />
@@ -130,7 +130,7 @@ export const ProjectLearning = ({ onOpenApply }) => {
               <span className="pl-panel-title">PROJECT LIFECYCLE // LIVE</span>
             </div>
 
-            <div className="pl-timeline">
+            <div className="pl-timeline pl-timeline-fill">
               {lifecycleSteps.map((step, idx) => {
                 const Icon = step.icon;
                 const isActive = idx === activeIndex;
@@ -236,21 +236,21 @@ export const ProjectLearning = ({ onOpenApply }) => {
                 </AnimatePresence>
               </div>
 
-              <div className="relative grid grid-cols-2 gap-3 mb-16">
+              <div className="grid grid-cols-2 gap-3">
                 {achievements.map((item) => (
                   <AchievementTile key={item.title} icon={item.icon} title={item.title} desc={item.desc} />
                 ))}
+              </div>
 
-                {/* Explore Button - Centered horizontally at the bottom of the 2x2 grid */}
-                <div className="absolute left-1/2 bottom-[-10] -translate-x-1/2 z-30">
-                  <button
-                    onClick={onOpenApply}
-                    className="font-bold px-6 py-2.5 rounded-full bg-white hover:bg-brand-sky text-slate-900 hover:text-white shadow-xl hover:shadow-glow-sky transition-all hover:scale-105 active:scale-95 border border-slate-800 cursor-pointer text-[10px] sm:text-xs whitespace-nowrap"
-                    style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
-                  >
-                    Explore the project
-                  </button>
-                </div>
+              {/* Explore Button - sits below the 2x2 grid, centered, in normal document flow */}
+              <div className="flex justify-center pt-3">
+                <button
+                  onClick={onOpenApply}
+                  className="font-bold px-6 py-2.5 rounded-full bg-white hover:bg-brand-sky text-slate-900 hover:text-white shadow-xl hover:shadow-glow-sky transition-all hover:scale-105 active:scale-95 border border-slate-800 cursor-pointer text-[10px] sm:text-xs whitespace-nowrap"
+                  style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+                >
+                  Explore the project
+                </button>
               </div>
             </div>
 
