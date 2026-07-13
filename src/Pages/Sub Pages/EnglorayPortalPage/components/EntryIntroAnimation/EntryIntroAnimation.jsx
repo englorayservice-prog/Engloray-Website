@@ -32,13 +32,18 @@ const EntryIntroAnimation = ({ onComplete }) => {
         camera.position.z = 10;
         camera.position.y = 0;
 
-        const renderer = new THREE.WebGLRenderer({
-            canvas: canvasRef.current,
-            antialias: true,
-            alpha: true
-        });
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        let renderer;
+        try {
+            renderer = new THREE.WebGLRenderer({
+                canvas: canvasRef.current,
+                antialias: true,
+                alpha: true
+            });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        } catch (e) {
+            console.error("WebGL initialization failed:", e);
+        }
 
         const earthGroup = new THREE.Group();
         earthGroup.position.z = -180;
@@ -347,7 +352,9 @@ const EntryIntroAnimation = ({ onComplete }) => {
         const handleResize = () => {
             camera.aspect = window.innerWidth / window.innerHeight;
             camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
+            if (renderer) {
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            }
             ScrollTrigger.refresh();
         };
 
@@ -443,16 +450,22 @@ const EntryIntroAnimation = ({ onComplete }) => {
 
         let animationFrameId;
         function animate() {
-            renderer.render(scene, camera);
-            animationFrameId = requestAnimationFrame(animate);
+            if (renderer) {
+                renderer.render(scene, camera);
+                animationFrameId = requestAnimationFrame(animate);
+            }
         }
 
         animate();
 
         return () => {
             window.removeEventListener('resize', handleResize);
-            cancelAnimationFrame(animationFrameId);
-            renderer.dispose();
+            if (animationFrameId) {
+                cancelAnimationFrame(animationFrameId);
+            }
+            if (renderer) {
+                renderer.dispose();
+            }
             ScrollTrigger.getAll().forEach(trigger => trigger.kill());
         };
     }, [onComplete]);

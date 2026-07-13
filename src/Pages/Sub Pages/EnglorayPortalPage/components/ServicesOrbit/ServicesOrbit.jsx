@@ -547,7 +547,7 @@ export const ServicesOrbit = ({ onOpenApply }) => {
               }
               setIsPaused(false);
             }}
-            className="relative w-full h-[300px] md:h-[365px] flex items-center justify-center cursor-grab active:cursor-grabbing"
+            className="services-orbit-viewport relative w-full flex items-center justify-center cursor-grab active:cursor-grabbing"
           >
             {/* Active Floating Particles rising around the active center card */}
             {visibleCards.map(({ index, offset }) => {
@@ -622,7 +622,7 @@ export const ServicesOrbit = ({ onOpenApply }) => {
                   {/* Premium Glassmorphic Card Container */}
                   <motion.div
                     variants={containerVariants}
-                    animate={isCenter ? "active" : "inactive"}
+                    animate={isCenter ? ["active", isHovered ? { y: -10 } : { y: [0, -6, 0] }] : ["inactive", { y: [0, -4, 0] }]}
                     className={`w-full h-full p-3 md:p-4 pb-4 flex flex-col justify-between relative overflow-hidden rounded-[16px] md:rounded-[20px] border transition-all duration-300 select-text ${isCenter ? 'animate-border-glow border-[#E5E7EB]' : 'border-[#E5E7EB]/40'
                       }`}
                     style={{
@@ -637,9 +637,6 @@ export const ServicesOrbit = ({ onOpenApply }) => {
                           ? `0 25px 50px rgba(91, 95, 239, 0.08), 0 0 25px ${career.color}22`
                           : `0 12px 30px rgba(91, 95, 239, 0.04), 0 0 15px ${career.color}12`)
                         : `0 14px 28px rgba(15, 23, 42, 0.08)`
-                    }}
-                    animate={{
-                      y: isCenter ? (isHovered ? -10 : [0, -6, 0]) : [0, -4, 0],
                     }}
                     transition={{
                       y: isCenter && isHovered

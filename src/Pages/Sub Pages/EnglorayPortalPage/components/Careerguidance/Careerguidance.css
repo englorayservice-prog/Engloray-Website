@@ -92,7 +92,7 @@
 /* Layout Grid */
 .cg-grid {
   display: grid;
-  grid-template-columns: 45% 55%;
+  grid-template-columns: 9fr 11fr;
   gap: 40px;
   align-items: stretch;
 }
@@ -280,7 +280,7 @@
 /* Dashboard inner grid for Radar + Score Circular Meter */
 .cg-dash-top {
   display: grid;
-  grid-template-columns: 55% 45%;
+  grid-template-columns: 1.1fr 0.9fr;
   gap: 20px;
   align-items: center;
 }
@@ -482,7 +482,7 @@
 
 .cg-modal-top {
   display: grid;
-  grid-template-columns: 25% 75%;
+  grid-template-columns: 1fr 3fr;
   gap: 20px;
   align-items: center;
 }

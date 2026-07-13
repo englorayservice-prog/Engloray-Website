@@ -56,10 +56,10 @@ const App = () => {
             the dead scroll gap after the sticky releases. */}
         <div style={{ position: 'relative' }}>
           <JourneySlider />
-          {/* Pull everything below JourneySlider up by 150vh (= 250vh − 100vh)
+          {/* Pull everything below JourneySlider up by 50vh (= 150vh − 100vh)
               to cancel the sticky dead-space, while z-index keeps it hidden
               behind the active sticky panel */}
-          <div style={{ position: 'relative', zIndex: 1, marginTop: '-150vh' }}>
+          <div style={{ position: 'relative', zIndex: 1, marginTop: '-50vh' }}>
             <EnrollmentProcess />
             <AchievedStudents />
             <Testimonials />

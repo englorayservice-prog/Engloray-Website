@@ -17,16 +17,16 @@ import std6 from '../../assets/Feed back std/Std 6.jpg';
 const alumniAvatars = [std1, std2, std3, std4, std5];
 
 const pillBadges = [
-  { icon: <FaCode />,       label: 'Live Coding' },
-  { icon: <FaBriefcase />,  label: 'Internships' },
-  { icon: <FaAward />,      label: 'Certification' },
-  { icon: <FaUsers />,      label: '1-on-1 Mentors' },
+  { icon: <FaCode />, label: 'Live Coding' },
+  { icon: <FaBriefcase />, label: 'Internships' },
+  { icon: <FaAward />, label: 'Certification' },
+  { icon: <FaUsers />, label: '1-on-1 Mentors' },
 ];
 
 const stats = [
   { value: '2,400+', label: 'Students' },
-  { value: '96%',    label: 'Placement' },
-  { value: '150+',   label: 'Partners'  },
+  { value: '96%', label: 'Placement' },
+  { value: '150+', label: 'Partners' },
 ];
 
 const recentPlacements = [
@@ -105,8 +105,9 @@ export const Hero = ({ onOpenApply }) => {
       <div
         style={{
           position: 'relative', zIndex: 1,
-          maxWidth: '1200px', margin: '0 auto',
+          maxWidth: '95%', margin: '0 auto',
           width: '100%',
+          minWidth: 0,
           padding: '10px 24px 10px',
           display: 'grid',
           gridTemplateColumns: 'minmax(0,1.15fr) minmax(0,0.85fr)',
@@ -263,7 +264,7 @@ export const Hero = ({ onOpenApply }) => {
               </div>
               <div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '3px' }}>
-                  {[1,2,3,4,5].map(s => (
+                  {[1, 2, 3, 4, 5].map(s => (
                     <FaStar key={s} style={{ color: '#F59E0B', fontSize: '0.65rem' }} />
                   ))}
                   <span style={{ fontWeight: 700, fontSize: '0.78rem', color: '#1F2937', marginLeft: '3px' }}>4.9</span>
@@ -347,7 +348,7 @@ export const Hero = ({ onOpenApply }) => {
                   </p>
                 </div>
               </div>
-              
+
               <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                 <span style={{
                   width: '5px', height: '5px', borderRadius: '50%', backgroundColor: '#10B981',
@@ -361,7 +362,7 @@ export const Hero = ({ onOpenApply }) => {
 
             {/* Interactive Timeline Tabs (Connected Node Flow) */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', position: 'relative', textAlign: 'left' }}>
-              
+
               {/* Connecting line helper */}
               <div style={{
                 position: 'absolute',

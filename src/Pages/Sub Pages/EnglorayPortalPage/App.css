@@ -75,3 +75,36 @@ button {
 button:active {
   transform: scale(0.98);
 }
+
+/* Fluid scaling overrides for portal page active state */
+.portal-page-active .max-w-6xl,
+.portal-page-active .max-w-7xl,
+.portal-page-active .max-w-5xl,
+.portal-page-active .max-w-4xl,
+.portal-page-active .max-w-3xl,
+.portal-page-active .max-w-2xl {
+  max-width: 95% !important;
+}
+
+/* Override leaked styles for visual-container in About section */
+.portal-page-active .visual-container {
+  margin-left: 0 !important;
+  width: 100% !important;
+  max-width: none !important;
+  border: 1px solid #ECEEF5 !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02) !important;
+  background: #ffffff !important;
+}
+
+.portal-page-active .visual-container:hover {
+  border-color: #6C4CF1 !important;
+  box-shadow: 0 20px 40px rgba(108, 76, 241, 0.06) !important;
+}
+
+/* Reset h3 styling specifically for cards inside the About section */
+.portal-page-active .about-card-title {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  text-transform: none !important;
+  font-weight: 700 !important;
+  letter-spacing: normal !important;
+}

@@ -386,6 +386,7 @@ export const Careerguidance = ({ onOpenApply }) => {
 
                   {/* Radar Value polygon - Animated smoothly */}
                   <motion.polygon
+                    points={calculatePoints()}
                     animate={{ points: calculatePoints() }}
                     transition={{ type: "spring", stiffness: 90, damping: 14 }}
                     className="cg-radar-fill-poly"

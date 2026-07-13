@@ -40,9 +40,9 @@ export const Navbar = ({ onOpenApply }) => {
           style={{ padding: 0 }}
         >
           <img
-            src="/01.png"
+            src="/logo_generation.png"
             alt="Engloray"
-            className="h-15 w-20 object-contain"
+            className="h-11 md:h-13 w-auto object-contain"
             style={{ display: 'block' }}
           />
         </button>

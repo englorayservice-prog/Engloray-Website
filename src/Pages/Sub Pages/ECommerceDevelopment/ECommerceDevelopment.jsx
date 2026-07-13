@@ -11,7 +11,7 @@ import ecommerce4 from "../../../assets/images/ecommerce4.jpg";
 import ecommerce5 from "../../../assets/images/ecommerce5.jpg";
 
 
-import iphone14Img from '../../../assets/Service images/Ecommerce.png';
+import iphone14Img from '../../../assets/Service images/E commerce development-Photoroom.png';
 
 import avatarOne from '../../../assets/male_avatar.png';
 import avatarTwo from '../../../assets/cartoon_male_1.png';
