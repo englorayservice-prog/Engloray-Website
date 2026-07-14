@@ -51,6 +51,7 @@ import SoftwareTechSolution from './Pages/Sub Pages/SoftwareTechSolution/Softwar
 import AiServicesPage from './Pages/Sub Pages/AIServicesPage/AIServicesPage';
 import CrmServices from './Pages/Sub Pages/CrmServices/CrmServices';
 import DataAnalyticsPage from './Pages/Sub Pages/DataAnalytics/DataAnalytics';
+import DataAnalyticsBusiness from './Pages/Sub Pages/DataAnalyticsBusiness/DataAnalyticsBusiness';
 import AppDevelopmentPage from './Pages/Sub Pages/AppDevelopment/AppDevelopment';
 import SalesExecutiveInternPage from './Pages/Sub Pages/SalesExecutiveInternPage/SalesExecutiveInternPage';
 import BusinessDevelopmentInternPage from './Pages/Sub Pages/BusinessDevelopmentInternPage/BusinessDevelopmentInternPage';
@@ -133,6 +134,7 @@ function App() {
           <Route path="/graphicDesignPage" element={<GraphicDesignPage />} />
           <Route path="/softwareSolutionPage" element={<SoftwareTechSolution />} />
           <Route path="/dataAnalyticsPage" element={<DataAnalyticsPage />} />
+          <Route path="/dataanalyticsbusiness" element={<DataAnalyticsBusiness />} />
           <Route path="/aiServicesPage" element={<AiServicesPage />} />
           <Route path="/crmServicesPage" element={<CrmServices />} />
           <Route path="/salesExecutiveInternPage" element={<SalesExecutiveInternPage />} />

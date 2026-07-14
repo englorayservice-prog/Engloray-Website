@@ -7,7 +7,7 @@ import './BrandingAndDesigning.css';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
-import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
+import NewFooter from '../NewFooter/NewFooter';
 import { Helmet } from 'react-helmet';
 // import profile from '../../../assets/heroimage.jpeg';
 import { FaLightbulb, FaPalette, FaComments, FaLayerGroup, FaCompass, FaUserCircle, FaGem } from "react-icons/fa";
@@ -753,7 +753,7 @@ const BrandingDesigning = () => {
                             </div>
                         </div>
                     </section>
-                    <WhiteFooter />
+                    <NewFooter />
                     <BackToTop />
                 </div>
             </div>

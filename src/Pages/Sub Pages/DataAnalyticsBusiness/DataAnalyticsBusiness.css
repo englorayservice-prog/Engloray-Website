@@ -1,0 +1,2637 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+.dab-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+/* ============================== */
+/* HERO SECTION */
+/* ============================== */
+.dab-hero {
+    position: relative;
+    padding: 190px 20px 260px;
+    height: 750px;
+    text-align: center;
+    background: radial-gradient(circle at top, #faf5ff, #ffffff);
+    overflow: hidden;
+}
+
+.dab-hero-container {
+    bottom: 0px;
+    max-width: 1100px;
+    margin: auto;
+    position: relative;
+    z-index: 2;
+}
+
+.dab-hero-badge {
+    font-family: "Inter", sans-serif;
+    display: inline-block;
+    background: #000000;
+    color: #fff;
+    padding: 10px 40px;
+    border-radius: 40px;
+    font-size: 18px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.6), 0 0 30px rgba(59, 130, 246, 0.5), 0 0 60px rgba(59, 130, 246, 0.45), 0 0 90px rgba(59, 130, 246, 0.35);
+}
+
+.dab-hero-title {
+    font-family: "Inter", sans-serif;
+    font-size: 66px;
+    line-height: 1.1;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 16px;
+    max-width: 1050px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dab-title-highlight {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    color: #3b82f6;
+}
+
+.dab-hero-desc {
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #000000;
+    margin-bottom: 24px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dab-privacy-badge {
+    font-family: "Inter", sans-serif;
+    display: inline-block;
+    font-size: 15px;
+    background: #3b82f6;
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
+}
+
+.dab-floating-card {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 18px;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+    z-index: 3;
+    width: 220px;
+}
+
+.dab-floating-card.dab-left {
+    top: 200px;
+    left: 90px;
+}
+
+.dab-floating-card.dab-right {
+    top: 200px;
+    right: 100px;
+}
+
+.dab-floating-card img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.dab-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.dab-card-content h4 {
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    margin: 0;
+    color: #000;
+}
+
+.dab-card-content p {
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    margin: 2px 0 6px;
+    color: #2563eb;
+}
+
+.dab-card-progress {
+    height: 4px;
+    width: 100%;
+    background: #eee;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.dab-progress-fill {
+    height: 100%;
+    width: 70%;
+    background: #3b82f6;
+    border-radius: 10px;
+}
+
+.dab-rotate-left {
+    transform: rotate(-6deg);
+}
+
+.dab-rotate-right {
+    transform: rotate(6deg);
+}
+
+.dab-hero-bg-image {
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    object-fit: cover;
+    top: 110px;
+    left: 200px;
+    z-index: 0;
+    opacity: 0.09;
+    pointer-events: none;
+}
+
+.dab-badge-glass {
+    position: absolute;
+    bottom: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 22px;
+    border-radius: 22px;
+    backdrop-filter: blur(18px);
+    z-index: 5;
+}
+
+.dab-service-badge {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    padding: 12px 20px;
+    border-radius: 26px;
+    background: rgba(59, 130, 246, 0.14);
+    color: #3b82f6;
+    white-space: nowrap;
+    position: relative;
+}
+
+.dab-badge-strategy {
+    top: -90px;
+    left: -180px;
+    background: #3b82f6;
+    color: #ffffff;
+    border-radius: 20px 0px 20px 20px;
+}
+
+.dab-badge-strategy::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-top: 10px solid #3b82f6;
+    border-right: 10px solid #3b82f6;
+    border-radius: 2px;
+    top: -20px;
+    right: -30px;
+    transform: rotate(20deg);
+}
+
+.dab-badge-guidelines {
+    top: -90px;
+    right: -220px;
+    background: #3b82f6;
+    color: #ffffff;
+    border-radius: 0px 20px 20px 20px;
+}
+
+.dab-badge-guidelines::after {
+    content: "";
+    font-weight: 500;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-top: 10px solid #3b82f6;
+    border-right: 10px solid #3b82f6;
+    border-radius: 2px;
+    top: -23px;
+    left: -30px;
+    transform: rotate(-115deg);
+}
+
+.dab-gradient-shape {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    filter: blur(70px);
+    opacity: 0.65;
+    z-index: 1;
+}
+
+.dab-pink-shape {
+    background: radial-gradient(circle, #10b981, transparent 70%);
+    top: 120px;
+    left: 15%;
+}
+
+.dab-purple-shape {
+    background: radial-gradient(circle, #3b82f6, transparent 80%);
+    top: 130px;
+    right: 19%;
+}
+
+/* ============================== */
+/* ABOUT SECTION */
+/* ============================== */
+.dab-about-section {
+    padding: 60px 0;
+    background: #1e293b;
+    position: relative;
+}
+
+.dab-about-header {
+    text-align: left;
+    margin-bottom: 40px;
+    max-width: 800px;
+}
+
+.dab-about-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 20px;
+    position: relative;
+    font-family: 'Inter', sans-serif;
+}
+
+.dab-about-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: #3b82f6;
+    border-radius: 2px;
+}
+
+.dab-about-description {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #ffffff;
+    line-height: 1.4;
+    margin-bottom: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.dab-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.dab-about-card {
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border: 2px solid #eef2f6;
+    display: flex;
+    flex-direction: column;
+    padding: 14px;
+    width: 100%;
+    max-width: 100%;
+}
+
+.dab-about-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.1);
+    border-color: rgba(59, 130, 246, 0.3);
+}
+
+.dab-about-card.dab-card-image-bottom {
+    flex-direction: column;
+}
+
+.dab-about-card.dab-card-image-bottom .dab-card-image-wrapper {
+    order: 2;
+}
+
+.dab-about-card.dab-card-image-bottom .dab-card-content-wrapper {
+    order: 1;
+}
+
+.dab-card-image-wrapper {
+    padding: 6px;
+    width: 100%;
+}
+
+.dab-card-image {
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.dab-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.dab-about-card:hover .dab-card-image img {
+    transform: scale(1.1);
+}
+
+.dab-card-content-wrapper {
+    padding: 6px;
+    width: 100%;
+}
+
+.dab-card-content {
+    background: transparent;
+    border-radius: 10px;
+    padding: 16px 14px;
+    border: 1px solid #e2e8f0;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
+    text-align: left;
+}
+
+.dab-card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 10px;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.3;
+    display: block;
+    text-align: left;
+}
+
+.dab-card-description {
+    font-size: 0.8rem;
+    color: #475569;
+    line-height: 1.5;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    text-align: left;
+}
+
+/* ============================== */
+/* BRAND DNA SECTION */
+/* ============================== */
+.dab-branddna-section {
+    width: 100%;
+    background: #f6f7f9;
+    padding: 120px 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.dab-branddna-container {
+    width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 180px;
+}
+
+.dab-branddna-left {
+    max-width: 500px;
+    text-align: left;
+}
+
+.dab-branddna-left h2 {
+    font-family: "inter", sans-serif;
+    font-size: 50px;
+    color: #27364a;
+    margin-bottom: 20px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.dab-branddna-subtitle {
+    font-family: "inter", sans-serif;
+    font-size: 30px;
+    color: #1e2a44;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-align: left;
+}
+
+.dab-branddna-left p {
+    font-family: "inter", sans-serif;
+    font-size: 18px;
+    line-height: 1.2;
+    color: #6c7a89;
+    font-weight: 400;
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.dab-dna-list, .dab-impact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.dab-dna-list li, .dab-impact-list li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 15px;
+    font-family: "inter", sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #4a5568;
+}
+
+.dab-dna-list li::before, .dab-impact-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #3b82f6;
+    font-weight: bold;
+}
+
+.dab-dna-list li strong {
+    color: #1e2a44;
+    font-weight: 600;
+}
+
+.dab-stats-content p {
+    margin-bottom: 25px;
+}
+
+.dab-branddna-right {
+    position: relative;
+    width: 500px;
+    height: 460px;
+    right: 30px;
+}
+
+.dab-dna-circle {
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    z-index: 2;
+}
+
+.dab-dna-circle h3 {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.dab-circle-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    margin-top: 3px;
+    line-height: 1.1;
+    opacity: 0.9;
+}
+
+.dab-dna-circle .dab-icon {
+    font-size: 15px;
+    margin-bottom: 3px;
+}
+
+.dab-circle-purpose {
+    top: -60px;
+    left: 185px;
+    background: linear-gradient(135deg, #06b6d4, #22d3ee);
+}
+
+.dab-circle-voice {
+    top: 160px;
+    left: -80px;
+    background: linear-gradient(135deg, #10b981, #34d399);
+}
+
+.dab-circle-values {
+    top: 160px;
+    right: -80px;
+    background: linear-gradient(135deg, #3b82f6, #60a5fa);
+}
+
+.dab-circle-personality {
+    top: 160px;
+    left: 185px;
+    background: linear-gradient(135deg, #6366f1, #818cf8);
+}
+
+.dab-circle-visual {
+    bottom: -70px;
+    left: 185px;
+    background: linear-gradient(135deg, #1e1b4b, #312e81);
+}
+
+/* DNA LINK ANIMATION */
+.dab-link-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.dab-base-path {
+    fill: none;
+    stroke: #93c5fd;
+    stroke-width: 1.5;
+    opacity: 0.3;
+}
+
+.dab-flow-path {
+    fill: none;
+    stroke-width: 3.5;
+    stroke-linecap: round;
+    stroke-dasharray: 40 160;
+    opacity: 0;
+    stroke-dashoffset: 140;
+    animation: flow-sequence 15s infinite both;
+}
+
+.dab-phase-1 .dab-flow-path {
+    stroke: #10b981;
+    animation-delay: 0s;
+}
+
+.dab-phase-2 .dab-flow-path {
+    stroke: #06b6d4;
+    animation-delay: 3s;
+}
+
+.dab-phase-3 .dab-flow-path {
+    stroke: #3b82f6;
+    animation-delay: 6s;
+}
+
+.dab-phase-5 .dab-flow-path {
+    stroke: #1e1b4b;
+    animation-delay: 9s;
+}
+
+.dab-phase-4 .dab-flow-path {
+    stroke: #6366f1;
+    animation-delay: 12s;
+}
+
+@keyframes flow-sequence {
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 140;
+    }
+
+    2% {
+        opacity: 1;
+        stroke-dashoffset: 140;
+    }
+
+    18% {
+        stroke-dashoffset: -100;
+        opacity: 1;
+    }
+
+    20% {
+        opacity: 0;
+        stroke-dashoffset: -100;
+    }
+
+    100% {
+        opacity: 0;
+        stroke-dashoffset: -100;
+    }
+}
+
+/* ============================== */
+/* HOW IT WORKS SECTION */
+/* ============================== */
+.dab-howworks {
+    width: 100%;
+    min-height: 700px;
+    background: #1e293b;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    padding: 55px 0 80px;
+}
+
+.dab-howworks-container {
+    width: 1200px;
+    max-width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    gap: 80px;
+}
+
+.dab-left-side {
+    margin-top: 35px;
+    position: relative;
+}
+
+.dab-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #34d399;
+    font-size: 14px;
+    margin-top: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.dab-dot {
+    width: 10px;
+    height: 10px;
+    background: #34d399;
+    border-radius: 50%;
+}
+
+.dab-intro-text {
+    font-size: 14.5px;
+    font-weight: 500;
+    line-height: 1.6;
+    color: #cfd9dc;
+    margin-top: 20px;
+    text-align: left;
+    font-family: 'Inter', sans-serif;
+}
+
+.dab-main-title {
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-top: 40px;
+    text-align: left;
+    font-family: 'Inter', sans-serif;
+}
+
+.dab-arrow {
+    font-size: 60px;
+    color: #34d399;
+    margin-left: 400px;
+    margin-top: -120px;
+}
+
+.dab-right-side {
+    position: relative;
+}
+
+.dab-howworks-title {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    margin-left: 0 !important;
+    text-align: left !important;
+    font-family: 'Inter', sans-serif;
+    white-space: nowrap;
+}
+
+.dab-steps-grid {
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.dab-step-card {
+    position: relative;
+    background: rgba(45, 55, 72, 0.4);
+    padding: 25px;
+    border-radius: 16px;
+    width: 100%;
+    opacity: 1;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transform: scale(1);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    overflow: hidden;
+}
+
+.dab-step-card:hover {
+    background: rgba(45, 55, 72, 0.6);
+    transform: scale(0.96);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-color: rgba(52, 211, 153, 0.3);
+}
+
+.dab-step-card:hover .dab-card-dot {
+    box-shadow: 0 0 8px #34d399;
+}
+
+.dab-step-card h4 {
+    font-size: 14px;
+    opacity: 0.7;
+    margin-bottom: 12px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    text-align: left;
+}
+
+.dab-step-card h3 {
+    font-size: 16px;
+    margin-bottom: 12px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    text-align: left;
+    line-height: 1.4;
+}
+
+.dab-step-card p {
+    font-size: 13px;
+    line-height: 1.5;
+    opacity: 0.8;
+    font-family: 'Inter', sans-serif;
+    text-align: left;
+}
+
+.dab-card-dot {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 10px;
+    height: 10px;
+    background: #34d399;
+    border-radius: 50%;
+}
+
+/* ============================== */
+/* CIRCULAR STATS SECTION */
+/* ============================== */
+.dab-circular-stats {
+    width: 100%;
+    background: #ffffff;
+    padding: 120px 0;
+    font-family: Poppins;
+    text-align: center;
+}
+
+.dab-branding-stats-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 1200px;
+    margin: auto;
+}
+
+.dab-stats-content {
+    max-width: 650px;
+    text-align: left;
+}
+
+.dab-stats-content h2 {
+    font-family: "inter";
+    font-size: 45px;
+    margin-bottom: 20px;
+    font-weight: 800;
+    width: 100%;
+    max-width: 550px;
+    color: #1e293b;
+}
+
+.dab-stats-content p {
+    font-family: "inter";
+    font-size: 17px;
+    line-height: 1.6;
+    color: #555;
+    width: 550px;
+    font-weight: 500;
+}
+
+.dab-stats-wrapper-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    width: 480px;
+    margin-top: 20px;
+    transform: translateX(-80px);
+}
+
+.dab-stat-card {
+    position: relative;
+    left: 0;
+    background: #0f172a;
+    border-radius: 16px;
+    padding: 35px 20px;
+    width: 228px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dab-stat-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(59, 130, 246, 0.25);
+}
+
+.dab-stat-card h2 {
+    color: #ffffff;
+    font-size: 48px;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+}
+
+.dab-stat-card p {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    margin-top: 6px;
+    font-weight: 600;
+    color: #94a3b8;
+}
+
+.dab-stat-card:nth-child(3),
+.dab-stat-card:nth-child(4) {
+    left: 126px;
+}
+
+.dab-bottom-stats {
+    margin-top: 120px;
+    display: flex;
+    justify-content: center;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 160px;
+}
+
+.dab-stat h3 {
+    font-family: "inter";
+    font-weight: 600;
+    color: #1e293b;
+    font-size: 48px;
+    margin: 0;
+}
+
+.dab-stat p {
+    font-family: "inter", sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+    opacity: 0.8;
+    color: #000;
+    font-weight: 700;
+}
+
+/* ============================== */
+/* PROJECTS SECTION */
+/* ============================== */
+.dab-projects-section {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    background: #f6f8fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.dab-projects-bg-right {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+    z-index: 0;
+}
+
+.dab-projects-bg-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scaleX(-1);
+    clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+    z-index: 0;
+}
+
+.dab-projects-logos {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.dab-project-logo {
+    position: absolute;
+    object-fit: contain;
+    width: 38px;
+    height: 38px;
+}
+
+.dab-project-logo-card {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(6px);
+}
+
+.dab-left-logos .l1 {
+    top: 80px;
+    left: 120px;
+}
+
+.dab-left-logos .l2 {
+    top: 170px;
+    left: 250px;
+}
+
+.dab-left-logos .l3 {
+    top: 330px;
+    left: 80px;
+}
+
+.dab-left-logos .l4 {
+    top: 460px;
+    left: 140px;
+}
+
+.dab-left-logos .l5 {
+    top: 200px;
+    left: 50px;
+}
+
+.dab-left-logos .l6 {
+    top: 520px;
+    left: 260px;
+}
+
+.dab-right-logos .r1 {
+    top: 80px;
+    right: 120px;
+}
+
+.dab-right-logos .r2 {
+    top: 170px;
+    right: 250px;
+}
+
+.dab-right-logos .r3 {
+    top: 330px;
+    right: 80px;
+}
+
+.dab-right-logos .r4 {
+    top: 460px;
+    right: 140px;
+}
+
+.dab-right-logos .r5 {
+    top: 200px;
+    right: 50px;
+}
+
+.dab-right-logos .r6 {
+    top: 520px;
+    right: 260px;
+}
+
+.dab-projects-content {
+    text-align: center;
+    max-width: 700px;
+    z-index: 5;
+    position: relative;
+}
+
+.dab-projects-content h1 {
+    font-family: "inter", sans-serif;
+    font-size: 68px;
+    max-width: 700px;
+    font-weight: 800;
+    color: #111;
+    line-height: 1;
+    margin: 0;
+}
+
+.dab-projects-content p {
+    font-family: "inter", sans-serif;
+    margin-top: 20px;
+    width: 650px;
+    font-weight: 600;
+    color: #555;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dab-projects-stats {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 30px;
+}
+
+.dab-projects-stats h2 {
+    font-family: "inter", sans-serif;
+    font-size: 46px;
+    font-weight: 800;
+    margin: 0;
+    color: #111;
+}
+
+.dab-projects-stats span {
+    font-family: "inter", sans-serif;
+    font-size: 20px;
+    color: #777;
+}
+
+/* ============================== */
+/* FEEDBACK SECTION */
+/* ============================== */
+.dab-feedback-section {
+    width: 100%;
+    padding: 80px 0 0 0;
+    background: #ffffff;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+}
+
+.dab-page .wf-footer-new {
+    padding-top: 15px;
+}
+
+.dab-feedback-header {
+    max-width: 1200px;
+    margin: 0 auto 20px;
+    padding: 0;
+    text-align: left;
+    transform: translateX(-100px);
+}
+
+.dab-feedback-title {
+    font-size: 40px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 6px;
+    font-family: 'Inter', sans-serif;
+}
+
+.dab-feedback-title span {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    color: #3b82f6;
+}
+
+.dab-feedback-description {
+    font-size: 1.1rem;
+    color: #475569;
+    font-weight: 500;
+    line-height: 1.6;
+    max-width: 600px;
+    font-family: 'Inter', sans-serif;
+}
+
+.dab-feedback-carousel {
+    position: relative;
+    width: 100%;
+    height: 270px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.dab-feedback-card {
+    position: absolute;
+    width: 480px;
+    padding: 35px;
+    border-radius: 14px;
+    background: #1e293b;
+    transition: all 0.5s ease;
+    text-align: left;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.dab-feedback-card.center {
+    transform: translateX(0) scale(1);
+    z-index: 3;
+    opacity: 1;
+}
+
+.dab-feedback-card.left {
+    transform: translateX(-480px) scale(0.9);
+    opacity: 0.4;
+    z-index: 1;
+}
+
+.dab-feedback-card.right {
+    transform: translateX(480px) scale(0.9);
+    opacity: 0.4;
+    z-index: 1;
+}
+
+.dab-feedback-card.hidden {
+    transform: scale(0.8);
+    opacity: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.dab-feedback-rating {
+    color: #34d399;
+    margin-bottom: 15px;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+.dab-feedback-quote-icon {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 48px;
+    opacity: 0.15;
+    color: #ffffff;
+    font-family: Georgia, serif;
+}
+
+.dab-feedback-text {
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    padding-right: 20px;
+    font-style: italic;
+}
+
+.dab-feedback-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.dab-author-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #3b82f6;
+    background: linear-gradient(135deg, #3b82f6, #34d399);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.dab-avatar-initial {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    font-family: 'Inter', sans-serif;
+}
+
+.dab-author-name {
+    font-weight: 700;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.dab-author-role {
+    font-size: 13px;
+    opacity: 0.7;
+    color: #e2e8f0;
+    font-family: 'Inter', sans-serif;
+}
+
+.dab-feedback-controls {
+    margin-top: -15px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.dab-feedback-controls button {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    background: #3b82f6;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+}
+
+.dab-feedback-controls button:hover {
+    background: #2563eb;
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+}
+
+/* ============================== */
+/* RESPONSIVE DESIGN */
+/* ============================== */
+
+@media (min-width: 1400px) {
+    .dab-container {
+        max-width: 1320px;
+    }
+
+    .dab-feedback-header {
+        max-width: 1320px;
+    }
+
+    .dab-branddna-container {
+        width: 1320px;
+    }
+
+    .dab-branding-stats-layout {
+        width: 1320px;
+    }
+}
+
+@media (max-width: 1399px) and (min-width: 1025px) {
+    .dab-container {
+        max-width: 1140px;
+    }
+
+    .dab-hero-title {
+        font-size: 60px;
+    }
+
+    .dab-about-title {
+        font-size: 2.8rem;
+    }
+
+    .dab-cards-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .dab-branddna-container {
+        width: 90%;
+        gap: 100px;
+    }
+
+    .dab-branddna-right {
+        right: 0;
+    }
+
+    .dab-howworks-container {
+        width: 90%;
+        gap: 60px;
+    }
+
+    .dab-arrow {
+        margin-left: 300px;
+    }
+
+    .dab-howworks-title {
+        margin-left: 0 !important;
+        text-align: left !important;
+    }
+
+    .dab-branding-stats-layout {
+        width: 90%;
+    }
+
+    .dab-stats-content p {
+        width: 100%;
+    }
+
+    .dab-bottom-stats {
+        gap: 100px;
+    }
+
+    .dab-feedback-card {
+        width: 440px;
+    }
+
+    .dab-feedback-card.left {
+        transform: translateX(-520px) scale(0.9);
+    }
+
+    .dab-feedback-card.right {
+        transform: translateX(520px) scale(0.9);
+    }
+}
+
+@media (max-width: 1024px) {
+    .dab-hero {
+        padding: 170px 20px 220px;
+        height: auto;
+        min-height: 680px;
+    }
+
+    .dab-hero-title {
+        font-size: 54px;
+    }
+
+    .dab-hero-desc {
+        font-size: 16px;
+        max-width: 700px;
+    }
+
+    .dab-floating-card.dab-left {
+        left: 30px;
+    }
+
+    .dab-floating-card.dab-right {
+        right: 30px;
+    }
+
+    .dab-floating-card {
+        width: 200px;
+        padding: 12px 15px;
+    }
+
+    .dab-badge-glass {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+        bottom: 40px;
+        max-width: 90%;
+    }
+
+    .dab-badge-strategy,
+    .dab-badge-guidelines {
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .dab-gradient-shape {
+        width: 400px;
+        height: 400px;
+    }
+
+    .dab-about-title {
+        font-size: 2.5rem;
+    }
+
+    .dab-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .dab-card-image {
+        height: 140px;
+    }
+
+    .dab-branddna-container {
+        flex-direction: column;
+        width: 90%;
+        gap: 60px;
+    }
+
+    .dab-branddna-left {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .dab-branddna-left h2 {
+        white-space: normal;
+        margin-right: 0;
+    }
+
+    .dab-branddna-subtitle {
+        text-align: center;
+    }
+
+    .dab-branddna-left p {
+        text-align: center;
+    }
+
+    .dab-branddna-right {
+        right: 0;
+        margin: 0 auto;
+    }
+
+    .dab-howworks-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .dab-left-side {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .dab-badge {
+        justify-content: center;
+    }
+
+    .dab-intro-text {
+        text-align: center;
+    }
+
+    .dab-main-title {
+        text-align: center;
+    }
+
+    .dab-arrow {
+        margin-left: 0;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .dab-right-side {
+        text-align: center;
+    }
+
+    .dab-howworks-title {
+        margin-left: 0;
+        text-align: center;
+        font-size: 32px;
+        white-space: normal;
+    }
+
+    .dab-steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dab-branding-stats-layout {
+        flex-direction: column;
+        width: 90%;
+        gap: 60px;
+    }
+
+    .dab-stats-content {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .dab-stats-content h2 {
+        width: 100%;
+    }
+
+    .dab-stats-content p {
+        width: 100%;
+    }
+
+    .dab-stats-wrapper-cards {
+        transform: translateX(0);
+        margin: 0 auto;
+    }
+
+    .dab-bottom-stats {
+        gap: 60px;
+        flex-wrap: wrap;
+    }
+
+    .dab-projects-content h1 {
+        font-size: 50px;
+    }
+
+    .dab-projects-content p {
+        width: 450px;
+        font-size: 16px;
+    }
+
+    .dab-feedback-header {
+        padding: 0 25px;
+        margin-bottom: 20px;
+        transform: none;
+    }
+
+    .dab-feedback-title {
+        font-size: 36px;
+        margin-bottom: 6px;
+    }
+
+    .dab-feedback-description {
+        font-size: 1rem;
+        max-width: 500px;
+    }
+
+    .dab-feedback-card {
+        width: 400px;
+        padding: 30px;
+    }
+
+    .dab-feedback-card.left {
+        transform: translateX(-470px) scale(0.9);
+    }
+
+    .dab-feedback-card.right {
+        transform: translateX(470px) scale(0.9);
+    }
+
+    .dab-feedback-text {
+        font-size: 14px;
+    }
+
+    .dab-feedback-carousel {
+        height: 300px;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .dab-hero {
+        padding: 150px 15px 200px;
+        min-height: 630px;
+    }
+
+    .dab-hero-title {
+        font-size: 42px;
+    }
+
+    .dab-hero-badge {
+        font-size: 16px;
+        padding: 8px 25px;
+    }
+
+    .dab-hero-desc {
+        font-size: 15px;
+        max-width: 100%;
+        padding: 0 15px;
+    }
+
+    .dab-privacy-badge {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    .dab-floating-card {
+        display: none;
+    }
+
+    .dab-badge-glass {
+        gap: 10px;
+        position: relative;
+        bottom: 0;
+        margin-top: 40px;
+        flex-wrap: wrap;
+    }
+
+    .dab-service-badge {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    .dab-gradient-shape {
+        width: 300px;
+        height: 300px;
+    }
+
+    .dab-about-section {
+        padding: 60px 0;
+    }
+
+    .dab-about-title {
+        font-size: 2.2rem;
+        text-align: center;
+    }
+
+    .dab-about-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .dab-about-description {
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    .dab-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .dab-card-image {
+        height: 160px;
+    }
+
+    .dab-card-title {
+        font-size: 1.1rem;
+    }
+
+    .dab-card-description {
+        font-size: 0.9rem;
+    }
+
+    .dab-branddna-section {
+        padding: 60px 0;
+    }
+
+    .dab-branddna-left h2 {
+        font-size: 40px;
+    }
+
+    .dab-branddna-subtitle {
+        font-size: 24px;
+    }
+
+    .dab-branddna-left p {
+        font-size: 16px;
+    }
+
+    .dab-branddna-right {
+        width: 100%;
+        height: 500px;
+        right: 0;
+    }
+
+    .dab-dna-circle {
+        width: 130px;
+        height: 130px;
+    }
+
+    .dab-dna-circle h3 {
+        font-size: 14px;
+    }
+
+    .dab-circle-desc {
+        font-size: 9px;
+    }
+
+    .dab-circle-purpose {
+        top: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .dab-circle-voice {
+        top: 110px;
+        left: 15px;
+    }
+
+    .dab-circle-values {
+        top: 110px;
+        right: 15px;
+        left: auto;
+    }
+
+    .dab-circle-personality {
+        top: 250px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .dab-circle-visual {
+        bottom: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .dab-howworks {
+        padding: 60px 0;
+        min-height: auto;
+    }
+
+    .dab-left-side {
+        margin-top: 0;
+    }
+
+    .dab-badge {
+        margin-top: 20px;
+    }
+
+    .dab-intro-text {
+        margin-top: 20px;
+        font-size: 14px;
+    }
+
+    .dab-main-title {
+        font-size: 36px;
+        margin-top: 20px;
+    }
+
+    .dab-steps-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .dab-step-card {
+        padding: 20px;
+        min-height: auto;
+    }
+
+    .dab-step-card h3 {
+        font-size: 16px;
+    }
+
+    .dab-step-card p {
+        font-size: 13px;
+    }
+
+    .dab-circular-stats {
+        padding: 60px 0;
+    }
+
+    .dab-stats-content h2 {
+        font-size: 32px;
+    }
+
+    .dab-stats-content p {
+        font-size: 15px;
+    }
+
+    .dab-stats-wrapper-cards {
+        width: 100%;
+        margin: 20px auto;
+        transform: translateX(0);
+    }
+
+    .dab-stat-card {
+        width: 100% !important;
+        padding: 20px 10px;
+    }
+
+    .dab-stat-card h2 {
+        font-size: 28px !important;
+    }
+
+    .dab-stat-card p {
+        font-size: 11px !important;
+    }
+
+    .dab-stat-card:nth-child(3),
+    .dab-stat-card:nth-child(4) {
+        left: 0 !important;
+    }
+
+    .dab-bottom-stats {
+        margin-top: 60px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    .dab-stat h3 {
+        font-size: 28px;
+    }
+
+    .dab-stat p {
+        font-size: 12px;
+    }
+
+    .dab-projects-section {
+        height: auto;
+        min-height: auto;
+        padding: 80px 15px 100px 15px;
+        flex-direction: column;
+        position: relative;
+        background: #f6f8fa;
+    }
+
+    .dab-projects-bg-right,
+    .dab-projects-bg-left {
+        display: none;
+    }
+
+    .dab-projects-content {
+        max-width: 100%;
+        padding: 0;
+        z-index: 10;
+        position: relative;
+    }
+
+    .dab-projects-content h1 {
+        font-size: 32px;
+        max-width: 100%;
+        line-height: 1.2;
+        text-align: center;
+        margin-bottom: 15px;
+        word-break: break-word;
+    }
+
+    .dab-projects-content p {
+        width: 100%;
+        font-size: 14px;
+        margin-top: 12px;
+        line-height: 1.5;
+        text-align: center;
+        padding: 0 5px;
+    }
+
+    .dab-projects-stats {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 30px;
+        margin-bottom: 40px;
+        flex-wrap: wrap;
+    }
+
+    .dab-projects-stats h2 {
+        font-size: 24px;
+        margin: 0;
+        font-weight: 800;
+    }
+
+    .dab-projects-stats span {
+        font-size: 11px;
+        display: block;
+        margin-top: 5px;
+    }
+
+    .dab-projects-stats>div {
+        text-align: center;
+        flex: 1;
+        min-width: 85px;
+    }
+
+    .dab-projects-logos {
+        position: relative !important;
+        width: 100% !important;
+        height: auto !important;
+        margin-top: 20px;
+        display: block !important;
+    }
+
+    .dab-left-logos,
+    .dab-right-logos {
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 15px !important;
+        justify-items: center !important;
+        align-items: center !important;
+        position: relative !important;
+        width: 100% !important;
+        margin: 0 !important;
+        margin-top: 20px;
+        padding: 0 !important;
+    }
+
+    .dab-right-logos {
+        margin-top: 15px !important;
+    }
+
+    .dab-left-logos .dab-project-logo-card,
+    .dab-right-logos .dab-project-logo-card {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+    }
+
+    .dab-left-logos .l1,
+    .dab-left-logos .l2,
+    .dab-left-logos .l3,
+    .dab-left-logos .l4,
+    .dab-left-logos .l5,
+    .dab-left-logos .l6,
+    .dab-right-logos .r1,
+    .dab-right-logos .r2,
+    .dab-right-logos .r3,
+    .dab-right-logos .r4,
+    .dab-right-logos .r5,
+    .dab-right-logos .r6 {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+    }
+
+    .dab-project-logo-card {
+        margin-top: 0px !important;
+        width: 50px !important;
+        height: 50px !important;
+        border-radius: 12px !important;
+        background: white !important;
+        border: 1px solid rgba(0, 0, 0, 0.1) !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        transition: transform 0.2s ease;
+    }
+
+    .dab-project-logo-card:hover {
+        transform: scale(1.05);
+    }
+
+    .dab-project-logo {
+        width: 30px !important;
+        height: 30px !important;
+        object-fit: contain !important;
+    }
+
+    .dab-feedback-section {
+        padding: 60px 0 0 0;
+    }
+
+    .dab-feedback-header {
+        padding: 0 20px;
+        margin-bottom: 20px;
+        transform: none;
+    }
+
+    .dab-feedback-title {
+        font-size: 32px;
+        margin-bottom: 6px;
+    }
+
+    .dab-feedback-description {
+        font-size: 0.95rem;
+        max-width: 100%;
+    }
+
+    .dab-feedback-carousel {
+        height: 360px;
+        margin-top: 20px;
+    }
+
+    .dab-feedback-card {
+        width: 340px;
+        padding: 25px;
+    }
+
+    .dab-feedback-card.left {
+        transform: translateX(-470px) scale(0.9);
+    }
+
+    .dab-feedback-card.right {
+        transform: translateX(470px) scale(0.9);
+    }
+
+    .dab-feedback-text {
+        font-size: 14px;
+    }
+
+    .dab-feedback-carousel {
+        height: 360px;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .dab-hero-title {
+        font-size: 32px;
+    }
+
+    .dab-hero-badge {
+        font-size: 14px;
+        padding: 6px 20px;
+    }
+
+    .dab-hero-desc {
+        font-size: 14px;
+    }
+
+    .dab-about-title {
+        font-size: 2rem;
+    }
+
+    .dab-branddna-left h2 {
+        font-size: 32px;
+    }
+
+    .dab-branddna-subtitle {
+        font-size: 20px;
+    }
+
+    .dab-branddna-right {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
+        justify-items: center;
+        align-items: center;
+        height: auto;
+        width: 100%;
+    }
+
+    .dab-link-svg {
+        display: none !important;
+    }
+
+    .dab-dna-circle {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        width: 100px !important;
+        height: 100px !important;
+        margin: 0;
+        padding: 8px;
+    }
+
+    .dab-dna-circle h3 {
+        font-size: 11px;
+        margin-top: 5px;
+    }
+
+    .dab-circle-desc {
+        display: none;
+    }
+
+    .dab-dna-circle .dab-icon {
+        font-size: 16px;
+    }
+
+    .dab-circle-purpose {
+        grid-column: 1/2;
+        grid-row: 1/2;
+        margin-left: 50px;
+    }
+
+    .dab-circle-voice {
+        grid-column: 2/3;
+        grid-row: 1/2;
+        margin-left: -145px;
+    }
+
+    .dab-circle-values {
+        grid-column: 3/4;
+        grid-row: 1/2;
+        margin-left: -110px;
+    }
+
+    .dab-circle-personality {
+        grid-column: 1/2;
+        grid-row: 2/3;
+        justify-self: end;
+        margin-top: 20px;
+        margin-right: -50px;
+    }
+
+    .dab-circle-visual {
+        grid-column: 2/3;
+        grid-row: 2/3;
+        justify-self: start;
+        margin-top: 20px;
+        margin-left: 60px;
+    }
+
+    .dab-main-title {
+        font-size: 32px;
+    }
+
+    .dab-stats-content h2 {
+        font-size: 28px;
+    }
+
+    .dab-bottom-stats {
+        gap: 20px;
+    }
+
+    .dab-stat h3 {
+        font-size: 24px;
+    }
+
+    .dab-stat p {
+        font-size: 11px;
+    }
+
+    .dab-projects-section {
+        padding: 60px 12px 80px 12px;
+    }
+
+    .dab-projects-content h1 {
+        font-size: 26px;
+    }
+
+    .dab-projects-content p {
+        font-size: 12px;
+    }
+
+    .dab-projects-stats {
+        gap: 10px;
+    }
+
+    .dab-projects-stats h2 {
+        font-size: 20px;
+    }
+
+    .dab-projects-stats span {
+        font-size: 9px;
+    }
+
+    .dab-left-logos,
+    .dab-right-logos {
+        gap: 10px !important;
+    }
+
+    .dab-project-logo-card {
+        width: 42px !important;
+        height: 42px !important;
+    }
+
+    .dab-project-logo {
+        width: 24px !important;
+        height: 24px !important;
+    }
+
+    .dab-feedback-title {
+        font-size: 28px;
+    }
+
+    .dab-feedback-card {
+        width: 280px;
+        padding: 22px;
+    }
+
+    .dab-feedback-card.left {
+        transform: translateX(-300px) scale(0.9);
+    }
+
+    .dab-feedback-card.right {
+        transform: translateX(300px) scale(0.9);
+    }
+
+    .dab-feedback-text {
+        font-size: 12px;
+    }
+
+    .dab-feedback-controls button {
+        width: 38px;
+        height: 38px;
+        font-size: 18px;
+    }
+
+    /* Hero badges vertical gap */
+    .dab-badge-glass {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 20px !important;
+        position: relative !important;
+        bottom: auto !important;
+        margin-top: 40px !important;
+        transform: none !important;
+        left: auto !important;
+        right: auto !important;
+        background: transparent !important;
+        backdrop-filter: none !important;
+        width: 100%;
+    }
+
+    .dab-badge-strategy,
+    .dab-badge-guidelines {
+        position: relative !important;
+        border-radius: 20px !important;
+        width: auto !important;
+        display: inline-block !important;
+    }
+
+    .dab-badge-strategy::after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-top: 10px solid #3b82f6;
+        border-right: 10px solid #3b82f6;
+        border-radius: 2px;
+        top: -20px !important;
+        right: -30px !important;
+        left: auto !important;
+        transform: rotate(20deg) !important;
+    }
+
+    .dab-badge-guidelines::after {
+        content: "";
+        font-weight: 500;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-top: 10px solid #3b82f6;
+        border-right: 10px solid #3b82f6;
+        border-radius: 2px;
+        top: -15px !important;
+        left: -30px !important;
+        right: auto !important;
+        transform: rotate(-115deg) !important;
+    }
+}
+
+@media (max-width: 375px) {
+    .dab-hero-title {
+        font-size: 28px;
+    }
+
+    .dab-dna-circle {
+        width: 90px !important;
+        height: 90px !important;
+    }
+
+    .dab-project-logo-card {
+        width: 38px !important;
+        height: 38px !important;
+    }
+
+    .dab-project-logo {
+        width: 22px !important;
+        height: 22px !important;
+    }
+
+    .dab-feedback-card {
+        width: 260px;
+        padding: 20px;
+    }
+
+    .dab-feedback-card.left {
+        transform: translateX(-280px) scale(0.9);
+    }
+
+    .dab-feedback-card.right {
+        transform: translateX(280px) scale(0.9);
+    }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+    .dab-hero {
+        min-height: 500px;
+        padding: 100px 20px 150px;
+    }
+
+    .dab-floating-card {
+        transform: scale(0.8);
+    }
+
+    .dab-howworks {
+        min-height: auto;
+    }
+
+    .dab-projects-section {
+        height: auto;
+        padding: 40px;
+    }
+
+    .dab-feedback-carousel {
+        height: 280px;
+    }
+}
+
+.dab-card-image img,
+.dab-project-image img {
+    will-change: transform;
+}
+
+.dab-feedback-card,
+.dab-about-card,
+.dab-step-card,
+.dab-dna-circle {
+    transition: all 0.3s ease;
+}
+
+/* ==========================================================================
+   Widescreen Optimizations (1440px and higher)
+   ========================================================================== */
+@media (min-width: 1440px) {
+    .dab-container,
+    .dab-branddna-container,
+    .dab-howworks-container,
+    .dab-branding-stats-layout {
+        max-width: 1600px;
+        width: 1600px;
+        margin: 0 auto;
+    }
+
+    /* Hero Section Scaling */
+    .dab-hero {
+        height: 800px;
+        padding: 190px 20px 220px;
+    }
+
+    .dab-hero-title {
+        font-size: 72px;
+        max-width: 1300px;
+    }
+
+    .dab-hero-desc {
+        font-size: 20px;
+        max-width: 1100px;
+        margin-bottom: 50px;
+    }
+
+    .dab-hero-badge {
+        font-size: 18px;
+        padding: 10px 45px;
+    }
+
+    .dab-floating-card {
+        width: 280px;
+        padding: 20px 24px;
+    }
+
+    .dab-floating-card.dab-left {
+        top: 240px;
+        left: 120px;
+    }
+
+    .dab-floating-card.dab-right {
+        top: 240px;
+        right: 140px;
+    }
+
+    .dab-card-content h4 {
+        font-size: 16px;
+    }
+
+    .dab-badge-glass {
+        gap: 30px;
+        bottom: 60px;
+    }
+
+    .dab-service-badge {
+        font-size: 18px;
+        padding: 14px 24px;
+    }
+
+    /* About Section Scaling */
+    .dab-about-section {
+        padding: 80px 0;
+    }
+
+    .dab-about-header {
+        max-width: 1000px;
+        margin-bottom: 60px;
+    }
+
+    .dab-about-title {
+        font-size: 3rem;
+    }
+
+    .dab-about-description {
+        font-size: 1.1rem;
+    }
+
+    .dab-cards-grid {
+        gap: 40px;
+    }
+
+    .dab-card-title {
+        font-size: 1.2rem;
+    }
+
+    .dab-card-description {
+        font-size: 0.85rem;
+    }
+
+    .dab-card-image {
+        height: 220px;
+    }
+
+    /* DNA Section Scaling */
+    .dab-branddna-section {
+        padding: 100px 0;
+    }
+
+    .dab-branddna-container {
+        gap: 240px;
+    }
+
+    .dab-branddna-left h2 {
+        font-size: 58px;
+    }
+
+    .dab-branddna-subtitle {
+        font-size: 34px;
+    }
+
+    .dab-branddna-left p {
+        font-size: 20px;
+    }
+
+    .dab-branddna-right {
+        width: 650px;
+        height: 600px;
+    }
+
+    .dab-dna-circle {
+        width: 200px;
+        height: 200px;
+    }
+
+    .dab-dna-circle h3 {
+        font-size: 20px;
+    }
+
+    .dab-circle-desc {
+        font-size: 13px;
+    }
+
+    .dab-circle-purpose {
+        top: -80px;
+        left: 225px;
+    }
+
+    .dab-circle-voice {
+        top: 200px;
+        left: -100px;
+    }
+
+    .dab-circle-values {
+        top: 200px;
+        right: -100px;
+    }
+
+    .dab-circle-personality {
+        top: 200px;
+        left: 225px;
+    }
+
+    .dab-circle-visual {
+        bottom: -90px;
+        left: 225px;
+    }
+
+    /* How It Works Scaling */
+    .dab-howworks {
+        padding: 55px 0 80px;
+    }
+
+    .dab-howworks-container {
+        grid-template-columns: 500px 1fr;
+        gap: 120px;
+    }
+
+    .dab-main-title {
+        font-size: 54px;
+    }
+
+    .dab-intro-text {
+        font-size: 17px;
+    }
+
+    .dab-howworks-title {
+        font-size: 42px;
+        text-align: left !important;
+        margin-left: 0 !important;
+    }
+
+    .dab-steps-grid {
+        gap: 30px;
+    }
+
+    .dab-step-card {
+        padding: 35px;
+    }
+
+    .dab-step-card h3 {
+        font-size: 20px;
+    }
+
+    .dab-step-card p {
+        font-size: 15px;
+    }
+
+    /* Stats Section Scaling */
+    .dab-circular-stats {
+        padding: 100px 0;
+    }
+
+    .dab-stats-content h2 {
+        font-size: 52px;
+        width: 600px;
+    }
+
+    .dab-stats-content p {
+        font-size: 18px;
+        max-width: 550px;
+    }
+
+    .dab-stat-card {
+        width: 240px !important;
+        height: 240px !important;
+    }
+
+    .dab-stat-card h2 {
+        font-size: 42px !important;
+    }
+
+    .dab-bottom-stats {
+        margin-top: 100px;
+        gap: 80px;
+    }
+
+    .dab-stat h3 {
+        font-size: 42px;
+    }
+
+    .dab-stat p {
+        font-size: 15px;
+    }
+
+    /* Projects Section Scaling */
+    .dab-projects-section {
+        padding: 100px 0;
+    }
+
+    .dab-projects-content h1 {
+        font-size: 56px;
+    }
+
+    .dab-projects-content p {
+        font-size: 20px;
+        width: 700px;
+    }
+
+    .dab-projects-stats h2 {
+        font-size: 44px;
+    }
+
+    .dab-projects-stats span {
+        font-size: 22px;
+    }
+
+    .dab-project-logo-card {
+        width: 100px;
+        height: 100px;
+    }
+
+    /* Feedback Section Scaling */
+    .dab-feedback-section {
+        padding: 100px 0 0 0;
+    }
+
+    .dab-page .wf-footer-new {
+        padding-top: 25px;
+    }
+
+    .dab-feedback-title {
+        font-size: 48px;
+    }
+
+    .dab-feedback-description {
+        font-size: 1.25rem;
+        max-width: 900px;
+    }
+
+    .dab-feedback-card {
+        width: 650px;
+        padding: 60px;
+    }
+
+    .dab-feedback-card.left {
+        transform: translateX(-500px) scale(0.85);
+    }
+
+    .dab-feedback-card.right {
+        transform: translateX(500px) scale(0.85);
+    }
+
+    .dab-feedback-text {
+        font-size: 18px;
+    }
+
+    .dab-author-name {
+        font-size: 20px;
+    }
+
+    .dab-feedback-carousel {
+        height: 430px;
+    }
+}

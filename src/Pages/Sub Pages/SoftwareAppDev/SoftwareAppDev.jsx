@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import Navbar from '../../../Components/Navbar/Navbar';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
-// import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
+import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import './SoftwareAppDev.css';
 import { Helmet } from 'react-helmet';
@@ -599,7 +599,7 @@ const SoftwareAppDev = () => {
             {/* Internship Programs */}
 
 
-            {/* <WhiteFooter /> */}
+            <WhiteFooter />
             <BackToTop />
         </div>
     );

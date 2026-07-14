@@ -7,18 +7,9 @@ const SearchBar = ({ mobile = false, source = 'main' }) => {
     const [searchResults, setSearchResults] = useState([]);
     const [showResults, setShowResults] = useState(false);
     const [isSearching, setIsSearching] = useState(false);
-    const [recentSearches, setRecentSearches] = useState([]);
     const searchRef = useRef(null);
     const navigate = useNavigate();
     const location = useLocation();
-
-    // Load recent searches from localStorage
-    useEffect(() => {
-        const savedSearches = localStorage.getItem('recentSearches');
-        if (savedSearches) {
-            setRecentSearches(JSON.parse(savedSearches));
-        }
-    }, []);
 
     // Check for section to scroll to on page load (when navigation happens)
     useEffect(() => {
@@ -30,19 +21,6 @@ const SearchBar = ({ mobile = false, source = 'main' }) => {
             }, 500); // Wait for page to load
         }
     }, [location, navigate]);
-
-    // Save recent searches to localStorage
-    const saveToRecentSearches = useCallback((query) => {
-        if (!query.trim()) return;
-        
-        const updatedSearches = [
-            query.toLowerCase(),
-            ...recentSearches.filter(s => s.toLowerCase() !== query.toLowerCase())
-        ].slice(0, 5); // Keep only 5 most recent
-        
-        setRecentSearches(updatedSearches);
-        localStorage.setItem('recentSearches', JSON.stringify(updatedSearches));
-    }, [recentSearches]);
 
     // Comprehensive website content with proper page paths and section IDs
     const websiteContent = [
@@ -208,14 +186,12 @@ const SearchBar = ({ mobile = false, source = 'main' }) => {
             .sort((a, b) => b.score - a.score)
             .slice(0, 10);
 
-        if (results.length > 0) {
-            saveToRecentSearches(query);
-        }
+        // Recent searches disabled
 
         setSearchResults(results);
         setShowResults(true);
         setIsSearching(false);
-    }, [saveToRecentSearches]);
+    }, []);
 
     // Debounced search
     useEffect(() => {
@@ -279,17 +255,7 @@ const SearchBar = ({ mobile = false, source = 'main' }) => {
         }
     };
 
-    // Handle recent search click
-    const handleRecentSearchClick = (searchTerm) => {
-        setSearchQuery(searchTerm);
-        performSearch(searchTerm);
-    };
-
-    // Clear recent searches
-    const clearRecentSearches = () => {
-        setRecentSearches([]);
-        localStorage.removeItem('recentSearches');
-    };
+    // Recent searches disabled
 
     // Clear search
     const handleClearSearch = () => {
@@ -421,35 +387,7 @@ const SearchBar = ({ mobile = false, source = 'main' }) => {
 
             {showResults && (
                 <div className="search-results">
-                    {!searchQuery.trim() && recentSearches.length > 0 && (
-                        <div className="search-section">
-                            <div className="section-header">
-                                <span>Recent Searches</span>
-                                <button 
-                                    className="clear-recent-btn"
-                                    onClick={clearRecentSearches}
-                                    aria-label="Clear recent searches"
-                                >
-                                    Clear all
-                                </button>
-                            </div>
-                            <div className="recent-searches">
-                                {recentSearches.map((search, index) => (
-                                    <button
-                                        key={index}
-                                        className="recent-search-item"
-                                        onClick={() => handleRecentSearchClick(search)}
-                                    >
-                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                            <circle cx="11" cy="11" r="8" strokeWidth="1.5"/>
-                                            <path d="m21 21-4.35-4.35" strokeWidth="1.5"/>
-                                        </svg>
-                                        <span>{search}</span>
-                                    </button>
-                                ))}
-                            </div>
-                        </div>
-                    )}
+                    {/* Recent Searches disabled */}
 
                     {searchQuery.trim() && (
                         <>

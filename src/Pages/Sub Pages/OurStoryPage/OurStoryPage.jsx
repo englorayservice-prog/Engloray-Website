@@ -37,7 +37,7 @@ import {
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import './OurStoryPage.css';
-// import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
+import NewFooter from '../NewFooter/NewFooter';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 // import Brain3D from '../../../Components/Brain3D/Brain3D';
 
@@ -1127,7 +1127,7 @@ const OurStoryPage = () => {
             handlePortfolioClick={handlePortfolioClick}
           />
         </main>
-        {/* <WhiteFooter /> */}
+        <NewFooter />
         <BackToTop />
       </div>
     </div>

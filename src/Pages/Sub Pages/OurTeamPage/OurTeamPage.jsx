@@ -49,7 +49,7 @@ import './OurTeamPage.css';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
-import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
+import NewFooter from '../NewFooter/NewFooter';
 
 const OurTeamPage = () => {
     // const [projectIndex, setProjectIndex] = useState(0);
@@ -746,7 +746,7 @@ const OurTeamPage = () => {
                     </div>
                 </section>
             </main >
-            <WhiteFooter />
+            <NewFooter />
             <BackToTop />
         </div >
     );

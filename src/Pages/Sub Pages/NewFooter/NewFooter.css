@@ -334,8 +334,18 @@
     font-size: 0.85rem;
 }
 
-.nf-legal-links button:hover {
-    color: #111827;
+.nf-legal-links button.nf-legal-highlight {
+    color: #64748b;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 6px;
+    background: rgba(99, 102, 241, 0.08);
+    transition: all 0.2s ease;
+}
+
+.nf-legal-links button.nf-legal-highlight:hover {
+    background: #6366f1;
+    color: #ffffff;
 }
 
 /* Newsletter */

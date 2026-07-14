@@ -3,7 +3,7 @@ import Navbar from '../../../Components/Navbar/Navbar';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import './AppDevelopment.css';
-// import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
+import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 
 
 import AppDevOne from '../../../assets/Service images/Appdevelopment/business app solution.png';
@@ -909,7 +909,7 @@ const AppDevelopment = () => {
                 </div>
             </section>
             {/* <TSPFFooter /> */}
-            {/* <WhiteFooter /> */}
+            <WhiteFooter />
 
             <BackToTop />
         </div>

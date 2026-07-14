@@ -3,7 +3,7 @@ import Navbar from '../../../Components/Navbar/Navbar';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import './GraphicDesign.css';
-// import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
+import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 //import NewFooter1 from '../../../Components/NewFooter1/NewFooter1';
 
 
@@ -925,7 +925,7 @@ const GraphicDesignPage = () => {
             </section>
             {/* <TSPFFooter /> */}
             {/* <NewFooter1 /> */}
-            {/* <WhiteFooter /> */}
+            <WhiteFooter />
 
             <BackToTop />
         </div>

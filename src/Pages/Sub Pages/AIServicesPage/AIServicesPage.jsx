@@ -15,7 +15,7 @@ import cartoonFemale1 from '../../../assets/cartoon_female_1.png';
 import cartoonFemale2 from '../../../assets/cartoon_female_2.png';
 import cartoonFemale3 from '../../../assets/cartoon_female_3.png';
 import femaleAvatar from '../../../assets/female_avatar.png';
-// import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
+import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 
 import AiOne from '../../../assets/Service images/Chatbot/ai chatbot.png';
 import AiTwo from '../../../assets/Service images/Chatbot/ai develomet.png';
@@ -905,7 +905,7 @@ const AIServicesPage = () => {
                 </div>
             </section>
 
-            {/* <WhiteFooter /> */}
+            <WhiteFooter />
             <BackToTop />
         </div>
     );

@@ -1,607 +1,470 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import Navbar from '../../../Components/Navbar/Navbar';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
-import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
-import './UiuxDesign.css';
-// import TSPFFooter from '../TechGroupSubPagefooter/TSPFFooter';
-// import NewFooter from '../../Sub Pages/subFooterOne/NewFooter1';
+import './UiUxDesign.css';
+import NewFooter from '../NewFooter/NewFooter';
+import avatarTwo from '../../../assets/cartoon_male_1.png';
+import avatarThree from '../../../assets/cartoon_female_1.png';
+import avatarFour from '../../../assets/cartoon_female_2.png';
+import avatarFive from '../../../assets/cartoon_male_2.png';
+import avatarSix from '../../../assets/cartoon_female_3.png';
 
 
-import iphone14Img from '../../../assets/Iphone14.png';
+import UiUxOne from '../../../assets/Service images/uiux/user interface design.png';
+import UiUxTwo from '../../../assets/Service images/uiux/user experanice design.png';
+import UiUxThree from '../../../assets/Service images/uiux/mobile app design.png';
 
-import cartoonMale1 from '../../../assets/cartoon_male_1.png';
-import cartoonMale2 from '../../../assets/cartoon_male_2.png';
-import cartoonMale3 from '../../../assets/cartoon_male_3.png';
-import maleAvatar from '../../../assets/male_avatar.png';
-import cartoonFemale1 from '../../../assets/cartoon_female_1.png';
-import cartoonFemale2 from '../../../assets/cartoon_female_2.png';
-import cartoonFemale3 from '../../../assets/cartoon_female_3.png';
-import femaleAvatar from '../../../assets/female_avatar.png';
 
-// import businessDataImg from '../../../assets/images/Business Data Analytics Solution.png';
-// import dashboardImg from '../../../assets/images/Data Dashboard & Visualization.jpg';
-// import customerInsightsImg from '../../../assets/images/Customer Insights & Segmentation.jpg';
-// import marketingAnalyticsImg from '../../../assets/images/Marketing Analytics Solution.jpg';
 
-const UIDesignServices = () => {
-    const [isExpanded, setIsExpanded] = useState(false);
-    const [currentSlide, setCurrentSlide] = useState(0);
-    const [autoSlide, setAutoSlide] = useState(true);
-    const [visibleImages, setVisibleImages] = useState([]);
+import iphone14Img from '../../../assets/Service images/UIUx Design-Photoroom.png';
+
+// Removed missing premium_avatar local imports
+const UiUxDesignPage = () => {
     const [selectedService, setSelectedService] = useState(0);
-    const feedbackTrackRef = useRef(null);
 
-    const brandServices = [
-        {
-            id: 1, num: '01', title: 'UI/UX Strategy', icon: '✦', short: 'Data-driven design decisions',
-            features: [
-                'User persona development workshops',
-                'Competitive analysis & audit',
-                'User journey mapping sessions',
-                'Usability testing protocols',
-                'Information architecture planning',
-                'Design system governance'
-            ],
-            stats: { val1: '89+', lab1: 'Research Studies', val2: '4 Weeks', lab2: 'Avg Discovery', val3: '4.9★', lab3: 'Satisfaction' },
-            description: 'Our UI/UX Strategy & Research services help organizations make informed design decisions based on real user data. We conduct comprehensive user research, create detailed personas, map user journeys, and develop evidence-based design strategies that reduce risk and ensure your product resonates with target audiences.',
-            image: "https://i.pinimg.com/1200x/d5/a4/6f/d5a46f09fe801afa4888c8252a255abf.jpg"
-        },
-        {
-            id: 2, num: '02', title: 'User Interface Design', icon: '◈', short: 'Beautiful, intuitive interfaces',
-            features: [
-                'High-fidelity pixel-perfect mockups',
-                'Responsive web & mobile design',
-                'Design systems & component libraries',
-                'Dark mode & accessibility support',
-                'Interactive prototyping & animations',
-                'Developer-ready design handoff'
-            ],
-            stats: { val1: '234+', lab1: 'Interfaces', val2: '3 Weeks', lab2: 'Avg Delivery', val3: '4.9★', lab3: 'Satisfaction' },
-            description: 'User Interface Design services deliver visually stunning, highly functional interfaces that users love to interact with. Our designers craft pixel-perfect screens, design systems, and interactive prototypes that balance aesthetics with usability, ensuring your digital product stands out in crowded markets.',
-            image: "https://i.pinimg.com/736x/76/07/7a/76077a1007ed42081bc1c0e4e549b2ad.jpg"
-        },
-        {
-            id: 3, num: '03', title: 'User Experience Design', icon: '✦', short: 'Seamless, enjoyable user flows',
-            features: [
-                'Wireframing & low-fidelity prototypes',
-                'User flow optimization',
-                'Interaction design patterns',
-                'Micro-interaction animations',
-                'Navigation architecture planning',
-                'Conversion rate optimization'
-            ],
-            stats: { val1: '176+', lab1: 'Projects', val2: '5 Weeks', lab2: 'Avg Timeline', val3: '4.8★', lab3: 'Satisfaction' },
-            description: 'User Experience Design focuses on creating meaningful, seamless interactions between users and your digital product. We map user flows, design intuitive navigation systems, and optimize every touchpoint to reduce friction, increase engagement, and drive desired user behaviors.',
-            image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
-        },
-        {
-            id: 4, num: '04', title: 'Mobile App Design', icon: '◈', short: 'Native & cross-platform experiences',
-            features: [
-                'iOS & Android native guidelines',
-                'Responsive mobile-first layouts',
-                'Gesture & touch optimization',
-                'App store screenshot design',
-                'Onboarding flow design',
-                'Mobile component libraries'
-            ],
-            stats: { val1: '98+', lab1: 'Apps Designed', val2: '6 Weeks', lab2: 'Avg Speed', val3: '4.9★', lab3: 'Satisfaction' },
-            description: 'Mobile App Design services create engaging, thumb-friendly experiences for iOS and Android platforms. We follow platform-specific design guidelines while maintaining brand consistency, delivering designs that feel native, perform smoothly, and keep users coming back.',
-            image: "https://i.pinimg.com/736x/5a/f3/76/5af376c6db4e01d502d71527ccda2baf.jpg"
-        },
-        {
-            id: 5, num: '05', title: 'Design Systems', icon: '✦', short: 'Scalable, consistent design language',
-            features: [
-                'Component-based architecture',
-                'Design tokens & variables',
-                'Style guide documentation',
-                'Accessibility (WCAG) compliance',
-                'Cross-platform consistency',
-                'Developer handoff tools'
-            ],
-            stats: { val1: '67+', lab1: 'Systems Built', val2: '8 Weeks', lab2: 'Avg Build', val3: '4.7★', lab3: 'Satisfaction' },
-            description: 'Design Systems help teams scale their UI across products while maintaining consistency and efficiency. We build comprehensive design systems including component libraries, design tokens, usage guidelines, and developer documentation that accelerate product development and ensure brand cohesion.',
-            image: "https://i.pinimg.com/736x/5e/88/ed/5e88ed774a4fa21fac299e2be60b8f91.jpg"
-        }
-    ];
+    const brandServices = [{
+        id: 1, num: '01', title: 'Website UI/UX Design Solution', icon: '✦', short: 'Website UI/UX Design Solution services', stats: { val1: '63+', lab1: 'Designs', val2: '6 Months', lab2: 'Creative', val3: '4.7★', lab3: 'Satisfaction' },
+        description: 'Website UI/UX design solutions focus on creating digital experiences that are both visually stunning and easy to navigate for users across all types of devices. This process involves conducting deep research  Website UI/UX Design Solution focused solutions provided by Engloray expert team.', image: "data:image/jpeg;base64,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"
+    },
+    {
+        id: 2, num: '02', title: 'Mobile App UI/UX Design', icon: '◈', short: 'Mobile App UI/UX Design services', stats: { val1: '55+', lab1: 'Designs', val2: '4 Weeks', lab2: 'Creative', val3: '4.8★', lab3: 'Satisfaction' },
+        description: 'Mobile App UI/UX Design focused solutions provided by Engloray expert team.',
+        //  image: "data:image/jpeg;base64,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"
+        image: UiUxOne
+    },
+    {
+        id: 3, num: '03', title: 'SaaS Dashboard Design System', icon: '✦', short: 'SaaS Dashboard Design System services', stats: { val1: '77+', lab1: 'Designs', val2: '5 Months', lab2: 'Creative', val3: '4.8★', lab3: 'Satisfaction' },
+        description: 'SaaS Dashboard Design System focused solutions provided by Engloray expert team.',
+        // image: "data:image/jpeg;base64,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"
+        image: UiUxTwo
+    },
+    {
+        id: 4, num: '04', title: 'Product UI/UX Design', icon: '◈', short: 'Product UI/UX Design services', stats: { val1: '143+', lab1: 'Designs', val2: '3 Months', lab2: 'Creative', val3: '4.7★', lab3: 'Satisfaction' },
+        description: 'Product UI/UX Design focused Product UI UX design solutions focus on creating comprehensive digital and physical systems that balance user needs with complex business goals to ensure long term product success and market viability',
+        //  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtKKFIobbziX_cO2kTt0YUxYgoVq3Mbheqyw&s"
+        image: UiUxThree
+    }];
 
     const pageData = {
-        title: 'UI/UX DESIGN',
-        description: 'Create exceptional digital experiences that users love and remember.',
-        fullDescription: 'We deliver user-centered design solutions that combine aesthetics with functionality — from research and strategy to pixel-perfect interfaces.',
+        id: 3,
+        title: "UI/UX DESIGN",
+        description: "User-centered designs that provide seamless and intuitive digital experiences.",
+        shortDescription: "Create Memorable Brand that Resonate with Your Audience",
+        fullDescription: "Build scalable and efficient software solutions tailored to your specific business requirements.",
+        features: ["Logo Creation", "Iconography", "Social Media Branding", "Visual Style"],
+        duration: "2-4 weeks",
+        projects: "50+ completed logo",
+        logo: "📱"
     };
 
     const feedbacks = [
         {
-            id: 1, name: 'Sarah Johnson', role: 'Product Director, DesignHub',
-            photo: cartoonFemale1,
-            text: 'The design system Engloray built transformed our product development. Our team now ships features 3x faster with complete visual consistency. Outstanding strategic and executional excellence.',
-            stars: 5
-        },
-        {
-            id: 2, name: 'Michael Chen', role: 'Founder, AppVenture',
-            photo: cartoonMale2,
-            text: 'Our mobile app redesign increased user retention by 45%. The team understood our users deeply and delivered an interface that feels both fresh and intuitive. Highly recommended for any digital product.',
-            stars: 5
-        },
-        {
-            id: 3, name: 'Emma Williams', role: 'Head of Product',
-            photo: cartoonFemale2,
-            text: 'The UX research they conducted uncovered insights we completely missed. Their recommendations transformed our product roadmap and saved us months of building the wrong features. Invaluable partnership.',
-            stars: 5
-        },
-        {
-            id: 4, name: 'David Kumar', role: 'Creative Director',
-            photo: cartoonMale1,
-            text: 'From wireframes to final UI, every pixel was thoughtfully considered. The team delivered a design system that our internal team can actually use and maintain. Best design investment we have made.',
-            stars: 5
-        },
-        {
-            id: 5, name: 'Lisa Thompson', role: 'CEO, StartupScale',
-            photo: cartoonFemale3,
-            text: 'The user testing and iterative design process uncovered usability issues before we launched. Our post-launch user satisfaction scores are the highest ever. Exceptional user-centered approach.',
-            stars: 5
-        },
-        {
-            id: 6, name: 'James Wilson', role: 'Product Manager',
-            photo: cartoonMale3,
-            text: 'The mobile app designs they created are stunning. Our users consistently praise the intuitive navigation and beautiful visuals. The team truly understands modern design principles.',
-            stars: 5
-        },
-        {
-            id: 7, name: 'Natalie Garcia', role: 'Design Lead',
-            photo: femaleAvatar,
-            text: 'Working with Engloray elevated our entire product\'s design maturity. Their strategic guidance and hands-on execution helped us create a cohesive experience across all our platforms.',
-            stars: 5
-        },
-        {
-            id: 8, name: 'Robert Taylor', role: 'CPO, FinTech Plus',
-            photo: maleAvatar,
-            text: 'The user research and persona development gave us clarity on who we are building for. Every design decision now has user data behind it. Transformative for our organization.',
-            stars: 5
-        }
-    ];
-
-    const extraImages = [
-        {
             id: 1,
-            url: 'https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-            title: 'Design Workshop',
-            description: 'Collaborative sessions mapping user journeys and defining design strategies'
+            name: "Bruce Hardy",
+            role: "CEO, TechVentures",
+            photo: "https://api.dicebear.com/7.x/avataaars/svg?seed=Bruce&backgroundColor=b6e3f4&mouth=smile",
+            text: "Digital ad campaigns helped us generate quality admission inquiries. The creatives and messaging worked very well. Their team's dedication to our brand's success was truly exceptional.",
+            stars: 5
         },
         {
             id: 2,
-            url: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-            title: 'Wireframing Process',
-            description: 'Rapid prototyping and iterative design refinement'
+            name: "Mark Smith",
+            role: "Marketing Director",
+            photo: "https://api.dicebear.com/7.x/avataaars/svg?seed=Mark&backgroundColor=c0aede&mouth=smile",
+            text: "Promotional designs were eye-catching and effective. We saw a clear increase in walk-in customers and overall brand engagement within just a few weeks of implementation.",
+            stars: 5
         },
         {
             id: 3,
-            url: 'https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-            title: 'UI Design Studio',
-            description: 'Creating pixel-perfect interfaces and design systems'
-        }
-    ];
-
-    const internshipCourses = [
-        {
-            id: 1, name: 'UI Design Fundamentals', esc: 'UID101', duration: '8 Weeks',
-            description: 'Master core UI design principles, from color theory and typography to layout and component design.',
-            logo: '🎨',
-            features: ['Design Principles', 'Color Theory & Typography', 'Figma Mastery', 'Responsive Design', 'Component Libraries', 'Design Handoff']
+            name: "Sarah Jenkins",
+            role: "Brand Manager",
+            photo: "https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah&backgroundColor=ffdfbf&mouth=smile",
+            text: "The web and mobile development services they provided were top-notch. Our and brand identity has never felt more unified and powerful. Truly a game-changer for us.",
+            stars: 5
         },
         {
-            id: 2, name: 'UX Research & Strategy', esc: 'UXR201', duration: '12 Weeks',
-            description: 'Learn user research methodologies, persona development, journey mapping, and usability testing.',
-            logo: '🔍',
-            features: ['User Interviews', 'Persona Development', 'Journey Mapping', 'Usability Testing', 'Research Synthesis', 'Strategy Development']
+            id: 4,
+            name: "Vera Duncan",
+            role: "Creative Head",
+            photo: "https://api.dicebear.com/7.x/avataaars/svg?seed=Vera&backgroundColor=d1d4f9&mouth=smile",
+            text: "Building our digital presence from scratch felt like an impossible task, but this team made it look easy. Their expertise in branding and identity design is second to none.",
+            stars: 5
         },
         {
-            id: 3, name: 'Interaction Design', esc: 'IXD301', duration: '10 Weeks',
-            description: 'Advanced interaction design, micro-animations, prototyping, and motion design principles.',
-            logo: '✨',
-            features: ['Micro-interactions', 'Prototyping', 'Motion Design', 'Gesture Design', 'Accessibility', 'User Testing']
+            id: 5,
+            name: "David Chen",
+            role: "Product Lead",
+            photo: "https://api.dicebear.com/7.x/avataaars/svg?seed=David&backgroundColor=c0aede&mouth=smile",
+            text: "Innovative, creative, and highly professional. They took our vision and expanded it into a brand that truly resonates with our global audience. Highly recommended!",
+            stars: 5
+        },
+        {
+            id: 6,
+            name: "Emma Wilson",
+            role: "Design Director",
+            photo: "https://api.dicebear.com/7.x/avataaars/svg?seed=Emma&backgroundColor=ffdfbf&mouth=smile",
+            text: "Every touchpoint they designed feels unmistakable. We've received numerous compliments on our new visual style and identity. They are truly masters of their craft.",
+            stars: 5
+        },
+        {
+            id: 7,
+            name: "James Miller",
+            role: "Startup Founder",
+            photo: "https://api.dicebear.com/7.x/avataaars/svg?seed=James&backgroundColor=b6e3f4&mouth=smile",
+            text: "The attention to detail in their branding process is remarkable. They don't just design; they strategize for growth. Our ROI has been fantastic.",
+            stars: 5
+        },
+        {
+            id: 8,
+            name: "Linda Thompson",
+            role: "COO, Retail Group",
+            photo: "https://api.dicebear.com/7.x/avataaars/svg?seed=Linda&backgroundColor=d1d4f9&mouth=smile",
+            text: "From logo design to environmental branding, they handled everything with grace and excellence. Our physical and digital presence are now perfectly aligned.",
+            stars: 5
         }
     ];
-
-    // WhatsApp navigation function
-    const handleWhatsAppNavigation = () => {
-        window.open('https://wa.me/916381759909', '_blank');
-    };
-
-    useEffect(() => {
-        if (feedbackTrackRef.current) {
-            feedbackTrackRef.current.style.transform = `translateX(-${currentSlide * 100}%)`;
-        }
-    }, [currentSlide]);
-
-    useEffect(() => {
-        let interval;
-        if (autoSlide) {
-            interval = setInterval(() => {
-                setCurrentSlide((prev) => (prev + 1) % feedbacks.length);
-            }, 5000);
-        }
-        return () => clearInterval(interval);
-    }, [autoSlide, feedbacks.length]);
-
-    useEffect(() => {
-        if (isExpanded) {
-            const timeouts = [];
-            extraImages.forEach((img, index) => {
-                const timeout = setTimeout(() => {
-                    setVisibleImages(prev => [...prev, img.id]);
-                }, index * 300);
-                timeouts.push(timeout);
-            });
-            return () => {
-                timeouts.forEach(timeout => clearTimeout(timeout));
-                setVisibleImages([]);
-            };
-        } else {
-            setVisibleImages([]);
-        }
-    }, [isExpanded]);
-
-    const handleDotClick = (index) => {
-        setCurrentSlide(index);
-        setAutoSlide(false);
-        setTimeout(() => setAutoSlide(true), 10000);
-    };
-
-    const handlePrevSlide = () => {
-        setCurrentSlide((prev) => (prev === 0 ? feedbacks.length - 1 : prev - 1));
-        setAutoSlide(false);
-        setTimeout(() => setAutoSlide(true), 10000);
-    };
-
-    const handleNextSlide = () => {
-        setCurrentSlide((prev) => (prev + 1) % feedbacks.length);
-        setAutoSlide(false);
-        setTimeout(() => setAutoSlide(true), 10000);
-    };
-
-    const handleReadMore = () => {
-        setIsExpanded(!isExpanded);
-    };
 
     return (
-        <div className="ui-page-page">
+        <div className="uiux-page-wrapper-new">
             <TopNavBar />
             <Navbar />
-
-            {/* ── Hero Section ── */}
-            <section className="ui-page-hero-section-new">
-                <div className="ui-page-hero-container-new">
+            {/* Hero Section Rebuild */}
+            <section className="uiux-page-hero-section-new">
+                <div className="uiux-page-hero-container-new">
 
                     {/* Left Panel */}
-                    <div className="ui-page-hero-left-new">
-                        <h4 className="ui-page-hero-subtitle-new">WE ARE ENGLORAY</h4>
-                        <h1 className="ui-page-hero-title-new">{pageData.title}</h1>
-                        <h1 className="ui-page-hero-title-desc-new">
+                    <div className="uiux-page-hero-left-new">
+                        <h4 className="uiux-page-hero-subtitle-new">WE ARE ENGLORAY</h4>
+                        <h1 className="uiux-page-hero-title-new">{pageData.title}</h1>
+                        <h1 className="uiux-page-hero-title-desc-new">
                             <img
                                 src={iphone14Img}
-                                alt="Engloray UI/UX Design iPhone Mockup"
-                                className="ui-page-hero-iphone14-img"
-                                style={{ maxWidth: '55%', height: '20%' }}
+                                alt="Engloray Branding iPhone Mockup"
+                                className="uiux-page-hero-iphone14-img"
+                                style={{ maxWidth: "55%", height: "20%" }}
                             />
                         </h1>
 
-                        <div className="ui-page-hero-buttons-new">
-                            <button onClick={handleWhatsAppNavigation} className="ui-page-btn-get-started-new">GET STARTED</button>
-                            <button onClick={handleWhatsAppNavigation} className="ui-page-btn-contact-us-new">CONTACT US</button>
+                        <div className="uiux-page-hero-buttons-new">
+                            <button className="uiux-page-btn-get-started-new" onClick={() => window.open('https://wa.me/916381759909?text=Hello!%20I%20would%20like%20to%20start%20a%20project%20with%20ENGLORAY%20regarding%20Branding%20%26%20Identity.', '_blank')}>GET STARTED</button>
+                            <button className="uiux-page-btn-contact-us-new" onClick={() => window.open('https://wa.me/916381759909?text=Hello!%20I%20want%20to%20contact%20ENGLORAY%20about%20Branding%20%26%20Identity.', '_blank')}>CONTACT US</button>
                         </div>
 
-                        <p className="ui-page-hero-desc-new">{pageData.fullDescription}</p>
+                        <p className="uiux-page-hero-desc-new">
+                            {pageData.fullDescription}
+                        </p>
 
-                        <div className="ui-page-hero-stats-new">
-                            <div className="ui-page-stat-item-new">
-                                <div className="ui-page-stat-circle-new">
-                                    <svg viewBox="0 0 36 36"><path className="ui-page-circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" /><path className="ui-page-circle-val bi-circle-blue" strokeDasharray="15, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" /></svg>
-                                    <span className="ui-page-stat-number-new">25<span className="ui-page-stat-dash">+</span></span>
+                        <div className="uiux-page-hero-stats-new">
+                            <div className="uiux-page-stat-item-new">
+                                <div className="uiux-page-stat-circle-new">
+                                    <svg viewBox="0 0 36 36"><path className="uiux-page-circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" /><path className="uiux-page-circle-val uiux-page-circle-blue" strokeDasharray="15, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" /></svg>
+                                    <span className="uiux-page-stat-number-new">15<span className="uiux-page-stat-dash">+</span></span>
                                 </div>
-                                <span className="ui-page-stat-label-new">Design Partners</span>
+                                <span className="uiux-page-stat-label-new">Partners</span>
                             </div>
-                            <div className="ui-page-stat-item-new">
-                                <div className="ui-page-stat-circle-new">
-                                    <svg viewBox="0 0 36 36"><path className="ui-page-circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" /><path className="ui-page-circle-val bi-circle-green" strokeDasharray="75, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" /></svg>
-                                    <span className="ui-page-stat-number-new">350<span className="ui-page-stat-dash">+</span></span>
+                            <div className="uiux-page-stat-item-new">
+                                <div className="uiux-page-stat-circle-new">
+                                    <svg viewBox="0 0 36 36"><path className="uiux-page-circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" /><path className="uiux-page-circle-val uiux-page-circle-green" strokeDasharray="75, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" /></svg>
+                                    <span className="uiux-page-stat-number-new">300<span className="uiux-page-stat-dash">+</span></span>
                                 </div>
-                                <span className="ui-page-stat-label-new">Happy Clients</span>
+                                <span className="uiux-page-stat-label-new">Clients</span>
                             </div>
-                            <div className="ui-page-stat-item-new">
-                                <div className="ui-page-stat-circle-new">
-                                    <svg viewBox="0 0 36 36"><path className="ui-page-circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" /><path className="ui-page-circle-val bi-circle-gray" strokeDasharray="98, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" /></svg>
-                                    <span className="ui-page-stat-number-new">4.9<span className="ui-page-stat-dash">+</span></span>
+                            <div className="uiux-page-stat-item-new">
+                                <div className="uiux-page-stat-circle-new">
+                                    <svg viewBox="0 0 36 36"><path className="uiux-page-circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" /><path className="uiux-page-circle-val uiux-page-circle-gray" strokeDasharray="98, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" /></svg>
+                                    <span className="uiux-page-stat-number-new">4.9<span className="uiux-page-stat-dash">+</span></span>
                                 </div>
-                                <span className="ui-page-stat-label-new">Client Rating</span>
+                                <span className="uiux-page-stat-label-new">Rating</span>
                             </div>
                         </div>
 
-                        <div className="ui-page-hero-stats-new" style={{ marginTop: '30px' }}>
-                            <div className="ui-page-stat-item-new">
-                                <div className="ui-page-stat-circle-new">
-                                    <svg viewBox="0 0 36 36"><path className="ui-page-circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" /><path className="ui-page-circle-val bi-circle-blue" strokeDasharray="40, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" /></svg>
-                                    <span className="ui-page-stat-number-new">45<span className="ui-page-stat-dash">+</span></span>
+                        {/* Second row of stats matching the user's request */}
+                        <div className="uiux-page-hero-stats-new" style={{ marginTop: '30px' }}>
+                            <div className="uiux-page-stat-item-new">
+                                <div className="uiux-page-stat-circle-new">
+                                    <svg viewBox="0 0 36 36"><path className="uiux-page-circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" /><path className="uiux-page-circle-val uiux-page-circle-blue" strokeDasharray="40, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" /></svg>
+                                    <span className="uiux-page-stat-number-new">40<span className="uiux-page-stat-dash">+</span></span>
                                 </div>
-                                <span className="ui-page-stat-label-new">Design Awards</span>
+                                <span className="uiux-page-stat-label-new">Awards</span>
                             </div>
-                            <div className="ui-page-stat-item-new">
-                                <div className="ui-page-stat-circle-new">
-                                    <svg viewBox="0 0 36 36"><path className="ui-page-circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" /><path className="ui-page-circle-val bi-circle-green" strokeDasharray="80, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" /></svg>
-                                    <span className="ui-page-stat-number-new">600<span className="ui-page-stat-dash">+</span></span>
+                            <div className="uiux-page-stat-item-new">
+                                <div className="uiux-page-stat-circle-new">
+                                    <svg viewBox="0 0 36 36"><path className="uiux-page-circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" /><path className="uiux-page-circle-val uiux-page-circle-green" strokeDasharray="80, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" /></svg>
+                                    <span className="uiux-page-stat-number-new">500<span className="uiux-page-stat-dash">+</span></span>
                                 </div>
-                                <span className="ui-page-stat-label-new">Design Projects</span>
+                                <span className="uiux-page-stat-label-new">Projects</span>
                             </div>
-                            <div className="ui-page-stat-item-new">
-                                <div className="ui-page-stat-circle-new">
-                                    <svg viewBox="0 0 36 36"><path className="ui-page-circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" /><path className="ui-page-circle-val bi-circle-gray" strokeDasharray="50, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" /></svg>
-                                    <span className="ui-page-stat-number-new">6<span className="ui-page-stat-dash">+</span></span>
+                            <div className="uiux-page-stat-item-new">
+                                <div className="uiux-page-stat-circle-new">
+                                    <svg viewBox="0 0 36 36"><path className="uiux-page-circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" /><path className="uiux-page-circle-val uiux-page-circle-gray" strokeDasharray="50, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" /></svg>
+                                    <span className="uiux-page-stat-number-new">5<span className="uiux-page-stat-dash">+</span></span>
                                 </div>
-                                <span className="ui-page-stat-label-new">Years Experience</span>
+                                <span className="uiux-page-stat-label-new">Years</span>
                             </div>
                         </div>
                     </div>
 
                     {/* Right Panel */}
-                    <div className="ui-page-hero-right-new">
-                        <div className="ui-page-right-top-new">
-                            <div className="ui-page-title-play-row">
-                                <h2 className="ui-page-case-title-new">About Our<br />Design Studio</h2>
-                                <div className="ui-page-play-circle-new">
-                                    <span className="ui-page-play-text-new">Play</span>
-                                    <div className="ui-page-play-icon-new">▶</div>
+                    <div className="uiux-page-hero-right-new">
+                        <div className="uiux-page-right-top-new">
+                            {/* <p className="uiux-page-case-subtitle-new">Case Examples</p> */}
+                            <div className="uiux-page-title-play-row">
+                                <h2 className="uiux-page-case-title-new">About Our<br />company</h2>
+                                <div className="uiux-page-play-circle-new">
+                                    <span className="uiux-page-play-text-new">Play</span>
+                                    <div className="uiux-page-play-icon-new">▶</div>
                                 </div>
                             </div>
 
-                            <p className="ui-page-about-company-desc-new">
-                                We are a specialized UI/UX design agency creating digital experiences that users love. Our team of designers, researchers, and strategists focuses on human-centered design, delivering interfaces that are both beautiful and functional — helping businesses build products that truly resonate with their audiences.
+                            <p className="uiux-page-about-company-desc-new">
+                                We create intuitive, visually stunning user interfaces and experiences that delight users and drive business results. Our UI/UX team combines strategic thinking, user research, and cutting-edge design to craft digital products that are both beautiful and effortlessly functional.
                             </p>
 
-                            <div className="ui-page-avatars-row-new">
-                                <div className="ui-page-avatar-icon-new">
+                            <div className="uiux-page-avatars-row-new">
+                                <div className="uiux-page-avatar-icon-new">
                                     <svg viewBox="0 0 24 24" width="16" height="16" stroke="#555" strokeWidth="2" fill="none"><circle cx="12" cy="12" r="10"></circle><polyline points="12 8 12 12 14 14"></polyline></svg>
                                 </div>
-                                <div className="ui-page-avatar-group-new">
-                                    <img src="https://t3.ftcdn.net/jpg/07/28/48/98/360_F_728489827_qtQHjlMEeD53QhTdUEtdOvNPQw21pYjh.jpg" alt="avatar" />
-                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGQ53aAyRQ8l1h3GkPHeexbL9wyuTlrf1laQ&s" alt="avatar" />
-                                    <img src="https://t4.ftcdn.net/jpg/06/43/68/65/360_F_643686558_Efl6HB1ITw98bx1PdAd1wy56QpUTMh47.jpg" alt="avatar" />
+                                <div className="uiux-page-avatar-group-new">
+                                    <img src={avatarTwo} alt="avatar" />
+                                    <img src={avatarThree} alt="avatar" />
+                                    <img src={avatarFour} alt="avatar" />
                                 </div>
-                                <div className="ui-page-download-btn-new">
+                                <div className="uiux-page-download-btn-new">
                                     <svg viewBox="0 0 24 24" width="16" height="16" stroke="#1a1a1a" strokeWidth="2" fill="none"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
                                 </div>
                             </div>
+
+                            {/* <p className="uiux-page-about-company-desc-new">
+                                We deliver innovative digital solutions that help businesses grow faster, improve performance, and create impactful user experiences. Our team focuses on quality, creativity, and measurable results.
+                            </p> */}
                         </div>
 
-                        <div className="ui-page-performance-card-new">
-                            <div className="ui-page-perf-header-new">
-                                <div className="ui-page-perf-item-new">
-                                    <span className="ui-page-perf-label-new">USER SATISFACTION</span>
-                                    <span className="ui-page-perf-value-new">96%</span>
+                        <div className="uiux-page-performance-card-new">
+                            <div className="uiux-page-perf-header-new">
+                                <div className="uiux-page-perf-item-new">
+                                    <span className="uiux-page-perf-label-new">PERFORMANCE</span>
+                                    <span className="uiux-page-perf-value-new">92%</span>
                                 </div>
-                                <div className="ui-page-perf-item-new text-right">
-                                    <span className="ui-page-perf-label-new">RETENTION RATE</span>
-                                    <span className="ui-page-perf-value-bold-new">98% ↑</span>
+                                <div className="uiux-page-perf-item-new text-right">
+                                    <span className="uiux-page-perf-label-new">RESULTS</span>
+                                    <span className="uiux-page-perf-value-bold-new">98% ↑</span>
                                 </div>
                             </div>
-                            <div className="ui-page-perf-chart-new">
-                                <div className="ui-page-chart-col-new"><div className="ui-page-bar-green-new" style={{ height: '35%' }}></div></div>
-                                <div className="ui-page-chart-col-new"><div className="ui-page-bar-gray-new" style={{ height: '60%' }}></div></div>
-                                <div className="ui-page-chart-col-new"><div className="ui-page-bar-blue-new" style={{ height: '80%' }}></div></div>
+                            <div className="uiux-page-perf-chart-new">
+                                <div className="uiux-page-chart-col-new"><div className="uiux-page-bar-green-new" style={{ height: '35%' }}></div></div>
+                                <div className="uiux-page-chart-col-new"><div className="uiux-page-bar-gray-new" style={{ height: '60%' }}></div></div>
+                                <div className="uiux-page-chart-col-new"><div className="uiux-page-bar-blue-new" style={{ height: '80%' }}></div></div>
                             </div>
                         </div>
                     </div>
+
+                    {/* <div className="uiux-page-hero-notch-new">
+                        <div className="uiux-page-bottom-bar-content-new">
+                            Our <span className="uiux-page-bottom-icon-new">
+                                <span className="uiux-page-b-icon-blue"></span>
+                                <span className="uiux-page-b-icon-black"> — </span>
+                            </span> services
+                        </div>
+                    </div> */}
                 </div>
             </section>
 
-            {/* ── Services / About Section ── */}
-            <section className="ui-page-about-section-new">
-                <div className="ui-page-about-top-notch-content">
-                    <span className="ui-page-about-left-tag">OUR SERVICES</span>
+            {/* About Section - Interactive Service Detail Panel */}
+            <section className="uiux-page-about-section-new">
+                <div className="uiux-page-about-top-notch-content">
+                    <span className="uiux-page-about-left-tag">OUR SERVICES</span>
                 </div>
-                <div className="ui-page-about-inner-new">
+                <div className="uiux-page-about-inner-new">
 
                     {/* Left: Clickable Service List */}
-                    <div className="ui-page-about-left-new">
-                        <div className="ui-page-about-left-header">
-                            <h2 className="ui-page-about-left-title">Why Choose Our<br />UI/UX Design Services?</h2>
-                            <p className="ui-page-about-intro-new">
+                    <div className="uiux-page-about-left-new">
+                        <div className="uiux-page-about-left-header">
+                            <h2 className="uiux-page-about-left-title">Why Choose Our<br />Branding & Design?</h2>
+                            <p className="uiux-page-about-intro-new">
                                 Click any service below to explore what we offer.
                             </p>
                         </div>
 
-                        <div className="ui-page-about-services-list-new">
+                        <div className="uiux-page-about-services-list-new">
                             {brandServices.map((service, i) => (
                                 <div
                                     key={service.id}
-                                    className={`bi-about-service-item-new ${selectedService === i ? 'bi-service-active' : ''}`}
+                                    className={`uiux-page-about-service-item-new ${selectedService === i ? 'uiux-page-service-active' : ''}`}
                                     onClick={() => setSelectedService(i)}
                                 >
-                                    <div className="ui-page-service-item-left-about">
-                                        <span className="ui-page-service-num-new">{service.num}</span>
-                                        <div className="ui-page-service-text-group">
-                                            <span className="ui-page-service-name-about">{service.title}</span>
-                                            <span className="ui-page-service-short-about">{service.short}</span>
+                                    <div className="uiux-page-service-item-left-about">
+                                        <span className="uiux-page-service-num-new">{service.num}</span>
+                                        <div className="uiux-page-service-text-group">
+                                            <span className="uiux-page-service-name-about">{service.title}</span>
+                                            <span className="uiux-page-service-short-about">{service.short}</span>
                                         </div>
                                     </div>
-                                    <span className="ui-page-service-arrow-about">{selectedService === i ? '↘' : '→'}</span>
+                                    <span className="uiux-page-service-arrow-about">{selectedService === i ? '↘' : '→'}</span>
                                 </div>
                             ))}
                         </div>
                     </div>
 
                     {/* Center: Main Image */}
-                    <div className="ui-page-about-center-new">
-                        <div className="ui-page-about-img-wrap-new">
+                    <div className="uiux-page-about-center-new">
+                        <div className="uiux-page-about-img-wrap-new">
                             <img
                                 key={selectedService}
                                 src={brandServices[selectedService].image}
                                 alt={brandServices[selectedService].title}
-                                className="ui-page-dynamic-img-fade"
+                                className="uiux-page-dynamic-img-fade"
                             />
-                            <div className="ui-page-about-badge-new">
-                                <span className="ui-page-badge-num">50+</span>
-                                <span className="ui-page-badge-label">Expert<br />Designers</span>
+                            <div className="uiux-page-about-badge-new">
+                                <span className="uiux-page-badge-num">50+</span>
+                                <span className="uiux-page-badge-label">Expert<br />Designers</span>
                             </div>
                         </div>
                     </div>
 
-                    {/* Right: Detail Panel */}
-                    <div className="ui-page-about-right-new">
-                        <div className="ui-page-about-detail-panel" key={selectedService}>
-                            <div className="ui-page-detail-icon-wrap">
-                                <span className="ui-page-detail-icon">{brandServices[selectedService].icon}</span>
-                            </div>
-                            <span className="ui-page-detail-num">{brandServices[selectedService].num}</span>
-                            <h3 className="ui-page-detail-title">{brandServices[selectedService].title}</h3>
-                            <p className="ui-page-detail-desc">{brandServices[selectedService].description}</p>
-                            {brandServices[selectedService].features && (
-                                <ul className="ui-page-detail-features">
-                                    {brandServices[selectedService].features.map((f, fi) => (
-                                        <li key={fi} className="ui-page-detail-feature-item">{f}</li>
-                                    ))}
-                                </ul>
-                            )}
-                            <div className="ui-page-detail-divider" />
-                            <div className="bi-detail-stats">
-                                <div className="bi-detail-stat">
-                                    <span className="bi-detail-stat-val">{brandServices[selectedService].stats?.val1}</span>
-                                    <span className="bi-detail-stat-label">{brandServices[selectedService].stats?.lab1}</span>
+                    {/* Right: Detail Panel - pops content when service is clicked */}
+                    <div className="uiux-page-about-right-new">
+                        <div className="uiux-page-about-detail-panel" key={selectedService}>
+                            {/* <div className="uiux-page-detail-icon-wrap">
+                                <span className="uiux-page-detail-icon">{brandServices[selectedService].icon}</span>
+                            </div> */}
+                            <span className="uiux-page-detail-num">{brandServices[selectedService].num}</span>
+                            <h3 className="uiux-page-detail-title">{brandServices[selectedService].title}</h3>
+                            <p className="uiux-page-detail-desc">{brandServices[selectedService].description}</p>
+                            <div className="uiux-page-detail-divider" />
+                            <div className="uiux-page-detail-stats">
+                                <div className="uiux-page-detail-stat">
+                                    <span className="uiux-page-detail-stat-val">{brandServices[selectedService].stats?.val1 || '100+'}</span>
+                                    <span className="uiux-page-detail-stat-label">{brandServices[selectedService].stats?.lab1 || 'Projects'}</span>
                                 </div>
-                                <div className="bi-detail-stat">
-                                    <span className="bi-detail-stat-val">{brandServices[selectedService].stats?.val2}</span>
-                                    <span className="bi-detail-stat-label">{brandServices[selectedService].stats?.lab2}</span>
+                                <div className="uiux-page-detail-stat">
+                                    <span className="uiux-page-detail-stat-val">{brandServices[selectedService].stats?.val2 || '3 Weeks'}</span>
+                                    <span className="uiux-page-detail-stat-label">{brandServices[selectedService].stats?.lab2 || 'Timeline'}</span>
                                 </div>
-                                <div className="bi-detail-stat">
-                                    <span className="bi-detail-stat-val">{brandServices[selectedService].stats?.val3}</span>
-                                    <span className="bi-detail-stat-label">{brandServices[selectedService].stats?.lab3}</span>
+                                <div className="uiux-page-detail-stat">
+                                    <span className="uiux-page-detail-stat-val">{brandServices[selectedService].stats?.val3 || '4.9★'}</span>
+                                    <span className="uiux-page-detail-stat-label">{brandServices[selectedService].stats?.lab3 || 'Rating'}</span>
                                 </div>
                             </div>
-                            <button onClick={handleWhatsAppNavigation} className="ui-page-detail-cta">Get Started →</button>
+                            <button className="uiux-page-detail-cta">Get Started →</button>
                         </div>
+                    </div>
+
+
+                </div>
+            </section>
+
+            {/* Elevate Brand About Section */}
+            <section className="uiux-page-elevate-section">
+                <div className="uiux-page-el-container">
+                    <div className="uiux-page-el-left">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Team large" className="uiux-page-el-img-large" />
+                        <img src="data:image/jpeg;base64,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" alt="Team top" className="uiux-page-el-img-small-top" />
+                        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxITEhUSEhMVFRUXFRcYFxcYFxkdGhYZFxgXIRcaFxoYHSogGBomHhgYITEjJykrLi4wGh8zODQtOygtLisBCgoKDg0OGxAQGy0mICYtLS0tLTAtLy8vLS8tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAKYBMAMBEQACEQEDEQH/xAAcAAEAAgMBAQEAAAAAAAAAAAAABQYDBAcCAQj/xABDEAACAQMCBAMFBgMGBgAHAAABAgMABBESIQUGMUETUWEiMnGBkQcUQlKhscHR8BUjM1NickOCkrLh8RYkNVSDotL/xAAbAQEAAgMBAQAAAAAAAAAAAAAABAUBAgMGB//EADQRAAICAgEDAgMGBQUBAQAAAAABAgMEESEFEjETQSJRYTJxgZGhsQYUM0LRFSPB4fHwNP/aAAwDAQACEQMRAD8A7jQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgPmaAZoD7QCgFAKAUAoD5QDNAfaAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUBF8e4wlrH4jq7DOn2cdTnGckeVG9cnG65VR7mVr/AOPixxFbsSegLb/RQc1p3/QiLOUuIo8WnMF9cM6RiKLQCWyrFhjrtuSfQLRSbMxutselwRHHLq8QqXuGdWAIZGIX4EADB9CK1ltHC+VsHyy58p8dFxHhj/ers48/Jh6H9/lW8XtE7GvVkfqT+a2JIzQDNDBgu7yOMapHVB5sQP3rKi5PSRrOyMFuT0VPi/2gwR5EKtK3n7qfU7n5CpcMKb5lwVt3Va48Q5ZF3dzxOeHx5JY7aAgEe8DpPQnSGbB9SKzKWPT55FVebl67dLZqWF/xC3QyxSx3UKbuqsWKjzKsA6/KsKzHu+zwzNlGdh/b5RZ+Bc+Ws+Fc+C/k59k/Bun1xXKzHlE7U51dnD4ZakYEZG4rgTU9nqhkUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgPhrJgjeO2azQSRt0K/QjoaHC+KnBpnIEDxvsSrqeo2II8qjvaZQrdcuCeXjokIaeLVIP+LExjkPx0jDfpWyl80TI5SfMlyavHeLSXD6nOlRsqFtlA/3dW8zWHtnG/I73y+DU4dxEwyLLGSWB6KrHUO67DBBrR2Rg/ikl+JimySalBN/gdZteJI8aSZ06lVtLbMuoA4YdiM1pPqGNHzNfmehhCUlvR6biUY/Fn4A1Fn1vCh/fs6Kib9jG3Fk7Bj9P51En/EmKnqKbN1jSOefarf4lt8H2TG5x/wAw6ivWdKya7a/Uj4Z5/q1bckmU1ZVb0/b/AMVceSjlBxZMxcyzLGsMqRzxrsokUkqOwVlIONvWoN2HXN8llidVyMf7LJKy558FCIrOBAepDEA/HI3+Ga4rBjHwyXZ1i67ma3+JSmkUep9Nh+u/6VM7fYrVHnZ0f7JeJSSGVCfZRQQN8Ak7dfgag5cIrWi36fNvaOlCoRZigFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKA+E0B4JrOjVswrIrhtLK2CVOCDg+Rx3rOmvKNNqXg5/zby1dmXXbRB1I9rBTOfg+P0rDS8lXlYlkpbgU6+hu48+LDOo9VbT9QNNauSXsV08e1eUz7wThct1qMQUKpALO2F1Hoo6kt6Y8vOsd2zFeJOfguXJhdYZInGGimdCPkrbeYOo14b+IouOSpfQ9R0ddtPY/ZssFuAZUU+6W37Z9lsb99wNh/OuXQsWq6//AHdP6f8ARY3SajwTxso8Y0J/0j969s8Ohx7exa+4hd8vmQlzbMjEYJXfDYPQnYZ8x03x2615DqvSHTNyqTafyXCJdVu1plG+0rhrSRJcIciPIYdRpYj2hjyPX4+lTv4Z6i6pvGs9/H+Cv6pj96Vi9vJ8vuGcO9mziIW6yyK2o5MgRWAkBPuvnAONjsPKvZVZ7U9M4WdIcqe9LwvJUIZ+uRuA2xHQgHt8e1XSkpI844OMj3wfhk11KI4gXbuSdlHmzdh/QzXGyyNa5JMKZ2PUUdZ5f5SsoUaCQRzysAZNYUnzAVT7q9/Pv5VWWXynLZcU4kIR0+SU4Fyzb2jSNbhl8TTlSxYDTqxp1bj3j3rlOUp+TtVVCv7JNDNczseg1ZMnqgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAY2bz2FZRqyt888TkggBiJVmbGdORjG6k/hJzsfQ9Kl4dUbLNS8EDPulVVuJzvl7j81ox8PBRveRuh9Qex9aucjEhcueGUONmTofHPzRJ8T56upD/dEQr5ABj82YfsBXCvp1UV8fJ3t6pbJ/Dwiz8n3fEJF1T6fDPRnGHx6BcZHqf1qBmQx4vUPJZ4M8ma3Z4/U+8x3UcqNGuhQCH8QqDhkIIb4DHWqmdnyLCda7eSq8icUE093hy+tkk1FdOSFAOFycDoB6AV5Lr8XJKaNumzTcki6QalbUu5394ZxnsuMYqswepzxPsQT+vv8AmWU6+/3NscSlHXR8wf8A+qtY/wASX6060cv5aPzI+64kpyJJc77gHb4YXt8c1ByOo51/Del8kSYYj1tI0rniUDKUbLqwKldOxBGCN/SoNNFkLFNPnZmdTa00U+Dg8VzNDfxy6AjDxc9SbdsatXYkIM+mDX0CENuL9yPXmuFDqaILlzhp4heypG2hGeVyxGSEZyRgeZB77fsb9XOEDzPoerZ+p23gfBobWMRQrpXqT1Zj5se5/oVElJze2WVdcYLUTDecBR2MiO8chOdQOctkYY53JAAA3wAAMYyDyaO3cV2+vb2KVhO7pEoxHIB7DdzI7gnT+VUc+rE9THk5d3PgsK4VOta5fv8A4R6suZb1FUlY7xSeseI3C4GlhqOh877DHbvqC4U5rzybyx6JvhuL+vK2W3g3Fo7mBLhAwRxkaxggZxuPl2613jLuWyDbW6puD/Q3YJMjNNmhlrIFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgMUihgQQCDsQehHqKyjRtPyVu/wCS4JM6XljB/Crkp/0tkD4CpdeZOHsvyINuBXZ7tfiRyfZzDn2p5CPQKP4GpH+p2eyRGXSK98yZM8N5TtICGWPUw/E51EeozsPpUWzMts4bJVWDTXyo8kfzJx8YZEOFAOtvPHUD0qDOXsixhDS2zmXL3FpbxrrxG9n7vKEQAYUOMfM4A611vpjCHBB75W92z5yTbSxy6yjqp0EMQQDht8H4GvPZsG6Jr6Dpvd3crRf/AO0h5n615L0pHoVARzl1eQNpRcgEAFnZTggZ2UZ26EnB6Yyb3F6RWsZ5N7+5HOMpStVcDUseHyTsQgz5k9B8TUbGxLMiWoLgu7sivHj8RLPy9DH/AI1yFPkMfxOasn0yiv8Aq2aZA/1C2z+nDaNZ+C2TKU+8rpb3lZRpb4jYGt410RfwZDNJTsf2qUaacvxWgaa2khzgKdGxIJGNskda6XX31Q743KSRrTRRZPtdXa2SnBuPSEkOQcfyH86s+mZM8iG7CH1DGhTLUCwQcSU9dqtHW/YrO83opVboQa5uLXk2UvkR1zy5aOWZoUBYe2VyuseUmgjWNzs2eprm4RJEb7EtbPE9wDhVwqDCqOg8ht+wrDZry+SWgGNqIGatgKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAVzmPikls8cuNUJysijqD+Fl/UfSpuLRG9OH93sVmZfKhqf9vubTcbhMDXCNrVVJIHX4EHofjWn8tNWKuS02bPKrdTsi9pEHw/niJziVTD5MTlfmcDFSsjp0ql3bTI+Ln+tLtUXv8zX5h54tREQlyrMeyAknzBwNv0qqtnCK1vk9Ji9NyrHtx0vqUOfjTzo6wwSuGVlLYwoyMdRkd6hd8tpotP9KilqyaX7kJwyxvLfUYUkBIAYqAxwPhnFb3XW2eTvi9M6fS/O39dmThfHpY5S0ru4YFZAzEnHmMnYg/xFQLU5JxZZ5OBTbUlWkteNFsaZiuUwSRkZ6H6elefjCKmlPwUMouO0b3CWZoUQZJZ3PTGS0jdME+zk7HO4wass63cYY1f0/wCjOJX2910i48SuBZwLFH77Dr/3N8ew/wDFTcq1YOOqq/tP/wC2RaK3l2uc/Bjs+ERRRme59pjuQd8Z6DH4mrWnDqor9fJ5ZtblWWz9KjhHmO8DjKWAZPPC7/D2d/lWI5HqLcKNr8DMqnB6ldp/iQvGJ4X0iOExMCdYO3wGM/HtVXm2Uy0oQ7X7ljh12x3Kc+5exBcD4tEzuodchyOuM7AjBOxOOw7Y869J0+t11xRT5s++bJu35gty/hiVQ+SNJOCSDg6c+9ggjbNW8LY+CunjWJb1wafGOc1hbRGviMD7R1YC+YBHVv2qXGlyXJXWZCg9IkuFc6R3A8PXoY/hfAJ9Fbo371EvpcfYk03xlwSNn7dwpO6p7o9dwSfXsPTNQHvZP4US1w11RzMtZAoCrcf55trWXwSsssgGWWJdWgH8xJA6b1xndGL0WON0u6+HetJfV62S3AeOQ3cQmgbUucHIwVI6hh2PT6iukJqS2iLkY9mPNws8knWxwFAR/HeLx2sD3EudCYzpGT7RAAHzIrWUlFbZ2x6JX2KuHlmbhl8k8STR50SKGXIwcEbZFZi01tGltcq5uEvKPV/dLFG8rZ0opY464UZOKN6WxXBzkor34MHBuKJcwpPHnQ+SMjB2JG4+VYjJSW0bX0ypsdc/KNKw5nt5bmS0UsJY85BGAcYzpOd8ZFYVicu062YVsKVc/ssy8x8wQ2UYknJwW0gKMkn0HoBmk5xgtsxi4luTPsrRI2dwJI0kXOHVWGeuGAIz9a2T2jhKLjJxfsZqyamG7uBGjSNnCKWOOuFGTj6Vh8GYxcpKK9yuy882iwQXB8TRO5RPZ3yDgkjPTPzrn60dJ/MnLptzslXxuK2+SziupAPtAKAjONcMS4iMT/EHurdiP68670XSqmpxImRRG6DjI5LcwSQyMjBlYbEdNQ9cHdT8xXqoShfDuWn/AMM8jNTos0/b9SpcagKTOpJYZypJz7J3Xr6GvC5jtja4ybPtvSP5eeNCyqKW17JGW1iWOH7w6hyXKRI265UAu7D8QGpQF6ZO+wwY8eF3MlWSlZZ6UXpLl/8ACLhDyzqljhlBurtoRMUklMcECE4AGgZY52wuBXft515ZTzy9Rc4fBBPW0tyf+DW4Bw+0vZns3tRbTqH0Swu5CtGcEMrkgjPf9q5w7ZvWtM7ZM78auNys7ovXDS9yvM5mhm8U6pIArLL1LKZFRkZvxjLhlJ3GCOhwOL+KL37FgkqrYenwp+V8uN7+n1Njly5L4ty2OpTIJDeaHBB9Rg+YqtuSrl6vbv8A+8kbqeG2vUj+JboeJxZBSTSV2GARpxtgY6Y6VBtjKVrtT0/KIkIpV9rW0bMnENbBzKrMMYJYdjtsa5z9ac1OT20bRhXGLhFaTN++4tNMgV9JGc5UdfmDiuuRl5N0Oya4+44U4lNU+6JIWHM/hoEePOkAAg4yB0yCKnY/WHVWoTh4I13TO+fdGRXeP8RL+JNgKdOwHY4wvx3xVfK15WSpa8k+utY9PbsrVvy5EYw+opg5YndSNJQ5BIxlTjr1A28/XUpv4Ujz97UfiZALkxqkntaXkfqcanYnUAds4I6jzq5xsFR5s8lRl9UlLcauF+5dfsx4NbzyyNNhjGFKRnoc5yxH4gMAY6b/AArbMslFJIi4cIze35PH2mcLCTgx2vhxkDMig6ZGPbSPZU52x1NYxZ7i1Jm2VBqW4xMdlfcS4aEeWEtCwBw++M9BrGTG3+lvp1rWVVNz+HybRtvqXK4LzwDnq0nwpfwpD+CTAyf9Le63wzn0qLZjTgS68mE+NltRs1wJJ6NAUPinCL21vJr2yWOcTBfFhY4cYH4Dn0z1+R2qPKM4yco8lzTkY99EaL249vhrx+JiTneKPh808NuIZY5AjQ4wFlc9TgDUOp7HYjaseslBtLTNn02byo1zluLW0/ojV4he8XsYkvZ7hJo8r4sOhRoDkYCsACTvj+dYcrILukzrXVg5U3RXBp86lvzr5o3eJcZvLu8azsZVgSONXklKhiS6qQACD2Yfrv57Ocpy7Y8HGrGox8f18hOTb0l48Hu/n4jb8PujdNE7pjwpAAS6lgCXQrp/9nbbJNzUHs1qhiXZdaqTSflfL7ma3GeYJltLFvvsdt4sMbOREXkYlFOY0UEBcnHQfHtWJTaiudG+PiwldavTctN650l97NLg3M0s8V/bSzC4VLZ3jmCaCw0kEMuBgjI7dj1rWFjkpJ/I75GFCqdVsY9u3yt7/Jlq+zX/AOm2/wDtb/vau1H9NFd1X/8AXP7zn99ay/fr+7t8+LaTrJj8yHUJB9B9M1GafdKS9mXldsP5Wmiz7M019z9mYubb1+Ixz32GW3t1jjhU95JHTxCfgD/2+tYtbsTl7I6YNawrIUeZSe39y8Fg5g5te3SztY5Rb6raJ5JyhfQpXC6VAOSSp7eXxHWdjWoorcXAjc7LpLu1JpLetjljnhhLNFJcC7iSB5klEZjb+7GWRlIHbv8ArvtmFrTafP1GZ06PZGcY9km9Nb359zxBNxe6tZL3x4hEySYttAw0YBB9rGQeuN99unStU7JR7t/gbzjg0XKhxe01uW/f7jTseJyQcM4d4ZUa7oq2VVtvEfpqBwfUb1qpONcTrbRG3Mv7vaO/0RLc4cfljumiHEkt1VQVRIGlcEjfxTghR0O3Y9O56Wze9d2iLgYsZUqTp7ufLlpfgTf2d8fkvLZmmKl45ChZRgOAAQ2O2xrpVNyjyROqYkca7th4a39xaxXUrTFLGCCD3/rt0rKZpKOypcb5OaU6luH26LKS4HwOcj9atMXqKpWnBfeuCmy+mO2Xcpv8eSn8+8rvFaxSHDNEWVyvTSzZHXyqs6lKN0nZFHsP4WtlQv5ebKfaTRvD93lbQQ5eKQglQWADpJjcKdKnUAcEb7HIq0012s9ZZXOFnrQW+NNe/Huv8Fo4DxG7+8WZmQSpC4UTxgSOI2BXS0kROYxqzgjO1doOW1sqsqnG9Kz0202vsvhb+5+545hvrhJ7lYvu9tG8kgMoCpJKmo9SMyMD5ou/XvWtkpJvWkZw6qZVwc+6bXtzpP8ARfmyrXVyix+DDkqWDSORgyFc6QF/DGMkgdSTk4wAI05aXbEt66pSn6tv4L5f9mpErDDrkaTkN0AI6HUdhXPsclrR3tnWo6mw14yya9QYSEt7PTJY6h9c+fas24/wrg8+5RUmoPhFxtLIiLxJ5EhX/Vufp5+g3rajolt3vr9SBd1OEZdsVshLvjCh8RFmT82nST6qMnb44z6das4fw1FRfdPk3jlTn/aS1lNcMoaOZXHqWB+BBBANVl3R51y1sy8yMXqcdGm3GjIMMw0j2m2HQEAbgZ6la59Ow3K5LRz6heq6e4wX948mFOyruF7fE/mPrXtcbFhTH6niMvLsvlz4+RompeiFsyW108bB42ZGHRlJBHzFaSgpcSNoycXuJ2zlHibSWglnuIZCBl2XA0DGcSdgw6k4UfTJpbYanpIvKZuUNyaMXFlj4nbNHa3YUZ9rTvkflkU4ZQfln1G1IbqluSMz1dDUZHJ+P8rXVpkyx5T/ADF9pD8T+H5gVY13ws8FbZROvyje5J5iu4p4oY3LI7qvhtuoyQPZz7mOu2B55rjkwr1v3JGLOxvXsdzFVpaHPONcIlgu5Z7HiFvC8uPFimddjjqMhvPIGBjPXBxXCVc+7uiy4pzsaVSqyK968NG1w3kaN7OeKWfxZLlvEaZcEBgcqV8wCTnzyelYVHwtP3FnVX68LK46jFaS+hrPydxGdUt7y7ja1QjZAdcgXoGOkY+OT57mselN8SfB0XUcWpuyitqb+b4X3EhxvlW4Fz984fMkUpQJIjglHCgAbgHGyqOn4R03ztKt77oM4Y+fU6vRyYtx3tNeUByveSWdzDcXfiyz4xn/AA4sEHC7Z3x6Dpt1JenJwakx/PUQyIWVQ0o/mzXvOTrpGs57WWHx7e3SEiUN4bBVIyMDI95v03Hc6pcOL8G9fUamrIWp9snvjyeYeU543vLi4uYibi3MZbBVUZgBvnYIMYHfpWFVLbbfkWdSqcK4Qi0oPf4E9ypbra2tvbtNGzYOgqwxJuWymd22Pautce2KRAzL1fdKyK8sw8B5deG6vJ3ZWW4ZSFAOQBqyGzt3rWFepNv3OuRmK2iuuK5iOY+V1lsXs7YRwgspAAwow6sdh54pOtOHajOJmurIV9m3o0uL8ozN92ntpljureJY9RGUkUDBVts43bsep2zgjWVTemnyjrRnwj3wsjuEnv6r6o2eCcEvCZWv7hZBJH4fgxjEag9TkqDnBPl13ztjMYS5c2c8jJo1FY8GtPe2+WQlvybxGON7SO9QWh1AZX+9AbOVHs7ZzuQ3c4A6VoqppdqfBNl1HEnNXTrbn788febDcjzfdLO38WPVbz+KxwcMNTHC7dd6y6X2pfJnNdTgr7Le1/EtfcZp+V72K8muLOaFVuMeJ4qlmTHdMbN3OCQPpWXXJSbT8mkc2idEKrov4fGn5+8kORuW5LKOVJJFkLylwwBGxAG+e+361tVW4LTOPUMyOVOMorWlos9dSvFAeSKGrRHcbs1liaNujAj6/wBZrbW1ozVY65qSPzxxCyaKV4mB1KxH06VVWQalo+jYt8ba1M1nix72B8ev06/pRVTZvO+uPuYJLpAQFDOSegGMnyHUn6Vu6NeSJZna8IyvDe4ylrIvqIXJ+rAn6YrdU69ivsz3LzMg5vFdiG1swODqzsfXPSu9OPZY9RRAvya613TkWDl+wmkaJIYzLImSFUZAyxIJ7ADPU4FWS6bGGpXy8exVvqDs2q1w/cttzwaCE6uJXJkl7W0BDMPR391PgMehNSVa9aqWl82b0Uzl9hfizcltbBYYpZLNUilOFMV27zJsd3jYBe24ycVy9a3u4kSq4XOTjF8r6cEXxzlp7dRcW0rS2z9JUJBX0kA6Htnp6DpWJzjfHtn5JdNsLX6di1L5f4KfxMNHDMfMRgH/APKhx/8ArVdRjvHu37fMi9Uqar0zU4Tx0gaW3Hkf4eVegruUjyV2N8iwRTJJ7h3/ACnr8j+L9/SuxXyqaDChz5POojOCRkYPqPI+YrVxTNk9Hu2uXjYPG7Iw6MpII+YrWUYyWpG0ZSi9xLzwT7TZFUpdxiYaSA64VicbBx7pB7kYxnoarcjHjDmLLTGyJ2fDJG7ybwFvvv3iVEjfQZfCRcLF4hKxrjscB2x8O5qJObfBNhBLwdPUVodDgHMknCl49f8A9qqWj0RaMeJ7/hxf5RB6Z60BNfZhfR26cWvLQN/Z8YLwwNJl8xoxc4JJQHGAW3Ix1xQFn5a+0Ga+aN4OHTfdyr+JMXGFdVY6IwQPE3AXOQMn0oDTuPtMuYQs93wqaC0ZwvimRTImo7GSEDUnwOPTNASPMH2hGC9NjFaSXMrQiSLw2Htlj7pyPYUKGYtk9Om9AfeWftEjnjuzdQtaSWYzPGx1YX2sFTgFvdO2O4xnNAU7m7n+e74bcluGzxWs0emK4LBsnI0l0wNKkjGoEjJHWgNu0Fpr5dE0LvM1snhOJNKpojjPtpj29znqPXNASj/ahK8tzb2nDpria3ldGAcBdCMVLltOxJBwm5O/lQG/H9qNr/Zg4kUcZfwhDkFzN+QHoRj2s+XbO1AR8v2nXEJhS84XNA08qJHmQFSrHBJbTkOMr7BGd+1AdLxQH2gFAKAUAoBQHw0MGC6XK/DetovTNWcb+1a0KTpIuwkTBx3ZT1PnsV+laWRW9l/0q1utwbKZY8PMrEZCqAWdz0RR1Y+fYAdyQO9aIsbbOxfsSltZOyNJC62dsDpad/8AFlbyBX2nb/QmFHTc71lx376IVs4p6l8Uvl7Ihb20hB8SF5JQpwzsCrA+enqAfU9vji1wcGqaU5tlNndQuh/tqKRs8BtmvLuGF3IEkgVmJycAb7nvgYHyq2unGipuCKuvHnY++bLVzZxyS3lksLNfusER0nRtJKcDLM/vb5+fnvVXXFTXqTe2ejwMOtx72blvw63srSCeSFbie4GpRJvHGuAdx+Jtx8yelRbb23rekSK1ZkXOuD7Yr5GbhXEobiRIbizgAkYKHhTQ6Ftgcg7jP9GoruW9Jne7Csx4Oyub2udMwi4k4bcywr/exZw6MPZkUqCMjs2k4z/CsSuW9M7xx451EbPEvmavN/AIRHHcwb20+QEb8Db5Q+nst8NJ9K7wu2uTniyd3dj3r4o/qcu4xwNocum6fqnx8x613jLT4KbP6dKn4lzH9jxwy4bOKnU2N+SgurRcJLa4jUGeGRVPQujD6MR+hrupQl4ZXzr15R4wG93f07/T+VZ5Xk5OPyMbbfw9a5WWqKOlVTmyxck8MMk5kKahCusL2Z/+EvzbfP8ApqpuscnsuKq1BaR0vkaFhEZXbW8zs7N+YA6V+WBkejVGb5JCLaKyZORXZv7Pjd7dxcOmuo5kjRSpAGyR5IJBzupFAY7Pl7iE54tfS2v3Y3NlJDFbKQWkYx4DNjvkY3wcsfiQLRytwq7j4CtugMN0LeVVDbFJCz6d+x3G/rmgOVcQ5SlksPCi4Tdi9Ur94ndziQ6t9A1/3mdu2AMnJ6kDpPDuD3A48tyYnEI4esfiY9nWNOVz50BGXPJ9xcXfHEKNGlzHCIJGGFdkAI38tSgGgI25v+LScLPChwqVZUgETykjwykYABTb2nIUAAHqc0BKf2BdeNy83gPi2g0znH+EfDjGH8twfpQEp9mXB54LnirzRNGs14zxFh76l5SCvmNx9aApnDeSb48JOI/CubfiLXUccuAJFCRgDJIAyemT+EjvmgMnPvGuIXJ4f95sfuka30AwzhnklJPuADIjAzuepZaA7lQCgFAKAUAoBQChg8sKyYZzb7WbL/5dX/JIPowI/lSfKLPpc9WtHPYExZSFe88Qf/ZokK59Cw+qiuXsW8/6638nouXAJoZZuH+GykQW8okiIOYnCjVKNsHJ2z6/TtBraKnJhOEbNrltaf8AwUG7gdr5hbyJcPO8j4i1EHWzsUIYDPsjJ8vlVvgWxVD7n7kLqGNJ6nrWkkeb6xeFg6BoyrAkbhoXBGOvbOMGpEpqUdb4OnTpRk/Tn5L7CI+MRAtpjv4lwT0WdR/X/KfQ1SW2em3GLLOHfhT21uD/AEPthxLRF9zvIPFSM+yCSskR8gfn9D5VR2dQ7ZONiJ8sPvl6+PPTf5M27O/tYDrt7VzIPdaVshPUAd6ivqNUfsRe/qa2Y2Tau26xdvvr3PkHLc05ae6fwkY6mdvebP5V/b9jW1cbZf7tz7V9TMuoV0RVNC7n4+4xcyTrJHFbW6EQRElc+87HPtfq31NdH1GMpKFf/pnCqdcpX3P4n+hReJ3cUWoZ1sMgqOg89TdPkM/KvQYtdkluXByzOp1vcK1v9ixcr/Z8gnt7uN10Bg0sfUK4U7RnfYSY9k7jHXapCt1tHkbFt7LxzHzLBatHFOjOsqktgAhVBA9pT7wJJ+hraqmVm3H2IttsYvUjlvM/3f7y5tMCL2SMZxkqC2nO4GTjHbFWNKn2fGQbJR7vhNXSSct1G30quyJbkWFC1Avi2b2lusKEfeLpsNj8IAxpHqC2CfVvLNQ5c8ktF+4RZ+EiRj8IA+grkl7m7eyZFZNj7QDFAKAYoBQCgGKAYoBigIbmzlqDiFu1tcA6CQQVOGRh0ZT0zv3BFAV3g32aRx3EVzc3dzeNB/gLO2VjO2GA7sMA5z1APYYAvdAKAUAoBQCgFAKA+GhhlX+0Oz8Sxm81XV/0kH+B+tZfglYM+25M4rY3bRElcEMNLowyrr5MO++/YjsRXE9LZWp/eSFhxaOMv4VswaWJoiFmPuvjVoBQsDt+atk9EW6hyS75+OfBK8o8Clju4Jntvu66mWLZgSXRlJbWxYkZXHQb7VIhb2RcfmQcycbINRlv5mRJ/vAEc7ATAYjlb8Y/y5ieoPZj06HbpKjLXK8FfZQ4/HE0rOBopCAGjkRvd3DIR5en9fGh6rVbU/Vr5j8/kXuBmRvh6Vvn9y5JfQ3IX71CfEAx4sRALD/UDt+/yqnnnUWrV8efmg8e7Gb9CXHyZLWUUEW8MRLdmkwcfAD/AMVrDIx4f0IbfzZDtd9nFkuPkiH5m5ht4Dm4kLyYyI13bf06IPU4z61Lp6blZz7pvj6+PwODyoUfDDyVG7e6u08SR47G0bYFzgyZ7Do0vwAC16DGwKMVfCty+ZGnkWW+fyITmHl1bZ41EizRyRpIrgYBRie2T2HX1qdGezeGnGT14J/7E4ZGnuXLNpK6mXJ0l5HzqI6asKRn1pdpRRTxm5SZcOY7jhtw8sFydMsI2b3W90NiNujdfdPftWaldHUoeGcLZVS3GXlHKUAyPLOfpVtN6hyV0PilwSHDLdndQOpI39Sep+dUk37l1A65wzg4VxK2SyoEjz1VR1Y/63JZifXHnmOdSw28PnWjOkUbVYNxQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQA0BqcRtBLFJEejoyn/AJgRWRCXbJSKVwz7L4FwZ5XlP5V9hf4sfqK1UUWFnU7XxHgt3DOC29uMQwpH6gbn4sdz8zWxAstnY9yZo80RECKQf8OZW+Qyf4Vwvk4pNfM64vlp+6KpdusUMkRiV0+8EuCPa0OvsMjfhPsnB9R51vTaSpVObTT9v2IviPD5Hi151PF/hSjrLEFDBXH5gpJHmFdT7tT4yjL4X4fsRpajNa4PPCeOQrG0kxEZTGfJs5xoHUnY7df3ry2d/D9vrpUcxf6E/wD1GPp/7j5/cjrvnG5u3+72CGMHOZDgNpHViekSDuevTcdKvMPo1OMu63l/oU1uZZc9Q4RrcKtYlk0Wyffrrdmmf/Aj82UN7+P8xzjOCPKrCdja+SOlWP2rczZ4xbXUCNdPNBcmcNCZVYuY8hiyxnAVcgEbDbfGM5rg5Im1KE5dqTWiTjtAeJWUDDIht4VYdspEz7j4law5cM1f9GUvm2dA4Py9BbNI9ugQS6SyjoCucaB+H3jt08sVrKbekyqUEttHHuZ0f73OZFZWaVzgjBwSdJ+GAK9BiuPppJ+xQZHcrG2iNjiz9QP6+laZU9R0dsSO5bOm8j8saAs8q+11jU9h+Yjz8vL57Us5bLmKL9DFXFs6xiZ61OgoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUMGOWIMCCMg9RWJRUlphPT2VXi/C9J93V7JXH+Yn5fR12K/AfCofa4S0TardogJFjjazWObX/ekMMEewzjCuueo1uP+Y1YVTTRtKMpdzkvY5/zba6QyfknK/TWP4VZ1z4IWRX3dpsT233fh0Kps92zvIR1McZASP/aSQx86j22bltnXGqTk/oTN/wADnjCWMKNgosk7gYEjnf23OwjToMnGcnrUOy17JtHpvdkmDaIypAGzbQMXnlA2kdsagnmSAEQdTuTt04q3b4O2u3c/7peF8kTvI9tLc3st66EKQ2D2ySoVVPfCjG3lXffBDy9V1qtM6WqVrsr9EdxvgUNymiVAfJujL/tPb9q6VXSre4nG3HjYtSRVuCfZ6sM3iSP4qqcxqRjfzfsceXT9qkXZTtRxoxPSZd44fOojZMUTOK1NxQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgMF1bh1Kn/wBHsR61pOKktMJ9r2UriHBWNwmMCQSKxB2DqGBLr6+Y+dc6txen/wClhG//AGmn4/YoPO0OZJQP/uT+8lWLtUIbYhW5KK+hK8Y4ezWvDgFLYhYDAJ3OjbbvVblWycU4nbD7YWWdxLC3uHVUu5ZJOmLdD7TeXilRsPjlvh1qK7ZeJfkauVcXupJfX/BO8P5S8TS11jQvuW6bIv8Aux7x898nuT0qVXXLzP8AIjWZWtqHl+WW6KIKAFAAAwABgAeQA6VIIfLe2ZKGRQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQEZxzhYnjK9GG6N5H+Vayjs6VW+nL6e5yXiHD3DtG4wwcZB8/a/nXDNs7aUXNU4t9yLfy3Z3TRiNZGWMbZ2GB3AOMnr0BqFR/MWLW9RIWVOpSb1yW7hvC44R7I3PVj1P8qsKqY1+PJAlNzN8CuxjWj7QCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAfCKGGiNvODRSuJHTLDb4+WrzxWs4RmtSN42SitIkEjAGAMAdvKtkteDQ90MigFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUB/9k=" alt="Team bottom" className="uiux-page-el-img-small-bottom" />
+
+
+
+                        <div className="uiux-page-el-badge-volunteer">
+                            <span className="uiux-page-el-vol-title">Be Our Volunteer</span>
+                            <div className="uiux-page-el-vol-avatars">
+                                <img src={avatarTwo} alt="user" />
+                                <img src={avatarThree} alt="user" />
+                                <img src={avatarFour} alt="user" />
+                                <div className="uiux-page-el-vol-count">+14</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="uiux-page-el-right">
+                        <div className="uiux-page-el-preheading">About Us</div>
+                        <h2 className="uiux-page-el-title">Shape a Brand that<br />Lasts Forever</h2>
+                        <p className="uiux-page-el-desc">
+                            At the core of every successful business is a compelling brand identity. We craft strategic, visually stunning branding solutions that resonate with your target audience.
+                        </p>
+
+                        <div className="uiux-page-el-stats">
+                            <div className="uiux-page-el-stat-box">
+                                <div className="uiux-page-el-stat-icon">
+                                    <svg viewBox="0 0 24 24" width="32" height="32" stroke="#5b58ee" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M12 20V10"></path><path d="M18 20V4"></path><path d="M6 20v-4"></path></svg>
+                                </div>
+                                <div className="uiux-page-el-stat-content">
+                                    <span className="uiux-page-el-stat-num">250+</span>
+                                    <span className="uiux-page-el-stat-label">Projects Delivered</span>
+                                </div>
+                            </div>
+
+                            <div className="uiux-page-el-stat-box">
+                                <div className="uiux-page-el-stat-icon">
+                                    <svg viewBox="0 0 24 24" width="32" height="32" stroke="#ffc107" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                                </div>
+                                <div className="uiux-page-el-stat-content">
+                                    <span className="uiux-page-el-stat-num">5+ Years</span>
+                                    <span className="uiux-page-el-stat-label">Visual Experience</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p className="uiux-page-el-desc">
+                            From comprehensive market research to pixel-perfect logo design, our team ensures every touchpoint reflects your unique vision and goals.
+                        </p>
+
+                        <button className="uiux-page-el-btn" onClick={() => window.open('https://wa.me/916381759909?text=Hello!%20I%20would%20like%20to%20know%20more%20about%20Branding%20and%20Identity%20services.', '_blank')}>Elevate Your Brand</button>
                     </div>
                 </div>
             </section>
 
-            {/* ── Elevate Section ── */}
-            <section className="ui-page-elevate-section">
-                <div className="ui-page-el-container">
-                    <div className="ui-page-el-left">
-                        <img
-                            src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                            alt="Design team collaboration"
-                            className="ui-page-el-img-large"
-                        />
-                        <img
-                            src="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                            alt="Wireframing session"
-                            className="ui-page-el-img-small-top"
-                        />
-                        <img
-                            src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                            alt="UI design process"
-                            className="ui-page-el-img-small-bottom"
-                        />
-
-                        <div className="ui-page-el-badge-volunteer">
-                            <span className="ui-page-el-vol-title">Join Our Team</span>
-                            <div className="ui-page-el-vol-avatars">
-                                <img src={cartoonMale1} alt="user" />
-                                <img src={cartoonMale2} alt="user" />
-                                <img src={cartoonMale3} alt="user" />
-                                <div className="ui-page-el-vol-count">+14</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="ui-page-el-right">
-                        <div className="ui-page-el-preheading">About Us</div>
-                        <h2 className="ui-page-el-title">Elevate your brand<br />with exceptional design</h2>
-                        <p className="ui-page-el-desc">
-                            At the core of every successful digital product is thoughtful, user-centered design. We create end-to-end design solutions — from user research and strategy to pixel-perfect interfaces and design systems — that give your users experiences they love and remember.
+            {/* Productivity Integration Section */}
+            <section className="uiux-page-productivity-section">
+                <div className="uiux-page-prod-container">
+                    <div className="uiux-page-prod-left">
+                        <h2 className="uiux-page-prod-title">Elevate your product with powerful UI/UX identity</h2>
+                        <p className="uiux-page-prod-desc">
+                            From strategic positioning to visual storytelling, we build a cohesive brand identity that truly resonates with your audience and drives growth in the digital landscape.
                         </p>
-
-                        <div className="ui-page-el-stats">
-                            <div className="ui-page-el-stat-box">
-                                <div className="ui-page-el-stat-icon">
-                                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="7" strokeDasharray="4 2" /><path d="M12 7c-1.5 1.5-1.5 4-1.5 6 1.5 0 2-2 2-2s1 3 3 1c0-2.5-2-4-3.5-5z" fill="#5b58ee" /></svg>
-                                </div>
-                                <div className="ui-page-el-stat-content">
-                                    <span className="ui-page-el-stat-num">350+</span>
-                                    <span className="ui-page-el-stat-label">Design solutions delivered</span>
-                                </div>
-                            </div>
-                            <div className="ui-page-el-stat-box">
-                                <div className="ui-page-el-stat-icon">
-                                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="7" strokeDasharray="4 2" /><path d="M10.5 9.5a2.5 2.5 0 113 0v5a2.5 2.5 0 11-3 0v-5z" fill="#5b58ee" /></svg>
-                                </div>
-                                <div className="ui-page-el-stat-content">
-                                    <span className="ui-page-el-stat-num">6+ Years</span>
-                                    <span className="ui-page-el-stat-label">of design expertise</span>
-                                </div>
-                            </div>
+                        <div className="uiux-page-prod-buttons">
+                            <button className="uiux-page-btn-prod-primary" onClick={() => window.open('https://wa.me/916381759909?text=Hello!%20I%20would%20like%20to%20start%20a%20project%20with%20ENGLORAY%20regarding%20Branding%20%26%20Identity.', '_blank')}>Get started</button>
+                            <button className="uiux-page-btn-prod-secondary" onClick={() => window.open('https://wa.me/916381759909?text=Hello!%20I%20would%20like%20to%20talk%20to%20the%20team%20about%20Branding%20%26%20Identity.', '_blank')}>Talk to our team</button>
                         </div>
-
-                        <p className="ui-page-el-desc">
-                            Explore a human-centered approach to design where creativity meets usability — helping you build digital products that users truly love and that drive measurable business results.
-                        </p>
-
-                        <button onClick={handleWhatsAppNavigation} className="ui-page-el-btn">Discover More</button>
-                    </div>
-                </div>
-            </section>
-
-            {/* ── Productivity / Process Section ── */}
-            <section className="ui-page-productivity-section">
-                <div className="ui-page-prod-container">
-                    <div className="ui-page-prod-left">
-                        <h2 className="ui-page-prod-title">Power your product with a user-centered design process</h2>
-                        <p className="ui-page-prod-desc">
-                            From user research and wireframing to high-fidelity prototyping and design systems, we build end-to-end design solutions that turn ideas into exceptional digital experiences.
-                        </p>
-                        <div className="ui-page-prod-buttons">
-                            <button onClick={handleWhatsAppNavigation} className="ui-page-btn-prod-primary">Get started</button>
-                            <button onClick={handleWhatsAppNavigation} className="ui-page-btn-prod-secondary">Talk to our team</button>
-                        </div>
-                        <div className="ui-page-prod-avatars-box">
-                            <div className="ui-page-prod-avatars">
-                                <img src={cartoonFemale1} alt="user" />
-                                <img src={cartoonFemale2} alt="user" />
-                                <img src={cartoonFemale3} alt="user" />
+                        <div className="uiux-page-prod-avatars-box">
+                            <div className="uiux-page-prod-avatars">
+                                <img src={avatarTwo} alt="avatar" />
+                                <img src={avatarThree} alt="avatar" />
+                                <img src={avatarFour} alt="avatar" />
+                                <img src={avatarFive} alt="avatar" />
+                                <img src={avatarSix} alt="avatar" />
                             </div>
-                            <p className="ui-page-prod-avatar-text">
-                                Trusted by design-led companies worldwide —<br />we help you create experiences users love!
+                            <p className="uiux-page-prod-avatar-text">
+                                Trusted by 300+ product teams worldwide, we design<br />
+                                experiences that delight users and drive growth!
                             </p>
                         </div>
                     </div>
-
-                    <div className="ui-page-prod-right">
-                        <div className="ui-page-prod-timeline">
-                            <div className="ui-page-timeline-item">
-                                <div className="ui-page-timeline-icon">
+                    <div className="uiux-page-prod-right">
+                        <div className="uiux-page-prod-timeline">
+                            <div className="uiux-page-timeline-item">
+                                <div className="uiux-page-timeline-icon">
                                     <svg viewBox="0 0 24 24" width="32" height="32" stroke="#BAFF29" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                                 </div>
-                                <div className="ui-page-timeline-content">
-                                    <h3>DISCOVER</h3>
-                                    <p>Research your users, understand their needs, and map the user journey unique to your product.</p>
+                                <div className="uiux-page-timeline-content">
+                                    <h3>RESEARCH</h3>
+                                    <p>Define brand vision, mission, and precise market positioning to stand out in a crowded market.</p>
                                 </div>
                             </div>
-                            <div className="ui-page-timeline-item">
-                                <div className="ui-page-timeline-icon">
-                                    <svg viewBox="0 0 24 24" width="32" height="32" stroke="#BAFF29" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                            <div className="uiux-page-timeline-item">
+                                <div className="uiux-page-timeline-icon">
+                                    <svg viewBox="0 0 24 24" width="32" height="32" stroke="#BAFF29" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.5 1.5"></path><path d="M7 11l5-5"></path></svg>
                                 </div>
-                                <div className="ui-page-timeline-content">
+                                <div className="uiux-page-timeline-content">
                                     <h3>DESIGN</h3>
-                                    <p>Create wireframes, prototypes, and pixel-perfect interfaces tailored to your brand and users.</p>
+                                    <p>Craft visual foundations, including logos, icons, and typography that represent your brand's soul.</p>
                                 </div>
                             </div>
-                            <div className="ui-page-timeline-item">
-                                <div className="ui-page-timeline-icon">
+                            <div className="uiux-page-timeline-item">
+                                <div className="uiux-page-timeline-icon">
                                     <svg viewBox="0 0 24 24" width="32" height="32" stroke="#BAFF29" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
                                 </div>
-                                <div className="ui-page-timeline-content">
+                                <div className="uiux-page-timeline-content">
                                     <h3>DELIVER</h3>
-                                    <p>Hand off production-ready designs, design systems, and assets for development implementation.</p>
+                                    <p>Develop a compelling narrative and tone of voice that connects emotionally with your audience.</p>
                                 </div>
                             </div>
                         </div>
@@ -609,208 +472,269 @@ const UIDesignServices = () => {
                 </div>
             </section>
 
-            {/* ── Mission / Service Cards Section ── */}
-            <section className="ui-page-mission-section">
-                <div className="ui-page-mission-container">
-                    <div className="ui-page-mission-header">
-                        <h2 className="ui-page-mission-title">
-                            Our Mission Is To Make Your<br />
-                            <span className="ui-page-mission-highlight">UI/UX Design</span> Smarter Through User Research
+            {/* Courses */}
+            {/* <section className="uiux-page-courses-section">
+                <div className="uiux-page-container">
+
+                    <div className="uiux-page-section-header">
+                        <h2 className="uiux-page-section-title1">
+                            Internship & Training Programs
+                        </h2>
+                        <p className="uiux-page-section-subtitle">
+                            Create a powerful and memorable brand identity that communicates your values.
+                        </p>
+                    </div>
+
+                    <div className="uiux-page-courses-grid">
+
+                        {internshipCourses.map((course) => (
+                            <div className="uiux-page-course-card" key={course.id}>
+
+                                <div className="uiux-page-course-header">
+                                    <div className="uiux-page-course-logo">{course.logo}</div>
+                                    <h3 className="uiux-page-course-title">{course.name}</h3>
+                                    <p className="uiux-page-course-desc">{course.description}</p>
+                                </div>
+
+                                <div className="uiux-page-course-features">
+                                    <ul className="uiux-page-features-list">
+                                        {course.features.map((feature, index) => (
+                                            <li key={index} className="uiux-page-feature-item">{feature}</li>
+                                        ))}
+                                    </ul>
+                                </div>
+
+                                <div className="uiux-page-course-details">
+
+                                    <div className="uiux-page-detail-item">
+                                        <div className="uiux-page-detail-label">Course Code</div>
+                                        <div className="uiux-page-detail-value">{course.esc}</div>
+                                    </div>
+
+                                    <div className="uiux-page-detail-item">
+                                        <div className="uiux-page-detail-label">Duration</div>
+                                        <div className="uiux-page-detail-value">{course.duration}</div>
+                                    </div>
+
+                                    <div className="uiux-page-detail-item">
+                                        <div className="uiux-page-detail-label">Projects</div>
+                                        <div className="uiux-page-detail-value">5+</div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        ))}
+
+                    </div>
+
+                </div>
+            </section> */}
+
+            {/* Testimonials */}
+            {/* MISSION & SERVICES SECTION */}
+            <section className="uiux-page-mission-section">
+                <div className="uiux-page-mission-container">
+                    <div className="uiux-page-mission-header">
+                        {/* <p className="uiux-page-mission-label">Our Services</p> */}
+                        <h2 className="uiux-page-mission-title">
+                            OUR MISSION IS TO MAKE YOUR <span className="uiux-page-mission-highlight">BRANDING</span><br />
+                            BETTER THROUGH TECHNOLOGY
                         </h2>
                     </div>
 
-                    <div className="ui-page-services-grid">
-
-                        {/* Card 1 */}
-                        <div className="ui-page-service-card bi-card-variant-1">
-                            <div className="ui-page-card-header">
-                                <div className="ui-page-card-title-group">
-                                    <h3 className="ui-page-service-card-title">User<br />Research</h3>
-                                    <p className="ui-page-service-card-subtitle">Data-driven insights</p>
+                    <div className="uiux-page-services-grid">
+                        {/* Card 1: Logo Design */}
+                        <div className="uiux-page-page-service-card uiux-page-card-variant-1">
+                            <div className="uiux-page-page-card-header">
+                                <div className="uiux-page-card-title-group">
+                                    <h3 className="uiux-page-page-service-card-title">Logo<br />Design</h3>
+                                    <p className="uiux-page-page-service-card-subtitle">Visual Essence</p>
                                 </div>
-                                <div className="ui-page-card-badge">
-                                    <div className="ui-page-badge-icon-bg">
+                                <div className="uiux-page-page-card-badge">
+                                    <div className="uiux-page-page-badge-icon-bg">
                                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
                                     </div>
-                                    <span className="ui-page-badge-rating">4.9</span>
+                                    <span className="uiux-page-page-badge-rating">4.9</span>
                                 </div>
                             </div>
-                            <p className="ui-page-service-card-desc">Conduct comprehensive user research, create detailed personas, and uncover insights that drive strategic design decisions.</p>
-                            <div className="ui-page-service-icon-wrap">
-                                <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                            <p className="uiux-page-page-service-card-desc">Crafting unique and memorable logos that capture the soul and core identity of your business through strategic design and high-end visual concepts.</p>
+                            <div className="uiux-page-page-service-icon-wrap">
+                                <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path></svg>
                             </div>
                         </div>
 
-                        {/* Card 2 */}
-                        <div className="ui-page-service-card bi-card-variant-2">
-                            <div className="ui-page-card-header">
-                                <div className="ui-page-card-title-group">
-                                    <h3 className="ui-page-service-card-title">UI &<br />Visual Design</h3>
-                                    <p className="ui-page-service-card-subtitle">Pixel-perfect interfaces</p>
+                        {/* Card 2: Brand Strategy */}
+                        <div className="uiux-page-page-service-card uiux-page-card-variant-2">
+                            <div className="uiux-page-page-card-header">
+                                <div className="uiux-page-page-card-title-group">
+                                    <h3 className="uiux-page-page-service-card-title">Brand<br />Strategy</h3>
+                                    <p className="uiux-page-page-service-card-subtitle">Strategic growth</p>
                                 </div>
-                                <div className="ui-page-card-badge">
-                                    <div className="ui-page-badge-icon-bg">
+                                <div className="uiux-page-page-card-badge">
+                                    <div className="uiux-page-page-badge-icon-bg">
                                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
                                     </div>
-                                    <span className="ui-page-badge-rating">4.8</span>
+                                    <span className="uiux-page-page-badge-rating">4.8</span>
                                 </div>
                             </div>
-                            <p className="ui-page-service-card-desc">Create stunning, responsive interfaces that balance aesthetics with usability, delivering exceptional user experiences.</p>
-                            <div className="ui-page-service-icon-wrap">
-                                <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" /><path d="M3 9h18M9 21V9" /></svg>
+                            <p className="uiux-page-page-service-card-desc">Defining your unique purpose, positioning, and personality to resonate deeply with your target audience and drive sustainable long-term business growth.</p>
+                            <div className="uiux-page-page-service-icon-wrap">
+                                <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
                             </div>
                         </div>
 
-                        {/* Card 3 */}
-                        <div className="ui-page-service-card bi-card-variant-7">
-                            <div className="ui-page-card-header">
-                                <div className="ui-page-card-title-group">
-                                    <h3 className="ui-page-service-card-title">UX &<br />Interaction</h3>
-                                    <p className="ui-page-service-card-subtitle">Seamless experiences</p>
+                        {/* Card 3: Brand Audit */}
+                        <div className="uiux-page-page-service-card uiux-page-card-variant-7">
+                            <div className="uiux-page-page-card-header">
+                                <div className="uiux-page-page-card-title-group">
+                                    <h3 className="uiux-page-page-service-card-title">Brand<br />Audit</h3>
+                                    <p className="uiux-page-page-service-card-subtitle">Deep Analysis</p>
                                 </div>
-                                <div className="ui-page-card-badge">
-                                    <div className="ui-page-badge-icon-bg">
+                                <div className="uiux-page-page-card-badge">
+                                    <div className="uiux-page-page-badge-icon-bg">
                                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
                                     </div>
-                                    <span className="ui-page-badge-rating">4.8</span>
+                                    <span className="uiux-page-page-badge-rating">4.8</span>
                                 </div>
                             </div>
-                            <p className="ui-page-service-card-desc">Design intuitive user flows, micro-interactions, and navigation systems that delight users and drive engagement.</p>
-                            <div className="ui-page-service-icon-wrap">
-                                <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="20" x2="18" y2="10" /><line x1="12" y1="20" x2="12" y2="4" /><line x1="6" y1="20" x2="6" y2="14" /></svg>
+                            <p className="uiux-page-page-service-card-desc">Evaluating your brand presence and market position to uncover strategic opportunities for growth and ensure maximum competitive impact in your industry.</p>
+                            <div className="uiux-page-page-service-icon-wrap">
+                                <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
                             </div>
                         </div>
 
-                        {/* Card 4 */}
-                        <div className="ui-page-service-card bi-card-variant-3">
-                            <div className="ui-page-card-header">
-                                <div className="ui-page-card-title-group">
-                                    <h3 className="ui-page-service-card-title">Design<br />Systems</h3>
-                                    <p className="ui-page-service-card-subtitle">Scalable consistency</p>
+                        {/* Card 4: Visual Identity */}
+                        <div className="uiux-page-page-service-card uiux-page-card-variant-3">
+                            <div className="uiux-page-page-card-header">
+                                <div className="uiux-page-page-card-title-group">
+                                    <h3 className="uiux-page-page-service-card-title">Visual<br />Identity</h3>
+                                    <p className="uiux-page-page-service-card-subtitle">Cohesive system</p>
                                 </div>
-                                <div className="ui-page-card-badge">
-                                    <div className="ui-page-badge-icon-bg">
+                                <div className="uiux-page-page-card-badge">
+                                    <div className="uiux-page-page-badge-icon-bg">
                                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
                                     </div>
-                                    <span className="ui-page-badge-rating">5.0</span>
+                                    <span className="uiux-page-page-badge-rating">5.0</span>
                                 </div>
                             </div>
-                            <p className="ui-page-service-card-desc">Build comprehensive design systems, component libraries, and style guides that accelerate product development.</p>
-                            <div className="ui-page-service-icon-wrap">
-                                <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                            <p className="uiux-page-page-service-card-desc">Developing complete visual systems with custom palettes, premium typography, and detailed brand guidelines for absolute consistency across all your platforms.</p>
+                            <div className="uiux-page-page-service-icon-wrap">
+                                <svg width="110" height="110" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
                             </div>
                         </div>
 
-                        {/* Card 5 */}
-                        <div className="ui-page-service-card bi-card-variant-4">
-                            <div className="ui-page-card-header">
-                                <div className="ui-page-card-title-group">
-                                    <h3 className="ui-page-service-card-title">Mobile<br />App Design</h3>
-                                    <p className="ui-page-service-card-subtitle">Native experiences</p>
+                        {/* Card 5: Brand Storytelling */}
+                        <div className="uiux-page-page-service-card uiux-page-card-variant-4">
+                            <div className="uiux-page-page-card-header">
+                                <div className="uiux-page-card-title-group">
+                                    <h3 className="uiux-page-page-service-card-title">Brand<br />Storytelling</h3>
+                                    <p className="uiux-page-page-service-card-subtitle">Narrative Art</p>
                                 </div>
-                                <div className="ui-page-card-badge">
-                                    <div className="ui-page-badge-icon-bg">
+                                <div className="uiux-page-page-card-badge">
+                                    <div className="uiux-page-page-badge-icon-bg">
                                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
                                     </div>
-                                    <span className="ui-page-badge-rating">4.7</span>
+                                    <span className="uiux-page-page-badge-rating">4.7</span>
                                 </div>
                             </div>
-                            <p className="ui-page-service-card-desc">Design engaging mobile experiences for iOS and Android following platform-specific guidelines and best practices.</p>
-                            <div className="ui-page-service-icon-wrap">
-                                <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                            <p className="uiux-page-page-service-card-desc">Creating compelling brand narratives that build deep emotional connections with your audience and foster enduring loyalty through powerful storytelling.</p>
+                            <div className="uiux-page-page-service-icon-wrap">
+                                <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
                             </div>
                         </div>
 
-                        {/* Card 6 */}
-                        <div className="ui-page-service-card bi-card-variant-5">
-                            <div className="ui-page-card-header">
-                                <div className="ui-page-card-title-group">
-                                    <h3 className="ui-page-service-card-title">Prototyping<br />& Testing</h3>
-                                    <p className="ui-page-service-card-subtitle">Validate early</p>
+                        {/* Card 6: Typography & Voice */}
+                        <div className="uiux-page-page-service-card uiux-page-card-variant-5">
+                            <div className="uiux-page-page-card-header">
+                                <div className="uiux-page-card-title-group">
+                                    <h3 className="uiux-page-page-service-card-title">Typography<br />& Voice</h3>
+                                    <p className="uiux-page-page-service-card-subtitle">Style Guide</p>
                                 </div>
-                                <div className="ui-page-card-badge">
-                                    <div className="ui-page-badge-icon-bg">
+                                <div className="uiux-page-page-card-badge">
+                                    <div className="uiux-page-page-badge-icon-bg">
                                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
                                     </div>
-                                    <span className="ui-page-badge-rating">4.9</span>
+                                    <span className="uiux-page-page-badge-rating">4.9</span>
                                 </div>
                             </div>
-                            <p className="ui-page-service-card-desc">Create interactive prototypes and conduct usability testing to validate design decisions before development.</p>
-                            <div className="ui-page-service-icon-wrap">
-                                <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                            <p className="uiux-page-page-service-card-desc">Selecting perfect fonts and defining a consistent tone of voice that effectively communicates your brand's unique message and professional identity to the world.</p>
+                            <div className="uiux-page-page-service-icon-wrap">
+                                <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"><polyline points="4 7 4 4 20 4 20 7"></polyline><line x1="9" y1="20" x2="15" y2="20"></line><line x1="12" y1="4" x2="12" y2="20"></line></svg>
                             </div>
                         </div>
 
-                        {/* Card 7 */}
-                        <div className="ui-page-service-card bi-card-variant-6">
-                            <div className="ui-page-card-header">
-                                <div className="ui-page-card-title-group">
-                                    <h3 className="ui-page-service-card-title">Accessibility<br />Design</h3>
-                                    <p className="ui-page-service-card-subtitle">Inclusive experiences</p>
+                        {/* Card 7: Market Research */}
+                        <div className="uiux-page-page-service-card uiux-page-card-variant-6">
+                            <div className="uiux-page-page-card-header">
+                                <div className="uiux-page-card-title-group">
+                                    <h3 className="uiux-page-page-service-card-title">Market<br />Research</h3>
+                                    <p className="uiux-page-page-service-card-subtitle">Stand Out</p>
                                 </div>
-                                <div className="ui-page-card-badge">
-                                    <div className="ui-page-badge-icon-bg">
+                                <div className="uiux-page-page-card-badge">
+                                    <div className="uiux-page-page-badge-icon-bg">
                                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
                                     </div>
-                                    <span className="ui-page-badge-rating">4.6</span>
+                                    <span className="uiux-page-page-badge-rating">4.6</span>
                                 </div>
                             </div>
-                            <p className="ui-page-service-card-desc">Design inclusive digital products that meet WCAG standards, ensuring accessibility for all users.</p>
-                            <div className="ui-page-service-icon-wrap">
-                                <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                            <p className="uiux-page-page-service-card-desc">Implementing strategic brand positioning that ensures you dominate your market niche efficiently and stand out clearly from all global and local competitors.</p>
+                            <div className="uiux-page-page-service-icon-wrap">
+                                <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* ── Agency Section ── */}
-            <section className="ui-page-agency-section">
-                <div className="ui-page-agency-container">
-                    <div className="ui-page-agency-header">
-                        <h2 className="ui-page-agency-main-title">
+            {/* BUSINESS AGENCY SECTION */}
+            <section className="uiux-page-agency-section">
+                <div className="uiux-page-agency-container">
+                    <div className="uiux-page-agency-header">
+                        {/* <p className="uiux-page-agency-welcome">WELCOME TO ENGLORAY</p> */}
+                        <h2 className="uiux-page-agency-main-title">
                             WE ARE A PROFESSIONAL<br />
-                            <span className="ui-page-lime-highlight">UI/UX DESIGN AGENCY</span>
+                            <span className="uiux-page-lime-highlight">UI/UX DESIGN AGENCY</span>
                         </h2>
                     </div>
 
-                    <div className="ui-page-agency-grid">
-                        <div className="ui-page-agency-left">
-                            <div className="ui-page-agency-image-card">
-                                <div className="ui-page-dot-pattern-circle"></div>
+                    <div className="uiux-page-agency-grid">
+                        <div className="uiux-page-agency-left">
+                            <div className="uiux-page-agency-image-card">
+                                <div className="uiux-page-dot-pattern-circle"></div>
                                 <img
                                     src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
                                     alt="Design team collaboration"
                                     className="ui-page-portrait-img"
                                 />
-                                <div className="ui-page-exp-badge">
-                                    <span className="ui-page-exp-number">6+</span>
-                                    <span className="ui-page-exp-text">Years of<br />Design Excellence</span>
+                                <div className="uiux-page-exp-badge">
+                                    <span className="uiux-page-exp-number">5+</span>
+                                    <span className="uiux-page-exp-text">Years of<br />UX Expertise</span>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="ui-page-agency-right">
-                            <div className="ui-page-agency-info-row">
-                                <div className="ui-page-info-col">
-                                    <p className="ui-page-info-subtitle">WHO WE ARE</p>
-                                    <p className="ui-page-info-desc">
-                                        We are a passionate team of UI/UX designers, researchers, and strategists dedicated to creating digital experiences that users love. Our mission is to help businesses build products that are not only beautiful but also intuitive, accessible, and effective — driving real business results through human-centered design.
+                        <div className="uiux-page-agency-right">
+                            <div className="uiux-page-agency-info-row">
+                                <div className="uiux-page-info-col">
+                                    <p className="uiux-page-info-subtitle">WHO WE ARE</p>
+                                    <p className="uiux-page-info-desc">
+                                        We are a passionate team of UI/UX designers, researchers, and product strategists dedicated to creating digital experiences that users love. Our mission is to bridge the gap between business goals and user needs through thoughtful, data-driven design.
                                     </p>
                                 </div>
-                                <div className="ui-page-info-features">
-                                    <p className="ui-page-info-subtitle">WHY CHOOSE US</p>
-                                    <ul className="ui-page-features-list">
-                                        <li><span className="ui-page-check-icon">✓</span> User-Centered Design Process</li>
-                                        <li><span className="ui-page-check-icon">✓</span> Expert UI/UX Designers</li>
-                                        <li><span className="ui-page-check-icon">✓</span> 350+ Design Projects Delivered</li>
-                                        <li><span className="ui-page-check-icon">✓</span> 6+ Years of Design Expertise</li>
+                                <div className="uiux-page-info-features">
+                                    <p className="uiux-page-info-subtitle">WHY CHOOSE US</p>
+                                    <ul className="uiux-page-features-list">
+                                        <li><span className="uiux-page-check-icon">✓</span> Top Guaranteed Results</li>
+                                        <li><span className="uiux-page-check-icon">✓</span> Team of Industry Experts</li>
+                                        <li><span className="uiux-page-check-icon">✓</span> 250+ Total Projects Worldwide</li>
+                                        <li><span className="uiux-page-check-icon">✓</span> 5+ Years of Experience</li>
                                     </ul>
                                 </div>
                             </div>
 
-                            <div className="ui-page-agency-bottom-img-wrap">
-                                <div className="ui-page-dot-pattern-square"></div>
+                            <div className="uiux-page-agency-bottom-img-wrap">
+                                <div className="uiux-page-dot-pattern-square"></div>
                                 <img
                                     src="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                                     alt="Design studio workspace"
@@ -822,43 +746,42 @@ const UIDesignServices = () => {
                 </div>
             </section>
 
-            {/* ── Testimonials ── */}
-            <section className="ui-page-testimonial-section">
-                <div className="ui-page-testimonial-container">
-                    <p className="ui-page-testimonial-label">Testimonial</p>
-                    <h2 className="ui-page-testimonial-heading">We Care About Our Client's<br />Design Success Too</h2>
+            <section className="uiux-page-testimonial-section">
+                <div className="uiux-page-testimonial-container">
+                    <p className="uiux-page-testimonial-label">Testimonial</p>
+                    <h2 className="uiux-page-testimonial-heading">We Care About Our Clients'<br />UI/UX Success Too</h2>
 
-                    <div className="ui-page-testimonial-scroll-wrapper">
-                        <div className="ui-page-testimonial-scroll-mask-left"></div>
-                        <div className="ui-page-testimonial-grid-horizontal">
+                    <div className="uiux-page-testimonial-scroll-wrapper">
+                        <div className="uiux-page-testimonial-scroll-mask-left"></div>
+                        <div className="uiux-page-testimonial-grid-horizontal">
                             {[...feedbacks, ...feedbacks].map((feedback, index) => (
-                                <div className="ui-page-testimonial-card-horizontal" key={`${feedback.id}-${index}`}>
-                                    <div className="ui-page-testimonial-avatar-wrap">
-                                        <img src={feedback.photo} alt={feedback.name} className="ui-page-testimonial-avatar" />
+                                <div className="uiux-page-testimonial-card-horizontal" key={`${feedback.id}-${index}`}>
+                                    <div className="uiux-page-testimonial-avatar-wrap">
+                                        <img src={feedback.photo} alt={feedback.name} className="uiux-page-testimonial-avatar" />
                                     </div>
-                                    <h4 className="ui-page-testimonial-name">{feedback.name}</h4>
-                                    <p className="ui-page-testimonial-role">{feedback.role}</p>
-                                    <p className="ui-page-testimonial-text">{feedback.text}</p>
-                                    <div className="ui-page-testimonial-stars">
+                                    <h4 className="uiux-page-testimonial-name">{feedback.name}</h4>
+                                    <p className="uiux-page-testimonial-role">{feedback.role}</p>
+                                    <p className="uiux-page-testimonial-text">{feedback.text}</p>
+                                    <div className="uiux-page-testimonial-stars">
                                         {Array.from({ length: feedback.stars }).map((_, i) => (
-                                            <span key={i} className="ui-page-star filled">★</span>
+                                            <span key={i} className="uiux-page-star filled">★</span>
                                         ))}
                                         {Array.from({ length: 5 - feedback.stars }).map((_, i) => (
-                                            <span key={i} className="ui-page-star">★</span>
+                                            <span key={i} className="uiux-page-star">★</span>
                                         ))}
                                     </div>
                                 </div>
                             ))}
                         </div>
-                        <div className="ui-page-testimonial-scroll-mask-right"></div>
+                        <div className="uiux-page-testimonial-scroll-mask-right"></div>
                     </div>
                 </div>
             </section>
-
-            <WhiteFooter />
+            {/* <TSPFFooter /> */}
+            <NewFooter />
             <BackToTop />
         </div>
     );
 };
 
-export default UIDesignServices;
+export default UiUxDesignPage;

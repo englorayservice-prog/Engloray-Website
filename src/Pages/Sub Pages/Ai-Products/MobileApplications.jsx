@@ -6,7 +6,7 @@ import './MobileApplications.css';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
-import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
+import NewFooter from '../NewFooter/NewFooter';
 import { Helmet } from 'react-helmet';
 import { FaBrain, FaRobot, FaMicrochip, FaNetworkWired, FaDatabase, FaCogs, FaProjectDiagram } from "react-icons/fa";
 import heroBg from "../../../assets/lineimage.jpeg";
@@ -645,7 +645,7 @@ const AiProductPage = () => {
                             </div>
                         </div>
                     </section>
-                    <WhiteFooter />
+                    <NewFooter />
                     <BackToTop />
                 </div>
             </div>

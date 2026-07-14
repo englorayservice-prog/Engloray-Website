@@ -63,7 +63,7 @@ const TwoLineNavbar = () => {
                         name: 'Data Analytics',
                         desc: 'ETL pipelines, BI dashboards, and data insights.',
                         icon: '',
-                        route: '/dataAnalyticsPage'
+                        route: '/dataanalyticsbusiness'
                     },
                     {
                         id: 'ai-product',

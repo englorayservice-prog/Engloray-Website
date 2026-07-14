@@ -79,7 +79,7 @@ const CoreServices = () => {
       background: analyticsImg,
       features: ["Api Integration", "cross paltform support", "personalization", "Data Encryption"],
       color: "#18181A",
-      route: '/dataAnalyticsPage'
+      route: '/dataanalyticsbusiness'
     },
     {
       id: 6,

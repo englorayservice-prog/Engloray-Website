@@ -42,6 +42,7 @@
   width: auto;
   margin-left: 12px;
   object-fit: contain;
+  margin-top: -10px; /* Align with VERIFIED text */
 }
 
 /* Proportional scaling for Branding Icon on laptops */
@@ -51,6 +52,7 @@
     /* 60px at 1920px */
     margin-left: 0.625vw;
     /* 12px */
+    margin-top: -0.52vw; /* Align with VERIFIED text */
   }
 }
 
@@ -341,6 +343,7 @@
   .tagline-long-arrow {
     width: 13vw;
     /* Scaled from fixed 250px */
+    margin-top: -0.52vw; /* Align with VERIFIED text */
   }
 }
 
@@ -357,6 +360,7 @@
   position: relative;
   /* margin: 0 10px; */
   /* align-self: center; */
+  margin-top: -10px; /* Align with VERIFIED text */
 }
 
 .tagline-long-arrow::after {
@@ -647,6 +651,7 @@
   .tagline-icon {
     margin-left: 1vw;
     height: 5.2vw !important;
+    margin-top: -1vw; /* Align with arrow and text */
   }
 
   .scroll-indicator-container {
