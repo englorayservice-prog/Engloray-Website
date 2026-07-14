@@ -2,11 +2,11 @@ import React, { useState, useEffect, useRef } from 'react';
 import uiImageOne from '../../../assets/case study images/uiux/pavizham.jpg';
 import uiImageTwo from '../../../assets/case study images/uiux/viaan.jpg';
 import uiImageThree from '../../../assets/case study images/uiux/gym life.png';
-import './UiUxPage.css';
+import './UiUxPageCopy.css';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
-import NewFooter from '../NewFooter/NewFooter';
+import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 import { Helmet } from 'react-helmet';
 import { FaCode, FaRocket, FaCheckCircle, FaUserCheck, FaSearch, FaProjectDiagram, FaCogs, FaPaintBrush } from "react-icons/fa";
 import heroBg from "../../../assets/lineimage.jpeg";
@@ -26,7 +26,7 @@ import logo12 from '../../../assets/icons/logoipsum-417.png';
 import avatarLeft from '../../../assets/cartoon_female_1.png';
 import avatarRight from '../../../assets/cartoon_male_1.png';
 
-const UiUxPage = () => {
+const UiUxPageCopy = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [autoSlide, setAutoSlide] = useState(true);
 
@@ -600,7 +600,7 @@ const UiUxPage = () => {
                             </div>
                         </div>
                     </section>
-                    <NewFooter />
+                    <WhiteFooter />
                     <BackToTop />
                 </div>
             </div>
@@ -608,4 +608,4 @@ const UiUxPage = () => {
     );
 };
 
-export default UiUxPage;
+export default UiUxPageCopy;

@@ -3,7 +3,7 @@ import Navbar from '../../../Components/Navbar/Navbar';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import './CrmServices.css';
-// import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
+import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 
 import crmOne from '../../../assets/Service images/CRM/CRM implementation.png';
 import crmTwo from '../../../assets/Service images/CRM/custom CRM.png';
@@ -832,7 +832,7 @@ const CrmServices = () => {
                 </div>
             </section>
 
-            {/* <WhiteFooter /> */}
+            <WhiteFooter />
             <BackToTop />
         </div>
     );

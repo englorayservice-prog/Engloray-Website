@@ -59,7 +59,7 @@ import clientLogoNine from '../../../assets/case study images/Application/pavizh
 import clientLogoTen from '../../../assets/case study images/Application/orthopetic clinic.png';
 
 import './WorksClientProjects.css';
-import NewFooter1 from '../subFooterOne/NewFooter1';
+import NewFooter from '../NewFooter/NewFooter';
 
 // Import hero background image
 import heroBackgroundImage from '../../../assets/download (29).jpeg';
@@ -971,7 +971,7 @@ const WorksClientProjects = () => {
                     </div>
                 </section>
             </div>
-            <NewFooter1 />
+            <NewFooter />
             <BackToTop />
         </div>
     );

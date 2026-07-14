@@ -4,7 +4,7 @@ import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import './WebsiteDev.css';
 import TSPFFooter from '../TechGroupSubPagefooter/TSPFFooter';
-// import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
+import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 
 
 import logoDesignImg from '../../../assets/services/logo_design.png';
@@ -910,7 +910,7 @@ const WebsiteDevelopment = () => {
                 </div>
             </section>
             {/* <TSPFFooter /> */}
-            {/* <WhiteFooter /> */}
+            <WhiteFooter />
             <BackToTop />
         </div>
     );

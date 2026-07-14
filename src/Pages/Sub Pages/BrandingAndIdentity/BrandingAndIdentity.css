@@ -2024,14 +2024,15 @@
     font-family: "Inter", sans-serif;
     color: #1a1a1a;
     display: flex;
-    }
+    justify-content: center;
+}
 
 .bi-el-container {
+    width: 100%;
     max-width: 1200px;
     display: grid;
     grid-template-columns: 1fr 1.1fr;
     gap: 80px;
-
     align-items: center;
 }
 
@@ -2039,6 +2040,7 @@
     position: relative;
     width: 100%;
     height: 560px;
+    order: 1;
 }
 
 .bi-el-img-large {
@@ -2156,16 +2158,18 @@
 
 .bi-el-right {
     padding-left: 20px;
+    padding-right: 0;
+    order: 2;
 }
 
 .bi-el-preheading {
     display: flex;
     align-items: center;
     gap: 12px;
-    font-size: 34px;
+    font-size: 22px;
     font-weight: 600;
     color: #5b58ee;
-    margin-left: 20%;
+    margin-left: 0;
     margin-bottom: 16px;
     text-transform: capitalize;
 }
@@ -2435,7 +2439,8 @@
     border-radius: 50%;
     display: flex;
     align-items: center;
-    }
+    justify-content: center;
+}
 
 .bi-page-badge-rating {
     font-size: 12px;
@@ -2447,18 +2452,19 @@
     margin: 0 auto;
     display: flex;
     align-items: flex-end;
+    justify-content: center;
     height: 100px;
     /* Specific height to let text take space */
     width: 100%;
     margin-top: auto;
 }
 
-.bi-service-icon-wrap svg {
+.bi-page-service-icon-wrap svg {
     filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
     transition: transform 0.3s ease;
 }
 
-.bi-service-card:hover .bi-service-icon-wrap svg {
+.bi-page-service-card:hover .bi-page-service-icon-wrap svg {
     transform: scale(1.1);
 }
 
@@ -2508,31 +2514,31 @@
 }
 
 /* Specific Badge Icon Colors */
-.bi-card-variant-1 .bi-badge-icon-bg {
+.bi-card-variant-1 .bi-page-badge-icon-bg {
     color: #7b39fd;
 }
 
-.bi-card-variant-2 .bi-badge-icon-bg {
+.bi-card-variant-2 .bi-page-badge-icon-bg {
     color: #f74a53;
 }
 
-.bi-card-variant-3 .bi-badge-icon-bg {
+.bi-card-variant-3 .bi-page-badge-icon-bg {
     color: #29b4e6;
 }
 
-.bi-card-variant-4 .bi-badge-icon-bg {
+.bi-card-variant-4 .bi-page-badge-icon-bg {
     color: #2ab88b;
 }
 
-.bi-card-variant-5 .bi-badge-icon-bg {
+.bi-card-variant-5 .bi-page-badge-icon-bg {
     color: #3050e6;
 }
 
-.bi-card-variant-6 .bi-badge-icon-bg {
+.bi-card-variant-6 .bi-page-badge-icon-bg {
     color: #e65fb1;
 }
 
-.bi-card-variant-7 .bi-badge-icon-bg {
+.bi-card-variant-7 .bi-page-badge-icon-bg {
     color: #ff9519;
 }
 
@@ -2844,7 +2850,7 @@
 
 .bi-testimonial-container {
     max-width: 100%;
-    text-align: left;
+    text-align: center;
 }
 
 .bi-testimonial-label {
@@ -2854,7 +2860,7 @@
     letter-spacing: 0.5px;
     margin-bottom: 16px;
     font-style: italic;
-    margin-left: 45%;
+    text-align: center;
 }
 
 .bi-testimonial-heading {
@@ -2864,10 +2870,8 @@
     line-height: 1.25;
     margin-bottom: 60px;
     letter-spacing: -1px;
-    /* margin-left: 10%; */
-    display: flex;
-    align-items: center;
     text-align: center;
+    display: block;
 }
 
 /* Scroll Wrapper with CSS Mask for Edge Fading */

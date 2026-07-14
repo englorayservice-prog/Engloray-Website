@@ -49,7 +49,7 @@ import {
 import { faWhatsapp as faWhatsappBrand } from '@fortawesome/free-brands-svg-icons';
 import './CorporateTraining.css';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
-// import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
+import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
 import NavigationBar from '../../TechLearningSection/NavigationBar/NavigationBar';
@@ -1000,7 +1000,7 @@ const CorporateTraining = () => {
               </div>
             </section>
           </main>
-          {/* <WhiteFooter /> */}
+          <WhiteFooter />
           <BackToTop />
         </div>
       </div>

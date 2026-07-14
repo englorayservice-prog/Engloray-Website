@@ -53,7 +53,7 @@ import caseStudyLogoEight from '../../../assets/case study images/websites/say.j
 import caseStudyLogoNine from '../../../assets/case study images/Application/aara.png';
 import caseStudyLogoTen from '../../../assets/case study images/Application/orthopetic clinic.png';
 import './WorksCaseStudies.css';
-import NewFooter1 from '../subFooterOne/NewFooter1';
+import NewFooter from '../NewFooter/NewFooter';
 // Import the hero background image
 import heroBackgroundImage from '../../../assets/case_studies_hero_bg.png'; // Update this path to your actual image
 
@@ -954,7 +954,7 @@ const WorksCaseStudies = () => {
                     </div>
                 </section>
             </div>
-            <NewFooter1 />
+            <NewFooter />
             <BackToTop />
         </div>
     );

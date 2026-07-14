@@ -3,7 +3,7 @@ import Navbar from '../../../Components/Navbar/Navbar';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import './UiUxDesign.css';
-import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
+// import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 import avatarTwo from '../../../assets/cartoon_male_1.png';
 import avatarThree from '../../../assets/cartoon_female_1.png';
 import avatarFour from '../../../assets/cartoon_female_2.png';
@@ -778,7 +778,7 @@ const UiUxDesignPage = () => {
                 </div>
             </section>
             {/* <TSPFFooter /> */}
-            <WhiteFooter />
+            {/* <WhiteFooter /> */}
             <BackToTop />
         </div>
     );

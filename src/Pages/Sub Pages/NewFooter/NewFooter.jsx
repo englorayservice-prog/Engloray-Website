@@ -321,9 +321,11 @@ const NewFooter = () => {
                         <div className="nf-legal">
                             <p className="nf-copyright">© {currentYear} ENGLORAY. All rights reserved.</p>
                             <div className="nf-legal-links">
-                                <button onClick={() => handleLinkClick('/privacyPolicyPage')}>Privacy</button>
+                                <button className="nf-legal-highlight" onClick={() => handleLinkClick('/privacyPolicyPage')}>Privacy</button>
                                 <span>·</span>
-                                <button onClick={() => handleLinkClick('/termsAndServicesPage')}>Terms</button>
+                                <button className="nf-legal-highlight" onClick={() => handleLinkClick('/termsAndServicesPage')}>Terms</button>
+                                <span>·</span>
+                                <button className="nf-legal-highlight" onClick={() => handleLinkClick('/cookiesPolicyPage')}>Cookies</button>
                             </div>
                         </div>
 
