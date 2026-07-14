@@ -17,4 +17,8 @@ export const fontStyles = `
 @font-face{font-family:HEXCO;src:url(/assets/HEXCO-Regular-BB0JvSA9.woff2)format("woff2"),url(/assets/HEXCO-Regular-DavKgGqv.woff)format("woff");font-weight:400;font-style:normal;font-display:swap}
 
 @font-face{font-family:Pavelt;src:url(/assets/Pavelt-BUmc3BDW.woff2)format("woff2"),url(/assets/Pavelt-DLBHXm5n.woff)format("woff");font-weight:400;font-style:normal;font-display:swap}
+
+.portal-page-active, .portal-page-active * {
+  font-family: 'HEXCO', sans-serif !important;
+}
 `;

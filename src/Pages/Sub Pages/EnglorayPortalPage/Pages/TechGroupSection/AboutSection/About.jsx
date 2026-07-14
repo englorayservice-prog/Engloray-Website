@@ -29,22 +29,10 @@ export const About = ({ onOpenApply }) => {
       };
 
       // Header reveal
-      gsap.fromTo('.about-header', revealDefaults, {
+      gsap.fromTo('.portal-about-header', revealDefaults, {
         ...revealTo,
         scrollTrigger: { 
           trigger: sectionRef.current, 
-          start: "top 95%", 
-          toggleActions: "play none none none" 
-        }
-      });
-
-      // Visual items reveal
-      gsap.fromTo('.visual-item', revealDefaults, {
-        ...revealTo,
-        stagger: 0.02,
-        duration: 0.4,
-        scrollTrigger: { 
-          trigger: '.visual-grid', 
           start: "top 95%", 
           toggleActions: "play none none none" 
         }
@@ -86,7 +74,7 @@ export const About = ({ onOpenApply }) => {
       {/* Light Header & Expertise Wrapper */}
       <div className="max-w-5xl mx-auto px-6 mb-2">
         {/* Creative Title for the Expertise Section */}
-        <div className="about-header text-left flex flex-col items-start mb-8">
+        <div className="portal-about-header text-left flex flex-col items-start mb-8">
           <span className="text-xs text-[#00FFFF] tracking-widest uppercase font-bold block mb-3 font-aldrich">
             CAPABILITIES // OUR TECH MATRIX
           </span>
@@ -99,7 +87,7 @@ export const About = ({ onOpenApply }) => {
         </div>
 
         {/* Our Expertise Content */}
-        <div className="visual-container flex flex-col gap-6 w-full">
+        <div className="portal-visual-container flex flex-col gap-6 w-full">
           <h4 className="text-lg font-bold relative pb-2 border-b border-gray-100 flex items-center justify-between">
             <span>Our Expertise</span>
             <span className="absolute bottom-0 left-0 w-8 h-[2px] bg-brand-sky shadow-glow-sky"></span>
@@ -133,7 +121,7 @@ export const About = ({ onOpenApply }) => {
                 <div className="w-12 h-12 rounded-2xl bg-brand-sky/5 border border-brand-sky/10 flex items-center justify-center text-brand-sky text-xl group-hover:bg-brand-sky group-hover:text-white group-hover:shadow-glow-sky transition-all duration-500">
                   <FaCode />
                 </div>
-                <h3 className="about-card-title text-lg font-bold text-slate-800 group-hover:text-brand-sky transition-colors duration-300">Enterprise Tech</h3>
+                <h3 className="text-lg font-bold text-slate-800 group-hover:text-brand-sky transition-colors duration-300">Enterprise Tech</h3>
               </div>
               <p className="text-sm text-slate-600 leading-relaxed pl-2">
                 Drive software innovation with custom architectures, microservices, database systems, and secure API structures.
@@ -155,7 +143,7 @@ export const About = ({ onOpenApply }) => {
                 <div className="w-12 h-12 rounded-2xl bg-brand-sky/5 border border-brand-sky/10 flex items-center justify-center text-brand-sky text-xl group-hover:bg-brand-sky group-hover:text-white group-hover:shadow-glow-sky transition-all duration-500">
                   <FaLightbulb />
                 </div>
-                <h3 className="about-card-title text-lg font-bold text-slate-800 group-hover:text-brand-sky transition-colors duration-300">Empowering Growth</h3>
+                <h3 className="text-lg font-bold text-slate-800 group-hover:text-brand-sky transition-colors duration-300">Empowering Growth</h3>
               </div>
               <p className="text-sm text-slate-600 leading-relaxed pl-2">
                 We combine industry developer expertise with structured academic syllabi to drive student tech placement growth.
@@ -177,7 +165,7 @@ export const About = ({ onOpenApply }) => {
                 <div className="w-12 h-12 rounded-2xl bg-brand-sky/5 border border-brand-sky/10 flex items-center justify-center text-brand-sky text-xl group-hover:bg-brand-sky group-hover:text-white group-hover:shadow-glow-sky transition-all duration-500">
                   <FaUserGraduate />
                 </div>
-                <h3 className="about-card-title text-lg font-bold text-slate-800 group-hover:text-brand-sky transition-colors duration-300">Learning Platforms</h3>
+                <h3 className="text-lg font-bold text-slate-800 group-hover:text-brand-sky transition-colors duration-300">Learning Platforms</h3>
               </div>
               <p className="text-sm text-slate-600 leading-relaxed pl-2">
                 Interactive dashboards, live coding playgrounds, user testing reviews, and mock interview preparations.

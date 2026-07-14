@@ -136,7 +136,7 @@ export const CTA = ({ onOpenApply }) => {
   return (
     <section 
       ref={containerRef}
-      className="relative w-full h-[220px] sm:h-[260px] md:h-[300px] overflow-hidden flex items-center justify-center"
+      className="relative w-full min-h-[300px] sm:min-h-[340px] py-10 sm:py-14 overflow-hidden flex items-center justify-center"
       style={{ background: 'linear-gradient(135deg, #0D1B3E 0%, #1A3A6B 50%, #0F2D5A 100%)' }}
       id="cta"
     >

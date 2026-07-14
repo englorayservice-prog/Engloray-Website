@@ -288,14 +288,3 @@
 .roadmap-modal-backdrop span {
   color: #4B5563 !important;
 }
-
-/* Custom Viewport Height to prevent arbitrary Tailwind build issues */
-.services-orbit-viewport {
-  height: 340px !important;
-}
-
-@media (min-width: 768px) {
-  .services-orbit-viewport {
-    height: 420px !important;
-  }
-}

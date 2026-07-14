@@ -459,11 +459,11 @@ export default function Brain3D({ scale = 1.3 }) {
       container.addEventListener('mouseleave', handleMouseLeave);
 
       // Frame loop
-      const clock = new THREE.Clock();
+      const startTime = performance.now();
       const animate = () => {
         try {
           frameId = requestAnimationFrame(animate);
-          const time = clock.getElapsedTime();
+          const time = (performance.now() - startTime) * 0.001;
 
           shaderMaterial.uniforms.uTime.value = time;
           shaderMaterial.uniforms.uHoverProgress.value = progressObj.value;

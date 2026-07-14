@@ -1,5 +1,5 @@
-/* Hide the native cursor everywhere */
-* {
+/* Hide the native cursor everywhere (use higher specificity to override other stylesheet cursor rules) */
+html body * {
   cursor: none !important;
 }
 
