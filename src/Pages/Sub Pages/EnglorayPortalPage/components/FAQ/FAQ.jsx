@@ -406,7 +406,13 @@ export const FAQ = () => {
         }
 
         /* ── Header ── */
-        .faq-header { text-align: center; margin-bottom: 24px; }
+        .faq-header {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          margin-bottom: 24px;
+        }
         .faq-eyebrow {
           display: inline-flex;
           align-items: center;
@@ -420,10 +426,11 @@ export const FAQ = () => {
           font-family: 'Aldrich', monospace;
         }
         .faq-title {
+          display: block;
           font-size: clamp(22px, 3vw, 32px);
           font-weight: 800;
           color: #0f172a;
-          margin: 0 0 12px;
+          margin: 0 auto 12px;
           font-family: 'HEXCO', sans-serif;
           letter-spacing: 0.02em;
         }
