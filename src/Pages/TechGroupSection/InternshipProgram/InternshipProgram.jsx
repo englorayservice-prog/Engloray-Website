@@ -318,11 +318,32 @@ const InternshipProgram = () => {
                 <div className="tgi-roles-section">
                     <div className="tgi-roles-header">
                         <h3 className="tgi-section-title">Available Roles</h3>
+                        <button
+                            className="tgi-explore-more-btn tgi-explore-more-header"
+                            onClick={() => navigate('/admissionPortal')}
+                        >
+                            <span className="tgi-explore-more-label">Explore more</span>
+                            <span className="tgi-explore-more-arrow">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                                    <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
+                            </span>
+                        </button>
                         <div className="tgi-roles-nav">
-                            <button className="tgi-nav-btn" onClick={handlePrevRole}>
+                            <button
+                                type="button"
+                                className="tgi-nav-btn"
+                                onClick={handlePrevRole}
+                                aria-label="Previous role"
+                            >
                                 <FontAwesomeIcon icon={faChevronLeft} />
                             </button>
-                            <button className="tgi-nav-btn" onClick={handleNextRole}>
+                            <button
+                                type="button"
+                                className="tgi-nav-btn"
+                                onClick={handleNextRole}
+                                aria-label="Next role"
+                            >
                                 <FontAwesomeIcon icon={faChevronRight} />
                             </button>
                         </div>

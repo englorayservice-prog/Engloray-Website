@@ -1929,6 +1929,12 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: blur(2px);
+  transition: filter 0.3s ease;
+}
+
+.rm3-brick:hover .rm3-brick-img {
+  filter: blur(1px);
 }
 
 /* my responsive only for above codes */
