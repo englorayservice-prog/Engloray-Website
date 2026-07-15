@@ -29,6 +29,8 @@ import webdevelopment from '../../../assets/Service images/website/business webs
 import webdevelopmentOne from '../../../assets/Service images/website/corporate website.png';
 import webdevelopmentTwo from '../../../assets/Service images/website/custom website.png';
 import webdevelopmentThree from '../../../assets/Service images/website/responsive.png';
+import SEOHead from '../../../seo/SEOHead';
+import SchemaMarkup from '../../../seo/SchemaMarkup';
 
 
 // Removed missing premium_avatar local imports
@@ -281,6 +283,8 @@ const WebsiteDevelopment = () => {
 
     return (
         <div className="web-page-page">
+            <SEOHead pageKey="/websiteDevelopmentPage" />
+            <SchemaMarkup pageKey="/websiteDevelopmentPage" />
             <TopNavBar />
             <Navbar />
             {/* Hero Section */}

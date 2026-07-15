@@ -28,6 +28,8 @@ import avatarFive from '../../../assets/cartoon_male_2.png';
 import avatarSix from '../../../assets/cartoon_female_3.png';
 import avatarSeven from '../../../assets/cartoon_male_3.png';
 import avatarEight from '../../../assets/female_avatar.png';
+import SEOHead from '../../../seo/SEOHead';
+import SchemaMarkup from '../../../seo/SchemaMarkup';
 
 
 
@@ -280,6 +282,8 @@ const GraphicDesignPage = () => {
 
     return (
         <div className="gd-page-page">
+            <SEOHead pageKey="/graphicDesignPage" />
+            <SchemaMarkup pageKey="/graphicDesignPage" />
             <TopNavBar />
             <Navbar />
             {/* Hero Section Rebuild */}

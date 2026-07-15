@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { submitEnrollment } from "../../Sub Pages/HandleSubmit/HandleSubmit";
 import NavigationBar from '../../TechLearningSection/NavigationBar/NavigationBar';
-import SubFooterTwo from '../subFooterTwo/NewFooter';
+// import SubFooterTwo from '../subFooterTwo/NewFooter';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import {
@@ -69,6 +69,8 @@ import adobeFireflyBg from '../../../assets/adobe_firefly_logo.png';
 import midjourneyBg from '../../../assets/midjourney_logo.png';
 import leonardoAiBg from '../../../assets/leonardo_ai_logo.png';
 import dalleBg from '../../../assets/dalle_logo.png';
+import SEOHead from '../../../seo/SEOHead';
+import SchemaMarkup from '../../../seo/SchemaMarkup';
 
 const UiuxDesignCourse = () => {
   const [showEnrollment, setShowEnrollment] = useState(false);
@@ -442,7 +444,7 @@ const UiuxDesignCourse = () => {
     return `rgba(${r}, ${g}, ${b}, ${alpha})`;
   };
 
-  const benefitIconPalette = ["#BAE6FD", "#C4B5FD", "#FBCFE8", "#BBF7D0", "#FED7AA", "#FEF08A", "#E9D5FF", "#A7F3D0", "#BAE6FD", "#C4B5FD"];
+  const benefitIconPalette = ["#0284c7", "#7c3aed", "#db2777", "#16a34a", "#ea580c", "#ca8a04", "#9333ea", "#059669", "#0284c7", "#7c3aed"];
 
   const demoVideo = {
     title: "UI/UX Design Mastery - Free Demo Lesson",
@@ -685,6 +687,7 @@ const UiuxDesignCourse = () => {
               </div>
             </div>
           </section>
+          <hr style={{ border: 'none', borderTop: '1px solid rgba(0,0,0,0.15)', width: '80%', margin: 'calc(20 * var(--uiux-fluid-scale)) auto' }} />
 
           {/* Course Outcomes - Redesigned Numbered Grid */}
           <section className="uiux-dgm-section uiux-dgm-outcomes-numbered">
@@ -729,7 +732,7 @@ const UiuxDesignCourse = () => {
               </div>
             </div>
           </section>
-
+          <hr style={{ border: 'none', borderTop: '1px solid rgba(0,0,0,0.15)', width: '80%', margin: 'calc(20 * var(--uiux-fluid-scale)) auto' }} />
 
           {/* 6-Month Course Breakdown - Vertical Slider Redesign */}
           <section className="uiux-curriculum-v2-section">
@@ -834,6 +837,8 @@ const UiuxDesignCourse = () => {
             </div>
           </section>
 
+          <hr style={{ border: 'none', borderTop: '1px solid rgba(0,0,0,0.15)', width: '80%', margin: 'calc(20 * var(--uiux-fluid-scale)) auto' }} />
+
           {/* Tools & Resources - Interactive V2 Redesign */}
           <section className="uiux-tools-v2">
             <div className="uiux-container">
@@ -906,7 +911,7 @@ const UiuxDesignCourse = () => {
 
                   {/* Left Tall Card */}
                   <div className="uiux-dgm-new-benefit-card uiux-dgm-benefit-card-tall">
-                    <div className="uiux-dgm-new-icon" style={{ background: hexToRgba("#BAE6FD", 0.18), color: "#BAE6FD" }}>
+                    <div className="uiux-dgm-new-icon" style={{ background: hexToRgba("#0284c7", 0.18), color: "#0284c7" }}>
                       <FontAwesomeIcon icon={faStar} />
                     </div>
                     <div className="uiux-dgm-new-content">
@@ -947,6 +952,8 @@ const UiuxDesignCourse = () => {
                             const color = benefitIconPalette[absoluteIndex] || "#BAE6FD";
                             return (
                               <div className="uiux-dgm-new-icon" style={{ background: hexToRgba(color, 0.18), color }}>
+                                <SEOHead pageKey="/uiuxDesignCoursePage" />
+                                <SchemaMarkup pageKey="/uiuxDesignCoursePage" />
                                 {benefit.icon}
                               </div>
                             );
@@ -962,7 +969,7 @@ const UiuxDesignCourse = () => {
 
                   {/* Right Tall Card */}
                   <div className="uiux-dgm-new-benefit-card uiux-dgm-benefit-card-tall">
-                    <div className="uiux-dgm-new-icon" style={{ background: hexToRgba("#C4B5FD", 0.18), color: "#C4B5FD" }}>
+                    <div className="uiux-dgm-new-icon" style={{ background: hexToRgba("#7c3aed", 0.18), color: "#7c3aed" }}>
                       <FontAwesomeIcon icon={faTrophy} />
                     </div>
                     <div className="uiux-dgm-new-content">
@@ -1355,7 +1362,7 @@ const UiuxDesignCourse = () => {
           )}
           <BackToTop />
         </div>
-        <SubFooterTwo />
+        {/* <SubFooterTwo /> */}
       </div>
     </>
   );

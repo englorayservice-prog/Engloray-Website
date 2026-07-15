@@ -3,7 +3,9 @@ import './DigitalMarketingService.css';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
 import SubFooterOne from '../../../Pages/Sub Pages/subFooterOne/NewFooter1';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
+import SEOHead from '../../../seo/SEOHead';
+import SchemaMarkup from '../../../seo/SchemaMarkup';
 
 const DigitalMarketingService = () => {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -161,6 +163,8 @@ const DigitalMarketingService = () => {
 
         <>
         <div>
+            <SEOHead pageKey="/digitalMarketingServicePage" />
+            <SchemaMarkup pageKey="/digitalMarketingServicePage" />
             <Helmet>
             <title>Engloray Tech</title>
             <meta name="description" content= "Drive online growth with digital marketing: SEO, PPC, social media" />

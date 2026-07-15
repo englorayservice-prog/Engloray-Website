@@ -7,7 +7,7 @@ import BackToTop from '../../../Components/BackToTop/BackToTop';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
 import NewFooter from '../NewFooter/NewFooter';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { FaBrain, FaRobot, FaMicrochip, FaNetworkWired, FaDatabase, FaCogs, FaProjectDiagram } from "react-icons/fa";
 import heroBg from "../../../assets/lineimage.jpeg";
 import projectsBg from '../../../assets/heroimage.jpeg';
@@ -25,6 +25,8 @@ import logo11 from '../../../assets/icons/logoipsum-327.png';
 import logo12 from '../../../assets/icons/logoipsum-338.png';
 import avatarLeft from '../../../assets/cartoon_female_2.png';
 import avatarRight from '../../../assets/cartoon_male_2.png';
+import SEOHead from '../../../seo/SEOHead';
+import SchemaMarkup from '../../../seo/SchemaMarkup';
 
 const AiProductPage = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -259,6 +261,8 @@ const AiProductPage = () => {
     return (
         <>
             <div>
+            <SEOHead pageKey="/aiProductPage" />
+            <SchemaMarkup pageKey="/aiProductPage" />
                 <svg width="0" height="0" style={{ position: 'absolute' }}>
                     <defs>
                         <clipPath id="cardCurve" clipPathUnits="objectBoundingBox">

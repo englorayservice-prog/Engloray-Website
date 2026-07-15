@@ -47,10 +47,9 @@
 /* Hero Section V3 - Premium Typography & Centered Image Assets */
 
 .uiux-hero-v3 {
-  min-height: 100vh;
   background-color: #f7f6f2;
   /* Creamy white background from reference */
-  padding: calc(120 * var(--uiux-fluid-scale)) 0 calc(80 * var(--uiux-fluid-scale));
+  padding: calc(50 * var(--uiux-fluid-scale)) 0 0;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -823,6 +822,7 @@
   flex-direction: column;
   width: 100%;
   transform: scale(1);
+  box-shadow: 0 calc(6 * var(--uiux-fluid-scale)) calc(20 * var(--uiux-fluid-scale)) rgba(0, 0, 0, 0.12);
 }
 
 .uiux-dgm-outcome-numbered-card.white-bg {
@@ -1623,7 +1623,7 @@
 
 /* Refined Vertical Slider - Stacked Effect & Horizontal Card Overlay */
 .uiux-curriculum-v2-section {
-  padding: calc(120 * var(--uiux-fluid-scale)) 0;
+  padding: calc(20 * var(--uiux-fluid-scale)) 0 calc(60 * var(--uiux-fluid-scale));
   background: #ffffff;
 }
 
@@ -2504,9 +2504,10 @@ section.uiux-tools-v2-section {
   height: auto;
   max-height: calc(400 * var(--uiux-fluid-scale));
   object-fit: contain;
-  transition: transform 0.5s ease;
+  transition: all 0.5s ease;
   border-radius: calc(10 * var(--uiux-fluid-scale));
   box-shadow: 0 calc(10 * var(--uiux-fluid-scale)) calc(30 * var(--uiux-fluid-scale)) rgba(0, 0, 0, 0.2);
+  filter: blur(2px);
 }
 
 /* Certificate Lock Overlay - Simplified (No button, no click action) */
@@ -2567,6 +2568,7 @@ section.uiux-tools-v2-section {
 
 .uiux-certificate-image-wrapper:hover .uiux-certificate-image {
   transform: scale(1.02);
+  filter: blur(0px);
 }
 
 .uiux-certificate-overlay {
@@ -4566,7 +4568,7 @@ section.uiux-tools-v2-section {
 
 /* Program Benefits New Section - Re-designed following Reference Image */
 .uiux-intro-section {
-  padding: calc(60 * var(--uiux-fluid-scale)) 0;
+  padding: calc(60 * var(--uiux-fluid-scale)) 0 calc(20 * var(--uiux-fluid-scale));
   background: #ffffff;
 }
 
@@ -4635,7 +4637,7 @@ section.uiux-tools-v2-section {
   border: 1px solid #f2f2f2;
   border-radius: calc(20 * var(--uiux-fluid-scale));
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-  box-shadow: 0 2px calc(10 * var(--uiux-fluid-scale)) rgba(0, 0, 0, 0.02);
+  box-shadow: 0 calc(6 * var(--uiux-fluid-scale)) calc(20 * var(--uiux-fluid-scale)) rgba(0, 0, 0, 0.12);
   min-height: calc(100 * var(--uiux-fluid-scale));
   height: 100%;
   width: calc(350 * var(--uiux-fluid-scale));
@@ -5353,7 +5355,7 @@ section.uiux-tools-v2-section {
 
 /* --- Premium Testimonials Grid Section --- */
 .uiux-testi-grid-section {
-  padding: calc(100 * var(--uiux-fluid-scale)) 0 calc(40 * var(--uiux-fluid-scale));
+  padding: calc(30 * var(--uiux-fluid-scale)) 0 calc(40 * var(--uiux-fluid-scale));
   background-color: #fcfcfc;
 }
 
@@ -5721,7 +5723,7 @@ section.uiux-tools-v2-section {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  box-shadow: 0 calc(4 * var(--uiux-fluid-scale)) calc(15 * var(--uiux-fluid-scale)) rgba(0, 0, 0, 0.03);
+  box-shadow: 0 calc(6 * var(--uiux-fluid-scale)) calc(20 * var(--uiux-fluid-scale)) rgba(0, 0, 0, 0.12);
   transition: all 0.3s ease;
   position: relative;
 }

@@ -71,6 +71,8 @@ import valueExcellence from '../../../assets/value_excellence.png';
 import valueIntegrity from '../../../assets/value_integrity.png';
 import valueCollaboration from '../../../assets/value_collaboration.png';
 import valueGrowth from '../../../assets/ai_3d_new.png';
+import SEOHead from '../../../seo/SEOHead';
+import SchemaMarkup from '../../../seo/SchemaMarkup';
 
 // ============================================================
 //  CTA SPOTLIGHT SECTION — pivoting spotlight (tip fixed, base swings)
@@ -98,6 +100,8 @@ const CtaSpotlightSection = ({ handleWhatsAppClick, handlePortfolioClick }) => {
 
   return (
     <section className="osp-cta-modern">
+            <SEOHead pageKey="/ourStoryPage" />
+            <SchemaMarkup pageKey="/ourStoryPage" />
       <div className="osp-cta-bg-noise"></div>
       <div className="osp-cta-glow-orb"></div>
 

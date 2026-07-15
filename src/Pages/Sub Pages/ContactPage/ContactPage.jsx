@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import contactBg from "../../../assets/images/contact-bg.png";
 import Logo from '../../../assets/18.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -21,6 +21,8 @@ import LearningFooter from '../../TechLearningSection/LearningFooter/LearningFoo
 //import heroBg from '../../../assets/contact_hero_bg.png';
 import './ContactPage.css';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
+import SEOHead from '../../../seo/SEOHead';
+import SchemaMarkup from '../../../seo/SchemaMarkup';
 
 const ContactPage = () => {
     const [formData, setFormData] = useState({
@@ -89,6 +91,8 @@ const ContactPage = () => {
     return (
         <>
             <TopNavBar/>
+            <SEOHead pageKey="/contactPage" />
+            <SchemaMarkup pageKey="/contactPage" />
             <RayMartNavbar />
             <Helmet>
                 <title>Contact Us | RayMart</title>

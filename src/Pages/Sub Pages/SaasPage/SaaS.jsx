@@ -51,6 +51,8 @@ import globeVideo from '../../../assets/World-SASS (2).mp4';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar'
 import TopNavbar from '../../../Components/TopNavbar/TopNavbar'
 import SubFooterOne from '../../../Pages/Sub Pages/subFooterOne/NewFooter1'
+import SEOHead from '../../../seo/SEOHead';
+import SchemaMarkup from '../../../seo/SchemaMarkup';
 
 const StatItem = ({ value, label, suffix = "", itemClass = "crm-stat-item" }) => {
   const [ref, inView] = useInView({ threshold: 0.5, triggerOnce: true });
@@ -75,6 +77,8 @@ const StatItem = ({ value, label, suffix = "", itemClass = "crm-stat-item" }) =>
 
   return (
     <div ref={ref} className={itemClass}>
+            <SEOHead pageKey="/saasPage" />
+            <SchemaMarkup pageKey="/saasPage" />
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}

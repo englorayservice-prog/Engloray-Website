@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import App from './App';
 import { fontStyles } from './portal-fonts';
+import SEOHead from '../../../seo/SEOHead';
+import SchemaMarkup from '../../../seo/SchemaMarkup';
 
 export default function EnglorayPortalPage() {
   useEffect(() => {
@@ -32,5 +34,11 @@ export default function EnglorayPortalPage() {
     };
   }, []);
 
-  return <App />;
+  return (
+    <>
+      <SEOHead pageKey="/admissionPortal" />
+      <SchemaMarkup pageKey="/admissionPortal" />
+      <App />
+    </>
+  );
 }

@@ -4,7 +4,7 @@ import BackToTop from '../../../Components/BackToTop/BackToTop';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
 import NewFooter from '../NewFooter/NewFooter';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { FaDatabase, FaChartLine, FaShieldAlt, FaCheckCircle, FaSearch, FaProjectDiagram, FaCogs, FaLightbulb } from "react-icons/fa";
 import heroBg from "../../../assets/lineimage.jpeg";
 import projectsBg from '../../../assets/heroimage.jpeg';
@@ -22,6 +22,8 @@ import logo11 from '../../../assets/icons/logoipsum-415.png';
 import logo12 from '../../../assets/icons/logoipsum-417.png';
 import avatarLeft from '../../../assets/cartoon_female_1.png';
 import avatarRight from '../../../assets/cartoon_male_1.png';
+import SEOHead from '../../../seo/SEOHead';
+import SchemaMarkup from '../../../seo/SchemaMarkup';
 
 const DataAnalyticsBusiness = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -212,6 +214,8 @@ const DataAnalyticsBusiness = () => {
     return (
         <>
             <div>
+            <SEOHead pageKey="/dataanalyticsbusiness" />
+            <SchemaMarkup pageKey="/dataanalyticsbusiness" />
                 <svg width="0" height="0" style={{ position: 'absolute' }}>
                     <defs>
                         <clipPath id="cardCurve" clipPathUnits="objectBoundingBox">

@@ -90,6 +90,8 @@ import aiOne from '../../../assets/WEBSITE_IMAGES/service 10, AI SERVICES/1.png'
 import aiTwo from '../../../assets/WEBSITE_IMAGES/service 10, AI SERVICES/2.png';
 import aiThree from '../../../assets/WEBSITE_IMAGES/service 10, AI SERVICES/3.png';
 import aiFour from '../../../assets/WEBSITE_IMAGES/service 10, AI SERVICES/4.png';
+import SEOHead from '../../../seo/SEOHead';
+import SchemaMarkup from '../../../seo/SchemaMarkup';
 
 
 /* ─── Mock Data ─────────────────────────────────────────────── */
@@ -141,6 +143,8 @@ const SalesChart = ({ section }) => {
 
   return (
     <div style={{ background: '#fff', borderRadius: '12px', padding: '14px', height: '100%', width: '100%', boxSizing: 'border-box', display: 'flex', flexDirection: 'column' }}>
+            <SEOHead pageKey="/raymartPage" />
+            <SchemaMarkup pageKey="/raymartPage" />
       <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: '13px', fontWeight: 600, color: '#111', marginBottom: '8px' }}>
         Monthly Sales Growth
       </p>

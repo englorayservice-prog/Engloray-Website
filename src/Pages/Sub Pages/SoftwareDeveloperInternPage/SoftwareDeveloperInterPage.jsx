@@ -60,7 +60,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import './SoftwareDeveloperInternPage.css';
 import { submitInternship } from "../../Sub Pages/HandleSubmit/InternshipSubmit";
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 // Resources
 import pathOne from '../../../assets/resources file/resources file/TECH/Software developer/Core Programming Languages & Development Tools.pdf';
@@ -89,6 +89,8 @@ import girl1 from '../../../assets/images/girl1.png';
 import girl2 from '../../../assets/images/girl2.png';
 import girl3 from '../../../assets/images/girl3.png';
 import girl4 from '../../../assets/images/girl4.png';
+import SEOHead from '../../../seo/SEOHead';
+import SchemaMarkup from '../../../seo/SchemaMarkup';
 
 const sdHeroImg = "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1600&q=80";
 const galleryModernLab = "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80";
@@ -1960,6 +1962,8 @@ const SoftwareDeveloperInternPage = () => {
 
                                         return (
                                             <div key={index} className={`SD-dt-card SD-dt-card-${cardClassIndex}`}>
+                                                <SEOHead pageKey="/SoftwareDeveloperInternPage" />
+                                                <SchemaMarkup pageKey="/SoftwareDeveloperInternPage" />
                                                 <div className="SD-dt-card-img-wrapper">
                                                     <img
                                                         src={photoUrl}

@@ -41,6 +41,8 @@ import imgErpParent from '../../../assets/images/erp_parent_comms.png';
 import imgErpForecast from '../../../assets/images/erp_forecasting.png';
 import imgErpCompliance from '../../../assets/images/erp_compliance.png';
 import imgErpAttendance from '../../../assets/images/erp_attendance.png';
+import SEOHead from '../../../seo/SEOHead';
+import SchemaMarkup from '../../../seo/SchemaMarkup';
 
 const ErpPage = () => {
     const [activeFeature, setActiveFeature] = useState(0);
@@ -111,6 +113,8 @@ const ErpPage = () => {
     return (
         <>
             <TopNavbar />
+            <SEOHead pageKey="/erpPage" />
+            <SchemaMarkup pageKey="/erpPage" />
             <TwoLineNavbar />
             <div className="crm-subpage-container erp-theme">
 

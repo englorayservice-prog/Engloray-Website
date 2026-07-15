@@ -51,6 +51,8 @@ import "./AllProgramsPage.css";
 import TwoLineNavbar from "../../../Components/TwoLineNavbar/TwoLineNavbar";
 import BackToTop from "../../../Components/BackToTop/BackToTop";
 import WhiteFooter from "../../../Components/WhiteFooter/WhiteFooter";
+import SEOHead from '../../../seo/SEOHead';
+import SchemaMarkup from '../../../seo/SchemaMarkup';
 
 const AllProgramsPage = () => {
   const navigate = useNavigate();
@@ -289,6 +291,8 @@ const handleScheduleSubmit = async (e) => {
   
   return (
     <div className="app-front-page">
+            <SEOHead pageKey="/allProgramsPage" />
+            <SchemaMarkup pageKey="/allProgramsPage" />
       {showToast && (
         <div className="app-toast-notification show">
           <span className="app-toast-icon">

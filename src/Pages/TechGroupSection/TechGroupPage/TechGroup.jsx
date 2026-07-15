@@ -13,10 +13,14 @@ import './TechGroup.css';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import AboutSection from '../AboutSection/About';
+import SEOHead from '../../../seo/SEOHead';
+import SchemaMarkup from '../../../seo/SchemaMarkup';
 
 const TechGroup = () => {
   return (
     <div className="tech-group-page">
+            <SEOHead pageKey="/tech-group" />
+            <SchemaMarkup pageKey="/tech-group" />
 
       <TopNavBar />
       <TwoLineNavbar excludeItems={['works']} />

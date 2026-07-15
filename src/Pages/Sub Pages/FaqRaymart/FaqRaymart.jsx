@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import NavigationBar from '../../../Pages/TechLearningSection/NavigationBar/NavigationBar';
 import brandingData from './raymart_branding_data.json';
 import Logo from '../../../../src/assets/18.png'; // Using the logo from assets
@@ -172,6 +172,8 @@ import learnThree from '../../../assets/WEBSITE_IMAGES/LEARNING AND CAREER/3.png
 import learnFour from '../../../assets/WEBSITE_IMAGES/LEARNING AND CAREER/4.png';
 import learnFive from '../../../assets/WEBSITE_IMAGES/LEARNING AND CAREER/5.png';
 import learnSix from '../../../assets/WEBSITE_IMAGES/LEARNING AND CAREER/graphic design courses.png';
+import SEOHead from '../../../seo/SEOHead';
+import SchemaMarkup from '../../../seo/SchemaMarkup';
 
 
 const FaqRaymart = () => {
@@ -366,6 +368,8 @@ const FaqRaymart = () => {
     return (
         <>
             <Helmet>
+            <SEOHead pageKey="/raymartPageFour" />
+            <SchemaMarkup pageKey="/raymartPageFour" />
                 <title>FAQ & Feedback | Engloray</title>
             </Helmet>
 

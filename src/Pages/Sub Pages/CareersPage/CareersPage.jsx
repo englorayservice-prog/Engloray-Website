@@ -50,6 +50,8 @@ import avatar3 from '../../../assets/testimonials/cartoon_male_2.png';
 import avatar4 from '../../../assets/testimonials/cartoon_female_2.png';
 import avatar5 from '../../../assets/testimonials/cartoon_male_3.png';
 import dataAiImage from '../../../assets/data_ai_careers.png';
+import SEOHead from '../../../seo/SEOHead';
+import SchemaMarkup from '../../../seo/SchemaMarkup';
 
 const CareersPage = () => {
   const [formData, setFormData] = useState({
@@ -292,6 +294,8 @@ const CareersPage = () => {
 
   return (
     <div className="cp-careers-container">
+            <SEOHead pageKey="/CareersPage" />
+            <SchemaMarkup pageKey="/CareersPage" />
       <TopNavBar />
       <TwoLineNavbar />
       {/* Progress Scroll Indicator */}

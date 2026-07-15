@@ -8,7 +8,7 @@ import BackToTop from '../../../Components/BackToTop/BackToTop';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
 import NewFooter from '../NewFooter/NewFooter';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 // import profile from '../../../assets/heroimage.jpeg';
 import { FaLightbulb, FaPalette, FaComments, FaLayerGroup, FaCompass, FaUserCircle, FaGem } from "react-icons/fa";
 import heroBg from "../../../assets/lineimage.jpeg";
@@ -31,6 +31,8 @@ import logo11 from '../../../assets/icons/logoipsum-327.png';
 import logo12 from '../../../assets/icons/logoipsum-338.png';
 import avatarLeft from '../../../assets/cartoon_female_3.png';
 import avatarRight from '../../../assets/cartoon_male_3.png';
+import SEOHead from '../../../seo/SEOHead';
+import SchemaMarkup from '../../../seo/SchemaMarkup';
 
 
 
@@ -272,6 +274,8 @@ const BrandingDesigning = () => {
     return (
         <>
             <div>
+            <SEOHead pageKey="/brandingPage" />
+            <SchemaMarkup pageKey="/brandingPage" />
                 {/* SVG Definitions for Clip Path */}
                 <svg width="0" height="0" style={{ position: 'absolute' }}>
                     <defs>

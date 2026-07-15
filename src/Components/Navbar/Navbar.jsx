@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 import Logo from '../../assets/18.png'
 import SearchBar from '../SearchBar/SearchBar';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
