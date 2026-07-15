@@ -1,3 +1,26 @@
-# https://www.robotstxt.org/robotstxt.html
+# Engloray Website - robots.txt
+# https://www.engloray.com/robots.txt
+
 User-agent: *
-Disallow:
+Allow: /
+
+# Block internal/component routes that are not real pages
+Disallow: /admissionPortal
+Disallow: /mainPageSubFooter
+Disallow: /techGroupSubPageFooter
+Disallow: /techLearningSubPageFooter
+Disallow: /raymartNavbar
+Disallow: /StatsAndBenefitsPage
+
+# Block API endpoints and internal resources
+Disallow: /api/
+Disallow: /static/js/*.map
+Disallow: /static/css/*.map
+
+# Allow CSS and JS for rendering
+Allow: /static/css/
+Allow: /static/js/
+Allow: /static/media/
+
+# Sitemap location
+Sitemap: https://www.engloray.com/sitemap.xml

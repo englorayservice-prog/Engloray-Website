@@ -51,10 +51,9 @@
 /* Hero Section V3 - Premium Typography & Centered Image Assets */
 
 .dcp-hero-v3 {
-    min-height: 100vh;
     background-color: #f7f6f2;
     /* Creamy white background from reference */
-    padding: calc(120 * var(--dcp-fluid-scale)) 0 calc(80 * var(--dcp-fluid-scale));
+    padding: calc(80 * var(--dcp-fluid-scale)) 0 calc(20 * var(--dcp-fluid-scale));
     position: relative;
     overflow: hidden;
     display: flex;
@@ -524,8 +523,8 @@
 /* Marquee Styles - Restored for Section Flow */
 .dcp-v2-marquee-container {
     width: 100vw;
-    margin-top: calc(60 * var(--dcp-fluid-scale));
-    margin-bottom: calc(60 * var(--dcp-fluid-scale));
+    margin-top: calc(30 * var(--dcp-fluid-scale));
+    margin-bottom: calc(30 * var(--dcp-fluid-scale));
     position: relative;
     z-index: 10;
     overflow: hidden;
@@ -583,7 +582,7 @@
 
 /* Sections */
 .dcp-section {
-    padding: calc(60 * var(--dcp-fluid-scale)) 0;
+    padding: calc(30 * var(--dcp-fluid-scale)) 0;
 }
 
 .dcp-white-bg {
@@ -728,7 +727,7 @@
 /* Course Outcomes - Numbered Grid Section */
 .dcp-outcomes-numbered {
     background-color: #ffffff;
-    padding: calc(60 * var(--dcp-fluid-scale)) 0;
+    padding: calc(30 * var(--dcp-fluid-scale)) 0;
     overflow: hidden;
 }
 
@@ -737,7 +736,7 @@
     justify-content: space-between;
     align-items: flex-end;
     padding: 0 calc(60 * var(--dcp-fluid-scale));
-    margin-bottom: calc(40 * var(--dcp-fluid-scale));
+    margin-bottom: calc(20 * var(--dcp-fluid-scale));
 }
 
 .dcp-outcomes-title-col {
@@ -807,13 +806,16 @@
 }
 
 .dcp-outcome-numbered-card.white-bg {
-    background: transparent;
-    border: 1px solid #000000;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 calc(5 * var(--dcp-fluid-scale)) calc(20 * var(--dcp-fluid-scale)) rgba(0, 0, 0, 0.15);
 }
 
 .dcp-outcome-numbered-card.black-bg {
     background: #1a1a2e;
-    border: none;
+    color: #ffffff;
+    box-shadow: 0 calc(5 * var(--dcp-fluid-scale)) calc(20 * var(--dcp-fluid-scale)) rgba(0, 0, 0, 0.3);
+    border: 1px solid transparent;
 }
 
 .dcp-outcome-numbered-card.black-bg .dcp-outcome-numbered-title,
@@ -910,14 +912,14 @@
 /* Container */
 .dcp-container {
     max-width: var(--dcp-container-max);
-    margin: 0;
-    padding-top: 100px;
+    margin: 0 auto;
+    padding: 0 var(--dcp-container-pad);
     overflow: visible;
 }
 
 /* Section */
 .dcp-section {
-    padding: calc(60 * var(--dcp-fluid-scale)) 0;
+    padding: calc(30 * var(--dcp-fluid-scale)) 0;
 }
 
 /* Responsive */
@@ -1048,7 +1050,7 @@
 
 .dcp-tools-v2-header {
     text-align: center;
-    margin-bottom: calc(70 * var(--dcp-fluid-scale));
+    margin-bottom: calc(35 * var(--dcp-fluid-scale));
 }
 
 .dcp-tools-v2-title {
@@ -1069,7 +1071,7 @@
     gap: calc(60 * var(--dcp-fluid-scale));
     max-width: calc(1200 * var(--dcp-fluid-scale));
     margin: 0 auto;
-    margin-bottom: -100px;
+    margin-bottom: -180px;
 }
 
 /* Sidebar Tabs */
@@ -1588,7 +1590,7 @@
 
 /* Refined Vertical Slider - Stacked Effect & Horizontal Card Overlay */
 .dcp-curriculum-v2-section {
-    padding: calc(120 * var(--dcp-fluid-scale)) 0;
+    padding: calc(60 * var(--dcp-fluid-scale)) 0 calc(20 * var(--dcp-fluid-scale)) 0;
     background: #ffffff;
 }
 
@@ -1905,7 +1907,7 @@
 
 /* Tools & Resources V2 - Uniform Standardized Grid */
 section.dcp-tools-v2-section {
-    padding: calc(100 * var(--dcp-fluid-scale)) 0 calc(50 * var(--dcp-fluid-scale)) 0;
+    padding: calc(60 * var(--dcp-fluid-scale)) 0 calc(30 * var(--dcp-fluid-scale)) 0;
     background: #ffffff !important;
     position: relative;
     display: block;
@@ -2475,9 +2477,10 @@ section.dcp-tools-v2-section {
     height: auto;
     max-height: calc(400 * var(--dcp-fluid-scale));
     object-fit: contain;
-    transition: transform 0.5s ease;
+    transition: transform 0.5s ease, filter 0.5s ease;
     border-radius: calc(10 * var(--dcp-fluid-scale));
     box-shadow: 0 calc(10 * var(--dcp-fluid-scale)) calc(30 * var(--dcp-fluid-scale)) rgba(0, 0, 0, 0.2);
+    filter: blur(2px);
 }
 
 /* Certificate Lock Overlay - Simplified (No button, no click action) */
@@ -4606,7 +4609,7 @@ section.dcp-tools-v2-section {
     border: 1px solid #f2f2f2;
     border-radius: calc(20 * var(--dcp-fluid-scale));
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    box-shadow: 0 2px calc(10 * var(--dcp-fluid-scale)) rgba(0, 0, 0, 0.02);
+    box-shadow: 0 calc(5 * var(--dcp-fluid-scale)) calc(20 * var(--dcp-fluid-scale)) rgba(0, 0, 0, 0.15);
     min-height: calc(100 * var(--dcp-fluid-scale));
     height: 100%;
     width: calc(350 * var(--dcp-fluid-scale));
@@ -4723,7 +4726,7 @@ section.dcp-tools-v2-section {
     top: 0;
     left: 0;
     right: 0;
-    height: calc(150 * var(--dcp-fluid-scale));
+    height: calc(40 * var(--dcp-fluid-scale));
     background: linear-gradient(to bottom, #ffffff, transparent);
     pointer-events: none;
 }
@@ -4779,7 +4782,7 @@ section.dcp-tools-v2-section {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    box-shadow: 0 calc(4 * var(--dcp-fluid-scale)) calc(15 * var(--dcp-fluid-scale)) rgba(0, 0, 0, 0.03);
+    box-shadow: 0 calc(5 * var(--dcp-fluid-scale)) calc(20 * var(--dcp-fluid-scale)) rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     position: relative;
 }
@@ -4787,7 +4790,7 @@ section.dcp-tools-v2-section {
 .dcp-new-benefit-card:hover {
     transform: scale(1.05);
     /* Zoom transition as requested */
-    box-shadow: 0 calc(15 * var(--dcp-fluid-scale)) calc(40 * var(--dcp-fluid-scale)) rgba(0, 0, 0, 0.12);
+    box-shadow: 0 calc(15 * var(--dcp-fluid-scale)) calc(40 * var(--dcp-fluid-scale)) rgba(0, 0, 0, 0.2);
     border-color: rgba(61, 82, 217, 0.2);
     z-index: 10;
 }
@@ -5175,7 +5178,7 @@ section.dcp-tools-v2-section {
 
 /* --- Premium Testimonials Grid Section --- */
 .dcp-testi-grid-section {
-    padding: calc(100 * var(--dcp-fluid-scale)) 0 calc(40 * var(--dcp-fluid-scale));
+    padding: calc(40 * var(--dcp-fluid-scale)) 0 calc(40 * var(--dcp-fluid-scale));
     background-color: #fcfcfc;
 }
 
@@ -5641,8 +5644,8 @@ section.dcp-tools-v2-section {
 
     .dcp-benefits-reimagined,
     .dcp-tools-v2 {
-        padding-top: 80px !important;
-        padding-bottom: 80px !important;
+        padding-top: 30px !important;
+        padding-bottom: 30px !important;
         zoom: 1.15;
     }
 
@@ -5977,7 +5980,7 @@ section.dcp-tools-v2-section {
     }
 
     .dcp-intro-section {
-        padding: calc(60 * var(--dcp-fluid-scale)) 0 !important;
+        padding: calc(30 * var(--dcp-fluid-scale)) 0 !important;
     }
 
     .dcp-intro-layout {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import logo from '../../../assets/3.png';
 import SearchBar from '../../../Components/SearchBar/SearchBar';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faHome,

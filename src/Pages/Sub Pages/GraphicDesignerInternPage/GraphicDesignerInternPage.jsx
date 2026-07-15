@@ -96,7 +96,7 @@ import pathSix from '../../../assets/resources file/resources file/TECH/GRAPHICS
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import Navbar from '../../../Components/Navbar/Navbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 const GraphicDesignerInternPage = () => {
     const [activeSection, setActiveSection] = useState('home');

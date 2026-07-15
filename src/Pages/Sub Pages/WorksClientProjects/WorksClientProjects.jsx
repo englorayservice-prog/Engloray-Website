@@ -63,6 +63,8 @@ import NewFooter from '../NewFooter/NewFooter';
 
 // Import hero background image
 import heroBackgroundImage from '../../../assets/download (29).jpeg';
+import SEOHead from '../../../seo/SEOHead';
+import SchemaMarkup from '../../../seo/SchemaMarkup';
 
 // Logo data for marquee
 const logoImages = [
@@ -501,6 +503,8 @@ const WorksClientProjects = () => {
 
     return (
         <div>
+            <SEOHead pageKey="/worksClientProjectsPage" />
+            <SchemaMarkup pageKey="/worksClientProjectsPage" />
             <TopNavBar />
             <TwoLineNavbar />
             <div className="wcp-container">

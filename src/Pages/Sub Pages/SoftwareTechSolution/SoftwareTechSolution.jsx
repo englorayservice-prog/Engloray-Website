@@ -21,6 +21,8 @@ import crmErpImg from '../../../assets/images/CRM & ERP Solution.jpg';
 import saasProdImg from '../../../assets/images/SaaS Product Development.jpg';
 import startupKitImg from '../../../assets/images/Startup Tech Launch Kit.jpg';
 import realDevImg from '../../../assets/images/Software solution.jpg';
+import SEOHead from '../../../seo/SEOHead';
+import SchemaMarkup from '../../../seo/SchemaMarkup';
 // import agencyCodingImg from '../../../assets/agency_coding.jpg';
 
 const SoftwareTechSolution = () => {
@@ -297,6 +299,8 @@ const SoftwareTechSolution = () => {
 
     return (
         <div className="soft-page-page">
+            <SEOHead pageKey="/softwareSolutionPage" />
+            <SchemaMarkup pageKey="/softwareSolutionPage" />
             <TopNavBar />
             <Navbar />
 

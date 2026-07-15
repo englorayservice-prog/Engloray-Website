@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { submitEnrollment } from "../../Sub Pages/HandleSubmit/HandleSubmit";
 import NavigationBar from '../../TechLearningSection/NavigationBar/NavigationBar';
-import SubFooterTwo from '../subFooterTwo/NewFooter';
+// import SubFooterTwo from '../subFooterTwo/NewFooter';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import {
@@ -109,6 +109,8 @@ import avatarM1 from "../../../assets/testimonials/cartoon_male_1.png";
 import avatarM2 from "../../../assets/testimonials/cartoon_male_2.png";
 import avatarM3 from "../../../assets/testimonials/cartoon_male_3.png";
 import avatarF2 from "../../../assets/testimonials/cartoon_female_2.png";
+import SEOHead from '../../../seo/SEOHead';
+import SchemaMarkup from '../../../seo/SchemaMarkup';
 
 const GraphicDesignCourse = () => {
   const [showEnrollment, setShowEnrollment] = useState(false);
@@ -392,7 +394,7 @@ const GraphicDesignCourse = () => {
   };
 
   const benefitIconPalette = [
-    '#BAE6FD', '#C4B5FD', '#FBCFE8', '#BBF7D0', '#FED7AA', '#FEF08A', '#E9D5FF', '#A7F3D0', '#BAE6FD', '#C4B5FD'
+    '#3B82F6', '#8B5CF6', '#EC4899', '#10B981', '#F59E0B', '#14B8A6', '#6366F1', '#06B6D4', '#8B5CF6', '#3B82F6'
   ];
 
   const demoVideo = {
@@ -605,7 +607,6 @@ const GraphicDesignCourse = () => {
               <div className="gdc-v3-sparkle sparkle-lg sparkle-pos-4"><FontAwesomeIcon icon={faStar} /></div>
               <div className="gdc-v3-sparkle sparkle-sm sparkle-pos-5"><FontAwesomeIcon icon={faMagic} /></div>
               <div className="gdc-v3-sparkle sparkle-md sparkle-pos-6"><FontAwesomeIcon icon={faStar} /></div>
-              <div className="gdc-v3-sparkle sparkle-lg sparkle-pos-7"><FontAwesomeIcon icon={faStar} /></div>
               <div className="gdc-v3-sparkle sparkle-sm sparkle-pos-8"><FontAwesomeIcon icon={faMagic} /></div>
             </div>
 
@@ -978,6 +979,8 @@ const GraphicDesignCourse = () => {
                             const color = benefitIconPalette[absoluteIndex] || "#BAE6FD";
                             return (
                               <div className="gdc-new-icon" style={{ background: hexToRgba(color, 0.18), color }}>
+                                <SEOHead pageKey="/graphicsDesignCoursePage" />
+                                <SchemaMarkup pageKey="/graphicsDesignCoursePage" />
                                 {benefit.icon}
                               </div>
                             );
@@ -1456,7 +1459,7 @@ const GraphicDesignCourse = () => {
             </div>
           )}
         </div>
-        <SubFooterTwo />
+        {/* <SubFooterTwo /> */}
         <BackToTop />
       </div>
     </>

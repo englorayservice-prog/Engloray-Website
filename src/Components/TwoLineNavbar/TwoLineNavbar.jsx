@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import './TwoLineNavbar.css';
 import Logo from '../../assets/logo 2.png';
 import SearchBar from '../SearchBar/SearchBar';

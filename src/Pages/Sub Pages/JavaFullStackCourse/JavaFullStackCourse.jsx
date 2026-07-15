@@ -64,7 +64,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import './JavaFullStackCourse.css';
-import SubFooterTwo from '../subFooterTwo/NewFooter';
+// import SubFooterTwo from '../subFooterTwo/NewFooter';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 // Import your assets - KEEPING COMMENTED SECTIONS UNCHANGED
 import demoVideoFile from '../../../assets/Final GD Course video.mp4';
@@ -97,7 +97,9 @@ import jfsHero2 from '../../../assets/jfs_hero_2.jpeg';
 import jfsHero3 from '../../../assets/j.jpeg';
 import jfsHero4 from '../../../assets/v.jpeg';
 import jfsHero5 from '../../../assets/jfs_hero_5.jpeg';
-import { div } from 'three/src/nodes/math/OperatorNode.js';
+import SEOHead from '../../../seo/SEOHead';
+import SchemaMarkup from '../../../seo/SchemaMarkup';
+// import { div } from 'three/src/nodes/math/OperatorNode.js';
 
 const jfsHeroAssets = {
   a1: jfsHero1,
@@ -418,16 +420,16 @@ const JavaFullStackCourse = () => {
   };
 
   const benefitIconPalette = [
-    '#BAE6FD', // sky blue
-    '#C4B5FD', // light purple
-    '#FBCFE8', // soft pink
-    '#BBF7D0', // mint green
-    '#FED7AA', // light orange
-    '#FEF08A', // soft yellow
-    '#E9D5FF', // lavender
-    '#A7F3D0', // aqua
-    '#BAE6FD', // sky blue
-    '#C4B5FD'  // light purple
+    '#0284c7', // dark blue
+    '#7c3aed', // dark purple
+    '#db2777', // dark pink
+    '#16a34a', // dark green
+    '#ea580c', // dark orange
+    '#ca8a04', // dark yellow
+    '#9333ea', // deep purple
+    '#059669', // emerald
+    '#0284c7', // dark blue
+    '#7c3aed'  // dark purple
   ];
 
   const demoVideo = {
@@ -774,6 +776,10 @@ const JavaFullStackCourse = () => {
             </div>
           </section>
 
+          <div className="jfs-container">
+            <hr style={{ border: 'none', borderTop: '1px solid rgba(0,0,0,0.15)', margin: 'calc(40 * var(--jfs-fluid-scale)) 0 calc(20 * var(--jfs-fluid-scale))' }} />
+          </div>
+
           {/* Course Outcomes - Redesigned Numbered Grid */}
           <section className="jfs-dgm-section jfs-dgm-outcomes-numbered">
             <div className="jfs-dgm-container">
@@ -818,6 +824,9 @@ const JavaFullStackCourse = () => {
             </div>
           </section>
 
+          <div className="jfs-container">
+            <hr style={{ border: 'none', borderTop: '1px solid rgba(0,0,0,0.15)', margin: 'calc(20 * var(--jfs-fluid-scale)) 0 calc(20 * var(--jfs-fluid-scale))' }} />
+          </div>
 
           {/* 6-Month Course Breakdown - Vertical Slider Redesign */}
           <section className="jfs-curriculum-v2-section">
@@ -920,6 +929,11 @@ const JavaFullStackCourse = () => {
               </div>
             </div>
           </section>
+
+          <div className="jfs-container">
+            <hr style={{ border: 'none', borderTop: '1px solid rgba(0,0,0,0.15)', margin: 'calc(20 * var(--jfs-fluid-scale)) 0 calc(20 * var(--jfs-fluid-scale))' }} />
+          </div>
+
           {/* Tools & Resources - Interactive V2 Redesign */}
           <section className="jfs-tools-v2 jfs-tools-container">
             <div className="jfs-container">
@@ -998,7 +1012,7 @@ const JavaFullStackCourse = () => {
 
                   {/* Left Tall Card */}
                   <div className="jfs-dgm-new-benefit-card jfs-dgm-benefit-card-tall">
-                    <div className="jfs-dgm-new-icon" style={{ background: hexToRgba("#BAE6FD", 0.18), color: "#BAE6FD" }}>
+                    <div className="jfs-dgm-new-icon" style={{ background: hexToRgba("#0284c7", 0.18), color: "#0284c7" }}>
                       <FontAwesomeIcon icon={faStar} />
                     </div>
                     <div className="jfs-dgm-new-content">
@@ -1039,6 +1053,8 @@ const JavaFullStackCourse = () => {
                             const color = benefitIconPalette[absoluteIndex] || "#BAE6FD";
                             return (
                               <div className="jfs-dgm-new-icon" style={{ background: hexToRgba(color, 0.18), color }}>
+                                <SEOHead pageKey="/javaFullStackCourseCoursePage" />
+                                <SchemaMarkup pageKey="/javaFullStackCourseCoursePage" />
                                 {benefit.icon}
                               </div>
                             );
@@ -1054,7 +1070,7 @@ const JavaFullStackCourse = () => {
 
                   {/* Right Tall Card */}
                   <div className="jfs-dgm-new-benefit-card jfs-dgm-benefit-card-tall">
-                    <div className="jfs-dgm-new-icon" style={{ background: hexToRgba("#C4B5FD", 0.18), color: "#C4B5FD" }}>
+                    <div className="jfs-dgm-new-icon" style={{ background: hexToRgba("#7c3aed", 0.18), color: "#7c3aed" }}>
                       <FontAwesomeIcon icon={faTrophy} />
                     </div>
                     <div className="jfs-dgm-new-content">
@@ -1428,7 +1444,7 @@ const JavaFullStackCourse = () => {
             </div>
           )}
         </div>
-        <SubFooterTwo />
+        {/* <SubFooterTwo /> */}
         <BackToTop />
       </div>
     </>

@@ -54,7 +54,7 @@ import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
 import NavigationBar from '../../TechLearningSection/NavigationBar/NavigationBar';
 // import footer from '';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import threeMenCorporateHero from '../../../assets/three_men_corporate_hero.png';
 import corporateImage from '../../../assets/corporate.jpeg';
 import ctVisual1 from '../../../assets/ct_visual_1.png';
@@ -83,6 +83,8 @@ import bentoRoi from '../../../assets/ct_roi_tracking.png';
 import bentoSupport from '../../../assets/ct_continuous_support.png';
 import bentoCustom from '../../../assets/ct_custom_design.png';
 import bentoCerts from '../../../assets/ct_global_certs.png';
+import SEOHead from '../../../seo/SEOHead';
+import SchemaMarkup from '../../../seo/SchemaMarkup';
 
 // Signature Collection Style Programs
 const arcPrograms = [
@@ -413,6 +415,8 @@ const CorporateTraining = () => {
   return (
     <>
       <div>
+            <SEOHead pageKey="/corporateTraining" />
+            <SchemaMarkup pageKey="/corporateTraining" />
         <Helmet>
           <title>Engloray</title>
           <meta name="description" content="Bridge skill gaps with blended corporate training covering technical expertise & soft skills." />

@@ -56,6 +56,8 @@ import './WorksCaseStudies.css';
 import NewFooter from '../NewFooter/NewFooter';
 // Import the hero background image
 import heroBackgroundImage from '../../../assets/case_studies_hero_bg.png'; // Update this path to your actual image
+import SEOHead from '../../../seo/SEOHead';
+import SchemaMarkup from '../../../seo/SchemaMarkup';
 
 // Logo data for marquee - 15 logos
 const logoImages = [
@@ -479,6 +481,8 @@ const WorksCaseStudies = () => {
 
     return (
         <div>
+            <SEOHead pageKey="/worksCaseStudiesPage" />
+            <SchemaMarkup pageKey="/worksCaseStudiesPage" />
             <TopNavBar />
             <TwoLineNavbar />
             <div className="wcs-container">

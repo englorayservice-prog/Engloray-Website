@@ -4,7 +4,7 @@ import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import './SoftwareAppDev.css';
 import TSPFFooter from '../TechGroupSubPagefooter/TSPFFooter';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 import iphone14Img from '../../../assets/Iphone14.png';
 import sadDashboardImg from '../../../assets/erp_dashboard_analytics.png';

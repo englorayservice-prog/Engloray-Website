@@ -99,7 +99,9 @@ import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import Navbar from '../../../Components/Navbar/Navbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
+import SEOHead from '../../../seo/SEOHead';
+import SchemaMarkup from '../../../seo/SchemaMarkup';
 
 const pathFive = null;
 const pathSix = null;
@@ -1922,6 +1924,8 @@ const BusinessDevelopmentInternPage = () => {
 
                                         return (
                                             <div key={`${testimonial.id || index}-${index}`} className={`BDM-dt-card BDM-dt-card-${cardClassIndex}`}>
+                                                <SEOHead pageKey="/businessDevelopmentInternPage" />
+                                                <SchemaMarkup pageKey="/businessDevelopmentInternPage" />
                                                 <div className="BDM-dt-card-img-wrapper">
                                                     <img
                                                         src={photoUrl}

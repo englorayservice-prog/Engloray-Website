@@ -14,6 +14,8 @@ import MarqueeBrands from '../../Components/MarqueeBrands/MarqueeBrands';
 import Footer from '../../Components/Footer/Footer';
 import BackToTopArrow from '../../Components/BackToTop/BackToTop';
 import EntryIntroAnimation from '../../Components/EntryIntroAnimation/EntryIntroAnimation';
+import SEOHead from '../../seo/SEOHead';
+import SchemaMarkup from '../../seo/SchemaMarkup';
 import { motion, AnimatePresence } from 'motion/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -59,7 +61,8 @@ const HomePage = () => {
 
     return (
         <div className="homepage-master" style={containerStyle}>
-
+            <SEOHead pageKey="/" />
+            <SchemaMarkup pageKey="/" />
             {/* THIS OVERLAY IS ONLY RENDERED ON PAGE LOAD, DIES AFTER FIRST SCROLL COMPLETES */}
             {introActive && (
                 <EntryIntroAnimation onComplete={handleIntroComplete} />

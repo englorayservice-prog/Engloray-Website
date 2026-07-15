@@ -20,6 +20,8 @@ import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 import AiOne from '../../../assets/Service images/Chatbot/ai chatbot.png';
 import AiTwo from '../../../assets/Service images/Chatbot/ai develomet.png';
 import AiThree from '../../../assets/Service images/Chatbot/ai powerd business.png';
+import SEOHead from '../../../seo/SEOHead';
+import SchemaMarkup from '../../../seo/SchemaMarkup';
 
 const AIServicesPage = () => {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -273,6 +275,8 @@ const AIServicesPage = () => {
 
     return (
         <div className="ai-page-page">
+            <SEOHead pageKey="/aiServicesPage" />
+            <SchemaMarkup pageKey="/aiServicesPage" />
             <TopNavBar />
             <Navbar />
 

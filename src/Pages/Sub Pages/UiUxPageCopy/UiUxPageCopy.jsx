@@ -7,7 +7,7 @@ import BackToTop from '../../../Components/BackToTop/BackToTop';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
 import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { FaCode, FaRocket, FaCheckCircle, FaUserCheck, FaSearch, FaProjectDiagram, FaCogs, FaPaintBrush } from "react-icons/fa";
 import heroBg from "../../../assets/lineimage.jpeg";
 import projectsBg from '../../../assets/heroimage.jpeg';

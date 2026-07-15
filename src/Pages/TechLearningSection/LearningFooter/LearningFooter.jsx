@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './LearningFooter.css';
 import EnrollementForm from '../EnrollementForm/EnrollementForm';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
 
 import { 

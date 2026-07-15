@@ -44,6 +44,8 @@ import './BusinessSuiteAI.css';
 import imgAiAnalysis from '../../../assets/images/erp_ai_analysis.png';
 import imgForecasting from '../../../assets/images/erp_forecasting.png';
 import imgCompliance from '../../../assets/images/erp_compliance.png';
+import SEOHead from '../../../seo/SEOHead';
+import SchemaMarkup from '../../../seo/SchemaMarkup';
 
 const BusinessSuiteAI = () => {
     const [activeFeature, setActiveFeature] = useState(0);
@@ -114,6 +116,8 @@ const BusinessSuiteAI = () => {
     return (
         <>
             <TopNavbar />
+            <SEOHead pageKey="/businessSuiteAiPage" />
+            <SchemaMarkup pageKey="/businessSuiteAiPage" />
             <TwoLineNavbar />
             <div className="crm-subpage-container business-suite-theme">
 

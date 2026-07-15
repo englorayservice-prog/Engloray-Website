@@ -81,7 +81,7 @@ import Navbar from '../../../Components/Navbar/Navbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import Footer from '../../../Components/Footer/Footer';
 import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 // Missing icon assets
 import iconGraduationCap from '../../../assets/iicons/icon_graduation_cap.png';
@@ -99,6 +99,8 @@ import girl1 from '../../../assets/images/girl1.png';
 import girl2 from '../../../assets/images/girl2.png';
 import girl3 from '../../../assets/images/girl3.png';
 import girl4 from '../../../assets/images/girl4.png';
+import SEOHead from '../../../seo/SEOHead';
+import SchemaMarkup from '../../../seo/SchemaMarkup';
 
 const uxHeroImg = "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1600&q=80";
 const galleryModernLab = "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80";
@@ -1341,6 +1343,8 @@ const UiuxDesignerInternPage = () => {
 
                                         return (
                                             <div key={index} className={`UX-dt-card UX-dt-card-${cardClassIndex}`}>
+                                                <SEOHead pageKey="/uiuxDesignerInternPage" />
+                                                <SchemaMarkup pageKey="/uiuxDesignerInternPage" />
                                                 <div className="UX-dt-card-img-wrapper">
                                                     <img
                                                         src={photoUrl}

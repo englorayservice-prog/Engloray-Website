@@ -37,6 +37,8 @@ import TSPFF from '../../../Pages/Sub Pages/TechGroupSubPagefooter/TSPFFooter'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChartSimple, faCheck, faPercentage, faUsers } from '@fortawesome/free-solid-svg-icons';
+import SEOHead from '../../../seo/SEOHead';
+import SchemaMarkup from '../../../seo/SchemaMarkup';
 
 const TechGroupProjects = () => {
   // All portfolio items by category
@@ -455,6 +457,8 @@ const TechGroupProjects = () => {
     <>
       {/* Progress Scroll Indicator */}
       <div className="tap-scroll-progress">
+            <SEOHead pageKey="/allProjectsPage" />
+            <SchemaMarkup pageKey="/allProjectsPage" />
         <div 
           className="tap-scroll-progress-bar" 
           style={{ width: `${scrollProgress}%` }}

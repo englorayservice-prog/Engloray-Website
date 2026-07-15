@@ -5,6 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faGem, faShieldAlt } from '@fortawesome/free-solid-svg-icons';
 import statsBgImage from '../../../assets/image21.png';
 import budgetImage from '../../../assets/images/red_bar_chart.png';
+import SEOHead from '../../../seo/SEOHead';
+import SchemaMarkup from '../../../seo/SchemaMarkup';
 import './StatsAndBenefits.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -146,6 +148,8 @@ const StatsAndBenefits = () => {
 
     return (
         <section className="techGroup-testimonials-section" style={{ padding: '0', marginBottom: '0' }}>
+            <SEOHead pageKey="/StatsAndBenefitsPage" />
+            <SchemaMarkup pageKey="/StatsAndBenefitsPage" />
             <div className="techGroup-testimonialSection-container" style={{ padding: '0', marginTop: '0' }} ref={wrapperRef}>
 
                 {/* ── PINNED STATS SECTION ── */}

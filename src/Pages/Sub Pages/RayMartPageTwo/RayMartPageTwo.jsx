@@ -105,6 +105,8 @@ import erpFour from '../../../assets/WEBSITE_IMAGES/ERP SOFTWARE/4.png';
 import jobOne from '../../../assets/WEBSITE_IMAGES/JOB SEEKER HUB/1.png';
 import careerOne from '../../../assets/WEBSITE_IMAGES/LEARNING AND CAREER/1.png';
 import chatbotAiOne from '../../../assets/WEBSITE_IMAGES/AI CHATBOT/1.png';
+import SEOHead from '../../../seo/SEOHead';
+import SchemaMarkup from '../../../seo/SchemaMarkup';
 
 
 
@@ -264,6 +266,8 @@ const RayMartPageTwo = () => {
   return (
     <>
       <TopNavBar />
+            <SEOHead pageKey="/raymartPageTwo" />
+            <SchemaMarkup pageKey="/raymartPageTwo" />
       <div className="rm-page-two">
         <RayMartNavbar />
         <section className="rm-hero-section" id="raymart-hero-root">

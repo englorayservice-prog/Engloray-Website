@@ -29,6 +29,8 @@ import ecom03 from '../../../assets/images/Custom E-Commerce Website Development
 import ecom04 from '../../../assets/images/Product & Inventory Management.jpg';
 import ecom05 from '../../../assets/Service images/Ecommerce/shopping cart and checkout.png';
 import ecom06 from '../../../assets/Service images/Ecommerce/order mangamnets.png';
+import SEOHead from '../../../seo/SEOHead';
+import SchemaMarkup from '../../../seo/SchemaMarkup';
 
 
 
@@ -170,6 +172,8 @@ const ECommerceDevelopment = () => {
 
     return (
         <div className="eco-page-page">
+            <SEOHead pageKey="/ecommerceDevelopmentPage" />
+            <SchemaMarkup pageKey="/ecommerceDevelopmentPage" />
             <TopNavBar />
             <Navbar />
             {/* Hero Section Rebuild */}
