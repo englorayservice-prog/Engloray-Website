@@ -104,7 +104,7 @@ const TechLearningHero = () => {
                         >
                             <Link to="/allCoursesPage" className="tlh-pill-btn-lime">
                                 Start Learning
-                                <span className="tlh-pill-icon"><FontAwesomeIcon icon={faPhone} /></span>
+                                <span className="tlh-pill-icon"><FontAwesomeIcon icon={faGraduationCap} /></span>
                             </Link>
                         </motion.div>
 
@@ -116,7 +116,7 @@ const TechLearningHero = () => {
                             style={{ display: 'inline-block' }}
                         >
                             <a href={whatsappURL} target="_blank" rel="noopener noreferrer" className="tlh-pill-btn-lime">
-                                Book a call
+                                Talk to a Mentor
                                 <span className="tlh-pill-icon"><FontAwesomeIcon icon={faPhone} /></span>
                             </a>
                         </motion.div>

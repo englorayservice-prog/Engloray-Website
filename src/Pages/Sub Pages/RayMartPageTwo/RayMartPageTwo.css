@@ -23,7 +23,7 @@
   max-width: 1250px;
   width: 100%;
   position: relative;
-  min-height: 600px;
+  min-height: 680px;
 }
 
 #raymart-hero-root .rm-hero-content {
@@ -277,7 +277,7 @@
 /* TOP LEFT CARD - COMES FROM RIGHT */
 #raymart-hero-root .rm-stat-card-left {
   position: absolute !important;
-  top: 20px !important;
+  top: 70px !important;
   left: 690px !important;
   /* User set position */
   width: 270px !important;
@@ -408,22 +408,22 @@
 }
 
 #raymart-hero-root .rm-chart-card {
-  width: 48% !important;
-  padding: 28px !important;
+  width: 56% !important;
+  padding: 22px 18px !important;
   box-shadow: 0 20px 80px rgba(0, 0, 0, 0.5) !important;
   /* Heavy dark black shadow */
 }
 
 #raymart-hero-root .rm-graph-gif {
   width: 100% !important;
-  height: 120px !important;
+  height: 150px !important;
   object-fit: cover !important;
   border-radius: 12px !important;
   display: block !important;
 }
 
 #raymart-hero-root .rm-counter-card {
-  width: 24% !important;
+  width: 25% !important;
   background-color: #bffff0 !important;
   padding: 28px !important;
   min-height: 155px !important;

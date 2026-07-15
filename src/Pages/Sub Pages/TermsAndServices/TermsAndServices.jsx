@@ -1,7 +1,16 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
 import './TermsAndServices.css';
 
 const TermsAndServices = () => {
+  const navigate = useNavigate();
+
+  const handleLinkClick = (path) => {
+    navigate(path);
+    window.scrollTo(0, 0);
+  };
+
   const termsPoints = [
     {
       id: 1,
@@ -175,6 +184,7 @@ const TermsAndServices = () => {
 
   return (
     <div className="ts-terms-container">
+      <TwoLineNavbar />
       {/* Header Section */}
       <header className="ts-terms-header-section">
         <div className="ts-terms-header">
@@ -263,9 +273,11 @@ const TermsAndServices = () => {
             </div>
             <div className="ts-footer-right">
               <nav className="ts-footer-nav">
-                <a href="/privacyPolicyPage" className="ts-footer-link">Privacy</a>
-                <a href="/" className="ts-footer-link active">Terms of Use</a>
-                <a href="/cookiesPolicyPage" className="ts-footer-link">Cookie Policy</a>
+                <button className="ts-footer-link" onClick={() => handleLinkClick('/privacyPolicyPage')}>Privacy</button>
+                <span>·</span>
+                <button className="ts-footer-link active" onClick={() => handleLinkClick('/termsAndServicesPage')}>Terms</button>
+                <span>·</span>
+                <button className="ts-footer-link" onClick={() => handleLinkClick('/cookiesPolicyPage')}>Cookies</button>
               </nav>
             </div>
           </div>

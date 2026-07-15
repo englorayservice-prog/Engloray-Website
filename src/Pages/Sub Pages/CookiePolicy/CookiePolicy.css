@@ -9,6 +9,7 @@
   padding: 0;
   width: 100%;
   background: linear-gradient(to bottom, #fef2f2 0%, #fef2f2 100%);
+  text-align: left !important;
 }
 
 /* Header Section - Deep Red */
@@ -42,7 +43,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
-  text-align: center;
+  text-align: left !important;
   position: relative;
   z-index: 2;
 }
@@ -62,7 +63,7 @@
   width: 100px;
   height: 4px;
   background: #ef4444;
-  margin: 20px auto;
+  margin: 20px 0 !important;
   border-radius: 2px;
 }
 

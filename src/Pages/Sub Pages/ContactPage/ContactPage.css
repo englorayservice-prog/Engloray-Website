@@ -3,10 +3,19 @@
    =================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
+@font-face {
+    font-family: 'HEXCO';
+    src: url('../../../Fonts/HEXCO-Regular.woff2') format('woff2'),
+         url('../../../Fonts/HEXCO-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
 /* ─── Page Wrapper ─── */
 .sc-page {
     min-height: 100vh;
-    font-family: 'Inter', 'Aldrich', sans-serif;
+    font-family: 'Inter', 'HEXCO', sans-serif;
     background: #f5f5f5;
     overflow-x: hidden;
 }
@@ -45,7 +54,7 @@
 }
 
 .sc-hero-title {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'HEXCO', sans-serif;
     font-size: clamp(3rem, 5vw, 5rem);
     font-weight: 700;
     color: #ffffff;
@@ -75,7 +84,7 @@
 
 /* vertical "Contacts" text along the right edge */
 .sc-hero-clip-vertical {
-    font-family: 'Aldrich', sans-serif;
+    font-family: 'HEXCO', sans-serif;
     font-size: 0.72rem;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -94,7 +103,7 @@
     background: #f5f5f5;
     padding: 0.65rem 1.6rem;
     border-radius: 12px 12px 0 0;
-    font-family: 'Inter', sans-serif;
+    font-family: 'HEXCO', sans-serif;
     font-size: 0.72rem;
     font-weight: 500;
     color: #1a1a1a;
@@ -161,7 +170,7 @@
     font-size: 0.75rem;
     letter-spacing: 1px;
     color: #999;
-    font-family: 'Aldrich', sans-serif;
+    font-family: 'HEXCO', sans-serif;
     margin-bottom: 1rem;
 }
 
@@ -171,7 +180,7 @@
     color: #0d0d0d;
     line-height: 1.22;
     margin: 0 0 1.1rem;
-    font-family: 'Inter', sans-serif;
+    font-family: 'HEXCO', sans-serif;
 }
 
 .sc-info-desc {
@@ -179,7 +188,7 @@
     color: #666;
     line-height: 1.7;
     margin: 0 0 2.2rem;
-    font-family: 'Aldrich', sans-serif;
+    font-family: 'HEXCO', sans-serif;
 }
 
 /* 2 × 2 grid — no box borders, just spacing */
@@ -212,7 +221,7 @@
     font-size: 0.82rem;
     font-weight: 700;
     color: #1a1a1a;
-    font-family: 'Inter', sans-serif;
+    font-family: 'HEXCO', sans-serif;
     margin: 0 0 0.5rem;
     text-transform: capitalize;
 }
@@ -221,7 +230,7 @@
     margin: 0;
     font-size: 0.82rem;
     color: #555;
-    font-family: 'Aldrich', sans-serif;
+    font-family: 'HEXCO', sans-serif;
     line-height: 1.5;
 }
 
@@ -288,13 +297,13 @@
     font-weight: 700;
     color: #0d0d0d;
     margin: 0 0 0.4rem;
-    font-family: 'Inter', sans-serif;
+    font-family: 'HEXCO', sans-serif;
 }
 
 .sc-form-subtitle {
     font-size: 0.82rem;
     color: #777;
-    font-family: 'Aldrich', sans-serif;
+    font-family: 'HEXCO', sans-serif;
     line-height: 1.55;
     margin: 0;
 }
@@ -319,7 +328,7 @@
     text-align: start;
     text-transform: uppercase;
     letter-spacing: 0.6px;
-    font-family: 'Aldrich', sans-serif;
+    font-family: 'HEXCO', sans-serif;
 }
 
 .sc-input {
@@ -329,7 +338,7 @@
     border-radius: 0;
     font-size: 0.9rem;
     color: #1a1a1a;
-    font-family: 'Aldrich', sans-serif;
+    font-family: 'HEXCO', sans-serif;
     background: transparent;
     transition: border-color 0.22s;
     outline: none;
@@ -370,7 +379,7 @@
     border-radius: 40px;
     font-size: 0.85rem;
     font-weight: 600;
-    font-family: 'Aldrich', sans-serif;
+    font-family: 'HEXCO', sans-serif;
     cursor: pointer;
     letter-spacing: 0.3px;
     transition: background 0.25s, transform 0.25s;
@@ -409,13 +418,13 @@
     font-weight: 700;
     color: #1a1a1a;
     margin: 0;
-    font-family: 'Inter', sans-serif;
+    font-family: 'HEXCO', sans-serif;
 }
 
 .sc-success-text {
     font-size: 0.88rem;
     color: #666;
-    font-family: 'Aldrich', sans-serif;
+    font-family: 'HEXCO', sans-serif;
     line-height: 1.6;
     margin: 0;
 }
@@ -427,7 +436,7 @@
     border: none;
     border-radius: 40px;
     font-size: 0.82rem;
-    font-family: 'Aldrich', sans-serif;
+    font-family: 'HEXCO', sans-serif;
     cursor: pointer;
     transition: background 0.25s;
 }
@@ -454,7 +463,7 @@
 .sc-support-label {
     display: inline-block;
     font-size: 0.72rem;
-    font-family: 'Aldrich', sans-serif;
+    font-family: 'HEXCO', sans-serif;
     text-transform: none;
     text-align: start;
     letter-spacing: 0.5px;
@@ -470,7 +479,7 @@
     line-height: 1.15;
     margin: 0;
     text-align: left;
-    font-family: 'Inter', sans-serif;
+    font-family: 'HEXCO', sans-serif;
 }
 
 /* ════════════════════════════════════
@@ -500,7 +509,7 @@
     background: #1a1a1a;
     border-radius: 20px;
     padding: 4rem 4rem 1.5rem;
-    font-family: 'Inter', sans-serif;
+    font-family: 'HEXCO', sans-serif;
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -530,8 +539,7 @@
 .sc-df-title {
     font-size: 3rem;
     line-height: 1.2;
-
-
+    font-family: 'HEXCO', sans-serif;
     max-width: 1000px;
 }
 
@@ -541,16 +549,14 @@
 }
 
 .sc-df-text-blue {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-
+    font-family: 'HEXCO', sans-serif;
+    font-weight: 600;
     color: #4a88e6;
 }
 
 .sc-df-text-red {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-
+    font-family: 'HEXCO', sans-serif;
+    font-weight: 600;
     color: #de4747;
 }
 
@@ -568,7 +574,7 @@
 }
 
 .sc-df-col h4 {
-    font-family: 'Aldrich', sans-serif;
+    font-family: 'HEXCO', sans-serif;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 700;
@@ -651,7 +657,7 @@
     padding: 0.5rem 3.5rem 1.5rem;
     font-size: 0.78rem;
     color: #a0a0a0;
-    font-family: 'Inter', sans-serif;
+    font-family: 'HEXCO', sans-serif;
     position: relative;
     z-index: 2;
 }
@@ -702,4 +708,3 @@
     }
 }
 @media (min-width: 1440px) { .sc-page { zoom: 1.22; } }
-

@@ -446,21 +446,35 @@
 
 .new1-footer-legal {
     display: flex;
-    gap: 25px;
+    align-items: center;
+    gap: 12px;
     flex-wrap: wrap;
 }
 
-.new1-footer-legal a {
-    color: #666;
-    text-decoration: none;
+.new1-footer-legal button.new1-legal-highlight {
+    background: none;
+    border: none;
+    padding: 6px 16px;
+    border-radius: 8px;
+    color: #4f46e5; /* Indigo-600 */
+    font-weight: 600;
+    background: #eef2ff; /* Indigo-50 */
+    transition: all 0.2s ease;
     font-size: 0.9rem;
-    transition: color 0.3s ease;
-    white-space: nowrap;
+    cursor: pointer;
     font-family: 'Inter', sans-serif;
 }
 
-.new1-footer-legal a:hover {
-    color: #B22222;
+.new1-footer-legal button.new1-legal-highlight:hover {
+    background: #6366f1; /* Indigo-500 */
+    color: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+}
+
+.new1-footer-legal span {
+    color: #64748b;
+    font-size: 0.9rem;
 }
 
 /* Animation for glow effect (CTA only) */

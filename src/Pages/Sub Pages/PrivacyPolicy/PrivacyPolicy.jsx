@@ -1,7 +1,16 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
 import './PrivacyPolicy.css';
 
 const PrivacyPolicy = () => {
+  const navigate = useNavigate();
+
+  const handleLinkClick = (path) => {
+    navigate(path);
+    window.scrollTo(0, 0);
+  };
+
   const passages = [
     {
       id: 1,
@@ -168,6 +177,7 @@ const PrivacyPolicy = () => {
 
   return (
     <div className="pp-privacy-policy-container">
+      <TwoLineNavbar />
       {/* Header Section */}
       <header className="pp-privacy-header-section">
         <div className="pp-policy-header">
@@ -254,9 +264,11 @@ const PrivacyPolicy = () => {
             </div>
             <div className="pp-footer-right">
               <nav className="pp-footer-nav">
-                <a href="/" className="pp-footer-link active">Privacy Policy</a>
-                <a href="/termsAndServicesPage" className="pp-footer-link">Terms of Use</a>
-                <a href="/cookiesPolicyPage" className="pp-footer-link">Cookie Policy</a>
+                <button className="pp-footer-link active" onClick={() => handleLinkClick('/privacyPolicyPage')}>Privacy</button>
+                <span>·</span>
+                <button className="pp-footer-link" onClick={() => handleLinkClick('/termsAndServicesPage')}>Terms</button>
+                <span>·</span>
+                <button className="pp-footer-link" onClick={() => handleLinkClick('/cookiesPolicyPage')}>Cookies</button>
               </nav>
             </div>
           </div>

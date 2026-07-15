@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Navbar from '../../../Components/Navbar/Navbar';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
-import './UiUxDesign.css';
+import './UiuxDesign.css';
 import NewFooter from '../NewFooter/NewFooter';
 import avatarTwo from '../../../assets/cartoon_male_1.png';
 import avatarThree from '../../../assets/cartoon_female_1.png';

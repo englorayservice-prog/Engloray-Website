@@ -91,18 +91,18 @@ const ContactPage = () => {
             <TopNavBar/>
             <RayMartNavbar />
             <Helmet>
-                <title>Contact Us | Engloray Learning</title>
+                <title>Contact Us | RayMart</title>
                 <meta
                     name="description"
-                    content="Get in touch with Engloray Learning. We are always ready to help you and answer your questions about courses, programs, and more."
+                    content="Get in touch with RayMart. We are always ready to help you with your orders, products, services, and any questions about our marketplace."
                 />
                 <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
                 <meta property="og:locale" content="en_US" />
                 <meta property="og:type" content="website" />
-                <meta property="og:title" content="Contact Us | Engloray Learning" />
+                <meta property="og:title" content="Contact Us | RayMart" />
                 <meta
                     property="og:description"
-                    content="Get in touch with Engloray Learning. We are always ready to help and answer your questions."
+                    content="Get in touch with RayMart. We are always ready to help and answer your questions about our marketplace."
                 />
             </Helmet>
 
@@ -146,8 +146,8 @@ const ContactPage = () => {
                             </h2>
 
                             <p className="sc-info-desc">
-                                People have the ability to perform block and block and also need educational
-                                support. Our team is here to help.
+                                Whether it's a question about an order, a product, or one of our tools and
+                                services, our RayMart support team is here to help you build, launch, and grow.
                             </p>
 
                             {/* 2×2 square info cards */}
@@ -157,10 +157,10 @@ const ContactPage = () => {
                                 <div className="sc-info-card">
                                     <h4 className="sc-info-card-title">Call Center</h4>
                                     <p className="sc-info-card-line">
-                                        <a href="tel:+916381759909">+91 6381759909</a>
+                                        <a href="tel:+916381769909">+91 6381769909</a>
                                     </p>
                                     <p className="sc-info-card-line">
-                                        <a href="tel:+916369945920">+91 6369945920</a>
+                                        <a href="tel:+918110034566">+91 8110034566</a>
                                     </p>
                                 </div>
 
@@ -226,7 +226,7 @@ const ContactPage = () => {
                             <div className="sc-form-header">
                                 <h3 className="sc-form-title">Get In Touch</h3>
                                 <p className="sc-form-subtitle">
-                                    Define your goals and start to know where to we add value to your business.
+                                    Tell us your goals and we'll show you where RayMart can add the most value to your business.
                                 </p>
                             </div>
 
@@ -357,17 +357,17 @@ const ContactPage = () => {
                         <div className="sc-df-top">
                             <div className="sc-df-left">
                                 <div className="sc-df-logo-icon">
-                                    <img src={Logo} alt="Engloray Logo" style={{ maxWidth: '180px', height: 'auto' }} />
+                                    <img src={Logo} alt="RayMart Logo" style={{ maxWidth: '180px', height: 'auto' }} />
                                 </div>
                                 <h2 className="sc-df-title">
                                     <span className="line">
-                                        <span className="sc-df-text-blue">Transform your </span>
-                                        <span className="sc-df-text-red">career!</span>
+                                        <span className="sc-df-text-blue">Build, launch &amp; </span>
+                                        <span className="sc-df-text-red">grow!</span>
                                     </span>
 
                                     <span className="line">
                                         <span className="sc-df-text-blue">Join </span>
-                                        <span className="sc-df-text-red">Engloray Learning</span>
+                                        <span className="sc-df-text-red">RayMart</span>
                                     </span>
                                 </h2>
                             </div>
@@ -403,7 +403,7 @@ const ContactPage = () => {
                         </div>
 
                         <div className="sc-df-bottom-text">
-                            <span>Release 2024. All rights reserved.</span>
+                            <span>RayMart 2024. All rights reserved.</span>
                             <span>Terms and Conditions | Privacy policy</span>
                         </div>
                     </div>

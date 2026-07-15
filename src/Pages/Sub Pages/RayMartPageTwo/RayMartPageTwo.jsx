@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import './RayMartPageTwo.css';
+import RayMartFooter from '../../../Components/RayMartFooter/RayMartFooter';
 import RayMartNavbar from '../../../Components/RayMartNavbar/RayMartNavbar';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
-import finstat from '../../../assets/hello admin.jpeg';
+import salesGraph from './ChatGPT Image Jul 14, 2026, 02_13_29 PM.png';
 
 import brandOne from '../../../assets/WEBSITE_IMAGES/Branding & Identity/1.png';
 import brandTwo from '../../../assets/WEBSITE_IMAGES/Branding & Identity/2.png';
@@ -320,7 +321,7 @@ const RayMartPageTwo = () => {
             {/* Top Right: Rating Card */}
             <div className="rm-card rm-rating-card">
               <h4 className="rm-rating-title">Rating breakdown</h4>
-              <div className="rm-rating-score">4.2</div>
+              <div className="rm-rating-score">4.7</div>
               <div className="rm-rating-bars">
                 {[5, 4, 3, 2, 1].map((star) => (
                   <div className="rm-bar-row" key={star}>
@@ -351,21 +352,22 @@ const RayMartPageTwo = () => {
                 </div>
                 <div className="rm-chart-body">
                   <img
-                    // src="https://i.giphy.com/3o7TKMGpxVfG6C0XyE.gif"
-                    src={finstat}
-                    alt="Statistics Animation"
-                    className="rm-graph-gif"
+                    src={salesGraph}
+                    alt="Engloray Sales Growth 2023-2026"
+                    style={{
+                      width: '100%',
+                      height: '180px',
+                      objectFit: 'cover',
+                      borderRadius: '10px',
+                      display: 'block',
+                      background: '#0d1b2a'
+                    }}
                   />
-                  <div className="rm-chart-x-labels">
-                    <span>May 1</span>
-                    <span>10</span>
-                    <span>20</span>
-                    <span>30</span>
-                  </div>
-                  <div className="rm-chart-legend">
-                    <span className="rm-leg-item"><span className="rm-dot blue"></span> <span className="rm-leg-text">2025</span></span>
-                    {/* <span className="rm-leg-item"><span className="rm-dot green"></span> <span className="rm-leg-text">2022</span></span> */}
-                    <span className="rm-leg-item"><span className="rm-dot orange"></span> <span className="rm-leg-text">2024</span></span>
+                  <div className="rm-chart-legend" style={{ marginTop: '12px', flexWrap: 'wrap', gap: '10px' }}>
+                    <span className="rm-leg-item"><span className="rm-dot" style={{ background: '#4fc3f7', display: 'inline-block', width: 10, height: 10, borderRadius: '50%' }}></span> <span className="rm-leg-text">2023</span></span>
+                    <span className="rm-leg-item"><span className="rm-dot blue"></span> <span className="rm-leg-text">2024</span></span>
+                    <span className="rm-leg-item"><span className="rm-dot orange"></span> <span className="rm-leg-text">2025</span></span>
+                    <span className="rm-leg-item"><span className="rm-dot" style={{ background: '#a78bfa', display: 'inline-block', width: 10, height: 10, borderRadius: '50%' }}></span> <span className="rm-leg-text">2026 <span style={{ fontSize: '0.7rem', color: '#aaa' }}>(ongoing)</span></span></span>
                   </div>
                 </div>
               </div>
@@ -1259,6 +1261,7 @@ const RayMartPageTwo = () => {
           </div>
         </section>
       </div>
+      <RayMartFooter />
     </>
   );
 };

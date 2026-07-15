@@ -47,7 +47,7 @@ import learning3d from '../../../assets/learning_3d.png';
 //import saas3dShape from '../../../assets/saas_3d_shape.png';
 import saasFeaturedBuilding from '../../../assets/saas_featured_building.png';
 import microsoftLogo from '../../../assets/microsoft.png';
-import globeBg from '../../../assets/World-sass.png';
+import globeVideo from '../../../assets/World-SASS (2).mp4';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar'
 import TopNavbar from '../../../Components/TopNavbar/TopNavbar'
 import SubFooterOne from '../../../Pages/Sub Pages/subFooterOne/NewFooter1'
@@ -371,8 +371,14 @@ const SaaS = () => {
                 <div className="saas-v3-infra-right">
                   <div className="saas-v3-globe-container">
                     <div className="saas-v3-globe-glow"></div>
-                    <img src={globeBg} alt="Global Network Globe" className="saas-v3-globe-img" />
-
+                    <video
+                      src={globeVideo}
+                      className="saas-v3-globe-img"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                    />
                   </div>
                 </div>
 

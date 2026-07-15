@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import './RayMartPageThree.css';
 import RayMartNavbar from '../../../Components/RayMartNavbar/RayMartNavbar';
+import RayMartFooter from '../../../Components/RayMartFooter/RayMartFooter';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import financeStat from '../../../assets/fin stat.png';
 
@@ -874,6 +875,7 @@ const RayMartPageThree = () => {
         </section>
 
       </div>
+      <RayMartFooter />
     </div>
 
   );

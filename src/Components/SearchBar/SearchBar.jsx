@@ -358,6 +358,11 @@ const SearchBar = ({ mobile = false, source = 'main' }) => {
                     value={searchQuery}
                     onChange={handleSearchChange}
                     onFocus={() => setShowResults(true)}
+                    autoComplete="off"
+                    spellCheck="false"
+                    autoCorrect="off"
+                    autoCapitalize="off"
+                    name="search"
                 />
                 
                 {searchQuery && (

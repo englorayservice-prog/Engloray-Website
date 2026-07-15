@@ -349,9 +349,11 @@ const WhiteFooter = () => {
                             <div className="new1-footer-bottom-content">
                                 <p>&copy; {currentYear} ENGLORAY. All rights reserved.</p>
                                 <div className="new1-footer-legal">
-                                    <a href="/privacyPolicyPage" onClick={(e) => handleLinkClick(e, '/privacyPolicyPage')}>Privacy Policy</a>
-                                    <a href="/termsAndServicesPage" onClick={(e) => handleLinkClick(e, '/termsAndServicesPage')}>Terms of Service</a>
-                                    <a href="/cookiesPolicyPage" onClick={(e) => handleLinkClick(e, '/cookiesPolicyPage')}>Cookie Policy</a>
+                                    <button className="new1-legal-highlight" onClick={(e) => handleLinkClick(e, '/privacyPolicyPage')}>Privacy</button>
+                                    <span>·</span>
+                                    <button className="new1-legal-highlight" onClick={(e) => handleLinkClick(e, '/termsAndServicesPage')}>Terms</button>
+                                    <span>·</span>
+                                    <button className="new1-legal-highlight" onClick={(e) => handleLinkClick(e, '/cookiesPolicyPage')}>Cookies</button>
                                 </div>
                             </div>
                         </div>

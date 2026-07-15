@@ -1,9 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCommentDots, faTimes, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+import { faTimes, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import chatbotData from '../../data/chatbotData.json';
 import favicon from '../../assets/favicon.ico';
+import aiAssVideo from './AI ass.mp4';
 import './Chatbot.css';
 
 const Chatbot = () => {
@@ -173,7 +174,7 @@ const Chatbot = () => {
         )}
       </AnimatePresence>
 
-      {/* Floating Action Button */}
+        {/* Floating Action Button */}
       <motion.button
         className={`engloray-chat-fab ${isOpen ? 'open' : ''}`}
         onClick={toggleChat}
@@ -185,14 +186,22 @@ const Chatbot = () => {
           {!isOpen ? (
             <motion.div
               key="chat-icon"
-              initial={{ opacity: 0, rotate: -90 }}
-              animate={{ opacity: 1, rotate: 0 }}
-              exit={{ opacity: 0, rotate: 90 }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
               transition={{ duration: 0.2 }}
+              style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}
             >
-              <FontAwesomeIcon icon={faCommentDots} />
+                <video
+                src={aiAssVideo}
+                autoPlay
+                loop
+                muted
+                playsInline
+                style={{ width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover' }}
+              />
             </motion.div>
-          ) : (
+           ) : (
             <motion.div
               key="close-icon"
               initial={{ opacity: 0, rotate: -90 }}

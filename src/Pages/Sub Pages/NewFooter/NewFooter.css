@@ -319,7 +319,7 @@
 .nf-legal-links {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 12px;
     font-size: 0.85rem;
     color: #64748b;
 }
@@ -335,17 +335,22 @@
 }
 
 .nf-legal-links button.nf-legal-highlight {
-    color: #64748b;
-    font-weight: 500;
-    padding: 4px 10px;
-    border-radius: 6px;
-    background: rgba(99, 102, 241, 0.08);
+    color: #4f46e5; /* Indigo-600 */
+    font-weight: 600;
+    padding: 6px 16px;
+    border-radius: 8px;
+    background: #eef2ff; /* Indigo-50 */
     transition: all 0.2s ease;
+    font-size: 0.9rem;
+    border: none;
+    cursor: pointer;
 }
 
 .nf-legal-links button.nf-legal-highlight:hover {
-    background: #6366f1;
+    background: #6366f1; /* Indigo-500 */
     color: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
 }
 
 /* Newsletter */
