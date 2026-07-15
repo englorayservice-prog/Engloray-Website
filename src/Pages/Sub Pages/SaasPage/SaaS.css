@@ -1964,7 +1964,7 @@ img {
     animation: saasShinyShine 3s infinite;
 }
 
-@.saas-v2-white-footer {
+.saas-v2-white-footer {
     width: 100%;
     background: #f8fafc; /* off-white / light slate background */
     padding: 100px 0 80px;
