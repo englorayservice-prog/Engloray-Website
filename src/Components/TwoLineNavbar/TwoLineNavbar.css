@@ -149,15 +149,12 @@
 }
 
 .tlnbn-arrow {
-    font-size: 13px;
     transition: transform 0.3s ease;
     margin-left: 6px;
     display: inline-flex;
     align-items: center;
     line-height: 0;
-    /* Removing line height for more precise positioning */
-    transform: translateY(-3px);
-    /* Moved further up to center with the middle of the text */
+    transform: translateY(1px);
 }
 
 .tlnbn-nav-item:hover .tlnbn-arrow {
@@ -187,6 +184,17 @@
     /* smoother timing and no unnecessary delay on show */
     transition: opacity 220ms cubic-bezier(.2,.9,.3,1), transform 220ms cubic-bezier(.2,.9,.3,1);
     pointer-events: none;
+}
+
+/* Hover bridge to prevent losing hover state when moving mouse down */
+.tlnbn-mega-dropdown::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: 0;
+    right: 0;
+    height: 15px;
+    background: transparent;
 }
 
 /* Individual positioning for first and last items */

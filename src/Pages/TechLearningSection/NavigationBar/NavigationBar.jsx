@@ -46,7 +46,10 @@ const NavigationBar = () => {
   // Updated explore sections
   const exploreSections = [
     { name: 'Graphic Design', href: '/graphicsDesignCoursePage' },
-    { name: 'Ui/Ux Course', href: '/uiuxDesignCoursePage' },
+    { name: 'Full Stack', href: '/javaFullStackCourseCoursePage' },
+    { name: 'UI/UX Design', href: '/uiuxDesignCoursePage' },
+    { name: 'Drawing', href: '/drawingCoursePage' },
+    { name: 'Digital Marketing', href: '/digitalMarketingCoursePage' },
     { name: 'Mentor Learning', href: '/mentorshipLearningPage' },
     { name: 'Project Learning', href: '/projectBasedLearningPage' },
     { name: 'Careers', href: '/CareersPage' },
