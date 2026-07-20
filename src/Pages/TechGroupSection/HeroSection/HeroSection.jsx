@@ -11,6 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const HeroSection = () => {
     const heroRef = useRef(null);
+    const wrapperRef = useRef(null);
     const contentRef = useRef(null);
     const backgroundRef = useRef(null);
     const visualRef = useRef(null);
@@ -42,6 +43,14 @@ const HeroSection = () => {
         };
     }, []);
 
+    useEffect(() => {
+        // Refresh ScrollTrigger on mount to resolve route-change offset calculations
+        const timer = setTimeout(() => {
+            ScrollTrigger.refresh();
+        }, 100);
+        return () => clearTimeout(timer);
+    }, []);
+
     useLayoutEffect(() => {
         let ctx = gsap.context(() => {
             // Scroll Timeline for Content Fade and Parallax
@@ -54,8 +63,8 @@ const HeroSection = () => {
                 }
             });
 
-            // Fade out content
-            tl.to(contentRef.current, {
+            // Fade out content wrapper (avoids collision with Framer Motion on contentRef)
+            tl.to(wrapperRef.current, {
                 opacity: 0,
                 y: -50,
                 ease: "none"
@@ -160,7 +169,7 @@ const HeroSection = () => {
             <div className="hero-background" ref={backgroundRef} />
             <div className="hero-container" >
 
-                <div className="hero-content-wrapper">
+                <div className="hero-content-wrapper" ref={wrapperRef}>
                     <motion.div
                         className="hero-content"
                         ref={contentRef}
