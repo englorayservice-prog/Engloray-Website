@@ -4,7 +4,8 @@
     background: #ffffff;
     color: #111;
     position: relative;
-    overflow: hidden;
+    /* allow hover cards to extend outside without being clipped */
+    overflow: visible;
 }
 
 .ps-portfolio-section::before {
@@ -23,7 +24,8 @@
     min-height: 50vh !important;
     padding: 0 2rem;
     position: relative;
-    margin-bottom: -500px !important;
+    /* removed large negative margin to prevent overlap with next section */
+    margin-bottom: 10px;
     z-index: 2;
 }
 
@@ -619,7 +621,7 @@
     position: relative;
     padding: 40px 0 0;
     background-color: #ffffff;
-    overflow: hidden;
+    overflow: visible;
     font-family: 'Inter', sans-serif;
 }
 
@@ -702,8 +704,36 @@
 .ps-constellation-nodes {
     position: relative;
     width: 100%;
-    height: 700px;
+    /* reduce vertical height so nodes stay within common viewport sizes */
+    height: 520px;
     margin-top: 40px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 1366px) {
+    .ps-constellation-nodes {
+        height: 480px;
+    }
+    .ps-logo-box {
+        width: 76px;
+        height: 76px;
+    }
+    .ps-hover-card-popup {
+        width: 220px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .ps-constellation-nodes {
+        height: 420px;
+    }
+    .ps-logo-box {
+        width: 64px;
+        height: 64px;
+    }
+    .ps-hover-card-popup {
+        width: 200px;
+    }
 }
 
 .ps-node {
@@ -713,14 +743,15 @@
 }
 
 .ps-node:hover {
-    transform: scale(1.1) !important;
+    transform: scale(1.04) !important;
     z-index: 10;
 }
 
 /* Logo Boxes */
 .ps-logo-box {
-    width: 110px;
-    height: 110px;
+    /* slightly reduced base size to make hover enlargement less dramatic */
+    width: 88px;
+    height: 88px;
     background: #ffffff;
     border-radius: 12px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
@@ -764,30 +795,32 @@
 /* Updated Hover Card Popup */
 .ps-hover-card-popup {
     position: absolute;
-    top: 50%;
+    bottom: calc(100% + 8px);
     left: 50%;
-    width: 300px;
+    /* compact hover card to match smaller logo boxes */
+    width: min(90vw, 260px);
+    max-width: 260px;
     background: white;
-    border-radius: 20px;
+    border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
-    z-index: 100;
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.18);
+    z-index: 999;
     opacity: 0;
     visibility: hidden;
-    transform: translate(-50%, -40%) scale(0.9);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    pointer-events: none;
+    transform: translateX(-50%) scale(0.94);
+    transition: all 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: auto;
 }
 
 .ps-node:hover .ps-hover-card-popup {
     opacity: 1;
     visibility: visible;
-    transform: translate(-50%, -50%) scale(1);
+    transform: translateX(-50%) scale(1);
 }
 
 .ps-hc-top {
     position: relative;
-    height: 180px;
+    height: 140px;
     width: 100%;
     background: #ffffff;
     display: block;
@@ -887,20 +920,21 @@
 
 /* Malar — top-right */
 .node-8 {
-    top: 22%;
+    top: 28%;
+    /* move slightly left so it doesn't stay too close to the edge on narrower viewports */
     left: 88%;
 }
 
 /* Brandex — right upper */
 .node-4 {
-    top: 45%;
-    left: 52%;
+    top: 39%;
+    left: 55%;
 }
 
 /* Amico — center */
 .node-5 {
-    top: 58%;
-    left: 78%;
+    top: 60%;
+    left: 75%;
 }
 
 /* Say — right-center */
@@ -933,7 +967,7 @@
 
 /* Maax Life — bottom-center */
 .node-tag-1 {
-    top: 22%;
+    top: 28%;
     left: 30%;
 }
 
@@ -968,7 +1002,7 @@
 }
 
 .node-tag-8 {
-    top: 93%;
+    top: 90%;
     left: 65%;
 }
 
@@ -978,8 +1012,8 @@
 }
 
 .node-tag-10 {
-    top: 85%;
-    left: 92%;
+    top: 76%;
+    left: 74%;
 }
 
 /* Connecting Lines */
@@ -1061,21 +1095,20 @@
 
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
-    .ps-constellation-nodes {
-        height: 600px;
-    }
-
-    .ps-logo-box {
-        width: 80px;
-        height: 80px;
-    }
-
     .node-4 {
-        left: 82%;
+        left: 78%;
     }
 
     .node-5 {
-        left: 82%;
+        left: 72%;
+    }
+
+    .node-8 {
+        left: 80%;
+    }
+
+    .node-tag-10 {
+        left: 74%;
     }
 }
 
@@ -1085,7 +1118,7 @@
     }
 
     .ps-constellation-nodes {
-        height: 800px;
+        height: auto;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;

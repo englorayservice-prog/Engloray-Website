@@ -19,10 +19,25 @@ export default function EnglorayPortalPage() {
     styleEl.innerHTML = fontStyles;
     document.head.appendChild(styleEl);
 
-    // Add class to body for page-specific styling
-    document.body.classList.add('portal-page-active');
+    // Force browser scroll restoration to manual so page reload always starts at top (Home)
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+
+    // Scroll to top immediately when entering or reloading the Admission Portal page
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+
+    // Timeout fallback to ensure instant scroll override on slow renders
+    const timer = setTimeout(() => {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    }, 50);
 
     return () => {
+      clearTimeout(timer);
       // Remove stylesheet and fonts when leaving the page to restore parent styling
       const elLink = document.getElementById('portal-tailwind-style');
       if (elLink) elLink.remove();

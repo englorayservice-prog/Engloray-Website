@@ -12,9 +12,15 @@
     left: 0;
     right: 0;
     background: transparent;
-    z-index: 1000;
+    /* Raise above TopNavbar (1001) so dropdowns can appear over it */
+    z-index: 1005;
     transition: transform 0.3s ease;
     padding: 0;
+    /* Allow dropdowns to show outside the navbar while still preventing horizontal scroll */
+    overflow: visible;
+    overflow-x: hidden; /* Never cause horizontal scrollbar */
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .tlnbn-navbar-visible {
@@ -29,6 +35,9 @@
     max-width: 1700px;
     margin: 0 auto;
     padding: 0 10px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: visible; /* Allow dropdowns to be visible */
 }
 
 .tlnbn-nav-content {
@@ -42,6 +51,8 @@
     gap: 10px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
     width: 100%;
+    overflow: visible; /* Allow dropdowns to be visible */
+    box-sizing: border-box;
 }
 
 .tlnbn-logo {
@@ -153,18 +164,25 @@
 /* Mega Dropdown */
 .tlnbn-mega-dropdown {
     position: absolute;
-    top: calc(100% + 8px);
+    /* small gap so cursor movement isn't likely to leave the hover zone */
+    top: calc(100% + 4px);
     background: white;
     border-radius: 4px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     border: 1px solid #ddd;
     border-top: 8px solid #000;
-    min-width: 330px;
-    max-width: calc(100vw - 40px);
-    z-index: 1001;
+    min-width: 280px;
+    max-width: 420px;
+    width: auto;
+    /* Raise dropdown above most page elements to avoid being hidden */
+    z-index: 2147483647;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.2s ease;
+    /* start from slightly up and squashed so it animates from the parent item center */
+    transform: translateY(-8px) scaleY(0.94);
+    transform-origin: top center;
+    /* smoother timing and no unnecessary delay on show */
+    transition: opacity 220ms cubic-bezier(.2,.9,.3,1), transform 220ms cubic-bezier(.2,.9,.3,1);
     pointer-events: none;
 }
 
@@ -197,30 +215,37 @@
     transform: translateX(-50%);
 }
 
-.tlnbn-nav-item.tlnbn-active .tlnbn-mega-dropdown {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: all;
-    z-index: 1002;
-}
-
+.tlnbn-nav-item.tlnbn-active .tlnbn-mega-dropdown,
 .tlnbn-nav-item:hover .tlnbn-mega-dropdown {
     opacity: 1;
     visibility: visible;
     pointer-events: all;
     z-index: 1002;
+    transform: translateY(0) scaleY(1);
+    transition-delay: 0ms; /* show immediately when hovered */
 }
 
 .tlnbn-mega-dropdown.tlnbn-visible {
     opacity: 1;
     visibility: visible;
     pointer-events: all;
+    transform: translateY(0);
 }
 
 .tlnbn-mega-dropdown:hover {
     opacity: 1;
     visibility: visible;
     pointer-events: all;
+}
+
+/* Ensure cursor remains the same (pointer) when entering the portal dropdown */
+.tlnbn-mega-dropdown,
+.tlnbn-dropdown-content,
+.tlnbn-dropdown-item,
+.tlnbn-item-text,
+.tlnbn-item-title,
+.tlnbn-item-desc {
+    cursor: pointer;
 }
 
 .tlnbn-dropdown-content {
@@ -259,6 +284,7 @@
     border: 1px solid transparent;
     max-width: 100%;
     box-sizing: border-box;
+    user-select: none;
 }
 
 .tlnbn-dropdown-item:hover {
@@ -322,10 +348,16 @@
     background: #121212;
     border-radius: 40px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    overflow: visible; /* Allow dropdowns to be visible */
 }
 
 .tlnbn-search-container-wrapper {
-    flex: 0 1 20px;
+    flex: 1 1 120px;   /* Grow up to fill space, shrink if needed, base 120px */
+    min-width: 0;       /* Allow flex child to shrink below its content size */
+    max-width: 350px;   /* Never wider than 350px */
+    overflow: hidden;   /* Clip any overflow */
+    display: flex;
+    align-items: center;
 }
 
 /* Desktop Menu in Second Line */
@@ -339,6 +371,9 @@
     /* The light gray track from image 1 */
     border-radius: 35px;
     align-items: center;
+    flex-shrink: 1;   /* Allow the menu track to shrink if space is tight */
+    min-width: 0;     /* Allow it to shrink below natural content width */
+    overflow: visible; /* Allow dropdowns to be visible */
 }
 
 /* Navigation Item and Link Styles */
@@ -401,7 +436,7 @@
 .tlnbn-mobile-toggle span {
     width: 25px;
     height: 3px;
-    background: #2d3748;
+    background: #ffffff;
     border-radius: 2px;
     transition: 0.3s;
 }
@@ -518,7 +553,7 @@
 .tlnbn-mobile-search-wrapper input,
 .tlnbn-mobile-search-wrapper .search-input,
 .tlnbn-mobile-search-wrapper input[type="text"] {
-    width: 10% !important;
+    width: 100% !important;
     padding: 12px 45px 12px 16px !important;
     font-size: 16px !important;
     box-sizing: border-box !important;
@@ -690,58 +725,86 @@
     }
 }
 
-/* Tablet Styles */
-@media (max-width: 1024px) {
+/* Tablet Styles (901px - 1024px): Switch to hamburger menu to avoid overflow */
+@media (max-width: 1024px) and (min-width: 901px) {
     .tlnbn-navbar-main-container {
-        top: 33px !important; /* Keep it at the desktop top position */
+        top: 33px !important;
     }
 
     .tlnbn-nav-content {
-        padding: 6px 12px !important;
-        border-radius: 40px !important;
+        padding: 8px 20px !important;
+        border-radius: 50px !important;
+        gap: 10px !important;
+    }
+
+    /* Hide desktop menu, show hamburger on tablet */
+    .tlnbn-desktop-menu {
+        display: none !important;
+    }
+
+    .tlnbn-action-buttons {
+        display: none !important;
+    }
+
+    .tlnbn-search-container-wrapper {
+        display: none !important;
+    }
+
+    .tlnbn-nav-subscribe-container {
+        display: none !important;
+    }
+
+    .tlnbn-mobile-toggle {
+        display: flex !important;
+    }
+
+    .tlnbn-logo img {
+        height: 38px !important;
+    }
+}
+
+/* Small Tablet Styles (769px - 900px): Switch to hamburger menu */
+@media (max-width: 900px) and (min-width: 769px) {
+    .tlnbn-navbar-main-container {
+        top: 33px !important;
+    }
+
+    .tlnbn-nav-content {
+        padding: 8px 16px !important;
+        border-radius: 50px !important;
         gap: 8px !important;
     }
 
     .tlnbn-desktop-menu {
-        display: flex !important;
-        gap: 4px !important;
-        padding: 6px 8px !important;
-    }
-
-    .tlnbn-action-buttons {
-        display: flex !important;
-        gap: 6px !important;
-    }
-
-    .tlnbn-search-container-wrapper {
-        display: flex !important;
-        flex: 0 1 80px !important;
-    }
-
-    .tlnbn-mobile-toggle {
         display: none !important;
     }
 
+    .tlnbn-action-buttons {
+        display: none !important;
+    }
+
+    .tlnbn-search-container-wrapper {
+        display: none !important;
+    }
+
+    .tlnbn-nav-subscribe-container {
+        display: none !important;
+    }
+
+    .tlnbn-mobile-toggle {
+        display: flex !important;
+    }
+
     .tlnbn-logo img {
-        height: 32px !important;
-    }
-
-    .tlnbn-nav-link {
-        font-size: 11px !important;
-        padding: 6px 8px !important;
-    }
-
-    .tlnbn-btn {
-        font-size: 11px !important;
-        padding: 5px 10px !important;
+        height: 36px !important;
     }
 }
 
 /* Tablet Styles - Hide second line and show mobile menu */
 @media (max-width: 768px) {
     .tlnbn-navbar-main-container {
-        top: 60px !important;
-        /* Match TopNavbar height at 768px */
+        top: 40px !important;
+        /* Match updated TopNavbar height at ≤768px */
     }
 
     .tlnbn-desktop-menu {
@@ -813,7 +876,8 @@
 /* Mobile Styles */
 @media (max-width: 480px) {
     .tlnbn-navbar-main-container {
-        top: 60px !important;
+        top: 36px !important;
+        /* Match TopNavbar extra-small height */
     }
 
     .tlnbn-navbar-spacer {
@@ -1156,13 +1220,17 @@ body.menu-open {
         display: flex !important;
         flex: 1 1 auto !important;
         max-width: clamp(120px, -200px + 31.25vw, 250px) !important;
-        margin-left: clamp(4px, -5.8px + 0.96vw, 8px) !important;
+        min-width: 0 !important;          /* Critical: allow shrinking */
+        overflow: hidden !important;      /* Clip any bleed */
+        margin-left: 0 !important;
     }
 
     /* 7. Fluid search bar container and elements */
     .search-container.desktop {
-        width: clamp(120px, -200px + 31.25vw, 250px) !important;
-        margin-left: clamp(4px, -5.8px + 0.96vw, 8px) !important;
+        width: 100% !important;           /* Fill the wrapper */
+        max-width: clamp(120px, -200px + 31.25vw, 250px) !important;
+        min-width: 0 !important;
+        margin-left: 0 !important;
         display: block !important;
     }
 

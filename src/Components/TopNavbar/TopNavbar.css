@@ -1,4 +1,18 @@
 /* TopNavBar.css */
+
+/*
+ * Shared height variable.
+ * --topnav-height is the TOTAL rendered height of this bar
+ * (content height + border-bottom) and is the single source of truth
+ * consumed by Navbar.css to position the sticky Navbar directly below
+ * this bar with no gap and no overlap. Whenever the height of
+ * .topnav-container changes at a breakpoint below, update this
+ * variable in the same breakpoint.
+ */
+:root {
+    --topnav-height: 33px; /* 30px content + 3px border-bottom */
+}
+
 .topnav-main {
     background: #ffffff;
     border-bottom: 3px solid #bf0413;
@@ -179,6 +193,7 @@
 }
 
 /* Responsive Design */
+/* Tablet Landscape (769px - 1024px): Keep compact, hide current page indicator */
 @media (max-width: 1024px) {
     .topnav-container {
         padding: 0 1rem;
@@ -187,12 +202,34 @@
     .topnav-current-page {
         display: none;
     }
+
+    .topnav-link {
+        padding: 0.35rem 0.9rem;
+        font-size: 0.75rem;
+    }
 }
 
+/* Tablet Portrait & Mobile (max-width: 768px): Show hamburger menu */
 @media (max-width: 768px) {
+    :root {
+        --topnav-height: 43px; /* 40px content + 3px border-bottom */
+    }
+
     .topnav-container {
-        height: 60px; /* Taller for mobile */
-        justify-content: flex-end; /* Align hamburger to right */
+        height: 40px;
+        justify-content: space-between;
+        padding: 0 1rem;
+    }
+
+    /* Show a subtle brand label on the left for context */
+    .topnav-container::before {
+        content: 'ENGLORAY';
+        font-family: 'Aldrich', 'Segoe UI', sans-serif;
+        font-size: 0.7rem;
+        font-weight: 600;
+        color: #bf0413;
+        letter-spacing: 1px;
+        flex-shrink: 0;
     }
 
     .topnav-hamburger {
@@ -201,19 +238,20 @@
 
     .topnav-items {
         position: fixed;
-        top: 60px;
+        top: var(--topnav-height);
         left: 0;
         right: 0;
         background: white;
         flex-direction: column;
         align-items: stretch;
-        padding: 1rem 0;
+        padding: 0.5rem 0;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         transform: translateY(-150%);
         transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         z-index: 1001;
         opacity: 0;
         pointer-events: none;
+        border-top: 2px solid #bf0413;
     }
 
     .topnav-items.topnav-mobile-active {
@@ -224,8 +262,8 @@
 
     .topnav-link {
         width: 100%;
-        padding: 1rem 2rem;
-        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
         justify-content: flex-start;
         border-bottom: 1px solid #f3f4f6;
     }
@@ -236,7 +274,41 @@
     }
 
     .topnav-active-indicator {
-        display: none; /* Hide indicator on mobile dropdown */
+        display: none;
+    }
+
+    .topnav-current-page {
+        display: none;
+    }
+}
+
+/* Extra Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+    :root {
+        --topnav-height: 39px; /* 36px content + 3px border-bottom */
+    }
+
+    .topnav-container {
+        height: 36px;
+        padding: 0 0.75rem;
+    }
+
+    .topnav-container::before {
+        font-size: 0.65rem;
+    }
+
+    .topnav-items {
+        top: var(--topnav-height);
+    }
+
+    .topnav-hamburger {
+        width: 20px;
+        height: 15px;
+    }
+
+    .topnav-hamburger span {
+        width: 20px;
+        height: 2px;
     }
 }
 
@@ -259,4 +331,4 @@ body.route-tech-learning .topnav-main {
         max-width: 100% !important;
         padding: 0 40px !important;
     }
-}
+}

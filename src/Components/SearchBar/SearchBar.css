@@ -8,9 +8,12 @@
 
 /* Desktop specific - Only show on larger screens */
 .search-container.desktop {
-  width: 350px; /* ORIGINAL SIZE - DO NOT CHANGE */
-  margin-left: 20px; /* Space between logo and search bar */
-  display: block; /* Show by default */
+  width: 100%; /* Fill the wrapper */
+  max-width: 350px; /* Cap at 350px */
+  min-width: 120px; /* Don't shrink below 120px */
+  margin-left: 0; /* Wrapper handles spacing */
+  display: block;
+  box-sizing: border-box;
 }
 
 /* Mobile specific - Hide by default, shown in mobile menu */
@@ -524,8 +527,7 @@
 /* Extra Large Screens (1600px and above) */
 @media (min-width: 1600px) {
   .search-container.desktop {
-    width: 380px;
-    margin-left: 30px;
+    max-width: 380px;
   }
   
   .search-container.desktop .search-input {
@@ -538,8 +540,7 @@
 /* Large Desktop (1400px - 1599px) */
 @media (min-width: 1400px) and (max-width: 1599px) {
   .search-container.desktop {
-    width: 360px;
-    margin-left: 25px;
+    max-width: 360px;
   }
   
   .search-container.desktop .search-input {
@@ -551,8 +552,7 @@
 /* Standard Desktop (1200px - 1399px) */
 @media (min-width: 1200px) and (max-width: 1399px) {
   .search-container.desktop {
-    width: 340px;
-    margin-left: 20px;
+    max-width: 300px;
   }
   
   .search-container.desktop .search-input {
@@ -565,8 +565,7 @@
 /* Medium Desktop/Laptop (1024px - 1199px) */
 @media (min-width: 1024px) and (max-width: 1199px) {
   .search-container.desktop {
-    width: 320px;
-    margin-left: 15px;
+    max-width: 240px;
   }
   
   .search-container.desktop .search-input {
