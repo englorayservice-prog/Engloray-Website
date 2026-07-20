@@ -53,6 +53,8 @@ import cartoonFemale1 from '../../../assets/cartoon_female_1.png';
 import cartoonFemale2 from '../../../assets/cartoon_female_2.png';
 import cartoonMale1 from '../../../assets/cartoon_male_1.png';
 import cartoonMale2 from '../../../assets/cartoon_male_2.png';
+import SEOHead from '../../../seo/SEOHead';
+import SchemaMarkup from '../../../seo/SchemaMarkup';
 
 const MainCoursesPage = () => {
     const navigate = useNavigate();
@@ -319,6 +321,8 @@ const MainCoursesPage = () => {
 
     return (
         <div className="acp-main-courses-page">
+            <SEOHead pageKey="/allCoursesPage" />
+            <SchemaMarkup pageKey="/allCoursesPage" />
             <TopNavBar />
             <NavigationBar />
             {/* Hero Section – NextLearn Style Mint Green */}

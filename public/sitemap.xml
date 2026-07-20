@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- ══════════════════════════════════════════ -->
+  <!-- HOMEPAGE -->
+  <!-- ══════════════════════════════════════════ -->
+  <url>
+    <loc>https://www.engloray.com/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- SERVICE PAGES — BRANDING & DESIGN -->
+  <!-- ══════════════════════════════════════════ -->
+  <url>
+    <loc>https://www.engloray.com/brandingPage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.engloray.com/brandingIdentityPage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.engloray.com/graphicDesignPage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- SERVICE PAGES — UI/UX DESIGN -->
+  <!-- ══════════════════════════════════════════ -->
+  <url>
+    <loc>https://www.engloray.com/UiUxPage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.engloray.com/uiuxDesignPage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- SERVICE PAGES — DEVELOPMENT -->
+  <!-- ══════════════════════════════════════════ -->
+  <url>
+    <loc>https://www.engloray.com/developmentPage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.engloray.com/websiteDevelopmentPage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.engloray.com/appDevelopmentPage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.engloray.com/mobileApplicationsPage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.engloray.com/ecommerceDevelopmentPage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- SERVICE PAGES — SOFTWARE -->
+  <!-- ══════════════════════════════════════════ -->
+  <url>
+    <loc>https://www.engloray.com/softwareDevelopmentPage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.engloray.com/softwareSolutionPage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- SERVICE PAGES — AI -->
+  <!-- ══════════════════════════════════════════ -->
+  <url>
+    <loc>https://www.engloray.com/aiServicesPage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.engloray.com/aiProductPage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.engloray.com/aiChatbotPage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.engloray.com/businessSuiteAiPage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- SERVICE PAGES — DIGITAL MARKETING -->
+  <!-- ══════════════════════════════════════════ -->
+  <url>
+    <loc>https://www.engloray.com/marketingPage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.engloray.com/digitalMarketingServicePage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- SERVICE PAGES — ERP, CRM, SaaS -->
+  <!-- ══════════════════════════════════════════ -->
+  <url>
+    <loc>https://www.engloray.com/erpSolutionsPage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.engloray.com/erpPage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.engloray.com/crmServicesPage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.engloray.com/crmPage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.engloray.com/saasPage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- DATA ANALYTICS -->
+  <!-- ══════════════════════════════════════════ -->
+  <url>
+    <loc>https://www.engloray.com/dataAnalyticsPage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.engloray.com/dataanalyticsbusiness</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- EDUCATION — COURSES -->
+  <!-- ══════════════════════════════════════════ -->
+  <url>
+    <loc>https://www.engloray.com/allCoursesPage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.engloray.com/uiuxDesignCoursePage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.engloray.com/graphicsDesignCoursePage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.engloray.com/javaFullStackCourseCoursePage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.engloray.com/drawingCoursePage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.engloray.com/digitalMarketingCoursePage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.engloray.com/corporateTraining</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.engloray.com/mentorshipLearningPage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.engloray.com/projectBasedLearningPage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.engloray.com/workshopsPage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- INTERNSHIPS -->
+  <!-- ══════════════════════════════════════════ -->
+  <url>
+    <loc>https://www.engloray.com/allProgramsPage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.engloray.com/GraphicDesignerInternPage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.engloray.com/websiteDeveloperInternPage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.engloray.com/uiuxDesignerInternPage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.engloray.com/SoftwareDeveloperInternPage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.engloray.com/salesExecutiveInternPage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.engloray.com/businessDevelopmentInternPage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.engloray.com/trainingMentorInternPage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- RAYMART / E-COMMERCE -->
+  <!-- ══════════════════════════════════════════ -->
+  <url>
+    <loc>https://www.engloray.com/raymartPage</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.engloray.com/raymartPageTwo</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.engloray.com/raymartPageThree</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.engloray.com/raymartPageFour</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.engloray.com/jobSeekerPage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.engloray.com/learningPage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- COMPANY PAGES -->
+  <!-- ══════════════════════════════════════════ -->
+  <url>
+    <loc>https://www.engloray.com/ourStoryPage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.engloray.com/ourTeamPage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.engloray.com/contactPage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.engloray.com/CareersPage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.engloray.com/worksCaseStudiesPage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.engloray.com/worksClientProjectsPage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.engloray.com/allProjectsPage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.engloray.com/showcase</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- TECH GROUP & LEARNING SECTIONS -->
+  <!-- ══════════════════════════════════════════ -->
+  <url>
+    <loc>https://www.engloray.com/tech-group</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.engloray.com/tech-learning</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- LEGAL PAGES -->
+  <!-- ══════════════════════════════════════════ -->
+  <url>
+    <loc>https://www.engloray.com/privacyPolicyPage</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.engloray.com/cookiesPolicyPage</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.engloray.com/termsAndServicesPage</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset>

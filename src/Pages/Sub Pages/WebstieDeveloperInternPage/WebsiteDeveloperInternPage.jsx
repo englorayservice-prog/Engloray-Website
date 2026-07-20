@@ -75,7 +75,7 @@ import pathSix from '../../../assets/resources file/resources file/TECH/Website 
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import Navbar from '../../../Components/Navbar/Navbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import Footer from '../../../Components/Footer/Footer';
 import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 
@@ -90,6 +90,8 @@ import girl1 from '../../../assets/images/girl1.png';
 import girl2 from '../../../assets/images/girl2.png';
 import girl3 from '../../../assets/images/girl3.png';
 import girl4 from '../../../assets/images/girl4.png';
+import SEOHead from '../../../seo/SEOHead';
+import SchemaMarkup from '../../../seo/SchemaMarkup';
 
 // Training phase background images - 100% topic-relevant
 const bgFrontend = "https://images.unsplash.com/photo-1537884944318-390069bb8665?auto=format&fit=crop&w=1600&q=80"; // HTML/CSS/JS code on screen
@@ -1993,6 +1995,8 @@ const WebsiteDeveloperInternPage = () => {
 
                                                 return (
                                                     <div key={index} className={`WD-dt-card WD-dt-card-${cardClassIndex}`}>
+                                                        <SEOHead pageKey="/websiteDeveloperInternPage" />
+                                                        <SchemaMarkup pageKey="/websiteDeveloperInternPage" />
                                                         <div className="WD-dt-card-img-wrapper">
                                                             <img
                                                                 src={photoUrl}

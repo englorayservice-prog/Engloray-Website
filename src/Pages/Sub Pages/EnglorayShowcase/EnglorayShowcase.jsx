@@ -14,6 +14,8 @@ import {
 import TopNavbar from '../../../Components/TopNavbar/TopNavbar';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
 import Footer from '../../../Components/Footer/Footer';
+import SEOHead from '../../../seo/SEOHead';
+import SchemaMarkup from '../../../seo/SchemaMarkup';
 import './EnglorayShowcase.css';
 
 const EnglorayShowcase = () => {
@@ -36,6 +38,8 @@ const EnglorayShowcase = () => {
 
     return (
         <div className="showcase-master-container">
+            <SEOHead pageKey="/showcase" />
+            <SchemaMarkup pageKey="/showcase" />
             <TopNavbar />
             <TwoLineNavbar />
 

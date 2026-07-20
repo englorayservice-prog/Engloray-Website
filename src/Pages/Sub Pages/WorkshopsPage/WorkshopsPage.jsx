@@ -51,6 +51,8 @@ import typographyBackground from '../../../assets/typography_background.png';
 import pixarCharacters from '../../../assets/pixar_characters.png';
 import pixarLeft from '../../../assets/pixar_left.png';
 import pixarRight from '../../../assets/pixar_right.png';
+import SEOHead from '../../../seo/SEOHead';
+import SchemaMarkup from '../../../seo/SchemaMarkup';
 
 
 
@@ -582,6 +584,8 @@ const WorkshopsPage = () => {
 
     return (
         <div>
+            <SEOHead pageKey="/workshopsPage" />
+            <SchemaMarkup pageKey="/workshopsPage" />
             <TopNavBar />
             <TwoLineNavbar />
             <div className="wsp-page">

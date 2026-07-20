@@ -79,7 +79,9 @@ import pathThree from '../../../assets/resources file/resources file/TECH/Sales 
 import pathFour from '../../../assets/resources file/resources file/TECH/Sales executive/Client Proposal Templates.pdf';
 import pathFive from '../../../assets/resources file/resources file/TECH/Sales executive/Negotiation & Growth Strategies locked.pdf';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
+import SEOHead from '../../../seo/SEOHead';
+import SchemaMarkup from '../../../seo/SchemaMarkup';
 
 const pathSix = null;
 
@@ -2035,6 +2037,8 @@ const SalesExecutiveInternPage = () => {
 
                                         return (
                                             <div key={`${testimonial.id || index}-${index}`} className={`SE-dt-card SE-dt-card-${cardClassIndex}`}>
+                                                <SEOHead pageKey="/salesExecutiveInternPage" />
+                                                <SchemaMarkup pageKey="/salesExecutiveInternPage" />
                                                 <div className="SE-dt-card-img-wrapper">
                                                     <img
                                                         src={photoUrl}

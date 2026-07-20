@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { submitEnrollment } from "../../Sub Pages/HandleSubmit/HandleSubmit";
 import NavigationBar from '../../TechLearningSection/NavigationBar/NavigationBar';
-import SubFooterTwo from '../subFooterTwo/NewFooter';
+// import SubFooterTwo from '../subFooterTwo/NewFooter';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import {
@@ -71,6 +71,8 @@ import adobeFireflyBg from '../../../assets/adobe_firefly_logo.png';
 import midjourneyBg from '../../../assets/midjourney_logo.png';
 import leonardoAiBg from '../../../assets/leonardo_ai_logo.png';
 import dalleBg from '../../../assets/dalle_logo.png';
+import SEOHead from '../../../seo/SEOHead';
+import SchemaMarkup from '../../../seo/SchemaMarkup';
 
 const DigitaMarketingCourse = () => {
     const [showEnrollment, setShowEnrollment] = useState(false);
@@ -187,42 +189,42 @@ const DigitaMarketingCourse = () => {
             icon: <FontAwesomeIcon icon={faBullseye} />,
             points: ["Google Ads", "Meta Ads", "Campaign Optimization"],
             bgColor: "rgba(61, 82, 217, 0.12)",
-            iconColor: "#3D52D9"
+            iconColor: "#1E3A8A"
         },
         {
             title: "SEO & Organic Growth",
             icon: <FontAwesomeIcon icon={faRulerCombined} />,
             points: ["Keyword Research", "On-Page & Technical SEO", "Content Optimization"],
             bgColor: "rgba(61, 82, 217, 0.12)",
-            iconColor: "#3D52D9"
+            iconColor: "#1E3A8A"
         },
         {
             title: "Social Media Marketing",
             icon: <FontAwesomeIcon icon={faPaintBrush} />,
             points: ["Content Strategy", "Audience Engagement", "Growth Techniques"],
             bgColor: "rgba(61, 82, 217, 0.12)",
-            iconColor: "#3D52D9"
+            iconColor: "#1E3A8A"
         },
         {
             title: "Email Marketing",
             icon: <FontAwesomeIcon icon={faMobileAlt} />,
             points: ["Campaign Creation", "Automation Funnels", "Lead Nurturing"],
             bgColor: "rgba(61, 82, 217, 0.12)",
-            iconColor: "#3D52D9"
+            iconColor: "#1E3A8A"
         },
         {
             title: "Analytics & Tracking",
             icon: <FontAwesomeIcon icon={faLaptopCode} />,
             points: ["Google Analytics (GA4)", "Conversion Tracking", "Data Insights"],
             bgColor: "rgba(61, 82, 217, 0.12)",
-            iconColor: "#3D52D9"
+            iconColor: "#1E3A8A"
         },
         {
             title: "Brand & Growth Strategy",
             icon: <FontAwesomeIcon icon={faBriefcase} />,
             points: ["Funnel Building", "Customer Journey Mapping", "Scaling Strategies"],
             bgColor: "rgba(61, 82, 217, 0.12)",
-            iconColor: "#3D52D9"
+            iconColor: "#1E3A8A"
         }
     ];
 
@@ -449,7 +451,7 @@ const DigitaMarketingCourse = () => {
         return `rgba(${r}, ${g}, ${b}, ${alpha})`;
     };
 
-    const benefitIconPalette = ["#BAE6FD", "#C4B5FD", "#FBCFE8", "#BBF7D0", "#FED7AA", "#FEF08A", "#E9D5FF", "#A7F3D0", "#BAE6FD", "#C4B5FD"];
+    const benefitIconPalette = ["#2563EB", "#7C3AED", "#DB2777", "#16A34A", "#EA580C", "#CA8A04", "#9333EA", "#059669", "#0284C7", "#4F46E5"];
 
     const demoVideo = {
         title: "UI/UX Design Mastery - Free Demo Lesson",
@@ -658,8 +660,8 @@ const DigitaMarketingCourse = () => {
                                     <ul className="dgm-gdc-intro-desc" style={{ paddingLeft: '20px', listStyleType: 'disc', margin: '0 0 12px' }}>
                                         <li style={{ marginBottom: '4px' }}><strong>Live Campaign Budgets:</strong> Practice running ads with real-world budget allocations.</li>
                                         <li style={{ marginBottom: '4px' }}><strong>1:1 Expert Critiques:</strong> Get detailed campaign performance reviews directly from seasoned mentors.</li>
-                                        <li style={{ marginBottom: '4px' }}><strong>End-to-End Analytics:</strong> Master complete tracking setup from tracking pixels to GA4 dashboards.</li>
-                                        <li style={{ marginBottom: '0px' }}><strong>Portfolio of Audits:</strong> Build industry-ready SEO audits and social media strategies to showcase.</li>
+                                        {/* <li style={{ marginBottom: '4px' }}><strong>End-to-End Analytics:</strong> Master complete tracking setup from tracking pixels to GA4 dashboards.</li> */}
+                                        {/* <li style={{ marginBottom: '0px' }}><strong>Portfolio of Audits:</strong> Build industry-ready SEO audits and social media strategies to showcase.</li> */}
                                     </ul>
                                     <button className="dgm-gdc-intro-cta" onClick={scrollToForm}>
                                         Contact
@@ -691,6 +693,9 @@ const DigitaMarketingCourse = () => {
                             </div>
                         </div>
                     </section>
+                    
+                    <hr className="dgm-gdc-section-divider" />
+
                     {/* Course Outcomes - Redesigned Numbered Grid */}
                     <section className="dgm-section dgm-outcomes-numbered">
                         <div className="dgm-container">
@@ -737,6 +742,8 @@ const DigitaMarketingCourse = () => {
                             </div>
                         </div>
                     </section>
+                    
+                    <hr className="dgm-gdc-section-divider" />
 
                     {/* 6-Month Course Breakdown - Vertical Slider Redesign */}
                     <section className="dgm-gdc-curriculum-v2-section">
@@ -955,6 +962,8 @@ const DigitaMarketingCourse = () => {
                                                         const color = benefitIconPalette[absoluteIndex] || "#BAE6FD";
                                                         return (
                                                             <div className="dgm-new-icon" style={{ background: hexToRgba(color, 0.18), color }}>
+                                                                <SEOHead pageKey="/digitalMarketingCoursePage" />
+                                                                <SchemaMarkup pageKey="/digitalMarketingCoursePage" />
                                                                 {benefit.icon}
                                                             </div>
                                                         );
@@ -1362,7 +1371,7 @@ const DigitaMarketingCourse = () => {
                     )}
                     <BackToTop />
                 </div>
-                <SubFooterTwo />
+                {/* <SubFooterTwo /> */}
             </div>
         </>
     );

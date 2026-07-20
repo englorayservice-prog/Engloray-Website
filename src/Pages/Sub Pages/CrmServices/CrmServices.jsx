@@ -21,6 +21,8 @@ import cartoonFemale1 from '../../../assets/cartoon_female_1.png';
 import cartoonFemale2 from '../../../assets/cartoon_female_2.png';
 import cartoonFemale3 from '../../../assets/cartoon_female_3.png';
 import femaleAvatar from '../../../assets/female_avatar.png';
+import SEOHead from '../../../seo/SEOHead';
+import SchemaMarkup from '../../../seo/SchemaMarkup';
 
 const CrmServices = () => {
     const [selectedService, setSelectedService] = useState(0);
@@ -200,6 +202,8 @@ const CrmServices = () => {
 
     return (
         <div className="crm-page-page">
+            <SEOHead pageKey="/crmServicesPage" />
+            <SchemaMarkup pageKey="/crmServicesPage" />
             <TopNavBar />
             <Navbar />
 

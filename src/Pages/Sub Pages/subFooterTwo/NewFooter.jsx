@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import './NewFooter.css';
 import ContactForm from '../../../Components/ContactForm/ContactForm';
 import Logo from '../../../assets/09.png'; // Import your logo

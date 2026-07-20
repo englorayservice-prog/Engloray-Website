@@ -50,6 +50,8 @@ import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import NewFooter from '../NewFooter/NewFooter';
+import SEOHead from '../../../seo/SEOHead';
+import SchemaMarkup from '../../../seo/SchemaMarkup';
 
 const OurTeamPage = () => {
     // const [projectIndex, setProjectIndex] = useState(0);
@@ -635,6 +637,8 @@ const OurTeamPage = () => {
                                             background: 'linear-gradient(135deg, #30040dff 0%, #a30f2d 100%)',
                                         }}
                                     >
+                                        <SEOHead pageKey="/ourTeamPage" />
+                                        <SchemaMarkup pageKey="/ourTeamPage" />
                                         <div className="otp-stack-card-header">
                                             <div
                                                 className="otp-stack-avatar"

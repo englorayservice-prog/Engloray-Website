@@ -5,7 +5,7 @@ import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import './SoftwareAppDev.css';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 import iphone14Img from '../../../assets/Service images/development services (2)-Photoroom.png';
 import sadDashboardImg from '../../../assets/erp_dashboard_analytics.png';
@@ -18,6 +18,8 @@ import avatarFive from '../../../assets/cartoon_male_2.png';
 import avatarSix from '../../../assets/cartoon_female_3.png';
 
 import mobileAppDev from '../../../assets/Service images/mobile development 1.jpg.jpeg';
+import SEOHead from '../../../seo/SEOHead';
+import SchemaMarkup from '../../../seo/SchemaMarkup';
 
 
 
@@ -178,6 +180,8 @@ const SoftwareAppDev = () => {
 
     return (
         <div className="sad-page">
+            <SEOHead pageKey="/softwareDevelopmentPage" />
+            <SchemaMarkup pageKey="/softwareDevelopmentPage" />
             <Helmet>
                 <title>Software & App Development | Engloray</title>
                 <meta name="description" content="Custom software solutions, mobile app development, and scalable web applications built with modern frameworks." />

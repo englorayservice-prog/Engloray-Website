@@ -56,12 +56,14 @@ import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import NavigationBar from '../../TechLearningSection/NavigationBar/NavigationBar';
 import SubFooterTwo from '../subFooterTwo/NewFooter';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import studentPurpleBG from '../../../assets/images/student_purple_bg.png';
 import studentYellowBG from '../../../assets/images/student_yellow_bg.png';
 import studentRedBG from '../../../assets/images/student_red_bg.png';
 import aiMachineImage from '../../../assets/aimachine.jpeg';
 import fullstackImage from '../../../assets/fullstack.jpeg';
+import SEOHead from '../../../seo/SEOHead';
+import SchemaMarkup from '../../../seo/SchemaMarkup';
 
 const MentorshipLearning = () => {
   const [showToast, setShowToast] = useState(false);
@@ -395,6 +397,8 @@ const MentorshipLearning = () => {
   return (
     <>
       <div>
+            <SEOHead pageKey="/mentorshipLearningPage" />
+            <SchemaMarkup pageKey="/mentorshipLearningPage" />
         <Helmet>
           <title>Engloray Mentorship</title>
           <meta name="description" content="Personalized mentorship with industry leaders to accelerate your career growth." />

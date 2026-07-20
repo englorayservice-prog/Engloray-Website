@@ -30,6 +30,8 @@ import avatarFive from '../../../assets/cartoon_male_2.png';
 import avatarSix from '../../../assets/cartoon_female_3.png';
 import avatarSeven from '../../../assets/cartoon_male_3.png';
 import avatarEight from '../../../assets/female_avatar.png';
+import SEOHead from '../../../seo/SEOHead';
+import SchemaMarkup from '../../../seo/SchemaMarkup';
 // import subFooterOne from '../subFooterOne/NewFooter1';
 
 
@@ -393,6 +395,8 @@ const BrandingAndIdentity = () => {
 
     return (
         <div className="bi-page">
+            <SEOHead pageKey="/brandingIdentityPage" />
+            <SchemaMarkup pageKey="/brandingIdentityPage" />
             <TopNavBar />
             <Navbar />
             {/* Hero Section Rebuild */}

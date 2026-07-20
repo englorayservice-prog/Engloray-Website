@@ -51,12 +51,10 @@
 /* Hero Section V3 - Premium Typography & Centered Image Assets */
 
 .gdc-hero-v3 {
-  min-height: 100vh;
   background-color: #f7f6f2;
   /* Creamy white background from reference */
-  padding: calc(120 * var(--gdc-fluid-scale)) 0 calc(80 * var(--gdc-fluid-scale));
+  padding: calc(50 * var(--gdc-fluid-scale)) 0 calc(40 * var(--gdc-fluid-scale));
   position: relative;
-  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -231,7 +229,7 @@
   gap: calc(35 * var(--gdc-fluid-scale));
   margin-top: calc(5 * var(--gdc-fluid-scale));
   position: relative;
-  height: calc(480 * var(--gdc-fluid-scale));
+  height: calc(380 * var(--gdc-fluid-scale));
   animation: gdc-fade-up 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) 0.2s backwards;
 }
 
@@ -547,8 +545,8 @@
 /* Marquee Styles - Restored for Section Flow */
 .gdc-v2-marquee-container {
   width: 100vw;
-  margin-top: calc(60 * var(--gdc-fluid-scale));
-  margin-bottom: calc(60 * var(--gdc-fluid-scale));
+  margin-top: calc(20 * var(--gdc-fluid-scale));
+  margin-bottom: calc(30 * var(--gdc-fluid-scale));
   position: relative;
   z-index: 10;
   overflow: hidden;
@@ -616,6 +614,7 @@
 .gdc-dark-bg {
   background: #1a1a1a;
   color: white;
+  padding-bottom: calc(20 * var(--gdc-fluid-scale));
 }
 
 .gdc-dark-enrollment {
@@ -751,8 +750,9 @@
 /* Course Outcomes - Numbered Grid Section */
 .gdc-outcomes-numbered {
   background-color: #ffffff;
-  padding: calc(60 * var(--gdc-fluid-scale)) 0;
+  padding: calc(40 * var(--gdc-fluid-scale)) 0 calc(60 * var(--gdc-fluid-scale)) 0;
   overflow: hidden;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .gdc-outcomes-header-row {
@@ -827,11 +827,12 @@
   flex-direction: column;
   width: 100%;
   transform: scale(1);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
 }
 
 .gdc-outcome-numbered-card.white-bg {
-  background: transparent;
-  border: 1px solid #000000;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .gdc-outcome-numbered-card.black-bg {
@@ -1065,7 +1066,7 @@
 /* --- Tools & Resources Redesign (V2 Interactive) --- */
 .gdc-tools-v2 {
   background: #ffffff;
-
+  padding-top: calc(40 * var(--gdc-fluid-scale));
   overflow: hidden;
 }
 
@@ -1092,7 +1093,7 @@
   gap: calc(60 * var(--gdc-fluid-scale));
   max-width: calc(1200 * var(--gdc-fluid-scale));
   margin: 0 auto;
-  margin-bottom: -100px;
+  margin-bottom: 0;
 }
 
 /* Sidebar Tabs */
@@ -1228,7 +1229,7 @@
 /* --- Overlapping Pods Display --- */
 .gdc-tools-main-display {
   flex: 1;
-  min-height: calc(450 * var(--gdc-fluid-scale));
+  min-height: calc(350 * var(--gdc-fluid-scale));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1596,8 +1597,9 @@
 
 /* Refined Vertical Slider - Stacked Effect & Horizontal Card Overlay */
 .gdc-curriculum-v2-section {
-  padding: calc(120 * var(--gdc-fluid-scale)) 0;
+  padding: calc(40 * var(--gdc-fluid-scale)) 0 calc(60 * var(--gdc-fluid-scale)) 0;
   background: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 @media (min-width: 1441px) {
@@ -2974,6 +2976,10 @@ section.gdc-tools-v2-section {
 }
 
 /* Certificate Template Section */
+.gdc-certificate-section {
+  padding: calc(80 * var(--gdc-fluid-scale)) 0;
+}
+
 .gdc-certificate-single {
   margin-top: calc(40 * var(--gdc-fluid-scale));
   display: grid;
@@ -2998,11 +3004,12 @@ section.gdc-tools-v2-section {
 .gdc-certificate-image {
   width: 100%;
   height: auto;
-  max-height: calc(400 * var(--gdc-fluid-scale));
+  max-height: calc(320 * var(--gdc-fluid-scale));
   object-fit: contain;
   transition: transform 0.5s ease;
   border-radius: calc(10 * var(--gdc-fluid-scale));
   box-shadow: 0 calc(10 * var(--gdc-fluid-scale)) calc(30 * var(--gdc-fluid-scale)) rgba(0, 0, 0, 0.2);
+  filter: blur(2px);
 }
 
 /* Certificate Lock Overlay - Simplified (No button, no click action) */
@@ -3635,7 +3642,7 @@ section.gdc-tools-v2-section {
 .gdc-v3-community-banner {
   position: relative;
   background-color: #ffffff;
-  padding: calc(120 * var(--gdc-fluid-scale)) 0 calc(20 * var(--gdc-fluid-scale));
+  padding: calc(40 * var(--gdc-fluid-scale)) 0 calc(20 * var(--gdc-fluid-scale));
   overflow: hidden;
   text-align: center;
   border-top: none;
@@ -3652,8 +3659,9 @@ section.gdc-tools-v2-section {
   z-index: 5;
   min-height: calc(400 * var(--gdc-fluid-scale));
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  padding-top: calc(50 * var(--gdc-fluid-scale));
 }
 
 .gdc-banner-content {
@@ -3909,7 +3917,7 @@ section.gdc-tools-v2-section {
 /* Positioning Rays & Trails */
 .gdc-ray-left-top {
   left: -6%;
-  top: -10%;
+  top: calc(-30 * var(--gdc-fluid-scale));
 }
 
 .gdc-ray-left-bottom {
@@ -3919,7 +3927,7 @@ section.gdc-tools-v2-section {
 
 .gdc-ray-right-top {
   right: -6%;
-  top: -10%;
+  top: calc(-30 * var(--gdc-fluid-scale));
 }
 
 .gdc-ray-right-bottom {
@@ -5062,8 +5070,9 @@ section.gdc-tools-v2-section {
 
 /* Program Benefits New Section - Re-designed following Reference Image */
 .gdc-intro-section {
-  padding: calc(60 * var(--gdc-fluid-scale)) 0;
+  padding: calc(60 * var(--gdc-fluid-scale)) 0 calc(30 * var(--gdc-fluid-scale)) 0;
   background: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 @media (min-width: 1441px) {
@@ -5137,7 +5146,7 @@ section.gdc-tools-v2-section {
   border: 1px solid #f2f2f2;
   border-radius: calc(20 * var(--gdc-fluid-scale));
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-  box-shadow: 0 2px calc(10 * var(--gdc-fluid-scale)) rgba(0, 0, 0, 0.02);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
   min-height: calc(100 * var(--gdc-fluid-scale));
   height: 100%;
   width: calc(350 * var(--gdc-fluid-scale));
@@ -5873,7 +5882,7 @@ section.gdc-tools-v2-section {
 
 /* --- Premium Testimonials Grid Section --- */
 .gdc-testi-grid-section {
-  padding: calc(100 * var(--gdc-fluid-scale)) 0 calc(40 * var(--gdc-fluid-scale));
+  padding: calc(20 * var(--gdc-fluid-scale)) 0 calc(40 * var(--gdc-fluid-scale));
   background-color: #fcfcfc;
 }
 
@@ -6195,7 +6204,7 @@ section.gdc-tools-v2-section {
 /* Spacing Adjustments for Benefits Section */
 .gdc-benefits-reimagined {
   padding-top: calc(20 * var(--gdc-fluid-scale)) !important;
-  padding-bottom: calc(100 * var(--gdc-fluid-scale));
+  padding-bottom: calc(40 * var(--gdc-fluid-scale));
   background-color: #faf9f6;
   position: relative;
   overflow: hidden;
@@ -6247,7 +6256,7 @@ section.gdc-tools-v2-section {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  box-shadow: 0 calc(4 * var(--gdc-fluid-scale)) calc(15 * var(--gdc-fluid-scale)) rgba(0, 0, 0, 0.03);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
   transition: all 0.3s ease;
   position: relative;
 }

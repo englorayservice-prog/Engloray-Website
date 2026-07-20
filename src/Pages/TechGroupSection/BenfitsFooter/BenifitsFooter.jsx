@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import {
     faRocket,
     faUserTie,

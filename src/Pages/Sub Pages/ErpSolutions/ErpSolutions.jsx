@@ -3,10 +3,12 @@ import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
 import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import './ErpSolutions.css';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 import iphone14Img from '../../../assets/Iphone14.png';
 import erpDashboardImg from '../../../assets/erp_dashboard_analytics.png';
+import SEOHead from '../../../seo/SEOHead';
+import SchemaMarkup from '../../../seo/SchemaMarkup';
 
 const ErpSolutions = () => {
     const [selectedService, setSelectedService] = useState(0);
@@ -141,6 +143,8 @@ const ErpSolutions = () => {
 
     return (
         <div className="erp-page">
+            <SEOHead pageKey="/erpSolutionsPage" />
+            <SchemaMarkup pageKey="/erpSolutionsPage" />
             <Helmet>
                 <title>ERP & CRM Solutions | Engloray</title>
                 <meta name="description" content="Streamline business operations with integrated ERP solutions and CRM systems." />

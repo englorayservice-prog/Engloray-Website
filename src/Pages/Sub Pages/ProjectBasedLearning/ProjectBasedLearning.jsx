@@ -67,7 +67,7 @@ import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import NavigationBar from '../../TechLearningSection/NavigationBar/NavigationBar';
 import SubFooterTwo from '../subFooterTwo/NewFooter';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import studentPurpleBG from '../../../assets/images/student_purple_bg.png';
 import studentYellowBG from '../../../assets/images/student_yellow_bg.png';
 import studentRedBG from '../../../assets/images/student_red_bg.png';
@@ -77,6 +77,8 @@ import socialImage from '../../../assets/social.jpeg';
 import aiAssistantImage from '../../../assets/aiassistant.jpeg';
 import healthcareImage from '../../../assets/erp_dashboard_analytics.png';
 import fintechImage from '../../../assets/crmbg.png';
+import SEOHead from '../../../seo/SEOHead';
+import SchemaMarkup from '../../../seo/SchemaMarkup';
 
 const ProjectBasedLearning = () => {
   const [showToast, setShowToast] = useState(false);
@@ -528,6 +530,8 @@ const ProjectBasedLearning = () => {
   return (
     <>
       <div>
+            <SEOHead pageKey="/projectBasedLearningPage" />
+            <SchemaMarkup pageKey="/projectBasedLearningPage" />
         <Helmet>
           <title>Engloray learning</title>
           <meta name="description" content="Learn by doing with industry-aligned projects concepts and professional application." />

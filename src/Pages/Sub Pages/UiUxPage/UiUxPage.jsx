@@ -18,6 +18,8 @@ import UiUxThree from '../../../assets/Service images/uiux/mobile app design.png
 
 
 import iphone14Img from '../../../assets/Service images/UIUx Design-Photoroom.png';
+import SEOHead from '../../../seo/SEOHead';
+import SchemaMarkup from '../../../seo/SchemaMarkup';
 
 // Removed missing premium_avatar local imports
 const UiUxDesignPage = () => {
@@ -127,6 +129,8 @@ const UiUxDesignPage = () => {
 
     return (
         <div className="uiux-page-wrapper-new">
+            <SEOHead pageKey="/UiUxPage" />
+            <SchemaMarkup pageKey="/UiUxPage" />
             <TopNavBar />
             <Navbar />
             {/* Hero Section Rebuild */}

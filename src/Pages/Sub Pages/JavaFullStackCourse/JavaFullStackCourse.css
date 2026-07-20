@@ -50,7 +50,7 @@
   min-height: 100vh;
   background-color: #f7f6f2;
   /* Creamy white background from reference */
-  padding: calc(120 * var(--jfs-fluid-scale)) 0 calc(80 * var(--jfs-fluid-scale));
+  padding: calc(60 * var(--jfs-fluid-scale)) 0 calc(20 * var(--jfs-fluid-scale));
   position: relative;
   overflow: hidden;
   display: flex;
@@ -795,6 +795,7 @@
   flex-direction: column;
   width: 100%;
   transform: scale(1);
+  box-shadow: 0 calc(6 * var(--jfs-fluid-scale)) calc(20 * var(--jfs-fluid-scale)) rgba(0, 0, 0, 0.12);
 }
 
 .jfs-dgm-outcome-numbered-card.white-bg {
@@ -908,7 +909,7 @@
 
 /* Section */
 .jfs-dgm-section {
-  padding: calc(60 * var(--jfs-fluid-scale)) 0;
+  padding: calc(60 * var(--jfs-fluid-scale)) 0 calc(20 * var(--jfs-fluid-scale));
 }
 
 /* Responsive */
@@ -1083,7 +1084,7 @@
   gap: calc(60 * var(--jfs-fluid-scale));
   max-width: calc(1200 * var(--jfs-fluid-scale));
   margin: 0 auto;
-  margin-bottom: -100px;
+  margin-bottom: calc(-180 * var(--jfs-fluid-scale));
 }
 
 /* Sidebar Tabs */
@@ -1557,7 +1558,7 @@
 
 /* Refined Vertical Slider - Stacked Effect & Horizontal Card Overlay */
 .jfs-curriculum-v2-section {
-  padding: calc(120 * var(--jfs-fluid-scale)) 0;
+  padding: calc(20 * var(--jfs-fluid-scale)) 0 calc(20 * var(--jfs-fluid-scale));
   background: #ffffff;
 }
 
@@ -2444,14 +2445,15 @@ section.jfs-tools-v2-section {
   height: auto;
   max-height: calc(400 * var(--jfs-fluid-scale));
   object-fit: contain;
-  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, filter 0.5s ease;
   border-radius: calc(10 * var(--jfs-fluid-scale));
   box-shadow: 0 calc(10 * var(--jfs-fluid-scale)) calc(30 * var(--jfs-fluid-scale)) rgba(0, 0, 0, 0.2);
+  filter: blur(2px);
 }
 
 /* Certificate Lock Overlay - Simplified (No button, no click action) */
 .jfs-certificate-lock-overlay {
-  position: absolute;
+  position: absolute; 
   top: 0;
   left: 0;
   width: 100%;
@@ -4507,7 +4509,7 @@ section.jfs-tools-v2-section {
 
 /* Program Benefits New Section - Re-designed following Reference Image */
 .jfs-intro-section {
-  padding: calc(60 * var(--jfs-fluid-scale)) 0;
+  padding: calc(60 * var(--jfs-fluid-scale)) 0 calc(10 * var(--jfs-fluid-scale));
   background: #ffffff;
 }
 
@@ -4582,7 +4584,7 @@ section.jfs-tools-v2-section {
   border: 1px solid #f2f2f2;
   border-radius: calc(20 * var(--jfs-fluid-scale));
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-  box-shadow: 0 2px calc(10 * var(--jfs-fluid-scale)) rgba(0, 0, 0, 0.02);
+  box-shadow: 0 calc(6 * var(--jfs-fluid-scale)) calc(20 * var(--jfs-fluid-scale)) rgba(0, 0, 0, 0.12);
   min-height: calc(100 * var(--jfs-fluid-scale));
   height: 100%;
   width: calc(350 * var(--jfs-fluid-scale));
@@ -5151,7 +5153,7 @@ section.jfs-tools-v2-section {
 
 /* --- Premium Testimonials Grid Section --- */
 .jfs-testi-grid-section {
-  padding: calc(100 * var(--jfs-fluid-scale)) 0 calc(40 * var(--jfs-fluid-scale));
+  padding: calc(40 * var(--jfs-fluid-scale)) 0 calc(40 * var(--jfs-fluid-scale));
   background-color: #fcfcfc;
 }
 
@@ -5472,7 +5474,7 @@ section.jfs-tools-v2-section {
 
 /* Spacing Adjustments for Benefits Section */
 .jfs-dgm-benefits-reimagined {
-  padding-top: calc(20 * var(--jfs-fluid-scale)) !important;
+  padding-top: 0 !important;
   padding-bottom: calc(100 * var(--jfs-fluid-scale));
   background-color: #faf9f6;
   position: relative;
@@ -5482,7 +5484,7 @@ section.jfs-tools-v2-section {
 .jfs-dgm-benefits-header {
   text-align: center;
   max-width: calc(1200 * var(--jfs-fluid-scale));
-  margin: calc(40 * var(--jfs-fluid-scale)) auto calc(60 * var(--jfs-fluid-scale));
+  margin: 0 auto calc(60 * var(--jfs-fluid-scale));
   position: relative;
   z-index: 2;
 }
@@ -5525,7 +5527,7 @@ section.jfs-tools-v2-section {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  box-shadow: 0 calc(4 * var(--jfs-fluid-scale)) calc(15 * var(--jfs-fluid-scale)) rgba(0, 0, 0, 0.03);
+  box-shadow: 0 calc(6 * var(--jfs-fluid-scale)) calc(20 * var(--jfs-fluid-scale)) rgba(0, 0, 0, 0.12);
   transition: all 0.3s ease;
   position: relative;
 }

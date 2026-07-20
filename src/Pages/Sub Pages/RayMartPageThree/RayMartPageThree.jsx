@@ -76,6 +76,8 @@ import devOne from '../../../assets/WEBSITE_IMAGES/development/1.png';
 import ecomOne from '../../../assets/WEBSITE_IMAGES/service 4, e commerce development/1.png';
 import appOne from '../../../assets/WEBSITE_IMAGES/service 5, app development/1.png';
 import bgUserBase from '../../../assets/bg_user_base.png';
+import SEOHead from '../../../seo/SEOHead';
+import SchemaMarkup from '../../../seo/SchemaMarkup';
 
 
 const RayMartPageThree = () => {
@@ -172,6 +174,8 @@ const RayMartPageThree = () => {
 
   return (
     <div className="rm3-page-container">
+            <SEOHead pageKey="/raymartPageThree" />
+            <SchemaMarkup pageKey="/raymartPageThree" />
       <TopNavBar />
       <div className='rm3-pagethree'>
         <RayMartNavbar />

@@ -104,7 +104,9 @@ import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import Navbar from '../../../Components/Navbar/Navbar';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
 import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
+import SEOHead from '../../../seo/SEOHead';
+import SchemaMarkup from '../../../seo/SchemaMarkup';
 
 const pathFive = null;
 const pathSix = null;
@@ -1930,6 +1932,8 @@ const TrainingMentorInternPage = () => {
 
                                         return (
                                             <div key={`${testimonial.id || index}-${index}`} className={`TM-dt-card TM-dt-card-${cardClassIndex}`}>
+                                                <SEOHead pageKey="/trainingMentorInternPage" />
+                                                <SchemaMarkup pageKey="/trainingMentorInternPage" />
                                                 <div className="TM-dt-card-img-wrapper">
                                                     <img
                                                         src={photoUrl}

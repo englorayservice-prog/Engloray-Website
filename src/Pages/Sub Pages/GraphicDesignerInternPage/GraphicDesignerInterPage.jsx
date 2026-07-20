@@ -98,7 +98,9 @@ import Navbar from '../../../Components/Navbar/Navbar';
 import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 import BenefitsFooter from '../../TechGroupSection/BenfitsFooter/BenifitsFooter';
 import BackToTop from '../../../Components/BackToTop/BackToTop';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
+import SEOHead from '../../../seo/SEOHead';
+import SchemaMarkup from '../../../seo/SchemaMarkup';
 
 const GraphicDesignerInternPage = () => {
     const [activeSection, setActiveSection] = useState('home');
@@ -790,6 +792,8 @@ const GraphicDesignerInternPage = () => {
 
     return (
         <div>
+            <SEOHead pageKey="/GraphicDesignerInternPage" />
+            <SchemaMarkup pageKey="/GraphicDesignerInternPage" />
 
             <TopNavBar />
             <Navbar excludeItems={['works']} />

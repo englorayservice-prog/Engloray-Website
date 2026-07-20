@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import './Navbar.css';
 import Logo from '../../assets/18.png'
 import SearchBar from '../SearchBar/SearchBar';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { Home, Briefcase, Layers, Users, GraduationCap, Phone, ChevronDown } from 'lucide-react';
 
 const menuItems = [
