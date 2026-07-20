@@ -1,23 +1,24 @@
 /* Back to Top Arrow Component - AI Assistant pill style */
 .back-to-top-arrow {
   position: fixed;
-  bottom: 30px;
+  bottom: 80px;
   left: 30px;
+  width: 52px;
   height: 52px;
-  padding: 0 20px 0 14px;
+  padding: 0;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
   background: #0a0a0a;
   border: 1.5px solid rgba(16, 185, 129, 0.35);
-  border-radius: 999px;
+  border-radius: 50%;
   cursor: pointer;
   color: #10b981;
   box-shadow: 0 4px 20px rgba(16, 185, 129, 0.2), 0 0 0 1px rgba(16, 185, 129, 0.08) inset;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   opacity: 0;
   transform: translateY(20px) scale(0.85);
-  z-index: 9999;
+  z-index: 2147483647 !important;
   font-family: 'Inter', 'Poppins', sans-serif;
   overflow: hidden;
   white-space: nowrap;
@@ -45,17 +46,6 @@
   flex-shrink: 0;
   border: 1px solid rgba(16, 185, 129, 0.25);
   transition: all 0.3s ease;
-}
-
-/* Label text */
-.back-to-top-arrow::after {
-  content: 'Back to Top';
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.88);
-  letter-spacing: 0.02em;
-  position: relative;
-  z-index: 2;
 }
 
 /* Glowing sweep effect */
@@ -137,11 +127,10 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .back-to-top-arrow {
-    bottom: 20px;
+    bottom: 60px;
     left: 20px;
+    width: 46px;
     height: 46px;
-    padding: 0 16px 0 10px;
-    gap: 8px;
   }
 
   .back-to-top-icon {
@@ -149,28 +138,20 @@
     height: 30px;
     font-size: 0.9rem;
   }
-
-  .back-to-top-arrow::after {
-    font-size: 0.76rem;
-  }
 }
 
 @media (max-width: 480px) {
   .back-to-top-arrow {
-    bottom: 15px;
+    bottom: 50px;
     left: 15px;
+    width: 42px;
     height: 42px;
-    padding: 0 14px 0 10px;
   }
 
   .back-to-top-icon {
     width: 28px;
     height: 28px;
     font-size: 0.85rem;
-  }
-
-  .back-to-top-arrow::after {
-    display: none;
   }
 }
 
@@ -197,4 +178,3 @@
     animation: none;
   }
 }
-

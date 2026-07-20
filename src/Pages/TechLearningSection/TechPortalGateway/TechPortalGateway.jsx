@@ -1,5 +1,4 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import './TechPortalGateway.css';
 
@@ -38,13 +37,6 @@ const cardVariants = {
 };
 
 const TechPortalGateway = () => {
-    const navigate = useNavigate();
-
-    const handleNavigate = () => {
-        window.scrollTo(0, 0);
-        navigate('/admissionPortal');
-    };
-
     return (
         <section className="tech-portal-gateway-section">
             <div className="portal-gateway-grid-bg" />
@@ -90,7 +82,6 @@ const TechPortalGateway = () => {
 
                     <motion.button
                         className="portal-cta-button"
-                        onClick={handleNavigate}
                         whileHover={{ scale: 1.03 }}
                         whileTap={{ scale: 0.97 }}
                         initial={{ opacity: 0, y: 15 }}

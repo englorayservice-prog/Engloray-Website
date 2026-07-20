@@ -65,7 +65,24 @@ const About = () => {
         scrollTrigger: { trigger: '.visual-grid', ...triggerDefaults }
       });
 
-      // -- Stats (Number Counter Animation) --
+      // -- Stats Items Reveal --
+      gsap.fromTo('.about-stats .stat-item', {
+        opacity: 0,
+        y: 30
+      }, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power3.out',
+        stagger: 0.12,
+        scrollTrigger: {
+          trigger: '.about-stats',
+          start: 'top 90%',
+          toggleActions: 'play none none reverse'
+        }
+      });
+
+      // -- Stats Number Counter Animation --
       const counters = gsap.utils.toArray('.counter-value');
       
       counters.forEach(counter => {
@@ -79,7 +96,7 @@ const About = () => {
           duration: 2.5,
           ease: "power2.out",
           scrollTrigger: {
-            trigger: '.service-stat',
+            trigger: '.about-stats',
             start: "top 85%",
             toggleActions: "play none none reverse"
           },
@@ -104,21 +121,23 @@ const About = () => {
 
       <div className="about-container">
         <div className="about-header">
-          <span className="title-accent">ABOUT ENGLORAY</span>
-          <h2 className="about-title">
-            Empowering businesses <br /> through technology & education
-          </h2>
-          <p className="about-subtitle">
-            Engloray is a dynamic technology and education group that bridges the gap between business innovation and learning excellence through comprehensive digital solutions.
-          </p>
-          <button className="get-started-btn">
-            Get Started
-            <span className="btn-icon">
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 13L13 1M13 1H5M13 1V9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </span>
-          </button>
+          <div className="about-header-content">
+            <span className="title-accent">ABOUT ENGLORAY</span>
+            <h2 className="about-title">
+              Empowering businesses <br /> through technology & education
+            </h2>
+            <p className="about-subtitle">
+              Engloray is a dynamic technology and education group that bridges the gap between business innovation and learning excellence through comprehensive digital solutions.
+            </p>
+            <button className="get-started-btn">
+              Get Started
+              <span className="btn-icon">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 13L13 1M13 1H5M13 1V9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </span>
+            </button>
+          </div>
         </div>
 
         <div className="about-content">
@@ -136,161 +155,87 @@ const About = () => {
                 <span className="service-pill">Ideation & Concepting</span>
                 <span className="service-pill">Digital Transformation</span>
                 <span className="service-pill">Customer Experience</span>
-
-                <div className="service-stat">
-                  <h4 className="counter-value" data-target="230" data-suffix="+">0+</h4>
-                  <p>Projects Completed</p>
-                  <h4 className="counter-value" data-target="170" data-suffix="+">0+</h4>
-                  <p>Happy Clients</p>
-                  <h4 className="counter-value" data-target="1.7" data-decimal="true" data-suffix="k">0k</h4>
-                  <p>Learners Trained</p>
-                  <h4 className="counter-value" data-target="20" data-suffix="+">0+</h4>
-                  <p>Industries Served</p>
-                </div>
               </div>
+
               <div className="visual-container">
                 <h4 className="visual-title">Our Expertise</h4>
                 <div className="visual-grid">
-                  <div className="visual-item">
-                    <span>Digital Innovation</span>
-                  </div>
-                  <div className="visual-item">
-                    <span>Learning Solutions</span>
-                  </div>
-                  <div className="visual-item">
-                    <span>Business Growth</span>
-                  </div>
-                  <div className="visual-item">
-                    <span>Technology Stack</span>
-                  </div>
-                  <div className="visual-item">
-                    <span>Customer-Centric Approach</span>
-                  </div>
-                  <div className="visual-item">
-                    <span>Quality & Security</span>
-                  </div>
-                  <div className="visual-item">
-                    <span>Automation & Workflow Optimization</span>
-                  </div>
-                  <div className="visual-item">
-                    <span>Support & Continuous Improvement</span>
-                  </div>
-                  <div className="visual-item">
-                    <span>Digital Transformation Strategy</span>
-                  </div>
-                  <div className="visual-item">
-                    <span>IT Consulting & Tech Support</span>
-                  </div>
+                  <div className="visual-item"><span>Digital Innovation</span></div>
+                  <div className="visual-item"><span>Learning Solutions</span></div>
+                  <div className="visual-item"><span>Business Growth</span></div>
+                  <div className="visual-item"><span>Technology Stack</span></div>
+                  <div className="visual-item"><span>Customer-Centric Approach</span></div>
+                  <div className="visual-item"><span>Quality & Security</span></div>
+                  <div className="visual-item"><span>Automation & Workflow Optimization</span></div>
+                  <div className="visual-item"><span>Support & Continuous Improvement</span></div>
+                  <div className="visual-item"><span>Digital Transformation Strategy</span></div>
+                  <div className="visual-item"><span>IT Consulting & Tech Support</span></div>
                 </div>
               </div>
+
+              {/* feature cards sit below the "Our Expertise" box */}
             </div>
 
-            <div className="about-features">
-              <div className="technology-card">
-                <div className="feature-card-header">
-                  <div className="feature-icon-container">
-                    <FaCode />
+            {/* Two-column layout: Stats on left, Features on right */}
+            <div className="about-footer-section">
+              {/* Left: Stats Section */}
+              <div className="about-stats-column">
+                <div className="about-stats">
+                  <div className="stat-item">
+                    <h4 className="counter-value" data-target="230" data-suffix="+">0</h4>
+                    <p>Projects Completed</p>
                   </div>
-                  <h3>Enterprise Technology</h3>
+                  <div className="stat-item">
+                    <h4 className="counter-value" data-target="170" data-suffix="+">0</h4>
+                    <p>Happy Clients</p>
+                  </div>
+                  <div className="stat-item">
+                    <h4 className="counter-value" data-target="1.7" data-decimal="true" data-suffix="k">0</h4>
+                    <p>Learners Trained</p>
+                  </div>
+                  <div className="stat-item">
+                    <h4 className="counter-value" data-target="20" data-suffix="+">0</h4>
+                    <p>Industries Served</p>
+                  </div>
                 </div>
-                <p>
-                  Drive innovation with bespoke software engineering and AI-driven transformation.
-                  Our enterprise solutions focus on architectural excellence, cloud scalability,
-                  and seamless integration of emerging tech into your core operations for
-                  unmatched competitive advantage.Empowering your business with future-ready digital ecosystems that evolve with market demands.
-                </p>
               </div>
 
-              <div className="about-mission-card">
-                <div className="feature-card-header">
-                  <div className="feature-icon-container">
-                    <FaLightbulb />
+              {/* Right: Feature Cards */}
+              <div className="about-features-column">
+                <div className="about-features">
+                  <div className="technology-card">
+                    <div className="feature-card-header">
+                      <div className="feature-icon-container"><FaCode /></div>
+                      <h3>Enterprise Technology</h3>
+                    </div>
+                    <p>
+                      Drive innovation with bespoke software engineering and AI-driven transformation.
+                      Our enterprise solutions focus on architectural excellence, cloud scalability,
+                      and seamless integration of emerging tech into your core operations for
+                      unmatched competitive advantage. Empowering your business with future-ready digital ecosystems that evolve with market demands.
+                    </p>
                   </div>
-                  <h3>Empowering Growth</h3>
-                </div>
-                <p className="about-mission">
-                  We combine innovative technology with
-                  educational expertise to drive measurable
-                  growth and transformation
-                </p>
-              </div>
 
-              <div className="education-card">
-                <div className="feature-card-header">
-                  <div className="feature-icon-container">
-                    <FaUserGraduate />
+                  <div className="about-mission-card">
+                    <div className="feature-card-header">
+                      <div className="feature-icon-container"><FaLightbulb /></div>
+                      <h3>Empowering Growth</h3>
+                    </div>
+                    <p className="about-mission">We combine innovative technology with educational expertise to drive measurable growth and transformation.</p>
                   </div>
-                  <h3>Learning Platforms</h3>
+
+                  <div className="education-card">
+                    <div className="feature-card-header">
+                      <div className="feature-icon-container"><FaUserGraduate /></div>
+                      <h3>Learning Platforms</h3>
+                    </div>
+                    <p>Comprehensive educational solutions that empower organizations and individuals with future-ready skills.</p>
+                  </div>
                 </div>
-                <p>Comprehensive educational solutions that empower organizations and individuals with future-ready skills.</p>
               </div>
             </div>
           </div>
-
-          {/* <div className="about-visual">
-            <div className="visual-container">
-              <h4 className="visual-title">Our Expertise</h4>
-              <div className="visual-grid">
-                <div className="visual-item">
-                  <span>Digital Innovation</span>
-                </div>
-                <div className="visual-item">
-                  <span>Learning Solutions</span>
-                </div>
-                <div className="visual-item">
-                  <span>Business Growth</span>
-                </div>
-                <div className="visual-item">
-                  <span>Technology Stack</span>
-                </div>
-                <div className="visual-item">
-                  <span>Customer-Centric Approach</span>
-                </div>
-                <div className="visual-item">
-                  <span>Quality & Security</span>
-                </div>
-                <div className="visual-item">
-                  <span>Automation & Workflow Optimization</span>
-                </div>
-                <div className="visual-item">
-                  <span>Support & Continuous Improvement</span>
-                </div>
-                <div className="visual-item">
-                  <span>Digital Transformation Strategy</span>
-                </div>
-                <div className="visual-item">
-                  <span>IT Consulting & Tech Support</span>
-                </div>
-              </div>
-            </div>
-          </div> */}
         </div>
-
-        {/* Stats Section - Now with continuous floating animation */}
-        {/* <div className="about-stats">
-          <div className="stat-item">
-            {/* Icon Removed */}
-        {/* <h4>230+</h4>
-            <p>Projects Completed</p>
-          </div>
-          <div className="stat-item"> */}
-        {/* Icon Removed */}
-        {/* <h4>170+</h4>
-            <p>Happy Clients</p>
-          </div>
-          <div className="stat-item"> */}
-        {/* <div className="stat-icon">🤝</div> */}
-        {/* Icon Removed */}
-        {/* <h4>1.7k</h4>
-            <p>Learners Trained</p>
-          </div>
-          <div className="stat-item"> */}
-        {/* <div className="stat-icon">⭐</div> */}
-        {/* Icon Removed */}
-        {/* <h4>20+</h4>
-            <p>Industries Served</p>
-          </div>
-        </div> */}
       </div>
     </div>
   );

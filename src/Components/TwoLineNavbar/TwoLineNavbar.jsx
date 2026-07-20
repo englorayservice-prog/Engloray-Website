@@ -1,5 +1,6 @@
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useLayoutEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import './TwoLineNavbar.css';
@@ -16,6 +17,8 @@ const TwoLineNavbar = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const navRef = useRef(null);
+    const itemRefs = useRef({});
+    const dropdownCloseTimer = useRef(null);
 
     // Define menu data with dropdowns only
     const menuData = [
@@ -251,51 +254,6 @@ const TwoLineNavbar = () => {
     };
 
     // Adjust dropdown positions dynamically
-    const adjustDropdownPositions = () => {
-        if (typeof window === 'undefined') return;
-
-        const dropdowns = document.querySelectorAll('.tlnbn-mega-dropdown');
-        const viewportWidth = window.innerWidth;
-
-        dropdowns.forEach((dropdown) => {
-            if (!dropdown.parentElement) return;
-
-            const parentRect = dropdown.parentElement.getBoundingClientRect();
-            const dropdownWidth = dropdown.offsetWidth;
-
-            const navItem = dropdown.parentElement;
-            const isFirst = navItem.classList.contains('tlnbn-first-item');
-            const isLast = navItem.classList.contains('tlnbn-last-item');
-
-            if (isFirst) {
-                dropdown.style.left = '0';
-                dropdown.style.right = 'auto';
-                dropdown.style.transform = 'none';
-            } else if (isLast) {
-                dropdown.style.left = 'auto';
-                dropdown.style.right = '0';
-                dropdown.style.transform = 'none';
-            } else {
-                const centeredLeft = parentRect.left + (parentRect.width / 2) - (dropdownWidth / 2);
-                const centeredRight = centeredLeft + dropdownWidth;
-
-                if (centeredLeft < 10) {
-                    dropdown.style.left = '10px';
-                    dropdown.style.right = 'auto';
-                    dropdown.style.transform = 'none';
-                } else if (centeredRight > viewportWidth - 10) {
-                    dropdown.style.left = 'auto';
-                    dropdown.style.right = '10px';
-                    dropdown.style.transform = 'none';
-                } else {
-                    dropdown.style.left = '50%';
-                    dropdown.style.right = 'auto';
-                    dropdown.style.transform = 'translateX(-50%)';
-                }
-            }
-        });
-    };
-
     useEffect(() => {
         const controlNavbar = () => {
             if (window.scrollY > lastScrollY && window.scrollY > 100) {
@@ -308,12 +266,8 @@ const TwoLineNavbar = () => {
 
         window.addEventListener('scroll', controlNavbar);
 
-        window.addEventListener('resize', adjustDropdownPositions);
-        adjustDropdownPositions();
-
         return () => {
             window.removeEventListener('scroll', controlNavbar);
-            window.removeEventListener('resize', adjustDropdownPositions);
         };
     }, [lastScrollY]);
 
@@ -338,12 +292,6 @@ const TwoLineNavbar = () => {
         }
     }, [location]);
 
-    useEffect(() => {
-        if (activeMenu) {
-            setTimeout(adjustDropdownPositions, 10);
-        }
-    }, [activeMenu]);
-
     const toggleMobileMenu = () => {
         const newState = !isMobileMenuOpen;
         setIsMobileMenuOpen(newState);
@@ -364,16 +312,118 @@ const TwoLineNavbar = () => {
     };
 
     const handleMenuHover = (menuId) => {
+        if (dropdownCloseTimer.current) {
+            clearTimeout(dropdownCloseTimer.current);
+            dropdownCloseTimer.current = null;
+        }
         setActiveMenu(menuId);
     };
 
     const handleMenuLeave = () => {
-        setActiveMenu(null);
+        if (dropdownCloseTimer.current) {
+            clearTimeout(dropdownCloseTimer.current);
+        }
+        dropdownCloseTimer.current = setTimeout(() => {
+            setActiveMenu(null);
+            dropdownCloseTimer.current = null;
+        }, 300);
     };
+
+    useEffect(() => {
+        return () => {
+            if (dropdownCloseTimer.current) {
+                clearTimeout(dropdownCloseTimer.current);
+            }
+        };
+    }, []);
 
     const toggleMobileDropdown = (menuId) => {
         setActiveMobileMenu(activeMobileMenu === menuId ? null : menuId);
     };
+
+    // Portal dropdown component defined inside so it can access styles and handlers easily
+    function PortalDropdown({ menu, visible, parentEl, onItemClick, onMouseEnter, onMouseLeave }) {
+        const [pos, setPos] = useState({ left: 0, top: 0, width: 0 });
+
+        useLayoutEffect(() => {
+            const update = () => {
+                const parent = parentEl && parentEl();
+                if (!parent) return false;
+                const rect = parent.getBoundingClientRect();
+                const maxWidth = Math.min(window.innerWidth - 40, 420);
+                const preferredWidth = Math.max(rect.width + 20, 280);
+                const dropdownWidth = Math.min(preferredWidth, maxWidth);
+                let left = rect.left;
+                if (left < 10) left = 10;
+                if (left + dropdownWidth > window.innerWidth - 10) left = window.innerWidth - dropdownWidth - 10;
+                const top = rect.bottom + 8 + window.scrollY;
+                setPos({ left, top, width: dropdownWidth });
+                return true;
+            };
+
+            let retryFrame = null;
+            if (visible) {
+                if (!update()) {
+                    retryFrame = window.requestAnimationFrame(update);
+                }
+            }
+
+            window.addEventListener('resize', update);
+            window.addEventListener('scroll', update);
+            return () => {
+                if (retryFrame) {
+                    window.cancelAnimationFrame(retryFrame);
+                }
+                window.removeEventListener('resize', update);
+                window.removeEventListener('scroll', update);
+            };
+        }, [visible, parentEl]);
+
+        if (!visible) return null;
+
+        const el = (
+            <div
+                className={`tlnbn-mega-dropdown tlnbn-visible`}
+                onMouseEnter={onMouseEnter}
+                onMouseLeave={onMouseLeave}
+                style={{
+                    position: 'absolute',
+                    left: pos.left + 'px',
+                    top: pos.top + 'px',
+                    width: pos.width + 'px',
+                    maxWidth: 'calc(100vw - 40px)'
+                }}
+            >
+                <div className="tlnbn-dropdown-content">
+                    <h3>{menu.dropdown.title}</h3>
+                    <div className="tlnbn-dropdown-grid">
+                        {menu.dropdown.items.map((item, index) => (
+                            <div
+                                key={item.id || index}
+                                className="tlnbn-dropdown-item"
+                                onClick={() => onItemClick(item)}
+                                role="button"
+                                tabIndex={0}
+                                onKeyDown={(e) => {
+                                    if (e.key === 'Enter' || e.key === ' ') {
+                                        onItemClick(item);
+                                    }
+                                }}
+                            >
+                                {item.icon && <div className="tlnbn-item-icon">{item.icon}</div>}
+                                <div className="tlnbn-item-text">
+                                    <div className="tlnbn-item-title">{item.name}</div>
+                                    <div className="tlnbn-item-desc">{item.desc}</div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        );
+
+        return createPortal(el, document.body);
+    }
 
     // Handle mobile menu item click
     const handleMobileMenuItemClick = (menu) => {
@@ -434,6 +484,7 @@ const TwoLineNavbar = () => {
                                         >
                                             <div
                                                 className="tlnbn-nav-link"
+                                                ref={el => itemRefs.current[menu.id] = el}
                                                 onClick={(e) => handleMenuItemClick(menu, e)}
                                                 role="button"
                                                 tabIndex={0}
@@ -448,35 +499,7 @@ const TwoLineNavbar = () => {
                                                 {menu.dropdown && <span className="tlnbn-arrow">⌄</span>}
                                             </div>
 
-                                            {menu.dropdown && (
-                                                <div className={`tlnbn-mega-dropdown ${activeMenu === menu.id ? 'tlnbn-visible' : ''}`}>
-                                                    <div className="tlnbn-dropdown-content">
-                                                        <h3>{menu.dropdown.title}</h3>
-                                                        <div className="tlnbn-dropdown-grid">
-                                                            {menu.dropdown.items.map((item, index) => (
-                                                                <div
-                                                                    key={item.id || index}
-                                                                    className="tlnbn-dropdown-item"
-                                                                    onClick={() => handleDropdownItemClick(item)}
-                                                                    role="button"
-                                                                    tabIndex={0}
-                                                                    onKeyDown={(e) => {
-                                                                        if (e.key === 'Enter' || e.key === ' ') {
-                                                                            handleDropdownItemClick(item);
-                                                                        }
-                                                                    }}
-                                                                >
-                                                                    {item.icon && <div className="tlnbn-item-icon">{item.icon}</div>}
-                                                                    <div className="tlnbn-item-text">
-                                                                        <div className="tlnbn-item-title">{item.name}</div>
-                                                                        <div className="tlnbn-item-desc">{item.desc}</div>
-                                                                    </div>
-                                                                </div>
-                                                            ))}
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            )}
+                                                    {/* Dropdowns are rendered into a portal below to avoid stacking context clipping */}
                                         </li>
                                     );
                                 })}
@@ -489,6 +512,21 @@ const TwoLineNavbar = () => {
                                     </button>
                                 </li>
                             </ul>
+
+                            {/* Portal-mounted dropdowns to escape local stacking contexts */}
+                            {menuData.map((menu) => (
+                                menu.dropdown ? (
+                                    <PortalDropdown
+                                        key={`portal-${menu.id}`}
+                                        menu={menu}
+                                        visible={activeMenu === menu.id}
+                                        parentEl={() => itemRefs.current[menu.id]}
+                                        onItemClick={handleDropdownItemClick}
+                                        onMouseEnter={() => handleMenuHover(menu.id)}
+                                        onMouseLeave={handleMenuLeave}
+                                    />
+                                ) : null
+                            ))}
 
                             {/* 3. Action Buttons */}
                             <div className="tlnbn-action-buttons">

@@ -5,6 +5,7 @@ import { FaBars, FaTimes, FaRocket } from 'react-icons/fa';
 export const Navbar = ({ onOpenApply }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const [hoveredSection, setHoveredSection] = useState(null);
 
   const menuItems = [
     { label: 'Home',        id: 'home' },
@@ -49,38 +50,34 @@ export const Navbar = ({ onOpenApply }) => {
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-1">
-          {menuItems.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => handleScrollTo(item.id)}
-              style={{
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
-                fontWeight: 600,
-                fontSize: '0.875rem',
-                color: activeSection === item.id ? '#6C4CF1' : '#4B5563',
-                background: activeSection === item.id ? 'rgba(108, 76, 241, 0.08)' : 'transparent',
-                border: 'none',
-                padding: '8px 16px',
-                borderRadius: '100px',
-                cursor: 'pointer',
-                transition: 'all 0.2s ease',
-              }}
-              onMouseEnter={e => {
-                if (activeSection !== item.id) {
-                  e.currentTarget.style.color = '#6C4CF1';
-                  e.currentTarget.style.background = 'rgba(108, 76, 241, 0.06)';
-                }
-              }}
-              onMouseLeave={e => {
-                if (activeSection !== item.id) {
-                  e.currentTarget.style.color = '#4B5563';
-                  e.currentTarget.style.background = 'transparent';
-                }
-              }}
-            >
-              {item.label}
-            </button>
-          ))}
+          {menuItems.map((item) => {
+            const isActive = activeSection === item.id;
+            const isHovered = hoveredSection === item.id;
+            const isHighlighted = isHovered || (!hoveredSection && isActive);
+
+            return (
+              <button
+                key={item.id}
+                onClick={() => handleScrollTo(item.id)}
+                style={{
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  fontWeight: 600,
+                  fontSize: '0.875rem',
+                  color: isHighlighted ? '#6C4CF1' : '#4B5563',
+                  background: isHighlighted ? 'rgba(108, 76, 241, 0.08)' : 'transparent',
+                  border: 'none',
+                  padding: '8px 16px',
+                  borderRadius: '100px',
+                  cursor: 'pointer',
+                  transition: 'background-color 0.15s ease, color 0.15s ease',
+                }}
+                onMouseEnter={() => setHoveredSection(item.id)}
+                onMouseLeave={() => setHoveredSection(null)}
+              >
+                {item.label}
+              </button>
+            );
+          })}
         </nav>
 
         {/* Desktop CTA */}

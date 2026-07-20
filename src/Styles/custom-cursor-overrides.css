@@ -1,8 +1,53 @@
-/* Neutralize embedded cursor images so React CustomCursor is used site-wide */
-html, body, a, button, select, input, textarea, [role=button], .cursor-pointer {
-  cursor: auto !important;
+/* Neutralize all native cursors globally so React CustomCursor is used site-wide on desktop */
+*,
+*::before,
+*::after,
+*:hover,
+*:active,
+*:focus,
+*:focus-within,
+*:focus-visible,
+html,
+body,
+html body,
+html body *,
+html body *::before,
+html body *::after,
+html body *:hover,
+html body *:active,
+html body *:focus,
+html body *:focus-within,
+html body *:focus-visible,
+a,
+button,
+select,
+input,
+textarea,
+[role="button"],
+.cursor-pointer,
+[style*="cursor"] {
+  cursor: none !important;
 }
 
-.no-native-cursor * {
-  cursor: none !important;
+/* Restore native cursor on touch screens (coarse pointers like mobile/tablet) */
+@media (pointer: coarse) {
+  *,
+  *::before,
+  *::after,
+  *:hover,
+  *:active,
+  *:focus,
+  *:focus-within,
+  *:focus-visible,
+  html,
+  body,
+  a,
+  button,
+  select,
+  input,
+  textarea,
+  [role="button"],
+  .cursor-pointer {
+    cursor: auto !important;
+  }
 }

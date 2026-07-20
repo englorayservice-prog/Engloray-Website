@@ -3,10 +3,16 @@
   position: fixed;
   bottom: 30px;
   right: 30px;
-  z-index: 9999; /* Ensure it floats above everything */
+  z-index: 999999; /* Ensure it floats above everything, including page-level overlays */
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  isolation: isolate; /* Give the widget its own stacking context */
+  pointer-events: none; /* Container itself is inert; interactive children opt back in below */
+}
+
+.engloray-chatbot-container > * {
+  pointer-events: auto;
 }
 
 /* Floating Action Button */
@@ -43,7 +49,9 @@
   bottom: 80px; /* Space above FAB */
   right: 0;
   width: 360px;
+  max-width: calc(100vw - 40px); /* Never exceed the viewport, on any device */
   height: 520px;
+  max-height: calc(100vh - 140px); /* Never exceed the viewport vertically either */
   background: #ffffff;
   border-radius: 20px;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05);

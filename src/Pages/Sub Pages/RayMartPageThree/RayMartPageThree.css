@@ -29,7 +29,7 @@
   align-items: center;
   gap: 40px;
   padding: 20px 0;
-  max-width: 1400px;
+  max-width: 1600px;
   margin: 0 auto;
   width: 100%;
 }
@@ -118,14 +118,14 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
-  max-width: 1400px;
+  max-width: 1600px;
   margin: 0 auto;
   width: 100%;
-  gap: 30px;
+  gap: 90px;
 }
 
 .rm3-bottom-card {
-  width: 330px;
+  width: 400px;
   height: 210px;
   border-radius: 24px;
   padding: 30px;
@@ -1715,11 +1715,11 @@
   flex-direction: column;
   color: #fff;
   /* Tight integration with minimized gap */
-  margin-left: -175px;
+  margin-left: -125px;
   margin-top: 5px;
-  width: 120%;
+  width: 115%;
   z-index: 10;
-  box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 10px 0px 30px rgba(0, 0, 0, 0.15);
 }
 
 .rm3-hl-quote {
@@ -1826,6 +1826,8 @@
   font-size: 2rem;
   color: #1a1a1a;
   transition: transform 0.3s ease;
+  position: relative;
+  z-index: 1000001; /* Raised above the chatbot widget */
 }
 
 .rm3-hl-card-cta:hover .rm3-hl-cta-arrow {
@@ -1887,13 +1889,13 @@
   display: grid;
   grid-auto-flow: column;
   /* Flow horizontally by filling columns first */
-  grid-template-rows: repeat(2, 200px);
-  /* Two horizontal lanes */
-  grid-auto-columns: minmax(280px, 1fr);
-  /* Consistent column width */
+  grid-template-rows: repeat(2, 160px);
+  /* Reduced height to shrink images vertically */
+  grid-template-columns: repeat(6, 1fr);
+  /* 6 columns to fit all bricks without scroll */
   gap: 2px;
-  overflow-x: auto;
-  /* Allow horizontal scrolling if many bricks */
+  overflow-x: hidden;
+  /* Disable horizontal scrolling */
   padding-bottom: 20px;
 }
 
@@ -2212,108 +2214,99 @@
    ======================================== */
 .rm3-sales-stats-section {
   padding: 40px 0;
-  background: #ffffff;
+  background: #fdfdfd;
 }
 
 .rm3-sales-container {
-  max-width: 1300px;
+  max-width: 1150px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 20px;
 }
 
 .rm3-sales-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
+  text-align: center;
+  margin-bottom: 60px;
 }
 
 .rm3-sales-header .rm3-section-title-global {
-  margin-bottom: 0;
-}
-
-.rm3-sales-filters {
-  display: flex;
-  gap: 12px;
-}
-
-.rm3-sales-pill {
-  padding: 8px 20px;
-  background: #f0f0f0;
-  border-radius: 50px;
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: #333;
-  cursor: pointer;
-  transition: all 0.2s ease;
+  font-size: 2.8rem;
+  font-weight: 850;
+  color: #111;
+  margin-bottom: 12px;
+  letter-spacing: -1px;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.rm3-sales-pill:hover {
-  background: #e0e0e0;
-}
-
-.rm3-sales-pill.active {
-  background: #111111;
-  color: #c0ff4d;
 }
 
 .rm3-sales-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  /* 4-unit base for asymmetrical spans */
-  gap: 30px;
+  grid-template-rows: repeat(2, 270px);
+  gap: 2px;
 }
 
-/* Row 1: First two smaller (1 unit), Third wider (2 units) */
-.rm3-sales-card:nth-child(1),
-.rm3-sales-card:nth-child(2) {
-  grid-column: span 1;
+/* Explicit placement of items for desktop */
+.rm3-card-pos-0 { /* CRM - Vertical top */
+  grid-column: 1;
+  grid-row: 1;
 }
 
-.rm3-sales-card:nth-child(3) {
-  grid-column: span 2;
+.rm3-card-pos-1 { /* ERP - Vertical top */
+  grid-column: 2;
+  grid-row: 1;
 }
 
-/* Row 2: First wider (2 units), Last two shorter (1 unit each) */
-.rm3-sales-card:nth-child(4) {
-  grid-column: span 2;
+.rm3-card-pos-2 { /* Finance - Vertical top */
+  grid-column: 3;
+  grid-row: 1;
 }
 
-.rm3-sales-card:nth-child(5),
-.rm3-sales-card:nth-child(6) {
-  grid-column: span 1;
+.rm3-card-pos-3 { /* AI Resume - Vertical top */
+  grid-column: 4;
+  grid-row: 1;
+}
+
+.rm3-card-pos-4 { /* Razor AI - Horizontal bottom */
+  grid-column: 1 / span 2;
+  grid-row: 2;
+}
+
+.rm3-card-pos-5 { /* Hiring Hub - Horizontal bottom */
+  grid-column: 3 / span 2;
+  grid-row: 2;
 }
 
 .rm3-sales-card {
+  position: relative;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0;
+  transition: opacity 0.3s ease;
   cursor: pointer;
-  transition: transform 0.3s ease;
 }
 
 .rm3-sales-card:hover {
-  transform: translateY(-8px);
+  opacity: 0.9;
 }
 
 .rm3-sales-card-img-box {
-  background: #f7f7f7;
-  border-radius: 20px;
-  height: 380px;
-  position: relative;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 12px;
   overflow: hidden;
+  z-index: 1;
 }
 
 .rm3-sales-card-img {
   width: 100%;
-  /* Fuller image as requested */
   height: 100%;
-  object-fit: cover;
   transition: transform 0.4s ease;
 }
 
@@ -2321,28 +2314,83 @@
   transform: scale(1.05);
 }
 
-.rm3-sales-card-details {
-  padding: 8px 0;
-  /* Left-align the titles starting from the edge */
+/* Specific image cover fit to fill the card boxes completely */
+.rm3-sales-card.vertical .rm3-sales-card-img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.rm3-sales-card.horizontal .rm3-sales-card-img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* Wash overlay for readability */
+.rm3-sales-overlay-wash {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.35);
+  background-blend-mode: overlay;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Text overlay details in the bottom left */
+.rm3-sales-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  pointer-events: none;
   text-align: left;
+  z-index: 3;
 }
 
-.rm3-sales-card-title {
-  font-size: 1.1rem;
+.rm3-sales-card-overlay-val {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #fff;
+  margin: 0;
+  line-height: 0.9;
+  letter-spacing: -1px;
+}
+
+.rm3-sales-card-overlay-desc {
+  font-size: 0.7rem;
   font-weight: 800;
-  color: #111;
-  margin-bottom: 4px;
-}
-
-.rm3-sales-card-stat {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #666;
+  color: #c0ff4d;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-top: 5px;
+  margin-bottom: 0;
 }
 
 @media (max-width: 1100px) {
   .rm3-sales-grid {
     grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+
+  .rm3-sales-card {
+    grid-column: span 1 !important;
+    grid-row: span 1 !important;
+    height: 300px !important;
+  }
+
+  .rm3-sales-card.vertical .rm3-sales-card-img,
+  .rm3-sales-card.horizontal .rm3-sales-card-img {
+    max-width: 95%;
+    max-height: 95%;
   }
 }
 
