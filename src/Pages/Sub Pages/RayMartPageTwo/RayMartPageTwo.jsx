@@ -4,6 +4,7 @@ import './RayMartPageTwo.css';
 import RayMartFooter from '../../../Components/RayMartFooter/RayMartFooter';
 import RayMartNavbar from '../../../Components/RayMartNavbar/RayMartNavbar';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
+import BackToTop from '../../../Components/BackToTop/BackToTop';
 import salesGraph from './ChatGPT Image Jul 14, 2026, 02_13_29 PM.png';
 
 import brandOne from '../../../assets/WEBSITE_IMAGES/Branding & Identity/1.png';
@@ -1262,6 +1263,7 @@ const RayMartPageTwo = () => {
         </section>
       </div>
       <RayMartFooter />
+      <BackToTop />
     </>
   );
 };

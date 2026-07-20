@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
@@ -70,14 +69,14 @@ const Footer = () => {
                 transition={{ duration: 1 }}
             >
                 <div className="footer-cta-overlay"></div>
-                <div className="footer-cta-content left-align">
+                <div className="footer-cta-content">
                     <motion.h2 className="footer-cta-title" {...fadeInUp}>
                         Ready to Transform Your Business or Career?
                     </motion.h2>
                     <motion.p className="footer-cta-desc" {...fadeInUp}>
                         Join Engloray tech group to master skills, build projects, and transform your future through hands-on experience and professional guidance.
                     </motion.p>
-                    <motion.div className="footer-cta-actions left-align" {...fadeInUp}>
+                    <motion.div className="footer-cta-actions" {...fadeInUp}>
                         <button className="footer-btn-primary" onClick={() => window.open('https://wa.me/6381759909', '_blank')}>
                             Join Us Now <FontAwesomeIcon icon={faArrowRight} style={{ marginLeft: '10px' }} />
                         </button>

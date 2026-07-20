@@ -746,12 +746,14 @@
 }
 
 .rm-bg-tr .rm-bento-content {
-  padding: 30px;
+  padding: 24px 30px;
   align-items: flex-end;
   text-align: right;
-  width: 50%;
+  width: 58%;
   margin-left: auto;
   z-index: 3;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .rm-tr-cat {
@@ -765,7 +767,7 @@
 .rm-bg-tr h3 {
   font-size: 1rem;
   font-weight: 800;
-  margin: 0 0 16px;
+  margin: 0 0 18px;
   line-height: 1.2;
 }
 
@@ -778,6 +780,7 @@
   font-weight: 700;
   font-size: 0.75rem;
   cursor: pointer;
+  margin-top: auto;
 }
 
 .rm-bg-tr-img {

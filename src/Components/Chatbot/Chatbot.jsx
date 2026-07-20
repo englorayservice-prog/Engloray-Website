@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
@@ -19,6 +20,12 @@ const Chatbot = () => {
   ]);
   const messagesEndRef = useRef(null);
   const [isIntroActive, setIsIntroActive] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  // Only render the portal once we're safely on the client
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -107,9 +114,9 @@ const Chatbot = () => {
     }, 500); // 500ms delay to simulate typing/thinking
   };
 
-  if (isIntroActive) return null;
+  if (isIntroActive || !isMounted) return null;
 
-  return (
+  return createPortal(
     <div className="engloray-chatbot-container">
       <AnimatePresence>
         {isOpen && (
@@ -214,7 +221,8 @@ const Chatbot = () => {
           )}
         </AnimatePresence>
       </motion.button>
-    </div>
+    </div>,
+    document.body
   );
 };
 

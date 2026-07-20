@@ -4,6 +4,7 @@ import './RaymartPage.css';
 import RayMartNavbar from '../../../Components/RayMartNavbar/RayMartNavbar';
 import RayMartFooter from '../../../Components/RayMartFooter/RayMartFooter';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
+import BackToTop from '../../../Components/BackToTop/BackToTop';
 import { BarChart, Bar, XAxis, ResponsiveContainer, Tooltip } from 'recharts';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowTrendUp, faFire, faStar, faChartLine, faRobot, faCheck, faWandMagicSparkles, faUsers, faRotateLeft, faShieldHalved, faBriefcase, faHeadset, faNewspaper, faGraduationCap, faChevronRight, faChevronLeft, faEnvelope, faBuilding, faPlus, faHandshake, faCode, faStore, faSearch, faPalette, faDesktop, faBullhorn, faLaptopCode, faChartPie, faCloud, faComments } from '@fortawesome/free-solid-svg-icons';
@@ -1679,6 +1680,7 @@ const RaymartPage = () => {
           </section>
 
           <RayMartFooter />
+          <BackToTop />
 
         </div>
       </div>

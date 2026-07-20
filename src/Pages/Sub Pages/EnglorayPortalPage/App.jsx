@@ -28,6 +28,10 @@ const App = () => {
 
   // Monitor scroll for Scroll-To-Top button visibility
   useEffect(() => {
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 300);
     };
@@ -76,7 +80,7 @@ const App = () => {
         {showScrollTop && (
           <button
             onClick={scrollToTop}
-            className="fixed bottom-6 right-6 z-[999] w-12 h-12 rounded-full text-white flex items-center justify-center border-none cursor-pointer hover:scale-110 active:scale-95 transition-all duration-300"
+            className="fixed bottom-6 left-6 z-[999] w-12 h-12 rounded-full text-white flex items-center justify-center border-none cursor-pointer hover:scale-110 active:scale-95 transition-all duration-300"
             style={{ background: 'linear-gradient(135deg, #6C4CF1, #4F46E5)', boxShadow: '0 4px 20px rgba(108,76,241,0.4)' }}
             aria-label="Scroll to top"
           >

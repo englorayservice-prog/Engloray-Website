@@ -4,6 +4,7 @@ import './RayMartPageThree.css';
 import RayMartNavbar from '../../../Components/RayMartNavbar/RayMartNavbar';
 import RayMartFooter from '../../../Components/RayMartFooter/RayMartFooter';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
+import BackToTop from '../../../Components/BackToTop/BackToTop';
 import financeStat from '../../../assets/fin stat.png';
 
 // Internal 3D Animated Assets
@@ -307,103 +308,33 @@ const RayMartPageThree = () => {
 
             <div className="rm3-sales-grid">
               {[
-                { id: 1, title: 'CRM Unified Connect', img: crmIcon, stat: '5.2k Users' },
-                { id: 2, title: 'ERP Operations Pro', img: erpIcon, stat: '2.8k Sales' },
-                { id: 3, title: 'Razor AI Assistant', img: aiIcon, stat: '10k+ Queries' },
-                { id: 4, title: 'Hiring Hub Scanner', img: jobsIcon, stat: '1.5k Hires' },
-                { id: 5, title: 'Finance Stat Dashboard', img: financeStat, stat: '$1.2M Rev.' },
-                { id: 6, title: 'AI Resume Builder', img: careerIcon, stat: '20k Created' }
-              ].map((prod) => (
-                <div key={prod.id} className="rm3-sales-card">
+                { id: 1, title: 'CRM Unified Connect', img: crmIcon, stat: '5.2k Users', type: 'vertical', bg: '#0d1a2e' },
+                { id: 2, title: 'ERP Operations Pro', img: erpIcon, stat: '2.8k Sales', type: 'vertical', bg: '#0a1628' },
+                { id: 5, title: 'Finance Stat Dashboard', img: financeStat, stat: '$1.2M Rev.', type: 'vertical', bg: '#0b1020' },
+                { id: 6, title: 'AI Resume Builder', img: careerIcon, stat: '20k Created', type: 'vertical', bg: '#0f0a2e' },
+                { id: 3, title: 'Razor AI Assistant', img: aiIcon, stat: '10k+ Queries', type: 'horizontal', bg: '#120d24' },
+                { id: 4, title: 'Hiring Hub Scanner', img: jobsIcon, stat: '1.5k Hires', type: 'horizontal', bg: '#0d1535' }
+              ].map((prod, idx) => (
+                <div 
+                  key={prod.id} 
+                  className={`rm3-sales-card rm3-card-pos-${idx} ${prod.type}`}
+                  style={{
+                    backgroundColor: prod.bg || '#0d1a2e'
+                  }}
+                >
                   <div className="rm3-sales-card-img-box">
                     <img src={prod.img} alt={prod.title} className="rm3-sales-card-img" />
                   </div>
-                  <div className="rm3-sales-card-details">
-                    <h4 className="rm3-sales-card-title">{prod.title}</h4>
-                    <p className="rm3-sales-card-stat">{prod.stat}</p>
+                  <div className="rm3-sales-overlay-wash"></div>
+                  <div className="rm3-sales-card-overlay">
+                    <h3 className="rm3-sales-card-overlay-val">{prod.stat}</h3>
+                    <p className="rm3-sales-card-overlay-desc">{prod.title}</p>
                   </div>
                 </div>
               ))}
             </div>
           </div>
         </section>
-
-        {/* Popular Products Carousel Section (EXACT MATCH REPLICATION with 3D Images) */}
-        <section className="rm3-products-section">
-          <h2 className="rm3-section-title-global">our popular products</h2>
-          <div className="rm3-carousel-outer">
-            <button className="rm3-nav-outer prev" onClick={prevProduct}>‹</button>
-
-            <div className="rm3-exact-red-card">
-              {/* Left Column: Big Hero Image Gallery */}
-              <div className="rm3-exact-image-col">
-                <div className="rm3-exact-hero-img-container">
-                  {popularProducts[activeIndex].gallery.map((img, i) => (
-                    <img
-                      key={i}
-                      src={img}
-                      alt={`${popularProducts[activeIndex].title} ${i}`}
-                      className={`rm3-exact-hero-img ${internalImgIndex === i ? 'active' : ''}`}
-                      loading="eager"
-                    />
-                  ))}
-                </div>
-              </div>
-
-              {/* Right Column: Content + Grid of the OTHER 4 products + Footer */}
-              <div className="rm3-exact-content-col">
-                <div className="rm3-exact-header">
-                  <h2 className="rm3-exact-title">{popularProducts[activeIndex].title}</h2>
-                  <p className="rm3-exact-description">{popularProducts[activeIndex].description}</p>
-                </div>
-
-                {/* 2x2 Navigator Grid: Showing the gallery images of current active product */}
-                <div className="rm3-exact-grid">
-                  {popularProducts[activeIndex].gallery.map((img, i) => (
-                    <div
-                      className={`rm3-exact-grid-item ${internalImgIndex === i ? 'active' : ''}`}
-                      key={i}
-                      onClick={() => setInternalImgIndex(i)}
-                    >
-                      <img
-                        src={img}
-                        alt={`Gallery ${i}`}
-                        loading="eager"
-                      />
-                      <div className="rm3-exact-grid-indicator"></div>
-                    </div>
-                  ))}
-                </div>
-
-
-
-                {/* Tags Row */}
-                <div className="rm3-exact-tags">
-                  {popularProducts[activeIndex].tags.map((tag, tIdx) => (
-                    <span key={tIdx} className="rm3-exact-tag">{tag}</span>
-                  ))}
-                </div>
-
-                {/* Footer Row */}
-                <div className="rm3-exact-footer">
-                  <div className="rm3-exact-stats">
-                    <div className="rm3-exact-stat-big">{popularProducts[activeIndex].statBig}</div>
-                    <div className="rm3-exact-stat-small">{popularProducts[activeIndex].statSmall}</div>
-                  </div>
-                  <div className="rm3-exact-promo">
-                    {popularProducts[activeIndex].promo}
-                  </div>
-                  <button className="rm3-exact-contact-btn">
-                    contact us
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <button className="rm3-nav-outer next" onClick={nextProduct}>›</button>
-          </div>
-        </section>
-
 
         {/* CRM SECTION (6 Cards) */}
         <section className="rm3-store-section" id="crm-products">
@@ -806,7 +737,7 @@ const RayMartPageThree = () => {
                 { id: 4, type: 'img', url: bgCommunityUsers, stat: '5M+',  desc: 'COMMUNITY USERS',      span: 'v-2-4', bg: '#0d1535' },
                 { id: 5, type: 'img', url: bgUserSatisfaction, stat: '95%',  desc: 'USER SATISFACTION',  span: 'v-2-2', bg: '#4f46e5' },
 
-                { id: 6, type: 'text', text: '“RayMart changed our entire workflow in india. The speed is unmatched.”', span: 'v-4-4', bgImg: workflowBg, bg: '#7c4dff' },
+                { id: 6, type: 'img', url: workflowBg, span: 'v-4-4', bg: '#7c4dff' },
                 { id: 7, type: 'img', url: bgCountriesServed, stat: '160+', desc: 'COUNTRIES SERVED',   span: 'v-2-2', bg: '#0b1020' },
 
                 { id: 8, type: 'img', url: bgUserBase, stat: '1.2M', desc: 'ACTIVE USER BASE',   span: 'v-2-2', bg: '#0f0a2e' },
@@ -876,6 +807,7 @@ const RayMartPageThree = () => {
 
       </div>
       <RayMartFooter />
+      <BackToTop />
     </div>
 
   );

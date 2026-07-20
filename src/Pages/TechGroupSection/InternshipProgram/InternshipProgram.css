@@ -185,8 +185,8 @@
    ============================================================ */
 .tgi-floating-arrow {
     position: fixed;
-    right: 28px;
-    bottom: 28px;
+    right: 40px;
+    bottom: 72px;
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -196,7 +196,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 100;
+    z-index: 1000001;
     box-shadow: 0 6px 24px rgba(0, 0, 0, 0.22);
     transition: transform 0.35s ease, box-shadow 0.35s ease;
     animation: tgi-floatArrow 3s ease-in-out infinite;
@@ -803,11 +803,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1000;
+    z-index: 10000002;
     animation: tgi-fadeIn 0.25s ease-out;
 }
 
 .tgi-form-modal {
+    position: relative;
+    z-index: 10000003;
     background: #fff;
     border-radius: 22px;
     width: 90%;
@@ -1014,6 +1016,7 @@
     font-weight: 700;
     cursor: pointer;
     position: relative;
+    z-index: 10000004;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 8px 28px rgba(191, 4, 19, 0.3);

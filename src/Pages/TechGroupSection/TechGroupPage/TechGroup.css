@@ -1,0 +1,24 @@
+/* TechGroup Page Layout
+   TopNavBar is fixed at top:0, height ~33px (30px + 3px border)
+   Navbar (sticky) sits at top:33px below it
+   Total fixed header = ~33px topbar + ~80px navbar = ~113px
+   Add padding-top to push page content below both */
+
+.tech-group-page {
+    padding-top: 33px; /* Push content below the fixed TopNavbar */
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .tech-group-page {
+        padding-top: 40px; /* Match updated TopNavbar mobile height (40px) */
+    }
+}
+
+@media (max-width: 480px) {
+    .tech-group-page {
+        padding-top: 36px; /* Match extra-small TopNavbar height */
+    }
+}

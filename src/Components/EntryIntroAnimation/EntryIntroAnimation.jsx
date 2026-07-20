@@ -374,6 +374,16 @@ const EntryIntroAnimation = ({ onComplete }) => {
                 ease: "power2.out"
             });
 
+        let hasExited = false;
+        const triggerExit = () => {
+            if (hasExited) return;
+            hasExited = true;
+            setIsFadingOut(true);
+            setTimeout(() => {
+                if (onComplete) onComplete();
+            }, 100);
+        };
+
         // Use the wrapper as the scroller so scrolling works while overflowing is hidden on the main body
         let tl = gsap.timeline({
             scrollTrigger: {
@@ -381,13 +391,12 @@ const EntryIntroAnimation = ({ onComplete }) => {
                 scroller: wrapperRef.current,
                 start: "top top",
                 end: "bottom bottom",
-                scrub: 1,
-                onLeave: () => {
-                    // Trigger exit animation
-                    setIsFadingOut(true);
-                    setTimeout(() => {
-                        if (onComplete) onComplete();
-                    }, 200); // Super fast unmount
+                scrub: 0.3,
+                onLeave: triggerExit,
+                onUpdate: (self) => {
+                    if (self.progress > 0.55) {
+                        triggerExit();
+                    }
                 }
             }
         });
@@ -482,11 +491,20 @@ const EntryIntroAnimation = ({ onComplete }) => {
                             <p className="neon-line-2">ENGLORAY</p>
                         </div>
                     </div>
-                    <div className="scroll-indicator">
+                    <div
+                        className="scroll-indicator"
+                        onClick={() => {
+                            if (wrapperRef.current) {
+                                wrapperRef.current.scrollTo({ top: wrapperRef.current.scrollHeight, behavior: 'smooth' });
+                            }
+                        }}
+                        style={{ cursor: 'pointer', pointerEvents: 'auto' }}
+                        role="button"
+                        tabIndex={0}
+                    >
                         <div className="eia-mouse-scroll-indicator">
                             <div className="eia-mouse-dot"></div>
-                            <div className="eia-mouse-chevron eia-mouse-chevron-down-1"></div>
-                            <div className="eia-mouse-chevron eia-mouse-chevron-down-2"></div>
+                            <div className="eia-mouse-chevron eia-mouse-chevron-down"></div>
                         </div>
                         <p>SCROLL DOWN</p>
                     </div>

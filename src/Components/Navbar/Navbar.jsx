@@ -1,33 +1,65 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Navbar.css';
 import Logo from '../../assets/18.png'
 import SearchBar from '../SearchBar/SearchBar';
 import { Helmet } from 'react-helmet';
+import { Home, Briefcase, Layers, Users, GraduationCap, Phone, ChevronDown } from 'lucide-react';
+
+const menuItems = [
+    { id: 'home', label: 'Home', icon: Home, section: 'home' },
+    { id: 'service', label: 'Service', icon: Briefcase, section: 'serviceSection' },
+    { id: 'works', label: 'Works', icon: Layers, section: 'portfolio' },
+    { id: 'client', label: 'Client', icon: Users, section: 'techGroup-testimonialsSection' },
+    { id: 'internship', label: 'Internship', icon: GraduationCap, section: 'internship' },
+    { id: 'contact', label: 'Contact', icon: Phone, section: 'benefits-cta-main-section' },
+];
+
+// Replace with real destinations
+const exploreItems = [
+    { label: 'Case Studies', href: '#' },
+    { label: 'Partnerships', href: '#' },
+    { label: 'Resources', href: '#' },
+];
 
 const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [showNavbar, setShowNavbar] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
+    const [isExploreOpen, setIsExploreOpen] = useState(false);
+    const exploreRef = useRef(null);
 
-    // Scroll detection for navbar show/hide
     useEffect(() => {
         const controlNavbar = () => {
             if (window.scrollY > lastScrollY && window.scrollY > 100) {
-                // Scrolling down and not at top - hide navbar
                 setShowNavbar(false);
             } else {
-                // Scrolling up - show navbar
                 setShowNavbar(true);
             }
             setLastScrollY(window.scrollY);
         };
-
         window.addEventListener('scroll', controlNavbar);
-
         return () => {
             window.removeEventListener('scroll', controlNavbar);
         };
     }, [lastScrollY]);
+
+    useEffect(() => {
+        const handleClickOutside = (e) => {
+            if (exploreRef.current && !exploreRef.current.contains(e.target)) {
+                setIsExploreOpen(false);
+            }
+        };
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside);
+    }, []);
+
+    useEffect(() => {
+        const handleEscape = (e) => {
+            if (e.key === 'Escape') setIsExploreOpen(false);
+        };
+        document.addEventListener('keydown', handleEscape);
+        return () => document.removeEventListener('keydown', handleEscape);
+    }, []);
 
     const toggleMobileMenu = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -46,16 +78,13 @@ const Navbar = () => {
     };
 
     const handleMenuClick = (sectionId) => {
-        console.log(`Clicking on: ${sectionId}`);
-
         closeMobileMenu();
 
         setTimeout(() => {
             const element = document.getElementById(sectionId);
-            if (element) {
-                console.log(`Found element:`, element);
+            const navbarHeight = 100;
 
-                const navbarHeight = 100;
+            if (element) {
                 const elementPosition = element.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
 
@@ -64,7 +93,6 @@ const Navbar = () => {
                     behavior: 'smooth'
                 });
             } else {
-                console.log(`Element with id ${sectionId} not found`);
                 window.scrollTo({
                     top: 0,
                     behavior: 'smooth'
@@ -86,8 +114,7 @@ const Navbar = () => {
 
     return (
         <>
-            <div>
-
+            <div className="engloray-navbar">
                 <Helmet>
                     <title>Engloray Tech</title>
                     <meta name="description" content="Guides visitors across website content using a clear, structured navigation layout." />
@@ -100,81 +127,62 @@ const Navbar = () => {
 
                 <nav className={`navbar ${showNavbar ? 'navbar-visible' : 'navbar-hidden'}`}>
                     <div className="navbar-content">
-                        {/* Logo */}
+
                         <div className="logo">
                             <img src={Logo} alt="ENGLORAY" />
                         </div>
 
-                        {/* Desktop Menu - Aligned to left */}
                         <ul className="desktop-menu">
-                            <li>
-                                <a
-                                    className='anchorLink'
-                                    onClick={() => handleMenuClick('home')}
-                                >
-                                    <p>
-                                        Home
-                                    </p>
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    className='anchorLink'
-                                    onClick={() => handleMenuClick('serviceSection')}
-                                >
-                                    <p>
-                                        Service
-                                    </p>
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    className='anchorLink'
-                                    onClick={() => handleMenuClick('portfolio')}
-                                >
-                                    <p>
-                                        Works
-                                    </p>
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    className='anchorLink'
-                                    onClick={() => handleMenuClick('techGroup-testimonialsSection')}
-                                >
-                                    <p>
-                                        Client
-                                    </p>
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    className='anchorLink'
-                                    onClick={() => handleMenuClick('internship')}
-                                >
-                                    <p>
-                                        Internship
-                                    </p>
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    className='anchorLink'
-                                    onClick={() => handleMenuClick('benefits-cta-main-section')}
-                                >
-                                    <p>
-                                        Contact
-                                    </p>
-                                </a>
-                            </li>
+                            {menuItems.map((item) => {
+                                const Icon = item.icon;
+                                return (
+                                    <li key={item.id}>
+                                        <a
+                                            className="anchorLink"
+                                            onClick={() => handleMenuClick(item.section)}
+                                        >
+                                            <Icon size={18} strokeWidth={2} aria-hidden="true" />
+                                            <p>{item.label}</p>
+                                        </a>
+                                    </li>
+                                );
+                            })}
                         </ul>
 
-                        {/* Search Bar - Aligned to right */}
                         <div className="nav-actions">
+                            <div className="nav-explore" ref={exploreRef}>
+                                <button
+                                    type="button"
+                                    className="nav-explore-trigger"
+                                    onClick={() => setIsExploreOpen((prev) => !prev)}
+                                    aria-haspopup="true"
+                                    aria-expanded={isExploreOpen}
+                                >
+                                    <span>Explore</span>
+                                    <ChevronDown
+                                        size={16}
+                                        strokeWidth={2}
+                                        className={`nav-explore-chevron ${isExploreOpen ? 'is-open' : ''}`}
+                                        aria-hidden="true"
+                                    />
+                                </button>
+
+                                {isExploreOpen && (
+                                    <ul className="nav-explore-menu" role="menu">
+                                        {exploreItems.map((item) => (
+                                            <li key={item.label} role="menuitem">
+                                                <a href={item.href} onClick={() => setIsExploreOpen(false)}>
+                                                    {item.label}
+                                                </a>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                )}
+                            </div>
+
                             <SearchBar />
                         </div>
 
-                        {/* Mobile Hamburger */}
                         <button
                             className="navMobOpen"
                             onClick={toggleMobileMenu}
@@ -184,73 +192,40 @@ const Navbar = () => {
                             <span></span>
                             <span></span>
                         </button>
+
                     </div>
                 </nav>
 
-                {/* Mobile Menu Backdrop */}
                 <div
                     className={`mobile-backdrop ${isMobileMenuOpen ? 'active' : ''}`}
                     onClick={handleBackdropClick}
                 ></div>
 
-                {/* Mobile Menu */}
                 <ul className={`mobile-menu ${isMobileMenuOpen ? 'active' : ''}`}>
-                    <button className="navMobClose" onClick={closeMobileMenu}>
+                    <button className="navMobClose" onClick={closeMobileMenu} aria-label="Close menu">
                         ×
                     </button>
 
-                    <li>
-                        <div
-                            className='mobile-menu-link'
-                            onClick={() => handleMenuClick('home')}
-                        >
-                            <p>Home</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div
-                            className='mobile-menu-link'
-                            onClick={() => handleMenuClick('serviceSection')}
-                        >
-                            <p>Service</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div
-                            className='mobile-menu-link'
-                            onClick={() => handleMenuClick('portfolio')}
-                        >
-                            <p>Works</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div
-                            className='mobile-menu-link'
-                            onClick={() => handleMenuClick('techGroup-testimonialsSection')}
-                        >
-                            <p>Client</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div
-                            className='mobile-menu-link'
-                            onClick={() => handleMenuClick('internship')}
-                        >
-                            <p>Internship</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div
-                            className='mobile-menu-link'
-                            onClick={() => handleMenuClick('benefits-cta-main-section')}
-                        >
-                            <p>Contact</p>
-                        </div>
-                    </li>
+                    {menuItems.map((item) => {
+                        const Icon = item.icon;
+                        return (
+                            <li key={item.id}>
+                                <div
+                                    className="mobile-menu-link"
+                                    onClick={() => handleMenuClick(item.section)}
+                                >
+                                    <Icon size={18} strokeWidth={2} aria-hidden="true" />
+                                    <p>{item.label}</p>
+                                </div>
+                            </li>
+                        );
+                    })}
+
                     <li className="mobile-search-container">
                         <SearchBar />
                     </li>
                 </ul>
+
             </div>
         </>
     );
