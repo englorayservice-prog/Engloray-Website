@@ -1292,7 +1292,21 @@ html {
     margin-bottom: -170px !important; /* Pulled content up into the header space */
   }
 }
-/* Mobile Responsiveness: Vertical Stack & No Green Lines (<435px) */
+/* ── Mobile Core Values: CSS entrance animations (replaces Framer Motion on mobile) ── */
+@keyframes coreNodeFromLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes coreNodeFromRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes coreDashboardPop {
+  from { opacity: 0; transform: scale(0.85); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* Mobile Responsiveness: Vertical Stack & No Green Lines (≤435px) */
 @media screen and (max-width: 435px) {
   .our-core-main-wrapper svg { display: none !important; }
   
@@ -1332,7 +1346,14 @@ html {
     width: 95% !important; 
     max-width: 320px !important; 
     opacity: 1 !important; 
-    z-index: 20 !important; 
+    z-index: 20 !important;
+    /* Left-side input nodes slide in from left */
+    animation: coreNodeFromLeft 0.6s cubic-bezier(0.22,1,0.36,1) both;
+  }
+
+  /* Right-side output nodes: slide from right (nth-child even in the stacked flex) */
+  .our-core-main-wrapper .absolute.flex.items-center:nth-child(2n) {
+    animation: coreNodeFromRight 0.6s cubic-bezier(0.22,1,0.36,1) both;
   }
   
   /* Enhance Icon visibility in nodes */
@@ -1355,14 +1376,18 @@ html {
     transform: none !important; 
     margin-bottom: 0px !important; 
     margin-top: -30px !important; /* Pull up towards title */
-    order: -2 !important; 
+    order: -2 !important;
+    /* Engloray robot icon: pop in */
+    animation: coreDashboardPop 0.5s cubic-bezier(0.22,1,0.36,1) 0.1s both !important;
   }
   .our-core-main-wrapper .absolute.bg-white.rounded-2xl { 
     height: auto !important; 
     min-height: 250px !important; 
     order: -1 !important; 
     margin: 5px auto !important; 
-    max-width: 360px !important; 
+    max-width: 360px !important;
+    /* Dashboard card: scale pop */
+    animation: coreDashboardPop 0.7s cubic-bezier(0.22,1,0.36,1) 0.3s both !important;
   }
   
   /* Dashboard Header AI-Driven title adjustment */
@@ -1397,5 +1422,82 @@ html {
 }
 
 @media screen and (max-width: 480px) {
-  .our-core-main-wrapper .absolute.inset-0.z-20 { padding-top: 140px !important; }
+  .our-core-main-wrapper .absolute.inset-0.z-20 { padding-top: 80px !important; }
 }
+
+@media screen and (min-width: 436px) and (max-width: 600px) {
+  .our-core-main-wrapper svg { display: none !important; }
+  
+  .our-core-main-wrapper {
+    height: auto !important;
+    min-height: 100vh !important;
+    overflow: visible !important;
+    display: block !important;
+  }
+
+  .our-core-main-wrapper video {
+    height: 100% !important;
+    min-height: 100vh !important;
+    object-fit: cover !important;
+  }
+
+  .our-core-main-wrapper .rounded-xl.overflow-hidden { aspect-ratio: auto !important; height: auto !important; overflow: visible !important; display: block !important; }
+  .our-core-main-wrapper div[style*="scale"] { transform: none !important; width: 100% !important; height: auto !important; position: static !important; display: block !important; }
+  .our-core-main-wrapper .w-full.h-full.relative.font-sans { height: auto !important; display: block !important; position: static !important; }
+  .our-core-main-wrapper .absolute.inset-0.z-20 { 
+    position: relative !important; 
+    display: flex !important; 
+    flex-direction: column !important; 
+    align-items: center !important; 
+    gap: 5px !important; 
+    padding: 80px 10px 40px 10px !important; 
+    height: auto !important; 
+  }
+  .our-core-main-wrapper .absolute.flex.items-center, .our-core-main-wrapper .absolute.bg-white.rounded-2xl { 
+    position: relative !important; 
+    top: auto !important; 
+    left: auto !important; 
+    right: auto !important; 
+    bottom: auto !important; 
+    transform: none !important; 
+    margin: 5px auto !important; 
+    width: 95% !important; 
+    max-width: 320px !important; 
+    opacity: 1 !important; 
+    z-index: 20 !important;
+    animation: coreNodeFromLeft 0.6s cubic-bezier(0.22,1,0.36,1) both;
+  }
+  .our-core-main-wrapper .absolute.flex.items-center:nth-child(2n) {
+    animation: coreNodeFromRight 0.6s cubic-bezier(0.22,1,0.36,1) both;
+  }
+
+  .our-core-main-wrapper .absolute.top-1\/2.-translate-y-1\/2 { 
+    position: relative !important; 
+    top: auto !important; 
+    left: auto !important; 
+    transform: none !important; 
+    margin-bottom: 0px !important; 
+    margin-top: -30px !important;
+    order: -2 !important;
+    animation: coreDashboardPop 0.5s cubic-bezier(0.22,1,0.36,1) 0.1s both !important;
+  }
+  .our-core-main-wrapper .absolute.bg-white.rounded-2xl { 
+    height: auto !important; 
+    min-height: 250px !important; 
+    order: -1 !important; 
+    margin: 5px auto !important; 
+    max-width: 360px !important;
+    animation: coreDashboardPop 0.7s cubic-bezier(0.22,1,0.36,1) 0.3s both !important;
+  }
+  .our-core-main-wrapper .core-values-header { 
+    margin-bottom: -10px !important; 
+    margin-top: 30px !important; 
+    position: relative !important;
+    z-index: 30 !important;
+  }
+  .our-core-main-wrapper .core-values-header h2 { 
+    font-size: 1.8rem !important; 
+    margin-bottom: 5px !important;
+  }
+}
+

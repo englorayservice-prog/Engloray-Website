@@ -1114,24 +1114,101 @@
 
 @media (max-width: 768px) {
     .ps-constellation-section {
-        padding: 40px 0 20px;
+        padding: 20px 0 10px;
     }
 
+    /* Scattered layout: flex-wrap with varied margins for organic feel */
     .ps-constellation-nodes {
         height: auto;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 30px;
+        gap: 10px 6px;
         margin-top: 0;
+        padding: 0 0.75rem 2rem;
+        align-content: start;
     }
 
+    /* All nodes: relative, allow float animations, variable widths */
     .ps-node {
         position: relative;
         top: auto !important;
         left: auto !important;
-        transform: none !important;
-        animation: none !important;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Float animations preserved on mobile */
+    .ps-float-slow  { animation: ps-float-slow  6s ease-in-out infinite; }
+    .ps-float-medium{ animation: ps-float-medium 4s ease-in-out infinite; }
+    .ps-float-fast  { animation: ps-float-fast   3s ease-in-out infinite; }
+
+    /* Logo boxes — notably smaller */
+    .ps-logo-box {
+        width: 52px;
+        height: 52px;
+        border-radius: 10px;
+        box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    }
+
+    .ps-logo-box img {
+        border-radius: 10px;
+    }
+
+    /* Brand label hidden on mobile (too tight) */
+    .ps-brand-name {
+        font-size: 0.6rem;
+        padding: 1px 5px;
+        bottom: -18px;
+    }
+
+    /* Popup: always appears above, clamped so it never exits screen */
+    .ps-hover-card-popup {
+        bottom: calc(100% + 6px);
+        top: auto;
+        left: 50%;
+        transform: translateX(-50%) scale(0.94);
+        width: min(85vw, 200px) !important;
+        max-width: 200px !important;
+        z-index: 999;
+    }
+
+    .ps-node:hover .ps-hover-card-popup {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) scale(1);
+    }
+
+    /* Smaller popup image */
+    .ps-hc-top {
+        height: 90px;
+    }
+
+    .ps-hc-bottom {
+        padding: 12px;
+    }
+
+    .ps-hc-category {
+        font-size: 0.65rem;
+        padding: 4px 8px;
+        margin-bottom: 8px;
+    }
+
+    .ps-hc-title {
+        font-size: 1rem;
+        margin-bottom: 4px;
+    }
+
+    .ps-hc-year {
+        font-size: 0.8rem;
+    }
+
+    /* Tag pills — compact */
+    .ps-tag-pill {
+        font-size: 0.68rem;
+        padding: 4px 10px;
     }
 
     .ps-constellation-lines {
@@ -1140,5 +1217,53 @@
 
     .ps-constellation-title {
         font-size: 2.2rem;
+    }
+
+    .ps-constellation-header {
+        margin-top: 0;
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .ps-constellation-title {
+        font-size: 1.8rem;
+    }
+
+    .ps-constellation-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .ps-constellation-nodes {
+        gap: 10px 6px;
+        padding: 0 0.5rem 1.5rem;
+    }
+
+    .ps-logo-box {
+        width: 44px;
+        height: 44px;
+        border-radius: 8px;
+    }
+
+    .ps-logo-box img {
+        border-radius: 8px;
+    }
+
+    .ps-tag-pill {
+        font-size: 0.62rem;
+        padding: 3px 8px;
+    }
+
+    .ps-hover-card-popup {
+        width: min(80vw, 180px) !important;
+        max-width: 180px !important;
+    }
+
+    .ps-hc-top {
+        height: 80px;
+    }
+
+    .ps-hc-title {
+        font-size: 0.9rem;
     }
 }

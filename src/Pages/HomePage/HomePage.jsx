@@ -1,27 +1,31 @@
-import React, { useEffect, useState } from 'react';
+import React, { lazy, useEffect, useState } from 'react';
 import TopNavBar from '../../Components/TopNavbar/TopNavbar';
 import TwoLineNavbar from '../../Components/TwoLineNavbar/TwoLineNavbar';
 import Tagline from '../../Components/Tagline/Tagline';
-import OtherSectionCarousel from '../../Components/OtherSectionCarousel/OtherSectionCarousel';
-import VisionMission from '../../Components/VisionMission/VisionMission';
-import Ourcore from '../../Ourcore';
-import DoubleMarquees from '../../Components/DoubleMarquees/DoubleMarquees';
-import BusinessBoost from '../../Components/BusinessBoost/BusinessBoost';
-import About from '../../Components/About/About';
-import CoreServices from '../../Components/CoreSevices/CoreServices';
-import Testimonials from '../../Components/Testimonials/Testimonials';
-import MarqueeBrands from '../../Components/MarqueeBrands/MarqueeBrands';
-import Footer from '../../Components/Footer/Footer';
 import BackToTopArrow from '../../Components/BackToTop/BackToTop';
 import EntryIntroAnimation from '../../Components/EntryIntroAnimation/EntryIntroAnimation';
+import LazySection from '../../Components/LazySection/LazySection';
 import SEOHead from '../../seo/SEOHead';
 import SchemaMarkup from '../../seo/SchemaMarkup';
-import { motion, AnimatePresence } from 'motion/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './HomePage.css';
 
 gsap.registerPlugin(ScrollTrigger);
+
+// Below-the-fold sections are code-split so their JS is only fetched once
+// LazySection detects the user is about to scroll into range — not on
+// initial page load. Order matches the page's visual order.
+const OtherSectionCarousel = lazy(() => import('../../Components/OtherSectionCarousel/OtherSectionCarousel'));
+const VisionMission = lazy(() => import('../../Components/VisionMission/VisionMission'));
+const Ourcore = lazy(() => import('../../Ourcore'));
+const DoubleMarquees = lazy(() => import('../../Components/DoubleMarquees/DoubleMarquees'));
+const BusinessBoost = lazy(() => import('../../Components/BusinessBoost/BusinessBoost'));
+const About = lazy(() => import('../../Components/About/About'));
+const CoreServices = lazy(() => import('../../Components/CoreSevices/CoreServices'));
+const Testimonials = lazy(() => import('../../Components/Testimonials/Testimonials'));
+const MarqueeBrands = lazy(() => import('../../Components/MarqueeBrands/MarqueeBrands'));
+const Footer = lazy(() => import('../../Components/Footer/Footer'));
 
 // Global flag to ensure the cinematic intro only plays ONCE per full page load (refreshes reset this)
 let hasIntroPlayedGlobal = false;
@@ -69,32 +73,61 @@ const HomePage = () => {
             )}
 
             {/* NORMAL, 100% UNTOUCHED PAGE SECTIONS */}
-            <AnimatePresence>
-                {!introActive && (
-                    <motion.div
-                        key="main-content"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 1.2, ease: "power2.out" }}
-                        style={{ width: '100%' }}
-                    >
-                        <TopNavBar />
-                        <TwoLineNavbar />
-                        <Tagline />
+            {!introActive && (
+                <div style={{ width: '100%' }}>
+                    {/* Chrome + hero: always eager. Lazy-loading anything
+                        above the fold just adds a visible flash on load. */}
+                    <TopNavBar />
+                    <TwoLineNavbar />
+                    <Tagline />
+
+                    {/* Everything below the fold: code-split + lazy-mounted.
+                        minHeight values approximate each section's real
+                        rendered height — tune these to match to keep the
+                        scrollbar from jumping as sections swap in. */}
+                    <LazySection minHeight={640}>
                         <OtherSectionCarousel />
+                    </LazySection>
+
+                    <LazySection minHeight={520}>
                         <VisionMission />
+                    </LazySection>
+
+                    <LazySection minHeight={600}>
                         <Ourcore />
+                    </LazySection>
+
+                    <LazySection minHeight={320}>
                         <DoubleMarquees />
+                    </LazySection>
+
+                    <LazySection minHeight={560}>
                         <BusinessBoost />
+                    </LazySection>
+
+                    <LazySection minHeight={600}>
                         <About />
+                    </LazySection>
+
+                    <LazySection minHeight={680}>
                         <CoreServices />
+                    </LazySection>
+
+                    <LazySection minHeight={480}>
                         <Testimonials />
+                    </LazySection>
+
+                    <LazySection minHeight={240}>
                         <MarqueeBrands />
+                    </LazySection>
+
+                    <LazySection minHeight={520}>
                         <Footer />
-                        <BackToTopArrow />
-                    </motion.div>
-                )}
-            </AnimatePresence>
+                    </LazySection>
+
+                    <BackToTopArrow />
+                </div>
+            )}
         </div>
     );
 };

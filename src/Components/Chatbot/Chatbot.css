@@ -19,6 +19,9 @@
 .engloray-chat-fab {
   width: 60px;
   height: 60px;
+  min-width: 60px;
+  min-height: 60px;
+  flex-shrink: 0;
   border-radius: 50%;
   background: linear-gradient(135deg, #e50914, #9b0000); /* Engloray Red */
   color: white;
@@ -33,6 +36,15 @@
   outline: none;
   overflow: hidden;
 }
+
+.engloray-chat-fab video {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  border-radius: 50% !important;
+  display: block !important;
+}
+
 
 .engloray-chat-fab:hover {
   box-shadow: 0 12px 32px rgba(229, 9, 20, 0.6);

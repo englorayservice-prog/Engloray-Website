@@ -1,8 +1,6 @@
-import React, { useState, useEffect, useLayoutEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {
     faArrowTrendUp,
     faPlay,
@@ -31,8 +29,6 @@ import './About.css';
 import aboutVideo from '../../assets/RISE BEYOND - Engloray (1080p, h264).mp4';
 import anthemThumbnail from '../../assets/englorayanthempost.jpeg';
 import anthemThumbnail1 from '../../assets/anthemThumbnail1.jpeg';
-
-gsap.registerPlugin(ScrollTrigger);
 
 
 // 1. MODIFIED: Custom Hook for LocalStorage Persistence
@@ -85,43 +81,6 @@ const About = () => {
         if (e) e.preventDefault();
         if (callback) callback();
     };
-
-    // 4. MODIFIED: Cinematic Entrance Animations
-    useLayoutEffect(() => {
-        let ctx = gsap.context(() => {
-            const elements = [
-                ".stats-stack-card",
-                ".card-video-precise",
-                ".hero-heading-inline",
-                ".hero-description-p",
-                ".inline-action-group",
-                ".inline-icon-stack",
-                ".visual-hero-card",
-                ".stat-card-new"
-            ];
-
-            gsap.fromTo(elements,
-                {
-                    y: 100,
-                    opacity: 0
-                },
-                {
-                    y: 0,
-                    opacity: 1,
-                    duration: 1.2,
-                    ease: "power4.out",
-                    stagger: 0.15,
-                    scrollTrigger: {
-                        trigger: ".about-main-card",
-                        start: "top 85%",
-                        toggleActions: "restart none none restart"
-                    }
-                }
-            );
-        });
-
-        return () => ctx.revert();
-    }, []);
 
     return (
         <section id="engloray-about-section-precise" className="engloray-about-wrapper">

@@ -243,10 +243,10 @@ export const ExpertiseCarousel = () => {
   return (
     <div 
       ref={containerRef}
-      className="relative w-full h-[440px] bg-black text-white flex items-center justify-center overflow-hidden select-none rounded-2xl shadow-inner border border-white/5"
+      className="relative w-full h-[440px] bg-black text-white flex items-center justify-center overflow-hidden select-none rounded-2xl shadow-inner border border-white/5 cursor-pointer"
     >
       <div
-        className="relative w-full h-full flex items-center justify-center pointer-events-none"
+        className="relative w-full h-full flex items-center justify-center"
         style={{ perspective: '1350px' }}
       >
         <div

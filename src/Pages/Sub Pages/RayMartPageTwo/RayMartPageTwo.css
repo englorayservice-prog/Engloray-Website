@@ -498,8 +498,41 @@
     margin-bottom: 10px !important;
   }
 
+  /* Reset the desktop-only negative offsets that pull the "Support"/"Expert"
+     lines together. On mobile the title wraps onto more lines, so those
+     negative margins cause the pills/toggle to overlap each other and the
+     paragraph below instead of just stacking neatly. */
+  #raymart-hero-root .rm-line:nth-child(2) {
+    margin-bottom: 8px !important;
+  }
+
+  #raymart-hero-root .rm-line:nth-child(3) {
+    margin-top: 0 !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+  }
+
+  #raymart-hero-root .rm-dl-highlight,
   .rm-dl-highlight {
-    margin-top: 30px !important;
+    margin-top: 8px !important;
+  }
+
+  #raymart-hero-root .rm-dl-hl-top {
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  #raymart-hero-root .rm-dl-hl-bottom {
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  #raymart-hero-root .rm-toggle-switch {
+    transform: none !important;
+    margin-left: 0 !important;
   }
 }
 

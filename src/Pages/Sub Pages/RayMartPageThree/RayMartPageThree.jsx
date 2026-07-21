@@ -688,7 +688,7 @@ const RayMartPageThree = () => {
                       <div className="rm3-rv-ch-menu">⋮</div>
                     </div>
 
-                    <div className="rm3-rv-chat-body" style={{ minHeight: '260px' }}>
+                    <div className="rm3-rv-chat-body">
                       <div className="rm3-rv-cb-title">
                         <div className="rm3-rv-cb-av-small" style={{ background: testimonials[testiIndex].color }}></div>
                         <span className="rm3-rv-cb-name">{testimonials[testiIndex].name}</span>

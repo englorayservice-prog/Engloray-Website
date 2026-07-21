@@ -1,8 +1,9 @@
-
 import React, { useState, useEffect, useRef } from 'react';
+import ReactDOM from 'react-dom';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import '../TwoLineNavbar/TwoLineNavbar.css';
+import './RayMartNavbar.css';
 import Logo from '../../assets/logo 01.png';
 import SearchBar from '../SearchBar/SearchBar';
 
@@ -291,7 +292,7 @@ const RayMartNavbar = () => {
 
     return (
         <>
-            <div>
+            <div className="raymart-nav-scope">
                 <Helmet>
                     <title>Engloray</title>
                     <meta name="description" content="Organizes navigation into two rows for cleaner, more structured browsing." />
@@ -416,9 +417,12 @@ const RayMartNavbar = () => {
 
                             {/* Mobile Toggle */}
                             <button
-                                className="tlnbn-mobile-toggle"
+                                className={`tlnbn-mobile-toggle ${isMobileMenuOpen ? 'tlnbn-toggle-active' : ''}`}
                                 onClick={toggleMobileMenu}
-                                aria-label="Toggle menu"
+                                aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+                                aria-expanded={isMobileMenuOpen}
+                                aria-controls="raymart-mobile-menu"
+                                type="button"
                             >
                                 <span></span>
                                 <span></span>
@@ -428,103 +432,126 @@ const RayMartNavbar = () => {
                     </nav>
                 </div>
 
-                {/* Mobile Menu WITH SEARCH BAR */}
-                <div className={`tlnbn-mobile-menu-overlay ${isMobileMenuOpen ? 'tlnbn-active' : ''}`} onClick={closeMobileMenu}>
-                    <div className="tlnbn-mobile-menu" onClick={(e) => e.stopPropagation()}>
-                        {/* Mobile Menu Header - JUST CLOSE BUTTON */}
-                        <div className="tlnbn-mobile-menu-header">
-                            <button className="tlnbn-close-btn" onClick={closeMobileMenu} aria-label="Close menu">
-                                ×
-                            </button>
-                        </div>
-
-                        {/* Mobile Menu Content WITH SEARCH BAR AT THE TOP */}
-                        <div className="tlnbn-mobile-menu-content">
-                            {/* Search Bar at the top */}
-                            <div className="tlnbn-mobile-search-wrapper" style={{
-                                padding: '15px 20px',
-                                background: '#f8fafc',
-                                borderBottom: '1px solid #e2e8f0',
-                                width: '100%',
-                                display: 'block',
-                                boxSizing: 'border-box'
-                            }}>
-                                <div style={{ width: '100%', display: 'block' }}>
-                                    <SearchBar mobile={true} source="raymart" />
-                                </div>
+                {/* Mobile Menu — rendered through a portal to document.body so it can
+                    never be trapped by an ancestor's transform/stacking context,
+                    and styled entirely by our own raymart-mobile-* classes so it
+                    can't be silently hidden by rules elsewhere in TwoLineNavbar.css */}
+                {typeof document !== 'undefined' && ReactDOM.createPortal(
+                    <div
+                        id="raymart-mobile-menu"
+                        className={`raymart-mobile-overlay ${isMobileMenuOpen ? 'raymart-mobile-overlay-active' : ''}`}
+                        onClick={closeMobileMenu}
+                        aria-hidden={!isMobileMenuOpen}
+                    >
+                        <div
+                            className="raymart-mobile-panel"
+                            onClick={(e) => e.stopPropagation()}
+                            role="dialog"
+                            aria-modal="true"
+                            aria-label="Mobile navigation"
+                        >
+                            <div className="raymart-mobile-header">
+                                <img src={Logo} alt="ENGLORAY" className="raymart-mobile-logo" />
+                                <button className="raymart-mobile-close" onClick={closeMobileMenu} aria-label="Close menu">
+                                    ×
+                                </button>
                             </div>
 
-                            {/* Mobile Navigation Links */}
-                            <div className="tlnbn-mobile-nav-items">
-                                {menuData.map((menu) => (
-                                    <div key={menu.id} className={`tlnbn-mobile-nav-item ${activeMobileMenu === menu.id ? 'tlnbn-active' : ''}`}>
+                            <div className="raymart-mobile-content">
+                                <div className="raymart-mobile-search-wrapper">
+                                    <SearchBar mobile={true} source="raymart" />
+                                </div>
+
+                                <nav className="raymart-mobile-nav" aria-label="Mobile">
+                                    {menuData.map((menu, index) => (
                                         <div
-                                            className="tlnbn-mobile-nav-link"
-                                            onClick={() => handleMobileMenuItemClick(menu)}
+                                            key={menu.id}
+                                            className={`raymart-mobile-nav-item ${activeMobileMenu === menu.id ? 'raymart-mobile-nav-item-open' : ''}`}
+                                            style={{ '--stagger-index': index }}
+                                        >
+                                            <div
+                                                className="raymart-mobile-nav-link"
+                                                onClick={() => handleMobileMenuItemClick(menu)}
+                                                role="button"
+                                                tabIndex={0}
+                                                onKeyDown={(e) => {
+                                                    if (e.key === 'Enter' || e.key === ' ') {
+                                                        e.preventDefault();
+                                                        handleMobileMenuItemClick(menu);
+                                                    }
+                                                }}
+                                            >
+                                                <span>{menu.title}</span>
+                                                {menu.dropdown && (
+                                                    <span className="raymart-mobile-arrow">
+                                                        {activeMobileMenu === menu.id ? '⌃' : '⌄'}
+                                                    </span>
+                                                )}
+                                            </div>
+                                            {menu.dropdown && (
+                                                <div className={`raymart-mobile-dropdown ${activeMobileMenu === menu.id ? 'raymart-mobile-dropdown-visible' : ''}`}>
+                                                    {menu.dropdown.items.map((item, idx) => (
+                                                        <div
+                                                            key={item.id || idx}
+                                                            className="raymart-mobile-dropdown-item"
+                                                            onClick={() => handleMobileDropdownItemClick(item)}
+                                                            role="button"
+                                                            tabIndex={0}
+                                                            onKeyDown={(e) => {
+                                                                if (e.key === 'Enter' || e.key === ' ') {
+                                                                    handleMobileDropdownItemClick(item);
+                                                                }
+                                                            }}
+                                                        >
+                                                            {item.icon && <span className="raymart-mobile-icon">{item.icon}</span>}
+                                                            <div className="raymart-mobile-item-text">
+                                                                <div className="raymart-mobile-item-title">{item.name}</div>
+                                                                <div className="raymart-mobile-item-desc">{item.desc}</div>
+                                                            </div>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            )}
+                                        </div>
+                                    ))}
+
+                                    <div
+                                        className="raymart-mobile-nav-item raymart-mobile-nav-item-contact"
+                                        style={{ '--stagger-index': menuData.length }}
+                                    >
+                                        <div
+                                            className="raymart-mobile-nav-link raymart-mobile-contact-link"
+                                            onClick={() => { navigate('/contactPage'); closeMobileMenu(); }}
                                             role="button"
                                             tabIndex={0}
                                             onKeyDown={(e) => {
                                                 if (e.key === 'Enter' || e.key === ' ') {
-                                                    handleMobileMenuItemClick(menu);
+                                                    navigate('/contactPage');
+                                                    closeMobileMenu();
                                                 }
                                             }}
                                         >
-                                            <span>{menu.title}</span>
-                                            {menu.dropdown && (
-                                                <span className="tlnbn-arrow">{activeMobileMenu === menu.id ? '⌃' : '⌄'}</span>
-                                            )}
+                                            <span>Contact</span>
                                         </div>
-                                        {menu.dropdown && (
-                                            <div className={`tlnbn-mobile-dropdown ${activeMobileMenu === menu.id ? 'tlnbn-visible' : ''}`}>
-                                                {menu.dropdown.items.map((item, index) => (
-                                                    <div
-                                                        key={item.id || index}
-                                                        className="tlnbn-mobile-dropdown-item"
-                                                        onClick={() => handleMobileDropdownItemClick(item)}
-                                                        role="button"
-                                                        tabIndex={0}
-                                                        onKeyDown={(e) => {
-                                                            if (e.key === 'Enter' || e.key === ' ') {
-                                                                handleMobileDropdownItemClick(item);
-                                                            }
-                                                        }}
-                                                    >
-                                                        {item.icon && <span className="tlnbn-mobile-icon">{item.icon}</span>}
-                                                        <div className="tlnbn-mobile-item-text">
-                                                            <div className="tlnbn-mobile-item-title">{item.name}</div>
-                                                            <div className="tlnbn-mobile-item-desc">{item.desc}</div>
-                                                        </div>
-                                                    </div>
-                                                ))}
-                                            </div>
-                                        )}
                                     </div>
-                                ))}
-                                {/* Mobile Action Buttons */}
-                                <div className="tlnbn-mobile-actions">
-                                    <button
-                                        className="tlnbn-btn tlnbn-start-project"
-                                        onClick={openWhatsApp}
-                                    >
+                                </nav>
+
+                                <div className="raymart-mobile-actions">
+                                    <button className="raymart-mobile-btn raymart-mobile-btn-outline" onClick={openWhatsApp}>
                                         Start a Project
                                     </button>
-                                    <button
-                                        className="tlnbn-btn tlnbn-get-started"
-                                        onClick={openWhatsApp}
-                                    >
+                                    <button className="raymart-mobile-btn raymart-mobile-btn-outline" onClick={openWhatsApp}>
                                         Partner with Us
                                     </button>
-                                    <button
-                                        className="tlnbn-btn tlnbn-join-now"
-                                        onClick={focusSearchBar}
-                                    >
+                                    <button className="raymart-mobile-btn raymart-mobile-btn-solid" onClick={focusSearchBar}>
                                         Explore Store
                                     </button>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </div>,
+                    document.body
+                )}
             </div>
         </>
     );

@@ -1,0 +1,39 @@
+.ls-section {
+    width: 100%;
+}
+
+.ls-skeleton {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background: #f4f4f6;
+    border-radius: 16px;
+}
+
+.ls-skeleton-shimmer {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        100deg,
+        rgba(255, 255, 255, 0) 30%,
+        rgba(255, 255, 255, 0.65) 50%,
+        rgba(255, 255, 255, 0) 70%
+    );
+    animation: ls-shimmer 2.2s ease-in-out infinite;
+}
+
+@keyframes ls-shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ls-skeleton-shimmer {
+        animation: none;
+        background: rgba(255, 255, 255, 0.25);
+    }
+}

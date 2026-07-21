@@ -468,6 +468,12 @@
 
 @media (max-width: 768px) {
 
+    .nf-container-new {
+        margin-left: 0;
+        padding: 0 20px;
+        gap: 16px;
+    }
+
     .nf-card-left,
     .nf-card-right {
         padding: 32px;
@@ -476,6 +482,31 @@
     .nf-links-grid-main,
     .nf-links-grid-other {
         grid-template-columns: 1fr;
+    }
+
+    /* These were desktop-only offsets (reset at min-width:1441px) but were
+       never reset for anything below that, so on tablet/mobile the newsletter
+       heading flew ~220px off the left edge of the card and ~100px upward,
+       bleeding out of the footer entirely. */
+    .nf-nl-text {
+        margin-left: 0 !important;
+        margin-top: 0 !important;
+        white-space: normal;
+        text-align: left;
+        width: 100%;
+    }
+
+    .nf-nl-row {
+        margin-left: 0;
+    }
+
+    .nf-newsletter {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .nf-right-bottom {
+        margin-top: 40px;
     }
 }
 
@@ -591,6 +622,83 @@
 
     .nf-nl-row {
         margin-left: 0;
+    }
+}
+
+/* Small phones (iPhone SE / 350px-wide devices and similar) */
+@media (max-width: 480px) {
+    .nf-footer-new {
+        padding: 40px 0;
+        overflow-x: hidden;
+        /* Extra room at the very bottom so the fixed back-to-top arrow and
+           chat bubble don't sit on top of the subscribe box when the page
+           is scrolled all the way down. */
+        padding-bottom: 110px;
+    }
+
+    .nf-container-new {
+        padding: 0 16px;
+        gap: 12px;
+    }
+
+    .nf-card-left,
+    .nf-card-right {
+        padding: 24px 20px;
+        border-radius: 18px;
+    }
+
+    .nf-brand-name {
+        font-size: 1.8rem;
+    }
+
+    .nf-brand-description {
+        font-size: 1.05rem;
+    }
+
+    .nf-links-grid-main,
+    .nf-links-grid-other {
+        gap: 28px;
+    }
+
+    .nf-right-bottom {
+        margin-top: 32px;
+        gap: 24px;
+    }
+
+    .nf-legal-links {
+        flex-wrap: wrap;
+        row-gap: 8px;
+    }
+
+    .nf-nl-text {
+        font-size: 1.1rem;
+    }
+
+    /* Stack the email input and Subscribe button instead of squeezing them
+       side by side on a ~286px-wide content area. */
+    .nf-nl-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .nf-nl-form {
+        width: 100%;
+        padding: 4px;
+    }
+
+    .nf-nl-input {
+        padding: 12px 14px;
+    }
+
+    .nf-nl-btn {
+        width: 100%;
+        height: 48px;
+        border-radius: 10px;
+    }
+
+    .nf-nl-btn:disabled {
+        height: 48px;
     }
 }
 

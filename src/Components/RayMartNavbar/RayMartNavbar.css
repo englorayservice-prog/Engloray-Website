@@ -1,164 +1,127 @@
-/* Raymart Navbar Styles */
-.raymart-navbar {
-    position: fixed;
-    top: 28px;
-    left: 0;
-    right: 0;
-    background: white;
-    padding: 9.5px 30px;
-    transition: all 0.3s ease;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-}
+/* ==========================================================================
+   RayMart Navbar — Mobile Toggle Fix & Overrides
+   Scoped under .raymart-nav-scope so these rules only affect this navbar
+   instance and never bleed into other TwoLineNavbar-based pages.
+   Loaded AFTER TwoLineNavbar.css so these overrides win the cascade.
+   ========================================================================== */
 
-.raymart-navbar-scrolled {
-    background: white;
-    backdrop-filter: none;
-    padding: 15px 40px;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-}
-
-.raymart-navbar-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-/* Logo Styles - Moved slightly to right */
-.raymart-navbar-logo {
-    flex-shrink: 0;
-    margin-right: 0;
-    transform: translateX(100px);
-    /* Move logo to right */
-}
-
-.raymart-navbar-logo a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-}
-
-.raymart-navbar-logo img {
-    height: 30px;
-    width: auto;
-    transition: all 0.3s ease;
-    object-fit: contain;
-}
-
-.raymart-navbar-scrolled .raymart-navbar-logo img {
-    height: 45px;
-}
-
-/* Desktop Menu - Moved slightly to left */
-.raymart-navbar-menu {
-    display: flex;
-    align-items: center;
-    gap: 130px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    transform: translateX(-200px);
-    /* Move menu to left */
-}
-
-.raymart-navbar-item {
-    position: relative;
-}
-
-.raymart-navbar-link {
-    text-decoration: none;
-    font-family: 'Inter', sans-serif;
-    font-size: 15px;
-    font-weight: 500;
-    color: #333;
-    padding: 8px 0;
-    transition: all 0.3s ease;
-    position: relative;
-    display: inline-block;
-}
-
-/* Underline effect */
-.raymart-navbar-link-underline {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: #ff6b6b;
-    transition: width 0.3s ease;
-}
-
-.raymart-navbar-link:hover .raymart-navbar-link-underline,
-.raymart-navbar-link-active .raymart-navbar-link-underline {
-    width: 100%;
-}
-
-.raymart-navbar-link:hover {
-    color: #ff6b6b;
-}
-
-.raymart-navbar-link-active {
-    color: #ff6b6b;
-}
-
-/* Hover effect - slightly bigger text */
-.raymart-navbar-link:hover .raymart-navbar-link-text {
-    transform: scale(1.05);
-    display: inline-block;
-}
-
-.raymart-navbar-link-text {
-    display: inline-block;
-    transition: transform 0.3s ease;
-}
-
-/* Mobile Menu Button */
-.raymart-navbar-hamburger {
+/* --------------------------------------------------------------------------
+   1. Mobile toggle button — hidden on desktop, real button on mobile
+   -------------------------------------------------------------------------- */
+.raymart-nav-scope .tlnbn-mobile-toggle {
     display: none;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    flex-direction: column;
-    gap: 6px;
-    z-index: 1001;
 }
 
-.raymart-hamburger-line {
-    width: 25px;
-    height: 2.5px;
-    background: #333;
-    transition: all 0.3s ease;
-    border-radius: 2px;
+@media (max-width: 768px) {
+    .raymart-nav-scope .tlnbn-nav-content {
+        overflow: visible !important;
+    }
+
+    /* Hide desktop-only siblings so they don't crowd out or clip the toggle */
+    .raymart-nav-scope .tlnbn-desktop-menu,
+    .raymart-nav-scope .tlnbn-action-buttons,
+    .raymart-nav-scope .tlnbn-search-container-wrapper {
+        display: none !important;
+    }
+
+    .raymart-nav-scope .tlnbn-mobile-toggle {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        position: relative;
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        padding: 0;
+        margin-left: auto;
+        background: transparent;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        z-index: 1002;
+        -webkit-tap-highlight-color: transparent;
+        transition: background-color 0.25s ease;
+    }
+
+    .raymart-nav-scope .tlnbn-mobile-toggle:hover {
+        background-color: rgba(255, 107, 107, 0.08);
+    }
+
+    .raymart-nav-scope .tlnbn-mobile-toggle:focus-visible {
+        outline: 2px solid #ff6b6b;
+        outline-offset: 2px;
+    }
+
+    /* Hamburger lines */
+    .raymart-nav-scope .tlnbn-mobile-toggle span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        border-radius: 2px;
+        background-color: #1a1a1a;
+        transform-origin: center;
+        transition: transform 0.32s cubic-bezier(0.65, 0, 0.35, 1),
+                    opacity 0.2s ease,
+                    background-color 0.25s ease;
+    }
+
+    /* Animated → X state when menu is open */
+    .raymart-nav-scope .tlnbn-mobile-toggle.tlnbn-toggle-active span {
+        background-color: #ff6b6b;
+    }
+
+    .raymart-nav-scope .tlnbn-mobile-toggle.tlnbn-toggle-active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .raymart-nav-scope .tlnbn-mobile-toggle.tlnbn-toggle-active span:nth-child(2) {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+
+    .raymart-nav-scope .tlnbn-mobile-toggle.tlnbn-toggle-active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
 }
 
-.raymart-hamburger-active .raymart-hamburger-line:nth-child(1) {
-    transform: rotate(45deg) translate(6px, 6px);
+/* --------------------------------------------------------------------------
+   2. Mobile menu panel — sits above everything, scrollable, safe-area aware
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+    .raymart-nav-scope .tlnbn-mobile-menu-overlay {
+        z-index: 1050;
+    }
+
+    .raymart-nav-scope .tlnbn-mobile-menu {
+        padding-top: calc(env(safe-area-inset-top, 0px) + 16px);
+        -webkit-overflow-scrolling: touch;
+    }
 }
 
-.raymart-hamburger-active .raymart-hamburger-line:nth-child(2) {
-    opacity: 0;
+/* When the mobile menu is open, lock background scroll (paired with the
+   'tlnbn-menu-open' class already toggled on <body> in the component). */
+body.tlnbn-menu-open {
+    overflow: hidden;
 }
 
-.raymart-hamburger-active .raymart-hamburger-line:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px);
-}
+/* ==========================================================================
+   3. Mobile menu — fully self-contained, portal-rendered to document.body.
+   These classes are unique to RayMart, so they can never collide with or
+   be silently overridden by rules in TwoLineNavbar.css.
+   ========================================================================== */
 
-/* Mobile Menu Overlay */
 .raymart-mobile-overlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(5px);
-    z-index: 999;
+    inset: 0;
+    z-index: 2000;
+    background: rgba(15, 15, 20, 0.45);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     opacity: 0;
     visibility: hidden;
-    transition: all 0.3s ease;
+    transition: opacity 0.32s ease, visibility 0.32s ease;
 }
 
 .raymart-mobile-overlay-active {
@@ -166,143 +129,234 @@
     visibility: visible;
 }
 
-.raymart-mobile-menu {
-    position: fixed;
+.raymart-mobile-panel {
+    position: absolute;
     top: 0;
-    right: -280px;
-    width: 280px;
-    height: 100vh;
-    background: white;
-    z-index: 1000;
-    transition: right 0.3s ease;
-    padding: 80px 20px 40px;
-    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+    right: 0;
+    width: min(86vw, 360px);
+    height: 100%;
+    height: 100dvh;
+    background: #ffffff;
+    box-shadow: -12px 0 40px rgba(0, 0, 0, 0.18);
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
-.raymart-mobile-overlay-active .raymart-mobile-menu {
-    right: 0;
+.raymart-mobile-overlay-active .raymart-mobile-panel {
+    transform: translateX(0);
+}
+
+.raymart-mobile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: calc(env(safe-area-inset-top, 0px) + 18px) 20px 16px;
+    border-bottom: 1px solid #f0f0f0;
+    flex-shrink: 0;
+}
+
+.raymart-mobile-logo {
+    height: 26px;
+    width: auto;
+    object-fit: contain;
 }
 
 .raymart-mobile-close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
     border: none;
-    font-size: 24px;
+    background: #f5f5f7;
+    border-radius: 50%;
+    font-size: 20px;
+    line-height: 1;
+    color: #1a1a1a;
     cursor: pointer;
-    color: #333;
-    transition: all 0.3s ease;
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .raymart-mobile-close:hover {
-    color: #ff6b6b;
-    transform: scale(1.1);
+    background: #ececee;
 }
 
-.raymart-mobile-menu-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.raymart-mobile-close:active {
+    transform: scale(0.92);
+}
+
+.raymart-mobile-close:focus-visible {
+    outline: 2px solid #ff6b6b;
+    outline-offset: 2px;
+}
+
+.raymart-mobile-content {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    padding: 18px 20px 32px;
+    gap: 22px;
+    flex: 1;
 }
 
-.raymart-mobile-menu-item {
-    text-align: center;
+.raymart-mobile-search-wrapper {
+    width: 100%;
 }
 
-.raymart-mobile-menu-link {
-    text-decoration: none;
+.raymart-mobile-nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.raymart-mobile-nav-item {
+    border-bottom: 1px solid #f2f2f4;
+    opacity: 0;
+    transform: translateY(8px);
+}
+
+.raymart-mobile-overlay-active .raymart-mobile-nav-item {
+    animation: raymart-item-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: calc(60ms + var(--stagger-index, 0) * 45ms);
+}
+
+@keyframes raymart-item-in {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.raymart-mobile-nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 4px;
     font-family: 'Inter', sans-serif;
-    font-size: 18px;
-    font-weight: 500;
-    color: #333;
-    padding: 10px 20px;
-    display: inline-block;
-    transition: all 0.3s ease;
-    border-radius: 8px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #1a1a1a;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: color 0.2s ease;
 }
 
-.raymart-mobile-menu-link:hover,
-.raymart-mobile-link-active {
+.raymart-mobile-nav-link:active {
     color: #ff6b6b;
-    background: rgba(255, 107, 107, 0.1);
 }
 
-/* Responsive Design */
-@media (max-width: 1200px) {
-    .raymart-navbar-logo {
-        transform: translateX(15px);
-    }
-
-    .raymart-navbar-menu {
-        transform: translateX(-15px);
-    }
+.raymart-mobile-nav-link:focus-visible {
+    outline: 2px solid #ff6b6b;
+    outline-offset: -2px;
+    border-radius: 6px;
 }
 
-@media (max-width: 992px) {
-    .raymart-navbar-logo {
-        transform: translateX(10px);
-    }
-
-    .raymart-navbar-menu {
-        transform: translateX(-10px);
-        gap: 25px;
-    }
+.raymart-mobile-contact-link {
+    color: #ff6b6b;
 }
 
-@media (max-width: 768px) {
-    .raymart-navbar {
-        padding: 15px 20px;
-    }
+.raymart-mobile-arrow {
+    font-size: 14px;
+    color: #9a9a9a;
+    transition: transform 0.25s ease;
+}
 
-    .raymart-navbar-scrolled {
-        padding: 12px 20px;
-    }
+.raymart-mobile-nav-item-open .raymart-mobile-arrow {
+    transform: rotate(180deg);
+    color: #ff6b6b;
+}
 
-    .raymart-navbar-menu {
+.raymart-mobile-dropdown {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.raymart-mobile-dropdown-visible {
+    max-height: 600px;
+}
+
+.raymart-mobile-dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 8px 12px 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.2s ease;
+}
+
+.raymart-mobile-dropdown-item:hover,
+.raymart-mobile-dropdown-item:active {
+    background: rgba(255, 107, 107, 0.06);
+}
+
+.raymart-mobile-icon {
+    flex-shrink: 0;
+    font-size: 18px;
+}
+
+.raymart-mobile-item-title {
+    font-size: 14.5px;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.raymart-mobile-item-desc {
+    font-size: 12.5px;
+    color: #888;
+    margin-top: 2px;
+}
+
+.raymart-mobile-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 10px;
+}
+
+.raymart-mobile-btn {
+    width: 100%;
+    padding: 13px 16px;
+    border-radius: 999px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14.5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.15s ease, background-color 0.2s ease, border-color 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.raymart-mobile-btn:active {
+    transform: scale(0.97);
+}
+
+.raymart-mobile-btn-outline {
+    background: #ffffff;
+    border: 1.5px solid #e2e2e5;
+    color: #333;
+}
+
+.raymart-mobile-btn-outline:hover {
+    border-color: #ff6b6b;
+    color: #ff6b6b;
+}
+
+.raymart-mobile-btn-solid {
+    background: #ff6b6b;
+    border: 1.5px solid #ff6b6b;
+    color: #ffffff;
+}
+
+.raymart-mobile-btn-solid:hover {
+    background: #ff5252;
+}
+
+@media (min-width: 769px) {
+    .raymart-mobile-overlay {
         display: none;
-    }
-
-    .raymart-navbar-hamburger {
-        display: flex;
-    }
-
-    .raymart-navbar-logo img {
-        height: 40px;
-    }
-
-    .raymart-navbar-scrolled .raymart-navbar-logo img {
-        height: 38px;
-    }
-
-    /* Reset transforms on mobile */
-    .raymart-navbar-logo {
-        transform: translateX(0);
-    }
-}
-
-@media (max-width: 480px) {
-    .raymart-navbar {
-        padding: 12px 15px;
-    }
-
-    .raymart-navbar-logo img {
-        height: 35px;
-    }
-
-    .raymart-mobile-menu {
-        width: 260px;
-    }
-
-    .raymart-mobile-menu-link {
-        font-size: 16px;
-        padding: 8px 16px;
-    }
-
-    .raymart-navbar-logo {
-        transform: translateX(0);
     }
 }

@@ -485,9 +485,11 @@ body .engloray-about-wrapper {
 .heading-inline-row {
     display: inline-flex;
     align-items: center;
-    flex-wrap: nowrap;
-    white-space: nowrap;
+    /* MOBILE FIX: allow wrapping on small screens */
+    flex-wrap: wrap;
+    white-space: normal;
     vertical-align: middle;
+    gap: 8px;
 }
 
 .hero-description-p {
@@ -497,7 +499,10 @@ body .engloray-about-wrapper {
     line-height: 1.6;
     color: #444;
     margin: 20px 0 40px 0;
-    min-width: 990px;
+    /* MOBILE FIX: was min-width: 990px causing horizontal overflow on all mobile/tablet sizes */
+    min-width: 0;
+    width: 100%;
+    max-width: 990px;
 }
 
 .inline-action-group {

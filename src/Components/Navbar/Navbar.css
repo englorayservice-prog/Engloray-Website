@@ -185,7 +185,7 @@
 
 .engloray-navbar .nav-actions .search-bar {
     width: 100%;
-    min-width: 160px;
+    min-width: 120px; /* MOBILE FIX: was 160px — too wide for smaller navbar on tablets */
     max-width: 240px;
     position: relative;
     display: block;
@@ -328,7 +328,9 @@
     position: absolute;
     top: calc(100% + 8px);
     left: 0;
+    /* MOBILE FIX: prevent dropdown from overflowing right edge of viewport */
     min-width: 180px;
+    max-width: calc(100vw - 24px);
     background: white;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);

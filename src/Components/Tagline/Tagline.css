@@ -1,4 +1,22 @@
 /* Tagline.css */
+
+/* ── Tagline entrance animation (CSS-only, no JS library dependency) ── */
+@keyframes taglineFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.tagline-fade-in {
+  animation: taglineFadeInUp 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+
 .tagline-section {
   color: white;
   padding: 20px 0 0 0;
@@ -75,7 +93,8 @@
 
 .tagline-subtitle {
   color: #ff0000;
-  font-size: 1.9rem;
+  /* MOBILE FIX: was fixed 1.9rem, caused overflow/squeeze on mobile */
+  font-size: clamp(1rem, 4vw, 1.9rem);
   letter-spacing: 2px;
   text-transform: uppercase;
   font-weight: 600;
@@ -84,7 +103,8 @@
 }
 
 .tagline-title {
-  font-size: 4.5rem;
+  /* MOBILE FIX: was fixed 4.5rem, caused tiny unreadable text on 320px screens */
+  font-size: clamp(1.8rem, 8vw, 4.5rem);
   font-weight: 700;
   line-height: 1.2;
   color: white;
@@ -475,11 +495,33 @@
 
 @media (max-width: 480px) {
   .tagline-title {
-    font-size: 2rem;
+    font-size: clamp(1.6rem, 7vw, 2rem);
+  }
+  .tagline-description {
+    font-size: 0.9rem;
+    padding: 0 8px;
+  }
+  .tagline-container {
+    padding: 105px 16px 50px 16px !important; /* Increased top padding to clear navbars */
   }
 }
 
-/* Laptop Resolution Fix: Move Verified content slightly up */
+/* 320px absolute floor — ensures nothing overflows on the smallest phones */
+@media (max-width: 340px) {
+  .tagline-title {
+    font-size: 1.6rem !important;
+    line-height: 1.3 !important;
+  }
+  .tagline-subtitle {
+    font-size: 0.9rem !important;
+    letter-spacing: 1px !important;
+  }
+  .tagline-buttons {
+    max-width: 260px !important;
+  }
+}
+
+/* Prop scaling for Branding Icon on laptops */
 @media screen and (min-width: 1025px) and (max-width: 1600px) {
   .tagline-bottom-text {
     top: 78% !important;
@@ -490,7 +532,7 @@
 /* Small Device Resolution Fix: Move buttons up and adjust Verified box */
 @media (max-width: 380px) {
   .tagline-container {
-    padding-top: 40px !important;
+    padding-top: 105px !important; /* Increased to avoid navbar overlap */
     gap: 0.8rem !important;
   }
 

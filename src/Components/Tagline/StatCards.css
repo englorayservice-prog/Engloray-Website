@@ -84,10 +84,12 @@
 }
 
 .bphs-scrolling-image-track img {
-    height: 70px;
-    width: auto;
-    margin-top: 70px;
-    object-fit: contain;
+    height: 70px !important;
+    width: auto !important;
+    max-height: 70px !important;
+    max-width: 150px !important;
+    margin-top: 30px !important;
+    object-fit: contain !important;
 
     /* 3D Styling details */
     opacity: 0.95;
@@ -725,6 +727,15 @@ screen and (width: 1024px) {
         max-width: 100% !important;
     }
 
+    .bphs-scrolling-image-track img {
+        height: 40px !important;
+        max-height: 40px !important;
+        width: auto !important;
+        max-width: 100px !important;
+        margin-top: 15px !important;
+        object-fit: contain !important;
+    }
+
     .bphs-stat-cards-wrapper {
         width: 100% !important;
         flex-direction: column !important;
@@ -899,8 +910,12 @@ screen and (width: 1024px) {
     }
 
     .bphs-scrolling-image-track img {
-        height: 9.1vw !important;
-        margin-top: 9.1vw !important;
+        height: 50px !important;
+        max-height: 50px !important;
+        width: auto !important;
+        max-width: 120px !important;
+        margin-top: 20px !important;
+        object-fit: contain !important;
     }
 
     .bphs-stat-cards-wrapper {

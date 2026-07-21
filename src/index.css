@@ -1255,3 +1255,62 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Global mobile-friendly tweaks (non-invasive) */
+@media (max-width: 768px) {
+  /* Slightly larger base font for better readability on small screens */
+  html { font-size: 16px; }
+
+  /* Ensure main containers have safe padding */
+  .container, .max-w-6xl, .max-w-7xl, .app-container, .homepage-master {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* Make interactive targets easier to tap — EXCLUDES chatbot FAB which has its own shape */
+  button:not(.engloray-chat-fab):not(.chat-close-btn):not(.chat-send-btn),
+  .btn, .tlnbn-btn, .cert-nav-btn, .topnav-hamburger, .topnav-link {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 8px 10px;
+    touch-action: manipulation;
+  }
+  /* Chatbot FAB: preserve perfect circle */
+  .engloray-chat-fab {
+    width: 60px !important;
+    height: 60px !important;
+    min-width: 60px !important;
+    min-height: 60px !important;
+    padding: 0 !important;
+    border-radius: 50% !important;
+  }
+
+  /* Images and video should adapt and not overflow */
+  img, video {
+    max-width: 100%;
+    height: auto !important;
+    object-fit: contain;
+  }
+
+  /* Prevent accidental horizontal scrolling by constrained elements */
+  html, body, #root {
+    overflow-x: hidden !important;
+  }
+
+  /* Reduce big shadow/spacer areas that cause vertical overflow */
+  .shadow-2xl, .shadow-inner, .box-shadow-large {
+    box-shadow: none !important;
+  }
+}
+
+@media (max-width: 420px) {
+  /* Small devices: slightly reduced font and tighter spacing */
+  html { font-size: 15px; }
+  .container, .app-container, .homepage-master { padding-left: 12px !important; padding-right: 12px !important; }
+}
+
+@media (max-width: 360px) {
+  /* Extra-small screens (down to 350px): scale down the root size to shrink all rem layouts proportionally */
+  html { font-size: 13.5px !important; }
+  .container, .app-container, .homepage-master { padding-left: 8px !important; padding-right: 8px !important; }
+}

@@ -1,0 +1,412 @@
+/*
+ * responsive-floor.css
+ * =====================================================================
+ * This file is the single authoritative "floor" for all responsive
+ * scaling at 360px wide and below (supporting 350px minimum width).
+ *
+ * Strategy (Senior Dev pattern):
+ *  1. html root font-size is scaled down so ALL rem-based elements
+ *     (cards, headings, margins, paddings) shrink proportionally.
+ *  2. Hard pixel-value overrides target the specific components that
+ *     use non-rem units (px, fixed widths) and would otherwise overflow.
+ *  3. `overflow-x: hidden` is applied at html/body/#root level as a
+ *     hard safety net so NO horizontal scroll appears on any route.
+ *
+ * This file must be imported LAST in App.js so its specificity wins.
+ * =====================================================================
+ */
+
+/* ─── TIER 1 · Root font size scaling (applies to ALL routes) ──────── */
+/* At ≤ 360px (covers 350px screens) – scale down root by ~15% */
+@media (max-width: 360px) {
+  html {
+    font-size: 13px !important;
+  }
+
+  /* Prevent any horizontal scroll on all pages */
+  html,
+  body,
+  #root {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+  }
+
+  /* Ensure top-level wrappers fit inside the viewport — do NOT put overflow-x
+     on section/article because carousel cards use position:absolute + translateX
+     and would become invisible if clipped by a parent overflow:hidden. */
+  .container,
+  .app-container,
+  .homepage-master {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+}
+
+/* ─── TIER 2 · Component-specific floor overrides ─────────────────── */
+/* These catch any component that uses hard px values (not rem) */
+
+@media (max-width: 360px) {
+
+  /* ── CHATBOT FAB — protect circle from global button padding rules ── */
+  .engloray-chat-fab {
+    width: 56px !important;
+    height: 56px !important;
+    min-width: 56px !important;
+    min-height: 56px !important;
+    padding: 0 !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .engloray-chat-fab video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 50% !important;
+  }
+
+  .chat-close-btn,
+  .chat-send-btn {
+    min-width: unset !important;
+    min-height: unset !important;
+    padding: 0 !important;
+  }
+
+  /* ── NAVBAR ───────────────────────────────────────────────────── */
+  .engloray-navbar .navbar {
+    padding: 6px 3% !important;
+    min-height: 42px !important;
+  }
+
+  .engloray-navbar .navbar img {
+    max-width: 110px !important;
+    max-height: 34px !important;
+  }
+
+  .engloray-navbar .mobile-menu {
+    width: 230px !important;
+    right: -250px !important;
+  }
+
+  /* ── TOP NAVBAR ───────────────────────────────────────────────── */
+  :root {
+    --topnav-height: 36px !important;
+  }
+
+  .topnav-container {
+    height: 34px !important;
+    padding: 0 0.6rem !important;
+  }
+
+  .topnav-container::before {
+    font-size: 0.6rem !important;
+    letter-spacing: 0.5px !important;
+  }
+
+  /* ── TAGLINE / HERO ───────────────────────────────────────────── */
+  .neon-line-1,
+  .neon-line-2 {
+    font-size: clamp(1.6rem, 9vw, 2.2rem) !important;
+  }
+
+  .tagline-bottom-text {
+    width: 80vw !important;
+    height: auto !important;
+  }
+
+  .tagline-bottom-text span {
+    font-size: 5.5vw !important;
+  }
+
+  /* ── STAT CARDS ───────────────────────────────────────────────── */
+  .bphs-stat-cards-container {
+    padding: 0.5rem !important;
+    gap: 1rem !important;
+  }
+
+  .bphs-stat-heading {
+    font-size: clamp(1.2rem, 7vw, 2rem) !important;
+    margin: -20px 0 15px 0 !important;
+  }
+
+  .bphs-stat-card {
+    width: 95% !important;
+    max-width: 100% !important;
+    min-height: auto !important;
+    padding: 0.85rem !important;
+    border-radius: 16px !important;
+  }
+
+  .bphs-scrolling-image-track img {
+    height: 32px !important;
+    max-height: 32px !important;
+    max-width: 80px !important;
+    margin-top: 10px !important;
+  }
+
+  /* ── OTHER SECTION CAROUSEL ───────────────────────────────────── */
+  .carousel-header h2 {
+    font-size: 1.5rem !important;
+  }
+
+  .compact-service-card {
+    width: 92% !important;
+    max-width: 300px !important;
+  }
+
+  /* ── DOUBLE MARQUEES ──────────────────────────────────────────── */
+  .dual-marquee-container {
+    padding: 15px 10px 0 10px !important;
+  }
+
+  .title-text {
+    font-size: 1.5rem !important;
+    margin-bottom: 10px !important;
+  }
+
+  .title-subtitle {
+    font-size: 0.875rem !important;
+  }
+
+  .marquee-title-item {
+    padding: 20px 14px !important;
+  }
+
+  .marquee-title-item h3 {
+    font-size: 1.05rem !important;
+  }
+
+  .title-icon {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  .marquee-item {
+    padding: 7px 14px !important;
+    font-size: 0.8rem !important;
+  }
+
+  /* ── BUSINESS BOOST ───────────────────────────────────────────── */
+  .business-boost-section {
+    padding: 30px 12px !important;
+  }
+
+  .business-boost-container {
+    padding: 20px 12px !important;
+  }
+
+  .boost-intro-text {
+    font-size: 1.25rem !important;
+  }
+
+  .boost-highlight {
+    font-size: 2rem !important;
+    margin-bottom: -8px !important;
+  }
+
+  .boost-title-main {
+    font-size: 2.2rem !important;
+  }
+
+  .boost-subtitle {
+    font-size: 1.3rem !important;
+    margin-top: -10px !important;
+    white-space: normal !important;
+  }
+
+  .boost-description {
+    font-size: 0.875rem !important;
+  }
+
+  .boost-cta-button {
+    padding: 10px 20px !important;
+    font-size: 0.875rem !important;
+  }
+
+  .boost-card {
+    padding: 16px 14px !important;
+  }
+
+  .card-title-left {
+    font-size: 1.2rem !important;
+  }
+
+  .card-description-right {
+    font-size: 0.875rem !important;
+  }
+
+  /* ── ABOUT SECTION ────────────────────────────────────────────── */
+  .engloray-about-wrapper {
+    padding: 30px 12px !important;
+  }
+
+  .about-main-card {
+    padding: 14px !important;
+    border-radius: 24px !important;
+  }
+
+  .hero-heading-inline {
+    font-size: 28px !important;
+  }
+
+  .hero-description-p {
+    font-size: 13px !important;
+  }
+
+  .bento-top-row {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  .about-stats-grid-footer .stat-card-new {
+    max-width: 100% !important;
+    padding: 12px 16px !important;
+  }
+
+  .about-stats-grid-footer .stat-card-num {
+    font-size: 24px !important;
+  }
+
+  /* ── OUR CORE VALUES ──────────────────────────────────────────── */
+  .our-core-main-wrapper .core-values-header h2 {
+    font-size: 1.5rem !important;
+  }
+
+  .our-core-main-wrapper .absolute.flex.items-center,
+  .our-core-main-wrapper .absolute.bg-white.rounded-2xl {
+    max-width: 95% !important;
+  }
+
+  /* ── FOOTER ───────────────────────────────────────────────────── */
+  .footer-cta-section-v3 {
+    padding: 40px 14px !important;
+  }
+
+  .footer-cta-title {
+    font-size: 20px !important;
+    letter-spacing: 0.5px !important;
+  }
+
+  .footer-cta-desc {
+    font-size: 13px !important;
+  }
+
+  .footer-content-wrapper {
+    padding: 0 14px !important;
+  }
+
+  .footer-main-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .other-links-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .footer-btn-primary,
+  .footer-btn-secondary,
+  .footer-btn-glass {
+    padding: 11px 18px !important;
+    font-size: 0.875rem !important;
+  }
+
+  /* ── VISION MISSION ───────────────────────────────────────────── */
+  .visionMissionContainer,
+  .vision-mission-section {
+    padding: 20px 12px !important;
+  }
+
+  /* ── CORE SERVICES ────────────────────────────────────────────── */
+  .core-services-section {
+    padding: 30px 12px !important;
+  }
+
+  /* ── TESTIMONIALS ─────────────────────────────────────────────── */
+  .testimonials-section {
+    padding: 30px 12px !important;
+  }
+
+  /* ── SEARCH BAR ───────────────────────────────────────────────── */
+  .search-bar {
+    max-width: 100% !important;
+  }
+}
+
+/* ─── TIER 3 · Sub-page critical sections ─────────────────────────── */
+/* Pages with hardcoded large values that could overflow at 350px */
+
+@media (max-width: 360px) {
+
+  /* TechGroup HeroSection — .hero-section uses 100vw full bleed */
+  .hero-section {
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+
+  .hero-title {
+    font-size: clamp(1.4rem, 7vw, 2rem) !important;
+  }
+
+  .hero-content {
+    padding: 0.75rem !important;
+  }
+
+  /* TechLearning Hero — grid collapses to 1 col on mobile, already handled */
+  .tlh-peoplr-title {
+    font-size: clamp(1.6rem, 7vw, 2.5rem) !important;
+    padding: 0 0.75rem !important;
+  }
+
+  .tlh-center-cta-group {
+    padding: 0 0.75rem !important;
+    gap: 0.5rem !important;
+  }
+
+  /* SubPage generic shared hero headings */
+  .sub-page-hero h1,
+  .page-hero-title {
+    font-size: clamp(1.6rem, 8vw, 2.5rem) !important;
+    line-height: 1.2 !important;
+  }
+
+  .sub-page-hero p,
+  .page-hero-subtitle {
+    font-size: clamp(0.85rem, 3.5vw, 1rem) !important;
+  }
+
+  /* VisionMission - section-header on small screens */
+  .section-header h2 {
+    font-size: clamp(1.6rem, 7vw, 2.2rem) !important;
+  }
+
+  /* CoreServices - carousel title */
+  .carousel-title {
+    font-size: 1.5rem !important;
+    margin-left: 12px !important;
+  }
+}
+
+
+/* ─── TIER 4 · Safety overflow catch-all ─────────────────────────── */
+/* Absolute last-resort — prevents any element from bursting horizontally */
+
+@media (max-width: 360px) {
+  *[style*="min-width"] {
+    min-width: 0 !important;
+  }
+
+  /* Any absolute/fixed overlay that might be wider than viewport */
+  .modal,
+  .overlay,
+  .drawer,
+  .dropdown-menu,
+  .nav-dropdown {
+    max-width: 100vw !important;
+    left: 0 !important;
+    right: 0 !important;
+  }
+}

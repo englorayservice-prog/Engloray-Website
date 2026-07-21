@@ -603,6 +603,26 @@
     }
 }
 
+/* 320px absolute floor for BusinessBoost */
+@media (max-width: 340px) {
+    .boost-intro-text {
+        font-size: 1.4rem !important;
+    }
+    .boost-highlight {
+        font-size: 2.2rem !important;
+    }
+    .boost-title-main {
+        font-size: 2.5rem !important;
+    }
+    .boost-subtitle {
+        font-size: 1.4rem !important;
+        margin-top: -10px !important;
+    }
+    .business-boost-container {
+        padding: 30px 16px !important;
+    }
+}
+
 /* laptop Resolution Fix: Reducing gaps and repositioning carousel */
 @media screen and (min-width: 1025px) and (max-width: 1600px) {
     .business-boost-container {

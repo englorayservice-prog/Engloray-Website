@@ -457,20 +457,66 @@
 }
 
 @media (max-width: 768px) {
-    .techGroup-stats-grid {
+    /* Fix: title overflow on narrow screens */
+    .techGroup-stats-main-title {
+        font-size: clamp(1.4rem, 5vw, 2rem);
+        padding: 0 1rem;
+        letter-spacing: -0.5px;
+    }
+
+    /* Fix: container min-height forces empty space — collapse it */
+    .techGroup-stats-container {
+        min-height: 260px !important;
+        height: auto !important;
+        padding: 1rem;
         position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Show map on mobile too — smaller and tinted */
+    .techGroup-stats-bg-image {
+        display: block;
+        opacity: 0.18 !important;
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background-size: cover !important;
+        background-position: center !important;
+    }
+
+    /* Fix: grid was position:absolute (inset 0) inside the container — make static */
+    .techGroup-stats-grid {
+        position: relative !important;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
+        gap: 0.75rem;
+        width: 100%;
+        height: auto;
+        z-index: 2;
     }
 
     .techGroup-stat-card {
-        position: relative;
-        top: auto;
-        left: auto;
-        right: auto;
-        bottom: auto;
-        width: 100%;
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 75px;
+        transform: none !important;
+    }
+
+    /* Fix: the negative margin that causes heading overlap on mobile */
+    .techGroup-stats-wrapper {
+        margin-bottom: 0 !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .techGroup-stats-grid {
+        grid-template-columns: 1fr;
     }
 }
 

@@ -1149,8 +1149,10 @@
 /* --- STRICT MOBILE FIXES --- */
 
 @media (max-width: 768px) {
+    .learning-features-section {
+        padding: 3rem 1rem !important;
+    }
 
-    /* 1. Force the purple box to stay inside the screen */
     /* 1. Force the purple box to stay inside the screen */
     .features-header-box {
         padding: 1.2rem !important;
@@ -1170,10 +1172,11 @@
     /* Also ensure the parent container isn't forcing a huge width */
     .learning-features-container {
         width: 100% !important;
-        max-width: 100vw !important;
-        padding: 0 10px !important;
-        /* Small gutter so card doesn't touch screen edges */
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 auto !important;
         overflow: hidden !important;
+        box-sizing: border-box !important;
     }
 
     /* 2. Shrink the main title so it doesn't push the box out */
@@ -1239,6 +1242,22 @@
         width: 40px !important;
         height: 40px !important;
         flex-shrink: 0;
+    }
+
+    /* 6. FAQ Sidebar alignment and layout to stop going outside */
+    .faq-sidebar-column {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 1.2rem !important;
+        border-radius: 20px !important;
+        box-sizing: border-box !important;
+        margin: 1.5rem auto 0 auto !important;
+    }
+
+    .personal-advice-box {
+        padding: 1.2rem !important;
+        box-sizing: border-box !important;
+        width: 100% !important;
     }
 }
 

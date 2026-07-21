@@ -1407,8 +1407,10 @@
         align-items: flex-start;
     }
 
-    .title-image-wrapper.center-right {
+    .title-image-wrapper.center-right,
+    .title-image-wrapper.left-center {
         margin-left: 0;
+        margin-right: 0 !important;
         margin-top: 15px;
         align-self: flex-start;
     }
