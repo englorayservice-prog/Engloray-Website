@@ -45,7 +45,7 @@ label,
   top: 0;
   left: 0;
   pointer-events: none;
-  z-index: 9999999;
+  z-index: 2147483647 !important;
   will-change: transform;
   margin-left: -3px;
   margin-top: -3px;

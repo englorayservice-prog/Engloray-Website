@@ -99,22 +99,27 @@ const VisionMission = () => {
       }
 
       // --- Intersection Observer for re-triggering behavior ---
-      observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            // Re-play from start every time it enters the viewport
-            tl.restart();
-          } else {
-            // Completely reset when moving out of viewport
-            tl.progress(0).pause();
-          }
+      if (window.innerWidth > 768) {
+        observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              // Re-play from start every time it enters the viewport
+              tl.restart();
+            } else {
+              // Completely reset when moving out of viewport
+              tl.progress(0).pause();
+            }
+          });
+        }, {
+          threshold: 0.15 // Triggers when 15% of the section is visible
         });
-      }, {
-        threshold: 0.15 // Triggers when 15% of the section is visible
-      });
 
-      if (sectionRef.current) {
-        observer.observe(sectionRef.current);
+        if (sectionRef.current) {
+          observer.observe(sectionRef.current);
+        }
+      } else {
+        // Mobile fallback: render fully visible immediately without scroll trigger dependencies
+        tl.progress(1);
       }
 
       // --- LAYERED MAGNETIC HOVER EFFECT (Desktop Only) ---

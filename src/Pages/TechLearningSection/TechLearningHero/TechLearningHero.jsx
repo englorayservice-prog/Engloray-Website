@@ -24,8 +24,7 @@ const TechLearningHero = () => {
                 <motion.h1
                     className="tlh-peoplr-title"
                     initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: false }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                 >
                     UPSKILL FOR YOUR<br />CAREER
@@ -36,8 +35,7 @@ const TechLearningHero = () => {
                     <motion.div
                         className="tlh-peoplr-image-wrapper"
                         initial={{ opacity: 0, y: 50 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: false }}
+                        animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
                     >
                         <img src={studentsImg} alt="Students" className="tlh-peoplr-students" />
@@ -47,8 +45,7 @@ const TechLearningHero = () => {
                     <motion.div
                         className="tlh-float-card tlh-float-left"
                         initial={{ opacity: 0, x: -30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: false }}
+                        animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, delay: 0.4 }}
                     >
                         <div className="tlh-card-top-row">
@@ -72,8 +69,7 @@ const TechLearningHero = () => {
                     <motion.div
                         className="tlh-float-card tlh-float-right"
                         initial={{ opacity: 0, x: 30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: false }}
+                        animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, delay: 0.5 }}
                     >
                         <div className="tlh-card-top-row">
@@ -97,8 +93,7 @@ const TechLearningHero = () => {
                     <div className="tlh-center-cta-group">
                         <motion.div
                             initial={{ opacity: 0, scale: 0.9 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: false }}
+                            animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.6, delay: 0.6 }}
                             style={{ display: 'inline-block' }}
                         >
@@ -110,8 +105,7 @@ const TechLearningHero = () => {
 
                         <motion.div
                             initial={{ opacity: 0, scale: 0.9 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: false }}
+                            animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.6, delay: 0.7 }}
                             style={{ display: 'inline-block' }}
                         >

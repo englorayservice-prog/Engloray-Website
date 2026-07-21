@@ -7,12 +7,11 @@
 
 .tlnbn-navbar-main-container {
     position: fixed;
-    top: 33px;
-    /* Adjust for TopNavbar (30px + 3px border) */
+    top: var(--topnav-height); /* Always flush below TopNavbar at every breakpoint */
     left: 0;
     right: 0;
     background: transparent;
-    /* Raise above TopNavbar (1001) so dropdowns can appear over it */
+    /* Raise above TopNavbar (1010) so dropdowns can appear over it */
     z-index: 1005;
     transition: transform 0.3s ease;
     padding: 0;
@@ -67,6 +66,11 @@
     width: auto;
     transform: translate(5px, -5px);
     cursor: pointer;
+}
+
+/* ── Ensure nav capsule never grows beyond one line ── */
+.tlnbn-nav-content {
+    max-height: 70px;
 }
 
 .tlnbn-nav-subscribe-container {
@@ -174,8 +178,8 @@
     min-width: 280px;
     max-width: 420px;
     width: auto;
-    /* Raise dropdown above most page elements to avoid being hidden */
-    z-index: 2147483647;
+    /* Raise dropdown above most page elements to avoid being hidden, but below custom cursor */
+    z-index: 2000;
     opacity: 0;
     visibility: hidden;
     /* start from slightly up and squashed so it animates from the parent item center */
@@ -728,7 +732,7 @@
 /* Tablet Styles (901px - 1024px): Switch to hamburger menu to avoid overflow */
 @media (max-width: 1024px) and (min-width: 901px) {
     .tlnbn-navbar-main-container {
-        top: 33px !important;
+        top: var(--topnav-height) !important;
     }
 
     .tlnbn-nav-content {
@@ -766,7 +770,7 @@
 /* Small Tablet Styles (769px - 900px): Switch to hamburger menu */
 @media (max-width: 900px) and (min-width: 769px) {
     .tlnbn-navbar-main-container {
-        top: 33px !important;
+        top: var(--topnav-height) !important;
     }
 
     .tlnbn-nav-content {
@@ -803,8 +807,7 @@
 /* Tablet Styles - Hide second line and show mobile menu */
 @media (max-width: 768px) {
     .tlnbn-navbar-main-container {
-        top: 40px !important;
-        /* Match updated TopNavbar height at ≤768px */
+        top: var(--topnav-height) !important; /* TopNavbar sets --topnav-height: 43px at ≤768px */
     }
 
     .tlnbn-desktop-menu {
@@ -873,11 +876,10 @@
     }
 }
 
-/* Mobile Styles */
+/* Mobile Styles (≤480px) */
 @media (max-width: 480px) {
     .tlnbn-navbar-main-container {
-        top: 36px !important;
-        /* Match TopNavbar extra-small height */
+        top: var(--topnav-height) !important; /* TopNavbar sets --topnav-height: 39px at ≤480px */
     }
 
     .tlnbn-navbar-spacer {
@@ -888,8 +890,21 @@
         height: 70px;
     }
 
+    /* Capsule sizing fix: constrain height, reduce radius */
+    .tlnbn-nav-content {
+        height: 54px !important;
+        max-height: 54px !important;
+        min-height: unset !important;
+        padding: 6px 14px !important;
+        border-radius: 50px !important;
+        gap: 8px !important;
+        overflow: hidden !important;
+    }
+
+    /* Logo: smaller, no vertical offset */
     .tlnbn-logo img {
-        height: 40px;
+        height: 32px !important;
+        transform: none !important;
     }
 
     .tlnbn-nav-first-content {
@@ -937,58 +952,27 @@
     }
 }
 
-/* Small Mobile Styles */
+/* Extra-small Mobile (≤375px): tighten further */
 @media (max-width: 375px) {
-    .tlnbn-navbar-spacer {
-        height: 65px;
+    .tlnbn-navbar-main-container {
+        top: var(--topnav-height) !important;
     }
 
-    .tlnbn-navbar-first-line {
-        height: 65px;
-    }
-
-    .tlnbn-nav-first-content {
-        padding: 0 15px;
+    .tlnbn-nav-content {
+        height: 50px !important;
+        max-height: 50px !important;
+        padding: 5px 12px !important;
+        border-radius: 25px !important;
+        gap: 6px !important;
     }
 
     .tlnbn-logo img {
-        height: 35px;
+        height: 28px !important;
+        transform: none !important;
     }
 
-    .tlnbn-mobile-menu {
-        max-width: 300px;
-    }
-
-    .tlnbn-mobile-menu-header {
-        padding: 10px 12px;
-    }
-
-    .tlnbn-mobile-search-wrapper {
-        padding: 10px 12px !important;
-    }
-
-    .tlnbn-mobile-search-wrapper input,
-    .tlnbn-mobile-search-wrapper .search-input {
-        padding: 10px 35px 10px 12px !important;
-        font-size: 14px !important;
-        height: 38px !important;
-    }
-
-    .tlnbn-mobile-nav-link {
-        font-size: 14px;
-        padding: 14px 12px;
-    }
-
-    .tlnbn-mobile-dropdown-item {
-        padding: 8px 0;
-    }
-
-    .tlnbn-mobile-actions {
-        padding: 12px;
-    }
-
-    .tlnbn-mobile-nav-items {
-        max-height: calc(100vh - 280px);
+    .tlnbn-mobile-toggle span {
+        width: 20px !important;
     }
 }
 
@@ -1124,7 +1108,7 @@ body.menu-open {
     .tlnbn-navbar-main-container {
         zoom: 1 !important; /* Disable zoom overlay which causes clipping */
         margin-top: 0 !important;
-        top: 33px !important;
+        top: var(--topnav-height) !important;
     }
 
     /* Raymart Page Only Overrides */

@@ -21,7 +21,7 @@
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1001;
+    z-index: 1010;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -248,7 +248,7 @@
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         transform: translateY(-150%);
         transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        z-index: 1001;
+        z-index: 1010;
         opacity: 0;
         pointer-events: none;
         border-top: 2px solid #bf0413;

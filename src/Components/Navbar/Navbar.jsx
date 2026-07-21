@@ -134,14 +134,12 @@ const Navbar = () => {
 
                         <ul className="desktop-menu">
                             {menuItems.map((item) => {
-                                const Icon = item.icon;
                                 return (
                                     <li key={item.id}>
                                         <a
                                             className="anchorLink"
                                             onClick={() => handleMenuClick(item.section)}
                                         >
-                                            <Icon size={18} strokeWidth={2} aria-hidden="true" />
                                             <p>{item.label}</p>
                                         </a>
                                     </li>
@@ -207,14 +205,12 @@ const Navbar = () => {
                     </button>
 
                     {menuItems.map((item) => {
-                        const Icon = item.icon;
                         return (
                             <li key={item.id}>
                                 <div
                                     className="mobile-menu-link"
                                     onClick={() => handleMenuClick(item.section)}
                                 >
-                                    <Icon size={18} strokeWidth={2} aria-hidden="true" />
                                     <p>{item.label}</p>
                                 </div>
                             </li>

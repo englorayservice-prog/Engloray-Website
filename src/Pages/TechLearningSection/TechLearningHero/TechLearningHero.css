@@ -371,10 +371,63 @@
         display: none !important;
     }
 
-
+    /* Fix: collapse the stage on mobile so there's no 420px empty gap */
     .tlh-peoplr-stage {
-        padding: 0%;
+        padding: 0;
         overflow: hidden;
+        min-height: unset !important;
+        height: auto !important;
+        margin-bottom: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 1.5rem !important;
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+
+    /* Fix: collapse negative margin on students image and scale it up */
+    .tlh-peoplr-students {
+        max-width: 100% !important;
+        margin-top: 0 !important;
+        margin-left: 0 !important;
+        width: auto !important;
+        height: auto !important;
+        max-height: 400px !important; /* Force a compact height on mobile */
+        display: block !important;
+        margin: 0 auto !important;
+        object-fit: contain !important;
+    }
+
+    /* Fix: collapse image wrapper width and use block layout with text-alignment for centering */
+    .tlh-peoplr-image-wrapper {
+        max-width: 90% !important;
+        width: 90% !important;
+        display: block !important;
+        margin: 0 auto !important;
+        text-align: center !important;
+    }
+
+    /* Fix: title negative margin-top creates gap on mobile */
+    .tlh-peoplr-title {
+        font-size: clamp(2rem, 8vw, 3.5rem);
+        margin-top: 0 !important;
+        margin-bottom: 1.5rem !important;
+        transform: none !important;
+        padding: 0 1rem;
+    }
+
+    /* Fix: CTA group is absolutely positioned — convert to static on mobile */
+    .tlh-center-cta-group {
+        position: static !important;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem;
+        margin: 0 auto 1.5rem auto !important;
+        padding: 0 1rem;
+        white-space: normal;
     }
 
     .tlh-glass-ribbon {
@@ -384,6 +437,15 @@
         gap: 1rem;
         width: 100%;
         margin-top: 2rem;
+    }
+
+    /* Fix: Change marquee ribbon from absolute to relative to stop overlap on content cards */
+    .tlh-marquee-container {
+        position: relative !important;
+        margin-top: 1rem !important;
+        margin-bottom: 2rem !important;
+        width: 100% !important;
+        z-index: 30 !important;
     }
 }
 

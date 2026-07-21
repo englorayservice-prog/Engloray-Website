@@ -148,21 +148,21 @@ export const Certifications = () => {
           animation: cert-float 3s ease-in-out infinite;
         }
 
-        /* Main lock overlay — hidden by default, revealed on hover */
+        /* Main lock overlay — always visible with blur */
         .cert-lock-overlay {
           position: absolute;
           inset: 0;
           border-radius: inherit;
-          backdrop-filter: blur(0px);
-          -webkit-backdrop-filter: blur(0px);
-          background: rgba(7, 17, 51, 0);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+          background: rgba(7, 17, 51, 0.55);
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: center;
           gap: 10px;
           z-index: 10;
-          opacity: 0;
+          opacity: 1;
           transition: opacity 0.35s ease, backdrop-filter 0.35s ease, background 0.35s ease;
         }
 

@@ -549,14 +549,15 @@
   }
 
   .mission-vision-header h2 {
-    font-size: 2.2rem !important;
+    /* MOBILE FIX: use clamp for safe fluid scaling */
+    font-size: clamp(1.6rem, 7vw, 2.2rem) !important;
     text-align: left !important;
     margin-bottom: 15px !important;
     width: 100% !important;
   }
 
   .mission-vision-header p {
-    font-size: 1.1rem !important;
+    font-size: 1rem !important;
     text-align: left !important;
     margin-top: 10px !important;
     margin-left: 0 !important;
@@ -564,7 +565,8 @@
   }
 
   .vm-card {
-    min-height: 520px !important;
+    /* MOBILE FIX: use clamp to be safe from 320-480px */
+    min-height: clamp(420px, 80vw, 520px) !important;
   }
 
   .card-front,
@@ -626,6 +628,23 @@
 
   .value-back p {
     font-size: 0.9rem;
+  }
+}
+
+/* 320px floor — tightest mobile safety net */
+@media (max-width: 340px) {
+  .vision-mission-section {
+    padding: 50px 12px !important;
+  }
+  .card-header h3 {
+    font-size: 1.4rem !important;
+  }
+  .bullet-list li {
+    font-size: 0.85rem !important;
+    padding-left: 20px !important;
+  }
+  .vm-card {
+    min-height: 420px !important;
   }
 }
 

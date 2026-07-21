@@ -839,12 +839,9 @@
     margin-left: 0;
   }
 
-  .learning-nav-logo img {
-    height: 45px;
-  }
-
+  .learning-nav-initial .learning-logo-initial,
   .learning-nav-fixed .learning-logo-fixed {
-    height: 45px;
+    height: 40px !important;
   }
 
   .learning-mobile-link {
@@ -892,12 +889,9 @@
     padding: 0 1rem;
   }
 
-  .learning-nav-logo img {
-    height: 38px;
-  }
-
+  .learning-nav-initial .learning-logo-initial,
   .learning-nav-fixed .learning-logo-fixed {
-    height: 38px;
+    height: 32px !important;
   }
 
   .learning-mobile-link {

@@ -963,6 +963,7 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+  min-height: 260px;
 }
 
 .rm3-rv-cb-title {
@@ -2547,33 +2548,72 @@
   /* 3. Shrink the Chat Widget for Mobile View */
   .rm3-rc-visual {
     flex: 0 0 100%;
-    padding: 15px;
+    padding: 15px 10px;
     order: 1;
     /* Show the visual first */
     min-height: auto;
   }
 
+  /* Take the arrows OUT of the horizontal flex flow so the card
+     no longer has to shrink to make room for them. They now float
+     over the left/right edges of the green panel instead. */
+  .rm3-testi-outer-wrapper {
+    position: relative;
+    gap: 0;
+    width: 100%;
+  }
+
+  .rm3-testi-outer-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+    font-size: 1rem;
+  }
+
+  .rm3-testi-outer-arrow.prev {
+    left: -4px;
+  }
+
+  .rm3-testi-outer-arrow.next {
+    right: -4px;
+  }
+
   .rm3-rv-chat-widget {
-    height: 380px;
-    /* Shorter height */
+    height: auto;
+    /* Let content decide the height instead of a fixed px value */
     width: 100%;
     max-width: 100%;
   }
 
+  .rm3-rv-chat-header {
+    padding: 16px 18px;
+  }
+
+  .rm3-rv-chat-body {
+    padding: 18px;
+    min-height: auto;
+  }
+
   .rm3-rv-chat-bubble {
-    padding: 12px;
+    padding: 14px;
     font-size: 0.85rem;
-    margin-left: 10px;
-    /* Reduced margin to save space */
+    margin-left: 0;
+    /* Full width now that arrows aren't squeezing the card */
+    word-break: break-word;
   }
 
   .rm3-rv-chat-options {
-    margin-left: 10px;
+    margin-left: 0;
   }
 
   .rm3-cv-pill {
     padding: 6px 12px;
-    font-size: 0.75rem;
+    font-size: 0.72rem;
   }
 
   /* 4. Adjust the Icon Pill */

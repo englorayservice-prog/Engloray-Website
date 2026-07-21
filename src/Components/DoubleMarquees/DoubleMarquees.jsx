@@ -18,44 +18,12 @@ const DoubleMarquees = () => {
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      // 1️⃣ CONTENT REVEAL (Blur -> Sharp)
-      gsap.fromTo(containerRef.current,
-        {
-          opacity: 0,
-          scale: 0.95,
-          filter: "blur(12px)", // Initial content blur
-          rotationX: 0,
-          rotationY: 0
-        },
-        {
-          opacity: 1,
-          scale: 1,
-          filter: "blur(0px)", // Clear content blur
-          duration: 1.5,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top 85%",
-            end: "top 20%",
-            scrub: 1
-          }
-        }
-      );
-
-      // 1b️⃣ GLASS BLUR INTENSITY (Background Blur)
-      gsap.fromTo('.glass-overlay',
-        { backdropFilter: "blur(5px)" },
-        {
-          backdropFilter: "blur(20px)",
-          ease: "none",
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top bottom",
-            end: "bottom top",
-            scrub: true
-          }
-        }
-      );
+      // Force fully visible on all devices
+      gsap.set(containerRef.current, {
+        opacity: 1,
+        scale: 1,
+        filter: "none"
+      });
 
       // 2️⃣ REFLECTION SWEEP
       gsap.to('.reflection-overlay', {
@@ -163,12 +131,6 @@ const DoubleMarquees = () => {
     <div
       ref={containerRef}
       className="dual-marquee-container"
-      style={{
-        // Initial hidden state key for reveal
-        opacity: 0,
-        filter: 'blur(12px)',
-        transform: 'scale(0.95)'
-      }}
     >
       {/* Background Image Layer - Separated for Glass Effect */}
       <div

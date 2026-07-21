@@ -35,6 +35,7 @@ const rightNodes = [
   { id: 'r5', label: "Innovation Labs", icon: FlaskConical, color: "bg-emerald-600" },
   { id: 'r6', label: "Scalable Digital Products", icon: Box, color: "bg-rose-600" },
 ];
+
 const App = () => {
   const [scale, setScale] = useState(1);
   const containerRef = useRef(null);
@@ -98,7 +99,8 @@ const App = () => {
             position: 'relative',
             flexShrink: 0
           }}>
-            <AnimationContainer />
+            {/* Pass isMobile so animations use `animate` instead of `whileInView` on small screens */}
+            <AnimationContainer isMobile={scale < 0.9} />
           </div>
         </div>
       </div>
@@ -107,7 +109,11 @@ const App = () => {
 }
 export default App;
 
-function AnimationContainer() {
+function AnimationContainer({ isMobile }) {
+  // On mobile the canvas is CSS-scaled (~0.25x), so IntersectionObserver never fires.
+  // We swap whileInView → animate so elements animate immediately on mount.
+  const inView = (target) => isMobile ? { animate: target } : { whileInView: target, viewport: { once: true } };
+
   return (<div className="w-full h-full relative font-sans text-slate-800">
     {/* SVG Layer */}
     <svg className="absolute inset-0 w-full h-full pointer-events-none z-10">
@@ -118,7 +124,7 @@ function AnimationContainer() {
         const spacing = 55;
         const startY = CENTER_Y - ((leftNodes.length - 1) * spacing) / 2;
         const y = startY + i * spacing;
-        return (<ConnectionLine key={`p1-${i}`} startX={COL_1_X + 40} startY={CENTER_Y} endX={COL_2_X - 10} endY={y} type="dotted" delay={0.2} duration={1.0} curvature={0.3} />);
+        return (<ConnectionLine key={`p1-${i}`} startX={COL_1_X + 40} startY={CENTER_Y} endX={COL_2_X - 10} endY={y} type="dotted" delay={0.2} duration={1.0} curvature={0.3} isMobile={isMobile} />);
       })}
 
       {/* PHASE 2: Left Nodes -> Dashboard (Dotted) */}
@@ -126,7 +132,7 @@ function AnimationContainer() {
         const spacing = 55;
         const startY = CENTER_Y - ((leftNodes.length - 1) * spacing) / 2;
         const y = startY + i * spacing;
-        return (<ConnectionLine key={`p2-${i}`} startX={COL_2_X + 160} // Right edge of Left Node container (approx)
+        return (<ConnectionLine key={`p2-${i}`} startX={COL_2_X + 160}
           startY={y} endX={COL_3_X - DASHBOARD_WIDTH / 2 + 10} endY={CENTER_Y} type="dotted" delay={1.5 + (i * 0.1)} duration={0.8} curvature={0.4} />);
       })}
 
@@ -135,7 +141,7 @@ function AnimationContainer() {
         const spacing = 80;
         const startY = CENTER_Y - ((rightNodes.length - 1) * spacing) / 2;
         const y = startY + i * spacing;
-        return (<ConnectionLine key={`p3-${i}`} startX={COL_3_X + DASHBOARD_WIDTH / 2 - 10} startY={CENTER_Y} endX={COL_4_X - 20} endY={y} type="solid" delay={3.5 + (i * 0.1)} duration={1.0} curvature={0.4} />);
+        return (<ConnectionLine key={`p3-${i}`} startX={COL_3_X + DASHBOARD_WIDTH / 2 - 10} startY={CENTER_Y} endX={COL_4_X - 20} endY={y} type="solid" delay={3.5 + (i * 0.1)} duration={1.0} curvature={0.4} isMobile={isMobile} />);
       })}
     </svg>
 
@@ -145,13 +151,23 @@ function AnimationContainer() {
 
       {/* Source: Robot */}
       <div className="absolute top-1/2 -translate-y-1/2 flex items-center justify-center flex-col gap-3" style={{ left: COL_1_X - 40 }}>
-        <motion.div className="w-20 h-20 rounded-2xl bg-slate-900 shadow-2xl flex items-center justify-center z-20 relative" initial={{ scale: 0, opacity: 0 }} whileInView={{ scale: 1, opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
+        <motion.div
+          className="w-20 h-20 rounded-2xl bg-slate-900 shadow-2xl flex items-center justify-center z-20 relative"
+          initial={{ scale: 0, opacity: 0 }}
+          {...inView({ scale: 1, opacity: 1 })}
+          transition={{ duration: 0.5 }}
+        >
           <Bot className="w-10 h-10 text-green-400" />
           <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-green-500 rounded-full border-2 border-white flex items-center justify-center">
             <Sparkles className="w-3 h-3 text-white" />
           </div>
         </motion.div>
-        <motion.span className="text-xs font-bold uppercase tracking-wider text-white" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.4 }}>
+        <motion.span
+          className="text-xs font-bold uppercase tracking-wider text-white"
+          initial={{ opacity: 0 }}
+          {...inView({ opacity: 1 })}
+          transition={{ delay: 0.4 }}
+        >
           Engloray
         </motion.span>
       </div>
@@ -161,7 +177,7 @@ function AnimationContainer() {
         const spacing = 55;
         const startY = CENTER_Y - ((leftNodes.length - 1) * spacing) / 2;
         const y = startY + i * spacing;
-        return (<motion.div key={`ln-${i}`} className="absolute flex items-center gap-3 p-2 pr-4 bg-white rounded-lg border border-gray-100 shadow-sm z-20 w-[170px]" style={{ left: COL_2_X, top: y - 20 }} initial={{ x: -20, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.5 + (i * 0.05), duration: 0.4 }}>
+        return (<motion.div key={`ln-${i}`} className="absolute flex items-center gap-3 p-2 pr-4 bg-white rounded-lg border border-gray-100 shadow-sm z-20 w-[170px]" style={{ left: COL_2_X, top: y - 20 }} initial={{ x: -20, opacity: 0 }} {...inView({ x: 0, opacity: 1 })} transition={{ delay: 0.5 + (i * 0.05), duration: 0.4 }}>
           <div className={`w-8 h-8 rounded-md ${node.color} flex items-center justify-center shrink-0`}>
             <node.icon className="w-4 h-4" />
           </div>
@@ -172,13 +188,12 @@ function AnimationContainer() {
       })}
 
       {/* Center Dashboard */}
-      {/* Center Dashboard */}
       <motion.div className="absolute bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden z-30" style={{
         width: DASHBOARD_WIDTH,
         height: DASHBOARD_HEIGHT,
         left: COL_3_X - DASHBOARD_WIDTH / 2,
         top: CENTER_Y - DASHBOARD_HEIGHT / 2
-      }} initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.2, duration: 0.6 }}>
+      }} initial={{ opacity: 0, scale: 0.9 }} {...inView({ opacity: 1, scale: 1 })} transition={{ delay: 0.2, duration: 0.6 }}>
         {/* Dashboard Header */}
         <div className="h-14 border-b border-gray-100 flex items-center px-5 justify-between bg-slate-50/80">
           <div className="flex items-center gap-3 pl-1">
@@ -204,8 +219,7 @@ function AnimationContainer() {
               className="text-slate-600 font-medium leading-relaxed text-center px-2"
               style={{ fontSize: '12px', marginTop: '-30px', minWidth: '350px' }}
               initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              {...inView({ opacity: 1, y: 0 })}
               transition={{ delay: 0.6, duration: 0.8 }}
             >
               At <span className="text-slate-900 font-bold">Engloray</span>, we transform complexity into
@@ -221,7 +235,7 @@ function AnimationContainer() {
         const spacing = 85;
         const startY = CENTER_Y - ((rightNodes.length - 1) * spacing) / 2;
         const y = startY + i * spacing;
-        return (<motion.div key={`rn-${i}`} className="absolute flex items-center gap-4 bg-white p-3 pr-6 rounded-xl border border-gray-100 shadow-md z-20 w-[280px]" style={{ left: COL_4_X, top: y - 24 }} initial={{ x: 20, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} viewport={{ once: true }} transition={{ delay: 1.2 + (i * 0.1), duration: 0.4 }}>
+        return (<motion.div key={`rn-${i}`} className="absolute flex items-center gap-4 bg-white p-3 pr-6 rounded-xl border border-gray-100 shadow-md z-20 w-[280px]" style={{ left: COL_4_X, top: y - 24 }} initial={{ x: 20, opacity: 0 }} {...inView({ x: 0, opacity: 1 })} transition={{ delay: 1.2 + (i * 0.1), duration: 0.4 }}>
           <div className={`w-10 h-10 rounded-full ${node.color} flex items-center justify-center shrink-0 shadow-sm`}>
             <node.icon className="w-5 h-5 text-white" />
           </div>
@@ -234,13 +248,18 @@ function AnimationContainer() {
     </div>
   </div>);
 }
-function ConnectionLine({ startX, startY, endX, endY, delay, duration, type = "solid", curvature = 0.5 }) {
+function ConnectionLine({ startX, startY, endX, endY, delay, duration, type = "solid", curvature = 0.5, isMobile }) {
   const dist = endX - startX;
   const cp1x = startX + dist * curvature;
   const cp1y = startY;
   const cp2x = endX - dist * curvature;
   const cp2y = endY;
   const pathData = `M ${startX} ${startY} C ${cp1x} ${cp1y}, ${cp2x} ${cp2y}, ${endX} ${endY}`;
+
+  const lineAnimProps = isMobile
+    ? { animate: { pathLength: 1 }, transition: { duration, delay, ease: "easeInOut" } }
+    : { whileInView: { pathLength: 1 }, viewport: { once: true }, transition: { duration, delay, ease: "easeInOut" } };
+
   return (<>
     {/* Background Track */}
     <motion.path d={pathData} fill="transparent" stroke="#F3F4F6" // gray-100 very light
@@ -248,10 +267,6 @@ function ConnectionLine({ startX, startY, endX, endY, delay, duration, type = "s
 
     {/* Active Line */}
     <motion.path d={pathData} fill="transparent" stroke="#22C55E" // green-500
-      strokeWidth="2" strokeDasharray={type === 'dotted' ? "4,8" : "none"} strokeLinecap="round" initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} viewport={{ once: true }} transition={{
-        duration: duration,
-        delay: delay,
-        ease: "easeInOut"
-      }} />
+      strokeWidth="2" strokeDasharray={type === 'dotted' ? "4,8" : "none"} strokeLinecap="round" initial={{ pathLength: 0 }} {...lineAnimProps} />
   </>);
 }

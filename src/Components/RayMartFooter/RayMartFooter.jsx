@@ -9,7 +9,7 @@ import {
   faFacebookF, faXTwitter, faInstagram, faYoutube, faPaypal
 } from '@fortawesome/free-brands-svg-icons';
 import paymentImg from '../../assets/payment.png';
-import './RayMartFooter.css';
+import '../../Pages/Sub Pages/RaymartPage/RaymartPage.css';
 
 const RayMartFooter = () => {
   const navigate = useNavigate();
@@ -249,7 +249,7 @@ const RayMartFooter = () => {
         <div className="rm-footer-bottom" style={{ position: 'relative', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <span>© 2026 Raymart. All Rights Reserved.</span>
           <div className="rm-footer-payments" style={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <img src={paymentImg} alt="Payment Methods" className="rm-payment-img" style={{ height: '24px', width: 'auto', transform: 'scale(5)', objectFit: 'contain' }} />
+            <img src={paymentImg} alt="Payment Methods" className="rm-payment-img" style={{ height: '80px', width: 'auto', objectFit: 'contain' }} />
           </div>
           <a href="#" className="rm-footer-mobile-app">Mobile App</a>
         </div>

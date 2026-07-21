@@ -2,9 +2,11 @@
 .services-carousel-section {
   padding: 40px 0;
   background: #000000;
-  /* Pure black as in image */
   position: relative;
   width: 100%;
+  /* MOBILE FIX: prevent any carousel overflow from creating horizontal scroll */
+  max-width: 100vw;
+  overflow-x: hidden;
   min-height: 70px;
   display: flex;
   flex-direction: column;
@@ -121,6 +123,8 @@
 /* Carousel Container - Full Width with Rounded Corners */
 .carousel-full-container {
   width: 100%;
+  /* MOBILE FIX: explicit max-width to prevent overflow from 500px slide-wrapper */
+  max-width: 100vw;
   height: 460px;
   /* Ensured enough height for scaled cards and shadows */
   border-radius: 0;

@@ -92,11 +92,16 @@ import NewFooter1 from './Pages/Sub Pages/subFooterOne/NewFooter1';
 import ScrollToTop from './Components/ScrollToTop/ScrollToTop';
 import Chatbot from './Components/Chatbot/Chatbot';
 
+// ─── GLOBAL RESPONSIVE FLOOR ─────────────────────────────────────────────────
+// This must be the LAST CSS import so its @media (max-width: 360px) rules win
+// all specificity battles and guarantee 350px support across every page/route.
+import './Styles/responsive-floor.css';
 
 
 
 import HomePage from './Pages/HomePage/HomePage';
 import EnglorayPortalPage from './Pages/Sub Pages/EnglorayPortalPage/EnglorayPortalPage';
+
 
 function App() {
   return (
