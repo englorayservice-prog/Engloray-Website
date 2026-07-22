@@ -20,7 +20,7 @@
 /* At ≤ 360px (covers 350px screens) – scale down root by ~15% */
 @media (max-width: 360px) {
   html {
-    font-size: 13px !important;
+    font-size: clamp(11.5px, 3.6vw, 14px) !important;
   }
 
   /* Prevent any horizontal scroll on all pages */

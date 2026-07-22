@@ -1,7 +1,18 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --font-size: 16px;
+  --font-size: clamp(14px, 0.8vw + 11px, 16px);
+  --fluid-h1: clamp(2rem, 4.5vw + 0.5rem, 3.8rem);
+  --fluid-h2: clamp(1.6rem, 3.5vw + 0.3rem, 2.8rem);
+  --fluid-h3: clamp(1.3rem, 2.5vw + 0.2rem, 2.1rem);
+  --fluid-h4: clamp(1.1rem, 1.8vw + 0.1rem, 1.5rem);
+  --fluid-body: clamp(0.9rem, 1vw + 0.4rem, 1rem);
+  --fluid-section-padding-y: clamp(2rem, 5vw, 5rem);
+  --fluid-section-padding-x: clamp(1rem, 4vw, 4rem);
+  --fluid-gap-lg: clamp(1.5rem, 4vw, 3.5rem);
+  --fluid-gap-md: clamp(1rem, 2.5vw, 2rem);
+  --fluid-gap-sm: clamp(0.5rem, 1.5vw, 1rem);
+
   --background: #ffffff;
   --foreground: oklch(0.145 0 0);
   --card: #ffffff;
@@ -39,6 +50,15 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+}
+
+/* Smart Display & Short Landscape Viewport Safeguard (Nest Hub 1024x600 / Nest Hub Max 1280x800) */
+@media screen and (max-height: 650px) and (min-width: 900px) {
+  .tagline-container,
+  .hero-container {
+    padding-top: calc(var(--topnav-height, 40px) + 50px) !important;
+    min-height: auto !important;
+  }
 }
 
 .dark {

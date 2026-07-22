@@ -26,9 +26,9 @@ const App = () => {
   const [selectedDistrict, setSelectedDistrict] = useState('');
   const [showScrollTop, setShowScrollTop] = useState(false);
 
-  // Monitor scroll for Scroll-To-Top button visibility
+  // Monitor scroll for Scroll-To-Top button visibility & ensure page starts at hero section
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     document.documentElement.scrollTop = 0;
     document.body.scrollTop = 0;
 

@@ -314,7 +314,7 @@
     text-align: left;
     max-width: 1010px;
     width: 100%;
-    min-height: 2000px;
+    min-height: auto;
     z-index: 3;
 }
 
