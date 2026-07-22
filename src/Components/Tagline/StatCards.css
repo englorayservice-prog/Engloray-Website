@@ -563,8 +563,8 @@
 /* laptop Resolution Fix: Resolving collision between tagline 'Verified' box and StatCards heading */
 @media screen and (min-width: 1025px) and (max-width: 1600px) {
     .bphs-stat-cards-container {
-        margin-top: -3.5rem !important;
-        /* Reduces the upward pull significantly to avoid overlap */
+        margin-top: -6rem !important;
+        /* Perfect gap under Verified box without overlap */
         gap: 1.5rem !important;
     }
 
@@ -774,7 +774,7 @@ screen and (width: 1024px) {
 /* Custom fluid scaling for 1024px - 1440px range (safe min-width 1000px for scrollbars) */
 @media screen and (min-width: 1000px) and (max-width: 1440px) {
     .bphs-stat-cards-container {
-        margin-top: -12.5vw !important;
+        margin-top: -14.2vw !important;
         gap: 2vw !important;
         padding: 1vw 2vw 1vw 1vw !important;
         margin-left: -6.77vw !important;
@@ -817,7 +817,7 @@ screen and (width: 1024px) {
         min-height: 12vw !important;
         max-height: 13vw !important;
         padding: 1.5vw !important;
-        margin-top: 3vw !important;
+        margin-top: 0 !important;
         border-radius: 1.5vw !important;
     }
 

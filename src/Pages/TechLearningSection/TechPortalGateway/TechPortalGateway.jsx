@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import './TechPortalGateway.css';
 
 const stepCards = [
@@ -37,6 +38,13 @@ const cardVariants = {
 };
 
 const TechPortalGateway = () => {
+    const navigate = useNavigate();
+
+    const handleBeginJourney = () => {
+        window.scrollTo(0, 0);
+        navigate('/admissionPortal');
+    };
+
     return (
         <section className="tech-portal-gateway-section">
             <div className="portal-gateway-grid-bg" />
@@ -82,6 +90,7 @@ const TechPortalGateway = () => {
 
                     <motion.button
                         className="portal-cta-button"
+                        onClick={handleBeginJourney}
                         whileHover={{ scale: 1.03 }}
                         whileTap={{ scale: 0.97 }}
                         initial={{ opacity: 0, y: 15 }}
@@ -105,6 +114,9 @@ const TechPortalGateway = () => {
                             whileInView="visible"
                             viewport={{ once: true, amount: 0.4 }}
                             whileHover={{ y: -2 }}
+                            whileTap={{ scale: 0.98 }}
+                            onClick={handleBeginJourney}
+                            style={{ cursor: 'pointer' }}
                             transition={{ duration: 0.2, ease: 'easeOut' }}
                         >
                             <div className="portal-card-icon-wrap">

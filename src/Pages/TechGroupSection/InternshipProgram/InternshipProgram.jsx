@@ -320,7 +320,7 @@ const InternshipProgram = () => {
                         <h3 className="tgi-section-title">Available Roles</h3>
                         <button
                             className="tgi-explore-more-btn tgi-explore-more-header"
-                            onClick={() => navigate('/admissionPortal')}
+                            onClick={() => { window.scrollTo(0, 0); navigate('/admissionPortal'); }}
                         >
                             <span className="tgi-explore-more-label">Explore more</span>
                             <span className="tgi-explore-more-arrow">

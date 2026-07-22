@@ -508,12 +508,11 @@ body .engloray-about-wrapper {
 .inline-action-group {
     display: inline-flex;
     align-items: center;
-    gap: 20px;
+    gap: clamp(8px, 1.5vw, 20px);
     vertical-align: middle;
-    margin-left: 20px;
+    margin-left: clamp(4px, 1.5vw, 20px);
     position: relative;
     top: -2px;
-    /* Subtle lift for optical centering */
 }
 
 .pill-learn-btn {
@@ -663,25 +662,31 @@ body .engloray-about-wrapper {
 
 .stat-card-info {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 15px;
-    white-space: nowrap;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2px;
+    min-width: 0;
+    flex: 1;
 }
 
 .stat-card-num {
-    font-size: 32px;
+    font-size: 26px;
     font-weight: 700;
-    line-height: 1;
+    line-height: 1.1;
     color: #000;
+    white-space: nowrap;
 }
 
 .stat-card-lbl {
-    font-size: 16px;
+    font-size: 13px;
     color: #444;
     margin-top: 0;
     line-height: 1.2;
     text-transform: capitalize;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 
@@ -830,19 +835,21 @@ body .engloray-about-wrapper {
 .about-stats-grid-footer {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    margin-top: 60px;
+    gap: 16px;
+    margin-top: 50px;
+    width: 100%;
 }
 
 .about-stats-grid-footer .stat-card-new {
     background: #f8f9fa;
     border-radius: 20px;
-    padding: 24px;
+    padding: 16px 20px;
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 14px;
     transition: all 0.3s ease;
     border: 1px solid transparent;
+    min-width: 0;
 }
 
 .about-stats-grid-footer .highlight-card {
@@ -917,7 +924,7 @@ body .engloray-about-wrapper {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .engloray-about-wrapper {
         padding: 40px 20px;
     }
@@ -933,7 +940,6 @@ body .engloray-about-wrapper {
         text-align: center;
     }
 
-    /* Dissolve layout boundaries to reorder children freely */
     .about-content-grid {
         display: flex !important;
         flex-direction: column !important;
@@ -944,12 +950,11 @@ body .engloray-about-wrapper {
         display: contents !important;
     }
 
-    /* Explicitly reorder sections based on request */
     .bento-top-row {
         order: 1 !important;
         display: grid !important;
-        grid-template-columns: 1fr 1fr !important;
-        gap: 12px !important;
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
         margin-bottom: 0 !important;
     }
 
@@ -965,12 +970,10 @@ body .engloray-about-wrapper {
 
     .about-stats-grid-footer {
         order: 4 !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        /* Center the "shorter" cards */
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
         width: 100% !important;
-        gap: 12px !important;
+        gap: 16px !important;
     }
 
     .about-stats-grid-footer .stat-card-new {
@@ -1849,35 +1852,41 @@ screen and (width: 1024px) {
 
     /* ── Footer Stats Grid: shrink to fit 1024px–1440px ── */
     .about-stats-grid-footer {
-        gap: calc(0.01923 * 100vw - 7.69px) !important;
-        margin-top: calc(0.04808 * 100vw - 9.23px) !important;
+        gap: 12px !important;
+        margin-top: 40px !important;
     }
 
     .about-stats-grid-footer .stat-card-new {
-        padding: calc(0.01442 * 100vw - 2.77px) calc(0.01442 * 100vw - 2.77px) !important;
-        gap: calc(0.00962 * 100vw - 1.85px) !important;
+        padding: 14px 16px !important;
+        gap: 10px !important;
         border-radius: 16px !important;
+        min-width: 0 !important;
     }
 
     .about-stats-grid-footer .stat-card-icon {
-        width: calc(0.02885 * 100vw + 0.62px) !important;
-        height: calc(0.02885 * 100vw + 0.62px) !important;
-        font-size: calc(0.01202 * 100vw + 1.08px) !important;
+        width: 38px !important;
+        height: 38px !important;
+        font-size: 16px !important;
         flex-shrink: 0 !important;
     }
 
     .about-stats-grid-footer .stat-card-info {
-        gap: calc(0.00721 * 100vw - 1.38px) !important;
-        flex-wrap: nowrap !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        justify-content: center !important;
+        gap: 1px !important;
+        min-width: 0 !important;
     }
 
     .about-stats-grid-footer .stat-card-num {
-        font-size: calc(0.01923 * 100vw + 0.31px) !important;
+        font-size: 22px !important;
         white-space: nowrap !important;
+        line-height: 1.1 !important;
     }
 
     .about-stats-grid-footer .stat-card-lbl {
-        font-size: calc(0.00721 * 100vw + 5.62px) !important;
+        font-size: 12px !important;
         white-space: nowrap !important;
         line-height: 1.2 !important;
     }

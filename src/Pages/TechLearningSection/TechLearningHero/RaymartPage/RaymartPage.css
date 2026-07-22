@@ -25,7 +25,7 @@
   font-family: 'Inter', sans-serif;
   color: var(--rm-text);
   background: #f8f9fb;
-  min-height: 100vh;
+  min-height: auto;
   overflow-x: hidden;
 }
 
@@ -34,7 +34,7 @@
 ═══════════════════════════════════════════════════════════════ */
 .rm-hero {
   position: relative;
-  min-height: 68vh;
+  min-height: clamp(400px, 50vh, 650px);
   display: flex;
   align-items: center;
   justify-content: center;
