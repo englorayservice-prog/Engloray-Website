@@ -25,11 +25,11 @@ const TechLearning = () => {
             <TopNavBar />
             <NavigationBar />
             <TechLearningHero />
+            <TechPortalGateway />
             <Courses />
             <LearningExperience />
             <StudentTestimonials />
             <LearningFeatures />
-            <TechPortalGateway />
             <TechCta />
             <SubFooterTwo />
             <BackToTop />

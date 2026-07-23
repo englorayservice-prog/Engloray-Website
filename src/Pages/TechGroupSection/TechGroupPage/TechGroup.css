@@ -6,7 +6,7 @@
 
 .tech-group-page {
     padding-top: 33px; /* Push content below the fixed TopNavbar */
-    min-height: 100vh;
+    min-height: auto;
     box-sizing: border-box;
 }
 

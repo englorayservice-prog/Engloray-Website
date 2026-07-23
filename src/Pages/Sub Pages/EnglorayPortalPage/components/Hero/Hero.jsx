@@ -78,7 +78,7 @@ export const Hero = ({ onOpenApply }) => {
         minHeight: 'auto',
         background: '#FFFFFF',
         overflow: 'hidden',
-        paddingTop: '80px',
+        paddingTop: 'calc(var(--topnav-height, 33px) + 72px)',
         paddingBottom: '20px',
       }}
     >
@@ -220,7 +220,7 @@ export const Hero = ({ onOpenApply }) => {
               <FaRocket style={{ fontSize: '0.78rem' }} />
               Start Your Journey
             </button>
-            
+
           </motion.div>
 
           {/* Social proof + stats in one compact row */}
@@ -612,7 +612,7 @@ export const Hero = ({ onOpenApply }) => {
           .hero-grid {
             grid-template-columns: 1fr !important;
             gap: 20px !important;
-            padding: 76px 20px 20px !important;
+            padding: calc(var(--topnav-height, 43px) + 72px) 20px 20px !important;
             height: auto !important;
           }
           .hero-right-col { display: none !important; }

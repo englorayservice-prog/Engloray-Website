@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
 import NavigationBar from '../../../Pages/TechLearningSection/NavigationBar/NavigationBar';
 import brandingData from './raymart_branding_data.json';
 import Logo from '../../../../src/assets/18.png'; // Using the logo from assets
@@ -367,11 +366,8 @@ const FaqRaymart = () => {
 
     return (
         <>
-            <Helmet>
-            <SEOHead pageKey="/raymartPageFour" />
+            <SEOHead pageKey="/raymartPageFour" customTitle="FAQ & Feedback | Engloray" />
             <SchemaMarkup pageKey="/raymartPageFour" />
-                <title>FAQ & Feedback | Engloray</title>
-            </Helmet>
 
             <TopNavBar />
 

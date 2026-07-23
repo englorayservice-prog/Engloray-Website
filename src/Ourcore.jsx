@@ -53,23 +53,36 @@ const App = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  const forceVideoPlay = (el) => {
+    if (el) {
+      el.defaultMuted = true;
+      el.muted = true;
+      el.play().catch(err => {
+        console.error("Core values video autoplay failed:", err);
+      });
+    }
+  };
+
   return (
     <div className="our-core-main-wrapper min-h-screen relative flex flex-col items-center justify-center overflow-hidden w-full">
       {/* Background Video */}
       <video
+        ref={forceVideoPlay}
         autoPlay
         loop
         muted
         playsInline
+        preload="auto"
         className="absolute inset-0 z-0 scale-110"
         style={{
-          width: '100vw',
-          height: '100vh',
+          width: '100%',
+          height: '100%',
           objectFit: 'cover',
           opacity: 0.9
         }}
-        src={coreVideo}
-      />
+      >
+        <source src={coreVideo} type="video/mp4" />
+      </video>
 
       {/* Content Wrapper */}
       <div className="relative z-10 w-full flex flex-col items-center p-4">

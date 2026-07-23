@@ -1,184 +1,222 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { FaBars, FaTimes, FaRocket } from 'react-icons/fa';
-import englorayLogo from '../../assets/image.png';
+import React, { useState, useEffect, useRef } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faHome,
+  faGraduationCap,
+  faUserGraduate,
+  faCommentDots,
+  faPhone,
+  faChevronDown,
+  faChevronUp,
+  faRocket
+} from '@fortawesome/free-solid-svg-icons';
+import logo from '../../../../../assets/3.png';
+import '../../../../TechLearningSection/NavigationBar/NavigationBar.css';
 
 export const Navbar = ({ onOpenApply }) => {
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const [isExploreOpen, setIsExploreOpen] = useState(false);
+  const exploreRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 30);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const menuItems = [
-    { label: 'Home',        id: 'home' },
-    { label: 'Programs',    id: 'courses' },
-    { label: 'Instructors', id: 'mentors' },
-    { label: 'Reviews',     id: 'testimonials' },
-    { label: 'Contact',     id: 'cta' },
+    { name: 'Home', id: 'home', icon: faHome },
+    { name: 'Programs', id: 'courses', icon: faGraduationCap },
+    { name: 'Instructors', id: 'mentors', icon: faUserGraduate },
+    { name: 'Reviews', id: 'testimonials', icon: faCommentDots },
+    { name: 'Contact', id: 'cta', icon: faPhone },
+  ];
+
+  const exploreSections = [
+    { name: 'Graphic Design', href: '/graphicsDesignCoursePage' },
+    { name: 'Full Stack', href: '/javaFullStackCourseCoursePage' },
+    { name: 'UI/UX Design', href: '/uiuxDesignCoursePage' },
+    { name: 'Drawing', href: '/drawingCoursePage' },
+    { name: 'Digital Marketing', href: '/digitalMarketingCoursePage' },
+    { name: 'Mentor Learning', href: '/mentorshipLearningPage' },
+    { name: 'Project Learning', href: '/projectBasedLearningPage' },
+    { name: 'Careers', href: '/CareersPage' },
+    { name: 'Workshops', href: '/workshopsPage' },
+    { name: 'Corporate Training', href: '/corporateTraining' }
   ];
 
   const handleScrollTo = (id) => {
-    setMobileOpen(false);
+    setIsMobileMenuOpen(false);
+    setIsExploreOpen(false);
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: 'smooth' });
     setActiveSection(id);
   };
 
+  const handleExploreNavigation = (href) => {
+    setIsMobileMenuOpen(false);
+    setIsExploreOpen(false);
+    window.location.href = href;
+  };
+
   return (
-    <header
-      className="absolute top-0 left-0 w-full z-[100] transition-all duration-300"
-      style={{
-        background: 'rgba(255, 255, 255, 0.92)',
-        backdropFilter: 'blur(20px)',
-        WebkitBackdropFilter: 'blur(20px)',
-        borderBottom: '1px solid #ECEEF5',
-      }}
-    >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-[68px]">
+    <>
+      <header
+        className="learning-main-nav learning-nav-initial"
+        style={{
+          top: 'var(--topnav-height, 33px)',
+          zIndex: 995,
+          position: 'fixed',
+          left: 0,
+          right: 0,
+          background: 'rgba(255, 255, 255, 0.98)',
+          backdropFilter: 'blur(10px)',
+          borderBottom: '1px solid #e5e7eb',
+          boxShadow: '0 2px 8px rgba(0, 0, 0, 0.05)',
+          fontFamily: "'Inter', sans-serif"
+        }}
+      >
+        <div className="learning-nav-container" style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', minHeight: '48px' }}>
+          <div className="learning-nav-logo" onClick={() => handleScrollTo('home')} style={{ cursor: 'pointer', marginLeft: '-15px' }}>
+            <img src={logo} alt="ENGLORAY" className="learning-logo-initial" style={{ height: '42px' }} />
+          </div>
 
-        {/* Logo */}
-        <button
-          onClick={() => handleScrollTo('home')}
-          className="flex items-center bg-transparent border-none cursor-pointer"
-          style={{ padding: 0 }}
-        >
-          <img
-            src={englorayLogo}
-            alt="Engloray"
-            className="h-11 md:h-13 w-auto object-contain"
-            style={{ display: 'block' }}
-          />
-        </button>
+          <div className="learning-nav-menu" style={{ marginRight: 0, gap: '1.25rem', display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 1 }}>
+            {menuItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => handleScrollTo(item.id)}
+                className={`learning-nav-link ${activeSection === item.id ? 'learning-nav-active' : ''}`}
+                style={{ background: 'transparent', border: 'none', cursor: 'pointer', padding: '0.4rem 0.6rem', fontSize: '0.85rem' }}
+              >
+                <FontAwesomeIcon icon={item.icon} className="learning-nav-icon" />
+                <span className="learning-link-text">{item.name}</span>
+              </button>
+            ))}
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-1">
-          {menuItems.map((item) => (
+            <div className="learning-explore-container" ref={exploreRef} style={{ marginLeft: '0.25rem' }}>
+              <button className="learning-explore-btn" aria-label="Explore sections" style={{ padding: '0.4rem 0.85rem', fontSize: '0.85rem' }}>
+                <span className="learning-explore-text">Explore</span>
+                <FontAwesomeIcon icon={faChevronDown} className="learning-explore-icon" />
+              </button>
+
+              <div className="learning-explore-dropdown">
+                <div className="learning-explore-grid">
+                  {exploreSections.map((section) => (
+                    <a
+                      key={section.name}
+                      href={section.href}
+                      className="learning-explore-item"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleExploreNavigation(section.href);
+                      }}
+                    >
+                      <span className="learning-explore-item-title">{section.name}</span>
+                      <span className="learning-explore-item-arrow">→</span>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style={{ display: 'flex', alignItems: 'center', marginLeft: '12px', flexShrink: 0 }}>
             <button
-              key={item.id}
-              onClick={() => handleScrollTo(item.id)}
+              onClick={onOpenApply}
+              className="btn-purple hover:scale-105 active:scale-95 transition-all duration-200"
               style={{
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
+                padding: '8px 20px',
+                fontSize: '0.82rem',
                 fontWeight: 600,
-                fontSize: '0.875rem',
-                color: activeSection === item.id ? '#6C4CF1' : '#4B5563',
-                background: activeSection === item.id ? 'rgba(108, 76, 241, 0.08)' : 'transparent',
-                border: 'none',
-                padding: '8px 16px',
-                borderRadius: '100px',
-                cursor: 'pointer',
-                transition: 'all 0.2s ease',
-              }}
-              onMouseEnter={e => {
-                if (activeSection !== item.id) {
-                  e.currentTarget.style.color = '#6C4CF1';
-                  e.currentTarget.style.background = 'rgba(108, 76, 241, 0.06)';
-                }
-              }}
-              onMouseLeave={e => {
-                if (activeSection !== item.id) {
-                  e.currentTarget.style.color = '#4B5563';
-                  e.currentTarget.style.background = 'transparent';
-                }
+                borderRadius: '50px',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '7px',
+                whiteSpace: 'nowrap',
+                boxShadow: '0 4px 14px rgba(108, 76, 241, 0.25)',
               }}
             >
-              {item.label}
+              <FontAwesomeIcon icon={faRocket} style={{ fontSize: '0.72rem' }} />
+              Apply Now
             </button>
-          ))}
-        </nav>
+          </div>
 
-        {/* Desktop CTA */}
-        <div className="hidden md:flex items-center gap-3">
           <button
-            onClick={onOpenApply}
-            className="btn-purple"
-            style={{ padding: '10px 22px', fontSize: '0.85rem' }}
+            className={`learning-nav-hamburger ${isMobileMenuOpen ? 'learning-hamburger-active' : ''}`}
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
           >
-            <FaRocket style={{ fontSize: '0.75rem' }} />
-            Apply Now
+            <div className="learning-hamburger-box">
+              <span className="learning-hamburger-line"></span>
+              <span className="learning-hamburger-line"></span>
+              <span className="learning-hamburger-line"></span>
+            </div>
           </button>
         </div>
+      </header>
 
-        {/* Mobile Hamburger */}
-        <button
-          className="md:hidden border-none cursor-pointer rounded-xl p-2 transition-colors"
-          style={{
-            background: mobileOpen ? 'rgba(108, 76, 241, 0.1)' : 'transparent',
-            color: '#1F2937',
-          }}
-          onClick={() => setMobileOpen(!mobileOpen)}
-        >
-          {mobileOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
-        </button>
-      </div>
+      {/* Mobile Menu Overlay */}
+      <div className={`learning-mobile-overlay ${isMobileMenuOpen ? 'learning-overlay-active' : ''}`} style={{ top: 'var(--topnav-height, 33px)' }}>
+        <div className="learning-mobile-content">
+          <button className="learning-mobile-close" onClick={() => setIsMobileMenuOpen(false)}>
+            ✕
+          </button>
 
-      {/* Mobile Drawer */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -12, scale: 0.97 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -12, scale: 0.97 }}
-            transition={{ duration: 0.2, ease: 'easeOut' }}
-            style={{
-              position: 'fixed',
-              top: '76px',
-              left: '16px',
-              right: '16px',
-              background: 'rgba(255, 255, 255, 0.98)',
-              backdropFilter: 'blur(20px)',
-              border: '1px solid #ECEEF5',
-              borderRadius: '20px',
-              padding: '20px',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '4px',
-              boxShadow: '0 20px 60px rgba(108, 76, 241, 0.12)',
-              zIndex: 99,
-            }}
-          >
-            {menuItems.map((item, idx) => (
-              <motion.button
+          <div className="learning-mobile-links" style={{ marginTop: '3rem' }}>
+            {menuItems.map((item) => (
+              <button
                 key={item.id}
-                initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: idx * 0.05 }}
                 onClick={() => handleScrollTo(item.id)}
-                style={{
-                  fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  fontWeight: 600,
-                  fontSize: '1rem',
-                  color: '#1F2937',
-                  background: 'transparent',
-                  border: 'none',
-                  padding: '12px 16px',
-                  borderRadius: '12px',
-                  cursor: 'pointer',
-                  textAlign: 'left',
-                  transition: 'all 0.15s ease',
-                }}
-                onMouseEnter={e => {
-                  e.currentTarget.style.background = 'rgba(108, 76, 241, 0.07)';
-                  e.currentTarget.style.color = '#6C4CF1';
-                }}
-                onMouseLeave={e => {
-                  e.currentTarget.style.background = 'transparent';
-                  e.currentTarget.style.color = '#1F2937';
-                }}
+                className={`learning-mobile-link ${activeSection === item.id ? 'learning-mobile-active' : ''}`}
+                style={{ background: 'transparent', border: 'none', cursor: 'pointer', width: '100%' }}
               >
-                {item.label}
-              </motion.button>
+                <FontAwesomeIcon icon={item.icon} className="learning-mobile-icon" />
+                <span className="learning-mobile-text">{item.name}</span>
+              </button>
             ))}
-            <div style={{ height: '1px', background: '#ECEEF5', margin: '8px 0' }} />
+
+            <div className="learning-mobile-explore">
+              <button className="learning-mobile-explore-btn" onClick={() => setIsExploreOpen(!isExploreOpen)}>
+                <span>Explore Sections</span>
+                <FontAwesomeIcon icon={isExploreOpen ? faChevronUp : faChevronDown} className="learning-mobile-explore-icon" />
+              </button>
+
+              {isExploreOpen && (
+                <div className="learning-mobile-explore-dropdown">
+                  {exploreSections.map((section) => (
+                    <a
+                      key={section.name}
+                      href={section.href}
+                      className="learning-mobile-explore-item"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleExploreNavigation(section.href);
+                      }}
+                    >
+                      <span className="learning-mobile-explore-title">{section.name}</span>
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+
             <button
-              onClick={() => { setMobileOpen(false); onOpenApply(); }}
+              onClick={() => { setIsMobileMenuOpen(false); onOpenApply(); }}
               className="btn-purple"
-              style={{ width: '100%', padding: '13px 24px', marginTop: '4px' }}
+              style={{ width: '100%', padding: '13px 24px', marginTop: '16px', borderRadius: '50px' }}
             >
-              <FaRocket style={{ fontSize: '0.8rem' }} />
+              <FontAwesomeIcon icon={faRocket} style={{ marginRight: '8px' }} />
               Apply Now — It's Free
             </button>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </header>
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 

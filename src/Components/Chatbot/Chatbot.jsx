@@ -22,6 +22,16 @@ const Chatbot = () => {
   const [isIntroActive, setIsIntroActive] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
 
+  const handleVideoRef = (el) => {
+    if (el) {
+      el.defaultMuted = true;
+      el.muted = true;
+      el.play().catch(err => {
+        console.error("Chatbot video autoplay failed:", err);
+      });
+    }
+  };
+
   // Only render the portal once we're safely on the client
   useEffect(() => {
     setIsMounted(true);
@@ -199,14 +209,17 @@ const Chatbot = () => {
               transition={{ duration: 0.2 }}
               style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}
             >
-                <video
-                src={aiAssVideo}
+              <video
+                ref={handleVideoRef}
                 autoPlay
                 loop
                 muted
                 playsInline
+                preload="auto"
                 style={{ width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover' }}
-              />
+              >
+                <source src={aiAssVideo} type="video/mp4" />
+              </video>
             </motion.div>
            ) : (
             <motion.div
