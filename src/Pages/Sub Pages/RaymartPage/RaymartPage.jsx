@@ -144,8 +144,6 @@ const SalesChart = ({ section }) => {
 
   return (
     <div style={{ background: '#fff', borderRadius: '12px', padding: '14px', height: '100%', width: '100%', boxSizing: 'border-box', display: 'flex', flexDirection: 'column' }}>
-            <SEOHead pageKey="/raymartPage" />
-            <SchemaMarkup pageKey="/raymartPage" />
       <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: '13px', fontWeight: 600, color: '#111', marginBottom: '8px' }}>
         Monthly Sales Growth
       </p>
@@ -837,6 +835,8 @@ const RaymartPage = () => {
 
   return (
     <>
+      <SEOHead pageKey="/raymartPage" />
+      <SchemaMarkup pageKey="/raymartPage" />
       <div>
         <TopNavBar />
         <div className="rm-page">

@@ -153,8 +153,8 @@ const NavigationBar = () => {
         </Helmet>
       </div>
 
-      {/* Initial Position (Below Top Navbar) */}
-      <nav className={`learning-main-nav learning-nav-initial ${isScrolled ? 'learning-nav-hidden' : ''}`}>
+      {/* Initial Position (Below Top Navbar) - Hero Section Only */}
+      <nav className="learning-main-nav learning-nav-initial">
         <div className="learning-nav-container">
           <div className="learning-nav-logo" onClick={handleLogoClick} style={{ cursor: 'pointer' }}>
             <div className="learning-logo-wrapper">
@@ -175,63 +175,6 @@ const NavigationBar = () => {
               >
                 <FontAwesomeIcon icon={item.icon} className="learning-nav-icon" />
                 <span className="learning-link-text">{item.name}</span>
-              </a>
-            ))}
-
-            <div className="learning-explore-container" ref={exploreRef}>
-              <button className="learning-explore-btn" aria-label="Explore sections">
-                <span className="learning-explore-text">Explore</span>
-                <FontAwesomeIcon icon={faChevronDown} className="learning-explore-icon" />
-              </button>
-
-              <div className="learning-explore-dropdown">
-                <div className="learning-explore-grid">
-                  {exploreSections.map((section) => (
-                    <a
-                      key={section.name}
-                      href={section.href}
-                      className="learning-explore-item"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        handleExploreNavigation(section.href, section.name);
-                      }}
-                    >
-                      <span className="learning-explore-item-title">{section.name}</span>
-                      <span className="learning-explore-item-arrow">→</span>
-                    </a>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="learning-nav-search">
-            <SearchBar />
-          </div>
-        </div>
-      </nav>
-
-      {/* Fixed Position (Appears on Scroll) */}
-      <nav className={`learning-main-nav learning-nav-fixed ${isScrolled ? 'learning-nav-visible' : ''}`}>
-        <div className="learning-nav-container">
-          <div className="learning-nav-logo" onClick={handleLogoClick} style={{ cursor: 'pointer' }}>
-            <img src={logo} alt="ENGLORAY" className="learning-logo-fixed" />
-          </div>
-
-          <div className="learning-nav-menu">
-            {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={isHomePage || isLearningHomePage ? item.href : `/tech-learning${item.href}`}
-                className={`learning-nav-link ${activeLink === item.name ? 'learning-nav-active' : ''}`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavigation(item.name, item.id);
-                }}
-              >
-                <FontAwesomeIcon icon={item.icon} className="learning-nav-icon" />
-                <span className="learning-link-text">{item.name}</span>
-                <div className="learning-link-underline"></div>
               </a>
             ))}
 
