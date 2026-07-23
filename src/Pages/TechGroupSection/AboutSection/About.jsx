@@ -1,17 +1,13 @@
 import React, { useLayoutEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { motion } from 'framer-motion';
 import './About.css';
 import { FaCode, FaLightbulb, FaUserGraduate } from "react-icons/fa";
-// { faChartColumn, faGraduationCap, faHandshake, faLaptopCode, faPeopleGroup, faStar } import removed
 
 gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
   const sectionRef = useRef(null);
-  const floatingIconsRef = useRef(null);
 
   useLayoutEffect(() => {
     // 1️⃣ ICONS GENERATION REMOVED - CONFIRMED
@@ -121,14 +117,11 @@ const About = () => {
 
       <div className="about-container">
         <div className="about-header">
-          <div className="about-header-content">
-            <span className="title-accent">ABOUT ENGLORAY</span>
+          <span className="title-accent">ABOUT ENGLORAY</span>
+          <div className="about-title-row">
             <h2 className="about-title">
               Empowering businesses <br /> through technology & education
             </h2>
-            <p className="about-subtitle">
-              Engloray is a dynamic technology and education group that bridges the gap between business innovation and learning excellence through comprehensive digital solutions.
-            </p>
             <button className="get-started-btn">
               Get Started
               <span className="btn-icon">
@@ -138,6 +131,9 @@ const About = () => {
               </span>
             </button>
           </div>
+          <p className="about-subtitle">
+            Engloray is a dynamic technology and education group that bridges the gap between business innovation and learning excellence through comprehensive digital solutions.
+          </p>
         </div>
 
         <div className="about-content">
