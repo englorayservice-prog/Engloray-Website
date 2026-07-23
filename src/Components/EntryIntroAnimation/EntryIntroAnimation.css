@@ -194,7 +194,7 @@
 .scroll-spacer {
   position: relative;
   width: 100%;
-  height: 120vh;
+  height: 400vh;
   z-index: -1;
 }
 

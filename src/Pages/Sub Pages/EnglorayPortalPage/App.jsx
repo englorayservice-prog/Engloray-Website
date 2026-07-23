@@ -45,8 +45,8 @@ const App = () => {
 
   return (
     <>
+      <Navbar onOpenApply={() => setIsModalOpen(true)} />
       <div className="app-container">
-        <Navbar onOpenApply={() => setIsModalOpen(true)} />
         <Hero onOpenApply={() => setIsModalOpen(true)} />
         <Programs onOpenApply={() => setIsModalOpen(true)} />
         <TamilnaduPrograms onOpenApply={() => setIsModalOpen(true)} />

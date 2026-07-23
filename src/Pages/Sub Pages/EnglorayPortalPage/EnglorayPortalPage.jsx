@@ -1,5 +1,6 @@
 import React, { useEffect, useLayoutEffect } from 'react';
 import App from './App';
+import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import { fontStyles } from './portal-fonts';
 import SEOHead from '../../../seo/SEOHead';
 import SchemaMarkup from '../../../seo/SchemaMarkup';
@@ -18,11 +19,6 @@ const scrollToHeroTop = () => {
   window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   document.documentElement.scrollTop = 0;
   document.body.scrollTop = 0;
-
-  const heroEl = document.getElementById('home');
-  if (heroEl) {
-    heroEl.scrollIntoView({ block: 'start', behavior: 'instant' });
-  }
 
   document.documentElement.style.scrollBehavior = originalBehavior;
 };
@@ -85,6 +81,7 @@ export default function EnglorayPortalPage() {
     <>
       <SEOHead pageKey="/admissionPortal" />
       <SchemaMarkup pageKey="/admissionPortal" />
+      <TopNavBar />
       <App />
     </>
   );
