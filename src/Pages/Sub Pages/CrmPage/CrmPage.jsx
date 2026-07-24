@@ -31,7 +31,7 @@ import {
 import { motion } from 'motion/react';
 import TopNavbar from '../../../Components/TopNavbar/TopNavbar';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
-import SubFooterOne from '../../../Pages/Sub Pages/subFooterOne/NewFooter1'
+import Footer from '../../../Components/Footer/Footer';
 import './CrmPage.css';
 import crmHeroImage from '../../../assets/images/crmbg.png';
 import imgAi from '../../../assets/images/ai_follow_ups.png';
@@ -39,8 +39,6 @@ import imgOmnichannel from '../../../assets/images/omnichannel.png';
 import imgAutomation from '../../../assets/images/automation.png';
 import imgForecasting from '../../../assets/images/forecasting.png';
 import imgSmartFunnel from '../../../assets/images/smart_deal_funnel.png';
-import SEOHead from '../../../seo/SEOHead';
-import SchemaMarkup from '../../../seo/SchemaMarkup';
 
 
 const CrmPage = () => {
@@ -147,8 +145,6 @@ const CrmPage = () => {
     return (
         <>
             <TopNavbar />
-            <SEOHead pageKey="/crmPage" />
-            <SchemaMarkup pageKey="/crmPage" />
             <TwoLineNavbar />
 
             <div className="crm-subpage-container">
@@ -163,7 +159,7 @@ const CrmPage = () => {
 
                     <div className="showcase-container">
                         {/* Left side widgets */}
-                        <motion.div
+                        <motion.div 
                             className="hero-side-widget sw-left-top"
                             initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.5 }}
                         >
@@ -174,7 +170,7 @@ const CrmPage = () => {
                             </div>
                         </motion.div>
 
-                        <motion.div
+                        <motion.div 
                             className="hero-side-widget sw-left-bottom"
                             initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.7 }}
                         >
@@ -186,7 +182,7 @@ const CrmPage = () => {
                         </motion.div>
 
                         {/* Right side widgets */}
-                        <motion.div
+                        <motion.div 
                             className="hero-side-widget sw-right-top"
                             initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.6 }}
                         >
@@ -197,7 +193,7 @@ const CrmPage = () => {
                             </div>
                         </motion.div>
 
-                        <motion.div
+                        <motion.div 
                             className="hero-side-widget sw-right-bottom"
                             initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.8 }}
                         >
@@ -332,7 +328,7 @@ const CrmPage = () => {
                 <section className="crm-why-interactive">
                     <div className="cwi-container">
                         <div className="cwi-header-row">
-                            <motion.h2
+                            <motion.h2 
                                 className="cwi-title"
                                 initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }}
                                 whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
@@ -341,7 +337,7 @@ const CrmPage = () => {
                             >
                                 WHY CHOOSE <span>OUR CRM</span>
                             </motion.h2>
-                            <motion.p
+                            <motion.p 
                                 className="cwi-desc"
                                 initial={{ opacity: 0, y: 20, filter: 'blur(4px)' }}
                                 whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
@@ -606,7 +602,7 @@ const CrmPage = () => {
                             <span className="crm-section-badge-dark">
                                 <FontAwesomeIcon icon={faLightbulb} /> CRM Intelligence
                             </span>
-                            <h2>WORK SMARTER, <span className="crm-gradient-span">Not Harder</span></h2>
+                            <h2>Work Smarter,<br /><span>Not Harder</span></h2>
                             <motion.p
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
@@ -619,98 +615,69 @@ const CrmPage = () => {
 
                         <div className="crm-insights-carousel-wrapper">
                             <div className="crm-insights-grid">
-                                {(() => {
-                                    const cardsList = [
-                                        {
-                                            image: imgAi,
-                                            title: "AI-Powered Follow-Ups",
-                                            desc: "Let the system predict the best time to reach out and draft personalised messages automatically based on previous interactions. Our AI analyzes customer sentiment and timing to ensure your outreach hits the mark every single time."
-                                        },
-                                        {
-                                            image: imgOmnichannel,
-                                            title: "Omnichannel Support",
-                                            desc: "Consolidate emails, calls, chats and social into one unified inbox your team will love. Never lose track of a conversation again as our platform synchronizes all customer touchpoints into a single, cohesive thread for maximum efficiency."
-                                        },
-                                        {
-                                            image: imgAutomation,
-                                            title: "Automated Workflows",
-                                            desc: "Trigger tasks automatically based on client behavior without lifting a finger. From automated lead scoring to post-purchase follow-ups, our workflow engine handles the repetitive tasks so your team can focus on closing deals."
-                                        },
-                                        {
-                                            image: imgForecasting,
-                                            title: "Predictive Forecasting",
-                                            desc: "See what's coming before it happens. Our models help you plan quarters with confidence by analyzing historical sales data, market trends, and current pipeline health to provide highly accurate revenue predictions."
-                                        },
-                                        {
-                                            image: imgSmartFunnel,
-                                            title: "Smart Deal Funnels",
-                                            desc: "Visualize your entire sales pipeline and instantly identify bottlenecks using AI-driven tracking. Get real-time updates on deal progress and receive smart suggestions on how to move stagnant leads forward through the funnel."
-                                        },
-                                        {
-                                            image: imgAi,
-                                            title: "Smart Lead Scoring",
-                                            desc: "Automatically score and prioritize leads based on engagement levels, demographical data, and behavioral cues. Focus your sales team's energy where it matters most for maximum conversion."
-                                        },
-                                        {
-                                            image: imgOmnichannel,
-                                            title: "Omnichannel Campaigns",
-                                            desc: "Launch email, SMS, and push marketing campaigns directly from the CRM. Monitor delivery rates, open rates, and user interactions in real time to optimize outreach dynamically."
-                                        },
-                                        {
-                                            image: imgAutomation,
-                                            title: "Pipeline Automation",
-                                            desc: "Transition opportunities between stages automatically as actions occur. Keep your pipeline clean, trigger task assignments to sales reps, and ensure no deal stalls in the funnel."
-                                        }
-                                    ];
-
-                                    return [0, 1, 2, 3, 4].map((i) => {
-                                        const cardIndex = (activeInsight - 2 + i + cardsList.length) % cardsList.length;
-                                        const item = cardsList[cardIndex];
-                                        const isActive = activeInsight === cardIndex;
-
-                                        return (
-                                            <motion.div
-                                                key={i}
-                                                className={`crm-insight-card insight-card-${i} ${isActive ? 'active-card' : ''}`}
-                                                initial={{ opacity: 0 }}
-                                                whileInView={{ opacity: 1 }}
-                                                transition={{ duration: 0.6, delay: i * 0.15 }}
-                                                viewport={{ once: true }}
-                                                onClick={() => setActiveInsight(cardIndex)}
+                                {[
+                                    {
+                                        image: imgAi,
+                                        title: "AI-Powered Follow-Ups",
+                                        desc: "Let the system predict the best time to reach out and draft personalised messages automatically."
+                                    },
+                                    {
+                                        image: imgOmnichannel,
+                                        title: "Omnichannel Support",
+                                        desc: "Consolidate emails, calls, chats and social into one unified inbox your team will love."
+                                    },
+                                    {
+                                        image: imgAutomation,
+                                        title: "Automated Workflows",
+                                        desc: "Trigger tasks automatically based on client behavior without lifting a finger."
+                                    },
+                                    {
+                                        image: imgForecasting,
+                                        title: "Predictive Forecasting",
+                                        desc: "See what's coming before it happens. Our models help you plan quarters with confidence."
+                                    },
+                                    {
+                                        image: imgSmartFunnel,
+                                        title: "Smart Deal Funnels",
+                                        desc: "Visualize your entire sales pipeline and instantly identify bottlenecks using AI-driven tracking."
+                                    }
+                                ].map((item, i) => (
+                                    <motion.div
+                                        key={i}
+                                        className={`crm-insight-card insight-card-${i} ${activeInsight === i ? 'active-card' : ''}`}
+                                        initial={{ opacity: 0 }}
+                                        whileInView={{ opacity: 1 }}
+                                        transition={{ duration: 0.6, delay: i * 0.15 }}
+                                        viewport={{ once: true }}
+                                        onClick={() => setActiveInsight(i)}
+                                    >
+                                        {i === 0 && (
+                                            <button
+                                                className="card-attached-arrow left"
+                                                onClick={(e) => { e.stopPropagation(); setActiveInsight(Math.max(0, activeInsight - 1)); }}
+                                                style={{ opacity: activeInsight === 0 ? 0.3 : 1, pointerEvents: activeInsight === 0 ? 'none' : 'auto' }}
                                             >
-                                                {i === 0 && (
-                                                    <button
-                                                        className="card-attached-arrow left"
-                                                        onClick={(e) => {
-                                                            e.stopPropagation();
-                                                            setActiveInsight((prev) => (prev + 1) % cardsList.length);
-                                                        }}
-                                                    >
-                                                        <FontAwesomeIcon icon={faChevronLeft} />
-                                                    </button>
-                                                )}
-                                                {i === 4 && (
-                                                    <button
-                                                        className="card-attached-arrow right"
-                                                        onClick={(e) => {
-                                                            e.stopPropagation();
-                                                            setActiveInsight((prev) => (prev - 1 + cardsList.length) % cardsList.length);
-                                                        }}
-                                                    >
-                                                        <FontAwesomeIcon icon={faChevronRight} />
-                                                    </button>
-                                                )}
+                                                <FontAwesomeIcon icon={faChevronLeft} />
+                                            </button>
+                                        )}
+                                        {i === 4 && (
+                                            <button
+                                                className="card-attached-arrow right"
+                                                onClick={(e) => { e.stopPropagation(); setActiveInsight(Math.min(4, activeInsight + 1)); }}
+                                                style={{ opacity: activeInsight === 4 ? 0.3 : 1, pointerEvents: activeInsight === 4 ? 'none' : 'auto' }}
+                                            >
+                                                <FontAwesomeIcon icon={faChevronRight} />
+                                            </button>
+                                        )}
 
-                                                <div className="cic-image-wrapper">
-                                                    <img src={item.image} alt={item.title} />
-                                                </div>
-                                                <h3>{item.title}</h3>
-                                                <p>{item.desc}</p>
-                                                <div className="cic-line" />
-                                            </motion.div>
-                                        );
-                                    });
-                                })()}
+                                        <div className="cic-image-wrapper">
+                                            <img src={item.image} alt={item.title} />
+                                        </div>
+                                        <h3>{item.title}</h3>
+                                        <p>{item.desc}</p>
+                                        <div className="cic-line" />
+                                    </motion.div>
+                                ))}
                             </div>
                         </div>
 
@@ -735,7 +702,7 @@ const CrmPage = () => {
                 </section >
 
             </div >
-            <SubFooterOne />
+            <Footer />
         </>
     );
 };

@@ -281,7 +281,9 @@ export const ApplyModal = ({ isOpen, onClose, defaultDistrict = '' }) => {
         ) : (
           <div className="flex flex-col items-center text-center py-6">
             <FaCheckCircle className="text-brand-emerald text-5xl mb-4 filter drop-shadow-[0_0_10px_rgba(16,185,129,0.3)] animate-pulse" style={{ color: '#10b981' }} />
-            <h3 className="text-xl md:text-2xl font-extrabold mb-3" style={{ color: '#1F2937' }}>Application Submitted! 🎉</h3>
+            <h3 className="text-xl md:text-2xl font-extrabold mb-3" style={{ color: '#1F2937', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+              Application Submitted! <FaCheckCircle style={{ color: '#10b981' }} />
+            </h3>
             <p className="text-sm text-gray-600 leading-relaxed max-w-sm">
               Congratulations, <strong style={{ color: '#6C4CF1' }}>{formData.name}</strong>! Your application for the <strong style={{ color: '#6C4CF1' }}>{formData.programName} {formData.programType}</strong> cohort has been received.
             </p>

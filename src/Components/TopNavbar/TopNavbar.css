@@ -10,7 +10,7 @@
  * variable in the same breakpoint.
  */
 :root {
-    --topnav-height: 33px; /* 30px content + 3px border-bottom */
+    --topnav-height: 0px; /* Set to 33px dynamically when TopNavBar mounts */
 }
 
 .topnav-main {

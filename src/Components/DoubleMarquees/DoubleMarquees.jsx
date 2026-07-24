@@ -1,4 +1,5 @@
 import React, { useLayoutEffect, useState, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './DoubleMarquees.css';
@@ -9,6 +10,7 @@ import expertiseBg from '../../assets/OurExperise&Learning.png';
 gsap.registerPlugin(ScrollTrigger);
 
 const DoubleMarquees = () => {
+  const navigate = useNavigate();
   const containerRef = useRef(null);
   const titleRef = useRef(null);
   const shapesRef = useRef(null);
@@ -182,32 +184,21 @@ const DoubleMarquees = () => {
 
         {/* Static Titles Section */}
         <div className="marquee-titles">
-          <div className="marquee-title-item tech-title">
-            {/* <div className="title-icon">
-             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M20 7L12 3L4 7L12 11L20 7Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M18.5 4.5V9.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M12 11V21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M12 21L4 17V7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M20 17V7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M20 17L12 21L4 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M18.5 9.5L12 12.5L5.5 9.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </div> */}
+          <div
+            className="marquee-title-item tech-title"
+            onClick={() => navigate('/tech-group')}
+            style={{ cursor: 'pointer' }}
+          >
             <h3>Tech Group Services</h3>
             <div className="title-badge">
               <span>40+ Services and Products</span>
             </div>
           </div>
-          <div className="marquee-title-item tech-learning-title">
-            {/* <div className="title-icon">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M9 22V12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </div> */}
+          <div
+            className="marquee-title-item tech-learning-title"
+            onClick={() => navigate('/tech-learning')}
+            style={{ cursor: 'pointer' }}
+          >
             <h3>E-Learning UpSkills</h3>
             <div className="title-badge">
               <span>7+ Courses</span>

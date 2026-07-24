@@ -468,26 +468,25 @@ export const Careerguidance = ({ onOpenApply }) => {
         {isCompleted && (
           <div className="cg-modal-backdrop">
             <motion.div
-              initial={{ scale: 0.85, opacity: 0, y: 40 }}
+              initial={{ scale: 0.85, opacity: 0, y: 30 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.85, opacity: 0, y: 40 }}
+              exit={{ scale: 0.85, opacity: 0, y: 30 }}
               transition={{ type: 'spring', damping: 22, stiffness: 200 }}
               className="cg-modal"
               style={{
-                border: '2px dashed rgba(167, 139, 250, 0.4)',
+                border: '1.5px solid rgba(167, 139, 250, 0.3)',
                 background: 'linear-gradient(135deg, #0B0F19 0%, #151A2E 100%)',
-                position: 'relative'
+                position: 'relative',
+                maxWidth: '460px',
+                padding: '16px 20px',
+                borderRadius: '20px',
+                gap: '10px'
               }}
             >
-              
-              {/* Decorative ticket side notches */}
-              <div style={{ position: 'absolute', left: '-12px', top: '50%', transform: 'translateY(-50%)', width: '24px', height: '24px', borderRadius: '50%', background: '#FFFFFF', zIndex: 100 }} />
-              <div style={{ position: 'absolute', right: '-12px', top: '50%', transform: 'translateY(-50%)', width: '24px', height: '24px', borderRadius: '50%', background: '#FFFFFF', zIndex: 100 }} />
-
               {/* Modal top with score circle & head */}
-              <div className="cg-modal-top">
+              <div className="cg-modal-top" style={{ gap: '14px' }}>
                 <div className="cg-modal-score-circle">
-                  <div className="cg-circle-meter" style={{ width: 90, height: 90 }}>
+                  <div className="cg-circle-meter" style={{ width: 75, height: 75 }}>
                     <svg className="cg-circle-svg" viewBox="0 0 100 100">
                       <circle className="cg-circle-bg" cx="50" cy="50" r="42" />
                       <motion.circle
@@ -501,42 +500,42 @@ export const Careerguidance = ({ onOpenApply }) => {
                       />
                     </svg>
                     <div className="cg-circle-content">
-                      <span className="cg-circle-num" style={{ fontSize: '1.25rem' }}>{careerScore}%</span>
-                      <span className="cg-circle-label" style={{ fontSize: '0.5rem' }}>Readiness</span>
+                      <span className="cg-circle-num" style={{ fontSize: '1.05rem' }}>{careerScore}%</span>
+                      <span className="cg-circle-label" style={{ fontSize: '0.45rem' }}>Readiness</span>
                     </div>
                   </div>
                 </div>
 
                 <div className="cg-modal-headline-block">
-                  <span style={{ fontSize: '0.6rem', color: '#A78BFA', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+                  <span style={{ fontSize: '0.55rem', color: '#A78BFA', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.08em' }}>
                     Referral Pathway Unlocked
                   </span>
-                  <h3 style={{ fontSize: '1.2rem', margin: '2px 0 4px' }}>Holographic Placement Ticket</h3>
-                  <p style={{ fontSize: '0.78rem', color: '#94A3B8', lineHeight: 1.4 }}>
+                  <h3 style={{ fontSize: '1.05rem', margin: '2px 0 4px', color: '#FFFFFF' }}>Holographic Placement Ticket</h3>
+                  <p style={{ fontSize: '0.72rem', color: '#94A3B8', lineHeight: 1.35 }}>
                     You have strong fundamentals but need more real-world projects and internship simulation before entering placement rounds.
                   </p>
                 </div>
               </div>
 
               {/* Referral Code Barcode design */}
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '4px 0', padding: '10px', background: 'rgba(255,255,255,0.03)', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.06)' }}>
-                <span style={{ fontSize: '0.55rem', color: '#94A3B8', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em' }}>Pathway Referral Code</span>
-                <span style={{ fontSize: '1.1rem', fontWeight: 900, color: '#C084FC', fontFamily: 'monospace', letterSpacing: '0.15em', marginTop: '3px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '2px 0', padding: '8px', background: 'rgba(255,255,255,0.03)', borderRadius: '10px', border: '1px solid rgba(255,255,255,0.06)' }}>
+                <span style={{ fontSize: '0.52rem', color: '#94A3B8', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em' }}>Pathway Referral Code</span>
+                <span style={{ fontSize: '0.95rem', fontWeight: 900, color: '#C084FC', fontFamily: 'monospace', letterSpacing: '0.12em', marginTop: '2px' }}>
                   REF-ENGLORAY-{100 + Math.round(careerScore * 8)}X
                 </span>
               </div>
 
               {/* Analysis Lists: Strengths vs Growths */}
-              <div className="cg-modal-analysis-grid">
+              <div className="cg-modal-analysis-grid" style={{ padding: '8px 0', gap: '10px' }}>
                 
                 {/* Strengths */}
                 <div className="cg-modal-list-box strengths">
-                  <h4>✓ Verified Milestones</h4>
-                  <div className="cg-modal-list">
-                    <span className="cg-modal-list-item strength-bullet">
+                  <h4 style={{ fontSize: '0.7rem', margin: '0 0 4px' }}>✓ Verified Milestones</h4>
+                  <div className="cg-modal-list" style={{ gap: '2px' }}>
+                    <span className="cg-modal-list-item strength-bullet" style={{ fontSize: '0.7rem' }}>
                       ✓ Fast Learner
                     </span>
-                    <span className="cg-modal-list-item strength-bullet">
+                    <span className="cg-modal-list-item strength-bullet" style={{ fontSize: '0.7rem' }}>
                       ✓ Good Technical Base
                     </span>
                   </div>
@@ -544,12 +543,12 @@ export const Careerguidance = ({ onOpenApply }) => {
 
                 {/* Growths */}
                 <div className="cg-modal-list-box growth">
-                  <h4>• Shortlist Boosters</h4>
-                  <div className="cg-modal-list">
-                    <span className="cg-modal-list-item growth-bullet">
+                  <h4 style={{ fontSize: '0.7rem', margin: '0 0 4px' }}>• Shortlist Boosters</h4>
+                  <div className="cg-modal-list" style={{ gap: '2px' }}>
+                    <span className="cg-modal-list-item growth-bullet" style={{ fontSize: '0.7rem' }}>
                       • Internship Work experience
                     </span>
-                    <span className="cg-modal-list-item growth-bullet">
+                    <span className="cg-modal-list-item growth-bullet" style={{ fontSize: '0.7rem' }}>
                       • Advanced GitHub workflows
                     </span>
                   </div>
@@ -559,24 +558,24 @@ export const Careerguidance = ({ onOpenApply }) => {
 
               {/* Personalized Suggestion Cards */}
               <div className="cg-suggestions-section">
-                <h4 style={{ fontSize: '0.78rem', fontWeight: 800, color: '#F8FAFC' }}>Suggested Skill Roadmaps</h4>
-                <div className="cg-suggestions-grid">
+                <h4 style={{ fontSize: '0.72rem', fontWeight: 800, color: '#F8FAFC', margin: '0 0 6px' }}>Suggested Skill Roadmaps</h4>
+                <div className="cg-suggestions-grid" style={{ gap: '8px' }}>
                   {SUGGESTIONS.map((s, idx) => (
                     <motion.div 
                       key={idx} 
                       className="cg-suggestion-card"
-                      whileHover={{ scale: 1.03, y: -2 }}
+                      whileHover={{ scale: 1.02, y: -2 }}
                       transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                      style={{ padding: '8px 10px', gap: '3px' }}
+                      style={{ padding: '6px 8px', gap: '2px', borderRadius: '10px' }}
                     >
                       <div className="cg-suggestion-card-header">
-                        <span className="cg-suggestion-icon" style={{ fontSize: '0.9rem' }}>{s.icon}</span>
-                        <span className={`cg-suggestion-difficulty ${s.diff}`} style={{ fontSize: '0.55rem', padding: '1px 5px' }}>
+                        <span className="cg-suggestion-icon" style={{ fontSize: '0.8rem' }}>{s.icon}</span>
+                        <span className={`cg-suggestion-difficulty ${s.diff}`} style={{ fontSize: '0.5rem', padding: '1px 4px' }}>
                           {s.diff}
                         </span>
                       </div>
-                      <h5 style={{ fontSize: '0.76rem', margin: '2px 0 0' }}>{s.title}</h5>
-                      <span className="cg-suggestion-duration" style={{ border: 'none', padding: 0, fontSize: '0.62rem' }}>Est: {s.time}</span>
+                      <h5 style={{ fontSize: '0.68rem', margin: '2px 0 0', fontWeight: 700 }}>{s.title}</h5>
+                      <span className="cg-suggestion-duration" style={{ border: 'none', padding: 0, fontSize: '0.58rem' }}>Est: {s.time}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -589,9 +588,9 @@ export const Careerguidance = ({ onOpenApply }) => {
                     setIsCompleted(false);
                     onOpenApply(); // Trigger the admission modal portal opening!
                   }}
-                  className="btn-purple animate-pulse"
+                  className="btn-purple"
                   style={{
-                    padding: '10px 32px',
+                    padding: '10px 24px',
                     borderRadius: '100px',
                     fontWeight: 700,
                     fontSize: '0.82rem',
@@ -607,7 +606,7 @@ export const Careerguidance = ({ onOpenApply }) => {
                     boxShadow: '0 4px 18px rgba(108, 76, 241, 0.4)'
                   }}
                 >
-                  Shortlist My Profile for Direct Pool <FaArrowRight />
+                  Apply to Shortlist <FaArrowRight />
                 </button>
               </div>
 

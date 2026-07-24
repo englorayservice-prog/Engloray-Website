@@ -24,11 +24,7 @@ const educationIcon = "";
 const CoreServices = () => {
   const navigate = useNavigate();
   const [currentIndex, setCurrentIndex] = useState(1);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const sectionRef = useRef(null);
-
-  const minIndex = 1;
-  const maxIndex = 3; // services.length - 3 (6 - 3 = 3) for 4 visible cards
 
   const services = [
     {
@@ -119,28 +115,15 @@ const CoreServices = () => {
     return () => ctx.revert();
   }, []);
 
-  useEffect(() => {
-    let interval;
-
-    if (isAutoPlaying) {
-      interval = setInterval(() => {
-        setCurrentIndex((prevIndex) =>
-          prevIndex >= maxIndex ? minIndex : prevIndex + 1
-        );
-      }, 2000);
-    }
-
-    return () => {
-      if (interval) clearInterval(interval);
-    };
-  }, [isAutoPlaying, maxIndex]);
+  const minIndex = 0;
+  const maxIndex = services.length - 1;
 
   const nextSlide = () => {
-    setCurrentIndex(currentIndex >= maxIndex ? minIndex : currentIndex + 1);
+    setCurrentIndex((prev) => (prev >= maxIndex ? minIndex : prev + 1));
   };
 
   const prevSlide = () => {
-    setCurrentIndex(currentIndex <= minIndex ? maxIndex : currentIndex - 1);
+    setCurrentIndex((prev) => (prev <= minIndex ? maxIndex : prev - 1));
   };
 
   const goToSlide = (index) => {
@@ -157,8 +140,6 @@ const CoreServices = () => {
       id="CoreServices"
       ref={sectionRef}
       className="services-carousel-section"
-      onMouseEnter={() => setIsAutoPlaying(false)}
-      onMouseLeave={() => setIsAutoPlaying(true)}
     >
       <div className="carousel-main-container">
         {/* Header */}
@@ -173,11 +154,6 @@ const CoreServices = () => {
 
         {/* Carousel */}
         <div className="carousel-full-wrapper">
-          <div className="compact-carousel-controls">
-            <button className="carousel-btn prev-btn" onClick={prevSlide}>‹</button>
-            <button className="carousel-btn next-btn" onClick={nextSlide}>›</button>
-          </div>
-
           <div className="carousel-full-container">
             <div
               className="carousel-track"
@@ -238,6 +214,33 @@ const CoreServices = () => {
                 );
               })}
             </div>
+          </div>
+
+          <div className="compact-carousel-controls">
+            <button
+              type="button"
+              className="carousel-btn prev-btn"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                nextSlide();
+              }}
+              aria-label="Move cards left"
+            >
+              ‹
+            </button>
+            <button
+              type="button"
+              className="carousel-btn next-btn"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                prevSlide();
+              }}
+              aria-label="Move cards right"
+            >
+              ›
+            </button>
           </div>
 
           <div className="color-dots-indicators">

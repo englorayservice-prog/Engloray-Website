@@ -20,7 +20,7 @@
     justify-content: center;
     flex-direction: column;
     overflow: hidden;
-    padding-top: calc(var(--topnav-height, 40px) + 40px);
+    padding-top: 0;
 }
 
 /* Glowing Curved Horizon Effect */
@@ -67,8 +67,8 @@
 .hero-content {
     max-width: 900px;
     margin: 0 auto;
-    padding: 2rem 0;
-    margin-top: 70px;
+    padding: 1rem 0;
+    margin-top: 10px;
     position: relative;
     z-index: 10; /* Fixes overlap by placing hero content above the client marquee */
 }

@@ -559,6 +559,7 @@ const getCategoryIcon = (category, type) => {
 const RaymartPage = () => {
   const [search, setSearch] = useState('');
   const [activeCategory, setActiveCategory] = useState('Branding');
+  const [ctaError, setCtaError] = useState('');
   const navigate = useNavigate();
   const popularTrackRef = React.useRef(null);
   const searchRef = React.useRef(null);
@@ -1612,71 +1613,81 @@ const RaymartPage = () => {
               Whether you want to sell products down the street or around the world, we have all the tools you need.
             </p>
             <div className="rm-cta-actions">
-              <div className="rm-cta-input-group">
+              <div className="rm-cta-input-group" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', position: 'relative' }}>
                 {ctaSubscribed ? (
                   <span className="rm-cta-success-message" style={{ color: '#008a00', fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '15px', padding: '10px' }}>
                     <FontAwesomeIcon icon={faCheck} />
                     Thank you! Greetings and updates will be on the way!
                   </span>
                 ) : (
-                  <>
+                  <div style={{ display: 'flex', alignItems: 'center', width: '100%' }}>
                     <FontAwesomeIcon icon={faEnvelope} style={{ color: '#888', marginRight: '10px' }} />
                     <input
                       type="email"
                       placeholder="Enter your email address"
                       className="rm-cta-input"
                       value={ctaEmail}
-                      onChange={(e) => setCtaEmail(e.target.value)}
+                      onChange={(e) => {
+                        setCtaEmail(e.target.value);
+                        if (ctaError) setCtaError('');
+                      }}
                     />
                     <button
                       className="rm-cta-subscribe-btn"
+                      style={{ cursor: 'pointer' }}
                       onClick={async () => {
-                        if (ctaEmail.trim()) {
-                          const userEmail = ctaEmail.trim();
-
-                          // Set subscribed state instantly for premium visual response
-                          setCtaSubscribed(true);
-                          setCtaEmail('');
-
-                          // Make automatic background call to EmailJS API to send direct subscriber welcome email
-                          try {
-                            await fetch("https://api.emailjs.com/api/v1.0/email/send", {
-                              method: "POST",
-                              headers: {
-                                "Content-Type": "application/json"
-                              },
-                              body: JSON.stringify({
-                                service_id: "service_af9xhe7",
-                                template_id: "template_uu7k2jb",
-                                user_id: "h67fs5ervDVPLSKJj",
-                                template_params: {
-                                  email: userEmail,
-                                  to_email: userEmail,
-                                  user_email: userEmail,
-                                  subscriber_email: userEmail,
-                                  reply_to: "engloray@gmail.com"
-                                }
-                              })
-                            });
-                          } catch (error) {
-                            console.error("Automatic welcome email failed to send:", error);
-                          }
-
-                          // Return form input fields back after 5 seconds
-                          setTimeout(() => {
-                            setCtaSubscribed(false);
-                          }, 5000);
+                        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                        if (!ctaEmail.trim() || !emailRegex.test(ctaEmail.trim())) {
+                          setCtaError('Please enter a valid email address.');
+                          return;
                         }
+                        const userEmail = ctaEmail.trim();
+                        setCtaError('');
+                        setCtaSubscribed(true);
+                        setCtaEmail('');
+
+                        try {
+                          await fetch("https://api.emailjs.com/api/v1.0/email/send", {
+                            method: "POST",
+                            headers: {
+                              "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify({
+                              service_id: "service_af9xhe7",
+                              template_id: "template_uu7k2jb",
+                              user_id: "h67fs5ervDVPLSKJj",
+                              template_params: {
+                                email: userEmail,
+                                to_email: userEmail,
+                                user_email: userEmail,
+                                subscriber_email: userEmail,
+                                reply_to: "engloray@gmail.com"
+                              }
+                            })
+                          });
+                        } catch (error) {
+                          console.error("Automatic welcome email failed to send:", error);
+                        }
+
+                        setTimeout(() => {
+                          setCtaSubscribed(false);
+                        }, 5000);
                       }}
                     >
                       Get Updates
                     </button>
-                  </>
+                  </div>
+                )}
+                {ctaError && !ctaSubscribed && (
+                  <span style={{ color: '#dc2626', fontSize: '13px', marginTop: '6px', fontWeight: '600', paddingLeft: '4px' }}>
+                    {ctaError}
+                  </span>
                 )}
               </div>
               <button
                 className="rm-cta-trial-btn"
-                onClick={() => window.open('https://wa.me/916381769909', '_blank')}
+                style={{ cursor: 'pointer' }}
+                onClick={() => navigate('/contactPage')}
               >
                 Start free trial
               </button>

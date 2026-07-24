@@ -1,4 +1,5 @@
 import React, { useRef, useLayoutEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './BusinessBoost.css';
@@ -12,48 +13,56 @@ const boostCardsData = [
         title: "SaaS",
         description: "Cloud-based software solutions that are scalable, secure, and accessible anytime, anywhere, for modern businesses worldwide.",
         bg: "#D6C1E8", // Lilac
-        text: "#1F2937"
+        text: "#1F2937",
+        path: "/saasPage"
     },
     {
         title: "ERP",
         description: "Unified management platform for enterprises, schools, and colleges, streamlining academics, finance, and operations.",
         bg: "#AC58E9", // Ultraviolet (keep this violet color)
         text: "#FFFFFF",
-        descriptionStyle: { paddingLeft: "50px" } // Adjusted padding for longer text
+        descriptionStyle: { paddingLeft: "50px" }, // Adjusted padding for longer text
+        path: "/erpSolutionsPage"
     },
     {
         title: "CRM",
         description: "Smart customer relationship tools to manage leads, sales, and customer engagement seamlessly across multiple channels efficiently.",
         bg: "#08262C", // Dark Teal (Kept existing)
-        text: "#FFFFFF"
+        text: "#FFFFFF",
+        path: "/crmServicesPage"
     },
     {
         title: "Business Suite AI",
         description: "AI-powered business tools that automate operations, improve decisions, and boost productivity across industries worldwide",
         bg: "#124A59", // Medium Teal (Kept existing)
-        text: "#FFFFFF"
+        text: "#FFFFFF",
+        path: "/aiProductPage"
     },
     {
         title: "AI Chatbot",
         description: "Intelligent conversational assistants that provide instant support and enhance user experience across platforms globally.",
         bg: "#F4F8F9", // Frosted Snow (Kept existing)
-        text: "#1F2937"
+        text: "#1F2937",
+        path: "/aiServicesPage"
     },
     {
         title: "Job Seeker",
         description: "A smart platform connecting talent with opportunities through AI-driven job matching for faster hiring outcomes.",
         bg: "#292F91", // Previous SaaS Blue (Dark Blue)
-        text: "#FFFFFF"
+        text: "#FFFFFF",
+        path: "/CareersPage"
     },
     {
         title: "Learning & Career",
         description: "Interactive learning systems designed to upskill individuals and accelerate career growth in modern industries.",
         bg: "#4CA8DD", // Previous ERP Blue (Light Blue)
-        text: "#FFFFFF"
+        text: "#FFFFFF",
+        path: "/tech-learning"
     }
 ];
 
 const BusinessBoost = () => {
+    const navigate = useNavigate();
     const sectionRef = useRef(null);
     const scrollTrackRef = useRef(null);
 
@@ -112,7 +121,7 @@ const BusinessBoost = () => {
                         Whether you want to take your business global or just expand your horizons, we will help you identify new customers.
                     </p>
 
-                    <button className="boost-cta-button">
+                    <button className="boost-cta-button" onClick={() => navigate('/contactPage')} style={{ cursor: 'pointer' }}>
                         Get started
                         <span className="cta-icon"><ArrowUpRight size={30} strokeWidth={3.5} /></span>
                     </button>
@@ -147,7 +156,8 @@ const BusinessBoost = () => {
                             <div
                                 className="boost-card"
                                 key={`original-${index}`}
-                                style={{ backgroundColor: card.bg, color: card.text }}
+                                onClick={() => card.path && navigate(card.path)}
+                                style={{ backgroundColor: card.bg, color: card.text, cursor: 'pointer' }}
                             >
                                 <div className="card-content-wrapper">
                                     <h3 className="card-title-left">{card.title}</h3>
@@ -162,7 +172,8 @@ const BusinessBoost = () => {
                             <div
                                 className="boost-card"
                                 key={`duplicate-${index}`}
-                                style={{ backgroundColor: card.bg, color: card.text }}
+                                onClick={() => card.path && navigate(card.path)}
+                                style={{ backgroundColor: card.bg, color: card.text, cursor: 'pointer' }}
                             >
                                 <div className="card-content-wrapper">
                                     <h3 className="card-title-left">{card.title}</h3>

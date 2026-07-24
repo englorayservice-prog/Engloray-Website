@@ -35,7 +35,7 @@ import {
 import { motion } from 'motion/react';
 import TopNavbar from '../../../Components/TopNavbar/TopNavbar';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
-import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
+import Footer from '../../../Components/Footer/Footer';
 import '../CrmPage/CrmPage.css';
 import '../ErpPage/ErpPage.css';
 import './BusinessSuiteAI.css';
@@ -44,8 +44,6 @@ import './BusinessSuiteAI.css';
 import imgAiAnalysis from '../../../assets/images/erp_ai_analysis.png';
 import imgForecasting from '../../../assets/images/erp_forecasting.png';
 import imgCompliance from '../../../assets/images/erp_compliance.png';
-import SEOHead from '../../../seo/SEOHead';
-import SchemaMarkup from '../../../seo/SchemaMarkup';
 
 const BusinessSuiteAI = () => {
     const [activeFeature, setActiveFeature] = useState(0);
@@ -116,8 +114,6 @@ const BusinessSuiteAI = () => {
     return (
         <>
             <TopNavbar />
-            <SEOHead pageKey="/businessSuiteAiPage" />
-            <SchemaMarkup pageKey="/businessSuiteAiPage" />
             <TwoLineNavbar />
             <div className="crm-subpage-container business-suite-theme">
 
@@ -131,7 +127,7 @@ const BusinessSuiteAI = () => {
 
                     <div className="showcase-container">
                         {/* Left side widgets */}
-                        <motion.div
+                        <motion.div 
                             className="hero-side-widget sw-left-top"
                             initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.5 }}
                         >
@@ -142,7 +138,7 @@ const BusinessSuiteAI = () => {
                             </div>
                         </motion.div>
 
-                        <motion.div
+                        <motion.div 
                             className="hero-side-widget sw-left-bottom"
                             initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.7 }}
                         >
@@ -154,7 +150,7 @@ const BusinessSuiteAI = () => {
                         </motion.div>
 
                         {/* Right side widgets */}
-                        <motion.div
+                        <motion.div 
                             className="hero-side-widget sw-right-top"
                             initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.6 }}
                         >
@@ -165,7 +161,7 @@ const BusinessSuiteAI = () => {
                             </div>
                         </motion.div>
 
-                        <motion.div
+                        <motion.div 
                             className="hero-side-widget sw-right-bottom"
                             initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.8 }}
                         >
@@ -464,65 +460,40 @@ const BusinessSuiteAI = () => {
                         </motion.div>
                         <div className="crm-insights-carousel-wrapper">
                             <div className="crm-insights-grid">
-                                {(() => {
-                                    const cardsList = [
-                                        { image: imgAiAnalysis, title: "Predictive Forecasting", desc: "Identify market shifts before they happen with neural market trend analysis. Leverage deep predictive modeling to anticipate shifts in customer demand and commodity availability, allowing your enterprise to adapt strategy ahead of market changes.", imgBg: "rgba(198,40,40,0.18)" },
-                                        { image: imgForecasting, title: "Autonomous SCM", desc: "Self-optimizing supply chain that reacts to real-time global logistics data. Balance vendor workloads, optimize route distribution networks, and minimize manual warehouse checks to slash delivery times dynamically.", imgBg: "rgba(183,28,28,0.18)" },
-                                        { image: imgAiAnalysis, title: "Financial Oversight", desc: "Real-time audit logs and anomaly detection across all currency transactions. Secure multi-currency ledger adjustments and detect variance trends instantly to protect company bottom lines from compliance risk.", imgBg: "rgba(198,40,40,0.25)" },
-                                        { image: imgCompliance, title: "Global Compliance", desc: "Automatic adaptation to regional tax laws and digital privacy regulations. Monitor shifts in GDPR, DPDP, and federal standards to enforce strict role-based governance profiles automatically.", imgBg: "rgba(139,26,26,0.2)" },
-                                        { image: imgForecasting, title: "Resource Optimisation", desc: "Dynamic workload balancing using historical performance and AI modeling. Distribute operational backlogs automatically to ensure maximum workforce efficiency and product delivery metrics.", imgBg: "rgba(178,34,34,0.2)" },
-                                        { image: imgAiAnalysis, title: "Enterprise Resource Analytics", desc: "Consolidate multi-department overheads, resource logs, and capital expenditures into a single, high-fidelity AI ledger. Identify cost leakages and optimize asset utilization ratios automatically across global locations.", imgBg: "rgba(198,40,40,0.18)" },
-                                        { image: imgForecasting, title: "Smart Process Automation", desc: "Deploy autonomous workflows that handle document parsing, compliance verification, and routing without human intervention. Reconcile records instantly and send real-time alerts on any discrepancies.", imgBg: "rgba(183,28,28,0.18)" },
-                                        { image: imgCompliance, title: "Intelligent Security Auditing", desc: "Continuous monitoring of security parameters, data access patterns, and threat indices. Automatic risk scoring and immediate response protocols safeguard intellectual property and customer records.", imgBg: "rgba(139,26,26,0.2)" }
-                                    ];
-
-                                    return [0, 1, 2, 3, 4].map((i) => {
-                                        const cardIndex = (activeInsight - 2 + i + cardsList.length) % cardsList.length;
-                                        const item = cardsList[cardIndex];
-                                        const isActive = activeInsight === cardIndex;
-
-                                        return (
-                                            <motion.div
-                                                key={i}
-                                                className={`crm-insight-card bs-arc-card insight-card-${i} ${isActive ? 'active-card' : ''}`}
-                                                initial={{ opacity: 0 }}
-                                                whileInView={{ opacity: 1 }}
-                                                transition={{ duration: 0.6, delay: i * 0.15 }}
-                                                viewport={{ once: true }}
-                                                onClick={() => setActiveInsight(cardIndex)}
-                                            >
-                                                {i === 0 && (
-                                                    <button
-                                                        className="card-attached-arrow left"
-                                                        onClick={(e) => {
-                                                            e.stopPropagation();
-                                                            setActiveInsight((prev) => (prev + 1) % cardsList.length);
-                                                        }}
-                                                    >
-                                                        <FontAwesomeIcon icon={faChevronLeft} />
-                                                    </button>
-                                                )}
-                                                {i === 4 && (
-                                                    <button
-                                                        className="card-attached-arrow right"
-                                                        onClick={(e) => {
-                                                            e.stopPropagation();
-                                                            setActiveInsight((prev) => (prev - 1 + cardsList.length) % cardsList.length);
-                                                        }}
-                                                    >
-                                                        <FontAwesomeIcon icon={faChevronRight} />
-                                                    </button>
-                                                )}
-                                                <div className="cic-image-wrapper" style={{ background: item.imgBg }}>
-                                                    <img src={item.image} alt={item.title} />
-                                                </div>
-                                                <h3>{item.title}</h3>
-                                                <p>{item.desc}</p>
-                                                <div className="cic-line bs-cic-line" />
-                                            </motion.div>
-                                        );
-                                    });
-                                })()}
+                                {[
+                                    { image: imgAiAnalysis, title: "Predictive Forecasting", desc: "Identify market shifts before they happen with neural market trend analysis.", imgBg: "rgba(198,40,40,0.18)" },
+                                    { image: imgForecasting, title: "Autonomous SCM", desc: "Self-optimizing supply chain that reacts to real-time global logistics data.", imgBg: "rgba(183,28,28,0.18)" },
+                                    { image: imgAiAnalysis, title: "Financial Oversight", desc: "Real-time audit logs and anomaly detection across all currency transactions.", imgBg: "rgba(198,40,40,0.25)" },
+                                    { image: imgCompliance, title: "Global Compliance", desc: "Automatic adaptation to regional tax laws and digital privacy regulations.", imgBg: "rgba(139,26,26,0.2)" },
+                                    { image: imgForecasting, title: "Resource Optimisation", desc: "Dynamic workload balancing using historical performance and AI modeling.", imgBg: "rgba(178,34,34,0.2)" },
+                                ].map((item, i) => (
+                                    <motion.div
+                                        key={i}
+                                        className={`crm-insight-card bs-arc-card insight-card-${i} ${activeInsight === i ? 'active-card' : ''}`}
+                                        initial={{ opacity: 0 }}
+                                        whileInView={{ opacity: 1 }}
+                                        transition={{ duration: 0.6, delay: i * 0.15 }}
+                                        viewport={{ once: true }}
+                                        onClick={() => setActiveInsight(i)}
+                                    >
+                                        {i === 0 && (
+                                            <button className="card-attached-arrow left" onClick={(e) => { e.stopPropagation(); setActiveInsight(Math.max(0, activeInsight - 1)); }} style={{ opacity: activeInsight === 0 ? 0.3 : 1, pointerEvents: activeInsight === 0 ? 'none' : 'auto' }}>
+                                                <FontAwesomeIcon icon={faChevronLeft} />
+                                            </button>
+                                        )}
+                                        {i === 4 && (
+                                            <button className="card-attached-arrow right" onClick={(e) => { e.stopPropagation(); setActiveInsight(Math.min(4, activeInsight + 1)); }} style={{ opacity: activeInsight === 4 ? 0.3 : 1, pointerEvents: activeInsight === 4 ? 'none' : 'auto' }}>
+                                                <FontAwesomeIcon icon={faChevronRight} />
+                                            </button>
+                                        )}
+                                        <div className="cic-image-wrapper" style={{ background: item.imgBg }}>
+                                            <img src={item.image} alt={item.title} />
+                                        </div>
+                                        <h3>{item.title}</h3>
+                                        <p>{item.desc}</p>
+                                        <div className="cic-line bs-cic-line" />
+                                    </motion.div>
+                                ))}
                             </div>
                         </div>
                         <motion.div className="crm-cta-strip bs-cta-strip" initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
@@ -539,7 +510,7 @@ const BusinessSuiteAI = () => {
                 </section>
 
             </div>
-            <WhiteFooter />
+            <Footer />
         </>
     );
 };

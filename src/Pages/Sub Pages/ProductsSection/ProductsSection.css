@@ -157,7 +157,7 @@
 
 /* Small Card Layout adjustments manually to match screenshot perfectly */
 .ps-card:not(.ps-card-large) .ps-title-row {
-    margin-top: -5px;
+    margin-top: 0;
     display: block;
     text-align: center;
     margin-bottom: 20px;
@@ -191,7 +191,7 @@
 /* Large box layout (Business Suite AI) */
 .ps-card-large .ps-title-row {
     display: flex;
-    margin-top: -110px;
+    margin-top: 0;
     justify-content: center;
     align-items: center;
     gap: 12px;

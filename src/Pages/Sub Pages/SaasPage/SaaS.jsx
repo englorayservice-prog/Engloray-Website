@@ -48,8 +48,8 @@ import learning3d from '../../../assets/learning_3d.png';
 import saasFeaturedBuilding from '../../../assets/saas_featured_building.png';
 import microsoftLogo from '../../../assets/microsoft.png';
 import globeVideo from '../../../assets/World-SASS (2).mp4';
-import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar'
-import TopNavbar from '../../../Components/TopNavbar/TopNavbar'
+import Navbar from '../../../Components/Navbar/Navbar';
+import TopNavbar from '../../../Components/TopNavbar/TopNavbar';
 import SubFooterOne from '../../../Pages/Sub Pages/subFooterOne/NewFooter1'
 import SEOHead from '../../../seo/SEOHead';
 import SchemaMarkup from '../../../seo/SchemaMarkup';
@@ -184,7 +184,7 @@ const SaaS = () => {
   return (
     <>
       <TopNavbar />
-      <TwoLineNavbar />
+      <Navbar />
       <div className="saas-container">
         <header className="saas-v2-hero-wrapper" id="saas-hero">
           <div className="saas-v2-master-card">

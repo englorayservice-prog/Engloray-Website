@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 import Logo from '../../assets/18.png'
 import SearchBar from '../SearchBar/SearchBar';
 import { Helmet } from 'react-helmet-async';
-import { Home, Briefcase, Layers, Users, GraduationCap, Phone, ChevronDown } from 'lucide-react';
+import { Home, Briefcase, Layers, Users, GraduationCap, Phone } from 'lucide-react';
 
 const menuItems = [
     { id: 'home', label: 'Home', icon: Home, section: 'home' },
@@ -14,19 +14,10 @@ const menuItems = [
     { id: 'contact', label: 'Contact', icon: Phone, section: 'benefits-cta-main-section' },
 ];
 
-// Replace with real destinations
-const exploreItems = [
-    { label: 'Case Studies', href: '#' },
-    { label: 'Partnerships', href: '#' },
-    { label: 'Resources', href: '#' },
-];
-
 const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [showNavbar, setShowNavbar] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
-    const [isExploreOpen, setIsExploreOpen] = useState(false);
-    const exploreRef = useRef(null);
 
     useEffect(() => {
         const controlNavbar = () => {
@@ -42,24 +33,6 @@ const Navbar = () => {
             window.removeEventListener('scroll', controlNavbar);
         };
     }, [lastScrollY]);
-
-    useEffect(() => {
-        const handleClickOutside = (e) => {
-            if (exploreRef.current && !exploreRef.current.contains(e.target)) {
-                setIsExploreOpen(false);
-            }
-        };
-        document.addEventListener('mousedown', handleClickOutside);
-        return () => document.removeEventListener('mousedown', handleClickOutside);
-    }, []);
-
-    useEffect(() => {
-        const handleEscape = (e) => {
-            if (e.key === 'Escape') setIsExploreOpen(false);
-        };
-        document.addEventListener('keydown', handleEscape);
-        return () => document.removeEventListener('keydown', handleEscape);
-    }, []);
 
     const toggleMobileMenu = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -148,36 +121,6 @@ const Navbar = () => {
                         </ul>
 
                         <div className="nav-actions">
-                            <div className="nav-explore" ref={exploreRef}>
-                                <button
-                                    type="button"
-                                    className="nav-explore-trigger"
-                                    onClick={() => setIsExploreOpen((prev) => !prev)}
-                                    aria-haspopup="true"
-                                    aria-expanded={isExploreOpen}
-                                >
-                                    <span>Explore</span>
-                                    <ChevronDown
-                                        size={16}
-                                        strokeWidth={2}
-                                        className={`nav-explore-chevron ${isExploreOpen ? 'is-open' : ''}`}
-                                        aria-hidden="true"
-                                    />
-                                </button>
-
-                                {isExploreOpen && (
-                                    <ul className="nav-explore-menu" role="menu">
-                                        {exploreItems.map((item) => (
-                                            <li key={item.label} role="menuitem">
-                                                <a href={item.href} onClick={() => setIsExploreOpen(false)}>
-                                                    {item.label}
-                                                </a>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                )}
-                            </div>
-
                             <SearchBar />
                         </div>
 

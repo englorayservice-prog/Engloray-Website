@@ -1,5 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { motion, useScroll, useTransform, useMotionValue, animate, useSpring } from 'framer-motion';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faRocket } from '@fortawesome/free-solid-svg-icons';
 import {
   FiTrendingUp,
   FiCheckCircle,
@@ -322,7 +324,7 @@ export default function JourneySlider() {
               className="absolute inset-0 flex flex-col justify-center space-y-1.5 sm:space-y-2 md:space-y-3"
             >
               <span className="inline-flex items-center gap-1.5 text-[9px] sm:text-xs font-mono font-bold tracking-wider text-brand-sky uppercase bg-brand-sky/10 px-2 sm:px-3 py-1 rounded-md border border-brand-sky/20 self-start">
-                <FiAward className="animate-pulse" /> 🚀 The Level-Up Pathway
+                <FiAward className="animate-pulse" /> <FontAwesomeIcon icon={faRocket} style={{ color: '#0ea5e9', marginRight: '4px' }} /> The Level-Up Pathway
               </span>
               <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-black text-brand-navy tracking-tight leading-tight font-hexco uppercase">
                 Production-Ready Pro

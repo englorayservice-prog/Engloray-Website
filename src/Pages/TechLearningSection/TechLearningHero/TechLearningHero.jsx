@@ -57,11 +57,11 @@ const TechLearningHero = () => {
                                 <FontAwesomeIcon icon={faGraduationCap} />
                             </div>
                         </div>
-                        <div className="tlh-card-extra" style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.6)', display: 'flex', flexDirection: 'column', gap: '6px', marginTop: '15px', alignItems: 'center' }}>
-                            <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}><span style={{ color: '#d8ff4a' }}>✓</span> Resume Building</span>
-                            <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}><span style={{ color: '#d8ff4a' }}>✓</span> Mock Interviews</span>
-                            <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}><span style={{ color: '#d8ff4a' }}>✓</span> Career Support</span>
-                            <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}><span style={{ color: '#d8ff4a' }}>✓</span> Job Referrals</span>
+                        <div className="tlh-card-extra" style={{ fontSize: '0.98rem', color: 'rgba(255,255,255,0.95)', fontWeight: 500, display: 'flex', flexDirection: 'column', gap: '8px', marginTop: '15px', alignItems: 'center' }}>
+                            <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><span style={{ color: '#d8ff4a', fontSize: '1.25rem', fontWeight: 'bold' }}>✓</span> Resume Building</span>
+                            <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><span style={{ color: '#d8ff4a', fontSize: '1.25rem', fontWeight: 'bold' }}>✓</span> Mock Interviews</span>
+                            <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><span style={{ color: '#d8ff4a', fontSize: '1.25rem', fontWeight: 'bold' }}>✓</span> Career Support</span>
+                            <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><span style={{ color: '#d8ff4a', fontSize: '1.25rem', fontWeight: 'bold' }}>✓</span> Job Referrals</span>
                         </div>
                     </motion.div>
 
@@ -81,11 +81,11 @@ const TechLearningHero = () => {
                                 <FontAwesomeIcon icon={faHandshake} />
                             </div>
                         </div>
-                        <div className="tlh-card-extra" style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.6)', display: 'flex', flexDirection: 'column', gap: '6px', marginTop: '15px', alignItems: 'center' }}>
-                            <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}><span style={{ color: '#d8ff4a' }}>✓</span> Top Tech Firms</span>
-                            <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}><span style={{ color: '#d8ff4a' }}>✓</span> Global Startups</span>
-                            <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}><span style={{ color: '#d8ff4a' }}>✓</span> MNCs Connect</span>
-                            <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}><span style={{ color: '#d8ff4a' }}>✓</span> Direct Interviews</span>
+                        <div className="tlh-card-extra" style={{ fontSize: '0.98rem', color: 'rgba(255,255,255,0.95)', fontWeight: 500, display: 'flex', flexDirection: 'column', gap: '8px', marginTop: '15px', alignItems: 'center' }}>
+                            <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><span style={{ color: '#d8ff4a', fontSize: '1.25rem', fontWeight: 'bold' }}>✓</span> Top Tech Firms</span>
+                            <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><span style={{ color: '#d8ff4a', fontSize: '1.25rem', fontWeight: 'bold' }}>✓</span> Global Startups</span>
+                            <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><span style={{ color: '#d8ff4a', fontSize: '1.25rem', fontWeight: 'bold' }}>✓</span> MNCs Connect</span>
+                            <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><span style={{ color: '#d8ff4a', fontSize: '1.25rem', fontWeight: 'bold' }}>✓</span> Direct Interviews</span>
                         </div>
                     </motion.div>
 

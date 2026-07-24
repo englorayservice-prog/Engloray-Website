@@ -6,6 +6,51 @@
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
+   0. Compact navbar sizing — matching Student Page (NavigationBar) size
+   -------------------------------------------------------------------------- */
+.raymart-nav-scope .tlnbn-navbar-main-container {
+    top: 30px !important;
+}
+
+.raymart-nav-scope .tlnbn-nav-content {
+    padding: 4px 16px !important;
+    min-height: 48px !important;
+    max-height: 52px !important;
+    border-radius: 50px !important;
+    gap: 8px !important;
+}
+
+.raymart-nav-scope .tlnbn-logo img {
+    height: 36px !important;
+    max-height: 36px !important;
+    transform: none !important;
+}
+
+.raymart-nav-scope .tlnbn-desktop-menu {
+    padding: 3px 8px !important;
+    gap: 4px !important;
+    border-radius: 25px !important;
+}
+
+.raymart-nav-scope .tlnbn-nav-link {
+    padding: 5px 12px !important;
+    font-size: 13.5px !important;
+    border-radius: 20px !important;
+}
+
+.raymart-nav-scope .tlnbn-btn {
+    padding: 5px 12px !important;
+    font-size: 12px !important;
+    border-radius: 18px !important;
+}
+
+.raymart-nav-scope .tlnbn-subscribe-btn {
+    padding: 5px 16px !important;
+    font-size: 12px !important;
+    border-radius: 18px !important;
+}
+
+/* --------------------------------------------------------------------------
    1. Mobile toggle button — hidden on desktop, real button on mobile
    -------------------------------------------------------------------------- */
 .raymart-nav-scope .tlnbn-mobile-toggle {

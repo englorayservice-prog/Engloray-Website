@@ -501,7 +501,7 @@ export const Hero = ({ onOpenApply }) => {
                   >
                     <div style={{ color: '#F59E0B' }}>$ placement-engine --check-referrals</div>
                     <div style={{ color: '#9CA3AF' }}>[Zoho] Full Stack Java Engineer · Match rate: 94%</div>
-                    <div style={{ color: '#10B981', fontWeight: 'bold' }}>🎉 Offer Confirmed! Direct Referral generated.</div>
+                    <div style={{ color: '#10B981', fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: '4px' }}><FaCheckCircle /> Offer Confirmed! Direct Referral generated.</div>
                   </motion.div>
                 )}
               </AnimatePresence>

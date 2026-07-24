@@ -19,24 +19,29 @@
     padding: 0;
 }
 
+.engloray-navbar {
+    width: 100%;
+    height: calc(var(--topnav-height, 0px) + 52px);
+    position: relative;
+}
+
 .engloray-navbar .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-top: 0;
-    padding: 14px 3%;
+    padding: 6px 3%;
     transition: all 0.3s ease;
-    position: sticky;
-    /* Reads the shared height published by TopNavbar.css so the two
-       bars always stay flush, with no gap or overlap, at every
-       breakpoint. Falls back to 33px if TopNavbar isn't mounted. */
-    top: var(--topnav-height, 33px);
+    position: fixed;
+    /* Position directly below TopNavbar with zero overlap */
+    top: var(--topnav-height, 0px);
     left: 0;
-    z-index: 999;
+    right: 0;
+    z-index: 1005;
     background: white;
     width: 100%;
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.08);
-    min-height: 68px;
+    min-height: 52px;
 }
 
 .engloray-navbar .navbar-visible {
@@ -524,6 +529,9 @@
 }
 
 @media (max-width: 1024px) {
+    .engloray-navbar {
+        height: calc(var(--topnav-height, 33px) + 48px);
+    }
     .engloray-navbar .navbar {
         padding: 5px 3%;
         min-height: 48px;
@@ -564,6 +572,9 @@
 }
 
 @media (max-width: 768px) {
+    .engloray-navbar {
+        height: calc(var(--topnav-height, 43px) + 46px);
+    }
     .engloray-navbar .navbar {
         padding: 8px 4%;
         min-height: 46px;

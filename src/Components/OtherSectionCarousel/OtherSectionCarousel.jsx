@@ -1,19 +1,19 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import './OtherSectionCarousel.css';
-
 // Import your existing images
 import eLearningImage from '../../assets/5559881.png';
 import techGroupImage from '../../assets/7935511.png';
 import fullStackImage from '../../assets/6970537.png';
-// Add new image for RayMart (update this path to your actual image)
-import rayMartImage from '../../assets/ray mart.png'; // Change this to your actual image path
+
+const AUTOPLAY_DELAY = 4000;
 
 const OtherSectionCarousel = () => {
   const navigate = useNavigate();
   const cardRefs = useRef([]);
   const sectionRef = useRef(null);
+  const autoplayRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const services = [
@@ -21,13 +21,13 @@ const OtherSectionCarousel = () => {
       id: 1,
       title: "Tech Group",
       image: techGroupImage,
-      path: '/tech-group',
+      path: '/features',
       description: "Advanced Technology Solutions for Modern Businesses",
       clickable: true,
       imgScale: 1.05,
       imgHoverScale: 1.15,
       imgFit: 'contain',
-      cardHeight: '360px' // Slightly decreased height for this image
+      cardHeight: '360px'
     },
     {
       id: 2,
@@ -50,49 +50,42 @@ const OtherSectionCarousel = () => {
       imgScale: 1.03,
       imgHoverScale: 1.1,
       imgFit: 'contain'
-    },
-    {
-      id: 4,
-      title: "RayMart",
-      image: rayMartImage, // Make sure to add your image file
-      path: '/raymartPage',
-      description: "Your One-Stop Digital Marketplace for Everything",
-      clickable: true,
-      imgScale: 1.05,
-      imgHoverScale: 1.15,
-      imgFit: 'contain',
-      cardHeight: '380px'
     }
   ];
 
+  const total = services.length;
+
+  const nextCard = (e) => {
+    if (e && e.stopPropagation) e.stopPropagation();
+    console.error(">>> NEXT BUTTON CLICKED! Previous index:", currentIndex);
+    setCurrentIndex((prev) => (prev + 1) % total);
+  };
+
+  const prevCard = (e) => {
+    if (e && e.stopPropagation) e.stopPropagation();
+    console.error(">>> PREV BUTTON CLICKED! Previous index:", currentIndex);
+    setCurrentIndex((prev) => (prev - 1 + total) % total);
+  };
+
+  const goToIndex = (index) => {
+    console.error(">>> GO TO INDEX CLICKED:", index);
+    setCurrentIndex(index);
+  };
+
   const handleCardClick = (service, index) => {
-    // Only allow navigation if the card is the active (center) one
+    console.error(">>> CARD CLICKED:", service.title, "index:", index, "active:", index === currentIndex);
     if (index === currentIndex && service.clickable) {
       navigate(service.path);
     }
-    // If it's a side card, we do nothing (or we could rotate to it, but user asked to only select in middle)
   };
 
-  const nextCard = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === services.length - 1 ? 0 : prevIndex + 1
-    );
-  };
-
-  const prevCard = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? services.length - 1 : prevIndex - 1
-    );
-  };
-
-  // Auto-rotate carousel
+  // Simple clean autoplay
   useEffect(() => {
-    const interval = setInterval(() => {
-      nextCard();
-    }, 4000); // Change card every 4 seconds
-
-    return () => clearInterval(interval);
-  }, []);
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % total);
+    }, AUTOPLAY_DELAY);
+    return () => clearInterval(timer);
+  }, [total]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -126,7 +119,6 @@ const OtherSectionCarousel = () => {
   const marqueeText = "Brand Strategy ✦ Identity Systems ✦ Logo Design ✦ UI/UX Excellence ✦ Growth Marketing ✦ Digital Campaigns ✦ Creative Execution ✦ Performance Branding ✦ Experience Design ✦ Market Differentiation ✦ Conversion Optimization ✦ Social Branding ✦ Scalable Growth ✦";
 
   return (
-
     <motion.div
       className="compact-carousel-section"
       ref={sectionRef}
@@ -136,24 +128,20 @@ const OtherSectionCarousel = () => {
       transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
     >
       <div className="compact-carousel-container">
-        {/* <div className="carousel-header">
-          <h2>Explore Our Services</h2>
-          <p>Discover comprehensive solutions tailored for your success</p>
-        </div> */}
-
         <div className="compact-carousel">
           <div className="compact-carousel-track">
             {services.map((service, index) => {
-              const position = (index - currentIndex + services.length) % services.length;
+              const position = (index - currentIndex + total) % total;
 
               return (
                 <div
                   key={service.id}
-                  className={`compact-service-card ${position === 0 ? 'active' :
+                  className={`compact-service-card ${
+                    position === 0 ? 'active' :
                     position === 1 ? 'next' :
-                      position === services.length - 1 ? 'prev' :
-                        'hidden'
-                    } ${!service.clickable ? 'non-clickable' : ''}`}
+                    position === total - 1 ? 'prev' :
+                    'hidden'
+                  } ${!service.clickable ? 'non-clickable' : ''}`}
                   onClick={() => handleCardClick(service, index)}
                   ref={addToRefs}
                   style={{
@@ -199,19 +187,44 @@ const OtherSectionCarousel = () => {
           </div>
         </div>
 
-        <div className="compact-carousel-controls">
-          <button className="carousel-btn prev-btn" onClick={prevCard}>‹</button>
-          <button className="carousel-btn next-btn" onClick={nextCard}>›</button>
-        </div>
+        <div className="compact-carousel-bottom-nav">
+          <button
+            type="button"
+            className="carousel-bottom-btn prev-btn"
+            onClick={(e) => {
+              console.error(">>> PREV BUTTON CLICKED IN UI");
+              prevCard(e);
+            }}
+            aria-label="Previous service"
+          >
+            ‹
+          </button>
 
-        <div className="compact-carousel-indicators">
-          {services.map((_, index) => (
-            <button
-              key={index}
-              className={`compact-indicator ${index === currentIndex ? 'active' : ''}`}
-              onClick={() => setCurrentIndex(index)}
-            />
-          ))}
+          <div className="compact-carousel-indicators" role="tablist" aria-label="Select service">
+            {services.map((service, index) => (
+              <button
+                key={service.id}
+                type="button"
+                role="tab"
+                aria-selected={index === currentIndex}
+                aria-label={`Show ${service.title}`}
+                className={`compact-indicator ${index === currentIndex ? 'active' : ''}`}
+                onClick={() => goToIndex(index)}
+              />
+            ))}
+          </div>
+
+          <button
+            type="button"
+            className="carousel-bottom-btn next-btn"
+            onClick={(e) => {
+              console.error(">>> NEXT BUTTON CLICKED IN UI");
+              nextCard(e);
+            }}
+            aria-label="Next service"
+          >
+            ›
+          </button>
         </div>
       </div>
 

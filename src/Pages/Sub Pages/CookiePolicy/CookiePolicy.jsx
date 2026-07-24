@@ -1,5 +1,6 @@
 import React from 'react';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
+import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 import SEOHead from '../../../seo/SEOHead';
 import SchemaMarkup from '../../../seo/SchemaMarkup';

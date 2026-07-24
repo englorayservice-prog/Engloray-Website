@@ -70,7 +70,7 @@ export const Navbar = ({ onOpenApply }) => {
         style={{
           top: 'var(--topnav-height, 33px)',
           zIndex: 995,
-          position: 'fixed',
+          position: 'absolute',
           left: 0,
           right: 0,
           background: 'rgba(255, 255, 255, 0.98)',

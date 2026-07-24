@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
+import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
 import SEOHead from '../../../seo/SEOHead';
 import SchemaMarkup from '../../../seo/SchemaMarkup';
 import './TermsAndServices.css';

@@ -5,7 +5,7 @@
   /* The purple background from the image */
   position: relative;
   width: 100%;
-  padding-top: 100px;
+  padding-top: 30px;
   /* Space for the wave */
   color: #333;
   font-family: 'Montserrat', sans-serif;
@@ -36,15 +36,15 @@
 /* Main Container */
 .learning-container {
   max-width: 100%;
-  margin-top: -10rem;
+  margin-top: -2rem;
   padding: 0;
 }
 
 /* White Card */
 .learning-footer-card {
   background-color: #FFFFFF;
-  border-radius: 70px 70px 0 0;
-  padding: 80px 60px 40px;
+  border-radius: 24px 24px 0 0;
+  padding: 20px 30px 12px;
   width: 100%;
   box-sizing: border-box;
   text-align: left;
@@ -54,51 +54,52 @@
 .learning-footer-top {
   display: grid;
   grid-template-columns: 1.5fr 1fr 1fr 1fr 1.2fr;
-  gap: 40px;
+  gap: 16px;
 }
 
 .learning-brand-col {
-  max-width: 350px;
+  max-width: 300px;
 }
 
 .learning-brand-title {
-  font-size: 2.2rem;
+  font-size: 0.95rem !important;
   font-weight: 800;
   color: #111;
-  margin-bottom: 20px;
+  margin-bottom: 6px;
   letter-spacing: -0.5px;
 }
 
 .learning-brand-desc {
-  font-size: 1rem;
+  font-size: 0.68rem !important;
   color: #666;
-  line-height: 1.6;
-  margin-bottom: 25px;
-  max-width: 300px;
+  line-height: 1.4;
+  margin-bottom: 10px;
+  max-width: 260px;
 }
 
 .learning-social-icons {
   display: flex;
-  gap: 20px;
+  gap: 10px;
 }
 
 .learning-social-icons a {
   color: #111;
-  font-size: 1.2rem;
+  font-size: 0.82rem !important;
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .learning-social-icons a:hover {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
   color: #8E9AFE;
 }
 
 /* Column Styles */
 .learning-col-title {
-  font-size: 1.1rem;
+  font-size: 0.7rem !important;
   font-weight: 700;
   color: #111;
-  margin-bottom: 25px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
 }
 
 .learning-col-list {
@@ -108,15 +109,15 @@
 }
 
 .learning-col-list li {
-  margin-bottom: 12px;
+  margin-bottom: 3px;
 }
 
 .learning-col-list a,
 .learning-col-list span {
   text-decoration: none;
   color: #555;
-  font-size: 0.95rem;
-  font-weight: 400;
+  font-size: 0.65rem !important;
+  font-weight: 500;
   transition: color 0.3s ease;
 }
 
@@ -125,35 +126,36 @@
 }
 
 .contact-col .learning-col-list li {
-  margin-bottom: 15px;
+  margin-bottom: 4px;
 }
 
 /* Other Links Section */
 .learning-other-section {
   border-top: 1px solid #eee;
+  margin-top: 15px;
+  padding-top: 15px;
 }
 
 .learning-other-heading {
-  font-size: 1.3rem;
+  font-size: 0.72rem !important;
   font-weight: 800;
   color: #111;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
   text-align: left;
-  /* Aligned left as per instruction */
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 
 .learning-other-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  gap: 20px;
+  gap: 10px;
 }
 
 .learning-other-title {
-  font-size: 0.9rem;
+  font-size: 0.65rem !important;
   font-weight: 700;
   color: #111;
-  margin-bottom: 20px;
+  margin-bottom: 6px;
 }
 
 .learning-other-list {
@@ -163,13 +165,13 @@
 }
 
 .learning-other-list li {
-  margin-bottom: 10px;
+  margin-bottom: 3px;
 }
 
 .learning-other-list a {
   text-decoration: none;
   color: #777;
-  font-size: 0.85rem;
+  font-size: 0.6rem !important;
   transition: color 0.3s ease;
 }
 
@@ -181,32 +183,33 @@
 .learning-join-section {
   display: flex;
   justify-content: center;
+  margin: 18px 0 10px;
 }
 
 .learning-join-btn {
   background: #8E9AFE;
   color: white;
   border: none;
-  padding: 18px 50px;
-  border-radius: 12px;
-  font-size: 1rem;
+  padding: 8px 20px;
+  border-radius: 10px;
+  font-size: 0.75rem !important;
   font-weight: 600;
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
   transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 10px 20px rgba(142, 154, 254, 0.3);
+  box-shadow: 0 6px 12px rgba(142, 154, 254, 0.25);
 }
 
 .learning-join-btn:hover {
   background: #7382f1;
-  transform: translateY(-3px);
-  box-shadow: 0 15px 30px rgba(142, 154, 254, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(142, 154, 254, 0.35);
 }
 
 .rocket-icon {
-  font-size: 1.1rem;
+  font-size: 0.8rem !important;
 }
 
 /* Bottom Bar */
@@ -215,13 +218,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.9rem;
+  font-size: 0.62rem !important;
   color: #888;
+  padding-top: 15px;
+  margin-top: 15px;
 }
 
 .learning-legal-links {
   display: flex;
-  gap: 30px;
+  gap: 20px;
 }
 
 .learning-legal-links a {
@@ -279,7 +284,7 @@
 @media (max-width: 1200px) {
   .learning-footer-top {
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    gap: 30px;
   }
 
   .learning-other-grid {
@@ -289,8 +294,8 @@
 
 @media (max-width: 768px) {
   .learning-footer-card {
-    padding: 60px 30px 40px;
-    border-radius: 40px 40px 0 0;
+    padding: 40px 20px 30px;
+    border-radius: 30px 30px 0 0;
   }
 
   .learning-footer-top {
@@ -303,13 +308,7 @@
 
   .learning-bottom-bar {
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
     text-align: center;
-  }
-}
-
-@media (min-width: 1440px) {
-  .learning-footer {
-    zoom: 1.32;
   }
 }

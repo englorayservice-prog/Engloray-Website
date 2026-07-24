@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Helmet } from "react-helmet"
 import './TopNavbar.css';
@@ -7,6 +7,13 @@ const TopNavBar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+
+  useEffect(() => {
+    document.documentElement.style.setProperty('--topnav-height', '33px');
+    return () => {
+      document.documentElement.style.setProperty('--topnav-height', '0px');
+    };
+  }, []);
 
   const navigationItems = [
     {

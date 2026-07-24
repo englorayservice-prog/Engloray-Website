@@ -19,7 +19,7 @@
 .crm-showcase-hero {
     position: relative;
     width: 100%;
-    padding: 160px 20px 40px; /* Reduced from 80px */
+    padding: 160px 20px 80px;
     background-color: #0b0f19;
     overflow: hidden;
     display: flex;
@@ -239,19 +239,9 @@
 }
 
 @keyframes floatWidget {
-
-    0%,
-    100% {
-        transform: translateY(0) rotate(0deg);
-    }
-
-    33% {
-        transform: translateY(-12px) rotate(1deg);
-    }
-
-    66% {
-        transform: translateY(5px) rotate(-1deg);
-    }
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    33% { transform: translateY(-12px) rotate(1deg); }
+    66% { transform: translateY(5px) rotate(-1deg); }
 }
 
 .sw-icon-box {
@@ -313,21 +303,15 @@
     animation-delay: -6s;
 }
 
-@media (max-width: 1440px) and () {
-
-    .hero-side-widget,
-    .sw-right-bottom,
-    .sw-left-top {
-        transform: scale(0.8);
-        transform-origin: left center;
-    }
-
-    .sw-right-bottom {
-        right: 5px;
-        top: 300px;
-    }
+@media (max-width: 1400px) {
+    .sw-left-top, .sw-right-top { left: 0; right: 0; }
 }
 
+@media (max-width: 1100px) {
+    .hero-side-widget {
+        display: none;
+    }
+}
 
 /* CARDS STACK */
 .showcase-dashboard-stack {
@@ -517,7 +501,7 @@
 ───────────────────────────────────────────────── */
 .crm-clean-features-section {
     background: #ffffff;
-    padding: 60px 20px 60px; /* Reduced vertical padding */
+    padding: 120px 20px 140px;
     position: relative;
     overflow: hidden;
     color: #0f172a;
@@ -576,7 +560,7 @@
 ───────────────────────────────────────────────── */
 .crm-why-interactive {
     background: #f8fafc;
-    padding: 60px 20px; /* Reduced from 120px */
+    padding: 120px 20px;
     color: #0f172a;
 }
 
@@ -906,7 +890,7 @@
    PROVEN IMPACT — clean, fully-visible 4-card grid
 ═══════════════════════════════════════════════════ */
 .crm-impact-section {
-    padding: 110px 24px 60px; /* Reduced bottom padding */
+    padding: 110px 24px;
     background: #08090d;
     color: white;
     text-align: center;
@@ -1030,9 +1014,6 @@
 }
 
 @media (max-width: 1100px) {
-    .stats-grid {
-        transform: translateX(0);
-    }
 
     .stat-card:nth-child(2),
     .stat-card:nth-child(3) {
@@ -1183,7 +1164,7 @@
    USE CASES SECTION — Stacked Depth Cards
 ───────────────────────────────────────────────── */
 .crm-use-cases-section {
-    padding: 60px 20px; /* Reduced from 100px */
+    padding: 100px 20px;
     background: #f0f4f9;
     text-align: center;
 }
@@ -1551,7 +1532,7 @@
 .crm-insight-card {
     flex: 1;
     max-width: 300px;
-    height: 480px;
+    height: 400px;
     /* Tight, uniform padding to wrap around the image elegantly */
     padding: 14px 14px 20px 14px;
     position: relative;
@@ -1733,9 +1714,9 @@
 }
 
 .crm-insight-card p {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     color: #94a3b8;
-    line-height: 1.5;
+    line-height: 1.6;
     margin-bottom: 20px;
     padding: 0 10px;
 }
@@ -1918,33 +1899,11 @@
 
     .stats-grid {
         grid-template-columns: 1fr 1fr;
-        gap: 10px;
-    }
-
-    .stat-card {
-        padding: 16px 12px;
-    }
-
-    .stat-top-row {
-        gap: 8px;
-    }
-
-    .stat-icon-box {
-        width: 32px;
-        height: 32px;
-        font-size: 1rem;
+        gap: 14px;
     }
 
     .stat-value {
-        font-size: 1.6rem;
-    }
-
-    .stat-suffix {
-        font-size: 1.2rem;
-    }
-
-    .stat-label-line {
-        font-size: 0.8rem;
+        font-size: 2.6rem;
     }
 
     .use-cases-grid {
@@ -1989,194 +1948,4 @@
 
 .crm-btn-cta-primary:hover {
     transform: translateY(-2px);
-}
-
-/* ─────────────────────────────────────────────────
-   WIDESCREEN OPTIMIZATION (1440px+)
-───────────────────────────────────────────────── */
-@media (min-width: 1440px) {
-
-    .showcase-container,
-    .crm-clean-inner,
-    .cwi-container,
-    .impact-container,
-    .use-cases-container,
-    .crm-insights-inner {
-        max-width: 1600px;
-        /* Reduced from 1700px to ensure safety */
-        width: 92%;
-    }
-
-    .showcase-h1 {
-        font-size: 4.8rem;
-        /* Back to original size, well-balanced */
-    }
-
-    .showcase-p {
-        font-size: 1.2rem;
-        max-width: 750px;
-    }
-
-    .crm-clean-header h2,
-    .cwi-title,
-    .impact-header h2,
-    .use-cases-header h2,
-    .crm-insights-header h2 {
-        font-size: 3.5rem;
-        /* Balanced medium size */
-    }
-
-    .crm-clean-header p,
-    .cwi-desc,
-    .impact-header p,
-    .use-cases-header p,
-    .crm-insights-header p {
-        font-size: 1.15rem;
-        max-width: 800px;
-    }
-
-    /* Scaling Hero Visuals */
-    .showcase-dashboard-stack {
-        height: 420px;
-    }
-
-    .sc-card {
-        width: 420px;
-        height: 320px;
-    }
-
-    .sc-card-center {
-        width: 480px;
-        height: 380px;
-    }
-
-    /* Side Widgets - Pulled in to avoid overflow */
-    .sw-left-top {
-        left: -40px;
-    }
-
-    .sw-left-bottom {
-        left: -20px;
-    }
-
-    .sw-right-top {
-        right: -40px;
-    }
-
-    .sw-right-bottom {
-        right: -20px;
-    }
-
-    /* Proven Impact Cards */
-    .stats-grid {
-        gap: 30px;
-        transform: translateX(0);
-        /* Reset shift to keep in screen */
-    }
-
-    .stat-card {
-        padding: 40px 30px;
-    }
-
-    .stat-value {
-        font-size: 2.8rem;
-    }
-
-    /* Interactive List Scaling */
-    .cwi-item {
-        padding: 45px 50px;
-    }
-
-    .cwii-title {
-        font-size: 2rem;
-    }
-
-    .cwi-floating-box-container {
-        width: 450px;
-        left: 55%;
-    }
-
-    /* Insights Section - Pulled in */
-    .crm-insight-card {
-        max-width: 320px;
-        height: 450px;
-    }
-
-    .card-attached-arrow.left {
-        left: -40px;
-    }
-
-    .card-attached-arrow.right {
-        right: -40px;
-    }
-
-    /* CTA Section */
-    .crm-cta-strip {
-        padding: 60px 80px;
-        max-width: 1600px;
-        margin: 0 auto;
-    }
-
-    .cta-strip-text h3 {
-        font-size: 2.2rem;
-    }
-
-    .sc-btn-primary,
-    .sc-btn-secondary,
-    .crm-btn-outline,
-    .crm-btn-cta-primary {
-        padding: 16px 35px;
-        font-size: 1rem;
-    }
-}
-
-/* Global Stat Card Suffix & Value Alignment Overrides */
-.stat-value {
-    display: flex;
-    align-items: center;
-}
-
-.stat-suffix {
-    display: inline-flex;
-    align-items: center;
-    font-size: 1.8rem;
-    font-weight: 600;
-    color: var(--card-color);
-    margin-left: 2px;
-}
-
-.crm-impact-section {
-    padding-top: 75px;
-}
-
-@media (min-width: 1440px) {
-    .stat-card-inner {
-        flex-direction: row;
-        align-items: center;
-        gap: 12px;
-    }
-
-    .stat-top-row {
-        gap: 12px;
-    }
-
-    .stat-labels {
-        flex-direction: row;
-        gap: 5px;
-        flex-wrap: nowrap;
-        white-space: nowrap;
-        margin-top: 0;
-    }
-
-    .stat-card {
-        padding: 24px 18px;
-    }
-
-    .stat-value {
-        font-size: 2.2rem;
-    }
-
-    .stat-suffix {
-        font-size: 1.5rem;
-    }
 }

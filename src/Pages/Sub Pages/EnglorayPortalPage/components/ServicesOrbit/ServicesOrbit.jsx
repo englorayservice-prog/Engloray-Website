@@ -1,13 +1,28 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, useMotionValue } from 'framer-motion';
 import { FaGraduationCap, FaArrowRight } from 'react-icons/fa';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faRobot,
+  faCode,
+  faPalette,
+  faChartPie,
+  faCloud,
+  faMobileAlt,
+  faChartLine,
+  faBullhorn,
+  faPaintBrush,
+  faCogs,
+  faHandshake,
+  faChalkboardTeacher
+} from '@fortawesome/free-solid-svg-icons';
 import './ServicesOrbit.css';
 
 const careersData = [
   {
     id: 'ai-engineer',
     title: 'Future AI Engineer',
-    emoji: '👨‍💻',
+    icon: faRobot,
     desc: 'Build intelligent neural systems & automated agents.',
     duration: '6 Months',
     timeline: '6-Month Pathway',
@@ -23,7 +38,7 @@ const careersData = [
   {
     id: 'software-engineer',
     title: 'Future Software Engineer',
-    emoji: '💻',
+    icon: faCode,
     desc: 'Master systems scale, databases & backend logic.',
     duration: '6 Months',
     timeline: '6-Month Pathway',
@@ -39,7 +54,7 @@ const careersData = [
   {
     id: 'ui-ux-designer',
     title: 'Future UI/UX Designer',
-    emoji: '🎨',
+    icon: faPalette,
     desc: 'Design high-fidelity systems & products in Figma.',
     duration: '4 Months',
     timeline: '4-Month Pathway',
@@ -55,7 +70,7 @@ const careersData = [
   {
     id: 'data-scientist',
     title: 'Future Data Scientist',
-    emoji: '📊',
+    icon: faChartPie,
     desc: 'Analyze datasets & train predictive machine learning models.',
     duration: '6 Months',
     timeline: '6-Month Pathway',
@@ -71,7 +86,7 @@ const careersData = [
   {
     id: 'cloud-engineer',
     title: 'Future Cloud Engineer',
-    emoji: '☁️',
+    icon: faCloud,
     desc: 'Design scalable architectures and CI/CD pipelines.',
     duration: '5 Months',
     timeline: '5-Month Pathway',
@@ -87,7 +102,7 @@ const careersData = [
   {
     id: 'mobile-developer',
     title: 'Future Mobile Dev',
-    emoji: '📱',
+    icon: faMobileAlt,
     desc: 'Build high-performing React Native & Flutter applications.',
     duration: '5 Months',
     timeline: '5-Month Pathway',
@@ -103,7 +118,7 @@ const careersData = [
   {
     id: 'business-analyst',
     title: 'Future Biz Analyst',
-    emoji: '📈',
+    icon: faChartLine,
     desc: 'Leverage PowerBI & SQL to drive corporate growth strategy.',
     duration: '4 Months',
     timeline: '4-Month Pathway',
@@ -119,7 +134,7 @@ const careersData = [
   {
     id: 'digital-marketer',
     title: 'Future Growth Marketer',
-    emoji: '📣',
+    icon: faBullhorn,
     desc: 'Drive user acquisition with SEO, performance ads & PPC.',
     duration: '3 Months',
     timeline: '3-Month Pathway',
@@ -135,7 +150,7 @@ const careersData = [
   {
     id: 'graphic-designer',
     title: 'Future Graphic Designer',
-    emoji: '🖌️',
+    icon: faPaintBrush,
     desc: 'Craft corporate brand identities and media creatives.',
     duration: '3 Months',
     timeline: '3-Month Pathway',
@@ -151,7 +166,7 @@ const careersData = [
   {
     id: 'product-engineer',
     title: 'Future Product Engineer',
-    emoji: '⚙️',
+    icon: faCogs,
     desc: 'Own the lifecycle from product strategy to final deploy.',
     duration: '6 Months',
     timeline: '6-Month Pathway',
@@ -167,7 +182,7 @@ const careersData = [
   {
     id: 'sales-executive',
     title: 'Future Sales Lead',
-    emoji: '🤝',
+    icon: faHandshake,
     desc: 'Master tech client acquisition & CRM strategic sales.',
     duration: '3 Months',
     timeline: '3-Month Pathway',
@@ -183,7 +198,7 @@ const careersData = [
   {
     id: 'training-mentor',
     title: 'Future Mentor Lead',
-    emoji: '👩‍🏫',
+    icon: faChalkboardTeacher,
     desc: 'Learn developer training & lead student bootcamps.',
     duration: '4 Months',
     timeline: '4-Month Pathway',
@@ -689,7 +704,7 @@ export const ServicesOrbit = ({ onOpenApply }) => {
                               boxShadow: isCenter ? `0 0 12px ${career.color}15` : 'none'
                             }}
                           >
-                            {career.emoji}
+                            <FontAwesomeIcon icon={career.icon} style={{ color: career.color, fontSize: '1.1rem' }} />
                           </div>
 
                           {/* Title */}

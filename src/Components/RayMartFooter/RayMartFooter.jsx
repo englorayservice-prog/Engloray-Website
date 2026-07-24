@@ -16,6 +16,61 @@ const RayMartFooter = () => {
   const [showComingSoon, setShowComingSoon] = useState(false);
   const [showAboutStore, setShowAboutStore] = useState(false);
 
+  const [email, setEmail] = useState('');
+  const [isValid, setIsValid] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+  const [showSubscribeSuccess, setShowSubscribeSuccess] = useState(false);
+
+  const validateEmail = (emailVal) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(emailVal);
+  };
+
+  const handleSubscribeSubmit = async (e) => {
+    if (e) e.preventDefault();
+    const trimmedEmail = email.trim();
+    if (!trimmedEmail || !validateEmail(trimmedEmail)) {
+      setIsValid(false);
+      return;
+    }
+
+    setIsValid(true);
+    setIsLoading(true);
+
+    try {
+      const response = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          service_id: "service_af9xhe7",
+          template_id: "template_uu7k2jb",
+          user_id: "h67fs5ervDVPLSKJj",
+          template_params: {
+            email: trimmedEmail,
+            to_email: trimmedEmail,
+            user_email: trimmedEmail,
+            subscriber_email: trimmedEmail,
+            reply_to: "engloray@gmail.com"
+          }
+        })
+      });
+
+      if (response.ok) {
+        setShowSubscribeSuccess(true);
+        setEmail('');
+      } else {
+        alert("Subscription failed. Please try again later.");
+      }
+    } catch (error) {
+      console.error("Subscription error:", error);
+      alert("An error occurred. Please check your connection and try again.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <>
       {/* ── FOOTER ────────────────────────────────────────────── */}
@@ -235,11 +290,29 @@ const RayMartFooter = () => {
             <p className="rm-footer-newsletter-label" style={{ margin: '0 0 20px', fontWeight: '800', textTransform: 'uppercase', textAlign: 'left' }}>
               SUBSCRIBE &amp; GET <span className="rm-footer-newsletter-highlight">10% OFF</span> FOR YOUR FIRST ORDER
             </p>
-            <div className="rm-footer-newsletter-form" style={{ maxWidth: '100%', marginBottom: '12px', display: 'flex' }}>
-              <input type="email" placeholder="Enter your email address" className="rm-footer-email-input" style={{ textAlign: 'left' }} />
-              <button className="rm-footer-subscribe-btn">SUBSCRIBE</button>
-            </div>
-            <p className="rm-footer-newsletter-note" style={{ textAlign: 'left', fontSize: '0.75rem' }}>
+            <form onSubmit={handleSubscribeSubmit} className="rm-footer-newsletter-form" style={{ maxWidth: '100%', marginBottom: '6px', display: 'flex' }}>
+              <input
+                type="email"
+                placeholder="Enter your email address"
+                className="rm-footer-email-input"
+                style={{ textAlign: 'left', borderColor: !isValid ? '#ef4444' : undefined }}
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                  if (!isValid) setIsValid(true);
+                }}
+                disabled={isLoading}
+              />
+              <button type="submit" className="rm-footer-subscribe-btn" disabled={isLoading}>
+                {isLoading ? '...' : 'SUBSCRIBE'}
+              </button>
+            </form>
+            {!isValid && (
+              <p style={{ color: '#ef4444', fontSize: '0.8rem', margin: '4px 0 8px', fontWeight: '600' }}>
+                Please enter a valid email address.
+              </p>
+            )}
+            <p className="rm-footer-newsletter-note" style={{ textAlign: 'left', fontSize: '0.75rem', marginTop: '6px' }}>
               By subscribing, you're agreed to our <a href="#" onClick={(e) => { e.preventDefault(); navigate('/privacyPolicyPage'); }} className="rm-footer-policy-link" style={{ cursor: 'pointer' }}>Policy</a>
             </p>
           </div>
@@ -254,6 +327,38 @@ const RayMartFooter = () => {
           <a href="#" className="rm-footer-mobile-app">Mobile App</a>
         </div>
       </footer>
+
+      {/* Subscribe Success Modal */}
+      {showSubscribeSuccess && (
+        <div style={{
+          position: 'fixed', top: 0, left: 0, width: '100%', height: '100%',
+          backgroundColor: 'rgba(0, 0, 0, 0.7)', backdropFilter: 'blur(10px)',
+          display: 'flex', justifyContent: 'center', alignItems: 'center',
+          zIndex: 99999, fontFamily: 'system-ui, -apple-system, sans-serif'
+        }}>
+          <div style={{
+            background: '#ffffff', borderRadius: '24px', padding: '36px 32px',
+            textAlign: 'center', boxShadow: '0 24px 64px rgba(0, 0, 0, 0.4)',
+            maxWidth: '400px', width: '90%', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '14px'
+          }}>
+            <FontAwesomeIcon icon={faEnvelope} style={{ fontSize: '3.5rem', color: '#16a34a' }} />
+            <h3 style={{ fontSize: '1.6rem', fontWeight: '800', color: '#0f172a', margin: 0 }}>Subscribed!</h3>
+            <p style={{ fontSize: '0.95rem', color: '#475569', lineHeight: '1.5', margin: 0 }}>
+              Thanks for subscribing! A confirmation email has been sent to your inbox.
+            </p>
+            <button
+              onClick={() => setShowSubscribeSuccess(false)}
+              style={{
+                background: '#000000', color: '#ffffff', border: 'none',
+                padding: '12px 36px', borderRadius: '50px', fontWeight: '700',
+                fontSize: '0.95rem', cursor: 'pointer', marginTop: '8px', width: '100%'
+              }}
+            >
+              Done
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* Coming Soon Modal */}
       {showComingSoon && (

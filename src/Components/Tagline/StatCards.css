@@ -268,13 +268,14 @@
 
 .bphs-stat-value-container {
     display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-top: 2.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    margin-top: 1.5rem;
     margin-bottom: 0;
     margin-left: 0;
     position: relative;
-    z-index: 2;
+    z-index: 5;
 }
 
 .bphs-stat-value-col {
@@ -326,22 +327,18 @@
 }
 
 .bphs-stat-value-number {
-    font-size: 3.2rem;
-    /* Reduced from 3.5rem */
-    font-weight: 600;
+    font-size: 3rem;
+    font-weight: 700;
     line-height: 1;
     margin: 0;
-    margin-left: 10px;
 }
 
 .bphs-stat-value-text {
-    font-size: 1.1rem;
-    /* Reduced from 1.2rem */
-    font-weight: 500;
+    font-size: 1.05rem;
+    font-weight: 600;
     opacity: 0.9;
-    padding: 0.2rem 0.2rem;
-    border-radius: 12px;
-    margin: 0;
+    padding: 0;
+    margin-top: 2px;
 }
 
 .bphs-stat-graph {
@@ -352,11 +349,11 @@
 
 .bphs-stat-visual-right {
     position: absolute;
-    bottom: -70px;
-    right: -20px;
-    width: 240px;
-    height: 240px;
-    opacity: 0.8;
+    bottom: -45px;
+    right: -25px;
+    width: 175px;
+    height: 175px;
+    opacity: 0.85;
     pointer-events: none;
     z-index: 1;
 }
