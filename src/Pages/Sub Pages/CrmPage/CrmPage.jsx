@@ -39,8 +39,6 @@ import imgOmnichannel from '../../../assets/images/omnichannel.png';
 import imgAutomation from '../../../assets/images/automation.png';
 import imgForecasting from '../../../assets/images/forecasting.png';
 import imgSmartFunnel from '../../../assets/images/smart_deal_funnel.png';
-import SEOHead from '../../../seo/SEOHead';
-import SchemaMarkup from '../../../seo/SchemaMarkup';
 
 
 const CrmPage = () => {
@@ -147,8 +145,6 @@ const CrmPage = () => {
     return (
         <>
             <TopNavbar />
-            <SEOHead pageKey="/crmPage" />
-            <SchemaMarkup pageKey="/crmPage" />
             <TwoLineNavbar />
 
             <div className="crm-subpage-container">

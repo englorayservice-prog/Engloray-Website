@@ -1,8 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
-import SEOHead from '../../../seo/SEOHead';
-import SchemaMarkup from '../../../seo/SchemaMarkup';
 import './PrivacyPolicy.css';
 
 const PrivacyPolicy = () => {
@@ -179,8 +177,6 @@ const PrivacyPolicy = () => {
 
   return (
     <div className="pp-privacy-policy-container">
-            <SEOHead pageKey="/privacyPolicyPage" />
-            <SchemaMarkup pageKey="/privacyPolicyPage" />
       <TwoLineNavbar />
       {/* Header Section */}
       <header className="pp-privacy-header-section">

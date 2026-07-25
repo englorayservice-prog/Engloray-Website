@@ -47,7 +47,7 @@ const EntryIntroAnimation = ({ onComplete }) => {
         const earthGroup = new THREE.Group();
         earthGroup.position.z = -180;
         earthGroup.position.y = -100;
-        earthGroup.scale.set(0.6, 0.6, 0.6);
+        earthGroup.scale.set(1.5, 1.5, 1.5);
         scene.add(earthGroup);
 
         const textureLoader = new THREE.TextureLoader();
@@ -374,122 +374,79 @@ const EntryIntroAnimation = ({ onComplete }) => {
                 ease: "power2.out"
             });
 
-        let hasExited = false;
-        const triggerExit = () => {
-            if (hasExited) return;
-            hasExited = true;
-            setIsFadingOut(true);
-            setTimeout(() => {
-                if (onComplete) onComplete();
-            }, 100);
-        };
-
-        // SCROLL TIMELINE:
-        // 1. Text "Step into the world of Engloray" moves UP and fades out as user scrolls.
-        // 2. Earth Scroll 1: Small Earth rises and rotates at small size.
-        // 3. Earth Scroll 2: Earth grows from small size to big size while continuing to rotate.
-        // 4. Earth zooms in & Home page opens.
+        // Use the wrapper as the scroller so scrolling works while overflowing is hidden on the main body
         let tl = gsap.timeline({
             scrollTrigger: {
                 trigger: ".scroll-spacer",
                 scroller: wrapperRef.current,
                 start: "top top",
                 end: "bottom bottom",
-                scrub: 0.5,
-                onLeave: triggerExit,
-                onUpdate: (self) => {
-                    if (self.progress >= 0.95) {
-                        triggerExit();
-                    }
+                scrub: 1,
+                onLeave: () => {
+                    // Trigger exit animation
+                    setIsFadingOut(true);
+                    setTimeout(() => {
+                        if (onComplete) onComplete();
+                    }, 200); // Super fast unmount
                 }
             }
         });
 
-        // 1. Title text MOVES UP and FADES OUT on scroll
         tl.to('.intro-screen', {
-            y: -260,
+            scale: 12,
             opacity: 0,
-            duration: 3.0,
-            ease: "power1.out"
+            transformOrigin: "center 58%",
+            duration: 1.5,
+            ease: "power2.in"
         }, 0);
 
-        // 2. EARTH SCROLL 1 (time 1.0 -> 5.5): Small Earth rises into view and rotates at small size
+        tl.to(camera.position, {
+            z: -100,
+            duration: 3,
+            ease: "power1.inOut"
+        }, 0);
+
+        tl.to(earthGroup.rotation, {
+            y: Math.PI * 2,
+            x: 0.5,
+            duration: 5,
+            ease: "none"
+        }, 0);
+
         tl.to(earthGroup.position, {
             y: 0,
-            z: -90,
-            duration: 4.5,
+            duration: 2,
             ease: "power2.out"
-        }, 1.0);
+        }, 0);
 
         tl.to(earthGroup.scale, {
-            x: 0.8,
-            y: 0.8,
-            z: 0.8,
-            duration: 4.5,
-            ease: "power2.out"
-        }, 1.0);
-
-        tl.to(earthGroup.rotation, {
-            y: Math.PI,
-            x: 0.2,
-            duration: 4.5,
-            ease: "none"
-        }, 1.0);
-
-        // 3. EARTH SCROLL 2 (time 5.5 -> 9.5): Earth grows from small size (0.8) to big size (3.2) while rotating further
-        tl.to(earthGroup.scale, {
-            x: 3.2,
-            y: 3.2,
-            z: 3.2,
-            duration: 4.0,
-            ease: "power1.inOut"
-        }, 5.5);
-
-        tl.to(earthGroup.position, {
-            z: -45,
-            duration: 4.0,
-            ease: "power1.inOut"
-        }, 5.5);
-
-        tl.to(earthGroup.rotation, {
-            y: Math.PI * 2.0,
-            x: 0.3,
-            duration: 4.0,
-            ease: "none"
-        }, 5.5);
-
-        // 4. FINAL PHASE (time 9.5 -> 13.0): Zoom into Earth, white flash & transition to Home Page
-        tl.to(earthGroup.scale, {
-            x: 22,
-            y: 22,
-            z: 22,
-            duration: 3.5,
-            ease: "power2.in"
-        }, 9.5);
+            x: 8,
+            y: 8,
+            z: 8,
+            duration: 1.0,
+            ease: "power2.inOut"
+        }, 2);
 
         tl.to(camera.position, {
-            z: -450,
-            duration: 3.5,
+            z: -700,
+            duration: 0.3,
             ease: "power2.in"
-        }, 9.5);
-
-        tl.to('.flash-overlay', {
-            opacity: 1,
-            duration: 1.8,
-            ease: "power2.in"
-        }, 11.0);
+        }, 3.0);
 
         tl.to('#webgl-canvas', {
             opacity: 0,
-            duration: 1.0,
+            duration: 0.2,
             ease: "power2.in"
-        }, 11.8);
+        }, 2.8);
+
+        tl.to('.flash-overlay', {
+            opacity: 1,
+            duration: 0.6,
+            ease: "power2.in"
+        }, 2.4);
 
         let animationFrameId;
         function animate() {
-            if (earthMesh) {
-                earthMesh.rotation.y += 0.0015;
-            }
             renderer.render(scene, camera);
             animationFrameId = requestAnimationFrame(animate);
         }
@@ -525,20 +482,11 @@ const EntryIntroAnimation = ({ onComplete }) => {
                             <p className="neon-line-2">ENGLORAY</p>
                         </div>
                     </div>
-                    <div
-                        className="scroll-indicator"
-                        onClick={() => {
-                            if (wrapperRef.current) {
-                                wrapperRef.current.scrollTo({ top: wrapperRef.current.scrollHeight, behavior: 'smooth' });
-                            }
-                        }}
-                        style={{ cursor: 'pointer', pointerEvents: 'auto' }}
-                        role="button"
-                        tabIndex={0}
-                    >
+                    <div className="scroll-indicator">
                         <div className="eia-mouse-scroll-indicator">
                             <div className="eia-mouse-dot"></div>
-                            <div className="eia-mouse-chevron eia-mouse-chevron-down"></div>
+                            <div className="eia-mouse-chevron eia-mouse-chevron-down-1"></div>
+                            <div className="eia-mouse-chevron eia-mouse-chevron-down-2"></div>
                         </div>
                         <p>SCROLL DOWN</p>
                     </div>

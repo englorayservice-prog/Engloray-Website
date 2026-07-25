@@ -59,11 +59,23 @@ const BusinessBoost = () => {
 
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
-            // Force visible
-            gsap.set('.boost-intro-text, .boost-main-title, .boost-description, .boost-cta-button, .boost-stats', {
-                opacity: 1,
-                y: 0
-            });
+            // 1. Entrance Animations for Content (BOTTOM-UP)
+            const entranceSelectors = '.boost-intro-text, .boost-main-title, .boost-description, .boost-cta-button, .boost-stats';
+
+            gsap.fromTo(entranceSelectors,
+                { opacity: 0, y: 100 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1.2,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: '.boost-left-section',
+                        start: "top 90%",
+                        once: true // Ensures it only happens once
+                    }
+                }
+            );
 
             // 2. Infinite vertical scrolling animation using GSAP
             if (scrollTrackRef.current) {

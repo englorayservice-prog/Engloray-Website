@@ -48,8 +48,7 @@ const TopNavBar = () => {
       return (
         location.pathname.startsWith(item.path) ||
         (item.path === '/' && location.pathname === '/') ||
-        (item.path !== '/' && location.pathname.includes(item.path)) ||
-        (item.path === '/tech-learning' && location.pathname === '/admissionPortal')
+        (item.path !== '/' && location.pathname.includes(item.path))
       );
     }
   };

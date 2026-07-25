@@ -4,7 +4,6 @@ import './RaymartPage.css';
 import RayMartNavbar from '../../../Components/RayMartNavbar/RayMartNavbar';
 import RayMartFooter from '../../../Components/RayMartFooter/RayMartFooter';
 import TopNavBar from '../../../Components/TopNavbar/TopNavbar';
-import BackToTop from '../../../Components/BackToTop/BackToTop';
 import { BarChart, Bar, XAxis, ResponsiveContainer, Tooltip } from 'recharts';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowTrendUp, faFire, faStar, faChartLine, faRobot, faCheck, faWandMagicSparkles, faUsers, faRotateLeft, faShieldHalved, faBriefcase, faHeadset, faNewspaper, faGraduationCap, faChevronRight, faChevronLeft, faEnvelope, faBuilding, faPlus, faHandshake, faCode, faStore, faSearch, faPalette, faDesktop, faBullhorn, faLaptopCode, faChartPie, faCloud, faComments } from '@fortawesome/free-solid-svg-icons';
@@ -91,8 +90,6 @@ import aiOne from '../../../assets/WEBSITE_IMAGES/service 10, AI SERVICES/1.png'
 import aiTwo from '../../../assets/WEBSITE_IMAGES/service 10, AI SERVICES/2.png';
 import aiThree from '../../../assets/WEBSITE_IMAGES/service 10, AI SERVICES/3.png';
 import aiFour from '../../../assets/WEBSITE_IMAGES/service 10, AI SERVICES/4.png';
-import SEOHead from '../../../seo/SEOHead';
-import SchemaMarkup from '../../../seo/SchemaMarkup';
 
 
 /* ─── Mock Data ─────────────────────────────────────────────── */
@@ -835,8 +832,6 @@ const RaymartPage = () => {
 
   return (
     <>
-      <SEOHead pageKey="/raymartPage" />
-      <SchemaMarkup pageKey="/raymartPage" />
       <div>
         <TopNavBar />
         <div className="rm-page">
@@ -1684,7 +1679,6 @@ const RaymartPage = () => {
           </section>
 
           <RayMartFooter />
-          <BackToTop />
 
         </div>
       </div>
