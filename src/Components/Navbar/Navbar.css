@@ -1,153 +1,104 @@
-/* ============================================================
-   Scoped root — every rule below lives under .engloray-navbar
-   so no other stylesheet in the app (other page navbars, resets,
-   etc.) can leak in and override these rules.
-   ============================================================ */
-
-.engloray-navbar * {
-    box-sizing: border-box;
-}
-
-.engloray-navbar a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.engloray-navbar ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.engloray-navbar .navbar {
+.navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 0;
-    padding: 14px 3%;
+    margin-top: 25px;
+    padding: 12px 4%;
     transition: all 0.3s ease;
     position: sticky;
-    /* Reads the shared height published by TopNavbar.css so the two
-       bars always stay flush, with no gap or overlap, at every
-       breakpoint. Falls back to 33px if TopNavbar isn't mounted. */
-    top: var(--topnav-height, 33px);
+    top: 0;
     left: 0;
-    z-index: 999;
+    z-index: 1000;
     background: white;
     width: 100%;
-    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.08);
-    min-height: 68px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
-.engloray-navbar .navbar-visible {
+.navbar-visible {
     visibility: visible;
     opacity: 1;
     transform: translateY(0);
 }
 
-.engloray-navbar .navbar-hidden {
+.navbar-hidden {
     visibility: hidden;
     opacity: 0;
     transform: translateY(-100%);
 }
 
-.engloray-navbar .navbar-content {
+.navbar-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    gap: 32px;
+    gap: 15px;
 }
 
-/* ── 3-column layout: logo | MENU (centered) | search ── */
-.engloray-navbar .navbar-content .logo {
-    flex: 1;
-    display: flex;
-    justify-content: flex-start;
-}
-
-.engloray-navbar .navbar-content .desktop-menu {
-    flex: 2;
-    display: flex;
-    justify-content: center;
-}
-
-.engloray-navbar .navbar-content .nav-actions {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-}
-
-/* Logo */
-.engloray-navbar .navbar .logo {
+/* Logo Styles */
+.navbar .logo {
     cursor: pointer;
     display: flex;
     align-items: center;
     flex-shrink: 0;
-    flex: 0 0 auto;
 }
 
-.engloray-navbar .navbar img {
+.navbar .logo img {
+    content: url('../../assets/18.png');
+}
+
+.navbar img {
     height: auto;
-    width: auto;
-    max-height: clamp(34px, 2.5vw + 20px, 58px);
-    max-width: clamp(100px, 8vw + 50px, 180px);
+    width: 100%;
+    max-height: 80px;
+    max-width: 250px;
     object-fit: contain;
     display: block;
 }
 
-/* Desktop Menu */
-.engloray-navbar .desktop-menu {
+/* Desktop Menu - Removed container background, border, shadow */
+.desktop-menu {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: clamp(8px, 1.8vw, 28px);
+    list-style: none;
+    gap: 20px;
+    /* Increased gap between list items */
+    margin: 0;
+    padding: 0;
     background: transparent;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    flex: 1 1 auto;
+    max-width: 750px;
     height: auto;
-    max-width: 100%;
-    flex-shrink: 1;
-    min-width: 0;
 }
 
-.engloray-navbar .desktop-menu li {
+.desktop-menu li {
     cursor: pointer;
     transition: all 0.3s ease;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     white-space: nowrap;
     position: relative;
 }
 
-.engloray-navbar .desktop-menu li .anchorLink {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 8px;
-}
-
-.engloray-navbar .desktop-menu li svg {
-    color: #bb0707;
-    flex-shrink: 0;
-    transition: transform 0.2s ease;
-}
-
-.engloray-navbar .desktop-menu li:hover svg {
-    transform: translateY(-1px);
-}
-
-.engloray-navbar .desktop-menu li p {
+.desktop-menu li p {
     color: #bb0707;
     margin: 0;
-    padding: clamp(3px, 0.4vw + 2px, 6px) clamp(3px, 0.4vw + 2px, 6px);
+    padding: 8px 16px;
     font-family: 'Inter', sans-serif;
-    font-size: clamp(12px, 0.4vw + 11px, 16px);
+    font-size: 15px;
     font-weight: 500;
     transition: all 0.3s ease;
     background: transparent;
+    border-radius: 0;
 }
 
-.engloray-navbar .desktop-menu li::after {
+/* Red line under hover effect */
+.desktop-menu li::after {
     content: '';
     position: absolute;
     bottom: -5px;
@@ -159,44 +110,49 @@
     transition: width 0.3s ease;
 }
 
-.engloray-navbar .desktop-menu li:hover::after {
+.desktop-menu li:hover::after {
     width: 70%;
 }
 
-.engloray-navbar .desktop-menu li:hover p {
+/* Hover effect - Text color changes to glow red and font slightly bigger */
+.desktop-menu li:hover p {
     color: #bb0707;
-    font-size: 17px;
+    background: transparent;
+    font-size: 16px;
+    /* Slightly bigger font on hover */
+    /* text-shadow: 0 0 8px rgba(187, 7, 7, 0.5), 0 0 12px rgba(187, 7, 7, 0.3); */
 }
 
-.engloray-navbar .anchorLink {
+.anchorLink {
+    text-decoration: none;
+    color: inherit;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 /* Actions and Search */
-.engloray-navbar .nav-actions {
+.nav-actions {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 20px;
     flex-shrink: 0;
-    justify-content: flex-end;
 }
 
-.engloray-navbar .nav-actions .search-bar {
+.nav-actions .search-bar {
     width: 100%;
-    min-width: 120px; /* MOBILE FIX: was 160px — too wide for smaller navbar on tablets */
-    max-width: 240px;
+    min-width: 180px;
+    max-width: 250px;
     position: relative;
     display: block;
 }
 
-.engloray-navbar .search-input-wrapper {
+.search-input-wrapper {
     position: relative;
     width: 100%;
 }
 
-.engloray-navbar .search-input {
+.search-input {
     width: 100%;
     padding: 10px 18px;
     padding-right: 40px;
@@ -205,19 +161,20 @@
     background: rgba(255, 255, 255, 0.9);
     font-size: 14px;
     font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
     color: #bb0707;
     transition: all 0.3s ease;
     outline: none;
 }
 
-.engloray-navbar .search-input:focus {
+.search-input:focus {
     border-color: #bb0707;
     background: white;
     box-shadow: 0 4px 15px rgba(187, 7, 7, 0.1);
 }
 
-.engloray-navbar .search-submit-btn,
-.engloray-navbar .clear-search-btn {
+.search-submit-btn,
+.clear-search-btn {
     position: absolute;
     right: 12px;
     top: 50%;
@@ -236,18 +193,19 @@
     padding: 0;
 }
 
-.engloray-navbar .search-submit-btn:hover,
-.engloray-navbar .clear-search-btn:hover {
+.search-submit-btn:hover,
+.clear-search-btn:hover {
+    color: #bb0707;
     background: rgba(187, 7, 7, 0.1);
 }
 
-.engloray-navbar .search-submit-btn svg {
+.search-submit-btn svg {
     width: 16px;
     height: 16px;
     fill: currentColor;
 }
 
-.engloray-navbar .search-suggestions {
+.search-suggestions {
     position: absolute;
     top: 100%;
     left: 0;
@@ -262,107 +220,30 @@
     overflow-y: auto;
 }
 
-.engloray-navbar .suggestion-item {
+.suggestion-item {
     padding: 12px 20px;
     cursor: pointer;
     transition: all 0.2s ease;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.engloray-navbar .suggestion-item:last-child {
+.suggestion-item:last-child {
     border-bottom: none;
 }
 
-.engloray-navbar .suggestion-item:hover {
+.suggestion-item:hover {
     background: rgba(187, 7, 7, 0.05);
 }
 
-.engloray-navbar .suggestion-text {
+.suggestion-text {
     color: black;
     font-family: 'Inter', sans-serif;
     font-size: 14px;
     font-weight: 500;
 }
 
-/* Explore dropdown */
-.engloray-navbar .nav-explore {
-    position: relative;
-}
-
-.engloray-navbar .nav-explore-trigger {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 12px 20px;
-    border-radius: 50px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    background: white;
-    color: #1a1a1a;
-    font-family: 'Inter', sans-serif;
-    font-size: 15px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    white-space: nowrap;
-}
-
-.engloray-navbar .nav-explore-trigger:hover {
-    border-color: rgba(187, 7, 7, 0.3);
-    background: rgba(187, 7, 7, 0.03);
-}
-
-.engloray-navbar .nav-explore-trigger:focus-visible {
-    outline: 2px solid #bb0707;
-    outline-offset: 2px;
-}
-
-.engloray-navbar .nav-explore-chevron {
-    transition: transform 0.2s ease;
-}
-
-.engloray-navbar .nav-explore-chevron.is-open {
-    transform: rotate(180deg);
-}
-
-.engloray-navbar .nav-explore-menu {
-    position: absolute;
-    top: calc(100% + 8px);
-    left: 0;
-    /* MOBILE FIX: prevent dropdown from overflowing right edge of viewport */
-    min-width: 180px;
-    max-width: calc(100vw - 24px);
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    padding: 6px;
-    z-index: 1100;
-    animation: exploreMenuIn 0.15s ease-out;
-}
-
-@keyframes exploreMenuIn {
-    from { opacity: 0; transform: translateY(-4px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.engloray-navbar .nav-explore-menu li a {
-    display: block;
-    padding: 8px 12px;
-    border-radius: 8px;
-    color: #1a1a1a;
-    font-family: 'Inter', sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-    transition: background 0.15s ease;
-}
-
-.engloray-navbar .nav-explore-menu li a:hover {
-    background: rgba(187, 7, 7, 0.06);
-    color: #bb0707;
-}
-
-/* Mobile hamburger */
-.engloray-navbar .navMobOpen {
+/* Mobile Menus initial state */
+.navMobOpen {
     display: none;
     flex-direction: column;
     justify-content: space-between;
@@ -374,7 +255,7 @@
     z-index: 1000;
 }
 
-.engloray-navbar .navMobOpen span {
+.navMobOpen span {
     width: 100%;
     height: 3px;
     background: black;
@@ -382,7 +263,7 @@
     transition: 0.3s;
 }
 
-.engloray-navbar .mobile-menu {
+.mobile-menu {
     display: none;
     position: fixed;
     top: 0;
@@ -394,18 +275,19 @@
     transition: right 0.4s ease;
     padding: 80px 20px 40px;
     box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+    list-style: none;
     margin: 0;
     overflow-y: auto;
     flex-direction: column;
     gap: 10px;
 }
 
-.engloray-navbar .mobile-menu.active {
+.mobile-menu.active {
     right: 0;
     display: flex;
 }
 
-.engloray-navbar .mobile-backdrop {
+.mobile-backdrop {
     display: none;
     position: fixed;
     top: 0;
@@ -417,11 +299,11 @@
     z-index: 1001;
 }
 
-.engloray-navbar .mobile-backdrop.active {
+.mobile-backdrop.active {
     display: block;
 }
 
-.engloray-navbar .navMobClose {
+.navMobClose {
     position: absolute;
     top: 25px;
     right: 25px;
@@ -433,11 +315,9 @@
     line-height: 1;
 }
 
-.engloray-navbar .mobile-menu-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
+.mobile-menu-link {
+    display: block;
+    text-align: center;
     padding: 10px 0;
     width: 100%;
     cursor: pointer;
@@ -445,27 +325,26 @@
     position: relative;
 }
 
-.engloray-navbar .mobile-menu-link svg {
-    color: #bb0707;
-    flex-shrink: 0;
-}
-
-.engloray-navbar .mobile-menu li:last-child .mobile-menu-link {
+/* Last mobile menu item border fix */
+.mobile-menu li:last-child .mobile-menu-link {
     border-bottom: none;
 }
 
-.engloray-navbar .mobile-menu-link p {
+.mobile-menu-link p {
     font-size: 16px;
     color: black;
     font-weight: 500;
-    margin: 0;
+    margin: 0 auto;
     font-family: 'Inter', sans-serif;
     padding: 12px 25px;
     transition: all 0.3s ease;
     display: inline-block;
+    background: transparent;
+    border-radius: 0;
 }
 
-.engloray-navbar .mobile-menu-link::after {
+/* Red line under hover effect for mobile */
+.mobile-menu-link::after {
     content: '';
     position: absolute;
     bottom: -5px;
@@ -477,24 +356,27 @@
     transition: width 0.3s ease;
 }
 
-.engloray-navbar .mobile-menu-link:hover::after {
+.mobile-menu-link:hover::after {
     width: 50%;
 }
 
-.engloray-navbar .mobile-menu-link:hover p {
+/* Hover effect for mobile - Text color changes to glow red and font slightly bigger */
+.mobile-menu-link:hover p {
     color: #bb0707;
+    background: transparent;
     font-size: 17px;
+    /* Slightly bigger font on hover for mobile */
     text-shadow: 0 0 8px rgba(187, 7, 7, 0.5), 0 0 12px rgba(187, 7, 7, 0.3);
 }
 
-.engloray-navbar .mobile-search-container {
+.mobile-search-container {
     margin-top: 20px;
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-.engloray-navbar .mobile-search-container .search-bar {
+.mobile-search-container .search-bar {
     width: 100%;
 }
 
@@ -502,114 +384,136 @@
    RESPONSIVE MEDIA QUERIES
    ------------------------------------------- */
 
+/* Laptops (1025px - 1440px) */
 @media (max-width: 1440px) {
-    .engloray-navbar .navbar img {
-        max-width: 140px;
-        max-height: 40px;
+    .navbar img {
+        max-width: 200px;
     }
-    .engloray-navbar .desktop-menu {
-        gap: 2px;
+
+    .desktop-menu {
+        max-width: 600px;
+        gap: 12px;
     }
-    .engloray-navbar .desktop-menu li p {
+
+    .desktop-menu li p {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+
+    /* Hover font size adjustment for laptops */
+    .desktop-menu li:hover p {
+        font-size: 15px;
+    }
+
+    .nav-actions .search-bar {
+        max-width: 180px;
+    }
+}
+
+/* Tablet Landscape / Small Laptops (769px - 1024px) */
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 12px 3%;
+    }
+
+    .navbar-content {
+        gap: 10px;
+    }
+
+    .navbar img {
+        max-width: 160px;
+        max-height: 50px;
+    }
+
+    .desktop-menu {
+        max-width: 500px;
+        gap: 10px;
+    }
+
+    .desktop-menu li p {
         padding: 5px 8px;
         font-size: 13px;
     }
-    .engloray-navbar .desktop-menu li:hover p {
+
+    /* Hover font size adjustment for tablets */
+    .desktop-menu li:hover p {
         font-size: 14px;
     }
-    .engloray-navbar .nav-actions .search-bar {
-        max-width: 180px;
-        min-width: 120px;
-    }
-}
 
-@media (max-width: 1024px) {
-    .engloray-navbar .navbar {
-        padding: 5px 3%;
-        min-height: 48px;
+    .nav-actions .search-bar {
+        min-width: 150px;
+        max-width: 160px;
     }
-    .engloray-navbar .navbar-content {
-        gap: 8px;
+
+    .nav-actions {
+        gap: 10px;
     }
-    .engloray-navbar .navbar img {
-        max-width: 120px;
-        max-height: 38px;
-    }
-    .engloray-navbar .desktop-menu {
-        gap: 2px;
-    }
-    .engloray-navbar .desktop-menu li p {
-        padding: 4px 7px;
-        font-size: 12px;
-    }
-    .engloray-navbar .desktop-menu li:hover p {
+
+    .search-input {
+        padding: 8px 14px;
+        padding-right: 30px;
         font-size: 13px;
     }
-    .engloray-navbar .nav-actions .search-bar {
-        min-width: 100px;
-        max-width: 140px;
-    }
-    .engloray-navbar .nav-actions {
-        gap: 8px;
-    }
-    .engloray-navbar .search-input {
-        padding: 7px 12px;
-        padding-right: 28px;
-        font-size: 12px;
-    }
-    .engloray-navbar .nav-explore-trigger {
-        padding: 6px 12px;
-        font-size: 12px;
+
+    .search-submit-btn,
+    .clear-search-btn {
+        width: 20px;
+        height: 20px;
     }
 }
 
+/* Tablets Portrait & Mobile (max-width: 768px) */
 @media (max-width: 768px) {
-    .engloray-navbar .navbar {
-        padding: 8px 4%;
-        min-height: 46px;
-        /* top offset now comes from var(--topnav-height) set in TopNavbar.css */
+    .navbar {
+        padding: 15px 5%;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
     }
-    .engloray-navbar .desktop-menu,
-    .engloray-navbar .nav-actions {
+
+    .desktop-menu,
+    .nav-actions {
         display: none !important;
     }
-    .engloray-navbar .navMobOpen {
+
+    .navMobOpen {
         display: flex;
     }
-    .engloray-navbar .navbar img {
-        max-width: 120px;
-        max-height: 38px;
+
+    .navbar img {
+        max-width: 180px;
+        max-height: 60px;
     }
-    .engloray-navbar .navbar-content .logo {
-        flex: 1;
-        justify-content: flex-start;
-    }
-    .engloray-navbar .mobile-menu {
+
+    .mobile-menu {
         display: none;
     }
-    .engloray-navbar .mobile-menu.active {
+
+    .mobile-menu.active {
         display: flex;
     }
 }
 
+/* Extra Small Phones (max-width: 480px) */
 @media (max-width: 480px) {
-    .engloray-navbar .navbar {
-        padding: 10px 4%;
-        /* top offset now comes from var(--topnav-height) set in TopNavbar.css */
+    .navbar {
+        padding: 12px 4%;
     }
-    .engloray-navbar .navbar img {
-        max-width: 130px;
-        max-height: 42px;
+
+    .navbar img {
+        max-width: 140px;
+        max-height: 45px;
     }
-    .engloray-navbar .mobile-menu {
-        width: 240px;
-        right: -260px;
+
+    .mobile-menu {
+        width: 250px;
+        right: -270px;
     }
 }
 
+/* Make sure mobile menu doesn't show pseudo hover states incorrectly on touch */
 @media (hover: none) {
-    .engloray-navbar .desktop-menu li:hover p,
-    .engloray-navbar .mobile-menu-link:hover p {
+
+    .desktop-menu li:hover p,
+    .mobile-menu-link:hover p {
         transform: none;
     }
 }

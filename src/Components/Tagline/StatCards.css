@@ -84,12 +84,10 @@
 }
 
 .bphs-scrolling-image-track img {
-    height: 70px !important;
-    width: auto !important;
-    max-height: 70px !important;
-    max-width: 150px !important;
-    margin-top: 30px !important;
-    object-fit: contain !important;
+    height: 70px;
+    width: auto;
+    margin-top: 70px;
+    object-fit: contain;
 
     /* 3D Styling details */
     opacity: 0.95;
@@ -563,8 +561,8 @@
 /* laptop Resolution Fix: Resolving collision between tagline 'Verified' box and StatCards heading */
 @media screen and (min-width: 1025px) and (max-width: 1600px) {
     .bphs-stat-cards-container {
-        margin-top: -6rem !important;
-        /* Perfect gap under Verified box without overlap */
+        margin-top: -3.5rem !important;
+        /* Reduces the upward pull significantly to avoid overlap */
         gap: 1.5rem !important;
     }
 
@@ -706,7 +704,7 @@ screen and (width: 1024px) {
         font-family: 'Aldrich', sans-serif;
         font-size: clamp(1.4rem, 6.5vw, 2.8rem) !important;
         text-align: center !important;
-        margin: 15px 0 20px 0 !important;
+        margin: -40px 0 20px 0 !important;
         white-space: normal !important;
         width: 100% !important;
         line-height: 1.2 !important;
@@ -725,15 +723,6 @@ screen and (width: 1024px) {
         margin-left: 0 !important;
         margin-bottom: 20px !important;
         max-width: 100% !important;
-    }
-
-    .bphs-scrolling-image-track img {
-        height: 40px !important;
-        max-height: 40px !important;
-        width: auto !important;
-        max-width: 100px !important;
-        margin-top: 15px !important;
-        object-fit: contain !important;
     }
 
     .bphs-stat-cards-wrapper {
@@ -774,7 +763,7 @@ screen and (width: 1024px) {
 /* Custom fluid scaling for 1024px - 1440px range (safe min-width 1000px for scrollbars) */
 @media screen and (min-width: 1000px) and (max-width: 1440px) {
     .bphs-stat-cards-container {
-        margin-top: -14.2vw !important;
+        margin-top: -12.5vw !important;
         gap: 2vw !important;
         padding: 1vw 2vw 1vw 1vw !important;
         margin-left: -6.77vw !important;
@@ -817,7 +806,7 @@ screen and (width: 1024px) {
         min-height: 12vw !important;
         max-height: 13vw !important;
         padding: 1.5vw !important;
-        margin-top: 0 !important;
+        margin-top: 3vw !important;
         border-radius: 1.5vw !important;
     }
 
@@ -910,12 +899,8 @@ screen and (width: 1024px) {
     }
 
     .bphs-scrolling-image-track img {
-        height: 50px !important;
-        max-height: 50px !important;
-        width: auto !important;
-        max-width: 120px !important;
-        margin-top: 20px !important;
-        object-fit: contain !important;
+        height: 9.1vw !important;
+        margin-top: 9.1vw !important;
     }
 
     .bphs-stat-cards-wrapper {

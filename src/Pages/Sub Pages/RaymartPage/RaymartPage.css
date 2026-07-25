@@ -746,14 +746,12 @@
 }
 
 .rm-bg-tr .rm-bento-content {
-  padding: 24px 30px;
+  padding: 30px;
   align-items: flex-end;
   text-align: right;
-  width: 58%;
+  width: 50%;
   margin-left: auto;
   z-index: 3;
-  justify-content: space-between;
-  height: 100%;
 }
 
 .rm-tr-cat {
@@ -767,7 +765,7 @@
 .rm-bg-tr h3 {
   font-size: 1rem;
   font-weight: 800;
-  margin: 0 0 18px;
+  margin: 0 0 16px;
   line-height: 1.2;
 }
 
@@ -780,7 +778,6 @@
   font-weight: 700;
   font-size: 0.75rem;
   cursor: pointer;
-  margin-top: auto;
 }
 
 .rm-bg-tr-img {
@@ -2158,8 +2155,6 @@
     width: 100% !important;
   }
 
-
-
   /* 5. Scale down the text for mobile readability */
   .latest-resources-section h2,
   .top-client-reviews-section h2 {
@@ -3258,7 +3253,7 @@
 
 .rm-footer-payments {
   display: flex;
-  gap: 25px;
+  gap: 12px;
   align-items: center;
 }
 
@@ -3274,7 +3269,7 @@
 .rm-footer-mobile-app {
   color: #4f46e5;
   font-size: 0.78rem;
-  font-weight: 800;
+  font-weight: 600;
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -3315,7 +3310,7 @@
   }
 
   .rm-sidebar {
-    margin-left: 0;
+    margin-left: 400px;
   }
 
 
@@ -3485,7 +3480,7 @@
   }
 
   .rm-sidebar {
-    margin-left: 0px !important;
+    margin-left: 100px;
   }
 
   .rm-hero-sub {
@@ -3614,10 +3609,10 @@
   }
 
   .rm-footer-bottom {
-    flex-direction: column !important;
-    gap: 16px !important;
-    text-align: center !important;
-    padding: 24px 24px 80px 24px !important;
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+    padding: 24px;
   }
 
   .rm-pop-card {
@@ -3629,68 +3624,41 @@
 @media (max-width: 1024px) {
   .rm-body {
     flex-direction: column;
-    padding: 20px 16px !important;
-    gap: 24px;
-    width: 100% !important;
-    box-sizing: border-box !important;
+    padding: 30px 24px;
   }
 
   .rm-sidebar {
-    width: 100% !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    margin-bottom: 24px !important;
-    flex: none !important;
+    width: 100%;
+    margin-bottom: 30px;
   }
 
   .rm-sidebar-card {
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 20px 16px !important;
-    border-radius: 16px !important;
-    box-sizing: border-box !important;
+    padding: 24px;
   }
 
   .rm-cat-list {
-    flex-direction: column !important;
-    gap: 10px !important;
-    width: 100% !important;
-    align-items: stretch !important;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: flex-start;
   }
 
   .rm-cat-btn {
-    width: 100% !important;
-    min-height: 48px !important;
-    display: flex !important;
-    align-items: center !important;
+    width: auto;
+    flex: 1 1 120px;
     background: #f8f9fb;
-    padding: 12px 16px !important;
-    border-radius: 12px !important;
+    padding: 10px 14px;
+    border-radius: 10px;
     border: 1px solid var(--rm-border);
-    justify-content: flex-start !important;
-    min-width: unset !important;
-    gap: 12px !important;
-    box-sizing: border-box !important;
+    justify-content: center;
+    min-width: 130px;
   }
 
   .rm-cat-name {
-    font-size: 0.9rem !important;
-    font-weight: 600 !important;
-    white-space: normal !important;
-    overflow: visible !important;
-    text-overflow: clip !important;
-    word-break: normal !important;
-    line-height: 1.3 !important;
-    flex: 1 !important;
-    text-align: left !important;
-  }
-
-  .rm-cat-arrow {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    margin-left: auto !important;
-    flex-shrink: 0 !important;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .rm-bento-container {
@@ -3705,171 +3673,27 @@
     width: 60%;
   }
 
-  .rm-preorder-wrapper {
-    padding: 0 15px !important;
-    margin-bottom: 24px !important;
-  }
-
   .rm-preorder-banner {
-    flex-direction: column !important;
-    height: auto !important;
-    padding: 24px 16px !important;
-    gap: 16px !important;
-    text-align: center !important;
-    overflow: hidden !important;
+    flex-direction: column;
+    height: auto;
+    padding: 30px 20px;
+    gap: 20px;
+    text-align: center;
   }
 
-  .rm-preorder-left {
-    align-items: center !important;
-  }
-
-  .rm-preorder-product-group {
-    flex-direction: column !important;
-    gap: 12px !important;
-    width: 100% !important;
-    align-items: center !important;
-  }
-
-  .rm-preorder-center {
-    height: 100px !important;
-    width: 100% !important;
-    justify-content: center !important;
-  }
-
-  .rm-preorder-img.img-main {
-    margin-left: 0 !important;
-    height: 100px !important;
-    position: static !important;
-  }
-
+  .rm-preorder-img.img-main,
   .rm-preorder-img.img-secondary {
-    display: none !important;
+    margin-left: 0;
+    height: 120px;
   }
 
   .rm-preorder-text-center-right {
-    align-items: center !important;
-    text-align: center !important;
+    align-items: center;
   }
 
   .rm-preorder-tr-titles {
-    align-items: center !important;
-    text-align: center !important;
-  }
-
-  .rm-preorder-btn {
-    width: 100% !important;
-    max-width: 240px !important;
-    padding: 12px 24px !important;
-  }
-
-  /* Testimonial container and card overrides */
-  .rm-dual-container {
-    padding: 20px 15px !important;
-    margin-top: 0 !important;
-  }
-
-  .rm-bs-card {
-    padding: 24px 16px !important;
-    min-height: unset !important;
-  }
-
-  .rm-bs-review-head {
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 8px !important;
-  }
-
-  .rm-bs-review-title {
-    font-size: 0.9rem !important;
-    line-height: 1.4 !important;
-  }
-
-  .rm-bs-desc {
-    font-size: 0.82rem !important;
-    line-height: 1.6 !important;
-    margin-bottom: 16px !important;
-  }
-
-  .rm-bs-footer {
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 12px !important;
-  }
-
-  .rm-bs-product {
-    align-self: flex-start !important;
-  }
-
-  /* Newsletter bar vertical stacking */
-  .rm-footer-newsletter {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
-    gap: 20px !important;
-    padding: 30px 15px !important;
-  }
-
-  .rm-footer-lang-row {
-    justify-content: center !important;
-    width: 100% !important;
-  }
-
-  .rm-footer-newsletter-content {
-    text-align: center !important;
-    width: 100% !important;
-  }
-
-  .rm-footer-newsletter-label {
-    text-align: center !important;
-    margin-bottom: 12px !important;
-    font-size: 0.85rem !important;
-    line-height: 1.4 !important;
-  }
-
-  .rm-footer-newsletter-form {
-    flex-direction: column !important;
-    gap: 12px !important;
-    border-bottom: none !important;
-    width: 100% !important;
-  }
-
-  .rm-footer-email-input {
-    width: 100% !important;
-    text-align: center !important;
-    padding: 12px !important;
-    border: 1px solid #e2e8f0 !important;
-    border-radius: 8px !important;
-    background: #f8fafc !important;
-  }
-
-  .rm-footer-subscribe-btn {
-    width: 100% !important;
-    padding: 12px !important;
-    border-radius: 8px !important;
-    justify-content: center !important;
-  }
-
-  .rm-footer-newsletter-note {
-    text-align: center !important;
-  }
-
-  /* Bottom bar payment logo sizing and scaling overrides */
-  .rm-footer-payments {
-    position: static !important;
-    transform: none !important;
-    margin: 10px 0 !important;
-    display: flex !important;
-    justify-content: center !important;
-    width: 100% !important;
-  }
-
-  .rm-payment-img {
-    transform: none !important;
-    margin: 10px 0 !important;
-    height: 65px !important;
-    width: auto !important;
-    object-fit: contain !important;
+    align-items: center;
+    text-align: center;
   }
 }
 
@@ -3909,24 +3733,14 @@
   }
 
   .rm-cat-btn {
-    width: 100% !important;
-    min-width: unset !important;
-    min-height: 48px !important;
+    width: calc(50% - 10px);
+    min-width: 0;
     flex: none;
-    padding: 12px 16px !important;
-    gap: 12px !important;
-    justify-content: flex-start !important;
-    box-sizing: border-box !important;
+    padding: 10px 8px;
   }
 
   .rm-cat-name {
-    font-size: 0.88rem !important;
-    white-space: normal !important;
-    overflow: visible !important;
-    text-overflow: clip !important;
-    word-break: normal !important;
-    flex: 1 !important;
-    text-align: left !important;
+    font-size: 0.8rem;
   }
 
   .rm-cat-icon svg {
@@ -3935,8 +3749,7 @@
   }
 
   .rm-cat-arrow {
-    display: flex !important;
-    margin-left: auto !important;
+    display: none;
   }
 
   .rm-bg-hero {

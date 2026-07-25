@@ -1,8 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
-import SEOHead from '../../../seo/SEOHead';
-import SchemaMarkup from '../../../seo/SchemaMarkup';
 import './TermsAndServices.css';
 
 const TermsAndServices = () => {
@@ -186,8 +184,6 @@ const TermsAndServices = () => {
 
   return (
     <div className="ts-terms-container">
-            <SEOHead pageKey="/termsAndServicesPage" />
-            <SchemaMarkup pageKey="/termsAndServicesPage" />
       <TwoLineNavbar />
       {/* Header Section */}
       <header className="ts-terms-header-section">
