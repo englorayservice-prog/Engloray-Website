@@ -1,0 +1,1064 @@
+[
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\ApplyModal\\ApplyModal.jsx",
+    "line": 170,
+    "emojis": [
+      "✕"
+    ],
+    "content": "✕"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\ApplyModal\\ApplyModal.jsx",
+    "line": 284,
+    "emojis": [
+      "🎉"
+    ],
+    "content": "<h3 className=\"text-xl md:text-2xl font-extrabold mb-3\" style={{ color: '#1F2937' }}>Application Submitted! 🎉</h3>"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Careerguidance\\Careerguidance.jsx",
+    "line": 19,
+    "emojis": [
+      "──",
+      "───────────────────────────────────"
+    ],
+    "content": "/* ── 5 QUESTIONS SYSTEM ─────────────────────────────────── */"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Careerguidance\\Careerguidance.jsx",
+    "line": 534,
+    "emojis": [
+      "✓"
+    ],
+    "content": "<h4>✓ Verified Milestones</h4>"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Careerguidance\\Careerguidance.jsx",
+    "line": 537,
+    "emojis": [
+      "✓"
+    ],
+    "content": "✓ Fast Learner"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Careerguidance\\Careerguidance.jsx",
+    "line": 540,
+    "emojis": [
+      "✓"
+    ],
+    "content": "✓ Good Technical Base"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Certifications\\Certifications.jsx",
+    "line": 211,
+    "emojis": [
+      "──",
+      "───────────────────────────────────────────"
+    ],
+    "content": "{/* ── Header ─────────────────────────────────────────── */}"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Certifications\\Certifications.jsx",
+    "line": 225,
+    "emojis": [
+      "──",
+      "─────────────────────────────────"
+    ],
+    "content": "{/* ── Two-column layout ───────────────────────────────── */}"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Certifications\\Certifications.jsx",
+    "line": 265,
+    "emojis": [
+      "──",
+      "──"
+    ],
+    "content": "{/* ── Blur + Lock overlay — always visible ── */}"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\FAQ\\FAQ.jsx",
+    "line": 408,
+    "emojis": [
+      "──",
+      "──"
+    ],
+    "content": "/* ── Header ── */"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\FAQ\\FAQ.jsx",
+    "line": 445,
+    "emojis": [
+      "──",
+      "──"
+    ],
+    "content": "/* ── Category nav ── */"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\FAQ\\FAQ.jsx",
+    "line": 479,
+    "emojis": [
+      "──",
+      "──"
+    ],
+    "content": "/* ── Two-column layout: questions left, answer right ── */"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\FAQ\\FAQ.jsx",
+    "line": 492,
+    "emojis": [
+      "──",
+      "──"
+    ],
+    "content": "/* ── Question list (left) ── */"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\FAQ\\FAQ.jsx",
+    "line": 547,
+    "emojis": [
+      "──",
+      "──"
+    ],
+    "content": "/* ── Answer box (right, compact + sticky) ── */"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\FAQ\\ApplyModal\\ApplyModal.jsx",
+    "line": 170,
+    "emojis": [
+      "✕"
+    ],
+    "content": "✕"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\FAQ\\ApplyModal\\ApplyModal.jsx",
+    "line": 284,
+    "emojis": [
+      "🎉"
+    ],
+    "content": "<h3 className=\"text-xl md:text-2xl font-extrabold mb-3\" style={{ color: '#1F2937' }}>Application Submitted! 🎉</h3>"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\FAQ\\Careerguidance\\Careerguidance.jsx",
+    "line": 19,
+    "emojis": [
+      "──",
+      "───────────────────────────────────"
+    ],
+    "content": "/* ── 5 QUESTIONS SYSTEM ─────────────────────────────────── */"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\FAQ\\Careerguidance\\Careerguidance.jsx",
+    "line": 534,
+    "emojis": [
+      "✓"
+    ],
+    "content": "<h4>✓ Verified Milestones</h4>"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\FAQ\\Careerguidance\\Careerguidance.jsx",
+    "line": 537,
+    "emojis": [
+      "✓"
+    ],
+    "content": "✓ Fast Learner"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\FAQ\\Careerguidance\\Careerguidance.jsx",
+    "line": 540,
+    "emojis": [
+      "✓"
+    ],
+    "content": "✓ Good Technical Base"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\FAQ\\Hero\\Hero.jsx",
+    "line": 41,
+    "emojis": [
+      "──",
+      "──────────────────────────────────────────────"
+    ],
+    "content": "/* ── Animated Counter ────────────────────────────────────────────── */"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\FAQ\\Hero\\Hero.jsx",
+    "line": 59,
+    "emojis": [
+      "──",
+      "───────────────────────────────────────────"
+    ],
+    "content": "/* ── Main Hero Component ─────────────────────────────────────────── */"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\FAQ\\Hero\\Hero.jsx",
+    "line": 120,
+    "emojis": [
+      "──",
+      "───────────────────────────────────────"
+    ],
+    "content": "{/* ── LEFT COLUMN ─────────────────────────────────────── */}"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\FAQ\\Hero\\Hero.jsx",
+    "line": 182,
+    "emojis": [
+      "──"
+    ],
+    "content": "{/* Pill badges row ── compact 4 items */}"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\FAQ\\Hero\\Hero.jsx",
+    "line": 283,
+    "emojis": [
+      "──",
+      "───────────"
+    ],
+    "content": "{/* ── RIGHT COLUMN: Interactive Student Placement Hub Simulator ─────────── */}"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\FAQ\\Hero\\Hero.jsx",
+    "line": 462,
+    "emojis": [
+      "●"
+    ],
+    "content": "<span style={{ color: '#84CC16', fontSize: '0.58rem' }}>● RUNNING</span>"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\FAQ\\Hero\\Hero.jsx",
+    "line": 476,
+    "emojis": [
+      "✓"
+    ],
+    "content": "<div style={{ color: '#38BDF8' }}>✓ Build successful. 120 test cases cleared. [1.4s]</div>"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\FAQ\\Hero\\Hero.jsx",
+    "line": 490,
+    "emojis": [
+      "✦"
+    ],
+    "content": "<div style={{ color: '#F43F5E' }}>✦ Deployed interactive build to staging environment</div>"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\FAQ\\Hero\\Hero.jsx",
+    "line": 504,
+    "emojis": [
+      "🎉"
+    ],
+    "content": "<div style={{ color: '#10B981', fontWeight: 'bold' }}>🎉 Offer Confirmed! Direct Referral generated.</div>"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\FAQ\\Hero\\Hero.jsx",
+    "line": 528,
+    "emojis": [
+      "──",
+      "──────────────────────────────────────────"
+    ],
+    "content": "{/* ── Video Modal ────────────────────────────────────────── */}"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\FAQ\\Journey\\JourneySlider.jsx",
+    "line": 295,
+    "emojis": [
+      "⚠️"
+    ],
+    "content": "<FiAlertCircle /> ⚠️ Stuck in Tutorial Hell"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\FAQ\\Journey\\JourneySlider.jsx",
+    "line": 325,
+    "emojis": [
+      "🚀"
+    ],
+    "content": "<FiAward className=\"animate-pulse\" /> 🚀 The Level-Up Pathway"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\FAQ\\ServicesOrbit\\ServicesOrbit.jsx",
+    "line": 10,
+    "emojis": [
+      "👨",
+      "💻"
+    ],
+    "content": "emoji: '👨‍💻',"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\FAQ\\ServicesOrbit\\ServicesOrbit.jsx",
+    "line": 26,
+    "emojis": [
+      "💻"
+    ],
+    "content": "emoji: '💻',"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\FAQ\\ServicesOrbit\\ServicesOrbit.jsx",
+    "line": 42,
+    "emojis": [
+      "🎨"
+    ],
+    "content": "emoji: '🎨',"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\FAQ\\ServicesOrbit\\ServicesOrbit.jsx",
+    "line": 58,
+    "emojis": [
+      "📊"
+    ],
+    "content": "emoji: '📊',"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\FAQ\\ServicesOrbit\\ServicesOrbit.jsx",
+    "line": 74,
+    "emojis": [
+      "☁️"
+    ],
+    "content": "emoji: '☁️',"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\FAQ\\ServicesOrbit\\ServicesOrbit.jsx",
+    "line": 90,
+    "emojis": [
+      "📱"
+    ],
+    "content": "emoji: '📱',"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\FAQ\\ServicesOrbit\\ServicesOrbit.jsx",
+    "line": 106,
+    "emojis": [
+      "📈"
+    ],
+    "content": "emoji: '📈',"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\FAQ\\ServicesOrbit\\ServicesOrbit.jsx",
+    "line": 122,
+    "emojis": [
+      "📣"
+    ],
+    "content": "emoji: '📣',"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\FAQ\\ServicesOrbit\\ServicesOrbit.jsx",
+    "line": 138,
+    "emojis": [
+      "🖌️"
+    ],
+    "content": "emoji: '🖌️',"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\FAQ\\ServicesOrbit\\ServicesOrbit.jsx",
+    "line": 154,
+    "emojis": [
+      "⚙️"
+    ],
+    "content": "emoji: '⚙️',"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\FAQ\\ServicesOrbit\\ServicesOrbit.jsx",
+    "line": 170,
+    "emojis": [
+      "🤝"
+    ],
+    "content": "emoji: '🤝',"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\FAQ\\ServicesOrbit\\ServicesOrbit.jsx",
+    "line": 186,
+    "emojis": [
+      "👩",
+      "🏫"
+    ],
+    "content": "emoji: '👩‍🏫',"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\FAQ\\ServicesOrbit\\ServicesOrbit.jsx",
+    "line": 518,
+    "emojis": [
+      "◀"
+    ],
+    "content": "◀"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\FAQ\\ServicesOrbit\\ServicesOrbit.jsx",
+    "line": 526,
+    "emojis": [
+      "▶"
+    ],
+    "content": "▶"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\FAQ\\ServicesOrbit\\ServicesOrbit.jsx",
+    "line": 804,
+    "emojis": [
+      "✕"
+    ],
+    "content": "✕ Close Map"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Hero\\Hero.jsx",
+    "line": 41,
+    "emojis": [
+      "──",
+      "──────────────────────────────────────────────"
+    ],
+    "content": "/* ── Animated Counter ────────────────────────────────────────────── */"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Hero\\Hero.jsx",
+    "line": 59,
+    "emojis": [
+      "──",
+      "───────────────────────────────────────────"
+    ],
+    "content": "/* ── Main Hero Component ─────────────────────────────────────────── */"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Hero\\Hero.jsx",
+    "line": 120,
+    "emojis": [
+      "──",
+      "───────────────────────────────────────"
+    ],
+    "content": "{/* ── LEFT COLUMN ─────────────────────────────────────── */}"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Hero\\Hero.jsx",
+    "line": 182,
+    "emojis": [
+      "──"
+    ],
+    "content": "{/* Pill badges row ── compact 4 items */}"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Hero\\Hero.jsx",
+    "line": 283,
+    "emojis": [
+      "──",
+      "───────────"
+    ],
+    "content": "{/* ── RIGHT COLUMN: Interactive Student Placement Hub Simulator ─────────── */}"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Hero\\Hero.jsx",
+    "line": 462,
+    "emojis": [
+      "●"
+    ],
+    "content": "<span style={{ color: '#84CC16', fontSize: '0.58rem' }}>● RUNNING</span>"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Hero\\Hero.jsx",
+    "line": 476,
+    "emojis": [
+      "✓"
+    ],
+    "content": "<div style={{ color: '#38BDF8' }}>✓ Build successful. 120 test cases cleared. [1.4s]</div>"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Hero\\Hero.jsx",
+    "line": 490,
+    "emojis": [
+      "✦"
+    ],
+    "content": "<div style={{ color: '#F43F5E' }}>✦ Deployed interactive build to staging environment</div>"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Hero\\Hero.jsx",
+    "line": 504,
+    "emojis": [
+      "🎉"
+    ],
+    "content": "<div style={{ color: '#10B981', fontWeight: 'bold' }}>🎉 Offer Confirmed! Direct Referral generated.</div>"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Hero\\Hero.jsx",
+    "line": 528,
+    "emojis": [
+      "──",
+      "──────────────────────────────────────────"
+    ],
+    "content": "{/* ── Video Modal ────────────────────────────────────────── */}"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Hero\\MonitorCharacter.jsx",
+    "line": 151,
+    "emojis": [
+      "════════════════════════════════"
+    ],
+    "content": "{/* ════════════════════════════════"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Hero\\MonitorCharacter.jsx",
+    "line": 153,
+    "emojis": [
+      "════════════════════════════════"
+    ],
+    "content": "════════════════════════════════ */}"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Hero\\MonitorCharacter.jsx",
+    "line": 155,
+    "emojis": [
+      "──",
+      "──"
+    ],
+    "content": "{/* ── Blazer body left half ── */}"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Hero\\MonitorCharacter.jsx",
+    "line": 160,
+    "emojis": [
+      "──",
+      "──"
+    ],
+    "content": "{/* ── Blazer body right half ── */}"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Hero\\MonitorCharacter.jsx",
+    "line": 166,
+    "emojis": [
+      "──",
+      "──"
+    ],
+    "content": "{/* ── White shirt visible in centre ── */}"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Hero\\MonitorCharacter.jsx",
+    "line": 192,
+    "emojis": [
+      "──",
+      "──"
+    ],
+    "content": "{/* ── Left blazer lapel ── */}"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Hero\\MonitorCharacter.jsx",
+    "line": 202,
+    "emojis": [
+      "──",
+      "──"
+    ],
+    "content": "{/* ── Right blazer lapel ── */}"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Hero\\MonitorCharacter.jsx",
+    "line": 212,
+    "emojis": [
+      "──",
+      "──"
+    ],
+    "content": "{/* ── Blazer shoulder seam left ── */}"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Hero\\MonitorCharacter.jsx",
+    "line": 214,
+    "emojis": [
+      "──",
+      "──"
+    ],
+    "content": "{/* ── Blazer shoulder seam right ── */}"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Hero\\MonitorCharacter.jsx",
+    "line": 222,
+    "emojis": [
+      "──",
+      "──"
+    ],
+    "content": "{/* ── Left arm – partially visible, relaxed ── */}"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Hero\\MonitorCharacter.jsx",
+    "line": 237,
+    "emojis": [
+      "──",
+      "──"
+    ],
+    "content": "{/* ── Right arm – slightly raised / away from body ── */}"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Hero\\MonitorCharacter.jsx",
+    "line": 250,
+    "emojis": [
+      "──",
+      "──"
+    ],
+    "content": "{/* ── Neck ── */}"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Hero\\MonitorCharacter.jsx",
+    "line": 254,
+    "emojis": [
+      "════════════════════════════════"
+    ],
+    "content": "{/* ════════════════════════════════"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Hero\\MonitorCharacter.jsx",
+    "line": 256,
+    "emojis": [
+      "════════════════════════════════"
+    ],
+    "content": "════════════════════════════════ */}"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Hero\\MonitorCharacter.jsx",
+    "line": 258,
+    "emojis": [
+      "──",
+      "──"
+    ],
+    "content": "{/* ── CRT back tube (depth illusion) ── */}"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Hero\\MonitorCharacter.jsx",
+    "line": 261,
+    "emojis": [
+      "──",
+      "──"
+    ],
+    "content": "{/* ── Left side depth panel ── */}"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Hero\\MonitorCharacter.jsx",
+    "line": 266,
+    "emojis": [
+      "──",
+      "──"
+    ],
+    "content": "{/* ── Right side depth panel ── */}"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Hero\\MonitorCharacter.jsx",
+    "line": 271,
+    "emojis": [
+      "──",
+      "──"
+    ],
+    "content": "{/* ── Top depth ridge ── */}"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Hero\\MonitorCharacter.jsx",
+    "line": 276,
+    "emojis": [
+      "──",
+      "──"
+    ],
+    "content": "{/* ── Bottom rear slope ── */}"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Hero\\MonitorCharacter.jsx",
+    "line": 282,
+    "emojis": [
+      "──",
+      "──"
+    ],
+    "content": "{/* ── Main front bezel (beige) ── */}"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Hero\\MonitorCharacter.jsx",
+    "line": 285,
+    "emojis": [
+      "──",
+      "──"
+    ],
+    "content": "{/* ── Screen recess (dark surround inset) ── */}"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Hero\\MonitorCharacter.jsx",
+    "line": 288,
+    "emojis": [
+      "──",
+      "──"
+    ],
+    "content": "{/* ── CRT screen glass ── */}"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Hero\\MonitorCharacter.jsx",
+    "line": 291,
+    "emojis": [
+      "──",
+      "──"
+    ],
+    "content": "{/* ── Screen glass sheen / reflection ── */}"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Hero\\MonitorCharacter.jsx",
+    "line": 304,
+    "emojis": [
+      "──",
+      "──"
+    ],
+    "content": "{/* ── CRT Scanlines ── */}"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Hero\\MonitorCharacter.jsx",
+    "line": 307,
+    "emojis": [
+      "══════════════════════════════════"
+    ],
+    "content": "{/* ══════════════════════════════════"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Hero\\MonitorCharacter.jsx",
+    "line": 309,
+    "emojis": [
+      "══════════════════════════════════"
+    ],
+    "content": "══════════════════════════════════ */}"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Hero\\MonitorCharacter.jsx",
+    "line": 382,
+    "emojis": [
+      "──",
+      "──"
+    ],
+    "content": "{/* ── Bottom bezel panel ── */}"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Hero\\MonitorCharacter.jsx",
+    "line": 387,
+    "emojis": [
+      "──",
+      "──"
+    ],
+    "content": "{/* ── Brand label ── */}"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Hero\\MonitorCharacter.jsx",
+    "line": 394,
+    "emojis": [
+      "──",
+      "──"
+    ],
+    "content": "{/* ── Floppy disk slot ── */}"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Hero\\MonitorCharacter.jsx",
+    "line": 400,
+    "emojis": [
+      "──",
+      "──"
+    ],
+    "content": "{/* ── Power button (right of floppy) ── */}"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Hero\\MonitorCharacter.jsx",
+    "line": 407,
+    "emojis": [
+      "──",
+      "──"
+    ],
+    "content": "{/* ── Monitor stand plate ── */}"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Hero\\MonitorCharacter.jsx",
+    "line": 410,
+    "emojis": [
+      "──",
+      "──"
+    ],
+    "content": "{/* ── Cable(s) running to neck ── */}"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Journey\\JourneySlider.jsx",
+    "line": 295,
+    "emojis": [
+      "⚠️"
+    ],
+    "content": "<FiAlertCircle /> ⚠️ Stuck in Tutorial Hell"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Journey\\JourneySlider.jsx",
+    "line": 325,
+    "emojis": [
+      "🚀"
+    ],
+    "content": "<FiAward className=\"animate-pulse\" /> 🚀 The Level-Up Pathway"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\MentorSupport\\MentorSupport.jsx",
+    "line": 303,
+    "emojis": [
+      "🎓"
+    ],
+    "content": "{ text: '🎓 Graduated', top: '15%', left: '8%', size: '12px', delay: '0s' },"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\MentorSupport\\MentorSupport.jsx",
+    "line": 304,
+    "emojis": [
+      "🚀"
+    ],
+    "content": "{ text: '🚀 Project Shipped', top: '78%', left: '38%', size: '11px', delay: '2s' },"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\MentorSupport\\MentorSupport.jsx",
+    "line": 305,
+    "emojis": [
+      "💼"
+    ],
+    "content": "{ text: '💼 Hired', top: '22%', left: '88%', size: '12px', delay: '1s' },"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\MentorSupport\\MentorSupport.jsx",
+    "line": 306,
+    "emojis": [
+      "🌟"
+    ],
+    "content": "{ text: '🌟 Skill Up', top: '82%', left: '85%', size: '11px', delay: '3s' },"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\MentorSupport\\MentorSupport.jsx",
+    "line": 307,
+    "emojis": [
+      "🤝"
+    ],
+    "content": "{ text: '🤝 Mentor Node', top: '48%', left: '6%', size: '11px', delay: '4s' },"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\MentorSupport\\MentorSupport.jsx",
+    "line": 308,
+    "emojis": [
+      "📈"
+    ],
+    "content": "{ text: '📈 Placement', top: '68%', left: '10%', size: '11px', delay: '1.5s' },"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Partners\\Partners.jsx",
+    "line": 3,
+    "emojis": [
+      "───",
+      "───────────────────────────────"
+    ],
+    "content": "// ─── All partner logos from case study images ───────────────────────────────"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Partners\\Partners.jsx",
+    "line": 40,
+    "emojis": [
+      "───",
+      "────────────────────────────"
+    ],
+    "content": "// ─── Split 21 logos into 3 rows of 7 (no repeats) ────────────────────────────"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Partners\\Partners.jsx",
+    "line": 46,
+    "emojis": [
+      "───",
+      "───────────────────────────────────────────────────────"
+    ],
+    "content": "// ─── Single marquee row ───────────────────────────────────────────────────────"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Partners\\Partners.jsx",
+    "line": 79,
+    "emojis": [
+      "───",
+      "─────────────────────────────────────────────────────────────"
+    ],
+    "content": "// ─── Main Section ─────────────────────────────────────────────────────────────"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Partners\\Partners.jsx",
+    "line": 93,
+    "emojis": [
+      "──",
+      "──"
+    ],
+    "content": "/* ── Header ── */"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Partners\\Partners.jsx",
+    "line": 123,
+    "emojis": [
+      "──",
+      "──"
+    ],
+    "content": "/* ── Track wrapper — clips overflow & adds soft fade edges ── */"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Partners\\Partners.jsx",
+    "line": 148,
+    "emojis": [
+      "──",
+      "──"
+    ],
+    "content": "/* ── The scrolling strip ── */"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Partners\\Partners.jsx",
+    "line": 157,
+    "emojis": [
+      "──",
+      "──"
+    ],
+    "content": "/* ── Individual logo card ── */"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Partners\\Partners.jsx",
+    "line": 252,
+    "emojis": [
+      "──",
+      "──"
+    ],
+    "content": "/* ── Keyframes ── */"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\Partners\\Partners.jsx",
+    "line": 267,
+    "emojis": [
+      "──",
+      "──"
+    ],
+    "content": "/* ── Respect reduced-motion preference ── */"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\ProjectLearning\\ProjectLearning.jsx",
+    "line": 10,
+    "emojis": [
+      "───",
+      "────────────────────"
+    ],
+    "content": "// ─── Project lifecycle stages shown in the left timeline ────────────────────"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\ProjectLearning\\ProjectLearning.jsx",
+    "line": 39,
+    "emojis": [
+      "───",
+      "──────────────────"
+    ],
+    "content": "// ─── One static achievement tile in the 2x2 outcomes grid ──────────────────"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\ServicesOrbit\\ServicesOrbit.jsx",
+    "line": 10,
+    "emojis": [
+      "👨",
+      "💻"
+    ],
+    "content": "emoji: '👨‍💻',"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\ServicesOrbit\\ServicesOrbit.jsx",
+    "line": 26,
+    "emojis": [
+      "💻"
+    ],
+    "content": "emoji: '💻',"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\ServicesOrbit\\ServicesOrbit.jsx",
+    "line": 42,
+    "emojis": [
+      "🎨"
+    ],
+    "content": "emoji: '🎨',"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\ServicesOrbit\\ServicesOrbit.jsx",
+    "line": 58,
+    "emojis": [
+      "📊"
+    ],
+    "content": "emoji: '📊',"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\ServicesOrbit\\ServicesOrbit.jsx",
+    "line": 74,
+    "emojis": [
+      "☁️"
+    ],
+    "content": "emoji: '☁️',"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\ServicesOrbit\\ServicesOrbit.jsx",
+    "line": 90,
+    "emojis": [
+      "📱"
+    ],
+    "content": "emoji: '📱',"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\ServicesOrbit\\ServicesOrbit.jsx",
+    "line": 106,
+    "emojis": [
+      "📈"
+    ],
+    "content": "emoji: '📈',"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\ServicesOrbit\\ServicesOrbit.jsx",
+    "line": 122,
+    "emojis": [
+      "📣"
+    ],
+    "content": "emoji: '📣',"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\ServicesOrbit\\ServicesOrbit.jsx",
+    "line": 138,
+    "emojis": [
+      "🖌️"
+    ],
+    "content": "emoji: '🖌️',"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\ServicesOrbit\\ServicesOrbit.jsx",
+    "line": 154,
+    "emojis": [
+      "⚙️"
+    ],
+    "content": "emoji: '⚙️',"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\ServicesOrbit\\ServicesOrbit.jsx",
+    "line": 170,
+    "emojis": [
+      "🤝"
+    ],
+    "content": "emoji: '🤝',"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\ServicesOrbit\\ServicesOrbit.jsx",
+    "line": 186,
+    "emojis": [
+      "👩",
+      "🏫"
+    ],
+    "content": "emoji: '👩‍🏫',"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\ServicesOrbit\\ServicesOrbit.jsx",
+    "line": 518,
+    "emojis": [
+      "◀"
+    ],
+    "content": "◀"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\ServicesOrbit\\ServicesOrbit.jsx",
+    "line": 526,
+    "emojis": [
+      "▶"
+    ],
+    "content": "▶"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\ServicesOrbit\\ServicesOrbit.jsx",
+    "line": 804,
+    "emojis": [
+      "✕"
+    ],
+    "content": "✕ Close Map"
+  },
+  {
+    "file": "src/Pages/Sub Pages/EnglorayPortalPage\\components\\TamilnaduPrograms\\TamilnaduPrograms.jsx",
+    "line": 930,
+    "emojis": [
+      "★"
+    ],
+    "content": "★ {outreach.highlight}"
+  }
+]

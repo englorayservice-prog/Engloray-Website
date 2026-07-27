@@ -1,4 +1,5 @@
 import React, { useRef, useLayoutEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './BusinessBoost.css';
@@ -56,6 +57,22 @@ const boostCardsData = [
 const BusinessBoost = () => {
     const sectionRef = useRef(null);
     const scrollTrackRef = useRef(null);
+    const navigate = useNavigate();
+
+    const boostCardRoutes = {
+        SaaS: '/saasPage',
+        ERP: '/erpPage',
+        CRM: '/crmPage',
+        'Business Suite AI': '/businessSuiteAiPage',
+        'AI Chatbot': '/aiChatbotPage',
+        'Job Seeker': '/jobSeekerPage',
+        'Learning & Career': '/learningPage'
+    };
+
+    const handleBoostCardClick = (title) => {
+        const route = boostCardRoutes[title] || '/';
+        navigate(route);
+    };
 
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
@@ -159,7 +176,15 @@ const BusinessBoost = () => {
                             <div
                                 className="boost-card"
                                 key={`original-${index}`}
-                                style={{ backgroundColor: card.bg, color: card.text }}
+                                style={{ backgroundColor: card.bg, color: card.text, cursor: 'pointer' }}
+                                role="button"
+                                tabIndex={0}
+                                onClick={() => handleBoostCardClick(card.title)}
+                                onKeyDown={(event) => {
+                                    if (event.key === 'Enter' || event.key === ' ') {
+                                        handleBoostCardClick(card.title);
+                                    }
+                                }}
                             >
                                 <div className="card-content-wrapper">
                                     <h3 className="card-title-left">{card.title}</h3>
@@ -174,7 +199,15 @@ const BusinessBoost = () => {
                             <div
                                 className="boost-card"
                                 key={`duplicate-${index}`}
-                                style={{ backgroundColor: card.bg, color: card.text }}
+                                style={{ backgroundColor: card.bg, color: card.text, cursor: 'pointer' }}
+                                role="button"
+                                tabIndex={0}
+                                onClick={() => handleBoostCardClick(card.title)}
+                                onKeyDown={(event) => {
+                                    if (event.key === 'Enter' || event.key === ' ') {
+                                        handleBoostCardClick(card.title);
+                                    }
+                                }}
                             >
                                 <div className="card-content-wrapper">
                                     <h3 className="card-title-left">{card.title}</h3>

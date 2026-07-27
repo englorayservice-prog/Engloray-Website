@@ -1,4 +1,21 @@
 /* TopNavBar.css */
+
+/* Fallback values matched to actual rendered heights below, used only
+   until TopNavbar.jsx measures itself on mount and overwrites --topnav-height
+   with the real, always-accurate number. --topnav-gap is the intentional
+   breathing space between TopNavbar and whatever floats below it. */
+:root {
+    --topnav-height: 33px;   /* 30px container + 3px border-bottom */
+    --topnav-gap: 0px;       /* Flush/attached — no floating gap between bars */
+}
+
+@media (max-width: 768px) {
+    :root {
+        --topnav-height: 63px; /* 60px container + 3px border-bottom */
+        --topnav-gap: 0px;
+    }
+}
+
 .topnav-main {
     background: #ffffff;
     border-bottom: 3px solid #bf0413;
@@ -259,4 +276,4 @@ body.route-tech-learning .topnav-main {
         max-width: 100% !important;
         padding: 0 40px !important;
     }
-}
+}

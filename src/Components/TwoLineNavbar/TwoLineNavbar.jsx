@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useLayoutEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { useNavigate, useLocation } from 'react-router-dom';
@@ -252,6 +251,40 @@ const TwoLineNavbar = () => {
         navigate('/allCoursesPage');
         closeMobileMenu();
     };
+
+    // Publish this navbar's real total height (its fixed "top" offset, which
+    // already includes TopNavbar's height, plus its own rendered height) as
+    // --tlnbn-total-height on :root. This is the single source of truth every
+    // page uses (via the .tlnbn-navbar-spacer below) to know how much space
+    // to reserve so content is never hidden underneath the fixed bars —
+    // self-heals if TopNavbar's height, this navbar's height, or breakpoints
+    // ever change, instead of every page guessing/hardcoding a px value.
+    useLayoutEffect(() => {
+        const navEl = navRef.current;
+        if (!navEl) return;
+
+        const publishHeight = () => {
+            const rect = navEl.getBoundingClientRect();
+            const totalHeight = Math.ceil(rect.bottom);
+            document.documentElement.style.setProperty('--tlnbn-total-height', `${totalHeight}px`);
+        };
+
+        publishHeight();
+        // Re-measure shortly after mount too, in case TopNavbar's own
+        // height publish (which this navbar's "top" depends on) lands
+        // after this first measurement.
+        const settleTimer = setTimeout(publishHeight, 150);
+
+        const resizeObserver = new ResizeObserver(publishHeight);
+        resizeObserver.observe(navEl);
+        window.addEventListener('resize', publishHeight);
+
+        return () => {
+            resizeObserver.disconnect();
+            window.removeEventListener('resize', publishHeight);
+            clearTimeout(settleTimer);
+        };
+    }, [isMobileMenuOpen]);
 
     // Adjust dropdown positions dynamically
     useEffect(() => {
@@ -673,6 +706,10 @@ const TwoLineNavbar = () => {
                         </div>
                     </div>
                 </div>
+                {/* Reserves real layout space equal to the fixed TopNavbar + TwoLineNavbar
+                    stack's actual rendered height (see --tlnbn-total-height above), so page
+                    content always starts right below both bars instead of underneath them. */}
+                <div className="tlnbn-navbar-spacer" aria-hidden="true"></div>
             </div>
         </>
     );

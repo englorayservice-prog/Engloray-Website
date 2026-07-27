@@ -1,7 +1,7 @@
 /* TechPortalGateway Section Styles */
 .tech-portal-gateway-section {
     position: relative;
-    padding: 6rem 2rem;
+    padding: clamp(3rem, 6vw, 6rem) clamp(1rem, 3vw, 2rem);
     background-color: #ffffff;
     font-family: 'Poppins', sans-serif;
     overflow: hidden;
@@ -24,7 +24,7 @@
     z-index: 2;
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
-    gap: 4rem;
+    gap: clamp(1.5rem, 2.5vw, 4rem);
     align-items: center;
 }
 
@@ -52,7 +52,7 @@
 }
 
 .portal-title {
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 4vw, 2.75rem);
     font-weight: 700;
     line-height: 1.2;
     color: #1e293b;
@@ -106,10 +106,10 @@
     align-items: center;
     justify-content: center;
     align-self: flex-start;
-    padding: 14px 28px;
+    padding: clamp(0.8rem, 1.2vw, 1.2rem) clamp(1.1rem, 2vw, 1.8rem);
     background-color: #0056d2;
     color: #ffffff;
-    font-size: 1rem;
+    font-size: var(--fs-btn);
     font-weight: 600;
     border: none;
     border-radius: 8px;
@@ -139,9 +139,9 @@
     background: #ffffff;
     border: 1px solid #e2e8f0;
     border-radius: 16px;
-    padding: 1.5rem;
+    padding: clamp(1rem, 1.8vw, 1.5rem);
     display: flex;
-    gap: 1.25rem;
+    gap: clamp(0.75rem, 1.5vw, 1.25rem);
     transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
 }
@@ -153,9 +153,9 @@
 }
 
 .portal-card-icon-wrap {
-    min-width: 76px;
-    min-height: 76px;
-    border-radius: 18px;
+    min-width: clamp(60px, 8vw, 76px);
+    min-height: clamp(60px, 8vw, 76px);
+    border-radius: clamp(14px, 1.2vw, 18px);
     background-color: #e8f0fe;
     color: #0056d2;
     display: flex;
@@ -164,7 +164,7 @@
     justify-content: center;
     gap: 0.35rem;
     flex-shrink: 0;
-    padding: 0.85rem;
+    padding: clamp(0.75rem, 1vw, 0.85rem);
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 

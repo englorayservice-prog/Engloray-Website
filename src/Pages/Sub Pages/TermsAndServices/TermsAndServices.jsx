@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
+import TopNavbar from '../../../Components/TopNavbar/TopNavbar';
 import './TermsAndServices.css';
 
 const TermsAndServices = () => {
@@ -184,6 +185,7 @@ const TermsAndServices = () => {
 
   return (
     <div className="ts-terms-container">
+      <TopNavbar />
       <TwoLineNavbar />
       {/* Header Section */}
       <header className="ts-terms-header-section">

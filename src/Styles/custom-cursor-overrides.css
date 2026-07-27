@@ -1,44 +1,55 @@
-/* Neutralize all native cursors globally so React CustomCursor is used site-wide on desktop */
-*,
-*::before,
-*::after,
-*:hover,
-*:active,
-*:focus,
-*:focus-within,
-*:focus-visible,
+/* ══════════════════════════════════════════════════════════════════════════════
+   GLOBAL CUSTOM CURSORS — Red Arrow & Red Hand Pointer (compact size)
+   Normal Usage : Red Arrow Pointer  (Hotspot: tip 2,2)
+   Clickables   : Red Hand Pointer   (Hotspot: index tip 8,2)
+══════════════════════════════════════════════════════════════════════════════ */
+
+/* 1. Default site-wide cursor: Red Arrow — SVG rendered at 22×22px */
 html,
 body,
-html body,
-html body *,
-html body *::before,
-html body *::after,
-html body *:hover,
-html body *:active,
-html body *:focus,
-html body *:focus-within,
-html body *:focus-visible,
+*,
+*::before,
+*::after {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 44 44' fill='none'%3E%3Cdefs%3E%3ClinearGradient id='arrowRedGrad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23FF2E3C'/%3E%3Cstop offset='45%25' stop-color='%23E50917'/%3E%3Cstop offset='100%25' stop-color='%2399000A'/%3E%3C/linearGradient%3E%3ClinearGradient id='arrowHighlight' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23FFBCC0' stop-opacity='0.95'/%3E%3Cstop offset='50%25' stop-color='%23FF7A82' stop-opacity='0.6'/%3E%3Cstop offset='100%25' stop-color='%23FF2E3C' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M 4 4 L 40 20 C 38 22 28 26 22 30 C 18 34 14 38 12 40 Z' fill='url(%23arrowRedGrad)' stroke='%23590005' stroke-width='3' stroke-linejoin='round' stroke-linecap='round'/%3E%3Cpath d='M 6.5 6.5 L 36 19.5 L 21.5 28.5 Z' fill='url(%23arrowHighlight)' opacity='0.65'/%3E%3Cpath d='M 5 5 L 38 19.5' stroke='%23FFD4D6' stroke-width='1.5' stroke-linecap='round' opacity='0.8'/%3E%3C/svg%3E") 2 2, default !important;
+}
+
+/* 2. Clickable elements: Red Hand Pointer — SVG rendered at 22×24px */
 a,
 button,
 select,
 input,
 textarea,
+label,
+summary,
 [role="button"],
+[role="link"],
+[role="tab"],
+[role="menuitem"],
+[role="option"],
+[type="button"],
+[type="submit"],
+[type="reset"],
 .cursor-pointer,
-[style*="cursor"] {
-  cursor: none !important;
+.btn,
+.button-base,
+.nav-link,
+.clickable,
+.card,
+[onclick],
+[style*="cursor: pointer"],
+[style*="cursor:pointer"],
+a:hover,
+button:hover,
+[role="button"]:hover,
+.cursor-pointer:hover {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='24' viewBox='0 0 42 46' fill='none'%3E%3Cdefs%3E%3ClinearGradient id='handRedGrad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23FF2E3C'/%3E%3Cstop offset='50%25' stop-color='%23E50917'/%3E%3Cstop offset='100%25' stop-color='%2399000A'/%3E%3C/linearGradient%3E%3ClinearGradient id='handHighlight' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23FFBCC0' stop-opacity='0.95'/%3E%3Cstop offset='100%25' stop-color='%23FF7A82' stop-opacity='0.5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M 15 3 C 12.2 3 10 5.2 10 8 L 10 19 C 8.2 17.2 5.5 17.2 3.8 19 C 2.2 20.8 2.2 23.4 3.8 25.1 L 6.5 29.1 C 9 33.1 13.2 35.5 17.8 35.5 L 23 35.5 C 28 35.5 32 31.5 32 26.5 L 32 20.5 C 32 18.8 30.7 17.5 29 17.5 C 28.3 17.5 27.6 17.8 27 18.3 C 26.3 16.3 24.7 15 22.7 15 C 22 15 21.3 15.3 20.7 15.8 C 20 14.2 18.3 13 16.3 13 L 16.3 8 C 16.3 5.2 17.8 3 15 3 Z' fill='url(%23handRedGrad)' stroke='%23590005' stroke-width='3' stroke-linejoin='round' stroke-linecap='round'/%3E%3Cpath d='M 11.5 7.5 L 11.5 18 C 11.5 19 11 19.8 10.2 20.5' stroke='url(%23handHighlight)' stroke-width='2' stroke-linecap='round' fill='none'/%3E%3Cpath d='M 4.8 20.5 C 4 21.5 4 22.8 5.5 24.2' stroke='url(%23handHighlight)' stroke-width='1.6' stroke-linecap='round' fill='none'/%3E%3Cpath d='M 18 14.3 C 19 13.8 20 14 20.5 14.5' stroke='url(%23handHighlight)' stroke-width='1.5' stroke-linecap='round' fill='none'/%3E%3Cpath d='M 23.5 16.3 C 24.5 15.8 25.5 16 26.3 16.5' stroke='url(%23handHighlight)' stroke-width='1.5' stroke-linecap='round' fill='none'/%3E%3Cpath d='M 28.8 18.8 C 29.8 18.3 30.5 18.7 31 19.3' stroke='url(%23handHighlight)' stroke-width='1.5' stroke-linecap='round' fill='none'/%3E%3Cpath d='M 10 19 C 7.5 22 7.5 25.5 8.8 28.5' stroke='%23480004' stroke-width='2.2' stroke-linecap='round'/%3E%3Cpath d='M 16.3 13 L 16.3 24.5' stroke='%23480004' stroke-width='2.2' stroke-linecap='round'/%3E%3Cpath d='M 21.3 15 L 21.3 25' stroke='%23480004' stroke-width='2.2' stroke-linecap='round'/%3E%3Cpath d='M 27 17.5 L 27 25.5' stroke='%23480004' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E") 8 2, pointer !important;
 }
 
-/* Restore native cursor on touch screens (coarse pointers like mobile/tablet) */
+/* 3. Touch screen devices: restore native cursors */
 @media (pointer: coarse) {
   *,
   *::before,
   *::after,
-  *:hover,
-  *:active,
-  *:focus,
-  *:focus-within,
-  *:focus-visible,
   html,
   body,
   a,

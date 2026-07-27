@@ -97,7 +97,7 @@
   html {
     scroll-behavior: smooth;
     overflow-x: clip;
-    cursor: none !important;
+    cursor: auto !important;
   }
 
   body {
@@ -110,7 +110,7 @@
     line-height: 1.55;
     -webkit-font-smoothing: antialiased;
     min-height: 100vh;
-    cursor: none !important;
+    cursor: auto !important;
   }
 
   a,
@@ -120,7 +120,7 @@
   textarea,
   [role="button"],
   .cursor-pointer {
-    cursor: none !important;
+    cursor: pointer !important;
   }
 
   h1,

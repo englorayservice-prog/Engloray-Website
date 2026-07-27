@@ -1,5 +1,6 @@
 import React from 'react';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
+import TopNavbar from '../../../Components/TopNavbar/TopNavbar';
 import WhiteFooter from '../../../Components/WhiteFooter/WhiteFooter';
 import './CookiePolicy.css';
 
@@ -64,6 +65,7 @@ const cookieSections = [
 
   return (
     <div className="copa-cookies-container">
+      <TopNavbar />
       <TwoLineNavbar />
       {/* Header Section */}
       <header className="copa-cookies-header-section">

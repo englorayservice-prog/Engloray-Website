@@ -298,6 +298,7 @@
     position: relative;
     overflow: hidden;
     /* Ensure content doesn't spill */
+    cursor: pointer;
 }
 
 .card-content-wrapper {

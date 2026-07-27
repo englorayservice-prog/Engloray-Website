@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useLayoutEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Helmet } from "react-helmet"
 import './TopNavbar.css';
@@ -7,6 +7,33 @@ const TopNavBar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+  const navRef = useRef(null);
+
+  // Single source of truth for downstream navbars (TwoLineNavbar, etc).
+  // Measures the REAL rendered height of this bar (incl. its border) and
+  // publishes it as --topnav-height on :root, instead of every consumer
+  // guessing a hardcoded px value per breakpoint. Self-heals if padding,
+  // font-size, or breakpoints in this file ever change.
+  useLayoutEffect(() => {
+    const navEl = navRef.current;
+    if (!navEl) return;
+
+    const publishHeight = () => {
+      const height = Math.ceil(navEl.getBoundingClientRect().height);
+      document.documentElement.style.setProperty('--topnav-height', `${height}px`);
+    };
+
+    publishHeight();
+
+    const resizeObserver = new ResizeObserver(publishHeight);
+    resizeObserver.observe(navEl);
+    window.addEventListener('resize', publishHeight);
+
+    return () => {
+      resizeObserver.disconnect();
+      window.removeEventListener('resize', publishHeight);
+    };
+  }, [isMobileMenuOpen]);
 
   const navigationItems = [
     {
@@ -72,7 +99,7 @@ const TopNavBar = () => {
           <meta property="og:description" content="Lorem Ipsum" />
         </Helmet>
 
-        <nav className="topnav-main">
+        <nav className="topnav-main" ref={navRef}>
           <div className="topnav-container">
             {/* Navigation items - Left aligned */}
             <div className={`topnav-items ${isMobileMenuOpen ? 'topnav-mobile-active' : ''}`}>
@@ -116,4 +143,4 @@ const TopNavBar = () => {
   );
 };
 
-export default TopNavBar;
+export default TopNavBar;
