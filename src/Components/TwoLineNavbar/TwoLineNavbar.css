@@ -7,7 +7,7 @@
 
 .tlnbn-navbar-main-container {
     position: fixed;
-    top: var(--topnav-height); /* Always flush below TopNavbar at every breakpoint */
+    top: calc(var(--topnav-height, 33px) + var(--topnav-gap, 0px)); /* Always sits flush against TopNavbar's REAL measured height, at every breakpoint */
     left: 0;
     right: 0;
     background: transparent;
@@ -30,6 +30,18 @@
     transform: translateY(-200%);
 }
 
+/* Sits in normal document flow right after the fixed TopNavbar + TwoLineNavbar
+   stack. Height is published by TwoLineNavbar.jsx (--tlnbn-total-height) from
+   the navbar's real measured height, so page content always starts flush
+   below both bars — same attachment on every page, no per-page offset needed.
+   The fallback (140px) only applies for the instant before JS measures on
+   mount. */
+.tlnbn-navbar-spacer {
+    width: 100%;
+    flex-shrink: 0;
+    height: var(--tlnbn-total-height, 140px);
+}
+
 .tlnbn-single-line-nav {
     max-width: 1700px;
     margin: 0 auto;
@@ -45,13 +57,14 @@
     justify-content: space-between;
     background: #121212;
     /* Dark capsule background */
-    padding: 10px 10px;
+    padding: 14px 18px;
     border-radius: 60px;
-    gap: 10px;
+    gap: 16px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
     width: 100%;
     overflow: visible; /* Allow dropdowns to be visible */
     box-sizing: border-box;
+    min-height: 72px;
 }
 
 .tlnbn-logo {
@@ -104,7 +117,7 @@
 /* Action Buttons */
 .tlnbn-action-buttons {
     display: flex;
-    gap: 10px;
+    gap: 14px;
     align-items: center;
 }
 
@@ -368,9 +381,9 @@
 .tlnbn-desktop-menu {
     display: flex;
     list-style: none;
-    gap: 8px;
+    gap: 12px;
     margin: 0;
-    padding: 8px 12px;
+    padding: 10px 14px;
     background: #e0e0e0;
     /* The light gray track from image 1 */
     border-radius: 35px;
@@ -732,7 +745,7 @@
 /* Tablet Styles (901px - 1024px): Switch to hamburger menu to avoid overflow */
 @media (max-width: 1024px) and (min-width: 901px) {
     .tlnbn-navbar-main-container {
-        top: var(--topnav-height) !important;
+        top: calc(var(--topnav-height, 33px) + var(--topnav-gap, 0px)) !important;
     }
 
     .tlnbn-nav-content {
@@ -770,7 +783,7 @@
 /* Small Tablet Styles (769px - 900px): Switch to hamburger menu */
 @media (max-width: 900px) and (min-width: 769px) {
     .tlnbn-navbar-main-container {
-        top: var(--topnav-height) !important;
+        top: calc(var(--topnav-height, 33px) + var(--topnav-gap, 0px)) !important;
     }
 
     .tlnbn-nav-content {
@@ -807,7 +820,7 @@
 /* Tablet Styles - Hide second line and show mobile menu */
 @media (max-width: 768px) {
     .tlnbn-navbar-main-container {
-        top: var(--topnav-height) !important; /* TopNavbar sets --topnav-height: 43px at ≤768px */
+        top: calc(var(--topnav-height, 63px) + var(--topnav-gap, 0px)) !important; /* TopNavbar measures & publishes its real height on mount */
     }
 
     .tlnbn-desktop-menu {
@@ -834,11 +847,6 @@
 
     .tlnbn-action-buttons {
         display: none !important;
-    }
-
-    .tlnbn-navbar-spacer {
-        height: 80px;
-        /* Only first line height on mobile */
     }
 
     .tlnbn-navbar-first-line {
@@ -879,11 +887,7 @@
 /* Mobile Styles (≤480px) */
 @media (max-width: 480px) {
     .tlnbn-navbar-main-container {
-        top: var(--topnav-height) !important; /* TopNavbar sets --topnav-height: 39px at ≤480px */
-    }
-
-    .tlnbn-navbar-spacer {
-        height: 70px !important;
+        top: calc(var(--topnav-height, 63px) + var(--topnav-gap, 0px)) !important;
     }
 
     .tlnbn-navbar-first-line {
@@ -955,7 +959,7 @@
 /* Extra-small Mobile (≤375px): tighten further */
 @media (max-width: 375px) {
     .tlnbn-navbar-main-container {
-        top: var(--topnav-height) !important;
+        top: calc(var(--topnav-height, 63px) + var(--topnav-gap, 0px)) !important;
     }
 
     .tlnbn-nav-content {
@@ -978,10 +982,6 @@
 
 /* Extra Small Mobile Styles */
 @media (max-width: 320px) {
-    .tlnbn-navbar-spacer {
-        height: 60px;
-    }
-
     .tlnbn-navbar-first-line {
         height: 60px;
     }
@@ -1108,7 +1108,7 @@ body.menu-open {
     .tlnbn-navbar-main-container {
         zoom: 1 !important; /* Disable zoom overlay which causes clipping */
         margin-top: 0 !important;
-        top: var(--topnav-height) !important;
+        top: calc(var(--topnav-height, 33px) + var(--topnav-gap, 0px)) !important;
     }
 
     /* Raymart Page Only Overrides */

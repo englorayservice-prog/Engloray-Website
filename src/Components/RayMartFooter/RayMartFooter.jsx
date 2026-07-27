@@ -15,6 +15,9 @@ const RayMartFooter = () => {
   const navigate = useNavigate();
   const [showComingSoon, setShowComingSoon] = useState(false);
   const [showAboutStore, setShowAboutStore] = useState(false);
+  const [email, setEmail] = useState('');
+  const [subscribed, setSubscribed] = useState(false);
+  const [error, setError] = useState('');
 
   return (
     <>
@@ -235,14 +238,78 @@ const RayMartFooter = () => {
             <p className="rm-footer-newsletter-label" style={{ margin: '0 0 20px', fontWeight: '800', textTransform: 'uppercase', textAlign: 'left' }}>
               SUBSCRIBE &amp; GET <span className="rm-footer-newsletter-highlight">10% OFF</span> FOR YOUR FIRST ORDER
             </p>
-            <div className="rm-footer-newsletter-form" style={{ maxWidth: '100%', marginBottom: '12px', display: 'flex' }}>
-              <input type="email" placeholder="Enter your email address" className="rm-footer-email-input" style={{ textAlign: 'left' }} />
-              <button className="rm-footer-subscribe-btn">SUBSCRIBE</button>
-            </div>
+            {subscribed ? (
+              <p style={{ color: '#10B981', fontWeight: 'bold', fontSize: '0.95rem', margin: '10px 0' }}>
+                Thank you! Check your email for your 10% off coupon code.
+              </p>
+            ) : (
+              <>
+                <div className="rm-footer-newsletter-form" style={{ maxWidth: '100%', marginBottom: '12px', display: 'flex' }}>
+                  <input
+                    type="email"
+                    placeholder="Enter your email address"
+                    className="rm-footer-email-input"
+                    style={{ textAlign: 'left' }}
+                    value={email}
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                      if (error) setError('');
+                    }}
+                  />
+                  <button
+                    className="rm-footer-subscribe-btn"
+                    onClick={async () => {
+                      const trimmedEmail = email.trim();
+                      if (!trimmedEmail || !trimmedEmail.includes('@')) {
+                        setError('Please enter a valid email address.');
+                        return;
+                      }
+                      
+                      setSubscribed(true);
+                      setEmail('');
+                      setError('');
+
+                      // Send EmailJS API call
+                      try {
+                        await fetch("https://api.emailjs.com/api/v1.0/email/send", {
+                          method: "POST",
+                          headers: {
+                            "Content-Type": "application/json"
+                          },
+                          body: JSON.stringify({
+                            service_id: "service_af9xhe7",
+                            template_id: "template_uu7k2jb",
+                            user_id: "h67fs5ervDVPLSKJj",
+                            template_params: {
+                              email: trimmedEmail,
+                              to_email: trimmedEmail,
+                              user_email: trimmedEmail,
+                              subscriber_email: trimmedEmail,
+                              reply_to: "engloray@gmail.com"
+                            }
+                          })
+                        });
+                      } catch (err) {
+                        console.error("Automatic welcome email failed to send:", err);
+                      }
+
+                      setTimeout(() => {
+                        setSubscribed(false);
+                      }, 5000);
+                    }}
+                  >
+                    SUBSCRIBE
+                  </button>
+                </div>
+                {error && <p style={{ color: '#ef4444', fontSize: '0.85rem', marginTop: '-4px', marginBottom: '10px', textAlign: 'left' }}>{error}</p>}
+              </>
+            )}
             <p className="rm-footer-newsletter-note" style={{ textAlign: 'left', fontSize: '0.75rem' }}>
               By subscribing, you're agreed to our <a href="#" onClick={(e) => { e.preventDefault(); navigate('/privacyPolicyPage'); }} className="rm-footer-policy-link" style={{ cursor: 'pointer' }}>Policy</a>
             </p>
           </div>
+
+
         </div>
 
         {/* Bottom bar */}

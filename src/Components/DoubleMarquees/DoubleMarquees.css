@@ -167,6 +167,13 @@
   position: relative;
   overflow: hidden;
   border: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+  min-height: 180px;
+  align-items: center;
+  cursor: pointer;
 }
 
 .marquee-title-item::before {
@@ -243,6 +250,7 @@
   background: rgba(239, 68, 68, 0.1);
   color: #ef4444;
   border: 1px solid rgba(239, 68, 68, 0.2);
+  margin-top: 12px;
 }
 
 .tech-title .title-badge,

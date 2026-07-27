@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import TwoLineNavbar from '../../../Components/TwoLineNavbar/TwoLineNavbar';
+import TopNavbar from '../../../Components/TopNavbar/TopNavbar';
 import './PrivacyPolicy.css';
 
 const PrivacyPolicy = () => {
@@ -177,6 +178,7 @@ const PrivacyPolicy = () => {
 
   return (
     <div className="pp-privacy-policy-container">
+      <TopNavbar />
       <TwoLineNavbar />
       {/* Header Section */}
       <header className="pp-privacy-header-section">

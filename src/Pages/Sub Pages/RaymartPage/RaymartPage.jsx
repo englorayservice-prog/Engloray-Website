@@ -635,6 +635,7 @@ const RaymartPage = () => {
   const [serviceShowcaseSearchFocused, setServiceShowcaseSearchFocused] = useState(false);
   const [ctaEmail, setCtaEmail] = useState('');
   const [ctaSubscribed, setCtaSubscribed] = useState(false);
+  const [ctaError, setCtaError] = useState('');
 
   const allServiceCategories = [
     'BRANDING & IDENTITY', 'DEVELOPMENT SERVICES', 'WEBSITE DEVELOPMENT',
@@ -1607,31 +1608,39 @@ const RaymartPage = () => {
               Whether you want to sell products down the street or around the world, we have all the tools you need.
             </p>
             <div className="rm-cta-actions">
-              <div className="rm-cta-input-group">
-                {ctaSubscribed ? (
-                  <span className="rm-cta-success-message" style={{ color: '#008a00', fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '15px', padding: '10px' }}>
-                    <FontAwesomeIcon icon={faCheck} />
-                    Thank you! Greetings and updates will be on the way!
-                  </span>
-                ) : (
-                  <>
-                    <FontAwesomeIcon icon={faEnvelope} style={{ color: '#888', marginRight: '10px' }} />
-                    <input
-                      type="email"
-                      placeholder="Enter your email address"
-                      className="rm-cta-input"
-                      value={ctaEmail}
-                      onChange={(e) => setCtaEmail(e.target.value)}
-                    />
-                    <button
-                      className="rm-cta-subscribe-btn"
-                      onClick={async () => {
-                        if (ctaEmail.trim()) {
-                          const userEmail = ctaEmail.trim();
+              <div style={{ display: 'flex', flexDirection: 'column', width: '100%', maxWidth: '480px' }}>
+                <div className="rm-cta-input-group">
+                  {ctaSubscribed ? (
+                    <span className="rm-cta-success-message" style={{ color: '#008a00', fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '15px', padding: '10px' }}>
+                      <FontAwesomeIcon icon={faCheck} />
+                      Thank you! Greetings and updates will be on the way!
+                    </span>
+                  ) : (
+                    <>
+                      <FontAwesomeIcon icon={faEnvelope} style={{ color: '#888', marginRight: '10px' }} />
+                      <input
+                        type="email"
+                        placeholder="Enter your email address"
+                        className="rm-cta-input"
+                        value={ctaEmail}
+                        onChange={(e) => {
+                          setCtaEmail(e.target.value);
+                          if (ctaError) setCtaError('');
+                        }}
+                      />
+                      <button
+                        className="rm-cta-subscribe-btn"
+                        onClick={async () => {
+                          const trimmedEmail = ctaEmail.trim();
+                          if (!trimmedEmail || !trimmedEmail.includes('@')) {
+                            setCtaError('Please enter a valid email address.');
+                            return;
+                          }
 
                           // Set subscribed state instantly for premium visual response
                           setCtaSubscribed(true);
                           setCtaEmail('');
+                          setCtaError('');
 
                           // Make automatic background call to EmailJS API to send direct subscriber welcome email
                           try {
@@ -1645,10 +1654,10 @@ const RaymartPage = () => {
                                 template_id: "template_uu7k2jb",
                                 user_id: "h67fs5ervDVPLSKJj",
                                 template_params: {
-                                  email: userEmail,
-                                  to_email: userEmail,
-                                  user_email: userEmail,
-                                  subscriber_email: userEmail,
+                                  email: trimmedEmail,
+                                  to_email: trimmedEmail,
+                                  user_email: trimmedEmail,
+                                  subscriber_email: trimmedEmail,
                                   reply_to: "engloray@gmail.com"
                                 }
                               })
@@ -1661,13 +1670,14 @@ const RaymartPage = () => {
                           setTimeout(() => {
                             setCtaSubscribed(false);
                           }, 5000);
-                        }
-                      }}
-                    >
-                      Get Updates
-                    </button>
-                  </>
-                )}
+                        }}
+                      >
+                        Get Updates
+                      </button>
+                    </>
+                  )}
+                </div>
+                {ctaError && <p style={{ color: '#ff4d4d', fontSize: '0.85rem', marginTop: '6px', textAlign: 'left', marginLeft: '24px' }}>{ctaError}</p>}
               </div>
               <button
                 className="rm-cta-trial-btn"

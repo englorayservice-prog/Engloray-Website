@@ -300,12 +300,12 @@ const benefitVariants = {
 /* ----------------------------------------------------------------------- */
 
 const floatingSymbols = [
-  { text: '🎓 Graduated', top: '15%', left: '8%', size: '12px', delay: '0s' },
-  { text: '🚀 Project Shipped', top: '78%', left: '38%', size: '11px', delay: '2s' },
-  { text: '💼 Hired', top: '22%', left: '88%', size: '12px', delay: '1s' },
-  { text: '🌟 Skill Up', top: '82%', left: '85%', size: '11px', delay: '3s' },
-  { text: '🤝 Mentor Node', top: '48%', left: '6%', size: '11px', delay: '4s' },
-  { text: '📈 Placement', top: '68%', left: '10%', size: '11px', delay: '1.5s' },
+  { icon: 'fa-graduation-cap text-indigo-500', text: 'Graduated', top: '15%', left: '8%', size: '12px', delay: '0s' },
+  { icon: 'fa-rocket text-rose-500', text: 'Project Shipped', top: '78%', left: '38%', size: '11px', delay: '2s' },
+  { icon: 'fa-briefcase text-emerald-500', text: 'Hired', top: '22%', left: '88%', size: '12px', delay: '1s' },
+  { icon: 'fa-star text-amber-500', text: 'Skill Up', top: '82%', left: '85%', size: '11px', delay: '3s' },
+  { icon: 'fa-handshake text-sky-500', text: 'Mentor Node', top: '48%', left: '6%', size: '11px', delay: '4s' },
+  { icon: 'fa-chart-line text-blue-500', text: 'Placement', top: '68%', left: '10%', size: '11px', delay: '1.5s' },
 ];
 
 export const MentorSupport = ({ onOpenApply }) => {
@@ -325,7 +325,7 @@ export const MentorSupport = ({ onOpenApply }) => {
       {floatingSymbols.map((sym, i) => (
         <span
           key={i}
-          className="mentor-floating-symbol"
+          className="mentor-floating-symbol flex items-center gap-1.5"
           style={{
             top: sym.top,
             left: sym.left,
@@ -333,7 +333,8 @@ export const MentorSupport = ({ onOpenApply }) => {
             animationDelay: sym.delay,
           }}
         >
-          {sym.text}
+          <i className={`fa-solid ${sym.icon}`}></i>
+          <span>{sym.text}</span>
         </span>
       ))}
 

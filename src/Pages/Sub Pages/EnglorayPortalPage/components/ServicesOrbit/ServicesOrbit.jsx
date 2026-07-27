@@ -7,7 +7,7 @@ const careersData = [
   {
     id: 'ai-engineer',
     title: 'Future AI Engineer',
-    emoji: '👨‍💻',
+    iconClass: 'fa-solid fa-laptop-code text-indigo-500',
     desc: 'Build intelligent neural systems & automated agents.',
     duration: '6 Months',
     timeline: '6-Month Pathway',
@@ -23,7 +23,7 @@ const careersData = [
   {
     id: 'software-engineer',
     title: 'Future Software Engineer',
-    emoji: '💻',
+    iconClass: 'fa-solid fa-laptop text-cyan-500',
     desc: 'Master systems scale, databases & backend logic.',
     duration: '6 Months',
     timeline: '6-Month Pathway',
@@ -39,7 +39,7 @@ const careersData = [
   {
     id: 'ui-ux-designer',
     title: 'Future UI/UX Designer',
-    emoji: '🎨',
+    iconClass: 'fa-solid fa-palette text-purple-500',
     desc: 'Design high-fidelity systems & products in Figma.',
     duration: '4 Months',
     timeline: '4-Month Pathway',
@@ -55,7 +55,7 @@ const careersData = [
   {
     id: 'data-scientist',
     title: 'Future Data Scientist',
-    emoji: '📊',
+    iconClass: 'fa-solid fa-chart-pie text-emerald-500',
     desc: 'Analyze datasets & train predictive machine learning models.',
     duration: '6 Months',
     timeline: '6-Month Pathway',
@@ -71,7 +71,7 @@ const careersData = [
   {
     id: 'cloud-engineer',
     title: 'Future Cloud Engineer',
-    emoji: '☁️',
+    iconClass: 'fa-solid fa-cloud text-indigo-500',
     desc: 'Design scalable architectures and CI/CD pipelines.',
     duration: '5 Months',
     timeline: '5-Month Pathway',
@@ -87,7 +87,7 @@ const careersData = [
   {
     id: 'mobile-developer',
     title: 'Future Mobile Dev',
-    emoji: '📱',
+    iconClass: 'fa-solid fa-mobile-screen-button text-amber-500',
     desc: 'Build high-performing React Native & Flutter applications.',
     duration: '5 Months',
     timeline: '5-Month Pathway',
@@ -103,7 +103,7 @@ const careersData = [
   {
     id: 'business-analyst',
     title: 'Future Biz Analyst',
-    emoji: '📈',
+    iconClass: 'fa-solid fa-chart-line text-pink-500',
     desc: 'Leverage PowerBI & SQL to drive corporate growth strategy.',
     duration: '4 Months',
     timeline: '4-Month Pathway',
@@ -119,7 +119,7 @@ const careersData = [
   {
     id: 'digital-marketer',
     title: 'Future Growth Marketer',
-    emoji: '📣',
+    iconClass: 'fa-solid fa-bullhorn text-emerald-500',
     desc: 'Drive user acquisition with SEO, performance ads & PPC.',
     duration: '3 Months',
     timeline: '3-Month Pathway',
@@ -135,7 +135,7 @@ const careersData = [
   {
     id: 'graphic-designer',
     title: 'Future Graphic Designer',
-    emoji: '🖌️',
+    iconClass: 'fa-solid fa-paint-brush text-violet-500',
     desc: 'Craft corporate brand identities and media creatives.',
     duration: '3 Months',
     timeline: '3-Month Pathway',
@@ -151,7 +151,7 @@ const careersData = [
   {
     id: 'product-engineer',
     title: 'Future Product Engineer',
-    emoji: '⚙️',
+    iconClass: 'fa-solid fa-gear text-teal-500',
     desc: 'Own the lifecycle from product strategy to final deploy.',
     duration: '6 Months',
     timeline: '6-Month Pathway',
@@ -167,7 +167,7 @@ const careersData = [
   {
     id: 'sales-executive',
     title: 'Future Sales Lead',
-    emoji: '🤝',
+    iconClass: 'fa-solid fa-handshake text-red-500',
     desc: 'Master tech client acquisition & CRM strategic sales.',
     duration: '3 Months',
     timeline: '3-Month Pathway',
@@ -183,7 +183,7 @@ const careersData = [
   {
     id: 'training-mentor',
     title: 'Future Mentor Lead',
-    emoji: '👩‍🏫',
+    iconClass: 'fa-solid fa-chalkboard-user text-indigo-500',
     desc: 'Learn developer training & lead student bootcamps.',
     duration: '4 Months',
     timeline: '4-Month Pathway',
@@ -689,7 +689,7 @@ export const ServicesOrbit = ({ onOpenApply }) => {
                               boxShadow: isCenter ? `0 0 12px ${career.color}15` : 'none'
                             }}
                           >
-                            {career.emoji}
+                            <i className={career.iconClass}></i>
                           </div>
 
                           {/* Title */}

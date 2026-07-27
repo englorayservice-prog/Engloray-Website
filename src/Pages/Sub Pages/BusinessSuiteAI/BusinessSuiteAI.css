@@ -102,6 +102,115 @@
     background-clip: text;
 }
 
+/* Mobile Responsive for Business Suite AI */
+@media (max-width: 1024px) {
+    .showcase-h1 {
+        font-size: 2.5rem !important;
+        line-height: 1.2 !important;
+        letter-spacing: -1px !important;
+    }
+
+    .showcase-p {
+        font-size: 1rem !important;
+        line-height: 1.5 !important;
+        max-width: 600px !important;
+    }
+
+    .showcase-container {
+        padding: 40px 20px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .showcase-h1 {
+        font-size: 1.8rem !important;
+        line-height: 1.15 !important;
+        letter-spacing: -0.5px !important;
+        margin-bottom: 16px !important;
+    }
+
+    .showcase-p {
+        font-size: 0.9rem !important;
+        line-height: 1.45 !important;
+        max-width: 100% !important;
+    }
+
+    .showcase-container {
+        padding: 30px 15px !important;
+    }
+
+    .showcase-stats {
+        flex-wrap: wrap !important;
+        gap: 15px !important;
+    }
+
+    .sc-stat {
+        flex: 1 1 45% !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .business-suite-theme .crm-subpage-hero {
+        padding: 50px 15px !important;
+    }
+
+    .showcase-h1 {
+        font-size: 1.4rem !important;
+        line-height: 1.1 !important;
+        letter-spacing: -0.3px !important;
+        margin-bottom: 12px !important;
+    }
+
+    .showcase-p {
+        font-size: 0.8rem !important;
+        line-height: 1.4 !important;
+    }
+
+    .showcase-container {
+        padding: 25px 12px !important;
+    }
+
+    .showcase-actions {
+        flex-direction: column !important;
+        gap: 12px !important;
+    }
+
+    .bs-btn-primary {
+        width: 100% !important;
+        padding: 12px 16px !important;
+        font-size: 0.9rem !important;
+    }
+
+    .showcase-stats {
+        flex-direction: column !important;
+        gap: 12px !important;
+    }
+
+    .sc-stat {
+        flex: 1 1 100% !important;
+    }
+
+    .sc-stat h3 {
+        font-size: 1.2rem !important;
+    }
+
+    .sc-stat span {
+        font-size: 0.75rem !important;
+    }
+
+    .crm-why-interactive {
+        padding: 40px 15px !important;
+    }
+
+    .cwi-title {
+        font-size: 1.5rem !important;
+    }
+
+    .cwi-desc {
+        font-size: 0.85rem !important;
+    }
+}
+
 /* Use cases badge + heading */
 .bs-section-badge {
     background: rgba(198, 40, 40, 0.1);
@@ -241,3 +350,29 @@
     color: rgba(255, 255, 255, 0.95) !important;
     line-height: 1.6;
 }
+
+/* Fluid responsive fallbacks for Business Suite AI page */
+.business-suite-theme .crm-subpage-hero,
+.business-suite-theme .crm-impact-section,
+.business-suite-theme .bs-insights-section {
+    padding: clamp(2rem, 3vw, 4rem) clamp(1rem, 3vw, 3rem) clamp(2rem, 3vw, 4rem);
+}
+
+.business-suite-theme .bs-btn-primary,
+.business-suite-theme .bs-btn-cta-primary {
+    padding: clamp(0.85rem, 1.5vw, 1.4rem) clamp(1.1rem, 2vw, 2rem);
+    font-size: var(--fs-btn);
+    border-radius: clamp(12px, 1vw, 20px);
+}
+
+.business-suite-theme .bs-glow-1,
+.business-suite-theme .bs-glow-2 {
+    width: clamp(220px, 24vw, 520px);
+    height: clamp(220px, 24vw, 520px);
+}
+
+.business-suite-theme .bs-badge-color,
+.business-suite-theme .bs-impact-badge {
+    font-size: var(--fs-body-sm);
+}
+

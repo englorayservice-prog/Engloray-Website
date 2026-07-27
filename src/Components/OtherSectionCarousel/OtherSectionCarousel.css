@@ -4,7 +4,12 @@
     /* Increased top padding from 40px to 80px */
     background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
     position: relative;
-
+    overflow-x: clip;
+    /* Safety net: the 3D-rotated side cards intentionally extend past their
+       own box (that's what creates the fan effect) — clip guards against
+       that ever forcing a page-level horizontal scrollbar. `clip` is used
+       instead of `hidden` so it doesn't also break `position: sticky`
+       ancestors elsewhere on the page. */
 }
 
 /* Scrolling Text Marquee Container */
@@ -46,7 +51,76 @@
     display: inline-block;
 }
 
+@media (max-width: 1024px) {
+    .compact-carousel-section {
+        padding: 100px 0 60px 0;
+    }
+
+    .compact-carousel-container {
+        padding: 0 20px;
+    }
+
+    .carousel-header {
+        padding: 0 20px;
+        margin-bottom: 30px;
+    }
+
+    .carousel-header h2 {
+        font-size: 2rem;
+    }
+
+    .carousel-header p {
+        font-size: 1rem;
+    }
+
+    .compact-carousel-track {
+        padding: 0 20px;
+    }
+
+    .compact-service-card {
+        width: 450px;
+        max-width: 90%;
+        height: auto;
+        min-height: 300px;
+    }
+}
+
 @media (max-width: 768px) {
+    .compact-carousel-section {
+        padding: 60px 0 50px 0;
+    }
+
+    .carousel-header {
+        padding: 0 15px;
+        margin-bottom: 20px;
+    }
+
+    .carousel-header h2 {
+        font-size: 1.6rem;
+        margin-bottom: 10px;
+    }
+
+    .carousel-header p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .compact-carousel {
+        height: 400px;
+    }
+
+    .compact-carousel-track {
+        padding: 0 15px;
+    }
+
+    .compact-service-card {
+        width: 350px;
+        max-width: 95%;
+        height: auto;
+        min-height: 250px;
+        border-radius: 16px;
+    }
+
     .marquee-text {
         font-size: 1.2rem;
         letter-spacing: 1.5px;
@@ -55,6 +129,56 @@
     .scrolling-marquee-container {
         height: 40px;
         bottom: -20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .compact-carousel-section {
+        padding: 40px 0 40px 0;
+    }
+
+    .carousel-header {
+        padding: 0 12px;
+        margin-bottom: 15px;
+    }
+
+    .carousel-header h2 {
+        font-size: 1.3rem;
+        margin-bottom: 8px;
+    }
+
+    .carousel-header p {
+        font-size: 0.85rem;
+        line-height: 1.4;
+    }
+
+    .compact-carousel {
+        height: 320px;
+    }
+
+    .compact-carousel-track {
+        padding: 0 10px;
+    }
+
+    .compact-service-card {
+        width: 280px;
+        max-width: 100%;
+        height: auto;
+        min-height: 220px;
+        border-radius: 12px;
+        font-size: 0.9rem;
+    }
+
+    .marquee-text {
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+    }
+
+    .scrolling-marquee-container {
+        height: 30px;
+        bottom: -15px;
+        mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
     }
 }
 
@@ -70,10 +194,15 @@
 }
 
 .compact-carousel-container {
-    max-width: 107%;
-    margin-left: -3.7%;
-    padding: 0;
-    width: 107%;
+    position: relative;
+    /* NEW: gives the carousel its own positioning context, so nothing
+       inside (e.g. the arrow controls) ever has to position itself
+       against the full section height again. */
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    box-sizing: border-box;
 }
 
 .carousel-header {
@@ -102,13 +231,10 @@
 .compact-carousel {
     position: relative;
     width: 100%;
-    height: 500px;
-    /* Adjusted height for centered layout */
-    overflow: hidden;
+    height: 520px;
+    overflow: visible;
     margin: 0 auto;
     z-index: 1;
-    perspective: 15px;
-    /* Add depth perspective if needed, but simple CSS transform is usually enough */
 }
 
 .compact-carousel-track {
@@ -118,52 +244,57 @@
     display: flex;
     align-items: center;
     padding: 0 40px;
+    perspective: 1200px;
+    perspective-origin: center center;
 }
 
 .compact-service-card {
     position: absolute;
     height: var(--card-height, 380px);
-    width: 650px;
-    max-width: 85%;
+    width: 580px;
+    max-width: 80%;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
     cursor: pointer;
-    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    transition: all 0.65s cubic-bezier(0.25, 1, 0.5, 1);
     background: white;
     top: 50%;
     left: 50%;
+    transform-style: preserve-3d;
     transform-origin: center center;
+    will-change: transform, opacity;
 }
 
-/* Active card - centered and largest */
+/* Active card - centered, largest, full lift */
 .compact-service-card.active {
-    transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -52%) scale(1.05);
     opacity: 1;
     z-index: 10;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.22), 0 8px 24px rgba(0,0,0,0.12);
 }
 
-/* Next card - positioned to the right */
+/* Next card - fan to the right with 3D tilt */
 .compact-service-card.next {
-    transform: translate(calc(-50% + 75%), -50%) scale(0.85);
-    opacity: 0.6;
+    transform: translate(calc(-50% + 68%), -50%) scale(0.82) rotateY(-12deg);
+    opacity: 0.75;
     z-index: 5;
-    filter: blur(1px);
-    /* subtle blur for depth */
+    filter: blur(0.5px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.14);
 }
 
-/* Previous card - positioned to the left */
+/* Previous card - fan to the left with 3D tilt */
 .compact-service-card.prev {
-    transform: translate(calc(-50% - 75%), -50%) scale(0.85);
-    opacity: 0.6;
+    transform: translate(calc(-50% - 68%), -50%) scale(0.82) rotateY(12deg);
+    opacity: 0.75;
     z-index: 5;
-    filter: blur(1px);
+    filter: blur(0.5px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.14);
 }
 
-/* Hidden cards */
+/* Hidden cards - slide behind active */
 .compact-service-card.hidden {
-    transform: translate(-50%, -50%) scale(0.5);
+    transform: translate(-50%, -50%) scale(0.55) rotateY(0deg);
     opacity: 0;
     z-index: 1;
     pointer-events: none;
@@ -305,10 +436,10 @@
 }
 
 /* Hover effects */
-/* Hover effects matching centered layout */
 .compact-service-card.active:hover {
-    transform: translate(-50%, -50%) scale(1.02);
+    transform: translate(-50%, -54%) scale(1.07);
     z-index: 12;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.28), 0 12px 32px rgba(0,0,0,0.15);
 }
 
 .compact-service-card.hidden:hover {
@@ -357,50 +488,61 @@
 /* Responsive Design */
 @media (max-width: 1440px) {
     .compact-carousel {
-        height: 480px;
+        height: 500px;
     }
 
     .compact-service-card {
         height: 360px;
-        width: 600px;
+        width: 560px;
     }
 
     .compact-service-card.next {
-        transform: translate(calc(-50% + 65%), -50%) scale(0.85);
+        transform: translate(calc(-50% + 64%), -50%) scale(0.82) rotateY(-12deg);
     }
 
     .compact-service-card.prev {
-        transform: translate(calc(-50% - 65%), -50%) scale(0.85);
+        transform: translate(calc(-50% - 64%), -50%) scale(0.82) rotateY(12deg);
     }
 
+    .compact-service-card.active {
+        transform: translate(-50%, -52%) scale(1.05);
+    }
 
+    .compact-service-card.active:hover {
+        transform: translate(-50%, -54%) scale(1.07);
+    }
 }
 
 @media (max-width: 1200px) {
     .compact-carousel {
-        height: 460px;
+        height: 480px;
     }
 
     .compact-service-card {
         height: 340px;
-        width: 550px;
+        width: 520px;
     }
 
     .compact-service-card.next {
-        transform: translate(calc(-50% + 60%), -50%) scale(0.85);
+        transform: translate(calc(-50% + 60%), -50%) scale(0.82) rotateY(-12deg);
     }
 
     .compact-service-card.prev {
-        transform: translate(calc(-50% - 60%), -50%) scale(0.85);
+        transform: translate(calc(-50% - 60%), -50%) scale(0.82) rotateY(12deg);
     }
 
+    .compact-service-card.active {
+        transform: translate(-50%, -52%) scale(1.05);
+    }
 
+    .compact-service-card.active:hover {
+        transform: translate(-50%, -54%) scale(1.07);
+    }
 }
 
 @media (max-width: 1024px) {
     .compact-carousel-section {
         padding: 30px 0 50px 0;
-        /* Reduced top padding */
     }
 
     .compact-carousel {
@@ -409,22 +551,27 @@
 
     .compact-service-card {
         height: 320px;
-        width: 500px;
+        width: 480px;
     }
 
     .compact-service-card.next {
-        transform: translate(calc(-50% + 55%), -50%) scale(0.85);
+        transform: translate(calc(-50% + 55%), -50%) scale(0.80) rotateY(-10deg);
     }
 
     .compact-service-card.prev {
-        transform: translate(calc(-50% - 55%), -50%) scale(0.85);
+        transform: translate(calc(-50% - 55%), -50%) scale(0.80) rotateY(10deg);
     }
 
+    .compact-service-card.active {
+        transform: translate(-50%, -52%) scale(1.04);
+    }
 
+    .compact-service-card.active:hover {
+        transform: translate(-50%, -54%) scale(1.06);
+    }
 
     .carousel-header {
         margin-bottom: 35px;
-        /* Reduced */
     }
 
     .carousel-header h2 {
@@ -525,16 +672,15 @@
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
     .compact-carousel-section {
         padding: 25px 0 40px 0;
-        /* Reduced top padding for tablet */
     }
 
     .compact-carousel {
-        height: 320px;
+        height: 340px;
     }
 
     .compact-service-card {
-        height: 280px;
-        width: 42%;
+        height: 290px;
+        width: 44%;
     }
 
     /* Keep all three cards visible on tablets */
@@ -543,11 +689,15 @@
     }
 
     .compact-service-card.next {
-        transform: translate(calc(-50% + 50%), -50%) scale(0.85);
+        transform: translate(calc(-50% + 50%), -50%) scale(0.80) rotateY(-10deg);
     }
 
     .compact-service-card.prev {
-        transform: translate(calc(-50% - 50%), -50%) scale(0.85);
+        transform: translate(calc(-50% - 50%), -50%) scale(0.80) rotateY(10deg);
+    }
+
+    .compact-service-card.active {
+        transform: translate(-50%, -52%) scale(1.04);
     }
 }
 
@@ -632,13 +782,16 @@
 .compact-carousel-controls {
     position: absolute;
     width: 100%;
-    top: 63%;
+    top: 50%;
     left: 0;
     display: flex;
     justify-content: space-between;
     transform: translateY(-50%);
     pointer-events: none;
     z-index: 9999;
+    /* Now nested inside .compact-carousel (position: relative), so
+       top: 50% centers against the card track itself — stable no matter
+       what happens to the header, padding, or marquee around it. */
 }
 
 .carousel-btn {
@@ -712,12 +865,10 @@
 
 .prev-btn {
     margin-left: 16px;
-    margin-top: 75px;
 }
 
 .next-btn {
     margin-right: 16px;
-    margin-top: 75px;
 }
 
 /* Small Mobile Screens Fix (320px range) */

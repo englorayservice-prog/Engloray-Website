@@ -2,11 +2,21 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 25px;
     padding: 12px 4%;
     transition: all 0.3s ease;
     position: sticky;
-    top: 0;
+    /* Sits flush against TopNavbar's REAL measured height (published as
+       --topnav-height by TopNavbar.jsx) instead of a fixed 0 — otherwise,
+       once this becomes sticky on scroll, it slides in underneath
+       TopNavbar instead of attaching right below it.
+
+       CLS FIX: this used to read var(--topnav-height, 33px) — a local
+       33px guess that disagreed with globals.css's own 40px guess for
+       the same variable. --topnav-height now has a single synchronous
+       default declared once in globals.css's :root, so both files
+       agree from first paint and there's no fallback to keep in sync
+       here anymore. */
+    top: calc(var(--topnav-height) + var(--topnav-gap, 0px));
     left: 0;
     z-index: 1000;
     background: white;

@@ -246,10 +246,12 @@
 
 .nf-col-title {
     font-family: 'Poppins', sans-serif;
-    font-size: 1.8rem !important;
+    font-size: 0.8rem !important;
     color: #111827;
     margin: 0 0 20px 0;
     font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
 }
 
 .nf-col-title-sub {
@@ -276,6 +278,25 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
+}
+
+/* Force lucide-react SVG icons to stay small inside contact rows */
+.nf-link-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nf-link-list li > svg,
+.nf-link-list li svg {
+    width: 16px !important;
+    height: 16px !important;
+    min-width: 16px !important;
+    max-width: 16px !important;
+    min-height: 16px !important;
+    max-height: 16px !important;
+    flex-shrink: 0 !important;
+    display: inline-block !important;
 }
 
 .nf-link {

@@ -24,20 +24,21 @@ export const Navbar = ({ onOpenApply }) => {
 
   return (
     <header
-      className="absolute top-0 left-0 w-full z-[100] transition-all duration-300"
+      className="absolute left-0 w-full z-[100] transition-all duration-300"
       style={{
+        top: 'var(--topnav-height, 0px)',
         background: 'rgba(255, 255, 255, 0.92)',
         backdropFilter: 'blur(20px)',
         WebkitBackdropFilter: 'blur(20px)',
         borderBottom: '1px solid #ECEEF5',
       }}
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-[68px]">
+      <div className="w-full max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 relative flex items-center justify-between h-[68px]">
 
         {/* Logo */}
         <button
           onClick={() => handleScrollTo('home')}
-          className="flex items-center bg-transparent border-none cursor-pointer"
+          className="flex items-center bg-transparent border-none cursor-pointer shrink-0"
           style={{ padding: 0 }}
         >
           <img
@@ -48,8 +49,8 @@ export const Navbar = ({ onOpenApply }) => {
           />
         </button>
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-1">
+        {/* Desktop Nav — absolutely centered in the bar */}
+        <nav className="hidden md:flex items-center gap-1 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
           {menuItems.map((item) => (
             <button
               key={item.id}
@@ -64,6 +65,7 @@ export const Navbar = ({ onOpenApply }) => {
                 padding: '8px 16px',
                 borderRadius: '100px',
                 cursor: 'pointer',
+                whiteSpace: 'nowrap',
                 transition: 'all 0.2s ease',
               }}
               onMouseEnter={e => {
@@ -85,7 +87,7 @@ export const Navbar = ({ onOpenApply }) => {
         </nav>
 
         {/* Desktop CTA */}
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden md:flex items-center gap-3 shrink-0">
           <button
             onClick={onOpenApply}
             className="btn-purple"
@@ -119,7 +121,7 @@ export const Navbar = ({ onOpenApply }) => {
             transition={{ duration: 0.2, ease: 'easeOut' }}
             style={{
               position: 'fixed',
-              top: '76px',
+              top: 'calc(var(--topnav-height, 0px) + 76px)',
               left: '16px',
               right: '16px',
               background: 'rgba(255, 255, 255, 0.98)',

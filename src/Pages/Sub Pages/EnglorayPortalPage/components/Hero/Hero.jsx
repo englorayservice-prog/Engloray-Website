@@ -78,7 +78,7 @@ export const Hero = ({ onOpenApply }) => {
         minHeight: 'auto',
         background: '#FFFFFF',
         overflow: 'hidden',
-        paddingTop: '80px',
+        paddingTop: 'calc(var(--topnav-height, 0px) + 76px)',
         paddingBottom: '20px',
       }}
     >
@@ -612,7 +612,7 @@ export const Hero = ({ onOpenApply }) => {
           .hero-grid {
             grid-template-columns: 1fr !important;
             gap: 20px !important;
-            padding: 76px 20px 20px !important;
+            padding: calc(var(--topnav-height, 0px) + 76px) 20px 20px !important;
             height: auto !important;
           }
           .hero-right-col { display: none !important; }

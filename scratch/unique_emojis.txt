@@ -1,0 +1,162 @@
+Total files: 17
+Unique emojis: 👩 ─────────────────────────────────────────── ── ───────────────────────────────── ● ─── 👨 🖌️ ────────────────── ════════════════════════════════ ✓ ▶ ✕ ────────────────────────────────────────────── ✦ 📱 ⚠️ ────────────────────────────────────────── 📈 ─────────── ☁️ ───────────────────────────────────────────────────────────── ──────────────────────────── ══════════════════════════════════ ─────────────────────────────────── ◀ 🎉 🤝 💻 ─────────────────────────────────────── 🎓 📊 🏫 🌟 ★ 💼 📣 ─────────────────────────────────────────────────────── ⚙️ ─────────────────────────────── ──────────────────── 🎨 🚀
+
+=== src/Pages/Sub Pages/EnglorayPortalPage\components\ApplyModal\ApplyModal.jsx (2 lines) ===
+  Line 170: [✕] => ✕
+  Line 284: [🎉] => <h3 className="text-xl md:text-2xl font-extrabold mb-3" style={{ color: '#1F2937' }}>Application Submitted! 🎉</h3>
+
+=== src/Pages/Sub Pages/EnglorayPortalPage\components\Careerguidance\Careerguidance.jsx (4 lines) ===
+  Line 19: [──, ───────────────────────────────────] => /* ── 5 QUESTIONS SYSTEM ─────────────────────────────────── */
+  Line 534: [✓] => <h4>✓ Verified Milestones</h4>
+  Line 537: [✓] => ✓ Fast Learner
+  Line 540: [✓] => ✓ Good Technical Base
+
+=== src/Pages/Sub Pages/EnglorayPortalPage\components\Certifications\Certifications.jsx (3 lines) ===
+  Line 211: [──, ───────────────────────────────────────────] => {/* ── Header ─────────────────────────────────────────── */}
+  Line 225: [──, ─────────────────────────────────] => {/* ── Two-column layout ───────────────────────────────── */}
+  Line 265: [──, ──] => {/* ── Blur + Lock overlay — always visible ── */}
+
+=== src/Pages/Sub Pages/EnglorayPortalPage\components\FAQ\FAQ.jsx (5 lines) ===
+  Line 408: [──, ──] => /* ── Header ── */
+  Line 445: [──, ──] => /* ── Category nav ── */
+  Line 479: [──, ──] => /* ── Two-column layout: questions left, answer right ── */
+  Line 492: [──, ──] => /* ── Question list (left) ── */
+  Line 547: [──, ──] => /* ── Answer box (right, compact + sticky) ── */
+
+=== src/Pages/Sub Pages/EnglorayPortalPage\components\FAQ\ApplyModal\ApplyModal.jsx (2 lines) ===
+  Line 170: [✕] => ✕
+  Line 284: [🎉] => <h3 className="text-xl md:text-2xl font-extrabold mb-3" style={{ color: '#1F2937' }}>Application Submitted! 🎉</h3>
+
+=== src/Pages/Sub Pages/EnglorayPortalPage\components\FAQ\Careerguidance\Careerguidance.jsx (4 lines) ===
+  Line 19: [──, ───────────────────────────────────] => /* ── 5 QUESTIONS SYSTEM ─────────────────────────────────── */
+  Line 534: [✓] => <h4>✓ Verified Milestones</h4>
+  Line 537: [✓] => ✓ Fast Learner
+  Line 540: [✓] => ✓ Good Technical Base
+
+=== src/Pages/Sub Pages/EnglorayPortalPage\components\FAQ\Hero\Hero.jsx (10 lines) ===
+  Line 41: [──, ──────────────────────────────────────────────] => /* ── Animated Counter ────────────────────────────────────────────── */
+  Line 59: [──, ───────────────────────────────────────────] => /* ── Main Hero Component ─────────────────────────────────────────── */
+  Line 120: [──, ───────────────────────────────────────] => {/* ── LEFT COLUMN ─────────────────────────────────────── */}
+  Line 182: [──] => {/* Pill badges row ── compact 4 items */}
+  Line 283: [──, ───────────] => {/* ── RIGHT COLUMN: Interactive Student Placement Hub Simulator ─────────── */}
+  Line 462: [●] => <span style={{ color: '#84CC16', fontSize: '0.58rem' }}>● RUNNING</span>
+  Line 476: [✓] => <div style={{ color: '#38BDF8' }}>✓ Build successful. 120 test cases cleared. [1.4s]</div>
+  Line 490: [✦] => <div style={{ color: '#F43F5E' }}>✦ Deployed interactive build to staging environment</div>
+  Line 504: [🎉] => <div style={{ color: '#10B981', fontWeight: 'bold' }}>🎉 Offer Confirmed! Direct Referral generated.</div>
+  Line 528: [──, ──────────────────────────────────────────] => {/* ── Video Modal ────────────────────────────────────────── */}
+
+=== src/Pages/Sub Pages/EnglorayPortalPage\components\FAQ\Journey\JourneySlider.jsx (2 lines) ===
+  Line 295: [⚠️] => <FiAlertCircle /> ⚠️ Stuck in Tutorial Hell
+  Line 325: [🚀] => <FiAward className="animate-pulse" /> 🚀 The Level-Up Pathway
+
+=== src/Pages/Sub Pages/EnglorayPortalPage\components\FAQ\ServicesOrbit\ServicesOrbit.jsx (15 lines) ===
+  Line 10: [👨, 💻] => emoji: '👨‍💻',
+  Line 26: [💻] => emoji: '💻',
+  Line 42: [🎨] => emoji: '🎨',
+  Line 58: [📊] => emoji: '📊',
+  Line 74: [☁️] => emoji: '☁️',
+  Line 90: [📱] => emoji: '📱',
+  Line 106: [📈] => emoji: '📈',
+  Line 122: [📣] => emoji: '📣',
+  Line 138: [🖌️] => emoji: '🖌️',
+  Line 154: [⚙️] => emoji: '⚙️',
+  Line 170: [🤝] => emoji: '🤝',
+  Line 186: [👩, 🏫] => emoji: '👩‍🏫',
+  Line 518: [◀] => ◀
+  Line 526: [▶] => ▶
+  Line 804: [✕] => ✕ Close Map
+
+=== src/Pages/Sub Pages/EnglorayPortalPage\components\Hero\Hero.jsx (10 lines) ===
+  Line 41: [──, ──────────────────────────────────────────────] => /* ── Animated Counter ────────────────────────────────────────────── */
+  Line 59: [──, ───────────────────────────────────────────] => /* ── Main Hero Component ─────────────────────────────────────────── */
+  Line 120: [──, ───────────────────────────────────────] => {/* ── LEFT COLUMN ─────────────────────────────────────── */}
+  Line 182: [──] => {/* Pill badges row ── compact 4 items */}
+  Line 283: [──, ───────────] => {/* ── RIGHT COLUMN: Interactive Student Placement Hub Simulator ─────────── */}
+  Line 462: [●] => <span style={{ color: '#84CC16', fontSize: '0.58rem' }}>● RUNNING</span>
+  Line 476: [✓] => <div style={{ color: '#38BDF8' }}>✓ Build successful. 120 test cases cleared. [1.4s]</div>
+  Line 490: [✦] => <div style={{ color: '#F43F5E' }}>✦ Deployed interactive build to staging environment</div>
+  Line 504: [🎉] => <div style={{ color: '#10B981', fontWeight: 'bold' }}>🎉 Offer Confirmed! Direct Referral generated.</div>
+  Line 528: [──, ──────────────────────────────────────────] => {/* ── Video Modal ────────────────────────────────────────── */}
+
+=== src/Pages/Sub Pages/EnglorayPortalPage\components\Hero\MonitorCharacter.jsx (32 lines) ===
+  Line 151: [════════════════════════════════] => {/* ════════════════════════════════
+  Line 153: [════════════════════════════════] => ════════════════════════════════ */}
+  Line 155: [──, ──] => {/* ── Blazer body left half ── */}
+  Line 160: [──, ──] => {/* ── Blazer body right half ── */}
+  Line 166: [──, ──] => {/* ── White shirt visible in centre ── */}
+  Line 192: [──, ──] => {/* ── Left blazer lapel ── */}
+  Line 202: [──, ──] => {/* ── Right blazer lapel ── */}
+  Line 212: [──, ──] => {/* ── Blazer shoulder seam left ── */}
+  Line 214: [──, ──] => {/* ── Blazer shoulder seam right ── */}
+  Line 222: [──, ──] => {/* ── Left arm – partially visible, relaxed ── */}
+  Line 237: [──, ──] => {/* ── Right arm – slightly raised / away from body ── */}
+  Line 250: [──, ──] => {/* ── Neck ── */}
+  Line 254: [════════════════════════════════] => {/* ════════════════════════════════
+  Line 256: [════════════════════════════════] => ════════════════════════════════ */}
+  Line 258: [──, ──] => {/* ── CRT back tube (depth illusion) ── */}
+  Line 261: [──, ──] => {/* ── Left side depth panel ── */}
+  Line 266: [──, ──] => {/* ── Right side depth panel ── */}
+  Line 271: [──, ──] => {/* ── Top depth ridge ── */}
+  Line 276: [──, ──] => {/* ── Bottom rear slope ── */}
+  Line 282: [──, ──] => {/* ── Main front bezel (beige) ── */}
+  Line 285: [──, ──] => {/* ── Screen recess (dark surround inset) ── */}
+  Line 288: [──, ──] => {/* ── CRT screen glass ── */}
+  Line 291: [──, ──] => {/* ── Screen glass sheen / reflection ── */}
+  Line 304: [──, ──] => {/* ── CRT Scanlines ── */}
+  Line 307: [══════════════════════════════════] => {/* ══════════════════════════════════
+  Line 309: [══════════════════════════════════] => ══════════════════════════════════ */}
+  Line 382: [──, ──] => {/* ── Bottom bezel panel ── */}
+  Line 387: [──, ──] => {/* ── Brand label ── */}
+  Line 394: [──, ──] => {/* ── Floppy disk slot ── */}
+  Line 400: [──, ──] => {/* ── Power button (right of floppy) ── */}
+  Line 407: [──, ──] => {/* ── Monitor stand plate ── */}
+  Line 410: [──, ──] => {/* ── Cable(s) running to neck ── */}
+
+=== src/Pages/Sub Pages/EnglorayPortalPage\components\Journey\JourneySlider.jsx (2 lines) ===
+  Line 295: [⚠️] => <FiAlertCircle /> ⚠️ Stuck in Tutorial Hell
+  Line 325: [🚀] => <FiAward className="animate-pulse" /> 🚀 The Level-Up Pathway
+
+=== src/Pages/Sub Pages/EnglorayPortalPage\components\MentorSupport\MentorSupport.jsx (6 lines) ===
+  Line 303: [🎓] => { text: '🎓 Graduated', top: '15%', left: '8%', size: '12px', delay: '0s' },
+  Line 304: [🚀] => { text: '🚀 Project Shipped', top: '78%', left: '38%', size: '11px', delay: '2s' },
+  Line 305: [💼] => { text: '💼 Hired', top: '22%', left: '88%', size: '12px', delay: '1s' },
+  Line 306: [🌟] => { text: '🌟 Skill Up', top: '82%', left: '85%', size: '11px', delay: '3s' },
+  Line 307: [🤝] => { text: '🤝 Mentor Node', top: '48%', left: '6%', size: '11px', delay: '4s' },
+  Line 308: [📈] => { text: '📈 Placement', top: '68%', left: '10%', size: '11px', delay: '1.5s' },
+
+=== src/Pages/Sub Pages/EnglorayPortalPage\components\Partners\Partners.jsx (10 lines) ===
+  Line 3: [───, ───────────────────────────────] => // ─── All partner logos from case study images ───────────────────────────────
+  Line 40: [───, ────────────────────────────] => // ─── Split 21 logos into 3 rows of 7 (no repeats) ────────────────────────────
+  Line 46: [───, ───────────────────────────────────────────────────────] => // ─── Single marquee row ───────────────────────────────────────────────────────
+  Line 79: [───, ─────────────────────────────────────────────────────────────] => // ─── Main Section ─────────────────────────────────────────────────────────────
+  Line 93: [──, ──] => /* ── Header ── */
+  Line 123: [──, ──] => /* ── Track wrapper — clips overflow & adds soft fade edges ── */
+  Line 148: [──, ──] => /* ── The scrolling strip ── */
+  Line 157: [──, ──] => /* ── Individual logo card ── */
+  Line 252: [──, ──] => /* ── Keyframes ── */
+  Line 267: [──, ──] => /* ── Respect reduced-motion preference ── */
+
+=== src/Pages/Sub Pages/EnglorayPortalPage\components\ProjectLearning\ProjectLearning.jsx (2 lines) ===
+  Line 10: [───, ────────────────────] => // ─── Project lifecycle stages shown in the left timeline ────────────────────
+  Line 39: [───, ──────────────────] => // ─── One static achievement tile in the 2x2 outcomes grid ──────────────────
+
+=== src/Pages/Sub Pages/EnglorayPortalPage\components\ServicesOrbit\ServicesOrbit.jsx (15 lines) ===
+  Line 10: [👨, 💻] => emoji: '👨‍💻',
+  Line 26: [💻] => emoji: '💻',
+  Line 42: [🎨] => emoji: '🎨',
+  Line 58: [📊] => emoji: '📊',
+  Line 74: [☁️] => emoji: '☁️',
+  Line 90: [📱] => emoji: '📱',
+  Line 106: [📈] => emoji: '📈',
+  Line 122: [📣] => emoji: '📣',
+  Line 138: [🖌️] => emoji: '🖌️',
+  Line 154: [⚙️] => emoji: '⚙️',
+  Line 170: [🤝] => emoji: '🤝',
+  Line 186: [👩, 🏫] => emoji: '👩‍🏫',
+  Line 518: [◀] => ◀
+  Line 526: [▶] => ▶
+  Line 804: [✕] => ✕ Close Map
+
+=== src/Pages/Sub Pages/EnglorayPortalPage\components\TamilnaduPrograms\TamilnaduPrograms.jsx (1 lines) ===
+  Line 930: [★] => ★ {outreach.highlight}
+

@@ -220,6 +220,31 @@
     margin-top: 0;
 }
 
+/* Checklist under each floating stat card (✓ Resume Building, etc.) —
+   bumped up from the old fixed 0.8rem so it's easier to read, and made
+   fluid like the rest of the hero's text instead of a hard px/rem value. */
+.tlh-card-extra {
+    font-size: clamp(1.2rem, 1.2vw, 1.4rem);
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.85);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 18px;
+    align-items: center;
+}
+
+.tlh-checklist-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tlh-check-mark {
+    color: #d8ff4a;
+    font-weight: 500;
+}
+
 /* Small CTA button inside stat cards — no animation */
 .tlh-stat-cta {
     display: inline-block;
@@ -454,8 +479,8 @@
 @media (min-width: 1920px) {
     .tlh-card-extra {
         color: rgba(255, 255, 255, 0.9) !important;
-        font-size: clamp(1.3rem, 0.9vw, 1.2rem) !important;
-        gap: clamp(8px, 0.8vw, 16px) !important;
+        font-size: clamp(1.4rem, 1vw, 1.8rem) !important;
+        gap: clamp(10px, 0.9vw, 18px) !important;
     }
 
     /* Scaled Highlights for 1920px */

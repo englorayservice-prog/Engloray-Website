@@ -197,11 +197,11 @@ const OtherSectionCarousel = () => {
               );
             })}
           </div>
-        </div>
 
-        <div className="compact-carousel-controls">
-          <button className="carousel-btn prev-btn" onClick={prevCard}>‹</button>
-          <button className="carousel-btn next-btn" onClick={nextCard}>›</button>
+          <div className="compact-carousel-controls">
+            <button className="carousel-btn prev-btn" onClick={prevCard} aria-label="Previous service">‹</button>
+            <button className="carousel-btn next-btn" onClick={nextCard} aria-label="Next service">›</button>
+          </div>
         </div>
 
         <div className="compact-carousel-indicators">
@@ -210,6 +210,8 @@ const OtherSectionCarousel = () => {
               key={index}
               className={`compact-indicator ${index === currentIndex ? 'active' : ''}`}
               onClick={() => setCurrentIndex(index)}
+              aria-label={`Go to ${services[index].title} slide`}
+              aria-current={index === currentIndex}
             />
           ))}
         </div>

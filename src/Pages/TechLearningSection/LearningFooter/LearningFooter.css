@@ -1,14 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 
+/* All sizes below are in px, not rem — this makes the footer immune to any
+   root <html> font-size scaling, zoom, or transform:scale() applied by a
+   parent page wrapper elsewhere in the app. If sizes still look inflated
+   after this change, the cause is 100% external to this file (likely a
+   `zoom` or `transform: scale()` on a Learning/Students page wrapper). */
+
 .learning-footer {
   background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
-  /* The purple background from the image */
   position: relative;
   width: 100%;
-  padding-top: 100px;
-  /* Space for the wave */
+  padding-top: 44px;
   color: #333;
   font-family: 'Montserrat', sans-serif;
+  zoom: 1 !important;
+  transform: none !important;
 }
 
 /* Wave Transition */
@@ -25,26 +31,25 @@
   position: relative;
   display: block;
   width: calc(100% + 1.3px);
-  height: 80px;
+  height: 50px;
 }
 
 .learning-footer-wave .shape-fill {
   fill: #FFFFFF;
-  /* Matches the background of the section above */
 }
 
 /* Main Container */
 .learning-container {
   max-width: 100%;
-  margin-top: -10rem;
+  margin-top: -56px;
   padding: 0;
 }
 
 /* White Card */
 .learning-footer-card {
   background-color: #FFFFFF;
-  border-radius: 70px 70px 0 0;
-  padding: 80px 60px 40px;
+  border-radius: 24px 24px 0 0;
+  padding: 36px 32px 20px;
   width: 100%;
   box-sizing: border-box;
   text-align: left;
@@ -54,37 +59,38 @@
 .learning-footer-top {
   display: grid;
   grid-template-columns: 1.5fr 1fr 1fr 1fr 1.2fr;
-  gap: 40px;
+  gap: 20px;
+  margin-bottom: 6px;
 }
 
 .learning-brand-col {
-  max-width: 350px;
+  max-width: 280px;
 }
 
 .learning-brand-title {
-  font-size: 2.2rem;
+  font-size: 20px !important;
   font-weight: 800;
   color: #111;
-  margin-bottom: 20px;
-  letter-spacing: -0.5px;
+  margin-bottom: 10px;
+  letter-spacing: -0.2px;
 }
 
 .learning-brand-desc {
-  font-size: 1rem;
+  font-size: 13px !important;
   color: #666;
-  line-height: 1.6;
-  margin-bottom: 25px;
-  max-width: 300px;
+  line-height: 1.5;
+  margin-bottom: 12px;
+  max-width: 260px;
 }
 
 .learning-social-icons {
   display: flex;
-  gap: 20px;
+  gap: 10px;
 }
 
 .learning-social-icons a {
   color: #111;
-  font-size: 1.2rem;
+  font-size: 14px !important;
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
@@ -95,10 +101,10 @@
 
 /* Column Styles */
 .learning-col-title {
-  font-size: 1.1rem;
+  font-size: 14px !important;
   font-weight: 700;
   color: #111;
-  margin-bottom: 25px;
+  margin-bottom: 10px;
 }
 
 .learning-col-list {
@@ -108,14 +114,14 @@
 }
 
 .learning-col-list li {
-  margin-bottom: 12px;
+  margin-bottom: 6px;
 }
 
 .learning-col-list a,
 .learning-col-list span {
   text-decoration: none;
   color: #555;
-  font-size: 0.95rem;
+  font-size: 12.5px !important;
   font-weight: 400;
   transition: color 0.3s ease;
 }
@@ -125,35 +131,36 @@
 }
 
 .contact-col .learning-col-list li {
-  margin-bottom: 15px;
+  margin-bottom: 8px;
 }
 
 /* Other Links Section */
 .learning-other-section {
   border-top: 1px solid #eee;
+  padding-top: 18px;
+  margin-top: 12px;
 }
 
 .learning-other-heading {
-  font-size: 1.3rem;
+  font-size: 14px !important;
   font-weight: 800;
   color: #111;
-  margin-bottom: 40px;
+  margin-bottom: 14px;
   text-align: left;
-  /* Aligned left as per instruction */
-  letter-spacing: 1px;
+  letter-spacing: 0.3px;
 }
 
 .learning-other-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  gap: 20px;
+  gap: 14px;
 }
 
 .learning-other-title {
-  font-size: 0.9rem;
+  font-size: 11.5px !important;
   font-weight: 700;
   color: #111;
-  margin-bottom: 20px;
+  margin-bottom: 8px;
 }
 
 .learning-other-list {
@@ -163,13 +170,13 @@
 }
 
 .learning-other-list li {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .learning-other-list a {
   text-decoration: none;
   color: #777;
-  font-size: 0.85rem;
+  font-size: 11.5px !important;
   transition: color 0.3s ease;
 }
 
@@ -181,47 +188,50 @@
 .learning-join-section {
   display: flex;
   justify-content: center;
+  margin-top: 22px;
 }
 
 .learning-join-btn {
   background: #8E9AFE;
   color: white;
   border: none;
-  padding: 18px 50px;
-  border-radius: 12px;
-  font-size: 1rem;
+  padding: 11px 30px;
+  border-radius: 9px;
+  font-size: 13px !important;
   font-weight: 600;
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
   transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 10px 20px rgba(142, 154, 254, 0.3);
+  box-shadow: 0 6px 14px rgba(142, 154, 254, 0.3);
 }
 
 .learning-join-btn:hover {
   background: #7382f1;
   transform: translateY(-3px);
-  box-shadow: 0 15px 30px rgba(142, 154, 254, 0.4);
+  box-shadow: 0 10px 20px rgba(142, 154, 254, 0.4);
 }
 
 .rocket-icon {
-  font-size: 1.1rem;
+  font-size: 14px !important;
 }
 
 /* Bottom Bar */
 .learning-bottom-bar {
   border-top: 1px solid #eee;
+  margin-top: 18px;
+  padding-top: 12px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.9rem;
+  font-size: 12px !important;
   color: #888;
 }
 
 .learning-legal-links {
   display: flex;
-  gap: 30px;
+  gap: 16px;
 }
 
 .learning-legal-links a {
@@ -256,20 +266,20 @@
   position: relative;
   background: white;
   width: 100%;
-  max-width: 500px;
-  border-radius: 20px;
-  padding: 40px;
+  max-width: 440px;
+  border-radius: 16px;
+  padding: 28px;
   z-index: 10;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
 
 .learning-dialog-close {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 14px;
+  right: 14px;
   background: none;
   border: none;
-  font-size: 2rem;
+  font-size: 24px !important;
   color: #999;
   cursor: pointer;
   line-height: 1;
@@ -279,7 +289,7 @@
 @media (max-width: 1200px) {
   .learning-footer-top {
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    gap: 20px;
   }
 
   .learning-other-grid {
@@ -289,8 +299,8 @@
 
 @media (max-width: 768px) {
   .learning-footer-card {
-    padding: 60px 30px 40px;
-    border-radius: 40px 40px 0 0;
+    padding: 28px 20px 20px;
+    border-radius: 20px 20px 0 0;
   }
 
   .learning-footer-top {
@@ -303,13 +313,7 @@
 
   .learning-bottom-bar {
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
     text-align: center;
-  }
-}
-
-@media (min-width: 1440px) {
-  .learning-footer {
-    zoom: 1.32;
   }
 }

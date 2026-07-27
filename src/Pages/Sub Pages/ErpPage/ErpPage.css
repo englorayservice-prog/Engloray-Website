@@ -251,3 +251,25 @@
         font-size: 1.5rem;
     }
 }
+
+/* Fluid responsive fallbacks for ERP page */
+.erp-theme .showcase-h1 {
+    font-size: clamp(2.5rem, 5vw, 4.8rem);
+}
+
+.erp-glow-1,
+.erp-glow-2 {
+    width: clamp(220px, 24vw, 520px);
+    height: clamp(220px, 24vw, 520px);
+}
+
+.erp-btn-primary,
+.erp-btn-cta-primary,
+.erp-btn-outline {
+    padding: clamp(0.85rem, 1.5vw, 1.2rem) clamp(1rem, 2vw, 1.8rem);
+    font-size: var(--fs-btn);
+}
+
+.erp-theme .crm-impact-section {
+    padding-top: clamp(3.5rem, 5vw, 5rem);
+}

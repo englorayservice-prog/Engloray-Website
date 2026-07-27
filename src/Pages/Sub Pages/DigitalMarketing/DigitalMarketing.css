@@ -2631,3 +2631,40 @@
         height: 430px;
     }
 }
+
+/* Fluid responsive fallbacks for Digital Marketing page */
+.dm-container {
+    padding: 0 clamp(1rem, 3vw, 2rem);
+}
+
+.dm-hero {
+    padding: clamp(4rem, 7vw, 9rem) clamp(1rem, 3vw, 2rem) clamp(5rem, 8vw, 12rem);
+    min-height: clamp(520px, 55vh, 730px);
+}
+
+.dm-hero-badge,
+.dm-privacy-badge {
+    padding: clamp(0.6rem, 1vw, 1rem) clamp(1rem, 2vw, 2rem);
+    font-size: clamp(0.8rem, 1vw, 1rem);
+}
+
+.dm-hero-title {
+    font-size: clamp(2.2rem, 4vw, 4.8rem);
+    line-height: 1.05;
+}
+
+.dm-hero-desc,
+.dm-feedback-description {
+    font-size: clamp(1rem, 1.1vw, 1.25rem);
+    max-width: 100%;
+}
+
+.dm-floating-card,
+.dm-feedback-card {
+    width: clamp(180px, 24vw, 300px) !important;
+    padding: clamp(0.9rem, 1.5vw, 1.4rem) !important;
+}
+
+.dm-page .wf-footer-new {
+    padding-top: clamp(1rem, 2vw, 1.5rem);
+}

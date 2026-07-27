@@ -375,6 +375,17 @@ const EntryIntroAnimation = ({ onComplete }) => {
             });
 
         // Use the wrapper as the scroller so scrolling works while overflowing is hidden on the main body
+        let hasCompleted = false;
+        const completeIntro = () => {
+            if (hasCompleted) return;
+            hasCompleted = true;
+            // Trigger exit animation
+            setIsFadingOut(true);
+            setTimeout(() => {
+                if (onComplete) onComplete();
+            }, 200); // Super fast unmount
+        };
+
         let tl = gsap.timeline({
             scrollTrigger: {
                 trigger: ".scroll-spacer",
@@ -382,13 +393,13 @@ const EntryIntroAnimation = ({ onComplete }) => {
                 start: "top top",
                 end: "bottom bottom",
                 scrub: 1,
-                onLeave: () => {
-                    // Trigger exit animation
-                    setIsFadingOut(true);
-                    setTimeout(() => {
-                        if (onComplete) onComplete();
-                    }, 200); // Super fast unmount
-                }
+                // "bottom bottom" is already the max possible scroll position (no extra
+                // content exists past .scroll-spacer), so the wrapper can never be scrolled
+                // FURTHER to trigger onLeave. Complete as soon as scroll reaches the end instead.
+                onUpdate: (self) => {
+                    if (self.progress >= 0.99) completeIntro();
+                },
+                onLeave: completeIntro
             }
         });
 

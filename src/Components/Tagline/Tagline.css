@@ -57,7 +57,7 @@
 }
 
 .tagline-icon {
-  height: 60px;
+  height: 75px;
   width: auto;
   margin-left: 12px;
   object-fit: contain;
@@ -68,10 +68,10 @@
 /* Proportional scaling for Branding Icon on laptops */
 @media screen and (min-width: 1025px) {
   .tagline-icon {
-    height: 3.125vw;
-    /* 60px at 1920px */
-    margin-left: 0.625vw;
-    /* 12px */
+    height: 4.2vw;
+    /* 80px at 1920px */
+    margin-left: 0.8vw;
+    /* 15px */
     margin-top: -0.52vw;
     /* Align with VERIFIED text */
   }
@@ -82,9 +82,9 @@
   padding-top: calc(var(--topnav-height, 40px) + 70px);
   padding-left: clamp(16px, 4vw, 60px);
   padding-right: clamp(16px, 4vw, 60px);
-  padding-bottom: clamp(40px, 5vw, 80px);
+  padding-bottom: 50px;
   width: 100%;
-  min-height: 90vh;
+  min-height: 80vh;
 
   display: flex;
   flex-direction: column;
@@ -338,8 +338,8 @@
 }
 
 .tagline-bottom-text span {
-  font-size: 3.7rem;
-  font-weight: 400;
+  font-size: 4.6rem;
+  font-weight: 500;
   margin-left: -10px;
   margin-top: -10px;
 }
@@ -362,6 +362,7 @@
   }
 
   .tagline-bottom-text span {
+    font-size: 3.4vw;
     margin-left: -0.52vw;
     /* -10px */
     margin-top: -0.52vw;
