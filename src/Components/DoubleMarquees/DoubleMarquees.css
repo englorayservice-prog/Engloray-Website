@@ -53,6 +53,7 @@
   padding: 40px 20px 0 20px;
   /* Reduced bottom padding to 0 */
   position: relative;
+  z-index: 30;
   overflow: hidden;
   min-height: auto;
   display: flex;
@@ -155,6 +156,8 @@
   margin-bottom: 0px;
   /* Reduced to bring content closer */
   padding: 0 15px;
+  position: relative;
+  z-index: 40;
 }
 
 .marquee-title-item {
@@ -165,6 +168,8 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
   transition: all 0.3s ease;
   position: relative;
+  z-index: 45;
+  pointer-events: auto;
   overflow: hidden;
   border: 1px solid #e5e7eb;
   display: flex;

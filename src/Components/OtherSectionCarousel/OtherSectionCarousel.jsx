@@ -65,34 +65,51 @@ const OtherSectionCarousel = () => {
     }
   ];
 
-  const handleCardClick = (service, index) => {
-    // Only allow navigation if the card is the active (center) one
-    if (index === currentIndex && service.clickable) {
-      navigate(service.path);
+  const handleCardClick = (e, service, index) => {
+    // If the click came from a navigation button or child control, don't trigger card navigation
+    if (e && e.target && (e.target.closest('.osc-controls') || e.target.closest('.osc-nav-btn'))) {
+      return;
     }
-    // If it's a side card, we do nothing (or we could rotate to it, but user asked to only select in middle)
+
+    if (index === currentIndex) {
+      if (service.clickable && service.path) {
+        navigate(service.path);
+      }
+    } else {
+      setCurrentIndex(index);
+    }
   };
 
-  const nextCard = () => {
+  const nextCard = (e) => {
+    if (e) {
+      if (e.preventDefault) e.preventDefault();
+      if (e.stopPropagation) e.stopPropagation();
+    }
     setCurrentIndex((prevIndex) =>
       prevIndex === services.length - 1 ? 0 : prevIndex + 1
     );
   };
 
-  const prevCard = () => {
+  const prevCard = (e) => {
+    if (e) {
+      if (e.preventDefault) e.preventDefault();
+      if (e.stopPropagation) e.stopPropagation();
+    }
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? services.length - 1 : prevIndex - 1
     );
   };
 
-  // Auto-rotate carousel
+  // Auto-rotate carousel - resets timer every time currentIndex changes (manual click or auto tick)
   useEffect(() => {
     const interval = setInterval(() => {
-      nextCard();
-    }, 4000); // Change card every 4 seconds
+      setCurrentIndex((prevIndex) =>
+        prevIndex === services.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 5000); // 5 seconds interval
 
     return () => clearInterval(interval);
-  }, []);
+  }, [currentIndex, services.length]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -128,66 +145,62 @@ const OtherSectionCarousel = () => {
   return (
 
     <motion.div
-      className="compact-carousel-section"
+      className="osc-section"
+      id="other-section-carousel"
       ref={sectionRef}
       initial={{ opacity: 0, y: 60 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
     >
-      <div className="compact-carousel-container">
-        {/* <div className="carousel-header">
-          <h2>Explore Our Services</h2>
-          <p>Discover comprehensive solutions tailored for your success</p>
-        </div> */}
-
-        <div className="compact-carousel">
-          <div className="compact-carousel-track">
+      <div className="osc-container">
+        <div className="osc-carousel">
+          <div className="osc-track">
             {services.map((service, index) => {
               const position = (index - currentIndex + services.length) % services.length;
 
               return (
                 <div
                   key={service.id}
-                  className={`compact-service-card ${position === 0 ? 'active' :
+                  className={`osc-card ${position === 0 ? 'active' :
                     position === 1 ? 'next' :
                       position === services.length - 1 ? 'prev' :
                         'hidden'
                     } ${!service.clickable ? 'non-clickable' : ''}`}
-                  onClick={() => handleCardClick(service, index)}
+                  onClick={(e) => handleCardClick(e, service, index)}
                   ref={addToRefs}
                   style={{
-                    cursor: (service.clickable && index === currentIndex) ? 'pointer' : 'default',
+                    cursor: 'pointer',
                     '--img-scale': service.imgScale || 1,
                     '--img-hover-scale': service.imgHoverScale || 1.1,
                     '--card-height': service.cardHeight || '380px'
                   }}
                 >
-                  <div className="compact-card-image">
+                  <div className="osc-card-image">
                     <img
                       src={service.image}
                       alt={service.title}
-                      className="zoom-image"
+                      className="osc-zoom-image"
                       style={{ objectFit: service.imgFit || 'contain' }}
                     />
                     {!service.clickable && (
-                      <div className="coming-soon-overlay">
-                        <div className="coming-soon-badge">COMING SOON</div>
+                      <div className="osc-coming-soon-overlay">
+                        <div className="osc-coming-soon-badge">COMING SOON</div>
                       </div>
                     )}
-                    <div className="compact-card-overlay">
-                      <div className="compact-card-content">
-                        <div className="compact-card-text">
+                    <div className="osc-card-overlay">
+                      <div className="osc-card-content">
+                        <div className="osc-card-text">
                           <h3>{service.title}</h3>
                           <p>{service.description}</p>
                         </div>
                         {service.clickable ? (
-                          <div className="compact-card-cta">
-                            <span className="cta-button">Learn More</span>
+                          <div className="osc-card-cta">
+                            <span className="osc-cta-button">Learn More</span>
                           </div>
                         ) : (
-                          <div className="compact-card-cta">
-                            <span className="coming-soon-button">Notify Me</span>
+                          <div className="osc-card-cta">
+                            <span className="osc-coming-soon-button">Notify Me</span>
                           </div>
                         )}
                       </div>
@@ -197,18 +210,13 @@ const OtherSectionCarousel = () => {
               );
             })}
           </div>
-
-          <div className="compact-carousel-controls">
-            <button className="carousel-btn prev-btn" onClick={prevCard} aria-label="Previous service">‹</button>
-            <button className="carousel-btn next-btn" onClick={nextCard} aria-label="Next service">›</button>
-          </div>
         </div>
 
-        <div className="compact-carousel-indicators">
+        <div className="osc-indicators">
           {services.map((_, index) => (
             <button
               key={index}
-              className={`compact-indicator ${index === currentIndex ? 'active' : ''}`}
+              className={`osc-indicator ${index === currentIndex ? 'active' : ''}`}
               onClick={() => setCurrentIndex(index)}
               aria-label={`Go to ${services[index].title} slide`}
               aria-current={index === currentIndex}
@@ -217,13 +225,41 @@ const OtherSectionCarousel = () => {
         </div>
       </div>
 
+      {/* Navigation Arrows placed AFTER osc-container in DOM order so they always render on top */}
+      <div className="osc-controls">
+        <button
+          type="button"
+          className="osc-nav-btn osc-prev-btn"
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            prevCard(e);
+          }}
+          aria-label="Previous service"
+        >
+          ‹
+        </button>
+        <button
+          type="button"
+          className="osc-nav-btn osc-next-btn"
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            nextCard(e);
+          }}
+          aria-label="Next service"
+        >
+          ›
+        </button>
+      </div>
+
       {/* Scrolling Text Marquee */}
-      <div className="scrolling-marquee-container">
-        <div className="scrolling-marquee-track">
-          <span className="marquee-text">{marqueeText}</span>
-          <span className="marquee-text">{marqueeText}</span>
-          <span className="marquee-text">{marqueeText}</span>
-          <span className="marquee-text">{marqueeText}</span>
+      <div className="osc-marquee-container">
+        <div className="osc-marquee-track">
+          <span className="osc-marquee-text">{marqueeText}</span>
+          <span className="osc-marquee-text">{marqueeText}</span>
+          <span className="osc-marquee-text">{marqueeText}</span>
+          <span className="osc-marquee-text">{marqueeText}</span>
         </div>
       </div>
     </motion.div>

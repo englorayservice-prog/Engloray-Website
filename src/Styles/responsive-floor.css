@@ -75,15 +75,15 @@
     height: auto !important;
   }
 
-  [class*="container"],
-  [class*="wrapper"],
-  [class*="content"],
-  [class*="page"],
-  [class*="section"],
-  [class*="hero"],
-  [class*="grid"],
-  [class*="row"],
-  [class*="card"] {
+  [class*="container"]:not([class*="tagline"]):not([class*="bphs-stat"]):not([class*="osc-"]),
+  [class*="wrapper"]:not([class*="tagline"]):not([class*="bphs-stat"]):not([class*="osc-"]),
+  [class*="content"]:not([class*="tagline"]):not([class*="bphs-stat"]):not([class*="osc-"]),
+  [class*="page"]:not([class*="tagline"]):not([class*="bphs-stat"]):not([class*="osc-"]),
+  [class*="section"]:not([class*="tagline"]):not([class*="bphs-stat"]):not([class*="osc-"]),
+  [class*="hero"]:not([class*="tagline"]):not([class*="bphs-stat"]):not([class*="osc-"]),
+  [class*="grid"]:not([class*="tagline"]):not([class*="bphs-stat"]):not([class*="osc-"]),
+  [class*="row"]:not([class*="tagline"]):not([class*="bphs-stat"]):not([class*="osc-"]),
+  [class*="card"]:not([class*="tagline"]):not([class*="bphs-stat"]):not([class*="osc-"]) {
     max-width: 100% !important;
     width: 100% !important;
     padding-inline: 1rem !important;

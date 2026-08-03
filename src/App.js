@@ -92,17 +92,6 @@ import NewFooter1 from './Pages/Sub Pages/subFooterOne/NewFooter1';
 import ScrollToTop from './Components/ScrollToTop/ScrollToTop';
 import Chatbot from './Components/Chatbot/Chatbot';
 
-// ─── GLOBAL FLUID SCALE SYSTEM ───────────────────────────────────────────────
-// fluid-scale.css: clamp()-based font/spacing tokens that scale 320px→1920px.
-// Must be imported BEFORE responsive-floor so the floor's !important rules
-// can correctly override fluid defaults at very small widths.
-import './Styles/fluid-scale.css';
-
-// ─── GLOBAL RESPONSIVE FLOOR ─────────────────────────────────────────────────
-// This must be the LAST CSS import so its @media (max-width: 360px) rules win
-// all specificity battles and guarantee 350px support across every page/route.
-import './Styles/responsive-floor.css';
-
 
 
 import HomePage from './Pages/HomePage/HomePage';
