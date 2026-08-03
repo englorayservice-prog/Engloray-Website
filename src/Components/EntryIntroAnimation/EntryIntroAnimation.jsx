@@ -352,27 +352,22 @@ const EntryIntroAnimation = ({ onComplete }) => {
         // GSAP ANIMATIONS
         const introTl = gsap.timeline();
 
-        gsap.set(['.neon-line-1', '.neon-line-2'], { visibility: 'visible', opacity: 0, scale: 0.8, y: 50 });
+        gsap.set(['.neon-line-1', '.neon-line-2'], { visibility: 'visible', opacity: 0, scale: 1, y: 0 });
 
         introTl.to(['.neon-line-1', '.neon-line-2'], {
-            duration: 1.2,
+            duration: 1.0,
             opacity: 1,
-            scale: 1.05,
+            scale: 1,
             y: 0,
-            stagger: 0.5,
-            ease: "power3.out",
-            delay: 0.5
+            stagger: 0.3,
+            ease: "power2.out",
+            delay: 0.3
         })
-            .to(['.neon-line-1', '.neon-line-2'], {
-                scale: 1,
-                duration: 0.4,
-                stagger: 0.5,
-            }, "-=2.0")
             .to('.scroll-indicator', {
                 opacity: 1,
                 duration: 1,
                 ease: "power2.out"
-            });
+            }, "-=0.3");
 
         // Use the wrapper as the scroller so scrolling works while overflowing is hidden on the main body
         let hasCompleted = false;

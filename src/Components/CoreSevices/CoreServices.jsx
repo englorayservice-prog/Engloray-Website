@@ -173,9 +173,9 @@ const CoreServices = () => {
 
         {/* Carousel */}
         <div className="carousel-full-wrapper">
-          <div className="compact-carousel-controls">
-            <button className="carousel-btn prev-btn" onClick={prevSlide}>‹</button>
-            <button className="carousel-btn next-btn" onClick={nextSlide}>›</button>
+          <div className="carousel-controls-top">
+            <button className="carousel-btn prev-btn" onClick={prevSlide} aria-label="Previous slide"></button>
+            <button className="carousel-btn next-btn" onClick={nextSlide} aria-label="Next slide"></button>
           </div>
 
           <div className="carousel-full-container">
@@ -241,11 +241,12 @@ const CoreServices = () => {
           </div>
 
           <div className="color-dots-indicators">
-            {services.map((service, index) => (
+            {[1, 2, 3].map((dotIndex) => (
               <button
-                key={index}
-                className={`color-dot ${index === currentIndex ? 'active' : ''}`}
-                onClick={() => goToSlide(index)}
+                key={dotIndex}
+                className={`color-dot ${dotIndex === currentIndex ? 'active' : ''}`}
+                onClick={() => goToSlide(dotIndex)}
+                aria-label={`Go to slide ${dotIndex}`}
               />
             ))}
           </div>
