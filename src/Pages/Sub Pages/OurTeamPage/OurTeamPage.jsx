@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 // import AI from '../../../assets/AIpowered.jfif';
 // import Omni from '../../../assets/Omni.jfif';
 import Avatar1 from '../../../assets/Gowtham_img.png';
-import Avatar2 from '../../../assets/Surya_img.png';
+import Avatar2 from '../../../assets/Foujaan_img.png';
 //import Avatar3 from '../../../assets/';
 import Avatar4 from '../../../assets/Lily_image.png';
 import uiuxProjectImg from '../../../assets/Makeover_img.jpg';
@@ -154,15 +154,15 @@ const OurTeamPage = () => {
         },
         {
             id: 2,
-            name: "Surya",
-            role: "Chief Operating Officer",
+            name: "Foujaan",
+            role: "Human Resources",
             experience: "2+ Years",
             projects: "20+",
-            avatar: "S",
-            skills: ["Team Management", "Ui/Ux", "Coordination", "Photoshop"],
+            avatar: "F",
+            skills: ["Human Resources", "Talent Acquisition", "Team Management", "Coordination"],
             color: "#FFA62B",
-            quote: "Designing experiences that users love",
-            icon: <FontAwesomeIcon icon={faUserGraduate} />,
+            quote: "Empowering talent and building strong workplace culture",
+            icon: <FontAwesomeIcon icon={faUsers} />,
             img: Avatar2,
             date: "Mar 22 - 12 min read"
         },
